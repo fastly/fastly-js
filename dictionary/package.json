@@ -1,0 +1,46 @@
+{
+  "name": "dictionary",
+  "version": "1.0.0",
+  "description": "A_Dictionary_is_a_VCL_data_table_that_stores_key_value_pairs_accessible_to_VCL_during_request_processing__New_empty_dictionaries_can_be_attached_to_a_draft_version_of_a_service_which_must_be_activated_for_the_dictionary_to_be_included_in_VCL__Once_installed_a_dictionarys_items_may_be_updated_via_API_calls_without_having_to_activate_a_new_version_of_the_associated_service_configuration__To_remove_a_dictionary_delete_it_on_a_draft_version_of_a_service__one_that_is_not_locked_and_not_active__Once_removed_activate_the_draft_service_version_without_the_dictionary_",
+  "license": "Unlicense",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel src -d dist",
+    "prepack": "npm run build",
+    "test": "mocha --require @babel/register --recursive"
+  },
+  "browser": {
+    "fs": false
+  },
+  "dependencies": {
+    "@babel/cli": "^7.0.0",
+    "superagent": "^5.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/plugin-proposal-decorators": "^7.0.0",
+    "@babel/plugin-proposal-do-expressions": "^7.0.0",
+    "@babel/plugin-proposal-export-default-from": "^7.0.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
+    "@babel/plugin-proposal-function-bind": "^7.0.0",
+    "@babel/plugin-proposal-function-sent": "^7.0.0",
+    "@babel/plugin-proposal-json-strings": "^7.0.0",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.0.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
+    "@babel/plugin-proposal-numeric-separator": "^7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/plugin-syntax-import-meta": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "expect.js": "^0.3.1",
+    "mocha": "^8.0.1",
+    "sinon": "^7.2.0"
+  },
+  "files": [
+    "dist"
+  ]
+}
