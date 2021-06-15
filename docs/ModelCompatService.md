@@ -1,0 +1,20 @@
+# FastlyApi.ModelCompatService
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**created_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**deleted_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**updated_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**service_id** | **String** | Alphanumeric string identifying the service. | [optional] 
+**active** | **Boolean** | Whether this is the active version or not. | [optional] [default to false]
+**comment** | **String** | A freeform descriptive note. | [optional] [default to &#39;&#39;]
+**deployed** | **Boolean** | Unused at this time. | [optional] 
+**locked** | **Boolean** | Whether this version is locked or not. Objects can not be added or edited on locked versions. | [optional] [default to false]
+**number** | **Number** | The number of this version. | [optional] [readonly] 
+**staging** | **Boolean** | Unused at this time. | [optional] [default to false]
+**testing** | **Boolean** | Unused at this time. | [optional] [default to false]
+**active_version** | **Object** | Configuration for the active [version](/reference/api/services/version/) of this service. | [optional] 
+
+

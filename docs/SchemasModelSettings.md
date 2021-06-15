@@ -1,0 +1,14 @@
+# FastlyApi.SchemasModelSettings
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**service_id** | **String** | Alphanumeric string identifying the service. | [optional] 
+**version** | **Number** | Integer identifying a service version. | [optional] [readonly] 
+**general_default_host** | **String** | The default host name for the version. | [optional] 
+**general_default_ttl** | **Number** | The default time-to-live (TTL) for the version. | [optional] 
+**general_stale_if_error** | **Boolean** | Enables serving a stale object if there is an error. | [optional] [default to false]
+**general_stale_if_error_ttl** | **Number** | The default time-to-live (TTL) for serving the stale object for the version. | [optional] [default to 43200]
+
+
