@@ -33,7 +33,7 @@ token.apiKey = 'YOUR API KEY';
 let apiInstance = new FastlyApi.BillingAddressApi();
 let customer_id = "customer_id_example"; // String | 
 let opts = {
-  'inline_object4': new FastlyApi.InlineObject4() // InlineObject4 | 
+  'inline_object2': new FastlyApi.InlineObject2() // InlineObject2 | 
 };
 apiInstance.addBillingAddr(customer_id, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -49,7 +49,7 @@ apiInstance.addBillingAddr(customer_id, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer_id** | **String**|  | 
- **inline_object4** | [**InlineObject4**](InlineObject4.md)|  | [optional] 
+ **inline_object2** | [**InlineObject2**](InlineObject2.md)|  | [optional] 
 
 ### Return type
 
@@ -187,7 +187,7 @@ token.apiKey = 'YOUR API KEY';
 let apiInstance = new FastlyApi.BillingAddressApi();
 let customer_id = "customer_id_example"; // String | 
 let opts = {
-  'inline_object5': new FastlyApi.InlineObject5() // InlineObject5 | 
+  'inline_object3': new FastlyApi.InlineObject3() // InlineObject3 | 
 };
 apiInstance.updateBillingAddr(customer_id, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -203,7 +203,7 @@ apiInstance.updateBillingAddr(customer_id, opts).then((data) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customer_id** | **String**|  | 
- **inline_object5** | [**InlineObject5**](InlineObject5.md)|  | [optional] 
+ **inline_object3** | [**InlineObject3**](InlineObject3.md)|  | [optional] 
 
 ### Return type
 

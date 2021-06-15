@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[ResourceServiceAuthorization]**](ResourceServiceAuthorization.md) |  | [optional] 
+**data** | [**[ServiceAuthorizationsData]**](ServiceAuthorizationsData.md) |  | [optional] 
 
 

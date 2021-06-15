@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**CustomerCustomerIdBillingAddressData1**](CustomerCustomerIdBillingAddressData1.md) |  | [optional] 
+**data** | [**WafFirewallsFirewallIdVersionsFirewallVersionNumberExclusionsExclusionNumberData**](WafFirewallsFirewallIdVersionsFirewallVersionNumberExclusionsExclusionNumberData.md) |  | [optional] 
 
 

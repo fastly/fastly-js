@@ -25,7 +25,7 @@ import FastlyApi from 'fastly_api';
 
 let apiInstance = new FastlyApi.InvitationsApi();
 let opts = {
-  'inline_object6': new FastlyApi.InlineObject6() // InlineObject6 | 
+  'inline_object9': new FastlyApi.InlineObject9() // InlineObject9 | 
 };
 apiInstance.createInvitation(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -40,7 +40,7 @@ apiInstance.createInvitation(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object6** | [**InlineObject6**](InlineObject6.md)|  | [optional] 
+ **inline_object9** | [**InlineObject9**](InlineObject9.md)|  | [optional] 
 
 ### Return type
 

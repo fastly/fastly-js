@@ -13,8 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
-import InlineObject2 from '../model/InlineObject2';
-import InlineObject3 from '../model/InlineObject3';
+import InlineObject4 from '../model/InlineObject4';
+import InlineObject5 from '../model/InlineObject5';
 
 
 export default class WafExclusionsApi {
@@ -26,7 +26,7 @@ export default class WafExclusionsApi {
 
     createWafRuleExclusionWithHttpInfo(firewall_id, firewall_version_number, opts) {
       opts = opts || {};
-      let postBody = opts['inline_object2'];
+      let postBody = opts['inline_object4'];
       // verify the required parameter 'firewall_id' is set
       if (firewall_id === undefined || firewall_id === null) {
         throw new Error("Missing the required parameter 'firewall_id' when calling createWafRuleExclusion");
@@ -196,7 +196,7 @@ export default class WafExclusionsApi {
     }
     updateWafRuleExclusionWithHttpInfo(firewall_id, firewall_version_number, exclusion_number, opts) {
       opts = opts || {};
-      let postBody = opts['inline_object3'];
+      let postBody = opts['inline_object5'];
       // verify the required parameter 'firewall_id' is set
       if (firewall_id === undefined || firewall_id === null) {
         throw new Error("Missing the required parameter 'firewall_id' when calling updateWafRuleExclusion");

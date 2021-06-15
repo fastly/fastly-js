@@ -13,8 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
-import InlineObject4 from '../model/InlineObject4';
-import InlineObject5 from '../model/InlineObject5';
+import InlineObject2 from '../model/InlineObject2';
+import InlineObject3 from '../model/InlineObject3';
 import ResourceBillingAddress from '../model/ResourceBillingAddress';
 
 
@@ -27,7 +27,7 @@ export default class BillingAddressApi {
 
     addBillingAddrWithHttpInfo(customer_id, opts) {
       opts = opts || {};
-      let postBody = opts['inline_object4'];
+      let postBody = opts['inline_object2'];
       // verify the required parameter 'customer_id' is set
       if (customer_id === undefined || customer_id === null) {
         throw new Error("Missing the required parameter 'customer_id' when calling addBillingAddr");
@@ -127,7 +127,7 @@ export default class BillingAddressApi {
     }
     updateBillingAddrWithHttpInfo(customer_id, opts) {
       opts = opts || {};
-      let postBody = opts['inline_object5'];
+      let postBody = opts['inline_object3'];
       // verify the required parameter 'customer_id' is set
       if (customer_id === undefined || customer_id === null) {
         throw new Error("Missing the required parameter 'customer_id' when calling updateBillingAddr");

@@ -5,7 +5,7 @@ All URIs are relative to *https://api.fastly.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createLogAzure**](LoggingAzureblobApi.md#createLogAzure) | **POST** /service/{service_id}/version/{version_id}/logging/azureblob | Create an Azure Blob Storage log endpoint
-[**deleteLoogAzure**](LoggingAzureblobApi.md#deleteLoogAzure) | **DELETE** /service/{service_id}/version/{version_id}/logging/azureblob/{logging_azureblob_name} | Delete the Azure Blob Storage log endpoint
+[**deleteLogAzure**](LoggingAzureblobApi.md#deleteLogAzure) | **DELETE** /service/{service_id}/version/{version_id}/logging/azureblob/{logging_azureblob_name} | Delete the Azure Blob Storage log endpoint
 [**getLogAzure**](LoggingAzureblobApi.md#getLogAzure) | **GET** /service/{service_id}/version/{version_id}/logging/azureblob/{logging_azureblob_name} | Get an Azure Blob Storage log endpoint
 [**listLogAzure**](LoggingAzureblobApi.md#listLogAzure) | **GET** /service/{service_id}/version/{version_id}/logging/azureblob | List Azure Blob Storage log endpoints
 [**updateLogAzure**](LoggingAzureblobApi.md#updateLogAzure) | **PUT** /service/{service_id}/version/{version_id}/logging/azureblob/{logging_azureblob_name} | Update an Azure Blob Storage log endpoint
@@ -108,9 +108,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## deleteLoogAzure
+## deleteLogAzure
 
-> Object deleteLoogAzure(service_id, version_id, logging_azureblob_name)
+> Object deleteLogAzure(service_id, version_id, logging_azureblob_name)
 
 Delete the Azure Blob Storage log endpoint
 
@@ -131,7 +131,7 @@ let apiInstance = new FastlyApi.LoggingAzureblobApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
 let logging_azureblob_name = "logging_azureblob_name_example"; // String | 
-apiInstance.deleteLoogAzure(service_id, version_id, logging_azureblob_name).then((data) => {
+apiInstance.deleteLogAzure(service_id, version_id, logging_azureblob_name).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);

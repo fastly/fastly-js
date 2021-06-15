@@ -87,19 +87,19 @@ export default class LoggingAzureblobApi {
           return response_and_data.data;
         });
     }
-    deleteLoogAzureWithHttpInfo(service_id, version_id, logging_azureblob_name) {
+    deleteLogAzureWithHttpInfo(service_id, version_id, logging_azureblob_name) {
       let postBody = null;
       // verify the required parameter 'service_id' is set
       if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteLoogAzure");
+        throw new Error("Missing the required parameter 'service_id' when calling deleteLogAzure");
       }
       // verify the required parameter 'version_id' is set
       if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteLoogAzure");
+        throw new Error("Missing the required parameter 'version_id' when calling deleteLogAzure");
       }
       // verify the required parameter 'logging_azureblob_name' is set
       if (logging_azureblob_name === undefined || logging_azureblob_name === null) {
-        throw new Error("Missing the required parameter 'logging_azureblob_name' when calling deleteLoogAzure");
+        throw new Error("Missing the required parameter 'logging_azureblob_name' when calling deleteLogAzure");
       }
 
       let pathParams = {
@@ -124,8 +124,8 @@ export default class LoggingAzureblobApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteLoogAzure(service_id, version_id, logging_azureblob_name) {
-      return this.deleteLoogAzureWithHttpInfo(service_id, version_id, logging_azureblob_name)
+    deleteLogAzure(service_id, version_id, logging_azureblob_name) {
+      return this.deleteLogAzureWithHttpInfo(service_id, version_id, logging_azureblob_name)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

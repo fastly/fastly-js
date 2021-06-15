@@ -12,14 +12,14 @@
  */
 
 import ApiClient from '../ApiClient';
-import ResourceServiceAuthorization from './ResourceServiceAuthorization';
+import InvitationsData from './InvitationsData';
 
 
-class InlineObject7 {
+class InlineObject9 {
     
     constructor() { 
         
-        InlineObject7.initialize(this);
+        InlineObject9.initialize(this);
     }
 
     
@@ -29,10 +29,10 @@ class InlineObject7 {
     
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new InlineObject7();
+            obj = obj || new InlineObject9();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ResourceServiceAuthorization]);
+                obj['data'] = InvitationsData.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -42,12 +42,12 @@ class InlineObject7 {
 }
 
 
-InlineObject7.prototype['data'] = undefined;
+InlineObject9.prototype['data'] = undefined;
 
 
 
 
 
 
-export default InlineObject7;
+export default InlineObject9;
 

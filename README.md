@@ -223,7 +223,7 @@ Class | Method | HTTP request | Description
 *FastlyApi.InvitationsApi* | [**deleteInvitation**](docs/InvitationsApi.md#deleteInvitation) | **DELETE** /invitations/{invitation_id} | Delete an invitation
 *FastlyApi.InvitationsApi* | [**listInvitations**](docs/InvitationsApi.md#listInvitations) | **GET** /invitations | List invitations
 *FastlyApi.LoggingAzureblobApi* | [**createLogAzure**](docs/LoggingAzureblobApi.md#createLogAzure) | **POST** /service/{service_id}/version/{version_id}/logging/azureblob | Create an Azure Blob Storage log endpoint
-*FastlyApi.LoggingAzureblobApi* | [**deleteLoogAzure**](docs/LoggingAzureblobApi.md#deleteLoogAzure) | **DELETE** /service/{service_id}/version/{version_id}/logging/azureblob/{logging_azureblob_name} | Delete the Azure Blob Storage log endpoint
+*FastlyApi.LoggingAzureblobApi* | [**deleteLogAzure**](docs/LoggingAzureblobApi.md#deleteLogAzure) | **DELETE** /service/{service_id}/version/{version_id}/logging/azureblob/{logging_azureblob_name} | Delete the Azure Blob Storage log endpoint
 *FastlyApi.LoggingAzureblobApi* | [**getLogAzure**](docs/LoggingAzureblobApi.md#getLogAzure) | **GET** /service/{service_id}/version/{version_id}/logging/azureblob/{logging_azureblob_name} | Get an Azure Blob Storage log endpoint
 *FastlyApi.LoggingAzureblobApi* | [**listLogAzure**](docs/LoggingAzureblobApi.md#listLogAzure) | **GET** /service/{service_id}/version/{version_id}/logging/azureblob | List Azure Blob Storage log endpoints
 *FastlyApi.LoggingAzureblobApi* | [**updateLogAzure**](docs/LoggingAzureblobApi.md#updateLogAzure) | **PUT** /service/{service_id}/version/{version_id}/logging/azureblob/{logging_azureblob_name} | Update an Azure Blob Storage log endpoint
@@ -523,7 +523,7 @@ Class | Method | HTTP request | Description
  - [FastlyApi.InlineObject5](docs/InlineObject5.md)
  - [FastlyApi.InlineObject6](docs/InlineObject6.md)
  - [FastlyApi.InlineObject7](docs/InlineObject7.md)
- - [FastlyApi.InlineObject8](docs/InlineObject8.md)
+ - [FastlyApi.InlineObject9](docs/InlineObject9.md)
  - [FastlyApi.InlineResponse200](docs/InlineResponse200.md)
  - [FastlyApi.InlineResponse2001](docs/InlineResponse2001.md)
  - [FastlyApi.InlineResponse204](docs/InlineResponse204.md)
@@ -736,7 +736,8 @@ Class | Method | HTTP request | Description
  - [FastlyApi.ResourceWafTagAllOf](docs/ResourceWafTagAllOf.md)
  - [FastlyApi.RoleUser](docs/RoleUser.md)
  - [FastlyApi.SchemasModelBackend](docs/SchemasModelBackend.md)
- - [FastlyApi.SchemasModelHeader](docs/SchemasModelHeader.md)
+ - [FastlyApi.SchemasModelGzip](docs/SchemasModelGzip.md)
+ - [FastlyApi.SchemasModelRequestSettings](docs/SchemasModelRequestSettings.md)
  - [FastlyApi.SchemasModelSettings](docs/SchemasModelSettings.md)
  - [FastlyApi.SchemasModelSnippet](docs/SchemasModelSnippet.md)
  - [FastlyApi.SchemasModelUser](docs/SchemasModelUser.md)

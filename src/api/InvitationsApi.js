@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import InlineObject6 from '../model/InlineObject6';
+import InlineObject9 from '../model/InlineObject9';
 import InlineResponse200 from '../model/InlineResponse200';
 
 
@@ -26,7 +26,7 @@ export default class InvitationsApi {
 
     createInvitationWithHttpInfo(opts) {
       opts = opts || {};
-      let postBody = opts['inline_object6'];
+      let postBody = opts['inline_object9'];
 
       let pathParams = {
       };

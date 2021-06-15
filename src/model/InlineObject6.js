@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import InvitationsData from './InvitationsData';
+import ServiceAuthorizationsData from './ServiceAuthorizationsData';
 
 
 class InlineObject6 {
@@ -32,7 +32,7 @@ class InlineObject6 {
             obj = obj || new InlineObject6();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = InvitationsData.constructFromObject(data['data']);
+                obj['data'] = ApiClient.convertToType(data['data'], [ServiceAuthorizationsData]);
             }
         }
         return obj;

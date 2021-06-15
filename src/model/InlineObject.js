@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import ModelAclEntry from './ModelAclEntry';
+import ModelDictionaryItem from './ModelDictionaryItem';
 
 
 class InlineObject {
@@ -31,8 +31,8 @@ class InlineObject {
         if (data) {
             obj = obj || new InlineObject();
 
-            if (data.hasOwnProperty('entries')) {
-                obj['entries'] = ApiClient.convertToType(data['entries'], [ModelAclEntry]);
+            if (data.hasOwnProperty('items')) {
+                obj['items'] = ApiClient.convertToType(data['items'], [ModelDictionaryItem]);
             }
         }
         return obj;
@@ -42,7 +42,7 @@ class InlineObject {
 }
 
 
-InlineObject.prototype['entries'] = undefined;
+InlineObject.prototype['items'] = undefined;
 
 
 

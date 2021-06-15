@@ -1,9 +1,9 @@
-# FastlyApi.InlineObject1
+# FastlyApi.InlineObject9
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**entries** | [**[ModelAclEntry]**](ModelAclEntry.md) |  | [optional] 
+**data** | [**InvitationsData**](InvitationsData.md) |  | [optional] 
 
 
