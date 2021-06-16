@@ -35,7 +35,7 @@ let apiInstance = new FastlyApi.WafExclusionsApi();
 let firewall_id = "firewall_id_example"; // String | 
 let firewall_version_number = 56; // Number | 
 let opts = {
-  'inline_object4': new FastlyApi.InlineObject4() // InlineObject4 | 
+  'inline_object2': new FastlyApi.InlineObject2() // InlineObject2 | 
 };
 apiInstance.createWafRuleExclusion(firewall_id, firewall_version_number, opts).then(() => {
   console.log('API called successfully.');
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **firewall_id** | **String**|  | 
  **firewall_version_number** | **Number**|  | 
- **inline_object4** | [**InlineObject4**](InlineObject4.md)|  | [optional] 
+ **inline_object2** | [**InlineObject2**](InlineObject2.md)|  | [optional] 
 
 ### Return type
 
@@ -266,7 +266,7 @@ let firewall_id = "firewall_id_example"; // String |
 let firewall_version_number = 56; // Number | 
 let exclusion_number = 56; // Number | 
 let opts = {
-  'inline_object5': new FastlyApi.InlineObject5() // InlineObject5 | 
+  'inline_object3': new FastlyApi.InlineObject3() // InlineObject3 | 
 };
 apiInstance.updateWafRuleExclusion(firewall_id, firewall_version_number, exclusion_number, opts).then(() => {
   console.log('API called successfully.');
@@ -284,7 +284,7 @@ Name | Type | Description  | Notes
  **firewall_id** | **String**|  | 
  **firewall_version_number** | **Number**|  | 
  **exclusion_number** | **Number**|  | 
- **inline_object5** | [**InlineObject5**](InlineObject5.md)|  | [optional] 
+ **inline_object3** | [**InlineObject3**](InlineObject3.md)|  | [optional] 
 
 ### Return type
 

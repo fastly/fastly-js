@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**items** | [**[ModelDictionaryItem]**](ModelDictionaryItem.md) |  | [optional] 
+**entries** | [**[ModelAclEntry]**](ModelAclEntry.md) |  | [optional] 
 
 

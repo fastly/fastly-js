@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**InvitationsData**](InvitationsData.md) |  | [optional] 
+**data** | [**[ResourceServiceAuthorization]**](ResourceServiceAuthorization.md) |  | [optional] 
 
 

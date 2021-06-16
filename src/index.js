@@ -24,7 +24,7 @@ import InlineObject3 from './model/InlineObject3';
 import InlineObject4 from './model/InlineObject4';
 import InlineObject5 from './model/InlineObject5';
 import InlineObject6 from './model/InlineObject6';
-import InlineObject7 from './model/InlineObject7';
+import InlineObject8 from './model/InlineObject8';
 import InlineObject9 from './model/InlineObject9';
 import InlineResponse200 from './model/InlineResponse200';
 import InlineResponse2001 from './model/InlineResponse2001';
@@ -239,7 +239,7 @@ import ResourceWafTagAllOf from './model/ResourceWafTagAllOf';
 import RoleUser from './model/RoleUser';
 import SchemasModelBackend from './model/SchemasModelBackend';
 import SchemasModelGzip from './model/SchemasModelGzip';
-import SchemasModelRequestSettings from './model/SchemasModelRequestSettings';
+import SchemasModelHeader from './model/SchemasModelHeader';
 import SchemasModelSettings from './model/SchemasModelSettings';
 import SchemasModelSnippet from './model/SchemasModelSnippet';
 import SchemasModelUser from './model/SchemasModelUser';
@@ -379,7 +379,7 @@ export {
     InlineObject6,
 
     
-    InlineObject7,
+    InlineObject8,
 
     
     InlineObject9,
@@ -1024,7 +1024,7 @@ export {
     SchemasModelGzip,
 
     
-    SchemasModelRequestSettings,
+    SchemasModelHeader,
 
     
     SchemasModelSettings,

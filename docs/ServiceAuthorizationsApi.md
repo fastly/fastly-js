@@ -137,7 +137,7 @@ token.apiKey = 'YOUR API KEY';
 
 let apiInstance = new FastlyApi.ServiceAuthorizationsApi();
 let opts = {
-  'inline_object6': new FastlyApi.InlineObject6() // InlineObject6 | 
+  'inline_object8': new FastlyApi.InlineObject8() // InlineObject8 | 
 };
 apiInstance.deleteServiceAuthorization2(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -152,7 +152,7 @@ apiInstance.deleteServiceAuthorization2(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object6** | [**InlineObject6**](InlineObject6.md)|  | [optional] 
+ **inline_object8** | [**InlineObject8**](InlineObject8.md)|  | [optional] 
 
 ### Return type
 
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 
 ## updateServiceAuthorization2
 
-> InlineObject7 updateServiceAuthorization2(opts)
+> InlineObject9 updateServiceAuthorization2(opts)
 
 Update service authorizations
 
@@ -347,7 +347,7 @@ token.apiKey = 'YOUR API KEY';
 
 let apiInstance = new FastlyApi.ServiceAuthorizationsApi();
 let opts = {
-  'inline_object7': new FastlyApi.InlineObject7() // InlineObject7 | 
+  'inline_object9': new FastlyApi.InlineObject9() // InlineObject9 | 
 };
 apiInstance.updateServiceAuthorization2(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -362,11 +362,11 @@ apiInstance.updateServiceAuthorization2(opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inline_object7** | [**InlineObject7**](InlineObject7.md)|  | [optional] 
+ **inline_object9** | [**InlineObject9**](InlineObject9.md)|  | [optional] 
 
 ### Return type
 
-[**InlineObject7**](InlineObject7.md)
+[**InlineObject9**](InlineObject9.md)
 
 ### Authorization
 

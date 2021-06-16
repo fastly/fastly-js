@@ -16,12 +16,12 @@ import ModelCacheSettings from './ModelCacheSettings';
 import ModelCondition from './ModelCondition';
 import ModelDirector from './ModelDirector';
 import ModelDomain from './ModelDomain';
-import ModelHeader from './ModelHeader';
 import ModelHealthcheck from './ModelHealthcheck';
+import ModelRequestSettings from './ModelRequestSettings';
 import ModelResponseObject from './ModelResponseObject';
 import SchemasModelBackend from './SchemasModelBackend';
 import SchemasModelGzip from './SchemasModelGzip';
-import SchemasModelRequestSettings from './SchemasModelRequestSettings';
+import SchemasModelHeader from './SchemasModelHeader';
 import SchemasModelSettings from './SchemasModelSettings';
 import SchemasModelSnippet from './SchemasModelSnippet';
 import SchemasModelVcl from './SchemasModelVcl';
@@ -62,13 +62,13 @@ class ModelVersionDetail {
                 obj['gzips'] = ApiClient.convertToType(data['gzips'], [SchemasModelGzip]);
             }
             if (data.hasOwnProperty('headers')) {
-                obj['headers'] = ApiClient.convertToType(data['headers'], [ModelHeader]);
+                obj['headers'] = ApiClient.convertToType(data['headers'], [SchemasModelHeader]);
             }
             if (data.hasOwnProperty('healthchecks')) {
                 obj['healthchecks'] = ApiClient.convertToType(data['healthchecks'], [ModelHealthcheck]);
             }
             if (data.hasOwnProperty('request_settings')) {
-                obj['request_settings'] = ApiClient.convertToType(data['request_settings'], [SchemasModelRequestSettings]);
+                obj['request_settings'] = ApiClient.convertToType(data['request_settings'], [ModelRequestSettings]);
             }
             if (data.hasOwnProperty('response_objects')) {
                 obj['response_objects'] = ApiClient.convertToType(data['response_objects'], [ModelResponseObject]);

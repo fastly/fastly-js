@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import WafFirewallsFirewallIdVersionsFirewallVersionNumberExclusionsData from './WafFirewallsFirewallIdVersionsFirewallVersionNumberExclusionsData';
+import CustomerCustomerIdBillingAddressData from './CustomerCustomerIdBillingAddressData';
 
 
 class InlineObject4 {
@@ -32,7 +32,7 @@ class InlineObject4 {
             obj = obj || new InlineObject4();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = WafFirewallsFirewallIdVersionsFirewallVersionNumberExclusionsData.constructFromObject(data['data']);
+                obj['data'] = CustomerCustomerIdBillingAddressData.constructFromObject(data['data']);
             }
         }
         return obj;

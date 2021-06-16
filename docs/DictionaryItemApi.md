@@ -37,7 +37,7 @@ let apiInstance = new FastlyApi.DictionaryItemApi();
 let service_id = "service_id_example"; // String | 
 let dictionary_id = "dictionary_id_example"; // String | 
 let opts = {
-  'inline_object': new FastlyApi.InlineObject() // InlineObject | 
+  'inline_object1': new FastlyApi.InlineObject1() // InlineObject1 | 
 };
 apiInstance.bulkUpdateDictionaryItem(service_id, dictionary_id, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **service_id** | **String**|  | 
  **dictionary_id** | **String**|  | 
- **inline_object** | [**InlineObject**](InlineObject.md)|  | [optional] 
+ **inline_object1** | [**InlineObject1**](InlineObject1.md)|  | [optional] 
 
 ### Return type
 

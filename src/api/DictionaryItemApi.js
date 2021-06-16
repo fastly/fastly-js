@@ -14,7 +14,7 @@
 
 import ApiClient from "../ApiClient";
 import Direction from '../model/Direction';
-import InlineObject from '../model/InlineObject';
+import InlineObject1 from '../model/InlineObject1';
 import ModelDictionaryItem from '../model/ModelDictionaryItem';
 
 
@@ -27,7 +27,7 @@ export default class DictionaryItemApi {
 
     bulkUpdateDictionaryItemWithHttpInfo(service_id, dictionary_id, opts) {
       opts = opts || {};
-      let postBody = opts['inline_object'];
+      let postBody = opts['inline_object1'];
       // verify the required parameter 'service_id' is set
       if (service_id === undefined || service_id === null) {
         throw new Error("Missing the required parameter 'service_id' when calling bulkUpdateDictionaryItem");

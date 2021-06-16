@@ -13,8 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
-import InlineObject6 from '../model/InlineObject6';
-import InlineObject7 from '../model/InlineObject7';
+import InlineObject8 from '../model/InlineObject8';
+import InlineObject9 from '../model/InlineObject9';
 import InlineResponse204 from '../model/InlineResponse204';
 import ResourceServiceAuthorization from '../model/ResourceServiceAuthorization';
 
@@ -90,7 +90,7 @@ export default class ServiceAuthorizationsApi {
     }
     deleteServiceAuthorization2WithHttpInfo(opts) {
       opts = opts || {};
-      let postBody = opts['inline_object6'];
+      let postBody = opts['inline_object8'];
 
       let pathParams = {
       };
@@ -217,7 +217,7 @@ export default class ServiceAuthorizationsApi {
     }
     updateServiceAuthorization2WithHttpInfo(opts) {
       opts = opts || {};
-      let postBody = opts['inline_object7'];
+      let postBody = opts['inline_object9'];
 
       let pathParams = {
       };
@@ -231,7 +231,7 @@ export default class ServiceAuthorizationsApi {
       let authNames = ['token'];
       let contentTypes = ['application/vnd.api+json; ext=bulk'];
       let accepts = ['application/vnd.api+json; ext=bulk'];
-      let returnType = InlineObject7;
+      let returnType = InlineObject9;
       return this.apiClient.callApi(
         '/service-authorizations', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
