@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createLogKinesis`
 
-> LoggingKinesisResponse createLogKinesis(service_id, version_id, opts)
+> createLogKinesis(service_id, version_id, opts)
 
 Create  an Amazon Kinesis log endpoint
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ## `deleteLogKinesis`
 
-> Object deleteLogKinesis(service_id, version_id, logging_kinesis_name)
+> deleteLogKinesis(service_id, version_id, logging_kinesis_name)
 
 Delete the Amazon Kinesis log endpoint
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ## `getLogKinesis`
 
-> LoggingKinesisResponse getLogKinesis(service_id, version_id, logging_kinesis_name)
+> getLogKinesis(service_id, version_id, logging_kinesis_name)
 
 Get an Amazon Kinesis log endpoint
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ## `listLogKinesis`
 
-> [LoggingKinesisResponse] listLogKinesis(service_id, version_id)
+> listLogKinesis(service_id, version_id)
 
 List Amazon Kinesis log endpoints
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 ## `updateLogKinesis`
 
-> LoggingKinesisResponse updateLogKinesis(service_id, version_id, logging_kinesis_name)
+> updateLogKinesis(service_id, version_id, logging_kinesis_name)
 
 Update the Amazon Kinesis log endpoint
 

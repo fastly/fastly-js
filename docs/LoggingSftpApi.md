@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createLogSftp`
 
-> LoggingSftpResponse createLogSftp(service_id, version_id, opts)
+> createLogSftp(service_id, version_id, opts)
 
 Create an SFTP log endpoint
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ## `deleteLogSftp`
 
-> Object deleteLogSftp(service_id, version_id, logging_sftp_name)
+> deleteLogSftp(service_id, version_id, logging_sftp_name)
 
 Delete an SFTP log endpoint
 
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 ## `getLogSftp`
 
-> LoggingSftpResponse getLogSftp(service_id, version_id, logging_sftp_name)
+> getLogSftp(service_id, version_id, logging_sftp_name)
 
 Get an SFTP log endpoint
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ## `listLogSftp`
 
-> [LoggingSftpResponse] listLogSftp(service_id, version_id)
+> listLogSftp(service_id, version_id)
 
 List SFTP log endpoints
 
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 ## `updateLogSftp`
 
-> LoggingSftpResponse updateLogSftp(service_id, version_id, logging_sftp_name, opts)
+> updateLogSftp(service_id, version_id, logging_sftp_name, opts)
 
 Update an SFTP log endpoint
 

@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createTlsSub`
 
-> TlsSubscriptionResponse createTlsSub(opts)
+> createTlsSub(opts)
 
 Create a TLS subscription
 
@@ -84,7 +84,7 @@ null (empty response body)
 
 ## `getTlsSub`
 
-> TlsSubscriptionResponse getTlsSub(tls_subscription_id, opts)
+> getTlsSub(tls_subscription_id, opts)
 
 Get a TLS subscription
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ## `listTlsSubs`
 
-> TlsSubscriptionsResponse listTlsSubs(opts)
+> listTlsSubs(opts)
 
 List TLS subscriptions
 
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ## `patchTlsSub`
 
-> TlsSubscriptionResponse patchTlsSub(tls_subscription_id, opts)
+> patchTlsSub(tls_subscription_id, opts)
 
 Update a TLS subscription
 

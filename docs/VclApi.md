@@ -22,7 +22,7 @@ Method | Fastly API endpoint | Description
 
 ## `createCustomVcl`
 
-> VclResponse createCustomVcl(service_id, version_id, opts)
+> createCustomVcl(service_id, version_id, opts)
 
 Create a custom VCL file
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ## `deleteCustomVcl`
 
-> Object deleteCustomVcl(service_id, version_id, vcl_name)
+> deleteCustomVcl(service_id, version_id, vcl_name)
 
 Delete a custom VCL file
 
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ## `getCustomVcl`
 
-> VclResponse getCustomVcl(service_id, version_id, vcl_name, opts)
+> getCustomVcl(service_id, version_id, vcl_name, opts)
 
 Get a custom VCL file
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ## `getCustomVclBoilerplate`
 
-> String getCustomVclBoilerplate(service_id, version_id)
+> getCustomVclBoilerplate(service_id, version_id)
 
 Get boilerplate VCL
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ## `getCustomVclGenerated`
 
-> VclResponse getCustomVclGenerated(service_id, version_id)
+> getCustomVclGenerated(service_id, version_id)
 
 Get the generated VCL for a service
 
@@ -278,7 +278,7 @@ null (empty response body)
 
 ## `getCustomVclRaw`
 
-> String getCustomVclRaw(service_id, version_id, vcl_name)
+> getCustomVclRaw(service_id, version_id, vcl_name)
 
 Download a custom VCL file
 
@@ -314,7 +314,7 @@ Name | Type | Description  | Notes
 
 ## `listCustomVcl`
 
-> [VclResponse] listCustomVcl(service_id, version_id)
+> listCustomVcl(service_id, version_id)
 
 List custom VCL files
 
@@ -348,7 +348,7 @@ Name | Type | Description  | Notes
 
 ## `setCustomVclMain`
 
-> VclResponse setCustomVclMain(service_id, version_id, vcl_name)
+> setCustomVclMain(service_id, version_id, vcl_name)
 
 Set a custom VCL file as main
 
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 
 ## `updateCustomVcl`
 
-> VclResponse updateCustomVcl(service_id, version_id, vcl_name, opts)
+> updateCustomVcl(service_id, version_id, vcl_name, opts)
 
 Update a custom VCL file
 

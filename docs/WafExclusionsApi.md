@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createWafRuleExclusion`
 
-> WafExclusionResponse createWafRuleExclusion(firewall_id, firewall_version_number, opts)
+> createWafRuleExclusion(firewall_id, firewall_version_number, opts)
 
 Create a WAF rule exclusion
 
@@ -90,7 +90,7 @@ null (empty response body)
 
 ## `getWafRuleExclusion`
 
-> WafExclusionResponse getWafRuleExclusion(firewall_id, firewall_version_number, exclusion_number)
+> getWafRuleExclusion(firewall_id, firewall_version_number, exclusion_number)
 
 Get a WAF rule exclusion
 
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 
 ## `listWafRuleExclusions`
 
-> WafExclusionsResponse listWafRuleExclusions(firewall_id, firewall_version_number, opts)
+> listWafRuleExclusions(firewall_id, firewall_version_number, opts)
 
 List WAF rule exclusions
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ## `updateWafRuleExclusion`
 
-> WafExclusionResponse updateWafRuleExclusion(firewall_id, firewall_version_number, exclusion_number, opts)
+> updateWafRuleExclusion(firewall_id, firewall_version_number, exclusion_number, opts)
 
 Update a WAF rule exclusion
 

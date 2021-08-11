@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `deleteCustomer`
 
-> Object deleteCustomer(customer_id)
+> deleteCustomer(customer_id)
 
 Delete a customer
 
@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ## `getCustomer`
 
-> CustomerResponse getCustomer(customer_id)
+> getCustomer(customer_id)
 
 Get a customer
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ## `getLoggedInCustomer`
 
-> CustomerResponse getLoggedInCustomer()
+> getLoggedInCustomer()
 
 Get the logged in customer
 
@@ -109,7 +109,7 @@ This endpoint does not need any parameters.
 
 ## `listUsers`
 
-> [SchemasUserResponse] listUsers(customer_id)
+> listUsers(customer_id)
 
 List users
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ## `updateCustomer`
 
-> CustomerResponse updateCustomer(customer_id, opts)
+> updateCustomer(customer_id, opts)
 
 Update a customer
 

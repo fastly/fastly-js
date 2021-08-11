@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createLogScalyr`
 
-> LoggingScalyrResponse createLogScalyr(service_id, version_id, opts)
+> createLogScalyr(service_id, version_id, opts)
 
 Create a Scalyr log endpoint
 
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ## `deleteLogScalyr`
 
-> Object deleteLogScalyr(service_id, version_id, logging_scalyr_name)
+> deleteLogScalyr(service_id, version_id, logging_scalyr_name)
 
 Delete the Scalyr log endpoint
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ## `getLogScalyr`
 
-> LoggingScalyrResponse getLogScalyr(service_id, version_id, logging_scalyr_name)
+> getLogScalyr(service_id, version_id, logging_scalyr_name)
 
 Get a Scalyr log endpoint
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ## `listLogScalyr`
 
-> [LoggingScalyrResponse] listLogScalyr(service_id, version_id)
+> listLogScalyr(service_id, version_id)
 
 List Scalyr log endpoints
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ## `updateLogScalyr`
 
-> LoggingScalyrResponse updateLogScalyr(service_id, version_id, logging_scalyr_name, opts)
+> updateLogScalyr(service_id, version_id, logging_scalyr_name, opts)
 
 Update the Scalyr log endpoint
 

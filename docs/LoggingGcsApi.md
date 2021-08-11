@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createLogGcs`
 
-> LoggingGcsResponse createLogGcs(service_id, version_id, opts)
+> createLogGcs(service_id, version_id, opts)
 
 Create a GCS log endpoint
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## `deleteLogGcs`
 
-> Object deleteLogGcs(service_id, version_id, logging_gcs_name)
+> deleteLogGcs(service_id, version_id, logging_gcs_name)
 
 Delete a GCS log endpoint
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ## `getLogGcs`
 
-> LoggingGcsResponse getLogGcs(service_id, version_id, logging_gcs_name)
+> getLogGcs(service_id, version_id, logging_gcs_name)
 
 Get a GCS log endpoint
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ## `listLogGcs`
 
-> [LoggingGcsResponse] listLogGcs(service_id, version_id)
+> listLogGcs(service_id, version_id)
 
 List GCS log endpoints
 
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 
 ## `updateLogGcs`
 
-> LoggingGcsResponse updateLogGcs(service_id, version_id, logging_gcs_name, opts)
+> updateLogGcs(service_id, version_id, logging_gcs_name, opts)
 
 Update a GCS log endpoint
 

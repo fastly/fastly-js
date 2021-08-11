@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createDirector`
 
-> DirectorResponse createDirector(service_id, version_id, opts)
+> createDirector(service_id, version_id, opts)
 
 Create a director
 
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ## `deleteDirector`
 
-> Object deleteDirector(service_id, version_id, director_name)
+> deleteDirector(service_id, version_id, director_name)
 
 Delete a director
 
@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 ## `getDirector`
 
-> DirectorResponse getDirector(service_id, version_id, director_name)
+> getDirector(service_id, version_id, director_name)
 
 Get a director
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ## `listDirectors`
 
-> [DirectorResponse] listDirectors(service_id, version_id)
+> listDirectors(service_id, version_id)
 
 List directors
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ## `updateDirector`
 
-> DirectorResponse updateDirector(service_id, version_id, director_name)
+> updateDirector(service_id, version_id, director_name)
 
 Update a director
 

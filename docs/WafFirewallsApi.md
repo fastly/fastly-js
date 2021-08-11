@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createWafFirewall`
 
-> WafFirewallResponse createWafFirewall(opts)
+> createWafFirewall(opts)
 
 Create a firewall
 
@@ -86,7 +86,7 @@ null (empty response body)
 
 ## `getWafFirewall`
 
-> WafFirewallResponse getWafFirewall(firewall_id, opts)
+> getWafFirewall(firewall_id, opts)
 
 Get a firewall
 
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 ## `listWafFirewalls`
 
-> WafFirewallsResponse listWafFirewalls(opts)
+> listWafFirewalls(opts)
 
 List firewalls
 
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 ## `updateWafFirewall`
 
-> WafFirewallResponse updateWafFirewall(firewall_id, opts)
+> updateWafFirewall(firewall_id, opts)
 
 Update a firewall
 

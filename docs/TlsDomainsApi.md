@@ -12,7 +12,7 @@ Method | Fastly API endpoint | Description
 
 ## `listTlsDomains`
 
-> TlsDomainsResponse listTlsDomains(opts)
+> listTlsDomains(opts)
 
 List TLS domains
 

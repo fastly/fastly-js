@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createResponseObject`
 
-> ResponseObjectResponse createResponseObject(service_id, version_id)
+> createResponseObject(service_id, version_id)
 
 Create a Response object
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ## `deleteResponseObject`
 
-> Object deleteResponseObject(service_id, version_id, response_object_name)
+> deleteResponseObject(service_id, version_id, response_object_name)
 
 Delete a Response Object
 
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ## `getResponseObject`
 
-> ResponseObjectResponse getResponseObject(service_id, version_id, response_object_name)
+> getResponseObject(service_id, version_id, response_object_name)
 
 Get a Response object
 
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 ## `listResponseObjects`
 
-> [ResponseObjectResponse] listResponseObjects(service_id, version_id)
+> listResponseObjects(service_id, version_id)
 
 List Response objects
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ## `updateResponseObject`
 
-> ResponseObjectResponse updateResponseObject(service_id, version_id, response_object_name)
+> updateResponseObject(service_id, version_id, response_object_name)
 
 Update a Response object
 

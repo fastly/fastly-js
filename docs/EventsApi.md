@@ -13,7 +13,7 @@ Method | Fastly API endpoint | Description
 
 ## `getEvent`
 
-> EventResponse getEvent(event_id)
+> getEvent(event_id)
 
 Get an event
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ## `listEvents`
 
-> EventsResponse listEvents(opts)
+> listEvents(opts)
 
 List events
 

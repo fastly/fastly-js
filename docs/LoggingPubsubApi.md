@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createLogGcpPubsub`
 
-> LoggingGooglePubsubResponse createLogGcpPubsub(service_id, version_id, opts)
+> createLogGcpPubsub(service_id, version_id, opts)
 
 Create a GCP Cloud Pub/Sub log endpoint
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ## `deleteLogGcpPubsub`
 
-> Object deleteLogGcpPubsub(service_id, version_id, logging_google_pubsub_name)
+> deleteLogGcpPubsub(service_id, version_id, logging_google_pubsub_name)
 
 Delete a GCP Cloud Pub/Sub log endpoint
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ## `getLogGcpPubsub`
 
-> LoggingGooglePubsubResponse getLogGcpPubsub(service_id, version_id, logging_google_pubsub_name)
+> getLogGcpPubsub(service_id, version_id, logging_google_pubsub_name)
 
 Get a GCP Cloud Pub/Sub log endpoint
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ## `listLogGcpPubsub`
 
-> [LoggingGooglePubsubResponse] listLogGcpPubsub(service_id, version_id)
+> listLogGcpPubsub(service_id, version_id)
 
 List GCP Cloud Pub/Sub log endpoints
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 ## `updateLogGcpPubsub`
 
-> LoggingGooglePubsubResponse updateLogGcpPubsub(service_id, version_id, logging_google_pubsub_name, opts)
+> updateLogGcpPubsub(service_id, version_id, logging_google_pubsub_name, opts)
 
 Update a GCP Cloud Pub/Sub log endpoint
 

@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createAcl`
 
-> AclResponse createAcl(service_id, version_id, opts)
+> createAcl(service_id, version_id, opts)
 
 Create a new ACL
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ## `deleteAcl`
 
-> Object deleteAcl(service_id, version_id, acl_name)
+> deleteAcl(service_id, version_id, acl_name)
 
 Delete an ACL
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 ## `getAcl`
 
-> AclResponse getAcl(service_id, version_id, acl_name)
+> getAcl(service_id, version_id, acl_name)
 
 Describe an ACL
 
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 
 ## `listAcls`
 
-> [AclResponse] listAcls(service_id, version_id)
+> listAcls(service_id, version_id)
 
 List ACLs
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ## `updateAcl`
 
-> Acl updateAcl(service_id, version_id, acl_name, opts)
+> updateAcl(service_id, version_id, acl_name, opts)
 
 Update an ACL
 

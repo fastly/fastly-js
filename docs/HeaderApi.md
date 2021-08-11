@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createHeaderObject`
 
-> HeaderResponse createHeaderObject(service_id, version_id, opts)
+> createHeaderObject(service_id, version_id, opts)
 
 Create a Header object
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ## `deleteHeaderObject`
 
-> Object deleteHeaderObject(service_id, version_id, header_name)
+> deleteHeaderObject(service_id, version_id, header_name)
 
 Delete a Header object
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ## `getHeaderObject`
 
-> HeaderResponse getHeaderObject(service_id, version_id, header_name)
+> getHeaderObject(service_id, version_id, header_name)
 
 Get a Header object
 
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 ## `listHeaderObjects`
 
-> [HeaderResponse] listHeaderObjects(service_id, version_id)
+> listHeaderObjects(service_id, version_id)
 
 List Header objects
 
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 ## `updateHeaderObject`
 
-> HeaderResponse updateHeaderObject(service_id, version_id, header_name, opts)
+> updateHeaderObject(service_id, version_id, header_name, opts)
 
 Update a Header object
 

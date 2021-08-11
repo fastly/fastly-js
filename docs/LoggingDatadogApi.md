@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createLogDatadog`
 
-> LoggingDatadogResponse createLogDatadog(service_id, version_id, opts)
+> createLogDatadog(service_id, version_id, opts)
 
 Create a Datadog log endpoint
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ## `deleteLogDatadog`
 
-> Object deleteLogDatadog(service_id, version_id, logging_datadog_name)
+> deleteLogDatadog(service_id, version_id, logging_datadog_name)
 
 Delete a Datadog log endpoint
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ## `getLogDatadog`
 
-> LoggingDatadogResponse getLogDatadog(service_id, version_id, logging_datadog_name)
+> getLogDatadog(service_id, version_id, logging_datadog_name)
 
 Get a Datadog log endpoint
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ## `listLogDatadog`
 
-> [LoggingDatadogResponse] listLogDatadog(service_id, version_id)
+> listLogDatadog(service_id, version_id)
 
 List Datadog log endpoints
 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 ## `updateLogDatadog`
 
-> LoggingDatadogResponse updateLogDatadog(service_id, version_id, logging_datadog_name, opts)
+> updateLogDatadog(service_id, version_id, logging_datadog_name, opts)
 
 Update a Datadog log endpoint
 

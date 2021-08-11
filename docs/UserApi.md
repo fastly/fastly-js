@@ -18,7 +18,7 @@ Method | Fastly API endpoint | Description
 
 ## `createUser`
 
-> UserResponse createUser(opts)
+> createUser(opts)
 
 Create a user
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ## `deleteUser`
 
-> Object deleteUser(user_id)
+> deleteUser(user_id)
 
 Delete a user
 
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 ## `getCurrentUser`
 
-> UserResponse getCurrentUser()
+> getCurrentUser()
 
 Get the current user
 
@@ -127,7 +127,7 @@ This endpoint does not need any parameters.
 
 ## `getUser`
 
-> UserResponse getUser(user_id)
+> getUser(user_id)
 
 Get a user
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ## `requestPasswordReset`
 
-> Object requestPasswordReset(user_login)
+> requestPasswordReset(user_login)
 
 Request a password reset
 
@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 
 ## `updateUser`
 
-> UserResponse updateUser(user_id, opts)
+> updateUser(user_id, opts)
 
 Update a user
 
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 
 ## `updateUserPassword`
 
-> UserResponse updateUserPassword(opts)
+> updateUserPassword(opts)
 
 Update the user&#39;s password
 

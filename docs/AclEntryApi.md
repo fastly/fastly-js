@@ -17,7 +17,7 @@ Method | Fastly API endpoint | Description
 
 ## `bulkUpdateAclEntries`
 
-> Object bulkUpdateAclEntries(service_id, acl_id, opts)
+> bulkUpdateAclEntries(service_id, acl_id, opts)
 
 Update multiple ACL entries
 
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 
 ## `createAclEntry`
 
-> AclEntryResponse createAclEntry(service_id, acl_id, opts)
+> createAclEntry(service_id, acl_id, opts)
 
 Create an ACL entry
 
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 ## `deleteAclEntry`
 
-> Object deleteAclEntry(service_id, acl_id, acl_entry_id)
+> deleteAclEntry(service_id, acl_id, acl_entry_id)
 
 Delete an ACL entry
 
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 ## `getAclEntry`
 
-> AclEntry getAclEntry(service_id, acl_id, acl_entry_id)
+> getAclEntry(service_id, acl_id, acl_entry_id)
 
 Describe an ACL entry
 
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 ## `listAclEntries`
 
-> [AclEntryResponse] listAclEntries(service_id, acl_id, opts)
+> listAclEntries(service_id, acl_id, opts)
 
 List ACL entries
 
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 ## `updateAclEntry`
 
-> AclEntry updateAclEntry(service_id, acl_id, acl_entry_id, opts)
+> updateAclEntry(service_id, acl_id, acl_entry_id, opts)
 
 Update an ACL entry
 

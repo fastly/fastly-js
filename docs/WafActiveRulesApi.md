@@ -95,7 +95,7 @@ null (empty response body)
 
 ## `createWafActiveRule`
 
-> OneOfwafActiveRuleResponsewafActiveRulesResponse createWafActiveRule(firewall_id, version_id, opts)
+> createWafActiveRule(firewall_id, version_id, opts)
 
 Add a rule to a WAF as an active rule
 
@@ -209,7 +209,7 @@ null (empty response body)
 
 ## `getWafActiveRule`
 
-> WafActiveRuleResponse getWafActiveRule(firewall_id, version_id, waf_rule_id, opts)
+> getWafActiveRule(firewall_id, version_id, waf_rule_id, opts)
 
 Get an active WAF rule object
 
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 
 ## `listWafActiveRules`
 
-> WafActiveRulesResponse listWafActiveRules(firewall_id, version_id, opts)
+> listWafActiveRules(firewall_id, version_id, opts)
 
 List active rules on a WAF
 
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 
 ## `updateWafActiveRule`
 
-> WafActiveRuleResponse updateWafActiveRule(firewall_id, version_id, waf_rule_id, opts)
+> updateWafActiveRule(firewall_id, version_id, waf_rule_id, opts)
 
 Update an active rule
 

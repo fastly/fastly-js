@@ -18,7 +18,7 @@ Method | Fastly API endpoint | Description
 
 ## `checkDomain`
 
-> [AnyOfobjectstringboolean] checkDomain(service_id, version_id, domain_name)
+> checkDomain(service_id, version_id, domain_name)
 
 Validate DNS configuration for a single domain on a service
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ## `checkDomains`
 
-> [Array] checkDomains(service_id, version_id)
+> checkDomains(service_id, version_id)
 
 Validate DNS configuration for all domains on a service
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ## `createDomain`
 
-> DomainResponse createDomain(service_id, version_id, opts)
+> createDomain(service_id, version_id, opts)
 
 Add a domain name to a service
 
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 ## `deleteDomain`
 
-> Object deleteDomain(service_id, version_id, domain_name)
+> deleteDomain(service_id, version_id, domain_name)
 
 Remove a domain from a service
 
@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 
 ## `getDomain`
 
-> DomainResponse getDomain(service_id, version_id, domain_name)
+> getDomain(service_id, version_id, domain_name)
 
 Describe a domain
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ## `listDomains`
 
-> DomainResponse listDomains(service_id, version_id)
+> listDomains(service_id, version_id)
 
 List domains
 
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 ## `updateDomain`
 
-> DomainResponse updateDomain(service_id, version_id, domain_name, opts)
+> updateDomain(service_id, version_id, domain_name, opts)
 
 Update a domain
 

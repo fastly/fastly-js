@@ -52,7 +52,7 @@ null (empty response body)
 
 ## `createToken`
 
-> TokenCreatedResponse createToken()
+> createToken()
 
 Create a token
 
@@ -81,7 +81,7 @@ This endpoint does not need any parameters.
 
 ## `getTokenCurrent`
 
-> TokenResponse getTokenCurrent()
+> getTokenCurrent()
 
 Get the current token
 
@@ -110,7 +110,7 @@ This endpoint does not need any parameters.
 
 ## `listTokensCustomer`
 
-> [TokenResponse] listTokensCustomer(customer_id)
+> listTokensCustomer(customer_id)
 
 List tokens for a customer
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ## `listTokensUser`
 
-> [TokenResponse] listTokensUser()
+> listTokensUser()
 
 List tokens for the authenticated user
 

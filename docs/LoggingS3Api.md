@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createLogAwsS3`
 
-> LoggingS3Response createLogAwsS3(service_id, version_id, opts)
+> createLogAwsS3(service_id, version_id, opts)
 
 Create an AWS S3 log endpoint
 
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ## `deleteLogAwsS3`
 
-> Object deleteLogAwsS3(service_id, version_id, logging_s3_name)
+> deleteLogAwsS3(service_id, version_id, logging_s3_name)
 
 Delete an AWS S3 log endpoint
 
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 ## `getLogAwsS3`
 
-> LoggingS3Response getLogAwsS3(service_id, version_id, logging_s3_name)
+> getLogAwsS3(service_id, version_id, logging_s3_name)
 
 Get an AWS S3 log endpoint
 
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 ## `listLogAwsS3`
 
-> [LoggingS3Response] listLogAwsS3(service_id, version_id)
+> listLogAwsS3(service_id, version_id)
 
 List AWS S3 log endpoints
 
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ## `updateLogAwsS3`
 
-> LoggingS3Response updateLogAwsS3(service_id, version_id, logging_s3_name, opts)
+> updateLogAwsS3(service_id, version_id, logging_s3_name, opts)
 
 Update an AWS S3 log endpoint
 

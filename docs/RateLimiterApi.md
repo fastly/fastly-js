@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createRateLimiter`
 
-> RateLimiterResponse createRateLimiter(service_id, version_id, opts)
+> createRateLimiter(service_id, version_id, opts)
 
 Create a rate limiter
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ## `deleteRateLimiter`
 
-> Object deleteRateLimiter(rate_limiter_id)
+> deleteRateLimiter(rate_limiter_id)
 
 Delete a rate limiter
 
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 
 ## `getRateLimiter`
 
-> RateLimiterResponse getRateLimiter(rate_limiter_id)
+> getRateLimiter(rate_limiter_id)
 
 Get a rate limiter
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ## `listRateLimiters`
 
-> [RateLimiterResponse] listRateLimiters(service_id, version_id)
+> listRateLimiters(service_id, version_id)
 
 List rate limiters
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ## `updateRateLimiter`
 
-> RateLimiterResponse updateRateLimiter(rate_limiter_id, opts)
+> updateRateLimiter(rate_limiter_id, opts)
 
 Update a rate limiter
 

@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createHealthcheck`
 
-> HealthcheckResponse createHealthcheck(service_id, version_id, opts)
+> createHealthcheck(service_id, version_id, opts)
 
 Create a healthcheck
 
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ## `deleteHealthcheck`
 
-> Object deleteHealthcheck(service_id, version_id, healthcheck_name)
+> deleteHealthcheck(service_id, version_id, healthcheck_name)
 
 Delete a healthcheck
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ## `getHealthcheck`
 
-> HealthcheckResponse getHealthcheck(service_id, version_id, healthcheck_name)
+> getHealthcheck(service_id, version_id, healthcheck_name)
 
 Get a healthcheck
 
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 ## `listHealthchecks`
 
-> [HealthcheckResponse] listHealthchecks(service_id, version_id)
+> listHealthchecks(service_id, version_id)
 
 List healthchecks
 
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 ## `updateHealthcheck`
 
-> HealthcheckResponse updateHealthcheck(service_id, version_id, healthcheck_name, opts)
+> updateHealthcheck(service_id, version_id, healthcheck_name, opts)
 
 Update a healthcheck
 

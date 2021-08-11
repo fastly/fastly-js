@@ -44,7 +44,7 @@ The Fastly API requires an [API token](https://developer.fastly.com/reference/ap
 The main documentation for the Fastly API can be found on our [Developer Hub](https://developer.fastly.com/reference/api).
 
 Class | Method | Description
------------- | ------------- | ------------- | -------------
+------------ | ------------- | -------------
 *FastlyApi.AclApi* | [**createAcl**](docs/AclApi.md#createAcl) | Create a new ACL
 *FastlyApi.AclApi* | [**deleteAcl**](docs/AclApi.md#deleteAcl) | Delete an ACL
 *FastlyApi.AclApi* | [**getAcl**](docs/AclApi.md#getAcl) | Describe an ACL

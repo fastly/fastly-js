@@ -17,7 +17,7 @@ Method | Fastly API endpoint | Description
 
 ## `cloneWafFirewallVersion`
 
-> WafFirewallVersionResponse cloneWafFirewallVersion(firewall_id, firewall_version_number)
+> cloneWafFirewallVersion(firewall_id, firewall_version_number)
 
 Clone a firewall version
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ## `createWafFirewallVersion`
 
-> WafFirewallVersionResponse createWafFirewallVersion(firewall_id, opts)
+> createWafFirewallVersion(firewall_id, opts)
 
 Create a firewall version
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ## `deployActivateWafFirewallVersion`
 
-> Object deployActivateWafFirewallVersion(firewall_id, firewall_version_number)
+> deployActivateWafFirewallVersion(firewall_id, firewall_version_number)
 
 Deploy or activate a firewall version
 
@@ -121,7 +121,7 @@ Name | Type | Description  | Notes
 
 ## `getWafFirewallVersion`
 
-> WafFirewallVersionResponse getWafFirewallVersion(firewall_id, firewall_version_number, opts)
+> getWafFirewallVersion(firewall_id, firewall_version_number, opts)
 
 Get a firewall version
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ## `listWafFirewallVersions`
 
-> WafFirewallVersionsResponse listWafFirewallVersions(firewall_id, opts)
+> listWafFirewallVersions(firewall_id, opts)
 
 List firewall versions
 
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 
 ## `updateWafFirewallVersion`
 
-> WafFirewallVersionResponse updateWafFirewallVersion(firewall_id, firewall_version_number, opts)
+> updateWafFirewallVersion(firewall_id, firewall_version_number, opts)
 
 Update a firewall version
 

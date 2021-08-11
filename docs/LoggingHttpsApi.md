@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createLogHttps`
 
-> LoggingHttpsResponse createLogHttps(service_id, version_id, opts)
+> createLogHttps(service_id, version_id, opts)
 
 Create an HTTPS log endpoint
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ## `deleteLogHttps`
 
-> Object deleteLogHttps(service_id, version_id, logging_https_name)
+> deleteLogHttps(service_id, version_id, logging_https_name)
 
 Delete an HTTPS log endpoint
 
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 ## `getLogHttps`
 
-> LoggingHttpsResponse getLogHttps(service_id, version_id, logging_https_name)
+> getLogHttps(service_id, version_id, logging_https_name)
 
 Get an HTTPS log endpoint
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ## `listLogHttps`
 
-> [LoggingHttpsResponse] listLogHttps(service_id, version_id)
+> listLogHttps(service_id, version_id)
 
 List HTTPS log endpoints
 
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 ## `updateLogHttps`
 
-> LoggingHttpsResponse updateLogHttps(service_id, version_id, logging_https_name, opts)
+> updateLogHttps(service_id, version_id, logging_https_name, opts)
 
 Update an HTTPS log endpoint
 

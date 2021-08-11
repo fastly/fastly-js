@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createLogAzure`
 
-> LoggingAzureblobResponse createLogAzure(service_id, version_id, opts)
+> createLogAzure(service_id, version_id, opts)
 
 Create an Azure Blob Storage log endpoint
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ## `deleteLogAzure`
 
-> Object deleteLogAzure(service_id, version_id, logging_azureblob_name)
+> deleteLogAzure(service_id, version_id, logging_azureblob_name)
 
 Delete the Azure Blob Storage log endpoint
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ## `getLogAzure`
 
-> LoggingAzureblobResponse getLogAzure(service_id, version_id, logging_azureblob_name)
+> getLogAzure(service_id, version_id, logging_azureblob_name)
 
 Get an Azure Blob Storage log endpoint
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ## `listLogAzure`
 
-> [LoggingAzureblobResponse] listLogAzure(service_id, version_id)
+> listLogAzure(service_id, version_id)
 
 List Azure Blob Storage log endpoints
 
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 ## `updateLogAzure`
 
-> LoggingAzureblobResponse updateLogAzure(service_id, version_id, logging_azureblob_name, opts)
+> updateLogAzure(service_id, version_id, logging_azureblob_name, opts)
 
 Update an Azure Blob Storage log endpoint
 

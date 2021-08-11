@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createDictionary`
 
-> DictionaryResponse createDictionary(service_id, version_id, opts)
+> createDictionary(service_id, version_id, opts)
 
 Create an edge dictionary
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ## `deleteDictionary`
 
-> Object deleteDictionary(service_id, version_id, dictionary_name)
+> deleteDictionary(service_id, version_id, dictionary_name)
 
 Delete an edge dictionary
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ## `getDictionary`
 
-> DictionaryResponse getDictionary(service_id, version_id, dictionary_name)
+> getDictionary(service_id, version_id, dictionary_name)
 
 Get an edge dictionary
 
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 ## `listDictionaries`
 
-> [DictionaryResponse] listDictionaries(service_id, version_id)
+> listDictionaries(service_id, version_id)
 
 List edge dictionaries
 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ## `updateDictionary`
 
-> DictionaryResponse updateDictionary(service_id, version_id, dictionary_name, opts)
+> updateDictionary(service_id, version_id, dictionary_name, opts)
 
 Update an edge dictionary
 

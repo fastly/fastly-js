@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createLogKafka`
 
-> LoggingKafkaResponse createLogKafka(service_id, version_id, opts)
+> createLogKafka(service_id, version_id, opts)
 
 Create a Kafka log endpoint
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 ## `deleteLogKafka`
 
-> Object deleteLogKafka(service_id, version_id, logging_kafka_name)
+> deleteLogKafka(service_id, version_id, logging_kafka_name)
 
 Delete the Kafka log endpoint
 
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 
 ## `getLogKafka`
 
-> LoggingKafkaResponse getLogKafka(service_id, version_id, logging_kafka_name)
+> getLogKafka(service_id, version_id, logging_kafka_name)
 
 Get a Kafka log endpoint
 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ## `listLogKafka`
 
-> [LoggingKafkaResponse] listLogKafka(service_id, version_id)
+> listLogKafka(service_id, version_id)
 
 List Kafka log endpoints
 
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 
 ## `updateLogKafka`
 
-> LoggingKafkaResponse updateLogKafka(service_id, version_id, logging_kafka_name)
+> updateLogKafka(service_id, version_id, logging_kafka_name)
 
 Update the Kafka log endpoint
 

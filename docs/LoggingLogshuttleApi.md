@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createLogLogshuttle`
 
-> LoggingLogshuttleResponse createLogLogshuttle(service_id, version_id, opts)
+> createLogLogshuttle(service_id, version_id, opts)
 
 Create a Log Shuttle log endpoint
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ## `deleteLogLogshuttle`
 
-> Object deleteLogLogshuttle(service_id, version_id, logging_logshuttle_name)
+> deleteLogLogshuttle(service_id, version_id, logging_logshuttle_name)
 
 Delete a Log Shuttle log endpoint
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ## `getLogLogshuttle`
 
-> LoggingLogshuttleResponse getLogLogshuttle(service_id, version_id, logging_logshuttle_name)
+> getLogLogshuttle(service_id, version_id, logging_logshuttle_name)
 
 Get a Log Shuttle log endpoint
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ## `listLogLogshuttle`
 
-> [LoggingLogshuttleResponse] listLogLogshuttle(service_id, version_id)
+> listLogLogshuttle(service_id, version_id)
 
 List Log Shuttle log endpoints
 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 ## `updateLogLogshuttle`
 
-> LoggingLogshuttleResponse updateLogLogshuttle(service_id, version_id, logging_logshuttle_name, opts)
+> updateLogLogshuttle(service_id, version_id, logging_logshuttle_name, opts)
 
 Update a Log Shuttle log endpoint
 

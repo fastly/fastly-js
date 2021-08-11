@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createLogSplunk`
 
-> LoggingSplunkResponse createLogSplunk(service_id, version_id, opts)
+> createLogSplunk(service_id, version_id, opts)
 
 Create a Splunk log endpoint
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ## `deleteLogSplunk`
 
-> Object deleteLogSplunk(service_id, version_id, logging_splunk_name)
+> deleteLogSplunk(service_id, version_id, logging_splunk_name)
 
 Delete a Splunk log endpoint
 
@@ -116,7 +116,7 @@ Name | Type | Description  | Notes
 
 ## `getLogSplunk`
 
-> LoggingSplunkResponse getLogSplunk(service_id, version_id, logging_splunk_name)
+> getLogSplunk(service_id, version_id, logging_splunk_name)
 
 Get a Splunk log endpoint
 
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ## `listLogSplunk`
 
-> [LoggingSplunkResponse] listLogSplunk(service_id, version_id)
+> listLogSplunk(service_id, version_id)
 
 List Splunk log endpoints
 
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ## `updateLogSplunk`
 
-> LoggingSplunkResponse updateLogSplunk(service_id, version_id, logging_splunk_name, opts)
+> updateLogSplunk(service_id, version_id, logging_splunk_name, opts)
 
 Update a Splunk log endpoint
 

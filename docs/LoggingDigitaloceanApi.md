@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createLogDigocean`
 
-> LoggingDigitaloceanResponse createLogDigocean(service_id, version_id, opts)
+> createLogDigocean(service_id, version_id, opts)
 
 Create a DigitalOcean Spaces log endpoint
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ## `deleteLogDigocean`
 
-> Object deleteLogDigocean(service_id, version_id, logging_digitalocean_name)
+> deleteLogDigocean(service_id, version_id, logging_digitalocean_name)
 
 Delete a DigitalOcean Spaces log endpoint
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ## `getLogDigocean`
 
-> LoggingDigitaloceanResponse getLogDigocean(service_id, version_id, logging_digitalocean_name)
+> getLogDigocean(service_id, version_id, logging_digitalocean_name)
 
 Get a DigitalOcean Spaces log endpoint
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ## `listLogDigocean`
 
-> [LoggingDigitaloceanResponse] listLogDigocean(service_id, version_id)
+> listLogDigocean(service_id, version_id)
 
 List DigitalOcean Spaces log endpoints
 
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 ## `updateLogDigocean`
 
-> LoggingDigitaloceanResponse updateLogDigocean(service_id, version_id, logging_digitalocean_name, opts)
+> updateLogDigocean(service_id, version_id, logging_digitalocean_name, opts)
 
 Update a DigitalOcean Spaces log endpoint
 

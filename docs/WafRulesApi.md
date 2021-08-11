@@ -13,7 +13,7 @@ Method | Fastly API endpoint | Description
 
 ## `getWafRule`
 
-> WafRuleResponse getWafRule(waf_rule_id, opts)
+> getWafRule(waf_rule_id, opts)
 
 Get a rule
 
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ## `listWafRules`
 
-> WafRulesResponse listWafRules(opts)
+> listWafRules(opts)
 
 List available WAF rules
 

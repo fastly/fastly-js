@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createLogSumologic`
 
-> LoggingSumologicResponse createLogSumologic(service_id, version_id, opts)
+> createLogSumologic(service_id, version_id, opts)
 
 Create a Sumologic log endpoint
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ## `deleteLogSumologic`
 
-> Object deleteLogSumologic(service_id, version_id, logging_sumologic_name)
+> deleteLogSumologic(service_id, version_id, logging_sumologic_name)
 
 Delete a Sumologic log endpoint
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ## `getLogSumologic`
 
-> LoggingSumologicResponse getLogSumologic(service_id, version_id, logging_sumologic_name)
+> getLogSumologic(service_id, version_id, logging_sumologic_name)
 
 Get a Sumologic log endpoint
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ## `listLogSumologic`
 
-> [LoggingSumologicResponse] listLogSumologic(service_id, version_id)
+> listLogSumologic(service_id, version_id)
 
 List Sumologic log endpoints
 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 ## `updateLogSumologic`
 
-> LoggingSumologicResponse updateLogSumologic(service_id, version_id, logging_sumologic_name, opts)
+> updateLogSumologic(service_id, version_id, logging_sumologic_name, opts)
 
 Update a Sumologic log endpoint
 

@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createCacheSettings`
 
-> CacheSettingResponse createCacheSettings(service_id, version_id, opts)
+> createCacheSettings(service_id, version_id, opts)
 
 Create a cache settings object
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ## `deleteCacheSettings`
 
-> Object deleteCacheSettings(service_id, version_id, cache_settings_name)
+> deleteCacheSettings(service_id, version_id, cache_settings_name)
 
 Delete a cache settings object
 
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 ## `getCacheSettings`
 
-> CacheSettingResponse getCacheSettings(service_id, version_id, cache_settings_name)
+> getCacheSettings(service_id, version_id, cache_settings_name)
 
 Get a cache settings object
 
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ## `listCacheSettings`
 
-> [CacheSettingResponse] listCacheSettings(service_id, version_id)
+> listCacheSettings(service_id, version_id)
 
 List cache settings objects
 
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 ## `updateCacheSettings`
 
-> CacheSettingResponse updateCacheSettings(service_id, version_id, cache_settings_name, opts)
+> updateCacheSettings(service_id, version_id, cache_settings_name, opts)
 
 Update a cache settings object
 

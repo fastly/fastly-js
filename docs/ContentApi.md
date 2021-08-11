@@ -12,7 +12,7 @@ Method | Fastly API endpoint | Description
 
 ## `contentCheck`
 
-> [Content] contentCheck(opts)
+> contentCheck(opts)
 
 Check status of content in each data center cache
 

@@ -12,7 +12,7 @@ Method | Fastly API endpoint | Description
 
 ## `listFastlyIps`
 
-> PublicIpList listFastlyIps()
+> listFastlyIps()
 
 List Fastly&#39;s public IPs
 

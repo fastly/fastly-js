@@ -13,7 +13,7 @@ Method | Fastly API endpoint | Description
 
 ## `getPackage`
 
-> PackageResponse getPackage(service_id, version_id)
+> getPackage(service_id, version_id)
 
 Get details of the service&#39;s Compute@Edge package.
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ## `putPackage`
 
-> PackageResponse putPackage(service_id, version_id, opts)
+> putPackage(service_id, version_id, opts)
 
 Upload a Compute@Edge package.
 

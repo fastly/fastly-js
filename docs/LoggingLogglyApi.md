@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createLogLoggly`
 
-> LoggingLogglyResponse createLogLoggly(service_id, version_id, opts)
+> createLogLoggly(service_id, version_id, opts)
 
 Create a Loggly log endpoint
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ## `deleteLogLoggly`
 
-> Object deleteLogLoggly(service_id, version_id, logging_loggly_name)
+> deleteLogLoggly(service_id, version_id, logging_loggly_name)
 
 Delete a Loggly log endpoint
 
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ## `getLogLoggly`
 
-> LoggingLogglyResponse getLogLoggly(service_id, version_id, logging_loggly_name)
+> getLogLoggly(service_id, version_id, logging_loggly_name)
 
 Get a Loggly log endpoint
 
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 
 ## `listLogLoggly`
 
-> [LoggingLogglyResponse] listLogLoggly(service_id, version_id)
+> listLogLoggly(service_id, version_id)
 
 List Loggly log endpoints
 
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 
 ## `updateLogLoggly`
 
-> LoggingLogglyResponse updateLogLoggly(service_id, version_id, logging_loggly_name, opts)
+> updateLogLoggly(service_id, version_id, logging_loggly_name, opts)
 
 Update a Loggly log endpoint
 

@@ -12,7 +12,7 @@ Method | Fastly API endpoint | Description
 
 ## `diffServiceVersions`
 
-> DiffResponse diffServiceVersions(service_id, from_version_id, to_version_id, opts)
+> diffServiceVersions(service_id, from_version_id, to_version_id, opts)
 
 Diff two service versions
 

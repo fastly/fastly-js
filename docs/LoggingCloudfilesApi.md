@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createLogCloudfiles`
 
-> LoggingCloudfilesResponse createLogCloudfiles(service_id, version_id, opts)
+> createLogCloudfiles(service_id, version_id, opts)
 
 Create a Cloud Files log endpoint
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ## `deleteLogCloudfiles`
 
-> Object deleteLogCloudfiles(service_id, version_id, logging_cloudfiles_name)
+> deleteLogCloudfiles(service_id, version_id, logging_cloudfiles_name)
 
 Delete the Cloud Files log endpoint
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ## `getLogCloudfiles`
 
-> LoggingCloudfilesResponse getLogCloudfiles(service_id, version_id, logging_cloudfiles_name)
+> getLogCloudfiles(service_id, version_id, logging_cloudfiles_name)
 
 Get a Cloud Files log endpoint
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ## `listLogCloudfiles`
 
-> [LoggingCloudfilesResponse] listLogCloudfiles(service_id, version_id)
+> listLogCloudfiles(service_id, version_id)
 
 List Cloud Files log endpoints
 
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 ## `updateLogCloudfiles`
 
-> LoggingCloudfilesResponse updateLogCloudfiles(service_id, version_id, logging_cloudfiles_name, opts)
+> updateLogCloudfiles(service_id, version_id, logging_cloudfiles_name, opts)
 
 Update the Cloud Files log endpoint
 

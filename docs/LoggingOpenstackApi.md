@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createLogOpenstack`
 
-> LoggingOpenstackResponse createLogOpenstack(service_id, version_id, opts)
+> createLogOpenstack(service_id, version_id, opts)
 
 Create an OpenStack log endpoint
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ## `deleteLogOpenstack`
 
-> Object deleteLogOpenstack(service_id, version_id, logging_openstack_name)
+> deleteLogOpenstack(service_id, version_id, logging_openstack_name)
 
 Delete an OpenStack log endpoint
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ## `getLogOpenstack`
 
-> LoggingOpenstackResponse getLogOpenstack(service_id, version_id, logging_openstack_name)
+> getLogOpenstack(service_id, version_id, logging_openstack_name)
 
 Get an OpenStack log endpoint
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ## `listLogOpenstack`
 
-> [LoggingOpenstackResponse] listLogOpenstack(service_id, version_id)
+> listLogOpenstack(service_id, version_id)
 
 List OpenStack log endpoints
 
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 ## `updateLogOpenstack`
 
-> LoggingOpenstackResponse updateLogOpenstack(service_id, version_id, logging_openstack_name, opts)
+> updateLogOpenstack(service_id, version_id, logging_openstack_name, opts)
 
 Update an OpenStack log endpoint
 

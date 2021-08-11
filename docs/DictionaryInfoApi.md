@@ -12,7 +12,7 @@ Method | Fastly API endpoint | Description
 
 ## `getDictionaryInfo`
 
-> DictionaryInfoResponse getDictionaryInfo(service_id, version_id, dictionary_id)
+> getDictionaryInfo(service_id, version_id, dictionary_id)
 
 Get edge dictionary metadata
 

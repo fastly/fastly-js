@@ -20,7 +20,7 @@ Method | Fastly API endpoint | Description
 
 ## `activateServiceVersion`
 
-> VersionResponse activateServiceVersion(service_id, version_id)
+> activateServiceVersion(service_id, version_id)
 
 Activate a service version
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ## `cloneServiceVersion`
 
-> Version cloneServiceVersion(service_id, version_id)
+> cloneServiceVersion(service_id, version_id)
 
 Clone a service version
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ## `createServiceVersion`
 
-> VersionCreateResponse createServiceVersion(service_id)
+> createServiceVersion(service_id)
 
 Create a service version
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ## `deactivateServiceVersion`
 
-> VersionResponse deactivateServiceVersion(service_id, version_id)
+> deactivateServiceVersion(service_id, version_id)
 
 Deactivate a service version
 
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ## `getServiceVersion`
 
-> VersionResponse getServiceVersion(service_id, version_id)
+> getServiceVersion(service_id, version_id)
 
 Get a version of a service
 
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 
 ## `listServiceVersions`
 
-> [VersionResponse] listServiceVersions(service_id)
+> listServiceVersions(service_id)
 
 List versions of a service
 
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 ## `lockServiceVersion`
 
-> Version lockServiceVersion(service_id, version_id)
+> lockServiceVersion(service_id, version_id)
 
 Lock a service version
 
@@ -254,7 +254,7 @@ Name | Type | Description  | Notes
 
 ## `updateServiceVersion`
 
-> VersionResponse updateServiceVersion(service_id, version_id, opts)
+> updateServiceVersion(service_id, version_id, opts)
 
 Update a service version
 
@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
 
 ## `validateServiceVersion`
 
-> Object validateServiceVersion(service_id, version_id)
+> validateServiceVersion(service_id, version_id)
 
 Validate a service version
 

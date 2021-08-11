@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createLogBigquery`
 
-> LoggingBigqueryResponse createLogBigquery(service_id, version_id, opts)
+> createLogBigquery(service_id, version_id, opts)
 
 Create a BigQuery log endpoint
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ## `deleteLogBigquery`
 
-> Object deleteLogBigquery(service_id, version_id, logging_bigquery_name)
+> deleteLogBigquery(service_id, version_id, logging_bigquery_name)
 
 Delete a BigQuery log endpoint
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 ## `getLogBigquery`
 
-> LoggingBigqueryResponse getLogBigquery(service_id, version_id, logging_bigquery_name)
+> getLogBigquery(service_id, version_id, logging_bigquery_name)
 
 Get a BigQuery log endpoint
 
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ## `listLogBigquery`
 
-> [LoggingBigqueryResponse] listLogBigquery(service_id, version_id)
+> listLogBigquery(service_id, version_id)
 
 List BigQuery log endpoints
 
@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 
 ## `updateLogBigquery`
 
-> LoggingBigqueryResponse updateLogBigquery(service_id, version_id, logging_bigquery_name, opts)
+> updateLogBigquery(service_id, version_id, logging_bigquery_name, opts)
 
 Update a BigQuery log endpoint
 

@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createCondition`
 
-> ConditionResponse createCondition(service_id, version_id, opts)
+> createCondition(service_id, version_id, opts)
 
 Create a condition
 
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ## `deleteCondition`
 
-> Object deleteCondition(service_id, version_id, condition_name)
+> deleteCondition(service_id, version_id, condition_name)
 
 Delete a condition
 
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 ## `getCondition`
 
-> ConditionResponse getCondition(service_id, version_id, condition_name)
+> getCondition(service_id, version_id, condition_name)
 
 Describe a condition
 
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ## `listConditions`
 
-> [ConditionResponse] listConditions(service_id, version_id)
+> listConditions(service_id, version_id)
 
 List conditions
 
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 ## `updateCondition`
 
-> ConditionResponse updateCondition(service_id, version_id, condition_name, opts)
+> updateCondition(service_id, version_id, condition_name, opts)
 
 Update a condition
 

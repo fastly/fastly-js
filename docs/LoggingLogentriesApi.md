@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createLogLogentries`
 
-> LoggingLogentriesResponse createLogLogentries(service_id, version_id, opts)
+> createLogLogentries(service_id, version_id, opts)
 
 Create a Logentries log endpoint
 
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ## `deleteLogLogentries`
 
-> Object deleteLogLogentries(service_id, version_id, logging_logentries_name)
+> deleteLogLogentries(service_id, version_id, logging_logentries_name)
 
 Delete a Logentries log endpoint
 
@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 
 ## `getLogLogentries`
 
-> LoggingLogentriesResponse getLogLogentries(service_id, version_id, logging_logentries_name)
+> getLogLogentries(service_id, version_id, logging_logentries_name)
 
 Get a Logentries log endpoint
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ## `listLogLogentries`
 
-> [LoggingLogentriesResponse] listLogLogentries(service_id, version_id)
+> listLogLogentries(service_id, version_id)
 
 List Logentries log endpoints
 
@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 
 ## `updateLogLogentries`
 
-> LoggingLogentriesResponse updateLogLogentries(service_id, version_id, logging_logentries_name, opts)
+> updateLogLogentries(service_id, version_id, logging_logentries_name, opts)
 
 Update a Logentries log endpoint
 

@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createLogSyslog`
 
-> LoggingSyslogResponse createLogSyslog(service_id, version_id, opts)
+> createLogSyslog(service_id, version_id, opts)
 
 Create a syslog log endpoint
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ## `deleteLogSyslog`
 
-> Object deleteLogSyslog(service_id, version_id, logging_syslog_name)
+> deleteLogSyslog(service_id, version_id, logging_syslog_name)
 
 Delete a syslog log endpoint
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ## `getLogSyslog`
 
-> LoggingSyslogResponse getLogSyslog(service_id, version_id, logging_syslog_name)
+> getLogSyslog(service_id, version_id, logging_syslog_name)
 
 Get a syslog log endpoint
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ## `listLogSyslog`
 
-> [LoggingSyslogResponse] listLogSyslog(service_id, version_id)
+> listLogSyslog(service_id, version_id)
 
 List Syslog log endpoints
 
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 ## `updateLogSyslog`
 
-> LoggingSyslogResponse updateLogSyslog(service_id, version_id, logging_syslog_name, opts)
+> updateLogSyslog(service_id, version_id, logging_syslog_name, opts)
 
 Update a syslog log endpoint
 

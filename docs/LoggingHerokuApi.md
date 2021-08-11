@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createLogHeroku`
 
-> LoggingHerokuResponse createLogHeroku(service_id, version_id, opts)
+> createLogHeroku(service_id, version_id, opts)
 
 Create a Heroku log endpoint
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ## `deleteLogHeroku`
 
-> Object deleteLogHeroku(service_id, version_id, logging_heroku_name)
+> deleteLogHeroku(service_id, version_id, logging_heroku_name)
 
 Delete the Heroku log endpoint
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ## `getLogHeroku`
 
-> LoggingHerokuResponse getLogHeroku(service_id, version_id, logging_heroku_name)
+> getLogHeroku(service_id, version_id, logging_heroku_name)
 
 Get a Heroku log endpoint
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ## `listLogHeroku`
 
-> [LoggingHerokuResponse] listLogHeroku(service_id, version_id)
+> listLogHeroku(service_id, version_id)
 
 List Heroku log endpoints
 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 ## `updateLogHeroku`
 
-> LoggingHerokuResponse updateLogHeroku(service_id, version_id, logging_heroku_name, opts)
+> updateLogHeroku(service_id, version_id, logging_heroku_name, opts)
 
 Update the Heroku log endpoint
 

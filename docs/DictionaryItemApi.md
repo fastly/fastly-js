@@ -18,7 +18,7 @@ Method | Fastly API endpoint | Description
 
 ## `bulkUpdateDictionaryItem`
 
-> Object bulkUpdateDictionaryItem(service_id, dictionary_id, opts)
+> bulkUpdateDictionaryItem(service_id, dictionary_id, opts)
 
 Update multiple entries in an edge dictionary
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ## `createDictionaryItem`
 
-> DictionaryItemResponse createDictionaryItem(service_id, dictionary_id, opts)
+> createDictionaryItem(service_id, dictionary_id, opts)
 
 Create an entry in an edge dictionary
 
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ## `deleteDictionaryItem`
 
-> Object deleteDictionaryItem(service_id, dictionary_id, dictionary_item_key)
+> deleteDictionaryItem(service_id, dictionary_id, dictionary_item_key)
 
 Delete an item from an edge dictionary
 
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 ## `getDictionaryItem`
 
-> DictionaryItemResponse getDictionaryItem(service_id, dictionary_id, dictionary_item_key)
+> getDictionaryItem(service_id, dictionary_id, dictionary_item_key)
 
 Get an item from an edge dictionary
 
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 ## `listDictionaryItems`
 
-> [DictionaryItemResponse] listDictionaryItems(service_id, dictionary_id, opts)
+> listDictionaryItems(service_id, dictionary_id, opts)
 
 List items in an edge dictionary
 
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ## `updateDictionaryItem`
 
-> DictionaryItemResponse updateDictionaryItem(service_id, dictionary_id, dictionary_item_key, opts)
+> updateDictionaryItem(service_id, dictionary_id, dictionary_item_key, opts)
 
 Update an entry in an edge dictionary
 
@@ -254,7 +254,7 @@ Name | Type | Description  | Notes
 
 ## `upsertDictionaryItem`
 
-> DictionaryItemResponse upsertDictionaryItem(service_id, dictionary_id, dictionary_item_key, opts)
+> upsertDictionaryItem(service_id, dictionary_id, dictionary_item_key, opts)
 
 Insert or update an entry in an edge dictionary
 

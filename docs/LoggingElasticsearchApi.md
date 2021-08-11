@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createLogElasticsearch`
 
-> LoggingElasticsearchResponse createLogElasticsearch(service_id, version_id, opts)
+> createLogElasticsearch(service_id, version_id, opts)
 
 Create an Elasticsearch log endpoint
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ## `deleteLogElasticsearch`
 
-> Object deleteLogElasticsearch(service_id, version_id, logging_elasticsearch_name)
+> deleteLogElasticsearch(service_id, version_id, logging_elasticsearch_name)
 
 Delete an Elasticsearch log endpoint
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ## `getLogElasticsearch`
 
-> LoggingElasticsearchResponse getLogElasticsearch(service_id, version_id, logging_elasticsearch_name)
+> getLogElasticsearch(service_id, version_id, logging_elasticsearch_name)
 
 Get an Elasticsearch log endpoint
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ## `listLogElasticsearch`
 
-> [LoggingElasticsearchResponse] listLogElasticsearch(service_id, version_id)
+> listLogElasticsearch(service_id, version_id)
 
 List Elasticsearch log endpoints
 
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 
 ## `updateLogElasticsearch`
 
-> LoggingElasticsearchResponse updateLogElasticsearch(service_id, version_id, logging_elasticsearch_name, opts)
+> updateLogElasticsearch(service_id, version_id, logging_elasticsearch_name, opts)
 
 Update an Elasticsearch log endpoint
 

@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createLogPapertrail`
 
-> LoggingPapertrailResponse createLogPapertrail(service_id, version_id, opts)
+> createLogPapertrail(service_id, version_id, opts)
 
 Create a Papertrail log endpoint
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ## `deleteLogPapertrail`
 
-> Object deleteLogPapertrail(service_id, version_id, logging_papertrail_name)
+> deleteLogPapertrail(service_id, version_id, logging_papertrail_name)
 
 Delete a Papertrail log endpoint
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ## `getLogPapertrail`
 
-> LoggingPapertrailResponse getLogPapertrail(service_id, version_id, logging_papertrail_name)
+> getLogPapertrail(service_id, version_id, logging_papertrail_name)
 
 Get a Papertrail log endpoint
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ## `listLogPapertrail`
 
-> [LoggingPapertrailResponse] listLogPapertrail(service_id, version_id)
+> listLogPapertrail(service_id, version_id)
 
 List Papertrail log endpoints
 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 ## `updateLogPapertrail`
 
-> LoggingPapertrailResponse updateLogPapertrail(service_id, version_id, logging_papertrail_name, opts)
+> updateLogPapertrail(service_id, version_id, logging_papertrail_name, opts)
 
 Update a Papertrail log endpoint
 

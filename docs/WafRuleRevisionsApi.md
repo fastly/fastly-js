@@ -13,7 +13,7 @@ Method | Fastly API endpoint | Description
 
 ## `getWafRuleRevision`
 
-> WafRuleRevisionResponse getWafRuleRevision(waf_rule_id, waf_rule_revision_number, opts)
+> getWafRuleRevision(waf_rule_id, waf_rule_revision_number, opts)
 
 Get a revision of a rule
 
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ## `listWafRuleRevisions`
 
-> WafRuleRevisionsResponse listWafRuleRevisions(waf_rule_id, opts)
+> listWafRuleRevisions(waf_rule_id, opts)
 
 List revisions for a rule
 

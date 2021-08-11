@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createTlsActivation`
 
-> TlsActivationResponse createTlsActivation(opts)
+> createTlsActivation(opts)
 
 Enable TLS for a domain using a custom certificate
 
@@ -82,7 +82,7 @@ null (empty response body)
 
 ## `getTlsActivation`
 
-> TlsActivationResponse getTlsActivation(tls_activation_id, opts)
+> getTlsActivation(tls_activation_id, opts)
 
 Get a TLS activation
 
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ## `listTlsActivations`
 
-> TlsActivationsResponse listTlsActivations(opts)
+> listTlsActivations(opts)
 
 List TLS activations
 
@@ -162,7 +162,7 @@ Name | Type | Description  | Notes
 
 ## `updateTlsActivation`
 
-> TlsActivationResponse updateTlsActivation(tls_activation_id, opts)
+> updateTlsActivation(tls_activation_id, opts)
 
 Update a certificate
 

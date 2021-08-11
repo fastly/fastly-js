@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createLogNewrelic`
 
-> LoggingNewrelicResponse createLogNewrelic(service_id, version_id, opts)
+> createLogNewrelic(service_id, version_id, opts)
 
 Create a New Relic log endpoint
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ## `deleteLogNewrelic`
 
-> Object deleteLogNewrelic(service_id, version_id, logging_newrelic_name)
+> deleteLogNewrelic(service_id, version_id, logging_newrelic_name)
 
 Delete a New Relic log endpoint
 
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ## `getLogNewrelic`
 
-> LoggingNewrelicResponse getLogNewrelic(service_id, version_id, logging_newrelic_name)
+> getLogNewrelic(service_id, version_id, logging_newrelic_name)
 
 Get a New Relic log endpoint
 
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 
 ## `listLogNewrelic`
 
-> [LoggingNewrelicResponse] listLogNewrelic(service_id, version_id)
+> listLogNewrelic(service_id, version_id)
 
 List New Relic log endpoints
 
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 
 ## `updateLogNewrelic`
 
-> LoggingNewrelicResponse updateLogNewrelic(service_id, version_id, logging_newrelic_name, opts)
+> updateLogNewrelic(service_id, version_id, logging_newrelic_name, opts)
 
 Update a New Relic log endpoint
 

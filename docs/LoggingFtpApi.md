@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createLogFtp`
 
-> LoggingFtpResponse createLogFtp(service_id, version_id, opts)
+> createLogFtp(service_id, version_id, opts)
 
 Create an FTP log endpoint
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ## `deleteLogFtp`
 
-> Object deleteLogFtp(service_id, version_id, logging_ftp_name)
+> deleteLogFtp(service_id, version_id, logging_ftp_name)
 
 Delete an FTP log endpoint
 
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 ## `getLogFtp`
 
-> LoggingFtpResponse getLogFtp(service_id, version_id, logging_ftp_name)
+> getLogFtp(service_id, version_id, logging_ftp_name)
 
 Get an FTP log endpoint
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ## `listLogFtp`
 
-> [LoggingFtpResponse] listLogFtp(service_id, version_id)
+> listLogFtp(service_id, version_id)
 
 List FTP log endpoints
 
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 ## `updateLogFtp`
 
-> LoggingFtpResponse updateLogFtp(service_id, version_id, logging_ftp_name, opts)
+> updateLogFtp(service_id, version_id, logging_ftp_name, opts)
 
 Update an FTP log endpoint
 

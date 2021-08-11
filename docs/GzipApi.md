@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createGzipConfig`
 
-> GzipResponse createGzipConfig(service_id, version_id, opts)
+> createGzipConfig(service_id, version_id, opts)
 
 Create a gzip configuration
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ## `deleteGzipConfig`
 
-> Object deleteGzipConfig(service_id, version_id, gzip_name)
+> deleteGzipConfig(service_id, version_id, gzip_name)
 
 Delete a gzip configuration
 
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 ## `getGzipConfigs`
 
-> GzipResponse getGzipConfigs(service_id, version_id, gzip_name)
+> getGzipConfigs(service_id, version_id, gzip_name)
 
 Get a gzip configuration
 
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 ## `listGzipConfigs`
 
-> [GzipResponse] listGzipConfigs(service_id, version_id)
+> listGzipConfigs(service_id, version_id)
 
 List gzip configurations
 
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 ## `updateGzipConfig`
 
-> GzipResponse updateGzipConfig(service_id, version_id, gzip_name, opts)
+> updateGzipConfig(service_id, version_id, gzip_name, opts)
 
 Update a gzip configuration
 

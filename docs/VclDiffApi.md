@@ -12,7 +12,7 @@ Method | Fastly API endpoint | Description
 
 ## `vclDiffServiceVersions`
 
-> VclDiff vclDiffServiceVersions(service_id, from_version_id, to_version_id, opts)
+> vclDiffServiceVersions(service_id, from_version_id, to_version_id, opts)
 
 Get a comparison of the VCL changes between two service versions
 

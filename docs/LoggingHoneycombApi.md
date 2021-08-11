@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createLogHoneycomb`
 
-> LoggingHoneycomb createLogHoneycomb(service_id, version_id, opts)
+> createLogHoneycomb(service_id, version_id, opts)
 
 Create a Honeycomb log endpoint
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ## `deleteLogHoneycomb`
 
-> Object deleteLogHoneycomb(service_id, version_id, logging_honeycomb_name)
+> deleteLogHoneycomb(service_id, version_id, logging_honeycomb_name)
 
 Delete the Honeycomb log endpoint
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ## `getLogHoneycomb`
 
-> LoggingHoneycomb getLogHoneycomb(service_id, version_id, logging_honeycomb_name)
+> getLogHoneycomb(service_id, version_id, logging_honeycomb_name)
 
 Get a Honeycomb log endpoint
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ## `listLogHoneycomb`
 
-> [LoggingHoneycombResponse] listLogHoneycomb(service_id, version_id)
+> listLogHoneycomb(service_id, version_id)
 
 List Honeycomb log endpoints
 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 ## `updateLogHoneycomb`
 
-> LoggingHoneycombResponse updateLogHoneycomb(service_id, version_id, logging_honeycomb_name, opts)
+> updateLogHoneycomb(service_id, version_id, logging_honeycomb_name, opts)
 
 Update a Honeycomb log endpoint
 

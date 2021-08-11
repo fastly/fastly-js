@@ -14,7 +14,7 @@ Method | Fastly API endpoint | Description
 
 ## `createInvitation`
 
-> InvitationResponse createInvitation(opts)
+> createInvitation(opts)
 
 Create an invitation
 
@@ -80,7 +80,7 @@ null (empty response body)
 
 ## `listInvitations`
 
-> InvitationsResponse listInvitations(opts)
+> listInvitations(opts)
 
 List invitations
 

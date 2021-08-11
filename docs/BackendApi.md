@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createBackend`
 
-> BackendResponse createBackend(service_id, version_id, opts)
+> createBackend(service_id, version_id, opts)
 
 Create a backend
 
@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 ## `deleteBackend`
 
-> Object deleteBackend(service_id, version_id, backend_name)
+> deleteBackend(service_id, version_id, backend_name)
 
 Delete a backend
 
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ## `getBackend`
 
-> BackendResponse getBackend(service_id, version_id, backend_name)
+> getBackend(service_id, version_id, backend_name)
 
 Describe a backend
 
@@ -182,7 +182,7 @@ Name | Type | Description  | Notes
 
 ## `listBackends`
 
-> [BackendResponse] listBackends(service_id, version_id)
+> listBackends(service_id, version_id)
 
 List backends
 
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ## `updateBackend`
 
-> BackendResponse updateBackend(service_id, version_id, backend_name, opts)
+> updateBackend(service_id, version_id, backend_name, opts)
 
 Update a backend
 

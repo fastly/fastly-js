@@ -14,7 +14,7 @@ Method | Fastly API endpoint | Description
 
 ## `createDirectorBackend`
 
-> DirectorBackend createDirectorBackend(director_name, service_id, version_id, backend_name)
+> createDirectorBackend(director_name, service_id, version_id, backend_name)
 
 Create a director-backend relationship
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ## `deleteDirectorBackend`
 
-> Object deleteDirectorBackend(director_name, service_id, version_id, backend_name)
+> deleteDirectorBackend(director_name, service_id, version_id, backend_name)
 
 Delete a director-backend relationship
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 ## `getDirectorBackend`
 
-> DirectorBackend getDirectorBackend(director_name, service_id, version_id, backend_name)
+> getDirectorBackend(director_name, service_id, version_id, backend_name)
 
 Get a director-backend relationship
 

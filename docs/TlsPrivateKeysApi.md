@@ -15,7 +15,7 @@ Method | Fastly API endpoint | Description
 
 ## `createTlsKey`
 
-> TlsPrivateKeyResponse createTlsKey(opts)
+> createTlsKey(opts)
 
 Create a TLS private key
 
@@ -81,7 +81,7 @@ null (empty response body)
 
 ## `getTlsKey`
 
-> TlsPrivateKeyResponse getTlsKey(tls_private_key_id)
+> getTlsKey(tls_private_key_id)
 
 Get a TLS private key
 
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 ## `listTlsKeys`
 
-> TlsPrivateKeysResponse listTlsKeys(opts)
+> listTlsKeys(opts)
 
 List TLS private keys
 

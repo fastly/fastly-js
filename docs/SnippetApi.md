@@ -18,7 +18,7 @@ Method | Fastly API endpoint | Description
 
 ## `createSnippet`
 
-> SnippetResponse createSnippet(service_id, version_id, opts)
+> createSnippet(service_id, version_id, opts)
 
 Create a snippet
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ## `deleteSnippet`
 
-> Object deleteSnippet(service_id, version_id, snippet_name)
+> deleteSnippet(service_id, version_id, snippet_name)
 
 Delete a snippet
 
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ## `getSnippet`
 
-> SnippetResponse getSnippet(service_id, version_id, snippet_name)
+> getSnippet(service_id, version_id, snippet_name)
 
 Get a versioned snippet
 
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 
 ## `getSnippetDynamic`
 
-> SnippetResponse getSnippetDynamic(service_id, snippet_id)
+> getSnippetDynamic(service_id, snippet_id)
 
 Get a dynamic snippet
 
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 
 ## `listSnippets`
 
-> [SnippetResponse] listSnippets(service_id, version_id)
+> listSnippets(service_id, version_id)
 
 List snippets
 
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 ## `updateSnippet`
 
-> SnippetResponse updateSnippet(service_id, version_id, snippet_name)
+> updateSnippet(service_id, version_id, snippet_name)
 
 Update a versioned snippet
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ## `updateSnippetDynamic`
 
-> SnippetResponse updateSnippetDynamic(service_id, snippet_id, opts)
+> updateSnippetDynamic(service_id, snippet_id, opts)
 
 Update a dynamic snippet
 

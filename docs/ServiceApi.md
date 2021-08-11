@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 
 ## `createService`
 
-> ServiceResponse createService(opts)
+> createService(opts)
 
 Create a service
 
@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 
 ## `deleteService`
 
-> Object deleteService(service_id)
+> deleteService(service_id)
 
 Delete a service
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ## `getService`
 
-> ServiceResponse getService(service_id)
+> getService(service_id)
 
 Get a service
 
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 
 ## `getServiceDetail`
 
-> ServiceDetail getServiceDetail(service_id)
+> getServiceDetail(service_id)
 
 Get service details
 
@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 ## `listServiceDomains`
 
-> [DomainResponse] listServiceDomains(service_id)
+> listServiceDomains(service_id)
 
 List the domains within a service
 
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ## `listServices`
 
-> [ServiceResponse] listServices(opts)
+> listServices(opts)
 
 List services
 
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 
 ## `searchService`
 
-> ServiceResponse searchService(name)
+> searchService(name)
 
 Search for a service by name
 
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 
 ## `updateService`
 
-> ServiceResponse updateService(service_id, opts)
+> updateService(service_id, opts)
 
 Update a service
 

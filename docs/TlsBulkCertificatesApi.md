@@ -48,7 +48,7 @@ null (empty response body)
 
 ## `getTlsBulkCert`
 
-> TlsBulkCertificateResponse getTlsBulkCert(certificate_id)
+> getTlsBulkCert(certificate_id)
 
 Get a certificate
 
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ## `listTlsBulkCerts`
 
-> TlsBulkCertificatesResponse listTlsBulkCerts(opts)
+> listTlsBulkCerts(opts)
 
 List certificates
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ## `updateBulkTlsCert`
 
-> TlsBulkCertificateResponse updateBulkTlsCert(certificate_id, opts)
+> updateBulkTlsCert(certificate_id, opts)
 
 Update a certificate
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ## `uploadTlsBulkCert`
 
-> TlsBulkCertificateResponse uploadTlsBulkCert(opts)
+> uploadTlsBulkCert(opts)
 
 Upload a certificate
 

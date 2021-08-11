@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createTlsCert`
 
-> Object createTlsCert(opts)
+> createTlsCert(opts)
 
 Create a TLS certificate
 
@@ -82,7 +82,7 @@ null (empty response body)
 
 ## `getTlsCert`
 
-> TlsCertificateResponse getTlsCert(tls_certificate_id)
+> getTlsCert(tls_certificate_id)
 
 Get a TLS certificate
 
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 
 ## `listTlsCerts`
 
-> TlsCertificatesResponse listTlsCerts(opts)
+> listTlsCerts(opts)
 
 List TLS certificates
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ## `updateTlsCert`
 
-> TlsCertificateResponse updateTlsCert(tls_certificate_id, opts)
+> updateTlsCert(tls_certificate_id, opts)
 
 Update a TLS certificate
 

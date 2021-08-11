@@ -15,7 +15,7 @@ Method | Fastly API endpoint | Description
 
 ## `createServiceStar`
 
-> StarResponse createServiceStar(opts)
+> createServiceStar(opts)
 
 Create a star
 
@@ -81,7 +81,7 @@ null (empty response body)
 
 ## `getServiceStar`
 
-> StarResponse getServiceStar(star_id)
+> getServiceStar(star_id)
 
 Get a star
 
@@ -113,7 +113,7 @@ Name | Type | Description  | Notes
 
 ## `listServiceStars`
 
-> Pagination listServiceStars()
+> listServiceStars()
 
 List stars
 

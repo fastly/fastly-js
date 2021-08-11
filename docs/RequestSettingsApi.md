@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createRequestSettings`
 
-> RequestSettingsResponse createRequestSettings(service_id, version_id)
+> createRequestSettings(service_id, version_id)
 
 Create a Request Settings object
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ## `deleteRequestSettings`
 
-> Object deleteRequestSettings(service_id, version_id, request_settings_name)
+> deleteRequestSettings(service_id, version_id, request_settings_name)
 
 Delete a Request Settings object
 
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ## `getRequestSettings`
 
-> RequestSettingsResponse getRequestSettings(service_id, version_id, request_settings_name)
+> getRequestSettings(service_id, version_id, request_settings_name)
 
 Get a Request Settings object
 
@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 
 ## `listRequestSettings`
 
-> [RequestSettingsResponse] listRequestSettings(service_id, version_id)
+> listRequestSettings(service_id, version_id)
 
 List Request Settings objects
 
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ## `updateRequestSettings`
 
-> RequestSettingsResponse updateRequestSettings(service_id, version_id, request_settings_name, opts)
+> updateRequestSettings(service_id, version_id, request_settings_name, opts)
 
 Update a Request Settings object
 

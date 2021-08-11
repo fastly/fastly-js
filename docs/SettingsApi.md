@@ -13,7 +13,7 @@ Method | Fastly API endpoint | Description
 
 ## `getServiceSettings`
 
-> SettingsResponse getServiceSettings(service_id, version_id)
+> getServiceSettings(service_id, version_id)
 
 Get service settings
 
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ## `updateServiceSettings`
 
-> SettingsResponse updateServiceSettings(service_id, version_id)
+> updateServiceSettings(service_id, version_id)
 
 Update service settings
 

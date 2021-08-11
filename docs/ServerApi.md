@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 
 ## `createPoolServer`
 
-> ServerResponse createPoolServer(service_id, pool_id, opts)
+> createPoolServer(service_id, pool_id, opts)
 
 Add a server to a pool
 
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ## `deletePoolServer`
 
-> Object deletePoolServer(service_id, pool_id, server_id)
+> deletePoolServer(service_id, pool_id, server_id)
 
 Delete a server from a pool
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ## `getPoolServer`
 
-> ServerResponse getPoolServer(service_id, pool_id, server_id)
+> getPoolServer(service_id, pool_id, server_id)
 
 Get a pool server
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ## `listPoolServers`
 
-> [ServerResponse] listPoolServers(service_id, pool_id)
+> listPoolServers(service_id, pool_id)
 
 List servers in a pool
 
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 ## `updatePoolServer`
 
-> ServerResponse updatePoolServer(service_id, pool_id, server_id, opts)
+> updatePoolServer(service_id, pool_id, server_id, opts)
 
 Update a server
 

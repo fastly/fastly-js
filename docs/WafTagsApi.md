@@ -12,7 +12,7 @@ Method | Fastly API endpoint | Description
 
 ## `listWafTags`
 
-> WafTagsResponse listWafTags(opts)
+> listWafTags(opts)
 
 List tags
 

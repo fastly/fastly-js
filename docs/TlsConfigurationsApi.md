@@ -14,7 +14,7 @@ Method | Fastly API endpoint | Description
 
 ## `getTlsConfig`
 
-> TlsConfigurationResponse getTlsConfig(tls_configuration_id, opts)
+> getTlsConfig(tls_configuration_id, opts)
 
 Get a TLS configuration
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ## `listTlsConfigs`
 
-> TlsConfigurationsResponse listTlsConfigs(opts)
+> listTlsConfigs(opts)
 
 List TLS configurations
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 ## `updateTlsConfig`
 
-> TlsConfigurationResponse updateTlsConfig(tls_configuration_id, opts)
+> updateTlsConfig(tls_configuration_id, opts)
 
 Update a TLS configuration
 
