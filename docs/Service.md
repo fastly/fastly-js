@@ -4,6 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**RelationshipServiceServiceData**](RelationshipServiceServiceData.md) |  | [optional] 
+**comment** | **String** | A freeform descriptive note. | [optional] 
+**name** | **String** | The name of the service. | [optional] 
+**customer_id** | **String** | Alphanumeric string identifying the customer. | [optional] [readonly] 
 
 
+
+[[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

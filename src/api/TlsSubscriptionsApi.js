@@ -1,6 +1,6 @@
 /**
  * Fastly API
- * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit developer.fastly.com/reference/api/ 
+ * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -13,6 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
+import TlsSubscription from '../model/TlsSubscription';
+import TlsSubscriptionResponse from '../model/TlsSubscriptionResponse';
+import TlsSubscriptionsResponse from '../model/TlsSubscriptionsResponse';
 
 
 export default class TlsSubscriptionsApi {
@@ -24,11 +27,12 @@ export default class TlsSubscriptionsApi {
 
     createTlsSubWithHttpInfo(opts) {
       opts = opts || {};
-      let postBody = opts['body'];
+      let postBody = opts['tls_subscription'];
 
       let pathParams = {
       };
       let queryParams = {
+        'force': opts['force']
       };
       let headerParams = {
       };
@@ -38,7 +42,7 @@ export default class TlsSubscriptionsApi {
       let authNames = ['token'];
       let contentTypes = ['application/vnd.api+json'];
       let accepts = ['application/vnd.api+json'];
-      let returnType = Object;
+      let returnType = TlsSubscriptionResponse;
       return this.apiClient.callApi(
         '/tls/subscriptions', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -106,7 +110,7 @@ export default class TlsSubscriptionsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/vnd.api+json'];
-      let returnType = Object;
+      let returnType = TlsSubscriptionResponse;
       return this.apiClient.callApi(
         '/tls/subscriptions/{tls_subscription_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -141,7 +145,7 @@ export default class TlsSubscriptionsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/vnd.api+json'];
-      let returnType = Object;
+      let returnType = TlsSubscriptionsResponse;
       return this.apiClient.callApi(
         '/tls/subscriptions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -156,7 +160,7 @@ export default class TlsSubscriptionsApi {
     }
     patchTlsSubWithHttpInfo(tls_subscription_id, opts) {
       opts = opts || {};
-      let postBody = opts['body'];
+      let postBody = opts['tls_subscription'];
       // verify the required parameter 'tls_subscription_id' is set
       if (tls_subscription_id === undefined || tls_subscription_id === null) {
         throw new Error("Missing the required parameter 'tls_subscription_id' when calling patchTlsSub");
@@ -166,6 +170,7 @@ export default class TlsSubscriptionsApi {
         'tls_subscription_id': tls_subscription_id
       };
       let queryParams = {
+        'force': opts['force']
       };
       let headerParams = {
       };
@@ -175,7 +180,7 @@ export default class TlsSubscriptionsApi {
       let authNames = ['token'];
       let contentTypes = ['application/vnd.api+json'];
       let accepts = ['application/vnd.api+json'];
-      let returnType = Object;
+      let returnType = TlsSubscriptionResponse;
       return this.apiClient.callApi(
         '/tls/subscriptions/{tls_subscription_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,

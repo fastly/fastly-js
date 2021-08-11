@@ -1,6 +1,6 @@
 /**
  * Fastly API
- * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit developer.fastly.com/reference/api/ 
+ * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -13,6 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
+import TlsActivation from '../model/TlsActivation';
+import TlsActivationResponse from '../model/TlsActivationResponse';
+import TlsActivationsResponse from '../model/TlsActivationsResponse';
 
 
 export default class TlsActivationsApi {
@@ -24,7 +27,7 @@ export default class TlsActivationsApi {
 
     createTlsActivationWithHttpInfo(opts) {
       opts = opts || {};
-      let postBody = opts['body'];
+      let postBody = opts['tls_activation'];
 
       let pathParams = {
       };
@@ -38,7 +41,7 @@ export default class TlsActivationsApi {
       let authNames = ['token'];
       let contentTypes = ['application/vnd.api+json'];
       let accepts = ['application/vnd.api+json'];
-      let returnType = Object;
+      let returnType = TlsActivationResponse;
       return this.apiClient.callApi(
         '/tls/activations', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -106,7 +109,7 @@ export default class TlsActivationsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/vnd.api+json'];
-      let returnType = Object;
+      let returnType = TlsActivationResponse;
       return this.apiClient.callApi(
         '/tls/activations/{tls_activation_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -141,7 +144,7 @@ export default class TlsActivationsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/vnd.api+json'];
-      let returnType = Object;
+      let returnType = TlsActivationsResponse;
       return this.apiClient.callApi(
         '/tls/activations', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -156,7 +159,7 @@ export default class TlsActivationsApi {
     }
     updateTlsActivationWithHttpInfo(tls_activation_id, opts) {
       opts = opts || {};
-      let postBody = opts['body'];
+      let postBody = opts['tls_activation'];
       // verify the required parameter 'tls_activation_id' is set
       if (tls_activation_id === undefined || tls_activation_id === null) {
         throw new Error("Missing the required parameter 'tls_activation_id' when calling updateTlsActivation");
@@ -175,7 +178,7 @@ export default class TlsActivationsApi {
       let authNames = ['token'];
       let contentTypes = ['application/vnd.api+json'];
       let accepts = ['application/vnd.api+json'];
-      let returnType = Object;
+      let returnType = TlsActivationResponse;
       return this.apiClient.callApi(
         '/tls/activations/{tls_activation_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,

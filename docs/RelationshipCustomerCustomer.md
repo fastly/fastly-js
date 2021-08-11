@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**RelationshipCustomerCustomerData**](RelationshipCustomerCustomerData.md) |  | [optional] 
+**data** | [**[RelationshipMemberCustomer]**](RelationshipMemberCustomer.md) |  | [optional] 
 
 
+
+[[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

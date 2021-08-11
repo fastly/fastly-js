@@ -1,8 +1,10 @@
 # FastlyApi.WafExclusionsApi
 
-All URIs are relative to *https://api.fastly.com*
 
-Method | HTTP request | Description
+
+## Methods
+
+Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**createWafRuleExclusion**](WafExclusionsApi.md#createWafRuleExclusion) | **POST** /waf/firewalls/{firewall_id}/versions/{firewall_version_number}/exclusions | Create a WAF rule exclusion
 [**deleteWafRuleExclusion**](WafExclusionsApi.md#deleteWafRuleExclusion) | **DELETE** /waf/firewalls/{firewall_id}/versions/{firewall_version_number}/exclusions/{exclusion_number} | Delete a WAF rule exclusion
@@ -12,9 +14,9 @@ Method | HTTP request | Description
 
 
 
-## createWafRuleExclusion
+## `createWafRuleExclusion`
 
-> createWafRuleExclusion(firewall_id, firewall_version_number, opts)
+> WafExclusionResponse createWafRuleExclusion(firewall_id, firewall_version_number, opts)
 
 Create a WAF rule exclusion
 
@@ -23,22 +25,14 @@ Create a WAF exclusion for a particular firewall version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.WafExclusionsApi();
 let firewall_id = "firewall_id_example"; // String | 
 let firewall_version_number = 56; // Number | 
 let opts = {
-  'inline_object2': new FastlyApi.InlineObject2() // InlineObject2 | 
+  'waf_exclusion': {"data":{"type":"waf_exclusion","attributes":{"exclusion_type":"rule","condition":"req.url.basename == \"index.html\"","name":"test-waf-exclusion"},"relationships":{"waf_rules":{"data":[{"id":2500162,"type":"waf_rule"}]}}}} // WafExclusion | 
 };
-apiInstance.createWafRuleExclusion(firewall_id, firewall_version_number, opts).then(() => {
-  console.log('API called successfully.');
+apiInstance.createWafRuleExclusion(firewall_id, firewall_version_number, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
 });
@@ -47,28 +41,18 @@ apiInstance.createWafRuleExclusion(firewall_id, firewall_version_number, opts).t
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **firewall_id** | **String**|  | 
- **firewall_version_number** | **Number**|  | 
- **inline_object2** | [**InlineObject2**](InlineObject2.md)|  | [optional] 
+**firewall_id** | **String** |  |
+**firewall_version_number** | **Number** |  |
+**waf_exclusion** | [**WafExclusion**](../Model/WafExclusion.md) |  | [optional]
 
 ### Return type
 
-null (empty response body)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: application/vnd.api+json
-- **Accept**: application/vnd.api+json
+[**WafExclusionResponse**](WafExclusionResponse.md)
 
 
-## deleteWafRuleExclusion
+## `deleteWafRuleExclusion`
 
 > deleteWafRuleExclusion(firewall_id, firewall_version_number, exclusion_number)
 
@@ -79,14 +63,6 @@ Delete a WAF exclusion for a particular firewall version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.WafExclusionsApi();
 let firewall_id = "firewall_id_example"; // String | 
 let firewall_version_number = 56; // Number | 
@@ -101,30 +77,20 @@ apiInstance.deleteWafRuleExclusion(firewall_id, firewall_version_number, exclusi
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **firewall_id** | **String**|  | 
- **firewall_version_number** | **Number**|  | 
- **exclusion_number** | **Number**|  | 
+**firewall_id** | **String** |  |
+**firewall_version_number** | **Number** |  |
+**exclusion_number** | **Number** |  |
 
 ### Return type
 
 null (empty response body)
 
-### Authorization
 
-[token](../README.md#token)
+## `getWafRuleExclusion`
 
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-
-## getWafRuleExclusion
-
-> getWafRuleExclusion(firewall_id, firewall_version_number, exclusion_number)
+> WafExclusionResponse getWafRuleExclusion(firewall_id, firewall_version_number, exclusion_number)
 
 Get a WAF rule exclusion
 
@@ -133,20 +99,12 @@ Get a specific WAF exclusion object.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.WafExclusionsApi();
 let firewall_id = "firewall_id_example"; // String | 
 let firewall_version_number = 56; // Number | 
 let exclusion_number = 56; // Number | 
-apiInstance.getWafRuleExclusion(firewall_id, firewall_version_number, exclusion_number).then(() => {
-  console.log('API called successfully.');
+apiInstance.getWafRuleExclusion(firewall_id, firewall_version_number, exclusion_number).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
 });
@@ -155,30 +113,20 @@ apiInstance.getWafRuleExclusion(firewall_id, firewall_version_number, exclusion_
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **firewall_id** | **String**|  | 
- **firewall_version_number** | **Number**|  | 
- **exclusion_number** | **Number**|  | 
+**firewall_id** | **String** |  |
+**firewall_version_number** | **Number** |  |
+**exclusion_number** | **Number** |  |
 
 ### Return type
 
-null (empty response body)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.api+json
+[**WafExclusionResponse**](WafExclusionResponse.md)
 
 
-## listWafRuleExclusions
+## `listWafRuleExclusions`
 
-> listWafRuleExclusions(firewall_id, firewall_version_number, opts)
+> WafExclusionsResponse listWafRuleExclusions(firewall_id, firewall_version_number, opts)
 
 List WAF rule exclusions
 
@@ -187,14 +135,6 @@ List all exclusions for a particular firewall version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.WafExclusionsApi();
 let firewall_id = "firewall_id_example"; // String | 
 let firewall_version_number = 56; // Number | 
@@ -204,10 +144,10 @@ let opts = {
   'filter_waf_rules_modsec_rule_id': 56, // Number | Filters the results based on this ModSecurity rule ID.
   'page_number': 56, // Number | Current page.
   'page_size': 20, // Number | Number of records per page.
-  'include': "include_example" // String | Include relationships. Optional, comma-separated values. Permitted values: `waf_rules` and `waf_rule_revisions`. 
+  'include': waf_rules // String | Include relationships. Optional, comma-separated values. Permitted values: `waf_rules` and `waf_rule_revisions`. 
 };
-apiInstance.listWafRuleExclusions(firewall_id, firewall_version_number, opts).then(() => {
-  console.log('API called successfully.');
+apiInstance.listWafRuleExclusions(firewall_id, firewall_version_number, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
 });
@@ -216,35 +156,25 @@ apiInstance.listWafRuleExclusions(firewall_id, firewall_version_number, opts).th
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **firewall_id** | **String**|  | 
- **firewall_version_number** | **Number**|  | 
- **filter_exclusion_type** | **String**| Filters the results based on this exclusion type. | [optional] 
- **filter_name** | **String**| Filters the results based on name. | [optional] 
- **filter_waf_rules_modsec_rule_id** | **Number**| Filters the results based on this ModSecurity rule ID. | [optional] 
- **page_number** | **Number**| Current page. | [optional] 
- **page_size** | **Number**| Number of records per page. | [optional] [default to 20]
- **include** | **String**| Include relationships. Optional, comma-separated values. Permitted values: &#x60;waf_rules&#x60; and &#x60;waf_rule_revisions&#x60;.  | [optional] 
+**firewall_id** | **String** |  |
+**firewall_version_number** | **Number** |  |
+**filter_exclusion_type** | **String** | Filters the results based on this exclusion type. | [optional]
+**filter_name** | **String** | Filters the results based on name. | [optional]
+**filter_waf_rules_modsec_rule_id** | **Number** | Filters the results based on this ModSecurity rule ID. | [optional]
+**page_number** | **Number** | Current page. | [optional]
+**page_size** | **Number** | Number of records per page. | [optional] [default to 20]
+**include** | **String** | Include relationships. Optional, comma-separated values. Permitted values: &#x60;waf_rules&#x60; and &#x60;waf_rule_revisions&#x60;.  | [optional]
 
 ### Return type
 
-null (empty response body)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.api+json
+[**WafExclusionsResponse**](WafExclusionsResponse.md)
 
 
-## updateWafRuleExclusion
+## `updateWafRuleExclusion`
 
-> updateWafRuleExclusion(firewall_id, firewall_version_number, exclusion_number, opts)
+> WafExclusionResponse updateWafRuleExclusion(firewall_id, firewall_version_number, exclusion_number, opts)
 
 Update a WAF rule exclusion
 
@@ -253,23 +183,15 @@ Update a WAF exclusion for a particular firewall version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.WafExclusionsApi();
 let firewall_id = "firewall_id_example"; // String | 
 let firewall_version_number = 56; // Number | 
 let exclusion_number = 56; // Number | 
 let opts = {
-  'inline_object3': new FastlyApi.InlineObject3() // InlineObject3 | 
+  'waf_exclusion': {"data":{"type":"waf_exclusion","attributes":{"logging":false,"condition":"req.url.basename == \"index.html\" || req.url.basename == \"admin.html\"","name":"updated-test-waf-exclusion"}}} // WafExclusion | 
 };
-apiInstance.updateWafRuleExclusion(firewall_id, firewall_version_number, exclusion_number, opts).then(() => {
-  console.log('API called successfully.');
+apiInstance.updateWafRuleExclusion(firewall_id, firewall_version_number, exclusion_number, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
 });
@@ -278,24 +200,17 @@ apiInstance.updateWafRuleExclusion(firewall_id, firewall_version_number, exclusi
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **firewall_id** | **String**|  | 
- **firewall_version_number** | **Number**|  | 
- **exclusion_number** | **Number**|  | 
- **inline_object3** | [**InlineObject3**](InlineObject3.md)|  | [optional] 
+**firewall_id** | **String** |  |
+**firewall_version_number** | **Number** |  |
+**exclusion_number** | **Number** |  |
+**waf_exclusion** | [**WafExclusion**](../Model/WafExclusion.md) |  | [optional]
 
 ### Return type
 
-null (empty response body)
+[**WafExclusionResponse**](WafExclusionResponse.md)
 
-### Authorization
 
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: application/vnd.api+json
-- **Accept**: application/vnd.api+json
-
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to README]](../../README.md)

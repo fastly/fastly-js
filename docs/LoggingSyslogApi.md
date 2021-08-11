@@ -1,8 +1,10 @@
 # FastlyApi.LoggingSyslogApi
 
-All URIs are relative to *https://api.fastly.com*
 
-Method | HTTP request | Description
+
+## Methods
+
+Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**createLogSyslog**](LoggingSyslogApi.md#createLogSyslog) | **POST** /service/{service_id}/version/{version_id}/logging/syslog | Create a syslog log endpoint
 [**deleteLogSyslog**](LoggingSyslogApi.md#deleteLogSyslog) | **DELETE** /service/{service_id}/version/{version_id}/logging/syslog/{logging_syslog_name} | Delete a syslog log endpoint
@@ -12,9 +14,9 @@ Method | HTTP request | Description
 
 
 
-## createLogSyslog
+## `createLogSyslog`
 
-> ModelLoggingSyslog createLogSyslog(service_id, version_id, opts)
+> LoggingSyslogResponse createLogSyslog(service_id, version_id, opts)
 
 Create a syslog log endpoint
 
@@ -23,23 +25,10 @@ Create a Syslog for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.LoggingSyslogApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
 let opts = {
-  'created_at': "created_at_example", // String | Date and time in ISO 8601 format.
-  'deleted_at': "deleted_at_example", // String | Date and time in ISO 8601 format.
-  'updated_at': "updated_at_example", // String | Date and time in ISO 8601 format.
-  'service_id2': "service_id_example", // String | Alphanumeric string identifying the service.
-  'version': 56, // Number | Integer identifying a service version.
   'name': "name_example", // String | The name for the real-time logging configuration.
   'placement': new FastlyApi.LoggingPlacement(), // LoggingPlacement | 
   'format_version': new FastlyApi.LoggingFormatVersion(), // LoggingFormatVersion | 
@@ -67,48 +56,33 @@ apiInstance.createLogSyslog(service_id, version_id, opts).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **created_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **deleted_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **updated_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **service_id2** | **String**| Alphanumeric string identifying the service. | [optional] 
- **version** | **Number**| Integer identifying a service version. | [optional] 
- **name** | **String**| The name for the real-time logging configuration. | [optional] 
- **placement** | [**LoggingPlacement**](LoggingPlacement.md)|  | [optional] 
- **format_version** | [**LoggingFormatVersion**](LoggingFormatVersion.md)|  | [optional] 
- **response_condition** | **String**| The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional] 
- **format** | **String**| A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
- **tls_ca_cert** | **String**| A secure certificate to authenticate a server with. Must be in PEM format. | [optional] [default to &#39;null&#39;]
- **tls_client_cert** | **String**| The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [default to &#39;null&#39;]
- **tls_client_key** | **String**| The client private key used to make authenticated requests. Must be in PEM format. | [optional] [default to &#39;null&#39;]
- **tls_hostname** | **String**| The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported. | [optional] [default to &#39;null&#39;]
- **address** | **String**| A hostname or IPv4 address. | [optional] 
- **port** | **Number**| The port number. | [optional] [default to 514]
- **message_type** | [**LoggingMessageType**](LoggingMessageType.md)|  | [optional] 
- **hostname** | **String**| The hostname used for the syslog endpoint. | [optional] 
- **ipv4** | **String**| The IPv4 address used for the syslog endpoint. | [optional] 
- **token** | **String**| Whether to prepend each message with a specific token. | [optional] [default to &#39;null&#39;]
- **use_tls** | [**LoggingUseTls**](LoggingUseTls.md)|  | [optional] 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**name** | **String** | The name for the real-time logging configuration. | [optional]
+**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
+**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
+**tls_ca_cert** | **String** | A secure certificate to authenticate a server with. Must be in PEM format. | [optional] [default to &#39;null&#39;]
+**tls_client_cert** | **String** | The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [default to &#39;null&#39;]
+**tls_client_key** | **String** | The client private key used to make authenticated requests. Must be in PEM format. | [optional] [default to &#39;null&#39;]
+**tls_hostname** | **String** | The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported. | [optional] [default to &#39;null&#39;]
+**address** | **String** | A hostname or IPv4 address. | [optional]
+**port** | **Number** | The port number. | [optional] [default to 514]
+**message_type** | [**LoggingMessageType**](../Model/LoggingMessageType.md) |  | [optional]
+**hostname** | **String** | The hostname used for the syslog endpoint. | [optional]
+**ipv4** | **String** | The IPv4 address used for the syslog endpoint. | [optional]
+**token** | **String** | Whether to prepend each message with a specific token. | [optional] [default to &#39;null&#39;]
+**use_tls** | [**LoggingUseTls**](../Model/LoggingUseTls.md) |  | [optional]
 
 ### Return type
 
-[**ModelLoggingSyslog**](ModelLoggingSyslog.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: application/x-www-form-urlencoded
-- **Accept**: application/json
+[**LoggingSyslogResponse**](LoggingSyslogResponse.md)
 
 
-## deleteLogSyslog
+## `deleteLogSyslog`
 
 > Object deleteLogSyslog(service_id, version_id, logging_syslog_name)
 
@@ -119,14 +93,6 @@ Delete the Syslog for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.LoggingSyslogApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -141,30 +107,20 @@ apiInstance.deleteLogSyslog(service_id, version_id, logging_syslog_name).then((d
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **logging_syslog_name** | **String**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**logging_syslog_name** | **String** |  |
 
 ### Return type
 
 **Object**
 
-### Authorization
 
-[token](../README.md#token)
+## `getLogSyslog`
 
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getLogSyslog
-
-> ModelLoggingSyslog getLogSyslog(service_id, version_id, logging_syslog_name)
+> LoggingSyslogResponse getLogSyslog(service_id, version_id, logging_syslog_name)
 
 Get a syslog log endpoint
 
@@ -173,14 +129,6 @@ Get the Syslog for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.LoggingSyslogApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -195,30 +143,20 @@ apiInstance.getLogSyslog(service_id, version_id, logging_syslog_name).then((data
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **logging_syslog_name** | **String**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**logging_syslog_name** | **String** |  |
 
 ### Return type
 
-[**ModelLoggingSyslog**](ModelLoggingSyslog.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**LoggingSyslogResponse**](LoggingSyslogResponse.md)
 
 
-## listLogSyslog
+## `listLogSyslog`
 
-> [ModelLoggingSyslog] listLogSyslog(service_id, version_id)
+> [LoggingSyslogResponse] listLogSyslog(service_id, version_id)
 
 List Syslog log endpoints
 
@@ -227,14 +165,6 @@ List all of the Syslogs for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.LoggingSyslogApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -248,29 +178,19 @@ apiInstance.listLogSyslog(service_id, version_id).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
 
 ### Return type
 
-[**[ModelLoggingSyslog]**](ModelLoggingSyslog.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**[LoggingSyslogResponse]**](LoggingSyslogResponse.md)
 
 
-## updateLogSyslog
+## `updateLogSyslog`
 
-> ModelLoggingSyslog updateLogSyslog(service_id, version_id, logging_syslog_name, opts)
+> LoggingSyslogResponse updateLogSyslog(service_id, version_id, logging_syslog_name, opts)
 
 Update a syslog log endpoint
 
@@ -279,24 +199,11 @@ Update the Syslog for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.LoggingSyslogApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
 let logging_syslog_name = "logging_syslog_name_example"; // String | 
 let opts = {
-  'created_at': "created_at_example", // String | Date and time in ISO 8601 format.
-  'deleted_at': "deleted_at_example", // String | Date and time in ISO 8601 format.
-  'updated_at': "updated_at_example", // String | Date and time in ISO 8601 format.
-  'service_id2': "service_id_example", // String | Alphanumeric string identifying the service.
-  'version': 56, // Number | Integer identifying a service version.
   'name': "name_example", // String | The name for the real-time logging configuration.
   'placement': new FastlyApi.LoggingPlacement(), // LoggingPlacement | 
   'format_version': new FastlyApi.LoggingFormatVersion(), // LoggingFormatVersion | 
@@ -324,44 +231,32 @@ apiInstance.updateLogSyslog(service_id, version_id, logging_syslog_name, opts).t
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **logging_syslog_name** | **String**|  | 
- **created_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **deleted_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **updated_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **service_id2** | **String**| Alphanumeric string identifying the service. | [optional] 
- **version** | **Number**| Integer identifying a service version. | [optional] 
- **name** | **String**| The name for the real-time logging configuration. | [optional] 
- **placement** | [**LoggingPlacement**](LoggingPlacement.md)|  | [optional] 
- **format_version** | [**LoggingFormatVersion**](LoggingFormatVersion.md)|  | [optional] 
- **response_condition** | **String**| The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional] 
- **format** | **String**| A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
- **tls_ca_cert** | **String**| A secure certificate to authenticate a server with. Must be in PEM format. | [optional] [default to &#39;null&#39;]
- **tls_client_cert** | **String**| The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [default to &#39;null&#39;]
- **tls_client_key** | **String**| The client private key used to make authenticated requests. Must be in PEM format. | [optional] [default to &#39;null&#39;]
- **tls_hostname** | **String**| The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported. | [optional] [default to &#39;null&#39;]
- **address** | **String**| A hostname or IPv4 address. | [optional] 
- **port** | **Number**| The port number. | [optional] [default to 514]
- **message_type** | [**LoggingMessageType**](LoggingMessageType.md)|  | [optional] 
- **hostname** | **String**| The hostname used for the syslog endpoint. | [optional] 
- **ipv4** | **String**| The IPv4 address used for the syslog endpoint. | [optional] 
- **token** | **String**| Whether to prepend each message with a specific token. | [optional] [default to &#39;null&#39;]
- **use_tls** | [**LoggingUseTls**](LoggingUseTls.md)|  | [optional] 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**logging_syslog_name** | **String** |  |
+**name** | **String** | The name for the real-time logging configuration. | [optional]
+**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
+**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
+**tls_ca_cert** | **String** | A secure certificate to authenticate a server with. Must be in PEM format. | [optional] [default to &#39;null&#39;]
+**tls_client_cert** | **String** | The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [default to &#39;null&#39;]
+**tls_client_key** | **String** | The client private key used to make authenticated requests. Must be in PEM format. | [optional] [default to &#39;null&#39;]
+**tls_hostname** | **String** | The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported. | [optional] [default to &#39;null&#39;]
+**address** | **String** | A hostname or IPv4 address. | [optional]
+**port** | **Number** | The port number. | [optional] [default to 514]
+**message_type** | [**LoggingMessageType**](../Model/LoggingMessageType.md) |  | [optional]
+**hostname** | **String** | The hostname used for the syslog endpoint. | [optional]
+**ipv4** | **String** | The IPv4 address used for the syslog endpoint. | [optional]
+**token** | **String** | Whether to prepend each message with a specific token. | [optional] [default to &#39;null&#39;]
+**use_tls** | [**LoggingUseTls**](../Model/LoggingUseTls.md) |  | [optional]
 
 ### Return type
 
-[**ModelLoggingSyslog**](ModelLoggingSyslog.md)
+[**LoggingSyslogResponse**](LoggingSyslogResponse.md)
 
-### Authorization
 
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: application/x-www-form-urlencoded
-- **Accept**: application/json
-
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to README]](../../README.md)

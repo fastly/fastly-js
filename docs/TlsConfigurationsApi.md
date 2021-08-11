@@ -1,8 +1,10 @@
 # FastlyApi.TlsConfigurationsApi
 
-All URIs are relative to *https://api.fastly.com*
 
-Method | HTTP request | Description
+
+## Methods
+
+Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**getTlsConfig**](TlsConfigurationsApi.md#getTlsConfig) | **GET** /tls/configurations/{tls_configuration_id} | Get a TLS configuration
 [**listTlsConfigs**](TlsConfigurationsApi.md#listTlsConfigs) | **GET** /tls/configurations | List TLS configurations
@@ -10,9 +12,9 @@ Method | HTTP request | Description
 
 
 
-## getTlsConfig
+## `getTlsConfig`
 
-> Object getTlsConfig(tls_configuration_id, opts)
+> TlsConfigurationResponse getTlsConfig(tls_configuration_id, opts)
 
 Get a TLS configuration
 
@@ -21,14 +23,6 @@ Show a TLS configuration.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.TlsConfigurationsApi();
 let tls_configuration_id = "tls_configuration_id_example"; // String | 
 let opts = {
@@ -44,29 +38,19 @@ apiInstance.getTlsConfig(tls_configuration_id, opts).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tls_configuration_id** | **String**|  | 
- **include** | **String**| Include related objects. Optional, comma-separated values. Permitted values: &#x60;dns_records&#x60;.  | [optional] 
+**tls_configuration_id** | **String** |  |
+**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: &#x60;dns_records&#x60;.  | [optional]
 
 ### Return type
 
-**Object**
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.api+json
+[**TlsConfigurationResponse**](TlsConfigurationResponse.md)
 
 
-## listTlsConfigs
+## `listTlsConfigs`
 
-> Object listTlsConfigs(opts)
+> TlsConfigurationsResponse listTlsConfigs(opts)
 
 List TLS configurations
 
@@ -75,14 +59,6 @@ List all TLS configurations.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.TlsConfigurationsApi();
 let opts = {
   'filter_bulk': "filter_bulk_example", // String | Optionally filters by the bulk attribute.
@@ -100,31 +76,21 @@ apiInstance.listTlsConfigs(opts).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter_bulk** | **String**| Optionally filters by the bulk attribute. | [optional] 
- **include** | **String**| Include related objects. Optional, comma-separated values. Permitted values: &#x60;dns_records&#x60;.  | [optional] 
- **page_number** | **Number**| Current page. | [optional] 
- **page_size** | **Number**| Number of records per page. | [optional] [default to 20]
+**filter_bulk** | **String** | Optionally filters by the bulk attribute. | [optional]
+**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: &#x60;dns_records&#x60;.  | [optional]
+**page_number** | **Number** | Current page. | [optional]
+**page_size** | **Number** | Number of records per page. | [optional] [default to 20]
 
 ### Return type
 
-**Object**
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.api+json
+[**TlsConfigurationsResponse**](TlsConfigurationsResponse.md)
 
 
-## updateTlsConfig
+## `updateTlsConfig`
 
-> Object updateTlsConfig(tls_configuration_id, opts)
+> TlsConfigurationResponse updateTlsConfig(tls_configuration_id, opts)
 
 Update a TLS configuration
 
@@ -133,18 +99,10 @@ Update a TLS configuration.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.TlsConfigurationsApi();
 let tls_configuration_id = "tls_configuration_id_example"; // String | 
 let opts = {
-  'body': {"data":{"type":"tls_configuration","attributes":{"name":"New TLS configuration name"}}} // Object | 
+  'tls_configuration': {"data":{"type":"tls_configuration","attributes":{"name":"New TLS configuration name"}}} // TlsConfiguration | 
 };
 apiInstance.updateTlsConfig(tls_configuration_id, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -156,22 +114,15 @@ apiInstance.updateTlsConfig(tls_configuration_id, opts).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tls_configuration_id** | **String**|  | 
- **body** | **Object**|  | [optional] 
+**tls_configuration_id** | **String** |  |
+**tls_configuration** | [**TlsConfiguration**](../Model/TlsConfiguration.md) |  | [optional]
 
 ### Return type
 
-**Object**
+[**TlsConfigurationResponse**](TlsConfigurationResponse.md)
 
-### Authorization
 
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: application/vnd.api+json
-- **Accept**: application/vnd.api+json
-
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to README]](../../README.md)

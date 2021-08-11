@@ -11,3 +11,5 @@ Name | Type | Description | Notes
 **format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
 
 
+
+[[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

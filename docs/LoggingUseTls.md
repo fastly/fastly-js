@@ -3,8 +3,10 @@
 ## Enum
 
 
-* `0` (value: `0`)
+* `no_tls` (value: `0`)
 
-* `1` (value: `1`)
+* `use_tls` (value: `1`)
 
 
+
+[[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

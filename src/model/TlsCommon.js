@@ -1,6 +1,6 @@
 /**
  * Fastly API
- * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit developer.fastly.com/reference/api/ 
+ * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -65,7 +65,7 @@ TlsCommon.prototype['tls_client_key'] = 'null';
 TlsCommon.prototype['tls_cert_hostname'] = 'null';
 
 
-TlsCommon.prototype['use_tls'] = UseTlsEnum.0;
+TlsCommon.prototype['use_tls'] = UseTlsEnum.no_tls;
 
 
 
@@ -75,10 +75,10 @@ TlsCommon.prototype['use_tls'] = UseTlsEnum.0;
 TlsCommon['UseTlsEnum'] = {
 
     
-    "0": 0,
+    "no_tls": 0,
 
     
-    "1": 1
+    "use_tls": 1
 };
 
 

@@ -1,6 +1,6 @@
 /**
  * Fastly API
- * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit developer.fastly.com/reference/api/ 
+ * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -13,7 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
-import ModelUser from '../model/ModelUser';
+import RoleUser from '../model/RoleUser';
+import UserResponse from '../model/UserResponse';
 
 
 export default class UserApi {
@@ -23,7 +24,8 @@ export default class UserApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createUserWithHttpInfo() {
+    createUserWithHttpInfo(opts) {
+      opts = opts || {};
       let postBody = null;
 
       let pathParams = {
@@ -33,20 +35,28 @@ export default class UserApi {
       let headerParams = {
       };
       let formParams = {
+        'login': opts['login'],
+        'name': opts['name'],
+        'limit_services': opts['limit_services'],
+        'locked': opts['locked'],
+        'require_new_password': opts['require_new_password'],
+        'role': opts['role'],
+        'two_factor_auth_enabled': opts['two_factor_auth_enabled'],
+        'two_factor_setup_required': opts['two_factor_setup_required']
       };
 
       let authNames = [];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ModelUser;
+      let returnType = UserResponse;
       return this.apiClient.callApi(
         '/user', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createUser() {
-      return this.createUserWithHttpInfo()
+    createUser(opts) {
+      return this.createUserWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -99,7 +109,7 @@ export default class UserApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ModelUser;
+      let returnType = UserResponse;
       return this.apiClient.callApi(
         '/current_user', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -132,7 +142,7 @@ export default class UserApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ModelUser;
+      let returnType = UserResponse;
       return this.apiClient.callApi(
         '/user/{user_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -178,7 +188,8 @@ export default class UserApi {
           return response_and_data.data;
         });
     }
-    updateUserWithHttpInfo(user_id) {
+    updateUserWithHttpInfo(user_id, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'user_id' is set
       if (user_id === undefined || user_id === null) {
@@ -193,25 +204,34 @@ export default class UserApi {
       let headerParams = {
       };
       let formParams = {
+        'login': opts['login'],
+        'name': opts['name'],
+        'limit_services': opts['limit_services'],
+        'locked': opts['locked'],
+        'require_new_password': opts['require_new_password'],
+        'role': opts['role'],
+        'two_factor_auth_enabled': opts['two_factor_auth_enabled'],
+        'two_factor_setup_required': opts['two_factor_setup_required']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ModelUser;
+      let returnType = UserResponse;
       return this.apiClient.callApi(
         '/user/{user_id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateUser(user_id) {
-      return this.updateUserWithHttpInfo(user_id)
+    updateUser(user_id, opts) {
+      return this.updateUserWithHttpInfo(user_id, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateUserPasswordWithHttpInfo() {
+    updateUserPasswordWithHttpInfo(opts) {
+      opts = opts || {};
       let postBody = null;
 
       let pathParams = {
@@ -221,20 +241,22 @@ export default class UserApi {
       let headerParams = {
       };
       let formParams = {
+        'old_password': opts['old_password'],
+        'new_password': opts['new_password']
       };
 
       let authNames = [];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ModelUser;
+      let returnType = UserResponse;
       return this.apiClient.callApi(
         '/current_user/password', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateUserPassword() {
-      return this.updateUserPasswordWithHttpInfo()
+    updateUserPassword(opts) {
+      return this.updateUserPasswordWithHttpInfo(opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

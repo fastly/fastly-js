@@ -1,6 +1,6 @@
 /**
  * Fastly API
- * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit developer.fastly.com/reference/api/ 
+ * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -13,9 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
-import Direction from '../model/Direction';
-import InlineObject1 from '../model/InlineObject1';
-import ModelDictionaryItem from '../model/ModelDictionaryItem';
+import DictionaryItemResponse from '../model/DictionaryItemResponse';
+import InlineObject from '../model/InlineObject';
 
 
 export default class DictionaryItemApi {
@@ -27,7 +26,7 @@ export default class DictionaryItemApi {
 
     bulkUpdateDictionaryItemWithHttpInfo(service_id, dictionary_id, opts) {
       opts = opts || {};
-      let postBody = opts['inline_object1'];
+      let postBody = opts['inline_object'];
       // verify the required parameter 'service_id' is set
       if (service_id === undefined || service_id === null) {
         throw new Error("Missing the required parameter 'service_id' when calling bulkUpdateDictionaryItem");
@@ -85,11 +84,6 @@ export default class DictionaryItemApi {
       let headerParams = {
       };
       let formParams = {
-        'created_at': opts['created_at'],
-        'deleted_at': opts['deleted_at'],
-        'updated_at': opts['updated_at'],
-        'dictionary_id': opts['dictionary_id2'],
-        'service_id': opts['service_id2'],
         'item_key': opts['item_key'],
         'item_value': opts['item_value']
       };
@@ -97,7 +91,7 @@ export default class DictionaryItemApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ModelDictionaryItem;
+      let returnType = DictionaryItemResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/dictionary/{dictionary_id}/item', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -183,7 +177,7 @@ export default class DictionaryItemApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ModelDictionaryItem;
+      let returnType = DictionaryItemResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -226,7 +220,7 @@ export default class DictionaryItemApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [ModelDictionaryItem];
+      let returnType = [DictionaryItemResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/dictionary/{dictionary_id}/items', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -265,11 +259,6 @@ export default class DictionaryItemApi {
       let headerParams = {
       };
       let formParams = {
-        'created_at': opts['created_at'],
-        'deleted_at': opts['deleted_at'],
-        'updated_at': opts['updated_at'],
-        'dictionary_id': opts['dictionary_id2'],
-        'service_id': opts['service_id2'],
         'item_key': opts['item_key'],
         'item_value': opts['item_value']
       };
@@ -277,7 +266,7 @@ export default class DictionaryItemApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ModelDictionaryItem;
+      let returnType = DictionaryItemResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -316,11 +305,6 @@ export default class DictionaryItemApi {
       let headerParams = {
       };
       let formParams = {
-        'created_at': opts['created_at'],
-        'deleted_at': opts['deleted_at'],
-        'updated_at': opts['updated_at'],
-        'dictionary_id': opts['dictionary_id2'],
-        'service_id': opts['service_id2'],
         'item_key': opts['item_key'],
         'item_value': opts['item_value']
       };
@@ -328,7 +312,7 @@ export default class DictionaryItemApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ModelDictionaryItem;
+      let returnType = DictionaryItemResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,

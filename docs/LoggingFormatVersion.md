@@ -3,8 +3,10 @@
 ## Enum
 
 
-* `1` (value: `1`)
+* `v1` (value: `1`)
 
-* `2` (value: `2`)
+* `v2` (value: `2`)
 
 
+
+[[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

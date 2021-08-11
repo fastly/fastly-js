@@ -1,6 +1,6 @@
 /**
  * Fastly API
- * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit developer.fastly.com/reference/api/ 
+ * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import ModelServer from '../model/ModelServer';
+import ServerResponse from '../model/ServerResponse';
 
 
 export default class ServerApi {
@@ -23,7 +23,8 @@ export default class ServerApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createPoolServerWithHttpInfo(service_id, pool_id) {
+    createPoolServerWithHttpInfo(service_id, pool_id, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'service_id' is set
       if (service_id === undefined || service_id === null) {
@@ -43,20 +44,27 @@ export default class ServerApi {
       let headerParams = {
       };
       let formParams = {
+        'weight': opts['weight'],
+        'max_conn': opts['max_conn'],
+        'port': opts['port'],
+        'address': opts['address'],
+        'comment': opts['comment'],
+        'disabled': opts['disabled'],
+        'override_host': opts['override_host']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ModelServer;
+      let returnType = ServerResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/pool/{pool_id}/server', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createPoolServer(service_id, pool_id) {
-      return this.createPoolServerWithHttpInfo(service_id, pool_id)
+    createPoolServer(service_id, pool_id, opts) {
+      return this.createPoolServerWithHttpInfo(service_id, pool_id, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -134,7 +142,7 @@ export default class ServerApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ModelServer;
+      let returnType = ServerResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/pool/{pool_id}/server/{server_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -172,7 +180,7 @@ export default class ServerApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [ModelServer];
+      let returnType = [ServerResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/pool/{pool_id}/servers', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -185,7 +193,8 @@ export default class ServerApi {
           return response_and_data.data;
         });
     }
-    updatePoolServerWithHttpInfo(service_id, pool_id, server_id) {
+    updatePoolServerWithHttpInfo(service_id, pool_id, server_id, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'service_id' is set
       if (service_id === undefined || service_id === null) {
@@ -210,20 +219,27 @@ export default class ServerApi {
       let headerParams = {
       };
       let formParams = {
+        'weight': opts['weight'],
+        'max_conn': opts['max_conn'],
+        'port': opts['port'],
+        'address': opts['address'],
+        'comment': opts['comment'],
+        'disabled': opts['disabled'],
+        'override_host': opts['override_host']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ModelServer;
+      let returnType = ServerResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/pool/{pool_id}/server/{server_id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updatePoolServer(service_id, pool_id, server_id) {
-      return this.updatePoolServerWithHttpInfo(service_id, pool_id, server_id)
+    updatePoolServer(service_id, pool_id, server_id, opts) {
+      return this.updatePoolServerWithHttpInfo(service_id, pool_id, server_id, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

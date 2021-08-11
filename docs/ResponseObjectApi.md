@@ -1,8 +1,10 @@
 # FastlyApi.ResponseObjectApi
 
-All URIs are relative to *https://api.fastly.com*
 
-Method | HTTP request | Description
+
+## Methods
+
+Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**createResponseObject**](ResponseObjectApi.md#createResponseObject) | **POST** /service/{service_id}/version/{version_id}/response_object | Create a Response object
 [**deleteResponseObject**](ResponseObjectApi.md#deleteResponseObject) | **DELETE** /service/{service_id}/version/{version_id}/response_object/{response_object_name} | Delete a Response Object
@@ -12,9 +14,9 @@ Method | HTTP request | Description
 
 
 
-## createResponseObject
+## `createResponseObject`
 
-> ModelResponseObject createResponseObject(service_id, version_id)
+> ResponseObjectResponse createResponseObject(service_id, version_id)
 
 Create a Response object
 
@@ -23,14 +25,6 @@ Creates a new Response Object.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.ResponseObjectApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -44,27 +38,17 @@ apiInstance.createResponseObject(service_id, version_id).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
 
 ### Return type
 
-[**ModelResponseObject**](ModelResponseObject.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: application/x-www-form-urlencoded
-- **Accept**: application/json
+[**ResponseObjectResponse**](ResponseObjectResponse.md)
 
 
-## deleteResponseObject
+## `deleteResponseObject`
 
 > Object deleteResponseObject(service_id, version_id, response_object_name)
 
@@ -75,14 +59,6 @@ Deletes the specified Response Object.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.ResponseObjectApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -97,30 +73,20 @@ apiInstance.deleteResponseObject(service_id, version_id, response_object_name).t
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **response_object_name** | **String**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**response_object_name** | **String** |  |
 
 ### Return type
 
 **Object**
 
-### Authorization
 
-[token](../README.md#token)
+## `getResponseObject`
 
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getResponseObject
-
-> ModelResponseObject getResponseObject(service_id, version_id, response_object_name)
+> ResponseObjectResponse getResponseObject(service_id, version_id, response_object_name)
 
 Get a Response object
 
@@ -129,14 +95,6 @@ Gets the specified Response Object.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.ResponseObjectApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -151,30 +109,20 @@ apiInstance.getResponseObject(service_id, version_id, response_object_name).then
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **response_object_name** | **String**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**response_object_name** | **String** |  |
 
 ### Return type
 
-[**ModelResponseObject**](ModelResponseObject.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**ResponseObjectResponse**](ResponseObjectResponse.md)
 
 
-## listResponseObjects
+## `listResponseObjects`
 
-> [ModelResponseObject] listResponseObjects(service_id, version_id)
+> [ResponseObjectResponse] listResponseObjects(service_id, version_id)
 
 List Response objects
 
@@ -183,14 +131,6 @@ Returns all Response Objects for the specified service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.ResponseObjectApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -204,29 +144,19 @@ apiInstance.listResponseObjects(service_id, version_id).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
 
 ### Return type
 
-[**[ModelResponseObject]**](ModelResponseObject.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**[ResponseObjectResponse]**](ResponseObjectResponse.md)
 
 
-## updateResponseObject
+## `updateResponseObject`
 
-> ModelResponseObject updateResponseObject(service_id, version_id, response_object_name)
+> ResponseObjectResponse updateResponseObject(service_id, version_id, response_object_name)
 
 Update a Response object
 
@@ -235,14 +165,6 @@ Updates the specified Response Object.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.ResponseObjectApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -257,23 +179,16 @@ apiInstance.updateResponseObject(service_id, version_id, response_object_name).t
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **response_object_name** | **String**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**response_object_name** | **String** |  |
 
 ### Return type
 
-[**ModelResponseObject**](ModelResponseObject.md)
+[**ResponseObjectResponse**](ResponseObjectResponse.md)
 
-### Authorization
 
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: application/x-www-form-urlencoded
-- **Accept**: application/json
-
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to README]](../../README.md)

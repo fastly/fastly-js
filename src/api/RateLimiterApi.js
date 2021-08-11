@@ -1,6 +1,6 @@
 /**
  * Fastly API
- * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit developer.fastly.com/reference/api/ 
+ * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -13,8 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
-import ModelRateLimiter from '../model/ModelRateLimiter';
-import ModelRateLimiterAllOfResponse from '../model/ModelRateLimiterAllOfResponse';
+import RateLimiterResponse from '../model/RateLimiterResponse';
+import RateLimiterResponse1 from '../model/RateLimiterResponse1';
 
 
 export default class RateLimiterApi {
@@ -45,11 +45,6 @@ export default class RateLimiterApi {
       let headerParams = {
       };
       let formParams = {
-        'service_id': opts['service_id2'],
-        'version': opts['version'],
-        'created_at': opts['created_at'],
-        'deleted_at': opts['deleted_at'],
-        'updated_at': opts['updated_at'],
         'name': opts['name'],
         'uri_dictionary_name': opts['uri_dictionary_name'],
         'http_methods': this.apiClient.buildCollectionParam(opts['http_methods'], 'csv'),
@@ -67,7 +62,7 @@ export default class RateLimiterApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = [ModelRateLimiter];
+      let returnType = RateLimiterResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/rate-limiters', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -133,7 +128,7 @@ export default class RateLimiterApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [ModelRateLimiter];
+      let returnType = RateLimiterResponse;
       return this.apiClient.callApi(
         '/rate-limiters/{rate_limiter_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -171,7 +166,7 @@ export default class RateLimiterApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [ModelRateLimiter];
+      let returnType = [RateLimiterResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/rate-limiters', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -200,11 +195,6 @@ export default class RateLimiterApi {
       let headerParams = {
       };
       let formParams = {
-        'service_id': opts['service_id'],
-        'version': opts['version'],
-        'created_at': opts['created_at'],
-        'deleted_at': opts['deleted_at'],
-        'updated_at': opts['updated_at'],
         'name': opts['name'],
         'uri_dictionary_name': opts['uri_dictionary_name'],
         'http_methods': this.apiClient.buildCollectionParam(opts['http_methods'], 'csv'),
@@ -222,7 +212,7 @@ export default class RateLimiterApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = [ModelRateLimiter];
+      let returnType = RateLimiterResponse;
       return this.apiClient.callApi(
         '/rate-limiters/{rate_limiter_id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,

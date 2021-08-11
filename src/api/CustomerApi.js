@@ -1,6 +1,6 @@
 /**
  * Fastly API
- * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit developer.fastly.com/reference/api/ 
+ * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -13,8 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
-import ModelCustomer from '../model/ModelCustomer';
-import SchemasModelUser from '../model/SchemasModelUser';
+import CustomerResponse from '../model/CustomerResponse';
+import SchemasUserResponse from '../model/SchemasUserResponse';
 
 
 export default class CustomerApi {
@@ -77,7 +77,7 @@ export default class CustomerApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ModelCustomer;
+      let returnType = CustomerResponse;
       return this.apiClient.callApi(
         '/customer/{customer_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -105,7 +105,7 @@ export default class CustomerApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ModelCustomer;
+      let returnType = CustomerResponse;
       return this.apiClient.callApi(
         '/current_customer', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -138,7 +138,7 @@ export default class CustomerApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [SchemasModelUser];
+      let returnType = [SchemasUserResponse];
       return this.apiClient.callApi(
         '/customer/{customer_id}/users', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -167,9 +167,6 @@ export default class CustomerApi {
       let headerParams = {
       };
       let formParams = {
-        'created_at': opts['created_at'],
-        'deleted_at': opts['deleted_at'],
-        'updated_at': opts['updated_at'],
         'billing_contact_id': opts['billing_contact_id'],
         'billing_network_type': opts['billing_network_type'],
         'billing_ref': opts['billing_ref'],
@@ -184,7 +181,6 @@ export default class CustomerApi {
         'has_openstack_logging': opts['has_openstack_logging'],
         'has_pci': opts['has_pci'],
         'has_pci_passwords': opts['has_pci_passwords'],
-        'id': opts['id'],
         'ip_whitelist': opts['ip_whitelist'],
         'legal_contact_id': opts['legal_contact_id'],
         'name': opts['name'],
@@ -200,7 +196,7 @@ export default class CustomerApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ModelCustomer;
+      let returnType = CustomerResponse;
       return this.apiClient.callApi(
         '/customer/{customer_id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,

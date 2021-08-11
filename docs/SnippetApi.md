@@ -1,8 +1,10 @@
 # FastlyApi.SnippetApi
 
-All URIs are relative to *https://api.fastly.com*
 
-Method | HTTP request | Description
+
+## Methods
+
+Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**createSnippet**](SnippetApi.md#createSnippet) | **POST** /service/{service_id}/version/{version_id}/snippet | Create a snippet
 [**deleteSnippet**](SnippetApi.md#deleteSnippet) | **DELETE** /service/{service_id}/version/{version_id}/snippet/{snippet_name} | Delete a snippet
@@ -14,9 +16,9 @@ Method | HTTP request | Description
 
 
 
-## createSnippet
+## `createSnippet`
 
-> ModelSnippet createSnippet(service_id, version_id)
+> SnippetResponse createSnippet(service_id, version_id, opts)
 
 Create a snippet
 
@@ -25,18 +27,17 @@ Create a snippet for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.SnippetApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
-apiInstance.createSnippet(service_id, version_id).then((data) => {
+let opts = {
+  'name': "name_example", // String | The name for the snippet.
+  'dynamic': "dynamic_example", // String | Sets the snippet version.
+  'type': "type_example", // String | The location in generated VCL where the snippet should be placed.
+  'content': "content_example", // String | The VCL code that specifies exactly what the snippet does.
+  'priority': "'100'" // String | Numeric string value. Priority determines execution order. Lower numbers execute first.
+};
+apiInstance.createSnippet(service_id, version_id, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -46,27 +47,22 @@ apiInstance.createSnippet(service_id, version_id).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**name** | **String** | The name for the snippet. | [optional]
+**dynamic** | **String** | Sets the snippet version. | [optional]
+**type** | **String** | The location in generated VCL where the snippet should be placed. | [optional]
+**content** | **String** | The VCL code that specifies exactly what the snippet does. | [optional]
+**priority** | **String** | Numeric string value. Priority determines execution order. Lower numbers execute first. | [optional] [default to &#39;100&#39;]
 
 ### Return type
 
-[**ModelSnippet**](ModelSnippet.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: application/x-www-form-urlencoded
-- **Accept**: application/json
+[**SnippetResponse**](SnippetResponse.md)
 
 
-## deleteSnippet
+## `deleteSnippet`
 
 > Object deleteSnippet(service_id, version_id, snippet_name)
 
@@ -77,14 +73,6 @@ Delete a specific snippet for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.SnippetApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -99,30 +87,20 @@ apiInstance.deleteSnippet(service_id, version_id, snippet_name).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **snippet_name** | **String**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**snippet_name** | **String** |  |
 
 ### Return type
 
 **Object**
 
-### Authorization
 
-[token](../README.md#token)
+## `getSnippet`
 
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getSnippet
-
-> ModelSnippet getSnippet(service_id, version_id, snippet_name)
+> SnippetResponse getSnippet(service_id, version_id, snippet_name)
 
 Get a versioned snippet
 
@@ -131,14 +109,6 @@ Get a single snippet for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.SnippetApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -153,30 +123,20 @@ apiInstance.getSnippet(service_id, version_id, snippet_name).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **snippet_name** | **String**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**snippet_name** | **String** |  |
 
 ### Return type
 
-[**ModelSnippet**](ModelSnippet.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**SnippetResponse**](SnippetResponse.md)
 
 
-## getSnippetDynamic
+## `getSnippetDynamic`
 
-> ModelSnippet getSnippetDynamic(service_id, snippet_id)
+> SnippetResponse getSnippetDynamic(service_id, snippet_id)
 
 Get a dynamic snippet
 
@@ -185,14 +145,6 @@ Get a single dynamic snippet for a particular service.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.SnippetApi();
 let service_id = "service_id_example"; // String | 
 let snippet_id = "snippet_id_example"; // String | 
@@ -206,29 +158,19 @@ apiInstance.getSnippetDynamic(service_id, snippet_id).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **snippet_id** | **String**|  | 
+**service_id** | **String** |  |
+**snippet_id** | **String** |  |
 
 ### Return type
 
-[**ModelSnippet**](ModelSnippet.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**SnippetResponse**](SnippetResponse.md)
 
 
-## listSnippets
+## `listSnippets`
 
-> [ModelSnippet] listSnippets(service_id, version_id)
+> [SnippetResponse] listSnippets(service_id, version_id)
 
 List snippets
 
@@ -237,14 +179,6 @@ List all snippets for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.SnippetApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -258,29 +192,19 @@ apiInstance.listSnippets(service_id, version_id).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
 
 ### Return type
 
-[**[ModelSnippet]**](ModelSnippet.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**[SnippetResponse]**](SnippetResponse.md)
 
 
-## updateSnippet
+## `updateSnippet`
 
-> ModelSnippet updateSnippet(service_id, version_id, snippet_name)
+> SnippetResponse updateSnippet(service_id, version_id, snippet_name)
 
 Update a versioned snippet
 
@@ -289,14 +213,6 @@ Update a specific snippet for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.SnippetApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -311,30 +227,20 @@ apiInstance.updateSnippet(service_id, version_id, snippet_name).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **snippet_name** | **String**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**snippet_name** | **String** |  |
 
 ### Return type
 
-[**ModelSnippet**](ModelSnippet.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: application/x-www-form-urlencoded
-- **Accept**: application/json
+[**SnippetResponse**](SnippetResponse.md)
 
 
-## updateSnippetDynamic
+## `updateSnippetDynamic`
 
-> ModelSnippet updateSnippetDynamic(service_id, snippet_id)
+> SnippetResponse updateSnippetDynamic(service_id, snippet_id, opts)
 
 Update a dynamic snippet
 
@@ -343,18 +249,17 @@ Update a dynamic snippet for a particular service.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.SnippetApi();
 let service_id = "service_id_example"; // String | 
 let snippet_id = "snippet_id_example"; // String | 
-apiInstance.updateSnippetDynamic(service_id, snippet_id).then((data) => {
+let opts = {
+  'name': "name_example", // String | The name for the snippet.
+  'dynamic': "dynamic_example", // String | Sets the snippet version.
+  'type': "type_example", // String | The location in generated VCL where the snippet should be placed.
+  'content': "content_example", // String | The VCL code that specifies exactly what the snippet does.
+  'priority': "'100'" // String | Numeric string value. Priority determines execution order. Lower numbers execute first.
+};
+apiInstance.updateSnippetDynamic(service_id, snippet_id, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -364,22 +269,20 @@ apiInstance.updateSnippetDynamic(service_id, snippet_id).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **snippet_id** | **String**|  | 
+**service_id** | **String** |  |
+**snippet_id** | **String** |  |
+**name** | **String** | The name for the snippet. | [optional]
+**dynamic** | **String** | Sets the snippet version. | [optional]
+**type** | **String** | The location in generated VCL where the snippet should be placed. | [optional]
+**content** | **String** | The VCL code that specifies exactly what the snippet does. | [optional]
+**priority** | **String** | Numeric string value. Priority determines execution order. Lower numbers execute first. | [optional] [default to &#39;100&#39;]
 
 ### Return type
 
-[**ModelSnippet**](ModelSnippet.md)
+[**SnippetResponse**](SnippetResponse.md)
 
-### Authorization
 
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: application/x-www-form-urlencoded
-- **Accept**: application/json
-
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to README]](../../README.md)

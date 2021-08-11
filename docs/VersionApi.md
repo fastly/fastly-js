@@ -1,8 +1,10 @@
 # FastlyApi.VersionApi
 
-All URIs are relative to *https://api.fastly.com*
 
-Method | HTTP request | Description
+
+## Methods
+
+Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**activateServiceVersion**](VersionApi.md#activateServiceVersion) | **PUT** /service/{service_id}/version/{version_id}/activate | Activate a service version
 [**cloneServiceVersion**](VersionApi.md#cloneServiceVersion) | **PUT** /service/{service_id}/version/{version_id}/clone | Clone a service version
@@ -16,9 +18,9 @@ Method | HTTP request | Description
 
 
 
-## activateServiceVersion
+## `activateServiceVersion`
 
-> ModelVersion activateServiceVersion(service_id, version_id)
+> VersionResponse activateServiceVersion(service_id, version_id)
 
 Activate a service version
 
@@ -27,14 +29,6 @@ Activate the current version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.VersionApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -48,29 +42,19 @@ apiInstance.activateServiceVersion(service_id, version_id).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
 
 ### Return type
 
-[**ModelVersion**](ModelVersion.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**VersionResponse**](VersionResponse.md)
 
 
-## cloneServiceVersion
+## `cloneServiceVersion`
 
-> ModelVersion cloneServiceVersion(service_id, version_id)
+> Version cloneServiceVersion(service_id, version_id)
 
 Clone a service version
 
@@ -79,14 +63,6 @@ Clone the current configuration into a new version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.VersionApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -100,29 +76,19 @@ apiInstance.cloneServiceVersion(service_id, version_id).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
 
 ### Return type
 
-[**ModelVersion**](ModelVersion.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**Version**](Version.md)
 
 
-## createServiceVersion
+## `createServiceVersion`
 
-> InlineResponse2001 createServiceVersion(service_id)
+> VersionCreateResponse createServiceVersion(service_id)
 
 Create a service version
 
@@ -131,14 +97,6 @@ Create a version for a particular service.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.VersionApi();
 let service_id = "service_id_example"; // String | 
 apiInstance.createServiceVersion(service_id).then((data) => {
@@ -151,28 +109,18 @@ apiInstance.createServiceVersion(service_id).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
+**service_id** | **String** |  |
 
 ### Return type
 
-[**InlineResponse2001**](InlineResponse2001.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**VersionCreateResponse**](VersionCreateResponse.md)
 
 
-## deactivateServiceVersion
+## `deactivateServiceVersion`
 
-> ModelVersion deactivateServiceVersion(service_id, version_id)
+> VersionResponse deactivateServiceVersion(service_id, version_id)
 
 Deactivate a service version
 
@@ -181,14 +129,6 @@ Deactivate the current version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.VersionApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -202,29 +142,19 @@ apiInstance.deactivateServiceVersion(service_id, version_id).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
 
 ### Return type
 
-[**ModelVersion**](ModelVersion.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**VersionResponse**](VersionResponse.md)
 
 
-## getServiceVersion
+## `getServiceVersion`
 
-> ModelVersion getServiceVersion(service_id, version_id)
+> VersionResponse getServiceVersion(service_id, version_id)
 
 Get a version of a service
 
@@ -233,14 +163,6 @@ Get the version for a particular service.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.VersionApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -254,29 +176,19 @@ apiInstance.getServiceVersion(service_id, version_id).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
 
 ### Return type
 
-[**ModelVersion**](ModelVersion.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**VersionResponse**](VersionResponse.md)
 
 
-## listServiceVersions
+## `listServiceVersions`
 
-> [ModelVersion] listServiceVersions(service_id)
+> [VersionResponse] listServiceVersions(service_id)
 
 List versions of a service
 
@@ -285,14 +197,6 @@ List the versions for a particular service.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.VersionApi();
 let service_id = "service_id_example"; // String | 
 apiInstance.listServiceVersions(service_id).then((data) => {
@@ -305,28 +209,18 @@ apiInstance.listServiceVersions(service_id).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
+**service_id** | **String** |  |
 
 ### Return type
 
-[**[ModelVersion]**](ModelVersion.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**[VersionResponse]**](VersionResponse.md)
 
 
-## lockServiceVersion
+## `lockServiceVersion`
 
-> ModelVersion lockServiceVersion(service_id, version_id)
+> Version lockServiceVersion(service_id, version_id)
 
 Lock a service version
 
@@ -335,14 +229,6 @@ Locks the specified version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.VersionApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -356,29 +242,19 @@ apiInstance.lockServiceVersion(service_id, version_id).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
 
 ### Return type
 
-[**ModelVersion**](ModelVersion.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**Version**](Version.md)
 
 
-## updateServiceVersion
+## `updateServiceVersion`
 
-> ModelVersion updateServiceVersion(service_id, version_id)
+> VersionResponse updateServiceVersion(service_id, version_id, opts)
 
 Update a service version
 
@@ -387,18 +263,19 @@ Update a particular version for a particular service.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.VersionApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
-apiInstance.updateServiceVersion(service_id, version_id).then((data) => {
+let opts = {
+  'active': false, // Boolean | Whether this is the active version or not.
+  'comment': "comment_example", // String | A freeform descriptive note.
+  'deployed': true, // Boolean | Unused at this time.
+  'locked': false, // Boolean | Whether this version is locked or not. Objects can not be added or edited on locked versions.
+  'number': 56, // Number | The number of this version.
+  'staging': false, // Boolean | Unused at this time.
+  'testing': false // Boolean | Unused at this time.
+};
+apiInstance.updateServiceVersion(service_id, version_id, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -408,27 +285,24 @@ apiInstance.updateServiceVersion(service_id, version_id).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**active** | **Boolean** | Whether this is the active version or not. | [optional] [default to false]
+**comment** | **String** | A freeform descriptive note. | [optional]
+**deployed** | **Boolean** | Unused at this time. | [optional]
+**locked** | **Boolean** | Whether this version is locked or not. Objects can not be added or edited on locked versions. | [optional] [default to false]
+**number** | **Number** | The number of this version. | [optional]
+**staging** | **Boolean** | Unused at this time. | [optional] [default to false]
+**testing** | **Boolean** | Unused at this time. | [optional] [default to false]
 
 ### Return type
 
-[**ModelVersion**](ModelVersion.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: application/x-www-form-urlencoded
-- **Accept**: application/json
+[**VersionResponse**](VersionResponse.md)
 
 
-## validateServiceVersion
+## `validateServiceVersion`
 
 > Object validateServiceVersion(service_id, version_id)
 
@@ -439,14 +313,6 @@ Validate the version for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.VersionApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -460,22 +326,15 @@ apiInstance.validateServiceVersion(service_id, version_id).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
 
 ### Return type
 
 **Object**
 
-### Authorization
 
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to README]](../../README.md)

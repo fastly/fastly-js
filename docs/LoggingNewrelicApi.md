@@ -1,8 +1,10 @@
 # FastlyApi.LoggingNewrelicApi
 
-All URIs are relative to *https://api.fastly.com*
 
-Method | HTTP request | Description
+
+## Methods
+
+Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**createLogNewrelic**](LoggingNewrelicApi.md#createLogNewrelic) | **POST** /service/{service_id}/version/{version_id}/logging/newrelic | Create a New Relic log endpoint
 [**deleteLogNewrelic**](LoggingNewrelicApi.md#deleteLogNewrelic) | **DELETE** /service/{service_id}/version/{version_id}/logging/newrelic/{logging_newrelic_name} | Delete a New Relic log endpoint
@@ -12,9 +14,9 @@ Method | HTTP request | Description
 
 
 
-## createLogNewrelic
+## `createLogNewrelic`
 
-> ModelLoggingNewrelic createLogNewrelic(service_id, version_id, opts)
+> LoggingNewrelicResponse createLogNewrelic(service_id, version_id, opts)
 
 Create a New Relic log endpoint
 
@@ -23,23 +25,10 @@ Create a New Relic Logs logging object for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.LoggingNewrelicApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
 let opts = {
-  'created_at': "created_at_example", // String | Date and time in ISO 8601 format.
-  'deleted_at': "deleted_at_example", // String | Date and time in ISO 8601 format.
-  'updated_at': "updated_at_example", // String | Date and time in ISO 8601 format.
-  'service_id2': "service_id_example", // String | Alphanumeric string identifying the service.
-  'version': 56, // Number | Integer identifying a service version.
   'name': "name_example", // String | The name for the real-time logging configuration.
   'placement': new FastlyApi.LoggingPlacement(), // LoggingPlacement | 
   'format_version': new FastlyApi.LoggingFormatVersion(), // LoggingFormatVersion | 
@@ -57,38 +46,23 @@ apiInstance.createLogNewrelic(service_id, version_id, opts).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **created_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **deleted_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **updated_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **service_id2** | **String**| Alphanumeric string identifying the service. | [optional] 
- **version** | **Number**| Integer identifying a service version. | [optional] 
- **name** | **String**| The name for the real-time logging configuration. | [optional] 
- **placement** | [**LoggingPlacement**](LoggingPlacement.md)|  | [optional] 
- **format_version** | [**LoggingFormatVersion**](LoggingFormatVersion.md)|  | [optional] 
- **response_condition** | **String**| The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional] 
- **format** | [**Object**](Object.md)| A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest. | [optional] 
- **token** | **String**| The Insert API key from the Account page of your New Relic account. Required. | [optional] 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**name** | **String** | The name for the real-time logging configuration. | [optional]
+**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
+**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
+**format** | [**Object**](../Model/Object.md) | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest. | [optional]
+**token** | **String** | The Insert API key from the Account page of your New Relic account. Required. | [optional]
 
 ### Return type
 
-[**ModelLoggingNewrelic**](ModelLoggingNewrelic.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: application/x-www-form-urlencoded
-- **Accept**: application/json
+[**LoggingNewrelicResponse**](LoggingNewrelicResponse.md)
 
 
-## deleteLogNewrelic
+## `deleteLogNewrelic`
 
 > Object deleteLogNewrelic(service_id, version_id, logging_newrelic_name)
 
@@ -99,14 +73,6 @@ Delete the New Relic Logs logging object for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.LoggingNewrelicApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -121,30 +87,20 @@ apiInstance.deleteLogNewrelic(service_id, version_id, logging_newrelic_name).the
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **logging_newrelic_name** | **String**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**logging_newrelic_name** | **String** |  |
 
 ### Return type
 
 **Object**
 
-### Authorization
 
-[token](../README.md#token)
+## `getLogNewrelic`
 
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getLogNewrelic
-
-> ModelLoggingNewrelic getLogNewrelic(service_id, version_id, logging_newrelic_name)
+> LoggingNewrelicResponse getLogNewrelic(service_id, version_id, logging_newrelic_name)
 
 Get a New Relic log endpoint
 
@@ -153,14 +109,6 @@ Get the details of a New Relic Logs logging object for a particular service and 
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.LoggingNewrelicApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -175,30 +123,20 @@ apiInstance.getLogNewrelic(service_id, version_id, logging_newrelic_name).then((
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **logging_newrelic_name** | **String**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**logging_newrelic_name** | **String** |  |
 
 ### Return type
 
-[**ModelLoggingNewrelic**](ModelLoggingNewrelic.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**LoggingNewrelicResponse**](LoggingNewrelicResponse.md)
 
 
-## listLogNewrelic
+## `listLogNewrelic`
 
-> [ModelLoggingNewrelic] listLogNewrelic(service_id, version_id)
+> [LoggingNewrelicResponse] listLogNewrelic(service_id, version_id)
 
 List New Relic log endpoints
 
@@ -207,14 +145,6 @@ List all of the New Relic Logs logging objects for a particular service and vers
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.LoggingNewrelicApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -228,29 +158,19 @@ apiInstance.listLogNewrelic(service_id, version_id).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
 
 ### Return type
 
-[**[ModelLoggingNewrelic]**](ModelLoggingNewrelic.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**[LoggingNewrelicResponse]**](LoggingNewrelicResponse.md)
 
 
-## updateLogNewrelic
+## `updateLogNewrelic`
 
-> ModelLoggingNewrelic updateLogNewrelic(service_id, version_id, logging_newrelic_name, opts)
+> LoggingNewrelicResponse updateLogNewrelic(service_id, version_id, logging_newrelic_name, opts)
 
 Update a New Relic log endpoint
 
@@ -259,24 +179,11 @@ Update a New Relic Logs logging object for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.LoggingNewrelicApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
 let logging_newrelic_name = "logging_newrelic_name_example"; // String | 
 let opts = {
-  'created_at': "created_at_example", // String | Date and time in ISO 8601 format.
-  'deleted_at': "deleted_at_example", // String | Date and time in ISO 8601 format.
-  'updated_at': "updated_at_example", // String | Date and time in ISO 8601 format.
-  'service_id2': "service_id_example", // String | Alphanumeric string identifying the service.
-  'version': 56, // Number | Integer identifying a service version.
   'name': "name_example", // String | The name for the real-time logging configuration.
   'placement': new FastlyApi.LoggingPlacement(), // LoggingPlacement | 
   'format_version': new FastlyApi.LoggingFormatVersion(), // LoggingFormatVersion | 
@@ -294,34 +201,22 @@ apiInstance.updateLogNewrelic(service_id, version_id, logging_newrelic_name, opt
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **logging_newrelic_name** | **String**|  | 
- **created_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **deleted_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **updated_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **service_id2** | **String**| Alphanumeric string identifying the service. | [optional] 
- **version** | **Number**| Integer identifying a service version. | [optional] 
- **name** | **String**| The name for the real-time logging configuration. | [optional] 
- **placement** | [**LoggingPlacement**](LoggingPlacement.md)|  | [optional] 
- **format_version** | [**LoggingFormatVersion**](LoggingFormatVersion.md)|  | [optional] 
- **response_condition** | **String**| The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional] 
- **format** | [**Object**](Object.md)| A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest. | [optional] 
- **token** | **String**| The Insert API key from the Account page of your New Relic account. Required. | [optional] 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**logging_newrelic_name** | **String** |  |
+**name** | **String** | The name for the real-time logging configuration. | [optional]
+**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
+**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
+**format** | [**Object**](../Model/Object.md) | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest. | [optional]
+**token** | **String** | The Insert API key from the Account page of your New Relic account. Required. | [optional]
 
 ### Return type
 
-[**ModelLoggingNewrelic**](ModelLoggingNewrelic.md)
+[**LoggingNewrelicResponse**](LoggingNewrelicResponse.md)
 
-### Authorization
 
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: application/x-www-form-urlencoded
-- **Accept**: application/json
-
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to README]](../../README.md)

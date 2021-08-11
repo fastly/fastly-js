@@ -1,8 +1,10 @@
 # FastlyApi.TlsActivationsApi
 
-All URIs are relative to *https://api.fastly.com*
 
-Method | HTTP request | Description
+
+## Methods
+
+Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**createTlsActivation**](TlsActivationsApi.md#createTlsActivation) | **POST** /tls/activations | Enable TLS for a domain using a custom certificate
 [**deleteTlsActivation**](TlsActivationsApi.md#deleteTlsActivation) | **DELETE** /tls/activations/{tls_activation_id} | Disable TLS on a domain
@@ -12,9 +14,9 @@ Method | HTTP request | Description
 
 
 
-## createTlsActivation
+## `createTlsActivation`
 
-> Object createTlsActivation(opts)
+> TlsActivationResponse createTlsActivation(opts)
 
 Enable TLS for a domain using a custom certificate
 
@@ -23,17 +25,9 @@ Enable TLS for a particular TLS domain and certificate combination. These relati
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.TlsActivationsApi();
 let opts = {
-  'body': {"data":{"type":"tls_activation","relationships":{"tls_certificate":{"data":{"type":"tls_certificate","id":"cRTguUGZzb2W9Euo4moOr"}},"tls_configuration":{"data":{"type":"tls_configuration","id":"t7CguUGZzb2W9Euo5FoKa"}},"tls_domain":{"data":{"type":"tls_domain","id":"DOMAIN_NAME"}}}}} // Object | 
+  'tls_activation': {"data":{"type":"tls_activation","relationships":{"tls_certificate":{"data":{"type":"tls_certificate","id":"cRTguUGZzb2W9Euo4moOr"}},"tls_configuration":{"data":{"type":"tls_configuration","id":"t7CguUGZzb2W9Euo5FoKa"}},"tls_domain":{"data":{"type":"tls_domain","id":"DOMAIN_NAME"}}}}} // TlsActivation | 
 };
 apiInstance.createTlsActivation(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -45,26 +39,16 @@ apiInstance.createTlsActivation(opts).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **Object**|  | [optional] 
+**tls_activation** | [**TlsActivation**](../Model/TlsActivation.md) |  | [optional]
 
 ### Return type
 
-**Object**
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: application/vnd.api+json
-- **Accept**: application/vnd.api+json
+[**TlsActivationResponse**](TlsActivationResponse.md)
 
 
-## deleteTlsActivation
+## `deleteTlsActivation`
 
 > deleteTlsActivation(tls_activation_id)
 
@@ -75,14 +59,6 @@ Disable TLS on the domain associated with this TLS activation.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.TlsActivationsApi();
 let tls_activation_id = "tls_activation_id_example"; // String | 
 apiInstance.deleteTlsActivation(tls_activation_id).then(() => {
@@ -95,28 +71,18 @@ apiInstance.deleteTlsActivation(tls_activation_id).then(() => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tls_activation_id** | **String**|  | 
+**tls_activation_id** | **String** |  |
 
 ### Return type
 
 null (empty response body)
 
-### Authorization
 
-[token](../README.md#token)
+## `getTlsActivation`
 
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-
-## getTlsActivation
-
-> Object getTlsActivation(tls_activation_id, opts)
+> TlsActivationResponse getTlsActivation(tls_activation_id, opts)
 
 Get a TLS activation
 
@@ -125,14 +91,6 @@ Show a TLS activation.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.TlsActivationsApi();
 let tls_activation_id = "tls_activation_id_example"; // String | 
 let opts = {
@@ -148,29 +106,19 @@ apiInstance.getTlsActivation(tls_activation_id, opts).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tls_activation_id** | **String**|  | 
- **include** | **String**| Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_certificate&#x60;, &#x60;tls_configuration&#x60;, and &#x60;tls_domain&#x60;.  | [optional] 
+**tls_activation_id** | **String** |  |
+**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_certificate&#x60;, &#x60;tls_configuration&#x60;, and &#x60;tls_domain&#x60;.  | [optional]
 
 ### Return type
 
-**Object**
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.api+json
+[**TlsActivationResponse**](TlsActivationResponse.md)
 
 
-## listTlsActivations
+## `listTlsActivations`
 
-> Object listTlsActivations(opts)
+> TlsActivationsResponse listTlsActivations(opts)
 
 List TLS activations
 
@@ -179,14 +127,6 @@ List all TLS activations.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.TlsActivationsApi();
 let opts = {
   'filter_tls_certificate_id': "filter_tls_certificate_id_example", // String | Limit the returned activations to a specific certificate.
@@ -206,33 +146,23 @@ apiInstance.listTlsActivations(opts).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter_tls_certificate_id** | **String**| Limit the returned activations to a specific certificate. | [optional] 
- **filter_tls_configuration_id** | **String**| Limit the returned activations to a specific TLS configuration. | [optional] 
- **filter_tls_domain_id** | **String**| Limit the returned rules to a specific domain name. | [optional] 
- **include** | **String**| Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_certificate&#x60;, &#x60;tls_configuration&#x60;, and &#x60;tls_domain&#x60;.  | [optional] 
- **page_number** | **Number**| Current page. | [optional] 
- **page_size** | **Number**| Number of records per page. | [optional] [default to 20]
+**filter_tls_certificate_id** | **String** | Limit the returned activations to a specific certificate. | [optional]
+**filter_tls_configuration_id** | **String** | Limit the returned activations to a specific TLS configuration. | [optional]
+**filter_tls_domain_id** | **String** | Limit the returned rules to a specific domain name. | [optional]
+**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_certificate&#x60;, &#x60;tls_configuration&#x60;, and &#x60;tls_domain&#x60;.  | [optional]
+**page_number** | **Number** | Current page. | [optional]
+**page_size** | **Number** | Number of records per page. | [optional] [default to 20]
 
 ### Return type
 
-**Object**
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.api+json
+[**TlsActivationsResponse**](TlsActivationsResponse.md)
 
 
-## updateTlsActivation
+## `updateTlsActivation`
 
-> Object updateTlsActivation(tls_activation_id, opts)
+> TlsActivationResponse updateTlsActivation(tls_activation_id, opts)
 
 Update a certificate
 
@@ -241,18 +171,10 @@ Update the certificate used to terminate TLS traffic for the domain associated w
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.TlsActivationsApi();
 let tls_activation_id = "tls_activation_id_example"; // String | 
 let opts = {
-  'body': {"data":{"type":"tls_activation","relationships":{"tls_certificate":{"data":{"type":"tls_certificate","id":"cRTguUGZzb2W9Euo4moOr"}}}}} // Object | 
+  'tls_activation': {"data":{"type":"tls_activation","relationships":{"tls_certificate":{"data":{"type":"tls_certificate","id":"cRTguUGZzb2W9Euo4moOr"}}}}} // TlsActivation | 
 };
 apiInstance.updateTlsActivation(tls_activation_id, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -264,22 +186,15 @@ apiInstance.updateTlsActivation(tls_activation_id, opts).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tls_activation_id** | **String**|  | 
- **body** | **Object**|  | [optional] 
+**tls_activation_id** | **String** |  |
+**tls_activation** | [**TlsActivation**](../Model/TlsActivation.md) |  | [optional]
 
 ### Return type
 
-**Object**
+[**TlsActivationResponse**](TlsActivationResponse.md)
 
-### Authorization
 
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: application/vnd.api+json
-- **Accept**: application/vnd.api+json
-
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to README]](../../README.md)

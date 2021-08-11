@@ -1,6 +1,6 @@
 /**
  * Fastly API
- * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit developer.fastly.com/reference/api/ 
+ * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -13,8 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
-import InlineObject2 from '../model/InlineObject2';
-import InlineObject3 from '../model/InlineObject3';
+import WafExclusion from '../model/WafExclusion';
+import WafExclusionResponse from '../model/WafExclusionResponse';
+import WafExclusionsResponse from '../model/WafExclusionsResponse';
 
 
 export default class WafExclusionsApi {
@@ -26,7 +27,7 @@ export default class WafExclusionsApi {
 
     createWafRuleExclusionWithHttpInfo(firewall_id, firewall_version_number, opts) {
       opts = opts || {};
-      let postBody = opts['inline_object2'];
+      let postBody = opts['waf_exclusion'];
       // verify the required parameter 'firewall_id' is set
       if (firewall_id === undefined || firewall_id === null) {
         throw new Error("Missing the required parameter 'firewall_id' when calling createWafRuleExclusion");
@@ -50,7 +51,7 @@ export default class WafExclusionsApi {
       let authNames = ['token'];
       let contentTypes = ['application/vnd.api+json'];
       let accepts = ['application/vnd.api+json'];
-      let returnType = null;
+      let returnType = WafExclusionResponse;
       return this.apiClient.callApi(
         '/waf/firewalls/{firewall_id}/versions/{firewall_version_number}/exclusions', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -136,7 +137,7 @@ export default class WafExclusionsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/vnd.api+json'];
-      let returnType = null;
+      let returnType = WafExclusionResponse;
       return this.apiClient.callApi(
         '/waf/firewalls/{firewall_id}/versions/{firewall_version_number}/exclusions/{exclusion_number}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -181,7 +182,7 @@ export default class WafExclusionsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/vnd.api+json'];
-      let returnType = null;
+      let returnType = WafExclusionsResponse;
       return this.apiClient.callApi(
         '/waf/firewalls/{firewall_id}/versions/{firewall_version_number}/exclusions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -196,7 +197,7 @@ export default class WafExclusionsApi {
     }
     updateWafRuleExclusionWithHttpInfo(firewall_id, firewall_version_number, exclusion_number, opts) {
       opts = opts || {};
-      let postBody = opts['inline_object3'];
+      let postBody = opts['waf_exclusion'];
       // verify the required parameter 'firewall_id' is set
       if (firewall_id === undefined || firewall_id === null) {
         throw new Error("Missing the required parameter 'firewall_id' when calling updateWafRuleExclusion");
@@ -225,7 +226,7 @@ export default class WafExclusionsApi {
       let authNames = ['token'];
       let contentTypes = ['application/vnd.api+json'];
       let accepts = ['application/vnd.api+json'];
-      let returnType = null;
+      let returnType = WafExclusionResponse;
       return this.apiClient.callApi(
         '/waf/firewalls/{firewall_id}/versions/{firewall_version_number}/exclusions/{exclusion_number}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,

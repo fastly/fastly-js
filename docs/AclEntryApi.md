@@ -1,8 +1,10 @@
 # FastlyApi.AclEntryApi
 
-All URIs are relative to *https://api.fastly.com*
 
-Method | HTTP request | Description
+
+## Methods
+
+Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**bulkUpdateAclEntries**](AclEntryApi.md#bulkUpdateAclEntries) | **PATCH** /service/{service_id}/acl/{acl_id}/entries | Update multiple ACL entries
 [**createAclEntry**](AclEntryApi.md#createAclEntry) | **POST** /service/{service_id}/acl/{acl_id}/entry | Create an ACL entry
@@ -13,7 +15,7 @@ Method | HTTP request | Description
 
 
 
-## bulkUpdateAclEntries
+## `bulkUpdateAclEntries`
 
 > Object bulkUpdateAclEntries(service_id, acl_id, opts)
 
@@ -24,19 +26,11 @@ Update multiple ACL entries on the same ACL.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.AclEntryApi();
 let service_id = "service_id_example"; // String | 
 let acl_id = "acl_id_example"; // String | 
 let opts = {
-  'inline_object': new FastlyApi.InlineObject() // InlineObject | 
+  'acl_entries': {"entries":[{"op":"create","ip":"192.168.0.1","subnet":8},{"op":"update","id":"6yxNzlOpW1V7JfSwvLGtOc","ip":"192.168.0.2","subnet":16},{"op":"delete","id":"6yxNzlOpW1V7JfSwvLGtOc"}]} // AclEntries | 
 };
 apiInstance.bulkUpdateAclEntries(service_id, acl_id, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -48,30 +42,20 @@ apiInstance.bulkUpdateAclEntries(service_id, acl_id, opts).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **acl_id** | **String**|  | 
- **inline_object** | [**InlineObject**](InlineObject.md)|  | [optional] 
+**service_id** | **String** |  |
+**acl_id** | **String** |  |
+**acl_entries** | [**AclEntries**](../Model/AclEntries.md) |  | [optional]
 
 ### Return type
 
 **Object**
 
-### Authorization
 
-[token](../README.md#token)
+## `createAclEntry`
 
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## createAclEntry
-
-> ModelAclEntry createAclEntry(service_id, acl_id, opts)
+> AclEntryResponse createAclEntry(service_id, acl_id, opts)
 
 Create an ACL entry
 
@@ -80,19 +64,11 @@ Add an ACL entry to an ACL.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.AclEntryApi();
 let service_id = "service_id_example"; // String | 
 let acl_id = "acl_id_example"; // String | 
 let opts = {
-  'model_acl_entry': {"subnet":8,"ip":"127.0.0.1"} // ModelAclEntry | 
+  'acl_entry': {"subnet":0,"ip":"127.0.0.1"} // AclEntry | 
 };
 apiInstance.createAclEntry(service_id, acl_id, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -104,28 +80,18 @@ apiInstance.createAclEntry(service_id, acl_id, opts).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **acl_id** | **String**|  | 
- **model_acl_entry** | [**ModelAclEntry**](ModelAclEntry.md)|  | [optional] 
+**service_id** | **String** |  |
+**acl_id** | **String** |  |
+**acl_entry** | [**AclEntry**](../Model/AclEntry.md) |  | [optional]
 
 ### Return type
 
-[**ModelAclEntry**](ModelAclEntry.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
+[**AclEntryResponse**](AclEntryResponse.md)
 
 
-## deleteAclEntry
+## `deleteAclEntry`
 
 > Object deleteAclEntry(service_id, acl_id, acl_entry_id)
 
@@ -136,14 +102,6 @@ Delete an ACL entry from a specified ACL.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.AclEntryApi();
 let service_id = "service_id_example"; // String | 
 let acl_id = "acl_id_example"; // String | 
@@ -158,30 +116,20 @@ apiInstance.deleteAclEntry(service_id, acl_id, acl_entry_id).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **acl_id** | **String**|  | 
- **acl_entry_id** | **String**|  | 
+**service_id** | **String** |  |
+**acl_id** | **String** |  |
+**acl_entry_id** | **String** |  |
 
 ### Return type
 
 **Object**
 
-### Authorization
 
-[token](../README.md#token)
+## `getAclEntry`
 
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getAclEntry
-
-> ModelAclEntry getAclEntry(service_id, acl_id, acl_entry_id)
+> AclEntry getAclEntry(service_id, acl_id, acl_entry_id)
 
 Describe an ACL entry
 
@@ -190,14 +138,6 @@ Retrieve a single ACL entry.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.AclEntryApi();
 let service_id = "service_id_example"; // String | 
 let acl_id = "acl_id_example"; // String | 
@@ -212,30 +152,20 @@ apiInstance.getAclEntry(service_id, acl_id, acl_entry_id).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **acl_id** | **String**|  | 
- **acl_entry_id** | **String**|  | 
+**service_id** | **String** |  |
+**acl_id** | **String** |  |
+**acl_entry_id** | **String** |  |
 
 ### Return type
 
-[**ModelAclEntry**](ModelAclEntry.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**AclEntry**](AclEntry.md)
 
 
-## listAclEntries
+## `listAclEntries`
 
-> [ModelAclEntry] listAclEntries(service_id, acl_id, opts)
+> [AclEntryResponse] listAclEntries(service_id, acl_id, opts)
 
 List ACL entries
 
@@ -244,14 +174,6 @@ List ACL entries for a specified ACL.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.AclEntryApi();
 let service_id = "service_id_example"; // String | 
 let acl_id = "acl_id_example"; // String | 
@@ -259,7 +181,7 @@ let opts = {
   'page': 56, // Number | Current page.
   'per_page': 20, // Number | Number of records per page.
   'sort': "'created'", // String | Field on which to sort.
-  'direction': new FastlyApi.Direction() // Direction | Direction in which to sort results.
+  'direction': ascend // String | Direction in which to sort results.
 };
 apiInstance.listAclEntries(service_id, acl_id, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -271,33 +193,23 @@ apiInstance.listAclEntries(service_id, acl_id, opts).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **acl_id** | **String**|  | 
- **page** | **Number**| Current page. | [optional] 
- **per_page** | **Number**| Number of records per page. | [optional] [default to 20]
- **sort** | **String**| Field on which to sort. | [optional] [default to &#39;created&#39;]
- **direction** | [**Direction**](.md)| Direction in which to sort results. | [optional] 
+**service_id** | **String** |  |
+**acl_id** | **String** |  |
+**page** | **Number** | Current page. | [optional]
+**per_page** | **Number** | Number of records per page. | [optional] [default to 20]
+**sort** | **String** | Field on which to sort. | [optional] [default to &#39;created&#39;]
+**direction** | **String** | Direction in which to sort results. | [optional] [default to &#39;ascend&#39;]
 
 ### Return type
 
-[**[ModelAclEntry]**](ModelAclEntry.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**[AclEntryResponse]**](AclEntryResponse.md)
 
 
-## updateAclEntry
+## `updateAclEntry`
 
-> ModelAclEntry updateAclEntry(service_id, acl_id, acl_entry_id, opts)
+> AclEntry updateAclEntry(service_id, acl_id, acl_entry_id, opts)
 
 Update an ACL entry
 
@@ -306,20 +218,12 @@ Update an ACL entry for a specified ACL.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.AclEntryApi();
 let service_id = "service_id_example"; // String | 
 let acl_id = "acl_id_example"; // String | 
 let acl_entry_id = "acl_entry_id_example"; // String | 
 let opts = {
-  'model_acl_entry': {"ip":"127.0.0.1"} // ModelAclEntry | 
+  'acl_entry': {"subnet":8} // AclEntry | 
 };
 apiInstance.updateAclEntry(service_id, acl_id, acl_entry_id, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -331,24 +235,17 @@ apiInstance.updateAclEntry(service_id, acl_id, acl_entry_id, opts).then((data) =
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **acl_id** | **String**|  | 
- **acl_entry_id** | **String**|  | 
- **model_acl_entry** | [**ModelAclEntry**](ModelAclEntry.md)|  | [optional] 
+**service_id** | **String** |  |
+**acl_id** | **String** |  |
+**acl_entry_id** | **String** |  |
+**acl_entry** | [**AclEntry**](../Model/AclEntry.md) |  | [optional]
 
 ### Return type
 
-[**ModelAclEntry**](ModelAclEntry.md)
+[**AclEntry**](AclEntry.md)
 
-### Authorization
 
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to README]](../../README.md)

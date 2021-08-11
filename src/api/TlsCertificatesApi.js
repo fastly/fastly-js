@@ -1,6 +1,6 @@
 /**
  * Fastly API
- * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit developer.fastly.com/reference/api/ 
+ * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -13,6 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
+import TlsCertificate from '../model/TlsCertificate';
+import TlsCertificateResponse from '../model/TlsCertificateResponse';
+import TlsCertificatesResponse from '../model/TlsCertificatesResponse';
 
 
 export default class TlsCertificatesApi {
@@ -24,7 +27,7 @@ export default class TlsCertificatesApi {
 
     createTlsCertWithHttpInfo(opts) {
       opts = opts || {};
-      let postBody = opts['body'];
+      let postBody = opts['tls_certificate'];
 
       let pathParams = {
       };
@@ -104,7 +107,7 @@ export default class TlsCertificatesApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/vnd.api+json'];
-      let returnType = Object;
+      let returnType = TlsCertificateResponse;
       return this.apiClient.callApi(
         '/tls/certificates/{tls_certificate_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -139,7 +142,7 @@ export default class TlsCertificatesApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/vnd.api+json'];
-      let returnType = Object;
+      let returnType = TlsCertificatesResponse;
       return this.apiClient.callApi(
         '/tls/certificates', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -154,7 +157,7 @@ export default class TlsCertificatesApi {
     }
     updateTlsCertWithHttpInfo(tls_certificate_id, opts) {
       opts = opts || {};
-      let postBody = opts['body'];
+      let postBody = opts['tls_certificate'];
       // verify the required parameter 'tls_certificate_id' is set
       if (tls_certificate_id === undefined || tls_certificate_id === null) {
         throw new Error("Missing the required parameter 'tls_certificate_id' when calling updateTlsCert");
@@ -173,7 +176,7 @@ export default class TlsCertificatesApi {
       let authNames = ['token'];
       let contentTypes = ['application/vnd.api+json'];
       let accepts = ['application/vnd.api+json'];
-      let returnType = Object;
+      let returnType = TlsCertificateResponse;
       return this.apiClient.callApi(
         '/tls/certificates/{tls_certificate_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,

@@ -1,8 +1,10 @@
 # FastlyApi.LoggingHttpsApi
 
-All URIs are relative to *https://api.fastly.com*
 
-Method | HTTP request | Description
+
+## Methods
+
+Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**createLogHttps**](LoggingHttpsApi.md#createLogHttps) | **POST** /service/{service_id}/version/{version_id}/logging/https | Create an HTTPS log endpoint
 [**deleteLogHttps**](LoggingHttpsApi.md#deleteLogHttps) | **DELETE** /service/{service_id}/version/{version_id}/logging/https/{logging_https_name} | Delete an HTTPS log endpoint
@@ -12,9 +14,9 @@ Method | HTTP request | Description
 
 
 
-## createLogHttps
+## `createLogHttps`
 
-> ModelLoggingHttps createLogHttps(service_id, version_id, opts)
+> LoggingHttpsResponse createLogHttps(service_id, version_id, opts)
 
 Create an HTTPS log endpoint
 
@@ -23,23 +25,10 @@ Create an HTTPS object for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.LoggingHttpsApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
 let opts = {
-  'created_at': "created_at_example", // String | Date and time in ISO 8601 format.
-  'deleted_at': "deleted_at_example", // String | Date and time in ISO 8601 format.
-  'updated_at': "updated_at_example", // String | Date and time in ISO 8601 format.
-  'service_id2': "service_id_example", // String | Alphanumeric string identifying the service.
-  'version': 56, // Number | Integer identifying a service version.
   'name': "name_example", // String | The name for the real-time logging configuration.
   'placement': new FastlyApi.LoggingPlacement(), // LoggingPlacement | 
   'format_version': new FastlyApi.LoggingFormatVersion(), // LoggingFormatVersion | 
@@ -69,50 +58,35 @@ apiInstance.createLogHttps(service_id, version_id, opts).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **created_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **deleted_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **updated_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **service_id2** | **String**| Alphanumeric string identifying the service. | [optional] 
- **version** | **Number**| Integer identifying a service version. | [optional] 
- **name** | **String**| The name for the real-time logging configuration. | [optional] 
- **placement** | [**LoggingPlacement**](LoggingPlacement.md)|  | [optional] 
- **format_version** | [**LoggingFormatVersion**](LoggingFormatVersion.md)|  | [optional] 
- **response_condition** | **String**| The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional] 
- **format** | **String**| A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
- **tls_ca_cert** | **String**| A secure certificate to authenticate a server with. Must be in PEM format. | [optional] [default to &#39;null&#39;]
- **tls_client_cert** | **String**| The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [default to &#39;null&#39;]
- **tls_client_key** | **String**| The client private key used to make authenticated requests. Must be in PEM format. | [optional] [default to &#39;null&#39;]
- **tls_hostname** | **String**| The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported. | [optional] [default to &#39;null&#39;]
- **request_max_entries** | **Number**| The maximum number of logs sent in one request. Defaults &#x60;0&#x60; (no limit). | [optional] [default to 0]
- **request_max_bytes** | **Number**| The maximum number of bytes sent in one request. Defaults &#x60;0&#x60; (no limit). | [optional] [default to 0]
- **url** | **String**| The URL to send logs to. Must use HTTPS. Required. | [optional] 
- **content_type** | **String**| Content type of the header sent with the request. | [optional] [default to &#39;null&#39;]
- **header_name** | **String**| Name of the custom header sent with the request. | [optional] [default to &#39;null&#39;]
- **message_type** | [**LoggingMessageType**](LoggingMessageType.md)|  | [optional] 
- **header_value** | **String**| Value of the custom header sent with the request. | [optional] [default to &#39;null&#39;]
- **method** | **String**| HTTP method used for request. | [optional] [default to &#39;POST&#39;]
- **json_format** | **String**| Enforces valid JSON formatting for log entries. | [optional] 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**name** | **String** | The name for the real-time logging configuration. | [optional]
+**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
+**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
+**tls_ca_cert** | **String** | A secure certificate to authenticate a server with. Must be in PEM format. | [optional] [default to &#39;null&#39;]
+**tls_client_cert** | **String** | The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [default to &#39;null&#39;]
+**tls_client_key** | **String** | The client private key used to make authenticated requests. Must be in PEM format. | [optional] [default to &#39;null&#39;]
+**tls_hostname** | **String** | The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported. | [optional] [default to &#39;null&#39;]
+**request_max_entries** | **Number** | The maximum number of logs sent in one request. Defaults &#x60;0&#x60; (no limit). | [optional] [default to 0]
+**request_max_bytes** | **Number** | The maximum number of bytes sent in one request. Defaults &#x60;0&#x60; (no limit). | [optional] [default to 0]
+**url** | **String** | The URL to send logs to. Must use HTTPS. Required. | [optional]
+**content_type** | **String** | Content type of the header sent with the request. | [optional] [default to &#39;null&#39;]
+**header_name** | **String** | Name of the custom header sent with the request. | [optional] [default to &#39;null&#39;]
+**message_type** | [**LoggingMessageType**](../Model/LoggingMessageType.md) |  | [optional]
+**header_value** | **String** | Value of the custom header sent with the request. | [optional] [default to &#39;null&#39;]
+**method** | **String** | HTTP method used for request. | [optional] [default to &#39;POST&#39;]
+**json_format** | **String** | Enforces valid JSON formatting for log entries. | [optional]
 
 ### Return type
 
-[**ModelLoggingHttps**](ModelLoggingHttps.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: application/x-www-form-urlencoded
-- **Accept**: application/json
+[**LoggingHttpsResponse**](LoggingHttpsResponse.md)
 
 
-## deleteLogHttps
+## `deleteLogHttps`
 
 > Object deleteLogHttps(service_id, version_id, logging_https_name)
 
@@ -123,14 +97,6 @@ Delete the HTTPS object for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.LoggingHttpsApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -145,30 +111,20 @@ apiInstance.deleteLogHttps(service_id, version_id, logging_https_name).then((dat
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **logging_https_name** | **String**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**logging_https_name** | **String** |  |
 
 ### Return type
 
 **Object**
 
-### Authorization
 
-[token](../README.md#token)
+## `getLogHttps`
 
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getLogHttps
-
-> ModelLoggingHttps getLogHttps(service_id, version_id, logging_https_name)
+> LoggingHttpsResponse getLogHttps(service_id, version_id, logging_https_name)
 
 Get an HTTPS log endpoint
 
@@ -177,14 +133,6 @@ Get the HTTPS object for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.LoggingHttpsApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -199,30 +147,20 @@ apiInstance.getLogHttps(service_id, version_id, logging_https_name).then((data) 
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **logging_https_name** | **String**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**logging_https_name** | **String** |  |
 
 ### Return type
 
-[**ModelLoggingHttps**](ModelLoggingHttps.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**LoggingHttpsResponse**](LoggingHttpsResponse.md)
 
 
-## listLogHttps
+## `listLogHttps`
 
-> [ModelLoggingHttps] listLogHttps(service_id, version_id)
+> [LoggingHttpsResponse] listLogHttps(service_id, version_id)
 
 List HTTPS log endpoints
 
@@ -231,14 +169,6 @@ List all of the HTTPS objects for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.LoggingHttpsApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -252,29 +182,19 @@ apiInstance.listLogHttps(service_id, version_id).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
 
 ### Return type
 
-[**[ModelLoggingHttps]**](ModelLoggingHttps.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**[LoggingHttpsResponse]**](LoggingHttpsResponse.md)
 
 
-## updateLogHttps
+## `updateLogHttps`
 
-> ModelLoggingHttps updateLogHttps(service_id, version_id, logging_https_name, opts)
+> LoggingHttpsResponse updateLogHttps(service_id, version_id, logging_https_name, opts)
 
 Update an HTTPS log endpoint
 
@@ -283,24 +203,11 @@ Update the HTTPS object for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.LoggingHttpsApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
 let logging_https_name = "logging_https_name_example"; // String | 
 let opts = {
-  'created_at': "created_at_example", // String | Date and time in ISO 8601 format.
-  'deleted_at': "deleted_at_example", // String | Date and time in ISO 8601 format.
-  'updated_at': "updated_at_example", // String | Date and time in ISO 8601 format.
-  'service_id2': "service_id_example", // String | Alphanumeric string identifying the service.
-  'version': 56, // Number | Integer identifying a service version.
   'name': "name_example", // String | The name for the real-time logging configuration.
   'placement': new FastlyApi.LoggingPlacement(), // LoggingPlacement | 
   'format_version': new FastlyApi.LoggingFormatVersion(), // LoggingFormatVersion | 
@@ -330,46 +237,34 @@ apiInstance.updateLogHttps(service_id, version_id, logging_https_name, opts).the
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **logging_https_name** | **String**|  | 
- **created_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **deleted_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **updated_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **service_id2** | **String**| Alphanumeric string identifying the service. | [optional] 
- **version** | **Number**| Integer identifying a service version. | [optional] 
- **name** | **String**| The name for the real-time logging configuration. | [optional] 
- **placement** | [**LoggingPlacement**](LoggingPlacement.md)|  | [optional] 
- **format_version** | [**LoggingFormatVersion**](LoggingFormatVersion.md)|  | [optional] 
- **response_condition** | **String**| The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional] 
- **format** | **String**| A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
- **tls_ca_cert** | **String**| A secure certificate to authenticate a server with. Must be in PEM format. | [optional] [default to &#39;null&#39;]
- **tls_client_cert** | **String**| The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [default to &#39;null&#39;]
- **tls_client_key** | **String**| The client private key used to make authenticated requests. Must be in PEM format. | [optional] [default to &#39;null&#39;]
- **tls_hostname** | **String**| The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported. | [optional] [default to &#39;null&#39;]
- **request_max_entries** | **Number**| The maximum number of logs sent in one request. Defaults &#x60;0&#x60; (no limit). | [optional] [default to 0]
- **request_max_bytes** | **Number**| The maximum number of bytes sent in one request. Defaults &#x60;0&#x60; (no limit). | [optional] [default to 0]
- **url** | **String**| The URL to send logs to. Must use HTTPS. Required. | [optional] 
- **content_type** | **String**| Content type of the header sent with the request. | [optional] [default to &#39;null&#39;]
- **header_name** | **String**| Name of the custom header sent with the request. | [optional] [default to &#39;null&#39;]
- **message_type** | [**LoggingMessageType**](LoggingMessageType.md)|  | [optional] 
- **header_value** | **String**| Value of the custom header sent with the request. | [optional] [default to &#39;null&#39;]
- **method** | **String**| HTTP method used for request. | [optional] [default to &#39;POST&#39;]
- **json_format** | **String**| Enforces valid JSON formatting for log entries. | [optional] 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**logging_https_name** | **String** |  |
+**name** | **String** | The name for the real-time logging configuration. | [optional]
+**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
+**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
+**tls_ca_cert** | **String** | A secure certificate to authenticate a server with. Must be in PEM format. | [optional] [default to &#39;null&#39;]
+**tls_client_cert** | **String** | The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [default to &#39;null&#39;]
+**tls_client_key** | **String** | The client private key used to make authenticated requests. Must be in PEM format. | [optional] [default to &#39;null&#39;]
+**tls_hostname** | **String** | The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported. | [optional] [default to &#39;null&#39;]
+**request_max_entries** | **Number** | The maximum number of logs sent in one request. Defaults &#x60;0&#x60; (no limit). | [optional] [default to 0]
+**request_max_bytes** | **Number** | The maximum number of bytes sent in one request. Defaults &#x60;0&#x60; (no limit). | [optional] [default to 0]
+**url** | **String** | The URL to send logs to. Must use HTTPS. Required. | [optional]
+**content_type** | **String** | Content type of the header sent with the request. | [optional] [default to &#39;null&#39;]
+**header_name** | **String** | Name of the custom header sent with the request. | [optional] [default to &#39;null&#39;]
+**message_type** | [**LoggingMessageType**](../Model/LoggingMessageType.md) |  | [optional]
+**header_value** | **String** | Value of the custom header sent with the request. | [optional] [default to &#39;null&#39;]
+**method** | **String** | HTTP method used for request. | [optional] [default to &#39;POST&#39;]
+**json_format** | **String** | Enforces valid JSON formatting for log entries. | [optional]
 
 ### Return type
 
-[**ModelLoggingHttps**](ModelLoggingHttps.md)
+[**LoggingHttpsResponse**](LoggingHttpsResponse.md)
 
-### Authorization
 
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: application/x-www-form-urlencoded
-- **Accept**: application/json
-
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to README]](../../README.md)

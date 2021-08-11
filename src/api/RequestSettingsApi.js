@@ -1,6 +1,6 @@
 /**
  * Fastly API
- * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit developer.fastly.com/reference/api/ 
+ * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import ModelRequestSettings from '../model/ModelRequestSettings';
+import RequestSettingsResponse from '../model/RequestSettingsResponse';
 
 
 export default class RequestSettingsApi {
@@ -48,7 +48,7 @@ export default class RequestSettingsApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ModelRequestSettings;
+      let returnType = RequestSettingsResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/request_settings', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -134,7 +134,7 @@ export default class RequestSettingsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ModelRequestSettings;
+      let returnType = RequestSettingsResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/request_settings/{request_settings_name}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -172,7 +172,7 @@ export default class RequestSettingsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [ModelRequestSettings];
+      let returnType = [RequestSettingsResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/request_settings', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -185,7 +185,8 @@ export default class RequestSettingsApi {
           return response_and_data.data;
         });
     }
-    updateRequestSettingsWithHttpInfo(service_id, version_id, request_settings_name) {
+    updateRequestSettingsWithHttpInfo(service_id, version_id, request_settings_name, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'service_id' is set
       if (service_id === undefined || service_id === null) {
@@ -210,20 +211,32 @@ export default class RequestSettingsApi {
       let headerParams = {
       };
       let formParams = {
+        'action': opts['action'],
+        'bypass_busy_wait': opts['bypass_busy_wait'],
+        'default_host': opts['default_host'],
+        'force_miss': opts['force_miss'],
+        'force_ssl': opts['force_ssl'],
+        'geo_headers': opts['geo_headers'],
+        'hash_keys': opts['hash_keys'],
+        'max_stale_age': opts['max_stale_age'],
+        'name': opts['name'],
+        'request_condition': opts['request_condition'],
+        'timer_support': opts['timer_support'],
+        'xff': opts['xff']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ModelRequestSettings;
+      let returnType = RequestSettingsResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/request_settings/{request_settings_name}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateRequestSettings(service_id, version_id, request_settings_name) {
-      return this.updateRequestSettingsWithHttpInfo(service_id, version_id, request_settings_name)
+    updateRequestSettings(service_id, version_id, request_settings_name, opts) {
+      return this.updateRequestSettingsWithHttpInfo(service_id, version_id, request_settings_name, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

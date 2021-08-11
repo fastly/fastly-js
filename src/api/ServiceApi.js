@@ -1,6 +1,6 @@
 /**
  * Fastly API
- * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit developer.fastly.com/reference/api/ 
+ * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -13,11 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
-import Direction from '../model/Direction';
-import ModelDomain from '../model/ModelDomain';
-import ModelService from '../model/ModelService';
-import ModelServiceDetail from '../model/ModelServiceDetail';
-import SchemasModelVersion from '../model/SchemasModelVersion';
+import DomainResponse from '../model/DomainResponse';
+import ServiceDetail from '../model/ServiceDetail';
+import ServiceResponse from '../model/ServiceResponse';
 
 
 export default class ServiceApi {
@@ -38,24 +36,16 @@ export default class ServiceApi {
       let headerParams = {
       };
       let formParams = {
-        'created_at': opts['created_at'],
-        'deleted_at': opts['deleted_at'],
-        'updated_at': opts['updated_at'],
         'comment': opts['comment'],
-        'customer_id': opts['customer_id'],
         'name': opts['name'],
-        'paused': opts['paused'],
-        'type': opts['type'],
-        'publish_key': opts['publish_key'],
-        'id': opts['id'],
-        'version': opts['version'],
-        'versions': this.apiClient.buildCollectionParam(opts['versions'], 'csv')
+        'customer_id': opts['customer_id'],
+        'type': opts['type']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ModelService;
+      let returnType = ServiceResponse;
       return this.apiClient.callApi(
         '/service', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -121,7 +111,7 @@ export default class ServiceApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ModelService;
+      let returnType = ServiceResponse;
       return this.apiClient.callApi(
         '/service/{service_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -154,7 +144,7 @@ export default class ServiceApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ModelServiceDetail;
+      let returnType = ServiceDetail;
       return this.apiClient.callApi(
         '/service/{service_id}/details', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -187,7 +177,7 @@ export default class ServiceApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [ModelDomain];
+      let returnType = [DomainResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/domain', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -220,7 +210,7 @@ export default class ServiceApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [ModelService];
+      let returnType = [ServiceResponse];
       return this.apiClient.callApi(
         '/service', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -253,7 +243,7 @@ export default class ServiceApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ModelService;
+      let returnType = ServiceResponse;
       return this.apiClient.callApi(
         '/service/search', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -282,24 +272,15 @@ export default class ServiceApi {
       let headerParams = {
       };
       let formParams = {
-        'created_at': opts['created_at'],
-        'deleted_at': opts['deleted_at'],
-        'updated_at': opts['updated_at'],
         'comment': opts['comment'],
-        'customer_id': opts['customer_id'],
         'name': opts['name'],
-        'paused': opts['paused'],
-        'type': opts['type'],
-        'publish_key': opts['publish_key'],
-        'id': opts['id'],
-        'version': opts['version'],
-        'versions': this.apiClient.buildCollectionParam(opts['versions'], 'csv')
+        'customer_id': opts['customer_id']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ModelService;
+      let returnType = ServiceResponse;
       return this.apiClient.callApi(
         '/service/{service_id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,

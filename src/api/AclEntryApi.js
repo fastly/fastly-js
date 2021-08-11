@@ -1,6 +1,6 @@
 /**
  * Fastly API
- * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit developer.fastly.com/reference/api/ 
+ * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
-import Direction from '../model/Direction';
-import InlineObject from '../model/InlineObject';
-import ModelAclEntry from '../model/ModelAclEntry';
+import AclEntries from '../model/AclEntries';
+import AclEntry from '../model/AclEntry';
+import AclEntryResponse from '../model/AclEntryResponse';
 
 
 export default class AclEntryApi {
@@ -27,7 +27,7 @@ export default class AclEntryApi {
 
     bulkUpdateAclEntriesWithHttpInfo(service_id, acl_id, opts) {
       opts = opts || {};
-      let postBody = opts['inline_object'];
+      let postBody = opts['acl_entries'];
       // verify the required parameter 'service_id' is set
       if (service_id === undefined || service_id === null) {
         throw new Error("Missing the required parameter 'service_id' when calling bulkUpdateAclEntries");
@@ -66,7 +66,7 @@ export default class AclEntryApi {
     }
     createAclEntryWithHttpInfo(service_id, acl_id, opts) {
       opts = opts || {};
-      let postBody = opts['model_acl_entry'];
+      let postBody = opts['acl_entry'];
       // verify the required parameter 'service_id' is set
       if (service_id === undefined || service_id === null) {
         throw new Error("Missing the required parameter 'service_id' when calling createAclEntry");
@@ -90,7 +90,7 @@ export default class AclEntryApi {
       let authNames = ['token'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = ModelAclEntry;
+      let returnType = AclEntryResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/acl/{acl_id}/entry', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -176,7 +176,7 @@ export default class AclEntryApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ModelAclEntry;
+      let returnType = AclEntry;
       return this.apiClient.callApi(
         '/service/{service_id}/acl/{acl_id}/entry/{acl_entry_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -219,7 +219,7 @@ export default class AclEntryApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [ModelAclEntry];
+      let returnType = [AclEntryResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/acl/{acl_id}/entries', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -234,7 +234,7 @@ export default class AclEntryApi {
     }
     updateAclEntryWithHttpInfo(service_id, acl_id, acl_entry_id, opts) {
       opts = opts || {};
-      let postBody = opts['model_acl_entry'];
+      let postBody = opts['acl_entry'];
       // verify the required parameter 'service_id' is set
       if (service_id === undefined || service_id === null) {
         throw new Error("Missing the required parameter 'service_id' when calling updateAclEntry");
@@ -263,7 +263,7 @@ export default class AclEntryApi {
       let authNames = ['token'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = ModelAclEntry;
+      let returnType = AclEntry;
       return this.apiClient.callApi(
         '/service/{service_id}/acl/{acl_id}/entry/{acl_entry_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,

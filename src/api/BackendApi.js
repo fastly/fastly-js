@@ -1,6 +1,6 @@
 /**
  * Fastly API
- * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit developer.fastly.com/reference/api/ 
+ * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import ModelBackend from '../model/ModelBackend';
+import BackendResponse from '../model/BackendResponse';
 
 
 export default class BackendApi {
@@ -23,7 +23,8 @@ export default class BackendApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createBackendWithHttpInfo(service_id, version_id) {
+    createBackendWithHttpInfo(service_id, version_id, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'service_id' is set
       if (service_id === undefined || service_id === null) {
@@ -43,20 +44,49 @@ export default class BackendApi {
       let headerParams = {
       };
       let formParams = {
+        'address': opts['address'],
+        'auto_loadbalance': opts['auto_loadbalance'],
+        'between_bytes_timeout': opts['between_bytes_timeout'],
+        'client_cert': opts['client_cert'],
+        'comment': opts['comment'],
+        'connect_timeout': opts['connect_timeout'],
+        'first_byte_timeout': opts['first_byte_timeout'],
+        'healthcheck': opts['healthcheck'],
+        'hostname': opts['hostname'],
+        'ipv4': opts['ipv4'],
+        'ipv6': opts['ipv6'],
+        'max_conn': opts['max_conn'],
+        'max_tls_version': opts['max_tls_version'],
+        'min_tls_version': opts['min_tls_version'],
+        'name': opts['name'],
+        'override_host': opts['override_host'],
+        'port': opts['port'],
+        'request_condition': opts['request_condition'],
+        'shield': opts['shield'],
+        'ssl_ca_cert': opts['ssl_ca_cert'],
+        'ssl_cert_hostname': opts['ssl_cert_hostname'],
+        'ssl_check_cert': opts['ssl_check_cert'],
+        'ssl_ciphers': opts['ssl_ciphers'],
+        'ssl_client_cert': opts['ssl_client_cert'],
+        'ssl_client_key': opts['ssl_client_key'],
+        'ssl_hostname': opts['ssl_hostname'],
+        'ssl_sni_hostname': opts['ssl_sni_hostname'],
+        'use_ssl': opts['use_ssl'],
+        'weight': opts['weight']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ModelBackend;
+      let returnType = BackendResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/backend', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createBackend(service_id, version_id) {
-      return this.createBackendWithHttpInfo(service_id, version_id)
+    createBackend(service_id, version_id, opts) {
+      return this.createBackendWithHttpInfo(service_id, version_id, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -134,7 +164,7 @@ export default class BackendApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ModelBackend;
+      let returnType = BackendResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/backend/{backend_name}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -172,7 +202,7 @@ export default class BackendApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [ModelBackend];
+      let returnType = [BackendResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/backend', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -185,7 +215,8 @@ export default class BackendApi {
           return response_and_data.data;
         });
     }
-    updateBackendWithHttpInfo(service_id, version_id, backend_name) {
+    updateBackendWithHttpInfo(service_id, version_id, backend_name, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'service_id' is set
       if (service_id === undefined || service_id === null) {
@@ -210,20 +241,49 @@ export default class BackendApi {
       let headerParams = {
       };
       let formParams = {
+        'address': opts['address'],
+        'auto_loadbalance': opts['auto_loadbalance'],
+        'between_bytes_timeout': opts['between_bytes_timeout'],
+        'client_cert': opts['client_cert'],
+        'comment': opts['comment'],
+        'connect_timeout': opts['connect_timeout'],
+        'first_byte_timeout': opts['first_byte_timeout'],
+        'healthcheck': opts['healthcheck'],
+        'hostname': opts['hostname'],
+        'ipv4': opts['ipv4'],
+        'ipv6': opts['ipv6'],
+        'max_conn': opts['max_conn'],
+        'max_tls_version': opts['max_tls_version'],
+        'min_tls_version': opts['min_tls_version'],
+        'name': opts['name'],
+        'override_host': opts['override_host'],
+        'port': opts['port'],
+        'request_condition': opts['request_condition'],
+        'shield': opts['shield'],
+        'ssl_ca_cert': opts['ssl_ca_cert'],
+        'ssl_cert_hostname': opts['ssl_cert_hostname'],
+        'ssl_check_cert': opts['ssl_check_cert'],
+        'ssl_ciphers': opts['ssl_ciphers'],
+        'ssl_client_cert': opts['ssl_client_cert'],
+        'ssl_client_key': opts['ssl_client_key'],
+        'ssl_hostname': opts['ssl_hostname'],
+        'ssl_sni_hostname': opts['ssl_sni_hostname'],
+        'use_ssl': opts['use_ssl'],
+        'weight': opts['weight']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ModelBackend;
+      let returnType = BackendResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/backend/{backend_name}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateBackend(service_id, version_id, backend_name) {
-      return this.updateBackendWithHttpInfo(service_id, version_id, backend_name)
+    updateBackend(service_id, version_id, backend_name, opts) {
+      return this.updateBackendWithHttpInfo(service_id, version_id, backend_name, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

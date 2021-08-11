@@ -1,6 +1,6 @@
 /**
  * Fastly API
- * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit developer.fastly.com/reference/api/ 
+ * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import ModelVcl from '../model/ModelVcl';
+import VclResponse from '../model/VclResponse';
 
 
 export default class VclApi {
@@ -23,7 +23,8 @@ export default class VclApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createCustomVclWithHttpInfo(service_id, version_id) {
+    createCustomVclWithHttpInfo(service_id, version_id, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'service_id' is set
       if (service_id === undefined || service_id === null) {
@@ -43,20 +44,23 @@ export default class VclApi {
       let headerParams = {
       };
       let formParams = {
+        'content': opts['content'],
+        'main': opts['main'],
+        'name': opts['name']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ModelVcl;
+      let returnType = VclResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/vcl', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createCustomVcl(service_id, version_id) {
-      return this.createCustomVclWithHttpInfo(service_id, version_id)
+    createCustomVcl(service_id, version_id, opts) {
+      return this.createCustomVclWithHttpInfo(service_id, version_id, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -136,7 +140,7 @@ export default class VclApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ModelVcl;
+      let returnType = VclResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/vcl/{vcl_name}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -174,7 +178,7 @@ export default class VclApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['text/plain'];
-      let returnType = null;
+      let returnType = 'String';
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/boilerplate', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -212,7 +216,7 @@ export default class VclApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ModelVcl;
+      let returnType = VclResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/generated_vcl', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -336,7 +340,7 @@ export default class VclApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['text/plain'];
-      let returnType = null;
+      let returnType = 'String';
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/vcl/{vcl_name}/download', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -374,7 +378,7 @@ export default class VclApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [ModelVcl];
+      let returnType = [VclResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/vcl', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -417,7 +421,7 @@ export default class VclApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ModelVcl;
+      let returnType = VclResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/vcl/{vcl_name}/main', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -430,7 +434,8 @@ export default class VclApi {
           return response_and_data.data;
         });
     }
-    updateCustomVclWithHttpInfo(service_id, version_id, vcl_name) {
+    updateCustomVclWithHttpInfo(service_id, version_id, vcl_name, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'service_id' is set
       if (service_id === undefined || service_id === null) {
@@ -455,20 +460,23 @@ export default class VclApi {
       let headerParams = {
       };
       let formParams = {
+        'content': opts['content'],
+        'main': opts['main'],
+        'name': opts['name']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ModelVcl;
+      let returnType = VclResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/vcl/{vcl_name}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateCustomVcl(service_id, version_id, vcl_name) {
-      return this.updateCustomVclWithHttpInfo(service_id, version_id, vcl_name)
+    updateCustomVcl(service_id, version_id, vcl_name, opts) {
+      return this.updateCustomVclWithHttpInfo(service_id, version_id, vcl_name, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

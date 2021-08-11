@@ -1,16 +1,18 @@
 # FastlyApi.WafTagsApi
 
-All URIs are relative to *https://api.fastly.com*
 
-Method | HTTP request | Description
+
+## Methods
+
+Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**listWafTags**](WafTagsApi.md#listWafTags) | **GET** /waf/tags | List tags
 
 
 
-## listWafTags
+## `listWafTags`
 
-> Object listWafTags(opts)
+> WafTagsResponse listWafTags(opts)
 
 List tags
 
@@ -19,20 +21,12 @@ List all tags.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.WafTagsApi();
 let opts = {
   'filter_name': "filter_name_example", // String | Limit the returned tags to a specific name.
   'page_number': 56, // Number | Current page.
   'page_size': 20, // Number | Number of records per page.
-  'include': waf_rules // String | Include relationships. Optional, comma-separated values. Permitted values: `waf_rules`. 
+  'include': waf_rules // String | Include relationships. Optional.
 };
 apiInstance.listWafTags(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -44,24 +38,17 @@ apiInstance.listWafTags(opts).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter_name** | **String**| Limit the returned tags to a specific name. | [optional] 
- **page_number** | **Number**| Current page. | [optional] 
- **page_size** | **Number**| Number of records per page. | [optional] [default to 20]
- **include** | **String**| Include relationships. Optional, comma-separated values. Permitted values: &#x60;waf_rules&#x60;.  | [optional] 
+**filter_name** | **String** | Limit the returned tags to a specific name. | [optional]
+**page_number** | **Number** | Current page. | [optional]
+**page_size** | **Number** | Number of records per page. | [optional] [default to 20]
+**include** | **String** | Include relationships. Optional. | [optional] [default to &#39;waf_rules&#39;]
 
 ### Return type
 
-**Object**
+[**WafTagsResponse**](WafTagsResponse.md)
 
-### Authorization
 
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.api+json
-
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to README]](../../README.md)

@@ -1,6 +1,6 @@
 /**
  * Fastly API
- * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit developer.fastly.com/reference/api/ 
+ * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -13,6 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
+import TlsConfiguration from '../model/TlsConfiguration';
+import TlsConfigurationResponse from '../model/TlsConfigurationResponse';
+import TlsConfigurationsResponse from '../model/TlsConfigurationsResponse';
 
 
 export default class TlsConfigurationsApi {
@@ -44,7 +47,7 @@ export default class TlsConfigurationsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/vnd.api+json'];
-      let returnType = Object;
+      let returnType = TlsConfigurationResponse;
       return this.apiClient.callApi(
         '/tls/configurations/{tls_configuration_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -77,7 +80,7 @@ export default class TlsConfigurationsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/vnd.api+json'];
-      let returnType = Object;
+      let returnType = TlsConfigurationsResponse;
       return this.apiClient.callApi(
         '/tls/configurations', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -92,7 +95,7 @@ export default class TlsConfigurationsApi {
     }
     updateTlsConfigWithHttpInfo(tls_configuration_id, opts) {
       opts = opts || {};
-      let postBody = opts['body'];
+      let postBody = opts['tls_configuration'];
       // verify the required parameter 'tls_configuration_id' is set
       if (tls_configuration_id === undefined || tls_configuration_id === null) {
         throw new Error("Missing the required parameter 'tls_configuration_id' when calling updateTlsConfig");
@@ -111,7 +114,7 @@ export default class TlsConfigurationsApi {
       let authNames = ['token'];
       let contentTypes = ['application/vnd.api+json'];
       let accepts = ['application/vnd.api+json'];
-      let returnType = Object;
+      let returnType = TlsConfigurationResponse;
       return this.apiClient.callApi(
         '/tls/configurations/{tls_configuration_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,

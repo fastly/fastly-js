@@ -10,3 +10,5 @@
 * `gzip` (value: `"gzip"`)
 
 
+
+[[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

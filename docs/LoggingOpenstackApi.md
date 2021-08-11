@@ -1,8 +1,10 @@
 # FastlyApi.LoggingOpenstackApi
 
-All URIs are relative to *https://api.fastly.com*
 
-Method | HTTP request | Description
+
+## Methods
+
+Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**createLogOpenstack**](LoggingOpenstackApi.md#createLogOpenstack) | **POST** /service/{service_id}/version/{version_id}/logging/openstack | Create an OpenStack log endpoint
 [**deleteLogOpenstack**](LoggingOpenstackApi.md#deleteLogOpenstack) | **DELETE** /service/{service_id}/version/{version_id}/logging/openstack/{logging_openstack_name} | Delete an OpenStack log endpoint
@@ -12,9 +14,9 @@ Method | HTTP request | Description
 
 
 
-## createLogOpenstack
+## `createLogOpenstack`
 
-> ModelLoggingOpenstack createLogOpenstack(service_id, version_id, opts)
+> LoggingOpenstackResponse createLogOpenstack(service_id, version_id, opts)
 
 Create an OpenStack log endpoint
 
@@ -23,23 +25,10 @@ Create a openstack for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.LoggingOpenstackApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
 let opts = {
-  'created_at': "created_at_example", // String | Date and time in ISO 8601 format.
-  'deleted_at': "deleted_at_example", // String | Date and time in ISO 8601 format.
-  'updated_at': "updated_at_example", // String | Date and time in ISO 8601 format.
-  'service_id2': "service_id_example", // String | Alphanumeric string identifying the service.
-  'version': 56, // Number | Integer identifying a service version.
   'name': "name_example", // String | The name for the real-time logging configuration.
   'placement': new FastlyApi.LoggingPlacement(), // LoggingPlacement | 
   'format_version': new FastlyApi.LoggingFormatVersion(), // LoggingFormatVersion | 
@@ -67,48 +56,33 @@ apiInstance.createLogOpenstack(service_id, version_id, opts).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **created_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **deleted_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **updated_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **service_id2** | **String**| Alphanumeric string identifying the service. | [optional] 
- **version** | **Number**| Integer identifying a service version. | [optional] 
- **name** | **String**| The name for the real-time logging configuration. | [optional] 
- **placement** | [**LoggingPlacement**](LoggingPlacement.md)|  | [optional] 
- **format_version** | [**LoggingFormatVersion**](LoggingFormatVersion.md)|  | [optional] 
- **response_condition** | **String**| The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional] 
- **format** | **String**| A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
- **message_type** | [**LoggingMessageType**](LoggingMessageType.md)|  | [optional] 
- **timestamp_format** | **String**| Date and time in ISO 8601 format. | [optional] 
- **period** | **Number**| How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [default to 3600]
- **gzip_level** | **Number**| What level of gzip encoding to have when sending logs (default &#x60;0&#x60;, no compression). If an explicit non-zero value is set, then &#x60;compression_codec&#x60; will default to \\\&quot;gzip.\\\&quot; Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error. | [optional] [default to 0]
- **compression_codec** | [**LoggingCompressionCodec**](LoggingCompressionCodec.md)|  | [optional] 
- **access_key** | **String**| Your OpenStack account access key. | [optional] 
- **bucket_name** | **String**| The name of your OpenStack container. | [optional] 
- **path** | **String**| The path to upload logs to. | [optional] [default to &#39;null&#39;]
- **public_key** | **String**| A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional] [default to &#39;null&#39;]
- **url** | **String**| Your OpenStack auth url. | [optional] 
- **user** | **String**| The username for your OpenStack account. | [optional] 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**name** | **String** | The name for the real-time logging configuration. | [optional]
+**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
+**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
+**message_type** | [**LoggingMessageType**](../Model/LoggingMessageType.md) |  | [optional]
+**timestamp_format** | **String** | Date and time in ISO 8601 format. | [optional]
+**period** | **Number** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [default to 3600]
+**gzip_level** | **Number** | What level of gzip encoding to have when sending logs (default &#x60;0&#x60;, no compression). If an explicit non-zero value is set, then &#x60;compression_codec&#x60; will default to \\\&quot;gzip.\\\&quot; Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error. | [optional] [default to 0]
+**compression_codec** | [**LoggingCompressionCodec**](../Model/LoggingCompressionCodec.md) |  | [optional]
+**access_key** | **String** | Your OpenStack account access key. | [optional]
+**bucket_name** | **String** | The name of your OpenStack container. | [optional]
+**path** | **String** | The path to upload logs to. | [optional] [default to &#39;null&#39;]
+**public_key** | **String** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional] [default to &#39;null&#39;]
+**url** | **String** | Your OpenStack auth url. | [optional]
+**user** | **String** | The username for your OpenStack account. | [optional]
 
 ### Return type
 
-[**ModelLoggingOpenstack**](ModelLoggingOpenstack.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: application/x-www-form-urlencoded
-- **Accept**: application/json
+[**LoggingOpenstackResponse**](LoggingOpenstackResponse.md)
 
 
-## deleteLogOpenstack
+## `deleteLogOpenstack`
 
 > Object deleteLogOpenstack(service_id, version_id, logging_openstack_name)
 
@@ -119,14 +93,6 @@ Delete the openstack for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.LoggingOpenstackApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -141,30 +107,20 @@ apiInstance.deleteLogOpenstack(service_id, version_id, logging_openstack_name).t
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **logging_openstack_name** | **String**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**logging_openstack_name** | **String** |  |
 
 ### Return type
 
 **Object**
 
-### Authorization
 
-[token](../README.md#token)
+## `getLogOpenstack`
 
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getLogOpenstack
-
-> ModelLoggingOpenstack getLogOpenstack(service_id, version_id, logging_openstack_name)
+> LoggingOpenstackResponse getLogOpenstack(service_id, version_id, logging_openstack_name)
 
 Get an OpenStack log endpoint
 
@@ -173,14 +129,6 @@ Get the openstack for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.LoggingOpenstackApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -195,30 +143,20 @@ apiInstance.getLogOpenstack(service_id, version_id, logging_openstack_name).then
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **logging_openstack_name** | **String**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**logging_openstack_name** | **String** |  |
 
 ### Return type
 
-[**ModelLoggingOpenstack**](ModelLoggingOpenstack.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**LoggingOpenstackResponse**](LoggingOpenstackResponse.md)
 
 
-## listLogOpenstack
+## `listLogOpenstack`
 
-> [ModelLoggingOpenstack] listLogOpenstack(service_id, version_id)
+> [LoggingOpenstackResponse] listLogOpenstack(service_id, version_id)
 
 List OpenStack log endpoints
 
@@ -227,14 +165,6 @@ List all of the openstacks for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.LoggingOpenstackApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -248,29 +178,19 @@ apiInstance.listLogOpenstack(service_id, version_id).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
 
 ### Return type
 
-[**[ModelLoggingOpenstack]**](ModelLoggingOpenstack.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**[LoggingOpenstackResponse]**](LoggingOpenstackResponse.md)
 
 
-## updateLogOpenstack
+## `updateLogOpenstack`
 
-> ModelLoggingOpenstack updateLogOpenstack(service_id, version_id, logging_openstack_name, opts)
+> LoggingOpenstackResponse updateLogOpenstack(service_id, version_id, logging_openstack_name, opts)
 
 Update an OpenStack log endpoint
 
@@ -279,24 +199,11 @@ Update the openstack for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.LoggingOpenstackApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
 let logging_openstack_name = "logging_openstack_name_example"; // String | 
 let opts = {
-  'created_at': "created_at_example", // String | Date and time in ISO 8601 format.
-  'deleted_at': "deleted_at_example", // String | Date and time in ISO 8601 format.
-  'updated_at': "updated_at_example", // String | Date and time in ISO 8601 format.
-  'service_id2': "service_id_example", // String | Alphanumeric string identifying the service.
-  'version': 56, // Number | Integer identifying a service version.
   'name': "name_example", // String | The name for the real-time logging configuration.
   'placement': new FastlyApi.LoggingPlacement(), // LoggingPlacement | 
   'format_version': new FastlyApi.LoggingFormatVersion(), // LoggingFormatVersion | 
@@ -324,44 +231,32 @@ apiInstance.updateLogOpenstack(service_id, version_id, logging_openstack_name, o
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **logging_openstack_name** | **String**|  | 
- **created_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **deleted_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **updated_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **service_id2** | **String**| Alphanumeric string identifying the service. | [optional] 
- **version** | **Number**| Integer identifying a service version. | [optional] 
- **name** | **String**| The name for the real-time logging configuration. | [optional] 
- **placement** | [**LoggingPlacement**](LoggingPlacement.md)|  | [optional] 
- **format_version** | [**LoggingFormatVersion**](LoggingFormatVersion.md)|  | [optional] 
- **response_condition** | **String**| The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional] 
- **format** | **String**| A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
- **message_type** | [**LoggingMessageType**](LoggingMessageType.md)|  | [optional] 
- **timestamp_format** | **String**| Date and time in ISO 8601 format. | [optional] 
- **period** | **Number**| How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [default to 3600]
- **gzip_level** | **Number**| What level of gzip encoding to have when sending logs (default &#x60;0&#x60;, no compression). If an explicit non-zero value is set, then &#x60;compression_codec&#x60; will default to \\\&quot;gzip.\\\&quot; Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error. | [optional] [default to 0]
- **compression_codec** | [**LoggingCompressionCodec**](LoggingCompressionCodec.md)|  | [optional] 
- **access_key** | **String**| Your OpenStack account access key. | [optional] 
- **bucket_name** | **String**| The name of your OpenStack container. | [optional] 
- **path** | **String**| The path to upload logs to. | [optional] [default to &#39;null&#39;]
- **public_key** | **String**| A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional] [default to &#39;null&#39;]
- **url** | **String**| Your OpenStack auth url. | [optional] 
- **user** | **String**| The username for your OpenStack account. | [optional] 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**logging_openstack_name** | **String** |  |
+**name** | **String** | The name for the real-time logging configuration. | [optional]
+**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
+**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
+**message_type** | [**LoggingMessageType**](../Model/LoggingMessageType.md) |  | [optional]
+**timestamp_format** | **String** | Date and time in ISO 8601 format. | [optional]
+**period** | **Number** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [default to 3600]
+**gzip_level** | **Number** | What level of gzip encoding to have when sending logs (default &#x60;0&#x60;, no compression). If an explicit non-zero value is set, then &#x60;compression_codec&#x60; will default to \\\&quot;gzip.\\\&quot; Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error. | [optional] [default to 0]
+**compression_codec** | [**LoggingCompressionCodec**](../Model/LoggingCompressionCodec.md) |  | [optional]
+**access_key** | **String** | Your OpenStack account access key. | [optional]
+**bucket_name** | **String** | The name of your OpenStack container. | [optional]
+**path** | **String** | The path to upload logs to. | [optional] [default to &#39;null&#39;]
+**public_key** | **String** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional] [default to &#39;null&#39;]
+**url** | **String** | Your OpenStack auth url. | [optional]
+**user** | **String** | The username for your OpenStack account. | [optional]
 
 ### Return type
 
-[**ModelLoggingOpenstack**](ModelLoggingOpenstack.md)
+[**LoggingOpenstackResponse**](LoggingOpenstackResponse.md)
 
-### Authorization
 
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: application/x-www-form-urlencoded
-- **Accept**: application/json
-
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to README]](../../README.md)

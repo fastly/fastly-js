@@ -1,6 +1,6 @@
 /**
  * Fastly API
- * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit developer.fastly.com/reference/api/ 
+ * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import ModelSnippet from '../model/ModelSnippet';
+import SnippetResponse from '../model/SnippetResponse';
 
 
 export default class SnippetApi {
@@ -23,7 +23,8 @@ export default class SnippetApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createSnippetWithHttpInfo(service_id, version_id) {
+    createSnippetWithHttpInfo(service_id, version_id, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'service_id' is set
       if (service_id === undefined || service_id === null) {
@@ -43,20 +44,25 @@ export default class SnippetApi {
       let headerParams = {
       };
       let formParams = {
+        'name': opts['name'],
+        'dynamic': opts['dynamic'],
+        'type': opts['type'],
+        'content': opts['content'],
+        'priority': opts['priority']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ModelSnippet;
+      let returnType = SnippetResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/snippet', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createSnippet(service_id, version_id) {
-      return this.createSnippetWithHttpInfo(service_id, version_id)
+    createSnippet(service_id, version_id, opts) {
+      return this.createSnippetWithHttpInfo(service_id, version_id, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -134,7 +140,7 @@ export default class SnippetApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ModelSnippet;
+      let returnType = SnippetResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/snippet/{snippet_name}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -172,7 +178,7 @@ export default class SnippetApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ModelSnippet;
+      let returnType = SnippetResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/snippet/{snippet_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -210,7 +216,7 @@ export default class SnippetApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [ModelSnippet];
+      let returnType = [SnippetResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/snippet', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -253,7 +259,7 @@ export default class SnippetApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ModelSnippet;
+      let returnType = SnippetResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/snippet/{snippet_name}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -266,7 +272,8 @@ export default class SnippetApi {
           return response_and_data.data;
         });
     }
-    updateSnippetDynamicWithHttpInfo(service_id, snippet_id) {
+    updateSnippetDynamicWithHttpInfo(service_id, snippet_id, opts) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'service_id' is set
       if (service_id === undefined || service_id === null) {
@@ -286,20 +293,25 @@ export default class SnippetApi {
       let headerParams = {
       };
       let formParams = {
+        'name': opts['name'],
+        'dynamic': opts['dynamic'],
+        'type': opts['type'],
+        'content': opts['content'],
+        'priority': opts['priority']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ModelSnippet;
+      let returnType = SnippetResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/snippet/{snippet_id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateSnippetDynamic(service_id, snippet_id) {
-      return this.updateSnippetDynamicWithHttpInfo(service_id, snippet_id)
+    updateSnippetDynamic(service_id, snippet_id, opts) {
+      return this.updateSnippetDynamicWithHttpInfo(service_id, snippet_id, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -1,8 +1,10 @@
 # FastlyApi.TlsPrivateKeysApi
 
-All URIs are relative to *https://api.fastly.com*
 
-Method | HTTP request | Description
+
+## Methods
+
+Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**createTlsKey**](TlsPrivateKeysApi.md#createTlsKey) | **POST** /tls/private_keys | Create a TLS private key
 [**deleteTlsKey**](TlsPrivateKeysApi.md#deleteTlsKey) | **DELETE** /tls/private_keys/{tls_private_key_id} | Delete a TLS private key
@@ -11,9 +13,9 @@ Method | HTTP request | Description
 
 
 
-## createTlsKey
+## `createTlsKey`
 
-> Object createTlsKey(opts)
+> TlsPrivateKeyResponse createTlsKey(opts)
 
 Create a TLS private key
 
@@ -22,17 +24,9 @@ Create a TLS private key.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.TlsPrivateKeysApi();
 let opts = {
-  'body': {"data":{"type":"tls_private_key","attributes":{"key":"-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n","name":"My private key"}}} // Object | 
+  'tls_private_key': {"data":{"type":"tls_private_key","attributes":{"key":"-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n","name":"My private key"}}} // TlsPrivateKey | 
 };
 apiInstance.createTlsKey(opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -44,26 +38,16 @@ apiInstance.createTlsKey(opts).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **Object**|  | [optional] 
+**tls_private_key** | [**TlsPrivateKey**](../Model/TlsPrivateKey.md) |  | [optional]
 
 ### Return type
 
-**Object**
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: application/vnd.api+json
-- **Accept**: application/vnd.api+json
+[**TlsPrivateKeyResponse**](TlsPrivateKeyResponse.md)
 
 
-## deleteTlsKey
+## `deleteTlsKey`
 
 > deleteTlsKey(tls_private_key_id)
 
@@ -74,14 +58,6 @@ Destroy a TLS private key. Only private keys not already matched to any certific
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.TlsPrivateKeysApi();
 let tls_private_key_id = "tls_private_key_id_example"; // String | 
 apiInstance.deleteTlsKey(tls_private_key_id).then(() => {
@@ -94,28 +70,18 @@ apiInstance.deleteTlsKey(tls_private_key_id).then(() => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tls_private_key_id** | **String**|  | 
+**tls_private_key_id** | **String** |  |
 
 ### Return type
 
 null (empty response body)
 
-### Authorization
 
-[token](../README.md#token)
+## `getTlsKey`
 
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-
-## getTlsKey
-
-> Object getTlsKey(tls_private_key_id)
+> TlsPrivateKeyResponse getTlsKey(tls_private_key_id)
 
 Get a TLS private key
 
@@ -124,14 +90,6 @@ Show a TLS private key.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.TlsPrivateKeysApi();
 let tls_private_key_id = "tls_private_key_id_example"; // String | 
 apiInstance.getTlsKey(tls_private_key_id).then((data) => {
@@ -144,28 +102,18 @@ apiInstance.getTlsKey(tls_private_key_id).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tls_private_key_id** | **String**|  | 
+**tls_private_key_id** | **String** |  |
 
 ### Return type
 
-**Object**
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.api+json
+[**TlsPrivateKeyResponse**](TlsPrivateKeyResponse.md)
 
 
-## listTlsKeys
+## `listTlsKeys`
 
-> Object listTlsKeys(opts)
+> TlsPrivateKeysResponse listTlsKeys(opts)
 
 List TLS private keys
 
@@ -174,14 +122,6 @@ List all TLS private keys.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.TlsPrivateKeysApi();
 let opts = {
   'filter_in_use': "filter_in_use_example", // String | Limit the returned keys to those without any matching TLS certificates. The only valid value is false.
@@ -198,23 +138,16 @@ apiInstance.listTlsKeys(opts).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter_in_use** | **String**| Limit the returned keys to those without any matching TLS certificates. The only valid value is false. | [optional] 
- **page_number** | **Number**| Current page. | [optional] 
- **page_size** | **Number**| Number of records per page. | [optional] [default to 20]
+**filter_in_use** | **String** | Limit the returned keys to those without any matching TLS certificates. The only valid value is false. | [optional]
+**page_number** | **Number** | Current page. | [optional]
+**page_size** | **Number** | Number of records per page. | [optional] [default to 20]
 
 ### Return type
 
-**Object**
+[**TlsPrivateKeysResponse**](TlsPrivateKeysResponse.md)
 
-### Authorization
 
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/vnd.api+json
-
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to README]](../../README.md)

@@ -1,8 +1,10 @@
 # FastlyApi.VclApi
 
-All URIs are relative to *https://api.fastly.com*
 
-Method | HTTP request | Description
+
+## Methods
+
+Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**createCustomVcl**](VclApi.md#createCustomVcl) | **POST** /service/{service_id}/version/{version_id}/vcl | Create a custom VCL file
 [**deleteCustomVcl**](VclApi.md#deleteCustomVcl) | **DELETE** /service/{service_id}/version/{version_id}/vcl/{vcl_name} | Delete a custom VCL file
@@ -18,9 +20,9 @@ Method | HTTP request | Description
 
 
 
-## createCustomVcl
+## `createCustomVcl`
 
-> ModelVcl createCustomVcl(service_id, version_id)
+> VclResponse createCustomVcl(service_id, version_id, opts)
 
 Create a custom VCL file
 
@@ -29,18 +31,15 @@ Upload a VCL for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.VclApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
-apiInstance.createCustomVcl(service_id, version_id).then((data) => {
+let opts = {
+  'content': "content_example", // String | The VCL code to be included.
+  'main': true, // Boolean | Set to `true` when this is the main VCL, otherwise `false`.
+  'name': "name_example" // String | The name of this VCL.
+};
+apiInstance.createCustomVcl(service_id, version_id, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -50,27 +49,20 @@ apiInstance.createCustomVcl(service_id, version_id).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**content** | **String** | The VCL code to be included. | [optional]
+**main** | **Boolean** | Set to &#x60;true&#x60; when this is the main VCL, otherwise &#x60;false&#x60;. | [optional]
+**name** | **String** | The name of this VCL. | [optional]
 
 ### Return type
 
-[**ModelVcl**](ModelVcl.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: application/x-www-form-urlencoded
-- **Accept**: application/json
+[**VclResponse**](VclResponse.md)
 
 
-## deleteCustomVcl
+## `deleteCustomVcl`
 
 > Object deleteCustomVcl(service_id, version_id, vcl_name)
 
@@ -81,14 +73,6 @@ Delete the uploaded VCL for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.VclApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -103,30 +87,20 @@ apiInstance.deleteCustomVcl(service_id, version_id, vcl_name).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **vcl_name** | **String**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**vcl_name** | **String** |  |
 
 ### Return type
 
 **Object**
 
-### Authorization
 
-[token](../README.md#token)
+## `getCustomVcl`
 
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getCustomVcl
-
-> ModelVcl getCustomVcl(service_id, version_id, vcl_name, opts)
+> VclResponse getCustomVcl(service_id, version_id, vcl_name, opts)
 
 Get a custom VCL file
 
@@ -135,20 +109,12 @@ Get the uploaded VCL for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.VclApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
 let vcl_name = "vcl_name_example"; // String | 
 let opts = {
-  'no_content': "no_content_example" // String | Omit VCL content (default 0).
+  'no_content': "'0'" // String | Omit VCL content.
 };
 apiInstance.getCustomVcl(service_id, version_id, vcl_name, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -160,52 +126,34 @@ apiInstance.getCustomVcl(service_id, version_id, vcl_name, opts).then((data) => 
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **vcl_name** | **String**|  | 
- **no_content** | **String**| Omit VCL content (default 0). | [optional] 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**vcl_name** | **String** |  |
+**no_content** | **String** | Omit VCL content. | [optional] [default to &#39;0&#39;]
 
 ### Return type
 
-[**ModelVcl**](ModelVcl.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**VclResponse**](VclResponse.md)
 
 
-## getCustomVclBoilerplate
+## `getCustomVclBoilerplate`
 
-> getCustomVclBoilerplate(service_id, version_id)
+> String getCustomVclBoilerplate(service_id, version_id)
 
 Get boilerplate VCL
 
-Return boilerplate VCL with the service&#39;s TTL from the [settings](/reference/api/vcl-services/settings/).
+Return boilerplate VCL with the service's TTL from the [settings](/reference/api/vcl-services/settings/).
 
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.VclApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
-apiInstance.getCustomVclBoilerplate(service_id, version_id).then(() => {
-  console.log('API called successfully.');
+apiInstance.getCustomVclBoilerplate(service_id, version_id).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
 });
@@ -214,29 +162,19 @@ apiInstance.getCustomVclBoilerplate(service_id, version_id).then(() => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
 
 ### Return type
 
-null (empty response body)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: text/plain
+**String**
 
 
-## getCustomVclGenerated
+## `getCustomVclGenerated`
 
-> ModelVcl getCustomVclGenerated(service_id, version_id)
+> VclResponse getCustomVclGenerated(service_id, version_id)
 
 Get the generated VCL for a service
 
@@ -245,14 +183,6 @@ Display the generated VCL for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.VclApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -266,45 +196,27 @@ apiInstance.getCustomVclGenerated(service_id, version_id).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
 
 ### Return type
 
-[**ModelVcl**](ModelVcl.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**VclResponse**](VclResponse.md)
 
 
-## getCustomVclGeneratedHighlighted
+## `getCustomVclGeneratedHighlighted`
 
 > getCustomVclGeneratedHighlighted(service_id, version_id)
 
 Get the generated VCL with syntax highlighting
 
-Display the content of generated VCL with HTML syntax highlighting. Include line numbers by sending &#x60;lineno&#x3D;true&#x60; as a request parameter.
+Display the content of generated VCL with HTML syntax highlighting. Include line numbers by sending `lineno=true` as a request parameter.
 
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.VclApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -318,45 +230,27 @@ apiInstance.getCustomVclGeneratedHighlighted(service_id, version_id).then(() => 
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
 
 ### Return type
 
 null (empty response body)
 
-### Authorization
 
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getCustomVclHighlighted
+## `getCustomVclHighlighted`
 
 > getCustomVclHighlighted(service_id, version_id, vcl_name)
 
 Get a custom VCL file with syntax highlighting
 
-Get the uploaded VCL for a particular service and version with HTML syntax highlighting. Include line numbers by sending &#x60;lineno&#x3D;true&#x60; as a request parameter.
+Get the uploaded VCL for a particular service and version with HTML syntax highlighting. Include line numbers by sending `lineno=true` as a request parameter.
 
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.VclApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -371,30 +265,20 @@ apiInstance.getCustomVclHighlighted(service_id, version_id, vcl_name).then(() =>
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **vcl_name** | **String**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**vcl_name** | **String** |  |
 
 ### Return type
 
 null (empty response body)
 
-### Authorization
 
-[token](../README.md#token)
+## `getCustomVclRaw`
 
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getCustomVclRaw
-
-> getCustomVclRaw(service_id, version_id, vcl_name)
+> String getCustomVclRaw(service_id, version_id, vcl_name)
 
 Download a custom VCL file
 
@@ -403,20 +287,12 @@ Download the specified VCL.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.VclApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
 let vcl_name = "vcl_name_example"; // String | 
-apiInstance.getCustomVclRaw(service_id, version_id, vcl_name).then(() => {
-  console.log('API called successfully.');
+apiInstance.getCustomVclRaw(service_id, version_id, vcl_name).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
 });
@@ -425,30 +301,20 @@ apiInstance.getCustomVclRaw(service_id, version_id, vcl_name).then(() => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **vcl_name** | **String**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**vcl_name** | **String** |  |
 
 ### Return type
 
-null (empty response body)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: text/plain
+**String**
 
 
-## listCustomVcl
+## `listCustomVcl`
 
-> [ModelVcl] listCustomVcl(service_id, version_id)
+> [VclResponse] listCustomVcl(service_id, version_id)
 
 List custom VCL files
 
@@ -457,14 +323,6 @@ List the uploaded VCLs for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.VclApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -478,29 +336,19 @@ apiInstance.listCustomVcl(service_id, version_id).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
 
 ### Return type
 
-[**[ModelVcl]**](ModelVcl.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**[VclResponse]**](VclResponse.md)
 
 
-## setCustomVclMain
+## `setCustomVclMain`
 
-> ModelVcl setCustomVclMain(service_id, version_id, vcl_name)
+> VclResponse setCustomVclMain(service_id, version_id, vcl_name)
 
 Set a custom VCL file as main
 
@@ -509,14 +357,6 @@ Set the specified VCL as the main.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.VclApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -531,30 +371,20 @@ apiInstance.setCustomVclMain(service_id, version_id, vcl_name).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **vcl_name** | **String**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**vcl_name** | **String** |  |
 
 ### Return type
 
-[**ModelVcl**](ModelVcl.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**VclResponse**](VclResponse.md)
 
 
-## updateCustomVcl
+## `updateCustomVcl`
 
-> ModelVcl updateCustomVcl(service_id, version_id, vcl_name)
+> VclResponse updateCustomVcl(service_id, version_id, vcl_name, opts)
 
 Update a custom VCL file
 
@@ -563,19 +393,16 @@ Update the uploaded VCL for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.VclApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
 let vcl_name = "vcl_name_example"; // String | 
-apiInstance.updateCustomVcl(service_id, version_id, vcl_name).then((data) => {
+let opts = {
+  'content': "content_example", // String | The VCL code to be included.
+  'main': true, // Boolean | Set to `true` when this is the main VCL, otherwise `false`.
+  'name': "name_example" // String | The name of this VCL.
+};
+apiInstance.updateCustomVcl(service_id, version_id, vcl_name, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -585,23 +412,19 @@ apiInstance.updateCustomVcl(service_id, version_id, vcl_name).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **vcl_name** | **String**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**vcl_name** | **String** |  |
+**content** | **String** | The VCL code to be included. | [optional]
+**main** | **Boolean** | Set to &#x60;true&#x60; when this is the main VCL, otherwise &#x60;false&#x60;. | [optional]
+**name** | **String** | The name of this VCL. | [optional]
 
 ### Return type
 
-[**ModelVcl**](ModelVcl.md)
+[**VclResponse**](VclResponse.md)
 
-### Authorization
 
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: application/x-www-form-urlencoded
-- **Accept**: application/json
-
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to README]](../../README.md)

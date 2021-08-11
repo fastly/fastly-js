@@ -1,6 +1,6 @@
 /**
  * Fastly API
- * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit developer.fastly.com/reference/api/ 
+ * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
  *
  * The version of the OpenAPI document: 1.0.0
  * 
@@ -13,259 +13,397 @@
 
 
 import ApiClient from './ApiClient';
-import CustomerCustomerIdBillingAddressData from './model/CustomerCustomerIdBillingAddressData';
-import CustomerCustomerIdBillingAddressData1 from './model/CustomerCustomerIdBillingAddressData1';
-import Direction from './model/Direction';
+import Acl from './model/Acl';
+import AclEntries from './model/AclEntries';
+import AclEntry from './model/AclEntry';
+import AclEntryResponse from './model/AclEntryResponse';
+import AclEntryResponseAllOf from './model/AclEntryResponseAllOf';
+import AclResponse from './model/AclResponse';
+import AclResponseAllOf from './model/AclResponseAllOf';
+import Backend from './model/Backend';
+import BackendResponse from './model/BackendResponse';
+import BackendResponseAllOf from './model/BackendResponseAllOf';
+import BulkWafActiveRules from './model/BulkWafActiveRules';
+import CacheSetting from './model/CacheSetting';
+import CacheSettingResponse from './model/CacheSettingResponse';
+import Condition from './model/Condition';
+import ConditionResponse from './model/ConditionResponse';
+import Content from './model/Content';
+import Customer from './model/Customer';
+import CustomerResponse from './model/CustomerResponse';
+import CustomerResponseAllOf from './model/CustomerResponseAllOf';
+import Dictionary from './model/Dictionary';
+import DictionaryInfoResponse from './model/DictionaryInfoResponse';
+import DictionaryItem from './model/DictionaryItem';
+import DictionaryItemResponse from './model/DictionaryItemResponse';
+import DictionaryItemResponseAllOf from './model/DictionaryItemResponseAllOf';
+import DictionaryResponse from './model/DictionaryResponse';
+import DictionaryResponseAllOf from './model/DictionaryResponseAllOf';
+import DiffResponse from './model/DiffResponse';
+import Director from './model/Director';
+import DirectorBackend from './model/DirectorBackend';
+import DirectorBackendAllOf from './model/DirectorBackendAllOf';
+import DirectorResponse from './model/DirectorResponse';
+import Domain from './model/Domain';
+import DomainResponse from './model/DomainResponse';
+import EventResponse from './model/EventResponse';
+import EventResponseData from './model/EventResponseData';
+import EventResponseDataAttributes from './model/EventResponseDataAttributes';
+import EventsResponse from './model/EventsResponse';
+import EventsResponseAllOf from './model/EventsResponseAllOf';
 import GenericTokenError from './model/GenericTokenError';
+import Gzip from './model/Gzip';
+import GzipResponse from './model/GzipResponse';
+import Header from './model/Header';
+import HeaderResponse from './model/HeaderResponse';
+import Healthcheck from './model/Healthcheck';
+import HealthcheckResponse from './model/HealthcheckResponse';
 import InlineObject from './model/InlineObject';
-import InlineObject1 from './model/InlineObject1';
-import InlineObject2 from './model/InlineObject2';
-import InlineObject3 from './model/InlineObject3';
-import InlineObject4 from './model/InlineObject4';
-import InlineObject5 from './model/InlineObject5';
-import InlineObject6 from './model/InlineObject6';
-import InlineObject8 from './model/InlineObject8';
-import InlineObject9 from './model/InlineObject9';
-import InlineResponse200 from './model/InlineResponse200';
-import InlineResponse2001 from './model/InlineResponse2001';
-import InlineResponse204 from './model/InlineResponse204';
 import InlineResponse400 from './model/InlineResponse400';
-import InvitationsData from './model/InvitationsData';
+import Invitation from './model/Invitation';
+import InvitationData from './model/InvitationData';
+import InvitationDataAttributes from './model/InvitationDataAttributes';
+import InvitationResponse from './model/InvitationResponse';
+import InvitationsResponse from './model/InvitationsResponse';
+import InvitationsResponseAllOf from './model/InvitationsResponseAllOf';
 import LoggingAddressAndPort from './model/LoggingAddressAndPort';
+import LoggingAzureblob from './model/LoggingAzureblob';
+import LoggingAzureblobAllOf from './model/LoggingAzureblobAllOf';
+import LoggingAzureblobResponse from './model/LoggingAzureblobResponse';
+import LoggingBigquery from './model/LoggingBigquery';
+import LoggingBigqueryAllOf from './model/LoggingBigqueryAllOf';
+import LoggingBigqueryResponse from './model/LoggingBigqueryResponse';
+import LoggingCloudfiles from './model/LoggingCloudfiles';
+import LoggingCloudfilesAllOf from './model/LoggingCloudfilesAllOf';
+import LoggingCloudfilesResponse from './model/LoggingCloudfilesResponse';
 import LoggingCommon from './model/LoggingCommon';
 import LoggingCompressionCodec from './model/LoggingCompressionCodec';
+import LoggingDatadog from './model/LoggingDatadog';
+import LoggingDatadogAllOf from './model/LoggingDatadogAllOf';
+import LoggingDatadogResponse from './model/LoggingDatadogResponse';
+import LoggingDigitalocean from './model/LoggingDigitalocean';
+import LoggingDigitaloceanAllOf from './model/LoggingDigitaloceanAllOf';
+import LoggingDigitaloceanResponse from './model/LoggingDigitaloceanResponse';
+import LoggingElasticsearch from './model/LoggingElasticsearch';
+import LoggingElasticsearchAllOf from './model/LoggingElasticsearchAllOf';
+import LoggingElasticsearchResponse from './model/LoggingElasticsearchResponse';
 import LoggingFormatVersion from './model/LoggingFormatVersion';
+import LoggingFtp from './model/LoggingFtp';
+import LoggingFtpAllOf from './model/LoggingFtpAllOf';
+import LoggingFtpResponse from './model/LoggingFtpResponse';
+import LoggingGcs from './model/LoggingGcs';
+import LoggingGcsAllOf from './model/LoggingGcsAllOf';
 import LoggingGcsCommon from './model/LoggingGcsCommon';
+import LoggingGcsResponse from './model/LoggingGcsResponse';
 import LoggingGenericCommon from './model/LoggingGenericCommon';
+import LoggingGooglePubsub from './model/LoggingGooglePubsub';
+import LoggingGooglePubsubAllOf from './model/LoggingGooglePubsubAllOf';
+import LoggingGooglePubsubResponse from './model/LoggingGooglePubsubResponse';
+import LoggingHeroku from './model/LoggingHeroku';
+import LoggingHerokuAllOf from './model/LoggingHerokuAllOf';
+import LoggingHerokuResponse from './model/LoggingHerokuResponse';
+import LoggingHoneycomb from './model/LoggingHoneycomb';
+import LoggingHoneycombAllOf from './model/LoggingHoneycombAllOf';
+import LoggingHoneycombResponse from './model/LoggingHoneycombResponse';
+import LoggingHttps from './model/LoggingHttps';
+import LoggingHttpsAllOf from './model/LoggingHttpsAllOf';
+import LoggingHttpsResponse from './model/LoggingHttpsResponse';
+import LoggingKafka from './model/LoggingKafka';
+import LoggingKafkaAllOf from './model/LoggingKafkaAllOf';
+import LoggingKafkaResponse from './model/LoggingKafkaResponse';
+import LoggingKinesis from './model/LoggingKinesis';
+import LoggingKinesisResponse from './model/LoggingKinesisResponse';
+import LoggingLogentries from './model/LoggingLogentries';
+import LoggingLogentriesAllOf from './model/LoggingLogentriesAllOf';
+import LoggingLogentriesResponse from './model/LoggingLogentriesResponse';
+import LoggingLoggly from './model/LoggingLoggly';
+import LoggingLogglyAllOf from './model/LoggingLogglyAllOf';
+import LoggingLogglyResponse from './model/LoggingLogglyResponse';
+import LoggingLogshuttle from './model/LoggingLogshuttle';
+import LoggingLogshuttleAllOf from './model/LoggingLogshuttleAllOf';
+import LoggingLogshuttleResponse from './model/LoggingLogshuttleResponse';
 import LoggingMessageType from './model/LoggingMessageType';
+import LoggingNewrelic from './model/LoggingNewrelic';
+import LoggingNewrelicAllOf from './model/LoggingNewrelicAllOf';
+import LoggingNewrelicResponse from './model/LoggingNewrelicResponse';
+import LoggingOpenstack from './model/LoggingOpenstack';
+import LoggingOpenstackAllOf from './model/LoggingOpenstackAllOf';
+import LoggingOpenstackResponse from './model/LoggingOpenstackResponse';
+import LoggingPapertrail from './model/LoggingPapertrail';
+import LoggingPapertrailResponse from './model/LoggingPapertrailResponse';
 import LoggingPlacement from './model/LoggingPlacement';
 import LoggingRequestCapsCommon from './model/LoggingRequestCapsCommon';
+import LoggingS3 from './model/LoggingS3';
+import LoggingS3AllOf from './model/LoggingS3AllOf';
+import LoggingS3Response from './model/LoggingS3Response';
+import LoggingScalyr from './model/LoggingScalyr';
+import LoggingScalyrAllOf from './model/LoggingScalyrAllOf';
+import LoggingScalyrResponse from './model/LoggingScalyrResponse';
+import LoggingSftp from './model/LoggingSftp';
+import LoggingSftpAllOf from './model/LoggingSftpAllOf';
+import LoggingSftpResponse from './model/LoggingSftpResponse';
+import LoggingSplunk from './model/LoggingSplunk';
+import LoggingSplunkAllOf from './model/LoggingSplunkAllOf';
+import LoggingSplunkResponse from './model/LoggingSplunkResponse';
+import LoggingSumologic from './model/LoggingSumologic';
+import LoggingSumologicAllOf from './model/LoggingSumologicAllOf';
+import LoggingSumologicResponse from './model/LoggingSumologicResponse';
+import LoggingSyslog from './model/LoggingSyslog';
+import LoggingSyslogAllOf from './model/LoggingSyslogAllOf';
+import LoggingSyslogResponse from './model/LoggingSyslogResponse';
 import LoggingTlsCommon from './model/LoggingTlsCommon';
 import LoggingUseTls from './model/LoggingUseTls';
-import ModelAcl from './model/ModelAcl';
-import ModelAclAllOf from './model/ModelAclAllOf';
-import ModelAclEntry from './model/ModelAclEntry';
-import ModelAclEntryAllOf from './model/ModelAclEntryAllOf';
-import ModelBackend from './model/ModelBackend';
-import ModelBackendAllOf from './model/ModelBackendAllOf';
-import ModelBilling from './model/ModelBilling';
-import ModelBillingAddress from './model/ModelBillingAddress';
-import ModelBillingStatus from './model/ModelBillingStatus';
-import ModelBillingTotal from './model/ModelBillingTotal';
-import ModelBillingTotalExtras from './model/ModelBillingTotalExtras';
-import ModelCacheSettings from './model/ModelCacheSettings';
-import ModelCacheSettingsAllOf from './model/ModelCacheSettingsAllOf';
-import ModelCompatInvitation from './model/ModelCompatInvitation';
-import ModelCompatService from './model/ModelCompatService';
-import ModelCompatServiceAllOf from './model/ModelCompatServiceAllOf';
-import ModelCompatServiceAuthorization from './model/ModelCompatServiceAuthorization';
-import ModelCompatStar from './model/ModelCompatStar';
-import ModelCompatTlsConfiguration from './model/ModelCompatTlsConfiguration';
-import ModelCompatTlsSubscriptions from './model/ModelCompatTlsSubscriptions';
-import ModelCompatWafExclusions from './model/ModelCompatWafExclusions';
-import ModelCompatWafExclusionsData from './model/ModelCompatWafExclusionsData';
-import ModelCompatWafExclusionsDataRelationships from './model/ModelCompatWafExclusionsDataRelationships';
-import ModelCompatWafExclusionsDataRelationshipsWafRules from './model/ModelCompatWafExclusionsDataRelationshipsWafRules';
-import ModelCompatWafExclusionsDataRelationshipsWafRulesData from './model/ModelCompatWafExclusionsDataRelationshipsWafRulesData';
-import ModelCondition from './model/ModelCondition';
-import ModelConditionAllOf from './model/ModelConditionAllOf';
-import ModelCustomer from './model/ModelCustomer';
-import ModelCustomerAllOf from './model/ModelCustomerAllOf';
-import ModelDictionary from './model/ModelDictionary';
-import ModelDictionaryAllOf from './model/ModelDictionaryAllOf';
-import ModelDictionaryInfo from './model/ModelDictionaryInfo';
-import ModelDictionaryItem from './model/ModelDictionaryItem';
-import ModelDictionaryItemAllOf from './model/ModelDictionaryItemAllOf';
-import ModelDiff from './model/ModelDiff';
-import ModelDirector from './model/ModelDirector';
-import ModelDirectorAllOf from './model/ModelDirectorAllOf';
-import ModelDirectorBackend from './model/ModelDirectorBackend';
-import ModelDirectorBackendAllOf from './model/ModelDirectorBackendAllOf';
-import ModelDomain from './model/ModelDomain';
-import ModelDomainAllOf from './model/ModelDomainAllOf';
-import ModelEvent from './model/ModelEvent';
-import ModelGzip from './model/ModelGzip';
-import ModelGzipAllOf from './model/ModelGzipAllOf';
-import ModelHeader from './model/ModelHeader';
-import ModelHeaderAllOf from './model/ModelHeaderAllOf';
-import ModelHealthcheck from './model/ModelHealthcheck';
-import ModelHealthcheckAllOf from './model/ModelHealthcheckAllOf';
-import ModelHistorical from './model/ModelHistorical';
-import ModelInvitation from './model/ModelInvitation';
-import ModelInvitationAllOf from './model/ModelInvitationAllOf';
-import ModelLoggingAzureblob from './model/ModelLoggingAzureblob';
-import ModelLoggingAzureblobAllOf from './model/ModelLoggingAzureblobAllOf';
-import ModelLoggingBigquery from './model/ModelLoggingBigquery';
-import ModelLoggingBigqueryAllOf from './model/ModelLoggingBigqueryAllOf';
-import ModelLoggingCloudfiles from './model/ModelLoggingCloudfiles';
-import ModelLoggingCloudfilesAllOf from './model/ModelLoggingCloudfilesAllOf';
-import ModelLoggingDatadog from './model/ModelLoggingDatadog';
-import ModelLoggingDatadogAllOf from './model/ModelLoggingDatadogAllOf';
-import ModelLoggingDigitalocean from './model/ModelLoggingDigitalocean';
-import ModelLoggingDigitaloceanAllOf from './model/ModelLoggingDigitaloceanAllOf';
-import ModelLoggingElasticsearch from './model/ModelLoggingElasticsearch';
-import ModelLoggingElasticsearchAllOf from './model/ModelLoggingElasticsearchAllOf';
-import ModelLoggingFtp from './model/ModelLoggingFtp';
-import ModelLoggingFtpAllOf from './model/ModelLoggingFtpAllOf';
-import ModelLoggingGcs from './model/ModelLoggingGcs';
-import ModelLoggingGcsAllOf from './model/ModelLoggingGcsAllOf';
-import ModelLoggingGooglePubsub from './model/ModelLoggingGooglePubsub';
-import ModelLoggingGooglePubsubAllOf from './model/ModelLoggingGooglePubsubAllOf';
-import ModelLoggingHeroku from './model/ModelLoggingHeroku';
-import ModelLoggingHerokuAllOf from './model/ModelLoggingHerokuAllOf';
-import ModelLoggingHoneycomb from './model/ModelLoggingHoneycomb';
-import ModelLoggingHoneycombAllOf from './model/ModelLoggingHoneycombAllOf';
-import ModelLoggingHttps from './model/ModelLoggingHttps';
-import ModelLoggingHttpsAllOf from './model/ModelLoggingHttpsAllOf';
-import ModelLoggingKafka from './model/ModelLoggingKafka';
-import ModelLoggingKafkaAllOf from './model/ModelLoggingKafkaAllOf';
-import ModelLoggingKinesis from './model/ModelLoggingKinesis';
-import ModelLoggingKinesisAllOf from './model/ModelLoggingKinesisAllOf';
-import ModelLoggingLogentries from './model/ModelLoggingLogentries';
-import ModelLoggingLogentriesAllOf from './model/ModelLoggingLogentriesAllOf';
-import ModelLoggingLoggly from './model/ModelLoggingLoggly';
-import ModelLoggingLogglyAllOf from './model/ModelLoggingLogglyAllOf';
-import ModelLoggingLogshuttle from './model/ModelLoggingLogshuttle';
-import ModelLoggingLogshuttleAllOf from './model/ModelLoggingLogshuttleAllOf';
-import ModelLoggingNewrelic from './model/ModelLoggingNewrelic';
-import ModelLoggingNewrelicAllOf from './model/ModelLoggingNewrelicAllOf';
-import ModelLoggingOpenstack from './model/ModelLoggingOpenstack';
-import ModelLoggingOpenstackAllOf from './model/ModelLoggingOpenstackAllOf';
-import ModelLoggingPapertrail from './model/ModelLoggingPapertrail';
-import ModelLoggingS3 from './model/ModelLoggingS3';
-import ModelLoggingS3AllOf from './model/ModelLoggingS3AllOf';
-import ModelLoggingScalyr from './model/ModelLoggingScalyr';
-import ModelLoggingScalyrAllOf from './model/ModelLoggingScalyrAllOf';
-import ModelLoggingSftp from './model/ModelLoggingSftp';
-import ModelLoggingSftpAllOf from './model/ModelLoggingSftpAllOf';
-import ModelLoggingSplunk from './model/ModelLoggingSplunk';
-import ModelLoggingSplunkAllOf from './model/ModelLoggingSplunkAllOf';
-import ModelLoggingSumologic from './model/ModelLoggingSumologic';
-import ModelLoggingSumologicAllOf from './model/ModelLoggingSumologicAllOf';
-import ModelLoggingSyslog from './model/ModelLoggingSyslog';
-import ModelLoggingSyslogAllOf from './model/ModelLoggingSyslogAllOf';
-import ModelOriginInsights from './model/ModelOriginInsights';
-import ModelOriginInsightsEntry from './model/ModelOriginInsightsEntry';
-import ModelOriginInsightsMeasurements from './model/ModelOriginInsightsMeasurements';
-import ModelPackage from './model/ModelPackage';
-import ModelPackageAllOf from './model/ModelPackageAllOf';
-import ModelPackageMetadata from './model/ModelPackageMetadata';
-import ModelPool from './model/ModelPool';
-import ModelPoolAllOf from './model/ModelPoolAllOf';
-import ModelRateLimiter from './model/ModelRateLimiter';
-import ModelRateLimiterAllOf from './model/ModelRateLimiterAllOf';
-import ModelRateLimiterAllOfResponse from './model/ModelRateLimiterAllOfResponse';
-import ModelRealtime from './model/ModelRealtime';
-import ModelRealtimeEntry from './model/ModelRealtimeEntry';
-import ModelRealtimeMeasurements from './model/ModelRealtimeMeasurements';
-import ModelRequestSettings from './model/ModelRequestSettings';
-import ModelRequestSettingsAllOf from './model/ModelRequestSettingsAllOf';
-import ModelResponseObject from './model/ModelResponseObject';
-import ModelResponseObjectAllOf from './model/ModelResponseObjectAllOf';
-import ModelServer from './model/ModelServer';
-import ModelServerAllOf from './model/ModelServerAllOf';
-import ModelService from './model/ModelService';
-import ModelServiceAllOf from './model/ModelServiceAllOf';
-import ModelServiceAuthorization from './model/ModelServiceAuthorization';
-import ModelServiceAuthorizationAllOf from './model/ModelServiceAuthorizationAllOf';
-import ModelServiceDetail from './model/ModelServiceDetail';
-import ModelServiceDetailAllOf from './model/ModelServiceDetailAllOf';
-import ModelSettings from './model/ModelSettings';
-import ModelSettingsAllOf from './model/ModelSettingsAllOf';
-import ModelSnippet from './model/ModelSnippet';
-import ModelSnippetAllOf from './model/ModelSnippetAllOf';
-import ModelStar from './model/ModelStar';
-import ModelStarAllOf from './model/ModelStarAllOf';
-import ModelTlsActivation from './model/ModelTlsActivation';
-import ModelTlsBulkCertificate from './model/ModelTlsBulkCertificate';
-import ModelTlsCertificate from './model/ModelTlsCertificate';
-import ModelTlsConfiguration from './model/ModelTlsConfiguration';
-import ModelTlsConfigurationRelationships from './model/ModelTlsConfigurationRelationships';
-import ModelTlsDnsRecord from './model/ModelTlsDnsRecord';
-import ModelTlsDomain from './model/ModelTlsDomain';
-import ModelTlsPrivateKey from './model/ModelTlsPrivateKey';
-import ModelTlsSubscription from './model/ModelTlsSubscription';
-import ModelToken from './model/ModelToken';
-import ModelTokenCreated from './model/ModelTokenCreated';
-import ModelTokenCreatedAllOf from './model/ModelTokenCreatedAllOf';
-import ModelUser from './model/ModelUser';
-import ModelUserAllOf from './model/ModelUserAllOf';
-import ModelVcl from './model/ModelVcl';
-import ModelVclAllOf from './model/ModelVclAllOf';
-import ModelVclDiff from './model/ModelVclDiff';
-import ModelVersion from './model/ModelVersion';
-import ModelVersionAllOf from './model/ModelVersionAllOf';
-import ModelVersionDetail from './model/ModelVersionDetail';
-import ModelWafActiveRule from './model/ModelWafActiveRule';
-import ModelWafActiveRuleAllOf from './model/ModelWafActiveRuleAllOf';
-import ModelWafExclusions from './model/ModelWafExclusions';
-import ModelWafExclusionsAllOf from './model/ModelWafExclusionsAllOf';
-import ModelWafFirewall from './model/ModelWafFirewall';
-import ModelWafFirewallVersions from './model/ModelWafFirewallVersions';
-import ModelWafRule from './model/ModelWafRule';
-import ModelWafRuleRevision from './model/ModelWafRuleRevision';
-import ModelWafTag from './model/ModelWafTag';
-import NestedModelVersion from './model/NestedModelVersion';
+import NestedVersion from './model/NestedVersion';
+import Package from './model/Package';
+import PackageMetadata from './model/PackageMetadata';
+import PackageResponse from './model/PackageResponse';
+import PackageResponseAllOf from './model/PackageResponseAllOf';
 import Pagination from './model/Pagination';
 import PaginationLinks from './model/PaginationLinks';
 import PaginationMeta from './model/PaginationMeta';
-import Permission from './model/Permission';
+import Pool from './model/Pool';
+import PoolAllOf from './model/PoolAllOf';
+import PoolResponse from './model/PoolResponse';
+import PoolResponseAllOf from './model/PoolResponseAllOf';
+import PublicIpList from './model/PublicIpList';
+import RateLimiter from './model/RateLimiter';
+import RateLimiterResponse from './model/RateLimiterResponse';
+import RateLimiterResponse1 from './model/RateLimiterResponse1';
+import RateLimiterResponseAllOf from './model/RateLimiterResponseAllOf';
+import RelationshipCommonName from './model/RelationshipCommonName';
 import RelationshipCustomer from './model/RelationshipCustomer';
 import RelationshipCustomerCustomer from './model/RelationshipCustomerCustomer';
-import RelationshipCustomerCustomerData from './model/RelationshipCustomerCustomerData';
+import RelationshipMemberCustomer from './model/RelationshipMemberCustomer';
+import RelationshipMemberService from './model/RelationshipMemberService';
+import RelationshipMemberServiceInvitation from './model/RelationshipMemberServiceInvitation';
+import RelationshipMemberTlsActivation from './model/RelationshipMemberTlsActivation';
+import RelationshipMemberTlsBulkCertificate from './model/RelationshipMemberTlsBulkCertificate';
+import RelationshipMemberTlsCertificate from './model/RelationshipMemberTlsCertificate';
+import RelationshipMemberTlsConfiguration from './model/RelationshipMemberTlsConfiguration';
+import RelationshipMemberTlsDnsRecord from './model/RelationshipMemberTlsDnsRecord';
+import RelationshipMemberTlsDomain from './model/RelationshipMemberTlsDomain';
+import RelationshipMemberTlsPrivateKey from './model/RelationshipMemberTlsPrivateKey';
+import RelationshipMemberTlsSubscription from './model/RelationshipMemberTlsSubscription';
+import RelationshipMemberWafActiveRule from './model/RelationshipMemberWafActiveRule';
+import RelationshipMemberWafFirewall from './model/RelationshipMemberWafFirewall';
+import RelationshipMemberWafFirewallVersion from './model/RelationshipMemberWafFirewallVersion';
+import RelationshipMemberWafRule from './model/RelationshipMemberWafRule';
+import RelationshipMemberWafRuleRevision from './model/RelationshipMemberWafRuleRevision';
+import RelationshipMemberWafTag from './model/RelationshipMemberWafTag';
 import RelationshipService from './model/RelationshipService';
-import RelationshipServiceInvitation from './model/RelationshipServiceInvitation';
-import RelationshipServiceInvitationServiceInvitation from './model/RelationshipServiceInvitationServiceInvitation';
-import RelationshipServiceInvitationServiceInvitationData from './model/RelationshipServiceInvitationServiceInvitationData';
+import RelationshipServiceInvitations from './model/RelationshipServiceInvitations';
+import RelationshipServiceInvitationsCreate from './model/RelationshipServiceInvitationsCreate';
+import RelationshipServiceInvitationsCreateServiceInvitations from './model/RelationshipServiceInvitationsCreateServiceInvitations';
+import RelationshipServiceInvitationsServiceInvitations from './model/RelationshipServiceInvitationsServiceInvitations';
 import RelationshipServiceService from './model/RelationshipServiceService';
-import RelationshipServiceServiceData from './model/RelationshipServiceServiceData';
+import RelationshipServices from './model/RelationshipServices';
+import RelationshipTlsActivation from './model/RelationshipTlsActivation';
+import RelationshipTlsActivationTlsActivation from './model/RelationshipTlsActivationTlsActivation';
+import RelationshipTlsActivations from './model/RelationshipTlsActivations';
+import RelationshipTlsBulkCertificate from './model/RelationshipTlsBulkCertificate';
+import RelationshipTlsBulkCertificateTlsBulkCertificate from './model/RelationshipTlsBulkCertificateTlsBulkCertificate';
+import RelationshipTlsBulkCertificates from './model/RelationshipTlsBulkCertificates';
+import RelationshipTlsCertificate from './model/RelationshipTlsCertificate';
+import RelationshipTlsCertificateTlsCertificate from './model/RelationshipTlsCertificateTlsCertificate';
+import RelationshipTlsCertificates from './model/RelationshipTlsCertificates';
+import RelationshipTlsConfiguration from './model/RelationshipTlsConfiguration';
+import RelationshipTlsConfigurationTlsConfiguration from './model/RelationshipTlsConfigurationTlsConfiguration';
+import RelationshipTlsConfigurations from './model/RelationshipTlsConfigurations';
+import RelationshipTlsDnsRecord from './model/RelationshipTlsDnsRecord';
+import RelationshipTlsDnsRecordDnsRecord from './model/RelationshipTlsDnsRecordDnsRecord';
+import RelationshipTlsDnsRecords from './model/RelationshipTlsDnsRecords';
+import RelationshipTlsDomain from './model/RelationshipTlsDomain';
+import RelationshipTlsDomainTlsDomain from './model/RelationshipTlsDomainTlsDomain';
+import RelationshipTlsDomains from './model/RelationshipTlsDomains';
+import RelationshipTlsPrivateKey from './model/RelationshipTlsPrivateKey';
+import RelationshipTlsPrivateKeyTlsPrivateKey from './model/RelationshipTlsPrivateKeyTlsPrivateKey';
+import RelationshipTlsPrivateKeys from './model/RelationshipTlsPrivateKeys';
+import RelationshipTlsSubscription from './model/RelationshipTlsSubscription';
+import RelationshipTlsSubscriptionTlsSubscription from './model/RelationshipTlsSubscriptionTlsSubscription';
+import RelationshipTlsSubscriptions from './model/RelationshipTlsSubscriptions';
 import RelationshipUser from './model/RelationshipUser';
 import RelationshipUserUser from './model/RelationshipUserUser';
 import RelationshipUserUserData from './model/RelationshipUserUserData';
-import ResourceBillingAddress from './model/ResourceBillingAddress';
-import ResourceBillingAddressData from './model/ResourceBillingAddressData';
-import ResourceEvent from './model/ResourceEvent';
-import ResourceEventData from './model/ResourceEventData';
-import ResourceInvitation from './model/ResourceInvitation';
-import ResourceInvitationData from './model/ResourceInvitationData';
-import ResourceServiceAuthorization from './model/ResourceServiceAuthorization';
-import ResourceServiceAuthorizationData from './model/ResourceServiceAuthorizationData';
-import ResourceServiceInvitation from './model/ResourceServiceInvitation';
-import ResourceServiceInvitationData from './model/ResourceServiceInvitationData';
-import ResourceStar from './model/ResourceStar';
-import ResourceStarData from './model/ResourceStarData';
-import ResourceWafTag from './model/ResourceWafTag';
-import ResourceWafTagAllOf from './model/ResourceWafTagAllOf';
+import RelationshipWafActiveRules from './model/RelationshipWafActiveRules';
+import RelationshipWafActiveRulesWafActiveRules from './model/RelationshipWafActiveRulesWafActiveRules';
+import RelationshipWafFirewall from './model/RelationshipWafFirewall';
+import RelationshipWafFirewallVersion from './model/RelationshipWafFirewallVersion';
+import RelationshipWafFirewallVersionWafFirewallVersion from './model/RelationshipWafFirewallVersionWafFirewallVersion';
+import RelationshipWafFirewallVersions from './model/RelationshipWafFirewallVersions';
+import RelationshipWafFirewallWafFirewall from './model/RelationshipWafFirewallWafFirewall';
+import RelationshipWafRule from './model/RelationshipWafRule';
+import RelationshipWafRuleRevision from './model/RelationshipWafRuleRevision';
+import RelationshipWafRuleRevisionWafRuleRevisions from './model/RelationshipWafRuleRevisionWafRuleRevisions';
+import RelationshipWafRuleRevisions from './model/RelationshipWafRuleRevisions';
+import RelationshipWafRuleWafRule from './model/RelationshipWafRuleWafRule';
+import RelationshipWafRules from './model/RelationshipWafRules';
+import RelationshipWafTags from './model/RelationshipWafTags';
+import RelationshipWafTagsWafTags from './model/RelationshipWafTagsWafTags';
+import RequestSettings from './model/RequestSettings';
+import RequestSettingsResponse from './model/RequestSettingsResponse';
+import ResponseObject from './model/ResponseObject';
+import ResponseObjectResponse from './model/ResponseObjectResponse';
 import RoleUser from './model/RoleUser';
-import SchemasModelBackend from './model/SchemasModelBackend';
-import SchemasModelGzip from './model/SchemasModelGzip';
-import SchemasModelHeader from './model/SchemasModelHeader';
-import SchemasModelSettings from './model/SchemasModelSettings';
-import SchemasModelSnippet from './model/SchemasModelSnippet';
-import SchemasModelUser from './model/SchemasModelUser';
-import SchemasModelVcl from './model/SchemasModelVcl';
-import SchemasModelVersion from './model/SchemasModelVersion';
+import SchemasGzip from './model/SchemasGzip';
+import SchemasGzipResponse from './model/SchemasGzipResponse';
+import SchemasHealthcheck from './model/SchemasHealthcheck';
+import SchemasHealthcheckResponse from './model/SchemasHealthcheckResponse';
+import SchemasUserResponse from './model/SchemasUserResponse';
+import SchemasVclResponse from './model/SchemasVclResponse';
+import SchemasVersion from './model/SchemasVersion';
+import SchemasVersionResponse from './model/SchemasVersionResponse';
+import SchemasWafActiveRule from './model/SchemasWafActiveRule';
+import SchemasWafFirewallVersion from './model/SchemasWafFirewallVersion';
+import Server from './model/Server';
+import ServerResponse from './model/ServerResponse';
+import ServerResponseAllOf from './model/ServerResponseAllOf';
 import Service from './model/Service';
-import ServiceAuthorizationsData from './model/ServiceAuthorizationsData';
+import ServiceCreate from './model/ServiceCreate';
+import ServiceCreateAllOf from './model/ServiceCreateAllOf';
+import ServiceDetail from './model/ServiceDetail';
+import ServiceDetailAllOf from './model/ServiceDetailAllOf';
 import ServiceIdAndVersion from './model/ServiceIdAndVersion';
+import ServiceInvitation from './model/ServiceInvitation';
+import ServiceInvitationData from './model/ServiceInvitationData';
+import ServiceInvitationDataAttributes from './model/ServiceInvitationDataAttributes';
+import ServiceInvitationResponse from './model/ServiceInvitationResponse';
+import ServiceResponse from './model/ServiceResponse';
+import ServiceResponseAllOf from './model/ServiceResponseAllOf';
+import Settings from './model/Settings';
+import SettingsResponse from './model/SettingsResponse';
+import Snippet from './model/Snippet';
+import SnippetResponse from './model/SnippetResponse';
+import SnippetResponseAllOf from './model/SnippetResponseAllOf';
+import Star from './model/Star';
+import StarData from './model/StarData';
+import StarResponse from './model/StarResponse';
+import StarResponseAllOf from './model/StarResponseAllOf';
 import Timestamps from './model/Timestamps';
-import TimestampsNoDelete from './model/TimestampsNoDelete';
+import TlsActivation from './model/TlsActivation';
+import TlsActivationData from './model/TlsActivationData';
+import TlsActivationResponse from './model/TlsActivationResponse';
+import TlsActivationsResponse from './model/TlsActivationsResponse';
+import TlsActivationsResponseAllOf from './model/TlsActivationsResponseAllOf';
+import TlsBulkCertificate from './model/TlsBulkCertificate';
+import TlsBulkCertificateData from './model/TlsBulkCertificateData';
+import TlsBulkCertificateDataAttributes from './model/TlsBulkCertificateDataAttributes';
+import TlsBulkCertificateResponse from './model/TlsBulkCertificateResponse';
+import TlsBulkCertificatesResponse from './model/TlsBulkCertificatesResponse';
+import TlsBulkCertificatesResponseAllOf from './model/TlsBulkCertificatesResponseAllOf';
+import TlsCertificate from './model/TlsCertificate';
+import TlsCertificateData from './model/TlsCertificateData';
+import TlsCertificateDataAttributes from './model/TlsCertificateDataAttributes';
+import TlsCertificateResponse from './model/TlsCertificateResponse';
+import TlsCertificatesResponse from './model/TlsCertificatesResponse';
+import TlsCertificatesResponseAllOf from './model/TlsCertificatesResponseAllOf';
 import TlsCommon from './model/TlsCommon';
-import WafFirewallsFirewallIdVersionsFirewallVersionNumberExclusionsData from './model/WafFirewallsFirewallIdVersionsFirewallVersionNumberExclusionsData';
-import WafFirewallsFirewallIdVersionsFirewallVersionNumberExclusionsDataRelationships from './model/WafFirewallsFirewallIdVersionsFirewallVersionNumberExclusionsDataRelationships';
-import WafFirewallsFirewallIdVersionsFirewallVersionNumberExclusionsDataRelationshipsWafRules from './model/WafFirewallsFirewallIdVersionsFirewallVersionNumberExclusionsDataRelationshipsWafRules';
-import WafFirewallsFirewallIdVersionsFirewallVersionNumberExclusionsDataRelationshipsWafRulesData from './model/WafFirewallsFirewallIdVersionsFirewallVersionNumberExclusionsDataRelationshipsWafRulesData';
-import WafFirewallsFirewallIdVersionsFirewallVersionNumberExclusionsExclusionNumberData from './model/WafFirewallsFirewallIdVersionsFirewallVersionNumberExclusionsExclusionNumberData';
+import TlsConfiguration from './model/TlsConfiguration';
+import TlsConfigurationData from './model/TlsConfigurationData';
+import TlsConfigurationDataAttributes from './model/TlsConfigurationDataAttributes';
+import TlsConfigurationResponse from './model/TlsConfigurationResponse';
+import TlsConfigurationsResponse from './model/TlsConfigurationsResponse';
+import TlsConfigurationsResponseAllOf from './model/TlsConfigurationsResponseAllOf';
+import TlsDnsRecord from './model/TlsDnsRecord';
+import TlsDomain from './model/TlsDomain';
+import TlsDomainData from './model/TlsDomainData';
+import TlsDomainsResponse from './model/TlsDomainsResponse';
+import TlsDomainsResponseAllOf from './model/TlsDomainsResponseAllOf';
+import TlsPrivateKey from './model/TlsPrivateKey';
+import TlsPrivateKeyData from './model/TlsPrivateKeyData';
+import TlsPrivateKeyDataAttributes from './model/TlsPrivateKeyDataAttributes';
+import TlsPrivateKeyResponse from './model/TlsPrivateKeyResponse';
+import TlsPrivateKeyResponseData from './model/TlsPrivateKeyResponseData';
+import TlsPrivateKeysResponse from './model/TlsPrivateKeysResponse';
+import TlsPrivateKeysResponseAllOf from './model/TlsPrivateKeysResponseAllOf';
+import TlsSubscription from './model/TlsSubscription';
+import TlsSubscriptionData from './model/TlsSubscriptionData';
+import TlsSubscriptionDataAttributes from './model/TlsSubscriptionDataAttributes';
+import TlsSubscriptionResponse from './model/TlsSubscriptionResponse';
+import TlsSubscriptionsResponse from './model/TlsSubscriptionsResponse';
+import TlsSubscriptionsResponseAllOf from './model/TlsSubscriptionsResponseAllOf';
+import Token from './model/Token';
+import TokenCreatedResponse from './model/TokenCreatedResponse';
+import TokenCreatedResponseAllOf from './model/TokenCreatedResponseAllOf';
+import TokenResponse from './model/TokenResponse';
+import TokenResponseAllOf from './model/TokenResponseAllOf';
+import TypeCustomer from './model/TypeCustomer';
+import TypeEvent from './model/TypeEvent';
+import TypeInvitation from './model/TypeInvitation';
+import TypeService from './model/TypeService';
+import TypeServiceInvitation from './model/TypeServiceInvitation';
+import TypeStar from './model/TypeStar';
+import TypeTlsActivation from './model/TypeTlsActivation';
+import TypeTlsBulkCertificate from './model/TypeTlsBulkCertificate';
+import TypeTlsCertificate from './model/TypeTlsCertificate';
+import TypeTlsConfiguration from './model/TypeTlsConfiguration';
+import TypeTlsDnsRecord from './model/TypeTlsDnsRecord';
+import TypeTlsDomain from './model/TypeTlsDomain';
+import TypeTlsPrivateKey from './model/TypeTlsPrivateKey';
+import TypeTlsSubscription from './model/TypeTlsSubscription';
+import TypeUser from './model/TypeUser';
+import TypeWafActiveRule from './model/TypeWafActiveRule';
+import TypeWafExclusion from './model/TypeWafExclusion';
+import TypeWafFirewall from './model/TypeWafFirewall';
+import TypeWafFirewallVersion from './model/TypeWafFirewallVersion';
+import TypeWafRule from './model/TypeWafRule';
+import TypeWafRuleRevision from './model/TypeWafRuleRevision';
+import TypeWafTag from './model/TypeWafTag';
+import User from './model/User';
+import UserResponse from './model/UserResponse';
+import UserResponseAllOf from './model/UserResponseAllOf';
+import Vcl from './model/Vcl';
+import VclDiff from './model/VclDiff';
+import VclResponse from './model/VclResponse';
+import Version from './model/Version';
+import VersionCreateResponse from './model/VersionCreateResponse';
+import VersionDetail from './model/VersionDetail';
+import VersionResponse from './model/VersionResponse';
+import VersionResponseAllOf from './model/VersionResponseAllOf';
+import WafActiveRule from './model/WafActiveRule';
+import WafActiveRuleData from './model/WafActiveRuleData';
+import WafActiveRuleDataAttributes from './model/WafActiveRuleDataAttributes';
+import WafActiveRuleResponse from './model/WafActiveRuleResponse';
+import WafActiveRulesResponse from './model/WafActiveRulesResponse';
+import WafActiveRulesResponseAllOf from './model/WafActiveRulesResponseAllOf';
+import WafExclusion from './model/WafExclusion';
+import WafExclusionData from './model/WafExclusionData';
+import WafExclusionDataAttributes from './model/WafExclusionDataAttributes';
+import WafExclusionResponse from './model/WafExclusionResponse';
+import WafExclusionsResponse from './model/WafExclusionsResponse';
+import WafExclusionsResponseAllOf from './model/WafExclusionsResponseAllOf';
+import WafFirewall from './model/WafFirewall';
+import WafFirewallData from './model/WafFirewallData';
+import WafFirewallDataAttributes from './model/WafFirewallDataAttributes';
+import WafFirewallResponse from './model/WafFirewallResponse';
+import WafFirewallVersion from './model/WafFirewallVersion';
+import WafFirewallVersionData from './model/WafFirewallVersionData';
+import WafFirewallVersionDataAttributes from './model/WafFirewallVersionDataAttributes';
+import WafFirewallVersionResponse from './model/WafFirewallVersionResponse';
+import WafFirewallVersionsResponse from './model/WafFirewallVersionsResponse';
+import WafFirewallVersionsResponseAllOf from './model/WafFirewallVersionsResponseAllOf';
+import WafFirewallsResponse from './model/WafFirewallsResponse';
+import WafFirewallsResponseAllOf from './model/WafFirewallsResponseAllOf';
+import WafRule from './model/WafRule';
+import WafRuleAttributes from './model/WafRuleAttributes';
+import WafRuleResponse from './model/WafRuleResponse';
+import WafRuleRevision from './model/WafRuleRevision';
+import WafRuleRevisionAttributes from './model/WafRuleRevisionAttributes';
+import WafRuleRevisionResponse from './model/WafRuleRevisionResponse';
+import WafRuleRevisionsResponse from './model/WafRuleRevisionsResponse';
+import WafRuleRevisionsResponseAllOf from './model/WafRuleRevisionsResponseAllOf';
+import WafRulesResponse from './model/WafRulesResponse';
+import WafRulesResponseAllOf from './model/WafRulesResponseAllOf';
+import WafTag from './model/WafTag';
+import WafTagAttributes from './model/WafTagAttributes';
+import WafTagsResponse from './model/WafTagsResponse';
+import WafTagsResponseAllOf from './model/WafTagsResponseAllOf';
 import AclApi from './api/AclApi';
 import AclEntryApi from './api/AclEntryApi';
 import BackendApi from './api/BackendApi';
-import BillingApi from './api/BillingApi';
-import BillingAddressApi from './api/BillingAddressApi';
 import CacheSettingsApi from './api/CacheSettingsApi';
 import ConditionApi from './api/ConditionApi';
 import ContentApi from './api/ContentApi';
 import CustomerApi from './api/CustomerApi';
-import DatacenterApi from './api/DatacenterApi';
 import DictionaryApi from './api/DictionaryApi';
 import DictionaryInfoApi from './api/DictionaryInfoApi';
 import DictionaryItemApi from './api/DictionaryItemApi';
@@ -304,21 +442,17 @@ import LoggingSftpApi from './api/LoggingSftpApi';
 import LoggingSplunkApi from './api/LoggingSplunkApi';
 import LoggingSumologicApi from './api/LoggingSumologicApi';
 import LoggingSyslogApi from './api/LoggingSyslogApi';
-import OriginInsightsApi from './api/OriginInsightsApi';
 import PackageApi from './api/PackageApi';
 import PoolApi from './api/PoolApi';
 import PublicIpListApi from './api/PublicIpListApi';
 import RateLimiterApi from './api/RateLimiterApi';
-import RealtimeApi from './api/RealtimeApi';
 import RequestSettingsApi from './api/RequestSettingsApi';
 import ResponseObjectApi from './api/ResponseObjectApi';
 import ServerApi from './api/ServerApi';
 import ServiceApi from './api/ServiceApi';
-import ServiceAuthorizationsApi from './api/ServiceAuthorizationsApi';
 import SettingsApi from './api/SettingsApi';
 import SnippetApi from './api/SnippetApi';
 import StarApi from './api/StarApi';
-import StatsApi from './api/StatsApi';
 import TlsActivationsApi from './api/TlsActivationsApi';
 import TlsBulkCertificatesApi from './api/TlsBulkCertificatesApi';
 import TlsCertificatesApi from './api/TlsCertificatesApi';
@@ -346,61 +480,193 @@ export {
     ApiClient,
 
     
-    CustomerCustomerIdBillingAddressData,
+    Acl,
 
     
-    CustomerCustomerIdBillingAddressData1,
+    AclEntries,
 
     
-    Direction,
+    AclEntry,
+
+    
+    AclEntryResponse,
+
+    
+    AclEntryResponseAllOf,
+
+    
+    AclResponse,
+
+    
+    AclResponseAllOf,
+
+    
+    Backend,
+
+    
+    BackendResponse,
+
+    
+    BackendResponseAllOf,
+
+    
+    BulkWafActiveRules,
+
+    
+    CacheSetting,
+
+    
+    CacheSettingResponse,
+
+    
+    Condition,
+
+    
+    ConditionResponse,
+
+    
+    Content,
+
+    
+    Customer,
+
+    
+    CustomerResponse,
+
+    
+    CustomerResponseAllOf,
+
+    
+    Dictionary,
+
+    
+    DictionaryInfoResponse,
+
+    
+    DictionaryItem,
+
+    
+    DictionaryItemResponse,
+
+    
+    DictionaryItemResponseAllOf,
+
+    
+    DictionaryResponse,
+
+    
+    DictionaryResponseAllOf,
+
+    
+    DiffResponse,
+
+    
+    Director,
+
+    
+    DirectorBackend,
+
+    
+    DirectorBackendAllOf,
+
+    
+    DirectorResponse,
+
+    
+    Domain,
+
+    
+    DomainResponse,
+
+    
+    EventResponse,
+
+    
+    EventResponseData,
+
+    
+    EventResponseDataAttributes,
+
+    
+    EventsResponse,
+
+    
+    EventsResponseAllOf,
 
     
     GenericTokenError,
 
     
+    Gzip,
+
+    
+    GzipResponse,
+
+    
+    Header,
+
+    
+    HeaderResponse,
+
+    
+    Healthcheck,
+
+    
+    HealthcheckResponse,
+
+    
     InlineObject,
-
-    
-    InlineObject1,
-
-    
-    InlineObject2,
-
-    
-    InlineObject3,
-
-    
-    InlineObject4,
-
-    
-    InlineObject5,
-
-    
-    InlineObject6,
-
-    
-    InlineObject8,
-
-    
-    InlineObject9,
-
-    
-    InlineResponse200,
-
-    
-    InlineResponse2001,
-
-    
-    InlineResponse204,
 
     
     InlineResponse400,
 
     
-    InvitationsData,
+    Invitation,
+
+    
+    InvitationData,
+
+    
+    InvitationDataAttributes,
+
+    
+    InvitationResponse,
+
+    
+    InvitationsResponse,
+
+    
+    InvitationsResponseAllOf,
 
     
     LoggingAddressAndPort,
+
+    
+    LoggingAzureblob,
+
+    
+    LoggingAzureblobAllOf,
+
+    
+    LoggingAzureblobResponse,
+
+    
+    LoggingBigquery,
+
+    
+    LoggingBigqueryAllOf,
+
+    
+    LoggingBigqueryResponse,
+
+    
+    LoggingCloudfiles,
+
+    
+    LoggingCloudfilesAllOf,
+
+    
+    LoggingCloudfilesResponse,
 
     
     LoggingCommon,
@@ -409,16 +675,163 @@ export {
     LoggingCompressionCodec,
 
     
+    LoggingDatadog,
+
+    
+    LoggingDatadogAllOf,
+
+    
+    LoggingDatadogResponse,
+
+    
+    LoggingDigitalocean,
+
+    
+    LoggingDigitaloceanAllOf,
+
+    
+    LoggingDigitaloceanResponse,
+
+    
+    LoggingElasticsearch,
+
+    
+    LoggingElasticsearchAllOf,
+
+    
+    LoggingElasticsearchResponse,
+
+    
     LoggingFormatVersion,
+
+    
+    LoggingFtp,
+
+    
+    LoggingFtpAllOf,
+
+    
+    LoggingFtpResponse,
+
+    
+    LoggingGcs,
+
+    
+    LoggingGcsAllOf,
 
     
     LoggingGcsCommon,
 
     
+    LoggingGcsResponse,
+
+    
     LoggingGenericCommon,
 
     
+    LoggingGooglePubsub,
+
+    
+    LoggingGooglePubsubAllOf,
+
+    
+    LoggingGooglePubsubResponse,
+
+    
+    LoggingHeroku,
+
+    
+    LoggingHerokuAllOf,
+
+    
+    LoggingHerokuResponse,
+
+    
+    LoggingHoneycomb,
+
+    
+    LoggingHoneycombAllOf,
+
+    
+    LoggingHoneycombResponse,
+
+    
+    LoggingHttps,
+
+    
+    LoggingHttpsAllOf,
+
+    
+    LoggingHttpsResponse,
+
+    
+    LoggingKafka,
+
+    
+    LoggingKafkaAllOf,
+
+    
+    LoggingKafkaResponse,
+
+    
+    LoggingKinesis,
+
+    
+    LoggingKinesisResponse,
+
+    
+    LoggingLogentries,
+
+    
+    LoggingLogentriesAllOf,
+
+    
+    LoggingLogentriesResponse,
+
+    
+    LoggingLoggly,
+
+    
+    LoggingLogglyAllOf,
+
+    
+    LoggingLogglyResponse,
+
+    
+    LoggingLogshuttle,
+
+    
+    LoggingLogshuttleAllOf,
+
+    
+    LoggingLogshuttleResponse,
+
+    
     LoggingMessageType,
+
+    
+    LoggingNewrelic,
+
+    
+    LoggingNewrelicAllOf,
+
+    
+    LoggingNewrelicResponse,
+
+    
+    LoggingOpenstack,
+
+    
+    LoggingOpenstackAllOf,
+
+    
+    LoggingOpenstackResponse,
+
+    
+    LoggingPapertrail,
+
+    
+    LoggingPapertrailResponse,
 
     
     LoggingPlacement,
@@ -427,502 +840,79 @@ export {
     LoggingRequestCapsCommon,
 
     
+    LoggingS3,
+
+    
+    LoggingS3AllOf,
+
+    
+    LoggingS3Response,
+
+    
+    LoggingScalyr,
+
+    
+    LoggingScalyrAllOf,
+
+    
+    LoggingScalyrResponse,
+
+    
+    LoggingSftp,
+
+    
+    LoggingSftpAllOf,
+
+    
+    LoggingSftpResponse,
+
+    
+    LoggingSplunk,
+
+    
+    LoggingSplunkAllOf,
+
+    
+    LoggingSplunkResponse,
+
+    
+    LoggingSumologic,
+
+    
+    LoggingSumologicAllOf,
+
+    
+    LoggingSumologicResponse,
+
+    
+    LoggingSyslog,
+
+    
+    LoggingSyslogAllOf,
+
+    
+    LoggingSyslogResponse,
+
+    
     LoggingTlsCommon,
 
     
     LoggingUseTls,
 
     
-    ModelAcl,
+    NestedVersion,
 
     
-    ModelAclAllOf,
+    Package,
 
     
-    ModelAclEntry,
+    PackageMetadata,
 
     
-    ModelAclEntryAllOf,
+    PackageResponse,
 
     
-    ModelBackend,
-
-    
-    ModelBackendAllOf,
-
-    
-    ModelBilling,
-
-    
-    ModelBillingAddress,
-
-    
-    ModelBillingStatus,
-
-    
-    ModelBillingTotal,
-
-    
-    ModelBillingTotalExtras,
-
-    
-    ModelCacheSettings,
-
-    
-    ModelCacheSettingsAllOf,
-
-    
-    ModelCompatInvitation,
-
-    
-    ModelCompatService,
-
-    
-    ModelCompatServiceAllOf,
-
-    
-    ModelCompatServiceAuthorization,
-
-    
-    ModelCompatStar,
-
-    
-    ModelCompatTlsConfiguration,
-
-    
-    ModelCompatTlsSubscriptions,
-
-    
-    ModelCompatWafExclusions,
-
-    
-    ModelCompatWafExclusionsData,
-
-    
-    ModelCompatWafExclusionsDataRelationships,
-
-    
-    ModelCompatWafExclusionsDataRelationshipsWafRules,
-
-    
-    ModelCompatWafExclusionsDataRelationshipsWafRulesData,
-
-    
-    ModelCondition,
-
-    
-    ModelConditionAllOf,
-
-    
-    ModelCustomer,
-
-    
-    ModelCustomerAllOf,
-
-    
-    ModelDictionary,
-
-    
-    ModelDictionaryAllOf,
-
-    
-    ModelDictionaryInfo,
-
-    
-    ModelDictionaryItem,
-
-    
-    ModelDictionaryItemAllOf,
-
-    
-    ModelDiff,
-
-    
-    ModelDirector,
-
-    
-    ModelDirectorAllOf,
-
-    
-    ModelDirectorBackend,
-
-    
-    ModelDirectorBackendAllOf,
-
-    
-    ModelDomain,
-
-    
-    ModelDomainAllOf,
-
-    
-    ModelEvent,
-
-    
-    ModelGzip,
-
-    
-    ModelGzipAllOf,
-
-    
-    ModelHeader,
-
-    
-    ModelHeaderAllOf,
-
-    
-    ModelHealthcheck,
-
-    
-    ModelHealthcheckAllOf,
-
-    
-    ModelHistorical,
-
-    
-    ModelInvitation,
-
-    
-    ModelInvitationAllOf,
-
-    
-    ModelLoggingAzureblob,
-
-    
-    ModelLoggingAzureblobAllOf,
-
-    
-    ModelLoggingBigquery,
-
-    
-    ModelLoggingBigqueryAllOf,
-
-    
-    ModelLoggingCloudfiles,
-
-    
-    ModelLoggingCloudfilesAllOf,
-
-    
-    ModelLoggingDatadog,
-
-    
-    ModelLoggingDatadogAllOf,
-
-    
-    ModelLoggingDigitalocean,
-
-    
-    ModelLoggingDigitaloceanAllOf,
-
-    
-    ModelLoggingElasticsearch,
-
-    
-    ModelLoggingElasticsearchAllOf,
-
-    
-    ModelLoggingFtp,
-
-    
-    ModelLoggingFtpAllOf,
-
-    
-    ModelLoggingGcs,
-
-    
-    ModelLoggingGcsAllOf,
-
-    
-    ModelLoggingGooglePubsub,
-
-    
-    ModelLoggingGooglePubsubAllOf,
-
-    
-    ModelLoggingHeroku,
-
-    
-    ModelLoggingHerokuAllOf,
-
-    
-    ModelLoggingHoneycomb,
-
-    
-    ModelLoggingHoneycombAllOf,
-
-    
-    ModelLoggingHttps,
-
-    
-    ModelLoggingHttpsAllOf,
-
-    
-    ModelLoggingKafka,
-
-    
-    ModelLoggingKafkaAllOf,
-
-    
-    ModelLoggingKinesis,
-
-    
-    ModelLoggingKinesisAllOf,
-
-    
-    ModelLoggingLogentries,
-
-    
-    ModelLoggingLogentriesAllOf,
-
-    
-    ModelLoggingLoggly,
-
-    
-    ModelLoggingLogglyAllOf,
-
-    
-    ModelLoggingLogshuttle,
-
-    
-    ModelLoggingLogshuttleAllOf,
-
-    
-    ModelLoggingNewrelic,
-
-    
-    ModelLoggingNewrelicAllOf,
-
-    
-    ModelLoggingOpenstack,
-
-    
-    ModelLoggingOpenstackAllOf,
-
-    
-    ModelLoggingPapertrail,
-
-    
-    ModelLoggingS3,
-
-    
-    ModelLoggingS3AllOf,
-
-    
-    ModelLoggingScalyr,
-
-    
-    ModelLoggingScalyrAllOf,
-
-    
-    ModelLoggingSftp,
-
-    
-    ModelLoggingSftpAllOf,
-
-    
-    ModelLoggingSplunk,
-
-    
-    ModelLoggingSplunkAllOf,
-
-    
-    ModelLoggingSumologic,
-
-    
-    ModelLoggingSumologicAllOf,
-
-    
-    ModelLoggingSyslog,
-
-    
-    ModelLoggingSyslogAllOf,
-
-    
-    ModelOriginInsights,
-
-    
-    ModelOriginInsightsEntry,
-
-    
-    ModelOriginInsightsMeasurements,
-
-    
-    ModelPackage,
-
-    
-    ModelPackageAllOf,
-
-    
-    ModelPackageMetadata,
-
-    
-    ModelPool,
-
-    
-    ModelPoolAllOf,
-
-    
-    ModelRateLimiter,
-
-    
-    ModelRateLimiterAllOf,
-
-    
-    ModelRateLimiterAllOfResponse,
-
-    
-    ModelRealtime,
-
-    
-    ModelRealtimeEntry,
-
-    
-    ModelRealtimeMeasurements,
-
-    
-    ModelRequestSettings,
-
-    
-    ModelRequestSettingsAllOf,
-
-    
-    ModelResponseObject,
-
-    
-    ModelResponseObjectAllOf,
-
-    
-    ModelServer,
-
-    
-    ModelServerAllOf,
-
-    
-    ModelService,
-
-    
-    ModelServiceAllOf,
-
-    
-    ModelServiceAuthorization,
-
-    
-    ModelServiceAuthorizationAllOf,
-
-    
-    ModelServiceDetail,
-
-    
-    ModelServiceDetailAllOf,
-
-    
-    ModelSettings,
-
-    
-    ModelSettingsAllOf,
-
-    
-    ModelSnippet,
-
-    
-    ModelSnippetAllOf,
-
-    
-    ModelStar,
-
-    
-    ModelStarAllOf,
-
-    
-    ModelTlsActivation,
-
-    
-    ModelTlsBulkCertificate,
-
-    
-    ModelTlsCertificate,
-
-    
-    ModelTlsConfiguration,
-
-    
-    ModelTlsConfigurationRelationships,
-
-    
-    ModelTlsDnsRecord,
-
-    
-    ModelTlsDomain,
-
-    
-    ModelTlsPrivateKey,
-
-    
-    ModelTlsSubscription,
-
-    
-    ModelToken,
-
-    
-    ModelTokenCreated,
-
-    
-    ModelTokenCreatedAllOf,
-
-    
-    ModelUser,
-
-    
-    ModelUserAllOf,
-
-    
-    ModelVcl,
-
-    
-    ModelVclAllOf,
-
-    
-    ModelVclDiff,
-
-    
-    ModelVersion,
-
-    
-    ModelVersionAllOf,
-
-    
-    ModelVersionDetail,
-
-    
-    ModelWafActiveRule,
-
-    
-    ModelWafActiveRuleAllOf,
-
-    
-    ModelWafExclusions,
-
-    
-    ModelWafExclusionsAllOf,
-
-    
-    ModelWafFirewall,
-
-    
-    ModelWafFirewallVersions,
-
-    
-    ModelWafRule,
-
-    
-    ModelWafRuleRevision,
-
-    
-    ModelWafTag,
-
-    
-    NestedModelVersion,
+    PackageResponseAllOf,
 
     
     Pagination,
@@ -934,7 +924,34 @@ export {
     PaginationMeta,
 
     
-    Permission,
+    Pool,
+
+    
+    PoolAllOf,
+
+    
+    PoolResponse,
+
+    
+    PoolResponseAllOf,
+
+    
+    PublicIpList,
+
+    
+    RateLimiter,
+
+    
+    RateLimiterResponse,
+
+    
+    RateLimiterResponse1,
+
+    
+    RateLimiterResponseAllOf,
+
+    
+    RelationshipCommonName,
 
     
     RelationshipCustomer,
@@ -943,25 +960,148 @@ export {
     RelationshipCustomerCustomer,
 
     
-    RelationshipCustomerCustomerData,
+    RelationshipMemberCustomer,
+
+    
+    RelationshipMemberService,
+
+    
+    RelationshipMemberServiceInvitation,
+
+    
+    RelationshipMemberTlsActivation,
+
+    
+    RelationshipMemberTlsBulkCertificate,
+
+    
+    RelationshipMemberTlsCertificate,
+
+    
+    RelationshipMemberTlsConfiguration,
+
+    
+    RelationshipMemberTlsDnsRecord,
+
+    
+    RelationshipMemberTlsDomain,
+
+    
+    RelationshipMemberTlsPrivateKey,
+
+    
+    RelationshipMemberTlsSubscription,
+
+    
+    RelationshipMemberWafActiveRule,
+
+    
+    RelationshipMemberWafFirewall,
+
+    
+    RelationshipMemberWafFirewallVersion,
+
+    
+    RelationshipMemberWafRule,
+
+    
+    RelationshipMemberWafRuleRevision,
+
+    
+    RelationshipMemberWafTag,
 
     
     RelationshipService,
 
     
-    RelationshipServiceInvitation,
+    RelationshipServiceInvitations,
 
     
-    RelationshipServiceInvitationServiceInvitation,
+    RelationshipServiceInvitationsCreate,
 
     
-    RelationshipServiceInvitationServiceInvitationData,
+    RelationshipServiceInvitationsCreateServiceInvitations,
+
+    
+    RelationshipServiceInvitationsServiceInvitations,
 
     
     RelationshipServiceService,
 
     
-    RelationshipServiceServiceData,
+    RelationshipServices,
+
+    
+    RelationshipTlsActivation,
+
+    
+    RelationshipTlsActivationTlsActivation,
+
+    
+    RelationshipTlsActivations,
+
+    
+    RelationshipTlsBulkCertificate,
+
+    
+    RelationshipTlsBulkCertificateTlsBulkCertificate,
+
+    
+    RelationshipTlsBulkCertificates,
+
+    
+    RelationshipTlsCertificate,
+
+    
+    RelationshipTlsCertificateTlsCertificate,
+
+    
+    RelationshipTlsCertificates,
+
+    
+    RelationshipTlsConfiguration,
+
+    
+    RelationshipTlsConfigurationTlsConfiguration,
+
+    
+    RelationshipTlsConfigurations,
+
+    
+    RelationshipTlsDnsRecord,
+
+    
+    RelationshipTlsDnsRecordDnsRecord,
+
+    
+    RelationshipTlsDnsRecords,
+
+    
+    RelationshipTlsDomain,
+
+    
+    RelationshipTlsDomainTlsDomain,
+
+    
+    RelationshipTlsDomains,
+
+    
+    RelationshipTlsPrivateKey,
+
+    
+    RelationshipTlsPrivateKeyTlsPrivateKey,
+
+    
+    RelationshipTlsPrivateKeys,
+
+    
+    RelationshipTlsSubscription,
+
+    
+    RelationshipTlsSubscriptionTlsSubscription,
+
+    
+    RelationshipTlsSubscriptions,
 
     
     RelationshipUser,
@@ -973,106 +1113,523 @@ export {
     RelationshipUserUserData,
 
     
-    ResourceBillingAddress,
+    RelationshipWafActiveRules,
 
     
-    ResourceBillingAddressData,
+    RelationshipWafActiveRulesWafActiveRules,
 
     
-    ResourceEvent,
+    RelationshipWafFirewall,
 
     
-    ResourceEventData,
+    RelationshipWafFirewallVersion,
 
     
-    ResourceInvitation,
+    RelationshipWafFirewallVersionWafFirewallVersion,
 
     
-    ResourceInvitationData,
+    RelationshipWafFirewallVersions,
 
     
-    ResourceServiceAuthorization,
+    RelationshipWafFirewallWafFirewall,
 
     
-    ResourceServiceAuthorizationData,
+    RelationshipWafRule,
 
     
-    ResourceServiceInvitation,
+    RelationshipWafRuleRevision,
 
     
-    ResourceServiceInvitationData,
+    RelationshipWafRuleRevisionWafRuleRevisions,
 
     
-    ResourceStar,
+    RelationshipWafRuleRevisions,
 
     
-    ResourceStarData,
+    RelationshipWafRuleWafRule,
 
     
-    ResourceWafTag,
+    RelationshipWafRules,
 
     
-    ResourceWafTagAllOf,
+    RelationshipWafTags,
+
+    
+    RelationshipWafTagsWafTags,
+
+    
+    RequestSettings,
+
+    
+    RequestSettingsResponse,
+
+    
+    ResponseObject,
+
+    
+    ResponseObjectResponse,
 
     
     RoleUser,
 
     
-    SchemasModelBackend,
+    SchemasGzip,
 
     
-    SchemasModelGzip,
+    SchemasGzipResponse,
 
     
-    SchemasModelHeader,
+    SchemasHealthcheck,
 
     
-    SchemasModelSettings,
+    SchemasHealthcheckResponse,
 
     
-    SchemasModelSnippet,
+    SchemasUserResponse,
 
     
-    SchemasModelUser,
+    SchemasVclResponse,
 
     
-    SchemasModelVcl,
+    SchemasVersion,
 
     
-    SchemasModelVersion,
+    SchemasVersionResponse,
+
+    
+    SchemasWafActiveRule,
+
+    
+    SchemasWafFirewallVersion,
+
+    
+    Server,
+
+    
+    ServerResponse,
+
+    
+    ServerResponseAllOf,
 
     
     Service,
 
     
-    ServiceAuthorizationsData,
+    ServiceCreate,
+
+    
+    ServiceCreateAllOf,
+
+    
+    ServiceDetail,
+
+    
+    ServiceDetailAllOf,
 
     
     ServiceIdAndVersion,
 
     
+    ServiceInvitation,
+
+    
+    ServiceInvitationData,
+
+    
+    ServiceInvitationDataAttributes,
+
+    
+    ServiceInvitationResponse,
+
+    
+    ServiceResponse,
+
+    
+    ServiceResponseAllOf,
+
+    
+    Settings,
+
+    
+    SettingsResponse,
+
+    
+    Snippet,
+
+    
+    SnippetResponse,
+
+    
+    SnippetResponseAllOf,
+
+    
+    Star,
+
+    
+    StarData,
+
+    
+    StarResponse,
+
+    
+    StarResponseAllOf,
+
+    
     Timestamps,
 
     
-    TimestampsNoDelete,
+    TlsActivation,
+
+    
+    TlsActivationData,
+
+    
+    TlsActivationResponse,
+
+    
+    TlsActivationsResponse,
+
+    
+    TlsActivationsResponseAllOf,
+
+    
+    TlsBulkCertificate,
+
+    
+    TlsBulkCertificateData,
+
+    
+    TlsBulkCertificateDataAttributes,
+
+    
+    TlsBulkCertificateResponse,
+
+    
+    TlsBulkCertificatesResponse,
+
+    
+    TlsBulkCertificatesResponseAllOf,
+
+    
+    TlsCertificate,
+
+    
+    TlsCertificateData,
+
+    
+    TlsCertificateDataAttributes,
+
+    
+    TlsCertificateResponse,
+
+    
+    TlsCertificatesResponse,
+
+    
+    TlsCertificatesResponseAllOf,
 
     
     TlsCommon,
 
     
-    WafFirewallsFirewallIdVersionsFirewallVersionNumberExclusionsData,
+    TlsConfiguration,
 
     
-    WafFirewallsFirewallIdVersionsFirewallVersionNumberExclusionsDataRelationships,
+    TlsConfigurationData,
 
     
-    WafFirewallsFirewallIdVersionsFirewallVersionNumberExclusionsDataRelationshipsWafRules,
+    TlsConfigurationDataAttributes,
 
     
-    WafFirewallsFirewallIdVersionsFirewallVersionNumberExclusionsDataRelationshipsWafRulesData,
+    TlsConfigurationResponse,
 
     
-    WafFirewallsFirewallIdVersionsFirewallVersionNumberExclusionsExclusionNumberData,
+    TlsConfigurationsResponse,
+
+    
+    TlsConfigurationsResponseAllOf,
+
+    
+    TlsDnsRecord,
+
+    
+    TlsDomain,
+
+    
+    TlsDomainData,
+
+    
+    TlsDomainsResponse,
+
+    
+    TlsDomainsResponseAllOf,
+
+    
+    TlsPrivateKey,
+
+    
+    TlsPrivateKeyData,
+
+    
+    TlsPrivateKeyDataAttributes,
+
+    
+    TlsPrivateKeyResponse,
+
+    
+    TlsPrivateKeyResponseData,
+
+    
+    TlsPrivateKeysResponse,
+
+    
+    TlsPrivateKeysResponseAllOf,
+
+    
+    TlsSubscription,
+
+    
+    TlsSubscriptionData,
+
+    
+    TlsSubscriptionDataAttributes,
+
+    
+    TlsSubscriptionResponse,
+
+    
+    TlsSubscriptionsResponse,
+
+    
+    TlsSubscriptionsResponseAllOf,
+
+    
+    Token,
+
+    
+    TokenCreatedResponse,
+
+    
+    TokenCreatedResponseAllOf,
+
+    
+    TokenResponse,
+
+    
+    TokenResponseAllOf,
+
+    
+    TypeCustomer,
+
+    
+    TypeEvent,
+
+    
+    TypeInvitation,
+
+    
+    TypeService,
+
+    
+    TypeServiceInvitation,
+
+    
+    TypeStar,
+
+    
+    TypeTlsActivation,
+
+    
+    TypeTlsBulkCertificate,
+
+    
+    TypeTlsCertificate,
+
+    
+    TypeTlsConfiguration,
+
+    
+    TypeTlsDnsRecord,
+
+    
+    TypeTlsDomain,
+
+    
+    TypeTlsPrivateKey,
+
+    
+    TypeTlsSubscription,
+
+    
+    TypeUser,
+
+    
+    TypeWafActiveRule,
+
+    
+    TypeWafExclusion,
+
+    
+    TypeWafFirewall,
+
+    
+    TypeWafFirewallVersion,
+
+    
+    TypeWafRule,
+
+    
+    TypeWafRuleRevision,
+
+    
+    TypeWafTag,
+
+    
+    User,
+
+    
+    UserResponse,
+
+    
+    UserResponseAllOf,
+
+    
+    Vcl,
+
+    
+    VclDiff,
+
+    
+    VclResponse,
+
+    
+    Version,
+
+    
+    VersionCreateResponse,
+
+    
+    VersionDetail,
+
+    
+    VersionResponse,
+
+    
+    VersionResponseAllOf,
+
+    
+    WafActiveRule,
+
+    
+    WafActiveRuleData,
+
+    
+    WafActiveRuleDataAttributes,
+
+    
+    WafActiveRuleResponse,
+
+    
+    WafActiveRulesResponse,
+
+    
+    WafActiveRulesResponseAllOf,
+
+    
+    WafExclusion,
+
+    
+    WafExclusionData,
+
+    
+    WafExclusionDataAttributes,
+
+    
+    WafExclusionResponse,
+
+    
+    WafExclusionsResponse,
+
+    
+    WafExclusionsResponseAllOf,
+
+    
+    WafFirewall,
+
+    
+    WafFirewallData,
+
+    
+    WafFirewallDataAttributes,
+
+    
+    WafFirewallResponse,
+
+    
+    WafFirewallVersion,
+
+    
+    WafFirewallVersionData,
+
+    
+    WafFirewallVersionDataAttributes,
+
+    
+    WafFirewallVersionResponse,
+
+    
+    WafFirewallVersionsResponse,
+
+    
+    WafFirewallVersionsResponseAllOf,
+
+    
+    WafFirewallsResponse,
+
+    
+    WafFirewallsResponseAllOf,
+
+    
+    WafRule,
+
+    
+    WafRuleAttributes,
+
+    
+    WafRuleResponse,
+
+    
+    WafRuleRevision,
+
+    
+    WafRuleRevisionAttributes,
+
+    
+    WafRuleRevisionResponse,
+
+    
+    WafRuleRevisionsResponse,
+
+    
+    WafRuleRevisionsResponseAllOf,
+
+    
+    WafRulesResponse,
+
+    
+    WafRulesResponseAllOf,
+
+    
+    WafTag,
+
+    
+    WafTagAttributes,
+
+    
+    WafTagsResponse,
+
+    
+    WafTagsResponseAllOf,
 
     
     AclApi,
@@ -1082,12 +1639,6 @@ export {
 
     
     BackendApi,
-
-    
-    BillingApi,
-
-    
-    BillingAddressApi,
 
     
     CacheSettingsApi,
@@ -1100,9 +1651,6 @@ export {
 
     
     CustomerApi,
-
-    
-    DatacenterApi,
 
     
     DictionaryApi,
@@ -1219,9 +1767,6 @@ export {
     LoggingSyslogApi,
 
     
-    OriginInsightsApi,
-
-    
     PackageApi,
 
     
@@ -1232,9 +1777,6 @@ export {
 
     
     RateLimiterApi,
-
-    
-    RealtimeApi,
 
     
     RequestSettingsApi,
@@ -1249,9 +1791,6 @@ export {
     ServiceApi,
 
     
-    ServiceAuthorizationsApi,
-
-    
     SettingsApi,
 
     
@@ -1259,9 +1798,6 @@ export {
 
     
     StarApi,
-
-    
-    StatsApi,
 
     
     TlsActivationsApi,

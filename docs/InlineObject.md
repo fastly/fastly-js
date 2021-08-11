@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**entries** | [**[ModelAclEntry]**](ModelAclEntry.md) |  | [optional] 
+**items** | [**[DictionaryItem]**](DictionaryItem.md) |  | [optional] 
 
 
+
+[[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

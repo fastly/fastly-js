@@ -1,8 +1,10 @@
 # FastlyApi.DomainApi
 
-All URIs are relative to *https://api.fastly.com*
 
-Method | HTTP request | Description
+
+## Methods
+
+Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**checkDomain**](DomainApi.md#checkDomain) | **GET** /service/{service_id}/version/{version_id}/domain/{domain_name}/check | Validate DNS configuration for a single domain on a service
 [**checkDomains**](DomainApi.md#checkDomains) | **GET** /service/{service_id}/version/{version_id}/domain/check_all | Validate DNS configuration for all domains on a service
@@ -14,25 +16,17 @@ Method | HTTP request | Description
 
 
 
-## checkDomain
+## `checkDomain`
 
-> [OneOfobjectstringboolean] checkDomain(service_id, version_id, domain_name)
+> [AnyOfobjectstringboolean] checkDomain(service_id, version_id, domain_name)
 
 Validate DNS configuration for a single domain on a service
 
-Checks the status of a specific domain&#39;s DNS record for a Service Version. Returns an array in the same format as domain/check_all.
+Checks the status of a specific domain's DNS record for a Service Version. Returns an array in the same format as domain/check_all.
 
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.DomainApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -47,46 +41,28 @@ apiInstance.checkDomain(service_id, version_id, domain_name).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **domain_name** | **String**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**domain_name** | **String** |  |
 
 ### Return type
 
-[**[OneOfobjectstringboolean]**](OneOfobjectstringboolean.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**[AnyOfobjectstringboolean]**](AnyOfobjectstringboolean.md)
 
 
-## checkDomains
+## `checkDomains`
 
 > [Array] checkDomains(service_id, version_id)
 
 Validate DNS configuration for all domains on a service
 
-Checks the status of all domains&#39; DNS records for a Service Version. Returns an array of 3 items. The first is the details for the domain, the second is the current CNAME of the domain, and the third is a boolean indicating whether or not it has been properly setup to use Fastly.
+Checks the status of all domains' DNS records for a Service Version. Returns an array of 3 items for each domain; the first is the details for the domain, the second is the current CNAME of the domain, and the third is a boolean indicating whether or not it has been properly setup to use Fastly.
 
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.DomainApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -100,29 +76,19 @@ apiInstance.checkDomains(service_id, version_id).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
 
 ### Return type
 
 **[Array]**
 
-### Authorization
 
-[token](../README.md#token)
+## `createDomain`
 
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## createDomain
-
-> ModelDomain createDomain(service_id, version_id, opts)
+> DomainResponse createDomain(service_id, version_id, opts)
 
 Add a domain name to a service
 
@@ -131,24 +97,11 @@ Create a domain for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.DomainApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
 let opts = {
-  'service_id2': "service_id_example", // String | Alphanumeric string identifying the service.
-  'version': 56, // Number | Integer identifying a service version.
-  'created_at': "created_at_example", // String | Date and time in ISO 8601 format.
-  'deleted_at': "deleted_at_example", // String | Date and time in ISO 8601 format.
-  'updated_at': "updated_at_example", // String | Date and time in ISO 8601 format.
-  'comment': "''", // String | A freeform descriptive note.
+  'comment': "comment_example", // String | A freeform descriptive note.
   'name': "name_example" // String | The name of the domain or domains associated with this service.
 };
 apiInstance.createDomain(service_id, version_id, opts).then((data) => {
@@ -161,34 +114,19 @@ apiInstance.createDomain(service_id, version_id, opts).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **service_id2** | **String**| Alphanumeric string identifying the service. | [optional] 
- **version** | **Number**| Integer identifying a service version. | [optional] 
- **created_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **deleted_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **updated_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **comment** | **String**| A freeform descriptive note. | [optional] [default to &#39;&#39;]
- **name** | **String**| The name of the domain or domains associated with this service. | [optional] 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**comment** | **String** | A freeform descriptive note. | [optional]
+**name** | **String** | The name of the domain or domains associated with this service. | [optional]
 
 ### Return type
 
-[**ModelDomain**](ModelDomain.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: application/x-www-form-urlencoded
-- **Accept**: application/json
+[**DomainResponse**](DomainResponse.md)
 
 
-## deleteDomain
+## `deleteDomain`
 
 > Object deleteDomain(service_id, version_id, domain_name)
 
@@ -199,14 +137,6 @@ Delete the domain for a particular service and versions.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.DomainApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -221,30 +151,20 @@ apiInstance.deleteDomain(service_id, version_id, domain_name).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **domain_name** | **String**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**domain_name** | **String** |  |
 
 ### Return type
 
 **Object**
 
-### Authorization
 
-[token](../README.md#token)
+## `getDomain`
 
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## getDomain
-
-> ModelDomain getDomain(service_id, version_id, domain_name)
+> DomainResponse getDomain(service_id, version_id, domain_name)
 
 Describe a domain
 
@@ -253,14 +173,6 @@ Get the domain for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.DomainApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -275,30 +187,20 @@ apiInstance.getDomain(service_id, version_id, domain_name).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **domain_name** | **String**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**domain_name** | **String** |  |
 
 ### Return type
 
-[**ModelDomain**](ModelDomain.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**DomainResponse**](DomainResponse.md)
 
 
-## listDomains
+## `listDomains`
 
-> ModelDomain listDomains(service_id, version_id)
+> DomainResponse listDomains(service_id, version_id)
 
 List domains
 
@@ -307,14 +209,6 @@ List all the domains for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.DomainApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -328,29 +222,19 @@ apiInstance.listDomains(service_id, version_id).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
 
 ### Return type
 
-[**ModelDomain**](ModelDomain.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**DomainResponse**](DomainResponse.md)
 
 
-## updateDomain
+## `updateDomain`
 
-> ModelDomain updateDomain(service_id, version_id, domain_name, opts)
+> DomainResponse updateDomain(service_id, version_id, domain_name, opts)
 
 Update a domain
 
@@ -359,25 +243,12 @@ Update the domain for a particular service and version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.DomainApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
 let domain_name = "domain_name_example"; // String | 
 let opts = {
-  'service_id2': "service_id_example", // String | Alphanumeric string identifying the service.
-  'version': 56, // Number | Integer identifying a service version.
-  'created_at': "created_at_example", // String | Date and time in ISO 8601 format.
-  'deleted_at': "deleted_at_example", // String | Date and time in ISO 8601 format.
-  'updated_at': "updated_at_example", // String | Date and time in ISO 8601 format.
-  'comment': "''", // String | A freeform descriptive note.
+  'comment': "comment_example", // String | A freeform descriptive note.
   'name': "name_example" // String | The name of the domain or domains associated with this service.
 };
 apiInstance.updateDomain(service_id, version_id, domain_name, opts).then((data) => {
@@ -390,30 +261,18 @@ apiInstance.updateDomain(service_id, version_id, domain_name, opts).then((data) 
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **domain_name** | **String**|  | 
- **service_id2** | **String**| Alphanumeric string identifying the service. | [optional] 
- **version** | **Number**| Integer identifying a service version. | [optional] 
- **created_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **deleted_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **updated_at** | **String**| Date and time in ISO 8601 format. | [optional] 
- **comment** | **String**| A freeform descriptive note. | [optional] [default to &#39;&#39;]
- **name** | **String**| The name of the domain or domains associated with this service. | [optional] 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**domain_name** | **String** |  |
+**comment** | **String** | A freeform descriptive note. | [optional]
+**name** | **String** | The name of the domain or domains associated with this service. | [optional]
 
 ### Return type
 
-[**ModelDomain**](ModelDomain.md)
+[**DomainResponse**](DomainResponse.md)
 
-### Authorization
 
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: application/x-www-form-urlencoded
-- **Accept**: application/json
-
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to README]](../../README.md)

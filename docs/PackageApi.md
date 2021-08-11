@@ -1,17 +1,19 @@
 # FastlyApi.PackageApi
 
-All URIs are relative to *https://api.fastly.com*
 
-Method | HTTP request | Description
+
+## Methods
+
+Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**getPackage**](PackageApi.md#getPackage) | **GET** /service/{service_id}/version/{version_id}/package | Get details of the service&#39;s Compute@Edge package.
 [**putPackage**](PackageApi.md#putPackage) | **PUT** /service/{service_id}/version/{version_id}/package | Upload a Compute@Edge package.
 
 
 
-## getPackage
+## `getPackage`
 
-> ModelPackage getPackage(service_id, version_id)
+> PackageResponse getPackage(service_id, version_id)
 
 Get details of the service&#39;s Compute@Edge package.
 
@@ -20,14 +22,6 @@ List detailed information about the Compute@Edge package for the specified servi
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.PackageApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
@@ -41,29 +35,19 @@ apiInstance.getPackage(service_id, version_id).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
 
 ### Return type
 
-[**ModelPackage**](ModelPackage.md)
-
-### Authorization
-
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+[**PackageResponse**](PackageResponse.md)
 
 
-## putPackage
+## `putPackage`
 
-> ModelPackage putPackage(service_id, version_id, opts)
+> PackageResponse putPackage(service_id, version_id, opts)
 
 Upload a Compute@Edge package.
 
@@ -72,20 +56,12 @@ Upload a Compute@Edge package associated with the specified service version.
 ### Example
 
 ```javascript
-import FastlyApi from 'fastly_api';
-let defaultClient = FastlyApi.ApiClient.instance;
-// Configure API key authorization: token
-let token = defaultClient.authentications['token'];
-token.apiKey = 'YOUR API KEY';
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//token.apiKeyPrefix = 'Token';
-
 let apiInstance = new FastlyApi.PackageApi();
 let service_id = "service_id_example"; // String | 
 let version_id = 56; // Number | 
 let opts = {
   'expect': 100-continue, // String | We recommend using the Expect header because it may identify issues with the request based upon the headers alone instead of requiring you to wait until the entire binary package upload has completed.
-  '_package': "/path/to/file" // File | 
+  '_package': "/path/to/file" // File | The content of the Wasm binary package.
 };
 apiInstance.putPackage(service_id, version_id, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -97,24 +73,17 @@ apiInstance.putPackage(service_id, version_id, opts).then((data) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **service_id** | **String**|  | 
- **version_id** | **Number**|  | 
- **expect** | **String**| We recommend using the Expect header because it may identify issues with the request based upon the headers alone instead of requiring you to wait until the entire binary package upload has completed. | [optional] 
- **_package** | **File**|  | [optional] 
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+**expect** | **String** | We recommend using the Expect header because it may identify issues with the request based upon the headers alone instead of requiring you to wait until the entire binary package upload has completed. | [optional]
+**_package** | **File****File** | The content of the Wasm binary package. | [optional]
 
 ### Return type
 
-[**ModelPackage**](ModelPackage.md)
+[**PackageResponse**](PackageResponse.md)
 
-### Authorization
 
-[token](../README.md#token)
-
-### HTTP request headers
-
-- **Content-Type**: multipart/form-data
-- **Accept**: application/json
-
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to README]](../../README.md)

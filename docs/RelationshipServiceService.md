@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**RelationshipServiceServiceData**](RelationshipServiceServiceData.md) |  | [optional] 
+**data** | [**[RelationshipMemberService]**](RelationshipMemberService.md) |  | [optional] 
 
 
+
+[[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
