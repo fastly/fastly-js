@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import Data from './Data';
 
-
+/**
+ * The WafExclusionResponse model module.
+ * @module model/WafExclusionResponse
+ * @version 3.0.0-alpha1
+ */
 class WafExclusionResponse {
-    
+    /**
+     * Constructs a new <code>WafExclusionResponse</code>.
+     * @alias module:model/WafExclusionResponse
+     */
     constructor() { 
         
         WafExclusionResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>WafExclusionResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/WafExclusionResponse} obj Optional instance to populate.
+     * @return {module:model/WafExclusionResponse} The populated <code>WafExclusionResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafExclusionResponse();
@@ -41,7 +58,9 @@ class WafExclusionResponse {
 
 }
 
-
+/**
+ * @member {module:model/Data} data
+ */
 WafExclusionResponse.prototype['data'] = undefined;
 
 

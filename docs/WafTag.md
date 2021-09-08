@@ -1,12 +1,12 @@
-# FastlyApi.WafTag
+# Fastly.WafTag
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**TypeWafTag**](TypeWafTag.md) |  | [optional] 
-**id** | **String** | Alphanumeric string identifying a WAF tag. | [optional] [readonly] 
 **attributes** | [**WafTagAttributes**](WafTagAttributes.md) |  | [optional] 
+**id** | **String** | Alphanumeric string identifying a WAF tag. | [optional] [readonly] 
+**type** | [**TypeWafTag**](TypeWafTag.md) |  | [optional] 
 
 
 

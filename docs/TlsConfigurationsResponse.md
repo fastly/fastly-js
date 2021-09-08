@@ -1,4 +1,4 @@
-# FastlyApi.TlsConfigurationsResponse
+# Fastly.TlsConfigurationsResponse
 
 ## Properties
 

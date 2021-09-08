@@ -12,15 +12,26 @@
  */
 
 import ApiClient from '../ApiClient';
-
+/**
+* Enum class TypeWafFirewallVersion.
+* @enum {}
+* @readonly
+*/
 export default class TypeWafFirewallVersion {
     
-        
+        /**
+         * value: "waf_firewall_version"
+         * @const
+         */
         "waf_firewall_version" = "waf_firewall_version";
 
     
 
-    
+    /**
+    * Returns a <code>TypeWafFirewallVersion</code> enum value from a Javascript object name.
+    * @param {Object} data The plain JavaScript object containing the name of the enum value.
+    * @return {module:model/TypeWafFirewallVersion} The enum <code>TypeWafFirewallVersion</code> value.
+    */
     static constructFromObject(object) {
         return object;
     }

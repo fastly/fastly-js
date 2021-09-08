@@ -1,4 +1,4 @@
-# FastlyApi.PublicIpList
+# Fastly.PublicIpList
 
 ## Properties
 

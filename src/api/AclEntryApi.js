@@ -17,29 +17,47 @@ import AclEntries from '../model/AclEntries';
 import AclEntry from '../model/AclEntry';
 import AclEntryResponse from '../model/AclEntryResponse';
 
-
+/**
+* AclEntry service.
+* @module api/AclEntryApi
+* @version 3.0.0-alpha1
+*/
 export default class AclEntryApi {
 
-    
+    /**
+    * Constructs a new AclEntryApi. 
+    * @alias module:api/AclEntryApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    bulkUpdateAclEntriesWithHttpInfo(service_id, acl_id, opts) {
-      opts = opts || {};
-      let postBody = opts['acl_entries'];
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling bulkUpdateAclEntries");
+
+    /**
+     * Update multiple ACL entries on the same ACL.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.acl_id
+     * @param {module:model/AclEntries} [options.acl_entries]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    bulkUpdateAclEntriesWithHttpInfo(options = {}) {
+      let postBody = options['acl_entries'];
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'acl_id' is set
-      if (acl_id === undefined || acl_id === null) {
-        throw new Error("Missing the required parameter 'acl_id' when calling bulkUpdateAclEntries");
+      // Verify the required parameter 'acl_id' is set.
+      if (options['acl_id'] === undefined || options['acl_id'] === null) {
+        throw new Error("Missing the required parameter 'acl_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'acl_id': acl_id
+        'service_id': options['service_id'],
+        'acl_id': options['acl_id']
       };
       let queryParams = {
       };
@@ -58,27 +76,44 @@ export default class AclEntryApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    bulkUpdateAclEntries(service_id, acl_id, opts) {
-      return this.bulkUpdateAclEntriesWithHttpInfo(service_id, acl_id, opts)
+
+    /**
+     * Update multiple ACL entries on the same ACL.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.acl_id
+     * @param {module:model/AclEntries} [options.acl_entries]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    bulkUpdateAclEntries(options = {}) {
+      return this.bulkUpdateAclEntriesWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    createAclEntryWithHttpInfo(service_id, acl_id, opts) {
-      opts = opts || {};
-      let postBody = opts['acl_entry'];
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createAclEntry");
+
+    /**
+     * Add an ACL entry to an ACL.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.acl_id
+     * @param {module:model/AclEntry} [options.acl_entry]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AclEntryResponse} and HTTP response
+     */
+    createAclEntryWithHttpInfo(options = {}) {
+      let postBody = options['acl_entry'];
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'acl_id' is set
-      if (acl_id === undefined || acl_id === null) {
-        throw new Error("Missing the required parameter 'acl_id' when calling createAclEntry");
+      // Verify the required parameter 'acl_id' is set.
+      if (options['acl_id'] === undefined || options['acl_id'] === null) {
+        throw new Error("Missing the required parameter 'acl_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'acl_id': acl_id
+        'service_id': options['service_id'],
+        'acl_id': options['acl_id']
       };
       let queryParams = {
       };
@@ -97,31 +132,49 @@ export default class AclEntryApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createAclEntry(service_id, acl_id, opts) {
-      return this.createAclEntryWithHttpInfo(service_id, acl_id, opts)
+
+    /**
+     * Add an ACL entry to an ACL.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.acl_id
+     * @param {module:model/AclEntry} [options.acl_entry]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AclEntryResponse}
+     */
+    createAclEntry(options = {}) {
+      return this.createAclEntryWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteAclEntryWithHttpInfo(service_id, acl_id, acl_entry_id) {
+
+    /**
+     * Delete an ACL entry from a specified ACL.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.acl_id
+     * @param {String} options.acl_entry_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteAclEntryWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteAclEntry");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'acl_id' is set
-      if (acl_id === undefined || acl_id === null) {
-        throw new Error("Missing the required parameter 'acl_id' when calling deleteAclEntry");
+      // Verify the required parameter 'acl_id' is set.
+      if (options['acl_id'] === undefined || options['acl_id'] === null) {
+        throw new Error("Missing the required parameter 'acl_id'.");
       }
-      // verify the required parameter 'acl_entry_id' is set
-      if (acl_entry_id === undefined || acl_entry_id === null) {
-        throw new Error("Missing the required parameter 'acl_entry_id' when calling deleteAclEntry");
+      // Verify the required parameter 'acl_entry_id' is set.
+      if (options['acl_entry_id'] === undefined || options['acl_entry_id'] === null) {
+        throw new Error("Missing the required parameter 'acl_entry_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'acl_id': acl_id,
-        'acl_entry_id': acl_entry_id
+        'service_id': options['service_id'],
+        'acl_id': options['acl_id'],
+        'acl_entry_id': options['acl_entry_id']
       };
       let queryParams = {
       };
@@ -140,31 +193,49 @@ export default class AclEntryApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteAclEntry(service_id, acl_id, acl_entry_id) {
-      return this.deleteAclEntryWithHttpInfo(service_id, acl_id, acl_entry_id)
+
+    /**
+     * Delete an ACL entry from a specified ACL.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.acl_id
+     * @param {String} options.acl_entry_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteAclEntry(options = {}) {
+      return this.deleteAclEntryWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getAclEntryWithHttpInfo(service_id, acl_id, acl_entry_id) {
+
+    /**
+     * Retrieve a single ACL entry.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.acl_id
+     * @param {String} options.acl_entry_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AclEntry} and HTTP response
+     */
+    getAclEntryWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getAclEntry");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'acl_id' is set
-      if (acl_id === undefined || acl_id === null) {
-        throw new Error("Missing the required parameter 'acl_id' when calling getAclEntry");
+      // Verify the required parameter 'acl_id' is set.
+      if (options['acl_id'] === undefined || options['acl_id'] === null) {
+        throw new Error("Missing the required parameter 'acl_id'.");
       }
-      // verify the required parameter 'acl_entry_id' is set
-      if (acl_entry_id === undefined || acl_entry_id === null) {
-        throw new Error("Missing the required parameter 'acl_entry_id' when calling getAclEntry");
+      // Verify the required parameter 'acl_entry_id' is set.
+      if (options['acl_entry_id'] === undefined || options['acl_entry_id'] === null) {
+        throw new Error("Missing the required parameter 'acl_entry_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'acl_id': acl_id,
-        'acl_entry_id': acl_entry_id
+        'service_id': options['service_id'],
+        'acl_id': options['acl_id'],
+        'acl_entry_id': options['acl_entry_id']
       };
       let queryParams = {
       };
@@ -183,33 +254,53 @@ export default class AclEntryApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getAclEntry(service_id, acl_id, acl_entry_id) {
-      return this.getAclEntryWithHttpInfo(service_id, acl_id, acl_entry_id)
+
+    /**
+     * Retrieve a single ACL entry.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.acl_id
+     * @param {String} options.acl_entry_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AclEntry}
+     */
+    getAclEntry(options = {}) {
+      return this.getAclEntryWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listAclEntriesWithHttpInfo(service_id, acl_id, opts) {
-      opts = opts || {};
+
+    /**
+     * List ACL entries for a specified ACL.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.acl_id
+     * @param {Number} [options.page] - Current page.
+     * @param {Number} [options.per_page=20] - Number of records per page.
+     * @param {String} [options.sort='created'] - Field on which to sort.
+     * @param {module:model/String} [options.direction='ascend'] - Direction in which to sort results.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/AclEntryResponse>} and HTTP response
+     */
+    listAclEntriesWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listAclEntries");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'acl_id' is set
-      if (acl_id === undefined || acl_id === null) {
-        throw new Error("Missing the required parameter 'acl_id' when calling listAclEntries");
+      // Verify the required parameter 'acl_id' is set.
+      if (options['acl_id'] === undefined || options['acl_id'] === null) {
+        throw new Error("Missing the required parameter 'acl_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'acl_id': acl_id
+        'service_id': options['service_id'],
+        'acl_id': options['acl_id']
       };
       let queryParams = {
-        'page': opts['page'],
-        'per_page': opts['per_page'],
-        'sort': opts['sort'],
-        'direction': opts['direction']
+        'page': options['page'],
+        'per_page': options['per_page'],
+        'sort': options['sort'],
+        'direction': options['direction']
       };
       let headerParams = {
       };
@@ -226,32 +317,53 @@ export default class AclEntryApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listAclEntries(service_id, acl_id, opts) {
-      return this.listAclEntriesWithHttpInfo(service_id, acl_id, opts)
+
+    /**
+     * List ACL entries for a specified ACL.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.acl_id
+     * @param {Number} [options.page] - Current page.
+     * @param {Number} [options.per_page=20] - Number of records per page.
+     * @param {String} [options.sort='created'] - Field on which to sort.
+     * @param {module:model/String} [options.direction='ascend'] - Direction in which to sort results.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/AclEntryResponse>}
+     */
+    listAclEntries(options = {}) {
+      return this.listAclEntriesWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateAclEntryWithHttpInfo(service_id, acl_id, acl_entry_id, opts) {
-      opts = opts || {};
-      let postBody = opts['acl_entry'];
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateAclEntry");
+
+    /**
+     * Update an ACL entry for a specified ACL.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.acl_id
+     * @param {String} options.acl_entry_id
+     * @param {module:model/AclEntry} [options.acl_entry]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AclEntry} and HTTP response
+     */
+    updateAclEntryWithHttpInfo(options = {}) {
+      let postBody = options['acl_entry'];
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'acl_id' is set
-      if (acl_id === undefined || acl_id === null) {
-        throw new Error("Missing the required parameter 'acl_id' when calling updateAclEntry");
+      // Verify the required parameter 'acl_id' is set.
+      if (options['acl_id'] === undefined || options['acl_id'] === null) {
+        throw new Error("Missing the required parameter 'acl_id'.");
       }
-      // verify the required parameter 'acl_entry_id' is set
-      if (acl_entry_id === undefined || acl_entry_id === null) {
-        throw new Error("Missing the required parameter 'acl_entry_id' when calling updateAclEntry");
+      // Verify the required parameter 'acl_entry_id' is set.
+      if (options['acl_entry_id'] === undefined || options['acl_entry_id'] === null) {
+        throw new Error("Missing the required parameter 'acl_entry_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'acl_id': acl_id,
-        'acl_entry_id': acl_entry_id
+        'service_id': options['service_id'],
+        'acl_id': options['acl_id'],
+        'acl_entry_id': options['acl_entry_id']
       };
       let queryParams = {
       };
@@ -270,8 +382,18 @@ export default class AclEntryApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateAclEntry(service_id, acl_id, acl_entry_id, opts) {
-      return this.updateAclEntryWithHttpInfo(service_id, acl_id, acl_entry_id, opts)
+
+    /**
+     * Update an ACL entry for a specified ACL.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.acl_id
+     * @param {String} options.acl_entry_id
+     * @param {module:model/AclEntry} [options.acl_entry]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AclEntry}
+     */
+    updateAclEntry(options = {}) {
+      return this.updateAclEntryWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -17,17 +17,33 @@ import TlsActivation from '../model/TlsActivation';
 import TlsActivationResponse from '../model/TlsActivationResponse';
 import TlsActivationsResponse from '../model/TlsActivationsResponse';
 
-
+/**
+* TlsActivations service.
+* @module api/TlsActivationsApi
+* @version 3.0.0-alpha1
+*/
 export default class TlsActivationsApi {
 
-    
+    /**
+    * Constructs a new TlsActivationsApi. 
+    * @alias module:api/TlsActivationsApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createTlsActivationWithHttpInfo(opts) {
-      opts = opts || {};
-      let postBody = opts['tls_activation'];
+
+    /**
+     * Enable TLS for a particular TLS domain and certificate combination. These relationships must be specified to create the TLS activation.
+     * @param {Object} options
+     * @param {module:model/TlsActivation} [options.tls_activation]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsActivationResponse} and HTTP response
+     */
+    createTlsActivationWithHttpInfo(options = {}) {
+      let postBody = options['tls_activation'];
 
       let pathParams = {
       };
@@ -48,21 +64,35 @@ export default class TlsActivationsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createTlsActivation(opts) {
-      return this.createTlsActivationWithHttpInfo(opts)
+
+    /**
+     * Enable TLS for a particular TLS domain and certificate combination. These relationships must be specified to create the TLS activation.
+     * @param {Object} options
+     * @param {module:model/TlsActivation} [options.tls_activation]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsActivationResponse}
+     */
+    createTlsActivation(options = {}) {
+      return this.createTlsActivationWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteTlsActivationWithHttpInfo(tls_activation_id) {
+
+    /**
+     * Disable TLS on the domain associated with this TLS activation.
+     * @param {Object} options
+     * @param {String} options.tls_activation_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteTlsActivationWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'tls_activation_id' is set
-      if (tls_activation_id === undefined || tls_activation_id === null) {
-        throw new Error("Missing the required parameter 'tls_activation_id' when calling deleteTlsActivation");
+      // Verify the required parameter 'tls_activation_id' is set.
+      if (options['tls_activation_id'] === undefined || options['tls_activation_id'] === null) {
+        throw new Error("Missing the required parameter 'tls_activation_id'.");
       }
 
       let pathParams = {
-        'tls_activation_id': tls_activation_id
+        'tls_activation_id': options['tls_activation_id']
       };
       let queryParams = {
       };
@@ -81,25 +111,39 @@ export default class TlsActivationsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteTlsActivation(tls_activation_id) {
-      return this.deleteTlsActivationWithHttpInfo(tls_activation_id)
+
+    /**
+     * Disable TLS on the domain associated with this TLS activation.
+     * @param {Object} options
+     * @param {String} options.tls_activation_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteTlsActivation(options = {}) {
+      return this.deleteTlsActivationWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getTlsActivationWithHttpInfo(tls_activation_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Show a TLS activation.
+     * @param {Object} options
+     * @param {String} options.tls_activation_id
+     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_certificate`, `tls_configuration`, and `tls_domain`. 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsActivationResponse} and HTTP response
+     */
+    getTlsActivationWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'tls_activation_id' is set
-      if (tls_activation_id === undefined || tls_activation_id === null) {
-        throw new Error("Missing the required parameter 'tls_activation_id' when calling getTlsActivation");
+      // Verify the required parameter 'tls_activation_id' is set.
+      if (options['tls_activation_id'] === undefined || options['tls_activation_id'] === null) {
+        throw new Error("Missing the required parameter 'tls_activation_id'.");
       }
 
       let pathParams = {
-        'tls_activation_id': tls_activation_id
+        'tls_activation_id': options['tls_activation_id']
       };
       let queryParams = {
-        'include': opts['include']
+        'include': options['include']
       };
       let headerParams = {
       };
@@ -116,25 +160,44 @@ export default class TlsActivationsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getTlsActivation(tls_activation_id, opts) {
-      return this.getTlsActivationWithHttpInfo(tls_activation_id, opts)
+
+    /**
+     * Show a TLS activation.
+     * @param {Object} options
+     * @param {String} options.tls_activation_id
+     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_certificate`, `tls_configuration`, and `tls_domain`. 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsActivationResponse}
+     */
+    getTlsActivation(options = {}) {
+      return this.getTlsActivationWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listTlsActivationsWithHttpInfo(opts) {
-      opts = opts || {};
+
+    /**
+     * List all TLS activations.
+     * @param {Object} options
+     * @param {String} [options.filter_tls_certificate_id] - Limit the returned activations to a specific certificate.
+     * @param {String} [options.filter_tls_configuration_id] - Limit the returned activations to a specific TLS configuration.
+     * @param {String} [options.filter_tls_domain_id] - Limit the returned rules to a specific domain name.
+     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_certificate`, `tls_configuration`, and `tls_domain`. 
+     * @param {Number} [options.page_number] - Current page.
+     * @param {Number} [options.page_size=20] - Number of records per page.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsActivationsResponse} and HTTP response
+     */
+    listTlsActivationsWithHttpInfo(options = {}) {
       let postBody = null;
 
       let pathParams = {
       };
       let queryParams = {
-        'filter[tls_certificate.id]': opts['filter_tls_certificate_id'],
-        'filter[tls_configuration.id]': opts['filter_tls_configuration_id'],
-        'filter[tls_domain.id]': opts['filter_tls_domain_id'],
-        'include': opts['include'],
-        'page[number]': opts['page_number'],
-        'page[size]': opts['page_size']
+        'filter[tls_certificate.id]': options['filter_tls_certificate_id'],
+        'filter[tls_configuration.id]': options['filter_tls_configuration_id'],
+        'filter[tls_domain.id]': options['filter_tls_domain_id'],
+        'include': options['include'],
+        'page[number]': options['page_number'],
+        'page[size]': options['page_size']
       };
       let headerParams = {
       };
@@ -151,22 +214,41 @@ export default class TlsActivationsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listTlsActivations(opts) {
-      return this.listTlsActivationsWithHttpInfo(opts)
+
+    /**
+     * List all TLS activations.
+     * @param {Object} options
+     * @param {String} [options.filter_tls_certificate_id] - Limit the returned activations to a specific certificate.
+     * @param {String} [options.filter_tls_configuration_id] - Limit the returned activations to a specific TLS configuration.
+     * @param {String} [options.filter_tls_domain_id] - Limit the returned rules to a specific domain name.
+     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_certificate`, `tls_configuration`, and `tls_domain`. 
+     * @param {Number} [options.page_number] - Current page.
+     * @param {Number} [options.page_size=20] - Number of records per page.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsActivationsResponse}
+     */
+    listTlsActivations(options = {}) {
+      return this.listTlsActivationsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateTlsActivationWithHttpInfo(tls_activation_id, opts) {
-      opts = opts || {};
-      let postBody = opts['tls_activation'];
-      // verify the required parameter 'tls_activation_id' is set
-      if (tls_activation_id === undefined || tls_activation_id === null) {
-        throw new Error("Missing the required parameter 'tls_activation_id' when calling updateTlsActivation");
+
+    /**
+     * Update the certificate used to terminate TLS traffic for the domain associated with this TLS activation.
+     * @param {Object} options
+     * @param {String} options.tls_activation_id
+     * @param {module:model/TlsActivation} [options.tls_activation]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsActivationResponse} and HTTP response
+     */
+    updateTlsActivationWithHttpInfo(options = {}) {
+      let postBody = options['tls_activation'];
+      // Verify the required parameter 'tls_activation_id' is set.
+      if (options['tls_activation_id'] === undefined || options['tls_activation_id'] === null) {
+        throw new Error("Missing the required parameter 'tls_activation_id'.");
       }
 
       let pathParams = {
-        'tls_activation_id': tls_activation_id
+        'tls_activation_id': options['tls_activation_id']
       };
       let queryParams = {
       };
@@ -185,8 +267,16 @@ export default class TlsActivationsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateTlsActivation(tls_activation_id, opts) {
-      return this.updateTlsActivationWithHttpInfo(tls_activation_id, opts)
+
+    /**
+     * Update the certificate used to terminate TLS traffic for the domain associated with this TLS activation.
+     * @param {Object} options
+     * @param {String} options.tls_activation_id
+     * @param {module:model/TlsActivation} [options.tls_activation]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsActivationResponse}
+     */
+    updateTlsActivation(options = {}) {
+      return this.updateTlsActivationWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

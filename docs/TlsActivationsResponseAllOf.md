@@ -1,4 +1,4 @@
-# FastlyApi.TlsActivationsResponseAllOf
+# Fastly.TlsActivationsResponseAllOf
 
 ## Properties
 

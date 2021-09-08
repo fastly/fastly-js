@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The WafRuleRevisionAttributes model module.
+ * @module model/WafRuleRevisionAttributes
+ * @version 3.0.0-alpha1
+ */
 class WafRuleRevisionAttributes {
-    
+    /**
+     * Constructs a new <code>WafRuleRevisionAttributes</code>.
+     * @alias module:model/WafRuleRevisionAttributes
+     */
     constructor() { 
         
         WafRuleRevisionAttributes.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>WafRuleRevisionAttributes</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/WafRuleRevisionAttributes} obj Optional instance to populate.
+     * @return {module:model/WafRuleRevisionAttributes} The populated <code>WafRuleRevisionAttributes</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafRuleRevisionAttributes();
@@ -61,41 +78,75 @@ class WafRuleRevisionAttributes {
 
 }
 
-
+/**
+ * Message metadata for the rule.
+ * @member {String} message
+ */
 WafRuleRevisionAttributes.prototype['message'] = undefined;
 
-
+/**
+ * Corresponding ModSecurity rule ID.
+ * @member {Number} modsec_rule_id
+ */
 WafRuleRevisionAttributes.prototype['modsec_rule_id'] = undefined;
 
-
+/**
+ * Paranoia level for the rule.
+ * @member {Number} paranoia_level
+ */
 WafRuleRevisionAttributes.prototype['paranoia_level'] = undefined;
 
-
+/**
+ * Revision number.
+ * @member {Number} revision
+ */
 WafRuleRevisionAttributes.prototype['revision'] = undefined;
 
-
+/**
+ * Severity metadata for the rule.
+ * @member {Number} severity
+ */
 WafRuleRevisionAttributes.prototype['severity'] = undefined;
 
-
+/**
+ * The ModSecurity rule logic.
+ * @member {String} source
+ */
 WafRuleRevisionAttributes.prototype['source'] = undefined;
 
-
+/**
+ * The state, indicating if the revision is the most recent version of the rule.
+ * @member {module:model/WafRuleRevisionAttributes.StateEnum} state
+ */
 WafRuleRevisionAttributes.prototype['state'] = undefined;
 
-
+/**
+ * The VCL representation of the rule logic.
+ * @member {String} vcl
+ */
 WafRuleRevisionAttributes.prototype['vcl'] = undefined;
 
 
 
 
 
-
+/**
+ * Allowed values for the <code>state</code> property.
+ * @enum {String}
+ * @readonly
+ */
 WafRuleRevisionAttributes['StateEnum'] = {
 
-    
+    /**
+     * value: "latest"
+     * @const
+     */
     "latest": "latest",
 
-    
+    /**
+     * value: "outdated"
+     * @const
+     */
     "outdated": "outdated"
 };
 

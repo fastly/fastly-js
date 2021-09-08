@@ -1,12 +1,12 @@
-# FastlyApi.TlsPrivateKeyResponseData
+# Fastly.TlsPrivateKeyResponseData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**TypeTlsPrivateKey**](TypeTlsPrivateKey.md) |  | [optional] 
-**id** | **String** | Alphanumeric string identifying a private Key. | [optional] [readonly] 
 **attributes** | [**Timestamps**](Timestamps.md) |  | [optional] 
+**id** | **String** | Alphanumeric string identifying a private Key. | [optional] [readonly] 
+**type** | [**TypeTlsPrivateKey**](TypeTlsPrivateKey.md) |  | [optional] 
 
 
 

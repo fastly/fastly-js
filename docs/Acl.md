@@ -1,4 +1,4 @@
-# FastlyApi.Acl
+# Fastly.Acl
 
 ## Properties
 

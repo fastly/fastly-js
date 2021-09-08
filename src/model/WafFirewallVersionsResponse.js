@@ -12,26 +12,45 @@
  */
 
 import ApiClient from '../ApiClient';
-import AnyOfwafFirewallVersionschemasWafActiveRule from './AnyOfwafFirewallVersionschemasWafActiveRule';
+import AnyOfwafFirewallVersionwafActiveRule from './AnyOfwafFirewallVersionwafActiveRule';
 import Data from './Data';
 import Pagination from './Pagination';
 import PaginationLinks from './PaginationLinks';
 import PaginationMeta from './PaginationMeta';
 import WafFirewallVersionsResponseAllOf from './WafFirewallVersionsResponseAllOf';
 
-
+/**
+ * The WafFirewallVersionsResponse model module.
+ * @module model/WafFirewallVersionsResponse
+ * @version 3.0.0-alpha1
+ */
 class WafFirewallVersionsResponse {
-    
+    /**
+     * Constructs a new <code>WafFirewallVersionsResponse</code>.
+     * @alias module:model/WafFirewallVersionsResponse
+     * @implements module:model/Pagination
+     * @implements module:model/WafFirewallVersionsResponseAllOf
+     */
     constructor() { 
         Pagination.initialize(this);WafFirewallVersionsResponseAllOf.initialize(this);
         WafFirewallVersionsResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>WafFirewallVersionsResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/WafFirewallVersionsResponse} obj Optional instance to populate.
+     * @return {module:model/WafFirewallVersionsResponse} The populated <code>WafFirewallVersionsResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafFirewallVersionsResponse();
@@ -48,7 +67,7 @@ class WafFirewallVersionsResponse {
                 obj['data'] = ApiClient.convertToType(data['data'], [Data]);
             }
             if (data.hasOwnProperty('included')) {
-                obj['included'] = ApiClient.convertToType(data['included'], [AnyOfwafFirewallVersionschemasWafActiveRule]);
+                obj['included'] = ApiClient.convertToType(data['included'], [AnyOfwafFirewallVersionwafActiveRule]);
             }
         }
         return obj;
@@ -57,28 +76,44 @@ class WafFirewallVersionsResponse {
 
 }
 
-
+/**
+ * @member {module:model/PaginationLinks} links
+ */
 WafFirewallVersionsResponse.prototype['links'] = undefined;
 
-
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
 WafFirewallVersionsResponse.prototype['meta'] = undefined;
 
-
+/**
+ * @member {Array.<module:model/Data>} data
+ */
 WafFirewallVersionsResponse.prototype['data'] = undefined;
 
-
+/**
+ * @member {Array.<module:model/AnyOfwafFirewallVersionwafActiveRule>} included
+ */
 WafFirewallVersionsResponse.prototype['included'] = undefined;
 
 
 // Implement Pagination interface:
-
+/**
+ * @member {module:model/PaginationLinks} links
+ */
 Pagination.prototype['links'] = undefined;
-
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
 Pagination.prototype['meta'] = undefined;
 // Implement WafFirewallVersionsResponseAllOf interface:
-
+/**
+ * @member {Array.<module:model/Data>} data
+ */
 WafFirewallVersionsResponseAllOf.prototype['data'] = undefined;
-
+/**
+ * @member {Array.<module:model/AnyOfwafFirewallVersionwafActiveRule>} included
+ */
 WafFirewallVersionsResponseAllOf.prototype['included'] = undefined;
 
 

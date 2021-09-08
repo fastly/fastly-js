@@ -1,4 +1,4 @@
-# FastlyApi.LoggingSftpAllOf
+# Fastly.LoggingSftpAllOf
 
 ## Properties
 

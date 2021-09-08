@@ -1,4 +1,4 @@
-# FastlyApi.TypeWafExclusion
+# Fastly.TypeWafExclusion
 
 ## Enum
 

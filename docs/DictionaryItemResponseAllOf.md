@@ -1,4 +1,4 @@
-# FastlyApi.DictionaryItemResponseAllOf
+# Fastly.DictionaryItemResponseAllOf
 
 ## Properties
 

@@ -1,10 +1,10 @@
-# FastlyApi.RelationshipTlsDomains
+# Fastly.RelationshipTlsDomains
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tls_domains** | [**RelationshipTlsDomainTlsDomain**](RelationshipTlsDomainTlsDomain.md) |  | [optional] 
+**tls_domains** | [**RelationshipCommonNameCommonName**](RelationshipCommonNameCommonName.md) |  | [optional] 
 
 
 

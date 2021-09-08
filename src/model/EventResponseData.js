@@ -15,31 +15,48 @@ import ApiClient from '../ApiClient';
 import EventResponseDataAttributes from './EventResponseDataAttributes';
 import TypeEvent from './TypeEvent';
 
-
+/**
+ * The EventResponseData model module.
+ * @module model/EventResponseData
+ * @version 3.0.0-alpha1
+ */
 class EventResponseData {
-    
+    /**
+     * Constructs a new <code>EventResponseData</code>.
+     * @alias module:model/EventResponseData
+     */
     constructor() { 
         
         EventResponseData.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>EventResponseData</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/EventResponseData} obj Optional instance to populate.
+     * @return {module:model/EventResponseData} The populated <code>EventResponseData</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EventResponseData();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeEvent.constructFromObject(data['type']);
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = EventResponseDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = EventResponseDataAttributes.constructFromObject(data['attributes']);
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeEvent.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -48,14 +65,21 @@ class EventResponseData {
 
 }
 
+/**
+ * @member {module:model/EventResponseDataAttributes} attributes
+ */
+EventResponseData.prototype['attributes'] = undefined;
 
-EventResponseData.prototype['type'] = undefined;
-
-
+/**
+ * Alphanumeric string identifying an event.
+ * @member {String} id
+ */
 EventResponseData.prototype['id'] = undefined;
 
-
-EventResponseData.prototype['attributes'] = undefined;
+/**
+ * @member {module:model/TypeEvent} type
+ */
+EventResponseData.prototype['type'] = undefined;
 
 
 

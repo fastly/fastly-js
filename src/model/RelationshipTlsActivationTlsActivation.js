@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import RelationshipMemberTlsActivation from './RelationshipMemberTlsActivation';
 
-
+/**
+ * The RelationshipTlsActivationTlsActivation model module.
+ * @module model/RelationshipTlsActivationTlsActivation
+ * @version 3.0.0-alpha1
+ */
 class RelationshipTlsActivationTlsActivation {
-    
+    /**
+     * Constructs a new <code>RelationshipTlsActivationTlsActivation</code>.
+     * @alias module:model/RelationshipTlsActivationTlsActivation
+     */
     constructor() { 
         
         RelationshipTlsActivationTlsActivation.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipTlsActivationTlsActivation</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipTlsActivationTlsActivation} obj Optional instance to populate.
+     * @return {module:model/RelationshipTlsActivationTlsActivation} The populated <code>RelationshipTlsActivationTlsActivation</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipTlsActivationTlsActivation();
@@ -41,7 +58,9 @@ class RelationshipTlsActivationTlsActivation {
 
 }
 
-
+/**
+ * @member {Array.<module:model/RelationshipMemberTlsActivation>} data
+ */
 RelationshipTlsActivationTlsActivation.prototype['data'] = undefined;
 
 

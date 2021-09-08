@@ -12,27 +12,44 @@
  */
 
 import ApiClient from '../ApiClient';
-import DictionaryItem from './DictionaryItem';
+import CustomerCustomerIdBillingAddressData from './CustomerCustomerIdBillingAddressData';
 
-
+/**
+ * The InlineObject model module.
+ * @module model/InlineObject
+ * @version 3.0.0-alpha1
+ */
 class InlineObject {
-    
+    /**
+     * Constructs a new <code>InlineObject</code>.
+     * @alias module:model/InlineObject
+     */
     constructor() { 
         
         InlineObject.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>InlineObject</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/InlineObject} obj Optional instance to populate.
+     * @return {module:model/InlineObject} The populated <code>InlineObject</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new InlineObject();
 
-            if (data.hasOwnProperty('items')) {
-                obj['items'] = ApiClient.convertToType(data['items'], [DictionaryItem]);
+            if (data.hasOwnProperty('data')) {
+                obj['data'] = CustomerCustomerIdBillingAddressData.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -41,8 +58,10 @@ class InlineObject {
 
 }
 
-
-InlineObject.prototype['items'] = undefined;
+/**
+ * @member {module:model/CustomerCustomerIdBillingAddressData} data
+ */
+InlineObject.prototype['data'] = undefined;
 
 
 

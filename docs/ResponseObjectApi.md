@@ -1,7 +1,9 @@
-# FastlyApi.ResponseObjectApi
+# Fastly.ResponseObjectApi
 
 
-
+```javascript
+const apiInstance = new Fastly.ResponseObjectApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -16,27 +18,28 @@ Method | Fastly API endpoint | Description
 
 ## `createResponseObject`
 
-> createResponseObject(service_id, version_id)
-
-Create a Response object
+```javascript
+createResponseObject({ service_id, version_id })
+```
 
 Creates a new Response Object.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.ResponseObjectApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.createResponseObject(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.createResponseObject(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -50,28 +53,28 @@ Name | Type | Description  | Notes
 
 ## `deleteResponseObject`
 
-> deleteResponseObject(service_id, version_id, response_object_name)
-
-Delete a Response Object
+```javascript
+deleteResponseObject({ service_id, version_id, response_object_name })
+```
 
 Deletes the specified Response Object.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.ResponseObjectApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let response_object_name = "response_object_name_example"; // String | 
-apiInstance.deleteResponseObject(service_id, version_id, response_object_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  response_object_name: "response_object_name_example", // required};
 
+apiInstance.deleteResponseObject(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -86,28 +89,28 @@ Name | Type | Description  | Notes
 
 ## `getResponseObject`
 
-> getResponseObject(service_id, version_id, response_object_name)
-
-Get a Response object
+```javascript
+getResponseObject({ service_id, version_id, response_object_name })
+```
 
 Gets the specified Response Object.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.ResponseObjectApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let response_object_name = "response_object_name_example"; // String | 
-apiInstance.getResponseObject(service_id, version_id, response_object_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  response_object_name: "response_object_name_example", // required};
 
+apiInstance.getResponseObject(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -122,27 +125,28 @@ Name | Type | Description  | Notes
 
 ## `listResponseObjects`
 
-> listResponseObjects(service_id, version_id)
-
-List Response objects
+```javascript
+listResponseObjects({ service_id, version_id })
+```
 
 Returns all Response Objects for the specified service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.ResponseObjectApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.listResponseObjects(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.listResponseObjects(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -156,28 +160,28 @@ Name | Type | Description  | Notes
 
 ## `updateResponseObject`
 
-> updateResponseObject(service_id, version_id, response_object_name)
-
-Update a Response object
+```javascript
+updateResponseObject({ service_id, version_id, response_object_name })
+```
 
 Updates the specified Response Object.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.ResponseObjectApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let response_object_name = "response_object_name_example"; // String | 
-apiInstance.updateResponseObject(service_id, version_id, response_object_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  response_object_name: "response_object_name_example", // required};
 
+apiInstance.updateResponseObject(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

@@ -1,4 +1,4 @@
-# FastlyApi.Customer
+# Fastly.Customer
 
 ## Properties
 

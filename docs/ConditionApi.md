@@ -1,7 +1,9 @@
-# FastlyApi.ConditionApi
+# Fastly.ConditionApi
 
 
-
+```javascript
+const apiInstance = new Fastly.ConditionApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -16,34 +18,38 @@ Method | Fastly API endpoint | Description
 
 ## `createCondition`
 
-> createCondition(service_id, version_id, opts)
-
-Create a condition
+```javascript
+createCondition({ service_id, version_id, [comment], , [name], , [priority], , [statement], , [type] })
+```
 
 Creates a new condition.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.ConditionApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let opts = {
-  'comment': "comment_example", // String | A freeform descriptive note.
-  'name': "name_example", // String | Name of the condition. Required.
-  'priority': 100, // Number | Priority determines execution order. Lower numbers execute first.
-  'statement': "statement_example", // String | A conditional expression in VCL used to determine if the condition is met.
-  'type': "type_example" // String | Type of the condition. Required.
-};
-apiInstance.createCondition(service_id, version_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required
+  comment: "comment_example",
 
+  name: "name_example",
+
+  priority: 100,
+
+  statement: "statement_example",
+
+  type: "type_example",
+};
+
+apiInstance.createCondition(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -62,28 +68,28 @@ Name | Type | Description  | Notes
 
 ## `deleteCondition`
 
-> deleteCondition(service_id, version_id, condition_name)
-
-Delete a condition
+```javascript
+deleteCondition({ service_id, version_id, condition_name })
+```
 
 Deletes the specified condition.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.ConditionApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let condition_name = "condition_name_example"; // String | 
-apiInstance.deleteCondition(service_id, version_id, condition_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  condition_name: "condition_name_example", // required};
 
+apiInstance.deleteCondition(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -98,28 +104,28 @@ Name | Type | Description  | Notes
 
 ## `getCondition`
 
-> getCondition(service_id, version_id, condition_name)
-
-Describe a condition
+```javascript
+getCondition({ service_id, version_id, condition_name })
+```
 
 Gets the specified condition.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.ConditionApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let condition_name = "condition_name_example"; // String | 
-apiInstance.getCondition(service_id, version_id, condition_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  condition_name: "condition_name_example", // required};
 
+apiInstance.getCondition(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -134,27 +140,28 @@ Name | Type | Description  | Notes
 
 ## `listConditions`
 
-> listConditions(service_id, version_id)
-
-List conditions
+```javascript
+listConditions({ service_id, version_id })
+```
 
 Gets all conditions for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.ConditionApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.listConditions(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.listConditions(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -168,35 +175,38 @@ Name | Type | Description  | Notes
 
 ## `updateCondition`
 
-> updateCondition(service_id, version_id, condition_name, opts)
-
-Update a condition
+```javascript
+updateCondition({ service_id, version_id, condition_name, [comment], , [name], , [priority], , [statement], , [type] })
+```
 
 Updates the specified condition.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.ConditionApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let condition_name = "condition_name_example"; // String | 
-let opts = {
-  'comment': "comment_example", // String | A freeform descriptive note.
-  'name': "name_example", // String | Name of the condition. Required.
-  'priority': 100, // Number | Priority determines execution order. Lower numbers execute first.
-  'statement': "statement_example", // String | A conditional expression in VCL used to determine if the condition is met.
-  'type': "type_example" // String | Type of the condition. Required.
-};
-apiInstance.updateCondition(service_id, version_id, condition_name, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  condition_name: "condition_name_example", // required
+  comment: "comment_example",
 
+  name: "name_example",
+
+  priority: 100,
+
+  statement: "statement_example",
+
+  type: "type_example",
+};
+
+apiInstance.updateCondition(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

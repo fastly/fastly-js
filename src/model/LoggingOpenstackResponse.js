@@ -20,19 +20,39 @@ import LoggingPlacement from './LoggingPlacement';
 import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Timestamps from './Timestamps';
 
-
+/**
+ * The LoggingOpenstackResponse model module.
+ * @module model/LoggingOpenstackResponse
+ * @version 3.0.0-alpha1
+ */
 class LoggingOpenstackResponse {
-    
+    /**
+     * Constructs a new <code>LoggingOpenstackResponse</code>.
+     * @alias module:model/LoggingOpenstackResponse
+     * @implements module:model/LoggingOpenstack
+     * @implements module:model/Timestamps
+     * @implements module:model/ServiceIdAndVersion
+     */
     constructor() { 
         LoggingOpenstack.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
         LoggingOpenstackResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingOpenstackResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingOpenstackResponse} obj Optional instance to populate.
+     * @return {module:model/LoggingOpenstackResponse} The populated <code>LoggingOpenstackResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingOpenstackResponse();
@@ -40,35 +60,35 @@ class LoggingOpenstackResponse {
             Timestamps.constructFromObject(data, obj);
             ServiceIdAndVersion.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
             }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
-            }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
             }
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], 'String');
-            }
-            if (data.hasOwnProperty('message_type')) {
-                obj['message_type'] = LoggingMessageType.constructFromObject(data['message_type']);
-            }
-            if (data.hasOwnProperty('timestamp_format')) {
-                obj['timestamp_format'] = ApiClient.convertToType(data['timestamp_format'], 'String');
-            }
-            if (data.hasOwnProperty('period')) {
-                obj['period'] = ApiClient.convertToType(data['period'], 'Number');
+            if (data.hasOwnProperty('compression_codec')) {
+                obj['compression_codec'] = LoggingCompressionCodec.constructFromObject(data['compression_codec']);
             }
             if (data.hasOwnProperty('gzip_level')) {
                 obj['gzip_level'] = ApiClient.convertToType(data['gzip_level'], 'Number');
             }
-            if (data.hasOwnProperty('compression_codec')) {
-                obj['compression_codec'] = LoggingCompressionCodec.constructFromObject(data['compression_codec']);
+            if (data.hasOwnProperty('message_type')) {
+                obj['message_type'] = LoggingMessageType.constructFromObject(data['message_type']);
+            }
+            if (data.hasOwnProperty('period')) {
+                obj['period'] = ApiClient.convertToType(data['period'], 'Number');
+            }
+            if (data.hasOwnProperty('timestamp_format')) {
+                obj['timestamp_format'] = ApiClient.convertToType(data['timestamp_format'], 'String');
             }
             if (data.hasOwnProperty('access_key')) {
                 obj['access_key'] = ApiClient.convertToType(data['access_key'], 'String');
@@ -110,114 +130,242 @@ class LoggingOpenstackResponse {
 
 }
 
-
-LoggingOpenstackResponse.prototype['name'] = undefined;
-
-
-LoggingOpenstackResponse.prototype['placement'] = undefined;
-
-
-LoggingOpenstackResponse.prototype['format_version'] = undefined;
-
-
-LoggingOpenstackResponse.prototype['response_condition'] = undefined;
-
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
 LoggingOpenstackResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingOpenstackResponse.prototype['format_version'] = undefined;
 
-LoggingOpenstackResponse.prototype['message_type'] = undefined;
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingOpenstackResponse.prototype['name'] = undefined;
 
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingOpenstackResponse.prototype['placement'] = undefined;
 
-LoggingOpenstackResponse.prototype['timestamp_format'] = undefined;
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingOpenstackResponse.prototype['response_condition'] = undefined;
 
-
-LoggingOpenstackResponse.prototype['period'] = 3600;
-
-
-LoggingOpenstackResponse.prototype['gzip_level'] = 0;
-
-
+/**
+ * @member {module:model/LoggingCompressionCodec} compression_codec
+ */
 LoggingOpenstackResponse.prototype['compression_codec'] = undefined;
 
+/**
+ * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {Number} gzip_level
+ * @default 0
+ */
+LoggingOpenstackResponse.prototype['gzip_level'] = 0;
 
+/**
+ * @member {module:model/LoggingMessageType} message_type
+ */
+LoggingOpenstackResponse.prototype['message_type'] = undefined;
+
+/**
+ * How frequently log files are finalized so they can be available for reading (in seconds).
+ * @member {Number} period
+ * @default 3600
+ */
+LoggingOpenstackResponse.prototype['period'] = 3600;
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} timestamp_format
+ */
+LoggingOpenstackResponse.prototype['timestamp_format'] = undefined;
+
+/**
+ * Your OpenStack account access key.
+ * @member {String} access_key
+ */
 LoggingOpenstackResponse.prototype['access_key'] = undefined;
 
-
+/**
+ * The name of your OpenStack container.
+ * @member {String} bucket_name
+ */
 LoggingOpenstackResponse.prototype['bucket_name'] = undefined;
 
-
+/**
+ * The path to upload logs to.
+ * @member {String} path
+ * @default 'null'
+ */
 LoggingOpenstackResponse.prototype['path'] = 'null';
 
-
+/**
+ * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+ * @member {String} public_key
+ * @default 'null'
+ */
 LoggingOpenstackResponse.prototype['public_key'] = 'null';
 
-
+/**
+ * Your OpenStack auth url.
+ * @member {String} url
+ */
 LoggingOpenstackResponse.prototype['url'] = undefined;
 
-
+/**
+ * The username for your OpenStack account.
+ * @member {String} user
+ */
 LoggingOpenstackResponse.prototype['user'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 LoggingOpenstackResponse.prototype['created_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 LoggingOpenstackResponse.prototype['deleted_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 LoggingOpenstackResponse.prototype['updated_at'] = undefined;
 
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 LoggingOpenstackResponse.prototype['service_id'] = undefined;
 
-
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
 LoggingOpenstackResponse.prototype['version'] = undefined;
 
 
 // Implement LoggingOpenstack interface:
-
-LoggingOpenstack.prototype['name'] = undefined;
-
-LoggingOpenstack.prototype['placement'] = undefined;
-
-LoggingOpenstack.prototype['format_version'] = undefined;
-
-LoggingOpenstack.prototype['response_condition'] = undefined;
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
 LoggingOpenstack.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-
-LoggingOpenstack.prototype['message_type'] = undefined;
-
-LoggingOpenstack.prototype['timestamp_format'] = undefined;
-
-LoggingOpenstack.prototype['period'] = 3600;
-
-LoggingOpenstack.prototype['gzip_level'] = 0;
-
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingOpenstack.prototype['format_version'] = undefined;
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingOpenstack.prototype['name'] = undefined;
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingOpenstack.prototype['placement'] = undefined;
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingOpenstack.prototype['response_condition'] = undefined;
+/**
+ * @member {module:model/LoggingCompressionCodec} compression_codec
+ */
 LoggingOpenstack.prototype['compression_codec'] = undefined;
-
+/**
+ * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {Number} gzip_level
+ * @default 0
+ */
+LoggingOpenstack.prototype['gzip_level'] = 0;
+/**
+ * @member {module:model/LoggingMessageType} message_type
+ */
+LoggingOpenstack.prototype['message_type'] = undefined;
+/**
+ * How frequently log files are finalized so they can be available for reading (in seconds).
+ * @member {Number} period
+ * @default 3600
+ */
+LoggingOpenstack.prototype['period'] = 3600;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} timestamp_format
+ */
+LoggingOpenstack.prototype['timestamp_format'] = undefined;
+/**
+ * Your OpenStack account access key.
+ * @member {String} access_key
+ */
 LoggingOpenstack.prototype['access_key'] = undefined;
-
+/**
+ * The name of your OpenStack container.
+ * @member {String} bucket_name
+ */
 LoggingOpenstack.prototype['bucket_name'] = undefined;
-
+/**
+ * The path to upload logs to.
+ * @member {String} path
+ * @default 'null'
+ */
 LoggingOpenstack.prototype['path'] = 'null';
-
+/**
+ * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+ * @member {String} public_key
+ * @default 'null'
+ */
 LoggingOpenstack.prototype['public_key'] = 'null';
-
+/**
+ * Your OpenStack auth url.
+ * @member {String} url
+ */
 LoggingOpenstack.prototype['url'] = undefined;
-
+/**
+ * The username for your OpenStack account.
+ * @member {String} user
+ */
 LoggingOpenstack.prototype['user'] = undefined;
 // Implement Timestamps interface:
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 Timestamps.prototype['created_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 Timestamps.prototype['deleted_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 Timestamps.prototype['updated_at'] = undefined;
 // Implement ServiceIdAndVersion interface:
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 ServiceIdAndVersion.prototype['service_id'] = undefined;
-
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
 ServiceIdAndVersion.prototype['version'] = undefined;
 
 

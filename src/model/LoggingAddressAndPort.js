@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The LoggingAddressAndPort model module.
+ * @module model/LoggingAddressAndPort
+ * @version 3.0.0-alpha1
+ */
 class LoggingAddressAndPort {
-    
+    /**
+     * Constructs a new <code>LoggingAddressAndPort</code>.
+     * @alias module:model/LoggingAddressAndPort
+     */
     constructor() { 
         
         LoggingAddressAndPort.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingAddressAndPort</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingAddressAndPort} obj Optional instance to populate.
+     * @return {module:model/LoggingAddressAndPort} The populated <code>LoggingAddressAndPort</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingAddressAndPort();
@@ -43,10 +60,17 @@ class LoggingAddressAndPort {
 
 }
 
-
+/**
+ * A hostname or IPv4 address.
+ * @member {String} address
+ */
 LoggingAddressAndPort.prototype['address'] = undefined;
 
-
+/**
+ * The port number.
+ * @member {Number} port
+ * @default 514
+ */
 LoggingAddressAndPort.prototype['port'] = 514;
 
 

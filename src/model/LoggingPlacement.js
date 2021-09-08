@@ -12,23 +12,40 @@
  */
 
 import ApiClient from '../ApiClient';
-
+/**
+* Enum class LoggingPlacement.
+* @enum {}
+* @readonly
+*/
 export default class LoggingPlacement {
     
-        
+        /**
+         * value: "none"
+         * @const
+         */
         "none" = "none";
 
     
-        
+        /**
+         * value: "waf_debug"
+         * @const
+         */
         "waf_debug" = "waf_debug";
 
     
-        
+        /**
+         * value: "null"
+         * @const
+         */
         "null" = "null";
 
     
 
-    
+    /**
+    * Returns a <code>LoggingPlacement</code> enum value from a Javascript object name.
+    * @param {Object} data The plain JavaScript object containing the name of the enum value.
+    * @return {module:model/LoggingPlacement} The enum <code>LoggingPlacement</code> value.
+    */
     static constructFromObject(object) {
         return object;
     }

@@ -16,23 +16,40 @@ import ApiClient from "../ApiClient";
 import EventResponse from '../model/EventResponse';
 import EventsResponse from '../model/EventsResponse';
 
-
+/**
+* Events service.
+* @module api/EventsApi
+* @version 3.0.0-alpha1
+*/
 export default class EventsApi {
 
-    
+    /**
+    * Constructs a new EventsApi. 
+    * @alias module:api/EventsApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    getEventWithHttpInfo(event_id) {
+
+    /**
+     * Get a specific event.
+     * @param {Object} options
+     * @param {String} options.event_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EventResponse} and HTTP response
+     */
+    getEventWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'event_id' is set
-      if (event_id === undefined || event_id === null) {
-        throw new Error("Missing the required parameter 'event_id' when calling getEvent");
+      // Verify the required parameter 'event_id' is set.
+      if (options['event_id'] === undefined || options['event_id'] === null) {
+        throw new Error("Missing the required parameter 'event_id'.");
       }
 
       let pathParams = {
-        'event_id': event_id
+        'event_id': options['event_id']
       };
       let queryParams = {
       };
@@ -51,26 +68,45 @@ export default class EventsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getEvent(event_id) {
-      return this.getEventWithHttpInfo(event_id)
+
+    /**
+     * Get a specific event.
+     * @param {Object} options
+     * @param {String} options.event_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EventResponse}
+     */
+    getEvent(options = {}) {
+      return this.getEventWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listEventsWithHttpInfo(opts) {
-      opts = opts || {};
+
+    /**
+     * List all events for a particular customer. Events can be filtered by user, customer and event type. Events can be sorted by date.
+     * @param {Object} options
+     * @param {String} [options.filter_event_type] - Limit the returned events to a specific `event_type`.
+     * @param {String} [options.filter_customer_id] - Limit the results returned to a specific customer.
+     * @param {String} [options.filter_service_id] - Limit the results returned to a specific service.
+     * @param {String} [options.filter_user_id] - Limit the results returned to a specific user.
+     * @param {Number} [options.page_number] - Current page.
+     * @param {Number} [options.page_size=20] - Number of records per page.
+     * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EventsResponse} and HTTP response
+     */
+    listEventsWithHttpInfo(options = {}) {
       let postBody = null;
 
       let pathParams = {
       };
       let queryParams = {
-        'filter[event_type]': opts['filter_event_type'],
-        'filter[customer_id]': opts['filter_customer_id'],
-        'filter[service_id]': opts['filter_service_id'],
-        'filter[user_id]': opts['filter_user_id'],
-        'page[number]': opts['page_number'],
-        'page[size]': opts['page_size'],
-        'sort': opts['sort']
+        'filter[event_type]': options['filter_event_type'],
+        'filter[customer_id]': options['filter_customer_id'],
+        'filter[service_id]': options['filter_service_id'],
+        'filter[user_id]': options['filter_user_id'],
+        'page[number]': options['page_number'],
+        'page[size]': options['page_size'],
+        'sort': options['sort']
       };
       let headerParams = {
       };
@@ -87,8 +123,21 @@ export default class EventsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listEvents(opts) {
-      return this.listEventsWithHttpInfo(opts)
+
+    /**
+     * List all events for a particular customer. Events can be filtered by user, customer and event type. Events can be sorted by date.
+     * @param {Object} options
+     * @param {String} [options.filter_event_type] - Limit the returned events to a specific `event_type`.
+     * @param {String} [options.filter_customer_id] - Limit the results returned to a specific customer.
+     * @param {String} [options.filter_service_id] - Limit the results returned to a specific service.
+     * @param {String} [options.filter_user_id] - Limit the results returned to a specific user.
+     * @param {Number} [options.page_number] - Current page.
+     * @param {Number} [options.page_size=20] - Number of records per page.
+     * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EventsResponse}
+     */
+    listEvents(options = {}) {
+      return this.listEventsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

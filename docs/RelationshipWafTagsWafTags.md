@@ -1,4 +1,4 @@
-# FastlyApi.RelationshipWafTagsWafTags
+# Fastly.RelationshipWafTagsWafTags
 
 ## Properties
 

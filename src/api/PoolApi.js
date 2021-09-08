@@ -15,56 +15,94 @@
 import ApiClient from "../ApiClient";
 import PoolResponse from '../model/PoolResponse';
 
-
+/**
+* Pool service.
+* @module api/PoolApi
+* @version 3.0.0-alpha1
+*/
 export default class PoolApi {
 
-    
+    /**
+    * Constructs a new PoolApi. 
+    * @alias module:api/PoolApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createServerPoolWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Creates a pool for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
+     * @param {String} [options.tls_cert_hostname='null'] - The hostname used to verify a server's certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
+     * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
+     * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
+     * @param {module:model/Number} [options.use_tls=0] - Whether to use TLS.
+     * @param {String} [options.comment] - A freeform descriptive note.
+     * @param {Number} [options.connect_timeout] - How long to wait for a timeout in milliseconds. Optional.
+     * @param {Number} [options.first_byte_timeout] - How long to wait for the first byte in milliseconds. Optional.
+     * @param {String} [options.healthcheck] - Name of the healthcheck to use with this pool. Can be empty and could be reused across multiple backend and pools.
+     * @param {Number} [options.max_conn_default] - Maximum number of connections.
+     * @param {Number} [options.max_tls_version] - Maximum allowed TLS version on connections to this server. Optional.
+     * @param {Number} [options.min_tls_version] - Minimum allowed TLS version on connections to this server. Optional.
+     * @param {String} [options.name] - Name for the Pool.
+     * @param {String} [options.override_host='null'] - The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to `null` meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
+     * @param {Number} [options.quorum=75] - Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
+     * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
+     * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
+     * @param {Number} [options.tls_check_cert] - Be strict on checking TLS certs. Optional.
+     * @param {String} [options.tls_ciphers] - List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.0.2/man1/ciphers) for details). Optional.
+     * @param {String} [options.tls_sni_hostname] - SNI hostname. Optional.
+     * @param {module:model/String} [options.type] - What type of load balance group to use.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PoolResponse} and HTTP response
+     */
+    createServerPoolWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createServerPool");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createServerPool");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'tls_ca_cert': opts['tls_ca_cert'],
-        'tls_client_cert': opts['tls_client_cert'],
-        'tls_client_key': opts['tls_client_key'],
-        'tls_cert_hostname': opts['tls_cert_hostname'],
-        'use_tls': opts['use_tls'],
-        'name': opts['name'],
-        'shield': opts['shield'],
-        'request_condition': opts['request_condition'],
-        'max_conn_default': opts['max_conn_default'],
-        'connect_timeout': opts['connect_timeout'],
-        'first_byte_timeout': opts['first_byte_timeout'],
-        'quorum': opts['quorum'],
-        'tls_ciphers': opts['tls_ciphers'],
-        'tls_sni_hostname': opts['tls_sni_hostname'],
-        'tls_check_cert': opts['tls_check_cert'],
-        'min_tls_version': opts['min_tls_version'],
-        'max_tls_version': opts['max_tls_version'],
-        'healthcheck': opts['healthcheck'],
-        'comment': opts['comment'],
-        'type': opts['type'],
-        'override_host': opts['override_host']
+        'tls_ca_cert': options['tls_ca_cert'],
+        'tls_cert_hostname': options['tls_cert_hostname'],
+        'tls_client_cert': options['tls_client_cert'],
+        'tls_client_key': options['tls_client_key'],
+        'use_tls': options['use_tls'],
+        'comment': options['comment'],
+        'connect_timeout': options['connect_timeout'],
+        'first_byte_timeout': options['first_byte_timeout'],
+        'healthcheck': options['healthcheck'],
+        'max_conn_default': options['max_conn_default'],
+        'max_tls_version': options['max_tls_version'],
+        'min_tls_version': options['min_tls_version'],
+        'name': options['name'],
+        'override_host': options['override_host'],
+        'quorum': options['quorum'],
+        'request_condition': options['request_condition'],
+        'shield': options['shield'],
+        'tls_check_cert': options['tls_check_cert'],
+        'tls_ciphers': options['tls_ciphers'],
+        'tls_sni_hostname': options['tls_sni_hostname'],
+        'type': options['type']
       };
 
       let authNames = ['token'];
@@ -77,31 +115,69 @@ export default class PoolApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createServerPool(service_id, version_id, opts) {
-      return this.createServerPoolWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Creates a pool for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
+     * @param {String} [options.tls_cert_hostname='null'] - The hostname used to verify a server's certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
+     * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
+     * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
+     * @param {module:model/Number} [options.use_tls=0] - Whether to use TLS.
+     * @param {String} [options.comment] - A freeform descriptive note.
+     * @param {Number} [options.connect_timeout] - How long to wait for a timeout in milliseconds. Optional.
+     * @param {Number} [options.first_byte_timeout] - How long to wait for the first byte in milliseconds. Optional.
+     * @param {String} [options.healthcheck] - Name of the healthcheck to use with this pool. Can be empty and could be reused across multiple backend and pools.
+     * @param {Number} [options.max_conn_default] - Maximum number of connections.
+     * @param {Number} [options.max_tls_version] - Maximum allowed TLS version on connections to this server. Optional.
+     * @param {Number} [options.min_tls_version] - Minimum allowed TLS version on connections to this server. Optional.
+     * @param {String} [options.name] - Name for the Pool.
+     * @param {String} [options.override_host='null'] - The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to `null` meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
+     * @param {Number} [options.quorum=75] - Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
+     * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
+     * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
+     * @param {Number} [options.tls_check_cert] - Be strict on checking TLS certs. Optional.
+     * @param {String} [options.tls_ciphers] - List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.0.2/man1/ciphers) for details). Optional.
+     * @param {String} [options.tls_sni_hostname] - SNI hostname. Optional.
+     * @param {module:model/String} [options.type] - What type of load balance group to use.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PoolResponse}
+     */
+    createServerPool(options = {}) {
+      return this.createServerPoolWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteServerPoolWithHttpInfo(service_id, version_id, pool_name) {
+
+    /**
+     * Deletes a specific pool for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.pool_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteServerPoolWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteServerPool");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteServerPool");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'pool_name' is set
-      if (pool_name === undefined || pool_name === null) {
-        throw new Error("Missing the required parameter 'pool_name' when calling deleteServerPool");
+      // Verify the required parameter 'pool_name' is set.
+      if (options['pool_name'] === undefined || options['pool_name'] === null) {
+        throw new Error("Missing the required parameter 'pool_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'pool_name': pool_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'pool_name': options['pool_name']
       };
       let queryParams = {
       };
@@ -120,31 +196,49 @@ export default class PoolApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteServerPool(service_id, version_id, pool_name) {
-      return this.deleteServerPoolWithHttpInfo(service_id, version_id, pool_name)
+
+    /**
+     * Deletes a specific pool for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.pool_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteServerPool(options = {}) {
+      return this.deleteServerPoolWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getServerPoolWithHttpInfo(service_id, version_id, pool_name) {
+
+    /**
+     * Gets a single pool for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.pool_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PoolResponse} and HTTP response
+     */
+    getServerPoolWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getServerPool");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getServerPool");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'pool_name' is set
-      if (pool_name === undefined || pool_name === null) {
-        throw new Error("Missing the required parameter 'pool_name' when calling getServerPool");
+      // Verify the required parameter 'pool_name' is set.
+      if (options['pool_name'] === undefined || options['pool_name'] === null) {
+        throw new Error("Missing the required parameter 'pool_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'pool_name': pool_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'pool_name': options['pool_name']
       };
       let queryParams = {
       };
@@ -163,26 +257,43 @@ export default class PoolApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getServerPool(service_id, version_id, pool_name) {
-      return this.getServerPoolWithHttpInfo(service_id, version_id, pool_name)
+
+    /**
+     * Gets a single pool for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.pool_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PoolResponse}
+     */
+    getServerPool(options = {}) {
+      return this.getServerPoolWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listServerPoolsWithHttpInfo(service_id, version_id) {
+
+    /**
+     * Lists all pools for a particular service and pool.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PoolResponse>} and HTTP response
+     */
+    listServerPoolsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listServerPools");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listServerPools");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -201,59 +312,96 @@ export default class PoolApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listServerPools(service_id, version_id) {
-      return this.listServerPoolsWithHttpInfo(service_id, version_id)
+
+    /**
+     * Lists all pools for a particular service and pool.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PoolResponse>}
+     */
+    listServerPools(options = {}) {
+      return this.listServerPoolsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateServerPoolWithHttpInfo(service_id, version_id, pool_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Updates a specific pool for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.pool_name
+     * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
+     * @param {String} [options.tls_cert_hostname='null'] - The hostname used to verify a server's certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
+     * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
+     * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
+     * @param {module:model/Number} [options.use_tls=UseTlsEnum.no_tls] - Whether to use TLS.
+     * @param {String} [options.comment] - A freeform descriptive note.
+     * @param {Number} [options.connect_timeout] - How long to wait for a timeout in milliseconds. Optional.
+     * @param {Number} [options.first_byte_timeout] - How long to wait for the first byte in milliseconds. Optional.
+     * @param {String} [options.healthcheck] - Name of the healthcheck to use with this pool. Can be empty and could be reused across multiple backend and pools.
+     * @param {Number} [options.max_conn_default] - Maximum number of connections.
+     * @param {Number} [options.max_tls_version] - Maximum allowed TLS version on connections to this server. Optional.
+     * @param {Number} [options.min_tls_version] - Minimum allowed TLS version on connections to this server. Optional.
+     * @param {String} [options.name] - Name for the Pool.
+     * @param {String} [options.override_host='null'] - The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to `null` meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
+     * @param {Number} [options.quorum=75] - Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
+     * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
+     * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
+     * @param {Number} [options.tls_check_cert] - Be strict on checking TLS certs. Optional.
+     * @param {String} [options.tls_ciphers] - List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.0.2/man1/ciphers) for details). Optional.
+     * @param {String} [options.tls_sni_hostname] - SNI hostname. Optional.
+     * @param {module:model/String} [options.type] - What type of load balance group to use.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PoolResponse} and HTTP response
+     */
+    updateServerPoolWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateServerPool");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateServerPool");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'pool_name' is set
-      if (pool_name === undefined || pool_name === null) {
-        throw new Error("Missing the required parameter 'pool_name' when calling updateServerPool");
+      // Verify the required parameter 'pool_name' is set.
+      if (options['pool_name'] === undefined || options['pool_name'] === null) {
+        throw new Error("Missing the required parameter 'pool_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'pool_name': pool_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'pool_name': options['pool_name']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'tls_ca_cert': opts['tls_ca_cert'],
-        'tls_client_cert': opts['tls_client_cert'],
-        'tls_client_key': opts['tls_client_key'],
-        'tls_cert_hostname': opts['tls_cert_hostname'],
-        'use_tls': opts['use_tls'],
-        'name': opts['name'],
-        'shield': opts['shield'],
-        'request_condition': opts['request_condition'],
-        'max_conn_default': opts['max_conn_default'],
-        'connect_timeout': opts['connect_timeout'],
-        'first_byte_timeout': opts['first_byte_timeout'],
-        'quorum': opts['quorum'],
-        'tls_ciphers': opts['tls_ciphers'],
-        'tls_sni_hostname': opts['tls_sni_hostname'],
-        'tls_check_cert': opts['tls_check_cert'],
-        'min_tls_version': opts['min_tls_version'],
-        'max_tls_version': opts['max_tls_version'],
-        'healthcheck': opts['healthcheck'],
-        'comment': opts['comment'],
-        'type': opts['type'],
-        'override_host': opts['override_host']
+        'tls_ca_cert': options['tls_ca_cert'],
+        'tls_cert_hostname': options['tls_cert_hostname'],
+        'tls_client_cert': options['tls_client_cert'],
+        'tls_client_key': options['tls_client_key'],
+        'use_tls': options['use_tls'],
+        'comment': options['comment'],
+        'connect_timeout': options['connect_timeout'],
+        'first_byte_timeout': options['first_byte_timeout'],
+        'healthcheck': options['healthcheck'],
+        'max_conn_default': options['max_conn_default'],
+        'max_tls_version': options['max_tls_version'],
+        'min_tls_version': options['min_tls_version'],
+        'name': options['name'],
+        'override_host': options['override_host'],
+        'quorum': options['quorum'],
+        'request_condition': options['request_condition'],
+        'shield': options['shield'],
+        'tls_check_cert': options['tls_check_cert'],
+        'tls_ciphers': options['tls_ciphers'],
+        'tls_sni_hostname': options['tls_sni_hostname'],
+        'type': options['type']
       };
 
       let authNames = ['token'];
@@ -266,8 +414,38 @@ export default class PoolApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateServerPool(service_id, version_id, pool_name, opts) {
-      return this.updateServerPoolWithHttpInfo(service_id, version_id, pool_name, opts)
+
+    /**
+     * Updates a specific pool for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.pool_name
+     * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
+     * @param {String} [options.tls_cert_hostname='null'] - The hostname used to verify a server's certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
+     * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
+     * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
+     * @param {module:model/Number} [options.use_tls=UseTlsEnum.no_tls] - Whether to use TLS.
+     * @param {String} [options.comment] - A freeform descriptive note.
+     * @param {Number} [options.connect_timeout] - How long to wait for a timeout in milliseconds. Optional.
+     * @param {Number} [options.first_byte_timeout] - How long to wait for the first byte in milliseconds. Optional.
+     * @param {String} [options.healthcheck] - Name of the healthcheck to use with this pool. Can be empty and could be reused across multiple backend and pools.
+     * @param {Number} [options.max_conn_default] - Maximum number of connections.
+     * @param {Number} [options.max_tls_version] - Maximum allowed TLS version on connections to this server. Optional.
+     * @param {Number} [options.min_tls_version] - Minimum allowed TLS version on connections to this server. Optional.
+     * @param {String} [options.name] - Name for the Pool.
+     * @param {String} [options.override_host='null'] - The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to `null` meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
+     * @param {Number} [options.quorum=75] - Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
+     * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
+     * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
+     * @param {Number} [options.tls_check_cert] - Be strict on checking TLS certs. Optional.
+     * @param {String} [options.tls_ciphers] - List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.0.2/man1/ciphers) for details). Optional.
+     * @param {String} [options.tls_sni_hostname] - SNI hostname. Optional.
+     * @param {module:model/String} [options.type] - What type of load balance group to use.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PoolResponse}
+     */
+    updateServerPool(options = {}) {
+      return this.updateServerPoolWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

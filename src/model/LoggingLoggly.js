@@ -17,39 +17,58 @@ import LoggingFormatVersion from './LoggingFormatVersion';
 import LoggingLogglyAllOf from './LoggingLogglyAllOf';
 import LoggingPlacement from './LoggingPlacement';
 
-
+/**
+ * The LoggingLoggly model module.
+ * @module model/LoggingLoggly
+ * @version 3.0.0-alpha1
+ */
 class LoggingLoggly {
-    
+    /**
+     * Constructs a new <code>LoggingLoggly</code>.
+     * @alias module:model/LoggingLoggly
+     * @implements module:model/LoggingCommon
+     * @implements module:model/LoggingLogglyAllOf
+     */
     constructor() { 
         LoggingCommon.initialize(this);LoggingLogglyAllOf.initialize(this);
         LoggingLoggly.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingLoggly</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingLoggly} obj Optional instance to populate.
+     * @return {module:model/LoggingLoggly} The populated <code>LoggingLoggly</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingLoggly();
             LoggingCommon.constructFromObject(data, obj);
             LoggingLogglyAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
             }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
-            }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
-            }
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -61,38 +80,72 @@ class LoggingLoggly {
 
 }
 
-
-LoggingLoggly.prototype['name'] = undefined;
-
-
-LoggingLoggly.prototype['placement'] = undefined;
-
-
-LoggingLoggly.prototype['format_version'] = undefined;
-
-
-LoggingLoggly.prototype['response_condition'] = undefined;
-
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
 LoggingLoggly.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingLoggly.prototype['format_version'] = undefined;
 
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingLoggly.prototype['name'] = undefined;
+
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingLoggly.prototype['placement'] = undefined;
+
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingLoggly.prototype['response_condition'] = undefined;
+
+/**
+ * The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)).
+ * @member {String} token
+ */
 LoggingLoggly.prototype['token'] = undefined;
 
 
 // Implement LoggingCommon interface:
-
-LoggingCommon.prototype['name'] = undefined;
-
-LoggingCommon.prototype['placement'] = undefined;
-
-LoggingCommon.prototype['format_version'] = undefined;
-
-LoggingCommon.prototype['response_condition'] = undefined;
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
 LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingCommon.prototype['format_version'] = undefined;
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingCommon.prototype['name'] = undefined;
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingCommon.prototype['placement'] = undefined;
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingCommon.prototype['response_condition'] = undefined;
 // Implement LoggingLogglyAllOf interface:
-
+/**
+ * The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)).
+ * @member {String} token
+ */
 LoggingLogglyAllOf.prototype['token'] = undefined;
 
 

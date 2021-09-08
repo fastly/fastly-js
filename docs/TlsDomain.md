@@ -1,4 +1,4 @@
-# FastlyApi.TlsDomain
+# Fastly.TlsDomain
 
 ## Properties
 

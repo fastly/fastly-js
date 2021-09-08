@@ -1,7 +1,9 @@
-# FastlyApi.RateLimiterApi
+# Fastly.RateLimiterApi
 
 
-
+```javascript
+const apiInstance = new Fastly.RateLimiterApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -16,58 +18,69 @@ Method | Fastly API endpoint | Description
 
 ## `createRateLimiter`
 
-> createRateLimiter(service_id, version_id, opts)
-
-Create a rate limiter
+```javascript
+createRateLimiter({ service_id, version_id, [action], , [client_key], , [feature_revision], , [http_methods], , [logger_type], , [name], , [penalty_box_duration], , [response], , [response_object_name], , [rps_limit], , [uri_dictionary_name], , [window_size] })
+```
 
 Create a rate limiter for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.RateLimiterApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let opts = {
-  'name': "name_example", // String | A human readable name for the rate limiting rule.
-  'uri_dictionary_name': "uri_dictionary_name_example", // String | The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
-  'http_methods': "http_methods_example", // [String] | Array of HTTP methods to apply rate limiting to.
-  'rps_limit': 56, // Number | Upper limit of requests per second allowed by the rate limiter.
-  'window_size': 56, // Number | Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.
-  'client_key': "client_key_example", // [String] | Array of VCL variables used to generate a counter key to identify a client. Example variables include `req.http.Fastly-Client-IP`, `req.http.User-Agent`, or a custom header like `req.http.API-Key`.
-  'penalty_box_duration': 56, // Number | Length of time in seconds that the rate limiter is in effect after the initial violation is detected.
-  'action': "action_example", // String | The action to take when a rate limiter violation is detected.
-  'response': new FastlyApi.RateLimiterResponse1(), // RateLimiterResponse1 | 
-  'response_object_name': "response_object_name_example", // String | Name of existing response object. Required if `action` is `response_object`. Note that the rate limiter response is only updated to reflect the response object content when saving the rate limiter configuration.
-  'logger_type': "logger_type_example", // String | Name of the type of logging endpoint to be used when action is `log_only`. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries.
-  'feature_revision': 56 // Number | Revision number of the rate limiting feature implementation. Defaults to the most recent revision.
-};
-apiInstance.createRateLimiter(service_id, version_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required
+  action: "action_example",
 
+  client_key: "client_key_example",
+
+  feature_revision: 56,
+
+  http_methods: "http_methods_example",
+
+  logger_type: "logger_type_example",
+
+  name: "name_example",
+
+  penalty_box_duration: 56,
+
+  response: new Fastly.RateLimiterResponse1(),
+
+  response_object_name: "response_object_name_example",
+
+  rps_limit: 56,
+
+  uri_dictionary_name: "uri_dictionary_name_example",
+
+  window_size: 56,
+};
+
+apiInstance.createRateLimiter(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
-**name** | **String** | A human readable name for the rate limiting rule. | [optional]
-**uri_dictionary_name** | **String** | The name of an Edge Dictionary containing URIs as keys. If not defined or &#x60;null&#x60;, all origin URIs will be rate limited. | [optional]
-**http_methods** | [**[String]**](../Model/String.md) | Array of HTTP methods to apply rate limiting to. | [optional]
-**rps_limit** | **Number** | Upper limit of requests per second allowed by the rate limiter. | [optional]
-**window_size** | **Number** | Number of seconds during which the RPS limit must be exceeded in order to trigger a violation. | [optional]
-**client_key** | [**[String]**](../Model/String.md) | Array of VCL variables used to generate a counter key to identify a client. Example variables include &#x60;req.http.Fastly-Client-IP&#x60;, &#x60;req.http.User-Agent&#x60;, or a custom header like &#x60;req.http.API-Key&#x60;. | [optional]
-**penalty_box_duration** | **Number** | Length of time in seconds that the rate limiter is in effect after the initial violation is detected. | [optional]
 **action** | **String** | The action to take when a rate limiter violation is detected. | [optional]
+**client_key** | [**[String]**](../Model/String.md) | Array of VCL variables used to generate a counter key to identify a client. Example variables include &#x60;req.http.Fastly-Client-IP&#x60;, &#x60;req.http.User-Agent&#x60;, or a custom header like &#x60;req.http.API-Key&#x60;. | [optional]
+**feature_revision** | **Number** | Revision number of the rate limiting feature implementation. Defaults to the most recent revision. | [optional]
+**http_methods** | [**[String]**](../Model/String.md) | Array of HTTP methods to apply rate limiting to. | [optional]
+**logger_type** | **String** | Name of the type of logging endpoint to be used when action is &#x60;log_only&#x60;. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries. | [optional]
+**name** | **String** | A human readable name for the rate limiting rule. | [optional]
+**penalty_box_duration** | **Number** | Length of time in seconds that the rate limiter is in effect after the initial violation is detected. | [optional]
 **response** | [**RateLimiterResponse1**](../Model/RateLimiterResponse1.md) |  | [optional]
 **response_object_name** | **String** | Name of existing response object. Required if &#x60;action&#x60; is &#x60;response_object&#x60;. Note that the rate limiter response is only updated to reflect the response object content when saving the rate limiter configuration. | [optional]
-**logger_type** | **String** | Name of the type of logging endpoint to be used when action is &#x60;log_only&#x60;. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries. | [optional]
-**feature_revision** | **Number** | Revision number of the rate limiting feature implementation. Defaults to the most recent revision. | [optional]
+**rps_limit** | **Number** | Upper limit of requests per second allowed by the rate limiter. | [optional]
+**uri_dictionary_name** | **String** | The name of an Edge Dictionary containing URIs as keys. If not defined or &#x60;null&#x60;, all origin URIs will be rate limited. | [optional]
+**window_size** | **Number** | Number of seconds during which the RPS limit must be exceeded in order to trigger a violation. | [optional]
 
 ### Return type
 
@@ -76,26 +89,28 @@ Name | Type | Description  | Notes
 
 ## `deleteRateLimiter`
 
-> deleteRateLimiter(rate_limiter_id)
-
-Delete a rate limiter
+```javascript
+deleteRateLimiter({ rate_limiter_id })
+```
 
 Delete a rate limiter by its ID.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.RateLimiterApi();
-let rate_limiter_id = "rate_limiter_id_example"; // String | 
-apiInstance.deleteRateLimiter(rate_limiter_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  rate_limiter_id: "rate_limiter_id_example", // required};
 
+apiInstance.deleteRateLimiter(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -108,26 +123,28 @@ Name | Type | Description  | Notes
 
 ## `getRateLimiter`
 
-> getRateLimiter(rate_limiter_id)
-
-Get a rate limiter
+```javascript
+getRateLimiter({ rate_limiter_id })
+```
 
 Get a rate limiter by its ID.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.RateLimiterApi();
-let rate_limiter_id = "rate_limiter_id_example"; // String | 
-apiInstance.getRateLimiter(rate_limiter_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  rate_limiter_id: "rate_limiter_id_example", // required};
 
+apiInstance.getRateLimiter(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -140,27 +157,28 @@ Name | Type | Description  | Notes
 
 ## `listRateLimiters`
 
-> listRateLimiters(service_id, version_id)
-
-List rate limiters
+```javascript
+listRateLimiters({ service_id, version_id })
+```
 
 List all rate limiters for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.RateLimiterApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.listRateLimiters(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.listRateLimiters(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -174,56 +192,68 @@ Name | Type | Description  | Notes
 
 ## `updateRateLimiter`
 
-> updateRateLimiter(rate_limiter_id, opts)
-
-Update a rate limiter
+```javascript
+updateRateLimiter({ rate_limiter_id, [action], , [client_key], , [feature_revision], , [http_methods], , [logger_type], , [name], , [penalty_box_duration], , [response], , [response_object_name], , [rps_limit], , [uri_dictionary_name], , [window_size] })
+```
 
 Update a rate limiter by its ID.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.RateLimiterApi();
-let rate_limiter_id = "rate_limiter_id_example"; // String | 
-let opts = {
-  'name': "name_example", // String | A human readable name for the rate limiting rule.
-  'uri_dictionary_name': "uri_dictionary_name_example", // String | The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
-  'http_methods': "http_methods_example", // [String] | Array of HTTP methods to apply rate limiting to.
-  'rps_limit': 56, // Number | Upper limit of requests per second allowed by the rate limiter.
-  'window_size': 56, // Number | Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.
-  'client_key': "client_key_example", // [String] | Array of VCL variables used to generate a counter key to identify a client. Example variables include `req.http.Fastly-Client-IP`, `req.http.User-Agent`, or a custom header like `req.http.API-Key`.
-  'penalty_box_duration': 56, // Number | Length of time in seconds that the rate limiter is in effect after the initial violation is detected.
-  'action': "action_example", // String | The action to take when a rate limiter violation is detected.
-  'response': new FastlyApi.RateLimiterResponse1(), // RateLimiterResponse1 | 
-  'response_object_name': "response_object_name_example", // String | Name of existing response object. Required if `action` is `response_object`. Note that the rate limiter response is only updated to reflect the response object content when saving the rate limiter configuration.
-  'logger_type': "logger_type_example", // String | Name of the type of logging endpoint to be used when action is `log_only`. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries.
-  'feature_revision': 56 // Number | Revision number of the rate limiting feature implementation. Defaults to the most recent revision.
-};
-apiInstance.updateRateLimiter(rate_limiter_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  rate_limiter_id: "rate_limiter_id_example", // required
+  action: "action_example",
 
+  client_key: "client_key_example",
+
+  feature_revision: 56,
+
+  http_methods: "http_methods_example",
+
+  logger_type: "logger_type_example",
+
+  name: "name_example",
+
+  penalty_box_duration: 56,
+
+  response: new Fastly.RateLimiterResponse1(),
+
+  response_object_name: "response_object_name_example",
+
+  rps_limit: 56,
+
+  uri_dictionary_name: "uri_dictionary_name_example",
+
+  window_size: 56,
+};
+
+apiInstance.updateRateLimiter(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **rate_limiter_id** | **String** |  |
-**name** | **String** | A human readable name for the rate limiting rule. | [optional]
-**uri_dictionary_name** | **String** | The name of an Edge Dictionary containing URIs as keys. If not defined or &#x60;null&#x60;, all origin URIs will be rate limited. | [optional]
-**http_methods** | [**[String]**](../Model/String.md) | Array of HTTP methods to apply rate limiting to. | [optional]
-**rps_limit** | **Number** | Upper limit of requests per second allowed by the rate limiter. | [optional]
-**window_size** | **Number** | Number of seconds during which the RPS limit must be exceeded in order to trigger a violation. | [optional]
-**client_key** | [**[String]**](../Model/String.md) | Array of VCL variables used to generate a counter key to identify a client. Example variables include &#x60;req.http.Fastly-Client-IP&#x60;, &#x60;req.http.User-Agent&#x60;, or a custom header like &#x60;req.http.API-Key&#x60;. | [optional]
-**penalty_box_duration** | **Number** | Length of time in seconds that the rate limiter is in effect after the initial violation is detected. | [optional]
 **action** | **String** | The action to take when a rate limiter violation is detected. | [optional]
+**client_key** | [**[String]**](../Model/String.md) | Array of VCL variables used to generate a counter key to identify a client. Example variables include &#x60;req.http.Fastly-Client-IP&#x60;, &#x60;req.http.User-Agent&#x60;, or a custom header like &#x60;req.http.API-Key&#x60;. | [optional]
+**feature_revision** | **Number** | Revision number of the rate limiting feature implementation. Defaults to the most recent revision. | [optional]
+**http_methods** | [**[String]**](../Model/String.md) | Array of HTTP methods to apply rate limiting to. | [optional]
+**logger_type** | **String** | Name of the type of logging endpoint to be used when action is &#x60;log_only&#x60;. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries. | [optional]
+**name** | **String** | A human readable name for the rate limiting rule. | [optional]
+**penalty_box_duration** | **Number** | Length of time in seconds that the rate limiter is in effect after the initial violation is detected. | [optional]
 **response** | [**RateLimiterResponse1**](../Model/RateLimiterResponse1.md) |  | [optional]
 **response_object_name** | **String** | Name of existing response object. Required if &#x60;action&#x60; is &#x60;response_object&#x60;. Note that the rate limiter response is only updated to reflect the response object content when saving the rate limiter configuration. | [optional]
-**logger_type** | **String** | Name of the type of logging endpoint to be used when action is &#x60;log_only&#x60;. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries. | [optional]
-**feature_revision** | **Number** | Revision number of the rate limiting feature implementation. Defaults to the most recent revision. | [optional]
+**rps_limit** | **Number** | Upper limit of requests per second allowed by the rate limiter. | [optional]
+**uri_dictionary_name** | **String** | The name of an Edge Dictionary containing URIs as keys. If not defined or &#x60;null&#x60;, all origin URIs will be rate limited. | [optional]
+**window_size** | **Number** | Number of seconds during which the RPS limit must be exceeded in order to trigger a violation. | [optional]
 
 ### Return type
 

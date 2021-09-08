@@ -16,19 +16,39 @@ import Healthcheck from './Healthcheck';
 import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Timestamps from './Timestamps';
 
-
+/**
+ * The HealthcheckResponse model module.
+ * @module model/HealthcheckResponse
+ * @version 3.0.0-alpha1
+ */
 class HealthcheckResponse {
-    
+    /**
+     * Constructs a new <code>HealthcheckResponse</code>.
+     * @alias module:model/HealthcheckResponse
+     * @implements module:model/Healthcheck
+     * @implements module:model/ServiceIdAndVersion
+     * @implements module:model/Timestamps
+     */
     constructor() { 
         Healthcheck.initialize(this);ServiceIdAndVersion.initialize(this);Timestamps.initialize(this);
         HealthcheckResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>HealthcheckResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/HealthcheckResponse} obj Optional instance to populate.
+     * @return {module:model/HealthcheckResponse} The populated <code>HealthcheckResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new HealthcheckResponse();
@@ -94,94 +114,196 @@ class HealthcheckResponse {
 
 }
 
-
+/**
+ * How often to run the healthcheck in milliseconds.
+ * @member {Number} check_interval
+ */
 HealthcheckResponse.prototype['check_interval'] = undefined;
 
-
+/**
+ * A freeform descriptive note.
+ * @member {String} comment
+ */
 HealthcheckResponse.prototype['comment'] = undefined;
 
-
+/**
+ * The status code expected from the host.
+ * @member {Number} expected_response
+ */
 HealthcheckResponse.prototype['expected_response'] = undefined;
 
-
+/**
+ * Which host to check.
+ * @member {String} host
+ */
 HealthcheckResponse.prototype['host'] = undefined;
 
-
+/**
+ * Whether to use version 1.0 or 1.1 HTTP.
+ * @member {String} http_version
+ */
 HealthcheckResponse.prototype['http_version'] = undefined;
 
-
+/**
+ * When loading a config, the initial number of probes to be seen as OK.
+ * @member {Number} initial
+ */
 HealthcheckResponse.prototype['initial'] = undefined;
 
-
+/**
+ * Which HTTP method to use.
+ * @member {String} method
+ */
 HealthcheckResponse.prototype['method'] = undefined;
 
-
+/**
+ * The name of the healthcheck.
+ * @member {String} name
+ */
 HealthcheckResponse.prototype['name'] = undefined;
 
-
+/**
+ * The path to check.
+ * @member {String} path
+ */
 HealthcheckResponse.prototype['path'] = undefined;
 
-
+/**
+ * How many healthchecks must succeed to be considered healthy.
+ * @member {Number} threshold
+ */
 HealthcheckResponse.prototype['threshold'] = undefined;
 
-
+/**
+ * Timeout in milliseconds.
+ * @member {Number} timeout
+ */
 HealthcheckResponse.prototype['timeout'] = undefined;
 
-
+/**
+ * The number of most recent healthcheck queries to keep for this healthcheck.
+ * @member {Number} window
+ */
 HealthcheckResponse.prototype['window'] = undefined;
 
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 HealthcheckResponse.prototype['service_id'] = undefined;
 
-
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
 HealthcheckResponse.prototype['version'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 HealthcheckResponse.prototype['created_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 HealthcheckResponse.prototype['deleted_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 HealthcheckResponse.prototype['updated_at'] = undefined;
 
 
 // Implement Healthcheck interface:
-
+/**
+ * How often to run the healthcheck in milliseconds.
+ * @member {Number} check_interval
+ */
 Healthcheck.prototype['check_interval'] = undefined;
-
+/**
+ * A freeform descriptive note.
+ * @member {String} comment
+ */
 Healthcheck.prototype['comment'] = undefined;
-
+/**
+ * The status code expected from the host.
+ * @member {Number} expected_response
+ */
 Healthcheck.prototype['expected_response'] = undefined;
-
+/**
+ * Which host to check.
+ * @member {String} host
+ */
 Healthcheck.prototype['host'] = undefined;
-
+/**
+ * Whether to use version 1.0 or 1.1 HTTP.
+ * @member {String} http_version
+ */
 Healthcheck.prototype['http_version'] = undefined;
-
+/**
+ * When loading a config, the initial number of probes to be seen as OK.
+ * @member {Number} initial
+ */
 Healthcheck.prototype['initial'] = undefined;
-
+/**
+ * Which HTTP method to use.
+ * @member {String} method
+ */
 Healthcheck.prototype['method'] = undefined;
-
+/**
+ * The name of the healthcheck.
+ * @member {String} name
+ */
 Healthcheck.prototype['name'] = undefined;
-
+/**
+ * The path to check.
+ * @member {String} path
+ */
 Healthcheck.prototype['path'] = undefined;
-
+/**
+ * How many healthchecks must succeed to be considered healthy.
+ * @member {Number} threshold
+ */
 Healthcheck.prototype['threshold'] = undefined;
-
+/**
+ * Timeout in milliseconds.
+ * @member {Number} timeout
+ */
 Healthcheck.prototype['timeout'] = undefined;
-
+/**
+ * The number of most recent healthcheck queries to keep for this healthcheck.
+ * @member {Number} window
+ */
 Healthcheck.prototype['window'] = undefined;
 // Implement ServiceIdAndVersion interface:
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 ServiceIdAndVersion.prototype['service_id'] = undefined;
-
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
 ServiceIdAndVersion.prototype['version'] = undefined;
 // Implement Timestamps interface:
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 Timestamps.prototype['created_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 Timestamps.prototype['deleted_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 Timestamps.prototype['updated_at'] = undefined;
 
 

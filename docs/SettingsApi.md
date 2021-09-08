@@ -1,7 +1,9 @@
-# FastlyApi.SettingsApi
+# Fastly.SettingsApi
 
 
-
+```javascript
+const apiInstance = new Fastly.SettingsApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -13,27 +15,28 @@ Method | Fastly API endpoint | Description
 
 ## `getServiceSettings`
 
-> getServiceSettings(service_id, version_id)
-
-Get service settings
+```javascript
+getServiceSettings({ service_id, version_id })
+```
 
 Get the settings for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.SettingsApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.getServiceSettings(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.getServiceSettings(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -47,27 +50,28 @@ Name | Type | Description  | Notes
 
 ## `updateServiceSettings`
 
-> updateServiceSettings(service_id, version_id)
-
-Update service settings
+```javascript
+updateServiceSettings({ service_id, version_id })
+```
 
 Update the settings for a particular service and version. NOTE: If you override TTLs with custom VCL, any general.default_ttl value will not be honored and the expected behavior may change. 
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.SettingsApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.updateServiceSettings(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.updateServiceSettings(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

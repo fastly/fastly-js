@@ -1,7 +1,9 @@
-# FastlyApi.WafExclusionsApi
+# Fastly.WafExclusionsApi
 
 
-
+```javascript
+const apiInstance = new Fastly.WafExclusionsApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -16,30 +18,30 @@ Method | Fastly API endpoint | Description
 
 ## `createWafRuleExclusion`
 
-> createWafRuleExclusion(firewall_id, firewall_version_number, opts)
-
-Create a WAF rule exclusion
+```javascript
+createWafRuleExclusion({ firewall_id, firewall_version_number, [waf_exclusion] })
+```
 
 Create a WAF exclusion for a particular firewall version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.WafExclusionsApi();
-let firewall_id = "firewall_id_example"; // String | 
-let firewall_version_number = 56; // Number | 
-let opts = {
-  'waf_exclusion': {"data":{"type":"waf_exclusion","attributes":{"exclusion_type":"rule","condition":"req.url.basename == \"index.html\"","name":"test-waf-exclusion"},"relationships":{"waf_rules":{"data":[{"id":2500162,"type":"waf_rule"}]}}}} // WafExclusion | 
+const options = {
+  firewall_id: "firewall_id_example", // required  firewall_version_number: 56, // required
+  waf_exclusion: new Fastly.WafExclusion(),
 };
-apiInstance.createWafRuleExclusion(firewall_id, firewall_version_number, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.createWafRuleExclusion(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -54,28 +56,28 @@ Name | Type | Description  | Notes
 
 ## `deleteWafRuleExclusion`
 
-> deleteWafRuleExclusion(firewall_id, firewall_version_number, exclusion_number)
-
-Delete a WAF rule exclusion
+```javascript
+deleteWafRuleExclusion({ firewall_id, firewall_version_number, exclusion_number })
+```
 
 Delete a WAF exclusion for a particular firewall version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.WafExclusionsApi();
-let firewall_id = "firewall_id_example"; // String | 
-let firewall_version_number = 56; // Number | 
-let exclusion_number = 56; // Number | 
-apiInstance.deleteWafRuleExclusion(firewall_id, firewall_version_number, exclusion_number).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  firewall_id: "firewall_id_example", // required  firewall_version_number: 56, // required  exclusion_number: 56, // required};
 
+apiInstance.deleteWafRuleExclusion(options)
+  .then(() => {
+    console.log('API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -90,28 +92,28 @@ null (empty response body)
 
 ## `getWafRuleExclusion`
 
-> getWafRuleExclusion(firewall_id, firewall_version_number, exclusion_number)
-
-Get a WAF rule exclusion
+```javascript
+getWafRuleExclusion({ firewall_id, firewall_version_number, exclusion_number })
+```
 
 Get a specific WAF exclusion object.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.WafExclusionsApi();
-let firewall_id = "firewall_id_example"; // String | 
-let firewall_version_number = 56; // Number | 
-let exclusion_number = 56; // Number | 
-apiInstance.getWafRuleExclusion(firewall_id, firewall_version_number, exclusion_number).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  firewall_id: "firewall_id_example", // required  firewall_version_number: 56, // required  exclusion_number: 56, // required};
 
+apiInstance.getWafRuleExclusion(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -126,35 +128,40 @@ Name | Type | Description  | Notes
 
 ## `listWafRuleExclusions`
 
-> listWafRuleExclusions(firewall_id, firewall_version_number, opts)
-
-List WAF rule exclusions
+```javascript
+listWafRuleExclusions({ firewall_id, firewall_version_number, [filter_exclusion_type], , [filter_name], , [filter_waf_rules_modsec_rule_id], , [page_number], , [page_size], , [include] })
+```
 
 List all exclusions for a particular firewall version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.WafExclusionsApi();
-let firewall_id = "firewall_id_example"; // String | 
-let firewall_version_number = 56; // Number | 
-let opts = {
-  'filter_exclusion_type': "filter_exclusion_type_example", // String | Filters the results based on this exclusion type.
-  'filter_name': "filter_name_example", // String | Filters the results based on name.
-  'filter_waf_rules_modsec_rule_id': 56, // Number | Filters the results based on this ModSecurity rule ID.
-  'page_number': 56, // Number | Current page.
-  'page_size': 20, // Number | Number of records per page.
-  'include': waf_rules // String | Include relationships. Optional, comma-separated values. Permitted values: `waf_rules` and `waf_rule_revisions`. 
-};
-apiInstance.listWafRuleExclusions(firewall_id, firewall_version_number, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  firewall_id: "firewall_id_example", // required  firewall_version_number: 56, // required
+  filter_exclusion_type: "filter_exclusion_type_example",
 
+  filter_name: "filter_name_example",
+
+  filter_waf_rules_modsec_rule_id: 56,
+
+  page_number: 56,
+
+  page_size: 20,
+
+  include: waf_rules,
+};
+
+apiInstance.listWafRuleExclusions(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -174,31 +181,30 @@ Name | Type | Description  | Notes
 
 ## `updateWafRuleExclusion`
 
-> updateWafRuleExclusion(firewall_id, firewall_version_number, exclusion_number, opts)
-
-Update a WAF rule exclusion
+```javascript
+updateWafRuleExclusion({ firewall_id, firewall_version_number, exclusion_number, [waf_exclusion] })
+```
 
 Update a WAF exclusion for a particular firewall version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.WafExclusionsApi();
-let firewall_id = "firewall_id_example"; // String | 
-let firewall_version_number = 56; // Number | 
-let exclusion_number = 56; // Number | 
-let opts = {
-  'waf_exclusion': {"data":{"type":"waf_exclusion","attributes":{"logging":false,"condition":"req.url.basename == \"index.html\" || req.url.basename == \"admin.html\"","name":"updated-test-waf-exclusion"}}} // WafExclusion | 
+const options = {
+  firewall_id: "firewall_id_example", // required  firewall_version_number: 56, // required  exclusion_number: 56, // required
+  waf_exclusion: new Fastly.WafExclusion(),
 };
-apiInstance.updateWafRuleExclusion(firewall_id, firewall_version_number, exclusion_number, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.updateWafRuleExclusion(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

@@ -1,11 +1,11 @@
-# FastlyApi.RelationshipMemberTlsSubscription
+# Fastly.RelationshipMemberTlsSubscription
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**TypeTlsSubscription**](TypeTlsSubscription.md) |  | [optional] 
 **id** | **String** | Alphanumeric string identifying a TLS subscription. | [optional] [readonly] 
+**type** | [**TypeTlsSubscription**](TypeTlsSubscription.md) |  | [optional] 
 
 
 

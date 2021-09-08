@@ -17,17 +17,33 @@ import Pagination from '../model/Pagination';
 import Star from '../model/Star';
 import StarResponse from '../model/StarResponse';
 
-
+/**
+* Star service.
+* @module api/StarApi
+* @version 3.0.0-alpha1
+*/
 export default class StarApi {
 
-    
+    /**
+    * Constructs a new StarApi. 
+    * @alias module:api/StarApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createServiceStarWithHttpInfo(opts) {
-      opts = opts || {};
-      let postBody = opts['star'];
+
+    /**
+     * Create star.
+     * @param {Object} options
+     * @param {module:model/Star} [options.star]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StarResponse} and HTTP response
+     */
+    createServiceStarWithHttpInfo(options = {}) {
+      let postBody = options['star'];
 
       let pathParams = {
       };
@@ -48,21 +64,35 @@ export default class StarApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createServiceStar(opts) {
-      return this.createServiceStarWithHttpInfo(opts)
+
+    /**
+     * Create star.
+     * @param {Object} options
+     * @param {module:model/Star} [options.star]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StarResponse}
+     */
+    createServiceStar(options = {}) {
+      return this.createServiceStarWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteServiceStarWithHttpInfo(star_id) {
+
+    /**
+     * Delete star.
+     * @param {Object} options
+     * @param {String} options.star_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteServiceStarWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'star_id' is set
-      if (star_id === undefined || star_id === null) {
-        throw new Error("Missing the required parameter 'star_id' when calling deleteServiceStar");
+      // Verify the required parameter 'star_id' is set.
+      if (options['star_id'] === undefined || options['star_id'] === null) {
+        throw new Error("Missing the required parameter 'star_id'.");
       }
 
       let pathParams = {
-        'star_id': star_id
+        'star_id': options['star_id']
       };
       let queryParams = {
       };
@@ -81,21 +111,35 @@ export default class StarApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteServiceStar(star_id) {
-      return this.deleteServiceStarWithHttpInfo(star_id)
+
+    /**
+     * Delete star.
+     * @param {Object} options
+     * @param {String} options.star_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteServiceStar(options = {}) {
+      return this.deleteServiceStarWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getServiceStarWithHttpInfo(star_id) {
+
+    /**
+     * Show star.
+     * @param {Object} options
+     * @param {String} options.star_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StarResponse} and HTTP response
+     */
+    getServiceStarWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'star_id' is set
-      if (star_id === undefined || star_id === null) {
-        throw new Error("Missing the required parameter 'star_id' when calling getServiceStar");
+      // Verify the required parameter 'star_id' is set.
+      if (options['star_id'] === undefined || options['star_id'] === null) {
+        throw new Error("Missing the required parameter 'star_id'.");
       }
 
       let pathParams = {
-        'star_id': star_id
+        'star_id': options['star_id']
       };
       let queryParams = {
       };
@@ -114,13 +158,26 @@ export default class StarApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getServiceStar(star_id) {
-      return this.getServiceStarWithHttpInfo(star_id)
+
+    /**
+     * Show star.
+     * @param {Object} options
+     * @param {String} options.star_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StarResponse}
+     */
+    getServiceStar(options = {}) {
+      return this.getServiceStarWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listServiceStarsWithHttpInfo() {
+
+    /**
+     * List stars.
+     * @param {Object} options
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Pagination} and HTTP response
+     */
+    listServiceStarsWithHttpInfo(options = {}) {
       let postBody = null;
 
       let pathParams = {
@@ -142,8 +199,14 @@ export default class StarApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listServiceStars() {
-      return this.listServiceStarsWithHttpInfo()
+
+    /**
+     * List stars.
+     * @param {Object} options
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Pagination}
+     */
+    listServiceStars(options = {}) {
+      return this.listServiceStarsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

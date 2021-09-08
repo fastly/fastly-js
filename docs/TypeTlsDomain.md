@@ -1,4 +1,4 @@
-# FastlyApi.TypeTlsDomain
+# Fastly.TypeTlsDomain
 
 ## Enum
 

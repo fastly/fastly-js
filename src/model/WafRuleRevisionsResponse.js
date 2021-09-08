@@ -19,19 +19,38 @@ import PaginationMeta from './PaginationMeta';
 import WafRule from './WafRule';
 import WafRuleRevisionsResponseAllOf from './WafRuleRevisionsResponseAllOf';
 
-
+/**
+ * The WafRuleRevisionsResponse model module.
+ * @module model/WafRuleRevisionsResponse
+ * @version 3.0.0-alpha1
+ */
 class WafRuleRevisionsResponse {
-    
+    /**
+     * Constructs a new <code>WafRuleRevisionsResponse</code>.
+     * @alias module:model/WafRuleRevisionsResponse
+     * @implements module:model/Pagination
+     * @implements module:model/WafRuleRevisionsResponseAllOf
+     */
     constructor() { 
         Pagination.initialize(this);WafRuleRevisionsResponseAllOf.initialize(this);
         WafRuleRevisionsResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>WafRuleRevisionsResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/WafRuleRevisionsResponse} obj Optional instance to populate.
+     * @return {module:model/WafRuleRevisionsResponse} The populated <code>WafRuleRevisionsResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafRuleRevisionsResponse();
@@ -57,28 +76,44 @@ class WafRuleRevisionsResponse {
 
 }
 
-
+/**
+ * @member {module:model/PaginationLinks} links
+ */
 WafRuleRevisionsResponse.prototype['links'] = undefined;
 
-
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
 WafRuleRevisionsResponse.prototype['meta'] = undefined;
 
-
+/**
+ * @member {Array.<module:model/Data>} data
+ */
 WafRuleRevisionsResponse.prototype['data'] = undefined;
 
-
+/**
+ * @member {Array.<module:model/WafRule>} included
+ */
 WafRuleRevisionsResponse.prototype['included'] = undefined;
 
 
 // Implement Pagination interface:
-
+/**
+ * @member {module:model/PaginationLinks} links
+ */
 Pagination.prototype['links'] = undefined;
-
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
 Pagination.prototype['meta'] = undefined;
 // Implement WafRuleRevisionsResponseAllOf interface:
-
+/**
+ * @member {Array.<module:model/Data>} data
+ */
 WafRuleRevisionsResponseAllOf.prototype['data'] = undefined;
-
+/**
+ * @member {Array.<module:model/WafRule>} included
+ */
 WafRuleRevisionsResponseAllOf.prototype['included'] = undefined;
 
 

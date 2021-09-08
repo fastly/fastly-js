@@ -15,28 +15,45 @@ import ApiClient from '../ApiClient';
 import AnyOfobjectobjectobject from './AnyOfobjectobjectobject';
 import TypeTlsActivation from './TypeTlsActivation';
 
-
+/**
+ * The TlsActivationData model module.
+ * @module model/TlsActivationData
+ * @version 3.0.0-alpha1
+ */
 class TlsActivationData {
-    
+    /**
+     * Constructs a new <code>TlsActivationData</code>.
+     * @alias module:model/TlsActivationData
+     */
     constructor() { 
         
         TlsActivationData.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>TlsActivationData</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/TlsActivationData} obj Optional instance to populate.
+     * @return {module:model/TlsActivationData} The populated <code>TlsActivationData</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsActivationData();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeTlsActivation.constructFromObject(data['type']);
-            }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = ApiClient.convertToType(data['relationships'], AnyOfobjectobjectobject);
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeTlsActivation.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -45,11 +62,15 @@ class TlsActivationData {
 
 }
 
-
-TlsActivationData.prototype['type'] = undefined;
-
-
+/**
+ * @member {module:model/AnyOfobjectobjectobject} relationships
+ */
 TlsActivationData.prototype['relationships'] = undefined;
+
+/**
+ * @member {module:model/TypeTlsActivation} type
+ */
+TlsActivationData.prototype['type'] = undefined;
 
 
 

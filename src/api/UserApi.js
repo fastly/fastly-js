@@ -16,16 +16,39 @@ import ApiClient from "../ApiClient";
 import RoleUser from '../model/RoleUser';
 import UserResponse from '../model/UserResponse';
 
-
+/**
+* User service.
+* @module api/UserApi
+* @version 3.0.0-alpha1
+*/
 export default class UserApi {
 
-    
+    /**
+    * Constructs a new UserApi. 
+    * @alias module:api/UserApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createUserWithHttpInfo(opts) {
-      opts = opts || {};
+
+    /**
+     * Create a user.
+     * @param {Object} options
+     * @param {Boolean} [options.limit_services] - Indicates that the user has limited access to the customer's services.
+     * @param {Boolean} [options.locked] - Indicates whether the is account is locked for editing or not.
+     * @param {String} [options.login] - The login associated with the user (typically, an email address).
+     * @param {String} [options.name] - The real life name of the user.
+     * @param {Boolean} [options.require_new_password] - Indicates if a new password is required at next login.
+     * @param {module:model/RoleUser} [options.role]
+     * @param {Boolean} [options.two_factor_auth_enabled] - Indicates if 2FA is enabled on the user.
+     * @param {Boolean} [options.two_factor_setup_required] - Indicates if 2FA is required by the user's customer account.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResponse} and HTTP response
+     */
+    createUserWithHttpInfo(options = {}) {
       let postBody = null;
 
       let pathParams = {
@@ -35,14 +58,14 @@ export default class UserApi {
       let headerParams = {
       };
       let formParams = {
-        'login': opts['login'],
-        'name': opts['name'],
-        'limit_services': opts['limit_services'],
-        'locked': opts['locked'],
-        'require_new_password': opts['require_new_password'],
-        'role': opts['role'],
-        'two_factor_auth_enabled': opts['two_factor_auth_enabled'],
-        'two_factor_setup_required': opts['two_factor_setup_required']
+        'limit_services': options['limit_services'],
+        'locked': options['locked'],
+        'login': options['login'],
+        'name': options['name'],
+        'require_new_password': options['require_new_password'],
+        'role': options['role'],
+        'two_factor_auth_enabled': options['two_factor_auth_enabled'],
+        'two_factor_setup_required': options['two_factor_setup_required']
       };
 
       let authNames = [];
@@ -55,21 +78,42 @@ export default class UserApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createUser(opts) {
-      return this.createUserWithHttpInfo(opts)
+
+    /**
+     * Create a user.
+     * @param {Object} options
+     * @param {Boolean} [options.limit_services] - Indicates that the user has limited access to the customer's services.
+     * @param {Boolean} [options.locked] - Indicates whether the is account is locked for editing or not.
+     * @param {String} [options.login] - The login associated with the user (typically, an email address).
+     * @param {String} [options.name] - The real life name of the user.
+     * @param {Boolean} [options.require_new_password] - Indicates if a new password is required at next login.
+     * @param {module:model/RoleUser} [options.role]
+     * @param {Boolean} [options.two_factor_auth_enabled] - Indicates if 2FA is enabled on the user.
+     * @param {Boolean} [options.two_factor_setup_required] - Indicates if 2FA is required by the user's customer account.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResponse}
+     */
+    createUser(options = {}) {
+      return this.createUserWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteUserWithHttpInfo(user_id) {
+
+    /**
+     * Delete a user.
+     * @param {Object} options
+     * @param {String} options.user_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteUserWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'user_id' is set
-      if (user_id === undefined || user_id === null) {
-        throw new Error("Missing the required parameter 'user_id' when calling deleteUser");
+      // Verify the required parameter 'user_id' is set.
+      if (options['user_id'] === undefined || options['user_id'] === null) {
+        throw new Error("Missing the required parameter 'user_id'.");
       }
 
       let pathParams = {
-        'user_id': user_id
+        'user_id': options['user_id']
       };
       let queryParams = {
       };
@@ -88,13 +132,26 @@ export default class UserApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteUser(user_id) {
-      return this.deleteUserWithHttpInfo(user_id)
+
+    /**
+     * Delete a user.
+     * @param {Object} options
+     * @param {String} options.user_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteUser(options = {}) {
+      return this.deleteUserWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getCurrentUserWithHttpInfo() {
+
+    /**
+     * Get the logged in user.
+     * @param {Object} options
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResponse} and HTTP response
+     */
+    getCurrentUserWithHttpInfo(options = {}) {
       let postBody = null;
 
       let pathParams = {
@@ -116,21 +173,34 @@ export default class UserApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getCurrentUser() {
-      return this.getCurrentUserWithHttpInfo()
+
+    /**
+     * Get the logged in user.
+     * @param {Object} options
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResponse}
+     */
+    getCurrentUser(options = {}) {
+      return this.getCurrentUserWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getUserWithHttpInfo(user_id) {
+
+    /**
+     * Get a specific user.
+     * @param {Object} options
+     * @param {String} options.user_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResponse} and HTTP response
+     */
+    getUserWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'user_id' is set
-      if (user_id === undefined || user_id === null) {
-        throw new Error("Missing the required parameter 'user_id' when calling getUser");
+      // Verify the required parameter 'user_id' is set.
+      if (options['user_id'] === undefined || options['user_id'] === null) {
+        throw new Error("Missing the required parameter 'user_id'.");
       }
 
       let pathParams = {
-        'user_id': user_id
+        'user_id': options['user_id']
       };
       let queryParams = {
       };
@@ -149,21 +219,35 @@ export default class UserApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getUser(user_id) {
-      return this.getUserWithHttpInfo(user_id)
+
+    /**
+     * Get a specific user.
+     * @param {Object} options
+     * @param {String} options.user_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResponse}
+     */
+    getUser(options = {}) {
+      return this.getUserWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    requestPasswordResetWithHttpInfo(user_login) {
+
+    /**
+     * Requests a password reset for the specified user.
+     * @param {Object} options
+     * @param {String} options.user_login
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    requestPasswordResetWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'user_login' is set
-      if (user_login === undefined || user_login === null) {
-        throw new Error("Missing the required parameter 'user_login' when calling requestPasswordReset");
+      // Verify the required parameter 'user_login' is set.
+      if (options['user_login'] === undefined || options['user_login'] === null) {
+        throw new Error("Missing the required parameter 'user_login'.");
       }
 
       let pathParams = {
-        'user_login': user_login
+        'user_login': options['user_login']
       };
       let queryParams = {
       };
@@ -182,36 +266,57 @@ export default class UserApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    requestPasswordReset(user_login) {
-      return this.requestPasswordResetWithHttpInfo(user_login)
+
+    /**
+     * Requests a password reset for the specified user.
+     * @param {Object} options
+     * @param {String} options.user_login
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    requestPasswordReset(options = {}) {
+      return this.requestPasswordResetWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateUserWithHttpInfo(user_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Update a user. Only users with the role of `superuser` can make changes to other users on the account. Non-superusers may use this endpoint to make changes to their own account. Modifications to `login` email require a valid password in the request body. Two-factor attributes are not editable via this endpoint.
+     * @param {Object} options
+     * @param {String} options.user_id
+     * @param {Boolean} [options.limit_services] - Indicates that the user has limited access to the customer's services.
+     * @param {Boolean} [options.locked] - Indicates whether the is account is locked for editing or not.
+     * @param {String} [options.login] - The login associated with the user (typically, an email address).
+     * @param {String} [options.name] - The real life name of the user.
+     * @param {Boolean} [options.require_new_password] - Indicates if a new password is required at next login.
+     * @param {module:model/RoleUser} [options.role]
+     * @param {Boolean} [options.two_factor_auth_enabled] - Indicates if 2FA is enabled on the user.
+     * @param {Boolean} [options.two_factor_setup_required] - Indicates if 2FA is required by the user's customer account.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResponse} and HTTP response
+     */
+    updateUserWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'user_id' is set
-      if (user_id === undefined || user_id === null) {
-        throw new Error("Missing the required parameter 'user_id' when calling updateUser");
+      // Verify the required parameter 'user_id' is set.
+      if (options['user_id'] === undefined || options['user_id'] === null) {
+        throw new Error("Missing the required parameter 'user_id'.");
       }
 
       let pathParams = {
-        'user_id': user_id
+        'user_id': options['user_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'login': opts['login'],
-        'name': opts['name'],
-        'limit_services': opts['limit_services'],
-        'locked': opts['locked'],
-        'require_new_password': opts['require_new_password'],
-        'role': opts['role'],
-        'two_factor_auth_enabled': opts['two_factor_auth_enabled'],
-        'two_factor_setup_required': opts['two_factor_setup_required']
+        'limit_services': options['limit_services'],
+        'locked': options['locked'],
+        'login': options['login'],
+        'name': options['name'],
+        'require_new_password': options['require_new_password'],
+        'role': options['role'],
+        'two_factor_auth_enabled': options['two_factor_auth_enabled'],
+        'two_factor_setup_required': options['two_factor_setup_required']
       };
 
       let authNames = ['token'];
@@ -224,14 +329,36 @@ export default class UserApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateUser(user_id, opts) {
-      return this.updateUserWithHttpInfo(user_id, opts)
+
+    /**
+     * Update a user. Only users with the role of `superuser` can make changes to other users on the account. Non-superusers may use this endpoint to make changes to their own account. Modifications to `login` email require a valid password in the request body. Two-factor attributes are not editable via this endpoint.
+     * @param {Object} options
+     * @param {String} options.user_id
+     * @param {Boolean} [options.limit_services] - Indicates that the user has limited access to the customer's services.
+     * @param {Boolean} [options.locked] - Indicates whether the is account is locked for editing or not.
+     * @param {String} [options.login] - The login associated with the user (typically, an email address).
+     * @param {String} [options.name] - The real life name of the user.
+     * @param {Boolean} [options.require_new_password] - Indicates if a new password is required at next login.
+     * @param {module:model/RoleUser} [options.role]
+     * @param {Boolean} [options.two_factor_auth_enabled] - Indicates if 2FA is enabled on the user.
+     * @param {Boolean} [options.two_factor_setup_required] - Indicates if 2FA is required by the user's customer account.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResponse}
+     */
+    updateUser(options = {}) {
+      return this.updateUserWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateUserPasswordWithHttpInfo(opts) {
-      opts = opts || {};
+
+    /**
+     * Update the user's password to a new one.
+     * @param {Object} options
+     * @param {String} [options.new_password] - The user's new password.
+     * @param {String} [options.old_password] - The user's current password.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResponse} and HTTP response
+     */
+    updateUserPasswordWithHttpInfo(options = {}) {
       let postBody = null;
 
       let pathParams = {
@@ -241,8 +368,8 @@ export default class UserApi {
       let headerParams = {
       };
       let formParams = {
-        'old_password': opts['old_password'],
-        'new_password': opts['new_password']
+        'new_password': options['new_password'],
+        'old_password': options['old_password']
       };
 
       let authNames = [];
@@ -255,8 +382,16 @@ export default class UserApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateUserPassword(opts) {
-      return this.updateUserPasswordWithHttpInfo(opts)
+
+    /**
+     * Update the user's password to a new one.
+     * @param {Object} options
+     * @param {String} [options.new_password] - The user's new password.
+     * @param {String} [options.old_password] - The user's current password.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResponse}
+     */
+    updateUserPassword(options = {}) {
+      return this.updateUserPasswordWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

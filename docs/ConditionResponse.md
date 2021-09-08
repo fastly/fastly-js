@@ -1,4 +1,4 @@
-# FastlyApi.ConditionResponse
+# Fastly.ConditionResponse
 
 ## Properties
 

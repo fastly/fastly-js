@@ -1,4 +1,4 @@
-# FastlyApi.HeaderResponse
+# Fastly.HeaderResponse
 
 ## Properties
 

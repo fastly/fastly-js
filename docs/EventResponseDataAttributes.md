@@ -1,4 +1,4 @@
-# FastlyApi.EventResponseDataAttributes
+# Fastly.EventResponseDataAttributes
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# FastlyApi.TlsBulkCertificate
+# Fastly.TlsBulkCertificate
 
 ## Properties
 

@@ -1,7 +1,9 @@
-# FastlyApi.DictionaryItemApi
+# Fastly.DictionaryItemApi
 
 
-
+```javascript
+const apiInstance = new Fastly.DictionaryItemApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -18,36 +20,36 @@ Method | Fastly API endpoint | Description
 
 ## `bulkUpdateDictionaryItem`
 
-> bulkUpdateDictionaryItem(service_id, dictionary_id, opts)
-
-Update multiple entries in an edge dictionary
+```javascript
+bulkUpdateDictionaryItem({ service_id, dictionary_id, [inline_object4] })
+```
 
 Update DictionaryItem in batch for given service, dictionary ID and key/value pairs for items.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.DictionaryItemApi();
-let service_id = "service_id_example"; // String | 
-let dictionary_id = "dictionary_id_example"; // String | 
-let opts = {
-  'inline_object': new FastlyApi.InlineObject() // InlineObject | 
+const options = {
+  service_id: "service_id_example", // required  dictionary_id: "dictionary_id_example", // required
+  inline_object4: new Fastly.InlineObject4(),
 };
-apiInstance.bulkUpdateDictionaryItem(service_id, dictionary_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.bulkUpdateDictionaryItem(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **dictionary_id** | **String** |  |
-**inline_object** | [**InlineObject**](../Model/InlineObject.md) |  | [optional]
+**inline_object4** | [**InlineObject4**](../Model/InlineObject4.md) |  | [optional]
 
 ### Return type
 
@@ -56,31 +58,32 @@ Name | Type | Description  | Notes
 
 ## `createDictionaryItem`
 
-> createDictionaryItem(service_id, dictionary_id, opts)
-
-Create an entry in an edge dictionary
+```javascript
+createDictionaryItem({ service_id, dictionary_id, [item_key], , [item_value] })
+```
 
 Create DictionaryItem given service, dictionary ID, item key, and item value.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.DictionaryItemApi();
-let service_id = "service_id_example"; // String | 
-let dictionary_id = "dictionary_id_example"; // String | 
-let opts = {
-  'item_key': "item_key_example", // String | Item key, maximum 256 characters.
-  'item_value': "item_value_example" // String | Item value, maximum 8000 characters.
-};
-apiInstance.createDictionaryItem(service_id, dictionary_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  dictionary_id: "dictionary_id_example", // required
+  item_key: "item_key_example",
 
+  item_value: "item_value_example",
+};
+
+apiInstance.createDictionaryItem(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -96,28 +99,28 @@ Name | Type | Description  | Notes
 
 ## `deleteDictionaryItem`
 
-> deleteDictionaryItem(service_id, dictionary_id, dictionary_item_key)
-
-Delete an item from an edge dictionary
+```javascript
+deleteDictionaryItem({ service_id, dictionary_id, dictionary_item_key })
+```
 
 Delete DictionaryItem given service, dictionary ID, and item key.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.DictionaryItemApi();
-let service_id = "service_id_example"; // String | 
-let dictionary_id = "dictionary_id_example"; // String | 
-let dictionary_item_key = "dictionary_item_key_example"; // String | 
-apiInstance.deleteDictionaryItem(service_id, dictionary_id, dictionary_item_key).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  dictionary_id: "dictionary_id_example", // required  dictionary_item_key: "dictionary_item_key_example", // required};
 
+apiInstance.deleteDictionaryItem(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -132,28 +135,28 @@ Name | Type | Description  | Notes
 
 ## `getDictionaryItem`
 
-> getDictionaryItem(service_id, dictionary_id, dictionary_item_key)
-
-Get an item from an edge dictionary
+```javascript
+getDictionaryItem({ service_id, dictionary_id, dictionary_item_key })
+```
 
 Retrieve a single DictionaryItem given service, dictionary ID and item key.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.DictionaryItemApi();
-let service_id = "service_id_example"; // String | 
-let dictionary_id = "dictionary_id_example"; // String | 
-let dictionary_item_key = "dictionary_item_key_example"; // String | 
-apiInstance.getDictionaryItem(service_id, dictionary_id, dictionary_item_key).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  dictionary_id: "dictionary_id_example", // required  dictionary_item_key: "dictionary_item_key_example", // required};
 
+apiInstance.getDictionaryItem(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -168,33 +171,36 @@ Name | Type | Description  | Notes
 
 ## `listDictionaryItems`
 
-> listDictionaryItems(service_id, dictionary_id, opts)
-
-List items in an edge dictionary
+```javascript
+listDictionaryItems({ service_id, dictionary_id, [page], , [per_page], , [sort], , [direction] })
+```
 
 List of DictionaryItems given service and dictionary ID.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.DictionaryItemApi();
-let service_id = "service_id_example"; // String | 
-let dictionary_id = "dictionary_id_example"; // String | 
-let opts = {
-  'page': 56, // Number | Current page.
-  'per_page': 20, // Number | Number of records per page.
-  'sort': "'created'", // String | Field on which to sort.
-  'direction': ascend // String | Direction in which to sort results.
-};
-apiInstance.listDictionaryItems(service_id, dictionary_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  dictionary_id: "dictionary_id_example", // required
+  page: 56,
 
+  per_page: 20,
+
+  sort: "'created'",
+
+  direction: ascend,
+};
+
+apiInstance.listDictionaryItems(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -212,32 +218,32 @@ Name | Type | Description  | Notes
 
 ## `updateDictionaryItem`
 
-> updateDictionaryItem(service_id, dictionary_id, dictionary_item_key, opts)
-
-Update an entry in an edge dictionary
+```javascript
+updateDictionaryItem({ service_id, dictionary_id, dictionary_item_key, [item_key], , [item_value] })
+```
 
 Update DictionaryItem given service, dictionary ID, item key, and item value.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.DictionaryItemApi();
-let service_id = "service_id_example"; // String | 
-let dictionary_id = "dictionary_id_example"; // String | 
-let dictionary_item_key = "dictionary_item_key_example"; // String | 
-let opts = {
-  'item_key': "item_key_example", // String | Item key, maximum 256 characters.
-  'item_value': "item_value_example" // String | Item value, maximum 8000 characters.
-};
-apiInstance.updateDictionaryItem(service_id, dictionary_id, dictionary_item_key, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  dictionary_id: "dictionary_id_example", // required  dictionary_item_key: "dictionary_item_key_example", // required
+  item_key: "item_key_example",
 
+  item_value: "item_value_example",
+};
+
+apiInstance.updateDictionaryItem(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -254,32 +260,32 @@ Name | Type | Description  | Notes
 
 ## `upsertDictionaryItem`
 
-> upsertDictionaryItem(service_id, dictionary_id, dictionary_item_key, opts)
-
-Insert or update an entry in an edge dictionary
+```javascript
+upsertDictionaryItem({ service_id, dictionary_id, dictionary_item_key, [item_key], , [item_value] })
+```
 
 Upsert DictionaryItem given service, dictionary ID, item key, and item value.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.DictionaryItemApi();
-let service_id = "service_id_example"; // String | 
-let dictionary_id = "dictionary_id_example"; // String | 
-let dictionary_item_key = "dictionary_item_key_example"; // String | 
-let opts = {
-  'item_key': "item_key_example", // String | Item key, maximum 256 characters.
-  'item_value': "item_value_example" // String | Item value, maximum 8000 characters.
-};
-apiInstance.upsertDictionaryItem(service_id, dictionary_id, dictionary_item_key, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  dictionary_id: "dictionary_id_example", // required  dictionary_item_key: "dictionary_item_key_example", // required
+  item_key: "item_key_example",
 
+  item_value: "item_value_example",
+};
+
+apiInstance.upsertDictionaryItem(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

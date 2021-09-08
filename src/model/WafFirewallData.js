@@ -15,28 +15,45 @@ import ApiClient from '../ApiClient';
 import TypeWafFirewall from './TypeWafFirewall';
 import WafFirewallDataAttributes from './WafFirewallDataAttributes';
 
-
+/**
+ * The WafFirewallData model module.
+ * @module model/WafFirewallData
+ * @version 3.0.0-alpha1
+ */
 class WafFirewallData {
-    
+    /**
+     * Constructs a new <code>WafFirewallData</code>.
+     * @alias module:model/WafFirewallData
+     */
     constructor() { 
         
         WafFirewallData.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>WafFirewallData</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/WafFirewallData} obj Optional instance to populate.
+     * @return {module:model/WafFirewallData} The populated <code>WafFirewallData</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafFirewallData();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeWafFirewall.constructFromObject(data['type']);
-            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = WafFirewallDataAttributes.constructFromObject(data['attributes']);
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeWafFirewall.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -45,11 +62,15 @@ class WafFirewallData {
 
 }
 
-
-WafFirewallData.prototype['type'] = undefined;
-
-
+/**
+ * @member {module:model/WafFirewallDataAttributes} attributes
+ */
 WafFirewallData.prototype['attributes'] = undefined;
+
+/**
+ * @member {module:model/TypeWafFirewall} type
+ */
+WafFirewallData.prototype['type'] = undefined;
 
 
 

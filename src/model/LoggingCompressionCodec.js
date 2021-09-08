@@ -12,23 +12,40 @@
  */
 
 import ApiClient from '../ApiClient';
-
+/**
+* Enum class LoggingCompressionCodec.
+* @enum {}
+* @readonly
+*/
 export default class LoggingCompressionCodec {
     
-        
+        /**
+         * value: "zstd"
+         * @const
+         */
         "zstd" = "zstd";
 
     
-        
+        /**
+         * value: "snappy"
+         * @const
+         */
         "snappy" = "snappy";
 
     
-        
+        /**
+         * value: "gzip"
+         * @const
+         */
         "gzip" = "gzip";
 
     
 
-    
+    /**
+    * Returns a <code>LoggingCompressionCodec</code> enum value from a Javascript object name.
+    * @param {Object} data The plain JavaScript object containing the name of the enum value.
+    * @return {module:model/LoggingCompressionCodec} The enum <code>LoggingCompressionCodec</code> value.
+    */
     static constructFromObject(object) {
         return object;
     }

@@ -20,19 +20,39 @@ import LoggingGenericCommon from './LoggingGenericCommon';
 import LoggingMessageType from './LoggingMessageType';
 import LoggingPlacement from './LoggingPlacement';
 
-
+/**
+ * The LoggingAzureblob model module.
+ * @module model/LoggingAzureblob
+ * @version 3.0.0-alpha1
+ */
 class LoggingAzureblob {
-    
+    /**
+     * Constructs a new <code>LoggingAzureblob</code>.
+     * @alias module:model/LoggingAzureblob
+     * @implements module:model/LoggingCommon
+     * @implements module:model/LoggingGenericCommon
+     * @implements module:model/LoggingAzureblobAllOf
+     */
     constructor() { 
         LoggingCommon.initialize(this);LoggingGenericCommon.initialize(this);LoggingAzureblobAllOf.initialize(this);
         LoggingAzureblob.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingAzureblob</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingAzureblob} obj Optional instance to populate.
+     * @return {module:model/LoggingAzureblob} The populated <code>LoggingAzureblob</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingAzureblob();
@@ -40,38 +60,35 @@ class LoggingAzureblob {
             LoggingGenericCommon.constructFromObject(data, obj);
             LoggingAzureblobAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
             }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
-            }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
-            }
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], 'String');
-            }
-            if (data.hasOwnProperty('message_type')) {
-                obj['message_type'] = LoggingMessageType.constructFromObject(data['message_type']);
-            }
-            if (data.hasOwnProperty('timestamp_format')) {
-                obj['timestamp_format'] = ApiClient.convertToType(data['timestamp_format'], 'String');
-            }
-            if (data.hasOwnProperty('period')) {
-                obj['period'] = ApiClient.convertToType(data['period'], 'Number');
-            }
-            if (data.hasOwnProperty('gzip_level')) {
-                obj['gzip_level'] = ApiClient.convertToType(data['gzip_level'], 'Number');
             }
             if (data.hasOwnProperty('compression_codec')) {
                 obj['compression_codec'] = LoggingCompressionCodec.constructFromObject(data['compression_codec']);
             }
-            if (data.hasOwnProperty('path')) {
-                obj['path'] = ApiClient.convertToType(data['path'], 'String');
+            if (data.hasOwnProperty('gzip_level')) {
+                obj['gzip_level'] = ApiClient.convertToType(data['gzip_level'], 'Number');
+            }
+            if (data.hasOwnProperty('message_type')) {
+                obj['message_type'] = LoggingMessageType.constructFromObject(data['message_type']);
+            }
+            if (data.hasOwnProperty('period')) {
+                obj['period'] = ApiClient.convertToType(data['period'], 'Number');
+            }
+            if (data.hasOwnProperty('timestamp_format')) {
+                obj['timestamp_format'] = ApiClient.convertToType(data['timestamp_format'], 'String');
             }
             if (data.hasOwnProperty('account_name')) {
                 obj['account_name'] = ApiClient.convertToType(data['account_name'], 'String');
@@ -79,14 +96,17 @@ class LoggingAzureblob {
             if (data.hasOwnProperty('container')) {
                 obj['container'] = ApiClient.convertToType(data['container'], 'String');
             }
-            if (data.hasOwnProperty('sas_token')) {
-                obj['sas_token'] = ApiClient.convertToType(data['sas_token'], 'String');
+            if (data.hasOwnProperty('file_max_bytes')) {
+                obj['file_max_bytes'] = ApiClient.convertToType(data['file_max_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('path')) {
+                obj['path'] = ApiClient.convertToType(data['path'], 'String');
             }
             if (data.hasOwnProperty('public_key')) {
                 obj['public_key'] = ApiClient.convertToType(data['public_key'], 'String');
             }
-            if (data.hasOwnProperty('file_max_bytes')) {
-                obj['file_max_bytes'] = ApiClient.convertToType(data['file_max_bytes'], 'Number');
+            if (data.hasOwnProperty('sas_token')) {
+                obj['sas_token'] = ApiClient.convertToType(data['sas_token'], 'String');
             }
         }
         return obj;
@@ -95,90 +115,188 @@ class LoggingAzureblob {
 
 }
 
-
-LoggingAzureblob.prototype['name'] = undefined;
-
-
-LoggingAzureblob.prototype['placement'] = undefined;
-
-
-LoggingAzureblob.prototype['format_version'] = undefined;
-
-
-LoggingAzureblob.prototype['response_condition'] = undefined;
-
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
 LoggingAzureblob.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingAzureblob.prototype['format_version'] = undefined;
 
-LoggingAzureblob.prototype['message_type'] = undefined;
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingAzureblob.prototype['name'] = undefined;
 
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingAzureblob.prototype['placement'] = undefined;
 
-LoggingAzureblob.prototype['timestamp_format'] = undefined;
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingAzureblob.prototype['response_condition'] = undefined;
 
-
-LoggingAzureblob.prototype['period'] = 3600;
-
-
-LoggingAzureblob.prototype['gzip_level'] = 0;
-
-
+/**
+ * @member {module:model/LoggingCompressionCodec} compression_codec
+ */
 LoggingAzureblob.prototype['compression_codec'] = undefined;
 
+/**
+ * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {Number} gzip_level
+ * @default 0
+ */
+LoggingAzureblob.prototype['gzip_level'] = 0;
 
-LoggingAzureblob.prototype['path'] = 'null';
+/**
+ * @member {module:model/LoggingMessageType} message_type
+ */
+LoggingAzureblob.prototype['message_type'] = undefined;
 
+/**
+ * How frequently log files are finalized so they can be available for reading (in seconds).
+ * @member {Number} period
+ * @default 3600
+ */
+LoggingAzureblob.prototype['period'] = 3600;
 
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} timestamp_format
+ */
+LoggingAzureblob.prototype['timestamp_format'] = undefined;
+
+/**
+ * The unique Azure Blob Storage namespace in which your data objects are stored. Required.
+ * @member {String} account_name
+ */
 LoggingAzureblob.prototype['account_name'] = undefined;
 
-
+/**
+ * The name of the Azure Blob Storage container in which to store logs. Required.
+ * @member {String} container
+ */
 LoggingAzureblob.prototype['container'] = undefined;
 
+/**
+ * The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
+ * @member {Number} file_max_bytes
+ */
+LoggingAzureblob.prototype['file_max_bytes'] = undefined;
 
+/**
+ * The path to upload logs to.
+ * @member {String} path
+ * @default 'null'
+ */
+LoggingAzureblob.prototype['path'] = 'null';
+
+/**
+ * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+ * @member {String} public_key
+ * @default 'null'
+ */
+LoggingAzureblob.prototype['public_key'] = 'null';
+
+/**
+ * The Azure shared access signature providing write access to the blob service objects. Be sure to update your token before it expires or the logging functionality will not work. Required.
+ * @member {String} sas_token
+ */
 LoggingAzureblob.prototype['sas_token'] = undefined;
 
 
-LoggingAzureblob.prototype['public_key'] = 'null';
-
-
-LoggingAzureblob.prototype['file_max_bytes'] = undefined;
-
-
 // Implement LoggingCommon interface:
-
-LoggingCommon.prototype['name'] = undefined;
-
-LoggingCommon.prototype['placement'] = undefined;
-
-LoggingCommon.prototype['format_version'] = undefined;
-
-LoggingCommon.prototype['response_condition'] = undefined;
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
 LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingCommon.prototype['format_version'] = undefined;
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingCommon.prototype['name'] = undefined;
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingCommon.prototype['placement'] = undefined;
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingCommon.prototype['response_condition'] = undefined;
 // Implement LoggingGenericCommon interface:
-
-LoggingGenericCommon.prototype['message_type'] = undefined;
-
-LoggingGenericCommon.prototype['timestamp_format'] = undefined;
-
-LoggingGenericCommon.prototype['period'] = 3600;
-
-LoggingGenericCommon.prototype['gzip_level'] = 0;
-
+/**
+ * @member {module:model/LoggingCompressionCodec} compression_codec
+ */
 LoggingGenericCommon.prototype['compression_codec'] = undefined;
+/**
+ * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {Number} gzip_level
+ * @default 0
+ */
+LoggingGenericCommon.prototype['gzip_level'] = 0;
+/**
+ * @member {module:model/LoggingMessageType} message_type
+ */
+LoggingGenericCommon.prototype['message_type'] = undefined;
+/**
+ * How frequently log files are finalized so they can be available for reading (in seconds).
+ * @member {Number} period
+ * @default 3600
+ */
+LoggingGenericCommon.prototype['period'] = 3600;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} timestamp_format
+ */
+LoggingGenericCommon.prototype['timestamp_format'] = undefined;
 // Implement LoggingAzureblobAllOf interface:
-
-LoggingAzureblobAllOf.prototype['path'] = 'null';
-
+/**
+ * The unique Azure Blob Storage namespace in which your data objects are stored. Required.
+ * @member {String} account_name
+ */
 LoggingAzureblobAllOf.prototype['account_name'] = undefined;
-
+/**
+ * The name of the Azure Blob Storage container in which to store logs. Required.
+ * @member {String} container
+ */
 LoggingAzureblobAllOf.prototype['container'] = undefined;
-
-LoggingAzureblobAllOf.prototype['sas_token'] = undefined;
-
-LoggingAzureblobAllOf.prototype['public_key'] = 'null';
-
+/**
+ * The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
+ * @member {Number} file_max_bytes
+ */
 LoggingAzureblobAllOf.prototype['file_max_bytes'] = undefined;
+/**
+ * The path to upload logs to.
+ * @member {String} path
+ * @default 'null'
+ */
+LoggingAzureblobAllOf.prototype['path'] = 'null';
+/**
+ * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+ * @member {String} public_key
+ * @default 'null'
+ */
+LoggingAzureblobAllOf.prototype['public_key'] = 'null';
+/**
+ * The Azure shared access signature providing write access to the blob service objects. Be sure to update your token before it expires or the logging functionality will not work. Required.
+ * @member {String} sas_token
+ */
+LoggingAzureblobAllOf.prototype['sas_token'] = undefined;
 
 
 

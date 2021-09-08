@@ -1,7 +1,9 @@
-# FastlyApi.LoggingBigqueryApi
+# Fastly.LoggingBigqueryApi
 
 
-
+```javascript
+const apiInstance = new Fastly.LoggingBigqueryApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -16,56 +18,66 @@ Method | Fastly API endpoint | Description
 
 ## `createLogBigquery`
 
-> createLogBigquery(service_id, version_id, opts)
-
-Create a BigQuery log endpoint
+```javascript
+createLogBigquery({ service_id, version_id, [format], , [format_version], , [name], , [placement], , [response_condition], , [secret_key], , [user], , [dataset], , [project_id], , [table], , [template_suffix] })
+```
 
 Create a BigQuery logging object for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingBigqueryApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let opts = {
-  'name': "name_example", // String | The name of the BigQuery logging object. Used as a primary key for API access.
-  'placement': new FastlyApi.LoggingPlacement(), // LoggingPlacement | 
-  'format_version': new FastlyApi.LoggingFormatVersion(), // LoggingFormatVersion | 
-  'response_condition': "response_condition_example", // String | The name of an existing condition in the configured endpoint, or leave blank to always execute.
-  'format': "format_example", // String | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
-  'user': "user_example", // String | Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
-  'secret_key': "secret_key_example", // String | Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
-  'dataset': "dataset_example", // String | Your BigQuery dataset.
-  'table': "table_example", // String | Your BigQuery table.
-  'template_suffix': "template_suffix_example", // String | BigQuery table name suffix template. Optional.
-  'project_id': "project_id_example" // String | Your Google Cloud Platform project ID. Required
-};
-apiInstance.createLogBigquery(service_id, version_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required
+  format: "format_example",
 
+  format_version: new Fastly.LoggingFormatVersion(),
+
+  name: "name_example",
+
+  placement: new Fastly.LoggingPlacement(),
+
+  response_condition: "response_condition_example",
+
+  secret_key: "secret_key_example",
+
+  user: "user_example",
+
+  dataset: "dataset_example",
+
+  project_id: "project_id_example",
+
+  table: "table_example",
+
+  template_suffix: "template_suffix_example",
+};
+
+apiInstance.createLogBigquery(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table. | [optional]
+**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **name** | **String** | The name of the BigQuery logging object. Used as a primary key for API access. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table. | [optional]
-**user** | **String** | Your Google Cloud Platform service account email address. The &#x60;client_email&#x60; field in your service account authentication JSON. Required. | [optional]
 **secret_key** | **String** | Your Google Cloud Platform account secret key. The &#x60;private_key&#x60; field in your service account authentication JSON. Required. | [optional]
+**user** | **String** | Your Google Cloud Platform service account email address. The &#x60;client_email&#x60; field in your service account authentication JSON. Required. | [optional]
 **dataset** | **String** | Your BigQuery dataset. | [optional]
+**project_id** | **String** | Your Google Cloud Platform project ID. Required | [optional]
 **table** | **String** | Your BigQuery table. | [optional]
 **template_suffix** | **String** | BigQuery table name suffix template. Optional. | [optional]
-**project_id** | **String** | Your Google Cloud Platform project ID. Required | [optional]
 
 ### Return type
 
@@ -74,28 +86,28 @@ Name | Type | Description  | Notes
 
 ## `deleteLogBigquery`
 
-> deleteLogBigquery(service_id, version_id, logging_bigquery_name)
-
-Delete a BigQuery log endpoint
+```javascript
+deleteLogBigquery({ service_id, version_id, logging_bigquery_name })
+```
 
 Delete a BigQuery logging object for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingBigqueryApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let logging_bigquery_name = "logging_bigquery_name_example"; // String | 
-apiInstance.deleteLogBigquery(service_id, version_id, logging_bigquery_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_bigquery_name: "logging_bigquery_name_example", // required};
 
+apiInstance.deleteLogBigquery(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -110,28 +122,28 @@ Name | Type | Description  | Notes
 
 ## `getLogBigquery`
 
-> getLogBigquery(service_id, version_id, logging_bigquery_name)
-
-Get a BigQuery log endpoint
+```javascript
+getLogBigquery({ service_id, version_id, logging_bigquery_name })
+```
 
 Get the details for a BigQuery logging object for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingBigqueryApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let logging_bigquery_name = "logging_bigquery_name_example"; // String | 
-apiInstance.getLogBigquery(service_id, version_id, logging_bigquery_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_bigquery_name: "logging_bigquery_name_example", // required};
 
+apiInstance.getLogBigquery(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -146,27 +158,28 @@ Name | Type | Description  | Notes
 
 ## `listLogBigquery`
 
-> listLogBigquery(service_id, version_id)
-
-List BigQuery log endpoints
+```javascript
+listLogBigquery({ service_id, version_id })
+```
 
 List all of the BigQuery logging objects for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingBigqueryApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.listLogBigquery(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.listLogBigquery(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -180,58 +193,67 @@ Name | Type | Description  | Notes
 
 ## `updateLogBigquery`
 
-> updateLogBigquery(service_id, version_id, logging_bigquery_name, opts)
-
-Update a BigQuery log endpoint
+```javascript
+updateLogBigquery({ service_id, version_id, logging_bigquery_name, [format], , [format_version], , [name], , [placement], , [response_condition], , [secret_key], , [user], , [dataset], , [project_id], , [table], , [template_suffix] })
+```
 
 Update a BigQuery logging object for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingBigqueryApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let logging_bigquery_name = "logging_bigquery_name_example"; // String | 
-let opts = {
-  'name': "name_example", // String | The name of the BigQuery logging object. Used as a primary key for API access.
-  'placement': new FastlyApi.LoggingPlacement(), // LoggingPlacement | 
-  'format_version': new FastlyApi.LoggingFormatVersion(), // LoggingFormatVersion | 
-  'response_condition': "response_condition_example", // String | The name of an existing condition in the configured endpoint, or leave blank to always execute.
-  'format': "format_example", // String | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
-  'user': "user_example", // String | Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
-  'secret_key': "secret_key_example", // String | Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
-  'dataset': "dataset_example", // String | Your BigQuery dataset.
-  'table': "table_example", // String | Your BigQuery table.
-  'template_suffix': "template_suffix_example", // String | BigQuery table name suffix template. Optional.
-  'project_id': "project_id_example" // String | Your Google Cloud Platform project ID. Required
-};
-apiInstance.updateLogBigquery(service_id, version_id, logging_bigquery_name, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_bigquery_name: "logging_bigquery_name_example", // required
+  format: "format_example",
 
+  format_version: new Fastly.LoggingFormatVersion(),
+
+  name: "name_example",
+
+  placement: new Fastly.LoggingPlacement(),
+
+  response_condition: "response_condition_example",
+
+  secret_key: "secret_key_example",
+
+  user: "user_example",
+
+  dataset: "dataset_example",
+
+  project_id: "project_id_example",
+
+  table: "table_example",
+
+  template_suffix: "template_suffix_example",
+};
+
+apiInstance.updateLogBigquery(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
 **logging_bigquery_name** | **String** |  |
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table. | [optional]
+**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **name** | **String** | The name of the BigQuery logging object. Used as a primary key for API access. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table. | [optional]
-**user** | **String** | Your Google Cloud Platform service account email address. The &#x60;client_email&#x60; field in your service account authentication JSON. Required. | [optional]
 **secret_key** | **String** | Your Google Cloud Platform account secret key. The &#x60;private_key&#x60; field in your service account authentication JSON. Required. | [optional]
+**user** | **String** | Your Google Cloud Platform service account email address. The &#x60;client_email&#x60; field in your service account authentication JSON. Required. | [optional]
 **dataset** | **String** | Your BigQuery dataset. | [optional]
+**project_id** | **String** | Your Google Cloud Platform project ID. Required | [optional]
 **table** | **String** | Your BigQuery table. | [optional]
 **template_suffix** | **String** | BigQuery table name suffix template. Optional. | [optional]
-**project_id** | **String** | Your Google Cloud Platform project ID. Required | [optional]
 
 ### Return type
 

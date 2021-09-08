@@ -1,7 +1,9 @@
-# FastlyApi.WafRulesApi
+# Fastly.WafRulesApi
 
 
-
+```javascript
+const apiInstance = new Fastly.WafRulesApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -13,29 +15,30 @@ Method | Fastly API endpoint | Description
 
 ## `getWafRule`
 
-> getWafRule(waf_rule_id, opts)
-
-Get a rule
+```javascript
+getWafRule({ waf_rule_id, [include] })
+```
 
 Get a specific rule. The `id` provided can be the ModSecurity Rule ID or the Fastly generated rule ID.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.WafRulesApi();
-let waf_rule_id = "waf_rule_id_example"; // String | 
-let opts = {
-  'include': waf_tags,waf_rule_revisions // String | Include relationships. Optional, comma-separated values. Permitted values: `waf_tags` and `waf_rule_revisions`. 
+const options = {
+  waf_rule_id: "waf_rule_id_example", // required
+  include: waf_tags,waf_rule_revisions,
 };
-apiInstance.getWafRule(waf_rule_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.getWafRule(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -49,34 +52,42 @@ Name | Type | Description  | Notes
 
 ## `listWafRules`
 
-> listWafRules(opts)
-
-List available WAF rules
+```javascript
+listWafRules({ [filter_modsec_rule_id], [filter_waf_tags_name], [filter_waf_rule_revisions_source], [filter_waf_firewall_id_not_match], [page_number], [page_size], [include] })
+```
 
 List all available WAF rules.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.WafRulesApi();
-let opts = {
-  'filter_modsec_rule_id': "filter_modsec_rule_id_example", // String | Limit the returned rules to a specific ModSecurity rule ID.
-  'filter_waf_tags_name': "filter_waf_tags_name_example", // String | Limit the returned rules to a set linked to a tag by name.
-  'filter_waf_rule_revisions_source': "filter_waf_rule_revisions_source_example", // String | Limit the returned rules to a set linked to a source.
-  'filter_waf_firewall_id_not_match': "filter_waf_firewall_id_not_match_example", // String | Limit the returned rules to a set not included in the active firewall version for a firewall.
-  'page_number': 56, // Number | Current page.
-  'page_size': 20, // Number | Number of records per page.
-  'include': waf_tags,waf_rule_revisions // String | Include relationships. Optional, comma-separated values. Permitted values: `waf_tags` and `waf_rule_revisions`. 
-};
-apiInstance.listWafRules(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
 
+  filter_modsec_rule_id: "filter_modsec_rule_id_example",
+
+  filter_waf_tags_name: "filter_waf_tags_name_example",
+
+  filter_waf_rule_revisions_source: "filter_waf_rule_revisions_source_example",
+
+  filter_waf_firewall_id_not_match: "filter_waf_firewall_id_not_match_example",
+
+  page_number: 56,
+
+  page_size: 20,
+
+  include: waf_tags,waf_rule_revisions,
+};
+
+apiInstance.listWafRules(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

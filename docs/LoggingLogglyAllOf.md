@@ -1,4 +1,4 @@
-# FastlyApi.LoggingLogglyAllOf
+# Fastly.LoggingLogglyAllOf
 
 ## Properties
 

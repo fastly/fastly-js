@@ -15,40 +15,62 @@
 import ApiClient from "../ApiClient";
 import ConditionResponse from '../model/ConditionResponse';
 
-
+/**
+* Condition service.
+* @module api/ConditionApi
+* @version 3.0.0-alpha1
+*/
 export default class ConditionApi {
 
-    
+    /**
+    * Constructs a new ConditionApi. 
+    * @alias module:api/ConditionApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createConditionWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Creates a new condition.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.comment] - A freeform descriptive note.
+     * @param {String} [options.name] - Name of the condition. Required.
+     * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
+     * @param {String} [options.statement] - A conditional expression in VCL used to determine if the condition is met.
+     * @param {module:model/String} [options.type] - Type of the condition. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ConditionResponse} and HTTP response
+     */
+    createConditionWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createCondition");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createCondition");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'comment': opts['comment'],
-        'name': opts['name'],
-        'priority': opts['priority'],
-        'statement': opts['statement'],
-        'type': opts['type']
+        'comment': options['comment'],
+        'name': options['name'],
+        'priority': options['priority'],
+        'statement': options['statement'],
+        'type': options['type']
       };
 
       let authNames = ['token'];
@@ -61,31 +83,53 @@ export default class ConditionApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createCondition(service_id, version_id, opts) {
-      return this.createConditionWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Creates a new condition.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.comment] - A freeform descriptive note.
+     * @param {String} [options.name] - Name of the condition. Required.
+     * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
+     * @param {String} [options.statement] - A conditional expression in VCL used to determine if the condition is met.
+     * @param {module:model/String} [options.type] - Type of the condition. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ConditionResponse}
+     */
+    createCondition(options = {}) {
+      return this.createConditionWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteConditionWithHttpInfo(service_id, version_id, condition_name) {
+
+    /**
+     * Deletes the specified condition.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.condition_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteConditionWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteCondition");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteCondition");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'condition_name' is set
-      if (condition_name === undefined || condition_name === null) {
-        throw new Error("Missing the required parameter 'condition_name' when calling deleteCondition");
+      // Verify the required parameter 'condition_name' is set.
+      if (options['condition_name'] === undefined || options['condition_name'] === null) {
+        throw new Error("Missing the required parameter 'condition_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'condition_name': condition_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'condition_name': options['condition_name']
       };
       let queryParams = {
       };
@@ -104,31 +148,49 @@ export default class ConditionApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteCondition(service_id, version_id, condition_name) {
-      return this.deleteConditionWithHttpInfo(service_id, version_id, condition_name)
+
+    /**
+     * Deletes the specified condition.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.condition_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteCondition(options = {}) {
+      return this.deleteConditionWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getConditionWithHttpInfo(service_id, version_id, condition_name) {
+
+    /**
+     * Gets the specified condition.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.condition_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ConditionResponse} and HTTP response
+     */
+    getConditionWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getCondition");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getCondition");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'condition_name' is set
-      if (condition_name === undefined || condition_name === null) {
-        throw new Error("Missing the required parameter 'condition_name' when calling getCondition");
+      // Verify the required parameter 'condition_name' is set.
+      if (options['condition_name'] === undefined || options['condition_name'] === null) {
+        throw new Error("Missing the required parameter 'condition_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'condition_name': condition_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'condition_name': options['condition_name']
       };
       let queryParams = {
       };
@@ -147,26 +209,43 @@ export default class ConditionApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getCondition(service_id, version_id, condition_name) {
-      return this.getConditionWithHttpInfo(service_id, version_id, condition_name)
+
+    /**
+     * Gets the specified condition.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.condition_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ConditionResponse}
+     */
+    getCondition(options = {}) {
+      return this.getConditionWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listConditionsWithHttpInfo(service_id, version_id) {
+
+    /**
+     * Gets all conditions for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ConditionResponse>} and HTTP response
+     */
+    listConditionsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listConditions");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listConditions");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -185,43 +264,64 @@ export default class ConditionApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listConditions(service_id, version_id) {
-      return this.listConditionsWithHttpInfo(service_id, version_id)
+
+    /**
+     * Gets all conditions for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ConditionResponse>}
+     */
+    listConditions(options = {}) {
+      return this.listConditionsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateConditionWithHttpInfo(service_id, version_id, condition_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Updates the specified condition.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.condition_name
+     * @param {String} [options.comment] - A freeform descriptive note.
+     * @param {String} [options.name] - Name of the condition. Required.
+     * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
+     * @param {String} [options.statement] - A conditional expression in VCL used to determine if the condition is met.
+     * @param {module:model/String} [options.type] - Type of the condition. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ConditionResponse} and HTTP response
+     */
+    updateConditionWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateCondition");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateCondition");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'condition_name' is set
-      if (condition_name === undefined || condition_name === null) {
-        throw new Error("Missing the required parameter 'condition_name' when calling updateCondition");
+      // Verify the required parameter 'condition_name' is set.
+      if (options['condition_name'] === undefined || options['condition_name'] === null) {
+        throw new Error("Missing the required parameter 'condition_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'condition_name': condition_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'condition_name': options['condition_name']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'comment': opts['comment'],
-        'name': opts['name'],
-        'priority': opts['priority'],
-        'statement': opts['statement'],
-        'type': opts['type']
+        'comment': options['comment'],
+        'name': options['name'],
+        'priority': options['priority'],
+        'statement': options['statement'],
+        'type': options['type']
       };
 
       let authNames = ['token'];
@@ -234,8 +334,22 @@ export default class ConditionApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateCondition(service_id, version_id, condition_name, opts) {
-      return this.updateConditionWithHttpInfo(service_id, version_id, condition_name, opts)
+
+    /**
+     * Updates the specified condition.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.condition_name
+     * @param {String} [options.comment] - A freeform descriptive note.
+     * @param {String} [options.name] - Name of the condition. Required.
+     * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
+     * @param {String} [options.statement] - A conditional expression in VCL used to determine if the condition is met.
+     * @param {module:model/String} [options.type] - Type of the condition. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ConditionResponse}
+     */
+    updateCondition(options = {}) {
+      return this.updateConditionWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

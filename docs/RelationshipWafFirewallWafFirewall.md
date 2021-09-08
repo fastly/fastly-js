@@ -1,4 +1,4 @@
-# FastlyApi.RelationshipWafFirewallWafFirewall
+# Fastly.RelationshipWafFirewallWafFirewall
 
 ## Properties
 

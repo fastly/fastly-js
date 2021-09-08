@@ -13,25 +13,45 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The LoggingNewrelicAllOf model module.
+ * @module model/LoggingNewrelicAllOf
+ * @version 3.0.0-alpha1
+ */
 class LoggingNewrelicAllOf {
-    
+    /**
+     * Constructs a new <code>LoggingNewrelicAllOf</code>.
+     * @alias module:model/LoggingNewrelicAllOf
+     */
     constructor() { 
         
         LoggingNewrelicAllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingNewrelicAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingNewrelicAllOf} obj Optional instance to populate.
+     * @return {module:model/LoggingNewrelicAllOf} The populated <code>LoggingNewrelicAllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingNewrelicAllOf();
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], Object);
+            }
+            if (data.hasOwnProperty('region')) {
+                obj['region'] = ApiClient.convertToType(data['region'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -43,14 +63,48 @@ class LoggingNewrelicAllOf {
 
 }
 
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest.
+ * @member {Object} format
+ */
 LoggingNewrelicAllOf.prototype['format'] = undefined;
 
+/**
+ * The region to which to stream logs.
+ * @member {module:model/LoggingNewrelicAllOf.RegionEnum} region
+ * @default 'US'
+ */
+LoggingNewrelicAllOf.prototype['region'] = 'US';
 
+/**
+ * The Insert API key from the Account page of your New Relic account. Required.
+ * @member {String} token
+ */
 LoggingNewrelicAllOf.prototype['token'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>region</code> property.
+ * @enum {String}
+ * @readonly
+ */
+LoggingNewrelicAllOf['RegionEnum'] = {
+
+    /**
+     * value: "US"
+     * @const
+     */
+    "US": "US",
+
+    /**
+     * value: "EU"
+     * @const
+     */
+    "EU": "EU"
+};
 
 
 

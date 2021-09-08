@@ -16,31 +16,48 @@ import InvitationDataAttributes from './InvitationDataAttributes';
 import RelationshipServiceInvitationsCreate from './RelationshipServiceInvitationsCreate';
 import TypeInvitation from './TypeInvitation';
 
-
+/**
+ * The InvitationData model module.
+ * @module model/InvitationData
+ * @version 3.0.0-alpha1
+ */
 class InvitationData {
-    
+    /**
+     * Constructs a new <code>InvitationData</code>.
+     * @alias module:model/InvitationData
+     */
     constructor() { 
         
         InvitationData.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>InvitationData</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/InvitationData} obj Optional instance to populate.
+     * @return {module:model/InvitationData} The populated <code>InvitationData</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new InvitationData();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeInvitation.constructFromObject(data['type']);
-            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = InvitationDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = RelationshipServiceInvitationsCreate.constructFromObject(data['relationships']);
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeInvitation.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -49,14 +66,20 @@ class InvitationData {
 
 }
 
-
-InvitationData.prototype['type'] = undefined;
-
-
+/**
+ * @member {module:model/InvitationDataAttributes} attributes
+ */
 InvitationData.prototype['attributes'] = undefined;
 
-
+/**
+ * @member {module:model/RelationshipServiceInvitationsCreate} relationships
+ */
 InvitationData.prototype['relationships'] = undefined;
+
+/**
+ * @member {module:model/TypeInvitation} type
+ */
+InvitationData.prototype['type'] = undefined;
 
 
 

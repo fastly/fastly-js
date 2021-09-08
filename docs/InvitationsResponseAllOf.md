@@ -1,4 +1,4 @@
-# FastlyApi.InvitationsResponseAllOf
+# Fastly.InvitationsResponseAllOf
 
 ## Properties
 

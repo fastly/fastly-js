@@ -1,4 +1,4 @@
-# FastlyApi.TypeStar
+# Fastly.TypeStar
 
 ## Enum
 

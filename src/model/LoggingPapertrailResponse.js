@@ -18,19 +18,39 @@ import LoggingPlacement from './LoggingPlacement';
 import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Timestamps from './Timestamps';
 
-
+/**
+ * The LoggingPapertrailResponse model module.
+ * @module model/LoggingPapertrailResponse
+ * @version 3.0.0-alpha1
+ */
 class LoggingPapertrailResponse {
-    
+    /**
+     * Constructs a new <code>LoggingPapertrailResponse</code>.
+     * @alias module:model/LoggingPapertrailResponse
+     * @implements module:model/LoggingPapertrail
+     * @implements module:model/Timestamps
+     * @implements module:model/ServiceIdAndVersion
+     */
     constructor() { 
         LoggingPapertrail.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
         LoggingPapertrailResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingPapertrailResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingPapertrailResponse} obj Optional instance to populate.
+     * @return {module:model/LoggingPapertrailResponse} The populated <code>LoggingPapertrailResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingPapertrailResponse();
@@ -38,20 +58,20 @@ class LoggingPapertrailResponse {
             Timestamps.constructFromObject(data, obj);
             ServiceIdAndVersion.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
             }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
-            }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
-            }
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
             if (data.hasOwnProperty('address')) {
                 obj['address'] = ApiClient.convertToType(data['address'], 'String');
@@ -81,69 +101,141 @@ class LoggingPapertrailResponse {
 
 }
 
-
-LoggingPapertrailResponse.prototype['name'] = undefined;
-
-
-LoggingPapertrailResponse.prototype['placement'] = undefined;
-
-
-LoggingPapertrailResponse.prototype['format_version'] = undefined;
-
-
-LoggingPapertrailResponse.prototype['response_condition'] = undefined;
-
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
 LoggingPapertrailResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingPapertrailResponse.prototype['format_version'] = undefined;
 
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingPapertrailResponse.prototype['name'] = undefined;
+
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingPapertrailResponse.prototype['placement'] = undefined;
+
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingPapertrailResponse.prototype['response_condition'] = undefined;
+
+/**
+ * A hostname or IPv4 address.
+ * @member {String} address
+ */
 LoggingPapertrailResponse.prototype['address'] = undefined;
 
-
+/**
+ * The port number.
+ * @member {Number} port
+ * @default 514
+ */
 LoggingPapertrailResponse.prototype['port'] = 514;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 LoggingPapertrailResponse.prototype['created_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 LoggingPapertrailResponse.prototype['deleted_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 LoggingPapertrailResponse.prototype['updated_at'] = undefined;
 
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 LoggingPapertrailResponse.prototype['service_id'] = undefined;
 
-
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
 LoggingPapertrailResponse.prototype['version'] = undefined;
 
 
 // Implement LoggingPapertrail interface:
-
-LoggingPapertrail.prototype['name'] = undefined;
-
-LoggingPapertrail.prototype['placement'] = undefined;
-
-LoggingPapertrail.prototype['format_version'] = undefined;
-
-LoggingPapertrail.prototype['response_condition'] = undefined;
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
 LoggingPapertrail.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingPapertrail.prototype['format_version'] = undefined;
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingPapertrail.prototype['name'] = undefined;
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingPapertrail.prototype['placement'] = undefined;
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingPapertrail.prototype['response_condition'] = undefined;
+/**
+ * A hostname or IPv4 address.
+ * @member {String} address
+ */
 LoggingPapertrail.prototype['address'] = undefined;
-
+/**
+ * The port number.
+ * @member {Number} port
+ * @default 514
+ */
 LoggingPapertrail.prototype['port'] = 514;
 // Implement Timestamps interface:
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 Timestamps.prototype['created_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 Timestamps.prototype['deleted_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 Timestamps.prototype['updated_at'] = undefined;
 // Implement ServiceIdAndVersion interface:
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 ServiceIdAndVersion.prototype['service_id'] = undefined;
-
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
 ServiceIdAndVersion.prototype['version'] = undefined;
 
 

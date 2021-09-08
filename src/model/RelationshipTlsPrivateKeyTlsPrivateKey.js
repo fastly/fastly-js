@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import RelationshipMemberTlsPrivateKey from './RelationshipMemberTlsPrivateKey';
 
-
+/**
+ * The RelationshipTlsPrivateKeyTlsPrivateKey model module.
+ * @module model/RelationshipTlsPrivateKeyTlsPrivateKey
+ * @version 3.0.0-alpha1
+ */
 class RelationshipTlsPrivateKeyTlsPrivateKey {
-    
+    /**
+     * Constructs a new <code>RelationshipTlsPrivateKeyTlsPrivateKey</code>.
+     * @alias module:model/RelationshipTlsPrivateKeyTlsPrivateKey
+     */
     constructor() { 
         
         RelationshipTlsPrivateKeyTlsPrivateKey.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipTlsPrivateKeyTlsPrivateKey</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipTlsPrivateKeyTlsPrivateKey} obj Optional instance to populate.
+     * @return {module:model/RelationshipTlsPrivateKeyTlsPrivateKey} The populated <code>RelationshipTlsPrivateKeyTlsPrivateKey</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipTlsPrivateKeyTlsPrivateKey();
@@ -41,7 +58,9 @@ class RelationshipTlsPrivateKeyTlsPrivateKey {
 
 }
 
-
+/**
+ * @member {Array.<module:model/RelationshipMemberTlsPrivateKey>} data
+ */
 RelationshipTlsPrivateKeyTlsPrivateKey.prototype['data'] = undefined;
 
 

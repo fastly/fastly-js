@@ -1,4 +1,4 @@
-# FastlyApi.InlineResponse400
+# Fastly.InlineResponse400
 
 ## Properties
 

@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The AclEntryResponseAllOf model module.
+ * @module model/AclEntryResponseAllOf
+ * @version 3.0.0-alpha1
+ */
 class AclEntryResponseAllOf {
-    
+    /**
+     * Constructs a new <code>AclEntryResponseAllOf</code>.
+     * @alias module:model/AclEntryResponseAllOf
+     */
     constructor() { 
         
         AclEntryResponseAllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>AclEntryResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/AclEntryResponseAllOf} obj Optional instance to populate.
+     * @return {module:model/AclEntryResponseAllOf} The populated <code>AclEntryResponseAllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new AclEntryResponseAllOf();
@@ -46,13 +63,22 @@ class AclEntryResponseAllOf {
 
 }
 
-
+/**
+ * Alphanumeric string identifying a ACL.
+ * @member {String} acl_id
+ */
 AclEntryResponseAllOf.prototype['acl_id'] = undefined;
 
-
+/**
+ * Alphanumeric string identifying an ACL Entry.
+ * @member {String} id
+ */
 AclEntryResponseAllOf.prototype['id'] = undefined;
 
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 AclEntryResponseAllOf.prototype['service_id'] = undefined;
 
 

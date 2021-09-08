@@ -17,42 +17,66 @@ import LoggingFormatVersion from '../model/LoggingFormatVersion';
 import LoggingHerokuResponse from '../model/LoggingHerokuResponse';
 import LoggingPlacement from '../model/LoggingPlacement';
 
-
+/**
+* LoggingHeroku service.
+* @module api/LoggingHerokuApi
+* @version 3.0.0-alpha1
+*/
 export default class LoggingHerokuApi {
 
-    
+    /**
+    * Constructs a new LoggingHerokuApi. 
+    * @alias module:api/LoggingHerokuApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createLogHerokuWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Create a Heroku for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.token] - The token to use for authentication ([https://devcenter.heroku.com/articles/add-on-partner-log-integration](https://devcenter.heroku.com/articles/add-on-partner-log-integration)).
+     * @param {String} [options.url] - The URL to stream logs to.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingHerokuResponse} and HTTP response
+     */
+    createLogHerokuWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createLogHeroku");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createLogHeroku");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'token': opts['token'],
-        'url': opts['url']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'token': options['token'],
+        'url': options['url']
       };
 
       let authNames = ['token'];
@@ -65,31 +89,55 @@ export default class LoggingHerokuApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createLogHeroku(service_id, version_id, opts) {
-      return this.createLogHerokuWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Create a Heroku for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.token] - The token to use for authentication ([https://devcenter.heroku.com/articles/add-on-partner-log-integration](https://devcenter.heroku.com/articles/add-on-partner-log-integration)).
+     * @param {String} [options.url] - The URL to stream logs to.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingHerokuResponse}
+     */
+    createLogHeroku(options = {}) {
+      return this.createLogHerokuWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteLogHerokuWithHttpInfo(service_id, version_id, logging_heroku_name) {
+
+    /**
+     * Delete the Heroku for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_heroku_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteLogHerokuWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteLogHeroku");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteLogHeroku");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_heroku_name' is set
-      if (logging_heroku_name === undefined || logging_heroku_name === null) {
-        throw new Error("Missing the required parameter 'logging_heroku_name' when calling deleteLogHeroku");
+      // Verify the required parameter 'logging_heroku_name' is set.
+      if (options['logging_heroku_name'] === undefined || options['logging_heroku_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_heroku_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_heroku_name': logging_heroku_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_heroku_name': options['logging_heroku_name']
       };
       let queryParams = {
       };
@@ -108,31 +156,49 @@ export default class LoggingHerokuApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteLogHeroku(service_id, version_id, logging_heroku_name) {
-      return this.deleteLogHerokuWithHttpInfo(service_id, version_id, logging_heroku_name)
+
+    /**
+     * Delete the Heroku for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_heroku_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteLogHeroku(options = {}) {
+      return this.deleteLogHerokuWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getLogHerokuWithHttpInfo(service_id, version_id, logging_heroku_name) {
+
+    /**
+     * Get the Heroku for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_heroku_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingHerokuResponse} and HTTP response
+     */
+    getLogHerokuWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getLogHeroku");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getLogHeroku");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_heroku_name' is set
-      if (logging_heroku_name === undefined || logging_heroku_name === null) {
-        throw new Error("Missing the required parameter 'logging_heroku_name' when calling getLogHeroku");
+      // Verify the required parameter 'logging_heroku_name' is set.
+      if (options['logging_heroku_name'] === undefined || options['logging_heroku_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_heroku_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_heroku_name': logging_heroku_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_heroku_name': options['logging_heroku_name']
       };
       let queryParams = {
       };
@@ -151,26 +217,43 @@ export default class LoggingHerokuApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getLogHeroku(service_id, version_id, logging_heroku_name) {
-      return this.getLogHerokuWithHttpInfo(service_id, version_id, logging_heroku_name)
+
+    /**
+     * Get the Heroku for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_heroku_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingHerokuResponse}
+     */
+    getLogHeroku(options = {}) {
+      return this.getLogHerokuWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listLogHerokuWithHttpInfo(service_id, version_id) {
+
+    /**
+     * List all of the Herokus for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingHerokuResponse>} and HTTP response
+     */
+    listLogHerokuWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listLogHeroku");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listLogHeroku");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -189,45 +272,68 @@ export default class LoggingHerokuApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listLogHeroku(service_id, version_id) {
-      return this.listLogHerokuWithHttpInfo(service_id, version_id)
+
+    /**
+     * List all of the Herokus for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingHerokuResponse>}
+     */
+    listLogHeroku(options = {}) {
+      return this.listLogHerokuWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateLogHerokuWithHttpInfo(service_id, version_id, logging_heroku_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Update the Heroku for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_heroku_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.token] - The token to use for authentication ([https://devcenter.heroku.com/articles/add-on-partner-log-integration](https://devcenter.heroku.com/articles/add-on-partner-log-integration)).
+     * @param {String} [options.url] - The URL to stream logs to.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingHerokuResponse} and HTTP response
+     */
+    updateLogHerokuWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateLogHeroku");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateLogHeroku");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_heroku_name' is set
-      if (logging_heroku_name === undefined || logging_heroku_name === null) {
-        throw new Error("Missing the required parameter 'logging_heroku_name' when calling updateLogHeroku");
+      // Verify the required parameter 'logging_heroku_name' is set.
+      if (options['logging_heroku_name'] === undefined || options['logging_heroku_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_heroku_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_heroku_name': logging_heroku_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_heroku_name': options['logging_heroku_name']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'token': opts['token'],
-        'url': opts['url']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'token': options['token'],
+        'url': options['url']
       };
 
       let authNames = ['token'];
@@ -240,8 +346,24 @@ export default class LoggingHerokuApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateLogHeroku(service_id, version_id, logging_heroku_name, opts) {
-      return this.updateLogHerokuWithHttpInfo(service_id, version_id, logging_heroku_name, opts)
+
+    /**
+     * Update the Heroku for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_heroku_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.token] - The token to use for authentication ([https://devcenter.heroku.com/articles/add-on-partner-log-integration](https://devcenter.heroku.com/articles/add-on-partner-log-integration)).
+     * @param {String} [options.url] - The URL to stream logs to.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingHerokuResponse}
+     */
+    updateLogHeroku(options = {}) {
+      return this.updateLogHerokuWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

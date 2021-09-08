@@ -1,4 +1,4 @@
-# FastlyApi.TypeCustomer
+# Fastly.TypeCustomer
 
 ## Enum
 

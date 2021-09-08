@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The LoggingHerokuAllOf model module.
+ * @module model/LoggingHerokuAllOf
+ * @version 3.0.0-alpha1
+ */
 class LoggingHerokuAllOf {
-    
+    /**
+     * Constructs a new <code>LoggingHerokuAllOf</code>.
+     * @alias module:model/LoggingHerokuAllOf
+     */
     constructor() { 
         
         LoggingHerokuAllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingHerokuAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingHerokuAllOf} obj Optional instance to populate.
+     * @return {module:model/LoggingHerokuAllOf} The populated <code>LoggingHerokuAllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingHerokuAllOf();
@@ -43,10 +60,16 @@ class LoggingHerokuAllOf {
 
 }
 
-
+/**
+ * The token to use for authentication ([https://devcenter.heroku.com/articles/add-on-partner-log-integration](https://devcenter.heroku.com/articles/add-on-partner-log-integration)).
+ * @member {String} token
+ */
 LoggingHerokuAllOf.prototype['token'] = undefined;
 
-
+/**
+ * The URL to stream logs to.
+ * @member {String} url
+ */
 LoggingHerokuAllOf.prototype['url'] = undefined;
 
 

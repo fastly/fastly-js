@@ -19,19 +19,39 @@ import LoggingUseTls from './LoggingUseTls';
 import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Timestamps from './Timestamps';
 
-
+/**
+ * The LoggingLogentriesResponse model module.
+ * @module model/LoggingLogentriesResponse
+ * @version 3.0.0-alpha1
+ */
 class LoggingLogentriesResponse {
-    
+    /**
+     * Constructs a new <code>LoggingLogentriesResponse</code>.
+     * @alias module:model/LoggingLogentriesResponse
+     * @implements module:model/LoggingLogentries
+     * @implements module:model/Timestamps
+     * @implements module:model/ServiceIdAndVersion
+     */
     constructor() { 
         LoggingLogentries.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
         LoggingLogentriesResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingLogentriesResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingLogentriesResponse} obj Optional instance to populate.
+     * @return {module:model/LoggingLogentriesResponse} The populated <code>LoggingLogentriesResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingLogentriesResponse();
@@ -39,32 +59,32 @@ class LoggingLogentriesResponse {
             Timestamps.constructFromObject(data, obj);
             ServiceIdAndVersion.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
             }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
-            }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
             }
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], 'String');
-            }
             if (data.hasOwnProperty('port')) {
                 obj['port'] = ApiClient.convertToType(data['port'], 'Number');
+            }
+            if (data.hasOwnProperty('region')) {
+                obj['region'] = ApiClient.convertToType(data['region'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('use_tls')) {
                 obj['use_tls'] = LoggingUseTls.constructFromObject(data['use_tls']);
-            }
-            if (data.hasOwnProperty('region')) {
-                obj['region'] = ApiClient.convertToType(data['region'], 'String');
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
@@ -88,105 +108,212 @@ class LoggingLogentriesResponse {
 
 }
 
-
-LoggingLogentriesResponse.prototype['name'] = undefined;
-
-
-LoggingLogentriesResponse.prototype['placement'] = undefined;
-
-
-LoggingLogentriesResponse.prototype['format_version'] = undefined;
-
-
-LoggingLogentriesResponse.prototype['response_condition'] = undefined;
-
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
 LoggingLogentriesResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingLogentriesResponse.prototype['format_version'] = undefined;
 
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingLogentriesResponse.prototype['name'] = undefined;
+
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingLogentriesResponse.prototype['placement'] = undefined;
+
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingLogentriesResponse.prototype['response_condition'] = undefined;
+
+/**
+ * The port number.
+ * @member {Number} port
+ * @default 20000
+ */
 LoggingLogentriesResponse.prototype['port'] = 20000;
 
-
-LoggingLogentriesResponse.prototype['token'] = undefined;
-
-
-LoggingLogentriesResponse.prototype['use_tls'] = undefined;
-
-
+/**
+ * The region to which to stream logs.
+ * @member {module:model/LoggingLogentriesResponse.RegionEnum} region
+ */
 LoggingLogentriesResponse.prototype['region'] = undefined;
 
+/**
+ * Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
+ * @member {String} token
+ */
+LoggingLogentriesResponse.prototype['token'] = undefined;
 
+/**
+ * @member {module:model/LoggingUseTls} use_tls
+ */
+LoggingLogentriesResponse.prototype['use_tls'] = undefined;
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 LoggingLogentriesResponse.prototype['created_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 LoggingLogentriesResponse.prototype['deleted_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 LoggingLogentriesResponse.prototype['updated_at'] = undefined;
 
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 LoggingLogentriesResponse.prototype['service_id'] = undefined;
 
-
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
 LoggingLogentriesResponse.prototype['version'] = undefined;
 
 
 // Implement LoggingLogentries interface:
-
-LoggingLogentries.prototype['name'] = undefined;
-
-LoggingLogentries.prototype['placement'] = undefined;
-
-LoggingLogentries.prototype['format_version'] = undefined;
-
-LoggingLogentries.prototype['response_condition'] = undefined;
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
 LoggingLogentries.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingLogentries.prototype['format_version'] = undefined;
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingLogentries.prototype['name'] = undefined;
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingLogentries.prototype['placement'] = undefined;
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingLogentries.prototype['response_condition'] = undefined;
+/**
+ * The port number.
+ * @member {Number} port
+ * @default 20000
+ */
 LoggingLogentries.prototype['port'] = 20000;
-
-LoggingLogentries.prototype['token'] = undefined;
-
-LoggingLogentries.prototype['use_tls'] = undefined;
-
+/**
+ * The region to which to stream logs.
+ * @member {module:model/LoggingLogentries.RegionEnum} region
+ */
 LoggingLogentries.prototype['region'] = undefined;
+/**
+ * Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
+ * @member {String} token
+ */
+LoggingLogentries.prototype['token'] = undefined;
+/**
+ * @member {module:model/LoggingUseTls} use_tls
+ */
+LoggingLogentries.prototype['use_tls'] = undefined;
 // Implement Timestamps interface:
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 Timestamps.prototype['created_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 Timestamps.prototype['deleted_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 Timestamps.prototype['updated_at'] = undefined;
 // Implement ServiceIdAndVersion interface:
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 ServiceIdAndVersion.prototype['service_id'] = undefined;
-
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
 ServiceIdAndVersion.prototype['version'] = undefined;
 
 
 
-
+/**
+ * Allowed values for the <code>region</code> property.
+ * @enum {String}
+ * @readonly
+ */
 LoggingLogentriesResponse['RegionEnum'] = {
 
-    
+    /**
+     * value: "US"
+     * @const
+     */
     "US": "US",
 
-    
+    /**
+     * value: "US-2"
+     * @const
+     */
     "US-2": "US-2",
 
-    
+    /**
+     * value: "US-3"
+     * @const
+     */
     "US-3": "US-3",
 
-    
+    /**
+     * value: "EU"
+     * @const
+     */
     "EU": "EU",
 
-    
+    /**
+     * value: "CA"
+     * @const
+     */
     "CA": "CA",
 
-    
+    /**
+     * value: "AU"
+     * @const
+     */
     "AU": "AU",
 
-    
+    /**
+     * value: "AP"
+     * @const
+     */
     "AP": "AP"
 };
 

@@ -1,7 +1,9 @@
-# FastlyApi.InvitationsApi
+# Fastly.InvitationsApi
 
 
-
+```javascript
+const apiInstance = new Fastly.InvitationsApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -14,28 +16,30 @@ Method | Fastly API endpoint | Description
 
 ## `createInvitation`
 
-> createInvitation(opts)
-
-Create an invitation
+```javascript
+createInvitation({ [invitation] })
+```
 
 Create an invitation.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.InvitationsApi();
-let opts = {
-  'invitation': {"data":{"type":"invitation","attributes":{"email":"thelma@example.com","limit_services":true,"role":"engineer"},"relationships":{"customer":{"data":{"id":"44tb1D3asjhhuh2SH8e8YD","type":"customer"}},"service_invitations":{"data":[{"type":"service_invitation","attributes":{"permission":"purge_all"},"relationships":{"service":{"data":{"type":"service","id":"6yrrdleXQ9QDtum9rMB0nr"}}}}]}}}} // Invitation | 
-};
-apiInstance.createInvitation(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
 
+  invitation: new Fastly.Invitation(),
+};
+
+apiInstance.createInvitation(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -48,26 +52,28 @@ Name | Type | Description  | Notes
 
 ## `deleteInvitation`
 
-> deleteInvitation(invitation_id)
-
-Delete an invitation
+```javascript
+deleteInvitation({ invitation_id })
+```
 
 Delete an invitation.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.InvitationsApi();
-let invitation_id = "invitation_id_example"; // String | 
-apiInstance.deleteInvitation(invitation_id).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  invitation_id: "invitation_id_example", // required};
 
+apiInstance.deleteInvitation(options)
+  .then(() => {
+    console.log('API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -80,29 +86,32 @@ null (empty response body)
 
 ## `listInvitations`
 
-> listInvitations(opts)
-
-List invitations
+```javascript
+listInvitations({ [page_number], [page_size] })
+```
 
 List all invitations.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.InvitationsApi();
-let opts = {
-  'page_number': 56, // Number | Current page.
-  'page_size': 20 // Number | Number of records per page.
-};
-apiInstance.listInvitations(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
 
+  page_number: 56,
+
+  page_size: 20,
+};
+
+apiInstance.listInvitations(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

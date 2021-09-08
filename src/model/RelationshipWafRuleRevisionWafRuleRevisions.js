@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import RelationshipMemberWafRuleRevision from './RelationshipMemberWafRuleRevision';
 
-
+/**
+ * The RelationshipWafRuleRevisionWafRuleRevisions model module.
+ * @module model/RelationshipWafRuleRevisionWafRuleRevisions
+ * @version 3.0.0-alpha1
+ */
 class RelationshipWafRuleRevisionWafRuleRevisions {
-    
+    /**
+     * Constructs a new <code>RelationshipWafRuleRevisionWafRuleRevisions</code>.
+     * @alias module:model/RelationshipWafRuleRevisionWafRuleRevisions
+     */
     constructor() { 
         
         RelationshipWafRuleRevisionWafRuleRevisions.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipWafRuleRevisionWafRuleRevisions</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipWafRuleRevisionWafRuleRevisions} obj Optional instance to populate.
+     * @return {module:model/RelationshipWafRuleRevisionWafRuleRevisions} The populated <code>RelationshipWafRuleRevisionWafRuleRevisions</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipWafRuleRevisionWafRuleRevisions();
@@ -41,7 +58,9 @@ class RelationshipWafRuleRevisionWafRuleRevisions {
 
 }
 
-
+/**
+ * @member {Array.<module:model/RelationshipMemberWafRuleRevision>} data
+ */
 RelationshipWafRuleRevisionWafRuleRevisions.prototype['data'] = undefined;
 
 

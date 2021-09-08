@@ -12,19 +12,33 @@
  */
 
 import ApiClient from '../ApiClient';
-
+/**
+* Enum class LoggingFormatVersion.
+* @enum {}
+* @readonly
+*/
 export default class LoggingFormatVersion {
     
-        
+        /**
+         * value: 1
+         * @const
+         */
         "v1" = 1;
 
     
-        
+        /**
+         * value: 2
+         * @const
+         */
         "v2" = 2;
 
     
 
-    
+    /**
+    * Returns a <code>LoggingFormatVersion</code> enum value from a Javascript object name.
+    * @param {Object} data The plain JavaScript object containing the name of the enum value.
+    * @return {module:model/LoggingFormatVersion} The enum <code>LoggingFormatVersion</code> value.
+    */
     static constructFromObject(object) {
         return object;
     }

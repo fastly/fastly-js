@@ -1,4 +1,4 @@
-# FastlyApi.LoggingMessageType
+# Fastly.LoggingMessageType
 
 ## Enum
 

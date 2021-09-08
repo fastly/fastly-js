@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The Healthcheck model module.
+ * @module model/Healthcheck
+ * @version 3.0.0-alpha1
+ */
 class Healthcheck {
-    
+    /**
+     * Constructs a new <code>Healthcheck</code>.
+     * @alias module:model/Healthcheck
+     */
     constructor() { 
         
         Healthcheck.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>Healthcheck</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/Healthcheck} obj Optional instance to populate.
+     * @return {module:model/Healthcheck} The populated <code>Healthcheck</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new Healthcheck();
@@ -73,40 +90,76 @@ class Healthcheck {
 
 }
 
-
+/**
+ * How often to run the healthcheck in milliseconds.
+ * @member {Number} check_interval
+ */
 Healthcheck.prototype['check_interval'] = undefined;
 
-
+/**
+ * A freeform descriptive note.
+ * @member {String} comment
+ */
 Healthcheck.prototype['comment'] = undefined;
 
-
+/**
+ * The status code expected from the host.
+ * @member {Number} expected_response
+ */
 Healthcheck.prototype['expected_response'] = undefined;
 
-
+/**
+ * Which host to check.
+ * @member {String} host
+ */
 Healthcheck.prototype['host'] = undefined;
 
-
+/**
+ * Whether to use version 1.0 or 1.1 HTTP.
+ * @member {String} http_version
+ */
 Healthcheck.prototype['http_version'] = undefined;
 
-
+/**
+ * When loading a config, the initial number of probes to be seen as OK.
+ * @member {Number} initial
+ */
 Healthcheck.prototype['initial'] = undefined;
 
-
+/**
+ * Which HTTP method to use.
+ * @member {String} method
+ */
 Healthcheck.prototype['method'] = undefined;
 
-
+/**
+ * The name of the healthcheck.
+ * @member {String} name
+ */
 Healthcheck.prototype['name'] = undefined;
 
-
+/**
+ * The path to check.
+ * @member {String} path
+ */
 Healthcheck.prototype['path'] = undefined;
 
-
+/**
+ * How many healthchecks must succeed to be considered healthy.
+ * @member {Number} threshold
+ */
 Healthcheck.prototype['threshold'] = undefined;
 
-
+/**
+ * Timeout in milliseconds.
+ * @member {Number} timeout
+ */
 Healthcheck.prototype['timeout'] = undefined;
 
-
+/**
+ * The number of most recent healthcheck queries to keep for this healthcheck.
+ * @member {Number} window
+ */
 Healthcheck.prototype['window'] = undefined;
 
 

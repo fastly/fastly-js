@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The Acl model module.
+ * @module model/Acl
+ * @version 3.0.0-alpha1
+ */
 class Acl {
-    
+    /**
+     * Constructs a new <code>Acl</code>.
+     * @alias module:model/Acl
+     */
     constructor() { 
         
         Acl.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>Acl</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/Acl} obj Optional instance to populate.
+     * @return {module:model/Acl} The populated <code>Acl</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new Acl();
@@ -40,7 +57,10 @@ class Acl {
 
 }
 
-
+/**
+ * Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace.
+ * @member {String} name
+ */
 Acl.prototype['name'] = undefined;
 
 

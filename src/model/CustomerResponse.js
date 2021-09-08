@@ -16,19 +16,39 @@ import Customer from './Customer';
 import CustomerResponseAllOf from './CustomerResponseAllOf';
 import Timestamps from './Timestamps';
 
-
+/**
+ * The CustomerResponse model module.
+ * @module model/CustomerResponse
+ * @version 3.0.0-alpha1
+ */
 class CustomerResponse {
-    
+    /**
+     * Constructs a new <code>CustomerResponse</code>.
+     * @alias module:model/CustomerResponse
+     * @implements module:model/Customer
+     * @implements module:model/Timestamps
+     * @implements module:model/CustomerResponseAllOf
+     */
     constructor() { 
         Customer.initialize(this);Timestamps.initialize(this);CustomerResponseAllOf.initialize(this);
         CustomerResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>CustomerResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/CustomerResponse} obj Optional instance to populate.
+     * @return {module:model/CustomerResponse} The populated <code>CustomerResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new CustomerResponse();
@@ -127,160 +147,338 @@ class CustomerResponse {
 
 }
 
-
+/**
+ * The alphanumeric string representing the primary billing contact.
+ * @member {String} billing_contact_id
+ */
 CustomerResponse.prototype['billing_contact_id'] = undefined;
 
-
+/**
+ * Customer's current network revenue type.
+ * @member {module:model/CustomerResponse.BillingNetworkTypeEnum} billing_network_type
+ */
 CustomerResponse.prototype['billing_network_type'] = undefined;
 
-
+/**
+ * Used for adding purchased orders to customer's account.
+ * @member {String} billing_ref
+ */
 CustomerResponse.prototype['billing_ref'] = undefined;
 
-
+/**
+ * Whether this customer can view or edit wordpress.
+ * @member {Boolean} can_configure_wordpress
+ */
 CustomerResponse.prototype['can_configure_wordpress'] = undefined;
 
-
+/**
+ * Whether this customer can reset passwords.
+ * @member {Boolean} can_reset_passwords
+ */
 CustomerResponse.prototype['can_reset_passwords'] = undefined;
 
-
+/**
+ * Whether this customer can upload VCL.
+ * @member {Boolean} can_upload_vcl
+ */
 CustomerResponse.prototype['can_upload_vcl'] = undefined;
 
-
+/**
+ * Specifies whether 2FA is forced or not forced on the customer account. Logs out non-2FA users once 2FA is force enabled.
+ * @member {Boolean} force_2fa
+ */
 CustomerResponse.prototype['force_2fa'] = undefined;
 
-
+/**
+ * Specifies whether SSO is forced or not forced on the customer account.
+ * @member {Boolean} force_sso
+ */
 CustomerResponse.prototype['force_sso'] = undefined;
 
-
+/**
+ * Specifies whether the account has access or does not have access to the account panel.
+ * @member {Boolean} has_account_panel
+ */
 CustomerResponse.prototype['has_account_panel'] = undefined;
 
-
+/**
+ * Specifies whether the account has access or does not have access to the improved events.
+ * @member {Boolean} has_improved_events
+ */
 CustomerResponse.prototype['has_improved_events'] = undefined;
 
-
+/**
+ * Whether this customer can view or edit the SSL config.
+ * @member {Boolean} has_improved_ssl_config
+ */
 CustomerResponse.prototype['has_improved_ssl_config'] = undefined;
 
-
+/**
+ * Specifies whether the account has enabled or not enabled openstack logging.
+ * @member {Boolean} has_openstack_logging
+ */
 CustomerResponse.prototype['has_openstack_logging'] = undefined;
 
-
+/**
+ * Specifies whether the account can edit PCI for a service.
+ * @member {Boolean} has_pci
+ */
 CustomerResponse.prototype['has_pci'] = undefined;
 
-
+/**
+ * Specifies whether PCI passwords are required for the account.
+ * @member {Boolean} has_pci_passwords
+ */
 CustomerResponse.prototype['has_pci_passwords'] = undefined;
 
-
+/**
+ * The range of IP addresses authorized to access the customer account.
+ * @member {String} ip_whitelist
+ */
 CustomerResponse.prototype['ip_whitelist'] = undefined;
 
-
+/**
+ * The alphanumeric string identifying the account's legal contact.
+ * @member {String} legal_contact_id
+ */
 CustomerResponse.prototype['legal_contact_id'] = undefined;
 
-
+/**
+ * The name of the customer, generally the company name.
+ * @member {String} name
+ */
 CustomerResponse.prototype['name'] = undefined;
 
-
+/**
+ * The alphanumeric string identifying the account owner.
+ * @member {String} owner_id
+ */
 CustomerResponse.prototype['owner_id'] = undefined;
 
-
+/**
+ * The phone number associated with the account.
+ * @member {String} phone_number
+ */
 CustomerResponse.prototype['phone_number'] = undefined;
 
-
+/**
+ * The postal address associated with the account.
+ * @member {String} postal_address
+ */
 CustomerResponse.prototype['postal_address'] = undefined;
 
-
+/**
+ * The pricing plan this customer is under.
+ * @member {String} pricing_plan
+ */
 CustomerResponse.prototype['pricing_plan'] = undefined;
 
-
+/**
+ * The alphanumeric string identifying the pricing plan.
+ * @member {String} pricing_plan_id
+ */
 CustomerResponse.prototype['pricing_plan_id'] = undefined;
 
-
+/**
+ * The alphanumeric string identifying the account's security contact.
+ * @member {String} security_contact_id
+ */
 CustomerResponse.prototype['security_contact_id'] = undefined;
 
-
+/**
+ * The alphanumeric string identifying the account's technical contact.
+ * @member {String} technical_contact_id
+ */
 CustomerResponse.prototype['technical_contact_id'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 CustomerResponse.prototype['created_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 CustomerResponse.prototype['deleted_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 CustomerResponse.prototype['updated_at'] = undefined;
 
-
+/**
+ * Alphanumeric string identifying the customer.
+ * @member {String} id
+ */
 CustomerResponse.prototype['id'] = undefined;
 
 
 // Implement Customer interface:
-
+/**
+ * The alphanumeric string representing the primary billing contact.
+ * @member {String} billing_contact_id
+ */
 Customer.prototype['billing_contact_id'] = undefined;
-
+/**
+ * Customer's current network revenue type.
+ * @member {module:model/Customer.BillingNetworkTypeEnum} billing_network_type
+ */
 Customer.prototype['billing_network_type'] = undefined;
-
+/**
+ * Used for adding purchased orders to customer's account.
+ * @member {String} billing_ref
+ */
 Customer.prototype['billing_ref'] = undefined;
-
+/**
+ * Whether this customer can view or edit wordpress.
+ * @member {Boolean} can_configure_wordpress
+ */
 Customer.prototype['can_configure_wordpress'] = undefined;
-
+/**
+ * Whether this customer can reset passwords.
+ * @member {Boolean} can_reset_passwords
+ */
 Customer.prototype['can_reset_passwords'] = undefined;
-
+/**
+ * Whether this customer can upload VCL.
+ * @member {Boolean} can_upload_vcl
+ */
 Customer.prototype['can_upload_vcl'] = undefined;
-
+/**
+ * Specifies whether 2FA is forced or not forced on the customer account. Logs out non-2FA users once 2FA is force enabled.
+ * @member {Boolean} force_2fa
+ */
 Customer.prototype['force_2fa'] = undefined;
-
+/**
+ * Specifies whether SSO is forced or not forced on the customer account.
+ * @member {Boolean} force_sso
+ */
 Customer.prototype['force_sso'] = undefined;
-
+/**
+ * Specifies whether the account has access or does not have access to the account panel.
+ * @member {Boolean} has_account_panel
+ */
 Customer.prototype['has_account_panel'] = undefined;
-
+/**
+ * Specifies whether the account has access or does not have access to the improved events.
+ * @member {Boolean} has_improved_events
+ */
 Customer.prototype['has_improved_events'] = undefined;
-
+/**
+ * Whether this customer can view or edit the SSL config.
+ * @member {Boolean} has_improved_ssl_config
+ */
 Customer.prototype['has_improved_ssl_config'] = undefined;
-
+/**
+ * Specifies whether the account has enabled or not enabled openstack logging.
+ * @member {Boolean} has_openstack_logging
+ */
 Customer.prototype['has_openstack_logging'] = undefined;
-
+/**
+ * Specifies whether the account can edit PCI for a service.
+ * @member {Boolean} has_pci
+ */
 Customer.prototype['has_pci'] = undefined;
-
+/**
+ * Specifies whether PCI passwords are required for the account.
+ * @member {Boolean} has_pci_passwords
+ */
 Customer.prototype['has_pci_passwords'] = undefined;
-
+/**
+ * The range of IP addresses authorized to access the customer account.
+ * @member {String} ip_whitelist
+ */
 Customer.prototype['ip_whitelist'] = undefined;
-
+/**
+ * The alphanumeric string identifying the account's legal contact.
+ * @member {String} legal_contact_id
+ */
 Customer.prototype['legal_contact_id'] = undefined;
-
+/**
+ * The name of the customer, generally the company name.
+ * @member {String} name
+ */
 Customer.prototype['name'] = undefined;
-
+/**
+ * The alphanumeric string identifying the account owner.
+ * @member {String} owner_id
+ */
 Customer.prototype['owner_id'] = undefined;
-
+/**
+ * The phone number associated with the account.
+ * @member {String} phone_number
+ */
 Customer.prototype['phone_number'] = undefined;
-
+/**
+ * The postal address associated with the account.
+ * @member {String} postal_address
+ */
 Customer.prototype['postal_address'] = undefined;
-
+/**
+ * The pricing plan this customer is under.
+ * @member {String} pricing_plan
+ */
 Customer.prototype['pricing_plan'] = undefined;
-
+/**
+ * The alphanumeric string identifying the pricing plan.
+ * @member {String} pricing_plan_id
+ */
 Customer.prototype['pricing_plan_id'] = undefined;
-
+/**
+ * The alphanumeric string identifying the account's security contact.
+ * @member {String} security_contact_id
+ */
 Customer.prototype['security_contact_id'] = undefined;
-
+/**
+ * The alphanumeric string identifying the account's technical contact.
+ * @member {String} technical_contact_id
+ */
 Customer.prototype['technical_contact_id'] = undefined;
 // Implement Timestamps interface:
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 Timestamps.prototype['created_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 Timestamps.prototype['deleted_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 Timestamps.prototype['updated_at'] = undefined;
 // Implement CustomerResponseAllOf interface:
-
+/**
+ * Alphanumeric string identifying the customer.
+ * @member {String} id
+ */
 CustomerResponseAllOf.prototype['id'] = undefined;
 
 
 
-
+/**
+ * Allowed values for the <code>billing_network_type</code> property.
+ * @enum {String}
+ * @readonly
+ */
 CustomerResponse['BillingNetworkTypeEnum'] = {
 
-    
+    /**
+     * value: "public"
+     * @const
+     */
     "public": "public",
 
-    
+    /**
+     * value: "private"
+     * @const
+     */
     "private": "private"
 };
 

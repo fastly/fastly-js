@@ -1,4 +1,4 @@
-# FastlyApi.WafTagsResponse
+# Fastly.WafTagsResponse
 
 ## Properties
 

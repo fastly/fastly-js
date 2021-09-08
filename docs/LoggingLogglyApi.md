@@ -1,7 +1,9 @@
-# FastlyApi.LoggingLogglyApi
+# Fastly.LoggingLogglyApi
 
 
-
+```javascript
+const apiInstance = new Fastly.LoggingLogglyApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -16,45 +18,50 @@ Method | Fastly API endpoint | Description
 
 ## `createLogLoggly`
 
-> createLogLoggly(service_id, version_id, opts)
-
-Create a Loggly log endpoint
+```javascript
+createLogLoggly({ service_id, version_id, [format], , [format_version], , [name], , [placement], , [response_condition], , [token] })
+```
 
 Create a Loggly logging object for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingLogglyApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let opts = {
-  'name': "name_example", // String | The name for the real-time logging configuration.
-  'placement': new FastlyApi.LoggingPlacement(), // LoggingPlacement | 
-  'format_version': new FastlyApi.LoggingFormatVersion(), // LoggingFormatVersion | 
-  'response_condition': "response_condition_example", // String | The name of an existing condition in the configured endpoint, or leave blank to always execute.
-  'format': "'%h %l %u %t \"%r\" %&gt;s %b'", // String | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-  'token': "token_example" // String | The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)).
-};
-apiInstance.createLogLoggly(service_id, version_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
+  format_version: new Fastly.LoggingFormatVersion(),
+
+  name: "name_example",
+
+  placement: new Fastly.LoggingPlacement(),
+
+  response_condition: "response_condition_example",
+
+  token: "token_example",
+};
+
+apiInstance.createLogLoggly(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
+**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
 **token** | **String** | The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)). | [optional]
 
 ### Return type
@@ -64,28 +71,28 @@ Name | Type | Description  | Notes
 
 ## `deleteLogLoggly`
 
-> deleteLogLoggly(service_id, version_id, logging_loggly_name)
-
-Delete a Loggly log endpoint
+```javascript
+deleteLogLoggly({ service_id, version_id, logging_loggly_name })
+```
 
 Delete the Loggly logging object for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingLogglyApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let logging_loggly_name = "logging_loggly_name_example"; // String | 
-apiInstance.deleteLogLoggly(service_id, version_id, logging_loggly_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_loggly_name: "logging_loggly_name_example", // required};
 
+apiInstance.deleteLogLoggly(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -100,28 +107,28 @@ Name | Type | Description  | Notes
 
 ## `getLogLoggly`
 
-> getLogLoggly(service_id, version_id, logging_loggly_name)
-
-Get a Loggly log endpoint
+```javascript
+getLogLoggly({ service_id, version_id, logging_loggly_name })
+```
 
 Get the Loggly logging object for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingLogglyApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let logging_loggly_name = "logging_loggly_name_example"; // String | 
-apiInstance.getLogLoggly(service_id, version_id, logging_loggly_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_loggly_name: "logging_loggly_name_example", // required};
 
+apiInstance.getLogLoggly(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -136,27 +143,28 @@ Name | Type | Description  | Notes
 
 ## `listLogLoggly`
 
-> listLogLoggly(service_id, version_id)
-
-List Loggly log endpoints
+```javascript
+listLogLoggly({ service_id, version_id })
+```
 
 List all Loggly logging objects for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingLogglyApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.listLogLoggly(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.listLogLoggly(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -170,47 +178,51 @@ Name | Type | Description  | Notes
 
 ## `updateLogLoggly`
 
-> updateLogLoggly(service_id, version_id, logging_loggly_name, opts)
-
-Update a Loggly log endpoint
+```javascript
+updateLogLoggly({ service_id, version_id, logging_loggly_name, [format], , [format_version], , [name], , [placement], , [response_condition], , [token] })
+```
 
 Update the Loggly logging object for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingLogglyApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let logging_loggly_name = "logging_loggly_name_example"; // String | 
-let opts = {
-  'name': "name_example", // String | The name for the real-time logging configuration.
-  'placement': new FastlyApi.LoggingPlacement(), // LoggingPlacement | 
-  'format_version': new FastlyApi.LoggingFormatVersion(), // LoggingFormatVersion | 
-  'response_condition': "response_condition_example", // String | The name of an existing condition in the configured endpoint, or leave blank to always execute.
-  'format': "'%h %l %u %t \"%r\" %&gt;s %b'", // String | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-  'token': "token_example" // String | The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)).
-};
-apiInstance.updateLogLoggly(service_id, version_id, logging_loggly_name, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_loggly_name: "logging_loggly_name_example", // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
+  format_version: new Fastly.LoggingFormatVersion(),
+
+  name: "name_example",
+
+  placement: new Fastly.LoggingPlacement(),
+
+  response_condition: "response_condition_example",
+
+  token: "token_example",
+};
+
+apiInstance.updateLogLoggly(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
 **logging_loggly_name** | **String** |  |
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
+**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
 **token** | **String** | The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)). | [optional]
 
 ### Return type

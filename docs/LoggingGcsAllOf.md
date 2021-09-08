@@ -1,4 +1,4 @@
-# FastlyApi.LoggingGcsAllOf
+# Fastly.LoggingGcsAllOf
 
 ## Properties
 

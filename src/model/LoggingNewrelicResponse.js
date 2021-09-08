@@ -18,19 +18,39 @@ import LoggingPlacement from './LoggingPlacement';
 import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Timestamps from './Timestamps';
 
-
+/**
+ * The LoggingNewrelicResponse model module.
+ * @module model/LoggingNewrelicResponse
+ * @version 3.0.0-alpha1
+ */
 class LoggingNewrelicResponse {
-    
+    /**
+     * Constructs a new <code>LoggingNewrelicResponse</code>.
+     * @alias module:model/LoggingNewrelicResponse
+     * @implements module:model/LoggingNewrelic
+     * @implements module:model/Timestamps
+     * @implements module:model/ServiceIdAndVersion
+     */
     constructor() { 
         LoggingNewrelic.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
         LoggingNewrelicResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingNewrelicResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingNewrelicResponse} obj Optional instance to populate.
+     * @return {module:model/LoggingNewrelicResponse} The populated <code>LoggingNewrelicResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingNewrelicResponse();
@@ -38,20 +58,23 @@ class LoggingNewrelicResponse {
             Timestamps.constructFromObject(data, obj);
             ServiceIdAndVersion.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], Object);
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
             }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
-            }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
             }
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], Object);
+            if (data.hasOwnProperty('region')) {
+                obj['region'] = ApiClient.convertToType(data['region'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -78,66 +101,162 @@ class LoggingNewrelicResponse {
 
 }
 
-
-LoggingNewrelicResponse.prototype['name'] = undefined;
-
-
-LoggingNewrelicResponse.prototype['placement'] = undefined;
-
-
-LoggingNewrelicResponse.prototype['format_version'] = undefined;
-
-
-LoggingNewrelicResponse.prototype['response_condition'] = undefined;
-
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest.
+ * @member {Object} format
+ */
 LoggingNewrelicResponse.prototype['format'] = undefined;
 
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingNewrelicResponse.prototype['format_version'] = undefined;
 
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingNewrelicResponse.prototype['name'] = undefined;
+
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingNewrelicResponse.prototype['placement'] = undefined;
+
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingNewrelicResponse.prototype['response_condition'] = undefined;
+
+/**
+ * The region to which to stream logs.
+ * @member {module:model/LoggingNewrelicResponse.RegionEnum} region
+ * @default 'US'
+ */
+LoggingNewrelicResponse.prototype['region'] = 'US';
+
+/**
+ * The Insert API key from the Account page of your New Relic account. Required.
+ * @member {String} token
+ */
 LoggingNewrelicResponse.prototype['token'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 LoggingNewrelicResponse.prototype['created_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 LoggingNewrelicResponse.prototype['deleted_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 LoggingNewrelicResponse.prototype['updated_at'] = undefined;
 
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 LoggingNewrelicResponse.prototype['service_id'] = undefined;
 
-
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
 LoggingNewrelicResponse.prototype['version'] = undefined;
 
 
 // Implement LoggingNewrelic interface:
-
-LoggingNewrelic.prototype['name'] = undefined;
-
-LoggingNewrelic.prototype['placement'] = undefined;
-
-LoggingNewrelic.prototype['format_version'] = undefined;
-
-LoggingNewrelic.prototype['response_condition'] = undefined;
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest.
+ * @member {Object} format
+ */
 LoggingNewrelic.prototype['format'] = undefined;
-
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingNewrelic.prototype['format_version'] = undefined;
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingNewrelic.prototype['name'] = undefined;
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingNewrelic.prototype['placement'] = undefined;
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingNewrelic.prototype['response_condition'] = undefined;
+/**
+ * The region to which to stream logs.
+ * @member {module:model/LoggingNewrelic.RegionEnum} region
+ * @default 'US'
+ */
+LoggingNewrelic.prototype['region'] = 'US';
+/**
+ * The Insert API key from the Account page of your New Relic account. Required.
+ * @member {String} token
+ */
 LoggingNewrelic.prototype['token'] = undefined;
 // Implement Timestamps interface:
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 Timestamps.prototype['created_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 Timestamps.prototype['deleted_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 Timestamps.prototype['updated_at'] = undefined;
 // Implement ServiceIdAndVersion interface:
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 ServiceIdAndVersion.prototype['service_id'] = undefined;
-
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
 ServiceIdAndVersion.prototype['version'] = undefined;
 
+
+
+/**
+ * Allowed values for the <code>region</code> property.
+ * @enum {String}
+ * @readonly
+ */
+LoggingNewrelicResponse['RegionEnum'] = {
+
+    /**
+     * value: "US"
+     * @const
+     */
+    "US": "US",
+
+    /**
+     * value: "EU"
+     * @const
+     */
+    "EU": "EU"
+};
 
 
 

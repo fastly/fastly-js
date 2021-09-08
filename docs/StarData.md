@@ -1,11 +1,11 @@
-# FastlyApi.StarData
+# Fastly.StarData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**TypeStar**](TypeStar.md) |  | [optional] 
 **relationships** | [**RelationshipUser**](RelationshipUser.md) |  | [optional] 
+**type** | [**TypeStar**](TypeStar.md) |  | [optional] 
 
 
 

@@ -19,19 +19,40 @@ import LoggingPlacement from './LoggingPlacement';
 import LoggingRequestCapsCommon from './LoggingRequestCapsCommon';
 import LoggingTlsCommon from './LoggingTlsCommon';
 
-
+/**
+ * The LoggingElasticsearch model module.
+ * @module model/LoggingElasticsearch
+ * @version 3.0.0-alpha1
+ */
 class LoggingElasticsearch {
-    
+    /**
+     * Constructs a new <code>LoggingElasticsearch</code>.
+     * @alias module:model/LoggingElasticsearch
+     * @implements module:model/LoggingCommon
+     * @implements module:model/LoggingTlsCommon
+     * @implements module:model/LoggingRequestCapsCommon
+     * @implements module:model/LoggingElasticsearchAllOf
+     */
     constructor() { 
         LoggingCommon.initialize(this);LoggingTlsCommon.initialize(this);LoggingRequestCapsCommon.initialize(this);LoggingElasticsearchAllOf.initialize(this);
         LoggingElasticsearch.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingElasticsearch</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingElasticsearch} obj Optional instance to populate.
+     * @return {module:model/LoggingElasticsearch} The populated <code>LoggingElasticsearch</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingElasticsearch();
@@ -40,20 +61,20 @@ class LoggingElasticsearch {
             LoggingRequestCapsCommon.constructFromObject(data, obj);
             LoggingElasticsearchAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], Object);
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
             }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
-            }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
-            }
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], Object);
             }
             if (data.hasOwnProperty('tls_ca_cert')) {
                 obj['tls_ca_cert'] = ApiClient.convertToType(data['tls_ca_cert'], 'String');
@@ -67,26 +88,26 @@ class LoggingElasticsearch {
             if (data.hasOwnProperty('tls_hostname')) {
                 obj['tls_hostname'] = ApiClient.convertToType(data['tls_hostname'], 'String');
             }
-            if (data.hasOwnProperty('request_max_entries')) {
-                obj['request_max_entries'] = ApiClient.convertToType(data['request_max_entries'], 'Number');
-            }
             if (data.hasOwnProperty('request_max_bytes')) {
                 obj['request_max_bytes'] = ApiClient.convertToType(data['request_max_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('request_max_entries')) {
+                obj['request_max_entries'] = ApiClient.convertToType(data['request_max_entries'], 'Number');
             }
             if (data.hasOwnProperty('index')) {
                 obj['index'] = ApiClient.convertToType(data['index'], 'String');
             }
-            if (data.hasOwnProperty('url')) {
-                obj['url'] = ApiClient.convertToType(data['url'], 'String');
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('pipeline')) {
                 obj['pipeline'] = ApiClient.convertToType(data['pipeline'], 'String');
             }
+            if (data.hasOwnProperty('url')) {
+                obj['url'] = ApiClient.convertToType(data['url'], 'String');
+            }
             if (data.hasOwnProperty('user')) {
                 obj['user'] = ApiClient.convertToType(data['user'], 'String');
-            }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
         }
         return obj;
@@ -95,93 +116,201 @@ class LoggingElasticsearch {
 
 }
 
-
-LoggingElasticsearch.prototype['name'] = undefined;
-
-
-LoggingElasticsearch.prototype['placement'] = undefined;
-
-
-LoggingElasticsearch.prototype['format_version'] = undefined;
-
-
-LoggingElasticsearch.prototype['response_condition'] = undefined;
-
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Elasticsearch can ingest.
+ * @member {Object} format
+ */
 LoggingElasticsearch.prototype['format'] = undefined;
 
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingElasticsearch.prototype['format_version'] = undefined;
 
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingElasticsearch.prototype['name'] = undefined;
+
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingElasticsearch.prototype['placement'] = undefined;
+
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingElasticsearch.prototype['response_condition'] = undefined;
+
+/**
+ * A secure certificate to authenticate a server with. Must be in PEM format.
+ * @member {String} tls_ca_cert
+ * @default 'null'
+ */
 LoggingElasticsearch.prototype['tls_ca_cert'] = 'null';
 
-
+/**
+ * The client certificate used to make authenticated requests. Must be in PEM format.
+ * @member {String} tls_client_cert
+ * @default 'null'
+ */
 LoggingElasticsearch.prototype['tls_client_cert'] = 'null';
 
-
+/**
+ * The client private key used to make authenticated requests. Must be in PEM format.
+ * @member {String} tls_client_key
+ * @default 'null'
+ */
 LoggingElasticsearch.prototype['tls_client_key'] = 'null';
 
-
+/**
+ * The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
+ * @member {String} tls_hostname
+ * @default 'null'
+ */
 LoggingElasticsearch.prototype['tls_hostname'] = 'null';
 
-
-LoggingElasticsearch.prototype['request_max_entries'] = 0;
-
-
+/**
+ * The maximum number of bytes sent in one request. Defaults `0` for unbounded.
+ * @member {Number} request_max_bytes
+ * @default 0
+ */
 LoggingElasticsearch.prototype['request_max_bytes'] = 0;
 
+/**
+ * The maximum number of logs sent in one request. Defaults `0` for unbounded.
+ * @member {Number} request_max_entries
+ * @default 0
+ */
+LoggingElasticsearch.prototype['request_max_entries'] = 0;
 
+/**
+ * The name of the Elasticsearch index to send documents (logs) to. The index must follow the Elasticsearch [index format rules](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html). We support [strftime](https://www.man7.org/linux/man-pages/man3/strftime.3.html) interpolated variables inside braces prefixed with a pound symbol. For example, `#{%F}` will interpolate as `YYYY-MM-DD` with today's date.
+ * @member {String} index
+ */
 LoggingElasticsearch.prototype['index'] = undefined;
 
+/**
+ * Basic Auth password.
+ * @member {String} password
+ */
+LoggingElasticsearch.prototype['password'] = undefined;
 
-LoggingElasticsearch.prototype['url'] = undefined;
-
-
+/**
+ * The ID of the Elasticsearch ingest pipeline to apply pre-process transformations to before indexing. Learn more about creating a pipeline in the [Elasticsearch docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/ingest.html).
+ * @member {String} pipeline
+ */
 LoggingElasticsearch.prototype['pipeline'] = undefined;
 
+/**
+ * The URL to stream logs to. Must use HTTPS.
+ * @member {String} url
+ */
+LoggingElasticsearch.prototype['url'] = undefined;
 
+/**
+ * Basic Auth username.
+ * @member {String} user
+ */
 LoggingElasticsearch.prototype['user'] = undefined;
 
 
-LoggingElasticsearch.prototype['password'] = undefined;
-
-
 // Implement LoggingCommon interface:
-
-LoggingCommon.prototype['name'] = undefined;
-
-LoggingCommon.prototype['placement'] = undefined;
-
-LoggingCommon.prototype['format_version'] = undefined;
-
-LoggingCommon.prototype['response_condition'] = undefined;
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
 LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingCommon.prototype['format_version'] = undefined;
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingCommon.prototype['name'] = undefined;
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingCommon.prototype['placement'] = undefined;
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingCommon.prototype['response_condition'] = undefined;
 // Implement LoggingTlsCommon interface:
-
+/**
+ * A secure certificate to authenticate a server with. Must be in PEM format.
+ * @member {String} tls_ca_cert
+ * @default 'null'
+ */
 LoggingTlsCommon.prototype['tls_ca_cert'] = 'null';
-
+/**
+ * The client certificate used to make authenticated requests. Must be in PEM format.
+ * @member {String} tls_client_cert
+ * @default 'null'
+ */
 LoggingTlsCommon.prototype['tls_client_cert'] = 'null';
-
+/**
+ * The client private key used to make authenticated requests. Must be in PEM format.
+ * @member {String} tls_client_key
+ * @default 'null'
+ */
 LoggingTlsCommon.prototype['tls_client_key'] = 'null';
-
+/**
+ * The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
+ * @member {String} tls_hostname
+ * @default 'null'
+ */
 LoggingTlsCommon.prototype['tls_hostname'] = 'null';
 // Implement LoggingRequestCapsCommon interface:
-
-LoggingRequestCapsCommon.prototype['request_max_entries'] = 0;
-
+/**
+ * The maximum number of bytes sent in one request. Defaults `0` for unbounded.
+ * @member {Number} request_max_bytes
+ * @default 0
+ */
 LoggingRequestCapsCommon.prototype['request_max_bytes'] = 0;
+/**
+ * The maximum number of logs sent in one request. Defaults `0` for unbounded.
+ * @member {Number} request_max_entries
+ * @default 0
+ */
+LoggingRequestCapsCommon.prototype['request_max_entries'] = 0;
 // Implement LoggingElasticsearchAllOf interface:
-
-LoggingElasticsearchAllOf.prototype['index'] = undefined;
-
-LoggingElasticsearchAllOf.prototype['url'] = undefined;
-
-LoggingElasticsearchAllOf.prototype['pipeline'] = undefined;
-
-LoggingElasticsearchAllOf.prototype['user'] = undefined;
-
-LoggingElasticsearchAllOf.prototype['password'] = undefined;
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Elasticsearch can ingest.
+ * @member {Object} format
+ */
 LoggingElasticsearchAllOf.prototype['format'] = undefined;
+/**
+ * The name of the Elasticsearch index to send documents (logs) to. The index must follow the Elasticsearch [index format rules](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html). We support [strftime](https://www.man7.org/linux/man-pages/man3/strftime.3.html) interpolated variables inside braces prefixed with a pound symbol. For example, `#{%F}` will interpolate as `YYYY-MM-DD` with today's date.
+ * @member {String} index
+ */
+LoggingElasticsearchAllOf.prototype['index'] = undefined;
+/**
+ * Basic Auth password.
+ * @member {String} password
+ */
+LoggingElasticsearchAllOf.prototype['password'] = undefined;
+/**
+ * The ID of the Elasticsearch ingest pipeline to apply pre-process transformations to before indexing. Learn more about creating a pipeline in the [Elasticsearch docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/ingest.html).
+ * @member {String} pipeline
+ */
+LoggingElasticsearchAllOf.prototype['pipeline'] = undefined;
+/**
+ * The URL to stream logs to. Must use HTTPS.
+ * @member {String} url
+ */
+LoggingElasticsearchAllOf.prototype['url'] = undefined;
+/**
+ * Basic Auth username.
+ * @member {String} user
+ */
+LoggingElasticsearchAllOf.prototype['user'] = undefined;
 
 
 

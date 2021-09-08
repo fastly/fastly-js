@@ -1,7 +1,9 @@
-# FastlyApi.AclApi
+# Fastly.AclApi
 
 
-
+```javascript
+const apiInstance = new Fastly.AclApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -16,30 +18,30 @@ Method | Fastly API endpoint | Description
 
 ## `createAcl`
 
-> createAcl(service_id, version_id, opts)
-
-Create a new ACL
+```javascript
+createAcl({ service_id, version_id, [name] })
+```
 
 Create a new ACL attached to the specified service version. A new, empty ACL must be attached to a draft version of a service. The version associated with the ACL must be activated to be used.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.AclApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let opts = {
-  'name': "name_example" // String | Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace.
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required
+  name: "name_example",
 };
-apiInstance.createAcl(service_id, version_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.createAcl(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -54,28 +56,28 @@ Name | Type | Description  | Notes
 
 ## `deleteAcl`
 
-> deleteAcl(service_id, version_id, acl_name)
-
-Delete an ACL
+```javascript
+deleteAcl({ service_id, version_id, acl_name })
+```
 
 Delete an ACL from the specified service version. To remove an ACL from use, the ACL must be deleted from a draft version and the version without the ACL must be activated.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.AclApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let acl_name = "acl_name_example"; // String | 
-apiInstance.deleteAcl(service_id, version_id, acl_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  acl_name: "acl_name_example", // required};
 
+apiInstance.deleteAcl(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -90,28 +92,28 @@ Name | Type | Description  | Notes
 
 ## `getAcl`
 
-> getAcl(service_id, version_id, acl_name)
-
-Describe an ACL
+```javascript
+getAcl({ service_id, version_id, acl_name })
+```
 
 Retrieve a single ACL by name for the version and service.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.AclApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let acl_name = "acl_name_example"; // String | 
-apiInstance.getAcl(service_id, version_id, acl_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  acl_name: "acl_name_example", // required};
 
+apiInstance.getAcl(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -126,27 +128,28 @@ Name | Type | Description  | Notes
 
 ## `listAcls`
 
-> listAcls(service_id, version_id)
-
-List ACLs
+```javascript
+listAcls({ service_id, version_id })
+```
 
 List ACLs.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.AclApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.listAcls(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.listAcls(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -160,31 +163,30 @@ Name | Type | Description  | Notes
 
 ## `updateAcl`
 
-> updateAcl(service_id, version_id, acl_name, opts)
-
-Update an ACL
+```javascript
+updateAcl({ service_id, version_id, acl_name, [name] })
+```
 
 Update an ACL for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.AclApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let acl_name = "acl_name_example"; // String | 
-let opts = {
-  'name': "name_example" // String | Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace.
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  acl_name: "acl_name_example", // required
+  name: "name_example",
 };
-apiInstance.updateAcl(service_id, version_id, acl_name, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.updateAcl(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

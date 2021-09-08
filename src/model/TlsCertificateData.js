@@ -16,31 +16,48 @@ import RelationshipTlsDomains from './RelationshipTlsDomains';
 import TlsCertificateDataAttributes from './TlsCertificateDataAttributes';
 import TypeTlsCertificate from './TypeTlsCertificate';
 
-
+/**
+ * The TlsCertificateData model module.
+ * @module model/TlsCertificateData
+ * @version 3.0.0-alpha1
+ */
 class TlsCertificateData {
-    
+    /**
+     * Constructs a new <code>TlsCertificateData</code>.
+     * @alias module:model/TlsCertificateData
+     */
     constructor() { 
         
         TlsCertificateData.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>TlsCertificateData</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/TlsCertificateData} obj Optional instance to populate.
+     * @return {module:model/TlsCertificateData} The populated <code>TlsCertificateData</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsCertificateData();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeTlsCertificate.constructFromObject(data['type']);
-            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = TlsCertificateDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = RelationshipTlsDomains.constructFromObject(data['relationships']);
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeTlsCertificate.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -49,14 +66,20 @@ class TlsCertificateData {
 
 }
 
-
-TlsCertificateData.prototype['type'] = undefined;
-
-
+/**
+ * @member {module:model/TlsCertificateDataAttributes} attributes
+ */
 TlsCertificateData.prototype['attributes'] = undefined;
 
-
+/**
+ * @member {module:model/RelationshipTlsDomains} relationships
+ */
 TlsCertificateData.prototype['relationships'] = undefined;
+
+/**
+ * @member {module:model/TypeTlsCertificate} type
+ */
+TlsCertificateData.prototype['type'] = undefined;
 
 
 

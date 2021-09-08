@@ -1,7 +1,9 @@
-# FastlyApi.WafFirewallsApi
+# Fastly.WafFirewallsApi
 
 
-
+```javascript
+const apiInstance = new Fastly.WafFirewallsApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -16,28 +18,30 @@ Method | Fastly API endpoint | Description
 
 ## `createWafFirewall`
 
-> createWafFirewall(opts)
-
-Create a firewall
+```javascript
+createWafFirewall({ [waf_firewall] })
+```
 
 Create a firewall object for a particular service and service version using a defined `prefetch_condition` and `response`. If the `prefetch_condition` or the `response` is missing from the request body, Fastly will generate a default object on your service. 
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.WafFirewallsApi();
-let opts = {
-  'waf_firewall': {"data":{"type":"waf_firewall","attributes":{"prefetch_condition":"WAF_Condition","response":"WAF_Error","service_id":"SU1Z0isxPaozGVKXdv0eY","service_version_number":1}}} // WafFirewall | 
-};
-apiInstance.createWafFirewall(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
 
+  waf_firewall: new Fastly.WafFirewall(),
+};
+
+apiInstance.createWafFirewall(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -50,29 +54,30 @@ Name | Type | Description  | Notes
 
 ## `deleteWafFirewall`
 
-> deleteWafFirewall(firewall_id, opts)
-
-Delete a firewall
+```javascript
+deleteWafFirewall({ firewall_id, [waf_firewall] })
+```
 
 Delete the firewall object for a particular service and service version. 
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.WafFirewallsApi();
-let firewall_id = "firewall_id_example"; // String | 
-let opts = {
-  'waf_firewall': {"data":{"id":"fW7g2uUGZzb2W9Euo4Mo0r","type":"waf_firewall","attributes":{"service_version_number":1}}} // WafFirewall | 
+const options = {
+  firewall_id: "firewall_id_example", // required
+  waf_firewall: new Fastly.WafFirewall(),
 };
-apiInstance.deleteWafFirewall(firewall_id, opts).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.deleteWafFirewall(options)
+  .then(() => {
+    console.log('API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -86,30 +91,32 @@ null (empty response body)
 
 ## `getWafFirewall`
 
-> getWafFirewall(firewall_id, opts)
-
-Get a firewall
+```javascript
+getWafFirewall({ firewall_id, [filter_service_version_number], , [include] })
+```
 
 Get a specific firewall object.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.WafFirewallsApi();
-let firewall_id = "firewall_id_example"; // String | 
-let opts = {
-  'filter_service_version_number': "filter_service_version_number_example", // String | Limit the results returned to a specific service version.
-  'include': "'waf_firewall_versions'" // String | Include related objects. Optional.
-};
-apiInstance.getWafFirewall(firewall_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  firewall_id: "firewall_id_example", // required
+  filter_service_version_number: "filter_service_version_number_example",
 
+  include: "'waf_firewall_versions'",
+};
+
+apiInstance.getWafFirewall(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -124,32 +131,38 @@ Name | Type | Description  | Notes
 
 ## `listWafFirewalls`
 
-> listWafFirewalls(opts)
-
-List firewalls
+```javascript
+listWafFirewalls({ [page_number], [page_size], [filter_service_id], [filter_service_version_number], [include] })
+```
 
 List all firewall objects.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.WafFirewallsApi();
-let opts = {
-  'page_number': 56, // Number | Current page.
-  'page_size': 20, // Number | Number of records per page.
-  'filter_service_id': "filter_service_id_example", // String | Limit the results returned to a specific service.
-  'filter_service_version_number': "filter_service_version_number_example", // String | Limit the results returned to a specific service version.
-  'include': "'waf_firewall_versions'" // String | Include related objects. Optional.
-};
-apiInstance.listWafFirewalls(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
 
+  page_number: 56,
+
+  page_size: 20,
+
+  filter_service_id: "filter_service_id_example",
+
+  filter_service_version_number: "filter_service_version_number_example",
+
+  include: "'waf_firewall_versions'",
+};
+
+apiInstance.listWafFirewalls(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -166,29 +179,30 @@ Name | Type | Description  | Notes
 
 ## `updateWafFirewall`
 
-> updateWafFirewall(firewall_id, opts)
-
-Update a firewall
+```javascript
+updateWafFirewall({ firewall_id, [waf_firewall] })
+```
 
 Update a firewall object for a particular service and service version. Specifying a `service_version_number` is required. 
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.WafFirewallsApi();
-let firewall_id = "firewall_id_example"; // String | 
-let opts = {
-  'waf_firewall': {"update":{"summary":"Update a firewall object for a particular service and service version. Specifying a `service_version_number` is required.","value":{"data":{"id":"fW7g2uUGZzb2W9Euo4Mo0r","type":"waf_firewall","attributes":{"response":"NEW_RESPONSE","service_version_number":1}}}}} // WafFirewall | 
+const options = {
+  firewall_id: "firewall_id_example", // required
+  waf_firewall: new Fastly.WafFirewall(),
 };
-apiInstance.updateWafFirewall(firewall_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.updateWafFirewall(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

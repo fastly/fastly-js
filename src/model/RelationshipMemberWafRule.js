@@ -14,28 +14,45 @@
 import ApiClient from '../ApiClient';
 import TypeWafRule from './TypeWafRule';
 
-
+/**
+ * The RelationshipMemberWafRule model module.
+ * @module model/RelationshipMemberWafRule
+ * @version 3.0.0-alpha1
+ */
 class RelationshipMemberWafRule {
-    
+    /**
+     * Constructs a new <code>RelationshipMemberWafRule</code>.
+     * @alias module:model/RelationshipMemberWafRule
+     */
     constructor() { 
         
         RelationshipMemberWafRule.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipMemberWafRule</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipMemberWafRule} obj Optional instance to populate.
+     * @return {module:model/RelationshipMemberWafRule} The populated <code>RelationshipMemberWafRule</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipMemberWafRule();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeWafRule.constructFromObject(data['type']);
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeWafRule.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -44,11 +61,16 @@ class RelationshipMemberWafRule {
 
 }
 
-
-RelationshipMemberWafRule.prototype['type'] = undefined;
-
-
+/**
+ * Alphanumeric string identifying a WAF rule.
+ * @member {String} id
+ */
 RelationshipMemberWafRule.prototype['id'] = undefined;
+
+/**
+ * @member {module:model/TypeWafRule} type
+ */
+RelationshipMemberWafRule.prototype['type'] = undefined;
 
 
 

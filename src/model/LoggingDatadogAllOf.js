@@ -13,28 +13,45 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The LoggingDatadogAllOf model module.
+ * @module model/LoggingDatadogAllOf
+ * @version 3.0.0-alpha1
+ */
 class LoggingDatadogAllOf {
-    
+    /**
+     * Constructs a new <code>LoggingDatadogAllOf</code>.
+     * @alias module:model/LoggingDatadogAllOf
+     */
     constructor() { 
         
         LoggingDatadogAllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingDatadogAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingDatadogAllOf} obj Optional instance to populate.
+     * @return {module:model/LoggingDatadogAllOf} The populated <code>LoggingDatadogAllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingDatadogAllOf();
 
-            if (data.hasOwnProperty('region')) {
-                obj['region'] = ApiClient.convertToType(data['region'], 'String');
-            }
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], Object);
+            }
+            if (data.hasOwnProperty('region')) {
+                obj['region'] = ApiClient.convertToType(data['region'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -46,26 +63,46 @@ class LoggingDatadogAllOf {
 
 }
 
-
-LoggingDatadogAllOf.prototype['region'] = 'US';
-
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest. 
+ * @member {Object} format
+ */
 LoggingDatadogAllOf.prototype['format'] = undefined;
 
+/**
+ * The region that log data will be sent to.
+ * @member {module:model/LoggingDatadogAllOf.RegionEnum} region
+ * @default 'US'
+ */
+LoggingDatadogAllOf.prototype['region'] = 'US';
 
+/**
+ * The API key from your Datadog account. Required.
+ * @member {String} token
+ */
 LoggingDatadogAllOf.prototype['token'] = undefined;
 
 
 
 
 
-
+/**
+ * Allowed values for the <code>region</code> property.
+ * @enum {String}
+ * @readonly
+ */
 LoggingDatadogAllOf['RegionEnum'] = {
 
-    
+    /**
+     * value: "US"
+     * @const
+     */
     "US": "US",
 
-    
+    /**
+     * value: "EU"
+     * @const
+     */
     "EU": "EU"
 };
 

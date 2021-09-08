@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import RelationshipTlsCertificateTlsCertificate from './RelationshipTlsCertificateTlsCertificate';
 
-
+/**
+ * The RelationshipTlsCertificates model module.
+ * @module model/RelationshipTlsCertificates
+ * @version 3.0.0-alpha1
+ */
 class RelationshipTlsCertificates {
-    
+    /**
+     * Constructs a new <code>RelationshipTlsCertificates</code>.
+     * @alias module:model/RelationshipTlsCertificates
+     */
     constructor() { 
         
         RelationshipTlsCertificates.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipTlsCertificates</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipTlsCertificates} obj Optional instance to populate.
+     * @return {module:model/RelationshipTlsCertificates} The populated <code>RelationshipTlsCertificates</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipTlsCertificates();
@@ -41,7 +58,9 @@ class RelationshipTlsCertificates {
 
 }
 
-
+/**
+ * @member {module:model/RelationshipTlsCertificateTlsCertificate} tls_certificates
+ */
 RelationshipTlsCertificates.prototype['tls_certificates'] = undefined;
 
 

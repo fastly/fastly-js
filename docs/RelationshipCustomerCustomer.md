@@ -1,4 +1,4 @@
-# FastlyApi.RelationshipCustomerCustomer
+# Fastly.RelationshipCustomerCustomer
 
 ## Properties
 

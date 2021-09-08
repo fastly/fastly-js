@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The ServiceCreateAllOf model module.
+ * @module model/ServiceCreateAllOf
+ * @version 3.0.0-alpha1
+ */
 class ServiceCreateAllOf {
-    
+    /**
+     * Constructs a new <code>ServiceCreateAllOf</code>.
+     * @alias module:model/ServiceCreateAllOf
+     */
     constructor() { 
         
         ServiceCreateAllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>ServiceCreateAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/ServiceCreateAllOf} obj Optional instance to populate.
+     * @return {module:model/ServiceCreateAllOf} The populated <code>ServiceCreateAllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ServiceCreateAllOf();
@@ -40,20 +57,33 @@ class ServiceCreateAllOf {
 
 }
 
-
+/**
+ * The type of this service.
+ * @member {module:model/ServiceCreateAllOf.TypeEnum} type
+ */
 ServiceCreateAllOf.prototype['type'] = undefined;
 
 
 
 
 
-
+/**
+ * Allowed values for the <code>type</code> property.
+ * @enum {String}
+ * @readonly
+ */
 ServiceCreateAllOf['TypeEnum'] = {
 
-    
+    /**
+     * value: "vcl"
+     * @const
+     */
     "vcl": "vcl",
 
-    
+    /**
+     * value: "wasm"
+     * @const
+     */
     "wasm": "wasm"
 };
 

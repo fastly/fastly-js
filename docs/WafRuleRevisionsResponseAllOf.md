@@ -1,4 +1,4 @@
-# FastlyApi.WafRuleRevisionsResponseAllOf
+# Fastly.WafRuleRevisionsResponseAllOf
 
 ## Properties
 

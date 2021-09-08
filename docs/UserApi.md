@@ -1,7 +1,9 @@
-# FastlyApi.UserApi
+# Fastly.UserApi
 
 
-
+```javascript
+const apiInstance = new Fastly.UserApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -18,42 +20,51 @@ Method | Fastly API endpoint | Description
 
 ## `createUser`
 
-> createUser(opts)
-
-Create a user
+```javascript
+createUser({ [limit_services], [locked], [login], [name], [require_new_password], [role], [two_factor_auth_enabled], [two_factor_setup_required] })
+```
 
 Create a user.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.UserApi();
-let opts = {
-  'login': "login_example", // String | The login associated with the user (typically, an email address).
-  'name': "name_example", // String | The real life name of the user.
-  'limit_services': true, // Boolean | Indicates that the user has limited access to the customer's services.
-  'locked': true, // Boolean | Indicates whether the is account is locked for editing or not.
-  'require_new_password': true, // Boolean | Indicates if a new password is required at next login.
-  'role': new FastlyApi.RoleUser(), // RoleUser | 
-  'two_factor_auth_enabled': true, // Boolean | Indicates if 2FA is enabled on the user.
-  'two_factor_setup_required': true // Boolean | Indicates if 2FA is required by the user's customer account.
-};
-apiInstance.createUser(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
 
+  limit_services: true,
+
+  locked: true,
+
+  login: "login_example",
+
+  name: "name_example",
+
+  require_new_password: true,
+
+  role: new Fastly.RoleUser(),
+
+  two_factor_auth_enabled: true,
+
+  two_factor_setup_required: true,
+};
+
+apiInstance.createUser(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**login** | **String** | The login associated with the user (typically, an email address). | [optional]
-**name** | **String** | The real life name of the user. | [optional]
 **limit_services** | **Boolean** | Indicates that the user has limited access to the customer&#39;s services. | [optional]
 **locked** | **Boolean** | Indicates whether the is account is locked for editing or not. | [optional]
+**login** | **String** | The login associated with the user (typically, an email address). | [optional]
+**name** | **String** | The real life name of the user. | [optional]
 **require_new_password** | **Boolean** | Indicates if a new password is required at next login. | [optional]
 **role** | [**RoleUser**](../Model/RoleUser.md) |  | [optional]
 **two_factor_auth_enabled** | **Boolean** | Indicates if 2FA is enabled on the user. | [optional]
@@ -66,26 +77,28 @@ Name | Type | Description  | Notes
 
 ## `deleteUser`
 
-> deleteUser(user_id)
-
-Delete a user
+```javascript
+deleteUser({ user_id })
+```
 
 Delete a user.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.UserApi();
-let user_id = "user_id_example"; // String | 
-apiInstance.deleteUser(user_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  user_id: "user_id_example", // required};
 
+apiInstance.deleteUser(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -98,25 +111,25 @@ Name | Type | Description  | Notes
 
 ## `getCurrentUser`
 
-> getCurrentUser()
-
-Get the current user
+```javascript
+getCurrentUser()
+```
 
 Get the logged in user.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.UserApi();
-apiInstance.getCurrentUser().then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
+apiInstance.getCurrentUser()
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 This endpoint does not need any parameters.
 
@@ -127,26 +140,28 @@ This endpoint does not need any parameters.
 
 ## `getUser`
 
-> getUser(user_id)
-
-Get a user
+```javascript
+getUser({ user_id })
+```
 
 Get a specific user.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.UserApi();
-let user_id = "user_id_example"; // String | 
-apiInstance.getUser(user_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  user_id: "user_id_example", // required};
 
+apiInstance.getUser(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -159,26 +174,28 @@ Name | Type | Description  | Notes
 
 ## `requestPasswordReset`
 
-> requestPasswordReset(user_login)
-
-Request a password reset
+```javascript
+requestPasswordReset({ user_login })
+```
 
 Requests a password reset for the specified user.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.UserApi();
-let user_login = "user_login_example"; // String | 
-apiInstance.requestPasswordReset(user_login).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  user_login: "user_login_example", // required};
 
+apiInstance.requestPasswordReset(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -191,44 +208,52 @@ Name | Type | Description  | Notes
 
 ## `updateUser`
 
-> updateUser(user_id, opts)
-
-Update a user
+```javascript
+updateUser({ user_id, [limit_services], , [locked], , [login], , [name], , [require_new_password], , [role], , [two_factor_auth_enabled], , [two_factor_setup_required] })
+```
 
 Update a user. Only users with the role of `superuser` can make changes to other users on the account. Non-superusers may use this endpoint to make changes to their own account. Modifications to `login` email require a valid password in the request body. Two-factor attributes are not editable via this endpoint.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.UserApi();
-let user_id = "user_id_example"; // String | 
-let opts = {
-  'login': "login_example", // String | The login associated with the user (typically, an email address).
-  'name': "name_example", // String | The real life name of the user.
-  'limit_services': true, // Boolean | Indicates that the user has limited access to the customer's services.
-  'locked': true, // Boolean | Indicates whether the is account is locked for editing or not.
-  'require_new_password': true, // Boolean | Indicates if a new password is required at next login.
-  'role': new FastlyApi.RoleUser(), // RoleUser | 
-  'two_factor_auth_enabled': true, // Boolean | Indicates if 2FA is enabled on the user.
-  'two_factor_setup_required': true // Boolean | Indicates if 2FA is required by the user's customer account.
-};
-apiInstance.updateUser(user_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  user_id: "user_id_example", // required
+  limit_services: true,
 
+  locked: true,
+
+  login: "login_example",
+
+  name: "name_example",
+
+  require_new_password: true,
+
+  role: new Fastly.RoleUser(),
+
+  two_factor_auth_enabled: true,
+
+  two_factor_setup_required: true,
+};
+
+apiInstance.updateUser(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **user_id** | **String** |  |
-**login** | **String** | The login associated with the user (typically, an email address). | [optional]
-**name** | **String** | The real life name of the user. | [optional]
 **limit_services** | **Boolean** | Indicates that the user has limited access to the customer&#39;s services. | [optional]
 **locked** | **Boolean** | Indicates whether the is account is locked for editing or not. | [optional]
+**login** | **String** | The login associated with the user (typically, an email address). | [optional]
+**name** | **String** | The real life name of the user. | [optional]
 **require_new_password** | **Boolean** | Indicates if a new password is required at next login. | [optional]
 **role** | [**RoleUser**](../Model/RoleUser.md) |  | [optional]
 **two_factor_auth_enabled** | **Boolean** | Indicates if 2FA is enabled on the user. | [optional]
@@ -241,34 +266,37 @@ Name | Type | Description  | Notes
 
 ## `updateUserPassword`
 
-> updateUserPassword(opts)
-
-Update the user&#39;s password
+```javascript
+updateUserPassword({ [new_password], [old_password] })
+```
 
 Update the user's password to a new one.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.UserApi();
-let opts = {
-  'old_password': "old_password_example", // String | The user's current password.
-  'new_password': "new_password_example" // String | The user's new password.
-};
-apiInstance.updateUserPassword(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
 
+  new_password: "new_password_example",
+
+  old_password: "old_password_example",
+};
+
+apiInstance.updateUserPassword(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**old_password** | **String** | The user&#39;s current password. | [optional]
 **new_password** | **String** | The user&#39;s new password. | [optional]
+**old_password** | **String** | The user&#39;s current password. | [optional]
 
 ### Return type
 

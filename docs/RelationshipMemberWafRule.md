@@ -1,11 +1,11 @@
-# FastlyApi.RelationshipMemberWafRule
+# Fastly.RelationshipMemberWafRule
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**TypeWafRule**](TypeWafRule.md) |  | [optional] 
 **id** | **String** | Alphanumeric string identifying a WAF rule. | [optional] [readonly] 
+**type** | [**TypeWafRule**](TypeWafRule.md) |  | [optional] 
 
 
 

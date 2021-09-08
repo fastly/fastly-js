@@ -1,4 +1,4 @@
-# FastlyApi.Gzip
+# Fastly.Gzip
 
 ## Properties
 

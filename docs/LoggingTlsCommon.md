@@ -1,4 +1,4 @@
-# FastlyApi.LoggingTlsCommon
+# Fastly.LoggingTlsCommon
 
 ## Properties
 

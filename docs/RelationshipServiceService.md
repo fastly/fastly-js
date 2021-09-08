@@ -1,4 +1,4 @@
-# FastlyApi.RelationshipServiceService
+# Fastly.RelationshipServiceService
 
 ## Properties
 

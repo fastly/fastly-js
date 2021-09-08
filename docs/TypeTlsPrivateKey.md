@@ -1,4 +1,4 @@
-# FastlyApi.TypeTlsPrivateKey
+# Fastly.TypeTlsPrivateKey
 
 ## Enum
 

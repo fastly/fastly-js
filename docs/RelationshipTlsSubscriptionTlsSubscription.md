@@ -1,4 +1,4 @@
-# FastlyApi.RelationshipTlsSubscriptionTlsSubscription
+# Fastly.RelationshipTlsSubscriptionTlsSubscription
 
 ## Properties
 

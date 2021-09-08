@@ -1,7 +1,9 @@
-# FastlyApi.TlsCertificatesApi
+# Fastly.TlsCertificatesApi
 
 
-
+```javascript
+const apiInstance = new Fastly.TlsCertificatesApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -16,28 +18,30 @@ Method | Fastly API endpoint | Description
 
 ## `createTlsCert`
 
-> createTlsCert(opts)
-
-Create a TLS certificate
+```javascript
+createTlsCert({ [tls_certificate] })
+```
 
 Create a TLS certificate.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TlsCertificatesApi();
-let opts = {
-  'tls_certificate': {"data":{"type":"tls_certificate","attributes":{"cert_blob":"-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n","name":"My certificate"}}} // TlsCertificate | 
-};
-apiInstance.createTlsCert(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
 
+  tls_certificate: new Fastly.TlsCertificate(),
+};
+
+apiInstance.createTlsCert(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -50,26 +54,28 @@ Name | Type | Description  | Notes
 
 ## `deleteTlsCert`
 
-> deleteTlsCert(tls_certificate_id)
-
-Delete a TLS certificate
+```javascript
+deleteTlsCert({ tls_certificate_id })
+```
 
 Destroy a TLS certificate. TLS certificates already enabled for a domain cannot be destroyed.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TlsCertificatesApi();
-let tls_certificate_id = "tls_certificate_id_example"; // String | 
-apiInstance.deleteTlsCert(tls_certificate_id).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  tls_certificate_id: "tls_certificate_id_example", // required};
 
+apiInstance.deleteTlsCert(options)
+  .then(() => {
+    console.log('API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -82,26 +88,28 @@ null (empty response body)
 
 ## `getTlsCert`
 
-> getTlsCert(tls_certificate_id)
-
-Get a TLS certificate
+```javascript
+getTlsCert({ tls_certificate_id })
+```
 
 Show a TLS certificate.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TlsCertificatesApi();
-let tls_certificate_id = "tls_certificate_id_example"; // String | 
-apiInstance.getTlsCert(tls_certificate_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  tls_certificate_id: "tls_certificate_id_example", // required};
 
+apiInstance.getTlsCert(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -114,33 +122,40 @@ Name | Type | Description  | Notes
 
 ## `listTlsCerts`
 
-> listTlsCerts(opts)
-
-List TLS certificates
+```javascript
+listTlsCerts({ [filter_not_after], [filter_tls_domains_id], [include], [page_number], [page_size], [sort] })
+```
 
 List all TLS certificates.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TlsCertificatesApi();
-let opts = {
-  'filter_not_after': "filter_not_after_example", // String | Limit the returned certificates to those that expire prior to the specified date in UTC. Accepts parameters: lte (e.g., filter[not_after][lte]=2020-05-05). 
-  'filter_tls_domains_id': "filter_tls_domains_id_example", // String | Limit the returned certificates to those that include the specific domain.
-  'include': "include_example", // String | Include related objects. Optional, comma-separated values. Permitted values: `tls_activations`. 
-  'page_number': 56, // Number | Current page.
-  'page_size': 20, // Number | Number of records per page.
-  'sort': created_at // String | The order in which to list the results by creation date.
-};
-apiInstance.listTlsCerts(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
 
+  filter_not_after: "filter_not_after_example",
+
+  filter_tls_domains_id: "filter_tls_domains_id_example",
+
+  include: "include_example",
+
+  page_number: 56,
+
+  page_size: 20,
+
+  sort: "'created_at'",
+};
+
+apiInstance.listTlsCerts(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -158,29 +173,30 @@ Name | Type | Description  | Notes
 
 ## `updateTlsCert`
 
-> updateTlsCert(tls_certificate_id, opts)
-
-Update a TLS certificate
+```javascript
+updateTlsCert({ tls_certificate_id, [tls_certificate] })
+```
 
 Replace a TLS certificate with a newly reissued TLS certificate, or update a TLS certificate's name. If replacing a TLS certificate, the new TLS certificate must contain all SAN entries as the current TLS certificate. It must either have an exact matching list or contain a superset.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TlsCertificatesApi();
-let tls_certificate_id = "tls_certificate_id_example"; // String | 
-let opts = {
-  'tls_certificate': {"data":{"type":"tls_certificate","attributes":{"cert_blob":"-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n","name":"My certificate"}}} // TlsCertificate | 
+const options = {
+  tls_certificate_id: "tls_certificate_id_example", // required
+  tls_certificate: new Fastly.TlsCertificate(),
 };
-apiInstance.updateTlsCert(tls_certificate_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.updateTlsCert(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

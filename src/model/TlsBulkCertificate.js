@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import TlsBulkCertificateData from './TlsBulkCertificateData';
 
-
+/**
+ * The TlsBulkCertificate model module.
+ * @module model/TlsBulkCertificate
+ * @version 3.0.0-alpha1
+ */
 class TlsBulkCertificate {
-    
+    /**
+     * Constructs a new <code>TlsBulkCertificate</code>.
+     * @alias module:model/TlsBulkCertificate
+     */
     constructor() { 
         
         TlsBulkCertificate.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>TlsBulkCertificate</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/TlsBulkCertificate} obj Optional instance to populate.
+     * @return {module:model/TlsBulkCertificate} The populated <code>TlsBulkCertificate</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsBulkCertificate();
@@ -41,7 +58,9 @@ class TlsBulkCertificate {
 
 }
 
-
+/**
+ * @member {module:model/TlsBulkCertificateData} data
+ */
 TlsBulkCertificate.prototype['data'] = undefined;
 
 

@@ -15,28 +15,46 @@
 import ApiClient from "../ApiClient";
 import RequestSettingsResponse from '../model/RequestSettingsResponse';
 
-
+/**
+* RequestSettings service.
+* @module api/RequestSettingsApi
+* @version 3.0.0-alpha1
+*/
 export default class RequestSettingsApi {
 
-    
+    /**
+    * Constructs a new RequestSettingsApi. 
+    * @alias module:api/RequestSettingsApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createRequestSettingsWithHttpInfo(service_id, version_id) {
+
+    /**
+     * Creates a new Request Settings object.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RequestSettingsResponse} and HTTP response
+     */
+    createRequestSettingsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createRequestSettings");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createRequestSettings");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -55,31 +73,48 @@ export default class RequestSettingsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createRequestSettings(service_id, version_id) {
-      return this.createRequestSettingsWithHttpInfo(service_id, version_id)
+
+    /**
+     * Creates a new Request Settings object.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RequestSettingsResponse}
+     */
+    createRequestSettings(options = {}) {
+      return this.createRequestSettingsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteRequestSettingsWithHttpInfo(service_id, version_id, request_settings_name) {
+
+    /**
+     * Removes the specified Request Settings object.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.request_settings_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteRequestSettingsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteRequestSettings");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteRequestSettings");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'request_settings_name' is set
-      if (request_settings_name === undefined || request_settings_name === null) {
-        throw new Error("Missing the required parameter 'request_settings_name' when calling deleteRequestSettings");
+      // Verify the required parameter 'request_settings_name' is set.
+      if (options['request_settings_name'] === undefined || options['request_settings_name'] === null) {
+        throw new Error("Missing the required parameter 'request_settings_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'request_settings_name': request_settings_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'request_settings_name': options['request_settings_name']
       };
       let queryParams = {
       };
@@ -98,31 +133,49 @@ export default class RequestSettingsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteRequestSettings(service_id, version_id, request_settings_name) {
-      return this.deleteRequestSettingsWithHttpInfo(service_id, version_id, request_settings_name)
+
+    /**
+     * Removes the specified Request Settings object.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.request_settings_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteRequestSettings(options = {}) {
+      return this.deleteRequestSettingsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getRequestSettingsWithHttpInfo(service_id, version_id, request_settings_name) {
+
+    /**
+     * Gets the specified Request Settings object.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.request_settings_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RequestSettingsResponse} and HTTP response
+     */
+    getRequestSettingsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getRequestSettings");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getRequestSettings");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'request_settings_name' is set
-      if (request_settings_name === undefined || request_settings_name === null) {
-        throw new Error("Missing the required parameter 'request_settings_name' when calling getRequestSettings");
+      // Verify the required parameter 'request_settings_name' is set.
+      if (options['request_settings_name'] === undefined || options['request_settings_name'] === null) {
+        throw new Error("Missing the required parameter 'request_settings_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'request_settings_name': request_settings_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'request_settings_name': options['request_settings_name']
       };
       let queryParams = {
       };
@@ -141,26 +194,43 @@ export default class RequestSettingsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getRequestSettings(service_id, version_id, request_settings_name) {
-      return this.getRequestSettingsWithHttpInfo(service_id, version_id, request_settings_name)
+
+    /**
+     * Gets the specified Request Settings object.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.request_settings_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RequestSettingsResponse}
+     */
+    getRequestSettings(options = {}) {
+      return this.getRequestSettingsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listRequestSettingsWithHttpInfo(service_id, version_id) {
+
+    /**
+     * Returns a list of all Request Settings objects for the given service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/RequestSettingsResponse>} and HTTP response
+     */
+    listRequestSettingsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listRequestSettings");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listRequestSettings");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -179,50 +249,78 @@ export default class RequestSettingsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listRequestSettings(service_id, version_id) {
-      return this.listRequestSettingsWithHttpInfo(service_id, version_id)
+
+    /**
+     * Returns a list of all Request Settings objects for the given service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/RequestSettingsResponse>}
+     */
+    listRequestSettings(options = {}) {
+      return this.listRequestSettingsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateRequestSettingsWithHttpInfo(service_id, version_id, request_settings_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Updates the specified Request Settings object.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.request_settings_name
+     * @param {module:model/String} [options.action] - Allows you to terminate request handling and immediately perform an action.
+     * @param {Number} [options.bypass_busy_wait] - Disable collapsed forwarding, so you don't wait for other objects to origin.
+     * @param {String} [options.default_host] - Sets the host header.
+     * @param {Number} [options.force_miss] - Allows you to force a cache miss for the request. Replaces the item in the cache if the content is cacheable.
+     * @param {Number} [options.force_ssl] - Forces the request use SSL (redirects a non-SSL to SSL).
+     * @param {Number} [options.geo_headers] - Injects Fastly-Geo-Country, Fastly-Geo-City, and Fastly-Geo-Region into the request headers.
+     * @param {String} [options.hash_keys] - Comma separated list of varnish request object fields that should be in the hash key.
+     * @param {Number} [options.max_stale_age] - How old an object is allowed to be to serve stale-if-error or stale-while-revalidate.
+     * @param {String} [options.name] - Name for the request settings.
+     * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
+     * @param {Number} [options.timer_support] - Injects the X-Timer info into the request for viewing origin fetch durations.
+     * @param {module:model/String} [options.xff] - Short for X-Forwarded-For.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RequestSettingsResponse} and HTTP response
+     */
+    updateRequestSettingsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateRequestSettings");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateRequestSettings");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'request_settings_name' is set
-      if (request_settings_name === undefined || request_settings_name === null) {
-        throw new Error("Missing the required parameter 'request_settings_name' when calling updateRequestSettings");
+      // Verify the required parameter 'request_settings_name' is set.
+      if (options['request_settings_name'] === undefined || options['request_settings_name'] === null) {
+        throw new Error("Missing the required parameter 'request_settings_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'request_settings_name': request_settings_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'request_settings_name': options['request_settings_name']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'action': opts['action'],
-        'bypass_busy_wait': opts['bypass_busy_wait'],
-        'default_host': opts['default_host'],
-        'force_miss': opts['force_miss'],
-        'force_ssl': opts['force_ssl'],
-        'geo_headers': opts['geo_headers'],
-        'hash_keys': opts['hash_keys'],
-        'max_stale_age': opts['max_stale_age'],
-        'name': opts['name'],
-        'request_condition': opts['request_condition'],
-        'timer_support': opts['timer_support'],
-        'xff': opts['xff']
+        'action': options['action'],
+        'bypass_busy_wait': options['bypass_busy_wait'],
+        'default_host': options['default_host'],
+        'force_miss': options['force_miss'],
+        'force_ssl': options['force_ssl'],
+        'geo_headers': options['geo_headers'],
+        'hash_keys': options['hash_keys'],
+        'max_stale_age': options['max_stale_age'],
+        'name': options['name'],
+        'request_condition': options['request_condition'],
+        'timer_support': options['timer_support'],
+        'xff': options['xff']
       };
 
       let authNames = ['token'];
@@ -235,8 +333,29 @@ export default class RequestSettingsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateRequestSettings(service_id, version_id, request_settings_name, opts) {
-      return this.updateRequestSettingsWithHttpInfo(service_id, version_id, request_settings_name, opts)
+
+    /**
+     * Updates the specified Request Settings object.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.request_settings_name
+     * @param {module:model/String} [options.action] - Allows you to terminate request handling and immediately perform an action.
+     * @param {Number} [options.bypass_busy_wait] - Disable collapsed forwarding, so you don't wait for other objects to origin.
+     * @param {String} [options.default_host] - Sets the host header.
+     * @param {Number} [options.force_miss] - Allows you to force a cache miss for the request. Replaces the item in the cache if the content is cacheable.
+     * @param {Number} [options.force_ssl] - Forces the request use SSL (redirects a non-SSL to SSL).
+     * @param {Number} [options.geo_headers] - Injects Fastly-Geo-Country, Fastly-Geo-City, and Fastly-Geo-Region into the request headers.
+     * @param {String} [options.hash_keys] - Comma separated list of varnish request object fields that should be in the hash key.
+     * @param {Number} [options.max_stale_age] - How old an object is allowed to be to serve stale-if-error or stale-while-revalidate.
+     * @param {String} [options.name] - Name for the request settings.
+     * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
+     * @param {Number} [options.timer_support] - Injects the X-Timer info into the request for viewing origin fetch durations.
+     * @param {module:model/String} [options.xff] - Short for X-Forwarded-For.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RequestSettingsResponse}
+     */
+    updateRequestSettings(options = {}) {
+      return this.updateRequestSettingsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

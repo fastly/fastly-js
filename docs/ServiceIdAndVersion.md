@@ -1,4 +1,4 @@
-# FastlyApi.ServiceIdAndVersion
+# Fastly.ServiceIdAndVersion
 
 ## Properties
 

@@ -15,25 +15,44 @@
 import ApiClient from "../ApiClient";
 import WafTagsResponse from '../model/WafTagsResponse';
 
-
+/**
+* WafTags service.
+* @module api/WafTagsApi
+* @version 3.0.0-alpha1
+*/
 export default class WafTagsApi {
 
-    
+    /**
+    * Constructs a new WafTagsApi. 
+    * @alias module:api/WafTagsApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    listWafTagsWithHttpInfo(opts) {
-      opts = opts || {};
+
+    /**
+     * List all tags.
+     * @param {Object} options
+     * @param {String} [options.filter_name] - Limit the returned tags to a specific name.
+     * @param {Number} [options.page_number] - Current page.
+     * @param {Number} [options.page_size=20] - Number of records per page.
+     * @param {module:model/String} [options.include='waf_rules'] - Include relationships. Optional.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafTagsResponse} and HTTP response
+     */
+    listWafTagsWithHttpInfo(options = {}) {
       let postBody = null;
 
       let pathParams = {
       };
       let queryParams = {
-        'filter[name]': opts['filter_name'],
-        'page[number]': opts['page_number'],
-        'page[size]': opts['page_size'],
-        'include': opts['include']
+        'filter[name]': options['filter_name'],
+        'page[number]': options['page_number'],
+        'page[size]': options['page_size'],
+        'include': options['include']
       };
       let headerParams = {
       };
@@ -50,8 +69,18 @@ export default class WafTagsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listWafTags(opts) {
-      return this.listWafTagsWithHttpInfo(opts)
+
+    /**
+     * List all tags.
+     * @param {Object} options
+     * @param {String} [options.filter_name] - Limit the returned tags to a specific name.
+     * @param {Number} [options.page_number] - Current page.
+     * @param {Number} [options.page_size=20] - Number of records per page.
+     * @param {module:model/String} [options.include='waf_rules'] - Include relationships. Optional.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafTagsResponse}
+     */
+    listWafTags(options = {}) {
+      return this.listWafTagsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

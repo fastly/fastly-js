@@ -1,4 +1,4 @@
-# FastlyApi.SchemasVclResponse
+# Fastly.SchemasVclResponse
 
 ## Properties
 

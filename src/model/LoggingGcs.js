@@ -21,19 +21,40 @@ import LoggingGenericCommon from './LoggingGenericCommon';
 import LoggingMessageType from './LoggingMessageType';
 import LoggingPlacement from './LoggingPlacement';
 
-
+/**
+ * The LoggingGcs model module.
+ * @module model/LoggingGcs
+ * @version 3.0.0-alpha1
+ */
 class LoggingGcs {
-    
+    /**
+     * Constructs a new <code>LoggingGcs</code>.
+     * @alias module:model/LoggingGcs
+     * @implements module:model/LoggingCommon
+     * @implements module:model/LoggingGenericCommon
+     * @implements module:model/LoggingGcsCommon
+     * @implements module:model/LoggingGcsAllOf
+     */
     constructor() { 
         LoggingCommon.initialize(this);LoggingGenericCommon.initialize(this);LoggingGcsCommon.initialize(this);LoggingGcsAllOf.initialize(this);
         LoggingGcs.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingGcs</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingGcs} obj Optional instance to populate.
+     * @return {module:model/LoggingGcs} The populated <code>LoggingGcs</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingGcs();
@@ -42,41 +63,41 @@ class LoggingGcs {
             LoggingGcsCommon.constructFromObject(data, obj);
             LoggingGcsAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
             }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
-            }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
-            }
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], 'String');
-            }
-            if (data.hasOwnProperty('message_type')) {
-                obj['message_type'] = LoggingMessageType.constructFromObject(data['message_type']);
-            }
-            if (data.hasOwnProperty('timestamp_format')) {
-                obj['timestamp_format'] = ApiClient.convertToType(data['timestamp_format'], 'String');
-            }
-            if (data.hasOwnProperty('period')) {
-                obj['period'] = ApiClient.convertToType(data['period'], 'Number');
-            }
-            if (data.hasOwnProperty('gzip_level')) {
-                obj['gzip_level'] = ApiClient.convertToType(data['gzip_level'], 'Number');
             }
             if (data.hasOwnProperty('compression_codec')) {
                 obj['compression_codec'] = LoggingCompressionCodec.constructFromObject(data['compression_codec']);
             }
-            if (data.hasOwnProperty('user')) {
-                obj['user'] = ApiClient.convertToType(data['user'], 'String');
+            if (data.hasOwnProperty('gzip_level')) {
+                obj['gzip_level'] = ApiClient.convertToType(data['gzip_level'], 'Number');
+            }
+            if (data.hasOwnProperty('message_type')) {
+                obj['message_type'] = LoggingMessageType.constructFromObject(data['message_type']);
+            }
+            if (data.hasOwnProperty('period')) {
+                obj['period'] = ApiClient.convertToType(data['period'], 'Number');
+            }
+            if (data.hasOwnProperty('timestamp_format')) {
+                obj['timestamp_format'] = ApiClient.convertToType(data['timestamp_format'], 'String');
             }
             if (data.hasOwnProperty('secret_key')) {
                 obj['secret_key'] = ApiClient.convertToType(data['secret_key'], 'String');
+            }
+            if (data.hasOwnProperty('user')) {
+                obj['user'] = ApiClient.convertToType(data['user'], 'String');
             }
             if (data.hasOwnProperty('bucket_name')) {
                 obj['bucket_name'] = ApiClient.convertToType(data['bucket_name'], 'String');
@@ -94,85 +115,173 @@ class LoggingGcs {
 
 }
 
-
-LoggingGcs.prototype['name'] = undefined;
-
-
-LoggingGcs.prototype['placement'] = undefined;
-
-
-LoggingGcs.prototype['format_version'] = undefined;
-
-
-LoggingGcs.prototype['response_condition'] = undefined;
-
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
 LoggingGcs.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingGcs.prototype['format_version'] = undefined;
 
-LoggingGcs.prototype['message_type'] = undefined;
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingGcs.prototype['name'] = undefined;
 
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingGcs.prototype['placement'] = undefined;
 
-LoggingGcs.prototype['timestamp_format'] = undefined;
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingGcs.prototype['response_condition'] = undefined;
 
-
-LoggingGcs.prototype['period'] = 3600;
-
-
-LoggingGcs.prototype['gzip_level'] = 0;
-
-
+/**
+ * @member {module:model/LoggingCompressionCodec} compression_codec
+ */
 LoggingGcs.prototype['compression_codec'] = undefined;
 
+/**
+ * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {Number} gzip_level
+ * @default 0
+ */
+LoggingGcs.prototype['gzip_level'] = 0;
 
-LoggingGcs.prototype['user'] = undefined;
+/**
+ * @member {module:model/LoggingMessageType} message_type
+ */
+LoggingGcs.prototype['message_type'] = undefined;
 
+/**
+ * How frequently log files are finalized so they can be available for reading (in seconds).
+ * @member {Number} period
+ * @default 3600
+ */
+LoggingGcs.prototype['period'] = 3600;
 
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} timestamp_format
+ */
+LoggingGcs.prototype['timestamp_format'] = undefined;
+
+/**
+ * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+ * @member {String} secret_key
+ */
 LoggingGcs.prototype['secret_key'] = undefined;
 
+/**
+ * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+ * @member {String} user
+ */
+LoggingGcs.prototype['user'] = undefined;
 
+/**
+ * The name of the GCS bucket.
+ * @member {String} bucket_name
+ */
 LoggingGcs.prototype['bucket_name'] = undefined;
 
-
+/**
+ * @member {String} path
+ */
 LoggingGcs.prototype['path'] = undefined;
 
-
+/**
+ * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+ * @member {String} public_key
+ * @default 'null'
+ */
 LoggingGcs.prototype['public_key'] = 'null';
 
 
 // Implement LoggingCommon interface:
-
-LoggingCommon.prototype['name'] = undefined;
-
-LoggingCommon.prototype['placement'] = undefined;
-
-LoggingCommon.prototype['format_version'] = undefined;
-
-LoggingCommon.prototype['response_condition'] = undefined;
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
 LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingCommon.prototype['format_version'] = undefined;
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingCommon.prototype['name'] = undefined;
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingCommon.prototype['placement'] = undefined;
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingCommon.prototype['response_condition'] = undefined;
 // Implement LoggingGenericCommon interface:
-
-LoggingGenericCommon.prototype['message_type'] = undefined;
-
-LoggingGenericCommon.prototype['timestamp_format'] = undefined;
-
-LoggingGenericCommon.prototype['period'] = 3600;
-
-LoggingGenericCommon.prototype['gzip_level'] = 0;
-
+/**
+ * @member {module:model/LoggingCompressionCodec} compression_codec
+ */
 LoggingGenericCommon.prototype['compression_codec'] = undefined;
+/**
+ * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {Number} gzip_level
+ * @default 0
+ */
+LoggingGenericCommon.prototype['gzip_level'] = 0;
+/**
+ * @member {module:model/LoggingMessageType} message_type
+ */
+LoggingGenericCommon.prototype['message_type'] = undefined;
+/**
+ * How frequently log files are finalized so they can be available for reading (in seconds).
+ * @member {Number} period
+ * @default 3600
+ */
+LoggingGenericCommon.prototype['period'] = 3600;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} timestamp_format
+ */
+LoggingGenericCommon.prototype['timestamp_format'] = undefined;
 // Implement LoggingGcsCommon interface:
-
-LoggingGcsCommon.prototype['user'] = undefined;
-
+/**
+ * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+ * @member {String} secret_key
+ */
 LoggingGcsCommon.prototype['secret_key'] = undefined;
+/**
+ * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+ * @member {String} user
+ */
+LoggingGcsCommon.prototype['user'] = undefined;
 // Implement LoggingGcsAllOf interface:
-
+/**
+ * The name of the GCS bucket.
+ * @member {String} bucket_name
+ */
 LoggingGcsAllOf.prototype['bucket_name'] = undefined;
-
+/**
+ * @member {String} path
+ */
 LoggingGcsAllOf.prototype['path'] = undefined;
-
+/**
+ * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+ * @member {String} public_key
+ * @default 'null'
+ */
 LoggingGcsAllOf.prototype['public_key'] = 'null';
 
 

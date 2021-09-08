@@ -15,22 +15,38 @@
 import ApiClient from "../ApiClient";
 import Content from '../model/Content';
 
-
+/**
+* Content service.
+* @module api/ContentApi
+* @version 3.0.0-alpha1
+*/
 export default class ContentApi {
 
-    
+    /**
+    * Constructs a new ContentApi. 
+    * @alias module:api/ContentApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    contentCheckWithHttpInfo(opts) {
-      opts = opts || {};
+
+    /**
+     * Retrieve headers and MD5 hash of the content for a particular URL from each Fastly edge server. This API is limited to 200 requests per hour.
+     * @param {Object} options
+     * @param {String} [options.url] - Full URL (host and path) to check on all nodes. if protocol is omitted, http will be assumed.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Content>} and HTTP response
+     */
+    contentCheckWithHttpInfo(options = {}) {
       let postBody = null;
 
       let pathParams = {
       };
       let queryParams = {
-        'url': opts['url']
+        'url': options['url']
       };
       let headerParams = {
       };
@@ -47,8 +63,15 @@ export default class ContentApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    contentCheck(opts) {
-      return this.contentCheckWithHttpInfo(opts)
+
+    /**
+     * Retrieve headers and MD5 hash of the content for a particular URL from each Fastly edge server. This API is limited to 200 requests per hour.
+     * @param {Object} options
+     * @param {String} [options.url] - Full URL (host and path) to check on all nodes. if protocol is omitted, http will be assumed.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Content>}
+     */
+    contentCheck(options = {}) {
+      return this.contentCheckWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

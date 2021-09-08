@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import RelationshipTlsBulkCertificateTlsBulkCertificate from './RelationshipTlsBulkCertificateTlsBulkCertificate';
 
-
+/**
+ * The RelationshipTlsBulkCertificate model module.
+ * @module model/RelationshipTlsBulkCertificate
+ * @version 3.0.0-alpha1
+ */
 class RelationshipTlsBulkCertificate {
-    
+    /**
+     * Constructs a new <code>RelationshipTlsBulkCertificate</code>.
+     * @alias module:model/RelationshipTlsBulkCertificate
+     */
     constructor() { 
         
         RelationshipTlsBulkCertificate.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipTlsBulkCertificate</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipTlsBulkCertificate} obj Optional instance to populate.
+     * @return {module:model/RelationshipTlsBulkCertificate} The populated <code>RelationshipTlsBulkCertificate</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipTlsBulkCertificate();
@@ -41,7 +58,9 @@ class RelationshipTlsBulkCertificate {
 
 }
 
-
+/**
+ * @member {module:model/RelationshipTlsBulkCertificateTlsBulkCertificate} tls_bulk_certificate
+ */
 RelationshipTlsBulkCertificate.prototype['tls_bulk_certificate'] = undefined;
 
 

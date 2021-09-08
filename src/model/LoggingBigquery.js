@@ -18,19 +18,39 @@ import LoggingFormatVersion from './LoggingFormatVersion';
 import LoggingGcsCommon from './LoggingGcsCommon';
 import LoggingPlacement from './LoggingPlacement';
 
-
+/**
+ * The LoggingBigquery model module.
+ * @module model/LoggingBigquery
+ * @version 3.0.0-alpha1
+ */
 class LoggingBigquery {
-    
+    /**
+     * Constructs a new <code>LoggingBigquery</code>.
+     * @alias module:model/LoggingBigquery
+     * @implements module:model/LoggingCommon
+     * @implements module:model/LoggingGcsCommon
+     * @implements module:model/LoggingBigqueryAllOf
+     */
     constructor() { 
         LoggingCommon.initialize(this);LoggingGcsCommon.initialize(this);LoggingBigqueryAllOf.initialize(this);
         LoggingBigquery.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingBigquery</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingBigquery} obj Optional instance to populate.
+     * @return {module:model/LoggingBigquery} The populated <code>LoggingBigquery</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingBigquery();
@@ -38,38 +58,38 @@ class LoggingBigquery {
             LoggingGcsCommon.constructFromObject(data, obj);
             LoggingBigqueryAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
             }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
-            }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
-            }
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], 'String');
-            }
-            if (data.hasOwnProperty('user')) {
-                obj['user'] = ApiClient.convertToType(data['user'], 'String');
             }
             if (data.hasOwnProperty('secret_key')) {
                 obj['secret_key'] = ApiClient.convertToType(data['secret_key'], 'String');
             }
+            if (data.hasOwnProperty('user')) {
+                obj['user'] = ApiClient.convertToType(data['user'], 'String');
+            }
             if (data.hasOwnProperty('dataset')) {
                 obj['dataset'] = ApiClient.convertToType(data['dataset'], 'String');
+            }
+            if (data.hasOwnProperty('project_id')) {
+                obj['project_id'] = ApiClient.convertToType(data['project_id'], 'String');
             }
             if (data.hasOwnProperty('table')) {
                 obj['table'] = ApiClient.convertToType(data['table'], 'String');
             }
             if (data.hasOwnProperty('template_suffix')) {
                 obj['template_suffix'] = ApiClient.convertToType(data['template_suffix'], 'String');
-            }
-            if (data.hasOwnProperty('project_id')) {
-                obj['project_id'] = ApiClient.convertToType(data['project_id'], 'String');
             }
         }
         return obj;
@@ -78,69 +98,138 @@ class LoggingBigquery {
 
 }
 
-
-LoggingBigquery.prototype['name'] = undefined;
-
-
-LoggingBigquery.prototype['placement'] = undefined;
-
-
-LoggingBigquery.prototype['format_version'] = undefined;
-
-
-LoggingBigquery.prototype['response_condition'] = undefined;
-
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
+ * @member {String} format
+ */
 LoggingBigquery.prototype['format'] = undefined;
 
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingBigquery.prototype['format_version'] = undefined;
 
-LoggingBigquery.prototype['user'] = undefined;
+/**
+ * The name of the BigQuery logging object. Used as a primary key for API access.
+ * @member {String} name
+ */
+LoggingBigquery.prototype['name'] = undefined;
 
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingBigquery.prototype['placement'] = undefined;
 
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingBigquery.prototype['response_condition'] = undefined;
+
+/**
+ * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+ * @member {String} secret_key
+ */
 LoggingBigquery.prototype['secret_key'] = undefined;
 
+/**
+ * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+ * @member {String} user
+ */
+LoggingBigquery.prototype['user'] = undefined;
 
+/**
+ * Your BigQuery dataset.
+ * @member {String} dataset
+ */
 LoggingBigquery.prototype['dataset'] = undefined;
 
+/**
+ * Your Google Cloud Platform project ID. Required
+ * @member {String} project_id
+ */
+LoggingBigquery.prototype['project_id'] = undefined;
 
+/**
+ * Your BigQuery table.
+ * @member {String} table
+ */
 LoggingBigquery.prototype['table'] = undefined;
 
-
+/**
+ * BigQuery table name suffix template. Optional.
+ * @member {String} template_suffix
+ */
 LoggingBigquery.prototype['template_suffix'] = undefined;
 
 
-LoggingBigquery.prototype['project_id'] = undefined;
-
-
 // Implement LoggingCommon interface:
-
-LoggingCommon.prototype['name'] = undefined;
-
-LoggingCommon.prototype['placement'] = undefined;
-
-LoggingCommon.prototype['format_version'] = undefined;
-
-LoggingCommon.prototype['response_condition'] = undefined;
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
 LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingCommon.prototype['format_version'] = undefined;
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingCommon.prototype['name'] = undefined;
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingCommon.prototype['placement'] = undefined;
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingCommon.prototype['response_condition'] = undefined;
 // Implement LoggingGcsCommon interface:
-
-LoggingGcsCommon.prototype['user'] = undefined;
-
+/**
+ * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+ * @member {String} secret_key
+ */
 LoggingGcsCommon.prototype['secret_key'] = undefined;
+/**
+ * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+ * @member {String} user
+ */
+LoggingGcsCommon.prototype['user'] = undefined;
 // Implement LoggingBigqueryAllOf interface:
-
-LoggingBigqueryAllOf.prototype['name'] = undefined;
-
-LoggingBigqueryAllOf.prototype['format'] = undefined;
-
+/**
+ * Your BigQuery dataset.
+ * @member {String} dataset
+ */
 LoggingBigqueryAllOf.prototype['dataset'] = undefined;
-
-LoggingBigqueryAllOf.prototype['table'] = undefined;
-
-LoggingBigqueryAllOf.prototype['template_suffix'] = undefined;
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
+ * @member {String} format
+ */
+LoggingBigqueryAllOf.prototype['format'] = undefined;
+/**
+ * The name of the BigQuery logging object. Used as a primary key for API access.
+ * @member {String} name
+ */
+LoggingBigqueryAllOf.prototype['name'] = undefined;
+/**
+ * Your Google Cloud Platform project ID. Required
+ * @member {String} project_id
+ */
 LoggingBigqueryAllOf.prototype['project_id'] = undefined;
+/**
+ * Your BigQuery table.
+ * @member {String} table
+ */
+LoggingBigqueryAllOf.prototype['table'] = undefined;
+/**
+ * BigQuery table name suffix template. Optional.
+ * @member {String} template_suffix
+ */
+LoggingBigqueryAllOf.prototype['template_suffix'] = undefined;
 
 
 

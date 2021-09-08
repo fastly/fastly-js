@@ -16,31 +16,48 @@ import AnyOfrelationshipTlsConfigurationsobject from './AnyOfrelationshipTlsConf
 import TlsBulkCertificateDataAttributes from './TlsBulkCertificateDataAttributes';
 import TypeTlsBulkCertificate from './TypeTlsBulkCertificate';
 
-
+/**
+ * The TlsBulkCertificateData model module.
+ * @module model/TlsBulkCertificateData
+ * @version 3.0.0-alpha1
+ */
 class TlsBulkCertificateData {
-    
+    /**
+     * Constructs a new <code>TlsBulkCertificateData</code>.
+     * @alias module:model/TlsBulkCertificateData
+     */
     constructor() { 
         
         TlsBulkCertificateData.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>TlsBulkCertificateData</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/TlsBulkCertificateData} obj Optional instance to populate.
+     * @return {module:model/TlsBulkCertificateData} The populated <code>TlsBulkCertificateData</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsBulkCertificateData();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeTlsBulkCertificate.constructFromObject(data['type']);
-            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = TlsBulkCertificateDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = ApiClient.convertToType(data['relationships'], AnyOfrelationshipTlsConfigurationsobject);
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeTlsBulkCertificate.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -49,14 +66,20 @@ class TlsBulkCertificateData {
 
 }
 
-
-TlsBulkCertificateData.prototype['type'] = undefined;
-
-
+/**
+ * @member {module:model/TlsBulkCertificateDataAttributes} attributes
+ */
 TlsBulkCertificateData.prototype['attributes'] = undefined;
 
-
+/**
+ * @member {module:model/AnyOfrelationshipTlsConfigurationsobject} relationships
+ */
 TlsBulkCertificateData.prototype['relationships'] = undefined;
+
+/**
+ * @member {module:model/TypeTlsBulkCertificate} type
+ */
+TlsBulkCertificateData.prototype['type'] = undefined;
 
 
 

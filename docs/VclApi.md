@@ -1,7 +1,9 @@
-# FastlyApi.VclApi
+# Fastly.VclApi
 
 
-
+```javascript
+const apiInstance = new Fastly.VclApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -22,32 +24,34 @@ Method | Fastly API endpoint | Description
 
 ## `createCustomVcl`
 
-> createCustomVcl(service_id, version_id, opts)
-
-Create a custom VCL file
+```javascript
+createCustomVcl({ service_id, version_id, [content], , [main], , [name] })
+```
 
 Upload a VCL for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.VclApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let opts = {
-  'content': "content_example", // String | The VCL code to be included.
-  'main': true, // Boolean | Set to `true` when this is the main VCL, otherwise `false`.
-  'name': "name_example" // String | The name of this VCL.
-};
-apiInstance.createCustomVcl(service_id, version_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required
+  content: "content_example",
 
+  main: true,
+
+  name: "name_example",
+};
+
+apiInstance.createCustomVcl(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -64,28 +68,28 @@ Name | Type | Description  | Notes
 
 ## `deleteCustomVcl`
 
-> deleteCustomVcl(service_id, version_id, vcl_name)
-
-Delete a custom VCL file
+```javascript
+deleteCustomVcl({ service_id, version_id, vcl_name })
+```
 
 Delete the uploaded VCL for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.VclApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let vcl_name = "vcl_name_example"; // String | 
-apiInstance.deleteCustomVcl(service_id, version_id, vcl_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  vcl_name: "vcl_name_example", // required};
 
+apiInstance.deleteCustomVcl(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -100,31 +104,30 @@ Name | Type | Description  | Notes
 
 ## `getCustomVcl`
 
-> getCustomVcl(service_id, version_id, vcl_name, opts)
-
-Get a custom VCL file
+```javascript
+getCustomVcl({ service_id, version_id, vcl_name, [no_content] })
+```
 
 Get the uploaded VCL for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.VclApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let vcl_name = "vcl_name_example"; // String | 
-let opts = {
-  'no_content': "'0'" // String | Omit VCL content.
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  vcl_name: "vcl_name_example", // required
+  no_content: "'0'",
 };
-apiInstance.getCustomVcl(service_id, version_id, vcl_name, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.getCustomVcl(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -140,27 +143,28 @@ Name | Type | Description  | Notes
 
 ## `getCustomVclBoilerplate`
 
-> getCustomVclBoilerplate(service_id, version_id)
-
-Get boilerplate VCL
+```javascript
+getCustomVclBoilerplate({ service_id, version_id })
+```
 
 Return boilerplate VCL with the service's TTL from the [settings](/reference/api/vcl-services/settings/).
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.VclApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.getCustomVclBoilerplate(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.getCustomVclBoilerplate(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -174,27 +178,28 @@ Name | Type | Description  | Notes
 
 ## `getCustomVclGenerated`
 
-> getCustomVclGenerated(service_id, version_id)
-
-Get the generated VCL for a service
+```javascript
+getCustomVclGenerated({ service_id, version_id })
+```
 
 Display the generated VCL for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.VclApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.getCustomVclGenerated(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.getCustomVclGenerated(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -208,27 +213,28 @@ Name | Type | Description  | Notes
 
 ## `getCustomVclGeneratedHighlighted`
 
-> getCustomVclGeneratedHighlighted(service_id, version_id)
-
-Get the generated VCL with syntax highlighting
+```javascript
+getCustomVclGeneratedHighlighted({ service_id, version_id })
+```
 
 Display the content of generated VCL with HTML syntax highlighting. Include line numbers by sending `lineno=true` as a request parameter.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.VclApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.getCustomVclGeneratedHighlighted(service_id, version_id).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.getCustomVclGeneratedHighlighted(options)
+  .then(() => {
+    console.log('API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -242,28 +248,28 @@ null (empty response body)
 
 ## `getCustomVclHighlighted`
 
-> getCustomVclHighlighted(service_id, version_id, vcl_name)
-
-Get a custom VCL file with syntax highlighting
+```javascript
+getCustomVclHighlighted({ service_id, version_id, vcl_name })
+```
 
 Get the uploaded VCL for a particular service and version with HTML syntax highlighting. Include line numbers by sending `lineno=true` as a request parameter.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.VclApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let vcl_name = "vcl_name_example"; // String | 
-apiInstance.getCustomVclHighlighted(service_id, version_id, vcl_name).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  vcl_name: "vcl_name_example", // required};
 
+apiInstance.getCustomVclHighlighted(options)
+  .then(() => {
+    console.log('API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -278,28 +284,28 @@ null (empty response body)
 
 ## `getCustomVclRaw`
 
-> getCustomVclRaw(service_id, version_id, vcl_name)
-
-Download a custom VCL file
+```javascript
+getCustomVclRaw({ service_id, version_id, vcl_name })
+```
 
 Download the specified VCL.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.VclApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let vcl_name = "vcl_name_example"; // String | 
-apiInstance.getCustomVclRaw(service_id, version_id, vcl_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  vcl_name: "vcl_name_example", // required};
 
+apiInstance.getCustomVclRaw(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -314,27 +320,28 @@ Name | Type | Description  | Notes
 
 ## `listCustomVcl`
 
-> listCustomVcl(service_id, version_id)
-
-List custom VCL files
+```javascript
+listCustomVcl({ service_id, version_id })
+```
 
 List the uploaded VCLs for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.VclApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.listCustomVcl(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.listCustomVcl(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -348,28 +355,28 @@ Name | Type | Description  | Notes
 
 ## `setCustomVclMain`
 
-> setCustomVclMain(service_id, version_id, vcl_name)
-
-Set a custom VCL file as main
+```javascript
+setCustomVclMain({ service_id, version_id, vcl_name })
+```
 
 Set the specified VCL as the main.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.VclApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let vcl_name = "vcl_name_example"; // String | 
-apiInstance.setCustomVclMain(service_id, version_id, vcl_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  vcl_name: "vcl_name_example", // required};
 
+apiInstance.setCustomVclMain(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -384,33 +391,34 @@ Name | Type | Description  | Notes
 
 ## `updateCustomVcl`
 
-> updateCustomVcl(service_id, version_id, vcl_name, opts)
-
-Update a custom VCL file
+```javascript
+updateCustomVcl({ service_id, version_id, vcl_name, [content], , [main], , [name] })
+```
 
 Update the uploaded VCL for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.VclApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let vcl_name = "vcl_name_example"; // String | 
-let opts = {
-  'content': "content_example", // String | The VCL code to be included.
-  'main': true, // Boolean | Set to `true` when this is the main VCL, otherwise `false`.
-  'name': "name_example" // String | The name of this VCL.
-};
-apiInstance.updateCustomVcl(service_id, version_id, vcl_name, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  vcl_name: "vcl_name_example", // required
+  content: "content_example",
 
+  main: true,
+
+  name: "name_example",
+};
+
+apiInstance.updateCustomVcl(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

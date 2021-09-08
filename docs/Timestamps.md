@@ -1,4 +1,4 @@
-# FastlyApi.Timestamps
+# Fastly.Timestamps
 
 ## Properties
 

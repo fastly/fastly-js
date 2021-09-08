@@ -16,31 +16,48 @@ import AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision from './An
 import TypeWafActiveRule from './TypeWafActiveRule';
 import WafActiveRuleDataAttributes from './WafActiveRuleDataAttributes';
 
-
+/**
+ * The WafActiveRuleData model module.
+ * @module model/WafActiveRuleData
+ * @version 3.0.0-alpha1
+ */
 class WafActiveRuleData {
-    
+    /**
+     * Constructs a new <code>WafActiveRuleData</code>.
+     * @alias module:model/WafActiveRuleData
+     */
     constructor() { 
         
         WafActiveRuleData.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>WafActiveRuleData</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/WafActiveRuleData} obj Optional instance to populate.
+     * @return {module:model/WafActiveRuleData} The populated <code>WafActiveRuleData</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafActiveRuleData();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeWafActiveRule.constructFromObject(data['type']);
-            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = WafActiveRuleDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = ApiClient.convertToType(data['relationships'], AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision);
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeWafActiveRule.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -49,14 +66,20 @@ class WafActiveRuleData {
 
 }
 
-
-WafActiveRuleData.prototype['type'] = undefined;
-
-
+/**
+ * @member {module:model/WafActiveRuleDataAttributes} attributes
+ */
 WafActiveRuleData.prototype['attributes'] = undefined;
 
-
+/**
+ * @member {module:model/AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision} relationships
+ */
 WafActiveRuleData.prototype['relationships'] = undefined;
+
+/**
+ * @member {module:model/TypeWafActiveRule} type
+ */
+WafActiveRuleData.prototype['type'] = undefined;
 
 
 

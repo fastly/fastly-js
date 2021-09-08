@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The DictionaryResponseAllOf model module.
+ * @module model/DictionaryResponseAllOf
+ * @version 3.0.0-alpha1
+ */
 class DictionaryResponseAllOf {
-    
+    /**
+     * Constructs a new <code>DictionaryResponseAllOf</code>.
+     * @alias module:model/DictionaryResponseAllOf
+     */
     constructor() { 
         
         DictionaryResponseAllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>DictionaryResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/DictionaryResponseAllOf} obj Optional instance to populate.
+     * @return {module:model/DictionaryResponseAllOf} The populated <code>DictionaryResponseAllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new DictionaryResponseAllOf();
@@ -40,7 +57,10 @@ class DictionaryResponseAllOf {
 
 }
 
-
+/**
+ * Alphanumeric string identifying a Dictionary.
+ * @member {String} id
+ */
 DictionaryResponseAllOf.prototype['id'] = undefined;
 
 

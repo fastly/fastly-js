@@ -1,4 +1,4 @@
-# FastlyApi.TlsPrivateKeysResponseAllOf
+# Fastly.TlsPrivateKeysResponseAllOf
 
 ## Properties
 

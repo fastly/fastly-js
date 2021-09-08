@@ -1,11 +1,11 @@
-# FastlyApi.WafActiveRulesResponseAllOf
+# Fastly.WafActiveRulesResponseAllOf
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **data** | [**[Data]**](Data.md) |  | [optional] 
-**included** | [**[AnyOfwafFirewallVersionwafRuleRevision]**](AnyOfwafFirewallVersionwafRuleRevision.md) |  | [optional] 
+**included** | [**[AnyOfschemasWafFirewallVersionwafRuleRevision]**](AnyOfschemasWafFirewallVersionwafRuleRevision.md) |  | [optional] 
 
 
 

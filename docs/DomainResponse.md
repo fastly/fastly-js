@@ -1,4 +1,4 @@
-# FastlyApi.DomainResponse
+# Fastly.DomainResponse
 
 ## Properties
 

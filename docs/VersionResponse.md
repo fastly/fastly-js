@@ -1,4 +1,4 @@
-# FastlyApi.VersionResponse
+# Fastly.VersionResponse
 
 ## Properties
 

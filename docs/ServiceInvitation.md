@@ -1,4 +1,4 @@
-# FastlyApi.ServiceInvitation
+# Fastly.ServiceInvitation
 
 ## Properties
 

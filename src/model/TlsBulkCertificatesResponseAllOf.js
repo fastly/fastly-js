@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import Data from './Data';
 
-
+/**
+ * The TlsBulkCertificatesResponseAllOf model module.
+ * @module model/TlsBulkCertificatesResponseAllOf
+ * @version 3.0.0-alpha1
+ */
 class TlsBulkCertificatesResponseAllOf {
-    
+    /**
+     * Constructs a new <code>TlsBulkCertificatesResponseAllOf</code>.
+     * @alias module:model/TlsBulkCertificatesResponseAllOf
+     */
     constructor() { 
         
         TlsBulkCertificatesResponseAllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>TlsBulkCertificatesResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/TlsBulkCertificatesResponseAllOf} obj Optional instance to populate.
+     * @return {module:model/TlsBulkCertificatesResponseAllOf} The populated <code>TlsBulkCertificatesResponseAllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsBulkCertificatesResponseAllOf();
@@ -41,7 +58,9 @@ class TlsBulkCertificatesResponseAllOf {
 
 }
 
-
+/**
+ * @member {Array.<module:model/Data>} data
+ */
 TlsBulkCertificatesResponseAllOf.prototype['data'] = undefined;
 
 

@@ -12,15 +12,26 @@
  */
 
 import ApiClient from '../ApiClient';
-
+/**
+* Enum class TypeWafExclusion.
+* @enum {}
+* @readonly
+*/
 export default class TypeWafExclusion {
     
-        
+        /**
+         * value: "waf_exclusion"
+         * @const
+         */
         "waf_exclusion" = "waf_exclusion";
 
     
 
-    
+    /**
+    * Returns a <code>TypeWafExclusion</code> enum value from a Javascript object name.
+    * @param {Object} data The plain JavaScript object containing the name of the enum value.
+    * @return {module:model/TypeWafExclusion} The enum <code>TypeWafExclusion</code> value.
+    */
     static constructFromObject(object) {
         return object;
     }

@@ -1,4 +1,4 @@
-# FastlyApi.TypeTlsActivation
+# Fastly.TypeTlsActivation
 
 ## Enum
 

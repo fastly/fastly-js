@@ -1,4 +1,4 @@
-# FastlyApi.RequestSettingsResponse
+# Fastly.RequestSettingsResponse
 
 ## Properties
 

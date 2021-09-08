@@ -1,7 +1,9 @@
-# FastlyApi.AclEntryApi
+# Fastly.AclEntryApi
 
 
-
+```javascript
+const apiInstance = new Fastly.AclEntryApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -17,30 +19,30 @@ Method | Fastly API endpoint | Description
 
 ## `bulkUpdateAclEntries`
 
-> bulkUpdateAclEntries(service_id, acl_id, opts)
-
-Update multiple ACL entries
+```javascript
+bulkUpdateAclEntries({ service_id, acl_id, [acl_entries] })
+```
 
 Update multiple ACL entries on the same ACL.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.AclEntryApi();
-let service_id = "service_id_example"; // String | 
-let acl_id = "acl_id_example"; // String | 
-let opts = {
-  'acl_entries': {"entries":[{"op":"create","ip":"192.168.0.1","subnet":8},{"op":"update","id":"6yxNzlOpW1V7JfSwvLGtOc","ip":"192.168.0.2","subnet":16},{"op":"delete","id":"6yxNzlOpW1V7JfSwvLGtOc"}]} // AclEntries | 
+const options = {
+  service_id: "service_id_example", // required  acl_id: "acl_id_example", // required
+  acl_entries: new Fastly.AclEntries(),
 };
-apiInstance.bulkUpdateAclEntries(service_id, acl_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.bulkUpdateAclEntries(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -55,30 +57,30 @@ Name | Type | Description  | Notes
 
 ## `createAclEntry`
 
-> createAclEntry(service_id, acl_id, opts)
-
-Create an ACL entry
+```javascript
+createAclEntry({ service_id, acl_id, [acl_entry] })
+```
 
 Add an ACL entry to an ACL.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.AclEntryApi();
-let service_id = "service_id_example"; // String | 
-let acl_id = "acl_id_example"; // String | 
-let opts = {
-  'acl_entry': {"subnet":0,"ip":"127.0.0.1"} // AclEntry | 
+const options = {
+  service_id: "service_id_example", // required  acl_id: "acl_id_example", // required
+  acl_entry: new Fastly.AclEntry(),
 };
-apiInstance.createAclEntry(service_id, acl_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.createAclEntry(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -93,28 +95,28 @@ Name | Type | Description  | Notes
 
 ## `deleteAclEntry`
 
-> deleteAclEntry(service_id, acl_id, acl_entry_id)
-
-Delete an ACL entry
+```javascript
+deleteAclEntry({ service_id, acl_id, acl_entry_id })
+```
 
 Delete an ACL entry from a specified ACL.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.AclEntryApi();
-let service_id = "service_id_example"; // String | 
-let acl_id = "acl_id_example"; // String | 
-let acl_entry_id = "acl_entry_id_example"; // String | 
-apiInstance.deleteAclEntry(service_id, acl_id, acl_entry_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  acl_id: "acl_id_example", // required  acl_entry_id: "acl_entry_id_example", // required};
 
+apiInstance.deleteAclEntry(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -129,28 +131,28 @@ Name | Type | Description  | Notes
 
 ## `getAclEntry`
 
-> getAclEntry(service_id, acl_id, acl_entry_id)
-
-Describe an ACL entry
+```javascript
+getAclEntry({ service_id, acl_id, acl_entry_id })
+```
 
 Retrieve a single ACL entry.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.AclEntryApi();
-let service_id = "service_id_example"; // String | 
-let acl_id = "acl_id_example"; // String | 
-let acl_entry_id = "acl_entry_id_example"; // String | 
-apiInstance.getAclEntry(service_id, acl_id, acl_entry_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  acl_id: "acl_id_example", // required  acl_entry_id: "acl_entry_id_example", // required};
 
+apiInstance.getAclEntry(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -165,33 +167,36 @@ Name | Type | Description  | Notes
 
 ## `listAclEntries`
 
-> listAclEntries(service_id, acl_id, opts)
-
-List ACL entries
+```javascript
+listAclEntries({ service_id, acl_id, [page], , [per_page], , [sort], , [direction] })
+```
 
 List ACL entries for a specified ACL.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.AclEntryApi();
-let service_id = "service_id_example"; // String | 
-let acl_id = "acl_id_example"; // String | 
-let opts = {
-  'page': 56, // Number | Current page.
-  'per_page': 20, // Number | Number of records per page.
-  'sort': "'created'", // String | Field on which to sort.
-  'direction': ascend // String | Direction in which to sort results.
-};
-apiInstance.listAclEntries(service_id, acl_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  acl_id: "acl_id_example", // required
+  page: 56,
 
+  per_page: 20,
+
+  sort: "'created'",
+
+  direction: ascend,
+};
+
+apiInstance.listAclEntries(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -209,31 +214,30 @@ Name | Type | Description  | Notes
 
 ## `updateAclEntry`
 
-> updateAclEntry(service_id, acl_id, acl_entry_id, opts)
-
-Update an ACL entry
+```javascript
+updateAclEntry({ service_id, acl_id, acl_entry_id, [acl_entry] })
+```
 
 Update an ACL entry for a specified ACL.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.AclEntryApi();
-let service_id = "service_id_example"; // String | 
-let acl_id = "acl_id_example"; // String | 
-let acl_entry_id = "acl_entry_id_example"; // String | 
-let opts = {
-  'acl_entry': {"subnet":8} // AclEntry | 
+const options = {
+  service_id: "service_id_example", // required  acl_id: "acl_id_example", // required  acl_entry_id: "acl_entry_id_example", // required
+  acl_entry: new Fastly.AclEntry(),
 };
-apiInstance.updateAclEntry(service_id, acl_id, acl_entry_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.updateAclEntry(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

@@ -1,7 +1,9 @@
-# FastlyApi.LoggingHerokuApi
+# Fastly.LoggingHerokuApi
 
 
-
+```javascript
+const apiInstance = new Fastly.LoggingHerokuApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -16,46 +18,52 @@ Method | Fastly API endpoint | Description
 
 ## `createLogHeroku`
 
-> createLogHeroku(service_id, version_id, opts)
-
-Create a Heroku log endpoint
+```javascript
+createLogHeroku({ service_id, version_id, [format], , [format_version], , [name], , [placement], , [response_condition], , [token], , [url] })
+```
 
 Create a Heroku for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingHerokuApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let opts = {
-  'name': "name_example", // String | The name for the real-time logging configuration.
-  'placement': new FastlyApi.LoggingPlacement(), // LoggingPlacement | 
-  'format_version': new FastlyApi.LoggingFormatVersion(), // LoggingFormatVersion | 
-  'response_condition': "response_condition_example", // String | The name of an existing condition in the configured endpoint, or leave blank to always execute.
-  'format': "'%h %l %u %t \"%r\" %&gt;s %b'", // String | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-  'token': "token_example", // String | The token to use for authentication ([https://devcenter.heroku.com/articles/add-on-partner-log-integration](https://devcenter.heroku.com/articles/add-on-partner-log-integration)).
-  'url': "url_example" // String | The URL to stream logs to.
-};
-apiInstance.createLogHeroku(service_id, version_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
+  format_version: new Fastly.LoggingFormatVersion(),
+
+  name: "name_example",
+
+  placement: new Fastly.LoggingPlacement(),
+
+  response_condition: "response_condition_example",
+
+  token: "token_example",
+
+  url: "url_example",
+};
+
+apiInstance.createLogHeroku(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
+**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
 **token** | **String** | The token to use for authentication ([https://devcenter.heroku.com/articles/add-on-partner-log-integration](https://devcenter.heroku.com/articles/add-on-partner-log-integration)). | [optional]
 **url** | **String** | The URL to stream logs to. | [optional]
 
@@ -66,28 +74,28 @@ Name | Type | Description  | Notes
 
 ## `deleteLogHeroku`
 
-> deleteLogHeroku(service_id, version_id, logging_heroku_name)
-
-Delete the Heroku log endpoint
+```javascript
+deleteLogHeroku({ service_id, version_id, logging_heroku_name })
+```
 
 Delete the Heroku for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingHerokuApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let logging_heroku_name = "logging_heroku_name_example"; // String | 
-apiInstance.deleteLogHeroku(service_id, version_id, logging_heroku_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_heroku_name: "logging_heroku_name_example", // required};
 
+apiInstance.deleteLogHeroku(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -102,28 +110,28 @@ Name | Type | Description  | Notes
 
 ## `getLogHeroku`
 
-> getLogHeroku(service_id, version_id, logging_heroku_name)
-
-Get a Heroku log endpoint
+```javascript
+getLogHeroku({ service_id, version_id, logging_heroku_name })
+```
 
 Get the Heroku for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingHerokuApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let logging_heroku_name = "logging_heroku_name_example"; // String | 
-apiInstance.getLogHeroku(service_id, version_id, logging_heroku_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_heroku_name: "logging_heroku_name_example", // required};
 
+apiInstance.getLogHeroku(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -138,27 +146,28 @@ Name | Type | Description  | Notes
 
 ## `listLogHeroku`
 
-> listLogHeroku(service_id, version_id)
-
-List Heroku log endpoints
+```javascript
+listLogHeroku({ service_id, version_id })
+```
 
 List all of the Herokus for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingHerokuApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.listLogHeroku(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.listLogHeroku(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -172,48 +181,53 @@ Name | Type | Description  | Notes
 
 ## `updateLogHeroku`
 
-> updateLogHeroku(service_id, version_id, logging_heroku_name, opts)
-
-Update the Heroku log endpoint
+```javascript
+updateLogHeroku({ service_id, version_id, logging_heroku_name, [format], , [format_version], , [name], , [placement], , [response_condition], , [token], , [url] })
+```
 
 Update the Heroku for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingHerokuApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let logging_heroku_name = "logging_heroku_name_example"; // String | 
-let opts = {
-  'name': "name_example", // String | The name for the real-time logging configuration.
-  'placement': new FastlyApi.LoggingPlacement(), // LoggingPlacement | 
-  'format_version': new FastlyApi.LoggingFormatVersion(), // LoggingFormatVersion | 
-  'response_condition': "response_condition_example", // String | The name of an existing condition in the configured endpoint, or leave blank to always execute.
-  'format': "'%h %l %u %t \"%r\" %&gt;s %b'", // String | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-  'token': "token_example", // String | The token to use for authentication ([https://devcenter.heroku.com/articles/add-on-partner-log-integration](https://devcenter.heroku.com/articles/add-on-partner-log-integration)).
-  'url': "url_example" // String | The URL to stream logs to.
-};
-apiInstance.updateLogHeroku(service_id, version_id, logging_heroku_name, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_heroku_name: "logging_heroku_name_example", // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
+  format_version: new Fastly.LoggingFormatVersion(),
+
+  name: "name_example",
+
+  placement: new Fastly.LoggingPlacement(),
+
+  response_condition: "response_condition_example",
+
+  token: "token_example",
+
+  url: "url_example",
+};
+
+apiInstance.updateLogHeroku(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
 **logging_heroku_name** | **String** |  |
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
+**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
 **token** | **String** | The token to use for authentication ([https://devcenter.heroku.com/articles/add-on-partner-log-integration](https://devcenter.heroku.com/articles/add-on-partner-log-integration)). | [optional]
 **url** | **String** | The URL to stream logs to. | [optional]
 

@@ -1,7 +1,9 @@
-# FastlyApi.TlsSubscriptionsApi
+# Fastly.TlsSubscriptionsApi
 
 
-
+```javascript
+const apiInstance = new Fastly.TlsSubscriptionsApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -16,29 +18,32 @@ Method | Fastly API endpoint | Description
 
 ## `createTlsSub`
 
-> createTlsSub(opts)
-
-Create a TLS subscription
+```javascript
+createTlsSub({ [force], [tls_subscription] })
+```
 
 Create a new TLS subscription. This response includes a list of possible challenges to verify domain ownership.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TlsSubscriptionsApi();
-let opts = {
-  'force': true, // Boolean | A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain. 
-  'tls_subscription': {"data":{"type":"tls_subscription","attributes":{"certificate_authority":"lets-encrypt"},"relationships":{"tls_domains":{"data":[{"type":"tls_domain","id":"DOMAIN_NAME"}]},"tls_configuration":{"data":{"type":"tls_configuration","id":"t7CguUGZzb2W9Euo5FoKa"}}}}} // TlsSubscription | 
-};
-apiInstance.createTlsSub(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
 
+  force: true,
+
+  tls_subscription: new Fastly.TlsSubscription(),
+};
+
+apiInstance.createTlsSub(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -52,26 +57,28 @@ Name | Type | Description  | Notes
 
 ## `deleteTlsSub`
 
-> deleteTlsSub(tls_subscription_id)
-
-Delete a TLS subscription
+```javascript
+deleteTlsSub({ tls_subscription_id })
+```
 
 Destroy a TLS subscription. A subscription cannot be destroyed if there are domains in the TLS enabled state.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TlsSubscriptionsApi();
-let tls_subscription_id = "tls_subscription_id_example"; // String | 
-apiInstance.deleteTlsSub(tls_subscription_id).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  tls_subscription_id: "tls_subscription_id_example", // required};
 
+apiInstance.deleteTlsSub(options)
+  .then(() => {
+    console.log('API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -84,34 +91,35 @@ null (empty response body)
 
 ## `getTlsSub`
 
-> getTlsSub(tls_subscription_id, opts)
-
-Get a TLS subscription
+```javascript
+getTlsSub({ tls_subscription_id, [include] })
+```
 
 Show a TLS subscription.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TlsSubscriptionsApi();
-let tls_subscription_id = "tls_subscription_id_example"; // String | 
-let opts = {
-  'include': tls_authorizations // String | Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations`. 
+const options = {
+  tls_subscription_id: "tls_subscription_id_example", // required
+  include: tls_authorizations,
 };
-apiInstance.getTlsSub(tls_subscription_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.getTlsSub(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **tls_subscription_id** | **String** |  |
-**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_authorizations&#x60;.  | [optional]
+**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_authorizations&#x60; and &#x60;tls_authorizations.globalsign_email_challenge&#x60;.  | [optional]
 
 ### Return type
 
@@ -120,39 +128,46 @@ Name | Type | Description  | Notes
 
 ## `listTlsSubs`
 
-> listTlsSubs(opts)
-
-List TLS subscriptions
+```javascript
+listTlsSubs({ [filter_state], [filter_tls_domains_id], [include], [page_number], [page_size], [sort] })
+```
 
 List all TLS subscriptions.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TlsSubscriptionsApi();
-let opts = {
-  'filter_state': "filter_state_example", // String | Limit the returned subscriptions by state. Valid values are pending, processing, issued, and renewing. Accepts parameters: not (e.g., filter[state][not]=renewing). 
-  'filter_tls_domains_id': "filter_tls_domains_id_example", // String | Limit the returned subscriptions to those that include the specific domain.
-  'include': tls_authorizations, // String | Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations`. 
-  'page_number': 56, // Number | Current page.
-  'page_size': 20, // Number | Number of records per page.
-  'sort': created_at // String | The order in which to list the results by creation date.
-};
-apiInstance.listTlsSubs(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
 
+  filter_state: "filter_state_example",
+
+  filter_tls_domains_id: "filter_tls_domains_id_example",
+
+  include: tls_authorizations,
+
+  page_number: 56,
+
+  page_size: 20,
+
+  sort: "'created_at'",
+};
+
+apiInstance.listTlsSubs(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter_state** | **String** | Limit the returned subscriptions by state. Valid values are pending, processing, issued, and renewing. Accepts parameters: not (e.g., filter[state][not]&#x3D;renewing).  | [optional]
 **filter_tls_domains_id** | **String** | Limit the returned subscriptions to those that include the specific domain. | [optional]
-**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_authorizations&#x60;.  | [optional]
+**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_authorizations&#x60; and &#x60;tls_authorizations.globalsign_email_challenge&#x60;.  | [optional]
 **page_number** | **Number** | Current page. | [optional]
 **page_size** | **Number** | Number of records per page. | [optional] [default to 20]
 **sort** | **String** | The order in which to list the results by creation date. | [optional] [default to &#39;created_at&#39;]
@@ -164,30 +179,32 @@ Name | Type | Description  | Notes
 
 ## `patchTlsSub`
 
-> patchTlsSub(tls_subscription_id, opts)
-
-Update a TLS subscription
+```javascript
+patchTlsSub({ tls_subscription_id, [force], , [tls_subscription] })
+```
 
 Change the TLS domains or common name associated with this subscription, or update the TLS configuration for this set of domains.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TlsSubscriptionsApi();
-let tls_subscription_id = "tls_subscription_id_example"; // String | 
-let opts = {
-  'force': true, // Boolean | A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain. 
-  'tls_subscription': {"data":{"type":"tls_subscription","relationships":{"common_name":{"data":{"type":"tls_domain","id":"DOMAIN_NAME"}},"tls_domains":{"data":[{"type":"tls_domain","id":"DOMAIN_NAME"}]},"tls_configuration":{"data":{"type":"tls_configuration","id":"t7CguUGZzb2W9Euo5FoKa"}}}}} // TlsSubscription | 
-};
-apiInstance.patchTlsSub(tls_subscription_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  tls_subscription_id: "tls_subscription_id_example", // required
+  force: true,
 
+  tls_subscription: new Fastly.TlsSubscription(),
+};
+
+apiInstance.patchTlsSub(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

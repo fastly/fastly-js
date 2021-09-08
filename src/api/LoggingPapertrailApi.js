@@ -17,42 +17,66 @@ import LoggingFormatVersion from '../model/LoggingFormatVersion';
 import LoggingPapertrailResponse from '../model/LoggingPapertrailResponse';
 import LoggingPlacement from '../model/LoggingPlacement';
 
-
+/**
+* LoggingPapertrail service.
+* @module api/LoggingPapertrailApi
+* @version 3.0.0-alpha1
+*/
 export default class LoggingPapertrailApi {
 
-    
+    /**
+    * Constructs a new LoggingPapertrailApi. 
+    * @alias module:api/LoggingPapertrailApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createLogPapertrailWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Create a Papertrail for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.address] - A hostname or IPv4 address.
+     * @param {Number} [options.port=514] - The port number.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingPapertrailResponse} and HTTP response
+     */
+    createLogPapertrailWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createLogPapertrail");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createLogPapertrail");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'address': opts['address'],
-        'port': opts['port']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'address': options['address'],
+        'port': options['port']
       };
 
       let authNames = ['token'];
@@ -65,31 +89,55 @@ export default class LoggingPapertrailApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createLogPapertrail(service_id, version_id, opts) {
-      return this.createLogPapertrailWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Create a Papertrail for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.address] - A hostname or IPv4 address.
+     * @param {Number} [options.port=514] - The port number.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingPapertrailResponse}
+     */
+    createLogPapertrail(options = {}) {
+      return this.createLogPapertrailWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteLogPapertrailWithHttpInfo(service_id, version_id, logging_papertrail_name) {
+
+    /**
+     * Delete the Papertrail for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_papertrail_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteLogPapertrailWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteLogPapertrail");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteLogPapertrail");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_papertrail_name' is set
-      if (logging_papertrail_name === undefined || logging_papertrail_name === null) {
-        throw new Error("Missing the required parameter 'logging_papertrail_name' when calling deleteLogPapertrail");
+      // Verify the required parameter 'logging_papertrail_name' is set.
+      if (options['logging_papertrail_name'] === undefined || options['logging_papertrail_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_papertrail_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_papertrail_name': logging_papertrail_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_papertrail_name': options['logging_papertrail_name']
       };
       let queryParams = {
       };
@@ -108,31 +156,49 @@ export default class LoggingPapertrailApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteLogPapertrail(service_id, version_id, logging_papertrail_name) {
-      return this.deleteLogPapertrailWithHttpInfo(service_id, version_id, logging_papertrail_name)
+
+    /**
+     * Delete the Papertrail for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_papertrail_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteLogPapertrail(options = {}) {
+      return this.deleteLogPapertrailWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getLogPapertrailWithHttpInfo(service_id, version_id, logging_papertrail_name) {
+
+    /**
+     * Get the Papertrail for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_papertrail_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingPapertrailResponse} and HTTP response
+     */
+    getLogPapertrailWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getLogPapertrail");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getLogPapertrail");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_papertrail_name' is set
-      if (logging_papertrail_name === undefined || logging_papertrail_name === null) {
-        throw new Error("Missing the required parameter 'logging_papertrail_name' when calling getLogPapertrail");
+      // Verify the required parameter 'logging_papertrail_name' is set.
+      if (options['logging_papertrail_name'] === undefined || options['logging_papertrail_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_papertrail_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_papertrail_name': logging_papertrail_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_papertrail_name': options['logging_papertrail_name']
       };
       let queryParams = {
       };
@@ -151,26 +217,43 @@ export default class LoggingPapertrailApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getLogPapertrail(service_id, version_id, logging_papertrail_name) {
-      return this.getLogPapertrailWithHttpInfo(service_id, version_id, logging_papertrail_name)
+
+    /**
+     * Get the Papertrail for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_papertrail_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingPapertrailResponse}
+     */
+    getLogPapertrail(options = {}) {
+      return this.getLogPapertrailWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listLogPapertrailWithHttpInfo(service_id, version_id) {
+
+    /**
+     * List all of the Papertrails for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingPapertrailResponse>} and HTTP response
+     */
+    listLogPapertrailWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listLogPapertrail");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listLogPapertrail");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -189,45 +272,68 @@ export default class LoggingPapertrailApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listLogPapertrail(service_id, version_id) {
-      return this.listLogPapertrailWithHttpInfo(service_id, version_id)
+
+    /**
+     * List all of the Papertrails for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingPapertrailResponse>}
+     */
+    listLogPapertrail(options = {}) {
+      return this.listLogPapertrailWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateLogPapertrailWithHttpInfo(service_id, version_id, logging_papertrail_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Update the Papertrail for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_papertrail_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.address] - A hostname or IPv4 address.
+     * @param {Number} [options.port=514] - The port number.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingPapertrailResponse} and HTTP response
+     */
+    updateLogPapertrailWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateLogPapertrail");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateLogPapertrail");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_papertrail_name' is set
-      if (logging_papertrail_name === undefined || logging_papertrail_name === null) {
-        throw new Error("Missing the required parameter 'logging_papertrail_name' when calling updateLogPapertrail");
+      // Verify the required parameter 'logging_papertrail_name' is set.
+      if (options['logging_papertrail_name'] === undefined || options['logging_papertrail_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_papertrail_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_papertrail_name': logging_papertrail_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_papertrail_name': options['logging_papertrail_name']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'address': opts['address'],
-        'port': opts['port']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'address': options['address'],
+        'port': options['port']
       };
 
       let authNames = ['token'];
@@ -240,8 +346,24 @@ export default class LoggingPapertrailApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateLogPapertrail(service_id, version_id, logging_papertrail_name, opts) {
-      return this.updateLogPapertrailWithHttpInfo(service_id, version_id, logging_papertrail_name, opts)
+
+    /**
+     * Update the Papertrail for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_papertrail_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.address] - A hostname or IPv4 address.
+     * @param {Number} [options.port=514] - The port number.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingPapertrailResponse}
+     */
+    updateLogPapertrail(options = {}) {
+      return this.updateLogPapertrailWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

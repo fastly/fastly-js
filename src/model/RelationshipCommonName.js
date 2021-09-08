@@ -12,27 +12,44 @@
  */
 
 import ApiClient from '../ApiClient';
-import RelationshipTlsDomainTlsDomain from './RelationshipTlsDomainTlsDomain';
+import RelationshipCommonNameCommonName from './RelationshipCommonNameCommonName';
 
-
+/**
+ * The RelationshipCommonName model module.
+ * @module model/RelationshipCommonName
+ * @version 3.0.0-alpha1
+ */
 class RelationshipCommonName {
-    
+    /**
+     * Constructs a new <code>RelationshipCommonName</code>.
+     * @alias module:model/RelationshipCommonName
+     */
     constructor() { 
         
         RelationshipCommonName.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipCommonName</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipCommonName} obj Optional instance to populate.
+     * @return {module:model/RelationshipCommonName} The populated <code>RelationshipCommonName</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipCommonName();
 
             if (data.hasOwnProperty('common_name')) {
-                obj['common_name'] = RelationshipTlsDomainTlsDomain.constructFromObject(data['common_name']);
+                obj['common_name'] = RelationshipCommonNameCommonName.constructFromObject(data['common_name']);
             }
         }
         return obj;
@@ -41,7 +58,9 @@ class RelationshipCommonName {
 
 }
 
-
+/**
+ * @member {module:model/RelationshipCommonNameCommonName} common_name
+ */
 RelationshipCommonName.prototype['common_name'] = undefined;
 
 

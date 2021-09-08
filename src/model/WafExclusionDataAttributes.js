@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The WafExclusionDataAttributes model module.
+ * @module model/WafExclusionDataAttributes
+ * @version 3.0.0-alpha1
+ */
 class WafExclusionDataAttributes {
-    
+    /**
+     * Constructs a new <code>WafExclusionDataAttributes</code>.
+     * @alias module:model/WafExclusionDataAttributes
+     */
     constructor() { 
         
         WafExclusionDataAttributes.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>WafExclusionDataAttributes</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/WafExclusionDataAttributes} obj Optional instance to populate.
+     * @return {module:model/WafExclusionDataAttributes} The populated <code>WafExclusionDataAttributes</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafExclusionDataAttributes();
@@ -55,58 +72,109 @@ class WafExclusionDataAttributes {
 
 }
 
-
+/**
+ * A conditional expression in VCL used to determine if the condition is met.
+ * @member {String} condition
+ */
 WafExclusionDataAttributes.prototype['condition'] = undefined;
 
-
+/**
+ * The type of exclusion.
+ * @member {module:model/WafExclusionDataAttributes.ExclusionTypeEnum} exclusion_type
+ */
 WafExclusionDataAttributes.prototype['exclusion_type'] = undefined;
 
-
+/**
+ * Whether to generate a log upon matching.
+ * @member {Boolean} logging
+ * @default true
+ */
 WafExclusionDataAttributes.prototype['logging'] = true;
 
-
+/**
+ * Name of the exclusion.
+ * @member {String} name
+ */
 WafExclusionDataAttributes.prototype['name'] = undefined;
 
-
+/**
+ * A numeric ID identifying a WAF exclusion.
+ * @member {Number} number
+ */
 WafExclusionDataAttributes.prototype['number'] = undefined;
 
-
+/**
+ * The variable to exclude. An optional selector can be specified after the variable separated by a colon (`:`) to restrict the variable to a particular parameter. Required for `exclusion_type=variable`.
+ * @member {module:model/WafExclusionDataAttributes.VariableEnum} variable
+ */
 WafExclusionDataAttributes.prototype['variable'] = undefined;
 
 
 
 
 
-
+/**
+ * Allowed values for the <code>exclusion_type</code> property.
+ * @enum {String}
+ * @readonly
+ */
 WafExclusionDataAttributes['ExclusionTypeEnum'] = {
 
-    
+    /**
+     * value: "rule"
+     * @const
+     */
     "rule": "rule",
 
-    
+    /**
+     * value: "variable"
+     * @const
+     */
     "variable": "variable",
 
-    
+    /**
+     * value: "waf"
+     * @const
+     */
     "waf": "waf"
 };
 
 
-
+/**
+ * Allowed values for the <code>variable</code> property.
+ * @enum {String}
+ * @readonly
+ */
 WafExclusionDataAttributes['VariableEnum'] = {
 
-    
+    /**
+     * value: "req.cookies"
+     * @const
+     */
     "cookies": "req.cookies",
 
-    
+    /**
+     * value: "req.headers"
+     * @const
+     */
     "headers": "req.headers",
 
-    
+    /**
+     * value: "req.post"
+     * @const
+     */
     "post": "req.post",
 
-    
+    /**
+     * value: "req.post_filename"
+     * @const
+     */
     "post_filename": "req.post_filename",
 
-    
+    /**
+     * value: "req.qs"
+     * @const
+     */
     "qs": "req.qs"
 };
 

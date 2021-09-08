@@ -1,12 +1,12 @@
-# FastlyApi.TlsSubscriptionData
+# Fastly.TlsSubscriptionData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**TypeTlsSubscription**](TypeTlsSubscription.md) |  | [optional] 
 **attributes** | [**TlsSubscriptionDataAttributes**](TlsSubscriptionDataAttributes.md) |  | [optional] 
 **relationships** | [**AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates**](AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates.md) |  | [optional] 
+**type** | [**TypeTlsSubscription**](TypeTlsSubscription.md) |  | [optional] 
 
 
 

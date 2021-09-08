@@ -16,19 +16,39 @@ import AclEntry from './AclEntry';
 import AclEntryResponseAllOf from './AclEntryResponseAllOf';
 import Timestamps from './Timestamps';
 
-
+/**
+ * The AclEntryResponse model module.
+ * @module model/AclEntryResponse
+ * @version 3.0.0-alpha1
+ */
 class AclEntryResponse {
-    
+    /**
+     * Constructs a new <code>AclEntryResponse</code>.
+     * @alias module:model/AclEntryResponse
+     * @implements module:model/AclEntry
+     * @implements module:model/Timestamps
+     * @implements module:model/AclEntryResponseAllOf
+     */
     constructor() { 
         AclEntry.initialize(this);Timestamps.initialize(this);AclEntryResponseAllOf.initialize(this);
         AclEntryResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>AclEntryResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/AclEntryResponse} obj Optional instance to populate.
+     * @return {module:model/AclEntryResponse} The populated <code>AclEntryResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new AclEntryResponse();
@@ -36,14 +56,14 @@ class AclEntryResponse {
             Timestamps.constructFromObject(data, obj);
             AclEntryResponseAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('negated')) {
-                obj['negated'] = ApiClient.convertToType(data['negated'], 'Number');
-            }
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
             }
             if (data.hasOwnProperty('ip')) {
                 obj['ip'] = ApiClient.convertToType(data['ip'], 'String');
+            }
+            if (data.hasOwnProperty('negated')) {
+                obj['negated'] = ApiClient.convertToType(data['negated'], 'Number');
             }
             if (data.hasOwnProperty('subnet')) {
                 obj['subnet'] = ApiClient.convertToType(data['subnet'], 'Number');
@@ -73,70 +93,142 @@ class AclEntryResponse {
 
 }
 
-
-AclEntryResponse.prototype['negated'] = NegatedEnum.0;
-
-
+/**
+ * A freeform descriptive note.
+ * @member {String} comment
+ */
 AclEntryResponse.prototype['comment'] = undefined;
 
-
+/**
+ * An IP address.
+ * @member {String} ip
+ */
 AclEntryResponse.prototype['ip'] = undefined;
 
+/**
+ * Whether to negate the match. Useful primarily when creating individual exceptions to larger subnets.
+ * @member {module:model/AclEntryResponse.NegatedEnum} negated
+ * @default NegatedEnum.0
+ */
+AclEntryResponse.prototype['negated'] = NegatedEnum.0;
 
+/**
+ * Number of bits for the subnet mask applied to the IP address.  For IPv4 addresses, a value of 32 represents the smallest subnet mask (1 address), 24 represents a class C subnet mask (256 addresses), 16 represents a class B subnet mask (65k addresses),  and 8 is class A subnet mask (16m addresses). If not provided, no mask is applied.
+ * @member {Number} subnet
+ */
 AclEntryResponse.prototype['subnet'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 AclEntryResponse.prototype['created_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 AclEntryResponse.prototype['deleted_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 AclEntryResponse.prototype['updated_at'] = undefined;
 
-
+/**
+ * Alphanumeric string identifying a ACL.
+ * @member {String} acl_id
+ */
 AclEntryResponse.prototype['acl_id'] = undefined;
 
-
+/**
+ * Alphanumeric string identifying an ACL Entry.
+ * @member {String} id
+ */
 AclEntryResponse.prototype['id'] = undefined;
 
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 AclEntryResponse.prototype['service_id'] = undefined;
 
 
 // Implement AclEntry interface:
-
-AclEntry.prototype['negated'] = NegatedEnum.0;
-
+/**
+ * A freeform descriptive note.
+ * @member {String} comment
+ */
 AclEntry.prototype['comment'] = undefined;
-
+/**
+ * An IP address.
+ * @member {String} ip
+ */
 AclEntry.prototype['ip'] = undefined;
-
+/**
+ * Whether to negate the match. Useful primarily when creating individual exceptions to larger subnets.
+ * @member {module:model/AclEntry.NegatedEnum} negated
+ * @default NegatedEnum.0
+ */
+AclEntry.prototype['negated'] = NegatedEnum.0;
+/**
+ * Number of bits for the subnet mask applied to the IP address.  For IPv4 addresses, a value of 32 represents the smallest subnet mask (1 address), 24 represents a class C subnet mask (256 addresses), 16 represents a class B subnet mask (65k addresses),  and 8 is class A subnet mask (16m addresses). If not provided, no mask is applied.
+ * @member {Number} subnet
+ */
 AclEntry.prototype['subnet'] = undefined;
 // Implement Timestamps interface:
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 Timestamps.prototype['created_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 Timestamps.prototype['deleted_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 Timestamps.prototype['updated_at'] = undefined;
 // Implement AclEntryResponseAllOf interface:
-
+/**
+ * Alphanumeric string identifying a ACL.
+ * @member {String} acl_id
+ */
 AclEntryResponseAllOf.prototype['acl_id'] = undefined;
-
+/**
+ * Alphanumeric string identifying an ACL Entry.
+ * @member {String} id
+ */
 AclEntryResponseAllOf.prototype['id'] = undefined;
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 AclEntryResponseAllOf.prototype['service_id'] = undefined;
 
 
 
-
+/**
+ * Allowed values for the <code>negated</code> property.
+ * @enum {Number}
+ * @readonly
+ */
 AclEntryResponse['NegatedEnum'] = {
 
-    
+    /**
+     * value: 0
+     * @const
+     */
     "0": 0,
 
-    
+    /**
+     * value: 1
+     * @const
+     */
     "1": 1
 };
 

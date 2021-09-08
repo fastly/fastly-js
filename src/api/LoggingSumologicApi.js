@@ -18,42 +18,66 @@ import LoggingMessageType from '../model/LoggingMessageType';
 import LoggingPlacement from '../model/LoggingPlacement';
 import LoggingSumologicResponse from '../model/LoggingSumologicResponse';
 
-
+/**
+* LoggingSumologic service.
+* @module api/LoggingSumologicApi
+* @version 3.0.0-alpha1
+*/
 export default class LoggingSumologicApi {
 
-    
+    /**
+    * Constructs a new LoggingSumologicApi. 
+    * @alias module:api/LoggingSumologicApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createLogSumologicWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Create a Sumologic for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {String} [options.url] - The URL to post logs to.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingSumologicResponse} and HTTP response
+     */
+    createLogSumologicWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createLogSumologic");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createLogSumologic");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'message_type': opts['message_type'],
-        'url': opts['url']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'message_type': options['message_type'],
+        'url': options['url']
       };
 
       let authNames = ['token'];
@@ -66,31 +90,55 @@ export default class LoggingSumologicApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createLogSumologic(service_id, version_id, opts) {
-      return this.createLogSumologicWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Create a Sumologic for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {String} [options.url] - The URL to post logs to.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingSumologicResponse}
+     */
+    createLogSumologic(options = {}) {
+      return this.createLogSumologicWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteLogSumologicWithHttpInfo(service_id, version_id, logging_sumologic_name) {
+
+    /**
+     * Delete the Sumologic for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_sumologic_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteLogSumologicWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteLogSumologic");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteLogSumologic");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_sumologic_name' is set
-      if (logging_sumologic_name === undefined || logging_sumologic_name === null) {
-        throw new Error("Missing the required parameter 'logging_sumologic_name' when calling deleteLogSumologic");
+      // Verify the required parameter 'logging_sumologic_name' is set.
+      if (options['logging_sumologic_name'] === undefined || options['logging_sumologic_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_sumologic_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_sumologic_name': logging_sumologic_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_sumologic_name': options['logging_sumologic_name']
       };
       let queryParams = {
       };
@@ -109,31 +157,49 @@ export default class LoggingSumologicApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteLogSumologic(service_id, version_id, logging_sumologic_name) {
-      return this.deleteLogSumologicWithHttpInfo(service_id, version_id, logging_sumologic_name)
+
+    /**
+     * Delete the Sumologic for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_sumologic_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteLogSumologic(options = {}) {
+      return this.deleteLogSumologicWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getLogSumologicWithHttpInfo(service_id, version_id, logging_sumologic_name) {
+
+    /**
+     * Get the Sumologic for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_sumologic_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingSumologicResponse} and HTTP response
+     */
+    getLogSumologicWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getLogSumologic");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getLogSumologic");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_sumologic_name' is set
-      if (logging_sumologic_name === undefined || logging_sumologic_name === null) {
-        throw new Error("Missing the required parameter 'logging_sumologic_name' when calling getLogSumologic");
+      // Verify the required parameter 'logging_sumologic_name' is set.
+      if (options['logging_sumologic_name'] === undefined || options['logging_sumologic_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_sumologic_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_sumologic_name': logging_sumologic_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_sumologic_name': options['logging_sumologic_name']
       };
       let queryParams = {
       };
@@ -152,26 +218,43 @@ export default class LoggingSumologicApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getLogSumologic(service_id, version_id, logging_sumologic_name) {
-      return this.getLogSumologicWithHttpInfo(service_id, version_id, logging_sumologic_name)
+
+    /**
+     * Get the Sumologic for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_sumologic_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingSumologicResponse}
+     */
+    getLogSumologic(options = {}) {
+      return this.getLogSumologicWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listLogSumologicWithHttpInfo(service_id, version_id) {
+
+    /**
+     * List all of the Sumologics for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingSumologicResponse>} and HTTP response
+     */
+    listLogSumologicWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listLogSumologic");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listLogSumologic");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -190,45 +273,68 @@ export default class LoggingSumologicApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listLogSumologic(service_id, version_id) {
-      return this.listLogSumologicWithHttpInfo(service_id, version_id)
+
+    /**
+     * List all of the Sumologics for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingSumologicResponse>}
+     */
+    listLogSumologic(options = {}) {
+      return this.listLogSumologicWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateLogSumologicWithHttpInfo(service_id, version_id, logging_sumologic_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Update the Sumologic for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_sumologic_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {String} [options.url] - The URL to post logs to.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingSumologicResponse} and HTTP response
+     */
+    updateLogSumologicWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateLogSumologic");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateLogSumologic");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_sumologic_name' is set
-      if (logging_sumologic_name === undefined || logging_sumologic_name === null) {
-        throw new Error("Missing the required parameter 'logging_sumologic_name' when calling updateLogSumologic");
+      // Verify the required parameter 'logging_sumologic_name' is set.
+      if (options['logging_sumologic_name'] === undefined || options['logging_sumologic_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_sumologic_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_sumologic_name': logging_sumologic_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_sumologic_name': options['logging_sumologic_name']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'message_type': opts['message_type'],
-        'url': opts['url']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'message_type': options['message_type'],
+        'url': options['url']
       };
 
       let authNames = ['token'];
@@ -241,8 +347,24 @@ export default class LoggingSumologicApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateLogSumologic(service_id, version_id, logging_sumologic_name, opts) {
-      return this.updateLogSumologicWithHttpInfo(service_id, version_id, logging_sumologic_name, opts)
+
+    /**
+     * Update the Sumologic for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_sumologic_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {String} [options.url] - The URL to post logs to.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingSumologicResponse}
+     */
+    updateLogSumologic(options = {}) {
+      return this.updateLogSumologicWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

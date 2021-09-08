@@ -1,7 +1,9 @@
-# FastlyApi.CacheSettingsApi
+# Fastly.CacheSettingsApi
 
 
-
+```javascript
+const apiInstance = new Fastly.CacheSettingsApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -16,34 +18,38 @@ Method | Fastly API endpoint | Description
 
 ## `createCacheSettings`
 
-> createCacheSettings(service_id, version_id, opts)
-
-Create a cache settings object
+```javascript
+createCacheSettings({ service_id, version_id, [action], , [cache_condition], , [name], , [stale_ttl], , [ttl] })
+```
 
 Create a cache settings object.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.CacheSettingsApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let opts = {
-  'action': "action_example", // String | If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule. 
-  'cache_condition': "cache_condition_example", // String | Name of the cache condition controlling when this configuration applies.
-  'name': "name_example", // String | Name for the cache settings object.
-  'stale_ttl': 56, // Number | Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as 'stale if error').
-  'ttl': 56 // Number | Maximum time to consider the object fresh in the cache (the cache 'time to live').
-};
-apiInstance.createCacheSettings(service_id, version_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required
+  action: "action_example",
 
+  cache_condition: "cache_condition_example",
+
+  name: "name_example",
+
+  stale_ttl: 56,
+
+  ttl: 56,
+};
+
+apiInstance.createCacheSettings(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -62,28 +68,28 @@ Name | Type | Description  | Notes
 
 ## `deleteCacheSettings`
 
-> deleteCacheSettings(service_id, version_id, cache_settings_name)
-
-Delete a cache settings object
+```javascript
+deleteCacheSettings({ service_id, version_id, cache_settings_name })
+```
 
 Delete a specific cache settings object.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.CacheSettingsApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let cache_settings_name = "cache_settings_name_example"; // String | 
-apiInstance.deleteCacheSettings(service_id, version_id, cache_settings_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  cache_settings_name: "cache_settings_name_example", // required};
 
+apiInstance.deleteCacheSettings(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -98,28 +104,28 @@ Name | Type | Description  | Notes
 
 ## `getCacheSettings`
 
-> getCacheSettings(service_id, version_id, cache_settings_name)
-
-Get a cache settings object
+```javascript
+getCacheSettings({ service_id, version_id, cache_settings_name })
+```
 
 Get a specific cache settings object.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.CacheSettingsApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let cache_settings_name = "cache_settings_name_example"; // String | 
-apiInstance.getCacheSettings(service_id, version_id, cache_settings_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  cache_settings_name: "cache_settings_name_example", // required};
 
+apiInstance.getCacheSettings(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -134,27 +140,28 @@ Name | Type | Description  | Notes
 
 ## `listCacheSettings`
 
-> listCacheSettings(service_id, version_id)
-
-List cache settings objects
+```javascript
+listCacheSettings({ service_id, version_id })
+```
 
 Get a list of all cache settings for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.CacheSettingsApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.listCacheSettings(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.listCacheSettings(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -168,35 +175,38 @@ Name | Type | Description  | Notes
 
 ## `updateCacheSettings`
 
-> updateCacheSettings(service_id, version_id, cache_settings_name, opts)
-
-Update a cache settings object
+```javascript
+updateCacheSettings({ service_id, version_id, cache_settings_name, [action], , [cache_condition], , [name], , [stale_ttl], , [ttl] })
+```
 
 Update a specific cache settings object.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.CacheSettingsApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let cache_settings_name = "cache_settings_name_example"; // String | 
-let opts = {
-  'action': "action_example", // String | If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule. 
-  'cache_condition': "cache_condition_example", // String | Name of the cache condition controlling when this configuration applies.
-  'name': "name_example", // String | Name for the cache settings object.
-  'stale_ttl': 56, // Number | Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as 'stale if error').
-  'ttl': 56 // Number | Maximum time to consider the object fresh in the cache (the cache 'time to live').
-};
-apiInstance.updateCacheSettings(service_id, version_id, cache_settings_name, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  cache_settings_name: "cache_settings_name_example", // required
+  action: "action_example",
 
+  cache_condition: "cache_condition_example",
+
+  name: "name_example",
+
+  stale_ttl: 56,
+
+  ttl: 56,
+};
+
+apiInstance.updateCacheSettings(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

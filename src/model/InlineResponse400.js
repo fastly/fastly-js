@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The InlineResponse400 model module.
+ * @module model/InlineResponse400
+ * @version 3.0.0-alpha1
+ */
 class InlineResponse400 {
-    
+    /**
+     * Constructs a new <code>InlineResponse400</code>.
+     * @alias module:model/InlineResponse400
+     */
     constructor() { 
         
         InlineResponse400.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>InlineResponse400</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/InlineResponse400} obj Optional instance to populate.
+     * @return {module:model/InlineResponse400} The populated <code>InlineResponse400</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new InlineResponse400();
@@ -40,29 +57,50 @@ class InlineResponse400 {
 
 }
 
-
+/**
+ * @member {module:model/InlineResponse400.CodeEnum} code
+ */
 InlineResponse400.prototype['code'] = undefined;
 
 
 
 
 
-
+/**
+ * Allowed values for the <code>code</code> property.
+ * @enum {String}
+ * @readonly
+ */
 InlineResponse400['CodeEnum'] = {
 
-    
+    /**
+     * value: "invalid_grant"
+     * @const
+     */
     "invalid_grant": "invalid_grant",
 
-    
+    /**
+     * value: "invalid_request"
+     * @const
+     */
     "invalid_request": "invalid_request",
 
-    
+    /**
+     * value: "invalid_scope"
+     * @const
+     */
     "invalid_scope": "invalid_scope",
 
-    
+    /**
+     * value: "account_locked"
+     * @const
+     */
     "account_locked": "account_locked",
 
-    
+    /**
+     * value: "2fa.verify"
+     * @const
+     */
     "2fa.verify": "2fa.verify"
 };
 

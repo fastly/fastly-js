@@ -17,19 +17,40 @@ import DictionaryResponseAllOf from './DictionaryResponseAllOf';
 import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Timestamps from './Timestamps';
 
-
+/**
+ * The DictionaryResponse model module.
+ * @module model/DictionaryResponse
+ * @version 3.0.0-alpha1
+ */
 class DictionaryResponse {
-    
+    /**
+     * Constructs a new <code>DictionaryResponse</code>.
+     * @alias module:model/DictionaryResponse
+     * @implements module:model/Dictionary
+     * @implements module:model/Timestamps
+     * @implements module:model/ServiceIdAndVersion
+     * @implements module:model/DictionaryResponseAllOf
+     */
     constructor() { 
         Dictionary.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);DictionaryResponseAllOf.initialize(this);
         DictionaryResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>DictionaryResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/DictionaryResponse} obj Optional instance to populate.
+     * @return {module:model/DictionaryResponse} The populated <code>DictionaryResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new DictionaryResponse();
@@ -69,50 +90,100 @@ class DictionaryResponse {
 
 }
 
-
+/**
+ * Name for the Dictionary.
+ * @member {String} name
+ */
 DictionaryResponse.prototype['name'] = undefined;
 
-
+/**
+ * Determines if items in the dictionary are readable or not.
+ * @member {Boolean} write_only
+ * @default false
+ */
 DictionaryResponse.prototype['write_only'] = false;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 DictionaryResponse.prototype['created_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 DictionaryResponse.prototype['deleted_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 DictionaryResponse.prototype['updated_at'] = undefined;
 
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 DictionaryResponse.prototype['service_id'] = undefined;
 
-
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
 DictionaryResponse.prototype['version'] = undefined;
 
-
+/**
+ * Alphanumeric string identifying a Dictionary.
+ * @member {String} id
+ */
 DictionaryResponse.prototype['id'] = undefined;
 
 
 // Implement Dictionary interface:
-
+/**
+ * Name for the Dictionary.
+ * @member {String} name
+ */
 Dictionary.prototype['name'] = undefined;
-
+/**
+ * Determines if items in the dictionary are readable or not.
+ * @member {Boolean} write_only
+ * @default false
+ */
 Dictionary.prototype['write_only'] = false;
 // Implement Timestamps interface:
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 Timestamps.prototype['created_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 Timestamps.prototype['deleted_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 Timestamps.prototype['updated_at'] = undefined;
 // Implement ServiceIdAndVersion interface:
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 ServiceIdAndVersion.prototype['service_id'] = undefined;
-
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
 ServiceIdAndVersion.prototype['version'] = undefined;
 // Implement DictionaryResponseAllOf interface:
-
+/**
+ * Alphanumeric string identifying a Dictionary.
+ * @member {String} id
+ */
 DictionaryResponseAllOf.prototype['id'] = undefined;
 
 

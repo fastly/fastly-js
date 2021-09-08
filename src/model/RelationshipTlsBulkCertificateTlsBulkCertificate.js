@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import RelationshipMemberTlsBulkCertificate from './RelationshipMemberTlsBulkCertificate';
 
-
+/**
+ * The RelationshipTlsBulkCertificateTlsBulkCertificate model module.
+ * @module model/RelationshipTlsBulkCertificateTlsBulkCertificate
+ * @version 3.0.0-alpha1
+ */
 class RelationshipTlsBulkCertificateTlsBulkCertificate {
-    
+    /**
+     * Constructs a new <code>RelationshipTlsBulkCertificateTlsBulkCertificate</code>.
+     * @alias module:model/RelationshipTlsBulkCertificateTlsBulkCertificate
+     */
     constructor() { 
         
         RelationshipTlsBulkCertificateTlsBulkCertificate.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipTlsBulkCertificateTlsBulkCertificate</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipTlsBulkCertificateTlsBulkCertificate} obj Optional instance to populate.
+     * @return {module:model/RelationshipTlsBulkCertificateTlsBulkCertificate} The populated <code>RelationshipTlsBulkCertificateTlsBulkCertificate</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipTlsBulkCertificateTlsBulkCertificate();
@@ -41,7 +58,9 @@ class RelationshipTlsBulkCertificateTlsBulkCertificate {
 
 }
 
-
+/**
+ * @member {Array.<module:model/RelationshipMemberTlsBulkCertificate>} data
+ */
 RelationshipTlsBulkCertificateTlsBulkCertificate.prototype['data'] = undefined;
 
 

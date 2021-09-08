@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import Data from './Data';
 
-
+/**
+ * The TlsSubscriptionsResponseAllOf model module.
+ * @module model/TlsSubscriptionsResponseAllOf
+ * @version 3.0.0-alpha1
+ */
 class TlsSubscriptionsResponseAllOf {
-    
+    /**
+     * Constructs a new <code>TlsSubscriptionsResponseAllOf</code>.
+     * @alias module:model/TlsSubscriptionsResponseAllOf
+     */
     constructor() { 
         
         TlsSubscriptionsResponseAllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>TlsSubscriptionsResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/TlsSubscriptionsResponseAllOf} obj Optional instance to populate.
+     * @return {module:model/TlsSubscriptionsResponseAllOf} The populated <code>TlsSubscriptionsResponseAllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsSubscriptionsResponseAllOf();
@@ -41,7 +58,9 @@ class TlsSubscriptionsResponseAllOf {
 
 }
 
-
+/**
+ * @member {Array.<module:model/Data>} data
+ */
 TlsSubscriptionsResponseAllOf.prototype['data'] = undefined;
 
 

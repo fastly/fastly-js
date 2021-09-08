@@ -1,4 +1,4 @@
-# FastlyApi.LoggingFormatVersion
+# Fastly.LoggingFormatVersion
 
 ## Enum
 

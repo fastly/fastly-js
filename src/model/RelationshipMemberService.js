@@ -14,28 +14,45 @@
 import ApiClient from '../ApiClient';
 import TypeService from './TypeService';
 
-
+/**
+ * The RelationshipMemberService model module.
+ * @module model/RelationshipMemberService
+ * @version 3.0.0-alpha1
+ */
 class RelationshipMemberService {
-    
+    /**
+     * Constructs a new <code>RelationshipMemberService</code>.
+     * @alias module:model/RelationshipMemberService
+     */
     constructor() { 
         
         RelationshipMemberService.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipMemberService</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipMemberService} obj Optional instance to populate.
+     * @return {module:model/RelationshipMemberService} The populated <code>RelationshipMemberService</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipMemberService();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeService.constructFromObject(data['type']);
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeService.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -44,11 +61,16 @@ class RelationshipMemberService {
 
 }
 
-
-RelationshipMemberService.prototype['type'] = undefined;
-
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} id
+ */
 RelationshipMemberService.prototype['id'] = undefined;
+
+/**
+ * @member {module:model/TypeService} type
+ */
+RelationshipMemberService.prototype['type'] = undefined;
 
 
 

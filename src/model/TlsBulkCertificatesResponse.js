@@ -18,19 +18,38 @@ import PaginationLinks from './PaginationLinks';
 import PaginationMeta from './PaginationMeta';
 import TlsBulkCertificatesResponseAllOf from './TlsBulkCertificatesResponseAllOf';
 
-
+/**
+ * The TlsBulkCertificatesResponse model module.
+ * @module model/TlsBulkCertificatesResponse
+ * @version 3.0.0-alpha1
+ */
 class TlsBulkCertificatesResponse {
-    
+    /**
+     * Constructs a new <code>TlsBulkCertificatesResponse</code>.
+     * @alias module:model/TlsBulkCertificatesResponse
+     * @implements module:model/Pagination
+     * @implements module:model/TlsBulkCertificatesResponseAllOf
+     */
     constructor() { 
         Pagination.initialize(this);TlsBulkCertificatesResponseAllOf.initialize(this);
         TlsBulkCertificatesResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>TlsBulkCertificatesResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/TlsBulkCertificatesResponse} obj Optional instance to populate.
+     * @return {module:model/TlsBulkCertificatesResponse} The populated <code>TlsBulkCertificatesResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsBulkCertificatesResponse();
@@ -53,23 +72,35 @@ class TlsBulkCertificatesResponse {
 
 }
 
-
+/**
+ * @member {module:model/PaginationLinks} links
+ */
 TlsBulkCertificatesResponse.prototype['links'] = undefined;
 
-
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
 TlsBulkCertificatesResponse.prototype['meta'] = undefined;
 
-
+/**
+ * @member {Array.<module:model/Data>} data
+ */
 TlsBulkCertificatesResponse.prototype['data'] = undefined;
 
 
 // Implement Pagination interface:
-
+/**
+ * @member {module:model/PaginationLinks} links
+ */
 Pagination.prototype['links'] = undefined;
-
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
 Pagination.prototype['meta'] = undefined;
 // Implement TlsBulkCertificatesResponseAllOf interface:
-
+/**
+ * @member {Array.<module:model/Data>} data
+ */
 TlsBulkCertificatesResponseAllOf.prototype['data'] = undefined;
 
 

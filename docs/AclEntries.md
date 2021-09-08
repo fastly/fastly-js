@@ -1,4 +1,4 @@
-# FastlyApi.AclEntries
+# Fastly.AclEntries
 
 ## Properties
 

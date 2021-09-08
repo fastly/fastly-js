@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import Data from './Data';
 
-
+/**
+ * The TlsActivationResponse model module.
+ * @module model/TlsActivationResponse
+ * @version 3.0.0-alpha1
+ */
 class TlsActivationResponse {
-    
+    /**
+     * Constructs a new <code>TlsActivationResponse</code>.
+     * @alias module:model/TlsActivationResponse
+     */
     constructor() { 
         
         TlsActivationResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>TlsActivationResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/TlsActivationResponse} obj Optional instance to populate.
+     * @return {module:model/TlsActivationResponse} The populated <code>TlsActivationResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsActivationResponse();
@@ -41,7 +58,9 @@ class TlsActivationResponse {
 
 }
 
-
+/**
+ * @member {module:model/Data} data
+ */
 TlsActivationResponse.prototype['data'] = undefined;
 
 

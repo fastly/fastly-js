@@ -13,46 +13,71 @@
 
 
 import ApiClient from "../ApiClient";
-import Backend from '../model/Backend';
 import DirectorResponse from '../model/DirectorResponse';
+import SchemasBackend from '../model/SchemasBackend';
 
-
+/**
+* Director service.
+* @module api/DirectorApi
+* @version 3.0.0-alpha1
+*/
 export default class DirectorApi {
 
-    
+    /**
+    * Constructs a new DirectorApi. 
+    * @alias module:api/DirectorApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createDirectorWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Create a director for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {Array.<module:model/SchemasBackend>} [options.backends] - List of backends associated to a director.
+     * @param {Number} [options.capacity] - Unused.
+     * @param {String} [options.comment] - A freeform descriptive note.
+     * @param {String} [options.name] - Name for the Director.
+     * @param {Number} [options.quorum=75] - The percentage of capacity that needs to be up for a director to be considered up. `0` to `100`.
+     * @param {Number} [options.retries=5] - How many backends to search if it fails.
+     * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
+     * @param {module:model/Number} [options.type=1] - What type of load balance group to use.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DirectorResponse} and HTTP response
+     */
+    createDirectorWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createDirector");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createDirector");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'backends': this.apiClient.buildCollectionParam(opts['backends'], 'csv'),
-        'capacity': opts['capacity'],
-        'comment': opts['comment'],
-        'name': opts['name'],
-        'quorum': opts['quorum'],
-        'shield': opts['shield'],
-        'type': opts['type'],
-        'retries': opts['retries']
+        'backends': this.apiClient.buildCollectionParam(options['backends'], 'csv'),
+        'capacity': options['capacity'],
+        'comment': options['comment'],
+        'name': options['name'],
+        'quorum': options['quorum'],
+        'retries': options['retries'],
+        'shield': options['shield'],
+        'type': options['type']
       };
 
       let authNames = ['token'];
@@ -65,31 +90,56 @@ export default class DirectorApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createDirector(service_id, version_id, opts) {
-      return this.createDirectorWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Create a director for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {Array.<module:model/SchemasBackend>} [options.backends] - List of backends associated to a director.
+     * @param {Number} [options.capacity] - Unused.
+     * @param {String} [options.comment] - A freeform descriptive note.
+     * @param {String} [options.name] - Name for the Director.
+     * @param {Number} [options.quorum=75] - The percentage of capacity that needs to be up for a director to be considered up. `0` to `100`.
+     * @param {Number} [options.retries=5] - How many backends to search if it fails.
+     * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
+     * @param {module:model/Number} [options.type=1] - What type of load balance group to use.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DirectorResponse}
+     */
+    createDirector(options = {}) {
+      return this.createDirectorWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteDirectorWithHttpInfo(service_id, version_id, director_name) {
+
+    /**
+     * Delete the director for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.director_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteDirectorWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteDirector");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteDirector");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'director_name' is set
-      if (director_name === undefined || director_name === null) {
-        throw new Error("Missing the required parameter 'director_name' when calling deleteDirector");
+      // Verify the required parameter 'director_name' is set.
+      if (options['director_name'] === undefined || options['director_name'] === null) {
+        throw new Error("Missing the required parameter 'director_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'director_name': director_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'director_name': options['director_name']
       };
       let queryParams = {
       };
@@ -108,31 +158,49 @@ export default class DirectorApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteDirector(service_id, version_id, director_name) {
-      return this.deleteDirectorWithHttpInfo(service_id, version_id, director_name)
+
+    /**
+     * Delete the director for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.director_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteDirector(options = {}) {
+      return this.deleteDirectorWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getDirectorWithHttpInfo(service_id, version_id, director_name) {
+
+    /**
+     * Get the director for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.director_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DirectorResponse} and HTTP response
+     */
+    getDirectorWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getDirector");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getDirector");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'director_name' is set
-      if (director_name === undefined || director_name === null) {
-        throw new Error("Missing the required parameter 'director_name' when calling getDirector");
+      // Verify the required parameter 'director_name' is set.
+      if (options['director_name'] === undefined || options['director_name'] === null) {
+        throw new Error("Missing the required parameter 'director_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'director_name': director_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'director_name': options['director_name']
       };
       let queryParams = {
       };
@@ -151,26 +219,43 @@ export default class DirectorApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getDirector(service_id, version_id, director_name) {
-      return this.getDirectorWithHttpInfo(service_id, version_id, director_name)
+
+    /**
+     * Get the director for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.director_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DirectorResponse}
+     */
+    getDirector(options = {}) {
+      return this.getDirectorWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listDirectorsWithHttpInfo(service_id, version_id) {
+
+    /**
+     * List the directors for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DirectorResponse>} and HTTP response
+     */
+    listDirectorsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listDirectors");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listDirectors");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -189,31 +274,48 @@ export default class DirectorApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listDirectors(service_id, version_id) {
-      return this.listDirectorsWithHttpInfo(service_id, version_id)
+
+    /**
+     * List the directors for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DirectorResponse>}
+     */
+    listDirectors(options = {}) {
+      return this.listDirectorsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateDirectorWithHttpInfo(service_id, version_id, director_name) {
+
+    /**
+     * Update the director for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.director_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DirectorResponse} and HTTP response
+     */
+    updateDirectorWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateDirector");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateDirector");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'director_name' is set
-      if (director_name === undefined || director_name === null) {
-        throw new Error("Missing the required parameter 'director_name' when calling updateDirector");
+      // Verify the required parameter 'director_name' is set.
+      if (options['director_name'] === undefined || options['director_name'] === null) {
+        throw new Error("Missing the required parameter 'director_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'director_name': director_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'director_name': options['director_name']
       };
       let queryParams = {
       };
@@ -232,8 +334,17 @@ export default class DirectorApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateDirector(service_id, version_id, director_name) {
-      return this.updateDirectorWithHttpInfo(service_id, version_id, director_name)
+
+    /**
+     * Update the director for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.director_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DirectorResponse}
+     */
+    updateDirector(options = {}) {
+      return this.updateDirectorWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

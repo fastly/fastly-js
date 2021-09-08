@@ -1,4 +1,4 @@
-# FastlyApi.TlsBulkCertificatesResponseAllOf
+# Fastly.TlsBulkCertificatesResponseAllOf
 
 ## Properties
 

@@ -1,7 +1,9 @@
-# FastlyApi.TlsActivationsApi
+# Fastly.TlsActivationsApi
 
 
-
+```javascript
+const apiInstance = new Fastly.TlsActivationsApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -16,28 +18,30 @@ Method | Fastly API endpoint | Description
 
 ## `createTlsActivation`
 
-> createTlsActivation(opts)
-
-Enable TLS for a domain using a custom certificate
+```javascript
+createTlsActivation({ [tls_activation] })
+```
 
 Enable TLS for a particular TLS domain and certificate combination. These relationships must be specified to create the TLS activation.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TlsActivationsApi();
-let opts = {
-  'tls_activation': {"data":{"type":"tls_activation","relationships":{"tls_certificate":{"data":{"type":"tls_certificate","id":"cRTguUGZzb2W9Euo4moOr"}},"tls_configuration":{"data":{"type":"tls_configuration","id":"t7CguUGZzb2W9Euo5FoKa"}},"tls_domain":{"data":{"type":"tls_domain","id":"DOMAIN_NAME"}}}}} // TlsActivation | 
-};
-apiInstance.createTlsActivation(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
 
+  tls_activation: new Fastly.TlsActivation(),
+};
+
+apiInstance.createTlsActivation(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -50,26 +54,28 @@ Name | Type | Description  | Notes
 
 ## `deleteTlsActivation`
 
-> deleteTlsActivation(tls_activation_id)
-
-Disable TLS on a domain
+```javascript
+deleteTlsActivation({ tls_activation_id })
+```
 
 Disable TLS on the domain associated with this TLS activation.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TlsActivationsApi();
-let tls_activation_id = "tls_activation_id_example"; // String | 
-apiInstance.deleteTlsActivation(tls_activation_id).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  tls_activation_id: "tls_activation_id_example", // required};
 
+apiInstance.deleteTlsActivation(options)
+  .then(() => {
+    console.log('API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -82,29 +88,30 @@ null (empty response body)
 
 ## `getTlsActivation`
 
-> getTlsActivation(tls_activation_id, opts)
-
-Get a TLS activation
+```javascript
+getTlsActivation({ tls_activation_id, [include] })
+```
 
 Show a TLS activation.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TlsActivationsApi();
-let tls_activation_id = "tls_activation_id_example"; // String | 
-let opts = {
-  'include': tls_certificate,tls_configuration,tls_domain // String | Include related objects. Optional, comma-separated values. Permitted values: `tls_certificate`, `tls_configuration`, and `tls_domain`. 
+const options = {
+  tls_activation_id: "tls_activation_id_example", // required
+  include: tls_certificate,tls_configuration,tls_domain,
 };
-apiInstance.getTlsActivation(tls_activation_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.getTlsActivation(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -118,33 +125,40 @@ Name | Type | Description  | Notes
 
 ## `listTlsActivations`
 
-> listTlsActivations(opts)
-
-List TLS activations
+```javascript
+listTlsActivations({ [filter_tls_certificate_id], [filter_tls_configuration_id], [filter_tls_domain_id], [include], [page_number], [page_size] })
+```
 
 List all TLS activations.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TlsActivationsApi();
-let opts = {
-  'filter_tls_certificate_id': "filter_tls_certificate_id_example", // String | Limit the returned activations to a specific certificate.
-  'filter_tls_configuration_id': "filter_tls_configuration_id_example", // String | Limit the returned activations to a specific TLS configuration.
-  'filter_tls_domain_id': "filter_tls_domain_id_example", // String | Limit the returned rules to a specific domain name.
-  'include': tls_certificate,tls_configuration,tls_domain, // String | Include related objects. Optional, comma-separated values. Permitted values: `tls_certificate`, `tls_configuration`, and `tls_domain`. 
-  'page_number': 56, // Number | Current page.
-  'page_size': 20 // Number | Number of records per page.
-};
-apiInstance.listTlsActivations(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
 
+  filter_tls_certificate_id: "filter_tls_certificate_id_example",
+
+  filter_tls_configuration_id: "filter_tls_configuration_id_example",
+
+  filter_tls_domain_id: "filter_tls_domain_id_example",
+
+  include: tls_certificate,tls_configuration,tls_domain,
+
+  page_number: 56,
+
+  page_size: 20,
+};
+
+apiInstance.listTlsActivations(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -162,29 +176,30 @@ Name | Type | Description  | Notes
 
 ## `updateTlsActivation`
 
-> updateTlsActivation(tls_activation_id, opts)
-
-Update a certificate
+```javascript
+updateTlsActivation({ tls_activation_id, [tls_activation] })
+```
 
 Update the certificate used to terminate TLS traffic for the domain associated with this TLS activation.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TlsActivationsApi();
-let tls_activation_id = "tls_activation_id_example"; // String | 
-let opts = {
-  'tls_activation': {"data":{"type":"tls_activation","relationships":{"tls_certificate":{"data":{"type":"tls_certificate","id":"cRTguUGZzb2W9Euo4moOr"}}}}} // TlsActivation | 
+const options = {
+  tls_activation_id: "tls_activation_id_example", // required
+  tls_activation: new Fastly.TlsActivation(),
 };
-apiInstance.updateTlsActivation(tls_activation_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.updateTlsActivation(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

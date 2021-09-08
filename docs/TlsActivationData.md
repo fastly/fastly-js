@@ -1,11 +1,11 @@
-# FastlyApi.TlsActivationData
+# Fastly.TlsActivationData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**TypeTlsActivation**](TypeTlsActivation.md) |  | [optional] 
 **relationships** | [**AnyOfobjectobjectobject**](AnyOfobjectobjectobject.md) |  | [optional] 
+**type** | [**TypeTlsActivation**](TypeTlsActivation.md) |  | [optional] 
 
 
 

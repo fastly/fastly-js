@@ -17,22 +17,39 @@ import TlsSubscription from '../model/TlsSubscription';
 import TlsSubscriptionResponse from '../model/TlsSubscriptionResponse';
 import TlsSubscriptionsResponse from '../model/TlsSubscriptionsResponse';
 
-
+/**
+* TlsSubscriptions service.
+* @module api/TlsSubscriptionsApi
+* @version 3.0.0-alpha1
+*/
 export default class TlsSubscriptionsApi {
 
-    
+    /**
+    * Constructs a new TlsSubscriptionsApi. 
+    * @alias module:api/TlsSubscriptionsApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createTlsSubWithHttpInfo(opts) {
-      opts = opts || {};
-      let postBody = opts['tls_subscription'];
+
+    /**
+     * Create a new TLS subscription. This response includes a list of possible challenges to verify domain ownership.
+     * @param {Object} options
+     * @param {Boolean} [options.force] - A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain. 
+     * @param {module:model/TlsSubscription} [options.tls_subscription]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsSubscriptionResponse} and HTTP response
+     */
+    createTlsSubWithHttpInfo(options = {}) {
+      let postBody = options['tls_subscription'];
 
       let pathParams = {
       };
       let queryParams = {
-        'force': opts['force']
+        'force': options['force']
       };
       let headerParams = {
       };
@@ -49,21 +66,36 @@ export default class TlsSubscriptionsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createTlsSub(opts) {
-      return this.createTlsSubWithHttpInfo(opts)
+
+    /**
+     * Create a new TLS subscription. This response includes a list of possible challenges to verify domain ownership.
+     * @param {Object} options
+     * @param {Boolean} [options.force] - A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain. 
+     * @param {module:model/TlsSubscription} [options.tls_subscription]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsSubscriptionResponse}
+     */
+    createTlsSub(options = {}) {
+      return this.createTlsSubWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteTlsSubWithHttpInfo(tls_subscription_id) {
+
+    /**
+     * Destroy a TLS subscription. A subscription cannot be destroyed if there are domains in the TLS enabled state.
+     * @param {Object} options
+     * @param {String} options.tls_subscription_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteTlsSubWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'tls_subscription_id' is set
-      if (tls_subscription_id === undefined || tls_subscription_id === null) {
-        throw new Error("Missing the required parameter 'tls_subscription_id' when calling deleteTlsSub");
+      // Verify the required parameter 'tls_subscription_id' is set.
+      if (options['tls_subscription_id'] === undefined || options['tls_subscription_id'] === null) {
+        throw new Error("Missing the required parameter 'tls_subscription_id'.");
       }
 
       let pathParams = {
-        'tls_subscription_id': tls_subscription_id
+        'tls_subscription_id': options['tls_subscription_id']
       };
       let queryParams = {
       };
@@ -82,25 +114,39 @@ export default class TlsSubscriptionsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteTlsSub(tls_subscription_id) {
-      return this.deleteTlsSubWithHttpInfo(tls_subscription_id)
+
+    /**
+     * Destroy a TLS subscription. A subscription cannot be destroyed if there are domains in the TLS enabled state.
+     * @param {Object} options
+     * @param {String} options.tls_subscription_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteTlsSub(options = {}) {
+      return this.deleteTlsSubWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getTlsSubWithHttpInfo(tls_subscription_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Show a TLS subscription.
+     * @param {Object} options
+     * @param {String} options.tls_subscription_id
+     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`. 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsSubscriptionResponse} and HTTP response
+     */
+    getTlsSubWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'tls_subscription_id' is set
-      if (tls_subscription_id === undefined || tls_subscription_id === null) {
-        throw new Error("Missing the required parameter 'tls_subscription_id' when calling getTlsSub");
+      // Verify the required parameter 'tls_subscription_id' is set.
+      if (options['tls_subscription_id'] === undefined || options['tls_subscription_id'] === null) {
+        throw new Error("Missing the required parameter 'tls_subscription_id'.");
       }
 
       let pathParams = {
-        'tls_subscription_id': tls_subscription_id
+        'tls_subscription_id': options['tls_subscription_id']
       };
       let queryParams = {
-        'include': opts['include']
+        'include': options['include']
       };
       let headerParams = {
       };
@@ -117,25 +163,44 @@ export default class TlsSubscriptionsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getTlsSub(tls_subscription_id, opts) {
-      return this.getTlsSubWithHttpInfo(tls_subscription_id, opts)
+
+    /**
+     * Show a TLS subscription.
+     * @param {Object} options
+     * @param {String} options.tls_subscription_id
+     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`. 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsSubscriptionResponse}
+     */
+    getTlsSub(options = {}) {
+      return this.getTlsSubWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listTlsSubsWithHttpInfo(opts) {
-      opts = opts || {};
+
+    /**
+     * List all TLS subscriptions.
+     * @param {Object} options
+     * @param {String} [options.filter_state] - Limit the returned subscriptions by state. Valid values are pending, processing, issued, and renewing. Accepts parameters: not (e.g., filter[state][not]=renewing). 
+     * @param {String} [options.filter_tls_domains_id] - Limit the returned subscriptions to those that include the specific domain.
+     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`. 
+     * @param {Number} [options.page_number] - Current page.
+     * @param {Number} [options.page_size=20] - Number of records per page.
+     * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsSubscriptionsResponse} and HTTP response
+     */
+    listTlsSubsWithHttpInfo(options = {}) {
       let postBody = null;
 
       let pathParams = {
       };
       let queryParams = {
-        'filter[state]': opts['filter_state'],
-        'filter[tls_domains.id]': opts['filter_tls_domains_id'],
-        'include': opts['include'],
-        'page[number]': opts['page_number'],
-        'page[size]': opts['page_size'],
-        'sort': opts['sort']
+        'filter[state]': options['filter_state'],
+        'filter[tls_domains.id]': options['filter_tls_domains_id'],
+        'include': options['include'],
+        'page[number]': options['page_number'],
+        'page[size]': options['page_size'],
+        'sort': options['sort']
       };
       let headerParams = {
       };
@@ -152,25 +217,45 @@ export default class TlsSubscriptionsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listTlsSubs(opts) {
-      return this.listTlsSubsWithHttpInfo(opts)
+
+    /**
+     * List all TLS subscriptions.
+     * @param {Object} options
+     * @param {String} [options.filter_state] - Limit the returned subscriptions by state. Valid values are pending, processing, issued, and renewing. Accepts parameters: not (e.g., filter[state][not]=renewing). 
+     * @param {String} [options.filter_tls_domains_id] - Limit the returned subscriptions to those that include the specific domain.
+     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`. 
+     * @param {Number} [options.page_number] - Current page.
+     * @param {Number} [options.page_size=20] - Number of records per page.
+     * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsSubscriptionsResponse}
+     */
+    listTlsSubs(options = {}) {
+      return this.listTlsSubsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    patchTlsSubWithHttpInfo(tls_subscription_id, opts) {
-      opts = opts || {};
-      let postBody = opts['tls_subscription'];
-      // verify the required parameter 'tls_subscription_id' is set
-      if (tls_subscription_id === undefined || tls_subscription_id === null) {
-        throw new Error("Missing the required parameter 'tls_subscription_id' when calling patchTlsSub");
+
+    /**
+     * Change the TLS domains or common name associated with this subscription, or update the TLS configuration for this set of domains.
+     * @param {Object} options
+     * @param {String} options.tls_subscription_id
+     * @param {Boolean} [options.force] - A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain. 
+     * @param {module:model/TlsSubscription} [options.tls_subscription]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsSubscriptionResponse} and HTTP response
+     */
+    patchTlsSubWithHttpInfo(options = {}) {
+      let postBody = options['tls_subscription'];
+      // Verify the required parameter 'tls_subscription_id' is set.
+      if (options['tls_subscription_id'] === undefined || options['tls_subscription_id'] === null) {
+        throw new Error("Missing the required parameter 'tls_subscription_id'.");
       }
 
       let pathParams = {
-        'tls_subscription_id': tls_subscription_id
+        'tls_subscription_id': options['tls_subscription_id']
       };
       let queryParams = {
-        'force': opts['force']
+        'force': options['force']
       };
       let headerParams = {
       };
@@ -187,8 +272,17 @@ export default class TlsSubscriptionsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    patchTlsSub(tls_subscription_id, opts) {
-      return this.patchTlsSubWithHttpInfo(tls_subscription_id, opts)
+
+    /**
+     * Change the TLS domains or common name associated with this subscription, or update the TLS configuration for this set of domains.
+     * @param {Object} options
+     * @param {String} options.tls_subscription_id
+     * @param {Boolean} [options.force] - A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain. 
+     * @param {module:model/TlsSubscription} [options.tls_subscription]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsSubscriptionResponse}
+     */
+    patchTlsSub(options = {}) {
+      return this.patchTlsSubWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

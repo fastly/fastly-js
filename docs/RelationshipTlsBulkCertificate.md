@@ -1,4 +1,4 @@
-# FastlyApi.RelationshipTlsBulkCertificate
+# Fastly.RelationshipTlsBulkCertificate
 
 ## Properties
 

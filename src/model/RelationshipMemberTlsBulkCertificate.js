@@ -14,28 +14,45 @@
 import ApiClient from '../ApiClient';
 import TypeTlsBulkCertificate from './TypeTlsBulkCertificate';
 
-
+/**
+ * The RelationshipMemberTlsBulkCertificate model module.
+ * @module model/RelationshipMemberTlsBulkCertificate
+ * @version 3.0.0-alpha1
+ */
 class RelationshipMemberTlsBulkCertificate {
-    
+    /**
+     * Constructs a new <code>RelationshipMemberTlsBulkCertificate</code>.
+     * @alias module:model/RelationshipMemberTlsBulkCertificate
+     */
     constructor() { 
         
         RelationshipMemberTlsBulkCertificate.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipMemberTlsBulkCertificate</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipMemberTlsBulkCertificate} obj Optional instance to populate.
+     * @return {module:model/RelationshipMemberTlsBulkCertificate} The populated <code>RelationshipMemberTlsBulkCertificate</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipMemberTlsBulkCertificate();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeTlsBulkCertificate.constructFromObject(data['type']);
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeTlsBulkCertificate.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -44,11 +61,16 @@ class RelationshipMemberTlsBulkCertificate {
 
 }
 
-
-RelationshipMemberTlsBulkCertificate.prototype['type'] = undefined;
-
-
+/**
+ * Alphanumeric string identifying a TLS bulk certificate.
+ * @member {String} id
+ */
 RelationshipMemberTlsBulkCertificate.prototype['id'] = undefined;
+
+/**
+ * @member {module:model/TypeTlsBulkCertificate} type
+ */
+RelationshipMemberTlsBulkCertificate.prototype['type'] = undefined;
 
 
 

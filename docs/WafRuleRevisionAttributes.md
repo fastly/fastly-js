@@ -1,4 +1,4 @@
-# FastlyApi.WafRuleRevisionAttributes
+# Fastly.WafRuleRevisionAttributes
 
 ## Properties
 

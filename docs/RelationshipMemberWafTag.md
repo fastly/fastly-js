@@ -1,11 +1,11 @@
-# FastlyApi.RelationshipMemberWafTag
+# Fastly.RelationshipMemberWafTag
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**TypeWafTag**](TypeWafTag.md) |  | [optional] 
 **id** | **String** | Alphanumeric string identifying a WAF tag. | [optional] [readonly] 
+**type** | [**TypeWafTag**](TypeWafTag.md) |  | [optional] 
 
 
 

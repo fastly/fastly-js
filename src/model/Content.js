@@ -13,25 +13,45 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The Content model module.
+ * @module model/Content
+ * @version 3.0.0-alpha1
+ */
 class Content {
-    
+    /**
+     * Constructs a new <code>Content</code>.
+     * @alias module:model/Content
+     */
     constructor() { 
         
         Content.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>Content</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/Content} obj Optional instance to populate.
+     * @return {module:model/Content} The populated <code>Content</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new Content();
 
             if (data.hasOwnProperty('hash')) {
                 obj['hash'] = ApiClient.convertToType(data['hash'], 'String');
+            }
+            if (data.hasOwnProperty('pop')) {
+                obj['pop'] = ApiClient.convertToType(data['pop'], 'String');
             }
             if (data.hasOwnProperty('request')) {
                 obj['request'] = ApiClient.convertToType(data['request'], Object);
@@ -45,9 +65,6 @@ class Content {
             if (data.hasOwnProperty('server')) {
                 obj['server'] = ApiClient.convertToType(data['server'], 'String');
             }
-            if (data.hasOwnProperty('pop')) {
-                obj['pop'] = ApiClient.convertToType(data['pop'], 'String');
-            }
         }
         return obj;
     }
@@ -55,23 +72,35 @@ class Content {
 
 }
 
-
+/**
+ * @member {String} hash
+ */
 Content.prototype['hash'] = undefined;
 
+/**
+ * @member {String} pop
+ */
+Content.prototype['pop'] = undefined;
 
+/**
+ * @member {Object} request
+ */
 Content.prototype['request'] = undefined;
 
-
+/**
+ * @member {Object} response
+ */
 Content.prototype['response'] = undefined;
 
-
+/**
+ * @member {Number} response_time
+ */
 Content.prototype['response_time'] = undefined;
 
-
+/**
+ * @member {String} server
+ */
 Content.prototype['server'] = undefined;
-
-
-Content.prototype['pop'] = undefined;
 
 
 

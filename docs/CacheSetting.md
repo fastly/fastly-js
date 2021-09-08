@@ -1,4 +1,4 @@
-# FastlyApi.CacheSetting
+# Fastly.CacheSetting
 
 ## Properties
 

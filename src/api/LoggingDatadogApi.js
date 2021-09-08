@@ -17,42 +17,66 @@ import LoggingDatadogResponse from '../model/LoggingDatadogResponse';
 import LoggingFormatVersion from '../model/LoggingFormatVersion';
 import LoggingPlacement from '../model/LoggingPlacement';
 
-
+/**
+* LoggingDatadog service.
+* @module api/LoggingDatadogApi
+* @version 3.0.0-alpha1
+*/
 export default class LoggingDatadogApi {
 
-    
+    /**
+    * Constructs a new LoggingDatadogApi. 
+    * @alias module:api/LoggingDatadogApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createLogDatadogWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Create a Datadog logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest. 
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/String} [options.region='US'] - The region that log data will be sent to.
+     * @param {String} [options.token] - The API key from your Datadog account. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingDatadogResponse} and HTTP response
+     */
+    createLogDatadogWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createLogDatadog");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createLogDatadog");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'region': opts['region'],
-        'token': opts['token']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'region': options['region'],
+        'token': options['token']
       };
 
       let authNames = ['token'];
@@ -65,31 +89,55 @@ export default class LoggingDatadogApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createLogDatadog(service_id, version_id, opts) {
-      return this.createLogDatadogWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Create a Datadog logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest. 
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/String} [options.region='US'] - The region that log data will be sent to.
+     * @param {String} [options.token] - The API key from your Datadog account. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingDatadogResponse}
+     */
+    createLogDatadog(options = {}) {
+      return this.createLogDatadogWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteLogDatadogWithHttpInfo(service_id, version_id, logging_datadog_name) {
+
+    /**
+     * Delete the Datadog logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_datadog_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteLogDatadogWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteLogDatadog");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteLogDatadog");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_datadog_name' is set
-      if (logging_datadog_name === undefined || logging_datadog_name === null) {
-        throw new Error("Missing the required parameter 'logging_datadog_name' when calling deleteLogDatadog");
+      // Verify the required parameter 'logging_datadog_name' is set.
+      if (options['logging_datadog_name'] === undefined || options['logging_datadog_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_datadog_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_datadog_name': logging_datadog_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_datadog_name': options['logging_datadog_name']
       };
       let queryParams = {
       };
@@ -108,31 +156,49 @@ export default class LoggingDatadogApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteLogDatadog(service_id, version_id, logging_datadog_name) {
-      return this.deleteLogDatadogWithHttpInfo(service_id, version_id, logging_datadog_name)
+
+    /**
+     * Delete the Datadog logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_datadog_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteLogDatadog(options = {}) {
+      return this.deleteLogDatadogWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getLogDatadogWithHttpInfo(service_id, version_id, logging_datadog_name) {
+
+    /**
+     * Get the details for a Datadog logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_datadog_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingDatadogResponse} and HTTP response
+     */
+    getLogDatadogWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getLogDatadog");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getLogDatadog");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_datadog_name' is set
-      if (logging_datadog_name === undefined || logging_datadog_name === null) {
-        throw new Error("Missing the required parameter 'logging_datadog_name' when calling getLogDatadog");
+      // Verify the required parameter 'logging_datadog_name' is set.
+      if (options['logging_datadog_name'] === undefined || options['logging_datadog_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_datadog_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_datadog_name': logging_datadog_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_datadog_name': options['logging_datadog_name']
       };
       let queryParams = {
       };
@@ -151,26 +217,43 @@ export default class LoggingDatadogApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getLogDatadog(service_id, version_id, logging_datadog_name) {
-      return this.getLogDatadogWithHttpInfo(service_id, version_id, logging_datadog_name)
+
+    /**
+     * Get the details for a Datadog logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_datadog_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingDatadogResponse}
+     */
+    getLogDatadog(options = {}) {
+      return this.getLogDatadogWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listLogDatadogWithHttpInfo(service_id, version_id) {
+
+    /**
+     * List all of the Datadog logging objects for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingDatadogResponse>} and HTTP response
+     */
+    listLogDatadogWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listLogDatadog");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listLogDatadog");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -189,45 +272,68 @@ export default class LoggingDatadogApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listLogDatadog(service_id, version_id) {
-      return this.listLogDatadogWithHttpInfo(service_id, version_id)
+
+    /**
+     * List all of the Datadog logging objects for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingDatadogResponse>}
+     */
+    listLogDatadog(options = {}) {
+      return this.listLogDatadogWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateLogDatadogWithHttpInfo(service_id, version_id, logging_datadog_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Update the Datadog logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_datadog_name
+     * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest. 
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/String} [options.region='US'] - The region that log data will be sent to.
+     * @param {String} [options.token] - The API key from your Datadog account. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingDatadogResponse} and HTTP response
+     */
+    updateLogDatadogWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateLogDatadog");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateLogDatadog");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_datadog_name' is set
-      if (logging_datadog_name === undefined || logging_datadog_name === null) {
-        throw new Error("Missing the required parameter 'logging_datadog_name' when calling updateLogDatadog");
+      // Verify the required parameter 'logging_datadog_name' is set.
+      if (options['logging_datadog_name'] === undefined || options['logging_datadog_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_datadog_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_datadog_name': logging_datadog_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_datadog_name': options['logging_datadog_name']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'region': opts['region'],
-        'token': opts['token']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'region': options['region'],
+        'token': options['token']
       };
 
       let authNames = ['token'];
@@ -240,8 +346,24 @@ export default class LoggingDatadogApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateLogDatadog(service_id, version_id, logging_datadog_name, opts) {
-      return this.updateLogDatadogWithHttpInfo(service_id, version_id, logging_datadog_name, opts)
+
+    /**
+     * Update the Datadog logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_datadog_name
+     * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest. 
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/String} [options.region='US'] - The region that log data will be sent to.
+     * @param {String} [options.token] - The API key from your Datadog account. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingDatadogResponse}
+     */
+    updateLogDatadog(options = {}) {
+      return this.updateLogDatadogWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

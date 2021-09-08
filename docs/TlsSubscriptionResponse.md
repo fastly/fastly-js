@@ -1,4 +1,4 @@
-# FastlyApi.TlsSubscriptionResponse
+# Fastly.TlsSubscriptionResponse
 
 ## Properties
 

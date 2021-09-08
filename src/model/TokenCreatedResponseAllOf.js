@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The TokenCreatedResponseAllOf model module.
+ * @module model/TokenCreatedResponseAllOf
+ * @version 3.0.0-alpha1
+ */
 class TokenCreatedResponseAllOf {
-    
+    /**
+     * Constructs a new <code>TokenCreatedResponseAllOf</code>.
+     * @alias module:model/TokenCreatedResponseAllOf
+     */
     constructor() { 
         
         TokenCreatedResponseAllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>TokenCreatedResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/TokenCreatedResponseAllOf} obj Optional instance to populate.
+     * @return {module:model/TokenCreatedResponseAllOf} The populated <code>TokenCreatedResponseAllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TokenCreatedResponseAllOf();
@@ -40,7 +57,10 @@ class TokenCreatedResponseAllOf {
 
 }
 
-
+/**
+ * The alphanumeric string for accessing the API (only available on token creation).
+ * @member {String} access_token
+ */
 TokenCreatedResponseAllOf.prototype['access_token'] = undefined;
 
 

@@ -12,22 +12,39 @@
  */
 
 import ApiClient from '../ApiClient';
-import AnyOfwafFirewallVersionschemasWafActiveRule from './AnyOfwafFirewallVersionschemasWafActiveRule';
+import AnyOfwafFirewallVersionwafActiveRule from './AnyOfwafFirewallVersionwafActiveRule';
 import Data from './Data';
 
-
+/**
+ * The WafFirewallVersionResponse model module.
+ * @module model/WafFirewallVersionResponse
+ * @version 3.0.0-alpha1
+ */
 class WafFirewallVersionResponse {
-    
+    /**
+     * Constructs a new <code>WafFirewallVersionResponse</code>.
+     * @alias module:model/WafFirewallVersionResponse
+     */
     constructor() { 
         
         WafFirewallVersionResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>WafFirewallVersionResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/WafFirewallVersionResponse} obj Optional instance to populate.
+     * @return {module:model/WafFirewallVersionResponse} The populated <code>WafFirewallVersionResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafFirewallVersionResponse();
@@ -36,7 +53,7 @@ class WafFirewallVersionResponse {
                 obj['data'] = ApiClient.convertToType(data['data'], Data);
             }
             if (data.hasOwnProperty('included')) {
-                obj['included'] = ApiClient.convertToType(data['included'], [AnyOfwafFirewallVersionschemasWafActiveRule]);
+                obj['included'] = ApiClient.convertToType(data['included'], [AnyOfwafFirewallVersionwafActiveRule]);
             }
         }
         return obj;
@@ -45,10 +62,14 @@ class WafFirewallVersionResponse {
 
 }
 
-
+/**
+ * @member {module:model/Data} data
+ */
 WafFirewallVersionResponse.prototype['data'] = undefined;
 
-
+/**
+ * @member {Array.<module:model/AnyOfwafFirewallVersionwafActiveRule>} included
+ */
 WafFirewallVersionResponse.prototype['included'] = undefined;
 
 

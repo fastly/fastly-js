@@ -1,4 +1,4 @@
-# FastlyApi.LoggingOpenstackAllOf
+# Fastly.LoggingOpenstackAllOf
 
 ## Properties
 

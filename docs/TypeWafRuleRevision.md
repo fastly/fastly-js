@@ -1,4 +1,4 @@
-# FastlyApi.TypeWafRuleRevision
+# Fastly.TypeWafRuleRevision
 
 ## Enum
 

@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import RelationshipMemberServiceInvitation from './RelationshipMemberServiceInvitation';
 
-
+/**
+ * The RelationshipServiceInvitationsServiceInvitations model module.
+ * @module model/RelationshipServiceInvitationsServiceInvitations
+ * @version 3.0.0-alpha1
+ */
 class RelationshipServiceInvitationsServiceInvitations {
-    
+    /**
+     * Constructs a new <code>RelationshipServiceInvitationsServiceInvitations</code>.
+     * @alias module:model/RelationshipServiceInvitationsServiceInvitations
+     */
     constructor() { 
         
         RelationshipServiceInvitationsServiceInvitations.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipServiceInvitationsServiceInvitations</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipServiceInvitationsServiceInvitations} obj Optional instance to populate.
+     * @return {module:model/RelationshipServiceInvitationsServiceInvitations} The populated <code>RelationshipServiceInvitationsServiceInvitations</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipServiceInvitationsServiceInvitations();
@@ -41,7 +58,9 @@ class RelationshipServiceInvitationsServiceInvitations {
 
 }
 
-
+/**
+ * @member {Array.<module:model/RelationshipMemberServiceInvitation>} data
+ */
 RelationshipServiceInvitationsServiceInvitations.prototype['data'] = undefined;
 
 

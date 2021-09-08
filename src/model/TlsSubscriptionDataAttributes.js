@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The TlsSubscriptionDataAttributes model module.
+ * @module model/TlsSubscriptionDataAttributes
+ * @version 3.0.0-alpha1
+ */
 class TlsSubscriptionDataAttributes {
-    
+    /**
+     * Constructs a new <code>TlsSubscriptionDataAttributes</code>.
+     * @alias module:model/TlsSubscriptionDataAttributes
+     */
     constructor() { 
         
         TlsSubscriptionDataAttributes.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>TlsSubscriptionDataAttributes</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/TlsSubscriptionDataAttributes} obj Optional instance to populate.
+     * @return {module:model/TlsSubscriptionDataAttributes} The populated <code>TlsSubscriptionDataAttributes</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsSubscriptionDataAttributes();
@@ -40,20 +57,33 @@ class TlsSubscriptionDataAttributes {
 
 }
 
-
+/**
+ * The entity that issues and certifies the TLS certificates for your subscription.
+ * @member {module:model/TlsSubscriptionDataAttributes.CertificateAuthorityEnum} certificate_authority
+ */
 TlsSubscriptionDataAttributes.prototype['certificate_authority'] = undefined;
 
 
 
 
 
-
+/**
+ * Allowed values for the <code>certificate_authority</code> property.
+ * @enum {String}
+ * @readonly
+ */
 TlsSubscriptionDataAttributes['CertificateAuthorityEnum'] = {
 
-    
+    /**
+     * value: "lets-encrypt"
+     * @const
+     */
     "lets-encrypt": "lets-encrypt",
 
-    
+    /**
+     * value: "globalsign"
+     * @const
+     */
     "globalsign": "globalsign"
 };
 

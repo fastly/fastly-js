@@ -1,10 +1,10 @@
-# FastlyApi.InlineObject
+# Fastly.InlineObject
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**items** | [**[DictionaryItem]**](DictionaryItem.md) |  | [optional] 
+**data** | [**CustomerCustomerIdBillingAddressData**](CustomerCustomerIdBillingAddressData.md) |  | [optional] 
 
 
 

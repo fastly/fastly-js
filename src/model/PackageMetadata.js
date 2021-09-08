@@ -13,40 +13,58 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The PackageMetadata model module.
+ * @module model/PackageMetadata
+ * @version 3.0.0-alpha1
+ */
 class PackageMetadata {
-    
+    /**
+     * Constructs a new <code>PackageMetadata</code>.
+     * [Package metadata](#metadata-model) that has been extracted from the uploaded package. 
+     * @alias module:model/PackageMetadata
+     */
     constructor() { 
         
         PackageMetadata.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>PackageMetadata</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/PackageMetadata} obj Optional instance to populate.
+     * @return {module:model/PackageMetadata} The populated <code>PackageMetadata</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PackageMetadata();
 
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            if (data.hasOwnProperty('authors')) {
+                obj['authors'] = ApiClient.convertToType(data['authors'], ['String']);
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
-            if (data.hasOwnProperty('authors')) {
-                obj['authors'] = ApiClient.convertToType(data['authors'], ['String']);
+            if (data.hasOwnProperty('hashsum')) {
+                obj['hashsum'] = ApiClient.convertToType(data['hashsum'], 'String');
             }
             if (data.hasOwnProperty('language')) {
                 obj['language'] = ApiClient.convertToType(data['language'], 'String');
             }
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
             if (data.hasOwnProperty('size')) {
                 obj['size'] = ApiClient.convertToType(data['size'], 'Number');
-            }
-            if (data.hasOwnProperty('hashsum')) {
-                obj['hashsum'] = ApiClient.convertToType(data['hashsum'], 'String');
             }
         }
         return obj;
@@ -55,23 +73,41 @@ class PackageMetadata {
 
 }
 
-
-PackageMetadata.prototype['name'] = undefined;
-
-
-PackageMetadata.prototype['description'] = undefined;
-
-
+/**
+ * A list of package authors' email addresses.
+ * @member {Array.<String>} authors
+ */
 PackageMetadata.prototype['authors'] = undefined;
 
+/**
+ * Description of the Compute@Edge package.
+ * @member {String} description
+ */
+PackageMetadata.prototype['description'] = undefined;
 
+/**
+ * Hash of the Compute@Edge package.
+ * @member {String} hashsum
+ */
+PackageMetadata.prototype['hashsum'] = undefined;
+
+/**
+ * The language of the Compute@Edge package.
+ * @member {String} language
+ */
 PackageMetadata.prototype['language'] = undefined;
 
+/**
+ * Name of the Compute@Edge package.
+ * @member {String} name
+ */
+PackageMetadata.prototype['name'] = undefined;
 
+/**
+ * Size of the Compute@Edge package in bytes.
+ * @member {Number} size
+ */
 PackageMetadata.prototype['size'] = undefined;
-
-
-PackageMetadata.prototype['hashsum'] = undefined;
 
 
 

@@ -15,28 +15,46 @@
 import ApiClient from "../ApiClient";
 import SettingsResponse from '../model/SettingsResponse';
 
-
+/**
+* Settings service.
+* @module api/SettingsApi
+* @version 3.0.0-alpha1
+*/
 export default class SettingsApi {
 
-    
+    /**
+    * Constructs a new SettingsApi. 
+    * @alias module:api/SettingsApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    getServiceSettingsWithHttpInfo(service_id, version_id) {
+
+    /**
+     * Get the settings for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SettingsResponse} and HTTP response
+     */
+    getServiceSettingsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getServiceSettings");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getServiceSettings");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -55,26 +73,42 @@ export default class SettingsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getServiceSettings(service_id, version_id) {
-      return this.getServiceSettingsWithHttpInfo(service_id, version_id)
+
+    /**
+     * Get the settings for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SettingsResponse}
+     */
+    getServiceSettings(options = {}) {
+      return this.getServiceSettingsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateServiceSettingsWithHttpInfo(service_id, version_id) {
+
+    /**
+     * Update the settings for a particular service and version. NOTE: If you override TTLs with custom VCL, any general.default_ttl value will not be honored and the expected behavior may change. 
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SettingsResponse} and HTTP response
+     */
+    updateServiceSettingsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateServiceSettings");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateServiceSettings");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -93,8 +127,16 @@ export default class SettingsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateServiceSettings(service_id, version_id) {
-      return this.updateServiceSettingsWithHttpInfo(service_id, version_id)
+
+    /**
+     * Update the settings for a particular service and version. NOTE: If you override TTLs with custom VCL, any general.default_ttl value will not be honored and the expected behavior may change. 
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SettingsResponse}
+     */
+    updateServiceSettings(options = {}) {
+      return this.updateServiceSettingsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

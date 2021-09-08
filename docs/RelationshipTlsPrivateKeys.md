@@ -1,4 +1,4 @@
-# FastlyApi.RelationshipTlsPrivateKeys
+# Fastly.RelationshipTlsPrivateKeys
 
 ## Properties
 

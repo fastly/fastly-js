@@ -1,4 +1,4 @@
-# FastlyApi.EventsResponseAllOf
+# Fastly.EventsResponseAllOf
 
 ## Properties
 

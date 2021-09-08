@@ -1,4 +1,4 @@
-# FastlyApi.TypeService
+# Fastly.TypeService
 
 ## Enum
 

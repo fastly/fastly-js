@@ -15,37 +15,56 @@
 import ApiClient from "../ApiClient";
 import DictionaryResponse from '../model/DictionaryResponse';
 
-
+/**
+* Dictionary service.
+* @module api/DictionaryApi
+* @version 3.0.0-alpha1
+*/
 export default class DictionaryApi {
 
-    
+    /**
+    * Constructs a new DictionaryApi. 
+    * @alias module:api/DictionaryApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createDictionaryWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Create named dictionary for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.name] - Name for the Dictionary.
+     * @param {Boolean} [options.write_only=false] - Determines if items in the dictionary are readable or not.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryResponse} and HTTP response
+     */
+    createDictionaryWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createDictionary");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createDictionary");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'write_only': opts['write_only']
+        'name': options['name'],
+        'write_only': options['write_only']
       };
 
       let authNames = ['token'];
@@ -58,31 +77,50 @@ export default class DictionaryApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createDictionary(service_id, version_id, opts) {
-      return this.createDictionaryWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Create named dictionary for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.name] - Name for the Dictionary.
+     * @param {Boolean} [options.write_only=false] - Determines if items in the dictionary are readable or not.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryResponse}
+     */
+    createDictionary(options = {}) {
+      return this.createDictionaryWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteDictionaryWithHttpInfo(service_id, version_id, dictionary_name) {
+
+    /**
+     * Delete named dictionary for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.dictionary_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteDictionaryWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteDictionary");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteDictionary");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'dictionary_name' is set
-      if (dictionary_name === undefined || dictionary_name === null) {
-        throw new Error("Missing the required parameter 'dictionary_name' when calling deleteDictionary");
+      // Verify the required parameter 'dictionary_name' is set.
+      if (options['dictionary_name'] === undefined || options['dictionary_name'] === null) {
+        throw new Error("Missing the required parameter 'dictionary_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'dictionary_name': dictionary_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'dictionary_name': options['dictionary_name']
       };
       let queryParams = {
       };
@@ -101,31 +139,49 @@ export default class DictionaryApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteDictionary(service_id, version_id, dictionary_name) {
-      return this.deleteDictionaryWithHttpInfo(service_id, version_id, dictionary_name)
+
+    /**
+     * Delete named dictionary for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.dictionary_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteDictionary(options = {}) {
+      return this.deleteDictionaryWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getDictionaryWithHttpInfo(service_id, version_id, dictionary_name) {
+
+    /**
+     * Retrieve a single dictionary by name for the version and service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.dictionary_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryResponse} and HTTP response
+     */
+    getDictionaryWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getDictionary");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getDictionary");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'dictionary_name' is set
-      if (dictionary_name === undefined || dictionary_name === null) {
-        throw new Error("Missing the required parameter 'dictionary_name' when calling getDictionary");
+      // Verify the required parameter 'dictionary_name' is set.
+      if (options['dictionary_name'] === undefined || options['dictionary_name'] === null) {
+        throw new Error("Missing the required parameter 'dictionary_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'dictionary_name': dictionary_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'dictionary_name': options['dictionary_name']
       };
       let queryParams = {
       };
@@ -144,26 +200,43 @@ export default class DictionaryApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getDictionary(service_id, version_id, dictionary_name) {
-      return this.getDictionaryWithHttpInfo(service_id, version_id, dictionary_name)
+
+    /**
+     * Retrieve a single dictionary by name for the version and service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.dictionary_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryResponse}
+     */
+    getDictionary(options = {}) {
+      return this.getDictionaryWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listDictionariesWithHttpInfo(service_id, version_id) {
+
+    /**
+     * List all dictionaries for the version of the service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DictionaryResponse>} and HTTP response
+     */
+    listDictionariesWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listDictionaries");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listDictionaries");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -182,40 +255,58 @@ export default class DictionaryApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listDictionaries(service_id, version_id) {
-      return this.listDictionariesWithHttpInfo(service_id, version_id)
+
+    /**
+     * List all dictionaries for the version of the service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DictionaryResponse>}
+     */
+    listDictionaries(options = {}) {
+      return this.listDictionariesWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateDictionaryWithHttpInfo(service_id, version_id, dictionary_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Update named dictionary for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.dictionary_name
+     * @param {String} [options.name] - Name for the Dictionary.
+     * @param {Boolean} [options.write_only=false] - Determines if items in the dictionary are readable or not.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryResponse} and HTTP response
+     */
+    updateDictionaryWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateDictionary");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateDictionary");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'dictionary_name' is set
-      if (dictionary_name === undefined || dictionary_name === null) {
-        throw new Error("Missing the required parameter 'dictionary_name' when calling updateDictionary");
+      // Verify the required parameter 'dictionary_name' is set.
+      if (options['dictionary_name'] === undefined || options['dictionary_name'] === null) {
+        throw new Error("Missing the required parameter 'dictionary_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'dictionary_name': dictionary_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'dictionary_name': options['dictionary_name']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'write_only': opts['write_only']
+        'name': options['name'],
+        'write_only': options['write_only']
       };
 
       let authNames = ['token'];
@@ -228,8 +319,19 @@ export default class DictionaryApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateDictionary(service_id, version_id, dictionary_name, opts) {
-      return this.updateDictionaryWithHttpInfo(service_id, version_id, dictionary_name, opts)
+
+    /**
+     * Update named dictionary for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.dictionary_name
+     * @param {String} [options.name] - Name for the Dictionary.
+     * @param {Boolean} [options.write_only=false] - Determines if items in the dictionary are readable or not.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryResponse}
+     */
+    updateDictionary(options = {}) {
+      return this.updateDictionaryWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

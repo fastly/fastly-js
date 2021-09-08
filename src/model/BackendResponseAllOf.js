@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The BackendResponseAllOf model module.
+ * @module model/BackendResponseAllOf
+ * @version 3.0.0-alpha1
+ */
 class BackendResponseAllOf {
-    
+    /**
+     * Constructs a new <code>BackendResponseAllOf</code>.
+     * @alias module:model/BackendResponseAllOf
+     */
     constructor() { 
         
         BackendResponseAllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>BackendResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/BackendResponseAllOf} obj Optional instance to populate.
+     * @return {module:model/BackendResponseAllOf} The populated <code>BackendResponseAllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new BackendResponseAllOf();
@@ -40,7 +57,10 @@ class BackendResponseAllOf {
 
 }
 
-
+/**
+ * Indicates whether the version of the service this backend is attached to accepts edits.
+ * @member {Boolean} locked
+ */
 BackendResponseAllOf.prototype['locked'] = undefined;
 
 

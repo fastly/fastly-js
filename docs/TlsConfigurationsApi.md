@@ -1,7 +1,9 @@
-# FastlyApi.TlsConfigurationsApi
+# Fastly.TlsConfigurationsApi
 
 
-
+```javascript
+const apiInstance = new Fastly.TlsConfigurationsApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -14,29 +16,30 @@ Method | Fastly API endpoint | Description
 
 ## `getTlsConfig`
 
-> getTlsConfig(tls_configuration_id, opts)
-
-Get a TLS configuration
+```javascript
+getTlsConfig({ tls_configuration_id, [include] })
+```
 
 Show a TLS configuration.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TlsConfigurationsApi();
-let tls_configuration_id = "tls_configuration_id_example"; // String | 
-let opts = {
-  'include': dns_records // String | Include related objects. Optional, comma-separated values. Permitted values: `dns_records`. 
+const options = {
+  tls_configuration_id: "tls_configuration_id_example", // required
+  include: dns_records,
 };
-apiInstance.getTlsConfig(tls_configuration_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.getTlsConfig(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -50,31 +53,36 @@ Name | Type | Description  | Notes
 
 ## `listTlsConfigs`
 
-> listTlsConfigs(opts)
-
-List TLS configurations
+```javascript
+listTlsConfigs({ [filter_bulk], [include], [page_number], [page_size] })
+```
 
 List all TLS configurations.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TlsConfigurationsApi();
-let opts = {
-  'filter_bulk': "filter_bulk_example", // String | Optionally filters by the bulk attribute.
-  'include': dns_records, // String | Include related objects. Optional, comma-separated values. Permitted values: `dns_records`. 
-  'page_number': 56, // Number | Current page.
-  'page_size': 20 // Number | Number of records per page.
-};
-apiInstance.listTlsConfigs(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
 
+  filter_bulk: "filter_bulk_example",
+
+  include: dns_records,
+
+  page_number: 56,
+
+  page_size: 20,
+};
+
+apiInstance.listTlsConfigs(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -90,29 +98,30 @@ Name | Type | Description  | Notes
 
 ## `updateTlsConfig`
 
-> updateTlsConfig(tls_configuration_id, opts)
-
-Update a TLS configuration
+```javascript
+updateTlsConfig({ tls_configuration_id, [tls_configuration] })
+```
 
 Update a TLS configuration.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TlsConfigurationsApi();
-let tls_configuration_id = "tls_configuration_id_example"; // String | 
-let opts = {
-  'tls_configuration': {"data":{"type":"tls_configuration","attributes":{"name":"New TLS configuration name"}}} // TlsConfiguration | 
+const options = {
+  tls_configuration_id: "tls_configuration_id_example", // required
+  tls_configuration: new Fastly.TlsConfiguration(),
 };
-apiInstance.updateTlsConfig(tls_configuration_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.updateTlsConfig(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

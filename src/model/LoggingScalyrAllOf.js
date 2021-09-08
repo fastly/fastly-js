@@ -13,31 +13,48 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The LoggingScalyrAllOf model module.
+ * @module model/LoggingScalyrAllOf
+ * @version 3.0.0-alpha1
+ */
 class LoggingScalyrAllOf {
-    
+    /**
+     * Constructs a new <code>LoggingScalyrAllOf</code>.
+     * @alias module:model/LoggingScalyrAllOf
+     */
     constructor() { 
         
         LoggingScalyrAllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingScalyrAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingScalyrAllOf} obj Optional instance to populate.
+     * @return {module:model/LoggingScalyrAllOf} The populated <code>LoggingScalyrAllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingScalyrAllOf();
 
+            if (data.hasOwnProperty('project_id')) {
+                obj['project_id'] = ApiClient.convertToType(data['project_id'], 'String');
+            }
             if (data.hasOwnProperty('region')) {
                 obj['region'] = ApiClient.convertToType(data['region'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
-            }
-            if (data.hasOwnProperty('project_id')) {
-                obj['project_id'] = ApiClient.convertToType(data['project_id'], 'String');
             }
         }
         return obj;
@@ -46,26 +63,47 @@ class LoggingScalyrAllOf {
 
 }
 
+/**
+ * The name of the logfile within Scalyr.
+ * @member {String} project_id
+ * @default 'logplex'
+ */
+LoggingScalyrAllOf.prototype['project_id'] = 'logplex';
 
+/**
+ * The region that log data will be sent to.
+ * @member {module:model/LoggingScalyrAllOf.RegionEnum} region
+ * @default 'US'
+ */
 LoggingScalyrAllOf.prototype['region'] = 'US';
 
-
+/**
+ * The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)).
+ * @member {String} token
+ */
 LoggingScalyrAllOf.prototype['token'] = undefined;
 
 
-LoggingScalyrAllOf.prototype['project_id'] = 'logplex';
 
 
 
-
-
-
+/**
+ * Allowed values for the <code>region</code> property.
+ * @enum {String}
+ * @readonly
+ */
 LoggingScalyrAllOf['RegionEnum'] = {
 
-    
+    /**
+     * value: "US"
+     * @const
+     */
     "US": "US",
 
-    
+    /**
+     * value: "EU"
+     * @const
+     */
     "EU": "EU"
 };
 

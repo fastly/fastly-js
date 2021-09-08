@@ -1,4 +1,4 @@
-# FastlyApi.RelationshipUserUser
+# Fastly.RelationshipUserUser
 
 ## Properties
 

@@ -15,28 +15,50 @@
 import ApiClient from "../ApiClient";
 import TlsDomainsResponse from '../model/TlsDomainsResponse';
 
-
+/**
+* TlsDomains service.
+* @module api/TlsDomainsApi
+* @version 3.0.0-alpha1
+*/
 export default class TlsDomainsApi {
 
-    
+    /**
+    * Constructs a new TlsDomainsApi. 
+    * @alias module:api/TlsDomainsApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    listTlsDomainsWithHttpInfo(opts) {
-      opts = opts || {};
+
+    /**
+     * List all TLS domains.
+     * @param {Object} options
+     * @param {String} [options.filter_in_use] - Optional. Limit the returned domains to those currently using Fastly to terminate TLS with SNI (that is, domains considered \"in use\") Permitted values: true, false.
+     * @param {String} [options.filter_tls_certificates_id] - Optional. Limit the returned domains to those listed in the given TLS certificate's SAN list.
+     * @param {String} [options.filter_tls_subscriptions_id] - Optional. Limit the returned domains to those for a given TLS subscription.
+     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_activations`, `tls_certificates`, `tls_subscriptions`, `tls_subscriptions.tls_authorizations`, and `tls_authorizations.globalsign_email_challenge`. 
+     * @param {Number} [options.page_number] - Current page.
+     * @param {Number} [options.page_size=20] - Number of records per page.
+     * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsDomainsResponse} and HTTP response
+     */
+    listTlsDomainsWithHttpInfo(options = {}) {
       let postBody = null;
 
       let pathParams = {
       };
       let queryParams = {
-        'filter[in_use]': opts['filter_in_use'],
-        'filter[tls_certificates.id]': opts['filter_tls_certificates_id'],
-        'filter[tls_subscriptions.id]': opts['filter_tls_subscriptions_id'],
-        'include': opts['include'],
-        'page[number]': opts['page_number'],
-        'page[size]': opts['page_size'],
-        'sort': opts['sort']
+        'filter[in_use]': options['filter_in_use'],
+        'filter[tls_certificates.id]': options['filter_tls_certificates_id'],
+        'filter[tls_subscriptions.id]': options['filter_tls_subscriptions_id'],
+        'include': options['include'],
+        'page[number]': options['page_number'],
+        'page[size]': options['page_size'],
+        'sort': options['sort']
       };
       let headerParams = {
       };
@@ -53,8 +75,21 @@ export default class TlsDomainsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listTlsDomains(opts) {
-      return this.listTlsDomainsWithHttpInfo(opts)
+
+    /**
+     * List all TLS domains.
+     * @param {Object} options
+     * @param {String} [options.filter_in_use] - Optional. Limit the returned domains to those currently using Fastly to terminate TLS with SNI (that is, domains considered \"in use\") Permitted values: true, false.
+     * @param {String} [options.filter_tls_certificates_id] - Optional. Limit the returned domains to those listed in the given TLS certificate's SAN list.
+     * @param {String} [options.filter_tls_subscriptions_id] - Optional. Limit the returned domains to those for a given TLS subscription.
+     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_activations`, `tls_certificates`, `tls_subscriptions`, `tls_subscriptions.tls_authorizations`, and `tls_authorizations.globalsign_email_challenge`. 
+     * @param {Number} [options.page_number] - Current page.
+     * @param {Number} [options.page_size=20] - Number of records per page.
+     * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsDomainsResponse}
+     */
+    listTlsDomains(options = {}) {
+      return this.listTlsDomainsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

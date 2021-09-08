@@ -15,47 +15,76 @@
 import ApiClient from "../ApiClient";
 import HeaderResponse from '../model/HeaderResponse';
 
-
+/**
+* Header service.
+* @module api/HeaderApi
+* @version 3.0.0-alpha1
+*/
 export default class HeaderApi {
 
-    
+    /**
+    * Constructs a new HeaderApi. 
+    * @alias module:api/HeaderApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createHeaderObjectWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Creates a new Header object.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {module:model/String} [options.action] - Accepts a string value.
+     * @param {String} [options.cache_condition] - Name of the cache condition controlling when this configuration applies.
+     * @param {String} [options.dst] - Header to set.
+     * @param {Number} [options.ignore_if_set] - Don't add the header if it is added already. Only applies to 'set' action.
+     * @param {String} [options.name] - A handle to refer to this Header object.
+     * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
+     * @param {String} [options.regex] - Regular expression to use. Only applies to `regex` and `regex_repeat` actions.
+     * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
+     * @param {String} [options.response_condition]
+     * @param {String} [options.src] - Variable to be used as a source for the header content. Does not apply to `delete` action.
+     * @param {String} [options.substitution] - Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions.
+     * @param {module:model/String} [options.type] - Accepts a string value.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HeaderResponse} and HTTP response
+     */
+    createHeaderObjectWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createHeaderObject");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createHeaderObject");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'action': opts['action'],
-        'cache_condition': opts['cache_condition'],
-        'dst': opts['dst'],
-        'ignore_if_set': opts['ignore_if_set'],
-        'name': opts['name'],
-        'priority': opts['priority'],
-        'regex': opts['regex'],
-        'request_condition': opts['request_condition'],
-        'response_condition': opts['response_condition'],
-        'src': opts['src'],
-        'substitution': opts['substitution'],
-        'type': opts['type']
+        'action': options['action'],
+        'cache_condition': options['cache_condition'],
+        'dst': options['dst'],
+        'ignore_if_set': options['ignore_if_set'],
+        'name': options['name'],
+        'priority': options['priority'],
+        'regex': options['regex'],
+        'request_condition': options['request_condition'],
+        'response_condition': options['response_condition'],
+        'src': options['src'],
+        'substitution': options['substitution'],
+        'type': options['type']
       };
 
       let authNames = ['token'];
@@ -68,31 +97,60 @@ export default class HeaderApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createHeaderObject(service_id, version_id, opts) {
-      return this.createHeaderObjectWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Creates a new Header object.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {module:model/String} [options.action] - Accepts a string value.
+     * @param {String} [options.cache_condition] - Name of the cache condition controlling when this configuration applies.
+     * @param {String} [options.dst] - Header to set.
+     * @param {Number} [options.ignore_if_set] - Don't add the header if it is added already. Only applies to 'set' action.
+     * @param {String} [options.name] - A handle to refer to this Header object.
+     * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
+     * @param {String} [options.regex] - Regular expression to use. Only applies to `regex` and `regex_repeat` actions.
+     * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
+     * @param {String} [options.response_condition]
+     * @param {String} [options.src] - Variable to be used as a source for the header content. Does not apply to `delete` action.
+     * @param {String} [options.substitution] - Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions.
+     * @param {module:model/String} [options.type] - Accepts a string value.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HeaderResponse}
+     */
+    createHeaderObject(options = {}) {
+      return this.createHeaderObjectWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteHeaderObjectWithHttpInfo(service_id, version_id, header_name) {
+
+    /**
+     * Deletes a Header object by name.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.header_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteHeaderObjectWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteHeaderObject");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteHeaderObject");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'header_name' is set
-      if (header_name === undefined || header_name === null) {
-        throw new Error("Missing the required parameter 'header_name' when calling deleteHeaderObject");
+      // Verify the required parameter 'header_name' is set.
+      if (options['header_name'] === undefined || options['header_name'] === null) {
+        throw new Error("Missing the required parameter 'header_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'header_name': header_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'header_name': options['header_name']
       };
       let queryParams = {
       };
@@ -111,31 +169,49 @@ export default class HeaderApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteHeaderObject(service_id, version_id, header_name) {
-      return this.deleteHeaderObjectWithHttpInfo(service_id, version_id, header_name)
+
+    /**
+     * Deletes a Header object by name.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.header_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteHeaderObject(options = {}) {
+      return this.deleteHeaderObjectWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getHeaderObjectWithHttpInfo(service_id, version_id, header_name) {
+
+    /**
+     * Retrieves a Header object by name.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.header_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HeaderResponse} and HTTP response
+     */
+    getHeaderObjectWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getHeaderObject");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getHeaderObject");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'header_name' is set
-      if (header_name === undefined || header_name === null) {
-        throw new Error("Missing the required parameter 'header_name' when calling getHeaderObject");
+      // Verify the required parameter 'header_name' is set.
+      if (options['header_name'] === undefined || options['header_name'] === null) {
+        throw new Error("Missing the required parameter 'header_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'header_name': header_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'header_name': options['header_name']
       };
       let queryParams = {
       };
@@ -154,26 +230,43 @@ export default class HeaderApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getHeaderObject(service_id, version_id, header_name) {
-      return this.getHeaderObjectWithHttpInfo(service_id, version_id, header_name)
+
+    /**
+     * Retrieves a Header object by name.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.header_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HeaderResponse}
+     */
+    getHeaderObject(options = {}) {
+      return this.getHeaderObjectWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listHeaderObjectsWithHttpInfo(service_id, version_id) {
+
+    /**
+     * Retrieves all Header objects for a particular Version of a Service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/HeaderResponse>} and HTTP response
+     */
+    listHeaderObjectsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listHeaderObjects");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listHeaderObjects");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -192,50 +285,78 @@ export default class HeaderApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listHeaderObjects(service_id, version_id) {
-      return this.listHeaderObjectsWithHttpInfo(service_id, version_id)
+
+    /**
+     * Retrieves all Header objects for a particular Version of a Service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/HeaderResponse>}
+     */
+    listHeaderObjects(options = {}) {
+      return this.listHeaderObjectsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateHeaderObjectWithHttpInfo(service_id, version_id, header_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Modifies an existing Header object by name.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.header_name
+     * @param {module:model/String} [options.action] - Accepts a string value.
+     * @param {String} [options.cache_condition] - Name of the cache condition controlling when this configuration applies.
+     * @param {String} [options.dst] - Header to set.
+     * @param {Number} [options.ignore_if_set] - Don't add the header if it is added already. Only applies to 'set' action.
+     * @param {String} [options.name] - A handle to refer to this Header object.
+     * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
+     * @param {String} [options.regex] - Regular expression to use. Only applies to `regex` and `regex_repeat` actions.
+     * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
+     * @param {String} [options.response_condition]
+     * @param {String} [options.src] - Variable to be used as a source for the header content. Does not apply to `delete` action.
+     * @param {String} [options.substitution] - Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions.
+     * @param {module:model/String} [options.type] - Accepts a string value.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HeaderResponse} and HTTP response
+     */
+    updateHeaderObjectWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateHeaderObject");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateHeaderObject");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'header_name' is set
-      if (header_name === undefined || header_name === null) {
-        throw new Error("Missing the required parameter 'header_name' when calling updateHeaderObject");
+      // Verify the required parameter 'header_name' is set.
+      if (options['header_name'] === undefined || options['header_name'] === null) {
+        throw new Error("Missing the required parameter 'header_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'header_name': header_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'header_name': options['header_name']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'action': opts['action'],
-        'cache_condition': opts['cache_condition'],
-        'dst': opts['dst'],
-        'ignore_if_set': opts['ignore_if_set'],
-        'name': opts['name'],
-        'priority': opts['priority'],
-        'regex': opts['regex'],
-        'request_condition': opts['request_condition'],
-        'response_condition': opts['response_condition'],
-        'src': opts['src'],
-        'substitution': opts['substitution'],
-        'type': opts['type']
+        'action': options['action'],
+        'cache_condition': options['cache_condition'],
+        'dst': options['dst'],
+        'ignore_if_set': options['ignore_if_set'],
+        'name': options['name'],
+        'priority': options['priority'],
+        'regex': options['regex'],
+        'request_condition': options['request_condition'],
+        'response_condition': options['response_condition'],
+        'src': options['src'],
+        'substitution': options['substitution'],
+        'type': options['type']
       };
 
       let authNames = ['token'];
@@ -248,8 +369,29 @@ export default class HeaderApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateHeaderObject(service_id, version_id, header_name, opts) {
-      return this.updateHeaderObjectWithHttpInfo(service_id, version_id, header_name, opts)
+
+    /**
+     * Modifies an existing Header object by name.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.header_name
+     * @param {module:model/String} [options.action] - Accepts a string value.
+     * @param {String} [options.cache_condition] - Name of the cache condition controlling when this configuration applies.
+     * @param {String} [options.dst] - Header to set.
+     * @param {Number} [options.ignore_if_set] - Don't add the header if it is added already. Only applies to 'set' action.
+     * @param {String} [options.name] - A handle to refer to this Header object.
+     * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
+     * @param {String} [options.regex] - Regular expression to use. Only applies to `regex` and `regex_repeat` actions.
+     * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
+     * @param {String} [options.response_condition]
+     * @param {String} [options.src] - Variable to be used as a source for the header content. Does not apply to `delete` action.
+     * @param {String} [options.substitution] - Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions.
+     * @param {module:model/String} [options.type] - Accepts a string value.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HeaderResponse}
+     */
+    updateHeaderObject(options = {}) {
+      return this.updateHeaderObjectWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

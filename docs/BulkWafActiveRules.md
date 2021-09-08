@@ -1,4 +1,4 @@
-# FastlyApi.BulkWafActiveRules
+# Fastly.BulkWafActiveRules
 
 ## Properties
 

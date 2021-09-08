@@ -1,7 +1,9 @@
-# FastlyApi.VclDiffApi
+# Fastly.VclDiffApi
 
 
-
+```javascript
+const apiInstance = new Fastly.VclDiffApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -12,31 +14,30 @@ Method | Fastly API endpoint | Description
 
 ## `vclDiffServiceVersions`
 
-> vclDiffServiceVersions(service_id, from_version_id, to_version_id, opts)
-
-Get a comparison of the VCL changes between two service versions
+```javascript
+vclDiffServiceVersions({ service_id, from_version_id, to_version_id, [format] })
+```
 
 Get a comparison of the VCL changes between two service versions.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.VclDiffApi();
-let service_id = "service_id_example"; // String | 
-let from_version_id = 1; // Number | The version number of the service to which changes in the generated VCL are being compared. Can either be a positive number from 1 to your maximum version or a negative number from -1 down (-1 is latest version etc).
-let to_version_id = 2; // Number | The version number of the service from which changes in the generated VCL are being compared. Uses same numbering scheme as `from`.
-let opts = {
-  'format': "'text'" // String | Optional method to format the diff field.
+const options = {
+  service_id: "service_id_example", // required  from_version_id: 1, // required  to_version_id: 2, // required
+  format: "'text'",
 };
-apiInstance.vclDiffServiceVersions(service_id, from_version_id, to_version_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.vclDiffServiceVersions(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

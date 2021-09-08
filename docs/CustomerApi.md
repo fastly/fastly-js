@@ -1,7 +1,9 @@
-# FastlyApi.CustomerApi
+# Fastly.CustomerApi
 
 
-
+```javascript
+const apiInstance = new Fastly.CustomerApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -16,26 +18,28 @@ Method | Fastly API endpoint | Description
 
 ## `deleteCustomer`
 
-> deleteCustomer(customer_id)
-
-Delete a customer
+```javascript
+deleteCustomer({ customer_id })
+```
 
 Delete a customer.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.CustomerApi();
-let customer_id = "customer_id_example"; // String | 
-apiInstance.deleteCustomer(customer_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  customer_id: "customer_id_example", // required};
 
+apiInstance.deleteCustomer(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -48,26 +52,28 @@ Name | Type | Description  | Notes
 
 ## `getCustomer`
 
-> getCustomer(customer_id)
-
-Get a customer
+```javascript
+getCustomer({ customer_id })
+```
 
 Get a specific customer.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.CustomerApi();
-let customer_id = "customer_id_example"; // String | 
-apiInstance.getCustomer(customer_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  customer_id: "customer_id_example", // required};
 
+apiInstance.getCustomer(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -80,25 +86,25 @@ Name | Type | Description  | Notes
 
 ## `getLoggedInCustomer`
 
-> getLoggedInCustomer()
-
-Get the logged in customer
+```javascript
+getLoggedInCustomer()
+```
 
 Get the logged in customer.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.CustomerApi();
-apiInstance.getLoggedInCustomer().then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
+apiInstance.getLoggedInCustomer()
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 This endpoint does not need any parameters.
 
@@ -109,26 +115,28 @@ This endpoint does not need any parameters.
 
 ## `listUsers`
 
-> listUsers(customer_id)
-
-List users
+```javascript
+listUsers({ customer_id })
+```
 
 List all users from a specified customer id.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.CustomerApi();
-let customer_id = "customer_id_example"; // String | 
-apiInstance.listUsers(customer_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  customer_id: "customer_id_example", // required};
 
+apiInstance.listUsers(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -141,52 +149,76 @@ Name | Type | Description  | Notes
 
 ## `updateCustomer`
 
-> updateCustomer(customer_id, opts)
-
-Update a customer
+```javascript
+updateCustomer({ customer_id, [billing_contact_id], , [billing_network_type], , [billing_ref], , [can_configure_wordpress], , [can_reset_passwords], , [can_upload_vcl], , [force_2fa], , [force_sso], , [has_account_panel], , [has_improved_events], , [has_improved_ssl_config], , [has_openstack_logging], , [has_pci], , [has_pci_passwords], , [ip_whitelist], , [legal_contact_id], , [name], , [owner_id], , [phone_number], , [postal_address], , [pricing_plan], , [pricing_plan_id], , [security_contact_id], , [technical_contact_id] })
+```
 
 Update a customer.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.CustomerApi();
-let customer_id = "customer_id_example"; // String | 
-let opts = {
-  'billing_contact_id': "billing_contact_id_example", // String | The alphanumeric string representing the primary billing contact.
-  'billing_network_type': "billing_network_type_example", // String | Customer's current network revenue type.
-  'billing_ref': "billing_ref_example", // String | Used for adding purchased orders to customer's account.
-  'can_configure_wordpress': true, // Boolean | Whether this customer can view or edit wordpress.
-  'can_reset_passwords': true, // Boolean | Whether this customer can reset passwords.
-  'can_upload_vcl': true, // Boolean | Whether this customer can upload VCL.
-  'force_2fa': true, // Boolean | Specifies whether 2FA is forced or not forced on the customer account. Logs out non-2FA users once 2FA is force enabled.
-  'force_sso': true, // Boolean | Specifies whether SSO is forced or not forced on the customer account.
-  'has_account_panel': true, // Boolean | Specifies whether the account has access or does not have access to the account panel.
-  'has_improved_events': true, // Boolean | Specifies whether the account has access or does not have access to the improved events.
-  'has_improved_ssl_config': true, // Boolean | Whether this customer can view or edit the SSL config.
-  'has_openstack_logging': true, // Boolean | Specifies whether the account has enabled or not enabled openstack logging.
-  'has_pci': true, // Boolean | Specifies whether the account can edit PCI for a service.
-  'has_pci_passwords': true, // Boolean | Specifies whether PCI passwords are required for the account.
-  'ip_whitelist': "ip_whitelist_example", // String | The range of IP addresses authorized to access the customer account.
-  'legal_contact_id': "legal_contact_id_example", // String | The alphanumeric string identifying the account's legal contact.
-  'name': "name_example", // String | The name of the customer, generally the company name.
-  'owner_id': "owner_id_example", // String | The alphanumeric string identifying the account owner.
-  'phone_number': "phone_number_example", // String | The phone number associated with the account.
-  'postal_address': "postal_address_example", // String | The postal address associated with the account.
-  'pricing_plan': "pricing_plan_example", // String | The pricing plan this customer is under.
-  'pricing_plan_id': "pricing_plan_id_example", // String | The alphanumeric string identifying the pricing plan.
-  'security_contact_id': "security_contact_id_example", // String | The alphanumeric string identifying the account's security contact.
-  'technical_contact_id': "technical_contact_id_example" // String | The alphanumeric string identifying the account's technical contact.
-};
-apiInstance.updateCustomer(customer_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  customer_id: "customer_id_example", // required
+  billing_contact_id: "billing_contact_id_example",
 
+  billing_network_type: "billing_network_type_example",
+
+  billing_ref: "billing_ref_example",
+
+  can_configure_wordpress: true,
+
+  can_reset_passwords: true,
+
+  can_upload_vcl: true,
+
+  force_2fa: true,
+
+  force_sso: true,
+
+  has_account_panel: true,
+
+  has_improved_events: true,
+
+  has_improved_ssl_config: true,
+
+  has_openstack_logging: true,
+
+  has_pci: true,
+
+  has_pci_passwords: true,
+
+  ip_whitelist: "ip_whitelist_example",
+
+  legal_contact_id: "legal_contact_id_example",
+
+  name: "name_example",
+
+  owner_id: "owner_id_example",
+
+  phone_number: "phone_number_example",
+
+  postal_address: "postal_address_example",
+
+  pricing_plan: "pricing_plan_example",
+
+  pricing_plan_id: "pricing_plan_id_example",
+
+  security_contact_id: "security_contact_id_example",
+
+  technical_contact_id: "technical_contact_id_example",
+};
+
+apiInstance.updateCustomer(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

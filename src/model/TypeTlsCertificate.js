@@ -12,15 +12,26 @@
  */
 
 import ApiClient from '../ApiClient';
-
+/**
+* Enum class TypeTlsCertificate.
+* @enum {}
+* @readonly
+*/
 export default class TypeTlsCertificate {
     
-        
+        /**
+         * value: "tls_certificate"
+         * @const
+         */
         "tls_certificate" = "tls_certificate";
 
     
 
-    
+    /**
+    * Returns a <code>TypeTlsCertificate</code> enum value from a Javascript object name.
+    * @param {Object} data The plain JavaScript object containing the name of the enum value.
+    * @return {module:model/TypeTlsCertificate} The enum <code>TypeTlsCertificate</code> value.
+    */
     static constructFromObject(object) {
         return object;
     }

@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import Data from './Data';
 
-
+/**
+ * The BulkWafActiveRules model module.
+ * @module model/BulkWafActiveRules
+ * @version 3.0.0-alpha1
+ */
 class BulkWafActiveRules {
-    
+    /**
+     * Constructs a new <code>BulkWafActiveRules</code>.
+     * @alias module:model/BulkWafActiveRules
+     */
     constructor() { 
         
         BulkWafActiveRules.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>BulkWafActiveRules</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/BulkWafActiveRules} obj Optional instance to populate.
+     * @return {module:model/BulkWafActiveRules} The populated <code>BulkWafActiveRules</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new BulkWafActiveRules();
@@ -41,7 +58,9 @@ class BulkWafActiveRules {
 
 }
 
-
+/**
+ * @member {Array.<module:model/Data>} data
+ */
 BulkWafActiveRules.prototype['data'] = undefined;
 
 

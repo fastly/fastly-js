@@ -1,4 +1,4 @@
-# FastlyApi.ServiceCreateAllOf
+# Fastly.ServiceCreateAllOf
 
 ## Properties
 

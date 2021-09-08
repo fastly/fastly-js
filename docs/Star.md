@@ -1,4 +1,4 @@
-# FastlyApi.Star
+# Fastly.Star
 
 ## Properties
 

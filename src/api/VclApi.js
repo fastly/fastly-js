@@ -15,38 +15,58 @@
 import ApiClient from "../ApiClient";
 import VclResponse from '../model/VclResponse';
 
-
+/**
+* Vcl service.
+* @module api/VclApi
+* @version 3.0.0-alpha1
+*/
 export default class VclApi {
 
-    
+    /**
+    * Constructs a new VclApi. 
+    * @alias module:api/VclApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createCustomVclWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Upload a VCL for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.content] - The VCL code to be included.
+     * @param {Boolean} [options.main] - Set to `true` when this is the main VCL, otherwise `false`.
+     * @param {String} [options.name] - The name of this VCL.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VclResponse} and HTTP response
+     */
+    createCustomVclWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createCustomVcl");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createCustomVcl");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'content': opts['content'],
-        'main': opts['main'],
-        'name': opts['name']
+        'content': options['content'],
+        'main': options['main'],
+        'name': options['name']
       };
 
       let authNames = ['token'];
@@ -59,31 +79,51 @@ export default class VclApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createCustomVcl(service_id, version_id, opts) {
-      return this.createCustomVclWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Upload a VCL for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.content] - The VCL code to be included.
+     * @param {Boolean} [options.main] - Set to `true` when this is the main VCL, otherwise `false`.
+     * @param {String} [options.name] - The name of this VCL.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VclResponse}
+     */
+    createCustomVcl(options = {}) {
+      return this.createCustomVclWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteCustomVclWithHttpInfo(service_id, version_id, vcl_name) {
+
+    /**
+     * Delete the uploaded VCL for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.vcl_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteCustomVclWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteCustomVcl");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteCustomVcl");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'vcl_name' is set
-      if (vcl_name === undefined || vcl_name === null) {
-        throw new Error("Missing the required parameter 'vcl_name' when calling deleteCustomVcl");
+      // Verify the required parameter 'vcl_name' is set.
+      if (options['vcl_name'] === undefined || options['vcl_name'] === null) {
+        throw new Error("Missing the required parameter 'vcl_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'vcl_name': vcl_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'vcl_name': options['vcl_name']
       };
       let queryParams = {
       };
@@ -102,35 +142,53 @@ export default class VclApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteCustomVcl(service_id, version_id, vcl_name) {
-      return this.deleteCustomVclWithHttpInfo(service_id, version_id, vcl_name)
+
+    /**
+     * Delete the uploaded VCL for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.vcl_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteCustomVcl(options = {}) {
+      return this.deleteCustomVclWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getCustomVclWithHttpInfo(service_id, version_id, vcl_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Get the uploaded VCL for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.vcl_name
+     * @param {String} [options.no_content='0'] - Omit VCL content.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VclResponse} and HTTP response
+     */
+    getCustomVclWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getCustomVcl");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getCustomVcl");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'vcl_name' is set
-      if (vcl_name === undefined || vcl_name === null) {
-        throw new Error("Missing the required parameter 'vcl_name' when calling getCustomVcl");
+      // Verify the required parameter 'vcl_name' is set.
+      if (options['vcl_name'] === undefined || options['vcl_name'] === null) {
+        throw new Error("Missing the required parameter 'vcl_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'vcl_name': vcl_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'vcl_name': options['vcl_name']
       };
       let queryParams = {
-        'no_content': opts['no_content']
+        'no_content': options['no_content']
       };
       let headerParams = {
       };
@@ -147,26 +205,44 @@ export default class VclApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getCustomVcl(service_id, version_id, vcl_name, opts) {
-      return this.getCustomVclWithHttpInfo(service_id, version_id, vcl_name, opts)
+
+    /**
+     * Get the uploaded VCL for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.vcl_name
+     * @param {String} [options.no_content='0'] - Omit VCL content.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VclResponse}
+     */
+    getCustomVcl(options = {}) {
+      return this.getCustomVclWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getCustomVclBoilerplateWithHttpInfo(service_id, version_id) {
+
+    /**
+     * Return boilerplate VCL with the service's TTL from the [settings](/reference/api/vcl-services/settings/).
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
+     */
+    getCustomVclBoilerplateWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getCustomVclBoilerplate");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getCustomVclBoilerplate");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -185,26 +261,42 @@ export default class VclApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getCustomVclBoilerplate(service_id, version_id) {
-      return this.getCustomVclBoilerplateWithHttpInfo(service_id, version_id)
+
+    /**
+     * Return boilerplate VCL with the service's TTL from the [settings](/reference/api/vcl-services/settings/).
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
+     */
+    getCustomVclBoilerplate(options = {}) {
+      return this.getCustomVclBoilerplateWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getCustomVclGeneratedWithHttpInfo(service_id, version_id) {
+
+    /**
+     * Display the generated VCL for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VclResponse} and HTTP response
+     */
+    getCustomVclGeneratedWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getCustomVclGenerated");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getCustomVclGenerated");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -223,26 +315,42 @@ export default class VclApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getCustomVclGenerated(service_id, version_id) {
-      return this.getCustomVclGeneratedWithHttpInfo(service_id, version_id)
+
+    /**
+     * Display the generated VCL for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VclResponse}
+     */
+    getCustomVclGenerated(options = {}) {
+      return this.getCustomVclGeneratedWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getCustomVclGeneratedHighlightedWithHttpInfo(service_id, version_id) {
+
+    /**
+     * Display the content of generated VCL with HTML syntax highlighting. Include line numbers by sending `lineno=true` as a request parameter.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    getCustomVclGeneratedHighlightedWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getCustomVclGeneratedHighlighted");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getCustomVclGeneratedHighlighted");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -261,31 +369,48 @@ export default class VclApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getCustomVclGeneratedHighlighted(service_id, version_id) {
-      return this.getCustomVclGeneratedHighlightedWithHttpInfo(service_id, version_id)
+
+    /**
+     * Display the content of generated VCL with HTML syntax highlighting. Include line numbers by sending `lineno=true` as a request parameter.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    getCustomVclGeneratedHighlighted(options = {}) {
+      return this.getCustomVclGeneratedHighlightedWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getCustomVclHighlightedWithHttpInfo(service_id, version_id, vcl_name) {
+
+    /**
+     * Get the uploaded VCL for a particular service and version with HTML syntax highlighting. Include line numbers by sending `lineno=true` as a request parameter.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.vcl_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    getCustomVclHighlightedWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getCustomVclHighlighted");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getCustomVclHighlighted");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'vcl_name' is set
-      if (vcl_name === undefined || vcl_name === null) {
-        throw new Error("Missing the required parameter 'vcl_name' when calling getCustomVclHighlighted");
+      // Verify the required parameter 'vcl_name' is set.
+      if (options['vcl_name'] === undefined || options['vcl_name'] === null) {
+        throw new Error("Missing the required parameter 'vcl_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'vcl_name': vcl_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'vcl_name': options['vcl_name']
       };
       let queryParams = {
       };
@@ -304,31 +429,49 @@ export default class VclApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getCustomVclHighlighted(service_id, version_id, vcl_name) {
-      return this.getCustomVclHighlightedWithHttpInfo(service_id, version_id, vcl_name)
+
+    /**
+     * Get the uploaded VCL for a particular service and version with HTML syntax highlighting. Include line numbers by sending `lineno=true` as a request parameter.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.vcl_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    getCustomVclHighlighted(options = {}) {
+      return this.getCustomVclHighlightedWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getCustomVclRawWithHttpInfo(service_id, version_id, vcl_name) {
+
+    /**
+     * Download the specified VCL.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.vcl_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
+     */
+    getCustomVclRawWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getCustomVclRaw");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getCustomVclRaw");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'vcl_name' is set
-      if (vcl_name === undefined || vcl_name === null) {
-        throw new Error("Missing the required parameter 'vcl_name' when calling getCustomVclRaw");
+      // Verify the required parameter 'vcl_name' is set.
+      if (options['vcl_name'] === undefined || options['vcl_name'] === null) {
+        throw new Error("Missing the required parameter 'vcl_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'vcl_name': vcl_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'vcl_name': options['vcl_name']
       };
       let queryParams = {
       };
@@ -347,26 +490,43 @@ export default class VclApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getCustomVclRaw(service_id, version_id, vcl_name) {
-      return this.getCustomVclRawWithHttpInfo(service_id, version_id, vcl_name)
+
+    /**
+     * Download the specified VCL.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.vcl_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
+     */
+    getCustomVclRaw(options = {}) {
+      return this.getCustomVclRawWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listCustomVclWithHttpInfo(service_id, version_id) {
+
+    /**
+     * List the uploaded VCLs for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/VclResponse>} and HTTP response
+     */
+    listCustomVclWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listCustomVcl");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listCustomVcl");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -385,31 +545,48 @@ export default class VclApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listCustomVcl(service_id, version_id) {
-      return this.listCustomVclWithHttpInfo(service_id, version_id)
+
+    /**
+     * List the uploaded VCLs for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/VclResponse>}
+     */
+    listCustomVcl(options = {}) {
+      return this.listCustomVclWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    setCustomVclMainWithHttpInfo(service_id, version_id, vcl_name) {
+
+    /**
+     * Set the specified VCL as the main.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.vcl_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VclResponse} and HTTP response
+     */
+    setCustomVclMainWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling setCustomVclMain");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling setCustomVclMain");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'vcl_name' is set
-      if (vcl_name === undefined || vcl_name === null) {
-        throw new Error("Missing the required parameter 'vcl_name' when calling setCustomVclMain");
+      // Verify the required parameter 'vcl_name' is set.
+      if (options['vcl_name'] === undefined || options['vcl_name'] === null) {
+        throw new Error("Missing the required parameter 'vcl_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'vcl_name': vcl_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'vcl_name': options['vcl_name']
       };
       let queryParams = {
       };
@@ -428,41 +605,61 @@ export default class VclApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    setCustomVclMain(service_id, version_id, vcl_name) {
-      return this.setCustomVclMainWithHttpInfo(service_id, version_id, vcl_name)
+
+    /**
+     * Set the specified VCL as the main.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.vcl_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VclResponse}
+     */
+    setCustomVclMain(options = {}) {
+      return this.setCustomVclMainWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateCustomVclWithHttpInfo(service_id, version_id, vcl_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Update the uploaded VCL for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.vcl_name
+     * @param {String} [options.content] - The VCL code to be included.
+     * @param {Boolean} [options.main] - Set to `true` when this is the main VCL, otherwise `false`.
+     * @param {String} [options.name] - The name of this VCL.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VclResponse} and HTTP response
+     */
+    updateCustomVclWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateCustomVcl");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateCustomVcl");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'vcl_name' is set
-      if (vcl_name === undefined || vcl_name === null) {
-        throw new Error("Missing the required parameter 'vcl_name' when calling updateCustomVcl");
+      // Verify the required parameter 'vcl_name' is set.
+      if (options['vcl_name'] === undefined || options['vcl_name'] === null) {
+        throw new Error("Missing the required parameter 'vcl_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'vcl_name': vcl_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'vcl_name': options['vcl_name']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'content': opts['content'],
-        'main': opts['main'],
-        'name': opts['name']
+        'content': options['content'],
+        'main': options['main'],
+        'name': options['name']
       };
 
       let authNames = ['token'];
@@ -475,8 +672,20 @@ export default class VclApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateCustomVcl(service_id, version_id, vcl_name, opts) {
-      return this.updateCustomVclWithHttpInfo(service_id, version_id, vcl_name, opts)
+
+    /**
+     * Update the uploaded VCL for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.vcl_name
+     * @param {String} [options.content] - The VCL code to be included.
+     * @param {Boolean} [options.main] - Set to `true` when this is the main VCL, otherwise `false`.
+     * @param {String} [options.name] - The name of this VCL.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VclResponse}
+     */
+    updateCustomVcl(options = {}) {
+      return this.updateCustomVclWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

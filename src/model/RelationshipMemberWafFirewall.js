@@ -14,28 +14,45 @@
 import ApiClient from '../ApiClient';
 import TypeWafFirewall from './TypeWafFirewall';
 
-
+/**
+ * The RelationshipMemberWafFirewall model module.
+ * @module model/RelationshipMemberWafFirewall
+ * @version 3.0.0-alpha1
+ */
 class RelationshipMemberWafFirewall {
-    
+    /**
+     * Constructs a new <code>RelationshipMemberWafFirewall</code>.
+     * @alias module:model/RelationshipMemberWafFirewall
+     */
     constructor() { 
         
         RelationshipMemberWafFirewall.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipMemberWafFirewall</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipMemberWafFirewall} obj Optional instance to populate.
+     * @return {module:model/RelationshipMemberWafFirewall} The populated <code>RelationshipMemberWafFirewall</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipMemberWafFirewall();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeWafFirewall.constructFromObject(data['type']);
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeWafFirewall.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -44,11 +61,16 @@ class RelationshipMemberWafFirewall {
 
 }
 
-
-RelationshipMemberWafFirewall.prototype['type'] = undefined;
-
-
+/**
+ * Alphanumeric string identifying a WAF Firewall.
+ * @member {String} id
+ */
 RelationshipMemberWafFirewall.prototype['id'] = undefined;
+
+/**
+ * @member {module:model/TypeWafFirewall} type
+ */
+RelationshipMemberWafFirewall.prototype['type'] = undefined;
 
 
 

@@ -1,7 +1,9 @@
-# FastlyApi.WafTagsApi
+# Fastly.WafTagsApi
 
 
-
+```javascript
+const apiInstance = new Fastly.WafTagsApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -12,31 +14,36 @@ Method | Fastly API endpoint | Description
 
 ## `listWafTags`
 
-> listWafTags(opts)
-
-List tags
+```javascript
+listWafTags({ [filter_name], [page_number], [page_size], [include] })
+```
 
 List all tags.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.WafTagsApi();
-let opts = {
-  'filter_name': "filter_name_example", // String | Limit the returned tags to a specific name.
-  'page_number': 56, // Number | Current page.
-  'page_size': 20, // Number | Number of records per page.
-  'include': waf_rules // String | Include relationships. Optional.
-};
-apiInstance.listWafTags(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
 
+  filter_name: "filter_name_example",
+
+  page_number: 56,
+
+  page_size: 20,
+
+  include: waf_rules,
+};
+
+apiInstance.listWafTags(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

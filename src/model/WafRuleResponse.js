@@ -15,19 +15,36 @@ import ApiClient from '../ApiClient';
 import AnyOfwafTagwafRuleRevision from './AnyOfwafTagwafRuleRevision';
 import WafRule from './WafRule';
 
-
+/**
+ * The WafRuleResponse model module.
+ * @module model/WafRuleResponse
+ * @version 3.0.0-alpha1
+ */
 class WafRuleResponse {
-    
+    /**
+     * Constructs a new <code>WafRuleResponse</code>.
+     * @alias module:model/WafRuleResponse
+     */
     constructor() { 
         
         WafRuleResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>WafRuleResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/WafRuleResponse} obj Optional instance to populate.
+     * @return {module:model/WafRuleResponse} The populated <code>WafRuleResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafRuleResponse();
@@ -45,10 +62,14 @@ class WafRuleResponse {
 
 }
 
-
+/**
+ * @member {module:model/WafRule} data
+ */
 WafRuleResponse.prototype['data'] = undefined;
 
-
+/**
+ * @member {Array.<module:model/AnyOfwafTagwafRuleRevision>} included
+ */
 WafRuleResponse.prototype['included'] = undefined;
 
 

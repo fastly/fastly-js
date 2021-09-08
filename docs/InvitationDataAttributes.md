@@ -1,4 +1,4 @@
-# FastlyApi.InvitationDataAttributes
+# Fastly.InvitationDataAttributes
 
 ## Properties
 

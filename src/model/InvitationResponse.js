@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import Data from './Data';
 
-
+/**
+ * The InvitationResponse model module.
+ * @module model/InvitationResponse
+ * @version 3.0.0-alpha1
+ */
 class InvitationResponse {
-    
+    /**
+     * Constructs a new <code>InvitationResponse</code>.
+     * @alias module:model/InvitationResponse
+     */
     constructor() { 
         
         InvitationResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>InvitationResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/InvitationResponse} obj Optional instance to populate.
+     * @return {module:model/InvitationResponse} The populated <code>InvitationResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new InvitationResponse();
@@ -41,7 +58,9 @@ class InvitationResponse {
 
 }
 
-
+/**
+ * @member {module:model/Data} data
+ */
 InvitationResponse.prototype['data'] = undefined;
 
 

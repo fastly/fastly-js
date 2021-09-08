@@ -12,27 +12,44 @@
  */
 
 import ApiClient from '../ApiClient';
-import RelationshipTlsDomainTlsDomain from './RelationshipTlsDomainTlsDomain';
+import RelationshipCommonNameCommonName from './RelationshipCommonNameCommonName';
 
-
+/**
+ * The RelationshipTlsDomain model module.
+ * @module model/RelationshipTlsDomain
+ * @version 3.0.0-alpha1
+ */
 class RelationshipTlsDomain {
-    
+    /**
+     * Constructs a new <code>RelationshipTlsDomain</code>.
+     * @alias module:model/RelationshipTlsDomain
+     */
     constructor() { 
         
         RelationshipTlsDomain.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipTlsDomain</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipTlsDomain} obj Optional instance to populate.
+     * @return {module:model/RelationshipTlsDomain} The populated <code>RelationshipTlsDomain</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipTlsDomain();
 
             if (data.hasOwnProperty('tls_domain')) {
-                obj['tls_domain'] = RelationshipTlsDomainTlsDomain.constructFromObject(data['tls_domain']);
+                obj['tls_domain'] = RelationshipCommonNameCommonName.constructFromObject(data['tls_domain']);
             }
         }
         return obj;
@@ -41,7 +58,9 @@ class RelationshipTlsDomain {
 
 }
 
-
+/**
+ * @member {module:model/RelationshipCommonNameCommonName} tls_domain
+ */
 RelationshipTlsDomain.prototype['tls_domain'] = undefined;
 
 

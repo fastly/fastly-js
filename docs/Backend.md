@@ -1,4 +1,4 @@
-# FastlyApi.Backend
+# Fastly.Backend
 
 ## Properties
 

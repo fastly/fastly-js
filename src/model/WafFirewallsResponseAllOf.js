@@ -15,19 +15,36 @@ import ApiClient from '../ApiClient';
 import Data from './Data';
 import SchemasWafFirewallVersion from './SchemasWafFirewallVersion';
 
-
+/**
+ * The WafFirewallsResponseAllOf model module.
+ * @module model/WafFirewallsResponseAllOf
+ * @version 3.0.0-alpha1
+ */
 class WafFirewallsResponseAllOf {
-    
+    /**
+     * Constructs a new <code>WafFirewallsResponseAllOf</code>.
+     * @alias module:model/WafFirewallsResponseAllOf
+     */
     constructor() { 
         
         WafFirewallsResponseAllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>WafFirewallsResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/WafFirewallsResponseAllOf} obj Optional instance to populate.
+     * @return {module:model/WafFirewallsResponseAllOf} The populated <code>WafFirewallsResponseAllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafFirewallsResponseAllOf();
@@ -45,10 +62,14 @@ class WafFirewallsResponseAllOf {
 
 }
 
-
+/**
+ * @member {Array.<module:model/Data>} data
+ */
 WafFirewallsResponseAllOf.prototype['data'] = undefined;
 
-
+/**
+ * @member {Array.<module:model/SchemasWafFirewallVersion>} included
+ */
 WafFirewallsResponseAllOf.prototype['included'] = undefined;
 
 

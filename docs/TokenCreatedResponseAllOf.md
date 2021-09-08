@@ -1,4 +1,4 @@
-# FastlyApi.TokenCreatedResponseAllOf
+# Fastly.TokenCreatedResponseAllOf
 
 ## Properties
 

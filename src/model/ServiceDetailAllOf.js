@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import NestedVersion from './NestedVersion';
 
-
+/**
+ * The ServiceDetailAllOf model module.
+ * @module model/ServiceDetailAllOf
+ * @version 3.0.0-alpha1
+ */
 class ServiceDetailAllOf {
-    
+    /**
+     * Constructs a new <code>ServiceDetailAllOf</code>.
+     * @alias module:model/ServiceDetailAllOf
+     */
     constructor() { 
         
         ServiceDetailAllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>ServiceDetailAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/ServiceDetailAllOf} obj Optional instance to populate.
+     * @return {module:model/ServiceDetailAllOf} The populated <code>ServiceDetailAllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ServiceDetailAllOf();
@@ -44,10 +61,14 @@ class ServiceDetailAllOf {
 
 }
 
-
+/**
+ * @member {module:model/NestedVersion} active_version
+ */
 ServiceDetailAllOf.prototype['active_version'] = undefined;
 
-
+/**
+ * @member {module:model/NestedVersion} version
+ */
 ServiceDetailAllOf.prototype['version'] = undefined;
 
 

@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The AclResponseAllOf model module.
+ * @module model/AclResponseAllOf
+ * @version 3.0.0-alpha1
+ */
 class AclResponseAllOf {
-    
+    /**
+     * Constructs a new <code>AclResponseAllOf</code>.
+     * @alias module:model/AclResponseAllOf
+     */
     constructor() { 
         
         AclResponseAllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>AclResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/AclResponseAllOf} obj Optional instance to populate.
+     * @return {module:model/AclResponseAllOf} The populated <code>AclResponseAllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new AclResponseAllOf();
@@ -40,7 +57,10 @@ class AclResponseAllOf {
 
 }
 
-
+/**
+ * Alphanumeric string identifying a ACL.
+ * @member {String} id
+ */
 AclResponseAllOf.prototype['id'] = undefined;
 
 

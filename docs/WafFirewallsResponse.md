@@ -1,4 +1,4 @@
-# FastlyApi.WafFirewallsResponse
+# Fastly.WafFirewallsResponse
 
 ## Properties
 

@@ -14,28 +14,45 @@
 import ApiClient from '../ApiClient';
 import TypeUser from './TypeUser';
 
-
+/**
+ * The RelationshipUserUserData model module.
+ * @module model/RelationshipUserUserData
+ * @version 3.0.0-alpha1
+ */
 class RelationshipUserUserData {
-    
+    /**
+     * Constructs a new <code>RelationshipUserUserData</code>.
+     * @alias module:model/RelationshipUserUserData
+     */
     constructor() { 
         
         RelationshipUserUserData.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipUserUserData</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipUserUserData} obj Optional instance to populate.
+     * @return {module:model/RelationshipUserUserData} The populated <code>RelationshipUserUserData</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipUserUserData();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeUser.constructFromObject(data['type']);
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeUser.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -44,11 +61,16 @@ class RelationshipUserUserData {
 
 }
 
-
-RelationshipUserUserData.prototype['type'] = undefined;
-
-
+/**
+ * Alphanumeric string identifying the user.
+ * @member {String} id
+ */
 RelationshipUserUserData.prototype['id'] = undefined;
+
+/**
+ * @member {module:model/TypeUser} type
+ */
+RelationshipUserUserData.prototype['type'] = undefined;
 
 
 

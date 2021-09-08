@@ -1,7 +1,9 @@
-# FastlyApi.RequestSettingsApi
+# Fastly.RequestSettingsApi
 
 
-
+```javascript
+const apiInstance = new Fastly.RequestSettingsApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -16,27 +18,28 @@ Method | Fastly API endpoint | Description
 
 ## `createRequestSettings`
 
-> createRequestSettings(service_id, version_id)
-
-Create a Request Settings object
+```javascript
+createRequestSettings({ service_id, version_id })
+```
 
 Creates a new Request Settings object.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.RequestSettingsApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.createRequestSettings(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.createRequestSettings(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -50,28 +53,28 @@ Name | Type | Description  | Notes
 
 ## `deleteRequestSettings`
 
-> deleteRequestSettings(service_id, version_id, request_settings_name)
-
-Delete a Request Settings object
+```javascript
+deleteRequestSettings({ service_id, version_id, request_settings_name })
+```
 
 Removes the specified Request Settings object.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.RequestSettingsApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let request_settings_name = "request_settings_name_example"; // String | 
-apiInstance.deleteRequestSettings(service_id, version_id, request_settings_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  request_settings_name: "request_settings_name_example", // required};
 
+apiInstance.deleteRequestSettings(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -86,28 +89,28 @@ Name | Type | Description  | Notes
 
 ## `getRequestSettings`
 
-> getRequestSettings(service_id, version_id, request_settings_name)
-
-Get a Request Settings object
+```javascript
+getRequestSettings({ service_id, version_id, request_settings_name })
+```
 
 Gets the specified Request Settings object.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.RequestSettingsApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let request_settings_name = "request_settings_name_example"; // String | 
-apiInstance.getRequestSettings(service_id, version_id, request_settings_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  request_settings_name: "request_settings_name_example", // required};
 
+apiInstance.getRequestSettings(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -122,27 +125,28 @@ Name | Type | Description  | Notes
 
 ## `listRequestSettings`
 
-> listRequestSettings(service_id, version_id)
-
-List Request Settings objects
+```javascript
+listRequestSettings({ service_id, version_id })
+```
 
 Returns a list of all Request Settings objects for the given service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.RequestSettingsApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.listRequestSettings(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.listRequestSettings(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -156,42 +160,52 @@ Name | Type | Description  | Notes
 
 ## `updateRequestSettings`
 
-> updateRequestSettings(service_id, version_id, request_settings_name, opts)
-
-Update a Request Settings object
+```javascript
+updateRequestSettings({ service_id, version_id, request_settings_name, [action], , [bypass_busy_wait], , [default_host], , [force_miss], , [force_ssl], , [geo_headers], , [hash_keys], , [max_stale_age], , [name], , [request_condition], , [timer_support], , [xff] })
+```
 
 Updates the specified Request Settings object.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.RequestSettingsApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let request_settings_name = "request_settings_name_example"; // String | 
-let opts = {
-  'action': "action_example", // String | Allows you to terminate request handling and immediately perform an action.
-  'bypass_busy_wait': 56, // Number | Disable collapsed forwarding, so you don't wait for other objects to origin.
-  'default_host': "default_host_example", // String | Sets the host header.
-  'force_miss': 56, // Number | Allows you to force a cache miss for the request. Replaces the item in the cache if the content is cacheable.
-  'force_ssl': 56, // Number | Forces the request use SSL (redirects a non-SSL to SSL).
-  'geo_headers': 56, // Number | Injects Fastly-Geo-Country, Fastly-Geo-City, and Fastly-Geo-Region into the request headers.
-  'hash_keys': "hash_keys_example", // String | Comma separated list of varnish request object fields that should be in the hash key.
-  'max_stale_age': 56, // Number | How old an object is allowed to be to serve stale-if-error or stale-while-revalidate.
-  'name': "name_example", // String | Name for the request settings.
-  'request_condition': "request_condition_example", // String | Condition which, if met, will select this configuration during a request. Optional.
-  'timer_support': 56, // Number | Injects the X-Timer info into the request for viewing origin fetch durations.
-  'xff': "xff_example" // String | Short for X-Forwarded-For.
-};
-apiInstance.updateRequestSettings(service_id, version_id, request_settings_name, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  request_settings_name: "request_settings_name_example", // required
+  action: "action_example",
 
+  bypass_busy_wait: 56,
+
+  default_host: "default_host_example",
+
+  force_miss: 56,
+
+  force_ssl: 56,
+
+  geo_headers: 56,
+
+  hash_keys: "hash_keys_example",
+
+  max_stale_age: 56,
+
+  name: "name_example",
+
+  request_condition: "request_condition_example",
+
+  timer_support: 56,
+
+  xff: "xff_example",
+};
+
+apiInstance.updateRequestSettings(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

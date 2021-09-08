@@ -19,51 +19,84 @@ import LoggingFormatVersion from '../model/LoggingFormatVersion';
 import LoggingMessageType from '../model/LoggingMessageType';
 import LoggingPlacement from '../model/LoggingPlacement';
 
-
+/**
+* LoggingDigitalocean service.
+* @module api/LoggingDigitaloceanApi
+* @version 3.0.0-alpha1
+*/
 export default class LoggingDigitaloceanApi {
 
-    
+    /**
+    * Constructs a new LoggingDigitaloceanApi. 
+    * @alias module:api/LoggingDigitaloceanApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createLogDigoceanWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Create a DigitalOcean Space for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
+     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
+     * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
+     * @param {String} [options.access_key] - Your DigitalOcean Spaces account access key.
+     * @param {String} [options.bucket_name] - The name of the DigitalOcean Space.
+     * @param {String} [options.domain='nyc3.digitaloceanspaces.com'] - The domain of the DigitalOcean Spaces endpoint.
+     * @param {String} [options.path='null'] - The path to upload logs to.
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {String} [options.secret_key] - Your DigitalOcean Spaces account secret key.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingDigitaloceanResponse} and HTTP response
+     */
+    createLogDigoceanWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createLogDigocean");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createLogDigocean");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'message_type': opts['message_type'],
-        'timestamp_format': opts['timestamp_format'],
-        'period': opts['period'],
-        'gzip_level': opts['gzip_level'],
-        'compression_codec': opts['compression_codec'],
-        'bucket_name': opts['bucket_name'],
-        'access_key': opts['access_key'],
-        'secret_key': opts['secret_key'],
-        'domain': opts['domain'],
-        'path': opts['path'],
-        'public_key': opts['public_key']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'compression_codec': options['compression_codec'],
+        'gzip_level': options['gzip_level'],
+        'message_type': options['message_type'],
+        'period': options['period'],
+        'timestamp_format': options['timestamp_format'],
+        'access_key': options['access_key'],
+        'bucket_name': options['bucket_name'],
+        'domain': options['domain'],
+        'path': options['path'],
+        'public_key': options['public_key'],
+        'secret_key': options['secret_key']
       };
 
       let authNames = ['token'];
@@ -76,31 +109,64 @@ export default class LoggingDigitaloceanApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createLogDigocean(service_id, version_id, opts) {
-      return this.createLogDigoceanWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Create a DigitalOcean Space for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
+     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
+     * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
+     * @param {String} [options.access_key] - Your DigitalOcean Spaces account access key.
+     * @param {String} [options.bucket_name] - The name of the DigitalOcean Space.
+     * @param {String} [options.domain='nyc3.digitaloceanspaces.com'] - The domain of the DigitalOcean Spaces endpoint.
+     * @param {String} [options.path='null'] - The path to upload logs to.
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {String} [options.secret_key] - Your DigitalOcean Spaces account secret key.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingDigitaloceanResponse}
+     */
+    createLogDigocean(options = {}) {
+      return this.createLogDigoceanWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteLogDigoceanWithHttpInfo(service_id, version_id, logging_digitalocean_name) {
+
+    /**
+     * Delete the DigitalOcean Space for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_digitalocean_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteLogDigoceanWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteLogDigocean");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteLogDigocean");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_digitalocean_name' is set
-      if (logging_digitalocean_name === undefined || logging_digitalocean_name === null) {
-        throw new Error("Missing the required parameter 'logging_digitalocean_name' when calling deleteLogDigocean");
+      // Verify the required parameter 'logging_digitalocean_name' is set.
+      if (options['logging_digitalocean_name'] === undefined || options['logging_digitalocean_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_digitalocean_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_digitalocean_name': logging_digitalocean_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_digitalocean_name': options['logging_digitalocean_name']
       };
       let queryParams = {
       };
@@ -119,31 +185,49 @@ export default class LoggingDigitaloceanApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteLogDigocean(service_id, version_id, logging_digitalocean_name) {
-      return this.deleteLogDigoceanWithHttpInfo(service_id, version_id, logging_digitalocean_name)
+
+    /**
+     * Delete the DigitalOcean Space for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_digitalocean_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteLogDigocean(options = {}) {
+      return this.deleteLogDigoceanWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getLogDigoceanWithHttpInfo(service_id, version_id, logging_digitalocean_name) {
+
+    /**
+     * Get the DigitalOcean Space for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_digitalocean_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingDigitaloceanResponse} and HTTP response
+     */
+    getLogDigoceanWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getLogDigocean");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getLogDigocean");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_digitalocean_name' is set
-      if (logging_digitalocean_name === undefined || logging_digitalocean_name === null) {
-        throw new Error("Missing the required parameter 'logging_digitalocean_name' when calling getLogDigocean");
+      // Verify the required parameter 'logging_digitalocean_name' is set.
+      if (options['logging_digitalocean_name'] === undefined || options['logging_digitalocean_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_digitalocean_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_digitalocean_name': logging_digitalocean_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_digitalocean_name': options['logging_digitalocean_name']
       };
       let queryParams = {
       };
@@ -162,26 +246,43 @@ export default class LoggingDigitaloceanApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getLogDigocean(service_id, version_id, logging_digitalocean_name) {
-      return this.getLogDigoceanWithHttpInfo(service_id, version_id, logging_digitalocean_name)
+
+    /**
+     * Get the DigitalOcean Space for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_digitalocean_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingDigitaloceanResponse}
+     */
+    getLogDigocean(options = {}) {
+      return this.getLogDigoceanWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listLogDigoceanWithHttpInfo(service_id, version_id) {
+
+    /**
+     * List all of the DigitalOcean Spaces for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingDigitaloceanResponse>} and HTTP response
+     */
+    listLogDigoceanWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listLogDigocean");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listLogDigocean");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -200,54 +301,86 @@ export default class LoggingDigitaloceanApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listLogDigocean(service_id, version_id) {
-      return this.listLogDigoceanWithHttpInfo(service_id, version_id)
+
+    /**
+     * List all of the DigitalOcean Spaces for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingDigitaloceanResponse>}
+     */
+    listLogDigocean(options = {}) {
+      return this.listLogDigoceanWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateLogDigoceanWithHttpInfo(service_id, version_id, logging_digitalocean_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Update the DigitalOcean Space for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_digitalocean_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
+     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
+     * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
+     * @param {String} [options.access_key] - Your DigitalOcean Spaces account access key.
+     * @param {String} [options.bucket_name] - The name of the DigitalOcean Space.
+     * @param {String} [options.domain='nyc3.digitaloceanspaces.com'] - The domain of the DigitalOcean Spaces endpoint.
+     * @param {String} [options.path='null'] - The path to upload logs to.
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {String} [options.secret_key] - Your DigitalOcean Spaces account secret key.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingDigitaloceanResponse} and HTTP response
+     */
+    updateLogDigoceanWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateLogDigocean");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateLogDigocean");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_digitalocean_name' is set
-      if (logging_digitalocean_name === undefined || logging_digitalocean_name === null) {
-        throw new Error("Missing the required parameter 'logging_digitalocean_name' when calling updateLogDigocean");
+      // Verify the required parameter 'logging_digitalocean_name' is set.
+      if (options['logging_digitalocean_name'] === undefined || options['logging_digitalocean_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_digitalocean_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_digitalocean_name': logging_digitalocean_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_digitalocean_name': options['logging_digitalocean_name']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'message_type': opts['message_type'],
-        'timestamp_format': opts['timestamp_format'],
-        'period': opts['period'],
-        'gzip_level': opts['gzip_level'],
-        'compression_codec': opts['compression_codec'],
-        'bucket_name': opts['bucket_name'],
-        'access_key': opts['access_key'],
-        'secret_key': opts['secret_key'],
-        'domain': opts['domain'],
-        'path': opts['path'],
-        'public_key': opts['public_key']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'compression_codec': options['compression_codec'],
+        'gzip_level': options['gzip_level'],
+        'message_type': options['message_type'],
+        'period': options['period'],
+        'timestamp_format': options['timestamp_format'],
+        'access_key': options['access_key'],
+        'bucket_name': options['bucket_name'],
+        'domain': options['domain'],
+        'path': options['path'],
+        'public_key': options['public_key'],
+        'secret_key': options['secret_key']
       };
 
       let authNames = ['token'];
@@ -260,8 +393,33 @@ export default class LoggingDigitaloceanApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateLogDigocean(service_id, version_id, logging_digitalocean_name, opts) {
-      return this.updateLogDigoceanWithHttpInfo(service_id, version_id, logging_digitalocean_name, opts)
+
+    /**
+     * Update the DigitalOcean Space for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_digitalocean_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
+     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
+     * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
+     * @param {String} [options.access_key] - Your DigitalOcean Spaces account access key.
+     * @param {String} [options.bucket_name] - The name of the DigitalOcean Space.
+     * @param {String} [options.domain='nyc3.digitaloceanspaces.com'] - The domain of the DigitalOcean Spaces endpoint.
+     * @param {String} [options.path='null'] - The path to upload logs to.
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {String} [options.secret_key] - Your DigitalOcean Spaces account secret key.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingDigitaloceanResponse}
+     */
+    updateLogDigocean(options = {}) {
+      return this.updateLogDigoceanWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

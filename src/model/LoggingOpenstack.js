@@ -20,19 +20,39 @@ import LoggingMessageType from './LoggingMessageType';
 import LoggingOpenstackAllOf from './LoggingOpenstackAllOf';
 import LoggingPlacement from './LoggingPlacement';
 
-
+/**
+ * The LoggingOpenstack model module.
+ * @module model/LoggingOpenstack
+ * @version 3.0.0-alpha1
+ */
 class LoggingOpenstack {
-    
+    /**
+     * Constructs a new <code>LoggingOpenstack</code>.
+     * @alias module:model/LoggingOpenstack
+     * @implements module:model/LoggingCommon
+     * @implements module:model/LoggingGenericCommon
+     * @implements module:model/LoggingOpenstackAllOf
+     */
     constructor() { 
         LoggingCommon.initialize(this);LoggingGenericCommon.initialize(this);LoggingOpenstackAllOf.initialize(this);
         LoggingOpenstack.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingOpenstack</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingOpenstack} obj Optional instance to populate.
+     * @return {module:model/LoggingOpenstack} The populated <code>LoggingOpenstack</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingOpenstack();
@@ -40,35 +60,35 @@ class LoggingOpenstack {
             LoggingGenericCommon.constructFromObject(data, obj);
             LoggingOpenstackAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
             }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
-            }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
             }
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], 'String');
-            }
-            if (data.hasOwnProperty('message_type')) {
-                obj['message_type'] = LoggingMessageType.constructFromObject(data['message_type']);
-            }
-            if (data.hasOwnProperty('timestamp_format')) {
-                obj['timestamp_format'] = ApiClient.convertToType(data['timestamp_format'], 'String');
-            }
-            if (data.hasOwnProperty('period')) {
-                obj['period'] = ApiClient.convertToType(data['period'], 'Number');
+            if (data.hasOwnProperty('compression_codec')) {
+                obj['compression_codec'] = LoggingCompressionCodec.constructFromObject(data['compression_codec']);
             }
             if (data.hasOwnProperty('gzip_level')) {
                 obj['gzip_level'] = ApiClient.convertToType(data['gzip_level'], 'Number');
             }
-            if (data.hasOwnProperty('compression_codec')) {
-                obj['compression_codec'] = LoggingCompressionCodec.constructFromObject(data['compression_codec']);
+            if (data.hasOwnProperty('message_type')) {
+                obj['message_type'] = LoggingMessageType.constructFromObject(data['message_type']);
+            }
+            if (data.hasOwnProperty('period')) {
+                obj['period'] = ApiClient.convertToType(data['period'], 'Number');
+            }
+            if (data.hasOwnProperty('timestamp_format')) {
+                obj['timestamp_format'] = ApiClient.convertToType(data['timestamp_format'], 'String');
             }
             if (data.hasOwnProperty('access_key')) {
                 obj['access_key'] = ApiClient.convertToType(data['access_key'], 'String');
@@ -95,89 +115,187 @@ class LoggingOpenstack {
 
 }
 
-
-LoggingOpenstack.prototype['name'] = undefined;
-
-
-LoggingOpenstack.prototype['placement'] = undefined;
-
-
-LoggingOpenstack.prototype['format_version'] = undefined;
-
-
-LoggingOpenstack.prototype['response_condition'] = undefined;
-
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
 LoggingOpenstack.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingOpenstack.prototype['format_version'] = undefined;
 
-LoggingOpenstack.prototype['message_type'] = undefined;
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingOpenstack.prototype['name'] = undefined;
 
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingOpenstack.prototype['placement'] = undefined;
 
-LoggingOpenstack.prototype['timestamp_format'] = undefined;
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingOpenstack.prototype['response_condition'] = undefined;
 
-
-LoggingOpenstack.prototype['period'] = 3600;
-
-
-LoggingOpenstack.prototype['gzip_level'] = 0;
-
-
+/**
+ * @member {module:model/LoggingCompressionCodec} compression_codec
+ */
 LoggingOpenstack.prototype['compression_codec'] = undefined;
 
+/**
+ * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {Number} gzip_level
+ * @default 0
+ */
+LoggingOpenstack.prototype['gzip_level'] = 0;
 
+/**
+ * @member {module:model/LoggingMessageType} message_type
+ */
+LoggingOpenstack.prototype['message_type'] = undefined;
+
+/**
+ * How frequently log files are finalized so they can be available for reading (in seconds).
+ * @member {Number} period
+ * @default 3600
+ */
+LoggingOpenstack.prototype['period'] = 3600;
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} timestamp_format
+ */
+LoggingOpenstack.prototype['timestamp_format'] = undefined;
+
+/**
+ * Your OpenStack account access key.
+ * @member {String} access_key
+ */
 LoggingOpenstack.prototype['access_key'] = undefined;
 
-
+/**
+ * The name of your OpenStack container.
+ * @member {String} bucket_name
+ */
 LoggingOpenstack.prototype['bucket_name'] = undefined;
 
-
+/**
+ * The path to upload logs to.
+ * @member {String} path
+ * @default 'null'
+ */
 LoggingOpenstack.prototype['path'] = 'null';
 
-
+/**
+ * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+ * @member {String} public_key
+ * @default 'null'
+ */
 LoggingOpenstack.prototype['public_key'] = 'null';
 
-
+/**
+ * Your OpenStack auth url.
+ * @member {String} url
+ */
 LoggingOpenstack.prototype['url'] = undefined;
 
-
+/**
+ * The username for your OpenStack account.
+ * @member {String} user
+ */
 LoggingOpenstack.prototype['user'] = undefined;
 
 
 // Implement LoggingCommon interface:
-
-LoggingCommon.prototype['name'] = undefined;
-
-LoggingCommon.prototype['placement'] = undefined;
-
-LoggingCommon.prototype['format_version'] = undefined;
-
-LoggingCommon.prototype['response_condition'] = undefined;
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
 LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingCommon.prototype['format_version'] = undefined;
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingCommon.prototype['name'] = undefined;
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingCommon.prototype['placement'] = undefined;
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingCommon.prototype['response_condition'] = undefined;
 // Implement LoggingGenericCommon interface:
-
-LoggingGenericCommon.prototype['message_type'] = undefined;
-
-LoggingGenericCommon.prototype['timestamp_format'] = undefined;
-
-LoggingGenericCommon.prototype['period'] = 3600;
-
-LoggingGenericCommon.prototype['gzip_level'] = 0;
-
+/**
+ * @member {module:model/LoggingCompressionCodec} compression_codec
+ */
 LoggingGenericCommon.prototype['compression_codec'] = undefined;
+/**
+ * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {Number} gzip_level
+ * @default 0
+ */
+LoggingGenericCommon.prototype['gzip_level'] = 0;
+/**
+ * @member {module:model/LoggingMessageType} message_type
+ */
+LoggingGenericCommon.prototype['message_type'] = undefined;
+/**
+ * How frequently log files are finalized so they can be available for reading (in seconds).
+ * @member {Number} period
+ * @default 3600
+ */
+LoggingGenericCommon.prototype['period'] = 3600;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} timestamp_format
+ */
+LoggingGenericCommon.prototype['timestamp_format'] = undefined;
 // Implement LoggingOpenstackAllOf interface:
-
+/**
+ * Your OpenStack account access key.
+ * @member {String} access_key
+ */
 LoggingOpenstackAllOf.prototype['access_key'] = undefined;
-
+/**
+ * The name of your OpenStack container.
+ * @member {String} bucket_name
+ */
 LoggingOpenstackAllOf.prototype['bucket_name'] = undefined;
-
+/**
+ * The path to upload logs to.
+ * @member {String} path
+ * @default 'null'
+ */
 LoggingOpenstackAllOf.prototype['path'] = 'null';
-
+/**
+ * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+ * @member {String} public_key
+ * @default 'null'
+ */
 LoggingOpenstackAllOf.prototype['public_key'] = 'null';
-
+/**
+ * Your OpenStack auth url.
+ * @member {String} url
+ */
 LoggingOpenstackAllOf.prototype['url'] = undefined;
-
+/**
+ * The username for your OpenStack account.
+ * @member {String} user
+ */
 LoggingOpenstackAllOf.prototype['user'] = undefined;
 
 

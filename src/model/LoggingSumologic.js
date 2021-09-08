@@ -18,39 +18,58 @@ import LoggingMessageType from './LoggingMessageType';
 import LoggingPlacement from './LoggingPlacement';
 import LoggingSumologicAllOf from './LoggingSumologicAllOf';
 
-
+/**
+ * The LoggingSumologic model module.
+ * @module model/LoggingSumologic
+ * @version 3.0.0-alpha1
+ */
 class LoggingSumologic {
-    
+    /**
+     * Constructs a new <code>LoggingSumologic</code>.
+     * @alias module:model/LoggingSumologic
+     * @implements module:model/LoggingCommon
+     * @implements module:model/LoggingSumologicAllOf
+     */
     constructor() { 
         LoggingCommon.initialize(this);LoggingSumologicAllOf.initialize(this);
         LoggingSumologic.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingSumologic</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingSumologic} obj Optional instance to populate.
+     * @return {module:model/LoggingSumologic} The populated <code>LoggingSumologic</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingSumologic();
             LoggingCommon.constructFromObject(data, obj);
             LoggingSumologicAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
             }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
-            }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
-            }
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
             if (data.hasOwnProperty('message_type')) {
                 obj['message_type'] = LoggingMessageType.constructFromObject(data['message_type']);
@@ -65,43 +84,81 @@ class LoggingSumologic {
 
 }
 
-
-LoggingSumologic.prototype['name'] = undefined;
-
-
-LoggingSumologic.prototype['placement'] = undefined;
-
-
-LoggingSumologic.prototype['format_version'] = undefined;
-
-
-LoggingSumologic.prototype['response_condition'] = undefined;
-
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
 LoggingSumologic.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingSumologic.prototype['format_version'] = undefined;
 
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingSumologic.prototype['name'] = undefined;
+
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingSumologic.prototype['placement'] = undefined;
+
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingSumologic.prototype['response_condition'] = undefined;
+
+/**
+ * @member {module:model/LoggingMessageType} message_type
+ */
 LoggingSumologic.prototype['message_type'] = undefined;
 
-
+/**
+ * The URL to post logs to.
+ * @member {String} url
+ */
 LoggingSumologic.prototype['url'] = undefined;
 
 
 // Implement LoggingCommon interface:
-
-LoggingCommon.prototype['name'] = undefined;
-
-LoggingCommon.prototype['placement'] = undefined;
-
-LoggingCommon.prototype['format_version'] = undefined;
-
-LoggingCommon.prototype['response_condition'] = undefined;
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
 LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingCommon.prototype['format_version'] = undefined;
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingCommon.prototype['name'] = undefined;
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingCommon.prototype['placement'] = undefined;
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingCommon.prototype['response_condition'] = undefined;
 // Implement LoggingSumologicAllOf interface:
-
+/**
+ * @member {module:model/LoggingMessageType} message_type
+ */
 LoggingSumologicAllOf.prototype['message_type'] = undefined;
-
+/**
+ * The URL to post logs to.
+ * @member {String} url
+ */
 LoggingSumologicAllOf.prototype['url'] = undefined;
 
 

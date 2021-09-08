@@ -17,27 +17,44 @@ import TlsConfiguration from '../model/TlsConfiguration';
 import TlsConfigurationResponse from '../model/TlsConfigurationResponse';
 import TlsConfigurationsResponse from '../model/TlsConfigurationsResponse';
 
-
+/**
+* TlsConfigurations service.
+* @module api/TlsConfigurationsApi
+* @version 3.0.0-alpha1
+*/
 export default class TlsConfigurationsApi {
 
-    
+    /**
+    * Constructs a new TlsConfigurationsApi. 
+    * @alias module:api/TlsConfigurationsApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    getTlsConfigWithHttpInfo(tls_configuration_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Show a TLS configuration.
+     * @param {Object} options
+     * @param {String} options.tls_configuration_id
+     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `dns_records`. 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsConfigurationResponse} and HTTP response
+     */
+    getTlsConfigWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'tls_configuration_id' is set
-      if (tls_configuration_id === undefined || tls_configuration_id === null) {
-        throw new Error("Missing the required parameter 'tls_configuration_id' when calling getTlsConfig");
+      // Verify the required parameter 'tls_configuration_id' is set.
+      if (options['tls_configuration_id'] === undefined || options['tls_configuration_id'] === null) {
+        throw new Error("Missing the required parameter 'tls_configuration_id'.");
       }
 
       let pathParams = {
-        'tls_configuration_id': tls_configuration_id
+        'tls_configuration_id': options['tls_configuration_id']
       };
       let queryParams = {
-        'include': opts['include']
+        'include': options['include']
       };
       let headerParams = {
       };
@@ -54,23 +71,40 @@ export default class TlsConfigurationsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getTlsConfig(tls_configuration_id, opts) {
-      return this.getTlsConfigWithHttpInfo(tls_configuration_id, opts)
+
+    /**
+     * Show a TLS configuration.
+     * @param {Object} options
+     * @param {String} options.tls_configuration_id
+     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `dns_records`. 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsConfigurationResponse}
+     */
+    getTlsConfig(options = {}) {
+      return this.getTlsConfigWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listTlsConfigsWithHttpInfo(opts) {
-      opts = opts || {};
+
+    /**
+     * List all TLS configurations.
+     * @param {Object} options
+     * @param {String} [options.filter_bulk] - Optionally filters by the bulk attribute.
+     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `dns_records`. 
+     * @param {Number} [options.page_number] - Current page.
+     * @param {Number} [options.page_size=20] - Number of records per page.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsConfigurationsResponse} and HTTP response
+     */
+    listTlsConfigsWithHttpInfo(options = {}) {
       let postBody = null;
 
       let pathParams = {
       };
       let queryParams = {
-        'filter[bulk]': opts['filter_bulk'],
-        'include': opts['include'],
-        'page[number]': opts['page_number'],
-        'page[size]': opts['page_size']
+        'filter[bulk]': options['filter_bulk'],
+        'include': options['include'],
+        'page[number]': options['page_number'],
+        'page[size]': options['page_size']
       };
       let headerParams = {
       };
@@ -87,22 +121,39 @@ export default class TlsConfigurationsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listTlsConfigs(opts) {
-      return this.listTlsConfigsWithHttpInfo(opts)
+
+    /**
+     * List all TLS configurations.
+     * @param {Object} options
+     * @param {String} [options.filter_bulk] - Optionally filters by the bulk attribute.
+     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `dns_records`. 
+     * @param {Number} [options.page_number] - Current page.
+     * @param {Number} [options.page_size=20] - Number of records per page.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsConfigurationsResponse}
+     */
+    listTlsConfigs(options = {}) {
+      return this.listTlsConfigsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateTlsConfigWithHttpInfo(tls_configuration_id, opts) {
-      opts = opts || {};
-      let postBody = opts['tls_configuration'];
-      // verify the required parameter 'tls_configuration_id' is set
-      if (tls_configuration_id === undefined || tls_configuration_id === null) {
-        throw new Error("Missing the required parameter 'tls_configuration_id' when calling updateTlsConfig");
+
+    /**
+     * Update a TLS configuration.
+     * @param {Object} options
+     * @param {String} options.tls_configuration_id
+     * @param {module:model/TlsConfiguration} [options.tls_configuration]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsConfigurationResponse} and HTTP response
+     */
+    updateTlsConfigWithHttpInfo(options = {}) {
+      let postBody = options['tls_configuration'];
+      // Verify the required parameter 'tls_configuration_id' is set.
+      if (options['tls_configuration_id'] === undefined || options['tls_configuration_id'] === null) {
+        throw new Error("Missing the required parameter 'tls_configuration_id'.");
       }
 
       let pathParams = {
-        'tls_configuration_id': tls_configuration_id
+        'tls_configuration_id': options['tls_configuration_id']
       };
       let queryParams = {
       };
@@ -121,8 +172,16 @@ export default class TlsConfigurationsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateTlsConfig(tls_configuration_id, opts) {
-      return this.updateTlsConfigWithHttpInfo(tls_configuration_id, opts)
+
+    /**
+     * Update a TLS configuration.
+     * @param {Object} options
+     * @param {String} options.tls_configuration_id
+     * @param {module:model/TlsConfiguration} [options.tls_configuration]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsConfigurationResponse}
+     */
+    updateTlsConfig(options = {}) {
+      return this.updateTlsConfigWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

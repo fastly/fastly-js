@@ -15,31 +15,48 @@ import ApiClient from '../ApiClient';
 import TypeWafTag from './TypeWafTag';
 import WafTagAttributes from './WafTagAttributes';
 
-
+/**
+ * The WafTag model module.
+ * @module model/WafTag
+ * @version 3.0.0-alpha1
+ */
 class WafTag {
-    
+    /**
+     * Constructs a new <code>WafTag</code>.
+     * @alias module:model/WafTag
+     */
     constructor() { 
         
         WafTag.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>WafTag</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/WafTag} obj Optional instance to populate.
+     * @return {module:model/WafTag} The populated <code>WafTag</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafTag();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeWafTag.constructFromObject(data['type']);
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = WafTagAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = WafTagAttributes.constructFromObject(data['attributes']);
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeWafTag.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -48,14 +65,21 @@ class WafTag {
 
 }
 
+/**
+ * @member {module:model/WafTagAttributes} attributes
+ */
+WafTag.prototype['attributes'] = undefined;
 
-WafTag.prototype['type'] = undefined;
-
-
+/**
+ * Alphanumeric string identifying a WAF tag.
+ * @member {String} id
+ */
 WafTag.prototype['id'] = undefined;
 
-
-WafTag.prototype['attributes'] = undefined;
+/**
+ * @member {module:model/TypeWafTag} type
+ */
+WafTag.prototype['type'] = undefined;
 
 
 

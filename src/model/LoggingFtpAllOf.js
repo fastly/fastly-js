@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The LoggingFtpAllOf model module.
+ * @module model/LoggingFtpAllOf
+ * @version 3.0.0-alpha1
+ */
 class LoggingFtpAllOf {
-    
+    /**
+     * Constructs a new <code>LoggingFtpAllOf</code>.
+     * @alias module:model/LoggingFtpAllOf
+     */
     constructor() { 
         
         LoggingFtpAllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingFtpAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingFtpAllOf} obj Optional instance to populate.
+     * @return {module:model/LoggingFtpAllOf} The populated <code>LoggingFtpAllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingFtpAllOf();
@@ -61,28 +78,54 @@ class LoggingFtpAllOf {
 
 }
 
-
+/**
+ * An hostname or IPv4 address.
+ * @member {String} address
+ */
 LoggingFtpAllOf.prototype['address'] = undefined;
 
-
+/**
+ * Hostname used.
+ * @member {String} hostname
+ */
 LoggingFtpAllOf.prototype['hostname'] = undefined;
 
-
+/**
+ * IPv4 address of the host.
+ * @member {String} ipv4
+ */
 LoggingFtpAllOf.prototype['ipv4'] = undefined;
 
-
+/**
+ * The password for the server. For anonymous use an email address.
+ * @member {String} password
+ */
 LoggingFtpAllOf.prototype['password'] = undefined;
 
-
+/**
+ * The path to upload log files to. If the path ends in `/` then it is treated as a directory.
+ * @member {String} path
+ */
 LoggingFtpAllOf.prototype['path'] = undefined;
 
-
+/**
+ * The port number.
+ * @member {Number} port
+ * @default 21
+ */
 LoggingFtpAllOf.prototype['port'] = 21;
 
-
+/**
+ * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+ * @member {String} public_key
+ * @default 'null'
+ */
 LoggingFtpAllOf.prototype['public_key'] = 'null';
 
-
+/**
+ * The username for the server. Can be anonymous.
+ * @member {String} user
+ */
 LoggingFtpAllOf.prototype['user'] = undefined;
 
 

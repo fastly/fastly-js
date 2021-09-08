@@ -1,12 +1,12 @@
-# FastlyApi.TlsConfigurationData
+# Fastly.TlsConfigurationData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**TypeTlsConfiguration**](TypeTlsConfiguration.md) |  | [optional] 
 **attributes** | [**TlsConfigurationDataAttributes**](TlsConfigurationDataAttributes.md) |  | [optional] 
 **relationships** | [**AnyOfobjectobject**](AnyOfobjectobject.md) |  | [optional] 
+**type** | [**TypeTlsConfiguration**](TypeTlsConfiguration.md) |  | [optional] 
 
 
 

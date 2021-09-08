@@ -16,27 +16,44 @@ import ApiClient from "../ApiClient";
 import WafRuleResponse from '../model/WafRuleResponse';
 import WafRulesResponse from '../model/WafRulesResponse';
 
-
+/**
+* WafRules service.
+* @module api/WafRulesApi
+* @version 3.0.0-alpha1
+*/
 export default class WafRulesApi {
 
-    
+    /**
+    * Constructs a new WafRulesApi. 
+    * @alias module:api/WafRulesApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    getWafRuleWithHttpInfo(waf_rule_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Get a specific rule. The `id` provided can be the ModSecurity Rule ID or the Fastly generated rule ID.
+     * @param {Object} options
+     * @param {String} options.waf_rule_id
+     * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_tags` and `waf_rule_revisions`. 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafRuleResponse} and HTTP response
+     */
+    getWafRuleWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'waf_rule_id' is set
-      if (waf_rule_id === undefined || waf_rule_id === null) {
-        throw new Error("Missing the required parameter 'waf_rule_id' when calling getWafRule");
+      // Verify the required parameter 'waf_rule_id' is set.
+      if (options['waf_rule_id'] === undefined || options['waf_rule_id'] === null) {
+        throw new Error("Missing the required parameter 'waf_rule_id'.");
       }
 
       let pathParams = {
-        'waf_rule_id': waf_rule_id
+        'waf_rule_id': options['waf_rule_id']
       };
       let queryParams = {
-        'include': opts['include']
+        'include': options['include']
       };
       let headerParams = {
       };
@@ -53,26 +70,46 @@ export default class WafRulesApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getWafRule(waf_rule_id, opts) {
-      return this.getWafRuleWithHttpInfo(waf_rule_id, opts)
+
+    /**
+     * Get a specific rule. The `id` provided can be the ModSecurity Rule ID or the Fastly generated rule ID.
+     * @param {Object} options
+     * @param {String} options.waf_rule_id
+     * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_tags` and `waf_rule_revisions`. 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafRuleResponse}
+     */
+    getWafRule(options = {}) {
+      return this.getWafRuleWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listWafRulesWithHttpInfo(opts) {
-      opts = opts || {};
+
+    /**
+     * List all available WAF rules.
+     * @param {Object} options
+     * @param {String} [options.filter_modsec_rule_id] - Limit the returned rules to a specific ModSecurity rule ID.
+     * @param {String} [options.filter_waf_tags_name] - Limit the returned rules to a set linked to a tag by name.
+     * @param {String} [options.filter_waf_rule_revisions_source] - Limit the returned rules to a set linked to a source.
+     * @param {String} [options.filter_waf_firewall_id_not_match] - Limit the returned rules to a set not included in the active firewall version for a firewall.
+     * @param {Number} [options.page_number] - Current page.
+     * @param {Number} [options.page_size=20] - Number of records per page.
+     * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_tags` and `waf_rule_revisions`. 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafRulesResponse} and HTTP response
+     */
+    listWafRulesWithHttpInfo(options = {}) {
       let postBody = null;
 
       let pathParams = {
       };
       let queryParams = {
-        'filter[modsec_rule_id]': opts['filter_modsec_rule_id'],
-        'filter[waf_tags][name]': opts['filter_waf_tags_name'],
-        'filter[waf_rule_revisions][source]': opts['filter_waf_rule_revisions_source'],
-        'filter[waf_firewall.id][not][match]': opts['filter_waf_firewall_id_not_match'],
-        'page[number]': opts['page_number'],
-        'page[size]': opts['page_size'],
-        'include': opts['include']
+        'filter[modsec_rule_id]': options['filter_modsec_rule_id'],
+        'filter[waf_tags][name]': options['filter_waf_tags_name'],
+        'filter[waf_rule_revisions][source]': options['filter_waf_rule_revisions_source'],
+        'filter[waf_firewall.id][not][match]': options['filter_waf_firewall_id_not_match'],
+        'page[number]': options['page_number'],
+        'page[size]': options['page_size'],
+        'include': options['include']
       };
       let headerParams = {
       };
@@ -89,8 +126,21 @@ export default class WafRulesApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listWafRules(opts) {
-      return this.listWafRulesWithHttpInfo(opts)
+
+    /**
+     * List all available WAF rules.
+     * @param {Object} options
+     * @param {String} [options.filter_modsec_rule_id] - Limit the returned rules to a specific ModSecurity rule ID.
+     * @param {String} [options.filter_waf_tags_name] - Limit the returned rules to a set linked to a tag by name.
+     * @param {String} [options.filter_waf_rule_revisions_source] - Limit the returned rules to a set linked to a source.
+     * @param {String} [options.filter_waf_firewall_id_not_match] - Limit the returned rules to a set not included in the active firewall version for a firewall.
+     * @param {Number} [options.page_number] - Current page.
+     * @param {Number} [options.page_size=20] - Number of records per page.
+     * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_tags` and `waf_rule_revisions`. 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafRulesResponse}
+     */
+    listWafRules(options = {}) {
+      return this.listWafRulesWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

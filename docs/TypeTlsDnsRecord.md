@@ -1,4 +1,4 @@
-# FastlyApi.TypeTlsDnsRecord
+# Fastly.TypeTlsDnsRecord
 
 ## Enum
 

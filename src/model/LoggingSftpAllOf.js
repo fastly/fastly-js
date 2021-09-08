@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The LoggingSftpAllOf model module.
+ * @module model/LoggingSftpAllOf
+ * @version 3.0.0-alpha1
+ */
 class LoggingSftpAllOf {
-    
+    /**
+     * Constructs a new <code>LoggingSftpAllOf</code>.
+     * @alias module:model/LoggingSftpAllOf
+     */
     constructor() { 
         
         LoggingSftpAllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingSftpAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingSftpAllOf} obj Optional instance to populate.
+     * @return {module:model/LoggingSftpAllOf} The populated <code>LoggingSftpAllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingSftpAllOf();
@@ -58,25 +75,49 @@ class LoggingSftpAllOf {
 
 }
 
-
+/**
+ * The password for the server. If both `password` and `secret_key` are passed, `secret_key` will be used in preference.
+ * @member {String} password
+ */
 LoggingSftpAllOf.prototype['password'] = undefined;
 
-
+/**
+ * The path to upload logs to.
+ * @member {String} path
+ * @default 'null'
+ */
 LoggingSftpAllOf.prototype['path'] = 'null';
 
-
+/**
+ * The port number.
+ * @member {Object} port
+ */
 LoggingSftpAllOf.prototype['port'] = undefined;
 
-
+/**
+ * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+ * @member {String} public_key
+ * @default 'null'
+ */
 LoggingSftpAllOf.prototype['public_key'] = 'null';
 
-
+/**
+ * The SSH private key for the server. If both `password` and `secret_key` are passed, `secret_key` will be used in preference.
+ * @member {String} secret_key
+ * @default 'null'
+ */
 LoggingSftpAllOf.prototype['secret_key'] = 'null';
 
-
+/**
+ * A list of host keys for all hosts we can connect to over SFTP.
+ * @member {String} ssh_known_hosts
+ */
 LoggingSftpAllOf.prototype['ssh_known_hosts'] = undefined;
 
-
+/**
+ * The username for the server.
+ * @member {String} user
+ */
 LoggingSftpAllOf.prototype['user'] = undefined;
 
 

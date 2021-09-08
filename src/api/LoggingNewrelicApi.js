@@ -17,41 +17,66 @@ import LoggingFormatVersion from '../model/LoggingFormatVersion';
 import LoggingNewrelicResponse from '../model/LoggingNewrelicResponse';
 import LoggingPlacement from '../model/LoggingPlacement';
 
-
+/**
+* LoggingNewrelic service.
+* @module api/LoggingNewrelicApi
+* @version 3.0.0-alpha1
+*/
 export default class LoggingNewrelicApi {
 
-    
+    /**
+    * Constructs a new LoggingNewrelicApi. 
+    * @alias module:api/LoggingNewrelicApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createLogNewrelicWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Create a New Relic Logs logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest.
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/String} [options.region='US'] - The region to which to stream logs.
+     * @param {String} [options.token] - The Insert API key from the Account page of your New Relic account. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingNewrelicResponse} and HTTP response
+     */
+    createLogNewrelicWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createLogNewrelic");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createLogNewrelic");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'token': opts['token']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'region': options['region'],
+        'token': options['token']
       };
 
       let authNames = ['token'];
@@ -64,31 +89,55 @@ export default class LoggingNewrelicApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createLogNewrelic(service_id, version_id, opts) {
-      return this.createLogNewrelicWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Create a New Relic Logs logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest.
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/String} [options.region='US'] - The region to which to stream logs.
+     * @param {String} [options.token] - The Insert API key from the Account page of your New Relic account. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingNewrelicResponse}
+     */
+    createLogNewrelic(options = {}) {
+      return this.createLogNewrelicWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteLogNewrelicWithHttpInfo(service_id, version_id, logging_newrelic_name) {
+
+    /**
+     * Delete the New Relic Logs logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_newrelic_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteLogNewrelicWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteLogNewrelic");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteLogNewrelic");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_newrelic_name' is set
-      if (logging_newrelic_name === undefined || logging_newrelic_name === null) {
-        throw new Error("Missing the required parameter 'logging_newrelic_name' when calling deleteLogNewrelic");
+      // Verify the required parameter 'logging_newrelic_name' is set.
+      if (options['logging_newrelic_name'] === undefined || options['logging_newrelic_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_newrelic_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_newrelic_name': logging_newrelic_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_newrelic_name': options['logging_newrelic_name']
       };
       let queryParams = {
       };
@@ -107,31 +156,49 @@ export default class LoggingNewrelicApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteLogNewrelic(service_id, version_id, logging_newrelic_name) {
-      return this.deleteLogNewrelicWithHttpInfo(service_id, version_id, logging_newrelic_name)
+
+    /**
+     * Delete the New Relic Logs logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_newrelic_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteLogNewrelic(options = {}) {
+      return this.deleteLogNewrelicWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getLogNewrelicWithHttpInfo(service_id, version_id, logging_newrelic_name) {
+
+    /**
+     * Get the details of a New Relic Logs logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_newrelic_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingNewrelicResponse} and HTTP response
+     */
+    getLogNewrelicWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getLogNewrelic");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getLogNewrelic");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_newrelic_name' is set
-      if (logging_newrelic_name === undefined || logging_newrelic_name === null) {
-        throw new Error("Missing the required parameter 'logging_newrelic_name' when calling getLogNewrelic");
+      // Verify the required parameter 'logging_newrelic_name' is set.
+      if (options['logging_newrelic_name'] === undefined || options['logging_newrelic_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_newrelic_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_newrelic_name': logging_newrelic_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_newrelic_name': options['logging_newrelic_name']
       };
       let queryParams = {
       };
@@ -150,26 +217,43 @@ export default class LoggingNewrelicApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getLogNewrelic(service_id, version_id, logging_newrelic_name) {
-      return this.getLogNewrelicWithHttpInfo(service_id, version_id, logging_newrelic_name)
+
+    /**
+     * Get the details of a New Relic Logs logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_newrelic_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingNewrelicResponse}
+     */
+    getLogNewrelic(options = {}) {
+      return this.getLogNewrelicWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listLogNewrelicWithHttpInfo(service_id, version_id) {
+
+    /**
+     * List all of the New Relic Logs logging objects for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingNewrelicResponse>} and HTTP response
+     */
+    listLogNewrelicWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listLogNewrelic");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listLogNewrelic");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -188,44 +272,68 @@ export default class LoggingNewrelicApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listLogNewrelic(service_id, version_id) {
-      return this.listLogNewrelicWithHttpInfo(service_id, version_id)
+
+    /**
+     * List all of the New Relic Logs logging objects for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingNewrelicResponse>}
+     */
+    listLogNewrelic(options = {}) {
+      return this.listLogNewrelicWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateLogNewrelicWithHttpInfo(service_id, version_id, logging_newrelic_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Update a New Relic Logs logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_newrelic_name
+     * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest.
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/String} [options.region='US'] - The region to which to stream logs.
+     * @param {String} [options.token] - The Insert API key from the Account page of your New Relic account. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingNewrelicResponse} and HTTP response
+     */
+    updateLogNewrelicWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateLogNewrelic");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateLogNewrelic");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_newrelic_name' is set
-      if (logging_newrelic_name === undefined || logging_newrelic_name === null) {
-        throw new Error("Missing the required parameter 'logging_newrelic_name' when calling updateLogNewrelic");
+      // Verify the required parameter 'logging_newrelic_name' is set.
+      if (options['logging_newrelic_name'] === undefined || options['logging_newrelic_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_newrelic_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_newrelic_name': logging_newrelic_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_newrelic_name': options['logging_newrelic_name']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'token': opts['token']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'region': options['region'],
+        'token': options['token']
       };
 
       let authNames = ['token'];
@@ -238,8 +346,24 @@ export default class LoggingNewrelicApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateLogNewrelic(service_id, version_id, logging_newrelic_name, opts) {
-      return this.updateLogNewrelicWithHttpInfo(service_id, version_id, logging_newrelic_name, opts)
+
+    /**
+     * Update a New Relic Logs logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_newrelic_name
+     * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest.
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/String} [options.region='US'] - The region to which to stream logs.
+     * @param {String} [options.token] - The Insert API key from the Account page of your New Relic account. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingNewrelicResponse}
+     */
+    updateLogNewrelic(options = {}) {
+      return this.updateLogNewrelicWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

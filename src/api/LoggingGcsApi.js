@@ -19,50 +19,82 @@ import LoggingGcsResponse from '../model/LoggingGcsResponse';
 import LoggingMessageType from '../model/LoggingMessageType';
 import LoggingPlacement from '../model/LoggingPlacement';
 
-
+/**
+* LoggingGcs service.
+* @module api/LoggingGcsApi
+* @version 3.0.0-alpha1
+*/
 export default class LoggingGcsApi {
 
-    
+    /**
+    * Constructs a new LoggingGcsApi. 
+    * @alias module:api/LoggingGcsApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createLogGcsWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Create GCS logging for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
+     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
+     * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
+     * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+     * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+     * @param {String} [options.bucket_name] - The name of the GCS bucket.
+     * @param {String} [options.path]
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingGcsResponse} and HTTP response
+     */
+    createLogGcsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createLogGcs");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createLogGcs");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'message_type': opts['message_type'],
-        'timestamp_format': opts['timestamp_format'],
-        'period': opts['period'],
-        'gzip_level': opts['gzip_level'],
-        'compression_codec': opts['compression_codec'],
-        'user': opts['user'],
-        'secret_key': opts['secret_key'],
-        'bucket_name': opts['bucket_name'],
-        'path': opts['path'],
-        'public_key': opts['public_key']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'compression_codec': options['compression_codec'],
+        'gzip_level': options['gzip_level'],
+        'message_type': options['message_type'],
+        'period': options['period'],
+        'timestamp_format': options['timestamp_format'],
+        'secret_key': options['secret_key'],
+        'user': options['user'],
+        'bucket_name': options['bucket_name'],
+        'path': options['path'],
+        'public_key': options['public_key']
       };
 
       let authNames = ['token'];
@@ -75,31 +107,63 @@ export default class LoggingGcsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createLogGcs(service_id, version_id, opts) {
-      return this.createLogGcsWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Create GCS logging for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
+     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
+     * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
+     * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+     * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+     * @param {String} [options.bucket_name] - The name of the GCS bucket.
+     * @param {String} [options.path]
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingGcsResponse}
+     */
+    createLogGcs(options = {}) {
+      return this.createLogGcsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteLogGcsWithHttpInfo(service_id, version_id, logging_gcs_name) {
+
+    /**
+     * Delete the GCS Logging for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_gcs_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteLogGcsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteLogGcs");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteLogGcs");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_gcs_name' is set
-      if (logging_gcs_name === undefined || logging_gcs_name === null) {
-        throw new Error("Missing the required parameter 'logging_gcs_name' when calling deleteLogGcs");
+      // Verify the required parameter 'logging_gcs_name' is set.
+      if (options['logging_gcs_name'] === undefined || options['logging_gcs_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_gcs_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_gcs_name': logging_gcs_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_gcs_name': options['logging_gcs_name']
       };
       let queryParams = {
       };
@@ -118,31 +182,49 @@ export default class LoggingGcsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteLogGcs(service_id, version_id, logging_gcs_name) {
-      return this.deleteLogGcsWithHttpInfo(service_id, version_id, logging_gcs_name)
+
+    /**
+     * Delete the GCS Logging for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_gcs_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteLogGcs(options = {}) {
+      return this.deleteLogGcsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getLogGcsWithHttpInfo(service_id, version_id, logging_gcs_name) {
+
+    /**
+     * Get the GCS Logging for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_gcs_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingGcsResponse} and HTTP response
+     */
+    getLogGcsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getLogGcs");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getLogGcs");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_gcs_name' is set
-      if (logging_gcs_name === undefined || logging_gcs_name === null) {
-        throw new Error("Missing the required parameter 'logging_gcs_name' when calling getLogGcs");
+      // Verify the required parameter 'logging_gcs_name' is set.
+      if (options['logging_gcs_name'] === undefined || options['logging_gcs_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_gcs_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_gcs_name': logging_gcs_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_gcs_name': options['logging_gcs_name']
       };
       let queryParams = {
       };
@@ -161,26 +243,43 @@ export default class LoggingGcsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getLogGcs(service_id, version_id, logging_gcs_name) {
-      return this.getLogGcsWithHttpInfo(service_id, version_id, logging_gcs_name)
+
+    /**
+     * Get the GCS Logging for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_gcs_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingGcsResponse}
+     */
+    getLogGcs(options = {}) {
+      return this.getLogGcsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listLogGcsWithHttpInfo(service_id, version_id) {
+
+    /**
+     * List all of the GCS log endpoints for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingGcsResponse>} and HTTP response
+     */
+    listLogGcsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listLogGcs");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listLogGcs");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -199,53 +298,84 @@ export default class LoggingGcsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listLogGcs(service_id, version_id) {
-      return this.listLogGcsWithHttpInfo(service_id, version_id)
+
+    /**
+     * List all of the GCS log endpoints for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingGcsResponse>}
+     */
+    listLogGcs(options = {}) {
+      return this.listLogGcsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateLogGcsWithHttpInfo(service_id, version_id, logging_gcs_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Update the GCS for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_gcs_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
+     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
+     * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
+     * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+     * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+     * @param {String} [options.bucket_name] - The name of the GCS bucket.
+     * @param {String} [options.path]
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingGcsResponse} and HTTP response
+     */
+    updateLogGcsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateLogGcs");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateLogGcs");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_gcs_name' is set
-      if (logging_gcs_name === undefined || logging_gcs_name === null) {
-        throw new Error("Missing the required parameter 'logging_gcs_name' when calling updateLogGcs");
+      // Verify the required parameter 'logging_gcs_name' is set.
+      if (options['logging_gcs_name'] === undefined || options['logging_gcs_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_gcs_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_gcs_name': logging_gcs_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_gcs_name': options['logging_gcs_name']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'message_type': opts['message_type'],
-        'timestamp_format': opts['timestamp_format'],
-        'period': opts['period'],
-        'gzip_level': opts['gzip_level'],
-        'compression_codec': opts['compression_codec'],
-        'user': opts['user'],
-        'secret_key': opts['secret_key'],
-        'bucket_name': opts['bucket_name'],
-        'path': opts['path'],
-        'public_key': opts['public_key']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'compression_codec': options['compression_codec'],
+        'gzip_level': options['gzip_level'],
+        'message_type': options['message_type'],
+        'period': options['period'],
+        'timestamp_format': options['timestamp_format'],
+        'secret_key': options['secret_key'],
+        'user': options['user'],
+        'bucket_name': options['bucket_name'],
+        'path': options['path'],
+        'public_key': options['public_key']
       };
 
       let authNames = ['token'];
@@ -258,8 +388,32 @@ export default class LoggingGcsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateLogGcs(service_id, version_id, logging_gcs_name, opts) {
-      return this.updateLogGcsWithHttpInfo(service_id, version_id, logging_gcs_name, opts)
+
+    /**
+     * Update the GCS for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_gcs_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
+     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
+     * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
+     * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+     * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+     * @param {String} [options.bucket_name] - The name of the GCS bucket.
+     * @param {String} [options.path]
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingGcsResponse}
+     */
+    updateLogGcs(options = {}) {
+      return this.updateLogGcsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -1,4 +1,4 @@
-# FastlyApi.DirectorBackendAllOf
+# Fastly.DirectorBackendAllOf
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# FastlyApi.TypeEvent
+# Fastly.TypeEvent
 
 ## Enum
 

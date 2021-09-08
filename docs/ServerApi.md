@@ -1,7 +1,9 @@
-# FastlyApi.ServerApi
+# Fastly.ServerApi
 
 
-
+```javascript
+const apiInstance = new Fastly.ServerApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -16,48 +18,54 @@ Method | Fastly API endpoint | Description
 
 ## `createPoolServer`
 
-> createPoolServer(service_id, pool_id, opts)
-
-Add a server to a pool
+```javascript
+createPoolServer({ service_id, pool_id, [address], , [comment], , [disabled], , [max_conn], , [override_host], , [port], , [weight] })
+```
 
 Creates a single server for a particular service and pool.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.ServerApi();
-let service_id = "service_id_example"; // String | 
-let pool_id = "pool_id_example"; // String | 
-let opts = {
-  'weight': 100, // Number | Weight (`1-100`) used to load balance this server against others.
-  'max_conn': 0, // Number | Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
-  'port': 80, // Number | Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
-  'address': "address_example", // String | A hostname, IPv4, or IPv6 address for the server. Required.
-  'comment': "comment_example", // String | A freeform descriptive note.
-  'disabled': false, // Boolean | Allows servers to be enabled and disabled in a pool.
-  'override_host': "'null'" // String | The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
-};
-apiInstance.createPoolServer(service_id, pool_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  pool_id: "pool_id_example", // required
+  address: "address_example",
 
+  comment: "comment_example",
+
+  disabled: false,
+
+  max_conn: 0,
+
+  override_host: "'null'",
+
+  port: 80,
+
+  weight: 100,
+};
+
+apiInstance.createPoolServer(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **pool_id** | **String** |  |
-**weight** | **Number** | Weight (&#x60;1-100&#x60;) used to load balance this server against others. | [optional] [default to 100]
-**max_conn** | **Number** | Maximum number of connections. If the value is &#x60;0&#x60;, it inherits the value from pool&#39;s &#x60;max_conn_default&#x60;. | [optional] [default to 0]
-**port** | **Number** | Port number. Setting port &#x60;443&#x60; does not force TLS. Set &#x60;use_tls&#x60; in pool to force TLS. | [optional] [default to 80]
 **address** | **String** | A hostname, IPv4, or IPv6 address for the server. Required. | [optional]
 **comment** | **String** | A freeform descriptive note. | [optional]
 **disabled** | **Boolean** | Allows servers to be enabled and disabled in a pool. | [optional] [default to false]
+**max_conn** | **Number** | Maximum number of connections. If the value is &#x60;0&#x60;, it inherits the value from pool&#39;s &#x60;max_conn_default&#x60;. | [optional] [default to 0]
 **override_host** | **String** | The hostname to override the Host header. Defaults to &#x60;null&#x60; meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting. | [optional] [default to &#39;null&#39;]
+**port** | **Number** | Port number. Setting port &#x60;443&#x60; does not force TLS. Set &#x60;use_tls&#x60; in pool to force TLS. | [optional] [default to 80]
+**weight** | **Number** | Weight (&#x60;1-100&#x60;) used to load balance this server against others. | [optional] [default to 100]
 
 ### Return type
 
@@ -66,28 +74,28 @@ Name | Type | Description  | Notes
 
 ## `deletePoolServer`
 
-> deletePoolServer(service_id, pool_id, server_id)
-
-Delete a server from a pool
+```javascript
+deletePoolServer({ service_id, pool_id, server_id })
+```
 
 Deletes a single server for a particular service and pool.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.ServerApi();
-let service_id = "service_id_example"; // String | 
-let pool_id = "pool_id_example"; // String | 
-let server_id = "server_id_example"; // String | 
-apiInstance.deletePoolServer(service_id, pool_id, server_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  pool_id: "pool_id_example", // required  server_id: "server_id_example", // required};
 
+apiInstance.deletePoolServer(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -102,28 +110,28 @@ Name | Type | Description  | Notes
 
 ## `getPoolServer`
 
-> getPoolServer(service_id, pool_id, server_id)
-
-Get a pool server
+```javascript
+getPoolServer({ service_id, pool_id, server_id })
+```
 
 Gets a single server for a particular service and pool.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.ServerApi();
-let service_id = "service_id_example"; // String | 
-let pool_id = "pool_id_example"; // String | 
-let server_id = "server_id_example"; // String | 
-apiInstance.getPoolServer(service_id, pool_id, server_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  pool_id: "pool_id_example", // required  server_id: "server_id_example", // required};
 
+apiInstance.getPoolServer(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -138,27 +146,28 @@ Name | Type | Description  | Notes
 
 ## `listPoolServers`
 
-> listPoolServers(service_id, pool_id)
-
-List servers in a pool
+```javascript
+listPoolServers({ service_id, pool_id })
+```
 
 Lists all servers for a particular service and pool.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.ServerApi();
-let service_id = "service_id_example"; // String | 
-let pool_id = "pool_id_example"; // String | 
-apiInstance.listPoolServers(service_id, pool_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  pool_id: "pool_id_example", // required};
 
+apiInstance.listPoolServers(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -172,50 +181,55 @@ Name | Type | Description  | Notes
 
 ## `updatePoolServer`
 
-> updatePoolServer(service_id, pool_id, server_id, opts)
-
-Update a server
+```javascript
+updatePoolServer({ service_id, pool_id, server_id, [address], , [comment], , [disabled], , [max_conn], , [override_host], , [port], , [weight] })
+```
 
 Updates a single server for a particular service and pool.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.ServerApi();
-let service_id = "service_id_example"; // String | 
-let pool_id = "pool_id_example"; // String | 
-let server_id = "server_id_example"; // String | 
-let opts = {
-  'weight': 100, // Number | Weight (`1-100`) used to load balance this server against others.
-  'max_conn': 0, // Number | Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
-  'port': 80, // Number | Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
-  'address': "address_example", // String | A hostname, IPv4, or IPv6 address for the server. Required.
-  'comment': "comment_example", // String | A freeform descriptive note.
-  'disabled': false, // Boolean | Allows servers to be enabled and disabled in a pool.
-  'override_host': "'null'" // String | The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
-};
-apiInstance.updatePoolServer(service_id, pool_id, server_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  pool_id: "pool_id_example", // required  server_id: "server_id_example", // required
+  address: "address_example",
 
+  comment: "comment_example",
+
+  disabled: false,
+
+  max_conn: 0,
+
+  override_host: "'null'",
+
+  port: 80,
+
+  weight: 100,
+};
+
+apiInstance.updatePoolServer(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **pool_id** | **String** |  |
 **server_id** | **String** |  |
-**weight** | **Number** | Weight (&#x60;1-100&#x60;) used to load balance this server against others. | [optional] [default to 100]
-**max_conn** | **Number** | Maximum number of connections. If the value is &#x60;0&#x60;, it inherits the value from pool&#39;s &#x60;max_conn_default&#x60;. | [optional] [default to 0]
-**port** | **Number** | Port number. Setting port &#x60;443&#x60; does not force TLS. Set &#x60;use_tls&#x60; in pool to force TLS. | [optional] [default to 80]
 **address** | **String** | A hostname, IPv4, or IPv6 address for the server. Required. | [optional]
 **comment** | **String** | A freeform descriptive note. | [optional]
 **disabled** | **Boolean** | Allows servers to be enabled and disabled in a pool. | [optional] [default to false]
+**max_conn** | **Number** | Maximum number of connections. If the value is &#x60;0&#x60;, it inherits the value from pool&#39;s &#x60;max_conn_default&#x60;. | [optional] [default to 0]
 **override_host** | **String** | The hostname to override the Host header. Defaults to &#x60;null&#x60; meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting. | [optional] [default to &#39;null&#39;]
+**port** | **Number** | Port number. Setting port &#x60;443&#x60; does not force TLS. Set &#x60;use_tls&#x60; in pool to force TLS. | [optional] [default to 80]
+**weight** | **Number** | Weight (&#x60;1-100&#x60;) used to load balance this server against others. | [optional] [default to 100]
 
 ### Return type
 

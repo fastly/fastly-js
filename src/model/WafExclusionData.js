@@ -16,31 +16,48 @@ import AnyOfrelationshipWafRulesrelationshipWafRuleRevisions from './AnyOfrelati
 import TypeWafExclusion from './TypeWafExclusion';
 import WafExclusionDataAttributes from './WafExclusionDataAttributes';
 
-
+/**
+ * The WafExclusionData model module.
+ * @module model/WafExclusionData
+ * @version 3.0.0-alpha1
+ */
 class WafExclusionData {
-    
+    /**
+     * Constructs a new <code>WafExclusionData</code>.
+     * @alias module:model/WafExclusionData
+     */
     constructor() { 
         
         WafExclusionData.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>WafExclusionData</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/WafExclusionData} obj Optional instance to populate.
+     * @return {module:model/WafExclusionData} The populated <code>WafExclusionData</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafExclusionData();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeWafExclusion.constructFromObject(data['type']);
-            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = WafExclusionDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = ApiClient.convertToType(data['relationships'], AnyOfrelationshipWafRulesrelationshipWafRuleRevisions);
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeWafExclusion.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -49,14 +66,20 @@ class WafExclusionData {
 
 }
 
-
-WafExclusionData.prototype['type'] = undefined;
-
-
+/**
+ * @member {module:model/WafExclusionDataAttributes} attributes
+ */
 WafExclusionData.prototype['attributes'] = undefined;
 
-
+/**
+ * @member {module:model/AnyOfrelationshipWafRulesrelationshipWafRuleRevisions} relationships
+ */
 WafExclusionData.prototype['relationships'] = undefined;
+
+/**
+ * @member {module:model/TypeWafExclusion} type
+ */
+WafExclusionData.prototype['type'] = undefined;
 
 
 

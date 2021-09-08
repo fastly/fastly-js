@@ -18,19 +18,38 @@ import PaginationLinks from './PaginationLinks';
 import PaginationMeta from './PaginationMeta';
 import TlsActivationsResponseAllOf from './TlsActivationsResponseAllOf';
 
-
+/**
+ * The TlsActivationsResponse model module.
+ * @module model/TlsActivationsResponse
+ * @version 3.0.0-alpha1
+ */
 class TlsActivationsResponse {
-    
+    /**
+     * Constructs a new <code>TlsActivationsResponse</code>.
+     * @alias module:model/TlsActivationsResponse
+     * @implements module:model/Pagination
+     * @implements module:model/TlsActivationsResponseAllOf
+     */
     constructor() { 
         Pagination.initialize(this);TlsActivationsResponseAllOf.initialize(this);
         TlsActivationsResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>TlsActivationsResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/TlsActivationsResponse} obj Optional instance to populate.
+     * @return {module:model/TlsActivationsResponse} The populated <code>TlsActivationsResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsActivationsResponse();
@@ -53,23 +72,35 @@ class TlsActivationsResponse {
 
 }
 
-
+/**
+ * @member {module:model/PaginationLinks} links
+ */
 TlsActivationsResponse.prototype['links'] = undefined;
 
-
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
 TlsActivationsResponse.prototype['meta'] = undefined;
 
-
+/**
+ * @member {Array.<module:model/Data>} data
+ */
 TlsActivationsResponse.prototype['data'] = undefined;
 
 
 // Implement Pagination interface:
-
+/**
+ * @member {module:model/PaginationLinks} links
+ */
 Pagination.prototype['links'] = undefined;
-
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
 Pagination.prototype['meta'] = undefined;
 // Implement TlsActivationsResponseAllOf interface:
-
+/**
+ * @member {Array.<module:model/Data>} data
+ */
 TlsActivationsResponseAllOf.prototype['data'] = undefined;
 
 

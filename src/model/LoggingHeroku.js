@@ -17,39 +17,58 @@ import LoggingFormatVersion from './LoggingFormatVersion';
 import LoggingHerokuAllOf from './LoggingHerokuAllOf';
 import LoggingPlacement from './LoggingPlacement';
 
-
+/**
+ * The LoggingHeroku model module.
+ * @module model/LoggingHeroku
+ * @version 3.0.0-alpha1
+ */
 class LoggingHeroku {
-    
+    /**
+     * Constructs a new <code>LoggingHeroku</code>.
+     * @alias module:model/LoggingHeroku
+     * @implements module:model/LoggingCommon
+     * @implements module:model/LoggingHerokuAllOf
+     */
     constructor() { 
         LoggingCommon.initialize(this);LoggingHerokuAllOf.initialize(this);
         LoggingHeroku.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingHeroku</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingHeroku} obj Optional instance to populate.
+     * @return {module:model/LoggingHeroku} The populated <code>LoggingHeroku</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingHeroku();
             LoggingCommon.constructFromObject(data, obj);
             LoggingHerokuAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
             }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
-            }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
-            }
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -64,43 +83,83 @@ class LoggingHeroku {
 
 }
 
-
-LoggingHeroku.prototype['name'] = undefined;
-
-
-LoggingHeroku.prototype['placement'] = undefined;
-
-
-LoggingHeroku.prototype['format_version'] = undefined;
-
-
-LoggingHeroku.prototype['response_condition'] = undefined;
-
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
 LoggingHeroku.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingHeroku.prototype['format_version'] = undefined;
 
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingHeroku.prototype['name'] = undefined;
+
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingHeroku.prototype['placement'] = undefined;
+
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingHeroku.prototype['response_condition'] = undefined;
+
+/**
+ * The token to use for authentication ([https://devcenter.heroku.com/articles/add-on-partner-log-integration](https://devcenter.heroku.com/articles/add-on-partner-log-integration)).
+ * @member {String} token
+ */
 LoggingHeroku.prototype['token'] = undefined;
 
-
+/**
+ * The URL to stream logs to.
+ * @member {String} url
+ */
 LoggingHeroku.prototype['url'] = undefined;
 
 
 // Implement LoggingCommon interface:
-
-LoggingCommon.prototype['name'] = undefined;
-
-LoggingCommon.prototype['placement'] = undefined;
-
-LoggingCommon.prototype['format_version'] = undefined;
-
-LoggingCommon.prototype['response_condition'] = undefined;
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
 LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingCommon.prototype['format_version'] = undefined;
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingCommon.prototype['name'] = undefined;
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingCommon.prototype['placement'] = undefined;
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingCommon.prototype['response_condition'] = undefined;
 // Implement LoggingHerokuAllOf interface:
-
+/**
+ * The token to use for authentication ([https://devcenter.heroku.com/articles/add-on-partner-log-integration](https://devcenter.heroku.com/articles/add-on-partner-log-integration)).
+ * @member {String} token
+ */
 LoggingHerokuAllOf.prototype['token'] = undefined;
-
+/**
+ * The URL to stream logs to.
+ * @member {String} url
+ */
 LoggingHerokuAllOf.prototype['url'] = undefined;
 
 

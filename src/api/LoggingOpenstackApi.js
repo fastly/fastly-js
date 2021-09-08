@@ -19,51 +19,84 @@ import LoggingMessageType from '../model/LoggingMessageType';
 import LoggingOpenstackResponse from '../model/LoggingOpenstackResponse';
 import LoggingPlacement from '../model/LoggingPlacement';
 
-
+/**
+* LoggingOpenstack service.
+* @module api/LoggingOpenstackApi
+* @version 3.0.0-alpha1
+*/
 export default class LoggingOpenstackApi {
 
-    
+    /**
+    * Constructs a new LoggingOpenstackApi. 
+    * @alias module:api/LoggingOpenstackApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createLogOpenstackWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Create a openstack for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
+     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
+     * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
+     * @param {String} [options.access_key] - Your OpenStack account access key.
+     * @param {String} [options.bucket_name] - The name of your OpenStack container.
+     * @param {String} [options.path='null'] - The path to upload logs to.
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {String} [options.url] - Your OpenStack auth url.
+     * @param {String} [options.user] - The username for your OpenStack account.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingOpenstackResponse} and HTTP response
+     */
+    createLogOpenstackWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createLogOpenstack");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createLogOpenstack");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'message_type': opts['message_type'],
-        'timestamp_format': opts['timestamp_format'],
-        'period': opts['period'],
-        'gzip_level': opts['gzip_level'],
-        'compression_codec': opts['compression_codec'],
-        'access_key': opts['access_key'],
-        'bucket_name': opts['bucket_name'],
-        'path': opts['path'],
-        'public_key': opts['public_key'],
-        'url': opts['url'],
-        'user': opts['user']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'compression_codec': options['compression_codec'],
+        'gzip_level': options['gzip_level'],
+        'message_type': options['message_type'],
+        'period': options['period'],
+        'timestamp_format': options['timestamp_format'],
+        'access_key': options['access_key'],
+        'bucket_name': options['bucket_name'],
+        'path': options['path'],
+        'public_key': options['public_key'],
+        'url': options['url'],
+        'user': options['user']
       };
 
       let authNames = ['token'];
@@ -76,31 +109,64 @@ export default class LoggingOpenstackApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createLogOpenstack(service_id, version_id, opts) {
-      return this.createLogOpenstackWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Create a openstack for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
+     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
+     * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
+     * @param {String} [options.access_key] - Your OpenStack account access key.
+     * @param {String} [options.bucket_name] - The name of your OpenStack container.
+     * @param {String} [options.path='null'] - The path to upload logs to.
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {String} [options.url] - Your OpenStack auth url.
+     * @param {String} [options.user] - The username for your OpenStack account.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingOpenstackResponse}
+     */
+    createLogOpenstack(options = {}) {
+      return this.createLogOpenstackWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteLogOpenstackWithHttpInfo(service_id, version_id, logging_openstack_name) {
+
+    /**
+     * Delete the openstack for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_openstack_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteLogOpenstackWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteLogOpenstack");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteLogOpenstack");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_openstack_name' is set
-      if (logging_openstack_name === undefined || logging_openstack_name === null) {
-        throw new Error("Missing the required parameter 'logging_openstack_name' when calling deleteLogOpenstack");
+      // Verify the required parameter 'logging_openstack_name' is set.
+      if (options['logging_openstack_name'] === undefined || options['logging_openstack_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_openstack_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_openstack_name': logging_openstack_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_openstack_name': options['logging_openstack_name']
       };
       let queryParams = {
       };
@@ -119,31 +185,49 @@ export default class LoggingOpenstackApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteLogOpenstack(service_id, version_id, logging_openstack_name) {
-      return this.deleteLogOpenstackWithHttpInfo(service_id, version_id, logging_openstack_name)
+
+    /**
+     * Delete the openstack for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_openstack_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteLogOpenstack(options = {}) {
+      return this.deleteLogOpenstackWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getLogOpenstackWithHttpInfo(service_id, version_id, logging_openstack_name) {
+
+    /**
+     * Get the openstack for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_openstack_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingOpenstackResponse} and HTTP response
+     */
+    getLogOpenstackWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getLogOpenstack");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getLogOpenstack");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_openstack_name' is set
-      if (logging_openstack_name === undefined || logging_openstack_name === null) {
-        throw new Error("Missing the required parameter 'logging_openstack_name' when calling getLogOpenstack");
+      // Verify the required parameter 'logging_openstack_name' is set.
+      if (options['logging_openstack_name'] === undefined || options['logging_openstack_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_openstack_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_openstack_name': logging_openstack_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_openstack_name': options['logging_openstack_name']
       };
       let queryParams = {
       };
@@ -162,26 +246,43 @@ export default class LoggingOpenstackApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getLogOpenstack(service_id, version_id, logging_openstack_name) {
-      return this.getLogOpenstackWithHttpInfo(service_id, version_id, logging_openstack_name)
+
+    /**
+     * Get the openstack for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_openstack_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingOpenstackResponse}
+     */
+    getLogOpenstack(options = {}) {
+      return this.getLogOpenstackWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listLogOpenstackWithHttpInfo(service_id, version_id) {
+
+    /**
+     * List all of the openstacks for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingOpenstackResponse>} and HTTP response
+     */
+    listLogOpenstackWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listLogOpenstack");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listLogOpenstack");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -200,54 +301,86 @@ export default class LoggingOpenstackApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listLogOpenstack(service_id, version_id) {
-      return this.listLogOpenstackWithHttpInfo(service_id, version_id)
+
+    /**
+     * List all of the openstacks for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingOpenstackResponse>}
+     */
+    listLogOpenstack(options = {}) {
+      return this.listLogOpenstackWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateLogOpenstackWithHttpInfo(service_id, version_id, logging_openstack_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Update the openstack for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_openstack_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
+     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
+     * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
+     * @param {String} [options.access_key] - Your OpenStack account access key.
+     * @param {String} [options.bucket_name] - The name of your OpenStack container.
+     * @param {String} [options.path='null'] - The path to upload logs to.
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {String} [options.url] - Your OpenStack auth url.
+     * @param {String} [options.user] - The username for your OpenStack account.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingOpenstackResponse} and HTTP response
+     */
+    updateLogOpenstackWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateLogOpenstack");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateLogOpenstack");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_openstack_name' is set
-      if (logging_openstack_name === undefined || logging_openstack_name === null) {
-        throw new Error("Missing the required parameter 'logging_openstack_name' when calling updateLogOpenstack");
+      // Verify the required parameter 'logging_openstack_name' is set.
+      if (options['logging_openstack_name'] === undefined || options['logging_openstack_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_openstack_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_openstack_name': logging_openstack_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_openstack_name': options['logging_openstack_name']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'message_type': opts['message_type'],
-        'timestamp_format': opts['timestamp_format'],
-        'period': opts['period'],
-        'gzip_level': opts['gzip_level'],
-        'compression_codec': opts['compression_codec'],
-        'access_key': opts['access_key'],
-        'bucket_name': opts['bucket_name'],
-        'path': opts['path'],
-        'public_key': opts['public_key'],
-        'url': opts['url'],
-        'user': opts['user']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'compression_codec': options['compression_codec'],
+        'gzip_level': options['gzip_level'],
+        'message_type': options['message_type'],
+        'period': options['period'],
+        'timestamp_format': options['timestamp_format'],
+        'access_key': options['access_key'],
+        'bucket_name': options['bucket_name'],
+        'path': options['path'],
+        'public_key': options['public_key'],
+        'url': options['url'],
+        'user': options['user']
       };
 
       let authNames = ['token'];
@@ -260,8 +393,33 @@ export default class LoggingOpenstackApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateLogOpenstack(service_id, version_id, logging_openstack_name, opts) {
-      return this.updateLogOpenstackWithHttpInfo(service_id, version_id, logging_openstack_name, opts)
+
+    /**
+     * Update the openstack for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_openstack_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
+     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
+     * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
+     * @param {String} [options.access_key] - Your OpenStack account access key.
+     * @param {String} [options.bucket_name] - The name of your OpenStack container.
+     * @param {String} [options.path='null'] - The path to upload logs to.
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {String} [options.url] - Your OpenStack auth url.
+     * @param {String} [options.user] - The username for your OpenStack account.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingOpenstackResponse}
+     */
+    updateLogOpenstack(options = {}) {
+      return this.updateLogOpenstackWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

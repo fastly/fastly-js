@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import RelationshipWafTagsWafTags from './RelationshipWafTagsWafTags';
 
-
+/**
+ * The RelationshipWafTags model module.
+ * @module model/RelationshipWafTags
+ * @version 3.0.0-alpha1
+ */
 class RelationshipWafTags {
-    
+    /**
+     * Constructs a new <code>RelationshipWafTags</code>.
+     * @alias module:model/RelationshipWafTags
+     */
     constructor() { 
         
         RelationshipWafTags.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipWafTags</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipWafTags} obj Optional instance to populate.
+     * @return {module:model/RelationshipWafTags} The populated <code>RelationshipWafTags</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipWafTags();
@@ -41,7 +58,9 @@ class RelationshipWafTags {
 
 }
 
-
+/**
+ * @member {module:model/RelationshipWafTagsWafTags} waf_tags
+ */
 RelationshipWafTags.prototype['waf_tags'] = undefined;
 
 

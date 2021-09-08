@@ -1,4 +1,4 @@
-# FastlyApi.AclResponseAllOf
+# Fastly.AclResponseAllOf
 
 ## Properties
 

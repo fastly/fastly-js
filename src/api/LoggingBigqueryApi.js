@@ -17,46 +17,74 @@ import LoggingBigqueryResponse from '../model/LoggingBigqueryResponse';
 import LoggingFormatVersion from '../model/LoggingFormatVersion';
 import LoggingPlacement from '../model/LoggingPlacement';
 
-
+/**
+* LoggingBigquery service.
+* @module api/LoggingBigqueryApi
+* @version 3.0.0-alpha1
+*/
 export default class LoggingBigqueryApi {
 
-    
+    /**
+    * Constructs a new LoggingBigqueryApi. 
+    * @alias module:api/LoggingBigqueryApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createLogBigqueryWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Create a BigQuery logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name of the BigQuery logging object. Used as a primary key for API access.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+     * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+     * @param {String} [options.dataset] - Your BigQuery dataset.
+     * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
+     * @param {String} [options.table] - Your BigQuery table.
+     * @param {String} [options.template_suffix] - BigQuery table name suffix template. Optional.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingBigqueryResponse} and HTTP response
+     */
+    createLogBigqueryWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createLogBigquery");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createLogBigquery");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'user': opts['user'],
-        'secret_key': opts['secret_key'],
-        'dataset': opts['dataset'],
-        'table': opts['table'],
-        'template_suffix': opts['template_suffix'],
-        'project_id': opts['project_id']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'secret_key': options['secret_key'],
+        'user': options['user'],
+        'dataset': options['dataset'],
+        'project_id': options['project_id'],
+        'table': options['table'],
+        'template_suffix': options['template_suffix']
       };
 
       let authNames = ['token'];
@@ -69,31 +97,59 @@ export default class LoggingBigqueryApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createLogBigquery(service_id, version_id, opts) {
-      return this.createLogBigqueryWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Create a BigQuery logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name of the BigQuery logging object. Used as a primary key for API access.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+     * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+     * @param {String} [options.dataset] - Your BigQuery dataset.
+     * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
+     * @param {String} [options.table] - Your BigQuery table.
+     * @param {String} [options.template_suffix] - BigQuery table name suffix template. Optional.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingBigqueryResponse}
+     */
+    createLogBigquery(options = {}) {
+      return this.createLogBigqueryWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteLogBigqueryWithHttpInfo(service_id, version_id, logging_bigquery_name) {
+
+    /**
+     * Delete a BigQuery logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_bigquery_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteLogBigqueryWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteLogBigquery");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteLogBigquery");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_bigquery_name' is set
-      if (logging_bigquery_name === undefined || logging_bigquery_name === null) {
-        throw new Error("Missing the required parameter 'logging_bigquery_name' when calling deleteLogBigquery");
+      // Verify the required parameter 'logging_bigquery_name' is set.
+      if (options['logging_bigquery_name'] === undefined || options['logging_bigquery_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_bigquery_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_bigquery_name': logging_bigquery_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_bigquery_name': options['logging_bigquery_name']
       };
       let queryParams = {
       };
@@ -112,31 +168,49 @@ export default class LoggingBigqueryApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteLogBigquery(service_id, version_id, logging_bigquery_name) {
-      return this.deleteLogBigqueryWithHttpInfo(service_id, version_id, logging_bigquery_name)
+
+    /**
+     * Delete a BigQuery logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_bigquery_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteLogBigquery(options = {}) {
+      return this.deleteLogBigqueryWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getLogBigqueryWithHttpInfo(service_id, version_id, logging_bigquery_name) {
+
+    /**
+     * Get the details for a BigQuery logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_bigquery_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingBigqueryResponse} and HTTP response
+     */
+    getLogBigqueryWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getLogBigquery");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getLogBigquery");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_bigquery_name' is set
-      if (logging_bigquery_name === undefined || logging_bigquery_name === null) {
-        throw new Error("Missing the required parameter 'logging_bigquery_name' when calling getLogBigquery");
+      // Verify the required parameter 'logging_bigquery_name' is set.
+      if (options['logging_bigquery_name'] === undefined || options['logging_bigquery_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_bigquery_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_bigquery_name': logging_bigquery_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_bigquery_name': options['logging_bigquery_name']
       };
       let queryParams = {
       };
@@ -155,26 +229,43 @@ export default class LoggingBigqueryApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getLogBigquery(service_id, version_id, logging_bigquery_name) {
-      return this.getLogBigqueryWithHttpInfo(service_id, version_id, logging_bigquery_name)
+
+    /**
+     * Get the details for a BigQuery logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_bigquery_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingBigqueryResponse}
+     */
+    getLogBigquery(options = {}) {
+      return this.getLogBigqueryWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listLogBigqueryWithHttpInfo(service_id, version_id) {
+
+    /**
+     * List all of the BigQuery logging objects for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingBigqueryResponse>} and HTTP response
+     */
+    listLogBigqueryWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listLogBigquery");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listLogBigquery");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -193,49 +284,76 @@ export default class LoggingBigqueryApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listLogBigquery(service_id, version_id) {
-      return this.listLogBigqueryWithHttpInfo(service_id, version_id)
+
+    /**
+     * List all of the BigQuery logging objects for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingBigqueryResponse>}
+     */
+    listLogBigquery(options = {}) {
+      return this.listLogBigqueryWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateLogBigqueryWithHttpInfo(service_id, version_id, logging_bigquery_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Update a BigQuery logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_bigquery_name
+     * @param {String} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name of the BigQuery logging object. Used as a primary key for API access.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+     * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+     * @param {String} [options.dataset] - Your BigQuery dataset.
+     * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
+     * @param {String} [options.table] - Your BigQuery table.
+     * @param {String} [options.template_suffix] - BigQuery table name suffix template. Optional.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingBigqueryResponse} and HTTP response
+     */
+    updateLogBigqueryWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateLogBigquery");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateLogBigquery");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_bigquery_name' is set
-      if (logging_bigquery_name === undefined || logging_bigquery_name === null) {
-        throw new Error("Missing the required parameter 'logging_bigquery_name' when calling updateLogBigquery");
+      // Verify the required parameter 'logging_bigquery_name' is set.
+      if (options['logging_bigquery_name'] === undefined || options['logging_bigquery_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_bigquery_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_bigquery_name': logging_bigquery_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_bigquery_name': options['logging_bigquery_name']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'user': opts['user'],
-        'secret_key': opts['secret_key'],
-        'dataset': opts['dataset'],
-        'table': opts['table'],
-        'template_suffix': opts['template_suffix'],
-        'project_id': opts['project_id']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'secret_key': options['secret_key'],
+        'user': options['user'],
+        'dataset': options['dataset'],
+        'project_id': options['project_id'],
+        'table': options['table'],
+        'template_suffix': options['template_suffix']
       };
 
       let authNames = ['token'];
@@ -248,8 +366,28 @@ export default class LoggingBigqueryApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateLogBigquery(service_id, version_id, logging_bigquery_name, opts) {
-      return this.updateLogBigqueryWithHttpInfo(service_id, version_id, logging_bigquery_name, opts)
+
+    /**
+     * Update a BigQuery logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_bigquery_name
+     * @param {String} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name of the BigQuery logging object. Used as a primary key for API access.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+     * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+     * @param {String} [options.dataset] - Your BigQuery dataset.
+     * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
+     * @param {String} [options.table] - Your BigQuery table.
+     * @param {String} [options.template_suffix] - BigQuery table name suffix template. Optional.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingBigqueryResponse}
+     */
+    updateLogBigquery(options = {}) {
+      return this.updateLogBigqueryWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

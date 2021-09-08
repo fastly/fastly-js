@@ -15,37 +15,56 @@
 import ApiClient from "../ApiClient";
 import VclDiff from '../model/VclDiff';
 
-
+/**
+* VclDiff service.
+* @module api/VclDiffApi
+* @version 3.0.0-alpha1
+*/
 export default class VclDiffApi {
 
-    
+    /**
+    * Constructs a new VclDiffApi. 
+    * @alias module:api/VclDiffApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    vclDiffServiceVersionsWithHttpInfo(service_id, from_version_id, to_version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Get a comparison of the VCL changes between two service versions.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.from_version_id - The version number of the service to which changes in the generated VCL are being compared. Can either be a positive number from 1 to your maximum version or a negative number from -1 down (-1 is latest version etc).
+     * @param {Number} options.to_version_id - The version number of the service from which changes in the generated VCL are being compared. Uses same numbering scheme as `from`.
+     * @param {module:model/String} [options.format='text'] - Optional method to format the diff field.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VclDiff} and HTTP response
+     */
+    vclDiffServiceVersionsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling vclDiffServiceVersions");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'from_version_id' is set
-      if (from_version_id === undefined || from_version_id === null) {
-        throw new Error("Missing the required parameter 'from_version_id' when calling vclDiffServiceVersions");
+      // Verify the required parameter 'from_version_id' is set.
+      if (options['from_version_id'] === undefined || options['from_version_id'] === null) {
+        throw new Error("Missing the required parameter 'from_version_id'.");
       }
-      // verify the required parameter 'to_version_id' is set
-      if (to_version_id === undefined || to_version_id === null) {
-        throw new Error("Missing the required parameter 'to_version_id' when calling vclDiffServiceVersions");
+      // Verify the required parameter 'to_version_id' is set.
+      if (options['to_version_id'] === undefined || options['to_version_id'] === null) {
+        throw new Error("Missing the required parameter 'to_version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'from_version_id': from_version_id,
-        'to_version_id': to_version_id
+        'service_id': options['service_id'],
+        'from_version_id': options['from_version_id'],
+        'to_version_id': options['to_version_id']
       };
       let queryParams = {
-        'format': opts['format']
+        'format': options['format']
       };
       let headerParams = {
       };
@@ -62,8 +81,18 @@ export default class VclDiffApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    vclDiffServiceVersions(service_id, from_version_id, to_version_id, opts) {
-      return this.vclDiffServiceVersionsWithHttpInfo(service_id, from_version_id, to_version_id, opts)
+
+    /**
+     * Get a comparison of the VCL changes between two service versions.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.from_version_id - The version number of the service to which changes in the generated VCL are being compared. Can either be a positive number from 1 to your maximum version or a negative number from -1 down (-1 is latest version etc).
+     * @param {Number} options.to_version_id - The version number of the service from which changes in the generated VCL are being compared. Uses same numbering scheme as `from`.
+     * @param {module:model/String} [options.format='text'] - Optional method to format the diff field.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VclDiff}
+     */
+    vclDiffServiceVersions(options = {}) {
+      return this.vclDiffServiceVersionsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

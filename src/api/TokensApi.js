@@ -18,17 +18,33 @@ import InlineResponse400 from '../model/InlineResponse400';
 import TokenCreatedResponse from '../model/TokenCreatedResponse';
 import TokenResponse from '../model/TokenResponse';
 
-
+/**
+* Tokens service.
+* @module api/TokensApi
+* @version 3.0.0-alpha1
+*/
 export default class TokensApi {
 
-    
+    /**
+    * Constructs a new TokensApi. 
+    * @alias module:api/TokensApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    bulkRevokeTokensWithHttpInfo(opts) {
-      opts = opts || {};
-      let postBody = opts['body'];
+
+    /**
+     * Revoke Tokens in bulk format. Users may only revoke their own tokens. Superusers may revoke tokens of others.
+     * @param {Object} options
+     * @param {Object} [options.body]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    bulkRevokeTokensWithHttpInfo(options = {}) {
+      let postBody = options['body'];
 
       let pathParams = {
       };
@@ -49,13 +65,26 @@ export default class TokensApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    bulkRevokeTokens(opts) {
-      return this.bulkRevokeTokensWithHttpInfo(opts)
+
+    /**
+     * Revoke Tokens in bulk format. Users may only revoke their own tokens. Superusers may revoke tokens of others.
+     * @param {Object} options
+     * @param {Object} [options.body]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    bulkRevokeTokens(options = {}) {
+      return this.bulkRevokeTokensWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    createTokenWithHttpInfo() {
+
+    /**
+     * Create an API token. If two-factor authentication is enabled for your account, review [the instructions](/reference/api/auth/) for including a one-time password in the request. 
+     * @param {Object} options
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TokenCreatedResponse} and HTTP response
+     */
+    createTokenWithHttpInfo(options = {}) {
       let postBody = null;
 
       let pathParams = {
@@ -77,13 +106,25 @@ export default class TokensApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createToken() {
-      return this.createTokenWithHttpInfo()
+
+    /**
+     * Create an API token. If two-factor authentication is enabled for your account, review [the instructions](/reference/api/auth/) for including a one-time password in the request. 
+     * @param {Object} options
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TokenCreatedResponse}
+     */
+    createToken(options = {}) {
+      return this.createTokenWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getTokenCurrentWithHttpInfo() {
+
+    /**
+     * Get a single token based on the access_token used in the request.
+     * @param {Object} options
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TokenResponse} and HTTP response
+     */
+    getTokenCurrentWithHttpInfo(options = {}) {
       let postBody = null;
 
       let pathParams = {
@@ -105,21 +146,34 @@ export default class TokensApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getTokenCurrent() {
-      return this.getTokenCurrentWithHttpInfo()
+
+    /**
+     * Get a single token based on the access_token used in the request.
+     * @param {Object} options
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TokenResponse}
+     */
+    getTokenCurrent(options = {}) {
+      return this.getTokenCurrentWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listTokensCustomerWithHttpInfo(customer_id) {
+
+    /**
+     * List all tokens belonging to a specific customer.
+     * @param {Object} options
+     * @param {String} options.customer_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/TokenResponse>} and HTTP response
+     */
+    listTokensCustomerWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'customer_id' is set
-      if (customer_id === undefined || customer_id === null) {
-        throw new Error("Missing the required parameter 'customer_id' when calling listTokensCustomer");
+      // Verify the required parameter 'customer_id' is set.
+      if (options['customer_id'] === undefined || options['customer_id'] === null) {
+        throw new Error("Missing the required parameter 'customer_id'.");
       }
 
       let pathParams = {
-        'customer_id': customer_id
+        'customer_id': options['customer_id']
       };
       let queryParams = {
       };
@@ -138,13 +192,26 @@ export default class TokensApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listTokensCustomer(customer_id) {
-      return this.listTokensCustomerWithHttpInfo(customer_id)
+
+    /**
+     * List all tokens belonging to a specific customer.
+     * @param {Object} options
+     * @param {String} options.customer_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/TokenResponse>}
+     */
+    listTokensCustomer(options = {}) {
+      return this.listTokensCustomerWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listTokensUserWithHttpInfo() {
+
+    /**
+     * List all tokens belonging to the authenticated user.
+     * @param {Object} options
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/TokenResponse>} and HTTP response
+     */
+    listTokensUserWithHttpInfo(options = {}) {
       let postBody = null;
 
       let pathParams = {
@@ -166,21 +233,34 @@ export default class TokensApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listTokensUser() {
-      return this.listTokensUserWithHttpInfo()
+
+    /**
+     * List all tokens belonging to the authenticated user.
+     * @param {Object} options
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/TokenResponse>}
+     */
+    listTokensUser(options = {}) {
+      return this.listTokensUserWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    revokeTokenWithHttpInfo(token_id) {
+
+    /**
+     * Revoke a specific token by its id.
+     * @param {Object} options
+     * @param {String} options.token_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    revokeTokenWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'token_id' is set
-      if (token_id === undefined || token_id === null) {
-        throw new Error("Missing the required parameter 'token_id' when calling revokeToken");
+      // Verify the required parameter 'token_id' is set.
+      if (options['token_id'] === undefined || options['token_id'] === null) {
+        throw new Error("Missing the required parameter 'token_id'.");
       }
 
       let pathParams = {
-        'token_id': token_id
+        'token_id': options['token_id']
       };
       let queryParams = {
       };
@@ -199,13 +279,26 @@ export default class TokensApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    revokeToken(token_id) {
-      return this.revokeTokenWithHttpInfo(token_id)
+
+    /**
+     * Revoke a specific token by its id.
+     * @param {Object} options
+     * @param {String} options.token_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    revokeToken(options = {}) {
+      return this.revokeTokenWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    revokeTokenCurrentWithHttpInfo() {
+
+    /**
+     * Revoke a token that is used to authenticate the request.
+     * @param {Object} options
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    revokeTokenCurrentWithHttpInfo(options = {}) {
       let postBody = null;
 
       let pathParams = {
@@ -227,8 +320,14 @@ export default class TokensApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    revokeTokenCurrent() {
-      return this.revokeTokenCurrentWithHttpInfo()
+
+    /**
+     * Revoke a token that is used to authenticate the request.
+     * @param {Object} options
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    revokeTokenCurrent(options = {}) {
+      return this.revokeTokenCurrentWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

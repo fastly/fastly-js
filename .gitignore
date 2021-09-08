@@ -36,5 +36,5 @@ node_modules
 .tmp*
 .openapi*
 
-# Build
+# Built package
 dist

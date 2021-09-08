@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import TlsDomainData from './TlsDomainData';
 
-
+/**
+ * The TlsDomain model module.
+ * @module model/TlsDomain
+ * @version 3.0.0-alpha1
+ */
 class TlsDomain {
-    
+    /**
+     * Constructs a new <code>TlsDomain</code>.
+     * @alias module:model/TlsDomain
+     */
     constructor() { 
         
         TlsDomain.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>TlsDomain</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/TlsDomain} obj Optional instance to populate.
+     * @return {module:model/TlsDomain} The populated <code>TlsDomain</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsDomain();
@@ -41,7 +58,9 @@ class TlsDomain {
 
 }
 
-
+/**
+ * @member {module:model/TlsDomainData} data
+ */
 TlsDomain.prototype['data'] = undefined;
 
 

@@ -15,40 +15,62 @@
 import ApiClient from "../ApiClient";
 import SnippetResponse from '../model/SnippetResponse';
 
-
+/**
+* Snippet service.
+* @module api/SnippetApi
+* @version 3.0.0-alpha1
+*/
 export default class SnippetApi {
 
-    
+    /**
+    * Constructs a new SnippetApi. 
+    * @alias module:api/SnippetApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createSnippetWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Create a snippet for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.content] - The VCL code that specifies exactly what the snippet does.
+     * @param {module:model/String} [options.dynamic] - Sets the snippet version.
+     * @param {String} [options.name] - The name for the snippet.
+     * @param {String} [options.priority='100'] - Numeric string value. Priority determines execution order. Lower numbers execute first.
+     * @param {module:model/String} [options.type] - The location in generated VCL where the snippet should be placed.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SnippetResponse} and HTTP response
+     */
+    createSnippetWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createSnippet");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createSnippet");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'dynamic': opts['dynamic'],
-        'type': opts['type'],
-        'content': opts['content'],
-        'priority': opts['priority']
+        'content': options['content'],
+        'dynamic': options['dynamic'],
+        'name': options['name'],
+        'priority': options['priority'],
+        'type': options['type']
       };
 
       let authNames = ['token'];
@@ -61,31 +83,53 @@ export default class SnippetApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createSnippet(service_id, version_id, opts) {
-      return this.createSnippetWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Create a snippet for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.content] - The VCL code that specifies exactly what the snippet does.
+     * @param {module:model/String} [options.dynamic] - Sets the snippet version.
+     * @param {String} [options.name] - The name for the snippet.
+     * @param {String} [options.priority='100'] - Numeric string value. Priority determines execution order. Lower numbers execute first.
+     * @param {module:model/String} [options.type] - The location in generated VCL where the snippet should be placed.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SnippetResponse}
+     */
+    createSnippet(options = {}) {
+      return this.createSnippetWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteSnippetWithHttpInfo(service_id, version_id, snippet_name) {
+
+    /**
+     * Delete a specific snippet for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.snippet_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteSnippetWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteSnippet");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteSnippet");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'snippet_name' is set
-      if (snippet_name === undefined || snippet_name === null) {
-        throw new Error("Missing the required parameter 'snippet_name' when calling deleteSnippet");
+      // Verify the required parameter 'snippet_name' is set.
+      if (options['snippet_name'] === undefined || options['snippet_name'] === null) {
+        throw new Error("Missing the required parameter 'snippet_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'snippet_name': snippet_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'snippet_name': options['snippet_name']
       };
       let queryParams = {
       };
@@ -104,31 +148,49 @@ export default class SnippetApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteSnippet(service_id, version_id, snippet_name) {
-      return this.deleteSnippetWithHttpInfo(service_id, version_id, snippet_name)
+
+    /**
+     * Delete a specific snippet for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.snippet_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteSnippet(options = {}) {
+      return this.deleteSnippetWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getSnippetWithHttpInfo(service_id, version_id, snippet_name) {
+
+    /**
+     * Get a single snippet for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.snippet_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SnippetResponse} and HTTP response
+     */
+    getSnippetWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getSnippet");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getSnippet");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'snippet_name' is set
-      if (snippet_name === undefined || snippet_name === null) {
-        throw new Error("Missing the required parameter 'snippet_name' when calling getSnippet");
+      // Verify the required parameter 'snippet_name' is set.
+      if (options['snippet_name'] === undefined || options['snippet_name'] === null) {
+        throw new Error("Missing the required parameter 'snippet_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'snippet_name': snippet_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'snippet_name': options['snippet_name']
       };
       let queryParams = {
       };
@@ -147,26 +209,43 @@ export default class SnippetApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getSnippet(service_id, version_id, snippet_name) {
-      return this.getSnippetWithHttpInfo(service_id, version_id, snippet_name)
+
+    /**
+     * Get a single snippet for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.snippet_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SnippetResponse}
+     */
+    getSnippet(options = {}) {
+      return this.getSnippetWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getSnippetDynamicWithHttpInfo(service_id, snippet_id) {
+
+    /**
+     * Get a single dynamic snippet for a particular service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.snippet_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SnippetResponse} and HTTP response
+     */
+    getSnippetDynamicWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getSnippetDynamic");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'snippet_id' is set
-      if (snippet_id === undefined || snippet_id === null) {
-        throw new Error("Missing the required parameter 'snippet_id' when calling getSnippetDynamic");
+      // Verify the required parameter 'snippet_id' is set.
+      if (options['snippet_id'] === undefined || options['snippet_id'] === null) {
+        throw new Error("Missing the required parameter 'snippet_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'snippet_id': snippet_id
+        'service_id': options['service_id'],
+        'snippet_id': options['snippet_id']
       };
       let queryParams = {
       };
@@ -185,26 +264,42 @@ export default class SnippetApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getSnippetDynamic(service_id, snippet_id) {
-      return this.getSnippetDynamicWithHttpInfo(service_id, snippet_id)
+
+    /**
+     * Get a single dynamic snippet for a particular service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.snippet_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SnippetResponse}
+     */
+    getSnippetDynamic(options = {}) {
+      return this.getSnippetDynamicWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listSnippetsWithHttpInfo(service_id, version_id) {
+
+    /**
+     * List all snippets for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/SnippetResponse>} and HTTP response
+     */
+    listSnippetsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listSnippets");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listSnippets");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -223,31 +318,48 @@ export default class SnippetApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listSnippets(service_id, version_id) {
-      return this.listSnippetsWithHttpInfo(service_id, version_id)
+
+    /**
+     * List all snippets for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/SnippetResponse>}
+     */
+    listSnippets(options = {}) {
+      return this.listSnippetsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateSnippetWithHttpInfo(service_id, version_id, snippet_name) {
+
+    /**
+     * Update a specific snippet for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.snippet_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SnippetResponse} and HTTP response
+     */
+    updateSnippetWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateSnippet");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateSnippet");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'snippet_name' is set
-      if (snippet_name === undefined || snippet_name === null) {
-        throw new Error("Missing the required parameter 'snippet_name' when calling updateSnippet");
+      // Verify the required parameter 'snippet_name' is set.
+      if (options['snippet_name'] === undefined || options['snippet_name'] === null) {
+        throw new Error("Missing the required parameter 'snippet_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'snippet_name': snippet_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'snippet_name': options['snippet_name']
       };
       let queryParams = {
       };
@@ -266,38 +378,59 @@ export default class SnippetApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateSnippet(service_id, version_id, snippet_name) {
-      return this.updateSnippetWithHttpInfo(service_id, version_id, snippet_name)
+
+    /**
+     * Update a specific snippet for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.snippet_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SnippetResponse}
+     */
+    updateSnippet(options = {}) {
+      return this.updateSnippetWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateSnippetDynamicWithHttpInfo(service_id, snippet_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Update a dynamic snippet for a particular service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.snippet_id
+     * @param {String} [options.content] - The VCL code that specifies exactly what the snippet does.
+     * @param {module:model/String} [options.dynamic] - Sets the snippet version.
+     * @param {String} [options.name] - The name for the snippet.
+     * @param {String} [options.priority='100'] - Numeric string value. Priority determines execution order. Lower numbers execute first.
+     * @param {module:model/String} [options.type] - The location in generated VCL where the snippet should be placed.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SnippetResponse} and HTTP response
+     */
+    updateSnippetDynamicWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateSnippetDynamic");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'snippet_id' is set
-      if (snippet_id === undefined || snippet_id === null) {
-        throw new Error("Missing the required parameter 'snippet_id' when calling updateSnippetDynamic");
+      // Verify the required parameter 'snippet_id' is set.
+      if (options['snippet_id'] === undefined || options['snippet_id'] === null) {
+        throw new Error("Missing the required parameter 'snippet_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'snippet_id': snippet_id
+        'service_id': options['service_id'],
+        'snippet_id': options['snippet_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'dynamic': opts['dynamic'],
-        'type': opts['type'],
-        'content': opts['content'],
-        'priority': opts['priority']
+        'content': options['content'],
+        'dynamic': options['dynamic'],
+        'name': options['name'],
+        'priority': options['priority'],
+        'type': options['type']
       };
 
       let authNames = ['token'];
@@ -310,8 +443,21 @@ export default class SnippetApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateSnippetDynamic(service_id, snippet_id, opts) {
-      return this.updateSnippetDynamicWithHttpInfo(service_id, snippet_id, opts)
+
+    /**
+     * Update a dynamic snippet for a particular service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.snippet_id
+     * @param {String} [options.content] - The VCL code that specifies exactly what the snippet does.
+     * @param {module:model/String} [options.dynamic] - Sets the snippet version.
+     * @param {String} [options.name] - The name for the snippet.
+     * @param {String} [options.priority='100'] - Numeric string value. Priority determines execution order. Lower numbers execute first.
+     * @param {module:model/String} [options.type] - The location in generated VCL where the snippet should be placed.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SnippetResponse}
+     */
+    updateSnippetDynamic(options = {}) {
+      return this.updateSnippetDynamicWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

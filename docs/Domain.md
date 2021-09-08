@@ -1,4 +1,4 @@
-# FastlyApi.Domain
+# Fastly.Domain
 
 ## Properties
 

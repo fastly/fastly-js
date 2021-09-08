@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The Header model module.
+ * @module model/Header
+ * @version 3.0.0-alpha1
+ */
 class Header {
-    
+    /**
+     * Constructs a new <code>Header</code>.
+     * @alias module:model/Header
+     */
     constructor() { 
         
         Header.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>Header</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/Header} obj Optional instance to populate.
+     * @return {module:model/Header} The populated <code>Header</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new Header();
@@ -73,79 +90,150 @@ class Header {
 
 }
 
-
+/**
+ * Accepts a string value.
+ * @member {module:model/Header.ActionEnum} action
+ */
 Header.prototype['action'] = undefined;
 
-
+/**
+ * Name of the cache condition controlling when this configuration applies.
+ * @member {String} cache_condition
+ */
 Header.prototype['cache_condition'] = undefined;
 
-
+/**
+ * Header to set.
+ * @member {String} dst
+ */
 Header.prototype['dst'] = undefined;
 
-
+/**
+ * Don't add the header if it is added already. Only applies to 'set' action.
+ * @member {Number} ignore_if_set
+ */
 Header.prototype['ignore_if_set'] = undefined;
 
-
+/**
+ * A handle to refer to this Header object.
+ * @member {String} name
+ */
 Header.prototype['name'] = undefined;
 
-
+/**
+ * Priority determines execution order. Lower numbers execute first.
+ * @member {Number} priority
+ * @default 100
+ */
 Header.prototype['priority'] = 100;
 
-
+/**
+ * Regular expression to use. Only applies to `regex` and `regex_repeat` actions.
+ * @member {String} regex
+ */
 Header.prototype['regex'] = undefined;
 
-
+/**
+ * Condition which, if met, will select this configuration during a request. Optional.
+ * @member {String} request_condition
+ */
 Header.prototype['request_condition'] = undefined;
 
-
+/**
+ * @member {String} response_condition
+ */
 Header.prototype['response_condition'] = undefined;
 
-
+/**
+ * Variable to be used as a source for the header content. Does not apply to `delete` action.
+ * @member {String} src
+ */
 Header.prototype['src'] = undefined;
 
-
+/**
+ * Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions.
+ * @member {String} substitution
+ */
 Header.prototype['substitution'] = undefined;
 
-
+/**
+ * Accepts a string value.
+ * @member {module:model/Header.TypeEnum} type
+ */
 Header.prototype['type'] = undefined;
 
 
 
 
 
-
+/**
+ * Allowed values for the <code>action</code> property.
+ * @enum {String}
+ * @readonly
+ */
 Header['ActionEnum'] = {
 
-    
+    /**
+     * value: "set"
+     * @const
+     */
     "set": "set",
 
-    
+    /**
+     * value: "append"
+     * @const
+     */
     "append": "append",
 
-    
+    /**
+     * value: "delete"
+     * @const
+     */
     "delete": "delete",
 
-    
+    /**
+     * value: "regex"
+     * @const
+     */
     "regex": "regex",
 
-    
+    /**
+     * value: "regex_repeat"
+     * @const
+     */
     "regex_repeat": "regex_repeat"
 };
 
 
-
+/**
+ * Allowed values for the <code>type</code> property.
+ * @enum {String}
+ * @readonly
+ */
 Header['TypeEnum'] = {
 
-    
+    /**
+     * value: "request"
+     * @const
+     */
     "request": "request",
 
-    
+    /**
+     * value: "fetch"
+     * @const
+     */
     "fetch": "fetch",
 
-    
+    /**
+     * value: "cache"
+     * @const
+     */
     "cache": "cache",
 
-    
+    /**
+     * value: "response"
+     * @const
+     */
     "response": "response"
 };
 

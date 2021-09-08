@@ -17,29 +17,47 @@ import WafExclusion from '../model/WafExclusion';
 import WafExclusionResponse from '../model/WafExclusionResponse';
 import WafExclusionsResponse from '../model/WafExclusionsResponse';
 
-
+/**
+* WafExclusions service.
+* @module api/WafExclusionsApi
+* @version 3.0.0-alpha1
+*/
 export default class WafExclusionsApi {
 
-    
+    /**
+    * Constructs a new WafExclusionsApi. 
+    * @alias module:api/WafExclusionsApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createWafRuleExclusionWithHttpInfo(firewall_id, firewall_version_number, opts) {
-      opts = opts || {};
-      let postBody = opts['waf_exclusion'];
-      // verify the required parameter 'firewall_id' is set
-      if (firewall_id === undefined || firewall_id === null) {
-        throw new Error("Missing the required parameter 'firewall_id' when calling createWafRuleExclusion");
+
+    /**
+     * Create a WAF exclusion for a particular firewall version.
+     * @param {Object} options
+     * @param {String} options.firewall_id
+     * @param {Number} options.firewall_version_number
+     * @param {module:model/WafExclusion} [options.waf_exclusion]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafExclusionResponse} and HTTP response
+     */
+    createWafRuleExclusionWithHttpInfo(options = {}) {
+      let postBody = options['waf_exclusion'];
+      // Verify the required parameter 'firewall_id' is set.
+      if (options['firewall_id'] === undefined || options['firewall_id'] === null) {
+        throw new Error("Missing the required parameter 'firewall_id'.");
       }
-      // verify the required parameter 'firewall_version_number' is set
-      if (firewall_version_number === undefined || firewall_version_number === null) {
-        throw new Error("Missing the required parameter 'firewall_version_number' when calling createWafRuleExclusion");
+      // Verify the required parameter 'firewall_version_number' is set.
+      if (options['firewall_version_number'] === undefined || options['firewall_version_number'] === null) {
+        throw new Error("Missing the required parameter 'firewall_version_number'.");
       }
 
       let pathParams = {
-        'firewall_id': firewall_id,
-        'firewall_version_number': firewall_version_number
+        'firewall_id': options['firewall_id'],
+        'firewall_version_number': options['firewall_version_number']
       };
       let queryParams = {
       };
@@ -58,31 +76,49 @@ export default class WafExclusionsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createWafRuleExclusion(firewall_id, firewall_version_number, opts) {
-      return this.createWafRuleExclusionWithHttpInfo(firewall_id, firewall_version_number, opts)
+
+    /**
+     * Create a WAF exclusion for a particular firewall version.
+     * @param {Object} options
+     * @param {String} options.firewall_id
+     * @param {Number} options.firewall_version_number
+     * @param {module:model/WafExclusion} [options.waf_exclusion]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafExclusionResponse}
+     */
+    createWafRuleExclusion(options = {}) {
+      return this.createWafRuleExclusionWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteWafRuleExclusionWithHttpInfo(firewall_id, firewall_version_number, exclusion_number) {
+
+    /**
+     * Delete a WAF exclusion for a particular firewall version.
+     * @param {Object} options
+     * @param {String} options.firewall_id
+     * @param {Number} options.firewall_version_number
+     * @param {Number} options.exclusion_number
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteWafRuleExclusionWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'firewall_id' is set
-      if (firewall_id === undefined || firewall_id === null) {
-        throw new Error("Missing the required parameter 'firewall_id' when calling deleteWafRuleExclusion");
+      // Verify the required parameter 'firewall_id' is set.
+      if (options['firewall_id'] === undefined || options['firewall_id'] === null) {
+        throw new Error("Missing the required parameter 'firewall_id'.");
       }
-      // verify the required parameter 'firewall_version_number' is set
-      if (firewall_version_number === undefined || firewall_version_number === null) {
-        throw new Error("Missing the required parameter 'firewall_version_number' when calling deleteWafRuleExclusion");
+      // Verify the required parameter 'firewall_version_number' is set.
+      if (options['firewall_version_number'] === undefined || options['firewall_version_number'] === null) {
+        throw new Error("Missing the required parameter 'firewall_version_number'.");
       }
-      // verify the required parameter 'exclusion_number' is set
-      if (exclusion_number === undefined || exclusion_number === null) {
-        throw new Error("Missing the required parameter 'exclusion_number' when calling deleteWafRuleExclusion");
+      // Verify the required parameter 'exclusion_number' is set.
+      if (options['exclusion_number'] === undefined || options['exclusion_number'] === null) {
+        throw new Error("Missing the required parameter 'exclusion_number'.");
       }
 
       let pathParams = {
-        'firewall_id': firewall_id,
-        'firewall_version_number': firewall_version_number,
-        'exclusion_number': exclusion_number
+        'firewall_id': options['firewall_id'],
+        'firewall_version_number': options['firewall_version_number'],
+        'exclusion_number': options['exclusion_number']
       };
       let queryParams = {
       };
@@ -101,31 +137,49 @@ export default class WafExclusionsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteWafRuleExclusion(firewall_id, firewall_version_number, exclusion_number) {
-      return this.deleteWafRuleExclusionWithHttpInfo(firewall_id, firewall_version_number, exclusion_number)
+
+    /**
+     * Delete a WAF exclusion for a particular firewall version.
+     * @param {Object} options
+     * @param {String} options.firewall_id
+     * @param {Number} options.firewall_version_number
+     * @param {Number} options.exclusion_number
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteWafRuleExclusion(options = {}) {
+      return this.deleteWafRuleExclusionWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getWafRuleExclusionWithHttpInfo(firewall_id, firewall_version_number, exclusion_number) {
+
+    /**
+     * Get a specific WAF exclusion object.
+     * @param {Object} options
+     * @param {String} options.firewall_id
+     * @param {Number} options.firewall_version_number
+     * @param {Number} options.exclusion_number
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafExclusionResponse} and HTTP response
+     */
+    getWafRuleExclusionWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'firewall_id' is set
-      if (firewall_id === undefined || firewall_id === null) {
-        throw new Error("Missing the required parameter 'firewall_id' when calling getWafRuleExclusion");
+      // Verify the required parameter 'firewall_id' is set.
+      if (options['firewall_id'] === undefined || options['firewall_id'] === null) {
+        throw new Error("Missing the required parameter 'firewall_id'.");
       }
-      // verify the required parameter 'firewall_version_number' is set
-      if (firewall_version_number === undefined || firewall_version_number === null) {
-        throw new Error("Missing the required parameter 'firewall_version_number' when calling getWafRuleExclusion");
+      // Verify the required parameter 'firewall_version_number' is set.
+      if (options['firewall_version_number'] === undefined || options['firewall_version_number'] === null) {
+        throw new Error("Missing the required parameter 'firewall_version_number'.");
       }
-      // verify the required parameter 'exclusion_number' is set
-      if (exclusion_number === undefined || exclusion_number === null) {
-        throw new Error("Missing the required parameter 'exclusion_number' when calling getWafRuleExclusion");
+      // Verify the required parameter 'exclusion_number' is set.
+      if (options['exclusion_number'] === undefined || options['exclusion_number'] === null) {
+        throw new Error("Missing the required parameter 'exclusion_number'.");
       }
 
       let pathParams = {
-        'firewall_id': firewall_id,
-        'firewall_version_number': firewall_version_number,
-        'exclusion_number': exclusion_number
+        'firewall_id': options['firewall_id'],
+        'firewall_version_number': options['firewall_version_number'],
+        'exclusion_number': options['exclusion_number']
       };
       let queryParams = {
       };
@@ -144,35 +198,57 @@ export default class WafExclusionsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getWafRuleExclusion(firewall_id, firewall_version_number, exclusion_number) {
-      return this.getWafRuleExclusionWithHttpInfo(firewall_id, firewall_version_number, exclusion_number)
+
+    /**
+     * Get a specific WAF exclusion object.
+     * @param {Object} options
+     * @param {String} options.firewall_id
+     * @param {Number} options.firewall_version_number
+     * @param {Number} options.exclusion_number
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafExclusionResponse}
+     */
+    getWafRuleExclusion(options = {}) {
+      return this.getWafRuleExclusionWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listWafRuleExclusionsWithHttpInfo(firewall_id, firewall_version_number, opts) {
-      opts = opts || {};
+
+    /**
+     * List all exclusions for a particular firewall version.
+     * @param {Object} options
+     * @param {String} options.firewall_id
+     * @param {Number} options.firewall_version_number
+     * @param {module:model/String} [options.filter_exclusion_type] - Filters the results based on this exclusion type.
+     * @param {String} [options.filter_name] - Filters the results based on name.
+     * @param {Number} [options.filter_waf_rules_modsec_rule_id] - Filters the results based on this ModSecurity rule ID.
+     * @param {Number} [options.page_number] - Current page.
+     * @param {Number} [options.page_size=20] - Number of records per page.
+     * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_rules` and `waf_rule_revisions`. 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafExclusionsResponse} and HTTP response
+     */
+    listWafRuleExclusionsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'firewall_id' is set
-      if (firewall_id === undefined || firewall_id === null) {
-        throw new Error("Missing the required parameter 'firewall_id' when calling listWafRuleExclusions");
+      // Verify the required parameter 'firewall_id' is set.
+      if (options['firewall_id'] === undefined || options['firewall_id'] === null) {
+        throw new Error("Missing the required parameter 'firewall_id'.");
       }
-      // verify the required parameter 'firewall_version_number' is set
-      if (firewall_version_number === undefined || firewall_version_number === null) {
-        throw new Error("Missing the required parameter 'firewall_version_number' when calling listWafRuleExclusions");
+      // Verify the required parameter 'firewall_version_number' is set.
+      if (options['firewall_version_number'] === undefined || options['firewall_version_number'] === null) {
+        throw new Error("Missing the required parameter 'firewall_version_number'.");
       }
 
       let pathParams = {
-        'firewall_id': firewall_id,
-        'firewall_version_number': firewall_version_number
+        'firewall_id': options['firewall_id'],
+        'firewall_version_number': options['firewall_version_number']
       };
       let queryParams = {
-        'filter[exclusion_type]': opts['filter_exclusion_type'],
-        'filter[name]': opts['filter_name'],
-        'filter[waf_rules.modsec_rule_id]': opts['filter_waf_rules_modsec_rule_id'],
-        'page[number]': opts['page_number'],
-        'page[size]': opts['page_size'],
-        'include': opts['include']
+        'filter[exclusion_type]': options['filter_exclusion_type'],
+        'filter[name]': options['filter_name'],
+        'filter[waf_rules.modsec_rule_id]': options['filter_waf_rules_modsec_rule_id'],
+        'page[number]': options['page_number'],
+        'page[size]': options['page_size'],
+        'include': options['include']
       };
       let headerParams = {
       };
@@ -189,32 +265,55 @@ export default class WafExclusionsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listWafRuleExclusions(firewall_id, firewall_version_number, opts) {
-      return this.listWafRuleExclusionsWithHttpInfo(firewall_id, firewall_version_number, opts)
+
+    /**
+     * List all exclusions for a particular firewall version.
+     * @param {Object} options
+     * @param {String} options.firewall_id
+     * @param {Number} options.firewall_version_number
+     * @param {module:model/String} [options.filter_exclusion_type] - Filters the results based on this exclusion type.
+     * @param {String} [options.filter_name] - Filters the results based on name.
+     * @param {Number} [options.filter_waf_rules_modsec_rule_id] - Filters the results based on this ModSecurity rule ID.
+     * @param {Number} [options.page_number] - Current page.
+     * @param {Number} [options.page_size=20] - Number of records per page.
+     * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_rules` and `waf_rule_revisions`. 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafExclusionsResponse}
+     */
+    listWafRuleExclusions(options = {}) {
+      return this.listWafRuleExclusionsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateWafRuleExclusionWithHttpInfo(firewall_id, firewall_version_number, exclusion_number, opts) {
-      opts = opts || {};
-      let postBody = opts['waf_exclusion'];
-      // verify the required parameter 'firewall_id' is set
-      if (firewall_id === undefined || firewall_id === null) {
-        throw new Error("Missing the required parameter 'firewall_id' when calling updateWafRuleExclusion");
+
+    /**
+     * Update a WAF exclusion for a particular firewall version.
+     * @param {Object} options
+     * @param {String} options.firewall_id
+     * @param {Number} options.firewall_version_number
+     * @param {Number} options.exclusion_number
+     * @param {module:model/WafExclusion} [options.waf_exclusion]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafExclusionResponse} and HTTP response
+     */
+    updateWafRuleExclusionWithHttpInfo(options = {}) {
+      let postBody = options['waf_exclusion'];
+      // Verify the required parameter 'firewall_id' is set.
+      if (options['firewall_id'] === undefined || options['firewall_id'] === null) {
+        throw new Error("Missing the required parameter 'firewall_id'.");
       }
-      // verify the required parameter 'firewall_version_number' is set
-      if (firewall_version_number === undefined || firewall_version_number === null) {
-        throw new Error("Missing the required parameter 'firewall_version_number' when calling updateWafRuleExclusion");
+      // Verify the required parameter 'firewall_version_number' is set.
+      if (options['firewall_version_number'] === undefined || options['firewall_version_number'] === null) {
+        throw new Error("Missing the required parameter 'firewall_version_number'.");
       }
-      // verify the required parameter 'exclusion_number' is set
-      if (exclusion_number === undefined || exclusion_number === null) {
-        throw new Error("Missing the required parameter 'exclusion_number' when calling updateWafRuleExclusion");
+      // Verify the required parameter 'exclusion_number' is set.
+      if (options['exclusion_number'] === undefined || options['exclusion_number'] === null) {
+        throw new Error("Missing the required parameter 'exclusion_number'.");
       }
 
       let pathParams = {
-        'firewall_id': firewall_id,
-        'firewall_version_number': firewall_version_number,
-        'exclusion_number': exclusion_number
+        'firewall_id': options['firewall_id'],
+        'firewall_version_number': options['firewall_version_number'],
+        'exclusion_number': options['exclusion_number']
       };
       let queryParams = {
       };
@@ -233,8 +332,18 @@ export default class WafExclusionsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateWafRuleExclusion(firewall_id, firewall_version_number, exclusion_number, opts) {
-      return this.updateWafRuleExclusionWithHttpInfo(firewall_id, firewall_version_number, exclusion_number, opts)
+
+    /**
+     * Update a WAF exclusion for a particular firewall version.
+     * @param {Object} options
+     * @param {String} options.firewall_id
+     * @param {Number} options.firewall_version_number
+     * @param {Number} options.exclusion_number
+     * @param {module:model/WafExclusion} [options.waf_exclusion]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafExclusionResponse}
+     */
+    updateWafRuleExclusion(options = {}) {
+      return this.updateWafRuleExclusionWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

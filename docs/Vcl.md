@@ -1,4 +1,4 @@
-# FastlyApi.Vcl
+# Fastly.Vcl
 
 ## Properties
 

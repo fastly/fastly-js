@@ -12,15 +12,26 @@
  */
 
 import ApiClient from '../ApiClient';
-
+/**
+* Enum class TypeTlsActivation.
+* @enum {}
+* @readonly
+*/
 export default class TypeTlsActivation {
     
-        
+        /**
+         * value: "tls_activation"
+         * @const
+         */
         "tls_activation" = "tls_activation";
 
     
 
-    
+    /**
+    * Returns a <code>TypeTlsActivation</code> enum value from a Javascript object name.
+    * @param {Object} data The plain JavaScript object containing the name of the enum value.
+    * @return {module:model/TypeTlsActivation} The enum <code>TypeTlsActivation</code> value.
+    */
     static constructFromObject(object) {
         return object;
     }

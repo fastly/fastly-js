@@ -18,44 +18,70 @@ import LoggingLogentriesResponse from '../model/LoggingLogentriesResponse';
 import LoggingPlacement from '../model/LoggingPlacement';
 import LoggingUseTls from '../model/LoggingUseTls';
 
-
+/**
+* LoggingLogentries service.
+* @module api/LoggingLogentriesApi
+* @version 3.0.0-alpha1
+*/
 export default class LoggingLogentriesApi {
 
-    
+    /**
+    * Constructs a new LoggingLogentriesApi. 
+    * @alias module:api/LoggingLogentriesApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createLogLogentriesWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Create a Logentry for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {Number} [options.port=20000] - The port number.
+     * @param {module:model/String} [options.region] - The region to which to stream logs.
+     * @param {String} [options.token] - Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
+     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogentriesResponse} and HTTP response
+     */
+    createLogLogentriesWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createLogLogentries");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createLogLogentries");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'port': opts['port'],
-        'token': opts['token'],
-        'use_tls': opts['use_tls'],
-        'region': opts['region']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'port': options['port'],
+        'region': options['region'],
+        'token': options['token'],
+        'use_tls': options['use_tls']
       };
 
       let authNames = ['token'];
@@ -68,31 +94,57 @@ export default class LoggingLogentriesApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createLogLogentries(service_id, version_id, opts) {
-      return this.createLogLogentriesWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Create a Logentry for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {Number} [options.port=20000] - The port number.
+     * @param {module:model/String} [options.region] - The region to which to stream logs.
+     * @param {String} [options.token] - Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
+     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogentriesResponse}
+     */
+    createLogLogentries(options = {}) {
+      return this.createLogLogentriesWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteLogLogentriesWithHttpInfo(service_id, version_id, logging_logentries_name) {
+
+    /**
+     * Delete the Logentry for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_logentries_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteLogLogentriesWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteLogLogentries");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteLogLogentries");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_logentries_name' is set
-      if (logging_logentries_name === undefined || logging_logentries_name === null) {
-        throw new Error("Missing the required parameter 'logging_logentries_name' when calling deleteLogLogentries");
+      // Verify the required parameter 'logging_logentries_name' is set.
+      if (options['logging_logentries_name'] === undefined || options['logging_logentries_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_logentries_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_logentries_name': logging_logentries_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_logentries_name': options['logging_logentries_name']
       };
       let queryParams = {
       };
@@ -111,31 +163,49 @@ export default class LoggingLogentriesApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteLogLogentries(service_id, version_id, logging_logentries_name) {
-      return this.deleteLogLogentriesWithHttpInfo(service_id, version_id, logging_logentries_name)
+
+    /**
+     * Delete the Logentry for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_logentries_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteLogLogentries(options = {}) {
+      return this.deleteLogLogentriesWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getLogLogentriesWithHttpInfo(service_id, version_id, logging_logentries_name) {
+
+    /**
+     * Get the Logentry for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_logentries_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogentriesResponse} and HTTP response
+     */
+    getLogLogentriesWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getLogLogentries");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getLogLogentries");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_logentries_name' is set
-      if (logging_logentries_name === undefined || logging_logentries_name === null) {
-        throw new Error("Missing the required parameter 'logging_logentries_name' when calling getLogLogentries");
+      // Verify the required parameter 'logging_logentries_name' is set.
+      if (options['logging_logentries_name'] === undefined || options['logging_logentries_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_logentries_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_logentries_name': logging_logentries_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_logentries_name': options['logging_logentries_name']
       };
       let queryParams = {
       };
@@ -154,26 +224,43 @@ export default class LoggingLogentriesApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getLogLogentries(service_id, version_id, logging_logentries_name) {
-      return this.getLogLogentriesWithHttpInfo(service_id, version_id, logging_logentries_name)
+
+    /**
+     * Get the Logentry for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_logentries_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogentriesResponse}
+     */
+    getLogLogentries(options = {}) {
+      return this.getLogLogentriesWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listLogLogentriesWithHttpInfo(service_id, version_id) {
+
+    /**
+     * List all of the Logentries for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingLogentriesResponse>} and HTTP response
+     */
+    listLogLogentriesWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listLogLogentries");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listLogLogentries");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -192,47 +279,72 @@ export default class LoggingLogentriesApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listLogLogentries(service_id, version_id) {
-      return this.listLogLogentriesWithHttpInfo(service_id, version_id)
+
+    /**
+     * List all of the Logentries for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingLogentriesResponse>}
+     */
+    listLogLogentries(options = {}) {
+      return this.listLogLogentriesWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateLogLogentriesWithHttpInfo(service_id, version_id, logging_logentries_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Update the Logentry for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_logentries_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {Number} [options.port=20000] - The port number.
+     * @param {module:model/String} [options.region] - The region to which to stream logs.
+     * @param {String} [options.token] - Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
+     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogentriesResponse} and HTTP response
+     */
+    updateLogLogentriesWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateLogLogentries");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateLogLogentries");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_logentries_name' is set
-      if (logging_logentries_name === undefined || logging_logentries_name === null) {
-        throw new Error("Missing the required parameter 'logging_logentries_name' when calling updateLogLogentries");
+      // Verify the required parameter 'logging_logentries_name' is set.
+      if (options['logging_logentries_name'] === undefined || options['logging_logentries_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_logentries_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_logentries_name': logging_logentries_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_logentries_name': options['logging_logentries_name']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'port': opts['port'],
-        'token': opts['token'],
-        'use_tls': opts['use_tls'],
-        'region': opts['region']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'port': options['port'],
+        'region': options['region'],
+        'token': options['token'],
+        'use_tls': options['use_tls']
       };
 
       let authNames = ['token'];
@@ -245,8 +357,26 @@ export default class LoggingLogentriesApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateLogLogentries(service_id, version_id, logging_logentries_name, opts) {
-      return this.updateLogLogentriesWithHttpInfo(service_id, version_id, logging_logentries_name, opts)
+
+    /**
+     * Update the Logentry for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_logentries_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {Number} [options.port=20000] - The port number.
+     * @param {module:model/String} [options.region] - The region to which to stream logs.
+     * @param {String} [options.token] - Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
+     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogentriesResponse}
+     */
+    updateLogLogentries(options = {}) {
+      return this.updateLogLogentriesWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -15,19 +15,38 @@ import ApiClient from '../ApiClient';
 import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Settings from './Settings';
 
-
+/**
+ * The SettingsResponse model module.
+ * @module model/SettingsResponse
+ * @version 3.0.0-alpha1
+ */
 class SettingsResponse {
-    
+    /**
+     * Constructs a new <code>SettingsResponse</code>.
+     * @alias module:model/SettingsResponse
+     * @implements module:model/Settings
+     * @implements module:model/ServiceIdAndVersion
+     */
     constructor() { 
         Settings.initialize(this);ServiceIdAndVersion.initialize(this);
         SettingsResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>SettingsResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/SettingsResponse} obj Optional instance to populate.
+     * @return {module:model/SettingsResponse} The populated <code>SettingsResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SettingsResponse();
@@ -59,38 +78,78 @@ class SettingsResponse {
 
 }
 
-
+/**
+ * The default host name for the version.
+ * @member {String} general.default_host
+ */
 SettingsResponse.prototype['general.default_host'] = undefined;
 
-
+/**
+ * The default time-to-live (TTL) for the version.
+ * @member {Number} general.default_ttl
+ */
 SettingsResponse.prototype['general.default_ttl'] = undefined;
 
-
+/**
+ * Enables serving a stale object if there is an error.
+ * @member {Boolean} general.stale_if_error
+ * @default false
+ */
 SettingsResponse.prototype['general.stale_if_error'] = false;
 
-
+/**
+ * The default time-to-live (TTL) for serving the stale object for the version.
+ * @member {Number} general.stale_if_error_ttl
+ * @default 43200
+ */
 SettingsResponse.prototype['general.stale_if_error_ttl'] = 43200;
 
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 SettingsResponse.prototype['service_id'] = undefined;
 
-
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
 SettingsResponse.prototype['version'] = undefined;
 
 
 // Implement Settings interface:
-
+/**
+ * The default host name for the version.
+ * @member {String} general.default_host
+ */
 Settings.prototype['general.default_host'] = undefined;
-
+/**
+ * The default time-to-live (TTL) for the version.
+ * @member {Number} general.default_ttl
+ */
 Settings.prototype['general.default_ttl'] = undefined;
-
+/**
+ * Enables serving a stale object if there is an error.
+ * @member {Boolean} general.stale_if_error
+ * @default false
+ */
 Settings.prototype['general.stale_if_error'] = false;
-
+/**
+ * The default time-to-live (TTL) for serving the stale object for the version.
+ * @member {Number} general.stale_if_error_ttl
+ * @default 43200
+ */
 Settings.prototype['general.stale_if_error_ttl'] = 43200;
 // Implement ServiceIdAndVersion interface:
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 ServiceIdAndVersion.prototype['service_id'] = undefined;
-
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
 ServiceIdAndVersion.prototype['version'] = undefined;
 
 

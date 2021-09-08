@@ -1,4 +1,4 @@
-# FastlyApi.BackendResponse
+# Fastly.BackendResponse
 
 ## Properties
 

@@ -12,22 +12,39 @@
  */
 
 import ApiClient from '../ApiClient';
-import AnyOfwafFirewallVersionwafRuleRevision from './AnyOfwafFirewallVersionwafRuleRevision';
+import AnyOfschemasWafFirewallVersionwafRuleRevision from './AnyOfschemasWafFirewallVersionwafRuleRevision';
 import Data from './Data';
 
-
+/**
+ * The WafActiveRulesResponseAllOf model module.
+ * @module model/WafActiveRulesResponseAllOf
+ * @version 3.0.0-alpha1
+ */
 class WafActiveRulesResponseAllOf {
-    
+    /**
+     * Constructs a new <code>WafActiveRulesResponseAllOf</code>.
+     * @alias module:model/WafActiveRulesResponseAllOf
+     */
     constructor() { 
         
         WafActiveRulesResponseAllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>WafActiveRulesResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/WafActiveRulesResponseAllOf} obj Optional instance to populate.
+     * @return {module:model/WafActiveRulesResponseAllOf} The populated <code>WafActiveRulesResponseAllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafActiveRulesResponseAllOf();
@@ -36,7 +53,7 @@ class WafActiveRulesResponseAllOf {
                 obj['data'] = ApiClient.convertToType(data['data'], [Data]);
             }
             if (data.hasOwnProperty('included')) {
-                obj['included'] = ApiClient.convertToType(data['included'], [AnyOfwafFirewallVersionwafRuleRevision]);
+                obj['included'] = ApiClient.convertToType(data['included'], [AnyOfschemasWafFirewallVersionwafRuleRevision]);
             }
         }
         return obj;
@@ -45,10 +62,14 @@ class WafActiveRulesResponseAllOf {
 
 }
 
-
+/**
+ * @member {Array.<module:model/Data>} data
+ */
 WafActiveRulesResponseAllOf.prototype['data'] = undefined;
 
-
+/**
+ * @member {Array.<module:model/AnyOfschemasWafFirewallVersionwafRuleRevision>} included
+ */
 WafActiveRulesResponseAllOf.prototype['included'] = undefined;
 
 

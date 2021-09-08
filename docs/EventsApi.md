@@ -1,7 +1,9 @@
-# FastlyApi.EventsApi
+# Fastly.EventsApi
 
 
-
+```javascript
+const apiInstance = new Fastly.EventsApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -13,26 +15,28 @@ Method | Fastly API endpoint | Description
 
 ## `getEvent`
 
-> getEvent(event_id)
-
-Get an event
+```javascript
+getEvent({ event_id })
+```
 
 Get a specific event.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.EventsApi();
-let event_id = "event_id_example"; // String | 
-apiInstance.getEvent(event_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  event_id: "event_id_example", // required};
 
+apiInstance.getEvent(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -45,34 +49,42 @@ Name | Type | Description  | Notes
 
 ## `listEvents`
 
-> listEvents(opts)
-
-List events
+```javascript
+listEvents({ [filter_event_type], [filter_customer_id], [filter_service_id], [filter_user_id], [page_number], [page_size], [sort] })
+```
 
 List all events for a particular customer. Events can be filtered by user, customer and event type. Events can be sorted by date.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.EventsApi();
-let opts = {
-  'filter_event_type': "filter_event_type_example", // String | Limit the returned events to a specific `event_type`.
-  'filter_customer_id': "filter_customer_id_example", // String | Limit the results returned to a specific customer.
-  'filter_service_id': "filter_service_id_example", // String | Limit the results returned to a specific service.
-  'filter_user_id': "filter_user_id_example", // String | Limit the results returned to a specific user.
-  'page_number': 56, // Number | Current page.
-  'page_size': 20, // Number | Number of records per page.
-  'sort': created_at // String | The order in which to list the results by creation date.
-};
-apiInstance.listEvents(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
 
+  filter_event_type: "filter_event_type_example",
+
+  filter_customer_id: "filter_customer_id_example",
+
+  filter_service_id: "filter_service_id_example",
+
+  filter_user_id: "filter_user_id_example",
+
+  page_number: 56,
+
+  page_size: 20,
+
+  sort: "'created_at'",
+};
+
+apiInstance.listEvents(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The LoggingLogglyAllOf model module.
+ * @module model/LoggingLogglyAllOf
+ * @version 3.0.0-alpha1
+ */
 class LoggingLogglyAllOf {
-    
+    /**
+     * Constructs a new <code>LoggingLogglyAllOf</code>.
+     * @alias module:model/LoggingLogglyAllOf
+     */
     constructor() { 
         
         LoggingLogglyAllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingLogglyAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingLogglyAllOf} obj Optional instance to populate.
+     * @return {module:model/LoggingLogglyAllOf} The populated <code>LoggingLogglyAllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingLogglyAllOf();
@@ -40,7 +57,10 @@ class LoggingLogglyAllOf {
 
 }
 
-
+/**
+ * The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)).
+ * @member {String} token
+ */
 LoggingLogglyAllOf.prototype['token'] = undefined;
 
 

@@ -13,28 +13,45 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The LoggingGcsCommon model module.
+ * @module model/LoggingGcsCommon
+ * @version 3.0.0-alpha1
+ */
 class LoggingGcsCommon {
-    
+    /**
+     * Constructs a new <code>LoggingGcsCommon</code>.
+     * @alias module:model/LoggingGcsCommon
+     */
     constructor() { 
         
         LoggingGcsCommon.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingGcsCommon</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingGcsCommon} obj Optional instance to populate.
+     * @return {module:model/LoggingGcsCommon} The populated <code>LoggingGcsCommon</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingGcsCommon();
 
-            if (data.hasOwnProperty('user')) {
-                obj['user'] = ApiClient.convertToType(data['user'], 'String');
-            }
             if (data.hasOwnProperty('secret_key')) {
                 obj['secret_key'] = ApiClient.convertToType(data['secret_key'], 'String');
+            }
+            if (data.hasOwnProperty('user')) {
+                obj['user'] = ApiClient.convertToType(data['user'], 'String');
             }
         }
         return obj;
@@ -43,11 +60,17 @@ class LoggingGcsCommon {
 
 }
 
-
-LoggingGcsCommon.prototype['user'] = undefined;
-
-
+/**
+ * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+ * @member {String} secret_key
+ */
 LoggingGcsCommon.prototype['secret_key'] = undefined;
+
+/**
+ * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+ * @member {String} user
+ */
+LoggingGcsCommon.prototype['user'] = undefined;
 
 
 

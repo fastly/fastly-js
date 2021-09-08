@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The Gzip model module.
+ * @module model/Gzip
+ * @version 3.0.0-alpha1
+ */
 class Gzip {
-    
+    /**
+     * Constructs a new <code>Gzip</code>.
+     * @alias module:model/Gzip
+     */
     constructor() { 
         
         Gzip.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>Gzip</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/Gzip} obj Optional instance to populate.
+     * @return {module:model/Gzip} The populated <code>Gzip</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new Gzip();
@@ -49,16 +66,28 @@ class Gzip {
 
 }
 
-
+/**
+ * Name of the cache condition controlling when this configuration applies.
+ * @member {String} cache_condition
+ */
 Gzip.prototype['cache_condition'] = undefined;
 
-
+/**
+ * Space-separated list of content types to compress. If you omit this field a default list will be used.
+ * @member {String} content_types
+ */
 Gzip.prototype['content_types'] = undefined;
 
-
+/**
+ * Space-separated list of file extensions to compress. If you omit this field a default list will be used.
+ * @member {String} extensions
+ */
 Gzip.prototype['extensions'] = undefined;
 
-
+/**
+ * Name of the gzip configuration.
+ * @member {String} name
+ */
 Gzip.prototype['name'] = undefined;
 
 

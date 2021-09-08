@@ -1,4 +1,4 @@
-# FastlyApi.StarResponse
+# Fastly.StarResponse
 
 ## Properties
 

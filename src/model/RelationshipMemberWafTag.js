@@ -14,28 +14,45 @@
 import ApiClient from '../ApiClient';
 import TypeWafTag from './TypeWafTag';
 
-
+/**
+ * The RelationshipMemberWafTag model module.
+ * @module model/RelationshipMemberWafTag
+ * @version 3.0.0-alpha1
+ */
 class RelationshipMemberWafTag {
-    
+    /**
+     * Constructs a new <code>RelationshipMemberWafTag</code>.
+     * @alias module:model/RelationshipMemberWafTag
+     */
     constructor() { 
         
         RelationshipMemberWafTag.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipMemberWafTag</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipMemberWafTag} obj Optional instance to populate.
+     * @return {module:model/RelationshipMemberWafTag} The populated <code>RelationshipMemberWafTag</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipMemberWafTag();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeWafTag.constructFromObject(data['type']);
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeWafTag.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -44,11 +61,16 @@ class RelationshipMemberWafTag {
 
 }
 
-
-RelationshipMemberWafTag.prototype['type'] = undefined;
-
-
+/**
+ * Alphanumeric string identifying a WAF tag.
+ * @member {String} id
+ */
 RelationshipMemberWafTag.prototype['id'] = undefined;
+
+/**
+ * @member {module:model/TypeWafTag} type
+ */
+RelationshipMemberWafTag.prototype['type'] = undefined;
 
 
 

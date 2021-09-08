@@ -12,24 +12,44 @@
  */
 
 import ApiClient from '../ApiClient';
-import Backend from './Backend';
 import Director from './Director';
+import SchemasBackend from './SchemasBackend';
 import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Timestamps from './Timestamps';
 
-
+/**
+ * The DirectorResponse model module.
+ * @module model/DirectorResponse
+ * @version 3.0.0-alpha1
+ */
 class DirectorResponse {
-    
+    /**
+     * Constructs a new <code>DirectorResponse</code>.
+     * @alias module:model/DirectorResponse
+     * @implements module:model/Director
+     * @implements module:model/ServiceIdAndVersion
+     * @implements module:model/Timestamps
+     */
     constructor() { 
         Director.initialize(this);ServiceIdAndVersion.initialize(this);Timestamps.initialize(this);
         DirectorResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>DirectorResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/DirectorResponse} obj Optional instance to populate.
+     * @return {module:model/DirectorResponse} The populated <code>DirectorResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new DirectorResponse();
@@ -38,7 +58,7 @@ class DirectorResponse {
             Timestamps.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('backends')) {
-                obj['backends'] = ApiClient.convertToType(data['backends'], [Backend]);
+                obj['backends'] = ApiClient.convertToType(data['backends'], [SchemasBackend]);
             }
             if (data.hasOwnProperty('capacity')) {
                 obj['capacity'] = ApiClient.convertToType(data['capacity'], 'Number');
@@ -52,14 +72,14 @@ class DirectorResponse {
             if (data.hasOwnProperty('quorum')) {
                 obj['quorum'] = ApiClient.convertToType(data['quorum'], 'Number');
             }
+            if (data.hasOwnProperty('retries')) {
+                obj['retries'] = ApiClient.convertToType(data['retries'], 'Number');
+            }
             if (data.hasOwnProperty('shield')) {
                 obj['shield'] = ApiClient.convertToType(data['shield'], 'String');
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'Number');
-            }
-            if (data.hasOwnProperty('retries')) {
-                obj['retries'] = ApiClient.convertToType(data['retries'], 'Number');
             }
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
@@ -83,88 +103,187 @@ class DirectorResponse {
 
 }
 
-
+/**
+ * List of backends associated to a director.
+ * @member {Array.<module:model/SchemasBackend>} backends
+ */
 DirectorResponse.prototype['backends'] = undefined;
 
-
+/**
+ * Unused.
+ * @member {Number} capacity
+ */
 DirectorResponse.prototype['capacity'] = undefined;
 
-
+/**
+ * A freeform descriptive note.
+ * @member {String} comment
+ */
 DirectorResponse.prototype['comment'] = undefined;
 
-
+/**
+ * Name for the Director.
+ * @member {String} name
+ */
 DirectorResponse.prototype['name'] = undefined;
 
-
+/**
+ * The percentage of capacity that needs to be up for a director to be considered up. `0` to `100`.
+ * @member {Number} quorum
+ * @default 75
+ */
 DirectorResponse.prototype['quorum'] = 75;
 
-
-DirectorResponse.prototype['shield'] = 'null';
-
-
-DirectorResponse.prototype['type'] = TypeEnum.random;
-
-
+/**
+ * How many backends to search if it fails.
+ * @member {Number} retries
+ * @default 5
+ */
 DirectorResponse.prototype['retries'] = 5;
 
+/**
+ * Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
+ * @member {String} shield
+ * @default 'null'
+ */
+DirectorResponse.prototype['shield'] = 'null';
 
+/**
+ * What type of load balance group to use.
+ * @member {module:model/DirectorResponse.TypeEnum} type
+ * @default TypeEnum.random
+ */
+DirectorResponse.prototype['type'] = TypeEnum.random;
+
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 DirectorResponse.prototype['service_id'] = undefined;
 
-
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
 DirectorResponse.prototype['version'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 DirectorResponse.prototype['created_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 DirectorResponse.prototype['deleted_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 DirectorResponse.prototype['updated_at'] = undefined;
 
 
 // Implement Director interface:
-
+/**
+ * List of backends associated to a director.
+ * @member {Array.<module:model/SchemasBackend>} backends
+ */
 Director.prototype['backends'] = undefined;
-
+/**
+ * Unused.
+ * @member {Number} capacity
+ */
 Director.prototype['capacity'] = undefined;
-
+/**
+ * A freeform descriptive note.
+ * @member {String} comment
+ */
 Director.prototype['comment'] = undefined;
-
+/**
+ * Name for the Director.
+ * @member {String} name
+ */
 Director.prototype['name'] = undefined;
-
+/**
+ * The percentage of capacity that needs to be up for a director to be considered up. `0` to `100`.
+ * @member {Number} quorum
+ * @default 75
+ */
 Director.prototype['quorum'] = 75;
-
-Director.prototype['shield'] = 'null';
-
-Director.prototype['type'] = TypeEnum.random;
-
+/**
+ * How many backends to search if it fails.
+ * @member {Number} retries
+ * @default 5
+ */
 Director.prototype['retries'] = 5;
+/**
+ * Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
+ * @member {String} shield
+ * @default 'null'
+ */
+Director.prototype['shield'] = 'null';
+/**
+ * What type of load balance group to use.
+ * @member {module:model/Director.TypeEnum} type
+ * @default TypeEnum.random
+ */
+Director.prototype['type'] = TypeEnum.random;
 // Implement ServiceIdAndVersion interface:
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 ServiceIdAndVersion.prototype['service_id'] = undefined;
-
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
 ServiceIdAndVersion.prototype['version'] = undefined;
 // Implement Timestamps interface:
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 Timestamps.prototype['created_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 Timestamps.prototype['deleted_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 Timestamps.prototype['updated_at'] = undefined;
 
 
 
-
+/**
+ * Allowed values for the <code>type</code> property.
+ * @enum {Number}
+ * @readonly
+ */
 DirectorResponse['TypeEnum'] = {
 
-    
+    /**
+     * value: 1
+     * @const
+     */
     "random": 1,
 
-    
+    /**
+     * value: 3
+     * @const
+     */
     "hash": 3,
 
-    
+    /**
+     * value: 4
+     * @const
+     */
     "client": 4
 };
 

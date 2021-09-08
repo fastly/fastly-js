@@ -18,19 +18,38 @@ import PaginationLinks from './PaginationLinks';
 import PaginationMeta from './PaginationMeta';
 import TlsPrivateKeysResponseAllOf from './TlsPrivateKeysResponseAllOf';
 
-
+/**
+ * The TlsPrivateKeysResponse model module.
+ * @module model/TlsPrivateKeysResponse
+ * @version 3.0.0-alpha1
+ */
 class TlsPrivateKeysResponse {
-    
+    /**
+     * Constructs a new <code>TlsPrivateKeysResponse</code>.
+     * @alias module:model/TlsPrivateKeysResponse
+     * @implements module:model/Pagination
+     * @implements module:model/TlsPrivateKeysResponseAllOf
+     */
     constructor() { 
         Pagination.initialize(this);TlsPrivateKeysResponseAllOf.initialize(this);
         TlsPrivateKeysResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>TlsPrivateKeysResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/TlsPrivateKeysResponse} obj Optional instance to populate.
+     * @return {module:model/TlsPrivateKeysResponse} The populated <code>TlsPrivateKeysResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsPrivateKeysResponse();
@@ -53,23 +72,35 @@ class TlsPrivateKeysResponse {
 
 }
 
-
+/**
+ * @member {module:model/PaginationLinks} links
+ */
 TlsPrivateKeysResponse.prototype['links'] = undefined;
 
-
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
 TlsPrivateKeysResponse.prototype['meta'] = undefined;
 
-
+/**
+ * @member {Array.<module:model/Data>} data
+ */
 TlsPrivateKeysResponse.prototype['data'] = undefined;
 
 
 // Implement Pagination interface:
-
+/**
+ * @member {module:model/PaginationLinks} links
+ */
 Pagination.prototype['links'] = undefined;
-
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
 Pagination.prototype['meta'] = undefined;
 // Implement TlsPrivateKeysResponseAllOf interface:
-
+/**
+ * @member {Array.<module:model/Data>} data
+ */
 TlsPrivateKeysResponseAllOf.prototype['data'] = undefined;
 
 

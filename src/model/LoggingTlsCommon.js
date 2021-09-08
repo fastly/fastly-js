@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The LoggingTlsCommon model module.
+ * @module model/LoggingTlsCommon
+ * @version 3.0.0-alpha1
+ */
 class LoggingTlsCommon {
-    
+    /**
+     * Constructs a new <code>LoggingTlsCommon</code>.
+     * @alias module:model/LoggingTlsCommon
+     */
     constructor() { 
         
         LoggingTlsCommon.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingTlsCommon</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingTlsCommon} obj Optional instance to populate.
+     * @return {module:model/LoggingTlsCommon} The populated <code>LoggingTlsCommon</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingTlsCommon();
@@ -49,16 +66,32 @@ class LoggingTlsCommon {
 
 }
 
-
+/**
+ * A secure certificate to authenticate a server with. Must be in PEM format.
+ * @member {String} tls_ca_cert
+ * @default 'null'
+ */
 LoggingTlsCommon.prototype['tls_ca_cert'] = 'null';
 
-
+/**
+ * The client certificate used to make authenticated requests. Must be in PEM format.
+ * @member {String} tls_client_cert
+ * @default 'null'
+ */
 LoggingTlsCommon.prototype['tls_client_cert'] = 'null';
 
-
+/**
+ * The client private key used to make authenticated requests. Must be in PEM format.
+ * @member {String} tls_client_key
+ * @default 'null'
+ */
 LoggingTlsCommon.prototype['tls_client_key'] = 'null';
 
-
+/**
+ * The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
+ * @member {String} tls_hostname
+ * @default 'null'
+ */
 LoggingTlsCommon.prototype['tls_hostname'] = 'null';
 
 

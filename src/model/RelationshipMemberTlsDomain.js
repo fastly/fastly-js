@@ -14,28 +14,45 @@
 import ApiClient from '../ApiClient';
 import TypeTlsDomain from './TypeTlsDomain';
 
-
+/**
+ * The RelationshipMemberTlsDomain model module.
+ * @module model/RelationshipMemberTlsDomain
+ * @version 3.0.0-alpha1
+ */
 class RelationshipMemberTlsDomain {
-    
+    /**
+     * Constructs a new <code>RelationshipMemberTlsDomain</code>.
+     * @alias module:model/RelationshipMemberTlsDomain
+     */
     constructor() { 
         
         RelationshipMemberTlsDomain.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipMemberTlsDomain</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipMemberTlsDomain} obj Optional instance to populate.
+     * @return {module:model/RelationshipMemberTlsDomain} The populated <code>RelationshipMemberTlsDomain</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipMemberTlsDomain();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeTlsDomain.constructFromObject(data['type']);
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeTlsDomain.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -44,11 +61,16 @@ class RelationshipMemberTlsDomain {
 
 }
 
-
-RelationshipMemberTlsDomain.prototype['type'] = undefined;
-
-
+/**
+ * The domain name.
+ * @member {String} id
+ */
 RelationshipMemberTlsDomain.prototype['id'] = undefined;
+
+/**
+ * @member {module:model/TypeTlsDomain} type
+ */
+RelationshipMemberTlsDomain.prototype['type'] = undefined;
 
 
 

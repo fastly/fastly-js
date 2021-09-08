@@ -15,28 +15,46 @@
 import ApiClient from "../ApiClient";
 import ResponseObjectResponse from '../model/ResponseObjectResponse';
 
-
+/**
+* ResponseObject service.
+* @module api/ResponseObjectApi
+* @version 3.0.0-alpha1
+*/
 export default class ResponseObjectApi {
 
-    
+    /**
+    * Constructs a new ResponseObjectApi. 
+    * @alias module:api/ResponseObjectApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createResponseObjectWithHttpInfo(service_id, version_id) {
+
+    /**
+     * Creates a new Response Object.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseObjectResponse} and HTTP response
+     */
+    createResponseObjectWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createResponseObject");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createResponseObject");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -55,31 +73,48 @@ export default class ResponseObjectApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createResponseObject(service_id, version_id) {
-      return this.createResponseObjectWithHttpInfo(service_id, version_id)
+
+    /**
+     * Creates a new Response Object.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseObjectResponse}
+     */
+    createResponseObject(options = {}) {
+      return this.createResponseObjectWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteResponseObjectWithHttpInfo(service_id, version_id, response_object_name) {
+
+    /**
+     * Deletes the specified Response Object.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.response_object_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteResponseObjectWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteResponseObject");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteResponseObject");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'response_object_name' is set
-      if (response_object_name === undefined || response_object_name === null) {
-        throw new Error("Missing the required parameter 'response_object_name' when calling deleteResponseObject");
+      // Verify the required parameter 'response_object_name' is set.
+      if (options['response_object_name'] === undefined || options['response_object_name'] === null) {
+        throw new Error("Missing the required parameter 'response_object_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'response_object_name': response_object_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'response_object_name': options['response_object_name']
       };
       let queryParams = {
       };
@@ -98,31 +133,49 @@ export default class ResponseObjectApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteResponseObject(service_id, version_id, response_object_name) {
-      return this.deleteResponseObjectWithHttpInfo(service_id, version_id, response_object_name)
+
+    /**
+     * Deletes the specified Response Object.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.response_object_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteResponseObject(options = {}) {
+      return this.deleteResponseObjectWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getResponseObjectWithHttpInfo(service_id, version_id, response_object_name) {
+
+    /**
+     * Gets the specified Response Object.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.response_object_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseObjectResponse} and HTTP response
+     */
+    getResponseObjectWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getResponseObject");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getResponseObject");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'response_object_name' is set
-      if (response_object_name === undefined || response_object_name === null) {
-        throw new Error("Missing the required parameter 'response_object_name' when calling getResponseObject");
+      // Verify the required parameter 'response_object_name' is set.
+      if (options['response_object_name'] === undefined || options['response_object_name'] === null) {
+        throw new Error("Missing the required parameter 'response_object_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'response_object_name': response_object_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'response_object_name': options['response_object_name']
       };
       let queryParams = {
       };
@@ -141,26 +194,43 @@ export default class ResponseObjectApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getResponseObject(service_id, version_id, response_object_name) {
-      return this.getResponseObjectWithHttpInfo(service_id, version_id, response_object_name)
+
+    /**
+     * Gets the specified Response Object.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.response_object_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseObjectResponse}
+     */
+    getResponseObject(options = {}) {
+      return this.getResponseObjectWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listResponseObjectsWithHttpInfo(service_id, version_id) {
+
+    /**
+     * Returns all Response Objects for the specified service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ResponseObjectResponse>} and HTTP response
+     */
+    listResponseObjectsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listResponseObjects");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listResponseObjects");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -179,31 +249,48 @@ export default class ResponseObjectApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listResponseObjects(service_id, version_id) {
-      return this.listResponseObjectsWithHttpInfo(service_id, version_id)
+
+    /**
+     * Returns all Response Objects for the specified service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ResponseObjectResponse>}
+     */
+    listResponseObjects(options = {}) {
+      return this.listResponseObjectsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateResponseObjectWithHttpInfo(service_id, version_id, response_object_name) {
+
+    /**
+     * Updates the specified Response Object.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.response_object_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseObjectResponse} and HTTP response
+     */
+    updateResponseObjectWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateResponseObject");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateResponseObject");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'response_object_name' is set
-      if (response_object_name === undefined || response_object_name === null) {
-        throw new Error("Missing the required parameter 'response_object_name' when calling updateResponseObject");
+      // Verify the required parameter 'response_object_name' is set.
+      if (options['response_object_name'] === undefined || options['response_object_name'] === null) {
+        throw new Error("Missing the required parameter 'response_object_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'response_object_name': response_object_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'response_object_name': options['response_object_name']
       };
       let queryParams = {
       };
@@ -222,8 +309,17 @@ export default class ResponseObjectApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateResponseObject(service_id, version_id, response_object_name) {
-      return this.updateResponseObjectWithHttpInfo(service_id, version_id, response_object_name)
+
+    /**
+     * Updates the specified Response Object.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.response_object_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseObjectResponse}
+     */
+    updateResponseObject(options = {}) {
+      return this.updateResponseObjectWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

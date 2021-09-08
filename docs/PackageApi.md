@@ -1,7 +1,9 @@
-# FastlyApi.PackageApi
+# Fastly.PackageApi
 
 
-
+```javascript
+const apiInstance = new Fastly.PackageApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -13,27 +15,28 @@ Method | Fastly API endpoint | Description
 
 ## `getPackage`
 
-> getPackage(service_id, version_id)
-
-Get details of the service&#39;s Compute@Edge package.
+```javascript
+getPackage({ service_id, version_id })
+```
 
 List detailed information about the Compute@Edge package for the specified service.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.PackageApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.getPackage(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.getPackage(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -47,31 +50,32 @@ Name | Type | Description  | Notes
 
 ## `putPackage`
 
-> putPackage(service_id, version_id, opts)
-
-Upload a Compute@Edge package.
+```javascript
+putPackage({ service_id, version_id, [expect], , [_package] })
+```
 
 Upload a Compute@Edge package associated with the specified service version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.PackageApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let opts = {
-  'expect': 100-continue, // String | We recommend using the Expect header because it may identify issues with the request based upon the headers alone instead of requiring you to wait until the entire binary package upload has completed.
-  '_package': "/path/to/file" // File | The content of the Wasm binary package.
-};
-apiInstance.putPackage(service_id, version_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required
+  expect: 100-continue,
 
+  _package: "/path/to/file",
+};
+
+apiInstance.putPackage(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

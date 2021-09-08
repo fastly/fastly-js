@@ -15,28 +15,45 @@ import ApiClient from '../ApiClient';
 import RelationshipUser from './RelationshipUser';
 import TypeStar from './TypeStar';
 
-
+/**
+ * The StarData model module.
+ * @module model/StarData
+ * @version 3.0.0-alpha1
+ */
 class StarData {
-    
+    /**
+     * Constructs a new <code>StarData</code>.
+     * @alias module:model/StarData
+     */
     constructor() { 
         
         StarData.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>StarData</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/StarData} obj Optional instance to populate.
+     * @return {module:model/StarData} The populated <code>StarData</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new StarData();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeStar.constructFromObject(data['type']);
-            }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = ApiClient.convertToType(data['relationships'], RelationshipUser);
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeStar.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -45,11 +62,15 @@ class StarData {
 
 }
 
-
-StarData.prototype['type'] = undefined;
-
-
+/**
+ * @member {module:model/RelationshipUser} relationships
+ */
 StarData.prototype['relationships'] = undefined;
+
+/**
+ * @member {module:model/TypeStar} type
+ */
+StarData.prototype['type'] = undefined;
 
 
 

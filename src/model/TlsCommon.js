@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The TlsCommon model module.
+ * @module model/TlsCommon
+ * @version 3.0.0-alpha1
+ */
 class TlsCommon {
-    
+    /**
+     * Constructs a new <code>TlsCommon</code>.
+     * @alias module:model/TlsCommon
+     */
     constructor() { 
         
         TlsCommon.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>TlsCommon</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/TlsCommon} obj Optional instance to populate.
+     * @return {module:model/TlsCommon} The populated <code>TlsCommon</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsCommon();
@@ -33,14 +50,14 @@ class TlsCommon {
             if (data.hasOwnProperty('tls_ca_cert')) {
                 obj['tls_ca_cert'] = ApiClient.convertToType(data['tls_ca_cert'], 'String');
             }
+            if (data.hasOwnProperty('tls_cert_hostname')) {
+                obj['tls_cert_hostname'] = ApiClient.convertToType(data['tls_cert_hostname'], 'String');
+            }
             if (data.hasOwnProperty('tls_client_cert')) {
                 obj['tls_client_cert'] = ApiClient.convertToType(data['tls_client_cert'], 'String');
             }
             if (data.hasOwnProperty('tls_client_key')) {
                 obj['tls_client_key'] = ApiClient.convertToType(data['tls_client_key'], 'String');
-            }
-            if (data.hasOwnProperty('tls_cert_hostname')) {
-                obj['tls_cert_hostname'] = ApiClient.convertToType(data['tls_cert_hostname'], 'String');
             }
             if (data.hasOwnProperty('use_tls')) {
                 obj['use_tls'] = ApiClient.convertToType(data['use_tls'], 'Number');
@@ -52,32 +69,62 @@ class TlsCommon {
 
 }
 
-
+/**
+ * A secure certificate to authenticate a server with. Must be in PEM format.
+ * @member {String} tls_ca_cert
+ * @default 'null'
+ */
 TlsCommon.prototype['tls_ca_cert'] = 'null';
 
-
-TlsCommon.prototype['tls_client_cert'] = 'null';
-
-
-TlsCommon.prototype['tls_client_key'] = 'null';
-
-
+/**
+ * The hostname used to verify a server's certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
+ * @member {String} tls_cert_hostname
+ * @default 'null'
+ */
 TlsCommon.prototype['tls_cert_hostname'] = 'null';
 
+/**
+ * The client certificate used to make authenticated requests. Must be in PEM format.
+ * @member {String} tls_client_cert
+ * @default 'null'
+ */
+TlsCommon.prototype['tls_client_cert'] = 'null';
 
+/**
+ * The client private key used to make authenticated requests. Must be in PEM format.
+ * @member {String} tls_client_key
+ * @default 'null'
+ */
+TlsCommon.prototype['tls_client_key'] = 'null';
+
+/**
+ * Whether to use TLS.
+ * @member {module:model/TlsCommon.UseTlsEnum} use_tls
+ * @default UseTlsEnum.no_tls
+ */
 TlsCommon.prototype['use_tls'] = UseTlsEnum.no_tls;
 
 
 
 
 
-
+/**
+ * Allowed values for the <code>use_tls</code> property.
+ * @enum {Number}
+ * @readonly
+ */
 TlsCommon['UseTlsEnum'] = {
 
-    
+    /**
+     * value: 0
+     * @const
+     */
     "no_tls": 0,
 
-    
+    /**
+     * value: 1
+     * @const
+     */
     "use_tls": 1
 };
 

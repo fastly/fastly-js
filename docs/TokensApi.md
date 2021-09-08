@@ -1,7 +1,9 @@
-# FastlyApi.TokensApi
+# Fastly.TokensApi
 
 
-
+```javascript
+const apiInstance = new Fastly.TokensApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -18,28 +20,30 @@ Method | Fastly API endpoint | Description
 
 ## `bulkRevokeTokens`
 
-> bulkRevokeTokens(opts)
-
-Revoke multiple tokens
+```javascript
+bulkRevokeTokens({ [body] })
+```
 
 Revoke Tokens in bulk format. Users may only revoke their own tokens. Superusers may revoke tokens of others.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TokensApi();
-let opts = {
-  'body': {"data":[{"id":"3krg2uUGZzb2W9Euo4moOY","type":"token"},{"id":"71ZA6hv2FO6tGEQIE203Xj","type":"token"}]} // Object | 
-};
-apiInstance.bulkRevokeTokens(opts).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
-});
+const options = {
 
+  body: null,
+};
+
+apiInstance.bulkRevokeTokens(options)
+  .then(() => {
+    console.log('API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -52,25 +56,25 @@ null (empty response body)
 
 ## `createToken`
 
-> createToken()
-
-Create a token
+```javascript
+createToken()
+```
 
 Create an API token. If two-factor authentication is enabled for your account, review [the instructions](/reference/api/auth/) for including a one-time password in the request. 
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TokensApi();
-apiInstance.createToken().then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
+apiInstance.createToken()
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 This endpoint does not need any parameters.
 
@@ -81,25 +85,25 @@ This endpoint does not need any parameters.
 
 ## `getTokenCurrent`
 
-> getTokenCurrent()
-
-Get the current token
+```javascript
+getTokenCurrent()
+```
 
 Get a single token based on the access_token used in the request.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TokensApi();
-apiInstance.getTokenCurrent().then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
+apiInstance.getTokenCurrent()
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 This endpoint does not need any parameters.
 
@@ -110,26 +114,28 @@ This endpoint does not need any parameters.
 
 ## `listTokensCustomer`
 
-> listTokensCustomer(customer_id)
-
-List tokens for a customer
+```javascript
+listTokensCustomer({ customer_id })
+```
 
 List all tokens belonging to a specific customer.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TokensApi();
-let customer_id = "customer_id_example"; // String | 
-apiInstance.listTokensCustomer(customer_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  customer_id: "customer_id_example", // required};
 
+apiInstance.listTokensCustomer(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -142,25 +148,25 @@ Name | Type | Description  | Notes
 
 ## `listTokensUser`
 
-> listTokensUser()
-
-List tokens for the authenticated user
+```javascript
+listTokensUser()
+```
 
 List all tokens belonging to the authenticated user.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TokensApi();
-apiInstance.listTokensUser().then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
+apiInstance.listTokensUser()
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 This endpoint does not need any parameters.
 
@@ -171,26 +177,28 @@ This endpoint does not need any parameters.
 
 ## `revokeToken`
 
-> revokeToken(token_id)
-
-Revoke a token
+```javascript
+revokeToken({ token_id })
+```
 
 Revoke a specific token by its id.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TokensApi();
-let token_id = "token_id_example"; // String | 
-apiInstance.revokeToken(token_id).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  token_id: "token_id_example", // required};
 
+apiInstance.revokeToken(options)
+  .then(() => {
+    console.log('API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -203,25 +211,25 @@ null (empty response body)
 
 ## `revokeTokenCurrent`
 
-> revokeTokenCurrent()
-
-Revoke the current token
+```javascript
+revokeTokenCurrent()
+```
 
 Revoke a token that is used to authenticate the request.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TokensApi();
-apiInstance.revokeTokenCurrent().then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
-});
-
+apiInstance.revokeTokenCurrent()
+  .then(() => {
+    console.log('API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 This endpoint does not need any parameters.
 

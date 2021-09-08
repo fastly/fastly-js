@@ -1,12 +1,12 @@
-# FastlyApi.TlsBulkCertificateData
+# Fastly.TlsBulkCertificateData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**TypeTlsBulkCertificate**](TypeTlsBulkCertificate.md) |  | [optional] 
 **attributes** | [**TlsBulkCertificateDataAttributes**](TlsBulkCertificateDataAttributes.md) |  | [optional] 
 **relationships** | [**AnyOfrelationshipTlsConfigurationsobject**](AnyOfrelationshipTlsConfigurationsobject.md) |  | [optional] 
+**type** | [**TypeTlsBulkCertificate**](TypeTlsBulkCertificate.md) |  | [optional] 
 
 
 

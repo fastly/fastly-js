@@ -1,4 +1,4 @@
-# FastlyApi.TlsConfigurationDataAttributes
+# Fastly.TlsConfigurationDataAttributes
 
 ## Properties
 

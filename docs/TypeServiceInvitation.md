@@ -1,4 +1,4 @@
-# FastlyApi.TypeServiceInvitation
+# Fastly.TypeServiceInvitation
 
 ## Enum
 

@@ -15,28 +15,46 @@
 import ApiClient from "../ApiClient";
 import PackageResponse from '../model/PackageResponse';
 
-
+/**
+* Package service.
+* @module api/PackageApi
+* @version 3.0.0-alpha1
+*/
 export default class PackageApi {
 
-    
+    /**
+    * Constructs a new PackageApi. 
+    * @alias module:api/PackageApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    getPackageWithHttpInfo(service_id, version_id) {
+
+    /**
+     * List detailed information about the Compute@Edge package for the specified service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PackageResponse} and HTTP response
+     */
+    getPackageWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getPackage");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getPackage");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -55,35 +73,52 @@ export default class PackageApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getPackage(service_id, version_id) {
-      return this.getPackageWithHttpInfo(service_id, version_id)
+
+    /**
+     * List detailed information about the Compute@Edge package for the specified service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PackageResponse}
+     */
+    getPackage(options = {}) {
+      return this.getPackageWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    putPackageWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Upload a Compute@Edge package associated with the specified service version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.expect] - We recommend using the Expect header because it may identify issues with the request based upon the headers alone instead of requiring you to wait until the entire binary package upload has completed.
+     * @param {File} [options._package] - The content of the Wasm binary package.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PackageResponse} and HTTP response
+     */
+    putPackageWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling putPackage");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling putPackage");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
-        'Expect': opts['expect']
+        'Expect': options['expect']
       };
       let formParams = {
-        'package': opts['_package']
+        'package': options['_package']
       };
 
       let authNames = ['token'];
@@ -96,8 +131,18 @@ export default class PackageApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    putPackage(service_id, version_id, opts) {
-      return this.putPackageWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Upload a Compute@Edge package associated with the specified service version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.expect] - We recommend using the Expect header because it may identify issues with the request based upon the headers alone instead of requiring you to wait until the entire binary package upload has completed.
+     * @param {File} [options._package] - The content of the Wasm binary package.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PackageResponse}
+     */
+    putPackage(options = {}) {
+      return this.putPackageWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

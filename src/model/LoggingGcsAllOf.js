@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The LoggingGcsAllOf model module.
+ * @module model/LoggingGcsAllOf
+ * @version 3.0.0-alpha1
+ */
 class LoggingGcsAllOf {
-    
+    /**
+     * Constructs a new <code>LoggingGcsAllOf</code>.
+     * @alias module:model/LoggingGcsAllOf
+     */
     constructor() { 
         
         LoggingGcsAllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingGcsAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingGcsAllOf} obj Optional instance to populate.
+     * @return {module:model/LoggingGcsAllOf} The populated <code>LoggingGcsAllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingGcsAllOf();
@@ -46,13 +63,22 @@ class LoggingGcsAllOf {
 
 }
 
-
+/**
+ * The name of the GCS bucket.
+ * @member {String} bucket_name
+ */
 LoggingGcsAllOf.prototype['bucket_name'] = undefined;
 
-
+/**
+ * @member {String} path
+ */
 LoggingGcsAllOf.prototype['path'] = undefined;
 
-
+/**
+ * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+ * @member {String} public_key
+ * @default 'null'
+ */
 LoggingGcsAllOf.prototype['public_key'] = 'null';
 
 

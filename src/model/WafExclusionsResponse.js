@@ -19,19 +19,38 @@ import PaginationLinks from './PaginationLinks';
 import PaginationMeta from './PaginationMeta';
 import WafExclusionsResponseAllOf from './WafExclusionsResponseAllOf';
 
-
+/**
+ * The WafExclusionsResponse model module.
+ * @module model/WafExclusionsResponse
+ * @version 3.0.0-alpha1
+ */
 class WafExclusionsResponse {
-    
+    /**
+     * Constructs a new <code>WafExclusionsResponse</code>.
+     * @alias module:model/WafExclusionsResponse
+     * @implements module:model/Pagination
+     * @implements module:model/WafExclusionsResponseAllOf
+     */
     constructor() { 
         Pagination.initialize(this);WafExclusionsResponseAllOf.initialize(this);
         WafExclusionsResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>WafExclusionsResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/WafExclusionsResponse} obj Optional instance to populate.
+     * @return {module:model/WafExclusionsResponse} The populated <code>WafExclusionsResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafExclusionsResponse();
@@ -57,28 +76,44 @@ class WafExclusionsResponse {
 
 }
 
-
+/**
+ * @member {module:model/PaginationLinks} links
+ */
 WafExclusionsResponse.prototype['links'] = undefined;
 
-
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
 WafExclusionsResponse.prototype['meta'] = undefined;
 
-
+/**
+ * @member {Array.<module:model/Data>} data
+ */
 WafExclusionsResponse.prototype['data'] = undefined;
 
-
+/**
+ * @member {Array.<module:model/AnyOfwafRulewafRuleRevision>} included
+ */
 WafExclusionsResponse.prototype['included'] = undefined;
 
 
 // Implement Pagination interface:
-
+/**
+ * @member {module:model/PaginationLinks} links
+ */
 Pagination.prototype['links'] = undefined;
-
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
 Pagination.prototype['meta'] = undefined;
 // Implement WafExclusionsResponseAllOf interface:
-
+/**
+ * @member {Array.<module:model/Data>} data
+ */
 WafExclusionsResponseAllOf.prototype['data'] = undefined;
-
+/**
+ * @member {Array.<module:model/AnyOfwafRulewafRuleRevision>} included
+ */
 WafExclusionsResponseAllOf.prototype['included'] = undefined;
 
 

@@ -15,19 +15,36 @@ import ApiClient from '../ApiClient';
 import WafRule from './WafRule';
 import WafTag from './WafTag';
 
-
+/**
+ * The WafTagsResponseAllOf model module.
+ * @module model/WafTagsResponseAllOf
+ * @version 3.0.0-alpha1
+ */
 class WafTagsResponseAllOf {
-    
+    /**
+     * Constructs a new <code>WafTagsResponseAllOf</code>.
+     * @alias module:model/WafTagsResponseAllOf
+     */
     constructor() { 
         
         WafTagsResponseAllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>WafTagsResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/WafTagsResponseAllOf} obj Optional instance to populate.
+     * @return {module:model/WafTagsResponseAllOf} The populated <code>WafTagsResponseAllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafTagsResponseAllOf();
@@ -45,10 +62,14 @@ class WafTagsResponseAllOf {
 
 }
 
-
+/**
+ * @member {Array.<module:model/WafTag>} data
+ */
 WafTagsResponseAllOf.prototype['data'] = undefined;
 
-
+/**
+ * @member {Array.<module:model/WafRule>} included
+ */
 WafTagsResponseAllOf.prototype['included'] = undefined;
 
 

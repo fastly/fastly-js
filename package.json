@@ -1,8 +1,8 @@
 {
-  "name": "fastly_api",
-  "version": "1.0.0",
-  "description": "Via_the_Fastly_API_you_can_perform_any_of_the_operations_that_are_possible_within_the_management_console__including_creating_services_domains_and_backends_configuring_rules_or_uploading_your_own_application_code_as_well_as_account_operations_such_as_user_administration_and_billing_reports_The_API_is_organized_into_collections_of_endpoints_that_allow_manipulation_of_objects_related_to_Fastly_services_and_accounts_For_the_most_accurate_and_up_to_date_API_reference_content_visit_our__Developer_Hub_https__developer_fastly_com_reference_api_",
-  "license": "Unlicense",
+  "name": "fastly",
+  "version": "3.0.0-alpha1",
+  "description": "A PHP client library for interacting with most facets of the Fastly API.",
+  "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src -d dist",
@@ -11,30 +11,33 @@
   "browser": {
     "fs": false
   },
+  "engines": {
+    "node": "^14.17.6"
+  },
   "dependencies": {
-    "@babel/cli": "^7.0.0",
-    "superagent": "^5.3.0"
+    "@babel/cli": "^7.15.4",
+    "superagent": "^6.1.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "@babel/plugin-proposal-class-properties": "^7.0.0",
-    "@babel/plugin-proposal-decorators": "^7.0.0",
-    "@babel/plugin-proposal-do-expressions": "^7.0.0",
-    "@babel/plugin-proposal-export-default-from": "^7.0.0",
-    "@babel/plugin-proposal-export-namespace-from": "^7.0.0",
-    "@babel/plugin-proposal-function-bind": "^7.0.0",
-    "@babel/plugin-proposal-function-sent": "^7.0.0",
-    "@babel/plugin-proposal-json-strings": "^7.0.0",
-    "@babel/plugin-proposal-logical-assignment-operators": "^7.0.0",
-    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
-    "@babel/plugin-proposal-numeric-separator": "^7.0.0",
-    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
-    "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
-    "@babel/plugin-proposal-throw-expressions": "^7.0.0",
-    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
-    "@babel/plugin-syntax-import-meta": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/register": "^7.0.0"
+    "@babel/core": "^7.15.5",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-proposal-decorators": "^7.15.4",
+    "@babel/plugin-proposal-do-expressions": "^7.14.5",
+    "@babel/plugin-proposal-export-default-from": "^7.14.5",
+    "@babel/plugin-proposal-export-namespace-from": "^7.14.5",
+    "@babel/plugin-proposal-function-bind": "^7.14.5",
+    "@babel/plugin-proposal-function-sent": "^7.14.5",
+    "@babel/plugin-proposal-json-strings": "^7.14.5",
+    "@babel/plugin-proposal-logical-assignment-operators": "^7.14.5",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.14.5",
+    "@babel/plugin-proposal-numeric-separator": "^7.14.5",
+    "@babel/plugin-proposal-optional-chaining": "^7.14.5",
+    "@babel/plugin-proposal-pipeline-operator": "^7.15.0",
+    "@babel/plugin-proposal-throw-expressions": "^7.14.5",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/plugin-syntax-import-meta": "^7.10.4",
+    "@babel/preset-env": "^7.15.4",
+    "@babel/register": "^7.15.3"
   },
   "files": [
     "dist"

@@ -15,19 +15,36 @@ import ApiClient from '../ApiClient';
 import AnyOfobjectobjectrelationshipTlsSubscriptions from './AnyOfobjectobjectrelationshipTlsSubscriptions';
 import TypeTlsDomain from './TypeTlsDomain';
 
-
+/**
+ * The TlsDomainData model module.
+ * @module model/TlsDomainData
+ * @version 3.0.0-alpha1
+ */
 class TlsDomainData {
-    
+    /**
+     * Constructs a new <code>TlsDomainData</code>.
+     * @alias module:model/TlsDomainData
+     */
     constructor() { 
         
         TlsDomainData.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>TlsDomainData</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/TlsDomainData} obj Optional instance to populate.
+     * @return {module:model/TlsDomainData} The populated <code>TlsDomainData</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsDomainData();
@@ -35,11 +52,11 @@ class TlsDomainData {
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeTlsDomain.constructFromObject(data['type']);
-            }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = ApiClient.convertToType(data['relationships'], AnyOfobjectobjectrelationshipTlsSubscriptions);
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeTlsDomain.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -48,14 +65,21 @@ class TlsDomainData {
 
 }
 
-
+/**
+ * The domain name.
+ * @member {String} id
+ */
 TlsDomainData.prototype['id'] = undefined;
 
-
-TlsDomainData.prototype['type'] = undefined;
-
-
+/**
+ * @member {module:model/AnyOfobjectobjectrelationshipTlsSubscriptions} relationships
+ */
 TlsDomainData.prototype['relationships'] = undefined;
+
+/**
+ * @member {module:model/TypeTlsDomain} type
+ */
+TlsDomainData.prototype['type'] = undefined;
 
 
 

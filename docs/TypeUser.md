@@ -1,4 +1,4 @@
-# FastlyApi.TypeUser
+# Fastly.TypeUser
 
 ## Enum
 

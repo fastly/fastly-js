@@ -15,42 +15,66 @@
 import ApiClient from "../ApiClient";
 import ServerResponse from '../model/ServerResponse';
 
-
+/**
+* Server service.
+* @module api/ServerApi
+* @version 3.0.0-alpha1
+*/
 export default class ServerApi {
 
-    
+    /**
+    * Constructs a new ServerApi. 
+    * @alias module:api/ServerApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createPoolServerWithHttpInfo(service_id, pool_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Creates a single server for a particular service and pool.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.pool_id
+     * @param {String} [options.address] - A hostname, IPv4, or IPv6 address for the server. Required.
+     * @param {String} [options.comment] - A freeform descriptive note.
+     * @param {Boolean} [options.disabled=false] - Allows servers to be enabled and disabled in a pool.
+     * @param {Number} [options.max_conn=0] - Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
+     * @param {String} [options.override_host='null'] - The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
+     * @param {Number} [options.port=80] - Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
+     * @param {Number} [options.weight=100] - Weight (`1-100`) used to load balance this server against others.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServerResponse} and HTTP response
+     */
+    createPoolServerWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createPoolServer");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'pool_id' is set
-      if (pool_id === undefined || pool_id === null) {
-        throw new Error("Missing the required parameter 'pool_id' when calling createPoolServer");
+      // Verify the required parameter 'pool_id' is set.
+      if (options['pool_id'] === undefined || options['pool_id'] === null) {
+        throw new Error("Missing the required parameter 'pool_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'pool_id': pool_id
+        'service_id': options['service_id'],
+        'pool_id': options['pool_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'weight': opts['weight'],
-        'max_conn': opts['max_conn'],
-        'port': opts['port'],
-        'address': opts['address'],
-        'comment': opts['comment'],
-        'disabled': opts['disabled'],
-        'override_host': opts['override_host']
+        'address': options['address'],
+        'comment': options['comment'],
+        'disabled': options['disabled'],
+        'max_conn': options['max_conn'],
+        'override_host': options['override_host'],
+        'port': options['port'],
+        'weight': options['weight']
       };
 
       let authNames = ['token'];
@@ -63,31 +87,55 @@ export default class ServerApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createPoolServer(service_id, pool_id, opts) {
-      return this.createPoolServerWithHttpInfo(service_id, pool_id, opts)
+
+    /**
+     * Creates a single server for a particular service and pool.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.pool_id
+     * @param {String} [options.address] - A hostname, IPv4, or IPv6 address for the server. Required.
+     * @param {String} [options.comment] - A freeform descriptive note.
+     * @param {Boolean} [options.disabled=false] - Allows servers to be enabled and disabled in a pool.
+     * @param {Number} [options.max_conn=0] - Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
+     * @param {String} [options.override_host='null'] - The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
+     * @param {Number} [options.port=80] - Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
+     * @param {Number} [options.weight=100] - Weight (`1-100`) used to load balance this server against others.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServerResponse}
+     */
+    createPoolServer(options = {}) {
+      return this.createPoolServerWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deletePoolServerWithHttpInfo(service_id, pool_id, server_id) {
+
+    /**
+     * Deletes a single server for a particular service and pool.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.pool_id
+     * @param {String} options.server_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deletePoolServerWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deletePoolServer");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'pool_id' is set
-      if (pool_id === undefined || pool_id === null) {
-        throw new Error("Missing the required parameter 'pool_id' when calling deletePoolServer");
+      // Verify the required parameter 'pool_id' is set.
+      if (options['pool_id'] === undefined || options['pool_id'] === null) {
+        throw new Error("Missing the required parameter 'pool_id'.");
       }
-      // verify the required parameter 'server_id' is set
-      if (server_id === undefined || server_id === null) {
-        throw new Error("Missing the required parameter 'server_id' when calling deletePoolServer");
+      // Verify the required parameter 'server_id' is set.
+      if (options['server_id'] === undefined || options['server_id'] === null) {
+        throw new Error("Missing the required parameter 'server_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'pool_id': pool_id,
-        'server_id': server_id
+        'service_id': options['service_id'],
+        'pool_id': options['pool_id'],
+        'server_id': options['server_id']
       };
       let queryParams = {
       };
@@ -106,31 +154,49 @@ export default class ServerApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deletePoolServer(service_id, pool_id, server_id) {
-      return this.deletePoolServerWithHttpInfo(service_id, pool_id, server_id)
+
+    /**
+     * Deletes a single server for a particular service and pool.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.pool_id
+     * @param {String} options.server_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deletePoolServer(options = {}) {
+      return this.deletePoolServerWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getPoolServerWithHttpInfo(service_id, pool_id, server_id) {
+
+    /**
+     * Gets a single server for a particular service and pool.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.pool_id
+     * @param {String} options.server_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServerResponse} and HTTP response
+     */
+    getPoolServerWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getPoolServer");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'pool_id' is set
-      if (pool_id === undefined || pool_id === null) {
-        throw new Error("Missing the required parameter 'pool_id' when calling getPoolServer");
+      // Verify the required parameter 'pool_id' is set.
+      if (options['pool_id'] === undefined || options['pool_id'] === null) {
+        throw new Error("Missing the required parameter 'pool_id'.");
       }
-      // verify the required parameter 'server_id' is set
-      if (server_id === undefined || server_id === null) {
-        throw new Error("Missing the required parameter 'server_id' when calling getPoolServer");
+      // Verify the required parameter 'server_id' is set.
+      if (options['server_id'] === undefined || options['server_id'] === null) {
+        throw new Error("Missing the required parameter 'server_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'pool_id': pool_id,
-        'server_id': server_id
+        'service_id': options['service_id'],
+        'pool_id': options['pool_id'],
+        'server_id': options['server_id']
       };
       let queryParams = {
       };
@@ -149,26 +215,43 @@ export default class ServerApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getPoolServer(service_id, pool_id, server_id) {
-      return this.getPoolServerWithHttpInfo(service_id, pool_id, server_id)
+
+    /**
+     * Gets a single server for a particular service and pool.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.pool_id
+     * @param {String} options.server_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServerResponse}
+     */
+    getPoolServer(options = {}) {
+      return this.getPoolServerWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listPoolServersWithHttpInfo(service_id, pool_id) {
+
+    /**
+     * Lists all servers for a particular service and pool.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.pool_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ServerResponse>} and HTTP response
+     */
+    listPoolServersWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listPoolServers");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'pool_id' is set
-      if (pool_id === undefined || pool_id === null) {
-        throw new Error("Missing the required parameter 'pool_id' when calling listPoolServers");
+      // Verify the required parameter 'pool_id' is set.
+      if (options['pool_id'] === undefined || options['pool_id'] === null) {
+        throw new Error("Missing the required parameter 'pool_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'pool_id': pool_id
+        'service_id': options['service_id'],
+        'pool_id': options['pool_id']
       };
       let queryParams = {
       };
@@ -187,45 +270,68 @@ export default class ServerApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listPoolServers(service_id, pool_id) {
-      return this.listPoolServersWithHttpInfo(service_id, pool_id)
+
+    /**
+     * Lists all servers for a particular service and pool.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.pool_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ServerResponse>}
+     */
+    listPoolServers(options = {}) {
+      return this.listPoolServersWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updatePoolServerWithHttpInfo(service_id, pool_id, server_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Updates a single server for a particular service and pool.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.pool_id
+     * @param {String} options.server_id
+     * @param {String} [options.address] - A hostname, IPv4, or IPv6 address for the server. Required.
+     * @param {String} [options.comment] - A freeform descriptive note.
+     * @param {Boolean} [options.disabled=false] - Allows servers to be enabled and disabled in a pool.
+     * @param {Number} [options.max_conn=0] - Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
+     * @param {String} [options.override_host='null'] - The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
+     * @param {Number} [options.port=80] - Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
+     * @param {Number} [options.weight=100] - Weight (`1-100`) used to load balance this server against others.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServerResponse} and HTTP response
+     */
+    updatePoolServerWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updatePoolServer");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'pool_id' is set
-      if (pool_id === undefined || pool_id === null) {
-        throw new Error("Missing the required parameter 'pool_id' when calling updatePoolServer");
+      // Verify the required parameter 'pool_id' is set.
+      if (options['pool_id'] === undefined || options['pool_id'] === null) {
+        throw new Error("Missing the required parameter 'pool_id'.");
       }
-      // verify the required parameter 'server_id' is set
-      if (server_id === undefined || server_id === null) {
-        throw new Error("Missing the required parameter 'server_id' when calling updatePoolServer");
+      // Verify the required parameter 'server_id' is set.
+      if (options['server_id'] === undefined || options['server_id'] === null) {
+        throw new Error("Missing the required parameter 'server_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'pool_id': pool_id,
-        'server_id': server_id
+        'service_id': options['service_id'],
+        'pool_id': options['pool_id'],
+        'server_id': options['server_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'weight': opts['weight'],
-        'max_conn': opts['max_conn'],
-        'port': opts['port'],
-        'address': opts['address'],
-        'comment': opts['comment'],
-        'disabled': opts['disabled'],
-        'override_host': opts['override_host']
+        'address': options['address'],
+        'comment': options['comment'],
+        'disabled': options['disabled'],
+        'max_conn': options['max_conn'],
+        'override_host': options['override_host'],
+        'port': options['port'],
+        'weight': options['weight']
       };
 
       let authNames = ['token'];
@@ -238,8 +344,24 @@ export default class ServerApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updatePoolServer(service_id, pool_id, server_id, opts) {
-      return this.updatePoolServerWithHttpInfo(service_id, pool_id, server_id, opts)
+
+    /**
+     * Updates a single server for a particular service and pool.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.pool_id
+     * @param {String} options.server_id
+     * @param {String} [options.address] - A hostname, IPv4, or IPv6 address for the server. Required.
+     * @param {String} [options.comment] - A freeform descriptive note.
+     * @param {Boolean} [options.disabled=false] - Allows servers to be enabled and disabled in a pool.
+     * @param {Number} [options.max_conn=0] - Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
+     * @param {String} [options.override_host='null'] - The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
+     * @param {Number} [options.port=80] - Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
+     * @param {Number} [options.weight=100] - Weight (`1-100`) used to load balance this server against others.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServerResponse}
+     */
+    updatePoolServer(options = {}) {
+      return this.updatePoolServerWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

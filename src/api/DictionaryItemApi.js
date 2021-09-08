@@ -14,31 +14,49 @@
 
 import ApiClient from "../ApiClient";
 import DictionaryItemResponse from '../model/DictionaryItemResponse';
-import InlineObject from '../model/InlineObject';
+import InlineObject4 from '../model/InlineObject4';
 
-
+/**
+* DictionaryItem service.
+* @module api/DictionaryItemApi
+* @version 3.0.0-alpha1
+*/
 export default class DictionaryItemApi {
 
-    
+    /**
+    * Constructs a new DictionaryItemApi. 
+    * @alias module:api/DictionaryItemApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    bulkUpdateDictionaryItemWithHttpInfo(service_id, dictionary_id, opts) {
-      opts = opts || {};
-      let postBody = opts['inline_object'];
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling bulkUpdateDictionaryItem");
+
+    /**
+     * Update DictionaryItem in batch for given service, dictionary ID and key/value pairs for items.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.dictionary_id
+     * @param {module:model/InlineObject4} [options.inline_object4]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    bulkUpdateDictionaryItemWithHttpInfo(options = {}) {
+      let postBody = options['inline_object4'];
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'dictionary_id' is set
-      if (dictionary_id === undefined || dictionary_id === null) {
-        throw new Error("Missing the required parameter 'dictionary_id' when calling bulkUpdateDictionaryItem");
+      // Verify the required parameter 'dictionary_id' is set.
+      if (options['dictionary_id'] === undefined || options['dictionary_id'] === null) {
+        throw new Error("Missing the required parameter 'dictionary_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'dictionary_id': dictionary_id
+        'service_id': options['service_id'],
+        'dictionary_id': options['dictionary_id']
       };
       let queryParams = {
       };
@@ -57,35 +75,53 @@ export default class DictionaryItemApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    bulkUpdateDictionaryItem(service_id, dictionary_id, opts) {
-      return this.bulkUpdateDictionaryItemWithHttpInfo(service_id, dictionary_id, opts)
+
+    /**
+     * Update DictionaryItem in batch for given service, dictionary ID and key/value pairs for items.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.dictionary_id
+     * @param {module:model/InlineObject4} [options.inline_object4]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    bulkUpdateDictionaryItem(options = {}) {
+      return this.bulkUpdateDictionaryItemWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    createDictionaryItemWithHttpInfo(service_id, dictionary_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Create DictionaryItem given service, dictionary ID, item key, and item value.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.dictionary_id
+     * @param {String} [options.item_key] - Item key, maximum 256 characters.
+     * @param {String} [options.item_value] - Item value, maximum 8000 characters.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryItemResponse} and HTTP response
+     */
+    createDictionaryItemWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createDictionaryItem");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'dictionary_id' is set
-      if (dictionary_id === undefined || dictionary_id === null) {
-        throw new Error("Missing the required parameter 'dictionary_id' when calling createDictionaryItem");
+      // Verify the required parameter 'dictionary_id' is set.
+      if (options['dictionary_id'] === undefined || options['dictionary_id'] === null) {
+        throw new Error("Missing the required parameter 'dictionary_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'dictionary_id': dictionary_id
+        'service_id': options['service_id'],
+        'dictionary_id': options['dictionary_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'item_key': opts['item_key'],
-        'item_value': opts['item_value']
+        'item_key': options['item_key'],
+        'item_value': options['item_value']
       };
 
       let authNames = ['token'];
@@ -98,31 +134,50 @@ export default class DictionaryItemApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createDictionaryItem(service_id, dictionary_id, opts) {
-      return this.createDictionaryItemWithHttpInfo(service_id, dictionary_id, opts)
+
+    /**
+     * Create DictionaryItem given service, dictionary ID, item key, and item value.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.dictionary_id
+     * @param {String} [options.item_key] - Item key, maximum 256 characters.
+     * @param {String} [options.item_value] - Item value, maximum 8000 characters.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryItemResponse}
+     */
+    createDictionaryItem(options = {}) {
+      return this.createDictionaryItemWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteDictionaryItemWithHttpInfo(service_id, dictionary_id, dictionary_item_key) {
+
+    /**
+     * Delete DictionaryItem given service, dictionary ID, and item key.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.dictionary_id
+     * @param {String} options.dictionary_item_key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteDictionaryItemWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteDictionaryItem");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'dictionary_id' is set
-      if (dictionary_id === undefined || dictionary_id === null) {
-        throw new Error("Missing the required parameter 'dictionary_id' when calling deleteDictionaryItem");
+      // Verify the required parameter 'dictionary_id' is set.
+      if (options['dictionary_id'] === undefined || options['dictionary_id'] === null) {
+        throw new Error("Missing the required parameter 'dictionary_id'.");
       }
-      // verify the required parameter 'dictionary_item_key' is set
-      if (dictionary_item_key === undefined || dictionary_item_key === null) {
-        throw new Error("Missing the required parameter 'dictionary_item_key' when calling deleteDictionaryItem");
+      // Verify the required parameter 'dictionary_item_key' is set.
+      if (options['dictionary_item_key'] === undefined || options['dictionary_item_key'] === null) {
+        throw new Error("Missing the required parameter 'dictionary_item_key'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'dictionary_id': dictionary_id,
-        'dictionary_item_key': dictionary_item_key
+        'service_id': options['service_id'],
+        'dictionary_id': options['dictionary_id'],
+        'dictionary_item_key': options['dictionary_item_key']
       };
       let queryParams = {
       };
@@ -141,31 +196,49 @@ export default class DictionaryItemApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteDictionaryItem(service_id, dictionary_id, dictionary_item_key) {
-      return this.deleteDictionaryItemWithHttpInfo(service_id, dictionary_id, dictionary_item_key)
+
+    /**
+     * Delete DictionaryItem given service, dictionary ID, and item key.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.dictionary_id
+     * @param {String} options.dictionary_item_key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteDictionaryItem(options = {}) {
+      return this.deleteDictionaryItemWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getDictionaryItemWithHttpInfo(service_id, dictionary_id, dictionary_item_key) {
+
+    /**
+     * Retrieve a single DictionaryItem given service, dictionary ID and item key.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.dictionary_id
+     * @param {String} options.dictionary_item_key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryItemResponse} and HTTP response
+     */
+    getDictionaryItemWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getDictionaryItem");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'dictionary_id' is set
-      if (dictionary_id === undefined || dictionary_id === null) {
-        throw new Error("Missing the required parameter 'dictionary_id' when calling getDictionaryItem");
+      // Verify the required parameter 'dictionary_id' is set.
+      if (options['dictionary_id'] === undefined || options['dictionary_id'] === null) {
+        throw new Error("Missing the required parameter 'dictionary_id'.");
       }
-      // verify the required parameter 'dictionary_item_key' is set
-      if (dictionary_item_key === undefined || dictionary_item_key === null) {
-        throw new Error("Missing the required parameter 'dictionary_item_key' when calling getDictionaryItem");
+      // Verify the required parameter 'dictionary_item_key' is set.
+      if (options['dictionary_item_key'] === undefined || options['dictionary_item_key'] === null) {
+        throw new Error("Missing the required parameter 'dictionary_item_key'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'dictionary_id': dictionary_id,
-        'dictionary_item_key': dictionary_item_key
+        'service_id': options['service_id'],
+        'dictionary_id': options['dictionary_id'],
+        'dictionary_item_key': options['dictionary_item_key']
       };
       let queryParams = {
       };
@@ -184,33 +257,53 @@ export default class DictionaryItemApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getDictionaryItem(service_id, dictionary_id, dictionary_item_key) {
-      return this.getDictionaryItemWithHttpInfo(service_id, dictionary_id, dictionary_item_key)
+
+    /**
+     * Retrieve a single DictionaryItem given service, dictionary ID and item key.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.dictionary_id
+     * @param {String} options.dictionary_item_key
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryItemResponse}
+     */
+    getDictionaryItem(options = {}) {
+      return this.getDictionaryItemWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listDictionaryItemsWithHttpInfo(service_id, dictionary_id, opts) {
-      opts = opts || {};
+
+    /**
+     * List of DictionaryItems given service and dictionary ID.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.dictionary_id
+     * @param {Number} [options.page] - Current page.
+     * @param {Number} [options.per_page=20] - Number of records per page.
+     * @param {String} [options.sort='created'] - Field on which to sort.
+     * @param {module:model/String} [options.direction='ascend'] - Direction in which to sort results.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DictionaryItemResponse>} and HTTP response
+     */
+    listDictionaryItemsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listDictionaryItems");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'dictionary_id' is set
-      if (dictionary_id === undefined || dictionary_id === null) {
-        throw new Error("Missing the required parameter 'dictionary_id' when calling listDictionaryItems");
+      // Verify the required parameter 'dictionary_id' is set.
+      if (options['dictionary_id'] === undefined || options['dictionary_id'] === null) {
+        throw new Error("Missing the required parameter 'dictionary_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'dictionary_id': dictionary_id
+        'service_id': options['service_id'],
+        'dictionary_id': options['dictionary_id']
       };
       let queryParams = {
-        'page': opts['page'],
-        'per_page': opts['per_page'],
-        'sort': opts['sort'],
-        'direction': opts['direction']
+        'page': options['page'],
+        'per_page': options['per_page'],
+        'sort': options['sort'],
+        'direction': options['direction']
       };
       let headerParams = {
       };
@@ -227,40 +320,62 @@ export default class DictionaryItemApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listDictionaryItems(service_id, dictionary_id, opts) {
-      return this.listDictionaryItemsWithHttpInfo(service_id, dictionary_id, opts)
+
+    /**
+     * List of DictionaryItems given service and dictionary ID.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.dictionary_id
+     * @param {Number} [options.page] - Current page.
+     * @param {Number} [options.per_page=20] - Number of records per page.
+     * @param {String} [options.sort='created'] - Field on which to sort.
+     * @param {module:model/String} [options.direction='ascend'] - Direction in which to sort results.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DictionaryItemResponse>}
+     */
+    listDictionaryItems(options = {}) {
+      return this.listDictionaryItemsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateDictionaryItemWithHttpInfo(service_id, dictionary_id, dictionary_item_key, opts) {
-      opts = opts || {};
+
+    /**
+     * Update DictionaryItem given service, dictionary ID, item key, and item value.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.dictionary_id
+     * @param {String} options.dictionary_item_key
+     * @param {String} [options.item_key] - Item key, maximum 256 characters.
+     * @param {String} [options.item_value] - Item value, maximum 8000 characters.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryItemResponse} and HTTP response
+     */
+    updateDictionaryItemWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateDictionaryItem");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'dictionary_id' is set
-      if (dictionary_id === undefined || dictionary_id === null) {
-        throw new Error("Missing the required parameter 'dictionary_id' when calling updateDictionaryItem");
+      // Verify the required parameter 'dictionary_id' is set.
+      if (options['dictionary_id'] === undefined || options['dictionary_id'] === null) {
+        throw new Error("Missing the required parameter 'dictionary_id'.");
       }
-      // verify the required parameter 'dictionary_item_key' is set
-      if (dictionary_item_key === undefined || dictionary_item_key === null) {
-        throw new Error("Missing the required parameter 'dictionary_item_key' when calling updateDictionaryItem");
+      // Verify the required parameter 'dictionary_item_key' is set.
+      if (options['dictionary_item_key'] === undefined || options['dictionary_item_key'] === null) {
+        throw new Error("Missing the required parameter 'dictionary_item_key'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'dictionary_id': dictionary_id,
-        'dictionary_item_key': dictionary_item_key
+        'service_id': options['service_id'],
+        'dictionary_id': options['dictionary_id'],
+        'dictionary_item_key': options['dictionary_item_key']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'item_key': opts['item_key'],
-        'item_value': opts['item_value']
+        'item_key': options['item_key'],
+        'item_value': options['item_value']
       };
 
       let authNames = ['token'];
@@ -273,40 +388,61 @@ export default class DictionaryItemApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateDictionaryItem(service_id, dictionary_id, dictionary_item_key, opts) {
-      return this.updateDictionaryItemWithHttpInfo(service_id, dictionary_id, dictionary_item_key, opts)
+
+    /**
+     * Update DictionaryItem given service, dictionary ID, item key, and item value.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.dictionary_id
+     * @param {String} options.dictionary_item_key
+     * @param {String} [options.item_key] - Item key, maximum 256 characters.
+     * @param {String} [options.item_value] - Item value, maximum 8000 characters.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryItemResponse}
+     */
+    updateDictionaryItem(options = {}) {
+      return this.updateDictionaryItemWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    upsertDictionaryItemWithHttpInfo(service_id, dictionary_id, dictionary_item_key, opts) {
-      opts = opts || {};
+
+    /**
+     * Upsert DictionaryItem given service, dictionary ID, item key, and item value.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.dictionary_id
+     * @param {String} options.dictionary_item_key
+     * @param {String} [options.item_key] - Item key, maximum 256 characters.
+     * @param {String} [options.item_value] - Item value, maximum 8000 characters.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryItemResponse} and HTTP response
+     */
+    upsertDictionaryItemWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling upsertDictionaryItem");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'dictionary_id' is set
-      if (dictionary_id === undefined || dictionary_id === null) {
-        throw new Error("Missing the required parameter 'dictionary_id' when calling upsertDictionaryItem");
+      // Verify the required parameter 'dictionary_id' is set.
+      if (options['dictionary_id'] === undefined || options['dictionary_id'] === null) {
+        throw new Error("Missing the required parameter 'dictionary_id'.");
       }
-      // verify the required parameter 'dictionary_item_key' is set
-      if (dictionary_item_key === undefined || dictionary_item_key === null) {
-        throw new Error("Missing the required parameter 'dictionary_item_key' when calling upsertDictionaryItem");
+      // Verify the required parameter 'dictionary_item_key' is set.
+      if (options['dictionary_item_key'] === undefined || options['dictionary_item_key'] === null) {
+        throw new Error("Missing the required parameter 'dictionary_item_key'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'dictionary_id': dictionary_id,
-        'dictionary_item_key': dictionary_item_key
+        'service_id': options['service_id'],
+        'dictionary_id': options['dictionary_id'],
+        'dictionary_item_key': options['dictionary_item_key']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'item_key': opts['item_key'],
-        'item_value': opts['item_value']
+        'item_key': options['item_key'],
+        'item_value': options['item_value']
       };
 
       let authNames = ['token'];
@@ -319,8 +455,19 @@ export default class DictionaryItemApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    upsertDictionaryItem(service_id, dictionary_id, dictionary_item_key, opts) {
-      return this.upsertDictionaryItemWithHttpInfo(service_id, dictionary_id, dictionary_item_key, opts)
+
+    /**
+     * Upsert DictionaryItem given service, dictionary ID, item key, and item value.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} options.dictionary_id
+     * @param {String} options.dictionary_item_key
+     * @param {String} [options.item_key] - Item key, maximum 256 characters.
+     * @param {String} [options.item_value] - Item value, maximum 8000 characters.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryItemResponse}
+     */
+    upsertDictionaryItem(options = {}) {
+      return this.upsertDictionaryItemWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

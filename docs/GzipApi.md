@@ -1,7 +1,9 @@
-# FastlyApi.GzipApi
+# Fastly.GzipApi
 
 
-
+```javascript
+const apiInstance = new Fastly.GzipApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -16,33 +18,36 @@ Method | Fastly API endpoint | Description
 
 ## `createGzipConfig`
 
-> createGzipConfig(service_id, version_id, opts)
-
-Create a gzip configuration
+```javascript
+createGzipConfig({ service_id, version_id, [cache_condition], , [content_types], , [extensions], , [name] })
+```
 
 Create a named gzip configuration on a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.GzipApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let opts = {
-  'cache_condition': "cache_condition_example", // String | Name of the cache condition controlling when this configuration applies.
-  'content_types': "content_types_example", // String | Space-separated list of content types to compress. If you omit this field a default list will be used.
-  'extensions': "extensions_example", // String | Space-separated list of file extensions to compress. If you omit this field a default list will be used.
-  'name': "name_example" // String | Name of the gzip configuration.
-};
-apiInstance.createGzipConfig(service_id, version_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required
+  cache_condition: "cache_condition_example",
 
+  content_types: "content_types_example",
+
+  extensions: "extensions_example",
+
+  name: "name_example",
+};
+
+apiInstance.createGzipConfig(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -60,28 +65,28 @@ Name | Type | Description  | Notes
 
 ## `deleteGzipConfig`
 
-> deleteGzipConfig(service_id, version_id, gzip_name)
-
-Delete a gzip configuration
+```javascript
+deleteGzipConfig({ service_id, version_id, gzip_name })
+```
 
 Delete a named gzip configuration on a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.GzipApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let gzip_name = "gzip_name_example"; // String | 
-apiInstance.deleteGzipConfig(service_id, version_id, gzip_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  gzip_name: "gzip_name_example", // required};
 
+apiInstance.deleteGzipConfig(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -96,28 +101,28 @@ Name | Type | Description  | Notes
 
 ## `getGzipConfigs`
 
-> getGzipConfigs(service_id, version_id, gzip_name)
-
-Get a gzip configuration
+```javascript
+getGzipConfigs({ service_id, version_id, gzip_name })
+```
 
 Get the gzip configuration for a particular service, version, and name.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.GzipApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let gzip_name = "gzip_name_example"; // String | 
-apiInstance.getGzipConfigs(service_id, version_id, gzip_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  gzip_name: "gzip_name_example", // required};
 
+apiInstance.getGzipConfigs(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -132,27 +137,28 @@ Name | Type | Description  | Notes
 
 ## `listGzipConfigs`
 
-> listGzipConfigs(service_id, version_id)
-
-List gzip configurations
+```javascript
+listGzipConfigs({ service_id, version_id })
+```
 
 List all gzip configurations for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.GzipApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.listGzipConfigs(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.listGzipConfigs(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -166,34 +172,36 @@ Name | Type | Description  | Notes
 
 ## `updateGzipConfig`
 
-> updateGzipConfig(service_id, version_id, gzip_name, opts)
-
-Update a gzip configuration
+```javascript
+updateGzipConfig({ service_id, version_id, gzip_name, [cache_condition], , [content_types], , [extensions], , [name] })
+```
 
 Update a named gzip configuration on a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.GzipApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let gzip_name = "gzip_name_example"; // String | 
-let opts = {
-  'cache_condition': "cache_condition_example", // String | Name of the cache condition controlling when this configuration applies.
-  'content_types': "content_types_example", // String | Space-separated list of content types to compress. If you omit this field a default list will be used.
-  'extensions': "extensions_example", // String | Space-separated list of file extensions to compress. If you omit this field a default list will be used.
-  'name': "name_example" // String | Name of the gzip configuration.
-};
-apiInstance.updateGzipConfig(service_id, version_id, gzip_name, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  gzip_name: "gzip_name_example", // required
+  cache_condition: "cache_condition_example",
 
+  content_types: "content_types_example",
+
+  extensions: "extensions_example",
+
+  name: "name_example",
+};
+
+apiInstance.updateGzipConfig(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

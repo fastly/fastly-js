@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import EventResponseData from './EventResponseData';
 
-
+/**
+ * The EventResponse model module.
+ * @module model/EventResponse
+ * @version 3.0.0-alpha1
+ */
 class EventResponse {
-    
+    /**
+     * Constructs a new <code>EventResponse</code>.
+     * @alias module:model/EventResponse
+     */
     constructor() { 
         
         EventResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>EventResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/EventResponse} obj Optional instance to populate.
+     * @return {module:model/EventResponse} The populated <code>EventResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EventResponse();
@@ -41,7 +58,9 @@ class EventResponse {
 
 }
 
-
+/**
+ * @member {module:model/EventResponseData} data
+ */
 EventResponse.prototype['data'] = undefined;
 
 

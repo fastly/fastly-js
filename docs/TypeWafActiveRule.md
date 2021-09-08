@@ -1,4 +1,4 @@
-# FastlyApi.TypeWafActiveRule
+# Fastly.TypeWafActiveRule
 
 ## Enum
 

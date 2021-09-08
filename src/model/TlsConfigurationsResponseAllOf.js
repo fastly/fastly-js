@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import Data from './Data';
 
-
+/**
+ * The TlsConfigurationsResponseAllOf model module.
+ * @module model/TlsConfigurationsResponseAllOf
+ * @version 3.0.0-alpha1
+ */
 class TlsConfigurationsResponseAllOf {
-    
+    /**
+     * Constructs a new <code>TlsConfigurationsResponseAllOf</code>.
+     * @alias module:model/TlsConfigurationsResponseAllOf
+     */
     constructor() { 
         
         TlsConfigurationsResponseAllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>TlsConfigurationsResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/TlsConfigurationsResponseAllOf} obj Optional instance to populate.
+     * @return {module:model/TlsConfigurationsResponseAllOf} The populated <code>TlsConfigurationsResponseAllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsConfigurationsResponseAllOf();
@@ -41,7 +58,9 @@ class TlsConfigurationsResponseAllOf {
 
 }
 
-
+/**
+ * @member {Array.<module:model/Data>} data
+ */
 TlsConfigurationsResponseAllOf.prototype['data'] = undefined;
 
 

@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import ServiceInvitationData from './ServiceInvitationData';
 
-
+/**
+ * The ServiceInvitation model module.
+ * @module model/ServiceInvitation
+ * @version 3.0.0-alpha1
+ */
 class ServiceInvitation {
-    
+    /**
+     * Constructs a new <code>ServiceInvitation</code>.
+     * @alias module:model/ServiceInvitation
+     */
     constructor() { 
         
         ServiceInvitation.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>ServiceInvitation</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/ServiceInvitation} obj Optional instance to populate.
+     * @return {module:model/ServiceInvitation} The populated <code>ServiceInvitation</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ServiceInvitation();
@@ -41,7 +58,9 @@ class ServiceInvitation {
 
 }
 
-
+/**
+ * @member {module:model/ServiceInvitationData} data
+ */
 ServiceInvitation.prototype['data'] = undefined;
 
 

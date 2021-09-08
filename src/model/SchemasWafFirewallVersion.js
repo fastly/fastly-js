@@ -12,27 +12,44 @@
  */
 
 import ApiClient from '../ApiClient';
-import WafFirewallVersionData from './WafFirewallVersionData';
+import SchemasWafFirewallVersionData from './SchemasWafFirewallVersionData';
 
-
+/**
+ * The SchemasWafFirewallVersion model module.
+ * @module model/SchemasWafFirewallVersion
+ * @version 3.0.0-alpha1
+ */
 class SchemasWafFirewallVersion {
-    
+    /**
+     * Constructs a new <code>SchemasWafFirewallVersion</code>.
+     * @alias module:model/SchemasWafFirewallVersion
+     */
     constructor() { 
         
         SchemasWafFirewallVersion.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>SchemasWafFirewallVersion</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/SchemasWafFirewallVersion} obj Optional instance to populate.
+     * @return {module:model/SchemasWafFirewallVersion} The populated <code>SchemasWafFirewallVersion</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SchemasWafFirewallVersion();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = WafFirewallVersionData.constructFromObject(data['data']);
+                obj['data'] = SchemasWafFirewallVersionData.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -41,7 +58,9 @@ class SchemasWafFirewallVersion {
 
 }
 
-
+/**
+ * @member {module:model/SchemasWafFirewallVersionData} data
+ */
 SchemasWafFirewallVersion.prototype['data'] = undefined;
 
 

@@ -14,28 +14,45 @@
 import ApiClient from '../ApiClient';
 import TypeTlsActivation from './TypeTlsActivation';
 
-
+/**
+ * The RelationshipMemberTlsActivation model module.
+ * @module model/RelationshipMemberTlsActivation
+ * @version 3.0.0-alpha1
+ */
 class RelationshipMemberTlsActivation {
-    
+    /**
+     * Constructs a new <code>RelationshipMemberTlsActivation</code>.
+     * @alias module:model/RelationshipMemberTlsActivation
+     */
     constructor() { 
         
         RelationshipMemberTlsActivation.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipMemberTlsActivation</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipMemberTlsActivation} obj Optional instance to populate.
+     * @return {module:model/RelationshipMemberTlsActivation} The populated <code>RelationshipMemberTlsActivation</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipMemberTlsActivation();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeTlsActivation.constructFromObject(data['type']);
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeTlsActivation.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -44,11 +61,16 @@ class RelationshipMemberTlsActivation {
 
 }
 
-
-RelationshipMemberTlsActivation.prototype['type'] = undefined;
-
-
+/**
+ * Alphanumeric string identifying a TLS activation.
+ * @member {String} id
+ */
 RelationshipMemberTlsActivation.prototype['id'] = undefined;
+
+/**
+ * @member {module:model/TypeTlsActivation} type
+ */
+RelationshipMemberTlsActivation.prototype['type'] = undefined;
 
 
 

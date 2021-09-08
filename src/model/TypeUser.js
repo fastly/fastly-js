@@ -12,15 +12,26 @@
  */
 
 import ApiClient from '../ApiClient';
-
+/**
+* Enum class TypeUser.
+* @enum {}
+* @readonly
+*/
 export default class TypeUser {
     
-        
+        /**
+         * value: "user"
+         * @const
+         */
         "user" = "user";
 
     
 
-    
+    /**
+    * Returns a <code>TypeUser</code> enum value from a Javascript object name.
+    * @param {Object} data The plain JavaScript object containing the name of the enum value.
+    * @return {module:model/TypeUser} The enum <code>TypeUser</code> value.
+    */
     static constructFromObject(object) {
         return object;
     }

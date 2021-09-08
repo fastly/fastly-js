@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The SnippetResponseAllOf model module.
+ * @module model/SnippetResponseAllOf
+ * @version 3.0.0-alpha1
+ */
 class SnippetResponseAllOf {
-    
+    /**
+     * Constructs a new <code>SnippetResponseAllOf</code>.
+     * @alias module:model/SnippetResponseAllOf
+     */
     constructor() { 
         
         SnippetResponseAllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>SnippetResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/SnippetResponseAllOf} obj Optional instance to populate.
+     * @return {module:model/SnippetResponseAllOf} The populated <code>SnippetResponseAllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SnippetResponseAllOf();
@@ -40,7 +57,10 @@ class SnippetResponseAllOf {
 
 }
 
-
+/**
+ * Alphanumeric string identifying a VCL Snippet.
+ * @member {String} id
+ */
 SnippetResponseAllOf.prototype['id'] = undefined;
 
 

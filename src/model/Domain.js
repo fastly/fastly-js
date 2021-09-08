@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The Domain model module.
+ * @module model/Domain
+ * @version 3.0.0-alpha1
+ */
 class Domain {
-    
+    /**
+     * Constructs a new <code>Domain</code>.
+     * @alias module:model/Domain
+     */
     constructor() { 
         
         Domain.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>Domain</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/Domain} obj Optional instance to populate.
+     * @return {module:model/Domain} The populated <code>Domain</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new Domain();
@@ -43,10 +60,16 @@ class Domain {
 
 }
 
-
+/**
+ * A freeform descriptive note.
+ * @member {String} comment
+ */
 Domain.prototype['comment'] = undefined;
 
-
+/**
+ * The name of the domain or domains associated with this service.
+ * @member {String} name
+ */
 Domain.prototype['name'] = undefined;
 
 

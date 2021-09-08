@@ -14,28 +14,45 @@
 import ApiClient from '../ApiClient';
 import TypeTlsDnsRecord from './TypeTlsDnsRecord';
 
-
+/**
+ * The RelationshipMemberTlsDnsRecord model module.
+ * @module model/RelationshipMemberTlsDnsRecord
+ * @version 3.0.0-alpha1
+ */
 class RelationshipMemberTlsDnsRecord {
-    
+    /**
+     * Constructs a new <code>RelationshipMemberTlsDnsRecord</code>.
+     * @alias module:model/RelationshipMemberTlsDnsRecord
+     */
     constructor() { 
         
         RelationshipMemberTlsDnsRecord.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipMemberTlsDnsRecord</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipMemberTlsDnsRecord} obj Optional instance to populate.
+     * @return {module:model/RelationshipMemberTlsDnsRecord} The populated <code>RelationshipMemberTlsDnsRecord</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipMemberTlsDnsRecord();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeTlsDnsRecord.constructFromObject(data['type']);
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeTlsDnsRecord.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -44,11 +61,16 @@ class RelationshipMemberTlsDnsRecord {
 
 }
 
-
-RelationshipMemberTlsDnsRecord.prototype['type'] = undefined;
-
-
+/**
+ * The IP address or hostname of the DNS record.
+ * @member {String} id
+ */
 RelationshipMemberTlsDnsRecord.prototype['id'] = undefined;
+
+/**
+ * @member {module:model/TypeTlsDnsRecord} type
+ */
+RelationshipMemberTlsDnsRecord.prototype['type'] = undefined;
 
 
 

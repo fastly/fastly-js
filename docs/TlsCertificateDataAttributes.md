@@ -1,4 +1,4 @@
-# FastlyApi.TlsCertificateDataAttributes
+# Fastly.TlsCertificateDataAttributes
 
 ## Properties
 

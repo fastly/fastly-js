@@ -17,17 +17,33 @@ import Invitation from '../model/Invitation';
 import InvitationResponse from '../model/InvitationResponse';
 import InvitationsResponse from '../model/InvitationsResponse';
 
-
+/**
+* Invitations service.
+* @module api/InvitationsApi
+* @version 3.0.0-alpha1
+*/
 export default class InvitationsApi {
 
-    
+    /**
+    * Constructs a new InvitationsApi. 
+    * @alias module:api/InvitationsApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createInvitationWithHttpInfo(opts) {
-      opts = opts || {};
-      let postBody = opts['invitation'];
+
+    /**
+     * Create an invitation.
+     * @param {Object} options
+     * @param {module:model/Invitation} [options.invitation]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InvitationResponse} and HTTP response
+     */
+    createInvitationWithHttpInfo(options = {}) {
+      let postBody = options['invitation'];
 
       let pathParams = {
       };
@@ -48,21 +64,35 @@ export default class InvitationsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createInvitation(opts) {
-      return this.createInvitationWithHttpInfo(opts)
+
+    /**
+     * Create an invitation.
+     * @param {Object} options
+     * @param {module:model/Invitation} [options.invitation]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InvitationResponse}
+     */
+    createInvitation(options = {}) {
+      return this.createInvitationWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteInvitationWithHttpInfo(invitation_id) {
+
+    /**
+     * Delete an invitation.
+     * @param {Object} options
+     * @param {String} options.invitation_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteInvitationWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'invitation_id' is set
-      if (invitation_id === undefined || invitation_id === null) {
-        throw new Error("Missing the required parameter 'invitation_id' when calling deleteInvitation");
+      // Verify the required parameter 'invitation_id' is set.
+      if (options['invitation_id'] === undefined || options['invitation_id'] === null) {
+        throw new Error("Missing the required parameter 'invitation_id'.");
       }
 
       let pathParams = {
-        'invitation_id': invitation_id
+        'invitation_id': options['invitation_id']
       };
       let queryParams = {
       };
@@ -81,21 +111,35 @@ export default class InvitationsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteInvitation(invitation_id) {
-      return this.deleteInvitationWithHttpInfo(invitation_id)
+
+    /**
+     * Delete an invitation.
+     * @param {Object} options
+     * @param {String} options.invitation_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteInvitation(options = {}) {
+      return this.deleteInvitationWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listInvitationsWithHttpInfo(opts) {
-      opts = opts || {};
+
+    /**
+     * List all invitations.
+     * @param {Object} options
+     * @param {Number} [options.page_number] - Current page.
+     * @param {Number} [options.page_size=20] - Number of records per page.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InvitationsResponse} and HTTP response
+     */
+    listInvitationsWithHttpInfo(options = {}) {
       let postBody = null;
 
       let pathParams = {
       };
       let queryParams = {
-        'page[number]': opts['page_number'],
-        'page[size]': opts['page_size']
+        'page[number]': options['page_number'],
+        'page[size]': options['page_size']
       };
       let headerParams = {
       };
@@ -112,8 +156,16 @@ export default class InvitationsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listInvitations(opts) {
-      return this.listInvitationsWithHttpInfo(opts)
+
+    /**
+     * List all invitations.
+     * @param {Object} options
+     * @param {Number} [options.page_number] - Current page.
+     * @param {Number} [options.page_size=20] - Number of records per page.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InvitationsResponse}
+     */
+    listInvitations(options = {}) {
+      return this.listInvitationsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -1,11 +1,11 @@
-# FastlyApi.RelationshipMemberCustomer
+# Fastly.RelationshipMemberCustomer
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**TypeCustomer**](TypeCustomer.md) |  | [optional] 
 **id** | **String** | Alphanumeric string identifying the customer. | [optional] [readonly] 
+**type** | [**TypeCustomer**](TypeCustomer.md) |  | [optional] 
 
 
 

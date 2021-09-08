@@ -1,4 +1,4 @@
-# FastlyApi.TypeWafFirewallVersion
+# Fastly.TypeWafFirewallVersion
 
 ## Enum
 

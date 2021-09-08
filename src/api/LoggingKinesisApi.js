@@ -17,44 +17,70 @@ import LoggingFormatVersion from '../model/LoggingFormatVersion';
 import LoggingKinesisResponse from '../model/LoggingKinesisResponse';
 import LoggingPlacement from '../model/LoggingPlacement';
 
-
+/**
+* LoggingKinesis service.
+* @module api/LoggingKinesisApi
+* @version 3.0.0-alpha1
+*/
 export default class LoggingKinesisApi {
 
-    
+    /**
+    * Constructs a new LoggingKinesisApi. 
+    * @alias module:api/LoggingKinesisApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createLogKinesisWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Create an Amazon Kinesis Data Streams logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.access_key] - The access key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
+     * @param {String} [options.format]
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.iam_role] - The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if `access_key` and `secret_key` are provided.
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:model/String} [options.region] - The [AWS region](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints) to stream logs to.
+     * @param {String} [options.secret_key] - The secret key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
+     * @param {String} [options.topic] - The Amazon Kinesis stream to send logs to. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingKinesisResponse} and HTTP response
+     */
+    createLogKinesisWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createLogKinesis");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createLogKinesis");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'format': opts['format'],
-        'topic': opts['topic'],
-        'region': opts['region'],
-        'secret_key': opts['secret_key'],
-        'access_key': opts['access_key'],
-        'iam_role': opts['iam_role']
+        'access_key': options['access_key'],
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'iam_role': options['iam_role'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'region': options['region'],
+        'secret_key': options['secret_key'],
+        'topic': options['topic']
       };
 
       let authNames = ['token'];
@@ -67,31 +93,57 @@ export default class LoggingKinesisApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createLogKinesis(service_id, version_id, opts) {
-      return this.createLogKinesisWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Create an Amazon Kinesis Data Streams logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.access_key] - The access key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
+     * @param {String} [options.format]
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.iam_role] - The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if `access_key` and `secret_key` are provided.
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:model/String} [options.region] - The [AWS region](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints) to stream logs to.
+     * @param {String} [options.secret_key] - The secret key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
+     * @param {String} [options.topic] - The Amazon Kinesis stream to send logs to. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingKinesisResponse}
+     */
+    createLogKinesis(options = {}) {
+      return this.createLogKinesisWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteLogKinesisWithHttpInfo(service_id, version_id, logging_kinesis_name) {
+
+    /**
+     * Delete an Amazon Kinesis Data Streams logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_kinesis_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteLogKinesisWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteLogKinesis");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteLogKinesis");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_kinesis_name' is set
-      if (logging_kinesis_name === undefined || logging_kinesis_name === null) {
-        throw new Error("Missing the required parameter 'logging_kinesis_name' when calling deleteLogKinesis");
+      // Verify the required parameter 'logging_kinesis_name' is set.
+      if (options['logging_kinesis_name'] === undefined || options['logging_kinesis_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_kinesis_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_kinesis_name': logging_kinesis_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_kinesis_name': options['logging_kinesis_name']
       };
       let queryParams = {
       };
@@ -110,31 +162,49 @@ export default class LoggingKinesisApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteLogKinesis(service_id, version_id, logging_kinesis_name) {
-      return this.deleteLogKinesisWithHttpInfo(service_id, version_id, logging_kinesis_name)
+
+    /**
+     * Delete an Amazon Kinesis Data Streams logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_kinesis_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteLogKinesis(options = {}) {
+      return this.deleteLogKinesisWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getLogKinesisWithHttpInfo(service_id, version_id, logging_kinesis_name) {
+
+    /**
+     * Get the details for an Amazon Kinesis Data Streams logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_kinesis_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingKinesisResponse} and HTTP response
+     */
+    getLogKinesisWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getLogKinesis");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getLogKinesis");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_kinesis_name' is set
-      if (logging_kinesis_name === undefined || logging_kinesis_name === null) {
-        throw new Error("Missing the required parameter 'logging_kinesis_name' when calling getLogKinesis");
+      // Verify the required parameter 'logging_kinesis_name' is set.
+      if (options['logging_kinesis_name'] === undefined || options['logging_kinesis_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_kinesis_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_kinesis_name': logging_kinesis_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_kinesis_name': options['logging_kinesis_name']
       };
       let queryParams = {
       };
@@ -153,26 +223,43 @@ export default class LoggingKinesisApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getLogKinesis(service_id, version_id, logging_kinesis_name) {
-      return this.getLogKinesisWithHttpInfo(service_id, version_id, logging_kinesis_name)
+
+    /**
+     * Get the details for an Amazon Kinesis Data Streams logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_kinesis_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingKinesisResponse}
+     */
+    getLogKinesis(options = {}) {
+      return this.getLogKinesisWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listLogKinesisWithHttpInfo(service_id, version_id) {
+
+    /**
+     * List all of the Amazon Kinesis Data Streams logging objects for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingKinesisResponse>} and HTTP response
+     */
+    listLogKinesisWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listLogKinesis");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listLogKinesis");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -191,31 +278,48 @@ export default class LoggingKinesisApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listLogKinesis(service_id, version_id) {
-      return this.listLogKinesisWithHttpInfo(service_id, version_id)
+
+    /**
+     * List all of the Amazon Kinesis Data Streams logging objects for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingKinesisResponse>}
+     */
+    listLogKinesis(options = {}) {
+      return this.listLogKinesisWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateLogKinesisWithHttpInfo(service_id, version_id, logging_kinesis_name) {
+
+    /**
+     * Update an Amazon Kinesis Data Streams logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_kinesis_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingKinesisResponse} and HTTP response
+     */
+    updateLogKinesisWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateLogKinesis");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateLogKinesis");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_kinesis_name' is set
-      if (logging_kinesis_name === undefined || logging_kinesis_name === null) {
-        throw new Error("Missing the required parameter 'logging_kinesis_name' when calling updateLogKinesis");
+      // Verify the required parameter 'logging_kinesis_name' is set.
+      if (options['logging_kinesis_name'] === undefined || options['logging_kinesis_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_kinesis_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_kinesis_name': logging_kinesis_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_kinesis_name': options['logging_kinesis_name']
       };
       let queryParams = {
       };
@@ -234,8 +338,17 @@ export default class LoggingKinesisApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateLogKinesis(service_id, version_id, logging_kinesis_name) {
-      return this.updateLogKinesisWithHttpInfo(service_id, version_id, logging_kinesis_name)
+
+    /**
+     * Update an Amazon Kinesis Data Streams logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_kinesis_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingKinesisResponse}
+     */
+    updateLogKinesis(options = {}) {
+      return this.updateLogKinesisWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

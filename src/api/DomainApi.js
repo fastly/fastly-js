@@ -16,33 +16,52 @@ import ApiClient from "../ApiClient";
 import AnyOfobjectstringboolean from '../model/AnyOfobjectstringboolean';
 import DomainResponse from '../model/DomainResponse';
 
-
+/**
+* Domain service.
+* @module api/DomainApi
+* @version 3.0.0-alpha1
+*/
 export default class DomainApi {
 
-    
+    /**
+    * Constructs a new DomainApi. 
+    * @alias module:api/DomainApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    checkDomainWithHttpInfo(service_id, version_id, domain_name) {
+
+    /**
+     * Checks the status of a specific domain's DNS record for a Service Version. Returns an array in the same format as domain/check_all.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.domain_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/AnyOfobjectstringboolean>} and HTTP response
+     */
+    checkDomainWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling checkDomain");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling checkDomain");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'domain_name' is set
-      if (domain_name === undefined || domain_name === null) {
-        throw new Error("Missing the required parameter 'domain_name' when calling checkDomain");
+      // Verify the required parameter 'domain_name' is set.
+      if (options['domain_name'] === undefined || options['domain_name'] === null) {
+        throw new Error("Missing the required parameter 'domain_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'domain_name': domain_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'domain_name': options['domain_name']
       };
       let queryParams = {
       };
@@ -61,26 +80,43 @@ export default class DomainApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    checkDomain(service_id, version_id, domain_name) {
-      return this.checkDomainWithHttpInfo(service_id, version_id, domain_name)
+
+    /**
+     * Checks the status of a specific domain's DNS record for a Service Version. Returns an array in the same format as domain/check_all.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.domain_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/AnyOfobjectstringboolean>}
+     */
+    checkDomain(options = {}) {
+      return this.checkDomainWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    checkDomainsWithHttpInfo(service_id, version_id) {
+
+    /**
+     * Checks the status of all domains' DNS records for a Service Version. Returns an array of 3 items for each domain; the first is the details for the domain, the second is the current CNAME of the domain, and the third is a boolean indicating whether or not it has been properly setup to use Fastly.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<Array>} and HTTP response
+     */
+    checkDomainsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling checkDomains");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling checkDomains");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -99,35 +135,52 @@ export default class DomainApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    checkDomains(service_id, version_id) {
-      return this.checkDomainsWithHttpInfo(service_id, version_id)
+
+    /**
+     * Checks the status of all domains' DNS records for a Service Version. Returns an array of 3 items for each domain; the first is the details for the domain, the second is the current CNAME of the domain, and the third is a boolean indicating whether or not it has been properly setup to use Fastly.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<Array>}
+     */
+    checkDomains(options = {}) {
+      return this.checkDomainsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    createDomainWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Create a domain for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.comment] - A freeform descriptive note.
+     * @param {String} [options.name] - The name of the domain or domains associated with this service.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DomainResponse} and HTTP response
+     */
+    createDomainWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createDomain");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createDomain");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'comment': opts['comment'],
-        'name': opts['name']
+        'comment': options['comment'],
+        'name': options['name']
       };
 
       let authNames = ['token'];
@@ -140,31 +193,50 @@ export default class DomainApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createDomain(service_id, version_id, opts) {
-      return this.createDomainWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Create a domain for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.comment] - A freeform descriptive note.
+     * @param {String} [options.name] - The name of the domain or domains associated with this service.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DomainResponse}
+     */
+    createDomain(options = {}) {
+      return this.createDomainWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteDomainWithHttpInfo(service_id, version_id, domain_name) {
+
+    /**
+     * Delete the domain for a particular service and versions.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.domain_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteDomainWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteDomain");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteDomain");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'domain_name' is set
-      if (domain_name === undefined || domain_name === null) {
-        throw new Error("Missing the required parameter 'domain_name' when calling deleteDomain");
+      // Verify the required parameter 'domain_name' is set.
+      if (options['domain_name'] === undefined || options['domain_name'] === null) {
+        throw new Error("Missing the required parameter 'domain_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'domain_name': domain_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'domain_name': options['domain_name']
       };
       let queryParams = {
       };
@@ -183,31 +255,49 @@ export default class DomainApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteDomain(service_id, version_id, domain_name) {
-      return this.deleteDomainWithHttpInfo(service_id, version_id, domain_name)
+
+    /**
+     * Delete the domain for a particular service and versions.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.domain_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteDomain(options = {}) {
+      return this.deleteDomainWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getDomainWithHttpInfo(service_id, version_id, domain_name) {
+
+    /**
+     * Get the domain for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.domain_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DomainResponse} and HTTP response
+     */
+    getDomainWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getDomain");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getDomain");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'domain_name' is set
-      if (domain_name === undefined || domain_name === null) {
-        throw new Error("Missing the required parameter 'domain_name' when calling getDomain");
+      // Verify the required parameter 'domain_name' is set.
+      if (options['domain_name'] === undefined || options['domain_name'] === null) {
+        throw new Error("Missing the required parameter 'domain_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'domain_name': domain_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'domain_name': options['domain_name']
       };
       let queryParams = {
       };
@@ -226,26 +316,43 @@ export default class DomainApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getDomain(service_id, version_id, domain_name) {
-      return this.getDomainWithHttpInfo(service_id, version_id, domain_name)
+
+    /**
+     * Get the domain for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.domain_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DomainResponse}
+     */
+    getDomain(options = {}) {
+      return this.getDomainWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listDomainsWithHttpInfo(service_id, version_id) {
+
+    /**
+     * List all the domains for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DomainResponse} and HTTP response
+     */
+    listDomainsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listDomains");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listDomains");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -264,40 +371,58 @@ export default class DomainApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listDomains(service_id, version_id) {
-      return this.listDomainsWithHttpInfo(service_id, version_id)
+
+    /**
+     * List all the domains for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DomainResponse}
+     */
+    listDomains(options = {}) {
+      return this.listDomainsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateDomainWithHttpInfo(service_id, version_id, domain_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Update the domain for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.domain_name
+     * @param {String} [options.comment] - A freeform descriptive note.
+     * @param {String} [options.name] - The name of the domain or domains associated with this service.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DomainResponse} and HTTP response
+     */
+    updateDomainWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateDomain");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateDomain");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'domain_name' is set
-      if (domain_name === undefined || domain_name === null) {
-        throw new Error("Missing the required parameter 'domain_name' when calling updateDomain");
+      // Verify the required parameter 'domain_name' is set.
+      if (options['domain_name'] === undefined || options['domain_name'] === null) {
+        throw new Error("Missing the required parameter 'domain_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'domain_name': domain_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'domain_name': options['domain_name']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'comment': opts['comment'],
-        'name': opts['name']
+        'comment': options['comment'],
+        'name': options['name']
       };
 
       let authNames = ['token'];
@@ -310,8 +435,19 @@ export default class DomainApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateDomain(service_id, version_id, domain_name, opts) {
-      return this.updateDomainWithHttpInfo(service_id, version_id, domain_name, opts)
+
+    /**
+     * Update the domain for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.domain_name
+     * @param {String} [options.comment] - A freeform descriptive note.
+     * @param {String} [options.name] - The name of the domain or domains associated with this service.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DomainResponse}
+     */
+    updateDomain(options = {}) {
+      return this.updateDomainWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

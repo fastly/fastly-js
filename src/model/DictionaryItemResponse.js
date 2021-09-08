@@ -16,19 +16,39 @@ import DictionaryItem from './DictionaryItem';
 import DictionaryItemResponseAllOf from './DictionaryItemResponseAllOf';
 import Timestamps from './Timestamps';
 
-
+/**
+ * The DictionaryItemResponse model module.
+ * @module model/DictionaryItemResponse
+ * @version 3.0.0-alpha1
+ */
 class DictionaryItemResponse {
-    
+    /**
+     * Constructs a new <code>DictionaryItemResponse</code>.
+     * @alias module:model/DictionaryItemResponse
+     * @implements module:model/DictionaryItem
+     * @implements module:model/Timestamps
+     * @implements module:model/DictionaryItemResponseAllOf
+     */
     constructor() { 
         DictionaryItem.initialize(this);Timestamps.initialize(this);DictionaryItemResponseAllOf.initialize(this);
         DictionaryItemResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>DictionaryItemResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/DictionaryItemResponse} obj Optional instance to populate.
+     * @return {module:model/DictionaryItemResponse} The populated <code>DictionaryItemResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new DictionaryItemResponse();
@@ -64,44 +84,86 @@ class DictionaryItemResponse {
 
 }
 
-
+/**
+ * Item key, maximum 256 characters.
+ * @member {String} item_key
+ */
 DictionaryItemResponse.prototype['item_key'] = undefined;
 
-
+/**
+ * Item value, maximum 8000 characters.
+ * @member {String} item_value
+ */
 DictionaryItemResponse.prototype['item_value'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 DictionaryItemResponse.prototype['created_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 DictionaryItemResponse.prototype['deleted_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 DictionaryItemResponse.prototype['updated_at'] = undefined;
 
-
+/**
+ * Alphanumeric string identifying a Dictionary.
+ * @member {String} dictionary_id
+ */
 DictionaryItemResponse.prototype['dictionary_id'] = undefined;
 
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 DictionaryItemResponse.prototype['service_id'] = undefined;
 
 
 // Implement DictionaryItem interface:
-
+/**
+ * Item key, maximum 256 characters.
+ * @member {String} item_key
+ */
 DictionaryItem.prototype['item_key'] = undefined;
-
+/**
+ * Item value, maximum 8000 characters.
+ * @member {String} item_value
+ */
 DictionaryItem.prototype['item_value'] = undefined;
 // Implement Timestamps interface:
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 Timestamps.prototype['created_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 Timestamps.prototype['deleted_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 Timestamps.prototype['updated_at'] = undefined;
 // Implement DictionaryItemResponseAllOf interface:
-
+/**
+ * Alphanumeric string identifying a Dictionary.
+ * @member {String} dictionary_id
+ */
 DictionaryItemResponseAllOf.prototype['dictionary_id'] = undefined;
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 DictionaryItemResponseAllOf.prototype['service_id'] = undefined;
 
 

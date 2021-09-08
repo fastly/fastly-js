@@ -1,7 +1,9 @@
-# FastlyApi.PublicIpListApi
+# Fastly.PublicIpListApi
 
 
-
+```javascript
+const apiInstance = new Fastly.PublicIpListApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -12,25 +14,25 @@ Method | Fastly API endpoint | Description
 
 ## `listFastlyIps`
 
-> listFastlyIps()
-
-List Fastly&#39;s public IPs
+```javascript
+listFastlyIps()
+```
 
 List the public IP addresses for the Fastly network.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.PublicIpListApi();
-apiInstance.listFastlyIps().then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
+apiInstance.listFastlyIps()
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 This endpoint does not need any parameters.
 

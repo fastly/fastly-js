@@ -1,7 +1,9 @@
-# FastlyApi.HeaderApi
+# Fastly.HeaderApi
 
 
-
+```javascript
+const apiInstance = new Fastly.HeaderApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -16,41 +18,52 @@ Method | Fastly API endpoint | Description
 
 ## `createHeaderObject`
 
-> createHeaderObject(service_id, version_id, opts)
-
-Create a Header object
+```javascript
+createHeaderObject({ service_id, version_id, [action], , [cache_condition], , [dst], , [ignore_if_set], , [name], , [priority], , [regex], , [request_condition], , [response_condition], , [src], , [substitution], , [type] })
+```
 
 Creates a new Header object.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.HeaderApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let opts = {
-  'action': "action_example", // String | Accepts a string value.
-  'cache_condition': "cache_condition_example", // String | Name of the cache condition controlling when this configuration applies.
-  'dst': "dst_example", // String | Header to set.
-  'ignore_if_set': 56, // Number | Don't add the header if it is added already. Only applies to 'set' action.
-  'name': "name_example", // String | A handle to refer to this Header object.
-  'priority': 100, // Number | Priority determines execution order. Lower numbers execute first.
-  'regex': "regex_example", // String | Regular expression to use. Only applies to `regex` and `regex_repeat` actions.
-  'request_condition': "request_condition_example", // String | Condition which, if met, will select this configuration during a request. Optional.
-  'response_condition': null, // String | 
-  'src': "src_example", // String | Variable to be used as a source for the header content. Does not apply to `delete` action.
-  'substitution': "substitution_example", // String | Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions.
-  'type': "type_example" // String | Accepts a string value.
-};
-apiInstance.createHeaderObject(service_id, version_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required
+  action: "action_example",
 
+  cache_condition: "cache_condition_example",
+
+  dst: "dst_example",
+
+  ignore_if_set: 56,
+
+  name: "name_example",
+
+  priority: 100,
+
+  regex: "regex_example",
+
+  request_condition: "request_condition_example",
+
+  response_condition: null,
+
+  src: "src_example",
+
+  substitution: "substitution_example",
+
+  type: "type_example",
+};
+
+apiInstance.createHeaderObject(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -76,28 +89,28 @@ Name | Type | Description  | Notes
 
 ## `deleteHeaderObject`
 
-> deleteHeaderObject(service_id, version_id, header_name)
-
-Delete a Header object
+```javascript
+deleteHeaderObject({ service_id, version_id, header_name })
+```
 
 Deletes a Header object by name.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.HeaderApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let header_name = "header_name_example"; // String | 
-apiInstance.deleteHeaderObject(service_id, version_id, header_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  header_name: "header_name_example", // required};
 
+apiInstance.deleteHeaderObject(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -112,28 +125,28 @@ Name | Type | Description  | Notes
 
 ## `getHeaderObject`
 
-> getHeaderObject(service_id, version_id, header_name)
-
-Get a Header object
+```javascript
+getHeaderObject({ service_id, version_id, header_name })
+```
 
 Retrieves a Header object by name.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.HeaderApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let header_name = "header_name_example"; // String | 
-apiInstance.getHeaderObject(service_id, version_id, header_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  header_name: "header_name_example", // required};
 
+apiInstance.getHeaderObject(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -148,27 +161,28 @@ Name | Type | Description  | Notes
 
 ## `listHeaderObjects`
 
-> listHeaderObjects(service_id, version_id)
-
-List Header objects
+```javascript
+listHeaderObjects({ service_id, version_id })
+```
 
 Retrieves all Header objects for a particular Version of a Service.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.HeaderApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.listHeaderObjects(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.listHeaderObjects(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -182,42 +196,52 @@ Name | Type | Description  | Notes
 
 ## `updateHeaderObject`
 
-> updateHeaderObject(service_id, version_id, header_name, opts)
-
-Update a Header object
+```javascript
+updateHeaderObject({ service_id, version_id, header_name, [action], , [cache_condition], , [dst], , [ignore_if_set], , [name], , [priority], , [regex], , [request_condition], , [response_condition], , [src], , [substitution], , [type] })
+```
 
 Modifies an existing Header object by name.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.HeaderApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let header_name = "header_name_example"; // String | 
-let opts = {
-  'action': "action_example", // String | Accepts a string value.
-  'cache_condition': "cache_condition_example", // String | Name of the cache condition controlling when this configuration applies.
-  'dst': "dst_example", // String | Header to set.
-  'ignore_if_set': 56, // Number | Don't add the header if it is added already. Only applies to 'set' action.
-  'name': "name_example", // String | A handle to refer to this Header object.
-  'priority': 100, // Number | Priority determines execution order. Lower numbers execute first.
-  'regex': "regex_example", // String | Regular expression to use. Only applies to `regex` and `regex_repeat` actions.
-  'request_condition': "request_condition_example", // String | Condition which, if met, will select this configuration during a request. Optional.
-  'response_condition': null, // String | 
-  'src': "src_example", // String | Variable to be used as a source for the header content. Does not apply to `delete` action.
-  'substitution': "substitution_example", // String | Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions.
-  'type': "type_example" // String | Accepts a string value.
-};
-apiInstance.updateHeaderObject(service_id, version_id, header_name, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  header_name: "header_name_example", // required
+  action: "action_example",
 
+  cache_condition: "cache_condition_example",
+
+  dst: "dst_example",
+
+  ignore_if_set: 56,
+
+  name: "name_example",
+
+  priority: 100,
+
+  regex: "regex_example",
+
+  request_condition: "request_condition_example",
+
+  response_condition: null,
+
+  src: "src_example",
+
+  substitution: "substitution_example",
+
+  type: "type_example",
+};
+
+apiInstance.updateHeaderObject(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

@@ -16,36 +16,54 @@ import ApiClient from "../ApiClient";
 import Acl from '../model/Acl';
 import AclResponse from '../model/AclResponse';
 
-
+/**
+* Acl service.
+* @module api/AclApi
+* @version 3.0.0-alpha1
+*/
 export default class AclApi {
 
-    
+    /**
+    * Constructs a new AclApi. 
+    * @alias module:api/AclApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createAclWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Create a new ACL attached to the specified service version. A new, empty ACL must be attached to a draft version of a service. The version associated with the ACL must be activated to be used.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.name] - Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AclResponse} and HTTP response
+     */
+    createAclWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createAcl");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createAcl");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name']
+        'name': options['name']
       };
 
       let authNames = ['token'];
@@ -58,31 +76,49 @@ export default class AclApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createAcl(service_id, version_id, opts) {
-      return this.createAclWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Create a new ACL attached to the specified service version. A new, empty ACL must be attached to a draft version of a service. The version associated with the ACL must be activated to be used.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.name] - Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AclResponse}
+     */
+    createAcl(options = {}) {
+      return this.createAclWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteAclWithHttpInfo(service_id, version_id, acl_name) {
+
+    /**
+     * Delete an ACL from the specified service version. To remove an ACL from use, the ACL must be deleted from a draft version and the version without the ACL must be activated.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.acl_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteAclWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteAcl");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteAcl");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'acl_name' is set
-      if (acl_name === undefined || acl_name === null) {
-        throw new Error("Missing the required parameter 'acl_name' when calling deleteAcl");
+      // Verify the required parameter 'acl_name' is set.
+      if (options['acl_name'] === undefined || options['acl_name'] === null) {
+        throw new Error("Missing the required parameter 'acl_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'acl_name': acl_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'acl_name': options['acl_name']
       };
       let queryParams = {
       };
@@ -101,31 +137,49 @@ export default class AclApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteAcl(service_id, version_id, acl_name) {
-      return this.deleteAclWithHttpInfo(service_id, version_id, acl_name)
+
+    /**
+     * Delete an ACL from the specified service version. To remove an ACL from use, the ACL must be deleted from a draft version and the version without the ACL must be activated.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.acl_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteAcl(options = {}) {
+      return this.deleteAclWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getAclWithHttpInfo(service_id, version_id, acl_name) {
+
+    /**
+     * Retrieve a single ACL by name for the version and service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.acl_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AclResponse} and HTTP response
+     */
+    getAclWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getAcl");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getAcl");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'acl_name' is set
-      if (acl_name === undefined || acl_name === null) {
-        throw new Error("Missing the required parameter 'acl_name' when calling getAcl");
+      // Verify the required parameter 'acl_name' is set.
+      if (options['acl_name'] === undefined || options['acl_name'] === null) {
+        throw new Error("Missing the required parameter 'acl_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'acl_name': acl_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'acl_name': options['acl_name']
       };
       let queryParams = {
       };
@@ -144,26 +198,43 @@ export default class AclApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getAcl(service_id, version_id, acl_name) {
-      return this.getAclWithHttpInfo(service_id, version_id, acl_name)
+
+    /**
+     * Retrieve a single ACL by name for the version and service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.acl_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AclResponse}
+     */
+    getAcl(options = {}) {
+      return this.getAclWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listAclsWithHttpInfo(service_id, version_id) {
+
+    /**
+     * List ACLs.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/AclResponse>} and HTTP response
+     */
+    listAclsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listAcls");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listAcls");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -182,39 +253,56 @@ export default class AclApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listAcls(service_id, version_id) {
-      return this.listAclsWithHttpInfo(service_id, version_id)
+
+    /**
+     * List ACLs.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/AclResponse>}
+     */
+    listAcls(options = {}) {
+      return this.listAclsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateAclWithHttpInfo(service_id, version_id, acl_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Update an ACL for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.acl_name
+     * @param {String} [options.name] - Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Acl} and HTTP response
+     */
+    updateAclWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateAcl");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateAcl");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'acl_name' is set
-      if (acl_name === undefined || acl_name === null) {
-        throw new Error("Missing the required parameter 'acl_name' when calling updateAcl");
+      // Verify the required parameter 'acl_name' is set.
+      if (options['acl_name'] === undefined || options['acl_name'] === null) {
+        throw new Error("Missing the required parameter 'acl_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'acl_name': acl_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'acl_name': options['acl_name']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name']
+        'name': options['name']
       };
 
       let authNames = ['token'];
@@ -227,8 +315,18 @@ export default class AclApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateAcl(service_id, version_id, acl_name, opts) {
-      return this.updateAclWithHttpInfo(service_id, version_id, acl_name, opts)
+
+    /**
+     * Update an ACL for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.acl_name
+     * @param {String} [options.name] - Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Acl}
+     */
+    updateAcl(options = {}) {
+      return this.updateAclWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

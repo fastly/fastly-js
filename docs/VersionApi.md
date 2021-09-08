@@ -1,7 +1,9 @@
-# FastlyApi.VersionApi
+# Fastly.VersionApi
 
 
-
+```javascript
+const apiInstance = new Fastly.VersionApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -20,27 +22,28 @@ Method | Fastly API endpoint | Description
 
 ## `activateServiceVersion`
 
-> activateServiceVersion(service_id, version_id)
-
-Activate a service version
+```javascript
+activateServiceVersion({ service_id, version_id })
+```
 
 Activate the current version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.VersionApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.activateServiceVersion(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.activateServiceVersion(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -54,27 +57,28 @@ Name | Type | Description  | Notes
 
 ## `cloneServiceVersion`
 
-> cloneServiceVersion(service_id, version_id)
-
-Clone a service version
+```javascript
+cloneServiceVersion({ service_id, version_id })
+```
 
 Clone the current configuration into a new version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.VersionApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.cloneServiceVersion(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.cloneServiceVersion(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -88,26 +92,28 @@ Name | Type | Description  | Notes
 
 ## `createServiceVersion`
 
-> createServiceVersion(service_id)
-
-Create a service version
+```javascript
+createServiceVersion({ service_id })
+```
 
 Create a version for a particular service.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.VersionApi();
-let service_id = "service_id_example"; // String | 
-apiInstance.createServiceVersion(service_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required};
 
+apiInstance.createServiceVersion(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -120,27 +126,28 @@ Name | Type | Description  | Notes
 
 ## `deactivateServiceVersion`
 
-> deactivateServiceVersion(service_id, version_id)
-
-Deactivate a service version
+```javascript
+deactivateServiceVersion({ service_id, version_id })
+```
 
 Deactivate the current version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.VersionApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.deactivateServiceVersion(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.deactivateServiceVersion(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -154,27 +161,28 @@ Name | Type | Description  | Notes
 
 ## `getServiceVersion`
 
-> getServiceVersion(service_id, version_id)
-
-Get a version of a service
+```javascript
+getServiceVersion({ service_id, version_id })
+```
 
 Get the version for a particular service.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.VersionApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.getServiceVersion(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.getServiceVersion(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -188,26 +196,28 @@ Name | Type | Description  | Notes
 
 ## `listServiceVersions`
 
-> listServiceVersions(service_id)
-
-List versions of a service
+```javascript
+listServiceVersions({ service_id })
+```
 
 List the versions for a particular service.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.VersionApi();
-let service_id = "service_id_example"; // String | 
-apiInstance.listServiceVersions(service_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required};
 
+apiInstance.listServiceVersions(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -220,27 +230,28 @@ Name | Type | Description  | Notes
 
 ## `lockServiceVersion`
 
-> lockServiceVersion(service_id, version_id)
-
-Lock a service version
+```javascript
+lockServiceVersion({ service_id, version_id })
+```
 
 Locks the specified version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.VersionApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.lockServiceVersion(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.lockServiceVersion(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -254,36 +265,42 @@ Name | Type | Description  | Notes
 
 ## `updateServiceVersion`
 
-> updateServiceVersion(service_id, version_id, opts)
-
-Update a service version
+```javascript
+updateServiceVersion({ service_id, version_id, [active], , [comment], , [deployed], , [locked], , [number], , [staging], , [testing] })
+```
 
 Update a particular version for a particular service.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.VersionApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let opts = {
-  'active': false, // Boolean | Whether this is the active version or not.
-  'comment': "comment_example", // String | A freeform descriptive note.
-  'deployed': true, // Boolean | Unused at this time.
-  'locked': false, // Boolean | Whether this version is locked or not. Objects can not be added or edited on locked versions.
-  'number': 56, // Number | The number of this version.
-  'staging': false, // Boolean | Unused at this time.
-  'testing': false // Boolean | Unused at this time.
-};
-apiInstance.updateServiceVersion(service_id, version_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required
+  active: false,
 
+  comment: "comment_example",
+
+  deployed: true,
+
+  locked: false,
+
+  number: 56,
+
+  staging: false,
+
+  testing: false,
+};
+
+apiInstance.updateServiceVersion(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -304,27 +321,28 @@ Name | Type | Description  | Notes
 
 ## `validateServiceVersion`
 
-> validateServiceVersion(service_id, version_id)
-
-Validate a service version
+```javascript
+validateServiceVersion({ service_id, version_id })
+```
 
 Validate the version for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.VersionApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.validateServiceVersion(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.validateServiceVersion(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

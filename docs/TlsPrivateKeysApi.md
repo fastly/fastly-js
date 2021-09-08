@@ -1,7 +1,9 @@
-# FastlyApi.TlsPrivateKeysApi
+# Fastly.TlsPrivateKeysApi
 
 
-
+```javascript
+const apiInstance = new Fastly.TlsPrivateKeysApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -15,28 +17,30 @@ Method | Fastly API endpoint | Description
 
 ## `createTlsKey`
 
-> createTlsKey(opts)
-
-Create a TLS private key
+```javascript
+createTlsKey({ [tls_private_key] })
+```
 
 Create a TLS private key.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TlsPrivateKeysApi();
-let opts = {
-  'tls_private_key': {"data":{"type":"tls_private_key","attributes":{"key":"-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n","name":"My private key"}}} // TlsPrivateKey | 
-};
-apiInstance.createTlsKey(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
 
+  tls_private_key: new Fastly.TlsPrivateKey(),
+};
+
+apiInstance.createTlsKey(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -49,26 +53,28 @@ Name | Type | Description  | Notes
 
 ## `deleteTlsKey`
 
-> deleteTlsKey(tls_private_key_id)
-
-Delete a TLS private key
+```javascript
+deleteTlsKey({ tls_private_key_id })
+```
 
 Destroy a TLS private key. Only private keys not already matched to any certificates can be deleted.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TlsPrivateKeysApi();
-let tls_private_key_id = "tls_private_key_id_example"; // String | 
-apiInstance.deleteTlsKey(tls_private_key_id).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  tls_private_key_id: "tls_private_key_id_example", // required};
 
+apiInstance.deleteTlsKey(options)
+  .then(() => {
+    console.log('API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -81,26 +87,28 @@ null (empty response body)
 
 ## `getTlsKey`
 
-> getTlsKey(tls_private_key_id)
-
-Get a TLS private key
+```javascript
+getTlsKey({ tls_private_key_id })
+```
 
 Show a TLS private key.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TlsPrivateKeysApi();
-let tls_private_key_id = "tls_private_key_id_example"; // String | 
-apiInstance.getTlsKey(tls_private_key_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  tls_private_key_id: "tls_private_key_id_example", // required};
 
+apiInstance.getTlsKey(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -113,30 +121,34 @@ Name | Type | Description  | Notes
 
 ## `listTlsKeys`
 
-> listTlsKeys(opts)
-
-List TLS private keys
+```javascript
+listTlsKeys({ [filter_in_use], [page_number], [page_size] })
+```
 
 List all TLS private keys.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.TlsPrivateKeysApi();
-let opts = {
-  'filter_in_use': "filter_in_use_example", // String | Limit the returned keys to those without any matching TLS certificates. The only valid value is false.
-  'page_number': 56, // Number | Current page.
-  'page_size': 20 // Number | Number of records per page.
-};
-apiInstance.listTlsKeys(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
 
+  filter_in_use: "filter_in_use_example",
+
+  page_number: 56,
+
+  page_size: 20,
+};
+
+apiInstance.listTlsKeys(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

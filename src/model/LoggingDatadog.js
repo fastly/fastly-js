@@ -17,39 +17,58 @@ import LoggingDatadogAllOf from './LoggingDatadogAllOf';
 import LoggingFormatVersion from './LoggingFormatVersion';
 import LoggingPlacement from './LoggingPlacement';
 
-
+/**
+ * The LoggingDatadog model module.
+ * @module model/LoggingDatadog
+ * @version 3.0.0-alpha1
+ */
 class LoggingDatadog {
-    
+    /**
+     * Constructs a new <code>LoggingDatadog</code>.
+     * @alias module:model/LoggingDatadog
+     * @implements module:model/LoggingCommon
+     * @implements module:model/LoggingDatadogAllOf
+     */
     constructor() { 
         LoggingCommon.initialize(this);LoggingDatadogAllOf.initialize(this);
         LoggingDatadog.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingDatadog</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingDatadog} obj Optional instance to populate.
+     * @return {module:model/LoggingDatadog} The populated <code>LoggingDatadog</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingDatadog();
             LoggingCommon.constructFromObject(data, obj);
             LoggingDatadogAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], Object);
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
             }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
-            }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
-            }
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], Object);
             }
             if (data.hasOwnProperty('region')) {
                 obj['region'] = ApiClient.convertToType(data['region'], 'String');
@@ -64,56 +83,110 @@ class LoggingDatadog {
 
 }
 
-
-LoggingDatadog.prototype['name'] = undefined;
-
-
-LoggingDatadog.prototype['placement'] = undefined;
-
-
-LoggingDatadog.prototype['format_version'] = undefined;
-
-
-LoggingDatadog.prototype['response_condition'] = undefined;
-
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest. 
+ * @member {Object} format
+ */
 LoggingDatadog.prototype['format'] = undefined;
 
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingDatadog.prototype['format_version'] = undefined;
 
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingDatadog.prototype['name'] = undefined;
+
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingDatadog.prototype['placement'] = undefined;
+
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingDatadog.prototype['response_condition'] = undefined;
+
+/**
+ * The region that log data will be sent to.
+ * @member {module:model/LoggingDatadog.RegionEnum} region
+ * @default 'US'
+ */
 LoggingDatadog.prototype['region'] = 'US';
 
-
+/**
+ * The API key from your Datadog account. Required.
+ * @member {String} token
+ */
 LoggingDatadog.prototype['token'] = undefined;
 
 
 // Implement LoggingCommon interface:
-
-LoggingCommon.prototype['name'] = undefined;
-
-LoggingCommon.prototype['placement'] = undefined;
-
-LoggingCommon.prototype['format_version'] = undefined;
-
-LoggingCommon.prototype['response_condition'] = undefined;
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
 LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingCommon.prototype['format_version'] = undefined;
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingCommon.prototype['name'] = undefined;
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingCommon.prototype['placement'] = undefined;
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingCommon.prototype['response_condition'] = undefined;
 // Implement LoggingDatadogAllOf interface:
-
-LoggingDatadogAllOf.prototype['region'] = 'US';
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest. 
+ * @member {Object} format
+ */
 LoggingDatadogAllOf.prototype['format'] = undefined;
-
+/**
+ * The region that log data will be sent to.
+ * @member {module:model/LoggingDatadogAllOf.RegionEnum} region
+ * @default 'US'
+ */
+LoggingDatadogAllOf.prototype['region'] = 'US';
+/**
+ * The API key from your Datadog account. Required.
+ * @member {String} token
+ */
 LoggingDatadogAllOf.prototype['token'] = undefined;
 
 
 
-
+/**
+ * Allowed values for the <code>region</code> property.
+ * @enum {String}
+ * @readonly
+ */
 LoggingDatadog['RegionEnum'] = {
 
-    
+    /**
+     * value: "US"
+     * @const
+     */
     "US": "US",
 
-    
+    /**
+     * value: "EU"
+     * @const
+     */
     "EU": "EU"
 };
 

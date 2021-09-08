@@ -13,28 +13,48 @@
 
 import ApiClient from '../ApiClient';
 import SchemasVersion from './SchemasVersion';
+import SchemasVersionResponseAllOf from './SchemasVersionResponseAllOf';
 import Timestamps from './Timestamps';
-import VersionResponseAllOf from './VersionResponseAllOf';
 
-
+/**
+ * The SchemasVersionResponse model module.
+ * @module model/SchemasVersionResponse
+ * @version 3.0.0-alpha1
+ */
 class SchemasVersionResponse {
-    
+    /**
+     * Constructs a new <code>SchemasVersionResponse</code>.
+     * @alias module:model/SchemasVersionResponse
+     * @implements module:model/SchemasVersion
+     * @implements module:model/Timestamps
+     * @implements module:model/SchemasVersionResponseAllOf
+     */
     constructor() { 
-        SchemasVersion.initialize(this);Timestamps.initialize(this);VersionResponseAllOf.initialize(this);
+        SchemasVersion.initialize(this);Timestamps.initialize(this);SchemasVersionResponseAllOf.initialize(this);
         SchemasVersionResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>SchemasVersionResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/SchemasVersionResponse} obj Optional instance to populate.
+     * @return {module:model/SchemasVersionResponse} The populated <code>SchemasVersionResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SchemasVersionResponse();
             SchemasVersion.constructFromObject(data, obj);
             Timestamps.constructFromObject(data, obj);
-            VersionResponseAllOf.constructFromObject(data, obj);
+            SchemasVersionResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('active')) {
                 obj['active'] = ApiClient.convertToType(data['active'], 'Boolean');
@@ -76,65 +96,139 @@ class SchemasVersionResponse {
 
 }
 
-
+/**
+ * Whether this is the active version or not.
+ * @member {Boolean} active
+ * @default false
+ */
 SchemasVersionResponse.prototype['active'] = false;
 
-
+/**
+ * A freeform descriptive note.
+ * @member {String} comment
+ */
 SchemasVersionResponse.prototype['comment'] = undefined;
 
-
+/**
+ * Unused at this time.
+ * @member {Boolean} deployed
+ */
 SchemasVersionResponse.prototype['deployed'] = undefined;
 
-
+/**
+ * Whether this version is locked or not. Objects can not be added or edited on locked versions.
+ * @member {Boolean} locked
+ * @default false
+ */
 SchemasVersionResponse.prototype['locked'] = false;
 
-
+/**
+ * The number of this version.
+ * @member {Number} number
+ */
 SchemasVersionResponse.prototype['number'] = undefined;
 
-
+/**
+ * Unused at this time.
+ * @member {Boolean} staging
+ * @default false
+ */
 SchemasVersionResponse.prototype['staging'] = false;
 
-
+/**
+ * Unused at this time.
+ * @member {Boolean} testing
+ * @default false
+ */
 SchemasVersionResponse.prototype['testing'] = false;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 SchemasVersionResponse.prototype['created_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 SchemasVersionResponse.prototype['deleted_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 SchemasVersionResponse.prototype['updated_at'] = undefined;
 
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 SchemasVersionResponse.prototype['service_id'] = undefined;
 
 
 // Implement SchemasVersion interface:
-
+/**
+ * Whether this is the active version or not.
+ * @member {Boolean} active
+ * @default false
+ */
 SchemasVersion.prototype['active'] = false;
-
+/**
+ * A freeform descriptive note.
+ * @member {String} comment
+ */
 SchemasVersion.prototype['comment'] = undefined;
-
+/**
+ * Unused at this time.
+ * @member {Boolean} deployed
+ */
 SchemasVersion.prototype['deployed'] = undefined;
-
+/**
+ * Whether this version is locked or not. Objects can not be added or edited on locked versions.
+ * @member {Boolean} locked
+ * @default false
+ */
 SchemasVersion.prototype['locked'] = false;
-
+/**
+ * The number of this version.
+ * @member {Number} number
+ */
 SchemasVersion.prototype['number'] = undefined;
-
+/**
+ * Unused at this time.
+ * @member {Boolean} staging
+ * @default false
+ */
 SchemasVersion.prototype['staging'] = false;
-
+/**
+ * Unused at this time.
+ * @member {Boolean} testing
+ * @default false
+ */
 SchemasVersion.prototype['testing'] = false;
 // Implement Timestamps interface:
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 Timestamps.prototype['created_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 Timestamps.prototype['deleted_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 Timestamps.prototype['updated_at'] = undefined;
-// Implement VersionResponseAllOf interface:
-
-VersionResponseAllOf.prototype['service_id'] = undefined;
+// Implement SchemasVersionResponseAllOf interface:
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+SchemasVersionResponseAllOf.prototype['service_id'] = undefined;
 
 
 

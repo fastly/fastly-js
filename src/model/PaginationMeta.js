@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The PaginationMeta model module.
+ * @module model/PaginationMeta
+ * @version 3.0.0-alpha1
+ */
 class PaginationMeta {
-    
+    /**
+     * Constructs a new <code>PaginationMeta</code>.
+     * @alias module:model/PaginationMeta
+     */
     constructor() { 
         
         PaginationMeta.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>PaginationMeta</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/PaginationMeta} obj Optional instance to populate.
+     * @return {module:model/PaginationMeta} The populated <code>PaginationMeta</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PaginationMeta();
@@ -49,16 +66,29 @@ class PaginationMeta {
 
 }
 
-
+/**
+ * Current page.
+ * @member {Number} current_page
+ */
 PaginationMeta.prototype['current_page'] = undefined;
 
-
+/**
+ * Number of records per page.
+ * @member {Number} per_page
+ * @default 20
+ */
 PaginationMeta.prototype['per_page'] = 20;
 
-
+/**
+ * Total records in result set.
+ * @member {Number} record_count
+ */
 PaginationMeta.prototype['record_count'] = undefined;
 
-
+/**
+ * Total pages in result set.
+ * @member {Number} total_pages
+ */
 PaginationMeta.prototype['total_pages'] = undefined;
 
 

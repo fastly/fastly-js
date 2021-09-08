@@ -1,7 +1,9 @@
-# FastlyApi.DictionaryInfoApi
+# Fastly.DictionaryInfoApi
 
 
-
+```javascript
+const apiInstance = new Fastly.DictionaryInfoApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -12,28 +14,28 @@ Method | Fastly API endpoint | Description
 
 ## `getDictionaryInfo`
 
-> getDictionaryInfo(service_id, version_id, dictionary_id)
-
-Get edge dictionary metadata
+```javascript
+getDictionaryInfo({ service_id, version_id, dictionary_id })
+```
 
 Retrieve metadata for a single dictionary by ID for a version and service.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.DictionaryInfoApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let dictionary_id = "dictionary_id_example"; // String | 
-apiInstance.getDictionaryInfo(service_id, version_id, dictionary_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  dictionary_id: "dictionary_id_example", // required};
 
+apiInstance.getDictionaryInfo(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

@@ -1,18 +1,18 @@
-# FastlyApi.LoggingKinesisResponse
+# Fastly.LoggingKinesisResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**access_key** | **String** | The access key associated with the target Amazon Kinesis stream. Not required if &#x60;iam_role&#x60; is specified. | [optional] 
+**format** | **String** |  | [optional] 
+**format_version** | [**LoggingFormatVersion**](LoggingFormatVersion.md) |  | [optional] 
+**iam_role** | **String** | The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if &#x60;access_key&#x60; and &#x60;secret_key&#x60; are provided. | [optional] 
 **name** | **String** | The name for the real-time logging configuration. | [optional] 
 **placement** | [**LoggingPlacement**](LoggingPlacement.md) |  | [optional] 
-**format_version** | [**LoggingFormatVersion**](LoggingFormatVersion.md) |  | [optional] 
-**format** | **String** |  | [optional] 
-**topic** | **String** | The Amazon Kinesis stream to send logs to. Required. | [optional] 
 **region** | **String** | The [AWS region](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints) to stream logs to. | [optional] 
 **secret_key** | **String** | The secret key associated with the target Amazon Kinesis stream. Not required if &#x60;iam_role&#x60; is specified. | [optional] 
-**access_key** | **String** | The access key associated with the target Amazon Kinesis stream. Not required if &#x60;iam_role&#x60; is specified. | [optional] 
-**iam_role** | **String** | The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if &#x60;access_key&#x60; and &#x60;secret_key&#x60; are provided. | [optional] 
+**topic** | **String** | The Amazon Kinesis stream to send logs to. Required. | [optional] 
 **created_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **deleted_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **updated_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 

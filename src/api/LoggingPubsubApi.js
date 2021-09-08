@@ -17,44 +17,70 @@ import LoggingFormatVersion from '../model/LoggingFormatVersion';
 import LoggingGooglePubsubResponse from '../model/LoggingGooglePubsubResponse';
 import LoggingPlacement from '../model/LoggingPlacement';
 
-
+/**
+* LoggingPubsub service.
+* @module api/LoggingPubsubApi
+* @version 3.0.0-alpha1
+*/
 export default class LoggingPubsubApi {
 
-    
+    /**
+    * Constructs a new LoggingPubsubApi. 
+    * @alias module:api/LoggingPubsubApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createLogGcpPubsubWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Create a Pub/Sub logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+     * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+     * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
+     * @param {String} [options.topic] - The Google Cloud Pub/Sub topic to which logs will be published. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingGooglePubsubResponse} and HTTP response
+     */
+    createLogGcpPubsubWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createLogGcpPubsub");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createLogGcpPubsub");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'user': opts['user'],
-        'secret_key': opts['secret_key'],
-        'topic': opts['topic'],
-        'project_id': opts['project_id']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'secret_key': options['secret_key'],
+        'user': options['user'],
+        'project_id': options['project_id'],
+        'topic': options['topic']
       };
 
       let authNames = ['token'];
@@ -67,31 +93,57 @@ export default class LoggingPubsubApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createLogGcpPubsub(service_id, version_id, opts) {
-      return this.createLogGcpPubsubWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Create a Pub/Sub logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+     * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+     * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
+     * @param {String} [options.topic] - The Google Cloud Pub/Sub topic to which logs will be published. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingGooglePubsubResponse}
+     */
+    createLogGcpPubsub(options = {}) {
+      return this.createLogGcpPubsubWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteLogGcpPubsubWithHttpInfo(service_id, version_id, logging_google_pubsub_name) {
+
+    /**
+     * Delete a Pub/Sub logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_google_pubsub_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteLogGcpPubsubWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteLogGcpPubsub");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteLogGcpPubsub");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_google_pubsub_name' is set
-      if (logging_google_pubsub_name === undefined || logging_google_pubsub_name === null) {
-        throw new Error("Missing the required parameter 'logging_google_pubsub_name' when calling deleteLogGcpPubsub");
+      // Verify the required parameter 'logging_google_pubsub_name' is set.
+      if (options['logging_google_pubsub_name'] === undefined || options['logging_google_pubsub_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_google_pubsub_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_google_pubsub_name': logging_google_pubsub_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_google_pubsub_name': options['logging_google_pubsub_name']
       };
       let queryParams = {
       };
@@ -110,31 +162,49 @@ export default class LoggingPubsubApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteLogGcpPubsub(service_id, version_id, logging_google_pubsub_name) {
-      return this.deleteLogGcpPubsubWithHttpInfo(service_id, version_id, logging_google_pubsub_name)
+
+    /**
+     * Delete a Pub/Sub logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_google_pubsub_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteLogGcpPubsub(options = {}) {
+      return this.deleteLogGcpPubsubWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getLogGcpPubsubWithHttpInfo(service_id, version_id, logging_google_pubsub_name) {
+
+    /**
+     * Get the details for a Pub/Sub logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_google_pubsub_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingGooglePubsubResponse} and HTTP response
+     */
+    getLogGcpPubsubWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getLogGcpPubsub");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getLogGcpPubsub");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_google_pubsub_name' is set
-      if (logging_google_pubsub_name === undefined || logging_google_pubsub_name === null) {
-        throw new Error("Missing the required parameter 'logging_google_pubsub_name' when calling getLogGcpPubsub");
+      // Verify the required parameter 'logging_google_pubsub_name' is set.
+      if (options['logging_google_pubsub_name'] === undefined || options['logging_google_pubsub_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_google_pubsub_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_google_pubsub_name': logging_google_pubsub_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_google_pubsub_name': options['logging_google_pubsub_name']
       };
       let queryParams = {
       };
@@ -153,26 +223,43 @@ export default class LoggingPubsubApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getLogGcpPubsub(service_id, version_id, logging_google_pubsub_name) {
-      return this.getLogGcpPubsubWithHttpInfo(service_id, version_id, logging_google_pubsub_name)
+
+    /**
+     * Get the details for a Pub/Sub logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_google_pubsub_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingGooglePubsubResponse}
+     */
+    getLogGcpPubsub(options = {}) {
+      return this.getLogGcpPubsubWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listLogGcpPubsubWithHttpInfo(service_id, version_id) {
+
+    /**
+     * List all of the Pub/Sub logging objects for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingGooglePubsubResponse>} and HTTP response
+     */
+    listLogGcpPubsubWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listLogGcpPubsub");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listLogGcpPubsub");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -191,47 +278,72 @@ export default class LoggingPubsubApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listLogGcpPubsub(service_id, version_id) {
-      return this.listLogGcpPubsubWithHttpInfo(service_id, version_id)
+
+    /**
+     * List all of the Pub/Sub logging objects for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingGooglePubsubResponse>}
+     */
+    listLogGcpPubsub(options = {}) {
+      return this.listLogGcpPubsubWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateLogGcpPubsubWithHttpInfo(service_id, version_id, logging_google_pubsub_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Update a Pub/Sub logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_google_pubsub_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+     * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+     * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
+     * @param {String} [options.topic] - The Google Cloud Pub/Sub topic to which logs will be published. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingGooglePubsubResponse} and HTTP response
+     */
+    updateLogGcpPubsubWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateLogGcpPubsub");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateLogGcpPubsub");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_google_pubsub_name' is set
-      if (logging_google_pubsub_name === undefined || logging_google_pubsub_name === null) {
-        throw new Error("Missing the required parameter 'logging_google_pubsub_name' when calling updateLogGcpPubsub");
+      // Verify the required parameter 'logging_google_pubsub_name' is set.
+      if (options['logging_google_pubsub_name'] === undefined || options['logging_google_pubsub_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_google_pubsub_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_google_pubsub_name': logging_google_pubsub_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_google_pubsub_name': options['logging_google_pubsub_name']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'user': opts['user'],
-        'secret_key': opts['secret_key'],
-        'topic': opts['topic'],
-        'project_id': opts['project_id']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'secret_key': options['secret_key'],
+        'user': options['user'],
+        'project_id': options['project_id'],
+        'topic': options['topic']
       };
 
       let authNames = ['token'];
@@ -244,8 +356,26 @@ export default class LoggingPubsubApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateLogGcpPubsub(service_id, version_id, logging_google_pubsub_name, opts) {
-      return this.updateLogGcpPubsubWithHttpInfo(service_id, version_id, logging_google_pubsub_name, opts)
+
+    /**
+     * Update a Pub/Sub logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_google_pubsub_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+     * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+     * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
+     * @param {String} [options.topic] - The Google Cloud Pub/Sub topic to which logs will be published. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingGooglePubsubResponse}
+     */
+    updateLogGcpPubsub(options = {}) {
+      return this.updateLogGcpPubsubWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

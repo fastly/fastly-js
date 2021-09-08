@@ -1,7 +1,9 @@
-# FastlyApi.DirectorBackendApi
+# Fastly.DirectorBackendApi
 
 
-
+```javascript
+const apiInstance = new Fastly.DirectorBackendApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -14,29 +16,28 @@ Method | Fastly API endpoint | Description
 
 ## `createDirectorBackend`
 
-> createDirectorBackend(director_name, service_id, version_id, backend_name)
-
-Create a director-backend relationship
+```javascript
+createDirectorBackend({ director_name, service_id, version_id, backend_name })
+```
 
 Establishes a relationship between a Backend and a Director. The Backend is then considered a member of the Director and can be used to balance traffic onto.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.DirectorBackendApi();
-let director_name = "director_name_example"; // String | 
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let backend_name = "backend_name_example"; // String | 
-apiInstance.createDirectorBackend(director_name, service_id, version_id, backend_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  director_name: "director_name_example", // required  service_id: "service_id_example", // required  version_id: 56, // required  backend_name: "backend_name_example", // required};
 
+apiInstance.createDirectorBackend(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -52,29 +53,28 @@ Name | Type | Description  | Notes
 
 ## `deleteDirectorBackend`
 
-> deleteDirectorBackend(director_name, service_id, version_id, backend_name)
-
-Delete a director-backend relationship
+```javascript
+deleteDirectorBackend({ director_name, service_id, version_id, backend_name })
+```
 
 Deletes the relationship between a Backend and a Director. The Backend is no longer considered a member of the Director and thus will not have traffic balanced onto it from this Director.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.DirectorBackendApi();
-let director_name = "director_name_example"; // String | 
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let backend_name = "backend_name_example"; // String | 
-apiInstance.deleteDirectorBackend(director_name, service_id, version_id, backend_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  director_name: "director_name_example", // required  service_id: "service_id_example", // required  version_id: 56, // required  backend_name: "backend_name_example", // required};
 
+apiInstance.deleteDirectorBackend(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -90,29 +90,28 @@ Name | Type | Description  | Notes
 
 ## `getDirectorBackend`
 
-> getDirectorBackend(director_name, service_id, version_id, backend_name)
-
-Get a director-backend relationship
+```javascript
+getDirectorBackend({ director_name, service_id, version_id, backend_name })
+```
 
 Returns the relationship between a Backend and a Director. If the Backend has been associated with the Director, it returns a simple record indicating this. Otherwise, returns a 404.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.DirectorBackendApi();
-let director_name = "director_name_example"; // String | 
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let backend_name = "backend_name_example"; // String | 
-apiInstance.getDirectorBackend(director_name, service_id, version_id, backend_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  director_name: "director_name_example", // required  service_id: "service_id_example", // required  version_id: 56, // required  backend_name: "backend_name_example", // required};
 
+apiInstance.getDirectorBackend(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

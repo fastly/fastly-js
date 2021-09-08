@@ -15,19 +15,36 @@ import ApiClient from '../ApiClient';
 import AnyOfwafRulewafRuleRevision from './AnyOfwafRulewafRuleRevision';
 import Data from './Data';
 
-
+/**
+ * The WafExclusionsResponseAllOf model module.
+ * @module model/WafExclusionsResponseAllOf
+ * @version 3.0.0-alpha1
+ */
 class WafExclusionsResponseAllOf {
-    
+    /**
+     * Constructs a new <code>WafExclusionsResponseAllOf</code>.
+     * @alias module:model/WafExclusionsResponseAllOf
+     */
     constructor() { 
         
         WafExclusionsResponseAllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>WafExclusionsResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/WafExclusionsResponseAllOf} obj Optional instance to populate.
+     * @return {module:model/WafExclusionsResponseAllOf} The populated <code>WafExclusionsResponseAllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafExclusionsResponseAllOf();
@@ -45,10 +62,14 @@ class WafExclusionsResponseAllOf {
 
 }
 
-
+/**
+ * @member {Array.<module:model/Data>} data
+ */
 WafExclusionsResponseAllOf.prototype['data'] = undefined;
 
-
+/**
+ * @member {Array.<module:model/AnyOfwafRulewafRuleRevision>} included
+ */
 WafExclusionsResponseAllOf.prototype['included'] = undefined;
 
 

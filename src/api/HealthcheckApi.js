@@ -15,47 +15,76 @@
 import ApiClient from "../ApiClient";
 import HealthcheckResponse from '../model/HealthcheckResponse';
 
-
+/**
+* Healthcheck service.
+* @module api/HealthcheckApi
+* @version 3.0.0-alpha1
+*/
 export default class HealthcheckApi {
 
-    
+    /**
+    * Constructs a new HealthcheckApi. 
+    * @alias module:api/HealthcheckApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createHealthcheckWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Create a healthcheck for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {Number} [options.check_interval] - How often to run the healthcheck in milliseconds.
+     * @param {String} [options.comment] - A freeform descriptive note.
+     * @param {Number} [options.expected_response] - The status code expected from the host.
+     * @param {String} [options.host] - Which host to check.
+     * @param {String} [options.http_version] - Whether to use version 1.0 or 1.1 HTTP.
+     * @param {Number} [options.initial] - When loading a config, the initial number of probes to be seen as OK.
+     * @param {String} [options.method] - Which HTTP method to use.
+     * @param {String} [options.name] - The name of the healthcheck.
+     * @param {String} [options.path] - The path to check.
+     * @param {Number} [options.threshold] - How many healthchecks must succeed to be considered healthy.
+     * @param {Number} [options.timeout] - Timeout in milliseconds.
+     * @param {Number} [options.window] - The number of most recent healthcheck queries to keep for this healthcheck.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HealthcheckResponse} and HTTP response
+     */
+    createHealthcheckWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createHealthcheck");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createHealthcheck");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'check_interval': opts['check_interval'],
-        'comment': opts['comment'],
-        'expected_response': opts['expected_response'],
-        'host': opts['host'],
-        'http_version': opts['http_version'],
-        'initial': opts['initial'],
-        'method': opts['method'],
-        'name': opts['name'],
-        'path': opts['path'],
-        'threshold': opts['threshold'],
-        'timeout': opts['timeout'],
-        'window': opts['window']
+        'check_interval': options['check_interval'],
+        'comment': options['comment'],
+        'expected_response': options['expected_response'],
+        'host': options['host'],
+        'http_version': options['http_version'],
+        'initial': options['initial'],
+        'method': options['method'],
+        'name': options['name'],
+        'path': options['path'],
+        'threshold': options['threshold'],
+        'timeout': options['timeout'],
+        'window': options['window']
       };
 
       let authNames = ['token'];
@@ -68,31 +97,60 @@ export default class HealthcheckApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createHealthcheck(service_id, version_id, opts) {
-      return this.createHealthcheckWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Create a healthcheck for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {Number} [options.check_interval] - How often to run the healthcheck in milliseconds.
+     * @param {String} [options.comment] - A freeform descriptive note.
+     * @param {Number} [options.expected_response] - The status code expected from the host.
+     * @param {String} [options.host] - Which host to check.
+     * @param {String} [options.http_version] - Whether to use version 1.0 or 1.1 HTTP.
+     * @param {Number} [options.initial] - When loading a config, the initial number of probes to be seen as OK.
+     * @param {String} [options.method] - Which HTTP method to use.
+     * @param {String} [options.name] - The name of the healthcheck.
+     * @param {String} [options.path] - The path to check.
+     * @param {Number} [options.threshold] - How many healthchecks must succeed to be considered healthy.
+     * @param {Number} [options.timeout] - Timeout in milliseconds.
+     * @param {Number} [options.window] - The number of most recent healthcheck queries to keep for this healthcheck.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HealthcheckResponse}
+     */
+    createHealthcheck(options = {}) {
+      return this.createHealthcheckWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteHealthcheckWithHttpInfo(service_id, version_id, healthcheck_name) {
+
+    /**
+     * Delete the healthcheck for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.healthcheck_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteHealthcheckWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteHealthcheck");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteHealthcheck");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'healthcheck_name' is set
-      if (healthcheck_name === undefined || healthcheck_name === null) {
-        throw new Error("Missing the required parameter 'healthcheck_name' when calling deleteHealthcheck");
+      // Verify the required parameter 'healthcheck_name' is set.
+      if (options['healthcheck_name'] === undefined || options['healthcheck_name'] === null) {
+        throw new Error("Missing the required parameter 'healthcheck_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'healthcheck_name': healthcheck_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'healthcheck_name': options['healthcheck_name']
       };
       let queryParams = {
       };
@@ -111,31 +169,49 @@ export default class HealthcheckApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteHealthcheck(service_id, version_id, healthcheck_name) {
-      return this.deleteHealthcheckWithHttpInfo(service_id, version_id, healthcheck_name)
+
+    /**
+     * Delete the healthcheck for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.healthcheck_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteHealthcheck(options = {}) {
+      return this.deleteHealthcheckWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getHealthcheckWithHttpInfo(service_id, version_id, healthcheck_name) {
+
+    /**
+     * Get the healthcheck for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.healthcheck_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HealthcheckResponse} and HTTP response
+     */
+    getHealthcheckWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getHealthcheck");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getHealthcheck");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'healthcheck_name' is set
-      if (healthcheck_name === undefined || healthcheck_name === null) {
-        throw new Error("Missing the required parameter 'healthcheck_name' when calling getHealthcheck");
+      // Verify the required parameter 'healthcheck_name' is set.
+      if (options['healthcheck_name'] === undefined || options['healthcheck_name'] === null) {
+        throw new Error("Missing the required parameter 'healthcheck_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'healthcheck_name': healthcheck_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'healthcheck_name': options['healthcheck_name']
       };
       let queryParams = {
       };
@@ -154,26 +230,43 @@ export default class HealthcheckApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getHealthcheck(service_id, version_id, healthcheck_name) {
-      return this.getHealthcheckWithHttpInfo(service_id, version_id, healthcheck_name)
+
+    /**
+     * Get the healthcheck for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.healthcheck_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HealthcheckResponse}
+     */
+    getHealthcheck(options = {}) {
+      return this.getHealthcheckWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listHealthchecksWithHttpInfo(service_id, version_id) {
+
+    /**
+     * List all of the healthchecks for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/HealthcheckResponse>} and HTTP response
+     */
+    listHealthchecksWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listHealthchecks");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listHealthchecks");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -192,50 +285,78 @@ export default class HealthcheckApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listHealthchecks(service_id, version_id) {
-      return this.listHealthchecksWithHttpInfo(service_id, version_id)
+
+    /**
+     * List all of the healthchecks for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/HealthcheckResponse>}
+     */
+    listHealthchecks(options = {}) {
+      return this.listHealthchecksWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateHealthcheckWithHttpInfo(service_id, version_id, healthcheck_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Update the healthcheck for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.healthcheck_name
+     * @param {Number} [options.check_interval] - How often to run the healthcheck in milliseconds.
+     * @param {String} [options.comment] - A freeform descriptive note.
+     * @param {Number} [options.expected_response] - The status code expected from the host.
+     * @param {String} [options.host] - Which host to check.
+     * @param {String} [options.http_version] - Whether to use version 1.0 or 1.1 HTTP.
+     * @param {Number} [options.initial] - When loading a config, the initial number of probes to be seen as OK.
+     * @param {String} [options.method] - Which HTTP method to use.
+     * @param {String} [options.name] - The name of the healthcheck.
+     * @param {String} [options.path] - The path to check.
+     * @param {Number} [options.threshold] - How many healthchecks must succeed to be considered healthy.
+     * @param {Number} [options.timeout] - Timeout in milliseconds.
+     * @param {Number} [options.window] - The number of most recent healthcheck queries to keep for this healthcheck.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HealthcheckResponse} and HTTP response
+     */
+    updateHealthcheckWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateHealthcheck");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateHealthcheck");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'healthcheck_name' is set
-      if (healthcheck_name === undefined || healthcheck_name === null) {
-        throw new Error("Missing the required parameter 'healthcheck_name' when calling updateHealthcheck");
+      // Verify the required parameter 'healthcheck_name' is set.
+      if (options['healthcheck_name'] === undefined || options['healthcheck_name'] === null) {
+        throw new Error("Missing the required parameter 'healthcheck_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'healthcheck_name': healthcheck_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'healthcheck_name': options['healthcheck_name']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'check_interval': opts['check_interval'],
-        'comment': opts['comment'],
-        'expected_response': opts['expected_response'],
-        'host': opts['host'],
-        'http_version': opts['http_version'],
-        'initial': opts['initial'],
-        'method': opts['method'],
-        'name': opts['name'],
-        'path': opts['path'],
-        'threshold': opts['threshold'],
-        'timeout': opts['timeout'],
-        'window': opts['window']
+        'check_interval': options['check_interval'],
+        'comment': options['comment'],
+        'expected_response': options['expected_response'],
+        'host': options['host'],
+        'http_version': options['http_version'],
+        'initial': options['initial'],
+        'method': options['method'],
+        'name': options['name'],
+        'path': options['path'],
+        'threshold': options['threshold'],
+        'timeout': options['timeout'],
+        'window': options['window']
       };
 
       let authNames = ['token'];
@@ -248,8 +369,29 @@ export default class HealthcheckApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateHealthcheck(service_id, version_id, healthcheck_name, opts) {
-      return this.updateHealthcheckWithHttpInfo(service_id, version_id, healthcheck_name, opts)
+
+    /**
+     * Update the healthcheck for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.healthcheck_name
+     * @param {Number} [options.check_interval] - How often to run the healthcheck in milliseconds.
+     * @param {String} [options.comment] - A freeform descriptive note.
+     * @param {Number} [options.expected_response] - The status code expected from the host.
+     * @param {String} [options.host] - Which host to check.
+     * @param {String} [options.http_version] - Whether to use version 1.0 or 1.1 HTTP.
+     * @param {Number} [options.initial] - When loading a config, the initial number of probes to be seen as OK.
+     * @param {String} [options.method] - Which HTTP method to use.
+     * @param {String} [options.name] - The name of the healthcheck.
+     * @param {String} [options.path] - The path to check.
+     * @param {Number} [options.threshold] - How many healthchecks must succeed to be considered healthy.
+     * @param {Number} [options.timeout] - Timeout in milliseconds.
+     * @param {Number} [options.window] - The number of most recent healthcheck queries to keep for this healthcheck.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HealthcheckResponse}
+     */
+    updateHealthcheck(options = {}) {
+      return this.updateHealthcheckWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -16,32 +16,50 @@ import ApiClient from "../ApiClient";
 import WafRuleRevisionResponse from '../model/WafRuleRevisionResponse';
 import WafRuleRevisionsResponse from '../model/WafRuleRevisionsResponse';
 
-
+/**
+* WafRuleRevisions service.
+* @module api/WafRuleRevisionsApi
+* @version 3.0.0-alpha1
+*/
 export default class WafRuleRevisionsApi {
 
-    
+    /**
+    * Constructs a new WafRuleRevisionsApi. 
+    * @alias module:api/WafRuleRevisionsApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    getWafRuleRevisionWithHttpInfo(waf_rule_id, waf_rule_revision_number, opts) {
-      opts = opts || {};
+
+    /**
+     * Get a specific rule revision.
+     * @param {Object} options
+     * @param {String} options.waf_rule_id
+     * @param {Number} options.waf_rule_revision_number
+     * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_rule`, `vcl`, and `source`. The `vcl` and `source` relationships show the WAF VCL and corresponding ModSecurity source. These fields are blank unless the relationship is included. 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafRuleRevisionResponse} and HTTP response
+     */
+    getWafRuleRevisionWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'waf_rule_id' is set
-      if (waf_rule_id === undefined || waf_rule_id === null) {
-        throw new Error("Missing the required parameter 'waf_rule_id' when calling getWafRuleRevision");
+      // Verify the required parameter 'waf_rule_id' is set.
+      if (options['waf_rule_id'] === undefined || options['waf_rule_id'] === null) {
+        throw new Error("Missing the required parameter 'waf_rule_id'.");
       }
-      // verify the required parameter 'waf_rule_revision_number' is set
-      if (waf_rule_revision_number === undefined || waf_rule_revision_number === null) {
-        throw new Error("Missing the required parameter 'waf_rule_revision_number' when calling getWafRuleRevision");
+      // Verify the required parameter 'waf_rule_revision_number' is set.
+      if (options['waf_rule_revision_number'] === undefined || options['waf_rule_revision_number'] === null) {
+        throw new Error("Missing the required parameter 'waf_rule_revision_number'.");
       }
 
       let pathParams = {
-        'waf_rule_id': waf_rule_id,
-        'waf_rule_revision_number': waf_rule_revision_number
+        'waf_rule_id': options['waf_rule_id'],
+        'waf_rule_revision_number': options['waf_rule_revision_number']
       };
       let queryParams = {
-        'include': opts['include']
+        'include': options['include']
       };
       let headerParams = {
       };
@@ -58,27 +76,45 @@ export default class WafRuleRevisionsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getWafRuleRevision(waf_rule_id, waf_rule_revision_number, opts) {
-      return this.getWafRuleRevisionWithHttpInfo(waf_rule_id, waf_rule_revision_number, opts)
+
+    /**
+     * Get a specific rule revision.
+     * @param {Object} options
+     * @param {String} options.waf_rule_id
+     * @param {Number} options.waf_rule_revision_number
+     * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_rule`, `vcl`, and `source`. The `vcl` and `source` relationships show the WAF VCL and corresponding ModSecurity source. These fields are blank unless the relationship is included. 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafRuleRevisionResponse}
+     */
+    getWafRuleRevision(options = {}) {
+      return this.getWafRuleRevisionWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listWafRuleRevisionsWithHttpInfo(waf_rule_id, opts) {
-      opts = opts || {};
+
+    /**
+     * List all revisions for a specific rule. The `rule_id` provided can be the ModSecurity Rule ID or the Fastly generated rule ID.
+     * @param {Object} options
+     * @param {String} options.waf_rule_id
+     * @param {Number} [options.page_number] - Current page.
+     * @param {Number} [options.page_size=20] - Number of records per page.
+     * @param {module:model/String} [options.include='waf_rule'] - Include relationships. Optional.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafRuleRevisionsResponse} and HTTP response
+     */
+    listWafRuleRevisionsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'waf_rule_id' is set
-      if (waf_rule_id === undefined || waf_rule_id === null) {
-        throw new Error("Missing the required parameter 'waf_rule_id' when calling listWafRuleRevisions");
+      // Verify the required parameter 'waf_rule_id' is set.
+      if (options['waf_rule_id'] === undefined || options['waf_rule_id'] === null) {
+        throw new Error("Missing the required parameter 'waf_rule_id'.");
       }
 
       let pathParams = {
-        'waf_rule_id': waf_rule_id
+        'waf_rule_id': options['waf_rule_id']
       };
       let queryParams = {
-        'page[number]': opts['page_number'],
-        'page[size]': opts['page_size'],
-        'include': opts['include']
+        'page[number]': options['page_number'],
+        'page[size]': options['page_size'],
+        'include': options['include']
       };
       let headerParams = {
       };
@@ -95,8 +131,18 @@ export default class WafRuleRevisionsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listWafRuleRevisions(waf_rule_id, opts) {
-      return this.listWafRuleRevisionsWithHttpInfo(waf_rule_id, opts)
+
+    /**
+     * List all revisions for a specific rule. The `rule_id` provided can be the ModSecurity Rule ID or the Fastly generated rule ID.
+     * @param {Object} options
+     * @param {String} options.waf_rule_id
+     * @param {Number} [options.page_number] - Current page.
+     * @param {Number} [options.page_size=20] - Number of records per page.
+     * @param {module:model/String} [options.include='waf_rule'] - Include relationships. Optional.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafRuleRevisionsResponse}
+     */
+    listWafRuleRevisions(options = {}) {
+      return this.listWafRuleRevisionsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

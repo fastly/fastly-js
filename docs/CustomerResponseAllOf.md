@@ -1,4 +1,4 @@
-# FastlyApi.CustomerResponseAllOf
+# Fastly.CustomerResponseAllOf
 
 ## Properties
 

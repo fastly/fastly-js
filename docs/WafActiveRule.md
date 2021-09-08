@@ -1,4 +1,4 @@
-# FastlyApi.WafActiveRule
+# Fastly.WafActiveRule
 
 ## Properties
 

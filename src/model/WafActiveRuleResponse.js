@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import Data from './Data';
 
-
+/**
+ * The WafActiveRuleResponse model module.
+ * @module model/WafActiveRuleResponse
+ * @version 3.0.0-alpha1
+ */
 class WafActiveRuleResponse {
-    
+    /**
+     * Constructs a new <code>WafActiveRuleResponse</code>.
+     * @alias module:model/WafActiveRuleResponse
+     */
     constructor() { 
         
         WafActiveRuleResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>WafActiveRuleResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/WafActiveRuleResponse} obj Optional instance to populate.
+     * @return {module:model/WafActiveRuleResponse} The populated <code>WafActiveRuleResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafActiveRuleResponse();
@@ -41,7 +58,9 @@ class WafActiveRuleResponse {
 
 }
 
-
+/**
+ * @member {module:model/Data} data
+ */
 WafActiveRuleResponse.prototype['data'] = undefined;
 
 

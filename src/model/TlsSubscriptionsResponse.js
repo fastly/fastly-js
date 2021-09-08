@@ -18,19 +18,38 @@ import PaginationLinks from './PaginationLinks';
 import PaginationMeta from './PaginationMeta';
 import TlsSubscriptionsResponseAllOf from './TlsSubscriptionsResponseAllOf';
 
-
+/**
+ * The TlsSubscriptionsResponse model module.
+ * @module model/TlsSubscriptionsResponse
+ * @version 3.0.0-alpha1
+ */
 class TlsSubscriptionsResponse {
-    
+    /**
+     * Constructs a new <code>TlsSubscriptionsResponse</code>.
+     * @alias module:model/TlsSubscriptionsResponse
+     * @implements module:model/Pagination
+     * @implements module:model/TlsSubscriptionsResponseAllOf
+     */
     constructor() { 
         Pagination.initialize(this);TlsSubscriptionsResponseAllOf.initialize(this);
         TlsSubscriptionsResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>TlsSubscriptionsResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/TlsSubscriptionsResponse} obj Optional instance to populate.
+     * @return {module:model/TlsSubscriptionsResponse} The populated <code>TlsSubscriptionsResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsSubscriptionsResponse();
@@ -53,23 +72,35 @@ class TlsSubscriptionsResponse {
 
 }
 
-
+/**
+ * @member {module:model/PaginationLinks} links
+ */
 TlsSubscriptionsResponse.prototype['links'] = undefined;
 
-
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
 TlsSubscriptionsResponse.prototype['meta'] = undefined;
 
-
+/**
+ * @member {Array.<module:model/Data>} data
+ */
 TlsSubscriptionsResponse.prototype['data'] = undefined;
 
 
 // Implement Pagination interface:
-
+/**
+ * @member {module:model/PaginationLinks} links
+ */
 Pagination.prototype['links'] = undefined;
-
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
 Pagination.prototype['meta'] = undefined;
 // Implement TlsSubscriptionsResponseAllOf interface:
-
+/**
+ * @member {Array.<module:model/Data>} data
+ */
 TlsSubscriptionsResponseAllOf.prototype['data'] = undefined;
 
 

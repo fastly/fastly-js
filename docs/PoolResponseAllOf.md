@@ -1,4 +1,4 @@
-# FastlyApi.PoolResponseAllOf
+# Fastly.PoolResponseAllOf
 
 ## Properties
 

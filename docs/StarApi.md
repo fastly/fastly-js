@@ -1,7 +1,9 @@
-# FastlyApi.StarApi
+# Fastly.StarApi
 
 
-
+```javascript
+const apiInstance = new Fastly.StarApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -15,28 +17,30 @@ Method | Fastly API endpoint | Description
 
 ## `createServiceStar`
 
-> createServiceStar(opts)
-
-Create a star
+```javascript
+createServiceStar({ [star] })
+```
 
 Create star.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.StarApi();
-let opts = {
-  'star': {"data":{"type":"star","relationships":{"user":{"data":{"type":"user","id":"6c7kAlo4vACNchGOdQxP37"}},"service":{"data":{"type":"service","id":"SU1Z0isxPaozGVKXdv0eY"}}}}} // Star | 
-};
-apiInstance.createServiceStar(opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
 
+  star: new Fastly.Star(),
+};
+
+apiInstance.createServiceStar(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -49,26 +53,28 @@ Name | Type | Description  | Notes
 
 ## `deleteServiceStar`
 
-> deleteServiceStar(star_id)
-
-Delete a star
+```javascript
+deleteServiceStar({ star_id })
+```
 
 Delete star.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.StarApi();
-let star_id = "star_id_example"; // String | 
-apiInstance.deleteServiceStar(star_id).then(() => {
-  console.log('API called successfully.');
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  star_id: "star_id_example", // required};
 
+apiInstance.deleteServiceStar(options)
+  .then(() => {
+    console.log('API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -81,26 +87,28 @@ null (empty response body)
 
 ## `getServiceStar`
 
-> getServiceStar(star_id)
-
-Get a star
+```javascript
+getServiceStar({ star_id })
+```
 
 Show star.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.StarApi();
-let star_id = "star_id_example"; // String | 
-apiInstance.getServiceStar(star_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  star_id: "star_id_example", // required};
 
+apiInstance.getServiceStar(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -113,25 +121,25 @@ Name | Type | Description  | Notes
 
 ## `listServiceStars`
 
-> listServiceStars()
-
-List stars
+```javascript
+listServiceStars()
+```
 
 List stars.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.StarApi();
-apiInstance.listServiceStars().then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
+apiInstance.listServiceStars()
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 This endpoint does not need any parameters.
 

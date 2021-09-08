@@ -16,31 +16,48 @@ import AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates from '
 import TlsSubscriptionDataAttributes from './TlsSubscriptionDataAttributes';
 import TypeTlsSubscription from './TypeTlsSubscription';
 
-
+/**
+ * The TlsSubscriptionData model module.
+ * @module model/TlsSubscriptionData
+ * @version 3.0.0-alpha1
+ */
 class TlsSubscriptionData {
-    
+    /**
+     * Constructs a new <code>TlsSubscriptionData</code>.
+     * @alias module:model/TlsSubscriptionData
+     */
     constructor() { 
         
         TlsSubscriptionData.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>TlsSubscriptionData</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/TlsSubscriptionData} obj Optional instance to populate.
+     * @return {module:model/TlsSubscriptionData} The populated <code>TlsSubscriptionData</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsSubscriptionData();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeTlsSubscription.constructFromObject(data['type']);
-            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = TlsSubscriptionDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = ApiClient.convertToType(data['relationships'], AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates);
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeTlsSubscription.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -49,14 +66,20 @@ class TlsSubscriptionData {
 
 }
 
-
-TlsSubscriptionData.prototype['type'] = undefined;
-
-
+/**
+ * @member {module:model/TlsSubscriptionDataAttributes} attributes
+ */
 TlsSubscriptionData.prototype['attributes'] = undefined;
 
-
+/**
+ * @member {module:model/AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates} relationships
+ */
 TlsSubscriptionData.prototype['relationships'] = undefined;
+
+/**
+ * @member {module:model/TypeTlsSubscription} type
+ */
+TlsSubscriptionData.prototype['type'] = undefined;
 
 
 

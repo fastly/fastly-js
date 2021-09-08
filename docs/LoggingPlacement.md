@@ -1,4 +1,4 @@
-# FastlyApi.LoggingPlacement
+# Fastly.LoggingPlacement
 
 ## Enum
 

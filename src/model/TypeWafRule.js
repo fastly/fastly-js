@@ -12,15 +12,26 @@
  */
 
 import ApiClient from '../ApiClient';
-
+/**
+* Enum class TypeWafRule.
+* @enum {}
+* @readonly
+*/
 export default class TypeWafRule {
     
-        
+        /**
+         * value: "waf_rule"
+         * @const
+         */
         "waf_rule" = "waf_rule";
 
     
 
-    
+    /**
+    * Returns a <code>TypeWafRule</code> enum value from a Javascript object name.
+    * @param {Object} data The plain JavaScript object containing the name of the enum value.
+    * @return {module:model/TypeWafRule} The enum <code>TypeWafRule</code> value.
+    */
     static constructFromObject(object) {
         return object;
     }

@@ -18,19 +18,39 @@ import LoggingPlacement from './LoggingPlacement';
 import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Timestamps from './Timestamps';
 
-
+/**
+ * The LoggingLogshuttleResponse model module.
+ * @module model/LoggingLogshuttleResponse
+ * @version 3.0.0-alpha1
+ */
 class LoggingLogshuttleResponse {
-    
+    /**
+     * Constructs a new <code>LoggingLogshuttleResponse</code>.
+     * @alias module:model/LoggingLogshuttleResponse
+     * @implements module:model/LoggingLogshuttle
+     * @implements module:model/Timestamps
+     * @implements module:model/ServiceIdAndVersion
+     */
     constructor() { 
         LoggingLogshuttle.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
         LoggingLogshuttleResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingLogshuttleResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingLogshuttleResponse} obj Optional instance to populate.
+     * @return {module:model/LoggingLogshuttleResponse} The populated <code>LoggingLogshuttleResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingLogshuttleResponse();
@@ -38,20 +58,20 @@ class LoggingLogshuttleResponse {
             Timestamps.constructFromObject(data, obj);
             ServiceIdAndVersion.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
             }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
-            }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
-            }
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -81,69 +101,139 @@ class LoggingLogshuttleResponse {
 
 }
 
-
-LoggingLogshuttleResponse.prototype['name'] = undefined;
-
-
-LoggingLogshuttleResponse.prototype['placement'] = undefined;
-
-
-LoggingLogshuttleResponse.prototype['format_version'] = undefined;
-
-
-LoggingLogshuttleResponse.prototype['response_condition'] = undefined;
-
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
 LoggingLogshuttleResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingLogshuttleResponse.prototype['format_version'] = undefined;
 
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingLogshuttleResponse.prototype['name'] = undefined;
+
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingLogshuttleResponse.prototype['placement'] = undefined;
+
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingLogshuttleResponse.prototype['response_condition'] = undefined;
+
+/**
+ * The data authentication token associated with this endpoint.
+ * @member {String} token
+ */
 LoggingLogshuttleResponse.prototype['token'] = undefined;
 
-
+/**
+ * The URL to stream logs to.
+ * @member {String} url
+ */
 LoggingLogshuttleResponse.prototype['url'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 LoggingLogshuttleResponse.prototype['created_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 LoggingLogshuttleResponse.prototype['deleted_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 LoggingLogshuttleResponse.prototype['updated_at'] = undefined;
 
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 LoggingLogshuttleResponse.prototype['service_id'] = undefined;
 
-
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
 LoggingLogshuttleResponse.prototype['version'] = undefined;
 
 
 // Implement LoggingLogshuttle interface:
-
-LoggingLogshuttle.prototype['name'] = undefined;
-
-LoggingLogshuttle.prototype['placement'] = undefined;
-
-LoggingLogshuttle.prototype['format_version'] = undefined;
-
-LoggingLogshuttle.prototype['response_condition'] = undefined;
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
 LoggingLogshuttle.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingLogshuttle.prototype['format_version'] = undefined;
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingLogshuttle.prototype['name'] = undefined;
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingLogshuttle.prototype['placement'] = undefined;
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingLogshuttle.prototype['response_condition'] = undefined;
+/**
+ * The data authentication token associated with this endpoint.
+ * @member {String} token
+ */
 LoggingLogshuttle.prototype['token'] = undefined;
-
+/**
+ * The URL to stream logs to.
+ * @member {String} url
+ */
 LoggingLogshuttle.prototype['url'] = undefined;
 // Implement Timestamps interface:
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 Timestamps.prototype['created_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 Timestamps.prototype['deleted_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 Timestamps.prototype['updated_at'] = undefined;
 // Implement ServiceIdAndVersion interface:
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 ServiceIdAndVersion.prototype['service_id'] = undefined;
-
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
 ServiceIdAndVersion.prototype['version'] = undefined;
 
 

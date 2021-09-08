@@ -1,7 +1,9 @@
-# FastlyApi.LoggingAzureblobApi
+# Fastly.LoggingAzureblobApi
 
 
-
+```javascript
+const apiInstance = new Fastly.LoggingAzureblobApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -16,66 +18,81 @@ Method | Fastly API endpoint | Description
 
 ## `createLogAzure`
 
-> createLogAzure(service_id, version_id, opts)
-
-Create an Azure Blob Storage log endpoint
+```javascript
+createLogAzure({ service_id, version_id, [format], , [format_version], , [name], , [placement], , [response_condition], , [compression_codec], , [gzip_level], , [message_type], , [period], , [timestamp_format], , [account_name], , [container], , [file_max_bytes], , [path], , [public_key], , [sas_token] })
+```
 
 Create an Azure Blob Storage logging endpoint for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingAzureblobApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let opts = {
-  'name': "name_example", // String | The name for the real-time logging configuration.
-  'placement': new FastlyApi.LoggingPlacement(), // LoggingPlacement | 
-  'format_version': new FastlyApi.LoggingFormatVersion(), // LoggingFormatVersion | 
-  'response_condition': "response_condition_example", // String | The name of an existing condition in the configured endpoint, or leave blank to always execute.
-  'format': "'%h %l %u %t \"%r\" %&gt;s %b'", // String | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-  'message_type': new FastlyApi.LoggingMessageType(), // LoggingMessageType | 
-  'timestamp_format': "timestamp_format_example", // String | Date and time in ISO 8601 format.
-  'period': 3600, // Number | How frequently log files are finalized so they can be available for reading (in seconds).
-  'gzip_level': 0, // Number | What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-  'compression_codec': new FastlyApi.LoggingCompressionCodec(), // LoggingCompressionCodec | 
-  'path': "'null'", // String | The path to upload logs to.
-  'account_name': "account_name_example", // String | The unique Azure Blob Storage namespace in which your data objects are stored. Required.
-  'container': "container_example", // String | The name of the Azure Blob Storage container in which to store logs. Required.
-  'sas_token': "sas_token_example", // String | The Azure shared access signature providing write access to the blob service objects. Be sure to update your token before it expires or the logging functionality will not work. Required.
-  'public_key': "'null'", // String | A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
-  'file_max_bytes': 56 // Number | The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
-};
-apiInstance.createLogAzure(service_id, version_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
+  format_version: new Fastly.LoggingFormatVersion(),
+
+  name: "name_example",
+
+  placement: new Fastly.LoggingPlacement(),
+
+  response_condition: "response_condition_example",
+
+  compression_codec: new Fastly.LoggingCompressionCodec(),
+
+  gzip_level: 0,
+
+  message_type: new Fastly.LoggingMessageType(),
+
+  period: 3600,
+
+  timestamp_format: "timestamp_format_example",
+
+  account_name: "account_name_example",
+
+  container: "container_example",
+
+  file_max_bytes: 56,
+
+  path: "'null'",
+
+  public_key: "'null'",
+
+  sas_token: "sas_token_example",
+};
+
+apiInstance.createLogAzure(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
+**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
-**message_type** | [**LoggingMessageType**](../Model/LoggingMessageType.md) |  | [optional]
-**timestamp_format** | **String** | Date and time in ISO 8601 format. | [optional]
-**period** | **Number** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [default to 3600]
-**gzip_level** | **Number** | What level of gzip encoding to have when sending logs (default &#x60;0&#x60;, no compression). If an explicit non-zero value is set, then &#x60;compression_codec&#x60; will default to \\\&quot;gzip.\\\&quot; Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error. | [optional] [default to 0]
 **compression_codec** | [**LoggingCompressionCodec**](../Model/LoggingCompressionCodec.md) |  | [optional]
-**path** | **String** | The path to upload logs to. | [optional] [default to &#39;null&#39;]
+**gzip_level** | **Number** | What level of gzip encoding to have when sending logs (default &#x60;0&#x60;, no compression). If an explicit non-zero value is set, then &#x60;compression_codec&#x60; will default to \\\&quot;gzip.\\\&quot; Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error. | [optional] [default to 0]
+**message_type** | [**LoggingMessageType**](../Model/LoggingMessageType.md) |  | [optional]
+**period** | **Number** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [default to 3600]
+**timestamp_format** | **String** | Date and time in ISO 8601 format. | [optional]
 **account_name** | **String** | The unique Azure Blob Storage namespace in which your data objects are stored. Required. | [optional]
 **container** | **String** | The name of the Azure Blob Storage container in which to store logs. Required. | [optional]
-**sas_token** | **String** | The Azure shared access signature providing write access to the blob service objects. Be sure to update your token before it expires or the logging functionality will not work. Required. | [optional]
-**public_key** | **String** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional] [default to &#39;null&#39;]
 **file_max_bytes** | **Number** | The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.) | [optional]
+**path** | **String** | The path to upload logs to. | [optional] [default to &#39;null&#39;]
+**public_key** | **String** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional] [default to &#39;null&#39;]
+**sas_token** | **String** | The Azure shared access signature providing write access to the blob service objects. Be sure to update your token before it expires or the logging functionality will not work. Required. | [optional]
 
 ### Return type
 
@@ -84,28 +101,28 @@ Name | Type | Description  | Notes
 
 ## `deleteLogAzure`
 
-> deleteLogAzure(service_id, version_id, logging_azureblob_name)
-
-Delete the Azure Blob Storage log endpoint
+```javascript
+deleteLogAzure({ service_id, version_id, logging_azureblob_name })
+```
 
 Delete the Azure Blob Storage logging endpoint for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingAzureblobApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let logging_azureblob_name = "logging_azureblob_name_example"; // String | 
-apiInstance.deleteLogAzure(service_id, version_id, logging_azureblob_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_azureblob_name: "logging_azureblob_name_example", // required};
 
+apiInstance.deleteLogAzure(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -120,28 +137,28 @@ Name | Type | Description  | Notes
 
 ## `getLogAzure`
 
-> getLogAzure(service_id, version_id, logging_azureblob_name)
-
-Get an Azure Blob Storage log endpoint
+```javascript
+getLogAzure({ service_id, version_id, logging_azureblob_name })
+```
 
 Get the Azure Blob Storage logging endpoint for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingAzureblobApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let logging_azureblob_name = "logging_azureblob_name_example"; // String | 
-apiInstance.getLogAzure(service_id, version_id, logging_azureblob_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_azureblob_name: "logging_azureblob_name_example", // required};
 
+apiInstance.getLogAzure(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -156,27 +173,28 @@ Name | Type | Description  | Notes
 
 ## `listLogAzure`
 
-> listLogAzure(service_id, version_id)
-
-List Azure Blob Storage log endpoints
+```javascript
+listLogAzure({ service_id, version_id })
+```
 
 List all of the Azure Blob Storage logging endpoints for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingAzureblobApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.listLogAzure(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.listLogAzure(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -190,68 +208,82 @@ Name | Type | Description  | Notes
 
 ## `updateLogAzure`
 
-> updateLogAzure(service_id, version_id, logging_azureblob_name, opts)
-
-Update an Azure Blob Storage log endpoint
+```javascript
+updateLogAzure({ service_id, version_id, logging_azureblob_name, [format], , [format_version], , [name], , [placement], , [response_condition], , [compression_codec], , [gzip_level], , [message_type], , [period], , [timestamp_format], , [account_name], , [container], , [file_max_bytes], , [path], , [public_key], , [sas_token] })
+```
 
 Update the Azure Blob Storage logging endpoint for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingAzureblobApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let logging_azureblob_name = "logging_azureblob_name_example"; // String | 
-let opts = {
-  'name': "name_example", // String | The name for the real-time logging configuration.
-  'placement': new FastlyApi.LoggingPlacement(), // LoggingPlacement | 
-  'format_version': new FastlyApi.LoggingFormatVersion(), // LoggingFormatVersion | 
-  'response_condition': "response_condition_example", // String | The name of an existing condition in the configured endpoint, or leave blank to always execute.
-  'format': "'%h %l %u %t \"%r\" %&gt;s %b'", // String | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-  'message_type': new FastlyApi.LoggingMessageType(), // LoggingMessageType | 
-  'timestamp_format': "timestamp_format_example", // String | Date and time in ISO 8601 format.
-  'period': 3600, // Number | How frequently log files are finalized so they can be available for reading (in seconds).
-  'gzip_level': 0, // Number | What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-  'compression_codec': new FastlyApi.LoggingCompressionCodec(), // LoggingCompressionCodec | 
-  'path': "'null'", // String | The path to upload logs to.
-  'account_name': "account_name_example", // String | The unique Azure Blob Storage namespace in which your data objects are stored. Required.
-  'container': "container_example", // String | The name of the Azure Blob Storage container in which to store logs. Required.
-  'sas_token': "sas_token_example", // String | The Azure shared access signature providing write access to the blob service objects. Be sure to update your token before it expires or the logging functionality will not work. Required.
-  'public_key': "'null'", // String | A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
-  'file_max_bytes': 56 // Number | The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
-};
-apiInstance.updateLogAzure(service_id, version_id, logging_azureblob_name, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_azureblob_name: "logging_azureblob_name_example", // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
+  format_version: new Fastly.LoggingFormatVersion(),
+
+  name: "name_example",
+
+  placement: new Fastly.LoggingPlacement(),
+
+  response_condition: "response_condition_example",
+
+  compression_codec: new Fastly.LoggingCompressionCodec(),
+
+  gzip_level: 0,
+
+  message_type: new Fastly.LoggingMessageType(),
+
+  period: 3600,
+
+  timestamp_format: "timestamp_format_example",
+
+  account_name: "account_name_example",
+
+  container: "container_example",
+
+  file_max_bytes: 56,
+
+  path: "'null'",
+
+  public_key: "'null'",
+
+  sas_token: "sas_token_example",
+};
+
+apiInstance.updateLogAzure(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
 **logging_azureblob_name** | **String** |  |
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
+**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
-**message_type** | [**LoggingMessageType**](../Model/LoggingMessageType.md) |  | [optional]
-**timestamp_format** | **String** | Date and time in ISO 8601 format. | [optional]
-**period** | **Number** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [default to 3600]
-**gzip_level** | **Number** | What level of gzip encoding to have when sending logs (default &#x60;0&#x60;, no compression). If an explicit non-zero value is set, then &#x60;compression_codec&#x60; will default to \\\&quot;gzip.\\\&quot; Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error. | [optional] [default to 0]
 **compression_codec** | [**LoggingCompressionCodec**](../Model/LoggingCompressionCodec.md) |  | [optional]
-**path** | **String** | The path to upload logs to. | [optional] [default to &#39;null&#39;]
+**gzip_level** | **Number** | What level of gzip encoding to have when sending logs (default &#x60;0&#x60;, no compression). If an explicit non-zero value is set, then &#x60;compression_codec&#x60; will default to \\\&quot;gzip.\\\&quot; Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error. | [optional] [default to 0]
+**message_type** | [**LoggingMessageType**](../Model/LoggingMessageType.md) |  | [optional]
+**period** | **Number** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [default to 3600]
+**timestamp_format** | **String** | Date and time in ISO 8601 format. | [optional]
 **account_name** | **String** | The unique Azure Blob Storage namespace in which your data objects are stored. Required. | [optional]
 **container** | **String** | The name of the Azure Blob Storage container in which to store logs. Required. | [optional]
-**sas_token** | **String** | The Azure shared access signature providing write access to the blob service objects. Be sure to update your token before it expires or the logging functionality will not work. Required. | [optional]
-**public_key** | **String** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional] [default to &#39;null&#39;]
 **file_max_bytes** | **Number** | The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.) | [optional]
+**path** | **String** | The path to upload logs to. | [optional] [default to &#39;null&#39;]
+**public_key** | **String** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional] [default to &#39;null&#39;]
+**sas_token** | **String** | The Azure shared access signature providing write access to the blob service objects. Be sure to update your token before it expires or the logging functionality will not work. Required. | [optional]
 
 ### Return type
 

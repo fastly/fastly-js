@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import RelationshipCustomerCustomer from './RelationshipCustomerCustomer';
 
-
+/**
+ * The RelationshipCustomer model module.
+ * @module model/RelationshipCustomer
+ * @version 3.0.0-alpha1
+ */
 class RelationshipCustomer {
-    
+    /**
+     * Constructs a new <code>RelationshipCustomer</code>.
+     * @alias module:model/RelationshipCustomer
+     */
     constructor() { 
         
         RelationshipCustomer.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipCustomer</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipCustomer} obj Optional instance to populate.
+     * @return {module:model/RelationshipCustomer} The populated <code>RelationshipCustomer</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipCustomer();
@@ -41,7 +58,9 @@ class RelationshipCustomer {
 
 }
 
-
+/**
+ * @member {module:model/RelationshipCustomerCustomer} customer
+ */
 RelationshipCustomer.prototype['customer'] = undefined;
 
 

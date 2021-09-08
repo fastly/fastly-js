@@ -17,17 +17,33 @@ import WafFirewall from '../model/WafFirewall';
 import WafFirewallResponse from '../model/WafFirewallResponse';
 import WafFirewallsResponse from '../model/WafFirewallsResponse';
 
-
+/**
+* WafFirewalls service.
+* @module api/WafFirewallsApi
+* @version 3.0.0-alpha1
+*/
 export default class WafFirewallsApi {
 
-    
+    /**
+    * Constructs a new WafFirewallsApi. 
+    * @alias module:api/WafFirewallsApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createWafFirewallWithHttpInfo(opts) {
-      opts = opts || {};
-      let postBody = opts['waf_firewall'];
+
+    /**
+     * Create a firewall object for a particular service and service version using a defined `prefetch_condition` and `response`. If the `prefetch_condition` or the `response` is missing from the request body, Fastly will generate a default object on your service. 
+     * @param {Object} options
+     * @param {module:model/WafFirewall} [options.waf_firewall]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafFirewallResponse} and HTTP response
+     */
+    createWafFirewallWithHttpInfo(options = {}) {
+      let postBody = options['waf_firewall'];
 
       let pathParams = {
       };
@@ -48,22 +64,36 @@ export default class WafFirewallsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createWafFirewall(opts) {
-      return this.createWafFirewallWithHttpInfo(opts)
+
+    /**
+     * Create a firewall object for a particular service and service version using a defined `prefetch_condition` and `response`. If the `prefetch_condition` or the `response` is missing from the request body, Fastly will generate a default object on your service. 
+     * @param {Object} options
+     * @param {module:model/WafFirewall} [options.waf_firewall]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafFirewallResponse}
+     */
+    createWafFirewall(options = {}) {
+      return this.createWafFirewallWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteWafFirewallWithHttpInfo(firewall_id, opts) {
-      opts = opts || {};
-      let postBody = opts['waf_firewall'];
-      // verify the required parameter 'firewall_id' is set
-      if (firewall_id === undefined || firewall_id === null) {
-        throw new Error("Missing the required parameter 'firewall_id' when calling deleteWafFirewall");
+
+    /**
+     * Delete the firewall object for a particular service and service version. 
+     * @param {Object} options
+     * @param {String} options.firewall_id
+     * @param {module:model/WafFirewall} [options.waf_firewall]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteWafFirewallWithHttpInfo(options = {}) {
+      let postBody = options['waf_firewall'];
+      // Verify the required parameter 'firewall_id' is set.
+      if (options['firewall_id'] === undefined || options['firewall_id'] === null) {
+        throw new Error("Missing the required parameter 'firewall_id'.");
       }
 
       let pathParams = {
-        'firewall_id': firewall_id
+        'firewall_id': options['firewall_id']
       };
       let queryParams = {
       };
@@ -82,26 +112,42 @@ export default class WafFirewallsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteWafFirewall(firewall_id, opts) {
-      return this.deleteWafFirewallWithHttpInfo(firewall_id, opts)
+
+    /**
+     * Delete the firewall object for a particular service and service version. 
+     * @param {Object} options
+     * @param {String} options.firewall_id
+     * @param {module:model/WafFirewall} [options.waf_firewall]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteWafFirewall(options = {}) {
+      return this.deleteWafFirewallWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getWafFirewallWithHttpInfo(firewall_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Get a specific firewall object.
+     * @param {Object} options
+     * @param {String} options.firewall_id
+     * @param {String} [options.filter_service_version_number] - Limit the results returned to a specific service version.
+     * @param {module:model/String} [options.include='waf_firewall_versions'] - Include related objects. Optional.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafFirewallResponse} and HTTP response
+     */
+    getWafFirewallWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'firewall_id' is set
-      if (firewall_id === undefined || firewall_id === null) {
-        throw new Error("Missing the required parameter 'firewall_id' when calling getWafFirewall");
+      // Verify the required parameter 'firewall_id' is set.
+      if (options['firewall_id'] === undefined || options['firewall_id'] === null) {
+        throw new Error("Missing the required parameter 'firewall_id'.");
       }
 
       let pathParams = {
-        'firewall_id': firewall_id
+        'firewall_id': options['firewall_id']
       };
       let queryParams = {
-        'filter[service_version_number]': opts['filter_service_version_number'],
-        'include': opts['include']
+        'filter[service_version_number]': options['filter_service_version_number'],
+        'include': options['include']
       };
       let headerParams = {
       };
@@ -118,24 +164,43 @@ export default class WafFirewallsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getWafFirewall(firewall_id, opts) {
-      return this.getWafFirewallWithHttpInfo(firewall_id, opts)
+
+    /**
+     * Get a specific firewall object.
+     * @param {Object} options
+     * @param {String} options.firewall_id
+     * @param {String} [options.filter_service_version_number] - Limit the results returned to a specific service version.
+     * @param {module:model/String} [options.include='waf_firewall_versions'] - Include related objects. Optional.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafFirewallResponse}
+     */
+    getWafFirewall(options = {}) {
+      return this.getWafFirewallWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listWafFirewallsWithHttpInfo(opts) {
-      opts = opts || {};
+
+    /**
+     * List all firewall objects.
+     * @param {Object} options
+     * @param {Number} [options.page_number] - Current page.
+     * @param {Number} [options.page_size=20] - Number of records per page.
+     * @param {String} [options.filter_service_id] - Limit the results returned to a specific service.
+     * @param {String} [options.filter_service_version_number] - Limit the results returned to a specific service version.
+     * @param {module:model/String} [options.include='waf_firewall_versions'] - Include related objects. Optional.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafFirewallsResponse} and HTTP response
+     */
+    listWafFirewallsWithHttpInfo(options = {}) {
       let postBody = null;
 
       let pathParams = {
       };
       let queryParams = {
-        'page[number]': opts['page_number'],
-        'page[size]': opts['page_size'],
-        'filter[service_id]': opts['filter_service_id'],
-        'filter[service_version_number]': opts['filter_service_version_number'],
-        'include': opts['include']
+        'page[number]': options['page_number'],
+        'page[size]': options['page_size'],
+        'filter[service_id]': options['filter_service_id'],
+        'filter[service_version_number]': options['filter_service_version_number'],
+        'include': options['include']
       };
       let headerParams = {
       };
@@ -152,22 +217,40 @@ export default class WafFirewallsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listWafFirewalls(opts) {
-      return this.listWafFirewallsWithHttpInfo(opts)
+
+    /**
+     * List all firewall objects.
+     * @param {Object} options
+     * @param {Number} [options.page_number] - Current page.
+     * @param {Number} [options.page_size=20] - Number of records per page.
+     * @param {String} [options.filter_service_id] - Limit the results returned to a specific service.
+     * @param {String} [options.filter_service_version_number] - Limit the results returned to a specific service version.
+     * @param {module:model/String} [options.include='waf_firewall_versions'] - Include related objects. Optional.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafFirewallsResponse}
+     */
+    listWafFirewalls(options = {}) {
+      return this.listWafFirewallsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateWafFirewallWithHttpInfo(firewall_id, opts) {
-      opts = opts || {};
-      let postBody = opts['waf_firewall'];
-      // verify the required parameter 'firewall_id' is set
-      if (firewall_id === undefined || firewall_id === null) {
-        throw new Error("Missing the required parameter 'firewall_id' when calling updateWafFirewall");
+
+    /**
+     * Update a firewall object for a particular service and service version. Specifying a `service_version_number` is required. 
+     * @param {Object} options
+     * @param {String} options.firewall_id
+     * @param {module:model/WafFirewall} [options.waf_firewall]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafFirewallResponse} and HTTP response
+     */
+    updateWafFirewallWithHttpInfo(options = {}) {
+      let postBody = options['waf_firewall'];
+      // Verify the required parameter 'firewall_id' is set.
+      if (options['firewall_id'] === undefined || options['firewall_id'] === null) {
+        throw new Error("Missing the required parameter 'firewall_id'.");
       }
 
       let pathParams = {
-        'firewall_id': firewall_id
+        'firewall_id': options['firewall_id']
       };
       let queryParams = {
       };
@@ -186,8 +269,16 @@ export default class WafFirewallsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateWafFirewall(firewall_id, opts) {
-      return this.updateWafFirewallWithHttpInfo(firewall_id, opts)
+
+    /**
+     * Update a firewall object for a particular service and service version. Specifying a `service_version_number` is required. 
+     * @param {Object} options
+     * @param {String} options.firewall_id
+     * @param {module:model/WafFirewall} [options.waf_firewall]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafFirewallResponse}
+     */
+    updateWafFirewall(options = {}) {
+      return this.updateWafFirewallWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

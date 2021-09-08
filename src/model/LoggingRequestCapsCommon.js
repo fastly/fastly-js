@@ -13,28 +13,45 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The LoggingRequestCapsCommon model module.
+ * @module model/LoggingRequestCapsCommon
+ * @version 3.0.0-alpha1
+ */
 class LoggingRequestCapsCommon {
-    
+    /**
+     * Constructs a new <code>LoggingRequestCapsCommon</code>.
+     * @alias module:model/LoggingRequestCapsCommon
+     */
     constructor() { 
         
         LoggingRequestCapsCommon.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingRequestCapsCommon</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingRequestCapsCommon} obj Optional instance to populate.
+     * @return {module:model/LoggingRequestCapsCommon} The populated <code>LoggingRequestCapsCommon</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingRequestCapsCommon();
 
-            if (data.hasOwnProperty('request_max_entries')) {
-                obj['request_max_entries'] = ApiClient.convertToType(data['request_max_entries'], 'Number');
-            }
             if (data.hasOwnProperty('request_max_bytes')) {
                 obj['request_max_bytes'] = ApiClient.convertToType(data['request_max_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('request_max_entries')) {
+                obj['request_max_entries'] = ApiClient.convertToType(data['request_max_entries'], 'Number');
             }
         }
         return obj;
@@ -43,11 +60,19 @@ class LoggingRequestCapsCommon {
 
 }
 
-
-LoggingRequestCapsCommon.prototype['request_max_entries'] = 0;
-
-
+/**
+ * The maximum number of bytes sent in one request. Defaults `0` for unbounded.
+ * @member {Number} request_max_bytes
+ * @default 0
+ */
 LoggingRequestCapsCommon.prototype['request_max_bytes'] = 0;
+
+/**
+ * The maximum number of logs sent in one request. Defaults `0` for unbounded.
+ * @member {Number} request_max_entries
+ * @default 0
+ */
+LoggingRequestCapsCommon.prototype['request_max_entries'] = 0;
 
 
 

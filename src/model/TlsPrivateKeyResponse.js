@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import TlsPrivateKeyResponseData from './TlsPrivateKeyResponseData';
 
-
+/**
+ * The TlsPrivateKeyResponse model module.
+ * @module model/TlsPrivateKeyResponse
+ * @version 3.0.0-alpha1
+ */
 class TlsPrivateKeyResponse {
-    
+    /**
+     * Constructs a new <code>TlsPrivateKeyResponse</code>.
+     * @alias module:model/TlsPrivateKeyResponse
+     */
     constructor() { 
         
         TlsPrivateKeyResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>TlsPrivateKeyResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/TlsPrivateKeyResponse} obj Optional instance to populate.
+     * @return {module:model/TlsPrivateKeyResponse} The populated <code>TlsPrivateKeyResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsPrivateKeyResponse();
@@ -41,7 +58,9 @@ class TlsPrivateKeyResponse {
 
 }
 
-
+/**
+ * @member {module:model/TlsPrivateKeyResponseData} data
+ */
 TlsPrivateKeyResponse.prototype['data'] = undefined;
 
 

@@ -1,4 +1,4 @@
-# FastlyApi.Dictionary
+# Fastly.Dictionary
 
 ## Properties
 

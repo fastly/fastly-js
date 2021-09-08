@@ -1,4 +1,4 @@
-# FastlyApi.LoggingSumologicAllOf
+# Fastly.LoggingSumologicAllOf
 
 ## Properties
 

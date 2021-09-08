@@ -1,12 +1,12 @@
-# FastlyApi.TlsPrivateKeyData
+# Fastly.TlsPrivateKeyData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**TypeTlsPrivateKey**](TypeTlsPrivateKey.md) |  | [optional] 
 **attributes** | [**TlsPrivateKeyDataAttributes**](TlsPrivateKeyDataAttributes.md) |  | [optional] 
 **relationships** | [**AnyOfrelationshipTlsActivationsobject**](AnyOfrelationshipTlsActivationsobject.md) |  | [optional] 
+**type** | [**TypeTlsPrivateKey**](TypeTlsPrivateKey.md) |  | [optional] 
 
 
 

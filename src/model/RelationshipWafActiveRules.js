@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import RelationshipWafActiveRulesWafActiveRules from './RelationshipWafActiveRulesWafActiveRules';
 
-
+/**
+ * The RelationshipWafActiveRules model module.
+ * @module model/RelationshipWafActiveRules
+ * @version 3.0.0-alpha1
+ */
 class RelationshipWafActiveRules {
-    
+    /**
+     * Constructs a new <code>RelationshipWafActiveRules</code>.
+     * @alias module:model/RelationshipWafActiveRules
+     */
     constructor() { 
         
         RelationshipWafActiveRules.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipWafActiveRules</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipWafActiveRules} obj Optional instance to populate.
+     * @return {module:model/RelationshipWafActiveRules} The populated <code>RelationshipWafActiveRules</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipWafActiveRules();
@@ -41,7 +58,9 @@ class RelationshipWafActiveRules {
 
 }
 
-
+/**
+ * @member {module:model/RelationshipWafActiveRulesWafActiveRules} waf_active_rules
+ */
 RelationshipWafActiveRules.prototype['waf_active_rules'] = undefined;
 
 

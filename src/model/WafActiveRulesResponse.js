@@ -12,26 +12,45 @@
  */
 
 import ApiClient from '../ApiClient';
-import AnyOfwafFirewallVersionwafRuleRevision from './AnyOfwafFirewallVersionwafRuleRevision';
+import AnyOfschemasWafFirewallVersionwafRuleRevision from './AnyOfschemasWafFirewallVersionwafRuleRevision';
 import Data from './Data';
 import Pagination from './Pagination';
 import PaginationLinks from './PaginationLinks';
 import PaginationMeta from './PaginationMeta';
 import WafActiveRulesResponseAllOf from './WafActiveRulesResponseAllOf';
 
-
+/**
+ * The WafActiveRulesResponse model module.
+ * @module model/WafActiveRulesResponse
+ * @version 3.0.0-alpha1
+ */
 class WafActiveRulesResponse {
-    
+    /**
+     * Constructs a new <code>WafActiveRulesResponse</code>.
+     * @alias module:model/WafActiveRulesResponse
+     * @implements module:model/Pagination
+     * @implements module:model/WafActiveRulesResponseAllOf
+     */
     constructor() { 
         Pagination.initialize(this);WafActiveRulesResponseAllOf.initialize(this);
         WafActiveRulesResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>WafActiveRulesResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/WafActiveRulesResponse} obj Optional instance to populate.
+     * @return {module:model/WafActiveRulesResponse} The populated <code>WafActiveRulesResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafActiveRulesResponse();
@@ -48,7 +67,7 @@ class WafActiveRulesResponse {
                 obj['data'] = ApiClient.convertToType(data['data'], [Data]);
             }
             if (data.hasOwnProperty('included')) {
-                obj['included'] = ApiClient.convertToType(data['included'], [AnyOfwafFirewallVersionwafRuleRevision]);
+                obj['included'] = ApiClient.convertToType(data['included'], [AnyOfschemasWafFirewallVersionwafRuleRevision]);
             }
         }
         return obj;
@@ -57,28 +76,44 @@ class WafActiveRulesResponse {
 
 }
 
-
+/**
+ * @member {module:model/PaginationLinks} links
+ */
 WafActiveRulesResponse.prototype['links'] = undefined;
 
-
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
 WafActiveRulesResponse.prototype['meta'] = undefined;
 
-
+/**
+ * @member {Array.<module:model/Data>} data
+ */
 WafActiveRulesResponse.prototype['data'] = undefined;
 
-
+/**
+ * @member {Array.<module:model/AnyOfschemasWafFirewallVersionwafRuleRevision>} included
+ */
 WafActiveRulesResponse.prototype['included'] = undefined;
 
 
 // Implement Pagination interface:
-
+/**
+ * @member {module:model/PaginationLinks} links
+ */
 Pagination.prototype['links'] = undefined;
-
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
 Pagination.prototype['meta'] = undefined;
 // Implement WafActiveRulesResponseAllOf interface:
-
+/**
+ * @member {Array.<module:model/Data>} data
+ */
 WafActiveRulesResponseAllOf.prototype['data'] = undefined;
-
+/**
+ * @member {Array.<module:model/AnyOfschemasWafFirewallVersionwafRuleRevision>} included
+ */
 WafActiveRulesResponseAllOf.prototype['included'] = undefined;
 
 

@@ -1,4 +1,4 @@
-# FastlyApi.SchemasVersion
+# Fastly.SchemasVersion
 
 ## Properties
 

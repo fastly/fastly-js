@@ -17,16 +17,35 @@ import DomainResponse from '../model/DomainResponse';
 import ServiceDetail from '../model/ServiceDetail';
 import ServiceResponse from '../model/ServiceResponse';
 
-
+/**
+* Service service.
+* @module api/ServiceApi
+* @version 3.0.0-alpha1
+*/
 export default class ServiceApi {
 
-    
+    /**
+    * Constructs a new ServiceApi. 
+    * @alias module:api/ServiceApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createServiceWithHttpInfo(opts) {
-      opts = opts || {};
+
+    /**
+     * Create a service.
+     * @param {Object} options
+     * @param {String} [options.comment] - A freeform descriptive note.
+     * @param {String} [options.customer_id] - Alphanumeric string identifying the customer.
+     * @param {String} [options.name] - The name of the service.
+     * @param {module:model/String} [options.type] - The type of this service.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceResponse} and HTTP response
+     */
+    createServiceWithHttpInfo(options = {}) {
       let postBody = null;
 
       let pathParams = {
@@ -36,10 +55,10 @@ export default class ServiceApi {
       let headerParams = {
       };
       let formParams = {
-        'comment': opts['comment'],
-        'name': opts['name'],
-        'customer_id': opts['customer_id'],
-        'type': opts['type']
+        'comment': options['comment'],
+        'customer_id': options['customer_id'],
+        'name': options['name'],
+        'type': options['type']
       };
 
       let authNames = ['token'];
@@ -52,21 +71,38 @@ export default class ServiceApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createService(opts) {
-      return this.createServiceWithHttpInfo(opts)
+
+    /**
+     * Create a service.
+     * @param {Object} options
+     * @param {String} [options.comment] - A freeform descriptive note.
+     * @param {String} [options.customer_id] - Alphanumeric string identifying the customer.
+     * @param {String} [options.name] - The name of the service.
+     * @param {module:model/String} [options.type] - The type of this service.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceResponse}
+     */
+    createService(options = {}) {
+      return this.createServiceWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteServiceWithHttpInfo(service_id) {
+
+    /**
+     * Delete a service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteServiceWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteService");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id
+        'service_id': options['service_id']
       };
       let queryParams = {
       };
@@ -85,21 +121,35 @@ export default class ServiceApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteService(service_id) {
-      return this.deleteServiceWithHttpInfo(service_id)
+
+    /**
+     * Delete a service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteService(options = {}) {
+      return this.deleteServiceWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getServiceWithHttpInfo(service_id) {
+
+    /**
+     * Get a specific service by id.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceResponse} and HTTP response
+     */
+    getServiceWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getService");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id
+        'service_id': options['service_id']
       };
       let queryParams = {
       };
@@ -118,21 +168,35 @@ export default class ServiceApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getService(service_id) {
-      return this.getServiceWithHttpInfo(service_id)
+
+    /**
+     * Get a specific service by id.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceResponse}
+     */
+    getService(options = {}) {
+      return this.getServiceWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getServiceDetailWithHttpInfo(service_id) {
+
+    /**
+     * List detailed information on a specified service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceDetail} and HTTP response
+     */
+    getServiceDetailWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getServiceDetail");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id
+        'service_id': options['service_id']
       };
       let queryParams = {
       };
@@ -151,21 +215,35 @@ export default class ServiceApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getServiceDetail(service_id) {
-      return this.getServiceDetailWithHttpInfo(service_id)
+
+    /**
+     * List detailed information on a specified service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceDetail}
+     */
+    getServiceDetail(options = {}) {
+      return this.getServiceDetailWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listServiceDomainsWithHttpInfo(service_id) {
+
+    /**
+     * List the domains within a service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DomainResponse>} and HTTP response
+     */
+    listServiceDomainsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listServiceDomains");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id
+        'service_id': options['service_id']
       };
       let queryParams = {
       };
@@ -184,23 +262,39 @@ export default class ServiceApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listServiceDomains(service_id) {
-      return this.listServiceDomainsWithHttpInfo(service_id)
+
+    /**
+     * List the domains within a service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DomainResponse>}
+     */
+    listServiceDomains(options = {}) {
+      return this.listServiceDomainsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listServicesWithHttpInfo(opts) {
-      opts = opts || {};
+
+    /**
+     * List services.
+     * @param {Object} options
+     * @param {Number} [options.page] - Current page.
+     * @param {Number} [options.per_page=20] - Number of records per page.
+     * @param {String} [options.sort='created'] - Field on which to sort.
+     * @param {module:model/String} [options.direction='ascend'] - Direction in which to sort results.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ServiceResponse>} and HTTP response
+     */
+    listServicesWithHttpInfo(options = {}) {
       let postBody = null;
 
       let pathParams = {
       };
       let queryParams = {
-        'page': opts['page'],
-        'per_page': opts['per_page'],
-        'sort': opts['sort'],
-        'direction': opts['direction']
+        'page': options['page'],
+        'per_page': options['per_page'],
+        'sort': options['sort'],
+        'direction': options['direction']
       };
       let headerParams = {
       };
@@ -217,23 +311,40 @@ export default class ServiceApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listServices(opts) {
-      return this.listServicesWithHttpInfo(opts)
+
+    /**
+     * List services.
+     * @param {Object} options
+     * @param {Number} [options.page] - Current page.
+     * @param {Number} [options.per_page=20] - Number of records per page.
+     * @param {String} [options.sort='created'] - Field on which to sort.
+     * @param {module:model/String} [options.direction='ascend'] - Direction in which to sort results.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ServiceResponse>}
+     */
+    listServices(options = {}) {
+      return this.listServicesWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    searchServiceWithHttpInfo(name) {
+
+    /**
+     * Get a specific service by name.
+     * @param {Object} options
+     * @param {String} options.name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceResponse} and HTTP response
+     */
+    searchServiceWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'name' is set
-      if (name === undefined || name === null) {
-        throw new Error("Missing the required parameter 'name' when calling searchService");
+      // Verify the required parameter 'name' is set.
+      if (options['name'] === undefined || options['name'] === null) {
+        throw new Error("Missing the required parameter 'name'.");
       }
 
       let pathParams = {
       };
       let queryParams = {
-        'name': name
+        'name': options['name']
       };
       let headerParams = {
       };
@@ -250,31 +361,47 @@ export default class ServiceApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    searchService(name) {
-      return this.searchServiceWithHttpInfo(name)
+
+    /**
+     * Get a specific service by name.
+     * @param {Object} options
+     * @param {String} options.name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceResponse}
+     */
+    searchService(options = {}) {
+      return this.searchServiceWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateServiceWithHttpInfo(service_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Update a service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} [options.comment] - A freeform descriptive note.
+     * @param {String} [options.customer_id] - Alphanumeric string identifying the customer.
+     * @param {String} [options.name] - The name of the service.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceResponse} and HTTP response
+     */
+    updateServiceWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateService");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id
+        'service_id': options['service_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'comment': opts['comment'],
-        'name': opts['name'],
-        'customer_id': opts['customer_id']
+        'comment': options['comment'],
+        'customer_id': options['customer_id'],
+        'name': options['name']
       };
 
       let authNames = ['token'];
@@ -287,8 +414,18 @@ export default class ServiceApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateService(service_id, opts) {
-      return this.updateServiceWithHttpInfo(service_id, opts)
+
+    /**
+     * Update a service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {String} [options.comment] - A freeform descriptive note.
+     * @param {String} [options.customer_id] - Alphanumeric string identifying the customer.
+     * @param {String} [options.name] - The name of the service.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceResponse}
+     */
+    updateService(options = {}) {
+      return this.updateServiceWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

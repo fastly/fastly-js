@@ -1,7 +1,9 @@
-# FastlyApi.HealthcheckApi
+# Fastly.HealthcheckApi
 
 
-
+```javascript
+const apiInstance = new Fastly.HealthcheckApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -16,41 +18,52 @@ Method | Fastly API endpoint | Description
 
 ## `createHealthcheck`
 
-> createHealthcheck(service_id, version_id, opts)
-
-Create a healthcheck
+```javascript
+createHealthcheck({ service_id, version_id, [check_interval], , [comment], , [expected_response], , [host], , [http_version], , [initial], , [method], , [name], , [path], , [threshold], , [timeout], , [window] })
+```
 
 Create a healthcheck for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.HealthcheckApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let opts = {
-  'check_interval': 56, // Number | How often to run the healthcheck in milliseconds.
-  'comment': "comment_example", // String | A freeform descriptive note.
-  'expected_response': 56, // Number | The status code expected from the host.
-  'host': "host_example", // String | Which host to check.
-  'http_version': "http_version_example", // String | Whether to use version 1.0 or 1.1 HTTP.
-  'initial': 56, // Number | When loading a config, the initial number of probes to be seen as OK.
-  'method': "method_example", // String | Which HTTP method to use.
-  'name': "name_example", // String | The name of the healthcheck.
-  'path': "path_example", // String | The path to check.
-  'threshold': 56, // Number | How many healthchecks must succeed to be considered healthy.
-  'timeout': 56, // Number | Timeout in milliseconds.
-  'window': 56 // Number | The number of most recent healthcheck queries to keep for this healthcheck.
-};
-apiInstance.createHealthcheck(service_id, version_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required
+  check_interval: 56,
 
+  comment: "comment_example",
+
+  expected_response: 56,
+
+  host: "host_example",
+
+  http_version: "http_version_example",
+
+  initial: 56,
+
+  method: "method_example",
+
+  name: "name_example",
+
+  path: "path_example",
+
+  threshold: 56,
+
+  timeout: 56,
+
+  window: 56,
+};
+
+apiInstance.createHealthcheck(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -76,28 +89,28 @@ Name | Type | Description  | Notes
 
 ## `deleteHealthcheck`
 
-> deleteHealthcheck(service_id, version_id, healthcheck_name)
-
-Delete a healthcheck
+```javascript
+deleteHealthcheck({ service_id, version_id, healthcheck_name })
+```
 
 Delete the healthcheck for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.HealthcheckApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let healthcheck_name = "healthcheck_name_example"; // String | 
-apiInstance.deleteHealthcheck(service_id, version_id, healthcheck_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  healthcheck_name: "healthcheck_name_example", // required};
 
+apiInstance.deleteHealthcheck(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -112,28 +125,28 @@ Name | Type | Description  | Notes
 
 ## `getHealthcheck`
 
-> getHealthcheck(service_id, version_id, healthcheck_name)
-
-Get a healthcheck
+```javascript
+getHealthcheck({ service_id, version_id, healthcheck_name })
+```
 
 Get the healthcheck for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.HealthcheckApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let healthcheck_name = "healthcheck_name_example"; // String | 
-apiInstance.getHealthcheck(service_id, version_id, healthcheck_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  healthcheck_name: "healthcheck_name_example", // required};
 
+apiInstance.getHealthcheck(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -148,27 +161,28 @@ Name | Type | Description  | Notes
 
 ## `listHealthchecks`
 
-> listHealthchecks(service_id, version_id)
-
-List healthchecks
+```javascript
+listHealthchecks({ service_id, version_id })
+```
 
 List all of the healthchecks for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.HealthcheckApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.listHealthchecks(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.listHealthchecks(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -182,42 +196,52 @@ Name | Type | Description  | Notes
 
 ## `updateHealthcheck`
 
-> updateHealthcheck(service_id, version_id, healthcheck_name, opts)
-
-Update a healthcheck
+```javascript
+updateHealthcheck({ service_id, version_id, healthcheck_name, [check_interval], , [comment], , [expected_response], , [host], , [http_version], , [initial], , [method], , [name], , [path], , [threshold], , [timeout], , [window] })
+```
 
 Update the healthcheck for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.HealthcheckApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let healthcheck_name = "healthcheck_name_example"; // String | 
-let opts = {
-  'check_interval': 56, // Number | How often to run the healthcheck in milliseconds.
-  'comment': "comment_example", // String | A freeform descriptive note.
-  'expected_response': 56, // Number | The status code expected from the host.
-  'host': "host_example", // String | Which host to check.
-  'http_version': "http_version_example", // String | Whether to use version 1.0 or 1.1 HTTP.
-  'initial': 56, // Number | When loading a config, the initial number of probes to be seen as OK.
-  'method': "method_example", // String | Which HTTP method to use.
-  'name': "name_example", // String | The name of the healthcheck.
-  'path': "path_example", // String | The path to check.
-  'threshold': 56, // Number | How many healthchecks must succeed to be considered healthy.
-  'timeout': 56, // Number | Timeout in milliseconds.
-  'window': 56 // Number | The number of most recent healthcheck queries to keep for this healthcheck.
-};
-apiInstance.updateHealthcheck(service_id, version_id, healthcheck_name, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  healthcheck_name: "healthcheck_name_example", // required
+  check_interval: 56,
 
+  comment: "comment_example",
+
+  expected_response: 56,
+
+  host: "host_example",
+
+  http_version: "http_version_example",
+
+  initial: 56,
+
+  method: "method_example",
+
+  name: "name_example",
+
+  path: "path_example",
+
+  threshold: 56,
+
+  timeout: 56,
+
+  window: 56,
+};
+
+apiInstance.updateHealthcheck(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

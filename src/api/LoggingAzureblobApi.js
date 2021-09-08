@@ -19,51 +19,84 @@ import LoggingFormatVersion from '../model/LoggingFormatVersion';
 import LoggingMessageType from '../model/LoggingMessageType';
 import LoggingPlacement from '../model/LoggingPlacement';
 
-
+/**
+* LoggingAzureblob service.
+* @module api/LoggingAzureblobApi
+* @version 3.0.0-alpha1
+*/
 export default class LoggingAzureblobApi {
 
-    
+    /**
+    * Constructs a new LoggingAzureblobApi. 
+    * @alias module:api/LoggingAzureblobApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createLogAzureWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Create an Azure Blob Storage logging endpoint for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
+     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
+     * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
+     * @param {String} [options.account_name] - The unique Azure Blob Storage namespace in which your data objects are stored. Required.
+     * @param {String} [options.container] - The name of the Azure Blob Storage container in which to store logs. Required.
+     * @param {Number} [options.file_max_bytes] - The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
+     * @param {String} [options.path='null'] - The path to upload logs to.
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {String} [options.sas_token] - The Azure shared access signature providing write access to the blob service objects. Be sure to update your token before it expires or the logging functionality will not work. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingAzureblobResponse} and HTTP response
+     */
+    createLogAzureWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createLogAzure");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createLogAzure");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'message_type': opts['message_type'],
-        'timestamp_format': opts['timestamp_format'],
-        'period': opts['period'],
-        'gzip_level': opts['gzip_level'],
-        'compression_codec': opts['compression_codec'],
-        'path': opts['path'],
-        'account_name': opts['account_name'],
-        'container': opts['container'],
-        'sas_token': opts['sas_token'],
-        'public_key': opts['public_key'],
-        'file_max_bytes': opts['file_max_bytes']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'compression_codec': options['compression_codec'],
+        'gzip_level': options['gzip_level'],
+        'message_type': options['message_type'],
+        'period': options['period'],
+        'timestamp_format': options['timestamp_format'],
+        'account_name': options['account_name'],
+        'container': options['container'],
+        'file_max_bytes': options['file_max_bytes'],
+        'path': options['path'],
+        'public_key': options['public_key'],
+        'sas_token': options['sas_token']
       };
 
       let authNames = ['token'];
@@ -76,31 +109,64 @@ export default class LoggingAzureblobApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createLogAzure(service_id, version_id, opts) {
-      return this.createLogAzureWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Create an Azure Blob Storage logging endpoint for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
+     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
+     * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
+     * @param {String} [options.account_name] - The unique Azure Blob Storage namespace in which your data objects are stored. Required.
+     * @param {String} [options.container] - The name of the Azure Blob Storage container in which to store logs. Required.
+     * @param {Number} [options.file_max_bytes] - The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
+     * @param {String} [options.path='null'] - The path to upload logs to.
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {String} [options.sas_token] - The Azure shared access signature providing write access to the blob service objects. Be sure to update your token before it expires or the logging functionality will not work. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingAzureblobResponse}
+     */
+    createLogAzure(options = {}) {
+      return this.createLogAzureWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteLogAzureWithHttpInfo(service_id, version_id, logging_azureblob_name) {
+
+    /**
+     * Delete the Azure Blob Storage logging endpoint for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_azureblob_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteLogAzureWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteLogAzure");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteLogAzure");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_azureblob_name' is set
-      if (logging_azureblob_name === undefined || logging_azureblob_name === null) {
-        throw new Error("Missing the required parameter 'logging_azureblob_name' when calling deleteLogAzure");
+      // Verify the required parameter 'logging_azureblob_name' is set.
+      if (options['logging_azureblob_name'] === undefined || options['logging_azureblob_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_azureblob_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_azureblob_name': logging_azureblob_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_azureblob_name': options['logging_azureblob_name']
       };
       let queryParams = {
       };
@@ -119,31 +185,49 @@ export default class LoggingAzureblobApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteLogAzure(service_id, version_id, logging_azureblob_name) {
-      return this.deleteLogAzureWithHttpInfo(service_id, version_id, logging_azureblob_name)
+
+    /**
+     * Delete the Azure Blob Storage logging endpoint for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_azureblob_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteLogAzure(options = {}) {
+      return this.deleteLogAzureWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getLogAzureWithHttpInfo(service_id, version_id, logging_azureblob_name) {
+
+    /**
+     * Get the Azure Blob Storage logging endpoint for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_azureblob_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingAzureblobResponse} and HTTP response
+     */
+    getLogAzureWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getLogAzure");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getLogAzure");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_azureblob_name' is set
-      if (logging_azureblob_name === undefined || logging_azureblob_name === null) {
-        throw new Error("Missing the required parameter 'logging_azureblob_name' when calling getLogAzure");
+      // Verify the required parameter 'logging_azureblob_name' is set.
+      if (options['logging_azureblob_name'] === undefined || options['logging_azureblob_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_azureblob_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_azureblob_name': logging_azureblob_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_azureblob_name': options['logging_azureblob_name']
       };
       let queryParams = {
       };
@@ -162,26 +246,43 @@ export default class LoggingAzureblobApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getLogAzure(service_id, version_id, logging_azureblob_name) {
-      return this.getLogAzureWithHttpInfo(service_id, version_id, logging_azureblob_name)
+
+    /**
+     * Get the Azure Blob Storage logging endpoint for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_azureblob_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingAzureblobResponse}
+     */
+    getLogAzure(options = {}) {
+      return this.getLogAzureWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listLogAzureWithHttpInfo(service_id, version_id) {
+
+    /**
+     * List all of the Azure Blob Storage logging endpoints for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingAzureblobResponse>} and HTTP response
+     */
+    listLogAzureWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listLogAzure");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listLogAzure");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -200,54 +301,86 @@ export default class LoggingAzureblobApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listLogAzure(service_id, version_id) {
-      return this.listLogAzureWithHttpInfo(service_id, version_id)
+
+    /**
+     * List all of the Azure Blob Storage logging endpoints for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingAzureblobResponse>}
+     */
+    listLogAzure(options = {}) {
+      return this.listLogAzureWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateLogAzureWithHttpInfo(service_id, version_id, logging_azureblob_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Update the Azure Blob Storage logging endpoint for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_azureblob_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
+     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
+     * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
+     * @param {String} [options.account_name] - The unique Azure Blob Storage namespace in which your data objects are stored. Required.
+     * @param {String} [options.container] - The name of the Azure Blob Storage container in which to store logs. Required.
+     * @param {Number} [options.file_max_bytes] - The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
+     * @param {String} [options.path='null'] - The path to upload logs to.
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {String} [options.sas_token] - The Azure shared access signature providing write access to the blob service objects. Be sure to update your token before it expires or the logging functionality will not work. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingAzureblobResponse} and HTTP response
+     */
+    updateLogAzureWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateLogAzure");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateLogAzure");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_azureblob_name' is set
-      if (logging_azureblob_name === undefined || logging_azureblob_name === null) {
-        throw new Error("Missing the required parameter 'logging_azureblob_name' when calling updateLogAzure");
+      // Verify the required parameter 'logging_azureblob_name' is set.
+      if (options['logging_azureblob_name'] === undefined || options['logging_azureblob_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_azureblob_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_azureblob_name': logging_azureblob_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_azureblob_name': options['logging_azureblob_name']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'message_type': opts['message_type'],
-        'timestamp_format': opts['timestamp_format'],
-        'period': opts['period'],
-        'gzip_level': opts['gzip_level'],
-        'compression_codec': opts['compression_codec'],
-        'path': opts['path'],
-        'account_name': opts['account_name'],
-        'container': opts['container'],
-        'sas_token': opts['sas_token'],
-        'public_key': opts['public_key'],
-        'file_max_bytes': opts['file_max_bytes']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'compression_codec': options['compression_codec'],
+        'gzip_level': options['gzip_level'],
+        'message_type': options['message_type'],
+        'period': options['period'],
+        'timestamp_format': options['timestamp_format'],
+        'account_name': options['account_name'],
+        'container': options['container'],
+        'file_max_bytes': options['file_max_bytes'],
+        'path': options['path'],
+        'public_key': options['public_key'],
+        'sas_token': options['sas_token']
       };
 
       let authNames = ['token'];
@@ -260,8 +393,33 @@ export default class LoggingAzureblobApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateLogAzure(service_id, version_id, logging_azureblob_name, opts) {
-      return this.updateLogAzureWithHttpInfo(service_id, version_id, logging_azureblob_name, opts)
+
+    /**
+     * Update the Azure Blob Storage logging endpoint for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_azureblob_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
+     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
+     * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
+     * @param {String} [options.account_name] - The unique Azure Blob Storage namespace in which your data objects are stored. Required.
+     * @param {String} [options.container] - The name of the Azure Blob Storage container in which to store logs. Required.
+     * @param {Number} [options.file_max_bytes] - The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
+     * @param {String} [options.path='null'] - The path to upload logs to.
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {String} [options.sas_token] - The Azure shared access signature providing write access to the blob service objects. Be sure to update your token before it expires or the logging functionality will not work. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingAzureblobResponse}
+     */
+    updateLogAzure(options = {}) {
+      return this.updateLogAzureWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

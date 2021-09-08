@@ -1,4 +1,4 @@
-# FastlyApi.GzipResponse
+# Fastly.GzipResponse
 
 ## Properties
 

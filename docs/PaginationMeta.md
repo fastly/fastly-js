@@ -1,4 +1,4 @@
-# FastlyApi.PaginationMeta
+# Fastly.PaginationMeta
 
 ## Properties
 

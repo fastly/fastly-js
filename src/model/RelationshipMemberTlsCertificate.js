@@ -14,28 +14,45 @@
 import ApiClient from '../ApiClient';
 import TypeTlsCertificate from './TypeTlsCertificate';
 
-
+/**
+ * The RelationshipMemberTlsCertificate model module.
+ * @module model/RelationshipMemberTlsCertificate
+ * @version 3.0.0-alpha1
+ */
 class RelationshipMemberTlsCertificate {
-    
+    /**
+     * Constructs a new <code>RelationshipMemberTlsCertificate</code>.
+     * @alias module:model/RelationshipMemberTlsCertificate
+     */
     constructor() { 
         
         RelationshipMemberTlsCertificate.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipMemberTlsCertificate</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipMemberTlsCertificate} obj Optional instance to populate.
+     * @return {module:model/RelationshipMemberTlsCertificate} The populated <code>RelationshipMemberTlsCertificate</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipMemberTlsCertificate();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeTlsCertificate.constructFromObject(data['type']);
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeTlsCertificate.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -44,11 +61,16 @@ class RelationshipMemberTlsCertificate {
 
 }
 
-
-RelationshipMemberTlsCertificate.prototype['type'] = undefined;
-
-
+/**
+ * Alphanumeric string identifying a TLS certificate.
+ * @member {String} id
+ */
 RelationshipMemberTlsCertificate.prototype['id'] = undefined;
+
+/**
+ * @member {module:model/TypeTlsCertificate} type
+ */
+RelationshipMemberTlsCertificate.prototype['type'] = undefined;
 
 
 

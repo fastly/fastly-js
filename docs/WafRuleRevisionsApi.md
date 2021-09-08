@@ -1,7 +1,9 @@
-# FastlyApi.WafRuleRevisionsApi
+# Fastly.WafRuleRevisionsApi
 
 
-
+```javascript
+const apiInstance = new Fastly.WafRuleRevisionsApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -13,30 +15,30 @@ Method | Fastly API endpoint | Description
 
 ## `getWafRuleRevision`
 
-> getWafRuleRevision(waf_rule_id, waf_rule_revision_number, opts)
-
-Get a revision of a rule
+```javascript
+getWafRuleRevision({ waf_rule_id, waf_rule_revision_number, [include] })
+```
 
 Get a specific rule revision.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.WafRuleRevisionsApi();
-let waf_rule_id = "waf_rule_id_example"; // String | 
-let waf_rule_revision_number = 56; // Number | 
-let opts = {
-  'include': source,vcl,waf_rule // String | Include relationships. Optional, comma-separated values. Permitted values: `waf_rule`, `vcl`, and `source`. The `vcl` and `source` relationships show the WAF VCL and corresponding ModSecurity source. These fields are blank unless the relationship is included. 
+const options = {
+  waf_rule_id: "waf_rule_id_example", // required  waf_rule_revision_number: 56, // required
+  include: source,vcl,waf_rule,
 };
-apiInstance.getWafRuleRevision(waf_rule_id, waf_rule_revision_number, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
 
+apiInstance.getWafRuleRevision(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -51,31 +53,34 @@ Name | Type | Description  | Notes
 
 ## `listWafRuleRevisions`
 
-> listWafRuleRevisions(waf_rule_id, opts)
-
-List revisions for a rule
+```javascript
+listWafRuleRevisions({ waf_rule_id, [page_number], , [page_size], , [include] })
+```
 
 List all revisions for a specific rule. The `rule_id` provided can be the ModSecurity Rule ID or the Fastly generated rule ID.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.WafRuleRevisionsApi();
-let waf_rule_id = "waf_rule_id_example"; // String | 
-let opts = {
-  'page_number': 56, // Number | Current page.
-  'page_size': 20, // Number | Number of records per page.
-  'include': waf_rule // String | Include relationships. Optional.
-};
-apiInstance.listWafRuleRevisions(waf_rule_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  waf_rule_id: "waf_rule_id_example", // required
+  page_number: 56,
 
+  page_size: 20,
+
+  include: waf_rule,
+};
+
+apiInstance.listWafRuleRevisions(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

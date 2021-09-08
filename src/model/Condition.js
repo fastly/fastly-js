@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The Condition model module.
+ * @module model/Condition
+ * @version 3.0.0-alpha1
+ */
 class Condition {
-    
+    /**
+     * Constructs a new <code>Condition</code>.
+     * @alias module:model/Condition
+     */
     constructor() { 
         
         Condition.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>Condition</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/Condition} obj Optional instance to populate.
+     * @return {module:model/Condition} The populated <code>Condition</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new Condition();
@@ -52,38 +69,70 @@ class Condition {
 
 }
 
-
+/**
+ * A freeform descriptive note.
+ * @member {String} comment
+ */
 Condition.prototype['comment'] = undefined;
 
-
+/**
+ * Name of the condition. Required.
+ * @member {String} name
+ */
 Condition.prototype['name'] = undefined;
 
-
+/**
+ * Priority determines execution order. Lower numbers execute first.
+ * @member {Number} priority
+ * @default 100
+ */
 Condition.prototype['priority'] = 100;
 
-
+/**
+ * A conditional expression in VCL used to determine if the condition is met.
+ * @member {String} statement
+ */
 Condition.prototype['statement'] = undefined;
 
-
+/**
+ * Type of the condition. Required.
+ * @member {module:model/Condition.TypeEnum} type
+ */
 Condition.prototype['type'] = undefined;
 
 
 
 
 
-
+/**
+ * Allowed values for the <code>type</code> property.
+ * @enum {String}
+ * @readonly
+ */
 Condition['TypeEnum'] = {
 
-    
+    /**
+     * value: "REQUEST"
+     * @const
+     */
     "REQUEST": "REQUEST",
 
-    
+    /**
+     * value: "CACHE"
+     * @const
+     */
     "CACHE": "CACHE",
 
-    
+    /**
+     * value: "RESPONSE"
+     * @const
+     */
     "RESPONSE": "RESPONSE",
 
-    
+    /**
+     * value: "PREFETCH"
+     * @const
+     */
     "PREFETCH": "PREFETCH"
 };
 

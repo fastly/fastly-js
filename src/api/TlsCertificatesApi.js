@@ -17,17 +17,33 @@ import TlsCertificate from '../model/TlsCertificate';
 import TlsCertificateResponse from '../model/TlsCertificateResponse';
 import TlsCertificatesResponse from '../model/TlsCertificatesResponse';
 
-
+/**
+* TlsCertificates service.
+* @module api/TlsCertificatesApi
+* @version 3.0.0-alpha1
+*/
 export default class TlsCertificatesApi {
 
-    
+    /**
+    * Constructs a new TlsCertificatesApi. 
+    * @alias module:api/TlsCertificatesApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createTlsCertWithHttpInfo(opts) {
-      opts = opts || {};
-      let postBody = opts['tls_certificate'];
+
+    /**
+     * Create a TLS certificate.
+     * @param {Object} options
+     * @param {module:model/TlsCertificate} [options.tls_certificate]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    createTlsCertWithHttpInfo(options = {}) {
+      let postBody = options['tls_certificate'];
 
       let pathParams = {
       };
@@ -48,21 +64,35 @@ export default class TlsCertificatesApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createTlsCert(opts) {
-      return this.createTlsCertWithHttpInfo(opts)
+
+    /**
+     * Create a TLS certificate.
+     * @param {Object} options
+     * @param {module:model/TlsCertificate} [options.tls_certificate]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    createTlsCert(options = {}) {
+      return this.createTlsCertWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteTlsCertWithHttpInfo(tls_certificate_id) {
+
+    /**
+     * Destroy a TLS certificate. TLS certificates already enabled for a domain cannot be destroyed.
+     * @param {Object} options
+     * @param {String} options.tls_certificate_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteTlsCertWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'tls_certificate_id' is set
-      if (tls_certificate_id === undefined || tls_certificate_id === null) {
-        throw new Error("Missing the required parameter 'tls_certificate_id' when calling deleteTlsCert");
+      // Verify the required parameter 'tls_certificate_id' is set.
+      if (options['tls_certificate_id'] === undefined || options['tls_certificate_id'] === null) {
+        throw new Error("Missing the required parameter 'tls_certificate_id'.");
       }
 
       let pathParams = {
-        'tls_certificate_id': tls_certificate_id
+        'tls_certificate_id': options['tls_certificate_id']
       };
       let queryParams = {
       };
@@ -81,21 +111,35 @@ export default class TlsCertificatesApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteTlsCert(tls_certificate_id) {
-      return this.deleteTlsCertWithHttpInfo(tls_certificate_id)
+
+    /**
+     * Destroy a TLS certificate. TLS certificates already enabled for a domain cannot be destroyed.
+     * @param {Object} options
+     * @param {String} options.tls_certificate_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteTlsCert(options = {}) {
+      return this.deleteTlsCertWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getTlsCertWithHttpInfo(tls_certificate_id) {
+
+    /**
+     * Show a TLS certificate.
+     * @param {Object} options
+     * @param {String} options.tls_certificate_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsCertificateResponse} and HTTP response
+     */
+    getTlsCertWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'tls_certificate_id' is set
-      if (tls_certificate_id === undefined || tls_certificate_id === null) {
-        throw new Error("Missing the required parameter 'tls_certificate_id' when calling getTlsCert");
+      // Verify the required parameter 'tls_certificate_id' is set.
+      if (options['tls_certificate_id'] === undefined || options['tls_certificate_id'] === null) {
+        throw new Error("Missing the required parameter 'tls_certificate_id'.");
       }
 
       let pathParams = {
-        'tls_certificate_id': tls_certificate_id
+        'tls_certificate_id': options['tls_certificate_id']
       };
       let queryParams = {
       };
@@ -114,25 +158,43 @@ export default class TlsCertificatesApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getTlsCert(tls_certificate_id) {
-      return this.getTlsCertWithHttpInfo(tls_certificate_id)
+
+    /**
+     * Show a TLS certificate.
+     * @param {Object} options
+     * @param {String} options.tls_certificate_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsCertificateResponse}
+     */
+    getTlsCert(options = {}) {
+      return this.getTlsCertWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listTlsCertsWithHttpInfo(opts) {
-      opts = opts || {};
+
+    /**
+     * List all TLS certificates.
+     * @param {Object} options
+     * @param {String} [options.filter_not_after] - Limit the returned certificates to those that expire prior to the specified date in UTC. Accepts parameters: lte (e.g., filter[not_after][lte]=2020-05-05). 
+     * @param {String} [options.filter_tls_domains_id] - Limit the returned certificates to those that include the specific domain.
+     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_activations`. 
+     * @param {Number} [options.page_number] - Current page.
+     * @param {Number} [options.page_size=20] - Number of records per page.
+     * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsCertificatesResponse} and HTTP response
+     */
+    listTlsCertsWithHttpInfo(options = {}) {
       let postBody = null;
 
       let pathParams = {
       };
       let queryParams = {
-        'filter[not_after]': opts['filter_not_after'],
-        'filter[tls_domains.id]': opts['filter_tls_domains_id'],
-        'include': opts['include'],
-        'page[number]': opts['page_number'],
-        'page[size]': opts['page_size'],
-        'sort': opts['sort']
+        'filter[not_after]': options['filter_not_after'],
+        'filter[tls_domains.id]': options['filter_tls_domains_id'],
+        'include': options['include'],
+        'page[number]': options['page_number'],
+        'page[size]': options['page_size'],
+        'sort': options['sort']
       };
       let headerParams = {
       };
@@ -149,22 +211,41 @@ export default class TlsCertificatesApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listTlsCerts(opts) {
-      return this.listTlsCertsWithHttpInfo(opts)
+
+    /**
+     * List all TLS certificates.
+     * @param {Object} options
+     * @param {String} [options.filter_not_after] - Limit the returned certificates to those that expire prior to the specified date in UTC. Accepts parameters: lte (e.g., filter[not_after][lte]=2020-05-05). 
+     * @param {String} [options.filter_tls_domains_id] - Limit the returned certificates to those that include the specific domain.
+     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_activations`. 
+     * @param {Number} [options.page_number] - Current page.
+     * @param {Number} [options.page_size=20] - Number of records per page.
+     * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsCertificatesResponse}
+     */
+    listTlsCerts(options = {}) {
+      return this.listTlsCertsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateTlsCertWithHttpInfo(tls_certificate_id, opts) {
-      opts = opts || {};
-      let postBody = opts['tls_certificate'];
-      // verify the required parameter 'tls_certificate_id' is set
-      if (tls_certificate_id === undefined || tls_certificate_id === null) {
-        throw new Error("Missing the required parameter 'tls_certificate_id' when calling updateTlsCert");
+
+    /**
+     * Replace a TLS certificate with a newly reissued TLS certificate, or update a TLS certificate's name. If replacing a TLS certificate, the new TLS certificate must contain all SAN entries as the current TLS certificate. It must either have an exact matching list or contain a superset.
+     * @param {Object} options
+     * @param {String} options.tls_certificate_id
+     * @param {module:model/TlsCertificate} [options.tls_certificate]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsCertificateResponse} and HTTP response
+     */
+    updateTlsCertWithHttpInfo(options = {}) {
+      let postBody = options['tls_certificate'];
+      // Verify the required parameter 'tls_certificate_id' is set.
+      if (options['tls_certificate_id'] === undefined || options['tls_certificate_id'] === null) {
+        throw new Error("Missing the required parameter 'tls_certificate_id'.");
       }
 
       let pathParams = {
-        'tls_certificate_id': tls_certificate_id
+        'tls_certificate_id': options['tls_certificate_id']
       };
       let queryParams = {
       };
@@ -183,8 +264,16 @@ export default class TlsCertificatesApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateTlsCert(tls_certificate_id, opts) {
-      return this.updateTlsCertWithHttpInfo(tls_certificate_id, opts)
+
+    /**
+     * Replace a TLS certificate with a newly reissued TLS certificate, or update a TLS certificate's name. If replacing a TLS certificate, the new TLS certificate must contain all SAN entries as the current TLS certificate. It must either have an exact matching list or contain a superset.
+     * @param {Object} options
+     * @param {String} options.tls_certificate_id
+     * @param {module:model/TlsCertificate} [options.tls_certificate]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsCertificateResponse}
+     */
+    updateTlsCert(options = {}) {
+      return this.updateTlsCertWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

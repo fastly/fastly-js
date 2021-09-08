@@ -1,4 +1,4 @@
-# FastlyApi.WafFirewallVersionsResponse
+# Fastly.WafFirewallVersionsResponse
 
 ## Properties
 
@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **links** | [**PaginationLinks**](PaginationLinks.md) |  | [optional] 
 **meta** | [**PaginationMeta**](PaginationMeta.md) |  | [optional] 
 **data** | [**[Data]**](Data.md) |  | [optional] 
-**included** | [**[AnyOfwafFirewallVersionschemasWafActiveRule]**](AnyOfwafFirewallVersionschemasWafActiveRule.md) |  | [optional] 
+**included** | [**[AnyOfwafFirewallVersionwafActiveRule]**](AnyOfwafFirewallVersionwafActiveRule.md) |  | [optional] 
 
 
 

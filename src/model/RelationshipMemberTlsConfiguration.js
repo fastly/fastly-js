@@ -14,28 +14,45 @@
 import ApiClient from '../ApiClient';
 import TypeTlsConfiguration from './TypeTlsConfiguration';
 
-
+/**
+ * The RelationshipMemberTlsConfiguration model module.
+ * @module model/RelationshipMemberTlsConfiguration
+ * @version 3.0.0-alpha1
+ */
 class RelationshipMemberTlsConfiguration {
-    
+    /**
+     * Constructs a new <code>RelationshipMemberTlsConfiguration</code>.
+     * @alias module:model/RelationshipMemberTlsConfiguration
+     */
     constructor() { 
         
         RelationshipMemberTlsConfiguration.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipMemberTlsConfiguration</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipMemberTlsConfiguration} obj Optional instance to populate.
+     * @return {module:model/RelationshipMemberTlsConfiguration} The populated <code>RelationshipMemberTlsConfiguration</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipMemberTlsConfiguration();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeTlsConfiguration.constructFromObject(data['type']);
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeTlsConfiguration.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -44,11 +61,16 @@ class RelationshipMemberTlsConfiguration {
 
 }
 
-
-RelationshipMemberTlsConfiguration.prototype['type'] = undefined;
-
-
+/**
+ * Alphanumeric string identifying a TLS configuration.
+ * @member {String} id
+ */
 RelationshipMemberTlsConfiguration.prototype['id'] = undefined;
+
+/**
+ * @member {module:model/TypeTlsConfiguration} type
+ */
+RelationshipMemberTlsConfiguration.prototype['type'] = undefined;
 
 
 

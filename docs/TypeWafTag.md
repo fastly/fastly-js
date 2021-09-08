@@ -1,4 +1,4 @@
-# FastlyApi.TypeWafTag
+# Fastly.TypeWafTag
 
 ## Enum
 

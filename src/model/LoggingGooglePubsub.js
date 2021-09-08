@@ -18,19 +18,39 @@ import LoggingGcsCommon from './LoggingGcsCommon';
 import LoggingGooglePubsubAllOf from './LoggingGooglePubsubAllOf';
 import LoggingPlacement from './LoggingPlacement';
 
-
+/**
+ * The LoggingGooglePubsub model module.
+ * @module model/LoggingGooglePubsub
+ * @version 3.0.0-alpha1
+ */
 class LoggingGooglePubsub {
-    
+    /**
+     * Constructs a new <code>LoggingGooglePubsub</code>.
+     * @alias module:model/LoggingGooglePubsub
+     * @implements module:model/LoggingCommon
+     * @implements module:model/LoggingGcsCommon
+     * @implements module:model/LoggingGooglePubsubAllOf
+     */
     constructor() { 
         LoggingCommon.initialize(this);LoggingGcsCommon.initialize(this);LoggingGooglePubsubAllOf.initialize(this);
         LoggingGooglePubsub.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingGooglePubsub</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingGooglePubsub} obj Optional instance to populate.
+     * @return {module:model/LoggingGooglePubsub} The populated <code>LoggingGooglePubsub</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingGooglePubsub();
@@ -38,32 +58,32 @@ class LoggingGooglePubsub {
             LoggingGcsCommon.constructFromObject(data, obj);
             LoggingGooglePubsubAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
             }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
-            }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
-            }
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], 'String');
-            }
-            if (data.hasOwnProperty('user')) {
-                obj['user'] = ApiClient.convertToType(data['user'], 'String');
             }
             if (data.hasOwnProperty('secret_key')) {
                 obj['secret_key'] = ApiClient.convertToType(data['secret_key'], 'String');
             }
-            if (data.hasOwnProperty('topic')) {
-                obj['topic'] = ApiClient.convertToType(data['topic'], 'String');
+            if (data.hasOwnProperty('user')) {
+                obj['user'] = ApiClient.convertToType(data['user'], 'String');
             }
             if (data.hasOwnProperty('project_id')) {
                 obj['project_id'] = ApiClient.convertToType(data['project_id'], 'String');
+            }
+            if (data.hasOwnProperty('topic')) {
+                obj['topic'] = ApiClient.convertToType(data['topic'], 'String');
             }
         }
         return obj;
@@ -72,57 +92,113 @@ class LoggingGooglePubsub {
 
 }
 
-
-LoggingGooglePubsub.prototype['name'] = undefined;
-
-
-LoggingGooglePubsub.prototype['placement'] = undefined;
-
-
-LoggingGooglePubsub.prototype['format_version'] = undefined;
-
-
-LoggingGooglePubsub.prototype['response_condition'] = undefined;
-
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
 LoggingGooglePubsub.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingGooglePubsub.prototype['format_version'] = undefined;
 
-LoggingGooglePubsub.prototype['user'] = undefined;
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingGooglePubsub.prototype['name'] = undefined;
 
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingGooglePubsub.prototype['placement'] = undefined;
 
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingGooglePubsub.prototype['response_condition'] = undefined;
+
+/**
+ * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+ * @member {String} secret_key
+ */
 LoggingGooglePubsub.prototype['secret_key'] = undefined;
 
+/**
+ * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+ * @member {String} user
+ */
+LoggingGooglePubsub.prototype['user'] = undefined;
 
+/**
+ * Your Google Cloud Platform project ID. Required
+ * @member {String} project_id
+ */
+LoggingGooglePubsub.prototype['project_id'] = undefined;
+
+/**
+ * The Google Cloud Pub/Sub topic to which logs will be published. Required.
+ * @member {String} topic
+ */
 LoggingGooglePubsub.prototype['topic'] = undefined;
 
 
-LoggingGooglePubsub.prototype['project_id'] = undefined;
-
-
 // Implement LoggingCommon interface:
-
-LoggingCommon.prototype['name'] = undefined;
-
-LoggingCommon.prototype['placement'] = undefined;
-
-LoggingCommon.prototype['format_version'] = undefined;
-
-LoggingCommon.prototype['response_condition'] = undefined;
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
 LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingCommon.prototype['format_version'] = undefined;
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingCommon.prototype['name'] = undefined;
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingCommon.prototype['placement'] = undefined;
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingCommon.prototype['response_condition'] = undefined;
 // Implement LoggingGcsCommon interface:
-
-LoggingGcsCommon.prototype['user'] = undefined;
-
+/**
+ * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+ * @member {String} secret_key
+ */
 LoggingGcsCommon.prototype['secret_key'] = undefined;
+/**
+ * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+ * @member {String} user
+ */
+LoggingGcsCommon.prototype['user'] = undefined;
 // Implement LoggingGooglePubsubAllOf interface:
-
-LoggingGooglePubsubAllOf.prototype['topic'] = undefined;
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
 LoggingGooglePubsubAllOf.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-
+/**
+ * Your Google Cloud Platform project ID. Required
+ * @member {String} project_id
+ */
 LoggingGooglePubsubAllOf.prototype['project_id'] = undefined;
+/**
+ * The Google Cloud Pub/Sub topic to which logs will be published. Required.
+ * @member {String} topic
+ */
+LoggingGooglePubsubAllOf.prototype['topic'] = undefined;
 
 
 

@@ -1,11 +1,11 @@
-# FastlyApi.RelationshipMemberTlsActivation
+# Fastly.RelationshipMemberTlsActivation
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**TypeTlsActivation**](TypeTlsActivation.md) |  | [optional] 
 **id** | **String** | Alphanumeric string identifying a TLS activation. | [optional] [readonly] 
+**type** | [**TypeTlsActivation**](TypeTlsActivation.md) |  | [optional] 
 
 
 

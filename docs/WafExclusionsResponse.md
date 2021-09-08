@@ -1,4 +1,4 @@
-# FastlyApi.WafExclusionsResponse
+# Fastly.WafExclusionsResponse
 
 ## Properties
 

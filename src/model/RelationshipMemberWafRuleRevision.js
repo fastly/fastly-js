@@ -14,28 +14,45 @@
 import ApiClient from '../ApiClient';
 import TypeWafRuleRevision from './TypeWafRuleRevision';
 
-
+/**
+ * The RelationshipMemberWafRuleRevision model module.
+ * @module model/RelationshipMemberWafRuleRevision
+ * @version 3.0.0-alpha1
+ */
 class RelationshipMemberWafRuleRevision {
-    
+    /**
+     * Constructs a new <code>RelationshipMemberWafRuleRevision</code>.
+     * @alias module:model/RelationshipMemberWafRuleRevision
+     */
     constructor() { 
         
         RelationshipMemberWafRuleRevision.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipMemberWafRuleRevision</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipMemberWafRuleRevision} obj Optional instance to populate.
+     * @return {module:model/RelationshipMemberWafRuleRevision} The populated <code>RelationshipMemberWafRuleRevision</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipMemberWafRuleRevision();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeWafRuleRevision.constructFromObject(data['type']);
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeWafRuleRevision.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -44,11 +61,16 @@ class RelationshipMemberWafRuleRevision {
 
 }
 
-
-RelationshipMemberWafRuleRevision.prototype['type'] = undefined;
-
-
+/**
+ * Alphanumeric string identifying a WAF rule revision.
+ * @member {String} id
+ */
 RelationshipMemberWafRuleRevision.prototype['id'] = undefined;
+
+/**
+ * @member {module:model/TypeWafRuleRevision} type
+ */
+RelationshipMemberWafRuleRevision.prototype['type'] = undefined;
 
 
 

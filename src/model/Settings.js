@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The Settings model module.
+ * @module model/Settings
+ * @version 3.0.0-alpha1
+ */
 class Settings {
-    
+    /**
+     * Constructs a new <code>Settings</code>.
+     * @alias module:model/Settings
+     */
     constructor() { 
         
         Settings.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>Settings</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/Settings} obj Optional instance to populate.
+     * @return {module:model/Settings} The populated <code>Settings</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new Settings();
@@ -49,16 +66,30 @@ class Settings {
 
 }
 
-
+/**
+ * The default host name for the version.
+ * @member {String} general.default_host
+ */
 Settings.prototype['general.default_host'] = undefined;
 
-
+/**
+ * The default time-to-live (TTL) for the version.
+ * @member {Number} general.default_ttl
+ */
 Settings.prototype['general.default_ttl'] = undefined;
 
-
+/**
+ * Enables serving a stale object if there is an error.
+ * @member {Boolean} general.stale_if_error
+ * @default false
+ */
 Settings.prototype['general.stale_if_error'] = false;
 
-
+/**
+ * The default time-to-live (TTL) for serving the stale object for the version.
+ * @member {Number} general.stale_if_error_ttl
+ * @default 43200
+ */
 Settings.prototype['general.stale_if_error_ttl'] = 43200;
 
 

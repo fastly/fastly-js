@@ -15,38 +15,58 @@
 import ApiClient from "../ApiClient";
 import DirectorBackend from '../model/DirectorBackend';
 
-
+/**
+* DirectorBackend service.
+* @module api/DirectorBackendApi
+* @version 3.0.0-alpha1
+*/
 export default class DirectorBackendApi {
 
-    
+    /**
+    * Constructs a new DirectorBackendApi. 
+    * @alias module:api/DirectorBackendApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createDirectorBackendWithHttpInfo(director_name, service_id, version_id, backend_name) {
+
+    /**
+     * Establishes a relationship between a Backend and a Director. The Backend is then considered a member of the Director and can be used to balance traffic onto.
+     * @param {Object} options
+     * @param {String} options.director_name
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.backend_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DirectorBackend} and HTTP response
+     */
+    createDirectorBackendWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'director_name' is set
-      if (director_name === undefined || director_name === null) {
-        throw new Error("Missing the required parameter 'director_name' when calling createDirectorBackend");
+      // Verify the required parameter 'director_name' is set.
+      if (options['director_name'] === undefined || options['director_name'] === null) {
+        throw new Error("Missing the required parameter 'director_name'.");
       }
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createDirectorBackend");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createDirectorBackend");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'backend_name' is set
-      if (backend_name === undefined || backend_name === null) {
-        throw new Error("Missing the required parameter 'backend_name' when calling createDirectorBackend");
+      // Verify the required parameter 'backend_name' is set.
+      if (options['backend_name'] === undefined || options['backend_name'] === null) {
+        throw new Error("Missing the required parameter 'backend_name'.");
       }
 
       let pathParams = {
-        'director_name': director_name,
-        'service_id': service_id,
-        'version_id': version_id,
-        'backend_name': backend_name
+        'director_name': options['director_name'],
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'backend_name': options['backend_name']
       };
       let queryParams = {
       };
@@ -65,36 +85,56 @@ export default class DirectorBackendApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createDirectorBackend(director_name, service_id, version_id, backend_name) {
-      return this.createDirectorBackendWithHttpInfo(director_name, service_id, version_id, backend_name)
+
+    /**
+     * Establishes a relationship between a Backend and a Director. The Backend is then considered a member of the Director and can be used to balance traffic onto.
+     * @param {Object} options
+     * @param {String} options.director_name
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.backend_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DirectorBackend}
+     */
+    createDirectorBackend(options = {}) {
+      return this.createDirectorBackendWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteDirectorBackendWithHttpInfo(director_name, service_id, version_id, backend_name) {
+
+    /**
+     * Deletes the relationship between a Backend and a Director. The Backend is no longer considered a member of the Director and thus will not have traffic balanced onto it from this Director.
+     * @param {Object} options
+     * @param {String} options.director_name
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.backend_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteDirectorBackendWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'director_name' is set
-      if (director_name === undefined || director_name === null) {
-        throw new Error("Missing the required parameter 'director_name' when calling deleteDirectorBackend");
+      // Verify the required parameter 'director_name' is set.
+      if (options['director_name'] === undefined || options['director_name'] === null) {
+        throw new Error("Missing the required parameter 'director_name'.");
       }
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteDirectorBackend");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteDirectorBackend");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'backend_name' is set
-      if (backend_name === undefined || backend_name === null) {
-        throw new Error("Missing the required parameter 'backend_name' when calling deleteDirectorBackend");
+      // Verify the required parameter 'backend_name' is set.
+      if (options['backend_name'] === undefined || options['backend_name'] === null) {
+        throw new Error("Missing the required parameter 'backend_name'.");
       }
 
       let pathParams = {
-        'director_name': director_name,
-        'service_id': service_id,
-        'version_id': version_id,
-        'backend_name': backend_name
+        'director_name': options['director_name'],
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'backend_name': options['backend_name']
       };
       let queryParams = {
       };
@@ -113,36 +153,56 @@ export default class DirectorBackendApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteDirectorBackend(director_name, service_id, version_id, backend_name) {
-      return this.deleteDirectorBackendWithHttpInfo(director_name, service_id, version_id, backend_name)
+
+    /**
+     * Deletes the relationship between a Backend and a Director. The Backend is no longer considered a member of the Director and thus will not have traffic balanced onto it from this Director.
+     * @param {Object} options
+     * @param {String} options.director_name
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.backend_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteDirectorBackend(options = {}) {
+      return this.deleteDirectorBackendWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getDirectorBackendWithHttpInfo(director_name, service_id, version_id, backend_name) {
+
+    /**
+     * Returns the relationship between a Backend and a Director. If the Backend has been associated with the Director, it returns a simple record indicating this. Otherwise, returns a 404.
+     * @param {Object} options
+     * @param {String} options.director_name
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.backend_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DirectorBackend} and HTTP response
+     */
+    getDirectorBackendWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'director_name' is set
-      if (director_name === undefined || director_name === null) {
-        throw new Error("Missing the required parameter 'director_name' when calling getDirectorBackend");
+      // Verify the required parameter 'director_name' is set.
+      if (options['director_name'] === undefined || options['director_name'] === null) {
+        throw new Error("Missing the required parameter 'director_name'.");
       }
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getDirectorBackend");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getDirectorBackend");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'backend_name' is set
-      if (backend_name === undefined || backend_name === null) {
-        throw new Error("Missing the required parameter 'backend_name' when calling getDirectorBackend");
+      // Verify the required parameter 'backend_name' is set.
+      if (options['backend_name'] === undefined || options['backend_name'] === null) {
+        throw new Error("Missing the required parameter 'backend_name'.");
       }
 
       let pathParams = {
-        'director_name': director_name,
-        'service_id': service_id,
-        'version_id': version_id,
-        'backend_name': backend_name
+        'director_name': options['director_name'],
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'backend_name': options['backend_name']
       };
       let queryParams = {
       };
@@ -161,8 +221,18 @@ export default class DirectorBackendApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getDirectorBackend(director_name, service_id, version_id, backend_name) {
-      return this.getDirectorBackendWithHttpInfo(director_name, service_id, version_id, backend_name)
+
+    /**
+     * Returns the relationship between a Backend and a Director. If the Backend has been associated with the Director, it returns a simple record indicating this. Otherwise, returns a 404.
+     * @param {Object} options
+     * @param {String} options.director_name
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.backend_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DirectorBackend}
+     */
+    getDirectorBackend(options = {}) {
+      return this.getDirectorBackendWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -1,11 +1,11 @@
-# FastlyApi.RelationshipUserUserData
+# Fastly.RelationshipUserUserData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**TypeUser**](TypeUser.md) |  | [optional] 
 **id** | **String** | Alphanumeric string identifying the user. | [optional] [readonly] 
+**type** | [**TypeUser**](TypeUser.md) |  | [optional] 
 
 
 

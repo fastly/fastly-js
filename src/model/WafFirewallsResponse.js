@@ -19,19 +19,38 @@ import PaginationMeta from './PaginationMeta';
 import SchemasWafFirewallVersion from './SchemasWafFirewallVersion';
 import WafFirewallsResponseAllOf from './WafFirewallsResponseAllOf';
 
-
+/**
+ * The WafFirewallsResponse model module.
+ * @module model/WafFirewallsResponse
+ * @version 3.0.0-alpha1
+ */
 class WafFirewallsResponse {
-    
+    /**
+     * Constructs a new <code>WafFirewallsResponse</code>.
+     * @alias module:model/WafFirewallsResponse
+     * @implements module:model/Pagination
+     * @implements module:model/WafFirewallsResponseAllOf
+     */
     constructor() { 
         Pagination.initialize(this);WafFirewallsResponseAllOf.initialize(this);
         WafFirewallsResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>WafFirewallsResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/WafFirewallsResponse} obj Optional instance to populate.
+     * @return {module:model/WafFirewallsResponse} The populated <code>WafFirewallsResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafFirewallsResponse();
@@ -57,28 +76,44 @@ class WafFirewallsResponse {
 
 }
 
-
+/**
+ * @member {module:model/PaginationLinks} links
+ */
 WafFirewallsResponse.prototype['links'] = undefined;
 
-
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
 WafFirewallsResponse.prototype['meta'] = undefined;
 
-
+/**
+ * @member {Array.<module:model/Data>} data
+ */
 WafFirewallsResponse.prototype['data'] = undefined;
 
-
+/**
+ * @member {Array.<module:model/SchemasWafFirewallVersion>} included
+ */
 WafFirewallsResponse.prototype['included'] = undefined;
 
 
 // Implement Pagination interface:
-
+/**
+ * @member {module:model/PaginationLinks} links
+ */
 Pagination.prototype['links'] = undefined;
-
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
 Pagination.prototype['meta'] = undefined;
 // Implement WafFirewallsResponseAllOf interface:
-
+/**
+ * @member {Array.<module:model/Data>} data
+ */
 WafFirewallsResponseAllOf.prototype['data'] = undefined;
-
+/**
+ * @member {Array.<module:model/SchemasWafFirewallVersion>} included
+ */
 WafFirewallsResponseAllOf.prototype['included'] = undefined;
 
 

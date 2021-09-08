@@ -15,31 +15,48 @@ import ApiClient from '../ApiClient';
 import LoggingMessageType from './LoggingMessageType';
 import LoggingUseTls from './LoggingUseTls';
 
-
+/**
+ * The LoggingSyslogAllOf model module.
+ * @module model/LoggingSyslogAllOf
+ * @version 3.0.0-alpha1
+ */
 class LoggingSyslogAllOf {
-    
+    /**
+     * Constructs a new <code>LoggingSyslogAllOf</code>.
+     * @alias module:model/LoggingSyslogAllOf
+     */
     constructor() { 
         
         LoggingSyslogAllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingSyslogAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingSyslogAllOf} obj Optional instance to populate.
+     * @return {module:model/LoggingSyslogAllOf} The populated <code>LoggingSyslogAllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingSyslogAllOf();
 
-            if (data.hasOwnProperty('message_type')) {
-                obj['message_type'] = LoggingMessageType.constructFromObject(data['message_type']);
-            }
             if (data.hasOwnProperty('hostname')) {
                 obj['hostname'] = ApiClient.convertToType(data['hostname'], 'String');
             }
             if (data.hasOwnProperty('ipv4')) {
                 obj['ipv4'] = ApiClient.convertToType(data['ipv4'], 'String');
+            }
+            if (data.hasOwnProperty('message_type')) {
+                obj['message_type'] = LoggingMessageType.constructFromObject(data['message_type']);
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -54,19 +71,33 @@ class LoggingSyslogAllOf {
 
 }
 
-
-LoggingSyslogAllOf.prototype['message_type'] = undefined;
-
-
+/**
+ * The hostname used for the syslog endpoint.
+ * @member {String} hostname
+ */
 LoggingSyslogAllOf.prototype['hostname'] = undefined;
 
-
+/**
+ * The IPv4 address used for the syslog endpoint.
+ * @member {String} ipv4
+ */
 LoggingSyslogAllOf.prototype['ipv4'] = undefined;
 
+/**
+ * @member {module:model/LoggingMessageType} message_type
+ */
+LoggingSyslogAllOf.prototype['message_type'] = undefined;
 
+/**
+ * Whether to prepend each message with a specific token.
+ * @member {String} token
+ * @default 'null'
+ */
 LoggingSyslogAllOf.prototype['token'] = 'null';
 
-
+/**
+ * @member {module:model/LoggingUseTls} use_tls
+ */
 LoggingSyslogAllOf.prototype['use_tls'] = undefined;
 
 

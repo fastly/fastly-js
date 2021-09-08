@@ -18,19 +18,39 @@ import LoggingPlacement from './LoggingPlacement';
 import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Timestamps from './Timestamps';
 
-
+/**
+ * The LoggingDatadogResponse model module.
+ * @module model/LoggingDatadogResponse
+ * @version 3.0.0-alpha1
+ */
 class LoggingDatadogResponse {
-    
+    /**
+     * Constructs a new <code>LoggingDatadogResponse</code>.
+     * @alias module:model/LoggingDatadogResponse
+     * @implements module:model/LoggingDatadog
+     * @implements module:model/Timestamps
+     * @implements module:model/ServiceIdAndVersion
+     */
     constructor() { 
         LoggingDatadog.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
         LoggingDatadogResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingDatadogResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingDatadogResponse} obj Optional instance to populate.
+     * @return {module:model/LoggingDatadogResponse} The populated <code>LoggingDatadogResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingDatadogResponse();
@@ -38,20 +58,20 @@ class LoggingDatadogResponse {
             Timestamps.constructFromObject(data, obj);
             ServiceIdAndVersion.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], Object);
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
             }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
-            }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
-            }
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], Object);
             }
             if (data.hasOwnProperty('region')) {
                 obj['region'] = ApiClient.convertToType(data['region'], 'String');
@@ -81,80 +101,160 @@ class LoggingDatadogResponse {
 
 }
 
-
-LoggingDatadogResponse.prototype['name'] = undefined;
-
-
-LoggingDatadogResponse.prototype['placement'] = undefined;
-
-
-LoggingDatadogResponse.prototype['format_version'] = undefined;
-
-
-LoggingDatadogResponse.prototype['response_condition'] = undefined;
-
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest. 
+ * @member {Object} format
+ */
 LoggingDatadogResponse.prototype['format'] = undefined;
 
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingDatadogResponse.prototype['format_version'] = undefined;
 
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingDatadogResponse.prototype['name'] = undefined;
+
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingDatadogResponse.prototype['placement'] = undefined;
+
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingDatadogResponse.prototype['response_condition'] = undefined;
+
+/**
+ * The region that log data will be sent to.
+ * @member {module:model/LoggingDatadogResponse.RegionEnum} region
+ * @default 'US'
+ */
 LoggingDatadogResponse.prototype['region'] = 'US';
 
-
+/**
+ * The API key from your Datadog account. Required.
+ * @member {String} token
+ */
 LoggingDatadogResponse.prototype['token'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 LoggingDatadogResponse.prototype['created_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 LoggingDatadogResponse.prototype['deleted_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 LoggingDatadogResponse.prototype['updated_at'] = undefined;
 
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 LoggingDatadogResponse.prototype['service_id'] = undefined;
 
-
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
 LoggingDatadogResponse.prototype['version'] = undefined;
 
 
 // Implement LoggingDatadog interface:
-
-LoggingDatadog.prototype['name'] = undefined;
-
-LoggingDatadog.prototype['placement'] = undefined;
-
-LoggingDatadog.prototype['format_version'] = undefined;
-
-LoggingDatadog.prototype['response_condition'] = undefined;
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest. 
+ * @member {Object} format
+ */
 LoggingDatadog.prototype['format'] = undefined;
-
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingDatadog.prototype['format_version'] = undefined;
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingDatadog.prototype['name'] = undefined;
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingDatadog.prototype['placement'] = undefined;
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingDatadog.prototype['response_condition'] = undefined;
+/**
+ * The region that log data will be sent to.
+ * @member {module:model/LoggingDatadog.RegionEnum} region
+ * @default 'US'
+ */
 LoggingDatadog.prototype['region'] = 'US';
-
+/**
+ * The API key from your Datadog account. Required.
+ * @member {String} token
+ */
 LoggingDatadog.prototype['token'] = undefined;
 // Implement Timestamps interface:
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 Timestamps.prototype['created_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 Timestamps.prototype['deleted_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 Timestamps.prototype['updated_at'] = undefined;
 // Implement ServiceIdAndVersion interface:
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 ServiceIdAndVersion.prototype['service_id'] = undefined;
-
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
 ServiceIdAndVersion.prototype['version'] = undefined;
 
 
 
-
+/**
+ * Allowed values for the <code>region</code> property.
+ * @enum {String}
+ * @readonly
+ */
 LoggingDatadogResponse['RegionEnum'] = {
 
-    
+    /**
+     * value: "US"
+     * @const
+     */
     "US": "US",
 
-    
+    /**
+     * value: "EU"
+     * @const
+     */
     "EU": "EU"
 };
 

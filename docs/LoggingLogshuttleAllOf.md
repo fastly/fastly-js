@@ -1,4 +1,4 @@
-# FastlyApi.LoggingLogshuttleAllOf
+# Fastly.LoggingLogshuttleAllOf
 
 ## Properties
 

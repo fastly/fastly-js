@@ -19,19 +19,38 @@ import WafRule from './WafRule';
 import WafTag from './WafTag';
 import WafTagsResponseAllOf from './WafTagsResponseAllOf';
 
-
+/**
+ * The WafTagsResponse model module.
+ * @module model/WafTagsResponse
+ * @version 3.0.0-alpha1
+ */
 class WafTagsResponse {
-    
+    /**
+     * Constructs a new <code>WafTagsResponse</code>.
+     * @alias module:model/WafTagsResponse
+     * @implements module:model/Pagination
+     * @implements module:model/WafTagsResponseAllOf
+     */
     constructor() { 
         Pagination.initialize(this);WafTagsResponseAllOf.initialize(this);
         WafTagsResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>WafTagsResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/WafTagsResponse} obj Optional instance to populate.
+     * @return {module:model/WafTagsResponse} The populated <code>WafTagsResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafTagsResponse();
@@ -57,28 +76,44 @@ class WafTagsResponse {
 
 }
 
-
+/**
+ * @member {module:model/PaginationLinks} links
+ */
 WafTagsResponse.prototype['links'] = undefined;
 
-
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
 WafTagsResponse.prototype['meta'] = undefined;
 
-
+/**
+ * @member {Array.<module:model/WafTag>} data
+ */
 WafTagsResponse.prototype['data'] = undefined;
 
-
+/**
+ * @member {Array.<module:model/WafRule>} included
+ */
 WafTagsResponse.prototype['included'] = undefined;
 
 
 // Implement Pagination interface:
-
+/**
+ * @member {module:model/PaginationLinks} links
+ */
 Pagination.prototype['links'] = undefined;
-
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
 Pagination.prototype['meta'] = undefined;
 // Implement WafTagsResponseAllOf interface:
-
+/**
+ * @member {Array.<module:model/WafTag>} data
+ */
 WafTagsResponseAllOf.prototype['data'] = undefined;
-
+/**
+ * @member {Array.<module:model/WafRule>} included
+ */
 WafTagsResponseAllOf.prototype['included'] = undefined;
 
 

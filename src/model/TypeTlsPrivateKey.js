@@ -12,15 +12,26 @@
  */
 
 import ApiClient from '../ApiClient';
-
+/**
+* Enum class TypeTlsPrivateKey.
+* @enum {}
+* @readonly
+*/
 export default class TypeTlsPrivateKey {
     
-        
+        /**
+         * value: "tls_private_key"
+         * @const
+         */
         "tls_private_key" = "tls_private_key";
 
     
 
-    
+    /**
+    * Returns a <code>TypeTlsPrivateKey</code> enum value from a Javascript object name.
+    * @param {Object} data The plain JavaScript object containing the name of the enum value.
+    * @return {module:model/TypeTlsPrivateKey} The enum <code>TypeTlsPrivateKey</code> value.
+    */
     static constructFromObject(object) {
         return object;
     }

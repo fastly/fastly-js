@@ -18,19 +18,38 @@ import Pagination from './Pagination';
 import PaginationLinks from './PaginationLinks';
 import PaginationMeta from './PaginationMeta';
 
-
+/**
+ * The EventsResponse model module.
+ * @module model/EventsResponse
+ * @version 3.0.0-alpha1
+ */
 class EventsResponse {
-    
+    /**
+     * Constructs a new <code>EventsResponse</code>.
+     * @alias module:model/EventsResponse
+     * @implements module:model/Pagination
+     * @implements module:model/EventsResponseAllOf
+     */
     constructor() { 
         Pagination.initialize(this);EventsResponseAllOf.initialize(this);
         EventsResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>EventsResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/EventsResponse} obj Optional instance to populate.
+     * @return {module:model/EventsResponse} The populated <code>EventsResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EventsResponse();
@@ -53,23 +72,35 @@ class EventsResponse {
 
 }
 
-
+/**
+ * @member {module:model/PaginationLinks} links
+ */
 EventsResponse.prototype['links'] = undefined;
 
-
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
 EventsResponse.prototype['meta'] = undefined;
 
-
+/**
+ * @member {Array.<module:model/Data>} data
+ */
 EventsResponse.prototype['data'] = undefined;
 
 
 // Implement Pagination interface:
-
+/**
+ * @member {module:model/PaginationLinks} links
+ */
 Pagination.prototype['links'] = undefined;
-
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
 Pagination.prototype['meta'] = undefined;
 // Implement EventsResponseAllOf interface:
-
+/**
+ * @member {Array.<module:model/Data>} data
+ */
 EventsResponseAllOf.prototype['data'] = undefined;
 
 

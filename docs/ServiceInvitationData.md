@@ -1,12 +1,12 @@
-# FastlyApi.ServiceInvitationData
+# Fastly.ServiceInvitationData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**TypeServiceInvitation**](TypeServiceInvitation.md) |  | [optional] 
 **attributes** | [**ServiceInvitationDataAttributes**](ServiceInvitationDataAttributes.md) |  | [optional] 
 **relationships** | [**RelationshipService**](RelationshipService.md) |  | [optional] 
+**type** | [**TypeServiceInvitation**](TypeServiceInvitation.md) |  | [optional] 
 
 
 

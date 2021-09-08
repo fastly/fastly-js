@@ -1,7 +1,9 @@
-# FastlyApi.LoggingCloudfilesApi
+# Fastly.LoggingCloudfilesApi
 
 
-
+```javascript
+const apiInstance = new Fastly.LoggingCloudfilesApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -16,65 +18,80 @@ Method | Fastly API endpoint | Description
 
 ## `createLogCloudfiles`
 
-> createLogCloudfiles(service_id, version_id, opts)
-
-Create a Cloud Files log endpoint
+```javascript
+createLogCloudfiles({ service_id, version_id, [format], , [format_version], , [name], , [placement], , [response_condition], , [compression_codec], , [gzip_level], , [message_type], , [period], , [timestamp_format], , [access_key], , [bucket_name], , [path], , [public_key], , [region], , [user] })
+```
 
 Create a Cloud Files log endpoint for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingCloudfilesApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let opts = {
-  'name': "name_example", // String | The name for the real-time logging configuration.
-  'placement': new FastlyApi.LoggingPlacement(), // LoggingPlacement | 
-  'format_version': new FastlyApi.LoggingFormatVersion(), // LoggingFormatVersion | 
-  'response_condition': "response_condition_example", // String | The name of an existing condition in the configured endpoint, or leave blank to always execute.
-  'format': "'%h %l %u %t \"%r\" %&gt;s %b'", // String | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-  'message_type': new FastlyApi.LoggingMessageType(), // LoggingMessageType | 
-  'timestamp_format': "timestamp_format_example", // String | Date and time in ISO 8601 format.
-  'period': 3600, // Number | How frequently log files are finalized so they can be available for reading (in seconds).
-  'gzip_level': 0, // Number | What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-  'compression_codec': new FastlyApi.LoggingCompressionCodec(), // LoggingCompressionCodec | 
-  'access_key': "access_key_example", // String | Your Cloud Files account access key.
-  'bucket_name': "bucket_name_example", // String | The name of your Cloud Files container.
-  'path': "'null'", // String | The path to upload logs to.
-  'region': "region_example", // String | The region to stream logs to.
-  'public_key': "'null'", // String | A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
-  'user': "user_example" // String | The username for your Cloud Files account.
-};
-apiInstance.createLogCloudfiles(service_id, version_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
+  format_version: new Fastly.LoggingFormatVersion(),
+
+  name: "name_example",
+
+  placement: new Fastly.LoggingPlacement(),
+
+  response_condition: "response_condition_example",
+
+  compression_codec: new Fastly.LoggingCompressionCodec(),
+
+  gzip_level: 0,
+
+  message_type: new Fastly.LoggingMessageType(),
+
+  period: 3600,
+
+  timestamp_format: "timestamp_format_example",
+
+  access_key: "access_key_example",
+
+  bucket_name: "bucket_name_example",
+
+  path: "'null'",
+
+  public_key: "'null'",
+
+  region: "region_example",
+
+  user: "user_example",
+};
+
+apiInstance.createLogCloudfiles(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
+**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
-**message_type** | [**LoggingMessageType**](../Model/LoggingMessageType.md) |  | [optional]
-**timestamp_format** | **String** | Date and time in ISO 8601 format. | [optional]
-**period** | **Number** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [default to 3600]
-**gzip_level** | **Number** | What level of gzip encoding to have when sending logs (default &#x60;0&#x60;, no compression). If an explicit non-zero value is set, then &#x60;compression_codec&#x60; will default to \\\&quot;gzip.\\\&quot; Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error. | [optional] [default to 0]
 **compression_codec** | [**LoggingCompressionCodec**](../Model/LoggingCompressionCodec.md) |  | [optional]
+**gzip_level** | **Number** | What level of gzip encoding to have when sending logs (default &#x60;0&#x60;, no compression). If an explicit non-zero value is set, then &#x60;compression_codec&#x60; will default to \\\&quot;gzip.\\\&quot; Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error. | [optional] [default to 0]
+**message_type** | [**LoggingMessageType**](../Model/LoggingMessageType.md) |  | [optional]
+**period** | **Number** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [default to 3600]
+**timestamp_format** | **String** | Date and time in ISO 8601 format. | [optional]
 **access_key** | **String** | Your Cloud Files account access key. | [optional]
 **bucket_name** | **String** | The name of your Cloud Files container. | [optional]
 **path** | **String** | The path to upload logs to. | [optional] [default to &#39;null&#39;]
-**region** | **String** | The region to stream logs to. | [optional]
 **public_key** | **String** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional] [default to &#39;null&#39;]
+**region** | **String** | The region to stream logs to. | [optional]
 **user** | **String** | The username for your Cloud Files account. | [optional]
 
 ### Return type
@@ -84,28 +101,28 @@ Name | Type | Description  | Notes
 
 ## `deleteLogCloudfiles`
 
-> deleteLogCloudfiles(service_id, version_id, logging_cloudfiles_name)
-
-Delete the Cloud Files log endpoint
+```javascript
+deleteLogCloudfiles({ service_id, version_id, logging_cloudfiles_name })
+```
 
 Delete the Cloud Files log endpoint for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingCloudfilesApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let logging_cloudfiles_name = "logging_cloudfiles_name_example"; // String | 
-apiInstance.deleteLogCloudfiles(service_id, version_id, logging_cloudfiles_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_cloudfiles_name: "logging_cloudfiles_name_example", // required};
 
+apiInstance.deleteLogCloudfiles(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -120,28 +137,28 @@ Name | Type | Description  | Notes
 
 ## `getLogCloudfiles`
 
-> getLogCloudfiles(service_id, version_id, logging_cloudfiles_name)
-
-Get a Cloud Files log endpoint
+```javascript
+getLogCloudfiles({ service_id, version_id, logging_cloudfiles_name })
+```
 
 Get the Cloud Files log endpoint for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingCloudfilesApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let logging_cloudfiles_name = "logging_cloudfiles_name_example"; // String | 
-apiInstance.getLogCloudfiles(service_id, version_id, logging_cloudfiles_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_cloudfiles_name: "logging_cloudfiles_name_example", // required};
 
+apiInstance.getLogCloudfiles(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -156,27 +173,28 @@ Name | Type | Description  | Notes
 
 ## `listLogCloudfiles`
 
-> listLogCloudfiles(service_id, version_id)
-
-List Cloud Files log endpoints
+```javascript
+listLogCloudfiles({ service_id, version_id })
+```
 
 List all of the Cloud Files log endpoints for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingCloudfilesApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.listLogCloudfiles(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.listLogCloudfiles(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -190,67 +208,81 @@ Name | Type | Description  | Notes
 
 ## `updateLogCloudfiles`
 
-> updateLogCloudfiles(service_id, version_id, logging_cloudfiles_name, opts)
-
-Update the Cloud Files log endpoint
+```javascript
+updateLogCloudfiles({ service_id, version_id, logging_cloudfiles_name, [format], , [format_version], , [name], , [placement], , [response_condition], , [compression_codec], , [gzip_level], , [message_type], , [period], , [timestamp_format], , [access_key], , [bucket_name], , [path], , [public_key], , [region], , [user] })
+```
 
 Update the Cloud Files log endpoint for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingCloudfilesApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let logging_cloudfiles_name = "logging_cloudfiles_name_example"; // String | 
-let opts = {
-  'name': "name_example", // String | The name for the real-time logging configuration.
-  'placement': new FastlyApi.LoggingPlacement(), // LoggingPlacement | 
-  'format_version': new FastlyApi.LoggingFormatVersion(), // LoggingFormatVersion | 
-  'response_condition': "response_condition_example", // String | The name of an existing condition in the configured endpoint, or leave blank to always execute.
-  'format': "'%h %l %u %t \"%r\" %&gt;s %b'", // String | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-  'message_type': new FastlyApi.LoggingMessageType(), // LoggingMessageType | 
-  'timestamp_format': "timestamp_format_example", // String | Date and time in ISO 8601 format.
-  'period': 3600, // Number | How frequently log files are finalized so they can be available for reading (in seconds).
-  'gzip_level': 0, // Number | What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-  'compression_codec': new FastlyApi.LoggingCompressionCodec(), // LoggingCompressionCodec | 
-  'access_key': "access_key_example", // String | Your Cloud Files account access key.
-  'bucket_name': "bucket_name_example", // String | The name of your Cloud Files container.
-  'path': "'null'", // String | The path to upload logs to.
-  'region': "region_example", // String | The region to stream logs to.
-  'public_key': "'null'", // String | A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
-  'user': "user_example" // String | The username for your Cloud Files account.
-};
-apiInstance.updateLogCloudfiles(service_id, version_id, logging_cloudfiles_name, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_cloudfiles_name: "logging_cloudfiles_name_example", // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
+  format_version: new Fastly.LoggingFormatVersion(),
+
+  name: "name_example",
+
+  placement: new Fastly.LoggingPlacement(),
+
+  response_condition: "response_condition_example",
+
+  compression_codec: new Fastly.LoggingCompressionCodec(),
+
+  gzip_level: 0,
+
+  message_type: new Fastly.LoggingMessageType(),
+
+  period: 3600,
+
+  timestamp_format: "timestamp_format_example",
+
+  access_key: "access_key_example",
+
+  bucket_name: "bucket_name_example",
+
+  path: "'null'",
+
+  public_key: "'null'",
+
+  region: "region_example",
+
+  user: "user_example",
+};
+
+apiInstance.updateLogCloudfiles(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
 **logging_cloudfiles_name** | **String** |  |
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
+**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
-**message_type** | [**LoggingMessageType**](../Model/LoggingMessageType.md) |  | [optional]
-**timestamp_format** | **String** | Date and time in ISO 8601 format. | [optional]
-**period** | **Number** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [default to 3600]
-**gzip_level** | **Number** | What level of gzip encoding to have when sending logs (default &#x60;0&#x60;, no compression). If an explicit non-zero value is set, then &#x60;compression_codec&#x60; will default to \\\&quot;gzip.\\\&quot; Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error. | [optional] [default to 0]
 **compression_codec** | [**LoggingCompressionCodec**](../Model/LoggingCompressionCodec.md) |  | [optional]
+**gzip_level** | **Number** | What level of gzip encoding to have when sending logs (default &#x60;0&#x60;, no compression). If an explicit non-zero value is set, then &#x60;compression_codec&#x60; will default to \\\&quot;gzip.\\\&quot; Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error. | [optional] [default to 0]
+**message_type** | [**LoggingMessageType**](../Model/LoggingMessageType.md) |  | [optional]
+**period** | **Number** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [default to 3600]
+**timestamp_format** | **String** | Date and time in ISO 8601 format. | [optional]
 **access_key** | **String** | Your Cloud Files account access key. | [optional]
 **bucket_name** | **String** | The name of your Cloud Files container. | [optional]
 **path** | **String** | The path to upload logs to. | [optional] [default to &#39;null&#39;]
-**region** | **String** | The region to stream logs to. | [optional]
 **public_key** | **String** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional] [default to &#39;null&#39;]
+**region** | **String** | The region to stream logs to. | [optional]
 **user** | **String** | The username for your Cloud Files account. | [optional]
 
 ### Return type

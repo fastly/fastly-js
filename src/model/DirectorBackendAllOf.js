@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The DirectorBackendAllOf model module.
+ * @module model/DirectorBackendAllOf
+ * @version 3.0.0-alpha1
+ */
 class DirectorBackendAllOf {
-    
+    /**
+     * Constructs a new <code>DirectorBackendAllOf</code>.
+     * @alias module:model/DirectorBackendAllOf
+     */
     constructor() { 
         
         DirectorBackendAllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>DirectorBackendAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/DirectorBackendAllOf} obj Optional instance to populate.
+     * @return {module:model/DirectorBackendAllOf} The populated <code>DirectorBackendAllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new DirectorBackendAllOf();
@@ -43,10 +60,16 @@ class DirectorBackendAllOf {
 
 }
 
-
+/**
+ * The name of the backend.
+ * @member {String} backend_name
+ */
 DirectorBackendAllOf.prototype['backend_name'] = undefined;
 
-
+/**
+ * Name for the Director.
+ * @member {String} director
+ */
 DirectorBackendAllOf.prototype['director'] = undefined;
 
 

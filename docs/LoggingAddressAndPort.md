@@ -1,4 +1,4 @@
-# FastlyApi.LoggingAddressAndPort
+# Fastly.LoggingAddressAndPort
 
 ## Properties
 

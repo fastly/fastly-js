@@ -12,27 +12,44 @@
  */
 
 import ApiClient from '../ApiClient';
-import WafFirewallVersionData from './WafFirewallVersionData';
+import SchemasWafFirewallVersionData from './SchemasWafFirewallVersionData';
 
-
+/**
+ * The WafFirewallVersion model module.
+ * @module model/WafFirewallVersion
+ * @version 3.0.0-alpha1
+ */
 class WafFirewallVersion {
-    
+    /**
+     * Constructs a new <code>WafFirewallVersion</code>.
+     * @alias module:model/WafFirewallVersion
+     */
     constructor() { 
         
         WafFirewallVersion.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>WafFirewallVersion</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/WafFirewallVersion} obj Optional instance to populate.
+     * @return {module:model/WafFirewallVersion} The populated <code>WafFirewallVersion</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafFirewallVersion();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = WafFirewallVersionData.constructFromObject(data['data']);
+                obj['data'] = SchemasWafFirewallVersionData.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -41,7 +58,9 @@ class WafFirewallVersion {
 
 }
 
-
+/**
+ * @member {module:model/SchemasWafFirewallVersionData} data
+ */
 WafFirewallVersion.prototype['data'] = undefined;
 
 

@@ -1,4 +1,4 @@
-# FastlyApi.RelationshipTlsConfigurationTlsConfiguration
+# Fastly.RelationshipTlsConfigurationTlsConfiguration
 
 ## Properties
 

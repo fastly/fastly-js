@@ -15,31 +15,48 @@ import ApiClient from '../ApiClient';
 import Timestamps from './Timestamps';
 import TypeTlsPrivateKey from './TypeTlsPrivateKey';
 
-
+/**
+ * The TlsPrivateKeyResponseData model module.
+ * @module model/TlsPrivateKeyResponseData
+ * @version 3.0.0-alpha1
+ */
 class TlsPrivateKeyResponseData {
-    
+    /**
+     * Constructs a new <code>TlsPrivateKeyResponseData</code>.
+     * @alias module:model/TlsPrivateKeyResponseData
+     */
     constructor() { 
         
         TlsPrivateKeyResponseData.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>TlsPrivateKeyResponseData</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/TlsPrivateKeyResponseData} obj Optional instance to populate.
+     * @return {module:model/TlsPrivateKeyResponseData} The populated <code>TlsPrivateKeyResponseData</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsPrivateKeyResponseData();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeTlsPrivateKey.constructFromObject(data['type']);
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeTlsPrivateKey.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -48,14 +65,21 @@ class TlsPrivateKeyResponseData {
 
 }
 
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+TlsPrivateKeyResponseData.prototype['attributes'] = undefined;
 
-TlsPrivateKeyResponseData.prototype['type'] = undefined;
-
-
+/**
+ * Alphanumeric string identifying a private Key.
+ * @member {String} id
+ */
 TlsPrivateKeyResponseData.prototype['id'] = undefined;
 
-
-TlsPrivateKeyResponseData.prototype['attributes'] = undefined;
+/**
+ * @member {module:model/TypeTlsPrivateKey} type
+ */
+TlsPrivateKeyResponseData.prototype['type'] = undefined;
 
 
 

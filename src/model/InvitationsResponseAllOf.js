@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import Data from './Data';
 
-
+/**
+ * The InvitationsResponseAllOf model module.
+ * @module model/InvitationsResponseAllOf
+ * @version 3.0.0-alpha1
+ */
 class InvitationsResponseAllOf {
-    
+    /**
+     * Constructs a new <code>InvitationsResponseAllOf</code>.
+     * @alias module:model/InvitationsResponseAllOf
+     */
     constructor() { 
         
         InvitationsResponseAllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>InvitationsResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/InvitationsResponseAllOf} obj Optional instance to populate.
+     * @return {module:model/InvitationsResponseAllOf} The populated <code>InvitationsResponseAllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new InvitationsResponseAllOf();
@@ -41,7 +58,9 @@ class InvitationsResponseAllOf {
 
 }
 
-
+/**
+ * @member {Array.<module:model/Data>} data
+ */
 InvitationsResponseAllOf.prototype['data'] = undefined;
 
 

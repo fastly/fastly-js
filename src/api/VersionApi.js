@@ -17,28 +17,46 @@ import Version from '../model/Version';
 import VersionCreateResponse from '../model/VersionCreateResponse';
 import VersionResponse from '../model/VersionResponse';
 
-
+/**
+* Version service.
+* @module api/VersionApi
+* @version 3.0.0-alpha1
+*/
 export default class VersionApi {
 
-    
+    /**
+    * Constructs a new VersionApi. 
+    * @alias module:api/VersionApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    activateServiceVersionWithHttpInfo(service_id, version_id) {
+
+    /**
+     * Activate the current version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VersionResponse} and HTTP response
+     */
+    activateServiceVersionWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling activateServiceVersion");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling activateServiceVersion");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -57,26 +75,42 @@ export default class VersionApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    activateServiceVersion(service_id, version_id) {
-      return this.activateServiceVersionWithHttpInfo(service_id, version_id)
+
+    /**
+     * Activate the current version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VersionResponse}
+     */
+    activateServiceVersion(options = {}) {
+      return this.activateServiceVersionWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    cloneServiceVersionWithHttpInfo(service_id, version_id) {
+
+    /**
+     * Clone the current configuration into a new version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Version} and HTTP response
+     */
+    cloneServiceVersionWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling cloneServiceVersion");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling cloneServiceVersion");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -95,21 +129,36 @@ export default class VersionApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    cloneServiceVersion(service_id, version_id) {
-      return this.cloneServiceVersionWithHttpInfo(service_id, version_id)
+
+    /**
+     * Clone the current configuration into a new version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Version}
+     */
+    cloneServiceVersion(options = {}) {
+      return this.cloneServiceVersionWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    createServiceVersionWithHttpInfo(service_id) {
+
+    /**
+     * Create a version for a particular service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VersionCreateResponse} and HTTP response
+     */
+    createServiceVersionWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createServiceVersion");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id
+        'service_id': options['service_id']
       };
       let queryParams = {
       };
@@ -128,26 +177,41 @@ export default class VersionApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createServiceVersion(service_id) {
-      return this.createServiceVersionWithHttpInfo(service_id)
+
+    /**
+     * Create a version for a particular service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VersionCreateResponse}
+     */
+    createServiceVersion(options = {}) {
+      return this.createServiceVersionWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deactivateServiceVersionWithHttpInfo(service_id, version_id) {
+
+    /**
+     * Deactivate the current version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VersionResponse} and HTTP response
+     */
+    deactivateServiceVersionWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deactivateServiceVersion");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deactivateServiceVersion");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -166,26 +230,42 @@ export default class VersionApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deactivateServiceVersion(service_id, version_id) {
-      return this.deactivateServiceVersionWithHttpInfo(service_id, version_id)
+
+    /**
+     * Deactivate the current version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VersionResponse}
+     */
+    deactivateServiceVersion(options = {}) {
+      return this.deactivateServiceVersionWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getServiceVersionWithHttpInfo(service_id, version_id) {
+
+    /**
+     * Get the version for a particular service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VersionResponse} and HTTP response
+     */
+    getServiceVersionWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getServiceVersion");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getServiceVersion");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -204,21 +284,36 @@ export default class VersionApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getServiceVersion(service_id, version_id) {
-      return this.getServiceVersionWithHttpInfo(service_id, version_id)
+
+    /**
+     * Get the version for a particular service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VersionResponse}
+     */
+    getServiceVersion(options = {}) {
+      return this.getServiceVersionWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listServiceVersionsWithHttpInfo(service_id) {
+
+    /**
+     * List the versions for a particular service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/VersionResponse>} and HTTP response
+     */
+    listServiceVersionsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listServiceVersions");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id
+        'service_id': options['service_id']
       };
       let queryParams = {
       };
@@ -237,26 +332,41 @@ export default class VersionApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listServiceVersions(service_id) {
-      return this.listServiceVersionsWithHttpInfo(service_id)
+
+    /**
+     * List the versions for a particular service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/VersionResponse>}
+     */
+    listServiceVersions(options = {}) {
+      return this.listServiceVersionsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    lockServiceVersionWithHttpInfo(service_id, version_id) {
+
+    /**
+     * Locks the specified version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Version} and HTTP response
+     */
+    lockServiceVersionWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling lockServiceVersion");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling lockServiceVersion");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -275,40 +385,62 @@ export default class VersionApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    lockServiceVersion(service_id, version_id) {
-      return this.lockServiceVersionWithHttpInfo(service_id, version_id)
+
+    /**
+     * Locks the specified version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Version}
+     */
+    lockServiceVersion(options = {}) {
+      return this.lockServiceVersionWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateServiceVersionWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Update a particular version for a particular service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {Boolean} [options.active=false] - Whether this is the active version or not.
+     * @param {String} [options.comment] - A freeform descriptive note.
+     * @param {Boolean} [options.deployed] - Unused at this time.
+     * @param {Boolean} [options.locked=false] - Whether this version is locked or not. Objects can not be added or edited on locked versions.
+     * @param {Number} [options.number] - The number of this version.
+     * @param {Boolean} [options.staging=false] - Unused at this time.
+     * @param {Boolean} [options.testing=false] - Unused at this time.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VersionResponse} and HTTP response
+     */
+    updateServiceVersionWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateServiceVersion");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateServiceVersion");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'active': opts['active'],
-        'comment': opts['comment'],
-        'deployed': opts['deployed'],
-        'locked': opts['locked'],
-        'number': opts['number'],
-        'staging': opts['staging'],
-        'testing': opts['testing']
+        'active': options['active'],
+        'comment': options['comment'],
+        'deployed': options['deployed'],
+        'locked': options['locked'],
+        'number': options['number'],
+        'staging': options['staging'],
+        'testing': options['testing']
       };
 
       let authNames = ['token'];
@@ -321,26 +453,49 @@ export default class VersionApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateServiceVersion(service_id, version_id, opts) {
-      return this.updateServiceVersionWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Update a particular version for a particular service.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {Boolean} [options.active=false] - Whether this is the active version or not.
+     * @param {String} [options.comment] - A freeform descriptive note.
+     * @param {Boolean} [options.deployed] - Unused at this time.
+     * @param {Boolean} [options.locked=false] - Whether this version is locked or not. Objects can not be added or edited on locked versions.
+     * @param {Number} [options.number] - The number of this version.
+     * @param {Boolean} [options.staging=false] - Unused at this time.
+     * @param {Boolean} [options.testing=false] - Unused at this time.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VersionResponse}
+     */
+    updateServiceVersion(options = {}) {
+      return this.updateServiceVersionWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    validateServiceVersionWithHttpInfo(service_id, version_id) {
+
+    /**
+     * Validate the version for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    validateServiceVersionWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling validateServiceVersion");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling validateServiceVersion");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -359,8 +514,16 @@ export default class VersionApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    validateServiceVersion(service_id, version_id) {
-      return this.validateServiceVersionWithHttpInfo(service_id, version_id)
+
+    /**
+     * Validate the version for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    validateServiceVersion(options = {}) {
+      return this.validateServiceVersionWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

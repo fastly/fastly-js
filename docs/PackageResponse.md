@@ -1,4 +1,4 @@
-# FastlyApi.PackageResponse
+# Fastly.PackageResponse
 
 ## Properties
 

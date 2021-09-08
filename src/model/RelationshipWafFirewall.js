@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import RelationshipWafFirewallWafFirewall from './RelationshipWafFirewallWafFirewall';
 
-
+/**
+ * The RelationshipWafFirewall model module.
+ * @module model/RelationshipWafFirewall
+ * @version 3.0.0-alpha1
+ */
 class RelationshipWafFirewall {
-    
+    /**
+     * Constructs a new <code>RelationshipWafFirewall</code>.
+     * @alias module:model/RelationshipWafFirewall
+     */
     constructor() { 
         
         RelationshipWafFirewall.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipWafFirewall</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipWafFirewall} obj Optional instance to populate.
+     * @return {module:model/RelationshipWafFirewall} The populated <code>RelationshipWafFirewall</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipWafFirewall();
@@ -41,7 +58,9 @@ class RelationshipWafFirewall {
 
 }
 
-
+/**
+ * @member {module:model/RelationshipWafFirewallWafFirewall} waf_firewall
+ */
 RelationshipWafFirewall.prototype['waf_firewall'] = undefined;
 
 

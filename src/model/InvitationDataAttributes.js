@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import RoleUser from './RoleUser';
 
-
+/**
+ * The InvitationDataAttributes model module.
+ * @module model/InvitationDataAttributes
+ * @version 3.0.0-alpha1
+ */
 class InvitationDataAttributes {
-    
+    /**
+     * Constructs a new <code>InvitationDataAttributes</code>.
+     * @alias module:model/InvitationDataAttributes
+     */
     constructor() { 
         
         InvitationDataAttributes.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>InvitationDataAttributes</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/InvitationDataAttributes} obj Optional instance to populate.
+     * @return {module:model/InvitationDataAttributes} The populated <code>InvitationDataAttributes</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new InvitationDataAttributes();
@@ -50,29 +67,50 @@ class InvitationDataAttributes {
 
 }
 
-
+/**
+ * The email address of the invitee.
+ * @member {String} email
+ */
 InvitationDataAttributes.prototype['email'] = undefined;
 
-
+/**
+ * Indicates the user has limited access to the customer's services.
+ * @member {Boolean} limit_services
+ */
 InvitationDataAttributes.prototype['limit_services'] = undefined;
 
-
+/**
+ * @member {module:model/RoleUser} role
+ */
 InvitationDataAttributes.prototype['role'] = undefined;
 
-
+/**
+ * Indicates whether or not the invitation is active.
+ * @member {module:model/InvitationDataAttributes.StatusCodeEnum} status_code
+ */
 InvitationDataAttributes.prototype['status_code'] = undefined;
 
 
 
 
 
-
+/**
+ * Allowed values for the <code>status_code</code> property.
+ * @enum {Number}
+ * @readonly
+ */
 InvitationDataAttributes['StatusCodeEnum'] = {
 
-    
+    /**
+     * value: 0
+     * @const
+     */
     "inactive": 0,
 
-    
+    /**
+     * value: 1
+     * @const
+     */
     "active": 1
 };
 

@@ -1,4 +1,4 @@
-# FastlyApi.WafFirewallDataAttributes
+# Fastly.WafFirewallDataAttributes
 
 ## Properties
 

@@ -16,19 +16,39 @@ import DirectorBackendAllOf from './DirectorBackendAllOf';
 import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Timestamps from './Timestamps';
 
-
+/**
+ * The DirectorBackend model module.
+ * @module model/DirectorBackend
+ * @version 3.0.0-alpha1
+ */
 class DirectorBackend {
-    
+    /**
+     * Constructs a new <code>DirectorBackend</code>.
+     * @alias module:model/DirectorBackend
+     * @implements module:model/Timestamps
+     * @implements module:model/ServiceIdAndVersion
+     * @implements module:model/DirectorBackendAllOf
+     */
     constructor() { 
         Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);DirectorBackendAllOf.initialize(this);
         DirectorBackend.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>DirectorBackend</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/DirectorBackend} obj Optional instance to populate.
+     * @return {module:model/DirectorBackend} The populated <code>DirectorBackend</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new DirectorBackend();
@@ -64,44 +84,86 @@ class DirectorBackend {
 
 }
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 DirectorBackend.prototype['created_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 DirectorBackend.prototype['deleted_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 DirectorBackend.prototype['updated_at'] = undefined;
 
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 DirectorBackend.prototype['service_id'] = undefined;
 
-
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
 DirectorBackend.prototype['version'] = undefined;
 
-
+/**
+ * The name of the backend.
+ * @member {String} backend_name
+ */
 DirectorBackend.prototype['backend_name'] = undefined;
 
-
+/**
+ * Name for the Director.
+ * @member {String} director
+ */
 DirectorBackend.prototype['director'] = undefined;
 
 
 // Implement Timestamps interface:
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 Timestamps.prototype['created_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 Timestamps.prototype['deleted_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 Timestamps.prototype['updated_at'] = undefined;
 // Implement ServiceIdAndVersion interface:
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 ServiceIdAndVersion.prototype['service_id'] = undefined;
-
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
 ServiceIdAndVersion.prototype['version'] = undefined;
 // Implement DirectorBackendAllOf interface:
-
+/**
+ * The name of the backend.
+ * @member {String} backend_name
+ */
 DirectorBackendAllOf.prototype['backend_name'] = undefined;
-
+/**
+ * Name for the Director.
+ * @member {String} director
+ */
 DirectorBackendAllOf.prototype['director'] = undefined;
 
 

@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import RelationshipTlsConfigurationTlsConfiguration from './RelationshipTlsConfigurationTlsConfiguration';
 
-
+/**
+ * The RelationshipTlsConfigurations model module.
+ * @module model/RelationshipTlsConfigurations
+ * @version 3.0.0-alpha1
+ */
 class RelationshipTlsConfigurations {
-    
+    /**
+     * Constructs a new <code>RelationshipTlsConfigurations</code>.
+     * @alias module:model/RelationshipTlsConfigurations
+     */
     constructor() { 
         
         RelationshipTlsConfigurations.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipTlsConfigurations</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipTlsConfigurations} obj Optional instance to populate.
+     * @return {module:model/RelationshipTlsConfigurations} The populated <code>RelationshipTlsConfigurations</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipTlsConfigurations();
@@ -41,7 +58,9 @@ class RelationshipTlsConfigurations {
 
 }
 
-
+/**
+ * @member {module:model/RelationshipTlsConfigurationTlsConfiguration} tls_configurations
+ */
 RelationshipTlsConfigurations.prototype['tls_configurations'] = undefined;
 
 

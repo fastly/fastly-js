@@ -1,10 +1,10 @@
-# FastlyApi.SchemasWafFirewallVersion
+# Fastly.SchemasWafFirewallVersion
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**WafFirewallVersionData**](WafFirewallVersionData.md) |  | [optional] 
+**data** | [**SchemasWafFirewallVersionData**](SchemasWafFirewallVersionData.md) |  | [optional] 
 
 
 

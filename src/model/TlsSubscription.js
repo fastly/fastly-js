@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import TlsSubscriptionData from './TlsSubscriptionData';
 
-
+/**
+ * The TlsSubscription model module.
+ * @module model/TlsSubscription
+ * @version 3.0.0-alpha1
+ */
 class TlsSubscription {
-    
+    /**
+     * Constructs a new <code>TlsSubscription</code>.
+     * @alias module:model/TlsSubscription
+     */
     constructor() { 
         
         TlsSubscription.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>TlsSubscription</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/TlsSubscription} obj Optional instance to populate.
+     * @return {module:model/TlsSubscription} The populated <code>TlsSubscription</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsSubscription();
@@ -41,7 +58,9 @@ class TlsSubscription {
 
 }
 
-
+/**
+ * @member {module:model/TlsSubscriptionData} data
+ */
 TlsSubscription.prototype['data'] = undefined;
 
 

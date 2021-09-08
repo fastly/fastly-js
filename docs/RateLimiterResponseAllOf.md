@@ -1,4 +1,4 @@
-# FastlyApi.RateLimiterResponseAllOf
+# Fastly.RateLimiterResponseAllOf
 
 ## Properties
 

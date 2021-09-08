@@ -1,4 +1,4 @@
-# FastlyApi.TlsSubscriptionDataAttributes
+# Fastly.TlsSubscriptionDataAttributes
 
 ## Properties
 

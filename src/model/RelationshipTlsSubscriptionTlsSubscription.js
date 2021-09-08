@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import RelationshipMemberTlsSubscription from './RelationshipMemberTlsSubscription';
 
-
+/**
+ * The RelationshipTlsSubscriptionTlsSubscription model module.
+ * @module model/RelationshipTlsSubscriptionTlsSubscription
+ * @version 3.0.0-alpha1
+ */
 class RelationshipTlsSubscriptionTlsSubscription {
-    
+    /**
+     * Constructs a new <code>RelationshipTlsSubscriptionTlsSubscription</code>.
+     * @alias module:model/RelationshipTlsSubscriptionTlsSubscription
+     */
     constructor() { 
         
         RelationshipTlsSubscriptionTlsSubscription.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipTlsSubscriptionTlsSubscription</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipTlsSubscriptionTlsSubscription} obj Optional instance to populate.
+     * @return {module:model/RelationshipTlsSubscriptionTlsSubscription} The populated <code>RelationshipTlsSubscriptionTlsSubscription</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipTlsSubscriptionTlsSubscription();
@@ -41,7 +58,9 @@ class RelationshipTlsSubscriptionTlsSubscription {
 
 }
 
-
+/**
+ * @member {Array.<module:model/RelationshipMemberTlsSubscription>} data
+ */
 RelationshipTlsSubscriptionTlsSubscription.prototype['data'] = undefined;
 
 

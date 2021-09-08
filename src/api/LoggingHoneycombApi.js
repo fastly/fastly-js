@@ -18,42 +18,66 @@ import LoggingHoneycomb from '../model/LoggingHoneycomb';
 import LoggingHoneycombResponse from '../model/LoggingHoneycombResponse';
 import LoggingPlacement from '../model/LoggingPlacement';
 
-
+/**
+* LoggingHoneycomb service.
+* @module api/LoggingHoneycombApi
+* @version 3.0.0-alpha1
+*/
 export default class LoggingHoneycombApi {
 
-    
+    /**
+    * Constructs a new LoggingHoneycombApi. 
+    * @alias module:api/LoggingHoneycombApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createLogHoneycombWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Create a Honeycomb logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Honeycomb can ingest.
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.dataset] - The Honeycomb Dataset you want to log to.
+     * @param {String} [options.token] - The Write Key from the Account page of your Honeycomb account.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingHoneycomb} and HTTP response
+     */
+    createLogHoneycombWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createLogHoneycomb");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createLogHoneycomb");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'dataset': opts['dataset'],
-        'token': opts['token']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'dataset': options['dataset'],
+        'token': options['token']
       };
 
       let authNames = ['token'];
@@ -66,31 +90,55 @@ export default class LoggingHoneycombApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createLogHoneycomb(service_id, version_id, opts) {
-      return this.createLogHoneycombWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Create a Honeycomb logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Honeycomb can ingest.
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.dataset] - The Honeycomb Dataset you want to log to.
+     * @param {String} [options.token] - The Write Key from the Account page of your Honeycomb account.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingHoneycomb}
+     */
+    createLogHoneycomb(options = {}) {
+      return this.createLogHoneycombWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteLogHoneycombWithHttpInfo(service_id, version_id, logging_honeycomb_name) {
+
+    /**
+     * Delete the Honeycomb logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_honeycomb_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteLogHoneycombWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteLogHoneycomb");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteLogHoneycomb");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_honeycomb_name' is set
-      if (logging_honeycomb_name === undefined || logging_honeycomb_name === null) {
-        throw new Error("Missing the required parameter 'logging_honeycomb_name' when calling deleteLogHoneycomb");
+      // Verify the required parameter 'logging_honeycomb_name' is set.
+      if (options['logging_honeycomb_name'] === undefined || options['logging_honeycomb_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_honeycomb_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_honeycomb_name': logging_honeycomb_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_honeycomb_name': options['logging_honeycomb_name']
       };
       let queryParams = {
       };
@@ -109,31 +157,49 @@ export default class LoggingHoneycombApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteLogHoneycomb(service_id, version_id, logging_honeycomb_name) {
-      return this.deleteLogHoneycombWithHttpInfo(service_id, version_id, logging_honeycomb_name)
+
+    /**
+     * Delete the Honeycomb logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_honeycomb_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteLogHoneycomb(options = {}) {
+      return this.deleteLogHoneycombWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getLogHoneycombWithHttpInfo(service_id, version_id, logging_honeycomb_name) {
+
+    /**
+     * Get the details of a Honeycomb logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_honeycomb_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingHoneycomb} and HTTP response
+     */
+    getLogHoneycombWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getLogHoneycomb");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getLogHoneycomb");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_honeycomb_name' is set
-      if (logging_honeycomb_name === undefined || logging_honeycomb_name === null) {
-        throw new Error("Missing the required parameter 'logging_honeycomb_name' when calling getLogHoneycomb");
+      // Verify the required parameter 'logging_honeycomb_name' is set.
+      if (options['logging_honeycomb_name'] === undefined || options['logging_honeycomb_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_honeycomb_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_honeycomb_name': logging_honeycomb_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_honeycomb_name': options['logging_honeycomb_name']
       };
       let queryParams = {
       };
@@ -152,26 +218,43 @@ export default class LoggingHoneycombApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getLogHoneycomb(service_id, version_id, logging_honeycomb_name) {
-      return this.getLogHoneycombWithHttpInfo(service_id, version_id, logging_honeycomb_name)
+
+    /**
+     * Get the details of a Honeycomb logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_honeycomb_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingHoneycomb}
+     */
+    getLogHoneycomb(options = {}) {
+      return this.getLogHoneycombWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listLogHoneycombWithHttpInfo(service_id, version_id) {
+
+    /**
+     * List all of the Honeycomb logging objects for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingHoneycombResponse>} and HTTP response
+     */
+    listLogHoneycombWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listLogHoneycomb");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listLogHoneycomb");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -190,45 +273,68 @@ export default class LoggingHoneycombApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listLogHoneycomb(service_id, version_id) {
-      return this.listLogHoneycombWithHttpInfo(service_id, version_id)
+
+    /**
+     * List all of the Honeycomb logging objects for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingHoneycombResponse>}
+     */
+    listLogHoneycomb(options = {}) {
+      return this.listLogHoneycombWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateLogHoneycombWithHttpInfo(service_id, version_id, logging_honeycomb_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Update a Honeycomb logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_honeycomb_name
+     * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Honeycomb can ingest.
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.dataset] - The Honeycomb Dataset you want to log to.
+     * @param {String} [options.token] - The Write Key from the Account page of your Honeycomb account.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingHoneycombResponse} and HTTP response
+     */
+    updateLogHoneycombWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateLogHoneycomb");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateLogHoneycomb");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_honeycomb_name' is set
-      if (logging_honeycomb_name === undefined || logging_honeycomb_name === null) {
-        throw new Error("Missing the required parameter 'logging_honeycomb_name' when calling updateLogHoneycomb");
+      // Verify the required parameter 'logging_honeycomb_name' is set.
+      if (options['logging_honeycomb_name'] === undefined || options['logging_honeycomb_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_honeycomb_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_honeycomb_name': logging_honeycomb_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_honeycomb_name': options['logging_honeycomb_name']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'dataset': opts['dataset'],
-        'token': opts['token']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'dataset': options['dataset'],
+        'token': options['token']
       };
 
       let authNames = ['token'];
@@ -241,8 +347,24 @@ export default class LoggingHoneycombApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateLogHoneycomb(service_id, version_id, logging_honeycomb_name, opts) {
-      return this.updateLogHoneycombWithHttpInfo(service_id, version_id, logging_honeycomb_name, opts)
+
+    /**
+     * Update a Honeycomb logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_honeycomb_name
+     * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Honeycomb can ingest.
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.dataset] - The Honeycomb Dataset you want to log to.
+     * @param {String} [options.token] - The Write Key from the Account page of your Honeycomb account.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingHoneycombResponse}
+     */
+    updateLogHoneycomb(options = {}) {
+      return this.updateLogHoneycombWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -12,27 +12,47 @@
  */
 
 import ApiClient from '../ApiClient';
-
+/**
+* Enum class RoleUser.
+* @enum {}
+* @readonly
+*/
 export default class RoleUser {
     
-        
+        /**
+         * value: "user"
+         * @const
+         */
         "user" = "user";
 
     
-        
+        /**
+         * value: "billing"
+         * @const
+         */
         "billing" = "billing";
 
     
-        
+        /**
+         * value: "engineer"
+         * @const
+         */
         "engineer" = "engineer";
 
     
-        
+        /**
+         * value: "superuser"
+         * @const
+         */
         "superuser" = "superuser";
 
     
 
-    
+    /**
+    * Returns a <code>RoleUser</code> enum value from a Javascript object name.
+    * @param {Object} data The plain JavaScript object containing the name of the enum value.
+    * @return {module:model/RoleUser} The enum <code>RoleUser</code> value.
+    */
     static constructFromObject(object) {
         return object;
     }

@@ -1,7 +1,9 @@
-# FastlyApi.LoggingLogshuttleApi
+# Fastly.LoggingLogshuttleApi
 
 
-
+```javascript
+const apiInstance = new Fastly.LoggingLogshuttleApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -16,46 +18,52 @@ Method | Fastly API endpoint | Description
 
 ## `createLogLogshuttle`
 
-> createLogLogshuttle(service_id, version_id, opts)
-
-Create a Log Shuttle log endpoint
+```javascript
+createLogLogshuttle({ service_id, version_id, [format], , [format_version], , [name], , [placement], , [response_condition], , [token], , [url] })
+```
 
 Create a Log Shuttle logging endpoint for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingLogshuttleApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let opts = {
-  'name': "name_example", // String | The name for the real-time logging configuration.
-  'placement': new FastlyApi.LoggingPlacement(), // LoggingPlacement | 
-  'format_version': new FastlyApi.LoggingFormatVersion(), // LoggingFormatVersion | 
-  'response_condition': "response_condition_example", // String | The name of an existing condition in the configured endpoint, or leave blank to always execute.
-  'format': "'%h %l %u %t \"%r\" %&gt;s %b'", // String | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-  'token': "token_example", // String | The data authentication token associated with this endpoint.
-  'url': "url_example" // String | The URL to stream logs to.
-};
-apiInstance.createLogLogshuttle(service_id, version_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
+  format_version: new Fastly.LoggingFormatVersion(),
+
+  name: "name_example",
+
+  placement: new Fastly.LoggingPlacement(),
+
+  response_condition: "response_condition_example",
+
+  token: "token_example",
+
+  url: "url_example",
+};
+
+apiInstance.createLogLogshuttle(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
+**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
 **token** | **String** | The data authentication token associated with this endpoint. | [optional]
 **url** | **String** | The URL to stream logs to. | [optional]
 
@@ -66,28 +74,28 @@ Name | Type | Description  | Notes
 
 ## `deleteLogLogshuttle`
 
-> deleteLogLogshuttle(service_id, version_id, logging_logshuttle_name)
-
-Delete a Log Shuttle log endpoint
+```javascript
+deleteLogLogshuttle({ service_id, version_id, logging_logshuttle_name })
+```
 
 Delete the Log Shuttle logging endpoint for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingLogshuttleApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let logging_logshuttle_name = "logging_logshuttle_name_example"; // String | 
-apiInstance.deleteLogLogshuttle(service_id, version_id, logging_logshuttle_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_logshuttle_name: "logging_logshuttle_name_example", // required};
 
+apiInstance.deleteLogLogshuttle(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -102,28 +110,28 @@ Name | Type | Description  | Notes
 
 ## `getLogLogshuttle`
 
-> getLogLogshuttle(service_id, version_id, logging_logshuttle_name)
-
-Get a Log Shuttle log endpoint
+```javascript
+getLogLogshuttle({ service_id, version_id, logging_logshuttle_name })
+```
 
 Get the Log Shuttle logging endpoint for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingLogshuttleApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let logging_logshuttle_name = "logging_logshuttle_name_example"; // String | 
-apiInstance.getLogLogshuttle(service_id, version_id, logging_logshuttle_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_logshuttle_name: "logging_logshuttle_name_example", // required};
 
+apiInstance.getLogLogshuttle(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -138,27 +146,28 @@ Name | Type | Description  | Notes
 
 ## `listLogLogshuttle`
 
-> listLogLogshuttle(service_id, version_id)
-
-List Log Shuttle log endpoints
+```javascript
+listLogLogshuttle({ service_id, version_id })
+```
 
 List all of the Log Shuttle logging endpoints for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingLogshuttleApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.listLogLogshuttle(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.listLogLogshuttle(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -172,48 +181,53 @@ Name | Type | Description  | Notes
 
 ## `updateLogLogshuttle`
 
-> updateLogLogshuttle(service_id, version_id, logging_logshuttle_name, opts)
-
-Update a Log Shuttle log endpoint
+```javascript
+updateLogLogshuttle({ service_id, version_id, logging_logshuttle_name, [format], , [format_version], , [name], , [placement], , [response_condition], , [token], , [url] })
+```
 
 Update the Log Shuttle logging endpoint for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingLogshuttleApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let logging_logshuttle_name = "logging_logshuttle_name_example"; // String | 
-let opts = {
-  'name': "name_example", // String | The name for the real-time logging configuration.
-  'placement': new FastlyApi.LoggingPlacement(), // LoggingPlacement | 
-  'format_version': new FastlyApi.LoggingFormatVersion(), // LoggingFormatVersion | 
-  'response_condition': "response_condition_example", // String | The name of an existing condition in the configured endpoint, or leave blank to always execute.
-  'format': "'%h %l %u %t \"%r\" %&gt;s %b'", // String | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-  'token': "token_example", // String | The data authentication token associated with this endpoint.
-  'url': "url_example" // String | The URL to stream logs to.
-};
-apiInstance.updateLogLogshuttle(service_id, version_id, logging_logshuttle_name, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_logshuttle_name: "logging_logshuttle_name_example", // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
+  format_version: new Fastly.LoggingFormatVersion(),
+
+  name: "name_example",
+
+  placement: new Fastly.LoggingPlacement(),
+
+  response_condition: "response_condition_example",
+
+  token: "token_example",
+
+  url: "url_example",
+};
+
+apiInstance.updateLogLogshuttle(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
 **logging_logshuttle_name** | **String** |  |
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
+**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
 **token** | **String** | The data authentication token associated with this endpoint. | [optional]
 **url** | **String** | The URL to stream logs to. | [optional]
 

@@ -17,19 +17,40 @@ import AclResponseAllOf from './AclResponseAllOf';
 import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Timestamps from './Timestamps';
 
-
+/**
+ * The AclResponse model module.
+ * @module model/AclResponse
+ * @version 3.0.0-alpha1
+ */
 class AclResponse {
-    
+    /**
+     * Constructs a new <code>AclResponse</code>.
+     * @alias module:model/AclResponse
+     * @implements module:model/Acl
+     * @implements module:model/Timestamps
+     * @implements module:model/ServiceIdAndVersion
+     * @implements module:model/AclResponseAllOf
+     */
     constructor() { 
         Acl.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);AclResponseAllOf.initialize(this);
         AclResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>AclResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/AclResponse} obj Optional instance to populate.
+     * @return {module:model/AclResponse} The populated <code>AclResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new AclResponse();
@@ -66,45 +87,87 @@ class AclResponse {
 
 }
 
-
+/**
+ * Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace.
+ * @member {String} name
+ */
 AclResponse.prototype['name'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 AclResponse.prototype['created_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 AclResponse.prototype['deleted_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 AclResponse.prototype['updated_at'] = undefined;
 
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 AclResponse.prototype['service_id'] = undefined;
 
-
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
 AclResponse.prototype['version'] = undefined;
 
-
+/**
+ * Alphanumeric string identifying a ACL.
+ * @member {String} id
+ */
 AclResponse.prototype['id'] = undefined;
 
 
 // Implement Acl interface:
-
+/**
+ * Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace.
+ * @member {String} name
+ */
 Acl.prototype['name'] = undefined;
 // Implement Timestamps interface:
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 Timestamps.prototype['created_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 Timestamps.prototype['deleted_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 Timestamps.prototype['updated_at'] = undefined;
 // Implement ServiceIdAndVersion interface:
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 ServiceIdAndVersion.prototype['service_id'] = undefined;
-
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
 ServiceIdAndVersion.prototype['version'] = undefined;
 // Implement AclResponseAllOf interface:
-
+/**
+ * Alphanumeric string identifying a ACL.
+ * @member {String} id
+ */
 AclResponseAllOf.prototype['id'] = undefined;
 
 

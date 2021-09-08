@@ -1,4 +1,4 @@
-# FastlyApi.RelationshipWafRuleRevisionWafRuleRevisions
+# Fastly.RelationshipWafRuleRevisionWafRuleRevisions
 
 ## Properties
 

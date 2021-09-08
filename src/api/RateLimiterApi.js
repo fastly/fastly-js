@@ -16,47 +16,76 @@ import ApiClient from "../ApiClient";
 import RateLimiterResponse from '../model/RateLimiterResponse';
 import RateLimiterResponse1 from '../model/RateLimiterResponse1';
 
-
+/**
+* RateLimiter service.
+* @module api/RateLimiterApi
+* @version 3.0.0-alpha1
+*/
 export default class RateLimiterApi {
 
-    
+    /**
+    * Constructs a new RateLimiterApi. 
+    * @alias module:api/RateLimiterApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createRateLimiterWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Create a rate limiter for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {module:model/String} [options.action] - The action to take when a rate limiter violation is detected.
+     * @param {Array.<String>} [options.client_key] - Array of VCL variables used to generate a counter key to identify a client. Example variables include `req.http.Fastly-Client-IP`, `req.http.User-Agent`, or a custom header like `req.http.API-Key`.
+     * @param {Number} [options.feature_revision] - Revision number of the rate limiting feature implementation. Defaults to the most recent revision.
+     * @param {Array.<module:model/String>} [options.http_methods] - Array of HTTP methods to apply rate limiting to.
+     * @param {module:model/String} [options.logger_type] - Name of the type of logging endpoint to be used when action is `log_only`. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries.
+     * @param {String} [options.name] - A human readable name for the rate limiting rule.
+     * @param {Number} [options.penalty_box_duration] - Length of time in seconds that the rate limiter is in effect after the initial violation is detected.
+     * @param {module:model/RateLimiterResponse1} [options.response]
+     * @param {String} [options.response_object_name] - Name of existing response object. Required if `action` is `response_object`. Note that the rate limiter response is only updated to reflect the response object content when saving the rate limiter configuration.
+     * @param {Number} [options.rps_limit] - Upper limit of requests per second allowed by the rate limiter.
+     * @param {String} [options.uri_dictionary_name] - The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
+     * @param {module:model/Number} [options.window_size] - Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RateLimiterResponse} and HTTP response
+     */
+    createRateLimiterWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createRateLimiter");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createRateLimiter");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'uri_dictionary_name': opts['uri_dictionary_name'],
-        'http_methods': this.apiClient.buildCollectionParam(opts['http_methods'], 'csv'),
-        'rps_limit': opts['rps_limit'],
-        'window_size': opts['window_size'],
-        'client_key': this.apiClient.buildCollectionParam(opts['client_key'], 'csv'),
-        'penalty_box_duration': opts['penalty_box_duration'],
-        'action': opts['action'],
-        'response': opts['response'],
-        'response_object_name': opts['response_object_name'],
-        'logger_type': opts['logger_type'],
-        'feature_revision': opts['feature_revision']
+        'action': options['action'],
+        'client_key': this.apiClient.buildCollectionParam(options['client_key'], 'csv'),
+        'feature_revision': options['feature_revision'],
+        'http_methods': this.apiClient.buildCollectionParam(options['http_methods'], 'csv'),
+        'logger_type': options['logger_type'],
+        'name': options['name'],
+        'penalty_box_duration': options['penalty_box_duration'],
+        'response': options['response'],
+        'response_object_name': options['response_object_name'],
+        'rps_limit': options['rps_limit'],
+        'uri_dictionary_name': options['uri_dictionary_name'],
+        'window_size': options['window_size']
       };
 
       let authNames = ['token'];
@@ -69,21 +98,48 @@ export default class RateLimiterApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createRateLimiter(service_id, version_id, opts) {
-      return this.createRateLimiterWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Create a rate limiter for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {module:model/String} [options.action] - The action to take when a rate limiter violation is detected.
+     * @param {Array.<String>} [options.client_key] - Array of VCL variables used to generate a counter key to identify a client. Example variables include `req.http.Fastly-Client-IP`, `req.http.User-Agent`, or a custom header like `req.http.API-Key`.
+     * @param {Number} [options.feature_revision] - Revision number of the rate limiting feature implementation. Defaults to the most recent revision.
+     * @param {Array.<module:model/String>} [options.http_methods] - Array of HTTP methods to apply rate limiting to.
+     * @param {module:model/String} [options.logger_type] - Name of the type of logging endpoint to be used when action is `log_only`. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries.
+     * @param {String} [options.name] - A human readable name for the rate limiting rule.
+     * @param {Number} [options.penalty_box_duration] - Length of time in seconds that the rate limiter is in effect after the initial violation is detected.
+     * @param {module:model/RateLimiterResponse1} [options.response]
+     * @param {String} [options.response_object_name] - Name of existing response object. Required if `action` is `response_object`. Note that the rate limiter response is only updated to reflect the response object content when saving the rate limiter configuration.
+     * @param {Number} [options.rps_limit] - Upper limit of requests per second allowed by the rate limiter.
+     * @param {String} [options.uri_dictionary_name] - The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
+     * @param {module:model/Number} [options.window_size] - Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RateLimiterResponse}
+     */
+    createRateLimiter(options = {}) {
+      return this.createRateLimiterWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteRateLimiterWithHttpInfo(rate_limiter_id) {
+
+    /**
+     * Delete a rate limiter by its ID.
+     * @param {Object} options
+     * @param {String} options.rate_limiter_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteRateLimiterWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'rate_limiter_id' is set
-      if (rate_limiter_id === undefined || rate_limiter_id === null) {
-        throw new Error("Missing the required parameter 'rate_limiter_id' when calling deleteRateLimiter");
+      // Verify the required parameter 'rate_limiter_id' is set.
+      if (options['rate_limiter_id'] === undefined || options['rate_limiter_id'] === null) {
+        throw new Error("Missing the required parameter 'rate_limiter_id'.");
       }
 
       let pathParams = {
-        'rate_limiter_id': rate_limiter_id
+        'rate_limiter_id': options['rate_limiter_id']
       };
       let queryParams = {
       };
@@ -102,21 +158,35 @@ export default class RateLimiterApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteRateLimiter(rate_limiter_id) {
-      return this.deleteRateLimiterWithHttpInfo(rate_limiter_id)
+
+    /**
+     * Delete a rate limiter by its ID.
+     * @param {Object} options
+     * @param {String} options.rate_limiter_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteRateLimiter(options = {}) {
+      return this.deleteRateLimiterWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getRateLimiterWithHttpInfo(rate_limiter_id) {
+
+    /**
+     * Get a rate limiter by its ID.
+     * @param {Object} options
+     * @param {String} options.rate_limiter_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RateLimiterResponse} and HTTP response
+     */
+    getRateLimiterWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'rate_limiter_id' is set
-      if (rate_limiter_id === undefined || rate_limiter_id === null) {
-        throw new Error("Missing the required parameter 'rate_limiter_id' when calling getRateLimiter");
+      // Verify the required parameter 'rate_limiter_id' is set.
+      if (options['rate_limiter_id'] === undefined || options['rate_limiter_id'] === null) {
+        throw new Error("Missing the required parameter 'rate_limiter_id'.");
       }
 
       let pathParams = {
-        'rate_limiter_id': rate_limiter_id
+        'rate_limiter_id': options['rate_limiter_id']
       };
       let queryParams = {
       };
@@ -135,26 +205,41 @@ export default class RateLimiterApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getRateLimiter(rate_limiter_id) {
-      return this.getRateLimiterWithHttpInfo(rate_limiter_id)
+
+    /**
+     * Get a rate limiter by its ID.
+     * @param {Object} options
+     * @param {String} options.rate_limiter_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RateLimiterResponse}
+     */
+    getRateLimiter(options = {}) {
+      return this.getRateLimiterWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listRateLimitersWithHttpInfo(service_id, version_id) {
+
+    /**
+     * List all rate limiters for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/RateLimiterResponse>} and HTTP response
+     */
+    listRateLimitersWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listRateLimiters");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listRateLimiters");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -173,40 +258,66 @@ export default class RateLimiterApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listRateLimiters(service_id, version_id) {
-      return this.listRateLimitersWithHttpInfo(service_id, version_id)
+
+    /**
+     * List all rate limiters for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/RateLimiterResponse>}
+     */
+    listRateLimiters(options = {}) {
+      return this.listRateLimitersWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateRateLimiterWithHttpInfo(rate_limiter_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Update a rate limiter by its ID.
+     * @param {Object} options
+     * @param {String} options.rate_limiter_id
+     * @param {module:model/String} [options.action] - The action to take when a rate limiter violation is detected.
+     * @param {Array.<String>} [options.client_key] - Array of VCL variables used to generate a counter key to identify a client. Example variables include `req.http.Fastly-Client-IP`, `req.http.User-Agent`, or a custom header like `req.http.API-Key`.
+     * @param {Number} [options.feature_revision] - Revision number of the rate limiting feature implementation. Defaults to the most recent revision.
+     * @param {Array.<module:model/String>} [options.http_methods] - Array of HTTP methods to apply rate limiting to.
+     * @param {module:model/String} [options.logger_type] - Name of the type of logging endpoint to be used when action is `log_only`. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries.
+     * @param {String} [options.name] - A human readable name for the rate limiting rule.
+     * @param {Number} [options.penalty_box_duration] - Length of time in seconds that the rate limiter is in effect after the initial violation is detected.
+     * @param {module:model/RateLimiterResponse1} [options.response]
+     * @param {String} [options.response_object_name] - Name of existing response object. Required if `action` is `response_object`. Note that the rate limiter response is only updated to reflect the response object content when saving the rate limiter configuration.
+     * @param {Number} [options.rps_limit] - Upper limit of requests per second allowed by the rate limiter.
+     * @param {String} [options.uri_dictionary_name] - The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
+     * @param {module:model/Number} [options.window_size] - Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RateLimiterResponse} and HTTP response
+     */
+    updateRateLimiterWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'rate_limiter_id' is set
-      if (rate_limiter_id === undefined || rate_limiter_id === null) {
-        throw new Error("Missing the required parameter 'rate_limiter_id' when calling updateRateLimiter");
+      // Verify the required parameter 'rate_limiter_id' is set.
+      if (options['rate_limiter_id'] === undefined || options['rate_limiter_id'] === null) {
+        throw new Error("Missing the required parameter 'rate_limiter_id'.");
       }
 
       let pathParams = {
-        'rate_limiter_id': rate_limiter_id
+        'rate_limiter_id': options['rate_limiter_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'uri_dictionary_name': opts['uri_dictionary_name'],
-        'http_methods': this.apiClient.buildCollectionParam(opts['http_methods'], 'csv'),
-        'rps_limit': opts['rps_limit'],
-        'window_size': opts['window_size'],
-        'client_key': this.apiClient.buildCollectionParam(opts['client_key'], 'csv'),
-        'penalty_box_duration': opts['penalty_box_duration'],
-        'action': opts['action'],
-        'response': opts['response'],
-        'response_object_name': opts['response_object_name'],
-        'logger_type': opts['logger_type'],
-        'feature_revision': opts['feature_revision']
+        'action': options['action'],
+        'client_key': this.apiClient.buildCollectionParam(options['client_key'], 'csv'),
+        'feature_revision': options['feature_revision'],
+        'http_methods': this.apiClient.buildCollectionParam(options['http_methods'], 'csv'),
+        'logger_type': options['logger_type'],
+        'name': options['name'],
+        'penalty_box_duration': options['penalty_box_duration'],
+        'response': options['response'],
+        'response_object_name': options['response_object_name'],
+        'rps_limit': options['rps_limit'],
+        'uri_dictionary_name': options['uri_dictionary_name'],
+        'window_size': options['window_size']
       };
 
       let authNames = ['token'];
@@ -219,8 +330,27 @@ export default class RateLimiterApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateRateLimiter(rate_limiter_id, opts) {
-      return this.updateRateLimiterWithHttpInfo(rate_limiter_id, opts)
+
+    /**
+     * Update a rate limiter by its ID.
+     * @param {Object} options
+     * @param {String} options.rate_limiter_id
+     * @param {module:model/String} [options.action] - The action to take when a rate limiter violation is detected.
+     * @param {Array.<String>} [options.client_key] - Array of VCL variables used to generate a counter key to identify a client. Example variables include `req.http.Fastly-Client-IP`, `req.http.User-Agent`, or a custom header like `req.http.API-Key`.
+     * @param {Number} [options.feature_revision] - Revision number of the rate limiting feature implementation. Defaults to the most recent revision.
+     * @param {Array.<module:model/String>} [options.http_methods] - Array of HTTP methods to apply rate limiting to.
+     * @param {module:model/String} [options.logger_type] - Name of the type of logging endpoint to be used when action is `log_only`. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries.
+     * @param {String} [options.name] - A human readable name for the rate limiting rule.
+     * @param {Number} [options.penalty_box_duration] - Length of time in seconds that the rate limiter is in effect after the initial violation is detected.
+     * @param {module:model/RateLimiterResponse1} [options.response]
+     * @param {String} [options.response_object_name] - Name of existing response object. Required if `action` is `response_object`. Note that the rate limiter response is only updated to reflect the response object content when saving the rate limiter configuration.
+     * @param {Number} [options.rps_limit] - Upper limit of requests per second allowed by the rate limiter.
+     * @param {String} [options.uri_dictionary_name] - The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
+     * @param {module:model/Number} [options.window_size] - Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RateLimiterResponse}
+     */
+    updateRateLimiter(options = {}) {
+      return this.updateRateLimiterWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

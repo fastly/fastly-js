@@ -1,11 +1,11 @@
-# FastlyApi.WafFirewallData
+# Fastly.WafFirewallData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**TypeWafFirewall**](TypeWafFirewall.md) |  | [optional] 
 **attributes** | [**WafFirewallDataAttributes**](WafFirewallDataAttributes.md) |  | [optional] 
+**type** | [**TypeWafFirewall**](TypeWafFirewall.md) |  | [optional] 
 
 
 

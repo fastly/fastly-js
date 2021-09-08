@@ -17,42 +17,66 @@ import LoggingFormatVersion from '../model/LoggingFormatVersion';
 import LoggingLogshuttleResponse from '../model/LoggingLogshuttleResponse';
 import LoggingPlacement from '../model/LoggingPlacement';
 
-
+/**
+* LoggingLogshuttle service.
+* @module api/LoggingLogshuttleApi
+* @version 3.0.0-alpha1
+*/
 export default class LoggingLogshuttleApi {
 
-    
+    /**
+    * Constructs a new LoggingLogshuttleApi. 
+    * @alias module:api/LoggingLogshuttleApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createLogLogshuttleWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Create a Log Shuttle logging endpoint for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.token] - The data authentication token associated with this endpoint.
+     * @param {String} [options.url] - The URL to stream logs to.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogshuttleResponse} and HTTP response
+     */
+    createLogLogshuttleWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createLogLogshuttle");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createLogLogshuttle");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'token': opts['token'],
-        'url': opts['url']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'token': options['token'],
+        'url': options['url']
       };
 
       let authNames = ['token'];
@@ -65,31 +89,55 @@ export default class LoggingLogshuttleApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createLogLogshuttle(service_id, version_id, opts) {
-      return this.createLogLogshuttleWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Create a Log Shuttle logging endpoint for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.token] - The data authentication token associated with this endpoint.
+     * @param {String} [options.url] - The URL to stream logs to.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogshuttleResponse}
+     */
+    createLogLogshuttle(options = {}) {
+      return this.createLogLogshuttleWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteLogLogshuttleWithHttpInfo(service_id, version_id, logging_logshuttle_name) {
+
+    /**
+     * Delete the Log Shuttle logging endpoint for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_logshuttle_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteLogLogshuttleWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteLogLogshuttle");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteLogLogshuttle");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_logshuttle_name' is set
-      if (logging_logshuttle_name === undefined || logging_logshuttle_name === null) {
-        throw new Error("Missing the required parameter 'logging_logshuttle_name' when calling deleteLogLogshuttle");
+      // Verify the required parameter 'logging_logshuttle_name' is set.
+      if (options['logging_logshuttle_name'] === undefined || options['logging_logshuttle_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_logshuttle_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_logshuttle_name': logging_logshuttle_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_logshuttle_name': options['logging_logshuttle_name']
       };
       let queryParams = {
       };
@@ -108,31 +156,49 @@ export default class LoggingLogshuttleApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteLogLogshuttle(service_id, version_id, logging_logshuttle_name) {
-      return this.deleteLogLogshuttleWithHttpInfo(service_id, version_id, logging_logshuttle_name)
+
+    /**
+     * Delete the Log Shuttle logging endpoint for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_logshuttle_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteLogLogshuttle(options = {}) {
+      return this.deleteLogLogshuttleWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getLogLogshuttleWithHttpInfo(service_id, version_id, logging_logshuttle_name) {
+
+    /**
+     * Get the Log Shuttle logging endpoint for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_logshuttle_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogshuttleResponse} and HTTP response
+     */
+    getLogLogshuttleWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getLogLogshuttle");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getLogLogshuttle");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_logshuttle_name' is set
-      if (logging_logshuttle_name === undefined || logging_logshuttle_name === null) {
-        throw new Error("Missing the required parameter 'logging_logshuttle_name' when calling getLogLogshuttle");
+      // Verify the required parameter 'logging_logshuttle_name' is set.
+      if (options['logging_logshuttle_name'] === undefined || options['logging_logshuttle_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_logshuttle_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_logshuttle_name': logging_logshuttle_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_logshuttle_name': options['logging_logshuttle_name']
       };
       let queryParams = {
       };
@@ -151,26 +217,43 @@ export default class LoggingLogshuttleApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getLogLogshuttle(service_id, version_id, logging_logshuttle_name) {
-      return this.getLogLogshuttleWithHttpInfo(service_id, version_id, logging_logshuttle_name)
+
+    /**
+     * Get the Log Shuttle logging endpoint for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_logshuttle_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogshuttleResponse}
+     */
+    getLogLogshuttle(options = {}) {
+      return this.getLogLogshuttleWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listLogLogshuttleWithHttpInfo(service_id, version_id) {
+
+    /**
+     * List all of the Log Shuttle logging endpoints for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingLogshuttleResponse>} and HTTP response
+     */
+    listLogLogshuttleWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listLogLogshuttle");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listLogLogshuttle");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -189,45 +272,68 @@ export default class LoggingLogshuttleApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listLogLogshuttle(service_id, version_id) {
-      return this.listLogLogshuttleWithHttpInfo(service_id, version_id)
+
+    /**
+     * List all of the Log Shuttle logging endpoints for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingLogshuttleResponse>}
+     */
+    listLogLogshuttle(options = {}) {
+      return this.listLogLogshuttleWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateLogLogshuttleWithHttpInfo(service_id, version_id, logging_logshuttle_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Update the Log Shuttle logging endpoint for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_logshuttle_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.token] - The data authentication token associated with this endpoint.
+     * @param {String} [options.url] - The URL to stream logs to.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogshuttleResponse} and HTTP response
+     */
+    updateLogLogshuttleWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateLogLogshuttle");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateLogLogshuttle");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_logshuttle_name' is set
-      if (logging_logshuttle_name === undefined || logging_logshuttle_name === null) {
-        throw new Error("Missing the required parameter 'logging_logshuttle_name' when calling updateLogLogshuttle");
+      // Verify the required parameter 'logging_logshuttle_name' is set.
+      if (options['logging_logshuttle_name'] === undefined || options['logging_logshuttle_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_logshuttle_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_logshuttle_name': logging_logshuttle_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_logshuttle_name': options['logging_logshuttle_name']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'token': opts['token'],
-        'url': opts['url']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'token': options['token'],
+        'url': options['url']
       };
 
       let authNames = ['token'];
@@ -240,8 +346,24 @@ export default class LoggingLogshuttleApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateLogLogshuttle(service_id, version_id, logging_logshuttle_name, opts) {
-      return this.updateLogLogshuttleWithHttpInfo(service_id, version_id, logging_logshuttle_name, opts)
+
+    /**
+     * Update the Log Shuttle logging endpoint for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_logshuttle_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.token] - The data authentication token associated with this endpoint.
+     * @param {String} [options.url] - The URL to stream logs to.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogshuttleResponse}
+     */
+    updateLogLogshuttle(options = {}) {
+      return this.updateLogLogshuttleWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

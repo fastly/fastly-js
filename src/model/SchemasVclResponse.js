@@ -16,19 +16,39 @@ import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Timestamps from './Timestamps';
 import Vcl from './Vcl';
 
-
+/**
+ * The SchemasVclResponse model module.
+ * @module model/SchemasVclResponse
+ * @version 3.0.0-alpha1
+ */
 class SchemasVclResponse {
-    
+    /**
+     * Constructs a new <code>SchemasVclResponse</code>.
+     * @alias module:model/SchemasVclResponse
+     * @implements module:model/Vcl
+     * @implements module:model/ServiceIdAndVersion
+     * @implements module:model/Timestamps
+     */
     constructor() { 
         Vcl.initialize(this);ServiceIdAndVersion.initialize(this);Timestamps.initialize(this);
         SchemasVclResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>SchemasVclResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/SchemasVclResponse} obj Optional instance to populate.
+     * @return {module:model/SchemasVclResponse} The populated <code>SchemasVclResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SchemasVclResponse();
@@ -67,49 +87,97 @@ class SchemasVclResponse {
 
 }
 
-
+/**
+ * The VCL code to be included.
+ * @member {String} content
+ */
 SchemasVclResponse.prototype['content'] = undefined;
 
-
+/**
+ * Set to `true` when this is the main VCL, otherwise `false`.
+ * @member {Boolean} main
+ */
 SchemasVclResponse.prototype['main'] = undefined;
 
-
+/**
+ * The name of this VCL.
+ * @member {String} name
+ */
 SchemasVclResponse.prototype['name'] = undefined;
 
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 SchemasVclResponse.prototype['service_id'] = undefined;
 
-
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
 SchemasVclResponse.prototype['version'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 SchemasVclResponse.prototype['created_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 SchemasVclResponse.prototype['deleted_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 SchemasVclResponse.prototype['updated_at'] = undefined;
 
 
 // Implement Vcl interface:
-
+/**
+ * The VCL code to be included.
+ * @member {String} content
+ */
 Vcl.prototype['content'] = undefined;
-
+/**
+ * Set to `true` when this is the main VCL, otherwise `false`.
+ * @member {Boolean} main
+ */
 Vcl.prototype['main'] = undefined;
-
+/**
+ * The name of this VCL.
+ * @member {String} name
+ */
 Vcl.prototype['name'] = undefined;
 // Implement ServiceIdAndVersion interface:
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 ServiceIdAndVersion.prototype['service_id'] = undefined;
-
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
 ServiceIdAndVersion.prototype['version'] = undefined;
 // Implement Timestamps interface:
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 Timestamps.prototype['created_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 Timestamps.prototype['deleted_at'] = undefined;
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 Timestamps.prototype['updated_at'] = undefined;
 
 

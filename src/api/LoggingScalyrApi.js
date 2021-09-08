@@ -17,43 +17,68 @@ import LoggingFormatVersion from '../model/LoggingFormatVersion';
 import LoggingPlacement from '../model/LoggingPlacement';
 import LoggingScalyrResponse from '../model/LoggingScalyrResponse';
 
-
+/**
+* LoggingScalyr service.
+* @module api/LoggingScalyrApi
+* @version 3.0.0-alpha1
+*/
 export default class LoggingScalyrApi {
 
-    
+    /**
+    * Constructs a new LoggingScalyrApi. 
+    * @alias module:api/LoggingScalyrApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createLogScalyrWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Create a Scalyr for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.project_id='logplex'] - The name of the logfile within Scalyr.
+     * @param {module:model/String} [options.region='US'] - The region that log data will be sent to.
+     * @param {String} [options.token] - The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingScalyrResponse} and HTTP response
+     */
+    createLogScalyrWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createLogScalyr");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createLogScalyr");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'region': opts['region'],
-        'token': opts['token'],
-        'project_id': opts['project_id']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'project_id': options['project_id'],
+        'region': options['region'],
+        'token': options['token']
       };
 
       let authNames = ['token'];
@@ -66,31 +91,56 @@ export default class LoggingScalyrApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createLogScalyr(service_id, version_id, opts) {
-      return this.createLogScalyrWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Create a Scalyr for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.project_id='logplex'] - The name of the logfile within Scalyr.
+     * @param {module:model/String} [options.region='US'] - The region that log data will be sent to.
+     * @param {String} [options.token] - The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingScalyrResponse}
+     */
+    createLogScalyr(options = {}) {
+      return this.createLogScalyrWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteLogScalyrWithHttpInfo(service_id, version_id, logging_scalyr_name) {
+
+    /**
+     * Delete the Scalyr for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_scalyr_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteLogScalyrWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteLogScalyr");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteLogScalyr");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_scalyr_name' is set
-      if (logging_scalyr_name === undefined || logging_scalyr_name === null) {
-        throw new Error("Missing the required parameter 'logging_scalyr_name' when calling deleteLogScalyr");
+      // Verify the required parameter 'logging_scalyr_name' is set.
+      if (options['logging_scalyr_name'] === undefined || options['logging_scalyr_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_scalyr_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_scalyr_name': logging_scalyr_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_scalyr_name': options['logging_scalyr_name']
       };
       let queryParams = {
       };
@@ -109,31 +159,49 @@ export default class LoggingScalyrApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteLogScalyr(service_id, version_id, logging_scalyr_name) {
-      return this.deleteLogScalyrWithHttpInfo(service_id, version_id, logging_scalyr_name)
+
+    /**
+     * Delete the Scalyr for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_scalyr_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteLogScalyr(options = {}) {
+      return this.deleteLogScalyrWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getLogScalyrWithHttpInfo(service_id, version_id, logging_scalyr_name) {
+
+    /**
+     * Get the Scalyr for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_scalyr_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingScalyrResponse} and HTTP response
+     */
+    getLogScalyrWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getLogScalyr");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getLogScalyr");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_scalyr_name' is set
-      if (logging_scalyr_name === undefined || logging_scalyr_name === null) {
-        throw new Error("Missing the required parameter 'logging_scalyr_name' when calling getLogScalyr");
+      // Verify the required parameter 'logging_scalyr_name' is set.
+      if (options['logging_scalyr_name'] === undefined || options['logging_scalyr_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_scalyr_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_scalyr_name': logging_scalyr_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_scalyr_name': options['logging_scalyr_name']
       };
       let queryParams = {
       };
@@ -152,26 +220,43 @@ export default class LoggingScalyrApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getLogScalyr(service_id, version_id, logging_scalyr_name) {
-      return this.getLogScalyrWithHttpInfo(service_id, version_id, logging_scalyr_name)
+
+    /**
+     * Get the Scalyr for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_scalyr_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingScalyrResponse}
+     */
+    getLogScalyr(options = {}) {
+      return this.getLogScalyrWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listLogScalyrWithHttpInfo(service_id, version_id) {
+
+    /**
+     * List all of the Scalyrs for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingScalyrResponse>} and HTTP response
+     */
+    listLogScalyrWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listLogScalyr");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listLogScalyr");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -190,46 +275,70 @@ export default class LoggingScalyrApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listLogScalyr(service_id, version_id) {
-      return this.listLogScalyrWithHttpInfo(service_id, version_id)
+
+    /**
+     * List all of the Scalyrs for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingScalyrResponse>}
+     */
+    listLogScalyr(options = {}) {
+      return this.listLogScalyrWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateLogScalyrWithHttpInfo(service_id, version_id, logging_scalyr_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Update the Scalyr for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_scalyr_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.project_id='logplex'] - The name of the logfile within Scalyr.
+     * @param {module:model/String} [options.region='US'] - The region that log data will be sent to.
+     * @param {String} [options.token] - The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingScalyrResponse} and HTTP response
+     */
+    updateLogScalyrWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateLogScalyr");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateLogScalyr");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_scalyr_name' is set
-      if (logging_scalyr_name === undefined || logging_scalyr_name === null) {
-        throw new Error("Missing the required parameter 'logging_scalyr_name' when calling updateLogScalyr");
+      // Verify the required parameter 'logging_scalyr_name' is set.
+      if (options['logging_scalyr_name'] === undefined || options['logging_scalyr_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_scalyr_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_scalyr_name': logging_scalyr_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_scalyr_name': options['logging_scalyr_name']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'region': opts['region'],
-        'token': opts['token'],
-        'project_id': opts['project_id']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'project_id': options['project_id'],
+        'region': options['region'],
+        'token': options['token']
       };
 
       let authNames = ['token'];
@@ -242,8 +351,25 @@ export default class LoggingScalyrApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateLogScalyr(service_id, version_id, logging_scalyr_name, opts) {
-      return this.updateLogScalyrWithHttpInfo(service_id, version_id, logging_scalyr_name, opts)
+
+    /**
+     * Update the Scalyr for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_scalyr_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.project_id='logplex'] - The name of the logfile within Scalyr.
+     * @param {module:model/String} [options.region='US'] - The region that log data will be sent to.
+     * @param {String} [options.token] - The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingScalyrResponse}
+     */
+    updateLogScalyr(options = {}) {
+      return this.updateLogScalyrWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -19,51 +19,84 @@ import LoggingPlacement from '../model/LoggingPlacement';
 import LoggingSyslogResponse from '../model/LoggingSyslogResponse';
 import LoggingUseTls from '../model/LoggingUseTls';
 
-
+/**
+* LoggingSyslog service.
+* @module api/LoggingSyslogApi
+* @version 3.0.0-alpha1
+*/
 export default class LoggingSyslogApi {
 
-    
+    /**
+    * Constructs a new LoggingSyslogApi. 
+    * @alias module:api/LoggingSyslogApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createLogSyslogWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Create a Syslog for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
+     * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
+     * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
+     * @param {String} [options.tls_hostname='null'] - The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
+     * @param {String} [options.address] - A hostname or IPv4 address.
+     * @param {Number} [options.port=514] - The port number.
+     * @param {String} [options.hostname] - The hostname used for the syslog endpoint.
+     * @param {String} [options.ipv4] - The IPv4 address used for the syslog endpoint.
+     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {String} [options.token='null'] - Whether to prepend each message with a specific token.
+     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingSyslogResponse} and HTTP response
+     */
+    createLogSyslogWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createLogSyslog");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createLogSyslog");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'tls_ca_cert': opts['tls_ca_cert'],
-        'tls_client_cert': opts['tls_client_cert'],
-        'tls_client_key': opts['tls_client_key'],
-        'tls_hostname': opts['tls_hostname'],
-        'address': opts['address'],
-        'port': opts['port'],
-        'message_type': opts['message_type'],
-        'hostname': opts['hostname'],
-        'ipv4': opts['ipv4'],
-        'token': opts['token'],
-        'use_tls': opts['use_tls']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'tls_ca_cert': options['tls_ca_cert'],
+        'tls_client_cert': options['tls_client_cert'],
+        'tls_client_key': options['tls_client_key'],
+        'tls_hostname': options['tls_hostname'],
+        'address': options['address'],
+        'port': options['port'],
+        'hostname': options['hostname'],
+        'ipv4': options['ipv4'],
+        'message_type': options['message_type'],
+        'token': options['token'],
+        'use_tls': options['use_tls']
       };
 
       let authNames = ['token'];
@@ -76,31 +109,64 @@ export default class LoggingSyslogApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createLogSyslog(service_id, version_id, opts) {
-      return this.createLogSyslogWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Create a Syslog for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
+     * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
+     * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
+     * @param {String} [options.tls_hostname='null'] - The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
+     * @param {String} [options.address] - A hostname or IPv4 address.
+     * @param {Number} [options.port=514] - The port number.
+     * @param {String} [options.hostname] - The hostname used for the syslog endpoint.
+     * @param {String} [options.ipv4] - The IPv4 address used for the syslog endpoint.
+     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {String} [options.token='null'] - Whether to prepend each message with a specific token.
+     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingSyslogResponse}
+     */
+    createLogSyslog(options = {}) {
+      return this.createLogSyslogWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteLogSyslogWithHttpInfo(service_id, version_id, logging_syslog_name) {
+
+    /**
+     * Delete the Syslog for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_syslog_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteLogSyslogWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteLogSyslog");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteLogSyslog");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_syslog_name' is set
-      if (logging_syslog_name === undefined || logging_syslog_name === null) {
-        throw new Error("Missing the required parameter 'logging_syslog_name' when calling deleteLogSyslog");
+      // Verify the required parameter 'logging_syslog_name' is set.
+      if (options['logging_syslog_name'] === undefined || options['logging_syslog_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_syslog_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_syslog_name': logging_syslog_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_syslog_name': options['logging_syslog_name']
       };
       let queryParams = {
       };
@@ -119,31 +185,49 @@ export default class LoggingSyslogApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteLogSyslog(service_id, version_id, logging_syslog_name) {
-      return this.deleteLogSyslogWithHttpInfo(service_id, version_id, logging_syslog_name)
+
+    /**
+     * Delete the Syslog for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_syslog_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteLogSyslog(options = {}) {
+      return this.deleteLogSyslogWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getLogSyslogWithHttpInfo(service_id, version_id, logging_syslog_name) {
+
+    /**
+     * Get the Syslog for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_syslog_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingSyslogResponse} and HTTP response
+     */
+    getLogSyslogWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getLogSyslog");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getLogSyslog");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_syslog_name' is set
-      if (logging_syslog_name === undefined || logging_syslog_name === null) {
-        throw new Error("Missing the required parameter 'logging_syslog_name' when calling getLogSyslog");
+      // Verify the required parameter 'logging_syslog_name' is set.
+      if (options['logging_syslog_name'] === undefined || options['logging_syslog_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_syslog_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_syslog_name': logging_syslog_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_syslog_name': options['logging_syslog_name']
       };
       let queryParams = {
       };
@@ -162,26 +246,43 @@ export default class LoggingSyslogApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getLogSyslog(service_id, version_id, logging_syslog_name) {
-      return this.getLogSyslogWithHttpInfo(service_id, version_id, logging_syslog_name)
+
+    /**
+     * Get the Syslog for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_syslog_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingSyslogResponse}
+     */
+    getLogSyslog(options = {}) {
+      return this.getLogSyslogWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listLogSyslogWithHttpInfo(service_id, version_id) {
+
+    /**
+     * List all of the Syslogs for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingSyslogResponse>} and HTTP response
+     */
+    listLogSyslogWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listLogSyslog");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listLogSyslog");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -200,54 +301,86 @@ export default class LoggingSyslogApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listLogSyslog(service_id, version_id) {
-      return this.listLogSyslogWithHttpInfo(service_id, version_id)
+
+    /**
+     * List all of the Syslogs for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingSyslogResponse>}
+     */
+    listLogSyslog(options = {}) {
+      return this.listLogSyslogWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateLogSyslogWithHttpInfo(service_id, version_id, logging_syslog_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Update the Syslog for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_syslog_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
+     * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
+     * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
+     * @param {String} [options.tls_hostname='null'] - The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
+     * @param {String} [options.address] - A hostname or IPv4 address.
+     * @param {Number} [options.port=514] - The port number.
+     * @param {String} [options.hostname] - The hostname used for the syslog endpoint.
+     * @param {String} [options.ipv4] - The IPv4 address used for the syslog endpoint.
+     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {String} [options.token='null'] - Whether to prepend each message with a specific token.
+     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingSyslogResponse} and HTTP response
+     */
+    updateLogSyslogWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateLogSyslog");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateLogSyslog");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_syslog_name' is set
-      if (logging_syslog_name === undefined || logging_syslog_name === null) {
-        throw new Error("Missing the required parameter 'logging_syslog_name' when calling updateLogSyslog");
+      // Verify the required parameter 'logging_syslog_name' is set.
+      if (options['logging_syslog_name'] === undefined || options['logging_syslog_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_syslog_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_syslog_name': logging_syslog_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_syslog_name': options['logging_syslog_name']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'tls_ca_cert': opts['tls_ca_cert'],
-        'tls_client_cert': opts['tls_client_cert'],
-        'tls_client_key': opts['tls_client_key'],
-        'tls_hostname': opts['tls_hostname'],
-        'address': opts['address'],
-        'port': opts['port'],
-        'message_type': opts['message_type'],
-        'hostname': opts['hostname'],
-        'ipv4': opts['ipv4'],
-        'token': opts['token'],
-        'use_tls': opts['use_tls']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'tls_ca_cert': options['tls_ca_cert'],
+        'tls_client_cert': options['tls_client_cert'],
+        'tls_client_key': options['tls_client_key'],
+        'tls_hostname': options['tls_hostname'],
+        'address': options['address'],
+        'port': options['port'],
+        'hostname': options['hostname'],
+        'ipv4': options['ipv4'],
+        'message_type': options['message_type'],
+        'token': options['token'],
+        'use_tls': options['use_tls']
       };
 
       let authNames = ['token'];
@@ -260,8 +393,33 @@ export default class LoggingSyslogApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateLogSyslog(service_id, version_id, logging_syslog_name, opts) {
-      return this.updateLogSyslogWithHttpInfo(service_id, version_id, logging_syslog_name, opts)
+
+    /**
+     * Update the Syslog for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_syslog_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
+     * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
+     * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
+     * @param {String} [options.tls_hostname='null'] - The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
+     * @param {String} [options.address] - A hostname or IPv4 address.
+     * @param {Number} [options.port=514] - The port number.
+     * @param {String} [options.hostname] - The hostname used for the syslog endpoint.
+     * @param {String} [options.ipv4] - The IPv4 address used for the syslog endpoint.
+     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {String} [options.token='null'] - Whether to prepend each message with a specific token.
+     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingSyslogResponse}
+     */
+    updateLogSyslog(options = {}) {
+      return this.updateLogSyslogWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

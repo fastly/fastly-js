@@ -1,7 +1,9 @@
-# FastlyApi.SnippetApi
+# Fastly.SnippetApi
 
 
-
+```javascript
+const apiInstance = new Fastly.SnippetApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -18,44 +20,48 @@ Method | Fastly API endpoint | Description
 
 ## `createSnippet`
 
-> createSnippet(service_id, version_id, opts)
-
-Create a snippet
+```javascript
+createSnippet({ service_id, version_id, [content], , [dynamic], , [name], , [priority], , [type] })
+```
 
 Create a snippet for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.SnippetApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let opts = {
-  'name': "name_example", // String | The name for the snippet.
-  'dynamic': "dynamic_example", // String | Sets the snippet version.
-  'type': "type_example", // String | The location in generated VCL where the snippet should be placed.
-  'content': "content_example", // String | The VCL code that specifies exactly what the snippet does.
-  'priority': "'100'" // String | Numeric string value. Priority determines execution order. Lower numbers execute first.
-};
-apiInstance.createSnippet(service_id, version_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required
+  content: "content_example",
 
+  dynamic: "dynamic_example",
+
+  name: "name_example",
+
+  priority: "'100'",
+
+  type: "type_example",
+};
+
+apiInstance.createSnippet(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
-**name** | **String** | The name for the snippet. | [optional]
-**dynamic** | **String** | Sets the snippet version. | [optional]
-**type** | **String** | The location in generated VCL where the snippet should be placed. | [optional]
 **content** | **String** | The VCL code that specifies exactly what the snippet does. | [optional]
+**dynamic** | **String** | Sets the snippet version. | [optional]
+**name** | **String** | The name for the snippet. | [optional]
 **priority** | **String** | Numeric string value. Priority determines execution order. Lower numbers execute first. | [optional] [default to &#39;100&#39;]
+**type** | **String** | The location in generated VCL where the snippet should be placed. | [optional]
 
 ### Return type
 
@@ -64,28 +70,28 @@ Name | Type | Description  | Notes
 
 ## `deleteSnippet`
 
-> deleteSnippet(service_id, version_id, snippet_name)
-
-Delete a snippet
+```javascript
+deleteSnippet({ service_id, version_id, snippet_name })
+```
 
 Delete a specific snippet for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.SnippetApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let snippet_name = "snippet_name_example"; // String | 
-apiInstance.deleteSnippet(service_id, version_id, snippet_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  snippet_name: "snippet_name_example", // required};
 
+apiInstance.deleteSnippet(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -100,28 +106,28 @@ Name | Type | Description  | Notes
 
 ## `getSnippet`
 
-> getSnippet(service_id, version_id, snippet_name)
-
-Get a versioned snippet
+```javascript
+getSnippet({ service_id, version_id, snippet_name })
+```
 
 Get a single snippet for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.SnippetApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let snippet_name = "snippet_name_example"; // String | 
-apiInstance.getSnippet(service_id, version_id, snippet_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  snippet_name: "snippet_name_example", // required};
 
+apiInstance.getSnippet(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -136,27 +142,28 @@ Name | Type | Description  | Notes
 
 ## `getSnippetDynamic`
 
-> getSnippetDynamic(service_id, snippet_id)
-
-Get a dynamic snippet
+```javascript
+getSnippetDynamic({ service_id, snippet_id })
+```
 
 Get a single dynamic snippet for a particular service.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.SnippetApi();
-let service_id = "service_id_example"; // String | 
-let snippet_id = "snippet_id_example"; // String | 
-apiInstance.getSnippetDynamic(service_id, snippet_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  snippet_id: "snippet_id_example", // required};
 
+apiInstance.getSnippetDynamic(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -170,27 +177,28 @@ Name | Type | Description  | Notes
 
 ## `listSnippets`
 
-> listSnippets(service_id, version_id)
-
-List snippets
+```javascript
+listSnippets({ service_id, version_id })
+```
 
 List all snippets for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.SnippetApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.listSnippets(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.listSnippets(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -204,28 +212,28 @@ Name | Type | Description  | Notes
 
 ## `updateSnippet`
 
-> updateSnippet(service_id, version_id, snippet_name)
-
-Update a versioned snippet
+```javascript
+updateSnippet({ service_id, version_id, snippet_name })
+```
 
 Update a specific snippet for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.SnippetApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let snippet_name = "snippet_name_example"; // String | 
-apiInstance.updateSnippet(service_id, version_id, snippet_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  snippet_name: "snippet_name_example", // required};
 
+apiInstance.updateSnippet(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -240,44 +248,48 @@ Name | Type | Description  | Notes
 
 ## `updateSnippetDynamic`
 
-> updateSnippetDynamic(service_id, snippet_id, opts)
-
-Update a dynamic snippet
+```javascript
+updateSnippetDynamic({ service_id, snippet_id, [content], , [dynamic], , [name], , [priority], , [type] })
+```
 
 Update a dynamic snippet for a particular service.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.SnippetApi();
-let service_id = "service_id_example"; // String | 
-let snippet_id = "snippet_id_example"; // String | 
-let opts = {
-  'name': "name_example", // String | The name for the snippet.
-  'dynamic': "dynamic_example", // String | Sets the snippet version.
-  'type': "type_example", // String | The location in generated VCL where the snippet should be placed.
-  'content': "content_example", // String | The VCL code that specifies exactly what the snippet does.
-  'priority': "'100'" // String | Numeric string value. Priority determines execution order. Lower numbers execute first.
-};
-apiInstance.updateSnippetDynamic(service_id, snippet_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  snippet_id: "snippet_id_example", // required
+  content: "content_example",
 
+  dynamic: "dynamic_example",
+
+  name: "name_example",
+
+  priority: "'100'",
+
+  type: "type_example",
+};
+
+apiInstance.updateSnippetDynamic(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **snippet_id** | **String** |  |
-**name** | **String** | The name for the snippet. | [optional]
-**dynamic** | **String** | Sets the snippet version. | [optional]
-**type** | **String** | The location in generated VCL where the snippet should be placed. | [optional]
 **content** | **String** | The VCL code that specifies exactly what the snippet does. | [optional]
+**dynamic** | **String** | Sets the snippet version. | [optional]
+**name** | **String** | The name for the snippet. | [optional]
 **priority** | **String** | Numeric string value. Priority determines execution order. Lower numbers execute first. | [optional] [default to &#39;100&#39;]
+**type** | **String** | The location in generated VCL where the snippet should be placed. | [optional]
 
 ### Return type
 

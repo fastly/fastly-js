@@ -15,31 +15,48 @@ import ApiClient from '../ApiClient';
 import TypeWafRule from './TypeWafRule';
 import WafRuleAttributes from './WafRuleAttributes';
 
-
+/**
+ * The WafRule model module.
+ * @module model/WafRule
+ * @version 3.0.0-alpha1
+ */
 class WafRule {
-    
+    /**
+     * Constructs a new <code>WafRule</code>.
+     * @alias module:model/WafRule
+     */
     constructor() { 
         
         WafRule.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>WafRule</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/WafRule} obj Optional instance to populate.
+     * @return {module:model/WafRule} The populated <code>WafRule</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafRule();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeWafRule.constructFromObject(data['type']);
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = WafRuleAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = WafRuleAttributes.constructFromObject(data['attributes']);
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeWafRule.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -48,14 +65,21 @@ class WafRule {
 
 }
 
+/**
+ * @member {module:model/WafRuleAttributes} attributes
+ */
+WafRule.prototype['attributes'] = undefined;
 
-WafRule.prototype['type'] = undefined;
-
-
+/**
+ * Alphanumeric string identifying a WAF rule.
+ * @member {String} id
+ */
 WafRule.prototype['id'] = undefined;
 
-
-WafRule.prototype['attributes'] = undefined;
+/**
+ * @member {module:model/TypeWafRule} type
+ */
+WafRule.prototype['type'] = undefined;
 
 
 

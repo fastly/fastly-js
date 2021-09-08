@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The WafTagAttributes model module.
+ * @module model/WafTagAttributes
+ * @version 3.0.0-alpha1
+ */
 class WafTagAttributes {
-    
+    /**
+     * Constructs a new <code>WafTagAttributes</code>.
+     * @alias module:model/WafTagAttributes
+     */
     constructor() { 
         
         WafTagAttributes.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>WafTagAttributes</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/WafTagAttributes} obj Optional instance to populate.
+     * @return {module:model/WafTagAttributes} The populated <code>WafTagAttributes</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafTagAttributes();
@@ -40,7 +57,10 @@ class WafTagAttributes {
 
 }
 
-
+/**
+ * Name of the tag.
+ * @member {String} name
+ */
 WafTagAttributes.prototype['name'] = undefined;
 
 

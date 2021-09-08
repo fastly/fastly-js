@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The VersionCreateResponse model module.
+ * @module model/VersionCreateResponse
+ * @version 3.0.0-alpha1
+ */
 class VersionCreateResponse {
-    
+    /**
+     * Constructs a new <code>VersionCreateResponse</code>.
+     * @alias module:model/VersionCreateResponse
+     */
     constructor() { 
         
         VersionCreateResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>VersionCreateResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/VersionCreateResponse} obj Optional instance to populate.
+     * @return {module:model/VersionCreateResponse} The populated <code>VersionCreateResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new VersionCreateResponse();
@@ -43,10 +60,16 @@ class VersionCreateResponse {
 
 }
 
-
+/**
+ * Integer identifying a service version.
+ * @member {Number} number
+ */
 VersionCreateResponse.prototype['number'] = undefined;
 
-
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
 VersionCreateResponse.prototype['service_id'] = undefined;
 
 

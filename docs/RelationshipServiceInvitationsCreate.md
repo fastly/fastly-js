@@ -1,4 +1,4 @@
-# FastlyApi.RelationshipServiceInvitationsCreate
+# Fastly.RelationshipServiceInvitationsCreate
 
 ## Properties
 

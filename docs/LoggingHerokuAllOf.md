@@ -1,4 +1,4 @@
-# FastlyApi.LoggingHerokuAllOf
+# Fastly.LoggingHerokuAllOf
 
 ## Properties
 

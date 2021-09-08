@@ -1,4 +1,4 @@
-# FastlyApi.WafTagAttributes
+# Fastly.WafTagAttributes
 
 ## Properties
 

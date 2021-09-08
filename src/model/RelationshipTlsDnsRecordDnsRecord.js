@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import RelationshipMemberTlsDnsRecord from './RelationshipMemberTlsDnsRecord';
 
-
+/**
+ * The RelationshipTlsDnsRecordDnsRecord model module.
+ * @module model/RelationshipTlsDnsRecordDnsRecord
+ * @version 3.0.0-alpha1
+ */
 class RelationshipTlsDnsRecordDnsRecord {
-    
+    /**
+     * Constructs a new <code>RelationshipTlsDnsRecordDnsRecord</code>.
+     * @alias module:model/RelationshipTlsDnsRecordDnsRecord
+     */
     constructor() { 
         
         RelationshipTlsDnsRecordDnsRecord.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipTlsDnsRecordDnsRecord</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipTlsDnsRecordDnsRecord} obj Optional instance to populate.
+     * @return {module:model/RelationshipTlsDnsRecordDnsRecord} The populated <code>RelationshipTlsDnsRecordDnsRecord</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipTlsDnsRecordDnsRecord();
@@ -41,7 +58,9 @@ class RelationshipTlsDnsRecordDnsRecord {
 
 }
 
-
+/**
+ * @member {Array.<module:model/RelationshipMemberTlsDnsRecord>} data
+ */
 RelationshipTlsDnsRecordDnsRecord.prototype['data'] = undefined;
 
 

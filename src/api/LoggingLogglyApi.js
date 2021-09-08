@@ -17,41 +17,64 @@ import LoggingFormatVersion from '../model/LoggingFormatVersion';
 import LoggingLogglyResponse from '../model/LoggingLogglyResponse';
 import LoggingPlacement from '../model/LoggingPlacement';
 
-
+/**
+* LoggingLoggly service.
+* @module api/LoggingLogglyApi
+* @version 3.0.0-alpha1
+*/
 export default class LoggingLogglyApi {
 
-    
+    /**
+    * Constructs a new LoggingLogglyApi. 
+    * @alias module:api/LoggingLogglyApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createLogLogglyWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Create a Loggly logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.token] - The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogglyResponse} and HTTP response
+     */
+    createLogLogglyWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createLogLoggly");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createLogLoggly");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'token': opts['token']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'token': options['token']
       };
 
       let authNames = ['token'];
@@ -64,31 +87,54 @@ export default class LoggingLogglyApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createLogLoggly(service_id, version_id, opts) {
-      return this.createLogLogglyWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Create a Loggly logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.token] - The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogglyResponse}
+     */
+    createLogLoggly(options = {}) {
+      return this.createLogLogglyWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteLogLogglyWithHttpInfo(service_id, version_id, logging_loggly_name) {
+
+    /**
+     * Delete the Loggly logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_loggly_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteLogLogglyWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteLogLoggly");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteLogLoggly");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_loggly_name' is set
-      if (logging_loggly_name === undefined || logging_loggly_name === null) {
-        throw new Error("Missing the required parameter 'logging_loggly_name' when calling deleteLogLoggly");
+      // Verify the required parameter 'logging_loggly_name' is set.
+      if (options['logging_loggly_name'] === undefined || options['logging_loggly_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_loggly_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_loggly_name': logging_loggly_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_loggly_name': options['logging_loggly_name']
       };
       let queryParams = {
       };
@@ -107,31 +153,49 @@ export default class LoggingLogglyApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteLogLoggly(service_id, version_id, logging_loggly_name) {
-      return this.deleteLogLogglyWithHttpInfo(service_id, version_id, logging_loggly_name)
+
+    /**
+     * Delete the Loggly logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_loggly_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteLogLoggly(options = {}) {
+      return this.deleteLogLogglyWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getLogLogglyWithHttpInfo(service_id, version_id, logging_loggly_name) {
+
+    /**
+     * Get the Loggly logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_loggly_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogglyResponse} and HTTP response
+     */
+    getLogLogglyWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getLogLoggly");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getLogLoggly");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_loggly_name' is set
-      if (logging_loggly_name === undefined || logging_loggly_name === null) {
-        throw new Error("Missing the required parameter 'logging_loggly_name' when calling getLogLoggly");
+      // Verify the required parameter 'logging_loggly_name' is set.
+      if (options['logging_loggly_name'] === undefined || options['logging_loggly_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_loggly_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_loggly_name': logging_loggly_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_loggly_name': options['logging_loggly_name']
       };
       let queryParams = {
       };
@@ -150,26 +214,43 @@ export default class LoggingLogglyApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getLogLoggly(service_id, version_id, logging_loggly_name) {
-      return this.getLogLogglyWithHttpInfo(service_id, version_id, logging_loggly_name)
+
+    /**
+     * Get the Loggly logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_loggly_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogglyResponse}
+     */
+    getLogLoggly(options = {}) {
+      return this.getLogLogglyWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listLogLogglyWithHttpInfo(service_id, version_id) {
+
+    /**
+     * List all Loggly logging objects for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingLogglyResponse>} and HTTP response
+     */
+    listLogLogglyWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listLogLoggly");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listLogLoggly");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -188,44 +269,66 @@ export default class LoggingLogglyApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listLogLoggly(service_id, version_id) {
-      return this.listLogLogglyWithHttpInfo(service_id, version_id)
+
+    /**
+     * List all Loggly logging objects for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingLogglyResponse>}
+     */
+    listLogLoggly(options = {}) {
+      return this.listLogLogglyWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateLogLogglyWithHttpInfo(service_id, version_id, logging_loggly_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Update the Loggly logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_loggly_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.token] - The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogglyResponse} and HTTP response
+     */
+    updateLogLogglyWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateLogLoggly");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateLogLoggly");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_loggly_name' is set
-      if (logging_loggly_name === undefined || logging_loggly_name === null) {
-        throw new Error("Missing the required parameter 'logging_loggly_name' when calling updateLogLoggly");
+      // Verify the required parameter 'logging_loggly_name' is set.
+      if (options['logging_loggly_name'] === undefined || options['logging_loggly_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_loggly_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_loggly_name': logging_loggly_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_loggly_name': options['logging_loggly_name']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'token': opts['token']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'token': options['token']
       };
 
       let authNames = ['token'];
@@ -238,8 +341,23 @@ export default class LoggingLogglyApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateLogLoggly(service_id, version_id, logging_loggly_name, opts) {
-      return this.updateLogLogglyWithHttpInfo(service_id, version_id, logging_loggly_name, opts)
+
+    /**
+     * Update the Loggly logging object for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_loggly_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.token] - The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogglyResponse}
+     */
+    updateLogLoggly(options = {}) {
+      return this.updateLogLogglyWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

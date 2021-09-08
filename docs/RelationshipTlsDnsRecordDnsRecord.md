@@ -1,4 +1,4 @@
-# FastlyApi.RelationshipTlsDnsRecordDnsRecord
+# Fastly.RelationshipTlsDnsRecordDnsRecord
 
 ## Properties
 

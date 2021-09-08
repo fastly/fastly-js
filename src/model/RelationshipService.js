@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import RelationshipServiceService from './RelationshipServiceService';
 
-
+/**
+ * The RelationshipService model module.
+ * @module model/RelationshipService
+ * @version 3.0.0-alpha1
+ */
 class RelationshipService {
-    
+    /**
+     * Constructs a new <code>RelationshipService</code>.
+     * @alias module:model/RelationshipService
+     */
     constructor() { 
         
         RelationshipService.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipService</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipService} obj Optional instance to populate.
+     * @return {module:model/RelationshipService} The populated <code>RelationshipService</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipService();
@@ -41,7 +58,9 @@ class RelationshipService {
 
 }
 
-
+/**
+ * @member {module:model/RelationshipServiceService} service
+ */
 RelationshipService.prototype['service'] = undefined;
 
 

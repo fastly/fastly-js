@@ -19,51 +19,84 @@ import LoggingFormatVersion from '../model/LoggingFormatVersion';
 import LoggingMessageType from '../model/LoggingMessageType';
 import LoggingPlacement from '../model/LoggingPlacement';
 
-
+/**
+* LoggingCloudfiles service.
+* @module api/LoggingCloudfilesApi
+* @version 3.0.0-alpha1
+*/
 export default class LoggingCloudfilesApi {
 
-    
+    /**
+    * Constructs a new LoggingCloudfilesApi. 
+    * @alias module:api/LoggingCloudfilesApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createLogCloudfilesWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Create a Cloud Files log endpoint for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
+     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
+     * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
+     * @param {String} [options.access_key] - Your Cloud Files account access key.
+     * @param {String} [options.bucket_name] - The name of your Cloud Files container.
+     * @param {String} [options.path='null'] - The path to upload logs to.
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {module:model/String} [options.region] - The region to stream logs to.
+     * @param {String} [options.user] - The username for your Cloud Files account.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingCloudfilesResponse} and HTTP response
+     */
+    createLogCloudfilesWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createLogCloudfiles");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createLogCloudfiles");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'message_type': opts['message_type'],
-        'timestamp_format': opts['timestamp_format'],
-        'period': opts['period'],
-        'gzip_level': opts['gzip_level'],
-        'compression_codec': opts['compression_codec'],
-        'access_key': opts['access_key'],
-        'bucket_name': opts['bucket_name'],
-        'path': opts['path'],
-        'region': opts['region'],
-        'public_key': opts['public_key'],
-        'user': opts['user']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'compression_codec': options['compression_codec'],
+        'gzip_level': options['gzip_level'],
+        'message_type': options['message_type'],
+        'period': options['period'],
+        'timestamp_format': options['timestamp_format'],
+        'access_key': options['access_key'],
+        'bucket_name': options['bucket_name'],
+        'path': options['path'],
+        'public_key': options['public_key'],
+        'region': options['region'],
+        'user': options['user']
       };
 
       let authNames = ['token'];
@@ -76,31 +109,64 @@ export default class LoggingCloudfilesApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createLogCloudfiles(service_id, version_id, opts) {
-      return this.createLogCloudfilesWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Create a Cloud Files log endpoint for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
+     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
+     * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
+     * @param {String} [options.access_key] - Your Cloud Files account access key.
+     * @param {String} [options.bucket_name] - The name of your Cloud Files container.
+     * @param {String} [options.path='null'] - The path to upload logs to.
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {module:model/String} [options.region] - The region to stream logs to.
+     * @param {String} [options.user] - The username for your Cloud Files account.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingCloudfilesResponse}
+     */
+    createLogCloudfiles(options = {}) {
+      return this.createLogCloudfilesWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteLogCloudfilesWithHttpInfo(service_id, version_id, logging_cloudfiles_name) {
+
+    /**
+     * Delete the Cloud Files log endpoint for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_cloudfiles_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteLogCloudfilesWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteLogCloudfiles");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteLogCloudfiles");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_cloudfiles_name' is set
-      if (logging_cloudfiles_name === undefined || logging_cloudfiles_name === null) {
-        throw new Error("Missing the required parameter 'logging_cloudfiles_name' when calling deleteLogCloudfiles");
+      // Verify the required parameter 'logging_cloudfiles_name' is set.
+      if (options['logging_cloudfiles_name'] === undefined || options['logging_cloudfiles_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_cloudfiles_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_cloudfiles_name': logging_cloudfiles_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_cloudfiles_name': options['logging_cloudfiles_name']
       };
       let queryParams = {
       };
@@ -119,31 +185,49 @@ export default class LoggingCloudfilesApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteLogCloudfiles(service_id, version_id, logging_cloudfiles_name) {
-      return this.deleteLogCloudfilesWithHttpInfo(service_id, version_id, logging_cloudfiles_name)
+
+    /**
+     * Delete the Cloud Files log endpoint for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_cloudfiles_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteLogCloudfiles(options = {}) {
+      return this.deleteLogCloudfilesWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getLogCloudfilesWithHttpInfo(service_id, version_id, logging_cloudfiles_name) {
+
+    /**
+     * Get the Cloud Files log endpoint for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_cloudfiles_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingCloudfilesResponse} and HTTP response
+     */
+    getLogCloudfilesWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getLogCloudfiles");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getLogCloudfiles");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_cloudfiles_name' is set
-      if (logging_cloudfiles_name === undefined || logging_cloudfiles_name === null) {
-        throw new Error("Missing the required parameter 'logging_cloudfiles_name' when calling getLogCloudfiles");
+      // Verify the required parameter 'logging_cloudfiles_name' is set.
+      if (options['logging_cloudfiles_name'] === undefined || options['logging_cloudfiles_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_cloudfiles_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_cloudfiles_name': logging_cloudfiles_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_cloudfiles_name': options['logging_cloudfiles_name']
       };
       let queryParams = {
       };
@@ -162,26 +246,43 @@ export default class LoggingCloudfilesApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getLogCloudfiles(service_id, version_id, logging_cloudfiles_name) {
-      return this.getLogCloudfilesWithHttpInfo(service_id, version_id, logging_cloudfiles_name)
+
+    /**
+     * Get the Cloud Files log endpoint for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_cloudfiles_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingCloudfilesResponse}
+     */
+    getLogCloudfiles(options = {}) {
+      return this.getLogCloudfilesWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listLogCloudfilesWithHttpInfo(service_id, version_id) {
+
+    /**
+     * List all of the Cloud Files log endpoints for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingCloudfilesResponse>} and HTTP response
+     */
+    listLogCloudfilesWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listLogCloudfiles");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listLogCloudfiles");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -200,54 +301,86 @@ export default class LoggingCloudfilesApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listLogCloudfiles(service_id, version_id) {
-      return this.listLogCloudfilesWithHttpInfo(service_id, version_id)
+
+    /**
+     * List all of the Cloud Files log endpoints for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingCloudfilesResponse>}
+     */
+    listLogCloudfiles(options = {}) {
+      return this.listLogCloudfilesWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateLogCloudfilesWithHttpInfo(service_id, version_id, logging_cloudfiles_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Update the Cloud Files log endpoint for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_cloudfiles_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
+     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
+     * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
+     * @param {String} [options.access_key] - Your Cloud Files account access key.
+     * @param {String} [options.bucket_name] - The name of your Cloud Files container.
+     * @param {String} [options.path='null'] - The path to upload logs to.
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {module:model/String} [options.region] - The region to stream logs to.
+     * @param {String} [options.user] - The username for your Cloud Files account.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingCloudfilesResponse} and HTTP response
+     */
+    updateLogCloudfilesWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateLogCloudfiles");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateLogCloudfiles");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'logging_cloudfiles_name' is set
-      if (logging_cloudfiles_name === undefined || logging_cloudfiles_name === null) {
-        throw new Error("Missing the required parameter 'logging_cloudfiles_name' when calling updateLogCloudfiles");
+      // Verify the required parameter 'logging_cloudfiles_name' is set.
+      if (options['logging_cloudfiles_name'] === undefined || options['logging_cloudfiles_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_cloudfiles_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'logging_cloudfiles_name': logging_cloudfiles_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_cloudfiles_name': options['logging_cloudfiles_name']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'name': opts['name'],
-        'placement': opts['placement'],
-        'format_version': opts['format_version'],
-        'response_condition': opts['response_condition'],
-        'format': opts['format'],
-        'message_type': opts['message_type'],
-        'timestamp_format': opts['timestamp_format'],
-        'period': opts['period'],
-        'gzip_level': opts['gzip_level'],
-        'compression_codec': opts['compression_codec'],
-        'access_key': opts['access_key'],
-        'bucket_name': opts['bucket_name'],
-        'path': opts['path'],
-        'region': opts['region'],
-        'public_key': opts['public_key'],
-        'user': opts['user']
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'compression_codec': options['compression_codec'],
+        'gzip_level': options['gzip_level'],
+        'message_type': options['message_type'],
+        'period': options['period'],
+        'timestamp_format': options['timestamp_format'],
+        'access_key': options['access_key'],
+        'bucket_name': options['bucket_name'],
+        'path': options['path'],
+        'public_key': options['public_key'],
+        'region': options['region'],
+        'user': options['user']
       };
 
       let authNames = ['token'];
@@ -260,8 +393,33 @@ export default class LoggingCloudfilesApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateLogCloudfiles(service_id, version_id, logging_cloudfiles_name, opts) {
-      return this.updateLogCloudfilesWithHttpInfo(service_id, version_id, logging_cloudfiles_name, opts)
+
+    /**
+     * Update the Cloud Files log endpoint for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.logging_cloudfiles_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
+     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
+     * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
+     * @param {String} [options.access_key] - Your Cloud Files account access key.
+     * @param {String} [options.bucket_name] - The name of your Cloud Files container.
+     * @param {String} [options.path='null'] - The path to upload logs to.
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {module:model/String} [options.region] - The region to stream logs to.
+     * @param {String} [options.user] - The username for your Cloud Files account.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingCloudfilesResponse}
+     */
+    updateLogCloudfiles(options = {}) {
+      return this.updateLogCloudfilesWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

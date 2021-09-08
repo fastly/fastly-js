@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The Timestamps model module.
+ * @module model/Timestamps
+ * @version 3.0.0-alpha1
+ */
 class Timestamps {
-    
+    /**
+     * Constructs a new <code>Timestamps</code>.
+     * @alias module:model/Timestamps
+     */
     constructor() { 
         
         Timestamps.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>Timestamps</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/Timestamps} obj Optional instance to populate.
+     * @return {module:model/Timestamps} The populated <code>Timestamps</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new Timestamps();
@@ -46,13 +63,22 @@ class Timestamps {
 
 }
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
 Timestamps.prototype['created_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
 Timestamps.prototype['deleted_at'] = undefined;
 
-
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
 Timestamps.prototype['updated_at'] = undefined;
 
 

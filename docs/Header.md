@@ -1,4 +1,4 @@
-# FastlyApi.Header
+# Fastly.Header
 
 ## Properties
 

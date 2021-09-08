@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The Vcl model module.
+ * @module model/Vcl
+ * @version 3.0.0-alpha1
+ */
 class Vcl {
-    
+    /**
+     * Constructs a new <code>Vcl</code>.
+     * @alias module:model/Vcl
+     */
     constructor() { 
         
         Vcl.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>Vcl</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/Vcl} obj Optional instance to populate.
+     * @return {module:model/Vcl} The populated <code>Vcl</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new Vcl();
@@ -46,13 +63,22 @@ class Vcl {
 
 }
 
-
+/**
+ * The VCL code to be included.
+ * @member {String} content
+ */
 Vcl.prototype['content'] = undefined;
 
-
+/**
+ * Set to `true` when this is the main VCL, otherwise `false`.
+ * @member {Boolean} main
+ */
 Vcl.prototype['main'] = undefined;
 
-
+/**
+ * The name of this VCL.
+ * @member {String} name
+ */
 Vcl.prototype['name'] = undefined;
 
 

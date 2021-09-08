@@ -20,19 +20,40 @@ import LoggingSplunkAllOf from './LoggingSplunkAllOf';
 import LoggingTlsCommon from './LoggingTlsCommon';
 import LoggingUseTls from './LoggingUseTls';
 
-
+/**
+ * The LoggingSplunk model module.
+ * @module model/LoggingSplunk
+ * @version 3.0.0-alpha1
+ */
 class LoggingSplunk {
-    
+    /**
+     * Constructs a new <code>LoggingSplunk</code>.
+     * @alias module:model/LoggingSplunk
+     * @implements module:model/LoggingCommon
+     * @implements module:model/LoggingTlsCommon
+     * @implements module:model/LoggingRequestCapsCommon
+     * @implements module:model/LoggingSplunkAllOf
+     */
     constructor() { 
         LoggingCommon.initialize(this);LoggingTlsCommon.initialize(this);LoggingRequestCapsCommon.initialize(this);LoggingSplunkAllOf.initialize(this);
         LoggingSplunk.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingSplunk</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingSplunk} obj Optional instance to populate.
+     * @return {module:model/LoggingSplunk} The populated <code>LoggingSplunk</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingSplunk();
@@ -41,20 +62,20 @@ class LoggingSplunk {
             LoggingRequestCapsCommon.constructFromObject(data, obj);
             LoggingSplunkAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
             }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
-            }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
-            }
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
             if (data.hasOwnProperty('tls_ca_cert')) {
                 obj['tls_ca_cert'] = ApiClient.convertToType(data['tls_ca_cert'], 'String');
@@ -68,17 +89,17 @@ class LoggingSplunk {
             if (data.hasOwnProperty('tls_hostname')) {
                 obj['tls_hostname'] = ApiClient.convertToType(data['tls_hostname'], 'String');
             }
-            if (data.hasOwnProperty('request_max_entries')) {
-                obj['request_max_entries'] = ApiClient.convertToType(data['request_max_entries'], 'Number');
-            }
             if (data.hasOwnProperty('request_max_bytes')) {
                 obj['request_max_bytes'] = ApiClient.convertToType(data['request_max_bytes'], 'Number');
             }
-            if (data.hasOwnProperty('url')) {
-                obj['url'] = ApiClient.convertToType(data['url'], 'String');
+            if (data.hasOwnProperty('request_max_entries')) {
+                obj['request_max_entries'] = ApiClient.convertToType(data['request_max_entries'], 'Number');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
+            }
+            if (data.hasOwnProperty('url')) {
+                obj['url'] = ApiClient.convertToType(data['url'], 'String');
             }
             if (data.hasOwnProperty('use_tls')) {
                 obj['use_tls'] = LoggingUseTls.constructFromObject(data['use_tls']);
@@ -90,80 +111,172 @@ class LoggingSplunk {
 
 }
 
-
-LoggingSplunk.prototype['name'] = undefined;
-
-
-LoggingSplunk.prototype['placement'] = undefined;
-
-
-LoggingSplunk.prototype['format_version'] = undefined;
-
-
-LoggingSplunk.prototype['response_condition'] = undefined;
-
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
 LoggingSplunk.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingSplunk.prototype['format_version'] = undefined;
 
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingSplunk.prototype['name'] = undefined;
+
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingSplunk.prototype['placement'] = undefined;
+
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingSplunk.prototype['response_condition'] = undefined;
+
+/**
+ * A secure certificate to authenticate a server with. Must be in PEM format.
+ * @member {String} tls_ca_cert
+ * @default 'null'
+ */
 LoggingSplunk.prototype['tls_ca_cert'] = 'null';
 
-
+/**
+ * The client certificate used to make authenticated requests. Must be in PEM format.
+ * @member {String} tls_client_cert
+ * @default 'null'
+ */
 LoggingSplunk.prototype['tls_client_cert'] = 'null';
 
-
+/**
+ * The client private key used to make authenticated requests. Must be in PEM format.
+ * @member {String} tls_client_key
+ * @default 'null'
+ */
 LoggingSplunk.prototype['tls_client_key'] = 'null';
 
-
+/**
+ * The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
+ * @member {String} tls_hostname
+ * @default 'null'
+ */
 LoggingSplunk.prototype['tls_hostname'] = 'null';
 
-
-LoggingSplunk.prototype['request_max_entries'] = 0;
-
-
+/**
+ * The maximum number of bytes sent in one request. Defaults `0` for unbounded.
+ * @member {Number} request_max_bytes
+ * @default 0
+ */
 LoggingSplunk.prototype['request_max_bytes'] = 0;
 
+/**
+ * The maximum number of logs sent in one request. Defaults `0` for unbounded.
+ * @member {Number} request_max_entries
+ * @default 0
+ */
+LoggingSplunk.prototype['request_max_entries'] = 0;
 
-LoggingSplunk.prototype['url'] = undefined;
-
-
+/**
+ * A Splunk token for use in posting logs over HTTP to your collector.
+ * @member {String} token
+ */
 LoggingSplunk.prototype['token'] = undefined;
 
+/**
+ * The URL to post logs to.
+ * @member {String} url
+ */
+LoggingSplunk.prototype['url'] = undefined;
 
+/**
+ * @member {module:model/LoggingUseTls} use_tls
+ */
 LoggingSplunk.prototype['use_tls'] = undefined;
 
 
 // Implement LoggingCommon interface:
-
-LoggingCommon.prototype['name'] = undefined;
-
-LoggingCommon.prototype['placement'] = undefined;
-
-LoggingCommon.prototype['format_version'] = undefined;
-
-LoggingCommon.prototype['response_condition'] = undefined;
-
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
 LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingCommon.prototype['format_version'] = undefined;
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingCommon.prototype['name'] = undefined;
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingCommon.prototype['placement'] = undefined;
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingCommon.prototype['response_condition'] = undefined;
 // Implement LoggingTlsCommon interface:
-
+/**
+ * A secure certificate to authenticate a server with. Must be in PEM format.
+ * @member {String} tls_ca_cert
+ * @default 'null'
+ */
 LoggingTlsCommon.prototype['tls_ca_cert'] = 'null';
-
+/**
+ * The client certificate used to make authenticated requests. Must be in PEM format.
+ * @member {String} tls_client_cert
+ * @default 'null'
+ */
 LoggingTlsCommon.prototype['tls_client_cert'] = 'null';
-
+/**
+ * The client private key used to make authenticated requests. Must be in PEM format.
+ * @member {String} tls_client_key
+ * @default 'null'
+ */
 LoggingTlsCommon.prototype['tls_client_key'] = 'null';
-
+/**
+ * The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
+ * @member {String} tls_hostname
+ * @default 'null'
+ */
 LoggingTlsCommon.prototype['tls_hostname'] = 'null';
 // Implement LoggingRequestCapsCommon interface:
-
-LoggingRequestCapsCommon.prototype['request_max_entries'] = 0;
-
+/**
+ * The maximum number of bytes sent in one request. Defaults `0` for unbounded.
+ * @member {Number} request_max_bytes
+ * @default 0
+ */
 LoggingRequestCapsCommon.prototype['request_max_bytes'] = 0;
+/**
+ * The maximum number of logs sent in one request. Defaults `0` for unbounded.
+ * @member {Number} request_max_entries
+ * @default 0
+ */
+LoggingRequestCapsCommon.prototype['request_max_entries'] = 0;
 // Implement LoggingSplunkAllOf interface:
-
-LoggingSplunkAllOf.prototype['url'] = undefined;
-
+/**
+ * A Splunk token for use in posting logs over HTTP to your collector.
+ * @member {String} token
+ */
 LoggingSplunkAllOf.prototype['token'] = undefined;
-
+/**
+ * The URL to post logs to.
+ * @member {String} url
+ */
+LoggingSplunkAllOf.prototype['url'] = undefined;
+/**
+ * @member {module:model/LoggingUseTls} use_tls
+ */
 LoggingSplunkAllOf.prototype['use_tls'] = undefined;
 
 

@@ -1,7 +1,9 @@
-# FastlyApi.LoggingLogentriesApi
+# Fastly.LoggingLogentriesApi
 
 
-
+```javascript
+const apiInstance = new Fastly.LoggingLogentriesApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -16,52 +18,60 @@ Method | Fastly API endpoint | Description
 
 ## `createLogLogentries`
 
-> createLogLogentries(service_id, version_id, opts)
-
-Create a Logentries log endpoint
+```javascript
+createLogLogentries({ service_id, version_id, [format], , [format_version], , [name], , [placement], , [response_condition], , [port], , [region], , [token], , [use_tls] })
+```
 
 Create a Logentry for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingLogentriesApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let opts = {
-  'name': "name_example", // String | The name for the real-time logging configuration.
-  'placement': new FastlyApi.LoggingPlacement(), // LoggingPlacement | 
-  'format_version': new FastlyApi.LoggingFormatVersion(), // LoggingFormatVersion | 
-  'response_condition': "response_condition_example", // String | The name of an existing condition in the configured endpoint, or leave blank to always execute.
-  'format': "'%h %l %u %t \"%r\" %&gt;s %b'", // String | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-  'port': 20000, // Number | The port number.
-  'token': "token_example", // String | Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
-  'use_tls': new FastlyApi.LoggingUseTls(), // LoggingUseTls | 
-  'region': "region_example" // String | The region to which to stream logs.
-};
-apiInstance.createLogLogentries(service_id, version_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
+  format_version: new Fastly.LoggingFormatVersion(),
+
+  name: "name_example",
+
+  placement: new Fastly.LoggingPlacement(),
+
+  response_condition: "response_condition_example",
+
+  port: 20000,
+
+  region: "region_example",
+
+  token: "token_example",
+
+  use_tls: new Fastly.LoggingUseTls(),
+};
+
+apiInstance.createLogLogentries(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
+**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
 **port** | **Number** | The port number. | [optional] [default to 20000]
+**region** | **String** | The region to which to stream logs. | [optional]
 **token** | **String** | Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)). | [optional]
 **use_tls** | [**LoggingUseTls**](../Model/LoggingUseTls.md) |  | [optional]
-**region** | **String** | The region to which to stream logs. | [optional]
 
 ### Return type
 
@@ -70,28 +80,28 @@ Name | Type | Description  | Notes
 
 ## `deleteLogLogentries`
 
-> deleteLogLogentries(service_id, version_id, logging_logentries_name)
-
-Delete a Logentries log endpoint
+```javascript
+deleteLogLogentries({ service_id, version_id, logging_logentries_name })
+```
 
 Delete the Logentry for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingLogentriesApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let logging_logentries_name = "logging_logentries_name_example"; // String | 
-apiInstance.deleteLogLogentries(service_id, version_id, logging_logentries_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_logentries_name: "logging_logentries_name_example", // required};
 
+apiInstance.deleteLogLogentries(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -106,28 +116,28 @@ Name | Type | Description  | Notes
 
 ## `getLogLogentries`
 
-> getLogLogentries(service_id, version_id, logging_logentries_name)
-
-Get a Logentries log endpoint
+```javascript
+getLogLogentries({ service_id, version_id, logging_logentries_name })
+```
 
 Get the Logentry for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingLogentriesApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let logging_logentries_name = "logging_logentries_name_example"; // String | 
-apiInstance.getLogLogentries(service_id, version_id, logging_logentries_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_logentries_name: "logging_logentries_name_example", // required};
 
+apiInstance.getLogLogentries(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -142,27 +152,28 @@ Name | Type | Description  | Notes
 
 ## `listLogLogentries`
 
-> listLogLogentries(service_id, version_id)
-
-List Logentries log endpoints
+```javascript
+listLogLogentries({ service_id, version_id })
+```
 
 List all of the Logentries for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingLogentriesApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.listLogLogentries(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.listLogLogentries(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -176,54 +187,61 @@ Name | Type | Description  | Notes
 
 ## `updateLogLogentries`
 
-> updateLogLogentries(service_id, version_id, logging_logentries_name, opts)
-
-Update a Logentries log endpoint
+```javascript
+updateLogLogentries({ service_id, version_id, logging_logentries_name, [format], , [format_version], , [name], , [placement], , [response_condition], , [port], , [region], , [token], , [use_tls] })
+```
 
 Update the Logentry for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.LoggingLogentriesApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let logging_logentries_name = "logging_logentries_name_example"; // String | 
-let opts = {
-  'name': "name_example", // String | The name for the real-time logging configuration.
-  'placement': new FastlyApi.LoggingPlacement(), // LoggingPlacement | 
-  'format_version': new FastlyApi.LoggingFormatVersion(), // LoggingFormatVersion | 
-  'response_condition': "response_condition_example", // String | The name of an existing condition in the configured endpoint, or leave blank to always execute.
-  'format': "'%h %l %u %t \"%r\" %&gt;s %b'", // String | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-  'port': 20000, // Number | The port number.
-  'token': "token_example", // String | Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
-  'use_tls': new FastlyApi.LoggingUseTls(), // LoggingUseTls | 
-  'region': "region_example" // String | The region to which to stream logs.
-};
-apiInstance.updateLogLogentries(service_id, version_id, logging_logentries_name, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_logentries_name: "logging_logentries_name_example", // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
+  format_version: new Fastly.LoggingFormatVersion(),
+
+  name: "name_example",
+
+  placement: new Fastly.LoggingPlacement(),
+
+  response_condition: "response_condition_example",
+
+  port: 20000,
+
+  region: "region_example",
+
+  token: "token_example",
+
+  use_tls: new Fastly.LoggingUseTls(),
+};
+
+apiInstance.updateLogLogentries(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
 **logging_logentries_name** | **String** |  |
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
+**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
 **port** | **Number** | The port number. | [optional] [default to 20000]
+**region** | **String** | The region to which to stream logs. | [optional]
 **token** | **String** | Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)). | [optional]
 **use_tls** | [**LoggingUseTls**](../Model/LoggingUseTls.md) |  | [optional]
-**region** | **String** | The region to which to stream logs. | [optional]
 
 ### Return type
 

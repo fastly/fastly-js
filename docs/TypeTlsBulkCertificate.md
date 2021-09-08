@@ -1,4 +1,4 @@
-# FastlyApi.TypeTlsBulkCertificate
+# Fastly.TypeTlsBulkCertificate
 
 ## Enum
 

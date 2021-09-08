@@ -17,17 +17,33 @@ import TlsPrivateKey from '../model/TlsPrivateKey';
 import TlsPrivateKeyResponse from '../model/TlsPrivateKeyResponse';
 import TlsPrivateKeysResponse from '../model/TlsPrivateKeysResponse';
 
-
+/**
+* TlsPrivateKeys service.
+* @module api/TlsPrivateKeysApi
+* @version 3.0.0-alpha1
+*/
 export default class TlsPrivateKeysApi {
 
-    
+    /**
+    * Constructs a new TlsPrivateKeysApi. 
+    * @alias module:api/TlsPrivateKeysApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createTlsKeyWithHttpInfo(opts) {
-      opts = opts || {};
-      let postBody = opts['tls_private_key'];
+
+    /**
+     * Create a TLS private key.
+     * @param {Object} options
+     * @param {module:model/TlsPrivateKey} [options.tls_private_key]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsPrivateKeyResponse} and HTTP response
+     */
+    createTlsKeyWithHttpInfo(options = {}) {
+      let postBody = options['tls_private_key'];
 
       let pathParams = {
       };
@@ -48,21 +64,35 @@ export default class TlsPrivateKeysApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createTlsKey(opts) {
-      return this.createTlsKeyWithHttpInfo(opts)
+
+    /**
+     * Create a TLS private key.
+     * @param {Object} options
+     * @param {module:model/TlsPrivateKey} [options.tls_private_key]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsPrivateKeyResponse}
+     */
+    createTlsKey(options = {}) {
+      return this.createTlsKeyWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteTlsKeyWithHttpInfo(tls_private_key_id) {
+
+    /**
+     * Destroy a TLS private key. Only private keys not already matched to any certificates can be deleted.
+     * @param {Object} options
+     * @param {String} options.tls_private_key_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteTlsKeyWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'tls_private_key_id' is set
-      if (tls_private_key_id === undefined || tls_private_key_id === null) {
-        throw new Error("Missing the required parameter 'tls_private_key_id' when calling deleteTlsKey");
+      // Verify the required parameter 'tls_private_key_id' is set.
+      if (options['tls_private_key_id'] === undefined || options['tls_private_key_id'] === null) {
+        throw new Error("Missing the required parameter 'tls_private_key_id'.");
       }
 
       let pathParams = {
-        'tls_private_key_id': tls_private_key_id
+        'tls_private_key_id': options['tls_private_key_id']
       };
       let queryParams = {
       };
@@ -81,21 +111,35 @@ export default class TlsPrivateKeysApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteTlsKey(tls_private_key_id) {
-      return this.deleteTlsKeyWithHttpInfo(tls_private_key_id)
+
+    /**
+     * Destroy a TLS private key. Only private keys not already matched to any certificates can be deleted.
+     * @param {Object} options
+     * @param {String} options.tls_private_key_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteTlsKey(options = {}) {
+      return this.deleteTlsKeyWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getTlsKeyWithHttpInfo(tls_private_key_id) {
+
+    /**
+     * Show a TLS private key.
+     * @param {Object} options
+     * @param {String} options.tls_private_key_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsPrivateKeyResponse} and HTTP response
+     */
+    getTlsKeyWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'tls_private_key_id' is set
-      if (tls_private_key_id === undefined || tls_private_key_id === null) {
-        throw new Error("Missing the required parameter 'tls_private_key_id' when calling getTlsKey");
+      // Verify the required parameter 'tls_private_key_id' is set.
+      if (options['tls_private_key_id'] === undefined || options['tls_private_key_id'] === null) {
+        throw new Error("Missing the required parameter 'tls_private_key_id'.");
       }
 
       let pathParams = {
-        'tls_private_key_id': tls_private_key_id
+        'tls_private_key_id': options['tls_private_key_id']
       };
       let queryParams = {
       };
@@ -114,22 +158,37 @@ export default class TlsPrivateKeysApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getTlsKey(tls_private_key_id) {
-      return this.getTlsKeyWithHttpInfo(tls_private_key_id)
+
+    /**
+     * Show a TLS private key.
+     * @param {Object} options
+     * @param {String} options.tls_private_key_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsPrivateKeyResponse}
+     */
+    getTlsKey(options = {}) {
+      return this.getTlsKeyWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listTlsKeysWithHttpInfo(opts) {
-      opts = opts || {};
+
+    /**
+     * List all TLS private keys.
+     * @param {Object} options
+     * @param {String} [options.filter_in_use] - Limit the returned keys to those without any matching TLS certificates. The only valid value is false.
+     * @param {Number} [options.page_number] - Current page.
+     * @param {Number} [options.page_size=20] - Number of records per page.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsPrivateKeysResponse} and HTTP response
+     */
+    listTlsKeysWithHttpInfo(options = {}) {
       let postBody = null;
 
       let pathParams = {
       };
       let queryParams = {
-        'filter[in_use]': opts['filter_in_use'],
-        'page[number]': opts['page_number'],
-        'page[size]': opts['page_size']
+        'filter[in_use]': options['filter_in_use'],
+        'page[number]': options['page_number'],
+        'page[size]': options['page_size']
       };
       let headerParams = {
       };
@@ -146,8 +205,17 @@ export default class TlsPrivateKeysApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listTlsKeys(opts) {
-      return this.listTlsKeysWithHttpInfo(opts)
+
+    /**
+     * List all TLS private keys.
+     * @param {Object} options
+     * @param {String} [options.filter_in_use] - Limit the returned keys to those without any matching TLS certificates. The only valid value is false.
+     * @param {Number} [options.page_number] - Current page.
+     * @param {Number} [options.page_size=20] - Number of records per page.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsPrivateKeysResponse}
+     */
+    listTlsKeys(options = {}) {
+      return this.listTlsKeysWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

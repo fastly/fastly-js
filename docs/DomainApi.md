@@ -1,7 +1,9 @@
-# FastlyApi.DomainApi
+# Fastly.DomainApi
 
 
-
+```javascript
+const apiInstance = new Fastly.DomainApi();
+```
 ## Methods
 
 Method | Fastly API endpoint | Description
@@ -18,28 +20,28 @@ Method | Fastly API endpoint | Description
 
 ## `checkDomain`
 
-> checkDomain(service_id, version_id, domain_name)
-
-Validate DNS configuration for a single domain on a service
+```javascript
+checkDomain({ service_id, version_id, domain_name })
+```
 
 Checks the status of a specific domain's DNS record for a Service Version. Returns an array in the same format as domain/check_all.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.DomainApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let domain_name = "domain_name_example"; // String | 
-apiInstance.checkDomain(service_id, version_id, domain_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  domain_name: "domain_name_example", // required};
 
+apiInstance.checkDomain(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -54,27 +56,28 @@ Name | Type | Description  | Notes
 
 ## `checkDomains`
 
-> checkDomains(service_id, version_id)
-
-Validate DNS configuration for all domains on a service
+```javascript
+checkDomains({ service_id, version_id })
+```
 
 Checks the status of all domains' DNS records for a Service Version. Returns an array of 3 items for each domain; the first is the details for the domain, the second is the current CNAME of the domain, and the third is a boolean indicating whether or not it has been properly setup to use Fastly.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.DomainApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.checkDomains(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.checkDomains(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -88,31 +91,32 @@ Name | Type | Description  | Notes
 
 ## `createDomain`
 
-> createDomain(service_id, version_id, opts)
-
-Add a domain name to a service
+```javascript
+createDomain({ service_id, version_id, [comment], , [name] })
+```
 
 Create a domain for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.DomainApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let opts = {
-  'comment': "comment_example", // String | A freeform descriptive note.
-  'name': "name_example" // String | The name of the domain or domains associated with this service.
-};
-apiInstance.createDomain(service_id, version_id, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required
+  comment: "comment_example",
 
+  name: "name_example",
+};
+
+apiInstance.createDomain(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -128,28 +132,28 @@ Name | Type | Description  | Notes
 
 ## `deleteDomain`
 
-> deleteDomain(service_id, version_id, domain_name)
-
-Remove a domain from a service
+```javascript
+deleteDomain({ service_id, version_id, domain_name })
+```
 
 Delete the domain for a particular service and versions.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.DomainApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let domain_name = "domain_name_example"; // String | 
-apiInstance.deleteDomain(service_id, version_id, domain_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  domain_name: "domain_name_example", // required};
 
+apiInstance.deleteDomain(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -164,28 +168,28 @@ Name | Type | Description  | Notes
 
 ## `getDomain`
 
-> getDomain(service_id, version_id, domain_name)
-
-Describe a domain
+```javascript
+getDomain({ service_id, version_id, domain_name })
+```
 
 Get the domain for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.DomainApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let domain_name = "domain_name_example"; // String | 
-apiInstance.getDomain(service_id, version_id, domain_name).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  domain_name: "domain_name_example", // required};
 
+apiInstance.getDomain(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -200,27 +204,28 @@ Name | Type | Description  | Notes
 
 ## `listDomains`
 
-> listDomains(service_id, version_id)
-
-List domains
+```javascript
+listDomains({ service_id, version_id })
+```
 
 List all the domains for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.DomainApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-apiInstance.listDomains(service_id, version_id).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required};
 
+apiInstance.listDomains(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -234,32 +239,32 @@ Name | Type | Description  | Notes
 
 ## `updateDomain`
 
-> updateDomain(service_id, version_id, domain_name, opts)
-
-Update a domain
+```javascript
+updateDomain({ service_id, version_id, domain_name, [comment], , [name] })
+```
 
 Update the domain for a particular service and version.
 
 ### Example
 
 ```javascript
-let apiInstance = new FastlyApi.DomainApi();
-let service_id = "service_id_example"; // String | 
-let version_id = 56; // Number | 
-let domain_name = "domain_name_example"; // String | 
-let opts = {
-  'comment': "comment_example", // String | A freeform descriptive note.
-  'name': "name_example" // String | The name of the domain or domains associated with this service.
-};
-apiInstance.updateDomain(service_id, version_id, domain_name, opts).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
+const options = {
+  service_id: "service_id_example", // required  version_id: 56, // required  domain_name: "domain_name_example", // required
+  comment: "comment_example",
 
+  name: "name_example",
+};
+
+apiInstance.updateDomain(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-### Parameters
+### Options
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------

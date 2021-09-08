@@ -12,27 +12,47 @@
  */
 
 import ApiClient from '../ApiClient';
-
+/**
+* Enum class LoggingMessageType.
+* @enum {}
+* @readonly
+*/
 export default class LoggingMessageType {
     
-        
+        /**
+         * value: "classic"
+         * @const
+         */
         "classic" = "classic";
 
     
-        
+        /**
+         * value: "loggly"
+         * @const
+         */
         "loggly" = "loggly";
 
     
-        
+        /**
+         * value: "logplex"
+         * @const
+         */
         "logplex" = "logplex";
 
     
-        
+        /**
+         * value: "blank"
+         * @const
+         */
         "blank" = "blank";
 
     
 
-    
+    /**
+    * Returns a <code>LoggingMessageType</code> enum value from a Javascript object name.
+    * @param {Object} data The plain JavaScript object containing the name of the enum value.
+    * @return {module:model/LoggingMessageType} The enum <code>LoggingMessageType</code> value.
+    */
     static constructFromObject(object) {
         return object;
     }

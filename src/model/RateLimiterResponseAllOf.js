@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The RateLimiterResponseAllOf model module.
+ * @module model/RateLimiterResponseAllOf
+ * @version 3.0.0-alpha1
+ */
 class RateLimiterResponseAllOf {
-    
+    /**
+     * Constructs a new <code>RateLimiterResponseAllOf</code>.
+     * @alias module:model/RateLimiterResponseAllOf
+     */
     constructor() { 
         
         RateLimiterResponseAllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RateLimiterResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RateLimiterResponseAllOf} obj Optional instance to populate.
+     * @return {module:model/RateLimiterResponseAllOf} The populated <code>RateLimiterResponseAllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RateLimiterResponseAllOf();
@@ -40,7 +57,10 @@ class RateLimiterResponseAllOf {
 
 }
 
-
+/**
+ * Alphanumeric string identifying the rate limiter.
+ * @member {String} id
+ */
 RateLimiterResponseAllOf.prototype['id'] = undefined;
 
 

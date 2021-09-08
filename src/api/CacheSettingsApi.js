@@ -15,40 +15,62 @@
 import ApiClient from "../ApiClient";
 import CacheSettingResponse from '../model/CacheSettingResponse';
 
-
+/**
+* CacheSettings service.
+* @module api/CacheSettingsApi
+* @version 3.0.0-alpha1
+*/
 export default class CacheSettingsApi {
 
-    
+    /**
+    * Constructs a new CacheSettingsApi. 
+    * @alias module:api/CacheSettingsApi
+    * @class
+    * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
+    * default to {@link module:ApiClient#instance} if unspecified.
+    */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
-    createCacheSettingsWithHttpInfo(service_id, version_id, opts) {
-      opts = opts || {};
+
+    /**
+     * Create a cache settings object.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {module:model/String} [options.action] - If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule. 
+     * @param {String} [options.cache_condition] - Name of the cache condition controlling when this configuration applies.
+     * @param {String} [options.name] - Name for the cache settings object.
+     * @param {Number} [options.stale_ttl] - Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as 'stale if error').
+     * @param {Number} [options.ttl] - Maximum time to consider the object fresh in the cache (the cache 'time to live').
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CacheSettingResponse} and HTTP response
+     */
+    createCacheSettingsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling createCacheSettings");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling createCacheSettings");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'action': opts['action'],
-        'cache_condition': opts['cache_condition'],
-        'name': opts['name'],
-        'stale_ttl': opts['stale_ttl'],
-        'ttl': opts['ttl']
+        'action': options['action'],
+        'cache_condition': options['cache_condition'],
+        'name': options['name'],
+        'stale_ttl': options['stale_ttl'],
+        'ttl': options['ttl']
       };
 
       let authNames = ['token'];
@@ -61,31 +83,53 @@ export default class CacheSettingsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    createCacheSettings(service_id, version_id, opts) {
-      return this.createCacheSettingsWithHttpInfo(service_id, version_id, opts)
+
+    /**
+     * Create a cache settings object.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {module:model/String} [options.action] - If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule. 
+     * @param {String} [options.cache_condition] - Name of the cache condition controlling when this configuration applies.
+     * @param {String} [options.name] - Name for the cache settings object.
+     * @param {Number} [options.stale_ttl] - Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as 'stale if error').
+     * @param {Number} [options.ttl] - Maximum time to consider the object fresh in the cache (the cache 'time to live').
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CacheSettingResponse}
+     */
+    createCacheSettings(options = {}) {
+      return this.createCacheSettingsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    deleteCacheSettingsWithHttpInfo(service_id, version_id, cache_settings_name) {
+
+    /**
+     * Delete a specific cache settings object.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.cache_settings_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    deleteCacheSettingsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling deleteCacheSettings");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling deleteCacheSettings");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'cache_settings_name' is set
-      if (cache_settings_name === undefined || cache_settings_name === null) {
-        throw new Error("Missing the required parameter 'cache_settings_name' when calling deleteCacheSettings");
+      // Verify the required parameter 'cache_settings_name' is set.
+      if (options['cache_settings_name'] === undefined || options['cache_settings_name'] === null) {
+        throw new Error("Missing the required parameter 'cache_settings_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'cache_settings_name': cache_settings_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'cache_settings_name': options['cache_settings_name']
       };
       let queryParams = {
       };
@@ -104,31 +148,49 @@ export default class CacheSettingsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    deleteCacheSettings(service_id, version_id, cache_settings_name) {
-      return this.deleteCacheSettingsWithHttpInfo(service_id, version_id, cache_settings_name)
+
+    /**
+     * Delete a specific cache settings object.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.cache_settings_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    deleteCacheSettings(options = {}) {
+      return this.deleteCacheSettingsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    getCacheSettingsWithHttpInfo(service_id, version_id, cache_settings_name) {
+
+    /**
+     * Get a specific cache settings object.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.cache_settings_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CacheSettingResponse} and HTTP response
+     */
+    getCacheSettingsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling getCacheSettings");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling getCacheSettings");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'cache_settings_name' is set
-      if (cache_settings_name === undefined || cache_settings_name === null) {
-        throw new Error("Missing the required parameter 'cache_settings_name' when calling getCacheSettings");
+      // Verify the required parameter 'cache_settings_name' is set.
+      if (options['cache_settings_name'] === undefined || options['cache_settings_name'] === null) {
+        throw new Error("Missing the required parameter 'cache_settings_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'cache_settings_name': cache_settings_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'cache_settings_name': options['cache_settings_name']
       };
       let queryParams = {
       };
@@ -147,26 +209,43 @@ export default class CacheSettingsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    getCacheSettings(service_id, version_id, cache_settings_name) {
-      return this.getCacheSettingsWithHttpInfo(service_id, version_id, cache_settings_name)
+
+    /**
+     * Get a specific cache settings object.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.cache_settings_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CacheSettingResponse}
+     */
+    getCacheSettings(options = {}) {
+      return this.getCacheSettingsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    listCacheSettingsWithHttpInfo(service_id, version_id) {
+
+    /**
+     * Get a list of all cache settings for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/CacheSettingResponse>} and HTTP response
+     */
+    listCacheSettingsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling listCacheSettings");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling listCacheSettings");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
       };
       let queryParams = {
       };
@@ -185,43 +264,64 @@ export default class CacheSettingsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    listCacheSettings(service_id, version_id) {
-      return this.listCacheSettingsWithHttpInfo(service_id, version_id)
+
+    /**
+     * Get a list of all cache settings for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/CacheSettingResponse>}
+     */
+    listCacheSettings(options = {}) {
+      return this.listCacheSettingsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
-    updateCacheSettingsWithHttpInfo(service_id, version_id, cache_settings_name, opts) {
-      opts = opts || {};
+
+    /**
+     * Update a specific cache settings object.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.cache_settings_name
+     * @param {module:model/String} [options.action] - If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule. 
+     * @param {String} [options.cache_condition] - Name of the cache condition controlling when this configuration applies.
+     * @param {String} [options.name] - Name for the cache settings object.
+     * @param {Number} [options.stale_ttl] - Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as 'stale if error').
+     * @param {Number} [options.ttl] - Maximum time to consider the object fresh in the cache (the cache 'time to live').
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CacheSettingResponse} and HTTP response
+     */
+    updateCacheSettingsWithHttpInfo(options = {}) {
       let postBody = null;
-      // verify the required parameter 'service_id' is set
-      if (service_id === undefined || service_id === null) {
-        throw new Error("Missing the required parameter 'service_id' when calling updateCacheSettings");
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
       }
-      // verify the required parameter 'version_id' is set
-      if (version_id === undefined || version_id === null) {
-        throw new Error("Missing the required parameter 'version_id' when calling updateCacheSettings");
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
       }
-      // verify the required parameter 'cache_settings_name' is set
-      if (cache_settings_name === undefined || cache_settings_name === null) {
-        throw new Error("Missing the required parameter 'cache_settings_name' when calling updateCacheSettings");
+      // Verify the required parameter 'cache_settings_name' is set.
+      if (options['cache_settings_name'] === undefined || options['cache_settings_name'] === null) {
+        throw new Error("Missing the required parameter 'cache_settings_name'.");
       }
 
       let pathParams = {
-        'service_id': service_id,
-        'version_id': version_id,
-        'cache_settings_name': cache_settings_name
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'cache_settings_name': options['cache_settings_name']
       };
       let queryParams = {
       };
       let headerParams = {
       };
       let formParams = {
-        'action': opts['action'],
-        'cache_condition': opts['cache_condition'],
-        'name': opts['name'],
-        'stale_ttl': opts['stale_ttl'],
-        'ttl': opts['ttl']
+        'action': options['action'],
+        'cache_condition': options['cache_condition'],
+        'name': options['name'],
+        'stale_ttl': options['stale_ttl'],
+        'ttl': options['ttl']
       };
 
       let authNames = ['token'];
@@ -234,8 +334,22 @@ export default class CacheSettingsApi {
         authNames, contentTypes, accepts, returnType, null
       );
     }
-    updateCacheSettings(service_id, version_id, cache_settings_name, opts) {
-      return this.updateCacheSettingsWithHttpInfo(service_id, version_id, cache_settings_name, opts)
+
+    /**
+     * Update a specific cache settings object.
+     * @param {Object} options
+     * @param {String} options.service_id
+     * @param {Number} options.version_id
+     * @param {String} options.cache_settings_name
+     * @param {module:model/String} [options.action] - If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule. 
+     * @param {String} [options.cache_condition] - Name of the cache condition controlling when this configuration applies.
+     * @param {String} [options.name] - Name for the cache settings object.
+     * @param {Number} [options.stale_ttl] - Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as 'stale if error').
+     * @param {Number} [options.ttl] - Maximum time to consider the object fresh in the cache (the cache 'time to live').
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CacheSettingResponse}
+     */
+    updateCacheSettings(options = {}) {
+      return this.updateCacheSettingsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

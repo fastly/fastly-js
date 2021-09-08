@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import LoggingUseTls from './LoggingUseTls';
 
-
+/**
+ * The LoggingLogentriesAllOf model module.
+ * @module model/LoggingLogentriesAllOf
+ * @version 3.0.0-alpha1
+ */
 class LoggingLogentriesAllOf {
-    
+    /**
+     * Constructs a new <code>LoggingLogentriesAllOf</code>.
+     * @alias module:model/LoggingLogentriesAllOf
+     */
     constructor() { 
         
         LoggingLogentriesAllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingLogentriesAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingLogentriesAllOf} obj Optional instance to populate.
+     * @return {module:model/LoggingLogentriesAllOf} The populated <code>LoggingLogentriesAllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingLogentriesAllOf();
@@ -34,14 +51,14 @@ class LoggingLogentriesAllOf {
             if (data.hasOwnProperty('port')) {
                 obj['port'] = ApiClient.convertToType(data['port'], 'Number');
             }
+            if (data.hasOwnProperty('region')) {
+                obj['region'] = ApiClient.convertToType(data['region'], 'String');
+            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('use_tls')) {
                 obj['use_tls'] = LoggingUseTls.constructFromObject(data['use_tls']);
-            }
-            if (data.hasOwnProperty('region')) {
-                obj['region'] = ApiClient.convertToType(data['region'], 'String');
             }
         }
         return obj;
@@ -50,44 +67,81 @@ class LoggingLogentriesAllOf {
 
 }
 
-
+/**
+ * The port number.
+ * @member {Number} port
+ * @default 20000
+ */
 LoggingLogentriesAllOf.prototype['port'] = 20000;
 
+/**
+ * The region to which to stream logs.
+ * @member {module:model/LoggingLogentriesAllOf.RegionEnum} region
+ */
+LoggingLogentriesAllOf.prototype['region'] = undefined;
 
+/**
+ * Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
+ * @member {String} token
+ */
 LoggingLogentriesAllOf.prototype['token'] = undefined;
 
-
+/**
+ * @member {module:model/LoggingUseTls} use_tls
+ */
 LoggingLogentriesAllOf.prototype['use_tls'] = undefined;
 
 
-LoggingLogentriesAllOf.prototype['region'] = undefined;
 
 
 
-
-
-
+/**
+ * Allowed values for the <code>region</code> property.
+ * @enum {String}
+ * @readonly
+ */
 LoggingLogentriesAllOf['RegionEnum'] = {
 
-    
+    /**
+     * value: "US"
+     * @const
+     */
     "US": "US",
 
-    
+    /**
+     * value: "US-2"
+     * @const
+     */
     "US-2": "US-2",
 
-    
+    /**
+     * value: "US-3"
+     * @const
+     */
     "US-3": "US-3",
 
-    
+    /**
+     * value: "EU"
+     * @const
+     */
     "EU": "EU",
 
-    
+    /**
+     * value: "CA"
+     * @const
+     */
     "CA": "CA",
 
-    
+    /**
+     * value: "AU"
+     * @const
+     */
     "AU": "AU",
 
-    
+    /**
+     * value: "AP"
+     * @const
+     */
     "AP": "AP"
 };
 

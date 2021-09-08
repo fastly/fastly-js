@@ -16,31 +16,48 @@ import AnyOfrelationshipTlsActivationsobject from './AnyOfrelationshipTlsActivat
 import TlsPrivateKeyDataAttributes from './TlsPrivateKeyDataAttributes';
 import TypeTlsPrivateKey from './TypeTlsPrivateKey';
 
-
+/**
+ * The TlsPrivateKeyData model module.
+ * @module model/TlsPrivateKeyData
+ * @version 3.0.0-alpha1
+ */
 class TlsPrivateKeyData {
-    
+    /**
+     * Constructs a new <code>TlsPrivateKeyData</code>.
+     * @alias module:model/TlsPrivateKeyData
+     */
     constructor() { 
         
         TlsPrivateKeyData.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>TlsPrivateKeyData</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/TlsPrivateKeyData} obj Optional instance to populate.
+     * @return {module:model/TlsPrivateKeyData} The populated <code>TlsPrivateKeyData</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsPrivateKeyData();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeTlsPrivateKey.constructFromObject(data['type']);
-            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = TlsPrivateKeyDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = ApiClient.convertToType(data['relationships'], AnyOfrelationshipTlsActivationsobject);
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeTlsPrivateKey.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -49,14 +66,20 @@ class TlsPrivateKeyData {
 
 }
 
-
-TlsPrivateKeyData.prototype['type'] = undefined;
-
-
+/**
+ * @member {module:model/TlsPrivateKeyDataAttributes} attributes
+ */
 TlsPrivateKeyData.prototype['attributes'] = undefined;
 
-
+/**
+ * @member {module:model/AnyOfrelationshipTlsActivationsobject} relationships
+ */
 TlsPrivateKeyData.prototype['relationships'] = undefined;
+
+/**
+ * @member {module:model/TypeTlsPrivateKey} type
+ */
+TlsPrivateKeyData.prototype['type'] = undefined;
 
 
 

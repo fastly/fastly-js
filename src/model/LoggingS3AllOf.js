@@ -13,19 +13,36 @@
 
 import ApiClient from '../ApiClient';
 
-
+/**
+ * The LoggingS3AllOf model module.
+ * @module model/LoggingS3AllOf
+ * @version 3.0.0-alpha1
+ */
 class LoggingS3AllOf {
-    
+    /**
+     * Constructs a new <code>LoggingS3AllOf</code>.
+     * @alias module:model/LoggingS3AllOf
+     */
     constructor() { 
         
         LoggingS3AllOf.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>LoggingS3AllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/LoggingS3AllOf} obj Optional instance to populate.
+     * @return {module:model/LoggingS3AllOf} The populated <code>LoggingS3AllOf</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingS3AllOf();
@@ -57,11 +74,11 @@ class LoggingS3AllOf {
             if (data.hasOwnProperty('secret_key')) {
                 obj['secret_key'] = ApiClient.convertToType(data['secret_key'], 'String');
             }
-            if (data.hasOwnProperty('server_side_encryption_kms_key_id')) {
-                obj['server_side_encryption_kms_key_id'] = ApiClient.convertToType(data['server_side_encryption_kms_key_id'], 'String');
-            }
             if (data.hasOwnProperty('server_side_encryption')) {
                 obj['server_side_encryption'] = ApiClient.convertToType(data['server_side_encryption'], 'String');
+            }
+            if (data.hasOwnProperty('server_side_encryption_kms_key_id')) {
+                obj['server_side_encryption_kms_key_id'] = ApiClient.convertToType(data['server_side_encryption_kms_key_id'], 'String');
             }
         }
         return obj;
@@ -70,38 +87,76 @@ class LoggingS3AllOf {
 
 }
 
-
+/**
+ * The access key for your S3 account. Not required if `iam_role` is provided.
+ * @member {String} access_key
+ */
 LoggingS3AllOf.prototype['access_key'] = undefined;
 
-
+/**
+ * The access control list (ACL) specific request header. See the AWS documentation for [Access Control List (ACL) Specific Request Headers](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html#initiate-mpu-acl-specific-request-headers) for more information.
+ * @member {String} acl
+ */
 LoggingS3AllOf.prototype['acl'] = undefined;
 
-
+/**
+ * The bucket name for S3 account.
+ * @member {String} bucket_name
+ */
 LoggingS3AllOf.prototype['bucket_name'] = undefined;
 
-
+/**
+ * The domain of the Amazon S3 endpoint.
+ * @member {String} domain
+ */
 LoggingS3AllOf.prototype['domain'] = undefined;
 
-
+/**
+ * The Amazon Resource Name (ARN) for the IAM role granting Fastly access to S3. Not required if `access_key` and `secret_key` are provided.
+ * @member {String} iam_role
+ */
 LoggingS3AllOf.prototype['iam_role'] = undefined;
 
-
+/**
+ * The path to upload logs to.
+ * @member {String} path
+ * @default 'null'
+ */
 LoggingS3AllOf.prototype['path'] = 'null';
 
-
+/**
+ * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+ * @member {String} public_key
+ * @default 'null'
+ */
 LoggingS3AllOf.prototype['public_key'] = 'null';
 
-
+/**
+ * The S3 redundancy level.
+ * @member {String} redundancy
+ * @default 'null'
+ */
 LoggingS3AllOf.prototype['redundancy'] = 'null';
 
-
+/**
+ * The secret key for your S3 account. Not required if `iam_role` is provided.
+ * @member {String} secret_key
+ */
 LoggingS3AllOf.prototype['secret_key'] = undefined;
 
-
-LoggingS3AllOf.prototype['server_side_encryption_kms_key_id'] = 'null';
-
-
+/**
+ * Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption.
+ * @member {String} server_side_encryption
+ * @default 'null'
+ */
 LoggingS3AllOf.prototype['server_side_encryption'] = 'null';
+
+/**
+ * Optional server-side KMS Key Id. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`.
+ * @member {String} server_side_encryption_kms_key_id
+ * @default 'null'
+ */
+LoggingS3AllOf.prototype['server_side_encryption_kms_key_id'] = 'null';
 
 
 

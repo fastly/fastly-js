@@ -12,15 +12,26 @@
  */
 
 import ApiClient from '../ApiClient';
-
+/**
+* Enum class TypeWafTag.
+* @enum {}
+* @readonly
+*/
 export default class TypeWafTag {
     
-        
+        /**
+         * value: "waf_tag"
+         * @const
+         */
         "waf_tag" = "waf_tag";
 
     
 
-    
+    /**
+    * Returns a <code>TypeWafTag</code> enum value from a Javascript object name.
+    * @param {Object} data The plain JavaScript object containing the name of the enum value.
+    * @return {module:model/TypeWafTag} The enum <code>TypeWafTag</code> value.
+    */
     static constructFromObject(object) {
         return object;
     }

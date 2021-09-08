@@ -14,19 +14,36 @@
 import ApiClient from '../ApiClient';
 import RelationshipWafRuleWafRule from './RelationshipWafRuleWafRule';
 
-
+/**
+ * The RelationshipWafRule model module.
+ * @module model/RelationshipWafRule
+ * @version 3.0.0-alpha1
+ */
 class RelationshipWafRule {
-    
+    /**
+     * Constructs a new <code>RelationshipWafRule</code>.
+     * @alias module:model/RelationshipWafRule
+     */
     constructor() { 
         
         RelationshipWafRule.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>RelationshipWafRule</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/RelationshipWafRule} obj Optional instance to populate.
+     * @return {module:model/RelationshipWafRule} The populated <code>RelationshipWafRule</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipWafRule();
@@ -41,7 +58,9 @@ class RelationshipWafRule {
 
 }
 
-
+/**
+ * @member {module:model/RelationshipWafRuleWafRule} waf_rule
+ */
 RelationshipWafRule.prototype['waf_rule'] = undefined;
 
 

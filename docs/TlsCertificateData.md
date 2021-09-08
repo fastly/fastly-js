@@ -1,12 +1,12 @@
-# FastlyApi.TlsCertificateData
+# Fastly.TlsCertificateData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**TypeTlsCertificate**](TypeTlsCertificate.md) |  | [optional] 
 **attributes** | [**TlsCertificateDataAttributes**](TlsCertificateDataAttributes.md) |  | [optional] 
 **relationships** | [**RelationshipTlsDomains**](RelationshipTlsDomains.md) |  | [optional] 
+**type** | [**TypeTlsCertificate**](TypeTlsCertificate.md) |  | [optional] 
 
 
 

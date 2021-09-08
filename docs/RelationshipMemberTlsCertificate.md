@@ -1,11 +1,11 @@
-# FastlyApi.RelationshipMemberTlsCertificate
+# Fastly.RelationshipMemberTlsCertificate
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**TypeTlsCertificate**](TypeTlsCertificate.md) |  | [optional] 
 **id** | **String** | Alphanumeric string identifying a TLS certificate. | [optional] [readonly] 
+**type** | [**TypeTlsCertificate**](TypeTlsCertificate.md) |  | [optional] 
 
 
 

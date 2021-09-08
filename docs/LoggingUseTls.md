@@ -1,4 +1,4 @@
-# FastlyApi.LoggingUseTls
+# Fastly.LoggingUseTls
 
 ## Enum
 

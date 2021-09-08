@@ -15,19 +15,38 @@ import ApiClient from '../ApiClient';
 import Star from './Star';
 import StarResponseAllOf from './StarResponseAllOf';
 
-
+/**
+ * The StarResponse model module.
+ * @module model/StarResponse
+ * @version 3.0.0-alpha1
+ */
 class StarResponse {
-    
+    /**
+     * Constructs a new <code>StarResponse</code>.
+     * @alias module:model/StarResponse
+     * @implements module:model/Star
+     * @implements module:model/StarResponseAllOf
+     */
     constructor() { 
         Star.initialize(this);StarResponseAllOf.initialize(this);
         StarResponse.initialize(this);
     }
 
-    
+    /**
+     * Initializes the fields of this object.
+     * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
+     * Only for internal use.
+     */
     static initialize(obj) { 
     }
 
-    
+    /**
+     * Constructs a <code>StarResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+     * @param {Object} data The plain JavaScript object bearing properties of interest.
+     * @param {module:model/StarResponse} obj Optional instance to populate.
+     * @return {module:model/StarResponse} The populated <code>StarResponse</code> instance.
+     */
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new StarResponse();
@@ -44,15 +63,21 @@ class StarResponse {
 
 }
 
-
+/**
+ * @member {Object} data
+ */
 StarResponse.prototype['data'] = undefined;
 
 
 // Implement Star interface:
-
+/**
+ * @member {module:model/StarData} data
+ */
 Star.prototype['data'] = undefined;
 // Implement StarResponseAllOf interface:
-
+/**
+ * @member {Object} data
+ */
 StarResponseAllOf.prototype['data'] = undefined;
 
 
