@@ -28,40 +28,8 @@ Create a Elasticsearch logging endpoint for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-
-  format: null,
-
-  format_version: new Fastly.LoggingFormatVersion(),
-
-  name: "name_example",
-
-  placement: new Fastly.LoggingPlacement(),
-
-  response_condition: "response_condition_example",
-
-  tls_ca_cert: "'null'",
-
-  tls_client_cert: "'null'",
-
-  tls_client_key: "'null'",
-
-  tls_hostname: "'null'",
-
-  request_max_bytes: 0,
-
-  request_max_entries: 0,
-
-  index: "index_example",
-
-  password: "password_example",
-
-  pipeline: "pipeline_example",
-
-  url: "url_example",
-
-  user: "user_example",
+  service_id: "service_id_example", // required  version_id: 56, // required
+  format: null,  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  tls_ca_cert: "'null'",  tls_client_cert: "'null'",  tls_client_key: "'null'",  tls_hostname: "'null'",  request_max_bytes: 0,  request_max_entries: 0,  index: "index_example",  password: "password_example",  pipeline: "pipeline_example",  url: "url_example",  user: "user_example",
 };
 
 apiInstance.createLogElasticsearch(options)
@@ -113,9 +81,8 @@ Delete the Elasticsearch logging endpoint for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-  logging_elasticsearch_name: "logging_elasticsearch_name_example", // required
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_elasticsearch_name: "logging_elasticsearch_name_example", // required
+
 };
 
 apiInstance.deleteLogElasticsearch(options)
@@ -152,9 +119,8 @@ Get the Elasticsearch logging endpoint for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-  logging_elasticsearch_name: "logging_elasticsearch_name_example", // required
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_elasticsearch_name: "logging_elasticsearch_name_example", // required
+
 };
 
 apiInstance.getLogElasticsearch(options)
@@ -191,8 +157,8 @@ List all of the Elasticsearch logging endpoints for a particular service and ver
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
+  service_id: "service_id_example", // required  version_id: 56, // required
+
 };
 
 apiInstance.listLogElasticsearch(options)
@@ -228,41 +194,8 @@ Update the Elasticsearch logging endpoint for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-  logging_elasticsearch_name: "logging_elasticsearch_name_example", // required
-
-  format: null,
-
-  format_version: new Fastly.LoggingFormatVersion(),
-
-  name: "name_example",
-
-  placement: new Fastly.LoggingPlacement(),
-
-  response_condition: "response_condition_example",
-
-  tls_ca_cert: "'null'",
-
-  tls_client_cert: "'null'",
-
-  tls_client_key: "'null'",
-
-  tls_hostname: "'null'",
-
-  request_max_bytes: 0,
-
-  request_max_entries: 0,
-
-  index: "index_example",
-
-  password: "password_example",
-
-  pipeline: "pipeline_example",
-
-  url: "url_example",
-
-  user: "user_example",
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_elasticsearch_name: "logging_elasticsearch_name_example", // required
+  format: null,  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  tls_ca_cert: "'null'",  tls_client_cert: "'null'",  tls_client_key: "'null'",  tls_hostname: "'null'",  request_max_bytes: 0,  request_max_entries: 0,  index: "index_example",  password: "password_example",  pipeline: "pipeline_example",  url: "url_example",  user: "user_example",
 };
 
 apiInstance.updateLogElasticsearch(options)

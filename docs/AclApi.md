@@ -28,9 +28,7 @@ Create a new ACL attached to the specified service version. A new, empty ACL mus
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-
+  service_id: "service_id_example", // required  version_id: 56, // required
   name: "name_example",
 };
 
@@ -68,9 +66,8 @@ Delete an ACL from the specified service version. To remove an ACL from use, the
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-  acl_name: "acl_name_example", // required
+  service_id: "service_id_example", // required  version_id: 56, // required  acl_name: "acl_name_example", // required
+
 };
 
 apiInstance.deleteAcl(options)
@@ -107,9 +104,8 @@ Retrieve a single ACL by name for the version and service.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-  acl_name: "acl_name_example", // required
+  service_id: "service_id_example", // required  version_id: 56, // required  acl_name: "acl_name_example", // required
+
 };
 
 apiInstance.getAcl(options)
@@ -146,8 +142,8 @@ List ACLs.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
+  service_id: "service_id_example", // required  version_id: 56, // required
+
 };
 
 apiInstance.listAcls(options)
@@ -183,10 +179,7 @@ Update an ACL for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-  acl_name: "acl_name_example", // required
-
+  service_id: "service_id_example", // required  version_id: 56, // required  acl_name: "acl_name_example", // required
   name: "name_example",
 };
 

@@ -28,66 +28,8 @@ Create a backend for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-
-  address: "address_example",
-
-  auto_loadbalance: true,
-
-  between_bytes_timeout: 56,
-
-  client_cert: "client_cert_example",
-
-  comment: "comment_example",
-
-  connect_timeout: 56,
-
-  first_byte_timeout: 56,
-
-  healthcheck: "healthcheck_example",
-
-  hostname: "hostname_example",
-
-  ipv4: "ipv4_example",
-
-  ipv6: "ipv6_example",
-
-  max_conn: 56,
-
-  max_tls_version: "max_tls_version_example",
-
-  min_tls_version: "min_tls_version_example",
-
-  name: "name_example",
-
-  override_host: "override_host_example",
-
-  port: 56,
-
-  request_condition: "request_condition_example",
-
-  shield: "shield_example",
-
-  ssl_ca_cert: "ssl_ca_cert_example",
-
-  ssl_cert_hostname: "ssl_cert_hostname_example",
-
-  ssl_check_cert: true,
-
-  ssl_ciphers: "ssl_ciphers_example",
-
-  ssl_client_cert: "ssl_client_cert_example",
-
-  ssl_client_key: "ssl_client_key_example",
-
-  ssl_hostname: "ssl_hostname_example",
-
-  ssl_sni_hostname: "ssl_sni_hostname_example",
-
-  use_ssl: true,
-
-  weight: 56,
+  service_id: "service_id_example", // required  version_id: 56, // required
+  address: "address_example",  auto_loadbalance: true,  between_bytes_timeout: 56,  client_cert: "client_cert_example",  comment: "comment_example",  connect_timeout: 56,  first_byte_timeout: 56,  healthcheck: "healthcheck_example",  hostname: "hostname_example",  ipv4: "ipv4_example",  ipv6: "ipv6_example",  max_conn: 56,  max_tls_version: "max_tls_version_example",  min_tls_version: "min_tls_version_example",  name: "name_example",  override_host: "override_host_example",  port: 56,  request_condition: "request_condition_example",  shield: "shield_example",  ssl_ca_cert: "ssl_ca_cert_example",  ssl_cert_hostname: "ssl_cert_hostname_example",  ssl_check_cert: true,  ssl_ciphers: "ssl_ciphers_example",  ssl_client_cert: "ssl_client_cert_example",  ssl_client_key: "ssl_client_key_example",  ssl_hostname: "ssl_hostname_example",  ssl_sni_hostname: "ssl_sni_hostname_example",  use_ssl: true,  weight: 56,
 };
 
 apiInstance.createBackend(options)
@@ -152,9 +94,8 @@ Delete the backend for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-  backend_name: "backend_name_example", // required
+  service_id: "service_id_example", // required  version_id: 56, // required  backend_name: "backend_name_example", // required
+
 };
 
 apiInstance.deleteBackend(options)
@@ -191,9 +132,8 @@ Get the backend for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-  backend_name: "backend_name_example", // required
+  service_id: "service_id_example", // required  version_id: 56, // required  backend_name: "backend_name_example", // required
+
 };
 
 apiInstance.getBackend(options)
@@ -230,8 +170,8 @@ List all backends for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
+  service_id: "service_id_example", // required  version_id: 56, // required
+
 };
 
 apiInstance.listBackends(options)
@@ -267,67 +207,8 @@ Update the backend for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-  backend_name: "backend_name_example", // required
-
-  address: "address_example",
-
-  auto_loadbalance: true,
-
-  between_bytes_timeout: 56,
-
-  client_cert: "client_cert_example",
-
-  comment: "comment_example",
-
-  connect_timeout: 56,
-
-  first_byte_timeout: 56,
-
-  healthcheck: "healthcheck_example",
-
-  hostname: "hostname_example",
-
-  ipv4: "ipv4_example",
-
-  ipv6: "ipv6_example",
-
-  max_conn: 56,
-
-  max_tls_version: "max_tls_version_example",
-
-  min_tls_version: "min_tls_version_example",
-
-  name: "name_example",
-
-  override_host: "override_host_example",
-
-  port: 56,
-
-  request_condition: "request_condition_example",
-
-  shield: "shield_example",
-
-  ssl_ca_cert: "ssl_ca_cert_example",
-
-  ssl_cert_hostname: "ssl_cert_hostname_example",
-
-  ssl_check_cert: true,
-
-  ssl_ciphers: "ssl_ciphers_example",
-
-  ssl_client_cert: "ssl_client_cert_example",
-
-  ssl_client_key: "ssl_client_key_example",
-
-  ssl_hostname: "ssl_hostname_example",
-
-  ssl_sni_hostname: "ssl_sni_hostname_example",
-
-  use_ssl: true,
-
-  weight: 56,
+  service_id: "service_id_example", // required  version_id: 56, // required  backend_name: "backend_name_example", // required
+  address: "address_example",  auto_loadbalance: true,  between_bytes_timeout: 56,  client_cert: "client_cert_example",  comment: "comment_example",  connect_timeout: 56,  first_byte_timeout: 56,  healthcheck: "healthcheck_example",  hostname: "hostname_example",  ipv4: "ipv4_example",  ipv6: "ipv6_example",  max_conn: 56,  max_tls_version: "max_tls_version_example",  min_tls_version: "min_tls_version_example",  name: "name_example",  override_host: "override_host_example",  port: 56,  request_condition: "request_condition_example",  shield: "shield_example",  ssl_ca_cert: "ssl_ca_cert_example",  ssl_cert_hostname: "ssl_cert_hostname_example",  ssl_check_cert: true,  ssl_ciphers: "ssl_ciphers_example",  ssl_client_cert: "ssl_client_cert_example",  ssl_client_key: "ssl_client_key_example",  ssl_hostname: "ssl_hostname_example",  ssl_sni_hostname: "ssl_sni_hostname_example",  use_ssl: true,  weight: 56,
 };
 
 apiInstance.updateBackend(options)

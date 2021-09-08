@@ -28,44 +28,8 @@ Create a FTP for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
-
-  format_version: new Fastly.LoggingFormatVersion(),
-
-  name: "name_example",
-
-  placement: new Fastly.LoggingPlacement(),
-
-  response_condition: "response_condition_example",
-
-  compression_codec: new Fastly.LoggingCompressionCodec(),
-
-  gzip_level: 0,
-
-  message_type: new Fastly.LoggingMessageType(),
-
-  period: 3600,
-
-  timestamp_format: "timestamp_format_example",
-
-  address: "address_example",
-
-  hostname: "hostname_example",
-
-  ipv4: "ipv4_example",
-
-  password: "password_example",
-
-  path: "path_example",
-
-  port: 21,
-
-  public_key: "'null'",
-
-  user: "user_example",
+  service_id: "service_id_example", // required  version_id: 56, // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  compression_codec: new Fastly.LoggingCompressionCodec(),  gzip_level: 0,  message_type: new Fastly.LoggingMessageType(),  period: 3600,  timestamp_format: "timestamp_format_example",  address: "address_example",  hostname: "hostname_example",  ipv4: "ipv4_example",  password: "password_example",  path: "path_example",  port: 21,  public_key: "'null'",  user: "user_example",
 };
 
 apiInstance.createLogFtp(options)
@@ -119,9 +83,8 @@ Delete the FTP for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-  logging_ftp_name: "logging_ftp_name_example", // required
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_ftp_name: "logging_ftp_name_example", // required
+
 };
 
 apiInstance.deleteLogFtp(options)
@@ -158,9 +121,8 @@ Get the FTP for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-  logging_ftp_name: "logging_ftp_name_example", // required
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_ftp_name: "logging_ftp_name_example", // required
+
 };
 
 apiInstance.getLogFtp(options)
@@ -197,8 +159,8 @@ List all of the FTPs for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
+  service_id: "service_id_example", // required  version_id: 56, // required
+
 };
 
 apiInstance.listLogFtp(options)
@@ -234,45 +196,8 @@ Update the FTP for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-  logging_ftp_name: "logging_ftp_name_example", // required
-
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
-
-  format_version: new Fastly.LoggingFormatVersion(),
-
-  name: "name_example",
-
-  placement: new Fastly.LoggingPlacement(),
-
-  response_condition: "response_condition_example",
-
-  compression_codec: new Fastly.LoggingCompressionCodec(),
-
-  gzip_level: 0,
-
-  message_type: new Fastly.LoggingMessageType(),
-
-  period: 3600,
-
-  timestamp_format: "timestamp_format_example",
-
-  address: "address_example",
-
-  hostname: "hostname_example",
-
-  ipv4: "ipv4_example",
-
-  password: "password_example",
-
-  path: "path_example",
-
-  port: 21,
-
-  public_key: "'null'",
-
-  user: "user_example",
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_ftp_name: "logging_ftp_name_example", // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  compression_codec: new Fastly.LoggingCompressionCodec(),  gzip_level: 0,  message_type: new Fastly.LoggingMessageType(),  period: 3600,  timestamp_format: "timestamp_format_example",  address: "address_example",  hostname: "hostname_example",  ipv4: "ipv4_example",  password: "password_example",  path: "path_example",  port: 21,  public_key: "'null'",  user: "user_example",
 };
 
 apiInstance.updateLogFtp(options)

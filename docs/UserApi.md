@@ -31,21 +31,7 @@ Create a user.
 ```javascript
 const options = {
 
-  limit_services: true,
-
-  locked: true,
-
-  login: "login_example",
-
-  name: "name_example",
-
-  require_new_password: true,
-
-  role: new Fastly.RoleUser(),
-
-  two_factor_auth_enabled: true,
-
-  two_factor_setup_required: true,
+  limit_services: true,  locked: true,  login: "login_example",  name: "name_example",  require_new_password: true,  role: new Fastly.RoleUser(),  two_factor_auth_enabled: true,  two_factor_setup_required: true,
 };
 
 apiInstance.createUser(options)
@@ -88,6 +74,7 @@ Delete a user.
 ```javascript
 const options = {
   user_id: "user_id_example", // required
+
 };
 
 apiInstance.deleteUser(options)
@@ -152,6 +139,7 @@ Get a specific user.
 ```javascript
 const options = {
   user_id: "user_id_example", // required
+
 };
 
 apiInstance.getUser(options)
@@ -187,6 +175,7 @@ Requests a password reset for the specified user.
 ```javascript
 const options = {
   user_login: "user_login_example", // required
+
 };
 
 apiInstance.requestPasswordReset(options)
@@ -222,22 +211,7 @@ Update a user. Only users with the role of `superuser` can make changes to other
 ```javascript
 const options = {
   user_id: "user_id_example", // required
-
-  limit_services: true,
-
-  locked: true,
-
-  login: "login_example",
-
-  name: "name_example",
-
-  require_new_password: true,
-
-  role: new Fastly.RoleUser(),
-
-  two_factor_auth_enabled: true,
-
-  two_factor_setup_required: true,
+  limit_services: true,  locked: true,  login: "login_example",  name: "name_example",  require_new_password: true,  role: new Fastly.RoleUser(),  two_factor_auth_enabled: true,  two_factor_setup_required: true,
 };
 
 apiInstance.updateUser(options)
@@ -281,9 +255,7 @@ Update the user's password to a new one.
 ```javascript
 const options = {
 
-  new_password: "new_password_example",
-
-  old_password: "old_password_example",
+  new_password: "new_password_example",  old_password: "old_password_example",
 };
 
 apiInstance.updateUserPassword(options)

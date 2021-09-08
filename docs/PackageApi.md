@@ -25,8 +25,8 @@ List detailed information about the Compute@Edge package for the specified servi
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
+  service_id: "service_id_example", // required  version_id: 56, // required
+
 };
 
 apiInstance.getPackage(options)
@@ -62,12 +62,8 @@ Upload a Compute@Edge package associated with the specified service version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-
-  expect: 100-continue,
-
-  _package: "/path/to/file",
+  service_id: "service_id_example", // required  version_id: 56, // required
+  expect: 100-continue,  _package: "/path/to/file",
 };
 
 apiInstance.putPackage(options)

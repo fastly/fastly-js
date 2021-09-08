@@ -1,10 +1,10 @@
-# Fastly.SchemasWafActiveRuleData
+# Fastly.WafActiveRuleData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**SchemasWafActiveRuleDataAttributes**](SchemasWafActiveRuleDataAttributes.md) |  | [optional] 
+**attributes** | [**WafActiveRuleDataAttributes**](WafActiveRuleDataAttributes.md) |  | [optional] 
 **relationships** | [**AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision**](AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision.md) |  | [optional] 
 **type** | [**TypeWafActiveRule**](TypeWafActiveRule.md) |  | [optional] 
 

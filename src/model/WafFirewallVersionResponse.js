@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import AnyOfwafFirewallVersionschemasWafActiveRule from './AnyOfwafFirewallVersionschemasWafActiveRule';
+import AnyOfwafFirewallVersionwafActiveRule from './AnyOfwafFirewallVersionwafActiveRule';
 import Data from './Data';
 
 /**
@@ -53,7 +53,7 @@ class WafFirewallVersionResponse {
                 obj['data'] = ApiClient.convertToType(data['data'], Data);
             }
             if (data.hasOwnProperty('included')) {
-                obj['included'] = ApiClient.convertToType(data['included'], [AnyOfwafFirewallVersionschemasWafActiveRule]);
+                obj['included'] = ApiClient.convertToType(data['included'], [AnyOfwafFirewallVersionwafActiveRule]);
             }
         }
         return obj;
@@ -68,7 +68,7 @@ class WafFirewallVersionResponse {
 WafFirewallVersionResponse.prototype['data'] = undefined;
 
 /**
- * @member {Array.<module:model/AnyOfwafFirewallVersionschemasWafActiveRule>} included
+ * @member {Array.<module:model/AnyOfwafFirewallVersionwafActiveRule>} included
  */
 WafFirewallVersionResponse.prototype['included'] = undefined;
 

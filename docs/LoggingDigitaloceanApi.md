@@ -28,40 +28,8 @@ Create a DigitalOcean Space for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
-
-  format_version: new Fastly.LoggingFormatVersion(),
-
-  name: "name_example",
-
-  placement: new Fastly.LoggingPlacement(),
-
-  response_condition: "response_condition_example",
-
-  compression_codec: new Fastly.LoggingCompressionCodec(),
-
-  gzip_level: 0,
-
-  message_type: new Fastly.LoggingMessageType(),
-
-  period: 3600,
-
-  timestamp_format: "timestamp_format_example",
-
-  access_key: "access_key_example",
-
-  bucket_name: "bucket_name_example",
-
-  domain: "'nyc3.digitaloceanspaces.com'",
-
-  path: "'null'",
-
-  public_key: "'null'",
-
-  secret_key: "secret_key_example",
+  service_id: "service_id_example", // required  version_id: 56, // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  compression_codec: new Fastly.LoggingCompressionCodec(),  gzip_level: 0,  message_type: new Fastly.LoggingMessageType(),  period: 3600,  timestamp_format: "timestamp_format_example",  access_key: "access_key_example",  bucket_name: "bucket_name_example",  domain: "'nyc3.digitaloceanspaces.com'",  path: "'null'",  public_key: "'null'",  secret_key: "secret_key_example",
 };
 
 apiInstance.createLogDigocean(options)
@@ -113,9 +81,8 @@ Delete the DigitalOcean Space for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-  logging_digitalocean_name: "logging_digitalocean_name_example", // required
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_digitalocean_name: "logging_digitalocean_name_example", // required
+
 };
 
 apiInstance.deleteLogDigocean(options)
@@ -152,9 +119,8 @@ Get the DigitalOcean Space for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-  logging_digitalocean_name: "logging_digitalocean_name_example", // required
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_digitalocean_name: "logging_digitalocean_name_example", // required
+
 };
 
 apiInstance.getLogDigocean(options)
@@ -191,8 +157,8 @@ List all of the DigitalOcean Spaces for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
+  service_id: "service_id_example", // required  version_id: 56, // required
+
 };
 
 apiInstance.listLogDigocean(options)
@@ -228,41 +194,8 @@ Update the DigitalOcean Space for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-  logging_digitalocean_name: "logging_digitalocean_name_example", // required
-
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
-
-  format_version: new Fastly.LoggingFormatVersion(),
-
-  name: "name_example",
-
-  placement: new Fastly.LoggingPlacement(),
-
-  response_condition: "response_condition_example",
-
-  compression_codec: new Fastly.LoggingCompressionCodec(),
-
-  gzip_level: 0,
-
-  message_type: new Fastly.LoggingMessageType(),
-
-  period: 3600,
-
-  timestamp_format: "timestamp_format_example",
-
-  access_key: "access_key_example",
-
-  bucket_name: "bucket_name_example",
-
-  domain: "'nyc3.digitaloceanspaces.com'",
-
-  path: "'null'",
-
-  public_key: "'null'",
-
-  secret_key: "secret_key_example",
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_digitalocean_name: "logging_digitalocean_name_example", // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  compression_codec: new Fastly.LoggingCompressionCodec(),  gzip_level: 0,  message_type: new Fastly.LoggingMessageType(),  period: 3600,  timestamp_format: "timestamp_format_example",  access_key: "access_key_example",  bucket_name: "bucket_name_example",  domain: "'nyc3.digitaloceanspaces.com'",  path: "'null'",  public_key: "'null'",  secret_key: "secret_key_example",
 };
 
 apiInstance.updateLogDigocean(options)

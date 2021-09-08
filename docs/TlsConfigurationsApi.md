@@ -27,7 +27,6 @@ Show a TLS configuration.
 ```javascript
 const options = {
   tls_configuration_id: "tls_configuration_id_example", // required
-
   include: dns_records,
 };
 
@@ -65,13 +64,7 @@ List all TLS configurations.
 ```javascript
 const options = {
 
-  filter_bulk: "filter_bulk_example",
-
-  include: dns_records,
-
-  page_number: 56,
-
-  page_size: 20,
+  filter_bulk: "filter_bulk_example",  include: dns_records,  page_number: 56,  page_size: 20,
 };
 
 apiInstance.listTlsConfigs(options)
@@ -110,7 +103,6 @@ Update a TLS configuration.
 ```javascript
 const options = {
   tls_configuration_id: "tls_configuration_id_example", // required
-
   tls_configuration: new Fastly.TlsConfiguration(),
 };
 

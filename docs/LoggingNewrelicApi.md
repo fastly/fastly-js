@@ -28,22 +28,8 @@ Create a New Relic Logs logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-
-  format: null,
-
-  format_version: new Fastly.LoggingFormatVersion(),
-
-  name: "name_example",
-
-  placement: new Fastly.LoggingPlacement(),
-
-  response_condition: "response_condition_example",
-
-  region: "'US'",
-
-  token: "token_example",
+  service_id: "service_id_example", // required  version_id: 56, // required
+  format: null,  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  region: "'US'",  token: "token_example",
 };
 
 apiInstance.createLogNewrelic(options)
@@ -86,9 +72,8 @@ Delete the New Relic Logs logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-  logging_newrelic_name: "logging_newrelic_name_example", // required
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_newrelic_name: "logging_newrelic_name_example", // required
+
 };
 
 apiInstance.deleteLogNewrelic(options)
@@ -125,9 +110,8 @@ Get the details of a New Relic Logs logging object for a particular service and 
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-  logging_newrelic_name: "logging_newrelic_name_example", // required
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_newrelic_name: "logging_newrelic_name_example", // required
+
 };
 
 apiInstance.getLogNewrelic(options)
@@ -164,8 +148,8 @@ List all of the New Relic Logs logging objects for a particular service and vers
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
+  service_id: "service_id_example", // required  version_id: 56, // required
+
 };
 
 apiInstance.listLogNewrelic(options)
@@ -201,23 +185,8 @@ Update a New Relic Logs logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-  logging_newrelic_name: "logging_newrelic_name_example", // required
-
-  format: null,
-
-  format_version: new Fastly.LoggingFormatVersion(),
-
-  name: "name_example",
-
-  placement: new Fastly.LoggingPlacement(),
-
-  response_condition: "response_condition_example",
-
-  region: "'US'",
-
-  token: "token_example",
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_newrelic_name: "logging_newrelic_name_example", // required
+  format: null,  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  region: "'US'",  token: "token_example",
 };
 
 apiInstance.updateLogNewrelic(options)

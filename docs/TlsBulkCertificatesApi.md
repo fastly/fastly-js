@@ -29,6 +29,7 @@ Destroy a certificate. This disables TLS for all domains listed as SAN entries.
 ```javascript
 const options = {
   certificate_id: "certificate_id_example", // required
+
 };
 
 apiInstance.deleteBulkTlsCert(options)
@@ -64,6 +65,7 @@ Retrieve a single certificate.
 ```javascript
 const options = {
   certificate_id: "certificate_id_example", // required
+
 };
 
 apiInstance.getTlsBulkCert(options)
@@ -99,13 +101,7 @@ List all certificates.
 ```javascript
 const options = {
 
-  filter_tls_domain_id_match: "filter_tls_domain_id_match_example",
-
-  page_number: 56,
-
-  page_size: 20,
-
-  sort: "'created_at'",
+  filter_tls_domain_id_match: "filter_tls_domain_id_match_example",  page_number: 56,  page_size: 20,  sort: "'created_at'",
 };
 
 apiInstance.listTlsBulkCerts(options)
@@ -144,7 +140,6 @@ Replace a certificate with a newly reissued certificate. By using this endpoint,
 ```javascript
 const options = {
   certificate_id: "certificate_id_example", // required
-
   tls_bulk_certificate: new Fastly.TlsBulkCertificate(),
 };
 

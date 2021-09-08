@@ -29,6 +29,7 @@ Delete a customer.
 ```javascript
 const options = {
   customer_id: "customer_id_example", // required
+
 };
 
 apiInstance.deleteCustomer(options)
@@ -64,6 +65,7 @@ Get a specific customer.
 ```javascript
 const options = {
   customer_id: "customer_id_example", // required
+
 };
 
 apiInstance.getCustomer(options)
@@ -128,6 +130,7 @@ List all users from a specified customer id.
 ```javascript
 const options = {
   customer_id: "customer_id_example", // required
+
 };
 
 apiInstance.listUsers(options)
@@ -163,54 +166,7 @@ Update a customer.
 ```javascript
 const options = {
   customer_id: "customer_id_example", // required
-
-  billing_contact_id: "billing_contact_id_example",
-
-  billing_network_type: "billing_network_type_example",
-
-  billing_ref: "billing_ref_example",
-
-  can_configure_wordpress: true,
-
-  can_reset_passwords: true,
-
-  can_upload_vcl: true,
-
-  force_2fa: true,
-
-  force_sso: true,
-
-  has_account_panel: true,
-
-  has_improved_events: true,
-
-  has_improved_ssl_config: true,
-
-  has_openstack_logging: true,
-
-  has_pci: true,
-
-  has_pci_passwords: true,
-
-  ip_whitelist: "ip_whitelist_example",
-
-  legal_contact_id: "legal_contact_id_example",
-
-  name: "name_example",
-
-  owner_id: "owner_id_example",
-
-  phone_number: "phone_number_example",
-
-  postal_address: "postal_address_example",
-
-  pricing_plan: "pricing_plan_example",
-
-  pricing_plan_id: "pricing_plan_id_example",
-
-  security_contact_id: "security_contact_id_example",
-
-  technical_contact_id: "technical_contact_id_example",
+  billing_contact_id: "billing_contact_id_example",  billing_network_type: "billing_network_type_example",  billing_ref: "billing_ref_example",  can_configure_wordpress: true,  can_reset_passwords: true,  can_upload_vcl: true,  force_2fa: true,  force_sso: true,  has_account_panel: true,  has_improved_events: true,  has_improved_ssl_config: true,  has_openstack_logging: true,  has_pci: true,  has_pci_passwords: true,  ip_whitelist: "ip_whitelist_example",  legal_contact_id: "legal_contact_id_example",  name: "name_example",  owner_id: "owner_id_example",  phone_number: "phone_number_example",  postal_address: "postal_address_example",  pricing_plan: "pricing_plan_example",  pricing_plan_id: "pricing_plan_id_example",  security_contact_id: "security_contact_id_example",  technical_contact_id: "technical_contact_id_example",
 };
 
 apiInstance.updateCustomer(options)

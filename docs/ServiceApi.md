@@ -32,13 +32,7 @@ Create a service.
 ```javascript
 const options = {
 
-  comment: "comment_example",
-
-  customer_id: "customer_id_example",
-
-  name: "name_example",
-
-  type: "type_example",
+  comment: "comment_example",  customer_id: "customer_id_example",  name: "name_example",  type: "type_example",
 };
 
 apiInstance.createService(options)
@@ -77,6 +71,7 @@ Delete a service.
 ```javascript
 const options = {
   service_id: "service_id_example", // required
+
 };
 
 apiInstance.deleteService(options)
@@ -112,6 +107,7 @@ Get a specific service by id.
 ```javascript
 const options = {
   service_id: "service_id_example", // required
+
 };
 
 apiInstance.getService(options)
@@ -147,6 +143,7 @@ List detailed information on a specified service.
 ```javascript
 const options = {
   service_id: "service_id_example", // required
+
 };
 
 apiInstance.getServiceDetail(options)
@@ -182,6 +179,7 @@ List the domains within a service.
 ```javascript
 const options = {
   service_id: "service_id_example", // required
+
 };
 
 apiInstance.listServiceDomains(options)
@@ -217,13 +215,7 @@ List services.
 ```javascript
 const options = {
 
-  page: 56,
-
-  per_page: 20,
-
-  sort: "'created'",
-
-  direction: ascend,
+  page: 56,  per_page: 20,  sort: "'created'",  direction: ascend,
 };
 
 apiInstance.listServices(options)
@@ -262,6 +254,7 @@ Get a specific service by name.
 ```javascript
 const options = {
   name: "name_example", // required
+
 };
 
 apiInstance.searchService(options)
@@ -297,12 +290,7 @@ Update a service.
 ```javascript
 const options = {
   service_id: "service_id_example", // required
-
-  comment: "comment_example",
-
-  customer_id: "customer_id_example",
-
-  name: "name_example",
+  comment: "comment_example",  customer_id: "customer_id_example",  name: "name_example",
 };
 
 apiInstance.updateService(options)

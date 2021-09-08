@@ -28,22 +28,8 @@ Create a Papertrail for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
-
-  format_version: new Fastly.LoggingFormatVersion(),
-
-  name: "name_example",
-
-  placement: new Fastly.LoggingPlacement(),
-
-  response_condition: "response_condition_example",
-
-  address: "address_example",
-
-  port: 514,
+  service_id: "service_id_example", // required  version_id: 56, // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  address: "address_example",  port: 514,
 };
 
 apiInstance.createLogPapertrail(options)
@@ -86,9 +72,8 @@ Delete the Papertrail for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-  logging_papertrail_name: "logging_papertrail_name_example", // required
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_papertrail_name: "logging_papertrail_name_example", // required
+
 };
 
 apiInstance.deleteLogPapertrail(options)
@@ -125,9 +110,8 @@ Get the Papertrail for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-  logging_papertrail_name: "logging_papertrail_name_example", // required
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_papertrail_name: "logging_papertrail_name_example", // required
+
 };
 
 apiInstance.getLogPapertrail(options)
@@ -164,8 +148,8 @@ List all of the Papertrails for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
+  service_id: "service_id_example", // required  version_id: 56, // required
+
 };
 
 apiInstance.listLogPapertrail(options)
@@ -201,23 +185,8 @@ Update the Papertrail for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-  logging_papertrail_name: "logging_papertrail_name_example", // required
-
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
-
-  format_version: new Fastly.LoggingFormatVersion(),
-
-  name: "name_example",
-
-  placement: new Fastly.LoggingPlacement(),
-
-  response_condition: "response_condition_example",
-
-  address: "address_example",
-
-  port: 514,
+  service_id: "service_id_example", // required  version_id: 56, // required  logging_papertrail_name: "logging_papertrail_name_example", // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  address: "address_example",  port: 514,
 };
 
 apiInstance.updateLogPapertrail(options)

@@ -29,9 +29,7 @@ Create a new TLS subscription. This response includes a list of possible challen
 ```javascript
 const options = {
 
-  force: true,
-
-  tls_subscription: new Fastly.TlsSubscription(),
+  force: true,  tls_subscription: new Fastly.TlsSubscription(),
 };
 
 apiInstance.createTlsSub(options)
@@ -68,6 +66,7 @@ Destroy a TLS subscription. A subscription cannot be destroyed if there are doma
 ```javascript
 const options = {
   tls_subscription_id: "tls_subscription_id_example", // required
+
 };
 
 apiInstance.deleteTlsSub(options)
@@ -103,7 +102,6 @@ Show a TLS subscription.
 ```javascript
 const options = {
   tls_subscription_id: "tls_subscription_id_example", // required
-
   include: tls_authorizations,
 };
 
@@ -141,17 +139,7 @@ List all TLS subscriptions.
 ```javascript
 const options = {
 
-  filter_state: "filter_state_example",
-
-  filter_tls_domains_id: "filter_tls_domains_id_example",
-
-  include: tls_authorizations,
-
-  page_number: 56,
-
-  page_size: 20,
-
-  sort: "'created_at'",
+  filter_state: "filter_state_example",  filter_tls_domains_id: "filter_tls_domains_id_example",  include: tls_authorizations,  page_number: 56,  page_size: 20,  sort: "'created_at'",
 };
 
 apiInstance.listTlsSubs(options)
@@ -192,10 +180,7 @@ Change the TLS domains or common name associated with this subscription, or upda
 ```javascript
 const options = {
   tls_subscription_id: "tls_subscription_id_example", // required
-
-  force: true,
-
-  tls_subscription: new Fastly.TlsSubscription(),
+  force: true,  tls_subscription: new Fastly.TlsSubscription(),
 };
 
 apiInstance.patchTlsSub(options)

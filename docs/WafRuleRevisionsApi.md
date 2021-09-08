@@ -25,9 +25,7 @@ Get a specific rule revision.
 
 ```javascript
 const options = {
-  waf_rule_id: "waf_rule_id_example", // required
-  waf_rule_revision_number: 56, // required
-
+  waf_rule_id: "waf_rule_id_example", // required  waf_rule_revision_number: 56, // required
   include: source,vcl,waf_rule,
 };
 
@@ -66,12 +64,7 @@ List all revisions for a specific rule. The `rule_id` provided can be the ModSec
 ```javascript
 const options = {
   waf_rule_id: "waf_rule_id_example", // required
-
-  page_number: 56,
-
-  page_size: 20,
-
-  include: waf_rule,
+  page_number: 56,  page_size: 20,  include: waf_rule,
 };
 
 apiInstance.listWafRuleRevisions(options)

@@ -15,13 +15,13 @@ import ApiClient from '../ApiClient';
 import BackendResponse from './BackendResponse';
 import CacheSettingResponse from './CacheSettingResponse';
 import ConditionResponse from './ConditionResponse';
-import Director from './Director';
 import DomainResponse from './DomainResponse';
 import GzipResponse from './GzipResponse';
 import HeaderResponse from './HeaderResponse';
 import HealthcheckResponse from './HealthcheckResponse';
-import ResponseObjectResponse from './ResponseObjectResponse';
+import SchemasDirector from './SchemasDirector';
 import SchemasRequestSettingsResponse from './SchemasRequestSettingsResponse';
+import SchemasResponseObjectResponse from './SchemasResponseObjectResponse';
 import SchemasSnippetResponse from './SchemasSnippetResponse';
 import SchemasVclResponse from './SchemasVclResponse';
 import SchemasVersionResponse from './SchemasVersionResponse';
@@ -109,7 +109,7 @@ class NestedVersion {
                 obj['conditions'] = ApiClient.convertToType(data['conditions'], [ConditionResponse]);
             }
             if (data.hasOwnProperty('directors')) {
-                obj['directors'] = ApiClient.convertToType(data['directors'], [Director]);
+                obj['directors'] = ApiClient.convertToType(data['directors'], [SchemasDirector]);
             }
             if (data.hasOwnProperty('domains')) {
                 obj['domains'] = ApiClient.convertToType(data['domains'], [DomainResponse]);
@@ -127,7 +127,7 @@ class NestedVersion {
                 obj['request_settings'] = ApiClient.convertToType(data['request_settings'], [SchemasRequestSettingsResponse]);
             }
             if (data.hasOwnProperty('response_objects')) {
-                obj['response_objects'] = ApiClient.convertToType(data['response_objects'], [ResponseObjectResponse]);
+                obj['response_objects'] = ApiClient.convertToType(data['response_objects'], [SchemasResponseObjectResponse]);
             }
             if (data.hasOwnProperty('settings')) {
                 obj['settings'] = ApiClient.convertToType(data['settings'], Settings);
@@ -238,7 +238,7 @@ NestedVersion.prototype['conditions'] = undefined;
 
 /**
  * List of directors associated to this service.
- * @member {Array.<module:model/Director>} directors
+ * @member {Array.<module:model/SchemasDirector>} directors
  */
 NestedVersion.prototype['directors'] = undefined;
 
@@ -274,7 +274,7 @@ NestedVersion.prototype['request_settings'] = undefined;
 
 /**
  * List of response objects for this service.
- * @member {Array.<module:model/ResponseObjectResponse>} response_objects
+ * @member {Array.<module:model/SchemasResponseObjectResponse>} response_objects
  */
 NestedVersion.prototype['response_objects'] = undefined;
 
@@ -380,7 +380,7 @@ VersionDetail.prototype['cache_settings'] = undefined;
 VersionDetail.prototype['conditions'] = undefined;
 /**
  * List of directors associated to this service.
- * @member {Array.<module:model/Director>} directors
+ * @member {Array.<module:model/SchemasDirector>} directors
  */
 VersionDetail.prototype['directors'] = undefined;
 /**
@@ -410,7 +410,7 @@ VersionDetail.prototype['healthchecks'] = undefined;
 VersionDetail.prototype['request_settings'] = undefined;
 /**
  * List of response objects for this service.
- * @member {Array.<module:model/ResponseObjectResponse>} response_objects
+ * @member {Array.<module:model/SchemasResponseObjectResponse>} response_objects
  */
 VersionDetail.prototype['response_objects'] = undefined;
 /**

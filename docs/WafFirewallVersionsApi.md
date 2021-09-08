@@ -29,8 +29,8 @@ Clone a specific, existing firewall version into a new, draft firewall version.
 
 ```javascript
 const options = {
-  firewall_id: "firewall_id_example", // required
-  firewall_version_number: 56, // required
+  firewall_id: "firewall_id_example", // required  firewall_version_number: 56, // required
+
 };
 
 apiInstance.cloneWafFirewallVersion(options)
@@ -67,7 +67,6 @@ Create a new, draft firewall version.
 ```javascript
 const options = {
   firewall_id: "firewall_id_example", // required
-
   waf_firewall_version: new Fastly.WafFirewallVersion(),
 };
 
@@ -104,8 +103,8 @@ Deploy or activate a specific firewall version. If a firewall has been disabled,
 
 ```javascript
 const options = {
-  firewall_id: "firewall_id_example", // required
-  firewall_version_number: 56, // required
+  firewall_id: "firewall_id_example", // required  firewall_version_number: 56, // required
+
 };
 
 apiInstance.deployActivateWafFirewallVersion(options)
@@ -141,9 +140,7 @@ Get details about a specific firewall version.
 
 ```javascript
 const options = {
-  firewall_id: "firewall_id_example", // required
-  firewall_version_number: 56, // required
-
+  firewall_id: "firewall_id_example", // required  firewall_version_number: 56, // required
   include: waf_firewall,waf_active_rules,
 };
 
@@ -182,12 +179,7 @@ Get a list of firewall versions associated with a specific firewall.
 ```javascript
 const options = {
   firewall_id: "firewall_id_example", // required
-
-  include: waf_firewall,
-
-  page_number: 56,
-
-  page_size: 20,
+  include: waf_firewall,  page_number: 56,  page_size: 20,
 };
 
 apiInstance.listWafFirewallVersions(options)
@@ -225,9 +217,7 @@ Update a specific firewall version.
 
 ```javascript
 const options = {
-  firewall_id: "firewall_id_example", // required
-  firewall_version_number: 56, // required
-
+  firewall_id: "firewall_id_example", // required  firewall_version_number: 56, // required
   waf_firewall_version: new Fastly.WafFirewallVersion(),
 };
 
