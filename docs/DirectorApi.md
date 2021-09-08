@@ -29,7 +29,7 @@ Create a director for a particular service and version.
 ```javascript
 const options = {
   service_id: "service_id_example", // required  version_id: 56, // required
-  backends: new Fastly.Backend(),
+  backends: new Fastly.SchemasBackend(),
 
   capacity: 56,
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
-**backends** | [**[Backend]**](../Model/Backend.md) | List of backends associated to a director. | [optional]
+**backends** | [**[SchemasBackend]**](../Model/SchemasBackend.md) | List of backends associated to a director. | [optional]
 **capacity** | **Number** | Unused. | [optional]
 **comment** | **String** | A freeform descriptive note. | [optional]
 **name** | **String** | Name for the Director. | [optional]

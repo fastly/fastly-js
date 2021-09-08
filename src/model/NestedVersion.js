@@ -15,18 +15,18 @@ import ApiClient from '../ApiClient';
 import BackendResponse from './BackendResponse';
 import CacheSettingResponse from './CacheSettingResponse';
 import ConditionResponse from './ConditionResponse';
-import Director from './Director';
 import DomainResponse from './DomainResponse';
 import GzipResponse from './GzipResponse';
 import HeaderResponse from './HeaderResponse';
 import HealthcheckResponse from './HealthcheckResponse';
 import ResponseObjectResponse from './ResponseObjectResponse';
+import SchemasDirector from './SchemasDirector';
 import SchemasRequestSettingsResponse from './SchemasRequestSettingsResponse';
+import SchemasSnippetResponse from './SchemasSnippetResponse';
+import SchemasVclResponse from './SchemasVclResponse';
+import SchemasVersionResponse from './SchemasVersionResponse';
 import Settings from './Settings';
-import SnippetResponse from './SnippetResponse';
-import VclResponse from './VclResponse';
 import VersionDetail from './VersionDetail';
-import VersionResponse from './VersionResponse';
 
 /**
  * The NestedVersion model module.
@@ -37,11 +37,11 @@ class NestedVersion {
     /**
      * Constructs a new <code>NestedVersion</code>.
      * @alias module:model/NestedVersion
-     * @implements module:model/VersionResponse
+     * @implements module:model/SchemasVersionResponse
      * @implements module:model/VersionDetail
      */
     constructor() { 
-        VersionResponse.initialize(this);VersionDetail.initialize(this);
+        SchemasVersionResponse.initialize(this);VersionDetail.initialize(this);
         NestedVersion.initialize(this);
     }
 
@@ -63,7 +63,7 @@ class NestedVersion {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new NestedVersion();
-            VersionResponse.constructFromObject(data, obj);
+            SchemasVersionResponse.constructFromObject(data, obj);
             VersionDetail.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('active')) {
@@ -109,7 +109,7 @@ class NestedVersion {
                 obj['conditions'] = ApiClient.convertToType(data['conditions'], [ConditionResponse]);
             }
             if (data.hasOwnProperty('directors')) {
-                obj['directors'] = ApiClient.convertToType(data['directors'], [Director]);
+                obj['directors'] = ApiClient.convertToType(data['directors'], [SchemasDirector]);
             }
             if (data.hasOwnProperty('domains')) {
                 obj['domains'] = ApiClient.convertToType(data['domains'], [DomainResponse]);
@@ -133,10 +133,10 @@ class NestedVersion {
                 obj['settings'] = ApiClient.convertToType(data['settings'], Settings);
             }
             if (data.hasOwnProperty('snippets')) {
-                obj['snippets'] = ApiClient.convertToType(data['snippets'], [SnippetResponse]);
+                obj['snippets'] = ApiClient.convertToType(data['snippets'], [SchemasSnippetResponse]);
             }
             if (data.hasOwnProperty('vcls')) {
-                obj['vcls'] = ApiClient.convertToType(data['vcls'], [VclResponse]);
+                obj['vcls'] = ApiClient.convertToType(data['vcls'], [SchemasVclResponse]);
             }
             if (data.hasOwnProperty('wordpress')) {
                 obj['wordpress'] = ApiClient.convertToType(data['wordpress'], [Object]);
@@ -238,7 +238,7 @@ NestedVersion.prototype['conditions'] = undefined;
 
 /**
  * List of directors associated to this service.
- * @member {Array.<module:model/Director>} directors
+ * @member {Array.<module:model/SchemasDirector>} directors
  */
 NestedVersion.prototype['directors'] = undefined;
 
@@ -285,13 +285,13 @@ NestedVersion.prototype['settings'] = undefined;
 
 /**
  * List of VCL snippets for this service.
- * @member {Array.<module:model/SnippetResponse>} snippets
+ * @member {Array.<module:model/SchemasSnippetResponse>} snippets
  */
 NestedVersion.prototype['snippets'] = undefined;
 
 /**
  * List of VCL files for this service.
- * @member {Array.<module:model/VclResponse>} vcls
+ * @member {Array.<module:model/SchemasVclResponse>} vcls
  */
 NestedVersion.prototype['vcls'] = undefined;
 
@@ -302,66 +302,66 @@ NestedVersion.prototype['vcls'] = undefined;
 NestedVersion.prototype['wordpress'] = undefined;
 
 
-// Implement VersionResponse interface:
+// Implement SchemasVersionResponse interface:
 /**
  * Whether this is the active version or not.
  * @member {Boolean} active
  * @default false
  */
-VersionResponse.prototype['active'] = false;
+SchemasVersionResponse.prototype['active'] = false;
 /**
  * A freeform descriptive note.
  * @member {String} comment
  */
-VersionResponse.prototype['comment'] = undefined;
+SchemasVersionResponse.prototype['comment'] = undefined;
 /**
  * Unused at this time.
  * @member {Boolean} deployed
  */
-VersionResponse.prototype['deployed'] = undefined;
+SchemasVersionResponse.prototype['deployed'] = undefined;
 /**
  * Whether this version is locked or not. Objects can not be added or edited on locked versions.
  * @member {Boolean} locked
  * @default false
  */
-VersionResponse.prototype['locked'] = false;
+SchemasVersionResponse.prototype['locked'] = false;
 /**
  * The number of this version.
  * @member {Number} number
  */
-VersionResponse.prototype['number'] = undefined;
+SchemasVersionResponse.prototype['number'] = undefined;
 /**
  * Unused at this time.
  * @member {Boolean} staging
  * @default false
  */
-VersionResponse.prototype['staging'] = false;
+SchemasVersionResponse.prototype['staging'] = false;
 /**
  * Unused at this time.
  * @member {Boolean} testing
  * @default false
  */
-VersionResponse.prototype['testing'] = false;
+SchemasVersionResponse.prototype['testing'] = false;
 /**
  * Date and time in ISO 8601 format.
  * @member {String} created_at
  */
-VersionResponse.prototype['created_at'] = undefined;
+SchemasVersionResponse.prototype['created_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
  * @member {String} deleted_at
  */
-VersionResponse.prototype['deleted_at'] = undefined;
+SchemasVersionResponse.prototype['deleted_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
  * @member {String} updated_at
  */
-VersionResponse.prototype['updated_at'] = undefined;
+SchemasVersionResponse.prototype['updated_at'] = undefined;
 /**
  * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
-VersionResponse.prototype['service_id'] = undefined;
+SchemasVersionResponse.prototype['service_id'] = undefined;
 // Implement VersionDetail interface:
 /**
  * List of backends associated to this service.
@@ -380,7 +380,7 @@ VersionDetail.prototype['cache_settings'] = undefined;
 VersionDetail.prototype['conditions'] = undefined;
 /**
  * List of directors associated to this service.
- * @member {Array.<module:model/Director>} directors
+ * @member {Array.<module:model/SchemasDirector>} directors
  */
 VersionDetail.prototype['directors'] = undefined;
 /**
@@ -419,12 +419,12 @@ VersionDetail.prototype['response_objects'] = undefined;
 VersionDetail.prototype['settings'] = undefined;
 /**
  * List of VCL snippets for this service.
- * @member {Array.<module:model/SnippetResponse>} snippets
+ * @member {Array.<module:model/SchemasSnippetResponse>} snippets
  */
 VersionDetail.prototype['snippets'] = undefined;
 /**
  * List of VCL files for this service.
- * @member {Array.<module:model/VclResponse>} vcls
+ * @member {Array.<module:model/SchemasVclResponse>} vcls
  */
 VersionDetail.prototype['vcls'] = undefined;
 /**

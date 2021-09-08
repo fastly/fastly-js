@@ -12,9 +12,9 @@
  */
 
 import ApiClient from '../ApiClient';
+import SchemasVersionResponseAllOf from './SchemasVersionResponseAllOf';
 import Timestamps from './Timestamps';
 import Version from './Version';
-import VersionResponseAllOf from './VersionResponseAllOf';
 
 /**
  * The VersionResponse model module.
@@ -27,10 +27,10 @@ class VersionResponse {
      * @alias module:model/VersionResponse
      * @implements module:model/Version
      * @implements module:model/Timestamps
-     * @implements module:model/VersionResponseAllOf
+     * @implements module:model/SchemasVersionResponseAllOf
      */
     constructor() { 
-        Version.initialize(this);Timestamps.initialize(this);VersionResponseAllOf.initialize(this);
+        Version.initialize(this);Timestamps.initialize(this);SchemasVersionResponseAllOf.initialize(this);
         VersionResponse.initialize(this);
     }
 
@@ -54,7 +54,7 @@ class VersionResponse {
             obj = obj || new VersionResponse();
             Version.constructFromObject(data, obj);
             Timestamps.constructFromObject(data, obj);
-            VersionResponseAllOf.constructFromObject(data, obj);
+            SchemasVersionResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('active')) {
                 obj['active'] = ApiClient.convertToType(data['active'], 'Boolean');
@@ -223,12 +223,12 @@ Timestamps.prototype['deleted_at'] = undefined;
  * @member {String} updated_at
  */
 Timestamps.prototype['updated_at'] = undefined;
-// Implement VersionResponseAllOf interface:
+// Implement SchemasVersionResponseAllOf interface:
 /**
  * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
-VersionResponseAllOf.prototype['service_id'] = undefined;
+SchemasVersionResponseAllOf.prototype['service_id'] = undefined;
 
 
 

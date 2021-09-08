@@ -129,7 +129,7 @@ SchemasDirector.prototype['shield'] = 'null';
  * @member {module:model/SchemasDirector.TypeEnum} type
  * @default TypeEnum.random
  */
-SchemasDirector.prototype['type'] = TypeEnum.random;
+SchemasDirector.prototype['type'] = undefined;
 
 
 

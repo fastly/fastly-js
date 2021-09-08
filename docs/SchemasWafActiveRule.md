@@ -1,4 +1,4 @@
-# Fastly.WafActiveRule
+# Fastly.SchemasWafActiveRule
 
 ## Properties
 

@@ -15,16 +15,16 @@ import ApiClient from '../ApiClient';
 import BackendResponse from './BackendResponse';
 import CacheSettingResponse from './CacheSettingResponse';
 import ConditionResponse from './ConditionResponse';
-import Director from './Director';
 import DomainResponse from './DomainResponse';
 import GzipResponse from './GzipResponse';
 import HeaderResponse from './HeaderResponse';
 import HealthcheckResponse from './HealthcheckResponse';
 import ResponseObjectResponse from './ResponseObjectResponse';
+import SchemasDirector from './SchemasDirector';
 import SchemasRequestSettingsResponse from './SchemasRequestSettingsResponse';
+import SchemasSnippetResponse from './SchemasSnippetResponse';
+import SchemasVclResponse from './SchemasVclResponse';
 import Settings from './Settings';
-import SnippetResponse from './SnippetResponse';
-import VclResponse from './VclResponse';
 
 /**
  * The VersionDetail model module.
@@ -70,7 +70,7 @@ class VersionDetail {
                 obj['conditions'] = ApiClient.convertToType(data['conditions'], [ConditionResponse]);
             }
             if (data.hasOwnProperty('directors')) {
-                obj['directors'] = ApiClient.convertToType(data['directors'], [Director]);
+                obj['directors'] = ApiClient.convertToType(data['directors'], [SchemasDirector]);
             }
             if (data.hasOwnProperty('domains')) {
                 obj['domains'] = ApiClient.convertToType(data['domains'], [DomainResponse]);
@@ -94,10 +94,10 @@ class VersionDetail {
                 obj['settings'] = ApiClient.convertToType(data['settings'], Settings);
             }
             if (data.hasOwnProperty('snippets')) {
-                obj['snippets'] = ApiClient.convertToType(data['snippets'], [SnippetResponse]);
+                obj['snippets'] = ApiClient.convertToType(data['snippets'], [SchemasSnippetResponse]);
             }
             if (data.hasOwnProperty('vcls')) {
-                obj['vcls'] = ApiClient.convertToType(data['vcls'], [VclResponse]);
+                obj['vcls'] = ApiClient.convertToType(data['vcls'], [SchemasVclResponse]);
             }
             if (data.hasOwnProperty('wordpress')) {
                 obj['wordpress'] = ApiClient.convertToType(data['wordpress'], [Object]);
@@ -129,7 +129,7 @@ VersionDetail.prototype['conditions'] = undefined;
 
 /**
  * List of directors associated to this service.
- * @member {Array.<module:model/Director>} directors
+ * @member {Array.<module:model/SchemasDirector>} directors
  */
 VersionDetail.prototype['directors'] = undefined;
 
@@ -176,13 +176,13 @@ VersionDetail.prototype['settings'] = undefined;
 
 /**
  * List of VCL snippets for this service.
- * @member {Array.<module:model/SnippetResponse>} snippets
+ * @member {Array.<module:model/SchemasSnippetResponse>} snippets
  */
 VersionDetail.prototype['snippets'] = undefined;
 
 /**
  * List of VCL files for this service.
- * @member {Array.<module:model/VclResponse>} vcls
+ * @member {Array.<module:model/SchemasVclResponse>} vcls
  */
 VersionDetail.prototype['vcls'] = undefined;
 

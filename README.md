@@ -50,7 +50,7 @@ Fastly.instance.authenticate("YOUR_API_TOKEN");
 The main documentation for the Fastly API can be found on our [Developer Hub](https://developer.fastly.com/reference/api).
 
 Class | Method | Description
------------- | ------------- | ------------- | -------------
+--- | --- | ---
 *Fastly.AclApi* | [**createAcl**](docs/AclApi.md#createAcl) | Create a new ACL
 *Fastly.AclApi* | [**deleteAcl**](docs/AclApi.md#deleteAcl) | Delete an ACL
 *Fastly.AclApi* | [**getAcl**](docs/AclApi.md#getAcl) | Describe an ACL

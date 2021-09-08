@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import AnyOfwafFirewallVersionwafActiveRule from './AnyOfwafFirewallVersionwafActiveRule';
+import AnyOfwafFirewallVersionschemasWafActiveRule from './AnyOfwafFirewallVersionschemasWafActiveRule';
 import Data from './Data';
 import Pagination from './Pagination';
 import PaginationLinks from './PaginationLinks';
@@ -67,7 +67,7 @@ class WafFirewallVersionsResponse {
                 obj['data'] = ApiClient.convertToType(data['data'], [Data]);
             }
             if (data.hasOwnProperty('included')) {
-                obj['included'] = ApiClient.convertToType(data['included'], [AnyOfwafFirewallVersionwafActiveRule]);
+                obj['included'] = ApiClient.convertToType(data['included'], [AnyOfwafFirewallVersionschemasWafActiveRule]);
             }
         }
         return obj;
@@ -92,7 +92,7 @@ WafFirewallVersionsResponse.prototype['meta'] = undefined;
 WafFirewallVersionsResponse.prototype['data'] = undefined;
 
 /**
- * @member {Array.<module:model/AnyOfwafFirewallVersionwafActiveRule>} included
+ * @member {Array.<module:model/AnyOfwafFirewallVersionschemasWafActiveRule>} included
  */
 WafFirewallVersionsResponse.prototype['included'] = undefined;
 
@@ -112,7 +112,7 @@ Pagination.prototype['meta'] = undefined;
  */
 WafFirewallVersionsResponseAllOf.prototype['data'] = undefined;
 /**
- * @member {Array.<module:model/AnyOfwafFirewallVersionwafActiveRule>} included
+ * @member {Array.<module:model/AnyOfwafFirewallVersionschemasWafActiveRule>} included
  */
 WafFirewallVersionsResponseAllOf.prototype['included'] = undefined;
 
