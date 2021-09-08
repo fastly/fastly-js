@@ -156,7 +156,7 @@ Pool.prototype['tls_client_key'] = 'null';
  * @member {module:model/Pool.UseTlsEnum} use_tls
  * @default UseTlsEnum.no_tls
  */
-Pool.prototype['use_tls'] = UseTlsEnum.no_tls;
+Pool.prototype['use_tls'] = undefined;
 
 /**
  * A freeform descriptive note.
@@ -288,7 +288,7 @@ TlsCommon.prototype['tls_client_key'] = 'null';
  * @member {module:model/TlsCommon.UseTlsEnum} use_tls
  * @default UseTlsEnum.no_tls
  */
-TlsCommon.prototype['use_tls'] = UseTlsEnum.no_tls;
+TlsCommon.prototype['use_tls'] = undefined;
 // Implement PoolAllOf interface:
 /**
  * A freeform descriptive note.

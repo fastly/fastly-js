@@ -116,7 +116,7 @@ LoggingNewrelic.prototype['response_condition'] = undefined;
  * @member {module:model/LoggingNewrelic.RegionEnum} region
  * @default 'US'
  */
-LoggingNewrelic.prototype['region'] = 'US';
+LoggingNewrelic.prototype['region'] = undefined;
 
 /**
  * The Insert API key from the Account page of your New Relic account. Required.
@@ -161,7 +161,7 @@ LoggingNewrelicAllOf.prototype['format'] = undefined;
  * @member {module:model/LoggingNewrelicAllOf.RegionEnum} region
  * @default 'US'
  */
-LoggingNewrelicAllOf.prototype['region'] = 'US';
+LoggingNewrelicAllOf.prototype['region'] = undefined;
 /**
  * The Insert API key from the Account page of your New Relic account. Required.
  * @member {String} token

@@ -110,7 +110,7 @@ TokenCreatedResponse.prototype['name'] = undefined;
  * @member {module:model/TokenCreatedResponse.ScopeEnum} scope
  * @default 'global'
  */
-TokenCreatedResponse.prototype['scope'] = 'global';
+TokenCreatedResponse.prototype['scope'] = undefined;
 
 /**
  * List of alphanumeric strings identifying services (optional). If no services are specified, the token will have access to all services on the account. 
@@ -190,7 +190,7 @@ TokenResponse.prototype['name'] = undefined;
  * @member {module:model/TokenResponse.ScopeEnum} scope
  * @default 'global'
  */
-TokenResponse.prototype['scope'] = 'global';
+TokenResponse.prototype['scope'] = undefined;
 /**
  * List of alphanumeric strings identifying services (optional). If no services are specified, the token will have access to all services on the account. 
  * @member {Array.<String>} services

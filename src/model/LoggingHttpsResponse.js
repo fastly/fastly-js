@@ -243,7 +243,7 @@ LoggingHttpsResponse.prototype['message_type'] = undefined;
  * @member {module:model/LoggingHttpsResponse.MethodEnum} method
  * @default 'POST'
  */
-LoggingHttpsResponse.prototype['method'] = 'POST';
+LoggingHttpsResponse.prototype['method'] = undefined;
 
 /**
  * The URL to send logs to. Must use HTTPS. Required.
@@ -375,7 +375,7 @@ LoggingHttps.prototype['message_type'] = undefined;
  * @member {module:model/LoggingHttps.MethodEnum} method
  * @default 'POST'
  */
-LoggingHttps.prototype['method'] = 'POST';
+LoggingHttps.prototype['method'] = undefined;
 /**
  * The URL to send logs to. Must use HTTPS. Required.
  * @member {String} url

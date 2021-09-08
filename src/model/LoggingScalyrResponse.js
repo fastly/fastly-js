@@ -145,7 +145,7 @@ LoggingScalyrResponse.prototype['project_id'] = 'logplex';
  * @member {module:model/LoggingScalyrResponse.RegionEnum} region
  * @default 'US'
  */
-LoggingScalyrResponse.prototype['region'] = 'US';
+LoggingScalyrResponse.prototype['region'] = undefined;
 
 /**
  * The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)).
@@ -220,7 +220,7 @@ LoggingScalyr.prototype['project_id'] = 'logplex';
  * @member {module:model/LoggingScalyr.RegionEnum} region
  * @default 'US'
  */
-LoggingScalyr.prototype['region'] = 'US';
+LoggingScalyr.prototype['region'] = undefined;
 /**
  * The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)).
  * @member {String} token

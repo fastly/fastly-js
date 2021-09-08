@@ -75,7 +75,7 @@ LoggingScalyrAllOf.prototype['project_id'] = 'logplex';
  * @member {module:model/LoggingScalyrAllOf.RegionEnum} region
  * @default 'US'
  */
-LoggingScalyrAllOf.prototype['region'] = 'US';
+LoggingScalyrAllOf.prototype['region'] = undefined;
 
 /**
  * The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)).

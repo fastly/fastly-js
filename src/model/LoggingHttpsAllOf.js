@@ -129,7 +129,7 @@ LoggingHttpsAllOf.prototype['message_type'] = undefined;
  * @member {module:model/LoggingHttpsAllOf.MethodEnum} method
  * @default 'POST'
  */
-LoggingHttpsAllOf.prototype['method'] = 'POST';
+LoggingHttpsAllOf.prototype['method'] = undefined;
 
 /**
  * The maximum number of bytes sent in one request. Defaults `0` (no limit).

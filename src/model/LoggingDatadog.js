@@ -116,7 +116,7 @@ LoggingDatadog.prototype['response_condition'] = undefined;
  * @member {module:model/LoggingDatadog.RegionEnum} region
  * @default 'US'
  */
-LoggingDatadog.prototype['region'] = 'US';
+LoggingDatadog.prototype['region'] = undefined;
 
 /**
  * The API key from your Datadog account. Required.
@@ -161,7 +161,7 @@ LoggingDatadogAllOf.prototype['format'] = undefined;
  * @member {module:model/LoggingDatadogAllOf.RegionEnum} region
  * @default 'US'
  */
-LoggingDatadogAllOf.prototype['region'] = 'US';
+LoggingDatadogAllOf.prototype['region'] = undefined;
 /**
  * The API key from your Datadog account. Required.
  * @member {String} token

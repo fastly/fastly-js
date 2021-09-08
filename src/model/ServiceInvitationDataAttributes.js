@@ -62,7 +62,7 @@ class ServiceInvitationDataAttributes {
  * @member {module:model/ServiceInvitationDataAttributes.PermissionEnum} permission
  * @default 'full'
  */
-ServiceInvitationDataAttributes.prototype['permission'] = 'full';
+ServiceInvitationDataAttributes.prototype['permission'] = undefined;
 
 
 

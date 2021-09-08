@@ -289,8 +289,8 @@ import ResponseObject from './model/ResponseObject';
 import ResponseObjectResponse from './model/ResponseObjectResponse';
 import Results from './model/Results';
 import RoleUser from './model/RoleUser';
-import SchemasBackend from './model/SchemasBackend';
-import SchemasDirector from './model/SchemasDirector';
+import SchemasRequestSettings from './model/SchemasRequestSettings';
+import SchemasRequestSettingsResponse from './model/SchemasRequestSettingsResponse';
 import SchemasUserResponse from './model/SchemasUserResponse';
 import SchemasUserResponseAllOf from './model/SchemasUserResponseAllOf';
 import SchemasWafFirewallVersion from './model/SchemasWafFirewallVersion';
@@ -2225,16 +2225,16 @@ export {
     RoleUser,
 
     /**
-     * The SchemasBackend model constructor.
-     * @property {module:model/SchemasBackend}
+     * The SchemasRequestSettings model constructor.
+     * @property {module:model/SchemasRequestSettings}
      */
-    SchemasBackend,
+    SchemasRequestSettings,
 
     /**
-     * The SchemasDirector model constructor.
-     * @property {module:model/SchemasDirector}
+     * The SchemasRequestSettingsResponse model constructor.
+     * @property {module:model/SchemasRequestSettingsResponse}
      */
-    SchemasDirector,
+    SchemasRequestSettingsResponse,
 
     /**
      * The SchemasUserResponse model constructor.

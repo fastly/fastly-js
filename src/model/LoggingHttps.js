@@ -231,7 +231,7 @@ LoggingHttps.prototype['message_type'] = undefined;
  * @member {module:model/LoggingHttps.MethodEnum} method
  * @default 'POST'
  */
-LoggingHttps.prototype['method'] = 'POST';
+LoggingHttps.prototype['method'] = undefined;
 
 /**
  * The URL to send logs to. Must use HTTPS. Required.
@@ -342,7 +342,7 @@ LoggingHttpsAllOf.prototype['message_type'] = undefined;
  * @member {module:model/LoggingHttpsAllOf.MethodEnum} method
  * @default 'POST'
  */
-LoggingHttpsAllOf.prototype['method'] = 'POST';
+LoggingHttpsAllOf.prototype['method'] = undefined;
 /**
  * The maximum number of bytes sent in one request. Defaults `0` (no limit).
  * @member {Number} request_max_bytes

@@ -74,7 +74,7 @@ LoggingDatadogAllOf.prototype['format'] = undefined;
  * @member {module:model/LoggingDatadogAllOf.RegionEnum} region
  * @default 'US'
  */
-LoggingDatadogAllOf.prototype['region'] = 'US';
+LoggingDatadogAllOf.prototype['region'] = undefined;
 
 /**
  * The API key from your Datadog account. Required.

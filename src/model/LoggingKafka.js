@@ -222,7 +222,7 @@ LoggingKafka.prototype['request_max_bytes'] = 0;
  * @member {module:model/LoggingKafka.RequiredAcksEnum} required_acks
  * @default RequiredAcksEnum.one
  */
-LoggingKafka.prototype['required_acks'] = RequiredAcksEnum.one;
+LoggingKafka.prototype['required_acks'] = undefined;
 
 /**
  * The Kafka topic to send logs to. Required.
@@ -329,7 +329,7 @@ LoggingKafkaAllOf.prototype['request_max_bytes'] = 0;
  * @member {module:model/LoggingKafkaAllOf.RequiredAcksEnum} required_acks
  * @default RequiredAcksEnum.one
  */
-LoggingKafkaAllOf.prototype['required_acks'] = RequiredAcksEnum.one;
+LoggingKafkaAllOf.prototype['required_acks'] = undefined;
 /**
  * The Kafka topic to send logs to. Required.
  * @member {String} topic

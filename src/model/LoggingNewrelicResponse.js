@@ -134,7 +134,7 @@ LoggingNewrelicResponse.prototype['response_condition'] = undefined;
  * @member {module:model/LoggingNewrelicResponse.RegionEnum} region
  * @default 'US'
  */
-LoggingNewrelicResponse.prototype['region'] = 'US';
+LoggingNewrelicResponse.prototype['region'] = undefined;
 
 /**
  * The Insert API key from the Account page of your New Relic account. Required.
@@ -202,7 +202,7 @@ LoggingNewrelic.prototype['response_condition'] = undefined;
  * @member {module:model/LoggingNewrelic.RegionEnum} region
  * @default 'US'
  */
-LoggingNewrelic.prototype['region'] = 'US';
+LoggingNewrelic.prototype['region'] = undefined;
 /**
  * The Insert API key from the Account page of your New Relic account. Required.
  * @member {String} token

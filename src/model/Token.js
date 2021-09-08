@@ -74,7 +74,7 @@ Token.prototype['name'] = undefined;
  * @member {module:model/Token.ScopeEnum} scope
  * @default 'global'
  */
-Token.prototype['scope'] = 'global';
+Token.prototype['scope'] = undefined;
 
 /**
  * List of alphanumeric strings identifying services (optional). If no services are specified, the token will have access to all services on the account. 

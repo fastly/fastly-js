@@ -102,7 +102,7 @@ TlsCommon.prototype['tls_client_key'] = 'null';
  * @member {module:model/TlsCommon.UseTlsEnum} use_tls
  * @default UseTlsEnum.no_tls
  */
-TlsCommon.prototype['use_tls'] = UseTlsEnum.no_tls;
+TlsCommon.prototype['use_tls'] = undefined;
 
 
 

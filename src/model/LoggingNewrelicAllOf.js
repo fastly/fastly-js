@@ -74,7 +74,7 @@ LoggingNewrelicAllOf.prototype['format'] = undefined;
  * @member {module:model/LoggingNewrelicAllOf.RegionEnum} region
  * @default 'US'
  */
-LoggingNewrelicAllOf.prototype['region'] = 'US';
+LoggingNewrelicAllOf.prototype['region'] = undefined;
 
 /**
  * The Insert API key from the Account page of your New Relic account. Required.
