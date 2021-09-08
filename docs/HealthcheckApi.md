@@ -28,7 +28,9 @@ Create a healthcheck for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+
   check_interval: 56,
 
   comment: "comment_example",
@@ -99,7 +101,10 @@ Delete the healthcheck for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  healthcheck_name: "healthcheck_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  healthcheck_name: "healthcheck_name_example", // required
+};
 
 apiInstance.deleteHealthcheck(options)
   .then((data) => {
@@ -135,7 +140,10 @@ Get the healthcheck for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  healthcheck_name: "healthcheck_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  healthcheck_name: "healthcheck_name_example", // required
+};
 
 apiInstance.getHealthcheck(options)
   .then((data) => {
@@ -171,7 +179,9 @@ List all of the healthchecks for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
 
 apiInstance.listHealthchecks(options)
   .then((data) => {
@@ -206,7 +216,10 @@ Update the healthcheck for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  healthcheck_name: "healthcheck_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  healthcheck_name: "healthcheck_name_example", // required
+
   check_interval: 56,
 
   comment: "comment_example",

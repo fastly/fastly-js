@@ -26,7 +26,11 @@ Establishes a relationship between a Backend and a Director. The Backend is then
 
 ```javascript
 const options = {
-  director_name: "director_name_example", // required  service_id: "service_id_example", // required  version_id: 56, // required  backend_name: "backend_name_example", // required};
+  director_name: "director_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  backend_name: "backend_name_example", // required
+};
 
 apiInstance.createDirectorBackend(options)
   .then((data) => {
@@ -63,7 +67,11 @@ Deletes the relationship between a Backend and a Director. The Backend is no lon
 
 ```javascript
 const options = {
-  director_name: "director_name_example", // required  service_id: "service_id_example", // required  version_id: 56, // required  backend_name: "backend_name_example", // required};
+  director_name: "director_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  backend_name: "backend_name_example", // required
+};
 
 apiInstance.deleteDirectorBackend(options)
   .then((data) => {
@@ -100,7 +108,11 @@ Returns the relationship between a Backend and a Director. If the Backend has be
 
 ```javascript
 const options = {
-  director_name: "director_name_example", // required  service_id: "service_id_example", // required  version_id: 56, // required  backend_name: "backend_name_example", // required};
+  director_name: "director_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  backend_name: "backend_name_example", // required
+};
 
 apiInstance.getDirectorBackend(options)
   .then((data) => {

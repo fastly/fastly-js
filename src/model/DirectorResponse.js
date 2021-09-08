@@ -12,8 +12,8 @@
  */
 
 import ApiClient from '../ApiClient';
+import Backend from './Backend';
 import Director from './Director';
-import SchemasBackend from './SchemasBackend';
 import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Timestamps from './Timestamps';
 
@@ -58,7 +58,7 @@ class DirectorResponse {
             Timestamps.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('backends')) {
-                obj['backends'] = ApiClient.convertToType(data['backends'], [SchemasBackend]);
+                obj['backends'] = ApiClient.convertToType(data['backends'], [Backend]);
             }
             if (data.hasOwnProperty('capacity')) {
                 obj['capacity'] = ApiClient.convertToType(data['capacity'], 'Number');
@@ -105,7 +105,7 @@ class DirectorResponse {
 
 /**
  * List of backends associated to a director.
- * @member {Array.<module:model/SchemasBackend>} backends
+ * @member {Array.<module:model/Backend>} backends
  */
 DirectorResponse.prototype['backends'] = undefined;
 
@@ -189,7 +189,7 @@ DirectorResponse.prototype['updated_at'] = undefined;
 // Implement Director interface:
 /**
  * List of backends associated to a director.
- * @member {Array.<module:model/SchemasBackend>} backends
+ * @member {Array.<module:model/Backend>} backends
  */
 Director.prototype['backends'] = undefined;
 /**

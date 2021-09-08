@@ -28,7 +28,9 @@ Create a Datadog logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+
   format: null,
 
   format_version: new Fastly.LoggingFormatVersion(),
@@ -84,7 +86,10 @@ Delete the Datadog logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_datadog_name: "logging_datadog_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_datadog_name: "logging_datadog_name_example", // required
+};
 
 apiInstance.deleteLogDatadog(options)
   .then((data) => {
@@ -120,7 +125,10 @@ Get the details for a Datadog logging object for a particular service and versio
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_datadog_name: "logging_datadog_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_datadog_name: "logging_datadog_name_example", // required
+};
 
 apiInstance.getLogDatadog(options)
   .then((data) => {
@@ -156,7 +164,9 @@ List all of the Datadog logging objects for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
 
 apiInstance.listLogDatadog(options)
   .then((data) => {
@@ -191,7 +201,10 @@ Update the Datadog logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_datadog_name: "logging_datadog_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_datadog_name: "logging_datadog_name_example", // required
+
   format: null,
 
   format_version: new Fastly.LoggingFormatVersion(),

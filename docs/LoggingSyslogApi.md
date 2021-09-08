@@ -28,7 +28,9 @@ Create a Syslog for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
   format_version: new Fastly.LoggingFormatVersion(),
@@ -111,7 +113,10 @@ Delete the Syslog for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_syslog_name: "logging_syslog_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_syslog_name: "logging_syslog_name_example", // required
+};
 
 apiInstance.deleteLogSyslog(options)
   .then((data) => {
@@ -147,7 +152,10 @@ Get the Syslog for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_syslog_name: "logging_syslog_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_syslog_name: "logging_syslog_name_example", // required
+};
 
 apiInstance.getLogSyslog(options)
   .then((data) => {
@@ -183,7 +191,9 @@ List all of the Syslogs for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
 
 apiInstance.listLogSyslog(options)
   .then((data) => {
@@ -218,7 +228,10 @@ Update the Syslog for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_syslog_name: "logging_syslog_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_syslog_name: "logging_syslog_name_example", // required
+
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
   format_version: new Fastly.LoggingFormatVersion(),

@@ -64,7 +64,8 @@ Disable TLS on the domain associated with this TLS activation.
 
 ```javascript
 const options = {
-  tls_activation_id: "tls_activation_id_example", // required};
+  tls_activation_id: "tls_activation_id_example", // required
+};
 
 apiInstance.deleteTlsActivation(options)
   .then(() => {
@@ -99,6 +100,7 @@ Show a TLS activation.
 ```javascript
 const options = {
   tls_activation_id: "tls_activation_id_example", // required
+
   include: tls_certificate,tls_configuration,tls_domain,
 };
 
@@ -187,6 +189,7 @@ Update the certificate used to terminate TLS traffic for the domain associated w
 ```javascript
 const options = {
   tls_activation_id: "tls_activation_id_example", // required
+
   tls_activation: new Fastly.TlsActivation(),
 };
 

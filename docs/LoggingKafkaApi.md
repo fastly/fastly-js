@@ -28,7 +28,9 @@ Create a Kafka logging endpoint for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
   format_version: new Fastly.LoggingFormatVersion(),
@@ -120,7 +122,10 @@ Delete the Kafka logging endpoint for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_kafka_name: "logging_kafka_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_kafka_name: "logging_kafka_name_example", // required
+};
 
 apiInstance.deleteLogKafka(options)
   .then((data) => {
@@ -156,7 +161,10 @@ Get the Kafka logging endpoint for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_kafka_name: "logging_kafka_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_kafka_name: "logging_kafka_name_example", // required
+};
 
 apiInstance.getLogKafka(options)
   .then((data) => {
@@ -192,7 +200,9 @@ List all of the Kafka logging endpoints for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
 
 apiInstance.listLogKafka(options)
   .then((data) => {
@@ -227,7 +237,10 @@ Update the Kafka logging endpoint for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_kafka_name: "logging_kafka_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_kafka_name: "logging_kafka_name_example", // required
+};
 
 apiInstance.updateLogKafka(options)
   .then((data) => {

@@ -28,7 +28,9 @@ Create a BigQuery logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+
   format: "format_example",
 
   format_version: new Fastly.LoggingFormatVersion(),
@@ -96,7 +98,10 @@ Delete a BigQuery logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_bigquery_name: "logging_bigquery_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_bigquery_name: "logging_bigquery_name_example", // required
+};
 
 apiInstance.deleteLogBigquery(options)
   .then((data) => {
@@ -132,7 +137,10 @@ Get the details for a BigQuery logging object for a particular service and versi
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_bigquery_name: "logging_bigquery_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_bigquery_name: "logging_bigquery_name_example", // required
+};
 
 apiInstance.getLogBigquery(options)
   .then((data) => {
@@ -168,7 +176,9 @@ List all of the BigQuery logging objects for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
 
 apiInstance.listLogBigquery(options)
   .then((data) => {
@@ -203,7 +213,10 @@ Update a BigQuery logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_bigquery_name: "logging_bigquery_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_bigquery_name: "logging_bigquery_name_example", // required
+
   format: "format_example",
 
   format_version: new Fastly.LoggingFormatVersion(),

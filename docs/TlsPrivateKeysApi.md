@@ -63,7 +63,8 @@ Destroy a TLS private key. Only private keys not already matched to any certific
 
 ```javascript
 const options = {
-  tls_private_key_id: "tls_private_key_id_example", // required};
+  tls_private_key_id: "tls_private_key_id_example", // required
+};
 
 apiInstance.deleteTlsKey(options)
   .then(() => {
@@ -97,7 +98,8 @@ Show a TLS private key.
 
 ```javascript
 const options = {
-  tls_private_key_id: "tls_private_key_id_example", // required};
+  tls_private_key_id: "tls_private_key_id_example", // required
+};
 
 apiInstance.getTlsKey(options)
   .then((data) => {

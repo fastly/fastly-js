@@ -25,7 +25,8 @@ Get a specific event.
 
 ```javascript
 const options = {
-  event_id: "event_id_example", // required};
+  event_id: "event_id_example", // required
+};
 
 apiInstance.getEvent(options)
   .then((data) => {

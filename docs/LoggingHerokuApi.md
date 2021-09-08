@@ -28,7 +28,9 @@ Create a Heroku for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
   format_version: new Fastly.LoggingFormatVersion(),
@@ -84,7 +86,10 @@ Delete the Heroku for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_heroku_name: "logging_heroku_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_heroku_name: "logging_heroku_name_example", // required
+};
 
 apiInstance.deleteLogHeroku(options)
   .then((data) => {
@@ -120,7 +125,10 @@ Get the Heroku for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_heroku_name: "logging_heroku_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_heroku_name: "logging_heroku_name_example", // required
+};
 
 apiInstance.getLogHeroku(options)
   .then((data) => {
@@ -156,7 +164,9 @@ List all of the Herokus for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
 
 apiInstance.listLogHeroku(options)
   .then((data) => {
@@ -191,7 +201,10 @@ Update the Heroku for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_heroku_name: "logging_heroku_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_heroku_name: "logging_heroku_name_example", // required
+
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
   format_version: new Fastly.LoggingFormatVersion(),

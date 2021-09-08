@@ -87,7 +87,8 @@ Delete a user.
 
 ```javascript
 const options = {
-  user_id: "user_id_example", // required};
+  user_id: "user_id_example", // required
+};
 
 apiInstance.deleteUser(options)
   .then((data) => {
@@ -150,7 +151,8 @@ Get a specific user.
 
 ```javascript
 const options = {
-  user_id: "user_id_example", // required};
+  user_id: "user_id_example", // required
+};
 
 apiInstance.getUser(options)
   .then((data) => {
@@ -184,7 +186,8 @@ Requests a password reset for the specified user.
 
 ```javascript
 const options = {
-  user_login: "user_login_example", // required};
+  user_login: "user_login_example", // required
+};
 
 apiInstance.requestPasswordReset(options)
   .then((data) => {
@@ -219,6 +222,7 @@ Update a user. Only users with the role of `superuser` can make changes to other
 ```javascript
 const options = {
   user_id: "user_id_example", // required
+
   limit_services: true,
 
   locked: true,

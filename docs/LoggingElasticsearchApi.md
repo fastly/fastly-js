@@ -28,7 +28,9 @@ Create a Elasticsearch logging endpoint for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+
   format: null,
 
   format_version: new Fastly.LoggingFormatVersion(),
@@ -111,7 +113,10 @@ Delete the Elasticsearch logging endpoint for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_elasticsearch_name: "logging_elasticsearch_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_elasticsearch_name: "logging_elasticsearch_name_example", // required
+};
 
 apiInstance.deleteLogElasticsearch(options)
   .then((data) => {
@@ -147,7 +152,10 @@ Get the Elasticsearch logging endpoint for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_elasticsearch_name: "logging_elasticsearch_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_elasticsearch_name: "logging_elasticsearch_name_example", // required
+};
 
 apiInstance.getLogElasticsearch(options)
   .then((data) => {
@@ -183,7 +191,9 @@ List all of the Elasticsearch logging endpoints for a particular service and ver
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
 
 apiInstance.listLogElasticsearch(options)
   .then((data) => {
@@ -218,7 +228,10 @@ Update the Elasticsearch logging endpoint for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_elasticsearch_name: "logging_elasticsearch_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_elasticsearch_name: "logging_elasticsearch_name_example", // required
+
   format: null,
 
   format_version: new Fastly.LoggingFormatVersion(),

@@ -66,7 +66,8 @@ Delete service authorization.
 
 ```javascript
 const options = {
-  service_authorization_id: "service_authorization_id_example", // required};
+  service_authorization_id: "service_authorization_id_example", // required
+};
 
 apiInstance.deleteServiceAuthorization(options)
   .then(() => {
@@ -175,7 +176,8 @@ Show service authorization.
 
 ```javascript
 const options = {
-  service_authorization_id: "service_authorization_id_example", // required};
+  service_authorization_id: "service_authorization_id_example", // required
+};
 
 apiInstance.showServiceAuthorization(options)
   .then((data) => {
@@ -210,6 +212,7 @@ Update service authorization.
 ```javascript
 const options = {
   service_authorization_id: "service_authorization_id_example", // required
+
   service_authorization: new Fastly.ServiceAuthorization(),
 };
 

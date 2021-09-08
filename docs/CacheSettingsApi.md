@@ -28,7 +28,9 @@ Create a cache settings object.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+
   action: "action_example",
 
   cache_condition: "cache_condition_example",
@@ -78,7 +80,10 @@ Delete a specific cache settings object.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  cache_settings_name: "cache_settings_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  cache_settings_name: "cache_settings_name_example", // required
+};
 
 apiInstance.deleteCacheSettings(options)
   .then((data) => {
@@ -114,7 +119,10 @@ Get a specific cache settings object.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  cache_settings_name: "cache_settings_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  cache_settings_name: "cache_settings_name_example", // required
+};
 
 apiInstance.getCacheSettings(options)
   .then((data) => {
@@ -150,7 +158,9 @@ Get a list of all cache settings for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
 
 apiInstance.listCacheSettings(options)
   .then((data) => {
@@ -185,7 +195,10 @@ Update a specific cache settings object.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  cache_settings_name: "cache_settings_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  cache_settings_name: "cache_settings_name_example", // required
+
   action: "action_example",
 
   cache_condition: "cache_condition_example",

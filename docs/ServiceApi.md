@@ -76,7 +76,8 @@ Delete a service.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required};
+  service_id: "service_id_example", // required
+};
 
 apiInstance.deleteService(options)
   .then((data) => {
@@ -110,7 +111,8 @@ Get a specific service by id.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required};
+  service_id: "service_id_example", // required
+};
 
 apiInstance.getService(options)
   .then((data) => {
@@ -144,7 +146,8 @@ List detailed information on a specified service.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required};
+  service_id: "service_id_example", // required
+};
 
 apiInstance.getServiceDetail(options)
   .then((data) => {
@@ -178,7 +181,8 @@ List the domains within a service.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required};
+  service_id: "service_id_example", // required
+};
 
 apiInstance.listServiceDomains(options)
   .then((data) => {
@@ -257,7 +261,8 @@ Get a specific service by name.
 
 ```javascript
 const options = {
-  name: "name_example", // required};
+  name: "name_example", // required
+};
 
 apiInstance.searchService(options)
   .then((data) => {
@@ -292,6 +297,7 @@ Update a service.
 ```javascript
 const options = {
   service_id: "service_id_example", // required
+
   comment: "comment_example",
 
   customer_id: "customer_id_example",

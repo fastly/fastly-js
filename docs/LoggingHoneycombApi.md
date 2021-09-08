@@ -28,7 +28,9 @@ Create a Honeycomb logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+
   format: null,
 
   format_version: new Fastly.LoggingFormatVersion(),
@@ -84,7 +86,10 @@ Delete the Honeycomb logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_honeycomb_name: "logging_honeycomb_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_honeycomb_name: "logging_honeycomb_name_example", // required
+};
 
 apiInstance.deleteLogHoneycomb(options)
   .then((data) => {
@@ -120,7 +125,10 @@ Get the details of a Honeycomb logging object for a particular service and versi
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_honeycomb_name: "logging_honeycomb_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_honeycomb_name: "logging_honeycomb_name_example", // required
+};
 
 apiInstance.getLogHoneycomb(options)
   .then((data) => {
@@ -156,7 +164,9 @@ List all of the Honeycomb logging objects for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
 
 apiInstance.listLogHoneycomb(options)
   .then((data) => {
@@ -191,7 +201,10 @@ Update a Honeycomb logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_honeycomb_name: "logging_honeycomb_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_honeycomb_name: "logging_honeycomb_name_example", // required
+
   format: null,
 
   format_version: new Fastly.LoggingFormatVersion(),

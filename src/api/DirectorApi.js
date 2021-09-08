@@ -13,8 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
+import Backend from '../model/Backend';
 import DirectorResponse from '../model/DirectorResponse';
-import SchemasBackend from '../model/SchemasBackend';
 
 /**
 * Director service.
@@ -40,7 +40,7 @@ export default class DirectorApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @param {Array.<module:model/SchemasBackend>} [options.backends] - List of backends associated to a director.
+     * @param {Array.<module:model/Backend>} [options.backends] - List of backends associated to a director.
      * @param {Number} [options.capacity] - Unused.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - Name for the Director.
@@ -96,7 +96,7 @@ export default class DirectorApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @param {Array.<module:model/SchemasBackend>} [options.backends] - List of backends associated to a director.
+     * @param {Array.<module:model/Backend>} [options.backends] - List of backends associated to a director.
      * @param {Number} [options.capacity] - Unused.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - Name for the Director.

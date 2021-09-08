@@ -31,7 +31,9 @@ Delete many active rules on a particular firewall version using the active rule 
 
 ```javascript
 const options = {
-  firewall_id: "firewall_id_example", // required  version_id: 56, // required
+  firewall_id: "firewall_id_example", // required
+  version_id: 56, // required
+
   body: null,
 };
 
@@ -69,7 +71,9 @@ Bulk update all active rules on a [firewall version](https://developer.fastly.co
 
 ```javascript
 const options = {
-  firewall_id: "firewall_id_example", // required  version_id: 56, // required
+  firewall_id: "firewall_id_example", // required
+  version_id: 56, // required
+
   body: new Fastly.Data(),
 };
 
@@ -107,7 +111,9 @@ Create an active rule for a particular firewall version.
 
 ```javascript
 const options = {
-  firewall_id: "firewall_id_example", // required  version_id: 56, // required
+  firewall_id: "firewall_id_example", // required
+  version_id: 56, // required
+
   waf_active_rule: new Fastly.WafActiveRule(),
 };
 
@@ -145,7 +151,10 @@ Create active rules by tag. This endpoint will create active rules using the lat
 
 ```javascript
 const options = {
-  firewall_id: "firewall_id_example", // required  version_id: 56, // required  waf_tag_name: "waf_tag_name_example", // required
+  firewall_id: "firewall_id_example", // required
+  version_id: 56, // required
+  waf_tag_name: "waf_tag_name_example", // required
+
   waf_active_rule: new Fastly.WafActiveRule(),
 };
 
@@ -184,7 +193,10 @@ Delete an active rule for a particular firewall version.
 
 ```javascript
 const options = {
-  firewall_id: "firewall_id_example", // required  version_id: 56, // required  waf_rule_id: "waf_rule_id_example", // required};
+  firewall_id: "firewall_id_example", // required
+  version_id: 56, // required
+  waf_rule_id: "waf_rule_id_example", // required
+};
 
 apiInstance.deleteWafActiveRule(options)
   .then(() => {
@@ -220,7 +232,10 @@ Get a specific active rule object. Includes details of the rule revision associa
 
 ```javascript
 const options = {
-  firewall_id: "firewall_id_example", // required  version_id: 56, // required  waf_rule_id: "waf_rule_id_example", // required
+  firewall_id: "firewall_id_example", // required
+  version_id: 56, // required
+  waf_rule_id: "waf_rule_id_example", // required
+
   include: waf_rule_revision,waf_firewall_version,
 };
 
@@ -259,7 +274,9 @@ List all active rules for a particular firewall version.
 
 ```javascript
 const options = {
-  firewall_id: "firewall_id_example", // required  version_id: 56, // required
+  firewall_id: "firewall_id_example", // required
+  version_id: 56, // required
+
   filter_status: "filter_status_example",
 
   filter_waf_rule_revision_message: "filter_waf_rule_revision_message_example",
@@ -315,7 +332,10 @@ Update an active rule's status for a particular firewall version.
 
 ```javascript
 const options = {
-  firewall_id: "firewall_id_example", // required  version_id: 56, // required  waf_rule_id: "waf_rule_id_example", // required
+  firewall_id: "firewall_id_example", // required
+  version_id: 56, // required
+  waf_rule_id: "waf_rule_id_example", // required
+
   waf_active_rule: new Fastly.WafActiveRule(),
 };
 

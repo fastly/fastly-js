@@ -65,6 +65,7 @@ Delete the firewall object for a particular service and service version.
 ```javascript
 const options = {
   firewall_id: "firewall_id_example", // required
+
   waf_firewall: new Fastly.WafFirewall(),
 };
 
@@ -102,6 +103,7 @@ Get a specific firewall object.
 ```javascript
 const options = {
   firewall_id: "firewall_id_example", // required
+
   filter_service_version_number: "filter_service_version_number_example",
 
   include: "'waf_firewall_versions'",
@@ -190,6 +192,7 @@ Update a firewall object for a particular service and service version. Specifyin
 ```javascript
 const options = {
   firewall_id: "firewall_id_example", // required
+
   waf_firewall: new Fastly.WafFirewall(),
 };
 

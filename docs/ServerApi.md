@@ -28,7 +28,9 @@ Creates a single server for a particular service and pool.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  pool_id: "pool_id_example", // required
+  service_id: "service_id_example", // required
+  pool_id: "pool_id_example", // required
+
   address: "address_example",
 
   comment: "comment_example",
@@ -84,7 +86,10 @@ Deletes a single server for a particular service and pool.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  pool_id: "pool_id_example", // required  server_id: "server_id_example", // required};
+  service_id: "service_id_example", // required
+  pool_id: "pool_id_example", // required
+  server_id: "server_id_example", // required
+};
 
 apiInstance.deletePoolServer(options)
   .then((data) => {
@@ -120,7 +125,10 @@ Gets a single server for a particular service and pool.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  pool_id: "pool_id_example", // required  server_id: "server_id_example", // required};
+  service_id: "service_id_example", // required
+  pool_id: "pool_id_example", // required
+  server_id: "server_id_example", // required
+};
 
 apiInstance.getPoolServer(options)
   .then((data) => {
@@ -156,7 +164,9 @@ Lists all servers for a particular service and pool.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  pool_id: "pool_id_example", // required};
+  service_id: "service_id_example", // required
+  pool_id: "pool_id_example", // required
+};
 
 apiInstance.listPoolServers(options)
   .then((data) => {
@@ -191,7 +201,10 @@ Updates a single server for a particular service and pool.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  pool_id: "pool_id_example", // required  server_id: "server_id_example", // required
+  service_id: "service_id_example", // required
+  pool_id: "pool_id_example", // required
+  server_id: "server_id_example", // required
+
   address: "address_example",
 
   comment: "comment_example",

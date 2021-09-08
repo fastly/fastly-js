@@ -28,7 +28,9 @@ Creates a new Response Object.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
 
 apiInstance.createResponseObject(options)
   .then((data) => {
@@ -63,7 +65,10 @@ Deletes the specified Response Object.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  response_object_name: "response_object_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  response_object_name: "response_object_name_example", // required
+};
 
 apiInstance.deleteResponseObject(options)
   .then((data) => {
@@ -99,7 +104,10 @@ Gets the specified Response Object.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  response_object_name: "response_object_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  response_object_name: "response_object_name_example", // required
+};
 
 apiInstance.getResponseObject(options)
   .then((data) => {
@@ -135,7 +143,9 @@ Returns all Response Objects for the specified service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
 
 apiInstance.listResponseObjects(options)
   .then((data) => {
@@ -170,7 +180,10 @@ Updates the specified Response Object.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  response_object_name: "response_object_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  response_object_name: "response_object_name_example", // required
+};
 
 apiInstance.updateResponseObject(options)
   .then((data) => {

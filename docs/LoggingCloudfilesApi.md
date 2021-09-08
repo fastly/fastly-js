@@ -28,7 +28,9 @@ Create a Cloud Files log endpoint for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
   format_version: new Fastly.LoggingFormatVersion(),
@@ -111,7 +113,10 @@ Delete the Cloud Files log endpoint for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_cloudfiles_name: "logging_cloudfiles_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_cloudfiles_name: "logging_cloudfiles_name_example", // required
+};
 
 apiInstance.deleteLogCloudfiles(options)
   .then((data) => {
@@ -147,7 +152,10 @@ Get the Cloud Files log endpoint for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_cloudfiles_name: "logging_cloudfiles_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_cloudfiles_name: "logging_cloudfiles_name_example", // required
+};
 
 apiInstance.getLogCloudfiles(options)
   .then((data) => {
@@ -183,7 +191,9 @@ List all of the Cloud Files log endpoints for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
 
 apiInstance.listLogCloudfiles(options)
   .then((data) => {
@@ -218,7 +228,10 @@ Update the Cloud Files log endpoint for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_cloudfiles_name: "logging_cloudfiles_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_cloudfiles_name: "logging_cloudfiles_name_example", // required
+
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
   format_version: new Fastly.LoggingFormatVersion(),

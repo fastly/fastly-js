@@ -28,7 +28,8 @@ Delete a customer.
 
 ```javascript
 const options = {
-  customer_id: "customer_id_example", // required};
+  customer_id: "customer_id_example", // required
+};
 
 apiInstance.deleteCustomer(options)
   .then((data) => {
@@ -62,7 +63,8 @@ Get a specific customer.
 
 ```javascript
 const options = {
-  customer_id: "customer_id_example", // required};
+  customer_id: "customer_id_example", // required
+};
 
 apiInstance.getCustomer(options)
   .then((data) => {
@@ -125,7 +127,8 @@ List all users from a specified customer id.
 
 ```javascript
 const options = {
-  customer_id: "customer_id_example", // required};
+  customer_id: "customer_id_example", // required
+};
 
 apiInstance.listUsers(options)
   .then((data) => {
@@ -160,6 +163,7 @@ Update a customer.
 ```javascript
 const options = {
   customer_id: "customer_id_example", // required
+
   billing_contact_id: "billing_contact_id_example",
 
   billing_network_type: "billing_network_type_example",

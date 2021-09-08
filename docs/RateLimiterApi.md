@@ -28,7 +28,9 @@ Create a rate limiter for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+
   action: "action_example",
 
   client_key: "client_key_example",
@@ -99,7 +101,8 @@ Delete a rate limiter by its ID.
 
 ```javascript
 const options = {
-  rate_limiter_id: "rate_limiter_id_example", // required};
+  rate_limiter_id: "rate_limiter_id_example", // required
+};
 
 apiInstance.deleteRateLimiter(options)
   .then((data) => {
@@ -133,7 +136,8 @@ Get a rate limiter by its ID.
 
 ```javascript
 const options = {
-  rate_limiter_id: "rate_limiter_id_example", // required};
+  rate_limiter_id: "rate_limiter_id_example", // required
+};
 
 apiInstance.getRateLimiter(options)
   .then((data) => {
@@ -167,7 +171,9 @@ List all rate limiters for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
 
 apiInstance.listRateLimiters(options)
   .then((data) => {
@@ -203,6 +209,7 @@ Update a rate limiter by its ID.
 ```javascript
 const options = {
   rate_limiter_id: "rate_limiter_id_example", // required
+
   action: "action_example",
 
   client_key: "client_key_example",

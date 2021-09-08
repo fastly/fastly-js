@@ -20,7 +20,7 @@ import { Fastly } from "fastly";
 // the environment variable.
 // Fastly.instance.authenticate("YOUR_API_TOKEN");
 
-const apiInstance = new Fastly.();
+const apiInstance = new Fastly.AclApi();
 
 const options = {
   service_id: "SU1Z0isxPaozGVKXdv0eY", // required

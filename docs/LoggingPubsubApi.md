@@ -28,7 +28,9 @@ Create a Pub/Sub logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
   format_version: new Fastly.LoggingFormatVersion(),
@@ -90,7 +92,10 @@ Delete a Pub/Sub logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_google_pubsub_name: "logging_google_pubsub_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_google_pubsub_name: "logging_google_pubsub_name_example", // required
+};
 
 apiInstance.deleteLogGcpPubsub(options)
   .then((data) => {
@@ -126,7 +131,10 @@ Get the details for a Pub/Sub logging object for a particular service and versio
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_google_pubsub_name: "logging_google_pubsub_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_google_pubsub_name: "logging_google_pubsub_name_example", // required
+};
 
 apiInstance.getLogGcpPubsub(options)
   .then((data) => {
@@ -162,7 +170,9 @@ List all of the Pub/Sub logging objects for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
 
 apiInstance.listLogGcpPubsub(options)
   .then((data) => {
@@ -197,7 +207,10 @@ Update a Pub/Sub logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_google_pubsub_name: "logging_google_pubsub_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_google_pubsub_name: "logging_google_pubsub_name_example", // required
+
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
   format_version: new Fastly.LoggingFormatVersion(),

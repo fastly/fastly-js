@@ -28,7 +28,9 @@ Create a Scalyr for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
   format_version: new Fastly.LoggingFormatVersion(),
@@ -87,7 +89,10 @@ Delete the Scalyr for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_scalyr_name: "logging_scalyr_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_scalyr_name: "logging_scalyr_name_example", // required
+};
 
 apiInstance.deleteLogScalyr(options)
   .then((data) => {
@@ -123,7 +128,10 @@ Get the Scalyr for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_scalyr_name: "logging_scalyr_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_scalyr_name: "logging_scalyr_name_example", // required
+};
 
 apiInstance.getLogScalyr(options)
   .then((data) => {
@@ -159,7 +167,9 @@ List all of the Scalyrs for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
 
 apiInstance.listLogScalyr(options)
   .then((data) => {
@@ -194,7 +204,10 @@ Update the Scalyr for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_scalyr_name: "logging_scalyr_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_scalyr_name: "logging_scalyr_name_example", // required
+
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
   format_version: new Fastly.LoggingFormatVersion(),

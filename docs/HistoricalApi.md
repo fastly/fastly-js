@@ -123,6 +123,7 @@ Fetches the specified field from the historical stats for each of your services 
 ```javascript
 const options = {
   field: hit_ratio, // required
+
   from: 2 days ago,
 
   to: "to_example",
@@ -169,6 +170,7 @@ Fetches historical stats for a given service.
 ```javascript
 const options = {
   service_id: "service_id_example", // required
+
   from: 2 days ago,
 
   to: "to_example",
@@ -214,7 +216,9 @@ Fetches the specified field from the historical stats for a given service.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  field: hit_ratio, // required
+  service_id: "service_id_example", // required
+  field: hit_ratio, // required
+
   from: 2 days ago,
 
   to: "to_example",

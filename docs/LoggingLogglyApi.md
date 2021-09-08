@@ -28,7 +28,9 @@ Create a Loggly logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
   format_version: new Fastly.LoggingFormatVersion(),
@@ -81,7 +83,10 @@ Delete the Loggly logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_loggly_name: "logging_loggly_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_loggly_name: "logging_loggly_name_example", // required
+};
 
 apiInstance.deleteLogLoggly(options)
   .then((data) => {
@@ -117,7 +122,10 @@ Get the Loggly logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_loggly_name: "logging_loggly_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_loggly_name: "logging_loggly_name_example", // required
+};
 
 apiInstance.getLogLoggly(options)
   .then((data) => {
@@ -153,7 +161,9 @@ List all Loggly logging objects for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
 
 apiInstance.listLogLoggly(options)
   .then((data) => {
@@ -188,7 +198,10 @@ Update the Loggly logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_loggly_name: "logging_loggly_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_loggly_name: "logging_loggly_name_example", // required
+
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
   format_version: new Fastly.LoggingFormatVersion(),

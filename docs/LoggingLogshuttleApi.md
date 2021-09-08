@@ -28,7 +28,9 @@ Create a Log Shuttle logging endpoint for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
   format_version: new Fastly.LoggingFormatVersion(),
@@ -84,7 +86,10 @@ Delete the Log Shuttle logging endpoint for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_logshuttle_name: "logging_logshuttle_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_logshuttle_name: "logging_logshuttle_name_example", // required
+};
 
 apiInstance.deleteLogLogshuttle(options)
   .then((data) => {
@@ -120,7 +125,10 @@ Get the Log Shuttle logging endpoint for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_logshuttle_name: "logging_logshuttle_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_logshuttle_name: "logging_logshuttle_name_example", // required
+};
 
 apiInstance.getLogLogshuttle(options)
   .then((data) => {
@@ -156,7 +164,9 @@ List all of the Log Shuttle logging endpoints for a particular service and versi
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
 
 apiInstance.listLogLogshuttle(options)
   .then((data) => {
@@ -191,7 +201,10 @@ Update the Log Shuttle logging endpoint for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_logshuttle_name: "logging_logshuttle_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_logshuttle_name: "logging_logshuttle_name_example", // required
+
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
   format_version: new Fastly.LoggingFormatVersion(),

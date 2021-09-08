@@ -25,7 +25,9 @@ Get the invoice for a given year and month. Can be any month from when the Custo
 
 ```javascript
 const options = {
-  month: 05, // required  year: 2020, // required};
+  month: 05, // required
+  year: 2020, // required
+};
 
 apiInstance.getInvoice(options)
   .then((data) => {
@@ -61,6 +63,7 @@ Get the current month-to-date estimate. This endpoint has two different response
 ```javascript
 const options = {
   customer_id: "customer_id_example", // required
+
   month: 05,
 
   year: 2020,

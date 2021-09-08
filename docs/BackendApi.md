@@ -28,7 +28,9 @@ Create a backend for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+
   address: "address_example",
 
   auto_loadbalance: true,
@@ -150,7 +152,10 @@ Delete the backend for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  backend_name: "backend_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  backend_name: "backend_name_example", // required
+};
 
 apiInstance.deleteBackend(options)
   .then((data) => {
@@ -186,7 +191,10 @@ Get the backend for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  backend_name: "backend_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  backend_name: "backend_name_example", // required
+};
 
 apiInstance.getBackend(options)
   .then((data) => {
@@ -222,7 +230,9 @@ List all backends for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
 
 apiInstance.listBackends(options)
   .then((data) => {
@@ -257,7 +267,10 @@ Update the backend for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  backend_name: "backend_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  backend_name: "backend_name_example", // required
+
   address: "address_example",
 
   auto_loadbalance: true,

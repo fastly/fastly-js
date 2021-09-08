@@ -28,7 +28,9 @@ Create a S3 for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
   format_version: new Fastly.LoggingFormatVersion(),
@@ -126,7 +128,10 @@ Delete the S3 for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_s3_name: "logging_s3_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_s3_name: "logging_s3_name_example", // required
+};
 
 apiInstance.deleteLogAwsS3(options)
   .then((data) => {
@@ -162,7 +167,10 @@ Get the S3 for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_s3_name: "logging_s3_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_s3_name: "logging_s3_name_example", // required
+};
 
 apiInstance.getLogAwsS3(options)
   .then((data) => {
@@ -198,7 +206,9 @@ List all of the S3s for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
 
 apiInstance.listLogAwsS3(options)
   .then((data) => {
@@ -233,7 +243,10 @@ Update the S3 for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_s3_name: "logging_s3_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_s3_name: "logging_s3_name_example", // required
+
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
   format_version: new Fastly.LoggingFormatVersion(),

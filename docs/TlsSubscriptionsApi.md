@@ -67,7 +67,8 @@ Destroy a TLS subscription. A subscription cannot be destroyed if there are doma
 
 ```javascript
 const options = {
-  tls_subscription_id: "tls_subscription_id_example", // required};
+  tls_subscription_id: "tls_subscription_id_example", // required
+};
 
 apiInstance.deleteTlsSub(options)
   .then(() => {
@@ -102,6 +103,7 @@ Show a TLS subscription.
 ```javascript
 const options = {
   tls_subscription_id: "tls_subscription_id_example", // required
+
   include: tls_authorizations,
 };
 
@@ -190,6 +192,7 @@ Change the TLS domains or common name associated with this subscription, or upda
 ```javascript
 const options = {
   tls_subscription_id: "tls_subscription_id_example", // required
+
   force: true,
 
   tls_subscription: new Fastly.TlsSubscription(),

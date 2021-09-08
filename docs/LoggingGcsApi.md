@@ -28,7 +28,9 @@ Create GCS logging for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
   format_version: new Fastly.LoggingFormatVersion(),
@@ -108,7 +110,10 @@ Delete the GCS Logging for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_gcs_name: "logging_gcs_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_gcs_name: "logging_gcs_name_example", // required
+};
 
 apiInstance.deleteLogGcs(options)
   .then((data) => {
@@ -144,7 +149,10 @@ Get the GCS Logging for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_gcs_name: "logging_gcs_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_gcs_name: "logging_gcs_name_example", // required
+};
 
 apiInstance.getLogGcs(options)
   .then((data) => {
@@ -180,7 +188,9 @@ List all of the GCS log endpoints for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
 
 apiInstance.listLogGcs(options)
   .then((data) => {
@@ -215,7 +225,10 @@ Update the GCS for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_gcs_name: "logging_gcs_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_gcs_name: "logging_gcs_name_example", // required
+
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
   format_version: new Fastly.LoggingFormatVersion(),

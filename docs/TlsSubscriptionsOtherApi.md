@@ -25,7 +25,10 @@ Deletes a GlobalSign email challenge. After a GlobalSign email challenge is dele
 
 ```javascript
 const options = {
-  tls_subscription_id: "tls_subscription_id_example", // required  globalsign_email_challenge_id: "globalsign_email_challenge_id_example", // required  tls_authorization_id: "tls_authorization_id_example", // required};
+  tls_subscription_id: "tls_subscription_id_example", // required
+  globalsign_email_challenge_id: "globalsign_email_challenge_id_example", // required
+  tls_authorization_id: "tls_authorization_id_example", // required
+};
 
 apiInstance.deleteTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallengesGlobalsignEmailChallengeId(options)
   .then(() => {
@@ -61,7 +64,9 @@ Creates an email challenge for domain on a GlobalSign subscription. An email cha
 
 ```javascript
 const options = {
-  tls_subscription_id: "tls_subscription_id_example", // required  tls_authorization_id: "tls_authorization_id_example", // required
+  tls_subscription_id: "tls_subscription_id_example", // required
+  tls_authorization_id: "tls_authorization_id_example", // required
+
   body: null,
 };
 

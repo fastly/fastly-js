@@ -26,6 +26,7 @@ Get a specific rule. The `id` provided can be the ModSecurity Rule ID or the Fas
 ```javascript
 const options = {
   waf_rule_id: "waf_rule_id_example", // required
+
   include: waf_tags,waf_rule_revisions,
 };
 

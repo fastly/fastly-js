@@ -25,6 +25,7 @@ Get the stats from a service for a block of time. This lists all stats by PoP lo
 ```javascript
 const options = {
   service_id: "service_id_example", // required
+
   month: 05,
 
   year: 2020,

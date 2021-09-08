@@ -28,7 +28,9 @@ Creates a new condition.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+
   comment: "comment_example",
 
   name: "name_example",
@@ -78,7 +80,10 @@ Deletes the specified condition.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  condition_name: "condition_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  condition_name: "condition_name_example", // required
+};
 
 apiInstance.deleteCondition(options)
   .then((data) => {
@@ -114,7 +119,10 @@ Gets the specified condition.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  condition_name: "condition_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  condition_name: "condition_name_example", // required
+};
 
 apiInstance.getCondition(options)
   .then((data) => {
@@ -150,7 +158,9 @@ Gets all conditions for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
 
 apiInstance.listConditions(options)
   .then((data) => {
@@ -185,7 +195,10 @@ Updates the specified condition.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  condition_name: "condition_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  condition_name: "condition_name_example", // required
+
   comment: "comment_example",
 
   name: "name_example",

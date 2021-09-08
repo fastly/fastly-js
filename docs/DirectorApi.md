@@ -28,8 +28,10 @@ Create a director for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-  backends: new Fastly.SchemasBackend(),
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+
+  backends: new Fastly.Backend(),
 
   capacity: 56,
 
@@ -61,7 +63,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
-**backends** | [**[SchemasBackend]**](../Model/SchemasBackend.md) | List of backends associated to a director. | [optional]
+**backends** | [**[Backend]**](../Model/Backend.md) | List of backends associated to a director. | [optional]
 **capacity** | **Number** | Unused. | [optional]
 **comment** | **String** | A freeform descriptive note. | [optional]
 **name** | **String** | Name for the Director. | [optional]
@@ -87,7 +89,10 @@ Delete the director for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  director_name: "director_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  director_name: "director_name_example", // required
+};
 
 apiInstance.deleteDirector(options)
   .then((data) => {
@@ -123,7 +128,10 @@ Get the director for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  director_name: "director_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  director_name: "director_name_example", // required
+};
 
 apiInstance.getDirector(options)
   .then((data) => {
@@ -159,7 +167,9 @@ List the directors for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
 
 apiInstance.listDirectors(options)
   .then((data) => {
@@ -194,7 +204,10 @@ Update the director for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  director_name: "director_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  director_name: "director_name_example", // required
+};
 
 apiInstance.updateDirector(options)
   .then((data) => {

@@ -28,7 +28,9 @@ Create a Papertrail for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
   format_version: new Fastly.LoggingFormatVersion(),
@@ -84,7 +86,10 @@ Delete the Papertrail for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_papertrail_name: "logging_papertrail_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_papertrail_name: "logging_papertrail_name_example", // required
+};
 
 apiInstance.deleteLogPapertrail(options)
   .then((data) => {
@@ -120,7 +125,10 @@ Get the Papertrail for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_papertrail_name: "logging_papertrail_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_papertrail_name: "logging_papertrail_name_example", // required
+};
 
 apiInstance.getLogPapertrail(options)
   .then((data) => {
@@ -156,7 +164,9 @@ List all of the Papertrails for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
 
 apiInstance.listLogPapertrail(options)
   .then((data) => {
@@ -191,7 +201,10 @@ Update the Papertrail for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_papertrail_name: "logging_papertrail_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_papertrail_name: "logging_papertrail_name_example", // required
+
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
   format_version: new Fastly.LoggingFormatVersion(),

@@ -28,6 +28,7 @@ Add a billing address to a customer.
 ```javascript
 const options = {
   customer_id: "customer_id_example", // required
+
   inline_object: new Fastly.InlineObject(),
 };
 
@@ -64,7 +65,8 @@ Delete a customer's billing address.
 
 ```javascript
 const options = {
-  customer_id: "customer_id_example", // required};
+  customer_id: "customer_id_example", // required
+};
 
 apiInstance.deleteBillingAddr(options)
   .then(() => {
@@ -98,7 +100,8 @@ Get a customer's billing address.
 
 ```javascript
 const options = {
-  customer_id: "customer_id_example", // required};
+  customer_id: "customer_id_example", // required
+};
 
 apiInstance.getBillingAddr(options)
   .then((data) => {
@@ -133,6 +136,7 @@ Update a customer's billing address. You may update only part of the customer's 
 ```javascript
 const options = {
   customer_id: "customer_id_example", // required
+
   inline_object1: new Fastly.InlineObject1(),
 };
 

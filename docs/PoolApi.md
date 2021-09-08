@@ -28,7 +28,9 @@ Creates a pool for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+
   tls_ca_cert: "'null'",
 
   tls_cert_hostname: "'null'",
@@ -126,7 +128,10 @@ Deletes a specific pool for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  pool_name: "pool_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  pool_name: "pool_name_example", // required
+};
 
 apiInstance.deleteServerPool(options)
   .then((data) => {
@@ -162,7 +167,10 @@ Gets a single pool for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  pool_name: "pool_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  pool_name: "pool_name_example", // required
+};
 
 apiInstance.getServerPool(options)
   .then((data) => {
@@ -198,7 +206,9 @@ Lists all pools for a particular service and pool.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
 
 apiInstance.listServerPools(options)
   .then((data) => {
@@ -233,7 +243,10 @@ Updates a specific pool for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  pool_name: "pool_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  pool_name: "pool_name_example", // required
+
   tls_ca_cert: "'null'",
 
   tls_cert_hostname: "'null'",

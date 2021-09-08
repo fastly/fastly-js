@@ -28,7 +28,9 @@ Create an HTTPS object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
   format_version: new Fastly.LoggingFormatVersion(),
@@ -117,7 +119,10 @@ Delete the HTTPS object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_https_name: "logging_https_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_https_name: "logging_https_name_example", // required
+};
 
 apiInstance.deleteLogHttps(options)
   .then((data) => {
@@ -153,7 +158,10 @@ Get the HTTPS object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_https_name: "logging_https_name_example", // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_https_name: "logging_https_name_example", // required
+};
 
 apiInstance.getLogHttps(options)
   .then((data) => {
@@ -189,7 +197,9 @@ List all of the HTTPS objects for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
 
 apiInstance.listLogHttps(options)
   .then((data) => {
@@ -224,7 +234,10 @@ Update the HTTPS object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_https_name: "logging_https_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_https_name: "logging_https_name_example", // required
+
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
 
   format_version: new Fastly.LoggingFormatVersion(),

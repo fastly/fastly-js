@@ -63,7 +63,8 @@ Delete star.
 
 ```javascript
 const options = {
-  star_id: "star_id_example", // required};
+  star_id: "star_id_example", // required
+};
 
 apiInstance.deleteServiceStar(options)
   .then(() => {
@@ -97,7 +98,8 @@ Show star.
 
 ```javascript
 const options = {
-  star_id: "star_id_example", // required};
+  star_id: "star_id_example", // required
+};
 
 apiInstance.getServiceStar(options)
   .then((data) => {

@@ -25,7 +25,9 @@ Get the settings for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
 
 apiInstance.getServiceSettings(options)
   .then((data) => {
@@ -60,7 +62,9 @@ Update the settings for a particular service and version. NOTE: If you override 
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required};
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
 
 apiInstance.updateServiceSettings(options)
   .then((data) => {
