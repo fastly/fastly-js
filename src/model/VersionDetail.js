@@ -19,12 +19,12 @@ import DomainResponse from './DomainResponse';
 import GzipResponse from './GzipResponse';
 import HeaderResponse from './HeaderResponse';
 import HealthcheckResponse from './HealthcheckResponse';
+import RequestSettingsResponse from './RequestSettingsResponse';
+import ResponseObjectResponse from './ResponseObjectResponse';
 import SchemasDirector from './SchemasDirector';
-import SchemasRequestSettingsResponse from './SchemasRequestSettingsResponse';
-import SchemasResponseObjectResponse from './SchemasResponseObjectResponse';
-import SchemasSnippetResponse from './SchemasSnippetResponse';
-import SchemasVclResponse from './SchemasVclResponse';
 import Settings from './Settings';
+import SnippetResponse from './SnippetResponse';
+import VclResponse from './VclResponse';
 
 /**
  * The VersionDetail model module.
@@ -85,19 +85,19 @@ class VersionDetail {
                 obj['healthchecks'] = ApiClient.convertToType(data['healthchecks'], [HealthcheckResponse]);
             }
             if (data.hasOwnProperty('request_settings')) {
-                obj['request_settings'] = ApiClient.convertToType(data['request_settings'], [SchemasRequestSettingsResponse]);
+                obj['request_settings'] = ApiClient.convertToType(data['request_settings'], [RequestSettingsResponse]);
             }
             if (data.hasOwnProperty('response_objects')) {
-                obj['response_objects'] = ApiClient.convertToType(data['response_objects'], [SchemasResponseObjectResponse]);
+                obj['response_objects'] = ApiClient.convertToType(data['response_objects'], [ResponseObjectResponse]);
             }
             if (data.hasOwnProperty('settings')) {
                 obj['settings'] = ApiClient.convertToType(data['settings'], Settings);
             }
             if (data.hasOwnProperty('snippets')) {
-                obj['snippets'] = ApiClient.convertToType(data['snippets'], [SchemasSnippetResponse]);
+                obj['snippets'] = ApiClient.convertToType(data['snippets'], [SnippetResponse]);
             }
             if (data.hasOwnProperty('vcls')) {
-                obj['vcls'] = ApiClient.convertToType(data['vcls'], [SchemasVclResponse]);
+                obj['vcls'] = ApiClient.convertToType(data['vcls'], [VclResponse]);
             }
             if (data.hasOwnProperty('wordpress')) {
                 obj['wordpress'] = ApiClient.convertToType(data['wordpress'], [Object]);
@@ -159,13 +159,13 @@ VersionDetail.prototype['healthchecks'] = undefined;
 
 /**
  * List of request settings for this service.
- * @member {Array.<module:model/SchemasRequestSettingsResponse>} request_settings
+ * @member {Array.<module:model/RequestSettingsResponse>} request_settings
  */
 VersionDetail.prototype['request_settings'] = undefined;
 
 /**
  * List of response objects for this service.
- * @member {Array.<module:model/SchemasResponseObjectResponse>} response_objects
+ * @member {Array.<module:model/ResponseObjectResponse>} response_objects
  */
 VersionDetail.prototype['response_objects'] = undefined;
 
@@ -176,13 +176,13 @@ VersionDetail.prototype['settings'] = undefined;
 
 /**
  * List of VCL snippets for this service.
- * @member {Array.<module:model/SchemasSnippetResponse>} snippets
+ * @member {Array.<module:model/SnippetResponse>} snippets
  */
 VersionDetail.prototype['snippets'] = undefined;
 
 /**
  * List of VCL files for this service.
- * @member {Array.<module:model/SchemasVclResponse>} vcls
+ * @member {Array.<module:model/VclResponse>} vcls
  */
 VersionDetail.prototype['vcls'] = undefined;
 
