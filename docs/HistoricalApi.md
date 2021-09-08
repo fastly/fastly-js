@@ -32,8 +32,10 @@ Fetches historical stats for each of your Fastly services and groups the results
 
 ```javascript
 const options = {
-
-  from: 2 days ago,  to: "to_example",  by: day,  region: usa,
+  from: 2 days ago,
+  to: "to_example",
+  by: day,
+  region: usa,
 };
 
 apiInstance.getHistStats(options)
@@ -71,8 +73,10 @@ Fetches historical stats information aggregated across all of your Fastly servic
 
 ```javascript
 const options = {
-
-  from: 2 days ago,  to: "to_example",  by: day,  region: usa,
+  from: 2 days ago,
+  to: "to_example",
+  by: day,
+  region: usa,
 };
 
 apiInstance.getHistStatsAggregated(options)
@@ -110,8 +114,11 @@ Fetches the specified field from the historical stats for each of your services 
 
 ```javascript
 const options = {
-  field: hit_ratio, // required
-  from: 2 days ago,  to: "to_example",  by: day,  region: usa,
+ field: hit_ratio, // required
+  from: 2 days ago,
+  to: "to_example",
+  by: day,
+  region: usa,
 };
 
 apiInstance.getHistStatsField(options)
@@ -150,8 +157,11 @@ Fetches historical stats for a given service.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required
-  from: 2 days ago,  to: "to_example",  by: day,  region: usa,
+ service_id: "service_id_example", // required
+  from: 2 days ago,
+  to: "to_example",
+  by: day,
+  region: usa,
 };
 
 apiInstance.getHistStatsService(options)
@@ -190,8 +200,12 @@ Fetches the specified field from the historical stats for a given service.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  field: hit_ratio, // required
-  from: 2 days ago,  to: "to_example",  by: day,  region: usa,
+ service_id: "service_id_example", // required
+ field: hit_ratio, // required
+  from: 2 days ago,
+  to: "to_example",
+  by: day,
+  region: usa,
 };
 
 apiInstance.getHistStatsServiceField(options)
@@ -260,8 +274,10 @@ Returns usage information aggregated across all Fastly services and grouped by r
 
 ```javascript
 const options = {
-
-  from: 2 days ago,  to: "to_example",  by: day,  region: usa,
+  from: 2 days ago,
+  to: "to_example",
+  by: day,
+  region: usa,
 };
 
 apiInstance.getUsage(options)
@@ -299,8 +315,10 @@ Returns month-to-date usage details for a given month and year. Usage details ar
 
 ```javascript
 const options = {
-
-  year: 2020,  month: 05,  billable_units: true,  region: usa,
+  year: 2020,
+  month: 05,
+  billable_units: true,
+  region: usa,
 };
 
 apiInstance.getUsageMonth(options)
@@ -338,8 +356,10 @@ Returns usage information aggregated by service and grouped by service and regio
 
 ```javascript
 const options = {
-
-  from: 2 days ago,  to: "to_example",  by: day,  region: usa,
+  from: 2 days ago,
+  to: "to_example",
+  by: day,
+  region: usa,
 };
 
 apiInstance.getUsageService(options)

@@ -28,8 +28,20 @@ Create a rate limiter for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-  action: "action_example",  client_key: "client_key_example",  feature_revision: 56,  http_methods: "http_methods_example",  logger_type: "logger_type_example",  name: "name_example",  penalty_box_duration: 56,  response: new Fastly.RateLimiterResponse1(),  response_object_name: "response_object_name_example",  rps_limit: 56,  uri_dictionary_name: "uri_dictionary_name_example",  window_size: 56,
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+  action: "action_example",
+  client_key: "client_key_example",
+  feature_revision: 56,
+  http_methods: "http_methods_example",
+  logger_type: "logger_type_example",
+  name: "name_example",
+  penalty_box_duration: 56,
+  response: new Fastly.RateLimiterResponse1(),
+  response_object_name: "response_object_name_example",
+  rps_limit: 56,
+  uri_dictionary_name: "uri_dictionary_name_example",
+  window_size: 56,
 };
 
 apiInstance.createRateLimiter(options)
@@ -77,8 +89,7 @@ Delete a rate limiter by its ID.
 
 ```javascript
 const options = {
-  rate_limiter_id: "rate_limiter_id_example", // required
-
+ rate_limiter_id: "rate_limiter_id_example", // required
 };
 
 apiInstance.deleteRateLimiter(options)
@@ -113,8 +124,7 @@ Get a rate limiter by its ID.
 
 ```javascript
 const options = {
-  rate_limiter_id: "rate_limiter_id_example", // required
-
+ rate_limiter_id: "rate_limiter_id_example", // required
 };
 
 apiInstance.getRateLimiter(options)
@@ -149,8 +159,8 @@ List all rate limiters for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
 };
 
 apiInstance.listRateLimiters(options)
@@ -186,8 +196,19 @@ Update a rate limiter by its ID.
 
 ```javascript
 const options = {
-  rate_limiter_id: "rate_limiter_id_example", // required
-  action: "action_example",  client_key: "client_key_example",  feature_revision: 56,  http_methods: "http_methods_example",  logger_type: "logger_type_example",  name: "name_example",  penalty_box_duration: 56,  response: new Fastly.RateLimiterResponse1(),  response_object_name: "response_object_name_example",  rps_limit: 56,  uri_dictionary_name: "uri_dictionary_name_example",  window_size: 56,
+ rate_limiter_id: "rate_limiter_id_example", // required
+  action: "action_example",
+  client_key: "client_key_example",
+  feature_revision: 56,
+  http_methods: "http_methods_example",
+  logger_type: "logger_type_example",
+  name: "name_example",
+  penalty_box_duration: 56,
+  response: new Fastly.RateLimiterResponse1(),
+  response_object_name: "response_object_name_example",
+  rps_limit: 56,
+  uri_dictionary_name: "uri_dictionary_name_example",
+  window_size: 56,
 };
 
 apiInstance.updateRateLimiter(options)

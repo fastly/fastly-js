@@ -27,7 +27,6 @@ Create star.
 
 ```javascript
 const options = {
-
   star: new Fastly.Star(),
 };
 
@@ -63,8 +62,7 @@ Delete star.
 
 ```javascript
 const options = {
-  star_id: "star_id_example", // required
-
+ star_id: "star_id_example", // required
 };
 
 apiInstance.deleteServiceStar(options)
@@ -99,8 +97,7 @@ Show star.
 
 ```javascript
 const options = {
-  star_id: "star_id_example", // required
-
+ star_id: "star_id_example", // required
 };
 
 apiInstance.getServiceStar(options)

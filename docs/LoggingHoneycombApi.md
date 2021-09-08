@@ -28,8 +28,15 @@ Create a Honeycomb logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-  format: null,  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  dataset: "dataset_example",  token: "token_example",
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+  format: null,
+  format_version: new Fastly.LoggingFormatVersion(),
+  name: "name_example",
+  placement: new Fastly.LoggingPlacement(),
+  response_condition: "response_condition_example",
+  dataset: "dataset_example",
+  token: "token_example",
 };
 
 apiInstance.createLogHoneycomb(options)
@@ -72,8 +79,9 @@ Delete the Honeycomb logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_honeycomb_name: "logging_honeycomb_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_honeycomb_name: "logging_honeycomb_name_example", // required
 };
 
 apiInstance.deleteLogHoneycomb(options)
@@ -110,8 +118,9 @@ Get the details of a Honeycomb logging object for a particular service and versi
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_honeycomb_name: "logging_honeycomb_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_honeycomb_name: "logging_honeycomb_name_example", // required
 };
 
 apiInstance.getLogHoneycomb(options)
@@ -148,8 +157,8 @@ List all of the Honeycomb logging objects for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
 };
 
 apiInstance.listLogHoneycomb(options)
@@ -185,8 +194,16 @@ Update a Honeycomb logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_honeycomb_name: "logging_honeycomb_name_example", // required
-  format: null,  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  dataset: "dataset_example",  token: "token_example",
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_honeycomb_name: "logging_honeycomb_name_example", // required
+  format: null,
+  format_version: new Fastly.LoggingFormatVersion(),
+  name: "name_example",
+  placement: new Fastly.LoggingPlacement(),
+  response_condition: "response_condition_example",
+  dataset: "dataset_example",
+  token: "token_example",
 };
 
 apiInstance.updateLogHoneycomb(options)

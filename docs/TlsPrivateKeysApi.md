@@ -27,7 +27,6 @@ Create a TLS private key.
 
 ```javascript
 const options = {
-
   tls_private_key: new Fastly.TlsPrivateKey(),
 };
 
@@ -63,8 +62,7 @@ Destroy a TLS private key. Only private keys not already matched to any certific
 
 ```javascript
 const options = {
-  tls_private_key_id: "tls_private_key_id_example", // required
-
+ tls_private_key_id: "tls_private_key_id_example", // required
 };
 
 apiInstance.deleteTlsKey(options)
@@ -99,8 +97,7 @@ Show a TLS private key.
 
 ```javascript
 const options = {
-  tls_private_key_id: "tls_private_key_id_example", // required
-
+ tls_private_key_id: "tls_private_key_id_example", // required
 };
 
 apiInstance.getTlsKey(options)
@@ -135,8 +132,9 @@ List all TLS private keys.
 
 ```javascript
 const options = {
-
-  filter_in_use: "filter_in_use_example",  page_number: 56,  page_size: 20,
+  filter_in_use: "filter_in_use_example",
+  page_number: 56,
+  page_size: 20,
 };
 
 apiInstance.listTlsKeys(options)

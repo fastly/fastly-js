@@ -28,8 +28,22 @@ Create a Splunk logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  tls_ca_cert: "'null'",  tls_client_cert: "'null'",  tls_client_key: "'null'",  tls_hostname: "'null'",  request_max_bytes: 0,  request_max_entries: 0,  token: "token_example",  url: "url_example",  use_tls: new Fastly.LoggingUseTls(),
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format_version: new Fastly.LoggingFormatVersion(),
+  name: "name_example",
+  placement: new Fastly.LoggingPlacement(),
+  response_condition: "response_condition_example",
+  tls_ca_cert: "'null'",
+  tls_client_cert: "'null'",
+  tls_client_key: "'null'",
+  tls_hostname: "'null'",
+  request_max_bytes: 0,
+  request_max_entries: 0,
+  token: "token_example",
+  url: "url_example",
+  use_tls: new Fastly.LoggingUseTls(),
 };
 
 apiInstance.createLogSplunk(options)
@@ -79,8 +93,9 @@ Delete the Splunk logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_splunk_name: "logging_splunk_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_splunk_name: "logging_splunk_name_example", // required
 };
 
 apiInstance.deleteLogSplunk(options)
@@ -117,8 +132,9 @@ Get the details for a Splunk logging object for a particular service and version
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_splunk_name: "logging_splunk_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_splunk_name: "logging_splunk_name_example", // required
 };
 
 apiInstance.getLogSplunk(options)
@@ -155,8 +171,8 @@ List all of the Splunk logging objects for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
 };
 
 apiInstance.listLogSplunk(options)
@@ -192,8 +208,23 @@ Update the Splunk logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_splunk_name: "logging_splunk_name_example", // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  tls_ca_cert: "'null'",  tls_client_cert: "'null'",  tls_client_key: "'null'",  tls_hostname: "'null'",  request_max_bytes: 0,  request_max_entries: 0,  token: "token_example",  url: "url_example",  use_tls: new Fastly.LoggingUseTls(),
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_splunk_name: "logging_splunk_name_example", // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format_version: new Fastly.LoggingFormatVersion(),
+  name: "name_example",
+  placement: new Fastly.LoggingPlacement(),
+  response_condition: "response_condition_example",
+  tls_ca_cert: "'null'",
+  tls_client_cert: "'null'",
+  tls_client_key: "'null'",
+  tls_hostname: "'null'",
+  request_max_bytes: 0,
+  request_max_entries: 0,
+  token: "token_example",
+  url: "url_example",
+  use_tls: new Fastly.LoggingUseTls(),
 };
 
 apiInstance.updateLogSplunk(options)

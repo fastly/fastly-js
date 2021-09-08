@@ -28,8 +28,24 @@ Create an Azure Blob Storage logging endpoint for a particular service and versi
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  compression_codec: new Fastly.LoggingCompressionCodec(),  gzip_level: 0,  message_type: new Fastly.LoggingMessageType(),  period: 3600,  timestamp_format: "timestamp_format_example",  account_name: "account_name_example",  container: "container_example",  file_max_bytes: 56,  path: "'null'",  public_key: "'null'",  sas_token: "sas_token_example",
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format_version: new Fastly.LoggingFormatVersion(),
+  name: "name_example",
+  placement: new Fastly.LoggingPlacement(),
+  response_condition: "response_condition_example",
+  compression_codec: new Fastly.LoggingCompressionCodec(),
+  gzip_level: 0,
+  message_type: new Fastly.LoggingMessageType(),
+  period: 3600,
+  timestamp_format: "timestamp_format_example",
+  account_name: "account_name_example",
+  container: "container_example",
+  file_max_bytes: 56,
+  path: "'null'",
+  public_key: "'null'",
+  sas_token: "sas_token_example",
 };
 
 apiInstance.createLogAzure(options)
@@ -81,8 +97,9 @@ Delete the Azure Blob Storage logging endpoint for a particular service and vers
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_azureblob_name: "logging_azureblob_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_azureblob_name: "logging_azureblob_name_example", // required
 };
 
 apiInstance.deleteLogAzure(options)
@@ -119,8 +136,9 @@ Get the Azure Blob Storage logging endpoint for a particular service and version
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_azureblob_name: "logging_azureblob_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_azureblob_name: "logging_azureblob_name_example", // required
 };
 
 apiInstance.getLogAzure(options)
@@ -157,8 +175,8 @@ List all of the Azure Blob Storage logging endpoints for a particular service an
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
 };
 
 apiInstance.listLogAzure(options)
@@ -194,8 +212,25 @@ Update the Azure Blob Storage logging endpoint for a particular service and vers
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_azureblob_name: "logging_azureblob_name_example", // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  compression_codec: new Fastly.LoggingCompressionCodec(),  gzip_level: 0,  message_type: new Fastly.LoggingMessageType(),  period: 3600,  timestamp_format: "timestamp_format_example",  account_name: "account_name_example",  container: "container_example",  file_max_bytes: 56,  path: "'null'",  public_key: "'null'",  sas_token: "sas_token_example",
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_azureblob_name: "logging_azureblob_name_example", // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format_version: new Fastly.LoggingFormatVersion(),
+  name: "name_example",
+  placement: new Fastly.LoggingPlacement(),
+  response_condition: "response_condition_example",
+  compression_codec: new Fastly.LoggingCompressionCodec(),
+  gzip_level: 0,
+  message_type: new Fastly.LoggingMessageType(),
+  period: 3600,
+  timestamp_format: "timestamp_format_example",
+  account_name: "account_name_example",
+  container: "container_example",
+  file_max_bytes: 56,
+  path: "'null'",
+  public_key: "'null'",
+  sas_token: "sas_token_example",
 };
 
 apiInstance.updateLogAzure(options)

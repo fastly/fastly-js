@@ -30,7 +30,6 @@ Create service authorization.
 
 ```javascript
 const options = {
-
   service_authorization: new Fastly.ServiceAuthorization(),
 };
 
@@ -66,8 +65,7 @@ Delete service authorization.
 
 ```javascript
 const options = {
-  service_authorization_id: "service_authorization_id_example", // required
-
+ service_authorization_id: "service_authorization_id_example", // required
 };
 
 apiInstance.deleteServiceAuthorization(options)
@@ -102,7 +100,6 @@ Delete service authorizations.
 
 ```javascript
 const options = {
-
   inline_object2: new Fastly.InlineObject2(),
 };
 
@@ -138,8 +135,8 @@ List service authorizations.
 
 ```javascript
 const options = {
-
-  page_number: 56,  page_size: 20,
+  page_number: 56,
+  page_size: 20,
 };
 
 apiInstance.listServiceAuthorization(options)
@@ -175,8 +172,7 @@ Show service authorization.
 
 ```javascript
 const options = {
-  service_authorization_id: "service_authorization_id_example", // required
-
+ service_authorization_id: "service_authorization_id_example", // required
 };
 
 apiInstance.showServiceAuthorization(options)
@@ -211,7 +207,7 @@ Update service authorization.
 
 ```javascript
 const options = {
-  service_authorization_id: "service_authorization_id_example", // required
+ service_authorization_id: "service_authorization_id_example", // required
   service_authorization: new Fastly.ServiceAuthorization(),
 };
 
@@ -248,7 +244,6 @@ Update service authorizations.
 
 ```javascript
 const options = {
-
   inline_object3: new Fastly.InlineObject3(),
 };
 

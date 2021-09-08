@@ -28,8 +28,17 @@ Create a Pub/Sub logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  secret_key: "secret_key_example",  user: "user_example",  project_id: "project_id_example",  topic: "topic_example",
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format_version: new Fastly.LoggingFormatVersion(),
+  name: "name_example",
+  placement: new Fastly.LoggingPlacement(),
+  response_condition: "response_condition_example",
+  secret_key: "secret_key_example",
+  user: "user_example",
+  project_id: "project_id_example",
+  topic: "topic_example",
 };
 
 apiInstance.createLogGcpPubsub(options)
@@ -74,8 +83,9 @@ Delete a Pub/Sub logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_google_pubsub_name: "logging_google_pubsub_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_google_pubsub_name: "logging_google_pubsub_name_example", // required
 };
 
 apiInstance.deleteLogGcpPubsub(options)
@@ -112,8 +122,9 @@ Get the details for a Pub/Sub logging object for a particular service and versio
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_google_pubsub_name: "logging_google_pubsub_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_google_pubsub_name: "logging_google_pubsub_name_example", // required
 };
 
 apiInstance.getLogGcpPubsub(options)
@@ -150,8 +161,8 @@ List all of the Pub/Sub logging objects for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
 };
 
 apiInstance.listLogGcpPubsub(options)
@@ -187,8 +198,18 @@ Update a Pub/Sub logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_google_pubsub_name: "logging_google_pubsub_name_example", // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  secret_key: "secret_key_example",  user: "user_example",  project_id: "project_id_example",  topic: "topic_example",
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_google_pubsub_name: "logging_google_pubsub_name_example", // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format_version: new Fastly.LoggingFormatVersion(),
+  name: "name_example",
+  placement: new Fastly.LoggingPlacement(),
+  response_condition: "response_condition_example",
+  secret_key: "secret_key_example",
+  user: "user_example",
+  project_id: "project_id_example",
+  topic: "topic_example",
 };
 
 apiInstance.updateLogGcpPubsub(options)

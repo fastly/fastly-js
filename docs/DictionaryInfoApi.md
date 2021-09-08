@@ -24,8 +24,9 @@ Retrieve metadata for a single dictionary by ID for a version and service.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  dictionary_id: "dictionary_id_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ dictionary_id: "dictionary_id_example", // required
 };
 
 apiInstance.getDictionaryInfo(options)

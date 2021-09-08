@@ -29,7 +29,8 @@ Update multiple ACL entries on the same ACL.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  acl_id: "acl_id_example", // required
+ service_id: "service_id_example", // required
+ acl_id: "acl_id_example", // required
   acl_entries: new Fastly.AclEntries(),
 };
 
@@ -67,7 +68,8 @@ Add an ACL entry to an ACL.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  acl_id: "acl_id_example", // required
+ service_id: "service_id_example", // required
+ acl_id: "acl_id_example", // required
   acl_entry: new Fastly.AclEntry(),
 };
 
@@ -105,8 +107,9 @@ Delete an ACL entry from a specified ACL.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  acl_id: "acl_id_example", // required  acl_entry_id: "acl_entry_id_example", // required
-
+ service_id: "service_id_example", // required
+ acl_id: "acl_id_example", // required
+ acl_entry_id: "acl_entry_id_example", // required
 };
 
 apiInstance.deleteAclEntry(options)
@@ -143,8 +146,9 @@ Retrieve a single ACL entry.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  acl_id: "acl_id_example", // required  acl_entry_id: "acl_entry_id_example", // required
-
+ service_id: "service_id_example", // required
+ acl_id: "acl_id_example", // required
+ acl_entry_id: "acl_entry_id_example", // required
 };
 
 apiInstance.getAclEntry(options)
@@ -181,8 +185,12 @@ List ACL entries for a specified ACL.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  acl_id: "acl_id_example", // required
-  page: 56,  per_page: 20,  sort: "'created'",  direction: ascend,
+ service_id: "service_id_example", // required
+ acl_id: "acl_id_example", // required
+  page: 56,
+  per_page: 20,
+  sort: "'created'",
+  direction: ascend,
 };
 
 apiInstance.listAclEntries(options)
@@ -222,7 +230,9 @@ Update an ACL entry for a specified ACL.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  acl_id: "acl_id_example", // required  acl_entry_id: "acl_entry_id_example", // required
+ service_id: "service_id_example", // required
+ acl_id: "acl_id_example", // required
+ acl_entry_id: "acl_entry_id_example", // required
   acl_entry: new Fastly.AclEntry(),
 };
 

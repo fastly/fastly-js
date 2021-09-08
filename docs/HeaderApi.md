@@ -28,8 +28,20 @@ Creates a new Header object.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-  action: "action_example",  cache_condition: "cache_condition_example",  dst: "dst_example",  ignore_if_set: 56,  name: "name_example",  priority: 100,  regex: "regex_example",  request_condition: "request_condition_example",  response_condition: null,  src: "src_example",  substitution: "substitution_example",  type: "type_example",
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+  action: "action_example",
+  cache_condition: "cache_condition_example",
+  dst: "dst_example",
+  ignore_if_set: 56,
+  name: "name_example",
+  priority: 100,
+  regex: "regex_example",
+  request_condition: "request_condition_example",
+  response_condition: null,
+  src: "src_example",
+  substitution: "substitution_example",
+  type: "type_example",
 };
 
 apiInstance.createHeaderObject(options)
@@ -77,8 +89,9 @@ Deletes a Header object by name.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  header_name: "header_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ header_name: "header_name_example", // required
 };
 
 apiInstance.deleteHeaderObject(options)
@@ -115,8 +128,9 @@ Retrieves a Header object by name.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  header_name: "header_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ header_name: "header_name_example", // required
 };
 
 apiInstance.getHeaderObject(options)
@@ -153,8 +167,8 @@ Retrieves all Header objects for a particular Version of a Service.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
 };
 
 apiInstance.listHeaderObjects(options)
@@ -190,8 +204,21 @@ Modifies an existing Header object by name.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  header_name: "header_name_example", // required
-  action: "action_example",  cache_condition: "cache_condition_example",  dst: "dst_example",  ignore_if_set: 56,  name: "name_example",  priority: 100,  regex: "regex_example",  request_condition: "request_condition_example",  response_condition: null,  src: "src_example",  substitution: "substitution_example",  type: "type_example",
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ header_name: "header_name_example", // required
+  action: "action_example",
+  cache_condition: "cache_condition_example",
+  dst: "dst_example",
+  ignore_if_set: 56,
+  name: "name_example",
+  priority: 100,
+  regex: "regex_example",
+  request_condition: "request_condition_example",
+  response_condition: null,
+  src: "src_example",
+  substitution: "substitution_example",
+  type: "type_example",
 };
 
 apiInstance.updateHeaderObject(options)

@@ -30,8 +30,9 @@ Checks the status of a specific domain's DNS record for a Service Version. Retur
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  domain_name: "domain_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ domain_name: "domain_name_example", // required
 };
 
 apiInstance.checkDomain(options)
@@ -68,8 +69,8 @@ Checks the status of all domains' DNS records for a Service Version. Returns an 
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
 };
 
 apiInstance.checkDomains(options)
@@ -105,8 +106,10 @@ Create a domain for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-  comment: "comment_example",  name: "name_example",
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+  comment: "comment_example",
+  name: "name_example",
 };
 
 apiInstance.createDomain(options)
@@ -144,8 +147,9 @@ Delete the domain for a particular service and versions.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  domain_name: "domain_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ domain_name: "domain_name_example", // required
 };
 
 apiInstance.deleteDomain(options)
@@ -182,8 +186,9 @@ Get the domain for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  domain_name: "domain_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ domain_name: "domain_name_example", // required
 };
 
 apiInstance.getDomain(options)
@@ -220,8 +225,8 @@ List all the domains for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
 };
 
 apiInstance.listDomains(options)
@@ -257,8 +262,11 @@ Update the domain for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  domain_name: "domain_name_example", // required
-  comment: "comment_example",  name: "name_example",
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ domain_name: "domain_name_example", // required
+  comment: "comment_example",
+  name: "name_example",
 };
 
 apiInstance.updateDomain(options)

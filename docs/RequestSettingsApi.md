@@ -28,8 +28,8 @@ Creates a new Request Settings object.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
 };
 
 apiInstance.createRequestSettings(options)
@@ -65,8 +65,9 @@ Removes the specified Request Settings object.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  request_settings_name: "request_settings_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ request_settings_name: "request_settings_name_example", // required
 };
 
 apiInstance.deleteRequestSettings(options)
@@ -103,8 +104,9 @@ Gets the specified Request Settings object.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  request_settings_name: "request_settings_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ request_settings_name: "request_settings_name_example", // required
 };
 
 apiInstance.getRequestSettings(options)
@@ -141,8 +143,8 @@ Returns a list of all Request Settings objects for the given service and version
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
 };
 
 apiInstance.listRequestSettings(options)
@@ -178,8 +180,21 @@ Updates the specified Request Settings object.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  request_settings_name: "request_settings_name_example", // required
-  action: "action_example",  bypass_busy_wait: 56,  default_host: "default_host_example",  force_miss: 56,  force_ssl: 56,  geo_headers: 56,  hash_keys: "hash_keys_example",  max_stale_age: 56,  name: "name_example",  request_condition: "request_condition_example",  timer_support: 56,  xff: "xff_example",
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ request_settings_name: "request_settings_name_example", // required
+  action: "action_example",
+  bypass_busy_wait: 56,
+  default_host: "default_host_example",
+  force_miss: 56,
+  force_ssl: 56,
+  geo_headers: 56,
+  hash_keys: "hash_keys_example",
+  max_stale_age: 56,
+  name: "name_example",
+  request_condition: "request_condition_example",
+  timer_support: 56,
+  xff: "xff_example",
 };
 
 apiInstance.updateRequestSettings(options)

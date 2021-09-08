@@ -28,7 +28,6 @@ Enable TLS for a particular TLS domain and certificate combination. These relati
 
 ```javascript
 const options = {
-
   tls_activation: new Fastly.TlsActivation(),
 };
 
@@ -64,8 +63,7 @@ Disable TLS on the domain associated with this TLS activation.
 
 ```javascript
 const options = {
-  tls_activation_id: "tls_activation_id_example", // required
-
+ tls_activation_id: "tls_activation_id_example", // required
 };
 
 apiInstance.deleteTlsActivation(options)
@@ -100,7 +98,7 @@ Show a TLS activation.
 
 ```javascript
 const options = {
-  tls_activation_id: "tls_activation_id_example", // required
+ tls_activation_id: "tls_activation_id_example", // required
   include: tls_certificate,tls_configuration,tls_domain,
 };
 
@@ -137,8 +135,12 @@ List all TLS activations.
 
 ```javascript
 const options = {
-
-  filter_tls_certificate_id: "filter_tls_certificate_id_example",  filter_tls_configuration_id: "filter_tls_configuration_id_example",  filter_tls_domain_id: "filter_tls_domain_id_example",  include: tls_certificate,tls_configuration,tls_domain,  page_number: 56,  page_size: 20,
+  filter_tls_certificate_id: "filter_tls_certificate_id_example",
+  filter_tls_configuration_id: "filter_tls_configuration_id_example",
+  filter_tls_domain_id: "filter_tls_domain_id_example",
+  include: tls_certificate,tls_configuration,tls_domain,
+  page_number: 56,
+  page_size: 20,
 };
 
 apiInstance.listTlsActivations(options)
@@ -178,7 +180,7 @@ Update the certificate used to terminate TLS traffic for the domain associated w
 
 ```javascript
 const options = {
-  tls_activation_id: "tls_activation_id_example", // required
+ tls_activation_id: "tls_activation_id_example", // required
   tls_activation: new Fastly.TlsActivation(),
 };
 

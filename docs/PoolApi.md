@@ -28,8 +28,29 @@ Creates a pool for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-  tls_ca_cert: "'null'",  tls_cert_hostname: "'null'",  tls_client_cert: "'null'",  tls_client_key: "'null'",  use_tls: 0,  comment: "comment_example",  connect_timeout: 56,  first_byte_timeout: 56,  healthcheck: "healthcheck_example",  max_conn_default: 56,  max_tls_version: 56,  min_tls_version: 56,  name: "name_example",  override_host: "'null'",  quorum: 75,  request_condition: "request_condition_example",  shield: "'null'",  tls_check_cert: 56,  tls_ciphers: "tls_ciphers_example",  tls_sni_hostname: "tls_sni_hostname_example",  type: "type_example",
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+  tls_ca_cert: "'null'",
+  tls_cert_hostname: "'null'",
+  tls_client_cert: "'null'",
+  tls_client_key: "'null'",
+  use_tls: 0,
+  comment: "comment_example",
+  connect_timeout: 56,
+  first_byte_timeout: 56,
+  healthcheck: "healthcheck_example",
+  max_conn_default: 56,
+  max_tls_version: 56,
+  min_tls_version: 56,
+  name: "name_example",
+  override_host: "'null'",
+  quorum: 75,
+  request_condition: "request_condition_example",
+  shield: "'null'",
+  tls_check_cert: 56,
+  tls_ciphers: "tls_ciphers_example",
+  tls_sni_hostname: "tls_sni_hostname_example",
+  type: "type_example",
 };
 
 apiInstance.createServerPool(options)
@@ -86,8 +107,9 @@ Deletes a specific pool for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  pool_name: "pool_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ pool_name: "pool_name_example", // required
 };
 
 apiInstance.deleteServerPool(options)
@@ -124,8 +146,9 @@ Gets a single pool for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  pool_name: "pool_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ pool_name: "pool_name_example", // required
 };
 
 apiInstance.getServerPool(options)
@@ -162,8 +185,8 @@ Lists all pools for a particular service and pool.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
 };
 
 apiInstance.listServerPools(options)
@@ -199,8 +222,30 @@ Updates a specific pool for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  pool_name: "pool_name_example", // required
-  tls_ca_cert: "'null'",  tls_cert_hostname: "'null'",  tls_client_cert: "'null'",  tls_client_key: "'null'",  use_tls: UseTlsEnum.no_tls,  comment: "comment_example",  connect_timeout: 56,  first_byte_timeout: 56,  healthcheck: "healthcheck_example",  max_conn_default: 56,  max_tls_version: 56,  min_tls_version: 56,  name: "name_example",  override_host: "'null'",  quorum: 75,  request_condition: "request_condition_example",  shield: "'null'",  tls_check_cert: 56,  tls_ciphers: "tls_ciphers_example",  tls_sni_hostname: "tls_sni_hostname_example",  type: "type_example",
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ pool_name: "pool_name_example", // required
+  tls_ca_cert: "'null'",
+  tls_cert_hostname: "'null'",
+  tls_client_cert: "'null'",
+  tls_client_key: "'null'",
+  use_tls: UseTlsEnum.no_tls,
+  comment: "comment_example",
+  connect_timeout: 56,
+  first_byte_timeout: 56,
+  healthcheck: "healthcheck_example",
+  max_conn_default: 56,
+  max_tls_version: 56,
+  min_tls_version: 56,
+  name: "name_example",
+  override_host: "'null'",
+  quorum: 75,
+  request_condition: "request_condition_example",
+  shield: "'null'",
+  tls_check_cert: 56,
+  tls_ciphers: "tls_ciphers_example",
+  tls_sni_hostname: "tls_sni_hostname_example",
+  type: "type_example",
 };
 
 apiInstance.updateServerPool(options)

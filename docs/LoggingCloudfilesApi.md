@@ -28,8 +28,24 @@ Create a Cloud Files log endpoint for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  compression_codec: new Fastly.LoggingCompressionCodec(),  gzip_level: 0,  message_type: new Fastly.LoggingMessageType(),  period: 3600,  timestamp_format: "timestamp_format_example",  access_key: "access_key_example",  bucket_name: "bucket_name_example",  path: "'null'",  public_key: "'null'",  region: "region_example",  user: "user_example",
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format_version: new Fastly.LoggingFormatVersion(),
+  name: "name_example",
+  placement: new Fastly.LoggingPlacement(),
+  response_condition: "response_condition_example",
+  compression_codec: new Fastly.LoggingCompressionCodec(),
+  gzip_level: 0,
+  message_type: new Fastly.LoggingMessageType(),
+  period: 3600,
+  timestamp_format: "timestamp_format_example",
+  access_key: "access_key_example",
+  bucket_name: "bucket_name_example",
+  path: "'null'",
+  public_key: "'null'",
+  region: "region_example",
+  user: "user_example",
 };
 
 apiInstance.createLogCloudfiles(options)
@@ -81,8 +97,9 @@ Delete the Cloud Files log endpoint for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_cloudfiles_name: "logging_cloudfiles_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_cloudfiles_name: "logging_cloudfiles_name_example", // required
 };
 
 apiInstance.deleteLogCloudfiles(options)
@@ -119,8 +136,9 @@ Get the Cloud Files log endpoint for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_cloudfiles_name: "logging_cloudfiles_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_cloudfiles_name: "logging_cloudfiles_name_example", // required
 };
 
 apiInstance.getLogCloudfiles(options)
@@ -157,8 +175,8 @@ List all of the Cloud Files log endpoints for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
 };
 
 apiInstance.listLogCloudfiles(options)
@@ -194,8 +212,25 @@ Update the Cloud Files log endpoint for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_cloudfiles_name: "logging_cloudfiles_name_example", // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  compression_codec: new Fastly.LoggingCompressionCodec(),  gzip_level: 0,  message_type: new Fastly.LoggingMessageType(),  period: 3600,  timestamp_format: "timestamp_format_example",  access_key: "access_key_example",  bucket_name: "bucket_name_example",  path: "'null'",  public_key: "'null'",  region: "region_example",  user: "user_example",
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_cloudfiles_name: "logging_cloudfiles_name_example", // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format_version: new Fastly.LoggingFormatVersion(),
+  name: "name_example",
+  placement: new Fastly.LoggingPlacement(),
+  response_condition: "response_condition_example",
+  compression_codec: new Fastly.LoggingCompressionCodec(),
+  gzip_level: 0,
+  message_type: new Fastly.LoggingMessageType(),
+  period: 3600,
+  timestamp_format: "timestamp_format_example",
+  access_key: "access_key_example",
+  bucket_name: "bucket_name_example",
+  path: "'null'",
+  public_key: "'null'",
+  region: "region_example",
+  user: "user_example",
 };
 
 apiInstance.updateLogCloudfiles(options)

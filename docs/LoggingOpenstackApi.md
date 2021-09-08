@@ -28,8 +28,24 @@ Create a openstack for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  compression_codec: new Fastly.LoggingCompressionCodec(),  gzip_level: 0,  message_type: new Fastly.LoggingMessageType(),  period: 3600,  timestamp_format: "timestamp_format_example",  access_key: "access_key_example",  bucket_name: "bucket_name_example",  path: "'null'",  public_key: "'null'",  url: "url_example",  user: "user_example",
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format_version: new Fastly.LoggingFormatVersion(),
+  name: "name_example",
+  placement: new Fastly.LoggingPlacement(),
+  response_condition: "response_condition_example",
+  compression_codec: new Fastly.LoggingCompressionCodec(),
+  gzip_level: 0,
+  message_type: new Fastly.LoggingMessageType(),
+  period: 3600,
+  timestamp_format: "timestamp_format_example",
+  access_key: "access_key_example",
+  bucket_name: "bucket_name_example",
+  path: "'null'",
+  public_key: "'null'",
+  url: "url_example",
+  user: "user_example",
 };
 
 apiInstance.createLogOpenstack(options)
@@ -81,8 +97,9 @@ Delete the openstack for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_openstack_name: "logging_openstack_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_openstack_name: "logging_openstack_name_example", // required
 };
 
 apiInstance.deleteLogOpenstack(options)
@@ -119,8 +136,9 @@ Get the openstack for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_openstack_name: "logging_openstack_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_openstack_name: "logging_openstack_name_example", // required
 };
 
 apiInstance.getLogOpenstack(options)
@@ -157,8 +175,8 @@ List all of the openstacks for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
 };
 
 apiInstance.listLogOpenstack(options)
@@ -194,8 +212,25 @@ Update the openstack for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_openstack_name: "logging_openstack_name_example", // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  compression_codec: new Fastly.LoggingCompressionCodec(),  gzip_level: 0,  message_type: new Fastly.LoggingMessageType(),  period: 3600,  timestamp_format: "timestamp_format_example",  access_key: "access_key_example",  bucket_name: "bucket_name_example",  path: "'null'",  public_key: "'null'",  url: "url_example",  user: "user_example",
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_openstack_name: "logging_openstack_name_example", // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format_version: new Fastly.LoggingFormatVersion(),
+  name: "name_example",
+  placement: new Fastly.LoggingPlacement(),
+  response_condition: "response_condition_example",
+  compression_codec: new Fastly.LoggingCompressionCodec(),
+  gzip_level: 0,
+  message_type: new Fastly.LoggingMessageType(),
+  period: 3600,
+  timestamp_format: "timestamp_format_example",
+  access_key: "access_key_example",
+  bucket_name: "bucket_name_example",
+  path: "'null'",
+  public_key: "'null'",
+  url: "url_example",
+  user: "user_example",
 };
 
 apiInstance.updateLogOpenstack(options)

@@ -30,7 +30,6 @@ Revoke Tokens in bulk format. Users may only revoke their own tokens. Superusers
 
 ```javascript
 const options = {
-
   body: null,
 };
 
@@ -124,8 +123,7 @@ List all tokens belonging to a specific customer.
 
 ```javascript
 const options = {
-  customer_id: "customer_id_example", // required
-
+ customer_id: "customer_id_example", // required
 };
 
 apiInstance.listTokensCustomer(options)
@@ -189,8 +187,7 @@ Revoke a specific token by its id.
 
 ```javascript
 const options = {
-  token_id: "token_id_example", // required
-
+ token_id: "token_id_example", // required
 };
 
 apiInstance.revokeToken(options)

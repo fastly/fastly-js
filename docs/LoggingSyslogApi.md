@@ -28,8 +28,24 @@ Create a Syslog for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  tls_ca_cert: "'null'",  tls_client_cert: "'null'",  tls_client_key: "'null'",  tls_hostname: "'null'",  address: "address_example",  port: 514,  hostname: "hostname_example",  ipv4: "ipv4_example",  message_type: new Fastly.LoggingMessageType(),  token: "'null'",  use_tls: new Fastly.LoggingUseTls(),
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format_version: new Fastly.LoggingFormatVersion(),
+  name: "name_example",
+  placement: new Fastly.LoggingPlacement(),
+  response_condition: "response_condition_example",
+  tls_ca_cert: "'null'",
+  tls_client_cert: "'null'",
+  tls_client_key: "'null'",
+  tls_hostname: "'null'",
+  address: "address_example",
+  port: 514,
+  hostname: "hostname_example",
+  ipv4: "ipv4_example",
+  message_type: new Fastly.LoggingMessageType(),
+  token: "'null'",
+  use_tls: new Fastly.LoggingUseTls(),
 };
 
 apiInstance.createLogSyslog(options)
@@ -81,8 +97,9 @@ Delete the Syslog for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_syslog_name: "logging_syslog_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_syslog_name: "logging_syslog_name_example", // required
 };
 
 apiInstance.deleteLogSyslog(options)
@@ -119,8 +136,9 @@ Get the Syslog for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_syslog_name: "logging_syslog_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_syslog_name: "logging_syslog_name_example", // required
 };
 
 apiInstance.getLogSyslog(options)
@@ -157,8 +175,8 @@ List all of the Syslogs for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
 };
 
 apiInstance.listLogSyslog(options)
@@ -194,8 +212,25 @@ Update the Syslog for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_syslog_name: "logging_syslog_name_example", // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  tls_ca_cert: "'null'",  tls_client_cert: "'null'",  tls_client_key: "'null'",  tls_hostname: "'null'",  address: "address_example",  port: 514,  hostname: "hostname_example",  ipv4: "ipv4_example",  message_type: new Fastly.LoggingMessageType(),  token: "'null'",  use_tls: new Fastly.LoggingUseTls(),
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_syslog_name: "logging_syslog_name_example", // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format_version: new Fastly.LoggingFormatVersion(),
+  name: "name_example",
+  placement: new Fastly.LoggingPlacement(),
+  response_condition: "response_condition_example",
+  tls_ca_cert: "'null'",
+  tls_client_cert: "'null'",
+  tls_client_key: "'null'",
+  tls_hostname: "'null'",
+  address: "address_example",
+  port: 514,
+  hostname: "hostname_example",
+  ipv4: "ipv4_example",
+  message_type: new Fastly.LoggingMessageType(),
+  token: "'null'",
+  use_tls: new Fastly.LoggingUseTls(),
 };
 
 apiInstance.updateLogSyslog(options)

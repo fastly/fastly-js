@@ -26,7 +26,6 @@ Create an invitation.
 
 ```javascript
 const options = {
-
   invitation: new Fastly.Invitation(),
 };
 
@@ -62,8 +61,7 @@ Delete an invitation.
 
 ```javascript
 const options = {
-  invitation_id: "invitation_id_example", // required
-
+ invitation_id: "invitation_id_example", // required
 };
 
 apiInstance.deleteInvitation(options)
@@ -98,8 +96,8 @@ List all invitations.
 
 ```javascript
 const options = {
-
-  page_number: 56,  page_size: 20,
+  page_number: 56,
+  page_size: 20,
 };
 
 apiInstance.listInvitations(options)

@@ -28,8 +28,26 @@ Create a SFTP for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  compression_codec: new Fastly.LoggingCompressionCodec(),  gzip_level: 0,  message_type: new Fastly.LoggingMessageType(),  period: 3600,  timestamp_format: "timestamp_format_example",  address: "address_example",  port: null,  password: "password_example",  path: "'null'",  public_key: "'null'",  secret_key: "'null'",  ssh_known_hosts: "ssh_known_hosts_example",  user: "user_example",
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format_version: new Fastly.LoggingFormatVersion(),
+  name: "name_example",
+  placement: new Fastly.LoggingPlacement(),
+  response_condition: "response_condition_example",
+  compression_codec: new Fastly.LoggingCompressionCodec(),
+  gzip_level: 0,
+  message_type: new Fastly.LoggingMessageType(),
+  period: 3600,
+  timestamp_format: "timestamp_format_example",
+  address: "address_example",
+  port: null,
+  password: "password_example",
+  path: "'null'",
+  public_key: "'null'",
+  secret_key: "'null'",
+  ssh_known_hosts: "ssh_known_hosts_example",
+  user: "user_example",
 };
 
 apiInstance.createLogSftp(options)
@@ -83,8 +101,9 @@ Delete the SFTP for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_sftp_name: "logging_sftp_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_sftp_name: "logging_sftp_name_example", // required
 };
 
 apiInstance.deleteLogSftp(options)
@@ -121,8 +140,9 @@ Get the SFTP for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_sftp_name: "logging_sftp_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_sftp_name: "logging_sftp_name_example", // required
 };
 
 apiInstance.getLogSftp(options)
@@ -159,8 +179,8 @@ List all of the SFTPs for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
 };
 
 apiInstance.listLogSftp(options)
@@ -196,8 +216,27 @@ Update the SFTP for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_sftp_name: "logging_sftp_name_example", // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  compression_codec: new Fastly.LoggingCompressionCodec(),  gzip_level: 0,  message_type: new Fastly.LoggingMessageType(),  period: 3600,  timestamp_format: "timestamp_format_example",  address: "address_example",  port: null,  password: "password_example",  path: "'null'",  public_key: "'null'",  secret_key: "'null'",  ssh_known_hosts: "ssh_known_hosts_example",  user: "user_example",
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_sftp_name: "logging_sftp_name_example", // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format_version: new Fastly.LoggingFormatVersion(),
+  name: "name_example",
+  placement: new Fastly.LoggingPlacement(),
+  response_condition: "response_condition_example",
+  compression_codec: new Fastly.LoggingCompressionCodec(),
+  gzip_level: 0,
+  message_type: new Fastly.LoggingMessageType(),
+  period: 3600,
+  timestamp_format: "timestamp_format_example",
+  address: "address_example",
+  port: null,
+  password: "password_example",
+  path: "'null'",
+  public_key: "'null'",
+  secret_key: "'null'",
+  ssh_known_hosts: "ssh_known_hosts_example",
+  user: "user_example",
 };
 
 apiInstance.updateLogSftp(options)

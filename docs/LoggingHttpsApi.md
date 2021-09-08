@@ -28,8 +28,26 @@ Create an HTTPS object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  tls_ca_cert: "'null'",  tls_client_cert: "'null'",  tls_client_key: "'null'",  tls_hostname: "'null'",  request_max_bytes: 0,  request_max_entries: 0,  content_type: "'null'",  header_name: "'null'",  header_value: "'null'",  json_format: "json_format_example",  message_type: new Fastly.LoggingMessageType(),  method: "'POST'",  url: "url_example",
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format_version: new Fastly.LoggingFormatVersion(),
+  name: "name_example",
+  placement: new Fastly.LoggingPlacement(),
+  response_condition: "response_condition_example",
+  tls_ca_cert: "'null'",
+  tls_client_cert: "'null'",
+  tls_client_key: "'null'",
+  tls_hostname: "'null'",
+  request_max_bytes: 0,
+  request_max_entries: 0,
+  content_type: "'null'",
+  header_name: "'null'",
+  header_value: "'null'",
+  json_format: "json_format_example",
+  message_type: new Fastly.LoggingMessageType(),
+  method: "'POST'",
+  url: "url_example",
 };
 
 apiInstance.createLogHttps(options)
@@ -83,8 +101,9 @@ Delete the HTTPS object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_https_name: "logging_https_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_https_name: "logging_https_name_example", // required
 };
 
 apiInstance.deleteLogHttps(options)
@@ -121,8 +140,9 @@ Get the HTTPS object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_https_name: "logging_https_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_https_name: "logging_https_name_example", // required
 };
 
 apiInstance.getLogHttps(options)
@@ -159,8 +179,8 @@ List all of the HTTPS objects for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
 };
 
 apiInstance.listLogHttps(options)
@@ -196,8 +216,27 @@ Update the HTTPS object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_https_name: "logging_https_name_example", // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  tls_ca_cert: "'null'",  tls_client_cert: "'null'",  tls_client_key: "'null'",  tls_hostname: "'null'",  request_max_bytes: 0,  request_max_entries: 0,  content_type: "'null'",  header_name: "'null'",  header_value: "'null'",  json_format: "json_format_example",  message_type: new Fastly.LoggingMessageType(),  method: "'POST'",  url: "url_example",
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_https_name: "logging_https_name_example", // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format_version: new Fastly.LoggingFormatVersion(),
+  name: "name_example",
+  placement: new Fastly.LoggingPlacement(),
+  response_condition: "response_condition_example",
+  tls_ca_cert: "'null'",
+  tls_client_cert: "'null'",
+  tls_client_key: "'null'",
+  tls_hostname: "'null'",
+  request_max_bytes: 0,
+  request_max_entries: 0,
+  content_type: "'null'",
+  header_name: "'null'",
+  header_value: "'null'",
+  json_format: "json_format_example",
+  message_type: new Fastly.LoggingMessageType(),
+  method: "'POST'",
+  url: "url_example",
 };
 
 apiInstance.updateLogHttps(options)

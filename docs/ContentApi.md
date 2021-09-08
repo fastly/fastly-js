@@ -24,7 +24,6 @@ Retrieve headers and MD5 hash of the content for a particular URL from each Fast
 
 ```javascript
 const options = {
-
   url: https://www.example.com/foo/bar,
 };
 

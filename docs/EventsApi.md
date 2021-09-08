@@ -25,8 +25,7 @@ Get a specific event.
 
 ```javascript
 const options = {
-  event_id: "event_id_example", // required
-
+ event_id: "event_id_example", // required
 };
 
 apiInstance.getEvent(options)
@@ -61,8 +60,13 @@ List all events for a particular customer. Events can be filtered by user, custo
 
 ```javascript
 const options = {
-
-  filter_event_type: "filter_event_type_example",  filter_customer_id: "filter_customer_id_example",  filter_service_id: "filter_service_id_example",  filter_user_id: "filter_user_id_example",  page_number: 56,  page_size: 20,  sort: "'created_at'",
+  filter_event_type: "filter_event_type_example",
+  filter_customer_id: "filter_customer_id_example",
+  filter_service_id: "filter_service_id_example",
+  filter_user_id: "filter_user_id_example",
+  page_number: 56,
+  page_size: 20,
+  sort: "'created_at'",
 };
 
 apiInstance.listEvents(options)

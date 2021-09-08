@@ -28,7 +28,8 @@ Create a WAF exclusion for a particular firewall version.
 
 ```javascript
 const options = {
-  firewall_id: "firewall_id_example", // required  firewall_version_number: 56, // required
+ firewall_id: "firewall_id_example", // required
+ firewall_version_number: 56, // required
   waf_exclusion: new Fastly.WafExclusion(),
 };
 
@@ -66,8 +67,9 @@ Delete a WAF exclusion for a particular firewall version.
 
 ```javascript
 const options = {
-  firewall_id: "firewall_id_example", // required  firewall_version_number: 56, // required  exclusion_number: 56, // required
-
+ firewall_id: "firewall_id_example", // required
+ firewall_version_number: 56, // required
+ exclusion_number: 56, // required
 };
 
 apiInstance.deleteWafRuleExclusion(options)
@@ -104,8 +106,9 @@ Get a specific WAF exclusion object.
 
 ```javascript
 const options = {
-  firewall_id: "firewall_id_example", // required  firewall_version_number: 56, // required  exclusion_number: 56, // required
-
+ firewall_id: "firewall_id_example", // required
+ firewall_version_number: 56, // required
+ exclusion_number: 56, // required
 };
 
 apiInstance.getWafRuleExclusion(options)
@@ -142,8 +145,14 @@ List all exclusions for a particular firewall version.
 
 ```javascript
 const options = {
-  firewall_id: "firewall_id_example", // required  firewall_version_number: 56, // required
-  filter_exclusion_type: "filter_exclusion_type_example",  filter_name: "filter_name_example",  filter_waf_rules_modsec_rule_id: 56,  page_number: 56,  page_size: 20,  include: waf_rules,
+ firewall_id: "firewall_id_example", // required
+ firewall_version_number: 56, // required
+  filter_exclusion_type: "filter_exclusion_type_example",
+  filter_name: "filter_name_example",
+  filter_waf_rules_modsec_rule_id: 56,
+  page_number: 56,
+  page_size: 20,
+  include: waf_rules,
 };
 
 apiInstance.listWafRuleExclusions(options)
@@ -185,7 +194,9 @@ Update a WAF exclusion for a particular firewall version.
 
 ```javascript
 const options = {
-  firewall_id: "firewall_id_example", // required  firewall_version_number: 56, // required  exclusion_number: 56, // required
+ firewall_id: "firewall_id_example", // required
+ firewall_version_number: 56, // required
+ exclusion_number: 56, // required
   waf_exclusion: new Fastly.WafExclusion(),
 };
 

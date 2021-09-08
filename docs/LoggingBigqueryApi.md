@@ -28,8 +28,19 @@ Create a BigQuery logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-  format: "format_example",  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  secret_key: "secret_key_example",  user: "user_example",  dataset: "dataset_example",  project_id: "project_id_example",  table: "table_example",  template_suffix: "template_suffix_example",
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+  format: "format_example",
+  format_version: new Fastly.LoggingFormatVersion(),
+  name: "name_example",
+  placement: new Fastly.LoggingPlacement(),
+  response_condition: "response_condition_example",
+  secret_key: "secret_key_example",
+  user: "user_example",
+  dataset: "dataset_example",
+  project_id: "project_id_example",
+  table: "table_example",
+  template_suffix: "template_suffix_example",
 };
 
 apiInstance.createLogBigquery(options)
@@ -76,8 +87,9 @@ Delete a BigQuery logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_bigquery_name: "logging_bigquery_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_bigquery_name: "logging_bigquery_name_example", // required
 };
 
 apiInstance.deleteLogBigquery(options)
@@ -114,8 +126,9 @@ Get the details for a BigQuery logging object for a particular service and versi
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_bigquery_name: "logging_bigquery_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_bigquery_name: "logging_bigquery_name_example", // required
 };
 
 apiInstance.getLogBigquery(options)
@@ -152,8 +165,8 @@ List all of the BigQuery logging objects for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
 };
 
 apiInstance.listLogBigquery(options)
@@ -189,8 +202,20 @@ Update a BigQuery logging object for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_bigquery_name: "logging_bigquery_name_example", // required
-  format: "format_example",  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  secret_key: "secret_key_example",  user: "user_example",  dataset: "dataset_example",  project_id: "project_id_example",  table: "table_example",  template_suffix: "template_suffix_example",
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_bigquery_name: "logging_bigquery_name_example", // required
+  format: "format_example",
+  format_version: new Fastly.LoggingFormatVersion(),
+  name: "name_example",
+  placement: new Fastly.LoggingPlacement(),
+  response_condition: "response_condition_example",
+  secret_key: "secret_key_example",
+  user: "user_example",
+  dataset: "dataset_example",
+  project_id: "project_id_example",
+  table: "table_example",
+  template_suffix: "template_suffix_example",
 };
 
 apiInstance.updateLogBigquery(options)

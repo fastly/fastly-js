@@ -28,8 +28,12 @@ Create a named gzip configuration on a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-  cache_condition: "cache_condition_example",  content_types: "content_types_example",  extensions: "extensions_example",  name: "name_example",
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+  cache_condition: "cache_condition_example",
+  content_types: "content_types_example",
+  extensions: "extensions_example",
+  name: "name_example",
 };
 
 apiInstance.createGzipConfig(options)
@@ -69,8 +73,9 @@ Delete a named gzip configuration on a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  gzip_name: "gzip_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ gzip_name: "gzip_name_example", // required
 };
 
 apiInstance.deleteGzipConfig(options)
@@ -107,8 +112,9 @@ Get the gzip configuration for a particular service, version, and name.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  gzip_name: "gzip_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ gzip_name: "gzip_name_example", // required
 };
 
 apiInstance.getGzipConfigs(options)
@@ -145,8 +151,8 @@ List all gzip configurations for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
 };
 
 apiInstance.listGzipConfigs(options)
@@ -182,8 +188,13 @@ Update a named gzip configuration on a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  gzip_name: "gzip_name_example", // required
-  cache_condition: "cache_condition_example",  content_types: "content_types_example",  extensions: "extensions_example",  name: "name_example",
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ gzip_name: "gzip_name_example", // required
+  cache_condition: "cache_condition_example",
+  content_types: "content_types_example",
+  extensions: "extensions_example",
+  name: "name_example",
 };
 
 apiInstance.updateGzipConfig(options)

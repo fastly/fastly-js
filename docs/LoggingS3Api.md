@@ -28,8 +28,29 @@ Create a S3 for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  compression_codec: new Fastly.LoggingCompressionCodec(),  gzip_level: 0,  message_type: new Fastly.LoggingMessageType(),  period: 3600,  timestamp_format: "timestamp_format_example",  access_key: "access_key_example",  acl: "acl_example",  bucket_name: "bucket_name_example",  domain: "domain_example",  iam_role: "iam_role_example",  path: "'null'",  public_key: "'null'",  redundancy: "'null'",  secret_key: "secret_key_example",  server_side_encryption: "'null'",  server_side_encryption_kms_key_id: "'null'",
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format_version: new Fastly.LoggingFormatVersion(),
+  name: "name_example",
+  placement: new Fastly.LoggingPlacement(),
+  response_condition: "response_condition_example",
+  compression_codec: new Fastly.LoggingCompressionCodec(),
+  gzip_level: 0,
+  message_type: new Fastly.LoggingMessageType(),
+  period: 3600,
+  timestamp_format: "timestamp_format_example",
+  access_key: "access_key_example",
+  acl: "acl_example",
+  bucket_name: "bucket_name_example",
+  domain: "domain_example",
+  iam_role: "iam_role_example",
+  path: "'null'",
+  public_key: "'null'",
+  redundancy: "'null'",
+  secret_key: "secret_key_example",
+  server_side_encryption: "'null'",
+  server_side_encryption_kms_key_id: "'null'",
 };
 
 apiInstance.createLogAwsS3(options)
@@ -86,8 +107,9 @@ Delete the S3 for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_s3_name: "logging_s3_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_s3_name: "logging_s3_name_example", // required
 };
 
 apiInstance.deleteLogAwsS3(options)
@@ -124,8 +146,9 @@ Get the S3 for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_s3_name: "logging_s3_name_example", // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_s3_name: "logging_s3_name_example", // required
 };
 
 apiInstance.getLogAwsS3(options)
@@ -162,8 +185,8 @@ List all of the S3s for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required
-
+ service_id: "service_id_example", // required
+ version_id: 56, // required
 };
 
 apiInstance.listLogAwsS3(options)
@@ -199,8 +222,30 @@ Update the S3 for a particular service and version.
 
 ```javascript
 const options = {
-  service_id: "service_id_example", // required  version_id: 56, // required  logging_s3_name: "logging_s3_name_example", // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",  format_version: new Fastly.LoggingFormatVersion(),  name: "name_example",  placement: new Fastly.LoggingPlacement(),  response_condition: "response_condition_example",  compression_codec: new Fastly.LoggingCompressionCodec(),  gzip_level: 0,  message_type: new Fastly.LoggingMessageType(),  period: 3600,  timestamp_format: "timestamp_format_example",  access_key: "access_key_example",  acl: "acl_example",  bucket_name: "bucket_name_example",  domain: "domain_example",  iam_role: "iam_role_example",  path: "'null'",  public_key: "'null'",  redundancy: "'null'",  secret_key: "secret_key_example",  server_side_encryption: "'null'",  server_side_encryption_kms_key_id: "'null'",
+ service_id: "service_id_example", // required
+ version_id: 56, // required
+ logging_s3_name: "logging_s3_name_example", // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format_version: new Fastly.LoggingFormatVersion(),
+  name: "name_example",
+  placement: new Fastly.LoggingPlacement(),
+  response_condition: "response_condition_example",
+  compression_codec: new Fastly.LoggingCompressionCodec(),
+  gzip_level: 0,
+  message_type: new Fastly.LoggingMessageType(),
+  period: 3600,
+  timestamp_format: "timestamp_format_example",
+  access_key: "access_key_example",
+  acl: "acl_example",
+  bucket_name: "bucket_name_example",
+  domain: "domain_example",
+  iam_role: "iam_role_example",
+  path: "'null'",
+  public_key: "'null'",
+  redundancy: "'null'",
+  secret_key: "secret_key_example",
+  server_side_encryption: "'null'",
+  server_side_encryption_kms_key_id: "'null'",
 };
 
 apiInstance.updateLogAwsS3(options)
