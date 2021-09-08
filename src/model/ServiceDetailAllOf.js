@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import NestedVersion from './NestedVersion';
+import ApiClient from '../ApiClient.js';
+import NestedVersion from './NestedVersion.js';
 
 /**
  * The ServiceDetailAllOf model module.

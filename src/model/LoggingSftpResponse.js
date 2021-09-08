@@ -11,14 +11,14 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import LoggingCompressionCodec from './LoggingCompressionCodec';
-import LoggingFormatVersion from './LoggingFormatVersion';
-import LoggingMessageType from './LoggingMessageType';
-import LoggingPlacement from './LoggingPlacement';
-import LoggingSftp from './LoggingSftp';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
-import Timestamps from './Timestamps';
+import ApiClient from '../ApiClient.js';
+import LoggingCompressionCodec from './LoggingCompressionCodec.js';
+import LoggingFormatVersion from './LoggingFormatVersion.js';
+import LoggingMessageType from './LoggingMessageType.js';
+import LoggingPlacement from './LoggingPlacement.js';
+import LoggingSftp from './LoggingSftp.js';
+import ServiceIdAndVersion from './ServiceIdAndVersion.js';
+import Timestamps from './Timestamps.js';
 
 /**
  * The LoggingSftpResponse model module.

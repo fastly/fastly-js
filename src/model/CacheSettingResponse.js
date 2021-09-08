@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import CacheSetting from './CacheSetting';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
-import Timestamps from './Timestamps';
+import ApiClient from '../ApiClient.js';
+import CacheSetting from './CacheSetting.js';
+import ServiceIdAndVersion from './ServiceIdAndVersion.js';
+import Timestamps from './Timestamps.js';
 
 /**
  * The CacheSettingResponse model module.

@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import RateLimiterResponse1 from './RateLimiterResponse1';
+import ApiClient from '../ApiClient.js';
+import RateLimiterResponse1 from './RateLimiterResponse1.js';
 
 /**
  * The RateLimiter model module.

@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import Historical from './Historical';
-import HistoricalMeta from './HistoricalMeta';
-import HistoricalUsageAggregateResponseAllOf from './HistoricalUsageAggregateResponseAllOf';
+import ApiClient from '../ApiClient.js';
+import Historical from './Historical.js';
+import HistoricalMeta from './HistoricalMeta.js';
+import HistoricalUsageAggregateResponseAllOf from './HistoricalUsageAggregateResponseAllOf.js';
 
 /**
  * The HistoricalUsageAggregateResponse model module.

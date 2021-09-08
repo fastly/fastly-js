@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import RelationshipMemberTlsDnsRecord from './RelationshipMemberTlsDnsRecord';
+import ApiClient from '../ApiClient.js';
+import RelationshipMemberTlsDnsRecord from './RelationshipMemberTlsDnsRecord.js';
 
 /**
  * The RelationshipTlsDnsRecordDnsRecord model module.

@@ -11,22 +11,22 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import BackendResponse from './BackendResponse';
-import CacheSettingResponse from './CacheSettingResponse';
-import ConditionResponse from './ConditionResponse';
-import Director from './Director';
-import DomainResponse from './DomainResponse';
-import GzipResponse from './GzipResponse';
-import HeaderResponse from './HeaderResponse';
-import HealthcheckResponse from './HealthcheckResponse';
-import SchemasRequestSettingsResponse from './SchemasRequestSettingsResponse';
-import SchemasResponseObjectResponse from './SchemasResponseObjectResponse';
-import SchemasSnippetResponse from './SchemasSnippetResponse';
-import SchemasVclResponse from './SchemasVclResponse';
-import SchemasVersionResponse from './SchemasVersionResponse';
-import Settings from './Settings';
-import VersionDetail from './VersionDetail';
+import ApiClient from '../ApiClient.js';
+import BackendResponse from './BackendResponse.js';
+import CacheSettingResponse from './CacheSettingResponse.js';
+import ConditionResponse from './ConditionResponse.js';
+import Director from './Director.js';
+import DomainResponse from './DomainResponse.js';
+import GzipResponse from './GzipResponse.js';
+import HeaderResponse from './HeaderResponse.js';
+import HealthcheckResponse from './HealthcheckResponse.js';
+import RequestSettingsResponse from './RequestSettingsResponse.js';
+import SchemasResponseObjectResponse from './SchemasResponseObjectResponse.js';
+import SchemasSnippetResponse from './SchemasSnippetResponse.js';
+import SchemasVclResponse from './SchemasVclResponse.js';
+import SchemasVersionResponse from './SchemasVersionResponse.js';
+import Settings from './Settings.js';
+import VersionDetail from './VersionDetail.js';
 
 /**
  * The NestedVersion model module.
@@ -124,7 +124,7 @@ class NestedVersion {
                 obj['healthchecks'] = ApiClient.convertToType(data['healthchecks'], [HealthcheckResponse]);
             }
             if (data.hasOwnProperty('request_settings')) {
-                obj['request_settings'] = ApiClient.convertToType(data['request_settings'], [SchemasRequestSettingsResponse]);
+                obj['request_settings'] = ApiClient.convertToType(data['request_settings'], [RequestSettingsResponse]);
             }
             if (data.hasOwnProperty('response_objects')) {
                 obj['response_objects'] = ApiClient.convertToType(data['response_objects'], [SchemasResponseObjectResponse]);
@@ -268,7 +268,7 @@ NestedVersion.prototype['healthchecks'] = undefined;
 
 /**
  * List of request settings for this service.
- * @member {Array.<module:model/SchemasRequestSettingsResponse>} request_settings
+ * @member {Array.<module:model/RequestSettingsResponse>} request_settings
  */
 NestedVersion.prototype['request_settings'] = undefined;
 
@@ -405,7 +405,7 @@ VersionDetail.prototype['headers'] = undefined;
 VersionDetail.prototype['healthchecks'] = undefined;
 /**
  * List of request settings for this service.
- * @member {Array.<module:model/SchemasRequestSettingsResponse>} request_settings
+ * @member {Array.<module:model/RequestSettingsResponse>} request_settings
  */
 VersionDetail.prototype['request_settings'] = undefined;
 /**

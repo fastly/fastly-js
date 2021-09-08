@@ -11,14 +11,14 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import LoggingCommon from './LoggingCommon';
-import LoggingFormatVersion from './LoggingFormatVersion';
-import LoggingPlacement from './LoggingPlacement';
-import LoggingRequestCapsCommon from './LoggingRequestCapsCommon';
-import LoggingSplunkAllOf from './LoggingSplunkAllOf';
-import LoggingTlsCommon from './LoggingTlsCommon';
-import LoggingUseTls from './LoggingUseTls';
+import ApiClient from '../ApiClient.js';
+import LoggingCommon from './LoggingCommon.js';
+import LoggingFormatVersion from './LoggingFormatVersion.js';
+import LoggingPlacement from './LoggingPlacement.js';
+import LoggingRequestCapsCommon from './LoggingRequestCapsCommon.js';
+import LoggingSplunkAllOf from './LoggingSplunkAllOf.js';
+import LoggingTlsCommon from './LoggingTlsCommon.js';
+import LoggingUseTls from './LoggingUseTls.js';
 
 /**
  * The LoggingSplunk model module.

@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import Timestamps from './Timestamps';
-import Token from './Token';
-import TokenResponseAllOf from './TokenResponseAllOf';
+import ApiClient from '../ApiClient.js';
+import Timestamps from './Timestamps.js';
+import Token from './Token.js';
+import TokenResponseAllOf from './TokenResponseAllOf.js';
 
 /**
  * The TokenResponse model module.

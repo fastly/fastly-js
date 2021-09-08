@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import LoggingCompressionCodec from './LoggingCompressionCodec';
-import LoggingMessageType from './LoggingMessageType';
+import ApiClient from '../ApiClient.js';
+import LoggingCompressionCodec from './LoggingCompressionCodec.js';
+import LoggingMessageType from './LoggingMessageType.js';
 
 /**
  * The LoggingGenericCommon model module.

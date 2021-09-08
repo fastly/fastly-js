@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import RelationshipMemberCustomer from './RelationshipMemberCustomer';
+import ApiClient from '../ApiClient.js';
+import RelationshipMemberCustomer from './RelationshipMemberCustomer.js';
 
 /**
  * The RelationshipCustomerCustomer model module.

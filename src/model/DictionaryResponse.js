@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import Dictionary from './Dictionary';
-import DictionaryResponseAllOf from './DictionaryResponseAllOf';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
-import Timestamps from './Timestamps';
+import ApiClient from '../ApiClient.js';
+import Dictionary from './Dictionary.js';
+import DictionaryResponseAllOf from './DictionaryResponseAllOf.js';
+import ServiceIdAndVersion from './ServiceIdAndVersion.js';
+import Timestamps from './Timestamps.js';
 
 /**
  * The DictionaryResponse model module.

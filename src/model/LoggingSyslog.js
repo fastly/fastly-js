@@ -11,15 +11,15 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import LoggingAddressAndPort from './LoggingAddressAndPort';
-import LoggingCommon from './LoggingCommon';
-import LoggingFormatVersion from './LoggingFormatVersion';
-import LoggingMessageType from './LoggingMessageType';
-import LoggingPlacement from './LoggingPlacement';
-import LoggingSyslogAllOf from './LoggingSyslogAllOf';
-import LoggingTlsCommon from './LoggingTlsCommon';
-import LoggingUseTls from './LoggingUseTls';
+import ApiClient from '../ApiClient.js';
+import LoggingAddressAndPort from './LoggingAddressAndPort.js';
+import LoggingCommon from './LoggingCommon.js';
+import LoggingFormatVersion from './LoggingFormatVersion.js';
+import LoggingMessageType from './LoggingMessageType.js';
+import LoggingPlacement from './LoggingPlacement.js';
+import LoggingSyslogAllOf from './LoggingSyslogAllOf.js';
+import LoggingTlsCommon from './LoggingTlsCommon.js';
+import LoggingUseTls from './LoggingUseTls.js';
 
 /**
  * The LoggingSyslog model module.

@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import LoggingAddressAndPort from './LoggingAddressAndPort';
-import LoggingCommon from './LoggingCommon';
-import LoggingFormatVersion from './LoggingFormatVersion';
-import LoggingPlacement from './LoggingPlacement';
+import ApiClient from '../ApiClient.js';
+import LoggingAddressAndPort from './LoggingAddressAndPort.js';
+import LoggingCommon from './LoggingCommon.js';
+import LoggingFormatVersion from './LoggingFormatVersion.js';
+import LoggingPlacement from './LoggingPlacement.js';
 
 /**
  * The LoggingPapertrail model module.

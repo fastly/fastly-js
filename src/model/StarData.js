@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import RelationshipUser from './RelationshipUser';
-import TypeStar from './TypeStar';
+import ApiClient from '../ApiClient.js';
+import RelationshipUser from './RelationshipUser.js';
+import TypeStar from './TypeStar.js';
 
 /**
  * The StarData model module.

@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import HistoricalMeta from './HistoricalMeta';
+import ApiClient from '../ApiClient.js';
+import HistoricalMeta from './HistoricalMeta.js';
 
 /**
  * The Historical model module.

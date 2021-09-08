@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import Header from './Header';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
-import Timestamps from './Timestamps';
+import ApiClient from '../ApiClient.js';
+import Header from './Header.js';
+import ServiceIdAndVersion from './ServiceIdAndVersion.js';
+import Timestamps from './Timestamps.js';
 
 /**
  * The HeaderResponse model module.

@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import Timestamps from './Timestamps';
-import TypeTlsPrivateKey from './TypeTlsPrivateKey';
+import ApiClient from '../ApiClient.js';
+import Timestamps from './Timestamps.js';
+import TypeTlsPrivateKey from './TypeTlsPrivateKey.js';
 
 /**
  * The TlsPrivateKeyResponseData model module.

@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import Service from './Service';
-import ServiceCreateAllOf from './ServiceCreateAllOf';
+import ApiClient from '../ApiClient.js';
+import Service from './Service.js';
+import ServiceCreateAllOf from './ServiceCreateAllOf.js';
 
 /**
  * The ServiceCreate model module.

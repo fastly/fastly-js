@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import RoleUser from './RoleUser';
-import SchemasUserResponseAllOf from './SchemasUserResponseAllOf';
-import Timestamps from './Timestamps';
-import User from './User';
+import ApiClient from '../ApiClient.js';
+import RoleUser from './RoleUser.js';
+import SchemasUserResponseAllOf from './SchemasUserResponseAllOf.js';
+import Timestamps from './Timestamps.js';
+import User from './User.js';
 
 /**
  * The SchemasUserResponse model module.

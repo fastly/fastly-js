@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import SchemasVersionResponseAllOf from './SchemasVersionResponseAllOf';
-import Timestamps from './Timestamps';
-import Version from './Version';
+import ApiClient from '../ApiClient.js';
+import SchemasVersionResponseAllOf from './SchemasVersionResponseAllOf.js';
+import Timestamps from './Timestamps.js';
+import Version from './Version.js';
 
 /**
  * The VersionResponse model module.

@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import PoolAllOf from './PoolAllOf';
-import TlsCommon from './TlsCommon';
+import ApiClient from '../ApiClient.js';
+import PoolAllOf from './PoolAllOf.js';
+import TlsCommon from './TlsCommon.js';
 
 /**
  * The Pool model module.

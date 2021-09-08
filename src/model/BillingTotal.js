@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import BillingTotalExtras from './BillingTotalExtras';
+import ApiClient from '../ApiClient.js';
+import BillingTotalExtras from './BillingTotalExtras.js';
 
 /**
  * The BillingTotal model module.

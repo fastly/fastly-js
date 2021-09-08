@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import TlsPrivateKeyResponseData from './TlsPrivateKeyResponseData';
+import ApiClient from '../ApiClient.js';
+import TlsPrivateKeyResponseData from './TlsPrivateKeyResponseData.js';
 
 /**
  * The TlsPrivateKeyResponse model module.

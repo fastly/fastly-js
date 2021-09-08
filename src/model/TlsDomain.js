@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import TlsDomainData from './TlsDomainData';
+import ApiClient from '../ApiClient.js';
+import TlsDomainData from './TlsDomainData.js';
 
 /**
  * The TlsDomain model module.

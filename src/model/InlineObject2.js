@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import ServiceAuthorizationsData from './ServiceAuthorizationsData';
+import ApiClient from '../ApiClient.js';
+import ServiceAuthorizationsData from './ServiceAuthorizationsData.js';
 
 /**
  * The InlineObject2 model module.

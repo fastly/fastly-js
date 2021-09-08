@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import Timestamps from './Timestamps';
+import ApiClient from '../ApiClient.js';
+import Timestamps from './Timestamps.js';
 
 /**
  * The BillingResponseAllOf model module.

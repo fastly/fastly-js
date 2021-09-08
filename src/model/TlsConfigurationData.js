@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import AnyOfobjectobject from './AnyOfobjectobject';
-import TlsConfigurationDataAttributes from './TlsConfigurationDataAttributes';
-import TypeTlsConfiguration from './TypeTlsConfiguration';
+import ApiClient from '../ApiClient.js';
+import AnyOfobjectobject from './AnyOfobjectobject.js';
+import TlsConfigurationDataAttributes from './TlsConfigurationDataAttributes.js';
+import TypeTlsConfiguration from './TypeTlsConfiguration.js';
 
 /**
  * The TlsConfigurationData model module.

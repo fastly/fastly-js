@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import Data from './Data';
-import SchemasWafFirewallVersion from './SchemasWafFirewallVersion';
+import ApiClient from '../ApiClient.js';
+import Data from './Data.js';
+import SchemasWafFirewallVersion from './SchemasWafFirewallVersion.js';
 
 /**
  * The WafFirewallResponse model module.

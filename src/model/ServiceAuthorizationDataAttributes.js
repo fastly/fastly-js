@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import Permission from './Permission';
+import ApiClient from '../ApiClient.js';
+import Permission from './Permission.js';
 
 /**
  * The ServiceAuthorizationDataAttributes model module.

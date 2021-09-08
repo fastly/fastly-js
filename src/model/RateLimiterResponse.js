@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import RateLimiter from './RateLimiter';
-import RateLimiterResponse1 from './RateLimiterResponse1';
-import RateLimiterResponseAllOf from './RateLimiterResponseAllOf';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
-import Timestamps from './Timestamps';
+import ApiClient from '../ApiClient.js';
+import RateLimiter from './RateLimiter.js';
+import RateLimiterResponse1 from './RateLimiterResponse1.js';
+import RateLimiterResponseAllOf from './RateLimiterResponseAllOf.js';
+import ServiceIdAndVersion from './ServiceIdAndVersion.js';
+import Timestamps from './Timestamps.js';
 
 /**
  * The RateLimiterResponse model module.

@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import RelationshipMemberTlsBulkCertificate from './RelationshipMemberTlsBulkCertificate';
+import ApiClient from '../ApiClient.js';
+import RelationshipMemberTlsBulkCertificate from './RelationshipMemberTlsBulkCertificate.js';
 
 /**
  * The RelationshipTlsBulkCertificateTlsBulkCertificate model module.

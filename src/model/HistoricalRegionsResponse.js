@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import Historical from './Historical';
-import HistoricalMeta from './HistoricalMeta';
-import HistoricalRegionsResponseAllOf from './HistoricalRegionsResponseAllOf';
+import ApiClient from '../ApiClient.js';
+import Historical from './Historical.js';
+import HistoricalMeta from './HistoricalMeta.js';
+import HistoricalRegionsResponseAllOf from './HistoricalRegionsResponseAllOf.js';
 
 /**
  * The HistoricalRegionsResponse model module.

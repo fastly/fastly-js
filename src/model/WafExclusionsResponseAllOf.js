@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import AnyOfwafRulewafRuleRevision from './AnyOfwafRulewafRuleRevision';
-import Data from './Data';
+import ApiClient from '../ApiClient.js';
+import AnyOfwafRulewafRuleRevision from './AnyOfwafRulewafRuleRevision.js';
+import Data from './Data.js';
 
 /**
  * The WafExclusionsResponseAllOf model module.

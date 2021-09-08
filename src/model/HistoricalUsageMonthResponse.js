@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import Historical from './Historical';
-import HistoricalMeta from './HistoricalMeta';
-import HistoricalUsageMonthResponseAllOf from './HistoricalUsageMonthResponseAllOf';
-import HistoricalUsageMonthResponseAllOfData from './HistoricalUsageMonthResponseAllOfData';
+import ApiClient from '../ApiClient.js';
+import Historical from './Historical.js';
+import HistoricalMeta from './HistoricalMeta.js';
+import HistoricalUsageMonthResponseAllOf from './HistoricalUsageMonthResponseAllOf.js';
+import HistoricalUsageMonthResponseAllOfData from './HistoricalUsageMonthResponseAllOfData.js';
 
 /**
  * The HistoricalUsageMonthResponse model module.

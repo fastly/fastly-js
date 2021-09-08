@@ -11,13 +11,13 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import LoggingFormatVersion from './LoggingFormatVersion';
-import LoggingPlacement from './LoggingPlacement';
-import LoggingSplunk from './LoggingSplunk';
-import LoggingUseTls from './LoggingUseTls';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
-import Timestamps from './Timestamps';
+import ApiClient from '../ApiClient.js';
+import LoggingFormatVersion from './LoggingFormatVersion.js';
+import LoggingPlacement from './LoggingPlacement.js';
+import LoggingSplunk from './LoggingSplunk.js';
+import LoggingUseTls from './LoggingUseTls.js';
+import ServiceIdAndVersion from './ServiceIdAndVersion.js';
+import Timestamps from './Timestamps.js';
 
 /**
  * The LoggingSplunkResponse model module.

@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import LoggingBigquery from './LoggingBigquery';
-import LoggingFormatVersion from './LoggingFormatVersion';
-import LoggingPlacement from './LoggingPlacement';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
-import Timestamps from './Timestamps';
+import ApiClient from '../ApiClient.js';
+import LoggingBigquery from './LoggingBigquery.js';
+import LoggingFormatVersion from './LoggingFormatVersion.js';
+import LoggingPlacement from './LoggingPlacement.js';
+import ServiceIdAndVersion from './ServiceIdAndVersion.js';
+import Timestamps from './Timestamps.js';
 
 /**
  * The LoggingBigqueryResponse model module.

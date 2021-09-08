@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import RelationshipWafFirewallWafFirewall from './RelationshipWafFirewallWafFirewall';
+import ApiClient from '../ApiClient.js';
+import RelationshipWafFirewallWafFirewall from './RelationshipWafFirewallWafFirewall.js';
 
 /**
  * The RelationshipWafFirewall model module.

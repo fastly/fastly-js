@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import Data from './Data';
+import ApiClient from '../ApiClient.js';
+import Data from './Data.js';
 
 /**
  * The WafExclusionResponse model module.

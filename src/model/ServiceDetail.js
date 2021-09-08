@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import NestedVersion from './NestedVersion';
-import SchemasVersionResponse from './SchemasVersionResponse';
-import ServiceDetailAllOf from './ServiceDetailAllOf';
-import ServiceResponse from './ServiceResponse';
+import ApiClient from '../ApiClient.js';
+import NestedVersion from './NestedVersion.js';
+import SchemasVersionResponse from './SchemasVersionResponse.js';
+import ServiceDetailAllOf from './ServiceDetailAllOf.js';
+import ServiceResponse from './ServiceResponse.js';
 
 /**
  * The ServiceDetail model module.

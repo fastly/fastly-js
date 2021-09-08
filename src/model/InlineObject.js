@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import CustomerCustomerIdBillingAddressData from './CustomerCustomerIdBillingAddressData';
+import ApiClient from '../ApiClient.js';
+import CustomerCustomerIdBillingAddressData from './CustomerCustomerIdBillingAddressData.js';
 
 /**
  * The InlineObject model module.

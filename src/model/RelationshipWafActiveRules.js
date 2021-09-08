@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import RelationshipWafActiveRulesWafActiveRules from './RelationshipWafActiveRulesWafActiveRules';
+import ApiClient from '../ApiClient.js';
+import RelationshipWafActiveRulesWafActiveRules from './RelationshipWafActiveRulesWafActiveRules.js';
 
 /**
  * The RelationshipWafActiveRules model module.

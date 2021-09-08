@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import TlsConfigurationData from './TlsConfigurationData';
+import ApiClient from '../ApiClient.js';
+import TlsConfigurationData from './TlsConfigurationData.js';
 
 /**
  * The TlsConfiguration model module.

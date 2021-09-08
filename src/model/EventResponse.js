@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import EventResponseData from './EventResponseData';
+import ApiClient from '../ApiClient.js';
+import EventResponseData from './EventResponseData.js';
 
 /**
  * The EventResponse model module.

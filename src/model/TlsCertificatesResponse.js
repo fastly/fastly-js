@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import Data from './Data';
-import Pagination from './Pagination';
-import PaginationLinks from './PaginationLinks';
-import PaginationMeta from './PaginationMeta';
-import TlsCertificatesResponseAllOf from './TlsCertificatesResponseAllOf';
+import ApiClient from '../ApiClient.js';
+import Data from './Data.js';
+import Pagination from './Pagination.js';
+import PaginationLinks from './PaginationLinks.js';
+import PaginationMeta from './PaginationMeta.js';
+import TlsCertificatesResponseAllOf from './TlsCertificatesResponseAllOf.js';
 
 /**
  * The TlsCertificatesResponse model module.

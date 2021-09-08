@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import LoggingUseTls from './LoggingUseTls';
+import ApiClient from '../ApiClient.js';
+import LoggingUseTls from './LoggingUseTls.js';
 
 /**
  * The LoggingLogentriesAllOf model module.

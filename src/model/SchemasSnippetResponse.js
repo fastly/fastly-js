@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import SchemasSnippetResponseAllOf from './SchemasSnippetResponseAllOf';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
-import Snippet from './Snippet';
-import Timestamps from './Timestamps';
+import ApiClient from '../ApiClient.js';
+import SchemasSnippetResponseAllOf from './SchemasSnippetResponseAllOf.js';
+import ServiceIdAndVersion from './ServiceIdAndVersion.js';
+import Snippet from './Snippet.js';
+import Timestamps from './Timestamps.js';
 
 /**
  * The SchemasSnippetResponse model module.

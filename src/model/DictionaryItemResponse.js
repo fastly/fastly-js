@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import DictionaryItem from './DictionaryItem';
-import DictionaryItemResponseAllOf from './DictionaryItemResponseAllOf';
-import Timestamps from './Timestamps';
+import ApiClient from '../ApiClient.js';
+import DictionaryItem from './DictionaryItem.js';
+import DictionaryItemResponseAllOf from './DictionaryItemResponseAllOf.js';
+import Timestamps from './Timestamps.js';
 
 /**
  * The DictionaryItemResponse model module.

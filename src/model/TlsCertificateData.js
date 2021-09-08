@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import RelationshipTlsDomains from './RelationshipTlsDomains';
-import TlsCertificateDataAttributes from './TlsCertificateDataAttributes';
-import TypeTlsCertificate from './TypeTlsCertificate';
+import ApiClient from '../ApiClient.js';
+import RelationshipTlsDomains from './RelationshipTlsDomains.js';
+import TlsCertificateDataAttributes from './TlsCertificateDataAttributes.js';
+import TypeTlsCertificate from './TypeTlsCertificate.js';
 
 /**
  * The TlsCertificateData model module.

@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import TypeTlsConfiguration from './TypeTlsConfiguration';
+import ApiClient from '../ApiClient.js';
+import TypeTlsConfiguration from './TypeTlsConfiguration.js';
 
 /**
  * The RelationshipMemberTlsConfiguration model module.

@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import LoggingCommon from './LoggingCommon';
-import LoggingFormatVersion from './LoggingFormatVersion';
-import LoggingHerokuAllOf from './LoggingHerokuAllOf';
-import LoggingPlacement from './LoggingPlacement';
+import ApiClient from '../ApiClient.js';
+import LoggingCommon from './LoggingCommon.js';
+import LoggingFormatVersion from './LoggingFormatVersion.js';
+import LoggingHerokuAllOf from './LoggingHerokuAllOf.js';
+import LoggingPlacement from './LoggingPlacement.js';
 
 /**
  * The LoggingHeroku model module.

@@ -11,13 +11,13 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import LoggingFormatVersion from './LoggingFormatVersion';
-import LoggingLogentries from './LoggingLogentries';
-import LoggingPlacement from './LoggingPlacement';
-import LoggingUseTls from './LoggingUseTls';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
-import Timestamps from './Timestamps';
+import ApiClient from '../ApiClient.js';
+import LoggingFormatVersion from './LoggingFormatVersion.js';
+import LoggingLogentries from './LoggingLogentries.js';
+import LoggingPlacement from './LoggingPlacement.js';
+import LoggingUseTls from './LoggingUseTls.js';
+import ServiceIdAndVersion from './ServiceIdAndVersion.js';
+import Timestamps from './Timestamps.js';
 
 /**
  * The LoggingLogentriesResponse model module.

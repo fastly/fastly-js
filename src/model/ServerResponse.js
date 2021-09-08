@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import Server from './Server';
-import ServerResponseAllOf from './ServerResponseAllOf';
-import Timestamps from './Timestamps';
+import ApiClient from '../ApiClient.js';
+import Server from './Server.js';
+import ServerResponseAllOf from './ServerResponseAllOf.js';
+import Timestamps from './Timestamps.js';
 
 /**
  * The ServerResponse model module.

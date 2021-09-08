@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import Backend from './Backend';
-import BackendResponseAllOf from './BackendResponseAllOf';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
-import Timestamps from './Timestamps';
+import ApiClient from '../ApiClient.js';
+import Backend from './Backend.js';
+import BackendResponseAllOf from './BackendResponseAllOf.js';
+import ServiceIdAndVersion from './ServiceIdAndVersion.js';
+import Timestamps from './Timestamps.js';
 
 /**
  * The BackendResponse model module.

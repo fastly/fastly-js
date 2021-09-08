@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import WafFirewallData from './WafFirewallData';
+import ApiClient from '../ApiClient.js';
+import WafFirewallData from './WafFirewallData.js';
 
 /**
  * The WafFirewall model module.

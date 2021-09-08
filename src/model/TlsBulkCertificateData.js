@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import AnyOfrelationshipTlsConfigurationsobject from './AnyOfrelationshipTlsConfigurationsobject';
-import TlsBulkCertificateDataAttributes from './TlsBulkCertificateDataAttributes';
-import TypeTlsBulkCertificate from './TypeTlsBulkCertificate';
+import ApiClient from '../ApiClient.js';
+import AnyOfrelationshipTlsConfigurationsobject from './AnyOfrelationshipTlsConfigurationsobject.js';
+import TlsBulkCertificateDataAttributes from './TlsBulkCertificateDataAttributes.js';
+import TypeTlsBulkCertificate from './TypeTlsBulkCertificate.js';
 
 /**
  * The TlsBulkCertificateData model module.

@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import AnyOfrelationshipTlsActivationsobject from './AnyOfrelationshipTlsActivationsobject';
-import TlsPrivateKeyDataAttributes from './TlsPrivateKeyDataAttributes';
-import TypeTlsPrivateKey from './TypeTlsPrivateKey';
+import ApiClient from '../ApiClient.js';
+import AnyOfrelationshipTlsActivationsobject from './AnyOfrelationshipTlsActivationsobject.js';
+import TlsPrivateKeyDataAttributes from './TlsPrivateKeyDataAttributes.js';
+import TypeTlsPrivateKey from './TypeTlsPrivateKey.js';
 
 /**
  * The TlsPrivateKeyData model module.

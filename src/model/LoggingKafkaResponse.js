@@ -11,13 +11,13 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import LoggingFormatVersion from './LoggingFormatVersion';
-import LoggingKafka from './LoggingKafka';
-import LoggingPlacement from './LoggingPlacement';
-import LoggingUseTls from './LoggingUseTls';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
-import Timestamps from './Timestamps';
+import ApiClient from '../ApiClient.js';
+import LoggingFormatVersion from './LoggingFormatVersion.js';
+import LoggingKafka from './LoggingKafka.js';
+import LoggingPlacement from './LoggingPlacement.js';
+import LoggingUseTls from './LoggingUseTls.js';
+import ServiceIdAndVersion from './ServiceIdAndVersion.js';
+import Timestamps from './Timestamps.js';
 
 /**
  * The LoggingKafkaResponse model module.

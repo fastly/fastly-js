@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import RelationshipMemberTlsDomain from './RelationshipMemberTlsDomain';
+import ApiClient from '../ApiClient.js';
+import RelationshipMemberTlsDomain from './RelationshipMemberTlsDomain.js';
 
 /**
  * The RelationshipCommonNameCommonName model module.

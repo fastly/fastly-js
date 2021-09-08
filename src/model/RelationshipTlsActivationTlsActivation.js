@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import RelationshipMemberTlsActivation from './RelationshipMemberTlsActivation';
+import ApiClient from '../ApiClient.js';
+import RelationshipMemberTlsActivation from './RelationshipMemberTlsActivation.js';
 
 /**
  * The RelationshipTlsActivationTlsActivation model module.

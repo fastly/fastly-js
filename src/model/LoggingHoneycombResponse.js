@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import LoggingFormatVersion from './LoggingFormatVersion';
-import LoggingHoneycomb from './LoggingHoneycomb';
-import LoggingPlacement from './LoggingPlacement';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
-import Timestamps from './Timestamps';
+import ApiClient from '../ApiClient.js';
+import LoggingFormatVersion from './LoggingFormatVersion.js';
+import LoggingHoneycomb from './LoggingHoneycomb.js';
+import LoggingPlacement from './LoggingPlacement.js';
+import ServiceIdAndVersion from './ServiceIdAndVersion.js';
+import Timestamps from './Timestamps.js';
 
 /**
  * The LoggingHoneycombResponse model module.

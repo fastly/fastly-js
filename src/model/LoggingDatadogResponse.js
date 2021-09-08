@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import LoggingDatadog from './LoggingDatadog';
-import LoggingFormatVersion from './LoggingFormatVersion';
-import LoggingPlacement from './LoggingPlacement';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
-import Timestamps from './Timestamps';
+import ApiClient from '../ApiClient.js';
+import LoggingDatadog from './LoggingDatadog.js';
+import LoggingFormatVersion from './LoggingFormatVersion.js';
+import LoggingPlacement from './LoggingPlacement.js';
+import ServiceIdAndVersion from './ServiceIdAndVersion.js';
+import Timestamps from './Timestamps.js';
 
 /**
  * The LoggingDatadogResponse model module.

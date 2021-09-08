@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import TokenCreatedResponseAllOf from './TokenCreatedResponseAllOf';
-import TokenResponse from './TokenResponse';
+import ApiClient from '../ApiClient.js';
+import TokenCreatedResponseAllOf from './TokenCreatedResponseAllOf.js';
+import TokenResponse from './TokenResponse.js';
 
 /**
  * The TokenCreatedResponse model module.

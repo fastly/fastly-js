@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates from './AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates';
-import TlsSubscriptionDataAttributes from './TlsSubscriptionDataAttributes';
-import TypeTlsSubscription from './TypeTlsSubscription';
+import ApiClient from '../ApiClient.js';
+import AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates from './AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates.js';
+import TlsSubscriptionDataAttributes from './TlsSubscriptionDataAttributes.js';
+import TypeTlsSubscription from './TypeTlsSubscription.js';
 
 /**
  * The TlsSubscriptionData model module.

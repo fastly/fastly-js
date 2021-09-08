@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import Historical from './Historical';
-import HistoricalFieldAggregateResponseAllOf from './HistoricalFieldAggregateResponseAllOf';
-import HistoricalMeta from './HistoricalMeta';
+import ApiClient from '../ApiClient.js';
+import Historical from './Historical.js';
+import HistoricalFieldAggregateResponseAllOf from './HistoricalFieldAggregateResponseAllOf.js';
+import HistoricalMeta from './HistoricalMeta.js';
 
 /**
  * The HistoricalFieldAggregateResponse model module.

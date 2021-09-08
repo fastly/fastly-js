@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import EventResponseDataAttributes from './EventResponseDataAttributes';
-import TypeEvent from './TypeEvent';
+import ApiClient from '../ApiClient.js';
+import EventResponseDataAttributes from './EventResponseDataAttributes.js';
+import TypeEvent from './TypeEvent.js';
 
 /**
  * The EventResponseData model module.

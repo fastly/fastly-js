@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import RelationshipWafTagsWafTags from './RelationshipWafTagsWafTags';
+import ApiClient from '../ApiClient.js';
+import RelationshipWafTagsWafTags from './RelationshipWafTagsWafTags.js';
 
 /**
  * The RelationshipWafTags model module.

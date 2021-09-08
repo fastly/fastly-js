@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import AnyOfobjectobjectrelationshipTlsSubscriptions from './AnyOfobjectobjectrelationshipTlsSubscriptions';
-import TypeTlsDomain from './TypeTlsDomain';
+import ApiClient from '../ApiClient.js';
+import AnyOfobjectobjectrelationshipTlsSubscriptions from './AnyOfobjectobjectrelationshipTlsSubscriptions.js';
+import TypeTlsDomain from './TypeTlsDomain.js';
 
 /**
  * The TlsDomainData model module.

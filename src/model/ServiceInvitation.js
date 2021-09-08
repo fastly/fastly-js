@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import ServiceInvitationData from './ServiceInvitationData';
+import ApiClient from '../ApiClient.js';
+import ServiceInvitationData from './ServiceInvitationData.js';
 
 /**
  * The ServiceInvitation model module.

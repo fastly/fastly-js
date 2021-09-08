@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import LoggingCommon from './LoggingCommon';
-import LoggingFormatVersion from './LoggingFormatVersion';
-import LoggingHoneycombAllOf from './LoggingHoneycombAllOf';
-import LoggingPlacement from './LoggingPlacement';
+import ApiClient from '../ApiClient.js';
+import LoggingCommon from './LoggingCommon.js';
+import LoggingFormatVersion from './LoggingFormatVersion.js';
+import LoggingHoneycombAllOf from './LoggingHoneycombAllOf.js';
+import LoggingPlacement from './LoggingPlacement.js';
 
 /**
  * The LoggingHoneycomb model module.

@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import ServiceAuthorization from './ServiceAuthorization';
+import ApiClient from '../ApiClient.js';
+import ServiceAuthorization from './ServiceAuthorization.js';
 
 /**
  * The InlineObject3 model module.

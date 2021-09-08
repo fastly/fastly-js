@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import TypeWafRule from './TypeWafRule';
-import WafRuleAttributes from './WafRuleAttributes';
+import ApiClient from '../ApiClient.js';
+import TypeWafRule from './TypeWafRule.js';
+import WafRuleAttributes from './WafRuleAttributes.js';
 
 /**
  * The WafRule model module.

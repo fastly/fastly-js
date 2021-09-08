@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import SchemasVersionResponse from './SchemasVersionResponse';
+import ApiClient from '../ApiClient.js';
+import SchemasVersionResponse from './SchemasVersionResponse.js';
 
 /**
  * The ServiceResponseAllOf model module.

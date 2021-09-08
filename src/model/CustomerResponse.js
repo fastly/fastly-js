@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import Customer from './Customer';
-import CustomerResponseAllOf from './CustomerResponseAllOf';
-import Timestamps from './Timestamps';
+import ApiClient from '../ApiClient.js';
+import Customer from './Customer.js';
+import CustomerResponseAllOf from './CustomerResponseAllOf.js';
+import Timestamps from './Timestamps.js';
 
 /**
  * The CustomerResponse model module.

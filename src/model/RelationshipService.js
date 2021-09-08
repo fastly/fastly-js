@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import RelationshipServiceService from './RelationshipServiceService';
+import ApiClient from '../ApiClient.js';
+import RelationshipServiceService from './RelationshipServiceService.js';
 
 /**
  * The RelationshipService model module.

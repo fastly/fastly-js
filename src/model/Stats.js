@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import Results from './Results';
+import ApiClient from '../ApiClient.js';
+import Results from './Results.js';
 
 /**
  * The Stats model module.

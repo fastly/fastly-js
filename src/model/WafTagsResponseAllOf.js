@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import WafRule from './WafRule';
-import WafTag from './WafTag';
+import ApiClient from '../ApiClient.js';
+import WafRule from './WafRule.js';
+import WafTag from './WafTag.js';
 
 /**
  * The WafTagsResponseAllOf model module.

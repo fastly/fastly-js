@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision from './AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision';
-import SchemasWafActiveRuleDataAttributes from './SchemasWafActiveRuleDataAttributes';
-import TypeWafActiveRule from './TypeWafActiveRule';
+import ApiClient from '../ApiClient.js';
+import AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision from './AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision.js';
+import SchemasWafActiveRuleDataAttributes from './SchemasWafActiveRuleDataAttributes.js';
+import TypeWafActiveRule from './TypeWafActiveRule.js';
 
 /**
  * The SchemasWafActiveRuleData model module.

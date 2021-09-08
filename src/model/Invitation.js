@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import InvitationData from './InvitationData';
+import ApiClient from '../ApiClient.js';
+import InvitationData from './InvitationData.js';
 
 /**
  * The Invitation model module.

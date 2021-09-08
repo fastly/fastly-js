@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import LoggingCommon from './LoggingCommon';
-import LoggingFormatVersion from './LoggingFormatVersion';
-import LoggingLogglyAllOf from './LoggingLogglyAllOf';
-import LoggingPlacement from './LoggingPlacement';
+import ApiClient from '../ApiClient.js';
+import LoggingCommon from './LoggingCommon.js';
+import LoggingFormatVersion from './LoggingFormatVersion.js';
+import LoggingLogglyAllOf from './LoggingLogglyAllOf.js';
+import LoggingPlacement from './LoggingPlacement.js';
 
 /**
  * The LoggingLoggly model module.

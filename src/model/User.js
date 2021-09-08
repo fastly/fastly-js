@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import RoleUser from './RoleUser';
+import ApiClient from '../ApiClient.js';
+import RoleUser from './RoleUser.js';
 
 /**
  * The User model module.

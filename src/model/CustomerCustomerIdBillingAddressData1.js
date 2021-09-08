@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import BillingAddress from './BillingAddress';
-import TypeBillingAddress from './TypeBillingAddress';
+import ApiClient from '../ApiClient.js';
+import BillingAddress from './BillingAddress.js';
+import TypeBillingAddress from './TypeBillingAddress.js';
 
 /**
  * The CustomerCustomerIdBillingAddressData1 model module.

@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import Pool from './Pool';
-import PoolResponseAllOf from './PoolResponseAllOf';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
-import Timestamps from './Timestamps';
+import ApiClient from '../ApiClient.js';
+import Pool from './Pool.js';
+import PoolResponseAllOf from './PoolResponseAllOf.js';
+import ServiceIdAndVersion from './ServiceIdAndVersion.js';
+import Timestamps from './Timestamps.js';
 
 /**
  * The PoolResponse model module.

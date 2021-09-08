@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import WafActiveRuleData from './WafActiveRuleData';
+import ApiClient from '../ApiClient.js';
+import SchemasWafActiveRuleData from './SchemasWafActiveRuleData.js';
 
 /**
  * The WafActiveRule model module.
@@ -49,7 +49,7 @@ class WafActiveRule {
             obj = obj || new WafActiveRule();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = WafActiveRuleData.constructFromObject(data['data']);
+                obj['data'] = SchemasWafActiveRuleData.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class WafActiveRule {
 }
 
 /**
- * @member {module:model/WafActiveRuleData} data
+ * @member {module:model/SchemasWafActiveRuleData} data
  */
 WafActiveRule.prototype['data'] = undefined;
 

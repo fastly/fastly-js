@@ -11,13 +11,13 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import LoggingCommon from './LoggingCommon';
-import LoggingElasticsearchAllOf from './LoggingElasticsearchAllOf';
-import LoggingFormatVersion from './LoggingFormatVersion';
-import LoggingPlacement from './LoggingPlacement';
-import LoggingRequestCapsCommon from './LoggingRequestCapsCommon';
-import LoggingTlsCommon from './LoggingTlsCommon';
+import ApiClient from '../ApiClient.js';
+import LoggingCommon from './LoggingCommon.js';
+import LoggingElasticsearchAllOf from './LoggingElasticsearchAllOf.js';
+import LoggingFormatVersion from './LoggingFormatVersion.js';
+import LoggingPlacement from './LoggingPlacement.js';
+import LoggingRequestCapsCommon from './LoggingRequestCapsCommon.js';
+import LoggingTlsCommon from './LoggingTlsCommon.js';
 
 /**
  * The LoggingElasticsearch model module.

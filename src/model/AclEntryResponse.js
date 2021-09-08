@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import AclEntry from './AclEntry';
-import AclEntryResponseAllOf from './AclEntryResponseAllOf';
-import Timestamps from './Timestamps';
+import ApiClient from '../ApiClient.js';
+import AclEntry from './AclEntry.js';
+import AclEntryResponseAllOf from './AclEntryResponseAllOf.js';
+import Timestamps from './Timestamps.js';
 
 /**
  * The AclEntryResponse model module.

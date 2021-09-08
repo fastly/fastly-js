@@ -11,15 +11,15 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import LoggingCommon from './LoggingCommon';
-import LoggingCompressionCodec from './LoggingCompressionCodec';
-import LoggingFormatVersion from './LoggingFormatVersion';
-import LoggingGcsAllOf from './LoggingGcsAllOf';
-import LoggingGcsCommon from './LoggingGcsCommon';
-import LoggingGenericCommon from './LoggingGenericCommon';
-import LoggingMessageType from './LoggingMessageType';
-import LoggingPlacement from './LoggingPlacement';
+import ApiClient from '../ApiClient.js';
+import LoggingCommon from './LoggingCommon.js';
+import LoggingCompressionCodec from './LoggingCompressionCodec.js';
+import LoggingFormatVersion from './LoggingFormatVersion.js';
+import LoggingGcsAllOf from './LoggingGcsAllOf.js';
+import LoggingGcsCommon from './LoggingGcsCommon.js';
+import LoggingGenericCommon from './LoggingGenericCommon.js';
+import LoggingMessageType from './LoggingMessageType.js';
+import LoggingPlacement from './LoggingPlacement.js';
 
 /**
  * The LoggingGcs model module.

@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import BillingEstimateResponseAllOfLines from './BillingEstimateResponseAllOfLines';
+import ApiClient from '../ApiClient.js';
+import BillingEstimateResponseAllOfLines from './BillingEstimateResponseAllOfLines.js';
 
 /**
  * The BillingEstimateResponseAllOf model module.

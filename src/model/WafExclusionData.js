@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import AnyOfrelationshipWafRulesrelationshipWafRuleRevisions from './AnyOfrelationshipWafRulesrelationshipWafRuleRevisions';
-import TypeWafExclusion from './TypeWafExclusion';
-import WafExclusionDataAttributes from './WafExclusionDataAttributes';
+import ApiClient from '../ApiClient.js';
+import AnyOfrelationshipWafRulesrelationshipWafRuleRevisions from './AnyOfrelationshipWafRulesrelationshipWafRuleRevisions.js';
+import TypeWafExclusion from './TypeWafExclusion.js';
+import WafExclusionDataAttributes from './WafExclusionDataAttributes.js';
 
 /**
  * The WafExclusionData model module.

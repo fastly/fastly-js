@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import RequestSettings from './RequestSettings';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
-import Timestamps from './Timestamps';
+import ApiClient from '../ApiClient.js';
+import RequestSettings from './RequestSettings.js';
+import ServiceIdAndVersion from './ServiceIdAndVersion.js';
+import Timestamps from './Timestamps.js';
 
 /**
  * The RequestSettingsResponse model module.

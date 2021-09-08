@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import SchemasVersionResponse from './SchemasVersionResponse';
-import ServiceCreate from './ServiceCreate';
-import ServiceResponseAllOf from './ServiceResponseAllOf';
-import Timestamps from './Timestamps';
+import ApiClient from '../ApiClient.js';
+import SchemasVersionResponse from './SchemasVersionResponse.js';
+import ServiceCreate from './ServiceCreate.js';
+import ServiceResponseAllOf from './ServiceResponseAllOf.js';
+import Timestamps from './Timestamps.js';
 
 /**
  * The ServiceResponse model module.

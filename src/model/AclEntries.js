@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import AclEntry from './AclEntry';
+import ApiClient from '../ApiClient.js';
+import AclEntry from './AclEntry.js';
 
 /**
  * The AclEntries model module.

@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import ResponseObject from './ResponseObject';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
-import Timestamps from './Timestamps';
+import ApiClient from '../ApiClient.js';
+import ResponseObject from './ResponseObject.js';
+import ServiceIdAndVersion from './ServiceIdAndVersion.js';
+import Timestamps from './Timestamps.js';
 
 /**
  * The ResponseObjectResponse model module.

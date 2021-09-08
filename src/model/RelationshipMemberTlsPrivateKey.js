@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import TypeTlsPrivateKey from './TypeTlsPrivateKey';
+import ApiClient from '../ApiClient.js';
+import TypeTlsPrivateKey from './TypeTlsPrivateKey.js';
 
 /**
  * The RelationshipMemberTlsPrivateKey model module.

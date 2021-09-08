@@ -11,14 +11,14 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import LoggingCommon from './LoggingCommon';
-import LoggingCompressionCodec from './LoggingCompressionCodec';
-import LoggingFormatVersion from './LoggingFormatVersion';
-import LoggingGenericCommon from './LoggingGenericCommon';
-import LoggingMessageType from './LoggingMessageType';
-import LoggingOpenstackAllOf from './LoggingOpenstackAllOf';
-import LoggingPlacement from './LoggingPlacement';
+import ApiClient from '../ApiClient.js';
+import LoggingCommon from './LoggingCommon.js';
+import LoggingCompressionCodec from './LoggingCompressionCodec.js';
+import LoggingFormatVersion from './LoggingFormatVersion.js';
+import LoggingGenericCommon from './LoggingGenericCommon.js';
+import LoggingMessageType from './LoggingMessageType.js';
+import LoggingOpenstackAllOf from './LoggingOpenstackAllOf.js';
+import LoggingPlacement from './LoggingPlacement.js';
 
 /**
  * The LoggingOpenstack model module.

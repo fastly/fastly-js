@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import ServiceInvitation from './ServiceInvitation';
+import ApiClient from '../ApiClient.js';
+import ServiceInvitation from './ServiceInvitation.js';
 
 /**
  * The RelationshipServiceInvitationsCreateServiceInvitations model module.

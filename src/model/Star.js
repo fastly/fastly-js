@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import StarData from './StarData';
+import ApiClient from '../ApiClient.js';
+import StarData from './StarData.js';
 
 /**
  * The Star model module.

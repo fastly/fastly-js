@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import LoggingCommon from './LoggingCommon';
-import LoggingFormatVersion from './LoggingFormatVersion';
-import LoggingNewrelicAllOf from './LoggingNewrelicAllOf';
-import LoggingPlacement from './LoggingPlacement';
+import ApiClient from '../ApiClient.js';
+import LoggingCommon from './LoggingCommon.js';
+import LoggingFormatVersion from './LoggingFormatVersion.js';
+import LoggingNewrelicAllOf from './LoggingNewrelicAllOf.js';
+import LoggingPlacement from './LoggingPlacement.js';
 
 /**
  * The LoggingNewrelic model module.

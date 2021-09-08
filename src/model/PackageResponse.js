@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import Package from './Package';
-import PackageMetadata from './PackageMetadata';
-import PackageResponseAllOf from './PackageResponseAllOf';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
-import Timestamps from './Timestamps';
+import ApiClient from '../ApiClient.js';
+import Package from './Package.js';
+import PackageMetadata from './PackageMetadata.js';
+import PackageResponseAllOf from './PackageResponseAllOf.js';
+import ServiceIdAndVersion from './ServiceIdAndVersion.js';
+import Timestamps from './Timestamps.js';
 
 /**
  * The PackageResponse model module.

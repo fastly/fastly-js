@@ -11,13 +11,13 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import Pagination from './Pagination';
-import PaginationLinks from './PaginationLinks';
-import PaginationMeta from './PaginationMeta';
-import WafRule from './WafRule';
-import WafTag from './WafTag';
-import WafTagsResponseAllOf from './WafTagsResponseAllOf';
+import ApiClient from '../ApiClient.js';
+import Pagination from './Pagination.js';
+import PaginationLinks from './PaginationLinks.js';
+import PaginationMeta from './PaginationMeta.js';
+import WafRule from './WafRule.js';
+import WafTag from './WafTag.js';
+import WafTagsResponseAllOf from './WafTagsResponseAllOf.js';
 
 /**
  * The WafTagsResponse model module.

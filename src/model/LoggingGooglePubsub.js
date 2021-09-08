@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import LoggingCommon from './LoggingCommon';
-import LoggingFormatVersion from './LoggingFormatVersion';
-import LoggingGcsCommon from './LoggingGcsCommon';
-import LoggingGooglePubsubAllOf from './LoggingGooglePubsubAllOf';
-import LoggingPlacement from './LoggingPlacement';
+import ApiClient from '../ApiClient.js';
+import LoggingCommon from './LoggingCommon.js';
+import LoggingFormatVersion from './LoggingFormatVersion.js';
+import LoggingGcsCommon from './LoggingGcsCommon.js';
+import LoggingGooglePubsubAllOf from './LoggingGooglePubsubAllOf.js';
+import LoggingPlacement from './LoggingPlacement.js';
 
 /**
  * The LoggingGooglePubsub model module.

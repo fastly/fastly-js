@@ -11,14 +11,14 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import LoggingCloudfilesAllOf from './LoggingCloudfilesAllOf';
-import LoggingCommon from './LoggingCommon';
-import LoggingCompressionCodec from './LoggingCompressionCodec';
-import LoggingFormatVersion from './LoggingFormatVersion';
-import LoggingGenericCommon from './LoggingGenericCommon';
-import LoggingMessageType from './LoggingMessageType';
-import LoggingPlacement from './LoggingPlacement';
+import ApiClient from '../ApiClient.js';
+import LoggingCloudfilesAllOf from './LoggingCloudfilesAllOf.js';
+import LoggingCommon from './LoggingCommon.js';
+import LoggingCompressionCodec from './LoggingCompressionCodec.js';
+import LoggingFormatVersion from './LoggingFormatVersion.js';
+import LoggingGenericCommon from './LoggingGenericCommon.js';
+import LoggingMessageType from './LoggingMessageType.js';
+import LoggingPlacement from './LoggingPlacement.js';
 
 /**
  * The LoggingCloudfiles model module.

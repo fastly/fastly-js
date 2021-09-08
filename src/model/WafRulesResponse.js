@@ -11,13 +11,13 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import AnyOfwafTagwafRuleRevision from './AnyOfwafTagwafRuleRevision';
-import Data from './Data';
-import Pagination from './Pagination';
-import PaginationLinks from './PaginationLinks';
-import PaginationMeta from './PaginationMeta';
-import WafRulesResponseAllOf from './WafRulesResponseAllOf';
+import ApiClient from '../ApiClient.js';
+import AnyOfwafTagwafRuleRevision from './AnyOfwafTagwafRuleRevision.js';
+import Data from './Data.js';
+import Pagination from './Pagination.js';
+import PaginationLinks from './PaginationLinks.js';
+import PaginationMeta from './PaginationMeta.js';
+import WafRulesResponseAllOf from './WafRulesResponseAllOf.js';
 
 /**
  * The WafRulesResponse model module.

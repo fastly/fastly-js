@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import PackageMetadata from './PackageMetadata';
+import ApiClient from '../ApiClient.js';
+import PackageMetadata from './PackageMetadata.js';
 
 /**
  * The Package model module.

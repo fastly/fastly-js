@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import AnyOfwafTagwafRuleRevision from './AnyOfwafTagwafRuleRevision';
-import WafRule from './WafRule';
+import ApiClient from '../ApiClient.js';
+import AnyOfwafTagwafRuleRevision from './AnyOfwafTagwafRuleRevision.js';
+import WafRule from './WafRule.js';
 
 /**
  * The WafRuleResponse model module.

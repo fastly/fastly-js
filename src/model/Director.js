@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import Backend from './Backend';
+import ApiClient from '../ApiClient.js';
+import Backend from './Backend.js';
 
 /**
  * The Director model module.

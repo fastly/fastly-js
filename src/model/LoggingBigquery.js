@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import LoggingBigqueryAllOf from './LoggingBigqueryAllOf';
-import LoggingCommon from './LoggingCommon';
-import LoggingFormatVersion from './LoggingFormatVersion';
-import LoggingGcsCommon from './LoggingGcsCommon';
-import LoggingPlacement from './LoggingPlacement';
+import ApiClient from '../ApiClient.js';
+import LoggingBigqueryAllOf from './LoggingBigqueryAllOf.js';
+import LoggingCommon from './LoggingCommon.js';
+import LoggingFormatVersion from './LoggingFormatVersion.js';
+import LoggingGcsCommon from './LoggingGcsCommon.js';
+import LoggingPlacement from './LoggingPlacement.js';
 
 /**
  * The LoggingBigquery model module.

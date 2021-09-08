@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import LoggingMessageType from './LoggingMessageType';
+import ApiClient from '../ApiClient.js';
+import LoggingMessageType from './LoggingMessageType.js';
 
 /**
  * The LoggingSumologicAllOf model module.

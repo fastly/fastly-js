@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
-import Timestamps from './Timestamps';
-import Vcl from './Vcl';
+import ApiClient from '../ApiClient.js';
+import ServiceIdAndVersion from './ServiceIdAndVersion.js';
+import Timestamps from './Timestamps.js';
+import Vcl from './Vcl.js';
 
 /**
  * The SchemasVclResponse model module.

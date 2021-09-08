@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import RelationshipUserUserData from './RelationshipUserUserData';
+import ApiClient from '../ApiClient.js';
+import RelationshipUserUserData from './RelationshipUserUserData.js';
 
 /**
  * The RelationshipUserUser model module.

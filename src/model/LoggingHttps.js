@@ -11,14 +11,14 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import LoggingCommon from './LoggingCommon';
-import LoggingFormatVersion from './LoggingFormatVersion';
-import LoggingHttpsAllOf from './LoggingHttpsAllOf';
-import LoggingMessageType from './LoggingMessageType';
-import LoggingPlacement from './LoggingPlacement';
-import LoggingRequestCapsCommon from './LoggingRequestCapsCommon';
-import LoggingTlsCommon from './LoggingTlsCommon';
+import ApiClient from '../ApiClient.js';
+import LoggingCommon from './LoggingCommon.js';
+import LoggingFormatVersion from './LoggingFormatVersion.js';
+import LoggingHttpsAllOf from './LoggingHttpsAllOf.js';
+import LoggingMessageType from './LoggingMessageType.js';
+import LoggingPlacement from './LoggingPlacement.js';
+import LoggingRequestCapsCommon from './LoggingRequestCapsCommon.js';
+import LoggingTlsCommon from './LoggingTlsCommon.js';
 
 /**
  * The LoggingHttps model module.

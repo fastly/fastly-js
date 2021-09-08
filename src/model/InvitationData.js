@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import InvitationDataAttributes from './InvitationDataAttributes';
-import RelationshipServiceInvitationsCreate from './RelationshipServiceInvitationsCreate';
-import TypeInvitation from './TypeInvitation';
+import ApiClient from '../ApiClient.js';
+import InvitationDataAttributes from './InvitationDataAttributes.js';
+import RelationshipServiceInvitationsCreate from './RelationshipServiceInvitationsCreate.js';
+import TypeInvitation from './TypeInvitation.js';
 
 /**
  * The InvitationData model module.

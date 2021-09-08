@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import SchemasWafActiveRuleData from './SchemasWafActiveRuleData';
+import ApiClient from '../ApiClient.js';
+import SchemasWafActiveRuleData from './SchemasWafActiveRuleData.js';
 
 /**
  * The SchemasWafActiveRule model module.

@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import Billing from './Billing';
-import BillingResponseAllOf from './BillingResponseAllOf';
-import BillingStatus from './BillingStatus';
-import BillingTotal from './BillingTotal';
-import Timestamps from './Timestamps';
+import ApiClient from '../ApiClient.js';
+import Billing from './Billing.js';
+import BillingResponseAllOf from './BillingResponseAllOf.js';
+import BillingStatus from './BillingStatus.js';
+import BillingTotal from './BillingTotal.js';
+import Timestamps from './Timestamps.js';
 
 /**
  * The BillingResponse model module.

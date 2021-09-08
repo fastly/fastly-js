@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import RelationshipMemberTlsSubscription from './RelationshipMemberTlsSubscription';
+import ApiClient from '../ApiClient.js';
+import RelationshipMemberTlsSubscription from './RelationshipMemberTlsSubscription.js';
 
 /**
  * The RelationshipTlsSubscriptionTlsSubscription model module.

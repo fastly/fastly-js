@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
-import Settings from './Settings';
+import ApiClient from '../ApiClient.js';
+import ServiceIdAndVersion from './ServiceIdAndVersion.js';
+import Settings from './Settings.js';
 
 /**
  * The SettingsResponse model module.

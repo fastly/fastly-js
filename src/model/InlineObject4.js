@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import DictionaryItem from './DictionaryItem';
+import ApiClient from '../ApiClient.js';
+import DictionaryItem from './DictionaryItem.js';
 
 /**
  * The InlineObject4 model module.

@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import DirectorBackendAllOf from './DirectorBackendAllOf';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
-import Timestamps from './Timestamps';
+import ApiClient from '../ApiClient.js';
+import DirectorBackendAllOf from './DirectorBackendAllOf.js';
+import ServiceIdAndVersion from './ServiceIdAndVersion.js';
+import Timestamps from './Timestamps.js';
 
 /**
  * The DirectorBackend model module.

@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import AnyOfobjectobjectobject from './AnyOfobjectobjectobject';
-import TypeTlsActivation from './TypeTlsActivation';
+import ApiClient from '../ApiClient.js';
+import AnyOfobjectobjectobject from './AnyOfobjectobjectobject.js';
+import TypeTlsActivation from './TypeTlsActivation.js';
 
 /**
  * The TlsActivationData model module.

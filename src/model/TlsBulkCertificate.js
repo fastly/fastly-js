@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import TlsBulkCertificateData from './TlsBulkCertificateData';
+import ApiClient from '../ApiClient.js';
+import TlsBulkCertificateData from './TlsBulkCertificateData.js';
 
 /**
  * The TlsBulkCertificate model module.

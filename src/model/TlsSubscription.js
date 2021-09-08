@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import TlsSubscriptionData from './TlsSubscriptionData';
+import ApiClient from '../ApiClient.js';
+import TlsSubscriptionData from './TlsSubscriptionData.js';
 
 /**
  * The TlsSubscription model module.

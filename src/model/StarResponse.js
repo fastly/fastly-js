@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import Star from './Star';
-import StarResponseAllOf from './StarResponseAllOf';
+import ApiClient from '../ApiClient.js';
+import Star from './Star.js';
+import StarResponseAllOf from './StarResponseAllOf.js';
 
 /**
  * The StarResponse model module.

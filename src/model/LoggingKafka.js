@@ -11,13 +11,13 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import LoggingCommon from './LoggingCommon';
-import LoggingFormatVersion from './LoggingFormatVersion';
-import LoggingKafkaAllOf from './LoggingKafkaAllOf';
-import LoggingPlacement from './LoggingPlacement';
-import LoggingTlsCommon from './LoggingTlsCommon';
-import LoggingUseTls from './LoggingUseTls';
+import ApiClient from '../ApiClient.js';
+import LoggingCommon from './LoggingCommon.js';
+import LoggingFormatVersion from './LoggingFormatVersion.js';
+import LoggingKafkaAllOf from './LoggingKafkaAllOf.js';
+import LoggingPlacement from './LoggingPlacement.js';
+import LoggingTlsCommon from './LoggingTlsCommon.js';
+import LoggingUseTls from './LoggingUseTls.js';
 
 /**
  * The LoggingKafka model module.

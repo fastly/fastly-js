@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import TypeTlsDomain from './TypeTlsDomain';
+import ApiClient from '../ApiClient.js';
+import TypeTlsDomain from './TypeTlsDomain.js';
 
 /**
  * The RelationshipMemberTlsDomain model module.

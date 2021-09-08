@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import TypeWafTag from './TypeWafTag';
-import WafTagAttributes from './WafTagAttributes';
+import ApiClient from '../ApiClient.js';
+import TypeWafTag from './TypeWafTag.js';
+import WafTagAttributes from './WafTagAttributes.js';
 
 /**
  * The WafTag model module.

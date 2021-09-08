@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import HistoricalUsageMonthResponseAllOfData from './HistoricalUsageMonthResponseAllOfData';
+import ApiClient from '../ApiClient.js';
+import HistoricalUsageMonthResponseAllOfData from './HistoricalUsageMonthResponseAllOfData.js';
 
 /**
  * The HistoricalUsageMonthResponseAllOf model module.

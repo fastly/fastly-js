@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import TlsActivationData from './TlsActivationData';
+import ApiClient from '../ApiClient.js';
+import TlsActivationData from './TlsActivationData.js';
 
 /**
  * The TlsActivation model module.

@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import RealtimeEntry from './RealtimeEntry';
+import ApiClient from '../ApiClient.js';
+import RealtimeEntry from './RealtimeEntry.js';
 
 /**
  * The Realtime model module.

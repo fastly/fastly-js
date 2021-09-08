@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import PaginationLinks from './PaginationLinks';
-import PaginationMeta from './PaginationMeta';
+import ApiClient from '../ApiClient.js';
+import PaginationLinks from './PaginationLinks.js';
+import PaginationMeta from './PaginationMeta.js';
 
 /**
  * The Pagination model module.

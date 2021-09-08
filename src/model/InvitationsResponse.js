@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient';
-import Data from './Data';
-import InvitationsResponseAllOf from './InvitationsResponseAllOf';
-import Pagination from './Pagination';
-import PaginationLinks from './PaginationLinks';
-import PaginationMeta from './PaginationMeta';
+import ApiClient from '../ApiClient.js';
+import Data from './Data.js';
+import InvitationsResponseAllOf from './InvitationsResponseAllOf.js';
+import Pagination from './Pagination.js';
+import PaginationLinks from './PaginationLinks.js';
+import PaginationMeta from './PaginationMeta.js';
 
 /**
  * The InvitationsResponse model module.
