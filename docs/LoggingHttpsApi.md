@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogHttps`
 
 ```javascript
-createLogHttps({ service_id, version_id, [format], , [format_version], , [name], , [placement], , [response_condition], , [tls_ca_cert], , [tls_client_cert], , [tls_client_key], , [tls_hostname], , [request_max_bytes], , [request_max_entries], , [content_type], , [header_name], , [header_value], , [json_format], , [message_type], , [method], , [url] })
+createLogHttps({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [tls_ca_cert, ], [tls_client_cert, ], [tls_client_key, ], [tls_hostname, ], [request_max_bytes, ], [request_max_entries, ], [content_type, ], [header_name, ], [header_value, ], [json_format, ], [message_type, ], [method, ], [url] })
 ```
 
 Create an HTTPS object for a particular service and version.
@@ -28,8 +28,8 @@ Create an HTTPS object for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
@@ -101,9 +101,9 @@ Delete the HTTPS object for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_https_name: "logging_https_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_https_name: "logging_https_name_example", // required
 };
 
 apiInstance.deleteLogHttps(options)
@@ -140,9 +140,9 @@ Get the HTTPS object for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_https_name: "logging_https_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_https_name: "logging_https_name_example", // required
 };
 
 apiInstance.getLogHttps(options)
@@ -179,8 +179,8 @@ List all of the HTTPS objects for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listLogHttps(options)
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 ## `updateLogHttps`
 
 ```javascript
-updateLogHttps({ service_id, version_id, logging_https_name, [format], , [format_version], , [name], , [placement], , [response_condition], , [tls_ca_cert], , [tls_client_cert], , [tls_client_key], , [tls_hostname], , [request_max_bytes], , [request_max_entries], , [content_type], , [header_name], , [header_value], , [json_format], , [message_type], , [method], , [url] })
+updateLogHttps({ service_id, version_id, logging_https_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [tls_ca_cert, ], [tls_client_cert, ], [tls_client_key, ], [tls_hostname, ], [request_max_bytes, ], [request_max_entries, ], [content_type, ], [header_name, ], [header_value, ], [json_format, ], [message_type, ], [method, ], [url] })
 ```
 
 Update the HTTPS object for a particular service and version.
@@ -216,9 +216,9 @@ Update the HTTPS object for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_https_name: "logging_https_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_https_name: "logging_https_name_example", // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",

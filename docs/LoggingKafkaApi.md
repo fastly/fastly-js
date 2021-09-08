@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogKafka`
 
 ```javascript
-createLogKafka({ service_id, version_id, [format], , [format_version], , [name], , [placement], , [response_condition], , [tls_ca_cert], , [tls_client_cert], , [tls_client_key], , [tls_hostname], , [auth_method], , [brokers], , [compression_codec], , [parse_log_keyvals], , [password], , [request_max_bytes], , [required_acks], , [topic], , [use_tls], , [user] })
+createLogKafka({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [tls_ca_cert, ], [tls_client_cert, ], [tls_client_key, ], [tls_hostname, ], [auth_method, ], [brokers, ], [compression_codec, ], [parse_log_keyvals, ], [password, ], [request_max_bytes, ], [required_acks, ], [topic, ], [use_tls, ], [user] })
 ```
 
 Create a Kafka logging endpoint for a particular service and version.
@@ -28,8 +28,8 @@ Create a Kafka logging endpoint for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
@@ -103,9 +103,9 @@ Delete the Kafka logging endpoint for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_kafka_name: "logging_kafka_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_kafka_name: "logging_kafka_name_example", // required
 };
 
 apiInstance.deleteLogKafka(options)
@@ -142,9 +142,9 @@ Get the Kafka logging endpoint for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_kafka_name: "logging_kafka_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_kafka_name: "logging_kafka_name_example", // required
 };
 
 apiInstance.getLogKafka(options)
@@ -181,8 +181,8 @@ List all of the Kafka logging endpoints for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listLogKafka(options)
@@ -218,9 +218,9 @@ Update the Kafka logging endpoint for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_kafka_name: "logging_kafka_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_kafka_name: "logging_kafka_name_example", // required
 };
 
 apiInstance.updateLogKafka(options)

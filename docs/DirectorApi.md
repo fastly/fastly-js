@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createDirector`
 
 ```javascript
-createDirector({ service_id, version_id, [backends], , [capacity], , [comment], , [name], , [quorum], , [retries], , [shield], , [type] })
+createDirector({ service_id, version_id, [backends, ], [capacity, ], [comment, ], [name, ], [quorum, ], [retries, ], [shield, ], [type] })
 ```
 
 Create a director for a particular service and version.
@@ -28,8 +28,8 @@ Create a director for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   backends: new Fastly.Backend(),
   capacity: 56,
   comment: "comment_example",
@@ -81,9 +81,9 @@ Delete the director for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- director_name: "director_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  director_name: "director_name_example", // required
 };
 
 apiInstance.deleteDirector(options)
@@ -120,9 +120,9 @@ Get the director for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- director_name: "director_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  director_name: "director_name_example", // required
 };
 
 apiInstance.getDirector(options)
@@ -159,8 +159,8 @@ List the directors for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listDirectors(options)
@@ -196,9 +196,9 @@ Update the director for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- director_name: "director_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  director_name: "director_name_example", // required
 };
 
 apiInstance.updateDirector(options)

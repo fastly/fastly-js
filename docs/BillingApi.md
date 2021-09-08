@@ -25,8 +25,8 @@ Get the invoice for a given year and month. Can be any month from when the Custo
 
 ```javascript
 const options = {
- month: 05, // required
- year: 2020, // required
+  month: 05, // required
+  year: 2020, // required
 };
 
 apiInstance.getInvoice(options)
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 ## `getInvoiceMtd`
 
 ```javascript
-getInvoiceMtd({ customer_id, [month], , [year] })
+getInvoiceMtd({ customer_id, [month, ], [year] })
 ```
 
 Get the current month-to-date estimate. This endpoint has two different responses. Under normal circumstances, it generally takes less than 5 seconds to generate but in certain cases can take up to 60 seconds. Once generated the month-to-date estimate is cached for 4 hours, and is available the next request will return the JSON representation of the month-to-date estimate. While a report is being generated in the background, this endpoint will return a `202 Accepted` response. The full format of which can be found in detail in our [billing calculation guide](https://docs.fastly.com/en/guides/how-we-calculate-your-bill). There are certain accounts for which we are unable to generate a month-to-date estimate. For example, accounts who have parent-pay are unable to generate an MTD estimate. The parent accounts are able to generate a month-to-date estimate but that estimate will not include the child accounts amounts at this time.
@@ -62,7 +62,7 @@ Get the current month-to-date estimate. This endpoint has two different response
 
 ```javascript
 const options = {
- customer_id: "customer_id_example", // required
+  customer_id: "customer_id_example", // required
   month: 05,
   year: 2020,
 };

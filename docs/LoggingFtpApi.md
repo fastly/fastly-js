@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogFtp`
 
 ```javascript
-createLogFtp({ service_id, version_id, [format], , [format_version], , [name], , [placement], , [response_condition], , [compression_codec], , [gzip_level], , [message_type], , [period], , [timestamp_format], , [address], , [hostname], , [ipv4], , [password], , [path], , [port], , [public_key], , [user] })
+createLogFtp({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [address, ], [hostname, ], [ipv4, ], [password, ], [path, ], [port, ], [public_key, ], [user] })
 ```
 
 Create a FTP for a particular service and version.
@@ -28,8 +28,8 @@ Create a FTP for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
@@ -101,9 +101,9 @@ Delete the FTP for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_ftp_name: "logging_ftp_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_ftp_name: "logging_ftp_name_example", // required
 };
 
 apiInstance.deleteLogFtp(options)
@@ -140,9 +140,9 @@ Get the FTP for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_ftp_name: "logging_ftp_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_ftp_name: "logging_ftp_name_example", // required
 };
 
 apiInstance.getLogFtp(options)
@@ -179,8 +179,8 @@ List all of the FTPs for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listLogFtp(options)
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 ## `updateLogFtp`
 
 ```javascript
-updateLogFtp({ service_id, version_id, logging_ftp_name, [format], , [format_version], , [name], , [placement], , [response_condition], , [compression_codec], , [gzip_level], , [message_type], , [period], , [timestamp_format], , [address], , [hostname], , [ipv4], , [password], , [path], , [port], , [public_key], , [user] })
+updateLogFtp({ service_id, version_id, logging_ftp_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [address, ], [hostname, ], [ipv4, ], [password, ], [path, ], [port, ], [public_key, ], [user] })
 ```
 
 Update the FTP for a particular service and version.
@@ -216,9 +216,9 @@ Update the FTP for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_ftp_name: "logging_ftp_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_ftp_name: "logging_ftp_name_example", // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",

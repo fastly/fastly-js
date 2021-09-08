@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogElasticsearch`
 
 ```javascript
-createLogElasticsearch({ service_id, version_id, [format], , [format_version], , [name], , [placement], , [response_condition], , [tls_ca_cert], , [tls_client_cert], , [tls_client_key], , [tls_hostname], , [request_max_bytes], , [request_max_entries], , [index], , [password], , [pipeline], , [url], , [user] })
+createLogElasticsearch({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [tls_ca_cert, ], [tls_client_cert, ], [tls_client_key, ], [tls_hostname, ], [request_max_bytes, ], [request_max_entries, ], [index, ], [password, ], [pipeline, ], [url, ], [user] })
 ```
 
 Create a Elasticsearch logging endpoint for a particular service and version.
@@ -28,8 +28,8 @@ Create a Elasticsearch logging endpoint for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   format: null,
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
@@ -97,9 +97,9 @@ Delete the Elasticsearch logging endpoint for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_elasticsearch_name: "logging_elasticsearch_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_elasticsearch_name: "logging_elasticsearch_name_example", // required
 };
 
 apiInstance.deleteLogElasticsearch(options)
@@ -136,9 +136,9 @@ Get the Elasticsearch logging endpoint for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_elasticsearch_name: "logging_elasticsearch_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_elasticsearch_name: "logging_elasticsearch_name_example", // required
 };
 
 apiInstance.getLogElasticsearch(options)
@@ -175,8 +175,8 @@ List all of the Elasticsearch logging endpoints for a particular service and ver
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listLogElasticsearch(options)
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 ## `updateLogElasticsearch`
 
 ```javascript
-updateLogElasticsearch({ service_id, version_id, logging_elasticsearch_name, [format], , [format_version], , [name], , [placement], , [response_condition], , [tls_ca_cert], , [tls_client_cert], , [tls_client_key], , [tls_hostname], , [request_max_bytes], , [request_max_entries], , [index], , [password], , [pipeline], , [url], , [user] })
+updateLogElasticsearch({ service_id, version_id, logging_elasticsearch_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [tls_ca_cert, ], [tls_client_cert, ], [tls_client_key, ], [tls_hostname, ], [request_max_bytes, ], [request_max_entries, ], [index, ], [password, ], [pipeline, ], [url, ], [user] })
 ```
 
 Update the Elasticsearch logging endpoint for a particular service and version.
@@ -212,9 +212,9 @@ Update the Elasticsearch logging endpoint for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_elasticsearch_name: "logging_elasticsearch_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_elasticsearch_name: "logging_elasticsearch_name_example", // required
   format: null,
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",

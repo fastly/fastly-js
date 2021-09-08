@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createHeaderObject`
 
 ```javascript
-createHeaderObject({ service_id, version_id, [action], , [cache_condition], , [dst], , [ignore_if_set], , [name], , [priority], , [regex], , [request_condition], , [response_condition], , [src], , [substitution], , [type] })
+createHeaderObject({ service_id, version_id, [action, ], [cache_condition, ], [dst, ], [ignore_if_set, ], [name, ], [priority, ], [regex, ], [request_condition, ], [response_condition, ], [src, ], [substitution, ], [type] })
 ```
 
 Creates a new Header object.
@@ -28,8 +28,8 @@ Creates a new Header object.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   action: "action_example",
   cache_condition: "cache_condition_example",
   dst: "dst_example",
@@ -89,9 +89,9 @@ Deletes a Header object by name.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- header_name: "header_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  header_name: "header_name_example", // required
 };
 
 apiInstance.deleteHeaderObject(options)
@@ -128,9 +128,9 @@ Retrieves a Header object by name.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- header_name: "header_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  header_name: "header_name_example", // required
 };
 
 apiInstance.getHeaderObject(options)
@@ -167,8 +167,8 @@ Retrieves all Header objects for a particular Version of a Service.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listHeaderObjects(options)
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 ## `updateHeaderObject`
 
 ```javascript
-updateHeaderObject({ service_id, version_id, header_name, [action], , [cache_condition], , [dst], , [ignore_if_set], , [name], , [priority], , [regex], , [request_condition], , [response_condition], , [src], , [substitution], , [type] })
+updateHeaderObject({ service_id, version_id, header_name, [action, ], [cache_condition, ], [dst, ], [ignore_if_set, ], [name, ], [priority, ], [regex, ], [request_condition, ], [response_condition, ], [src, ], [substitution, ], [type] })
 ```
 
 Modifies an existing Header object by name.
@@ -204,9 +204,9 @@ Modifies an existing Header object by name.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- header_name: "header_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  header_name: "header_name_example", // required
   action: "action_example",
   cache_condition: "cache_condition_example",
   dst: "dst_example",

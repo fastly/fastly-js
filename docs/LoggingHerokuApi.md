@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogHeroku`
 
 ```javascript
-createLogHeroku({ service_id, version_id, [format], , [format_version], , [name], , [placement], , [response_condition], , [token], , [url] })
+createLogHeroku({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [token, ], [url] })
 ```
 
 Create a Heroku for a particular service and version.
@@ -28,8 +28,8 @@ Create a Heroku for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
@@ -79,9 +79,9 @@ Delete the Heroku for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_heroku_name: "logging_heroku_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_heroku_name: "logging_heroku_name_example", // required
 };
 
 apiInstance.deleteLogHeroku(options)
@@ -118,9 +118,9 @@ Get the Heroku for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_heroku_name: "logging_heroku_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_heroku_name: "logging_heroku_name_example", // required
 };
 
 apiInstance.getLogHeroku(options)
@@ -157,8 +157,8 @@ List all of the Herokus for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listLogHeroku(options)
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 ## `updateLogHeroku`
 
 ```javascript
-updateLogHeroku({ service_id, version_id, logging_heroku_name, [format], , [format_version], , [name], , [placement], , [response_condition], , [token], , [url] })
+updateLogHeroku({ service_id, version_id, logging_heroku_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [token, ], [url] })
 ```
 
 Update the Heroku for a particular service and version.
@@ -194,9 +194,9 @@ Update the Heroku for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_heroku_name: "logging_heroku_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_heroku_name: "logging_heroku_name_example", // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",

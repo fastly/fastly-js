@@ -26,7 +26,7 @@ Get data for the 120 seconds preceding the latest timestamp available for a serv
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
+  service_id: "service_id_example", // required
 };
 
 apiInstance.getStatsLast120Seconds(options)
@@ -61,8 +61,8 @@ Get data for the 120 seconds preceding the latest timestamp available for a serv
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- max_entries: 1, // required
+  service_id: "service_id_example", // required
+  max_entries: 1, // required
 };
 
 apiInstance.getStatsLast120SecondsLimitEntries(options)
@@ -98,8 +98,8 @@ Get real-time data for the last second. For the first request, the timestamp can
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- timestamp_in_seconds: 56, // required
+  service_id: "service_id_example", // required
+  timestamp_in_seconds: 56, // required
 };
 
 apiInstance.getStatsLastSecond(options)

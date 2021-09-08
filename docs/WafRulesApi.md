@@ -25,7 +25,7 @@ Get a specific rule. The `id` provided can be the ModSecurity Rule ID or the Fas
 
 ```javascript
 const options = {
- waf_rule_id: "waf_rule_id_example", // required
+  waf_rule_id: "waf_rule_id_example", // required
   include: waf_tags,waf_rule_revisions,
 };
 
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 ## `listWafRules`
 
 ```javascript
-listWafRules({ [filter_modsec_rule_id], [filter_waf_tags_name], [filter_waf_rule_revisions_source], [filter_waf_firewall_id_not_match], [page_number], [page_size], [include] })
+listWafRules({ [filter_modsec_rule_id, ][filter_waf_tags_name, ][filter_waf_rule_revisions_source, ][filter_waf_firewall_id_not_match, ][page_number, ][page_size, ][include] })
 ```
 
 List all available WAF rules.

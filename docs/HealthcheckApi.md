@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createHealthcheck`
 
 ```javascript
-createHealthcheck({ service_id, version_id, [check_interval], , [comment], , [expected_response], , [host], , [http_version], , [initial], , [method], , [name], , [path], , [threshold], , [timeout], , [window] })
+createHealthcheck({ service_id, version_id, [check_interval, ], [comment, ], [expected_response, ], [host, ], [http_version, ], [initial, ], [method, ], [name, ], [path, ], [threshold, ], [timeout, ], [window] })
 ```
 
 Create a healthcheck for a particular service and version.
@@ -28,8 +28,8 @@ Create a healthcheck for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   check_interval: 56,
   comment: "comment_example",
   expected_response: 56,
@@ -89,9 +89,9 @@ Delete the healthcheck for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- healthcheck_name: "healthcheck_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  healthcheck_name: "healthcheck_name_example", // required
 };
 
 apiInstance.deleteHealthcheck(options)
@@ -128,9 +128,9 @@ Get the healthcheck for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- healthcheck_name: "healthcheck_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  healthcheck_name: "healthcheck_name_example", // required
 };
 
 apiInstance.getHealthcheck(options)
@@ -167,8 +167,8 @@ List all of the healthchecks for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listHealthchecks(options)
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 ## `updateHealthcheck`
 
 ```javascript
-updateHealthcheck({ service_id, version_id, healthcheck_name, [check_interval], , [comment], , [expected_response], , [host], , [http_version], , [initial], , [method], , [name], , [path], , [threshold], , [timeout], , [window] })
+updateHealthcheck({ service_id, version_id, healthcheck_name, [check_interval, ], [comment, ], [expected_response, ], [host, ], [http_version, ], [initial, ], [method, ], [name, ], [path, ], [threshold, ], [timeout, ], [window] })
 ```
 
 Update the healthcheck for a particular service and version.
@@ -204,9 +204,9 @@ Update the healthcheck for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- healthcheck_name: "healthcheck_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  healthcheck_name: "healthcheck_name_example", // required
   check_interval: 56,
   comment: "comment_example",
   expected_response: 56,

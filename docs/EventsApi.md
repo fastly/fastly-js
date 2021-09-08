@@ -25,7 +25,7 @@ Get a specific event.
 
 ```javascript
 const options = {
- event_id: "event_id_example", // required
+  event_id: "event_id_example", // required
 };
 
 apiInstance.getEvent(options)
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 ## `listEvents`
 
 ```javascript
-listEvents({ [filter_event_type], [filter_customer_id], [filter_service_id], [filter_user_id], [page_number], [page_size], [sort] })
+listEvents({ [filter_event_type, ][filter_customer_id, ][filter_service_id, ][filter_user_id, ][page_number, ][page_size, ][sort] })
 ```
 
 List all events for a particular customer. Events can be filtered by user, customer and event type. Events can be sorted by date.

@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogSplunk`
 
 ```javascript
-createLogSplunk({ service_id, version_id, [format], , [format_version], , [name], , [placement], , [response_condition], , [tls_ca_cert], , [tls_client_cert], , [tls_client_key], , [tls_hostname], , [request_max_bytes], , [request_max_entries], , [token], , [url], , [use_tls] })
+createLogSplunk({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [tls_ca_cert, ], [tls_client_cert, ], [tls_client_key, ], [tls_hostname, ], [request_max_bytes, ], [request_max_entries, ], [token, ], [url, ], [use_tls] })
 ```
 
 Create a Splunk logging object for a particular service and version.
@@ -28,8 +28,8 @@ Create a Splunk logging object for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
@@ -93,9 +93,9 @@ Delete the Splunk logging object for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_splunk_name: "logging_splunk_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_splunk_name: "logging_splunk_name_example", // required
 };
 
 apiInstance.deleteLogSplunk(options)
@@ -132,9 +132,9 @@ Get the details for a Splunk logging object for a particular service and version
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_splunk_name: "logging_splunk_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_splunk_name: "logging_splunk_name_example", // required
 };
 
 apiInstance.getLogSplunk(options)
@@ -171,8 +171,8 @@ List all of the Splunk logging objects for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listLogSplunk(options)
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 ## `updateLogSplunk`
 
 ```javascript
-updateLogSplunk({ service_id, version_id, logging_splunk_name, [format], , [format_version], , [name], , [placement], , [response_condition], , [tls_ca_cert], , [tls_client_cert], , [tls_client_key], , [tls_hostname], , [request_max_bytes], , [request_max_entries], , [token], , [url], , [use_tls] })
+updateLogSplunk({ service_id, version_id, logging_splunk_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [tls_ca_cert, ], [tls_client_cert, ], [tls_client_key, ], [tls_hostname, ], [request_max_bytes, ], [request_max_entries, ], [token, ], [url, ], [use_tls] })
 ```
 
 Update the Splunk logging object for a particular service and version.
@@ -208,9 +208,9 @@ Update the Splunk logging object for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_splunk_name: "logging_splunk_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_splunk_name: "logging_splunk_name_example", // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",

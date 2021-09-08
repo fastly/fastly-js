@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import VersionResponse from './VersionResponse';
+import SchemasVersionResponse from './SchemasVersionResponse';
 
 /**
  * The ServiceResponseAllOf model module.
@@ -61,7 +61,7 @@ class ServiceResponseAllOf {
                 obj['version'] = ApiClient.convertToType(data['version'], 'Number');
             }
             if (data.hasOwnProperty('versions')) {
-                obj['versions'] = ApiClient.convertToType(data['versions'], [VersionResponse]);
+                obj['versions'] = ApiClient.convertToType(data['versions'], [SchemasVersionResponse]);
             }
         }
         return obj;
@@ -96,7 +96,7 @@ ServiceResponseAllOf.prototype['version'] = undefined;
 
 /**
  * A list of [versions](/reference/api/services/version/) associated with the service.
- * @member {Array.<module:model/VersionResponse>} versions
+ * @member {Array.<module:model/SchemasVersionResponse>} versions
  */
 ServiceResponseAllOf.prototype['versions'] = undefined;
 

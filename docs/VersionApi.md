@@ -32,8 +32,8 @@ Activate the current version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.activateServiceVersion(options)
@@ -69,8 +69,8 @@ Clone the current configuration into a new version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.cloneServiceVersion(options)
@@ -106,7 +106,7 @@ Create a version for a particular service.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
+  service_id: "service_id_example", // required
 };
 
 apiInstance.createServiceVersion(options)
@@ -141,8 +141,8 @@ Deactivate the current version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.deactivateServiceVersion(options)
@@ -178,8 +178,8 @@ Get the version for a particular service.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.getServiceVersion(options)
@@ -215,7 +215,7 @@ List the versions for a particular service.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
+  service_id: "service_id_example", // required
 };
 
 apiInstance.listServiceVersions(options)
@@ -250,8 +250,8 @@ Locks the specified version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.lockServiceVersion(options)
@@ -278,7 +278,7 @@ Name | Type | Description  | Notes
 ## `updateServiceVersion`
 
 ```javascript
-updateServiceVersion({ service_id, version_id, [active], , [comment], , [deployed], , [locked], , [number], , [staging], , [testing] })
+updateServiceVersion({ service_id, version_id, [active, ], [comment, ], [deployed, ], [locked, ], [number, ], [staging, ], [testing] })
 ```
 
 Update a particular version for a particular service.
@@ -287,8 +287,8 @@ Update a particular version for a particular service.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   active: false,
   comment: "comment_example",
   deployed: true,
@@ -338,8 +338,8 @@ Validate the version for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.validateServiceVersion(options)

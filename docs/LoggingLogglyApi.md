@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogLoggly`
 
 ```javascript
-createLogLoggly({ service_id, version_id, [format], , [format_version], , [name], , [placement], , [response_condition], , [token] })
+createLogLoggly({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [token] })
 ```
 
 Create a Loggly logging object for a particular service and version.
@@ -28,8 +28,8 @@ Create a Loggly logging object for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
@@ -77,9 +77,9 @@ Delete the Loggly logging object for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_loggly_name: "logging_loggly_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_loggly_name: "logging_loggly_name_example", // required
 };
 
 apiInstance.deleteLogLoggly(options)
@@ -116,9 +116,9 @@ Get the Loggly logging object for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_loggly_name: "logging_loggly_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_loggly_name: "logging_loggly_name_example", // required
 };
 
 apiInstance.getLogLoggly(options)
@@ -155,8 +155,8 @@ List all Loggly logging objects for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listLogLoggly(options)
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 ## `updateLogLoggly`
 
 ```javascript
-updateLogLoggly({ service_id, version_id, logging_loggly_name, [format], , [format_version], , [name], , [placement], , [response_condition], , [token] })
+updateLogLoggly({ service_id, version_id, logging_loggly_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [token] })
 ```
 
 Update the Loggly logging object for a particular service and version.
@@ -192,9 +192,9 @@ Update the Loggly logging object for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_loggly_name: "logging_loggly_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_loggly_name: "logging_loggly_name_example", // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",

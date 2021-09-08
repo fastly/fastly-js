@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createCacheSettings`
 
 ```javascript
-createCacheSettings({ service_id, version_id, [action], , [cache_condition], , [name], , [stale_ttl], , [ttl] })
+createCacheSettings({ service_id, version_id, [action, ], [cache_condition, ], [name, ], [stale_ttl, ], [ttl] })
 ```
 
 Create a cache settings object.
@@ -28,8 +28,8 @@ Create a cache settings object.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   action: "action_example",
   cache_condition: "cache_condition_example",
   name: "name_example",
@@ -75,9 +75,9 @@ Delete a specific cache settings object.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- cache_settings_name: "cache_settings_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  cache_settings_name: "cache_settings_name_example", // required
 };
 
 apiInstance.deleteCacheSettings(options)
@@ -114,9 +114,9 @@ Get a specific cache settings object.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- cache_settings_name: "cache_settings_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  cache_settings_name: "cache_settings_name_example", // required
 };
 
 apiInstance.getCacheSettings(options)
@@ -153,8 +153,8 @@ Get a list of all cache settings for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listCacheSettings(options)
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 ## `updateCacheSettings`
 
 ```javascript
-updateCacheSettings({ service_id, version_id, cache_settings_name, [action], , [cache_condition], , [name], , [stale_ttl], , [ttl] })
+updateCacheSettings({ service_id, version_id, cache_settings_name, [action, ], [cache_condition, ], [name, ], [stale_ttl, ], [ttl] })
 ```
 
 Update a specific cache settings object.
@@ -190,9 +190,9 @@ Update a specific cache settings object.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- cache_settings_name: "cache_settings_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  cache_settings_name: "cache_settings_name_example", // required
   action: "action_example",
   cache_condition: "cache_condition_example",
   name: "name_example",

@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogKinesis`
 
 ```javascript
-createLogKinesis({ service_id, version_id, [access_key], , [format], , [format_version], , [iam_role], , [name], , [placement], , [region], , [secret_key], , [topic] })
+createLogKinesis({ service_id, version_id, [access_key, ], [format, ], [format_version, ], [iam_role, ], [name, ], [placement, ], [region, ], [secret_key, ], [topic] })
 ```
 
 Create an Amazon Kinesis Data Streams logging object for a particular service and version.
@@ -28,8 +28,8 @@ Create an Amazon Kinesis Data Streams logging object for a particular service an
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   access_key: "access_key_example",
   format: null,
   format_version: new Fastly.LoggingFormatVersion(),
@@ -83,9 +83,9 @@ Delete an Amazon Kinesis Data Streams logging object for a particular service an
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_kinesis_name: "logging_kinesis_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_kinesis_name: "logging_kinesis_name_example", // required
 };
 
 apiInstance.deleteLogKinesis(options)
@@ -122,9 +122,9 @@ Get the details for an Amazon Kinesis Data Streams logging object for a particul
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_kinesis_name: "logging_kinesis_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_kinesis_name: "logging_kinesis_name_example", // required
 };
 
 apiInstance.getLogKinesis(options)
@@ -161,8 +161,8 @@ List all of the Amazon Kinesis Data Streams logging objects for a particular ser
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listLogKinesis(options)
@@ -198,9 +198,9 @@ Update an Amazon Kinesis Data Streams logging object for a particular service an
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_kinesis_name: "logging_kinesis_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_kinesis_name: "logging_kinesis_name_example", // required
 };
 
 apiInstance.updateLogKinesis(options)

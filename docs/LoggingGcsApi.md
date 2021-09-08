@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogGcs`
 
 ```javascript
-createLogGcs({ service_id, version_id, [format], , [format_version], , [name], , [placement], , [response_condition], , [compression_codec], , [gzip_level], , [message_type], , [period], , [timestamp_format], , [secret_key], , [user], , [bucket_name], , [path], , [public_key] })
+createLogGcs({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [secret_key, ], [user, ], [bucket_name, ], [path, ], [public_key] })
 ```
 
 Create GCS logging for a particular service and version.
@@ -28,8 +28,8 @@ Create GCS logging for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
@@ -95,9 +95,9 @@ Delete the GCS Logging for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_gcs_name: "logging_gcs_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_gcs_name: "logging_gcs_name_example", // required
 };
 
 apiInstance.deleteLogGcs(options)
@@ -134,9 +134,9 @@ Get the GCS Logging for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_gcs_name: "logging_gcs_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_gcs_name: "logging_gcs_name_example", // required
 };
 
 apiInstance.getLogGcs(options)
@@ -173,8 +173,8 @@ List all of the GCS log endpoints for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listLogGcs(options)
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 ## `updateLogGcs`
 
 ```javascript
-updateLogGcs({ service_id, version_id, logging_gcs_name, [format], , [format_version], , [name], , [placement], , [response_condition], , [compression_codec], , [gzip_level], , [message_type], , [period], , [timestamp_format], , [secret_key], , [user], , [bucket_name], , [path], , [public_key] })
+updateLogGcs({ service_id, version_id, logging_gcs_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [secret_key, ], [user, ], [bucket_name, ], [path, ], [public_key] })
 ```
 
 Update the GCS for a particular service and version.
@@ -210,9 +210,9 @@ Update the GCS for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_gcs_name: "logging_gcs_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_gcs_name: "logging_gcs_name_example", // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",

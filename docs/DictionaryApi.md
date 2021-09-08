@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createDictionary`
 
 ```javascript
-createDictionary({ service_id, version_id, [name], , [write_only] })
+createDictionary({ service_id, version_id, [name, ], [write_only] })
 ```
 
 Create named dictionary for a particular service and version.
@@ -28,8 +28,8 @@ Create named dictionary for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   name: "name_example",
   write_only: false,
 };
@@ -69,9 +69,9 @@ Delete named dictionary for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- dictionary_name: "dictionary_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  dictionary_name: "dictionary_name_example", // required
 };
 
 apiInstance.deleteDictionary(options)
@@ -108,9 +108,9 @@ Retrieve a single dictionary by name for the version and service.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- dictionary_name: "dictionary_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  dictionary_name: "dictionary_name_example", // required
 };
 
 apiInstance.getDictionary(options)
@@ -147,8 +147,8 @@ List all dictionaries for the version of the service.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listDictionaries(options)
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 ## `updateDictionary`
 
 ```javascript
-updateDictionary({ service_id, version_id, dictionary_name, [name], , [write_only] })
+updateDictionary({ service_id, version_id, dictionary_name, [name, ], [write_only] })
 ```
 
 Update named dictionary for a particular service and version.
@@ -184,9 +184,9 @@ Update named dictionary for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- dictionary_name: "dictionary_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  dictionary_name: "dictionary_name_example", // required
   name: "name_example",
   write_only: false,
 };

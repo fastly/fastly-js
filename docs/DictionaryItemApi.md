@@ -30,8 +30,8 @@ Update DictionaryItem in batch for given service, dictionary ID and key/value pa
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- dictionary_id: "dictionary_id_example", // required
+  service_id: "service_id_example", // required
+  dictionary_id: "dictionary_id_example", // required
   inline_object4: new Fastly.InlineObject4(),
 };
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 ## `createDictionaryItem`
 
 ```javascript
-createDictionaryItem({ service_id, dictionary_id, [item_key], , [item_value] })
+createDictionaryItem({ service_id, dictionary_id, [item_key, ], [item_value] })
 ```
 
 Create DictionaryItem given service, dictionary ID, item key, and item value.
@@ -69,8 +69,8 @@ Create DictionaryItem given service, dictionary ID, item key, and item value.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- dictionary_id: "dictionary_id_example", // required
+  service_id: "service_id_example", // required
+  dictionary_id: "dictionary_id_example", // required
   item_key: "item_key_example",
   item_value: "item_value_example",
 };
@@ -110,9 +110,9 @@ Delete DictionaryItem given service, dictionary ID, and item key.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- dictionary_id: "dictionary_id_example", // required
- dictionary_item_key: "dictionary_item_key_example", // required
+  service_id: "service_id_example", // required
+  dictionary_id: "dictionary_id_example", // required
+  dictionary_item_key: "dictionary_item_key_example", // required
 };
 
 apiInstance.deleteDictionaryItem(options)
@@ -149,9 +149,9 @@ Retrieve a single DictionaryItem given service, dictionary ID and item key.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- dictionary_id: "dictionary_id_example", // required
- dictionary_item_key: "dictionary_item_key_example", // required
+  service_id: "service_id_example", // required
+  dictionary_id: "dictionary_id_example", // required
+  dictionary_item_key: "dictionary_item_key_example", // required
 };
 
 apiInstance.getDictionaryItem(options)
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 ## `listDictionaryItems`
 
 ```javascript
-listDictionaryItems({ service_id, dictionary_id, [page], , [per_page], , [sort], , [direction] })
+listDictionaryItems({ service_id, dictionary_id, [page, ], [per_page, ], [sort, ], [direction] })
 ```
 
 List of DictionaryItems given service and dictionary ID.
@@ -188,8 +188,8 @@ List of DictionaryItems given service and dictionary ID.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- dictionary_id: "dictionary_id_example", // required
+  service_id: "service_id_example", // required
+  dictionary_id: "dictionary_id_example", // required
   page: 56,
   per_page: 20,
   sort: "'created'",
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 ## `updateDictionaryItem`
 
 ```javascript
-updateDictionaryItem({ service_id, dictionary_id, dictionary_item_key, [item_key], , [item_value] })
+updateDictionaryItem({ service_id, dictionary_id, dictionary_item_key, [item_key, ], [item_value] })
 ```
 
 Update DictionaryItem given service, dictionary ID, item key, and item value.
@@ -233,9 +233,9 @@ Update DictionaryItem given service, dictionary ID, item key, and item value.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- dictionary_id: "dictionary_id_example", // required
- dictionary_item_key: "dictionary_item_key_example", // required
+  service_id: "service_id_example", // required
+  dictionary_id: "dictionary_id_example", // required
+  dictionary_item_key: "dictionary_item_key_example", // required
   item_key: "item_key_example",
   item_value: "item_value_example",
 };
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 ## `upsertDictionaryItem`
 
 ```javascript
-upsertDictionaryItem({ service_id, dictionary_id, dictionary_item_key, [item_key], , [item_value] })
+upsertDictionaryItem({ service_id, dictionary_id, dictionary_item_key, [item_key, ], [item_value] })
 ```
 
 Upsert DictionaryItem given service, dictionary ID, item key, and item value.
@@ -276,9 +276,9 @@ Upsert DictionaryItem given service, dictionary ID, item key, and item value.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- dictionary_id: "dictionary_id_example", // required
- dictionary_item_key: "dictionary_item_key_example", // required
+  service_id: "service_id_example", // required
+  dictionary_id: "dictionary_id_example", // required
+  dictionary_item_key: "dictionary_item_key_example", // required
   item_key: "item_key_example",
   item_value: "item_value_example",
 };

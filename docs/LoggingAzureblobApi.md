@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogAzure`
 
 ```javascript
-createLogAzure({ service_id, version_id, [format], , [format_version], , [name], , [placement], , [response_condition], , [compression_codec], , [gzip_level], , [message_type], , [period], , [timestamp_format], , [account_name], , [container], , [file_max_bytes], , [path], , [public_key], , [sas_token] })
+createLogAzure({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [account_name, ], [container, ], [file_max_bytes, ], [path, ], [public_key, ], [sas_token] })
 ```
 
 Create an Azure Blob Storage logging endpoint for a particular service and version.
@@ -28,8 +28,8 @@ Create an Azure Blob Storage logging endpoint for a particular service and versi
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
@@ -97,9 +97,9 @@ Delete the Azure Blob Storage logging endpoint for a particular service and vers
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_azureblob_name: "logging_azureblob_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_azureblob_name: "logging_azureblob_name_example", // required
 };
 
 apiInstance.deleteLogAzure(options)
@@ -136,9 +136,9 @@ Get the Azure Blob Storage logging endpoint for a particular service and version
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_azureblob_name: "logging_azureblob_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_azureblob_name: "logging_azureblob_name_example", // required
 };
 
 apiInstance.getLogAzure(options)
@@ -175,8 +175,8 @@ List all of the Azure Blob Storage logging endpoints for a particular service an
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listLogAzure(options)
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 ## `updateLogAzure`
 
 ```javascript
-updateLogAzure({ service_id, version_id, logging_azureblob_name, [format], , [format_version], , [name], , [placement], , [response_condition], , [compression_codec], , [gzip_level], , [message_type], , [period], , [timestamp_format], , [account_name], , [container], , [file_max_bytes], , [path], , [public_key], , [sas_token] })
+updateLogAzure({ service_id, version_id, logging_azureblob_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [account_name, ], [container, ], [file_max_bytes, ], [path, ], [public_key, ], [sas_token] })
 ```
 
 Update the Azure Blob Storage logging endpoint for a particular service and version.
@@ -212,9 +212,9 @@ Update the Azure Blob Storage logging endpoint for a particular service and vers
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_azureblob_name: "logging_azureblob_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_azureblob_name: "logging_azureblob_name_example", // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",

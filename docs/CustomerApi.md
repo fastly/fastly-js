@@ -28,7 +28,7 @@ Delete a customer.
 
 ```javascript
 const options = {
- customer_id: "customer_id_example", // required
+  customer_id: "customer_id_example", // required
 };
 
 apiInstance.deleteCustomer(options)
@@ -63,7 +63,7 @@ Get a specific customer.
 
 ```javascript
 const options = {
- customer_id: "customer_id_example", // required
+  customer_id: "customer_id_example", // required
 };
 
 apiInstance.getCustomer(options)
@@ -127,7 +127,7 @@ List all users from a specified customer id.
 
 ```javascript
 const options = {
- customer_id: "customer_id_example", // required
+  customer_id: "customer_id_example", // required
 };
 
 apiInstance.listUsers(options)
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 ## `updateCustomer`
 
 ```javascript
-updateCustomer({ customer_id, [billing_contact_id], , [billing_network_type], , [billing_ref], , [can_configure_wordpress], , [can_reset_passwords], , [can_upload_vcl], , [force_2fa], , [force_sso], , [has_account_panel], , [has_improved_events], , [has_improved_ssl_config], , [has_openstack_logging], , [has_pci], , [has_pci_passwords], , [ip_whitelist], , [legal_contact_id], , [name], , [owner_id], , [phone_number], , [postal_address], , [pricing_plan], , [pricing_plan_id], , [security_contact_id], , [technical_contact_id] })
+updateCustomer({ customer_id, [billing_contact_id, ], [billing_network_type, ], [billing_ref, ], [can_configure_wordpress, ], [can_reset_passwords, ], [can_upload_vcl, ], [force_2fa, ], [force_sso, ], [has_account_panel, ], [has_improved_events, ], [has_improved_ssl_config, ], [has_openstack_logging, ], [has_pci, ], [has_pci_passwords, ], [ip_whitelist, ], [legal_contact_id, ], [name, ], [owner_id, ], [phone_number, ], [postal_address, ], [pricing_plan, ], [pricing_plan_id, ], [security_contact_id, ], [technical_contact_id] })
 ```
 
 Update a customer.
@@ -162,7 +162,7 @@ Update a customer.
 
 ```javascript
 const options = {
- customer_id: "customer_id_example", // required
+  customer_id: "customer_id_example", // required
   billing_contact_id: "billing_contact_id_example",
   billing_network_type: "billing_network_type_example",
   billing_ref: "billing_ref_example",

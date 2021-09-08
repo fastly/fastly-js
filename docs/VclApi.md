@@ -25,7 +25,7 @@ Method | Fastly API endpoint | Description
 ## `createCustomVcl`
 
 ```javascript
-createCustomVcl({ service_id, version_id, [content], , [main], , [name] })
+createCustomVcl({ service_id, version_id, [content, ], [main, ], [name] })
 ```
 
 Upload a VCL for a particular service and version.
@@ -34,8 +34,8 @@ Upload a VCL for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   content: "content_example",
   main: true,
   name: "name_example",
@@ -77,9 +77,9 @@ Delete the uploaded VCL for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- vcl_name: "vcl_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  vcl_name: "vcl_name_example", // required
 };
 
 apiInstance.deleteCustomVcl(options)
@@ -116,9 +116,9 @@ Get the uploaded VCL for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- vcl_name: "vcl_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  vcl_name: "vcl_name_example", // required
   no_content: "'0'",
 };
 
@@ -157,8 +157,8 @@ Return boilerplate VCL with the service's TTL from the [settings](/reference/api
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.getCustomVclBoilerplate(options)
@@ -194,8 +194,8 @@ Display the generated VCL for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.getCustomVclGenerated(options)
@@ -231,8 +231,8 @@ Display the content of generated VCL with HTML syntax highlighting. Include line
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.getCustomVclGeneratedHighlighted(options)
@@ -268,9 +268,9 @@ Get the uploaded VCL for a particular service and version with HTML syntax highl
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- vcl_name: "vcl_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  vcl_name: "vcl_name_example", // required
 };
 
 apiInstance.getCustomVclHighlighted(options)
@@ -307,9 +307,9 @@ Download the specified VCL.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- vcl_name: "vcl_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  vcl_name: "vcl_name_example", // required
 };
 
 apiInstance.getCustomVclRaw(options)
@@ -346,8 +346,8 @@ List the uploaded VCLs for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listCustomVcl(options)
@@ -383,9 +383,9 @@ Set the specified VCL as the main.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- vcl_name: "vcl_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  vcl_name: "vcl_name_example", // required
 };
 
 apiInstance.setCustomVclMain(options)
@@ -413,7 +413,7 @@ Name | Type | Description  | Notes
 ## `updateCustomVcl`
 
 ```javascript
-updateCustomVcl({ service_id, version_id, vcl_name, [content], , [main], , [name] })
+updateCustomVcl({ service_id, version_id, vcl_name, [content, ], [main, ], [name] })
 ```
 
 Update the uploaded VCL for a particular service and version.
@@ -422,9 +422,9 @@ Update the uploaded VCL for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- vcl_name: "vcl_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  vcl_name: "vcl_name_example", // required
   content: "content_example",
   main: true,
   name: "name_example",

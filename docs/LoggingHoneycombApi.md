@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogHoneycomb`
 
 ```javascript
-createLogHoneycomb({ service_id, version_id, [format], , [format_version], , [name], , [placement], , [response_condition], , [dataset], , [token] })
+createLogHoneycomb({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [dataset, ], [token] })
 ```
 
 Create a Honeycomb logging object for a particular service and version.
@@ -28,8 +28,8 @@ Create a Honeycomb logging object for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   format: null,
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
@@ -79,9 +79,9 @@ Delete the Honeycomb logging object for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_honeycomb_name: "logging_honeycomb_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_honeycomb_name: "logging_honeycomb_name_example", // required
 };
 
 apiInstance.deleteLogHoneycomb(options)
@@ -118,9 +118,9 @@ Get the details of a Honeycomb logging object for a particular service and versi
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_honeycomb_name: "logging_honeycomb_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_honeycomb_name: "logging_honeycomb_name_example", // required
 };
 
 apiInstance.getLogHoneycomb(options)
@@ -157,8 +157,8 @@ List all of the Honeycomb logging objects for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listLogHoneycomb(options)
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 ## `updateLogHoneycomb`
 
 ```javascript
-updateLogHoneycomb({ service_id, version_id, logging_honeycomb_name, [format], , [format_version], , [name], , [placement], , [response_condition], , [dataset], , [token] })
+updateLogHoneycomb({ service_id, version_id, logging_honeycomb_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [dataset, ], [token] })
 ```
 
 Update a Honeycomb logging object for a particular service and version.
@@ -194,9 +194,9 @@ Update a Honeycomb logging object for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_honeycomb_name: "logging_honeycomb_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_honeycomb_name: "logging_honeycomb_name_example", // required
   format: null,
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",

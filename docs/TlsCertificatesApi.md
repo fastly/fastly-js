@@ -63,7 +63,7 @@ Destroy a TLS certificate. TLS certificates already enabled for a domain cannot 
 
 ```javascript
 const options = {
- tls_certificate_id: "tls_certificate_id_example", // required
+  tls_certificate_id: "tls_certificate_id_example", // required
 };
 
 apiInstance.deleteTlsCert(options)
@@ -98,7 +98,7 @@ Show a TLS certificate.
 
 ```javascript
 const options = {
- tls_certificate_id: "tls_certificate_id_example", // required
+  tls_certificate_id: "tls_certificate_id_example", // required
 };
 
 apiInstance.getTlsCert(options)
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 ## `listTlsCerts`
 
 ```javascript
-listTlsCerts({ [filter_not_after], [filter_tls_domains_id], [include], [page_number], [page_size], [sort] })
+listTlsCerts({ [filter_not_after, ][filter_tls_domains_id, ][include, ][page_number, ][page_size, ][sort] })
 ```
 
 List all TLS certificates.
@@ -178,7 +178,7 @@ Replace a TLS certificate with a newly reissued TLS certificate, or update a TLS
 
 ```javascript
 const options = {
- tls_certificate_id: "tls_certificate_id_example", // required
+  tls_certificate_id: "tls_certificate_id_example", // required
   tls_certificate: new Fastly.TlsCertificate(),
 };
 

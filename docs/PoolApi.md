@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createServerPool`
 
 ```javascript
-createServerPool({ service_id, version_id, [tls_ca_cert], , [tls_cert_hostname], , [tls_client_cert], , [tls_client_key], , [use_tls], , [comment], , [connect_timeout], , [first_byte_timeout], , [healthcheck], , [max_conn_default], , [max_tls_version], , [min_tls_version], , [name], , [override_host], , [quorum], , [request_condition], , [shield], , [tls_check_cert], , [tls_ciphers], , [tls_sni_hostname], , [type] })
+createServerPool({ service_id, version_id, [tls_ca_cert, ], [tls_cert_hostname, ], [tls_client_cert, ], [tls_client_key, ], [use_tls, ], [comment, ], [connect_timeout, ], [first_byte_timeout, ], [healthcheck, ], [max_conn_default, ], [max_tls_version, ], [min_tls_version, ], [name, ], [override_host, ], [quorum, ], [request_condition, ], [shield, ], [tls_check_cert, ], [tls_ciphers, ], [tls_sni_hostname, ], [type] })
 ```
 
 Creates a pool for a particular service and version.
@@ -28,8 +28,8 @@ Creates a pool for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   tls_ca_cert: "'null'",
   tls_cert_hostname: "'null'",
   tls_client_cert: "'null'",
@@ -107,9 +107,9 @@ Deletes a specific pool for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- pool_name: "pool_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  pool_name: "pool_name_example", // required
 };
 
 apiInstance.deleteServerPool(options)
@@ -146,9 +146,9 @@ Gets a single pool for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- pool_name: "pool_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  pool_name: "pool_name_example", // required
 };
 
 apiInstance.getServerPool(options)
@@ -185,8 +185,8 @@ Lists all pools for a particular service and pool.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listServerPools(options)
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 ## `updateServerPool`
 
 ```javascript
-updateServerPool({ service_id, version_id, pool_name, [tls_ca_cert], , [tls_cert_hostname], , [tls_client_cert], , [tls_client_key], , [use_tls], , [comment], , [connect_timeout], , [first_byte_timeout], , [healthcheck], , [max_conn_default], , [max_tls_version], , [min_tls_version], , [name], , [override_host], , [quorum], , [request_condition], , [shield], , [tls_check_cert], , [tls_ciphers], , [tls_sni_hostname], , [type] })
+updateServerPool({ service_id, version_id, pool_name, [tls_ca_cert, ], [tls_cert_hostname, ], [tls_client_cert, ], [tls_client_key, ], [use_tls, ], [comment, ], [connect_timeout, ], [first_byte_timeout, ], [healthcheck, ], [max_conn_default, ], [max_tls_version, ], [min_tls_version, ], [name, ], [override_host, ], [quorum, ], [request_condition, ], [shield, ], [tls_check_cert, ], [tls_ciphers, ], [tls_sni_hostname, ], [type] })
 ```
 
 Updates a specific pool for a particular service and version.
@@ -222,9 +222,9 @@ Updates a specific pool for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- pool_name: "pool_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  pool_name: "pool_name_example", // required
   tls_ca_cert: "'null'",
   tls_cert_hostname: "'null'",
   tls_client_cert: "'null'",

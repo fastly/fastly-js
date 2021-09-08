@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogSyslog`
 
 ```javascript
-createLogSyslog({ service_id, version_id, [format], , [format_version], , [name], , [placement], , [response_condition], , [tls_ca_cert], , [tls_client_cert], , [tls_client_key], , [tls_hostname], , [address], , [port], , [hostname], , [ipv4], , [message_type], , [token], , [use_tls] })
+createLogSyslog({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [tls_ca_cert, ], [tls_client_cert, ], [tls_client_key, ], [tls_hostname, ], [address, ], [port, ], [hostname, ], [ipv4, ], [message_type, ], [token, ], [use_tls] })
 ```
 
 Create a Syslog for a particular service and version.
@@ -28,8 +28,8 @@ Create a Syslog for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
@@ -97,9 +97,9 @@ Delete the Syslog for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_syslog_name: "logging_syslog_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_syslog_name: "logging_syslog_name_example", // required
 };
 
 apiInstance.deleteLogSyslog(options)
@@ -136,9 +136,9 @@ Get the Syslog for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_syslog_name: "logging_syslog_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_syslog_name: "logging_syslog_name_example", // required
 };
 
 apiInstance.getLogSyslog(options)
@@ -175,8 +175,8 @@ List all of the Syslogs for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listLogSyslog(options)
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 ## `updateLogSyslog`
 
 ```javascript
-updateLogSyslog({ service_id, version_id, logging_syslog_name, [format], , [format_version], , [name], , [placement], , [response_condition], , [tls_ca_cert], , [tls_client_cert], , [tls_client_key], , [tls_hostname], , [address], , [port], , [hostname], , [ipv4], , [message_type], , [token], , [use_tls] })
+updateLogSyslog({ service_id, version_id, logging_syslog_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [tls_ca_cert, ], [tls_client_cert, ], [tls_client_key, ], [tls_hostname, ], [address, ], [port, ], [hostname, ], [ipv4, ], [message_type, ], [token, ], [use_tls] })
 ```
 
 Update the Syslog for a particular service and version.
@@ -212,9 +212,9 @@ Update the Syslog for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_syslog_name: "logging_syslog_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_syslog_name: "logging_syslog_name_example", // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",

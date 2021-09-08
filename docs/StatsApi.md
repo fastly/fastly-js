@@ -15,7 +15,7 @@ Method | Fastly API endpoint | Description
 ## `getServiceStats`
 
 ```javascript
-getServiceStats({ service_id, [month], , [year], , [start_time], , [end_time] })
+getServiceStats({ service_id, [month, ], [year, ], [start_time, ], [end_time] })
 ```
 
 Get the stats from a service for a block of time. This lists all stats by PoP location, starting with AMS. This call requires parameters to select block of time to query. Use either a timestamp range (using start_time and end_time) or a specified month/year combo (using month and year).
@@ -24,7 +24,7 @@ Get the stats from a service for a block of time. This lists all stats by PoP lo
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
+  service_id: "service_id_example", // required
   month: 05,
   year: 2020,
   start_time: 56,

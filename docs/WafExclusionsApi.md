@@ -28,8 +28,8 @@ Create a WAF exclusion for a particular firewall version.
 
 ```javascript
 const options = {
- firewall_id: "firewall_id_example", // required
- firewall_version_number: 56, // required
+  firewall_id: "firewall_id_example", // required
+  firewall_version_number: 56, // required
   waf_exclusion: new Fastly.WafExclusion(),
 };
 
@@ -67,9 +67,9 @@ Delete a WAF exclusion for a particular firewall version.
 
 ```javascript
 const options = {
- firewall_id: "firewall_id_example", // required
- firewall_version_number: 56, // required
- exclusion_number: 56, // required
+  firewall_id: "firewall_id_example", // required
+  firewall_version_number: 56, // required
+  exclusion_number: 56, // required
 };
 
 apiInstance.deleteWafRuleExclusion(options)
@@ -106,9 +106,9 @@ Get a specific WAF exclusion object.
 
 ```javascript
 const options = {
- firewall_id: "firewall_id_example", // required
- firewall_version_number: 56, // required
- exclusion_number: 56, // required
+  firewall_id: "firewall_id_example", // required
+  firewall_version_number: 56, // required
+  exclusion_number: 56, // required
 };
 
 apiInstance.getWafRuleExclusion(options)
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 ## `listWafRuleExclusions`
 
 ```javascript
-listWafRuleExclusions({ firewall_id, firewall_version_number, [filter_exclusion_type], , [filter_name], , [filter_waf_rules_modsec_rule_id], , [page_number], , [page_size], , [include] })
+listWafRuleExclusions({ firewall_id, firewall_version_number, [filter_exclusion_type, ], [filter_name, ], [filter_waf_rules_modsec_rule_id, ], [page_number, ], [page_size, ], [include] })
 ```
 
 List all exclusions for a particular firewall version.
@@ -145,8 +145,8 @@ List all exclusions for a particular firewall version.
 
 ```javascript
 const options = {
- firewall_id: "firewall_id_example", // required
- firewall_version_number: 56, // required
+  firewall_id: "firewall_id_example", // required
+  firewall_version_number: 56, // required
   filter_exclusion_type: "filter_exclusion_type_example",
   filter_name: "filter_name_example",
   filter_waf_rules_modsec_rule_id: 56,
@@ -194,9 +194,9 @@ Update a WAF exclusion for a particular firewall version.
 
 ```javascript
 const options = {
- firewall_id: "firewall_id_example", // required
- firewall_version_number: 56, // required
- exclusion_number: 56, // required
+  firewall_id: "firewall_id_example", // required
+  firewall_version_number: 56, // required
+  exclusion_number: 56, // required
   waf_exclusion: new Fastly.WafExclusion(),
 };
 

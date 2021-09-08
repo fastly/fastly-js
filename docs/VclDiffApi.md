@@ -24,9 +24,9 @@ Get a comparison of the VCL changes between two service versions.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- from_version_id: 1, // required
- to_version_id: 2, // required
+  service_id: "service_id_example", // required
+  from_version_id: 1, // required
+  to_version_id: 2, // required
   format: "'text'",
 };
 

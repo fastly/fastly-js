@@ -22,7 +22,7 @@ Method | Fastly API endpoint | Description
 ## `createService`
 
 ```javascript
-createService({ [comment], [customer_id], [name], [type] })
+createService({ [comment, ][customer_id, ][name, ][type] })
 ```
 
 Create a service.
@@ -72,7 +72,7 @@ Delete a service.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
+  service_id: "service_id_example", // required
 };
 
 apiInstance.deleteService(options)
@@ -107,7 +107,7 @@ Get a specific service by id.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
+  service_id: "service_id_example", // required
 };
 
 apiInstance.getService(options)
@@ -142,7 +142,7 @@ List detailed information on a specified service.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
+  service_id: "service_id_example", // required
 };
 
 apiInstance.getServiceDetail(options)
@@ -177,7 +177,7 @@ List the domains within a service.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
+  service_id: "service_id_example", // required
 };
 
 apiInstance.listServiceDomains(options)
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 ## `listServices`
 
 ```javascript
-listServices({ [page], [per_page], [sort], [direction] })
+listServices({ [page, ][per_page, ][sort, ][direction] })
 ```
 
 List services.
@@ -253,7 +253,7 @@ Get a specific service by name.
 
 ```javascript
 const options = {
- name: "name_example", // required
+  name: "name_example", // required
 };
 
 apiInstance.searchService(options)
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 ## `updateService`
 
 ```javascript
-updateService({ service_id, [comment], , [customer_id], , [name] })
+updateService({ service_id, [comment, ], [customer_id, ], [name] })
 ```
 
 Update a service.
@@ -288,7 +288,7 @@ Update a service.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
+  service_id: "service_id_example", // required
   comment: "comment_example",
   customer_id: "customer_id_example",
   name: "name_example",

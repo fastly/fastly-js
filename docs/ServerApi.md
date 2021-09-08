@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createPoolServer`
 
 ```javascript
-createPoolServer({ service_id, pool_id, [address], , [comment], , [disabled], , [max_conn], , [override_host], , [port], , [weight] })
+createPoolServer({ service_id, pool_id, [address, ], [comment, ], [disabled, ], [max_conn, ], [override_host, ], [port, ], [weight] })
 ```
 
 Creates a single server for a particular service and pool.
@@ -28,8 +28,8 @@ Creates a single server for a particular service and pool.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- pool_id: "pool_id_example", // required
+  service_id: "service_id_example", // required
+  pool_id: "pool_id_example", // required
   address: "address_example",
   comment: "comment_example",
   disabled: false,
@@ -79,9 +79,9 @@ Deletes a single server for a particular service and pool.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- pool_id: "pool_id_example", // required
- server_id: "server_id_example", // required
+  service_id: "service_id_example", // required
+  pool_id: "pool_id_example", // required
+  server_id: "server_id_example", // required
 };
 
 apiInstance.deletePoolServer(options)
@@ -118,9 +118,9 @@ Gets a single server for a particular service and pool.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- pool_id: "pool_id_example", // required
- server_id: "server_id_example", // required
+  service_id: "service_id_example", // required
+  pool_id: "pool_id_example", // required
+  server_id: "server_id_example", // required
 };
 
 apiInstance.getPoolServer(options)
@@ -157,8 +157,8 @@ Lists all servers for a particular service and pool.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- pool_id: "pool_id_example", // required
+  service_id: "service_id_example", // required
+  pool_id: "pool_id_example", // required
 };
 
 apiInstance.listPoolServers(options)
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 ## `updatePoolServer`
 
 ```javascript
-updatePoolServer({ service_id, pool_id, server_id, [address], , [comment], , [disabled], , [max_conn], , [override_host], , [port], , [weight] })
+updatePoolServer({ service_id, pool_id, server_id, [address, ], [comment, ], [disabled, ], [max_conn, ], [override_host, ], [port, ], [weight] })
 ```
 
 Updates a single server for a particular service and pool.
@@ -194,9 +194,9 @@ Updates a single server for a particular service and pool.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- pool_id: "pool_id_example", // required
- server_id: "server_id_example", // required
+  service_id: "service_id_example", // required
+  pool_id: "pool_id_example", // required
+  server_id: "server_id_example", // required
   address: "address_example",
   comment: "comment_example",
   disabled: false,

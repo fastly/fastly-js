@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogDigocean`
 
 ```javascript
-createLogDigocean({ service_id, version_id, [format], , [format_version], , [name], , [placement], , [response_condition], , [compression_codec], , [gzip_level], , [message_type], , [period], , [timestamp_format], , [access_key], , [bucket_name], , [domain], , [path], , [public_key], , [secret_key] })
+createLogDigocean({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [access_key, ], [bucket_name, ], [domain, ], [path, ], [public_key, ], [secret_key] })
 ```
 
 Create a DigitalOcean Space for a particular service and version.
@@ -28,8 +28,8 @@ Create a DigitalOcean Space for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
@@ -97,9 +97,9 @@ Delete the DigitalOcean Space for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_digitalocean_name: "logging_digitalocean_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_digitalocean_name: "logging_digitalocean_name_example", // required
 };
 
 apiInstance.deleteLogDigocean(options)
@@ -136,9 +136,9 @@ Get the DigitalOcean Space for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_digitalocean_name: "logging_digitalocean_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_digitalocean_name: "logging_digitalocean_name_example", // required
 };
 
 apiInstance.getLogDigocean(options)
@@ -175,8 +175,8 @@ List all of the DigitalOcean Spaces for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listLogDigocean(options)
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 ## `updateLogDigocean`
 
 ```javascript
-updateLogDigocean({ service_id, version_id, logging_digitalocean_name, [format], , [format_version], , [name], , [placement], , [response_condition], , [compression_codec], , [gzip_level], , [message_type], , [period], , [timestamp_format], , [access_key], , [bucket_name], , [domain], , [path], , [public_key], , [secret_key] })
+updateLogDigocean({ service_id, version_id, logging_digitalocean_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [access_key, ], [bucket_name, ], [domain, ], [path, ], [public_key, ], [secret_key] })
 ```
 
 Update the DigitalOcean Space for a particular service and version.
@@ -212,9 +212,9 @@ Update the DigitalOcean Space for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_digitalocean_name: "logging_digitalocean_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_digitalocean_name: "logging_digitalocean_name_example", // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",

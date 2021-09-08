@@ -1,4 +1,4 @@
-# Fastly.VersionResponseAllOf
+# Fastly.SchemasVersionResponseAllOf
 
 ## Properties
 

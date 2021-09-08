@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogCloudfiles`
 
 ```javascript
-createLogCloudfiles({ service_id, version_id, [format], , [format_version], , [name], , [placement], , [response_condition], , [compression_codec], , [gzip_level], , [message_type], , [period], , [timestamp_format], , [access_key], , [bucket_name], , [path], , [public_key], , [region], , [user] })
+createLogCloudfiles({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [access_key, ], [bucket_name, ], [path, ], [public_key, ], [region, ], [user] })
 ```
 
 Create a Cloud Files log endpoint for a particular service and version.
@@ -28,8 +28,8 @@ Create a Cloud Files log endpoint for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
@@ -97,9 +97,9 @@ Delete the Cloud Files log endpoint for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_cloudfiles_name: "logging_cloudfiles_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_cloudfiles_name: "logging_cloudfiles_name_example", // required
 };
 
 apiInstance.deleteLogCloudfiles(options)
@@ -136,9 +136,9 @@ Get the Cloud Files log endpoint for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_cloudfiles_name: "logging_cloudfiles_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_cloudfiles_name: "logging_cloudfiles_name_example", // required
 };
 
 apiInstance.getLogCloudfiles(options)
@@ -175,8 +175,8 @@ List all of the Cloud Files log endpoints for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listLogCloudfiles(options)
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 ## `updateLogCloudfiles`
 
 ```javascript
-updateLogCloudfiles({ service_id, version_id, logging_cloudfiles_name, [format], , [format_version], , [name], , [placement], , [response_condition], , [compression_codec], , [gzip_level], , [message_type], , [period], , [timestamp_format], , [access_key], , [bucket_name], , [path], , [public_key], , [region], , [user] })
+updateLogCloudfiles({ service_id, version_id, logging_cloudfiles_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [access_key, ], [bucket_name, ], [path, ], [public_key, ], [region, ], [user] })
 ```
 
 Update the Cloud Files log endpoint for a particular service and version.
@@ -212,9 +212,9 @@ Update the Cloud Files log endpoint for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_cloudfiles_name: "logging_cloudfiles_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_cloudfiles_name: "logging_cloudfiles_name_example", // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",

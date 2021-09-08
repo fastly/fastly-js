@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createCondition`
 
 ```javascript
-createCondition({ service_id, version_id, [comment], , [name], , [priority], , [statement], , [type] })
+createCondition({ service_id, version_id, [comment, ], [name, ], [priority, ], [statement, ], [type] })
 ```
 
 Creates a new condition.
@@ -28,8 +28,8 @@ Creates a new condition.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   comment: "comment_example",
   name: "name_example",
   priority: 100,
@@ -75,9 +75,9 @@ Deletes the specified condition.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- condition_name: "condition_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  condition_name: "condition_name_example", // required
 };
 
 apiInstance.deleteCondition(options)
@@ -114,9 +114,9 @@ Gets the specified condition.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- condition_name: "condition_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  condition_name: "condition_name_example", // required
 };
 
 apiInstance.getCondition(options)
@@ -153,8 +153,8 @@ Gets all conditions for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listConditions(options)
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 ## `updateCondition`
 
 ```javascript
-updateCondition({ service_id, version_id, condition_name, [comment], , [name], , [priority], , [statement], , [type] })
+updateCondition({ service_id, version_id, condition_name, [comment, ], [name, ], [priority, ], [statement, ], [type] })
 ```
 
 Updates the specified condition.
@@ -190,9 +190,9 @@ Updates the specified condition.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- condition_name: "condition_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  condition_name: "condition_name_example", // required
   comment: "comment_example",
   name: "name_example",
   priority: 100,

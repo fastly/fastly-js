@@ -63,7 +63,7 @@ Delete the firewall object for a particular service and service version.
 
 ```javascript
 const options = {
- firewall_id: "firewall_id_example", // required
+  firewall_id: "firewall_id_example", // required
   waf_firewall: new Fastly.WafFirewall(),
 };
 
@@ -91,7 +91,7 @@ null (empty response body)
 ## `getWafFirewall`
 
 ```javascript
-getWafFirewall({ firewall_id, [filter_service_version_number], , [include] })
+getWafFirewall({ firewall_id, [filter_service_version_number, ], [include] })
 ```
 
 Get a specific firewall object.
@@ -100,7 +100,7 @@ Get a specific firewall object.
 
 ```javascript
 const options = {
- firewall_id: "firewall_id_example", // required
+  firewall_id: "firewall_id_example", // required
   filter_service_version_number: "filter_service_version_number_example",
   include: "'waf_firewall_versions'",
 };
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 ## `listWafFirewalls`
 
 ```javascript
-listWafFirewalls({ [page_number], [page_size], [filter_service_id], [filter_service_version_number], [include] })
+listWafFirewalls({ [page_number, ][page_size, ][filter_service_id, ][filter_service_version_number, ][include] })
 ```
 
 List all firewall objects.
@@ -182,7 +182,7 @@ Update a firewall object for a particular service and service version. Specifyin
 
 ```javascript
 const options = {
- firewall_id: "firewall_id_example", // required
+  firewall_id: "firewall_id_example", // required
   waf_firewall: new Fastly.WafFirewall(),
 };
 

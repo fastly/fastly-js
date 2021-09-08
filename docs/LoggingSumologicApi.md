@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogSumologic`
 
 ```javascript
-createLogSumologic({ service_id, version_id, [format], , [format_version], , [name], , [placement], , [response_condition], , [message_type], , [url] })
+createLogSumologic({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [message_type, ], [url] })
 ```
 
 Create a Sumologic for a particular service and version.
@@ -28,8 +28,8 @@ Create a Sumologic for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
@@ -79,9 +79,9 @@ Delete the Sumologic for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_sumologic_name: "logging_sumologic_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_sumologic_name: "logging_sumologic_name_example", // required
 };
 
 apiInstance.deleteLogSumologic(options)
@@ -118,9 +118,9 @@ Get the Sumologic for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_sumologic_name: "logging_sumologic_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_sumologic_name: "logging_sumologic_name_example", // required
 };
 
 apiInstance.getLogSumologic(options)
@@ -157,8 +157,8 @@ List all of the Sumologics for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listLogSumologic(options)
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 ## `updateLogSumologic`
 
 ```javascript
-updateLogSumologic({ service_id, version_id, logging_sumologic_name, [format], , [format_version], , [name], , [placement], , [response_condition], , [message_type], , [url] })
+updateLogSumologic({ service_id, version_id, logging_sumologic_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [message_type, ], [url] })
 ```
 
 Update the Sumologic for a particular service and version.
@@ -194,9 +194,9 @@ Update the Sumologic for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_sumologic_name: "logging_sumologic_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_sumologic_name: "logging_sumologic_name_example", // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",

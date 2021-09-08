@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogSftp`
 
 ```javascript
-createLogSftp({ service_id, version_id, [format], , [format_version], , [name], , [placement], , [response_condition], , [compression_codec], , [gzip_level], , [message_type], , [period], , [timestamp_format], , [address], , [port], , [password], , [path], , [public_key], , [secret_key], , [ssh_known_hosts], , [user] })
+createLogSftp({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [address, ], [port, ], [password, ], [path, ], [public_key, ], [secret_key, ], [ssh_known_hosts, ], [user] })
 ```
 
 Create a SFTP for a particular service and version.
@@ -28,8 +28,8 @@ Create a SFTP for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
@@ -101,9 +101,9 @@ Delete the SFTP for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_sftp_name: "logging_sftp_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_sftp_name: "logging_sftp_name_example", // required
 };
 
 apiInstance.deleteLogSftp(options)
@@ -140,9 +140,9 @@ Get the SFTP for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_sftp_name: "logging_sftp_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_sftp_name: "logging_sftp_name_example", // required
 };
 
 apiInstance.getLogSftp(options)
@@ -179,8 +179,8 @@ List all of the SFTPs for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listLogSftp(options)
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 ## `updateLogSftp`
 
 ```javascript
-updateLogSftp({ service_id, version_id, logging_sftp_name, [format], , [format_version], , [name], , [placement], , [response_condition], , [compression_codec], , [gzip_level], , [message_type], , [period], , [timestamp_format], , [address], , [port], , [password], , [path], , [public_key], , [secret_key], , [ssh_known_hosts], , [user] })
+updateLogSftp({ service_id, version_id, logging_sftp_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [address, ], [port, ], [password, ], [path, ], [public_key, ], [secret_key, ], [ssh_known_hosts, ], [user] })
 ```
 
 Update the SFTP for a particular service and version.
@@ -216,9 +216,9 @@ Update the SFTP for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_sftp_name: "logging_sftp_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_sftp_name: "logging_sftp_name_example", // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",

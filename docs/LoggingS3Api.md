@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogAwsS3`
 
 ```javascript
-createLogAwsS3({ service_id, version_id, [format], , [format_version], , [name], , [placement], , [response_condition], , [compression_codec], , [gzip_level], , [message_type], , [period], , [timestamp_format], , [access_key], , [acl], , [bucket_name], , [domain], , [iam_role], , [path], , [public_key], , [redundancy], , [secret_key], , [server_side_encryption], , [server_side_encryption_kms_key_id] })
+createLogAwsS3({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [access_key, ], [acl, ], [bucket_name, ], [domain, ], [iam_role, ], [path, ], [public_key, ], [redundancy, ], [secret_key, ], [server_side_encryption, ], [server_side_encryption_kms_key_id] })
 ```
 
 Create a S3 for a particular service and version.
@@ -28,8 +28,8 @@ Create a S3 for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
@@ -107,9 +107,9 @@ Delete the S3 for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_s3_name: "logging_s3_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_s3_name: "logging_s3_name_example", // required
 };
 
 apiInstance.deleteLogAwsS3(options)
@@ -146,9 +146,9 @@ Get the S3 for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_s3_name: "logging_s3_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_s3_name: "logging_s3_name_example", // required
 };
 
 apiInstance.getLogAwsS3(options)
@@ -185,8 +185,8 @@ List all of the S3s for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listLogAwsS3(options)
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 ## `updateLogAwsS3`
 
 ```javascript
-updateLogAwsS3({ service_id, version_id, logging_s3_name, [format], , [format_version], , [name], , [placement], , [response_condition], , [compression_codec], , [gzip_level], , [message_type], , [period], , [timestamp_format], , [access_key], , [acl], , [bucket_name], , [domain], , [iam_role], , [path], , [public_key], , [redundancy], , [secret_key], , [server_side_encryption], , [server_side_encryption_kms_key_id] })
+updateLogAwsS3({ service_id, version_id, logging_s3_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [access_key, ], [acl, ], [bucket_name, ], [domain, ], [iam_role, ], [path, ], [public_key, ], [redundancy, ], [secret_key, ], [server_side_encryption, ], [server_side_encryption_kms_key_id] })
 ```
 
 Update the S3 for a particular service and version.
@@ -222,9 +222,9 @@ Update the S3 for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_s3_name: "logging_s3_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_s3_name: "logging_s3_name_example", // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",

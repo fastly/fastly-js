@@ -13,9 +13,9 @@
 
 import ApiClient from '../ApiClient';
 import NestedVersion from './NestedVersion';
+import SchemasVersionResponse from './SchemasVersionResponse';
 import ServiceDetailAllOf from './ServiceDetailAllOf';
 import ServiceResponse from './ServiceResponse';
-import VersionResponse from './VersionResponse';
 
 /**
  * The ServiceDetail model module.
@@ -89,7 +89,7 @@ class ServiceDetail {
                 obj['version'] = NestedVersion.constructFromObject(data['version']);
             }
             if (data.hasOwnProperty('versions')) {
-                obj['versions'] = ApiClient.convertToType(data['versions'], [VersionResponse]);
+                obj['versions'] = ApiClient.convertToType(data['versions'], [SchemasVersionResponse]);
             }
             if (data.hasOwnProperty('active_version')) {
                 obj['active_version'] = NestedVersion.constructFromObject(data['active_version']);
@@ -168,7 +168,7 @@ ServiceDetail.prototype['version'] = undefined;
 
 /**
  * A list of [versions](/reference/api/services/version/) associated with the service.
- * @member {Array.<module:model/VersionResponse>} versions
+ * @member {Array.<module:model/SchemasVersionResponse>} versions
  */
 ServiceDetail.prototype['versions'] = undefined;
 
@@ -236,7 +236,7 @@ ServiceResponse.prototype['publish_key'] = undefined;
 ServiceResponse.prototype['version'] = undefined;
 /**
  * A list of [versions](/reference/api/services/version/) associated with the service.
- * @member {Array.<module:model/VersionResponse>} versions
+ * @member {Array.<module:model/SchemasVersionResponse>} versions
  */
 ServiceResponse.prototype['versions'] = undefined;
 // Implement ServiceDetailAllOf interface:

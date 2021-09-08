@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createRateLimiter`
 
 ```javascript
-createRateLimiter({ service_id, version_id, [action], , [client_key], , [feature_revision], , [http_methods], , [logger_type], , [name], , [penalty_box_duration], , [response], , [response_object_name], , [rps_limit], , [uri_dictionary_name], , [window_size] })
+createRateLimiter({ service_id, version_id, [action, ], [client_key, ], [feature_revision, ], [http_methods, ], [logger_type, ], [name, ], [penalty_box_duration, ], [response, ], [response_object_name, ], [rps_limit, ], [uri_dictionary_name, ], [window_size] })
 ```
 
 Create a rate limiter for a particular service and version.
@@ -28,8 +28,8 @@ Create a rate limiter for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   action: "action_example",
   client_key: "client_key_example",
   feature_revision: 56,
@@ -89,7 +89,7 @@ Delete a rate limiter by its ID.
 
 ```javascript
 const options = {
- rate_limiter_id: "rate_limiter_id_example", // required
+  rate_limiter_id: "rate_limiter_id_example", // required
 };
 
 apiInstance.deleteRateLimiter(options)
@@ -124,7 +124,7 @@ Get a rate limiter by its ID.
 
 ```javascript
 const options = {
- rate_limiter_id: "rate_limiter_id_example", // required
+  rate_limiter_id: "rate_limiter_id_example", // required
 };
 
 apiInstance.getRateLimiter(options)
@@ -159,8 +159,8 @@ List all rate limiters for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listRateLimiters(options)
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 ## `updateRateLimiter`
 
 ```javascript
-updateRateLimiter({ rate_limiter_id, [action], , [client_key], , [feature_revision], , [http_methods], , [logger_type], , [name], , [penalty_box_duration], , [response], , [response_object_name], , [rps_limit], , [uri_dictionary_name], , [window_size] })
+updateRateLimiter({ rate_limiter_id, [action, ], [client_key, ], [feature_revision, ], [http_methods, ], [logger_type, ], [name, ], [penalty_box_duration, ], [response, ], [response_object_name, ], [rps_limit, ], [uri_dictionary_name, ], [window_size] })
 ```
 
 Update a rate limiter by its ID.
@@ -196,7 +196,7 @@ Update a rate limiter by its ID.
 
 ```javascript
 const options = {
- rate_limiter_id: "rate_limiter_id_example", // required
+  rate_limiter_id: "rate_limiter_id_example", // required
   action: "action_example",
   client_key: "client_key_example",
   feature_revision: 56,

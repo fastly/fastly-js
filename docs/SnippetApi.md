@@ -21,7 +21,7 @@ Method | Fastly API endpoint | Description
 ## `createSnippet`
 
 ```javascript
-createSnippet({ service_id, version_id, [content], , [dynamic], , [name], , [priority], , [type] })
+createSnippet({ service_id, version_id, [content, ], [dynamic, ], [name, ], [priority, ], [type] })
 ```
 
 Create a snippet for a particular service and version.
@@ -30,8 +30,8 @@ Create a snippet for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   content: "content_example",
   dynamic: "dynamic_example",
   name: "name_example",
@@ -77,9 +77,9 @@ Delete a specific snippet for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- snippet_name: "snippet_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  snippet_name: "snippet_name_example", // required
 };
 
 apiInstance.deleteSnippet(options)
@@ -116,9 +116,9 @@ Get a single snippet for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- snippet_name: "snippet_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  snippet_name: "snippet_name_example", // required
 };
 
 apiInstance.getSnippet(options)
@@ -155,8 +155,8 @@ Get a single dynamic snippet for a particular service.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- snippet_id: "snippet_id_example", // required
+  service_id: "service_id_example", // required
+  snippet_id: "snippet_id_example", // required
 };
 
 apiInstance.getSnippetDynamic(options)
@@ -192,8 +192,8 @@ List all snippets for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listSnippets(options)
@@ -229,9 +229,9 @@ Update a specific snippet for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- snippet_name: "snippet_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  snippet_name: "snippet_name_example", // required
 };
 
 apiInstance.updateSnippet(options)
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 ## `updateSnippetDynamic`
 
 ```javascript
-updateSnippetDynamic({ service_id, snippet_id, [content], , [dynamic], , [name], , [priority], , [type] })
+updateSnippetDynamic({ service_id, snippet_id, [content, ], [dynamic, ], [name, ], [priority, ], [type] })
 ```
 
 Update a dynamic snippet for a particular service.
@@ -268,8 +268,8 @@ Update a dynamic snippet for a particular service.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- snippet_id: "snippet_id_example", // required
+  service_id: "service_id_example", // required
+  snippet_id: "snippet_id_example", // required
   content: "content_example",
   dynamic: "dynamic_example",
   name: "name_example",

@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogLogentries`
 
 ```javascript
-createLogLogentries({ service_id, version_id, [format], , [format_version], , [name], , [placement], , [response_condition], , [port], , [region], , [token], , [use_tls] })
+createLogLogentries({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [port, ], [region, ], [token, ], [use_tls] })
 ```
 
 Create a Logentry for a particular service and version.
@@ -28,8 +28,8 @@ Create a Logentry for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
@@ -83,9 +83,9 @@ Delete the Logentry for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_logentries_name: "logging_logentries_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_logentries_name: "logging_logentries_name_example", // required
 };
 
 apiInstance.deleteLogLogentries(options)
@@ -122,9 +122,9 @@ Get the Logentry for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_logentries_name: "logging_logentries_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_logentries_name: "logging_logentries_name_example", // required
 };
 
 apiInstance.getLogLogentries(options)
@@ -161,8 +161,8 @@ List all of the Logentries for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listLogLogentries(options)
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 ## `updateLogLogentries`
 
 ```javascript
-updateLogLogentries({ service_id, version_id, logging_logentries_name, [format], , [format_version], , [name], , [placement], , [response_condition], , [port], , [region], , [token], , [use_tls] })
+updateLogLogentries({ service_id, version_id, logging_logentries_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [port, ], [region, ], [token, ], [use_tls] })
 ```
 
 Update the Logentry for a particular service and version.
@@ -198,9 +198,9 @@ Update the Logentry for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_logentries_name: "logging_logentries_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_logentries_name: "logging_logentries_name_example", // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",

@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogScalyr`
 
 ```javascript
-createLogScalyr({ service_id, version_id, [format], , [format_version], , [name], , [placement], , [response_condition], , [project_id], , [region], , [token] })
+createLogScalyr({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [project_id, ], [region, ], [token] })
 ```
 
 Create a Scalyr for a particular service and version.
@@ -28,8 +28,8 @@ Create a Scalyr for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
@@ -81,9 +81,9 @@ Delete the Scalyr for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_scalyr_name: "logging_scalyr_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_scalyr_name: "logging_scalyr_name_example", // required
 };
 
 apiInstance.deleteLogScalyr(options)
@@ -120,9 +120,9 @@ Get the Scalyr for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_scalyr_name: "logging_scalyr_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_scalyr_name: "logging_scalyr_name_example", // required
 };
 
 apiInstance.getLogScalyr(options)
@@ -159,8 +159,8 @@ List all of the Scalyrs for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listLogScalyr(options)
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 ## `updateLogScalyr`
 
 ```javascript
-updateLogScalyr({ service_id, version_id, logging_scalyr_name, [format], , [format_version], , [name], , [placement], , [response_condition], , [project_id], , [region], , [token] })
+updateLogScalyr({ service_id, version_id, logging_scalyr_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [project_id, ], [region, ], [token] })
 ```
 
 Update the Scalyr for a particular service and version.
@@ -196,9 +196,9 @@ Update the Scalyr for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_scalyr_name: "logging_scalyr_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_scalyr_name: "logging_scalyr_name_example", // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",

@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogOpenstack`
 
 ```javascript
-createLogOpenstack({ service_id, version_id, [format], , [format_version], , [name], , [placement], , [response_condition], , [compression_codec], , [gzip_level], , [message_type], , [period], , [timestamp_format], , [access_key], , [bucket_name], , [path], , [public_key], , [url], , [user] })
+createLogOpenstack({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [access_key, ], [bucket_name, ], [path, ], [public_key, ], [url, ], [user] })
 ```
 
 Create a openstack for a particular service and version.
@@ -28,8 +28,8 @@ Create a openstack for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
@@ -97,9 +97,9 @@ Delete the openstack for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_openstack_name: "logging_openstack_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_openstack_name: "logging_openstack_name_example", // required
 };
 
 apiInstance.deleteLogOpenstack(options)
@@ -136,9 +136,9 @@ Get the openstack for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_openstack_name: "logging_openstack_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_openstack_name: "logging_openstack_name_example", // required
 };
 
 apiInstance.getLogOpenstack(options)
@@ -175,8 +175,8 @@ List all of the openstacks for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listLogOpenstack(options)
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 ## `updateLogOpenstack`
 
 ```javascript
-updateLogOpenstack({ service_id, version_id, logging_openstack_name, [format], , [format_version], , [name], , [placement], , [response_condition], , [compression_codec], , [gzip_level], , [message_type], , [period], , [timestamp_format], , [access_key], , [bucket_name], , [path], , [public_key], , [url], , [user] })
+updateLogOpenstack({ service_id, version_id, logging_openstack_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [access_key, ], [bucket_name, ], [path, ], [public_key, ], [url, ], [user] })
 ```
 
 Update the openstack for a particular service and version.
@@ -212,9 +212,9 @@ Update the openstack for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_openstack_name: "logging_openstack_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_openstack_name: "logging_openstack_name_example", // required
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",

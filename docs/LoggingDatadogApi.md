@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogDatadog`
 
 ```javascript
-createLogDatadog({ service_id, version_id, [format], , [format_version], , [name], , [placement], , [response_condition], , [region], , [token] })
+createLogDatadog({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [region, ], [token] })
 ```
 
 Create a Datadog logging object for a particular service and version.
@@ -28,8 +28,8 @@ Create a Datadog logging object for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
   format: null,
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
@@ -79,9 +79,9 @@ Delete the Datadog logging object for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_datadog_name: "logging_datadog_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_datadog_name: "logging_datadog_name_example", // required
 };
 
 apiInstance.deleteLogDatadog(options)
@@ -118,9 +118,9 @@ Get the details for a Datadog logging object for a particular service and versio
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_datadog_name: "logging_datadog_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_datadog_name: "logging_datadog_name_example", // required
 };
 
 apiInstance.getLogDatadog(options)
@@ -157,8 +157,8 @@ List all of the Datadog logging objects for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
 };
 
 apiInstance.listLogDatadog(options)
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 ## `updateLogDatadog`
 
 ```javascript
-updateLogDatadog({ service_id, version_id, logging_datadog_name, [format], , [format_version], , [name], , [placement], , [response_condition], , [region], , [token] })
+updateLogDatadog({ service_id, version_id, logging_datadog_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [region, ], [token] })
 ```
 
 Update the Datadog logging object for a particular service and version.
@@ -194,9 +194,9 @@ Update the Datadog logging object for a particular service and version.
 
 ```javascript
 const options = {
- service_id: "service_id_example", // required
- version_id: 56, // required
- logging_datadog_name: "logging_datadog_name_example", // required
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_datadog_name: "logging_datadog_name_example", // required
   format: null,
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",

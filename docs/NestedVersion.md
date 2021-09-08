@@ -23,11 +23,11 @@ Name | Type | Description | Notes
 **gzips** | [**[GzipResponse]**](GzipResponse.md) | List of gzip rules associated to this service. | [optional] 
 **headers** | [**[HeaderResponse]**](HeaderResponse.md) | List of headers associated to this service. | [optional] 
 **healthchecks** | [**[HealthcheckResponse]**](HealthcheckResponse.md) | List of healthchecks associated to this service. | [optional] 
-**request_settings** | [**[RequestSettingsResponse]**](RequestSettingsResponse.md) | List of request settings for this service. | [optional] 
+**request_settings** | [**[SchemasRequestSettingsResponse]**](SchemasRequestSettingsResponse.md) | List of request settings for this service. | [optional] 
 **response_objects** | [**[SchemasResponseObjectResponse]**](SchemasResponseObjectResponse.md) | List of response objects for this service. | [optional] 
 **settings** | [**Settings**](Settings.md) |  | [optional] 
-**snippets** | [**[SnippetResponse]**](SnippetResponse.md) | List of VCL snippets for this service. | [optional] 
-**vcls** | [**[VclResponse]**](VclResponse.md) | List of VCL files for this service. | [optional] 
+**snippets** | [**[SchemasSnippetResponse]**](SchemasSnippetResponse.md) | List of VCL snippets for this service. | [optional] 
+**vcls** | [**[SchemasVclResponse]**](SchemasVclResponse.md) | List of VCL files for this service. | [optional] 
 **wordpress** | **[Object]** | A list of Wordpress rules with this service. | [optional] 
 
 
