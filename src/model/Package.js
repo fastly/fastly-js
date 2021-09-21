@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import PackageMetadata from './PackageMetadata.js';
+import ApiClient from '../ApiClient';
+import PackageMetadata from './PackageMetadata';
 
 /**
  * The Package model module.
@@ -25,7 +25,6 @@ class Package {
      * @alias module:model/Package
      */
     constructor() { 
-        
         Package.initialize(this);
     }
 

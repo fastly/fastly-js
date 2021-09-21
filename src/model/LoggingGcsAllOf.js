@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The LoggingGcsAllOf model module.
@@ -24,7 +24,6 @@ class LoggingGcsAllOf {
      * @alias module:model/LoggingGcsAllOf
      */
     constructor() { 
-        
         LoggingGcsAllOf.initialize(this);
     }
 

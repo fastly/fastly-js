@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **links** | [**PaginationLinks**](PaginationLinks.md) |  | [optional] 
 **meta** | [**PaginationMeta**](PaginationMeta.md) |  | [optional] 
-**data** | [**[Data]**](Data.md) |  | [optional] 
-**included** | [**[AnyOfwafRulewafRuleRevision]**](AnyOfwafRulewafRuleRevision.md) |  | [optional] 
+**data** | [**[WafExclusionResponseData]**](WafExclusionResponseData.md) |  | [optional] 
+**included** | [**[IncludedWithWafExclusionItem]**](IncludedWithWafExclusionItem.md) |  | [optional] 
 
 
 

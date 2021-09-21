@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import ServiceAuthorizationsData from './ServiceAuthorizationsData.js';
+import ApiClient from '../ApiClient';
+import ServiceAuthorizationsData from './ServiceAuthorizationsData';
 
 /**
  * The InlineObject2 model module.
@@ -25,7 +25,6 @@ class InlineObject2 {
      * @alias module:model/InlineObject2
      */
     constructor() { 
-        
         InlineObject2.initialize(this);
     }
 

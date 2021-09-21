@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The TokenResponseAllOf model module.
@@ -24,7 +24,6 @@ class TokenResponseAllOf {
      * @alias module:model/TokenResponseAllOf
      */
     constructor() { 
-        
         TokenResponseAllOf.initialize(this);
     }
 

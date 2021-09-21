@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingKinesis from './LoggingKinesis.js';
-import LoggingPlacement from './LoggingPlacement.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingKinesis from './LoggingKinesis';
+import LoggingPlacement from './LoggingPlacement';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
 
 /**
  * The LoggingKinesisResponse model module.
@@ -27,12 +27,8 @@ class LoggingKinesisResponse {
     /**
      * Constructs a new <code>LoggingKinesisResponse</code>.
      * @alias module:model/LoggingKinesisResponse
-     * @implements module:model/LoggingKinesis
-     * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
      */
     constructor() { 
-        LoggingKinesis.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
         LoggingKinesisResponse.initialize(this);
     }
 
@@ -54,9 +50,6 @@ class LoggingKinesisResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingKinesisResponse();
-            LoggingKinesis.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('access_key')) {
                 obj['access_key'] = ApiClient.convertToType(data['access_key'], 'String');
@@ -189,76 +182,6 @@ LoggingKinesisResponse.prototype['service_id'] = undefined;
 LoggingKinesisResponse.prototype['version'] = undefined;
 
 
-// Implement LoggingKinesis interface:
-/**
- * The access key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
- * @member {String} access_key
- */
-LoggingKinesis.prototype['access_key'] = undefined;
-/**
- * @member {String} format
- */
-LoggingKinesis.prototype['format'] = undefined;
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingKinesis.prototype['format_version'] = undefined;
-/**
- * The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if `access_key` and `secret_key` are provided.
- * @member {String} iam_role
- */
-LoggingKinesis.prototype['iam_role'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingKinesis.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingKinesis.prototype['placement'] = undefined;
-/**
- * The [AWS region](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints) to stream logs to.
- * @member {module:model/LoggingKinesis.RegionEnum} region
- */
-LoggingKinesis.prototype['region'] = undefined;
-/**
- * The secret key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
- * @member {String} secret_key
- */
-LoggingKinesis.prototype['secret_key'] = undefined;
-/**
- * The Amazon Kinesis stream to send logs to. Required.
- * @member {String} topic
- */
-LoggingKinesis.prototype['topic'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
 
 
 

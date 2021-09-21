@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Data from './Data.js';
-import Pagination from './Pagination.js';
-import PaginationLinks from './PaginationLinks.js';
-import PaginationMeta from './PaginationMeta.js';
-import TlsConfigurationsResponseAllOf from './TlsConfigurationsResponseAllOf.js';
+import ApiClient from '../ApiClient';
+import Pagination from './Pagination';
+import PaginationLinks from './PaginationLinks';
+import PaginationMeta from './PaginationMeta';
+import TlsConfigurationResponseData from './TlsConfigurationResponseData';
+import TlsConfigurationsResponseAllOf from './TlsConfigurationsResponseAllOf';
 
 /**
  * The TlsConfigurationsResponse model module.
@@ -27,11 +27,8 @@ class TlsConfigurationsResponse {
     /**
      * Constructs a new <code>TlsConfigurationsResponse</code>.
      * @alias module:model/TlsConfigurationsResponse
-     * @implements module:model/Pagination
-     * @implements module:model/TlsConfigurationsResponseAllOf
      */
     constructor() { 
-        Pagination.initialize(this);TlsConfigurationsResponseAllOf.initialize(this);
         TlsConfigurationsResponse.initialize(this);
     }
 
@@ -53,8 +50,6 @@ class TlsConfigurationsResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsConfigurationsResponse();
-            Pagination.constructFromObject(data, obj);
-            TlsConfigurationsResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('links')) {
                 obj['links'] = PaginationLinks.constructFromObject(data['links']);
@@ -63,7 +58,7 @@ class TlsConfigurationsResponse {
                 obj['meta'] = PaginationMeta.constructFromObject(data['meta']);
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Data]);
+                obj['data'] = ApiClient.convertToType(data['data'], [TlsConfigurationResponseData]);
             }
         }
         return obj;
@@ -83,25 +78,11 @@ TlsConfigurationsResponse.prototype['links'] = undefined;
 TlsConfigurationsResponse.prototype['meta'] = undefined;
 
 /**
- * @member {Array.<module:model/Data>} data
+ * @member {Array.<module:model/TlsConfigurationResponseData>} data
  */
 TlsConfigurationsResponse.prototype['data'] = undefined;
 
 
-// Implement Pagination interface:
-/**
- * @member {module:model/PaginationLinks} links
- */
-Pagination.prototype['links'] = undefined;
-/**
- * @member {module:model/PaginationMeta} meta
- */
-Pagination.prototype['meta'] = undefined;
-// Implement TlsConfigurationsResponseAllOf interface:
-/**
- * @member {Array.<module:model/Data>} data
- */
-TlsConfigurationsResponseAllOf.prototype['data'] = undefined;
 
 
 

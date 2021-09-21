@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Billing from './Billing.js';
-import BillingResponseAllOf from './BillingResponseAllOf.js';
-import BillingStatus from './BillingStatus.js';
-import BillingTotal from './BillingTotal.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import Billing from './Billing';
+import BillingResponseAllOf from './BillingResponseAllOf';
+import BillingStatus from './BillingStatus';
+import BillingTotal from './BillingTotal';
+import Timestamps from './Timestamps';
 
 /**
  * The BillingResponse model module.
@@ -27,11 +27,8 @@ class BillingResponse {
     /**
      * Constructs a new <code>BillingResponse</code>.
      * @alias module:model/BillingResponse
-     * @implements module:model/Billing
-     * @implements module:model/BillingResponseAllOf
      */
     constructor() { 
-        Billing.initialize(this);BillingResponseAllOf.initialize(this);
         BillingResponse.initialize(this);
     }
 
@@ -53,8 +50,6 @@ class BillingResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new BillingResponse();
-            Billing.constructFromObject(data, obj);
-            BillingResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('customer_id')) {
                 obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
@@ -132,44 +127,6 @@ BillingResponse.prototype['total'] = undefined;
 BillingResponse.prototype['line_items'] = undefined;
 
 
-// Implement Billing interface:
-/**
- * Alphanumeric string identifying the customer.
- * @member {String} customer_id
- */
-Billing.prototype['customer_id'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} end_time
- */
-Billing.prototype['end_time'] = undefined;
-/**
- * Alphanumeric string identifying the invoice.
- * @member {String} invoice_id
- */
-Billing.prototype['invoice_id'] = undefined;
-/**
- * @member {Object.<String, Object.<String, Object>>} regions
- */
-Billing.prototype['regions'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} start_time
- */
-Billing.prototype['start_time'] = undefined;
-/**
- * @member {module:model/BillingStatus} status
- */
-Billing.prototype['status'] = undefined;
-/**
- * @member {module:model/BillingTotal} total
- */
-Billing.prototype['total'] = undefined;
-// Implement BillingResponseAllOf interface:
-/**
- * @member {Array.<module:model/Timestamps>} line_items
- */
-BillingResponseAllOf.prototype['line_items'] = undefined;
 
 
 

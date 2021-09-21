@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import SchemasSnippetResponseAllOf from './SchemasSnippetResponseAllOf.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Snippet from './Snippet.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import SchemasSnippetResponseAllOf from './SchemasSnippetResponseAllOf';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Snippet from './Snippet';
+import Timestamps from './Timestamps';
 
 /**
  * The SnippetResponse model module.
@@ -26,13 +26,8 @@ class SnippetResponse {
     /**
      * Constructs a new <code>SnippetResponse</code>.
      * @alias module:model/SnippetResponse
-     * @implements module:model/Snippet
-     * @implements module:model/ServiceIdAndVersion
-     * @implements module:model/Timestamps
-     * @implements module:model/SchemasSnippetResponseAllOf
      */
     constructor() { 
-        Snippet.initialize(this);ServiceIdAndVersion.initialize(this);Timestamps.initialize(this);SchemasSnippetResponseAllOf.initialize(this);
         SnippetResponse.initialize(this);
     }
 
@@ -54,10 +49,6 @@ class SnippetResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SnippetResponse();
-            Snippet.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
-            SchemasSnippetResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('content')) {
                 obj['content'] = ApiClient.convertToType(data['content'], 'String');
@@ -167,66 +158,6 @@ SnippetResponse.prototype['updated_at'] = undefined;
 SnippetResponse.prototype['id'] = undefined;
 
 
-// Implement Snippet interface:
-/**
- * The VCL code that specifies exactly what the snippet does.
- * @member {String} content
- */
-Snippet.prototype['content'] = undefined;
-/**
- * Sets the snippet version.
- * @member {module:model/Snippet.DynamicEnum} dynamic
- */
-Snippet.prototype['dynamic'] = undefined;
-/**
- * The name for the snippet.
- * @member {String} name
- */
-Snippet.prototype['name'] = undefined;
-/**
- * Numeric string value. Priority determines execution order. Lower numbers execute first.
- * @member {String} priority
- * @default '100'
- */
-Snippet.prototype['priority'] = '100';
-/**
- * The location in generated VCL where the snippet should be placed.
- * @member {module:model/Snippet.TypeEnum} type
- */
-Snippet.prototype['type'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
-// Implement SchemasSnippetResponseAllOf interface:
-/**
- * Alphanumeric string identifying a VCL Snippet.
- * @member {String} id
- */
-SchemasSnippetResponseAllOf.prototype['id'] = undefined;
 
 
 

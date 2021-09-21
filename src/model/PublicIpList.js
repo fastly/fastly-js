@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The PublicIpList model module.
@@ -24,7 +24,6 @@ class PublicIpList {
      * @alias module:model/PublicIpList
      */
     constructor() { 
-        
         PublicIpList.initialize(this);
     }
 

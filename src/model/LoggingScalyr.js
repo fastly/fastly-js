@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingCommon from './LoggingCommon.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingPlacement from './LoggingPlacement.js';
-import LoggingScalyrAllOf from './LoggingScalyrAllOf.js';
+import ApiClient from '../ApiClient';
+import LoggingCommon from './LoggingCommon';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingPlacement from './LoggingPlacement';
+import LoggingScalyrAllOf from './LoggingScalyrAllOf';
 
 /**
  * The LoggingScalyr model module.
@@ -26,11 +26,8 @@ class LoggingScalyr {
     /**
      * Constructs a new <code>LoggingScalyr</code>.
      * @alias module:model/LoggingScalyr
-     * @implements module:model/LoggingCommon
-     * @implements module:model/LoggingScalyrAllOf
      */
     constructor() { 
-        LoggingCommon.initialize(this);LoggingScalyrAllOf.initialize(this);
         LoggingScalyr.initialize(this);
     }
 
@@ -52,8 +49,6 @@ class LoggingScalyr {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingScalyr();
-            LoggingCommon.constructFromObject(data, obj);
-            LoggingScalyrAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
@@ -136,49 +131,6 @@ LoggingScalyr.prototype['region'] = undefined;
 LoggingScalyr.prototype['token'] = undefined;
 
 
-// Implement LoggingCommon interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingCommon.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingCommon.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingCommon.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingCommon.prototype['response_condition'] = undefined;
-// Implement LoggingScalyrAllOf interface:
-/**
- * The name of the logfile within Scalyr.
- * @member {String} project_id
- * @default 'logplex'
- */
-LoggingScalyrAllOf.prototype['project_id'] = 'logplex';
-/**
- * The region that log data will be sent to.
- * @member {module:model/LoggingScalyrAllOf.RegionEnum} region
- * @default 'US'
- */
-LoggingScalyrAllOf.prototype['region'] = undefined;
-/**
- * The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)).
- * @member {String} token
- */
-LoggingScalyrAllOf.prototype['token'] = undefined;
 
 
 

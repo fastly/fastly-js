@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingAddressAndPort from './LoggingAddressAndPort.js';
-import LoggingCommon from './LoggingCommon.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingPlacement from './LoggingPlacement.js';
+import ApiClient from '../ApiClient';
+import LoggingAddressAndPort from './LoggingAddressAndPort';
+import LoggingCommon from './LoggingCommon';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingPlacement from './LoggingPlacement';
 
 /**
  * The LoggingPapertrail model module.
@@ -26,11 +26,8 @@ class LoggingPapertrail {
     /**
      * Constructs a new <code>LoggingPapertrail</code>.
      * @alias module:model/LoggingPapertrail
-     * @implements module:model/LoggingCommon
-     * @implements module:model/LoggingAddressAndPort
      */
     constructor() { 
-        LoggingCommon.initialize(this);LoggingAddressAndPort.initialize(this);
         LoggingPapertrail.initialize(this);
     }
 
@@ -52,8 +49,6 @@ class LoggingPapertrail {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingPapertrail();
-            LoggingCommon.constructFromObject(data, obj);
-            LoggingAddressAndPort.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
@@ -126,43 +121,6 @@ LoggingPapertrail.prototype['address'] = undefined;
 LoggingPapertrail.prototype['port'] = 514;
 
 
-// Implement LoggingCommon interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingCommon.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingCommon.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingCommon.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingCommon.prototype['response_condition'] = undefined;
-// Implement LoggingAddressAndPort interface:
-/**
- * A hostname or IPv4 address.
- * @member {String} address
- */
-LoggingAddressAndPort.prototype['address'] = undefined;
-/**
- * The port number.
- * @member {Number} port
- * @default 514
- */
-LoggingAddressAndPort.prototype['port'] = 514;
 
 
 

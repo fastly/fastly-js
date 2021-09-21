@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import TypeWafRuleRevision from './TypeWafRuleRevision.js';
+import ApiClient from '../ApiClient';
+import TypeWafRuleRevision from './TypeWafRuleRevision';
 
 /**
  * The RelationshipMemberWafRuleRevision model module.
@@ -25,7 +25,6 @@ class RelationshipMemberWafRuleRevision {
      * @alias module:model/RelationshipMemberWafRuleRevision
      */
     constructor() { 
-        
         RelationshipMemberWafRuleRevision.initialize(this);
     }
 

@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The Snippet model module.
@@ -24,7 +24,6 @@ class Snippet {
      * @alias module:model/Snippet
      */
     constructor() { 
-        
         Snippet.initialize(this);
     }
 

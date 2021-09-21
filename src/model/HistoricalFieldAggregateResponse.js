@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Historical from './Historical.js';
-import HistoricalFieldAggregateResponseAllOf from './HistoricalFieldAggregateResponseAllOf.js';
-import HistoricalMeta from './HistoricalMeta.js';
+import ApiClient from '../ApiClient';
+import Historical from './Historical';
+import HistoricalFieldAggregateResponseAllOf from './HistoricalFieldAggregateResponseAllOf';
+import HistoricalMeta from './HistoricalMeta';
 
 /**
  * The HistoricalFieldAggregateResponse model module.
@@ -25,11 +25,8 @@ class HistoricalFieldAggregateResponse {
     /**
      * Constructs a new <code>HistoricalFieldAggregateResponse</code>.
      * @alias module:model/HistoricalFieldAggregateResponse
-     * @implements module:model/Historical
-     * @implements module:model/HistoricalFieldAggregateResponseAllOf
      */
     constructor() { 
-        Historical.initialize(this);HistoricalFieldAggregateResponseAllOf.initialize(this);
         HistoricalFieldAggregateResponse.initialize(this);
     }
 
@@ -51,8 +48,6 @@ class HistoricalFieldAggregateResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new HistoricalFieldAggregateResponse();
-            Historical.constructFromObject(data, obj);
-            HistoricalFieldAggregateResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('meta')) {
                 obj['meta'] = HistoricalMeta.constructFromObject(data['meta']);
@@ -96,26 +91,6 @@ HistoricalFieldAggregateResponse.prototype['status'] = undefined;
 HistoricalFieldAggregateResponse.prototype['data'] = undefined;
 
 
-// Implement Historical interface:
-/**
- * @member {module:model/HistoricalMeta} meta
- */
-Historical.prototype['meta'] = undefined;
-/**
- * If the query was not successful, this will provide a string that explains why.
- * @member {String} msg
- */
-Historical.prototype['msg'] = undefined;
-/**
- * Whether or not we were able to successfully execute the query.
- * @member {String} status
- */
-Historical.prototype['status'] = undefined;
-// Implement HistoricalFieldAggregateResponseAllOf interface:
-/**
- * @member {Array.<Object.<String, String>>} data
- */
-HistoricalFieldAggregateResponseAllOf.prototype['data'] = undefined;
 
 
 

@@ -11,14 +11,14 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingCommon from './LoggingCommon.js';
-import LoggingCompressionCodec from './LoggingCompressionCodec.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingGenericCommon from './LoggingGenericCommon.js';
-import LoggingMessageType from './LoggingMessageType.js';
-import LoggingPlacement from './LoggingPlacement.js';
-import LoggingS3AllOf from './LoggingS3AllOf.js';
+import ApiClient from '../ApiClient';
+import LoggingCommon from './LoggingCommon';
+import LoggingCompressionCodec from './LoggingCompressionCodec';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingGenericCommon from './LoggingGenericCommon';
+import LoggingMessageType from './LoggingMessageType';
+import LoggingPlacement from './LoggingPlacement';
+import LoggingS3AllOf from './LoggingS3AllOf';
 
 /**
  * The LoggingS3 model module.
@@ -29,12 +29,8 @@ class LoggingS3 {
     /**
      * Constructs a new <code>LoggingS3</code>.
      * @alias module:model/LoggingS3
-     * @implements module:model/LoggingCommon
-     * @implements module:model/LoggingGenericCommon
-     * @implements module:model/LoggingS3AllOf
      */
     constructor() { 
-        LoggingCommon.initialize(this);LoggingGenericCommon.initialize(this);LoggingS3AllOf.initialize(this);
         LoggingS3.initialize(this);
     }
 
@@ -56,9 +52,6 @@ class LoggingS3 {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingS3();
-            LoggingCommon.constructFromObject(data, obj);
-            LoggingGenericCommon.constructFromObject(data, obj);
-            LoggingS3AllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
@@ -261,118 +254,6 @@ LoggingS3.prototype['server_side_encryption'] = 'null';
 LoggingS3.prototype['server_side_encryption_kms_key_id'] = 'null';
 
 
-// Implement LoggingCommon interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingCommon.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingCommon.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingCommon.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingCommon.prototype['response_condition'] = undefined;
-// Implement LoggingGenericCommon interface:
-/**
- * @member {module:model/LoggingCompressionCodec} compression_codec
- */
-LoggingGenericCommon.prototype['compression_codec'] = undefined;
-/**
- * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {Number} gzip_level
- * @default 0
- */
-LoggingGenericCommon.prototype['gzip_level'] = 0;
-/**
- * @member {module:model/LoggingMessageType} message_type
- */
-LoggingGenericCommon.prototype['message_type'] = undefined;
-/**
- * How frequently log files are finalized so they can be available for reading (in seconds).
- * @member {Number} period
- * @default 3600
- */
-LoggingGenericCommon.prototype['period'] = 3600;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} timestamp_format
- */
-LoggingGenericCommon.prototype['timestamp_format'] = undefined;
-// Implement LoggingS3AllOf interface:
-/**
- * The access key for your S3 account. Not required if `iam_role` is provided.
- * @member {String} access_key
- */
-LoggingS3AllOf.prototype['access_key'] = undefined;
-/**
- * The access control list (ACL) specific request header. See the AWS documentation for [Access Control List (ACL) Specific Request Headers](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html#initiate-mpu-acl-specific-request-headers) for more information.
- * @member {String} acl
- */
-LoggingS3AllOf.prototype['acl'] = undefined;
-/**
- * The bucket name for S3 account.
- * @member {String} bucket_name
- */
-LoggingS3AllOf.prototype['bucket_name'] = undefined;
-/**
- * The domain of the Amazon S3 endpoint.
- * @member {String} domain
- */
-LoggingS3AllOf.prototype['domain'] = undefined;
-/**
- * The Amazon Resource Name (ARN) for the IAM role granting Fastly access to S3. Not required if `access_key` and `secret_key` are provided.
- * @member {String} iam_role
- */
-LoggingS3AllOf.prototype['iam_role'] = undefined;
-/**
- * The path to upload logs to.
- * @member {String} path
- * @default 'null'
- */
-LoggingS3AllOf.prototype['path'] = 'null';
-/**
- * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
- * @member {String} public_key
- * @default 'null'
- */
-LoggingS3AllOf.prototype['public_key'] = 'null';
-/**
- * The S3 redundancy level.
- * @member {String} redundancy
- * @default 'null'
- */
-LoggingS3AllOf.prototype['redundancy'] = 'null';
-/**
- * The secret key for your S3 account. Not required if `iam_role` is provided.
- * @member {String} secret_key
- */
-LoggingS3AllOf.prototype['secret_key'] = undefined;
-/**
- * Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption.
- * @member {String} server_side_encryption
- * @default 'null'
- */
-LoggingS3AllOf.prototype['server_side_encryption'] = 'null';
-/**
- * Optional server-side KMS Key Id. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`.
- * @member {String} server_side_encryption_kms_key_id
- * @default 'null'
- */
-LoggingS3AllOf.prototype['server_side_encryption_kms_key_id'] = 'null';
 
 
 

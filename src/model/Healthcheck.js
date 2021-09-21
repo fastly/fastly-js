@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The Healthcheck model module.
@@ -24,7 +24,6 @@ class Healthcheck {
      * @alias module:model/Healthcheck
      */
     constructor() { 
-        
         Healthcheck.initialize(this);
     }
 

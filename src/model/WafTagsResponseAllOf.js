@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import WafRule from './WafRule.js';
-import WafTag from './WafTag.js';
+import ApiClient from '../ApiClient';
+import WafRule from './WafRule';
+import WafTag from './WafTag';
 
 /**
  * The WafTagsResponseAllOf model module.
@@ -26,7 +26,6 @@ class WafTagsResponseAllOf {
      * @alias module:model/WafTagsResponseAllOf
      */
     constructor() { 
-        
         WafTagsResponseAllOf.initialize(this);
     }
 

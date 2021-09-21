@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Backend from './Backend.js';
+import ApiClient from '../ApiClient';
+import Backend from './Backend';
 
 /**
  * The Director model module.
@@ -25,7 +25,6 @@ class Director {
      * @alias module:model/Director
      */
     constructor() { 
-        
         Director.initialize(this);
     }
 

@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import RelationshipMemberWafFirewallVersion from './RelationshipMemberWafFirewallVersion.js';
+import ApiClient from '../ApiClient';
+import RelationshipMemberWafFirewallVersion from './RelationshipMemberWafFirewallVersion';
 
 /**
  * The RelationshipWafFirewallVersionWafFirewallVersion model module.
@@ -25,7 +25,6 @@ class RelationshipWafFirewallVersionWafFirewallVersion {
      * @alias module:model/RelationshipWafFirewallVersionWafFirewallVersion
      */
     constructor() { 
-        
         RelationshipWafFirewallVersionWafFirewallVersion.initialize(this);
     }
 

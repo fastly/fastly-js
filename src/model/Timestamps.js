@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The Timestamps model module.
@@ -24,7 +24,6 @@ class Timestamps {
      * @alias module:model/Timestamps
      */
     constructor() { 
-        
         Timestamps.initialize(this);
     }
 

@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import TlsConfigurationData from './TlsConfigurationData.js';
+import ApiClient from '../ApiClient';
+import TlsConfigurationData from './TlsConfigurationData';
 
 /**
  * The TlsConfiguration model module.
@@ -25,7 +25,6 @@ class TlsConfiguration {
      * @alias module:model/TlsConfiguration
      */
     constructor() { 
-        
         TlsConfiguration.initialize(this);
     }
 

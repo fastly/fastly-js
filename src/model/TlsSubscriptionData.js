@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates from './AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates.js';
-import TlsSubscriptionDataAttributes from './TlsSubscriptionDataAttributes.js';
-import TypeTlsSubscription from './TypeTlsSubscription.js';
+import ApiClient from '../ApiClient';
+import RelationshipsForTlsSubscription from './RelationshipsForTlsSubscription';
+import TlsSubscriptionDataAttributes from './TlsSubscriptionDataAttributes';
+import TypeTlsSubscription from './TypeTlsSubscription';
 
 /**
  * The TlsSubscriptionData model module.
@@ -27,7 +27,6 @@ class TlsSubscriptionData {
      * @alias module:model/TlsSubscriptionData
      */
     constructor() { 
-        
         TlsSubscriptionData.initialize(this);
     }
 
@@ -54,7 +53,7 @@ class TlsSubscriptionData {
                 obj['attributes'] = TlsSubscriptionDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = ApiClient.convertToType(data['relationships'], AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates);
+                obj['relationships'] = RelationshipsForTlsSubscription.constructFromObject(data['relationships']);
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeTlsSubscription.constructFromObject(data['type']);
@@ -72,7 +71,7 @@ class TlsSubscriptionData {
 TlsSubscriptionData.prototype['attributes'] = undefined;
 
 /**
- * @member {module:model/AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates} relationships
+ * @member {module:model/RelationshipsForTlsSubscription} relationships
  */
 TlsSubscriptionData.prototype['relationships'] = undefined;
 

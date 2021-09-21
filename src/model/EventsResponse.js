@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Data from './Data.js';
-import EventsResponseAllOf from './EventsResponseAllOf.js';
-import Pagination from './Pagination.js';
-import PaginationLinks from './PaginationLinks.js';
-import PaginationMeta from './PaginationMeta.js';
+import ApiClient from '../ApiClient';
+import Event from './Event';
+import EventsResponseAllOf from './EventsResponseAllOf';
+import Pagination from './Pagination';
+import PaginationLinks from './PaginationLinks';
+import PaginationMeta from './PaginationMeta';
 
 /**
  * The EventsResponse model module.
@@ -27,11 +27,8 @@ class EventsResponse {
     /**
      * Constructs a new <code>EventsResponse</code>.
      * @alias module:model/EventsResponse
-     * @implements module:model/Pagination
-     * @implements module:model/EventsResponseAllOf
      */
     constructor() { 
-        Pagination.initialize(this);EventsResponseAllOf.initialize(this);
         EventsResponse.initialize(this);
     }
 
@@ -53,8 +50,6 @@ class EventsResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new EventsResponse();
-            Pagination.constructFromObject(data, obj);
-            EventsResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('links')) {
                 obj['links'] = PaginationLinks.constructFromObject(data['links']);
@@ -63,7 +58,7 @@ class EventsResponse {
                 obj['meta'] = PaginationMeta.constructFromObject(data['meta']);
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Data]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Event]);
             }
         }
         return obj;
@@ -83,25 +78,11 @@ EventsResponse.prototype['links'] = undefined;
 EventsResponse.prototype['meta'] = undefined;
 
 /**
- * @member {Array.<module:model/Data>} data
+ * @member {Array.<module:model/Event>} data
  */
 EventsResponse.prototype['data'] = undefined;
 
 
-// Implement Pagination interface:
-/**
- * @member {module:model/PaginationLinks} links
- */
-Pagination.prototype['links'] = undefined;
-/**
- * @member {module:model/PaginationMeta} meta
- */
-Pagination.prototype['meta'] = undefined;
-// Implement EventsResponseAllOf interface:
-/**
- * @member {Array.<module:model/Data>} data
- */
-EventsResponseAllOf.prototype['data'] = undefined;
 
 
 

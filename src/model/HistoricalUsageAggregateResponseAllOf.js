@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The HistoricalUsageAggregateResponseAllOf model module.
@@ -24,7 +24,6 @@ class HistoricalUsageAggregateResponseAllOf {
      * @alias module:model/HistoricalUsageAggregateResponseAllOf
      */
     constructor() { 
-        
         HistoricalUsageAggregateResponseAllOf.initialize(this);
     }
 

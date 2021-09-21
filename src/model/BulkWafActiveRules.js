@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Data from './Data.js';
+import ApiClient from '../ApiClient';
+import WafActiveRuleData from './WafActiveRuleData';
 
 /**
  * The BulkWafActiveRules model module.
@@ -25,7 +25,6 @@ class BulkWafActiveRules {
      * @alias module:model/BulkWafActiveRules
      */
     constructor() { 
-        
         BulkWafActiveRules.initialize(this);
     }
 
@@ -49,7 +48,7 @@ class BulkWafActiveRules {
             obj = obj || new BulkWafActiveRules();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Data]);
+                obj['data'] = ApiClient.convertToType(data['data'], [WafActiveRuleData]);
             }
         }
         return obj;
@@ -59,7 +58,7 @@ class BulkWafActiveRules {
 }
 
 /**
- * @member {Array.<module:model/Data>} data
+ * @member {Array.<module:model/WafActiveRuleData>} data
  */
 BulkWafActiveRules.prototype['data'] = undefined;
 

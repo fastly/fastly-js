@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingBigquery from './LoggingBigquery.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingPlacement from './LoggingPlacement.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import LoggingBigquery from './LoggingBigquery';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingPlacement from './LoggingPlacement';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
 
 /**
  * The LoggingBigqueryResponse model module.
@@ -27,12 +27,8 @@ class LoggingBigqueryResponse {
     /**
      * Constructs a new <code>LoggingBigqueryResponse</code>.
      * @alias module:model/LoggingBigqueryResponse
-     * @implements module:model/LoggingBigquery
-     * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
      */
     constructor() { 
-        LoggingBigquery.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
         LoggingBigqueryResponse.initialize(this);
     }
 
@@ -54,9 +50,6 @@ class LoggingBigqueryResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingBigqueryResponse();
-            LoggingBigquery.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
@@ -208,87 +201,6 @@ LoggingBigqueryResponse.prototype['service_id'] = undefined;
 LoggingBigqueryResponse.prototype['version'] = undefined;
 
 
-// Implement LoggingBigquery interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
- * @member {String} format
- */
-LoggingBigquery.prototype['format'] = undefined;
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingBigquery.prototype['format_version'] = undefined;
-/**
- * The name of the BigQuery logging object. Used as a primary key for API access.
- * @member {String} name
- */
-LoggingBigquery.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingBigquery.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingBigquery.prototype['response_condition'] = undefined;
-/**
- * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
- * @member {String} secret_key
- */
-LoggingBigquery.prototype['secret_key'] = undefined;
-/**
- * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
- * @member {String} user
- */
-LoggingBigquery.prototype['user'] = undefined;
-/**
- * Your BigQuery dataset.
- * @member {String} dataset
- */
-LoggingBigquery.prototype['dataset'] = undefined;
-/**
- * Your Google Cloud Platform project ID. Required
- * @member {String} project_id
- */
-LoggingBigquery.prototype['project_id'] = undefined;
-/**
- * Your BigQuery table.
- * @member {String} table
- */
-LoggingBigquery.prototype['table'] = undefined;
-/**
- * BigQuery table name suffix template. Optional.
- * @member {String} template_suffix
- */
-LoggingBigquery.prototype['template_suffix'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
 
 
 

@@ -1,5 +1,10 @@
+dist: bionic
 language: node_js
-cache: npm
 node_js:
-  - "6"
-  - "6.1"
+  - lts/*
+cache:
+  yarn: true # Yarn cache
+install: 
+  - yarn install
+before_deploy:
+  - yarn build 

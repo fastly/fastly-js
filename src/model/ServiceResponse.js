@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import SchemasVersionResponse from './SchemasVersionResponse.js';
-import ServiceCreate from './ServiceCreate.js';
-import ServiceResponseAllOf from './ServiceResponseAllOf.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import SchemasVersionResponse from './SchemasVersionResponse';
+import ServiceCreate from './ServiceCreate';
+import ServiceResponseAllOf from './ServiceResponseAllOf';
+import Timestamps from './Timestamps';
 
 /**
  * The ServiceResponse model module.
@@ -26,12 +26,8 @@ class ServiceResponse {
     /**
      * Constructs a new <code>ServiceResponse</code>.
      * @alias module:model/ServiceResponse
-     * @implements module:model/Timestamps
-     * @implements module:model/ServiceCreate
-     * @implements module:model/ServiceResponseAllOf
      */
     constructor() { 
-        Timestamps.initialize(this);ServiceCreate.initialize(this);ServiceResponseAllOf.initialize(this);
         ServiceResponse.initialize(this);
     }
 
@@ -53,9 +49,6 @@ class ServiceResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ServiceResponse();
-            Timestamps.constructFromObject(data, obj);
-            ServiceCreate.constructFromObject(data, obj);
-            ServiceResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
@@ -173,69 +166,6 @@ ServiceResponse.prototype['version'] = undefined;
 ServiceResponse.prototype['versions'] = undefined;
 
 
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceCreate interface:
-/**
- * A freeform descriptive note.
- * @member {String} comment
- */
-ServiceCreate.prototype['comment'] = undefined;
-/**
- * Alphanumeric string identifying the customer.
- * @member {String} customer_id
- */
-ServiceCreate.prototype['customer_id'] = undefined;
-/**
- * The name of the service.
- * @member {String} name
- */
-ServiceCreate.prototype['name'] = undefined;
-/**
- * The type of this service.
- * @member {module:model/ServiceCreate.TypeEnum} type
- */
-ServiceCreate.prototype['type'] = undefined;
-// Implement ServiceResponseAllOf interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} id
- */
-ServiceResponseAllOf.prototype['id'] = undefined;
-/**
- * Whether the service is paused. Services are paused due to a lack of traffic for an extended period of time. Services are resumed either when a draft version is activated or a locked version is cloned and reactivated.
- * @member {Boolean} paused
- */
-ServiceResponseAllOf.prototype['paused'] = undefined;
-/**
- * Unused at this time.
- * @member {String} publish_key
- */
-ServiceResponseAllOf.prototype['publish_key'] = undefined;
-/**
- * Current [version](/reference/api/services/version/) of the service.
- * @member {Number} version
- */
-ServiceResponseAllOf.prototype['version'] = undefined;
-/**
- * A list of [versions](/reference/api/services/version/) associated with the service.
- * @member {Array.<module:model/SchemasVersionResponse>} versions
- */
-ServiceResponseAllOf.prototype['versions'] = undefined;
 
 
 

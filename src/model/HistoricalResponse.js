@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Historical from './Historical.js';
-import HistoricalMeta from './HistoricalMeta.js';
-import HistoricalResponseAllOf from './HistoricalResponseAllOf.js';
-import Results from './Results.js';
+import ApiClient from '../ApiClient';
+import Historical from './Historical';
+import HistoricalMeta from './HistoricalMeta';
+import HistoricalResponseAllOf from './HistoricalResponseAllOf';
+import Results from './Results';
 
 /**
  * The HistoricalResponse model module.
@@ -26,11 +26,8 @@ class HistoricalResponse {
     /**
      * Constructs a new <code>HistoricalResponse</code>.
      * @alias module:model/HistoricalResponse
-     * @implements module:model/Historical
-     * @implements module:model/HistoricalResponseAllOf
      */
     constructor() { 
-        Historical.initialize(this);HistoricalResponseAllOf.initialize(this);
         HistoricalResponse.initialize(this);
     }
 
@@ -52,8 +49,6 @@ class HistoricalResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new HistoricalResponse();
-            Historical.constructFromObject(data, obj);
-            HistoricalResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('meta')) {
                 obj['meta'] = HistoricalMeta.constructFromObject(data['meta']);
@@ -97,26 +92,6 @@ HistoricalResponse.prototype['status'] = undefined;
 HistoricalResponse.prototype['data'] = undefined;
 
 
-// Implement Historical interface:
-/**
- * @member {module:model/HistoricalMeta} meta
- */
-Historical.prototype['meta'] = undefined;
-/**
- * If the query was not successful, this will provide a string that explains why.
- * @member {String} msg
- */
-Historical.prototype['msg'] = undefined;
-/**
- * Whether or not we were able to successfully execute the query.
- * @member {String} status
- */
-Historical.prototype['status'] = undefined;
-// Implement HistoricalResponseAllOf interface:
-/**
- * @member {Object.<String, Array.<module:model/Results>>} data
- */
-HistoricalResponseAllOf.prototype['data'] = undefined;
 
 
 

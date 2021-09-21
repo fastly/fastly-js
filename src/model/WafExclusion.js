@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import WafExclusionData from './WafExclusionData.js';
+import ApiClient from '../ApiClient';
+import WafExclusionData from './WafExclusionData';
 
 /**
  * The WafExclusion model module.
@@ -25,7 +25,6 @@ class WafExclusion {
      * @alias module:model/WafExclusion
      */
     constructor() { 
-        
         WafExclusion.initialize(this);
     }
 

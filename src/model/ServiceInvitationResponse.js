@@ -11,8 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Data from './Data.js';
+import ApiClient from '../ApiClient';
+import ServiceInvitation from './ServiceInvitation';
+import ServiceInvitationResponseAllOf from './ServiceInvitationResponseAllOf';
+import ServiceInvitationResponseAllOfData from './ServiceInvitationResponseAllOfData';
 
 /**
  * The ServiceInvitationResponse model module.
@@ -25,7 +27,6 @@ class ServiceInvitationResponse {
      * @alias module:model/ServiceInvitationResponse
      */
     constructor() { 
-        
         ServiceInvitationResponse.initialize(this);
     }
 
@@ -49,7 +50,7 @@ class ServiceInvitationResponse {
             obj = obj || new ServiceInvitationResponse();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], Data);
+                obj['data'] = ServiceInvitationResponseAllOfData.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -59,7 +60,7 @@ class ServiceInvitationResponse {
 }
 
 /**
- * @member {module:model/Data} data
+ * @member {module:model/ServiceInvitationResponseAllOfData} data
  */
 ServiceInvitationResponse.prototype['data'] = undefined;
 

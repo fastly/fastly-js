@@ -37,4 +37,4 @@ node_modules
 .openapi*
 
 # Built package
-dist
+# dist

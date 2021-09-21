@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import SchemasWafFirewallVersionDataAttributes from './SchemasWafFirewallVersionDataAttributes.js';
-import TypeWafFirewallVersion from './TypeWafFirewallVersion.js';
+import ApiClient from '../ApiClient';
+import SchemasWafFirewallVersionDataAttributes from './SchemasWafFirewallVersionDataAttributes';
+import TypeWafFirewallVersion from './TypeWafFirewallVersion';
 
 /**
  * The SchemasWafFirewallVersionData model module.
@@ -26,7 +26,6 @@ class SchemasWafFirewallVersionData {
      * @alias module:model/SchemasWafFirewallVersionData
      */
     constructor() { 
-        
         SchemasWafFirewallVersionData.initialize(this);
     }
 

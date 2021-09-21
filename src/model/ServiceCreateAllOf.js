@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The ServiceCreateAllOf model module.
@@ -24,7 +24,6 @@ class ServiceCreateAllOf {
      * @alias module:model/ServiceCreateAllOf
      */
     constructor() { 
-        
         ServiceCreateAllOf.initialize(this);
     }
 

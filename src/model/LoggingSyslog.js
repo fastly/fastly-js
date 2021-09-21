@@ -11,15 +11,15 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingAddressAndPort from './LoggingAddressAndPort.js';
-import LoggingCommon from './LoggingCommon.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingMessageType from './LoggingMessageType.js';
-import LoggingPlacement from './LoggingPlacement.js';
-import LoggingSyslogAllOf from './LoggingSyslogAllOf.js';
-import LoggingTlsCommon from './LoggingTlsCommon.js';
-import LoggingUseTls from './LoggingUseTls.js';
+import ApiClient from '../ApiClient';
+import LoggingAddressAndPort from './LoggingAddressAndPort';
+import LoggingCommon from './LoggingCommon';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingMessageType from './LoggingMessageType';
+import LoggingPlacement from './LoggingPlacement';
+import LoggingSyslogAllOf from './LoggingSyslogAllOf';
+import LoggingTlsCommon from './LoggingTlsCommon';
+import LoggingUseTls from './LoggingUseTls';
 
 /**
  * The LoggingSyslog model module.
@@ -30,13 +30,8 @@ class LoggingSyslog {
     /**
      * Constructs a new <code>LoggingSyslog</code>.
      * @alias module:model/LoggingSyslog
-     * @implements module:model/LoggingCommon
-     * @implements module:model/LoggingTlsCommon
-     * @implements module:model/LoggingAddressAndPort
-     * @implements module:model/LoggingSyslogAllOf
      */
     constructor() { 
-        LoggingCommon.initialize(this);LoggingTlsCommon.initialize(this);LoggingAddressAndPort.initialize(this);LoggingSyslogAllOf.initialize(this);
         LoggingSyslog.initialize(this);
     }
 
@@ -58,10 +53,6 @@ class LoggingSyslog {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingSyslog();
-            LoggingCommon.constructFromObject(data, obj);
-            LoggingTlsCommon.constructFromObject(data, obj);
-            LoggingAddressAndPort.constructFromObject(data, obj);
-            LoggingSyslogAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
@@ -218,93 +209,6 @@ LoggingSyslog.prototype['token'] = 'null';
 LoggingSyslog.prototype['use_tls'] = undefined;
 
 
-// Implement LoggingCommon interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingCommon.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingCommon.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingCommon.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingCommon.prototype['response_condition'] = undefined;
-// Implement LoggingTlsCommon interface:
-/**
- * A secure certificate to authenticate a server with. Must be in PEM format.
- * @member {String} tls_ca_cert
- * @default 'null'
- */
-LoggingTlsCommon.prototype['tls_ca_cert'] = 'null';
-/**
- * The client certificate used to make authenticated requests. Must be in PEM format.
- * @member {String} tls_client_cert
- * @default 'null'
- */
-LoggingTlsCommon.prototype['tls_client_cert'] = 'null';
-/**
- * The client private key used to make authenticated requests. Must be in PEM format.
- * @member {String} tls_client_key
- * @default 'null'
- */
-LoggingTlsCommon.prototype['tls_client_key'] = 'null';
-/**
- * The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
- * @member {String} tls_hostname
- * @default 'null'
- */
-LoggingTlsCommon.prototype['tls_hostname'] = 'null';
-// Implement LoggingAddressAndPort interface:
-/**
- * A hostname or IPv4 address.
- * @member {String} address
- */
-LoggingAddressAndPort.prototype['address'] = undefined;
-/**
- * The port number.
- * @member {Number} port
- * @default 514
- */
-LoggingAddressAndPort.prototype['port'] = 514;
-// Implement LoggingSyslogAllOf interface:
-/**
- * The hostname used for the syslog endpoint.
- * @member {String} hostname
- */
-LoggingSyslogAllOf.prototype['hostname'] = undefined;
-/**
- * The IPv4 address used for the syslog endpoint.
- * @member {String} ipv4
- */
-LoggingSyslogAllOf.prototype['ipv4'] = undefined;
-/**
- * @member {module:model/LoggingMessageType} message_type
- */
-LoggingSyslogAllOf.prototype['message_type'] = undefined;
-/**
- * Whether to prepend each message with a specific token.
- * @member {String} token
- * @default 'null'
- */
-LoggingSyslogAllOf.prototype['token'] = 'null';
-/**
- * @member {module:model/LoggingUseTls} use_tls
- */
-LoggingSyslogAllOf.prototype['use_tls'] = undefined;
 
 
 

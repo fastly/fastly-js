@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The RealtimeMeasurements model module.
@@ -25,7 +25,6 @@ class RealtimeMeasurements {
      * @alias module:model/RealtimeMeasurements
      */
     constructor() { 
-        
         RealtimeMeasurements.initialize(this);
     }
 

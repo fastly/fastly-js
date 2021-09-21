@@ -11,13 +11,13 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingPlacement from './LoggingPlacement.js';
-import LoggingSplunk from './LoggingSplunk.js';
-import LoggingUseTls from './LoggingUseTls.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingPlacement from './LoggingPlacement';
+import LoggingSplunk from './LoggingSplunk';
+import LoggingUseTls from './LoggingUseTls';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
 
 /**
  * The LoggingSplunkResponse model module.
@@ -28,12 +28,8 @@ class LoggingSplunkResponse {
     /**
      * Constructs a new <code>LoggingSplunkResponse</code>.
      * @alias module:model/LoggingSplunkResponse
-     * @implements module:model/LoggingSplunk
-     * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
      */
     constructor() { 
-        LoggingSplunk.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
         LoggingSplunkResponse.initialize(this);
     }
 
@@ -55,9 +51,6 @@ class LoggingSplunkResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingSplunkResponse();
-            LoggingSplunk.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
@@ -242,108 +235,6 @@ LoggingSplunkResponse.prototype['service_id'] = undefined;
 LoggingSplunkResponse.prototype['version'] = undefined;
 
 
-// Implement LoggingSplunk interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingSplunk.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingSplunk.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingSplunk.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingSplunk.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingSplunk.prototype['response_condition'] = undefined;
-/**
- * A secure certificate to authenticate a server with. Must be in PEM format.
- * @member {String} tls_ca_cert
- * @default 'null'
- */
-LoggingSplunk.prototype['tls_ca_cert'] = 'null';
-/**
- * The client certificate used to make authenticated requests. Must be in PEM format.
- * @member {String} tls_client_cert
- * @default 'null'
- */
-LoggingSplunk.prototype['tls_client_cert'] = 'null';
-/**
- * The client private key used to make authenticated requests. Must be in PEM format.
- * @member {String} tls_client_key
- * @default 'null'
- */
-LoggingSplunk.prototype['tls_client_key'] = 'null';
-/**
- * The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
- * @member {String} tls_hostname
- * @default 'null'
- */
-LoggingSplunk.prototype['tls_hostname'] = 'null';
-/**
- * The maximum number of bytes sent in one request. Defaults `0` for unbounded.
- * @member {Number} request_max_bytes
- * @default 0
- */
-LoggingSplunk.prototype['request_max_bytes'] = 0;
-/**
- * The maximum number of logs sent in one request. Defaults `0` for unbounded.
- * @member {Number} request_max_entries
- * @default 0
- */
-LoggingSplunk.prototype['request_max_entries'] = 0;
-/**
- * A Splunk token for use in posting logs over HTTP to your collector.
- * @member {String} token
- */
-LoggingSplunk.prototype['token'] = undefined;
-/**
- * The URL to post logs to.
- * @member {String} url
- */
-LoggingSplunk.prototype['url'] = undefined;
-/**
- * @member {module:model/LoggingUseTls} use_tls
- */
-LoggingSplunk.prototype['use_tls'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
 
 
 

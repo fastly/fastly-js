@@ -24,7 +24,6 @@ class WafActiveRuleDataAttributes {
      * @alias module:model/WafActiveRuleDataAttributes
      */
     constructor() { 
-        
         WafActiveRuleDataAttributes.initialize(this);
     }
 

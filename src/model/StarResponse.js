@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Star from './Star.js';
-import StarResponseAllOf from './StarResponseAllOf.js';
+import ApiClient from '../ApiClient';
+import Star from './Star';
+import StarResponseAllOf from './StarResponseAllOf';
 
 /**
  * The StarResponse model module.
@@ -24,11 +24,8 @@ class StarResponse {
     /**
      * Constructs a new <code>StarResponse</code>.
      * @alias module:model/StarResponse
-     * @implements module:model/Star
-     * @implements module:model/StarResponseAllOf
      */
     constructor() { 
-        Star.initialize(this);StarResponseAllOf.initialize(this);
         StarResponse.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class StarResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new StarResponse();
-            Star.constructFromObject(data, obj);
-            StarResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], Object);
@@ -69,16 +64,6 @@ class StarResponse {
 StarResponse.prototype['data'] = undefined;
 
 
-// Implement Star interface:
-/**
- * @member {module:model/StarData} data
- */
-Star.prototype['data'] = undefined;
-// Implement StarResponseAllOf interface:
-/**
- * @member {Object} data
- */
-StarResponseAllOf.prototype['data'] = undefined;
 
 
 

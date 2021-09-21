@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingCommon from './LoggingCommon.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingNewrelicAllOf from './LoggingNewrelicAllOf.js';
-import LoggingPlacement from './LoggingPlacement.js';
+import ApiClient from '../ApiClient';
+import LoggingCommon from './LoggingCommon';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingNewrelicAllOf from './LoggingNewrelicAllOf';
+import LoggingPlacement from './LoggingPlacement';
 
 /**
  * The LoggingNewrelic model module.
@@ -26,11 +26,8 @@ class LoggingNewrelic {
     /**
      * Constructs a new <code>LoggingNewrelic</code>.
      * @alias module:model/LoggingNewrelic
-     * @implements module:model/LoggingCommon
-     * @implements module:model/LoggingNewrelicAllOf
      */
     constructor() { 
-        LoggingCommon.initialize(this);LoggingNewrelicAllOf.initialize(this);
         LoggingNewrelic.initialize(this);
     }
 
@@ -52,8 +49,6 @@ class LoggingNewrelic {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingNewrelic();
-            LoggingCommon.constructFromObject(data, obj);
-            LoggingNewrelicAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], Object);
@@ -125,48 +120,6 @@ LoggingNewrelic.prototype['region'] = undefined;
 LoggingNewrelic.prototype['token'] = undefined;
 
 
-// Implement LoggingCommon interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingCommon.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingCommon.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingCommon.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingCommon.prototype['response_condition'] = undefined;
-// Implement LoggingNewrelicAllOf interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest.
- * @member {Object} format
- */
-LoggingNewrelicAllOf.prototype['format'] = undefined;
-/**
- * The region to which to stream logs.
- * @member {module:model/LoggingNewrelicAllOf.RegionEnum} region
- * @default 'US'
- */
-LoggingNewrelicAllOf.prototype['region'] = undefined;
-/**
- * The Insert API key from the Account page of your New Relic account. Required.
- * @member {String} token
- */
-LoggingNewrelicAllOf.prototype['token'] = undefined;
 
 
 

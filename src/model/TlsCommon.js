@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The TlsCommon model module.
@@ -24,7 +24,6 @@ class TlsCommon {
      * @alias module:model/TlsCommon
      */
     constructor() { 
-        
         TlsCommon.initialize(this);
     }
 

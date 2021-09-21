@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import BillingAddress from './BillingAddress.js';
-import TypeBillingAddress from './TypeBillingAddress.js';
+import ApiClient from '../ApiClient';
+import BillingAddress from './BillingAddress';
+import TypeBillingAddress from './TypeBillingAddress';
 
 /**
  * The CustomerCustomerIdBillingAddressData1 model module.
@@ -26,7 +26,6 @@ class CustomerCustomerIdBillingAddressData1 {
      * @alias module:model/CustomerCustomerIdBillingAddressData1
      */
     constructor() { 
-        
         CustomerCustomerIdBillingAddressData1.initialize(this);
     }
 

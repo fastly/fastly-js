@@ -11,13 +11,13 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import AnyOfwafRulewafRuleRevision from './AnyOfwafRulewafRuleRevision.js';
-import Data from './Data.js';
-import Pagination from './Pagination.js';
-import PaginationLinks from './PaginationLinks.js';
-import PaginationMeta from './PaginationMeta.js';
-import WafExclusionsResponseAllOf from './WafExclusionsResponseAllOf.js';
+import ApiClient from '../ApiClient';
+import IncludedWithWafExclusionItem from './IncludedWithWafExclusionItem';
+import Pagination from './Pagination';
+import PaginationLinks from './PaginationLinks';
+import PaginationMeta from './PaginationMeta';
+import WafExclusionResponseData from './WafExclusionResponseData';
+import WafExclusionsResponseAllOf from './WafExclusionsResponseAllOf';
 
 /**
  * The WafExclusionsResponse model module.
@@ -28,11 +28,8 @@ class WafExclusionsResponse {
     /**
      * Constructs a new <code>WafExclusionsResponse</code>.
      * @alias module:model/WafExclusionsResponse
-     * @implements module:model/Pagination
-     * @implements module:model/WafExclusionsResponseAllOf
      */
     constructor() { 
-        Pagination.initialize(this);WafExclusionsResponseAllOf.initialize(this);
         WafExclusionsResponse.initialize(this);
     }
 
@@ -54,8 +51,6 @@ class WafExclusionsResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafExclusionsResponse();
-            Pagination.constructFromObject(data, obj);
-            WafExclusionsResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('links')) {
                 obj['links'] = PaginationLinks.constructFromObject(data['links']);
@@ -64,10 +59,10 @@ class WafExclusionsResponse {
                 obj['meta'] = PaginationMeta.constructFromObject(data['meta']);
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Data]);
+                obj['data'] = ApiClient.convertToType(data['data'], [WafExclusionResponseData]);
             }
             if (data.hasOwnProperty('included')) {
-                obj['included'] = ApiClient.convertToType(data['included'], [AnyOfwafRulewafRuleRevision]);
+                obj['included'] = ApiClient.convertToType(data['included'], [IncludedWithWafExclusionItem]);
             }
         }
         return obj;
@@ -87,34 +82,16 @@ WafExclusionsResponse.prototype['links'] = undefined;
 WafExclusionsResponse.prototype['meta'] = undefined;
 
 /**
- * @member {Array.<module:model/Data>} data
+ * @member {Array.<module:model/WafExclusionResponseData>} data
  */
 WafExclusionsResponse.prototype['data'] = undefined;
 
 /**
- * @member {Array.<module:model/AnyOfwafRulewafRuleRevision>} included
+ * @member {Array.<module:model/IncludedWithWafExclusionItem>} included
  */
 WafExclusionsResponse.prototype['included'] = undefined;
 
 
-// Implement Pagination interface:
-/**
- * @member {module:model/PaginationLinks} links
- */
-Pagination.prototype['links'] = undefined;
-/**
- * @member {module:model/PaginationMeta} meta
- */
-Pagination.prototype['meta'] = undefined;
-// Implement WafExclusionsResponseAllOf interface:
-/**
- * @member {Array.<module:model/Data>} data
- */
-WafExclusionsResponseAllOf.prototype['data'] = undefined;
-/**
- * @member {Array.<module:model/AnyOfwafRulewafRuleRevision>} included
- */
-WafExclusionsResponseAllOf.prototype['included'] = undefined;
 
 
 

@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The Domain model module.
@@ -24,7 +24,6 @@ class Domain {
      * @alias module:model/Domain
      */
     constructor() { 
-        
         Domain.initialize(this);
     }
 

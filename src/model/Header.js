@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The Header model module.
@@ -24,7 +24,6 @@ class Header {
      * @alias module:model/Header
      */
     constructor() { 
-        
         Header.initialize(this);
     }
 

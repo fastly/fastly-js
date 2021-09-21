@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import AnyOfwafTagwafRuleRevision from './AnyOfwafTagwafRuleRevision.js';
-import WafRule from './WafRule.js';
+import ApiClient from '../ApiClient';
+import IncludedWithWafRuleItem from './IncludedWithWafRuleItem';
+import WafRuleResponseData from './WafRuleResponseData';
 
 /**
  * The WafRuleResponse model module.
@@ -26,7 +26,6 @@ class WafRuleResponse {
      * @alias module:model/WafRuleResponse
      */
     constructor() { 
-        
         WafRuleResponse.initialize(this);
     }
 
@@ -50,10 +49,10 @@ class WafRuleResponse {
             obj = obj || new WafRuleResponse();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], WafRule);
+                obj['data'] = WafRuleResponseData.constructFromObject(data['data']);
             }
             if (data.hasOwnProperty('included')) {
-                obj['included'] = ApiClient.convertToType(data['included'], [AnyOfwafTagwafRuleRevision]);
+                obj['included'] = ApiClient.convertToType(data['included'], [IncludedWithWafRuleItem]);
             }
         }
         return obj;
@@ -63,12 +62,12 @@ class WafRuleResponse {
 }
 
 /**
- * @member {module:model/WafRule} data
+ * @member {module:model/WafRuleResponseData} data
  */
 WafRuleResponse.prototype['data'] = undefined;
 
 /**
- * @member {Array.<module:model/AnyOfwafTagwafRuleRevision>} included
+ * @member {Array.<module:model/IncludedWithWafRuleItem>} included
  */
 WafRuleResponse.prototype['included'] = undefined;
 

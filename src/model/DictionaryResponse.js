@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Dictionary from './Dictionary.js';
-import DictionaryResponseAllOf from './DictionaryResponseAllOf.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import Dictionary from './Dictionary';
+import DictionaryResponseAllOf from './DictionaryResponseAllOf';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
 
 /**
  * The DictionaryResponse model module.
@@ -26,13 +26,8 @@ class DictionaryResponse {
     /**
      * Constructs a new <code>DictionaryResponse</code>.
      * @alias module:model/DictionaryResponse
-     * @implements module:model/Dictionary
-     * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
-     * @implements module:model/DictionaryResponseAllOf
      */
     constructor() { 
-        Dictionary.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);DictionaryResponseAllOf.initialize(this);
         DictionaryResponse.initialize(this);
     }
 
@@ -54,10 +49,6 @@ class DictionaryResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new DictionaryResponse();
-            Dictionary.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
-            DictionaryResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -140,51 +131,6 @@ DictionaryResponse.prototype['version'] = undefined;
 DictionaryResponse.prototype['id'] = undefined;
 
 
-// Implement Dictionary interface:
-/**
- * Name for the Dictionary.
- * @member {String} name
- */
-Dictionary.prototype['name'] = undefined;
-/**
- * Determines if items in the dictionary are readable or not.
- * @member {Boolean} write_only
- * @default false
- */
-Dictionary.prototype['write_only'] = false;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
-// Implement DictionaryResponseAllOf interface:
-/**
- * Alphanumeric string identifying a Dictionary.
- * @member {String} id
- */
-DictionaryResponseAllOf.prototype['id'] = undefined;
 
 
 

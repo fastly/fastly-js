@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The TlsDnsRecord model module.
@@ -24,7 +24,6 @@ class TlsDnsRecord {
      * @alias module:model/TlsDnsRecord
      */
     constructor() { 
-        
         TlsDnsRecord.initialize(this);
     }
 

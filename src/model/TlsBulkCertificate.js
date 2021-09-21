@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import TlsBulkCertificateData from './TlsBulkCertificateData.js';
+import ApiClient from '../ApiClient';
+import TlsBulkCertificateData from './TlsBulkCertificateData';
 
 /**
  * The TlsBulkCertificate model module.
@@ -25,7 +25,6 @@ class TlsBulkCertificate {
      * @alias module:model/TlsBulkCertificate
      */
     constructor() { 
-        
         TlsBulkCertificate.initialize(this);
     }
 

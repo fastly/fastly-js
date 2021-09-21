@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Data from './Data.js';
+import ApiClient from '../ApiClient';
+import InvitationResponseData from './InvitationResponseData';
 
 /**
  * The InvitationsResponseAllOf model module.
@@ -25,7 +25,6 @@ class InvitationsResponseAllOf {
      * @alias module:model/InvitationsResponseAllOf
      */
     constructor() { 
-        
         InvitationsResponseAllOf.initialize(this);
     }
 
@@ -49,7 +48,7 @@ class InvitationsResponseAllOf {
             obj = obj || new InvitationsResponseAllOf();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Data]);
+                obj['data'] = ApiClient.convertToType(data['data'], [InvitationResponseData]);
             }
         }
         return obj;
@@ -59,7 +58,7 @@ class InvitationsResponseAllOf {
 }
 
 /**
- * @member {Array.<module:model/Data>} data
+ * @member {Array.<module:model/InvitationResponseData>} data
  */
 InvitationsResponseAllOf.prototype['data'] = undefined;
 

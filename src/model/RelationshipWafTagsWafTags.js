@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import RelationshipMemberWafTag from './RelationshipMemberWafTag.js';
+import ApiClient from '../ApiClient';
+import RelationshipMemberWafTag from './RelationshipMemberWafTag';
 
 /**
  * The RelationshipWafTagsWafTags model module.
@@ -25,7 +25,6 @@ class RelationshipWafTagsWafTags {
      * @alias module:model/RelationshipWafTagsWafTags
      */
     constructor() { 
-        
         RelationshipWafTagsWafTags.initialize(this);
     }
 

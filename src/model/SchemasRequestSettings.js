@@ -24,7 +24,6 @@ class SchemasRequestSettings {
      * @alias module:model/SchemasRequestSettings
      */
     constructor() { 
-        
         SchemasRequestSettings.initialize(this);
     }
 

@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import WafFirewallData from './WafFirewallData.js';
+import ApiClient from '../ApiClient';
+import WafFirewallData from './WafFirewallData';
 
 /**
  * The WafFirewall model module.
@@ -25,7 +25,6 @@ class WafFirewall {
      * @alias module:model/WafFirewall
      */
     constructor() { 
-        
         WafFirewall.initialize(this);
     }
 

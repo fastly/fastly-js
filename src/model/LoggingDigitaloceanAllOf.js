@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The LoggingDigitaloceanAllOf model module.
@@ -24,7 +24,6 @@ class LoggingDigitaloceanAllOf {
      * @alias module:model/LoggingDigitaloceanAllOf
      */
     constructor() { 
-        
         LoggingDigitaloceanAllOf.initialize(this);
     }
 

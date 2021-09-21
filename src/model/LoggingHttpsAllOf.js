@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingMessageType from './LoggingMessageType.js';
+import ApiClient from '../ApiClient';
+import LoggingMessageType from './LoggingMessageType';
 
 /**
  * The LoggingHttpsAllOf model module.
@@ -25,7 +25,6 @@ class LoggingHttpsAllOf {
      * @alias module:model/LoggingHttpsAllOf
      */
     constructor() { 
-        
         LoggingHttpsAllOf.initialize(this);
     }
 

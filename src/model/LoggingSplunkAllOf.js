@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingUseTls from './LoggingUseTls.js';
+import ApiClient from '../ApiClient';
+import LoggingUseTls from './LoggingUseTls';
 
 /**
  * The LoggingSplunkAllOf model module.
@@ -25,7 +25,6 @@ class LoggingSplunkAllOf {
      * @alias module:model/LoggingSplunkAllOf
      */
     constructor() { 
-        
         LoggingSplunkAllOf.initialize(this);
     }
 

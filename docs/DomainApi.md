@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[AnyOfobjectstringboolean]**](AnyOfobjectstringboolean.md)
+[**[DomainCheckItem]**](DomainCheckItem.md)
 
 
 ## `checkDomains`

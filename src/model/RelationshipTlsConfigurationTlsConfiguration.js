@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import RelationshipMemberTlsConfiguration from './RelationshipMemberTlsConfiguration.js';
+import ApiClient from '../ApiClient';
+import RelationshipMemberTlsConfiguration from './RelationshipMemberTlsConfiguration';
 
 /**
  * The RelationshipTlsConfigurationTlsConfiguration model module.
@@ -25,7 +25,6 @@ class RelationshipTlsConfigurationTlsConfiguration {
      * @alias module:model/RelationshipTlsConfigurationTlsConfiguration
      */
     constructor() { 
-        
         RelationshipTlsConfigurationTlsConfiguration.initialize(this);
     }
 

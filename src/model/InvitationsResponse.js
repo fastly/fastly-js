@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Data from './Data.js';
-import InvitationsResponseAllOf from './InvitationsResponseAllOf.js';
-import Pagination from './Pagination.js';
-import PaginationLinks from './PaginationLinks.js';
-import PaginationMeta from './PaginationMeta.js';
+import ApiClient from '../ApiClient';
+import InvitationResponseData from './InvitationResponseData';
+import InvitationsResponseAllOf from './InvitationsResponseAllOf';
+import Pagination from './Pagination';
+import PaginationLinks from './PaginationLinks';
+import PaginationMeta from './PaginationMeta';
 
 /**
  * The InvitationsResponse model module.
@@ -27,11 +27,8 @@ class InvitationsResponse {
     /**
      * Constructs a new <code>InvitationsResponse</code>.
      * @alias module:model/InvitationsResponse
-     * @implements module:model/Pagination
-     * @implements module:model/InvitationsResponseAllOf
      */
     constructor() { 
-        Pagination.initialize(this);InvitationsResponseAllOf.initialize(this);
         InvitationsResponse.initialize(this);
     }
 
@@ -53,8 +50,6 @@ class InvitationsResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new InvitationsResponse();
-            Pagination.constructFromObject(data, obj);
-            InvitationsResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('links')) {
                 obj['links'] = PaginationLinks.constructFromObject(data['links']);
@@ -63,7 +58,7 @@ class InvitationsResponse {
                 obj['meta'] = PaginationMeta.constructFromObject(data['meta']);
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Data]);
+                obj['data'] = ApiClient.convertToType(data['data'], [InvitationResponseData]);
             }
         }
         return obj;
@@ -83,25 +78,11 @@ InvitationsResponse.prototype['links'] = undefined;
 InvitationsResponse.prototype['meta'] = undefined;
 
 /**
- * @member {Array.<module:model/Data>} data
+ * @member {Array.<module:model/InvitationResponseData>} data
  */
 InvitationsResponse.prototype['data'] = undefined;
 
 
-// Implement Pagination interface:
-/**
- * @member {module:model/PaginationLinks} links
- */
-Pagination.prototype['links'] = undefined;
-/**
- * @member {module:model/PaginationMeta} meta
- */
-Pagination.prototype['meta'] = undefined;
-// Implement InvitationsResponseAllOf interface:
-/**
- * @member {Array.<module:model/Data>} data
- */
-InvitationsResponseAllOf.prototype['data'] = undefined;
 
 
 

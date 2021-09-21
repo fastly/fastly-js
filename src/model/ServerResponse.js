@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Server from './Server.js';
-import ServerResponseAllOf from './ServerResponseAllOf.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import Server from './Server';
+import ServerResponseAllOf from './ServerResponseAllOf';
+import Timestamps from './Timestamps';
 
 /**
  * The ServerResponse model module.
@@ -25,12 +25,8 @@ class ServerResponse {
     /**
      * Constructs a new <code>ServerResponse</code>.
      * @alias module:model/ServerResponse
-     * @implements module:model/Server
-     * @implements module:model/Timestamps
-     * @implements module:model/ServerResponseAllOf
      */
     constructor() { 
-        Server.initialize(this);Timestamps.initialize(this);ServerResponseAllOf.initialize(this);
         ServerResponse.initialize(this);
     }
 
@@ -52,9 +48,6 @@ class ServerResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ServerResponse();
-            Server.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
-            ServerResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('address')) {
                 obj['address'] = ApiClient.convertToType(data['address'], 'String');
@@ -186,79 +179,6 @@ ServerResponse.prototype['pool_id'] = undefined;
 ServerResponse.prototype['service_id'] = undefined;
 
 
-// Implement Server interface:
-/**
- * A hostname, IPv4, or IPv6 address for the server. Required.
- * @member {String} address
- */
-Server.prototype['address'] = undefined;
-/**
- * A freeform descriptive note.
- * @member {String} comment
- */
-Server.prototype['comment'] = undefined;
-/**
- * Allows servers to be enabled and disabled in a pool.
- * @member {Boolean} disabled
- * @default false
- */
-Server.prototype['disabled'] = false;
-/**
- * Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
- * @member {Number} max_conn
- * @default 0
- */
-Server.prototype['max_conn'] = 0;
-/**
- * The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
- * @member {String} override_host
- * @default 'null'
- */
-Server.prototype['override_host'] = 'null';
-/**
- * Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
- * @member {Number} port
- * @default 80
- */
-Server.prototype['port'] = 80;
-/**
- * Weight (`1-100`) used to load balance this server against others.
- * @member {Number} weight
- * @default 100
- */
-Server.prototype['weight'] = 100;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
-// Implement ServerResponseAllOf interface:
-/**
- * Alphanumeric string identifying a Server.
- * @member {String} id
- */
-ServerResponseAllOf.prototype['id'] = undefined;
-/**
- * Alphanumeric string identifying a Pool.
- * @member {String} pool_id
- */
-ServerResponseAllOf.prototype['pool_id'] = undefined;
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServerResponseAllOf.prototype['service_id'] = undefined;
 
 
 

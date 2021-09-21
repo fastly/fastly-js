@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The DirectorBackendAllOf model module.
@@ -24,7 +24,6 @@ class DirectorBackendAllOf {
      * @alias module:model/DirectorBackendAllOf
      */
     constructor() { 
-        
         DirectorBackendAllOf.initialize(this);
     }
 

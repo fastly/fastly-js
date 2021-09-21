@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The CacheSetting model module.
@@ -24,7 +24,6 @@ class CacheSetting {
      * @alias module:model/CacheSetting
      */
     constructor() { 
-        
         CacheSetting.initialize(this);
     }
 

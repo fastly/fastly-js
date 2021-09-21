@@ -68,6 +68,7 @@ Class | Method | Description
 *Fastly.BackendApi* | [**listBackends**](docs/BackendApi.md#listBackends) | List backends
 *Fastly.BackendApi* | [**updateBackend**](docs/BackendApi.md#updateBackend) | Update a backend
 *Fastly.BillingApi* | [**getInvoice**](docs/BillingApi.md#getInvoice) | Get an invoice
+*Fastly.BillingApi* | [**getInvoiceById**](docs/BillingApi.md#getInvoiceById) | Get an invoice
 *Fastly.BillingApi* | [**getInvoiceMtd**](docs/BillingApi.md#getInvoiceMtd) | Get month-to-date billing estimate
 *Fastly.BillingAddressApi* | [**addBillingAddr**](docs/BillingAddressApi.md#addBillingAddr) | Add a billing address to a customer
 *Fastly.BillingAddressApi* | [**deleteBillingAddr**](docs/BillingAddressApi.md#deleteBillingAddr) | Delete a billing address

@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingPlacement from './LoggingPlacement.js';
+import ApiClient from '../ApiClient';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingPlacement from './LoggingPlacement';
 
 /**
  * The LoggingKinesis model module.
@@ -26,7 +26,6 @@ class LoggingKinesis {
      * @alias module:model/LoggingKinesis
      */
     constructor() { 
-        
         LoggingKinesis.initialize(this);
     }
 

@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The Service model module.
@@ -24,7 +24,6 @@ class Service {
      * @alias module:model/Service
      */
     constructor() { 
-        
         Service.initialize(this);
     }
 

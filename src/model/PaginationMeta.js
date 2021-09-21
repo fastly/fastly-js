@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The PaginationMeta model module.
@@ -24,7 +24,6 @@ class PaginationMeta {
      * @alias module:model/PaginationMeta
      */
     constructor() { 
-        
         PaginationMeta.initialize(this);
     }
 

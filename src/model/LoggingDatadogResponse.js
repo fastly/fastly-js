@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingDatadog from './LoggingDatadog.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingPlacement from './LoggingPlacement.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import LoggingDatadog from './LoggingDatadog';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingPlacement from './LoggingPlacement';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
 
 /**
  * The LoggingDatadogResponse model module.
@@ -27,12 +27,8 @@ class LoggingDatadogResponse {
     /**
      * Constructs a new <code>LoggingDatadogResponse</code>.
      * @alias module:model/LoggingDatadogResponse
-     * @implements module:model/LoggingDatadog
-     * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
      */
     constructor() { 
-        LoggingDatadog.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
         LoggingDatadogResponse.initialize(this);
     }
 
@@ -54,9 +50,6 @@ class LoggingDatadogResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingDatadogResponse();
-            LoggingDatadog.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], Object);
@@ -173,68 +166,6 @@ LoggingDatadogResponse.prototype['service_id'] = undefined;
 LoggingDatadogResponse.prototype['version'] = undefined;
 
 
-// Implement LoggingDatadog interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest. 
- * @member {Object} format
- */
-LoggingDatadog.prototype['format'] = undefined;
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingDatadog.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingDatadog.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingDatadog.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingDatadog.prototype['response_condition'] = undefined;
-/**
- * The region that log data will be sent to.
- * @member {module:model/LoggingDatadog.RegionEnum} region
- * @default 'US'
- */
-LoggingDatadog.prototype['region'] = undefined;
-/**
- * The API key from your Datadog account. Required.
- * @member {String} token
- */
-LoggingDatadog.prototype['token'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
 
 
 

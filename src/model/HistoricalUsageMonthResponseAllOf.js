@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import HistoricalUsageMonthResponseAllOfData from './HistoricalUsageMonthResponseAllOfData.js';
+import ApiClient from '../ApiClient';
+import HistoricalUsageMonthResponseAllOfData from './HistoricalUsageMonthResponseAllOfData';
 
 /**
  * The HistoricalUsageMonthResponseAllOf model module.
@@ -25,7 +25,6 @@ class HistoricalUsageMonthResponseAllOf {
      * @alias module:model/HistoricalUsageMonthResponseAllOf
      */
     constructor() { 
-        
         HistoricalUsageMonthResponseAllOf.initialize(this);
     }
 

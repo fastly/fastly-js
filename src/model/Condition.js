@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The Condition model module.
@@ -24,7 +24,6 @@ class Condition {
      * @alias module:model/Condition
      */
     constructor() { 
-        
         Condition.initialize(this);
     }
 

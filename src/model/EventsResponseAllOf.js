@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Data from './Data.js';
+import ApiClient from '../ApiClient';
+import Event from './Event';
 
 /**
  * The EventsResponseAllOf model module.
@@ -25,7 +25,6 @@ class EventsResponseAllOf {
      * @alias module:model/EventsResponseAllOf
      */
     constructor() { 
-        
         EventsResponseAllOf.initialize(this);
     }
 
@@ -49,7 +48,7 @@ class EventsResponseAllOf {
             obj = obj || new EventsResponseAllOf();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Data]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Event]);
             }
         }
         return obj;
@@ -59,7 +58,7 @@ class EventsResponseAllOf {
 }
 
 /**
- * @member {Array.<module:model/Data>} data
+ * @member {Array.<module:model/Event>} data
  */
 EventsResponseAllOf.prototype['data'] = undefined;
 

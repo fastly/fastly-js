@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Data from './Data.js';
-import Pagination from './Pagination.js';
-import PaginationLinks from './PaginationLinks.js';
-import PaginationMeta from './PaginationMeta.js';
-import TlsPrivateKeysResponseAllOf from './TlsPrivateKeysResponseAllOf.js';
+import ApiClient from '../ApiClient';
+import Pagination from './Pagination';
+import PaginationLinks from './PaginationLinks';
+import PaginationMeta from './PaginationMeta';
+import TlsPrivateKeyResponseData from './TlsPrivateKeyResponseData';
+import TlsPrivateKeysResponseAllOf from './TlsPrivateKeysResponseAllOf';
 
 /**
  * The TlsPrivateKeysResponse model module.
@@ -27,11 +27,8 @@ class TlsPrivateKeysResponse {
     /**
      * Constructs a new <code>TlsPrivateKeysResponse</code>.
      * @alias module:model/TlsPrivateKeysResponse
-     * @implements module:model/Pagination
-     * @implements module:model/TlsPrivateKeysResponseAllOf
      */
     constructor() { 
-        Pagination.initialize(this);TlsPrivateKeysResponseAllOf.initialize(this);
         TlsPrivateKeysResponse.initialize(this);
     }
 
@@ -53,8 +50,6 @@ class TlsPrivateKeysResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsPrivateKeysResponse();
-            Pagination.constructFromObject(data, obj);
-            TlsPrivateKeysResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('links')) {
                 obj['links'] = PaginationLinks.constructFromObject(data['links']);
@@ -63,7 +58,7 @@ class TlsPrivateKeysResponse {
                 obj['meta'] = PaginationMeta.constructFromObject(data['meta']);
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Data]);
+                obj['data'] = ApiClient.convertToType(data['data'], [TlsPrivateKeyResponseData]);
             }
         }
         return obj;
@@ -83,25 +78,11 @@ TlsPrivateKeysResponse.prototype['links'] = undefined;
 TlsPrivateKeysResponse.prototype['meta'] = undefined;
 
 /**
- * @member {Array.<module:model/Data>} data
+ * @member {Array.<module:model/TlsPrivateKeyResponseData>} data
  */
 TlsPrivateKeysResponse.prototype['data'] = undefined;
 
 
-// Implement Pagination interface:
-/**
- * @member {module:model/PaginationLinks} links
- */
-Pagination.prototype['links'] = undefined;
-/**
- * @member {module:model/PaginationMeta} meta
- */
-Pagination.prototype['meta'] = undefined;
-// Implement TlsPrivateKeysResponseAllOf interface:
-/**
- * @member {Array.<module:model/Data>} data
- */
-TlsPrivateKeysResponseAllOf.prototype['data'] = undefined;
 
 
 

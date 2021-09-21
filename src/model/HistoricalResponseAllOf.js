@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Results from './Results.js';
+import ApiClient from '../ApiClient';
+import Results from './Results';
 
 /**
  * The HistoricalResponseAllOf model module.
@@ -25,7 +25,6 @@ class HistoricalResponseAllOf {
      * @alias module:model/HistoricalResponseAllOf
      */
     constructor() { 
-        
         HistoricalResponseAllOf.initialize(this);
     }
 

@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import AnyOfrelationshipTlsConfigurationsobject from './AnyOfrelationshipTlsConfigurationsobject.js';
-import TlsBulkCertificateDataAttributes from './TlsBulkCertificateDataAttributes.js';
-import TypeTlsBulkCertificate from './TypeTlsBulkCertificate.js';
+import ApiClient from '../ApiClient';
+import RelationshipsForTlsBulkCertificate from './RelationshipsForTlsBulkCertificate';
+import TlsBulkCertificateDataAttributes from './TlsBulkCertificateDataAttributes';
+import TypeTlsBulkCertificate from './TypeTlsBulkCertificate';
 
 /**
  * The TlsBulkCertificateData model module.
@@ -27,7 +27,6 @@ class TlsBulkCertificateData {
      * @alias module:model/TlsBulkCertificateData
      */
     constructor() { 
-        
         TlsBulkCertificateData.initialize(this);
     }
 
@@ -54,7 +53,7 @@ class TlsBulkCertificateData {
                 obj['attributes'] = TlsBulkCertificateDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = ApiClient.convertToType(data['relationships'], AnyOfrelationshipTlsConfigurationsobject);
+                obj['relationships'] = RelationshipsForTlsBulkCertificate.constructFromObject(data['relationships']);
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeTlsBulkCertificate.constructFromObject(data['type']);
@@ -72,7 +71,7 @@ class TlsBulkCertificateData {
 TlsBulkCertificateData.prototype['attributes'] = undefined;
 
 /**
- * @member {module:model/AnyOfrelationshipTlsConfigurationsobject} relationships
+ * @member {module:model/RelationshipsForTlsBulkCertificate} relationships
  */
 TlsBulkCertificateData.prototype['relationships'] = undefined;
 

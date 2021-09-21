@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision from './AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision';
+import RelationshipsForWafActiveRule from './RelationshipsForWafActiveRule';
 import TypeWafActiveRule from './TypeWafActiveRule';
 import WafActiveRuleDataAttributes from './WafActiveRuleDataAttributes';
 
@@ -27,7 +27,6 @@ class WafActiveRuleData {
      * @alias module:model/WafActiveRuleData
      */
     constructor() { 
-        
         WafActiveRuleData.initialize(this);
     }
 
@@ -54,7 +53,7 @@ class WafActiveRuleData {
                 obj['attributes'] = WafActiveRuleDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = ApiClient.convertToType(data['relationships'], AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision);
+                obj['relationships'] = RelationshipsForWafActiveRule.constructFromObject(data['relationships']);
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeWafActiveRule.constructFromObject(data['type']);
@@ -72,7 +71,7 @@ class WafActiveRuleData {
 WafActiveRuleData.prototype['attributes'] = undefined;
 
 /**
- * @member {module:model/AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision} relationships
+ * @member {module:model/RelationshipsForWafActiveRule} relationships
  */
 WafActiveRuleData.prototype['relationships'] = undefined;
 

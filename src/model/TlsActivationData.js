@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import AnyOfobjectobjectobject from './AnyOfobjectobjectobject.js';
-import TypeTlsActivation from './TypeTlsActivation.js';
+import ApiClient from '../ApiClient';
+import RelationshipsForTlsActivation from './RelationshipsForTlsActivation';
+import TypeTlsActivation from './TypeTlsActivation';
 
 /**
  * The TlsActivationData model module.
@@ -26,7 +26,6 @@ class TlsActivationData {
      * @alias module:model/TlsActivationData
      */
     constructor() { 
-        
         TlsActivationData.initialize(this);
     }
 
@@ -50,7 +49,7 @@ class TlsActivationData {
             obj = obj || new TlsActivationData();
 
             if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = ApiClient.convertToType(data['relationships'], AnyOfobjectobjectobject);
+                obj['relationships'] = RelationshipsForTlsActivation.constructFromObject(data['relationships']);
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeTlsActivation.constructFromObject(data['type']);
@@ -63,7 +62,7 @@ class TlsActivationData {
 }
 
 /**
- * @member {module:model/AnyOfobjectobjectobject} relationships
+ * @member {module:model/RelationshipsForTlsActivation} relationships
  */
 TlsActivationData.prototype['relationships'] = undefined;
 

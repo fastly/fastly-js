@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import RelationshipServiceService from './RelationshipServiceService.js';
+import ApiClient from '../ApiClient';
+import RelationshipServiceService from './RelationshipServiceService';
 
 /**
  * The RelationshipService model module.
@@ -25,7 +25,6 @@ class RelationshipService {
      * @alias module:model/RelationshipService
      */
     constructor() { 
-        
         RelationshipService.initialize(this);
     }
 

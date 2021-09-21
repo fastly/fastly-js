@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The Gzip model module.
@@ -24,7 +24,6 @@ class Gzip {
      * @alias module:model/Gzip
      */
     constructor() { 
-        
         Gzip.initialize(this);
     }
 

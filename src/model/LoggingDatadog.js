@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingCommon from './LoggingCommon.js';
-import LoggingDatadogAllOf from './LoggingDatadogAllOf.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingPlacement from './LoggingPlacement.js';
+import ApiClient from '../ApiClient';
+import LoggingCommon from './LoggingCommon';
+import LoggingDatadogAllOf from './LoggingDatadogAllOf';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingPlacement from './LoggingPlacement';
 
 /**
  * The LoggingDatadog model module.
@@ -26,11 +26,8 @@ class LoggingDatadog {
     /**
      * Constructs a new <code>LoggingDatadog</code>.
      * @alias module:model/LoggingDatadog
-     * @implements module:model/LoggingCommon
-     * @implements module:model/LoggingDatadogAllOf
      */
     constructor() { 
-        LoggingCommon.initialize(this);LoggingDatadogAllOf.initialize(this);
         LoggingDatadog.initialize(this);
     }
 
@@ -52,8 +49,6 @@ class LoggingDatadog {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingDatadog();
-            LoggingCommon.constructFromObject(data, obj);
-            LoggingDatadogAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], Object);
@@ -125,48 +120,6 @@ LoggingDatadog.prototype['region'] = undefined;
 LoggingDatadog.prototype['token'] = undefined;
 
 
-// Implement LoggingCommon interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingCommon.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingCommon.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingCommon.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingCommon.prototype['response_condition'] = undefined;
-// Implement LoggingDatadogAllOf interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest. 
- * @member {Object} format
- */
-LoggingDatadogAllOf.prototype['format'] = undefined;
-/**
- * The region that log data will be sent to.
- * @member {module:model/LoggingDatadogAllOf.RegionEnum} region
- * @default 'US'
- */
-LoggingDatadogAllOf.prototype['region'] = undefined;
-/**
- * The API key from your Datadog account. Required.
- * @member {String} token
- */
-LoggingDatadogAllOf.prototype['token'] = undefined;
 
 
 

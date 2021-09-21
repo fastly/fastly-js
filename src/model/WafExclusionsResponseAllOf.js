@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import AnyOfwafRulewafRuleRevision from './AnyOfwafRulewafRuleRevision.js';
-import Data from './Data.js';
+import ApiClient from '../ApiClient';
+import IncludedWithWafExclusionItem from './IncludedWithWafExclusionItem';
+import WafExclusionResponseData from './WafExclusionResponseData';
 
 /**
  * The WafExclusionsResponseAllOf model module.
@@ -26,7 +26,6 @@ class WafExclusionsResponseAllOf {
      * @alias module:model/WafExclusionsResponseAllOf
      */
     constructor() { 
-        
         WafExclusionsResponseAllOf.initialize(this);
     }
 
@@ -50,10 +49,10 @@ class WafExclusionsResponseAllOf {
             obj = obj || new WafExclusionsResponseAllOf();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Data]);
+                obj['data'] = ApiClient.convertToType(data['data'], [WafExclusionResponseData]);
             }
             if (data.hasOwnProperty('included')) {
-                obj['included'] = ApiClient.convertToType(data['included'], [AnyOfwafRulewafRuleRevision]);
+                obj['included'] = ApiClient.convertToType(data['included'], [IncludedWithWafExclusionItem]);
             }
         }
         return obj;
@@ -63,12 +62,12 @@ class WafExclusionsResponseAllOf {
 }
 
 /**
- * @member {Array.<module:model/Data>} data
+ * @member {Array.<module:model/WafExclusionResponseData>} data
  */
 WafExclusionsResponseAllOf.prototype['data'] = undefined;
 
 /**
- * @member {Array.<module:model/AnyOfwafRulewafRuleRevision>} included
+ * @member {Array.<module:model/IncludedWithWafExclusionItem>} included
  */
 WafExclusionsResponseAllOf.prototype['included'] = undefined;
 

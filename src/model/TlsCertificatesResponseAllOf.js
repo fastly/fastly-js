@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Data from './Data.js';
+import ApiClient from '../ApiClient';
+import TlsCertificateResponseData from './TlsCertificateResponseData';
 
 /**
  * The TlsCertificatesResponseAllOf model module.
@@ -25,7 +25,6 @@ class TlsCertificatesResponseAllOf {
      * @alias module:model/TlsCertificatesResponseAllOf
      */
     constructor() { 
-        
         TlsCertificatesResponseAllOf.initialize(this);
     }
 
@@ -49,7 +48,7 @@ class TlsCertificatesResponseAllOf {
             obj = obj || new TlsCertificatesResponseAllOf();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Data]);
+                obj['data'] = ApiClient.convertToType(data['data'], [TlsCertificateResponseData]);
             }
         }
         return obj;
@@ -59,7 +58,7 @@ class TlsCertificatesResponseAllOf {
 }
 
 /**
- * @member {Array.<module:model/Data>} data
+ * @member {Array.<module:model/TlsCertificateResponseData>} data
  */
 TlsCertificatesResponseAllOf.prototype['data'] = undefined;
 

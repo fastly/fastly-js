@@ -11,15 +11,15 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingCommon from './LoggingCommon.js';
-import LoggingCompressionCodec from './LoggingCompressionCodec.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingGcsAllOf from './LoggingGcsAllOf.js';
-import LoggingGcsCommon from './LoggingGcsCommon.js';
-import LoggingGenericCommon from './LoggingGenericCommon.js';
-import LoggingMessageType from './LoggingMessageType.js';
-import LoggingPlacement from './LoggingPlacement.js';
+import ApiClient from '../ApiClient';
+import LoggingCommon from './LoggingCommon';
+import LoggingCompressionCodec from './LoggingCompressionCodec';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingGcsAllOf from './LoggingGcsAllOf';
+import LoggingGcsCommon from './LoggingGcsCommon';
+import LoggingGenericCommon from './LoggingGenericCommon';
+import LoggingMessageType from './LoggingMessageType';
+import LoggingPlacement from './LoggingPlacement';
 
 /**
  * The LoggingGcs model module.
@@ -30,13 +30,8 @@ class LoggingGcs {
     /**
      * Constructs a new <code>LoggingGcs</code>.
      * @alias module:model/LoggingGcs
-     * @implements module:model/LoggingCommon
-     * @implements module:model/LoggingGenericCommon
-     * @implements module:model/LoggingGcsCommon
-     * @implements module:model/LoggingGcsAllOf
      */
     constructor() { 
-        LoggingCommon.initialize(this);LoggingGenericCommon.initialize(this);LoggingGcsCommon.initialize(this);LoggingGcsAllOf.initialize(this);
         LoggingGcs.initialize(this);
     }
 
@@ -58,10 +53,6 @@ class LoggingGcs {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingGcs();
-            LoggingCommon.constructFromObject(data, obj);
-            LoggingGenericCommon.constructFromObject(data, obj);
-            LoggingGcsCommon.constructFromObject(data, obj);
-            LoggingGcsAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
@@ -205,84 +196,6 @@ LoggingGcs.prototype['path'] = undefined;
 LoggingGcs.prototype['public_key'] = 'null';
 
 
-// Implement LoggingCommon interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingCommon.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingCommon.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingCommon.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingCommon.prototype['response_condition'] = undefined;
-// Implement LoggingGenericCommon interface:
-/**
- * @member {module:model/LoggingCompressionCodec} compression_codec
- */
-LoggingGenericCommon.prototype['compression_codec'] = undefined;
-/**
- * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {Number} gzip_level
- * @default 0
- */
-LoggingGenericCommon.prototype['gzip_level'] = 0;
-/**
- * @member {module:model/LoggingMessageType} message_type
- */
-LoggingGenericCommon.prototype['message_type'] = undefined;
-/**
- * How frequently log files are finalized so they can be available for reading (in seconds).
- * @member {Number} period
- * @default 3600
- */
-LoggingGenericCommon.prototype['period'] = 3600;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} timestamp_format
- */
-LoggingGenericCommon.prototype['timestamp_format'] = undefined;
-// Implement LoggingGcsCommon interface:
-/**
- * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
- * @member {String} secret_key
- */
-LoggingGcsCommon.prototype['secret_key'] = undefined;
-/**
- * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
- * @member {String} user
- */
-LoggingGcsCommon.prototype['user'] = undefined;
-// Implement LoggingGcsAllOf interface:
-/**
- * The name of the GCS bucket.
- * @member {String} bucket_name
- */
-LoggingGcsAllOf.prototype['bucket_name'] = undefined;
-/**
- * @member {String} path
- */
-LoggingGcsAllOf.prototype['path'] = undefined;
-/**
- * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
- * @member {String} public_key
- * @default 'null'
- */
-LoggingGcsAllOf.prototype['public_key'] = 'null';
 
 
 

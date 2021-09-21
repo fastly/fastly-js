@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import NestedVersion from './NestedVersion.js';
+import ApiClient from '../ApiClient';
+import NestedVersion from './NestedVersion';
 
 /**
  * The ServiceDetailAllOf model module.
@@ -25,7 +25,6 @@ class ServiceDetailAllOf {
      * @alias module:model/ServiceDetailAllOf
      */
     constructor() { 
-        
         ServiceDetailAllOf.initialize(this);
     }
 

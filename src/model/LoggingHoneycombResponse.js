@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingHoneycomb from './LoggingHoneycomb.js';
-import LoggingPlacement from './LoggingPlacement.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingHoneycomb from './LoggingHoneycomb';
+import LoggingPlacement from './LoggingPlacement';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
 
 /**
  * The LoggingHoneycombResponse model module.
@@ -27,12 +27,8 @@ class LoggingHoneycombResponse {
     /**
      * Constructs a new <code>LoggingHoneycombResponse</code>.
      * @alias module:model/LoggingHoneycombResponse
-     * @implements module:model/LoggingHoneycomb
-     * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
      */
     constructor() { 
-        LoggingHoneycomb.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
         LoggingHoneycombResponse.initialize(this);
     }
 
@@ -54,9 +50,6 @@ class LoggingHoneycombResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingHoneycombResponse();
-            LoggingHoneycomb.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], Object);
@@ -172,67 +165,6 @@ LoggingHoneycombResponse.prototype['service_id'] = undefined;
 LoggingHoneycombResponse.prototype['version'] = undefined;
 
 
-// Implement LoggingHoneycomb interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Honeycomb can ingest.
- * @member {Object} format
- */
-LoggingHoneycomb.prototype['format'] = undefined;
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingHoneycomb.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingHoneycomb.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingHoneycomb.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingHoneycomb.prototype['response_condition'] = undefined;
-/**
- * The Honeycomb Dataset you want to log to.
- * @member {String} dataset
- */
-LoggingHoneycomb.prototype['dataset'] = undefined;
-/**
- * The Write Key from the Account page of your Honeycomb account.
- * @member {String} token
- */
-LoggingHoneycomb.prototype['token'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
 
 
 

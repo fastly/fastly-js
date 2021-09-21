@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import HistoricalMeta from './HistoricalMeta.js';
+import ApiClient from '../ApiClient';
+import HistoricalMeta from './HistoricalMeta';
 
 /**
  * The Historical model module.
@@ -25,7 +25,6 @@ class Historical {
      * @alias module:model/Historical
      */
     constructor() { 
-        
         Historical.initialize(this);
     }
 

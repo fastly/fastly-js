@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import RelationshipServiceInvitationsServiceInvitations from './RelationshipServiceInvitationsServiceInvitations.js';
+import ApiClient from '../ApiClient';
+import RelationshipServiceInvitationsServiceInvitations from './RelationshipServiceInvitationsServiceInvitations';
 
 /**
  * The RelationshipServiceInvitations model module.
@@ -25,7 +25,6 @@ class RelationshipServiceInvitations {
      * @alias module:model/RelationshipServiceInvitations
      */
     constructor() { 
-        
         RelationshipServiceInvitations.initialize(this);
     }
 

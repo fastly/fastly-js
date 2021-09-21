@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingBigqueryAllOf from './LoggingBigqueryAllOf.js';
-import LoggingCommon from './LoggingCommon.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingGcsCommon from './LoggingGcsCommon.js';
-import LoggingPlacement from './LoggingPlacement.js';
+import ApiClient from '../ApiClient';
+import LoggingBigqueryAllOf from './LoggingBigqueryAllOf';
+import LoggingCommon from './LoggingCommon';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingGcsCommon from './LoggingGcsCommon';
+import LoggingPlacement from './LoggingPlacement';
 
 /**
  * The LoggingBigquery model module.
@@ -27,12 +27,8 @@ class LoggingBigquery {
     /**
      * Constructs a new <code>LoggingBigquery</code>.
      * @alias module:model/LoggingBigquery
-     * @implements module:model/LoggingCommon
-     * @implements module:model/LoggingGcsCommon
-     * @implements module:model/LoggingBigqueryAllOf
      */
     constructor() { 
-        LoggingCommon.initialize(this);LoggingGcsCommon.initialize(this);LoggingBigqueryAllOf.initialize(this);
         LoggingBigquery.initialize(this);
     }
 
@@ -54,9 +50,6 @@ class LoggingBigquery {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingBigquery();
-            LoggingCommon.constructFromObject(data, obj);
-            LoggingGcsCommon.constructFromObject(data, obj);
-            LoggingBigqueryAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
@@ -163,73 +156,6 @@ LoggingBigquery.prototype['table'] = undefined;
 LoggingBigquery.prototype['template_suffix'] = undefined;
 
 
-// Implement LoggingCommon interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingCommon.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingCommon.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingCommon.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingCommon.prototype['response_condition'] = undefined;
-// Implement LoggingGcsCommon interface:
-/**
- * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
- * @member {String} secret_key
- */
-LoggingGcsCommon.prototype['secret_key'] = undefined;
-/**
- * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
- * @member {String} user
- */
-LoggingGcsCommon.prototype['user'] = undefined;
-// Implement LoggingBigqueryAllOf interface:
-/**
- * Your BigQuery dataset.
- * @member {String} dataset
- */
-LoggingBigqueryAllOf.prototype['dataset'] = undefined;
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
- * @member {String} format
- */
-LoggingBigqueryAllOf.prototype['format'] = undefined;
-/**
- * The name of the BigQuery logging object. Used as a primary key for API access.
- * @member {String} name
- */
-LoggingBigqueryAllOf.prototype['name'] = undefined;
-/**
- * Your Google Cloud Platform project ID. Required
- * @member {String} project_id
- */
-LoggingBigqueryAllOf.prototype['project_id'] = undefined;
-/**
- * Your BigQuery table.
- * @member {String} table
- */
-LoggingBigqueryAllOf.prototype['table'] = undefined;
-/**
- * BigQuery table name suffix template. Optional.
- * @member {String} template_suffix
- */
-LoggingBigqueryAllOf.prototype['template_suffix'] = undefined;
 
 
 

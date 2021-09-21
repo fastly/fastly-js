@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Header from './Header.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import Header from './Header';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
 
 /**
  * The HeaderResponse model module.
@@ -25,12 +25,8 @@ class HeaderResponse {
     /**
      * Constructs a new <code>HeaderResponse</code>.
      * @alias module:model/HeaderResponse
-     * @implements module:model/Header
-     * @implements module:model/ServiceIdAndVersion
-     * @implements module:model/Timestamps
      */
     constructor() { 
-        Header.initialize(this);ServiceIdAndVersion.initialize(this);Timestamps.initialize(this);
         HeaderResponse.initialize(this);
     }
 
@@ -52,9 +48,6 @@ class HeaderResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new HeaderResponse();
-            Header.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('action')) {
                 obj['action'] = ApiClient.convertToType(data['action'], 'String');
@@ -217,94 +210,6 @@ HeaderResponse.prototype['deleted_at'] = undefined;
 HeaderResponse.prototype['updated_at'] = undefined;
 
 
-// Implement Header interface:
-/**
- * Accepts a string value.
- * @member {module:model/Header.ActionEnum} action
- */
-Header.prototype['action'] = undefined;
-/**
- * Name of the cache condition controlling when this configuration applies.
- * @member {String} cache_condition
- */
-Header.prototype['cache_condition'] = undefined;
-/**
- * Header to set.
- * @member {String} dst
- */
-Header.prototype['dst'] = undefined;
-/**
- * Don't add the header if it is added already. Only applies to 'set' action.
- * @member {Number} ignore_if_set
- */
-Header.prototype['ignore_if_set'] = undefined;
-/**
- * A handle to refer to this Header object.
- * @member {String} name
- */
-Header.prototype['name'] = undefined;
-/**
- * Priority determines execution order. Lower numbers execute first.
- * @member {Number} priority
- * @default 100
- */
-Header.prototype['priority'] = 100;
-/**
- * Regular expression to use. Only applies to `regex` and `regex_repeat` actions.
- * @member {String} regex
- */
-Header.prototype['regex'] = undefined;
-/**
- * Condition which, if met, will select this configuration during a request. Optional.
- * @member {String} request_condition
- */
-Header.prototype['request_condition'] = undefined;
-/**
- * @member {String} response_condition
- */
-Header.prototype['response_condition'] = undefined;
-/**
- * Variable to be used as a source for the header content. Does not apply to `delete` action.
- * @member {String} src
- */
-Header.prototype['src'] = undefined;
-/**
- * Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions.
- * @member {String} substitution
- */
-Header.prototype['substitution'] = undefined;
-/**
- * Accepts a string value.
- * @member {module:model/Header.TypeEnum} type
- */
-Header.prototype['type'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
 
 
 

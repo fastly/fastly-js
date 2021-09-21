@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The PaginationLinks model module.
@@ -24,7 +24,6 @@ class PaginationLinks {
      * @alias module:model/PaginationLinks
      */
     constructor() { 
-        
         PaginationLinks.initialize(this);
     }
 

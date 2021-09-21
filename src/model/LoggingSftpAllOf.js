@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The LoggingSftpAllOf model module.
@@ -24,7 +24,6 @@ class LoggingSftpAllOf {
      * @alias module:model/LoggingSftpAllOf
      */
     constructor() { 
-        
         LoggingSftpAllOf.initialize(this);
     }
 

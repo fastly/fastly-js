@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The LoggingHoneycombAllOf model module.
@@ -24,7 +24,6 @@ class LoggingHoneycombAllOf {
      * @alias module:model/LoggingHoneycombAllOf
      */
     constructor() { 
-        
         LoggingHoneycombAllOf.initialize(this);
     }
 

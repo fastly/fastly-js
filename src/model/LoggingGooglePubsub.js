@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingCommon from './LoggingCommon.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingGcsCommon from './LoggingGcsCommon.js';
-import LoggingGooglePubsubAllOf from './LoggingGooglePubsubAllOf.js';
-import LoggingPlacement from './LoggingPlacement.js';
+import ApiClient from '../ApiClient';
+import LoggingCommon from './LoggingCommon';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingGcsCommon from './LoggingGcsCommon';
+import LoggingGooglePubsubAllOf from './LoggingGooglePubsubAllOf';
+import LoggingPlacement from './LoggingPlacement';
 
 /**
  * The LoggingGooglePubsub model module.
@@ -27,12 +27,8 @@ class LoggingGooglePubsub {
     /**
      * Constructs a new <code>LoggingGooglePubsub</code>.
      * @alias module:model/LoggingGooglePubsub
-     * @implements module:model/LoggingCommon
-     * @implements module:model/LoggingGcsCommon
-     * @implements module:model/LoggingGooglePubsubAllOf
      */
     constructor() { 
-        LoggingCommon.initialize(this);LoggingGcsCommon.initialize(this);LoggingGooglePubsubAllOf.initialize(this);
         LoggingGooglePubsub.initialize(this);
     }
 
@@ -54,9 +50,6 @@ class LoggingGooglePubsub {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingGooglePubsub();
-            LoggingCommon.constructFromObject(data, obj);
-            LoggingGcsCommon.constructFromObject(data, obj);
-            LoggingGooglePubsubAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
@@ -146,59 +139,6 @@ LoggingGooglePubsub.prototype['project_id'] = undefined;
 LoggingGooglePubsub.prototype['topic'] = undefined;
 
 
-// Implement LoggingCommon interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingCommon.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingCommon.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingCommon.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingCommon.prototype['response_condition'] = undefined;
-// Implement LoggingGcsCommon interface:
-/**
- * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
- * @member {String} secret_key
- */
-LoggingGcsCommon.prototype['secret_key'] = undefined;
-/**
- * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
- * @member {String} user
- */
-LoggingGcsCommon.prototype['user'] = undefined;
-// Implement LoggingGooglePubsubAllOf interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingGooglePubsubAllOf.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * Your Google Cloud Platform project ID. Required
- * @member {String} project_id
- */
-LoggingGooglePubsubAllOf.prototype['project_id'] = undefined;
-/**
- * The Google Cloud Pub/Sub topic to which logs will be published. Required.
- * @member {String} topic
- */
-LoggingGooglePubsubAllOf.prototype['topic'] = undefined;
 
 
 

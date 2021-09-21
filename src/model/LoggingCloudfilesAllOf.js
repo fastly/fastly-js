@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The LoggingCloudfilesAllOf model module.
@@ -24,7 +24,6 @@ class LoggingCloudfilesAllOf {
      * @alias module:model/LoggingCloudfilesAllOf
      */
     constructor() { 
-        
         LoggingCloudfilesAllOf.initialize(this);
     }
 

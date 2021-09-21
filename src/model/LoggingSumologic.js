@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingCommon from './LoggingCommon.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingMessageType from './LoggingMessageType.js';
-import LoggingPlacement from './LoggingPlacement.js';
-import LoggingSumologicAllOf from './LoggingSumologicAllOf.js';
+import ApiClient from '../ApiClient';
+import LoggingCommon from './LoggingCommon';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingMessageType from './LoggingMessageType';
+import LoggingPlacement from './LoggingPlacement';
+import LoggingSumologicAllOf from './LoggingSumologicAllOf';
 
 /**
  * The LoggingSumologic model module.
@@ -27,11 +27,8 @@ class LoggingSumologic {
     /**
      * Constructs a new <code>LoggingSumologic</code>.
      * @alias module:model/LoggingSumologic
-     * @implements module:model/LoggingCommon
-     * @implements module:model/LoggingSumologicAllOf
      */
     constructor() { 
-        LoggingCommon.initialize(this);LoggingSumologicAllOf.initialize(this);
         LoggingSumologic.initialize(this);
     }
 
@@ -53,8 +50,6 @@ class LoggingSumologic {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingSumologic();
-            LoggingCommon.constructFromObject(data, obj);
-            LoggingSumologicAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
@@ -125,41 +120,6 @@ LoggingSumologic.prototype['message_type'] = undefined;
 LoggingSumologic.prototype['url'] = undefined;
 
 
-// Implement LoggingCommon interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingCommon.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingCommon.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingCommon.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingCommon.prototype['response_condition'] = undefined;
-// Implement LoggingSumologicAllOf interface:
-/**
- * @member {module:model/LoggingMessageType} message_type
- */
-LoggingSumologicAllOf.prototype['message_type'] = undefined;
-/**
- * The URL to post logs to.
- * @member {String} url
- */
-LoggingSumologicAllOf.prototype['url'] = undefined;
 
 
 

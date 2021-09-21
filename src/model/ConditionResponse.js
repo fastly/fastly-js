@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Condition from './Condition.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import Condition from './Condition';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
 
 /**
  * The ConditionResponse model module.
@@ -25,12 +25,8 @@ class ConditionResponse {
     /**
      * Constructs a new <code>ConditionResponse</code>.
      * @alias module:model/ConditionResponse
-     * @implements module:model/Condition
-     * @implements module:model/ServiceIdAndVersion
-     * @implements module:model/Timestamps
      */
     constructor() { 
-        Condition.initialize(this);ServiceIdAndVersion.initialize(this);Timestamps.initialize(this);
         ConditionResponse.initialize(this);
     }
 
@@ -52,9 +48,6 @@ class ConditionResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ConditionResponse();
-            Condition.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
@@ -155,60 +148,6 @@ ConditionResponse.prototype['deleted_at'] = undefined;
 ConditionResponse.prototype['updated_at'] = undefined;
 
 
-// Implement Condition interface:
-/**
- * A freeform descriptive note.
- * @member {String} comment
- */
-Condition.prototype['comment'] = undefined;
-/**
- * Name of the condition. Required.
- * @member {String} name
- */
-Condition.prototype['name'] = undefined;
-/**
- * Priority determines execution order. Lower numbers execute first.
- * @member {Number} priority
- * @default 100
- */
-Condition.prototype['priority'] = 100;
-/**
- * A conditional expression in VCL used to determine if the condition is met.
- * @member {String} statement
- */
-Condition.prototype['statement'] = undefined;
-/**
- * Type of the condition. Required.
- * @member {module:model/Condition.TypeEnum} type
- */
-Condition.prototype['type'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
 
 
 

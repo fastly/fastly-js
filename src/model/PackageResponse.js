@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Package from './Package.js';
-import PackageMetadata from './PackageMetadata.js';
-import PackageResponseAllOf from './PackageResponseAllOf.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import Package from './Package';
+import PackageMetadata from './PackageMetadata';
+import PackageResponseAllOf from './PackageResponseAllOf';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
 
 /**
  * The PackageResponse model module.
@@ -27,13 +27,8 @@ class PackageResponse {
     /**
      * Constructs a new <code>PackageResponse</code>.
      * @alias module:model/PackageResponse
-     * @implements module:model/Package
-     * @implements module:model/ServiceIdAndVersion
-     * @implements module:model/Timestamps
-     * @implements module:model/PackageResponseAllOf
      */
     constructor() { 
-        Package.initialize(this);ServiceIdAndVersion.initialize(this);Timestamps.initialize(this);PackageResponseAllOf.initialize(this);
         PackageResponse.initialize(this);
     }
 
@@ -55,10 +50,6 @@ class PackageResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PackageResponse();
-            Package.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
-            PackageResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('metadata')) {
                 obj['metadata'] = PackageMetadata.constructFromObject(data['metadata']);
@@ -130,44 +121,6 @@ PackageResponse.prototype['updated_at'] = undefined;
 PackageResponse.prototype['id'] = undefined;
 
 
-// Implement Package interface:
-/**
- * @member {module:model/PackageMetadata} metadata
- */
-Package.prototype['metadata'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
-// Implement PackageResponseAllOf interface:
-/**
- * Alphanumeric string identifying the package.
- * @member {String} id
- */
-PackageResponseAllOf.prototype['id'] = undefined;
 
 
 

@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingUseTls from './LoggingUseTls.js';
+import ApiClient from '../ApiClient';
+import LoggingUseTls from './LoggingUseTls';
 
 /**
  * The LoggingLogentriesAllOf model module.
@@ -25,7 +25,6 @@ class LoggingLogentriesAllOf {
      * @alias module:model/LoggingLogentriesAllOf
      */
     constructor() { 
-        
         LoggingLogentriesAllOf.initialize(this);
     }
 

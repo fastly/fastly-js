@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import CacheSetting from './CacheSetting.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import CacheSetting from './CacheSetting';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
 
 /**
  * The CacheSettingResponse model module.
@@ -25,12 +25,8 @@ class CacheSettingResponse {
     /**
      * Constructs a new <code>CacheSettingResponse</code>.
      * @alias module:model/CacheSettingResponse
-     * @implements module:model/CacheSetting
-     * @implements module:model/ServiceIdAndVersion
-     * @implements module:model/Timestamps
      */
     constructor() { 
-        CacheSetting.initialize(this);ServiceIdAndVersion.initialize(this);Timestamps.initialize(this);
         CacheSettingResponse.initialize(this);
     }
 
@@ -52,9 +48,6 @@ class CacheSettingResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new CacheSettingResponse();
-            CacheSetting.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('action')) {
                 obj['action'] = ApiClient.convertToType(data['action'], 'String');
@@ -154,59 +147,6 @@ CacheSettingResponse.prototype['deleted_at'] = undefined;
 CacheSettingResponse.prototype['updated_at'] = undefined;
 
 
-// Implement CacheSetting interface:
-/**
- * If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule. 
- * @member {module:model/CacheSetting.ActionEnum} action
- */
-CacheSetting.prototype['action'] = undefined;
-/**
- * Name of the cache condition controlling when this configuration applies.
- * @member {String} cache_condition
- */
-CacheSetting.prototype['cache_condition'] = undefined;
-/**
- * Name for the cache settings object.
- * @member {String} name
- */
-CacheSetting.prototype['name'] = undefined;
-/**
- * Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as 'stale if error').
- * @member {Number} stale_ttl
- */
-CacheSetting.prototype['stale_ttl'] = undefined;
-/**
- * Maximum time to consider the object fresh in the cache (the cache 'time to live').
- * @member {Number} ttl
- */
-CacheSetting.prototype['ttl'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
 
 
 

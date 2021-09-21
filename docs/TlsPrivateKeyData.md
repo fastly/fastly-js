@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **attributes** | [**TlsPrivateKeyDataAttributes**](TlsPrivateKeyDataAttributes.md) |  | [optional] 
-**relationships** | [**AnyOfrelationshipTlsActivationsobject**](AnyOfrelationshipTlsActivationsobject.md) |  | [optional] 
+**relationships** | [**RelationshipsForTlsPrivateKey**](RelationshipsForTlsPrivateKey.md) |  | [optional] 
 **type** | [**TypeTlsPrivateKey**](TypeTlsPrivateKey.md) |  | [optional] 
 
 

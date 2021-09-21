@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Data from './Data.js';
+import ApiClient from '../ApiClient';
+import TlsActivationResponseData from './TlsActivationResponseData';
 
 /**
  * The TlsActivationResponse model module.
@@ -25,7 +25,6 @@ class TlsActivationResponse {
      * @alias module:model/TlsActivationResponse
      */
     constructor() { 
-        
         TlsActivationResponse.initialize(this);
     }
 
@@ -49,7 +48,7 @@ class TlsActivationResponse {
             obj = obj || new TlsActivationResponse();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], Data);
+                obj['data'] = TlsActivationResponseData.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -59,7 +58,7 @@ class TlsActivationResponse {
 }
 
 /**
- * @member {module:model/Data} data
+ * @member {module:model/TlsActivationResponseData} data
  */
 TlsActivationResponse.prototype['data'] = undefined;
 

@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingPapertrail from './LoggingPapertrail.js';
-import LoggingPlacement from './LoggingPlacement.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingPapertrail from './LoggingPapertrail';
+import LoggingPlacement from './LoggingPlacement';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
 
 /**
  * The LoggingPapertrailResponse model module.
@@ -27,12 +27,8 @@ class LoggingPapertrailResponse {
     /**
      * Constructs a new <code>LoggingPapertrailResponse</code>.
      * @alias module:model/LoggingPapertrailResponse
-     * @implements module:model/LoggingPapertrail
-     * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
      */
     constructor() { 
-        LoggingPapertrail.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
         LoggingPapertrailResponse.initialize(this);
     }
 
@@ -54,9 +50,6 @@ class LoggingPapertrailResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingPapertrailResponse();
-            LoggingPapertrail.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
@@ -174,69 +167,6 @@ LoggingPapertrailResponse.prototype['service_id'] = undefined;
 LoggingPapertrailResponse.prototype['version'] = undefined;
 
 
-// Implement LoggingPapertrail interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingPapertrail.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingPapertrail.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingPapertrail.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingPapertrail.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingPapertrail.prototype['response_condition'] = undefined;
-/**
- * A hostname or IPv4 address.
- * @member {String} address
- */
-LoggingPapertrail.prototype['address'] = undefined;
-/**
- * The port number.
- * @member {Number} port
- * @default 514
- */
-LoggingPapertrail.prototype['port'] = 514;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
 
 
 

@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingPlacement from './LoggingPlacement.js';
-import LoggingScalyr from './LoggingScalyr.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingPlacement from './LoggingPlacement';
+import LoggingScalyr from './LoggingScalyr';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
 
 /**
  * The LoggingScalyrResponse model module.
@@ -27,12 +27,8 @@ class LoggingScalyrResponse {
     /**
      * Constructs a new <code>LoggingScalyrResponse</code>.
      * @alias module:model/LoggingScalyrResponse
-     * @implements module:model/LoggingScalyr
-     * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
      */
     constructor() { 
-        LoggingScalyr.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
         LoggingScalyrResponse.initialize(this);
     }
 
@@ -54,9 +50,6 @@ class LoggingScalyrResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingScalyrResponse();
-            LoggingScalyr.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
@@ -184,75 +177,6 @@ LoggingScalyrResponse.prototype['service_id'] = undefined;
 LoggingScalyrResponse.prototype['version'] = undefined;
 
 
-// Implement LoggingScalyr interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingScalyr.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingScalyr.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingScalyr.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingScalyr.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingScalyr.prototype['response_condition'] = undefined;
-/**
- * The name of the logfile within Scalyr.
- * @member {String} project_id
- * @default 'logplex'
- */
-LoggingScalyr.prototype['project_id'] = 'logplex';
-/**
- * The region that log data will be sent to.
- * @member {module:model/LoggingScalyr.RegionEnum} region
- * @default 'US'
- */
-LoggingScalyr.prototype['region'] = undefined;
-/**
- * The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)).
- * @member {String} token
- */
-LoggingScalyr.prototype['token'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
 
 
 

@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The CustomerResponseAllOf model module.
@@ -24,7 +24,6 @@ class CustomerResponseAllOf {
      * @alias module:model/CustomerResponseAllOf
      */
     constructor() { 
-        
         CustomerResponseAllOf.initialize(this);
     }
 

@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Data from './Data.js';
-import Pagination from './Pagination.js';
-import PaginationLinks from './PaginationLinks.js';
-import PaginationMeta from './PaginationMeta.js';
-import TlsActivationsResponseAllOf from './TlsActivationsResponseAllOf.js';
+import ApiClient from '../ApiClient';
+import Pagination from './Pagination';
+import PaginationLinks from './PaginationLinks';
+import PaginationMeta from './PaginationMeta';
+import TlsActivationResponseData from './TlsActivationResponseData';
+import TlsActivationsResponseAllOf from './TlsActivationsResponseAllOf';
 
 /**
  * The TlsActivationsResponse model module.
@@ -27,11 +27,8 @@ class TlsActivationsResponse {
     /**
      * Constructs a new <code>TlsActivationsResponse</code>.
      * @alias module:model/TlsActivationsResponse
-     * @implements module:model/Pagination
-     * @implements module:model/TlsActivationsResponseAllOf
      */
     constructor() { 
-        Pagination.initialize(this);TlsActivationsResponseAllOf.initialize(this);
         TlsActivationsResponse.initialize(this);
     }
 
@@ -53,8 +50,6 @@ class TlsActivationsResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsActivationsResponse();
-            Pagination.constructFromObject(data, obj);
-            TlsActivationsResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('links')) {
                 obj['links'] = PaginationLinks.constructFromObject(data['links']);
@@ -63,7 +58,7 @@ class TlsActivationsResponse {
                 obj['meta'] = PaginationMeta.constructFromObject(data['meta']);
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Data]);
+                obj['data'] = ApiClient.convertToType(data['data'], [TlsActivationResponseData]);
             }
         }
         return obj;
@@ -83,25 +78,11 @@ TlsActivationsResponse.prototype['links'] = undefined;
 TlsActivationsResponse.prototype['meta'] = undefined;
 
 /**
- * @member {Array.<module:model/Data>} data
+ * @member {Array.<module:model/TlsActivationResponseData>} data
  */
 TlsActivationsResponse.prototype['data'] = undefined;
 
 
-// Implement Pagination interface:
-/**
- * @member {module:model/PaginationLinks} links
- */
-Pagination.prototype['links'] = undefined;
-/**
- * @member {module:model/PaginationMeta} meta
- */
-Pagination.prototype['meta'] = undefined;
-// Implement TlsActivationsResponseAllOf interface:
-/**
- * @member {Array.<module:model/Data>} data
- */
-TlsActivationsResponseAllOf.prototype['data'] = undefined;
 
 
 

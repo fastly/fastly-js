@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The ServiceInvitationDataAttributes model module.
@@ -24,7 +24,6 @@ class ServiceInvitationDataAttributes {
      * @alias module:model/ServiceInvitationDataAttributes
      */
     constructor() { 
-        
         ServiceInvitationDataAttributes.initialize(this);
     }
 

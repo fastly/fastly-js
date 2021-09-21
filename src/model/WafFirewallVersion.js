@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import SchemasWafFirewallVersionData from './SchemasWafFirewallVersionData.js';
+import ApiClient from '../ApiClient';
+import WafFirewallVersionData from './WafFirewallVersionData';
 
 /**
  * The WafFirewallVersion model module.
@@ -25,7 +25,6 @@ class WafFirewallVersion {
      * @alias module:model/WafFirewallVersion
      */
     constructor() { 
-        
         WafFirewallVersion.initialize(this);
     }
 
@@ -49,7 +48,7 @@ class WafFirewallVersion {
             obj = obj || new WafFirewallVersion();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = SchemasWafFirewallVersionData.constructFromObject(data['data']);
+                obj['data'] = WafFirewallVersionData.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -59,7 +58,7 @@ class WafFirewallVersion {
 }
 
 /**
- * @member {module:model/SchemasWafFirewallVersionData} data
+ * @member {module:model/WafFirewallVersionData} data
  */
 WafFirewallVersion.prototype['data'] = undefined;
 

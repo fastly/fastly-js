@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Service from './Service.js';
-import ServiceCreateAllOf from './ServiceCreateAllOf.js';
+import ApiClient from '../ApiClient';
+import Service from './Service';
+import ServiceCreateAllOf from './ServiceCreateAllOf';
 
 /**
  * The ServiceCreate model module.
@@ -24,11 +24,8 @@ class ServiceCreate {
     /**
      * Constructs a new <code>ServiceCreate</code>.
      * @alias module:model/ServiceCreate
-     * @implements module:model/Service
-     * @implements module:model/ServiceCreateAllOf
      */
     constructor() { 
-        Service.initialize(this);ServiceCreateAllOf.initialize(this);
         ServiceCreate.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class ServiceCreate {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ServiceCreate();
-            Service.constructFromObject(data, obj);
-            ServiceCreateAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
@@ -97,28 +92,6 @@ ServiceCreate.prototype['name'] = undefined;
 ServiceCreate.prototype['type'] = undefined;
 
 
-// Implement Service interface:
-/**
- * A freeform descriptive note.
- * @member {String} comment
- */
-Service.prototype['comment'] = undefined;
-/**
- * Alphanumeric string identifying the customer.
- * @member {String} customer_id
- */
-Service.prototype['customer_id'] = undefined;
-/**
- * The name of the service.
- * @member {String} name
- */
-Service.prototype['name'] = undefined;
-// Implement ServiceCreateAllOf interface:
-/**
- * The type of this service.
- * @member {module:model/ServiceCreateAllOf.TypeEnum} type
- */
-ServiceCreateAllOf.prototype['type'] = undefined;
 
 
 

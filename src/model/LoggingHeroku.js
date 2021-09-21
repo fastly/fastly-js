@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingCommon from './LoggingCommon.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingHerokuAllOf from './LoggingHerokuAllOf.js';
-import LoggingPlacement from './LoggingPlacement.js';
+import ApiClient from '../ApiClient';
+import LoggingCommon from './LoggingCommon';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingHerokuAllOf from './LoggingHerokuAllOf';
+import LoggingPlacement from './LoggingPlacement';
 
 /**
  * The LoggingHeroku model module.
@@ -26,11 +26,8 @@ class LoggingHeroku {
     /**
      * Constructs a new <code>LoggingHeroku</code>.
      * @alias module:model/LoggingHeroku
-     * @implements module:model/LoggingCommon
-     * @implements module:model/LoggingHerokuAllOf
      */
     constructor() { 
-        LoggingCommon.initialize(this);LoggingHerokuAllOf.initialize(this);
         LoggingHeroku.initialize(this);
     }
 
@@ -52,8 +49,6 @@ class LoggingHeroku {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingHeroku();
-            LoggingCommon.constructFromObject(data, obj);
-            LoggingHerokuAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
@@ -125,42 +120,6 @@ LoggingHeroku.prototype['token'] = undefined;
 LoggingHeroku.prototype['url'] = undefined;
 
 
-// Implement LoggingCommon interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingCommon.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingCommon.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingCommon.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingCommon.prototype['response_condition'] = undefined;
-// Implement LoggingHerokuAllOf interface:
-/**
- * The token to use for authentication ([https://devcenter.heroku.com/articles/add-on-partner-log-integration](https://devcenter.heroku.com/articles/add-on-partner-log-integration)).
- * @member {String} token
- */
-LoggingHerokuAllOf.prototype['token'] = undefined;
-/**
- * The URL to stream logs to.
- * @member {String} url
- */
-LoggingHerokuAllOf.prototype['url'] = undefined;
 
 
 

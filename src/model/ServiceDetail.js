@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import NestedVersion from './NestedVersion.js';
-import SchemasVersionResponse from './SchemasVersionResponse.js';
-import ServiceDetailAllOf from './ServiceDetailAllOf.js';
-import ServiceResponse from './ServiceResponse.js';
+import ApiClient from '../ApiClient';
+import NestedVersion from './NestedVersion';
+import SchemasVersionResponse from './SchemasVersionResponse';
+import ServiceDetailAllOf from './ServiceDetailAllOf';
+import ServiceResponse from './ServiceResponse';
 
 /**
  * The ServiceDetail model module.
@@ -26,11 +26,8 @@ class ServiceDetail {
     /**
      * Constructs a new <code>ServiceDetail</code>.
      * @alias module:model/ServiceDetail
-     * @implements module:model/ServiceResponse
-     * @implements module:model/ServiceDetailAllOf
      */
     constructor() { 
-        ServiceResponse.initialize(this);ServiceDetailAllOf.initialize(this);
         ServiceDetail.initialize(this);
     }
 
@@ -52,8 +49,6 @@ class ServiceDetail {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ServiceDetail();
-            ServiceResponse.constructFromObject(data, obj);
-            ServiceDetailAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
@@ -178,76 +173,6 @@ ServiceDetail.prototype['versions'] = undefined;
 ServiceDetail.prototype['active_version'] = undefined;
 
 
-// Implement ServiceResponse interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-ServiceResponse.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-ServiceResponse.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-ServiceResponse.prototype['updated_at'] = undefined;
-/**
- * A freeform descriptive note.
- * @member {String} comment
- */
-ServiceResponse.prototype['comment'] = undefined;
-/**
- * Alphanumeric string identifying the customer.
- * @member {String} customer_id
- */
-ServiceResponse.prototype['customer_id'] = undefined;
-/**
- * The name of the service.
- * @member {String} name
- */
-ServiceResponse.prototype['name'] = undefined;
-/**
- * The type of this service.
- * @member {module:model/ServiceResponse.TypeEnum} type
- */
-ServiceResponse.prototype['type'] = undefined;
-/**
- * Alphanumeric string identifying the service.
- * @member {String} id
- */
-ServiceResponse.prototype['id'] = undefined;
-/**
- * Whether the service is paused. Services are paused due to a lack of traffic for an extended period of time. Services are resumed either when a draft version is activated or a locked version is cloned and reactivated.
- * @member {Boolean} paused
- */
-ServiceResponse.prototype['paused'] = undefined;
-/**
- * Unused at this time.
- * @member {String} publish_key
- */
-ServiceResponse.prototype['publish_key'] = undefined;
-/**
- * Current [version](/reference/api/services/version/) of the service.
- * @member {Number} version
- */
-ServiceResponse.prototype['version'] = undefined;
-/**
- * A list of [versions](/reference/api/services/version/) associated with the service.
- * @member {Array.<module:model/SchemasVersionResponse>} versions
- */
-ServiceResponse.prototype['versions'] = undefined;
-// Implement ServiceDetailAllOf interface:
-/**
- * @member {module:model/NestedVersion} active_version
- */
-ServiceDetailAllOf.prototype['active_version'] = undefined;
-/**
- * @member {module:model/NestedVersion} version
- */
-ServiceDetailAllOf.prototype['version'] = undefined;
 
 
 

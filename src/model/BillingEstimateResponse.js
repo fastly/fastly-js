@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Billing from './Billing.js';
-import BillingEstimateResponseAllOf from './BillingEstimateResponseAllOf.js';
-import BillingEstimateResponseAllOfLines from './BillingEstimateResponseAllOfLines.js';
-import BillingStatus from './BillingStatus.js';
-import BillingTotal from './BillingTotal.js';
+import ApiClient from '../ApiClient';
+import Billing from './Billing';
+import BillingEstimateResponseAllOf from './BillingEstimateResponseAllOf';
+import BillingEstimateResponseAllOfLines from './BillingEstimateResponseAllOfLines';
+import BillingStatus from './BillingStatus';
+import BillingTotal from './BillingTotal';
 
 /**
  * The BillingEstimateResponse model module.
@@ -27,11 +27,8 @@ class BillingEstimateResponse {
     /**
      * Constructs a new <code>BillingEstimateResponse</code>.
      * @alias module:model/BillingEstimateResponse
-     * @implements module:model/Billing
-     * @implements module:model/BillingEstimateResponseAllOf
      */
     constructor() { 
-        Billing.initialize(this);BillingEstimateResponseAllOf.initialize(this);
         BillingEstimateResponse.initialize(this);
     }
 
@@ -53,8 +50,6 @@ class BillingEstimateResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new BillingEstimateResponse();
-            Billing.constructFromObject(data, obj);
-            BillingEstimateResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('customer_id')) {
                 obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
@@ -132,44 +127,6 @@ BillingEstimateResponse.prototype['total'] = undefined;
 BillingEstimateResponse.prototype['lines'] = undefined;
 
 
-// Implement Billing interface:
-/**
- * Alphanumeric string identifying the customer.
- * @member {String} customer_id
- */
-Billing.prototype['customer_id'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} end_time
- */
-Billing.prototype['end_time'] = undefined;
-/**
- * Alphanumeric string identifying the invoice.
- * @member {String} invoice_id
- */
-Billing.prototype['invoice_id'] = undefined;
-/**
- * @member {Object.<String, Object.<String, Object>>} regions
- */
-Billing.prototype['regions'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} start_time
- */
-Billing.prototype['start_time'] = undefined;
-/**
- * @member {module:model/BillingStatus} status
- */
-Billing.prototype['status'] = undefined;
-/**
- * @member {module:model/BillingTotal} total
- */
-Billing.prototype['total'] = undefined;
-// Implement BillingEstimateResponseAllOf interface:
-/**
- * @member {Array.<module:model/BillingEstimateResponseAllOfLines>} lines
- */
-BillingEstimateResponseAllOf.prototype['lines'] = undefined;
 
 
 

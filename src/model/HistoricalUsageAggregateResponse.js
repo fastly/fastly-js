@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Historical from './Historical.js';
-import HistoricalMeta from './HistoricalMeta.js';
-import HistoricalUsageAggregateResponseAllOf from './HistoricalUsageAggregateResponseAllOf.js';
+import ApiClient from '../ApiClient';
+import Historical from './Historical';
+import HistoricalMeta from './HistoricalMeta';
+import HistoricalUsageAggregateResponseAllOf from './HistoricalUsageAggregateResponseAllOf';
 
 /**
  * The HistoricalUsageAggregateResponse model module.
@@ -25,11 +25,8 @@ class HistoricalUsageAggregateResponse {
     /**
      * Constructs a new <code>HistoricalUsageAggregateResponse</code>.
      * @alias module:model/HistoricalUsageAggregateResponse
-     * @implements module:model/Historical
-     * @implements module:model/HistoricalUsageAggregateResponseAllOf
      */
     constructor() { 
-        Historical.initialize(this);HistoricalUsageAggregateResponseAllOf.initialize(this);
         HistoricalUsageAggregateResponse.initialize(this);
     }
 
@@ -51,8 +48,6 @@ class HistoricalUsageAggregateResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new HistoricalUsageAggregateResponse();
-            Historical.constructFromObject(data, obj);
-            HistoricalUsageAggregateResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('meta')) {
                 obj['meta'] = HistoricalMeta.constructFromObject(data['meta']);
@@ -96,26 +91,6 @@ HistoricalUsageAggregateResponse.prototype['status'] = undefined;
 HistoricalUsageAggregateResponse.prototype['data'] = undefined;
 
 
-// Implement Historical interface:
-/**
- * @member {module:model/HistoricalMeta} meta
- */
-Historical.prototype['meta'] = undefined;
-/**
- * If the query was not successful, this will provide a string that explains why.
- * @member {String} msg
- */
-Historical.prototype['msg'] = undefined;
-/**
- * Whether or not we were able to successfully execute the query.
- * @member {String} status
- */
-Historical.prototype['status'] = undefined;
-// Implement HistoricalUsageAggregateResponseAllOf interface:
-/**
- * @member {Object.<String, Object>} data
- */
-HistoricalUsageAggregateResponseAllOf.prototype['data'] = undefined;
 
 
 

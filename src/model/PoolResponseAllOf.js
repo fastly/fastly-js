@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The PoolResponseAllOf model module.
@@ -24,7 +24,6 @@ class PoolResponseAllOf {
      * @alias module:model/PoolResponseAllOf
      */
     constructor() { 
-        
         PoolResponseAllOf.initialize(this);
     }
 

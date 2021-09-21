@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingCommon from './LoggingCommon.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingLogshuttleAllOf from './LoggingLogshuttleAllOf.js';
-import LoggingPlacement from './LoggingPlacement.js';
+import ApiClient from '../ApiClient';
+import LoggingCommon from './LoggingCommon';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingLogshuttleAllOf from './LoggingLogshuttleAllOf';
+import LoggingPlacement from './LoggingPlacement';
 
 /**
  * The LoggingLogshuttle model module.
@@ -26,11 +26,8 @@ class LoggingLogshuttle {
     /**
      * Constructs a new <code>LoggingLogshuttle</code>.
      * @alias module:model/LoggingLogshuttle
-     * @implements module:model/LoggingCommon
-     * @implements module:model/LoggingLogshuttleAllOf
      */
     constructor() { 
-        LoggingCommon.initialize(this);LoggingLogshuttleAllOf.initialize(this);
         LoggingLogshuttle.initialize(this);
     }
 
@@ -52,8 +49,6 @@ class LoggingLogshuttle {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingLogshuttle();
-            LoggingCommon.constructFromObject(data, obj);
-            LoggingLogshuttleAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
@@ -125,42 +120,6 @@ LoggingLogshuttle.prototype['token'] = undefined;
 LoggingLogshuttle.prototype['url'] = undefined;
 
 
-// Implement LoggingCommon interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingCommon.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingCommon.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingCommon.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingCommon.prototype['response_condition'] = undefined;
-// Implement LoggingLogshuttleAllOf interface:
-/**
- * The data authentication token associated with this endpoint.
- * @member {String} token
- */
-LoggingLogshuttleAllOf.prototype['token'] = undefined;
-/**
- * The URL to stream logs to.
- * @member {String} url
- */
-LoggingLogshuttleAllOf.prototype['url'] = undefined;
 
 
 

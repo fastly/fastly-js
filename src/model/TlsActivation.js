@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import TlsActivationData from './TlsActivationData.js';
+import ApiClient from '../ApiClient';
+import TlsActivationData from './TlsActivationData';
 
 /**
  * The TlsActivation model module.
@@ -25,7 +25,6 @@ class TlsActivation {
      * @alias module:model/TlsActivation
      */
     constructor() { 
-        
         TlsActivation.initialize(this);
     }
 

@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import TypeTlsDomain from './TypeTlsDomain.js';
+import ApiClient from '../ApiClient';
+import TypeTlsDomain from './TypeTlsDomain';
 
 /**
  * The RelationshipMemberTlsDomain model module.
@@ -25,7 +25,6 @@ class RelationshipMemberTlsDomain {
      * @alias module:model/RelationshipMemberTlsDomain
      */
     constructor() { 
-        
         RelationshipMemberTlsDomain.initialize(this);
     }
 

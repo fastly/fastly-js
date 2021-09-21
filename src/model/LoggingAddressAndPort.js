@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The LoggingAddressAndPort model module.
@@ -24,7 +24,6 @@ class LoggingAddressAndPort {
      * @alias module:model/LoggingAddressAndPort
      */
     constructor() { 
-        
         LoggingAddressAndPort.initialize(this);
     }
 

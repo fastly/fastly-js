@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Historical from './Historical.js';
-import HistoricalFieldResponseAllOf from './HistoricalFieldResponseAllOf.js';
-import HistoricalMeta from './HistoricalMeta.js';
+import ApiClient from '../ApiClient';
+import Historical from './Historical';
+import HistoricalFieldResponseAllOf from './HistoricalFieldResponseAllOf';
+import HistoricalMeta from './HistoricalMeta';
 
 /**
  * The HistoricalFieldResponse model module.
@@ -25,11 +25,8 @@ class HistoricalFieldResponse {
     /**
      * Constructs a new <code>HistoricalFieldResponse</code>.
      * @alias module:model/HistoricalFieldResponse
-     * @implements module:model/Historical
-     * @implements module:model/HistoricalFieldResponseAllOf
      */
     constructor() { 
-        Historical.initialize(this);HistoricalFieldResponseAllOf.initialize(this);
         HistoricalFieldResponse.initialize(this);
     }
 
@@ -51,8 +48,6 @@ class HistoricalFieldResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new HistoricalFieldResponse();
-            Historical.constructFromObject(data, obj);
-            HistoricalFieldResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('meta')) {
                 obj['meta'] = HistoricalMeta.constructFromObject(data['meta']);
@@ -96,26 +91,6 @@ HistoricalFieldResponse.prototype['status'] = undefined;
 HistoricalFieldResponse.prototype['data'] = undefined;
 
 
-// Implement Historical interface:
-/**
- * @member {module:model/HistoricalMeta} meta
- */
-Historical.prototype['meta'] = undefined;
-/**
- * If the query was not successful, this will provide a string that explains why.
- * @member {String} msg
- */
-Historical.prototype['msg'] = undefined;
-/**
- * Whether or not we were able to successfully execute the query.
- * @member {String} status
- */
-Historical.prototype['status'] = undefined;
-// Implement HistoricalFieldResponseAllOf interface:
-/**
- * @member {Object.<String, Array.<Object.<String, String>>>} data
- */
-HistoricalFieldResponseAllOf.prototype['data'] = undefined;
 
 
 

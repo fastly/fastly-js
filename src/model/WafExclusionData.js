@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import AnyOfrelationshipWafRulesrelationshipWafRuleRevisions from './AnyOfrelationshipWafRulesrelationshipWafRuleRevisions.js';
-import TypeWafExclusion from './TypeWafExclusion.js';
-import WafExclusionDataAttributes from './WafExclusionDataAttributes.js';
+import ApiClient from '../ApiClient';
+import RelationshipsForWafExclusion from './RelationshipsForWafExclusion';
+import TypeWafExclusion from './TypeWafExclusion';
+import WafExclusionDataAttributes from './WafExclusionDataAttributes';
 
 /**
  * The WafExclusionData model module.
@@ -27,7 +27,6 @@ class WafExclusionData {
      * @alias module:model/WafExclusionData
      */
     constructor() { 
-        
         WafExclusionData.initialize(this);
     }
 
@@ -54,7 +53,7 @@ class WafExclusionData {
                 obj['attributes'] = WafExclusionDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = ApiClient.convertToType(data['relationships'], AnyOfrelationshipWafRulesrelationshipWafRuleRevisions);
+                obj['relationships'] = RelationshipsForWafExclusion.constructFromObject(data['relationships']);
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeWafExclusion.constructFromObject(data['type']);
@@ -72,7 +71,7 @@ class WafExclusionData {
 WafExclusionData.prototype['attributes'] = undefined;
 
 /**
- * @member {module:model/AnyOfrelationshipWafRulesrelationshipWafRuleRevisions} relationships
+ * @member {module:model/RelationshipsForWafExclusion} relationships
  */
 WafExclusionData.prototype['relationships'] = undefined;
 

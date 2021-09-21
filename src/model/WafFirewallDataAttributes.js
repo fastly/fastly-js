@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The WafFirewallDataAttributes model module.
@@ -24,7 +24,6 @@ class WafFirewallDataAttributes {
      * @alias module:model/WafFirewallDataAttributes
      */
     constructor() { 
-        
         WafFirewallDataAttributes.initialize(this);
     }
 

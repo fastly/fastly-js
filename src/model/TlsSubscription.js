@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import TlsSubscriptionData from './TlsSubscriptionData.js';
+import ApiClient from '../ApiClient';
+import TlsSubscriptionData from './TlsSubscriptionData';
 
 /**
  * The TlsSubscription model module.
@@ -25,7 +25,6 @@ class TlsSubscription {
      * @alias module:model/TlsSubscription
      */
     constructor() { 
-        
         TlsSubscription.initialize(this);
     }
 

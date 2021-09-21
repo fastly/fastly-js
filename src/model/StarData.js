@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import RelationshipUser from './RelationshipUser.js';
-import TypeStar from './TypeStar.js';
+import ApiClient from '../ApiClient';
+import RelationshipUser from './RelationshipUser';
+import TypeStar from './TypeStar';
 
 /**
  * The StarData model module.
@@ -26,7 +26,6 @@ class StarData {
      * @alias module:model/StarData
      */
     constructor() { 
-        
         StarData.initialize(this);
     }
 

@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Historical from './Historical.js';
-import HistoricalMeta from './HistoricalMeta.js';
-import HistoricalUsageServiceResponseAllOf from './HistoricalUsageServiceResponseAllOf.js';
+import ApiClient from '../ApiClient';
+import Historical from './Historical';
+import HistoricalMeta from './HistoricalMeta';
+import HistoricalUsageServiceResponseAllOf from './HistoricalUsageServiceResponseAllOf';
 
 /**
  * The HistoricalUsageServiceResponse model module.
@@ -25,11 +25,8 @@ class HistoricalUsageServiceResponse {
     /**
      * Constructs a new <code>HistoricalUsageServiceResponse</code>.
      * @alias module:model/HistoricalUsageServiceResponse
-     * @implements module:model/Historical
-     * @implements module:model/HistoricalUsageServiceResponseAllOf
      */
     constructor() { 
-        Historical.initialize(this);HistoricalUsageServiceResponseAllOf.initialize(this);
         HistoricalUsageServiceResponse.initialize(this);
     }
 
@@ -51,8 +48,6 @@ class HistoricalUsageServiceResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new HistoricalUsageServiceResponse();
-            Historical.constructFromObject(data, obj);
-            HistoricalUsageServiceResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('meta')) {
                 obj['meta'] = HistoricalMeta.constructFromObject(data['meta']);
@@ -96,26 +91,6 @@ HistoricalUsageServiceResponse.prototype['status'] = undefined;
 HistoricalUsageServiceResponse.prototype['data'] = undefined;
 
 
-// Implement Historical interface:
-/**
- * @member {module:model/HistoricalMeta} meta
- */
-Historical.prototype['meta'] = undefined;
-/**
- * If the query was not successful, this will provide a string that explains why.
- * @member {String} msg
- */
-Historical.prototype['msg'] = undefined;
-/**
- * Whether or not we were able to successfully execute the query.
- * @member {String} status
- */
-Historical.prototype['status'] = undefined;
-// Implement HistoricalUsageServiceResponseAllOf interface:
-/**
- * @member {Object.<String, Object.<String, Object>>} data
- */
-HistoricalUsageServiceResponseAllOf.prototype['data'] = undefined;
 
 
 

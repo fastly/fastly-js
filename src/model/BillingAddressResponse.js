@@ -11,8 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Data from './Data.js';
+import ApiClient from '../ApiClient';
+import BillingAddress from './BillingAddress';
+import BillingAddressResponseAllOf from './BillingAddressResponseAllOf';
+import BillingAddressResponseAllOfData from './BillingAddressResponseAllOfData';
 
 /**
  * The BillingAddressResponse model module.
@@ -25,7 +27,6 @@ class BillingAddressResponse {
      * @alias module:model/BillingAddressResponse
      */
     constructor() { 
-        
         BillingAddressResponse.initialize(this);
     }
 
@@ -49,7 +50,7 @@ class BillingAddressResponse {
             obj = obj || new BillingAddressResponse();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], Data);
+                obj['data'] = BillingAddressResponseAllOfData.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -59,7 +60,7 @@ class BillingAddressResponse {
 }
 
 /**
- * @member {module:model/Data} data
+ * @member {module:model/BillingAddressResponseAllOfData} data
  */
 BillingAddressResponse.prototype['data'] = undefined;
 

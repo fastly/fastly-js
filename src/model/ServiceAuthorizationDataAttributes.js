@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Permission from './Permission.js';
+import ApiClient from '../ApiClient';
+import Permission from './Permission';
 
 /**
  * The ServiceAuthorizationDataAttributes model module.
@@ -25,7 +25,6 @@ class ServiceAuthorizationDataAttributes {
      * @alias module:model/ServiceAuthorizationDataAttributes
      */
     constructor() { 
-        
         ServiceAuthorizationDataAttributes.initialize(this);
     }
 

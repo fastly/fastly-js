@@ -11,13 +11,13 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingKafka from './LoggingKafka.js';
-import LoggingPlacement from './LoggingPlacement.js';
-import LoggingUseTls from './LoggingUseTls.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingKafka from './LoggingKafka';
+import LoggingPlacement from './LoggingPlacement';
+import LoggingUseTls from './LoggingUseTls';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
 
 /**
  * The LoggingKafkaResponse model module.
@@ -28,12 +28,8 @@ class LoggingKafkaResponse {
     /**
      * Constructs a new <code>LoggingKafkaResponse</code>.
      * @alias module:model/LoggingKafkaResponse
-     * @implements module:model/LoggingKafka
-     * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
      */
     constructor() { 
-        LoggingKafka.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
         LoggingKafkaResponse.initialize(this);
     }
 
@@ -55,9 +51,6 @@ class LoggingKafkaResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingKafkaResponse();
-            LoggingKafka.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
@@ -287,133 +280,6 @@ LoggingKafkaResponse.prototype['service_id'] = undefined;
 LoggingKafkaResponse.prototype['version'] = undefined;
 
 
-// Implement LoggingKafka interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingKafka.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingKafka.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingKafka.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingKafka.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingKafka.prototype['response_condition'] = undefined;
-/**
- * A secure certificate to authenticate a server with. Must be in PEM format.
- * @member {String} tls_ca_cert
- * @default 'null'
- */
-LoggingKafka.prototype['tls_ca_cert'] = 'null';
-/**
- * The client certificate used to make authenticated requests. Must be in PEM format.
- * @member {String} tls_client_cert
- * @default 'null'
- */
-LoggingKafka.prototype['tls_client_cert'] = 'null';
-/**
- * The client private key used to make authenticated requests. Must be in PEM format.
- * @member {String} tls_client_key
- * @default 'null'
- */
-LoggingKafka.prototype['tls_client_key'] = 'null';
-/**
- * The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
- * @member {String} tls_hostname
- * @default 'null'
- */
-LoggingKafka.prototype['tls_hostname'] = 'null';
-/**
- * SASL authentication method.
- * @member {module:model/LoggingKafka.AuthMethodEnum} auth_method
- */
-LoggingKafka.prototype['auth_method'] = undefined;
-/**
- * A comma-separated list of IP addresses or hostnames of Kafka brokers. Required.
- * @member {String} brokers
- */
-LoggingKafka.prototype['brokers'] = undefined;
-/**
- * The codec used for compression of your logs.
- * @member {module:model/LoggingKafka.CompressionCodecEnum} compression_codec
- */
-LoggingKafka.prototype['compression_codec'] = undefined;
-/**
- * Enables parsing of key=value tuples from the beginning of a logline, turning them into [record headers](https://cwiki.apache.org/confluence/display/KAFKA/KIP-82+-+Add+Record+Headers).
- * @member {Boolean} parse_log_keyvals
- */
-LoggingKafka.prototype['parse_log_keyvals'] = undefined;
-/**
- * SASL password.
- * @member {String} password
- */
-LoggingKafka.prototype['password'] = undefined;
-/**
- * The maximum number of bytes sent in one request. Defaults `0` (no limit).
- * @member {Number} request_max_bytes
- * @default 0
- */
-LoggingKafka.prototype['request_max_bytes'] = 0;
-/**
- * The number of acknowledgements a leader must receive before a write is considered successful.
- * @member {module:model/LoggingKafka.RequiredAcksEnum} required_acks
- * @default RequiredAcksEnum.one
- */
-LoggingKafka.prototype['required_acks'] = undefined;
-/**
- * The Kafka topic to send logs to. Required.
- * @member {String} topic
- */
-LoggingKafka.prototype['topic'] = undefined;
-/**
- * @member {module:model/LoggingUseTls} use_tls
- */
-LoggingKafka.prototype['use_tls'] = undefined;
-/**
- * SASL user.
- * @member {String} user
- */
-LoggingKafka.prototype['user'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
 
 
 

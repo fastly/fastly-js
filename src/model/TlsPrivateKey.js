@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import TlsPrivateKeyData from './TlsPrivateKeyData.js';
+import ApiClient from '../ApiClient';
+import TlsPrivateKeyData from './TlsPrivateKeyData';
 
 /**
  * The TlsPrivateKey model module.
@@ -25,7 +25,6 @@ class TlsPrivateKey {
      * @alias module:model/TlsPrivateKey
      */
     constructor() { 
-        
         TlsPrivateKey.initialize(this);
     }
 

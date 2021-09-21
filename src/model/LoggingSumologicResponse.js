@@ -11,13 +11,13 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingMessageType from './LoggingMessageType.js';
-import LoggingPlacement from './LoggingPlacement.js';
-import LoggingSumologic from './LoggingSumologic.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingMessageType from './LoggingMessageType';
+import LoggingPlacement from './LoggingPlacement';
+import LoggingSumologic from './LoggingSumologic';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
 
 /**
  * The LoggingSumologicResponse model module.
@@ -28,12 +28,8 @@ class LoggingSumologicResponse {
     /**
      * Constructs a new <code>LoggingSumologicResponse</code>.
      * @alias module:model/LoggingSumologicResponse
-     * @implements module:model/LoggingSumologic
-     * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
      */
     constructor() { 
-        LoggingSumologic.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
         LoggingSumologicResponse.initialize(this);
     }
 
@@ -55,9 +51,6 @@ class LoggingSumologicResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingSumologicResponse();
-            LoggingSumologic.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
@@ -173,67 +166,6 @@ LoggingSumologicResponse.prototype['service_id'] = undefined;
 LoggingSumologicResponse.prototype['version'] = undefined;
 
 
-// Implement LoggingSumologic interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingSumologic.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingSumologic.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingSumologic.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingSumologic.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingSumologic.prototype['response_condition'] = undefined;
-/**
- * @member {module:model/LoggingMessageType} message_type
- */
-LoggingSumologic.prototype['message_type'] = undefined;
-/**
- * The URL to post logs to.
- * @member {String} url
- */
-LoggingSumologic.prototype['url'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
 
 
 

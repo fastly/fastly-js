@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The SchemasResponseObject model module.
@@ -24,7 +24,6 @@ class SchemasResponseObject {
      * @alias module:model/SchemasResponseObject
      */
     constructor() { 
-        
         SchemasResponseObject.initialize(this);
     }
 

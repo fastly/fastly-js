@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The LoggingOpenstackAllOf model module.
@@ -24,7 +24,6 @@ class LoggingOpenstackAllOf {
      * @alias module:model/LoggingOpenstackAllOf
      */
     constructor() { 
-        
         LoggingOpenstackAllOf.initialize(this);
     }
 

@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import BillingStatus from './BillingStatus.js';
-import BillingTotal from './BillingTotal.js';
+import ApiClient from '../ApiClient';
+import BillingStatus from './BillingStatus';
+import BillingTotal from './BillingTotal';
 
 /**
  * The Billing model module.
@@ -26,7 +26,6 @@ class Billing {
      * @alias module:model/Billing
      */
     constructor() { 
-        
         Billing.initialize(this);
     }
 

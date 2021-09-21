@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import ServiceInvitationData from './ServiceInvitationData.js';
+import ApiClient from '../ApiClient';
+import ServiceInvitationData from './ServiceInvitationData';
 
 /**
  * The ServiceInvitation model module.
@@ -25,7 +25,6 @@ class ServiceInvitation {
      * @alias module:model/ServiceInvitation
      */
     constructor() { 
-        
         ServiceInvitation.initialize(this);
     }
 

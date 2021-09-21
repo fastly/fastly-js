@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The Settings model module.
@@ -24,7 +24,6 @@ class Settings {
      * @alias module:model/Settings
      */
     constructor() { 
-        
         Settings.initialize(this);
     }
 

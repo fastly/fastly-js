@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The RequestSettings model module.
@@ -24,7 +24,6 @@ class RequestSettings {
      * @alias module:model/RequestSettings
      */
     constructor() { 
-        
         RequestSettings.initialize(this);
     }
 

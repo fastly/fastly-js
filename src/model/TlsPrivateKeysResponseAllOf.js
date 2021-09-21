@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Data from './Data.js';
+import ApiClient from '../ApiClient';
+import TlsPrivateKeyResponseData from './TlsPrivateKeyResponseData';
 
 /**
  * The TlsPrivateKeysResponseAllOf model module.
@@ -25,7 +25,6 @@ class TlsPrivateKeysResponseAllOf {
      * @alias module:model/TlsPrivateKeysResponseAllOf
      */
     constructor() { 
-        
         TlsPrivateKeysResponseAllOf.initialize(this);
     }
 
@@ -49,7 +48,7 @@ class TlsPrivateKeysResponseAllOf {
             obj = obj || new TlsPrivateKeysResponseAllOf();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Data]);
+                obj['data'] = ApiClient.convertToType(data['data'], [TlsPrivateKeyResponseData]);
             }
         }
         return obj;
@@ -59,7 +58,7 @@ class TlsPrivateKeysResponseAllOf {
 }
 
 /**
- * @member {Array.<module:model/Data>} data
+ * @member {Array.<module:model/TlsPrivateKeyResponseData>} data
  */
 TlsPrivateKeysResponseAllOf.prototype['data'] = undefined;
 

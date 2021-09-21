@@ -11,13 +11,13 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingCommon from './LoggingCommon.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingKafkaAllOf from './LoggingKafkaAllOf.js';
-import LoggingPlacement from './LoggingPlacement.js';
-import LoggingTlsCommon from './LoggingTlsCommon.js';
-import LoggingUseTls from './LoggingUseTls.js';
+import ApiClient from '../ApiClient';
+import LoggingCommon from './LoggingCommon';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingKafkaAllOf from './LoggingKafkaAllOf';
+import LoggingPlacement from './LoggingPlacement';
+import LoggingTlsCommon from './LoggingTlsCommon';
+import LoggingUseTls from './LoggingUseTls';
 
 /**
  * The LoggingKafka model module.
@@ -28,12 +28,8 @@ class LoggingKafka {
     /**
      * Constructs a new <code>LoggingKafka</code>.
      * @alias module:model/LoggingKafka
-     * @implements module:model/LoggingCommon
-     * @implements module:model/LoggingTlsCommon
-     * @implements module:model/LoggingKafkaAllOf
      */
     constructor() { 
-        LoggingCommon.initialize(this);LoggingTlsCommon.initialize(this);LoggingKafkaAllOf.initialize(this);
         LoggingKafka.initialize(this);
     }
 
@@ -55,9 +51,6 @@ class LoggingKafka {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingKafka();
-            LoggingCommon.constructFromObject(data, obj);
-            LoggingTlsCommon.constructFromObject(data, obj);
-            LoggingKafkaAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
@@ -242,108 +235,6 @@ LoggingKafka.prototype['use_tls'] = undefined;
 LoggingKafka.prototype['user'] = undefined;
 
 
-// Implement LoggingCommon interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingCommon.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingCommon.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingCommon.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingCommon.prototype['response_condition'] = undefined;
-// Implement LoggingTlsCommon interface:
-/**
- * A secure certificate to authenticate a server with. Must be in PEM format.
- * @member {String} tls_ca_cert
- * @default 'null'
- */
-LoggingTlsCommon.prototype['tls_ca_cert'] = 'null';
-/**
- * The client certificate used to make authenticated requests. Must be in PEM format.
- * @member {String} tls_client_cert
- * @default 'null'
- */
-LoggingTlsCommon.prototype['tls_client_cert'] = 'null';
-/**
- * The client private key used to make authenticated requests. Must be in PEM format.
- * @member {String} tls_client_key
- * @default 'null'
- */
-LoggingTlsCommon.prototype['tls_client_key'] = 'null';
-/**
- * The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
- * @member {String} tls_hostname
- * @default 'null'
- */
-LoggingTlsCommon.prototype['tls_hostname'] = 'null';
-// Implement LoggingKafkaAllOf interface:
-/**
- * SASL authentication method.
- * @member {module:model/LoggingKafkaAllOf.AuthMethodEnum} auth_method
- */
-LoggingKafkaAllOf.prototype['auth_method'] = undefined;
-/**
- * A comma-separated list of IP addresses or hostnames of Kafka brokers. Required.
- * @member {String} brokers
- */
-LoggingKafkaAllOf.prototype['brokers'] = undefined;
-/**
- * The codec used for compression of your logs.
- * @member {module:model/LoggingKafkaAllOf.CompressionCodecEnum} compression_codec
- */
-LoggingKafkaAllOf.prototype['compression_codec'] = undefined;
-/**
- * Enables parsing of key=value tuples from the beginning of a logline, turning them into [record headers](https://cwiki.apache.org/confluence/display/KAFKA/KIP-82+-+Add+Record+Headers).
- * @member {Boolean} parse_log_keyvals
- */
-LoggingKafkaAllOf.prototype['parse_log_keyvals'] = undefined;
-/**
- * SASL password.
- * @member {String} password
- */
-LoggingKafkaAllOf.prototype['password'] = undefined;
-/**
- * The maximum number of bytes sent in one request. Defaults `0` (no limit).
- * @member {Number} request_max_bytes
- * @default 0
- */
-LoggingKafkaAllOf.prototype['request_max_bytes'] = 0;
-/**
- * The number of acknowledgements a leader must receive before a write is considered successful.
- * @member {module:model/LoggingKafkaAllOf.RequiredAcksEnum} required_acks
- * @default RequiredAcksEnum.one
- */
-LoggingKafkaAllOf.prototype['required_acks'] = undefined;
-/**
- * The Kafka topic to send logs to. Required.
- * @member {String} topic
- */
-LoggingKafkaAllOf.prototype['topic'] = undefined;
-/**
- * @member {module:model/LoggingUseTls} use_tls
- */
-LoggingKafkaAllOf.prototype['use_tls'] = undefined;
-/**
- * SASL user.
- * @member {String} user
- */
-LoggingKafkaAllOf.prototype['user'] = undefined;
 
 
 

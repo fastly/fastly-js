@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingUseTls from './LoggingUseTls.js';
+import ApiClient from '../ApiClient';
+import LoggingUseTls from './LoggingUseTls';
 
 /**
  * The LoggingKafkaAllOf model module.
@@ -25,7 +25,6 @@ class LoggingKafkaAllOf {
      * @alias module:model/LoggingKafkaAllOf
      */
     constructor() { 
-        
         LoggingKafkaAllOf.initialize(this);
     }
 

@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The ResponseObject model module.
@@ -24,7 +24,6 @@ class ResponseObject {
      * @alias module:model/ResponseObject
      */
     constructor() { 
-        
         ResponseObject.initialize(this);
     }
 

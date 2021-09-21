@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The TlsConfigurationDataAttributes model module.
@@ -24,7 +24,6 @@ class TlsConfigurationDataAttributes {
      * @alias module:model/TlsConfigurationDataAttributes
      */
     constructor() { 
-        
         TlsConfigurationDataAttributes.initialize(this);
     }
 

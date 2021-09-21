@@ -11,14 +11,14 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingCompressionCodec from './LoggingCompressionCodec.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingMessageType from './LoggingMessageType.js';
-import LoggingPlacement from './LoggingPlacement.js';
-import LoggingS3 from './LoggingS3.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import LoggingCompressionCodec from './LoggingCompressionCodec';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingMessageType from './LoggingMessageType';
+import LoggingPlacement from './LoggingPlacement';
+import LoggingS3 from './LoggingS3';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
 
 /**
  * The LoggingS3Response model module.
@@ -29,12 +29,8 @@ class LoggingS3Response {
     /**
      * Constructs a new <code>LoggingS3Response</code>.
      * @alias module:model/LoggingS3Response
-     * @implements module:model/LoggingS3
-     * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
      */
     constructor() { 
-        LoggingS3.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
         LoggingS3Response.initialize(this);
     }
 
@@ -56,9 +52,6 @@ class LoggingS3Response {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingS3Response();
-            LoggingS3.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
@@ -306,143 +299,6 @@ LoggingS3Response.prototype['service_id'] = undefined;
 LoggingS3Response.prototype['version'] = undefined;
 
 
-// Implement LoggingS3 interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingS3.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingS3.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingS3.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingS3.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingS3.prototype['response_condition'] = undefined;
-/**
- * @member {module:model/LoggingCompressionCodec} compression_codec
- */
-LoggingS3.prototype['compression_codec'] = undefined;
-/**
- * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {Number} gzip_level
- * @default 0
- */
-LoggingS3.prototype['gzip_level'] = 0;
-/**
- * @member {module:model/LoggingMessageType} message_type
- */
-LoggingS3.prototype['message_type'] = undefined;
-/**
- * How frequently log files are finalized so they can be available for reading (in seconds).
- * @member {Number} period
- * @default 3600
- */
-LoggingS3.prototype['period'] = 3600;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} timestamp_format
- */
-LoggingS3.prototype['timestamp_format'] = undefined;
-/**
- * The access key for your S3 account. Not required if `iam_role` is provided.
- * @member {String} access_key
- */
-LoggingS3.prototype['access_key'] = undefined;
-/**
- * The access control list (ACL) specific request header. See the AWS documentation for [Access Control List (ACL) Specific Request Headers](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html#initiate-mpu-acl-specific-request-headers) for more information.
- * @member {String} acl
- */
-LoggingS3.prototype['acl'] = undefined;
-/**
- * The bucket name for S3 account.
- * @member {String} bucket_name
- */
-LoggingS3.prototype['bucket_name'] = undefined;
-/**
- * The domain of the Amazon S3 endpoint.
- * @member {String} domain
- */
-LoggingS3.prototype['domain'] = undefined;
-/**
- * The Amazon Resource Name (ARN) for the IAM role granting Fastly access to S3. Not required if `access_key` and `secret_key` are provided.
- * @member {String} iam_role
- */
-LoggingS3.prototype['iam_role'] = undefined;
-/**
- * The path to upload logs to.
- * @member {String} path
- * @default 'null'
- */
-LoggingS3.prototype['path'] = 'null';
-/**
- * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
- * @member {String} public_key
- * @default 'null'
- */
-LoggingS3.prototype['public_key'] = 'null';
-/**
- * The S3 redundancy level.
- * @member {String} redundancy
- * @default 'null'
- */
-LoggingS3.prototype['redundancy'] = 'null';
-/**
- * The secret key for your S3 account. Not required if `iam_role` is provided.
- * @member {String} secret_key
- */
-LoggingS3.prototype['secret_key'] = undefined;
-/**
- * Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption.
- * @member {String} server_side_encryption
- * @default 'null'
- */
-LoggingS3.prototype['server_side_encryption'] = 'null';
-/**
- * Optional server-side KMS Key Id. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`.
- * @member {String} server_side_encryption_kms_key_id
- * @default 'null'
- */
-LoggingS3.prototype['server_side_encryption_kms_key_id'] = 'null';
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
 
 
 

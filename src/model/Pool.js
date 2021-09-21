@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import PoolAllOf from './PoolAllOf.js';
-import TlsCommon from './TlsCommon.js';
+import ApiClient from '../ApiClient';
+import PoolAllOf from './PoolAllOf';
+import TlsCommon from './TlsCommon';
 
 /**
  * The Pool model module.
@@ -24,11 +24,8 @@ class Pool {
     /**
      * Constructs a new <code>Pool</code>.
      * @alias module:model/Pool
-     * @implements module:model/TlsCommon
-     * @implements module:model/PoolAllOf
      */
     constructor() { 
-        TlsCommon.initialize(this);PoolAllOf.initialize(this);
         Pool.initialize(this);
     }
 
@@ -50,8 +47,6 @@ class Pool {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new Pool();
-            TlsCommon.constructFromObject(data, obj);
-            PoolAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('tls_ca_cert')) {
                 obj['tls_ca_cert'] = ApiClient.convertToType(data['tls_ca_cert'], 'String');
@@ -258,121 +253,6 @@ Pool.prototype['tls_sni_hostname'] = undefined;
 Pool.prototype['type'] = undefined;
 
 
-// Implement TlsCommon interface:
-/**
- * A secure certificate to authenticate a server with. Must be in PEM format.
- * @member {String} tls_ca_cert
- * @default 'null'
- */
-TlsCommon.prototype['tls_ca_cert'] = 'null';
-/**
- * The hostname used to verify a server's certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
- * @member {String} tls_cert_hostname
- * @default 'null'
- */
-TlsCommon.prototype['tls_cert_hostname'] = 'null';
-/**
- * The client certificate used to make authenticated requests. Must be in PEM format.
- * @member {String} tls_client_cert
- * @default 'null'
- */
-TlsCommon.prototype['tls_client_cert'] = 'null';
-/**
- * The client private key used to make authenticated requests. Must be in PEM format.
- * @member {String} tls_client_key
- * @default 'null'
- */
-TlsCommon.prototype['tls_client_key'] = 'null';
-/**
- * Whether to use TLS.
- * @member {module:model/TlsCommon.UseTlsEnum} use_tls
- * @default UseTlsEnum.no_tls
- */
-TlsCommon.prototype['use_tls'] = undefined;
-// Implement PoolAllOf interface:
-/**
- * A freeform descriptive note.
- * @member {String} comment
- */
-PoolAllOf.prototype['comment'] = undefined;
-/**
- * How long to wait for a timeout in milliseconds. Optional.
- * @member {Number} connect_timeout
- */
-PoolAllOf.prototype['connect_timeout'] = undefined;
-/**
- * How long to wait for the first byte in milliseconds. Optional.
- * @member {Number} first_byte_timeout
- */
-PoolAllOf.prototype['first_byte_timeout'] = undefined;
-/**
- * Name of the healthcheck to use with this pool. Can be empty and could be reused across multiple backend and pools.
- * @member {String} healthcheck
- */
-PoolAllOf.prototype['healthcheck'] = undefined;
-/**
- * Maximum number of connections.
- * @member {Number} max_conn_default
- */
-PoolAllOf.prototype['max_conn_default'] = undefined;
-/**
- * Maximum allowed TLS version on connections to this server. Optional.
- * @member {Number} max_tls_version
- */
-PoolAllOf.prototype['max_tls_version'] = undefined;
-/**
- * Minimum allowed TLS version on connections to this server. Optional.
- * @member {Number} min_tls_version
- */
-PoolAllOf.prototype['min_tls_version'] = undefined;
-/**
- * Name for the Pool.
- * @member {String} name
- */
-PoolAllOf.prototype['name'] = undefined;
-/**
- * The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to `null` meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
- * @member {String} override_host
- * @default 'null'
- */
-PoolAllOf.prototype['override_host'] = 'null';
-/**
- * Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
- * @member {Number} quorum
- * @default 75
- */
-PoolAllOf.prototype['quorum'] = 75;
-/**
- * Condition which, if met, will select this configuration during a request. Optional.
- * @member {String} request_condition
- */
-PoolAllOf.prototype['request_condition'] = undefined;
-/**
- * Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
- * @member {String} shield
- * @default 'null'
- */
-PoolAllOf.prototype['shield'] = 'null';
-/**
- * Be strict on checking TLS certs. Optional.
- * @member {Number} tls_check_cert
- */
-PoolAllOf.prototype['tls_check_cert'] = undefined;
-/**
- * List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.0.2/man1/ciphers) for details). Optional.
- * @member {String} tls_ciphers
- */
-PoolAllOf.prototype['tls_ciphers'] = undefined;
-/**
- * SNI hostname. Optional.
- * @member {String} tls_sni_hostname
- */
-PoolAllOf.prototype['tls_sni_hostname'] = undefined;
-/**
- * What type of load balance group to use.
- * @member {module:model/PoolAllOf.TypeEnum} type
- */
-PoolAllOf.prototype['type'] = undefined;
 
 
 

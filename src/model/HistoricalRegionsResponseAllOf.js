@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The HistoricalRegionsResponseAllOf model module.
@@ -24,7 +24,6 @@ class HistoricalRegionsResponseAllOf {
      * @alias module:model/HistoricalRegionsResponseAllOf
      */
     constructor() { 
-        
         HistoricalRegionsResponseAllOf.initialize(this);
     }
 

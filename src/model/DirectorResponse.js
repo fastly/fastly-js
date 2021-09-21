@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Backend from './Backend.js';
-import Director from './Director.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import Backend from './Backend';
+import Director from './Director';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
 
 /**
  * The DirectorResponse model module.
@@ -26,12 +26,8 @@ class DirectorResponse {
     /**
      * Constructs a new <code>DirectorResponse</code>.
      * @alias module:model/DirectorResponse
-     * @implements module:model/Director
-     * @implements module:model/ServiceIdAndVersion
-     * @implements module:model/Timestamps
      */
     constructor() { 
-        Director.initialize(this);ServiceIdAndVersion.initialize(this);Timestamps.initialize(this);
         DirectorResponse.initialize(this);
     }
 
@@ -53,9 +49,6 @@ class DirectorResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new DirectorResponse();
-            Director.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('backends')) {
                 obj['backends'] = ApiClient.convertToType(data['backends'], [Backend]);
@@ -186,78 +179,6 @@ DirectorResponse.prototype['deleted_at'] = undefined;
 DirectorResponse.prototype['updated_at'] = undefined;
 
 
-// Implement Director interface:
-/**
- * List of backends associated to a director.
- * @member {Array.<module:model/Backend>} backends
- */
-Director.prototype['backends'] = undefined;
-/**
- * Unused.
- * @member {Number} capacity
- */
-Director.prototype['capacity'] = undefined;
-/**
- * A freeform descriptive note.
- * @member {String} comment
- */
-Director.prototype['comment'] = undefined;
-/**
- * Name for the Director.
- * @member {String} name
- */
-Director.prototype['name'] = undefined;
-/**
- * The percentage of capacity that needs to be up for a director to be considered up. `0` to `100`.
- * @member {Number} quorum
- * @default 75
- */
-Director.prototype['quorum'] = 75;
-/**
- * How many backends to search if it fails.
- * @member {Number} retries
- * @default 5
- */
-Director.prototype['retries'] = 5;
-/**
- * Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
- * @member {String} shield
- * @default 'null'
- */
-Director.prototype['shield'] = 'null';
-/**
- * What type of load balance group to use.
- * @member {module:model/Director.TypeEnum} type
- * @default TypeEnum.random
- */
-Director.prototype['type'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
 
 
 

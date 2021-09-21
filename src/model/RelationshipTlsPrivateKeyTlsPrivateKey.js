@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import RelationshipMemberTlsPrivateKey from './RelationshipMemberTlsPrivateKey.js';
+import ApiClient from '../ApiClient';
+import RelationshipMemberTlsPrivateKey from './RelationshipMemberTlsPrivateKey';
 
 /**
  * The RelationshipTlsPrivateKeyTlsPrivateKey model module.
@@ -25,7 +25,6 @@ class RelationshipTlsPrivateKeyTlsPrivateKey {
      * @alias module:model/RelationshipTlsPrivateKeyTlsPrivateKey
      */
     constructor() { 
-        
         RelationshipTlsPrivateKeyTlsPrivateKey.initialize(this);
     }
 

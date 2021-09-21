@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import AclEntry from './AclEntry.js';
+import ApiClient from '../ApiClient';
+import AclEntry from './AclEntry';
 
 /**
  * The AclEntries model module.
@@ -25,7 +25,6 @@ class AclEntries {
      * @alias module:model/AclEntries
      */
     constructor() { 
-        
         AclEntries.initialize(this);
     }
 

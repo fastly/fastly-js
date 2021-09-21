@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
-import Vcl from './Vcl.js';
+import ApiClient from '../ApiClient';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
+import Vcl from './Vcl';
 
 /**
  * The VclResponse model module.
@@ -25,12 +25,8 @@ class VclResponse {
     /**
      * Constructs a new <code>VclResponse</code>.
      * @alias module:model/VclResponse
-     * @implements module:model/Vcl
-     * @implements module:model/ServiceIdAndVersion
-     * @implements module:model/Timestamps
      */
     constructor() { 
-        Vcl.initialize(this);ServiceIdAndVersion.initialize(this);Timestamps.initialize(this);
         VclResponse.initialize(this);
     }
 
@@ -52,9 +48,6 @@ class VclResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new VclResponse();
-            Vcl.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('content')) {
                 obj['content'] = ApiClient.convertToType(data['content'], 'String');
@@ -136,49 +129,6 @@ VclResponse.prototype['deleted_at'] = undefined;
 VclResponse.prototype['updated_at'] = undefined;
 
 
-// Implement Vcl interface:
-/**
- * The VCL code to be included.
- * @member {String} content
- */
-Vcl.prototype['content'] = undefined;
-/**
- * Set to `true` when this is the main VCL, otherwise `false`.
- * @member {Boolean} main
- */
-Vcl.prototype['main'] = undefined;
-/**
- * The name of this VCL.
- * @member {String} name
- */
-Vcl.prototype['name'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
 
 
 

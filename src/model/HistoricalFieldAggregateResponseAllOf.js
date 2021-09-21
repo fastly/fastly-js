@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The HistoricalFieldAggregateResponseAllOf model module.
@@ -24,7 +24,6 @@ class HistoricalFieldAggregateResponseAllOf {
      * @alias module:model/HistoricalFieldAggregateResponseAllOf
      */
     constructor() { 
-        
         HistoricalFieldAggregateResponseAllOf.initialize(this);
     }
 

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[Data]**](Data.md) |  | [optional] 
-**included** | [**[AnyOfwafRulewafRuleRevision]**](AnyOfwafRulewafRuleRevision.md) |  | [optional] 
+**data** | [**[WafExclusionResponseData]**](WafExclusionResponseData.md) |  | [optional] 
+**included** | [**[IncludedWithWafExclusionItem]**](IncludedWithWafExclusionItem.md) |  | [optional] 
 
 
 

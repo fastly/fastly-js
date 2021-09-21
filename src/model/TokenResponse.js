@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Timestamps from './Timestamps.js';
-import Token from './Token.js';
-import TokenResponseAllOf from './TokenResponseAllOf.js';
+import ApiClient from '../ApiClient';
+import Timestamps from './Timestamps';
+import Token from './Token';
+import TokenResponseAllOf from './TokenResponseAllOf';
 
 /**
  * The TokenResponse model module.
@@ -25,12 +25,8 @@ class TokenResponse {
     /**
      * Constructs a new <code>TokenResponse</code>.
      * @alias module:model/TokenResponse
-     * @implements module:model/Token
-     * @implements module:model/Timestamps
-     * @implements module:model/TokenResponseAllOf
      */
     constructor() { 
-        Token.initialize(this);Timestamps.initialize(this);TokenResponseAllOf.initialize(this);
         TokenResponse.initialize(this);
     }
 
@@ -52,9 +48,6 @@ class TokenResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TokenResponse();
-            Token.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
-            TokenResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -173,75 +166,6 @@ TokenResponse.prototype['user_agent'] = undefined;
 TokenResponse.prototype['user_id'] = undefined;
 
 
-// Implement Token interface:
-/**
- * Name of the token.
- * @member {String} name
- */
-Token.prototype['name'] = undefined;
-/**
- * Space-delimited list of authorization scope.
- * @member {module:model/Token.ScopeEnum} scope
- * @default 'global'
- */
-Token.prototype['scope'] = undefined;
-/**
- * List of alphanumeric strings identifying services (optional). If no services are specified, the token will have access to all services on the account. 
- * @member {Array.<String>} services
- */
-Token.prototype['services'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
-// Implement TokenResponseAllOf interface:
-/**
- * Time-stamp (UTC) of when the token was created.
- * @member {String} created_at
- */
-TokenResponseAllOf.prototype['created_at'] = undefined;
-/**
- * Time-stamp (UTC) of when the token will expire (optional).
- * @member {String} expires_at
- */
-TokenResponseAllOf.prototype['expires_at'] = undefined;
-/**
- * Alphanumeric string identifying a token.
- * @member {String} id
- */
-TokenResponseAllOf.prototype['id'] = undefined;
-/**
- * IP Address of the client that last used the token.
- * @member {String} ip
- */
-TokenResponseAllOf.prototype['ip'] = undefined;
-/**
- * Time-stamp (UTC) of when the token was last used.
- * @member {String} last_used_at
- */
-TokenResponseAllOf.prototype['last_used_at'] = undefined;
-/**
- * User-Agent header of the client that last used the token.
- * @member {String} user_agent
- */
-TokenResponseAllOf.prototype['user_agent'] = undefined;
-/**
- * Alphanumeric string identifying the user.
- * @member {String} user_id
- */
-TokenResponseAllOf.prototype['user_id'] = undefined;
 
 
 

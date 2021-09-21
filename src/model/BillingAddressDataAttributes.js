@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The BillingAddressDataAttributes model module.
@@ -24,7 +24,6 @@ class BillingAddressDataAttributes {
      * @alias module:model/BillingAddressDataAttributes
      */
     constructor() { 
-        
         BillingAddressDataAttributes.initialize(this);
     }
 

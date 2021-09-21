@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The DictionaryItem model module.
@@ -24,7 +24,6 @@ class DictionaryItem {
      * @alias module:model/DictionaryItem
      */
     constructor() { 
-        
         DictionaryItem.initialize(this);
     }
 

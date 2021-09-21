@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import DictionaryItem from './DictionaryItem.js';
-import DictionaryItemResponseAllOf from './DictionaryItemResponseAllOf.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import DictionaryItem from './DictionaryItem';
+import DictionaryItemResponseAllOf from './DictionaryItemResponseAllOf';
+import Timestamps from './Timestamps';
 
 /**
  * The DictionaryItemResponse model module.
@@ -25,12 +25,8 @@ class DictionaryItemResponse {
     /**
      * Constructs a new <code>DictionaryItemResponse</code>.
      * @alias module:model/DictionaryItemResponse
-     * @implements module:model/DictionaryItem
-     * @implements module:model/Timestamps
-     * @implements module:model/DictionaryItemResponseAllOf
      */
     constructor() { 
-        DictionaryItem.initialize(this);Timestamps.initialize(this);DictionaryItemResponseAllOf.initialize(this);
         DictionaryItemResponse.initialize(this);
     }
 
@@ -52,9 +48,6 @@ class DictionaryItemResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new DictionaryItemResponse();
-            DictionaryItem.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
-            DictionaryItemResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('item_key')) {
                 obj['item_key'] = ApiClient.convertToType(data['item_key'], 'String');
@@ -127,44 +120,6 @@ DictionaryItemResponse.prototype['dictionary_id'] = undefined;
 DictionaryItemResponse.prototype['service_id'] = undefined;
 
 
-// Implement DictionaryItem interface:
-/**
- * Item key, maximum 256 characters.
- * @member {String} item_key
- */
-DictionaryItem.prototype['item_key'] = undefined;
-/**
- * Item value, maximum 8000 characters.
- * @member {String} item_value
- */
-DictionaryItem.prototype['item_value'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
-// Implement DictionaryItemResponseAllOf interface:
-/**
- * Alphanumeric string identifying a Dictionary.
- * @member {String} dictionary_id
- */
-DictionaryItemResponseAllOf.prototype['dictionary_id'] = undefined;
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-DictionaryItemResponseAllOf.prototype['service_id'] = undefined;
 
 
 

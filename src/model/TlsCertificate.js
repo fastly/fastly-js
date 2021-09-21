@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import TlsCertificateData from './TlsCertificateData.js';
+import ApiClient from '../ApiClient';
+import TlsCertificateData from './TlsCertificateData';
 
 /**
  * The TlsCertificate model module.
@@ -25,7 +25,6 @@ class TlsCertificate {
      * @alias module:model/TlsCertificate
      */
     constructor() { 
-        
         TlsCertificate.initialize(this);
     }
 

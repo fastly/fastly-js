@@ -11,13 +11,13 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Data from './Data.js';
-import Pagination from './Pagination.js';
-import PaginationLinks from './PaginationLinks.js';
-import PaginationMeta from './PaginationMeta.js';
-import SchemasWafFirewallVersion from './SchemasWafFirewallVersion.js';
-import WafFirewallsResponseAllOf from './WafFirewallsResponseAllOf.js';
+import ApiClient from '../ApiClient';
+import Pagination from './Pagination';
+import PaginationLinks from './PaginationLinks';
+import PaginationMeta from './PaginationMeta';
+import SchemasWafFirewallVersion from './SchemasWafFirewallVersion';
+import WafFirewallResponseData from './WafFirewallResponseData';
+import WafFirewallsResponseAllOf from './WafFirewallsResponseAllOf';
 
 /**
  * The WafFirewallsResponse model module.
@@ -28,11 +28,8 @@ class WafFirewallsResponse {
     /**
      * Constructs a new <code>WafFirewallsResponse</code>.
      * @alias module:model/WafFirewallsResponse
-     * @implements module:model/Pagination
-     * @implements module:model/WafFirewallsResponseAllOf
      */
     constructor() { 
-        Pagination.initialize(this);WafFirewallsResponseAllOf.initialize(this);
         WafFirewallsResponse.initialize(this);
     }
 
@@ -54,8 +51,6 @@ class WafFirewallsResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafFirewallsResponse();
-            Pagination.constructFromObject(data, obj);
-            WafFirewallsResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('links')) {
                 obj['links'] = PaginationLinks.constructFromObject(data['links']);
@@ -64,7 +59,7 @@ class WafFirewallsResponse {
                 obj['meta'] = PaginationMeta.constructFromObject(data['meta']);
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Data]);
+                obj['data'] = ApiClient.convertToType(data['data'], [WafFirewallResponseData]);
             }
             if (data.hasOwnProperty('included')) {
                 obj['included'] = ApiClient.convertToType(data['included'], [SchemasWafFirewallVersion]);
@@ -87,7 +82,7 @@ WafFirewallsResponse.prototype['links'] = undefined;
 WafFirewallsResponse.prototype['meta'] = undefined;
 
 /**
- * @member {Array.<module:model/Data>} data
+ * @member {Array.<module:model/WafFirewallResponseData>} data
  */
 WafFirewallsResponse.prototype['data'] = undefined;
 
@@ -97,24 +92,6 @@ WafFirewallsResponse.prototype['data'] = undefined;
 WafFirewallsResponse.prototype['included'] = undefined;
 
 
-// Implement Pagination interface:
-/**
- * @member {module:model/PaginationLinks} links
- */
-Pagination.prototype['links'] = undefined;
-/**
- * @member {module:model/PaginationMeta} meta
- */
-Pagination.prototype['meta'] = undefined;
-// Implement WafFirewallsResponseAllOf interface:
-/**
- * @member {Array.<module:model/Data>} data
- */
-WafFirewallsResponseAllOf.prototype['data'] = undefined;
-/**
- * @member {Array.<module:model/SchemasWafFirewallVersion>} included
- */
-WafFirewallsResponseAllOf.prototype['included'] = undefined;
 
 
 

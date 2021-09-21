@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Data from './Data.js';
+import ApiClient from '../ApiClient';
+import ServiceAuthorizationResponseData from './ServiceAuthorizationResponseData';
 
 /**
  * The ServiceAuthorizationResponse model module.
@@ -25,7 +25,6 @@ class ServiceAuthorizationResponse {
      * @alias module:model/ServiceAuthorizationResponse
      */
     constructor() { 
-        
         ServiceAuthorizationResponse.initialize(this);
     }
 
@@ -49,7 +48,7 @@ class ServiceAuthorizationResponse {
             obj = obj || new ServiceAuthorizationResponse();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], Data);
+                obj['data'] = ServiceAuthorizationResponseData.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -59,7 +58,7 @@ class ServiceAuthorizationResponse {
 }
 
 /**
- * @member {module:model/Data} data
+ * @member {module:model/ServiceAuthorizationResponseData} data
  */
 ServiceAuthorizationResponse.prototype['data'] = undefined;
 

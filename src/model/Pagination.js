@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import PaginationLinks from './PaginationLinks.js';
-import PaginationMeta from './PaginationMeta.js';
+import ApiClient from '../ApiClient';
+import PaginationLinks from './PaginationLinks';
+import PaginationMeta from './PaginationMeta';
 
 /**
  * The Pagination model module.
@@ -26,7 +26,6 @@ class Pagination {
      * @alias module:model/Pagination
      */
     constructor() { 
-        
         Pagination.initialize(this);
     }
 

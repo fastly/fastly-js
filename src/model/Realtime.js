@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import RealtimeEntry from './RealtimeEntry.js';
+import ApiClient from '../ApiClient';
+import RealtimeEntry from './RealtimeEntry';
 
 /**
  * The Realtime model module.
@@ -25,7 +25,6 @@ class Realtime {
      * @alias module:model/Realtime
      */
     constructor() { 
-        
         Realtime.initialize(this);
     }
 

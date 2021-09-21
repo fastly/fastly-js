@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The Dictionary model module.
@@ -24,7 +24,6 @@ class Dictionary {
      * @alias module:model/Dictionary
      */
     constructor() { 
-        
         Dictionary.initialize(this);
     }
 

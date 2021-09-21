@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The LoggingLogshuttleAllOf model module.
@@ -24,7 +24,6 @@ class LoggingLogshuttleAllOf {
      * @alias module:model/LoggingLogshuttleAllOf
      */
     constructor() { 
-        
         LoggingLogshuttleAllOf.initialize(this);
     }
 

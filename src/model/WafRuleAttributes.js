@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The WafRuleAttributes model module.
@@ -24,7 +24,6 @@ class WafRuleAttributes {
      * @alias module:model/WafRuleAttributes
      */
     constructor() { 
-        
         WafRuleAttributes.initialize(this);
     }
 

@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Historical from './Historical.js';
-import HistoricalMeta from './HistoricalMeta.js';
-import HistoricalUsageMonthResponseAllOf from './HistoricalUsageMonthResponseAllOf.js';
-import HistoricalUsageMonthResponseAllOfData from './HistoricalUsageMonthResponseAllOfData.js';
+import ApiClient from '../ApiClient';
+import Historical from './Historical';
+import HistoricalMeta from './HistoricalMeta';
+import HistoricalUsageMonthResponseAllOf from './HistoricalUsageMonthResponseAllOf';
+import HistoricalUsageMonthResponseAllOfData from './HistoricalUsageMonthResponseAllOfData';
 
 /**
  * The HistoricalUsageMonthResponse model module.
@@ -26,11 +26,8 @@ class HistoricalUsageMonthResponse {
     /**
      * Constructs a new <code>HistoricalUsageMonthResponse</code>.
      * @alias module:model/HistoricalUsageMonthResponse
-     * @implements module:model/Historical
-     * @implements module:model/HistoricalUsageMonthResponseAllOf
      */
     constructor() { 
-        Historical.initialize(this);HistoricalUsageMonthResponseAllOf.initialize(this);
         HistoricalUsageMonthResponse.initialize(this);
     }
 
@@ -52,8 +49,6 @@ class HistoricalUsageMonthResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new HistoricalUsageMonthResponse();
-            Historical.constructFromObject(data, obj);
-            HistoricalUsageMonthResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('meta')) {
                 obj['meta'] = HistoricalMeta.constructFromObject(data['meta']);
@@ -97,26 +92,6 @@ HistoricalUsageMonthResponse.prototype['status'] = undefined;
 HistoricalUsageMonthResponse.prototype['data'] = undefined;
 
 
-// Implement Historical interface:
-/**
- * @member {module:model/HistoricalMeta} meta
- */
-Historical.prototype['meta'] = undefined;
-/**
- * If the query was not successful, this will provide a string that explains why.
- * @member {String} msg
- */
-Historical.prototype['msg'] = undefined;
-/**
- * Whether or not we were able to successfully execute the query.
- * @member {String} status
- */
-Historical.prototype['status'] = undefined;
-// Implement HistoricalUsageMonthResponseAllOf interface:
-/**
- * @member {module:model/HistoricalUsageMonthResponseAllOfData} data
- */
-HistoricalUsageMonthResponseAllOf.prototype['data'] = undefined;
 
 
 

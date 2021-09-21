@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import AnyOfobjectstringboolean from '../model/AnyOfobjectstringboolean';
+import DomainCheckItem from '../model/DomainCheckItem';
 import DomainResponse from '../model/DomainResponse';
 
 /**
@@ -41,7 +41,7 @@ export default class DomainApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.domain_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/AnyOfobjectstringboolean>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DomainCheckItem>} and HTTP response
      */
     checkDomainWithHttpInfo(options = {}) {
       let postBody = null;
@@ -73,7 +73,7 @@ export default class DomainApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [AnyOfobjectstringboolean];
+      let returnType = [DomainCheckItem];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/domain/{domain_name}/check', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -87,7 +87,7 @@ export default class DomainApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.domain_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/AnyOfobjectstringboolean>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DomainCheckItem>}
      */
     checkDomain(options = {}) {
       return this.checkDomainWithHttpInfo(options)

@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import TypeTlsDnsRecord from './TypeTlsDnsRecord.js';
+import ApiClient from '../ApiClient';
+import TypeTlsDnsRecord from './TypeTlsDnsRecord';
 
 /**
  * The RelationshipMemberTlsDnsRecord model module.
@@ -25,7 +25,6 @@ class RelationshipMemberTlsDnsRecord {
      * @alias module:model/RelationshipMemberTlsDnsRecord
      */
     constructor() { 
-        
         RelationshipMemberTlsDnsRecord.initialize(this);
     }
 

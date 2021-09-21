@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import Timestamps from './Timestamps';
 
 /**
  * The BillingResponseAllOf model module.
@@ -25,7 +25,6 @@ class BillingResponseAllOf {
      * @alias module:model/BillingResponseAllOf
      */
     constructor() { 
-        
         BillingResponseAllOf.initialize(this);
     }
 

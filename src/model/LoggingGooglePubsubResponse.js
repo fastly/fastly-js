@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingGooglePubsub from './LoggingGooglePubsub.js';
-import LoggingPlacement from './LoggingPlacement.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingGooglePubsub from './LoggingGooglePubsub';
+import LoggingPlacement from './LoggingPlacement';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
 
 /**
  * The LoggingGooglePubsubResponse model module.
@@ -27,12 +27,8 @@ class LoggingGooglePubsubResponse {
     /**
      * Constructs a new <code>LoggingGooglePubsubResponse</code>.
      * @alias module:model/LoggingGooglePubsubResponse
-     * @implements module:model/LoggingGooglePubsub
-     * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
      */
     constructor() { 
-        LoggingGooglePubsub.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
         LoggingGooglePubsubResponse.initialize(this);
     }
 
@@ -54,9 +50,6 @@ class LoggingGooglePubsubResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingGooglePubsubResponse();
-            LoggingGooglePubsub.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
@@ -191,78 +184,6 @@ LoggingGooglePubsubResponse.prototype['service_id'] = undefined;
 LoggingGooglePubsubResponse.prototype['version'] = undefined;
 
 
-// Implement LoggingGooglePubsub interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingGooglePubsub.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingGooglePubsub.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingGooglePubsub.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingGooglePubsub.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingGooglePubsub.prototype['response_condition'] = undefined;
-/**
- * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
- * @member {String} secret_key
- */
-LoggingGooglePubsub.prototype['secret_key'] = undefined;
-/**
- * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
- * @member {String} user
- */
-LoggingGooglePubsub.prototype['user'] = undefined;
-/**
- * Your Google Cloud Platform project ID. Required
- * @member {String} project_id
- */
-LoggingGooglePubsub.prototype['project_id'] = undefined;
-/**
- * The Google Cloud Pub/Sub topic to which logs will be published. Required.
- * @member {String} topic
- */
-LoggingGooglePubsub.prototype['topic'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
 
 
 

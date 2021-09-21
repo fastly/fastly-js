@@ -66,7 +66,7 @@ export default class BillingApi {
 
       let authNames = ['token'];
       let contentTypes = [];
-      let accepts = ['application/json'];
+      let accepts = ['application/json', 'application/pdf', 'text/csv'];
       let returnType = BillingResponse;
       return this.apiClient.callApi(
         '/billing/v2/year/{year}/month/{month}', 'GET',
@@ -84,6 +84,60 @@ export default class BillingApi {
      */
     getInvoice(options = {}) {
       return this.getInvoiceWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+    /**
+     * Get the invoice for the given invoice_id.
+     * @param {Object} options
+     * @param {String} options.customer_id
+     * @param {String} options.invoice_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    getInvoiceByIdWithHttpInfo(options = {}) {
+      let postBody = null;
+      // Verify the required parameter 'customer_id' is set.
+      if (options['customer_id'] === undefined || options['customer_id'] === null) {
+        throw new Error("Missing the required parameter 'customer_id'.");
+      }
+      // Verify the required parameter 'invoice_id' is set.
+      if (options['invoice_id'] === undefined || options['invoice_id'] === null) {
+        throw new Error("Missing the required parameter 'invoice_id'.");
+      }
+
+      let pathParams = {
+        'customer_id': options['customer_id'],
+        'invoice_id': options['invoice_id']
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = [];
+      let accepts = ['application/json', 'application/pdf', 'text/csv'];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/billing/v2/account_customers/{customer_id}/invoices/{invoice_id}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Get the invoice for the given invoice_id.
+     * @param {Object} options
+     * @param {String} options.customer_id
+     * @param {String} options.invoice_id
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    getInvoiceById(options = {}) {
+      return this.getInvoiceByIdWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

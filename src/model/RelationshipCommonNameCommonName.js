@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import RelationshipMemberTlsDomain from './RelationshipMemberTlsDomain.js';
+import ApiClient from '../ApiClient';
+import RelationshipMemberTlsDomain from './RelationshipMemberTlsDomain';
 
 /**
  * The RelationshipCommonNameCommonName model module.
@@ -25,7 +25,6 @@ class RelationshipCommonNameCommonName {
      * @alias module:model/RelationshipCommonNameCommonName
      */
     constructor() { 
-        
         RelationshipCommonNameCommonName.initialize(this);
     }
 

@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The LoggingBigqueryAllOf model module.
@@ -24,7 +24,6 @@ class LoggingBigqueryAllOf {
      * @alias module:model/LoggingBigqueryAllOf
      */
     constructor() { 
-        
         LoggingBigqueryAllOf.initialize(this);
     }
 

@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The Results model module.
@@ -25,7 +25,6 @@ class Results {
      * @alias module:model/Results
      */
     constructor() { 
-        
         Results.initialize(this);
     }
 

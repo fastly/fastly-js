@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Data from './Data.js';
-import Pagination from './Pagination.js';
-import PaginationLinks from './PaginationLinks.js';
-import PaginationMeta from './PaginationMeta.js';
-import TlsCertificatesResponseAllOf from './TlsCertificatesResponseAllOf.js';
+import ApiClient from '../ApiClient';
+import Pagination from './Pagination';
+import PaginationLinks from './PaginationLinks';
+import PaginationMeta from './PaginationMeta';
+import TlsCertificateResponseData from './TlsCertificateResponseData';
+import TlsCertificatesResponseAllOf from './TlsCertificatesResponseAllOf';
 
 /**
  * The TlsCertificatesResponse model module.
@@ -27,11 +27,8 @@ class TlsCertificatesResponse {
     /**
      * Constructs a new <code>TlsCertificatesResponse</code>.
      * @alias module:model/TlsCertificatesResponse
-     * @implements module:model/Pagination
-     * @implements module:model/TlsCertificatesResponseAllOf
      */
     constructor() { 
-        Pagination.initialize(this);TlsCertificatesResponseAllOf.initialize(this);
         TlsCertificatesResponse.initialize(this);
     }
 
@@ -53,8 +50,6 @@ class TlsCertificatesResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsCertificatesResponse();
-            Pagination.constructFromObject(data, obj);
-            TlsCertificatesResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('links')) {
                 obj['links'] = PaginationLinks.constructFromObject(data['links']);
@@ -63,7 +58,7 @@ class TlsCertificatesResponse {
                 obj['meta'] = PaginationMeta.constructFromObject(data['meta']);
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Data]);
+                obj['data'] = ApiClient.convertToType(data['data'], [TlsCertificateResponseData]);
             }
         }
         return obj;
@@ -83,25 +78,11 @@ TlsCertificatesResponse.prototype['links'] = undefined;
 TlsCertificatesResponse.prototype['meta'] = undefined;
 
 /**
- * @member {Array.<module:model/Data>} data
+ * @member {Array.<module:model/TlsCertificateResponseData>} data
  */
 TlsCertificatesResponse.prototype['data'] = undefined;
 
 
-// Implement Pagination interface:
-/**
- * @member {module:model/PaginationLinks} links
- */
-Pagination.prototype['links'] = undefined;
-/**
- * @member {module:model/PaginationMeta} meta
- */
-Pagination.prototype['meta'] = undefined;
-// Implement TlsCertificatesResponseAllOf interface:
-/**
- * @member {Array.<module:model/Data>} data
- */
-TlsCertificatesResponseAllOf.prototype['data'] = undefined;
 
 
 

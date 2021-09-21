@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import RateLimiterResponse1 from './RateLimiterResponse1.js';
+import ApiClient from '../ApiClient';
+import RateLimiterResponse1 from './RateLimiterResponse1';
 
 /**
  * The RateLimiter model module.
@@ -25,7 +25,6 @@ class RateLimiter {
      * @alias module:model/RateLimiter
      */
     constructor() { 
-        
         RateLimiter.initialize(this);
     }
 

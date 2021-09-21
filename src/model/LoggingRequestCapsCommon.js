@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The LoggingRequestCapsCommon model module.
@@ -24,7 +24,6 @@ class LoggingRequestCapsCommon {
      * @alias module:model/LoggingRequestCapsCommon
      */
     constructor() { 
-        
         LoggingRequestCapsCommon.initialize(this);
     }
 

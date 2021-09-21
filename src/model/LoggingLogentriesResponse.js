@@ -11,13 +11,13 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingLogentries from './LoggingLogentries.js';
-import LoggingPlacement from './LoggingPlacement.js';
-import LoggingUseTls from './LoggingUseTls.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingLogentries from './LoggingLogentries';
+import LoggingPlacement from './LoggingPlacement';
+import LoggingUseTls from './LoggingUseTls';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
 
 /**
  * The LoggingLogentriesResponse model module.
@@ -28,12 +28,8 @@ class LoggingLogentriesResponse {
     /**
      * Constructs a new <code>LoggingLogentriesResponse</code>.
      * @alias module:model/LoggingLogentriesResponse
-     * @implements module:model/LoggingLogentries
-     * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
      */
     constructor() { 
-        LoggingLogentries.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
         LoggingLogentriesResponse.initialize(this);
     }
 
@@ -55,9 +51,6 @@ class LoggingLogentriesResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingLogentriesResponse();
-            LoggingLogentries.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
@@ -192,78 +185,6 @@ LoggingLogentriesResponse.prototype['service_id'] = undefined;
 LoggingLogentriesResponse.prototype['version'] = undefined;
 
 
-// Implement LoggingLogentries interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingLogentries.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingLogentries.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingLogentries.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingLogentries.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingLogentries.prototype['response_condition'] = undefined;
-/**
- * The port number.
- * @member {Number} port
- * @default 20000
- */
-LoggingLogentries.prototype['port'] = 20000;
-/**
- * The region to which to stream logs.
- * @member {module:model/LoggingLogentries.RegionEnum} region
- */
-LoggingLogentries.prototype['region'] = undefined;
-/**
- * Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
- * @member {String} token
- */
-LoggingLogentries.prototype['token'] = undefined;
-/**
- * @member {module:model/LoggingUseTls} use_tls
- */
-LoggingLogentries.prototype['use_tls'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
 
 
 

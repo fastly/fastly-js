@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**Data**](Data.md) |  | [optional] 
+**data** | [**TlsSubscriptionResponseData**](TlsSubscriptionResponseData.md) |  | [optional] 
 
 
 

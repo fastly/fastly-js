@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **links** | [**PaginationLinks**](PaginationLinks.md) |  | [optional] 
 **meta** | [**PaginationMeta**](PaginationMeta.md) |  | [optional] 
-**data** | [**[Data]**](Data.md) |  | [optional] 
+**data** | [**[WafRuleRevisionResponseData]**](WafRuleRevisionResponseData.md) |  | [optional] 
 **included** | [**[WafRule]**](WafRule.md) |  | [optional] 
 
 

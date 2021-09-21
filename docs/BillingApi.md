@@ -9,6 +9,7 @@ const apiInstance = new Fastly.BillingApi();
 Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**getInvoice**](BillingApi.md#getInvoice) | **GET** /billing/v2/year/{year}/month/{month} | Get an invoice
+[**getInvoiceById**](BillingApi.md#getInvoiceById) | **GET** /billing/v2/account_customers/{customer_id}/invoices/{invoice_id} | Get an invoice
 [**getInvoiceMtd**](BillingApi.md#getInvoiceMtd) | **GET** /billing/v2/account_customers/{customer_id}/mtd_invoice | Get month-to-date billing estimate
 
 
@@ -48,6 +49,43 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BillingResponse**](BillingResponse.md)
+
+
+## `getInvoiceById`
+
+```javascript
+getInvoiceById({ customer_id, invoice_id })
+```
+
+Get the invoice for the given invoice_id.
+
+### Example
+
+```javascript
+const options = {
+  customer_id: "customer_id_example", // required
+  invoice_id: "invoice_id_example", // required
+};
+
+apiInstance.getInvoiceById(options)
+  .then(() => {
+    console.log('API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**customer_id** | **String** |  |
+**invoice_id** | **String** |  |
+
+### Return type
+
+null (empty response body)
 
 
 ## `getInvoiceMtd`

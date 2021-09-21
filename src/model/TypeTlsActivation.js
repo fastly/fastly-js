@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 /**
 * Enum class TypeTlsActivation.
 * @enum {}

@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import AnyOfwafFirewallVersionschemasWafActiveRule from './AnyOfwafFirewallVersionschemasWafActiveRule.js';
-import Data from './Data.js';
+import ApiClient from '../ApiClient';
+import IncludedWithWafFirewallVersionItem from './IncludedWithWafFirewallVersionItem';
+import WafFirewallVersionResponseData from './WafFirewallVersionResponseData';
 
 /**
  * The WafFirewallVersionResponse model module.
@@ -26,7 +26,6 @@ class WafFirewallVersionResponse {
      * @alias module:model/WafFirewallVersionResponse
      */
     constructor() { 
-        
         WafFirewallVersionResponse.initialize(this);
     }
 
@@ -50,10 +49,10 @@ class WafFirewallVersionResponse {
             obj = obj || new WafFirewallVersionResponse();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], Data);
+                obj['data'] = WafFirewallVersionResponseData.constructFromObject(data['data']);
             }
             if (data.hasOwnProperty('included')) {
-                obj['included'] = ApiClient.convertToType(data['included'], [AnyOfwafFirewallVersionschemasWafActiveRule]);
+                obj['included'] = ApiClient.convertToType(data['included'], [IncludedWithWafFirewallVersionItem]);
             }
         }
         return obj;
@@ -63,12 +62,12 @@ class WafFirewallVersionResponse {
 }
 
 /**
- * @member {module:model/Data} data
+ * @member {module:model/WafFirewallVersionResponseData} data
  */
 WafFirewallVersionResponse.prototype['data'] = undefined;
 
 /**
- * @member {Array.<module:model/AnyOfwafFirewallVersionschemasWafActiveRule>} included
+ * @member {Array.<module:model/IncludedWithWafFirewallVersionItem>} included
  */
 WafFirewallVersionResponse.prototype['included'] = undefined;
 

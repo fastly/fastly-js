@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import AnyOfobjectobject from './AnyOfobjectobject.js';
-import TlsConfigurationDataAttributes from './TlsConfigurationDataAttributes.js';
-import TypeTlsConfiguration from './TypeTlsConfiguration.js';
+import ApiClient from '../ApiClient';
+import RelationshipsForTlsConfiguration from './RelationshipsForTlsConfiguration';
+import TlsConfigurationDataAttributes from './TlsConfigurationDataAttributes';
+import TypeTlsConfiguration from './TypeTlsConfiguration';
 
 /**
  * The TlsConfigurationData model module.
@@ -27,7 +27,6 @@ class TlsConfigurationData {
      * @alias module:model/TlsConfigurationData
      */
     constructor() { 
-        
         TlsConfigurationData.initialize(this);
     }
 
@@ -54,7 +53,7 @@ class TlsConfigurationData {
                 obj['attributes'] = TlsConfigurationDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = ApiClient.convertToType(data['relationships'], AnyOfobjectobject);
+                obj['relationships'] = RelationshipsForTlsConfiguration.constructFromObject(data['relationships']);
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeTlsConfiguration.constructFromObject(data['type']);
@@ -72,7 +71,7 @@ class TlsConfigurationData {
 TlsConfigurationData.prototype['attributes'] = undefined;
 
 /**
- * @member {module:model/AnyOfobjectobject} relationships
+ * @member {module:model/RelationshipsForTlsConfiguration} relationships
  */
 TlsConfigurationData.prototype['relationships'] = undefined;
 

@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The BackendResponseAllOf model module.
@@ -24,7 +24,6 @@ class BackendResponseAllOf {
      * @alias module:model/BackendResponseAllOf
      */
     constructor() { 
-        
         BackendResponseAllOf.initialize(this);
     }
 

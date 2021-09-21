@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import ServiceAuthorizationDataAttributes from './ServiceAuthorizationDataAttributes.js';
-import TypeServiceAuthorization from './TypeServiceAuthorization.js';
+import ApiClient from '../ApiClient';
+import ServiceAuthorizationDataAttributes from './ServiceAuthorizationDataAttributes';
+import TypeServiceAuthorization from './TypeServiceAuthorization';
 
 /**
  * The ServiceAuthorizationData model module.
@@ -26,7 +26,6 @@ class ServiceAuthorizationData {
      * @alias module:model/ServiceAuthorizationData
      */
     constructor() { 
-        
         ServiceAuthorizationData.initialize(this);
     }
 

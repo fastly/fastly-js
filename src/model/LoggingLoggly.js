@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingCommon from './LoggingCommon.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingLogglyAllOf from './LoggingLogglyAllOf.js';
-import LoggingPlacement from './LoggingPlacement.js';
+import ApiClient from '../ApiClient';
+import LoggingCommon from './LoggingCommon';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingLogglyAllOf from './LoggingLogglyAllOf';
+import LoggingPlacement from './LoggingPlacement';
 
 /**
  * The LoggingLoggly model module.
@@ -26,11 +26,8 @@ class LoggingLoggly {
     /**
      * Constructs a new <code>LoggingLoggly</code>.
      * @alias module:model/LoggingLoggly
-     * @implements module:model/LoggingCommon
-     * @implements module:model/LoggingLogglyAllOf
      */
     constructor() { 
-        LoggingCommon.initialize(this);LoggingLogglyAllOf.initialize(this);
         LoggingLoggly.initialize(this);
     }
 
@@ -52,8 +49,6 @@ class LoggingLoggly {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingLoggly();
-            LoggingCommon.constructFromObject(data, obj);
-            LoggingLogglyAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
@@ -116,37 +111,6 @@ LoggingLoggly.prototype['response_condition'] = undefined;
 LoggingLoggly.prototype['token'] = undefined;
 
 
-// Implement LoggingCommon interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingCommon.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingCommon.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingCommon.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingCommon.prototype['response_condition'] = undefined;
-// Implement LoggingLogglyAllOf interface:
-/**
- * The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)).
- * @member {String} token
- */
-LoggingLogglyAllOf.prototype['token'] = undefined;
 
 
 

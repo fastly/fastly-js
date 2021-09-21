@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Pool from './Pool.js';
-import PoolResponseAllOf from './PoolResponseAllOf.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import Pool from './Pool';
+import PoolResponseAllOf from './PoolResponseAllOf';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
 
 /**
  * The PoolResponse model module.
@@ -26,13 +26,8 @@ class PoolResponse {
     /**
      * Constructs a new <code>PoolResponse</code>.
      * @alias module:model/PoolResponse
-     * @implements module:model/Pool
-     * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
-     * @implements module:model/PoolResponseAllOf
      */
     constructor() { 
-        Pool.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);PoolResponseAllOf.initialize(this);
         PoolResponse.initialize(this);
     }
 
@@ -54,10 +49,6 @@ class PoolResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new PoolResponse();
-            Pool.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
-            PoolResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('tls_ca_cert')) {
                 obj['tls_ca_cert'] = ApiClient.convertToType(data['tls_ca_cert'], 'String');
@@ -318,153 +309,6 @@ PoolResponse.prototype['version'] = undefined;
 PoolResponse.prototype['id'] = undefined;
 
 
-// Implement Pool interface:
-/**
- * A secure certificate to authenticate a server with. Must be in PEM format.
- * @member {String} tls_ca_cert
- * @default 'null'
- */
-Pool.prototype['tls_ca_cert'] = 'null';
-/**
- * The hostname used to verify a server's certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
- * @member {String} tls_cert_hostname
- * @default 'null'
- */
-Pool.prototype['tls_cert_hostname'] = 'null';
-/**
- * The client certificate used to make authenticated requests. Must be in PEM format.
- * @member {String} tls_client_cert
- * @default 'null'
- */
-Pool.prototype['tls_client_cert'] = 'null';
-/**
- * The client private key used to make authenticated requests. Must be in PEM format.
- * @member {String} tls_client_key
- * @default 'null'
- */
-Pool.prototype['tls_client_key'] = 'null';
-/**
- * Whether to use TLS.
- * @member {module:model/Pool.UseTlsEnum} use_tls
- * @default UseTlsEnum.no_tls
- */
-Pool.prototype['use_tls'] = undefined;
-/**
- * A freeform descriptive note.
- * @member {String} comment
- */
-Pool.prototype['comment'] = undefined;
-/**
- * How long to wait for a timeout in milliseconds. Optional.
- * @member {Number} connect_timeout
- */
-Pool.prototype['connect_timeout'] = undefined;
-/**
- * How long to wait for the first byte in milliseconds. Optional.
- * @member {Number} first_byte_timeout
- */
-Pool.prototype['first_byte_timeout'] = undefined;
-/**
- * Name of the healthcheck to use with this pool. Can be empty and could be reused across multiple backend and pools.
- * @member {String} healthcheck
- */
-Pool.prototype['healthcheck'] = undefined;
-/**
- * Maximum number of connections.
- * @member {Number} max_conn_default
- */
-Pool.prototype['max_conn_default'] = undefined;
-/**
- * Maximum allowed TLS version on connections to this server. Optional.
- * @member {Number} max_tls_version
- */
-Pool.prototype['max_tls_version'] = undefined;
-/**
- * Minimum allowed TLS version on connections to this server. Optional.
- * @member {Number} min_tls_version
- */
-Pool.prototype['min_tls_version'] = undefined;
-/**
- * Name for the Pool.
- * @member {String} name
- */
-Pool.prototype['name'] = undefined;
-/**
- * The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to `null` meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
- * @member {String} override_host
- * @default 'null'
- */
-Pool.prototype['override_host'] = 'null';
-/**
- * Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
- * @member {Number} quorum
- * @default 75
- */
-Pool.prototype['quorum'] = 75;
-/**
- * Condition which, if met, will select this configuration during a request. Optional.
- * @member {String} request_condition
- */
-Pool.prototype['request_condition'] = undefined;
-/**
- * Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
- * @member {String} shield
- * @default 'null'
- */
-Pool.prototype['shield'] = 'null';
-/**
- * Be strict on checking TLS certs. Optional.
- * @member {Number} tls_check_cert
- */
-Pool.prototype['tls_check_cert'] = undefined;
-/**
- * List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.0.2/man1/ciphers) for details). Optional.
- * @member {String} tls_ciphers
- */
-Pool.prototype['tls_ciphers'] = undefined;
-/**
- * SNI hostname. Optional.
- * @member {String} tls_sni_hostname
- */
-Pool.prototype['tls_sni_hostname'] = undefined;
-/**
- * What type of load balance group to use.
- * @member {module:model/Pool.TypeEnum} type
- */
-Pool.prototype['type'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
-// Implement PoolResponseAllOf interface:
-/**
- * Alphanumeric string identifying a Pool.
- * @member {String} id
- */
-PoolResponseAllOf.prototype['id'] = undefined;
 
 
 

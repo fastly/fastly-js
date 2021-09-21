@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import AnyOfobjectobjectrelationshipTlsSubscriptions from './AnyOfobjectobjectrelationshipTlsSubscriptions.js';
-import TypeTlsDomain from './TypeTlsDomain.js';
+import ApiClient from '../ApiClient';
+import RelationshipsForTlsDomain from './RelationshipsForTlsDomain';
+import TypeTlsDomain from './TypeTlsDomain';
 
 /**
  * The TlsDomainData model module.
@@ -26,7 +26,6 @@ class TlsDomainData {
      * @alias module:model/TlsDomainData
      */
     constructor() { 
-        
         TlsDomainData.initialize(this);
     }
 
@@ -53,7 +52,7 @@ class TlsDomainData {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
             if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = ApiClient.convertToType(data['relationships'], AnyOfobjectobjectrelationshipTlsSubscriptions);
+                obj['relationships'] = RelationshipsForTlsDomain.constructFromObject(data['relationships']);
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeTlsDomain.constructFromObject(data['type']);
@@ -72,7 +71,7 @@ class TlsDomainData {
 TlsDomainData.prototype['id'] = undefined;
 
 /**
- * @member {module:model/AnyOfobjectobjectrelationshipTlsSubscriptions} relationships
+ * @member {module:model/RelationshipsForTlsDomain} relationships
  */
 TlsDomainData.prototype['relationships'] = undefined;
 

@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The DictionaryInfoResponse model module.
@@ -24,7 +24,6 @@ class DictionaryInfoResponse {
      * @alias module:model/DictionaryInfoResponse
      */
     constructor() { 
-        
         DictionaryInfoResponse.initialize(this);
     }
 

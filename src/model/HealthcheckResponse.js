@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Healthcheck from './Healthcheck.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import Healthcheck from './Healthcheck';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
 
 /**
  * The HealthcheckResponse model module.
@@ -25,12 +25,8 @@ class HealthcheckResponse {
     /**
      * Constructs a new <code>HealthcheckResponse</code>.
      * @alias module:model/HealthcheckResponse
-     * @implements module:model/Healthcheck
-     * @implements module:model/ServiceIdAndVersion
-     * @implements module:model/Timestamps
      */
     constructor() { 
-        Healthcheck.initialize(this);ServiceIdAndVersion.initialize(this);Timestamps.initialize(this);
         HealthcheckResponse.initialize(this);
     }
 
@@ -52,9 +48,6 @@ class HealthcheckResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new HealthcheckResponse();
-            Healthcheck.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('check_interval')) {
                 obj['check_interval'] = ApiClient.convertToType(data['check_interval'], 'Number');
@@ -217,94 +210,6 @@ HealthcheckResponse.prototype['deleted_at'] = undefined;
 HealthcheckResponse.prototype['updated_at'] = undefined;
 
 
-// Implement Healthcheck interface:
-/**
- * How often to run the healthcheck in milliseconds.
- * @member {Number} check_interval
- */
-Healthcheck.prototype['check_interval'] = undefined;
-/**
- * A freeform descriptive note.
- * @member {String} comment
- */
-Healthcheck.prototype['comment'] = undefined;
-/**
- * The status code expected from the host.
- * @member {Number} expected_response
- */
-Healthcheck.prototype['expected_response'] = undefined;
-/**
- * Which host to check.
- * @member {String} host
- */
-Healthcheck.prototype['host'] = undefined;
-/**
- * Whether to use version 1.0 or 1.1 HTTP.
- * @member {String} http_version
- */
-Healthcheck.prototype['http_version'] = undefined;
-/**
- * When loading a config, the initial number of probes to be seen as OK.
- * @member {Number} initial
- */
-Healthcheck.prototype['initial'] = undefined;
-/**
- * Which HTTP method to use.
- * @member {String} method
- */
-Healthcheck.prototype['method'] = undefined;
-/**
- * The name of the healthcheck.
- * @member {String} name
- */
-Healthcheck.prototype['name'] = undefined;
-/**
- * The path to check.
- * @member {String} path
- */
-Healthcheck.prototype['path'] = undefined;
-/**
- * How many healthchecks must succeed to be considered healthy.
- * @member {Number} threshold
- */
-Healthcheck.prototype['threshold'] = undefined;
-/**
- * Timeout in milliseconds.
- * @member {Number} timeout
- */
-Healthcheck.prototype['timeout'] = undefined;
-/**
- * The number of most recent healthcheck queries to keep for this healthcheck.
- * @member {Number} window
- */
-Healthcheck.prototype['window'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
 
 
 

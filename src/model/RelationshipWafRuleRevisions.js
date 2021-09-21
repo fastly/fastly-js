@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import RelationshipWafRuleRevisionWafRuleRevisions from './RelationshipWafRuleRevisionWafRuleRevisions.js';
+import ApiClient from '../ApiClient';
+import RelationshipWafRuleRevisionWafRuleRevisions from './RelationshipWafRuleRevisionWafRuleRevisions';
 
 /**
  * The RelationshipWafRuleRevisions model module.
@@ -25,7 +25,6 @@ class RelationshipWafRuleRevisions {
      * @alias module:model/RelationshipWafRuleRevisions
      */
     constructor() { 
-        
         RelationshipWafRuleRevisions.initialize(this);
     }
 

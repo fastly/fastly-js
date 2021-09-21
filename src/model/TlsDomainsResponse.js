@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Data from './Data.js';
-import Pagination from './Pagination.js';
-import PaginationLinks from './PaginationLinks.js';
-import PaginationMeta from './PaginationMeta.js';
-import TlsDomainsResponseAllOf from './TlsDomainsResponseAllOf.js';
+import ApiClient from '../ApiClient';
+import Pagination from './Pagination';
+import PaginationLinks from './PaginationLinks';
+import PaginationMeta from './PaginationMeta';
+import TlsDomainData from './TlsDomainData';
+import TlsDomainsResponseAllOf from './TlsDomainsResponseAllOf';
 
 /**
  * The TlsDomainsResponse model module.
@@ -27,11 +27,8 @@ class TlsDomainsResponse {
     /**
      * Constructs a new <code>TlsDomainsResponse</code>.
      * @alias module:model/TlsDomainsResponse
-     * @implements module:model/Pagination
-     * @implements module:model/TlsDomainsResponseAllOf
      */
     constructor() { 
-        Pagination.initialize(this);TlsDomainsResponseAllOf.initialize(this);
         TlsDomainsResponse.initialize(this);
     }
 
@@ -53,8 +50,6 @@ class TlsDomainsResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsDomainsResponse();
-            Pagination.constructFromObject(data, obj);
-            TlsDomainsResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('links')) {
                 obj['links'] = PaginationLinks.constructFromObject(data['links']);
@@ -63,7 +58,7 @@ class TlsDomainsResponse {
                 obj['meta'] = PaginationMeta.constructFromObject(data['meta']);
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Data]);
+                obj['data'] = ApiClient.convertToType(data['data'], [TlsDomainData]);
             }
         }
         return obj;
@@ -83,25 +78,11 @@ TlsDomainsResponse.prototype['links'] = undefined;
 TlsDomainsResponse.prototype['meta'] = undefined;
 
 /**
- * @member {Array.<module:model/Data>} data
+ * @member {Array.<module:model/TlsDomainData>} data
  */
 TlsDomainsResponse.prototype['data'] = undefined;
 
 
-// Implement Pagination interface:
-/**
- * @member {module:model/PaginationLinks} links
- */
-Pagination.prototype['links'] = undefined;
-/**
- * @member {module:model/PaginationMeta} meta
- */
-Pagination.prototype['meta'] = undefined;
-// Implement TlsDomainsResponseAllOf interface:
-/**
- * @member {Array.<module:model/Data>} data
- */
-TlsDomainsResponseAllOf.prototype['data'] = undefined;
 
 
 

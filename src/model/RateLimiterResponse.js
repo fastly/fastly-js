@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import RateLimiter from './RateLimiter.js';
-import RateLimiterResponse1 from './RateLimiterResponse1.js';
-import RateLimiterResponseAllOf from './RateLimiterResponseAllOf.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import RateLimiter from './RateLimiter';
+import RateLimiterResponse1 from './RateLimiterResponse1';
+import RateLimiterResponseAllOf from './RateLimiterResponseAllOf';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
 
 /**
  * The RateLimiterResponse model module.
@@ -27,13 +27,8 @@ class RateLimiterResponse {
     /**
      * Constructs a new <code>RateLimiterResponse</code>.
      * @alias module:model/RateLimiterResponse
-     * @implements module:model/RateLimiter
-     * @implements module:model/ServiceIdAndVersion
-     * @implements module:model/Timestamps
-     * @implements module:model/RateLimiterResponseAllOf
      */
     constructor() { 
-        RateLimiter.initialize(this);ServiceIdAndVersion.initialize(this);Timestamps.initialize(this);RateLimiterResponseAllOf.initialize(this);
         RateLimiterResponse.initialize(this);
     }
 
@@ -55,10 +50,6 @@ class RateLimiterResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RateLimiterResponse();
-            RateLimiter.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
-            RateLimiterResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('action')) {
                 obj['action'] = ApiClient.convertToType(data['action'], 'String');
@@ -229,99 +220,6 @@ RateLimiterResponse.prototype['updated_at'] = undefined;
 RateLimiterResponse.prototype['id'] = undefined;
 
 
-// Implement RateLimiter interface:
-/**
- * The action to take when a rate limiter violation is detected.
- * @member {module:model/RateLimiter.ActionEnum} action
- */
-RateLimiter.prototype['action'] = undefined;
-/**
- * Array of VCL variables used to generate a counter key to identify a client. Example variables include `req.http.Fastly-Client-IP`, `req.http.User-Agent`, or a custom header like `req.http.API-Key`.
- * @member {Array.<String>} client_key
- */
-RateLimiter.prototype['client_key'] = undefined;
-/**
- * Revision number of the rate limiting feature implementation. Defaults to the most recent revision.
- * @member {Number} feature_revision
- */
-RateLimiter.prototype['feature_revision'] = undefined;
-/**
- * Array of HTTP methods to apply rate limiting to.
- * @member {Array.<module:model/RateLimiter.HttpMethodsEnum>} http_methods
- */
-RateLimiter.prototype['http_methods'] = undefined;
-/**
- * Name of the type of logging endpoint to be used when action is `log_only`. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries.
- * @member {module:model/RateLimiter.LoggerTypeEnum} logger_type
- */
-RateLimiter.prototype['logger_type'] = undefined;
-/**
- * A human readable name for the rate limiting rule.
- * @member {String} name
- */
-RateLimiter.prototype['name'] = undefined;
-/**
- * Length of time in seconds that the rate limiter is in effect after the initial violation is detected.
- * @member {Number} penalty_box_duration
- */
-RateLimiter.prototype['penalty_box_duration'] = undefined;
-/**
- * @member {module:model/RateLimiterResponse1} response
- */
-RateLimiter.prototype['response'] = undefined;
-/**
- * Name of existing response object. Required if `action` is `response_object`. Note that the rate limiter response is only updated to reflect the response object content when saving the rate limiter configuration.
- * @member {String} response_object_name
- */
-RateLimiter.prototype['response_object_name'] = undefined;
-/**
- * Upper limit of requests per second allowed by the rate limiter.
- * @member {Number} rps_limit
- */
-RateLimiter.prototype['rps_limit'] = undefined;
-/**
- * The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
- * @member {String} uri_dictionary_name
- */
-RateLimiter.prototype['uri_dictionary_name'] = undefined;
-/**
- * Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.
- * @member {module:model/RateLimiter.WindowSizeEnum} window_size
- */
-RateLimiter.prototype['window_size'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
-// Implement RateLimiterResponseAllOf interface:
-/**
- * Alphanumeric string identifying the rate limiter.
- * @member {String} id
- */
-RateLimiterResponseAllOf.prototype['id'] = undefined;
 
 
 

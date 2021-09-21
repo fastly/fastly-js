@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The Vcl model module.
@@ -24,7 +24,6 @@ class Vcl {
      * @alias module:model/Vcl
      */
     constructor() { 
-        
         Vcl.initialize(this);
     }
 

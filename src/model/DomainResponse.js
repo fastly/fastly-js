@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Domain from './Domain.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import Domain from './Domain';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
 
 /**
  * The DomainResponse model module.
@@ -25,12 +25,8 @@ class DomainResponse {
     /**
      * Constructs a new <code>DomainResponse</code>.
      * @alias module:model/DomainResponse
-     * @implements module:model/Domain
-     * @implements module:model/ServiceIdAndVersion
-     * @implements module:model/Timestamps
      */
     constructor() { 
-        Domain.initialize(this);ServiceIdAndVersion.initialize(this);Timestamps.initialize(this);
         DomainResponse.initialize(this);
     }
 
@@ -52,9 +48,6 @@ class DomainResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new DomainResponse();
-            Domain.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
@@ -127,44 +120,6 @@ DomainResponse.prototype['deleted_at'] = undefined;
 DomainResponse.prototype['updated_at'] = undefined;
 
 
-// Implement Domain interface:
-/**
- * A freeform descriptive note.
- * @member {String} comment
- */
-Domain.prototype['comment'] = undefined;
-/**
- * The name of the domain or domains associated with this service.
- * @member {String} name
- */
-Domain.prototype['name'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
 
 
 

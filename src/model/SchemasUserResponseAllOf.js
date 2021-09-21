@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The SchemasUserResponseAllOf model module.
@@ -24,7 +24,6 @@ class SchemasUserResponseAllOf {
      * @alias module:model/SchemasUserResponseAllOf
      */
     constructor() { 
-        
         SchemasUserResponseAllOf.initialize(this);
     }
 

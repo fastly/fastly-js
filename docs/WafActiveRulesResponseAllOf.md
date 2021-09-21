@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[Data]**](Data.md) |  | [optional] 
-**included** | [**[AnyOfwafFirewallVersionwafRuleRevision]**](AnyOfwafFirewallVersionwafRuleRevision.md) |  | [optional] 
+**data** | [**[WafActiveRuleResponseData]**](WafActiveRuleResponseData.md) |  | [optional] 
+**included** | [**[IncludedWithWafActiveRuleItem]**](IncludedWithWafActiveRuleItem.md) |  | [optional] 
 
 
 

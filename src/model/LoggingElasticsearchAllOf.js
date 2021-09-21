@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The LoggingElasticsearchAllOf model module.
@@ -24,7 +24,6 @@ class LoggingElasticsearchAllOf {
      * @alias module:model/LoggingElasticsearchAllOf
      */
     constructor() { 
-        
         LoggingElasticsearchAllOf.initialize(this);
     }
 

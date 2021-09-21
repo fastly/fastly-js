@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingCommon from './LoggingCommon.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingLogentriesAllOf from './LoggingLogentriesAllOf.js';
-import LoggingPlacement from './LoggingPlacement.js';
-import LoggingUseTls from './LoggingUseTls.js';
+import ApiClient from '../ApiClient';
+import LoggingCommon from './LoggingCommon';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingLogentriesAllOf from './LoggingLogentriesAllOf';
+import LoggingPlacement from './LoggingPlacement';
+import LoggingUseTls from './LoggingUseTls';
 
 /**
  * The LoggingLogentries model module.
@@ -27,11 +27,8 @@ class LoggingLogentries {
     /**
      * Constructs a new <code>LoggingLogentries</code>.
      * @alias module:model/LoggingLogentries
-     * @implements module:model/LoggingCommon
-     * @implements module:model/LoggingLogentriesAllOf
      */
     constructor() { 
-        LoggingCommon.initialize(this);LoggingLogentriesAllOf.initialize(this);
         LoggingLogentries.initialize(this);
     }
 
@@ -53,8 +50,6 @@ class LoggingLogentries {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingLogentries();
-            LoggingCommon.constructFromObject(data, obj);
-            LoggingLogentriesAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
@@ -144,52 +139,6 @@ LoggingLogentries.prototype['token'] = undefined;
 LoggingLogentries.prototype['use_tls'] = undefined;
 
 
-// Implement LoggingCommon interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingCommon.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingCommon.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingCommon.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingCommon.prototype['response_condition'] = undefined;
-// Implement LoggingLogentriesAllOf interface:
-/**
- * The port number.
- * @member {Number} port
- * @default 20000
- */
-LoggingLogentriesAllOf.prototype['port'] = 20000;
-/**
- * The region to which to stream logs.
- * @member {module:model/LoggingLogentriesAllOf.RegionEnum} region
- */
-LoggingLogentriesAllOf.prototype['region'] = undefined;
-/**
- * Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
- * @member {String} token
- */
-LoggingLogentriesAllOf.prototype['token'] = undefined;
-/**
- * @member {module:model/LoggingUseTls} use_tls
- */
-LoggingLogentriesAllOf.prototype['use_tls'] = undefined;
 
 
 

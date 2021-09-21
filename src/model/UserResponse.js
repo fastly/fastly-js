@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import RoleUser from './RoleUser.js';
-import SchemasUserResponseAllOf from './SchemasUserResponseAllOf.js';
-import Timestamps from './Timestamps.js';
-import User from './User.js';
+import ApiClient from '../ApiClient';
+import RoleUser from './RoleUser';
+import SchemasUserResponseAllOf from './SchemasUserResponseAllOf';
+import Timestamps from './Timestamps';
+import User from './User';
 
 /**
  * The UserResponse model module.
@@ -26,12 +26,8 @@ class UserResponse {
     /**
      * Constructs a new <code>UserResponse</code>.
      * @alias module:model/UserResponse
-     * @implements module:model/User
-     * @implements module:model/Timestamps
-     * @implements module:model/SchemasUserResponseAllOf
      */
     constructor() { 
-        User.initialize(this);Timestamps.initialize(this);SchemasUserResponseAllOf.initialize(this);
         UserResponse.initialize(this);
     }
 
@@ -53,9 +49,6 @@ class UserResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new UserResponse();
-            User.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
-            SchemasUserResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('limit_services')) {
                 obj['limit_services'] = ApiClient.convertToType(data['limit_services'], 'Boolean');
@@ -190,78 +183,6 @@ UserResponse.prototype['email_hash'] = undefined;
 UserResponse.prototype['id'] = undefined;
 
 
-// Implement User interface:
-/**
- * Indicates that the user has limited access to the customer's services.
- * @member {Boolean} limit_services
- */
-User.prototype['limit_services'] = undefined;
-/**
- * Indicates whether the is account is locked for editing or not.
- * @member {Boolean} locked
- */
-User.prototype['locked'] = undefined;
-/**
- * The login associated with the user (typically, an email address).
- * @member {String} login
- */
-User.prototype['login'] = undefined;
-/**
- * The real life name of the user.
- * @member {String} name
- */
-User.prototype['name'] = undefined;
-/**
- * Indicates if a new password is required at next login.
- * @member {Boolean} require_new_password
- */
-User.prototype['require_new_password'] = undefined;
-/**
- * @member {module:model/RoleUser} role
- */
-User.prototype['role'] = undefined;
-/**
- * Indicates if 2FA is enabled on the user.
- * @member {Boolean} two_factor_auth_enabled
- */
-User.prototype['two_factor_auth_enabled'] = undefined;
-/**
- * Indicates if 2FA is required by the user's customer account.
- * @member {Boolean} two_factor_setup_required
- */
-User.prototype['two_factor_setup_required'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
-// Implement SchemasUserResponseAllOf interface:
-/**
- * Alphanumeric string identifying the customer.
- * @member {String} customer_id
- */
-SchemasUserResponseAllOf.prototype['customer_id'] = undefined;
-/**
- * The alphanumeric string identifying a email login.
- * @member {String} email_hash
- */
-SchemasUserResponseAllOf.prototype['email_hash'] = undefined;
-/**
- * Alphanumeric string identifying the user.
- * @member {String} id
- */
-SchemasUserResponseAllOf.prototype['id'] = undefined;
 
 
 

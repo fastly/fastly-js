@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The LoggingS3AllOf model module.
@@ -24,7 +24,6 @@ class LoggingS3AllOf {
      * @alias module:model/LoggingS3AllOf
      */
     constructor() { 
-        
         LoggingS3AllOf.initialize(this);
     }
 

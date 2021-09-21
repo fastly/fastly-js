@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import RelationshipUserUser from './RelationshipUserUser.js';
+import ApiClient from '../ApiClient';
+import RelationshipUserUser from './RelationshipUserUser';
 
 /**
  * The RelationshipUser model module.
@@ -25,7 +25,6 @@ class RelationshipUser {
      * @alias module:model/RelationshipUser
      */
     constructor() { 
-        
         RelationshipUser.initialize(this);
     }
 

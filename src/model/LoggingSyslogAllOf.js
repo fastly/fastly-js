@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingMessageType from './LoggingMessageType.js';
-import LoggingUseTls from './LoggingUseTls.js';
+import ApiClient from '../ApiClient';
+import LoggingMessageType from './LoggingMessageType';
+import LoggingUseTls from './LoggingUseTls';
 
 /**
  * The LoggingSyslogAllOf model module.
@@ -26,7 +26,6 @@ class LoggingSyslogAllOf {
      * @alias module:model/LoggingSyslogAllOf
      */
     constructor() { 
-        
         LoggingSyslogAllOf.initialize(this);
     }
 

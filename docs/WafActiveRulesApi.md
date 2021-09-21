@@ -72,7 +72,7 @@ Bulk update all active rules on a [firewall version](https://developer.fastly.co
 const options = {
   firewall_id: "firewall_id_example", // required
   version_id: 56, // required
-  body: new Fastly.Data(),
+  body: new Fastly.WafActiveRuleData(),
 };
 
 apiInstance.bulkUpdateWafActiveRules(options)
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **firewall_id** | **String** |  |
 **version_id** | **Number** |  |
-**body** | **Data** |  | [optional]
+**body** | **WafActiveRuleData** |  | [optional]
 
 ### Return type
 
@@ -133,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OneOfwafActiveRuleResponsewafActiveRulesResponse**](OneOfwafActiveRuleResponsewafActiveRulesResponse.md)
+[**WafActiveRuleCreationResponse**](WafActiveRuleCreationResponse.md)
 
 
 ## `createWafActiveRulesTag`

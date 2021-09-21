@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **attributes** | [**TlsConfigurationDataAttributes**](TlsConfigurationDataAttributes.md) |  | [optional] 
-**relationships** | [**AnyOfobjectobject**](AnyOfobjectobject.md) |  | [optional] 
+**relationships** | [**RelationshipsForTlsConfiguration**](RelationshipsForTlsConfiguration.md) |  | [optional] 
 **type** | [**TypeTlsConfiguration**](TypeTlsConfiguration.md) |  | [optional] 
 
 

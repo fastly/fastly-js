@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import RelationshipTlsDomains from './RelationshipTlsDomains.js';
-import TlsCertificateDataAttributes from './TlsCertificateDataAttributes.js';
-import TypeTlsCertificate from './TypeTlsCertificate.js';
+import ApiClient from '../ApiClient';
+import RelationshipTlsDomains from './RelationshipTlsDomains';
+import TlsCertificateDataAttributes from './TlsCertificateDataAttributes';
+import TypeTlsCertificate from './TypeTlsCertificate';
 
 /**
  * The TlsCertificateData model module.
@@ -27,7 +27,6 @@ class TlsCertificateData {
      * @alias module:model/TlsCertificateData
      */
     constructor() { 
-        
         TlsCertificateData.initialize(this);
     }
 

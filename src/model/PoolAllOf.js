@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The PoolAllOf model module.
@@ -24,7 +24,6 @@ class PoolAllOf {
      * @alias module:model/PoolAllOf
      */
     constructor() { 
-        
         PoolAllOf.initialize(this);
     }
 

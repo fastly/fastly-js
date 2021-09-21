@@ -11,14 +11,14 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingCommon from './LoggingCommon.js';
-import LoggingCompressionCodec from './LoggingCompressionCodec.js';
-import LoggingDigitaloceanAllOf from './LoggingDigitaloceanAllOf.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingGenericCommon from './LoggingGenericCommon.js';
-import LoggingMessageType from './LoggingMessageType.js';
-import LoggingPlacement from './LoggingPlacement.js';
+import ApiClient from '../ApiClient';
+import LoggingCommon from './LoggingCommon';
+import LoggingCompressionCodec from './LoggingCompressionCodec';
+import LoggingDigitaloceanAllOf from './LoggingDigitaloceanAllOf';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingGenericCommon from './LoggingGenericCommon';
+import LoggingMessageType from './LoggingMessageType';
+import LoggingPlacement from './LoggingPlacement';
 
 /**
  * The LoggingDigitalocean model module.
@@ -29,12 +29,8 @@ class LoggingDigitalocean {
     /**
      * Constructs a new <code>LoggingDigitalocean</code>.
      * @alias module:model/LoggingDigitalocean
-     * @implements module:model/LoggingCommon
-     * @implements module:model/LoggingGenericCommon
-     * @implements module:model/LoggingDigitaloceanAllOf
      */
     constructor() { 
-        LoggingCommon.initialize(this);LoggingGenericCommon.initialize(this);LoggingDigitaloceanAllOf.initialize(this);
         LoggingDigitalocean.initialize(this);
     }
 
@@ -56,9 +52,6 @@ class LoggingDigitalocean {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingDigitalocean();
-            LoggingCommon.constructFromObject(data, obj);
-            LoggingGenericCommon.constructFromObject(data, obj);
-            LoggingDigitaloceanAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
@@ -214,91 +207,6 @@ LoggingDigitalocean.prototype['public_key'] = 'null';
 LoggingDigitalocean.prototype['secret_key'] = undefined;
 
 
-// Implement LoggingCommon interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingCommon.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingCommon.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingCommon.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingCommon.prototype['response_condition'] = undefined;
-// Implement LoggingGenericCommon interface:
-/**
- * @member {module:model/LoggingCompressionCodec} compression_codec
- */
-LoggingGenericCommon.prototype['compression_codec'] = undefined;
-/**
- * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {Number} gzip_level
- * @default 0
- */
-LoggingGenericCommon.prototype['gzip_level'] = 0;
-/**
- * @member {module:model/LoggingMessageType} message_type
- */
-LoggingGenericCommon.prototype['message_type'] = undefined;
-/**
- * How frequently log files are finalized so they can be available for reading (in seconds).
- * @member {Number} period
- * @default 3600
- */
-LoggingGenericCommon.prototype['period'] = 3600;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} timestamp_format
- */
-LoggingGenericCommon.prototype['timestamp_format'] = undefined;
-// Implement LoggingDigitaloceanAllOf interface:
-/**
- * Your DigitalOcean Spaces account access key.
- * @member {String} access_key
- */
-LoggingDigitaloceanAllOf.prototype['access_key'] = undefined;
-/**
- * The name of the DigitalOcean Space.
- * @member {String} bucket_name
- */
-LoggingDigitaloceanAllOf.prototype['bucket_name'] = undefined;
-/**
- * The domain of the DigitalOcean Spaces endpoint.
- * @member {String} domain
- * @default 'nyc3.digitaloceanspaces.com'
- */
-LoggingDigitaloceanAllOf.prototype['domain'] = 'nyc3.digitaloceanspaces.com';
-/**
- * The path to upload logs to.
- * @member {String} path
- * @default 'null'
- */
-LoggingDigitaloceanAllOf.prototype['path'] = 'null';
-/**
- * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
- * @member {String} public_key
- * @default 'null'
- */
-LoggingDigitaloceanAllOf.prototype['public_key'] = 'null';
-/**
- * Your DigitalOcean Spaces account secret key.
- * @member {String} secret_key
- */
-LoggingDigitaloceanAllOf.prototype['secret_key'] = undefined;
 
 
 

@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import TypeTlsCertificate from './TypeTlsCertificate.js';
+import ApiClient from '../ApiClient';
+import TypeTlsCertificate from './TypeTlsCertificate';
 
 /**
  * The RelationshipMemberTlsCertificate model module.
@@ -25,7 +25,6 @@ class RelationshipMemberTlsCertificate {
      * @alias module:model/RelationshipMemberTlsCertificate
      */
     constructor() { 
-        
         RelationshipMemberTlsCertificate.initialize(this);
     }
 

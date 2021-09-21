@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import RelationshipService from './RelationshipService.js';
-import ServiceInvitationDataAttributes from './ServiceInvitationDataAttributes.js';
-import TypeServiceInvitation from './TypeServiceInvitation.js';
+import ApiClient from '../ApiClient';
+import RelationshipService from './RelationshipService';
+import ServiceInvitationDataAttributes from './ServiceInvitationDataAttributes';
+import TypeServiceInvitation from './TypeServiceInvitation';
 
 /**
  * The ServiceInvitationData model module.
@@ -27,7 +27,6 @@ class ServiceInvitationData {
      * @alias module:model/ServiceInvitationData
      */
     constructor() { 
-        
         ServiceInvitationData.initialize(this);
     }
 

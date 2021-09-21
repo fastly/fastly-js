@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The DictionaryResponseAllOf model module.
@@ -24,7 +24,6 @@ class DictionaryResponseAllOf {
      * @alias module:model/DictionaryResponseAllOf
      */
     constructor() { 
-        
         DictionaryResponseAllOf.initialize(this);
     }
 

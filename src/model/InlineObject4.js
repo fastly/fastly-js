@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import DictionaryItem from './DictionaryItem.js';
+import ApiClient from '../ApiClient';
+import DictionaryItem from './DictionaryItem';
 
 /**
  * The InlineObject4 model module.
@@ -25,7 +25,6 @@ class InlineObject4 {
      * @alias module:model/InlineObject4
      */
     constructor() { 
-        
         InlineObject4.initialize(this);
     }
 

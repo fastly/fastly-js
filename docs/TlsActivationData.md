@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**relationships** | [**AnyOfobjectobjectobject**](AnyOfobjectobjectobject.md) |  | [optional] 
+**relationships** | [**RelationshipsForTlsActivation**](RelationshipsForTlsActivation.md) |  | [optional] 
 **type** | [**TypeTlsActivation**](TypeTlsActivation.md) |  | [optional] 
 
 

@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The LoggingNewrelicAllOf model module.
@@ -24,7 +24,6 @@ class LoggingNewrelicAllOf {
      * @alias module:model/LoggingNewrelicAllOf
      */
     constructor() { 
-        
         LoggingNewrelicAllOf.initialize(this);
     }
 

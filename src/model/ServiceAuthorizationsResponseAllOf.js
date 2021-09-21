@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Data from './Data.js';
+import ApiClient from '../ApiClient';
+import ServiceAuthorizationResponseData from './ServiceAuthorizationResponseData';
 
 /**
  * The ServiceAuthorizationsResponseAllOf model module.
@@ -25,7 +25,6 @@ class ServiceAuthorizationsResponseAllOf {
      * @alias module:model/ServiceAuthorizationsResponseAllOf
      */
     constructor() { 
-        
         ServiceAuthorizationsResponseAllOf.initialize(this);
     }
 
@@ -49,7 +48,7 @@ class ServiceAuthorizationsResponseAllOf {
             obj = obj || new ServiceAuthorizationsResponseAllOf();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Data]);
+                obj['data'] = ApiClient.convertToType(data['data'], [ServiceAuthorizationResponseData]);
             }
         }
         return obj;
@@ -59,7 +58,7 @@ class ServiceAuthorizationsResponseAllOf {
 }
 
 /**
- * @member {Array.<module:model/Data>} data
+ * @member {Array.<module:model/ServiceAuthorizationResponseData>} data
  */
 ServiceAuthorizationsResponseAllOf.prototype['data'] = undefined;
 

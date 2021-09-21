@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The RateLimiterResponseAllOf model module.
@@ -24,7 +24,6 @@ class RateLimiterResponseAllOf {
      * @alias module:model/RateLimiterResponseAllOf
      */
     constructor() { 
-        
         RateLimiterResponseAllOf.initialize(this);
     }
 

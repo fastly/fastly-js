@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The DiffResponse model module.
@@ -24,7 +24,6 @@ class DiffResponse {
      * @alias module:model/DiffResponse
      */
     constructor() { 
-        
         DiffResponse.initialize(this);
     }
 

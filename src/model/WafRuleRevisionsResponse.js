@@ -11,13 +11,13 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Data from './Data.js';
-import Pagination from './Pagination.js';
-import PaginationLinks from './PaginationLinks.js';
-import PaginationMeta from './PaginationMeta.js';
-import WafRule from './WafRule.js';
-import WafRuleRevisionsResponseAllOf from './WafRuleRevisionsResponseAllOf.js';
+import ApiClient from '../ApiClient';
+import Pagination from './Pagination';
+import PaginationLinks from './PaginationLinks';
+import PaginationMeta from './PaginationMeta';
+import WafRule from './WafRule';
+import WafRuleRevisionResponseData from './WafRuleRevisionResponseData';
+import WafRuleRevisionsResponseAllOf from './WafRuleRevisionsResponseAllOf';
 
 /**
  * The WafRuleRevisionsResponse model module.
@@ -28,11 +28,8 @@ class WafRuleRevisionsResponse {
     /**
      * Constructs a new <code>WafRuleRevisionsResponse</code>.
      * @alias module:model/WafRuleRevisionsResponse
-     * @implements module:model/Pagination
-     * @implements module:model/WafRuleRevisionsResponseAllOf
      */
     constructor() { 
-        Pagination.initialize(this);WafRuleRevisionsResponseAllOf.initialize(this);
         WafRuleRevisionsResponse.initialize(this);
     }
 
@@ -54,8 +51,6 @@ class WafRuleRevisionsResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafRuleRevisionsResponse();
-            Pagination.constructFromObject(data, obj);
-            WafRuleRevisionsResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('links')) {
                 obj['links'] = PaginationLinks.constructFromObject(data['links']);
@@ -64,7 +59,7 @@ class WafRuleRevisionsResponse {
                 obj['meta'] = PaginationMeta.constructFromObject(data['meta']);
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Data]);
+                obj['data'] = ApiClient.convertToType(data['data'], [WafRuleRevisionResponseData]);
             }
             if (data.hasOwnProperty('included')) {
                 obj['included'] = ApiClient.convertToType(data['included'], [WafRule]);
@@ -87,7 +82,7 @@ WafRuleRevisionsResponse.prototype['links'] = undefined;
 WafRuleRevisionsResponse.prototype['meta'] = undefined;
 
 /**
- * @member {Array.<module:model/Data>} data
+ * @member {Array.<module:model/WafRuleRevisionResponseData>} data
  */
 WafRuleRevisionsResponse.prototype['data'] = undefined;
 
@@ -97,24 +92,6 @@ WafRuleRevisionsResponse.prototype['data'] = undefined;
 WafRuleRevisionsResponse.prototype['included'] = undefined;
 
 
-// Implement Pagination interface:
-/**
- * @member {module:model/PaginationLinks} links
- */
-Pagination.prototype['links'] = undefined;
-/**
- * @member {module:model/PaginationMeta} meta
- */
-Pagination.prototype['meta'] = undefined;
-// Implement WafRuleRevisionsResponseAllOf interface:
-/**
- * @member {Array.<module:model/Data>} data
- */
-WafRuleRevisionsResponseAllOf.prototype['data'] = undefined;
-/**
- * @member {Array.<module:model/WafRule>} included
- */
-WafRuleRevisionsResponseAllOf.prototype['included'] = undefined;
 
 
 

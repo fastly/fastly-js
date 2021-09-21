@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The InlineResponse400 model module.
@@ -24,7 +24,6 @@ class InlineResponse400 {
      * @alias module:model/InlineResponse400
      */
     constructor() { 
-        
         InlineResponse400.initialize(this);
     }
 

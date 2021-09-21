@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The LoggingAzureblobAllOf model module.
@@ -24,7 +24,6 @@ class LoggingAzureblobAllOf {
      * @alias module:model/LoggingAzureblobAllOf
      */
     constructor() { 
-        
         LoggingAzureblobAllOf.initialize(this);
     }
 

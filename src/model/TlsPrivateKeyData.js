@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import AnyOfrelationshipTlsActivationsobject from './AnyOfrelationshipTlsActivationsobject.js';
-import TlsPrivateKeyDataAttributes from './TlsPrivateKeyDataAttributes.js';
-import TypeTlsPrivateKey from './TypeTlsPrivateKey.js';
+import ApiClient from '../ApiClient';
+import RelationshipsForTlsPrivateKey from './RelationshipsForTlsPrivateKey';
+import TlsPrivateKeyDataAttributes from './TlsPrivateKeyDataAttributes';
+import TypeTlsPrivateKey from './TypeTlsPrivateKey';
 
 /**
  * The TlsPrivateKeyData model module.
@@ -27,7 +27,6 @@ class TlsPrivateKeyData {
      * @alias module:model/TlsPrivateKeyData
      */
     constructor() { 
-        
         TlsPrivateKeyData.initialize(this);
     }
 
@@ -54,7 +53,7 @@ class TlsPrivateKeyData {
                 obj['attributes'] = TlsPrivateKeyDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = ApiClient.convertToType(data['relationships'], AnyOfrelationshipTlsActivationsobject);
+                obj['relationships'] = RelationshipsForTlsPrivateKey.constructFromObject(data['relationships']);
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeTlsPrivateKey.constructFromObject(data['type']);
@@ -72,7 +71,7 @@ class TlsPrivateKeyData {
 TlsPrivateKeyData.prototype['attributes'] = undefined;
 
 /**
- * @member {module:model/AnyOfrelationshipTlsActivationsobject} relationships
+ * @member {module:model/RelationshipsForTlsPrivateKey} relationships
  */
 TlsPrivateKeyData.prototype['relationships'] = undefined;
 

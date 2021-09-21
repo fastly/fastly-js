@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Historical from './Historical.js';
-import HistoricalMeta from './HistoricalMeta.js';
-import HistoricalRegionsResponseAllOf from './HistoricalRegionsResponseAllOf.js';
+import ApiClient from '../ApiClient';
+import Historical from './Historical';
+import HistoricalMeta from './HistoricalMeta';
+import HistoricalRegionsResponseAllOf from './HistoricalRegionsResponseAllOf';
 
 /**
  * The HistoricalRegionsResponse model module.
@@ -25,11 +25,8 @@ class HistoricalRegionsResponse {
     /**
      * Constructs a new <code>HistoricalRegionsResponse</code>.
      * @alias module:model/HistoricalRegionsResponse
-     * @implements module:model/Historical
-     * @implements module:model/HistoricalRegionsResponseAllOf
      */
     constructor() { 
-        Historical.initialize(this);HistoricalRegionsResponseAllOf.initialize(this);
         HistoricalRegionsResponse.initialize(this);
     }
 
@@ -51,8 +48,6 @@ class HistoricalRegionsResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new HistoricalRegionsResponse();
-            Historical.constructFromObject(data, obj);
-            HistoricalRegionsResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('meta')) {
                 obj['meta'] = HistoricalMeta.constructFromObject(data['meta']);
@@ -96,26 +91,6 @@ HistoricalRegionsResponse.prototype['status'] = undefined;
 HistoricalRegionsResponse.prototype['data'] = undefined;
 
 
-// Implement Historical interface:
-/**
- * @member {module:model/HistoricalMeta} meta
- */
-Historical.prototype['meta'] = undefined;
-/**
- * If the query was not successful, this will provide a string that explains why.
- * @member {String} msg
- */
-Historical.prototype['msg'] = undefined;
-/**
- * Whether or not we were able to successfully execute the query.
- * @member {String} status
- */
-Historical.prototype['status'] = undefined;
-// Implement HistoricalRegionsResponseAllOf interface:
-/**
- * @member {Array.<String>} data
- */
-HistoricalRegionsResponseAllOf.prototype['data'] = undefined;
 
 
 

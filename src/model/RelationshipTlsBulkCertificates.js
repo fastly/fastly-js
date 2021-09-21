@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import RelationshipTlsBulkCertificateTlsBulkCertificate from './RelationshipTlsBulkCertificateTlsBulkCertificate.js';
+import ApiClient from '../ApiClient';
+import RelationshipTlsBulkCertificateTlsBulkCertificate from './RelationshipTlsBulkCertificateTlsBulkCertificate';
 
 /**
  * The RelationshipTlsBulkCertificates model module.
@@ -25,7 +25,6 @@ class RelationshipTlsBulkCertificates {
      * @alias module:model/RelationshipTlsBulkCertificates
      */
     constructor() { 
-        
         RelationshipTlsBulkCertificates.initialize(this);
     }
 

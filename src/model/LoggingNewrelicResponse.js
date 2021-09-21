@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingNewrelic from './LoggingNewrelic.js';
-import LoggingPlacement from './LoggingPlacement.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingNewrelic from './LoggingNewrelic';
+import LoggingPlacement from './LoggingPlacement';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
 
 /**
  * The LoggingNewrelicResponse model module.
@@ -27,12 +27,8 @@ class LoggingNewrelicResponse {
     /**
      * Constructs a new <code>LoggingNewrelicResponse</code>.
      * @alias module:model/LoggingNewrelicResponse
-     * @implements module:model/LoggingNewrelic
-     * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
      */
     constructor() { 
-        LoggingNewrelic.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
         LoggingNewrelicResponse.initialize(this);
     }
 
@@ -54,9 +50,6 @@ class LoggingNewrelicResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingNewrelicResponse();
-            LoggingNewrelic.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], Object);
@@ -173,68 +166,6 @@ LoggingNewrelicResponse.prototype['service_id'] = undefined;
 LoggingNewrelicResponse.prototype['version'] = undefined;
 
 
-// Implement LoggingNewrelic interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest.
- * @member {Object} format
- */
-LoggingNewrelic.prototype['format'] = undefined;
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingNewrelic.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingNewrelic.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingNewrelic.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingNewrelic.prototype['response_condition'] = undefined;
-/**
- * The region to which to stream logs.
- * @member {module:model/LoggingNewrelic.RegionEnum} region
- * @default 'US'
- */
-LoggingNewrelic.prototype['region'] = undefined;
-/**
- * The Insert API key from the Account page of your New Relic account. Required.
- * @member {String} token
- */
-LoggingNewrelic.prototype['token'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
 
 
 

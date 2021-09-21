@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import TypeWafRuleRevision from './TypeWafRuleRevision.js';
-import WafRuleRevisionAttributes from './WafRuleRevisionAttributes.js';
+import ApiClient from '../ApiClient';
+import TypeWafRuleRevision from './TypeWafRuleRevision';
+import WafRuleRevisionAttributes from './WafRuleRevisionAttributes';
 
 /**
  * The WafRuleRevision model module.
@@ -26,7 +26,6 @@ class WafRuleRevision {
      * @alias module:model/WafRuleRevision
      */
     constructor() { 
-        
         WafRuleRevision.initialize(this);
     }
 

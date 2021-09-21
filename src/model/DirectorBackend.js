@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import DirectorBackendAllOf from './DirectorBackendAllOf.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import DirectorBackendAllOf from './DirectorBackendAllOf';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
 
 /**
  * The DirectorBackend model module.
@@ -25,12 +25,8 @@ class DirectorBackend {
     /**
      * Constructs a new <code>DirectorBackend</code>.
      * @alias module:model/DirectorBackend
-     * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
-     * @implements module:model/DirectorBackendAllOf
      */
     constructor() { 
-        Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);DirectorBackendAllOf.initialize(this);
         DirectorBackend.initialize(this);
     }
 
@@ -52,9 +48,6 @@ class DirectorBackend {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new DirectorBackend();
-            Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
-            DirectorBackendAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
@@ -127,44 +120,6 @@ DirectorBackend.prototype['backend_name'] = undefined;
 DirectorBackend.prototype['director'] = undefined;
 
 
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
-// Implement DirectorBackendAllOf interface:
-/**
- * The name of the backend.
- * @member {String} backend_name
- */
-DirectorBackendAllOf.prototype['backend_name'] = undefined;
-/**
- * Name for the Director.
- * @member {String} director
- */
-DirectorBackendAllOf.prototype['director'] = undefined;
 
 
 

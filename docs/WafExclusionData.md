@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **attributes** | [**WafExclusionDataAttributes**](WafExclusionDataAttributes.md) |  | [optional] 
-**relationships** | [**AnyOfrelationshipWafRulesrelationshipWafRuleRevisions**](AnyOfrelationshipWafRulesrelationshipWafRuleRevisions.md) |  | [optional] 
+**relationships** | [**RelationshipsForWafExclusion**](RelationshipsForWafExclusion.md) |  | [optional] 
 **type** | [**TypeWafExclusion**](TypeWafExclusion.md) |  | [optional] 
 
 

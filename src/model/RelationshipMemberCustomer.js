@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import TypeCustomer from './TypeCustomer.js';
+import ApiClient from '../ApiClient';
+import TypeCustomer from './TypeCustomer';
 
 /**
  * The RelationshipMemberCustomer model module.
@@ -25,7 +25,6 @@ class RelationshipMemberCustomer {
      * @alias module:model/RelationshipMemberCustomer
      */
     constructor() { 
-        
         RelationshipMemberCustomer.initialize(this);
     }
 

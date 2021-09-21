@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The SchemasWafFirewallVersionDataAttributes model module.
@@ -24,7 +24,6 @@ class SchemasWafFirewallVersionDataAttributes {
      * @alias module:model/SchemasWafFirewallVersionDataAttributes
      */
     constructor() { 
-        
         SchemasWafFirewallVersionDataAttributes.initialize(this);
     }
 

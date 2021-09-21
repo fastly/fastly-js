@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Data from './Data.js';
+import ApiClient from '../ApiClient';
+import TlsDomainData from './TlsDomainData';
 
 /**
  * The TlsDomainsResponseAllOf model module.
@@ -25,7 +25,6 @@ class TlsDomainsResponseAllOf {
      * @alias module:model/TlsDomainsResponseAllOf
      */
     constructor() { 
-        
         TlsDomainsResponseAllOf.initialize(this);
     }
 
@@ -49,7 +48,7 @@ class TlsDomainsResponseAllOf {
             obj = obj || new TlsDomainsResponseAllOf();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Data]);
+                obj['data'] = ApiClient.convertToType(data['data'], [TlsDomainData]);
             }
         }
         return obj;
@@ -59,7 +58,7 @@ class TlsDomainsResponseAllOf {
 }
 
 /**
- * @member {Array.<module:model/Data>} data
+ * @member {Array.<module:model/TlsDomainData>} data
  */
 TlsDomainsResponseAllOf.prototype['data'] = undefined;
 

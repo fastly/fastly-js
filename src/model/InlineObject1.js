@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import CustomerCustomerIdBillingAddressData1 from './CustomerCustomerIdBillingAddressData1.js';
+import ApiClient from '../ApiClient';
+import CustomerCustomerIdBillingAddressData1 from './CustomerCustomerIdBillingAddressData1';
 
 /**
  * The InlineObject1 model module.
@@ -25,7 +25,6 @@ class InlineObject1 {
      * @alias module:model/InlineObject1
      */
     constructor() { 
-        
         InlineObject1.initialize(this);
     }
 

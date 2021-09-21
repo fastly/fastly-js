@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import BillingAddressDataAttributes from './BillingAddressDataAttributes.js';
-import RelationshipCustomer from './RelationshipCustomer.js';
-import TypeBillingAddress from './TypeBillingAddress.js';
+import ApiClient from '../ApiClient';
+import BillingAddressDataAttributes from './BillingAddressDataAttributes';
+import RelationshipCustomer from './RelationshipCustomer';
+import TypeBillingAddress from './TypeBillingAddress';
 
 /**
  * The BillingAddressData model module.
@@ -27,7 +27,6 @@ class BillingAddressData {
      * @alias module:model/BillingAddressData
      */
     constructor() { 
-        
         BillingAddressData.initialize(this);
     }
 

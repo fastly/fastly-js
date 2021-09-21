@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Timestamps from './Timestamps.js';
-import TypeTlsPrivateKey from './TypeTlsPrivateKey.js';
+import ApiClient from '../ApiClient';
+import Timestamps from './Timestamps';
+import TypeTlsPrivateKey from './TypeTlsPrivateKey';
 
 /**
  * The TlsPrivateKeyResponseData model module.
@@ -26,7 +26,6 @@ class TlsPrivateKeyResponseData {
      * @alias module:model/TlsPrivateKeyResponseData
      */
     constructor() { 
-        
         TlsPrivateKeyResponseData.initialize(this);
     }
 

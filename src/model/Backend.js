@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The Backend model module.
@@ -24,7 +24,6 @@ class Backend {
      * @alias module:model/Backend
      */
     constructor() { 
-        
         Backend.initialize(this);
     }
 

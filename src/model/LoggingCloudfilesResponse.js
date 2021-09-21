@@ -11,14 +11,14 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingCloudfiles from './LoggingCloudfiles.js';
-import LoggingCompressionCodec from './LoggingCompressionCodec.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingMessageType from './LoggingMessageType.js';
-import LoggingPlacement from './LoggingPlacement.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import LoggingCloudfiles from './LoggingCloudfiles';
+import LoggingCompressionCodec from './LoggingCompressionCodec';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingMessageType from './LoggingMessageType';
+import LoggingPlacement from './LoggingPlacement';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
 
 /**
  * The LoggingCloudfilesResponse model module.
@@ -29,12 +29,8 @@ class LoggingCloudfilesResponse {
     /**
      * Constructs a new <code>LoggingCloudfilesResponse</code>.
      * @alias module:model/LoggingCloudfilesResponse
-     * @implements module:model/LoggingCloudfiles
-     * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
      */
     constructor() { 
-        LoggingCloudfiles.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
         LoggingCloudfilesResponse.initialize(this);
     }
 
@@ -56,9 +52,6 @@ class LoggingCloudfilesResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingCloudfilesResponse();
-            LoggingCloudfiles.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
@@ -258,115 +251,6 @@ LoggingCloudfilesResponse.prototype['service_id'] = undefined;
 LoggingCloudfilesResponse.prototype['version'] = undefined;
 
 
-// Implement LoggingCloudfiles interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingCloudfiles.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingCloudfiles.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingCloudfiles.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingCloudfiles.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingCloudfiles.prototype['response_condition'] = undefined;
-/**
- * @member {module:model/LoggingCompressionCodec} compression_codec
- */
-LoggingCloudfiles.prototype['compression_codec'] = undefined;
-/**
- * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {Number} gzip_level
- * @default 0
- */
-LoggingCloudfiles.prototype['gzip_level'] = 0;
-/**
- * @member {module:model/LoggingMessageType} message_type
- */
-LoggingCloudfiles.prototype['message_type'] = undefined;
-/**
- * How frequently log files are finalized so they can be available for reading (in seconds).
- * @member {Number} period
- * @default 3600
- */
-LoggingCloudfiles.prototype['period'] = 3600;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} timestamp_format
- */
-LoggingCloudfiles.prototype['timestamp_format'] = undefined;
-/**
- * Your Cloud Files account access key.
- * @member {String} access_key
- */
-LoggingCloudfiles.prototype['access_key'] = undefined;
-/**
- * The name of your Cloud Files container.
- * @member {String} bucket_name
- */
-LoggingCloudfiles.prototype['bucket_name'] = undefined;
-/**
- * The path to upload logs to.
- * @member {String} path
- * @default 'null'
- */
-LoggingCloudfiles.prototype['path'] = 'null';
-/**
- * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
- * @member {String} public_key
- * @default 'null'
- */
-LoggingCloudfiles.prototype['public_key'] = 'null';
-/**
- * The region to stream logs to.
- * @member {module:model/LoggingCloudfiles.RegionEnum} region
- */
-LoggingCloudfiles.prototype['region'] = undefined;
-/**
- * The username for your Cloud Files account.
- * @member {String} user
- */
-LoggingCloudfiles.prototype['user'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
 
 
 

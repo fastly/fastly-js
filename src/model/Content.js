@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The Content model module.
@@ -24,7 +24,6 @@ class Content {
      * @alias module:model/Content
      */
     constructor() { 
-        
         Content.initialize(this);
     }
 

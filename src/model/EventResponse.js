@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import EventResponseData from './EventResponseData.js';
+import ApiClient from '../ApiClient';
+import Event from './Event';
 
 /**
  * The EventResponse model module.
@@ -25,7 +25,6 @@ class EventResponse {
      * @alias module:model/EventResponse
      */
     constructor() { 
-        
         EventResponse.initialize(this);
     }
 
@@ -49,7 +48,7 @@ class EventResponse {
             obj = obj || new EventResponse();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = EventResponseData.constructFromObject(data['data']);
+                obj['data'] = Event.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -59,7 +58,7 @@ class EventResponse {
 }
 
 /**
- * @member {module:model/EventResponseData} data
+ * @member {module:model/Event} data
  */
 EventResponse.prototype['data'] = undefined;
 

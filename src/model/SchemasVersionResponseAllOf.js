@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The SchemasVersionResponseAllOf model module.
@@ -24,7 +24,6 @@ class SchemasVersionResponseAllOf {
      * @alias module:model/SchemasVersionResponseAllOf
      */
     constructor() { 
-        
         SchemasVersionResponseAllOf.initialize(this);
     }
 

@@ -11,8 +11,8 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import RoleUser from './RoleUser.js';
+import ApiClient from '../ApiClient';
+import RoleUser from './RoleUser';
 
 /**
  * The InvitationDataAttributes model module.
@@ -25,7 +25,6 @@ class InvitationDataAttributes {
      * @alias module:model/InvitationDataAttributes
      */
     constructor() { 
-        
         InvitationDataAttributes.initialize(this);
     }
 

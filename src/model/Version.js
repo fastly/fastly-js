@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The Version model module.
@@ -24,7 +24,6 @@ class Version {
      * @alias module:model/Version
      */
     constructor() { 
-        
         Version.initialize(this);
     }
 

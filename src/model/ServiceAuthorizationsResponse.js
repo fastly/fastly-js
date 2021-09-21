@@ -11,12 +11,12 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Data from './Data.js';
-import Pagination from './Pagination.js';
-import PaginationLinks from './PaginationLinks.js';
-import PaginationMeta from './PaginationMeta.js';
-import ServiceAuthorizationsResponseAllOf from './ServiceAuthorizationsResponseAllOf.js';
+import ApiClient from '../ApiClient';
+import Pagination from './Pagination';
+import PaginationLinks from './PaginationLinks';
+import PaginationMeta from './PaginationMeta';
+import ServiceAuthorizationResponseData from './ServiceAuthorizationResponseData';
+import ServiceAuthorizationsResponseAllOf from './ServiceAuthorizationsResponseAllOf';
 
 /**
  * The ServiceAuthorizationsResponse model module.
@@ -27,11 +27,8 @@ class ServiceAuthorizationsResponse {
     /**
      * Constructs a new <code>ServiceAuthorizationsResponse</code>.
      * @alias module:model/ServiceAuthorizationsResponse
-     * @implements module:model/Pagination
-     * @implements module:model/ServiceAuthorizationsResponseAllOf
      */
     constructor() { 
-        Pagination.initialize(this);ServiceAuthorizationsResponseAllOf.initialize(this);
         ServiceAuthorizationsResponse.initialize(this);
     }
 
@@ -53,8 +50,6 @@ class ServiceAuthorizationsResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ServiceAuthorizationsResponse();
-            Pagination.constructFromObject(data, obj);
-            ServiceAuthorizationsResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('links')) {
                 obj['links'] = PaginationLinks.constructFromObject(data['links']);
@@ -63,7 +58,7 @@ class ServiceAuthorizationsResponse {
                 obj['meta'] = PaginationMeta.constructFromObject(data['meta']);
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Data]);
+                obj['data'] = ApiClient.convertToType(data['data'], [ServiceAuthorizationResponseData]);
             }
         }
         return obj;
@@ -83,25 +78,11 @@ ServiceAuthorizationsResponse.prototype['links'] = undefined;
 ServiceAuthorizationsResponse.prototype['meta'] = undefined;
 
 /**
- * @member {Array.<module:model/Data>} data
+ * @member {Array.<module:model/ServiceAuthorizationResponseData>} data
  */
 ServiceAuthorizationsResponse.prototype['data'] = undefined;
 
 
-// Implement Pagination interface:
-/**
- * @member {module:model/PaginationLinks} links
- */
-Pagination.prototype['links'] = undefined;
-/**
- * @member {module:model/PaginationMeta} meta
- */
-Pagination.prototype['meta'] = undefined;
-// Implement ServiceAuthorizationsResponseAllOf interface:
-/**
- * @member {Array.<module:model/Data>} data
- */
-ServiceAuthorizationsResponseAllOf.prototype['data'] = undefined;
 
 
 

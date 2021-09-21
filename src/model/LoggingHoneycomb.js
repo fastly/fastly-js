@@ -11,11 +11,11 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingCommon from './LoggingCommon.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingHoneycombAllOf from './LoggingHoneycombAllOf.js';
-import LoggingPlacement from './LoggingPlacement.js';
+import ApiClient from '../ApiClient';
+import LoggingCommon from './LoggingCommon';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingHoneycombAllOf from './LoggingHoneycombAllOf';
+import LoggingPlacement from './LoggingPlacement';
 
 /**
  * The LoggingHoneycomb model module.
@@ -26,11 +26,8 @@ class LoggingHoneycomb {
     /**
      * Constructs a new <code>LoggingHoneycomb</code>.
      * @alias module:model/LoggingHoneycomb
-     * @implements module:model/LoggingCommon
-     * @implements module:model/LoggingHoneycombAllOf
      */
     constructor() { 
-        LoggingCommon.initialize(this);LoggingHoneycombAllOf.initialize(this);
         LoggingHoneycomb.initialize(this);
     }
 
@@ -52,8 +49,6 @@ class LoggingHoneycomb {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingHoneycomb();
-            LoggingCommon.constructFromObject(data, obj);
-            LoggingHoneycombAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], Object);
@@ -124,47 +119,6 @@ LoggingHoneycomb.prototype['dataset'] = undefined;
 LoggingHoneycomb.prototype['token'] = undefined;
 
 
-// Implement LoggingCommon interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingCommon.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingCommon.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingCommon.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingCommon.prototype['response_condition'] = undefined;
-// Implement LoggingHoneycombAllOf interface:
-/**
- * The Honeycomb Dataset you want to log to.
- * @member {String} dataset
- */
-LoggingHoneycombAllOf.prototype['dataset'] = undefined;
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Honeycomb can ingest.
- * @member {Object} format
- */
-LoggingHoneycombAllOf.prototype['format'] = undefined;
-/**
- * The Write Key from the Account page of your Honeycomb account.
- * @member {String} token
- */
-LoggingHoneycombAllOf.prototype['token'] = undefined;
 
 
 

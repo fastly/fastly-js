@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import SchemasResponseObject from './SchemasResponseObject.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import SchemasResponseObject from './SchemasResponseObject';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
 
 /**
  * The SchemasResponseObjectResponse model module.
@@ -25,12 +25,8 @@ class SchemasResponseObjectResponse {
     /**
      * Constructs a new <code>SchemasResponseObjectResponse</code>.
      * @alias module:model/SchemasResponseObjectResponse
-     * @implements module:model/SchemasResponseObject
-     * @implements module:model/ServiceIdAndVersion
-     * @implements module:model/Timestamps
      */
     constructor() { 
-        SchemasResponseObject.initialize(this);ServiceIdAndVersion.initialize(this);Timestamps.initialize(this);
         SchemasResponseObjectResponse.initialize(this);
     }
 
@@ -52,9 +48,6 @@ class SchemasResponseObjectResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new SchemasResponseObjectResponse();
-            SchemasResponseObject.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('cache_condition')) {
                 obj['cache_condition'] = ApiClient.convertToType(data['cache_condition'], 'String');
@@ -174,71 +167,6 @@ SchemasResponseObjectResponse.prototype['deleted_at'] = undefined;
 SchemasResponseObjectResponse.prototype['updated_at'] = undefined;
 
 
-// Implement SchemasResponseObject interface:
-/**
- * Name of the cache condition controlling when this configuration applies.
- * @member {String} cache_condition
- */
-SchemasResponseObject.prototype['cache_condition'] = undefined;
-/**
- * The content to deliver for the response object, can be empty.
- * @member {String} content
- */
-SchemasResponseObject.prototype['content'] = undefined;
-/**
- * The MIME type of the content, can be empty.
- * @member {String} content_type
- */
-SchemasResponseObject.prototype['content_type'] = undefined;
-/**
- * Name for the request settings.
- * @member {String} name
- */
-SchemasResponseObject.prototype['name'] = undefined;
-/**
- * Condition which, if met, will select this configuration during a request. Optional.
- * @member {String} request_condition
- */
-SchemasResponseObject.prototype['request_condition'] = undefined;
-/**
- * The HTTP response.
- * @member {String} response
- * @default 'Ok'
- */
-SchemasResponseObject.prototype['response'] = 'Ok';
-/**
- * The HTTP status code.
- * @member {Number} status
- * @default 200
- */
-SchemasResponseObject.prototype['status'] = 200;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
 
 
 

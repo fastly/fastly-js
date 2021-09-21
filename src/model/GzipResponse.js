@@ -11,10 +11,10 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import Gzip from './Gzip.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import Gzip from './Gzip';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
 
 /**
  * The GzipResponse model module.
@@ -25,12 +25,8 @@ class GzipResponse {
     /**
      * Constructs a new <code>GzipResponse</code>.
      * @alias module:model/GzipResponse
-     * @implements module:model/Gzip
-     * @implements module:model/ServiceIdAndVersion
-     * @implements module:model/Timestamps
      */
     constructor() { 
-        Gzip.initialize(this);ServiceIdAndVersion.initialize(this);Timestamps.initialize(this);
         GzipResponse.initialize(this);
     }
 
@@ -52,9 +48,6 @@ class GzipResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new GzipResponse();
-            Gzip.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('cache_condition')) {
                 obj['cache_condition'] = ApiClient.convertToType(data['cache_condition'], 'String');
@@ -145,54 +138,6 @@ GzipResponse.prototype['deleted_at'] = undefined;
 GzipResponse.prototype['updated_at'] = undefined;
 
 
-// Implement Gzip interface:
-/**
- * Name of the cache condition controlling when this configuration applies.
- * @member {String} cache_condition
- */
-Gzip.prototype['cache_condition'] = undefined;
-/**
- * Space-separated list of content types to compress. If you omit this field a default list will be used.
- * @member {String} content_types
- */
-Gzip.prototype['content_types'] = undefined;
-/**
- * Space-separated list of file extensions to compress. If you omit this field a default list will be used.
- * @member {String} extensions
- */
-Gzip.prototype['extensions'] = undefined;
-/**
- * Name of the gzip configuration.
- * @member {String} name
- */
-Gzip.prototype['name'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
 
 
 

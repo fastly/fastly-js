@@ -11,9 +11,9 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import TypeWafRule from './TypeWafRule.js';
-import WafRuleAttributes from './WafRuleAttributes.js';
+import ApiClient from '../ApiClient';
+import TypeWafRule from './TypeWafRule';
+import WafRuleAttributes from './WafRuleAttributes';
 
 /**
  * The WafRule model module.
@@ -26,7 +26,6 @@ class WafRule {
      * @alias module:model/WafRule
      */
     constructor() { 
-        
         WafRule.initialize(this);
     }
 

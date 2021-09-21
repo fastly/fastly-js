@@ -11,14 +11,14 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingCommon from './LoggingCommon.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingHttpsAllOf from './LoggingHttpsAllOf.js';
-import LoggingMessageType from './LoggingMessageType.js';
-import LoggingPlacement from './LoggingPlacement.js';
-import LoggingRequestCapsCommon from './LoggingRequestCapsCommon.js';
-import LoggingTlsCommon from './LoggingTlsCommon.js';
+import ApiClient from '../ApiClient';
+import LoggingCommon from './LoggingCommon';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingHttpsAllOf from './LoggingHttpsAllOf';
+import LoggingMessageType from './LoggingMessageType';
+import LoggingPlacement from './LoggingPlacement';
+import LoggingRequestCapsCommon from './LoggingRequestCapsCommon';
+import LoggingTlsCommon from './LoggingTlsCommon';
 
 /**
  * The LoggingHttps model module.
@@ -29,13 +29,8 @@ class LoggingHttps {
     /**
      * Constructs a new <code>LoggingHttps</code>.
      * @alias module:model/LoggingHttps
-     * @implements module:model/LoggingCommon
-     * @implements module:model/LoggingTlsCommon
-     * @implements module:model/LoggingRequestCapsCommon
-     * @implements module:model/LoggingHttpsAllOf
      */
     constructor() { 
-        LoggingCommon.initialize(this);LoggingTlsCommon.initialize(this);LoggingRequestCapsCommon.initialize(this);LoggingHttpsAllOf.initialize(this);
         LoggingHttps.initialize(this);
     }
 
@@ -57,10 +52,6 @@ class LoggingHttps {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingHttps();
-            LoggingCommon.constructFromObject(data, obj);
-            LoggingTlsCommon.constructFromObject(data, obj);
-            LoggingRequestCapsCommon.constructFromObject(data, obj);
-            LoggingHttpsAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
@@ -240,126 +231,6 @@ LoggingHttps.prototype['method'] = undefined;
 LoggingHttps.prototype['url'] = undefined;
 
 
-// Implement LoggingCommon interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingCommon.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingCommon.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingCommon.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingCommon.prototype['response_condition'] = undefined;
-// Implement LoggingTlsCommon interface:
-/**
- * A secure certificate to authenticate a server with. Must be in PEM format.
- * @member {String} tls_ca_cert
- * @default 'null'
- */
-LoggingTlsCommon.prototype['tls_ca_cert'] = 'null';
-/**
- * The client certificate used to make authenticated requests. Must be in PEM format.
- * @member {String} tls_client_cert
- * @default 'null'
- */
-LoggingTlsCommon.prototype['tls_client_cert'] = 'null';
-/**
- * The client private key used to make authenticated requests. Must be in PEM format.
- * @member {String} tls_client_key
- * @default 'null'
- */
-LoggingTlsCommon.prototype['tls_client_key'] = 'null';
-/**
- * The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
- * @member {String} tls_hostname
- * @default 'null'
- */
-LoggingTlsCommon.prototype['tls_hostname'] = 'null';
-// Implement LoggingRequestCapsCommon interface:
-/**
- * The maximum number of bytes sent in one request. Defaults `0` for unbounded.
- * @member {Number} request_max_bytes
- * @default 0
- */
-LoggingRequestCapsCommon.prototype['request_max_bytes'] = 0;
-/**
- * The maximum number of logs sent in one request. Defaults `0` for unbounded.
- * @member {Number} request_max_entries
- * @default 0
- */
-LoggingRequestCapsCommon.prototype['request_max_entries'] = 0;
-// Implement LoggingHttpsAllOf interface:
-/**
- * Content type of the header sent with the request.
- * @member {String} content_type
- * @default 'null'
- */
-LoggingHttpsAllOf.prototype['content_type'] = 'null';
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingHttpsAllOf.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * Name of the custom header sent with the request.
- * @member {String} header_name
- * @default 'null'
- */
-LoggingHttpsAllOf.prototype['header_name'] = 'null';
-/**
- * Value of the custom header sent with the request.
- * @member {String} header_value
- * @default 'null'
- */
-LoggingHttpsAllOf.prototype['header_value'] = 'null';
-/**
- * Enforces valid JSON formatting for log entries.
- * @member {module:model/LoggingHttpsAllOf.JsonFormatEnum} json_format
- */
-LoggingHttpsAllOf.prototype['json_format'] = undefined;
-/**
- * @member {module:model/LoggingMessageType} message_type
- */
-LoggingHttpsAllOf.prototype['message_type'] = undefined;
-/**
- * HTTP method used for request.
- * @member {module:model/LoggingHttpsAllOf.MethodEnum} method
- * @default 'POST'
- */
-LoggingHttpsAllOf.prototype['method'] = undefined;
-/**
- * The maximum number of bytes sent in one request. Defaults `0` (no limit).
- * @member {Number} request_max_bytes
- * @default 0
- */
-LoggingHttpsAllOf.prototype['request_max_bytes'] = 0;
-/**
- * The maximum number of logs sent in one request. Defaults `0` (no limit).
- * @member {Number} request_max_entries
- * @default 0
- */
-LoggingHttpsAllOf.prototype['request_max_entries'] = 0;
-/**
- * The URL to send logs to. Must use HTTPS. Required.
- * @member {String} url
- */
-LoggingHttpsAllOf.prototype['url'] = undefined;
 
 
 

@@ -11,14 +11,14 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
-import LoggingCompressionCodec from './LoggingCompressionCodec.js';
-import LoggingFormatVersion from './LoggingFormatVersion.js';
-import LoggingMessageType from './LoggingMessageType.js';
-import LoggingPlacement from './LoggingPlacement.js';
-import LoggingSftp from './LoggingSftp.js';
-import ServiceIdAndVersion from './ServiceIdAndVersion.js';
-import Timestamps from './Timestamps.js';
+import ApiClient from '../ApiClient';
+import LoggingCompressionCodec from './LoggingCompressionCodec';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingMessageType from './LoggingMessageType';
+import LoggingPlacement from './LoggingPlacement';
+import LoggingSftp from './LoggingSftp';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
+import Timestamps from './Timestamps';
 
 /**
  * The LoggingSftpResponse model module.
@@ -29,12 +29,8 @@ class LoggingSftpResponse {
     /**
      * Constructs a new <code>LoggingSftpResponse</code>.
      * @alias module:model/LoggingSftpResponse
-     * @implements module:model/LoggingSftp
-     * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
      */
     constructor() { 
-        LoggingSftp.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
         LoggingSftpResponse.initialize(this);
     }
 
@@ -56,9 +52,6 @@ class LoggingSftpResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingSftpResponse();
-            LoggingSftp.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
@@ -277,126 +270,6 @@ LoggingSftpResponse.prototype['service_id'] = undefined;
 LoggingSftpResponse.prototype['version'] = undefined;
 
 
-// Implement LoggingSftp interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingSftp.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingSftp.prototype['format_version'] = undefined;
-/**
- * The name for the real-time logging configuration.
- * @member {String} name
- */
-LoggingSftp.prototype['name'] = undefined;
-/**
- * @member {module:model/LoggingPlacement} placement
- */
-LoggingSftp.prototype['placement'] = undefined;
-/**
- * The name of an existing condition in the configured endpoint, or leave blank to always execute.
- * @member {String} response_condition
- */
-LoggingSftp.prototype['response_condition'] = undefined;
-/**
- * @member {module:model/LoggingCompressionCodec} compression_codec
- */
-LoggingSftp.prototype['compression_codec'] = undefined;
-/**
- * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {Number} gzip_level
- * @default 0
- */
-LoggingSftp.prototype['gzip_level'] = 0;
-/**
- * @member {module:model/LoggingMessageType} message_type
- */
-LoggingSftp.prototype['message_type'] = undefined;
-/**
- * How frequently log files are finalized so they can be available for reading (in seconds).
- * @member {Number} period
- * @default 3600
- */
-LoggingSftp.prototype['period'] = 3600;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} timestamp_format
- */
-LoggingSftp.prototype['timestamp_format'] = undefined;
-/**
- * A hostname or IPv4 address.
- * @member {String} address
- */
-LoggingSftp.prototype['address'] = undefined;
-/**
- * The port number.
- * @member {Object} port
- */
-LoggingSftp.prototype['port'] = undefined;
-/**
- * The password for the server. If both `password` and `secret_key` are passed, `secret_key` will be used in preference.
- * @member {String} password
- */
-LoggingSftp.prototype['password'] = undefined;
-/**
- * The path to upload logs to.
- * @member {String} path
- * @default 'null'
- */
-LoggingSftp.prototype['path'] = 'null';
-/**
- * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
- * @member {String} public_key
- * @default 'null'
- */
-LoggingSftp.prototype['public_key'] = 'null';
-/**
- * The SSH private key for the server. If both `password` and `secret_key` are passed, `secret_key` will be used in preference.
- * @member {String} secret_key
- * @default 'null'
- */
-LoggingSftp.prototype['secret_key'] = 'null';
-/**
- * A list of host keys for all hosts we can connect to over SFTP.
- * @member {String} ssh_known_hosts
- */
-LoggingSftp.prototype['ssh_known_hosts'] = undefined;
-/**
- * The username for the server.
- * @member {String} user
- */
-LoggingSftp.prototype['user'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {String} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
 
 
 

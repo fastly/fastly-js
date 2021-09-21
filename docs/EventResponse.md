@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**EventResponseData**](EventResponseData.md) |  | [optional] 
+**data** | [**Event**](Event.md) |  | [optional] 
 
 
 

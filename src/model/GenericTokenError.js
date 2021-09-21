@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The GenericTokenError model module.
@@ -24,7 +24,6 @@ class GenericTokenError {
      * @alias module:model/GenericTokenError
      */
     constructor() { 
-        
         GenericTokenError.initialize(this);
     }
 

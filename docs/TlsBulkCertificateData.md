@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **attributes** | [**TlsBulkCertificateDataAttributes**](TlsBulkCertificateDataAttributes.md) |  | [optional] 
-**relationships** | [**AnyOfrelationshipTlsConfigurationsobject**](AnyOfrelationshipTlsConfigurationsobject.md) |  | [optional] 
+**relationships** | [**RelationshipsForTlsBulkCertificate**](RelationshipsForTlsBulkCertificate.md) |  | [optional] 
 **type** | [**TypeTlsBulkCertificate**](TypeTlsBulkCertificate.md) |  | [optional] 
 
 

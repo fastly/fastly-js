@@ -11,7 +11,7 @@
  *
  */
 
-import ApiClient from '../ApiClient.js';
+import ApiClient from '../ApiClient';
 
 /**
  * The VclDiff model module.
@@ -24,7 +24,6 @@ class VclDiff {
      * @alias module:model/VclDiff
      */
     constructor() { 
-        
         VclDiff.initialize(this);
     }
 
