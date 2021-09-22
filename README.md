@@ -20,7 +20,7 @@ const apiInstance = new Fastly.AclApi();
 // Alternatively, you may authorize the client instance
 // with a Fastly API token, which will override 
 // the environment variable.
-// apiInstance.apiClient.authenticate("YOUR_API_TOKEN");
+// Fastly.ApiClient.instance.authenticate("YOUR_API_TOKEN");
 
 const options = {
   service_id: "SU1Z0isxPaozGVKXdv0eY", // required
@@ -42,7 +42,7 @@ apiInstance.createAcl(options)
 The Fastly API requires an [API token](https://developer.fastly.com/reference/api/#authentication) for most operations. If the `FASTLY_API_TOKEN` environment variable is set, the client will automatically use it to authenticate all API requests. Alternatively, you may authenticate the client _instance_ with a Fastly API token, which will override the environment variable.
 
 ```javascript
-Fastly.instance.authenticate("YOUR_API_TOKEN");
+Fastly.ApiClient.instance.authenticate("YOUR_API_TOKEN");
 ```
 
 ## Endpoints
@@ -439,7 +439,7 @@ Class | Method | Description
 If you encounter any non-security-related bug or unexpected behavior, please [file an issue][bug]
 using the bug report template.
 
-[bug]: https://github.com/fastly/fastly-php/issues/new?labels=bug
+[bug]: https://github.com/fastly/fastly-js/issues/new?labels=bug
 
 ### Security issues
 

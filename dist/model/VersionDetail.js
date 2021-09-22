@@ -13,8 +13,6 @@ var _CacheSettingResponse = _interopRequireDefault(require("./CacheSettingRespon
 
 var _ConditionResponse = _interopRequireDefault(require("./ConditionResponse"));
 
-var _Director = _interopRequireDefault(require("./Director"));
-
 var _DomainResponse = _interopRequireDefault(require("./DomainResponse"));
 
 var _GzipResponse = _interopRequireDefault(require("./GzipResponse"));
@@ -24,6 +22,8 @@ var _HeaderResponse = _interopRequireDefault(require("./HeaderResponse"));
 var _HealthcheckResponse = _interopRequireDefault(require("./HealthcheckResponse"));
 
 var _ResponseObjectResponse = _interopRequireDefault(require("./ResponseObjectResponse"));
+
+var _SchemasDirector = _interopRequireDefault(require("./SchemasDirector"));
 
 var _SchemasRequestSettingsResponse = _interopRequireDefault(require("./SchemasRequestSettingsResponse"));
 
@@ -93,7 +93,7 @@ var VersionDetail = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('directors')) {
-          obj['directors'] = _ApiClient["default"].convertToType(data['directors'], [_Director["default"]]);
+          obj['directors'] = _ApiClient["default"].convertToType(data['directors'], [_SchemasDirector["default"]]);
         }
 
         if (data.hasOwnProperty('domains')) {
@@ -164,7 +164,7 @@ VersionDetail.prototype['cache_settings'] = undefined;
 VersionDetail.prototype['conditions'] = undefined;
 /**
  * List of directors associated to this service.
- * @member {Array.<module:model/Director>} directors
+ * @member {Array.<module:model/SchemasDirector>} directors
  */
 
 VersionDetail.prototype['directors'] = undefined;

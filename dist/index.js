@@ -1792,6 +1792,18 @@ Object.defineProperty(exports, "RoleUser", {
     return _RoleUser["default"];
   }
 });
+Object.defineProperty(exports, "SchemasBackend", {
+  enumerable: true,
+  get: function get() {
+    return _SchemasBackend["default"];
+  }
+});
+Object.defineProperty(exports, "SchemasDirector", {
+  enumerable: true,
+  get: function get() {
+    return _SchemasDirector["default"];
+  }
+});
 Object.defineProperty(exports, "SchemasRequestSettings", {
   enumerable: true,
   get: function get() {
@@ -4008,6 +4020,10 @@ var _ResponseObjectResponse = _interopRequireDefault(require("./model/ResponseOb
 var _Results = _interopRequireDefault(require("./model/Results"));
 
 var _RoleUser = _interopRequireDefault(require("./model/RoleUser"));
+
+var _SchemasBackend = _interopRequireDefault(require("./model/SchemasBackend"));
+
+var _SchemasDirector = _interopRequireDefault(require("./model/SchemasDirector"));
 
 var _SchemasRequestSettings = _interopRequireDefault(require("./model/SchemasRequestSettings"));
 
