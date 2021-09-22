@@ -14,17 +14,17 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The SnippetResponseAllOf model module.
- * @module model/SnippetResponseAllOf
+ * The SchemasSnippetResponseAllOf model module.
+ * @module model/SchemasSnippetResponseAllOf
  * @version 3.0.0-alpha1
  */
-class SnippetResponseAllOf {
+class SchemasSnippetResponseAllOf {
     /**
-     * Constructs a new <code>SnippetResponseAllOf</code>.
-     * @alias module:model/SnippetResponseAllOf
+     * Constructs a new <code>SchemasSnippetResponseAllOf</code>.
+     * @alias module:model/SchemasSnippetResponseAllOf
      */
     constructor() { 
-        SnippetResponseAllOf.initialize(this);
+        SchemasSnippetResponseAllOf.initialize(this);
     }
 
     /**
@@ -36,15 +36,15 @@ class SnippetResponseAllOf {
     }
 
     /**
-     * Constructs a <code>SnippetResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>SchemasSnippetResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SnippetResponseAllOf} obj Optional instance to populate.
-     * @return {module:model/SnippetResponseAllOf} The populated <code>SnippetResponseAllOf</code> instance.
+     * @param {module:model/SchemasSnippetResponseAllOf} obj Optional instance to populate.
+     * @return {module:model/SchemasSnippetResponseAllOf} The populated <code>SchemasSnippetResponseAllOf</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new SnippetResponseAllOf();
+            obj = obj || new SchemasSnippetResponseAllOf();
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -60,12 +60,12 @@ class SnippetResponseAllOf {
  * Alphanumeric string identifying a VCL Snippet.
  * @member {String} id
  */
-SnippetResponseAllOf.prototype['id'] = undefined;
+SchemasSnippetResponseAllOf.prototype['id'] = undefined;
 
 
 
 
 
 
-export default SnippetResponseAllOf;
+export default SchemasSnippetResponseAllOf;
 

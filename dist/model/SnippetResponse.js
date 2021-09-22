@@ -7,11 +7,11 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _SchemasSnippetResponseAllOf = _interopRequireDefault(require("./SchemasSnippetResponseAllOf"));
+
 var _ServiceIdAndVersion = _interopRequireDefault(require("./ServiceIdAndVersion"));
 
 var _Snippet = _interopRequireDefault(require("./Snippet"));
-
-var _SnippetResponseAllOf = _interopRequireDefault(require("./SnippetResponseAllOf"));
 
 var _Timestamps = _interopRequireDefault(require("./Timestamps"));
 

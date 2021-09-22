@@ -15,16 +15,16 @@ import ApiClient from '../ApiClient';
 import BackendResponse from './BackendResponse';
 import CacheSettingResponse from './CacheSettingResponse';
 import ConditionResponse from './ConditionResponse';
+import Director from './Director';
 import DomainResponse from './DomainResponse';
 import GzipResponse from './GzipResponse';
 import HeaderResponse from './HeaderResponse';
 import HealthcheckResponse from './HealthcheckResponse';
-import RequestSettingsResponse from './RequestSettingsResponse';
 import ResponseObjectResponse from './ResponseObjectResponse';
-import SchemasDirector from './SchemasDirector';
+import SchemasRequestSettingsResponse from './SchemasRequestSettingsResponse';
+import SchemasSnippetResponse from './SchemasSnippetResponse';
 import SchemasVclResponse from './SchemasVclResponse';
 import Settings from './Settings';
-import SnippetResponse from './SnippetResponse';
 
 /**
  * The VersionDetail model module.
@@ -69,7 +69,7 @@ class VersionDetail {
                 obj['conditions'] = ApiClient.convertToType(data['conditions'], [ConditionResponse]);
             }
             if (data.hasOwnProperty('directors')) {
-                obj['directors'] = ApiClient.convertToType(data['directors'], [SchemasDirector]);
+                obj['directors'] = ApiClient.convertToType(data['directors'], [Director]);
             }
             if (data.hasOwnProperty('domains')) {
                 obj['domains'] = ApiClient.convertToType(data['domains'], [DomainResponse]);
@@ -84,7 +84,7 @@ class VersionDetail {
                 obj['healthchecks'] = ApiClient.convertToType(data['healthchecks'], [HealthcheckResponse]);
             }
             if (data.hasOwnProperty('request_settings')) {
-                obj['request_settings'] = ApiClient.convertToType(data['request_settings'], [RequestSettingsResponse]);
+                obj['request_settings'] = ApiClient.convertToType(data['request_settings'], [SchemasRequestSettingsResponse]);
             }
             if (data.hasOwnProperty('response_objects')) {
                 obj['response_objects'] = ApiClient.convertToType(data['response_objects'], [ResponseObjectResponse]);
@@ -93,7 +93,7 @@ class VersionDetail {
                 obj['settings'] = ApiClient.convertToType(data['settings'], Settings);
             }
             if (data.hasOwnProperty('snippets')) {
-                obj['snippets'] = ApiClient.convertToType(data['snippets'], [SnippetResponse]);
+                obj['snippets'] = ApiClient.convertToType(data['snippets'], [SchemasSnippetResponse]);
             }
             if (data.hasOwnProperty('vcls')) {
                 obj['vcls'] = ApiClient.convertToType(data['vcls'], [SchemasVclResponse]);
@@ -128,7 +128,7 @@ VersionDetail.prototype['conditions'] = undefined;
 
 /**
  * List of directors associated to this service.
- * @member {Array.<module:model/SchemasDirector>} directors
+ * @member {Array.<module:model/Director>} directors
  */
 VersionDetail.prototype['directors'] = undefined;
 
@@ -158,7 +158,7 @@ VersionDetail.prototype['healthchecks'] = undefined;
 
 /**
  * List of request settings for this service.
- * @member {Array.<module:model/RequestSettingsResponse>} request_settings
+ * @member {Array.<module:model/SchemasRequestSettingsResponse>} request_settings
  */
 VersionDetail.prototype['request_settings'] = undefined;
 
@@ -175,7 +175,7 @@ VersionDetail.prototype['settings'] = undefined;
 
 /**
  * List of VCL snippets for this service.
- * @member {Array.<module:model/SnippetResponse>} snippets
+ * @member {Array.<module:model/SchemasSnippetResponse>} snippets
  */
 VersionDetail.prototype['snippets'] = undefined;
 

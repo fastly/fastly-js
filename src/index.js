@@ -310,8 +310,10 @@ import ResponseObject from './model/ResponseObject';
 import ResponseObjectResponse from './model/ResponseObjectResponse';
 import Results from './model/Results';
 import RoleUser from './model/RoleUser';
-import SchemasBackend from './model/SchemasBackend';
-import SchemasDirector from './model/SchemasDirector';
+import SchemasRequestSettings from './model/SchemasRequestSettings';
+import SchemasRequestSettingsResponse from './model/SchemasRequestSettingsResponse';
+import SchemasSnippetResponse from './model/SchemasSnippetResponse';
+import SchemasSnippetResponseAllOf from './model/SchemasSnippetResponseAllOf';
 import SchemasUserResponse from './model/SchemasUserResponse';
 import SchemasUserResponseAllOf from './model/SchemasUserResponseAllOf';
 import SchemasVclResponse from './model/SchemasVclResponse';
@@ -351,7 +353,6 @@ import Settings from './model/Settings';
 import SettingsResponse from './model/SettingsResponse';
 import Snippet from './model/Snippet';
 import SnippetResponse from './model/SnippetResponse';
-import SnippetResponseAllOf from './model/SnippetResponseAllOf';
 import Star from './model/Star';
 import StarData from './model/StarData';
 import StarResponse from './model/StarResponse';
@@ -2406,16 +2407,28 @@ export {
     RoleUser,
 
     /**
-     * The SchemasBackend model constructor.
-     * @property {module:model/SchemasBackend}
+     * The SchemasRequestSettings model constructor.
+     * @property {module:model/SchemasRequestSettings}
      */
-    SchemasBackend,
+    SchemasRequestSettings,
 
     /**
-     * The SchemasDirector model constructor.
-     * @property {module:model/SchemasDirector}
+     * The SchemasRequestSettingsResponse model constructor.
+     * @property {module:model/SchemasRequestSettingsResponse}
      */
-    SchemasDirector,
+    SchemasRequestSettingsResponse,
+
+    /**
+     * The SchemasSnippetResponse model constructor.
+     * @property {module:model/SchemasSnippetResponse}
+     */
+    SchemasSnippetResponse,
+
+    /**
+     * The SchemasSnippetResponseAllOf model constructor.
+     * @property {module:model/SchemasSnippetResponseAllOf}
+     */
+    SchemasSnippetResponseAllOf,
 
     /**
      * The SchemasUserResponse model constructor.
@@ -2650,12 +2663,6 @@ export {
      * @property {module:model/SnippetResponse}
      */
     SnippetResponse,
-
-    /**
-     * The SnippetResponseAllOf model constructor.
-     * @property {module:model/SnippetResponseAllOf}
-     */
-    SnippetResponseAllOf,
 
     /**
      * The Star model constructor.

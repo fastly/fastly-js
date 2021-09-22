@@ -13,6 +13,8 @@ var _CacheSettingResponse = _interopRequireDefault(require("./CacheSettingRespon
 
 var _ConditionResponse = _interopRequireDefault(require("./ConditionResponse"));
 
+var _Director = _interopRequireDefault(require("./Director"));
+
 var _DomainResponse = _interopRequireDefault(require("./DomainResponse"));
 
 var _GzipResponse = _interopRequireDefault(require("./GzipResponse"));
@@ -21,17 +23,15 @@ var _HeaderResponse = _interopRequireDefault(require("./HeaderResponse"));
 
 var _HealthcheckResponse = _interopRequireDefault(require("./HealthcheckResponse"));
 
-var _RequestSettingsResponse = _interopRequireDefault(require("./RequestSettingsResponse"));
-
 var _ResponseObjectResponse = _interopRequireDefault(require("./ResponseObjectResponse"));
 
-var _SchemasDirector = _interopRequireDefault(require("./SchemasDirector"));
+var _SchemasRequestSettingsResponse = _interopRequireDefault(require("./SchemasRequestSettingsResponse"));
+
+var _SchemasSnippetResponse = _interopRequireDefault(require("./SchemasSnippetResponse"));
 
 var _SchemasVclResponse = _interopRequireDefault(require("./SchemasVclResponse"));
 
 var _Settings = _interopRequireDefault(require("./Settings"));
-
-var _SnippetResponse = _interopRequireDefault(require("./SnippetResponse"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -93,7 +93,7 @@ var VersionDetail = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('directors')) {
-          obj['directors'] = _ApiClient["default"].convertToType(data['directors'], [_SchemasDirector["default"]]);
+          obj['directors'] = _ApiClient["default"].convertToType(data['directors'], [_Director["default"]]);
         }
 
         if (data.hasOwnProperty('domains')) {
@@ -113,7 +113,7 @@ var VersionDetail = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('request_settings')) {
-          obj['request_settings'] = _ApiClient["default"].convertToType(data['request_settings'], [_RequestSettingsResponse["default"]]);
+          obj['request_settings'] = _ApiClient["default"].convertToType(data['request_settings'], [_SchemasRequestSettingsResponse["default"]]);
         }
 
         if (data.hasOwnProperty('response_objects')) {
@@ -125,7 +125,7 @@ var VersionDetail = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('snippets')) {
-          obj['snippets'] = _ApiClient["default"].convertToType(data['snippets'], [_SnippetResponse["default"]]);
+          obj['snippets'] = _ApiClient["default"].convertToType(data['snippets'], [_SchemasSnippetResponse["default"]]);
         }
 
         if (data.hasOwnProperty('vcls')) {
@@ -164,7 +164,7 @@ VersionDetail.prototype['cache_settings'] = undefined;
 VersionDetail.prototype['conditions'] = undefined;
 /**
  * List of directors associated to this service.
- * @member {Array.<module:model/SchemasDirector>} directors
+ * @member {Array.<module:model/Director>} directors
  */
 
 VersionDetail.prototype['directors'] = undefined;
@@ -194,7 +194,7 @@ VersionDetail.prototype['headers'] = undefined;
 VersionDetail.prototype['healthchecks'] = undefined;
 /**
  * List of request settings for this service.
- * @member {Array.<module:model/RequestSettingsResponse>} request_settings
+ * @member {Array.<module:model/SchemasRequestSettingsResponse>} request_settings
  */
 
 VersionDetail.prototype['request_settings'] = undefined;
@@ -211,7 +211,7 @@ VersionDetail.prototype['response_objects'] = undefined;
 VersionDetail.prototype['settings'] = undefined;
 /**
  * List of VCL snippets for this service.
- * @member {Array.<module:model/SnippetResponse>} snippets
+ * @member {Array.<module:model/SchemasSnippetResponse>} snippets
  */
 
 VersionDetail.prototype['snippets'] = undefined;

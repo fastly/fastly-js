@@ -7,9 +7,9 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _Director = _interopRequireDefault(require("./Director"));
+var _Backend = _interopRequireDefault(require("./Backend"));
 
-var _SchemasBackend = _interopRequireDefault(require("./SchemasBackend"));
+var _Director = _interopRequireDefault(require("./Director"));
 
 var _ServiceIdAndVersion = _interopRequireDefault(require("./ServiceIdAndVersion"));
 
@@ -63,7 +63,7 @@ var DirectorResponse = /*#__PURE__*/function () {
         obj = obj || new DirectorResponse();
 
         if (data.hasOwnProperty('backends')) {
-          obj['backends'] = _ApiClient["default"].convertToType(data['backends'], [_SchemasBackend["default"]]);
+          obj['backends'] = _ApiClient["default"].convertToType(data['backends'], [_Backend["default"]]);
         }
 
         if (data.hasOwnProperty('capacity')) {
@@ -123,7 +123,7 @@ var DirectorResponse = /*#__PURE__*/function () {
 }();
 /**
  * List of backends associated to a director.
- * @member {Array.<module:model/SchemasBackend>} backends
+ * @member {Array.<module:model/Backend>} backends
  */
 
 

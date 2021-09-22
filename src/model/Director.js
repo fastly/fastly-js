@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import SchemasBackend from './SchemasBackend';
+import Backend from './Backend';
 
 /**
  * The Director model module.
@@ -48,7 +48,7 @@ class Director {
             obj = obj || new Director();
 
             if (data.hasOwnProperty('backends')) {
-                obj['backends'] = ApiClient.convertToType(data['backends'], [SchemasBackend]);
+                obj['backends'] = ApiClient.convertToType(data['backends'], [Backend]);
             }
             if (data.hasOwnProperty('capacity')) {
                 obj['capacity'] = ApiClient.convertToType(data['capacity'], 'Number');
@@ -80,7 +80,7 @@ class Director {
 
 /**
  * List of backends associated to a director.
- * @member {Array.<module:model/SchemasBackend>} backends
+ * @member {Array.<module:model/Backend>} backends
  */
 Director.prototype['backends'] = undefined;
 

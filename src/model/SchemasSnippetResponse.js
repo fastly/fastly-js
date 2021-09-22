@@ -18,17 +18,17 @@ import Snippet from './Snippet';
 import Timestamps from './Timestamps';
 
 /**
- * The SnippetResponse model module.
- * @module model/SnippetResponse
+ * The SchemasSnippetResponse model module.
+ * @module model/SchemasSnippetResponse
  * @version 3.0.0-alpha1
  */
-class SnippetResponse {
+class SchemasSnippetResponse {
     /**
-     * Constructs a new <code>SnippetResponse</code>.
-     * @alias module:model/SnippetResponse
+     * Constructs a new <code>SchemasSnippetResponse</code>.
+     * @alias module:model/SchemasSnippetResponse
      */
     constructor() { 
-        SnippetResponse.initialize(this);
+        SchemasSnippetResponse.initialize(this);
     }
 
     /**
@@ -40,15 +40,15 @@ class SnippetResponse {
     }
 
     /**
-     * Constructs a <code>SnippetResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>SchemasSnippetResponse</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SnippetResponse} obj Optional instance to populate.
-     * @return {module:model/SnippetResponse} The populated <code>SnippetResponse</code> instance.
+     * @param {module:model/SchemasSnippetResponse} obj Optional instance to populate.
+     * @return {module:model/SchemasSnippetResponse} The populated <code>SchemasSnippetResponse</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new SnippetResponse();
+            obj = obj || new SchemasSnippetResponse();
 
             if (data.hasOwnProperty('content')) {
                 obj['content'] = ApiClient.convertToType(data['content'], 'String');
@@ -94,68 +94,68 @@ class SnippetResponse {
  * The VCL code that specifies exactly what the snippet does.
  * @member {String} content
  */
-SnippetResponse.prototype['content'] = undefined;
+SchemasSnippetResponse.prototype['content'] = undefined;
 
 /**
  * Sets the snippet version.
- * @member {module:model/SnippetResponse.DynamicEnum} dynamic
+ * @member {module:model/SchemasSnippetResponse.DynamicEnum} dynamic
  */
-SnippetResponse.prototype['dynamic'] = undefined;
+SchemasSnippetResponse.prototype['dynamic'] = undefined;
 
 /**
  * The name for the snippet.
  * @member {String} name
  */
-SnippetResponse.prototype['name'] = undefined;
+SchemasSnippetResponse.prototype['name'] = undefined;
 
 /**
  * Numeric string value. Priority determines execution order. Lower numbers execute first.
  * @member {String} priority
  * @default '100'
  */
-SnippetResponse.prototype['priority'] = '100';
+SchemasSnippetResponse.prototype['priority'] = '100';
 
 /**
  * The location in generated VCL where the snippet should be placed.
- * @member {module:model/SnippetResponse.TypeEnum} type
+ * @member {module:model/SchemasSnippetResponse.TypeEnum} type
  */
-SnippetResponse.prototype['type'] = undefined;
+SchemasSnippetResponse.prototype['type'] = undefined;
 
 /**
  * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
-SnippetResponse.prototype['service_id'] = undefined;
+SchemasSnippetResponse.prototype['service_id'] = undefined;
 
 /**
  * Integer identifying a service version.
  * @member {Number} version
  */
-SnippetResponse.prototype['version'] = undefined;
+SchemasSnippetResponse.prototype['version'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
  * @member {String} created_at
  */
-SnippetResponse.prototype['created_at'] = undefined;
+SchemasSnippetResponse.prototype['created_at'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
  * @member {String} deleted_at
  */
-SnippetResponse.prototype['deleted_at'] = undefined;
+SchemasSnippetResponse.prototype['deleted_at'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
  * @member {String} updated_at
  */
-SnippetResponse.prototype['updated_at'] = undefined;
+SchemasSnippetResponse.prototype['updated_at'] = undefined;
 
 /**
  * Alphanumeric string identifying a VCL Snippet.
  * @member {String} id
  */
-SnippetResponse.prototype['id'] = undefined;
+SchemasSnippetResponse.prototype['id'] = undefined;
 
 
 
@@ -166,7 +166,7 @@ SnippetResponse.prototype['id'] = undefined;
  * @enum {String}
  * @readonly
  */
-SnippetResponse['DynamicEnum'] = {
+SchemasSnippetResponse['DynamicEnum'] = {
 
     /**
      * value: "0"
@@ -187,7 +187,7 @@ SnippetResponse['DynamicEnum'] = {
  * @enum {String}
  * @readonly
  */
-SnippetResponse['TypeEnum'] = {
+SchemasSnippetResponse['TypeEnum'] = {
 
     /**
      * value: "init"
@@ -258,5 +258,5 @@ SnippetResponse['TypeEnum'] = {
 
 
 
-export default SnippetResponse;
+export default SchemasSnippetResponse;
 

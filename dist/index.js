@@ -1792,16 +1792,28 @@ Object.defineProperty(exports, "RoleUser", {
     return _RoleUser["default"];
   }
 });
-Object.defineProperty(exports, "SchemasBackend", {
+Object.defineProperty(exports, "SchemasRequestSettings", {
   enumerable: true,
   get: function get() {
-    return _SchemasBackend["default"];
+    return _SchemasRequestSettings["default"];
   }
 });
-Object.defineProperty(exports, "SchemasDirector", {
+Object.defineProperty(exports, "SchemasRequestSettingsResponse", {
   enumerable: true,
   get: function get() {
-    return _SchemasDirector["default"];
+    return _SchemasRequestSettingsResponse["default"];
+  }
+});
+Object.defineProperty(exports, "SchemasSnippetResponse", {
+  enumerable: true,
+  get: function get() {
+    return _SchemasSnippetResponse["default"];
+  }
+});
+Object.defineProperty(exports, "SchemasSnippetResponseAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _SchemasSnippetResponseAllOf["default"];
   }
 });
 Object.defineProperty(exports, "SchemasUserResponse", {
@@ -2036,12 +2048,6 @@ Object.defineProperty(exports, "SnippetResponse", {
   enumerable: true,
   get: function get() {
     return _SnippetResponse["default"];
-  }
-});
-Object.defineProperty(exports, "SnippetResponseAllOf", {
-  enumerable: true,
-  get: function get() {
-    return _SnippetResponseAllOf["default"];
   }
 });
 Object.defineProperty(exports, "Star", {
@@ -4003,9 +4009,13 @@ var _Results = _interopRequireDefault(require("./model/Results"));
 
 var _RoleUser = _interopRequireDefault(require("./model/RoleUser"));
 
-var _SchemasBackend = _interopRequireDefault(require("./model/SchemasBackend"));
+var _SchemasRequestSettings = _interopRequireDefault(require("./model/SchemasRequestSettings"));
 
-var _SchemasDirector = _interopRequireDefault(require("./model/SchemasDirector"));
+var _SchemasRequestSettingsResponse = _interopRequireDefault(require("./model/SchemasRequestSettingsResponse"));
+
+var _SchemasSnippetResponse = _interopRequireDefault(require("./model/SchemasSnippetResponse"));
+
+var _SchemasSnippetResponseAllOf = _interopRequireDefault(require("./model/SchemasSnippetResponseAllOf"));
 
 var _SchemasUserResponse = _interopRequireDefault(require("./model/SchemasUserResponse"));
 
@@ -4084,8 +4094,6 @@ var _SettingsResponse = _interopRequireDefault(require("./model/SettingsResponse
 var _Snippet = _interopRequireDefault(require("./model/Snippet"));
 
 var _SnippetResponse = _interopRequireDefault(require("./model/SnippetResponse"));
-
-var _SnippetResponseAllOf = _interopRequireDefault(require("./model/SnippetResponseAllOf"));
 
 var _Star = _interopRequireDefault(require("./model/Star"));
 
