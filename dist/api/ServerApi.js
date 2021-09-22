@@ -34,6 +34,10 @@ var ServerApi = /*#__PURE__*/function () {
     _classCallCheck(this, ServerApi);
 
     this.apiClient = apiClient || _ApiClient["default"].instance;
+
+    if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
+      this.apiClient.authenticate(process.env.FASTLY_API_TOKEN);
+    }
   }
   /**
    * Creates a single server for a particular service and pool.

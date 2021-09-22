@@ -40,6 +40,10 @@ var TokensApi = /*#__PURE__*/function () {
     _classCallCheck(this, TokensApi);
 
     this.apiClient = apiClient || _ApiClient["default"].instance;
+
+    if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
+      this.apiClient.authenticate(process.env.FASTLY_API_TOKEN);
+    }
   }
   /**
    * Revoke Tokens in bulk format. Users may only revoke their own tokens. Superusers may revoke tokens of others.

@@ -36,6 +36,10 @@ var AclApi = /*#__PURE__*/function () {
     _classCallCheck(this, AclApi);
 
     this.apiClient = apiClient || _ApiClient["default"].instance;
+
+    if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
+      this.apiClient.authenticate(process.env.FASTLY_API_TOKEN);
+    }
   }
   /**
    * Create a new ACL attached to the specified service version. A new, empty ACL must be attached to a draft version of a service. The version associated with the ACL must be activated to be used.

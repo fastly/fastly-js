@@ -48,6 +48,10 @@ var HistoricalApi = /*#__PURE__*/function () {
     _classCallCheck(this, HistoricalApi);
 
     this.apiClient = apiClient || _ApiClient["default"].instance;
+
+    if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
+      this.apiClient.authenticate(process.env.FASTLY_API_TOKEN);
+    }
   }
   /**
    * Fetches historical stats for each of your Fastly services and groups the results by service ID.

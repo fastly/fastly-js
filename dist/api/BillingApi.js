@@ -36,6 +36,10 @@ var BillingApi = /*#__PURE__*/function () {
     _classCallCheck(this, BillingApi);
 
     this.apiClient = apiClient || _ApiClient["default"].instance;
+
+    if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
+      this.apiClient.authenticate(process.env.FASTLY_API_TOKEN);
+    }
   }
   /**
    * Get the invoice for a given year and month. Can be any month from when the Customer was created to the current month.

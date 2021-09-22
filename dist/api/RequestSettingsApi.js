@@ -34,6 +34,10 @@ var RequestSettingsApi = /*#__PURE__*/function () {
     _classCallCheck(this, RequestSettingsApi);
 
     this.apiClient = apiClient || _ApiClient["default"].instance;
+
+    if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
+      this.apiClient.authenticate(process.env.FASTLY_API_TOKEN);
+    }
   }
   /**
    * Creates a new Request Settings object.

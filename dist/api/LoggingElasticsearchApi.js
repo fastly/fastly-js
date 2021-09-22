@@ -38,6 +38,10 @@ var LoggingElasticsearchApi = /*#__PURE__*/function () {
     _classCallCheck(this, LoggingElasticsearchApi);
 
     this.apiClient = apiClient || _ApiClient["default"].instance;
+
+    if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
+      this.apiClient.authenticate(process.env.FASTLY_API_TOKEN);
+    }
   }
   /**
    * Create a Elasticsearch logging endpoint for a particular service and version.

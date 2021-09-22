@@ -7,9 +7,9 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _Backend = _interopRequireDefault(require("../model/Backend"));
-
 var _DirectorResponse = _interopRequireDefault(require("../model/DirectorResponse"));
+
+var _SchemasBackend = _interopRequireDefault(require("../model/SchemasBackend"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -36,13 +36,17 @@ var DirectorApi = /*#__PURE__*/function () {
     _classCallCheck(this, DirectorApi);
 
     this.apiClient = apiClient || _ApiClient["default"].instance;
+
+    if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
+      this.apiClient.authenticate(process.env.FASTLY_API_TOKEN);
+    }
   }
   /**
    * Create a director for a particular service and version.
    * @param {Object} options
    * @param {String} options.service_id
    * @param {Number} options.version_id
-   * @param {Array.<module:model/Backend>} [options.backends] - List of backends associated to a director.
+   * @param {Array.<module:model/SchemasBackend>} [options.backends] - List of backends associated to a director.
    * @param {Number} [options.capacity] - Unused.
    * @param {String} [options.comment] - A freeform descriptive note.
    * @param {String} [options.name] - Name for the Director.
@@ -96,7 +100,7 @@ var DirectorApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @param {Array.<module:model/Backend>} [options.backends] - List of backends associated to a director.
+     * @param {Array.<module:model/SchemasBackend>} [options.backends] - List of backends associated to a director.
      * @param {Number} [options.capacity] - Unused.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - Name for the Director.

@@ -42,6 +42,10 @@ var LoggingGcsApi = /*#__PURE__*/function () {
     _classCallCheck(this, LoggingGcsApi);
 
     this.apiClient = apiClient || _ApiClient["default"].instance;
+
+    if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
+      this.apiClient.authenticate(process.env.FASTLY_API_TOKEN);
+    }
   }
   /**
    * Create GCS logging for a particular service and version.

@@ -14,17 +14,17 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The SchemasWafActiveRuleDataAttributes model module.
- * @module model/SchemasWafActiveRuleDataAttributes
+ * The WafActiveRuleDataAttributes model module.
+ * @module model/WafActiveRuleDataAttributes
  * @version 3.0.0-alpha1
  */
-class SchemasWafActiveRuleDataAttributes {
+class WafActiveRuleDataAttributes {
     /**
-     * Constructs a new <code>SchemasWafActiveRuleDataAttributes</code>.
-     * @alias module:model/SchemasWafActiveRuleDataAttributes
+     * Constructs a new <code>WafActiveRuleDataAttributes</code>.
+     * @alias module:model/WafActiveRuleDataAttributes
      */
     constructor() { 
-        SchemasWafActiveRuleDataAttributes.initialize(this);
+        WafActiveRuleDataAttributes.initialize(this);
     }
 
     /**
@@ -36,15 +36,15 @@ class SchemasWafActiveRuleDataAttributes {
     }
 
     /**
-     * Constructs a <code>SchemasWafActiveRuleDataAttributes</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>WafActiveRuleDataAttributes</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SchemasWafActiveRuleDataAttributes} obj Optional instance to populate.
-     * @return {module:model/SchemasWafActiveRuleDataAttributes} The populated <code>SchemasWafActiveRuleDataAttributes</code> instance.
+     * @param {module:model/WafActiveRuleDataAttributes} obj Optional instance to populate.
+     * @return {module:model/WafActiveRuleDataAttributes} The populated <code>WafActiveRuleDataAttributes</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new SchemasWafActiveRuleDataAttributes();
+            obj = obj || new WafActiveRuleDataAttributes();
 
             if (data.hasOwnProperty('modsec_rule_id')) {
                 obj['modsec_rule_id'] = ApiClient.convertToType(data['modsec_rule_id'], 'Number');
@@ -66,19 +66,19 @@ class SchemasWafActiveRuleDataAttributes {
  * The ModSecurity rule ID of the associated rule revision.
  * @member {Number} modsec_rule_id
  */
-SchemasWafActiveRuleDataAttributes.prototype['modsec_rule_id'] = undefined;
+WafActiveRuleDataAttributes.prototype['modsec_rule_id'] = undefined;
 
 /**
  * Revision number.
  * @member {Number} revision
  */
-SchemasWafActiveRuleDataAttributes.prototype['revision'] = undefined;
+WafActiveRuleDataAttributes.prototype['revision'] = undefined;
 
 /**
  * Describes the behavior for the particular rule revision within this firewall version.
- * @member {module:model/SchemasWafActiveRuleDataAttributes.StatusEnum} status
+ * @member {module:model/WafActiveRuleDataAttributes.StatusEnum} status
  */
-SchemasWafActiveRuleDataAttributes.prototype['status'] = undefined;
+WafActiveRuleDataAttributes.prototype['status'] = undefined;
 
 
 
@@ -89,7 +89,7 @@ SchemasWafActiveRuleDataAttributes.prototype['status'] = undefined;
  * @enum {String}
  * @readonly
  */
-SchemasWafActiveRuleDataAttributes['StatusEnum'] = {
+WafActiveRuleDataAttributes['StatusEnum'] = {
 
     /**
      * value: "log"
@@ -112,5 +112,5 @@ SchemasWafActiveRuleDataAttributes['StatusEnum'] = {
 
 
 
-export default SchemasWafActiveRuleDataAttributes;
+export default WafActiveRuleDataAttributes;
 

@@ -42,6 +42,10 @@ var LoggingOpenstackApi = /*#__PURE__*/function () {
     _classCallCheck(this, LoggingOpenstackApi);
 
     this.apiClient = apiClient || _ApiClient["default"].instance;
+
+    if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
+      this.apiClient.authenticate(process.env.FASTLY_API_TOKEN);
+    }
   }
   /**
    * Create a openstack for a particular service and version.

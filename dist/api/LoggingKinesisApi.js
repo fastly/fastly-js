@@ -38,6 +38,10 @@ var LoggingKinesisApi = /*#__PURE__*/function () {
     _classCallCheck(this, LoggingKinesisApi);
 
     this.apiClient = apiClient || _ApiClient["default"].instance;
+
+    if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
+      this.apiClient.authenticate(process.env.FASTLY_API_TOKEN);
+    }
   }
   /**
    * Create an Amazon Kinesis Data Streams logging object for a particular service and version.

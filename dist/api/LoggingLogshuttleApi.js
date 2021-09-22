@@ -38,6 +38,10 @@ var LoggingLogshuttleApi = /*#__PURE__*/function () {
     _classCallCheck(this, LoggingLogshuttleApi);
 
     this.apiClient = apiClient || _ApiClient["default"].instance;
+
+    if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
+      this.apiClient.authenticate(process.env.FASTLY_API_TOKEN);
+    }
   }
   /**
    * Create a Log Shuttle logging endpoint for a particular service and version.

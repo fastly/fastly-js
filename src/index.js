@@ -12,7 +12,7 @@
  */
 
 
-import Fastly from './ApiClient';
+import ApiClient from './ApiClient';
 import Acl from './model/Acl';
 import AclEntries from './model/AclEntries';
 import AclEntry from './model/AclEntry';
@@ -310,22 +310,14 @@ import ResponseObject from './model/ResponseObject';
 import ResponseObjectResponse from './model/ResponseObjectResponse';
 import Results from './model/Results';
 import RoleUser from './model/RoleUser';
-import SchemasRelationshipsForWafActiveRule from './model/SchemasRelationshipsForWafActiveRule';
-import SchemasRequestSettings from './model/SchemasRequestSettings';
-import SchemasRequestSettingsResponse from './model/SchemasRequestSettingsResponse';
-import SchemasResponseObject from './model/SchemasResponseObject';
-import SchemasResponseObjectResponse from './model/SchemasResponseObjectResponse';
-import SchemasSnippetResponse from './model/SchemasSnippetResponse';
-import SchemasSnippetResponseAllOf from './model/SchemasSnippetResponseAllOf';
+import SchemasBackend from './model/SchemasBackend';
+import SchemasDirector from './model/SchemasDirector';
 import SchemasUserResponse from './model/SchemasUserResponse';
 import SchemasUserResponseAllOf from './model/SchemasUserResponseAllOf';
 import SchemasVclResponse from './model/SchemasVclResponse';
 import SchemasVersion from './model/SchemasVersion';
 import SchemasVersionResponse from './model/SchemasVersionResponse';
 import SchemasVersionResponseAllOf from './model/SchemasVersionResponseAllOf';
-import SchemasWafActiveRule from './model/SchemasWafActiveRule';
-import SchemasWafActiveRuleData from './model/SchemasWafActiveRuleData';
-import SchemasWafActiveRuleDataAttributes from './model/SchemasWafActiveRuleDataAttributes';
 import SchemasWafFirewallVersion from './model/SchemasWafFirewallVersion';
 import SchemasWafFirewallVersionData from './model/SchemasWafFirewallVersionData';
 import SchemasWafFirewallVersionDataAttributes from './model/SchemasWafFirewallVersionDataAttributes';
@@ -359,6 +351,7 @@ import Settings from './model/Settings';
 import SettingsResponse from './model/SettingsResponse';
 import Snippet from './model/Snippet';
 import SnippetResponse from './model/SnippetResponse';
+import SnippetResponseAllOf from './model/SnippetResponseAllOf';
 import Star from './model/Star';
 import StarData from './model/StarData';
 import StarResponse from './model/StarResponse';
@@ -457,6 +450,7 @@ import VersionResponse from './model/VersionResponse';
 import WafActiveRule from './model/WafActiveRule';
 import WafActiveRuleCreationResponse from './model/WafActiveRuleCreationResponse';
 import WafActiveRuleData from './model/WafActiveRuleData';
+import WafActiveRuleDataAttributes from './model/WafActiveRuleDataAttributes';
 import WafActiveRuleResponse from './model/WafActiveRuleResponse';
 import WafActiveRuleResponseData from './model/WafActiveRuleResponseData';
 import WafActiveRuleResponseDataAllOf from './model/WafActiveRuleResponseDataAllOf';
@@ -587,8 +581,12 @@ import WafRulesApi from './api/WafRulesApi';
 import WafTagsApi from './api/WafTagsApi';
 
 
+function authenticate (key) {
+    ApiClient.instance.authenticate(key);
+}
+
 /**
-* A PHP client library for interacting with most facets of the Fastly API..<br>
+* A JavaScript client library for interacting with most facets of the Fastly API.<br>
 * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
@@ -621,9 +619,9 @@ import WafTagsApi from './api/WafTagsApi';
 export {
     /**
      * The ApiClient constructor.
-     * @property {module:Fastly}
+     * @property {module:ApiClient}
      */
-    Fastly,
+    ApiClient,
 
     /**
      * The Acl model constructor.
@@ -2408,46 +2406,16 @@ export {
     RoleUser,
 
     /**
-     * The SchemasRelationshipsForWafActiveRule model constructor.
-     * @property {module:model/SchemasRelationshipsForWafActiveRule}
+     * The SchemasBackend model constructor.
+     * @property {module:model/SchemasBackend}
      */
-    SchemasRelationshipsForWafActiveRule,
+    SchemasBackend,
 
     /**
-     * The SchemasRequestSettings model constructor.
-     * @property {module:model/SchemasRequestSettings}
+     * The SchemasDirector model constructor.
+     * @property {module:model/SchemasDirector}
      */
-    SchemasRequestSettings,
-
-    /**
-     * The SchemasRequestSettingsResponse model constructor.
-     * @property {module:model/SchemasRequestSettingsResponse}
-     */
-    SchemasRequestSettingsResponse,
-
-    /**
-     * The SchemasResponseObject model constructor.
-     * @property {module:model/SchemasResponseObject}
-     */
-    SchemasResponseObject,
-
-    /**
-     * The SchemasResponseObjectResponse model constructor.
-     * @property {module:model/SchemasResponseObjectResponse}
-     */
-    SchemasResponseObjectResponse,
-
-    /**
-     * The SchemasSnippetResponse model constructor.
-     * @property {module:model/SchemasSnippetResponse}
-     */
-    SchemasSnippetResponse,
-
-    /**
-     * The SchemasSnippetResponseAllOf model constructor.
-     * @property {module:model/SchemasSnippetResponseAllOf}
-     */
-    SchemasSnippetResponseAllOf,
+    SchemasDirector,
 
     /**
      * The SchemasUserResponse model constructor.
@@ -2484,24 +2452,6 @@ export {
      * @property {module:model/SchemasVersionResponseAllOf}
      */
     SchemasVersionResponseAllOf,
-
-    /**
-     * The SchemasWafActiveRule model constructor.
-     * @property {module:model/SchemasWafActiveRule}
-     */
-    SchemasWafActiveRule,
-
-    /**
-     * The SchemasWafActiveRuleData model constructor.
-     * @property {module:model/SchemasWafActiveRuleData}
-     */
-    SchemasWafActiveRuleData,
-
-    /**
-     * The SchemasWafActiveRuleDataAttributes model constructor.
-     * @property {module:model/SchemasWafActiveRuleDataAttributes}
-     */
-    SchemasWafActiveRuleDataAttributes,
 
     /**
      * The SchemasWafFirewallVersion model constructor.
@@ -2700,6 +2650,12 @@ export {
      * @property {module:model/SnippetResponse}
      */
     SnippetResponse,
+
+    /**
+     * The SnippetResponseAllOf model constructor.
+     * @property {module:model/SnippetResponseAllOf}
+     */
+    SnippetResponseAllOf,
 
     /**
      * The Star model constructor.
@@ -3288,6 +3244,12 @@ export {
      * @property {module:model/WafActiveRuleData}
      */
     WafActiveRuleData,
+
+    /**
+     * The WafActiveRuleDataAttributes model constructor.
+     * @property {module:model/WafActiveRuleDataAttributes}
+     */
+    WafActiveRuleDataAttributes,
 
     /**
      * The WafActiveRuleResponse model constructor.
@@ -4055,5 +4017,7 @@ export {
     * The WafTagsApi service constructor.
     * @property {module:api/WafTagsApi}
     */
-    WafTagsApi
+    WafTagsApi,
+
+    authenticate
 };

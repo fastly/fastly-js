@@ -36,6 +36,10 @@ var DictionaryItemApi = /*#__PURE__*/function () {
     _classCallCheck(this, DictionaryItemApi);
 
     this.apiClient = apiClient || _ApiClient["default"].instance;
+
+    if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
+      this.apiClient.authenticate(process.env.FASTLY_API_TOKEN);
+    }
   }
   /**
    * Update DictionaryItem in batch for given service, dictionary ID and key/value pairs for items.

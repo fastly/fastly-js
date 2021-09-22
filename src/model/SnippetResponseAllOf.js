@@ -12,20 +12,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import SchemasWafActiveRuleData from './SchemasWafActiveRuleData';
 
 /**
- * The SchemasWafActiveRule model module.
- * @module model/SchemasWafActiveRule
+ * The SnippetResponseAllOf model module.
+ * @module model/SnippetResponseAllOf
  * @version 3.0.0-alpha1
  */
-class SchemasWafActiveRule {
+class SnippetResponseAllOf {
     /**
-     * Constructs a new <code>SchemasWafActiveRule</code>.
-     * @alias module:model/SchemasWafActiveRule
+     * Constructs a new <code>SnippetResponseAllOf</code>.
+     * @alias module:model/SnippetResponseAllOf
      */
     constructor() { 
-        SchemasWafActiveRule.initialize(this);
+        SnippetResponseAllOf.initialize(this);
     }
 
     /**
@@ -37,18 +36,18 @@ class SchemasWafActiveRule {
     }
 
     /**
-     * Constructs a <code>SchemasWafActiveRule</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>SnippetResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SchemasWafActiveRule} obj Optional instance to populate.
-     * @return {module:model/SchemasWafActiveRule} The populated <code>SchemasWafActiveRule</code> instance.
+     * @param {module:model/SnippetResponseAllOf} obj Optional instance to populate.
+     * @return {module:model/SnippetResponseAllOf} The populated <code>SnippetResponseAllOf</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new SchemasWafActiveRule();
+            obj = obj || new SnippetResponseAllOf();
 
-            if (data.hasOwnProperty('data')) {
-                obj['data'] = SchemasWafActiveRuleData.constructFromObject(data['data']);
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
         }
         return obj;
@@ -58,14 +57,15 @@ class SchemasWafActiveRule {
 }
 
 /**
- * @member {module:model/SchemasWafActiveRuleData} data
+ * Alphanumeric string identifying a VCL Snippet.
+ * @member {String} id
  */
-SchemasWafActiveRule.prototype['data'] = undefined;
+SnippetResponseAllOf.prototype['id'] = undefined;
 
 
 
 
 
 
-export default SchemasWafActiveRule;
+export default SnippetResponseAllOf;
 

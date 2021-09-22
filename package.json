@@ -1,7 +1,7 @@
 {
   "name": "fastly",
   "version": "3.0.0-alpha1",
-  "description": "A PHP client library for interacting with most facets of the Fastly API.",
+  "description": "A JavaScript client library for interacting with most facets of the Fastly API.",
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {

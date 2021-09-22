@@ -42,6 +42,10 @@ var WafActiveRulesApi = /*#__PURE__*/function () {
     _classCallCheck(this, WafActiveRulesApi);
 
     this.apiClient = apiClient || _ApiClient["default"].instance;
+
+    if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
+      this.apiClient.authenticate(process.env.FASTLY_API_TOKEN);
+    }
   }
   /**
    * Delete many active rules on a particular firewall version using the active rule ID. Limited to 500 rules per request.

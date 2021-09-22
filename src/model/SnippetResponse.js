@@ -12,9 +12,9 @@
  */
 
 import ApiClient from '../ApiClient';
-import SchemasSnippetResponseAllOf from './SchemasSnippetResponseAllOf';
 import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Snippet from './Snippet';
+import SnippetResponseAllOf from './SnippetResponseAllOf';
 import Timestamps from './Timestamps';
 
 /**

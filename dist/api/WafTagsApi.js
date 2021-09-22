@@ -34,6 +34,10 @@ var WafTagsApi = /*#__PURE__*/function () {
     _classCallCheck(this, WafTagsApi);
 
     this.apiClient = apiClient || _ApiClient["default"].instance;
+
+    if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
+      this.apiClient.authenticate(process.env.FASTLY_API_TOKEN);
+    }
   }
   /**
    * List all tags.

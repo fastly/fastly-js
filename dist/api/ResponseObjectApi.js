@@ -34,6 +34,10 @@ var ResponseObjectApi = /*#__PURE__*/function () {
     _classCallCheck(this, ResponseObjectApi);
 
     this.apiClient = apiClient || _ApiClient["default"].instance;
+
+    if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
+      this.apiClient.authenticate(process.env.FASTLY_API_TOKEN);
+    }
   }
   /**
    * Creates a new Response Object.

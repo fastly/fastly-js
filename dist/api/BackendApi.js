@@ -34,6 +34,10 @@ var BackendApi = /*#__PURE__*/function () {
     _classCallCheck(this, BackendApi);
 
     this.apiClient = apiClient || _ApiClient["default"].instance;
+
+    if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
+      this.apiClient.authenticate(process.env.FASTLY_API_TOKEN);
+    }
   }
   /**
    * Create a backend for a particular service and version.

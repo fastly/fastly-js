@@ -32,6 +32,10 @@ export default class UserApi {
     */
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
+
+        if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
+            this.apiClient.authenticate(process.env.FASTLY_API_TOKEN);
+        }
     }
 
 

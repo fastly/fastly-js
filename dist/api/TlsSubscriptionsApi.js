@@ -38,6 +38,10 @@ var TlsSubscriptionsApi = /*#__PURE__*/function () {
     _classCallCheck(this, TlsSubscriptionsApi);
 
     this.apiClient = apiClient || _ApiClient["default"].instance;
+
+    if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
+      this.apiClient.authenticate(process.env.FASTLY_API_TOKEN);
+    }
   }
   /**
    * Create a new TLS subscription. This response includes a list of possible challenges to verify domain ownership.

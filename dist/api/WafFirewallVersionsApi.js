@@ -38,6 +38,10 @@ var WafFirewallVersionsApi = /*#__PURE__*/function () {
     _classCallCheck(this, WafFirewallVersionsApi);
 
     this.apiClient = apiClient || _ApiClient["default"].instance;
+
+    if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
+      this.apiClient.authenticate(process.env.FASTLY_API_TOKEN);
+    }
   }
   /**
    * Clone a specific, existing firewall version into a new, draft firewall version.

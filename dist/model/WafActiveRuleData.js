@@ -9,9 +9,9 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _RelationshipsForWafActiveRule = _interopRequireDefault(require("./RelationshipsForWafActiveRule"));
 
-var _SchemasWafActiveRuleDataAttributes = _interopRequireDefault(require("./SchemasWafActiveRuleDataAttributes"));
-
 var _TypeWafActiveRule = _interopRequireDefault(require("./TypeWafActiveRule"));
+
+var _WafActiveRuleDataAttributes = _interopRequireDefault(require("./WafActiveRuleDataAttributes"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -61,7 +61,7 @@ var WafActiveRuleData = /*#__PURE__*/function () {
         obj = obj || new WafActiveRuleData();
 
         if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _SchemasWafActiveRuleDataAttributes["default"].constructFromObject(data['attributes']);
+          obj['attributes'] = _WafActiveRuleDataAttributes["default"].constructFromObject(data['attributes']);
         }
 
         if (data.hasOwnProperty('relationships')) {
@@ -80,7 +80,7 @@ var WafActiveRuleData = /*#__PURE__*/function () {
   return WafActiveRuleData;
 }();
 /**
- * @member {module:model/SchemasWafActiveRuleDataAttributes} attributes
+ * @member {module:model/WafActiveRuleDataAttributes} attributes
  */
 
 

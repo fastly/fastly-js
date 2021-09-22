@@ -34,6 +34,10 @@ var PackageApi = /*#__PURE__*/function () {
     _classCallCheck(this, PackageApi);
 
     this.apiClient = apiClient || _ApiClient["default"].instance;
+
+    if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
+      this.apiClient.authenticate(process.env.FASTLY_API_TOKEN);
+    }
   }
   /**
    * List detailed information about the Compute@Edge package for the specified service.

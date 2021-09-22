@@ -3,7 +3,8 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, "Fastly", {
+exports.authenticate = authenticate;
+Object.defineProperty(exports, "ApiClient", {
   enumerable: true,
   get: function get() {
     return _ApiClient["default"];
@@ -1791,46 +1792,16 @@ Object.defineProperty(exports, "RoleUser", {
     return _RoleUser["default"];
   }
 });
-Object.defineProperty(exports, "SchemasRelationshipsForWafActiveRule", {
+Object.defineProperty(exports, "SchemasBackend", {
   enumerable: true,
   get: function get() {
-    return _SchemasRelationshipsForWafActiveRule["default"];
+    return _SchemasBackend["default"];
   }
 });
-Object.defineProperty(exports, "SchemasRequestSettings", {
+Object.defineProperty(exports, "SchemasDirector", {
   enumerable: true,
   get: function get() {
-    return _SchemasRequestSettings["default"];
-  }
-});
-Object.defineProperty(exports, "SchemasRequestSettingsResponse", {
-  enumerable: true,
-  get: function get() {
-    return _SchemasRequestSettingsResponse["default"];
-  }
-});
-Object.defineProperty(exports, "SchemasResponseObject", {
-  enumerable: true,
-  get: function get() {
-    return _SchemasResponseObject["default"];
-  }
-});
-Object.defineProperty(exports, "SchemasResponseObjectResponse", {
-  enumerable: true,
-  get: function get() {
-    return _SchemasResponseObjectResponse["default"];
-  }
-});
-Object.defineProperty(exports, "SchemasSnippetResponse", {
-  enumerable: true,
-  get: function get() {
-    return _SchemasSnippetResponse["default"];
-  }
-});
-Object.defineProperty(exports, "SchemasSnippetResponseAllOf", {
-  enumerable: true,
-  get: function get() {
-    return _SchemasSnippetResponseAllOf["default"];
+    return _SchemasDirector["default"];
   }
 });
 Object.defineProperty(exports, "SchemasUserResponse", {
@@ -1867,24 +1838,6 @@ Object.defineProperty(exports, "SchemasVersionResponseAllOf", {
   enumerable: true,
   get: function get() {
     return _SchemasVersionResponseAllOf["default"];
-  }
-});
-Object.defineProperty(exports, "SchemasWafActiveRule", {
-  enumerable: true,
-  get: function get() {
-    return _SchemasWafActiveRule["default"];
-  }
-});
-Object.defineProperty(exports, "SchemasWafActiveRuleData", {
-  enumerable: true,
-  get: function get() {
-    return _SchemasWafActiveRuleData["default"];
-  }
-});
-Object.defineProperty(exports, "SchemasWafActiveRuleDataAttributes", {
-  enumerable: true,
-  get: function get() {
-    return _SchemasWafActiveRuleDataAttributes["default"];
   }
 });
 Object.defineProperty(exports, "SchemasWafFirewallVersion", {
@@ -2083,6 +2036,12 @@ Object.defineProperty(exports, "SnippetResponse", {
   enumerable: true,
   get: function get() {
     return _SnippetResponse["default"];
+  }
+});
+Object.defineProperty(exports, "SnippetResponseAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _SnippetResponseAllOf["default"];
   }
 });
 Object.defineProperty(exports, "Star", {
@@ -2671,6 +2630,12 @@ Object.defineProperty(exports, "WafActiveRuleData", {
   enumerable: true,
   get: function get() {
     return _WafActiveRuleData["default"];
+  }
+});
+Object.defineProperty(exports, "WafActiveRuleDataAttributes", {
+  enumerable: true,
+  get: function get() {
+    return _WafActiveRuleDataAttributes["default"];
   }
 });
 Object.defineProperty(exports, "WafActiveRuleResponse", {
@@ -4038,19 +4003,9 @@ var _Results = _interopRequireDefault(require("./model/Results"));
 
 var _RoleUser = _interopRequireDefault(require("./model/RoleUser"));
 
-var _SchemasRelationshipsForWafActiveRule = _interopRequireDefault(require("./model/SchemasRelationshipsForWafActiveRule"));
+var _SchemasBackend = _interopRequireDefault(require("./model/SchemasBackend"));
 
-var _SchemasRequestSettings = _interopRequireDefault(require("./model/SchemasRequestSettings"));
-
-var _SchemasRequestSettingsResponse = _interopRequireDefault(require("./model/SchemasRequestSettingsResponse"));
-
-var _SchemasResponseObject = _interopRequireDefault(require("./model/SchemasResponseObject"));
-
-var _SchemasResponseObjectResponse = _interopRequireDefault(require("./model/SchemasResponseObjectResponse"));
-
-var _SchemasSnippetResponse = _interopRequireDefault(require("./model/SchemasSnippetResponse"));
-
-var _SchemasSnippetResponseAllOf = _interopRequireDefault(require("./model/SchemasSnippetResponseAllOf"));
+var _SchemasDirector = _interopRequireDefault(require("./model/SchemasDirector"));
 
 var _SchemasUserResponse = _interopRequireDefault(require("./model/SchemasUserResponse"));
 
@@ -4063,12 +4018,6 @@ var _SchemasVersion = _interopRequireDefault(require("./model/SchemasVersion"));
 var _SchemasVersionResponse = _interopRequireDefault(require("./model/SchemasVersionResponse"));
 
 var _SchemasVersionResponseAllOf = _interopRequireDefault(require("./model/SchemasVersionResponseAllOf"));
-
-var _SchemasWafActiveRule = _interopRequireDefault(require("./model/SchemasWafActiveRule"));
-
-var _SchemasWafActiveRuleData = _interopRequireDefault(require("./model/SchemasWafActiveRuleData"));
-
-var _SchemasWafActiveRuleDataAttributes = _interopRequireDefault(require("./model/SchemasWafActiveRuleDataAttributes"));
 
 var _SchemasWafFirewallVersion = _interopRequireDefault(require("./model/SchemasWafFirewallVersion"));
 
@@ -4135,6 +4084,8 @@ var _SettingsResponse = _interopRequireDefault(require("./model/SettingsResponse
 var _Snippet = _interopRequireDefault(require("./model/Snippet"));
 
 var _SnippetResponse = _interopRequireDefault(require("./model/SnippetResponse"));
+
+var _SnippetResponseAllOf = _interopRequireDefault(require("./model/SnippetResponseAllOf"));
 
 var _Star = _interopRequireDefault(require("./model/Star"));
 
@@ -4331,6 +4282,8 @@ var _WafActiveRule = _interopRequireDefault(require("./model/WafActiveRule"));
 var _WafActiveRuleCreationResponse = _interopRequireDefault(require("./model/WafActiveRuleCreationResponse"));
 
 var _WafActiveRuleData = _interopRequireDefault(require("./model/WafActiveRuleData"));
+
+var _WafActiveRuleDataAttributes = _interopRequireDefault(require("./model/WafActiveRuleDataAttributes"));
 
 var _WafActiveRuleResponse = _interopRequireDefault(require("./model/WafActiveRuleResponse"));
 
@@ -4589,3 +4542,50 @@ var _WafRulesApi = _interopRequireDefault(require("./api/WafRulesApi"));
 var _WafTagsApi = _interopRequireDefault(require("./api/WafTagsApi"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+/**
+ * Fastly API
+ * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
+ *
+ * The version of the OpenAPI document: 1.0.0
+ * 
+ *
+ * NOTE: This class is auto generated by OpenAPI Generator (https://openapi-generator.tech).
+ * https://openapi-generator.tech
+ * Do not edit the class manually.
+ *
+ */
+function authenticate(key) {
+  _ApiClient["default"].instance.authenticate(key);
+}
+/**
+* A JavaScript client library for interacting with most facets of the Fastly API.<br>
+* The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
+* <p>
+* An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
+* <pre>
+* var Fastly = require('index'); // See note below*.
+* var xxxSvc = new Fastly.XxxApi(); // Allocate the API class we're going to use.
+* var yyyModel = new Fastly.Yyy(); // Construct a model instance.
+* yyyModel.someProperty = 'someValue';
+* ...
+* var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
+* ...
+* </pre>
+* <em>*NOTE: For a top-level AMD script, use require(['index'], function(){...})
+* and put the application logic within the callback function.</em>
+* </p>
+* <p>
+* A non-AMD browser application (discouraged) might do something like this:
+* <pre>
+* var xxxSvc = new Fastly.XxxApi(); // Allocate the API class we're going to use.
+* var yyy = new Fastly.Yyy(); // Construct a model instance.
+* yyyModel.someProperty = 'someValue';
+* ...
+* var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
+* ...
+* </pre>
+* </p>
+* @module index
+* @version 3.0.0-alpha1
+*/

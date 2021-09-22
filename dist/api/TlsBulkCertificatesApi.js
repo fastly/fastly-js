@@ -38,6 +38,10 @@ var TlsBulkCertificatesApi = /*#__PURE__*/function () {
     _classCallCheck(this, TlsBulkCertificatesApi);
 
     this.apiClient = apiClient || _ApiClient["default"].instance;
+
+    if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
+      this.apiClient.authenticate(process.env.FASTLY_API_TOKEN);
+    }
   }
   /**
    * Destroy a certificate. This disables TLS for all domains listed as SAN entries.

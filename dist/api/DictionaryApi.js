@@ -34,6 +34,10 @@ var DictionaryApi = /*#__PURE__*/function () {
     _classCallCheck(this, DictionaryApi);
 
     this.apiClient = apiClient || _ApiClient["default"].instance;
+
+    if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
+      this.apiClient.authenticate(process.env.FASTLY_API_TOKEN);
+    }
   }
   /**
    * Create named dictionary for a particular service and version.

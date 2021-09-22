@@ -13,8 +13,6 @@ var _CacheSettingResponse = _interopRequireDefault(require("./CacheSettingRespon
 
 var _ConditionResponse = _interopRequireDefault(require("./ConditionResponse"));
 
-var _Director = _interopRequireDefault(require("./Director"));
-
 var _DomainResponse = _interopRequireDefault(require("./DomainResponse"));
 
 var _GzipResponse = _interopRequireDefault(require("./GzipResponse"));
@@ -23,15 +21,17 @@ var _HeaderResponse = _interopRequireDefault(require("./HeaderResponse"));
 
 var _HealthcheckResponse = _interopRequireDefault(require("./HealthcheckResponse"));
 
-var _SchemasRequestSettingsResponse = _interopRequireDefault(require("./SchemasRequestSettingsResponse"));
+var _RequestSettingsResponse = _interopRequireDefault(require("./RequestSettingsResponse"));
 
-var _SchemasResponseObjectResponse = _interopRequireDefault(require("./SchemasResponseObjectResponse"));
+var _ResponseObjectResponse = _interopRequireDefault(require("./ResponseObjectResponse"));
 
-var _SchemasSnippetResponse = _interopRequireDefault(require("./SchemasSnippetResponse"));
+var _SchemasDirector = _interopRequireDefault(require("./SchemasDirector"));
 
 var _SchemasVclResponse = _interopRequireDefault(require("./SchemasVclResponse"));
 
 var _Settings = _interopRequireDefault(require("./Settings"));
+
+var _SnippetResponse = _interopRequireDefault(require("./SnippetResponse"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -93,7 +93,7 @@ var VersionDetail = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('directors')) {
-          obj['directors'] = _ApiClient["default"].convertToType(data['directors'], [_Director["default"]]);
+          obj['directors'] = _ApiClient["default"].convertToType(data['directors'], [_SchemasDirector["default"]]);
         }
 
         if (data.hasOwnProperty('domains')) {
@@ -113,11 +113,11 @@ var VersionDetail = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('request_settings')) {
-          obj['request_settings'] = _ApiClient["default"].convertToType(data['request_settings'], [_SchemasRequestSettingsResponse["default"]]);
+          obj['request_settings'] = _ApiClient["default"].convertToType(data['request_settings'], [_RequestSettingsResponse["default"]]);
         }
 
         if (data.hasOwnProperty('response_objects')) {
-          obj['response_objects'] = _ApiClient["default"].convertToType(data['response_objects'], [_SchemasResponseObjectResponse["default"]]);
+          obj['response_objects'] = _ApiClient["default"].convertToType(data['response_objects'], [_ResponseObjectResponse["default"]]);
         }
 
         if (data.hasOwnProperty('settings')) {
@@ -125,7 +125,7 @@ var VersionDetail = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('snippets')) {
-          obj['snippets'] = _ApiClient["default"].convertToType(data['snippets'], [_SchemasSnippetResponse["default"]]);
+          obj['snippets'] = _ApiClient["default"].convertToType(data['snippets'], [_SnippetResponse["default"]]);
         }
 
         if (data.hasOwnProperty('vcls')) {
@@ -164,7 +164,7 @@ VersionDetail.prototype['cache_settings'] = undefined;
 VersionDetail.prototype['conditions'] = undefined;
 /**
  * List of directors associated to this service.
- * @member {Array.<module:model/Director>} directors
+ * @member {Array.<module:model/SchemasDirector>} directors
  */
 
 VersionDetail.prototype['directors'] = undefined;
@@ -194,13 +194,13 @@ VersionDetail.prototype['headers'] = undefined;
 VersionDetail.prototype['healthchecks'] = undefined;
 /**
  * List of request settings for this service.
- * @member {Array.<module:model/SchemasRequestSettingsResponse>} request_settings
+ * @member {Array.<module:model/RequestSettingsResponse>} request_settings
  */
 
 VersionDetail.prototype['request_settings'] = undefined;
 /**
  * List of response objects for this service.
- * @member {Array.<module:model/SchemasResponseObjectResponse>} response_objects
+ * @member {Array.<module:model/ResponseObjectResponse>} response_objects
  */
 
 VersionDetail.prototype['response_objects'] = undefined;
@@ -211,7 +211,7 @@ VersionDetail.prototype['response_objects'] = undefined;
 VersionDetail.prototype['settings'] = undefined;
 /**
  * List of VCL snippets for this service.
- * @member {Array.<module:model/SchemasSnippetResponse>} snippets
+ * @member {Array.<module:model/SnippetResponse>} snippets
  */
 
 VersionDetail.prototype['snippets'] = undefined;

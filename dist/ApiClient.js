@@ -791,10 +791,5 @@ ApiClient.CollectionFormatEnum = {
 */
 
 ApiClient.instance = new ApiClient();
-
-if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
-  ApiClient.instance.authenticate(process.env.FASTLY_API_TOKEN);
-}
-
 var _default = ApiClient;
 exports["default"] = _default;

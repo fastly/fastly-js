@@ -38,6 +38,10 @@ var WafExclusionsApi = /*#__PURE__*/function () {
     _classCallCheck(this, WafExclusionsApi);
 
     this.apiClient = apiClient || _ApiClient["default"].instance;
+
+    if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
+      this.apiClient.authenticate(process.env.FASTLY_API_TOKEN);
+    }
   }
   /**
    * Create a WAF exclusion for a particular firewall version.

@@ -15,17 +15,17 @@ import ApiClient from '../ApiClient';
 import BackendResponse from './BackendResponse';
 import CacheSettingResponse from './CacheSettingResponse';
 import ConditionResponse from './ConditionResponse';
-import Director from './Director';
 import DomainResponse from './DomainResponse';
 import GzipResponse from './GzipResponse';
 import HeaderResponse from './HeaderResponse';
 import HealthcheckResponse from './HealthcheckResponse';
-import SchemasRequestSettingsResponse from './SchemasRequestSettingsResponse';
-import SchemasResponseObjectResponse from './SchemasResponseObjectResponse';
-import SchemasSnippetResponse from './SchemasSnippetResponse';
+import RequestSettingsResponse from './RequestSettingsResponse';
+import ResponseObjectResponse from './ResponseObjectResponse';
+import SchemasDirector from './SchemasDirector';
 import SchemasVclResponse from './SchemasVclResponse';
 import SchemasVersionResponse from './SchemasVersionResponse';
 import Settings from './Settings';
+import SnippetResponse from './SnippetResponse';
 import VersionDetail from './VersionDetail';
 
 /**
@@ -104,7 +104,7 @@ class NestedVersion {
                 obj['conditions'] = ApiClient.convertToType(data['conditions'], [ConditionResponse]);
             }
             if (data.hasOwnProperty('directors')) {
-                obj['directors'] = ApiClient.convertToType(data['directors'], [Director]);
+                obj['directors'] = ApiClient.convertToType(data['directors'], [SchemasDirector]);
             }
             if (data.hasOwnProperty('domains')) {
                 obj['domains'] = ApiClient.convertToType(data['domains'], [DomainResponse]);
@@ -119,16 +119,16 @@ class NestedVersion {
                 obj['healthchecks'] = ApiClient.convertToType(data['healthchecks'], [HealthcheckResponse]);
             }
             if (data.hasOwnProperty('request_settings')) {
-                obj['request_settings'] = ApiClient.convertToType(data['request_settings'], [SchemasRequestSettingsResponse]);
+                obj['request_settings'] = ApiClient.convertToType(data['request_settings'], [RequestSettingsResponse]);
             }
             if (data.hasOwnProperty('response_objects')) {
-                obj['response_objects'] = ApiClient.convertToType(data['response_objects'], [SchemasResponseObjectResponse]);
+                obj['response_objects'] = ApiClient.convertToType(data['response_objects'], [ResponseObjectResponse]);
             }
             if (data.hasOwnProperty('settings')) {
                 obj['settings'] = ApiClient.convertToType(data['settings'], Settings);
             }
             if (data.hasOwnProperty('snippets')) {
-                obj['snippets'] = ApiClient.convertToType(data['snippets'], [SchemasSnippetResponse]);
+                obj['snippets'] = ApiClient.convertToType(data['snippets'], [SnippetResponse]);
             }
             if (data.hasOwnProperty('vcls')) {
                 obj['vcls'] = ApiClient.convertToType(data['vcls'], [SchemasVclResponse]);
@@ -233,7 +233,7 @@ NestedVersion.prototype['conditions'] = undefined;
 
 /**
  * List of directors associated to this service.
- * @member {Array.<module:model/Director>} directors
+ * @member {Array.<module:model/SchemasDirector>} directors
  */
 NestedVersion.prototype['directors'] = undefined;
 
@@ -263,13 +263,13 @@ NestedVersion.prototype['healthchecks'] = undefined;
 
 /**
  * List of request settings for this service.
- * @member {Array.<module:model/SchemasRequestSettingsResponse>} request_settings
+ * @member {Array.<module:model/RequestSettingsResponse>} request_settings
  */
 NestedVersion.prototype['request_settings'] = undefined;
 
 /**
  * List of response objects for this service.
- * @member {Array.<module:model/SchemasResponseObjectResponse>} response_objects
+ * @member {Array.<module:model/ResponseObjectResponse>} response_objects
  */
 NestedVersion.prototype['response_objects'] = undefined;
 
@@ -280,7 +280,7 @@ NestedVersion.prototype['settings'] = undefined;
 
 /**
  * List of VCL snippets for this service.
- * @member {Array.<module:model/SchemasSnippetResponse>} snippets
+ * @member {Array.<module:model/SnippetResponse>} snippets
  */
 NestedVersion.prototype['snippets'] = undefined;
 

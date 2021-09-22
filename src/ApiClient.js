@@ -705,8 +705,4 @@ ApiClient.CollectionFormatEnum = {
 */
 ApiClient.instance = new ApiClient();
 
-if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
-    ApiClient.instance.authenticate(process.env.FASTLY_API_TOKEN);
-}
-
 export default ApiClient;

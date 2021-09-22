@@ -36,6 +36,10 @@ var WafRulesApi = /*#__PURE__*/function () {
     _classCallCheck(this, WafRulesApi);
 
     this.apiClient = apiClient || _ApiClient["default"].instance;
+
+    if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
+      this.apiClient.authenticate(process.env.FASTLY_API_TOKEN);
+    }
   }
   /**
    * Get a specific rule. The `id` provided can be the ModSecurity Rule ID or the Fastly generated rule ID.

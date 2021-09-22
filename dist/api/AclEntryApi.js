@@ -38,6 +38,10 @@ var AclEntryApi = /*#__PURE__*/function () {
     _classCallCheck(this, AclEntryApi);
 
     this.apiClient = apiClient || _ApiClient["default"].instance;
+
+    if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
+      this.apiClient.authenticate(process.env.FASTLY_API_TOKEN);
+    }
   }
   /**
    * Update multiple ACL entries on the same ACL.
