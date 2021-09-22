@@ -12,9 +12,9 @@
  */
 
 import ApiClient from '../ApiClient';
+import SchemasWafActiveRule from './SchemasWafActiveRule';
+import SchemasWafActiveRuleData from './SchemasWafActiveRuleData';
 import SchemasWafFirewallVersion from './SchemasWafFirewallVersion';
-import WafActiveRule from './WafActiveRule';
-import WafActiveRuleData from './WafActiveRuleData';
 
 /**
  * The IncludedWithWafFirewallVersionItem model module.
@@ -50,7 +50,7 @@ class IncludedWithWafFirewallVersionItem {
             obj = obj || new IncludedWithWafFirewallVersionItem();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = WafActiveRuleData.constructFromObject(data['data']);
+                obj['data'] = SchemasWafActiveRuleData.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -60,7 +60,7 @@ class IncludedWithWafFirewallVersionItem {
 }
 
 /**
- * @member {module:model/WafActiveRuleData} data
+ * @member {module:model/SchemasWafActiveRuleData} data
  */
 IncludedWithWafFirewallVersionItem.prototype['data'] = undefined;
 

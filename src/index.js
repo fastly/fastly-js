@@ -310,6 +310,7 @@ import ResponseObject from './model/ResponseObject';
 import ResponseObjectResponse from './model/ResponseObjectResponse';
 import Results from './model/Results';
 import RoleUser from './model/RoleUser';
+import SchemasRelationshipsForWafActiveRule from './model/SchemasRelationshipsForWafActiveRule';
 import SchemasRequestSettings from './model/SchemasRequestSettings';
 import SchemasRequestSettingsResponse from './model/SchemasRequestSettingsResponse';
 import SchemasResponseObject from './model/SchemasResponseObject';
@@ -322,6 +323,9 @@ import SchemasVclResponse from './model/SchemasVclResponse';
 import SchemasVersion from './model/SchemasVersion';
 import SchemasVersionResponse from './model/SchemasVersionResponse';
 import SchemasVersionResponseAllOf from './model/SchemasVersionResponseAllOf';
+import SchemasWafActiveRule from './model/SchemasWafActiveRule';
+import SchemasWafActiveRuleData from './model/SchemasWafActiveRuleData';
+import SchemasWafActiveRuleDataAttributes from './model/SchemasWafActiveRuleDataAttributes';
 import SchemasWafFirewallVersion from './model/SchemasWafFirewallVersion';
 import SchemasWafFirewallVersionData from './model/SchemasWafFirewallVersionData';
 import SchemasWafFirewallVersionDataAttributes from './model/SchemasWafFirewallVersionDataAttributes';
@@ -453,7 +457,6 @@ import VersionResponse from './model/VersionResponse';
 import WafActiveRule from './model/WafActiveRule';
 import WafActiveRuleCreationResponse from './model/WafActiveRuleCreationResponse';
 import WafActiveRuleData from './model/WafActiveRuleData';
-import WafActiveRuleDataAttributes from './model/WafActiveRuleDataAttributes';
 import WafActiveRuleResponse from './model/WafActiveRuleResponse';
 import WafActiveRuleResponseData from './model/WafActiveRuleResponseData';
 import WafActiveRuleResponseDataAllOf from './model/WafActiveRuleResponseDataAllOf';
@@ -2405,6 +2408,12 @@ export {
     RoleUser,
 
     /**
+     * The SchemasRelationshipsForWafActiveRule model constructor.
+     * @property {module:model/SchemasRelationshipsForWafActiveRule}
+     */
+    SchemasRelationshipsForWafActiveRule,
+
+    /**
      * The SchemasRequestSettings model constructor.
      * @property {module:model/SchemasRequestSettings}
      */
@@ -2475,6 +2484,24 @@ export {
      * @property {module:model/SchemasVersionResponseAllOf}
      */
     SchemasVersionResponseAllOf,
+
+    /**
+     * The SchemasWafActiveRule model constructor.
+     * @property {module:model/SchemasWafActiveRule}
+     */
+    SchemasWafActiveRule,
+
+    /**
+     * The SchemasWafActiveRuleData model constructor.
+     * @property {module:model/SchemasWafActiveRuleData}
+     */
+    SchemasWafActiveRuleData,
+
+    /**
+     * The SchemasWafActiveRuleDataAttributes model constructor.
+     * @property {module:model/SchemasWafActiveRuleDataAttributes}
+     */
+    SchemasWafActiveRuleDataAttributes,
 
     /**
      * The SchemasWafFirewallVersion model constructor.
@@ -3261,12 +3288,6 @@ export {
      * @property {module:model/WafActiveRuleData}
      */
     WafActiveRuleData,
-
-    /**
-     * The WafActiveRuleDataAttributes model constructor.
-     * @property {module:model/WafActiveRuleDataAttributes}
-     */
-    WafActiveRuleDataAttributes,
 
     /**
      * The WafActiveRuleResponse model constructor.
