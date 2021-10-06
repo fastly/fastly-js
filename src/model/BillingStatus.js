@@ -60,7 +60,6 @@ class BillingStatus {
 }
 
 /**
- * Date and time in ISO 8601 format.
  * @member {String} sent_at
  */
 BillingStatus.prototype['sent_at'] = undefined;

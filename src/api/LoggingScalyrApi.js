@@ -15,7 +15,7 @@
 import ApiClient from "../ApiClient";
 import LoggingFormatVersion from '../model/LoggingFormatVersion';
 import LoggingPlacement from '../model/LoggingPlacement';
-import ServiceIdAndVersion from '../model/ServiceIdAndVersion';
+import LoggingScalyrResponse from '../model/LoggingScalyrResponse';
 
 /**
 * LoggingScalyr service.
@@ -50,7 +50,10 @@ export default class LoggingScalyrApi {
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+     * @param {String} [options.project_id='logplex'] - The name of the logfile within Scalyr.
+     * @param {module:model/String} [options.region='US'] - The region that log data will be sent to.
+     * @param {String} [options.token] - The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingScalyrResponse} and HTTP response
      */
     createLogScalyrWithHttpInfo(options = {}) {
       let postBody = null;
@@ -76,13 +79,16 @@ export default class LoggingScalyrApi {
         'format_version': options['format_version'],
         'name': options['name'],
         'placement': options['placement'],
-        'response_condition': options['response_condition']
+        'response_condition': options['response_condition'],
+        'project_id': options['project_id'],
+        'region': options['region'],
+        'token': options['token']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ServiceIdAndVersion;
+      let returnType = LoggingScalyrResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/scalyr', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -100,7 +106,10 @@ export default class LoggingScalyrApi {
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @param {String} [options.project_id='logplex'] - The name of the logfile within Scalyr.
+     * @param {module:model/String} [options.region='US'] - The region that log data will be sent to.
+     * @param {String} [options.token] - The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingScalyrResponse}
      */
     createLogScalyr(options = {}) {
       return this.createLogScalyrWithHttpInfo(options)
@@ -176,7 +185,7 @@ export default class LoggingScalyrApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_scalyr_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingScalyrResponse} and HTTP response
      */
     getLogScalyrWithHttpInfo(options = {}) {
       let postBody = null;
@@ -208,7 +217,7 @@ export default class LoggingScalyrApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ServiceIdAndVersion;
+      let returnType = LoggingScalyrResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/scalyr/{logging_scalyr_name}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -222,7 +231,7 @@ export default class LoggingScalyrApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_scalyr_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingScalyrResponse}
      */
     getLogScalyr(options = {}) {
       return this.getLogScalyrWithHttpInfo(options)
@@ -236,7 +245,7 @@ export default class LoggingScalyrApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ServiceIdAndVersion>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingScalyrResponse>} and HTTP response
      */
     listLogScalyrWithHttpInfo(options = {}) {
       let postBody = null;
@@ -263,7 +272,7 @@ export default class LoggingScalyrApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [ServiceIdAndVersion];
+      let returnType = [LoggingScalyrResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/scalyr', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -276,7 +285,7 @@ export default class LoggingScalyrApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ServiceIdAndVersion>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingScalyrResponse>}
      */
     listLogScalyr(options = {}) {
       return this.listLogScalyrWithHttpInfo(options)
@@ -296,7 +305,10 @@ export default class LoggingScalyrApi {
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+     * @param {String} [options.project_id='logplex'] - The name of the logfile within Scalyr.
+     * @param {module:model/String} [options.region='US'] - The region that log data will be sent to.
+     * @param {String} [options.token] - The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingScalyrResponse} and HTTP response
      */
     updateLogScalyrWithHttpInfo(options = {}) {
       let postBody = null;
@@ -327,13 +339,16 @@ export default class LoggingScalyrApi {
         'format_version': options['format_version'],
         'name': options['name'],
         'placement': options['placement'],
-        'response_condition': options['response_condition']
+        'response_condition': options['response_condition'],
+        'project_id': options['project_id'],
+        'region': options['region'],
+        'token': options['token']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ServiceIdAndVersion;
+      let returnType = LoggingScalyrResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/scalyr/{logging_scalyr_name}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -352,7 +367,10 @@ export default class LoggingScalyrApi {
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @param {String} [options.project_id='logplex'] - The name of the logfile within Scalyr.
+     * @param {module:model/String} [options.region='US'] - The region that log data will be sent to.
+     * @param {String} [options.token] - The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingScalyrResponse}
      */
     updateLogScalyr(options = {}) {
       return this.updateLogScalyrWithHttpInfo(options)

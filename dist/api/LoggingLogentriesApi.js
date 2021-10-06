@@ -9,9 +9,11 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _LoggingFormatVersion = _interopRequireDefault(require("../model/LoggingFormatVersion"));
 
+var _LoggingLogentriesResponse = _interopRequireDefault(require("../model/LoggingLogentriesResponse"));
+
 var _LoggingPlacement = _interopRequireDefault(require("../model/LoggingPlacement"));
 
-var _ServiceIdAndVersion = _interopRequireDefault(require("../model/ServiceIdAndVersion"));
+var _LoggingUseTls = _interopRequireDefault(require("../model/LoggingUseTls"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -53,7 +55,11 @@ var LoggingLogentriesApi = /*#__PURE__*/function () {
    * @param {String} [options.name] - The name for the real-time logging configuration.
    * @param {module:model/LoggingPlacement} [options.placement]
    * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+   * @param {Number} [options.port=20000] - The port number.
+   * @param {module:model/String} [options.region] - The region to which to stream logs.
+   * @param {String} [options.token] - Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
+   * @param {module:model/LoggingUseTls} [options.use_tls]
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogentriesResponse} and HTTP response
    */
 
 
@@ -83,12 +89,16 @@ var LoggingLogentriesApi = /*#__PURE__*/function () {
         'format_version': options['format_version'],
         'name': options['name'],
         'placement': options['placement'],
-        'response_condition': options['response_condition']
+        'response_condition': options['response_condition'],
+        'port': options['port'],
+        'region': options['region'],
+        'token': options['token'],
+        'use_tls': options['use_tls']
       };
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _ServiceIdAndVersion["default"];
+      var returnType = _LoggingLogentriesResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/logging/logentries', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -101,7 +111,11 @@ var LoggingLogentriesApi = /*#__PURE__*/function () {
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @param {Number} [options.port=20000] - The port number.
+     * @param {module:model/String} [options.region] - The region to which to stream logs.
+     * @param {String} [options.token] - Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
+     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogentriesResponse}
      */
 
   }, {
@@ -178,7 +192,7 @@ var LoggingLogentriesApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_logentries_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogentriesResponse} and HTTP response
      */
 
   }, {
@@ -212,7 +226,7 @@ var LoggingLogentriesApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _ServiceIdAndVersion["default"];
+      var returnType = _LoggingLogentriesResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/logging/logentries/{logging_logentries_name}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -221,7 +235,7 @@ var LoggingLogentriesApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_logentries_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogentriesResponse}
      */
 
   }, {
@@ -237,7 +251,7 @@ var LoggingLogentriesApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ServiceIdAndVersion>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingLogentriesResponse>} and HTTP response
      */
 
   }, {
@@ -265,7 +279,7 @@ var LoggingLogentriesApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [_ServiceIdAndVersion["default"]];
+      var returnType = [_LoggingLogentriesResponse["default"]];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/logging/logentries', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -273,7 +287,7 @@ var LoggingLogentriesApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ServiceIdAndVersion>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingLogentriesResponse>}
      */
 
   }, {
@@ -295,7 +309,11 @@ var LoggingLogentriesApi = /*#__PURE__*/function () {
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+     * @param {Number} [options.port=20000] - The port number.
+     * @param {module:model/String} [options.region] - The region to which to stream logs.
+     * @param {String} [options.token] - Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
+     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogentriesResponse} and HTTP response
      */
 
   }, {
@@ -330,12 +348,16 @@ var LoggingLogentriesApi = /*#__PURE__*/function () {
         'format_version': options['format_version'],
         'name': options['name'],
         'placement': options['placement'],
-        'response_condition': options['response_condition']
+        'response_condition': options['response_condition'],
+        'port': options['port'],
+        'region': options['region'],
+        'token': options['token'],
+        'use_tls': options['use_tls']
       };
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _ServiceIdAndVersion["default"];
+      var returnType = _LoggingLogentriesResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/logging/logentries/{logging_logentries_name}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -349,7 +371,11 @@ var LoggingLogentriesApi = /*#__PURE__*/function () {
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @param {Number} [options.port=20000] - The port number.
+     * @param {module:model/String} [options.region] - The region to which to stream logs.
+     * @param {String} [options.token] - Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
+     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogentriesResponse}
      */
 
   }, {

@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Pagination**](Pagination.md)
+[**WafExclusionsResponse**](WafExclusionsResponse.md)
 
 
 ## `updateWafRuleExclusion`

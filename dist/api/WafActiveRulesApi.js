@@ -7,8 +7,6 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _Pagination = _interopRequireDefault(require("../model/Pagination"));
-
 var _WafActiveRule = _interopRequireDefault(require("../model/WafActiveRule"));
 
 var _WafActiveRuleCreationResponse = _interopRequireDefault(require("../model/WafActiveRuleCreationResponse"));
@@ -16,6 +14,8 @@ var _WafActiveRuleCreationResponse = _interopRequireDefault(require("../model/Wa
 var _WafActiveRuleData = _interopRequireDefault(require("../model/WafActiveRuleData"));
 
 var _WafActiveRuleResponse = _interopRequireDefault(require("../model/WafActiveRuleResponse"));
+
+var _WafActiveRulesResponse = _interopRequireDefault(require("../model/WafActiveRulesResponse"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -408,7 +408,7 @@ var WafActiveRulesApi = /*#__PURE__*/function () {
      * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_rule_revision` and `waf_firewall_version`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Pagination} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafActiveRulesResponse} and HTTP response
      */
 
   }, {
@@ -444,7 +444,7 @@ var WafActiveRulesApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/vnd.api+json'];
-      var returnType = _Pagination["default"];
+      var returnType = _WafActiveRulesResponse["default"];
       return this.apiClient.callApi('/waf/firewalls/{firewall_id}/versions/{version_id}/active-rules', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -459,7 +459,7 @@ var WafActiveRulesApi = /*#__PURE__*/function () {
      * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_rule_revision` and `waf_firewall_version`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Pagination}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafActiveRulesResponse}
      */
 
   }, {

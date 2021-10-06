@@ -22,7 +22,7 @@ Method | Fastly API endpoint | Description
 ## `createService`
 
 ```javascript
-createService({ [comment, ][customer_id, ][name] })
+createService({ [comment, ][customer_id, ][name, ][type] })
 ```
 
 Create a service.
@@ -34,6 +34,7 @@ const options = {
   comment: "comment_example",
   customer_id: "customer_id_example",
   name: "name_example",
+  type: "type_example",
 };
 
 apiInstance.createService(options)
@@ -52,10 +53,11 @@ Name | Type | Description  | Notes
 **comment** | **String** | A freeform descriptive note. | [optional]
 **customer_id** | **String** | Alphanumeric string identifying the customer. | [optional]
 **name** | **String** | The name of the service. | [optional]
+**type** | **String** | The type of this service. | [optional]
 
 ### Return type
 
-[**Service**](Service.md)
+[**ServiceResponse**](ServiceResponse.md)
 
 
 ## `deleteService`
@@ -125,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Service**](Service.md)
+[**ServiceResponse**](ServiceResponse.md)
 
 
 ## `getServiceDetail`
@@ -160,7 +162,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Service**](Service.md)
+[**ServiceDetail**](ServiceDetail.md)
 
 
 ## `listServiceDomains`
@@ -195,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[Timestamps]**](Timestamps.md)
+[**[DomainResponse]**](DomainResponse.md)
 
 
 ## `listServices`
@@ -236,7 +238,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[Service]**](Service.md)
+[**[ServiceResponse]**](ServiceResponse.md)
 
 
 ## `searchService`
@@ -271,7 +273,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Service**](Service.md)
+[**ServiceResponse**](ServiceResponse.md)
 
 
 ## `updateService`
@@ -312,7 +314,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Service**](Service.md)
+[**ServiceResponse**](ServiceResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

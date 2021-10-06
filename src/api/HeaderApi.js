@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import Timestamps from '../model/Timestamps';
+import HeaderResponse from '../model/HeaderResponse';
 
 /**
 * Header service.
@@ -51,11 +51,11 @@ export default class HeaderApi {
      * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
      * @param {String} [options.regex] - Regular expression to use. Only applies to `regex` and `regex_repeat` actions.
      * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
-     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.response_condition]
      * @param {String} [options.src] - Variable to be used as a source for the header content. Does not apply to `delete` action.
      * @param {String} [options.substitution] - Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions.
      * @param {module:model/String} [options.type] - Accepts a string value.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HeaderResponse} and HTTP response
      */
     createHeaderObjectWithHttpInfo(options = {}) {
       let postBody = null;
@@ -94,7 +94,7 @@ export default class HeaderApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = HeaderResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/header', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -115,11 +115,11 @@ export default class HeaderApi {
      * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
      * @param {String} [options.regex] - Regular expression to use. Only applies to `regex` and `regex_repeat` actions.
      * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
-     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.response_condition]
      * @param {String} [options.src] - Variable to be used as a source for the header content. Does not apply to `delete` action.
      * @param {String} [options.substitution] - Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions.
      * @param {module:model/String} [options.type] - Accepts a string value.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HeaderResponse}
      */
     createHeaderObject(options = {}) {
       return this.createHeaderObjectWithHttpInfo(options)
@@ -195,7 +195,7 @@ export default class HeaderApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.header_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HeaderResponse} and HTTP response
      */
     getHeaderObjectWithHttpInfo(options = {}) {
       let postBody = null;
@@ -227,7 +227,7 @@ export default class HeaderApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = HeaderResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/header/{header_name}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -241,7 +241,7 @@ export default class HeaderApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.header_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HeaderResponse}
      */
     getHeaderObject(options = {}) {
       return this.getHeaderObjectWithHttpInfo(options)
@@ -255,7 +255,7 @@ export default class HeaderApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Timestamps>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/HeaderResponse>} and HTTP response
      */
     listHeaderObjectsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -282,7 +282,7 @@ export default class HeaderApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [Timestamps];
+      let returnType = [HeaderResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/header', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -295,7 +295,7 @@ export default class HeaderApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Timestamps>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/HeaderResponse>}
      */
     listHeaderObjects(options = {}) {
       return this.listHeaderObjectsWithHttpInfo(options)
@@ -318,11 +318,11 @@ export default class HeaderApi {
      * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
      * @param {String} [options.regex] - Regular expression to use. Only applies to `regex` and `regex_repeat` actions.
      * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
-     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.response_condition]
      * @param {String} [options.src] - Variable to be used as a source for the header content. Does not apply to `delete` action.
      * @param {String} [options.substitution] - Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions.
      * @param {module:model/String} [options.type] - Accepts a string value.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HeaderResponse} and HTTP response
      */
     updateHeaderObjectWithHttpInfo(options = {}) {
       let postBody = null;
@@ -366,7 +366,7 @@ export default class HeaderApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = HeaderResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/header/{header_name}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -388,11 +388,11 @@ export default class HeaderApi {
      * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
      * @param {String} [options.regex] - Regular expression to use. Only applies to `regex` and `regex_repeat` actions.
      * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
-     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.response_condition]
      * @param {String} [options.src] - Variable to be used as a source for the header content. Does not apply to `delete` action.
      * @param {String} [options.substitution] - Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions.
      * @param {module:model/String} [options.type] - Accepts a string value.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HeaderResponse}
      */
     updateHeaderObject(options = {}) {
       return this.updateHeaderObjectWithHttpInfo(options)

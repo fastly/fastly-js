@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _Pagination = _interopRequireDefault(require("../model/Pagination"));
+var _WafTagsResponse = _interopRequireDefault(require("../model/WafTagsResponse"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -46,7 +46,7 @@ var WafTagsApi = /*#__PURE__*/function () {
    * @param {Number} [options.page_number] - Current page.
    * @param {Number} [options.page_size=20] - Number of records per page.
    * @param {module:model/String} [options.include='waf_rules'] - Include relationships. Optional.
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Pagination} and HTTP response
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafTagsResponse} and HTTP response
    */
 
 
@@ -67,7 +67,7 @@ var WafTagsApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/vnd.api+json'];
-      var returnType = _Pagination["default"];
+      var returnType = _WafTagsResponse["default"];
       return this.apiClient.callApi('/waf/tags', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -77,7 +77,7 @@ var WafTagsApi = /*#__PURE__*/function () {
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {module:model/String} [options.include='waf_rules'] - Include relationships. Optional.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Pagination}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafTagsResponse}
      */
 
   }, {

@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**AclResponse**](AclResponse.md)
 
 
 ## `deleteAcl`
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**AclResponse**](AclResponse.md)
 
 
 ## `listAcls`
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[ServiceIdAndVersion]**](ServiceIdAndVersion.md)
+[**[AclResponse]**](AclResponse.md)
 
 
 ## `updateAcl`

@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import ServiceIdAndVersion from '../model/ServiceIdAndVersion';
+import DirectorBackend from '../model/DirectorBackend';
 
 /**
 * DirectorBackend service.
@@ -45,7 +45,7 @@ export default class DirectorBackendApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.backend_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DirectorBackend} and HTTP response
      */
     createDirectorBackendWithHttpInfo(options = {}) {
       let postBody = null;
@@ -82,7 +82,7 @@ export default class DirectorBackendApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ServiceIdAndVersion;
+      let returnType = DirectorBackend;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/director/{director_name}/backend/{backend_name}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -97,7 +97,7 @@ export default class DirectorBackendApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.backend_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DirectorBackend}
      */
     createDirectorBackend(options = {}) {
       return this.createDirectorBackendWithHttpInfo(options)
@@ -181,7 +181,7 @@ export default class DirectorBackendApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.backend_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DirectorBackend} and HTTP response
      */
     getDirectorBackendWithHttpInfo(options = {}) {
       let postBody = null;
@@ -218,7 +218,7 @@ export default class DirectorBackendApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ServiceIdAndVersion;
+      let returnType = DirectorBackend;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/director/{director_name}/backend/{backend_name}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -233,7 +233,7 @@ export default class DirectorBackendApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.backend_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DirectorBackend}
      */
     getDirectorBackend(options = {}) {
       return this.getDirectorBackendWithHttpInfo(options)

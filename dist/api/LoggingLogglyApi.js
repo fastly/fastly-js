@@ -9,9 +9,9 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _LoggingFormatVersion = _interopRequireDefault(require("../model/LoggingFormatVersion"));
 
-var _LoggingPlacement = _interopRequireDefault(require("../model/LoggingPlacement"));
+var _LoggingLogglyResponse = _interopRequireDefault(require("../model/LoggingLogglyResponse"));
 
-var _ServiceIdAndVersion = _interopRequireDefault(require("../model/ServiceIdAndVersion"));
+var _LoggingPlacement = _interopRequireDefault(require("../model/LoggingPlacement"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -53,7 +53,8 @@ var LoggingLogglyApi = /*#__PURE__*/function () {
    * @param {String} [options.name] - The name for the real-time logging configuration.
    * @param {module:model/LoggingPlacement} [options.placement]
    * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+   * @param {String} [options.token] - The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)).
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogglyResponse} and HTTP response
    */
 
 
@@ -83,12 +84,13 @@ var LoggingLogglyApi = /*#__PURE__*/function () {
         'format_version': options['format_version'],
         'name': options['name'],
         'placement': options['placement'],
-        'response_condition': options['response_condition']
+        'response_condition': options['response_condition'],
+        'token': options['token']
       };
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _ServiceIdAndVersion["default"];
+      var returnType = _LoggingLogglyResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/logging/loggly', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -101,7 +103,8 @@ var LoggingLogglyApi = /*#__PURE__*/function () {
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @param {String} [options.token] - The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogglyResponse}
      */
 
   }, {
@@ -178,7 +181,7 @@ var LoggingLogglyApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_loggly_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogglyResponse} and HTTP response
      */
 
   }, {
@@ -212,7 +215,7 @@ var LoggingLogglyApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _ServiceIdAndVersion["default"];
+      var returnType = _LoggingLogglyResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/logging/loggly/{logging_loggly_name}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -221,7 +224,7 @@ var LoggingLogglyApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_loggly_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogglyResponse}
      */
 
   }, {
@@ -237,7 +240,7 @@ var LoggingLogglyApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ServiceIdAndVersion>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingLogglyResponse>} and HTTP response
      */
 
   }, {
@@ -265,7 +268,7 @@ var LoggingLogglyApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [_ServiceIdAndVersion["default"]];
+      var returnType = [_LoggingLogglyResponse["default"]];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/logging/loggly', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -273,7 +276,7 @@ var LoggingLogglyApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ServiceIdAndVersion>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingLogglyResponse>}
      */
 
   }, {
@@ -295,7 +298,8 @@ var LoggingLogglyApi = /*#__PURE__*/function () {
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+     * @param {String} [options.token] - The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogglyResponse} and HTTP response
      */
 
   }, {
@@ -330,12 +334,13 @@ var LoggingLogglyApi = /*#__PURE__*/function () {
         'format_version': options['format_version'],
         'name': options['name'],
         'placement': options['placement'],
-        'response_condition': options['response_condition']
+        'response_condition': options['response_condition'],
+        'token': options['token']
       };
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _ServiceIdAndVersion["default"];
+      var returnType = _LoggingLogglyResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/logging/loggly/{logging_loggly_name}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -349,7 +354,8 @@ var LoggingLogglyApi = /*#__PURE__*/function () {
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @param {String} [options.token] - The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)).
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogglyResponse}
      */
 
   }, {

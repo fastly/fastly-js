@@ -9,12 +9,6 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _RelationshipTlsActivationTlsActivation = _interopRequireDefault(require("./RelationshipTlsActivationTlsActivation"));
 
-var _RelationshipTlsActivations = _interopRequireDefault(require("./RelationshipTlsActivations"));
-
-var _RelationshipTlsCertificateTlsCertificate = _interopRequireDefault(require("./RelationshipTlsCertificateTlsCertificate"));
-
-var _RelationshipTlsCertificates = _interopRequireDefault(require("./RelationshipTlsCertificates"));
-
 var _RelationshipTlsSubscriptionTlsSubscription = _interopRequireDefault(require("./RelationshipTlsSubscriptionTlsSubscription"));
 
 var _RelationshipTlsSubscriptions = _interopRequireDefault(require("./RelationshipTlsSubscriptions"));
@@ -66,16 +60,12 @@ var RelationshipsForTlsDomain = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new RelationshipsForTlsDomain();
 
-        if (data.hasOwnProperty('tls_activations')) {
-          obj['tls_activations'] = _RelationshipTlsActivationTlsActivation["default"].constructFromObject(data['tls_activations']);
-        }
-
-        if (data.hasOwnProperty('tls_certificates')) {
-          obj['tls_certificates'] = _RelationshipTlsCertificateTlsCertificate["default"].constructFromObject(data['tls_certificates']);
-        }
-
         if (data.hasOwnProperty('tls_subscriptions')) {
           obj['tls_subscriptions'] = _RelationshipTlsSubscriptionTlsSubscription["default"].constructFromObject(data['tls_subscriptions']);
+        }
+
+        if (data.hasOwnProperty('tls_activations')) {
+          obj['tls_activations'] = _RelationshipTlsActivationTlsActivation["default"].constructFromObject(data['tls_activations']);
         }
       }
 
@@ -86,20 +76,15 @@ var RelationshipsForTlsDomain = /*#__PURE__*/function () {
   return RelationshipsForTlsDomain;
 }();
 /**
- * @member {module:model/RelationshipTlsActivationTlsActivation} tls_activations
- */
-
-
-RelationshipsForTlsDomain.prototype['tls_activations'] = undefined;
-/**
- * @member {module:model/RelationshipTlsCertificateTlsCertificate} tls_certificates
- */
-
-RelationshipsForTlsDomain.prototype['tls_certificates'] = undefined;
-/**
  * @member {module:model/RelationshipTlsSubscriptionTlsSubscription} tls_subscriptions
  */
 
+
 RelationshipsForTlsDomain.prototype['tls_subscriptions'] = undefined;
+/**
+ * @member {module:model/RelationshipTlsActivationTlsActivation} tls_activations
+ */
+
+RelationshipsForTlsDomain.prototype['tls_activations'] = undefined;
 var _default = RelationshipsForTlsDomain;
 exports["default"] = _default;

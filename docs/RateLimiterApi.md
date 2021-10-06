@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**RateLimiterResponse**](RateLimiterResponse.md)
 
 
 ## `deleteRateLimiter`
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**RateLimiterResponse**](RateLimiterResponse.md)
 
 
 ## `listRateLimiters`
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[Timestamps]**](Timestamps.md)
+[**[RateLimiterResponse]**](RateLimiterResponse.md)
 
 
 ## `updateRateLimiter`
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**RateLimiterResponse**](RateLimiterResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

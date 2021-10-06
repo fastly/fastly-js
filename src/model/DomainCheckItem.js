@@ -12,7 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import Domain from './Domain';
 
 /**
  * The DomainCheckItem model module.

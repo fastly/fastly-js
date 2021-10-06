@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _RelationshipService = _interopRequireDefault(require("./RelationshipService"));
+var _RelationshipUser = _interopRequireDefault(require("./RelationshipUser"));
 
 var _TypeStar = _interopRequireDefault(require("./TypeStar"));
 
@@ -59,7 +59,7 @@ var StarData = /*#__PURE__*/function () {
         obj = obj || new StarData();
 
         if (data.hasOwnProperty('relationships')) {
-          obj['relationships'] = _RelationshipService["default"].constructFromObject(data['relationships']);
+          obj['relationships'] = _ApiClient["default"].convertToType(data['relationships'], _RelationshipUser["default"]);
         }
 
         if (data.hasOwnProperty('type')) {
@@ -74,7 +74,7 @@ var StarData = /*#__PURE__*/function () {
   return StarData;
 }();
 /**
- * @member {module:model/RelationshipService} relationships
+ * @member {module:model/RelationshipUser} relationships
  */
 
 

@@ -58,7 +58,7 @@ var RealtimeEntry = /*#__PURE__*/function () {
         obj = obj || new RealtimeEntry();
 
         if (data.hasOwnProperty('aggregated')) {
-          obj['aggregated'] = _RealtimeMeasurements["default"].constructFromObject(data['aggregated']);
+          obj['aggregated'] = _ApiClient["default"].convertToType(data['aggregated'], _RealtimeMeasurements["default"]);
         }
 
         if (data.hasOwnProperty('datacenter')) {
@@ -91,7 +91,6 @@ RealtimeEntry.prototype['aggregated'] = undefined;
 
 RealtimeEntry.prototype['datacenter'] = undefined;
 /**
- * Unix epoch timestamp.
  * @member {Number} recorded
  */
 

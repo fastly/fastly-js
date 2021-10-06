@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**WafActiveRuleDataAttributes**](WafActiveRuleDataAttributes.md) |  | [optional] 
+**attributes** | [**SchemasWafActiveRuleDataAttributes**](SchemasWafActiveRuleDataAttributes.md) |  | [optional] 
 **relationships** | [**RelationshipsForWafActiveRule**](RelationshipsForWafActiveRule.md) |  | [optional] 
 **type** | [**TypeWafActiveRule**](TypeWafActiveRule.md) |  | [optional] 
 

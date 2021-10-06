@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**TlsBulkCertificateData**](TlsBulkCertificateData.md) |  | [optional] 
+**data** | [**TlsBulkCertificateResponseData**](TlsBulkCertificateResponseData.md) |  | [optional] 
 
 
 

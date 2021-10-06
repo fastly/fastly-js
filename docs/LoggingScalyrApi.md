@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogScalyr`
 
 ```javascript
-createLogScalyr({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition] })
+createLogScalyr({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [project_id, ], [region, ], [token] })
 ```
 
 Create a Scalyr for a particular service and version.
@@ -35,6 +35,9 @@ const options = {
   name: "name_example",
   placement: new Fastly.LoggingPlacement(),
   response_condition: "response_condition_example",
+  project_id: "'logplex'",
+  region: "'US'",
+  token: "token_example",
 };
 
 apiInstance.createLogScalyr(options)
@@ -57,10 +60,13 @@ Name | Type | Description  | Notes
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
+**project_id** | **String** | The name of the logfile within Scalyr. | [optional] [default to &#39;logplex&#39;]
+**region** | **String** | The region that log data will be sent to. | [optional] [default to &#39;US&#39;]
+**token** | **String** | The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)). | [optional]
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**LoggingScalyrResponse**](LoggingScalyrResponse.md)
 
 
 ## `deleteLogScalyr`
@@ -138,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**LoggingScalyrResponse**](LoggingScalyrResponse.md)
 
 
 ## `listLogScalyr`
@@ -175,13 +181,13 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[ServiceIdAndVersion]**](ServiceIdAndVersion.md)
+[**[LoggingScalyrResponse]**](LoggingScalyrResponse.md)
 
 
 ## `updateLogScalyr`
 
 ```javascript
-updateLogScalyr({ service_id, version_id, logging_scalyr_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition] })
+updateLogScalyr({ service_id, version_id, logging_scalyr_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [project_id, ], [region, ], [token] })
 ```
 
 Update the Scalyr for a particular service and version.
@@ -198,6 +204,9 @@ const options = {
   name: "name_example",
   placement: new Fastly.LoggingPlacement(),
   response_condition: "response_condition_example",
+  project_id: "'logplex'",
+  region: "'US'",
+  token: "token_example",
 };
 
 apiInstance.updateLogScalyr(options)
@@ -221,10 +230,13 @@ Name | Type | Description  | Notes
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
+**project_id** | **String** | The name of the logfile within Scalyr. | [optional] [default to &#39;logplex&#39;]
+**region** | **String** | The region that log data will be sent to. | [optional] [default to &#39;US&#39;]
+**token** | **String** | The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)). | [optional]
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**LoggingScalyrResponse**](LoggingScalyrResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

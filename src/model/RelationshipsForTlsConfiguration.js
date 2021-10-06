@@ -12,10 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import RelationshipService from './RelationshipService';
 import RelationshipServiceService from './RelationshipServiceService';
-import RelationshipTlsDnsRecordDnsRecord from './RelationshipTlsDnsRecordDnsRecord';
-import RelationshipTlsDnsRecords from './RelationshipTlsDnsRecords';
 
 /**
  * The RelationshipsForTlsConfiguration model module.
@@ -53,9 +50,6 @@ class RelationshipsForTlsConfiguration {
             if (data.hasOwnProperty('service')) {
                 obj['service'] = RelationshipServiceService.constructFromObject(data['service']);
             }
-            if (data.hasOwnProperty('dns_records')) {
-                obj['dns_records'] = RelationshipTlsDnsRecordDnsRecord.constructFromObject(data['dns_records']);
-            }
         }
         return obj;
     }
@@ -67,11 +61,6 @@ class RelationshipsForTlsConfiguration {
  * @member {module:model/RelationshipServiceService} service
  */
 RelationshipsForTlsConfiguration.prototype['service'] = undefined;
-
-/**
- * @member {module:model/RelationshipTlsDnsRecordDnsRecord} dns_records
- */
-RelationshipsForTlsConfiguration.prototype['dns_records'] = undefined;
 
 
 

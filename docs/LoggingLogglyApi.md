@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogLoggly`
 
 ```javascript
-createLogLoggly({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition] })
+createLogLoggly({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [token] })
 ```
 
 Create a Loggly logging object for a particular service and version.
@@ -35,6 +35,7 @@ const options = {
   name: "name_example",
   placement: new Fastly.LoggingPlacement(),
   response_condition: "response_condition_example",
+  token: "token_example",
 };
 
 apiInstance.createLogLoggly(options)
@@ -57,10 +58,11 @@ Name | Type | Description  | Notes
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
+**token** | **String** | The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)). | [optional]
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**LoggingLogglyResponse**](LoggingLogglyResponse.md)
 
 
 ## `deleteLogLoggly`
@@ -138,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**LoggingLogglyResponse**](LoggingLogglyResponse.md)
 
 
 ## `listLogLoggly`
@@ -175,13 +177,13 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[ServiceIdAndVersion]**](ServiceIdAndVersion.md)
+[**[LoggingLogglyResponse]**](LoggingLogglyResponse.md)
 
 
 ## `updateLogLoggly`
 
 ```javascript
-updateLogLoggly({ service_id, version_id, logging_loggly_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition] })
+updateLogLoggly({ service_id, version_id, logging_loggly_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [token] })
 ```
 
 Update the Loggly logging object for a particular service and version.
@@ -198,6 +200,7 @@ const options = {
   name: "name_example",
   placement: new Fastly.LoggingPlacement(),
   response_condition: "response_condition_example",
+  token: "token_example",
 };
 
 apiInstance.updateLogLoggly(options)
@@ -221,10 +224,11 @@ Name | Type | Description  | Notes
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
+**token** | **String** | The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)). | [optional]
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**LoggingLogglyResponse**](LoggingLogglyResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

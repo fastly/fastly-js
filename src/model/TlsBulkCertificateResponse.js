@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import TlsBulkCertificateData from './TlsBulkCertificateData';
+import TlsBulkCertificateResponseData from './TlsBulkCertificateResponseData';
 
 /**
  * The TlsBulkCertificateResponse model module.
@@ -48,7 +48,7 @@ class TlsBulkCertificateResponse {
             obj = obj || new TlsBulkCertificateResponse();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = TlsBulkCertificateData.constructFromObject(data['data']);
+                obj['data'] = TlsBulkCertificateResponseData.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class TlsBulkCertificateResponse {
 }
 
 /**
- * @member {module:model/TlsBulkCertificateData} data
+ * @member {module:model/TlsBulkCertificateResponseData} data
  */
 TlsBulkCertificateResponse.prototype['data'] = undefined;
 

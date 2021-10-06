@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _Timestamps = _interopRequireDefault(require("../model/Timestamps"));
+var _SnippetResponse = _interopRequireDefault(require("../model/SnippetResponse"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -49,7 +49,7 @@ var SnippetApi = /*#__PURE__*/function () {
    * @param {String} [options.name] - The name for the snippet.
    * @param {String} [options.priority='100'] - Numeric string value. Priority determines execution order. Lower numbers execute first.
    * @param {module:model/String} [options.type] - The location in generated VCL where the snippet should be placed.
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SnippetResponse} and HTTP response
    */
 
 
@@ -84,7 +84,7 @@ var SnippetApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _Timestamps["default"];
+      var returnType = _SnippetResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/snippet', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -97,7 +97,7 @@ var SnippetApi = /*#__PURE__*/function () {
      * @param {String} [options.name] - The name for the snippet.
      * @param {String} [options.priority='100'] - Numeric string value. Priority determines execution order. Lower numbers execute first.
      * @param {module:model/String} [options.type] - The location in generated VCL where the snippet should be placed.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SnippetResponse}
      */
 
   }, {
@@ -174,7 +174,7 @@ var SnippetApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.snippet_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SnippetResponse} and HTTP response
      */
 
   }, {
@@ -208,7 +208,7 @@ var SnippetApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _Timestamps["default"];
+      var returnType = _SnippetResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/snippet/{snippet_name}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -217,7 +217,7 @@ var SnippetApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.snippet_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SnippetResponse}
      */
 
   }, {
@@ -233,7 +233,7 @@ var SnippetApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {String} options.snippet_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SnippetResponse} and HTTP response
      */
 
   }, {
@@ -261,7 +261,7 @@ var SnippetApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _Timestamps["default"];
+      var returnType = _SnippetResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/snippet/{snippet_id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -269,7 +269,7 @@ var SnippetApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {String} options.snippet_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SnippetResponse}
      */
 
   }, {
@@ -285,7 +285,7 @@ var SnippetApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Timestamps>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/SnippetResponse>} and HTTP response
      */
 
   }, {
@@ -313,7 +313,7 @@ var SnippetApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [_Timestamps["default"]];
+      var returnType = [_SnippetResponse["default"]];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/snippet', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -321,7 +321,7 @@ var SnippetApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Timestamps>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/SnippetResponse>}
      */
 
   }, {
@@ -338,7 +338,7 @@ var SnippetApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.snippet_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SnippetResponse} and HTTP response
      */
 
   }, {
@@ -372,7 +372,7 @@ var SnippetApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _Timestamps["default"];
+      var returnType = _SnippetResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/snippet/{snippet_name}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -381,7 +381,7 @@ var SnippetApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.snippet_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SnippetResponse}
      */
 
   }, {
@@ -402,7 +402,7 @@ var SnippetApi = /*#__PURE__*/function () {
      * @param {String} [options.name] - The name for the snippet.
      * @param {String} [options.priority='100'] - Numeric string value. Priority determines execution order. Lower numbers execute first.
      * @param {module:model/String} [options.type] - The location in generated VCL where the snippet should be placed.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SnippetResponse} and HTTP response
      */
 
   }, {
@@ -436,7 +436,7 @@ var SnippetApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _Timestamps["default"];
+      var returnType = _SnippetResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/snippet/{snippet_id}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -449,7 +449,7 @@ var SnippetApi = /*#__PURE__*/function () {
      * @param {String} [options.name] - The name for the snippet.
      * @param {String} [options.priority='100'] - Numeric string value. Priority determines execution order. Lower numbers execute first.
      * @param {module:model/String} [options.type] - The location in generated VCL where the snippet should be placed.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SnippetResponse}
      */
 
   }, {

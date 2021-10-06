@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _TlsSubscriptionData = _interopRequireDefault(require("./TlsSubscriptionData"));
+var _TlsSubscriptionResponseData = _interopRequireDefault(require("./TlsSubscriptionResponseData"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -57,7 +57,7 @@ var TlsSubscriptionResponse = /*#__PURE__*/function () {
         obj = obj || new TlsSubscriptionResponse();
 
         if (data.hasOwnProperty('data')) {
-          obj['data'] = _TlsSubscriptionData["default"].constructFromObject(data['data']);
+          obj['data'] = _TlsSubscriptionResponseData["default"].constructFromObject(data['data']);
         }
       }
 
@@ -68,7 +68,7 @@ var TlsSubscriptionResponse = /*#__PURE__*/function () {
   return TlsSubscriptionResponse;
 }();
 /**
- * @member {module:model/TlsSubscriptionData} data
+ * @member {module:model/TlsSubscriptionResponseData} data
  */
 
 

@@ -9,7 +9,9 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _Invitation = _interopRequireDefault(require("../model/Invitation"));
 
-var _Pagination = _interopRequireDefault(require("../model/Pagination"));
+var _InvitationResponse = _interopRequireDefault(require("../model/InvitationResponse"));
+
+var _InvitationsResponse = _interopRequireDefault(require("../model/InvitationsResponse"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -45,7 +47,7 @@ var InvitationsApi = /*#__PURE__*/function () {
    * Create an invitation.
    * @param {Object} options
    * @param {module:model/Invitation} [options.invitation]
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Invitation} and HTTP response
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InvitationResponse} and HTTP response
    */
 
 
@@ -61,14 +63,14 @@ var InvitationsApi = /*#__PURE__*/function () {
       var authNames = [];
       var contentTypes = ['application/vnd.api+json'];
       var accepts = ['application/vnd.api+json'];
-      var returnType = _Invitation["default"];
+      var returnType = _InvitationResponse["default"];
       return this.apiClient.callApi('/invitations', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
      * Create an invitation.
      * @param {Object} options
      * @param {module:model/Invitation} [options.invitation]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Invitation}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InvitationResponse}
      */
 
   }, {
@@ -128,7 +130,7 @@ var InvitationsApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Pagination} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InvitationsResponse} and HTTP response
      */
 
   }, {
@@ -146,7 +148,7 @@ var InvitationsApi = /*#__PURE__*/function () {
       var authNames = [];
       var contentTypes = [];
       var accepts = ['application/vnd.api+json'];
-      var returnType = _Pagination["default"];
+      var returnType = _InvitationsResponse["default"];
       return this.apiClient.callApi('/invitations', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -154,7 +156,7 @@ var InvitationsApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Pagination}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InvitationsResponse}
      */
 
   }, {

@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogLogshuttle`
 
 ```javascript
-createLogLogshuttle({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition] })
+createLogLogshuttle({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [token, ], [url] })
 ```
 
 Create a Log Shuttle logging endpoint for a particular service and version.
@@ -35,6 +35,8 @@ const options = {
   name: "name_example",
   placement: new Fastly.LoggingPlacement(),
   response_condition: "response_condition_example",
+  token: "token_example",
+  url: "url_example",
 };
 
 apiInstance.createLogLogshuttle(options)
@@ -57,10 +59,12 @@ Name | Type | Description  | Notes
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
+**token** | **String** | The data authentication token associated with this endpoint. | [optional]
+**url** | **String** | The URL to stream logs to. | [optional]
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**LoggingLogshuttleResponse**](LoggingLogshuttleResponse.md)
 
 
 ## `deleteLogLogshuttle`
@@ -138,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**LoggingLogshuttleResponse**](LoggingLogshuttleResponse.md)
 
 
 ## `listLogLogshuttle`
@@ -175,13 +179,13 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[ServiceIdAndVersion]**](ServiceIdAndVersion.md)
+[**[LoggingLogshuttleResponse]**](LoggingLogshuttleResponse.md)
 
 
 ## `updateLogLogshuttle`
 
 ```javascript
-updateLogLogshuttle({ service_id, version_id, logging_logshuttle_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition] })
+updateLogLogshuttle({ service_id, version_id, logging_logshuttle_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [token, ], [url] })
 ```
 
 Update the Log Shuttle logging endpoint for a particular service and version.
@@ -198,6 +202,8 @@ const options = {
   name: "name_example",
   placement: new Fastly.LoggingPlacement(),
   response_condition: "response_condition_example",
+  token: "token_example",
+  url: "url_example",
 };
 
 apiInstance.updateLogLogshuttle(options)
@@ -221,10 +227,12 @@ Name | Type | Description  | Notes
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
+**token** | **String** | The data authentication token associated with this endpoint. | [optional]
+**url** | **String** | The URL to stream logs to. | [optional]
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**LoggingLogshuttleResponse**](LoggingLogshuttleResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

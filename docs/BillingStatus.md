@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sent_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**sent_at** | **String** |  | [optional] 
 **status** | **String** | What the current status of this invoice can be. | [optional] 
 
 

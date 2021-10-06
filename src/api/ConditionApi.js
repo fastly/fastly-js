@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import Timestamps from '../model/Timestamps';
+import ConditionResponse from '../model/ConditionResponse';
 
 /**
 * Condition service.
@@ -48,7 +48,7 @@ export default class ConditionApi {
      * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
      * @param {String} [options.statement] - A conditional expression in VCL used to determine if the condition is met.
      * @param {module:model/String} [options.type] - Type of the condition. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ConditionResponse} and HTTP response
      */
     createConditionWithHttpInfo(options = {}) {
       let postBody = null;
@@ -80,7 +80,7 @@ export default class ConditionApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = ConditionResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/condition', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -98,7 +98,7 @@ export default class ConditionApi {
      * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
      * @param {String} [options.statement] - A conditional expression in VCL used to determine if the condition is met.
      * @param {module:model/String} [options.type] - Type of the condition. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ConditionResponse}
      */
     createCondition(options = {}) {
       return this.createConditionWithHttpInfo(options)
@@ -174,7 +174,7 @@ export default class ConditionApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.condition_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ConditionResponse} and HTTP response
      */
     getConditionWithHttpInfo(options = {}) {
       let postBody = null;
@@ -206,7 +206,7 @@ export default class ConditionApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = ConditionResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/condition/{condition_name}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -220,7 +220,7 @@ export default class ConditionApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.condition_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ConditionResponse}
      */
     getCondition(options = {}) {
       return this.getConditionWithHttpInfo(options)
@@ -234,7 +234,7 @@ export default class ConditionApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Timestamps>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ConditionResponse>} and HTTP response
      */
     listConditionsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -261,7 +261,7 @@ export default class ConditionApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [Timestamps];
+      let returnType = [ConditionResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/condition', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -274,7 +274,7 @@ export default class ConditionApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Timestamps>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ConditionResponse>}
      */
     listConditions(options = {}) {
       return this.listConditionsWithHttpInfo(options)
@@ -294,7 +294,7 @@ export default class ConditionApi {
      * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
      * @param {String} [options.statement] - A conditional expression in VCL used to determine if the condition is met.
      * @param {module:model/String} [options.type] - Type of the condition. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ConditionResponse} and HTTP response
      */
     updateConditionWithHttpInfo(options = {}) {
       let postBody = null;
@@ -331,7 +331,7 @@ export default class ConditionApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = ConditionResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/condition/{condition_name}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -350,7 +350,7 @@ export default class ConditionApi {
      * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
      * @param {String} [options.statement] - A conditional expression in VCL used to determine if the condition is met.
      * @param {module:model/String} [options.type] - Type of the condition. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ConditionResponse}
      */
     updateCondition(options = {}) {
       return this.updateConditionWithHttpInfo(options)

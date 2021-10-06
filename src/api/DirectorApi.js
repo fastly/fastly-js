@@ -13,8 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
+import DirectorResponse from '../model/DirectorResponse';
 import SchemasBackend from '../model/SchemasBackend';
-import Timestamps from '../model/Timestamps';
 
 /**
 * Director service.
@@ -52,7 +52,7 @@ export default class DirectorApi {
      * @param {Number} [options.retries=5] - How many backends to search if it fails.
      * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
      * @param {module:model/Number} [options.type=1] - What type of load balance group to use.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DirectorResponse} and HTTP response
      */
     createDirectorWithHttpInfo(options = {}) {
       let postBody = null;
@@ -87,7 +87,7 @@ export default class DirectorApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = DirectorResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/director', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -108,7 +108,7 @@ export default class DirectorApi {
      * @param {Number} [options.retries=5] - How many backends to search if it fails.
      * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
      * @param {module:model/Number} [options.type=1] - What type of load balance group to use.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DirectorResponse}
      */
     createDirector(options = {}) {
       return this.createDirectorWithHttpInfo(options)
@@ -184,7 +184,7 @@ export default class DirectorApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.director_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DirectorResponse} and HTTP response
      */
     getDirectorWithHttpInfo(options = {}) {
       let postBody = null;
@@ -216,7 +216,7 @@ export default class DirectorApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = DirectorResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/director/{director_name}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -230,7 +230,7 @@ export default class DirectorApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.director_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DirectorResponse}
      */
     getDirector(options = {}) {
       return this.getDirectorWithHttpInfo(options)
@@ -244,7 +244,7 @@ export default class DirectorApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Timestamps>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DirectorResponse>} and HTTP response
      */
     listDirectorsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -271,7 +271,7 @@ export default class DirectorApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [Timestamps];
+      let returnType = [DirectorResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/director', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -284,7 +284,7 @@ export default class DirectorApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Timestamps>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DirectorResponse>}
      */
     listDirectors(options = {}) {
       return this.listDirectorsWithHttpInfo(options)
@@ -299,7 +299,7 @@ export default class DirectorApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.director_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DirectorResponse} and HTTP response
      */
     updateDirectorWithHttpInfo(options = {}) {
       let postBody = null;
@@ -331,7 +331,7 @@ export default class DirectorApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = DirectorResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/director/{director_name}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -345,7 +345,7 @@ export default class DirectorApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.director_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DirectorResponse}
      */
     updateDirector(options = {}) {
       return this.updateDirectorWithHttpInfo(options)

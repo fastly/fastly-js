@@ -13,8 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
+import RateLimiterResponse from '../model/RateLimiterResponse';
 import RateLimiterResponse1 from '../model/RateLimiterResponse1';
-import Timestamps from '../model/Timestamps';
 
 /**
 * RateLimiter service.
@@ -56,7 +56,7 @@ export default class RateLimiterApi {
      * @param {Number} [options.rps_limit] - Upper limit of requests per second allowed by the rate limiter.
      * @param {String} [options.uri_dictionary_name] - The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
      * @param {module:model/Number} [options.window_size] - Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RateLimiterResponse} and HTTP response
      */
     createRateLimiterWithHttpInfo(options = {}) {
       let postBody = null;
@@ -95,7 +95,7 @@ export default class RateLimiterApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = RateLimiterResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/rate-limiters', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -120,7 +120,7 @@ export default class RateLimiterApi {
      * @param {Number} [options.rps_limit] - Upper limit of requests per second allowed by the rate limiter.
      * @param {String} [options.uri_dictionary_name] - The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
      * @param {module:model/Number} [options.window_size] - Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RateLimiterResponse}
      */
     createRateLimiter(options = {}) {
       return this.createRateLimiterWithHttpInfo(options)
@@ -180,7 +180,7 @@ export default class RateLimiterApi {
      * Get a rate limiter by its ID.
      * @param {Object} options
      * @param {String} options.rate_limiter_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RateLimiterResponse} and HTTP response
      */
     getRateLimiterWithHttpInfo(options = {}) {
       let postBody = null;
@@ -202,7 +202,7 @@ export default class RateLimiterApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = RateLimiterResponse;
       return this.apiClient.callApi(
         '/rate-limiters/{rate_limiter_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -214,7 +214,7 @@ export default class RateLimiterApi {
      * Get a rate limiter by its ID.
      * @param {Object} options
      * @param {String} options.rate_limiter_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RateLimiterResponse}
      */
     getRateLimiter(options = {}) {
       return this.getRateLimiterWithHttpInfo(options)
@@ -228,7 +228,7 @@ export default class RateLimiterApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Timestamps>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/RateLimiterResponse>} and HTTP response
      */
     listRateLimitersWithHttpInfo(options = {}) {
       let postBody = null;
@@ -255,7 +255,7 @@ export default class RateLimiterApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [Timestamps];
+      let returnType = [RateLimiterResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/rate-limiters', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -268,7 +268,7 @@ export default class RateLimiterApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Timestamps>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/RateLimiterResponse>}
      */
     listRateLimiters(options = {}) {
       return this.listRateLimitersWithHttpInfo(options)
@@ -293,7 +293,7 @@ export default class RateLimiterApi {
      * @param {Number} [options.rps_limit] - Upper limit of requests per second allowed by the rate limiter.
      * @param {String} [options.uri_dictionary_name] - The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
      * @param {module:model/Number} [options.window_size] - Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RateLimiterResponse} and HTTP response
      */
     updateRateLimiterWithHttpInfo(options = {}) {
       let postBody = null;
@@ -327,7 +327,7 @@ export default class RateLimiterApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = RateLimiterResponse;
       return this.apiClient.callApi(
         '/rate-limiters/{rate_limiter_id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -351,7 +351,7 @@ export default class RateLimiterApi {
      * @param {Number} [options.rps_limit] - Upper limit of requests per second allowed by the rate limiter.
      * @param {String} [options.uri_dictionary_name] - The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
      * @param {module:model/Number} [options.window_size] - Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RateLimiterResponse}
      */
     updateRateLimiter(options = {}) {
       return this.updateRateLimiterWithHttpInfo(options)

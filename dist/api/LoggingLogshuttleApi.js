@@ -9,9 +9,9 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _LoggingFormatVersion = _interopRequireDefault(require("../model/LoggingFormatVersion"));
 
-var _LoggingPlacement = _interopRequireDefault(require("../model/LoggingPlacement"));
+var _LoggingLogshuttleResponse = _interopRequireDefault(require("../model/LoggingLogshuttleResponse"));
 
-var _ServiceIdAndVersion = _interopRequireDefault(require("../model/ServiceIdAndVersion"));
+var _LoggingPlacement = _interopRequireDefault(require("../model/LoggingPlacement"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -53,7 +53,9 @@ var LoggingLogshuttleApi = /*#__PURE__*/function () {
    * @param {String} [options.name] - The name for the real-time logging configuration.
    * @param {module:model/LoggingPlacement} [options.placement]
    * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+   * @param {String} [options.token] - The data authentication token associated with this endpoint.
+   * @param {String} [options.url] - The URL to stream logs to.
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogshuttleResponse} and HTTP response
    */
 
 
@@ -83,12 +85,14 @@ var LoggingLogshuttleApi = /*#__PURE__*/function () {
         'format_version': options['format_version'],
         'name': options['name'],
         'placement': options['placement'],
-        'response_condition': options['response_condition']
+        'response_condition': options['response_condition'],
+        'token': options['token'],
+        'url': options['url']
       };
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _ServiceIdAndVersion["default"];
+      var returnType = _LoggingLogshuttleResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/logging/logshuttle', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -101,7 +105,9 @@ var LoggingLogshuttleApi = /*#__PURE__*/function () {
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @param {String} [options.token] - The data authentication token associated with this endpoint.
+     * @param {String} [options.url] - The URL to stream logs to.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogshuttleResponse}
      */
 
   }, {
@@ -178,7 +184,7 @@ var LoggingLogshuttleApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_logshuttle_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogshuttleResponse} and HTTP response
      */
 
   }, {
@@ -212,7 +218,7 @@ var LoggingLogshuttleApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _ServiceIdAndVersion["default"];
+      var returnType = _LoggingLogshuttleResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/logging/logshuttle/{logging_logshuttle_name}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -221,7 +227,7 @@ var LoggingLogshuttleApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_logshuttle_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogshuttleResponse}
      */
 
   }, {
@@ -237,7 +243,7 @@ var LoggingLogshuttleApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ServiceIdAndVersion>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingLogshuttleResponse>} and HTTP response
      */
 
   }, {
@@ -265,7 +271,7 @@ var LoggingLogshuttleApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [_ServiceIdAndVersion["default"]];
+      var returnType = [_LoggingLogshuttleResponse["default"]];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/logging/logshuttle', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -273,7 +279,7 @@ var LoggingLogshuttleApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ServiceIdAndVersion>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingLogshuttleResponse>}
      */
 
   }, {
@@ -295,7 +301,9 @@ var LoggingLogshuttleApi = /*#__PURE__*/function () {
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+     * @param {String} [options.token] - The data authentication token associated with this endpoint.
+     * @param {String} [options.url] - The URL to stream logs to.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogshuttleResponse} and HTTP response
      */
 
   }, {
@@ -330,12 +338,14 @@ var LoggingLogshuttleApi = /*#__PURE__*/function () {
         'format_version': options['format_version'],
         'name': options['name'],
         'placement': options['placement'],
-        'response_condition': options['response_condition']
+        'response_condition': options['response_condition'],
+        'token': options['token'],
+        'url': options['url']
       };
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _ServiceIdAndVersion["default"];
+      var returnType = _LoggingLogshuttleResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/logging/logshuttle/{logging_logshuttle_name}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -349,7 +359,9 @@ var LoggingLogshuttleApi = /*#__PURE__*/function () {
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @param {String} [options.token] - The data authentication token associated with this endpoint.
+     * @param {String} [options.url] - The URL to stream logs to.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogshuttleResponse}
      */
 
   }, {

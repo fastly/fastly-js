@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createServerPool`
 
 ```javascript
-createServerPool({ service_id, version_id, [tls_ca_cert, ], [tls_cert_hostname, ], [tls_client_cert, ], [tls_client_key, ], [use_tls] })
+createServerPool({ service_id, version_id, [tls_ca_cert, ], [tls_cert_hostname, ], [tls_client_cert, ], [tls_client_key, ], [use_tls, ], [comment, ], [connect_timeout, ], [first_byte_timeout, ], [healthcheck, ], [max_conn_default, ], [max_tls_version, ], [min_tls_version, ], [name, ], [override_host, ], [quorum, ], [request_condition, ], [shield, ], [tls_check_cert, ], [tls_ciphers, ], [tls_sni_hostname, ], [type] })
 ```
 
 Creates a pool for a particular service and version.
@@ -35,6 +35,22 @@ const options = {
   tls_client_cert: "'null'",
   tls_client_key: "'null'",
   use_tls: 0,
+  comment: "comment_example",
+  connect_timeout: 56,
+  first_byte_timeout: 56,
+  healthcheck: "healthcheck_example",
+  max_conn_default: 56,
+  max_tls_version: 56,
+  min_tls_version: 56,
+  name: "name_example",
+  override_host: "'null'",
+  quorum: 75,
+  request_condition: "request_condition_example",
+  shield: "'null'",
+  tls_check_cert: 56,
+  tls_ciphers: "tls_ciphers_example",
+  tls_sni_hostname: "tls_sni_hostname_example",
+  type: "type_example",
 };
 
 apiInstance.createServerPool(options)
@@ -57,10 +73,26 @@ Name | Type | Description  | Notes
 **tls_client_cert** | **String** | The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [default to &#39;null&#39;]
 **tls_client_key** | **String** | The client private key used to make authenticated requests. Must be in PEM format. | [optional] [default to &#39;null&#39;]
 **use_tls** | **Number** | Whether to use TLS. | [optional] [default to 0]
+**comment** | **String** | A freeform descriptive note. | [optional]
+**connect_timeout** | **Number** | How long to wait for a timeout in milliseconds. Optional. | [optional]
+**first_byte_timeout** | **Number** | How long to wait for the first byte in milliseconds. Optional. | [optional]
+**healthcheck** | **String** | Name of the healthcheck to use with this pool. Can be empty and could be reused across multiple backend and pools. | [optional]
+**max_conn_default** | **Number** | Maximum number of connections. | [optional]
+**max_tls_version** | **Number** | Maximum allowed TLS version on connections to this server. Optional. | [optional]
+**min_tls_version** | **Number** | Minimum allowed TLS version on connections to this server. Optional. | [optional]
+**name** | **String** | Name for the Pool. | [optional]
+**override_host** | **String** | The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to &#x60;null&#x60; meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting. | [optional] [default to &#39;null&#39;]
+**quorum** | **Number** | Percentage of capacity (&#x60;0-100&#x60;) that needs to be operationally available for a pool to be considered up. | [optional] [default to 75]
+**request_condition** | **String** | Condition which, if met, will select this configuration during a request. Optional. | [optional]
+**shield** | **String** | Selected POP to serve as a shield for the servers. Defaults to &#x60;null&#x60; meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding. | [optional] [default to &#39;null&#39;]
+**tls_check_cert** | **Number** | Be strict on checking TLS certs. Optional. | [optional]
+**tls_ciphers** | **String** | List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.0.2/man1/ciphers) for details). Optional. | [optional]
+**tls_sni_hostname** | **String** | SNI hostname. Optional. | [optional]
+**type** | **String** | What type of load balance group to use. | [optional]
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**PoolResponse**](PoolResponse.md)
 
 
 ## `deleteServerPool`
@@ -138,7 +170,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**PoolResponse**](PoolResponse.md)
 
 
 ## `listServerPools`
@@ -175,13 +207,13 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[ServiceIdAndVersion]**](ServiceIdAndVersion.md)
+[**[PoolResponse]**](PoolResponse.md)
 
 
 ## `updateServerPool`
 
 ```javascript
-updateServerPool({ service_id, version_id, pool_name, [tls_ca_cert, ], [tls_cert_hostname, ], [tls_client_cert, ], [tls_client_key, ], [use_tls] })
+updateServerPool({ service_id, version_id, pool_name, [tls_ca_cert, ], [tls_cert_hostname, ], [tls_client_cert, ], [tls_client_key, ], [use_tls, ], [comment, ], [connect_timeout, ], [first_byte_timeout, ], [healthcheck, ], [max_conn_default, ], [max_tls_version, ], [min_tls_version, ], [name, ], [override_host, ], [quorum, ], [request_condition, ], [shield, ], [tls_check_cert, ], [tls_ciphers, ], [tls_sni_hostname, ], [type] })
 ```
 
 Updates a specific pool for a particular service and version.
@@ -198,6 +230,22 @@ const options = {
   tls_client_cert: "'null'",
   tls_client_key: "'null'",
   use_tls: UseTlsEnum.no_tls,
+  comment: "comment_example",
+  connect_timeout: 56,
+  first_byte_timeout: 56,
+  healthcheck: "healthcheck_example",
+  max_conn_default: 56,
+  max_tls_version: 56,
+  min_tls_version: 56,
+  name: "name_example",
+  override_host: "'null'",
+  quorum: 75,
+  request_condition: "request_condition_example",
+  shield: "'null'",
+  tls_check_cert: 56,
+  tls_ciphers: "tls_ciphers_example",
+  tls_sni_hostname: "tls_sni_hostname_example",
+  type: "type_example",
 };
 
 apiInstance.updateServerPool(options)
@@ -221,10 +269,26 @@ Name | Type | Description  | Notes
 **tls_client_cert** | **String** | The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [default to &#39;null&#39;]
 **tls_client_key** | **String** | The client private key used to make authenticated requests. Must be in PEM format. | [optional] [default to &#39;null&#39;]
 **use_tls** | **Number** | Whether to use TLS. | [optional] [default to UseTlsEnum.no_tls]
+**comment** | **String** | A freeform descriptive note. | [optional]
+**connect_timeout** | **Number** | How long to wait for a timeout in milliseconds. Optional. | [optional]
+**first_byte_timeout** | **Number** | How long to wait for the first byte in milliseconds. Optional. | [optional]
+**healthcheck** | **String** | Name of the healthcheck to use with this pool. Can be empty and could be reused across multiple backend and pools. | [optional]
+**max_conn_default** | **Number** | Maximum number of connections. | [optional]
+**max_tls_version** | **Number** | Maximum allowed TLS version on connections to this server. Optional. | [optional]
+**min_tls_version** | **Number** | Minimum allowed TLS version on connections to this server. Optional. | [optional]
+**name** | **String** | Name for the Pool. | [optional]
+**override_host** | **String** | The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to &#x60;null&#x60; meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting. | [optional] [default to &#39;null&#39;]
+**quorum** | **Number** | Percentage of capacity (&#x60;0-100&#x60;) that needs to be operationally available for a pool to be considered up. | [optional] [default to 75]
+**request_condition** | **String** | Condition which, if met, will select this configuration during a request. Optional. | [optional]
+**shield** | **String** | Selected POP to serve as a shield for the servers. Defaults to &#x60;null&#x60; meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding. | [optional] [default to &#39;null&#39;]
+**tls_check_cert** | **Number** | Be strict on checking TLS certs. Optional. | [optional]
+**tls_ciphers** | **String** | List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.0.2/man1/ciphers) for details). Optional. | [optional]
+**tls_sni_hostname** | **String** | SNI hostname. Optional. | [optional]
+**type** | **String** | What type of load balance group to use. | [optional]
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**PoolResponse**](PoolResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

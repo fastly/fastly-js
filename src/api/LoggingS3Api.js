@@ -14,8 +14,10 @@
 
 import ApiClient from "../ApiClient";
 import LoggingCompressionCodec from '../model/LoggingCompressionCodec';
+import LoggingFormatVersion from '../model/LoggingFormatVersion';
 import LoggingMessageType from '../model/LoggingMessageType';
-import ServiceIdAndVersion from '../model/ServiceIdAndVersion';
+import LoggingPlacement from '../model/LoggingPlacement';
+import LoggingS3Response from '../model/LoggingS3Response';
 
 /**
 * LoggingS3 service.
@@ -45,12 +47,28 @@ export default class LoggingS3Api {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
      * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {module:model/LoggingMessageType} [options.message_type]
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
      * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+     * @param {String} [options.access_key] - The access key for your S3 account. Not required if `iam_role` is provided.
+     * @param {String} [options.acl] - The access control list (ACL) specific request header. See the AWS documentation for [Access Control List (ACL) Specific Request Headers](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html#initiate-mpu-acl-specific-request-headers) for more information.
+     * @param {String} [options.bucket_name] - The bucket name for S3 account.
+     * @param {String} [options.domain] - The domain of the Amazon S3 endpoint.
+     * @param {String} [options.iam_role] - The Amazon Resource Name (ARN) for the IAM role granting Fastly access to S3. Not required if `access_key` and `secret_key` are provided.
+     * @param {String} [options.path='null'] - The path to upload logs to.
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {String} [options.redundancy='null'] - The S3 redundancy level.
+     * @param {String} [options.secret_key] - The secret key for your S3 account. Not required if `iam_role` is provided.
+     * @param {String} [options.server_side_encryption='null'] - Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption.
+     * @param {String} [options.server_side_encryption_kms_key_id='null'] - Optional server-side KMS Key Id. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingS3Response} and HTTP response
      */
     createLogAwsS3WithHttpInfo(options = {}) {
       let postBody = null;
@@ -72,17 +90,33 @@ export default class LoggingS3Api {
       let headerParams = {
       };
       let formParams = {
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
         'compression_codec': options['compression_codec'],
         'gzip_level': options['gzip_level'],
         'message_type': options['message_type'],
         'period': options['period'],
-        'timestamp_format': options['timestamp_format']
+        'timestamp_format': options['timestamp_format'],
+        'access_key': options['access_key'],
+        'acl': options['acl'],
+        'bucket_name': options['bucket_name'],
+        'domain': options['domain'],
+        'iam_role': options['iam_role'],
+        'path': options['path'],
+        'public_key': options['public_key'],
+        'redundancy': options['redundancy'],
+        'secret_key': options['secret_key'],
+        'server_side_encryption': options['server_side_encryption'],
+        'server_side_encryption_kms_key_id': options['server_side_encryption_kms_key_id']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ServiceIdAndVersion;
+      let returnType = LoggingS3Response;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/s3', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -95,12 +129,28 @@ export default class LoggingS3Api {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
      * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {module:model/LoggingMessageType} [options.message_type]
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
      * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @param {String} [options.access_key] - The access key for your S3 account. Not required if `iam_role` is provided.
+     * @param {String} [options.acl] - The access control list (ACL) specific request header. See the AWS documentation for [Access Control List (ACL) Specific Request Headers](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html#initiate-mpu-acl-specific-request-headers) for more information.
+     * @param {String} [options.bucket_name] - The bucket name for S3 account.
+     * @param {String} [options.domain] - The domain of the Amazon S3 endpoint.
+     * @param {String} [options.iam_role] - The Amazon Resource Name (ARN) for the IAM role granting Fastly access to S3. Not required if `access_key` and `secret_key` are provided.
+     * @param {String} [options.path='null'] - The path to upload logs to.
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {String} [options.redundancy='null'] - The S3 redundancy level.
+     * @param {String} [options.secret_key] - The secret key for your S3 account. Not required if `iam_role` is provided.
+     * @param {String} [options.server_side_encryption='null'] - Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption.
+     * @param {String} [options.server_side_encryption_kms_key_id='null'] - Optional server-side KMS Key Id. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingS3Response}
      */
     createLogAwsS3(options = {}) {
       return this.createLogAwsS3WithHttpInfo(options)
@@ -176,7 +226,7 @@ export default class LoggingS3Api {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_s3_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingS3Response} and HTTP response
      */
     getLogAwsS3WithHttpInfo(options = {}) {
       let postBody = null;
@@ -208,7 +258,7 @@ export default class LoggingS3Api {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ServiceIdAndVersion;
+      let returnType = LoggingS3Response;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/s3/{logging_s3_name}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -222,7 +272,7 @@ export default class LoggingS3Api {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_s3_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingS3Response}
      */
     getLogAwsS3(options = {}) {
       return this.getLogAwsS3WithHttpInfo(options)
@@ -236,7 +286,7 @@ export default class LoggingS3Api {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ServiceIdAndVersion>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingS3Response>} and HTTP response
      */
     listLogAwsS3WithHttpInfo(options = {}) {
       let postBody = null;
@@ -263,7 +313,7 @@ export default class LoggingS3Api {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [ServiceIdAndVersion];
+      let returnType = [LoggingS3Response];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/s3', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -276,7 +326,7 @@ export default class LoggingS3Api {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ServiceIdAndVersion>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingS3Response>}
      */
     listLogAwsS3(options = {}) {
       return this.listLogAwsS3WithHttpInfo(options)
@@ -291,12 +341,28 @@ export default class LoggingS3Api {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_s3_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
      * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {module:model/LoggingMessageType} [options.message_type]
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
      * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+     * @param {String} [options.access_key] - The access key for your S3 account. Not required if `iam_role` is provided.
+     * @param {String} [options.acl] - The access control list (ACL) specific request header. See the AWS documentation for [Access Control List (ACL) Specific Request Headers](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html#initiate-mpu-acl-specific-request-headers) for more information.
+     * @param {String} [options.bucket_name] - The bucket name for S3 account.
+     * @param {String} [options.domain] - The domain of the Amazon S3 endpoint.
+     * @param {String} [options.iam_role] - The Amazon Resource Name (ARN) for the IAM role granting Fastly access to S3. Not required if `access_key` and `secret_key` are provided.
+     * @param {String} [options.path='null'] - The path to upload logs to.
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {String} [options.redundancy='null'] - The S3 redundancy level.
+     * @param {String} [options.secret_key] - The secret key for your S3 account. Not required if `iam_role` is provided.
+     * @param {String} [options.server_side_encryption='null'] - Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption.
+     * @param {String} [options.server_side_encryption_kms_key_id='null'] - Optional server-side KMS Key Id. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingS3Response} and HTTP response
      */
     updateLogAwsS3WithHttpInfo(options = {}) {
       let postBody = null;
@@ -323,17 +389,33 @@ export default class LoggingS3Api {
       let headerParams = {
       };
       let formParams = {
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
         'compression_codec': options['compression_codec'],
         'gzip_level': options['gzip_level'],
         'message_type': options['message_type'],
         'period': options['period'],
-        'timestamp_format': options['timestamp_format']
+        'timestamp_format': options['timestamp_format'],
+        'access_key': options['access_key'],
+        'acl': options['acl'],
+        'bucket_name': options['bucket_name'],
+        'domain': options['domain'],
+        'iam_role': options['iam_role'],
+        'path': options['path'],
+        'public_key': options['public_key'],
+        'redundancy': options['redundancy'],
+        'secret_key': options['secret_key'],
+        'server_side_encryption': options['server_side_encryption'],
+        'server_side_encryption_kms_key_id': options['server_side_encryption_kms_key_id']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ServiceIdAndVersion;
+      let returnType = LoggingS3Response;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/s3/{logging_s3_name}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -347,12 +429,28 @@ export default class LoggingS3Api {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_s3_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
      * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {module:model/LoggingMessageType} [options.message_type]
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
      * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @param {String} [options.access_key] - The access key for your S3 account. Not required if `iam_role` is provided.
+     * @param {String} [options.acl] - The access control list (ACL) specific request header. See the AWS documentation for [Access Control List (ACL) Specific Request Headers](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html#initiate-mpu-acl-specific-request-headers) for more information.
+     * @param {String} [options.bucket_name] - The bucket name for S3 account.
+     * @param {String} [options.domain] - The domain of the Amazon S3 endpoint.
+     * @param {String} [options.iam_role] - The Amazon Resource Name (ARN) for the IAM role granting Fastly access to S3. Not required if `access_key` and `secret_key` are provided.
+     * @param {String} [options.path='null'] - The path to upload logs to.
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {String} [options.redundancy='null'] - The S3 redundancy level.
+     * @param {String} [options.secret_key] - The secret key for your S3 account. Not required if `iam_role` is provided.
+     * @param {String} [options.server_side_encryption='null'] - Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption.
+     * @param {String} [options.server_side_encryption_kms_key_id='null'] - Optional server-side KMS Key Id. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingS3Response}
      */
     updateLogAwsS3(options = {}) {
       return this.updateLogAwsS3WithHttpInfo(options)

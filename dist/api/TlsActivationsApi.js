@@ -7,11 +7,11 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _Pagination = _interopRequireDefault(require("../model/Pagination"));
-
 var _TlsActivation = _interopRequireDefault(require("../model/TlsActivation"));
 
 var _TlsActivationResponse = _interopRequireDefault(require("../model/TlsActivationResponse"));
+
+var _TlsActivationsResponse = _interopRequireDefault(require("../model/TlsActivationsResponse"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -182,7 +182,7 @@ var TlsActivationsApi = /*#__PURE__*/function () {
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_certificate`, `tls_configuration`, and `tls_domain`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Pagination} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsActivationsResponse} and HTTP response
      */
 
   }, {
@@ -204,7 +204,7 @@ var TlsActivationsApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/vnd.api+json'];
-      var returnType = _Pagination["default"];
+      var returnType = _TlsActivationsResponse["default"];
       return this.apiClient.callApi('/tls/activations', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -216,7 +216,7 @@ var TlsActivationsApi = /*#__PURE__*/function () {
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_certificate`, `tls_configuration`, and `tls_domain`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Pagination}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsActivationsResponse}
      */
 
   }, {

@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**DomainResponse**](DomainResponse.md)
 
 
 ## `deleteDomain`
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**DomainResponse**](DomainResponse.md)
 
 
 ## `listDomains`
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**DomainResponse**](DomainResponse.md)
 
 
 ## `updateDomain`
@@ -290,7 +290,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**DomainResponse**](DomainResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

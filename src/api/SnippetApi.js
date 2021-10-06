@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import Timestamps from '../model/Timestamps';
+import SnippetResponse from '../model/SnippetResponse';
 
 /**
 * Snippet service.
@@ -48,7 +48,7 @@ export default class SnippetApi {
      * @param {String} [options.name] - The name for the snippet.
      * @param {String} [options.priority='100'] - Numeric string value. Priority determines execution order. Lower numbers execute first.
      * @param {module:model/String} [options.type] - The location in generated VCL where the snippet should be placed.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SnippetResponse} and HTTP response
      */
     createSnippetWithHttpInfo(options = {}) {
       let postBody = null;
@@ -80,7 +80,7 @@ export default class SnippetApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = SnippetResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/snippet', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -98,7 +98,7 @@ export default class SnippetApi {
      * @param {String} [options.name] - The name for the snippet.
      * @param {String} [options.priority='100'] - Numeric string value. Priority determines execution order. Lower numbers execute first.
      * @param {module:model/String} [options.type] - The location in generated VCL where the snippet should be placed.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SnippetResponse}
      */
     createSnippet(options = {}) {
       return this.createSnippetWithHttpInfo(options)
@@ -174,7 +174,7 @@ export default class SnippetApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.snippet_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SnippetResponse} and HTTP response
      */
     getSnippetWithHttpInfo(options = {}) {
       let postBody = null;
@@ -206,7 +206,7 @@ export default class SnippetApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = SnippetResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/snippet/{snippet_name}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -220,7 +220,7 @@ export default class SnippetApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.snippet_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SnippetResponse}
      */
     getSnippet(options = {}) {
       return this.getSnippetWithHttpInfo(options)
@@ -234,7 +234,7 @@ export default class SnippetApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {String} options.snippet_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SnippetResponse} and HTTP response
      */
     getSnippetDynamicWithHttpInfo(options = {}) {
       let postBody = null;
@@ -261,7 +261,7 @@ export default class SnippetApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = SnippetResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/snippet/{snippet_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -274,7 +274,7 @@ export default class SnippetApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {String} options.snippet_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SnippetResponse}
      */
     getSnippetDynamic(options = {}) {
       return this.getSnippetDynamicWithHttpInfo(options)
@@ -288,7 +288,7 @@ export default class SnippetApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Timestamps>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/SnippetResponse>} and HTTP response
      */
     listSnippetsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -315,7 +315,7 @@ export default class SnippetApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [Timestamps];
+      let returnType = [SnippetResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/snippet', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -328,7 +328,7 @@ export default class SnippetApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Timestamps>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/SnippetResponse>}
      */
     listSnippets(options = {}) {
       return this.listSnippetsWithHttpInfo(options)
@@ -343,7 +343,7 @@ export default class SnippetApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.snippet_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SnippetResponse} and HTTP response
      */
     updateSnippetWithHttpInfo(options = {}) {
       let postBody = null;
@@ -375,7 +375,7 @@ export default class SnippetApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = SnippetResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/snippet/{snippet_name}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -389,7 +389,7 @@ export default class SnippetApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.snippet_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SnippetResponse}
      */
     updateSnippet(options = {}) {
       return this.updateSnippetWithHttpInfo(options)
@@ -408,7 +408,7 @@ export default class SnippetApi {
      * @param {String} [options.name] - The name for the snippet.
      * @param {String} [options.priority='100'] - Numeric string value. Priority determines execution order. Lower numbers execute first.
      * @param {module:model/String} [options.type] - The location in generated VCL where the snippet should be placed.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SnippetResponse} and HTTP response
      */
     updateSnippetDynamicWithHttpInfo(options = {}) {
       let postBody = null;
@@ -440,7 +440,7 @@ export default class SnippetApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = SnippetResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/snippet/{snippet_id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -458,7 +458,7 @@ export default class SnippetApi {
      * @param {String} [options.name] - The name for the snippet.
      * @param {String} [options.priority='100'] - Numeric string value. Priority determines execution order. Lower numbers execute first.
      * @param {module:model/String} [options.type] - The location in generated VCL where the snippet should be placed.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SnippetResponse}
      */
     updateSnippetDynamic(options = {}) {
       return this.updateSnippetDynamicWithHttpInfo(options)

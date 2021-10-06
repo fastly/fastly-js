@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**TlsConfigurationData**](TlsConfigurationData.md) |  | [optional] 
+**data** | [**TlsConfigurationResponseData**](TlsConfigurationResponseData.md) |  | [optional] 
 
 
 

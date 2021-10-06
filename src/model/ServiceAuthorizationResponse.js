@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import ServiceAuthorizationData from './ServiceAuthorizationData';
+import ServiceAuthorizationResponseData from './ServiceAuthorizationResponseData';
 
 /**
  * The ServiceAuthorizationResponse model module.
@@ -48,7 +48,7 @@ class ServiceAuthorizationResponse {
             obj = obj || new ServiceAuthorizationResponse();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ServiceAuthorizationData.constructFromObject(data['data']);
+                obj['data'] = ServiceAuthorizationResponseData.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class ServiceAuthorizationResponse {
 }
 
 /**
- * @member {module:model/ServiceAuthorizationData} data
+ * @member {module:model/ServiceAuthorizationResponseData} data
  */
 ServiceAuthorizationResponse.prototype['data'] = undefined;
 

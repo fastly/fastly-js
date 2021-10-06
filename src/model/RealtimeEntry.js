@@ -49,7 +49,7 @@ class RealtimeEntry {
             obj = obj || new RealtimeEntry();
 
             if (data.hasOwnProperty('aggregated')) {
-                obj['aggregated'] = RealtimeMeasurements.constructFromObject(data['aggregated']);
+                obj['aggregated'] = ApiClient.convertToType(data['aggregated'], RealtimeMeasurements);
             }
             if (data.hasOwnProperty('datacenter')) {
                 obj['datacenter'] = ApiClient.convertToType(data['datacenter'], {'String': RealtimeMeasurements});
@@ -76,7 +76,6 @@ RealtimeEntry.prototype['aggregated'] = undefined;
 RealtimeEntry.prototype['datacenter'] = undefined;
 
 /**
- * Unix epoch timestamp.
  * @member {Number} recorded
  */
 RealtimeEntry.prototype['recorded'] = undefined;

@@ -76,7 +76,6 @@ Realtime.prototype['AggregateDelay'] = undefined;
 Realtime.prototype['Data'] = undefined;
 
 /**
- * Unix epoch timestamp.
  * @member {Number} Timestamp
  */
 Realtime.prototype['Timestamp'] = undefined;

@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Pagination**](Pagination.md)
+[**TlsActivationsResponse**](TlsActivationsResponse.md)
 
 
 ## `updateTlsActivation`

@@ -12,12 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import RelationshipCommonNameCommonName from './RelationshipCommonNameCommonName';
-import RelationshipTlsCertificate from './RelationshipTlsCertificate';
 import RelationshipTlsCertificateTlsCertificate from './RelationshipTlsCertificateTlsCertificate';
-import RelationshipTlsConfiguration from './RelationshipTlsConfiguration';
-import RelationshipTlsConfigurationTlsConfiguration from './RelationshipTlsConfigurationTlsConfiguration';
-import RelationshipTlsDomain from './RelationshipTlsDomain';
 
 /**
  * The RelationshipsForTlsActivation model module.
@@ -55,12 +50,6 @@ class RelationshipsForTlsActivation {
             if (data.hasOwnProperty('tls_certificate')) {
                 obj['tls_certificate'] = RelationshipTlsCertificateTlsCertificate.constructFromObject(data['tls_certificate']);
             }
-            if (data.hasOwnProperty('tls_configuration')) {
-                obj['tls_configuration'] = RelationshipTlsConfigurationTlsConfiguration.constructFromObject(data['tls_configuration']);
-            }
-            if (data.hasOwnProperty('tls_domain')) {
-                obj['tls_domain'] = RelationshipCommonNameCommonName.constructFromObject(data['tls_domain']);
-            }
         }
         return obj;
     }
@@ -72,16 +61,6 @@ class RelationshipsForTlsActivation {
  * @member {module:model/RelationshipTlsCertificateTlsCertificate} tls_certificate
  */
 RelationshipsForTlsActivation.prototype['tls_certificate'] = undefined;
-
-/**
- * @member {module:model/RelationshipTlsConfigurationTlsConfiguration} tls_configuration
- */
-RelationshipsForTlsActivation.prototype['tls_configuration'] = undefined;
-
-/**
- * @member {module:model/RelationshipCommonNameCommonName} tls_domain
- */
-RelationshipsForTlsActivation.prototype['tls_domain'] = undefined;
 
 
 

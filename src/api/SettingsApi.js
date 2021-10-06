@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import ServiceIdAndVersion from '../model/ServiceIdAndVersion';
+import SettingsResponse from '../model/SettingsResponse';
 
 /**
 * Settings service.
@@ -43,7 +43,7 @@ export default class SettingsApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SettingsResponse} and HTTP response
      */
     getServiceSettingsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -70,7 +70,7 @@ export default class SettingsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ServiceIdAndVersion;
+      let returnType = SettingsResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/settings', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -83,7 +83,7 @@ export default class SettingsApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SettingsResponse}
      */
     getServiceSettings(options = {}) {
       return this.getServiceSettingsWithHttpInfo(options)
@@ -97,7 +97,7 @@ export default class SettingsApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SettingsResponse} and HTTP response
      */
     updateServiceSettingsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -124,7 +124,7 @@ export default class SettingsApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ServiceIdAndVersion;
+      let returnType = SettingsResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/settings', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -137,7 +137,7 @@ export default class SettingsApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SettingsResponse}
      */
     updateServiceSettings(options = {}) {
       return this.updateServiceSettingsWithHttpInfo(options)

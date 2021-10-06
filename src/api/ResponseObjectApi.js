@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import Timestamps from '../model/Timestamps';
+import ResponseObjectResponse from '../model/ResponseObjectResponse';
 
 /**
 * ResponseObject service.
@@ -43,7 +43,7 @@ export default class ResponseObjectApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseObjectResponse} and HTTP response
      */
     createResponseObjectWithHttpInfo(options = {}) {
       let postBody = null;
@@ -70,7 +70,7 @@ export default class ResponseObjectApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = ResponseObjectResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/response_object', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -83,7 +83,7 @@ export default class ResponseObjectApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseObjectResponse}
      */
     createResponseObject(options = {}) {
       return this.createResponseObjectWithHttpInfo(options)
@@ -159,7 +159,7 @@ export default class ResponseObjectApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.response_object_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseObjectResponse} and HTTP response
      */
     getResponseObjectWithHttpInfo(options = {}) {
       let postBody = null;
@@ -191,7 +191,7 @@ export default class ResponseObjectApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = ResponseObjectResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/response_object/{response_object_name}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -205,7 +205,7 @@ export default class ResponseObjectApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.response_object_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseObjectResponse}
      */
     getResponseObject(options = {}) {
       return this.getResponseObjectWithHttpInfo(options)
@@ -219,7 +219,7 @@ export default class ResponseObjectApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Timestamps>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ResponseObjectResponse>} and HTTP response
      */
     listResponseObjectsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -246,7 +246,7 @@ export default class ResponseObjectApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [Timestamps];
+      let returnType = [ResponseObjectResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/response_object', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -259,7 +259,7 @@ export default class ResponseObjectApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Timestamps>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ResponseObjectResponse>}
      */
     listResponseObjects(options = {}) {
       return this.listResponseObjectsWithHttpInfo(options)
@@ -274,7 +274,7 @@ export default class ResponseObjectApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.response_object_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseObjectResponse} and HTTP response
      */
     updateResponseObjectWithHttpInfo(options = {}) {
       let postBody = null;
@@ -306,7 +306,7 @@ export default class ResponseObjectApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = ResponseObjectResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/response_object/{response_object_name}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -320,7 +320,7 @@ export default class ResponseObjectApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.response_object_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseObjectResponse}
      */
     updateResponseObject(options = {}) {
       return this.updateResponseObjectWithHttpInfo(options)

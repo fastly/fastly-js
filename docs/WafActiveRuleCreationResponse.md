@@ -4,9 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**WafActiveRuleData**](WafActiveRuleData.md) |  | [optional] 
+**data** | [**[WafActiveRuleResponseData]**](WafActiveRuleResponseData.md) |  | [optional] 
 **links** | [**PaginationLinks**](PaginationLinks.md) |  | [optional] 
 **meta** | [**PaginationMeta**](PaginationMeta.md) |  | [optional] 
+**included** | [**[IncludedWithWafActiveRuleItem]**](IncludedWithWafActiveRuleItem.md) |  | [optional] 
 
 
 

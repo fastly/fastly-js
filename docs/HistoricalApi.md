@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Historical**](Historical.md)
+[**HistoricalResponse**](HistoricalResponse.md)
 
 
 ## `getHistStatsAggregated`
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Historical**](Historical.md)
+[**HistoricalAggregateResponse**](HistoricalAggregateResponse.md)
 
 
 ## `getHistStatsField`
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Historical**](Historical.md)
+[**HistoricalFieldResponse**](HistoricalFieldResponse.md)
 
 
 ## `getHistStatsService`
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Historical**](Historical.md)
+[**HistoricalAggregateResponse**](HistoricalAggregateResponse.md)
 
 
 ## `getHistStatsServiceField`
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Historical**](Historical.md)
+[**HistoricalFieldAggregateResponse**](HistoricalFieldAggregateResponse.md)
 
 
 ## `getRegions`
@@ -259,7 +259,7 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**Historical**](Historical.md)
+[**HistoricalRegionsResponse**](HistoricalRegionsResponse.md)
 
 
 ## `getUsage`
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Historical**](Historical.md)
+[**HistoricalUsageAggregateResponse**](HistoricalUsageAggregateResponse.md)
 
 
 ## `getUsageMonth`
@@ -341,7 +341,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Historical**](Historical.md)
+[**HistoricalUsageMonthResponse**](HistoricalUsageMonthResponse.md)
 
 
 ## `getUsageService`
@@ -382,7 +382,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Historical**](Historical.md)
+[**HistoricalUsageServiceResponse**](HistoricalUsageServiceResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

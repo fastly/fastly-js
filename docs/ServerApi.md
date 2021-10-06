@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**ServerResponse**](ServerResponse.md)
 
 
 ## `deletePoolServer`
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**ServerResponse**](ServerResponse.md)
 
 
 ## `listPoolServers`
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[Timestamps]**](Timestamps.md)
+[**[ServerResponse]**](ServerResponse.md)
 
 
 ## `updatePoolServer`
@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**ServerResponse**](ServerResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

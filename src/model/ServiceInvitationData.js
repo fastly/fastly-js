@@ -53,7 +53,7 @@ class ServiceInvitationData {
                 obj['attributes'] = ServiceInvitationDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = RelationshipService.constructFromObject(data['relationships']);
+                obj['relationships'] = ApiClient.convertToType(data['relationships'], RelationshipService);
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeServiceInvitation.constructFromObject(data['type']);

@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Billing**](Billing.md)
+[**BillingResponse**](BillingResponse.md)
 
 
 ## `getInvoiceById`
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Billing**](Billing.md)
+[**BillingEstimateResponse**](BillingEstimateResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

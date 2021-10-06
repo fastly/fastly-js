@@ -16,9 +16,9 @@ import ApiClient from "../ApiClient";
 import InlineObject2 from '../model/InlineObject2';
 import InlineObject3 from '../model/InlineObject3';
 import InlineResponse204 from '../model/InlineResponse204';
-import Pagination from '../model/Pagination';
 import ServiceAuthorization from '../model/ServiceAuthorization';
 import ServiceAuthorizationResponse from '../model/ServiceAuthorizationResponse';
+import ServiceAuthorizationsResponse from '../model/ServiceAuthorizationsResponse';
 
 /**
 * ServiceAuthorizations service.
@@ -179,7 +179,7 @@ export default class ServiceAuthorizationsApi {
      * @param {Object} options
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Pagination} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceAuthorizationsResponse} and HTTP response
      */
     listServiceAuthorizationWithHttpInfo(options = {}) {
       let postBody = null;
@@ -198,7 +198,7 @@ export default class ServiceAuthorizationsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/vnd.api+json'];
-      let returnType = Pagination;
+      let returnType = ServiceAuthorizationsResponse;
       return this.apiClient.callApi(
         '/service-authorizations', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -211,7 +211,7 @@ export default class ServiceAuthorizationsApi {
      * @param {Object} options
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Pagination}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceAuthorizationsResponse}
      */
     listServiceAuthorization(options = {}) {
       return this.listServiceAuthorizationWithHttpInfo(options)
@@ -320,7 +320,7 @@ export default class ServiceAuthorizationsApi {
      * Update service authorizations.
      * @param {Object} options
      * @param {module:model/InlineObject3} [options.inline_object3]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Pagination} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceAuthorizationsResponse} and HTTP response
      */
     updateServiceAuthorization2WithHttpInfo(options = {}) {
       let postBody = options['inline_object3'];
@@ -337,7 +337,7 @@ export default class ServiceAuthorizationsApi {
       let authNames = ['token'];
       let contentTypes = ['application/vnd.api+json; ext=bulk'];
       let accepts = ['application/vnd.api+json; ext=bulk'];
-      let returnType = Pagination;
+      let returnType = ServiceAuthorizationsResponse;
       return this.apiClient.callApi(
         '/service-authorizations', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -349,7 +349,7 @@ export default class ServiceAuthorizationsApi {
      * Update service authorizations.
      * @param {Object} options
      * @param {module:model/InlineObject3} [options.inline_object3]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Pagination}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceAuthorizationsResponse}
      */
     updateServiceAuthorization2(options = {}) {
       return this.updateServiceAuthorization2WithHttpInfo(options)

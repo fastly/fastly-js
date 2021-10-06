@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _Timestamps = _interopRequireDefault(require("../model/Timestamps"));
+var _PackageResponse = _interopRequireDefault(require("../model/PackageResponse"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -44,7 +44,7 @@ var PackageApi = /*#__PURE__*/function () {
    * @param {Object} options
    * @param {String} options.service_id
    * @param {Number} options.version_id
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PackageResponse} and HTTP response
    */
 
 
@@ -73,7 +73,7 @@ var PackageApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _Timestamps["default"];
+      var returnType = _PackageResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/package', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -81,7 +81,7 @@ var PackageApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PackageResponse}
      */
 
   }, {
@@ -99,7 +99,7 @@ var PackageApi = /*#__PURE__*/function () {
      * @param {Number} options.version_id
      * @param {String} [options.expect] - We recommend using the Expect header because it may identify issues with the request based upon the headers alone instead of requiring you to wait until the entire binary package upload has completed.
      * @param {File} [options._package] - The content of the Wasm binary package.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PackageResponse} and HTTP response
      */
 
   }, {
@@ -131,7 +131,7 @@ var PackageApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = ['multipart/form-data'];
       var accepts = ['application/json'];
-      var returnType = _Timestamps["default"];
+      var returnType = _PackageResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/package', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -141,7 +141,7 @@ var PackageApi = /*#__PURE__*/function () {
      * @param {Number} options.version_id
      * @param {String} [options.expect] - We recommend using the Expect header because it may identify issues with the request based upon the headers alone instead of requiring you to wait until the entire binary package upload has completed.
      * @param {File} [options._package] - The content of the Wasm binary package.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PackageResponse}
      */
 
   }, {

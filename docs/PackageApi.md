@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**PackageResponse**](PackageResponse.md)
 
 
 ## `putPackage`
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**PackageResponse**](PackageResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

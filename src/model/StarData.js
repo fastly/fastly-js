@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import RelationshipService from './RelationshipService';
+import RelationshipUser from './RelationshipUser';
 import TypeStar from './TypeStar';
 
 /**
@@ -49,7 +49,7 @@ class StarData {
             obj = obj || new StarData();
 
             if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = RelationshipService.constructFromObject(data['relationships']);
+                obj['relationships'] = ApiClient.convertToType(data['relationships'], RelationshipUser);
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeStar.constructFromObject(data['type']);
@@ -62,7 +62,7 @@ class StarData {
 }
 
 /**
- * @member {module:model/RelationshipService} relationships
+ * @member {module:model/RelationshipUser} relationships
  */
 StarData.prototype['relationships'] = undefined;
 

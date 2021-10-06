@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Pagination**](Pagination.md)
+[**WafRulesResponse**](WafRulesResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

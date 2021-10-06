@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**DirectorResponse**](DirectorResponse.md)
 
 
 ## `deleteDirector`
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**DirectorResponse**](DirectorResponse.md)
 
 
 ## `listDirectors`
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[Timestamps]**](Timestamps.md)
+[**[DirectorResponse]**](DirectorResponse.md)
 
 
 ## `updateDirector`
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**DirectorResponse**](DirectorResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

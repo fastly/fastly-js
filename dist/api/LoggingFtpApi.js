@@ -9,9 +9,13 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _LoggingCompressionCodec = _interopRequireDefault(require("../model/LoggingCompressionCodec"));
 
+var _LoggingFormatVersion = _interopRequireDefault(require("../model/LoggingFormatVersion"));
+
+var _LoggingFtpResponse = _interopRequireDefault(require("../model/LoggingFtpResponse"));
+
 var _LoggingMessageType = _interopRequireDefault(require("../model/LoggingMessageType"));
 
-var _ServiceIdAndVersion = _interopRequireDefault(require("../model/ServiceIdAndVersion"));
+var _LoggingPlacement = _interopRequireDefault(require("../model/LoggingPlacement"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -48,12 +52,25 @@ var LoggingFtpApi = /*#__PURE__*/function () {
    * @param {Object} options
    * @param {String} options.service_id
    * @param {Number} options.version_id
+   * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+   * @param {module:model/LoggingFormatVersion} [options.format_version]
+   * @param {String} [options.name] - The name for the real-time logging configuration.
+   * @param {module:model/LoggingPlacement} [options.placement]
+   * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
    * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
    * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
    * @param {module:model/LoggingMessageType} [options.message_type]
    * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
    * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+   * @param {String} [options.address] - An hostname or IPv4 address.
+   * @param {String} [options.hostname] - Hostname used.
+   * @param {String} [options.ipv4] - IPv4 address of the host.
+   * @param {String} [options.password] - The password for the server. For anonymous use an email address.
+   * @param {String} [options.path] - The path to upload log files to. If the path ends in `/` then it is treated as a directory.
+   * @param {Number} [options.port=21] - The port number.
+   * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+   * @param {String} [options.user] - The username for the server. Can be anonymous.
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingFtpResponse} and HTTP response
    */
 
 
@@ -79,16 +96,29 @@ var LoggingFtpApi = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
         'compression_codec': options['compression_codec'],
         'gzip_level': options['gzip_level'],
         'message_type': options['message_type'],
         'period': options['period'],
-        'timestamp_format': options['timestamp_format']
+        'timestamp_format': options['timestamp_format'],
+        'address': options['address'],
+        'hostname': options['hostname'],
+        'ipv4': options['ipv4'],
+        'password': options['password'],
+        'path': options['path'],
+        'port': options['port'],
+        'public_key': options['public_key'],
+        'user': options['user']
       };
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _ServiceIdAndVersion["default"];
+      var returnType = _LoggingFtpResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/logging/ftp', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -96,12 +126,25 @@ var LoggingFtpApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
      * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {module:model/LoggingMessageType} [options.message_type]
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
      * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @param {String} [options.address] - An hostname or IPv4 address.
+     * @param {String} [options.hostname] - Hostname used.
+     * @param {String} [options.ipv4] - IPv4 address of the host.
+     * @param {String} [options.password] - The password for the server. For anonymous use an email address.
+     * @param {String} [options.path] - The path to upload log files to. If the path ends in `/` then it is treated as a directory.
+     * @param {Number} [options.port=21] - The port number.
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {String} [options.user] - The username for the server. Can be anonymous.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingFtpResponse}
      */
 
   }, {
@@ -178,7 +221,7 @@ var LoggingFtpApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_ftp_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingFtpResponse} and HTTP response
      */
 
   }, {
@@ -212,7 +255,7 @@ var LoggingFtpApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _ServiceIdAndVersion["default"];
+      var returnType = _LoggingFtpResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/logging/ftp/{logging_ftp_name}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -221,7 +264,7 @@ var LoggingFtpApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_ftp_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingFtpResponse}
      */
 
   }, {
@@ -237,7 +280,7 @@ var LoggingFtpApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ServiceIdAndVersion>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingFtpResponse>} and HTTP response
      */
 
   }, {
@@ -265,7 +308,7 @@ var LoggingFtpApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [_ServiceIdAndVersion["default"]];
+      var returnType = [_LoggingFtpResponse["default"]];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/logging/ftp', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -273,7 +316,7 @@ var LoggingFtpApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ServiceIdAndVersion>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingFtpResponse>}
      */
 
   }, {
@@ -290,12 +333,25 @@ var LoggingFtpApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_ftp_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
      * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {module:model/LoggingMessageType} [options.message_type]
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
      * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+     * @param {String} [options.address] - An hostname or IPv4 address.
+     * @param {String} [options.hostname] - Hostname used.
+     * @param {String} [options.ipv4] - IPv4 address of the host.
+     * @param {String} [options.password] - The password for the server. For anonymous use an email address.
+     * @param {String} [options.path] - The path to upload log files to. If the path ends in `/` then it is treated as a directory.
+     * @param {Number} [options.port=21] - The port number.
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {String} [options.user] - The username for the server. Can be anonymous.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingFtpResponse} and HTTP response
      */
 
   }, {
@@ -326,16 +382,29 @@ var LoggingFtpApi = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
         'compression_codec': options['compression_codec'],
         'gzip_level': options['gzip_level'],
         'message_type': options['message_type'],
         'period': options['period'],
-        'timestamp_format': options['timestamp_format']
+        'timestamp_format': options['timestamp_format'],
+        'address': options['address'],
+        'hostname': options['hostname'],
+        'ipv4': options['ipv4'],
+        'password': options['password'],
+        'path': options['path'],
+        'port': options['port'],
+        'public_key': options['public_key'],
+        'user': options['user']
       };
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _ServiceIdAndVersion["default"];
+      var returnType = _LoggingFtpResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/logging/ftp/{logging_ftp_name}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -344,12 +413,25 @@ var LoggingFtpApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_ftp_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
      * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {module:model/LoggingMessageType} [options.message_type]
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
      * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @param {String} [options.address] - An hostname or IPv4 address.
+     * @param {String} [options.hostname] - Hostname used.
+     * @param {String} [options.ipv4] - IPv4 address of the host.
+     * @param {String} [options.password] - The password for the server. For anonymous use an email address.
+     * @param {String} [options.path] - The path to upload log files to. If the path ends in `/` then it is treated as a directory.
+     * @param {Number} [options.port=21] - The port number.
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {String} [options.user] - The username for the server. Can be anonymous.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingFtpResponse}
      */
 
   }, {

@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**SnippetResponse**](SnippetResponse.md)
 
 
 ## `deleteSnippet`
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**SnippetResponse**](SnippetResponse.md)
 
 
 ## `getSnippetDynamic`
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**SnippetResponse**](SnippetResponse.md)
 
 
 ## `listSnippets`
@@ -214,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[Timestamps]**](Timestamps.md)
+[**[SnippetResponse]**](SnippetResponse.md)
 
 
 ## `updateSnippet`
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**SnippetResponse**](SnippetResponse.md)
 
 
 ## `updateSnippetDynamic`
@@ -300,7 +300,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**SnippetResponse**](SnippetResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

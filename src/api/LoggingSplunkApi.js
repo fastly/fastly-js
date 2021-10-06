@@ -13,7 +13,10 @@
 
 
 import ApiClient from "../ApiClient";
-import ServiceIdAndVersion from '../model/ServiceIdAndVersion';
+import LoggingFormatVersion from '../model/LoggingFormatVersion';
+import LoggingPlacement from '../model/LoggingPlacement';
+import LoggingSplunkResponse from '../model/LoggingSplunkResponse';
+import LoggingUseTls from '../model/LoggingUseTls';
 
 /**
 * LoggingSplunk service.
@@ -43,9 +46,21 @@ export default class LoggingSplunkApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
+     * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
+     * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
+     * @param {String} [options.tls_hostname='null'] - The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
      * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` for unbounded.
      * @param {Number} [options.request_max_entries=0] - The maximum number of logs sent in one request. Defaults `0` for unbounded.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+     * @param {String} [options.token] - A Splunk token for use in posting logs over HTTP to your collector.
+     * @param {String} [options.url] - The URL to post logs to.
+     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingSplunkResponse} and HTTP response
      */
     createLogSplunkWithHttpInfo(options = {}) {
       let postBody = null;
@@ -67,14 +82,26 @@ export default class LoggingSplunkApi {
       let headerParams = {
       };
       let formParams = {
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'tls_ca_cert': options['tls_ca_cert'],
+        'tls_client_cert': options['tls_client_cert'],
+        'tls_client_key': options['tls_client_key'],
+        'tls_hostname': options['tls_hostname'],
         'request_max_bytes': options['request_max_bytes'],
-        'request_max_entries': options['request_max_entries']
+        'request_max_entries': options['request_max_entries'],
+        'token': options['token'],
+        'url': options['url'],
+        'use_tls': options['use_tls']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ServiceIdAndVersion;
+      let returnType = LoggingSplunkResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/splunk', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -87,9 +114,21 @@ export default class LoggingSplunkApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
+     * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
+     * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
+     * @param {String} [options.tls_hostname='null'] - The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
      * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` for unbounded.
      * @param {Number} [options.request_max_entries=0] - The maximum number of logs sent in one request. Defaults `0` for unbounded.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @param {String} [options.token] - A Splunk token for use in posting logs over HTTP to your collector.
+     * @param {String} [options.url] - The URL to post logs to.
+     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingSplunkResponse}
      */
     createLogSplunk(options = {}) {
       return this.createLogSplunkWithHttpInfo(options)
@@ -165,7 +204,7 @@ export default class LoggingSplunkApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_splunk_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingSplunkResponse} and HTTP response
      */
     getLogSplunkWithHttpInfo(options = {}) {
       let postBody = null;
@@ -197,7 +236,7 @@ export default class LoggingSplunkApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ServiceIdAndVersion;
+      let returnType = LoggingSplunkResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/splunk/{logging_splunk_name}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -211,7 +250,7 @@ export default class LoggingSplunkApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_splunk_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingSplunkResponse}
      */
     getLogSplunk(options = {}) {
       return this.getLogSplunkWithHttpInfo(options)
@@ -225,7 +264,7 @@ export default class LoggingSplunkApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ServiceIdAndVersion>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingSplunkResponse>} and HTTP response
      */
     listLogSplunkWithHttpInfo(options = {}) {
       let postBody = null;
@@ -252,7 +291,7 @@ export default class LoggingSplunkApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [ServiceIdAndVersion];
+      let returnType = [LoggingSplunkResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/splunk', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -265,7 +304,7 @@ export default class LoggingSplunkApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ServiceIdAndVersion>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingSplunkResponse>}
      */
     listLogSplunk(options = {}) {
       return this.listLogSplunkWithHttpInfo(options)
@@ -280,9 +319,21 @@ export default class LoggingSplunkApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_splunk_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
+     * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
+     * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
+     * @param {String} [options.tls_hostname='null'] - The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
      * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` for unbounded.
      * @param {Number} [options.request_max_entries=0] - The maximum number of logs sent in one request. Defaults `0` for unbounded.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+     * @param {String} [options.token] - A Splunk token for use in posting logs over HTTP to your collector.
+     * @param {String} [options.url] - The URL to post logs to.
+     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingSplunkResponse} and HTTP response
      */
     updateLogSplunkWithHttpInfo(options = {}) {
       let postBody = null;
@@ -309,14 +360,26 @@ export default class LoggingSplunkApi {
       let headerParams = {
       };
       let formParams = {
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
+        'tls_ca_cert': options['tls_ca_cert'],
+        'tls_client_cert': options['tls_client_cert'],
+        'tls_client_key': options['tls_client_key'],
+        'tls_hostname': options['tls_hostname'],
         'request_max_bytes': options['request_max_bytes'],
-        'request_max_entries': options['request_max_entries']
+        'request_max_entries': options['request_max_entries'],
+        'token': options['token'],
+        'url': options['url'],
+        'use_tls': options['use_tls']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ServiceIdAndVersion;
+      let returnType = LoggingSplunkResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/splunk/{logging_splunk_name}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -330,9 +393,21 @@ export default class LoggingSplunkApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_splunk_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
+     * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
+     * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
+     * @param {String} [options.tls_hostname='null'] - The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
      * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` for unbounded.
      * @param {Number} [options.request_max_entries=0] - The maximum number of logs sent in one request. Defaults `0` for unbounded.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @param {String} [options.token] - A Splunk token for use in posting logs over HTTP to your collector.
+     * @param {String} [options.url] - The URL to post logs to.
+     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingSplunkResponse}
      */
     updateLogSplunk(options = {}) {
       return this.updateLogSplunkWithHttpInfo(options)

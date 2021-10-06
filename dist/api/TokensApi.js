@@ -11,7 +11,9 @@ var _GenericTokenError = _interopRequireDefault(require("../model/GenericTokenEr
 
 var _InlineResponse = _interopRequireDefault(require("../model/InlineResponse400"));
 
-var _Timestamps = _interopRequireDefault(require("../model/Timestamps"));
+var _TokenCreatedResponse = _interopRequireDefault(require("../model/TokenCreatedResponse"));
+
+var _TokenResponse = _interopRequireDefault(require("../model/TokenResponse"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -84,7 +86,7 @@ var TokensApi = /*#__PURE__*/function () {
     /**
      * Create an API token. If two-factor authentication is enabled for your account, review [the instructions](/reference/api/auth/) for including a one-time password in the request. 
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TokenCreatedResponse} and HTTP response
      */
 
   }, {
@@ -99,13 +101,13 @@ var TokensApi = /*#__PURE__*/function () {
       var authNames = [];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _Timestamps["default"];
+      var returnType = _TokenCreatedResponse["default"];
       return this.apiClient.callApi('/tokens', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
      * Create an API token. If two-factor authentication is enabled for your account, review [the instructions](/reference/api/auth/) for including a one-time password in the request. 
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TokenCreatedResponse}
      */
 
   }, {
@@ -119,7 +121,7 @@ var TokensApi = /*#__PURE__*/function () {
     /**
      * Get a single token based on the access_token used in the request.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TokenResponse} and HTTP response
      */
 
   }, {
@@ -134,13 +136,13 @@ var TokensApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _Timestamps["default"];
+      var returnType = _TokenResponse["default"];
       return this.apiClient.callApi('/tokens/self', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
      * Get a single token based on the access_token used in the request.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TokenResponse}
      */
 
   }, {
@@ -155,7 +157,7 @@ var TokensApi = /*#__PURE__*/function () {
      * List all tokens belonging to a specific customer.
      * @param {Object} options
      * @param {String} options.customer_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Timestamps>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/TokenResponse>} and HTTP response
      */
 
   }, {
@@ -177,14 +179,14 @@ var TokensApi = /*#__PURE__*/function () {
       var authNames = [];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [_Timestamps["default"]];
+      var returnType = [_TokenResponse["default"]];
       return this.apiClient.callApi('/customer/{customer_id}/tokens', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
      * List all tokens belonging to a specific customer.
      * @param {Object} options
      * @param {String} options.customer_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Timestamps>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/TokenResponse>}
      */
 
   }, {
@@ -198,7 +200,7 @@ var TokensApi = /*#__PURE__*/function () {
     /**
      * List all tokens belonging to the authenticated user.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Timestamps>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/TokenResponse>} and HTTP response
      */
 
   }, {
@@ -213,13 +215,13 @@ var TokensApi = /*#__PURE__*/function () {
       var authNames = [];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [_Timestamps["default"]];
+      var returnType = [_TokenResponse["default"]];
       return this.apiClient.callApi('/tokens', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
      * List all tokens belonging to the authenticated user.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Timestamps>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/TokenResponse>}
      */
 
   }, {

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**WafExclusionData**](WafExclusionData.md) |  | [optional] 
+**data** | [**WafExclusionResponseData**](WafExclusionResponseData.md) |  | [optional] 
 
 
 

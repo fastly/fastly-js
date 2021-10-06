@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Pagination**](Pagination.md)
+[**TlsPrivateKeysResponse**](TlsPrivateKeysResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

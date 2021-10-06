@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**VersionResponse**](VersionResponse.md)
 
 
 ## `cloneServiceVersion`
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**VersionResponse**](VersionResponse.md)
 
 
 ## `getServiceVersion`
@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**VersionResponse**](VersionResponse.md)
 
 
 ## `listServiceVersions`
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[Timestamps]**](Timestamps.md)
+[**[VersionResponse]**](VersionResponse.md)
 
 
 ## `lockServiceVersion`
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**VersionResponse**](VersionResponse.md)
 
 
 ## `validateServiceVersion`

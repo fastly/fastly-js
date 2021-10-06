@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**AclEntryResponse**](AclEntryResponse.md)
 
 
 ## `deleteAclEntry`
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[Timestamps]**](Timestamps.md)
+[**[AclEntryResponse]**](AclEntryResponse.md)
 
 
 ## `updateAclEntry`

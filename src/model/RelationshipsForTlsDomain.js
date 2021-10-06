@@ -13,9 +13,6 @@
 
 import ApiClient from '../ApiClient';
 import RelationshipTlsActivationTlsActivation from './RelationshipTlsActivationTlsActivation';
-import RelationshipTlsActivations from './RelationshipTlsActivations';
-import RelationshipTlsCertificateTlsCertificate from './RelationshipTlsCertificateTlsCertificate';
-import RelationshipTlsCertificates from './RelationshipTlsCertificates';
 import RelationshipTlsSubscriptionTlsSubscription from './RelationshipTlsSubscriptionTlsSubscription';
 import RelationshipTlsSubscriptions from './RelationshipTlsSubscriptions';
 
@@ -52,14 +49,11 @@ class RelationshipsForTlsDomain {
         if (data) {
             obj = obj || new RelationshipsForTlsDomain();
 
-            if (data.hasOwnProperty('tls_activations')) {
-                obj['tls_activations'] = RelationshipTlsActivationTlsActivation.constructFromObject(data['tls_activations']);
-            }
-            if (data.hasOwnProperty('tls_certificates')) {
-                obj['tls_certificates'] = RelationshipTlsCertificateTlsCertificate.constructFromObject(data['tls_certificates']);
-            }
             if (data.hasOwnProperty('tls_subscriptions')) {
                 obj['tls_subscriptions'] = RelationshipTlsSubscriptionTlsSubscription.constructFromObject(data['tls_subscriptions']);
+            }
+            if (data.hasOwnProperty('tls_activations')) {
+                obj['tls_activations'] = RelationshipTlsActivationTlsActivation.constructFromObject(data['tls_activations']);
             }
         }
         return obj;
@@ -69,19 +63,14 @@ class RelationshipsForTlsDomain {
 }
 
 /**
- * @member {module:model/RelationshipTlsActivationTlsActivation} tls_activations
- */
-RelationshipsForTlsDomain.prototype['tls_activations'] = undefined;
-
-/**
- * @member {module:model/RelationshipTlsCertificateTlsCertificate} tls_certificates
- */
-RelationshipsForTlsDomain.prototype['tls_certificates'] = undefined;
-
-/**
  * @member {module:model/RelationshipTlsSubscriptionTlsSubscription} tls_subscriptions
  */
 RelationshipsForTlsDomain.prototype['tls_subscriptions'] = undefined;
+
+/**
+ * @member {module:model/RelationshipTlsActivationTlsActivation} tls_activations
+ */
+RelationshipsForTlsDomain.prototype['tls_activations'] = undefined;
 
 
 

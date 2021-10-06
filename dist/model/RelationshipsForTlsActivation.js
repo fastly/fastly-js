@@ -7,17 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _RelationshipCommonNameCommonName = _interopRequireDefault(require("./RelationshipCommonNameCommonName"));
-
-var _RelationshipTlsCertificate = _interopRequireDefault(require("./RelationshipTlsCertificate"));
-
 var _RelationshipTlsCertificateTlsCertificate = _interopRequireDefault(require("./RelationshipTlsCertificateTlsCertificate"));
-
-var _RelationshipTlsConfiguration = _interopRequireDefault(require("./RelationshipTlsConfiguration"));
-
-var _RelationshipTlsConfigurationTlsConfiguration = _interopRequireDefault(require("./RelationshipTlsConfigurationTlsConfiguration"));
-
-var _RelationshipTlsDomain = _interopRequireDefault(require("./RelationshipTlsDomain"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -69,14 +59,6 @@ var RelationshipsForTlsActivation = /*#__PURE__*/function () {
         if (data.hasOwnProperty('tls_certificate')) {
           obj['tls_certificate'] = _RelationshipTlsCertificateTlsCertificate["default"].constructFromObject(data['tls_certificate']);
         }
-
-        if (data.hasOwnProperty('tls_configuration')) {
-          obj['tls_configuration'] = _RelationshipTlsConfigurationTlsConfiguration["default"].constructFromObject(data['tls_configuration']);
-        }
-
-        if (data.hasOwnProperty('tls_domain')) {
-          obj['tls_domain'] = _RelationshipCommonNameCommonName["default"].constructFromObject(data['tls_domain']);
-        }
       }
 
       return obj;
@@ -91,15 +73,5 @@ var RelationshipsForTlsActivation = /*#__PURE__*/function () {
 
 
 RelationshipsForTlsActivation.prototype['tls_certificate'] = undefined;
-/**
- * @member {module:model/RelationshipTlsConfigurationTlsConfiguration} tls_configuration
- */
-
-RelationshipsForTlsActivation.prototype['tls_configuration'] = undefined;
-/**
- * @member {module:model/RelationshipCommonNameCommonName} tls_domain
- */
-
-RelationshipsForTlsActivation.prototype['tls_domain'] = undefined;
 var _default = RelationshipsForTlsActivation;
 exports["default"] = _default;

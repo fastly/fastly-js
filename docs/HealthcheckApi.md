@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**HealthcheckResponse**](HealthcheckResponse.md)
 
 
 ## `deleteHealthcheck`
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**HealthcheckResponse**](HealthcheckResponse.md)
 
 
 ## `listHealthchecks`
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[Timestamps]**](Timestamps.md)
+[**[HealthcheckResponse]**](HealthcheckResponse.md)
 
 
 ## `updateHealthcheck`
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**HealthcheckResponse**](HealthcheckResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

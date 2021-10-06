@@ -15,7 +15,7 @@
 import ApiClient from "../ApiClient";
 import AclEntries from '../model/AclEntries';
 import AclEntry from '../model/AclEntry';
-import Timestamps from '../model/Timestamps';
+import AclEntryResponse from '../model/AclEntryResponse';
 
 /**
 * AclEntry service.
@@ -102,7 +102,7 @@ export default class AclEntryApi {
      * @param {String} options.service_id
      * @param {String} options.acl_id
      * @param {module:model/AclEntry} [options.acl_entry]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AclEntryResponse} and HTTP response
      */
     createAclEntryWithHttpInfo(options = {}) {
       let postBody = options['acl_entry'];
@@ -129,7 +129,7 @@ export default class AclEntryApi {
       let authNames = ['token'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = AclEntryResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/acl/{acl_id}/entry', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -143,7 +143,7 @@ export default class AclEntryApi {
      * @param {String} options.service_id
      * @param {String} options.acl_id
      * @param {module:model/AclEntry} [options.acl_entry]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AclEntryResponse}
      */
     createAclEntry(options = {}) {
       return this.createAclEntryWithHttpInfo(options)
@@ -283,7 +283,7 @@ export default class AclEntryApi {
      * @param {Number} [options.per_page=20] - Number of records per page.
      * @param {String} [options.sort='created'] - Field on which to sort.
      * @param {module:model/String} [options.direction='ascend'] - Direction in which to sort results.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Timestamps>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/AclEntryResponse>} and HTTP response
      */
     listAclEntriesWithHttpInfo(options = {}) {
       let postBody = null;
@@ -314,7 +314,7 @@ export default class AclEntryApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [Timestamps];
+      let returnType = [AclEntryResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/acl/{acl_id}/entries', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -331,7 +331,7 @@ export default class AclEntryApi {
      * @param {Number} [options.per_page=20] - Number of records per page.
      * @param {String} [options.sort='created'] - Field on which to sort.
      * @param {module:model/String} [options.direction='ascend'] - Direction in which to sort results.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Timestamps>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/AclEntryResponse>}
      */
     listAclEntries(options = {}) {
       return this.listAclEntriesWithHttpInfo(options)

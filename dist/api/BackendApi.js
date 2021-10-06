@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _ServiceIdAndVersion = _interopRequireDefault(require("../model/ServiceIdAndVersion"));
+var _BackendResponse = _interopRequireDefault(require("../model/BackendResponse"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -73,7 +73,7 @@ var BackendApi = /*#__PURE__*/function () {
    * @param {String} [options.ssl_sni_hostname] - Overrides `ssl_hostname`, but only for SNI in the handshake. Does not affect cert validation at all.
    * @param {Boolean} [options.use_ssl] - Whether or not to require TLS for connections to this backend.
    * @param {Number} [options.weight] - Weight used to load balance this backend against others. May be any positive integer. If `auto_loadbalance` is true, the chance of this backend being selected is equal to its own weight over the sum of all weights for backends that have `auto_loadbalance` set to true.
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BackendResponse} and HTTP response
    */
 
 
@@ -132,7 +132,7 @@ var BackendApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _ServiceIdAndVersion["default"];
+      var returnType = _BackendResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/backend', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -169,7 +169,7 @@ var BackendApi = /*#__PURE__*/function () {
      * @param {String} [options.ssl_sni_hostname] - Overrides `ssl_hostname`, but only for SNI in the handshake. Does not affect cert validation at all.
      * @param {Boolean} [options.use_ssl] - Whether or not to require TLS for connections to this backend.
      * @param {Number} [options.weight] - Weight used to load balance this backend against others. May be any positive integer. If `auto_loadbalance` is true, the chance of this backend being selected is equal to its own weight over the sum of all weights for backends that have `auto_loadbalance` set to true.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BackendResponse}
      */
 
   }, {
@@ -246,7 +246,7 @@ var BackendApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.backend_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BackendResponse} and HTTP response
      */
 
   }, {
@@ -280,7 +280,7 @@ var BackendApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _ServiceIdAndVersion["default"];
+      var returnType = _BackendResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/backend/{backend_name}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -289,7 +289,7 @@ var BackendApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.backend_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BackendResponse}
      */
 
   }, {
@@ -305,7 +305,7 @@ var BackendApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ServiceIdAndVersion>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/BackendResponse>} and HTTP response
      */
 
   }, {
@@ -333,7 +333,7 @@ var BackendApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [_ServiceIdAndVersion["default"]];
+      var returnType = [_BackendResponse["default"]];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/backend', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -341,7 +341,7 @@ var BackendApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ServiceIdAndVersion>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/BackendResponse>}
      */
 
   }, {
@@ -387,7 +387,7 @@ var BackendApi = /*#__PURE__*/function () {
      * @param {String} [options.ssl_sni_hostname] - Overrides `ssl_hostname`, but only for SNI in the handshake. Does not affect cert validation at all.
      * @param {Boolean} [options.use_ssl] - Whether or not to require TLS for connections to this backend.
      * @param {Number} [options.weight] - Weight used to load balance this backend against others. May be any positive integer. If `auto_loadbalance` is true, the chance of this backend being selected is equal to its own weight over the sum of all weights for backends that have `auto_loadbalance` set to true.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BackendResponse} and HTTP response
      */
 
   }, {
@@ -451,7 +451,7 @@ var BackendApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _ServiceIdAndVersion["default"];
+      var returnType = _BackendResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/backend/{backend_name}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -489,7 +489,7 @@ var BackendApi = /*#__PURE__*/function () {
      * @param {String} [options.ssl_sni_hostname] - Overrides `ssl_hostname`, but only for SNI in the handshake. Does not affect cert validation at all.
      * @param {Boolean} [options.use_ssl] - Whether or not to require TLS for connections to this backend.
      * @param {Number} [options.weight] - Weight used to load balance this backend against others. May be any positive integer. If `auto_loadbalance` is true, the chance of this backend being selected is equal to its own weight over the sum of all weights for backends that have `auto_loadbalance` set to true.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BackendResponse}
      */
 
   }, {

@@ -46,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Invitation**](Invitation.md)
+[**InvitationResponse**](InvitationResponse.md)
 
 
 ## `deleteInvitation`
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Pagination**](Pagination.md)
+[**InvitationsResponse**](InvitationsResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

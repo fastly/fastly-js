@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _Timestamps = _interopRequireDefault(require("../model/Timestamps"));
+var _ServerResponse = _interopRequireDefault(require("../model/ServerResponse"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -51,7 +51,7 @@ var ServerApi = /*#__PURE__*/function () {
    * @param {String} [options.override_host='null'] - The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
    * @param {Number} [options.port=80] - Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
    * @param {Number} [options.weight=100] - Weight (`1-100`) used to load balance this server against others.
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServerResponse} and HTTP response
    */
 
 
@@ -88,7 +88,7 @@ var ServerApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _Timestamps["default"];
+      var returnType = _ServerResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/pool/{pool_id}/server', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -103,7 +103,7 @@ var ServerApi = /*#__PURE__*/function () {
      * @param {String} [options.override_host='null'] - The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
      * @param {Number} [options.port=80] - Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
      * @param {Number} [options.weight=100] - Weight (`1-100`) used to load balance this server against others.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServerResponse}
      */
 
   }, {
@@ -180,7 +180,7 @@ var ServerApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {String} options.pool_id
      * @param {String} options.server_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServerResponse} and HTTP response
      */
 
   }, {
@@ -214,7 +214,7 @@ var ServerApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _Timestamps["default"];
+      var returnType = _ServerResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/pool/{pool_id}/server/{server_id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -223,7 +223,7 @@ var ServerApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {String} options.pool_id
      * @param {String} options.server_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServerResponse}
      */
 
   }, {
@@ -239,7 +239,7 @@ var ServerApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {String} options.pool_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Timestamps>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ServerResponse>} and HTTP response
      */
 
   }, {
@@ -267,7 +267,7 @@ var ServerApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [_Timestamps["default"]];
+      var returnType = [_ServerResponse["default"]];
       return this.apiClient.callApi('/service/{service_id}/pool/{pool_id}/servers', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -275,7 +275,7 @@ var ServerApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {String} options.pool_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Timestamps>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ServerResponse>}
      */
 
   }, {
@@ -299,7 +299,7 @@ var ServerApi = /*#__PURE__*/function () {
      * @param {String} [options.override_host='null'] - The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
      * @param {Number} [options.port=80] - Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
      * @param {Number} [options.weight=100] - Weight (`1-100`) used to load balance this server against others.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServerResponse} and HTTP response
      */
 
   }, {
@@ -341,7 +341,7 @@ var ServerApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _Timestamps["default"];
+      var returnType = _ServerResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/pool/{pool_id}/server/{server_id}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -357,7 +357,7 @@ var ServerApi = /*#__PURE__*/function () {
      * @param {String} [options.override_host='null'] - The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
      * @param {Number} [options.port=80] - Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
      * @param {Number} [options.weight=100] - Weight (`1-100`) used to load balance this server against others.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServerResponse}
      */
 
   }, {

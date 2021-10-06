@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogOpenstack`
 
 ```javascript
-createLogOpenstack({ service_id, version_id, [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format] })
+createLogOpenstack({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [access_key, ], [bucket_name, ], [path, ], [public_key, ], [url, ], [user] })
 ```
 
 Create a openstack for a particular service and version.
@@ -30,11 +30,22 @@ Create a openstack for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format_version: new Fastly.LoggingFormatVersion(),
+  name: "name_example",
+  placement: new Fastly.LoggingPlacement(),
+  response_condition: "response_condition_example",
   compression_codec: new Fastly.LoggingCompressionCodec(),
   gzip_level: 0,
   message_type: new Fastly.LoggingMessageType(),
   period: 3600,
   timestamp_format: "timestamp_format_example",
+  access_key: "access_key_example",
+  bucket_name: "bucket_name_example",
+  path: "'null'",
+  public_key: "'null'",
+  url: "url_example",
+  user: "user_example",
 };
 
 apiInstance.createLogOpenstack(options)
@@ -52,15 +63,26 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
+**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**name** | **String** | The name for the real-time logging configuration. | [optional]
+**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
+**response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
 **compression_codec** | [**LoggingCompressionCodec**](../Model/LoggingCompressionCodec.md) |  | [optional]
 **gzip_level** | **Number** | What level of gzip encoding to have when sending logs (default &#x60;0&#x60;, no compression). If an explicit non-zero value is set, then &#x60;compression_codec&#x60; will default to \\\&quot;gzip.\\\&quot; Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error. | [optional] [default to 0]
 **message_type** | [**LoggingMessageType**](../Model/LoggingMessageType.md) |  | [optional]
 **period** | **Number** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [default to 3600]
 **timestamp_format** | **String** | Date and time in ISO 8601 format. | [optional]
+**access_key** | **String** | Your OpenStack account access key. | [optional]
+**bucket_name** | **String** | The name of your OpenStack container. | [optional]
+**path** | **String** | The path to upload logs to. | [optional] [default to &#39;null&#39;]
+**public_key** | **String** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional] [default to &#39;null&#39;]
+**url** | **String** | Your OpenStack auth url. | [optional]
+**user** | **String** | The username for your OpenStack account. | [optional]
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**LoggingOpenstackResponse**](LoggingOpenstackResponse.md)
 
 
 ## `deleteLogOpenstack`
@@ -138,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**LoggingOpenstackResponse**](LoggingOpenstackResponse.md)
 
 
 ## `listLogOpenstack`
@@ -175,13 +197,13 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[ServiceIdAndVersion]**](ServiceIdAndVersion.md)
+[**[LoggingOpenstackResponse]**](LoggingOpenstackResponse.md)
 
 
 ## `updateLogOpenstack`
 
 ```javascript
-updateLogOpenstack({ service_id, version_id, logging_openstack_name, [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format] })
+updateLogOpenstack({ service_id, version_id, logging_openstack_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [access_key, ], [bucket_name, ], [path, ], [public_key, ], [url, ], [user] })
 ```
 
 Update the openstack for a particular service and version.
@@ -193,11 +215,22 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   logging_openstack_name: "logging_openstack_name_example", // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format_version: new Fastly.LoggingFormatVersion(),
+  name: "name_example",
+  placement: new Fastly.LoggingPlacement(),
+  response_condition: "response_condition_example",
   compression_codec: new Fastly.LoggingCompressionCodec(),
   gzip_level: 0,
   message_type: new Fastly.LoggingMessageType(),
   period: 3600,
   timestamp_format: "timestamp_format_example",
+  access_key: "access_key_example",
+  bucket_name: "bucket_name_example",
+  path: "'null'",
+  public_key: "'null'",
+  url: "url_example",
+  user: "user_example",
 };
 
 apiInstance.updateLogOpenstack(options)
@@ -216,15 +249,26 @@ Name | Type | Description  | Notes
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
 **logging_openstack_name** | **String** |  |
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
+**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**name** | **String** | The name for the real-time logging configuration. | [optional]
+**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
+**response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
 **compression_codec** | [**LoggingCompressionCodec**](../Model/LoggingCompressionCodec.md) |  | [optional]
 **gzip_level** | **Number** | What level of gzip encoding to have when sending logs (default &#x60;0&#x60;, no compression). If an explicit non-zero value is set, then &#x60;compression_codec&#x60; will default to \\\&quot;gzip.\\\&quot; Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error. | [optional] [default to 0]
 **message_type** | [**LoggingMessageType**](../Model/LoggingMessageType.md) |  | [optional]
 **period** | **Number** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [default to 3600]
 **timestamp_format** | **String** | Date and time in ISO 8601 format. | [optional]
+**access_key** | **String** | Your OpenStack account access key. | [optional]
+**bucket_name** | **String** | The name of your OpenStack container. | [optional]
+**path** | **String** | The path to upload logs to. | [optional] [default to &#39;null&#39;]
+**public_key** | **String** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional] [default to &#39;null&#39;]
+**url** | **String** | Your OpenStack auth url. | [optional]
+**user** | **String** | The username for your OpenStack account. | [optional]
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**LoggingOpenstackResponse**](LoggingOpenstackResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

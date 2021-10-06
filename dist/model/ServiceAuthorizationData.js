@@ -7,8 +7,6 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _RelationshipService = _interopRequireDefault(require("./RelationshipService"));
-
 var _ServiceAuthorizationDataAttributes = _interopRequireDefault(require("./ServiceAuthorizationDataAttributes"));
 
 var _TypeServiceAuthorization = _interopRequireDefault(require("./TypeServiceAuthorization"));
@@ -65,7 +63,7 @@ var ServiceAuthorizationData = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('relationships')) {
-          obj['relationships'] = _RelationshipService["default"].constructFromObject(data['relationships']);
+          obj['relationships'] = _ApiClient["default"].convertToType(data['relationships'], Object);
         }
 
         if (data.hasOwnProperty('type')) {
@@ -86,7 +84,7 @@ var ServiceAuthorizationData = /*#__PURE__*/function () {
 
 ServiceAuthorizationData.prototype['attributes'] = undefined;
 /**
- * @member {module:model/RelationshipService} relationships
+ * @member {Object} relationships
  */
 
 ServiceAuthorizationData.prototype['relationships'] = undefined;

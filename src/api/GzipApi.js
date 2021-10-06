@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import Timestamps from '../model/Timestamps';
+import GzipResponse from '../model/GzipResponse';
 
 /**
 * Gzip service.
@@ -47,7 +47,7 @@ export default class GzipApi {
      * @param {String} [options.content_types] - Space-separated list of content types to compress. If you omit this field a default list will be used.
      * @param {String} [options.extensions] - Space-separated list of file extensions to compress. If you omit this field a default list will be used.
      * @param {String} [options.name] - Name of the gzip configuration.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GzipResponse} and HTTP response
      */
     createGzipConfigWithHttpInfo(options = {}) {
       let postBody = null;
@@ -78,7 +78,7 @@ export default class GzipApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = GzipResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/gzip', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -95,7 +95,7 @@ export default class GzipApi {
      * @param {String} [options.content_types] - Space-separated list of content types to compress. If you omit this field a default list will be used.
      * @param {String} [options.extensions] - Space-separated list of file extensions to compress. If you omit this field a default list will be used.
      * @param {String} [options.name] - Name of the gzip configuration.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GzipResponse}
      */
     createGzipConfig(options = {}) {
       return this.createGzipConfigWithHttpInfo(options)
@@ -171,7 +171,7 @@ export default class GzipApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.gzip_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GzipResponse} and HTTP response
      */
     getGzipConfigsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -203,7 +203,7 @@ export default class GzipApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = GzipResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/gzip/{gzip_name}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -217,7 +217,7 @@ export default class GzipApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.gzip_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GzipResponse}
      */
     getGzipConfigs(options = {}) {
       return this.getGzipConfigsWithHttpInfo(options)
@@ -231,7 +231,7 @@ export default class GzipApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Timestamps>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/GzipResponse>} and HTTP response
      */
     listGzipConfigsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -258,7 +258,7 @@ export default class GzipApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [Timestamps];
+      let returnType = [GzipResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/gzip', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -271,7 +271,7 @@ export default class GzipApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Timestamps>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/GzipResponse>}
      */
     listGzipConfigs(options = {}) {
       return this.listGzipConfigsWithHttpInfo(options)
@@ -290,7 +290,7 @@ export default class GzipApi {
      * @param {String} [options.content_types] - Space-separated list of content types to compress. If you omit this field a default list will be used.
      * @param {String} [options.extensions] - Space-separated list of file extensions to compress. If you omit this field a default list will be used.
      * @param {String} [options.name] - Name of the gzip configuration.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GzipResponse} and HTTP response
      */
     updateGzipConfigWithHttpInfo(options = {}) {
       let postBody = null;
@@ -326,7 +326,7 @@ export default class GzipApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = GzipResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/gzip/{gzip_name}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -344,7 +344,7 @@ export default class GzipApi {
      * @param {String} [options.content_types] - Space-separated list of content types to compress. If you omit this field a default list will be used.
      * @param {String} [options.extensions] - Space-separated list of file extensions to compress. If you omit this field a default list will be used.
      * @param {String} [options.name] - Name of the gzip configuration.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GzipResponse}
      */
     updateGzipConfig(options = {}) {
       return this.updateGzipConfigWithHttpInfo(options)

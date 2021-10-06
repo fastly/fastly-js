@@ -7,11 +7,11 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _Pagination = _interopRequireDefault(require("../model/Pagination"));
-
 var _TlsSubscription = _interopRequireDefault(require("../model/TlsSubscription"));
 
 var _TlsSubscriptionResponse = _interopRequireDefault(require("../model/TlsSubscriptionResponse"));
+
+var _TlsSubscriptionsResponse = _interopRequireDefault(require("../model/TlsSubscriptionsResponse"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -186,7 +186,7 @@ var TlsSubscriptionsApi = /*#__PURE__*/function () {
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Pagination} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsSubscriptionsResponse} and HTTP response
      */
 
   }, {
@@ -208,7 +208,7 @@ var TlsSubscriptionsApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/vnd.api+json'];
-      var returnType = _Pagination["default"];
+      var returnType = _TlsSubscriptionsResponse["default"];
       return this.apiClient.callApi('/tls/subscriptions', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -220,7 +220,7 @@ var TlsSubscriptionsApi = /*#__PURE__*/function () {
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Pagination}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsSubscriptionsResponse}
      */
 
   }, {

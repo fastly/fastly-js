@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
+import LoggingDatadogResponse from '../model/LoggingDatadogResponse';
 import LoggingFormatVersion from '../model/LoggingFormatVersion';
 import LoggingPlacement from '../model/LoggingPlacement';
-import ServiceIdAndVersion from '../model/ServiceIdAndVersion';
 
 /**
 * LoggingDatadog service.
@@ -45,12 +45,14 @@ export default class LoggingDatadogApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest. 
      * @param {module:model/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+     * @param {module:model/String} [options.region='US'] - The region that log data will be sent to.
+     * @param {String} [options.token] - The API key from your Datadog account. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingDatadogResponse} and HTTP response
      */
     createLogDatadogWithHttpInfo(options = {}) {
       let postBody = null;
@@ -76,13 +78,15 @@ export default class LoggingDatadogApi {
         'format_version': options['format_version'],
         'name': options['name'],
         'placement': options['placement'],
-        'response_condition': options['response_condition']
+        'response_condition': options['response_condition'],
+        'region': options['region'],
+        'token': options['token']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ServiceIdAndVersion;
+      let returnType = LoggingDatadogResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/datadog', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -95,12 +99,14 @@ export default class LoggingDatadogApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest. 
      * @param {module:model/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @param {module:model/String} [options.region='US'] - The region that log data will be sent to.
+     * @param {String} [options.token] - The API key from your Datadog account. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingDatadogResponse}
      */
     createLogDatadog(options = {}) {
       return this.createLogDatadogWithHttpInfo(options)
@@ -176,7 +182,7 @@ export default class LoggingDatadogApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_datadog_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingDatadogResponse} and HTTP response
      */
     getLogDatadogWithHttpInfo(options = {}) {
       let postBody = null;
@@ -208,7 +214,7 @@ export default class LoggingDatadogApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = ServiceIdAndVersion;
+      let returnType = LoggingDatadogResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/datadog/{logging_datadog_name}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -222,7 +228,7 @@ export default class LoggingDatadogApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_datadog_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingDatadogResponse}
      */
     getLogDatadog(options = {}) {
       return this.getLogDatadogWithHttpInfo(options)
@@ -236,7 +242,7 @@ export default class LoggingDatadogApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ServiceIdAndVersion>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingDatadogResponse>} and HTTP response
      */
     listLogDatadogWithHttpInfo(options = {}) {
       let postBody = null;
@@ -263,7 +269,7 @@ export default class LoggingDatadogApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [ServiceIdAndVersion];
+      let returnType = [LoggingDatadogResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/datadog', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -276,7 +282,7 @@ export default class LoggingDatadogApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ServiceIdAndVersion>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingDatadogResponse>}
      */
     listLogDatadog(options = {}) {
       return this.listLogDatadogWithHttpInfo(options)
@@ -291,12 +297,14 @@ export default class LoggingDatadogApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_datadog_name
-     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest. 
      * @param {module:model/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+     * @param {module:model/String} [options.region='US'] - The region that log data will be sent to.
+     * @param {String} [options.token] - The API key from your Datadog account. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingDatadogResponse} and HTTP response
      */
     updateLogDatadogWithHttpInfo(options = {}) {
       let postBody = null;
@@ -327,13 +335,15 @@ export default class LoggingDatadogApi {
         'format_version': options['format_version'],
         'name': options['name'],
         'placement': options['placement'],
-        'response_condition': options['response_condition']
+        'response_condition': options['response_condition'],
+        'region': options['region'],
+        'token': options['token']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = ServiceIdAndVersion;
+      let returnType = LoggingDatadogResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/datadog/{logging_datadog_name}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -347,12 +357,14 @@ export default class LoggingDatadogApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_datadog_name
-     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest. 
      * @param {module:model/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @param {module:model/String} [options.region='US'] - The region that log data will be sent to.
+     * @param {String} [options.token] - The API key from your Datadog account. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingDatadogResponse}
      */
     updateLogDatadog(options = {}) {
       return this.updateLogDatadogWithHttpInfo(options)

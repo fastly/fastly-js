@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogSumologic`
 
 ```javascript
-createLogSumologic({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition] })
+createLogSumologic({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [message_type, ], [url] })
 ```
 
 Create a Sumologic for a particular service and version.
@@ -35,6 +35,8 @@ const options = {
   name: "name_example",
   placement: new Fastly.LoggingPlacement(),
   response_condition: "response_condition_example",
+  message_type: new Fastly.LoggingMessageType(),
+  url: "url_example",
 };
 
 apiInstance.createLogSumologic(options)
@@ -57,10 +59,12 @@ Name | Type | Description  | Notes
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
+**message_type** | [**LoggingMessageType**](../Model/LoggingMessageType.md) |  | [optional]
+**url** | **String** | The URL to post logs to. | [optional]
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**LoggingSumologicResponse**](LoggingSumologicResponse.md)
 
 
 ## `deleteLogSumologic`
@@ -138,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**LoggingSumologicResponse**](LoggingSumologicResponse.md)
 
 
 ## `listLogSumologic`
@@ -175,13 +179,13 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[ServiceIdAndVersion]**](ServiceIdAndVersion.md)
+[**[LoggingSumologicResponse]**](LoggingSumologicResponse.md)
 
 
 ## `updateLogSumologic`
 
 ```javascript
-updateLogSumologic({ service_id, version_id, logging_sumologic_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition] })
+updateLogSumologic({ service_id, version_id, logging_sumologic_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [message_type, ], [url] })
 ```
 
 Update the Sumologic for a particular service and version.
@@ -198,6 +202,8 @@ const options = {
   name: "name_example",
   placement: new Fastly.LoggingPlacement(),
   response_condition: "response_condition_example",
+  message_type: new Fastly.LoggingMessageType(),
+  url: "url_example",
 };
 
 apiInstance.updateLogSumologic(options)
@@ -221,10 +227,12 @@ Name | Type | Description  | Notes
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
+**message_type** | [**LoggingMessageType**](../Model/LoggingMessageType.md) |  | [optional]
+**url** | **String** | The URL to post logs to. | [optional]
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**LoggingSumologicResponse**](LoggingSumologicResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

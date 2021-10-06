@@ -13,7 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
-import Billing from '../model/Billing';
+import BillingEstimateResponse from '../model/BillingEstimateResponse';
+import BillingResponse from '../model/BillingResponse';
 
 /**
 * Billing service.
@@ -43,7 +44,7 @@ export default class BillingApi {
      * @param {Object} options
      * @param {String} options.month - 2-digit month.
      * @param {String} options.year - 4-digit year.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Billing} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BillingResponse} and HTTP response
      */
     getInvoiceWithHttpInfo(options = {}) {
       let postBody = null;
@@ -70,7 +71,7 @@ export default class BillingApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json', 'application/pdf', 'text/csv'];
-      let returnType = Billing;
+      let returnType = BillingResponse;
       return this.apiClient.callApi(
         '/billing/v2/year/{year}/month/{month}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -83,7 +84,7 @@ export default class BillingApi {
      * @param {Object} options
      * @param {String} options.month - 2-digit month.
      * @param {String} options.year - 4-digit year.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Billing}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BillingResponse}
      */
     getInvoice(options = {}) {
       return this.getInvoiceWithHttpInfo(options)
@@ -152,7 +153,7 @@ export default class BillingApi {
      * @param {String} options.customer_id
      * @param {String} [options.month] - 2-digit month.
      * @param {String} [options.year] - 4-digit year.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Billing} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BillingEstimateResponse} and HTTP response
      */
     getInvoiceMtdWithHttpInfo(options = {}) {
       let postBody = null;
@@ -176,7 +177,7 @@ export default class BillingApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Billing;
+      let returnType = BillingEstimateResponse;
       return this.apiClient.callApi(
         '/billing/v2/account_customers/{customer_id}/mtd_invoice', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -190,7 +191,7 @@ export default class BillingApi {
      * @param {String} options.customer_id
      * @param {String} [options.month] - 2-digit month.
      * @param {String} [options.year] - 4-digit year.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Billing}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BillingEstimateResponse}
      */
     getInvoiceMtd(options = {}) {
       return this.getInvoiceMtdWithHttpInfo(options)

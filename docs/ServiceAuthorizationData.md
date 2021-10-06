@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **attributes** | [**ServiceAuthorizationDataAttributes**](ServiceAuthorizationDataAttributes.md) |  | [optional] 
-**relationships** | [**RelationshipService**](RelationshipService.md) |  | [optional] 
+**relationships** | **Object** |  | [optional] 
 **type** | [**TypeServiceAuthorization**](TypeServiceAuthorization.md) |  | [optional] 
 
 

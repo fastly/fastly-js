@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _WafActiveRuleData = _interopRequireDefault(require("./WafActiveRuleData"));
+var _WafActiveRuleResponseData = _interopRequireDefault(require("./WafActiveRuleResponseData"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -57,7 +57,7 @@ var WafActiveRuleResponse = /*#__PURE__*/function () {
         obj = obj || new WafActiveRuleResponse();
 
         if (data.hasOwnProperty('data')) {
-          obj['data'] = _WafActiveRuleData["default"].constructFromObject(data['data']);
+          obj['data'] = _WafActiveRuleResponseData["default"].constructFromObject(data['data']);
         }
       }
 
@@ -68,7 +68,7 @@ var WafActiveRuleResponse = /*#__PURE__*/function () {
   return WafActiveRuleResponse;
 }();
 /**
- * @member {module:model/WafActiveRuleData} data
+ * @member {module:model/WafActiveRuleResponseData} data
  */
 
 

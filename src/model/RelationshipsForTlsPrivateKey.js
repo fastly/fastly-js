@@ -15,7 +15,6 @@ import ApiClient from '../ApiClient';
 import RelationshipCommonNameCommonName from './RelationshipCommonNameCommonName';
 import RelationshipTlsActivationTlsActivation from './RelationshipTlsActivationTlsActivation';
 import RelationshipTlsActivations from './RelationshipTlsActivations';
-import RelationshipTlsDomains from './RelationshipTlsDomains';
 
 /**
  * The RelationshipsForTlsPrivateKey model module.

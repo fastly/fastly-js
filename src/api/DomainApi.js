@@ -14,7 +14,7 @@
 
 import ApiClient from "../ApiClient";
 import DomainCheckItem from '../model/DomainCheckItem';
-import Timestamps from '../model/Timestamps';
+import DomainResponse from '../model/DomainResponse';
 
 /**
 * Domain service.
@@ -161,7 +161,7 @@ export default class DomainApi {
      * @param {Number} options.version_id
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - The name of the domain or domains associated with this service.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DomainResponse} and HTTP response
      */
     createDomainWithHttpInfo(options = {}) {
       let postBody = null;
@@ -190,7 +190,7 @@ export default class DomainApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = DomainResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/domain', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -205,7 +205,7 @@ export default class DomainApi {
      * @param {Number} options.version_id
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - The name of the domain or domains associated with this service.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DomainResponse}
      */
     createDomain(options = {}) {
       return this.createDomainWithHttpInfo(options)
@@ -281,7 +281,7 @@ export default class DomainApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.domain_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DomainResponse} and HTTP response
      */
     getDomainWithHttpInfo(options = {}) {
       let postBody = null;
@@ -313,7 +313,7 @@ export default class DomainApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = DomainResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/domain/{domain_name}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -327,7 +327,7 @@ export default class DomainApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.domain_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DomainResponse}
      */
     getDomain(options = {}) {
       return this.getDomainWithHttpInfo(options)
@@ -341,7 +341,7 @@ export default class DomainApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DomainResponse} and HTTP response
      */
     listDomainsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -368,7 +368,7 @@ export default class DomainApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = DomainResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/domain', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -381,7 +381,7 @@ export default class DomainApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DomainResponse}
      */
     listDomains(options = {}) {
       return this.listDomainsWithHttpInfo(options)
@@ -398,7 +398,7 @@ export default class DomainApi {
      * @param {String} options.domain_name
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - The name of the domain or domains associated with this service.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DomainResponse} and HTTP response
      */
     updateDomainWithHttpInfo(options = {}) {
       let postBody = null;
@@ -432,7 +432,7 @@ export default class DomainApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = DomainResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/domain/{domain_name}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -448,7 +448,7 @@ export default class DomainApi {
      * @param {String} options.domain_name
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - The name of the domain or domains associated with this service.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DomainResponse}
      */
     updateDomain(options = {}) {
       return this.updateDomainWithHttpInfo(options)

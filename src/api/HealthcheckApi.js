@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import Timestamps from '../model/Timestamps';
+import HealthcheckResponse from '../model/HealthcheckResponse';
 
 /**
 * Healthcheck service.
@@ -55,7 +55,7 @@ export default class HealthcheckApi {
      * @param {Number} [options.threshold] - How many healthchecks must succeed to be considered healthy.
      * @param {Number} [options.timeout] - Timeout in milliseconds.
      * @param {Number} [options.window] - The number of most recent healthcheck queries to keep for this healthcheck.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HealthcheckResponse} and HTTP response
      */
     createHealthcheckWithHttpInfo(options = {}) {
       let postBody = null;
@@ -94,7 +94,7 @@ export default class HealthcheckApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = HealthcheckResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/healthcheck', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -119,7 +119,7 @@ export default class HealthcheckApi {
      * @param {Number} [options.threshold] - How many healthchecks must succeed to be considered healthy.
      * @param {Number} [options.timeout] - Timeout in milliseconds.
      * @param {Number} [options.window] - The number of most recent healthcheck queries to keep for this healthcheck.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HealthcheckResponse}
      */
     createHealthcheck(options = {}) {
       return this.createHealthcheckWithHttpInfo(options)
@@ -195,7 +195,7 @@ export default class HealthcheckApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.healthcheck_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HealthcheckResponse} and HTTP response
      */
     getHealthcheckWithHttpInfo(options = {}) {
       let postBody = null;
@@ -227,7 +227,7 @@ export default class HealthcheckApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = HealthcheckResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/healthcheck/{healthcheck_name}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -241,7 +241,7 @@ export default class HealthcheckApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.healthcheck_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HealthcheckResponse}
      */
     getHealthcheck(options = {}) {
       return this.getHealthcheckWithHttpInfo(options)
@@ -255,7 +255,7 @@ export default class HealthcheckApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Timestamps>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/HealthcheckResponse>} and HTTP response
      */
     listHealthchecksWithHttpInfo(options = {}) {
       let postBody = null;
@@ -282,7 +282,7 @@ export default class HealthcheckApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [Timestamps];
+      let returnType = [HealthcheckResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/healthcheck', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -295,7 +295,7 @@ export default class HealthcheckApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Timestamps>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/HealthcheckResponse>}
      */
     listHealthchecks(options = {}) {
       return this.listHealthchecksWithHttpInfo(options)
@@ -322,7 +322,7 @@ export default class HealthcheckApi {
      * @param {Number} [options.threshold] - How many healthchecks must succeed to be considered healthy.
      * @param {Number} [options.timeout] - Timeout in milliseconds.
      * @param {Number} [options.window] - The number of most recent healthcheck queries to keep for this healthcheck.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HealthcheckResponse} and HTTP response
      */
     updateHealthcheckWithHttpInfo(options = {}) {
       let postBody = null;
@@ -366,7 +366,7 @@ export default class HealthcheckApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = HealthcheckResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/healthcheck/{healthcheck_name}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -392,7 +392,7 @@ export default class HealthcheckApi {
      * @param {Number} [options.threshold] - How many healthchecks must succeed to be considered healthy.
      * @param {Number} [options.timeout] - Timeout in milliseconds.
      * @param {Number} [options.window] - The number of most recent healthcheck queries to keep for this healthcheck.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HealthcheckResponse}
      */
     updateHealthcheck(options = {}) {
       return this.updateHealthcheckWithHttpInfo(options)

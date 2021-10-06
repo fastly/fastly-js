@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
-import Pagination from '../model/Pagination';
 import TlsPrivateKey from '../model/TlsPrivateKey';
 import TlsPrivateKeyResponse from '../model/TlsPrivateKeyResponse';
+import TlsPrivateKeysResponse from '../model/TlsPrivateKeysResponse';
 
 /**
 * TlsPrivateKeys service.
@@ -182,7 +182,7 @@ export default class TlsPrivateKeysApi {
      * @param {String} [options.filter_in_use] - Limit the returned keys to those without any matching TLS certificates. The only valid value is false.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Pagination} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsPrivateKeysResponse} and HTTP response
      */
     listTlsKeysWithHttpInfo(options = {}) {
       let postBody = null;
@@ -202,7 +202,7 @@ export default class TlsPrivateKeysApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/vnd.api+json'];
-      let returnType = Pagination;
+      let returnType = TlsPrivateKeysResponse;
       return this.apiClient.callApi(
         '/tls/private_keys', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -216,7 +216,7 @@ export default class TlsPrivateKeysApi {
      * @param {String} [options.filter_in_use] - Limit the returned keys to those without any matching TLS certificates. The only valid value is false.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Pagination}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsPrivateKeysResponse}
      */
     listTlsKeys(options = {}) {
       return this.listTlsKeysWithHttpInfo(options)

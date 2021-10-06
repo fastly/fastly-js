@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _ServiceAuthorizationData = _interopRequireDefault(require("./ServiceAuthorizationData"));
+var _ServiceAuthorizationResponseData = _interopRequireDefault(require("./ServiceAuthorizationResponseData"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -57,7 +57,7 @@ var ServiceAuthorizationResponse = /*#__PURE__*/function () {
         obj = obj || new ServiceAuthorizationResponse();
 
         if (data.hasOwnProperty('data')) {
-          obj['data'] = _ServiceAuthorizationData["default"].constructFromObject(data['data']);
+          obj['data'] = _ServiceAuthorizationResponseData["default"].constructFromObject(data['data']);
         }
       }
 
@@ -68,7 +68,7 @@ var ServiceAuthorizationResponse = /*#__PURE__*/function () {
   return ServiceAuthorizationResponse;
 }();
 /**
- * @member {module:model/ServiceAuthorizationData} data
+ * @member {module:model/ServiceAuthorizationResponseData} data
  */
 
 

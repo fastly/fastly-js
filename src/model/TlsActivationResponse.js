@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import TlsActivationData from './TlsActivationData';
+import TlsActivationResponseData from './TlsActivationResponseData';
 
 /**
  * The TlsActivationResponse model module.
@@ -48,7 +48,7 @@ class TlsActivationResponse {
             obj = obj || new TlsActivationResponse();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = TlsActivationData.constructFromObject(data['data']);
+                obj['data'] = TlsActivationResponseData.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class TlsActivationResponse {
 }
 
 /**
- * @member {module:model/TlsActivationData} data
+ * @member {module:model/TlsActivationResponseData} data
  */
 TlsActivationResponse.prototype['data'] = undefined;
 

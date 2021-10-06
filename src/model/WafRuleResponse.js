@@ -13,7 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import IncludedWithWafRuleItem from './IncludedWithWafRuleItem';
-import WafRule from './WafRule';
+import WafRuleResponseData from './WafRuleResponseData';
 
 /**
  * The WafRuleResponse model module.
@@ -49,7 +49,7 @@ class WafRuleResponse {
             obj = obj || new WafRuleResponse();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = WafRule.constructFromObject(data['data']);
+                obj['data'] = WafRuleResponseData.constructFromObject(data['data']);
             }
             if (data.hasOwnProperty('included')) {
                 obj['included'] = ApiClient.convertToType(data['included'], [IncludedWithWafRuleItem]);
@@ -62,7 +62,7 @@ class WafRuleResponse {
 }
 
 /**
- * @member {module:model/WafRule} data
+ * @member {module:model/WafRuleResponseData} data
  */
 WafRuleResponse.prototype['data'] = undefined;
 

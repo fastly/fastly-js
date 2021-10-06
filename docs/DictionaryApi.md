@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**DictionaryResponse**](DictionaryResponse.md)
 
 
 ## `deleteDictionary`
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**DictionaryResponse**](DictionaryResponse.md)
 
 
 ## `listDictionaries`
@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[ServiceIdAndVersion]**](ServiceIdAndVersion.md)
+[**[DictionaryResponse]**](DictionaryResponse.md)
 
 
 ## `updateDictionary`
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**DictionaryResponse**](DictionaryResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

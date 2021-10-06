@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Pagination**](Pagination.md)
+[**TlsCertificatesResponse**](TlsCertificatesResponse.md)
 
 
 ## `updateTlsCert`

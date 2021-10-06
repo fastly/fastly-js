@@ -7,7 +7,11 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _ServiceIdAndVersion = _interopRequireDefault(require("../model/ServiceIdAndVersion"));
+var _LoggingFormatVersion = _interopRequireDefault(require("../model/LoggingFormatVersion"));
+
+var _LoggingPapertrailResponse = _interopRequireDefault(require("../model/LoggingPapertrailResponse"));
+
+var _LoggingPlacement = _interopRequireDefault(require("../model/LoggingPlacement"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -44,9 +48,14 @@ var LoggingPapertrailApi = /*#__PURE__*/function () {
    * @param {Object} options
    * @param {String} options.service_id
    * @param {Number} options.version_id
+   * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+   * @param {module:model/LoggingFormatVersion} [options.format_version]
+   * @param {String} [options.name] - The name for the real-time logging configuration.
+   * @param {module:model/LoggingPlacement} [options.placement]
+   * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
    * @param {String} [options.address] - A hostname or IPv4 address.
    * @param {Number} [options.port=514] - The port number.
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingPapertrailResponse} and HTTP response
    */
 
 
@@ -72,13 +81,18 @@ var LoggingPapertrailApi = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
         'address': options['address'],
         'port': options['port']
       };
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _ServiceIdAndVersion["default"];
+      var returnType = _LoggingPapertrailResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/logging/papertrail', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -86,9 +100,14 @@ var LoggingPapertrailApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.address] - A hostname or IPv4 address.
      * @param {Number} [options.port=514] - The port number.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingPapertrailResponse}
      */
 
   }, {
@@ -165,7 +184,7 @@ var LoggingPapertrailApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_papertrail_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingPapertrailResponse} and HTTP response
      */
 
   }, {
@@ -199,7 +218,7 @@ var LoggingPapertrailApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _ServiceIdAndVersion["default"];
+      var returnType = _LoggingPapertrailResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/logging/papertrail/{logging_papertrail_name}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -208,7 +227,7 @@ var LoggingPapertrailApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_papertrail_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingPapertrailResponse}
      */
 
   }, {
@@ -224,7 +243,7 @@ var LoggingPapertrailApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ServiceIdAndVersion>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingPapertrailResponse>} and HTTP response
      */
 
   }, {
@@ -252,7 +271,7 @@ var LoggingPapertrailApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [_ServiceIdAndVersion["default"]];
+      var returnType = [_LoggingPapertrailResponse["default"]];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/logging/papertrail', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -260,7 +279,7 @@ var LoggingPapertrailApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ServiceIdAndVersion>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingPapertrailResponse>}
      */
 
   }, {
@@ -277,9 +296,14 @@ var LoggingPapertrailApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_papertrail_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.address] - A hostname or IPv4 address.
      * @param {Number} [options.port=514] - The port number.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingPapertrailResponse} and HTTP response
      */
 
   }, {
@@ -310,13 +334,18 @@ var LoggingPapertrailApi = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {
+        'format': options['format'],
+        'format_version': options['format_version'],
+        'name': options['name'],
+        'placement': options['placement'],
+        'response_condition': options['response_condition'],
         'address': options['address'],
         'port': options['port']
       };
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _ServiceIdAndVersion["default"];
+      var returnType = _LoggingPapertrailResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/logging/papertrail/{logging_papertrail_name}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -325,9 +354,14 @@ var LoggingPapertrailApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_papertrail_name
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.name] - The name for the real-time logging configuration.
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.address] - A hostname or IPv4 address.
      * @param {Number} [options.port=514] - The port number.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingPapertrailResponse}
      */
 
   }, {

@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
-import Pagination from '../model/Pagination';
 import WafFirewallVersion from '../model/WafFirewallVersion';
 import WafFirewallVersionResponse from '../model/WafFirewallVersionResponse';
+import WafFirewallVersionsResponse from '../model/WafFirewallVersionsResponse';
 
 /**
 * WafFirewallVersions service.
@@ -261,7 +261,7 @@ export default class WafFirewallVersionsApi {
      * @param {String} [options.include] - Include relationships. Optional.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Pagination} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafFirewallVersionsResponse} and HTTP response
      */
     listWafFirewallVersionsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -286,7 +286,7 @@ export default class WafFirewallVersionsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/vnd.api+json'];
-      let returnType = Pagination;
+      let returnType = WafFirewallVersionsResponse;
       return this.apiClient.callApi(
         '/waf/firewalls/{firewall_id}/versions', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -301,7 +301,7 @@ export default class WafFirewallVersionsApi {
      * @param {String} [options.include] - Include relationships. Optional.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Pagination}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafFirewallVersionsResponse}
      */
     listWafFirewallVersions(options = {}) {
       return this.listWafFirewallVersionsWithHttpInfo(options)

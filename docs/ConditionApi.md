@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**ConditionResponse**](ConditionResponse.md)
 
 
 ## `deleteCondition`
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**ConditionResponse**](ConditionResponse.md)
 
 
 ## `listConditions`
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[Timestamps]**](Timestamps.md)
+[**[ConditionResponse]**](ConditionResponse.md)
 
 
 ## `updateCondition`
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**ConditionResponse**](ConditionResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

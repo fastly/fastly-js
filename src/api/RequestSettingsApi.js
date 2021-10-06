@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import Timestamps from '../model/Timestamps';
+import RequestSettingsResponse from '../model/RequestSettingsResponse';
 
 /**
 * RequestSettings service.
@@ -43,7 +43,7 @@ export default class RequestSettingsApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RequestSettingsResponse} and HTTP response
      */
     createRequestSettingsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -70,7 +70,7 @@ export default class RequestSettingsApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = RequestSettingsResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/request_settings', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -83,7 +83,7 @@ export default class RequestSettingsApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RequestSettingsResponse}
      */
     createRequestSettings(options = {}) {
       return this.createRequestSettingsWithHttpInfo(options)
@@ -159,7 +159,7 @@ export default class RequestSettingsApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.request_settings_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RequestSettingsResponse} and HTTP response
      */
     getRequestSettingsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -191,7 +191,7 @@ export default class RequestSettingsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = RequestSettingsResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/request_settings/{request_settings_name}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -205,7 +205,7 @@ export default class RequestSettingsApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.request_settings_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RequestSettingsResponse}
      */
     getRequestSettings(options = {}) {
       return this.getRequestSettingsWithHttpInfo(options)
@@ -219,7 +219,7 @@ export default class RequestSettingsApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Timestamps>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/RequestSettingsResponse>} and HTTP response
      */
     listRequestSettingsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -246,7 +246,7 @@ export default class RequestSettingsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [Timestamps];
+      let returnType = [RequestSettingsResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/request_settings', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -259,7 +259,7 @@ export default class RequestSettingsApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Timestamps>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/RequestSettingsResponse>}
      */
     listRequestSettings(options = {}) {
       return this.listRequestSettingsWithHttpInfo(options)
@@ -286,7 +286,7 @@ export default class RequestSettingsApi {
      * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
      * @param {Number} [options.timer_support] - Injects the X-Timer info into the request for viewing origin fetch durations.
      * @param {module:model/String} [options.xff] - Short for X-Forwarded-For.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RequestSettingsResponse} and HTTP response
      */
     updateRequestSettingsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -330,7 +330,7 @@ export default class RequestSettingsApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = Timestamps;
+      let returnType = RequestSettingsResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/request_settings/{request_settings_name}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -356,7 +356,7 @@ export default class RequestSettingsApi {
      * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
      * @param {Number} [options.timer_support] - Injects the X-Timer info into the request for viewing origin fetch durations.
      * @param {module:model/String} [options.xff] - Short for X-Forwarded-For.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RequestSettingsResponse}
      */
     updateRequestSettings(options = {}) {
       return this.updateRequestSettingsWithHttpInfo(options)

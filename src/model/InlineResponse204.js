@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import ServiceAuthorizationData from './ServiceAuthorizationData';
+import ServiceAuthorizationResponseData from './ServiceAuthorizationResponseData';
 
 /**
  * The InlineResponse204 model module.
@@ -48,7 +48,7 @@ class InlineResponse204 {
             obj = obj || new InlineResponse204();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ServiceAuthorizationData]);
+                obj['data'] = ApiClient.convertToType(data['data'], [ServiceAuthorizationResponseData]);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class InlineResponse204 {
 }
 
 /**
- * @member {Array.<module:model/ServiceAuthorizationData>} data
+ * @member {Array.<module:model/ServiceAuthorizationResponseData>} data
  */
 InlineResponse204.prototype['data'] = undefined;
 

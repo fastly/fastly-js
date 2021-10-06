@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**DirectorBackend**](DirectorBackend.md)
 
 
 ## `deleteDirectorBackend`
@@ -134,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**DirectorBackend**](DirectorBackend.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

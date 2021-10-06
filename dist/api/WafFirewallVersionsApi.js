@@ -7,11 +7,11 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _Pagination = _interopRequireDefault(require("../model/Pagination"));
-
 var _WafFirewallVersion = _interopRequireDefault(require("../model/WafFirewallVersion"));
 
 var _WafFirewallVersionResponse = _interopRequireDefault(require("../model/WafFirewallVersionResponse"));
+
+var _WafFirewallVersionsResponse = _interopRequireDefault(require("../model/WafFirewallVersionsResponse"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -257,7 +257,7 @@ var WafFirewallVersionsApi = /*#__PURE__*/function () {
      * @param {String} [options.include] - Include relationships. Optional.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Pagination} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafFirewallVersionsResponse} and HTTP response
      */
 
   }, {
@@ -283,7 +283,7 @@ var WafFirewallVersionsApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/vnd.api+json'];
-      var returnType = _Pagination["default"];
+      var returnType = _WafFirewallVersionsResponse["default"];
       return this.apiClient.callApi('/waf/firewalls/{firewall_id}/versions', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -293,7 +293,7 @@ var WafFirewallVersionsApi = /*#__PURE__*/function () {
      * @param {String} [options.include] - Include relationships. Optional.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Pagination}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafFirewallVersionsResponse}
      */
 
   }, {

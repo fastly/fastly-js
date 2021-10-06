@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _TlsCertificateData = _interopRequireDefault(require("./TlsCertificateData"));
+var _TlsCertificateResponseData = _interopRequireDefault(require("./TlsCertificateResponseData"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -57,7 +57,7 @@ var TlsCertificateResponse = /*#__PURE__*/function () {
         obj = obj || new TlsCertificateResponse();
 
         if (data.hasOwnProperty('data')) {
-          obj['data'] = _TlsCertificateData["default"].constructFromObject(data['data']);
+          obj['data'] = _TlsCertificateResponseData["default"].constructFromObject(data['data']);
         }
       }
 
@@ -68,7 +68,7 @@ var TlsCertificateResponse = /*#__PURE__*/function () {
   return TlsCertificateResponse;
 }();
 /**
- * @member {module:model/TlsCertificateData} data
+ * @member {module:model/TlsCertificateResponseData} data
  */
 
 

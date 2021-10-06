@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _BillingAddress = _interopRequireDefault(require("../model/BillingAddress"));
+var _BillingAddressResponse = _interopRequireDefault(require("../model/BillingAddressResponse"));
 
 var _InlineObject = _interopRequireDefault(require("../model/InlineObject"));
 
@@ -48,7 +48,7 @@ var BillingAddressApi = /*#__PURE__*/function () {
    * @param {Object} options
    * @param {String} options.customer_id
    * @param {module:model/InlineObject} [options.inline_object]
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BillingAddress} and HTTP response
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BillingAddressResponse} and HTTP response
    */
 
 
@@ -71,7 +71,7 @@ var BillingAddressApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = ['application/vnd.api+json'];
       var accepts = ['application/vnd.api+json'];
-      var returnType = _BillingAddress["default"];
+      var returnType = _BillingAddressResponse["default"];
       return this.apiClient.callApi('/customer/{customer_id}/billing_address', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -79,7 +79,7 @@ var BillingAddressApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.customer_id
      * @param {module:model/InlineObject} [options.inline_object]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BillingAddress}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BillingAddressResponse}
      */
 
   }, {
@@ -138,7 +138,7 @@ var BillingAddressApi = /*#__PURE__*/function () {
      * Get a customer's billing address.
      * @param {Object} options
      * @param {String} options.customer_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BillingAddress} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BillingAddressResponse} and HTTP response
      */
 
   }, {
@@ -160,14 +160,14 @@ var BillingAddressApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/vnd.api+json'];
-      var returnType = _BillingAddress["default"];
+      var returnType = _BillingAddressResponse["default"];
       return this.apiClient.callApi('/customer/{customer_id}/billing_address', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
      * Get a customer's billing address.
      * @param {Object} options
      * @param {String} options.customer_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BillingAddress}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BillingAddressResponse}
      */
 
   }, {
@@ -183,7 +183,7 @@ var BillingAddressApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.customer_id
      * @param {module:model/InlineObject1} [options.inline_object1]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BillingAddress} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BillingAddressResponse} and HTTP response
      */
 
   }, {
@@ -205,7 +205,7 @@ var BillingAddressApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = ['application/vnd.api+json'];
       var accepts = ['application/vnd.api+json'];
-      var returnType = _BillingAddress["default"];
+      var returnType = _BillingAddressResponse["default"];
       return this.apiClient.callApi('/customer/{customer_id}/billing_address', 'PATCH', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -213,7 +213,7 @@ var BillingAddressApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.customer_id
      * @param {module:model/InlineObject1} [options.inline_object1]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BillingAddress}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BillingAddressResponse}
      */
 
   }, {

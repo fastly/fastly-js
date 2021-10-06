@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _Timestamps = _interopRequireDefault(require("../model/Timestamps"));
+var _ConditionResponse = _interopRequireDefault(require("../model/ConditionResponse"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -49,7 +49,7 @@ var ConditionApi = /*#__PURE__*/function () {
    * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
    * @param {String} [options.statement] - A conditional expression in VCL used to determine if the condition is met.
    * @param {module:model/String} [options.type] - Type of the condition. Required.
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ConditionResponse} and HTTP response
    */
 
 
@@ -84,7 +84,7 @@ var ConditionApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _Timestamps["default"];
+      var returnType = _ConditionResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/condition', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -97,7 +97,7 @@ var ConditionApi = /*#__PURE__*/function () {
      * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
      * @param {String} [options.statement] - A conditional expression in VCL used to determine if the condition is met.
      * @param {module:model/String} [options.type] - Type of the condition. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ConditionResponse}
      */
 
   }, {
@@ -174,7 +174,7 @@ var ConditionApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.condition_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ConditionResponse} and HTTP response
      */
 
   }, {
@@ -208,7 +208,7 @@ var ConditionApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _Timestamps["default"];
+      var returnType = _ConditionResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/condition/{condition_name}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -217,7 +217,7 @@ var ConditionApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.condition_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ConditionResponse}
      */
 
   }, {
@@ -233,7 +233,7 @@ var ConditionApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Timestamps>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ConditionResponse>} and HTTP response
      */
 
   }, {
@@ -261,7 +261,7 @@ var ConditionApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [_Timestamps["default"]];
+      var returnType = [_ConditionResponse["default"]];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/condition', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -269,7 +269,7 @@ var ConditionApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Timestamps>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ConditionResponse>}
      */
 
   }, {
@@ -291,7 +291,7 @@ var ConditionApi = /*#__PURE__*/function () {
      * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
      * @param {String} [options.statement] - A conditional expression in VCL used to determine if the condition is met.
      * @param {module:model/String} [options.type] - Type of the condition. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ConditionResponse} and HTTP response
      */
 
   }, {
@@ -331,7 +331,7 @@ var ConditionApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _Timestamps["default"];
+      var returnType = _ConditionResponse["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/condition/{condition_name}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -345,7 +345,7 @@ var ConditionApi = /*#__PURE__*/function () {
      * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
      * @param {String} [options.statement] - A conditional expression in VCL used to determine if the condition is met.
      * @param {module:model/String} [options.type] - Type of the condition. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ConditionResponse}
      */
 
   }, {

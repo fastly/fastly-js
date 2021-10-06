@@ -5,8 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tls_certificate** | [**RelationshipTlsCertificateTlsCertificate**](RelationshipTlsCertificateTlsCertificate.md) |  | [optional] 
-**tls_configuration** | [**RelationshipTlsConfigurationTlsConfiguration**](RelationshipTlsConfigurationTlsConfiguration.md) |  | [optional] 
-**tls_domain** | [**RelationshipCommonNameCommonName**](RelationshipCommonNameCommonName.md) |  | [optional] 
 
 
 

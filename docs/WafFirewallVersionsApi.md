@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Pagination**](Pagination.md)
+[**WafFirewallVersionsResponse**](WafFirewallVersionsResponse.md)
 
 
 ## `updateWafFirewallVersion`

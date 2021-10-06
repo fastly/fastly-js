@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogNewrelic`
 
 ```javascript
-createLogNewrelic({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition] })
+createLogNewrelic({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [region, ], [token] })
 ```
 
 Create a New Relic Logs logging object for a particular service and version.
@@ -30,11 +30,13 @@ Create a New Relic Logs logging object for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format: null,
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
   placement: new Fastly.LoggingPlacement(),
   response_condition: "response_condition_example",
+  region: "'US'",
+  token: "token_example",
 };
 
 apiInstance.createLogNewrelic(options)
@@ -52,15 +54,17 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
+**format** | [**Object**](../Model/Object.md) | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest. | [optional]
 **format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
+**region** | **String** | The region to which to stream logs. | [optional] [default to &#39;US&#39;]
+**token** | **String** | The Insert API key from the Account page of your New Relic account. Required. | [optional]
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**LoggingNewrelicResponse**](LoggingNewrelicResponse.md)
 
 
 ## `deleteLogNewrelic`
@@ -138,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**LoggingNewrelicResponse**](LoggingNewrelicResponse.md)
 
 
 ## `listLogNewrelic`
@@ -175,13 +179,13 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[ServiceIdAndVersion]**](ServiceIdAndVersion.md)
+[**[LoggingNewrelicResponse]**](LoggingNewrelicResponse.md)
 
 
 ## `updateLogNewrelic`
 
 ```javascript
-updateLogNewrelic({ service_id, version_id, logging_newrelic_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition] })
+updateLogNewrelic({ service_id, version_id, logging_newrelic_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [region, ], [token] })
 ```
 
 Update a New Relic Logs logging object for a particular service and version.
@@ -193,11 +197,13 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   logging_newrelic_name: "logging_newrelic_name_example", // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format: null,
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
   placement: new Fastly.LoggingPlacement(),
   response_condition: "response_condition_example",
+  region: "'US'",
+  token: "token_example",
 };
 
 apiInstance.updateLogNewrelic(options)
@@ -216,15 +222,17 @@ Name | Type | Description  | Notes
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
 **logging_newrelic_name** | **String** |  |
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
+**format** | [**Object**](../Model/Object.md) | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest. | [optional]
 **format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
+**region** | **String** | The region to which to stream logs. | [optional] [default to &#39;US&#39;]
+**token** | **String** | The Insert API key from the Account page of your New Relic account. Required. | [optional]
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**LoggingNewrelicResponse**](LoggingNewrelicResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

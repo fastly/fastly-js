@@ -7,7 +7,9 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _Timestamps = _interopRequireDefault(require("../model/Timestamps"));
+var _CustomerResponse = _interopRequireDefault(require("../model/CustomerResponse"));
+
+var _SchemasUserResponse = _interopRequireDefault(require("../model/SchemasUserResponse"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -88,7 +90,7 @@ var CustomerApi = /*#__PURE__*/function () {
      * Get a specific customer.
      * @param {Object} options
      * @param {String} options.customer_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CustomerResponse} and HTTP response
      */
 
   }, {
@@ -110,14 +112,14 @@ var CustomerApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _Timestamps["default"];
+      var returnType = _CustomerResponse["default"];
       return this.apiClient.callApi('/customer/{customer_id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
      * Get a specific customer.
      * @param {Object} options
      * @param {String} options.customer_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CustomerResponse}
      */
 
   }, {
@@ -131,7 +133,7 @@ var CustomerApi = /*#__PURE__*/function () {
     /**
      * Get the logged in customer.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CustomerResponse} and HTTP response
      */
 
   }, {
@@ -146,13 +148,13 @@ var CustomerApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _Timestamps["default"];
+      var returnType = _CustomerResponse["default"];
       return this.apiClient.callApi('/current_customer', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
      * Get the logged in customer.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CustomerResponse}
      */
 
   }, {
@@ -167,7 +169,7 @@ var CustomerApi = /*#__PURE__*/function () {
      * List all users from a specified customer id.
      * @param {Object} options
      * @param {String} options.customer_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Timestamps>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/SchemasUserResponse>} and HTTP response
      */
 
   }, {
@@ -189,14 +191,14 @@ var CustomerApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [_Timestamps["default"]];
+      var returnType = [_SchemasUserResponse["default"]];
       return this.apiClient.callApi('/customer/{customer_id}/users', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
      * List all users from a specified customer id.
      * @param {Object} options
      * @param {String} options.customer_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Timestamps>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/SchemasUserResponse>}
      */
 
   }, {
@@ -235,7 +237,7 @@ var CustomerApi = /*#__PURE__*/function () {
      * @param {String} [options.pricing_plan_id] - The alphanumeric string identifying the pricing plan.
      * @param {String} [options.security_contact_id] - The alphanumeric string identifying the account's security contact.
      * @param {String} [options.technical_contact_id] - The alphanumeric string identifying the account's technical contact.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CustomerResponse} and HTTP response
      */
 
   }, {
@@ -282,7 +284,7 @@ var CustomerApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _Timestamps["default"];
+      var returnType = _CustomerResponse["default"];
       return this.apiClient.callApi('/customer/{customer_id}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -313,7 +315,7 @@ var CustomerApi = /*#__PURE__*/function () {
      * @param {String} [options.pricing_plan_id] - The alphanumeric string identifying the pricing plan.
      * @param {String} [options.security_contact_id] - The alphanumeric string identifying the account's security contact.
      * @param {String} [options.technical_contact_id] - The alphanumeric string identifying the account's technical contact.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CustomerResponse}
      */
 
   }, {

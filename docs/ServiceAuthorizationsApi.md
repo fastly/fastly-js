@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Pagination**](Pagination.md)
+[**ServiceAuthorizationsResponse**](ServiceAuthorizationsResponse.md)
 
 
 ## `showServiceAuthorization`
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Pagination**](Pagination.md)
+[**ServiceAuthorizationsResponse**](ServiceAuthorizationsResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

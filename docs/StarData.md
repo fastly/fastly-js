@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**relationships** | [**RelationshipService**](RelationshipService.md) |  | [optional] 
+**relationships** | [**RelationshipUser**](RelationshipUser.md) |  | [optional] 
 **type** | [**TypeStar**](TypeStar.md) |  | [optional] 
 
 

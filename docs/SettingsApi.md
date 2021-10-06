@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**SettingsResponse**](SettingsResponse.md)
 
 
 ## `updateServiceSettings`
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**SettingsResponse**](SettingsResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

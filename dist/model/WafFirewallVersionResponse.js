@@ -9,7 +9,7 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _IncludedWithWafFirewallVersionItem = _interopRequireDefault(require("./IncludedWithWafFirewallVersionItem"));
 
-var _WafFirewallVersionData = _interopRequireDefault(require("./WafFirewallVersionData"));
+var _WafFirewallVersionResponseData = _interopRequireDefault(require("./WafFirewallVersionResponseData"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -59,7 +59,7 @@ var WafFirewallVersionResponse = /*#__PURE__*/function () {
         obj = obj || new WafFirewallVersionResponse();
 
         if (data.hasOwnProperty('data')) {
-          obj['data'] = _WafFirewallVersionData["default"].constructFromObject(data['data']);
+          obj['data'] = _WafFirewallVersionResponseData["default"].constructFromObject(data['data']);
         }
 
         if (data.hasOwnProperty('included')) {
@@ -74,7 +74,7 @@ var WafFirewallVersionResponse = /*#__PURE__*/function () {
   return WafFirewallVersionResponse;
 }();
 /**
- * @member {module:model/WafFirewallVersionData} data
+ * @member {module:model/WafFirewallVersionResponseData} data
  */
 
 

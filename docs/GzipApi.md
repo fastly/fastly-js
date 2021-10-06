@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**GzipResponse**](GzipResponse.md)
 
 
 ## `deleteGzipConfig`
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**GzipResponse**](GzipResponse.md)
 
 
 ## `listGzipConfigs`
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[Timestamps]**](Timestamps.md)
+[**[GzipResponse]**](GzipResponse.md)
 
 
 ## `updateGzipConfig`
@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**GzipResponse**](GzipResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

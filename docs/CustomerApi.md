@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**CustomerResponse**](CustomerResponse.md)
 
 
 ## `getLoggedInCustomer`
@@ -112,7 +112,7 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**CustomerResponse**](CustomerResponse.md)
 
 
 ## `listUsers`
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[Timestamps]**](Timestamps.md)
+[**[SchemasUserResponse]**](SchemasUserResponse.md)
 
 
 ## `updateCustomer`
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Timestamps**](Timestamps.md)
+[**CustomerResponse**](CustomerResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

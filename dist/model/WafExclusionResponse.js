@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _WafExclusionData = _interopRequireDefault(require("./WafExclusionData"));
+var _WafExclusionResponseData = _interopRequireDefault(require("./WafExclusionResponseData"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -57,7 +57,7 @@ var WafExclusionResponse = /*#__PURE__*/function () {
         obj = obj || new WafExclusionResponse();
 
         if (data.hasOwnProperty('data')) {
-          obj['data'] = _WafExclusionData["default"].constructFromObject(data['data']);
+          obj['data'] = _WafExclusionResponseData["default"].constructFromObject(data['data']);
         }
       }
 
@@ -68,7 +68,7 @@ var WafExclusionResponse = /*#__PURE__*/function () {
   return WafExclusionResponse;
 }();
 /**
- * @member {module:model/WafExclusionData} data
+ * @member {module:model/WafExclusionResponseData} data
  */
 
 

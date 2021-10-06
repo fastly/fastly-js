@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogGcpPubsub`
 
 ```javascript
-createLogGcpPubsub({ service_id, version_id, [secret_key, ], [user] })
+createLogGcpPubsub({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [secret_key, ], [user, ], [project_id, ], [topic] })
 ```
 
 Create a Pub/Sub logging object for a particular service and version.
@@ -30,8 +30,15 @@ Create a Pub/Sub logging object for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format_version: new Fastly.LoggingFormatVersion(),
+  name: "name_example",
+  placement: new Fastly.LoggingPlacement(),
+  response_condition: "response_condition_example",
   secret_key: "secret_key_example",
   user: "user_example",
+  project_id: "project_id_example",
+  topic: "topic_example",
 };
 
 apiInstance.createLogGcpPubsub(options)
@@ -49,12 +56,19 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
+**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**name** | **String** | The name for the real-time logging configuration. | [optional]
+**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
+**response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
 **secret_key** | **String** | Your Google Cloud Platform account secret key. The &#x60;private_key&#x60; field in your service account authentication JSON. Required. | [optional]
 **user** | **String** | Your Google Cloud Platform service account email address. The &#x60;client_email&#x60; field in your service account authentication JSON. Required. | [optional]
+**project_id** | **String** | Your Google Cloud Platform project ID. Required | [optional]
+**topic** | **String** | The Google Cloud Pub/Sub topic to which logs will be published. Required. | [optional]
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**LoggingGooglePubsubResponse**](LoggingGooglePubsubResponse.md)
 
 
 ## `deleteLogGcpPubsub`
@@ -132,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**LoggingGooglePubsubResponse**](LoggingGooglePubsubResponse.md)
 
 
 ## `listLogGcpPubsub`
@@ -169,13 +183,13 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[ServiceIdAndVersion]**](ServiceIdAndVersion.md)
+[**[LoggingGooglePubsubResponse]**](LoggingGooglePubsubResponse.md)
 
 
 ## `updateLogGcpPubsub`
 
 ```javascript
-updateLogGcpPubsub({ service_id, version_id, logging_google_pubsub_name, [secret_key, ], [user] })
+updateLogGcpPubsub({ service_id, version_id, logging_google_pubsub_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [secret_key, ], [user, ], [project_id, ], [topic] })
 ```
 
 Update a Pub/Sub logging object for a particular service and version.
@@ -187,8 +201,15 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   logging_google_pubsub_name: "logging_google_pubsub_name_example", // required
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format_version: new Fastly.LoggingFormatVersion(),
+  name: "name_example",
+  placement: new Fastly.LoggingPlacement(),
+  response_condition: "response_condition_example",
   secret_key: "secret_key_example",
   user: "user_example",
+  project_id: "project_id_example",
+  topic: "topic_example",
 };
 
 apiInstance.updateLogGcpPubsub(options)
@@ -207,12 +228,19 @@ Name | Type | Description  | Notes
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
 **logging_google_pubsub_name** | **String** |  |
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
+**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**name** | **String** | The name for the real-time logging configuration. | [optional]
+**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
+**response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
 **secret_key** | **String** | Your Google Cloud Platform account secret key. The &#x60;private_key&#x60; field in your service account authentication JSON. Required. | [optional]
 **user** | **String** | Your Google Cloud Platform service account email address. The &#x60;client_email&#x60; field in your service account authentication JSON. Required. | [optional]
+**project_id** | **String** | Your Google Cloud Platform project ID. Required | [optional]
+**topic** | **String** | The Google Cloud Pub/Sub topic to which logs will be published. Required. | [optional]
 
 ### Return type
 
-[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
+[**LoggingGooglePubsubResponse**](LoggingGooglePubsubResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

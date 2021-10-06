@@ -61,7 +61,6 @@ class ServiceAuthorizationsData {
 }
 
 /**
- * Alphanumeric string identifying a service authorization.
  * @member {String} id
  */
 ServiceAuthorizationsData.prototype['id'] = undefined;

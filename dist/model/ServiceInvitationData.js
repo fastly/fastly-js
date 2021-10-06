@@ -65,7 +65,7 @@ var ServiceInvitationData = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('relationships')) {
-          obj['relationships'] = _RelationshipService["default"].constructFromObject(data['relationships']);
+          obj['relationships'] = _ApiClient["default"].convertToType(data['relationships'], _RelationshipService["default"]);
         }
 
         if (data.hasOwnProperty('type')) {
