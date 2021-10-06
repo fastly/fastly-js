@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WafTagsResponse**](WafTagsResponse.md)
+[**Pagination**](Pagination.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

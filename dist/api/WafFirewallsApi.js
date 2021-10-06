@@ -7,11 +7,11 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _Pagination = _interopRequireDefault(require("../model/Pagination"));
+
 var _WafFirewall = _interopRequireDefault(require("../model/WafFirewall"));
 
 var _WafFirewallResponse = _interopRequireDefault(require("../model/WafFirewallResponse"));
-
-var _WafFirewallsResponse = _interopRequireDefault(require("../model/WafFirewallsResponse"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -186,7 +186,7 @@ var WafFirewallsApi = /*#__PURE__*/function () {
      * @param {String} [options.filter_service_id] - Limit the results returned to a specific service.
      * @param {String} [options.filter_service_version_number] - Limit the results returned to a specific service version.
      * @param {module:model/String} [options.include='waf_firewall_versions'] - Include related objects. Optional.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafFirewallsResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Pagination} and HTTP response
      */
 
   }, {
@@ -207,7 +207,7 @@ var WafFirewallsApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/vnd.api+json'];
-      var returnType = _WafFirewallsResponse["default"];
+      var returnType = _Pagination["default"];
       return this.apiClient.callApi('/waf/firewalls', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -218,7 +218,7 @@ var WafFirewallsApi = /*#__PURE__*/function () {
      * @param {String} [options.filter_service_id] - Limit the results returned to a specific service.
      * @param {String} [options.filter_service_version_number] - Limit the results returned to a specific service version.
      * @param {module:model/String} [options.include='waf_firewall_versions'] - Include related objects. Optional.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafFirewallsResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Pagination}
      */
 
   }, {

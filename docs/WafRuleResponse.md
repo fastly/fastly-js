@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**WafRuleResponseData**](WafRuleResponseData.md) |  | [optional] 
+**data** | [**WafRule**](WafRule.md) |  | [optional] 
 **included** | [**[IncludedWithWafRuleItem]**](IncludedWithWafRuleItem.md) |  | [optional] 
 
 

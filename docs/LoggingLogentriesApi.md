@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogLogentries`
 
 ```javascript
-createLogLogentries({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [port, ], [region, ], [token, ], [use_tls] })
+createLogLogentries({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition] })
 ```
 
 Create a Logentry for a particular service and version.
@@ -35,10 +35,6 @@ const options = {
   name: "name_example",
   placement: new Fastly.LoggingPlacement(),
   response_condition: "response_condition_example",
-  port: 20000,
-  region: "region_example",
-  token: "token_example",
-  use_tls: new Fastly.LoggingUseTls(),
 };
 
 apiInstance.createLogLogentries(options)
@@ -61,14 +57,10 @@ Name | Type | Description  | Notes
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**port** | **Number** | The port number. | [optional] [default to 20000]
-**region** | **String** | The region to which to stream logs. | [optional]
-**token** | **String** | Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)). | [optional]
-**use_tls** | [**LoggingUseTls**](../Model/LoggingUseTls.md) |  | [optional]
 
 ### Return type
 
-[**LoggingLogentriesResponse**](LoggingLogentriesResponse.md)
+[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
 
 
 ## `deleteLogLogentries`
@@ -146,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LoggingLogentriesResponse**](LoggingLogentriesResponse.md)
+[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
 
 
 ## `listLogLogentries`
@@ -183,13 +175,13 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[LoggingLogentriesResponse]**](LoggingLogentriesResponse.md)
+[**[ServiceIdAndVersion]**](ServiceIdAndVersion.md)
 
 
 ## `updateLogLogentries`
 
 ```javascript
-updateLogLogentries({ service_id, version_id, logging_logentries_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [port, ], [region, ], [token, ], [use_tls] })
+updateLogLogentries({ service_id, version_id, logging_logentries_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition] })
 ```
 
 Update the Logentry for a particular service and version.
@@ -206,10 +198,6 @@ const options = {
   name: "name_example",
   placement: new Fastly.LoggingPlacement(),
   response_condition: "response_condition_example",
-  port: 20000,
-  region: "region_example",
-  token: "token_example",
-  use_tls: new Fastly.LoggingUseTls(),
 };
 
 apiInstance.updateLogLogentries(options)
@@ -233,14 +221,10 @@ Name | Type | Description  | Notes
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**port** | **Number** | The port number. | [optional] [default to 20000]
-**region** | **String** | The region to which to stream logs. | [optional]
-**token** | **String** | Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)). | [optional]
-**use_tls** | [**LoggingUseTls**](../Model/LoggingUseTls.md) |  | [optional]
 
 ### Return type
 
-[**LoggingLogentriesResponse**](LoggingLogentriesResponse.md)
+[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

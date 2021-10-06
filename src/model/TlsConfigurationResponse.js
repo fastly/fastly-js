@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import TlsConfigurationResponseData from './TlsConfigurationResponseData';
+import TlsConfigurationData from './TlsConfigurationData';
 
 /**
  * The TlsConfigurationResponse model module.
@@ -48,7 +48,7 @@ class TlsConfigurationResponse {
             obj = obj || new TlsConfigurationResponse();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = TlsConfigurationResponseData.constructFromObject(data['data']);
+                obj['data'] = TlsConfigurationData.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class TlsConfigurationResponse {
 }
 
 /**
- * @member {module:model/TlsConfigurationResponseData} data
+ * @member {module:model/TlsConfigurationData} data
  */
 TlsConfigurationResponse.prototype['data'] = undefined;
 

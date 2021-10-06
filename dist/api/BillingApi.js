@@ -7,9 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _BillingEstimateResponse = _interopRequireDefault(require("../model/BillingEstimateResponse"));
-
-var _BillingResponse = _interopRequireDefault(require("../model/BillingResponse"));
+var _Billing = _interopRequireDefault(require("../model/Billing"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -46,7 +44,7 @@ var BillingApi = /*#__PURE__*/function () {
    * @param {Object} options
    * @param {String} options.month - 2-digit month.
    * @param {String} options.year - 4-digit year.
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BillingResponse} and HTTP response
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Billing} and HTTP response
    */
 
 
@@ -75,7 +73,7 @@ var BillingApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json', 'application/pdf', 'text/csv'];
-      var returnType = _BillingResponse["default"];
+      var returnType = _Billing["default"];
       return this.apiClient.callApi('/billing/v2/year/{year}/month/{month}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -83,7 +81,7 @@ var BillingApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.month - 2-digit month.
      * @param {String} options.year - 4-digit year.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BillingResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Billing}
      */
 
   }, {
@@ -152,7 +150,7 @@ var BillingApi = /*#__PURE__*/function () {
      * @param {String} options.customer_id
      * @param {String} [options.month] - 2-digit month.
      * @param {String} [options.year] - 4-digit year.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BillingEstimateResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Billing} and HTTP response
      */
 
   }, {
@@ -177,7 +175,7 @@ var BillingApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _BillingEstimateResponse["default"];
+      var returnType = _Billing["default"];
       return this.apiClient.callApi('/billing/v2/account_customers/{customer_id}/mtd_invoice', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -186,7 +184,7 @@ var BillingApi = /*#__PURE__*/function () {
      * @param {String} options.customer_id
      * @param {String} [options.month] - 2-digit month.
      * @param {String} [options.year] - 4-digit year.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BillingEstimateResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Billing}
      */
 
   }, {

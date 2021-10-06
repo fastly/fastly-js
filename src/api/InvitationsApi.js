@@ -14,8 +14,7 @@
 
 import ApiClient from "../ApiClient";
 import Invitation from '../model/Invitation';
-import InvitationResponse from '../model/InvitationResponse';
-import InvitationsResponse from '../model/InvitationsResponse';
+import Pagination from '../model/Pagination';
 
 /**
 * Invitations service.
@@ -44,7 +43,7 @@ export default class InvitationsApi {
      * Create an invitation.
      * @param {Object} options
      * @param {module:model/Invitation} [options.invitation]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InvitationResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Invitation} and HTTP response
      */
     createInvitationWithHttpInfo(options = {}) {
       let postBody = options['invitation'];
@@ -61,7 +60,7 @@ export default class InvitationsApi {
       let authNames = [];
       let contentTypes = ['application/vnd.api+json'];
       let accepts = ['application/vnd.api+json'];
-      let returnType = InvitationResponse;
+      let returnType = Invitation;
       return this.apiClient.callApi(
         '/invitations', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -73,7 +72,7 @@ export default class InvitationsApi {
      * Create an invitation.
      * @param {Object} options
      * @param {module:model/Invitation} [options.invitation]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InvitationResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Invitation}
      */
     createInvitation(options = {}) {
       return this.createInvitationWithHttpInfo(options)
@@ -134,7 +133,7 @@ export default class InvitationsApi {
      * @param {Object} options
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InvitationsResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Pagination} and HTTP response
      */
     listInvitationsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -153,7 +152,7 @@ export default class InvitationsApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['application/vnd.api+json'];
-      let returnType = InvitationsResponse;
+      let returnType = Pagination;
       return this.apiClient.callApi(
         '/invitations', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -166,7 +165,7 @@ export default class InvitationsApi {
      * @param {Object} options
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InvitationsResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Pagination}
      */
     listInvitations(options = {}) {
       return this.listInvitationsWithHttpInfo(options)

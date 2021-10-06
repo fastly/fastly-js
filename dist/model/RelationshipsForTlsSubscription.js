@@ -7,11 +7,15 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _RelationshipCommonName = _interopRequireDefault(require("./RelationshipCommonName"));
+
 var _RelationshipCommonNameCommonName = _interopRequireDefault(require("./RelationshipCommonNameCommonName"));
 
 var _RelationshipTlsCertificateTlsCertificate = _interopRequireDefault(require("./RelationshipTlsCertificateTlsCertificate"));
 
 var _RelationshipTlsCertificates = _interopRequireDefault(require("./RelationshipTlsCertificates"));
+
+var _RelationshipTlsConfiguration = _interopRequireDefault(require("./RelationshipTlsConfiguration"));
 
 var _RelationshipTlsConfigurationTlsConfiguration = _interopRequireDefault(require("./RelationshipTlsConfigurationTlsConfiguration"));
 
@@ -64,16 +68,20 @@ var RelationshipsForTlsSubscription = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new RelationshipsForTlsSubscription();
 
+        if (data.hasOwnProperty('tls_configuration')) {
+          obj['tls_configuration'] = _RelationshipTlsConfigurationTlsConfiguration["default"].constructFromObject(data['tls_configuration']);
+        }
+
+        if (data.hasOwnProperty('common_name')) {
+          obj['common_name'] = _RelationshipCommonNameCommonName["default"].constructFromObject(data['common_name']);
+        }
+
         if (data.hasOwnProperty('tls_domains')) {
           obj['tls_domains'] = _RelationshipCommonNameCommonName["default"].constructFromObject(data['tls_domains']);
         }
 
         if (data.hasOwnProperty('tls_certificates')) {
           obj['tls_certificates'] = _RelationshipTlsCertificateTlsCertificate["default"].constructFromObject(data['tls_certificates']);
-        }
-
-        if (data.hasOwnProperty('tls_configuration')) {
-          obj['tls_configuration'] = _RelationshipTlsConfigurationTlsConfiguration["default"].constructFromObject(data['tls_configuration']);
         }
       }
 
@@ -84,9 +92,19 @@ var RelationshipsForTlsSubscription = /*#__PURE__*/function () {
   return RelationshipsForTlsSubscription;
 }();
 /**
- * @member {module:model/RelationshipCommonNameCommonName} tls_domains
+ * @member {module:model/RelationshipTlsConfigurationTlsConfiguration} tls_configuration
  */
 
+
+RelationshipsForTlsSubscription.prototype['tls_configuration'] = undefined;
+/**
+ * @member {module:model/RelationshipCommonNameCommonName} common_name
+ */
+
+RelationshipsForTlsSubscription.prototype['common_name'] = undefined;
+/**
+ * @member {module:model/RelationshipCommonNameCommonName} tls_domains
+ */
 
 RelationshipsForTlsSubscription.prototype['tls_domains'] = undefined;
 /**
@@ -94,10 +112,5 @@ RelationshipsForTlsSubscription.prototype['tls_domains'] = undefined;
  */
 
 RelationshipsForTlsSubscription.prototype['tls_certificates'] = undefined;
-/**
- * @member {module:model/RelationshipTlsConfigurationTlsConfiguration} tls_configuration
- */
-
-RelationshipsForTlsSubscription.prototype['tls_configuration'] = undefined;
 var _default = RelationshipsForTlsSubscription;
 exports["default"] = _default;

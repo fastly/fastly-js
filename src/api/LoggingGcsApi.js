@@ -13,11 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import LoggingCompressionCodec from '../model/LoggingCompressionCodec';
-import LoggingFormatVersion from '../model/LoggingFormatVersion';
-import LoggingGcsResponse from '../model/LoggingGcsResponse';
-import LoggingMessageType from '../model/LoggingMessageType';
-import LoggingPlacement from '../model/LoggingPlacement';
+import ServiceIdAndVersion from '../model/ServiceIdAndVersion';
 
 /**
 * LoggingGcs service.
@@ -47,22 +43,9 @@ export default class LoggingGcsApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
-     * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
-     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
-     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:model/LoggingMessageType} [options.message_type]
-     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
-     * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
      * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
      * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
-     * @param {String} [options.bucket_name] - The name of the GCS bucket.
-     * @param {String} [options.path]
-     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingGcsResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
      */
     createLogGcsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -84,27 +67,14 @@ export default class LoggingGcsApi {
       let headerParams = {
       };
       let formParams = {
-        'format': options['format'],
-        'format_version': options['format_version'],
-        'name': options['name'],
-        'placement': options['placement'],
-        'response_condition': options['response_condition'],
-        'compression_codec': options['compression_codec'],
-        'gzip_level': options['gzip_level'],
-        'message_type': options['message_type'],
-        'period': options['period'],
-        'timestamp_format': options['timestamp_format'],
         'secret_key': options['secret_key'],
-        'user': options['user'],
-        'bucket_name': options['bucket_name'],
-        'path': options['path'],
-        'public_key': options['public_key']
+        'user': options['user']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = LoggingGcsResponse;
+      let returnType = ServiceIdAndVersion;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/gcs', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -117,22 +87,9 @@ export default class LoggingGcsApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
-     * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
-     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
-     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:model/LoggingMessageType} [options.message_type]
-     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
-     * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
      * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
      * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
-     * @param {String} [options.bucket_name] - The name of the GCS bucket.
-     * @param {String} [options.path]
-     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingGcsResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
      */
     createLogGcs(options = {}) {
       return this.createLogGcsWithHttpInfo(options)
@@ -208,7 +165,7 @@ export default class LoggingGcsApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_gcs_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingGcsResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
      */
     getLogGcsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -240,7 +197,7 @@ export default class LoggingGcsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = LoggingGcsResponse;
+      let returnType = ServiceIdAndVersion;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/gcs/{logging_gcs_name}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -254,7 +211,7 @@ export default class LoggingGcsApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_gcs_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingGcsResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
      */
     getLogGcs(options = {}) {
       return this.getLogGcsWithHttpInfo(options)
@@ -268,7 +225,7 @@ export default class LoggingGcsApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingGcsResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ServiceIdAndVersion>} and HTTP response
      */
     listLogGcsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -295,7 +252,7 @@ export default class LoggingGcsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [LoggingGcsResponse];
+      let returnType = [ServiceIdAndVersion];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/gcs', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -308,7 +265,7 @@ export default class LoggingGcsApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingGcsResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ServiceIdAndVersion>}
      */
     listLogGcs(options = {}) {
       return this.listLogGcsWithHttpInfo(options)
@@ -323,22 +280,9 @@ export default class LoggingGcsApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_gcs_name
-     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
-     * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
-     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
-     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:model/LoggingMessageType} [options.message_type]
-     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
-     * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
      * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
      * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
-     * @param {String} [options.bucket_name] - The name of the GCS bucket.
-     * @param {String} [options.path]
-     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingGcsResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
      */
     updateLogGcsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -365,27 +309,14 @@ export default class LoggingGcsApi {
       let headerParams = {
       };
       let formParams = {
-        'format': options['format'],
-        'format_version': options['format_version'],
-        'name': options['name'],
-        'placement': options['placement'],
-        'response_condition': options['response_condition'],
-        'compression_codec': options['compression_codec'],
-        'gzip_level': options['gzip_level'],
-        'message_type': options['message_type'],
-        'period': options['period'],
-        'timestamp_format': options['timestamp_format'],
         'secret_key': options['secret_key'],
-        'user': options['user'],
-        'bucket_name': options['bucket_name'],
-        'path': options['path'],
-        'public_key': options['public_key']
+        'user': options['user']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = LoggingGcsResponse;
+      let returnType = ServiceIdAndVersion;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/gcs/{logging_gcs_name}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -399,22 +330,9 @@ export default class LoggingGcsApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_gcs_name
-     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
-     * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
-     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
-     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:model/LoggingMessageType} [options.message_type]
-     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
-     * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
      * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
      * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
-     * @param {String} [options.bucket_name] - The name of the GCS bucket.
-     * @param {String} [options.path]
-     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingGcsResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
      */
     updateLogGcs(options = {}) {
       return this.updateLogGcsWithHttpInfo(options)

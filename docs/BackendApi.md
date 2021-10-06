@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BackendResponse**](BackendResponse.md)
+[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
 
 
 ## `deleteBackend`
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BackendResponse**](BackendResponse.md)
+[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
 
 
 ## `listBackends`
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[BackendResponse]**](BackendResponse.md)
+[**[ServiceIdAndVersion]**](ServiceIdAndVersion.md)
 
 
 ## `updateBackend`
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BackendResponse**](BackendResponse.md)
+[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

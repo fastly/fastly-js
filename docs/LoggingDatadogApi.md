@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogDatadog`
 
 ```javascript
-createLogDatadog({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [region, ], [token] })
+createLogDatadog({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition] })
 ```
 
 Create a Datadog logging object for a particular service and version.
@@ -30,13 +30,11 @@ Create a Datadog logging object for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  format: null,
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
   placement: new Fastly.LoggingPlacement(),
   response_condition: "response_condition_example",
-  region: "'US'",
-  token: "token_example",
 };
 
 apiInstance.createLogDatadog(options)
@@ -54,17 +52,15 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
-**format** | [**Object**](../Model/Object.md) | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest.  | [optional]
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
 **format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**region** | **String** | The region that log data will be sent to. | [optional] [default to &#39;US&#39;]
-**token** | **String** | The API key from your Datadog account. Required. | [optional]
 
 ### Return type
 
-[**LoggingDatadogResponse**](LoggingDatadogResponse.md)
+[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
 
 
 ## `deleteLogDatadog`
@@ -142,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LoggingDatadogResponse**](LoggingDatadogResponse.md)
+[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
 
 
 ## `listLogDatadog`
@@ -179,13 +175,13 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[LoggingDatadogResponse]**](LoggingDatadogResponse.md)
+[**[ServiceIdAndVersion]**](ServiceIdAndVersion.md)
 
 
 ## `updateLogDatadog`
 
 ```javascript
-updateLogDatadog({ service_id, version_id, logging_datadog_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [region, ], [token] })
+updateLogDatadog({ service_id, version_id, logging_datadog_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition] })
 ```
 
 Update the Datadog logging object for a particular service and version.
@@ -197,13 +193,11 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   logging_datadog_name: "logging_datadog_name_example", // required
-  format: null,
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
   placement: new Fastly.LoggingPlacement(),
   response_condition: "response_condition_example",
-  region: "'US'",
-  token: "token_example",
 };
 
 apiInstance.updateLogDatadog(options)
@@ -222,17 +216,15 @@ Name | Type | Description  | Notes
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
 **logging_datadog_name** | **String** |  |
-**format** | [**Object**](../Model/Object.md) | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest.  | [optional]
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
 **format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**region** | **String** | The region that log data will be sent to. | [optional] [default to &#39;US&#39;]
-**token** | **String** | The API key from your Datadog account. Required. | [optional]
 
 ### Return type
 
-[**LoggingDatadogResponse**](LoggingDatadogResponse.md)
+[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogPapertrail`
 
 ```javascript
-createLogPapertrail({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [address, ], [port] })
+createLogPapertrail({ service_id, version_id, [address, ], [port] })
 ```
 
 Create a Papertrail for a particular service and version.
@@ -30,11 +30,6 @@ Create a Papertrail for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
-  format_version: new Fastly.LoggingFormatVersion(),
-  name: "name_example",
-  placement: new Fastly.LoggingPlacement(),
-  response_condition: "response_condition_example",
   address: "address_example",
   port: 514,
 };
@@ -54,17 +49,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
-**name** | **String** | The name for the real-time logging configuration. | [optional]
-**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
-**response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
 **address** | **String** | A hostname or IPv4 address. | [optional]
 **port** | **Number** | The port number. | [optional] [default to 514]
 
 ### Return type
 
-[**LoggingPapertrailResponse**](LoggingPapertrailResponse.md)
+[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
 
 
 ## `deleteLogPapertrail`
@@ -142,7 +132,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LoggingPapertrailResponse**](LoggingPapertrailResponse.md)
+[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
 
 
 ## `listLogPapertrail`
@@ -179,13 +169,13 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[LoggingPapertrailResponse]**](LoggingPapertrailResponse.md)
+[**[ServiceIdAndVersion]**](ServiceIdAndVersion.md)
 
 
 ## `updateLogPapertrail`
 
 ```javascript
-updateLogPapertrail({ service_id, version_id, logging_papertrail_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [address, ], [port] })
+updateLogPapertrail({ service_id, version_id, logging_papertrail_name, [address, ], [port] })
 ```
 
 Update the Papertrail for a particular service and version.
@@ -197,11 +187,6 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   logging_papertrail_name: "logging_papertrail_name_example", // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
-  format_version: new Fastly.LoggingFormatVersion(),
-  name: "name_example",
-  placement: new Fastly.LoggingPlacement(),
-  response_condition: "response_condition_example",
   address: "address_example",
   port: 514,
 };
@@ -222,17 +207,12 @@ Name | Type | Description  | Notes
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
 **logging_papertrail_name** | **String** |  |
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
-**name** | **String** | The name for the real-time logging configuration. | [optional]
-**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
-**response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
 **address** | **String** | A hostname or IPv4 address. | [optional]
 **port** | **Number** | The port number. | [optional] [default to 514]
 
 ### Return type
 
-[**LoggingPapertrailResponse**](LoggingPapertrailResponse.md)
+[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

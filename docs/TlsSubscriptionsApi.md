@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TlsSubscriptionsResponse**](TlsSubscriptionsResponse.md)
+[**Pagination**](Pagination.md)
 
 
 ## `patchTlsSub`

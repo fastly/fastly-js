@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import PackageResponse from '../model/PackageResponse';
+import Timestamps from '../model/Timestamps';
 
 /**
 * Package service.
@@ -43,7 +43,7 @@ export default class PackageApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PackageResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
     getPackageWithHttpInfo(options = {}) {
       let postBody = null;
@@ -70,7 +70,7 @@ export default class PackageApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = PackageResponse;
+      let returnType = Timestamps;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/package', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -83,7 +83,7 @@ export default class PackageApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PackageResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
     getPackage(options = {}) {
       return this.getPackageWithHttpInfo(options)
@@ -99,7 +99,7 @@ export default class PackageApi {
      * @param {Number} options.version_id
      * @param {String} [options.expect] - We recommend using the Expect header because it may identify issues with the request based upon the headers alone instead of requiring you to wait until the entire binary package upload has completed.
      * @param {File} [options._package] - The content of the Wasm binary package.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PackageResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
     putPackageWithHttpInfo(options = {}) {
       let postBody = null;
@@ -128,7 +128,7 @@ export default class PackageApi {
       let authNames = ['token'];
       let contentTypes = ['multipart/form-data'];
       let accepts = ['application/json'];
-      let returnType = PackageResponse;
+      let returnType = Timestamps;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/package', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -143,7 +143,7 @@ export default class PackageApi {
      * @param {Number} options.version_id
      * @param {String} [options.expect] - We recommend using the Expect header because it may identify issues with the request based upon the headers alone instead of requiring you to wait until the entire binary package upload has completed.
      * @param {File} [options._package] - The content of the Wasm binary package.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PackageResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
     putPackage(options = {}) {
       return this.putPackageWithHttpInfo(options)

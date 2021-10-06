@@ -9,7 +9,7 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _RoleUser = _interopRequireDefault(require("../model/RoleUser"));
 
-var _UserResponse = _interopRequireDefault(require("../model/UserResponse"));
+var _Timestamps = _interopRequireDefault(require("../model/Timestamps"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -52,7 +52,7 @@ var UserApi = /*#__PURE__*/function () {
    * @param {module:model/RoleUser} [options.role]
    * @param {Boolean} [options.two_factor_auth_enabled] - Indicates if 2FA is enabled on the user.
    * @param {Boolean} [options.two_factor_setup_required] - Indicates if 2FA is required by the user's customer account.
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResponse} and HTTP response
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
    */
 
 
@@ -77,7 +77,7 @@ var UserApi = /*#__PURE__*/function () {
       var authNames = [];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _UserResponse["default"];
+      var returnType = _Timestamps["default"];
       return this.apiClient.callApi('/user', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -91,7 +91,7 @@ var UserApi = /*#__PURE__*/function () {
      * @param {module:model/RoleUser} [options.role]
      * @param {Boolean} [options.two_factor_auth_enabled] - Indicates if 2FA is enabled on the user.
      * @param {Boolean} [options.two_factor_setup_required] - Indicates if 2FA is required by the user's customer account.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
 
   }, {
@@ -149,7 +149,7 @@ var UserApi = /*#__PURE__*/function () {
     /**
      * Get the logged in user.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
 
   }, {
@@ -164,13 +164,13 @@ var UserApi = /*#__PURE__*/function () {
       var authNames = [];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _UserResponse["default"];
+      var returnType = _Timestamps["default"];
       return this.apiClient.callApi('/current_user', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
      * Get the logged in user.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
 
   }, {
@@ -185,7 +185,7 @@ var UserApi = /*#__PURE__*/function () {
      * Get a specific user.
      * @param {Object} options
      * @param {String} options.user_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
 
   }, {
@@ -207,14 +207,14 @@ var UserApi = /*#__PURE__*/function () {
       var authNames = [];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _UserResponse["default"];
+      var returnType = _Timestamps["default"];
       return this.apiClient.callApi('/user/{user_id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
      * Get a specific user.
      * @param {Object} options
      * @param {String} options.user_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
 
   }, {
@@ -281,7 +281,7 @@ var UserApi = /*#__PURE__*/function () {
      * @param {module:model/RoleUser} [options.role]
      * @param {Boolean} [options.two_factor_auth_enabled] - Indicates if 2FA is enabled on the user.
      * @param {Boolean} [options.two_factor_setup_required] - Indicates if 2FA is required by the user's customer account.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
 
   }, {
@@ -312,7 +312,7 @@ var UserApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _UserResponse["default"];
+      var returnType = _Timestamps["default"];
       return this.apiClient.callApi('/user/{user_id}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -327,7 +327,7 @@ var UserApi = /*#__PURE__*/function () {
      * @param {module:model/RoleUser} [options.role]
      * @param {Boolean} [options.two_factor_auth_enabled] - Indicates if 2FA is enabled on the user.
      * @param {Boolean} [options.two_factor_setup_required] - Indicates if 2FA is required by the user's customer account.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
 
   }, {
@@ -343,7 +343,7 @@ var UserApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} [options.new_password] - The user's new password.
      * @param {String} [options.old_password] - The user's current password.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
 
   }, {
@@ -361,7 +361,7 @@ var UserApi = /*#__PURE__*/function () {
       var authNames = [];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _UserResponse["default"];
+      var returnType = _Timestamps["default"];
       return this.apiClient.callApi('/current_user/password', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -369,7 +369,7 @@ var UserApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} [options.new_password] - The user's new password.
      * @param {String} [options.old_password] - The user's current password.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
 
   }, {

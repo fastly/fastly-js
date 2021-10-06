@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CacheSettingResponse**](CacheSettingResponse.md)
+[**Timestamps**](Timestamps.md)
 
 
 ## `deleteCacheSettings`
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CacheSettingResponse**](CacheSettingResponse.md)
+[**Timestamps**](Timestamps.md)
 
 
 ## `listCacheSettings`
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[CacheSettingResponse]**](CacheSettingResponse.md)
+[**[Timestamps]**](Timestamps.md)
 
 
 ## `updateCacheSettings`
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CacheSettingResponse**](CacheSettingResponse.md)
+[**Timestamps**](Timestamps.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

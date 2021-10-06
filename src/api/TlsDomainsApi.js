@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import TlsDomainsResponse from '../model/TlsDomainsResponse';
+import Pagination from '../model/Pagination';
 
 /**
 * TlsDomains service.
@@ -48,7 +48,7 @@ export default class TlsDomainsApi {
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsDomainsResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Pagination} and HTTP response
      */
     listTlsDomainsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -72,7 +72,7 @@ export default class TlsDomainsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/vnd.api+json'];
-      let returnType = TlsDomainsResponse;
+      let returnType = Pagination;
       return this.apiClient.callApi(
         '/tls/domains', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -90,7 +90,7 @@ export default class TlsDomainsApi {
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsDomainsResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Pagination}
      */
     listTlsDomains(options = {}) {
       return this.listTlsDomainsWithHttpInfo(options)

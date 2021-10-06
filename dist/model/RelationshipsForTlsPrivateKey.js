@@ -13,6 +13,8 @@ var _RelationshipTlsActivationTlsActivation = _interopRequireDefault(require("./
 
 var _RelationshipTlsActivations = _interopRequireDefault(require("./RelationshipTlsActivations"));
 
+var _RelationshipTlsDomains = _interopRequireDefault(require("./RelationshipTlsDomains"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }

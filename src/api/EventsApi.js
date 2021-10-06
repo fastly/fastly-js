@@ -14,7 +14,7 @@
 
 import ApiClient from "../ApiClient";
 import EventResponse from '../model/EventResponse';
-import EventsResponse from '../model/EventsResponse';
+import Pagination from '../model/Pagination';
 
 /**
 * Events service.
@@ -96,7 +96,7 @@ export default class EventsApi {
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EventsResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Pagination} and HTTP response
      */
     listEventsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -120,7 +120,7 @@ export default class EventsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/vnd.api+json'];
-      let returnType = EventsResponse;
+      let returnType = Pagination;
       return this.apiClient.callApi(
         '/events', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -138,7 +138,7 @@ export default class EventsApi {
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EventsResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Pagination}
      */
     listEvents(options = {}) {
       return this.listEventsWithHttpInfo(options)

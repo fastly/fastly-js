@@ -14,7 +14,7 @@
 
 import ApiClient from "../ApiClient";
 import Acl from '../model/Acl';
-import AclResponse from '../model/AclResponse';
+import ServiceIdAndVersion from '../model/ServiceIdAndVersion';
 
 /**
 * Acl service.
@@ -45,7 +45,7 @@ export default class AclApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.name] - Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AclResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
      */
     createAclWithHttpInfo(options = {}) {
       let postBody = null;
@@ -73,7 +73,7 @@ export default class AclApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = AclResponse;
+      let returnType = ServiceIdAndVersion;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/acl', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -87,7 +87,7 @@ export default class AclApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.name] - Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AclResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
      */
     createAcl(options = {}) {
       return this.createAclWithHttpInfo(options)
@@ -163,7 +163,7 @@ export default class AclApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.acl_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AclResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
      */
     getAclWithHttpInfo(options = {}) {
       let postBody = null;
@@ -195,7 +195,7 @@ export default class AclApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = AclResponse;
+      let returnType = ServiceIdAndVersion;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/acl/{acl_name}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -209,7 +209,7 @@ export default class AclApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.acl_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AclResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
      */
     getAcl(options = {}) {
       return this.getAclWithHttpInfo(options)
@@ -223,7 +223,7 @@ export default class AclApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/AclResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ServiceIdAndVersion>} and HTTP response
      */
     listAclsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -250,7 +250,7 @@ export default class AclApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [AclResponse];
+      let returnType = [ServiceIdAndVersion];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/acl', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -263,7 +263,7 @@ export default class AclApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/AclResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ServiceIdAndVersion>}
      */
     listAcls(options = {}) {
       return this.listAclsWithHttpInfo(options)

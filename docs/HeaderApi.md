@@ -38,7 +38,7 @@ const options = {
   priority: 100,
   regex: "regex_example",
   request_condition: "request_condition_example",
-  response_condition: null,
+  response_condition: "response_condition_example",
   src: "src_example",
   substitution: "substitution_example",
   type: "type_example",
@@ -67,14 +67,14 @@ Name | Type | Description  | Notes
 **priority** | **Number** | Priority determines execution order. Lower numbers execute first. | [optional] [default to 100]
 **regex** | **String** | Regular expression to use. Only applies to &#x60;regex&#x60; and &#x60;regex_repeat&#x60; actions. | [optional]
 **request_condition** | **String** | Condition which, if met, will select this configuration during a request. Optional. | [optional]
-**response_condition** | [**String**](../Model/String.md) |  | [optional]
+**response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
 **src** | **String** | Variable to be used as a source for the header content. Does not apply to &#x60;delete&#x60; action. | [optional]
 **substitution** | **String** | Value to substitute in place of regular expression. Only applies to &#x60;regex&#x60; and &#x60;regex_repeat&#x60; actions. | [optional]
 **type** | **String** | Accepts a string value. | [optional]
 
 ### Return type
 
-[**HeaderResponse**](HeaderResponse.md)
+[**Timestamps**](Timestamps.md)
 
 
 ## `deleteHeaderObject`
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HeaderResponse**](HeaderResponse.md)
+[**Timestamps**](Timestamps.md)
 
 
 ## `listHeaderObjects`
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[HeaderResponse]**](HeaderResponse.md)
+[**[Timestamps]**](Timestamps.md)
 
 
 ## `updateHeaderObject`
@@ -215,7 +215,7 @@ const options = {
   priority: 100,
   regex: "regex_example",
   request_condition: "request_condition_example",
-  response_condition: null,
+  response_condition: "response_condition_example",
   src: "src_example",
   substitution: "substitution_example",
   type: "type_example",
@@ -245,14 +245,14 @@ Name | Type | Description  | Notes
 **priority** | **Number** | Priority determines execution order. Lower numbers execute first. | [optional] [default to 100]
 **regex** | **String** | Regular expression to use. Only applies to &#x60;regex&#x60; and &#x60;regex_repeat&#x60; actions. | [optional]
 **request_condition** | **String** | Condition which, if met, will select this configuration during a request. Optional. | [optional]
-**response_condition** | [**String**](../Model/String.md) |  | [optional]
+**response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
 **src** | **String** | Variable to be used as a source for the header content. Does not apply to &#x60;delete&#x60; action. | [optional]
 **substitution** | **String** | Value to substitute in place of regular expression. Only applies to &#x60;regex&#x60; and &#x60;regex_repeat&#x60; actions. | [optional]
 **type** | **String** | Accepts a string value. | [optional]
 
 ### Return type
 
-[**HeaderResponse**](HeaderResponse.md)
+[**Timestamps**](Timestamps.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

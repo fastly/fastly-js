@@ -12,19 +12,10 @@
  */
 
 import ApiClient from '../ApiClient';
-import BackendResponse from './BackendResponse';
-import CacheSettingResponse from './CacheSettingResponse';
-import ConditionResponse from './ConditionResponse';
-import DomainResponse from './DomainResponse';
-import GzipResponse from './GzipResponse';
-import HeaderResponse from './HeaderResponse';
-import HealthcheckResponse from './HealthcheckResponse';
-import ResponseObjectResponse from './ResponseObjectResponse';
 import SchemasDirector from './SchemasDirector';
-import SchemasRequestSettingsResponse from './SchemasRequestSettingsResponse';
-import SchemasSnippetResponse from './SchemasSnippetResponse';
-import SchemasVclResponse from './SchemasVclResponse';
+import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Settings from './Settings';
+import Timestamps from './Timestamps';
 
 /**
  * The VersionDetail model module.
@@ -60,43 +51,43 @@ class VersionDetail {
             obj = obj || new VersionDetail();
 
             if (data.hasOwnProperty('backends')) {
-                obj['backends'] = ApiClient.convertToType(data['backends'], [BackendResponse]);
+                obj['backends'] = ApiClient.convertToType(data['backends'], [ServiceIdAndVersion]);
             }
             if (data.hasOwnProperty('cache_settings')) {
-                obj['cache_settings'] = ApiClient.convertToType(data['cache_settings'], [CacheSettingResponse]);
+                obj['cache_settings'] = ApiClient.convertToType(data['cache_settings'], [Timestamps]);
             }
             if (data.hasOwnProperty('conditions')) {
-                obj['conditions'] = ApiClient.convertToType(data['conditions'], [ConditionResponse]);
+                obj['conditions'] = ApiClient.convertToType(data['conditions'], [Timestamps]);
             }
             if (data.hasOwnProperty('directors')) {
                 obj['directors'] = ApiClient.convertToType(data['directors'], [SchemasDirector]);
             }
             if (data.hasOwnProperty('domains')) {
-                obj['domains'] = ApiClient.convertToType(data['domains'], [DomainResponse]);
+                obj['domains'] = ApiClient.convertToType(data['domains'], [Timestamps]);
             }
             if (data.hasOwnProperty('gzips')) {
-                obj['gzips'] = ApiClient.convertToType(data['gzips'], [GzipResponse]);
+                obj['gzips'] = ApiClient.convertToType(data['gzips'], [Timestamps]);
             }
             if (data.hasOwnProperty('headers')) {
-                obj['headers'] = ApiClient.convertToType(data['headers'], [HeaderResponse]);
+                obj['headers'] = ApiClient.convertToType(data['headers'], [Timestamps]);
             }
             if (data.hasOwnProperty('healthchecks')) {
-                obj['healthchecks'] = ApiClient.convertToType(data['healthchecks'], [HealthcheckResponse]);
+                obj['healthchecks'] = ApiClient.convertToType(data['healthchecks'], [Timestamps]);
             }
             if (data.hasOwnProperty('request_settings')) {
-                obj['request_settings'] = ApiClient.convertToType(data['request_settings'], [SchemasRequestSettingsResponse]);
+                obj['request_settings'] = ApiClient.convertToType(data['request_settings'], [Timestamps]);
             }
             if (data.hasOwnProperty('response_objects')) {
-                obj['response_objects'] = ApiClient.convertToType(data['response_objects'], [ResponseObjectResponse]);
+                obj['response_objects'] = ApiClient.convertToType(data['response_objects'], [Timestamps]);
             }
             if (data.hasOwnProperty('settings')) {
-                obj['settings'] = ApiClient.convertToType(data['settings'], Settings);
+                obj['settings'] = Settings.constructFromObject(data['settings']);
             }
             if (data.hasOwnProperty('snippets')) {
-                obj['snippets'] = ApiClient.convertToType(data['snippets'], [SchemasSnippetResponse]);
+                obj['snippets'] = ApiClient.convertToType(data['snippets'], [Timestamps]);
             }
             if (data.hasOwnProperty('vcls')) {
-                obj['vcls'] = ApiClient.convertToType(data['vcls'], [SchemasVclResponse]);
+                obj['vcls'] = ApiClient.convertToType(data['vcls'], [Timestamps]);
             }
             if (data.hasOwnProperty('wordpress')) {
                 obj['wordpress'] = ApiClient.convertToType(data['wordpress'], [Object]);
@@ -110,19 +101,19 @@ class VersionDetail {
 
 /**
  * List of backends associated to this service.
- * @member {Array.<module:model/BackendResponse>} backends
+ * @member {Array.<module:model/ServiceIdAndVersion>} backends
  */
 VersionDetail.prototype['backends'] = undefined;
 
 /**
  * List of cache settings associated to this service.
- * @member {Array.<module:model/CacheSettingResponse>} cache_settings
+ * @member {Array.<module:model/Timestamps>} cache_settings
  */
 VersionDetail.prototype['cache_settings'] = undefined;
 
 /**
  * List of conditions associated to this service.
- * @member {Array.<module:model/ConditionResponse>} conditions
+ * @member {Array.<module:model/Timestamps>} conditions
  */
 VersionDetail.prototype['conditions'] = undefined;
 
@@ -134,37 +125,37 @@ VersionDetail.prototype['directors'] = undefined;
 
 /**
  * List of domains associated to this service.
- * @member {Array.<module:model/DomainResponse>} domains
+ * @member {Array.<module:model/Timestamps>} domains
  */
 VersionDetail.prototype['domains'] = undefined;
 
 /**
  * List of gzip rules associated to this service.
- * @member {Array.<module:model/GzipResponse>} gzips
+ * @member {Array.<module:model/Timestamps>} gzips
  */
 VersionDetail.prototype['gzips'] = undefined;
 
 /**
  * List of headers associated to this service.
- * @member {Array.<module:model/HeaderResponse>} headers
+ * @member {Array.<module:model/Timestamps>} headers
  */
 VersionDetail.prototype['headers'] = undefined;
 
 /**
  * List of healthchecks associated to this service.
- * @member {Array.<module:model/HealthcheckResponse>} healthchecks
+ * @member {Array.<module:model/Timestamps>} healthchecks
  */
 VersionDetail.prototype['healthchecks'] = undefined;
 
 /**
  * List of request settings for this service.
- * @member {Array.<module:model/SchemasRequestSettingsResponse>} request_settings
+ * @member {Array.<module:model/Timestamps>} request_settings
  */
 VersionDetail.prototype['request_settings'] = undefined;
 
 /**
  * List of response objects for this service.
- * @member {Array.<module:model/ResponseObjectResponse>} response_objects
+ * @member {Array.<module:model/Timestamps>} response_objects
  */
 VersionDetail.prototype['response_objects'] = undefined;
 
@@ -175,13 +166,13 @@ VersionDetail.prototype['settings'] = undefined;
 
 /**
  * List of VCL snippets for this service.
- * @member {Array.<module:model/SchemasSnippetResponse>} snippets
+ * @member {Array.<module:model/Timestamps>} snippets
  */
 VersionDetail.prototype['snippets'] = undefined;
 
 /**
  * List of VCL files for this service.
- * @member {Array.<module:model/SchemasVclResponse>} vcls
+ * @member {Array.<module:model/Timestamps>} vcls
  */
 VersionDetail.prototype['vcls'] = undefined;
 

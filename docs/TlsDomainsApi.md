@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TlsDomainsResponse**](TlsDomainsResponse.md)
+[**Pagination**](Pagination.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

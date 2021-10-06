@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DictionaryItemResponse**](DictionaryItemResponse.md)
+[**Timestamps**](Timestamps.md)
 
 
 ## `deleteDictionaryItem`
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DictionaryItemResponse**](DictionaryItemResponse.md)
+[**Timestamps**](Timestamps.md)
 
 
 ## `listDictionaryItems`
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[DictionaryItemResponse]**](DictionaryItemResponse.md)
+[**[Timestamps]**](Timestamps.md)
 
 
 ## `updateDictionaryItem`
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DictionaryItemResponse**](DictionaryItemResponse.md)
+[**Timestamps**](Timestamps.md)
 
 
 ## `upsertDictionaryItem`
@@ -304,7 +304,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DictionaryItemResponse**](DictionaryItemResponse.md)
+[**Timestamps**](Timestamps.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

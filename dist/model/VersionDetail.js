@@ -7,31 +7,13 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _BackendResponse = _interopRequireDefault(require("./BackendResponse"));
-
-var _CacheSettingResponse = _interopRequireDefault(require("./CacheSettingResponse"));
-
-var _ConditionResponse = _interopRequireDefault(require("./ConditionResponse"));
-
-var _DomainResponse = _interopRequireDefault(require("./DomainResponse"));
-
-var _GzipResponse = _interopRequireDefault(require("./GzipResponse"));
-
-var _HeaderResponse = _interopRequireDefault(require("./HeaderResponse"));
-
-var _HealthcheckResponse = _interopRequireDefault(require("./HealthcheckResponse"));
-
-var _ResponseObjectResponse = _interopRequireDefault(require("./ResponseObjectResponse"));
-
 var _SchemasDirector = _interopRequireDefault(require("./SchemasDirector"));
 
-var _SchemasRequestSettingsResponse = _interopRequireDefault(require("./SchemasRequestSettingsResponse"));
-
-var _SchemasSnippetResponse = _interopRequireDefault(require("./SchemasSnippetResponse"));
-
-var _SchemasVclResponse = _interopRequireDefault(require("./SchemasVclResponse"));
+var _ServiceIdAndVersion = _interopRequireDefault(require("./ServiceIdAndVersion"));
 
 var _Settings = _interopRequireDefault(require("./Settings"));
+
+var _Timestamps = _interopRequireDefault(require("./Timestamps"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -81,15 +63,15 @@ var VersionDetail = /*#__PURE__*/function () {
         obj = obj || new VersionDetail();
 
         if (data.hasOwnProperty('backends')) {
-          obj['backends'] = _ApiClient["default"].convertToType(data['backends'], [_BackendResponse["default"]]);
+          obj['backends'] = _ApiClient["default"].convertToType(data['backends'], [_ServiceIdAndVersion["default"]]);
         }
 
         if (data.hasOwnProperty('cache_settings')) {
-          obj['cache_settings'] = _ApiClient["default"].convertToType(data['cache_settings'], [_CacheSettingResponse["default"]]);
+          obj['cache_settings'] = _ApiClient["default"].convertToType(data['cache_settings'], [_Timestamps["default"]]);
         }
 
         if (data.hasOwnProperty('conditions')) {
-          obj['conditions'] = _ApiClient["default"].convertToType(data['conditions'], [_ConditionResponse["default"]]);
+          obj['conditions'] = _ApiClient["default"].convertToType(data['conditions'], [_Timestamps["default"]]);
         }
 
         if (data.hasOwnProperty('directors')) {
@@ -97,39 +79,39 @@ var VersionDetail = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('domains')) {
-          obj['domains'] = _ApiClient["default"].convertToType(data['domains'], [_DomainResponse["default"]]);
+          obj['domains'] = _ApiClient["default"].convertToType(data['domains'], [_Timestamps["default"]]);
         }
 
         if (data.hasOwnProperty('gzips')) {
-          obj['gzips'] = _ApiClient["default"].convertToType(data['gzips'], [_GzipResponse["default"]]);
+          obj['gzips'] = _ApiClient["default"].convertToType(data['gzips'], [_Timestamps["default"]]);
         }
 
         if (data.hasOwnProperty('headers')) {
-          obj['headers'] = _ApiClient["default"].convertToType(data['headers'], [_HeaderResponse["default"]]);
+          obj['headers'] = _ApiClient["default"].convertToType(data['headers'], [_Timestamps["default"]]);
         }
 
         if (data.hasOwnProperty('healthchecks')) {
-          obj['healthchecks'] = _ApiClient["default"].convertToType(data['healthchecks'], [_HealthcheckResponse["default"]]);
+          obj['healthchecks'] = _ApiClient["default"].convertToType(data['healthchecks'], [_Timestamps["default"]]);
         }
 
         if (data.hasOwnProperty('request_settings')) {
-          obj['request_settings'] = _ApiClient["default"].convertToType(data['request_settings'], [_SchemasRequestSettingsResponse["default"]]);
+          obj['request_settings'] = _ApiClient["default"].convertToType(data['request_settings'], [_Timestamps["default"]]);
         }
 
         if (data.hasOwnProperty('response_objects')) {
-          obj['response_objects'] = _ApiClient["default"].convertToType(data['response_objects'], [_ResponseObjectResponse["default"]]);
+          obj['response_objects'] = _ApiClient["default"].convertToType(data['response_objects'], [_Timestamps["default"]]);
         }
 
         if (data.hasOwnProperty('settings')) {
-          obj['settings'] = _ApiClient["default"].convertToType(data['settings'], _Settings["default"]);
+          obj['settings'] = _Settings["default"].constructFromObject(data['settings']);
         }
 
         if (data.hasOwnProperty('snippets')) {
-          obj['snippets'] = _ApiClient["default"].convertToType(data['snippets'], [_SchemasSnippetResponse["default"]]);
+          obj['snippets'] = _ApiClient["default"].convertToType(data['snippets'], [_Timestamps["default"]]);
         }
 
         if (data.hasOwnProperty('vcls')) {
-          obj['vcls'] = _ApiClient["default"].convertToType(data['vcls'], [_SchemasVclResponse["default"]]);
+          obj['vcls'] = _ApiClient["default"].convertToType(data['vcls'], [_Timestamps["default"]]);
         }
 
         if (data.hasOwnProperty('wordpress')) {
@@ -145,20 +127,20 @@ var VersionDetail = /*#__PURE__*/function () {
 }();
 /**
  * List of backends associated to this service.
- * @member {Array.<module:model/BackendResponse>} backends
+ * @member {Array.<module:model/ServiceIdAndVersion>} backends
  */
 
 
 VersionDetail.prototype['backends'] = undefined;
 /**
  * List of cache settings associated to this service.
- * @member {Array.<module:model/CacheSettingResponse>} cache_settings
+ * @member {Array.<module:model/Timestamps>} cache_settings
  */
 
 VersionDetail.prototype['cache_settings'] = undefined;
 /**
  * List of conditions associated to this service.
- * @member {Array.<module:model/ConditionResponse>} conditions
+ * @member {Array.<module:model/Timestamps>} conditions
  */
 
 VersionDetail.prototype['conditions'] = undefined;
@@ -170,37 +152,37 @@ VersionDetail.prototype['conditions'] = undefined;
 VersionDetail.prototype['directors'] = undefined;
 /**
  * List of domains associated to this service.
- * @member {Array.<module:model/DomainResponse>} domains
+ * @member {Array.<module:model/Timestamps>} domains
  */
 
 VersionDetail.prototype['domains'] = undefined;
 /**
  * List of gzip rules associated to this service.
- * @member {Array.<module:model/GzipResponse>} gzips
+ * @member {Array.<module:model/Timestamps>} gzips
  */
 
 VersionDetail.prototype['gzips'] = undefined;
 /**
  * List of headers associated to this service.
- * @member {Array.<module:model/HeaderResponse>} headers
+ * @member {Array.<module:model/Timestamps>} headers
  */
 
 VersionDetail.prototype['headers'] = undefined;
 /**
  * List of healthchecks associated to this service.
- * @member {Array.<module:model/HealthcheckResponse>} healthchecks
+ * @member {Array.<module:model/Timestamps>} healthchecks
  */
 
 VersionDetail.prototype['healthchecks'] = undefined;
 /**
  * List of request settings for this service.
- * @member {Array.<module:model/SchemasRequestSettingsResponse>} request_settings
+ * @member {Array.<module:model/Timestamps>} request_settings
  */
 
 VersionDetail.prototype['request_settings'] = undefined;
 /**
  * List of response objects for this service.
- * @member {Array.<module:model/ResponseObjectResponse>} response_objects
+ * @member {Array.<module:model/Timestamps>} response_objects
  */
 
 VersionDetail.prototype['response_objects'] = undefined;
@@ -211,13 +193,13 @@ VersionDetail.prototype['response_objects'] = undefined;
 VersionDetail.prototype['settings'] = undefined;
 /**
  * List of VCL snippets for this service.
- * @member {Array.<module:model/SchemasSnippetResponse>} snippets
+ * @member {Array.<module:model/Timestamps>} snippets
  */
 
 VersionDetail.prototype['snippets'] = undefined;
 /**
  * List of VCL files for this service.
- * @member {Array.<module:model/SchemasVclResponse>} vcls
+ * @member {Array.<module:model/Timestamps>} vcls
  */
 
 VersionDetail.prototype['vcls'] = undefined;

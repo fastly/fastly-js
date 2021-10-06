@@ -70,6 +70,7 @@ var BillingStatus = /*#__PURE__*/function () {
   return BillingStatus;
 }();
 /**
+ * Date and time in ISO 8601 format.
  * @member {String} sent_at
  */
 

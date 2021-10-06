@@ -49,7 +49,7 @@ class TlsPrivateKeyResponseData {
             obj = obj || new TlsPrivateKeyResponseData();
 
             if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
+                obj['attributes'] = Timestamps.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');

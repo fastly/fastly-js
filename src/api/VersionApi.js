@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
+import Timestamps from '../model/Timestamps';
 import Version from '../model/Version';
 import VersionCreateResponse from '../model/VersionCreateResponse';
-import VersionResponse from '../model/VersionResponse';
 
 /**
 * Version service.
@@ -45,7 +45,7 @@ export default class VersionApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VersionResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
     activateServiceVersionWithHttpInfo(options = {}) {
       let postBody = null;
@@ -72,7 +72,7 @@ export default class VersionApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = VersionResponse;
+      let returnType = Timestamps;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/activate', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -85,7 +85,7 @@ export default class VersionApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VersionResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
     activateServiceVersion(options = {}) {
       return this.activateServiceVersionWithHttpInfo(options)
@@ -200,7 +200,7 @@ export default class VersionApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VersionResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
     deactivateServiceVersionWithHttpInfo(options = {}) {
       let postBody = null;
@@ -227,7 +227,7 @@ export default class VersionApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = VersionResponse;
+      let returnType = Timestamps;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/deactivate', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -240,7 +240,7 @@ export default class VersionApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VersionResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
     deactivateServiceVersion(options = {}) {
       return this.deactivateServiceVersionWithHttpInfo(options)
@@ -254,7 +254,7 @@ export default class VersionApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VersionResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
     getServiceVersionWithHttpInfo(options = {}) {
       let postBody = null;
@@ -281,7 +281,7 @@ export default class VersionApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = VersionResponse;
+      let returnType = Timestamps;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -294,7 +294,7 @@ export default class VersionApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VersionResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
     getServiceVersion(options = {}) {
       return this.getServiceVersionWithHttpInfo(options)
@@ -307,7 +307,7 @@ export default class VersionApi {
      * List the versions for a particular service.
      * @param {Object} options
      * @param {String} options.service_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/VersionResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Timestamps>} and HTTP response
      */
     listServiceVersionsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -329,7 +329,7 @@ export default class VersionApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [VersionResponse];
+      let returnType = [Timestamps];
       return this.apiClient.callApi(
         '/service/{service_id}/version', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -341,7 +341,7 @@ export default class VersionApi {
      * List the versions for a particular service.
      * @param {Object} options
      * @param {String} options.service_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/VersionResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Timestamps>}
      */
     listServiceVersions(options = {}) {
       return this.listServiceVersionsWithHttpInfo(options)
@@ -416,7 +416,7 @@ export default class VersionApi {
      * @param {Number} [options.number] - The number of this version.
      * @param {Boolean} [options.staging=false] - Unused at this time.
      * @param {Boolean} [options.testing=false] - Unused at this time.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VersionResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
     updateServiceVersionWithHttpInfo(options = {}) {
       let postBody = null;
@@ -450,7 +450,7 @@ export default class VersionApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = VersionResponse;
+      let returnType = Timestamps;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -470,7 +470,7 @@ export default class VersionApi {
      * @param {Number} [options.number] - The number of this version.
      * @param {Boolean} [options.staging=false] - Unused at this time.
      * @param {Boolean} [options.testing=false] - Unused at this time.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VersionResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
     updateServiceVersion(options = {}) {
       return this.updateServiceVersionWithHttpInfo(options)

@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _CacheSettingResponse = _interopRequireDefault(require("../model/CacheSettingResponse"));
+var _Timestamps = _interopRequireDefault(require("../model/Timestamps"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -49,7 +49,7 @@ var CacheSettingsApi = /*#__PURE__*/function () {
    * @param {String} [options.name] - Name for the cache settings object.
    * @param {Number} [options.stale_ttl] - Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as 'stale if error').
    * @param {Number} [options.ttl] - Maximum time to consider the object fresh in the cache (the cache 'time to live').
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CacheSettingResponse} and HTTP response
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
    */
 
 
@@ -84,7 +84,7 @@ var CacheSettingsApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _CacheSettingResponse["default"];
+      var returnType = _Timestamps["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/cache_settings', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -97,7 +97,7 @@ var CacheSettingsApi = /*#__PURE__*/function () {
      * @param {String} [options.name] - Name for the cache settings object.
      * @param {Number} [options.stale_ttl] - Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as 'stale if error').
      * @param {Number} [options.ttl] - Maximum time to consider the object fresh in the cache (the cache 'time to live').
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CacheSettingResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
 
   }, {
@@ -174,7 +174,7 @@ var CacheSettingsApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.cache_settings_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CacheSettingResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
 
   }, {
@@ -208,7 +208,7 @@ var CacheSettingsApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _CacheSettingResponse["default"];
+      var returnType = _Timestamps["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/cache_settings/{cache_settings_name}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -217,7 +217,7 @@ var CacheSettingsApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.cache_settings_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CacheSettingResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
 
   }, {
@@ -233,7 +233,7 @@ var CacheSettingsApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/CacheSettingResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Timestamps>} and HTTP response
      */
 
   }, {
@@ -261,7 +261,7 @@ var CacheSettingsApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [_CacheSettingResponse["default"]];
+      var returnType = [_Timestamps["default"]];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/cache_settings', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -269,7 +269,7 @@ var CacheSettingsApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/CacheSettingResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Timestamps>}
      */
 
   }, {
@@ -291,7 +291,7 @@ var CacheSettingsApi = /*#__PURE__*/function () {
      * @param {String} [options.name] - Name for the cache settings object.
      * @param {Number} [options.stale_ttl] - Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as 'stale if error').
      * @param {Number} [options.ttl] - Maximum time to consider the object fresh in the cache (the cache 'time to live').
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CacheSettingResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
 
   }, {
@@ -331,7 +331,7 @@ var CacheSettingsApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _CacheSettingResponse["default"];
+      var returnType = _Timestamps["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/cache_settings/{cache_settings_name}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -345,7 +345,7 @@ var CacheSettingsApi = /*#__PURE__*/function () {
      * @param {String} [options.name] - Name for the cache settings object.
      * @param {Number} [options.stale_ttl] - Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as 'stale if error').
      * @param {Number} [options.ttl] - Maximum time to consider the object fresh in the cache (the cache 'time to live').
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CacheSettingResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
 
   }, {

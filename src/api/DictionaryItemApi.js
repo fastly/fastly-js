@@ -13,8 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
-import DictionaryItemResponse from '../model/DictionaryItemResponse';
 import InlineObject4 from '../model/InlineObject4';
+import Timestamps from '../model/Timestamps';
 
 /**
 * DictionaryItem service.
@@ -102,7 +102,7 @@ export default class DictionaryItemApi {
      * @param {String} options.dictionary_id
      * @param {String} [options.item_key] - Item key, maximum 256 characters.
      * @param {String} [options.item_value] - Item value, maximum 8000 characters.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryItemResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
     createDictionaryItemWithHttpInfo(options = {}) {
       let postBody = null;
@@ -131,7 +131,7 @@ export default class DictionaryItemApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = DictionaryItemResponse;
+      let returnType = Timestamps;
       return this.apiClient.callApi(
         '/service/{service_id}/dictionary/{dictionary_id}/item', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -146,7 +146,7 @@ export default class DictionaryItemApi {
      * @param {String} options.dictionary_id
      * @param {String} [options.item_key] - Item key, maximum 256 characters.
      * @param {String} [options.item_value] - Item value, maximum 8000 characters.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryItemResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
     createDictionaryItem(options = {}) {
       return this.createDictionaryItemWithHttpInfo(options)
@@ -222,7 +222,7 @@ export default class DictionaryItemApi {
      * @param {String} options.service_id
      * @param {String} options.dictionary_id
      * @param {String} options.dictionary_item_key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryItemResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
     getDictionaryItemWithHttpInfo(options = {}) {
       let postBody = null;
@@ -254,7 +254,7 @@ export default class DictionaryItemApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = DictionaryItemResponse;
+      let returnType = Timestamps;
       return this.apiClient.callApi(
         '/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -268,7 +268,7 @@ export default class DictionaryItemApi {
      * @param {String} options.service_id
      * @param {String} options.dictionary_id
      * @param {String} options.dictionary_item_key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryItemResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
     getDictionaryItem(options = {}) {
       return this.getDictionaryItemWithHttpInfo(options)
@@ -286,7 +286,7 @@ export default class DictionaryItemApi {
      * @param {Number} [options.per_page=20] - Number of records per page.
      * @param {String} [options.sort='created'] - Field on which to sort.
      * @param {module:model/String} [options.direction='ascend'] - Direction in which to sort results.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DictionaryItemResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Timestamps>} and HTTP response
      */
     listDictionaryItemsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -317,7 +317,7 @@ export default class DictionaryItemApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [DictionaryItemResponse];
+      let returnType = [Timestamps];
       return this.apiClient.callApi(
         '/service/{service_id}/dictionary/{dictionary_id}/items', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -334,7 +334,7 @@ export default class DictionaryItemApi {
      * @param {Number} [options.per_page=20] - Number of records per page.
      * @param {String} [options.sort='created'] - Field on which to sort.
      * @param {module:model/String} [options.direction='ascend'] - Direction in which to sort results.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DictionaryItemResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Timestamps>}
      */
     listDictionaryItems(options = {}) {
       return this.listDictionaryItemsWithHttpInfo(options)
@@ -351,7 +351,7 @@ export default class DictionaryItemApi {
      * @param {String} options.dictionary_item_key
      * @param {String} [options.item_key] - Item key, maximum 256 characters.
      * @param {String} [options.item_value] - Item value, maximum 8000 characters.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryItemResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
     updateDictionaryItemWithHttpInfo(options = {}) {
       let postBody = null;
@@ -385,7 +385,7 @@ export default class DictionaryItemApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = DictionaryItemResponse;
+      let returnType = Timestamps;
       return this.apiClient.callApi(
         '/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -401,7 +401,7 @@ export default class DictionaryItemApi {
      * @param {String} options.dictionary_item_key
      * @param {String} [options.item_key] - Item key, maximum 256 characters.
      * @param {String} [options.item_value] - Item value, maximum 8000 characters.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryItemResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
     updateDictionaryItem(options = {}) {
       return this.updateDictionaryItemWithHttpInfo(options)
@@ -418,7 +418,7 @@ export default class DictionaryItemApi {
      * @param {String} options.dictionary_item_key
      * @param {String} [options.item_key] - Item key, maximum 256 characters.
      * @param {String} [options.item_value] - Item value, maximum 8000 characters.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryItemResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
     upsertDictionaryItemWithHttpInfo(options = {}) {
       let postBody = null;
@@ -452,7 +452,7 @@ export default class DictionaryItemApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = DictionaryItemResponse;
+      let returnType = Timestamps;
       return this.apiClient.callApi(
         '/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -468,7 +468,7 @@ export default class DictionaryItemApi {
      * @param {String} options.dictionary_item_key
      * @param {String} [options.item_key] - Item key, maximum 256 characters.
      * @param {String} [options.item_value] - Item value, maximum 8000 characters.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryItemResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
     upsertDictionaryItem(options = {}) {
       return this.upsertDictionaryItemWithHttpInfo(options)

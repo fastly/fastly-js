@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TlsBulkCertificatesResponse**](TlsBulkCertificatesResponse.md)
+[**Pagination**](Pagination.md)
 
 
 ## `updateBulkTlsCert`

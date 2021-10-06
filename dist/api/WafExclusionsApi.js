@@ -7,11 +7,11 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _Pagination = _interopRequireDefault(require("../model/Pagination"));
+
 var _WafExclusion = _interopRequireDefault(require("../model/WafExclusion"));
 
 var _WafExclusionResponse = _interopRequireDefault(require("../model/WafExclusionResponse"));
-
-var _WafExclusionsResponse = _interopRequireDefault(require("../model/WafExclusionsResponse"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -229,7 +229,7 @@ var WafExclusionsApi = /*#__PURE__*/function () {
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_rules` and `waf_rule_revisions`. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafExclusionsResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Pagination} and HTTP response
      */
 
   }, {
@@ -264,7 +264,7 @@ var WafExclusionsApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/vnd.api+json'];
-      var returnType = _WafExclusionsResponse["default"];
+      var returnType = _Pagination["default"];
       return this.apiClient.callApi('/waf/firewalls/{firewall_id}/versions/{firewall_version_number}/exclusions', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -278,7 +278,7 @@ var WafExclusionsApi = /*#__PURE__*/function () {
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_rules` and `waf_rule_revisions`. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafExclusionsResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Pagination}
      */
 
   }, {

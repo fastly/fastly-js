@@ -7,9 +7,9 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _WafRuleRevisionResponse = _interopRequireDefault(require("../model/WafRuleRevisionResponse"));
+var _Pagination = _interopRequireDefault(require("../model/Pagination"));
 
-var _WafRuleRevisionsResponse = _interopRequireDefault(require("../model/WafRuleRevisionsResponse"));
+var _WafRuleRevisionResponse = _interopRequireDefault(require("../model/WafRuleRevisionResponse"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -105,7 +105,7 @@ var WafRuleRevisionsApi = /*#__PURE__*/function () {
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {module:model/String} [options.include='waf_rule'] - Include relationships. Optional.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafRuleRevisionsResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Pagination} and HTTP response
      */
 
   }, {
@@ -131,7 +131,7 @@ var WafRuleRevisionsApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/vnd.api+json'];
-      var returnType = _WafRuleRevisionsResponse["default"];
+      var returnType = _Pagination["default"];
       return this.apiClient.callApi('/waf/rules/{waf_rule_id}/revisions', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -141,7 +141,7 @@ var WafRuleRevisionsApi = /*#__PURE__*/function () {
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {module:model/String} [options.include='waf_rule'] - Include relationships. Optional.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafRuleRevisionsResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Pagination}
      */
 
   }, {

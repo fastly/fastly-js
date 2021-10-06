@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _RequestSettingsResponse = _interopRequireDefault(require("../model/RequestSettingsResponse"));
+var _Timestamps = _interopRequireDefault(require("../model/Timestamps"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -44,7 +44,7 @@ var RequestSettingsApi = /*#__PURE__*/function () {
    * @param {Object} options
    * @param {String} options.service_id
    * @param {Number} options.version_id
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RequestSettingsResponse} and HTTP response
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
    */
 
 
@@ -73,7 +73,7 @@ var RequestSettingsApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _RequestSettingsResponse["default"];
+      var returnType = _Timestamps["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/request_settings', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -81,7 +81,7 @@ var RequestSettingsApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RequestSettingsResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
 
   }, {
@@ -158,7 +158,7 @@ var RequestSettingsApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.request_settings_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RequestSettingsResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
 
   }, {
@@ -192,7 +192,7 @@ var RequestSettingsApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _RequestSettingsResponse["default"];
+      var returnType = _Timestamps["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/request_settings/{request_settings_name}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -201,7 +201,7 @@ var RequestSettingsApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.request_settings_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RequestSettingsResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
 
   }, {
@@ -217,7 +217,7 @@ var RequestSettingsApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/RequestSettingsResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Timestamps>} and HTTP response
      */
 
   }, {
@@ -245,7 +245,7 @@ var RequestSettingsApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [_RequestSettingsResponse["default"]];
+      var returnType = [_Timestamps["default"]];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/request_settings', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -253,7 +253,7 @@ var RequestSettingsApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/RequestSettingsResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Timestamps>}
      */
 
   }, {
@@ -282,7 +282,7 @@ var RequestSettingsApi = /*#__PURE__*/function () {
      * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
      * @param {Number} [options.timer_support] - Injects the X-Timer info into the request for viewing origin fetch durations.
      * @param {module:model/String} [options.xff] - Short for X-Forwarded-For.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RequestSettingsResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
 
   }, {
@@ -329,7 +329,7 @@ var RequestSettingsApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _RequestSettingsResponse["default"];
+      var returnType = _Timestamps["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/request_settings/{request_settings_name}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -350,7 +350,7 @@ var RequestSettingsApi = /*#__PURE__*/function () {
      * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
      * @param {Number} [options.timer_support] - Injects the X-Timer info into the request for viewing origin fetch durations.
      * @param {module:model/String} [options.xff] - Short for X-Forwarded-For.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RequestSettingsResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
 
   }, {

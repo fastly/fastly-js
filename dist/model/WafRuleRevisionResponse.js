@@ -9,7 +9,7 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _WafRule = _interopRequireDefault(require("./WafRule"));
 
-var _WafRuleRevisionResponseData = _interopRequireDefault(require("./WafRuleRevisionResponseData"));
+var _WafRuleRevision = _interopRequireDefault(require("./WafRuleRevision"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -59,7 +59,7 @@ var WafRuleRevisionResponse = /*#__PURE__*/function () {
         obj = obj || new WafRuleRevisionResponse();
 
         if (data.hasOwnProperty('data')) {
-          obj['data'] = _WafRuleRevisionResponseData["default"].constructFromObject(data['data']);
+          obj['data'] = _WafRuleRevision["default"].constructFromObject(data['data']);
         }
 
         if (data.hasOwnProperty('included')) {
@@ -74,7 +74,7 @@ var WafRuleRevisionResponse = /*#__PURE__*/function () {
   return WafRuleRevisionResponse;
 }();
 /**
- * @member {module:model/WafRuleRevisionResponseData} data
+ * @member {module:model/WafRuleRevision} data
  */
 
 

@@ -13,8 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
+import Pagination from '../model/Pagination';
 import WafRuleResponse from '../model/WafRuleResponse';
-import WafRulesResponse from '../model/WafRulesResponse';
 
 /**
 * WafRules service.
@@ -99,7 +99,7 @@ export default class WafRulesApi {
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_tags` and `waf_rule_revisions`. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafRulesResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Pagination} and HTTP response
      */
     listWafRulesWithHttpInfo(options = {}) {
       let postBody = null;
@@ -123,7 +123,7 @@ export default class WafRulesApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/vnd.api+json'];
-      let returnType = WafRulesResponse;
+      let returnType = Pagination;
       return this.apiClient.callApi(
         '/waf/rules', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -141,7 +141,7 @@ export default class WafRulesApi {
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_tags` and `waf_rule_revisions`. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafRulesResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Pagination}
      */
     listWafRules(options = {}) {
       return this.listWafRulesWithHttpInfo(options)

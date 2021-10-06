@@ -13,11 +13,11 @@ var _InlineObject2 = _interopRequireDefault(require("../model/InlineObject3"));
 
 var _InlineResponse = _interopRequireDefault(require("../model/InlineResponse204"));
 
+var _Pagination = _interopRequireDefault(require("../model/Pagination"));
+
 var _ServiceAuthorization = _interopRequireDefault(require("../model/ServiceAuthorization"));
 
 var _ServiceAuthorizationResponse = _interopRequireDefault(require("../model/ServiceAuthorizationResponse"));
-
-var _ServiceAuthorizationsResponse = _interopRequireDefault(require("../model/ServiceAuthorizationsResponse"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -173,7 +173,7 @@ var ServiceAuthorizationsApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceAuthorizationsResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Pagination} and HTTP response
      */
 
   }, {
@@ -191,7 +191,7 @@ var ServiceAuthorizationsApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/vnd.api+json'];
-      var returnType = _ServiceAuthorizationsResponse["default"];
+      var returnType = _Pagination["default"];
       return this.apiClient.callApi('/service-authorizations', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -199,7 +199,7 @@ var ServiceAuthorizationsApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceAuthorizationsResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Pagination}
      */
 
   }, {
@@ -304,7 +304,7 @@ var ServiceAuthorizationsApi = /*#__PURE__*/function () {
      * Update service authorizations.
      * @param {Object} options
      * @param {module:model/InlineObject3} [options.inline_object3]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceAuthorizationsResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Pagination} and HTTP response
      */
 
   }, {
@@ -319,14 +319,14 @@ var ServiceAuthorizationsApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = ['application/vnd.api+json; ext=bulk'];
       var accepts = ['application/vnd.api+json; ext=bulk'];
-      var returnType = _ServiceAuthorizationsResponse["default"];
+      var returnType = _Pagination["default"];
       return this.apiClient.callApi('/service-authorizations', 'PATCH', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
      * Update service authorizations.
      * @param {Object} options
      * @param {module:model/InlineObject3} [options.inline_object3]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceAuthorizationsResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Pagination}
      */
 
   }, {

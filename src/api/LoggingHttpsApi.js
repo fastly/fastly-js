@@ -13,10 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import LoggingFormatVersion from '../model/LoggingFormatVersion';
-import LoggingHttpsResponse from '../model/LoggingHttpsResponse';
-import LoggingMessageType from '../model/LoggingMessageType';
-import LoggingPlacement from '../model/LoggingPlacement';
+import ServiceIdAndVersion from '../model/ServiceIdAndVersion';
 
 /**
 * LoggingHttps service.
@@ -46,25 +43,9 @@ export default class LoggingHttpsApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
-     * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
-     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
-     * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
-     * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
-     * @param {String} [options.tls_hostname='null'] - The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
-     * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` (no limit).
-     * @param {Number} [options.request_max_entries=0] - The maximum number of logs sent in one request. Defaults `0` (no limit).
-     * @param {String} [options.content_type='null'] - Content type of the header sent with the request.
-     * @param {String} [options.header_name='null'] - Name of the custom header sent with the request.
-     * @param {String} [options.header_value='null'] - Value of the custom header sent with the request.
-     * @param {module:model/String} [options.json_format] - Enforces valid JSON formatting for log entries.
-     * @param {module:model/LoggingMessageType} [options.message_type]
-     * @param {module:model/String} [options.method='POST'] - HTTP method used for request.
-     * @param {String} [options.url] - The URL to send logs to. Must use HTTPS. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingHttpsResponse} and HTTP response
+     * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` for unbounded.
+     * @param {Number} [options.request_max_entries=0] - The maximum number of logs sent in one request. Defaults `0` for unbounded.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
      */
     createLogHttpsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -86,30 +67,14 @@ export default class LoggingHttpsApi {
       let headerParams = {
       };
       let formParams = {
-        'format': options['format'],
-        'format_version': options['format_version'],
-        'name': options['name'],
-        'placement': options['placement'],
-        'response_condition': options['response_condition'],
-        'tls_ca_cert': options['tls_ca_cert'],
-        'tls_client_cert': options['tls_client_cert'],
-        'tls_client_key': options['tls_client_key'],
-        'tls_hostname': options['tls_hostname'],
         'request_max_bytes': options['request_max_bytes'],
-        'request_max_entries': options['request_max_entries'],
-        'content_type': options['content_type'],
-        'header_name': options['header_name'],
-        'header_value': options['header_value'],
-        'json_format': options['json_format'],
-        'message_type': options['message_type'],
-        'method': options['method'],
-        'url': options['url']
+        'request_max_entries': options['request_max_entries']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = LoggingHttpsResponse;
+      let returnType = ServiceIdAndVersion;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/https', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -122,25 +87,9 @@ export default class LoggingHttpsApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
-     * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
-     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
-     * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
-     * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
-     * @param {String} [options.tls_hostname='null'] - The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
-     * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` (no limit).
-     * @param {Number} [options.request_max_entries=0] - The maximum number of logs sent in one request. Defaults `0` (no limit).
-     * @param {String} [options.content_type='null'] - Content type of the header sent with the request.
-     * @param {String} [options.header_name='null'] - Name of the custom header sent with the request.
-     * @param {String} [options.header_value='null'] - Value of the custom header sent with the request.
-     * @param {module:model/String} [options.json_format] - Enforces valid JSON formatting for log entries.
-     * @param {module:model/LoggingMessageType} [options.message_type]
-     * @param {module:model/String} [options.method='POST'] - HTTP method used for request.
-     * @param {String} [options.url] - The URL to send logs to. Must use HTTPS. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingHttpsResponse}
+     * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` for unbounded.
+     * @param {Number} [options.request_max_entries=0] - The maximum number of logs sent in one request. Defaults `0` for unbounded.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
      */
     createLogHttps(options = {}) {
       return this.createLogHttpsWithHttpInfo(options)
@@ -216,7 +165,7 @@ export default class LoggingHttpsApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_https_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingHttpsResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
      */
     getLogHttpsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -248,7 +197,7 @@ export default class LoggingHttpsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = LoggingHttpsResponse;
+      let returnType = ServiceIdAndVersion;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/https/{logging_https_name}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -262,7 +211,7 @@ export default class LoggingHttpsApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_https_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingHttpsResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
      */
     getLogHttps(options = {}) {
       return this.getLogHttpsWithHttpInfo(options)
@@ -276,7 +225,7 @@ export default class LoggingHttpsApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingHttpsResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ServiceIdAndVersion>} and HTTP response
      */
     listLogHttpsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -303,7 +252,7 @@ export default class LoggingHttpsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [LoggingHttpsResponse];
+      let returnType = [ServiceIdAndVersion];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/https', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -316,7 +265,7 @@ export default class LoggingHttpsApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingHttpsResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ServiceIdAndVersion>}
      */
     listLogHttps(options = {}) {
       return this.listLogHttpsWithHttpInfo(options)
@@ -331,25 +280,9 @@ export default class LoggingHttpsApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_https_name
-     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
-     * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
-     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
-     * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
-     * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
-     * @param {String} [options.tls_hostname='null'] - The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
-     * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` (no limit).
-     * @param {Number} [options.request_max_entries=0] - The maximum number of logs sent in one request. Defaults `0` (no limit).
-     * @param {String} [options.content_type='null'] - Content type of the header sent with the request.
-     * @param {String} [options.header_name='null'] - Name of the custom header sent with the request.
-     * @param {String} [options.header_value='null'] - Value of the custom header sent with the request.
-     * @param {module:model/String} [options.json_format] - Enforces valid JSON formatting for log entries.
-     * @param {module:model/LoggingMessageType} [options.message_type]
-     * @param {module:model/String} [options.method='POST'] - HTTP method used for request.
-     * @param {String} [options.url] - The URL to send logs to. Must use HTTPS. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingHttpsResponse} and HTTP response
+     * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` for unbounded.
+     * @param {Number} [options.request_max_entries=0] - The maximum number of logs sent in one request. Defaults `0` for unbounded.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
      */
     updateLogHttpsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -376,30 +309,14 @@ export default class LoggingHttpsApi {
       let headerParams = {
       };
       let formParams = {
-        'format': options['format'],
-        'format_version': options['format_version'],
-        'name': options['name'],
-        'placement': options['placement'],
-        'response_condition': options['response_condition'],
-        'tls_ca_cert': options['tls_ca_cert'],
-        'tls_client_cert': options['tls_client_cert'],
-        'tls_client_key': options['tls_client_key'],
-        'tls_hostname': options['tls_hostname'],
         'request_max_bytes': options['request_max_bytes'],
-        'request_max_entries': options['request_max_entries'],
-        'content_type': options['content_type'],
-        'header_name': options['header_name'],
-        'header_value': options['header_value'],
-        'json_format': options['json_format'],
-        'message_type': options['message_type'],
-        'method': options['method'],
-        'url': options['url']
+        'request_max_entries': options['request_max_entries']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = LoggingHttpsResponse;
+      let returnType = ServiceIdAndVersion;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/https/{logging_https_name}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -413,25 +330,9 @@ export default class LoggingHttpsApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_https_name
-     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
-     * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
-     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
-     * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
-     * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
-     * @param {String} [options.tls_hostname='null'] - The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
-     * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` (no limit).
-     * @param {Number} [options.request_max_entries=0] - The maximum number of logs sent in one request. Defaults `0` (no limit).
-     * @param {String} [options.content_type='null'] - Content type of the header sent with the request.
-     * @param {String} [options.header_name='null'] - Name of the custom header sent with the request.
-     * @param {String} [options.header_value='null'] - Value of the custom header sent with the request.
-     * @param {module:model/String} [options.json_format] - Enforces valid JSON formatting for log entries.
-     * @param {module:model/LoggingMessageType} [options.message_type]
-     * @param {module:model/String} [options.method='POST'] - HTTP method used for request.
-     * @param {String} [options.url] - The URL to send logs to. Must use HTTPS. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingHttpsResponse}
+     * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` for unbounded.
+     * @param {Number} [options.request_max_entries=0] - The maximum number of logs sent in one request. Defaults `0` for unbounded.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
      */
     updateLogHttps(options = {}) {
       return this.updateLogHttpsWithHttpInfo(options)

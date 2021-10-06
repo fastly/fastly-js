@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**TlsActivationResponseData**](TlsActivationResponseData.md) |  | [optional] 
+**data** | [**TlsActivationData**](TlsActivationData.md) |  | [optional] 
 
 
 

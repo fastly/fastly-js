@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RequestSettingsResponse**](RequestSettingsResponse.md)
+[**Timestamps**](Timestamps.md)
 
 
 ## `deleteRequestSettings`
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RequestSettingsResponse**](RequestSettingsResponse.md)
+[**Timestamps**](Timestamps.md)
 
 
 ## `listRequestSettings`
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[RequestSettingsResponse]**](RequestSettingsResponse.md)
+[**[Timestamps]**](Timestamps.md)
 
 
 ## `updateRequestSettings`
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RequestSettingsResponse**](RequestSettingsResponse.md)
+[**Timestamps**](Timestamps.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

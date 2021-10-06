@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _PoolResponse = _interopRequireDefault(require("../model/PoolResponse"));
+var _ServiceIdAndVersion = _interopRequireDefault(require("../model/ServiceIdAndVersion"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -49,23 +49,7 @@ var PoolApi = /*#__PURE__*/function () {
    * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
    * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
    * @param {module:model/Number} [options.use_tls=0] - Whether to use TLS.
-   * @param {String} [options.comment] - A freeform descriptive note.
-   * @param {Number} [options.connect_timeout] - How long to wait for a timeout in milliseconds. Optional.
-   * @param {Number} [options.first_byte_timeout] - How long to wait for the first byte in milliseconds. Optional.
-   * @param {String} [options.healthcheck] - Name of the healthcheck to use with this pool. Can be empty and could be reused across multiple backend and pools.
-   * @param {Number} [options.max_conn_default] - Maximum number of connections.
-   * @param {Number} [options.max_tls_version] - Maximum allowed TLS version on connections to this server. Optional.
-   * @param {Number} [options.min_tls_version] - Minimum allowed TLS version on connections to this server. Optional.
-   * @param {String} [options.name] - Name for the Pool.
-   * @param {String} [options.override_host='null'] - The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to `null` meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
-   * @param {Number} [options.quorum=75] - Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
-   * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
-   * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
-   * @param {Number} [options.tls_check_cert] - Be strict on checking TLS certs. Optional.
-   * @param {String} [options.tls_ciphers] - List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.0.2/man1/ciphers) for details). Optional.
-   * @param {String} [options.tls_sni_hostname] - SNI hostname. Optional.
-   * @param {module:model/String} [options.type] - What type of load balance group to use.
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PoolResponse} and HTTP response
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
    */
 
 
@@ -95,28 +79,12 @@ var PoolApi = /*#__PURE__*/function () {
         'tls_cert_hostname': options['tls_cert_hostname'],
         'tls_client_cert': options['tls_client_cert'],
         'tls_client_key': options['tls_client_key'],
-        'use_tls': options['use_tls'],
-        'comment': options['comment'],
-        'connect_timeout': options['connect_timeout'],
-        'first_byte_timeout': options['first_byte_timeout'],
-        'healthcheck': options['healthcheck'],
-        'max_conn_default': options['max_conn_default'],
-        'max_tls_version': options['max_tls_version'],
-        'min_tls_version': options['min_tls_version'],
-        'name': options['name'],
-        'override_host': options['override_host'],
-        'quorum': options['quorum'],
-        'request_condition': options['request_condition'],
-        'shield': options['shield'],
-        'tls_check_cert': options['tls_check_cert'],
-        'tls_ciphers': options['tls_ciphers'],
-        'tls_sni_hostname': options['tls_sni_hostname'],
-        'type': options['type']
+        'use_tls': options['use_tls']
       };
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _PoolResponse["default"];
+      var returnType = _ServiceIdAndVersion["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/pool', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -129,23 +97,7 @@ var PoolApi = /*#__PURE__*/function () {
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
      * @param {module:model/Number} [options.use_tls=0] - Whether to use TLS.
-     * @param {String} [options.comment] - A freeform descriptive note.
-     * @param {Number} [options.connect_timeout] - How long to wait for a timeout in milliseconds. Optional.
-     * @param {Number} [options.first_byte_timeout] - How long to wait for the first byte in milliseconds. Optional.
-     * @param {String} [options.healthcheck] - Name of the healthcheck to use with this pool. Can be empty and could be reused across multiple backend and pools.
-     * @param {Number} [options.max_conn_default] - Maximum number of connections.
-     * @param {Number} [options.max_tls_version] - Maximum allowed TLS version on connections to this server. Optional.
-     * @param {Number} [options.min_tls_version] - Minimum allowed TLS version on connections to this server. Optional.
-     * @param {String} [options.name] - Name for the Pool.
-     * @param {String} [options.override_host='null'] - The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to `null` meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
-     * @param {Number} [options.quorum=75] - Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
-     * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
-     * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
-     * @param {Number} [options.tls_check_cert] - Be strict on checking TLS certs. Optional.
-     * @param {String} [options.tls_ciphers] - List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.0.2/man1/ciphers) for details). Optional.
-     * @param {String} [options.tls_sni_hostname] - SNI hostname. Optional.
-     * @param {module:model/String} [options.type] - What type of load balance group to use.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PoolResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
      */
 
   }, {
@@ -222,7 +174,7 @@ var PoolApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.pool_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PoolResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
      */
 
   }, {
@@ -256,7 +208,7 @@ var PoolApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _PoolResponse["default"];
+      var returnType = _ServiceIdAndVersion["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/pool/{pool_name}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -265,7 +217,7 @@ var PoolApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.pool_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PoolResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
      */
 
   }, {
@@ -281,7 +233,7 @@ var PoolApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PoolResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ServiceIdAndVersion>} and HTTP response
      */
 
   }, {
@@ -309,7 +261,7 @@ var PoolApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [_PoolResponse["default"]];
+      var returnType = [_ServiceIdAndVersion["default"]];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/pool', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -317,7 +269,7 @@ var PoolApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PoolResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ServiceIdAndVersion>}
      */
 
   }, {
@@ -339,23 +291,7 @@ var PoolApi = /*#__PURE__*/function () {
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
      * @param {module:model/Number} [options.use_tls=UseTlsEnum.no_tls] - Whether to use TLS.
-     * @param {String} [options.comment] - A freeform descriptive note.
-     * @param {Number} [options.connect_timeout] - How long to wait for a timeout in milliseconds. Optional.
-     * @param {Number} [options.first_byte_timeout] - How long to wait for the first byte in milliseconds. Optional.
-     * @param {String} [options.healthcheck] - Name of the healthcheck to use with this pool. Can be empty and could be reused across multiple backend and pools.
-     * @param {Number} [options.max_conn_default] - Maximum number of connections.
-     * @param {Number} [options.max_tls_version] - Maximum allowed TLS version on connections to this server. Optional.
-     * @param {Number} [options.min_tls_version] - Minimum allowed TLS version on connections to this server. Optional.
-     * @param {String} [options.name] - Name for the Pool.
-     * @param {String} [options.override_host='null'] - The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to `null` meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
-     * @param {Number} [options.quorum=75] - Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
-     * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
-     * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
-     * @param {Number} [options.tls_check_cert] - Be strict on checking TLS certs. Optional.
-     * @param {String} [options.tls_ciphers] - List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.0.2/man1/ciphers) for details). Optional.
-     * @param {String} [options.tls_sni_hostname] - SNI hostname. Optional.
-     * @param {module:model/String} [options.type] - What type of load balance group to use.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PoolResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
      */
 
   }, {
@@ -390,28 +326,12 @@ var PoolApi = /*#__PURE__*/function () {
         'tls_cert_hostname': options['tls_cert_hostname'],
         'tls_client_cert': options['tls_client_cert'],
         'tls_client_key': options['tls_client_key'],
-        'use_tls': options['use_tls'],
-        'comment': options['comment'],
-        'connect_timeout': options['connect_timeout'],
-        'first_byte_timeout': options['first_byte_timeout'],
-        'healthcheck': options['healthcheck'],
-        'max_conn_default': options['max_conn_default'],
-        'max_tls_version': options['max_tls_version'],
-        'min_tls_version': options['min_tls_version'],
-        'name': options['name'],
-        'override_host': options['override_host'],
-        'quorum': options['quorum'],
-        'request_condition': options['request_condition'],
-        'shield': options['shield'],
-        'tls_check_cert': options['tls_check_cert'],
-        'tls_ciphers': options['tls_ciphers'],
-        'tls_sni_hostname': options['tls_sni_hostname'],
-        'type': options['type']
+        'use_tls': options['use_tls']
       };
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _PoolResponse["default"];
+      var returnType = _ServiceIdAndVersion["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/pool/{pool_name}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -425,23 +345,7 @@ var PoolApi = /*#__PURE__*/function () {
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
      * @param {module:model/Number} [options.use_tls=UseTlsEnum.no_tls] - Whether to use TLS.
-     * @param {String} [options.comment] - A freeform descriptive note.
-     * @param {Number} [options.connect_timeout] - How long to wait for a timeout in milliseconds. Optional.
-     * @param {Number} [options.first_byte_timeout] - How long to wait for the first byte in milliseconds. Optional.
-     * @param {String} [options.healthcheck] - Name of the healthcheck to use with this pool. Can be empty and could be reused across multiple backend and pools.
-     * @param {Number} [options.max_conn_default] - Maximum number of connections.
-     * @param {Number} [options.max_tls_version] - Maximum allowed TLS version on connections to this server. Optional.
-     * @param {Number} [options.min_tls_version] - Minimum allowed TLS version on connections to this server. Optional.
-     * @param {String} [options.name] - Name for the Pool.
-     * @param {String} [options.override_host='null'] - The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to `null` meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
-     * @param {Number} [options.quorum=75] - Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
-     * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
-     * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
-     * @param {Number} [options.tls_check_cert] - Be strict on checking TLS certs. Optional.
-     * @param {String} [options.tls_ciphers] - List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.0.2/man1/ciphers) for details). Optional.
-     * @param {String} [options.tls_sni_hostname] - SNI hostname. Optional.
-     * @param {module:model/String} [options.type] - What type of load balance group to use.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PoolResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
      */
 
   }, {

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**WafFirewallVersionResponseData**](WafFirewallVersionResponseData.md) |  | [optional] 
+**data** | [**WafFirewallVersionData**](WafFirewallVersionData.md) |  | [optional] 
 **included** | [**[IncludedWithWafFirewallVersionItem]**](IncludedWithWafFirewallVersionItem.md) |  | [optional] 
 
 

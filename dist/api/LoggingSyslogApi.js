@@ -7,15 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _LoggingFormatVersion = _interopRequireDefault(require("../model/LoggingFormatVersion"));
-
-var _LoggingMessageType = _interopRequireDefault(require("../model/LoggingMessageType"));
-
-var _LoggingPlacement = _interopRequireDefault(require("../model/LoggingPlacement"));
-
-var _LoggingSyslogResponse = _interopRequireDefault(require("../model/LoggingSyslogResponse"));
-
-var _LoggingUseTls = _interopRequireDefault(require("../model/LoggingUseTls"));
+var _ServiceIdAndVersion = _interopRequireDefault(require("../model/ServiceIdAndVersion"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -52,23 +44,9 @@ var LoggingSyslogApi = /*#__PURE__*/function () {
    * @param {Object} options
    * @param {String} options.service_id
    * @param {Number} options.version_id
-   * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-   * @param {module:model/LoggingFormatVersion} [options.format_version]
-   * @param {String} [options.name] - The name for the real-time logging configuration.
-   * @param {module:model/LoggingPlacement} [options.placement]
-   * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-   * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
-   * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
-   * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
-   * @param {String} [options.tls_hostname='null'] - The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
    * @param {String} [options.address] - A hostname or IPv4 address.
    * @param {Number} [options.port=514] - The port number.
-   * @param {String} [options.hostname] - The hostname used for the syslog endpoint.
-   * @param {String} [options.ipv4] - The IPv4 address used for the syslog endpoint.
-   * @param {module:model/LoggingMessageType} [options.message_type]
-   * @param {String} [options.token='null'] - Whether to prepend each message with a specific token.
-   * @param {module:model/LoggingUseTls} [options.use_tls]
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingSyslogResponse} and HTTP response
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
    */
 
 
@@ -94,27 +72,13 @@ var LoggingSyslogApi = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {
-        'format': options['format'],
-        'format_version': options['format_version'],
-        'name': options['name'],
-        'placement': options['placement'],
-        'response_condition': options['response_condition'],
-        'tls_ca_cert': options['tls_ca_cert'],
-        'tls_client_cert': options['tls_client_cert'],
-        'tls_client_key': options['tls_client_key'],
-        'tls_hostname': options['tls_hostname'],
         'address': options['address'],
-        'port': options['port'],
-        'hostname': options['hostname'],
-        'ipv4': options['ipv4'],
-        'message_type': options['message_type'],
-        'token': options['token'],
-        'use_tls': options['use_tls']
+        'port': options['port']
       };
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _LoggingSyslogResponse["default"];
+      var returnType = _ServiceIdAndVersion["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/logging/syslog', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -122,23 +86,9 @@ var LoggingSyslogApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
-     * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
-     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
-     * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
-     * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
-     * @param {String} [options.tls_hostname='null'] - The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
      * @param {String} [options.address] - A hostname or IPv4 address.
      * @param {Number} [options.port=514] - The port number.
-     * @param {String} [options.hostname] - The hostname used for the syslog endpoint.
-     * @param {String} [options.ipv4] - The IPv4 address used for the syslog endpoint.
-     * @param {module:model/LoggingMessageType} [options.message_type]
-     * @param {String} [options.token='null'] - Whether to prepend each message with a specific token.
-     * @param {module:model/LoggingUseTls} [options.use_tls]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingSyslogResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
      */
 
   }, {
@@ -215,7 +165,7 @@ var LoggingSyslogApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_syslog_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingSyslogResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
      */
 
   }, {
@@ -249,7 +199,7 @@ var LoggingSyslogApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _LoggingSyslogResponse["default"];
+      var returnType = _ServiceIdAndVersion["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/logging/syslog/{logging_syslog_name}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -258,7 +208,7 @@ var LoggingSyslogApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_syslog_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingSyslogResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
      */
 
   }, {
@@ -274,7 +224,7 @@ var LoggingSyslogApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingSyslogResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ServiceIdAndVersion>} and HTTP response
      */
 
   }, {
@@ -302,7 +252,7 @@ var LoggingSyslogApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [_LoggingSyslogResponse["default"]];
+      var returnType = [_ServiceIdAndVersion["default"]];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/logging/syslog', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -310,7 +260,7 @@ var LoggingSyslogApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingSyslogResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ServiceIdAndVersion>}
      */
 
   }, {
@@ -327,23 +277,9 @@ var LoggingSyslogApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_syslog_name
-     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
-     * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
-     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
-     * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
-     * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
-     * @param {String} [options.tls_hostname='null'] - The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
      * @param {String} [options.address] - A hostname or IPv4 address.
      * @param {Number} [options.port=514] - The port number.
-     * @param {String} [options.hostname] - The hostname used for the syslog endpoint.
-     * @param {String} [options.ipv4] - The IPv4 address used for the syslog endpoint.
-     * @param {module:model/LoggingMessageType} [options.message_type]
-     * @param {String} [options.token='null'] - Whether to prepend each message with a specific token.
-     * @param {module:model/LoggingUseTls} [options.use_tls]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingSyslogResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
      */
 
   }, {
@@ -374,27 +310,13 @@ var LoggingSyslogApi = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {
-        'format': options['format'],
-        'format_version': options['format_version'],
-        'name': options['name'],
-        'placement': options['placement'],
-        'response_condition': options['response_condition'],
-        'tls_ca_cert': options['tls_ca_cert'],
-        'tls_client_cert': options['tls_client_cert'],
-        'tls_client_key': options['tls_client_key'],
-        'tls_hostname': options['tls_hostname'],
         'address': options['address'],
-        'port': options['port'],
-        'hostname': options['hostname'],
-        'ipv4': options['ipv4'],
-        'message_type': options['message_type'],
-        'token': options['token'],
-        'use_tls': options['use_tls']
+        'port': options['port']
       };
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _LoggingSyslogResponse["default"];
+      var returnType = _ServiceIdAndVersion["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/logging/syslog/{logging_syslog_name}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -403,23 +325,9 @@ var LoggingSyslogApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_syslog_name
-     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
-     * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
-     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
-     * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
-     * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
-     * @param {String} [options.tls_hostname='null'] - The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
      * @param {String} [options.address] - A hostname or IPv4 address.
      * @param {Number} [options.port=514] - The port number.
-     * @param {String} [options.hostname] - The hostname used for the syslog endpoint.
-     * @param {String} [options.ipv4] - The IPv4 address used for the syslog endpoint.
-     * @param {module:model/LoggingMessageType} [options.message_type]
-     * @param {String} [options.token='null'] - Whether to prepend each message with a specific token.
-     * @param {module:model/LoggingUseTls} [options.use_tls]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingSyslogResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
      */
 
   }, {

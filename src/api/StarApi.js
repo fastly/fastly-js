@@ -15,7 +15,6 @@
 import ApiClient from "../ApiClient";
 import Pagination from '../model/Pagination';
 import Star from '../model/Star';
-import StarResponse from '../model/StarResponse';
 
 /**
 * Star service.
@@ -44,7 +43,7 @@ export default class StarApi {
      * Create star.
      * @param {Object} options
      * @param {module:model/Star} [options.star]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StarResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Star} and HTTP response
      */
     createServiceStarWithHttpInfo(options = {}) {
       let postBody = options['star'];
@@ -61,7 +60,7 @@ export default class StarApi {
       let authNames = ['token'];
       let contentTypes = ['application/vnd.api+json'];
       let accepts = ['application/vnd.api+json'];
-      let returnType = StarResponse;
+      let returnType = Star;
       return this.apiClient.callApi(
         '/stars', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -73,7 +72,7 @@ export default class StarApi {
      * Create star.
      * @param {Object} options
      * @param {module:model/Star} [options.star]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StarResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Star}
      */
     createServiceStar(options = {}) {
       return this.createServiceStarWithHttpInfo(options)
@@ -133,7 +132,7 @@ export default class StarApi {
      * Show star.
      * @param {Object} options
      * @param {String} options.star_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StarResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Star} and HTTP response
      */
     getServiceStarWithHttpInfo(options = {}) {
       let postBody = null;
@@ -155,7 +154,7 @@ export default class StarApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/vnd.api+json'];
-      let returnType = StarResponse;
+      let returnType = Star;
       return this.apiClient.callApi(
         '/stars/{star_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -167,7 +166,7 @@ export default class StarApi {
      * Show star.
      * @param {Object} options
      * @param {String} options.star_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StarResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Star}
      */
     getServiceStar(options = {}) {
       return this.getServiceStarWithHttpInfo(options)

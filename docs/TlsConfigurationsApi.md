@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TlsConfigurationsResponse**](TlsConfigurationsResponse.md)
+[**Pagination**](Pagination.md)
 
 
 ## `updateTlsConfig`

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**ServiceAuthorizationResponseData**](ServiceAuthorizationResponseData.md) |  | [optional] 
+**data** | [**ServiceAuthorizationData**](ServiceAuthorizationData.md) |  | [optional] 
 
 
 

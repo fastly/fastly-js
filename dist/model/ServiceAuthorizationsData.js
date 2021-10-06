@@ -72,6 +72,7 @@ var ServiceAuthorizationsData = /*#__PURE__*/function () {
   return ServiceAuthorizationsData;
 }();
 /**
+ * Alphanumeric string identifying a service authorization.
  * @member {String} id
  */
 

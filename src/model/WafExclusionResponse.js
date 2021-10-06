@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import WafExclusionResponseData from './WafExclusionResponseData';
+import WafExclusionData from './WafExclusionData';
 
 /**
  * The WafExclusionResponse model module.
@@ -48,7 +48,7 @@ class WafExclusionResponse {
             obj = obj || new WafExclusionResponse();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = WafExclusionResponseData.constructFromObject(data['data']);
+                obj['data'] = WafExclusionData.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class WafExclusionResponse {
 }
 
 /**
- * @member {module:model/WafExclusionResponseData} data
+ * @member {module:model/WafExclusionData} data
  */
 WafExclusionResponse.prototype['data'] = undefined;
 

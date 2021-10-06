@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | [optional] 
+**id** | **String** | Alphanumeric string identifying a service authorization. | [optional] [readonly] 
 **type** | [**TypeServiceAuthorization**](TypeServiceAuthorization.md) |  | [optional] 
 
 

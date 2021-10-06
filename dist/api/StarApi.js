@@ -11,8 +11,6 @@ var _Pagination = _interopRequireDefault(require("../model/Pagination"));
 
 var _Star = _interopRequireDefault(require("../model/Star"));
 
-var _StarResponse = _interopRequireDefault(require("../model/StarResponse"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -47,7 +45,7 @@ var StarApi = /*#__PURE__*/function () {
    * Create star.
    * @param {Object} options
    * @param {module:model/Star} [options.star]
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StarResponse} and HTTP response
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Star} and HTTP response
    */
 
 
@@ -63,14 +61,14 @@ var StarApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = ['application/vnd.api+json'];
       var accepts = ['application/vnd.api+json'];
-      var returnType = _StarResponse["default"];
+      var returnType = _Star["default"];
       return this.apiClient.callApi('/stars', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
      * Create star.
      * @param {Object} options
      * @param {module:model/Star} [options.star]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StarResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Star}
      */
 
   }, {
@@ -129,7 +127,7 @@ var StarApi = /*#__PURE__*/function () {
      * Show star.
      * @param {Object} options
      * @param {String} options.star_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StarResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Star} and HTTP response
      */
 
   }, {
@@ -151,14 +149,14 @@ var StarApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/vnd.api+json'];
-      var returnType = _StarResponse["default"];
+      var returnType = _Star["default"];
       return this.apiClient.callApi('/stars/{star_id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
      * Show star.
      * @param {Object} options
      * @param {String} options.star_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StarResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Star}
      */
 
   }, {

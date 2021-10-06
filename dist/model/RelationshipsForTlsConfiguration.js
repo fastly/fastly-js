@@ -7,7 +7,13 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _RelationshipService = _interopRequireDefault(require("./RelationshipService"));
+
 var _RelationshipServiceService = _interopRequireDefault(require("./RelationshipServiceService"));
+
+var _RelationshipTlsDnsRecordDnsRecord = _interopRequireDefault(require("./RelationshipTlsDnsRecordDnsRecord"));
+
+var _RelationshipTlsDnsRecords = _interopRequireDefault(require("./RelationshipTlsDnsRecords"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -59,6 +65,10 @@ var RelationshipsForTlsConfiguration = /*#__PURE__*/function () {
         if (data.hasOwnProperty('service')) {
           obj['service'] = _RelationshipServiceService["default"].constructFromObject(data['service']);
         }
+
+        if (data.hasOwnProperty('dns_records')) {
+          obj['dns_records'] = _RelationshipTlsDnsRecordDnsRecord["default"].constructFromObject(data['dns_records']);
+        }
       }
 
       return obj;
@@ -73,5 +83,10 @@ var RelationshipsForTlsConfiguration = /*#__PURE__*/function () {
 
 
 RelationshipsForTlsConfiguration.prototype['service'] = undefined;
+/**
+ * @member {module:model/RelationshipTlsDnsRecordDnsRecord} dns_records
+ */
+
+RelationshipsForTlsConfiguration.prototype['dns_records'] = undefined;
 var _default = RelationshipsForTlsConfiguration;
 exports["default"] = _default;

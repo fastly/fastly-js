@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BillingAddressResponse**](BillingAddressResponse.md)
+[**BillingAddress**](BillingAddress.md)
 
 
 ## `deleteBillingAddr`
@@ -119,7 +119,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BillingAddressResponse**](BillingAddressResponse.md)
+[**BillingAddress**](BillingAddress.md)
 
 
 ## `updateBillingAddr`
@@ -156,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BillingAddressResponse**](BillingAddressResponse.md)
+[**BillingAddress**](BillingAddress.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

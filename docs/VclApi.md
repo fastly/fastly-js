@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VclResponse**](VclResponse.md)
+[**Timestamps**](Timestamps.md)
 
 
 ## `deleteCustomVcl`
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VclResponse**](VclResponse.md)
+[**Timestamps**](Timestamps.md)
 
 
 ## `getCustomVclBoilerplate`
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VclResponse**](VclResponse.md)
+[**Timestamps**](Timestamps.md)
 
 
 ## `getCustomVclGeneratedHighlighted`
@@ -368,7 +368,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[VclResponse]**](VclResponse.md)
+[**[Timestamps]**](Timestamps.md)
 
 
 ## `setCustomVclMain`
@@ -407,7 +407,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VclResponse**](VclResponse.md)
+[**Timestamps**](Timestamps.md)
 
 
 ## `updateCustomVcl`
@@ -452,7 +452,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**VclResponse**](VclResponse.md)
+[**Timestamps**](Timestamps.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

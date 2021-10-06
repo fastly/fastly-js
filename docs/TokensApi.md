@@ -79,7 +79,7 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**TokenCreatedResponse**](TokenCreatedResponse.md)
+[**Timestamps**](Timestamps.md)
 
 
 ## `getTokenCurrent`
@@ -108,7 +108,7 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**TokenResponse**](TokenResponse.md)
+[**Timestamps**](Timestamps.md)
 
 
 ## `listTokensCustomer`
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[TokenResponse]**](TokenResponse.md)
+[**[Timestamps]**](Timestamps.md)
 
 
 ## `listTokensUser`
@@ -172,7 +172,7 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**[TokenResponse]**](TokenResponse.md)
+[**[Timestamps]**](Timestamps.md)
 
 
 ## `revokeToken`

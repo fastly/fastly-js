@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _DictionaryResponse = _interopRequireDefault(require("../model/DictionaryResponse"));
+var _ServiceIdAndVersion = _interopRequireDefault(require("../model/ServiceIdAndVersion"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -46,7 +46,7 @@ var DictionaryApi = /*#__PURE__*/function () {
    * @param {Number} options.version_id
    * @param {String} [options.name] - Name for the Dictionary.
    * @param {Boolean} [options.write_only=false] - Determines if items in the dictionary are readable or not.
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryResponse} and HTTP response
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
    */
 
 
@@ -78,7 +78,7 @@ var DictionaryApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _DictionaryResponse["default"];
+      var returnType = _ServiceIdAndVersion["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/dictionary', 'POST', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -88,7 +88,7 @@ var DictionaryApi = /*#__PURE__*/function () {
      * @param {Number} options.version_id
      * @param {String} [options.name] - Name for the Dictionary.
      * @param {Boolean} [options.write_only=false] - Determines if items in the dictionary are readable or not.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
      */
 
   }, {
@@ -165,7 +165,7 @@ var DictionaryApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.dictionary_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
      */
 
   }, {
@@ -199,7 +199,7 @@ var DictionaryApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _DictionaryResponse["default"];
+      var returnType = _ServiceIdAndVersion["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/dictionary/{dictionary_name}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -208,7 +208,7 @@ var DictionaryApi = /*#__PURE__*/function () {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.dictionary_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
      */
 
   }, {
@@ -224,7 +224,7 @@ var DictionaryApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DictionaryResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ServiceIdAndVersion>} and HTTP response
      */
 
   }, {
@@ -252,7 +252,7 @@ var DictionaryApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [_DictionaryResponse["default"]];
+      var returnType = [_ServiceIdAndVersion["default"]];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/dictionary', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -260,7 +260,7 @@ var DictionaryApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DictionaryResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ServiceIdAndVersion>}
      */
 
   }, {
@@ -279,7 +279,7 @@ var DictionaryApi = /*#__PURE__*/function () {
      * @param {String} options.dictionary_name
      * @param {String} [options.name] - Name for the Dictionary.
      * @param {Boolean} [options.write_only=false] - Determines if items in the dictionary are readable or not.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
      */
 
   }, {
@@ -316,7 +316,7 @@ var DictionaryApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
       var accepts = ['application/json'];
-      var returnType = _DictionaryResponse["default"];
+      var returnType = _ServiceIdAndVersion["default"];
       return this.apiClient.callApi('/service/{service_id}/version/{version_id}/dictionary/{dictionary_name}', 'PUT', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -327,7 +327,7 @@ var DictionaryApi = /*#__PURE__*/function () {
      * @param {String} options.dictionary_name
      * @param {String} [options.name] - Name for the Dictionary.
      * @param {Boolean} [options.write_only=false] - Determines if items in the dictionary are readable or not.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
      */
 
   }, {

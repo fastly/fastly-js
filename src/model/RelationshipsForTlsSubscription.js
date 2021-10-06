@@ -12,9 +12,11 @@
  */
 
 import ApiClient from '../ApiClient';
+import RelationshipCommonName from './RelationshipCommonName';
 import RelationshipCommonNameCommonName from './RelationshipCommonNameCommonName';
 import RelationshipTlsCertificateTlsCertificate from './RelationshipTlsCertificateTlsCertificate';
 import RelationshipTlsCertificates from './RelationshipTlsCertificates';
+import RelationshipTlsConfiguration from './RelationshipTlsConfiguration';
 import RelationshipTlsConfigurationTlsConfiguration from './RelationshipTlsConfigurationTlsConfiguration';
 import RelationshipTlsDomains from './RelationshipTlsDomains';
 
@@ -51,14 +53,17 @@ class RelationshipsForTlsSubscription {
         if (data) {
             obj = obj || new RelationshipsForTlsSubscription();
 
+            if (data.hasOwnProperty('tls_configuration')) {
+                obj['tls_configuration'] = RelationshipTlsConfigurationTlsConfiguration.constructFromObject(data['tls_configuration']);
+            }
+            if (data.hasOwnProperty('common_name')) {
+                obj['common_name'] = RelationshipCommonNameCommonName.constructFromObject(data['common_name']);
+            }
             if (data.hasOwnProperty('tls_domains')) {
                 obj['tls_domains'] = RelationshipCommonNameCommonName.constructFromObject(data['tls_domains']);
             }
             if (data.hasOwnProperty('tls_certificates')) {
                 obj['tls_certificates'] = RelationshipTlsCertificateTlsCertificate.constructFromObject(data['tls_certificates']);
-            }
-            if (data.hasOwnProperty('tls_configuration')) {
-                obj['tls_configuration'] = RelationshipTlsConfigurationTlsConfiguration.constructFromObject(data['tls_configuration']);
             }
         }
         return obj;
@@ -66,6 +71,16 @@ class RelationshipsForTlsSubscription {
 
 
 }
+
+/**
+ * @member {module:model/RelationshipTlsConfigurationTlsConfiguration} tls_configuration
+ */
+RelationshipsForTlsSubscription.prototype['tls_configuration'] = undefined;
+
+/**
+ * @member {module:model/RelationshipCommonNameCommonName} common_name
+ */
+RelationshipsForTlsSubscription.prototype['common_name'] = undefined;
 
 /**
  * @member {module:model/RelationshipCommonNameCommonName} tls_domains
@@ -76,11 +91,6 @@ RelationshipsForTlsSubscription.prototype['tls_domains'] = undefined;
  * @member {module:model/RelationshipTlsCertificateTlsCertificate} tls_certificates
  */
 RelationshipsForTlsSubscription.prototype['tls_certificates'] = undefined;
-
-/**
- * @member {module:model/RelationshipTlsConfigurationTlsConfiguration} tls_configuration
- */
-RelationshipsForTlsSubscription.prototype['tls_configuration'] = undefined;
 
 
 

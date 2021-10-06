@@ -14,7 +14,7 @@
 
 import ApiClient from "../ApiClient";
 import RoleUser from '../model/RoleUser';
-import UserResponse from '../model/UserResponse';
+import Timestamps from '../model/Timestamps';
 
 /**
 * User service.
@@ -50,7 +50,7 @@ export default class UserApi {
      * @param {module:model/RoleUser} [options.role]
      * @param {Boolean} [options.two_factor_auth_enabled] - Indicates if 2FA is enabled on the user.
      * @param {Boolean} [options.two_factor_setup_required] - Indicates if 2FA is required by the user's customer account.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
     createUserWithHttpInfo(options = {}) {
       let postBody = null;
@@ -75,7 +75,7 @@ export default class UserApi {
       let authNames = [];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = UserResponse;
+      let returnType = Timestamps;
       return this.apiClient.callApi(
         '/user', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -94,7 +94,7 @@ export default class UserApi {
      * @param {module:model/RoleUser} [options.role]
      * @param {Boolean} [options.two_factor_auth_enabled] - Indicates if 2FA is enabled on the user.
      * @param {Boolean} [options.two_factor_setup_required] - Indicates if 2FA is required by the user's customer account.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
     createUser(options = {}) {
       return this.createUserWithHttpInfo(options)
@@ -153,7 +153,7 @@ export default class UserApi {
     /**
      * Get the logged in user.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
     getCurrentUserWithHttpInfo(options = {}) {
       let postBody = null;
@@ -170,7 +170,7 @@ export default class UserApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = UserResponse;
+      let returnType = Timestamps;
       return this.apiClient.callApi(
         '/current_user', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -181,7 +181,7 @@ export default class UserApi {
     /**
      * Get the logged in user.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
     getCurrentUser(options = {}) {
       return this.getCurrentUserWithHttpInfo(options)
@@ -194,7 +194,7 @@ export default class UserApi {
      * Get a specific user.
      * @param {Object} options
      * @param {String} options.user_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
     getUserWithHttpInfo(options = {}) {
       let postBody = null;
@@ -216,7 +216,7 @@ export default class UserApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = UserResponse;
+      let returnType = Timestamps;
       return this.apiClient.callApi(
         '/user/{user_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -228,7 +228,7 @@ export default class UserApi {
      * Get a specific user.
      * @param {Object} options
      * @param {String} options.user_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
     getUser(options = {}) {
       return this.getUserWithHttpInfo(options)
@@ -296,7 +296,7 @@ export default class UserApi {
      * @param {module:model/RoleUser} [options.role]
      * @param {Boolean} [options.two_factor_auth_enabled] - Indicates if 2FA is enabled on the user.
      * @param {Boolean} [options.two_factor_setup_required] - Indicates if 2FA is required by the user's customer account.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
     updateUserWithHttpInfo(options = {}) {
       let postBody = null;
@@ -326,7 +326,7 @@ export default class UserApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = UserResponse;
+      let returnType = Timestamps;
       return this.apiClient.callApi(
         '/user/{user_id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -346,7 +346,7 @@ export default class UserApi {
      * @param {module:model/RoleUser} [options.role]
      * @param {Boolean} [options.two_factor_auth_enabled] - Indicates if 2FA is enabled on the user.
      * @param {Boolean} [options.two_factor_setup_required] - Indicates if 2FA is required by the user's customer account.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
     updateUser(options = {}) {
       return this.updateUserWithHttpInfo(options)
@@ -360,7 +360,7 @@ export default class UserApi {
      * @param {Object} options
      * @param {String} [options.new_password] - The user's new password.
      * @param {String} [options.old_password] - The user's current password.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
     updateUserPasswordWithHttpInfo(options = {}) {
       let postBody = null;
@@ -379,7 +379,7 @@ export default class UserApi {
       let authNames = [];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = UserResponse;
+      let returnType = Timestamps;
       return this.apiClient.callApi(
         '/current_user/password', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -392,7 +392,7 @@ export default class UserApi {
      * @param {Object} options
      * @param {String} [options.new_password] - The user's new password.
      * @param {String} [options.old_password] - The user's current password.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
     updateUserPassword(options = {}) {
       return this.updateUserPasswordWithHttpInfo(options)

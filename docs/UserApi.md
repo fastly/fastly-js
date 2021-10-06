@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserResponse**](UserResponse.md)
+[**Timestamps**](Timestamps.md)
 
 
 ## `deleteUser`
@@ -128,7 +128,7 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**UserResponse**](UserResponse.md)
+[**Timestamps**](Timestamps.md)
 
 
 ## `getUser`
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserResponse**](UserResponse.md)
+[**Timestamps**](Timestamps.md)
 
 
 ## `requestPasswordReset`
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserResponse**](UserResponse.md)
+[**Timestamps**](Timestamps.md)
 
 
 ## `updateUserPassword`
@@ -286,7 +286,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**UserResponse**](UserResponse.md)
+[**Timestamps**](Timestamps.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

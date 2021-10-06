@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import VclResponse from '../model/VclResponse';
+import Timestamps from '../model/Timestamps';
 
 /**
 * Vcl service.
@@ -46,7 +46,7 @@ export default class VclApi {
      * @param {String} [options.content] - The VCL code to be included.
      * @param {Boolean} [options.main] - Set to `true` when this is the main VCL, otherwise `false`.
      * @param {String} [options.name] - The name of this VCL.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VclResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
     createCustomVclWithHttpInfo(options = {}) {
       let postBody = null;
@@ -76,7 +76,7 @@ export default class VclApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = VclResponse;
+      let returnType = Timestamps;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/vcl', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -92,7 +92,7 @@ export default class VclApi {
      * @param {String} [options.content] - The VCL code to be included.
      * @param {Boolean} [options.main] - Set to `true` when this is the main VCL, otherwise `false`.
      * @param {String} [options.name] - The name of this VCL.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VclResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
     createCustomVcl(options = {}) {
       return this.createCustomVclWithHttpInfo(options)
@@ -169,7 +169,7 @@ export default class VclApi {
      * @param {Number} options.version_id
      * @param {String} options.vcl_name
      * @param {String} [options.no_content='0'] - Omit VCL content.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VclResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
     getCustomVclWithHttpInfo(options = {}) {
       let postBody = null;
@@ -202,7 +202,7 @@ export default class VclApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = VclResponse;
+      let returnType = Timestamps;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/vcl/{vcl_name}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -217,7 +217,7 @@ export default class VclApi {
      * @param {Number} options.version_id
      * @param {String} options.vcl_name
      * @param {String} [options.no_content='0'] - Omit VCL content.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VclResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
     getCustomVcl(options = {}) {
       return this.getCustomVclWithHttpInfo(options)
@@ -285,7 +285,7 @@ export default class VclApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VclResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
     getCustomVclGeneratedWithHttpInfo(options = {}) {
       let postBody = null;
@@ -312,7 +312,7 @@ export default class VclApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = VclResponse;
+      let returnType = Timestamps;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/generated_vcl', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -325,7 +325,7 @@ export default class VclApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VclResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
     getCustomVclGenerated(options = {}) {
       return this.getCustomVclGeneratedWithHttpInfo(options)
@@ -515,7 +515,7 @@ export default class VclApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/VclResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Timestamps>} and HTTP response
      */
     listCustomVclWithHttpInfo(options = {}) {
       let postBody = null;
@@ -542,7 +542,7 @@ export default class VclApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [VclResponse];
+      let returnType = [Timestamps];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/vcl', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -555,7 +555,7 @@ export default class VclApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/VclResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Timestamps>}
      */
     listCustomVcl(options = {}) {
       return this.listCustomVclWithHttpInfo(options)
@@ -570,7 +570,7 @@ export default class VclApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.vcl_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VclResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
     setCustomVclMainWithHttpInfo(options = {}) {
       let postBody = null;
@@ -602,7 +602,7 @@ export default class VclApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = VclResponse;
+      let returnType = Timestamps;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/vcl/{vcl_name}/main', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -616,7 +616,7 @@ export default class VclApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.vcl_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VclResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
     setCustomVclMain(options = {}) {
       return this.setCustomVclMainWithHttpInfo(options)
@@ -634,7 +634,7 @@ export default class VclApi {
      * @param {String} [options.content] - The VCL code to be included.
      * @param {Boolean} [options.main] - Set to `true` when this is the main VCL, otherwise `false`.
      * @param {String} [options.name] - The name of this VCL.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VclResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
     updateCustomVclWithHttpInfo(options = {}) {
       let postBody = null;
@@ -669,7 +669,7 @@ export default class VclApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = VclResponse;
+      let returnType = Timestamps;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/vcl/{vcl_name}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -686,7 +686,7 @@ export default class VclApi {
      * @param {String} [options.content] - The VCL code to be included.
      * @param {Boolean} [options.main] - Set to `true` when this is the main VCL, otherwise `false`.
      * @param {String} [options.name] - The name of this VCL.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VclResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
     updateCustomVcl(options = {}) {
       return this.updateCustomVclWithHttpInfo(options)

@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import WafActiveRuleResponseData from './WafActiveRuleResponseData';
+import WafActiveRuleData from './WafActiveRuleData';
 
 /**
  * The WafActiveRuleResponse model module.
@@ -48,7 +48,7 @@ class WafActiveRuleResponse {
             obj = obj || new WafActiveRuleResponse();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = WafActiveRuleResponseData.constructFromObject(data['data']);
+                obj['data'] = WafActiveRuleData.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class WafActiveRuleResponse {
 }
 
 /**
- * @member {module:model/WafActiveRuleResponseData} data
+ * @member {module:model/WafActiveRuleData} data
  */
 WafActiveRuleResponse.prototype['data'] = undefined;
 

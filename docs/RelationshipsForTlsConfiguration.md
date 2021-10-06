@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **service** | [**RelationshipServiceService**](RelationshipServiceService.md) |  | [optional] 
+**dns_records** | [**RelationshipTlsDnsRecordDnsRecord**](RelationshipTlsDnsRecordDnsRecord.md) |  | [optional] 
 
 
 

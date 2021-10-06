@@ -7,17 +7,15 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _IncludedWithWafActiveRuleItem = _interopRequireDefault(require("./IncludedWithWafActiveRuleItem"));
+var _Pagination = _interopRequireDefault(require("./Pagination"));
 
 var _PaginationLinks = _interopRequireDefault(require("./PaginationLinks"));
 
 var _PaginationMeta = _interopRequireDefault(require("./PaginationMeta"));
 
+var _WafActiveRuleData = _interopRequireDefault(require("./WafActiveRuleData"));
+
 var _WafActiveRuleResponse = _interopRequireDefault(require("./WafActiveRuleResponse"));
-
-var _WafActiveRuleResponseData = _interopRequireDefault(require("./WafActiveRuleResponseData"));
-
-var _WafActiveRulesResponse = _interopRequireDefault(require("./WafActiveRulesResponse"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -67,7 +65,7 @@ var WafActiveRuleCreationResponse = /*#__PURE__*/function () {
         obj = obj || new WafActiveRuleCreationResponse();
 
         if (data.hasOwnProperty('data')) {
-          obj['data'] = _ApiClient["default"].convertToType(data['data'], [_WafActiveRuleResponseData["default"]]);
+          obj['data'] = _WafActiveRuleData["default"].constructFromObject(data['data']);
         }
 
         if (data.hasOwnProperty('links')) {
@@ -76,10 +74,6 @@ var WafActiveRuleCreationResponse = /*#__PURE__*/function () {
 
         if (data.hasOwnProperty('meta')) {
           obj['meta'] = _PaginationMeta["default"].constructFromObject(data['meta']);
-        }
-
-        if (data.hasOwnProperty('included')) {
-          obj['included'] = _ApiClient["default"].convertToType(data['included'], [_IncludedWithWafActiveRuleItem["default"]]);
         }
       }
 
@@ -90,7 +84,7 @@ var WafActiveRuleCreationResponse = /*#__PURE__*/function () {
   return WafActiveRuleCreationResponse;
 }();
 /**
- * @member {Array.<module:model/WafActiveRuleResponseData>} data
+ * @member {module:model/WafActiveRuleData} data
  */
 
 
@@ -105,10 +99,5 @@ WafActiveRuleCreationResponse.prototype['links'] = undefined;
  */
 
 WafActiveRuleCreationResponse.prototype['meta'] = undefined;
-/**
- * @member {Array.<module:model/IncludedWithWafActiveRuleItem>} included
- */
-
-WafActiveRuleCreationResponse.prototype['included'] = undefined;
 var _default = WafActiveRuleCreationResponse;
 exports["default"] = _default;

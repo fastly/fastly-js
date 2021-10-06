@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WafActiveRulesResponse**](WafActiveRulesResponse.md)
+[**Pagination**](Pagination.md)
 
 
 ## `updateWafActiveRule`

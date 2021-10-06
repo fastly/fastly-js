@@ -15,8 +15,7 @@
 import ApiClient from "../ApiClient";
 import GenericTokenError from '../model/GenericTokenError';
 import InlineResponse400 from '../model/InlineResponse400';
-import TokenCreatedResponse from '../model/TokenCreatedResponse';
-import TokenResponse from '../model/TokenResponse';
+import Timestamps from '../model/Timestamps';
 
 /**
 * Tokens service.
@@ -86,7 +85,7 @@ export default class TokensApi {
     /**
      * Create an API token. If two-factor authentication is enabled for your account, review [the instructions](/reference/api/auth/) for including a one-time password in the request. 
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TokenCreatedResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
     createTokenWithHttpInfo(options = {}) {
       let postBody = null;
@@ -103,7 +102,7 @@ export default class TokensApi {
       let authNames = [];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = TokenCreatedResponse;
+      let returnType = Timestamps;
       return this.apiClient.callApi(
         '/tokens', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -114,7 +113,7 @@ export default class TokensApi {
     /**
      * Create an API token. If two-factor authentication is enabled for your account, review [the instructions](/reference/api/auth/) for including a one-time password in the request. 
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TokenCreatedResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
     createToken(options = {}) {
       return this.createTokenWithHttpInfo(options)
@@ -126,7 +125,7 @@ export default class TokensApi {
     /**
      * Get a single token based on the access_token used in the request.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TokenResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Timestamps} and HTTP response
      */
     getTokenCurrentWithHttpInfo(options = {}) {
       let postBody = null;
@@ -143,7 +142,7 @@ export default class TokensApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = TokenResponse;
+      let returnType = Timestamps;
       return this.apiClient.callApi(
         '/tokens/self', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -154,7 +153,7 @@ export default class TokensApi {
     /**
      * Get a single token based on the access_token used in the request.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TokenResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Timestamps}
      */
     getTokenCurrent(options = {}) {
       return this.getTokenCurrentWithHttpInfo(options)
@@ -167,7 +166,7 @@ export default class TokensApi {
      * List all tokens belonging to a specific customer.
      * @param {Object} options
      * @param {String} options.customer_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/TokenResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Timestamps>} and HTTP response
      */
     listTokensCustomerWithHttpInfo(options = {}) {
       let postBody = null;
@@ -189,7 +188,7 @@ export default class TokensApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [TokenResponse];
+      let returnType = [Timestamps];
       return this.apiClient.callApi(
         '/customer/{customer_id}/tokens', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -201,7 +200,7 @@ export default class TokensApi {
      * List all tokens belonging to a specific customer.
      * @param {Object} options
      * @param {String} options.customer_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/TokenResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Timestamps>}
      */
     listTokensCustomer(options = {}) {
       return this.listTokensCustomerWithHttpInfo(options)
@@ -213,7 +212,7 @@ export default class TokensApi {
     /**
      * List all tokens belonging to the authenticated user.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/TokenResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Timestamps>} and HTTP response
      */
     listTokensUserWithHttpInfo(options = {}) {
       let postBody = null;
@@ -230,7 +229,7 @@ export default class TokensApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [TokenResponse];
+      let returnType = [Timestamps];
       return this.apiClient.callApi(
         '/tokens', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -241,7 +240,7 @@ export default class TokensApi {
     /**
      * List all tokens belonging to the authenticated user.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/TokenResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Timestamps>}
      */
     listTokensUser(options = {}) {
       return this.listTokensUserWithHttpInfo(options)

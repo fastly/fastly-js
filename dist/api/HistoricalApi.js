@@ -7,21 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _HistoricalAggregateResponse = _interopRequireDefault(require("../model/HistoricalAggregateResponse"));
-
-var _HistoricalFieldAggregateResponse = _interopRequireDefault(require("../model/HistoricalFieldAggregateResponse"));
-
-var _HistoricalFieldResponse = _interopRequireDefault(require("../model/HistoricalFieldResponse"));
-
-var _HistoricalRegionsResponse = _interopRequireDefault(require("../model/HistoricalRegionsResponse"));
-
-var _HistoricalResponse = _interopRequireDefault(require("../model/HistoricalResponse"));
-
-var _HistoricalUsageAggregateResponse = _interopRequireDefault(require("../model/HistoricalUsageAggregateResponse"));
-
-var _HistoricalUsageMonthResponse = _interopRequireDefault(require("../model/HistoricalUsageMonthResponse"));
-
-var _HistoricalUsageServiceResponse = _interopRequireDefault(require("../model/HistoricalUsageServiceResponse"));
+var _Historical = _interopRequireDefault(require("../model/Historical"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -60,7 +46,7 @@ var HistoricalApi = /*#__PURE__*/function () {
    * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
    * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
    * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America. 
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalResponse} and HTTP response
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Historical} and HTTP response
    */
 
 
@@ -81,7 +67,7 @@ var HistoricalApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _HistoricalResponse["default"];
+      var returnType = _Historical["default"];
       return this.apiClient.callApi('/stats', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -91,7 +77,7 @@ var HistoricalApi = /*#__PURE__*/function () {
      * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Historical}
      */
 
   }, {
@@ -109,7 +95,7 @@ var HistoricalApi = /*#__PURE__*/function () {
      * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalAggregateResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Historical} and HTTP response
      */
 
   }, {
@@ -129,7 +115,7 @@ var HistoricalApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _HistoricalAggregateResponse["default"];
+      var returnType = _Historical["default"];
       return this.apiClient.callApi('/stats/aggregate', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -139,7 +125,7 @@ var HistoricalApi = /*#__PURE__*/function () {
      * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalAggregateResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Historical}
      */
 
   }, {
@@ -158,7 +144,7 @@ var HistoricalApi = /*#__PURE__*/function () {
      * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalFieldResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Historical} and HTTP response
      */
 
   }, {
@@ -185,7 +171,7 @@ var HistoricalApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _HistoricalFieldResponse["default"];
+      var returnType = _Historical["default"];
       return this.apiClient.callApi('/stats/field/{field}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -196,7 +182,7 @@ var HistoricalApi = /*#__PURE__*/function () {
      * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalFieldResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Historical}
      */
 
   }, {
@@ -215,7 +201,7 @@ var HistoricalApi = /*#__PURE__*/function () {
      * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalAggregateResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Historical} and HTTP response
      */
 
   }, {
@@ -242,7 +228,7 @@ var HistoricalApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _HistoricalAggregateResponse["default"];
+      var returnType = _Historical["default"];
       return this.apiClient.callApi('/stats/service/{service_id}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -253,7 +239,7 @@ var HistoricalApi = /*#__PURE__*/function () {
      * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalAggregateResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Historical}
      */
 
   }, {
@@ -273,7 +259,7 @@ var HistoricalApi = /*#__PURE__*/function () {
      * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalFieldAggregateResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Historical} and HTTP response
      */
 
   }, {
@@ -306,7 +292,7 @@ var HistoricalApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _HistoricalFieldAggregateResponse["default"];
+      var returnType = _Historical["default"];
       return this.apiClient.callApi('/stats/service/{service_id}/field/{field}', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -318,7 +304,7 @@ var HistoricalApi = /*#__PURE__*/function () {
      * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalFieldAggregateResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Historical}
      */
 
   }, {
@@ -332,7 +318,7 @@ var HistoricalApi = /*#__PURE__*/function () {
     /**
      * Fetches the list of codes for regions that are covered by the Fastly CDN service.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalRegionsResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Historical} and HTTP response
      */
 
   }, {
@@ -347,13 +333,13 @@ var HistoricalApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _HistoricalRegionsResponse["default"];
+      var returnType = _Historical["default"];
       return this.apiClient.callApi('/stats/regions', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
      * Fetches the list of codes for regions that are covered by the Fastly CDN service.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalRegionsResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Historical}
      */
 
   }, {
@@ -371,7 +357,7 @@ var HistoricalApi = /*#__PURE__*/function () {
      * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalUsageAggregateResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Historical} and HTTP response
      */
 
   }, {
@@ -391,7 +377,7 @@ var HistoricalApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _HistoricalUsageAggregateResponse["default"];
+      var returnType = _Historical["default"];
       return this.apiClient.callApi('/stats/usage', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -401,7 +387,7 @@ var HistoricalApi = /*#__PURE__*/function () {
      * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalUsageAggregateResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Historical}
      */
 
   }, {
@@ -419,7 +405,7 @@ var HistoricalApi = /*#__PURE__*/function () {
      * @param {String} [options.month] - 2-digit month.
      * @param {Boolean} [options.billable_units] - If `true`, return results as billable units.
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalUsageMonthResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Historical} and HTTP response
      */
 
   }, {
@@ -439,7 +425,7 @@ var HistoricalApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _HistoricalUsageMonthResponse["default"];
+      var returnType = _Historical["default"];
       return this.apiClient.callApi('/stats/usage_by_month', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -449,7 +435,7 @@ var HistoricalApi = /*#__PURE__*/function () {
      * @param {String} [options.month] - 2-digit month.
      * @param {Boolean} [options.billable_units] - If `true`, return results as billable units.
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalUsageMonthResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Historical}
      */
 
   }, {
@@ -467,7 +453,7 @@ var HistoricalApi = /*#__PURE__*/function () {
      * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalUsageServiceResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Historical} and HTTP response
      */
 
   }, {
@@ -487,7 +473,7 @@ var HistoricalApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = _HistoricalUsageServiceResponse["default"];
+      var returnType = _Historical["default"];
       return this.apiClient.callApi('/stats/usage_by_service', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -497,7 +483,7 @@ var HistoricalApi = /*#__PURE__*/function () {
      * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalUsageServiceResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Historical}
      */
 
   }, {

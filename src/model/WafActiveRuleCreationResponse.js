@@ -12,12 +12,11 @@
  */
 
 import ApiClient from '../ApiClient';
-import IncludedWithWafActiveRuleItem from './IncludedWithWafActiveRuleItem';
+import Pagination from './Pagination';
 import PaginationLinks from './PaginationLinks';
 import PaginationMeta from './PaginationMeta';
+import WafActiveRuleData from './WafActiveRuleData';
 import WafActiveRuleResponse from './WafActiveRuleResponse';
-import WafActiveRuleResponseData from './WafActiveRuleResponseData';
-import WafActiveRulesResponse from './WafActiveRulesResponse';
 
 /**
  * The WafActiveRuleCreationResponse model module.
@@ -53,16 +52,13 @@ class WafActiveRuleCreationResponse {
             obj = obj || new WafActiveRuleCreationResponse();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [WafActiveRuleResponseData]);
+                obj['data'] = WafActiveRuleData.constructFromObject(data['data']);
             }
             if (data.hasOwnProperty('links')) {
                 obj['links'] = PaginationLinks.constructFromObject(data['links']);
             }
             if (data.hasOwnProperty('meta')) {
                 obj['meta'] = PaginationMeta.constructFromObject(data['meta']);
-            }
-            if (data.hasOwnProperty('included')) {
-                obj['included'] = ApiClient.convertToType(data['included'], [IncludedWithWafActiveRuleItem]);
             }
         }
         return obj;
@@ -72,7 +68,7 @@ class WafActiveRuleCreationResponse {
 }
 
 /**
- * @member {Array.<module:model/WafActiveRuleResponseData>} data
+ * @member {module:model/WafActiveRuleData} data
  */
 WafActiveRuleCreationResponse.prototype['data'] = undefined;
 
@@ -85,11 +81,6 @@ WafActiveRuleCreationResponse.prototype['links'] = undefined;
  * @member {module:model/PaginationMeta} meta
  */
 WafActiveRuleCreationResponse.prototype['meta'] = undefined;
-
-/**
- * @member {Array.<module:model/IncludedWithWafActiveRuleItem>} included
- */
-WafActiveRuleCreationResponse.prototype['included'] = undefined;
 
 
 

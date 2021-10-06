@@ -59,7 +59,7 @@ var TlsPrivateKeyResponseData = /*#__PURE__*/function () {
         obj = obj || new TlsPrivateKeyResponseData();
 
         if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _ApiClient["default"].convertToType(data['attributes'], _Timestamps["default"]);
+          obj['attributes'] = _Timestamps["default"].constructFromObject(data['attributes']);
         }
 
         if (data.hasOwnProperty('id')) {

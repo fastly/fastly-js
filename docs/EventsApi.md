@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EventsResponse**](EventsResponse.md)
+[**Pagination**](Pagination.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

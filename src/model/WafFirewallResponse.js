@@ -13,7 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import SchemasWafFirewallVersion from './SchemasWafFirewallVersion';
-import WafFirewallResponseData from './WafFirewallResponseData';
+import WafFirewallData from './WafFirewallData';
 
 /**
  * The WafFirewallResponse model module.
@@ -49,7 +49,7 @@ class WafFirewallResponse {
             obj = obj || new WafFirewallResponse();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = WafFirewallResponseData.constructFromObject(data['data']);
+                obj['data'] = WafFirewallData.constructFromObject(data['data']);
             }
             if (data.hasOwnProperty('included')) {
                 obj['included'] = ApiClient.convertToType(data['included'], [SchemasWafFirewallVersion]);
@@ -62,7 +62,7 @@ class WafFirewallResponse {
 }
 
 /**
- * @member {module:model/WafFirewallResponseData} data
+ * @member {module:model/WafFirewallData} data
  */
 WafFirewallResponse.prototype['data'] = undefined;
 

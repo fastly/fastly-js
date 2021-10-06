@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import BillingAddressResponse from '../model/BillingAddressResponse';
+import BillingAddress from '../model/BillingAddress';
 import InlineObject from '../model/InlineObject';
 import InlineObject1 from '../model/InlineObject1';
 
@@ -45,7 +45,7 @@ export default class BillingAddressApi {
      * @param {Object} options
      * @param {String} options.customer_id
      * @param {module:model/InlineObject} [options.inline_object]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BillingAddressResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BillingAddress} and HTTP response
      */
     addBillingAddrWithHttpInfo(options = {}) {
       let postBody = options['inline_object'];
@@ -67,7 +67,7 @@ export default class BillingAddressApi {
       let authNames = ['token'];
       let contentTypes = ['application/vnd.api+json'];
       let accepts = ['application/vnd.api+json'];
-      let returnType = BillingAddressResponse;
+      let returnType = BillingAddress;
       return this.apiClient.callApi(
         '/customer/{customer_id}/billing_address', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -80,7 +80,7 @@ export default class BillingAddressApi {
      * @param {Object} options
      * @param {String} options.customer_id
      * @param {module:model/InlineObject} [options.inline_object]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BillingAddressResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BillingAddress}
      */
     addBillingAddr(options = {}) {
       return this.addBillingAddrWithHttpInfo(options)
@@ -140,7 +140,7 @@ export default class BillingAddressApi {
      * Get a customer's billing address.
      * @param {Object} options
      * @param {String} options.customer_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BillingAddressResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BillingAddress} and HTTP response
      */
     getBillingAddrWithHttpInfo(options = {}) {
       let postBody = null;
@@ -162,7 +162,7 @@ export default class BillingAddressApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/vnd.api+json'];
-      let returnType = BillingAddressResponse;
+      let returnType = BillingAddress;
       return this.apiClient.callApi(
         '/customer/{customer_id}/billing_address', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -174,7 +174,7 @@ export default class BillingAddressApi {
      * Get a customer's billing address.
      * @param {Object} options
      * @param {String} options.customer_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BillingAddressResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BillingAddress}
      */
     getBillingAddr(options = {}) {
       return this.getBillingAddrWithHttpInfo(options)
@@ -188,7 +188,7 @@ export default class BillingAddressApi {
      * @param {Object} options
      * @param {String} options.customer_id
      * @param {module:model/InlineObject1} [options.inline_object1]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BillingAddressResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BillingAddress} and HTTP response
      */
     updateBillingAddrWithHttpInfo(options = {}) {
       let postBody = options['inline_object1'];
@@ -210,7 +210,7 @@ export default class BillingAddressApi {
       let authNames = ['token'];
       let contentTypes = ['application/vnd.api+json'];
       let accepts = ['application/vnd.api+json'];
-      let returnType = BillingAddressResponse;
+      let returnType = BillingAddress;
       return this.apiClient.callApi(
         '/customer/{customer_id}/billing_address', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -223,7 +223,7 @@ export default class BillingAddressApi {
      * @param {Object} options
      * @param {String} options.customer_id
      * @param {module:model/InlineObject1} [options.inline_object1]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BillingAddressResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BillingAddress}
      */
     updateBillingAddr(options = {}) {
       return this.updateBillingAddrWithHttpInfo(options)

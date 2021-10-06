@@ -13,9 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import LoggingBigqueryResponse from '../model/LoggingBigqueryResponse';
-import LoggingFormatVersion from '../model/LoggingFormatVersion';
-import LoggingPlacement from '../model/LoggingPlacement';
+import ServiceIdAndVersion from '../model/ServiceIdAndVersion';
 
 /**
 * LoggingBigquery service.
@@ -45,18 +43,9 @@ export default class LoggingBigqueryApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @param {String} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
-     * @param {String} [options.name] - The name of the BigQuery logging object. Used as a primary key for API access.
-     * @param {module:model/LoggingPlacement} [options.placement]
-     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
      * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
-     * @param {String} [options.dataset] - Your BigQuery dataset.
-     * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
-     * @param {String} [options.table] - Your BigQuery table.
-     * @param {String} [options.template_suffix] - BigQuery table name suffix template. Optional.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingBigqueryResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
      */
     createLogBigqueryWithHttpInfo(options = {}) {
       let postBody = null;
@@ -78,23 +67,14 @@ export default class LoggingBigqueryApi {
       let headerParams = {
       };
       let formParams = {
-        'format': options['format'],
-        'format_version': options['format_version'],
-        'name': options['name'],
-        'placement': options['placement'],
-        'response_condition': options['response_condition'],
         'secret_key': options['secret_key'],
-        'user': options['user'],
-        'dataset': options['dataset'],
-        'project_id': options['project_id'],
-        'table': options['table'],
-        'template_suffix': options['template_suffix']
+        'user': options['user']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = LoggingBigqueryResponse;
+      let returnType = ServiceIdAndVersion;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/bigquery', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -107,18 +87,9 @@ export default class LoggingBigqueryApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @param {String} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
-     * @param {String} [options.name] - The name of the BigQuery logging object. Used as a primary key for API access.
-     * @param {module:model/LoggingPlacement} [options.placement]
-     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
      * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
-     * @param {String} [options.dataset] - Your BigQuery dataset.
-     * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
-     * @param {String} [options.table] - Your BigQuery table.
-     * @param {String} [options.template_suffix] - BigQuery table name suffix template. Optional.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingBigqueryResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
      */
     createLogBigquery(options = {}) {
       return this.createLogBigqueryWithHttpInfo(options)
@@ -194,7 +165,7 @@ export default class LoggingBigqueryApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_bigquery_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingBigqueryResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
      */
     getLogBigqueryWithHttpInfo(options = {}) {
       let postBody = null;
@@ -226,7 +197,7 @@ export default class LoggingBigqueryApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = LoggingBigqueryResponse;
+      let returnType = ServiceIdAndVersion;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/bigquery/{logging_bigquery_name}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -240,7 +211,7 @@ export default class LoggingBigqueryApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_bigquery_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingBigqueryResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
      */
     getLogBigquery(options = {}) {
       return this.getLogBigqueryWithHttpInfo(options)
@@ -254,7 +225,7 @@ export default class LoggingBigqueryApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingBigqueryResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ServiceIdAndVersion>} and HTTP response
      */
     listLogBigqueryWithHttpInfo(options = {}) {
       let postBody = null;
@@ -281,7 +252,7 @@ export default class LoggingBigqueryApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [LoggingBigqueryResponse];
+      let returnType = [ServiceIdAndVersion];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/bigquery', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -294,7 +265,7 @@ export default class LoggingBigqueryApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingBigqueryResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ServiceIdAndVersion>}
      */
     listLogBigquery(options = {}) {
       return this.listLogBigqueryWithHttpInfo(options)
@@ -309,18 +280,9 @@ export default class LoggingBigqueryApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_bigquery_name
-     * @param {String} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
-     * @param {String} [options.name] - The name of the BigQuery logging object. Used as a primary key for API access.
-     * @param {module:model/LoggingPlacement} [options.placement]
-     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
      * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
-     * @param {String} [options.dataset] - Your BigQuery dataset.
-     * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
-     * @param {String} [options.table] - Your BigQuery table.
-     * @param {String} [options.template_suffix] - BigQuery table name suffix template. Optional.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingBigqueryResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
      */
     updateLogBigqueryWithHttpInfo(options = {}) {
       let postBody = null;
@@ -347,23 +309,14 @@ export default class LoggingBigqueryApi {
       let headerParams = {
       };
       let formParams = {
-        'format': options['format'],
-        'format_version': options['format_version'],
-        'name': options['name'],
-        'placement': options['placement'],
-        'response_condition': options['response_condition'],
         'secret_key': options['secret_key'],
-        'user': options['user'],
-        'dataset': options['dataset'],
-        'project_id': options['project_id'],
-        'table': options['table'],
-        'template_suffix': options['template_suffix']
+        'user': options['user']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = LoggingBigqueryResponse;
+      let returnType = ServiceIdAndVersion;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/bigquery/{logging_bigquery_name}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -377,18 +330,9 @@ export default class LoggingBigqueryApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_bigquery_name
-     * @param {String} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
-     * @param {String} [options.name] - The name of the BigQuery logging object. Used as a primary key for API access.
-     * @param {module:model/LoggingPlacement} [options.placement]
-     * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
      * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
-     * @param {String} [options.dataset] - Your BigQuery dataset.
-     * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
-     * @param {String} [options.table] - Your BigQuery table.
-     * @param {String} [options.template_suffix] - BigQuery table name suffix template. Optional.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingBigqueryResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
      */
     updateLogBigquery(options = {}) {
       return this.updateLogBigqueryWithHttpInfo(options)

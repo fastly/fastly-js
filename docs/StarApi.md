@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StarResponse**](StarResponse.md)
+[**Star**](Star.md)
 
 
 ## `deleteServiceStar`
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StarResponse**](StarResponse.md)
+[**Star**](Star.md)
 
 
 ## `listServiceStars`

@@ -31,7 +31,7 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   access_key: "access_key_example",
-  format: null,
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   format_version: new Fastly.LoggingFormatVersion(),
   iam_role: "iam_role_example",
   name: "name_example",
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
 **access_key** | **String** | The access key associated with the target Amazon Kinesis stream. Not required if &#x60;iam_role&#x60; is specified. | [optional]
-**format** | [**String**](../Model/String.md) |  | [optional]
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
 **format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
 **iam_role** | **String** | The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if &#x60;access_key&#x60; and &#x60;secret_key&#x60; are provided. | [optional]
 **name** | **String** | The name for the real-time logging configuration. | [optional]
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LoggingKinesisResponse**](LoggingKinesisResponse.md)
+[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
 
 
 ## `deleteLogKinesis`
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LoggingKinesisResponse**](LoggingKinesisResponse.md)
+[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
 
 
 ## `listLogKinesis`
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[LoggingKinesisResponse]**](LoggingKinesisResponse.md)
+[**[ServiceIdAndVersion]**](ServiceIdAndVersion.md)
 
 
 ## `updateLogKinesis`
@@ -222,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LoggingKinesisResponse**](LoggingKinesisResponse.md)
+[**ServiceIdAndVersion**](ServiceIdAndVersion.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

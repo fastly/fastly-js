@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
+import Pagination from '../model/Pagination';
 import TlsActivation from '../model/TlsActivation';
 import TlsActivationResponse from '../model/TlsActivationResponse';
-import TlsActivationsResponse from '../model/TlsActivationsResponse';
 
 /**
 * TlsActivations service.
@@ -188,7 +188,7 @@ export default class TlsActivationsApi {
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_certificate`, `tls_configuration`, and `tls_domain`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsActivationsResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Pagination} and HTTP response
      */
     listTlsActivationsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -211,7 +211,7 @@ export default class TlsActivationsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/vnd.api+json'];
-      let returnType = TlsActivationsResponse;
+      let returnType = Pagination;
       return this.apiClient.callApi(
         '/tls/activations', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -228,7 +228,7 @@ export default class TlsActivationsApi {
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_certificate`, `tls_configuration`, and `tls_domain`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsActivationsResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Pagination}
      */
     listTlsActivations(options = {}) {
       return this.listTlsActivationsWithHttpInfo(options)

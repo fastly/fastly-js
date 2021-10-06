@@ -13,11 +13,11 @@
 
 
 import ApiClient from "../ApiClient";
+import Pagination from '../model/Pagination';
 import WafActiveRule from '../model/WafActiveRule';
 import WafActiveRuleCreationResponse from '../model/WafActiveRuleCreationResponse';
 import WafActiveRuleData from '../model/WafActiveRuleData';
 import WafActiveRuleResponse from '../model/WafActiveRuleResponse';
-import WafActiveRulesResponse from '../model/WafActiveRulesResponse';
 
 /**
 * WafActiveRules service.
@@ -410,7 +410,7 @@ export default class WafActiveRulesApi {
      * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_rule_revision` and `waf_firewall_version`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafActiveRulesResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Pagination} and HTTP response
      */
     listWafActiveRulesWithHttpInfo(options = {}) {
       let postBody = null;
@@ -444,7 +444,7 @@ export default class WafActiveRulesApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/vnd.api+json'];
-      let returnType = WafActiveRulesResponse;
+      let returnType = Pagination;
       return this.apiClient.callApi(
         '/waf/firewalls/{firewall_id}/versions/{version_id}/active-rules', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -464,7 +464,7 @@ export default class WafActiveRulesApi {
      * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_rule_revision` and `waf_firewall_version`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafActiveRulesResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Pagination}
      */
     listWafActiveRules(options = {}) {
       return this.listWafActiveRulesWithHttpInfo(options)

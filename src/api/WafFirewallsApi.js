@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
+import Pagination from '../model/Pagination';
 import WafFirewall from '../model/WafFirewall';
 import WafFirewallResponse from '../model/WafFirewallResponse';
-import WafFirewallsResponse from '../model/WafFirewallsResponse';
 
 /**
 * WafFirewalls service.
@@ -192,7 +192,7 @@ export default class WafFirewallsApi {
      * @param {String} [options.filter_service_id] - Limit the results returned to a specific service.
      * @param {String} [options.filter_service_version_number] - Limit the results returned to a specific service version.
      * @param {module:model/String} [options.include='waf_firewall_versions'] - Include related objects. Optional.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafFirewallsResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Pagination} and HTTP response
      */
     listWafFirewallsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -214,7 +214,7 @@ export default class WafFirewallsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/vnd.api+json'];
-      let returnType = WafFirewallsResponse;
+      let returnType = Pagination;
       return this.apiClient.callApi(
         '/waf/firewalls', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -230,7 +230,7 @@ export default class WafFirewallsApi {
      * @param {String} [options.filter_service_id] - Limit the results returned to a specific service.
      * @param {String} [options.filter_service_version_number] - Limit the results returned to a specific service version.
      * @param {module:model/String} [options.include='waf_firewall_versions'] - Include related objects. Optional.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafFirewallsResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Pagination}
      */
     listWafFirewalls(options = {}) {
       return this.listWafFirewallsWithHttpInfo(options)

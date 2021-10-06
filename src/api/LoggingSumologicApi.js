@@ -14,9 +14,8 @@
 
 import ApiClient from "../ApiClient";
 import LoggingFormatVersion from '../model/LoggingFormatVersion';
-import LoggingMessageType from '../model/LoggingMessageType';
 import LoggingPlacement from '../model/LoggingPlacement';
-import LoggingSumologicResponse from '../model/LoggingSumologicResponse';
+import ServiceIdAndVersion from '../model/ServiceIdAndVersion';
 
 /**
 * LoggingSumologic service.
@@ -51,9 +50,7 @@ export default class LoggingSumologicApi {
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:model/LoggingMessageType} [options.message_type]
-     * @param {String} [options.url] - The URL to post logs to.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingSumologicResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
      */
     createLogSumologicWithHttpInfo(options = {}) {
       let postBody = null;
@@ -79,15 +76,13 @@ export default class LoggingSumologicApi {
         'format_version': options['format_version'],
         'name': options['name'],
         'placement': options['placement'],
-        'response_condition': options['response_condition'],
-        'message_type': options['message_type'],
-        'url': options['url']
+        'response_condition': options['response_condition']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = LoggingSumologicResponse;
+      let returnType = ServiceIdAndVersion;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/sumologic', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -105,9 +100,7 @@ export default class LoggingSumologicApi {
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:model/LoggingMessageType} [options.message_type]
-     * @param {String} [options.url] - The URL to post logs to.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingSumologicResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
      */
     createLogSumologic(options = {}) {
       return this.createLogSumologicWithHttpInfo(options)
@@ -183,7 +176,7 @@ export default class LoggingSumologicApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_sumologic_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingSumologicResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
      */
     getLogSumologicWithHttpInfo(options = {}) {
       let postBody = null;
@@ -215,7 +208,7 @@ export default class LoggingSumologicApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = LoggingSumologicResponse;
+      let returnType = ServiceIdAndVersion;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/sumologic/{logging_sumologic_name}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -229,7 +222,7 @@ export default class LoggingSumologicApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_sumologic_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingSumologicResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
      */
     getLogSumologic(options = {}) {
       return this.getLogSumologicWithHttpInfo(options)
@@ -243,7 +236,7 @@ export default class LoggingSumologicApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingSumologicResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ServiceIdAndVersion>} and HTTP response
      */
     listLogSumologicWithHttpInfo(options = {}) {
       let postBody = null;
@@ -270,7 +263,7 @@ export default class LoggingSumologicApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [LoggingSumologicResponse];
+      let returnType = [ServiceIdAndVersion];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/sumologic', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -283,7 +276,7 @@ export default class LoggingSumologicApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingSumologicResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ServiceIdAndVersion>}
      */
     listLogSumologic(options = {}) {
       return this.listLogSumologicWithHttpInfo(options)
@@ -303,9 +296,7 @@ export default class LoggingSumologicApi {
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:model/LoggingMessageType} [options.message_type]
-     * @param {String} [options.url] - The URL to post logs to.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingSumologicResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceIdAndVersion} and HTTP response
      */
     updateLogSumologicWithHttpInfo(options = {}) {
       let postBody = null;
@@ -336,15 +327,13 @@ export default class LoggingSumologicApi {
         'format_version': options['format_version'],
         'name': options['name'],
         'placement': options['placement'],
-        'response_condition': options['response_condition'],
-        'message_type': options['message_type'],
-        'url': options['url']
+        'response_condition': options['response_condition']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = LoggingSumologicResponse;
+      let returnType = ServiceIdAndVersion;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/sumologic/{logging_sumologic_name}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -363,9 +352,7 @@ export default class LoggingSumologicApi {
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:model/LoggingMessageType} [options.message_type]
-     * @param {String} [options.url] - The URL to post logs to.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingSumologicResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceIdAndVersion}
      */
     updateLogSumologic(options = {}) {
       return this.updateLogSumologicWithHttpInfo(options)

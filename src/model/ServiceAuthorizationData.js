@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import RelationshipService from './RelationshipService';
 import ServiceAuthorizationDataAttributes from './ServiceAuthorizationDataAttributes';
 import TypeServiceAuthorization from './TypeServiceAuthorization';
 
@@ -52,7 +53,7 @@ class ServiceAuthorizationData {
                 obj['attributes'] = ServiceAuthorizationDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = ApiClient.convertToType(data['relationships'], Object);
+                obj['relationships'] = RelationshipService.constructFromObject(data['relationships']);
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeServiceAuthorization.constructFromObject(data['type']);
@@ -70,7 +71,7 @@ class ServiceAuthorizationData {
 ServiceAuthorizationData.prototype['attributes'] = undefined;
 
 /**
- * @member {Object} relationships
+ * @member {module:model/RelationshipService} relationships
  */
 ServiceAuthorizationData.prototype['relationships'] = undefined;
 

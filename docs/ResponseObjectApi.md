@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseObjectResponse**](ResponseObjectResponse.md)
+[**Timestamps**](Timestamps.md)
 
 
 ## `deleteResponseObject`
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseObjectResponse**](ResponseObjectResponse.md)
+[**Timestamps**](Timestamps.md)
 
 
 ## `listResponseObjects`
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[ResponseObjectResponse]**](ResponseObjectResponse.md)
+[**[Timestamps]**](Timestamps.md)
 
 
 ## `updateResponseObject`
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ResponseObjectResponse**](ResponseObjectResponse.md)
+[**Timestamps**](Timestamps.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

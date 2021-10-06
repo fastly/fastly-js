@@ -15,6 +15,7 @@ import ApiClient from '../ApiClient';
 import RelationshipCommonNameCommonName from './RelationshipCommonNameCommonName';
 import RelationshipTlsConfigurationTlsConfiguration from './RelationshipTlsConfigurationTlsConfiguration';
 import RelationshipTlsConfigurations from './RelationshipTlsConfigurations';
+import RelationshipTlsDomains from './RelationshipTlsDomains';
 
 /**
  * The RelationshipsForTlsBulkCertificate model module.
