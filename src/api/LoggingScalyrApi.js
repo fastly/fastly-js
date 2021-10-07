@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
-import LoggingFormatVersion from '../model/LoggingFormatVersion';
-import LoggingPlacement from '../model/LoggingPlacement';
-import LoggingScalyrResponse from '../model/LoggingScalyrResponse';
+import LoggingFormatVersion from '../models/LoggingFormatVersion';
+import LoggingPlacement from '../models/LoggingPlacement';
+import LoggingScalyrResponse from '../models/LoggingScalyrResponse';
 
 /**
 * LoggingScalyr service.
@@ -46,14 +46,14 @@ export default class LoggingScalyrApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.project_id='logplex'] - The name of the logfile within Scalyr.
-     * @param {module:model/String} [options.region='US'] - The region that log data will be sent to.
+     * @param {module:models/String} [options.region='US'] - The region that log data will be sent to.
      * @param {String} [options.token] - The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)).
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingScalyrResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingScalyrResponse} and HTTP response
      */
     createLogScalyrWithHttpInfo(options = {}) {
       let postBody = null;
@@ -102,14 +102,14 @@ export default class LoggingScalyrApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.project_id='logplex'] - The name of the logfile within Scalyr.
-     * @param {module:model/String} [options.region='US'] - The region that log data will be sent to.
+     * @param {module:models/String} [options.region='US'] - The region that log data will be sent to.
      * @param {String} [options.token] - The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)).
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingScalyrResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingScalyrResponse}
      */
     createLogScalyr(options = {}) {
       return this.createLogScalyrWithHttpInfo(options)
@@ -185,7 +185,7 @@ export default class LoggingScalyrApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_scalyr_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingScalyrResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingScalyrResponse} and HTTP response
      */
     getLogScalyrWithHttpInfo(options = {}) {
       let postBody = null;
@@ -231,7 +231,7 @@ export default class LoggingScalyrApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_scalyr_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingScalyrResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingScalyrResponse}
      */
     getLogScalyr(options = {}) {
       return this.getLogScalyrWithHttpInfo(options)
@@ -245,7 +245,7 @@ export default class LoggingScalyrApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingScalyrResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/LoggingScalyrResponse>} and HTTP response
      */
     listLogScalyrWithHttpInfo(options = {}) {
       let postBody = null;
@@ -285,7 +285,7 @@ export default class LoggingScalyrApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingScalyrResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/LoggingScalyrResponse>}
      */
     listLogScalyr(options = {}) {
       return this.listLogScalyrWithHttpInfo(options)
@@ -301,14 +301,14 @@ export default class LoggingScalyrApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_scalyr_name
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.project_id='logplex'] - The name of the logfile within Scalyr.
-     * @param {module:model/String} [options.region='US'] - The region that log data will be sent to.
+     * @param {module:models/String} [options.region='US'] - The region that log data will be sent to.
      * @param {String} [options.token] - The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)).
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingScalyrResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingScalyrResponse} and HTTP response
      */
     updateLogScalyrWithHttpInfo(options = {}) {
       let postBody = null;
@@ -363,14 +363,14 @@ export default class LoggingScalyrApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_scalyr_name
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.project_id='logplex'] - The name of the logfile within Scalyr.
-     * @param {module:model/String} [options.region='US'] - The region that log data will be sent to.
+     * @param {module:models/String} [options.region='US'] - The region that log data will be sent to.
      * @param {String} [options.token] - The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)).
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingScalyrResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingScalyrResponse}
      */
     updateLogScalyr(options = {}) {
       return this.updateLogScalyrWithHttpInfo(options)

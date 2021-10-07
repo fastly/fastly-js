@@ -71,8 +71,8 @@ Create DictionaryItem given service, dictionary ID, item key, and item value.
 const options = {
   service_id: "service_id_example", // required
   dictionary_id: "dictionary_id_example", // required
-  item_key: "item_key_example",
-  item_value: "item_value_example",
+  item_key: &quot;item_key_example&quot;,
+  item_value: &quot;item_value_example&quot;,
 };
 
 apiInstance.createDictionaryItem(options)
@@ -192,8 +192,8 @@ const options = {
   dictionary_id: "dictionary_id_example", // required
   page: 56,
   per_page: 20,
-  sort: "'created'",
-  direction: ascend,
+  sort: &#39;created&#39;,
+  direction: &#39;ascend&#39;,
 };
 
 apiInstance.listDictionaryItems(options)
@@ -236,8 +236,8 @@ const options = {
   service_id: "service_id_example", // required
   dictionary_id: "dictionary_id_example", // required
   dictionary_item_key: "dictionary_item_key_example", // required
-  item_key: "item_key_example",
-  item_value: "item_value_example",
+  item_key: &quot;item_key_example&quot;,
+  item_value: &quot;item_value_example&quot;,
 };
 
 apiInstance.updateDictionaryItem(options)
@@ -279,8 +279,8 @@ const options = {
   service_id: "service_id_example", // required
   dictionary_id: "dictionary_id_example", // required
   dictionary_item_key: "dictionary_item_key_example", // required
-  item_key: "item_key_example",
-  item_value: "item_value_example",
+  item_key: &quot;item_key_example&quot;,
+  item_value: &quot;item_value_example&quot;,
 };
 
 apiInstance.upsertDictionaryItem(options)

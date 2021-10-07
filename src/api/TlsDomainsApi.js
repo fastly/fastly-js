@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import TlsDomainsResponse from '../model/TlsDomainsResponse';
+import TlsDomainsResponse from '../models/TlsDomainsResponse';
 
 /**
 * TlsDomains service.
@@ -47,8 +47,8 @@ export default class TlsDomainsApi {
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_activations`, `tls_certificates`, `tls_subscriptions`, `tls_subscriptions.tls_authorizations`, and `tls_authorizations.globalsign_email_challenge`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsDomainsResponse} and HTTP response
+     * @param {module:models/String} [options.sort='created_at'] - The order in which to list the results by creation date.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/TlsDomainsResponse} and HTTP response
      */
     listTlsDomainsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -89,8 +89,8 @@ export default class TlsDomainsApi {
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_activations`, `tls_certificates`, `tls_subscriptions`, `tls_subscriptions.tls_authorizations`, and `tls_authorizations.globalsign_email_challenge`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsDomainsResponse}
+     * @param {module:models/String} [options.sort='created_at'] - The order in which to list the results by creation date.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/TlsDomainsResponse}
      */
     listTlsDomains(options = {}) {
       return this.listTlsDomainsWithHttpInfo(options)

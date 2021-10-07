@@ -30,14 +30,14 @@ Create a Logentry for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format: &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;,
   format_version: new Fastly.LoggingFormatVersion(),
-  name: "name_example",
+  name: &quot;name_example&quot;,
   placement: new Fastly.LoggingPlacement(),
-  response_condition: "response_condition_example",
+  response_condition: &quot;response_condition_example&quot;,
   port: 20000,
-  region: "region_example",
-  token: "token_example",
+  region: ,
+  token: &quot;token_example&quot;,
   use_tls: new Fastly.LoggingUseTls(),
 };
 
@@ -201,14 +201,14 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   logging_logentries_name: "logging_logentries_name_example", // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format: &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;,
   format_version: new Fastly.LoggingFormatVersion(),
-  name: "name_example",
+  name: &quot;name_example&quot;,
   placement: new Fastly.LoggingPlacement(),
-  response_condition: "response_condition_example",
+  response_condition: &quot;response_condition_example&quot;,
   port: 20000,
-  region: "region_example",
-  token: "token_example",
+  region: ,
+  token: &quot;token_example&quot;,
   use_tls: new Fastly.LoggingUseTls(),
 };
 

@@ -31,7 +31,7 @@ Update multiple ACL entries on the same ACL.
 const options = {
   service_id: "service_id_example", // required
   acl_id: "acl_id_example", // required
-  acl_entries: new Fastly.AclEntries(),
+  acl_entries: {&quot;entries&quot;:[{&quot;ip&quot;:&quot;192.168.0.1&quot;,&quot;op&quot;:&quot;create&quot;,&quot;subnet&quot;:8},{&quot;id&quot;:&quot;6yxNzlOpW1V7JfSwvLGtOc&quot;,&quot;ip&quot;:&quot;192.168.0.2&quot;,&quot;op&quot;:&quot;update&quot;,&quot;subnet&quot;:16},{&quot;id&quot;:&quot;6yxNzlOpW1V7JfSwvLGtOc&quot;,&quot;op&quot;:&quot;delete&quot;}]},
 };
 
 apiInstance.bulkUpdateAclEntries(options)
@@ -70,7 +70,7 @@ Add an ACL entry to an ACL.
 const options = {
   service_id: "service_id_example", // required
   acl_id: "acl_id_example", // required
-  acl_entry: new Fastly.AclEntry(),
+  acl_entry: {&quot;ip&quot;:&quot;127.0.0.1&quot;,&quot;subnet&quot;:0},
 };
 
 apiInstance.createAclEntry(options)
@@ -189,8 +189,8 @@ const options = {
   acl_id: "acl_id_example", // required
   page: 56,
   per_page: 20,
-  sort: "'created'",
-  direction: ascend,
+  sort: &#39;created&#39;,
+  direction: &#39;ascend&#39;,
 };
 
 apiInstance.listAclEntries(options)
@@ -233,7 +233,7 @@ const options = {
   service_id: "service_id_example", // required
   acl_id: "acl_id_example", // required
   acl_entry_id: "acl_entry_id_example", // required
-  acl_entry: new Fastly.AclEntry(),
+  acl_entry: {&quot;subnet&quot;:8},
 };
 
 apiInstance.updateAclEntry(options)

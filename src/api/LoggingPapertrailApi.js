@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
-import LoggingFormatVersion from '../model/LoggingFormatVersion';
-import LoggingPapertrailResponse from '../model/LoggingPapertrailResponse';
-import LoggingPlacement from '../model/LoggingPlacement';
+import LoggingFormatVersion from '../models/LoggingFormatVersion';
+import LoggingPapertrailResponse from '../models/LoggingPapertrailResponse';
+import LoggingPlacement from '../models/LoggingPlacement';
 
 /**
 * LoggingPapertrail service.
@@ -46,13 +46,13 @@ export default class LoggingPapertrailApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.address] - A hostname or IPv4 address.
      * @param {Number} [options.port=514] - The port number.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingPapertrailResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingPapertrailResponse} and HTTP response
      */
     createLogPapertrailWithHttpInfo(options = {}) {
       let postBody = null;
@@ -100,13 +100,13 @@ export default class LoggingPapertrailApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.address] - A hostname or IPv4 address.
      * @param {Number} [options.port=514] - The port number.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingPapertrailResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingPapertrailResponse}
      */
     createLogPapertrail(options = {}) {
       return this.createLogPapertrailWithHttpInfo(options)
@@ -182,7 +182,7 @@ export default class LoggingPapertrailApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_papertrail_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingPapertrailResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingPapertrailResponse} and HTTP response
      */
     getLogPapertrailWithHttpInfo(options = {}) {
       let postBody = null;
@@ -228,7 +228,7 @@ export default class LoggingPapertrailApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_papertrail_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingPapertrailResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingPapertrailResponse}
      */
     getLogPapertrail(options = {}) {
       return this.getLogPapertrailWithHttpInfo(options)
@@ -242,7 +242,7 @@ export default class LoggingPapertrailApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingPapertrailResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/LoggingPapertrailResponse>} and HTTP response
      */
     listLogPapertrailWithHttpInfo(options = {}) {
       let postBody = null;
@@ -282,7 +282,7 @@ export default class LoggingPapertrailApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingPapertrailResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/LoggingPapertrailResponse>}
      */
     listLogPapertrail(options = {}) {
       return this.listLogPapertrailWithHttpInfo(options)
@@ -298,13 +298,13 @@ export default class LoggingPapertrailApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_papertrail_name
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.address] - A hostname or IPv4 address.
      * @param {Number} [options.port=514] - The port number.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingPapertrailResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingPapertrailResponse} and HTTP response
      */
     updateLogPapertrailWithHttpInfo(options = {}) {
       let postBody = null;
@@ -358,13 +358,13 @@ export default class LoggingPapertrailApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_papertrail_name
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.address] - A hostname or IPv4 address.
      * @param {Number} [options.port=514] - The port number.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingPapertrailResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingPapertrailResponse}
      */
     updateLogPapertrail(options = {}) {
       return this.updateLogPapertrailWithHttpInfo(options)

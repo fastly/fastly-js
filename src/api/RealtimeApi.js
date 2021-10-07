@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import Realtime from '../model/Realtime';
+import Realtime from '../models/Realtime';
 
 /**
 * Realtime service.
@@ -42,7 +42,7 @@ export default class RealtimeApi {
      * Get data for the 120 seconds preceding the latest timestamp available for a service.
      * @param {Object} options
      * @param {String} options.service_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Realtime} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Realtime} and HTTP response
      */
     getStatsLast120SecondsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -76,7 +76,7 @@ export default class RealtimeApi {
      * Get data for the 120 seconds preceding the latest timestamp available for a service.
      * @param {Object} options
      * @param {String} options.service_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Realtime}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Realtime}
      */
     getStatsLast120Seconds(options = {}) {
       return this.getStatsLast120SecondsWithHttpInfo(options)
@@ -90,7 +90,7 @@ export default class RealtimeApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.max_entries - Maximum number of results to show.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Realtime} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Realtime} and HTTP response
      */
     getStatsLast120SecondsLimitEntriesWithHttpInfo(options = {}) {
       let postBody = null;
@@ -130,7 +130,7 @@ export default class RealtimeApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.max_entries - Maximum number of results to show.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Realtime}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Realtime}
      */
     getStatsLast120SecondsLimitEntries(options = {}) {
       return this.getStatsLast120SecondsLimitEntriesWithHttpInfo(options)
@@ -144,7 +144,7 @@ export default class RealtimeApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.timestamp_in_seconds - Timestamp in seconds (Unix epoch time).
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Realtime} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Realtime} and HTTP response
      */
     getStatsLastSecondWithHttpInfo(options = {}) {
       let postBody = null;
@@ -184,7 +184,7 @@ export default class RealtimeApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.timestamp_in_seconds - Timestamp in seconds (Unix epoch time).
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Realtime}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Realtime}
      */
     getStatsLastSecond(options = {}) {
       return this.getStatsLastSecondWithHttpInfo(options)

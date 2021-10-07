@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import Stats from '../model/Stats';
+import Stats from '../models/Stats';
 
 /**
 * Stats service.
@@ -46,7 +46,7 @@ export default class StatsApi {
      * @param {String} [options.year] - 4-digit year.
      * @param {Number} [options.start_time] - Epoch timestamp. Limits the results returned.
      * @param {Number} [options.end_time] - Epoch timestamp. Limits the results returned.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Stats} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Stats} and HTTP response
      */
     getServiceStatsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -88,7 +88,7 @@ export default class StatsApi {
      * @param {String} [options.year] - 4-digit year.
      * @param {Number} [options.start_time] - Epoch timestamp. Limits the results returned.
      * @param {Number} [options.end_time] - Epoch timestamp. Limits the results returned.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Stats}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Stats}
      */
     getServiceStats(options = {}) {
       return this.getServiceStatsWithHttpInfo(options)

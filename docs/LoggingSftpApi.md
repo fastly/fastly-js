@@ -30,24 +30,24 @@ Create a SFTP for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format: &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;,
   format_version: new Fastly.LoggingFormatVersion(),
-  name: "name_example",
+  name: &quot;name_example&quot;,
   placement: new Fastly.LoggingPlacement(),
-  response_condition: "response_condition_example",
+  response_condition: &quot;response_condition_example&quot;,
   compression_codec: new Fastly.LoggingCompressionCodec(),
   gzip_level: 0,
   message_type: new Fastly.LoggingMessageType(),
   period: 3600,
-  timestamp_format: "timestamp_format_example",
-  address: "address_example",
+  timestamp_format: &quot;timestamp_format_example&quot;,
+  address: &quot;address_example&quot;,
   port: null,
-  password: "password_example",
-  path: "'null'",
-  public_key: "'null'",
-  secret_key: "'null'",
-  ssh_known_hosts: "ssh_known_hosts_example",
-  user: "user_example",
+  password: &quot;password_example&quot;,
+  path: &#39;null&#39;,
+  public_key: &#39;null&#39;,
+  secret_key: &#39;null&#39;,
+  ssh_known_hosts: &quot;ssh_known_hosts_example&quot;,
+  user: &quot;user_example&quot;,
 };
 
 apiInstance.createLogSftp(options)
@@ -219,24 +219,24 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   logging_sftp_name: "logging_sftp_name_example", // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format: &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;,
   format_version: new Fastly.LoggingFormatVersion(),
-  name: "name_example",
+  name: &quot;name_example&quot;,
   placement: new Fastly.LoggingPlacement(),
-  response_condition: "response_condition_example",
+  response_condition: &quot;response_condition_example&quot;,
   compression_codec: new Fastly.LoggingCompressionCodec(),
   gzip_level: 0,
   message_type: new Fastly.LoggingMessageType(),
   period: 3600,
-  timestamp_format: "timestamp_format_example",
-  address: "address_example",
+  timestamp_format: &quot;timestamp_format_example&quot;,
+  address: &quot;address_example&quot;,
   port: null,
-  password: "password_example",
-  path: "'null'",
-  public_key: "'null'",
-  secret_key: "'null'",
-  ssh_known_hosts: "ssh_known_hosts_example",
-  user: "user_example",
+  password: &quot;password_example&quot;,
+  path: &#39;null&#39;,
+  public_key: &#39;null&#39;,
+  secret_key: &#39;null&#39;,
+  ssh_known_hosts: &quot;ssh_known_hosts_example&quot;,
+  user: &quot;user_example&quot;,
 };
 
 apiInstance.updateLogSftp(options)

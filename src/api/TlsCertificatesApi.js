@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
-import TlsCertificate from '../model/TlsCertificate';
-import TlsCertificateResponse from '../model/TlsCertificateResponse';
-import TlsCertificatesResponse from '../model/TlsCertificatesResponse';
+import TlsCertificate from '../models/TlsCertificate';
+import TlsCertificateResponse from '../models/TlsCertificateResponse';
+import TlsCertificatesResponse from '../models/TlsCertificatesResponse';
 
 /**
 * TlsCertificates service.
@@ -43,7 +43,7 @@ export default class TlsCertificatesApi {
     /**
      * Create a TLS certificate.
      * @param {Object} options
-     * @param {module:model/TlsCertificate} [options.tls_certificate]
+     * @param {module:models/TlsCertificate} [options.tls_certificate]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     createTlsCertWithHttpInfo(options = {}) {
@@ -72,7 +72,7 @@ export default class TlsCertificatesApi {
     /**
      * Create a TLS certificate.
      * @param {Object} options
-     * @param {module:model/TlsCertificate} [options.tls_certificate]
+     * @param {module:models/TlsCertificate} [options.tls_certificate]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     createTlsCert(options = {}) {
@@ -133,7 +133,7 @@ export default class TlsCertificatesApi {
      * Show a TLS certificate.
      * @param {Object} options
      * @param {String} options.tls_certificate_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsCertificateResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/TlsCertificateResponse} and HTTP response
      */
     getTlsCertWithHttpInfo(options = {}) {
       let postBody = null;
@@ -167,7 +167,7 @@ export default class TlsCertificatesApi {
      * Show a TLS certificate.
      * @param {Object} options
      * @param {String} options.tls_certificate_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsCertificateResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/TlsCertificateResponse}
      */
     getTlsCert(options = {}) {
       return this.getTlsCertWithHttpInfo(options)
@@ -184,8 +184,8 @@ export default class TlsCertificatesApi {
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_activations`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsCertificatesResponse} and HTTP response
+     * @param {module:models/String} [options.sort='created_at'] - The order in which to list the results by creation date.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/TlsCertificatesResponse} and HTTP response
      */
     listTlsCertsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -224,8 +224,8 @@ export default class TlsCertificatesApi {
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_activations`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsCertificatesResponse}
+     * @param {module:models/String} [options.sort='created_at'] - The order in which to list the results by creation date.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/TlsCertificatesResponse}
      */
     listTlsCerts(options = {}) {
       return this.listTlsCertsWithHttpInfo(options)
@@ -238,8 +238,8 @@ export default class TlsCertificatesApi {
      * Replace a TLS certificate with a newly reissued TLS certificate, or update a TLS certificate's name. If replacing a TLS certificate, the new TLS certificate must contain all SAN entries as the current TLS certificate. It must either have an exact matching list or contain a superset.
      * @param {Object} options
      * @param {String} options.tls_certificate_id
-     * @param {module:model/TlsCertificate} [options.tls_certificate]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsCertificateResponse} and HTTP response
+     * @param {module:models/TlsCertificate} [options.tls_certificate]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/TlsCertificateResponse} and HTTP response
      */
     updateTlsCertWithHttpInfo(options = {}) {
       let postBody = options['tls_certificate'];
@@ -273,8 +273,8 @@ export default class TlsCertificatesApi {
      * Replace a TLS certificate with a newly reissued TLS certificate, or update a TLS certificate's name. If replacing a TLS certificate, the new TLS certificate must contain all SAN entries as the current TLS certificate. It must either have an exact matching list or contain a superset.
      * @param {Object} options
      * @param {String} options.tls_certificate_id
-     * @param {module:model/TlsCertificate} [options.tls_certificate]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsCertificateResponse}
+     * @param {module:models/TlsCertificate} [options.tls_certificate]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/TlsCertificateResponse}
      */
     updateTlsCert(options = {}) {
       return this.updateTlsCertWithHttpInfo(options)

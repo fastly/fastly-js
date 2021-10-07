@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
-import BillingAddressResponse from '../model/BillingAddressResponse';
-import InlineObject from '../model/InlineObject';
-import InlineObject1 from '../model/InlineObject1';
+import BillingAddressResponse from '../models/BillingAddressResponse';
+import InlineObject from '../models/InlineObject';
+import InlineObject1 from '../models/InlineObject1';
 
 /**
 * BillingAddress service.
@@ -44,8 +44,8 @@ export default class BillingAddressApi {
      * Add a billing address to a customer.
      * @param {Object} options
      * @param {String} options.customer_id
-     * @param {module:model/InlineObject} [options.inline_object]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BillingAddressResponse} and HTTP response
+     * @param {module:models/InlineObject} [options.inline_object]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BillingAddressResponse} and HTTP response
      */
     addBillingAddrWithHttpInfo(options = {}) {
       let postBody = options['inline_object'];
@@ -79,8 +79,8 @@ export default class BillingAddressApi {
      * Add a billing address to a customer.
      * @param {Object} options
      * @param {String} options.customer_id
-     * @param {module:model/InlineObject} [options.inline_object]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BillingAddressResponse}
+     * @param {module:models/InlineObject} [options.inline_object]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BillingAddressResponse}
      */
     addBillingAddr(options = {}) {
       return this.addBillingAddrWithHttpInfo(options)
@@ -140,7 +140,7 @@ export default class BillingAddressApi {
      * Get a customer's billing address.
      * @param {Object} options
      * @param {String} options.customer_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BillingAddressResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BillingAddressResponse} and HTTP response
      */
     getBillingAddrWithHttpInfo(options = {}) {
       let postBody = null;
@@ -174,7 +174,7 @@ export default class BillingAddressApi {
      * Get a customer's billing address.
      * @param {Object} options
      * @param {String} options.customer_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BillingAddressResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BillingAddressResponse}
      */
     getBillingAddr(options = {}) {
       return this.getBillingAddrWithHttpInfo(options)
@@ -187,8 +187,8 @@ export default class BillingAddressApi {
      * Update a customer's billing address. You may update only part of the customer's billing address.
      * @param {Object} options
      * @param {String} options.customer_id
-     * @param {module:model/InlineObject1} [options.inline_object1]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BillingAddressResponse} and HTTP response
+     * @param {module:models/InlineObject1} [options.inline_object1]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BillingAddressResponse} and HTTP response
      */
     updateBillingAddrWithHttpInfo(options = {}) {
       let postBody = options['inline_object1'];
@@ -222,8 +222,8 @@ export default class BillingAddressApi {
      * Update a customer's billing address. You may update only part of the customer's billing address.
      * @param {Object} options
      * @param {String} options.customer_id
-     * @param {module:model/InlineObject1} [options.inline_object1]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BillingAddressResponse}
+     * @param {module:models/InlineObject1} [options.inline_object1]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BillingAddressResponse}
      */
     updateBillingAddr(options = {}) {
       return this.updateBillingAddrWithHttpInfo(options)

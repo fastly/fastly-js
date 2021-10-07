@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
-import AclEntries from '../model/AclEntries';
-import AclEntry from '../model/AclEntry';
-import AclEntryResponse from '../model/AclEntryResponse';
+import AclEntries from '../models/AclEntries';
+import AclEntry from '../models/AclEntry';
+import AclEntryResponse from '../models/AclEntryResponse';
 
 /**
 * AclEntry service.
@@ -45,7 +45,7 @@ export default class AclEntryApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {String} options.acl_id
-     * @param {module:model/AclEntries} [options.acl_entries]
+     * @param {module:models/AclEntries} [options.acl_entries]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     bulkUpdateAclEntriesWithHttpInfo(options = {}) {
@@ -86,7 +86,7 @@ export default class AclEntryApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {String} options.acl_id
-     * @param {module:model/AclEntries} [options.acl_entries]
+     * @param {module:models/AclEntries} [options.acl_entries]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     bulkUpdateAclEntries(options = {}) {
@@ -101,8 +101,8 @@ export default class AclEntryApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {String} options.acl_id
-     * @param {module:model/AclEntry} [options.acl_entry]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AclEntryResponse} and HTTP response
+     * @param {module:models/AclEntry} [options.acl_entry]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/AclEntryResponse} and HTTP response
      */
     createAclEntryWithHttpInfo(options = {}) {
       let postBody = options['acl_entry'];
@@ -142,8 +142,8 @@ export default class AclEntryApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {String} options.acl_id
-     * @param {module:model/AclEntry} [options.acl_entry]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AclEntryResponse}
+     * @param {module:models/AclEntry} [options.acl_entry]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/AclEntryResponse}
      */
     createAclEntry(options = {}) {
       return this.createAclEntryWithHttpInfo(options)
@@ -219,7 +219,7 @@ export default class AclEntryApi {
      * @param {String} options.service_id
      * @param {String} options.acl_id
      * @param {String} options.acl_entry_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AclEntry} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/AclEntry} and HTTP response
      */
     getAclEntryWithHttpInfo(options = {}) {
       let postBody = null;
@@ -265,7 +265,7 @@ export default class AclEntryApi {
      * @param {String} options.service_id
      * @param {String} options.acl_id
      * @param {String} options.acl_entry_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AclEntry}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/AclEntry}
      */
     getAclEntry(options = {}) {
       return this.getAclEntryWithHttpInfo(options)
@@ -282,8 +282,8 @@ export default class AclEntryApi {
      * @param {Number} [options.page] - Current page.
      * @param {Number} [options.per_page=20] - Number of records per page.
      * @param {String} [options.sort='created'] - Field on which to sort.
-     * @param {module:model/String} [options.direction='ascend'] - Direction in which to sort results.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/AclEntryResponse>} and HTTP response
+     * @param {module:models/String} [options.direction='ascend'] - Direction in which to sort results.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/AclEntryResponse>} and HTTP response
      */
     listAclEntriesWithHttpInfo(options = {}) {
       let postBody = null;
@@ -330,8 +330,8 @@ export default class AclEntryApi {
      * @param {Number} [options.page] - Current page.
      * @param {Number} [options.per_page=20] - Number of records per page.
      * @param {String} [options.sort='created'] - Field on which to sort.
-     * @param {module:model/String} [options.direction='ascend'] - Direction in which to sort results.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/AclEntryResponse>}
+     * @param {module:models/String} [options.direction='ascend'] - Direction in which to sort results.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/AclEntryResponse>}
      */
     listAclEntries(options = {}) {
       return this.listAclEntriesWithHttpInfo(options)
@@ -346,8 +346,8 @@ export default class AclEntryApi {
      * @param {String} options.service_id
      * @param {String} options.acl_id
      * @param {String} options.acl_entry_id
-     * @param {module:model/AclEntry} [options.acl_entry]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AclEntry} and HTTP response
+     * @param {module:models/AclEntry} [options.acl_entry]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/AclEntry} and HTTP response
      */
     updateAclEntryWithHttpInfo(options = {}) {
       let postBody = options['acl_entry'];
@@ -393,8 +393,8 @@ export default class AclEntryApi {
      * @param {String} options.service_id
      * @param {String} options.acl_id
      * @param {String} options.acl_entry_id
-     * @param {module:model/AclEntry} [options.acl_entry]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AclEntry}
+     * @param {module:models/AclEntry} [options.acl_entry]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/AclEntry}
      */
     updateAclEntry(options = {}) {
       return this.updateAclEntryWithHttpInfo(options)

@@ -13,11 +13,11 @@
 
 
 import ApiClient from "../ApiClient";
-import LoggingCloudfilesResponse from '../model/LoggingCloudfilesResponse';
-import LoggingCompressionCodec from '../model/LoggingCompressionCodec';
-import LoggingFormatVersion from '../model/LoggingFormatVersion';
-import LoggingMessageType from '../model/LoggingMessageType';
-import LoggingPlacement from '../model/LoggingPlacement';
+import LoggingCloudfilesResponse from '../models/LoggingCloudfilesResponse';
+import LoggingCompressionCodec from '../models/LoggingCompressionCodec';
+import LoggingFormatVersion from '../models/LoggingFormatVersion';
+import LoggingMessageType from '../models/LoggingMessageType';
+import LoggingPlacement from '../models/LoggingPlacement';
 
 /**
 * LoggingCloudfiles service.
@@ -48,22 +48,22 @@ export default class LoggingCloudfilesApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
+     * @param {module:models/LoggingCompressionCodec} [options.compression_codec]
      * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {module:models/LoggingMessageType} [options.message_type]
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
      * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
      * @param {String} [options.access_key] - Your Cloud Files account access key.
      * @param {String} [options.bucket_name] - The name of your Cloud Files container.
      * @param {String} [options.path='null'] - The path to upload logs to.
      * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
-     * @param {module:model/String} [options.region] - The region to stream logs to.
+     * @param {module:models/String} [options.region] - The region to stream logs to.
      * @param {String} [options.user] - The username for your Cloud Files account.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingCloudfilesResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingCloudfilesResponse} and HTTP response
      */
     createLogCloudfilesWithHttpInfo(options = {}) {
       let postBody = null;
@@ -120,22 +120,22 @@ export default class LoggingCloudfilesApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
+     * @param {module:models/LoggingCompressionCodec} [options.compression_codec]
      * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {module:models/LoggingMessageType} [options.message_type]
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
      * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
      * @param {String} [options.access_key] - Your Cloud Files account access key.
      * @param {String} [options.bucket_name] - The name of your Cloud Files container.
      * @param {String} [options.path='null'] - The path to upload logs to.
      * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
-     * @param {module:model/String} [options.region] - The region to stream logs to.
+     * @param {module:models/String} [options.region] - The region to stream logs to.
      * @param {String} [options.user] - The username for your Cloud Files account.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingCloudfilesResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingCloudfilesResponse}
      */
     createLogCloudfiles(options = {}) {
       return this.createLogCloudfilesWithHttpInfo(options)
@@ -211,7 +211,7 @@ export default class LoggingCloudfilesApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_cloudfiles_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingCloudfilesResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingCloudfilesResponse} and HTTP response
      */
     getLogCloudfilesWithHttpInfo(options = {}) {
       let postBody = null;
@@ -257,7 +257,7 @@ export default class LoggingCloudfilesApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_cloudfiles_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingCloudfilesResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingCloudfilesResponse}
      */
     getLogCloudfiles(options = {}) {
       return this.getLogCloudfilesWithHttpInfo(options)
@@ -271,7 +271,7 @@ export default class LoggingCloudfilesApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingCloudfilesResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/LoggingCloudfilesResponse>} and HTTP response
      */
     listLogCloudfilesWithHttpInfo(options = {}) {
       let postBody = null;
@@ -311,7 +311,7 @@ export default class LoggingCloudfilesApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingCloudfilesResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/LoggingCloudfilesResponse>}
      */
     listLogCloudfiles(options = {}) {
       return this.listLogCloudfilesWithHttpInfo(options)
@@ -327,22 +327,22 @@ export default class LoggingCloudfilesApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_cloudfiles_name
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
+     * @param {module:models/LoggingCompressionCodec} [options.compression_codec]
      * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {module:models/LoggingMessageType} [options.message_type]
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
      * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
      * @param {String} [options.access_key] - Your Cloud Files account access key.
      * @param {String} [options.bucket_name] - The name of your Cloud Files container.
      * @param {String} [options.path='null'] - The path to upload logs to.
      * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
-     * @param {module:model/String} [options.region] - The region to stream logs to.
+     * @param {module:models/String} [options.region] - The region to stream logs to.
      * @param {String} [options.user] - The username for your Cloud Files account.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingCloudfilesResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingCloudfilesResponse} and HTTP response
      */
     updateLogCloudfilesWithHttpInfo(options = {}) {
       let postBody = null;
@@ -405,22 +405,22 @@ export default class LoggingCloudfilesApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_cloudfiles_name
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
+     * @param {module:models/LoggingCompressionCodec} [options.compression_codec]
      * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {module:models/LoggingMessageType} [options.message_type]
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
      * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
      * @param {String} [options.access_key] - Your Cloud Files account access key.
      * @param {String} [options.bucket_name] - The name of your Cloud Files container.
      * @param {String} [options.path='null'] - The path to upload logs to.
      * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
-     * @param {module:model/String} [options.region] - The region to stream logs to.
+     * @param {module:models/String} [options.region] - The region to stream logs to.
      * @param {String} [options.user] - The username for your Cloud Files account.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingCloudfilesResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingCloudfilesResponse}
      */
     updateLogCloudfiles(options = {}) {
       return this.updateLogCloudfilesWithHttpInfo(options)

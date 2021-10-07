@@ -13,11 +13,11 @@
 
 
 import ApiClient from "../ApiClient";
-import LoggingCompressionCodec from '../model/LoggingCompressionCodec';
-import LoggingDigitaloceanResponse from '../model/LoggingDigitaloceanResponse';
-import LoggingFormatVersion from '../model/LoggingFormatVersion';
-import LoggingMessageType from '../model/LoggingMessageType';
-import LoggingPlacement from '../model/LoggingPlacement';
+import LoggingCompressionCodec from '../models/LoggingCompressionCodec';
+import LoggingDigitaloceanResponse from '../models/LoggingDigitaloceanResponse';
+import LoggingFormatVersion from '../models/LoggingFormatVersion';
+import LoggingMessageType from '../models/LoggingMessageType';
+import LoggingPlacement from '../models/LoggingPlacement';
 
 /**
 * LoggingDigitalocean service.
@@ -48,13 +48,13 @@ export default class LoggingDigitaloceanApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
+     * @param {module:models/LoggingCompressionCodec} [options.compression_codec]
      * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {module:models/LoggingMessageType} [options.message_type]
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
      * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
      * @param {String} [options.access_key] - Your DigitalOcean Spaces account access key.
@@ -63,7 +63,7 @@ export default class LoggingDigitaloceanApi {
      * @param {String} [options.path='null'] - The path to upload logs to.
      * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
      * @param {String} [options.secret_key] - Your DigitalOcean Spaces account secret key.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingDigitaloceanResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingDigitaloceanResponse} and HTTP response
      */
     createLogDigoceanWithHttpInfo(options = {}) {
       let postBody = null;
@@ -120,13 +120,13 @@ export default class LoggingDigitaloceanApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
+     * @param {module:models/LoggingCompressionCodec} [options.compression_codec]
      * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {module:models/LoggingMessageType} [options.message_type]
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
      * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
      * @param {String} [options.access_key] - Your DigitalOcean Spaces account access key.
@@ -135,7 +135,7 @@ export default class LoggingDigitaloceanApi {
      * @param {String} [options.path='null'] - The path to upload logs to.
      * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
      * @param {String} [options.secret_key] - Your DigitalOcean Spaces account secret key.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingDigitaloceanResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingDigitaloceanResponse}
      */
     createLogDigocean(options = {}) {
       return this.createLogDigoceanWithHttpInfo(options)
@@ -211,7 +211,7 @@ export default class LoggingDigitaloceanApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_digitalocean_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingDigitaloceanResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingDigitaloceanResponse} and HTTP response
      */
     getLogDigoceanWithHttpInfo(options = {}) {
       let postBody = null;
@@ -257,7 +257,7 @@ export default class LoggingDigitaloceanApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_digitalocean_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingDigitaloceanResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingDigitaloceanResponse}
      */
     getLogDigocean(options = {}) {
       return this.getLogDigoceanWithHttpInfo(options)
@@ -271,7 +271,7 @@ export default class LoggingDigitaloceanApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingDigitaloceanResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/LoggingDigitaloceanResponse>} and HTTP response
      */
     listLogDigoceanWithHttpInfo(options = {}) {
       let postBody = null;
@@ -311,7 +311,7 @@ export default class LoggingDigitaloceanApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingDigitaloceanResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/LoggingDigitaloceanResponse>}
      */
     listLogDigocean(options = {}) {
       return this.listLogDigoceanWithHttpInfo(options)
@@ -327,13 +327,13 @@ export default class LoggingDigitaloceanApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_digitalocean_name
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
+     * @param {module:models/LoggingCompressionCodec} [options.compression_codec]
      * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {module:models/LoggingMessageType} [options.message_type]
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
      * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
      * @param {String} [options.access_key] - Your DigitalOcean Spaces account access key.
@@ -342,7 +342,7 @@ export default class LoggingDigitaloceanApi {
      * @param {String} [options.path='null'] - The path to upload logs to.
      * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
      * @param {String} [options.secret_key] - Your DigitalOcean Spaces account secret key.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingDigitaloceanResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingDigitaloceanResponse} and HTTP response
      */
     updateLogDigoceanWithHttpInfo(options = {}) {
       let postBody = null;
@@ -405,13 +405,13 @@ export default class LoggingDigitaloceanApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_digitalocean_name
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:model/LoggingCompressionCodec} [options.compression_codec]
+     * @param {module:models/LoggingCompressionCodec} [options.compression_codec]
      * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {module:models/LoggingMessageType} [options.message_type]
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
      * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
      * @param {String} [options.access_key] - Your DigitalOcean Spaces account access key.
@@ -420,7 +420,7 @@ export default class LoggingDigitaloceanApi {
      * @param {String} [options.path='null'] - The path to upload logs to.
      * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
      * @param {String} [options.secret_key] - Your DigitalOcean Spaces account secret key.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingDigitaloceanResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingDigitaloceanResponse}
      */
     updateLogDigocean(options = {}) {
       return this.updateLogDigoceanWithHttpInfo(options)

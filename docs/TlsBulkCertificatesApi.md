@@ -98,10 +98,10 @@ List all certificates.
 
 ```javascript
 const options = {
-  filter_tls_domain_id_match: "filter_tls_domain_id_match_example",
+  filter_tls_domain_id_match: &quot;filter_tls_domain_id_match_example&quot;,
   page_number: 56,
   page_size: 20,
-  sort: "'created_at'",
+  sort: &#39;created_at&#39;,
 };
 
 apiInstance.listTlsBulkCerts(options)
@@ -140,7 +140,7 @@ Replace a certificate with a newly reissued certificate. By using this endpoint,
 ```javascript
 const options = {
   certificate_id: "certificate_id_example", // required
-  tls_bulk_certificate: new Fastly.TlsBulkCertificate(),
+  tls_bulk_certificate: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;allow_untrusted_root&quot;:false,&quot;cert_blob&quot;:&quot;-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n&quot;,&quot;intermediates_blob&quot;:&quot;-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n&quot;},&quot;id&quot;:&quot;cRTguUGZzb2W9Euo4moOr&quot;,&quot;type&quot;:&quot;tls_bulk_certificate&quot;}},
 };
 
 apiInstance.updateBulkTlsCert(options)
@@ -176,7 +176,7 @@ Upload a new certificate. TLS domains are automatically enabled upon certificate
 
 ```javascript
 const options = {
-  tls_bulk_certificate: new Fastly.TlsBulkCertificate(),
+  tls_bulk_certificate: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;allow_untrusted_root&quot;:false,&quot;cert_blob&quot;:&quot;-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n&quot;,&quot;intermediates_blob&quot;:&quot;-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n&quot;},&quot;relationships&quot;:{&quot;tls_configurations&quot;:{&quot;data&quot;:[{&quot;id&quot;:&quot;t7CguUGZzb2W9Euo5FoKa&quot;,&quot;type&quot;:&quot;tls_configuration&quot;}]}},&quot;type&quot;:&quot;tls_bulk_certificate&quot;}},
 };
 
 apiInstance.uploadTlsBulkCert(options)

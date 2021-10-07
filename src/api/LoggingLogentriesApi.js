@@ -13,10 +13,10 @@
 
 
 import ApiClient from "../ApiClient";
-import LoggingFormatVersion from '../model/LoggingFormatVersion';
-import LoggingLogentriesResponse from '../model/LoggingLogentriesResponse';
-import LoggingPlacement from '../model/LoggingPlacement';
-import LoggingUseTls from '../model/LoggingUseTls';
+import LoggingFormatVersion from '../models/LoggingFormatVersion';
+import LoggingLogentriesResponse from '../models/LoggingLogentriesResponse';
+import LoggingPlacement from '../models/LoggingPlacement';
+import LoggingUseTls from '../models/LoggingUseTls';
 
 /**
 * LoggingLogentries service.
@@ -47,15 +47,15 @@ export default class LoggingLogentriesApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {Number} [options.port=20000] - The port number.
-     * @param {module:model/String} [options.region] - The region to which to stream logs.
+     * @param {module:models/String} [options.region] - The region to which to stream logs.
      * @param {String} [options.token] - Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
-     * @param {module:model/LoggingUseTls} [options.use_tls]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogentriesResponse} and HTTP response
+     * @param {module:models/LoggingUseTls} [options.use_tls]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingLogentriesResponse} and HTTP response
      */
     createLogLogentriesWithHttpInfo(options = {}) {
       let postBody = null;
@@ -105,15 +105,15 @@ export default class LoggingLogentriesApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {Number} [options.port=20000] - The port number.
-     * @param {module:model/String} [options.region] - The region to which to stream logs.
+     * @param {module:models/String} [options.region] - The region to which to stream logs.
      * @param {String} [options.token] - Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
-     * @param {module:model/LoggingUseTls} [options.use_tls]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogentriesResponse}
+     * @param {module:models/LoggingUseTls} [options.use_tls]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingLogentriesResponse}
      */
     createLogLogentries(options = {}) {
       return this.createLogLogentriesWithHttpInfo(options)
@@ -189,7 +189,7 @@ export default class LoggingLogentriesApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_logentries_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogentriesResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingLogentriesResponse} and HTTP response
      */
     getLogLogentriesWithHttpInfo(options = {}) {
       let postBody = null;
@@ -235,7 +235,7 @@ export default class LoggingLogentriesApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_logentries_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogentriesResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingLogentriesResponse}
      */
     getLogLogentries(options = {}) {
       return this.getLogLogentriesWithHttpInfo(options)
@@ -249,7 +249,7 @@ export default class LoggingLogentriesApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingLogentriesResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/LoggingLogentriesResponse>} and HTTP response
      */
     listLogLogentriesWithHttpInfo(options = {}) {
       let postBody = null;
@@ -289,7 +289,7 @@ export default class LoggingLogentriesApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingLogentriesResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/LoggingLogentriesResponse>}
      */
     listLogLogentries(options = {}) {
       return this.listLogLogentriesWithHttpInfo(options)
@@ -305,15 +305,15 @@ export default class LoggingLogentriesApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_logentries_name
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {Number} [options.port=20000] - The port number.
-     * @param {module:model/String} [options.region] - The region to which to stream logs.
+     * @param {module:models/String} [options.region] - The region to which to stream logs.
      * @param {String} [options.token] - Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
-     * @param {module:model/LoggingUseTls} [options.use_tls]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogentriesResponse} and HTTP response
+     * @param {module:models/LoggingUseTls} [options.use_tls]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingLogentriesResponse} and HTTP response
      */
     updateLogLogentriesWithHttpInfo(options = {}) {
       let postBody = null;
@@ -369,15 +369,15 @@ export default class LoggingLogentriesApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_logentries_name
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {Number} [options.port=20000] - The port number.
-     * @param {module:model/String} [options.region] - The region to which to stream logs.
+     * @param {module:models/String} [options.region] - The region to which to stream logs.
      * @param {String} [options.token] - Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
-     * @param {module:model/LoggingUseTls} [options.use_tls]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogentriesResponse}
+     * @param {module:models/LoggingUseTls} [options.use_tls]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingLogentriesResponse}
      */
     updateLogLogentries(options = {}) {
       return this.updateLogLogentriesWithHttpInfo(options)

@@ -30,7 +30,7 @@ Create service authorization.
 
 ```javascript
 const options = {
-  service_authorization: new Fastly.ServiceAuthorization(),
+  service_authorization: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;permission&quot;:&quot;read_only&quot;},&quot;relationships&quot;:{&quot;service&quot;:{&quot;data&quot;:{&quot;id&quot;:&quot;SU1Z0isxPaozGVKXdv0eY&quot;,&quot;type&quot;:&quot;service&quot;}},&quot;user&quot;:{&quot;data&quot;:{&quot;id&quot;:&quot;6c7kAlo4vACNchGOdQxP37&quot;,&quot;type&quot;:&quot;user&quot;}}},&quot;type&quot;:&quot;service_authorization&quot;}},
 };
 
 apiInstance.createServiceAuthorization(options)
@@ -208,7 +208,7 @@ Update service authorization.
 ```javascript
 const options = {
   service_authorization_id: "service_authorization_id_example", // required
-  service_authorization: new Fastly.ServiceAuthorization(),
+  service_authorization: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;permission&quot;:&quot;read_only&quot;},&quot;id&quot;:&quot;3krg2uUGZzb2W9Euo4moOY&quot;,&quot;type&quot;:&quot;service_authorization&quot;}},
 };
 
 apiInstance.updateServiceAuthorization(options)

@@ -30,12 +30,12 @@ Create a Loggly logging object for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format: &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;,
   format_version: new Fastly.LoggingFormatVersion(),
-  name: "name_example",
+  name: &quot;name_example&quot;,
   placement: new Fastly.LoggingPlacement(),
-  response_condition: "response_condition_example",
-  token: "token_example",
+  response_condition: &quot;response_condition_example&quot;,
+  token: &quot;token_example&quot;,
 };
 
 apiInstance.createLogLoggly(options)
@@ -195,12 +195,12 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   logging_loggly_name: "logging_loggly_name_example", // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format: &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;,
   format_version: new Fastly.LoggingFormatVersion(),
-  name: "name_example",
+  name: &quot;name_example&quot;,
   placement: new Fastly.LoggingPlacement(),
-  response_condition: "response_condition_example",
-  token: "token_example",
+  response_condition: &quot;response_condition_example&quot;,
+  token: &quot;token_example&quot;,
 };
 
 apiInstance.updateLogLoggly(options)

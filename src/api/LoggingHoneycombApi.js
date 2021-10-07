@@ -13,10 +13,10 @@
 
 
 import ApiClient from "../ApiClient";
-import LoggingFormatVersion from '../model/LoggingFormatVersion';
-import LoggingHoneycomb from '../model/LoggingHoneycomb';
-import LoggingHoneycombResponse from '../model/LoggingHoneycombResponse';
-import LoggingPlacement from '../model/LoggingPlacement';
+import LoggingFormatVersion from '../models/LoggingFormatVersion';
+import LoggingHoneycomb from '../models/LoggingHoneycomb';
+import LoggingHoneycombResponse from '../models/LoggingHoneycombResponse';
+import LoggingPlacement from '../models/LoggingPlacement';
 
 /**
 * LoggingHoneycomb service.
@@ -47,13 +47,13 @@ export default class LoggingHoneycombApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Honeycomb can ingest.
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.dataset] - The Honeycomb Dataset you want to log to.
      * @param {String} [options.token] - The Write Key from the Account page of your Honeycomb account.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingHoneycomb} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingHoneycomb} and HTTP response
      */
     createLogHoneycombWithHttpInfo(options = {}) {
       let postBody = null;
@@ -101,13 +101,13 @@ export default class LoggingHoneycombApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Honeycomb can ingest.
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.dataset] - The Honeycomb Dataset you want to log to.
      * @param {String} [options.token] - The Write Key from the Account page of your Honeycomb account.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingHoneycomb}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingHoneycomb}
      */
     createLogHoneycomb(options = {}) {
       return this.createLogHoneycombWithHttpInfo(options)
@@ -183,7 +183,7 @@ export default class LoggingHoneycombApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_honeycomb_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingHoneycomb} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingHoneycomb} and HTTP response
      */
     getLogHoneycombWithHttpInfo(options = {}) {
       let postBody = null;
@@ -229,7 +229,7 @@ export default class LoggingHoneycombApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_honeycomb_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingHoneycomb}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingHoneycomb}
      */
     getLogHoneycomb(options = {}) {
       return this.getLogHoneycombWithHttpInfo(options)
@@ -243,7 +243,7 @@ export default class LoggingHoneycombApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingHoneycombResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/LoggingHoneycombResponse>} and HTTP response
      */
     listLogHoneycombWithHttpInfo(options = {}) {
       let postBody = null;
@@ -283,7 +283,7 @@ export default class LoggingHoneycombApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingHoneycombResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/LoggingHoneycombResponse>}
      */
     listLogHoneycomb(options = {}) {
       return this.listLogHoneycombWithHttpInfo(options)
@@ -299,13 +299,13 @@ export default class LoggingHoneycombApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_honeycomb_name
      * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Honeycomb can ingest.
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.dataset] - The Honeycomb Dataset you want to log to.
      * @param {String} [options.token] - The Write Key from the Account page of your Honeycomb account.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingHoneycombResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingHoneycombResponse} and HTTP response
      */
     updateLogHoneycombWithHttpInfo(options = {}) {
       let postBody = null;
@@ -359,13 +359,13 @@ export default class LoggingHoneycombApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_honeycomb_name
      * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Honeycomb can ingest.
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.dataset] - The Honeycomb Dataset you want to log to.
      * @param {String} [options.token] - The Write Key from the Account page of your Honeycomb account.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingHoneycombResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingHoneycombResponse}
      */
     updateLogHoneycomb(options = {}) {
       return this.updateLogHoneycombWithHttpInfo(options)

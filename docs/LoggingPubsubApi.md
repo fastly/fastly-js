@@ -30,15 +30,15 @@ Create a Pub/Sub logging object for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format: &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;,
   format_version: new Fastly.LoggingFormatVersion(),
-  name: "name_example",
+  name: &quot;name_example&quot;,
   placement: new Fastly.LoggingPlacement(),
-  response_condition: "response_condition_example",
-  secret_key: "secret_key_example",
-  user: "user_example",
-  project_id: "project_id_example",
-  topic: "topic_example",
+  response_condition: &quot;response_condition_example&quot;,
+  secret_key: &quot;secret_key_example&quot;,
+  user: &quot;user_example&quot;,
+  project_id: &quot;project_id_example&quot;,
+  topic: &quot;topic_example&quot;,
 };
 
 apiInstance.createLogGcpPubsub(options)
@@ -201,15 +201,15 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   logging_google_pubsub_name: "logging_google_pubsub_name_example", // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format: &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;,
   format_version: new Fastly.LoggingFormatVersion(),
-  name: "name_example",
+  name: &quot;name_example&quot;,
   placement: new Fastly.LoggingPlacement(),
-  response_condition: "response_condition_example",
-  secret_key: "secret_key_example",
-  user: "user_example",
-  project_id: "project_id_example",
-  topic: "topic_example",
+  response_condition: &quot;response_condition_example&quot;,
+  secret_key: &quot;secret_key_example&quot;,
+  user: &quot;user_example&quot;,
+  project_id: &quot;project_id_example&quot;,
+  topic: &quot;topic_example&quot;,
 };
 
 apiInstance.updateLogGcpPubsub(options)

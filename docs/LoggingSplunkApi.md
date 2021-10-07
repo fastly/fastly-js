@@ -30,19 +30,19 @@ Create a Splunk logging object for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format: &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;,
   format_version: new Fastly.LoggingFormatVersion(),
-  name: "name_example",
+  name: &quot;name_example&quot;,
   placement: new Fastly.LoggingPlacement(),
-  response_condition: "response_condition_example",
-  tls_ca_cert: "'null'",
-  tls_client_cert: "'null'",
-  tls_client_key: "'null'",
-  tls_hostname: "'null'",
+  response_condition: &quot;response_condition_example&quot;,
+  tls_ca_cert: &#39;null&#39;,
+  tls_client_cert: &#39;null&#39;,
+  tls_client_key: &#39;null&#39;,
+  tls_hostname: &#39;null&#39;,
   request_max_bytes: 0,
   request_max_entries: 0,
-  token: "token_example",
-  url: "url_example",
+  token: &quot;token_example&quot;,
+  url: &quot;url_example&quot;,
   use_tls: new Fastly.LoggingUseTls(),
 };
 
@@ -211,19 +211,19 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   logging_splunk_name: "logging_splunk_name_example", // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format: &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;,
   format_version: new Fastly.LoggingFormatVersion(),
-  name: "name_example",
+  name: &quot;name_example&quot;,
   placement: new Fastly.LoggingPlacement(),
-  response_condition: "response_condition_example",
-  tls_ca_cert: "'null'",
-  tls_client_cert: "'null'",
-  tls_client_key: "'null'",
-  tls_hostname: "'null'",
+  response_condition: &quot;response_condition_example&quot;,
+  tls_ca_cert: &#39;null&#39;,
+  tls_client_cert: &#39;null&#39;,
+  tls_client_key: &#39;null&#39;,
+  tls_hostname: &#39;null&#39;,
   request_max_bytes: 0,
   request_max_entries: 0,
-  token: "token_example",
-  url: "url_example",
+  token: &quot;token_example&quot;,
+  url: &quot;url_example&quot;,
   use_tls: new Fastly.LoggingUseTls(),
 };
 

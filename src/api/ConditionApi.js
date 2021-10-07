@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import ConditionResponse from '../model/ConditionResponse';
+import ConditionResponse from '../models/ConditionResponse';
 
 /**
 * Condition service.
@@ -47,8 +47,8 @@ export default class ConditionApi {
      * @param {String} [options.name] - Name of the condition. Required.
      * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
      * @param {String} [options.statement] - A conditional expression in VCL used to determine if the condition is met.
-     * @param {module:model/String} [options.type] - Type of the condition. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ConditionResponse} and HTTP response
+     * @param {module:models/String} [options.type] - Type of the condition. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ConditionResponse} and HTTP response
      */
     createConditionWithHttpInfo(options = {}) {
       let postBody = null;
@@ -97,8 +97,8 @@ export default class ConditionApi {
      * @param {String} [options.name] - Name of the condition. Required.
      * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
      * @param {String} [options.statement] - A conditional expression in VCL used to determine if the condition is met.
-     * @param {module:model/String} [options.type] - Type of the condition. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ConditionResponse}
+     * @param {module:models/String} [options.type] - Type of the condition. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ConditionResponse}
      */
     createCondition(options = {}) {
       return this.createConditionWithHttpInfo(options)
@@ -174,7 +174,7 @@ export default class ConditionApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.condition_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ConditionResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ConditionResponse} and HTTP response
      */
     getConditionWithHttpInfo(options = {}) {
       let postBody = null;
@@ -220,7 +220,7 @@ export default class ConditionApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.condition_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ConditionResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ConditionResponse}
      */
     getCondition(options = {}) {
       return this.getConditionWithHttpInfo(options)
@@ -234,7 +234,7 @@ export default class ConditionApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ConditionResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/ConditionResponse>} and HTTP response
      */
     listConditionsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -274,7 +274,7 @@ export default class ConditionApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ConditionResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/ConditionResponse>}
      */
     listConditions(options = {}) {
       return this.listConditionsWithHttpInfo(options)
@@ -293,8 +293,8 @@ export default class ConditionApi {
      * @param {String} [options.name] - Name of the condition. Required.
      * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
      * @param {String} [options.statement] - A conditional expression in VCL used to determine if the condition is met.
-     * @param {module:model/String} [options.type] - Type of the condition. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ConditionResponse} and HTTP response
+     * @param {module:models/String} [options.type] - Type of the condition. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ConditionResponse} and HTTP response
      */
     updateConditionWithHttpInfo(options = {}) {
       let postBody = null;
@@ -349,8 +349,8 @@ export default class ConditionApi {
      * @param {String} [options.name] - Name of the condition. Required.
      * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
      * @param {String} [options.statement] - A conditional expression in VCL used to determine if the condition is met.
-     * @param {module:model/String} [options.type] - Type of the condition. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ConditionResponse}
+     * @param {module:models/String} [options.type] - Type of the condition. Required.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ConditionResponse}
      */
     updateCondition(options = {}) {
       return this.updateConditionWithHttpInfo(options)

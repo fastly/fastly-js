@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import DictionaryResponse from '../model/DictionaryResponse';
+import DictionaryResponse from '../models/DictionaryResponse';
 
 /**
 * Dictionary service.
@@ -45,7 +45,7 @@ export default class DictionaryApi {
      * @param {Number} options.version_id
      * @param {String} [options.name] - Name for the Dictionary.
      * @param {Boolean} [options.write_only=false] - Determines if items in the dictionary are readable or not.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/DictionaryResponse} and HTTP response
      */
     createDictionaryWithHttpInfo(options = {}) {
       let postBody = null;
@@ -89,7 +89,7 @@ export default class DictionaryApi {
      * @param {Number} options.version_id
      * @param {String} [options.name] - Name for the Dictionary.
      * @param {Boolean} [options.write_only=false] - Determines if items in the dictionary are readable or not.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/DictionaryResponse}
      */
     createDictionary(options = {}) {
       return this.createDictionaryWithHttpInfo(options)
@@ -165,7 +165,7 @@ export default class DictionaryApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.dictionary_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/DictionaryResponse} and HTTP response
      */
     getDictionaryWithHttpInfo(options = {}) {
       let postBody = null;
@@ -211,7 +211,7 @@ export default class DictionaryApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.dictionary_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/DictionaryResponse}
      */
     getDictionary(options = {}) {
       return this.getDictionaryWithHttpInfo(options)
@@ -225,7 +225,7 @@ export default class DictionaryApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DictionaryResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/DictionaryResponse>} and HTTP response
      */
     listDictionariesWithHttpInfo(options = {}) {
       let postBody = null;
@@ -265,7 +265,7 @@ export default class DictionaryApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DictionaryResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/DictionaryResponse>}
      */
     listDictionaries(options = {}) {
       return this.listDictionariesWithHttpInfo(options)
@@ -282,7 +282,7 @@ export default class DictionaryApi {
      * @param {String} options.dictionary_name
      * @param {String} [options.name] - Name for the Dictionary.
      * @param {Boolean} [options.write_only=false] - Determines if items in the dictionary are readable or not.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/DictionaryResponse} and HTTP response
      */
     updateDictionaryWithHttpInfo(options = {}) {
       let postBody = null;
@@ -332,7 +332,7 @@ export default class DictionaryApi {
      * @param {String} options.dictionary_name
      * @param {String} [options.name] - Name for the Dictionary.
      * @param {Boolean} [options.write_only=false] - Determines if items in the dictionary are readable or not.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/DictionaryResponse}
      */
     updateDictionary(options = {}) {
       return this.updateDictionaryWithHttpInfo(options)

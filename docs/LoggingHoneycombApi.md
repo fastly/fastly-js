@@ -32,11 +32,11 @@ const options = {
   version_id: 56, // required
   format: null,
   format_version: new Fastly.LoggingFormatVersion(),
-  name: "name_example",
+  name: &quot;name_example&quot;,
   placement: new Fastly.LoggingPlacement(),
-  response_condition: "response_condition_example",
-  dataset: "dataset_example",
-  token: "token_example",
+  response_condition: &quot;response_condition_example&quot;,
+  dataset: &quot;dataset_example&quot;,
+  token: &quot;token_example&quot;,
 };
 
 apiInstance.createLogHoneycomb(options)
@@ -199,11 +199,11 @@ const options = {
   logging_honeycomb_name: "logging_honeycomb_name_example", // required
   format: null,
   format_version: new Fastly.LoggingFormatVersion(),
-  name: "name_example",
+  name: &quot;name_example&quot;,
   placement: new Fastly.LoggingPlacement(),
-  response_condition: "response_condition_example",
-  dataset: "dataset_example",
-  token: "token_example",
+  response_condition: &quot;response_condition_example&quot;,
+  dataset: &quot;dataset_example&quot;,
+  token: &quot;token_example&quot;,
 };
 
 apiInstance.updateLogHoneycomb(options)

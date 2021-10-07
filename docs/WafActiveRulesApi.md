@@ -33,7 +33,7 @@ Delete many active rules on a particular firewall version using the active rule 
 const options = {
   firewall_id: "firewall_id_example", // required
   version_id: 56, // required
-  body: null,
+  body: {&quot;data&quot;:[{&quot;attributes&quot;:{&quot;modsec_rule_id&quot;:&quot;MoDS3CuGZzb2W9Euo4moOr&quot;},&quot;type&quot;:&quot;waf_active_rule&quot;}]},
 };
 
 apiInstance.bulkDeleteWafActiveRules(options)
@@ -72,7 +72,7 @@ Bulk update all active rules on a [firewall version](https://developer.fastly.co
 const options = {
   firewall_id: "firewall_id_example", // required
   version_id: 56, // required
-  body: new Fastly.WafActiveRuleData(),
+  body: {&quot;attributes&quot;:{&quot;revision&quot;:&quot;latest&quot;},&quot;type&quot;:&quot;waf_active_rule&quot;},
 };
 
 apiInstance.bulkUpdateWafActiveRules(options)
@@ -111,7 +111,7 @@ Create an active rule for a particular firewall version.
 const options = {
   firewall_id: "firewall_id_example", // required
   version_id: 56, // required
-  waf_active_rule: new Fastly.WafActiveRule(),
+  waf_active_rule: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;modsec_rule_id&quot;:&quot;MoDS3CuGZzb2W9Euo4moOr&quot;,&quot;status&quot;:&quot;log&quot;},&quot;type&quot;:&quot;waf_active_rule&quot;}},
 };
 
 apiInstance.createWafActiveRule(options)
@@ -151,7 +151,7 @@ const options = {
   firewall_id: "firewall_id_example", // required
   version_id: 56, // required
   waf_tag_name: "waf_tag_name_example", // required
-  waf_active_rule: new Fastly.WafActiveRule(),
+  waf_active_rule: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;status&quot;:&quot;log&quot;},&quot;type&quot;:&quot;waf_active_rule&quot;}},
 };
 
 apiInstance.createWafActiveRulesTag(options)
@@ -271,10 +271,10 @@ List all active rules for a particular firewall version.
 const options = {
   firewall_id: "firewall_id_example", // required
   version_id: 56, // required
-  filter_status: "filter_status_example",
-  filter_waf_rule_revision_message: "filter_waf_rule_revision_message_example",
-  filter_waf_rule_revision_modsec_rule_id: "filter_waf_rule_revision_modsec_rule_id_example",
-  filter_outdated: "filter_outdated_example",
+  filter_status: &quot;filter_status_example&quot;,
+  filter_waf_rule_revision_message: &quot;filter_waf_rule_revision_message_example&quot;,
+  filter_waf_rule_revision_modsec_rule_id: &quot;filter_waf_rule_revision_modsec_rule_id_example&quot;,
+  filter_outdated: &quot;filter_outdated_example&quot;,
   include: waf_rule_revision,waf_firewall_version,
   page_number: 56,
   page_size: 20,
@@ -323,7 +323,7 @@ const options = {
   firewall_id: "firewall_id_example", // required
   version_id: 56, // required
   waf_rule_id: "waf_rule_id_example", // required
-  waf_active_rule: new Fastly.WafActiveRule(),
+  waf_active_rule: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;status&quot;:&quot;block&quot;},&quot;id&quot;:&quot;3krg2uUGZzb2W9Euo4moOR&quot;,&quot;type&quot;:&quot;waf_active_rule&quot;}},
 };
 
 apiInstance.updateWafActiveRule(options)

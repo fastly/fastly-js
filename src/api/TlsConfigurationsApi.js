@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
-import TlsConfiguration from '../model/TlsConfiguration';
-import TlsConfigurationResponse from '../model/TlsConfigurationResponse';
-import TlsConfigurationsResponse from '../model/TlsConfigurationsResponse';
+import TlsConfiguration from '../models/TlsConfiguration';
+import TlsConfigurationResponse from '../models/TlsConfigurationResponse';
+import TlsConfigurationsResponse from '../models/TlsConfigurationsResponse';
 
 /**
 * TlsConfigurations service.
@@ -45,7 +45,7 @@ export default class TlsConfigurationsApi {
      * @param {Object} options
      * @param {String} options.tls_configuration_id
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `dns_records`. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsConfigurationResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/TlsConfigurationResponse} and HTTP response
      */
     getTlsConfigWithHttpInfo(options = {}) {
       let postBody = null;
@@ -81,7 +81,7 @@ export default class TlsConfigurationsApi {
      * @param {Object} options
      * @param {String} options.tls_configuration_id
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `dns_records`. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsConfigurationResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/TlsConfigurationResponse}
      */
     getTlsConfig(options = {}) {
       return this.getTlsConfigWithHttpInfo(options)
@@ -97,7 +97,7 @@ export default class TlsConfigurationsApi {
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `dns_records`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsConfigurationsResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/TlsConfigurationsResponse} and HTTP response
      */
     listTlsConfigsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -133,7 +133,7 @@ export default class TlsConfigurationsApi {
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `dns_records`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsConfigurationsResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/TlsConfigurationsResponse}
      */
     listTlsConfigs(options = {}) {
       return this.listTlsConfigsWithHttpInfo(options)
@@ -146,8 +146,8 @@ export default class TlsConfigurationsApi {
      * Update a TLS configuration.
      * @param {Object} options
      * @param {String} options.tls_configuration_id
-     * @param {module:model/TlsConfiguration} [options.tls_configuration]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsConfigurationResponse} and HTTP response
+     * @param {module:models/TlsConfiguration} [options.tls_configuration]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/TlsConfigurationResponse} and HTTP response
      */
     updateTlsConfigWithHttpInfo(options = {}) {
       let postBody = options['tls_configuration'];
@@ -181,8 +181,8 @@ export default class TlsConfigurationsApi {
      * Update a TLS configuration.
      * @param {Object} options
      * @param {String} options.tls_configuration_id
-     * @param {module:model/TlsConfiguration} [options.tls_configuration]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsConfigurationResponse}
+     * @param {module:models/TlsConfiguration} [options.tls_configuration]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/TlsConfigurationResponse}
      */
     updateTlsConfig(options = {}) {
       return this.updateTlsConfigWithHttpInfo(options)

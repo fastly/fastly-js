@@ -30,10 +30,10 @@ Create a named gzip configuration on a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  cache_condition: "cache_condition_example",
-  content_types: "content_types_example",
-  extensions: "extensions_example",
-  name: "name_example",
+  cache_condition: &quot;cache_condition_example&quot;,
+  content_types: &quot;content_types_example&quot;,
+  extensions: &quot;extensions_example&quot;,
+  name: &quot;name_example&quot;,
 };
 
 apiInstance.createGzipConfig(options)
@@ -191,10 +191,10 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   gzip_name: "gzip_name_example", // required
-  cache_condition: "cache_condition_example",
-  content_types: "content_types_example",
-  extensions: "extensions_example",
-  name: "name_example",
+  cache_condition: &quot;cache_condition_example&quot;,
+  content_types: &quot;content_types_example&quot;,
+  extensions: &quot;extensions_example&quot;,
+  name: &quot;name_example&quot;,
 };
 
 apiInstance.updateGzipConfig(options)

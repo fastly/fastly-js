@@ -31,10 +31,10 @@ Create a service.
 
 ```javascript
 const options = {
-  comment: "comment_example",
-  customer_id: "customer_id_example",
-  name: "name_example",
-  type: "type_example",
+  comment: &quot;comment_example&quot;,
+  customer_id: &quot;customer_id_example&quot;,
+  name: &quot;name_example&quot;,
+  type: ,
 };
 
 apiInstance.createService(options)
@@ -214,8 +214,8 @@ List services.
 const options = {
   page: 56,
   per_page: 20,
-  sort: "'created'",
-  direction: ascend,
+  sort: &#39;created&#39;,
+  direction: &#39;ascend&#39;,
 };
 
 apiInstance.listServices(options)
@@ -289,9 +289,9 @@ Update a service.
 ```javascript
 const options = {
   service_id: "service_id_example", // required
-  comment: "comment_example",
-  customer_id: "customer_id_example",
-  name: "name_example",
+  comment: &quot;comment_example&quot;,
+  customer_id: &quot;customer_id_example&quot;,
+  name: &quot;name_example&quot;,
 };
 
 apiInstance.updateService(options)

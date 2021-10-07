@@ -13,8 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
-import DictionaryItemResponse from '../model/DictionaryItemResponse';
-import InlineObject4 from '../model/InlineObject4';
+import DictionaryItemResponse from '../models/DictionaryItemResponse';
+import InlineObject4 from '../models/InlineObject4';
 
 /**
 * DictionaryItem service.
@@ -44,7 +44,7 @@ export default class DictionaryItemApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {String} options.dictionary_id
-     * @param {module:model/InlineObject4} [options.inline_object4]
+     * @param {module:models/InlineObject4} [options.inline_object4]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     bulkUpdateDictionaryItemWithHttpInfo(options = {}) {
@@ -85,7 +85,7 @@ export default class DictionaryItemApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {String} options.dictionary_id
-     * @param {module:model/InlineObject4} [options.inline_object4]
+     * @param {module:models/InlineObject4} [options.inline_object4]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     bulkUpdateDictionaryItem(options = {}) {
@@ -102,7 +102,7 @@ export default class DictionaryItemApi {
      * @param {String} options.dictionary_id
      * @param {String} [options.item_key] - Item key, maximum 256 characters.
      * @param {String} [options.item_value] - Item value, maximum 8000 characters.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryItemResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/DictionaryItemResponse} and HTTP response
      */
     createDictionaryItemWithHttpInfo(options = {}) {
       let postBody = null;
@@ -146,7 +146,7 @@ export default class DictionaryItemApi {
      * @param {String} options.dictionary_id
      * @param {String} [options.item_key] - Item key, maximum 256 characters.
      * @param {String} [options.item_value] - Item value, maximum 8000 characters.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryItemResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/DictionaryItemResponse}
      */
     createDictionaryItem(options = {}) {
       return this.createDictionaryItemWithHttpInfo(options)
@@ -222,7 +222,7 @@ export default class DictionaryItemApi {
      * @param {String} options.service_id
      * @param {String} options.dictionary_id
      * @param {String} options.dictionary_item_key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryItemResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/DictionaryItemResponse} and HTTP response
      */
     getDictionaryItemWithHttpInfo(options = {}) {
       let postBody = null;
@@ -268,7 +268,7 @@ export default class DictionaryItemApi {
      * @param {String} options.service_id
      * @param {String} options.dictionary_id
      * @param {String} options.dictionary_item_key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryItemResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/DictionaryItemResponse}
      */
     getDictionaryItem(options = {}) {
       return this.getDictionaryItemWithHttpInfo(options)
@@ -285,8 +285,8 @@ export default class DictionaryItemApi {
      * @param {Number} [options.page] - Current page.
      * @param {Number} [options.per_page=20] - Number of records per page.
      * @param {String} [options.sort='created'] - Field on which to sort.
-     * @param {module:model/String} [options.direction='ascend'] - Direction in which to sort results.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DictionaryItemResponse>} and HTTP response
+     * @param {module:models/String} [options.direction='ascend'] - Direction in which to sort results.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/DictionaryItemResponse>} and HTTP response
      */
     listDictionaryItemsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -333,8 +333,8 @@ export default class DictionaryItemApi {
      * @param {Number} [options.page] - Current page.
      * @param {Number} [options.per_page=20] - Number of records per page.
      * @param {String} [options.sort='created'] - Field on which to sort.
-     * @param {module:model/String} [options.direction='ascend'] - Direction in which to sort results.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DictionaryItemResponse>}
+     * @param {module:models/String} [options.direction='ascend'] - Direction in which to sort results.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/DictionaryItemResponse>}
      */
     listDictionaryItems(options = {}) {
       return this.listDictionaryItemsWithHttpInfo(options)
@@ -351,7 +351,7 @@ export default class DictionaryItemApi {
      * @param {String} options.dictionary_item_key
      * @param {String} [options.item_key] - Item key, maximum 256 characters.
      * @param {String} [options.item_value] - Item value, maximum 8000 characters.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryItemResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/DictionaryItemResponse} and HTTP response
      */
     updateDictionaryItemWithHttpInfo(options = {}) {
       let postBody = null;
@@ -401,7 +401,7 @@ export default class DictionaryItemApi {
      * @param {String} options.dictionary_item_key
      * @param {String} [options.item_key] - Item key, maximum 256 characters.
      * @param {String} [options.item_value] - Item value, maximum 8000 characters.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryItemResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/DictionaryItemResponse}
      */
     updateDictionaryItem(options = {}) {
       return this.updateDictionaryItemWithHttpInfo(options)
@@ -418,7 +418,7 @@ export default class DictionaryItemApi {
      * @param {String} options.dictionary_item_key
      * @param {String} [options.item_key] - Item key, maximum 256 characters.
      * @param {String} [options.item_value] - Item value, maximum 8000 characters.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryItemResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/DictionaryItemResponse} and HTTP response
      */
     upsertDictionaryItemWithHttpInfo(options = {}) {
       let postBody = null;
@@ -468,7 +468,7 @@ export default class DictionaryItemApi {
      * @param {String} options.dictionary_item_key
      * @param {String} [options.item_key] - Item key, maximum 256 characters.
      * @param {String} [options.item_value] - Item value, maximum 8000 characters.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryItemResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/DictionaryItemResponse}
      */
     upsertDictionaryItem(options = {}) {
       return this.upsertDictionaryItemWithHttpInfo(options)

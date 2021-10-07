@@ -30,17 +30,17 @@ Create a BigQuery logging object for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  format: "format_example",
+  format: &quot;format_example&quot;,
   format_version: new Fastly.LoggingFormatVersion(),
-  name: "name_example",
+  name: &quot;name_example&quot;,
   placement: new Fastly.LoggingPlacement(),
-  response_condition: "response_condition_example",
-  secret_key: "secret_key_example",
-  user: "user_example",
-  dataset: "dataset_example",
-  project_id: "project_id_example",
-  table: "table_example",
-  template_suffix: "template_suffix_example",
+  response_condition: &quot;response_condition_example&quot;,
+  secret_key: &quot;secret_key_example&quot;,
+  user: &quot;user_example&quot;,
+  dataset: &quot;dataset_example&quot;,
+  project_id: &quot;project_id_example&quot;,
+  table: &quot;table_example&quot;,
+  template_suffix: &quot;template_suffix_example&quot;,
 };
 
 apiInstance.createLogBigquery(options)
@@ -205,17 +205,17 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   logging_bigquery_name: "logging_bigquery_name_example", // required
-  format: "format_example",
+  format: &quot;format_example&quot;,
   format_version: new Fastly.LoggingFormatVersion(),
-  name: "name_example",
+  name: &quot;name_example&quot;,
   placement: new Fastly.LoggingPlacement(),
-  response_condition: "response_condition_example",
-  secret_key: "secret_key_example",
-  user: "user_example",
-  dataset: "dataset_example",
-  project_id: "project_id_example",
-  table: "table_example",
-  template_suffix: "template_suffix_example",
+  response_condition: &quot;response_condition_example&quot;,
+  secret_key: &quot;secret_key_example&quot;,
+  user: &quot;user_example&quot;,
+  dataset: &quot;dataset_example&quot;,
+  project_id: &quot;project_id_example&quot;,
+  table: &quot;table_example&quot;,
+  template_suffix: &quot;template_suffix_example&quot;,
 };
 
 apiInstance.updateLogBigquery(options)

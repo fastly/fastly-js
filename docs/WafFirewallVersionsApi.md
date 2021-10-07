@@ -67,7 +67,7 @@ Create a new, draft firewall version.
 ```javascript
 const options = {
   firewall_id: "firewall_id_example", // required
-  waf_firewall_version: new Fastly.WafFirewallVersion(),
+  waf_firewall_version: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;critical_anomaly_score&quot;:1,&quot;error_anomaly_score&quot;:2},&quot;type&quot;:&quot;waf_firewall_version&quot;}},
 };
 
 apiInstance.createWafFirewallVersion(options)
@@ -222,7 +222,7 @@ Update a specific firewall version.
 const options = {
   firewall_id: "firewall_id_example", // required
   firewall_version_number: 56, // required
-  waf_firewall_version: new Fastly.WafFirewallVersion(),
+  waf_firewall_version: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;locked&quot;:true},&quot;type&quot;:&quot;waf_firewall_version&quot;}},
 };
 
 apiInstance.updateWafFirewallVersion(options)

@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import PublicIpList from '../model/PublicIpList';
+import PublicIpList from '../models/PublicIpList';
 
 /**
 * PublicIpList service.
@@ -41,7 +41,7 @@ export default class PublicIpListApi {
     /**
      * List the public IP addresses for the Fastly network.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PublicIpList} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PublicIpList} and HTTP response
      */
     listFastlyIpsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -69,7 +69,7 @@ export default class PublicIpListApi {
     /**
      * List the public IP addresses for the Fastly network.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PublicIpList}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PublicIpList}
      */
     listFastlyIps(options = {}) {
       return this.listFastlyIpsWithHttpInfo(options)

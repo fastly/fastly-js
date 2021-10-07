@@ -13,8 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
-import RoleUser from '../model/RoleUser';
-import UserResponse from '../model/UserResponse';
+import RoleUser from '../models/RoleUser';
+import UserResponse from '../models/UserResponse';
 
 /**
 * User service.
@@ -47,10 +47,10 @@ export default class UserApi {
      * @param {String} [options.login] - The login associated with the user (typically, an email address).
      * @param {String} [options.name] - The real life name of the user.
      * @param {Boolean} [options.require_new_password] - Indicates if a new password is required at next login.
-     * @param {module:model/RoleUser} [options.role]
+     * @param {module:models/RoleUser} [options.role]
      * @param {Boolean} [options.two_factor_auth_enabled] - Indicates if 2FA is enabled on the user.
      * @param {Boolean} [options.two_factor_setup_required] - Indicates if 2FA is required by the user's customer account.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/UserResponse} and HTTP response
      */
     createUserWithHttpInfo(options = {}) {
       let postBody = null;
@@ -91,10 +91,10 @@ export default class UserApi {
      * @param {String} [options.login] - The login associated with the user (typically, an email address).
      * @param {String} [options.name] - The real life name of the user.
      * @param {Boolean} [options.require_new_password] - Indicates if a new password is required at next login.
-     * @param {module:model/RoleUser} [options.role]
+     * @param {module:models/RoleUser} [options.role]
      * @param {Boolean} [options.two_factor_auth_enabled] - Indicates if 2FA is enabled on the user.
      * @param {Boolean} [options.two_factor_setup_required] - Indicates if 2FA is required by the user's customer account.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/UserResponse}
      */
     createUser(options = {}) {
       return this.createUserWithHttpInfo(options)
@@ -153,7 +153,7 @@ export default class UserApi {
     /**
      * Get the logged in user.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/UserResponse} and HTTP response
      */
     getCurrentUserWithHttpInfo(options = {}) {
       let postBody = null;
@@ -181,7 +181,7 @@ export default class UserApi {
     /**
      * Get the logged in user.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/UserResponse}
      */
     getCurrentUser(options = {}) {
       return this.getCurrentUserWithHttpInfo(options)
@@ -194,7 +194,7 @@ export default class UserApi {
      * Get a specific user.
      * @param {Object} options
      * @param {String} options.user_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/UserResponse} and HTTP response
      */
     getUserWithHttpInfo(options = {}) {
       let postBody = null;
@@ -228,7 +228,7 @@ export default class UserApi {
      * Get a specific user.
      * @param {Object} options
      * @param {String} options.user_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/UserResponse}
      */
     getUser(options = {}) {
       return this.getUserWithHttpInfo(options)
@@ -293,10 +293,10 @@ export default class UserApi {
      * @param {String} [options.login] - The login associated with the user (typically, an email address).
      * @param {String} [options.name] - The real life name of the user.
      * @param {Boolean} [options.require_new_password] - Indicates if a new password is required at next login.
-     * @param {module:model/RoleUser} [options.role]
+     * @param {module:models/RoleUser} [options.role]
      * @param {Boolean} [options.two_factor_auth_enabled] - Indicates if 2FA is enabled on the user.
      * @param {Boolean} [options.two_factor_setup_required] - Indicates if 2FA is required by the user's customer account.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/UserResponse} and HTTP response
      */
     updateUserWithHttpInfo(options = {}) {
       let postBody = null;
@@ -343,10 +343,10 @@ export default class UserApi {
      * @param {String} [options.login] - The login associated with the user (typically, an email address).
      * @param {String} [options.name] - The real life name of the user.
      * @param {Boolean} [options.require_new_password] - Indicates if a new password is required at next login.
-     * @param {module:model/RoleUser} [options.role]
+     * @param {module:models/RoleUser} [options.role]
      * @param {Boolean} [options.two_factor_auth_enabled] - Indicates if 2FA is enabled on the user.
      * @param {Boolean} [options.two_factor_setup_required] - Indicates if 2FA is required by the user's customer account.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/UserResponse}
      */
     updateUser(options = {}) {
       return this.updateUserWithHttpInfo(options)
@@ -360,7 +360,7 @@ export default class UserApi {
      * @param {Object} options
      * @param {String} [options.new_password] - The user's new password.
      * @param {String} [options.old_password] - The user's current password.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/UserResponse} and HTTP response
      */
     updateUserPasswordWithHttpInfo(options = {}) {
       let postBody = null;
@@ -392,7 +392,7 @@ export default class UserApi {
      * @param {Object} options
      * @param {String} [options.new_password] - The user's new password.
      * @param {String} [options.old_password] - The user's current password.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/UserResponse}
      */
     updateUserPassword(options = {}) {
       return this.updateUserPasswordWithHttpInfo(options)

@@ -32,11 +32,11 @@ Create a snippet for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  content: "content_example",
-  dynamic: "dynamic_example",
-  name: "name_example",
-  priority: "'100'",
-  type: "type_example",
+  content: &quot;content_example&quot;,
+  dynamic: ,
+  name: &quot;name_example&quot;,
+  priority: &#39;100&#39;,
+  type: ,
 };
 
 apiInstance.createSnippet(options)
@@ -270,11 +270,11 @@ Update a dynamic snippet for a particular service.
 const options = {
   service_id: "service_id_example", // required
   snippet_id: "snippet_id_example", // required
-  content: "content_example",
-  dynamic: "dynamic_example",
-  name: "name_example",
-  priority: "'100'",
-  type: "type_example",
+  content: &quot;content_example&quot;,
+  dynamic: ,
+  name: &quot;name_example&quot;,
+  priority: &#39;100&#39;,
+  type: ,
 };
 
 apiInstance.updateSnippetDynamic(options)

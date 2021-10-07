@@ -30,18 +30,18 @@ Creates a new Header object.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  action: "action_example",
-  cache_condition: "cache_condition_example",
-  dst: "dst_example",
+  action: ,
+  cache_condition: &quot;cache_condition_example&quot;,
+  dst: &quot;dst_example&quot;,
   ignore_if_set: 56,
-  name: "name_example",
+  name: &quot;name_example&quot;,
   priority: 100,
-  regex: "regex_example",
-  request_condition: "request_condition_example",
+  regex: &quot;regex_example&quot;,
+  request_condition: &quot;request_condition_example&quot;,
   response_condition: null,
-  src: "src_example",
-  substitution: "substitution_example",
-  type: "type_example",
+  src: &quot;src_example&quot;,
+  substitution: &quot;substitution_example&quot;,
+  type: ,
 };
 
 apiInstance.createHeaderObject(options)
@@ -207,18 +207,18 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   header_name: "header_name_example", // required
-  action: "action_example",
-  cache_condition: "cache_condition_example",
-  dst: "dst_example",
+  action: ,
+  cache_condition: &quot;cache_condition_example&quot;,
+  dst: &quot;dst_example&quot;,
   ignore_if_set: 56,
-  name: "name_example",
+  name: &quot;name_example&quot;,
   priority: 100,
-  regex: "regex_example",
-  request_condition: "request_condition_example",
+  regex: &quot;regex_example&quot;,
+  request_condition: &quot;request_condition_example&quot;,
   response_condition: null,
-  src: "src_example",
-  substitution: "substitution_example",
-  type: "type_example",
+  src: &quot;src_example&quot;,
+  substitution: &quot;substitution_example&quot;,
+  type: ,
 };
 
 apiInstance.updateHeaderObject(options)

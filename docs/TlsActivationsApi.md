@@ -28,7 +28,7 @@ Enable TLS for a particular TLS domain and certificate combination. These relati
 
 ```javascript
 const options = {
-  tls_activation: new Fastly.TlsActivation(),
+  tls_activation: {&quot;data&quot;:{&quot;relationships&quot;:{&quot;tls_certificate&quot;:{&quot;data&quot;:{&quot;id&quot;:&quot;cRTguUGZzb2W9Euo4moOr&quot;,&quot;type&quot;:&quot;tls_certificate&quot;}},&quot;tls_configuration&quot;:{&quot;data&quot;:{&quot;id&quot;:&quot;t7CguUGZzb2W9Euo5FoKa&quot;,&quot;type&quot;:&quot;tls_configuration&quot;}},&quot;tls_domain&quot;:{&quot;data&quot;:{&quot;id&quot;:&quot;DOMAIN_NAME&quot;,&quot;type&quot;:&quot;tls_domain&quot;}}},&quot;type&quot;:&quot;tls_activation&quot;}},
 };
 
 apiInstance.createTlsActivation(options)
@@ -135,9 +135,9 @@ List all TLS activations.
 
 ```javascript
 const options = {
-  filter_tls_certificate_id: "filter_tls_certificate_id_example",
-  filter_tls_configuration_id: "filter_tls_configuration_id_example",
-  filter_tls_domain_id: "filter_tls_domain_id_example",
+  filter_tls_certificate_id: &quot;filter_tls_certificate_id_example&quot;,
+  filter_tls_configuration_id: &quot;filter_tls_configuration_id_example&quot;,
+  filter_tls_domain_id: &quot;filter_tls_domain_id_example&quot;,
   include: tls_certificate,tls_configuration,tls_domain,
   page_number: 56,
   page_size: 20,
@@ -181,7 +181,7 @@ Update the certificate used to terminate TLS traffic for the domain associated w
 ```javascript
 const options = {
   tls_activation_id: "tls_activation_id_example", // required
-  tls_activation: new Fastly.TlsActivation(),
+  tls_activation: {&quot;data&quot;:{&quot;relationships&quot;:{&quot;tls_certificate&quot;:{&quot;data&quot;:{&quot;id&quot;:&quot;cRTguUGZzb2W9Euo4moOr&quot;,&quot;type&quot;:&quot;tls_certificate&quot;}}},&quot;type&quot;:&quot;tls_activation&quot;}},
 };
 
 apiInstance.updateTlsActivation(options)

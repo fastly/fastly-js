@@ -27,7 +27,7 @@ Create star.
 
 ```javascript
 const options = {
-  star: new Fastly.Star(),
+  star: {&quot;data&quot;:{&quot;relationships&quot;:{&quot;service&quot;:{&quot;data&quot;:{&quot;id&quot;:&quot;SU1Z0isxPaozGVKXdv0eY&quot;,&quot;type&quot;:&quot;service&quot;}},&quot;user&quot;:{&quot;data&quot;:{&quot;id&quot;:&quot;6c7kAlo4vACNchGOdQxP37&quot;,&quot;type&quot;:&quot;user&quot;}}},&quot;type&quot;:&quot;star&quot;}},
 };
 
 apiInstance.createServiceStar(options)

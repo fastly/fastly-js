@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
-import LoggingFormatVersion from '../model/LoggingFormatVersion';
-import LoggingGooglePubsubResponse from '../model/LoggingGooglePubsubResponse';
-import LoggingPlacement from '../model/LoggingPlacement';
+import LoggingFormatVersion from '../models/LoggingFormatVersion';
+import LoggingGooglePubsubResponse from '../models/LoggingGooglePubsubResponse';
+import LoggingPlacement from '../models/LoggingPlacement';
 
 /**
 * LoggingPubsub service.
@@ -46,15 +46,15 @@ export default class LoggingPubsubApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
      * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
      * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
      * @param {String} [options.topic] - The Google Cloud Pub/Sub topic to which logs will be published. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingGooglePubsubResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingGooglePubsubResponse} and HTTP response
      */
     createLogGcpPubsubWithHttpInfo(options = {}) {
       let postBody = null;
@@ -104,15 +104,15 @@ export default class LoggingPubsubApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
      * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
      * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
      * @param {String} [options.topic] - The Google Cloud Pub/Sub topic to which logs will be published. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingGooglePubsubResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingGooglePubsubResponse}
      */
     createLogGcpPubsub(options = {}) {
       return this.createLogGcpPubsubWithHttpInfo(options)
@@ -188,7 +188,7 @@ export default class LoggingPubsubApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_google_pubsub_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingGooglePubsubResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingGooglePubsubResponse} and HTTP response
      */
     getLogGcpPubsubWithHttpInfo(options = {}) {
       let postBody = null;
@@ -234,7 +234,7 @@ export default class LoggingPubsubApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_google_pubsub_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingGooglePubsubResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingGooglePubsubResponse}
      */
     getLogGcpPubsub(options = {}) {
       return this.getLogGcpPubsubWithHttpInfo(options)
@@ -248,7 +248,7 @@ export default class LoggingPubsubApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingGooglePubsubResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/LoggingGooglePubsubResponse>} and HTTP response
      */
     listLogGcpPubsubWithHttpInfo(options = {}) {
       let postBody = null;
@@ -288,7 +288,7 @@ export default class LoggingPubsubApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingGooglePubsubResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/LoggingGooglePubsubResponse>}
      */
     listLogGcpPubsub(options = {}) {
       return this.listLogGcpPubsubWithHttpInfo(options)
@@ -304,15 +304,15 @@ export default class LoggingPubsubApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_google_pubsub_name
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
      * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
      * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
      * @param {String} [options.topic] - The Google Cloud Pub/Sub topic to which logs will be published. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingGooglePubsubResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingGooglePubsubResponse} and HTTP response
      */
     updateLogGcpPubsubWithHttpInfo(options = {}) {
       let postBody = null;
@@ -368,15 +368,15 @@ export default class LoggingPubsubApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_google_pubsub_name
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
      * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
      * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
      * @param {String} [options.topic] - The Google Cloud Pub/Sub topic to which logs will be published. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingGooglePubsubResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingGooglePubsubResponse}
      */
     updateLogGcpPubsub(options = {}) {
       return this.updateLogGcpPubsubWithHttpInfo(options)

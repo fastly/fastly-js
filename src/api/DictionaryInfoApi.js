@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import DictionaryInfoResponse from '../model/DictionaryInfoResponse';
+import DictionaryInfoResponse from '../models/DictionaryInfoResponse';
 
 /**
 * DictionaryInfo service.
@@ -44,7 +44,7 @@ export default class DictionaryInfoApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.dictionary_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryInfoResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/DictionaryInfoResponse} and HTTP response
      */
     getDictionaryInfoWithHttpInfo(options = {}) {
       let postBody = null;
@@ -90,7 +90,7 @@ export default class DictionaryInfoApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.dictionary_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryInfoResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/DictionaryInfoResponse}
      */
     getDictionaryInfo(options = {}) {
       return this.getDictionaryInfoWithHttpInfo(options)

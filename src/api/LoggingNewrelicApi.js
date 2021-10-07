@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
-import LoggingFormatVersion from '../model/LoggingFormatVersion';
-import LoggingNewrelicResponse from '../model/LoggingNewrelicResponse';
-import LoggingPlacement from '../model/LoggingPlacement';
+import LoggingFormatVersion from '../models/LoggingFormatVersion';
+import LoggingNewrelicResponse from '../models/LoggingNewrelicResponse';
+import LoggingPlacement from '../models/LoggingPlacement';
 
 /**
 * LoggingNewrelic service.
@@ -46,13 +46,13 @@ export default class LoggingNewrelicApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest.
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:model/String} [options.region='US'] - The region to which to stream logs.
+     * @param {module:models/String} [options.region='US'] - The region to which to stream logs.
      * @param {String} [options.token] - The Insert API key from the Account page of your New Relic account. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingNewrelicResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingNewrelicResponse} and HTTP response
      */
     createLogNewrelicWithHttpInfo(options = {}) {
       let postBody = null;
@@ -100,13 +100,13 @@ export default class LoggingNewrelicApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest.
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:model/String} [options.region='US'] - The region to which to stream logs.
+     * @param {module:models/String} [options.region='US'] - The region to which to stream logs.
      * @param {String} [options.token] - The Insert API key from the Account page of your New Relic account. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingNewrelicResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingNewrelicResponse}
      */
     createLogNewrelic(options = {}) {
       return this.createLogNewrelicWithHttpInfo(options)
@@ -182,7 +182,7 @@ export default class LoggingNewrelicApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_newrelic_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingNewrelicResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingNewrelicResponse} and HTTP response
      */
     getLogNewrelicWithHttpInfo(options = {}) {
       let postBody = null;
@@ -228,7 +228,7 @@ export default class LoggingNewrelicApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_newrelic_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingNewrelicResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingNewrelicResponse}
      */
     getLogNewrelic(options = {}) {
       return this.getLogNewrelicWithHttpInfo(options)
@@ -242,7 +242,7 @@ export default class LoggingNewrelicApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingNewrelicResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/LoggingNewrelicResponse>} and HTTP response
      */
     listLogNewrelicWithHttpInfo(options = {}) {
       let postBody = null;
@@ -282,7 +282,7 @@ export default class LoggingNewrelicApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingNewrelicResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/LoggingNewrelicResponse>}
      */
     listLogNewrelic(options = {}) {
       return this.listLogNewrelicWithHttpInfo(options)
@@ -298,13 +298,13 @@ export default class LoggingNewrelicApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_newrelic_name
      * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest.
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:model/String} [options.region='US'] - The region to which to stream logs.
+     * @param {module:models/String} [options.region='US'] - The region to which to stream logs.
      * @param {String} [options.token] - The Insert API key from the Account page of your New Relic account. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingNewrelicResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingNewrelicResponse} and HTTP response
      */
     updateLogNewrelicWithHttpInfo(options = {}) {
       let postBody = null;
@@ -358,13 +358,13 @@ export default class LoggingNewrelicApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_newrelic_name
      * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest.
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:model/String} [options.region='US'] - The region to which to stream logs.
+     * @param {module:models/String} [options.region='US'] - The region to which to stream logs.
      * @param {String} [options.token] - The Insert API key from the Account page of your New Relic account. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingNewrelicResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingNewrelicResponse}
      */
     updateLogNewrelic(options = {}) {
       return this.updateLogNewrelicWithHttpInfo(options)

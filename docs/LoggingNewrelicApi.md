@@ -32,11 +32,11 @@ const options = {
   version_id: 56, // required
   format: null,
   format_version: new Fastly.LoggingFormatVersion(),
-  name: "name_example",
+  name: &quot;name_example&quot;,
   placement: new Fastly.LoggingPlacement(),
-  response_condition: "response_condition_example",
-  region: "'US'",
-  token: "token_example",
+  response_condition: &quot;response_condition_example&quot;,
+  region: &#39;US&#39;,
+  token: &quot;token_example&quot;,
 };
 
 apiInstance.createLogNewrelic(options)
@@ -199,11 +199,11 @@ const options = {
   logging_newrelic_name: "logging_newrelic_name_example", // required
   format: null,
   format_version: new Fastly.LoggingFormatVersion(),
-  name: "name_example",
+  name: &quot;name_example&quot;,
   placement: new Fastly.LoggingPlacement(),
-  response_condition: "response_condition_example",
-  region: "'US'",
-  token: "token_example",
+  response_condition: &quot;response_condition_example&quot;,
+  region: &#39;US&#39;,
+  token: &quot;token_example&quot;,
 };
 
 apiInstance.updateLogNewrelic(options)

@@ -24,10 +24,10 @@ List all tags.
 
 ```javascript
 const options = {
-  filter_name: "filter_name_example",
+  filter_name: &quot;filter_name_example&quot;,
   page_number: 56,
   page_size: 20,
-  include: waf_rules,
+  include: &#39;waf_rules&#39;,
 };
 
 apiInstance.listWafTags(options)

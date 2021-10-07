@@ -13,10 +13,10 @@
 
 
 import ApiClient from "../ApiClient";
-import LoggingFormatVersion from '../model/LoggingFormatVersion';
-import LoggingMessageType from '../model/LoggingMessageType';
-import LoggingPlacement from '../model/LoggingPlacement';
-import LoggingSumologicResponse from '../model/LoggingSumologicResponse';
+import LoggingFormatVersion from '../models/LoggingFormatVersion';
+import LoggingMessageType from '../models/LoggingMessageType';
+import LoggingPlacement from '../models/LoggingPlacement';
+import LoggingSumologicResponse from '../models/LoggingSumologicResponse';
 
 /**
 * LoggingSumologic service.
@@ -47,13 +47,13 @@ export default class LoggingSumologicApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {module:models/LoggingMessageType} [options.message_type]
      * @param {String} [options.url] - The URL to post logs to.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingSumologicResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingSumologicResponse} and HTTP response
      */
     createLogSumologicWithHttpInfo(options = {}) {
       let postBody = null;
@@ -101,13 +101,13 @@ export default class LoggingSumologicApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {module:models/LoggingMessageType} [options.message_type]
      * @param {String} [options.url] - The URL to post logs to.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingSumologicResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingSumologicResponse}
      */
     createLogSumologic(options = {}) {
       return this.createLogSumologicWithHttpInfo(options)
@@ -183,7 +183,7 @@ export default class LoggingSumologicApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_sumologic_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingSumologicResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingSumologicResponse} and HTTP response
      */
     getLogSumologicWithHttpInfo(options = {}) {
       let postBody = null;
@@ -229,7 +229,7 @@ export default class LoggingSumologicApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_sumologic_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingSumologicResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingSumologicResponse}
      */
     getLogSumologic(options = {}) {
       return this.getLogSumologicWithHttpInfo(options)
@@ -243,7 +243,7 @@ export default class LoggingSumologicApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingSumologicResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/LoggingSumologicResponse>} and HTTP response
      */
     listLogSumologicWithHttpInfo(options = {}) {
       let postBody = null;
@@ -283,7 +283,7 @@ export default class LoggingSumologicApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingSumologicResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/LoggingSumologicResponse>}
      */
     listLogSumologic(options = {}) {
       return this.listLogSumologicWithHttpInfo(options)
@@ -299,13 +299,13 @@ export default class LoggingSumologicApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_sumologic_name
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {module:models/LoggingMessageType} [options.message_type]
      * @param {String} [options.url] - The URL to post logs to.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingSumologicResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingSumologicResponse} and HTTP response
      */
     updateLogSumologicWithHttpInfo(options = {}) {
       let postBody = null;
@@ -359,13 +359,13 @@ export default class LoggingSumologicApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_sumologic_name
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {module:models/LoggingMessageType} [options.message_type]
      * @param {String} [options.url] - The URL to post logs to.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingSumologicResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingSumologicResponse}
      */
     updateLogSumologic(options = {}) {
       return this.updateLogSumologicWithHttpInfo(options)

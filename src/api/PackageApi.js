@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import PackageResponse from '../model/PackageResponse';
+import PackageResponse from '../models/PackageResponse';
 
 /**
 * Package service.
@@ -43,7 +43,7 @@ export default class PackageApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PackageResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PackageResponse} and HTTP response
      */
     getPackageWithHttpInfo(options = {}) {
       let postBody = null;
@@ -83,7 +83,7 @@ export default class PackageApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PackageResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PackageResponse}
      */
     getPackage(options = {}) {
       return this.getPackageWithHttpInfo(options)
@@ -99,7 +99,7 @@ export default class PackageApi {
      * @param {Number} options.version_id
      * @param {String} [options.expect] - We recommend using the Expect header because it may identify issues with the request based upon the headers alone instead of requiring you to wait until the entire binary package upload has completed.
      * @param {File} [options._package] - The content of the Wasm binary package.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PackageResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PackageResponse} and HTTP response
      */
     putPackageWithHttpInfo(options = {}) {
       let postBody = null;
@@ -143,7 +143,7 @@ export default class PackageApi {
      * @param {Number} options.version_id
      * @param {String} [options.expect] - We recommend using the Expect header because it may identify issues with the request based upon the headers alone instead of requiring you to wait until the entire binary package upload has completed.
      * @param {File} [options._package] - The content of the Wasm binary package.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PackageResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PackageResponse}
      */
     putPackage(options = {}) {
       return this.putPackageWithHttpInfo(options)

@@ -183,18 +183,18 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   request_settings_name: "request_settings_name_example", // required
-  action: "action_example",
+  action: ,
   bypass_busy_wait: 56,
-  default_host: "default_host_example",
+  default_host: &quot;default_host_example&quot;,
   force_miss: 56,
   force_ssl: 56,
   geo_headers: 56,
-  hash_keys: "hash_keys_example",
+  hash_keys: &quot;hash_keys_example&quot;,
   max_stale_age: 56,
-  name: "name_example",
-  request_condition: "request_condition_example",
+  name: &quot;name_example&quot;,
+  request_condition: &quot;request_condition_example&quot;,
   timer_support: 56,
-  xff: "xff_example",
+  xff: ,
 };
 
 apiInstance.updateRequestSettings(options)

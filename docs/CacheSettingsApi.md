@@ -30,9 +30,9 @@ Create a cache settings object.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  action: "action_example",
-  cache_condition: "cache_condition_example",
-  name: "name_example",
+  action: ,
+  cache_condition: &quot;cache_condition_example&quot;,
+  name: &quot;name_example&quot;,
   stale_ttl: 56,
   ttl: 56,
 };
@@ -193,9 +193,9 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   cache_settings_name: "cache_settings_name_example", // required
-  action: "action_example",
-  cache_condition: "cache_condition_example",
-  name: "name_example",
+  action: ,
+  cache_condition: &quot;cache_condition_example&quot;,
+  name: &quot;name_example&quot;,
   stale_ttl: 56,
   ttl: 56,
 };

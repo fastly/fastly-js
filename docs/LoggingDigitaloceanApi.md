@@ -30,22 +30,22 @@ Create a DigitalOcean Space for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format: &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;,
   format_version: new Fastly.LoggingFormatVersion(),
-  name: "name_example",
+  name: &quot;name_example&quot;,
   placement: new Fastly.LoggingPlacement(),
-  response_condition: "response_condition_example",
+  response_condition: &quot;response_condition_example&quot;,
   compression_codec: new Fastly.LoggingCompressionCodec(),
   gzip_level: 0,
   message_type: new Fastly.LoggingMessageType(),
   period: 3600,
-  timestamp_format: "timestamp_format_example",
-  access_key: "access_key_example",
-  bucket_name: "bucket_name_example",
-  domain: "'nyc3.digitaloceanspaces.com'",
-  path: "'null'",
-  public_key: "'null'",
-  secret_key: "secret_key_example",
+  timestamp_format: &quot;timestamp_format_example&quot;,
+  access_key: &quot;access_key_example&quot;,
+  bucket_name: &quot;bucket_name_example&quot;,
+  domain: &#39;nyc3.digitaloceanspaces.com&#39;,
+  path: &#39;null&#39;,
+  public_key: &#39;null&#39;,
+  secret_key: &quot;secret_key_example&quot;,
 };
 
 apiInstance.createLogDigocean(options)
@@ -215,22 +215,22 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   logging_digitalocean_name: "logging_digitalocean_name_example", // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format: &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;,
   format_version: new Fastly.LoggingFormatVersion(),
-  name: "name_example",
+  name: &quot;name_example&quot;,
   placement: new Fastly.LoggingPlacement(),
-  response_condition: "response_condition_example",
+  response_condition: &quot;response_condition_example&quot;,
   compression_codec: new Fastly.LoggingCompressionCodec(),
   gzip_level: 0,
   message_type: new Fastly.LoggingMessageType(),
   period: 3600,
-  timestamp_format: "timestamp_format_example",
-  access_key: "access_key_example",
-  bucket_name: "bucket_name_example",
-  domain: "'nyc3.digitaloceanspaces.com'",
-  path: "'null'",
-  public_key: "'null'",
-  secret_key: "secret_key_example",
+  timestamp_format: &quot;timestamp_format_example&quot;,
+  access_key: &quot;access_key_example&quot;,
+  bucket_name: &quot;bucket_name_example&quot;,
+  domain: &#39;nyc3.digitaloceanspaces.com&#39;,
+  path: &#39;null&#39;,
+  public_key: &#39;null&#39;,
+  secret_key: &quot;secret_key_example&quot;,
 };
 
 apiInstance.updateLogDigocean(options)

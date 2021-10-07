@@ -26,7 +26,7 @@ Create an invitation.
 
 ```javascript
 const options = {
-  invitation: new Fastly.Invitation(),
+  invitation: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;email&quot;:&quot;thelma@example.com&quot;,&quot;limit_services&quot;:true,&quot;role&quot;:&quot;engineer&quot;},&quot;relationships&quot;:{&quot;customer&quot;:{&quot;data&quot;:{&quot;id&quot;:&quot;44tb1D3asjhhuh2SH8e8YD&quot;,&quot;type&quot;:&quot;customer&quot;}},&quot;service_invitations&quot;:{&quot;data&quot;:[{&quot;attributes&quot;:{&quot;permission&quot;:&quot;purge_all&quot;},&quot;relationships&quot;:{&quot;service&quot;:{&quot;data&quot;:{&quot;id&quot;:&quot;6yrrdleXQ9QDtum9rMB0nr&quot;,&quot;type&quot;:&quot;service&quot;}}},&quot;type&quot;:&quot;service_invitation&quot;}]}},&quot;type&quot;:&quot;invitation&quot;}},
 };
 
 apiInstance.createInvitation(options)

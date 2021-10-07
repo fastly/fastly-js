@@ -13,8 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
-import CustomerResponse from '../model/CustomerResponse';
-import SchemasUserResponse from '../model/SchemasUserResponse';
+import CustomerResponse from '../models/CustomerResponse';
+import SchemasUserResponse from '../models/SchemasUserResponse';
 
 /**
 * Customer service.
@@ -90,7 +90,7 @@ export default class CustomerApi {
      * Get a specific customer.
      * @param {Object} options
      * @param {String} options.customer_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CustomerResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerResponse} and HTTP response
      */
     getCustomerWithHttpInfo(options = {}) {
       let postBody = null;
@@ -124,7 +124,7 @@ export default class CustomerApi {
      * Get a specific customer.
      * @param {Object} options
      * @param {String} options.customer_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CustomerResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerResponse}
      */
     getCustomer(options = {}) {
       return this.getCustomerWithHttpInfo(options)
@@ -136,7 +136,7 @@ export default class CustomerApi {
     /**
      * Get the logged in customer.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CustomerResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerResponse} and HTTP response
      */
     getLoggedInCustomerWithHttpInfo(options = {}) {
       let postBody = null;
@@ -164,7 +164,7 @@ export default class CustomerApi {
     /**
      * Get the logged in customer.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CustomerResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerResponse}
      */
     getLoggedInCustomer(options = {}) {
       return this.getLoggedInCustomerWithHttpInfo(options)
@@ -177,7 +177,7 @@ export default class CustomerApi {
      * List all users from a specified customer id.
      * @param {Object} options
      * @param {String} options.customer_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/SchemasUserResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/SchemasUserResponse>} and HTTP response
      */
     listUsersWithHttpInfo(options = {}) {
       let postBody = null;
@@ -211,7 +211,7 @@ export default class CustomerApi {
      * List all users from a specified customer id.
      * @param {Object} options
      * @param {String} options.customer_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/SchemasUserResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/SchemasUserResponse>}
      */
     listUsers(options = {}) {
       return this.listUsersWithHttpInfo(options)
@@ -225,7 +225,7 @@ export default class CustomerApi {
      * @param {Object} options
      * @param {String} options.customer_id
      * @param {String} [options.billing_contact_id] - The alphanumeric string representing the primary billing contact.
-     * @param {module:model/String} [options.billing_network_type] - Customer's current network revenue type.
+     * @param {module:models/String} [options.billing_network_type] - Customer's current network revenue type.
      * @param {String} [options.billing_ref] - Used for adding purchased orders to customer's account.
      * @param {Boolean} [options.can_configure_wordpress] - Whether this customer can view or edit wordpress.
      * @param {Boolean} [options.can_reset_passwords] - Whether this customer can reset passwords.
@@ -248,7 +248,7 @@ export default class CustomerApi {
      * @param {String} [options.pricing_plan_id] - The alphanumeric string identifying the pricing plan.
      * @param {String} [options.security_contact_id] - The alphanumeric string identifying the account's security contact.
      * @param {String} [options.technical_contact_id] - The alphanumeric string identifying the account's technical contact.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CustomerResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/CustomerResponse} and HTTP response
      */
     updateCustomerWithHttpInfo(options = {}) {
       let postBody = null;
@@ -307,7 +307,7 @@ export default class CustomerApi {
      * @param {Object} options
      * @param {String} options.customer_id
      * @param {String} [options.billing_contact_id] - The alphanumeric string representing the primary billing contact.
-     * @param {module:model/String} [options.billing_network_type] - Customer's current network revenue type.
+     * @param {module:models/String} [options.billing_network_type] - Customer's current network revenue type.
      * @param {String} [options.billing_ref] - Used for adding purchased orders to customer's account.
      * @param {Boolean} [options.can_configure_wordpress] - Whether this customer can view or edit wordpress.
      * @param {Boolean} [options.can_reset_passwords] - Whether this customer can reset passwords.
@@ -330,7 +330,7 @@ export default class CustomerApi {
      * @param {String} [options.pricing_plan_id] - The alphanumeric string identifying the pricing plan.
      * @param {String} [options.security_contact_id] - The alphanumeric string identifying the account's security contact.
      * @param {String} [options.technical_contact_id] - The alphanumeric string identifying the account's technical contact.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CustomerResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/CustomerResponse}
      */
     updateCustomer(options = {}) {
       return this.updateCustomerWithHttpInfo(options)

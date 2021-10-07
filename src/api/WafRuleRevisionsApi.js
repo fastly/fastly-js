@@ -13,8 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
-import WafRuleRevisionResponse from '../model/WafRuleRevisionResponse';
-import WafRuleRevisionsResponse from '../model/WafRuleRevisionsResponse';
+import WafRuleRevisionResponse from '../models/WafRuleRevisionResponse';
+import WafRuleRevisionsResponse from '../models/WafRuleRevisionsResponse';
 
 /**
 * WafRuleRevisions service.
@@ -45,7 +45,7 @@ export default class WafRuleRevisionsApi {
      * @param {String} options.waf_rule_id
      * @param {Number} options.waf_rule_revision_number
      * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_rule`, `vcl`, and `source`. The `vcl` and `source` relationships show the WAF VCL and corresponding ModSecurity source. These fields are blank unless the relationship is included. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafRuleRevisionResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/WafRuleRevisionResponse} and HTTP response
      */
     getWafRuleRevisionWithHttpInfo(options = {}) {
       let postBody = null;
@@ -87,7 +87,7 @@ export default class WafRuleRevisionsApi {
      * @param {String} options.waf_rule_id
      * @param {Number} options.waf_rule_revision_number
      * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_rule`, `vcl`, and `source`. The `vcl` and `source` relationships show the WAF VCL and corresponding ModSecurity source. These fields are blank unless the relationship is included. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafRuleRevisionResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/WafRuleRevisionResponse}
      */
     getWafRuleRevision(options = {}) {
       return this.getWafRuleRevisionWithHttpInfo(options)
@@ -102,8 +102,8 @@ export default class WafRuleRevisionsApi {
      * @param {String} options.waf_rule_id
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @param {module:model/String} [options.include='waf_rule'] - Include relationships. Optional.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafRuleRevisionsResponse} and HTTP response
+     * @param {module:models/String} [options.include='waf_rule'] - Include relationships. Optional.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/WafRuleRevisionsResponse} and HTTP response
      */
     listWafRuleRevisionsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -142,8 +142,8 @@ export default class WafRuleRevisionsApi {
      * @param {String} options.waf_rule_id
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @param {module:model/String} [options.include='waf_rule'] - Include relationships. Optional.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafRuleRevisionsResponse}
+     * @param {module:models/String} [options.include='waf_rule'] - Include relationships. Optional.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/WafRuleRevisionsResponse}
      */
     listWafRuleRevisions(options = {}) {
       return this.listWafRuleRevisionsWithHttpInfo(options)

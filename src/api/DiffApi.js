@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import DiffResponse from '../model/DiffResponse';
+import DiffResponse from '../models/DiffResponse';
 
 /**
 * Diff service.
@@ -44,8 +44,8 @@ export default class DiffApi {
      * @param {String} options.service_id
      * @param {Number} options.from_version_id - The version number of the service to which changes in the generated VCL are being compared. Can either be a positive number from 1 to your maximum version or a negative number from -1 down (-1 is latest version etc).
      * @param {Number} options.to_version_id - The version number of the service from which changes in the generated VCL are being compared. Uses same numbering scheme as `from`.
-     * @param {module:model/String} [options.format='text'] - Optional method to format the diff field.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DiffResponse} and HTTP response
+     * @param {module:models/String} [options.format='text'] - Optional method to format the diff field.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/DiffResponse} and HTTP response
      */
     diffServiceVersionsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -92,8 +92,8 @@ export default class DiffApi {
      * @param {String} options.service_id
      * @param {Number} options.from_version_id - The version number of the service to which changes in the generated VCL are being compared. Can either be a positive number from 1 to your maximum version or a negative number from -1 down (-1 is latest version etc).
      * @param {Number} options.to_version_id - The version number of the service from which changes in the generated VCL are being compared. Uses same numbering scheme as `from`.
-     * @param {module:model/String} [options.format='text'] - Optional method to format the diff field.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DiffResponse}
+     * @param {module:models/String} [options.format='text'] - Optional method to format the diff field.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/DiffResponse}
      */
     diffServiceVersions(options = {}) {
       return this.diffServiceVersionsWithHttpInfo(options)

@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
-import TlsSubscription from '../model/TlsSubscription';
-import TlsSubscriptionResponse from '../model/TlsSubscriptionResponse';
-import TlsSubscriptionsResponse from '../model/TlsSubscriptionsResponse';
+import TlsSubscription from '../models/TlsSubscription';
+import TlsSubscriptionResponse from '../models/TlsSubscriptionResponse';
+import TlsSubscriptionsResponse from '../models/TlsSubscriptionsResponse';
 
 /**
 * TlsSubscriptions service.
@@ -44,8 +44,8 @@ export default class TlsSubscriptionsApi {
      * Create a new TLS subscription. This response includes a list of possible challenges to verify domain ownership.
      * @param {Object} options
      * @param {Boolean} [options.force] - A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain. 
-     * @param {module:model/TlsSubscription} [options.tls_subscription]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsSubscriptionResponse} and HTTP response
+     * @param {module:models/TlsSubscription} [options.tls_subscription]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/TlsSubscriptionResponse} and HTTP response
      */
     createTlsSubWithHttpInfo(options = {}) {
       let postBody = options['tls_subscription'];
@@ -75,8 +75,8 @@ export default class TlsSubscriptionsApi {
      * Create a new TLS subscription. This response includes a list of possible challenges to verify domain ownership.
      * @param {Object} options
      * @param {Boolean} [options.force] - A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain. 
-     * @param {module:model/TlsSubscription} [options.tls_subscription]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsSubscriptionResponse}
+     * @param {module:models/TlsSubscription} [options.tls_subscription]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/TlsSubscriptionResponse}
      */
     createTlsSub(options = {}) {
       return this.createTlsSubWithHttpInfo(options)
@@ -137,7 +137,7 @@ export default class TlsSubscriptionsApi {
      * @param {Object} options
      * @param {String} options.tls_subscription_id
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsSubscriptionResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/TlsSubscriptionResponse} and HTTP response
      */
     getTlsSubWithHttpInfo(options = {}) {
       let postBody = null;
@@ -173,7 +173,7 @@ export default class TlsSubscriptionsApi {
      * @param {Object} options
      * @param {String} options.tls_subscription_id
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsSubscriptionResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/TlsSubscriptionResponse}
      */
     getTlsSub(options = {}) {
       return this.getTlsSubWithHttpInfo(options)
@@ -190,8 +190,8 @@ export default class TlsSubscriptionsApi {
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsSubscriptionsResponse} and HTTP response
+     * @param {module:models/String} [options.sort='created_at'] - The order in which to list the results by creation date.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/TlsSubscriptionsResponse} and HTTP response
      */
     listTlsSubsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -230,8 +230,8 @@ export default class TlsSubscriptionsApi {
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsSubscriptionsResponse}
+     * @param {module:models/String} [options.sort='created_at'] - The order in which to list the results by creation date.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/TlsSubscriptionsResponse}
      */
     listTlsSubs(options = {}) {
       return this.listTlsSubsWithHttpInfo(options)
@@ -245,8 +245,8 @@ export default class TlsSubscriptionsApi {
      * @param {Object} options
      * @param {String} options.tls_subscription_id
      * @param {Boolean} [options.force] - A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain. 
-     * @param {module:model/TlsSubscription} [options.tls_subscription]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsSubscriptionResponse} and HTTP response
+     * @param {module:models/TlsSubscription} [options.tls_subscription]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/TlsSubscriptionResponse} and HTTP response
      */
     patchTlsSubWithHttpInfo(options = {}) {
       let postBody = options['tls_subscription'];
@@ -282,8 +282,8 @@ export default class TlsSubscriptionsApi {
      * @param {Object} options
      * @param {String} options.tls_subscription_id
      * @param {Boolean} [options.force] - A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain. 
-     * @param {module:model/TlsSubscription} [options.tls_subscription]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsSubscriptionResponse}
+     * @param {module:models/TlsSubscription} [options.tls_subscription]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/TlsSubscriptionResponse}
      */
     patchTlsSub(options = {}) {
       return this.patchTlsSubWithHttpInfo(options)

@@ -13,8 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
-import RateLimiterResponse from '../model/RateLimiterResponse';
-import RateLimiterResponse1 from '../model/RateLimiterResponse1';
+import RateLimiterResponse from '../models/RateLimiterResponse';
+import RateLimiterResponse1 from '../models/RateLimiterResponse1';
 
 /**
 * RateLimiter service.
@@ -44,19 +44,19 @@ export default class RateLimiterApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @param {module:model/String} [options.action] - The action to take when a rate limiter violation is detected.
+     * @param {module:models/String} [options.action] - The action to take when a rate limiter violation is detected.
      * @param {Array.<String>} [options.client_key] - Array of VCL variables used to generate a counter key to identify a client. Example variables include `req.http.Fastly-Client-IP`, `req.http.User-Agent`, or a custom header like `req.http.API-Key`.
      * @param {Number} [options.feature_revision] - Revision number of the rate limiting feature implementation. Defaults to the most recent revision.
-     * @param {Array.<module:model/String>} [options.http_methods] - Array of HTTP methods to apply rate limiting to.
-     * @param {module:model/String} [options.logger_type] - Name of the type of logging endpoint to be used when action is `log_only`. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries.
+     * @param {Array.<module:models/String>} [options.http_methods] - Array of HTTP methods to apply rate limiting to.
+     * @param {module:models/String} [options.logger_type] - Name of the type of logging endpoint to be used when action is `log_only`. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries.
      * @param {String} [options.name] - A human readable name for the rate limiting rule.
      * @param {Number} [options.penalty_box_duration] - Length of time in seconds that the rate limiter is in effect after the initial violation is detected.
-     * @param {module:model/RateLimiterResponse1} [options.response]
+     * @param {module:models/RateLimiterResponse1} [options.response]
      * @param {String} [options.response_object_name] - Name of existing response object. Required if `action` is `response_object`. Note that the rate limiter response is only updated to reflect the response object content when saving the rate limiter configuration.
      * @param {Number} [options.rps_limit] - Upper limit of requests per second allowed by the rate limiter.
      * @param {String} [options.uri_dictionary_name] - The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
-     * @param {module:model/Number} [options.window_size] - Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RateLimiterResponse} and HTTP response
+     * @param {module:models/Number} [options.window_size] - Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/RateLimiterResponse} and HTTP response
      */
     createRateLimiterWithHttpInfo(options = {}) {
       let postBody = null;
@@ -108,19 +108,19 @@ export default class RateLimiterApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @param {module:model/String} [options.action] - The action to take when a rate limiter violation is detected.
+     * @param {module:models/String} [options.action] - The action to take when a rate limiter violation is detected.
      * @param {Array.<String>} [options.client_key] - Array of VCL variables used to generate a counter key to identify a client. Example variables include `req.http.Fastly-Client-IP`, `req.http.User-Agent`, or a custom header like `req.http.API-Key`.
      * @param {Number} [options.feature_revision] - Revision number of the rate limiting feature implementation. Defaults to the most recent revision.
-     * @param {Array.<module:model/String>} [options.http_methods] - Array of HTTP methods to apply rate limiting to.
-     * @param {module:model/String} [options.logger_type] - Name of the type of logging endpoint to be used when action is `log_only`. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries.
+     * @param {Array.<module:models/String>} [options.http_methods] - Array of HTTP methods to apply rate limiting to.
+     * @param {module:models/String} [options.logger_type] - Name of the type of logging endpoint to be used when action is `log_only`. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries.
      * @param {String} [options.name] - A human readable name for the rate limiting rule.
      * @param {Number} [options.penalty_box_duration] - Length of time in seconds that the rate limiter is in effect after the initial violation is detected.
-     * @param {module:model/RateLimiterResponse1} [options.response]
+     * @param {module:models/RateLimiterResponse1} [options.response]
      * @param {String} [options.response_object_name] - Name of existing response object. Required if `action` is `response_object`. Note that the rate limiter response is only updated to reflect the response object content when saving the rate limiter configuration.
      * @param {Number} [options.rps_limit] - Upper limit of requests per second allowed by the rate limiter.
      * @param {String} [options.uri_dictionary_name] - The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
-     * @param {module:model/Number} [options.window_size] - Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RateLimiterResponse}
+     * @param {module:models/Number} [options.window_size] - Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/RateLimiterResponse}
      */
     createRateLimiter(options = {}) {
       return this.createRateLimiterWithHttpInfo(options)
@@ -180,7 +180,7 @@ export default class RateLimiterApi {
      * Get a rate limiter by its ID.
      * @param {Object} options
      * @param {String} options.rate_limiter_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RateLimiterResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/RateLimiterResponse} and HTTP response
      */
     getRateLimiterWithHttpInfo(options = {}) {
       let postBody = null;
@@ -214,7 +214,7 @@ export default class RateLimiterApi {
      * Get a rate limiter by its ID.
      * @param {Object} options
      * @param {String} options.rate_limiter_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RateLimiterResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/RateLimiterResponse}
      */
     getRateLimiter(options = {}) {
       return this.getRateLimiterWithHttpInfo(options)
@@ -228,7 +228,7 @@ export default class RateLimiterApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/RateLimiterResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/RateLimiterResponse>} and HTTP response
      */
     listRateLimitersWithHttpInfo(options = {}) {
       let postBody = null;
@@ -268,7 +268,7 @@ export default class RateLimiterApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/RateLimiterResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/RateLimiterResponse>}
      */
     listRateLimiters(options = {}) {
       return this.listRateLimitersWithHttpInfo(options)
@@ -281,19 +281,19 @@ export default class RateLimiterApi {
      * Update a rate limiter by its ID.
      * @param {Object} options
      * @param {String} options.rate_limiter_id
-     * @param {module:model/String} [options.action] - The action to take when a rate limiter violation is detected.
+     * @param {module:models/String} [options.action] - The action to take when a rate limiter violation is detected.
      * @param {Array.<String>} [options.client_key] - Array of VCL variables used to generate a counter key to identify a client. Example variables include `req.http.Fastly-Client-IP`, `req.http.User-Agent`, or a custom header like `req.http.API-Key`.
      * @param {Number} [options.feature_revision] - Revision number of the rate limiting feature implementation. Defaults to the most recent revision.
-     * @param {Array.<module:model/String>} [options.http_methods] - Array of HTTP methods to apply rate limiting to.
-     * @param {module:model/String} [options.logger_type] - Name of the type of logging endpoint to be used when action is `log_only`. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries.
+     * @param {Array.<module:models/String>} [options.http_methods] - Array of HTTP methods to apply rate limiting to.
+     * @param {module:models/String} [options.logger_type] - Name of the type of logging endpoint to be used when action is `log_only`. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries.
      * @param {String} [options.name] - A human readable name for the rate limiting rule.
      * @param {Number} [options.penalty_box_duration] - Length of time in seconds that the rate limiter is in effect after the initial violation is detected.
-     * @param {module:model/RateLimiterResponse1} [options.response]
+     * @param {module:models/RateLimiterResponse1} [options.response]
      * @param {String} [options.response_object_name] - Name of existing response object. Required if `action` is `response_object`. Note that the rate limiter response is only updated to reflect the response object content when saving the rate limiter configuration.
      * @param {Number} [options.rps_limit] - Upper limit of requests per second allowed by the rate limiter.
      * @param {String} [options.uri_dictionary_name] - The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
-     * @param {module:model/Number} [options.window_size] - Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RateLimiterResponse} and HTTP response
+     * @param {module:models/Number} [options.window_size] - Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/RateLimiterResponse} and HTTP response
      */
     updateRateLimiterWithHttpInfo(options = {}) {
       let postBody = null;
@@ -339,19 +339,19 @@ export default class RateLimiterApi {
      * Update a rate limiter by its ID.
      * @param {Object} options
      * @param {String} options.rate_limiter_id
-     * @param {module:model/String} [options.action] - The action to take when a rate limiter violation is detected.
+     * @param {module:models/String} [options.action] - The action to take when a rate limiter violation is detected.
      * @param {Array.<String>} [options.client_key] - Array of VCL variables used to generate a counter key to identify a client. Example variables include `req.http.Fastly-Client-IP`, `req.http.User-Agent`, or a custom header like `req.http.API-Key`.
      * @param {Number} [options.feature_revision] - Revision number of the rate limiting feature implementation. Defaults to the most recent revision.
-     * @param {Array.<module:model/String>} [options.http_methods] - Array of HTTP methods to apply rate limiting to.
-     * @param {module:model/String} [options.logger_type] - Name of the type of logging endpoint to be used when action is `log_only`. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries.
+     * @param {Array.<module:models/String>} [options.http_methods] - Array of HTTP methods to apply rate limiting to.
+     * @param {module:models/String} [options.logger_type] - Name of the type of logging endpoint to be used when action is `log_only`. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries.
      * @param {String} [options.name] - A human readable name for the rate limiting rule.
      * @param {Number} [options.penalty_box_duration] - Length of time in seconds that the rate limiter is in effect after the initial violation is detected.
-     * @param {module:model/RateLimiterResponse1} [options.response]
+     * @param {module:models/RateLimiterResponse1} [options.response]
      * @param {String} [options.response_object_name] - Name of existing response object. Required if `action` is `response_object`. Note that the rate limiter response is only updated to reflect the response object content when saving the rate limiter configuration.
      * @param {Number} [options.rps_limit] - Upper limit of requests per second allowed by the rate limiter.
      * @param {String} [options.uri_dictionary_name] - The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
-     * @param {module:model/Number} [options.window_size] - Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RateLimiterResponse}
+     * @param {module:models/Number} [options.window_size] - Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/RateLimiterResponse}
      */
     updateRateLimiter(options = {}) {
       return this.updateRateLimiterWithHttpInfo(options)

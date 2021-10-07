@@ -67,7 +67,7 @@ const options = {
   waf_rule_id: "waf_rule_id_example", // required
   page_number: 56,
   page_size: 20,
-  include: waf_rule,
+  include: &#39;waf_rule&#39;,
 };
 
 apiInstance.listWafRuleRevisions(options)

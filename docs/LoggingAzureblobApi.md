@@ -30,22 +30,22 @@ Create an Azure Blob Storage logging endpoint for a particular service and versi
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format: &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;,
   format_version: new Fastly.LoggingFormatVersion(),
-  name: "name_example",
+  name: &quot;name_example&quot;,
   placement: new Fastly.LoggingPlacement(),
-  response_condition: "response_condition_example",
+  response_condition: &quot;response_condition_example&quot;,
   compression_codec: new Fastly.LoggingCompressionCodec(),
   gzip_level: 0,
   message_type: new Fastly.LoggingMessageType(),
   period: 3600,
-  timestamp_format: "timestamp_format_example",
-  account_name: "account_name_example",
-  container: "container_example",
+  timestamp_format: &quot;timestamp_format_example&quot;,
+  account_name: &quot;account_name_example&quot;,
+  container: &quot;container_example&quot;,
   file_max_bytes: 56,
-  path: "'null'",
-  public_key: "'null'",
-  sas_token: "sas_token_example",
+  path: &#39;null&#39;,
+  public_key: &#39;null&#39;,
+  sas_token: &quot;sas_token_example&quot;,
 };
 
 apiInstance.createLogAzure(options)
@@ -215,22 +215,22 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   logging_azureblob_name: "logging_azureblob_name_example", // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format: &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;,
   format_version: new Fastly.LoggingFormatVersion(),
-  name: "name_example",
+  name: &quot;name_example&quot;,
   placement: new Fastly.LoggingPlacement(),
-  response_condition: "response_condition_example",
+  response_condition: &quot;response_condition_example&quot;,
   compression_codec: new Fastly.LoggingCompressionCodec(),
   gzip_level: 0,
   message_type: new Fastly.LoggingMessageType(),
   period: 3600,
-  timestamp_format: "timestamp_format_example",
-  account_name: "account_name_example",
-  container: "container_example",
+  timestamp_format: &quot;timestamp_format_example&quot;,
+  account_name: &quot;account_name_example&quot;,
+  container: &quot;container_example&quot;,
   file_max_bytes: 56,
-  path: "'null'",
-  public_key: "'null'",
-  sas_token: "sas_token_example",
+  path: &#39;null&#39;,
+  public_key: &#39;null&#39;,
+  sas_token: &quot;sas_token_example&quot;,
 };
 
 apiInstance.updateLogAzure(options)

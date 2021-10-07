@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
-import LoggingElasticsearchResponse from '../model/LoggingElasticsearchResponse';
-import LoggingFormatVersion from '../model/LoggingFormatVersion';
-import LoggingPlacement from '../model/LoggingPlacement';
+import LoggingElasticsearchResponse from '../models/LoggingElasticsearchResponse';
+import LoggingFormatVersion from '../models/LoggingFormatVersion';
+import LoggingPlacement from '../models/LoggingPlacement';
 
 /**
 * LoggingElasticsearch service.
@@ -46,9 +46,9 @@ export default class LoggingElasticsearchApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Elasticsearch can ingest.
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
@@ -61,7 +61,7 @@ export default class LoggingElasticsearchApi {
      * @param {String} [options.pipeline] - The ID of the Elasticsearch ingest pipeline to apply pre-process transformations to before indexing. Learn more about creating a pipeline in the [Elasticsearch docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/ingest.html).
      * @param {String} [options.url] - The URL to stream logs to. Must use HTTPS.
      * @param {String} [options.user] - Basic Auth username.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingElasticsearchResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingElasticsearchResponse} and HTTP response
      */
     createLogElasticsearchWithHttpInfo(options = {}) {
       let postBody = null;
@@ -118,9 +118,9 @@ export default class LoggingElasticsearchApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Elasticsearch can ingest.
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
@@ -133,7 +133,7 @@ export default class LoggingElasticsearchApi {
      * @param {String} [options.pipeline] - The ID of the Elasticsearch ingest pipeline to apply pre-process transformations to before indexing. Learn more about creating a pipeline in the [Elasticsearch docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/ingest.html).
      * @param {String} [options.url] - The URL to stream logs to. Must use HTTPS.
      * @param {String} [options.user] - Basic Auth username.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingElasticsearchResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingElasticsearchResponse}
      */
     createLogElasticsearch(options = {}) {
       return this.createLogElasticsearchWithHttpInfo(options)
@@ -209,7 +209,7 @@ export default class LoggingElasticsearchApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_elasticsearch_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingElasticsearchResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingElasticsearchResponse} and HTTP response
      */
     getLogElasticsearchWithHttpInfo(options = {}) {
       let postBody = null;
@@ -255,7 +255,7 @@ export default class LoggingElasticsearchApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_elasticsearch_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingElasticsearchResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingElasticsearchResponse}
      */
     getLogElasticsearch(options = {}) {
       return this.getLogElasticsearchWithHttpInfo(options)
@@ -269,7 +269,7 @@ export default class LoggingElasticsearchApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingElasticsearchResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/LoggingElasticsearchResponse>} and HTTP response
      */
     listLogElasticsearchWithHttpInfo(options = {}) {
       let postBody = null;
@@ -309,7 +309,7 @@ export default class LoggingElasticsearchApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingElasticsearchResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/LoggingElasticsearchResponse>}
      */
     listLogElasticsearch(options = {}) {
       return this.listLogElasticsearchWithHttpInfo(options)
@@ -325,9 +325,9 @@ export default class LoggingElasticsearchApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_elasticsearch_name
      * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Elasticsearch can ingest.
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
@@ -340,7 +340,7 @@ export default class LoggingElasticsearchApi {
      * @param {String} [options.pipeline] - The ID of the Elasticsearch ingest pipeline to apply pre-process transformations to before indexing. Learn more about creating a pipeline in the [Elasticsearch docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/ingest.html).
      * @param {String} [options.url] - The URL to stream logs to. Must use HTTPS.
      * @param {String} [options.user] - Basic Auth username.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingElasticsearchResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingElasticsearchResponse} and HTTP response
      */
     updateLogElasticsearchWithHttpInfo(options = {}) {
       let postBody = null;
@@ -403,9 +403,9 @@ export default class LoggingElasticsearchApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_elasticsearch_name
      * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Elasticsearch can ingest.
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
@@ -418,7 +418,7 @@ export default class LoggingElasticsearchApi {
      * @param {String} [options.pipeline] - The ID of the Elasticsearch ingest pipeline to apply pre-process transformations to before indexing. Learn more about creating a pipeline in the [Elasticsearch docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/ingest.html).
      * @param {String} [options.url] - The URL to stream logs to. Must use HTTPS.
      * @param {String} [options.user] - Basic Auth username.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingElasticsearchResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingElasticsearchResponse}
      */
     updateLogElasticsearch(options = {}) {
       return this.updateLogElasticsearchWithHttpInfo(options)

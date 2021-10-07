@@ -62,10 +62,10 @@ List all available WAF rules.
 
 ```javascript
 const options = {
-  filter_modsec_rule_id: "filter_modsec_rule_id_example",
-  filter_waf_tags_name: "filter_waf_tags_name_example",
-  filter_waf_rule_revisions_source: "filter_waf_rule_revisions_source_example",
-  filter_waf_firewall_id_not_match: "filter_waf_firewall_id_not_match_example",
+  filter_modsec_rule_id: &quot;filter_modsec_rule_id_example&quot;,
+  filter_waf_tags_name: &quot;filter_waf_tags_name_example&quot;,
+  filter_waf_rule_revisions_source: &quot;filter_waf_rule_revisions_source_example&quot;,
+  filter_waf_firewall_id_not_match: &quot;filter_waf_firewall_id_not_match_example&quot;,
   page_number: 56,
   page_size: 20,
   include: waf_tags,waf_rule_revisions,

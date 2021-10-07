@@ -60,13 +60,13 @@ List all events for a particular customer. Events can be filtered by user, custo
 
 ```javascript
 const options = {
-  filter_event_type: "filter_event_type_example",
-  filter_customer_id: "filter_customer_id_example",
-  filter_service_id: "filter_service_id_example",
-  filter_user_id: "filter_user_id_example",
+  filter_event_type: &quot;filter_event_type_example&quot;,
+  filter_customer_id: &quot;filter_customer_id_example&quot;,
+  filter_service_id: &quot;filter_service_id_example&quot;,
+  filter_user_id: &quot;filter_user_id_example&quot;,
   page_number: 56,
   page_size: 20,
-  sort: "'created_at'",
+  sort: &#39;created_at&#39;,
 };
 
 apiInstance.listEvents(options)

@@ -29,7 +29,7 @@ Create a new TLS subscription. This response includes a list of possible challen
 ```javascript
 const options = {
   force: true,
-  tls_subscription: new Fastly.TlsSubscription(),
+  tls_subscription: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;certificate_authority&quot;:&quot;lets-encrypt&quot;},&quot;relationships&quot;:{&quot;tls_configuration&quot;:{&quot;data&quot;:{&quot;id&quot;:&quot;t7CguUGZzb2W9Euo5FoKa&quot;,&quot;type&quot;:&quot;tls_configuration&quot;}},&quot;tls_domains&quot;:{&quot;data&quot;:[{&quot;id&quot;:&quot;DOMAIN_NAME&quot;,&quot;type&quot;:&quot;tls_domain&quot;}]}},&quot;type&quot;:&quot;tls_subscription&quot;}},
 };
 
 apiInstance.createTlsSub(options)
@@ -137,12 +137,12 @@ List all TLS subscriptions.
 
 ```javascript
 const options = {
-  filter_state: "filter_state_example",
-  filter_tls_domains_id: "filter_tls_domains_id_example",
+  filter_state: &quot;filter_state_example&quot;,
+  filter_tls_domains_id: &quot;filter_tls_domains_id_example&quot;,
   include: tls_authorizations,
   page_number: 56,
   page_size: 20,
-  sort: "'created_at'",
+  sort: &#39;created_at&#39;,
 };
 
 apiInstance.listTlsSubs(options)
@@ -184,7 +184,7 @@ Change the TLS domains or common name associated with this subscription, or upda
 const options = {
   tls_subscription_id: "tls_subscription_id_example", // required
   force: true,
-  tls_subscription: new Fastly.TlsSubscription(),
+  tls_subscription: {&quot;data&quot;:{&quot;relationships&quot;:{&quot;common_name&quot;:{&quot;data&quot;:{&quot;id&quot;:&quot;DOMAIN_NAME&quot;,&quot;type&quot;:&quot;tls_domain&quot;}},&quot;tls_configuration&quot;:{&quot;data&quot;:{&quot;id&quot;:&quot;t7CguUGZzb2W9Euo5FoKa&quot;,&quot;type&quot;:&quot;tls_configuration&quot;}},&quot;tls_domains&quot;:{&quot;data&quot;:[{&quot;id&quot;:&quot;DOMAIN_NAME&quot;,&quot;type&quot;:&quot;tls_domain&quot;}]}},&quot;type&quot;:&quot;tls_subscription&quot;}},
 };
 
 apiInstance.patchTlsSub(options)

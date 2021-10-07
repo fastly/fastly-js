@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
-import WafFirewallVersion from '../model/WafFirewallVersion';
-import WafFirewallVersionResponse from '../model/WafFirewallVersionResponse';
-import WafFirewallVersionsResponse from '../model/WafFirewallVersionsResponse';
+import WafFirewallVersion from '../models/WafFirewallVersion';
+import WafFirewallVersionResponse from '../models/WafFirewallVersionResponse';
+import WafFirewallVersionsResponse from '../models/WafFirewallVersionsResponse';
 
 /**
 * WafFirewallVersions service.
@@ -45,7 +45,7 @@ export default class WafFirewallVersionsApi {
      * @param {Object} options
      * @param {String} options.firewall_id
      * @param {Number} options.firewall_version_number
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafFirewallVersionResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/WafFirewallVersionResponse} and HTTP response
      */
     cloneWafFirewallVersionWithHttpInfo(options = {}) {
       let postBody = null;
@@ -85,7 +85,7 @@ export default class WafFirewallVersionsApi {
      * @param {Object} options
      * @param {String} options.firewall_id
      * @param {Number} options.firewall_version_number
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafFirewallVersionResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/WafFirewallVersionResponse}
      */
     cloneWafFirewallVersion(options = {}) {
       return this.cloneWafFirewallVersionWithHttpInfo(options)
@@ -98,8 +98,8 @@ export default class WafFirewallVersionsApi {
      * Create a new, draft firewall version.
      * @param {Object} options
      * @param {String} options.firewall_id
-     * @param {module:model/WafFirewallVersion} [options.waf_firewall_version]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafFirewallVersionResponse} and HTTP response
+     * @param {module:models/WafFirewallVersion} [options.waf_firewall_version]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/WafFirewallVersionResponse} and HTTP response
      */
     createWafFirewallVersionWithHttpInfo(options = {}) {
       let postBody = options['waf_firewall_version'];
@@ -133,8 +133,8 @@ export default class WafFirewallVersionsApi {
      * Create a new, draft firewall version.
      * @param {Object} options
      * @param {String} options.firewall_id
-     * @param {module:model/WafFirewallVersion} [options.waf_firewall_version]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafFirewallVersionResponse}
+     * @param {module:models/WafFirewallVersion} [options.waf_firewall_version]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/WafFirewallVersionResponse}
      */
     createWafFirewallVersion(options = {}) {
       return this.createWafFirewallVersionWithHttpInfo(options)
@@ -203,7 +203,7 @@ export default class WafFirewallVersionsApi {
      * @param {String} options.firewall_id
      * @param {Number} options.firewall_version_number
      * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_firewall` and `waf_active_rules`. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafFirewallVersionResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/WafFirewallVersionResponse} and HTTP response
      */
     getWafFirewallVersionWithHttpInfo(options = {}) {
       let postBody = null;
@@ -245,7 +245,7 @@ export default class WafFirewallVersionsApi {
      * @param {String} options.firewall_id
      * @param {Number} options.firewall_version_number
      * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_firewall` and `waf_active_rules`. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafFirewallVersionResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/WafFirewallVersionResponse}
      */
     getWafFirewallVersion(options = {}) {
       return this.getWafFirewallVersionWithHttpInfo(options)
@@ -261,7 +261,7 @@ export default class WafFirewallVersionsApi {
      * @param {String} [options.include] - Include relationships. Optional.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafFirewallVersionsResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/WafFirewallVersionsResponse} and HTTP response
      */
     listWafFirewallVersionsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -301,7 +301,7 @@ export default class WafFirewallVersionsApi {
      * @param {String} [options.include] - Include relationships. Optional.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafFirewallVersionsResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/WafFirewallVersionsResponse}
      */
     listWafFirewallVersions(options = {}) {
       return this.listWafFirewallVersionsWithHttpInfo(options)
@@ -315,8 +315,8 @@ export default class WafFirewallVersionsApi {
      * @param {Object} options
      * @param {String} options.firewall_id
      * @param {Number} options.firewall_version_number
-     * @param {module:model/WafFirewallVersion} [options.waf_firewall_version]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafFirewallVersionResponse} and HTTP response
+     * @param {module:models/WafFirewallVersion} [options.waf_firewall_version]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/WafFirewallVersionResponse} and HTTP response
      */
     updateWafFirewallVersionWithHttpInfo(options = {}) {
       let postBody = options['waf_firewall_version'];
@@ -356,8 +356,8 @@ export default class WafFirewallVersionsApi {
      * @param {Object} options
      * @param {String} options.firewall_id
      * @param {Number} options.firewall_version_number
-     * @param {module:model/WafFirewallVersion} [options.waf_firewall_version]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafFirewallVersionResponse}
+     * @param {module:models/WafFirewallVersion} [options.waf_firewall_version]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/WafFirewallVersionResponse}
      */
     updateWafFirewallVersion(options = {}) {
       return this.updateWafFirewallVersionWithHttpInfo(options)

@@ -30,7 +30,7 @@ Revoke Tokens in bulk format. Users may only revoke their own tokens. Superusers
 
 ```javascript
 const options = {
-  body: null,
+  body: {&quot;data&quot;:[{&quot;id&quot;:&quot;3krg2uUGZzb2W9Euo4moOY&quot;,&quot;type&quot;:&quot;token&quot;},{&quot;id&quot;:&quot;71ZA6hv2FO6tGEQIE203Xj&quot;,&quot;type&quot;:&quot;token&quot;}]},
 };
 
 apiInstance.bulkRevokeTokens(options)

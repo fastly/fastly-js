@@ -30,11 +30,11 @@ Creates a single server for a particular service and pool.
 const options = {
   service_id: "service_id_example", // required
   pool_id: "pool_id_example", // required
-  address: "address_example",
-  comment: "comment_example",
+  address: &quot;address_example&quot;,
+  comment: &quot;comment_example&quot;,
   disabled: false,
   max_conn: 0,
-  override_host: "'null'",
+  override_host: &#39;null&#39;,
   port: 80,
   weight: 100,
 };
@@ -197,11 +197,11 @@ const options = {
   service_id: "service_id_example", // required
   pool_id: "pool_id_example", // required
   server_id: "server_id_example", // required
-  address: "address_example",
-  comment: "comment_example",
+  address: &quot;address_example&quot;,
+  comment: &quot;comment_example&quot;,
   disabled: false,
   max_conn: 0,
-  override_host: "'null'",
+  override_host: &#39;null&#39;,
   port: 80,
   weight: 100,
 };

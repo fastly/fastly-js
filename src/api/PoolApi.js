@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import PoolResponse from '../model/PoolResponse';
+import PoolResponse from '../models/PoolResponse';
 
 /**
 * Pool service.
@@ -47,7 +47,7 @@ export default class PoolApi {
      * @param {String} [options.tls_cert_hostname='null'] - The hostname used to verify a server's certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
-     * @param {module:model/Number} [options.use_tls=0] - Whether to use TLS.
+     * @param {module:models/Number} [options.use_tls=0] - Whether to use TLS.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Number} [options.connect_timeout] - How long to wait for a timeout in milliseconds. Optional.
      * @param {Number} [options.first_byte_timeout] - How long to wait for the first byte in milliseconds. Optional.
@@ -63,8 +63,8 @@ export default class PoolApi {
      * @param {Number} [options.tls_check_cert] - Be strict on checking TLS certs. Optional.
      * @param {String} [options.tls_ciphers] - List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.0.2/man1/ciphers) for details). Optional.
      * @param {String} [options.tls_sni_hostname] - SNI hostname. Optional.
-     * @param {module:model/String} [options.type] - What type of load balance group to use.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PoolResponse} and HTTP response
+     * @param {module:models/String} [options.type] - What type of load balance group to use.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PoolResponse} and HTTP response
      */
     createServerPoolWithHttpInfo(options = {}) {
       let postBody = null;
@@ -129,7 +129,7 @@ export default class PoolApi {
      * @param {String} [options.tls_cert_hostname='null'] - The hostname used to verify a server's certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
-     * @param {module:model/Number} [options.use_tls=0] - Whether to use TLS.
+     * @param {module:models/Number} [options.use_tls=0] - Whether to use TLS.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Number} [options.connect_timeout] - How long to wait for a timeout in milliseconds. Optional.
      * @param {Number} [options.first_byte_timeout] - How long to wait for the first byte in milliseconds. Optional.
@@ -145,8 +145,8 @@ export default class PoolApi {
      * @param {Number} [options.tls_check_cert] - Be strict on checking TLS certs. Optional.
      * @param {String} [options.tls_ciphers] - List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.0.2/man1/ciphers) for details). Optional.
      * @param {String} [options.tls_sni_hostname] - SNI hostname. Optional.
-     * @param {module:model/String} [options.type] - What type of load balance group to use.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PoolResponse}
+     * @param {module:models/String} [options.type] - What type of load balance group to use.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PoolResponse}
      */
     createServerPool(options = {}) {
       return this.createServerPoolWithHttpInfo(options)
@@ -222,7 +222,7 @@ export default class PoolApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.pool_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PoolResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PoolResponse} and HTTP response
      */
     getServerPoolWithHttpInfo(options = {}) {
       let postBody = null;
@@ -268,7 +268,7 @@ export default class PoolApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.pool_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PoolResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PoolResponse}
      */
     getServerPool(options = {}) {
       return this.getServerPoolWithHttpInfo(options)
@@ -282,7 +282,7 @@ export default class PoolApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PoolResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/PoolResponse>} and HTTP response
      */
     listServerPoolsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -322,7 +322,7 @@ export default class PoolApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PoolResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/PoolResponse>}
      */
     listServerPools(options = {}) {
       return this.listServerPoolsWithHttpInfo(options)
@@ -341,7 +341,7 @@ export default class PoolApi {
      * @param {String} [options.tls_cert_hostname='null'] - The hostname used to verify a server's certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
-     * @param {module:model/Number} [options.use_tls=UseTlsEnum.no_tls] - Whether to use TLS.
+     * @param {module:models/Number} [options.use_tls=UseTlsEnum.no_tls] - Whether to use TLS.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Number} [options.connect_timeout] - How long to wait for a timeout in milliseconds. Optional.
      * @param {Number} [options.first_byte_timeout] - How long to wait for the first byte in milliseconds. Optional.
@@ -357,8 +357,8 @@ export default class PoolApi {
      * @param {Number} [options.tls_check_cert] - Be strict on checking TLS certs. Optional.
      * @param {String} [options.tls_ciphers] - List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.0.2/man1/ciphers) for details). Optional.
      * @param {String} [options.tls_sni_hostname] - SNI hostname. Optional.
-     * @param {module:model/String} [options.type] - What type of load balance group to use.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PoolResponse} and HTTP response
+     * @param {module:models/String} [options.type] - What type of load balance group to use.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PoolResponse} and HTTP response
      */
     updateServerPoolWithHttpInfo(options = {}) {
       let postBody = null;
@@ -429,7 +429,7 @@ export default class PoolApi {
      * @param {String} [options.tls_cert_hostname='null'] - The hostname used to verify a server's certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
-     * @param {module:model/Number} [options.use_tls=UseTlsEnum.no_tls] - Whether to use TLS.
+     * @param {module:models/Number} [options.use_tls=UseTlsEnum.no_tls] - Whether to use TLS.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Number} [options.connect_timeout] - How long to wait for a timeout in milliseconds. Optional.
      * @param {Number} [options.first_byte_timeout] - How long to wait for the first byte in milliseconds. Optional.
@@ -445,8 +445,8 @@ export default class PoolApi {
      * @param {Number} [options.tls_check_cert] - Be strict on checking TLS certs. Optional.
      * @param {String} [options.tls_ciphers] - List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.0.2/man1/ciphers) for details). Optional.
      * @param {String} [options.tls_sni_hostname] - SNI hostname. Optional.
-     * @param {module:model/String} [options.type] - What type of load balance group to use.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PoolResponse}
+     * @param {module:models/String} [options.type] - What type of load balance group to use.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PoolResponse}
      */
     updateServerPool(options = {}) {
       return this.updateServerPoolWithHttpInfo(options)

@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
-import TlsPrivateKey from '../model/TlsPrivateKey';
-import TlsPrivateKeyResponse from '../model/TlsPrivateKeyResponse';
-import TlsPrivateKeysResponse from '../model/TlsPrivateKeysResponse';
+import TlsPrivateKey from '../models/TlsPrivateKey';
+import TlsPrivateKeyResponse from '../models/TlsPrivateKeyResponse';
+import TlsPrivateKeysResponse from '../models/TlsPrivateKeysResponse';
 
 /**
 * TlsPrivateKeys service.
@@ -43,8 +43,8 @@ export default class TlsPrivateKeysApi {
     /**
      * Create a TLS private key.
      * @param {Object} options
-     * @param {module:model/TlsPrivateKey} [options.tls_private_key]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsPrivateKeyResponse} and HTTP response
+     * @param {module:models/TlsPrivateKey} [options.tls_private_key]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/TlsPrivateKeyResponse} and HTTP response
      */
     createTlsKeyWithHttpInfo(options = {}) {
       let postBody = options['tls_private_key'];
@@ -72,8 +72,8 @@ export default class TlsPrivateKeysApi {
     /**
      * Create a TLS private key.
      * @param {Object} options
-     * @param {module:model/TlsPrivateKey} [options.tls_private_key]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsPrivateKeyResponse}
+     * @param {module:models/TlsPrivateKey} [options.tls_private_key]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/TlsPrivateKeyResponse}
      */
     createTlsKey(options = {}) {
       return this.createTlsKeyWithHttpInfo(options)
@@ -133,7 +133,7 @@ export default class TlsPrivateKeysApi {
      * Show a TLS private key.
      * @param {Object} options
      * @param {String} options.tls_private_key_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsPrivateKeyResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/TlsPrivateKeyResponse} and HTTP response
      */
     getTlsKeyWithHttpInfo(options = {}) {
       let postBody = null;
@@ -167,7 +167,7 @@ export default class TlsPrivateKeysApi {
      * Show a TLS private key.
      * @param {Object} options
      * @param {String} options.tls_private_key_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsPrivateKeyResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/TlsPrivateKeyResponse}
      */
     getTlsKey(options = {}) {
       return this.getTlsKeyWithHttpInfo(options)
@@ -182,7 +182,7 @@ export default class TlsPrivateKeysApi {
      * @param {String} [options.filter_in_use] - Limit the returned keys to those without any matching TLS certificates. The only valid value is false.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsPrivateKeysResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/TlsPrivateKeysResponse} and HTTP response
      */
     listTlsKeysWithHttpInfo(options = {}) {
       let postBody = null;
@@ -216,7 +216,7 @@ export default class TlsPrivateKeysApi {
      * @param {String} [options.filter_in_use] - Limit the returned keys to those without any matching TLS certificates. The only valid value is false.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsPrivateKeysResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/TlsPrivateKeysResponse}
      */
     listTlsKeys(options = {}) {
       return this.listTlsKeysWithHttpInfo(options)

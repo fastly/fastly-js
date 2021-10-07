@@ -30,24 +30,24 @@ Create a FTP for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format: &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;,
   format_version: new Fastly.LoggingFormatVersion(),
-  name: "name_example",
+  name: &quot;name_example&quot;,
   placement: new Fastly.LoggingPlacement(),
-  response_condition: "response_condition_example",
+  response_condition: &quot;response_condition_example&quot;,
   compression_codec: new Fastly.LoggingCompressionCodec(),
   gzip_level: 0,
   message_type: new Fastly.LoggingMessageType(),
   period: 3600,
-  timestamp_format: "timestamp_format_example",
-  address: "address_example",
-  hostname: "hostname_example",
-  ipv4: "ipv4_example",
-  password: "password_example",
-  path: "path_example",
+  timestamp_format: &quot;timestamp_format_example&quot;,
+  address: &quot;address_example&quot;,
+  hostname: &quot;hostname_example&quot;,
+  ipv4: &quot;ipv4_example&quot;,
+  password: &quot;password_example&quot;,
+  path: &quot;path_example&quot;,
   port: 21,
-  public_key: "'null'",
-  user: "user_example",
+  public_key: &#39;null&#39;,
+  user: &quot;user_example&quot;,
 };
 
 apiInstance.createLogFtp(options)
@@ -219,24 +219,24 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   logging_ftp_name: "logging_ftp_name_example", // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format: &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;,
   format_version: new Fastly.LoggingFormatVersion(),
-  name: "name_example",
+  name: &quot;name_example&quot;,
   placement: new Fastly.LoggingPlacement(),
-  response_condition: "response_condition_example",
+  response_condition: &quot;response_condition_example&quot;,
   compression_codec: new Fastly.LoggingCompressionCodec(),
   gzip_level: 0,
   message_type: new Fastly.LoggingMessageType(),
   period: 3600,
-  timestamp_format: "timestamp_format_example",
-  address: "address_example",
-  hostname: "hostname_example",
-  ipv4: "ipv4_example",
-  password: "password_example",
-  path: "path_example",
+  timestamp_format: &quot;timestamp_format_example&quot;,
+  address: &quot;address_example&quot;,
+  hostname: &quot;hostname_example&quot;,
+  ipv4: &quot;ipv4_example&quot;,
+  password: &quot;password_example&quot;,
+  path: &quot;path_example&quot;,
   port: 21,
-  public_key: "'null'",
-  user: "user_example",
+  public_key: &#39;null&#39;,
+  user: &quot;user_example&quot;,
 };
 
 apiInstance.updateLogFtp(options)

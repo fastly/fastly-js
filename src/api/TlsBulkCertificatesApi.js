@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
-import TlsBulkCertificate from '../model/TlsBulkCertificate';
-import TlsBulkCertificateResponse from '../model/TlsBulkCertificateResponse';
-import TlsBulkCertificatesResponse from '../model/TlsBulkCertificatesResponse';
+import TlsBulkCertificate from '../models/TlsBulkCertificate';
+import TlsBulkCertificateResponse from '../models/TlsBulkCertificateResponse';
+import TlsBulkCertificatesResponse from '../models/TlsBulkCertificatesResponse';
 
 /**
 * TlsBulkCertificates service.
@@ -91,7 +91,7 @@ export default class TlsBulkCertificatesApi {
      * Retrieve a single certificate.
      * @param {Object} options
      * @param {String} options.certificate_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsBulkCertificateResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/TlsBulkCertificateResponse} and HTTP response
      */
     getTlsBulkCertWithHttpInfo(options = {}) {
       let postBody = null;
@@ -125,7 +125,7 @@ export default class TlsBulkCertificatesApi {
      * Retrieve a single certificate.
      * @param {Object} options
      * @param {String} options.certificate_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsBulkCertificateResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/TlsBulkCertificateResponse}
      */
     getTlsBulkCert(options = {}) {
       return this.getTlsBulkCertWithHttpInfo(options)
@@ -140,8 +140,8 @@ export default class TlsBulkCertificatesApi {
      * @param {String} [options.filter_tls_domain_id_match] - Filter certificates by their matching, fully-qualified domain name. Returns all partial matches. Must provide a value longer than 3 characters.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsBulkCertificatesResponse} and HTTP response
+     * @param {module:models/String} [options.sort='created_at'] - The order in which to list the results by creation date.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/TlsBulkCertificatesResponse} and HTTP response
      */
     listTlsBulkCertsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -176,8 +176,8 @@ export default class TlsBulkCertificatesApi {
      * @param {String} [options.filter_tls_domain_id_match] - Filter certificates by their matching, fully-qualified domain name. Returns all partial matches. Must provide a value longer than 3 characters.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsBulkCertificatesResponse}
+     * @param {module:models/String} [options.sort='created_at'] - The order in which to list the results by creation date.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/TlsBulkCertificatesResponse}
      */
     listTlsBulkCerts(options = {}) {
       return this.listTlsBulkCertsWithHttpInfo(options)
@@ -190,8 +190,8 @@ export default class TlsBulkCertificatesApi {
      * Replace a certificate with a newly reissued certificate. By using this endpoint, the original certificate will cease to be used for future TLS handshakes. Thus, only SAN entries that appear in the replacement certificate will become TLS enabled. Any SAN entries that are missing in the replacement certificate will become disabled.
      * @param {Object} options
      * @param {String} options.certificate_id
-     * @param {module:model/TlsBulkCertificate} [options.tls_bulk_certificate]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsBulkCertificateResponse} and HTTP response
+     * @param {module:models/TlsBulkCertificate} [options.tls_bulk_certificate]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/TlsBulkCertificateResponse} and HTTP response
      */
     updateBulkTlsCertWithHttpInfo(options = {}) {
       let postBody = options['tls_bulk_certificate'];
@@ -225,8 +225,8 @@ export default class TlsBulkCertificatesApi {
      * Replace a certificate with a newly reissued certificate. By using this endpoint, the original certificate will cease to be used for future TLS handshakes. Thus, only SAN entries that appear in the replacement certificate will become TLS enabled. Any SAN entries that are missing in the replacement certificate will become disabled.
      * @param {Object} options
      * @param {String} options.certificate_id
-     * @param {module:model/TlsBulkCertificate} [options.tls_bulk_certificate]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsBulkCertificateResponse}
+     * @param {module:models/TlsBulkCertificate} [options.tls_bulk_certificate]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/TlsBulkCertificateResponse}
      */
     updateBulkTlsCert(options = {}) {
       return this.updateBulkTlsCertWithHttpInfo(options)
@@ -238,8 +238,8 @@ export default class TlsBulkCertificatesApi {
     /**
      * Upload a new certificate. TLS domains are automatically enabled upon certificate creation. If a domain is already enabled on a previously uploaded certificate, that domain will be updated to use the new certificate for all future TLS handshake requests.
      * @param {Object} options
-     * @param {module:model/TlsBulkCertificate} [options.tls_bulk_certificate]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsBulkCertificateResponse} and HTTP response
+     * @param {module:models/TlsBulkCertificate} [options.tls_bulk_certificate]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/TlsBulkCertificateResponse} and HTTP response
      */
     uploadTlsBulkCertWithHttpInfo(options = {}) {
       let postBody = options['tls_bulk_certificate'];
@@ -267,8 +267,8 @@ export default class TlsBulkCertificatesApi {
     /**
      * Upload a new certificate. TLS domains are automatically enabled upon certificate creation. If a domain is already enabled on a previously uploaded certificate, that domain will be updated to use the new certificate for all future TLS handshake requests.
      * @param {Object} options
-     * @param {module:model/TlsBulkCertificate} [options.tls_bulk_certificate]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsBulkCertificateResponse}
+     * @param {module:models/TlsBulkCertificate} [options.tls_bulk_certificate]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/TlsBulkCertificateResponse}
      */
     uploadTlsBulkCert(options = {}) {
       return this.uploadTlsBulkCertWithHttpInfo(options)

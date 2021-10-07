@@ -32,8 +32,8 @@ Create a user.
 const options = {
   limit_services: true,
   locked: true,
-  login: "login_example",
-  name: "name_example",
+  login: &quot;login_example&quot;,
+  name: &quot;name_example&quot;,
   require_new_password: true,
   role: new Fastly.RoleUser(),
   two_factor_auth_enabled: true,
@@ -216,8 +216,8 @@ const options = {
   user_id: "user_id_example", // required
   limit_services: true,
   locked: true,
-  login: "login_example",
-  name: "name_example",
+  login: &quot;login_example&quot;,
+  name: &quot;name_example&quot;,
   require_new_password: true,
   role: new Fastly.RoleUser(),
   two_factor_auth_enabled: true,
@@ -264,8 +264,8 @@ Update the user's password to a new one.
 
 ```javascript
 const options = {
-  new_password: "new_password_example",
-  old_password: "old_password_example",
+  new_password: &quot;new_password_example&quot;,
+  old_password: &quot;old_password_example&quot;,
 };
 
 apiInstance.updateUserPassword(options)

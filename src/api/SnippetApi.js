@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import SnippetResponse from '../model/SnippetResponse';
+import SnippetResponse from '../models/SnippetResponse';
 
 /**
 * Snippet service.
@@ -44,11 +44,11 @@ export default class SnippetApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.content] - The VCL code that specifies exactly what the snippet does.
-     * @param {module:model/String} [options.dynamic] - Sets the snippet version.
+     * @param {module:models/String} [options.dynamic] - Sets the snippet version.
      * @param {String} [options.name] - The name for the snippet.
      * @param {String} [options.priority='100'] - Numeric string value. Priority determines execution order. Lower numbers execute first.
-     * @param {module:model/String} [options.type] - The location in generated VCL where the snippet should be placed.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SnippetResponse} and HTTP response
+     * @param {module:models/String} [options.type] - The location in generated VCL where the snippet should be placed.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/SnippetResponse} and HTTP response
      */
     createSnippetWithHttpInfo(options = {}) {
       let postBody = null;
@@ -94,11 +94,11 @@ export default class SnippetApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.content] - The VCL code that specifies exactly what the snippet does.
-     * @param {module:model/String} [options.dynamic] - Sets the snippet version.
+     * @param {module:models/String} [options.dynamic] - Sets the snippet version.
      * @param {String} [options.name] - The name for the snippet.
      * @param {String} [options.priority='100'] - Numeric string value. Priority determines execution order. Lower numbers execute first.
-     * @param {module:model/String} [options.type] - The location in generated VCL where the snippet should be placed.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SnippetResponse}
+     * @param {module:models/String} [options.type] - The location in generated VCL where the snippet should be placed.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/SnippetResponse}
      */
     createSnippet(options = {}) {
       return this.createSnippetWithHttpInfo(options)
@@ -174,7 +174,7 @@ export default class SnippetApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.snippet_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SnippetResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/SnippetResponse} and HTTP response
      */
     getSnippetWithHttpInfo(options = {}) {
       let postBody = null;
@@ -220,7 +220,7 @@ export default class SnippetApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.snippet_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SnippetResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/SnippetResponse}
      */
     getSnippet(options = {}) {
       return this.getSnippetWithHttpInfo(options)
@@ -234,7 +234,7 @@ export default class SnippetApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {String} options.snippet_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SnippetResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/SnippetResponse} and HTTP response
      */
     getSnippetDynamicWithHttpInfo(options = {}) {
       let postBody = null;
@@ -274,7 +274,7 @@ export default class SnippetApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {String} options.snippet_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SnippetResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/SnippetResponse}
      */
     getSnippetDynamic(options = {}) {
       return this.getSnippetDynamicWithHttpInfo(options)
@@ -288,7 +288,7 @@ export default class SnippetApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/SnippetResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/SnippetResponse>} and HTTP response
      */
     listSnippetsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -328,7 +328,7 @@ export default class SnippetApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/SnippetResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/SnippetResponse>}
      */
     listSnippets(options = {}) {
       return this.listSnippetsWithHttpInfo(options)
@@ -343,7 +343,7 @@ export default class SnippetApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.snippet_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SnippetResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/SnippetResponse} and HTTP response
      */
     updateSnippetWithHttpInfo(options = {}) {
       let postBody = null;
@@ -389,7 +389,7 @@ export default class SnippetApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.snippet_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SnippetResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/SnippetResponse}
      */
     updateSnippet(options = {}) {
       return this.updateSnippetWithHttpInfo(options)
@@ -404,11 +404,11 @@ export default class SnippetApi {
      * @param {String} options.service_id
      * @param {String} options.snippet_id
      * @param {String} [options.content] - The VCL code that specifies exactly what the snippet does.
-     * @param {module:model/String} [options.dynamic] - Sets the snippet version.
+     * @param {module:models/String} [options.dynamic] - Sets the snippet version.
      * @param {String} [options.name] - The name for the snippet.
      * @param {String} [options.priority='100'] - Numeric string value. Priority determines execution order. Lower numbers execute first.
-     * @param {module:model/String} [options.type] - The location in generated VCL where the snippet should be placed.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SnippetResponse} and HTTP response
+     * @param {module:models/String} [options.type] - The location in generated VCL where the snippet should be placed.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/SnippetResponse} and HTTP response
      */
     updateSnippetDynamicWithHttpInfo(options = {}) {
       let postBody = null;
@@ -454,11 +454,11 @@ export default class SnippetApi {
      * @param {String} options.service_id
      * @param {String} options.snippet_id
      * @param {String} [options.content] - The VCL code that specifies exactly what the snippet does.
-     * @param {module:model/String} [options.dynamic] - Sets the snippet version.
+     * @param {module:models/String} [options.dynamic] - Sets the snippet version.
      * @param {String} [options.name] - The name for the snippet.
      * @param {String} [options.priority='100'] - Numeric string value. Priority determines execution order. Lower numbers execute first.
-     * @param {module:model/String} [options.type] - The location in generated VCL where the snippet should be placed.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SnippetResponse}
+     * @param {module:models/String} [options.type] - The location in generated VCL where the snippet should be placed.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/SnippetResponse}
      */
     updateSnippetDynamic(options = {}) {
       return this.updateSnippetDynamicWithHttpInfo(options)

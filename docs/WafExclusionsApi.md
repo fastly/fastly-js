@@ -30,7 +30,7 @@ Create a WAF exclusion for a particular firewall version.
 const options = {
   firewall_id: "firewall_id_example", // required
   firewall_version_number: 56, // required
-  waf_exclusion: new Fastly.WafExclusion(),
+  waf_exclusion: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;condition&quot;:&quot;req.url.basename &#x3D;&#x3D; \&quot;index.html\&quot;&quot;,&quot;exclusion_type&quot;:&quot;rule&quot;,&quot;name&quot;:&quot;test-waf-exclusion&quot;},&quot;relationships&quot;:{&quot;waf_rules&quot;:{&quot;data&quot;:[{&quot;id&quot;:2500162,&quot;type&quot;:&quot;waf_rule&quot;}]}},&quot;type&quot;:&quot;waf_exclusion&quot;}},
 };
 
 apiInstance.createWafRuleExclusion(options)
@@ -147,8 +147,8 @@ List all exclusions for a particular firewall version.
 const options = {
   firewall_id: "firewall_id_example", // required
   firewall_version_number: 56, // required
-  filter_exclusion_type: "filter_exclusion_type_example",
-  filter_name: "filter_name_example",
+  filter_exclusion_type: ,
+  filter_name: &quot;filter_name_example&quot;,
   filter_waf_rules_modsec_rule_id: 56,
   page_number: 56,
   page_size: 20,
@@ -197,7 +197,7 @@ const options = {
   firewall_id: "firewall_id_example", // required
   firewall_version_number: 56, // required
   exclusion_number: 56, // required
-  waf_exclusion: new Fastly.WafExclusion(),
+  waf_exclusion: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;condition&quot;:&quot;req.url.basename &#x3D;&#x3D; \&quot;index.html\&quot; || req.url.basename &#x3D;&#x3D; \&quot;admin.html\&quot;&quot;,&quot;logging&quot;:false,&quot;name&quot;:&quot;updated-test-waf-exclusion&quot;},&quot;type&quot;:&quot;waf_exclusion&quot;}},
 };
 
 apiInstance.updateWafRuleExclusion(options)

@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
-import LoggingFormatVersion from '../model/LoggingFormatVersion';
-import LoggingLogshuttleResponse from '../model/LoggingLogshuttleResponse';
-import LoggingPlacement from '../model/LoggingPlacement';
+import LoggingFormatVersion from '../models/LoggingFormatVersion';
+import LoggingLogshuttleResponse from '../models/LoggingLogshuttleResponse';
+import LoggingPlacement from '../models/LoggingPlacement';
 
 /**
 * LoggingLogshuttle service.
@@ -46,13 +46,13 @@ export default class LoggingLogshuttleApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.token] - The data authentication token associated with this endpoint.
      * @param {String} [options.url] - The URL to stream logs to.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogshuttleResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingLogshuttleResponse} and HTTP response
      */
     createLogLogshuttleWithHttpInfo(options = {}) {
       let postBody = null;
@@ -100,13 +100,13 @@ export default class LoggingLogshuttleApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.token] - The data authentication token associated with this endpoint.
      * @param {String} [options.url] - The URL to stream logs to.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogshuttleResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingLogshuttleResponse}
      */
     createLogLogshuttle(options = {}) {
       return this.createLogLogshuttleWithHttpInfo(options)
@@ -182,7 +182,7 @@ export default class LoggingLogshuttleApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_logshuttle_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogshuttleResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingLogshuttleResponse} and HTTP response
      */
     getLogLogshuttleWithHttpInfo(options = {}) {
       let postBody = null;
@@ -228,7 +228,7 @@ export default class LoggingLogshuttleApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_logshuttle_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogshuttleResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingLogshuttleResponse}
      */
     getLogLogshuttle(options = {}) {
       return this.getLogLogshuttleWithHttpInfo(options)
@@ -242,7 +242,7 @@ export default class LoggingLogshuttleApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingLogshuttleResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/LoggingLogshuttleResponse>} and HTTP response
      */
     listLogLogshuttleWithHttpInfo(options = {}) {
       let postBody = null;
@@ -282,7 +282,7 @@ export default class LoggingLogshuttleApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingLogshuttleResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/LoggingLogshuttleResponse>}
      */
     listLogLogshuttle(options = {}) {
       return this.listLogLogshuttleWithHttpInfo(options)
@@ -298,13 +298,13 @@ export default class LoggingLogshuttleApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_logshuttle_name
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.token] - The data authentication token associated with this endpoint.
      * @param {String} [options.url] - The URL to stream logs to.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogshuttleResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingLogshuttleResponse} and HTTP response
      */
     updateLogLogshuttleWithHttpInfo(options = {}) {
       let postBody = null;
@@ -358,13 +358,13 @@ export default class LoggingLogshuttleApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_logshuttle_name
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.token] - The data authentication token associated with this endpoint.
      * @param {String} [options.url] - The URL to stream logs to.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogshuttleResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingLogshuttleResponse}
      */
     updateLogLogshuttle(options = {}) {
       return this.updateLogLogshuttleWithHttpInfo(options)

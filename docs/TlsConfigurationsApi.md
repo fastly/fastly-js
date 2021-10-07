@@ -63,7 +63,7 @@ List all TLS configurations.
 
 ```javascript
 const options = {
-  filter_bulk: "filter_bulk_example",
+  filter_bulk: &quot;filter_bulk_example&quot;,
   include: dns_records,
   page_number: 56,
   page_size: 20,
@@ -105,7 +105,7 @@ Update a TLS configuration.
 ```javascript
 const options = {
   tls_configuration_id: "tls_configuration_id_example", // required
-  tls_configuration: new Fastly.TlsConfiguration(),
+  tls_configuration: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;name&quot;:&quot;New TLS configuration name&quot;},&quot;type&quot;:&quot;tls_configuration&quot;}},
 };
 
 apiInstance.updateTlsConfig(options)

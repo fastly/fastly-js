@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import RequestSettingsResponse from '../model/RequestSettingsResponse';
+import RequestSettingsResponse from '../models/RequestSettingsResponse';
 
 /**
 * RequestSettings service.
@@ -43,7 +43,7 @@ export default class RequestSettingsApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RequestSettingsResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/RequestSettingsResponse} and HTTP response
      */
     createRequestSettingsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -83,7 +83,7 @@ export default class RequestSettingsApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RequestSettingsResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/RequestSettingsResponse}
      */
     createRequestSettings(options = {}) {
       return this.createRequestSettingsWithHttpInfo(options)
@@ -159,7 +159,7 @@ export default class RequestSettingsApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.request_settings_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RequestSettingsResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/RequestSettingsResponse} and HTTP response
      */
     getRequestSettingsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -205,7 +205,7 @@ export default class RequestSettingsApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.request_settings_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RequestSettingsResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/RequestSettingsResponse}
      */
     getRequestSettings(options = {}) {
       return this.getRequestSettingsWithHttpInfo(options)
@@ -219,7 +219,7 @@ export default class RequestSettingsApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/RequestSettingsResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/RequestSettingsResponse>} and HTTP response
      */
     listRequestSettingsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -259,7 +259,7 @@ export default class RequestSettingsApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/RequestSettingsResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/RequestSettingsResponse>}
      */
     listRequestSettings(options = {}) {
       return this.listRequestSettingsWithHttpInfo(options)
@@ -274,7 +274,7 @@ export default class RequestSettingsApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.request_settings_name
-     * @param {module:model/String} [options.action] - Allows you to terminate request handling and immediately perform an action.
+     * @param {module:models/String} [options.action] - Allows you to terminate request handling and immediately perform an action.
      * @param {Number} [options.bypass_busy_wait] - Disable collapsed forwarding, so you don't wait for other objects to origin.
      * @param {String} [options.default_host] - Sets the host header.
      * @param {Number} [options.force_miss] - Allows you to force a cache miss for the request. Replaces the item in the cache if the content is cacheable.
@@ -285,8 +285,8 @@ export default class RequestSettingsApi {
      * @param {String} [options.name] - Name for the request settings.
      * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
      * @param {Number} [options.timer_support] - Injects the X-Timer info into the request for viewing origin fetch durations.
-     * @param {module:model/String} [options.xff] - Short for X-Forwarded-For.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RequestSettingsResponse} and HTTP response
+     * @param {module:models/String} [options.xff] - Short for X-Forwarded-For.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/RequestSettingsResponse} and HTTP response
      */
     updateRequestSettingsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -344,7 +344,7 @@ export default class RequestSettingsApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.request_settings_name
-     * @param {module:model/String} [options.action] - Allows you to terminate request handling and immediately perform an action.
+     * @param {module:models/String} [options.action] - Allows you to terminate request handling and immediately perform an action.
      * @param {Number} [options.bypass_busy_wait] - Disable collapsed forwarding, so you don't wait for other objects to origin.
      * @param {String} [options.default_host] - Sets the host header.
      * @param {Number} [options.force_miss] - Allows you to force a cache miss for the request. Replaces the item in the cache if the content is cacheable.
@@ -355,8 +355,8 @@ export default class RequestSettingsApi {
      * @param {String} [options.name] - Name for the request settings.
      * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
      * @param {Number} [options.timer_support] - Injects the X-Timer info into the request for viewing origin fetch durations.
-     * @param {module:model/String} [options.xff] - Short for X-Forwarded-For.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RequestSettingsResponse}
+     * @param {module:models/String} [options.xff] - Short for X-Forwarded-For.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/RequestSettingsResponse}
      */
     updateRequestSettings(options = {}) {
       return this.updateRequestSettingsWithHttpInfo(options)

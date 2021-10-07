@@ -66,7 +66,7 @@ Creates an email challenge for domain on a GlobalSign subscription. An email cha
 const options = {
   tls_subscription_id: "tls_subscription_id_example", // required
   tls_authorization_id: "tls_authorization_id_example", // required
-  body: null,
+  body: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;preferred_email&quot;:&quot;admin@example.com&quot;},&quot;type&quot;:&quot;globalsign_email_challenge&quot;}},
 };
 
 apiInstance.postTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallenges(options)

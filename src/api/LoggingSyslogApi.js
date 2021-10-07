@@ -13,11 +13,11 @@
 
 
 import ApiClient from "../ApiClient";
-import LoggingFormatVersion from '../model/LoggingFormatVersion';
-import LoggingMessageType from '../model/LoggingMessageType';
-import LoggingPlacement from '../model/LoggingPlacement';
-import LoggingSyslogResponse from '../model/LoggingSyslogResponse';
-import LoggingUseTls from '../model/LoggingUseTls';
+import LoggingFormatVersion from '../models/LoggingFormatVersion';
+import LoggingMessageType from '../models/LoggingMessageType';
+import LoggingPlacement from '../models/LoggingPlacement';
+import LoggingSyslogResponse from '../models/LoggingSyslogResponse';
+import LoggingUseTls from '../models/LoggingUseTls';
 
 /**
 * LoggingSyslog service.
@@ -48,9 +48,9 @@ export default class LoggingSyslogApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
@@ -60,10 +60,10 @@ export default class LoggingSyslogApi {
      * @param {Number} [options.port=514] - The port number.
      * @param {String} [options.hostname] - The hostname used for the syslog endpoint.
      * @param {String} [options.ipv4] - The IPv4 address used for the syslog endpoint.
-     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {module:models/LoggingMessageType} [options.message_type]
      * @param {String} [options.token='null'] - Whether to prepend each message with a specific token.
-     * @param {module:model/LoggingUseTls} [options.use_tls]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingSyslogResponse} and HTTP response
+     * @param {module:models/LoggingUseTls} [options.use_tls]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingSyslogResponse} and HTTP response
      */
     createLogSyslogWithHttpInfo(options = {}) {
       let postBody = null;
@@ -120,9 +120,9 @@ export default class LoggingSyslogApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
@@ -132,10 +132,10 @@ export default class LoggingSyslogApi {
      * @param {Number} [options.port=514] - The port number.
      * @param {String} [options.hostname] - The hostname used for the syslog endpoint.
      * @param {String} [options.ipv4] - The IPv4 address used for the syslog endpoint.
-     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {module:models/LoggingMessageType} [options.message_type]
      * @param {String} [options.token='null'] - Whether to prepend each message with a specific token.
-     * @param {module:model/LoggingUseTls} [options.use_tls]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingSyslogResponse}
+     * @param {module:models/LoggingUseTls} [options.use_tls]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingSyslogResponse}
      */
     createLogSyslog(options = {}) {
       return this.createLogSyslogWithHttpInfo(options)
@@ -211,7 +211,7 @@ export default class LoggingSyslogApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_syslog_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingSyslogResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingSyslogResponse} and HTTP response
      */
     getLogSyslogWithHttpInfo(options = {}) {
       let postBody = null;
@@ -257,7 +257,7 @@ export default class LoggingSyslogApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_syslog_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingSyslogResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingSyslogResponse}
      */
     getLogSyslog(options = {}) {
       return this.getLogSyslogWithHttpInfo(options)
@@ -271,7 +271,7 @@ export default class LoggingSyslogApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingSyslogResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/LoggingSyslogResponse>} and HTTP response
      */
     listLogSyslogWithHttpInfo(options = {}) {
       let postBody = null;
@@ -311,7 +311,7 @@ export default class LoggingSyslogApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingSyslogResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/LoggingSyslogResponse>}
      */
     listLogSyslog(options = {}) {
       return this.listLogSyslogWithHttpInfo(options)
@@ -327,9 +327,9 @@ export default class LoggingSyslogApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_syslog_name
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
@@ -339,10 +339,10 @@ export default class LoggingSyslogApi {
      * @param {Number} [options.port=514] - The port number.
      * @param {String} [options.hostname] - The hostname used for the syslog endpoint.
      * @param {String} [options.ipv4] - The IPv4 address used for the syslog endpoint.
-     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {module:models/LoggingMessageType} [options.message_type]
      * @param {String} [options.token='null'] - Whether to prepend each message with a specific token.
-     * @param {module:model/LoggingUseTls} [options.use_tls]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingSyslogResponse} and HTTP response
+     * @param {module:models/LoggingUseTls} [options.use_tls]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingSyslogResponse} and HTTP response
      */
     updateLogSyslogWithHttpInfo(options = {}) {
       let postBody = null;
@@ -405,9 +405,9 @@ export default class LoggingSyslogApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_syslog_name
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingPlacement} [options.placement]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
@@ -417,10 +417,10 @@ export default class LoggingSyslogApi {
      * @param {Number} [options.port=514] - The port number.
      * @param {String} [options.hostname] - The hostname used for the syslog endpoint.
      * @param {String} [options.ipv4] - The IPv4 address used for the syslog endpoint.
-     * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {module:models/LoggingMessageType} [options.message_type]
      * @param {String} [options.token='null'] - Whether to prepend each message with a specific token.
-     * @param {module:model/LoggingUseTls} [options.use_tls]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingSyslogResponse}
+     * @param {module:models/LoggingUseTls} [options.use_tls]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingSyslogResponse}
      */
     updateLogSyslog(options = {}) {
       return this.updateLogSyslogWithHttpInfo(options)
