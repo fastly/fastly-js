@@ -30,10 +30,10 @@ Creates a new condition.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  comment: &quot;comment_example&quot;,
-  name: &quot;name_example&quot;,
+  comment: "comment_example",
+  name: "name_example",
   priority: 100,
-  statement: &quot;statement_example&quot;,
+  statement: "statement_example",
   type: ,
 };
 
@@ -193,10 +193,10 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   condition_name: "condition_name_example", // required
-  comment: &quot;comment_example&quot;,
-  name: &quot;name_example&quot;,
+  comment: "comment_example",
+  name: "name_example",
   priority: 100,
-  statement: &quot;statement_example&quot;,
+  statement: "statement_example",
   type: ,
 };
 

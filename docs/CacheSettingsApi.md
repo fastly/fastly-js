@@ -31,8 +31,8 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   action: ,
-  cache_condition: &quot;cache_condition_example&quot;,
-  name: &quot;name_example&quot;,
+  cache_condition: "cache_condition_example",
+  name: "name_example",
   stale_ttl: 56,
   ttl: 56,
 };
@@ -194,8 +194,8 @@ const options = {
   version_id: 56, // required
   cache_settings_name: "cache_settings_name_example", // required
   action: ,
-  cache_condition: &quot;cache_condition_example&quot;,
-  name: &quot;name_example&quot;,
+  cache_condition: "cache_condition_example",
+  name: "name_example",
   stale_ttl: 56,
   ttl: 56,
 };

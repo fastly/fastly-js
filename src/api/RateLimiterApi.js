@@ -50,7 +50,7 @@ export default class RateLimiterApi {
      * @param {Array.<module:models/String>} [options.http_methods] - Array of HTTP methods to apply rate limiting to.
      * @param {module:models/String} [options.logger_type] - Name of the type of logging endpoint to be used when action is `log_only`. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries.
      * @param {String} [options.name] - A human readable name for the rate limiting rule.
-     * @param {Number} [options.penalty_box_duration] - Length of time in seconds that the rate limiter is in effect after the initial violation is detected.
+     * @param {Number} [options.penalty_box_duration] - Length of time in minutes that the rate limiter is in effect after the initial violation is detected.
      * @param {module:models/RateLimiterResponse1} [options.response]
      * @param {String} [options.response_object_name] - Name of existing response object. Required if `action` is `response_object`. Note that the rate limiter response is only updated to reflect the response object content when saving the rate limiter configuration.
      * @param {Number} [options.rps_limit] - Upper limit of requests per second allowed by the rate limiter.
@@ -114,7 +114,7 @@ export default class RateLimiterApi {
      * @param {Array.<module:models/String>} [options.http_methods] - Array of HTTP methods to apply rate limiting to.
      * @param {module:models/String} [options.logger_type] - Name of the type of logging endpoint to be used when action is `log_only`. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries.
      * @param {String} [options.name] - A human readable name for the rate limiting rule.
-     * @param {Number} [options.penalty_box_duration] - Length of time in seconds that the rate limiter is in effect after the initial violation is detected.
+     * @param {Number} [options.penalty_box_duration] - Length of time in minutes that the rate limiter is in effect after the initial violation is detected.
      * @param {module:models/RateLimiterResponse1} [options.response]
      * @param {String} [options.response_object_name] - Name of existing response object. Required if `action` is `response_object`. Note that the rate limiter response is only updated to reflect the response object content when saving the rate limiter configuration.
      * @param {Number} [options.rps_limit] - Upper limit of requests per second allowed by the rate limiter.
@@ -287,7 +287,7 @@ export default class RateLimiterApi {
      * @param {Array.<module:models/String>} [options.http_methods] - Array of HTTP methods to apply rate limiting to.
      * @param {module:models/String} [options.logger_type] - Name of the type of logging endpoint to be used when action is `log_only`. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries.
      * @param {String} [options.name] - A human readable name for the rate limiting rule.
-     * @param {Number} [options.penalty_box_duration] - Length of time in seconds that the rate limiter is in effect after the initial violation is detected.
+     * @param {Number} [options.penalty_box_duration] - Length of time in minutes that the rate limiter is in effect after the initial violation is detected.
      * @param {module:models/RateLimiterResponse1} [options.response]
      * @param {String} [options.response_object_name] - Name of existing response object. Required if `action` is `response_object`. Note that the rate limiter response is only updated to reflect the response object content when saving the rate limiter configuration.
      * @param {Number} [options.rps_limit] - Upper limit of requests per second allowed by the rate limiter.
@@ -345,7 +345,7 @@ export default class RateLimiterApi {
      * @param {Array.<module:models/String>} [options.http_methods] - Array of HTTP methods to apply rate limiting to.
      * @param {module:models/String} [options.logger_type] - Name of the type of logging endpoint to be used when action is `log_only`. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries.
      * @param {String} [options.name] - A human readable name for the rate limiting rule.
-     * @param {Number} [options.penalty_box_duration] - Length of time in seconds that the rate limiter is in effect after the initial violation is detected.
+     * @param {Number} [options.penalty_box_duration] - Length of time in minutes that the rate limiter is in effect after the initial violation is detected.
      * @param {module:models/RateLimiterResponse1} [options.response]
      * @param {String} [options.response_object_name] - Name of existing response object. Required if `action` is `response_object`. Note that the rate limiter response is only updated to reflect the response object content when saving the rate limiter configuration.
      * @param {Number} [options.rps_limit] - Upper limit of requests per second allowed by the rate limiter.

@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createTlsSub`
 
 ```javascript
-createTlsSub({ [force, ][tls_subscription] })
+createTlsSub({ , [force, ], [tls_subscription] })
 ```
 
 Create a new TLS subscription. This response includes a list of possible challenges to verify domain ownership.
@@ -29,7 +29,7 @@ Create a new TLS subscription. This response includes a list of possible challen
 ```javascript
 const options = {
   force: true,
-  tls_subscription: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;certificate_authority&quot;:&quot;lets-encrypt&quot;},&quot;relationships&quot;:{&quot;tls_configuration&quot;:{&quot;data&quot;:{&quot;id&quot;:&quot;t7CguUGZzb2W9Euo5FoKa&quot;,&quot;type&quot;:&quot;tls_configuration&quot;}},&quot;tls_domains&quot;:{&quot;data&quot;:[{&quot;id&quot;:&quot;DOMAIN_NAME&quot;,&quot;type&quot;:&quot;tls_domain&quot;}]}},&quot;type&quot;:&quot;tls_subscription&quot;}},
+  tls_subscription: {"data":{"attributes":{"certificate_authority":"lets-encrypt"},"relationships":{"tls_configuration":{"data":{"id":"t7CguUGZzb2W9Euo5FoKa","type":"tls_configuration"}},"tls_domains":{"data":[{"id":"DOMAIN_NAME","type":"tls_domain"}]}},"type":"tls_subscription"}},
 };
 
 apiInstance.createTlsSub(options)
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 ## `listTlsSubs`
 
 ```javascript
-listTlsSubs({ [filter_state, ][filter_tls_domains_id, ][include, ][page_number, ][page_size, ][sort] })
+listTlsSubs({ , [filter_state, ], [filter_tls_domains_id, ], [filter_has_active_order, ], [include, ], [page_number, ], [page_size, ], [sort] })
 ```
 
 List all TLS subscriptions.
@@ -137,12 +137,13 @@ List all TLS subscriptions.
 
 ```javascript
 const options = {
-  filter_state: &quot;filter_state_example&quot;,
-  filter_tls_domains_id: &quot;filter_tls_domains_id_example&quot;,
+  filter_state: "filter_state_example",
+  filter_tls_domains_id: "filter_tls_domains_id_example",
+  filter_has_active_order: true,
   include: tls_authorizations,
-  page_number: 56,
+  page_number: 1,
   page_size: 20,
-  sort: &#39;created_at&#39;,
+  sort: 'created_at',
 };
 
 apiInstance.listTlsSubs(options)
@@ -158,8 +159,9 @@ apiInstance.listTlsSubs(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**filter_state** | **String** | Limit the returned subscriptions by state. Valid values are pending, processing, issued, and renewing. Accepts parameters: not (e.g., filter[state][not]&#x3D;renewing).  | [optional]
+**filter_state** | **String** | Limit the returned subscriptions by state. Valid values are &#x60;pending&#x60;, &#x60;processing&#x60;, &#x60;issued&#x60;, and &#x60;renewing&#x60;. Accepts parameters: &#x60;not&#x60; (e.g., &#x60;filter[state][not]&#x3D;renewing&#x60;).  | [optional]
 **filter_tls_domains_id** | **String** | Limit the returned subscriptions to those that include the specific domain. | [optional]
+**filter_has_active_order** | **Boolean** | Limit the returned subscriptions to those that have currently active orders. Permitted values: &#x60;true&#x60;.  | [optional]
 **include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_authorizations&#x60; and &#x60;tls_authorizations.globalsign_email_challenge&#x60;.  | [optional]
 **page_number** | **Number** | Current page. | [optional]
 **page_size** | **Number** | Number of records per page. | [optional] [default to 20]
@@ -184,7 +186,7 @@ Change the TLS domains or common name associated with this subscription, or upda
 const options = {
   tls_subscription_id: "tls_subscription_id_example", // required
   force: true,
-  tls_subscription: {&quot;data&quot;:{&quot;relationships&quot;:{&quot;common_name&quot;:{&quot;data&quot;:{&quot;id&quot;:&quot;DOMAIN_NAME&quot;,&quot;type&quot;:&quot;tls_domain&quot;}},&quot;tls_configuration&quot;:{&quot;data&quot;:{&quot;id&quot;:&quot;t7CguUGZzb2W9Euo5FoKa&quot;,&quot;type&quot;:&quot;tls_configuration&quot;}},&quot;tls_domains&quot;:{&quot;data&quot;:[{&quot;id&quot;:&quot;DOMAIN_NAME&quot;,&quot;type&quot;:&quot;tls_domain&quot;}]}},&quot;type&quot;:&quot;tls_subscription&quot;}},
+  tls_subscription: {"data":{"relationships":{"common_name":{"data":{"id":"DOMAIN_NAME","type":"tls_domain"}},"tls_configuration":{"data":{"id":"t7CguUGZzb2W9Euo5FoKa","type":"tls_configuration"}},"tls_domains":{"data":[{"id":"DOMAIN_NAME","type":"tls_domain"}]}},"type":"tls_subscription"}},
 };
 
 apiInstance.patchTlsSub(options)

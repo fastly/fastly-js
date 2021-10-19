@@ -158,7 +158,7 @@ RateLimiterResponse.prototype['logger_type'] = undefined;
 RateLimiterResponse.prototype['name'] = undefined;
 
 /**
- * Length of time in seconds that the rate limiter is in effect after the initial violation is detected.
+ * Length of time in minutes that the rate limiter is in effect after the initial violation is detected.
  * @member {Number} penalty_box_duration
  */
 RateLimiterResponse.prototype['penalty_box_duration'] = undefined;
@@ -261,7 +261,7 @@ RateLimiter.prototype['logger_type'] = undefined;
  */
 RateLimiter.prototype['name'] = undefined;
 /**
- * Length of time in seconds that the rate limiter is in effect after the initial violation is detected.
+ * Length of time in minutes that the rate limiter is in effect after the initial violation is detected.
  * @member {Number} penalty_box_duration
  */
 RateLimiter.prototype['penalty_box_duration'] = undefined;

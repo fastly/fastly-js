@@ -185,14 +185,14 @@ const options = {
   request_settings_name: "request_settings_name_example", // required
   action: ,
   bypass_busy_wait: 56,
-  default_host: &quot;default_host_example&quot;,
+  default_host: "default_host_example",
   force_miss: 56,
   force_ssl: 56,
   geo_headers: 56,
-  hash_keys: &quot;hash_keys_example&quot;,
+  hash_keys: "hash_keys_example",
   max_stale_age: 56,
-  name: &quot;name_example&quot;,
-  request_condition: &quot;request_condition_example&quot;,
+  name: "name_example",
+  request_condition: "request_condition_example",
   timer_support: 56,
   xff: ,
 };

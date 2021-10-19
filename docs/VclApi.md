@@ -36,9 +36,9 @@ Upload a VCL for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  content: &quot;content_example&quot;,
+  content: "content_example",
   main: true,
-  name: &quot;name_example&quot;,
+  name: "name_example",
 };
 
 apiInstance.createCustomVcl(options)
@@ -119,7 +119,7 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   vcl_name: "vcl_name_example", // required
-  no_content: &#39;0&#39;,
+  no_content: '0',
 };
 
 apiInstance.getCustomVcl(options)
@@ -425,9 +425,9 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   vcl_name: "vcl_name_example", // required
-  content: &quot;content_example&quot;,
+  content: "content_example",
   main: true,
-  name: &quot;name_example&quot;,
+  name: "name_example",
 };
 
 apiInstance.updateCustomVcl(options)

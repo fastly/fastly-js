@@ -30,24 +30,24 @@ Create a FTP for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  format: &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;,
-  format_version: new Fastly.LoggingFormatVersion(),
-  name: &quot;name_example&quot;,
-  placement: new Fastly.LoggingPlacement(),
-  response_condition: &quot;response_condition_example&quot;,
-  compression_codec: new Fastly.LoggingCompressionCodec(),
+  format: '%h %l %u %t "%r" %&gt;s %b',
+  format_version: FormatVersionEnum.v2,
+  name: "name_example",
+  placement: ,
+  response_condition: "response_condition_example",
+  compression_codec: ,
   gzip_level: 0,
-  message_type: new Fastly.LoggingMessageType(),
+  message_type: 'classic',
   period: 3600,
-  timestamp_format: &quot;timestamp_format_example&quot;,
-  address: &quot;address_example&quot;,
-  hostname: &quot;hostname_example&quot;,
-  ipv4: &quot;ipv4_example&quot;,
-  password: &quot;password_example&quot;,
-  path: &quot;path_example&quot;,
+  timestamp_format: "timestamp_format_example",
+  address: "address_example",
+  hostname: "hostname_example",
+  ipv4: "ipv4_example",
+  password: "password_example",
+  path: "path_example",
   port: 21,
-  public_key: &#39;null&#39;,
-  user: &quot;user_example&quot;,
+  public_key: 'null',
+  user: "user_example",
 };
 
 apiInstance.createLogFtp(options)
@@ -66,13 +66,13 @@ Name | Type | Description  | Notes
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
 **format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.   | [optional] [default to FormatVersionEnum.v2]
 **name** | **String** | The name for the real-time logging configuration. | [optional]
-**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
+**placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**compression_codec** | [**LoggingCompressionCodec**](../Model/LoggingCompressionCodec.md) |  | [optional]
+**compression_codec** | **String** | The codec used for compression of your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. If the specified codec is \\\&quot;gzip\\\&quot;, &#x60;gzip_level&#x60; will default to 3. To specify a different level, leave &#x60;compression_codec&#x60; blank and explicitly set the level using &#x60;gzip_level&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error. | [optional]
 **gzip_level** | **Number** | What level of gzip encoding to have when sending logs (default &#x60;0&#x60;, no compression). If an explicit non-zero value is set, then &#x60;compression_codec&#x60; will default to \\\&quot;gzip.\\\&quot; Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error. | [optional] [default to 0]
-**message_type** | [**LoggingMessageType**](../Model/LoggingMessageType.md) |  | [optional]
+**message_type** | **String** | How the message should be formatted. | [optional] [default to &#39;classic&#39;]
 **period** | **Number** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [default to 3600]
 **timestamp_format** | **String** | Date and time in ISO 8601 format. | [optional]
 **address** | **String** | An hostname or IPv4 address. | [optional]
@@ -219,24 +219,24 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   logging_ftp_name: "logging_ftp_name_example", // required
-  format: &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;,
-  format_version: new Fastly.LoggingFormatVersion(),
-  name: &quot;name_example&quot;,
-  placement: new Fastly.LoggingPlacement(),
-  response_condition: &quot;response_condition_example&quot;,
-  compression_codec: new Fastly.LoggingCompressionCodec(),
+  format: '%h %l %u %t "%r" %&gt;s %b',
+  format_version: FormatVersionEnum.v2,
+  name: "name_example",
+  placement: ,
+  response_condition: "response_condition_example",
+  compression_codec: ,
   gzip_level: 0,
-  message_type: new Fastly.LoggingMessageType(),
+  message_type: 'classic',
   period: 3600,
-  timestamp_format: &quot;timestamp_format_example&quot;,
-  address: &quot;address_example&quot;,
-  hostname: &quot;hostname_example&quot;,
-  ipv4: &quot;ipv4_example&quot;,
-  password: &quot;password_example&quot;,
-  path: &quot;path_example&quot;,
+  timestamp_format: "timestamp_format_example",
+  address: "address_example",
+  hostname: "hostname_example",
+  ipv4: "ipv4_example",
+  password: "password_example",
+  path: "path_example",
   port: 21,
-  public_key: &#39;null&#39;,
-  user: &quot;user_example&quot;,
+  public_key: 'null',
+  user: "user_example",
 };
 
 apiInstance.updateLogFtp(options)
@@ -256,13 +256,13 @@ Name | Type | Description  | Notes
 **version_id** | **Number** |  |
 **logging_ftp_name** | **String** |  |
 **format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.   | [optional] [default to FormatVersionEnum.v2]
 **name** | **String** | The name for the real-time logging configuration. | [optional]
-**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
+**placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**compression_codec** | [**LoggingCompressionCodec**](../Model/LoggingCompressionCodec.md) |  | [optional]
+**compression_codec** | **String** | The codec used for compression of your logs. Valid values are &#x60;zstd&#x60;, &#x60;snappy&#x60;, and &#x60;gzip&#x60;. If the specified codec is \\\&quot;gzip\\\&quot;, &#x60;gzip_level&#x60; will default to 3. To specify a different level, leave &#x60;compression_codec&#x60; blank and explicitly set the level using &#x60;gzip_level&#x60;. Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error. | [optional]
 **gzip_level** | **Number** | What level of gzip encoding to have when sending logs (default &#x60;0&#x60;, no compression). If an explicit non-zero value is set, then &#x60;compression_codec&#x60; will default to \\\&quot;gzip.\\\&quot; Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error. | [optional] [default to 0]
-**message_type** | [**LoggingMessageType**](../Model/LoggingMessageType.md) |  | [optional]
+**message_type** | **String** | How the message should be formatted. | [optional] [default to &#39;classic&#39;]
 **period** | **Number** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [default to 3600]
 **timestamp_format** | **String** | Date and time in ISO 8601 format. | [optional]
 **address** | **String** | An hostname or IPv4 address. | [optional]

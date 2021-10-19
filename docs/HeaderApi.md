@@ -31,16 +31,16 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   action: ,
-  cache_condition: &quot;cache_condition_example&quot;,
-  dst: &quot;dst_example&quot;,
+  cache_condition: "cache_condition_example",
+  dst: "dst_example",
   ignore_if_set: 56,
-  name: &quot;name_example&quot;,
+  name: "name_example",
   priority: 100,
-  regex: &quot;regex_example&quot;,
-  request_condition: &quot;request_condition_example&quot;,
+  regex: "regex_example",
+  request_condition: "request_condition_example",
   response_condition: null,
-  src: &quot;src_example&quot;,
-  substitution: &quot;substitution_example&quot;,
+  src: "src_example",
+  substitution: "substitution_example",
   type: ,
 };
 
@@ -208,16 +208,16 @@ const options = {
   version_id: 56, // required
   header_name: "header_name_example", // required
   action: ,
-  cache_condition: &quot;cache_condition_example&quot;,
-  dst: &quot;dst_example&quot;,
+  cache_condition: "cache_condition_example",
+  dst: "dst_example",
   ignore_if_set: 56,
-  name: &quot;name_example&quot;,
+  name: "name_example",
   priority: 100,
-  regex: &quot;regex_example&quot;,
-  request_condition: &quot;request_condition_example&quot;,
+  regex: "regex_example",
+  request_condition: "request_condition_example",
   response_condition: null,
-  src: &quot;src_example&quot;,
-  substitution: &quot;substitution_example&quot;,
+  src: "src_example",
+  substitution: "substitution_example",
   type: ,
 };
 

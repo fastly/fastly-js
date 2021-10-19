@@ -290,7 +290,7 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   active: false,
-  comment: &quot;comment_example&quot;,
+  comment: "comment_example",
   deployed: true,
   locked: false,
   number: 56,

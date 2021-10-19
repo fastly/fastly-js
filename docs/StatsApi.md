@@ -27,8 +27,8 @@ const options = {
   service_id: "service_id_example", // required
   month: 05,
   year: 2020,
-  start_time: 56,
-  end_time: 56,
+  start_time: 1608560817,
+  end_time: 1608560817,
 };
 
 apiInstance.getServiceStats(options)

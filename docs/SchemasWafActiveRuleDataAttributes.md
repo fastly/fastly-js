@@ -1,4 +1,4 @@
-# Fastly.WafActiveRuleDataAttributes
+# Fastly.SchemasWafActiveRuleDataAttributes
 
 ## Properties
 

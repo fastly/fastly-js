@@ -65,7 +65,7 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   expect: 100-continue,
-  _package: &quot;/path/to/file&quot;,
+  _package: "/path/to/file",
 };
 
 apiInstance.putPackage(options)

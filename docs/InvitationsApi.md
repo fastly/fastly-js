@@ -17,7 +17,7 @@ Method | Fastly API endpoint | Description
 ## `createInvitation`
 
 ```javascript
-createInvitation({ [invitation] })
+createInvitation({ , [invitation] })
 ```
 
 Create an invitation.
@@ -26,7 +26,7 @@ Create an invitation.
 
 ```javascript
 const options = {
-  invitation: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;email&quot;:&quot;thelma@example.com&quot;,&quot;limit_services&quot;:true,&quot;role&quot;:&quot;engineer&quot;},&quot;relationships&quot;:{&quot;customer&quot;:{&quot;data&quot;:{&quot;id&quot;:&quot;44tb1D3asjhhuh2SH8e8YD&quot;,&quot;type&quot;:&quot;customer&quot;}},&quot;service_invitations&quot;:{&quot;data&quot;:[{&quot;attributes&quot;:{&quot;permission&quot;:&quot;purge_all&quot;},&quot;relationships&quot;:{&quot;service&quot;:{&quot;data&quot;:{&quot;id&quot;:&quot;6yrrdleXQ9QDtum9rMB0nr&quot;,&quot;type&quot;:&quot;service&quot;}}},&quot;type&quot;:&quot;service_invitation&quot;}]}},&quot;type&quot;:&quot;invitation&quot;}},
+  invitation: {"data":{"attributes":{"email":"thelma@example.com","limit_services":true,"role":"engineer"},"relationships":{"customer":{"data":{"id":"44tb1D3asjhhuh2SH8e8YD","type":"customer"}},"service_invitations":{"data":[{"attributes":{"permission":"purge_all"},"relationships":{"service":{"data":{"id":"6yrrdleXQ9QDtum9rMB0nr","type":"service"}}},"type":"service_invitation"}]}},"type":"invitation"}},
 };
 
 apiInstance.createInvitation(options)
@@ -87,7 +87,7 @@ null (empty response body)
 ## `listInvitations`
 
 ```javascript
-listInvitations({ [page_number, ][page_size] })
+listInvitations({ , [page_number, ], [page_size] })
 ```
 
 List all invitations.
@@ -96,7 +96,7 @@ List all invitations.
 
 ```javascript
 const options = {
-  page_number: 56,
+  page_number: 1,
   page_size: 20,
 };
 

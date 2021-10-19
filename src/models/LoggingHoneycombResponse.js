@@ -12,9 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import LoggingFormatVersion from './LoggingFormatVersion';
 import LoggingHoneycomb from './LoggingHoneycomb';
-import LoggingPlacement from './LoggingPlacement';
 import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Timestamps from './Timestamps';
 
@@ -62,13 +60,13 @@ class LoggingHoneycombResponse {
                 obj['format'] = ApiClient.convertToType(data['format'], Object);
             }
             if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
+                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'Number');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
-                obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
+                obj['placement'] = ApiClient.convertToType(data['placement'], 'String');
             }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
@@ -108,7 +106,9 @@ class LoggingHoneycombResponse {
 LoggingHoneycombResponse.prototype['format'] = undefined;
 
 /**
- * @member {module:models/LoggingFormatVersion} format_version
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * @member {module:models/LoggingHoneycombResponse.FormatVersionEnum} format_version
+ * @default FormatVersionEnum.v2
  */
 LoggingHoneycombResponse.prototype['format_version'] = undefined;
 
@@ -119,7 +119,8 @@ LoggingHoneycombResponse.prototype['format_version'] = undefined;
 LoggingHoneycombResponse.prototype['name'] = undefined;
 
 /**
- * @member {module:models/LoggingPlacement} placement
+ * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+ * @member {module:models/LoggingHoneycombResponse.PlacementEnum} placement
  */
 LoggingHoneycombResponse.prototype['placement'] = undefined;
 
@@ -179,7 +180,9 @@ LoggingHoneycombResponse.prototype['version'] = undefined;
  */
 LoggingHoneycomb.prototype['format'] = undefined;
 /**
- * @member {module:models/LoggingFormatVersion} format_version
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * @member {module:models/LoggingHoneycomb.FormatVersionEnum} format_version
+ * @default FormatVersionEnum.v2
  */
 LoggingHoneycomb.prototype['format_version'] = undefined;
 /**
@@ -188,7 +191,8 @@ LoggingHoneycomb.prototype['format_version'] = undefined;
  */
 LoggingHoneycomb.prototype['name'] = undefined;
 /**
- * @member {module:models/LoggingPlacement} placement
+ * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+ * @member {module:models/LoggingHoneycomb.PlacementEnum} placement
  */
 LoggingHoneycomb.prototype['placement'] = undefined;
 /**
@@ -234,6 +238,48 @@ ServiceIdAndVersion.prototype['service_id'] = undefined;
  */
 ServiceIdAndVersion.prototype['version'] = undefined;
 
+
+
+/**
+ * Allowed values for the <code>format_version</code> property.
+ * @enum {Number}
+ * @readonly
+ */
+LoggingHoneycombResponse['FormatVersionEnum'] = {
+
+    /**
+     * value: 1
+     * @const
+     */
+    "v1": 1,
+
+    /**
+     * value: 2
+     * @const
+     */
+    "v2": 2
+};
+
+
+/**
+ * Allowed values for the <code>placement</code> property.
+ * @enum {String}
+ * @readonly
+ */
+LoggingHoneycombResponse['PlacementEnum'] = {
+
+    /**
+     * value: "none"
+     * @const
+     */
+    "none": "none",
+
+    /**
+     * value: "waf_debug"
+     * @const
+     */
+    "waf_debug": "waf_debug"
+};
 
 
 

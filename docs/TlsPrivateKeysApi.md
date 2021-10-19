@@ -18,7 +18,7 @@ Method | Fastly API endpoint | Description
 ## `createTlsKey`
 
 ```javascript
-createTlsKey({ [tls_private_key] })
+createTlsKey({ , [tls_private_key] })
 ```
 
 Create a TLS private key.
@@ -27,7 +27,7 @@ Create a TLS private key.
 
 ```javascript
 const options = {
-  tls_private_key: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;key&quot;:&quot;-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n&quot;,&quot;name&quot;:&quot;My private key&quot;},&quot;type&quot;:&quot;tls_private_key&quot;}},
+  tls_private_key: {"data":{"attributes":{"key":"-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n","name":"My private key"},"type":"tls_private_key"}},
 };
 
 apiInstance.createTlsKey(options)
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 ## `listTlsKeys`
 
 ```javascript
-listTlsKeys({ [filter_in_use, ][page_number, ][page_size] })
+listTlsKeys({ , [filter_in_use, ], [page_number, ], [page_size] })
 ```
 
 List all TLS private keys.
@@ -132,8 +132,8 @@ List all TLS private keys.
 
 ```javascript
 const options = {
-  filter_in_use: &quot;filter_in_use_example&quot;,
-  page_number: 56,
+  filter_in_use: "filter_in_use_example",
+  page_number: 1,
   page_size: 20,
 };
 

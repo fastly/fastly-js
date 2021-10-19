@@ -30,7 +30,7 @@ Create a new ACL attached to the specified service version. A new, empty ACL mus
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  name: &quot;name_example&quot;,
+  name: "name_example",
 };
 
 apiInstance.createAcl(options)
@@ -185,7 +185,7 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   acl_name: "acl_name_example", // required
-  name: &quot;name_example&quot;,
+  name: "name_example",
 };
 
 apiInstance.updateAcl(options)

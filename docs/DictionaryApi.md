@@ -30,7 +30,7 @@ Create named dictionary for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  name: &quot;name_example&quot;,
+  name: "name_example",
   write_only: false,
 };
 
@@ -187,7 +187,7 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   dictionary_name: "dictionary_name_example", // required
-  name: &quot;name_example&quot;,
+  name: "name_example",
   write_only: false,
 };
 

@@ -13,8 +13,8 @@
 
 import ApiClient from '../ApiClient';
 import RelationshipsForWafActiveRule from './RelationshipsForWafActiveRule';
+import SchemasWafActiveRuleDataAttributes from './SchemasWafActiveRuleDataAttributes';
 import TypeWafActiveRule from './TypeWafActiveRule';
-import WafActiveRuleDataAttributes from './WafActiveRuleDataAttributes';
 
 /**
  * The WafActiveRuleData model module.
@@ -51,7 +51,7 @@ class WafActiveRuleData {
             obj = obj || new WafActiveRuleData();
 
             if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = WafActiveRuleDataAttributes.constructFromObject(data['attributes']);
+                obj['attributes'] = SchemasWafActiveRuleDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = RelationshipsForWafActiveRule.constructFromObject(data['relationships']);
@@ -67,7 +67,7 @@ class WafActiveRuleData {
 }
 
 /**
- * @member {module:models/WafActiveRuleDataAttributes} attributes
+ * @member {module:models/SchemasWafActiveRuleDataAttributes} attributes
  */
 WafActiveRuleData.prototype['attributes'] = undefined;
 

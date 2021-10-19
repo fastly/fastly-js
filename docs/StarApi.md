@@ -18,7 +18,7 @@ Method | Fastly API endpoint | Description
 ## `createServiceStar`
 
 ```javascript
-createServiceStar({ [star] })
+createServiceStar({ , [star] })
 ```
 
 Create star.
@@ -27,7 +27,7 @@ Create star.
 
 ```javascript
 const options = {
-  star: {&quot;data&quot;:{&quot;relationships&quot;:{&quot;service&quot;:{&quot;data&quot;:{&quot;id&quot;:&quot;SU1Z0isxPaozGVKXdv0eY&quot;,&quot;type&quot;:&quot;service&quot;}},&quot;user&quot;:{&quot;data&quot;:{&quot;id&quot;:&quot;6c7kAlo4vACNchGOdQxP37&quot;,&quot;type&quot;:&quot;user&quot;}}},&quot;type&quot;:&quot;star&quot;}},
+  star: {"data":{"relationships":{"service":{"data":{"id":"SU1Z0isxPaozGVKXdv0eY","type":"service"}},"user":{"data":{"id":"6c7kAlo4vACNchGOdQxP37","type":"user"}}},"type":"star"}},
 };
 
 apiInstance.createServiceStar(options)

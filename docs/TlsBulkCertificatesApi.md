@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 ## `listTlsBulkCerts`
 
 ```javascript
-listTlsBulkCerts({ [filter_tls_domain_id_match, ][page_number, ][page_size, ][sort] })
+listTlsBulkCerts({ , [filter_tls_domain_id_match, ], [page_number, ], [page_size, ], [sort] })
 ```
 
 List all certificates.
@@ -98,10 +98,10 @@ List all certificates.
 
 ```javascript
 const options = {
-  filter_tls_domain_id_match: &quot;filter_tls_domain_id_match_example&quot;,
-  page_number: 56,
+  filter_tls_domain_id_match: "filter_tls_domain_id_match_example",
+  page_number: 1,
   page_size: 20,
-  sort: &#39;created_at&#39;,
+  sort: 'created_at',
 };
 
 apiInstance.listTlsBulkCerts(options)
@@ -140,7 +140,7 @@ Replace a certificate with a newly reissued certificate. By using this endpoint,
 ```javascript
 const options = {
   certificate_id: "certificate_id_example", // required
-  tls_bulk_certificate: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;allow_untrusted_root&quot;:false,&quot;cert_blob&quot;:&quot;-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n&quot;,&quot;intermediates_blob&quot;:&quot;-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n&quot;},&quot;id&quot;:&quot;cRTguUGZzb2W9Euo4moOr&quot;,&quot;type&quot;:&quot;tls_bulk_certificate&quot;}},
+  tls_bulk_certificate: {"data":{"attributes":{"allow_untrusted_root":false,"cert_blob":"-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n","intermediates_blob":"-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n"},"id":"cRTguUGZzb2W9Euo4moOr","type":"tls_bulk_certificate"}},
 };
 
 apiInstance.updateBulkTlsCert(options)
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 ## `uploadTlsBulkCert`
 
 ```javascript
-uploadTlsBulkCert({ [tls_bulk_certificate] })
+uploadTlsBulkCert({ , [tls_bulk_certificate] })
 ```
 
 Upload a new certificate. TLS domains are automatically enabled upon certificate creation. If a domain is already enabled on a previously uploaded certificate, that domain will be updated to use the new certificate for all future TLS handshake requests.
@@ -176,7 +176,7 @@ Upload a new certificate. TLS domains are automatically enabled upon certificate
 
 ```javascript
 const options = {
-  tls_bulk_certificate: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;allow_untrusted_root&quot;:false,&quot;cert_blob&quot;:&quot;-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n&quot;,&quot;intermediates_blob&quot;:&quot;-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n&quot;},&quot;relationships&quot;:{&quot;tls_configurations&quot;:{&quot;data&quot;:[{&quot;id&quot;:&quot;t7CguUGZzb2W9Euo5FoKa&quot;,&quot;type&quot;:&quot;tls_configuration&quot;}]}},&quot;type&quot;:&quot;tls_bulk_certificate&quot;}},
+  tls_bulk_certificate: {"data":{"attributes":{"allow_untrusted_root":false,"cert_blob":"-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n","intermediates_blob":"-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n"},"relationships":{"tls_configurations":{"data":[{"id":"t7CguUGZzb2W9Euo5FoKa","type":"tls_configuration"}]}},"type":"tls_bulk_certificate"}},
 };
 
 apiInstance.uploadTlsBulkCert(options)

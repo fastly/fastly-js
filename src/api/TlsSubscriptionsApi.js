@@ -185,8 +185,9 @@ export default class TlsSubscriptionsApi {
     /**
      * List all TLS subscriptions.
      * @param {Object} options
-     * @param {String} [options.filter_state] - Limit the returned subscriptions by state. Valid values are pending, processing, issued, and renewing. Accepts parameters: not (e.g., filter[state][not]=renewing). 
+     * @param {String} [options.filter_state] - Limit the returned subscriptions by state. Valid values are `pending`, `processing`, `issued`, and `renewing`. Accepts parameters: `not` (e.g., `filter[state][not]=renewing`). 
      * @param {String} [options.filter_tls_domains_id] - Limit the returned subscriptions to those that include the specific domain.
+     * @param {Boolean} [options.filter_has_active_order] - Limit the returned subscriptions to those that have currently active orders. Permitted values: `true`. 
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
@@ -201,6 +202,7 @@ export default class TlsSubscriptionsApi {
       let queryParams = {
         'filter[state]': options['filter_state'],
         'filter[tls_domains.id]': options['filter_tls_domains_id'],
+        'filter[has_active_order]': options['filter_has_active_order'],
         'include': options['include'],
         'page[number]': options['page_number'],
         'page[size]': options['page_size'],
@@ -225,8 +227,9 @@ export default class TlsSubscriptionsApi {
     /**
      * List all TLS subscriptions.
      * @param {Object} options
-     * @param {String} [options.filter_state] - Limit the returned subscriptions by state. Valid values are pending, processing, issued, and renewing. Accepts parameters: not (e.g., filter[state][not]=renewing). 
+     * @param {String} [options.filter_state] - Limit the returned subscriptions by state. Valid values are `pending`, `processing`, `issued`, and `renewing`. Accepts parameters: `not` (e.g., `filter[state][not]=renewing`). 
      * @param {String} [options.filter_tls_domains_id] - Limit the returned subscriptions to those that include the specific domain.
+     * @param {Boolean} [options.filter_has_active_order] - Limit the returned subscriptions to those that have currently active orders. Permitted values: `true`. 
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.

@@ -21,7 +21,7 @@ Method | Fastly API endpoint | Description
 ## `createUser`
 
 ```javascript
-createUser({ [limit_services, ][locked, ][login, ][name, ][require_new_password, ][role, ][two_factor_auth_enabled, ][two_factor_setup_required] })
+createUser({ , [limit_services, ], [locked, ], [login, ], [name, ], [require_new_password, ], [role, ], [two_factor_auth_enabled, ], [two_factor_setup_required] })
 ```
 
 Create a user.
@@ -32,8 +32,8 @@ Create a user.
 const options = {
   limit_services: true,
   locked: true,
-  login: &quot;login_example&quot;,
-  name: &quot;name_example&quot;,
+  login: "login_example",
+  name: "name_example",
   require_new_password: true,
   role: new Fastly.RoleUser(),
   two_factor_auth_enabled: true,
@@ -216,8 +216,8 @@ const options = {
   user_id: "user_id_example", // required
   limit_services: true,
   locked: true,
-  login: &quot;login_example&quot;,
-  name: &quot;name_example&quot;,
+  login: "login_example",
+  name: "name_example",
   require_new_password: true,
   role: new Fastly.RoleUser(),
   two_factor_auth_enabled: true,
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 ## `updateUserPassword`
 
 ```javascript
-updateUserPassword({ [new_password, ][old_password] })
+updateUserPassword({ , [new_password, ], [old_password] })
 ```
 
 Update the user's password to a new one.
@@ -264,8 +264,8 @@ Update the user's password to a new one.
 
 ```javascript
 const options = {
-  new_password: &quot;new_password_example&quot;,
-  old_password: &quot;old_password_example&quot;,
+  new_password: "new_password_example",
+  old_password: "old_password_example",
 };
 
 apiInstance.updateUserPassword(options)

@@ -21,7 +21,7 @@ Method | Fastly API endpoint | Description
 ## `createServiceAuthorization`
 
 ```javascript
-createServiceAuthorization({ [service_authorization] })
+createServiceAuthorization({ , [service_authorization] })
 ```
 
 Create service authorization.
@@ -30,7 +30,7 @@ Create service authorization.
 
 ```javascript
 const options = {
-  service_authorization: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;permission&quot;:&quot;read_only&quot;},&quot;relationships&quot;:{&quot;service&quot;:{&quot;data&quot;:{&quot;id&quot;:&quot;SU1Z0isxPaozGVKXdv0eY&quot;,&quot;type&quot;:&quot;service&quot;}},&quot;user&quot;:{&quot;data&quot;:{&quot;id&quot;:&quot;6c7kAlo4vACNchGOdQxP37&quot;,&quot;type&quot;:&quot;user&quot;}}},&quot;type&quot;:&quot;service_authorization&quot;}},
+  service_authorization: {"data":{"attributes":{"permission":"read_only"},"relationships":{"service":{"data":{"id":"SU1Z0isxPaozGVKXdv0eY","type":"service"}},"user":{"data":{"id":"6c7kAlo4vACNchGOdQxP37","type":"user"}}},"type":"service_authorization"}},
 };
 
 apiInstance.createServiceAuthorization(options)
@@ -91,7 +91,7 @@ null (empty response body)
 ## `deleteServiceAuthorization2`
 
 ```javascript
-deleteServiceAuthorization2({ [inline_object2] })
+deleteServiceAuthorization2({ , [inline_object2] })
 ```
 
 Delete service authorizations.
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 ## `listServiceAuthorization`
 
 ```javascript
-listServiceAuthorization({ [page_number, ][page_size] })
+listServiceAuthorization({ , [page_number, ], [page_size] })
 ```
 
 List service authorizations.
@@ -135,7 +135,7 @@ List service authorizations.
 
 ```javascript
 const options = {
-  page_number: 56,
+  page_number: 1,
   page_size: 20,
 };
 
@@ -208,7 +208,7 @@ Update service authorization.
 ```javascript
 const options = {
   service_authorization_id: "service_authorization_id_example", // required
-  service_authorization: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;permission&quot;:&quot;read_only&quot;},&quot;id&quot;:&quot;3krg2uUGZzb2W9Euo4moOY&quot;,&quot;type&quot;:&quot;service_authorization&quot;}},
+  service_authorization: {"data":{"attributes":{"permission":"read_only"},"id":"3krg2uUGZzb2W9Euo4moOY","type":"service_authorization"}},
 };
 
 apiInstance.updateServiceAuthorization(options)
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 ## `updateServiceAuthorization2`
 
 ```javascript
-updateServiceAuthorization2({ [inline_object3] })
+updateServiceAuthorization2({ , [inline_object3] })
 ```
 
 Update service authorizations.

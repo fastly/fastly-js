@@ -30,15 +30,15 @@ Create an Amazon Kinesis Data Streams logging object for a particular service an
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  access_key: &quot;access_key_example&quot;,
+  access_key: "access_key_example",
   format: null,
   format_version: new Fastly.LoggingFormatVersion(),
-  iam_role: &quot;iam_role_example&quot;,
-  name: &quot;name_example&quot;,
+  iam_role: "iam_role_example",
+  name: "name_example",
   placement: new Fastly.LoggingPlacement(),
   region: ,
-  secret_key: &quot;secret_key_example&quot;,
-  topic: &quot;topic_example&quot;,
+  secret_key: "secret_key_example",
+  topic: "topic_example",
 };
 
 apiInstance.createLogKinesis(options)

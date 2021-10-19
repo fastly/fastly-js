@@ -163,9 +163,9 @@ Update a customer.
 ```javascript
 const options = {
   customer_id: "customer_id_example", // required
-  billing_contact_id: &quot;billing_contact_id_example&quot;,
+  billing_contact_id: "billing_contact_id_example",
   billing_network_type: ,
-  billing_ref: &quot;billing_ref_example&quot;,
+  billing_ref: "billing_ref_example",
   can_configure_wordpress: true,
   can_reset_passwords: true,
   can_upload_vcl: true,
@@ -177,16 +177,16 @@ const options = {
   has_openstack_logging: true,
   has_pci: true,
   has_pci_passwords: true,
-  ip_whitelist: &quot;ip_whitelist_example&quot;,
-  legal_contact_id: &quot;legal_contact_id_example&quot;,
-  name: &quot;name_example&quot;,
-  owner_id: &quot;owner_id_example&quot;,
-  phone_number: &quot;phone_number_example&quot;,
-  postal_address: &quot;postal_address_example&quot;,
-  pricing_plan: &quot;pricing_plan_example&quot;,
-  pricing_plan_id: &quot;pricing_plan_id_example&quot;,
-  security_contact_id: &quot;security_contact_id_example&quot;,
-  technical_contact_id: &quot;technical_contact_id_example&quot;,
+  ip_whitelist: "ip_whitelist_example",
+  legal_contact_id: "legal_contact_id_example",
+  name: "name_example",
+  owner_id: "owner_id_example",
+  phone_number: "phone_number_example",
+  postal_address: "postal_address_example",
+  pricing_plan: "pricing_plan_example",
+  pricing_plan_id: "pricing_plan_id_example",
+  security_contact_id: "security_contact_id_example",
+  technical_contact_id: "technical_contact_id_example",
 };
 
 apiInstance.updateCustomer(options)

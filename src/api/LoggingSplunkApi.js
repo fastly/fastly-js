@@ -13,8 +13,6 @@
 
 
 import ApiClient from "../ApiClient";
-import LoggingFormatVersion from '../models/LoggingFormatVersion';
-import LoggingPlacement from '../models/LoggingPlacement';
 import LoggingSplunkResponse from '../models/LoggingSplunkResponse';
 import LoggingUseTls from '../models/LoggingUseTls';
 
@@ -47,9 +45,9 @@ export default class LoggingSplunkApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:models/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:models/LoggingPlacement} [options.placement]
+     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
@@ -115,9 +113,9 @@ export default class LoggingSplunkApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:models/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:models/LoggingPlacement} [options.placement]
+     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
@@ -320,9 +318,9 @@ export default class LoggingSplunkApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_splunk_name
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:models/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:models/LoggingPlacement} [options.placement]
+     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
@@ -394,9 +392,9 @@ export default class LoggingSplunkApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_splunk_name
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:models/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:models/LoggingPlacement} [options.placement]
+     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.

@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 ## `listEvents`
 
 ```javascript
-listEvents({ [filter_event_type, ][filter_customer_id, ][filter_service_id, ][filter_user_id, ][page_number, ][page_size, ][sort] })
+listEvents({ , [filter_event_type, ], [filter_customer_id, ], [filter_service_id, ], [filter_user_id, ], [page_number, ], [page_size, ], [sort] })
 ```
 
 List all events for a particular customer. Events can be filtered by user, customer and event type. Events can be sorted by date.
@@ -60,13 +60,13 @@ List all events for a particular customer. Events can be filtered by user, custo
 
 ```javascript
 const options = {
-  filter_event_type: &quot;filter_event_type_example&quot;,
-  filter_customer_id: &quot;filter_customer_id_example&quot;,
-  filter_service_id: &quot;filter_service_id_example&quot;,
-  filter_user_id: &quot;filter_user_id_example&quot;,
-  page_number: 56,
+  filter_event_type: "filter_event_type_example",
+  filter_customer_id: x4xCwxxJxGCx123Rx5xTx,
+  filter_service_id: "filter_service_id_example",
+  filter_user_id: "filter_user_id_example",
+  page_number: 1,
   page_size: 20,
-  sort: &#39;created_at&#39;,
+  sort: 'created_at',
 };
 
 apiInstance.listEvents(options)

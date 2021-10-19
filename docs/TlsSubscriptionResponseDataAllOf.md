@@ -4,8 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**Timestamps**](Timestamps.md) |  | [optional] 
+**attributes** | [**TlsSubscriptionDataAttributes**](TlsSubscriptionDataAttributes.md) |  | [optional] 
 **id** | **String** | Alphanumeric string identifying a TLS subscription. | [optional] [readonly] 
+**relationships** | [**AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates**](AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates.md) |  | [optional] 
 
 
 

@@ -32,10 +32,10 @@ Create a snippet for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  content: &quot;content_example&quot;,
+  content: "content_example",
   dynamic: ,
-  name: &quot;name_example&quot;,
-  priority: &#39;100&#39;,
+  name: "name_example",
+  priority: '100',
   type: ,
 };
 
@@ -270,10 +270,10 @@ Update a dynamic snippet for a particular service.
 const options = {
   service_id: "service_id_example", // required
   snippet_id: "snippet_id_example", // required
-  content: &quot;content_example&quot;,
+  content: "content_example",
   dynamic: ,
-  name: &quot;name_example&quot;,
-  priority: &#39;100&#39;,
+  name: "name_example",
+  priority: '100',
   type: ,
 };
 

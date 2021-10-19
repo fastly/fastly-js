@@ -67,7 +67,7 @@ Create a new, draft firewall version.
 ```javascript
 const options = {
   firewall_id: "firewall_id_example", // required
-  waf_firewall_version: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;critical_anomaly_score&quot;:1,&quot;error_anomaly_score&quot;:2},&quot;type&quot;:&quot;waf_firewall_version&quot;}},
+  waf_firewall_version: {"data":{"attributes":{"critical_anomaly_score":1,"error_anomaly_score":2},"type":"waf_firewall_version"}},
 };
 
 apiInstance.createWafFirewallVersion(options)
@@ -181,7 +181,7 @@ Get a list of firewall versions associated with a specific firewall.
 const options = {
   firewall_id: "firewall_id_example", // required
   include: waf_firewall,
-  page_number: 56,
+  page_number: 1,
   page_size: 20,
 };
 
@@ -222,7 +222,7 @@ Update a specific firewall version.
 const options = {
   firewall_id: "firewall_id_example", // required
   firewall_version_number: 56, // required
-  waf_firewall_version: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;locked&quot;:true},&quot;type&quot;:&quot;waf_firewall_version&quot;}},
+  waf_firewall_version: {"data":{"attributes":{"locked":true},"type":"waf_firewall_version"}},
 };
 
 apiInstance.updateWafFirewallVersion(options)

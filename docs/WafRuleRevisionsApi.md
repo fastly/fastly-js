@@ -65,9 +65,9 @@ List all revisions for a specific rule. The `rule_id` provided can be the ModSec
 ```javascript
 const options = {
   waf_rule_id: "waf_rule_id_example", // required
-  page_number: 56,
+  page_number: 1,
   page_size: 20,
-  include: &#39;waf_rule&#39;,
+  include: 'waf_rule',
 };
 
 apiInstance.listWafRuleRevisions(options)

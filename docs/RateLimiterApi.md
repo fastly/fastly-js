@@ -31,16 +31,16 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   action: ,
-  client_key: &quot;client_key_example&quot;,
+  client_key: "client_key_example",
   feature_revision: 56,
   http_methods: ,
   logger_type: ,
-  name: &quot;name_example&quot;,
+  name: "name_example",
   penalty_box_duration: 56,
   response: new Fastly.RateLimiterResponse1(),
-  response_object_name: &quot;response_object_name_example&quot;,
+  response_object_name: "response_object_name_example",
   rps_limit: 56,
-  uri_dictionary_name: &quot;uri_dictionary_name_example&quot;,
+  uri_dictionary_name: "uri_dictionary_name_example",
   window_size: ,
 };
 
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 **http_methods** | [**[String]**](../Model/String.md) | Array of HTTP methods to apply rate limiting to. | [optional]
 **logger_type** | **String** | Name of the type of logging endpoint to be used when action is &#x60;log_only&#x60;. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries. | [optional]
 **name** | **String** | A human readable name for the rate limiting rule. | [optional]
-**penalty_box_duration** | **Number** | Length of time in seconds that the rate limiter is in effect after the initial violation is detected. | [optional]
+**penalty_box_duration** | **Number** | Length of time in minutes that the rate limiter is in effect after the initial violation is detected. | [optional]
 **response** | [**RateLimiterResponse1**](../Model/RateLimiterResponse1.md) |  | [optional]
 **response_object_name** | **String** | Name of existing response object. Required if &#x60;action&#x60; is &#x60;response_object&#x60;. Note that the rate limiter response is only updated to reflect the response object content when saving the rate limiter configuration. | [optional]
 **rps_limit** | **Number** | Upper limit of requests per second allowed by the rate limiter. | [optional]
@@ -198,16 +198,16 @@ Update a rate limiter by its ID.
 const options = {
   rate_limiter_id: "rate_limiter_id_example", // required
   action: ,
-  client_key: &quot;client_key_example&quot;,
+  client_key: "client_key_example",
   feature_revision: 56,
   http_methods: ,
   logger_type: ,
-  name: &quot;name_example&quot;,
+  name: "name_example",
   penalty_box_duration: 56,
   response: new Fastly.RateLimiterResponse1(),
-  response_object_name: &quot;response_object_name_example&quot;,
+  response_object_name: "response_object_name_example",
   rps_limit: 56,
-  uri_dictionary_name: &quot;uri_dictionary_name_example&quot;,
+  uri_dictionary_name: "uri_dictionary_name_example",
   window_size: ,
 };
 
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 **http_methods** | [**[String]**](../Model/String.md) | Array of HTTP methods to apply rate limiting to. | [optional]
 **logger_type** | **String** | Name of the type of logging endpoint to be used when action is &#x60;log_only&#x60;. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries. | [optional]
 **name** | **String** | A human readable name for the rate limiting rule. | [optional]
-**penalty_box_duration** | **Number** | Length of time in seconds that the rate limiter is in effect after the initial violation is detected. | [optional]
+**penalty_box_duration** | **Number** | Length of time in minutes that the rate limiter is in effect after the initial violation is detected. | [optional]
 **response** | [**RateLimiterResponse1**](../Model/RateLimiterResponse1.md) |  | [optional]
 **response_object_name** | **String** | Name of existing response object. Required if &#x60;action&#x60; is &#x60;response_object&#x60;. Note that the rate limiter response is only updated to reflect the response object content when saving the rate limiter configuration. | [optional]
 **rps_limit** | **Number** | Upper limit of requests per second allowed by the rate limiter. | [optional]

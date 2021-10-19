@@ -938,19 +938,19 @@ Results.prototype['http2'] = undefined;
 Results.prototype['http3'] = undefined;
 
 /**
- * Number of responses that came from the Fastly Image Optimizer service.
+ * Number of responses that came from the Fastly Image Optimizer service. If the service receives 10 requests for an image, this stat will be 10 regardless of how many times the image was transformed.
  * @member {Number} imgopto
  */
 Results.prototype['imgopto'] = undefined;
 
 /**
- * Total body bytes delivered from the Fastly Image Optimizer service.
+ * Total body bytes delivered from the Fastly Image Optimizer service, including shield traffic.
  * @member {Number} imgopto_resp_body_bytes
  */
 Results.prototype['imgopto_resp_body_bytes'] = undefined;
 
 /**
- * Total header bytes delivered from the Fastly Image Optimizer service.
+ * Total header bytes delivered from the Fastly Image Optimizer service, including shield traffic.
  * @member {Number} imgopto_resp_header_bytes
  */
 Results.prototype['imgopto_resp_header_bytes'] = undefined;

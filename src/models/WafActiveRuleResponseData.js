@@ -99,7 +99,7 @@ WafActiveRuleResponseData.prototype['id'] = undefined;
 
 // Implement WafActiveRuleData interface:
 /**
- * @member {module:models/WafActiveRuleDataAttributes} attributes
+ * @member {module:models/SchemasWafActiveRuleDataAttributes} attributes
  */
 WafActiveRuleData.prototype['attributes'] = undefined;
 /**

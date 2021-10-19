@@ -15,7 +15,7 @@ Method | Fastly API endpoint | Description
 ## `contentCheck`
 
 ```javascript
-contentCheck({ [url] })
+contentCheck({ , [url] })
 ```
 
 Retrieve headers and MD5 hash of the content for a particular URL from each Fastly edge server. This API is limited to 200 requests per hour.

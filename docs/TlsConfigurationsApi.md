@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 ## `listTlsConfigs`
 
 ```javascript
-listTlsConfigs({ [filter_bulk, ][include, ][page_number, ][page_size] })
+listTlsConfigs({ , [filter_bulk, ], [include, ], [page_number, ], [page_size] })
 ```
 
 List all TLS configurations.
@@ -63,9 +63,9 @@ List all TLS configurations.
 
 ```javascript
 const options = {
-  filter_bulk: &quot;filter_bulk_example&quot;,
+  filter_bulk: "filter_bulk_example",
   include: dns_records,
-  page_number: 56,
+  page_number: 1,
   page_size: 20,
 };
 
@@ -105,7 +105,7 @@ Update a TLS configuration.
 ```javascript
 const options = {
   tls_configuration_id: "tls_configuration_id_example", // required
-  tls_configuration: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;name&quot;:&quot;New TLS configuration name&quot;},&quot;type&quot;:&quot;tls_configuration&quot;}},
+  tls_configuration: {"data":{"attributes":{"name":"New TLS configuration name"},"type":"tls_configuration"}},
 };
 
 apiInstance.updateTlsConfig(options)

@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createTlsCert`
 
 ```javascript
-createTlsCert({ [tls_certificate] })
+createTlsCert({ , [tls_certificate] })
 ```
 
 Create a TLS certificate.
@@ -28,7 +28,7 @@ Create a TLS certificate.
 
 ```javascript
 const options = {
-  tls_certificate: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;cert_blob&quot;:&quot;-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n&quot;,&quot;name&quot;:&quot;My certificate&quot;},&quot;type&quot;:&quot;tls_certificate&quot;}},
+  tls_certificate: {"data":{"attributes":{"cert_blob":"-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n","name":"My certificate"},"type":"tls_certificate"}},
 };
 
 apiInstance.createTlsCert(options)
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 ## `listTlsCerts`
 
 ```javascript
-listTlsCerts({ [filter_not_after, ][filter_tls_domains_id, ][include, ][page_number, ][page_size, ][sort] })
+listTlsCerts({ , [filter_not_after, ], [filter_tls_domains_id, ], [include, ], [page_number, ], [page_size, ], [sort] })
 ```
 
 List all TLS certificates.
@@ -133,12 +133,12 @@ List all TLS certificates.
 
 ```javascript
 const options = {
-  filter_not_after: &quot;filter_not_after_example&quot;,
-  filter_tls_domains_id: &quot;filter_tls_domains_id_example&quot;,
-  include: &quot;include_example&quot;,
-  page_number: 56,
+  filter_not_after: "filter_not_after_example",
+  filter_tls_domains_id: "filter_tls_domains_id_example",
+  include: "include_example",
+  page_number: 1,
   page_size: 20,
-  sort: &#39;created_at&#39;,
+  sort: 'created_at',
 };
 
 apiInstance.listTlsCerts(options)
@@ -179,7 +179,7 @@ Replace a TLS certificate with a newly reissued TLS certificate, or update a TLS
 ```javascript
 const options = {
   tls_certificate_id: "tls_certificate_id_example", // required
-  tls_certificate: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;cert_blob&quot;:&quot;-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n&quot;,&quot;name&quot;:&quot;My certificate&quot;},&quot;type&quot;:&quot;tls_certificate&quot;}},
+  tls_certificate: {"data":{"attributes":{"cert_blob":"-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n","name":"My certificate"},"type":"tls_certificate"}},
 };
 
 apiInstance.updateTlsCert(options)

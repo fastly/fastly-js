@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createWafFirewall`
 
 ```javascript
-createWafFirewall({ [waf_firewall] })
+createWafFirewall({ , [waf_firewall] })
 ```
 
 Create a firewall object for a particular service and service version using a defined `prefetch_condition` and `response`. If the `prefetch_condition` or the `response` is missing from the request body, Fastly will generate a default object on your service. 
@@ -28,7 +28,7 @@ Create a firewall object for a particular service and service version using a de
 
 ```javascript
 const options = {
-  waf_firewall: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;prefetch_condition&quot;:&quot;WAF_Condition&quot;,&quot;response&quot;:&quot;WAF_Error&quot;,&quot;service_id&quot;:&quot;SU1Z0isxPaozGVKXdv0eY&quot;,&quot;service_version_number&quot;:1},&quot;type&quot;:&quot;waf_firewall&quot;}},
+  waf_firewall: {"data":{"attributes":{"prefetch_condition":"WAF_Condition","response":"WAF_Error","service_id":"SU1Z0isxPaozGVKXdv0eY","service_version_number":1},"type":"waf_firewall"}},
 };
 
 apiInstance.createWafFirewall(options)
@@ -64,7 +64,7 @@ Delete the firewall object for a particular service and service version.
 ```javascript
 const options = {
   firewall_id: "firewall_id_example", // required
-  waf_firewall: {&quot;data&quot;:{&quot;attributes&quot;:{&quot;service_version_number&quot;:1},&quot;id&quot;:&quot;fW7g2uUGZzb2W9Euo4Mo0r&quot;,&quot;type&quot;:&quot;waf_firewall&quot;}},
+  waf_firewall: {"data":{"attributes":{"service_version_number":1},"id":"fW7g2uUGZzb2W9Euo4Mo0r","type":"waf_firewall"}},
 };
 
 apiInstance.deleteWafFirewall(options)
@@ -101,8 +101,8 @@ Get a specific firewall object.
 ```javascript
 const options = {
   firewall_id: "firewall_id_example", // required
-  filter_service_version_number: &quot;filter_service_version_number_example&quot;,
-  include: &#39;waf_firewall_versions&#39;,
+  filter_service_version_number: "filter_service_version_number_example",
+  include: 'waf_firewall_versions',
 };
 
 apiInstance.getWafFirewall(options)
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 ## `listWafFirewalls`
 
 ```javascript
-listWafFirewalls({ [page_number, ][page_size, ][filter_service_id, ][filter_service_version_number, ][include] })
+listWafFirewalls({ , [page_number, ], [page_size, ], [filter_service_id, ], [filter_service_version_number, ], [include] })
 ```
 
 List all firewall objects.
@@ -139,11 +139,11 @@ List all firewall objects.
 
 ```javascript
 const options = {
-  page_number: 56,
+  page_number: 1,
   page_size: 20,
-  filter_service_id: &quot;filter_service_id_example&quot;,
-  filter_service_version_number: &quot;filter_service_version_number_example&quot;,
-  include: &#39;waf_firewall_versions&#39;,
+  filter_service_id: "filter_service_id_example",
+  filter_service_version_number: "filter_service_version_number_example",
+  include: 'waf_firewall_versions',
 };
 
 apiInstance.listWafFirewalls(options)
@@ -183,7 +183,7 @@ Update a firewall object for a particular service and service version. Specifyin
 ```javascript
 const options = {
   firewall_id: "firewall_id_example", // required
-  waf_firewall: {&quot;update&quot;:{&quot;summary&quot;:&quot;Update a firewall object for a particular service and service version. Specifying a &#x60;service_version_number&#x60; is required.&quot;,&quot;value&quot;:{&quot;data&quot;:{&quot;attributes&quot;:{&quot;response&quot;:&quot;NEW_RESPONSE&quot;,&quot;service_version_number&quot;:1},&quot;id&quot;:&quot;fW7g2uUGZzb2W9Euo4Mo0r&quot;,&quot;type&quot;:&quot;waf_firewall&quot;}}}},
+  waf_firewall: {"update":{"summary":"Update a firewall object for a particular service and service version. Specifying a `service_version_number` is required.","value":{"data":{"attributes":{"response":"NEW_RESPONSE","service_version_number":1},"id":"fW7g2uUGZzb2W9Euo4Mo0r","type":"waf_firewall"}}}},
 };
 
 apiInstance.updateWafFirewall(options)

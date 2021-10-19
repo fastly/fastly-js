@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import TlsSubscriptionResponseData from './TlsSubscriptionResponseData';
+import Data from './Data';
 
 /**
  * The TlsSubscriptionResponse model module.
@@ -49,7 +49,7 @@ class TlsSubscriptionResponse {
             obj = obj || new TlsSubscriptionResponse();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = TlsSubscriptionResponseData.constructFromObject(data['data']);
+                obj['data'] = ApiClient.convertToType(data['data'], Data);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class TlsSubscriptionResponse {
 }
 
 /**
- * @member {module:models/TlsSubscriptionResponseData} data
+ * @member {module:models/Data} data
  */
 TlsSubscriptionResponse.prototype['data'] = undefined;
 

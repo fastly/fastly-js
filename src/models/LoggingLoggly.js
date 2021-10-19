@@ -13,9 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import LoggingCommon from './LoggingCommon';
-import LoggingFormatVersion from './LoggingFormatVersion';
 import LoggingLogglyAllOf from './LoggingLogglyAllOf';
-import LoggingPlacement from './LoggingPlacement';
 
 /**
  * The LoggingLoggly model module.
@@ -59,13 +57,13 @@ class LoggingLoggly {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
             if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
+                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'Number');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
-                obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
+                obj['placement'] = ApiClient.convertToType(data['placement'], 'String');
             }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
@@ -88,7 +86,9 @@ class LoggingLoggly {
 LoggingLoggly.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 
 /**
- * @member {module:models/LoggingFormatVersion} format_version
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * @member {module:models/LoggingLoggly.FormatVersionEnum} format_version
+ * @default FormatVersionEnum.v2
  */
 LoggingLoggly.prototype['format_version'] = undefined;
 
@@ -99,7 +99,8 @@ LoggingLoggly.prototype['format_version'] = undefined;
 LoggingLoggly.prototype['name'] = undefined;
 
 /**
- * @member {module:models/LoggingPlacement} placement
+ * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+ * @member {module:models/LoggingLoggly.PlacementEnum} placement
  */
 LoggingLoggly.prototype['placement'] = undefined;
 
@@ -124,7 +125,9 @@ LoggingLoggly.prototype['token'] = undefined;
  */
 LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 /**
- * @member {module:models/LoggingFormatVersion} format_version
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * @member {module:models/LoggingCommon.FormatVersionEnum} format_version
+ * @default FormatVersionEnum.v2
  */
 LoggingCommon.prototype['format_version'] = undefined;
 /**
@@ -133,7 +136,8 @@ LoggingCommon.prototype['format_version'] = undefined;
  */
 LoggingCommon.prototype['name'] = undefined;
 /**
- * @member {module:models/LoggingPlacement} placement
+ * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+ * @member {module:models/LoggingCommon.PlacementEnum} placement
  */
 LoggingCommon.prototype['placement'] = undefined;
 /**
@@ -148,6 +152,48 @@ LoggingCommon.prototype['response_condition'] = undefined;
  */
 LoggingLogglyAllOf.prototype['token'] = undefined;
 
+
+
+/**
+ * Allowed values for the <code>format_version</code> property.
+ * @enum {Number}
+ * @readonly
+ */
+LoggingLoggly['FormatVersionEnum'] = {
+
+    /**
+     * value: 1
+     * @const
+     */
+    "v1": 1,
+
+    /**
+     * value: 2
+     * @const
+     */
+    "v2": 2
+};
+
+
+/**
+ * Allowed values for the <code>placement</code> property.
+ * @enum {String}
+ * @readonly
+ */
+LoggingLoggly['PlacementEnum'] = {
+
+    /**
+     * value: "none"
+     * @const
+     */
+    "none": "none",
+
+    /**
+     * value: "waf_debug"
+     * @const
+     */
+    "waf_debug": "waf_debug"
+};
 
 
 

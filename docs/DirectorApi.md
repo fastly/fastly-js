@@ -32,11 +32,11 @@ const options = {
   version_id: 56, // required
   backends: new Fastly.SchemasBackend(),
   capacity: 56,
-  comment: &quot;comment_example&quot;,
-  name: &quot;name_example&quot;,
+  comment: "comment_example",
+  name: "name_example",
   quorum: 75,
   retries: 5,
-  shield: &#39;null&#39;,
+  shield: 'null',
   type: 1,
 };
 

@@ -12,9 +12,9 @@
  */
 
 import ApiClient from '../ApiClient';
+import SchemasSnippetResponseAllOf from './SchemasSnippetResponseAllOf';
 import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Snippet from './Snippet';
-import SnippetResponseAllOf from './SnippetResponseAllOf';
 import Timestamps from './Timestamps';
 
 /**
@@ -29,10 +29,10 @@ class SnippetResponse {
      * @implements module:models/Snippet
      * @implements module:models/ServiceIdAndVersion
      * @implements module:models/Timestamps
-     * @implements module:models/SnippetResponseAllOf
+     * @implements module:models/SchemasSnippetResponseAllOf
      */
     constructor() { 
-        Snippet.initialize(this);ServiceIdAndVersion.initialize(this);Timestamps.initialize(this);SnippetResponseAllOf.initialize(this);
+        Snippet.initialize(this);ServiceIdAndVersion.initialize(this);Timestamps.initialize(this);SchemasSnippetResponseAllOf.initialize(this);
         SnippetResponse.initialize(this);
     }
 
@@ -57,7 +57,7 @@ class SnippetResponse {
             Snippet.constructFromObject(data, obj);
             ServiceIdAndVersion.constructFromObject(data, obj);
             Timestamps.constructFromObject(data, obj);
-            SnippetResponseAllOf.constructFromObject(data, obj);
+            SchemasSnippetResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('content')) {
                 obj['content'] = ApiClient.convertToType(data['content'], 'String');
@@ -221,12 +221,12 @@ Timestamps.prototype['deleted_at'] = undefined;
  * @member {String} updated_at
  */
 Timestamps.prototype['updated_at'] = undefined;
-// Implement SnippetResponseAllOf interface:
+// Implement SchemasSnippetResponseAllOf interface:
 /**
  * Alphanumeric string identifying a VCL Snippet.
  * @member {String} id
  */
-SnippetResponseAllOf.prototype['id'] = undefined;
+SchemasSnippetResponseAllOf.prototype['id'] = undefined;
 
 
 

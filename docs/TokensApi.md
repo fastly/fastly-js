@@ -21,7 +21,7 @@ Method | Fastly API endpoint | Description
 ## `bulkRevokeTokens`
 
 ```javascript
-bulkRevokeTokens({ [body] })
+bulkRevokeTokens({ , [body] })
 ```
 
 Revoke Tokens in bulk format. Users may only revoke their own tokens. Superusers may revoke tokens of others.
@@ -30,7 +30,7 @@ Revoke Tokens in bulk format. Users may only revoke their own tokens. Superusers
 
 ```javascript
 const options = {
-  body: {&quot;data&quot;:[{&quot;id&quot;:&quot;3krg2uUGZzb2W9Euo4moOY&quot;,&quot;type&quot;:&quot;token&quot;},{&quot;id&quot;:&quot;71ZA6hv2FO6tGEQIE203Xj&quot;,&quot;type&quot;:&quot;token&quot;}]},
+  body: {"data":[{"id":"3krg2uUGZzb2W9Euo4moOY","type":"token"},{"id":"71ZA6hv2FO6tGEQIE203Xj","type":"token"}]},
 };
 
 apiInstance.bulkRevokeTokens(options)

@@ -108,8 +108,8 @@ Create a domain for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  comment: &quot;comment_example&quot;,
-  name: &quot;name_example&quot;,
+  comment: "comment_example",
+  name: "name_example",
 };
 
 apiInstance.createDomain(options)
@@ -265,8 +265,8 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   domain_name: "domain_name_example", // required
-  comment: &quot;comment_example&quot;,
-  name: &quot;name_example&quot;,
+  comment: "comment_example",
+  name: "name_example",
 };
 
 apiInstance.updateDomain(options)

@@ -23,7 +23,7 @@ Method | Fastly API endpoint | Description
 ## `getHistStats`
 
 ```javascript
-getHistStats({ [from, ][to, ][by, ][region] })
+getHistStats({ , [from, ], [to, ], [by, ], [region] })
 ```
 
 Fetches historical stats for each of your Fastly services and groups the results by service ID.
@@ -33,8 +33,8 @@ Fetches historical stats for each of your Fastly services and groups the results
 ```javascript
 const options = {
   from: 2 days ago,
-  to: &quot;to_example&quot;,
-  by: &#39;day&#39;,
+  to: "to_example",
+  by: 'day',
   region: ,
 };
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 ## `getHistStatsAggregated`
 
 ```javascript
-getHistStatsAggregated({ [from, ][to, ][by, ][region] })
+getHistStatsAggregated({ , [from, ], [to, ], [by, ], [region] })
 ```
 
 Fetches historical stats information aggregated across all of your Fastly services.
@@ -74,8 +74,8 @@ Fetches historical stats information aggregated across all of your Fastly servic
 ```javascript
 const options = {
   from: 2 days ago,
-  to: &quot;to_example&quot;,
-  by: &#39;day&#39;,
+  to: "to_example",
+  by: 'day',
   region: ,
 };
 
@@ -116,8 +116,8 @@ Fetches the specified field from the historical stats for each of your services 
 const options = {
   field: hit_ratio, // required
   from: 2 days ago,
-  to: &quot;to_example&quot;,
-  by: &#39;day&#39;,
+  to: "to_example",
+  by: 'day',
   region: ,
 };
 
@@ -159,8 +159,8 @@ Fetches historical stats for a given service.
 const options = {
   service_id: "service_id_example", // required
   from: 2 days ago,
-  to: &quot;to_example&quot;,
-  by: &#39;day&#39;,
+  to: "to_example",
+  by: 'day',
   region: ,
 };
 
@@ -203,8 +203,8 @@ const options = {
   service_id: "service_id_example", // required
   field: hit_ratio, // required
   from: 2 days ago,
-  to: &quot;to_example&quot;,
-  by: &#39;day&#39;,
+  to: "to_example",
+  by: 'day',
   region: ,
 };
 
@@ -265,7 +265,7 @@ This endpoint does not need any parameters.
 ## `getUsage`
 
 ```javascript
-getUsage({ [from, ][to, ][by, ][region] })
+getUsage({ , [from, ], [to, ], [by, ], [region] })
 ```
 
 Returns usage information aggregated across all Fastly services and grouped by region.
@@ -275,8 +275,8 @@ Returns usage information aggregated across all Fastly services and grouped by r
 ```javascript
 const options = {
   from: 2 days ago,
-  to: &quot;to_example&quot;,
-  by: &#39;day&#39;,
+  to: "to_example",
+  by: 'day',
   region: ,
 };
 
@@ -306,7 +306,7 @@ Name | Type | Description  | Notes
 ## `getUsageMonth`
 
 ```javascript
-getUsageMonth({ [year, ][month, ][billable_units, ][region] })
+getUsageMonth({ , [year, ], [month, ], [billable_units, ], [region] })
 ```
 
 Returns month-to-date usage details for a given month and year. Usage details are aggregated by service and across all Fastly services, and then grouped by region. This endpoint does not use the `from` or `to` fields for selecting the date for which data is requested. Instead, it uses `month` and `year` integer fields. Both fields are optional and default to the current month and year respectively. When set, an optional `billable_units` field will convert bandwidth to GB and divide requests by 10,000.
@@ -347,7 +347,7 @@ Name | Type | Description  | Notes
 ## `getUsageService`
 
 ```javascript
-getUsageService({ [from, ][to, ][by, ][region] })
+getUsageService({ , [from, ], [to, ], [by, ], [region] })
 ```
 
 Returns usage information aggregated by service and grouped by service and region.
@@ -357,8 +357,8 @@ Returns usage information aggregated by service and grouped by service and regio
 ```javascript
 const options = {
   from: 2 days ago,
-  to: &quot;to_example&quot;,
-  by: &#39;day&#39;,
+  to: "to_example",
+  by: 'day',
   region: ,
 };
 

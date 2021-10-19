@@ -31,12 +31,12 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   format: null,
-  format_version: new Fastly.LoggingFormatVersion(),
-  name: &quot;name_example&quot;,
-  placement: new Fastly.LoggingPlacement(),
-  response_condition: &quot;response_condition_example&quot;,
-  dataset: &quot;dataset_example&quot;,
-  token: &quot;token_example&quot;,
+  format_version: FormatVersionEnum.v2,
+  name: "name_example",
+  placement: ,
+  response_condition: "response_condition_example",
+  dataset: "dataset_example",
+  token: "token_example",
 };
 
 apiInstance.createLogHoneycomb(options)
@@ -55,9 +55,9 @@ Name | Type | Description  | Notes
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
 **format** | [**Object**](../Model/Object.md) | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Honeycomb can ingest. | [optional]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.   | [optional] [default to FormatVersionEnum.v2]
 **name** | **String** | The name for the real-time logging configuration. | [optional]
-**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
+**placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
 **dataset** | **String** | The Honeycomb Dataset you want to log to. | [optional]
 **token** | **String** | The Write Key from the Account page of your Honeycomb account. | [optional]
@@ -198,12 +198,12 @@ const options = {
   version_id: 56, // required
   logging_honeycomb_name: "logging_honeycomb_name_example", // required
   format: null,
-  format_version: new Fastly.LoggingFormatVersion(),
-  name: &quot;name_example&quot;,
-  placement: new Fastly.LoggingPlacement(),
-  response_condition: &quot;response_condition_example&quot;,
-  dataset: &quot;dataset_example&quot;,
-  token: &quot;token_example&quot;,
+  format_version: FormatVersionEnum.v2,
+  name: "name_example",
+  placement: ,
+  response_condition: "response_condition_example",
+  dataset: "dataset_example",
+  token: "token_example",
 };
 
 apiInstance.updateLogHoneycomb(options)
@@ -223,9 +223,9 @@ Name | Type | Description  | Notes
 **version_id** | **Number** |  |
 **logging_honeycomb_name** | **String** |  |
 **format** | [**Object**](../Model/Object.md) | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Honeycomb can ingest. | [optional]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.   | [optional] [default to FormatVersionEnum.v2]
 **name** | **String** | The name for the real-time logging configuration. | [optional]
-**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
+**placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
 **dataset** | **String** | The Honeycomb Dataset you want to log to. | [optional]
 **token** | **String** | The Write Key from the Account page of your Honeycomb account. | [optional]

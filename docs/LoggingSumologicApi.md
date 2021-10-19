@@ -30,13 +30,13 @@ Create a Sumologic for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  format: &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;,
-  format_version: new Fastly.LoggingFormatVersion(),
-  name: &quot;name_example&quot;,
-  placement: new Fastly.LoggingPlacement(),
-  response_condition: &quot;response_condition_example&quot;,
+  format: '%h %l %u %t "%r" %&gt;s %b',
+  format_version: FormatVersionEnum.v2,
+  name: "name_example",
+  placement: ,
+  response_condition: "response_condition_example",
   message_type: new Fastly.LoggingMessageType(),
-  url: &quot;url_example&quot;,
+  url: "url_example",
 };
 
 apiInstance.createLogSumologic(options)
@@ -55,9 +55,9 @@ Name | Type | Description  | Notes
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
 **format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.   | [optional] [default to FormatVersionEnum.v2]
 **name** | **String** | The name for the real-time logging configuration. | [optional]
-**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
+**placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
 **message_type** | [**LoggingMessageType**](../Model/LoggingMessageType.md) |  | [optional]
 **url** | **String** | The URL to post logs to. | [optional]
@@ -197,13 +197,13 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   logging_sumologic_name: "logging_sumologic_name_example", // required
-  format: &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;,
-  format_version: new Fastly.LoggingFormatVersion(),
-  name: &quot;name_example&quot;,
-  placement: new Fastly.LoggingPlacement(),
-  response_condition: &quot;response_condition_example&quot;,
+  format: '%h %l %u %t "%r" %&gt;s %b',
+  format_version: FormatVersionEnum.v2,
+  name: "name_example",
+  placement: ,
+  response_condition: "response_condition_example",
   message_type: new Fastly.LoggingMessageType(),
-  url: &quot;url_example&quot;,
+  url: "url_example",
 };
 
 apiInstance.updateLogSumologic(options)
@@ -223,9 +223,9 @@ Name | Type | Description  | Notes
 **version_id** | **Number** |  |
 **logging_sumologic_name** | **String** |  |
 **format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in &#x60;vcl_log&#x60; if &#x60;format_version&#x60; is set to &#x60;2&#x60; and in &#x60;vcl_deliver&#x60; if &#x60;format_version&#x60; is set to &#x60;1&#x60;.   | [optional] [default to FormatVersionEnum.v2]
 **name** | **String** | The name for the real-time logging configuration. | [optional]
-**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
+**placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with &#x60;format_version&#x60; of 2 are placed in &#x60;vcl_log&#x60; and those with &#x60;format_version&#x60; of 1 are placed in &#x60;vcl_deliver&#x60;.  | [optional]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
 **message_type** | [**LoggingMessageType**](../Model/LoggingMessageType.md) |  | [optional]
 **url** | **String** | The URL to post logs to. | [optional]
