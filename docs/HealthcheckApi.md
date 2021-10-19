@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createHealthcheck`
 
 ```javascript
-createHealthcheck({ service_id, version_id, [check_interval, ], [comment, ], [expected_response, ], [host, ], [http_version, ], [initial, ], [method, ], [name, ], [path, ], [threshold, ], [timeout, ], [window] })
+createHealthcheck({ service_id, version_id, [check_interval, ][comment, ][expected_response, ][host, ][http_version, ][initial, ][method, ][name, ][path, ][threshold, ][timeout, ][window] })
 ```
 
 Create a healthcheck for a particular service and version.
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 ## `updateHealthcheck`
 
 ```javascript
-updateHealthcheck({ service_id, version_id, healthcheck_name, [check_interval, ], [comment, ], [expected_response, ], [host, ], [http_version, ], [initial, ], [method, ], [name, ], [path, ], [threshold, ], [timeout, ], [window] })
+updateHealthcheck({ service_id, version_id, healthcheck_name, [check_interval, ][comment, ][expected_response, ][host, ][http_version, ][initial, ][method, ][name, ][path, ][threshold, ][timeout, ][window] })
 ```
 
 Update the healthcheck for a particular service and version.

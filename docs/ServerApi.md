@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createPoolServer`
 
 ```javascript
-createPoolServer({ service_id, pool_id, [address, ], [comment, ], [disabled, ], [max_conn, ], [override_host, ], [port, ], [weight] })
+createPoolServer({ service_id, pool_id, [address, ][comment, ][disabled, ][max_conn, ][override_host, ][port, ][weight] })
 ```
 
 Creates a single server for a particular service and pool.
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 ## `updatePoolServer`
 
 ```javascript
-updatePoolServer({ service_id, pool_id, server_id, [address, ], [comment, ], [disabled, ], [max_conn, ], [override_host, ], [port, ], [weight] })
+updatePoolServer({ service_id, pool_id, server_id, [address, ][comment, ][disabled, ][max_conn, ][override_host, ][port, ][weight] })
 ```
 
 Updates a single server for a particular service and pool.

@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogSplunk`
 
 ```javascript
-createLogSplunk({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [tls_ca_cert, ], [tls_client_cert, ], [tls_client_key, ], [tls_hostname, ], [request_max_bytes, ], [request_max_entries, ], [token, ], [url, ], [use_tls] })
+createLogSplunk({ service_id, version_id, [format, ][format_version, ][name, ][placement, ][response_condition, ][tls_ca_cert, ][tls_client_cert, ][tls_client_key, ][tls_hostname, ][request_max_bytes, ][request_max_entries, ][token, ][url, ][use_tls] })
 ```
 
 Create a Splunk logging object for a particular service and version.
@@ -199,7 +199,7 @@ Name | Type | Description  | Notes
 ## `updateLogSplunk`
 
 ```javascript
-updateLogSplunk({ service_id, version_id, logging_splunk_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [tls_ca_cert, ], [tls_client_cert, ], [tls_client_key, ], [tls_hostname, ], [request_max_bytes, ], [request_max_entries, ], [token, ], [url, ], [use_tls] })
+updateLogSplunk({ service_id, version_id, logging_splunk_name, [format, ][format_version, ][name, ][placement, ][response_condition, ][tls_ca_cert, ][tls_client_cert, ][tls_client_key, ][tls_hostname, ][request_max_bytes, ][request_max_entries, ][token, ][url, ][use_tls] })
 ```
 
 Update the Splunk logging object for a particular service and version.

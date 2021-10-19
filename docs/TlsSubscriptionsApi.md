@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createTlsSub`
 
 ```javascript
-createTlsSub({ , [force, ], [tls_subscription] })
+createTlsSub({ , [force, ][tls_subscription] })
 ```
 
 Create a new TLS subscription. This response includes a list of possible challenges to verify domain ownership.
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 ## `listTlsSubs`
 
 ```javascript
-listTlsSubs({ , [filter_state, ], [filter_tls_domains_id, ], [filter_has_active_order, ], [include, ], [page_number, ], [page_size, ], [sort] })
+listTlsSubs({ , [filter_state, ][filter_tls_domains_id, ][filter_has_active_order, ][include, ][page_number, ][page_size, ][sort] })
 ```
 
 List all TLS subscriptions.
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 ## `patchTlsSub`
 
 ```javascript
-patchTlsSub({ tls_subscription_id, [force, ], [tls_subscription] })
+patchTlsSub({ tls_subscription_id, [force, ][tls_subscription] })
 ```
 
 Change the TLS domains or common name associated with this subscription, or update the TLS configuration for this set of domains.

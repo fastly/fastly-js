@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogFtp`
 
 ```javascript
-createLogFtp({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [address, ], [hostname, ], [ipv4, ], [password, ], [path, ], [port, ], [public_key, ], [user] })
+createLogFtp({ service_id, version_id, [format, ][format_version, ][name, ][placement, ][response_condition, ][compression_codec, ][gzip_level, ][message_type, ][period, ][timestamp_format, ][address, ][hostname, ][ipv4, ][password, ][path, ][port, ][public_key, ][user] })
 ```
 
 Create a FTP for a particular service and version.
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 ## `updateLogFtp`
 
 ```javascript
-updateLogFtp({ service_id, version_id, logging_ftp_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [address, ], [hostname, ], [ipv4, ], [password, ], [path, ], [port, ], [public_key, ], [user] })
+updateLogFtp({ service_id, version_id, logging_ftp_name, [format, ][format_version, ][name, ][placement, ][response_condition, ][compression_codec, ][gzip_level, ][message_type, ][period, ][timestamp_format, ][address, ][hostname, ][ipv4, ][password, ][path, ][port, ][public_key, ][user] })
 ```
 
 Update the FTP for a particular service and version.

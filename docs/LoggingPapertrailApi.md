@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogPapertrail`
 
 ```javascript
-createLogPapertrail({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [address, ], [port] })
+createLogPapertrail({ service_id, version_id, [format, ][format_version, ][name, ][placement, ][response_condition, ][address, ][port] })
 ```
 
 Create a Papertrail for a particular service and version.
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 ## `updateLogPapertrail`
 
 ```javascript
-updateLogPapertrail({ service_id, version_id, logging_papertrail_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [address, ], [port] })
+updateLogPapertrail({ service_id, version_id, logging_papertrail_name, [format, ][format_version, ][name, ][placement, ][response_condition, ][address, ][port] })
 ```
 
 Update the Papertrail for a particular service and version.

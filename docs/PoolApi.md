@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createServerPool`
 
 ```javascript
-createServerPool({ service_id, version_id, [tls_ca_cert, ], [tls_cert_hostname, ], [tls_client_cert, ], [tls_client_key, ], [use_tls, ], [comment, ], [connect_timeout, ], [first_byte_timeout, ], [healthcheck, ], [max_conn_default, ], [max_tls_version, ], [min_tls_version, ], [name, ], [override_host, ], [quorum, ], [request_condition, ], [shield, ], [tls_check_cert, ], [tls_ciphers, ], [tls_sni_hostname, ], [type] })
+createServerPool({ service_id, version_id, [tls_ca_cert, ][tls_cert_hostname, ][tls_client_cert, ][tls_client_key, ][use_tls, ][comment, ][connect_timeout, ][first_byte_timeout, ][healthcheck, ][max_conn_default, ][max_tls_version, ][min_tls_version, ][name, ][override_host, ][quorum, ][request_condition, ][shield, ][tls_check_cert, ][tls_ciphers, ][tls_sni_hostname, ][type] })
 ```
 
 Creates a pool for a particular service and version.
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 ## `updateServerPool`
 
 ```javascript
-updateServerPool({ service_id, version_id, pool_name, [tls_ca_cert, ], [tls_cert_hostname, ], [tls_client_cert, ], [tls_client_key, ], [use_tls, ], [comment, ], [connect_timeout, ], [first_byte_timeout, ], [healthcheck, ], [max_conn_default, ], [max_tls_version, ], [min_tls_version, ], [name, ], [override_host, ], [quorum, ], [request_condition, ], [shield, ], [tls_check_cert, ], [tls_ciphers, ], [tls_sni_hostname, ], [type] })
+updateServerPool({ service_id, version_id, pool_name, [tls_ca_cert, ][tls_cert_hostname, ][tls_client_cert, ][tls_client_key, ][use_tls, ][comment, ][connect_timeout, ][first_byte_timeout, ][healthcheck, ][max_conn_default, ][max_tls_version, ][min_tls_version, ][name, ][override_host, ][quorum, ][request_condition, ][shield, ][tls_check_cert, ][tls_ciphers, ][tls_sni_hostname, ][type] })
 ```
 
 Updates a specific pool for a particular service and version.

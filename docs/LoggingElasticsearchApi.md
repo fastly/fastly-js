@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogElasticsearch`
 
 ```javascript
-createLogElasticsearch({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [tls_ca_cert, ], [tls_client_cert, ], [tls_client_key, ], [tls_hostname, ], [request_max_bytes, ], [request_max_entries, ], [index, ], [password, ], [pipeline, ], [url, ], [user] })
+createLogElasticsearch({ service_id, version_id, [format, ][format_version, ][name, ][placement, ][response_condition, ][tls_ca_cert, ][tls_client_cert, ][tls_client_key, ][tls_hostname, ][request_max_bytes, ][request_max_entries, ][index, ][password, ][pipeline, ][url, ][user] })
 ```
 
 Create a Elasticsearch logging endpoint for a particular service and version.
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 ## `updateLogElasticsearch`
 
 ```javascript
-updateLogElasticsearch({ service_id, version_id, logging_elasticsearch_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [tls_ca_cert, ], [tls_client_cert, ], [tls_client_key, ], [tls_hostname, ], [request_max_bytes, ], [request_max_entries, ], [index, ], [password, ], [pipeline, ], [url, ], [user] })
+updateLogElasticsearch({ service_id, version_id, logging_elasticsearch_name, [format, ][format_version, ][name, ][placement, ][response_condition, ][tls_ca_cert, ][tls_client_cert, ][tls_client_key, ][tls_hostname, ][request_max_bytes, ][request_max_entries, ][index, ][password, ][pipeline, ][url, ][user] })
 ```
 
 Update the Elasticsearch logging endpoint for a particular service and version.

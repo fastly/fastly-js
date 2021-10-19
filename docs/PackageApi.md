@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 ## `putPackage`
 
 ```javascript
-putPackage({ service_id, version_id, [expect, ], [_package] })
+putPackage({ service_id, version_id, [expect, ][_package] })
 ```
 
 Upload a Compute@Edge package associated with the specified service version.

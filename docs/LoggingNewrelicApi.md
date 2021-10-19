@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogNewrelic`
 
 ```javascript
-createLogNewrelic({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [region, ], [token] })
+createLogNewrelic({ service_id, version_id, [format, ][format_version, ][name, ][placement, ][response_condition, ][region, ][token] })
 ```
 
 Create a New Relic Logs logging object for a particular service and version.
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 ## `updateLogNewrelic`
 
 ```javascript
-updateLogNewrelic({ service_id, version_id, logging_newrelic_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [region, ], [token] })
+updateLogNewrelic({ service_id, version_id, logging_newrelic_name, [format, ][format_version, ][name, ][placement, ][response_condition, ][region, ][token] })
 ```
 
 Update a New Relic Logs logging object for a particular service and version.

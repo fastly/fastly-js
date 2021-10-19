@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 ## `listServiceAuthorization`
 
 ```javascript
-listServiceAuthorization({ , [page_number, ], [page_size] })
+listServiceAuthorization({ , [page_number, ][page_size] })
 ```
 
 List service authorizations.

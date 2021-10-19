@@ -176,7 +176,7 @@ Name | Type | Description  | Notes
 ## `listAclEntries`
 
 ```javascript
-listAclEntries({ service_id, acl_id, [page, ], [per_page, ], [sort, ], [direction] })
+listAclEntries({ service_id, acl_id, [page, ][per_page, ][sort, ][direction] })
 ```
 
 List ACL entries for a specified ACL.

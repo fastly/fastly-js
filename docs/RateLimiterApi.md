@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createRateLimiter`
 
 ```javascript
-createRateLimiter({ service_id, version_id, [action, ], [client_key, ], [feature_revision, ], [http_methods, ], [logger_type, ], [name, ], [penalty_box_duration, ], [response, ], [response_object_name, ], [rps_limit, ], [uri_dictionary_name, ], [window_size] })
+createRateLimiter({ service_id, version_id, [action, ][client_key, ][feature_revision, ][http_methods, ][logger_type, ][name, ][penalty_box_duration, ][response, ][response_object_name, ][rps_limit, ][uri_dictionary_name, ][window_size] })
 ```
 
 Create a rate limiter for a particular service and version.
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 ## `updateRateLimiter`
 
 ```javascript
-updateRateLimiter({ rate_limiter_id, [action, ], [client_key, ], [feature_revision, ], [http_methods, ], [logger_type, ], [name, ], [penalty_box_duration, ], [response, ], [response_object_name, ], [rps_limit, ], [uri_dictionary_name, ], [window_size] })
+updateRateLimiter({ rate_limiter_id, [action, ][client_key, ][feature_revision, ][http_methods, ][logger_type, ][name, ][penalty_box_duration, ][response, ][response_object_name, ][rps_limit, ][uri_dictionary_name, ][window_size] })
 ```
 
 Update a rate limiter by its ID.

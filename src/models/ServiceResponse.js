@@ -12,10 +12,10 @@
  */
 
 import ApiClient from '../ApiClient';
-import SchemasVersionResponse from './SchemasVersionResponse';
 import ServiceCreate from './ServiceCreate';
 import ServiceResponseAllOf from './ServiceResponseAllOf';
 import Timestamps from './Timestamps';
+import VersionResponse from './VersionResponse';
 
 /**
  * The ServiceResponse model module.
@@ -91,7 +91,7 @@ class ServiceResponse {
                 obj['version'] = ApiClient.convertToType(data['version'], 'Number');
             }
             if (data.hasOwnProperty('versions')) {
-                obj['versions'] = ApiClient.convertToType(data['versions'], [SchemasVersionResponse]);
+                obj['versions'] = ApiClient.convertToType(data['versions'], [VersionResponse]);
             }
         }
         return obj;
@@ -168,7 +168,7 @@ ServiceResponse.prototype['version'] = undefined;
 
 /**
  * A list of [versions](/reference/api/services/version/) associated with the service.
- * @member {Array.<module:models/SchemasVersionResponse>} versions
+ * @member {Array.<module:models/VersionResponse>} versions
  */
 ServiceResponse.prototype['versions'] = undefined;
 
@@ -233,7 +233,7 @@ ServiceResponseAllOf.prototype['publish_key'] = undefined;
 ServiceResponseAllOf.prototype['version'] = undefined;
 /**
  * A list of [versions](/reference/api/services/version/) associated with the service.
- * @member {Array.<module:models/SchemasVersionResponse>} versions
+ * @member {Array.<module:models/VersionResponse>} versions
  */
 ServiceResponseAllOf.prototype['versions'] = undefined;
 

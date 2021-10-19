@@ -87,7 +87,7 @@ null (empty response body)
 ## `listInvitations`
 
 ```javascript
-listInvitations({ , [page_number, ], [page_size] })
+listInvitations({ , [page_number, ][page_size] })
 ```
 
 List all invitations.

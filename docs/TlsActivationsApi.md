@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 ## `listTlsActivations`
 
 ```javascript
-listTlsActivations({ , [filter_tls_certificate_id, ], [filter_tls_configuration_id, ], [filter_tls_domain_id, ], [include, ], [page_number, ], [page_size] })
+listTlsActivations({ , [filter_tls_certificate_id, ][filter_tls_configuration_id, ][filter_tls_domain_id, ][include, ][page_number, ][page_size] })
 ```
 
 List all TLS activations.

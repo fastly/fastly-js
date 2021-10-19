@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 ## `listTlsBulkCerts`
 
 ```javascript
-listTlsBulkCerts({ , [filter_tls_domain_id_match, ], [page_number, ], [page_size, ], [sort] })
+listTlsBulkCerts({ , [filter_tls_domain_id_match, ][page_number, ][page_size, ][sort] })
 ```
 
 List all certificates.

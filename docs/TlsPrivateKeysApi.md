@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 ## `listTlsKeys`
 
 ```javascript
-listTlsKeys({ , [filter_in_use, ], [page_number, ], [page_size] })
+listTlsKeys({ , [filter_in_use, ][page_number, ][page_size] })
 ```
 
 List all TLS private keys.

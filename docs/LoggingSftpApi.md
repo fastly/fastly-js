@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogSftp`
 
 ```javascript
-createLogSftp({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [address, ], [port, ], [password, ], [path, ], [public_key, ], [secret_key, ], [ssh_known_hosts, ], [user] })
+createLogSftp({ service_id, version_id, [format, ][format_version, ][name, ][placement, ][response_condition, ][compression_codec, ][gzip_level, ][message_type, ][period, ][timestamp_format, ][address, ][port, ][password, ][path, ][public_key, ][secret_key, ][ssh_known_hosts, ][user] })
 ```
 
 Create a SFTP for a particular service and version.
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 ## `updateLogSftp`
 
 ```javascript
-updateLogSftp({ service_id, version_id, logging_sftp_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [address, ], [port, ], [password, ], [path, ], [public_key, ], [secret_key, ], [ssh_known_hosts, ], [user] })
+updateLogSftp({ service_id, version_id, logging_sftp_name, [format, ][format_version, ][name, ][placement, ][response_condition, ][compression_codec, ][gzip_level, ][message_type, ][period, ][timestamp_format, ][address, ][port, ][password, ][path, ][public_key, ][secret_key, ][ssh_known_hosts, ][user] })
 ```
 
 Update the SFTP for a particular service and version.

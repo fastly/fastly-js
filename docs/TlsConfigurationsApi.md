@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 ## `listTlsConfigs`
 
 ```javascript
-listTlsConfigs({ , [filter_bulk, ], [include, ], [page_number, ], [page_size] })
+listTlsConfigs({ , [filter_bulk, ][include, ][page_number, ][page_size] })
 ```
 
 List all TLS configurations.

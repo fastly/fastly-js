@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 ## `createDictionaryItem`
 
 ```javascript
-createDictionaryItem({ service_id, dictionary_id, [item_key, ], [item_value] })
+createDictionaryItem({ service_id, dictionary_id, [item_key, ][item_value] })
 ```
 
 Create DictionaryItem given service, dictionary ID, item key, and item value.
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 ## `listDictionaryItems`
 
 ```javascript
-listDictionaryItems({ service_id, dictionary_id, [page, ], [per_page, ], [sort, ], [direction] })
+listDictionaryItems({ service_id, dictionary_id, [page, ][per_page, ][sort, ][direction] })
 ```
 
 List of DictionaryItems given service and dictionary ID.
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 ## `updateDictionaryItem`
 
 ```javascript
-updateDictionaryItem({ service_id, dictionary_id, dictionary_item_key, [item_key, ], [item_value] })
+updateDictionaryItem({ service_id, dictionary_id, dictionary_item_key, [item_key, ][item_value] })
 ```
 
 Update DictionaryItem given service, dictionary ID, item key, and item value.
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 ## `upsertDictionaryItem`
 
 ```javascript
-upsertDictionaryItem({ service_id, dictionary_id, dictionary_item_key, [item_key, ], [item_value] })
+upsertDictionaryItem({ service_id, dictionary_id, dictionary_item_key, [item_key, ][item_value] })
 ```
 
 Upsert DictionaryItem given service, dictionary ID, item key, and item value.

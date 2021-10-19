@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogHeroku`
 
 ```javascript
-createLogHeroku({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [token, ], [url] })
+createLogHeroku({ service_id, version_id, [format, ][format_version, ][name, ][placement, ][response_condition, ][token, ][url] })
 ```
 
 Create a Heroku for a particular service and version.
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 ## `updateLogHeroku`
 
 ```javascript
-updateLogHeroku({ service_id, version_id, logging_heroku_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [token, ], [url] })
+updateLogHeroku({ service_id, version_id, logging_heroku_name, [format, ][format_version, ][name, ][placement, ][response_condition, ][token, ][url] })
 ```
 
 Update the Heroku for a particular service and version.

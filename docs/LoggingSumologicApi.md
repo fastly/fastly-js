@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogSumologic`
 
 ```javascript
-createLogSumologic({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [message_type, ], [url] })
+createLogSumologic({ service_id, version_id, [format, ][format_version, ][name, ][placement, ][response_condition, ][message_type, ][url] })
 ```
 
 Create a Sumologic for a particular service and version.
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 ## `updateLogSumologic`
 
 ```javascript
-updateLogSumologic({ service_id, version_id, logging_sumologic_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [message_type, ], [url] })
+updateLogSumologic({ service_id, version_id, logging_sumologic_name, [format, ][format_version, ][name, ][placement, ][response_condition, ][message_type, ][url] })
 ```
 
 Update the Sumologic for a particular service and version.

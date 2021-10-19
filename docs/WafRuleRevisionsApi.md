@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 ## `listWafRuleRevisions`
 
 ```javascript
-listWafRuleRevisions({ waf_rule_id, [page_number, ], [page_size, ], [include] })
+listWafRuleRevisions({ waf_rule_id, [page_number, ][page_size, ][include] })
 ```
 
 List all revisions for a specific rule. The `rule_id` provided can be the ModSecurity Rule ID or the Fastly generated rule ID.

@@ -22,7 +22,7 @@ Method | Fastly API endpoint | Description
 ## `createService`
 
 ```javascript
-createService({ , [comment, ], [customer_id, ], [name, ], [type] })
+createService({ , [comment, ][customer_id, ][name, ][type] })
 ```
 
 Create a service.
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 ## `listServices`
 
 ```javascript
-listServices({ , [page, ], [per_page, ], [sort, ], [direction] })
+listServices({ , [page, ][per_page, ][sort, ][direction] })
 ```
 
 List services.
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 ## `updateService`
 
 ```javascript
-updateService({ service_id, [comment, ], [customer_id, ], [name] })
+updateService({ service_id, [comment, ][customer_id, ][name] })
 ```
 
 Update a service.

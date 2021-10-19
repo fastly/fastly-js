@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogHoneycomb`
 
 ```javascript
-createLogHoneycomb({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [dataset, ], [token] })
+createLogHoneycomb({ service_id, version_id, [format, ][format_version, ][name, ][placement, ][response_condition, ][dataset, ][token] })
 ```
 
 Create a Honeycomb logging object for a particular service and version.
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 ## `updateLogHoneycomb`
 
 ```javascript
-updateLogHoneycomb({ service_id, version_id, logging_honeycomb_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [dataset, ], [token] })
+updateLogHoneycomb({ service_id, version_id, logging_honeycomb_name, [format, ][format_version, ][name, ][placement, ][response_condition, ][dataset, ][token] })
 ```
 
 Update a Honeycomb logging object for a particular service and version.

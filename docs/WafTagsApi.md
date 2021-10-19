@@ -15,7 +15,7 @@ Method | Fastly API endpoint | Description
 ## `listWafTags`
 
 ```javascript
-listWafTags({ , [filter_name, ], [page_number, ], [page_size, ], [include] })
+listWafTags({ , [filter_name, ][page_number, ][page_size, ][include] })
 ```
 
 List all tags.

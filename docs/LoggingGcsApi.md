@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogGcs`
 
 ```javascript
-createLogGcs({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [secret_key, ], [user, ], [bucket_name, ], [path, ], [public_key] })
+createLogGcs({ service_id, version_id, [format, ][format_version, ][name, ][placement, ][response_condition, ][compression_codec, ][gzip_level, ][message_type, ][period, ][timestamp_format, ][secret_key, ][user, ][bucket_name, ][path, ][public_key] })
 ```
 
 Create GCS logging for a particular service and version.
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 ## `updateLogGcs`
 
 ```javascript
-updateLogGcs({ service_id, version_id, logging_gcs_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [secret_key, ], [user, ], [bucket_name, ], [path, ], [public_key] })
+updateLogGcs({ service_id, version_id, logging_gcs_name, [format, ][format_version, ][name, ][placement, ][response_condition, ][compression_codec, ][gzip_level, ][message_type, ][period, ][timestamp_format, ][secret_key, ][user, ][bucket_name, ][path, ][public_key] })
 ```
 
 Update the GCS for a particular service and version.

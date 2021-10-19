@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogLoggly`
 
 ```javascript
-createLogLoggly({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [token] })
+createLogLoggly({ service_id, version_id, [format, ][format_version, ][name, ][placement, ][response_condition, ][token] })
 ```
 
 Create a Loggly logging object for a particular service and version.
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 ## `updateLogLoggly`
 
 ```javascript
-updateLogLoggly({ service_id, version_id, logging_loggly_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [token] })
+updateLogLoggly({ service_id, version_id, logging_loggly_name, [format, ][format_version, ][name, ][placement, ][response_condition, ][token] })
 ```
 
 Update the Loggly logging object for a particular service and version.

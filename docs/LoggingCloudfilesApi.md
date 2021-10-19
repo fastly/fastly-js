@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogCloudfiles`
 
 ```javascript
-createLogCloudfiles({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [access_key, ], [bucket_name, ], [path, ], [public_key, ], [region, ], [user] })
+createLogCloudfiles({ service_id, version_id, [format, ][format_version, ][name, ][placement, ][response_condition, ][compression_codec, ][gzip_level, ][message_type, ][period, ][timestamp_format, ][access_key, ][bucket_name, ][path, ][public_key, ][region, ][user] })
 ```
 
 Create a Cloud Files log endpoint for a particular service and version.
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 ## `updateLogCloudfiles`
 
 ```javascript
-updateLogCloudfiles({ service_id, version_id, logging_cloudfiles_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [access_key, ], [bucket_name, ], [path, ], [public_key, ], [region, ], [user] })
+updateLogCloudfiles({ service_id, version_id, logging_cloudfiles_name, [format, ][format_version, ][name, ][placement, ][response_condition, ][compression_codec, ][gzip_level, ][message_type, ][period, ][timestamp_format, ][access_key, ][bucket_name, ][path, ][public_key, ][region, ][user] })
 ```
 
 Update the Cloud Files log endpoint for a particular service and version.

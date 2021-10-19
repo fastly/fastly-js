@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogDigocean`
 
 ```javascript
-createLogDigocean({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [access_key, ], [bucket_name, ], [domain, ], [path, ], [public_key, ], [secret_key] })
+createLogDigocean({ service_id, version_id, [format, ][format_version, ][name, ][placement, ][response_condition, ][compression_codec, ][gzip_level, ][message_type, ][period, ][timestamp_format, ][access_key, ][bucket_name, ][domain, ][path, ][public_key, ][secret_key] })
 ```
 
 Create a DigitalOcean Space for a particular service and version.
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 ## `updateLogDigocean`
 
 ```javascript
-updateLogDigocean({ service_id, version_id, logging_digitalocean_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [access_key, ], [bucket_name, ], [domain, ], [path, ], [public_key, ], [secret_key] })
+updateLogDigocean({ service_id, version_id, logging_digitalocean_name, [format, ][format_version, ][name, ][placement, ][response_condition, ][compression_codec, ][gzip_level, ][message_type, ][period, ][timestamp_format, ][access_key, ][bucket_name, ][domain, ][path, ][public_key, ][secret_key] })
 ```
 
 Update the DigitalOcean Space for a particular service and version.

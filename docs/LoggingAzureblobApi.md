@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogAzure`
 
 ```javascript
-createLogAzure({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [account_name, ], [container, ], [file_max_bytes, ], [path, ], [public_key, ], [sas_token] })
+createLogAzure({ service_id, version_id, [format, ][format_version, ][name, ][placement, ][response_condition, ][compression_codec, ][gzip_level, ][message_type, ][period, ][timestamp_format, ][account_name, ][container, ][file_max_bytes, ][path, ][public_key, ][sas_token] })
 ```
 
 Create an Azure Blob Storage logging endpoint for a particular service and version.
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 ## `updateLogAzure`
 
 ```javascript
-updateLogAzure({ service_id, version_id, logging_azureblob_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [account_name, ], [container, ], [file_max_bytes, ], [path, ], [public_key, ], [sas_token] })
+updateLogAzure({ service_id, version_id, logging_azureblob_name, [format, ][format_version, ][name, ][placement, ][response_condition, ][compression_codec, ][gzip_level, ][message_type, ][period, ][timestamp_format, ][account_name, ][container, ][file_max_bytes, ][path, ][public_key, ][sas_token] })
 ```
 
 Update the Azure Blob Storage logging endpoint for a particular service and version.

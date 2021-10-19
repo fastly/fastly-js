@@ -21,7 +21,7 @@ Method | Fastly API endpoint | Description
 ## `createSnippet`
 
 ```javascript
-createSnippet({ service_id, version_id, [content, ], [dynamic, ], [name, ], [priority, ], [type] })
+createSnippet({ service_id, version_id, [content, ][dynamic, ][name, ][priority, ][type] })
 ```
 
 Create a snippet for a particular service and version.
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 ## `updateSnippetDynamic`
 
 ```javascript
-updateSnippetDynamic({ service_id, snippet_id, [content, ], [dynamic, ], [name, ], [priority, ], [type] })
+updateSnippetDynamic({ service_id, snippet_id, [content, ][dynamic, ][name, ][priority, ][type] })
 ```
 
 Update a dynamic snippet for a particular service.

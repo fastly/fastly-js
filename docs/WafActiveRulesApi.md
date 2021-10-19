@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 ## `listWafActiveRules`
 
 ```javascript
-listWafActiveRules({ firewall_id, version_id, [filter_status, ], [filter_waf_rule_revision_message, ], [filter_waf_rule_revision_modsec_rule_id, ], [filter_outdated, ], [include, ], [page_number, ], [page_size] })
+listWafActiveRules({ firewall_id, version_id, [filter_status, ][filter_waf_rule_revision_message, ][filter_waf_rule_revision_modsec_rule_id, ][filter_outdated, ][include, ][page_number, ][page_size] })
 ```
 
 List all active rules for a particular firewall version.

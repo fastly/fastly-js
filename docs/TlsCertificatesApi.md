@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 ## `listTlsCerts`
 
 ```javascript
-listTlsCerts({ , [filter_not_after, ], [filter_tls_domains_id, ], [include, ], [page_number, ], [page_size, ], [sort] })
+listTlsCerts({ , [filter_not_after, ][filter_tls_domains_id, ][include, ][page_number, ][page_size, ][sort] })
 ```
 
 List all TLS certificates.

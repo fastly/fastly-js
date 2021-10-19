@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createGzipConfig`
 
 ```javascript
-createGzipConfig({ service_id, version_id, [cache_condition, ], [content_types, ], [extensions, ], [name] })
+createGzipConfig({ service_id, version_id, [cache_condition, ][content_types, ][extensions, ][name] })
 ```
 
 Create a named gzip configuration on a particular service and version.
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 ## `updateGzipConfig`
 
 ```javascript
-updateGzipConfig({ service_id, version_id, gzip_name, [cache_condition, ], [content_types, ], [extensions, ], [name] })
+updateGzipConfig({ service_id, version_id, gzip_name, [cache_condition, ][content_types, ][extensions, ][name] })
 ```
 
 Update a named gzip configuration on a particular service and version.

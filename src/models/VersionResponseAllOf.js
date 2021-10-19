@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The SchemasVersionResponseAllOf model module.
- * @module models/SchemasVersionResponseAllOf
+ * The VersionResponseAllOf model module.
+ * @module models/VersionResponseAllOf
  * @version 3.0.0-alpha1
  */
-class SchemasVersionResponseAllOf {
+class VersionResponseAllOf {
     /**
-     * Constructs a new <code>SchemasVersionResponseAllOf</code>.
-     * @alias module:models/SchemasVersionResponseAllOf
+     * Constructs a new <code>VersionResponseAllOf</code>.
+     * @alias module:models/VersionResponseAllOf
      */
     constructor() { 
         
-        SchemasVersionResponseAllOf.initialize(this);
+        VersionResponseAllOf.initialize(this);
     }
 
     /**
@@ -37,15 +37,15 @@ class SchemasVersionResponseAllOf {
     }
 
     /**
-     * Constructs a <code>SchemasVersionResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>VersionResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:models/SchemasVersionResponseAllOf} obj Optional instance to populate.
-     * @return {module:models/SchemasVersionResponseAllOf} The populated <code>SchemasVersionResponseAllOf</code> instance.
+     * @param {module:models/VersionResponseAllOf} obj Optional instance to populate.
+     * @return {module:models/VersionResponseAllOf} The populated <code>VersionResponseAllOf</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new SchemasVersionResponseAllOf();
+            obj = obj || new VersionResponseAllOf();
 
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
@@ -61,12 +61,12 @@ class SchemasVersionResponseAllOf {
  * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
-SchemasVersionResponseAllOf.prototype['service_id'] = undefined;
+VersionResponseAllOf.prototype['service_id'] = undefined;
 
 
 
 
 
 
-export default SchemasVersionResponseAllOf;
+export default VersionResponseAllOf;
 

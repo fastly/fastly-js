@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogScalyr`
 
 ```javascript
-createLogScalyr({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [project_id, ], [region, ], [token] })
+createLogScalyr({ service_id, version_id, [format, ][format_version, ][name, ][placement, ][response_condition, ][project_id, ][region, ][token] })
 ```
 
 Create a Scalyr for a particular service and version.
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 ## `updateLogScalyr`
 
 ```javascript
-updateLogScalyr({ service_id, version_id, logging_scalyr_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [project_id, ], [region, ], [token] })
+updateLogScalyr({ service_id, version_id, logging_scalyr_name, [format, ][format_version, ][name, ][placement, ][response_condition, ][project_id, ][region, ][token] })
 ```
 
 Update the Scalyr for a particular service and version.

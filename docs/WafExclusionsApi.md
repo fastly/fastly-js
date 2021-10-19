@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 ## `listWafRuleExclusions`
 
 ```javascript
-listWafRuleExclusions({ firewall_id, firewall_version_number, [filter_exclusion_type, ], [filter_name, ], [filter_waf_rules_modsec_rule_id, ], [page_number, ], [page_size, ], [include] })
+listWafRuleExclusions({ firewall_id, firewall_version_number, [filter_exclusion_type, ][filter_name, ][filter_waf_rules_modsec_rule_id, ][page_number, ][page_size, ][include] })
 ```
 
 List all exclusions for a particular firewall version.

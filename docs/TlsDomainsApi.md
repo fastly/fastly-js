@@ -15,7 +15,7 @@ Method | Fastly API endpoint | Description
 ## `listTlsDomains`
 
 ```javascript
-listTlsDomains({ , [filter_in_use, ], [filter_tls_certificates_id, ], [filter_tls_subscriptions_id, ], [include, ], [page_number, ], [page_size, ], [sort] })
+listTlsDomains({ , [filter_in_use, ][filter_tls_certificates_id, ][filter_tls_subscriptions_id, ][include, ][page_number, ][page_size, ][sort] })
 ```
 
 List all TLS domains.

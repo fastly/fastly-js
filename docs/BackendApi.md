@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createBackend`
 
 ```javascript
-createBackend({ service_id, version_id, [address, ], [auto_loadbalance, ], [between_bytes_timeout, ], [client_cert, ], [comment, ], [connect_timeout, ], [first_byte_timeout, ], [healthcheck, ], [hostname, ], [ipv4, ], [ipv6, ], [max_conn, ], [max_tls_version, ], [min_tls_version, ], [name, ], [override_host, ], [port, ], [request_condition, ], [shield, ], [ssl_ca_cert, ], [ssl_cert_hostname, ], [ssl_check_cert, ], [ssl_ciphers, ], [ssl_client_cert, ], [ssl_client_key, ], [ssl_hostname, ], [ssl_sni_hostname, ], [use_ssl, ], [weight] })
+createBackend({ service_id, version_id, [address, ][auto_loadbalance, ][between_bytes_timeout, ][client_cert, ][comment, ][connect_timeout, ][first_byte_timeout, ][healthcheck, ][hostname, ][ipv4, ][ipv6, ][max_conn, ][max_tls_version, ][min_tls_version, ][name, ][override_host, ][port, ][request_condition, ][shield, ][ssl_ca_cert, ][ssl_cert_hostname, ][ssl_check_cert, ][ssl_ciphers, ][ssl_client_cert, ][ssl_client_key, ][ssl_hostname, ][ssl_sni_hostname, ][use_ssl, ][weight] })
 ```
 
 Create a backend for a particular service and version.
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 ## `updateBackend`
 
 ```javascript
-updateBackend({ service_id, version_id, backend_name, [address, ], [auto_loadbalance, ], [between_bytes_timeout, ], [client_cert, ], [comment, ], [connect_timeout, ], [first_byte_timeout, ], [healthcheck, ], [hostname, ], [ipv4, ], [ipv6, ], [max_conn, ], [max_tls_version, ], [min_tls_version, ], [name, ], [override_host, ], [port, ], [request_condition, ], [shield, ], [ssl_ca_cert, ], [ssl_cert_hostname, ], [ssl_check_cert, ], [ssl_ciphers, ], [ssl_client_cert, ], [ssl_client_key, ], [ssl_hostname, ], [ssl_sni_hostname, ], [use_ssl, ], [weight] })
+updateBackend({ service_id, version_id, backend_name, [address, ][auto_loadbalance, ][between_bytes_timeout, ][client_cert, ][comment, ][connect_timeout, ][first_byte_timeout, ][healthcheck, ][hostname, ][ipv4, ][ipv6, ][max_conn, ][max_tls_version, ][min_tls_version, ][name, ][override_host, ][port, ][request_condition, ][shield, ][ssl_ca_cert, ][ssl_cert_hostname, ][ssl_check_cert, ][ssl_ciphers, ][ssl_client_cert, ][ssl_client_key, ][ssl_hostname, ][ssl_sni_hostname, ][use_ssl, ][weight] })
 ```
 
 Update the backend for a particular service and version.

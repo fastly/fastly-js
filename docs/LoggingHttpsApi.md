@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogHttps`
 
 ```javascript
-createLogHttps({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [tls_ca_cert, ], [tls_client_cert, ], [tls_client_key, ], [tls_hostname, ], [request_max_bytes, ], [request_max_entries, ], [content_type, ], [header_name, ], [header_value, ], [json_format, ], [message_type, ], [method, ], [url] })
+createLogHttps({ service_id, version_id, [format, ][format_version, ][name, ][placement, ][response_condition, ][tls_ca_cert, ][tls_client_cert, ][tls_client_key, ][tls_hostname, ][request_max_bytes, ][request_max_entries, ][content_type, ][header_name, ][header_value, ][json_format, ][message_type, ][method, ][url] })
 ```
 
 Create an HTTPS object for a particular service and version.
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 ## `updateLogHttps`
 
 ```javascript
-updateLogHttps({ service_id, version_id, logging_https_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [tls_ca_cert, ], [tls_client_cert, ], [tls_client_key, ], [tls_hostname, ], [request_max_bytes, ], [request_max_entries, ], [content_type, ], [header_name, ], [header_value, ], [json_format, ], [message_type, ], [method, ], [url] })
+updateLogHttps({ service_id, version_id, logging_https_name, [format, ][format_version, ][name, ][placement, ][response_condition, ][tls_ca_cert, ][tls_client_cert, ][tls_client_key, ][tls_hostname, ][request_max_bytes, ][request_max_entries, ][content_type, ][header_name, ][header_value, ][json_format, ][message_type, ][method, ][url] })
 ```
 
 Update the HTTPS object for a particular service and version.

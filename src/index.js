@@ -312,14 +312,8 @@ import RoleUser from './models/RoleUser';
 import SchemasBackend from './models/SchemasBackend';
 import SchemasDirector from './models/SchemasDirector';
 import SchemasRelationshipsForWafActiveRule from './models/SchemasRelationshipsForWafActiveRule';
-import SchemasSnippetResponse from './models/SchemasSnippetResponse';
-import SchemasSnippetResponseAllOf from './models/SchemasSnippetResponseAllOf';
 import SchemasUserResponse from './models/SchemasUserResponse';
 import SchemasUserResponseAllOf from './models/SchemasUserResponseAllOf';
-import SchemasVclResponse from './models/SchemasVclResponse';
-import SchemasVersion from './models/SchemasVersion';
-import SchemasVersionResponse from './models/SchemasVersionResponse';
-import SchemasVersionResponseAllOf from './models/SchemasVersionResponseAllOf';
 import SchemasWafActiveRule from './models/SchemasWafActiveRule';
 import SchemasWafActiveRuleData from './models/SchemasWafActiveRuleData';
 import SchemasWafActiveRuleDataAttributes from './models/SchemasWafActiveRuleDataAttributes';
@@ -356,6 +350,7 @@ import Settings from './models/Settings';
 import SettingsResponse from './models/SettingsResponse';
 import Snippet from './models/Snippet';
 import SnippetResponse from './models/SnippetResponse';
+import SnippetResponseAllOf from './models/SnippetResponseAllOf';
 import Star from './models/Star';
 import StarData from './models/StarData';
 import StarResponse from './models/StarResponse';
@@ -451,6 +446,7 @@ import Version from './models/Version';
 import VersionCreateResponse from './models/VersionCreateResponse';
 import VersionDetail from './models/VersionDetail';
 import VersionResponse from './models/VersionResponse';
+import VersionResponseAllOf from './models/VersionResponseAllOf';
 import WafActiveRule from './models/WafActiveRule';
 import WafActiveRuleCreationResponse from './models/WafActiveRuleCreationResponse';
 import WafActiveRuleData from './models/WafActiveRuleData';
@@ -2421,18 +2417,6 @@ export {
     SchemasRelationshipsForWafActiveRule,
 
     /**
-     * The SchemasSnippetResponse model constructor.
-     * @property {module:models/SchemasSnippetResponse}
-     */
-    SchemasSnippetResponse,
-
-    /**
-     * The SchemasSnippetResponseAllOf model constructor.
-     * @property {module:models/SchemasSnippetResponseAllOf}
-     */
-    SchemasSnippetResponseAllOf,
-
-    /**
      * The SchemasUserResponse model constructor.
      * @property {module:models/SchemasUserResponse}
      */
@@ -2443,30 +2427,6 @@ export {
      * @property {module:models/SchemasUserResponseAllOf}
      */
     SchemasUserResponseAllOf,
-
-    /**
-     * The SchemasVclResponse model constructor.
-     * @property {module:models/SchemasVclResponse}
-     */
-    SchemasVclResponse,
-
-    /**
-     * The SchemasVersion model constructor.
-     * @property {module:models/SchemasVersion}
-     */
-    SchemasVersion,
-
-    /**
-     * The SchemasVersionResponse model constructor.
-     * @property {module:models/SchemasVersionResponse}
-     */
-    SchemasVersionResponse,
-
-    /**
-     * The SchemasVersionResponseAllOf model constructor.
-     * @property {module:models/SchemasVersionResponseAllOf}
-     */
-    SchemasVersionResponseAllOf,
 
     /**
      * The SchemasWafActiveRule model constructor.
@@ -2683,6 +2643,12 @@ export {
      * @property {module:models/SnippetResponse}
      */
     SnippetResponse,
+
+    /**
+     * The SnippetResponseAllOf model constructor.
+     * @property {module:models/SnippetResponseAllOf}
+     */
+    SnippetResponseAllOf,
 
     /**
      * The Star model constructor.
@@ -3253,6 +3219,12 @@ export {
      * @property {module:models/VersionResponse}
      */
     VersionResponse,
+
+    /**
+     * The VersionResponseAllOf model constructor.
+     * @property {module:models/VersionResponseAllOf}
+     */
+    VersionResponseAllOf,
 
     /**
      * The WafActiveRule model constructor.

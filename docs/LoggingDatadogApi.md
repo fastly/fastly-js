@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogDatadog`
 
 ```javascript
-createLogDatadog({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [region, ], [token] })
+createLogDatadog({ service_id, version_id, [format, ][format_version, ][name, ][placement, ][response_condition, ][region, ][token] })
 ```
 
 Create a Datadog logging object for a particular service and version.
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 ## `updateLogDatadog`
 
 ```javascript
-updateLogDatadog({ service_id, version_id, logging_datadog_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [region, ], [token] })
+updateLogDatadog({ service_id, version_id, logging_datadog_name, [format, ][format_version, ][name, ][placement, ][response_condition, ][region, ][token] })
 ```
 
 Update the Datadog logging object for a particular service and version.

@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createDictionary`
 
 ```javascript
-createDictionary({ service_id, version_id, [name, ], [write_only] })
+createDictionary({ service_id, version_id, [name, ][write_only] })
 ```
 
 Create named dictionary for a particular service and version.
@@ -175,7 +175,7 @@ Name | Type | Description  | Notes
 ## `updateDictionary`
 
 ```javascript
-updateDictionary({ service_id, version_id, dictionary_name, [name, ], [write_only] })
+updateDictionary({ service_id, version_id, dictionary_name, [name, ][write_only] })
 ```
 
 Update named dictionary for a particular service and version.

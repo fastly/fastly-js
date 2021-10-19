@@ -25,7 +25,7 @@ Method | Fastly API endpoint | Description
 ## `createCustomVcl`
 
 ```javascript
-createCustomVcl({ service_id, version_id, [content, ], [main, ], [name] })
+createCustomVcl({ service_id, version_id, [content, ][main, ][name] })
 ```
 
 Upload a VCL for a particular service and version.
@@ -413,7 +413,7 @@ Name | Type | Description  | Notes
 ## `updateCustomVcl`
 
 ```javascript
-updateCustomVcl({ service_id, version_id, vcl_name, [content, ], [main, ], [name] })
+updateCustomVcl({ service_id, version_id, vcl_name, [content, ][main, ][name] })
 ```
 
 Update the uploaded VCL for a particular service and version.

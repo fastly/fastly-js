@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogSyslog`
 
 ```javascript
-createLogSyslog({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [tls_ca_cert, ], [tls_client_cert, ], [tls_client_key, ], [tls_hostname, ], [address, ], [port, ], [hostname, ], [ipv4, ], [message_type, ], [token, ], [use_tls] })
+createLogSyslog({ service_id, version_id, [format, ][format_version, ][name, ][placement, ][response_condition, ][tls_ca_cert, ][tls_client_cert, ][tls_client_key, ][tls_hostname, ][address, ][port, ][hostname, ][ipv4, ][message_type, ][token, ][use_tls] })
 ```
 
 Create a Syslog for a particular service and version.
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 ## `updateLogSyslog`
 
 ```javascript
-updateLogSyslog({ service_id, version_id, logging_syslog_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [tls_ca_cert, ], [tls_client_cert, ], [tls_client_key, ], [tls_hostname, ], [address, ], [port, ], [hostname, ], [ipv4, ], [message_type, ], [token, ], [use_tls] })
+updateLogSyslog({ service_id, version_id, logging_syslog_name, [format, ][format_version, ][name, ][placement, ][response_condition, ][tls_ca_cert, ][tls_client_cert, ][tls_client_key, ][tls_hostname, ][address, ][port, ][hostname, ][ipv4, ][message_type, ][token, ][use_tls] })
 ```
 
 Update the Syslog for a particular service and version.

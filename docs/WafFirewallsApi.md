@@ -91,7 +91,7 @@ null (empty response body)
 ## `getWafFirewall`
 
 ```javascript
-getWafFirewall({ firewall_id, [filter_service_version_number, ], [include] })
+getWafFirewall({ firewall_id, [filter_service_version_number, ][include] })
 ```
 
 Get a specific firewall object.
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 ## `listWafFirewalls`
 
 ```javascript
-listWafFirewalls({ , [page_number, ], [page_size, ], [filter_service_id, ], [filter_service_version_number, ], [include] })
+listWafFirewalls({ , [page_number, ][page_size, ][filter_service_id, ][filter_service_version_number, ][include] })
 ```
 
 List all firewall objects.

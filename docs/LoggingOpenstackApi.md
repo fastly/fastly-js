@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogOpenstack`
 
 ```javascript
-createLogOpenstack({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [access_key, ], [bucket_name, ], [path, ], [public_key, ], [url, ], [user] })
+createLogOpenstack({ service_id, version_id, [format, ][format_version, ][name, ][placement, ][response_condition, ][compression_codec, ][gzip_level, ][message_type, ][period, ][timestamp_format, ][access_key, ][bucket_name, ][path, ][public_key, ][url, ][user] })
 ```
 
 Create a openstack for a particular service and version.
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 ## `updateLogOpenstack`
 
 ```javascript
-updateLogOpenstack({ service_id, version_id, logging_openstack_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [access_key, ], [bucket_name, ], [path, ], [public_key, ], [url, ], [user] })
+updateLogOpenstack({ service_id, version_id, logging_openstack_name, [format, ][format_version, ][name, ][placement, ][response_condition, ][compression_codec, ][gzip_level, ][message_type, ][period, ][timestamp_format, ][access_key, ][bucket_name, ][path, ][public_key, ][url, ][user] })
 ```
 
 Update the openstack for a particular service and version.

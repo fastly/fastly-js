@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 ## `listWafFirewallVersions`
 
 ```javascript
-listWafFirewallVersions({ firewall_id, [include, ], [page_number, ], [page_size] })
+listWafFirewallVersions({ firewall_id, [include, ][page_number, ][page_size] })
 ```
 
 Get a list of firewall versions associated with a specific firewall.

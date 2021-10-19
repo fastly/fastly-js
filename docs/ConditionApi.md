@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createCondition`
 
 ```javascript
-createCondition({ service_id, version_id, [comment, ], [name, ], [priority, ], [statement, ], [type] })
+createCondition({ service_id, version_id, [comment, ][name, ][priority, ][statement, ][type] })
 ```
 
 Creates a new condition.
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 ## `updateCondition`
 
 ```javascript
-updateCondition({ service_id, version_id, condition_name, [comment, ], [name, ], [priority, ], [statement, ], [type] })
+updateCondition({ service_id, version_id, condition_name, [comment, ][name, ][priority, ][statement, ][type] })
 ```
 
 Updates the specified condition.

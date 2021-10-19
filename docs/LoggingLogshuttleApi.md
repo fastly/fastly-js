@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogLogshuttle`
 
 ```javascript
-createLogLogshuttle({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [token, ], [url] })
+createLogLogshuttle({ service_id, version_id, [format, ][format_version, ][name, ][placement, ][response_condition, ][token, ][url] })
 ```
 
 Create a Log Shuttle logging endpoint for a particular service and version.
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 ## `updateLogLogshuttle`
 
 ```javascript
-updateLogLogshuttle({ service_id, version_id, logging_logshuttle_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [token, ], [url] })
+updateLogLogshuttle({ service_id, version_id, logging_logshuttle_name, [format, ][format_version, ][name, ][placement, ][response_condition, ][token, ][url] })
 ```
 
 Update the Log Shuttle logging endpoint for a particular service and version.

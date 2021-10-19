@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 ## `updateCustomer`
 
 ```javascript
-updateCustomer({ customer_id, [billing_contact_id, ], [billing_network_type, ], [billing_ref, ], [can_configure_wordpress, ], [can_reset_passwords, ], [can_upload_vcl, ], [force_2fa, ], [force_sso, ], [has_account_panel, ], [has_improved_events, ], [has_improved_ssl_config, ], [has_openstack_logging, ], [has_pci, ], [has_pci_passwords, ], [ip_whitelist, ], [legal_contact_id, ], [name, ], [owner_id, ], [phone_number, ], [postal_address, ], [pricing_plan, ], [pricing_plan_id, ], [security_contact_id, ], [technical_contact_id] })
+updateCustomer({ customer_id, [billing_contact_id, ][billing_network_type, ][billing_ref, ][can_configure_wordpress, ][can_reset_passwords, ][can_upload_vcl, ][force_2fa, ][force_sso, ][has_account_panel, ][has_improved_events, ][has_improved_ssl_config, ][has_openstack_logging, ][has_pci, ][has_pci_passwords, ][ip_whitelist, ][legal_contact_id, ][name, ][owner_id, ][phone_number, ][postal_address, ][pricing_plan, ][pricing_plan_id, ][security_contact_id, ][technical_contact_id] })
 ```
 
 Update a customer.

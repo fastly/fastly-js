@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createCacheSettings`
 
 ```javascript
-createCacheSettings({ service_id, version_id, [action, ], [cache_condition, ], [name, ], [stale_ttl, ], [ttl] })
+createCacheSettings({ service_id, version_id, [action, ][cache_condition, ][name, ][stale_ttl, ][ttl] })
 ```
 
 Create a cache settings object.
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 ## `updateCacheSettings`
 
 ```javascript
-updateCacheSettings({ service_id, version_id, cache_settings_name, [action, ], [cache_condition, ], [name, ], [stale_ttl, ], [ttl] })
+updateCacheSettings({ service_id, version_id, cache_settings_name, [action, ][cache_condition, ][name, ][stale_ttl, ][ttl] })
 ```
 
 Update a specific cache settings object.

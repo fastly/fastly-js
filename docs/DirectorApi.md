@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createDirector`
 
 ```javascript
-createDirector({ service_id, version_id, [backends, ], [capacity, ], [comment, ], [name, ], [quorum, ], [retries, ], [shield, ], [type] })
+createDirector({ service_id, version_id, [backends, ][capacity, ][comment, ][name, ][quorum, ][retries, ][shield, ][type] })
 ```
 
 Create a director for a particular service and version.

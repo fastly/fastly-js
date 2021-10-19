@@ -278,7 +278,7 @@ Name | Type | Description  | Notes
 ## `updateServiceVersion`
 
 ```javascript
-updateServiceVersion({ service_id, version_id, [active, ], [comment, ], [deployed, ], [locked, ], [number, ], [staging, ], [testing] })
+updateServiceVersion({ service_id, version_id, [active, ][comment, ][deployed, ][locked, ][number, ][staging, ][testing] })
 ```
 
 Update a particular version for a particular service.

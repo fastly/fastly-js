@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogKinesis`
 
 ```javascript
-createLogKinesis({ service_id, version_id, [access_key, ], [format, ], [format_version, ], [iam_role, ], [name, ], [placement, ], [region, ], [secret_key, ], [topic] })
+createLogKinesis({ service_id, version_id, [access_key, ][format, ][format_version, ][iam_role, ][name, ][placement, ][region, ][secret_key, ][topic] })
 ```
 
 Create an Amazon Kinesis Data Streams logging object for a particular service and version.

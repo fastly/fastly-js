@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogGcpPubsub`
 
 ```javascript
-createLogGcpPubsub({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [secret_key, ], [user, ], [project_id, ], [topic] })
+createLogGcpPubsub({ service_id, version_id, [format, ][format_version, ][name, ][placement, ][response_condition, ][secret_key, ][user, ][project_id, ][topic] })
 ```
 
 Create a Pub/Sub logging object for a particular service and version.
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 ## `updateLogGcpPubsub`
 
 ```javascript
-updateLogGcpPubsub({ service_id, version_id, logging_google_pubsub_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [secret_key, ], [user, ], [project_id, ], [topic] })
+updateLogGcpPubsub({ service_id, version_id, logging_google_pubsub_name, [format, ][format_version, ][name, ][placement, ][response_condition, ][secret_key, ][user, ][project_id, ][topic] })
 ```
 
 Update a Pub/Sub logging object for a particular service and version.

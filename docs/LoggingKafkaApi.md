@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogKafka`
 
 ```javascript
-createLogKafka({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [tls_ca_cert, ], [tls_client_cert, ], [tls_client_key, ], [tls_hostname, ], [auth_method, ], [brokers, ], [compression_codec, ], [parse_log_keyvals, ], [password, ], [request_max_bytes, ], [required_acks, ], [topic, ], [use_tls, ], [user] })
+createLogKafka({ service_id, version_id, [format, ][format_version, ][name, ][placement, ][response_condition, ][tls_ca_cert, ][tls_client_cert, ][tls_client_key, ][tls_hostname, ][auth_method, ][brokers, ][compression_codec, ][parse_log_keyvals, ][password, ][request_max_bytes, ][required_acks, ][topic, ][use_tls, ][user] })
 ```
 
 Create a Kafka logging endpoint for a particular service and version.

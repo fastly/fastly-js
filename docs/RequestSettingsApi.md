@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 ## `updateRequestSettings`
 
 ```javascript
-updateRequestSettings({ service_id, version_id, request_settings_name, [action, ], [bypass_busy_wait, ], [default_host, ], [force_miss, ], [force_ssl, ], [geo_headers, ], [hash_keys, ], [max_stale_age, ], [name, ], [request_condition, ], [timer_support, ], [xff] })
+updateRequestSettings({ service_id, version_id, request_settings_name, [action, ][bypass_busy_wait, ][default_host, ][force_miss, ][force_ssl, ][geo_headers, ][hash_keys, ][max_stale_age, ][name, ][request_condition, ][timer_support, ][xff] })
 ```
 
 Updates the specified Request Settings object.

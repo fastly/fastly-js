@@ -1,4 +1,4 @@
-# Fastly.SchemasSnippetResponseAllOf
+# Fastly.SnippetResponseAllOf
 
 ## Properties
 

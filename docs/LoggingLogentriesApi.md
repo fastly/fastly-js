@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogLogentries`
 
 ```javascript
-createLogLogentries({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [port, ], [region, ], [token, ], [use_tls] })
+createLogLogentries({ service_id, version_id, [format, ][format_version, ][name, ][placement, ][response_condition, ][port, ][region, ][token, ][use_tls] })
 ```
 
 Create a Logentry for a particular service and version.
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 ## `updateLogLogentries`
 
 ```javascript
-updateLogLogentries({ service_id, version_id, logging_logentries_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [port, ], [region, ], [token, ], [use_tls] })
+updateLogLogentries({ service_id, version_id, logging_logentries_name, [format, ][format_version, ][name, ][placement, ][response_condition, ][port, ][region, ][token, ][use_tls] })
 ```
 
 Update the Logentry for a particular service and version.

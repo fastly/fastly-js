@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 ## `listEvents`
 
 ```javascript
-listEvents({ , [filter_event_type, ], [filter_customer_id, ], [filter_service_id, ], [filter_user_id, ], [page_number, ], [page_size, ], [sort] })
+listEvents({ , [filter_event_type, ][filter_customer_id, ][filter_service_id, ][filter_user_id, ][page_number, ][page_size, ][sort] })
 ```
 
 List all events for a particular customer. Events can be filtered by user, customer and event type. Events can be sorted by date.

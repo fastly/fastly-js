@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogBigquery`
 
 ```javascript
-createLogBigquery({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [secret_key, ], [user, ], [dataset, ], [project_id, ], [table, ], [template_suffix] })
+createLogBigquery({ service_id, version_id, [format, ][format_version, ][name, ][placement, ][response_condition, ][secret_key, ][user, ][dataset, ][project_id, ][table, ][template_suffix] })
 ```
 
 Create a BigQuery logging object for a particular service and version.
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 ## `updateLogBigquery`
 
 ```javascript
-updateLogBigquery({ service_id, version_id, logging_bigquery_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [secret_key, ], [user, ], [dataset, ], [project_id, ], [table, ], [template_suffix] })
+updateLogBigquery({ service_id, version_id, logging_bigquery_name, [format, ][format_version, ][name, ][placement, ][response_condition, ][secret_key, ][user, ][dataset, ][project_id, ][table, ][template_suffix] })
 ```
 
 Update a BigQuery logging object for a particular service and version.

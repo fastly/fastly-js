@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 ## `createDomain`
 
 ```javascript
-createDomain({ service_id, version_id, [comment, ], [name] })
+createDomain({ service_id, version_id, [comment, ][name] })
 ```
 
 Create a domain for a particular service and version.
@@ -253,7 +253,7 @@ Name | Type | Description  | Notes
 ## `updateDomain`
 
 ```javascript
-updateDomain({ service_id, version_id, domain_name, [comment, ], [name] })
+updateDomain({ service_id, version_id, domain_name, [comment, ][name] })
 ```
 
 Update the domain for a particular service and version.

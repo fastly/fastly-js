@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogAwsS3`
 
 ```javascript
-createLogAwsS3({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [access_key, ], [acl, ], [bucket_name, ], [domain, ], [iam_role, ], [path, ], [public_key, ], [redundancy, ], [secret_key, ], [server_side_encryption, ], [server_side_encryption_kms_key_id] })
+createLogAwsS3({ service_id, version_id, [format, ][format_version, ][name, ][placement, ][response_condition, ][compression_codec, ][gzip_level, ][message_type, ][period, ][timestamp_format, ][access_key, ][acl, ][bucket_name, ][domain, ][iam_role, ][path, ][public_key, ][redundancy, ][secret_key, ][server_side_encryption, ][server_side_encryption_kms_key_id] })
 ```
 
 Create a S3 for a particular service and version.
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 ## `updateLogAwsS3`
 
 ```javascript
-updateLogAwsS3({ service_id, version_id, logging_s3_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [access_key, ], [acl, ], [bucket_name, ], [domain, ], [iam_role, ], [path, ], [public_key, ], [redundancy, ], [secret_key, ], [server_side_encryption, ], [server_side_encryption_kms_key_id] })
+updateLogAwsS3({ service_id, version_id, logging_s3_name, [format, ][format_version, ][name, ][placement, ][response_condition, ][compression_codec, ][gzip_level, ][message_type, ][period, ][timestamp_format, ][access_key, ][acl, ][bucket_name, ][domain, ][iam_role, ][path, ][public_key, ][redundancy, ][secret_key, ][server_side_encryption, ][server_side_encryption_kms_key_id] })
 ```
 
 Update the S3 for a particular service and version.
