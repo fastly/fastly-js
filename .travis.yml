@@ -1,0 +1,10 @@
+dist: bionic
+language: node_js
+node_js:
+  - lts/*
+cache:
+  yarn: true # Yarn cache
+install: 
+  - yarn install
+before_deploy:
+  - yarn build 

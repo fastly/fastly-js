@@ -1,0 +1,91 @@
+# Fastly.SettingsApi
+
+
+```javascript
+const apiInstance = new Fastly.SettingsApi();
+```
+## Methods
+
+Method | Fastly API endpoint | Description
+------------- | ------------- | -------------
+[**getServiceSettings**](SettingsApi.md#getServiceSettings) | **GET** /service/{service_id}/version/{version_id}/settings | Get service settings
+[**updateServiceSettings**](SettingsApi.md#updateServiceSettings) | **PUT** /service/{service_id}/version/{version_id}/settings | Update service settings
+
+
+
+## `getServiceSettings`
+
+```javascript
+getServiceSettings({ service_id, version_id })
+```
+
+Get the settings for a particular service and version.
+
+### Example
+
+```javascript
+const options = {
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
+
+apiInstance.getServiceSettings(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+
+### Return type
+
+[**SettingsResponse**](SettingsResponse.md)
+
+
+## `updateServiceSettings`
+
+```javascript
+updateServiceSettings({ service_id, version_id })
+```
+
+Update the settings for a particular service and version. NOTE: If you override TTLs with custom VCL, any general.default_ttl value will not be honored and the expected behavior may change. 
+
+### Example
+
+```javascript
+const options = {
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
+
+apiInstance.updateServiceSettings(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**service_id** | **String** |  |
+**version_id** | **Number** |  |
+
+### Return type
+
+[**SettingsResponse**](SettingsResponse.md)
+
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to README]](../../README.md)

@@ -1,0 +1,153 @@
+# Fastly.StarApi
+
+
+```javascript
+const apiInstance = new Fastly.StarApi();
+```
+## Methods
+
+Method | Fastly API endpoint | Description
+------------- | ------------- | -------------
+[**createServiceStar**](StarApi.md#createServiceStar) | **POST** /stars | Create a star
+[**deleteServiceStar**](StarApi.md#deleteServiceStar) | **DELETE** /stars/{star_id} | Delete a star
+[**getServiceStar**](StarApi.md#getServiceStar) | **GET** /stars/{star_id} | Get a star
+[**listServiceStars**](StarApi.md#listServiceStars) | **GET** /stars | List stars
+
+
+
+## `createServiceStar`
+
+```javascript
+createServiceStar({ [star] })
+```
+
+Create star.
+
+### Example
+
+```javascript
+const options = {
+  star: new Fastly.Star(),
+};
+
+apiInstance.createServiceStar(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**star** | [**Star**](../Model/Star.md) |  | [optional]
+
+### Return type
+
+[**StarResponse**](StarResponse.md)
+
+
+## `deleteServiceStar`
+
+```javascript
+deleteServiceStar({ star_id })
+```
+
+Delete star.
+
+### Example
+
+```javascript
+const options = {
+  star_id: "star_id_example", // required
+};
+
+apiInstance.deleteServiceStar(options)
+  .then(() => {
+    console.log('API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**star_id** | **String** |  |
+
+### Return type
+
+null (empty response body)
+
+
+## `getServiceStar`
+
+```javascript
+getServiceStar({ star_id })
+```
+
+Show star.
+
+### Example
+
+```javascript
+const options = {
+  star_id: "star_id_example", // required
+};
+
+apiInstance.getServiceStar(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**star_id** | **String** |  |
+
+### Return type
+
+[**StarResponse**](StarResponse.md)
+
+
+## `listServiceStars`
+
+```javascript
+listServiceStars()
+```
+
+List stars.
+
+### Example
+
+```javascript
+apiInstance.listServiceStars()
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**Pagination**](Pagination.md)
+
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to README]](../../README.md)
