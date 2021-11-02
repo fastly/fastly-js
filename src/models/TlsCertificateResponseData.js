@@ -56,14 +56,14 @@ class TlsCertificateResponseData {
             TlsCertificateData.constructFromObject(data, obj);
             TlsCertificateResponseDataAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeTlsCertificate.constructFromObject(data['type']);
+            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = RelationshipTlsDomains.constructFromObject(data['relationships']);
-            }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeTlsCertificate.constructFromObject(data['type']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -76,6 +76,11 @@ class TlsCertificateResponseData {
 }
 
 /**
+ * @member {module:models/TypeTlsCertificate} type
+ */
+TlsCertificateResponseData.prototype['type'] = undefined;
+
+/**
  * @member {module:models/Timestamps} attributes
  */
 TlsCertificateResponseData.prototype['attributes'] = undefined;
@@ -86,11 +91,6 @@ TlsCertificateResponseData.prototype['attributes'] = undefined;
 TlsCertificateResponseData.prototype['relationships'] = undefined;
 
 /**
- * @member {module:models/TypeTlsCertificate} type
- */
-TlsCertificateResponseData.prototype['type'] = undefined;
-
-/**
  * Alphanumeric string identifying a TLS certificate.
  * @member {String} id
  */
@@ -99,6 +99,10 @@ TlsCertificateResponseData.prototype['id'] = undefined;
 
 // Implement TlsCertificateData interface:
 /**
+ * @member {module:models/TypeTlsCertificate} type
+ */
+TlsCertificateData.prototype['type'] = undefined;
+/**
  * @member {module:models/TlsCertificateDataAttributes} attributes
  */
 TlsCertificateData.prototype['attributes'] = undefined;
@@ -106,20 +110,16 @@ TlsCertificateData.prototype['attributes'] = undefined;
  * @member {module:models/RelationshipTlsDomains} relationships
  */
 TlsCertificateData.prototype['relationships'] = undefined;
-/**
- * @member {module:models/TypeTlsCertificate} type
- */
-TlsCertificateData.prototype['type'] = undefined;
 // Implement TlsCertificateResponseDataAllOf interface:
-/**
- * @member {module:models/Timestamps} attributes
- */
-TlsCertificateResponseDataAllOf.prototype['attributes'] = undefined;
 /**
  * Alphanumeric string identifying a TLS certificate.
  * @member {String} id
  */
 TlsCertificateResponseDataAllOf.prototype['id'] = undefined;
+/**
+ * @member {module:models/Timestamps} attributes
+ */
+TlsCertificateResponseDataAllOf.prototype['attributes'] = undefined;
 
 
 

@@ -22,7 +22,7 @@ Method | Fastly API endpoint | Description
 ## `createService`
 
 ```javascript
-createService({ , [comment, ][customer_id, ][name, ][type] })
+createService({ , [comment, ][name, ][customer_id, ][type] })
 ```
 
 Create a service.
@@ -32,8 +32,8 @@ Create a service.
 ```javascript
 const options = {
   comment: "comment_example",
-  customer_id: "customer_id_example",
   name: "name_example",
+  customer_id: "customer_id_example",
   type: ,
 };
 
@@ -51,8 +51,8 @@ apiInstance.createService(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **comment** | **String** | A freeform descriptive note. | [optional]
-**customer_id** | **String** | Alphanumeric string identifying the customer. | [optional]
 **name** | **String** | The name of the service. | [optional]
+**customer_id** | **String** | Alphanumeric string identifying the customer. | [optional]
 **type** | **String** | The type of this service. | [optional]
 
 ### Return type
@@ -212,7 +212,7 @@ List services.
 
 ```javascript
 const options = {
-  page: 1,
+  page: 56,
   per_page: 20,
   sort: 'created',
   direction: 'ascend',
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 ## `updateService`
 
 ```javascript
-updateService({ service_id, [comment, ][customer_id, ][name] })
+updateService({ service_id, [comment, ][name, ][customer_id] })
 ```
 
 Update a service.
@@ -290,8 +290,8 @@ Update a service.
 const options = {
   service_id: "service_id_example", // required
   comment: "comment_example",
-  customer_id: "customer_id_example",
   name: "name_example",
+  customer_id: "customer_id_example",
 };
 
 apiInstance.updateService(options)
@@ -309,8 +309,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **comment** | **String** | A freeform descriptive note. | [optional]
-**customer_id** | **String** | Alphanumeric string identifying the customer. | [optional]
 **name** | **String** | The name of the service. | [optional]
+**customer_id** | **String** | Alphanumeric string identifying the customer. | [optional]
 
 ### Return type
 

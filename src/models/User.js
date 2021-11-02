@@ -48,17 +48,17 @@ class User {
         if (data) {
             obj = obj || new User();
 
-            if (data.hasOwnProperty('limit_services')) {
-                obj['limit_services'] = ApiClient.convertToType(data['limit_services'], 'Boolean');
-            }
-            if (data.hasOwnProperty('locked')) {
-                obj['locked'] = ApiClient.convertToType(data['locked'], 'Boolean');
-            }
             if (data.hasOwnProperty('login')) {
                 obj['login'] = ApiClient.convertToType(data['login'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('limit_services')) {
+                obj['limit_services'] = ApiClient.convertToType(data['limit_services'], 'Boolean');
+            }
+            if (data.hasOwnProperty('locked')) {
+                obj['locked'] = ApiClient.convertToType(data['locked'], 'Boolean');
             }
             if (data.hasOwnProperty('require_new_password')) {
                 obj['require_new_password'] = ApiClient.convertToType(data['require_new_password'], 'Boolean');
@@ -80,18 +80,6 @@ class User {
 }
 
 /**
- * Indicates that the user has limited access to the customer's services.
- * @member {Boolean} limit_services
- */
-User.prototype['limit_services'] = undefined;
-
-/**
- * Indicates whether the is account is locked for editing or not.
- * @member {Boolean} locked
- */
-User.prototype['locked'] = undefined;
-
-/**
  * The login associated with the user (typically, an email address).
  * @member {String} login
  */
@@ -102,6 +90,18 @@ User.prototype['login'] = undefined;
  * @member {String} name
  */
 User.prototype['name'] = undefined;
+
+/**
+ * Indicates that the user has limited access to the customer's services.
+ * @member {Boolean} limit_services
+ */
+User.prototype['limit_services'] = undefined;
+
+/**
+ * Indicates whether the is account is locked for editing or not.
+ * @member {Boolean} locked
+ */
+User.prototype['locked'] = undefined;
 
 /**
  * Indicates if a new password is required at next login.

@@ -56,17 +56,17 @@ class TlsActivationResponseData {
             TlsActivationData.constructFromObject(data, obj);
             TlsActivationResponseDataAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = RelationshipsForTlsActivation.constructFromObject(data['relationships']);
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeTlsActivation.constructFromObject(data['type']);
             }
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = Timestamps.constructFromObject(data['attributes']);
+            if (data.hasOwnProperty('relationships')) {
+                obj['relationships'] = RelationshipsForTlsActivation.constructFromObject(data['relationships']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = Timestamps.constructFromObject(data['attributes']);
             }
         }
         return obj;
@@ -76,19 +76,14 @@ class TlsActivationResponseData {
 }
 
 /**
- * @member {module:models/RelationshipsForTlsActivation} relationships
- */
-TlsActivationResponseData.prototype['relationships'] = undefined;
-
-/**
  * @member {module:models/TypeTlsActivation} type
  */
 TlsActivationResponseData.prototype['type'] = undefined;
 
 /**
- * @member {module:models/Timestamps} attributes
+ * @member {module:models/RelationshipsForTlsActivation} relationships
  */
-TlsActivationResponseData.prototype['attributes'] = undefined;
+TlsActivationResponseData.prototype['relationships'] = undefined;
 
 /**
  * Alphanumeric string identifying a TLS activation.
@@ -96,26 +91,31 @@ TlsActivationResponseData.prototype['attributes'] = undefined;
  */
 TlsActivationResponseData.prototype['id'] = undefined;
 
+/**
+ * @member {module:models/Timestamps} attributes
+ */
+TlsActivationResponseData.prototype['attributes'] = undefined;
+
 
 // Implement TlsActivationData interface:
-/**
- * @member {module:models/RelationshipsForTlsActivation} relationships
- */
-TlsActivationData.prototype['relationships'] = undefined;
 /**
  * @member {module:models/TypeTlsActivation} type
  */
 TlsActivationData.prototype['type'] = undefined;
-// Implement TlsActivationResponseDataAllOf interface:
 /**
- * @member {module:models/Timestamps} attributes
+ * @member {module:models/RelationshipsForTlsActivation} relationships
  */
-TlsActivationResponseDataAllOf.prototype['attributes'] = undefined;
+TlsActivationData.prototype['relationships'] = undefined;
+// Implement TlsActivationResponseDataAllOf interface:
 /**
  * Alphanumeric string identifying a TLS activation.
  * @member {String} id
  */
 TlsActivationResponseDataAllOf.prototype['id'] = undefined;
+/**
+ * @member {module:models/Timestamps} attributes
+ */
+TlsActivationResponseDataAllOf.prototype['attributes'] = undefined;
 
 
 

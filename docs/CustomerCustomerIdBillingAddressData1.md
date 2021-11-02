@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**BillingAddress**](BillingAddress.md) |  | [optional] 
-**id** | **String** | Alphanumeric string identifying the billing address. | [optional] [readonly] 
 **type** | [**TypeBillingAddress**](TypeBillingAddress.md) |  | [optional] 
+**id** | **String** | Alphanumeric string identifying the billing address. | [optional] [readonly] 
+**attributes** | [**BillingAddress**](BillingAddress.md) |  | [optional] 
 
 
 

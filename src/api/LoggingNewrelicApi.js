@@ -13,7 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
+import LoggingFormatVersion from '../models/LoggingFormatVersion';
 import LoggingNewrelicResponse from '../models/LoggingNewrelicResponse';
+import LoggingPlacement from '../models/LoggingPlacement';
 
 /**
 * LoggingNewrelic service.
@@ -43,13 +45,13 @@ export default class LoggingNewrelicApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest.
-     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:models/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:models/String} [options.region='US'] - The region to which to stream logs.
+     * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest.
      * @param {String} [options.token] - The Insert API key from the Account page of your New Relic account. Required.
+     * @param {module:models/String} [options.region='US'] - The region to which to stream logs.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingNewrelicResponse} and HTTP response
      */
     createLogNewrelicWithHttpInfo(options = {}) {
@@ -72,13 +74,13 @@ export default class LoggingNewrelicApi {
       let headerParams = {
       };
       let formParams = {
-        'format': options['format'],
-        'format_version': options['format_version'],
         'name': options['name'],
         'placement': options['placement'],
+        'format_version': options['format_version'],
         'response_condition': options['response_condition'],
-        'region': options['region'],
-        'token': options['token']
+        'format': options['format'],
+        'token': options['token'],
+        'region': options['region']
       };
 
       let authNames = ['token'];
@@ -97,13 +99,13 @@ export default class LoggingNewrelicApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest.
-     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:models/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:models/String} [options.region='US'] - The region to which to stream logs.
+     * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest.
      * @param {String} [options.token] - The Insert API key from the Account page of your New Relic account. Required.
+     * @param {module:models/String} [options.region='US'] - The region to which to stream logs.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingNewrelicResponse}
      */
     createLogNewrelic(options = {}) {
@@ -295,13 +297,13 @@ export default class LoggingNewrelicApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_newrelic_name
-     * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest.
-     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:models/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:models/String} [options.region='US'] - The region to which to stream logs.
+     * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest.
      * @param {String} [options.token] - The Insert API key from the Account page of your New Relic account. Required.
+     * @param {module:models/String} [options.region='US'] - The region to which to stream logs.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingNewrelicResponse} and HTTP response
      */
     updateLogNewrelicWithHttpInfo(options = {}) {
@@ -329,13 +331,13 @@ export default class LoggingNewrelicApi {
       let headerParams = {
       };
       let formParams = {
-        'format': options['format'],
-        'format_version': options['format_version'],
         'name': options['name'],
         'placement': options['placement'],
+        'format_version': options['format_version'],
         'response_condition': options['response_condition'],
-        'region': options['region'],
-        'token': options['token']
+        'format': options['format'],
+        'token': options['token'],
+        'region': options['region']
       };
 
       let authNames = ['token'];
@@ -355,13 +357,13 @@ export default class LoggingNewrelicApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_newrelic_name
-     * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest.
-     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:models/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:models/String} [options.region='US'] - The region to which to stream logs.
+     * @param {Object} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest.
      * @param {String} [options.token] - The Insert API key from the Account page of your New Relic account. Required.
+     * @param {module:models/String} [options.region='US'] - The region to which to stream logs.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingNewrelicResponse}
      */
     updateLogNewrelic(options = {}) {

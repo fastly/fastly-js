@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createLogKinesis`
 
 ```javascript
-createLogKinesis({ service_id, version_id, [access_key, ][format, ][format_version, ][iam_role, ][name, ][placement, ][region, ][secret_key, ][topic] })
+createLogKinesis({ service_id, version_id, [name, ][placement, ][format_version, ][format, ][topic, ][region, ][secret_key, ][access_key, ][iam_role] })
 ```
 
 Create an Amazon Kinesis Data Streams logging object for a particular service and version.
@@ -30,15 +30,15 @@ Create an Amazon Kinesis Data Streams logging object for a particular service an
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  access_key: "access_key_example",
-  format: null,
-  format_version: new Fastly.LoggingFormatVersion(),
-  iam_role: "iam_role_example",
   name: "name_example",
   placement: new Fastly.LoggingPlacement(),
+  format_version: new Fastly.LoggingFormatVersion(),
+  format: null,
+  topic: "topic_example",
   region: ,
   secret_key: "secret_key_example",
-  topic: "topic_example",
+  access_key: "access_key_example",
+  iam_role: "iam_role_example",
 };
 
 apiInstance.createLogKinesis(options)
@@ -56,15 +56,15 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
-**access_key** | **String** | The access key associated with the target Amazon Kinesis stream. Not required if &#x60;iam_role&#x60; is specified. | [optional]
-**format** | [**String**](../Model/String.md) |  | [optional]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
-**iam_role** | **String** | The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if &#x60;access_key&#x60; and &#x60;secret_key&#x60; are provided. | [optional]
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
+**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**format** | [**String**](../Model/String.md) |  | [optional]
+**topic** | **String** | The Amazon Kinesis stream to send logs to. Required. | [optional]
 **region** | **String** | The [AWS region](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints) to stream logs to. | [optional]
 **secret_key** | **String** | The secret key associated with the target Amazon Kinesis stream. Not required if &#x60;iam_role&#x60; is specified. | [optional]
-**topic** | **String** | The Amazon Kinesis stream to send logs to. Required. | [optional]
+**access_key** | **String** | The access key associated with the target Amazon Kinesis stream. Not required if &#x60;iam_role&#x60; is specified. | [optional]
+**iam_role** | **String** | The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if &#x60;access_key&#x60; and &#x60;secret_key&#x60; are provided. | [optional]
 
 ### Return type
 

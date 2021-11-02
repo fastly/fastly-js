@@ -54,14 +54,14 @@ class HistoricalRegionsResponse {
             Historical.constructFromObject(data, obj);
             HistoricalRegionsResponseAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            }
             if (data.hasOwnProperty('meta')) {
                 obj['meta'] = HistoricalMeta.constructFromObject(data['meta']);
             }
             if (data.hasOwnProperty('msg')) {
                 obj['msg'] = ApiClient.convertToType(data['msg'], 'String');
-            }
-            if (data.hasOwnProperty('status')) {
-                obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], ['String']);
@@ -72,6 +72,12 @@ class HistoricalRegionsResponse {
 
 
 }
+
+/**
+ * Whether or not we were able to successfully execute the query.
+ * @member {String} status
+ */
+HistoricalRegionsResponse.prototype['status'] = undefined;
 
 /**
  * @member {module:models/HistoricalMeta} meta
@@ -85,18 +91,17 @@ HistoricalRegionsResponse.prototype['meta'] = undefined;
 HistoricalRegionsResponse.prototype['msg'] = undefined;
 
 /**
- * Whether or not we were able to successfully execute the query.
- * @member {String} status
- */
-HistoricalRegionsResponse.prototype['status'] = undefined;
-
-/**
  * @member {Array.<String>} data
  */
 HistoricalRegionsResponse.prototype['data'] = undefined;
 
 
 // Implement Historical interface:
+/**
+ * Whether or not we were able to successfully execute the query.
+ * @member {String} status
+ */
+Historical.prototype['status'] = undefined;
 /**
  * @member {module:models/HistoricalMeta} meta
  */
@@ -106,11 +111,6 @@ Historical.prototype['meta'] = undefined;
  * @member {String} msg
  */
 Historical.prototype['msg'] = undefined;
-/**
- * Whether or not we were able to successfully execute the query.
- * @member {String} status
- */
-Historical.prototype['status'] = undefined;
 // Implement HistoricalRegionsResponseAllOf interface:
 /**
  * @member {Array.<String>} data

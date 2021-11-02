@@ -48,11 +48,11 @@ class RelationshipMemberTlsSubscription {
         if (data) {
             obj = obj || new RelationshipMemberTlsSubscription();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeTlsSubscription.constructFromObject(data['type']);
+            }
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
         }
         return obj;
@@ -62,15 +62,15 @@ class RelationshipMemberTlsSubscription {
 }
 
 /**
+ * @member {module:models/TypeTlsSubscription} type
+ */
+RelationshipMemberTlsSubscription.prototype['type'] = undefined;
+
+/**
  * Alphanumeric string identifying a TLS subscription.
  * @member {String} id
  */
 RelationshipMemberTlsSubscription.prototype['id'] = undefined;
-
-/**
- * @member {module:models/TypeTlsSubscription} type
- */
-RelationshipMemberTlsSubscription.prototype['type'] = undefined;
 
 
 

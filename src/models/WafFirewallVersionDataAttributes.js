@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The SchemasWafFirewallVersionDataAttributes model module.
- * @module models/SchemasWafFirewallVersionDataAttributes
+ * The WafFirewallVersionDataAttributes model module.
+ * @module models/WafFirewallVersionDataAttributes
  * @version 3.0.0-alpha1
  */
-class SchemasWafFirewallVersionDataAttributes {
+class WafFirewallVersionDataAttributes {
     /**
-     * Constructs a new <code>SchemasWafFirewallVersionDataAttributes</code>.
-     * @alias module:models/SchemasWafFirewallVersionDataAttributes
+     * Constructs a new <code>WafFirewallVersionDataAttributes</code>.
+     * @alias module:models/WafFirewallVersionDataAttributes
      */
     constructor() { 
         
-        SchemasWafFirewallVersionDataAttributes.initialize(this);
+        WafFirewallVersionDataAttributes.initialize(this);
     }
 
     /**
@@ -37,15 +37,15 @@ class SchemasWafFirewallVersionDataAttributes {
     }
 
     /**
-     * Constructs a <code>SchemasWafFirewallVersionDataAttributes</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>WafFirewallVersionDataAttributes</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:models/SchemasWafFirewallVersionDataAttributes} obj Optional instance to populate.
-     * @return {module:models/SchemasWafFirewallVersionDataAttributes} The populated <code>SchemasWafFirewallVersionDataAttributes</code> instance.
+     * @param {module:models/WafFirewallVersionDataAttributes} obj Optional instance to populate.
+     * @return {module:models/WafFirewallVersionDataAttributes} The populated <code>WafFirewallVersionDataAttributes</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new SchemasWafFirewallVersionDataAttributes();
+            obj = obj || new WafFirewallVersionDataAttributes();
 
             if (data.hasOwnProperty('allowed_http_versions')) {
                 obj['allowed_http_versions'] = ApiClient.convertToType(data['allowed_http_versions'], 'String');
@@ -59,11 +59,11 @@ class SchemasWafFirewallVersionDataAttributes {
             if (data.hasOwnProperty('allowed_request_content_type_charset')) {
                 obj['allowed_request_content_type_charset'] = ApiClient.convertToType(data['allowed_request_content_type_charset'], 'String');
             }
-            if (data.hasOwnProperty('arg_length')) {
-                obj['arg_length'] = ApiClient.convertToType(data['arg_length'], 'Number');
-            }
             if (data.hasOwnProperty('arg_name_length')) {
                 obj['arg_name_length'] = ApiClient.convertToType(data['arg_name_length'], 'Number');
+            }
+            if (data.hasOwnProperty('arg_length')) {
+                obj['arg_length'] = ApiClient.convertToType(data['arg_length'], 'Number');
             }
             if (data.hasOwnProperty('combined_file_sizes')) {
                 obj['combined_file_sizes'] = ApiClient.convertToType(data['combined_file_sizes'], 'Number');
@@ -152,208 +152,208 @@ class SchemasWafFirewallVersionDataAttributes {
  * @member {String} allowed_http_versions
  * @default 'HTTP/1.0 HTTP/1.1 HTTP/2'
  */
-SchemasWafFirewallVersionDataAttributes.prototype['allowed_http_versions'] = 'HTTP/1.0 HTTP/1.1 HTTP/2';
+WafFirewallVersionDataAttributes.prototype['allowed_http_versions'] = 'HTTP/1.0 HTTP/1.1 HTTP/2';
 
 /**
  * A space-separated list of HTTP method names.
  * @member {String} allowed_methods
  * @default 'GET HEAD POST OPTIONS PUT PATCH DELETE'
  */
-SchemasWafFirewallVersionDataAttributes.prototype['allowed_methods'] = 'GET HEAD POST OPTIONS PUT PATCH DELETE';
+WafFirewallVersionDataAttributes.prototype['allowed_methods'] = 'GET HEAD POST OPTIONS PUT PATCH DELETE';
 
 /**
  * Allowed request content types.
  * @member {String} allowed_request_content_type
  * @default 'application/x-www-form-urlencoded|multipart/form-data|text/xml|application/xml|application/x-amf|application/json|text/plain'
  */
-SchemasWafFirewallVersionDataAttributes.prototype['allowed_request_content_type'] = 'application/x-www-form-urlencoded|multipart/form-data|text/xml|application/xml|application/x-amf|application/json|text/plain';
+WafFirewallVersionDataAttributes.prototype['allowed_request_content_type'] = 'application/x-www-form-urlencoded|multipart/form-data|text/xml|application/xml|application/x-amf|application/json|text/plain';
 
 /**
  * Allowed request content type charset.
  * @member {String} allowed_request_content_type_charset
  * @default 'utf-8|iso-8859-1|iso-8859-15|windows-1252'
  */
-SchemasWafFirewallVersionDataAttributes.prototype['allowed_request_content_type_charset'] = 'utf-8|iso-8859-1|iso-8859-15|windows-1252';
-
-/**
- * The maximum number of arguments allowed.
- * @member {Number} arg_length
- * @default 400
- */
-SchemasWafFirewallVersionDataAttributes.prototype['arg_length'] = 400;
+WafFirewallVersionDataAttributes.prototype['allowed_request_content_type_charset'] = 'utf-8|iso-8859-1|iso-8859-15|windows-1252';
 
 /**
  * The maximum allowed argument name length.
  * @member {Number} arg_name_length
  * @default 100
  */
-SchemasWafFirewallVersionDataAttributes.prototype['arg_name_length'] = 100;
+WafFirewallVersionDataAttributes.prototype['arg_name_length'] = 100;
+
+/**
+ * The maximum number of arguments allowed.
+ * @member {Number} arg_length
+ * @default 400
+ */
+WafFirewallVersionDataAttributes.prototype['arg_length'] = 400;
 
 /**
  * The maximum allowed size of all files (in bytes).
  * @member {Number} combined_file_sizes
  * @default 10000000
  */
-SchemasWafFirewallVersionDataAttributes.prototype['combined_file_sizes'] = 10000000;
+WafFirewallVersionDataAttributes.prototype['combined_file_sizes'] = 10000000;
 
 /**
  * A freeform descriptive note.
  * @member {String} comment
  */
-SchemasWafFirewallVersionDataAttributes.prototype['comment'] = undefined;
+WafFirewallVersionDataAttributes.prototype['comment'] = undefined;
 
 /**
  * Score value to add for critical anomalies.
  * @member {Number} critical_anomaly_score
  * @default 6
  */
-SchemasWafFirewallVersionDataAttributes.prototype['critical_anomaly_score'] = 6;
+WafFirewallVersionDataAttributes.prototype['critical_anomaly_score'] = 6;
 
 /**
  * CRS validate UTF8 encoding.
  * @member {Boolean} crs_validate_utf8_encoding
  */
-SchemasWafFirewallVersionDataAttributes.prototype['crs_validate_utf8_encoding'] = undefined;
+WafFirewallVersionDataAttributes.prototype['crs_validate_utf8_encoding'] = undefined;
 
 /**
  * Score value to add for error anomalies.
  * @member {Number} error_anomaly_score
  * @default 5
  */
-SchemasWafFirewallVersionDataAttributes.prototype['error_anomaly_score'] = 5;
+WafFirewallVersionDataAttributes.prototype['error_anomaly_score'] = 5;
 
 /**
  * A space-separated list of country codes in ISO 3166-1 (two-letter) format.
  * @member {String} high_risk_country_codes
  */
-SchemasWafFirewallVersionDataAttributes.prototype['high_risk_country_codes'] = undefined;
+WafFirewallVersionDataAttributes.prototype['high_risk_country_codes'] = undefined;
 
 /**
  * HTTP violation threshold.
  * @member {Number} http_violation_score_threshold
  */
-SchemasWafFirewallVersionDataAttributes.prototype['http_violation_score_threshold'] = undefined;
+WafFirewallVersionDataAttributes.prototype['http_violation_score_threshold'] = undefined;
 
 /**
  * Inbound anomaly threshold.
  * @member {Number} inbound_anomaly_score_threshold
  */
-SchemasWafFirewallVersionDataAttributes.prototype['inbound_anomaly_score_threshold'] = undefined;
+WafFirewallVersionDataAttributes.prototype['inbound_anomaly_score_threshold'] = undefined;
 
 /**
  * Local file inclusion attack threshold.
  * @member {Number} lfi_score_threshold
  */
-SchemasWafFirewallVersionDataAttributes.prototype['lfi_score_threshold'] = undefined;
+WafFirewallVersionDataAttributes.prototype['lfi_score_threshold'] = undefined;
 
 /**
  * Whether a specific firewall version is locked from being modified.
  * @member {Boolean} locked
  * @default false
  */
-SchemasWafFirewallVersionDataAttributes.prototype['locked'] = false;
+WafFirewallVersionDataAttributes.prototype['locked'] = false;
 
 /**
  * The maximum allowed file size, in bytes.
  * @member {Number} max_file_size
  * @default 10000000
  */
-SchemasWafFirewallVersionDataAttributes.prototype['max_file_size'] = 10000000;
+WafFirewallVersionDataAttributes.prototype['max_file_size'] = 10000000;
 
 /**
  * The maximum number of arguments allowed.
  * @member {Number} max_num_args
  * @default 255
  */
-SchemasWafFirewallVersionDataAttributes.prototype['max_num_args'] = 255;
+WafFirewallVersionDataAttributes.prototype['max_num_args'] = 255;
 
 /**
  * Score value to add for notice anomalies.
  * @member {Number} notice_anomaly_score
  * @default 4
  */
-SchemasWafFirewallVersionDataAttributes.prototype['notice_anomaly_score'] = 4;
+WafFirewallVersionDataAttributes.prototype['notice_anomaly_score'] = 4;
 
 /**
  * Integer identifying a WAF firewall version.
  * @member {Number} number
  */
-SchemasWafFirewallVersionDataAttributes.prototype['number'] = undefined;
+WafFirewallVersionDataAttributes.prototype['number'] = undefined;
 
 /**
  * The configured paranoia level.
  * @member {Number} paranoia_level
  * @default 1
  */
-SchemasWafFirewallVersionDataAttributes.prototype['paranoia_level'] = 1;
+WafFirewallVersionDataAttributes.prototype['paranoia_level'] = 1;
 
 /**
  * PHP injection threshold.
  * @member {Number} php_injection_score_threshold
  */
-SchemasWafFirewallVersionDataAttributes.prototype['php_injection_score_threshold'] = undefined;
+WafFirewallVersionDataAttributes.prototype['php_injection_score_threshold'] = undefined;
 
 /**
  * Remote code execution threshold.
  * @member {Number} rce_score_threshold
  */
-SchemasWafFirewallVersionDataAttributes.prototype['rce_score_threshold'] = undefined;
+WafFirewallVersionDataAttributes.prototype['rce_score_threshold'] = undefined;
 
 /**
  * A space-separated list of allowed file extensions.
  * @member {String} restricted_extensions
  * @default '.asa/ .asax/ .ascx/ .axd/ .backup/ .bak/ .bat/ .cdx/ .cer/ .cfg/ .cmd/ .com/ .config/ .conf/ .cs/ .csproj/ .csr/ .dat/ .db/ .dbf/ .dll/ .dos/ .htr/ .htw/ .ida/ .idc/ .idq/ .inc/ .ini/ .key/ .licx/ .lnk/ .log/ .mdb/ .old/ .pass/ .pdb/ .pol/ .printer/ .pwd/ .resources/ .resx/ .sql/ .sys/ .vb/ .vbs/ .vbproj/ .vsdisco/ .webinfo/ .xsd/ .xsx'
  */
-SchemasWafFirewallVersionDataAttributes.prototype['restricted_extensions'] = '.asa/ .asax/ .ascx/ .axd/ .backup/ .bak/ .bat/ .cdx/ .cer/ .cfg/ .cmd/ .com/ .config/ .conf/ .cs/ .csproj/ .csr/ .dat/ .db/ .dbf/ .dll/ .dos/ .htr/ .htw/ .ida/ .idc/ .idq/ .inc/ .ini/ .key/ .licx/ .lnk/ .log/ .mdb/ .old/ .pass/ .pdb/ .pol/ .printer/ .pwd/ .resources/ .resx/ .sql/ .sys/ .vb/ .vbs/ .vbproj/ .vsdisco/ .webinfo/ .xsd/ .xsx';
+WafFirewallVersionDataAttributes.prototype['restricted_extensions'] = '.asa/ .asax/ .ascx/ .axd/ .backup/ .bak/ .bat/ .cdx/ .cer/ .cfg/ .cmd/ .com/ .config/ .conf/ .cs/ .csproj/ .csr/ .dat/ .db/ .dbf/ .dll/ .dos/ .htr/ .htw/ .ida/ .idc/ .idq/ .inc/ .ini/ .key/ .licx/ .lnk/ .log/ .mdb/ .old/ .pass/ .pdb/ .pol/ .printer/ .pwd/ .resources/ .resx/ .sql/ .sys/ .vb/ .vbs/ .vbproj/ .vsdisco/ .webinfo/ .xsd/ .xsx';
 
 /**
  * A space-separated list of allowed header names.
  * @member {String} restricted_headers
  * @default '/proxy/ /lock-token/ /content-range/ /translate/ /if/'
  */
-SchemasWafFirewallVersionDataAttributes.prototype['restricted_headers'] = '/proxy/ /lock-token/ /content-range/ /translate/ /if/';
+WafFirewallVersionDataAttributes.prototype['restricted_headers'] = '/proxy/ /lock-token/ /content-range/ /translate/ /if/';
 
 /**
  * Remote file inclusion attack threshold.
  * @member {Number} rfi_score_threshold
  */
-SchemasWafFirewallVersionDataAttributes.prototype['rfi_score_threshold'] = undefined;
+WafFirewallVersionDataAttributes.prototype['rfi_score_threshold'] = undefined;
 
 /**
  * Session fixation attack threshold.
  * @member {Number} session_fixation_score_threshold
  */
-SchemasWafFirewallVersionDataAttributes.prototype['session_fixation_score_threshold'] = undefined;
+WafFirewallVersionDataAttributes.prototype['session_fixation_score_threshold'] = undefined;
 
 /**
  * SQL injection attack threshold.
  * @member {Number} sql_injection_score_threshold
  */
-SchemasWafFirewallVersionDataAttributes.prototype['sql_injection_score_threshold'] = undefined;
+WafFirewallVersionDataAttributes.prototype['sql_injection_score_threshold'] = undefined;
 
 /**
  * The maximum size of argument names and values.
  * @member {Number} total_arg_length
  * @default 6400
  */
-SchemasWafFirewallVersionDataAttributes.prototype['total_arg_length'] = 6400;
+WafFirewallVersionDataAttributes.prototype['total_arg_length'] = 6400;
 
 /**
  * Score value to add for warning anomalies.
  * @member {Number} warning_anomaly_score
  */
-SchemasWafFirewallVersionDataAttributes.prototype['warning_anomaly_score'] = undefined;
+WafFirewallVersionDataAttributes.prototype['warning_anomaly_score'] = undefined;
 
 /**
  * XSS attack threshold.
  * @member {Number} xss_score_threshold
  */
-SchemasWafFirewallVersionDataAttributes.prototype['xss_score_threshold'] = undefined;
+WafFirewallVersionDataAttributes.prototype['xss_score_threshold'] = undefined;
 
 
 
 
 
 
-export default SchemasWafFirewallVersionDataAttributes;
+export default WafFirewallVersionDataAttributes;
 

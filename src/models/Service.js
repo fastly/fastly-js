@@ -50,11 +50,11 @@ class Service {
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
             }
-            if (data.hasOwnProperty('customer_id')) {
-                obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('customer_id')) {
+                obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
             }
         }
         return obj;
@@ -70,16 +70,16 @@ class Service {
 Service.prototype['comment'] = undefined;
 
 /**
- * Alphanumeric string identifying the customer.
- * @member {String} customer_id
- */
-Service.prototype['customer_id'] = undefined;
-
-/**
  * The name of the service.
  * @member {String} name
  */
 Service.prototype['name'] = undefined;
+
+/**
+ * Alphanumeric string identifying the customer.
+ * @member {String} customer_id
+ */
+Service.prototype['customer_id'] = undefined;
 
 
 

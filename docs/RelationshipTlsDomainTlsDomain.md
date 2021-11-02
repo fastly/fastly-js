@@ -1,10 +1,10 @@
-# Fastly.HistoricalUsageAggregateResponseAllOf
+# Fastly.RelationshipTlsDomainTlsDomain
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | **{String: Object}** |  | [optional] 
+**data** | [**[RelationshipMemberTlsDomain]**](RelationshipMemberTlsDomain.md) |  | [optional] 
 
 
 

@@ -49,14 +49,14 @@ class ServiceAuthorizationData {
         if (data) {
             obj = obj || new ServiceAuthorizationData();
 
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeServiceAuthorization.constructFromObject(data['type']);
+            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = ServiceAuthorizationDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = ApiClient.convertToType(data['relationships'], Object);
-            }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeServiceAuthorization.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -64,6 +64,11 @@ class ServiceAuthorizationData {
 
 
 }
+
+/**
+ * @member {module:models/TypeServiceAuthorization} type
+ */
+ServiceAuthorizationData.prototype['type'] = undefined;
 
 /**
  * @member {module:models/ServiceAuthorizationDataAttributes} attributes
@@ -74,11 +79,6 @@ ServiceAuthorizationData.prototype['attributes'] = undefined;
  * @member {Object} relationships
  */
 ServiceAuthorizationData.prototype['relationships'] = undefined;
-
-/**
- * @member {module:models/TypeServiceAuthorization} type
- */
-ServiceAuthorizationData.prototype['type'] = undefined;
 
 
 

@@ -28,7 +28,7 @@ Create a firewall object for a particular service and service version using a de
 
 ```javascript
 const options = {
-  waf_firewall: {"data":{"attributes":{"prefetch_condition":"WAF_Condition","response":"WAF_Error","service_id":"SU1Z0isxPaozGVKXdv0eY","service_version_number":1},"type":"waf_firewall"}},
+  waf_firewall: {"data":{"type":"waf_firewall","attributes":{"prefetch_condition":"WAF_Condition","response":"WAF_Error","service_id":"SU1Z0isxPaozGVKXdv0eY","service_version_number":1}}},
 };
 
 apiInstance.createWafFirewall(options)
@@ -64,7 +64,7 @@ Delete the firewall object for a particular service and service version.
 ```javascript
 const options = {
   firewall_id: "firewall_id_example", // required
-  waf_firewall: {"data":{"attributes":{"service_version_number":1},"id":"fW7g2uUGZzb2W9Euo4Mo0r","type":"waf_firewall"}},
+  waf_firewall: {"data":{"id":"fW7g2uUGZzb2W9Euo4Mo0r","type":"waf_firewall","attributes":{"service_version_number":1}}},
 };
 
 apiInstance.deleteWafFirewall(options)
@@ -139,7 +139,7 @@ List all firewall objects.
 
 ```javascript
 const options = {
-  page_number: 1,
+  page_number: 56,
   page_size: 20,
   filter_service_id: "filter_service_id_example",
   filter_service_version_number: "filter_service_version_number_example",
@@ -183,7 +183,7 @@ Update a firewall object for a particular service and service version. Specifyin
 ```javascript
 const options = {
   firewall_id: "firewall_id_example", // required
-  waf_firewall: {"update":{"summary":"Update a firewall object for a particular service and service version. Specifying a `service_version_number` is required.","value":{"data":{"attributes":{"response":"NEW_RESPONSE","service_version_number":1},"id":"fW7g2uUGZzb2W9Euo4Mo0r","type":"waf_firewall"}}}},
+  waf_firewall: {"update":{"summary":"Update a firewall object for a particular service and service version. Specifying a `service_version_number` is required.","value":{"data":{"id":"fW7g2uUGZzb2W9Euo4Mo0r","type":"waf_firewall","attributes":{"response":"NEW_RESPONSE","service_version_number":1}}}}},
 };
 
 apiInstance.updateWafFirewall(options)

@@ -55,14 +55,14 @@ class HistoricalResponse {
             Historical.constructFromObject(data, obj);
             HistoricalResponseAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            }
             if (data.hasOwnProperty('meta')) {
                 obj['meta'] = HistoricalMeta.constructFromObject(data['meta']);
             }
             if (data.hasOwnProperty('msg')) {
                 obj['msg'] = ApiClient.convertToType(data['msg'], 'String');
-            }
-            if (data.hasOwnProperty('status')) {
-                obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], {'String': Array});
@@ -73,6 +73,12 @@ class HistoricalResponse {
 
 
 }
+
+/**
+ * Whether or not we were able to successfully execute the query.
+ * @member {String} status
+ */
+HistoricalResponse.prototype['status'] = undefined;
 
 /**
  * @member {module:models/HistoricalMeta} meta
@@ -86,18 +92,17 @@ HistoricalResponse.prototype['meta'] = undefined;
 HistoricalResponse.prototype['msg'] = undefined;
 
 /**
- * Whether or not we were able to successfully execute the query.
- * @member {String} status
- */
-HistoricalResponse.prototype['status'] = undefined;
-
-/**
  * @member {Object.<String, Array.<module:models/Results>>} data
  */
 HistoricalResponse.prototype['data'] = undefined;
 
 
 // Implement Historical interface:
+/**
+ * Whether or not we were able to successfully execute the query.
+ * @member {String} status
+ */
+Historical.prototype['status'] = undefined;
 /**
  * @member {module:models/HistoricalMeta} meta
  */
@@ -107,11 +112,6 @@ Historical.prototype['meta'] = undefined;
  * @member {String} msg
  */
 Historical.prototype['msg'] = undefined;
-/**
- * Whether or not we were able to successfully execute the query.
- * @member {String} status
- */
-Historical.prototype['status'] = undefined;
 // Implement HistoricalResponseAllOf interface:
 /**
  * @member {Object.<String, Array.<module:models/Results>>} data

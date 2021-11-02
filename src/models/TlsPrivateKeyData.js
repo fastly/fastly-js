@@ -50,14 +50,14 @@ class TlsPrivateKeyData {
         if (data) {
             obj = obj || new TlsPrivateKeyData();
 
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeTlsPrivateKey.constructFromObject(data['type']);
+            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = TlsPrivateKeyDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = RelationshipsForTlsPrivateKey.constructFromObject(data['relationships']);
-            }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeTlsPrivateKey.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -65,6 +65,11 @@ class TlsPrivateKeyData {
 
 
 }
+
+/**
+ * @member {module:models/TypeTlsPrivateKey} type
+ */
+TlsPrivateKeyData.prototype['type'] = undefined;
 
 /**
  * @member {module:models/TlsPrivateKeyDataAttributes} attributes
@@ -75,11 +80,6 @@ TlsPrivateKeyData.prototype['attributes'] = undefined;
  * @member {module:models/RelationshipsForTlsPrivateKey} relationships
  */
 TlsPrivateKeyData.prototype['relationships'] = undefined;
-
-/**
- * @member {module:models/TypeTlsPrivateKey} type
- */
-TlsPrivateKeyData.prototype['type'] = undefined;
 
 
 

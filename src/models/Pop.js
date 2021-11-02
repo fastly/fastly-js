@@ -12,20 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
+import PopCoordinates from './PopCoordinates';
 
 /**
- * The SchemasUserResponseAllOf model module.
- * @module models/SchemasUserResponseAllOf
+ * The Pop model module.
+ * @module models/Pop
  * @version 3.0.0-alpha1
  */
-class SchemasUserResponseAllOf {
+class Pop {
     /**
-     * Constructs a new <code>SchemasUserResponseAllOf</code>.
-     * @alias module:models/SchemasUserResponseAllOf
+     * Constructs a new <code>Pop</code>.
+     * @alias module:models/Pop
      */
     constructor() { 
         
-        SchemasUserResponseAllOf.initialize(this);
+        Pop.initialize(this);
     }
 
     /**
@@ -37,24 +38,30 @@ class SchemasUserResponseAllOf {
     }
 
     /**
-     * Constructs a <code>SchemasUserResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>Pop</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:models/SchemasUserResponseAllOf} obj Optional instance to populate.
-     * @return {module:models/SchemasUserResponseAllOf} The populated <code>SchemasUserResponseAllOf</code> instance.
+     * @param {module:models/Pop} obj Optional instance to populate.
+     * @return {module:models/Pop} The populated <code>Pop</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new SchemasUserResponseAllOf();
+            obj = obj || new Pop();
 
-            if (data.hasOwnProperty('customer_id')) {
-                obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
+            if (data.hasOwnProperty('code')) {
+                obj['code'] = ApiClient.convertToType(data['code'], 'String');
             }
-            if (data.hasOwnProperty('email_hash')) {
-                obj['email_hash'] = ApiClient.convertToType(data['email_hash'], 'String');
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            if (data.hasOwnProperty('group')) {
+                obj['group'] = ApiClient.convertToType(data['group'], 'String');
+            }
+            if (data.hasOwnProperty('coordinates')) {
+                obj['coordinates'] = PopCoordinates.constructFromObject(data['coordinates']);
+            }
+            if (data.hasOwnProperty('shield')) {
+                obj['shield'] = ApiClient.convertToType(data['shield'], 'String');
             }
         }
         return obj;
@@ -64,27 +71,34 @@ class SchemasUserResponseAllOf {
 }
 
 /**
- * Alphanumeric string identifying the customer.
- * @member {String} customer_id
+ * @member {String} code
  */
-SchemasUserResponseAllOf.prototype['customer_id'] = undefined;
+Pop.prototype['code'] = undefined;
 
 /**
- * The alphanumeric string identifying a email login.
- * @member {String} email_hash
+ * @member {String} name
  */
-SchemasUserResponseAllOf.prototype['email_hash'] = undefined;
+Pop.prototype['name'] = undefined;
 
 /**
- * Alphanumeric string identifying the user.
- * @member {String} id
+ * @member {String} group
  */
-SchemasUserResponseAllOf.prototype['id'] = undefined;
+Pop.prototype['group'] = undefined;
+
+/**
+ * @member {module:models/PopCoordinates} coordinates
+ */
+Pop.prototype['coordinates'] = undefined;
+
+/**
+ * @member {String} shield
+ */
+Pop.prototype['shield'] = undefined;
 
 
 
 
 
 
-export default SchemasUserResponseAllOf;
+export default Pop;
 

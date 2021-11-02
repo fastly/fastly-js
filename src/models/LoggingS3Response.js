@@ -12,6 +12,10 @@
  */
 
 import ApiClient from '../ApiClient';
+import LoggingCompressionCodec from './LoggingCompressionCodec';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingMessageType from './LoggingMessageType';
+import LoggingPlacement from './LoggingPlacement';
 import LoggingS3 from './LoggingS3';
 import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Timestamps from './Timestamps';
@@ -56,35 +60,35 @@ class LoggingS3Response {
             Timestamps.constructFromObject(data, obj);
             ServiceIdAndVersion.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], 'String');
-            }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'Number');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
-                obj['placement'] = ApiClient.convertToType(data['placement'], 'String');
+                obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
             }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
             }
-            if (data.hasOwnProperty('compression_codec')) {
-                obj['compression_codec'] = ApiClient.convertToType(data['compression_codec'], 'String');
-            }
-            if (data.hasOwnProperty('gzip_level')) {
-                obj['gzip_level'] = ApiClient.convertToType(data['gzip_level'], 'Number');
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
             if (data.hasOwnProperty('message_type')) {
-                obj['message_type'] = ApiClient.convertToType(data['message_type'], 'String');
+                obj['message_type'] = LoggingMessageType.constructFromObject(data['message_type']);
+            }
+            if (data.hasOwnProperty('timestamp_format')) {
+                obj['timestamp_format'] = ApiClient.convertToType(data['timestamp_format'], 'String');
             }
             if (data.hasOwnProperty('period')) {
                 obj['period'] = ApiClient.convertToType(data['period'], 'Number');
             }
-            if (data.hasOwnProperty('timestamp_format')) {
-                obj['timestamp_format'] = ApiClient.convertToType(data['timestamp_format'], 'String');
+            if (data.hasOwnProperty('gzip_level')) {
+                obj['gzip_level'] = ApiClient.convertToType(data['gzip_level'], 'Number');
+            }
+            if (data.hasOwnProperty('compression_codec')) {
+                obj['compression_codec'] = LoggingCompressionCodec.constructFromObject(data['compression_codec']);
             }
             if (data.hasOwnProperty('access_key')) {
                 obj['access_key'] = ApiClient.convertToType(data['access_key'], 'String');
@@ -113,11 +117,11 @@ class LoggingS3Response {
             if (data.hasOwnProperty('secret_key')) {
                 obj['secret_key'] = ApiClient.convertToType(data['secret_key'], 'String');
             }
-            if (data.hasOwnProperty('server_side_encryption')) {
-                obj['server_side_encryption'] = ApiClient.convertToType(data['server_side_encryption'], 'String');
-            }
             if (data.hasOwnProperty('server_side_encryption_kms_key_id')) {
                 obj['server_side_encryption_kms_key_id'] = ApiClient.convertToType(data['server_side_encryption_kms_key_id'], 'String');
+            }
+            if (data.hasOwnProperty('server_side_encryption')) {
+                obj['server_side_encryption'] = ApiClient.convertToType(data['server_side_encryption'], 'String');
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
@@ -142,30 +146,20 @@ class LoggingS3Response {
 }
 
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingS3Response.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
- * @member {module:models/LoggingS3Response.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingS3Response.prototype['format_version'] = undefined;
-
-/**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
 LoggingS3Response.prototype['name'] = undefined;
 
 /**
- * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
- * @member {module:models/LoggingS3Response.PlacementEnum} placement
+ * @member {module:models/LoggingPlacement} placement
  */
 LoggingS3Response.prototype['placement'] = undefined;
+
+/**
+ * @member {module:models/LoggingFormatVersion} format_version
+ */
+LoggingS3Response.prototype['format_version'] = undefined;
 
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
@@ -174,24 +168,22 @@ LoggingS3Response.prototype['placement'] = undefined;
 LoggingS3Response.prototype['response_condition'] = undefined;
 
 /**
- * The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \"gzip\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {module:models/LoggingS3Response.CompressionCodecEnum} compression_codec
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
  */
-LoggingS3Response.prototype['compression_codec'] = undefined;
+LoggingS3Response.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 
 /**
- * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {Number} gzip_level
- * @default 0
- */
-LoggingS3Response.prototype['gzip_level'] = 0;
-
-/**
- * How the message should be formatted.
- * @member {module:models/LoggingS3Response.MessageTypeEnum} message_type
- * @default 'classic'
+ * @member {module:models/LoggingMessageType} message_type
  */
 LoggingS3Response.prototype['message_type'] = undefined;
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} timestamp_format
+ */
+LoggingS3Response.prototype['timestamp_format'] = undefined;
 
 /**
  * How frequently log files are finalized so they can be available for reading (in seconds).
@@ -201,10 +193,16 @@ LoggingS3Response.prototype['message_type'] = undefined;
 LoggingS3Response.prototype['period'] = 3600;
 
 /**
- * Date and time in ISO 8601 format.
- * @member {String} timestamp_format
+ * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {Number} gzip_level
+ * @default 0
  */
-LoggingS3Response.prototype['timestamp_format'] = undefined;
+LoggingS3Response.prototype['gzip_level'] = 0;
+
+/**
+ * @member {module:models/LoggingCompressionCodec} compression_codec
+ */
+LoggingS3Response.prototype['compression_codec'] = undefined;
 
 /**
  * The access key for your S3 account. Not required if `iam_role` is provided.
@@ -264,18 +262,18 @@ LoggingS3Response.prototype['redundancy'] = 'null';
 LoggingS3Response.prototype['secret_key'] = undefined;
 
 /**
- * Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption.
- * @member {String} server_side_encryption
- * @default 'null'
- */
-LoggingS3Response.prototype['server_side_encryption'] = 'null';
-
-/**
  * Optional server-side KMS Key Id. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`.
  * @member {String} server_side_encryption_kms_key_id
  * @default 'null'
  */
 LoggingS3Response.prototype['server_side_encryption_kms_key_id'] = 'null';
+
+/**
+ * Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption.
+ * @member {String} server_side_encryption
+ * @default 'null'
+ */
+LoggingS3Response.prototype['server_side_encryption'] = 'null';
 
 /**
  * Date and time in ISO 8601 format.
@@ -310,49 +308,38 @@ LoggingS3Response.prototype['version'] = undefined;
 
 // Implement LoggingS3 interface:
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingS3.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
- * @member {module:models/LoggingS3.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingS3.prototype['format_version'] = undefined;
-/**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
 LoggingS3.prototype['name'] = undefined;
 /**
- * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
- * @member {module:models/LoggingS3.PlacementEnum} placement
+ * @member {module:models/LoggingPlacement} placement
  */
 LoggingS3.prototype['placement'] = undefined;
+/**
+ * @member {module:models/LoggingFormatVersion} format_version
+ */
+LoggingS3.prototype['format_version'] = undefined;
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
 LoggingS3.prototype['response_condition'] = undefined;
 /**
- * The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \"gzip\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {module:models/LoggingS3.CompressionCodecEnum} compression_codec
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
  */
-LoggingS3.prototype['compression_codec'] = undefined;
+LoggingS3.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 /**
- * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {Number} gzip_level
- * @default 0
- */
-LoggingS3.prototype['gzip_level'] = 0;
-/**
- * How the message should be formatted.
- * @member {module:models/LoggingS3.MessageTypeEnum} message_type
- * @default 'classic'
+ * @member {module:models/LoggingMessageType} message_type
  */
 LoggingS3.prototype['message_type'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} timestamp_format
+ */
+LoggingS3.prototype['timestamp_format'] = undefined;
 /**
  * How frequently log files are finalized so they can be available for reading (in seconds).
  * @member {Number} period
@@ -360,10 +347,15 @@ LoggingS3.prototype['message_type'] = undefined;
  */
 LoggingS3.prototype['period'] = 3600;
 /**
- * Date and time in ISO 8601 format.
- * @member {String} timestamp_format
+ * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {Number} gzip_level
+ * @default 0
  */
-LoggingS3.prototype['timestamp_format'] = undefined;
+LoggingS3.prototype['gzip_level'] = 0;
+/**
+ * @member {module:models/LoggingCompressionCodec} compression_codec
+ */
+LoggingS3.prototype['compression_codec'] = undefined;
 /**
  * The access key for your S3 account. Not required if `iam_role` is provided.
  * @member {String} access_key
@@ -413,17 +405,17 @@ LoggingS3.prototype['redundancy'] = 'null';
  */
 LoggingS3.prototype['secret_key'] = undefined;
 /**
- * Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption.
- * @member {String} server_side_encryption
- * @default 'null'
- */
-LoggingS3.prototype['server_side_encryption'] = 'null';
-/**
  * Optional server-side KMS Key Id. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`.
  * @member {String} server_side_encryption_kms_key_id
  * @default 'null'
  */
 LoggingS3.prototype['server_side_encryption_kms_key_id'] = 'null';
+/**
+ * Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption.
+ * @member {String} server_side_encryption
+ * @default 'null'
+ */
+LoggingS3.prototype['server_side_encryption'] = 'null';
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
@@ -452,108 +444,6 @@ ServiceIdAndVersion.prototype['service_id'] = undefined;
  */
 ServiceIdAndVersion.prototype['version'] = undefined;
 
-
-
-/**
- * Allowed values for the <code>format_version</code> property.
- * @enum {Number}
- * @readonly
- */
-LoggingS3Response['FormatVersionEnum'] = {
-
-    /**
-     * value: 1
-     * @const
-     */
-    "v1": 1,
-
-    /**
-     * value: 2
-     * @const
-     */
-    "v2": 2
-};
-
-
-/**
- * Allowed values for the <code>placement</code> property.
- * @enum {String}
- * @readonly
- */
-LoggingS3Response['PlacementEnum'] = {
-
-    /**
-     * value: "none"
-     * @const
-     */
-    "none": "none",
-
-    /**
-     * value: "waf_debug"
-     * @const
-     */
-    "waf_debug": "waf_debug"
-};
-
-
-/**
- * Allowed values for the <code>compression_codec</code> property.
- * @enum {String}
- * @readonly
- */
-LoggingS3Response['CompressionCodecEnum'] = {
-
-    /**
-     * value: "zstd"
-     * @const
-     */
-    "zstd": "zstd",
-
-    /**
-     * value: "snappy"
-     * @const
-     */
-    "snappy": "snappy",
-
-    /**
-     * value: "gzip"
-     * @const
-     */
-    "gzip": "gzip"
-};
-
-
-/**
- * Allowed values for the <code>message_type</code> property.
- * @enum {String}
- * @readonly
- */
-LoggingS3Response['MessageTypeEnum'] = {
-
-    /**
-     * value: "classic"
-     * @const
-     */
-    "classic": "classic",
-
-    /**
-     * value: "loggly"
-     * @const
-     */
-    "loggly": "loggly",
-
-    /**
-     * value: "logplex"
-     * @const
-     */
-    "logplex": "logplex",
-
-    /**
-     * value: "blank"
-     * @const
-     */
-    "blank": "blank"
-};
 
 
 

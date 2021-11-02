@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** | The domain name. | [optional] [readonly] 
 **type** | [**TypeTlsDomain**](TypeTlsDomain.md) |  | [optional] 
+**id** | **String** | The domain name. | [optional] [readonly] 
 
 
 

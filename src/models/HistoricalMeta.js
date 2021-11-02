@@ -48,17 +48,17 @@ class HistoricalMeta {
         if (data) {
             obj = obj || new HistoricalMeta();
 
-            if (data.hasOwnProperty('by')) {
-                obj['by'] = ApiClient.convertToType(data['by'], 'String');
+            if (data.hasOwnProperty('to')) {
+                obj['to'] = ApiClient.convertToType(data['to'], 'String');
             }
             if (data.hasOwnProperty('from')) {
                 obj['from'] = ApiClient.convertToType(data['from'], 'String');
             }
+            if (data.hasOwnProperty('by')) {
+                obj['by'] = ApiClient.convertToType(data['by'], 'String');
+            }
             if (data.hasOwnProperty('region')) {
                 obj['region'] = ApiClient.convertToType(data['region'], 'String');
-            }
-            if (data.hasOwnProperty('to')) {
-                obj['to'] = ApiClient.convertToType(data['to'], 'String');
             }
         }
         return obj;
@@ -68,9 +68,9 @@ class HistoricalMeta {
 }
 
 /**
- * @member {String} by
+ * @member {String} to
  */
-HistoricalMeta.prototype['by'] = undefined;
+HistoricalMeta.prototype['to'] = undefined;
 
 /**
  * @member {String} from
@@ -78,14 +78,14 @@ HistoricalMeta.prototype['by'] = undefined;
 HistoricalMeta.prototype['from'] = undefined;
 
 /**
+ * @member {String} by
+ */
+HistoricalMeta.prototype['by'] = undefined;
+
+/**
  * @member {String} region
  */
 HistoricalMeta.prototype['region'] = undefined;
-
-/**
- * @member {String} to
- */
-HistoricalMeta.prototype['to'] = undefined;
 
 
 

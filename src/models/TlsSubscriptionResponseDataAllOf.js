@@ -49,11 +49,11 @@ class TlsSubscriptionResponseDataAllOf {
         if (data) {
             obj = obj || new TlsSubscriptionResponseDataAllOf();
 
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = TlsSubscriptionDataAttributes.constructFromObject(data['attributes']);
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = TlsSubscriptionDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = ApiClient.convertToType(data['relationships'], AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates);
@@ -66,15 +66,15 @@ class TlsSubscriptionResponseDataAllOf {
 }
 
 /**
- * @member {module:models/TlsSubscriptionDataAttributes} attributes
- */
-TlsSubscriptionResponseDataAllOf.prototype['attributes'] = undefined;
-
-/**
  * Alphanumeric string identifying a TLS subscription.
  * @member {String} id
  */
 TlsSubscriptionResponseDataAllOf.prototype['id'] = undefined;
+
+/**
+ * @member {module:models/TlsSubscriptionDataAttributes} attributes
+ */
+TlsSubscriptionResponseDataAllOf.prototype['attributes'] = undefined;
 
 /**
  * @member {module:models/AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates} relationships

@@ -285,6 +285,7 @@ Class | Method | Description
 *Fastly.PoolApi* | [**getServerPool**](docs/PoolApi.md#getServerPool) | Get a server pool
 *Fastly.PoolApi* | [**listServerPools**](docs/PoolApi.md#listServerPools) | List server pools
 *Fastly.PoolApi* | [**updateServerPool**](docs/PoolApi.md#updateServerPool) | Update a server pool
+*Fastly.PopApi* | [**listPops**](docs/PopApi.md#listPops) | List Fastly POPs
 *Fastly.PublicIpListApi* | [**listFastlyIps**](docs/PublicIpListApi.md#listFastlyIps) | List Fastly&#39;s public IPs
 *Fastly.RateLimiterApi* | [**createRateLimiter**](docs/RateLimiterApi.md#createRateLimiter) | Create a rate limiter
 *Fastly.RateLimiterApi* | [**deleteRateLimiter**](docs/RateLimiterApi.md#deleteRateLimiter) | Delete a rate limiter
@@ -363,11 +364,11 @@ Class | Method | Description
 *Fastly.TlsPrivateKeysApi* | [**listTlsKeys**](docs/TlsPrivateKeysApi.md#listTlsKeys) | List TLS private keys
 *Fastly.TlsSubscriptionsApi* | [**createTlsSub**](docs/TlsSubscriptionsApi.md#createTlsSub) | Create a TLS subscription
 *Fastly.TlsSubscriptionsApi* | [**deleteTlsSub**](docs/TlsSubscriptionsApi.md#deleteTlsSub) | Delete a TLS subscription
+*Fastly.TlsSubscriptionsApi* | [**deleteTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallengesGlobalsignEmailChallengeId**](docs/TlsSubscriptionsApi.md#deleteTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallengesGlobalsignEmailChallengeId) | Delete a GlobalSign email challenge
 *Fastly.TlsSubscriptionsApi* | [**getTlsSub**](docs/TlsSubscriptionsApi.md#getTlsSub) | Get a TLS subscription
 *Fastly.TlsSubscriptionsApi* | [**listTlsSubs**](docs/TlsSubscriptionsApi.md#listTlsSubs) | List TLS subscriptions
 *Fastly.TlsSubscriptionsApi* | [**patchTlsSub**](docs/TlsSubscriptionsApi.md#patchTlsSub) | Update a TLS subscription
-*Fastly.TlsSubscriptionsOtherApi* | [**deleteTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallengesGlobalsignEmailChallengeId**](docs/TlsSubscriptionsOtherApi.md#deleteTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallengesGlobalsignEmailChallengeId) | Delete a GlobalSign email challenge
-*Fastly.TlsSubscriptionsOtherApi* | [**postTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallenges**](docs/TlsSubscriptionsOtherApi.md#postTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallenges) | Creates a GlobalSign email challenge.
+*Fastly.TlsSubscriptionsApi* | [**postTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallenges**](docs/TlsSubscriptionsApi.md#postTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallenges) | Creates a GlobalSign email challenge.
 *Fastly.TokensApi* | [**bulkRevokeTokens**](docs/TokensApi.md#bulkRevokeTokens) | Revoke multiple tokens
 *Fastly.TokensApi* | [**createToken**](docs/TokensApi.md#createToken) | Create a token
 *Fastly.TokensApi* | [**getTokenCurrent**](docs/TokensApi.md#getTokenCurrent) | Get the current token

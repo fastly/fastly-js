@@ -27,7 +27,7 @@ Create a TLS private key.
 
 ```javascript
 const options = {
-  tls_private_key: {"data":{"attributes":{"key":"-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n","name":"My private key"},"type":"tls_private_key"}},
+  tls_private_key: {"data":{"type":"tls_private_key","attributes":{"key":"-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n","name":"My private key"}}},
 };
 
 apiInstance.createTlsKey(options)
@@ -133,7 +133,7 @@ List all TLS private keys.
 ```javascript
 const options = {
   filter_in_use: "filter_in_use_example",
-  page_number: 1,
+  page_number: 56,
   page_size: 20,
 };
 

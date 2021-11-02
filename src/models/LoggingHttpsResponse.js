@@ -12,8 +12,10 @@
  */
 
 import ApiClient from '../ApiClient';
+import LoggingFormatVersion from './LoggingFormatVersion';
 import LoggingHttps from './LoggingHttps';
 import LoggingMessageType from './LoggingMessageType';
+import LoggingPlacement from './LoggingPlacement';
 import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Timestamps from './Timestamps';
 
@@ -57,20 +59,20 @@ class LoggingHttpsResponse {
             Timestamps.constructFromObject(data, obj);
             ServiceIdAndVersion.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], 'String');
-            }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'Number');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
-                obj['placement'] = ApiClient.convertToType(data['placement'], 'String');
+                obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
             }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
+            }
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
             if (data.hasOwnProperty('tls_ca_cert')) {
                 obj['tls_ca_cert'] = ApiClient.convertToType(data['tls_ca_cert'], 'String');
@@ -84,11 +86,14 @@ class LoggingHttpsResponse {
             if (data.hasOwnProperty('tls_hostname')) {
                 obj['tls_hostname'] = ApiClient.convertToType(data['tls_hostname'], 'String');
             }
+            if (data.hasOwnProperty('request_max_entries')) {
+                obj['request_max_entries'] = ApiClient.convertToType(data['request_max_entries'], 'Number');
+            }
             if (data.hasOwnProperty('request_max_bytes')) {
                 obj['request_max_bytes'] = ApiClient.convertToType(data['request_max_bytes'], 'Number');
             }
-            if (data.hasOwnProperty('request_max_entries')) {
-                obj['request_max_entries'] = ApiClient.convertToType(data['request_max_entries'], 'Number');
+            if (data.hasOwnProperty('url')) {
+                obj['url'] = ApiClient.convertToType(data['url'], 'String');
             }
             if (data.hasOwnProperty('content_type')) {
                 obj['content_type'] = ApiClient.convertToType(data['content_type'], 'String');
@@ -96,20 +101,17 @@ class LoggingHttpsResponse {
             if (data.hasOwnProperty('header_name')) {
                 obj['header_name'] = ApiClient.convertToType(data['header_name'], 'String');
             }
-            if (data.hasOwnProperty('header_value')) {
-                obj['header_value'] = ApiClient.convertToType(data['header_value'], 'String');
-            }
-            if (data.hasOwnProperty('json_format')) {
-                obj['json_format'] = ApiClient.convertToType(data['json_format'], 'String');
-            }
             if (data.hasOwnProperty('message_type')) {
                 obj['message_type'] = LoggingMessageType.constructFromObject(data['message_type']);
+            }
+            if (data.hasOwnProperty('header_value')) {
+                obj['header_value'] = ApiClient.convertToType(data['header_value'], 'String');
             }
             if (data.hasOwnProperty('method')) {
                 obj['method'] = ApiClient.convertToType(data['method'], 'String');
             }
-            if (data.hasOwnProperty('url')) {
-                obj['url'] = ApiClient.convertToType(data['url'], 'String');
+            if (data.hasOwnProperty('json_format')) {
+                obj['json_format'] = ApiClient.convertToType(data['json_format'], 'String');
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
@@ -134,36 +136,33 @@ class LoggingHttpsResponse {
 }
 
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingHttpsResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
- * @member {module:models/LoggingHttpsResponse.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingHttpsResponse.prototype['format_version'] = undefined;
-
-/**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
 LoggingHttpsResponse.prototype['name'] = undefined;
 
 /**
- * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
- * @member {module:models/LoggingHttpsResponse.PlacementEnum} placement
+ * @member {module:models/LoggingPlacement} placement
  */
 LoggingHttpsResponse.prototype['placement'] = undefined;
+
+/**
+ * @member {module:models/LoggingFormatVersion} format_version
+ */
+LoggingHttpsResponse.prototype['format_version'] = undefined;
 
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
 LoggingHttpsResponse.prototype['response_condition'] = undefined;
+
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
+LoggingHttpsResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 
 /**
  * A secure certificate to authenticate a server with. Must be in PEM format.
@@ -194,6 +193,13 @@ LoggingHttpsResponse.prototype['tls_client_key'] = 'null';
 LoggingHttpsResponse.prototype['tls_hostname'] = 'null';
 
 /**
+ * The maximum number of logs sent in one request. Defaults `0` (no limit).
+ * @member {Number} request_max_entries
+ * @default 0
+ */
+LoggingHttpsResponse.prototype['request_max_entries'] = 0;
+
+/**
  * The maximum number of bytes sent in one request. Defaults `0` (no limit).
  * @member {Number} request_max_bytes
  * @default 0
@@ -201,11 +207,10 @@ LoggingHttpsResponse.prototype['tls_hostname'] = 'null';
 LoggingHttpsResponse.prototype['request_max_bytes'] = 0;
 
 /**
- * The maximum number of logs sent in one request. Defaults `0` (no limit).
- * @member {Number} request_max_entries
- * @default 0
+ * The URL to send logs to. Must use HTTPS. Required.
+ * @member {String} url
  */
-LoggingHttpsResponse.prototype['request_max_entries'] = 0;
+LoggingHttpsResponse.prototype['url'] = undefined;
 
 /**
  * Content type of the header sent with the request.
@@ -222,22 +227,16 @@ LoggingHttpsResponse.prototype['content_type'] = 'null';
 LoggingHttpsResponse.prototype['header_name'] = 'null';
 
 /**
+ * @member {module:models/LoggingMessageType} message_type
+ */
+LoggingHttpsResponse.prototype['message_type'] = undefined;
+
+/**
  * Value of the custom header sent with the request.
  * @member {String} header_value
  * @default 'null'
  */
 LoggingHttpsResponse.prototype['header_value'] = 'null';
-
-/**
- * Enforces valid JSON formatting for log entries.
- * @member {module:models/LoggingHttpsResponse.JsonFormatEnum} json_format
- */
-LoggingHttpsResponse.prototype['json_format'] = undefined;
-
-/**
- * @member {module:models/LoggingMessageType} message_type
- */
-LoggingHttpsResponse.prototype['message_type'] = undefined;
 
 /**
  * HTTP method used for request.
@@ -247,10 +246,10 @@ LoggingHttpsResponse.prototype['message_type'] = undefined;
 LoggingHttpsResponse.prototype['method'] = undefined;
 
 /**
- * The URL to send logs to. Must use HTTPS. Required.
- * @member {String} url
+ * Enforces valid JSON formatting for log entries.
+ * @member {module:models/LoggingHttpsResponse.JsonFormatEnum} json_format
  */
-LoggingHttpsResponse.prototype['url'] = undefined;
+LoggingHttpsResponse.prototype['json_format'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
@@ -285,32 +284,29 @@ LoggingHttpsResponse.prototype['version'] = undefined;
 
 // Implement LoggingHttps interface:
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingHttps.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
- * @member {module:models/LoggingHttps.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingHttps.prototype['format_version'] = undefined;
-/**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
 LoggingHttps.prototype['name'] = undefined;
 /**
- * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
- * @member {module:models/LoggingHttps.PlacementEnum} placement
+ * @member {module:models/LoggingPlacement} placement
  */
 LoggingHttps.prototype['placement'] = undefined;
+/**
+ * @member {module:models/LoggingFormatVersion} format_version
+ */
+LoggingHttps.prototype['format_version'] = undefined;
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
 LoggingHttps.prototype['response_condition'] = undefined;
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
+LoggingHttps.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 /**
  * A secure certificate to authenticate a server with. Must be in PEM format.
  * @member {String} tls_ca_cert
@@ -336,17 +332,22 @@ LoggingHttps.prototype['tls_client_key'] = 'null';
  */
 LoggingHttps.prototype['tls_hostname'] = 'null';
 /**
+ * The maximum number of logs sent in one request. Defaults `0` (no limit).
+ * @member {Number} request_max_entries
+ * @default 0
+ */
+LoggingHttps.prototype['request_max_entries'] = 0;
+/**
  * The maximum number of bytes sent in one request. Defaults `0` (no limit).
  * @member {Number} request_max_bytes
  * @default 0
  */
 LoggingHttps.prototype['request_max_bytes'] = 0;
 /**
- * The maximum number of logs sent in one request. Defaults `0` (no limit).
- * @member {Number} request_max_entries
- * @default 0
+ * The URL to send logs to. Must use HTTPS. Required.
+ * @member {String} url
  */
-LoggingHttps.prototype['request_max_entries'] = 0;
+LoggingHttps.prototype['url'] = undefined;
 /**
  * Content type of the header sent with the request.
  * @member {String} content_type
@@ -360,20 +361,15 @@ LoggingHttps.prototype['content_type'] = 'null';
  */
 LoggingHttps.prototype['header_name'] = 'null';
 /**
+ * @member {module:models/LoggingMessageType} message_type
+ */
+LoggingHttps.prototype['message_type'] = undefined;
+/**
  * Value of the custom header sent with the request.
  * @member {String} header_value
  * @default 'null'
  */
 LoggingHttps.prototype['header_value'] = 'null';
-/**
- * Enforces valid JSON formatting for log entries.
- * @member {module:models/LoggingHttps.JsonFormatEnum} json_format
- */
-LoggingHttps.prototype['json_format'] = undefined;
-/**
- * @member {module:models/LoggingMessageType} message_type
- */
-LoggingHttps.prototype['message_type'] = undefined;
 /**
  * HTTP method used for request.
  * @member {module:models/LoggingHttps.MethodEnum} method
@@ -381,10 +377,10 @@ LoggingHttps.prototype['message_type'] = undefined;
  */
 LoggingHttps.prototype['method'] = undefined;
 /**
- * The URL to send logs to. Must use HTTPS. Required.
- * @member {String} url
+ * Enforces valid JSON formatting for log entries.
+ * @member {module:models/LoggingHttps.JsonFormatEnum} json_format
  */
-LoggingHttps.prototype['url'] = undefined;
+LoggingHttps.prototype['json_format'] = undefined;
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
@@ -416,44 +412,23 @@ ServiceIdAndVersion.prototype['version'] = undefined;
 
 
 /**
- * Allowed values for the <code>format_version</code> property.
- * @enum {Number}
- * @readonly
- */
-LoggingHttpsResponse['FormatVersionEnum'] = {
-
-    /**
-     * value: 1
-     * @const
-     */
-    "v1": 1,
-
-    /**
-     * value: 2
-     * @const
-     */
-    "v2": 2
-};
-
-
-/**
- * Allowed values for the <code>placement</code> property.
+ * Allowed values for the <code>method</code> property.
  * @enum {String}
  * @readonly
  */
-LoggingHttpsResponse['PlacementEnum'] = {
+LoggingHttpsResponse['MethodEnum'] = {
 
     /**
-     * value: "none"
+     * value: "POST"
      * @const
      */
-    "none": "none",
+    "POST": "POST",
 
     /**
-     * value: "waf_debug"
+     * value: "PUT"
      * @const
      */
-    "waf_debug": "waf_debug"
+    "PUT": "PUT"
 };
 
 
@@ -481,27 +456,6 @@ LoggingHttpsResponse['JsonFormatEnum'] = {
      * @const
      */
     "newline_delimited_json": "2"
-};
-
-
-/**
- * Allowed values for the <code>method</code> property.
- * @enum {String}
- * @readonly
- */
-LoggingHttpsResponse['MethodEnum'] = {
-
-    /**
-     * value: "POST"
-     * @const
-     */
-    "POST": "POST",
-
-    /**
-     * value: "PUT"
-     * @const
-     */
-    "PUT": "PUT"
 };
 
 

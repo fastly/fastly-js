@@ -41,8 +41,6 @@ Name | Type | Description | Notes
 
 * `request` (value: `"request"`)
 
-* `fetch` (value: `"fetch"`)
-
 * `cache` (value: `"cache"`)
 
 * `response` (value: `"response"`)

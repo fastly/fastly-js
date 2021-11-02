@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The HistoricalUsageAggregateResponseAllOf model module.
- * @module models/HistoricalUsageAggregateResponseAllOf
+ * The UserResponseAllOf model module.
+ * @module models/UserResponseAllOf
  * @version 3.0.0-alpha1
  */
-class HistoricalUsageAggregateResponseAllOf {
+class UserResponseAllOf {
     /**
-     * Constructs a new <code>HistoricalUsageAggregateResponseAllOf</code>.
-     * @alias module:models/HistoricalUsageAggregateResponseAllOf
+     * Constructs a new <code>UserResponseAllOf</code>.
+     * @alias module:models/UserResponseAllOf
      */
     constructor() { 
         
-        HistoricalUsageAggregateResponseAllOf.initialize(this);
+        UserResponseAllOf.initialize(this);
     }
 
     /**
@@ -37,18 +37,24 @@ class HistoricalUsageAggregateResponseAllOf {
     }
 
     /**
-     * Constructs a <code>HistoricalUsageAggregateResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>UserResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:models/HistoricalUsageAggregateResponseAllOf} obj Optional instance to populate.
-     * @return {module:models/HistoricalUsageAggregateResponseAllOf} The populated <code>HistoricalUsageAggregateResponseAllOf</code> instance.
+     * @param {module:models/UserResponseAllOf} obj Optional instance to populate.
+     * @return {module:models/UserResponseAllOf} The populated <code>UserResponseAllOf</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new HistoricalUsageAggregateResponseAllOf();
+            obj = obj || new UserResponseAllOf();
 
-            if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], {'String': Object});
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('email_hash')) {
+                obj['email_hash'] = ApiClient.convertToType(data['email_hash'], 'String');
+            }
+            if (data.hasOwnProperty('customer_id')) {
+                obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
             }
         }
         return obj;
@@ -58,14 +64,27 @@ class HistoricalUsageAggregateResponseAllOf {
 }
 
 /**
- * @member {Object.<String, Object>} data
+ * Alphanumeric string identifying the user.
+ * @member {String} id
  */
-HistoricalUsageAggregateResponseAllOf.prototype['data'] = undefined;
+UserResponseAllOf.prototype['id'] = undefined;
+
+/**
+ * The alphanumeric string identifying a email login.
+ * @member {String} email_hash
+ */
+UserResponseAllOf.prototype['email_hash'] = undefined;
+
+/**
+ * Alphanumeric string identifying the customer.
+ * @member {String} customer_id
+ */
+UserResponseAllOf.prototype['customer_id'] = undefined;
 
 
 
 
 
 
-export default HistoricalUsageAggregateResponseAllOf;
+export default UserResponseAllOf;
 

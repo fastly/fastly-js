@@ -4,8 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**Timestamps**](Timestamps.md) |  | [optional] 
 **id** | **String** | Alphanumeric string identifying a WAF active rule. | [optional] [readonly] 
+**attributes** | [**Timestamps**](Timestamps.md) |  | [optional] 
+**relationships** | [**AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision**](AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision.md) |  | [optional] 
 
 
 

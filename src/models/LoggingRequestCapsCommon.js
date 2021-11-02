@@ -47,11 +47,11 @@ class LoggingRequestCapsCommon {
         if (data) {
             obj = obj || new LoggingRequestCapsCommon();
 
-            if (data.hasOwnProperty('request_max_bytes')) {
-                obj['request_max_bytes'] = ApiClient.convertToType(data['request_max_bytes'], 'Number');
-            }
             if (data.hasOwnProperty('request_max_entries')) {
                 obj['request_max_entries'] = ApiClient.convertToType(data['request_max_entries'], 'Number');
+            }
+            if (data.hasOwnProperty('request_max_bytes')) {
+                obj['request_max_bytes'] = ApiClient.convertToType(data['request_max_bytes'], 'Number');
             }
         }
         return obj;
@@ -61,18 +61,18 @@ class LoggingRequestCapsCommon {
 }
 
 /**
- * The maximum number of bytes sent in one request. Defaults `0` for unbounded.
- * @member {Number} request_max_bytes
- * @default 0
- */
-LoggingRequestCapsCommon.prototype['request_max_bytes'] = 0;
-
-/**
  * The maximum number of logs sent in one request. Defaults `0` for unbounded.
  * @member {Number} request_max_entries
  * @default 0
  */
 LoggingRequestCapsCommon.prototype['request_max_entries'] = 0;
+
+/**
+ * The maximum number of bytes sent in one request. Defaults `0` for unbounded.
+ * @member {Number} request_max_bytes
+ * @default 0
+ */
+LoggingRequestCapsCommon.prototype['request_max_bytes'] = 0;
 
 
 

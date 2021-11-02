@@ -12,6 +12,8 @@
  */
 
 import ApiClient from '../ApiClient';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingPlacement from './LoggingPlacement';
 import LoggingScalyr from './LoggingScalyr';
 import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Timestamps from './Timestamps';
@@ -56,29 +58,29 @@ class LoggingScalyrResponse {
             Timestamps.constructFromObject(data, obj);
             ServiceIdAndVersion.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], 'String');
-            }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'Number');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
-                obj['placement'] = ApiClient.convertToType(data['placement'], 'String');
+                obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
             }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
             }
-            if (data.hasOwnProperty('project_id')) {
-                obj['project_id'] = ApiClient.convertToType(data['project_id'], 'String');
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
             if (data.hasOwnProperty('region')) {
                 obj['region'] = ApiClient.convertToType(data['region'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
+            }
+            if (data.hasOwnProperty('project_id')) {
+                obj['project_id'] = ApiClient.convertToType(data['project_id'], 'String');
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
@@ -103,30 +105,20 @@ class LoggingScalyrResponse {
 }
 
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingScalyrResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
- * @member {module:models/LoggingScalyrResponse.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingScalyrResponse.prototype['format_version'] = undefined;
-
-/**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
 LoggingScalyrResponse.prototype['name'] = undefined;
 
 /**
- * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
- * @member {module:models/LoggingScalyrResponse.PlacementEnum} placement
+ * @member {module:models/LoggingPlacement} placement
  */
 LoggingScalyrResponse.prototype['placement'] = undefined;
+
+/**
+ * @member {module:models/LoggingFormatVersion} format_version
+ */
+LoggingScalyrResponse.prototype['format_version'] = undefined;
 
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
@@ -135,11 +127,11 @@ LoggingScalyrResponse.prototype['placement'] = undefined;
 LoggingScalyrResponse.prototype['response_condition'] = undefined;
 
 /**
- * The name of the logfile within Scalyr.
- * @member {String} project_id
- * @default 'logplex'
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
  */
-LoggingScalyrResponse.prototype['project_id'] = 'logplex';
+LoggingScalyrResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 
 /**
  * The region that log data will be sent to.
@@ -153,6 +145,13 @@ LoggingScalyrResponse.prototype['region'] = undefined;
  * @member {String} token
  */
 LoggingScalyrResponse.prototype['token'] = undefined;
+
+/**
+ * The name of the logfile within Scalyr.
+ * @member {String} project_id
+ * @default 'logplex'
+ */
+LoggingScalyrResponse.prototype['project_id'] = 'logplex';
 
 /**
  * Date and time in ISO 8601 format.
@@ -187,38 +186,29 @@ LoggingScalyrResponse.prototype['version'] = undefined;
 
 // Implement LoggingScalyr interface:
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingScalyr.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
- * @member {module:models/LoggingScalyr.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingScalyr.prototype['format_version'] = undefined;
-/**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
 LoggingScalyr.prototype['name'] = undefined;
 /**
- * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
- * @member {module:models/LoggingScalyr.PlacementEnum} placement
+ * @member {module:models/LoggingPlacement} placement
  */
 LoggingScalyr.prototype['placement'] = undefined;
+/**
+ * @member {module:models/LoggingFormatVersion} format_version
+ */
+LoggingScalyr.prototype['format_version'] = undefined;
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
 LoggingScalyr.prototype['response_condition'] = undefined;
 /**
- * The name of the logfile within Scalyr.
- * @member {String} project_id
- * @default 'logplex'
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
  */
-LoggingScalyr.prototype['project_id'] = 'logplex';
+LoggingScalyr.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 /**
  * The region that log data will be sent to.
  * @member {module:models/LoggingScalyr.RegionEnum} region
@@ -230,6 +220,12 @@ LoggingScalyr.prototype['region'] = undefined;
  * @member {String} token
  */
 LoggingScalyr.prototype['token'] = undefined;
+/**
+ * The name of the logfile within Scalyr.
+ * @member {String} project_id
+ * @default 'logplex'
+ */
+LoggingScalyr.prototype['project_id'] = 'logplex';
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
@@ -258,48 +254,6 @@ ServiceIdAndVersion.prototype['service_id'] = undefined;
  */
 ServiceIdAndVersion.prototype['version'] = undefined;
 
-
-
-/**
- * Allowed values for the <code>format_version</code> property.
- * @enum {Number}
- * @readonly
- */
-LoggingScalyrResponse['FormatVersionEnum'] = {
-
-    /**
-     * value: 1
-     * @const
-     */
-    "v1": 1,
-
-    /**
-     * value: 2
-     * @const
-     */
-    "v2": 2
-};
-
-
-/**
- * Allowed values for the <code>placement</code> property.
- * @enum {String}
- * @readonly
- */
-LoggingScalyrResponse['PlacementEnum'] = {
-
-    /**
-     * value: "none"
-     * @const
-     */
-    "none": "none",
-
-    /**
-     * value: "waf_debug"
-     * @const
-     */
-    "waf_debug": "waf_debug"
-};
 
 
 /**

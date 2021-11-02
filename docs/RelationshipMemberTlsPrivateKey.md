@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** | Alphanumeric string identifying a private Key. | [optional] [readonly] 
 **type** | [**TypeTlsPrivateKey**](TypeTlsPrivateKey.md) |  | [optional] 
+**id** | **String** | Alphanumeric string identifying a private Key. | [optional] [readonly] 
 
 
 

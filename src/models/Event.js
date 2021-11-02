@@ -49,14 +49,14 @@ class Event {
         if (data) {
             obj = obj || new Event();
 
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = EventAttributes.constructFromObject(data['attributes']);
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeEvent.constructFromObject(data['type']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeEvent.constructFromObject(data['type']);
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = EventAttributes.constructFromObject(data['attributes']);
             }
         }
         return obj;
@@ -66,9 +66,9 @@ class Event {
 }
 
 /**
- * @member {module:models/EventAttributes} attributes
+ * @member {module:models/TypeEvent} type
  */
-Event.prototype['attributes'] = undefined;
+Event.prototype['type'] = undefined;
 
 /**
  * Alphanumeric string identifying an event.
@@ -77,9 +77,9 @@ Event.prototype['attributes'] = undefined;
 Event.prototype['id'] = undefined;
 
 /**
- * @member {module:models/TypeEvent} type
+ * @member {module:models/EventAttributes} attributes
  */
-Event.prototype['type'] = undefined;
+Event.prototype['attributes'] = undefined;
 
 
 

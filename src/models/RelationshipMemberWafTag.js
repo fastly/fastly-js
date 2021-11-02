@@ -48,11 +48,11 @@ class RelationshipMemberWafTag {
         if (data) {
             obj = obj || new RelationshipMemberWafTag();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeWafTag.constructFromObject(data['type']);
+            }
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
         }
         return obj;
@@ -62,15 +62,15 @@ class RelationshipMemberWafTag {
 }
 
 /**
+ * @member {module:models/TypeWafTag} type
+ */
+RelationshipMemberWafTag.prototype['type'] = undefined;
+
+/**
  * Alphanumeric string identifying a WAF tag.
  * @member {String} id
  */
 RelationshipMemberWafTag.prototype['id'] = undefined;
-
-/**
- * @member {module:models/TypeWafTag} type
- */
-RelationshipMemberWafTag.prototype['type'] = undefined;
 
 
 

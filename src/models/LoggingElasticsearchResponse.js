@@ -13,6 +13,8 @@
 
 import ApiClient from '../ApiClient';
 import LoggingElasticsearch from './LoggingElasticsearch';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingPlacement from './LoggingPlacement';
 import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Timestamps from './Timestamps';
 
@@ -56,20 +58,20 @@ class LoggingElasticsearchResponse {
             Timestamps.constructFromObject(data, obj);
             ServiceIdAndVersion.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], Object);
-            }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'Number');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
-                obj['placement'] = ApiClient.convertToType(data['placement'], 'String');
+                obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
             }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
+            }
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], Object);
             }
             if (data.hasOwnProperty('tls_ca_cert')) {
                 obj['tls_ca_cert'] = ApiClient.convertToType(data['tls_ca_cert'], 'String');
@@ -83,26 +85,26 @@ class LoggingElasticsearchResponse {
             if (data.hasOwnProperty('tls_hostname')) {
                 obj['tls_hostname'] = ApiClient.convertToType(data['tls_hostname'], 'String');
             }
-            if (data.hasOwnProperty('request_max_bytes')) {
-                obj['request_max_bytes'] = ApiClient.convertToType(data['request_max_bytes'], 'Number');
-            }
             if (data.hasOwnProperty('request_max_entries')) {
                 obj['request_max_entries'] = ApiClient.convertToType(data['request_max_entries'], 'Number');
+            }
+            if (data.hasOwnProperty('request_max_bytes')) {
+                obj['request_max_bytes'] = ApiClient.convertToType(data['request_max_bytes'], 'Number');
             }
             if (data.hasOwnProperty('index')) {
                 obj['index'] = ApiClient.convertToType(data['index'], 'String');
             }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            if (data.hasOwnProperty('url')) {
+                obj['url'] = ApiClient.convertToType(data['url'], 'String');
             }
             if (data.hasOwnProperty('pipeline')) {
                 obj['pipeline'] = ApiClient.convertToType(data['pipeline'], 'String');
             }
-            if (data.hasOwnProperty('url')) {
-                obj['url'] = ApiClient.convertToType(data['url'], 'String');
-            }
             if (data.hasOwnProperty('user')) {
                 obj['user'] = ApiClient.convertToType(data['user'], 'String');
+            }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
@@ -127,35 +129,32 @@ class LoggingElasticsearchResponse {
 }
 
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Elasticsearch can ingest.
- * @member {Object} format
- */
-LoggingElasticsearchResponse.prototype['format'] = undefined;
-
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
- * @member {module:models/LoggingElasticsearchResponse.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingElasticsearchResponse.prototype['format_version'] = undefined;
-
-/**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
 LoggingElasticsearchResponse.prototype['name'] = undefined;
 
 /**
- * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
- * @member {module:models/LoggingElasticsearchResponse.PlacementEnum} placement
+ * @member {module:models/LoggingPlacement} placement
  */
 LoggingElasticsearchResponse.prototype['placement'] = undefined;
+
+/**
+ * @member {module:models/LoggingFormatVersion} format_version
+ */
+LoggingElasticsearchResponse.prototype['format_version'] = undefined;
 
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
 LoggingElasticsearchResponse.prototype['response_condition'] = undefined;
+
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Elasticsearch can ingest.
+ * @member {Object} format
+ */
+LoggingElasticsearchResponse.prototype['format'] = undefined;
 
 /**
  * A secure certificate to authenticate a server with. Must be in PEM format.
@@ -186,18 +185,18 @@ LoggingElasticsearchResponse.prototype['tls_client_key'] = 'null';
 LoggingElasticsearchResponse.prototype['tls_hostname'] = 'null';
 
 /**
- * The maximum number of bytes sent in one request. Defaults `0` for unbounded.
- * @member {Number} request_max_bytes
- * @default 0
- */
-LoggingElasticsearchResponse.prototype['request_max_bytes'] = 0;
-
-/**
  * The maximum number of logs sent in one request. Defaults `0` for unbounded.
  * @member {Number} request_max_entries
  * @default 0
  */
 LoggingElasticsearchResponse.prototype['request_max_entries'] = 0;
+
+/**
+ * The maximum number of bytes sent in one request. Defaults `0` for unbounded.
+ * @member {Number} request_max_bytes
+ * @default 0
+ */
+LoggingElasticsearchResponse.prototype['request_max_bytes'] = 0;
 
 /**
  * The name of the Elasticsearch index to send documents (logs) to. The index must follow the Elasticsearch [index format rules](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html). We support [strftime](https://www.man7.org/linux/man-pages/man3/strftime.3.html) interpolated variables inside braces prefixed with a pound symbol. For example, `#{%F}` will interpolate as `YYYY-MM-DD` with today's date.
@@ -206,10 +205,10 @@ LoggingElasticsearchResponse.prototype['request_max_entries'] = 0;
 LoggingElasticsearchResponse.prototype['index'] = undefined;
 
 /**
- * Basic Auth password.
- * @member {String} password
+ * The URL to stream logs to. Must use HTTPS.
+ * @member {String} url
  */
-LoggingElasticsearchResponse.prototype['password'] = undefined;
+LoggingElasticsearchResponse.prototype['url'] = undefined;
 
 /**
  * The ID of the Elasticsearch ingest pipeline to apply pre-process transformations to before indexing. Learn more about creating a pipeline in the [Elasticsearch docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/ingest.html).
@@ -218,16 +217,16 @@ LoggingElasticsearchResponse.prototype['password'] = undefined;
 LoggingElasticsearchResponse.prototype['pipeline'] = undefined;
 
 /**
- * The URL to stream logs to. Must use HTTPS.
- * @member {String} url
- */
-LoggingElasticsearchResponse.prototype['url'] = undefined;
-
-/**
  * Basic Auth username.
  * @member {String} user
  */
 LoggingElasticsearchResponse.prototype['user'] = undefined;
+
+/**
+ * Basic Auth password.
+ * @member {String} password
+ */
+LoggingElasticsearchResponse.prototype['password'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
@@ -262,31 +261,28 @@ LoggingElasticsearchResponse.prototype['version'] = undefined;
 
 // Implement LoggingElasticsearch interface:
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Elasticsearch can ingest.
- * @member {Object} format
- */
-LoggingElasticsearch.prototype['format'] = undefined;
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
- * @member {module:models/LoggingElasticsearch.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingElasticsearch.prototype['format_version'] = undefined;
-/**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
 LoggingElasticsearch.prototype['name'] = undefined;
 /**
- * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
- * @member {module:models/LoggingElasticsearch.PlacementEnum} placement
+ * @member {module:models/LoggingPlacement} placement
  */
 LoggingElasticsearch.prototype['placement'] = undefined;
+/**
+ * @member {module:models/LoggingFormatVersion} format_version
+ */
+LoggingElasticsearch.prototype['format_version'] = undefined;
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
 LoggingElasticsearch.prototype['response_condition'] = undefined;
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Elasticsearch can ingest.
+ * @member {Object} format
+ */
+LoggingElasticsearch.prototype['format'] = undefined;
 /**
  * A secure certificate to authenticate a server with. Must be in PEM format.
  * @member {String} tls_ca_cert
@@ -312,42 +308,42 @@ LoggingElasticsearch.prototype['tls_client_key'] = 'null';
  */
 LoggingElasticsearch.prototype['tls_hostname'] = 'null';
 /**
- * The maximum number of bytes sent in one request. Defaults `0` for unbounded.
- * @member {Number} request_max_bytes
- * @default 0
- */
-LoggingElasticsearch.prototype['request_max_bytes'] = 0;
-/**
  * The maximum number of logs sent in one request. Defaults `0` for unbounded.
  * @member {Number} request_max_entries
  * @default 0
  */
 LoggingElasticsearch.prototype['request_max_entries'] = 0;
 /**
+ * The maximum number of bytes sent in one request. Defaults `0` for unbounded.
+ * @member {Number} request_max_bytes
+ * @default 0
+ */
+LoggingElasticsearch.prototype['request_max_bytes'] = 0;
+/**
  * The name of the Elasticsearch index to send documents (logs) to. The index must follow the Elasticsearch [index format rules](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html). We support [strftime](https://www.man7.org/linux/man-pages/man3/strftime.3.html) interpolated variables inside braces prefixed with a pound symbol. For example, `#{%F}` will interpolate as `YYYY-MM-DD` with today's date.
  * @member {String} index
  */
 LoggingElasticsearch.prototype['index'] = undefined;
-/**
- * Basic Auth password.
- * @member {String} password
- */
-LoggingElasticsearch.prototype['password'] = undefined;
-/**
- * The ID of the Elasticsearch ingest pipeline to apply pre-process transformations to before indexing. Learn more about creating a pipeline in the [Elasticsearch docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/ingest.html).
- * @member {String} pipeline
- */
-LoggingElasticsearch.prototype['pipeline'] = undefined;
 /**
  * The URL to stream logs to. Must use HTTPS.
  * @member {String} url
  */
 LoggingElasticsearch.prototype['url'] = undefined;
 /**
+ * The ID of the Elasticsearch ingest pipeline to apply pre-process transformations to before indexing. Learn more about creating a pipeline in the [Elasticsearch docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/ingest.html).
+ * @member {String} pipeline
+ */
+LoggingElasticsearch.prototype['pipeline'] = undefined;
+/**
  * Basic Auth username.
  * @member {String} user
  */
 LoggingElasticsearch.prototype['user'] = undefined;
+/**
+ * Basic Auth password.
+ * @member {String} password
+ */
+LoggingElasticsearch.prototype['password'] = undefined;
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
@@ -376,48 +372,6 @@ ServiceIdAndVersion.prototype['service_id'] = undefined;
  */
 ServiceIdAndVersion.prototype['version'] = undefined;
 
-
-
-/**
- * Allowed values for the <code>format_version</code> property.
- * @enum {Number}
- * @readonly
- */
-LoggingElasticsearchResponse['FormatVersionEnum'] = {
-
-    /**
-     * value: 1
-     * @const
-     */
-    "v1": 1,
-
-    /**
-     * value: 2
-     * @const
-     */
-    "v2": 2
-};
-
-
-/**
- * Allowed values for the <code>placement</code> property.
- * @enum {String}
- * @readonly
- */
-LoggingElasticsearchResponse['PlacementEnum'] = {
-
-    /**
-     * value: "none"
-     * @const
-     */
-    "none": "none",
-
-    /**
-     * value: "waf_debug"
-     * @const
-     */
-    "waf_debug": "waf_debug"
-};
 
 
 

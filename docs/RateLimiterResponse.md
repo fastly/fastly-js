@@ -4,37 +4,24 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**action** | **String** | The action to take when a rate limiter violation is detected. | [optional] 
-**client_key** | **[String]** | Array of VCL variables used to generate a counter key to identify a client. Example variables include &#x60;req.http.Fastly-Client-IP&#x60;, &#x60;req.http.User-Agent&#x60;, or a custom header like &#x60;req.http.API-Key&#x60;. | [optional] 
-**feature_revision** | **Number** | Revision number of the rate limiting feature implementation. Defaults to the most recent revision. | [optional] 
-**http_methods** | **[String]** | Array of HTTP methods to apply rate limiting to. | [optional] 
-**logger_type** | **String** | Name of the type of logging endpoint to be used when action is &#x60;log_only&#x60;. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries. | [optional] 
 **name** | **String** | A human readable name for the rate limiting rule. | [optional] 
+**uri_dictionary_name** | **String** | The name of an Edge Dictionary containing URIs as keys. If not defined or &#x60;null&#x60;, all origin URIs will be rate limited. | [optional] 
+**http_methods** | **[String]** | Array of HTTP methods to apply rate limiting to. | [optional] 
+**rps_limit** | **Number** | Upper limit of requests per second allowed by the rate limiter. | [optional] 
+**window_size** | **Number** | Number of seconds during which the RPS limit must be exceeded in order to trigger a violation. | [optional] 
+**client_key** | **[String]** | Array of VCL variables used to generate a counter key to identify a client. Example variables include &#x60;req.http.Fastly-Client-IP&#x60;, &#x60;req.http.User-Agent&#x60;, or a custom header like &#x60;req.http.API-Key&#x60;. | [optional] 
 **penalty_box_duration** | **Number** | Length of time in minutes that the rate limiter is in effect after the initial violation is detected. | [optional] 
+**action** | **String** | The action to take when a rate limiter violation is detected. | [optional] 
 **response** | [**RateLimiterResponse1**](RateLimiterResponse1.md) |  | [optional] 
 **response_object_name** | **String** | Name of existing response object. Required if &#x60;action&#x60; is &#x60;response_object&#x60;. Note that the rate limiter response is only updated to reflect the response object content when saving the rate limiter configuration. | [optional] 
-**rps_limit** | **Number** | Upper limit of requests per second allowed by the rate limiter. | [optional] 
-**uri_dictionary_name** | **String** | The name of an Edge Dictionary containing URIs as keys. If not defined or &#x60;null&#x60;, all origin URIs will be rate limited. | [optional] 
-**window_size** | **Number** | Number of seconds during which the RPS limit must be exceeded in order to trigger a violation. | [optional] 
+**logger_type** | **String** | Name of the type of logging endpoint to be used when action is &#x60;log_only&#x60;. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries. | [optional] 
+**feature_revision** | **Number** | Revision number of the rate limiting feature implementation. Defaults to the most recent revision. | [optional] 
 **service_id** | **String** | Alphanumeric string identifying the service. | [optional] [readonly] 
 **version** | **Number** | Integer identifying a service version. | [optional] [readonly] 
 **created_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **deleted_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **updated_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **id** | **String** | Alphanumeric string identifying the rate limiter. | [optional] 
-
-
-
-## Enum: ActionEnum
-
-
-* `response` (value: `"response"`)
-
-* `response_object` (value: `"response_object"`)
-
-* `log_only` (value: `"log_only"`)
-
-
 
 
 
@@ -56,6 +43,32 @@ Name | Type | Description | Notes
 * `DELETE` (value: `"DELETE"`)
 
 * `TRACE` (value: `"TRACE"`)
+
+
+
+
+
+## Enum: WindowSizeEnum
+
+
+* `one_second` (value: `1`)
+
+* `ten_seconds` (value: `10`)
+
+* `one_minute` (value: `60`)
+
+
+
+
+
+## Enum: ActionEnum
+
+
+* `response` (value: `"response"`)
+
+* `response_object` (value: `"response_object"`)
+
+* `log_only` (value: `"log_only"`)
 
 
 
@@ -121,19 +134,6 @@ Name | Type | Description | Notes
 * `sumologic` (value: `"sumologic"`)
 
 * `syslog` (value: `"syslog"`)
-
-
-
-
-
-## Enum: WindowSizeEnum
-
-
-* `one_second` (value: `1`)
-
-* `ten_seconds` (value: `10`)
-
-* `one_minute` (value: `60`)
 
 
 

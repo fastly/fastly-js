@@ -72,14 +72,14 @@ class DirectorResponse {
             if (data.hasOwnProperty('quorum')) {
                 obj['quorum'] = ApiClient.convertToType(data['quorum'], 'Number');
             }
-            if (data.hasOwnProperty('retries')) {
-                obj['retries'] = ApiClient.convertToType(data['retries'], 'Number');
-            }
             if (data.hasOwnProperty('shield')) {
                 obj['shield'] = ApiClient.convertToType(data['shield'], 'String');
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'Number');
+            }
+            if (data.hasOwnProperty('retries')) {
+                obj['retries'] = ApiClient.convertToType(data['retries'], 'Number');
             }
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
@@ -135,13 +135,6 @@ DirectorResponse.prototype['name'] = undefined;
 DirectorResponse.prototype['quorum'] = 75;
 
 /**
- * How many backends to search if it fails.
- * @member {Number} retries
- * @default 5
- */
-DirectorResponse.prototype['retries'] = 5;
-
-/**
  * Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
  * @member {String} shield
  * @default 'null'
@@ -154,6 +147,13 @@ DirectorResponse.prototype['shield'] = 'null';
  * @default TypeEnum.random
  */
 DirectorResponse.prototype['type'] = undefined;
+
+/**
+ * How many backends to search if it fails.
+ * @member {Number} retries
+ * @default 5
+ */
+DirectorResponse.prototype['retries'] = 5;
 
 /**
  * Alphanumeric string identifying the service.
@@ -214,12 +214,6 @@ Director.prototype['name'] = undefined;
  */
 Director.prototype['quorum'] = 75;
 /**
- * How many backends to search if it fails.
- * @member {Number} retries
- * @default 5
- */
-Director.prototype['retries'] = 5;
-/**
  * Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
  * @member {String} shield
  * @default 'null'
@@ -231,6 +225,12 @@ Director.prototype['shield'] = 'null';
  * @default TypeEnum.random
  */
 Director.prototype['type'] = undefined;
+/**
+ * How many backends to search if it fails.
+ * @member {Number} retries
+ * @default 5
+ */
+Director.prototype['retries'] = 5;
 // Implement ServiceIdAndVersion interface:
 /**
  * Alphanumeric string identifying the service.

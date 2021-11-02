@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**type** | [**TypeTlsBulkCertificate**](TypeTlsBulkCertificate.md) |  | [optional] 
 **attributes** | [**Timestamps**](Timestamps.md) |  | [optional] 
 **relationships** | [**RelationshipsForTlsBulkCertificate**](RelationshipsForTlsBulkCertificate.md) |  | [optional] 
-**type** | [**TypeTlsBulkCertificate**](TypeTlsBulkCertificate.md) |  | [optional] 
 **id** | **String** | Alphanumeric string identifying a TLS bulk certificate. | [optional] [readonly] 
 
 

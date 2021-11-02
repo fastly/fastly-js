@@ -48,11 +48,11 @@ class ServiceInvitationResponseAllOfData {
         if (data) {
             obj = obj || new ServiceInvitationResponseAllOfData();
 
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = Timestamps.constructFromObject(data['attributes']);
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = Timestamps.constructFromObject(data['attributes']);
             }
         }
         return obj;
@@ -62,15 +62,15 @@ class ServiceInvitationResponseAllOfData {
 }
 
 /**
- * @member {module:models/Timestamps} attributes
- */
-ServiceInvitationResponseAllOfData.prototype['attributes'] = undefined;
-
-/**
  * Alphanumeric string identifying an invitation.
  * @member {String} id
  */
 ServiceInvitationResponseAllOfData.prototype['id'] = undefined;
+
+/**
+ * @member {module:models/Timestamps} attributes
+ */
+ServiceInvitationResponseAllOfData.prototype['attributes'] = undefined;
 
 
 

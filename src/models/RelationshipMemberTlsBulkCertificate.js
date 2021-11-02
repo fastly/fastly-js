@@ -48,11 +48,11 @@ class RelationshipMemberTlsBulkCertificate {
         if (data) {
             obj = obj || new RelationshipMemberTlsBulkCertificate();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeTlsBulkCertificate.constructFromObject(data['type']);
+            }
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
         }
         return obj;
@@ -62,15 +62,15 @@ class RelationshipMemberTlsBulkCertificate {
 }
 
 /**
+ * @member {module:models/TypeTlsBulkCertificate} type
+ */
+RelationshipMemberTlsBulkCertificate.prototype['type'] = undefined;
+
+/**
  * Alphanumeric string identifying a TLS bulk certificate.
  * @member {String} id
  */
 RelationshipMemberTlsBulkCertificate.prototype['id'] = undefined;
-
-/**
- * @member {module:models/TypeTlsBulkCertificate} type
- */
-RelationshipMemberTlsBulkCertificate.prototype['type'] = undefined;
 
 
 

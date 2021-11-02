@@ -50,14 +50,14 @@ class TlsConfigurationData {
         if (data) {
             obj = obj || new TlsConfigurationData();
 
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeTlsConfiguration.constructFromObject(data['type']);
+            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = TlsConfigurationDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = RelationshipsForTlsConfiguration.constructFromObject(data['relationships']);
-            }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeTlsConfiguration.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -65,6 +65,11 @@ class TlsConfigurationData {
 
 
 }
+
+/**
+ * @member {module:models/TypeTlsConfiguration} type
+ */
+TlsConfigurationData.prototype['type'] = undefined;
 
 /**
  * @member {module:models/TlsConfigurationDataAttributes} attributes
@@ -75,11 +80,6 @@ TlsConfigurationData.prototype['attributes'] = undefined;
  * @member {module:models/RelationshipsForTlsConfiguration} relationships
  */
 TlsConfigurationData.prototype['relationships'] = undefined;
-
-/**
- * @member {module:models/TypeTlsConfiguration} type
- */
-TlsConfigurationData.prototype['type'] = undefined;
 
 
 

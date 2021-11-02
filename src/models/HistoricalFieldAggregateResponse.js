@@ -54,14 +54,14 @@ class HistoricalFieldAggregateResponse {
             Historical.constructFromObject(data, obj);
             HistoricalFieldAggregateResponseAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            }
             if (data.hasOwnProperty('meta')) {
                 obj['meta'] = HistoricalMeta.constructFromObject(data['meta']);
             }
             if (data.hasOwnProperty('msg')) {
                 obj['msg'] = ApiClient.convertToType(data['msg'], 'String');
-            }
-            if (data.hasOwnProperty('status')) {
-                obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], [{'String': 'String'}]);
@@ -72,6 +72,12 @@ class HistoricalFieldAggregateResponse {
 
 
 }
+
+/**
+ * Whether or not we were able to successfully execute the query.
+ * @member {String} status
+ */
+HistoricalFieldAggregateResponse.prototype['status'] = undefined;
 
 /**
  * @member {module:models/HistoricalMeta} meta
@@ -85,18 +91,17 @@ HistoricalFieldAggregateResponse.prototype['meta'] = undefined;
 HistoricalFieldAggregateResponse.prototype['msg'] = undefined;
 
 /**
- * Whether or not we were able to successfully execute the query.
- * @member {String} status
- */
-HistoricalFieldAggregateResponse.prototype['status'] = undefined;
-
-/**
  * @member {Array.<Object.<String, String>>} data
  */
 HistoricalFieldAggregateResponse.prototype['data'] = undefined;
 
 
 // Implement Historical interface:
+/**
+ * Whether or not we were able to successfully execute the query.
+ * @member {String} status
+ */
+Historical.prototype['status'] = undefined;
 /**
  * @member {module:models/HistoricalMeta} meta
  */
@@ -106,11 +111,6 @@ Historical.prototype['meta'] = undefined;
  * @member {String} msg
  */
 Historical.prototype['msg'] = undefined;
-/**
- * Whether or not we were able to successfully execute the query.
- * @member {String} status
- */
-Historical.prototype['status'] = undefined;
 // Implement HistoricalFieldAggregateResponseAllOf interface:
 /**
  * @member {Array.<Object.<String, String>>} data

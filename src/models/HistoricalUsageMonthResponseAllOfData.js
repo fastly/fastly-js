@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import AdditionalProperties from './AdditionalProperties';
 
 /**
  * The HistoricalUsageMonthResponseAllOfData model module.
@@ -51,7 +52,7 @@ class HistoricalUsageMonthResponseAllOfData {
                 obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
             }
             if (data.hasOwnProperty('services')) {
-                obj['services'] = ApiClient.convertToType(data['services'], {'String': Object});
+                obj['services'] = ApiClient.convertToType(data['services'], {'String': {'String': AdditionalProperties}});
             }
             if (data.hasOwnProperty('total')) {
                 obj['total'] = ApiClient.convertToType(data['total'], {'String': Object});
@@ -70,12 +71,12 @@ class HistoricalUsageMonthResponseAllOfData {
 HistoricalUsageMonthResponseAllOfData.prototype['customer_id'] = undefined;
 
 /**
- * @member {Object.<String, Object.<String, Object>>} services
+ * @member {Object.<String, Object.<String, module:models/AdditionalProperties>>} services
  */
 HistoricalUsageMonthResponseAllOfData.prototype['services'] = undefined;
 
 /**
- * @member {Object.<String, Object.<String, Object>>} total
+ * @member {Object.<String, Object>} total
  */
 HistoricalUsageMonthResponseAllOfData.prototype['total'] = undefined;
 

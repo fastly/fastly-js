@@ -13,9 +13,13 @@
 
 import ApiClient from '../ApiClient';
 import LoggingCommon from './LoggingCommon';
+import LoggingCompressionCodec from './LoggingCompressionCodec';
+import LoggingFormatVersion from './LoggingFormatVersion';
 import LoggingGcsAllOf from './LoggingGcsAllOf';
 import LoggingGcsCommon from './LoggingGcsCommon';
 import LoggingGenericCommon from './LoggingGenericCommon';
+import LoggingMessageType from './LoggingMessageType';
+import LoggingPlacement from './LoggingPlacement';
 
 /**
  * The LoggingGcs model module.
@@ -59,41 +63,41 @@ class LoggingGcs {
             LoggingGcsCommon.constructFromObject(data, obj);
             LoggingGcsAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], 'String');
-            }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'Number');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
-                obj['placement'] = ApiClient.convertToType(data['placement'], 'String');
+                obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
             }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
             }
-            if (data.hasOwnProperty('compression_codec')) {
-                obj['compression_codec'] = ApiClient.convertToType(data['compression_codec'], 'String');
-            }
-            if (data.hasOwnProperty('gzip_level')) {
-                obj['gzip_level'] = ApiClient.convertToType(data['gzip_level'], 'Number');
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
             if (data.hasOwnProperty('message_type')) {
-                obj['message_type'] = ApiClient.convertToType(data['message_type'], 'String');
-            }
-            if (data.hasOwnProperty('period')) {
-                obj['period'] = ApiClient.convertToType(data['period'], 'Number');
+                obj['message_type'] = LoggingMessageType.constructFromObject(data['message_type']);
             }
             if (data.hasOwnProperty('timestamp_format')) {
                 obj['timestamp_format'] = ApiClient.convertToType(data['timestamp_format'], 'String');
             }
-            if (data.hasOwnProperty('secret_key')) {
-                obj['secret_key'] = ApiClient.convertToType(data['secret_key'], 'String');
+            if (data.hasOwnProperty('period')) {
+                obj['period'] = ApiClient.convertToType(data['period'], 'Number');
+            }
+            if (data.hasOwnProperty('gzip_level')) {
+                obj['gzip_level'] = ApiClient.convertToType(data['gzip_level'], 'Number');
+            }
+            if (data.hasOwnProperty('compression_codec')) {
+                obj['compression_codec'] = LoggingCompressionCodec.constructFromObject(data['compression_codec']);
             }
             if (data.hasOwnProperty('user')) {
                 obj['user'] = ApiClient.convertToType(data['user'], 'String');
+            }
+            if (data.hasOwnProperty('secret_key')) {
+                obj['secret_key'] = ApiClient.convertToType(data['secret_key'], 'String');
             }
             if (data.hasOwnProperty('bucket_name')) {
                 obj['bucket_name'] = ApiClient.convertToType(data['bucket_name'], 'String');
@@ -112,30 +116,20 @@ class LoggingGcs {
 }
 
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingGcs.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
- * @member {module:models/LoggingGcs.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingGcs.prototype['format_version'] = undefined;
-
-/**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
 LoggingGcs.prototype['name'] = undefined;
 
 /**
- * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
- * @member {module:models/LoggingGcs.PlacementEnum} placement
+ * @member {module:models/LoggingPlacement} placement
  */
 LoggingGcs.prototype['placement'] = undefined;
+
+/**
+ * @member {module:models/LoggingFormatVersion} format_version
+ */
+LoggingGcs.prototype['format_version'] = undefined;
 
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
@@ -144,24 +138,22 @@ LoggingGcs.prototype['placement'] = undefined;
 LoggingGcs.prototype['response_condition'] = undefined;
 
 /**
- * The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \"gzip\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {module:models/LoggingGcs.CompressionCodecEnum} compression_codec
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
  */
-LoggingGcs.prototype['compression_codec'] = undefined;
+LoggingGcs.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 
 /**
- * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {Number} gzip_level
- * @default 0
- */
-LoggingGcs.prototype['gzip_level'] = 0;
-
-/**
- * How the message should be formatted.
- * @member {module:models/LoggingGcs.MessageTypeEnum} message_type
- * @default 'classic'
+ * @member {module:models/LoggingMessageType} message_type
  */
 LoggingGcs.prototype['message_type'] = undefined;
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} timestamp_format
+ */
+LoggingGcs.prototype['timestamp_format'] = undefined;
 
 /**
  * How frequently log files are finalized so they can be available for reading (in seconds).
@@ -171,22 +163,28 @@ LoggingGcs.prototype['message_type'] = undefined;
 LoggingGcs.prototype['period'] = 3600;
 
 /**
- * Date and time in ISO 8601 format.
- * @member {String} timestamp_format
+ * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {Number} gzip_level
+ * @default 0
  */
-LoggingGcs.prototype['timestamp_format'] = undefined;
+LoggingGcs.prototype['gzip_level'] = 0;
 
 /**
- * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
- * @member {String} secret_key
+ * @member {module:models/LoggingCompressionCodec} compression_codec
  */
-LoggingGcs.prototype['secret_key'] = undefined;
+LoggingGcs.prototype['compression_codec'] = undefined;
 
 /**
  * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
  * @member {String} user
  */
 LoggingGcs.prototype['user'] = undefined;
+
+/**
+ * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+ * @member {String} secret_key
+ */
+LoggingGcs.prototype['secret_key'] = undefined;
 
 /**
  * The name of the GCS bucket.
@@ -209,50 +207,39 @@ LoggingGcs.prototype['public_key'] = 'null';
 
 // Implement LoggingCommon interface:
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
- * @member {module:models/LoggingCommon.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingCommon.prototype['format_version'] = undefined;
-/**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
 LoggingCommon.prototype['name'] = undefined;
 /**
- * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
- * @member {module:models/LoggingCommon.PlacementEnum} placement
+ * @member {module:models/LoggingPlacement} placement
  */
 LoggingCommon.prototype['placement'] = undefined;
+/**
+ * @member {module:models/LoggingFormatVersion} format_version
+ */
+LoggingCommon.prototype['format_version'] = undefined;
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
 LoggingCommon.prototype['response_condition'] = undefined;
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
+LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 // Implement LoggingGenericCommon interface:
 /**
- * The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \"gzip\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {module:models/LoggingGenericCommon.CompressionCodecEnum} compression_codec
- */
-LoggingGenericCommon.prototype['compression_codec'] = undefined;
-/**
- * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {Number} gzip_level
- * @default 0
- */
-LoggingGenericCommon.prototype['gzip_level'] = 0;
-/**
- * How the message should be formatted.
- * @member {module:models/LoggingGenericCommon.MessageTypeEnum} message_type
- * @default 'classic'
+ * @member {module:models/LoggingMessageType} message_type
  */
 LoggingGenericCommon.prototype['message_type'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} timestamp_format
+ */
+LoggingGenericCommon.prototype['timestamp_format'] = undefined;
 /**
  * How frequently log files are finalized so they can be available for reading (in seconds).
  * @member {Number} period
@@ -260,21 +247,26 @@ LoggingGenericCommon.prototype['message_type'] = undefined;
  */
 LoggingGenericCommon.prototype['period'] = 3600;
 /**
- * Date and time in ISO 8601 format.
- * @member {String} timestamp_format
+ * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {Number} gzip_level
+ * @default 0
  */
-LoggingGenericCommon.prototype['timestamp_format'] = undefined;
-// Implement LoggingGcsCommon interface:
+LoggingGenericCommon.prototype['gzip_level'] = 0;
 /**
- * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
- * @member {String} secret_key
+ * @member {module:models/LoggingCompressionCodec} compression_codec
  */
-LoggingGcsCommon.prototype['secret_key'] = undefined;
+LoggingGenericCommon.prototype['compression_codec'] = undefined;
+// Implement LoggingGcsCommon interface:
 /**
  * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
  * @member {String} user
  */
 LoggingGcsCommon.prototype['user'] = undefined;
+/**
+ * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+ * @member {String} secret_key
+ */
+LoggingGcsCommon.prototype['secret_key'] = undefined;
 // Implement LoggingGcsAllOf interface:
 /**
  * The name of the GCS bucket.
@@ -292,108 +284,6 @@ LoggingGcsAllOf.prototype['path'] = undefined;
  */
 LoggingGcsAllOf.prototype['public_key'] = 'null';
 
-
-
-/**
- * Allowed values for the <code>format_version</code> property.
- * @enum {Number}
- * @readonly
- */
-LoggingGcs['FormatVersionEnum'] = {
-
-    /**
-     * value: 1
-     * @const
-     */
-    "v1": 1,
-
-    /**
-     * value: 2
-     * @const
-     */
-    "v2": 2
-};
-
-
-/**
- * Allowed values for the <code>placement</code> property.
- * @enum {String}
- * @readonly
- */
-LoggingGcs['PlacementEnum'] = {
-
-    /**
-     * value: "none"
-     * @const
-     */
-    "none": "none",
-
-    /**
-     * value: "waf_debug"
-     * @const
-     */
-    "waf_debug": "waf_debug"
-};
-
-
-/**
- * Allowed values for the <code>compression_codec</code> property.
- * @enum {String}
- * @readonly
- */
-LoggingGcs['CompressionCodecEnum'] = {
-
-    /**
-     * value: "zstd"
-     * @const
-     */
-    "zstd": "zstd",
-
-    /**
-     * value: "snappy"
-     * @const
-     */
-    "snappy": "snappy",
-
-    /**
-     * value: "gzip"
-     * @const
-     */
-    "gzip": "gzip"
-};
-
-
-/**
- * Allowed values for the <code>message_type</code> property.
- * @enum {String}
- * @readonly
- */
-LoggingGcs['MessageTypeEnum'] = {
-
-    /**
-     * value: "classic"
-     * @const
-     */
-    "classic": "classic",
-
-    /**
-     * value: "loggly"
-     * @const
-     */
-    "loggly": "loggly",
-
-    /**
-     * value: "logplex"
-     * @const
-     */
-    "logplex": "logplex",
-
-    /**
-     * value: "blank"
-     * @const
-     */
-    "blank": "blank"
-};
 
 
 

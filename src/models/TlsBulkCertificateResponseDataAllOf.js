@@ -48,11 +48,11 @@ class TlsBulkCertificateResponseDataAllOf {
         if (data) {
             obj = obj || new TlsBulkCertificateResponseDataAllOf();
 
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
             }
         }
         return obj;
@@ -62,15 +62,15 @@ class TlsBulkCertificateResponseDataAllOf {
 }
 
 /**
- * @member {module:models/Timestamps} attributes
- */
-TlsBulkCertificateResponseDataAllOf.prototype['attributes'] = undefined;
-
-/**
  * Alphanumeric string identifying a TLS bulk certificate.
  * @member {String} id
  */
 TlsBulkCertificateResponseDataAllOf.prototype['id'] = undefined;
+
+/**
+ * @member {module:models/Timestamps} attributes
+ */
+TlsBulkCertificateResponseDataAllOf.prototype['attributes'] = undefined;
 
 
 

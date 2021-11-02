@@ -56,14 +56,14 @@ class TlsSubscriptionResponseData {
             TlsSubscriptionData.constructFromObject(data, obj);
             TlsSubscriptionResponseDataAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeTlsSubscription.constructFromObject(data['type']);
+            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = TlsSubscriptionDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = ApiClient.convertToType(data['relationships'], AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates);
-            }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeTlsSubscription.constructFromObject(data['type']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -76,6 +76,11 @@ class TlsSubscriptionResponseData {
 }
 
 /**
+ * @member {module:models/TypeTlsSubscription} type
+ */
+TlsSubscriptionResponseData.prototype['type'] = undefined;
+
+/**
  * @member {module:models/TlsSubscriptionDataAttributes} attributes
  */
 TlsSubscriptionResponseData.prototype['attributes'] = undefined;
@@ -86,11 +91,6 @@ TlsSubscriptionResponseData.prototype['attributes'] = undefined;
 TlsSubscriptionResponseData.prototype['relationships'] = undefined;
 
 /**
- * @member {module:models/TypeTlsSubscription} type
- */
-TlsSubscriptionResponseData.prototype['type'] = undefined;
-
-/**
  * Alphanumeric string identifying a TLS subscription.
  * @member {String} id
  */
@@ -99,6 +99,10 @@ TlsSubscriptionResponseData.prototype['id'] = undefined;
 
 // Implement TlsSubscriptionData interface:
 /**
+ * @member {module:models/TypeTlsSubscription} type
+ */
+TlsSubscriptionData.prototype['type'] = undefined;
+/**
  * @member {module:models/TlsSubscriptionDataAttributes} attributes
  */
 TlsSubscriptionData.prototype['attributes'] = undefined;
@@ -106,20 +110,16 @@ TlsSubscriptionData.prototype['attributes'] = undefined;
  * @member {module:models/RelationshipsForTlsSubscription} relationships
  */
 TlsSubscriptionData.prototype['relationships'] = undefined;
-/**
- * @member {module:models/TypeTlsSubscription} type
- */
-TlsSubscriptionData.prototype['type'] = undefined;
 // Implement TlsSubscriptionResponseDataAllOf interface:
-/**
- * @member {module:models/TlsSubscriptionDataAttributes} attributes
- */
-TlsSubscriptionResponseDataAllOf.prototype['attributes'] = undefined;
 /**
  * Alphanumeric string identifying a TLS subscription.
  * @member {String} id
  */
 TlsSubscriptionResponseDataAllOf.prototype['id'] = undefined;
+/**
+ * @member {module:models/TlsSubscriptionDataAttributes} attributes
+ */
+TlsSubscriptionResponseDataAllOf.prototype['attributes'] = undefined;
 /**
  * @member {module:models/AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates} relationships
  */

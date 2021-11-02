@@ -47,23 +47,17 @@ class BillingEstimateResponseAllOfLine {
         if (data) {
             obj = obj || new BillingEstimateResponseAllOfLine();
 
-            if (data.hasOwnProperty('amount')) {
-                obj['amount'] = ApiClient.convertToType(data['amount'], 'Number');
-            }
-            if (data.hasOwnProperty('client_plan_id')) {
-                obj['client_plan_id'] = ApiClient.convertToType(data['client_plan_id'], 'String');
-            }
-            if (data.hasOwnProperty('client_service_id')) {
-                obj['client_service_id'] = ApiClient.convertToType(data['client_service_id'], 'String');
+            if (data.hasOwnProperty('plan_no')) {
+                obj['plan_no'] = ApiClient.convertToType(data['plan_no'], 'Number');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
+            if (data.hasOwnProperty('units')) {
+                obj['units'] = ApiClient.convertToType(data['units'], 'Number');
+            }
             if (data.hasOwnProperty('per_unit_cost')) {
                 obj['per_unit_cost'] = ApiClient.convertToType(data['per_unit_cost'], 'Number');
-            }
-            if (data.hasOwnProperty('plan_no')) {
-                obj['plan_no'] = ApiClient.convertToType(data['plan_no'], 'Number');
             }
             if (data.hasOwnProperty('service_no')) {
                 obj['service_no'] = ApiClient.convertToType(data['service_no'], 'Number');
@@ -71,8 +65,14 @@ class BillingEstimateResponseAllOfLine {
             if (data.hasOwnProperty('service_type')) {
                 obj['service_type'] = ApiClient.convertToType(data['service_type'], 'String');
             }
-            if (data.hasOwnProperty('units')) {
-                obj['units'] = ApiClient.convertToType(data['units'], 'Number');
+            if (data.hasOwnProperty('amount')) {
+                obj['amount'] = ApiClient.convertToType(data['amount'], 'Number');
+            }
+            if (data.hasOwnProperty('client_service_id')) {
+                obj['client_service_id'] = ApiClient.convertToType(data['client_service_id'], 'String');
+            }
+            if (data.hasOwnProperty('client_plan_id')) {
+                obj['client_plan_id'] = ApiClient.convertToType(data['client_plan_id'], 'String');
             }
         }
         return obj;
@@ -82,19 +82,9 @@ class BillingEstimateResponseAllOfLine {
 }
 
 /**
- * @member {Number} amount
+ * @member {Number} plan_no
  */
-BillingEstimateResponseAllOfLine.prototype['amount'] = undefined;
-
-/**
- * @member {String} client_plan_id
- */
-BillingEstimateResponseAllOfLine.prototype['client_plan_id'] = undefined;
-
-/**
- * @member {String} client_service_id
- */
-BillingEstimateResponseAllOfLine.prototype['client_service_id'] = undefined;
+BillingEstimateResponseAllOfLine.prototype['plan_no'] = undefined;
 
 /**
  * @member {String} description
@@ -102,14 +92,14 @@ BillingEstimateResponseAllOfLine.prototype['client_service_id'] = undefined;
 BillingEstimateResponseAllOfLine.prototype['description'] = undefined;
 
 /**
+ * @member {Number} units
+ */
+BillingEstimateResponseAllOfLine.prototype['units'] = undefined;
+
+/**
  * @member {Number} per_unit_cost
  */
 BillingEstimateResponseAllOfLine.prototype['per_unit_cost'] = undefined;
-
-/**
- * @member {Number} plan_no
- */
-BillingEstimateResponseAllOfLine.prototype['plan_no'] = undefined;
 
 /**
  * @member {Number} service_no
@@ -122,9 +112,19 @@ BillingEstimateResponseAllOfLine.prototype['service_no'] = undefined;
 BillingEstimateResponseAllOfLine.prototype['service_type'] = undefined;
 
 /**
- * @member {Number} units
+ * @member {Number} amount
  */
-BillingEstimateResponseAllOfLine.prototype['units'] = undefined;
+BillingEstimateResponseAllOfLine.prototype['amount'] = undefined;
+
+/**
+ * @member {String} client_service_id
+ */
+BillingEstimateResponseAllOfLine.prototype['client_service_id'] = undefined;
+
+/**
+ * @member {String} client_plan_id
+ */
+BillingEstimateResponseAllOfLine.prototype['client_plan_id'] = undefined;
 
 
 

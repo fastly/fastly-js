@@ -32,8 +32,8 @@ Fetches historical stats for each of your Fastly services and groups the results
 
 ```javascript
 const options = {
-  from: 2 days ago,
-  to: "to_example",
+  from: 2020-04-09T18:14:30Z,
+  to: 2020-04-09T18:14:30Z,
   by: 'day',
   region: ,
 };
@@ -73,8 +73,8 @@ Fetches historical stats information aggregated across all of your Fastly servic
 
 ```javascript
 const options = {
-  from: 2 days ago,
-  to: "to_example",
+  from: 2020-04-09T18:14:30Z,
+  to: 2020-04-09T18:14:30Z,
   by: 'day',
   region: ,
 };
@@ -115,8 +115,8 @@ Fetches the specified field from the historical stats for each of your services 
 ```javascript
 const options = {
   field: hit_ratio, // required
-  from: 2 days ago,
-  to: "to_example",
+  from: 2020-04-09T18:14:30Z,
+  to: 2020-04-09T18:14:30Z,
   by: 'day',
   region: ,
 };
@@ -158,8 +158,8 @@ Fetches historical stats for a given service.
 ```javascript
 const options = {
   service_id: "service_id_example", // required
-  from: 2 days ago,
-  to: "to_example",
+  from: 2020-04-09T18:14:30Z,
+  to: 2020-04-09T18:14:30Z,
   by: 'day',
   region: ,
 };
@@ -202,8 +202,8 @@ Fetches the specified field from the historical stats for a given service.
 const options = {
   service_id: "service_id_example", // required
   field: hit_ratio, // required
-  from: 2 days ago,
-  to: "to_example",
+  from: 2020-04-09T18:14:30Z,
+  to: 2020-04-09T18:14:30Z,
   by: 'day',
   region: ,
 };
@@ -274,8 +274,8 @@ Returns usage information aggregated across all Fastly services and grouped by r
 
 ```javascript
 const options = {
-  from: 2 days ago,
-  to: "to_example",
+  from: 2020-04-09T18:14:30Z,
+  to: 2020-04-09T18:14:30Z,
   by: 'day',
   region: ,
 };
@@ -356,8 +356,8 @@ Returns usage information aggregated by service and grouped by service and regio
 
 ```javascript
 const options = {
-  from: 2 days ago,
-  to: "to_example",
+  from: 2020-04-09T18:14:30Z,
+  to: 2020-04-09T18:14:30Z,
   by: 'day',
   region: ,
 };

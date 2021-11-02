@@ -13,6 +13,8 @@
 
 import ApiClient from '../ApiClient';
 import LoggingBigquery from './LoggingBigquery';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingPlacement from './LoggingPlacement';
 import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Timestamps from './Timestamps';
 
@@ -56,38 +58,38 @@ class LoggingBigqueryResponse {
             Timestamps.constructFromObject(data, obj);
             ServiceIdAndVersion.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], 'String');
-            }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'Number');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
-                obj['placement'] = ApiClient.convertToType(data['placement'], 'String');
+                obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
             }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
             }
-            if (data.hasOwnProperty('secret_key')) {
-                obj['secret_key'] = ApiClient.convertToType(data['secret_key'], 'String');
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
             if (data.hasOwnProperty('user')) {
                 obj['user'] = ApiClient.convertToType(data['user'], 'String');
             }
+            if (data.hasOwnProperty('secret_key')) {
+                obj['secret_key'] = ApiClient.convertToType(data['secret_key'], 'String');
+            }
             if (data.hasOwnProperty('dataset')) {
                 obj['dataset'] = ApiClient.convertToType(data['dataset'], 'String');
-            }
-            if (data.hasOwnProperty('project_id')) {
-                obj['project_id'] = ApiClient.convertToType(data['project_id'], 'String');
             }
             if (data.hasOwnProperty('table')) {
                 obj['table'] = ApiClient.convertToType(data['table'], 'String');
             }
             if (data.hasOwnProperty('template_suffix')) {
                 obj['template_suffix'] = ApiClient.convertToType(data['template_suffix'], 'String');
+            }
+            if (data.hasOwnProperty('project_id')) {
+                obj['project_id'] = ApiClient.convertToType(data['project_id'], 'String');
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
@@ -112,29 +114,20 @@ class LoggingBigqueryResponse {
 }
 
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
- * @member {String} format
- */
-LoggingBigqueryResponse.prototype['format'] = undefined;
-
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
- * @member {module:models/LoggingBigqueryResponse.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingBigqueryResponse.prototype['format_version'] = undefined;
-
-/**
  * The name of the BigQuery logging object. Used as a primary key for API access.
  * @member {String} name
  */
 LoggingBigqueryResponse.prototype['name'] = undefined;
 
 /**
- * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
- * @member {module:models/LoggingBigqueryResponse.PlacementEnum} placement
+ * @member {module:models/LoggingPlacement} placement
  */
 LoggingBigqueryResponse.prototype['placement'] = undefined;
+
+/**
+ * @member {module:models/LoggingFormatVersion} format_version
+ */
+LoggingBigqueryResponse.prototype['format_version'] = undefined;
 
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
@@ -143,10 +136,10 @@ LoggingBigqueryResponse.prototype['placement'] = undefined;
 LoggingBigqueryResponse.prototype['response_condition'] = undefined;
 
 /**
- * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
- * @member {String} secret_key
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
+ * @member {String} format
  */
-LoggingBigqueryResponse.prototype['secret_key'] = undefined;
+LoggingBigqueryResponse.prototype['format'] = undefined;
 
 /**
  * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
@@ -155,16 +148,16 @@ LoggingBigqueryResponse.prototype['secret_key'] = undefined;
 LoggingBigqueryResponse.prototype['user'] = undefined;
 
 /**
+ * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+ * @member {String} secret_key
+ */
+LoggingBigqueryResponse.prototype['secret_key'] = undefined;
+
+/**
  * Your BigQuery dataset.
  * @member {String} dataset
  */
 LoggingBigqueryResponse.prototype['dataset'] = undefined;
-
-/**
- * Your Google Cloud Platform project ID. Required
- * @member {String} project_id
- */
-LoggingBigqueryResponse.prototype['project_id'] = undefined;
 
 /**
  * Your BigQuery table.
@@ -177,6 +170,12 @@ LoggingBigqueryResponse.prototype['table'] = undefined;
  * @member {String} template_suffix
  */
 LoggingBigqueryResponse.prototype['template_suffix'] = undefined;
+
+/**
+ * Your Google Cloud Platform project ID. Required
+ * @member {String} project_id
+ */
+LoggingBigqueryResponse.prototype['project_id'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
@@ -211,51 +210,43 @@ LoggingBigqueryResponse.prototype['version'] = undefined;
 
 // Implement LoggingBigquery interface:
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
- * @member {String} format
- */
-LoggingBigquery.prototype['format'] = undefined;
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
- * @member {module:models/LoggingBigquery.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingBigquery.prototype['format_version'] = undefined;
-/**
  * The name of the BigQuery logging object. Used as a primary key for API access.
  * @member {String} name
  */
 LoggingBigquery.prototype['name'] = undefined;
 /**
- * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
- * @member {module:models/LoggingBigquery.PlacementEnum} placement
+ * @member {module:models/LoggingPlacement} placement
  */
 LoggingBigquery.prototype['placement'] = undefined;
+/**
+ * @member {module:models/LoggingFormatVersion} format_version
+ */
+LoggingBigquery.prototype['format_version'] = undefined;
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
 LoggingBigquery.prototype['response_condition'] = undefined;
 /**
- * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
- * @member {String} secret_key
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
+ * @member {String} format
  */
-LoggingBigquery.prototype['secret_key'] = undefined;
+LoggingBigquery.prototype['format'] = undefined;
 /**
  * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
  * @member {String} user
  */
 LoggingBigquery.prototype['user'] = undefined;
 /**
+ * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+ * @member {String} secret_key
+ */
+LoggingBigquery.prototype['secret_key'] = undefined;
+/**
  * Your BigQuery dataset.
  * @member {String} dataset
  */
 LoggingBigquery.prototype['dataset'] = undefined;
-/**
- * Your Google Cloud Platform project ID. Required
- * @member {String} project_id
- */
-LoggingBigquery.prototype['project_id'] = undefined;
 /**
  * Your BigQuery table.
  * @member {String} table
@@ -266,6 +257,11 @@ LoggingBigquery.prototype['table'] = undefined;
  * @member {String} template_suffix
  */
 LoggingBigquery.prototype['template_suffix'] = undefined;
+/**
+ * Your Google Cloud Platform project ID. Required
+ * @member {String} project_id
+ */
+LoggingBigquery.prototype['project_id'] = undefined;
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
@@ -294,48 +290,6 @@ ServiceIdAndVersion.prototype['service_id'] = undefined;
  */
 ServiceIdAndVersion.prototype['version'] = undefined;
 
-
-
-/**
- * Allowed values for the <code>format_version</code> property.
- * @enum {Number}
- * @readonly
- */
-LoggingBigqueryResponse['FormatVersionEnum'] = {
-
-    /**
-     * value: 1
-     * @const
-     */
-    "v1": 1,
-
-    /**
-     * value: 2
-     * @const
-     */
-    "v2": 2
-};
-
-
-/**
- * Allowed values for the <code>placement</code> property.
- * @enum {String}
- * @readonly
- */
-LoggingBigqueryResponse['PlacementEnum'] = {
-
-    /**
-     * value: "none"
-     * @const
-     */
-    "none": "none",
-
-    /**
-     * value: "waf_debug"
-     * @const
-     */
-    "waf_debug": "waf_debug"
-};
 
 
 

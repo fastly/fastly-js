@@ -10,9 +10,11 @@ Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**createTlsSub**](TlsSubscriptionsApi.md#createTlsSub) | **POST** /tls/subscriptions | Create a TLS subscription
 [**deleteTlsSub**](TlsSubscriptionsApi.md#deleteTlsSub) | **DELETE** /tls/subscriptions/{tls_subscription_id} | Delete a TLS subscription
+[**deleteTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallengesGlobalsignEmailChallengeId**](TlsSubscriptionsApi.md#deleteTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallengesGlobalsignEmailChallengeId) | **DELETE** /tls/subscriptions/{tls_subscription_id}/authorizations/{tls_authorization_id}/globalsign_email_challenges/{globalsign_email_challenge_id} | Delete a GlobalSign email challenge
 [**getTlsSub**](TlsSubscriptionsApi.md#getTlsSub) | **GET** /tls/subscriptions/{tls_subscription_id} | Get a TLS subscription
 [**listTlsSubs**](TlsSubscriptionsApi.md#listTlsSubs) | **GET** /tls/subscriptions | List TLS subscriptions
 [**patchTlsSub**](TlsSubscriptionsApi.md#patchTlsSub) | **PATCH** /tls/subscriptions/{tls_subscription_id} | Update a TLS subscription
+[**postTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallenges**](TlsSubscriptionsApi.md#postTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallenges) | **POST** /tls/subscriptions/{tls_subscription_id}/authorizations/{tls_authorization_id}/globalsign_email_challenges | Creates a GlobalSign email challenge.
 
 
 
@@ -29,7 +31,7 @@ Create a new TLS subscription. This response includes a list of possible challen
 ```javascript
 const options = {
   force: true,
-  tls_subscription: {"data":{"attributes":{"certificate_authority":"lets-encrypt"},"relationships":{"tls_configuration":{"data":{"id":"t7CguUGZzb2W9Euo5FoKa","type":"tls_configuration"}},"tls_domains":{"data":[{"id":"DOMAIN_NAME","type":"tls_domain"}]}},"type":"tls_subscription"}},
+  tls_subscription: {"data":{"type":"tls_subscription","attributes":{"certificate_authority":"lets-encrypt"},"relationships":{"tls_domains":{"data":[{"type":"tls_domain","id":"DOMAIN_NAME"}]},"tls_configuration":{"data":{"type":"tls_configuration","id":"t7CguUGZzb2W9Euo5FoKa"}}}}},
 };
 
 apiInstance.createTlsSub(options)
@@ -82,6 +84,45 @@ apiInstance.deleteTlsSub(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **tls_subscription_id** | **String** |  |
+
+### Return type
+
+null (empty response body)
+
+
+## `deleteTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallengesGlobalsignEmailChallengeId`
+
+```javascript
+deleteTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallengesGlobalsignEmailChallengeId({ tls_subscription_id, globalsign_email_challenge_id, tls_authorization_id })
+```
+
+Deletes a GlobalSign email challenge. After a GlobalSign email challenge is deleted, the domain can use HTTP and DNS validation methods again.
+
+### Example
+
+```javascript
+const options = {
+  tls_subscription_id: "tls_subscription_id_example", // required
+  globalsign_email_challenge_id: "globalsign_email_challenge_id_example", // required
+  tls_authorization_id: "tls_authorization_id_example", // required
+};
+
+apiInstance.deleteTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallengesGlobalsignEmailChallengeId(options)
+  .then(() => {
+    console.log('API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**tls_subscription_id** | **String** |  |
+**globalsign_email_challenge_id** | **String** |  |
+**tls_authorization_id** | **String** |  |
 
 ### Return type
 
@@ -141,7 +182,7 @@ const options = {
   filter_tls_domains_id: "filter_tls_domains_id_example",
   filter_has_active_order: true,
   include: tls_authorizations,
-  page_number: 1,
+  page_number: 56,
   page_size: 20,
   sort: 'created_at',
 };
@@ -186,7 +227,7 @@ Change the TLS domains or common name associated with this subscription, or upda
 const options = {
   tls_subscription_id: "tls_subscription_id_example", // required
   force: true,
-  tls_subscription: {"data":{"relationships":{"common_name":{"data":{"id":"DOMAIN_NAME","type":"tls_domain"}},"tls_configuration":{"data":{"id":"t7CguUGZzb2W9Euo5FoKa","type":"tls_configuration"}},"tls_domains":{"data":[{"id":"DOMAIN_NAME","type":"tls_domain"}]}},"type":"tls_subscription"}},
+  tls_subscription: {"data":{"type":"tls_subscription","relationships":{"common_name":{"data":{"type":"tls_domain","id":"DOMAIN_NAME"}},"tls_domains":{"data":[{"type":"tls_domain","id":"DOMAIN_NAME"}]},"tls_configuration":{"data":{"type":"tls_configuration","id":"t7CguUGZzb2W9Euo5FoKa"}}}}},
 };
 
 apiInstance.patchTlsSub(options)
@@ -209,6 +250,45 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TlsSubscriptionResponse**](TlsSubscriptionResponse.md)
+
+
+## `postTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallenges`
+
+```javascript
+postTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallenges({ tls_subscription_id, tls_authorization_id, [body] })
+```
+
+Creates an email challenge for domain on a GlobalSign subscription. An email challenge will generate an email that can be used to validate domain ownership. If this challenge is created, then the domain can only be validated using email for the given subscription.
+
+### Example
+
+```javascript
+const options = {
+  tls_subscription_id: "tls_subscription_id_example", // required
+  tls_authorization_id: "tls_authorization_id_example", // required
+  body: {"data":{"type":"globalsign_email_challenge","attributes":{"preferred_email":"admin@example.com"}}},
+};
+
+apiInstance.postTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallenges(options)
+  .then((data) => {
+    console.log(data, 'API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**tls_subscription_id** | **String** |  |
+**tls_authorization_id** | **String** |  |
+**body** | **Object** |  | [optional]
+
+### Return type
+
+**Object**
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

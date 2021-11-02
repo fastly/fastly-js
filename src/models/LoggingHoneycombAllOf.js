@@ -47,11 +47,11 @@ class LoggingHoneycombAllOf {
         if (data) {
             obj = obj || new LoggingHoneycombAllOf();
 
-            if (data.hasOwnProperty('dataset')) {
-                obj['dataset'] = ApiClient.convertToType(data['dataset'], 'String');
-            }
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], Object);
+            }
+            if (data.hasOwnProperty('dataset')) {
+                obj['dataset'] = ApiClient.convertToType(data['dataset'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -64,16 +64,16 @@ class LoggingHoneycombAllOf {
 }
 
 /**
- * The Honeycomb Dataset you want to log to.
- * @member {String} dataset
- */
-LoggingHoneycombAllOf.prototype['dataset'] = undefined;
-
-/**
  * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Honeycomb can ingest.
  * @member {Object} format
  */
 LoggingHoneycombAllOf.prototype['format'] = undefined;
+
+/**
+ * The Honeycomb Dataset you want to log to.
+ * @member {String} dataset
+ */
+LoggingHoneycombAllOf.prototype['dataset'] = undefined;
 
 /**
  * The Write Key from the Account page of your Honeycomb account.

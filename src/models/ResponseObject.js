@@ -59,14 +59,14 @@ class ResponseObject {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('request_condition')) {
-                obj['request_condition'] = ApiClient.convertToType(data['request_condition'], 'String');
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ApiClient.convertToType(data['status'], 'Number');
             }
             if (data.hasOwnProperty('response')) {
                 obj['response'] = ApiClient.convertToType(data['response'], 'String');
             }
-            if (data.hasOwnProperty('status')) {
-                obj['status'] = ApiClient.convertToType(data['status'], 'Number');
+            if (data.hasOwnProperty('request_condition')) {
+                obj['request_condition'] = ApiClient.convertToType(data['request_condition'], 'String');
             }
         }
         return obj;
@@ -100,10 +100,11 @@ ResponseObject.prototype['content_type'] = undefined;
 ResponseObject.prototype['name'] = undefined;
 
 /**
- * Condition which, if met, will select this configuration during a request. Optional.
- * @member {String} request_condition
+ * The HTTP status code.
+ * @member {Number} status
+ * @default 200
  */
-ResponseObject.prototype['request_condition'] = undefined;
+ResponseObject.prototype['status'] = 200;
 
 /**
  * The HTTP response.
@@ -113,11 +114,10 @@ ResponseObject.prototype['request_condition'] = undefined;
 ResponseObject.prototype['response'] = 'Ok';
 
 /**
- * The HTTP status code.
- * @member {Number} status
- * @default 200
+ * Condition which, if met, will select this configuration during a request. Optional.
+ * @member {String} request_condition
  */
-ResponseObject.prototype['status'] = 200;
+ResponseObject.prototype['request_condition'] = undefined;
 
 
 

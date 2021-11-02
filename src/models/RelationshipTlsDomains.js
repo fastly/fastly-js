@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import RelationshipCommonNameCommonName from './RelationshipCommonNameCommonName';
+import RelationshipTlsDomainTlsDomain from './RelationshipTlsDomainTlsDomain';
 
 /**
  * The RelationshipTlsDomains model module.
@@ -49,7 +49,7 @@ class RelationshipTlsDomains {
             obj = obj || new RelationshipTlsDomains();
 
             if (data.hasOwnProperty('tls_domains')) {
-                obj['tls_domains'] = RelationshipCommonNameCommonName.constructFromObject(data['tls_domains']);
+                obj['tls_domains'] = RelationshipTlsDomainTlsDomain.constructFromObject(data['tls_domains']);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class RelationshipTlsDomains {
 }
 
 /**
- * @member {module:models/RelationshipCommonNameCommonName} tls_domains
+ * @member {module:models/RelationshipTlsDomainTlsDomain} tls_domains
  */
 RelationshipTlsDomains.prototype['tls_domains'] = undefined;
 

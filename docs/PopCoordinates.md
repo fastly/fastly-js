@@ -1,10 +1,13 @@
-# Fastly.RelationshipCommonNameCommonName
+# Fastly.PopCoordinates
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[RelationshipMemberTlsDomain]**](RelationshipMemberTlsDomain.md) |  | [optional] 
+**x** | **Number** |  | [optional] 
+**y** | **Number** |  | [optional] 
+**latitude** | **Number** |  | [optional] 
+**longitude** | **Number** |  | [optional] 
 
 
 

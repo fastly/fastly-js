@@ -58,7 +58,7 @@ class HistoricalUsageServiceResponseAllOf {
 }
 
 /**
- * @member {Object.<String, Object.<String, Object>>} data
+ * @member {Object.<String, Object>} data
  */
 HistoricalUsageServiceResponseAllOf.prototype['data'] = undefined;
 

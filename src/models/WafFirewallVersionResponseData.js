@@ -56,11 +56,11 @@ class WafFirewallVersionResponseData {
             WafFirewallVersionData.constructFromObject(data, obj);
             WafFirewallVersionResponseDataAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeWafFirewallVersion.constructFromObject(data['type']);
+            }
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -76,14 +76,14 @@ class WafFirewallVersionResponseData {
 }
 
 /**
- * @member {module:models/Timestamps} attributes
- */
-WafFirewallVersionResponseData.prototype['attributes'] = undefined;
-
-/**
  * @member {module:models/TypeWafFirewallVersion} type
  */
 WafFirewallVersionResponseData.prototype['type'] = undefined;
+
+/**
+ * @member {module:models/Timestamps} attributes
+ */
+WafFirewallVersionResponseData.prototype['attributes'] = undefined;
 
 /**
  * Alphanumeric string identifying a Firewall version.
@@ -99,23 +99,23 @@ WafFirewallVersionResponseData.prototype['relationships'] = undefined;
 
 // Implement WafFirewallVersionData interface:
 /**
- * @member {module:models/SchemasWafFirewallVersionDataAttributes} attributes
- */
-WafFirewallVersionData.prototype['attributes'] = undefined;
-/**
  * @member {module:models/TypeWafFirewallVersion} type
  */
 WafFirewallVersionData.prototype['type'] = undefined;
-// Implement WafFirewallVersionResponseDataAllOf interface:
 /**
- * @member {module:models/Timestamps} attributes
+ * @member {module:models/WafFirewallVersionDataAttributes} attributes
  */
-WafFirewallVersionResponseDataAllOf.prototype['attributes'] = undefined;
+WafFirewallVersionData.prototype['attributes'] = undefined;
+// Implement WafFirewallVersionResponseDataAllOf interface:
 /**
  * Alphanumeric string identifying a Firewall version.
  * @member {String} id
  */
 WafFirewallVersionResponseDataAllOf.prototype['id'] = undefined;
+/**
+ * @member {module:models/Timestamps} attributes
+ */
+WafFirewallVersionResponseDataAllOf.prototype['attributes'] = undefined;
 /**
  * @member {module:models/RelationshipsForWafFirewallVersion} relationships
  */

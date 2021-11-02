@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**content** | **String** | The VCL code that specifies exactly what the snippet does. | [optional] 
-**dynamic** | **String** | Sets the snippet version. | [optional] 
 **name** | **String** | The name for the snippet. | [optional] 
-**priority** | **String** | Numeric string value. Priority determines execution order. Lower numbers execute first. | [optional] [default to &#39;100&#39;]
+**dynamic** | **String** | Sets the snippet version. | [optional] 
 **type** | **String** | The location in generated VCL where the snippet should be placed. | [optional] 
+**content** | **String** | The VCL code that specifies exactly what the snippet does. | [optional] 
+**priority** | **String** | Numeric string value. Priority determines execution order. Lower numbers execute first. | [optional] [default to &#39;100&#39;]
 **service_id** | **String** | Alphanumeric string identifying the service. | [optional] [readonly] 
 **version** | **Number** | Integer identifying a service version. | [optional] [readonly] 
 **created_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 

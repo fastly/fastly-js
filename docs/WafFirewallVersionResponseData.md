@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**Timestamps**](Timestamps.md) |  | [optional] 
 **type** | [**TypeWafFirewallVersion**](TypeWafFirewallVersion.md) |  | [optional] 
+**attributes** | [**Timestamps**](Timestamps.md) |  | [optional] 
 **id** | **String** | Alphanumeric string identifying a Firewall version. | [optional] [readonly] 
 **relationships** | [**RelationshipsForWafFirewallVersion**](RelationshipsForWafFirewallVersion.md) |  | [optional] 
 

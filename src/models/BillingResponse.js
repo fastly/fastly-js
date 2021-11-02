@@ -56,26 +56,26 @@ class BillingResponse {
             Billing.constructFromObject(data, obj);
             BillingResponseAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('customer_id')) {
-                obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
-            }
             if (data.hasOwnProperty('end_time')) {
                 obj['end_time'] = ApiClient.convertToType(data['end_time'], 'String');
+            }
+            if (data.hasOwnProperty('start_time')) {
+                obj['start_time'] = ApiClient.convertToType(data['start_time'], 'String');
             }
             if (data.hasOwnProperty('invoice_id')) {
                 obj['invoice_id'] = ApiClient.convertToType(data['invoice_id'], 'String');
             }
-            if (data.hasOwnProperty('regions')) {
-                obj['regions'] = ApiClient.convertToType(data['regions'], {'String': {'String': Object}});
-            }
-            if (data.hasOwnProperty('start_time')) {
-                obj['start_time'] = ApiClient.convertToType(data['start_time'], 'String');
+            if (data.hasOwnProperty('customer_id')) {
+                obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = BillingStatus.constructFromObject(data['status']);
             }
             if (data.hasOwnProperty('total')) {
                 obj['total'] = BillingTotal.constructFromObject(data['total']);
+            }
+            if (data.hasOwnProperty('regions')) {
+                obj['regions'] = ApiClient.convertToType(data['regions'], {'String': {'String': Object}});
             }
             if (data.hasOwnProperty('line_items')) {
                 obj['line_items'] = ApiClient.convertToType(data['line_items'], [Timestamps]);
@@ -88,16 +88,16 @@ class BillingResponse {
 }
 
 /**
- * Alphanumeric string identifying the customer.
- * @member {String} customer_id
- */
-BillingResponse.prototype['customer_id'] = undefined;
-
-/**
  * Date and time in ISO 8601 format.
  * @member {String} end_time
  */
 BillingResponse.prototype['end_time'] = undefined;
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} start_time
+ */
+BillingResponse.prototype['start_time'] = undefined;
 
 /**
  * Alphanumeric string identifying the invoice.
@@ -106,15 +106,10 @@ BillingResponse.prototype['end_time'] = undefined;
 BillingResponse.prototype['invoice_id'] = undefined;
 
 /**
- * @member {Object.<String, Object.<String, Object>>} regions
+ * Alphanumeric string identifying the customer.
+ * @member {String} customer_id
  */
-BillingResponse.prototype['regions'] = undefined;
-
-/**
- * Date and time in ISO 8601 format.
- * @member {String} start_time
- */
-BillingResponse.prototype['start_time'] = undefined;
+BillingResponse.prototype['customer_id'] = undefined;
 
 /**
  * @member {module:models/BillingStatus} status
@@ -127,6 +122,11 @@ BillingResponse.prototype['status'] = undefined;
 BillingResponse.prototype['total'] = undefined;
 
 /**
+ * @member {Object.<String, Object.<String, Object>>} regions
+ */
+BillingResponse.prototype['regions'] = undefined;
+
+/**
  * @member {Array.<module:models/Timestamps>} line_items
  */
 BillingResponse.prototype['line_items'] = undefined;
@@ -134,29 +134,25 @@ BillingResponse.prototype['line_items'] = undefined;
 
 // Implement Billing interface:
 /**
- * Alphanumeric string identifying the customer.
- * @member {String} customer_id
- */
-Billing.prototype['customer_id'] = undefined;
-/**
  * Date and time in ISO 8601 format.
  * @member {String} end_time
  */
 Billing.prototype['end_time'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} start_time
+ */
+Billing.prototype['start_time'] = undefined;
 /**
  * Alphanumeric string identifying the invoice.
  * @member {String} invoice_id
  */
 Billing.prototype['invoice_id'] = undefined;
 /**
- * @member {Object.<String, Object.<String, Object>>} regions
+ * Alphanumeric string identifying the customer.
+ * @member {String} customer_id
  */
-Billing.prototype['regions'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} start_time
- */
-Billing.prototype['start_time'] = undefined;
+Billing.prototype['customer_id'] = undefined;
 /**
  * @member {module:models/BillingStatus} status
  */
@@ -165,6 +161,10 @@ Billing.prototype['status'] = undefined;
  * @member {module:models/BillingTotal} total
  */
 Billing.prototype['total'] = undefined;
+/**
+ * @member {Object.<String, Object.<String, Object>>} regions
+ */
+Billing.prototype['regions'] = undefined;
 // Implement BillingResponseAllOf interface:
 /**
  * @member {Array.<module:models/Timestamps>} line_items

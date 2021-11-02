@@ -190,7 +190,7 @@ List of DictionaryItems given service and dictionary ID.
 const options = {
   service_id: "service_id_example", // required
   dictionary_id: "dictionary_id_example", // required
-  page: 1,
+  page: 56,
   per_page: 20,
   sort: 'created',
   direction: 'ascend',

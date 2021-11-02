@@ -56,14 +56,14 @@ class TlsConfigurationResponseData {
             TlsConfigurationData.constructFromObject(data, obj);
             TlsConfigurationResponseDataAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeTlsConfiguration.constructFromObject(data['type']);
+            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = RelationshipsForTlsConfiguration.constructFromObject(data['relationships']);
-            }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeTlsConfiguration.constructFromObject(data['type']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -76,6 +76,11 @@ class TlsConfigurationResponseData {
 }
 
 /**
+ * @member {module:models/TypeTlsConfiguration} type
+ */
+TlsConfigurationResponseData.prototype['type'] = undefined;
+
+/**
  * @member {module:models/Timestamps} attributes
  */
 TlsConfigurationResponseData.prototype['attributes'] = undefined;
@@ -86,11 +91,6 @@ TlsConfigurationResponseData.prototype['attributes'] = undefined;
 TlsConfigurationResponseData.prototype['relationships'] = undefined;
 
 /**
- * @member {module:models/TypeTlsConfiguration} type
- */
-TlsConfigurationResponseData.prototype['type'] = undefined;
-
-/**
  * Alphanumeric string identifying a TLS configuration.
  * @member {String} id
  */
@@ -99,6 +99,10 @@ TlsConfigurationResponseData.prototype['id'] = undefined;
 
 // Implement TlsConfigurationData interface:
 /**
+ * @member {module:models/TypeTlsConfiguration} type
+ */
+TlsConfigurationData.prototype['type'] = undefined;
+/**
  * @member {module:models/TlsConfigurationDataAttributes} attributes
  */
 TlsConfigurationData.prototype['attributes'] = undefined;
@@ -106,20 +110,16 @@ TlsConfigurationData.prototype['attributes'] = undefined;
  * @member {module:models/RelationshipsForTlsConfiguration} relationships
  */
 TlsConfigurationData.prototype['relationships'] = undefined;
-/**
- * @member {module:models/TypeTlsConfiguration} type
- */
-TlsConfigurationData.prototype['type'] = undefined;
 // Implement TlsConfigurationResponseDataAllOf interface:
-/**
- * @member {module:models/Timestamps} attributes
- */
-TlsConfigurationResponseDataAllOf.prototype['attributes'] = undefined;
 /**
  * Alphanumeric string identifying a TLS configuration.
  * @member {String} id
  */
 TlsConfigurationResponseDataAllOf.prototype['id'] = undefined;
+/**
+ * @member {module:models/Timestamps} attributes
+ */
+TlsConfigurationResponseDataAllOf.prototype['attributes'] = undefined;
 
 
 

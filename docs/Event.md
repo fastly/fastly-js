@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**EventAttributes**](EventAttributes.md) |  | [optional] 
-**id** | **String** | Alphanumeric string identifying an event. | [optional] [readonly] 
 **type** | [**TypeEvent**](TypeEvent.md) |  | [optional] 
+**id** | **String** | Alphanumeric string identifying an event. | [optional] [readonly] 
+**attributes** | [**EventAttributes**](EventAttributes.md) |  | [optional] 
 
 
 

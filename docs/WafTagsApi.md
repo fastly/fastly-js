@@ -25,7 +25,7 @@ List all tags.
 ```javascript
 const options = {
   filter_name: "filter_name_example",
-  page_number: 1,
+  page_number: 56,
   page_size: 20,
   include: 'waf_rules',
 };

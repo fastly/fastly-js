@@ -12,7 +12,11 @@
  */
 
 import ApiClient from '../ApiClient';
+import LoggingCompressionCodec from './LoggingCompressionCodec';
 import LoggingDigitalocean from './LoggingDigitalocean';
+import LoggingFormatVersion from './LoggingFormatVersion';
+import LoggingMessageType from './LoggingMessageType';
+import LoggingPlacement from './LoggingPlacement';
 import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Timestamps from './Timestamps';
 
@@ -56,41 +60,44 @@ class LoggingDigitaloceanResponse {
             Timestamps.constructFromObject(data, obj);
             ServiceIdAndVersion.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], 'String');
-            }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'Number');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
-                obj['placement'] = ApiClient.convertToType(data['placement'], 'String');
+                obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
             }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
             }
-            if (data.hasOwnProperty('compression_codec')) {
-                obj['compression_codec'] = ApiClient.convertToType(data['compression_codec'], 'String');
-            }
-            if (data.hasOwnProperty('gzip_level')) {
-                obj['gzip_level'] = ApiClient.convertToType(data['gzip_level'], 'Number');
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
             if (data.hasOwnProperty('message_type')) {
-                obj['message_type'] = ApiClient.convertToType(data['message_type'], 'String');
-            }
-            if (data.hasOwnProperty('period')) {
-                obj['period'] = ApiClient.convertToType(data['period'], 'Number');
+                obj['message_type'] = LoggingMessageType.constructFromObject(data['message_type']);
             }
             if (data.hasOwnProperty('timestamp_format')) {
                 obj['timestamp_format'] = ApiClient.convertToType(data['timestamp_format'], 'String');
             }
-            if (data.hasOwnProperty('access_key')) {
-                obj['access_key'] = ApiClient.convertToType(data['access_key'], 'String');
+            if (data.hasOwnProperty('period')) {
+                obj['period'] = ApiClient.convertToType(data['period'], 'Number');
+            }
+            if (data.hasOwnProperty('gzip_level')) {
+                obj['gzip_level'] = ApiClient.convertToType(data['gzip_level'], 'Number');
+            }
+            if (data.hasOwnProperty('compression_codec')) {
+                obj['compression_codec'] = LoggingCompressionCodec.constructFromObject(data['compression_codec']);
             }
             if (data.hasOwnProperty('bucket_name')) {
                 obj['bucket_name'] = ApiClient.convertToType(data['bucket_name'], 'String');
+            }
+            if (data.hasOwnProperty('access_key')) {
+                obj['access_key'] = ApiClient.convertToType(data['access_key'], 'String');
+            }
+            if (data.hasOwnProperty('secret_key')) {
+                obj['secret_key'] = ApiClient.convertToType(data['secret_key'], 'String');
             }
             if (data.hasOwnProperty('domain')) {
                 obj['domain'] = ApiClient.convertToType(data['domain'], 'String');
@@ -100,9 +107,6 @@ class LoggingDigitaloceanResponse {
             }
             if (data.hasOwnProperty('public_key')) {
                 obj['public_key'] = ApiClient.convertToType(data['public_key'], 'String');
-            }
-            if (data.hasOwnProperty('secret_key')) {
-                obj['secret_key'] = ApiClient.convertToType(data['secret_key'], 'String');
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
@@ -127,30 +131,20 @@ class LoggingDigitaloceanResponse {
 }
 
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingDigitaloceanResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
- * @member {module:models/LoggingDigitaloceanResponse.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingDigitaloceanResponse.prototype['format_version'] = undefined;
-
-/**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
 LoggingDigitaloceanResponse.prototype['name'] = undefined;
 
 /**
- * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
- * @member {module:models/LoggingDigitaloceanResponse.PlacementEnum} placement
+ * @member {module:models/LoggingPlacement} placement
  */
 LoggingDigitaloceanResponse.prototype['placement'] = undefined;
+
+/**
+ * @member {module:models/LoggingFormatVersion} format_version
+ */
+LoggingDigitaloceanResponse.prototype['format_version'] = undefined;
 
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
@@ -159,24 +153,22 @@ LoggingDigitaloceanResponse.prototype['placement'] = undefined;
 LoggingDigitaloceanResponse.prototype['response_condition'] = undefined;
 
 /**
- * The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \"gzip\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {module:models/LoggingDigitaloceanResponse.CompressionCodecEnum} compression_codec
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
  */
-LoggingDigitaloceanResponse.prototype['compression_codec'] = undefined;
+LoggingDigitaloceanResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 
 /**
- * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {Number} gzip_level
- * @default 0
- */
-LoggingDigitaloceanResponse.prototype['gzip_level'] = 0;
-
-/**
- * How the message should be formatted.
- * @member {module:models/LoggingDigitaloceanResponse.MessageTypeEnum} message_type
- * @default 'classic'
+ * @member {module:models/LoggingMessageType} message_type
  */
 LoggingDigitaloceanResponse.prototype['message_type'] = undefined;
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} timestamp_format
+ */
+LoggingDigitaloceanResponse.prototype['timestamp_format'] = undefined;
 
 /**
  * How frequently log files are finalized so they can be available for reading (in seconds).
@@ -186,10 +178,22 @@ LoggingDigitaloceanResponse.prototype['message_type'] = undefined;
 LoggingDigitaloceanResponse.prototype['period'] = 3600;
 
 /**
- * Date and time in ISO 8601 format.
- * @member {String} timestamp_format
+ * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {Number} gzip_level
+ * @default 0
  */
-LoggingDigitaloceanResponse.prototype['timestamp_format'] = undefined;
+LoggingDigitaloceanResponse.prototype['gzip_level'] = 0;
+
+/**
+ * @member {module:models/LoggingCompressionCodec} compression_codec
+ */
+LoggingDigitaloceanResponse.prototype['compression_codec'] = undefined;
+
+/**
+ * The name of the DigitalOcean Space.
+ * @member {String} bucket_name
+ */
+LoggingDigitaloceanResponse.prototype['bucket_name'] = undefined;
 
 /**
  * Your DigitalOcean Spaces account access key.
@@ -198,10 +202,10 @@ LoggingDigitaloceanResponse.prototype['timestamp_format'] = undefined;
 LoggingDigitaloceanResponse.prototype['access_key'] = undefined;
 
 /**
- * The name of the DigitalOcean Space.
- * @member {String} bucket_name
+ * Your DigitalOcean Spaces account secret key.
+ * @member {String} secret_key
  */
-LoggingDigitaloceanResponse.prototype['bucket_name'] = undefined;
+LoggingDigitaloceanResponse.prototype['secret_key'] = undefined;
 
 /**
  * The domain of the DigitalOcean Spaces endpoint.
@@ -223,12 +227,6 @@ LoggingDigitaloceanResponse.prototype['path'] = 'null';
  * @default 'null'
  */
 LoggingDigitaloceanResponse.prototype['public_key'] = 'null';
-
-/**
- * Your DigitalOcean Spaces account secret key.
- * @member {String} secret_key
- */
-LoggingDigitaloceanResponse.prototype['secret_key'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
@@ -263,49 +261,38 @@ LoggingDigitaloceanResponse.prototype['version'] = undefined;
 
 // Implement LoggingDigitalocean interface:
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingDigitalocean.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
- * @member {module:models/LoggingDigitalocean.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingDigitalocean.prototype['format_version'] = undefined;
-/**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
 LoggingDigitalocean.prototype['name'] = undefined;
 /**
- * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
- * @member {module:models/LoggingDigitalocean.PlacementEnum} placement
+ * @member {module:models/LoggingPlacement} placement
  */
 LoggingDigitalocean.prototype['placement'] = undefined;
+/**
+ * @member {module:models/LoggingFormatVersion} format_version
+ */
+LoggingDigitalocean.prototype['format_version'] = undefined;
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
 LoggingDigitalocean.prototype['response_condition'] = undefined;
 /**
- * The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \"gzip\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {module:models/LoggingDigitalocean.CompressionCodecEnum} compression_codec
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
  */
-LoggingDigitalocean.prototype['compression_codec'] = undefined;
+LoggingDigitalocean.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 /**
- * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {Number} gzip_level
- * @default 0
- */
-LoggingDigitalocean.prototype['gzip_level'] = 0;
-/**
- * How the message should be formatted.
- * @member {module:models/LoggingDigitalocean.MessageTypeEnum} message_type
- * @default 'classic'
+ * @member {module:models/LoggingMessageType} message_type
  */
 LoggingDigitalocean.prototype['message_type'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} timestamp_format
+ */
+LoggingDigitalocean.prototype['timestamp_format'] = undefined;
 /**
  * How frequently log files are finalized so they can be available for reading (in seconds).
  * @member {Number} period
@@ -313,20 +300,30 @@ LoggingDigitalocean.prototype['message_type'] = undefined;
  */
 LoggingDigitalocean.prototype['period'] = 3600;
 /**
- * Date and time in ISO 8601 format.
- * @member {String} timestamp_format
+ * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {Number} gzip_level
+ * @default 0
  */
-LoggingDigitalocean.prototype['timestamp_format'] = undefined;
+LoggingDigitalocean.prototype['gzip_level'] = 0;
+/**
+ * @member {module:models/LoggingCompressionCodec} compression_codec
+ */
+LoggingDigitalocean.prototype['compression_codec'] = undefined;
+/**
+ * The name of the DigitalOcean Space.
+ * @member {String} bucket_name
+ */
+LoggingDigitalocean.prototype['bucket_name'] = undefined;
 /**
  * Your DigitalOcean Spaces account access key.
  * @member {String} access_key
  */
 LoggingDigitalocean.prototype['access_key'] = undefined;
 /**
- * The name of the DigitalOcean Space.
- * @member {String} bucket_name
+ * Your DigitalOcean Spaces account secret key.
+ * @member {String} secret_key
  */
-LoggingDigitalocean.prototype['bucket_name'] = undefined;
+LoggingDigitalocean.prototype['secret_key'] = undefined;
 /**
  * The domain of the DigitalOcean Spaces endpoint.
  * @member {String} domain
@@ -345,11 +342,6 @@ LoggingDigitalocean.prototype['path'] = 'null';
  * @default 'null'
  */
 LoggingDigitalocean.prototype['public_key'] = 'null';
-/**
- * Your DigitalOcean Spaces account secret key.
- * @member {String} secret_key
- */
-LoggingDigitalocean.prototype['secret_key'] = undefined;
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
@@ -378,108 +370,6 @@ ServiceIdAndVersion.prototype['service_id'] = undefined;
  */
 ServiceIdAndVersion.prototype['version'] = undefined;
 
-
-
-/**
- * Allowed values for the <code>format_version</code> property.
- * @enum {Number}
- * @readonly
- */
-LoggingDigitaloceanResponse['FormatVersionEnum'] = {
-
-    /**
-     * value: 1
-     * @const
-     */
-    "v1": 1,
-
-    /**
-     * value: 2
-     * @const
-     */
-    "v2": 2
-};
-
-
-/**
- * Allowed values for the <code>placement</code> property.
- * @enum {String}
- * @readonly
- */
-LoggingDigitaloceanResponse['PlacementEnum'] = {
-
-    /**
-     * value: "none"
-     * @const
-     */
-    "none": "none",
-
-    /**
-     * value: "waf_debug"
-     * @const
-     */
-    "waf_debug": "waf_debug"
-};
-
-
-/**
- * Allowed values for the <code>compression_codec</code> property.
- * @enum {String}
- * @readonly
- */
-LoggingDigitaloceanResponse['CompressionCodecEnum'] = {
-
-    /**
-     * value: "zstd"
-     * @const
-     */
-    "zstd": "zstd",
-
-    /**
-     * value: "snappy"
-     * @const
-     */
-    "snappy": "snappy",
-
-    /**
-     * value: "gzip"
-     * @const
-     */
-    "gzip": "gzip"
-};
-
-
-/**
- * Allowed values for the <code>message_type</code> property.
- * @enum {String}
- * @readonly
- */
-LoggingDigitaloceanResponse['MessageTypeEnum'] = {
-
-    /**
-     * value: "classic"
-     * @const
-     */
-    "classic": "classic",
-
-    /**
-     * value: "loggly"
-     * @const
-     */
-    "loggly": "loggly",
-
-    /**
-     * value: "logplex"
-     * @const
-     */
-    "logplex": "logplex",
-
-    /**
-     * value: "blank"
-     * @const
-     */
-    "blank": "blank"
-};
 
 
 

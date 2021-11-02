@@ -15,18 +15,18 @@ import ApiClient from '../ApiClient';
 import RelationshipMemberTlsDomain from './RelationshipMemberTlsDomain';
 
 /**
- * The RelationshipCommonNameCommonName model module.
- * @module models/RelationshipCommonNameCommonName
+ * The RelationshipTlsDomainTlsDomain model module.
+ * @module models/RelationshipTlsDomainTlsDomain
  * @version 3.0.0-alpha1
  */
-class RelationshipCommonNameCommonName {
+class RelationshipTlsDomainTlsDomain {
     /**
-     * Constructs a new <code>RelationshipCommonNameCommonName</code>.
-     * @alias module:models/RelationshipCommonNameCommonName
+     * Constructs a new <code>RelationshipTlsDomainTlsDomain</code>.
+     * @alias module:models/RelationshipTlsDomainTlsDomain
      */
     constructor() { 
         
-        RelationshipCommonNameCommonName.initialize(this);
+        RelationshipTlsDomainTlsDomain.initialize(this);
     }
 
     /**
@@ -38,15 +38,15 @@ class RelationshipCommonNameCommonName {
     }
 
     /**
-     * Constructs a <code>RelationshipCommonNameCommonName</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>RelationshipTlsDomainTlsDomain</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:models/RelationshipCommonNameCommonName} obj Optional instance to populate.
-     * @return {module:models/RelationshipCommonNameCommonName} The populated <code>RelationshipCommonNameCommonName</code> instance.
+     * @param {module:models/RelationshipTlsDomainTlsDomain} obj Optional instance to populate.
+     * @return {module:models/RelationshipTlsDomainTlsDomain} The populated <code>RelationshipTlsDomainTlsDomain</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new RelationshipCommonNameCommonName();
+            obj = obj || new RelationshipTlsDomainTlsDomain();
 
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], [RelationshipMemberTlsDomain]);
@@ -61,12 +61,12 @@ class RelationshipCommonNameCommonName {
 /**
  * @member {Array.<module:models/RelationshipMemberTlsDomain>} data
  */
-RelationshipCommonNameCommonName.prototype['data'] = undefined;
+RelationshipTlsDomainTlsDomain.prototype['data'] = undefined;
 
 
 
 
 
 
-export default RelationshipCommonNameCommonName;
+export default RelationshipTlsDomainTlsDomain;
 

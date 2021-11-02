@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | The domain name. | [optional] [readonly] 
-**relationships** | [**RelationshipsForTlsDomain**](RelationshipsForTlsDomain.md) |  | [optional] 
 **type** | [**TypeTlsDomain**](TypeTlsDomain.md) |  | [optional] 
+**relationships** | [**RelationshipsForTlsDomain**](RelationshipsForTlsDomain.md) |  | [optional] 
 
 
 

@@ -49,14 +49,14 @@ class TlsPrivateKeyResponseData {
         if (data) {
             obj = obj || new TlsPrivateKeyResponseData();
 
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeTlsPrivateKey.constructFromObject(data['type']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeTlsPrivateKey.constructFromObject(data['type']);
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
             }
         }
         return obj;
@@ -66,9 +66,9 @@ class TlsPrivateKeyResponseData {
 }
 
 /**
- * @member {module:models/Timestamps} attributes
+ * @member {module:models/TypeTlsPrivateKey} type
  */
-TlsPrivateKeyResponseData.prototype['attributes'] = undefined;
+TlsPrivateKeyResponseData.prototype['type'] = undefined;
 
 /**
  * Alphanumeric string identifying a private Key.
@@ -77,9 +77,9 @@ TlsPrivateKeyResponseData.prototype['attributes'] = undefined;
 TlsPrivateKeyResponseData.prototype['id'] = undefined;
 
 /**
- * @member {module:models/TypeTlsPrivateKey} type
+ * @member {module:models/Timestamps} attributes
  */
-TlsPrivateKeyResponseData.prototype['type'] = undefined;
+TlsPrivateKeyResponseData.prototype['attributes'] = undefined;
 
 
 

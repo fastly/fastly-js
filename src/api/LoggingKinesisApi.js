@@ -45,15 +45,15 @@ export default class LoggingKinesisApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @param {String} [options.access_key] - The access key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
-     * @param {String} [options.format]
-     * @param {module:models/LoggingFormatVersion} [options.format_version]
-     * @param {String} [options.iam_role] - The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if `access_key` and `secret_key` are provided.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:models/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.format]
+     * @param {String} [options.topic] - The Amazon Kinesis stream to send logs to. Required.
      * @param {module:models/String} [options.region] - The [AWS region](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints) to stream logs to.
      * @param {String} [options.secret_key] - The secret key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
-     * @param {String} [options.topic] - The Amazon Kinesis stream to send logs to. Required.
+     * @param {String} [options.access_key] - The access key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
+     * @param {String} [options.iam_role] - The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if `access_key` and `secret_key` are provided.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingKinesisResponse} and HTTP response
      */
     createLogKinesisWithHttpInfo(options = {}) {
@@ -76,15 +76,15 @@ export default class LoggingKinesisApi {
       let headerParams = {
       };
       let formParams = {
-        'access_key': options['access_key'],
-        'format': options['format'],
-        'format_version': options['format_version'],
-        'iam_role': options['iam_role'],
         'name': options['name'],
         'placement': options['placement'],
+        'format_version': options['format_version'],
+        'format': options['format'],
+        'topic': options['topic'],
         'region': options['region'],
         'secret_key': options['secret_key'],
-        'topic': options['topic']
+        'access_key': options['access_key'],
+        'iam_role': options['iam_role']
       };
 
       let authNames = ['token'];
@@ -103,15 +103,15 @@ export default class LoggingKinesisApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @param {String} [options.access_key] - The access key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
-     * @param {String} [options.format]
-     * @param {module:models/LoggingFormatVersion} [options.format_version]
-     * @param {String} [options.iam_role] - The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if `access_key` and `secret_key` are provided.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:models/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
+     * @param {String} [options.format]
+     * @param {String} [options.topic] - The Amazon Kinesis stream to send logs to. Required.
      * @param {module:models/String} [options.region] - The [AWS region](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints) to stream logs to.
      * @param {String} [options.secret_key] - The secret key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
-     * @param {String} [options.topic] - The Amazon Kinesis stream to send logs to. Required.
+     * @param {String} [options.access_key] - The access key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
+     * @param {String} [options.iam_role] - The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if `access_key` and `secret_key` are provided.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingKinesisResponse}
      */
     createLogKinesis(options = {}) {

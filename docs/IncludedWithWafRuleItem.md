@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**WafRuleRevisionAttributes**](WafRuleRevisionAttributes.md) |  | [optional] 
-**id** | **String** | Alphanumeric string identifying a WAF rule revision. | [optional] [readonly] 
 **type** | [**TypeWafRuleRevision**](TypeWafRuleRevision.md) |  | [optional] 
+**id** | **String** | Alphanumeric string identifying a WAF rule revision. | [optional] [readonly] 
+**attributes** | [**WafRuleRevisionAttributes**](WafRuleRevisionAttributes.md) |  | [optional] 
 
 
 

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**relationships** | [**RelationshipsForTlsActivation**](RelationshipsForTlsActivation.md) |  | [optional] 
 **type** | [**TypeTlsActivation**](TypeTlsActivation.md) |  | [optional] 
+**relationships** | [**RelationshipsForTlsActivation**](RelationshipsForTlsActivation.md) |  | [optional] 
 
 
 

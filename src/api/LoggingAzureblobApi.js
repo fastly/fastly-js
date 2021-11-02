@@ -14,6 +14,10 @@
 
 import ApiClient from "../ApiClient";
 import LoggingAzureblobResponse from '../models/LoggingAzureblobResponse';
+import LoggingCompressionCodec from '../models/LoggingCompressionCodec';
+import LoggingFormatVersion from '../models/LoggingFormatVersion';
+import LoggingMessageType from '../models/LoggingMessageType';
+import LoggingPlacement from '../models/LoggingPlacement';
 
 /**
 * LoggingAzureblob service.
@@ -43,22 +47,22 @@ export default class LoggingAzureblobApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:models/Number} [options.format_version=2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:models/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:models/String} [options.compression_codec] - The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \\\"gzip\\\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:models/String} [options.message_type='classic'] - How the message should be formatted.
-     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:models/LoggingMessageType} [options.message_type]
      * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
+     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
+     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:models/LoggingCompressionCodec} [options.compression_codec]
+     * @param {String} [options.path='null'] - The path to upload logs to.
      * @param {String} [options.account_name] - The unique Azure Blob Storage namespace in which your data objects are stored. Required.
      * @param {String} [options.container] - The name of the Azure Blob Storage container in which to store logs. Required.
-     * @param {Number} [options.file_max_bytes] - The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
-     * @param {String} [options.path='null'] - The path to upload logs to.
-     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
      * @param {String} [options.sas_token] - The Azure shared access signature providing write access to the blob service objects. Be sure to update your token before it expires or the logging functionality will not work. Required.
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {Number} [options.file_max_bytes] - The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingAzureblobResponse} and HTTP response
      */
     createLogAzureWithHttpInfo(options = {}) {
@@ -81,22 +85,22 @@ export default class LoggingAzureblobApi {
       let headerParams = {
       };
       let formParams = {
-        'format': options['format'],
-        'format_version': options['format_version'],
         'name': options['name'],
         'placement': options['placement'],
+        'format_version': options['format_version'],
         'response_condition': options['response_condition'],
-        'compression_codec': options['compression_codec'],
-        'gzip_level': options['gzip_level'],
+        'format': options['format'],
         'message_type': options['message_type'],
-        'period': options['period'],
         'timestamp_format': options['timestamp_format'],
+        'period': options['period'],
+        'gzip_level': options['gzip_level'],
+        'compression_codec': options['compression_codec'],
+        'path': options['path'],
         'account_name': options['account_name'],
         'container': options['container'],
-        'file_max_bytes': options['file_max_bytes'],
-        'path': options['path'],
+        'sas_token': options['sas_token'],
         'public_key': options['public_key'],
-        'sas_token': options['sas_token']
+        'file_max_bytes': options['file_max_bytes']
       };
 
       let authNames = ['token'];
@@ -115,22 +119,22 @@ export default class LoggingAzureblobApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:models/Number} [options.format_version=2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:models/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:models/String} [options.compression_codec] - The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \\\"gzip\\\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:models/String} [options.message_type='classic'] - How the message should be formatted.
-     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:models/LoggingMessageType} [options.message_type]
      * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
+     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
+     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:models/LoggingCompressionCodec} [options.compression_codec]
+     * @param {String} [options.path='null'] - The path to upload logs to.
      * @param {String} [options.account_name] - The unique Azure Blob Storage namespace in which your data objects are stored. Required.
      * @param {String} [options.container] - The name of the Azure Blob Storage container in which to store logs. Required.
-     * @param {Number} [options.file_max_bytes] - The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
-     * @param {String} [options.path='null'] - The path to upload logs to.
-     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
      * @param {String} [options.sas_token] - The Azure shared access signature providing write access to the blob service objects. Be sure to update your token before it expires or the logging functionality will not work. Required.
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {Number} [options.file_max_bytes] - The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingAzureblobResponse}
      */
     createLogAzure(options = {}) {
@@ -322,22 +326,22 @@ export default class LoggingAzureblobApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_azureblob_name
-     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:models/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:models/String} [options.compression_codec] - The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \\\"gzip\\\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:models/String} [options.message_type='classic'] - How the message should be formatted.
-     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:models/LoggingMessageType} [options.message_type]
      * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
+     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
+     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:models/LoggingCompressionCodec} [options.compression_codec]
+     * @param {String} [options.path='null'] - The path to upload logs to.
      * @param {String} [options.account_name] - The unique Azure Blob Storage namespace in which your data objects are stored. Required.
      * @param {String} [options.container] - The name of the Azure Blob Storage container in which to store logs. Required.
-     * @param {Number} [options.file_max_bytes] - The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
-     * @param {String} [options.path='null'] - The path to upload logs to.
-     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
      * @param {String} [options.sas_token] - The Azure shared access signature providing write access to the blob service objects. Be sure to update your token before it expires or the logging functionality will not work. Required.
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {Number} [options.file_max_bytes] - The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingAzureblobResponse} and HTTP response
      */
     updateLogAzureWithHttpInfo(options = {}) {
@@ -365,22 +369,22 @@ export default class LoggingAzureblobApi {
       let headerParams = {
       };
       let formParams = {
-        'format': options['format'],
-        'format_version': options['format_version'],
         'name': options['name'],
         'placement': options['placement'],
+        'format_version': options['format_version'],
         'response_condition': options['response_condition'],
-        'compression_codec': options['compression_codec'],
-        'gzip_level': options['gzip_level'],
+        'format': options['format'],
         'message_type': options['message_type'],
-        'period': options['period'],
         'timestamp_format': options['timestamp_format'],
+        'period': options['period'],
+        'gzip_level': options['gzip_level'],
+        'compression_codec': options['compression_codec'],
+        'path': options['path'],
         'account_name': options['account_name'],
         'container': options['container'],
-        'file_max_bytes': options['file_max_bytes'],
-        'path': options['path'],
+        'sas_token': options['sas_token'],
         'public_key': options['public_key'],
-        'sas_token': options['sas_token']
+        'file_max_bytes': options['file_max_bytes']
       };
 
       let authNames = ['token'];
@@ -400,22 +404,22 @@ export default class LoggingAzureblobApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_azureblob_name
-     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:models/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {module:models/String} [options.compression_codec] - The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \\\"gzip\\\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:models/String} [options.message_type='classic'] - How the message should be formatted.
-     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:models/LoggingMessageType} [options.message_type]
      * @param {String} [options.timestamp_format] - Date and time in ISO 8601 format.
+     * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
+     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:models/LoggingCompressionCodec} [options.compression_codec]
+     * @param {String} [options.path='null'] - The path to upload logs to.
      * @param {String} [options.account_name] - The unique Azure Blob Storage namespace in which your data objects are stored. Required.
      * @param {String} [options.container] - The name of the Azure Blob Storage container in which to store logs. Required.
-     * @param {Number} [options.file_max_bytes] - The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
-     * @param {String} [options.path='null'] - The path to upload logs to.
-     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
      * @param {String} [options.sas_token] - The Azure shared access signature providing write access to the blob service objects. Be sure to update your token before it expires or the logging functionality will not work. Required.
+     * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {Number} [options.file_max_bytes] - The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingAzureblobResponse}
      */
     updateLogAzure(options = {}) {

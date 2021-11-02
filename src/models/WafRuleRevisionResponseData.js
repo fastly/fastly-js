@@ -56,14 +56,14 @@ class WafRuleRevisionResponseData {
             WafRuleRevision.constructFromObject(data, obj);
             WafRuleRevisionResponseDataAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = WafRuleRevisionAttributes.constructFromObject(data['attributes']);
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeWafRuleRevision.constructFromObject(data['type']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeWafRuleRevision.constructFromObject(data['type']);
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = WafRuleRevisionAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = RelationshipWafRule.constructFromObject(data['relationships']);
@@ -76,9 +76,9 @@ class WafRuleRevisionResponseData {
 }
 
 /**
- * @member {module:models/WafRuleRevisionAttributes} attributes
+ * @member {module:models/TypeWafRuleRevision} type
  */
-WafRuleRevisionResponseData.prototype['attributes'] = undefined;
+WafRuleRevisionResponseData.prototype['type'] = undefined;
 
 /**
  * Alphanumeric string identifying a WAF rule revision.
@@ -87,9 +87,9 @@ WafRuleRevisionResponseData.prototype['attributes'] = undefined;
 WafRuleRevisionResponseData.prototype['id'] = undefined;
 
 /**
- * @member {module:models/TypeWafRuleRevision} type
+ * @member {module:models/WafRuleRevisionAttributes} attributes
  */
-WafRuleRevisionResponseData.prototype['type'] = undefined;
+WafRuleRevisionResponseData.prototype['attributes'] = undefined;
 
 /**
  * @member {module:models/RelationshipWafRule} relationships
@@ -99,18 +99,18 @@ WafRuleRevisionResponseData.prototype['relationships'] = undefined;
 
 // Implement WafRuleRevision interface:
 /**
- * @member {module:models/WafRuleRevisionAttributes} attributes
+ * @member {module:models/TypeWafRuleRevision} type
  */
-WafRuleRevision.prototype['attributes'] = undefined;
+WafRuleRevision.prototype['type'] = undefined;
 /**
  * Alphanumeric string identifying a WAF rule revision.
  * @member {String} id
  */
 WafRuleRevision.prototype['id'] = undefined;
 /**
- * @member {module:models/TypeWafRuleRevision} type
+ * @member {module:models/WafRuleRevisionAttributes} attributes
  */
-WafRuleRevision.prototype['type'] = undefined;
+WafRuleRevision.prototype['attributes'] = undefined;
 // Implement WafRuleRevisionResponseDataAllOf interface:
 /**
  * @member {module:models/RelationshipWafRule} relationships

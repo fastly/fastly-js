@@ -13,9 +13,9 @@
 
 import ApiClient from '../ApiClient';
 import NestedVersion from './NestedVersion';
+import SchemasVersionResponse from './SchemasVersionResponse';
 import ServiceDetailAllOf from './ServiceDetailAllOf';
 import ServiceResponse from './ServiceResponse';
-import VersionResponse from './VersionResponse';
 
 /**
  * The ServiceDetail model module.
@@ -67,11 +67,11 @@ class ServiceDetail {
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
             }
-            if (data.hasOwnProperty('customer_id')) {
-                obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('customer_id')) {
+                obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
@@ -79,17 +79,17 @@ class ServiceDetail {
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
-            if (data.hasOwnProperty('paused')) {
-                obj['paused'] = ApiClient.convertToType(data['paused'], 'Boolean');
-            }
             if (data.hasOwnProperty('publish_key')) {
                 obj['publish_key'] = ApiClient.convertToType(data['publish_key'], 'String');
+            }
+            if (data.hasOwnProperty('paused')) {
+                obj['paused'] = ApiClient.convertToType(data['paused'], 'Boolean');
             }
             if (data.hasOwnProperty('version')) {
                 obj['version'] = NestedVersion.constructFromObject(data['version']);
             }
             if (data.hasOwnProperty('versions')) {
-                obj['versions'] = ApiClient.convertToType(data['versions'], [VersionResponse]);
+                obj['versions'] = ApiClient.convertToType(data['versions'], [SchemasVersionResponse]);
             }
             if (data.hasOwnProperty('active_version')) {
                 obj['active_version'] = NestedVersion.constructFromObject(data['active_version']);
@@ -126,16 +126,16 @@ ServiceDetail.prototype['updated_at'] = undefined;
 ServiceDetail.prototype['comment'] = undefined;
 
 /**
- * Alphanumeric string identifying the customer.
- * @member {String} customer_id
- */
-ServiceDetail.prototype['customer_id'] = undefined;
-
-/**
  * The name of the service.
  * @member {String} name
  */
 ServiceDetail.prototype['name'] = undefined;
+
+/**
+ * Alphanumeric string identifying the customer.
+ * @member {String} customer_id
+ */
+ServiceDetail.prototype['customer_id'] = undefined;
 
 /**
  * The type of this service.
@@ -150,16 +150,16 @@ ServiceDetail.prototype['type'] = undefined;
 ServiceDetail.prototype['id'] = undefined;
 
 /**
- * Whether the service is paused. Services are paused due to a lack of traffic for an extended period of time. Services are resumed either when a draft version is activated or a locked version is cloned and reactivated.
- * @member {Boolean} paused
- */
-ServiceDetail.prototype['paused'] = undefined;
-
-/**
  * Unused at this time.
  * @member {String} publish_key
  */
 ServiceDetail.prototype['publish_key'] = undefined;
+
+/**
+ * Whether the service is paused. Services are paused due to a lack of traffic for an extended period of time. Services are resumed either when a draft version is activated or a locked version is cloned and reactivated.
+ * @member {Boolean} paused
+ */
+ServiceDetail.prototype['paused'] = undefined;
 
 /**
  * @member {module:models/NestedVersion} version
@@ -168,7 +168,7 @@ ServiceDetail.prototype['version'] = undefined;
 
 /**
  * A list of [versions](/reference/api/services/version/) associated with the service.
- * @member {Array.<module:models/VersionResponse>} versions
+ * @member {Array.<module:models/SchemasVersionResponse>} versions
  */
 ServiceDetail.prototype['versions'] = undefined;
 
@@ -200,15 +200,15 @@ ServiceResponse.prototype['updated_at'] = undefined;
  */
 ServiceResponse.prototype['comment'] = undefined;
 /**
- * Alphanumeric string identifying the customer.
- * @member {String} customer_id
- */
-ServiceResponse.prototype['customer_id'] = undefined;
-/**
  * The name of the service.
  * @member {String} name
  */
 ServiceResponse.prototype['name'] = undefined;
+/**
+ * Alphanumeric string identifying the customer.
+ * @member {String} customer_id
+ */
+ServiceResponse.prototype['customer_id'] = undefined;
 /**
  * The type of this service.
  * @member {module:models/ServiceResponse.TypeEnum} type
@@ -220,15 +220,15 @@ ServiceResponse.prototype['type'] = undefined;
  */
 ServiceResponse.prototype['id'] = undefined;
 /**
- * Whether the service is paused. Services are paused due to a lack of traffic for an extended period of time. Services are resumed either when a draft version is activated or a locked version is cloned and reactivated.
- * @member {Boolean} paused
- */
-ServiceResponse.prototype['paused'] = undefined;
-/**
  * Unused at this time.
  * @member {String} publish_key
  */
 ServiceResponse.prototype['publish_key'] = undefined;
+/**
+ * Whether the service is paused. Services are paused due to a lack of traffic for an extended period of time. Services are resumed either when a draft version is activated or a locked version is cloned and reactivated.
+ * @member {Boolean} paused
+ */
+ServiceResponse.prototype['paused'] = undefined;
 /**
  * Current [version](/reference/api/services/version/) of the service.
  * @member {Number} version
@@ -236,7 +236,7 @@ ServiceResponse.prototype['publish_key'] = undefined;
 ServiceResponse.prototype['version'] = undefined;
 /**
  * A list of [versions](/reference/api/services/version/) associated with the service.
- * @member {Array.<module:models/VersionResponse>} versions
+ * @member {Array.<module:models/SchemasVersionResponse>} versions
  */
 ServiceResponse.prototype['versions'] = undefined;
 // Implement ServiceDetailAllOf interface:

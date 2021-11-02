@@ -47,23 +47,23 @@ class LoggingElasticsearchAllOf {
         if (data) {
             obj = obj || new LoggingElasticsearchAllOf();
 
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], Object);
-            }
             if (data.hasOwnProperty('index')) {
                 obj['index'] = ApiClient.convertToType(data['index'], 'String');
-            }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
-            }
-            if (data.hasOwnProperty('pipeline')) {
-                obj['pipeline'] = ApiClient.convertToType(data['pipeline'], 'String');
             }
             if (data.hasOwnProperty('url')) {
                 obj['url'] = ApiClient.convertToType(data['url'], 'String');
             }
+            if (data.hasOwnProperty('pipeline')) {
+                obj['pipeline'] = ApiClient.convertToType(data['pipeline'], 'String');
+            }
             if (data.hasOwnProperty('user')) {
                 obj['user'] = ApiClient.convertToType(data['user'], 'String');
+            }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], Object);
             }
         }
         return obj;
@@ -73,28 +73,10 @@ class LoggingElasticsearchAllOf {
 }
 
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Elasticsearch can ingest.
- * @member {Object} format
- */
-LoggingElasticsearchAllOf.prototype['format'] = undefined;
-
-/**
  * The name of the Elasticsearch index to send documents (logs) to. The index must follow the Elasticsearch [index format rules](https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html). We support [strftime](https://www.man7.org/linux/man-pages/man3/strftime.3.html) interpolated variables inside braces prefixed with a pound symbol. For example, `#{%F}` will interpolate as `YYYY-MM-DD` with today's date.
  * @member {String} index
  */
 LoggingElasticsearchAllOf.prototype['index'] = undefined;
-
-/**
- * Basic Auth password.
- * @member {String} password
- */
-LoggingElasticsearchAllOf.prototype['password'] = undefined;
-
-/**
- * The ID of the Elasticsearch ingest pipeline to apply pre-process transformations to before indexing. Learn more about creating a pipeline in the [Elasticsearch docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/ingest.html).
- * @member {String} pipeline
- */
-LoggingElasticsearchAllOf.prototype['pipeline'] = undefined;
 
 /**
  * The URL to stream logs to. Must use HTTPS.
@@ -103,10 +85,28 @@ LoggingElasticsearchAllOf.prototype['pipeline'] = undefined;
 LoggingElasticsearchAllOf.prototype['url'] = undefined;
 
 /**
+ * The ID of the Elasticsearch ingest pipeline to apply pre-process transformations to before indexing. Learn more about creating a pipeline in the [Elasticsearch docs](https://www.elastic.co/guide/en/elasticsearch/reference/current/ingest.html).
+ * @member {String} pipeline
+ */
+LoggingElasticsearchAllOf.prototype['pipeline'] = undefined;
+
+/**
  * Basic Auth username.
  * @member {String} user
  */
 LoggingElasticsearchAllOf.prototype['user'] = undefined;
+
+/**
+ * Basic Auth password.
+ * @member {String} password
+ */
+LoggingElasticsearchAllOf.prototype['password'] = undefined;
+
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Elasticsearch can ingest.
+ * @member {Object} format
+ */
+LoggingElasticsearchAllOf.prototype['format'] = undefined;
 
 
 

@@ -47,14 +47,14 @@ class AclEntry {
         if (data) {
             obj = obj || new AclEntry();
 
+            if (data.hasOwnProperty('negated')) {
+                obj['negated'] = ApiClient.convertToType(data['negated'], 'Number');
+            }
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
             }
             if (data.hasOwnProperty('ip')) {
                 obj['ip'] = ApiClient.convertToType(data['ip'], 'String');
-            }
-            if (data.hasOwnProperty('negated')) {
-                obj['negated'] = ApiClient.convertToType(data['negated'], 'Number');
             }
             if (data.hasOwnProperty('subnet')) {
                 obj['subnet'] = ApiClient.convertToType(data['subnet'], 'Number');
@@ -67,6 +67,13 @@ class AclEntry {
 }
 
 /**
+ * Whether to negate the match. Useful primarily when creating individual exceptions to larger subnets.
+ * @member {module:models/AclEntry.NegatedEnum} negated
+ * @default NegatedEnum.0
+ */
+AclEntry.prototype['negated'] = undefined;
+
+/**
  * A freeform descriptive note.
  * @member {String} comment
  */
@@ -77,13 +84,6 @@ AclEntry.prototype['comment'] = undefined;
  * @member {String} ip
  */
 AclEntry.prototype['ip'] = undefined;
-
-/**
- * Whether to negate the match. Useful primarily when creating individual exceptions to larger subnets.
- * @member {module:models/AclEntry.NegatedEnum} negated
- * @default NegatedEnum.0
- */
-AclEntry.prototype['negated'] = undefined;
 
 /**
  * Number of bits for the subnet mask applied to the IP address.  For IPv4 addresses, a value of 32 represents the smallest subnet mask (1 address), 24 represents a class C subnet mask (256 addresses), 16 represents a class B subnet mask (65k addresses),  and 8 is class A subnet mask (16m addresses). If not provided, no mask is applied.

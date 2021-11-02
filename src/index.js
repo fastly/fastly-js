@@ -90,7 +90,6 @@ import HistoricalRegionsResponseAllOf from './models/HistoricalRegionsResponseAl
 import HistoricalResponse from './models/HistoricalResponse';
 import HistoricalResponseAllOf from './models/HistoricalResponseAllOf';
 import HistoricalUsageAggregateResponse from './models/HistoricalUsageAggregateResponse';
-import HistoricalUsageAggregateResponseAllOf from './models/HistoricalUsageAggregateResponseAllOf';
 import HistoricalUsageMonthResponse from './models/HistoricalUsageMonthResponse';
 import HistoricalUsageMonthResponseAllOf from './models/HistoricalUsageMonthResponseAllOf';
 import HistoricalUsageMonthResponseAllOfData from './models/HistoricalUsageMonthResponseAllOfData';
@@ -127,6 +126,7 @@ import LoggingCloudfiles from './models/LoggingCloudfiles';
 import LoggingCloudfilesAllOf from './models/LoggingCloudfilesAllOf';
 import LoggingCloudfilesResponse from './models/LoggingCloudfilesResponse';
 import LoggingCommon from './models/LoggingCommon';
+import LoggingCompressionCodec from './models/LoggingCompressionCodec';
 import LoggingDatadog from './models/LoggingDatadog';
 import LoggingDatadogAllOf from './models/LoggingDatadogAllOf';
 import LoggingDatadogResponse from './models/LoggingDatadogResponse';
@@ -215,6 +215,8 @@ import Pool from './models/Pool';
 import PoolAllOf from './models/PoolAllOf';
 import PoolResponse from './models/PoolResponse';
 import PoolResponseAllOf from './models/PoolResponseAllOf';
+import Pop from './models/Pop';
+import PopCoordinates from './models/PopCoordinates';
 import PublicIpList from './models/PublicIpList';
 import RateLimiter from './models/RateLimiter';
 import RateLimiterResponse from './models/RateLimiterResponse';
@@ -224,7 +226,6 @@ import Realtime from './models/Realtime';
 import RealtimeEntry from './models/RealtimeEntry';
 import RealtimeMeasurements from './models/RealtimeMeasurements';
 import RelationshipCommonName from './models/RelationshipCommonName';
-import RelationshipCommonNameCommonName from './models/RelationshipCommonNameCommonName';
 import RelationshipCustomer from './models/RelationshipCustomer';
 import RelationshipCustomerCustomer from './models/RelationshipCustomerCustomer';
 import RelationshipMemberCustomer from './models/RelationshipMemberCustomer';
@@ -267,6 +268,7 @@ import RelationshipTlsDnsRecord from './models/RelationshipTlsDnsRecord';
 import RelationshipTlsDnsRecordDnsRecord from './models/RelationshipTlsDnsRecordDnsRecord';
 import RelationshipTlsDnsRecords from './models/RelationshipTlsDnsRecords';
 import RelationshipTlsDomain from './models/RelationshipTlsDomain';
+import RelationshipTlsDomainTlsDomain from './models/RelationshipTlsDomainTlsDomain';
 import RelationshipTlsDomains from './models/RelationshipTlsDomains';
 import RelationshipTlsPrivateKey from './models/RelationshipTlsPrivateKey';
 import RelationshipTlsPrivateKeyTlsPrivateKey from './models/RelationshipTlsPrivateKeyTlsPrivateKey';
@@ -310,16 +312,16 @@ import ResponseObjectResponse from './models/ResponseObjectResponse';
 import Results from './models/Results';
 import RoleUser from './models/RoleUser';
 import SchemasBackend from './models/SchemasBackend';
+import SchemasCondition from './models/SchemasCondition';
+import SchemasConditionResponse from './models/SchemasConditionResponse';
 import SchemasDirector from './models/SchemasDirector';
-import SchemasRelationshipsForWafActiveRule from './models/SchemasRelationshipsForWafActiveRule';
+import SchemasSnippetResponse from './models/SchemasSnippetResponse';
 import SchemasUserResponse from './models/SchemasUserResponse';
-import SchemasUserResponseAllOf from './models/SchemasUserResponseAllOf';
-import SchemasWafActiveRule from './models/SchemasWafActiveRule';
-import SchemasWafActiveRuleData from './models/SchemasWafActiveRuleData';
-import SchemasWafActiveRuleDataAttributes from './models/SchemasWafActiveRuleDataAttributes';
+import SchemasVclResponse from './models/SchemasVclResponse';
+import SchemasVersion from './models/SchemasVersion';
+import SchemasVersionResponse from './models/SchemasVersionResponse';
 import SchemasWafFirewallVersion from './models/SchemasWafFirewallVersion';
 import SchemasWafFirewallVersionData from './models/SchemasWafFirewallVersionData';
-import SchemasWafFirewallVersionDataAttributes from './models/SchemasWafFirewallVersionDataAttributes';
 import Server from './models/Server';
 import ServerResponse from './models/ServerResponse';
 import ServerResponseAllOf from './models/ServerResponseAllOf';
@@ -439,6 +441,7 @@ import TypeWafRuleRevision from './models/TypeWafRuleRevision';
 import TypeWafTag from './models/TypeWafTag';
 import User from './models/User';
 import UserResponse from './models/UserResponse';
+import UserResponseAllOf from './models/UserResponseAllOf';
 import Vcl from './models/Vcl';
 import VclDiff from './models/VclDiff';
 import VclResponse from './models/VclResponse';
@@ -450,6 +453,7 @@ import VersionResponseAllOf from './models/VersionResponseAllOf';
 import WafActiveRule from './models/WafActiveRule';
 import WafActiveRuleCreationResponse from './models/WafActiveRuleCreationResponse';
 import WafActiveRuleData from './models/WafActiveRuleData';
+import WafActiveRuleDataAttributes from './models/WafActiveRuleDataAttributes';
 import WafActiveRuleResponse from './models/WafActiveRuleResponse';
 import WafActiveRuleResponseData from './models/WafActiveRuleResponseData';
 import WafActiveRuleResponseDataAllOf from './models/WafActiveRuleResponseDataAllOf';
@@ -471,6 +475,7 @@ import WafFirewallResponseData from './models/WafFirewallResponseData';
 import WafFirewallResponseDataAllOf from './models/WafFirewallResponseDataAllOf';
 import WafFirewallVersion from './models/WafFirewallVersion';
 import WafFirewallVersionData from './models/WafFirewallVersionData';
+import WafFirewallVersionDataAttributes from './models/WafFirewallVersionDataAttributes';
 import WafFirewallVersionResponse from './models/WafFirewallVersionResponse';
 import WafFirewallVersionResponseData from './models/WafFirewallVersionResponseData';
 import WafFirewallVersionResponseDataAllOf from './models/WafFirewallVersionResponseDataAllOf';
@@ -546,6 +551,7 @@ import LoggingSumologicApi from './api/LoggingSumologicApi';
 import LoggingSyslogApi from './api/LoggingSyslogApi';
 import PackageApi from './api/PackageApi';
 import PoolApi from './api/PoolApi';
+import PopApi from './api/PopApi';
 import PublicIpListApi from './api/PublicIpListApi';
 import RateLimiterApi from './api/RateLimiterApi';
 import RealtimeApi from './api/RealtimeApi';
@@ -565,7 +571,6 @@ import TlsConfigurationsApi from './api/TlsConfigurationsApi';
 import TlsDomainsApi from './api/TlsDomainsApi';
 import TlsPrivateKeysApi from './api/TlsPrivateKeysApi';
 import TlsSubscriptionsApi from './api/TlsSubscriptionsApi';
-import TlsSubscriptionsOtherApi from './api/TlsSubscriptionsOtherApi';
 import TokensApi from './api/TokensApi';
 import UserApi from './api/UserApi';
 import VclApi from './api/VclApi';
@@ -1085,12 +1090,6 @@ export {
     HistoricalUsageAggregateResponse,
 
     /**
-     * The HistoricalUsageAggregateResponseAllOf model constructor.
-     * @property {module:models/HistoricalUsageAggregateResponseAllOf}
-     */
-    HistoricalUsageAggregateResponseAllOf,
-
-    /**
      * The HistoricalUsageMonthResponse model constructor.
      * @property {module:models/HistoricalUsageMonthResponse}
      */
@@ -1305,6 +1304,12 @@ export {
      * @property {module:models/LoggingCommon}
      */
     LoggingCommon,
+
+    /**
+     * The LoggingCompressionCodec model constructor.
+     * @property {module:models/LoggingCompressionCodec}
+     */
+    LoggingCompressionCodec,
 
     /**
      * The LoggingDatadog model constructor.
@@ -1835,6 +1840,18 @@ export {
     PoolResponseAllOf,
 
     /**
+     * The Pop model constructor.
+     * @property {module:models/Pop}
+     */
+    Pop,
+
+    /**
+     * The PopCoordinates model constructor.
+     * @property {module:models/PopCoordinates}
+     */
+    PopCoordinates,
+
+    /**
      * The PublicIpList model constructor.
      * @property {module:models/PublicIpList}
      */
@@ -1887,12 +1904,6 @@ export {
      * @property {module:models/RelationshipCommonName}
      */
     RelationshipCommonName,
-
-    /**
-     * The RelationshipCommonNameCommonName model constructor.
-     * @property {module:models/RelationshipCommonNameCommonName}
-     */
-    RelationshipCommonNameCommonName,
 
     /**
      * The RelationshipCustomer model constructor.
@@ -2145,6 +2156,12 @@ export {
      * @property {module:models/RelationshipTlsDomain}
      */
     RelationshipTlsDomain,
+
+    /**
+     * The RelationshipTlsDomainTlsDomain model constructor.
+     * @property {module:models/RelationshipTlsDomainTlsDomain}
+     */
+    RelationshipTlsDomainTlsDomain,
 
     /**
      * The RelationshipTlsDomains model constructor.
@@ -2405,16 +2422,28 @@ export {
     SchemasBackend,
 
     /**
+     * The SchemasCondition model constructor.
+     * @property {module:models/SchemasCondition}
+     */
+    SchemasCondition,
+
+    /**
+     * The SchemasConditionResponse model constructor.
+     * @property {module:models/SchemasConditionResponse}
+     */
+    SchemasConditionResponse,
+
+    /**
      * The SchemasDirector model constructor.
      * @property {module:models/SchemasDirector}
      */
     SchemasDirector,
 
     /**
-     * The SchemasRelationshipsForWafActiveRule model constructor.
-     * @property {module:models/SchemasRelationshipsForWafActiveRule}
+     * The SchemasSnippetResponse model constructor.
+     * @property {module:models/SchemasSnippetResponse}
      */
-    SchemasRelationshipsForWafActiveRule,
+    SchemasSnippetResponse,
 
     /**
      * The SchemasUserResponse model constructor.
@@ -2423,28 +2452,22 @@ export {
     SchemasUserResponse,
 
     /**
-     * The SchemasUserResponseAllOf model constructor.
-     * @property {module:models/SchemasUserResponseAllOf}
+     * The SchemasVclResponse model constructor.
+     * @property {module:models/SchemasVclResponse}
      */
-    SchemasUserResponseAllOf,
+    SchemasVclResponse,
 
     /**
-     * The SchemasWafActiveRule model constructor.
-     * @property {module:models/SchemasWafActiveRule}
+     * The SchemasVersion model constructor.
+     * @property {module:models/SchemasVersion}
      */
-    SchemasWafActiveRule,
+    SchemasVersion,
 
     /**
-     * The SchemasWafActiveRuleData model constructor.
-     * @property {module:models/SchemasWafActiveRuleData}
+     * The SchemasVersionResponse model constructor.
+     * @property {module:models/SchemasVersionResponse}
      */
-    SchemasWafActiveRuleData,
-
-    /**
-     * The SchemasWafActiveRuleDataAttributes model constructor.
-     * @property {module:models/SchemasWafActiveRuleDataAttributes}
-     */
-    SchemasWafActiveRuleDataAttributes,
+    SchemasVersionResponse,
 
     /**
      * The SchemasWafFirewallVersion model constructor.
@@ -2457,12 +2480,6 @@ export {
      * @property {module:models/SchemasWafFirewallVersionData}
      */
     SchemasWafFirewallVersionData,
-
-    /**
-     * The SchemasWafFirewallVersionDataAttributes model constructor.
-     * @property {module:models/SchemasWafFirewallVersionDataAttributes}
-     */
-    SchemasWafFirewallVersionDataAttributes,
 
     /**
      * The Server model constructor.
@@ -3179,6 +3196,12 @@ export {
     UserResponse,
 
     /**
+     * The UserResponseAllOf model constructor.
+     * @property {module:models/UserResponseAllOf}
+     */
+    UserResponseAllOf,
+
+    /**
      * The Vcl model constructor.
      * @property {module:models/Vcl}
      */
@@ -3243,6 +3266,12 @@ export {
      * @property {module:models/WafActiveRuleData}
      */
     WafActiveRuleData,
+
+    /**
+     * The WafActiveRuleDataAttributes model constructor.
+     * @property {module:models/WafActiveRuleDataAttributes}
+     */
+    WafActiveRuleDataAttributes,
 
     /**
      * The WafActiveRuleResponse model constructor.
@@ -3369,6 +3398,12 @@ export {
      * @property {module:models/WafFirewallVersionData}
      */
     WafFirewallVersionData,
+
+    /**
+     * The WafFirewallVersionDataAttributes model constructor.
+     * @property {module:models/WafFirewallVersionDataAttributes}
+     */
+    WafFirewallVersionDataAttributes,
 
     /**
      * The WafFirewallVersionResponse model constructor.
@@ -3821,6 +3856,12 @@ export {
     PoolApi,
 
     /**
+    * The PopApi service constructor.
+    * @property {module:api/PopApi}
+    */
+    PopApi,
+
+    /**
     * The PublicIpListApi service constructor.
     * @property {module:api/PublicIpListApi}
     */
@@ -3933,12 +3974,6 @@ export {
     * @property {module:api/TlsSubscriptionsApi}
     */
     TlsSubscriptionsApi,
-
-    /**
-    * The TlsSubscriptionsOtherApi service constructor.
-    * @property {module:api/TlsSubscriptionsOtherApi}
-    */
-    TlsSubscriptionsOtherApi,
 
     /**
     * The TokensApi service constructor.

@@ -59,14 +59,14 @@ class IncludedWithWafActiveRuleItem {
             if (data.hasOwnProperty('data')) {
                 obj['data'] = SchemasWafFirewallVersionData.constructFromObject(data['data']);
             }
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = WafRuleRevisionAttributes.constructFromObject(data['attributes']);
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeWafRuleRevision.constructFromObject(data['type']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeWafRuleRevision.constructFromObject(data['type']);
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = WafRuleRevisionAttributes.constructFromObject(data['attributes']);
             }
         }
         return obj;
@@ -81,9 +81,9 @@ class IncludedWithWafActiveRuleItem {
 IncludedWithWafActiveRuleItem.prototype['data'] = undefined;
 
 /**
- * @member {module:models/WafRuleRevisionAttributes} attributes
+ * @member {module:models/TypeWafRuleRevision} type
  */
-IncludedWithWafActiveRuleItem.prototype['attributes'] = undefined;
+IncludedWithWafActiveRuleItem.prototype['type'] = undefined;
 
 /**
  * Alphanumeric string identifying a WAF rule revision.
@@ -92,9 +92,9 @@ IncludedWithWafActiveRuleItem.prototype['attributes'] = undefined;
 IncludedWithWafActiveRuleItem.prototype['id'] = undefined;
 
 /**
- * @member {module:models/TypeWafRuleRevision} type
+ * @member {module:models/WafRuleRevisionAttributes} attributes
  */
-IncludedWithWafActiveRuleItem.prototype['type'] = undefined;
+IncludedWithWafActiveRuleItem.prototype['attributes'] = undefined;
 
 
 // Implement SchemasWafFirewallVersion interface:
@@ -104,18 +104,18 @@ IncludedWithWafActiveRuleItem.prototype['type'] = undefined;
 SchemasWafFirewallVersion.prototype['data'] = undefined;
 // Implement WafRuleRevision interface:
 /**
- * @member {module:models/WafRuleRevisionAttributes} attributes
+ * @member {module:models/TypeWafRuleRevision} type
  */
-WafRuleRevision.prototype['attributes'] = undefined;
+WafRuleRevision.prototype['type'] = undefined;
 /**
  * Alphanumeric string identifying a WAF rule revision.
  * @member {String} id
  */
 WafRuleRevision.prototype['id'] = undefined;
 /**
- * @member {module:models/TypeWafRuleRevision} type
+ * @member {module:models/WafRuleRevisionAttributes} attributes
  */
-WafRuleRevision.prototype['type'] = undefined;
+WafRuleRevision.prototype['attributes'] = undefined;
 
 
 

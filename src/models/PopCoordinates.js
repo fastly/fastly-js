@@ -12,21 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import SchemasWafActiveRuleData from './SchemasWafActiveRuleData';
 
 /**
- * The SchemasWafActiveRule model module.
- * @module models/SchemasWafActiveRule
+ * The PopCoordinates model module.
+ * @module models/PopCoordinates
  * @version 3.0.0-alpha1
  */
-class SchemasWafActiveRule {
+class PopCoordinates {
     /**
-     * Constructs a new <code>SchemasWafActiveRule</code>.
-     * @alias module:models/SchemasWafActiveRule
+     * Constructs a new <code>PopCoordinates</code>.
+     * @alias module:models/PopCoordinates
      */
     constructor() { 
         
-        SchemasWafActiveRule.initialize(this);
+        PopCoordinates.initialize(this);
     }
 
     /**
@@ -38,18 +37,27 @@ class SchemasWafActiveRule {
     }
 
     /**
-     * Constructs a <code>SchemasWafActiveRule</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>PopCoordinates</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:models/SchemasWafActiveRule} obj Optional instance to populate.
-     * @return {module:models/SchemasWafActiveRule} The populated <code>SchemasWafActiveRule</code> instance.
+     * @param {module:models/PopCoordinates} obj Optional instance to populate.
+     * @return {module:models/PopCoordinates} The populated <code>PopCoordinates</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new SchemasWafActiveRule();
+            obj = obj || new PopCoordinates();
 
-            if (data.hasOwnProperty('data')) {
-                obj['data'] = SchemasWafActiveRuleData.constructFromObject(data['data']);
+            if (data.hasOwnProperty('x')) {
+                obj['x'] = ApiClient.convertToType(data['x'], 'Number');
+            }
+            if (data.hasOwnProperty('y')) {
+                obj['y'] = ApiClient.convertToType(data['y'], 'Number');
+            }
+            if (data.hasOwnProperty('latitude')) {
+                obj['latitude'] = ApiClient.convertToType(data['latitude'], 'Number');
+            }
+            if (data.hasOwnProperty('longitude')) {
+                obj['longitude'] = ApiClient.convertToType(data['longitude'], 'Number');
             }
         }
         return obj;
@@ -59,14 +67,29 @@ class SchemasWafActiveRule {
 }
 
 /**
- * @member {module:models/SchemasWafActiveRuleData} data
+ * @member {Number} x
  */
-SchemasWafActiveRule.prototype['data'] = undefined;
+PopCoordinates.prototype['x'] = undefined;
+
+/**
+ * @member {Number} y
+ */
+PopCoordinates.prototype['y'] = undefined;
+
+/**
+ * @member {Number} latitude
+ */
+PopCoordinates.prototype['latitude'] = undefined;
+
+/**
+ * @member {Number} longitude
+ */
+PopCoordinates.prototype['longitude'] = undefined;
 
 
 
 
 
 
-export default SchemasWafActiveRule;
+export default PopCoordinates;
 

@@ -13,7 +13,9 @@
 
 import ApiClient from '../ApiClient';
 import LoggingCommon from './LoggingCommon';
+import LoggingFormatVersion from './LoggingFormatVersion';
 import LoggingNewrelicAllOf from './LoggingNewrelicAllOf';
+import LoggingPlacement from './LoggingPlacement';
 
 /**
  * The LoggingNewrelic model module.
@@ -53,26 +55,26 @@ class LoggingNewrelic {
             LoggingCommon.constructFromObject(data, obj);
             LoggingNewrelicAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], Object);
-            }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'Number');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
-                obj['placement'] = ApiClient.convertToType(data['placement'], 'String');
+                obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
             }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
             }
-            if (data.hasOwnProperty('region')) {
-                obj['region'] = ApiClient.convertToType(data['region'], 'String');
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], Object);
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
+            }
+            if (data.hasOwnProperty('region')) {
+                obj['region'] = ApiClient.convertToType(data['region'], 'String');
             }
         }
         return obj;
@@ -82,29 +84,20 @@ class LoggingNewrelic {
 }
 
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest.
- * @member {Object} format
- */
-LoggingNewrelic.prototype['format'] = undefined;
-
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
- * @member {module:models/LoggingNewrelic.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingNewrelic.prototype['format_version'] = undefined;
-
-/**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
 LoggingNewrelic.prototype['name'] = undefined;
 
 /**
- * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
- * @member {module:models/LoggingNewrelic.PlacementEnum} placement
+ * @member {module:models/LoggingPlacement} placement
  */
 LoggingNewrelic.prototype['placement'] = undefined;
+
+/**
+ * @member {module:models/LoggingFormatVersion} format_version
+ */
+LoggingNewrelic.prototype['format_version'] = undefined;
 
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
@@ -113,11 +106,10 @@ LoggingNewrelic.prototype['placement'] = undefined;
 LoggingNewrelic.prototype['response_condition'] = undefined;
 
 /**
- * The region to which to stream logs.
- * @member {module:models/LoggingNewrelic.RegionEnum} region
- * @default 'US'
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest.
+ * @member {Object} format
  */
-LoggingNewrelic.prototype['region'] = undefined;
+LoggingNewrelic.prototype['format'] = undefined;
 
 /**
  * The Insert API key from the Account page of your New Relic account. Required.
@@ -125,35 +117,39 @@ LoggingNewrelic.prototype['region'] = undefined;
  */
 LoggingNewrelic.prototype['token'] = undefined;
 
+/**
+ * The region to which to stream logs.
+ * @member {module:models/LoggingNewrelic.RegionEnum} region
+ * @default 'US'
+ */
+LoggingNewrelic.prototype['region'] = undefined;
+
 
 // Implement LoggingCommon interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
- * @member {module:models/LoggingCommon.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingCommon.prototype['format_version'] = undefined;
 /**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
 LoggingCommon.prototype['name'] = undefined;
 /**
- * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
- * @member {module:models/LoggingCommon.PlacementEnum} placement
+ * @member {module:models/LoggingPlacement} placement
  */
 LoggingCommon.prototype['placement'] = undefined;
+/**
+ * @member {module:models/LoggingFormatVersion} format_version
+ */
+LoggingCommon.prototype['format_version'] = undefined;
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
 LoggingCommon.prototype['response_condition'] = undefined;
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
+LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 // Implement LoggingNewrelicAllOf interface:
 /**
  * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that New Relic Logs can ingest.
@@ -161,59 +157,17 @@ LoggingCommon.prototype['response_condition'] = undefined;
  */
 LoggingNewrelicAllOf.prototype['format'] = undefined;
 /**
+ * The Insert API key from the Account page of your New Relic account. Required.
+ * @member {String} token
+ */
+LoggingNewrelicAllOf.prototype['token'] = undefined;
+/**
  * The region to which to stream logs.
  * @member {module:models/LoggingNewrelicAllOf.RegionEnum} region
  * @default 'US'
  */
 LoggingNewrelicAllOf.prototype['region'] = undefined;
-/**
- * The Insert API key from the Account page of your New Relic account. Required.
- * @member {String} token
- */
-LoggingNewrelicAllOf.prototype['token'] = undefined;
 
-
-
-/**
- * Allowed values for the <code>format_version</code> property.
- * @enum {Number}
- * @readonly
- */
-LoggingNewrelic['FormatVersionEnum'] = {
-
-    /**
-     * value: 1
-     * @const
-     */
-    "v1": 1,
-
-    /**
-     * value: 2
-     * @const
-     */
-    "v2": 2
-};
-
-
-/**
- * Allowed values for the <code>placement</code> property.
- * @enum {String}
- * @readonly
- */
-LoggingNewrelic['PlacementEnum'] = {
-
-    /**
-     * value: "none"
-     * @const
-     */
-    "none": "none",
-
-    /**
-     * value: "waf_debug"
-     * @const
-     */
-    "waf_debug": "waf_debug"
-};
 
 
 /**

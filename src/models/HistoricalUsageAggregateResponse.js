@@ -14,7 +14,7 @@
 import ApiClient from '../ApiClient';
 import Historical from './Historical';
 import HistoricalMeta from './HistoricalMeta';
-import HistoricalUsageAggregateResponseAllOf from './HistoricalUsageAggregateResponseAllOf';
+import HistoricalUsageServiceResponseAllOf from './HistoricalUsageServiceResponseAllOf';
 
 /**
  * The HistoricalUsageAggregateResponse model module.
@@ -26,10 +26,10 @@ class HistoricalUsageAggregateResponse {
      * Constructs a new <code>HistoricalUsageAggregateResponse</code>.
      * @alias module:models/HistoricalUsageAggregateResponse
      * @implements module:models/Historical
-     * @implements module:models/HistoricalUsageAggregateResponseAllOf
+     * @implements module:models/HistoricalUsageServiceResponseAllOf
      */
     constructor() { 
-        Historical.initialize(this);HistoricalUsageAggregateResponseAllOf.initialize(this);
+        Historical.initialize(this);HistoricalUsageServiceResponseAllOf.initialize(this);
         HistoricalUsageAggregateResponse.initialize(this);
     }
 
@@ -52,16 +52,16 @@ class HistoricalUsageAggregateResponse {
         if (data) {
             obj = obj || new HistoricalUsageAggregateResponse();
             Historical.constructFromObject(data, obj);
-            HistoricalUsageAggregateResponseAllOf.constructFromObject(data, obj);
+            HistoricalUsageServiceResponseAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            }
             if (data.hasOwnProperty('meta')) {
                 obj['meta'] = HistoricalMeta.constructFromObject(data['meta']);
             }
             if (data.hasOwnProperty('msg')) {
                 obj['msg'] = ApiClient.convertToType(data['msg'], 'String');
-            }
-            if (data.hasOwnProperty('status')) {
-                obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], {'String': Object});
@@ -72,6 +72,12 @@ class HistoricalUsageAggregateResponse {
 
 
 }
+
+/**
+ * Whether or not we were able to successfully execute the query.
+ * @member {String} status
+ */
+HistoricalUsageAggregateResponse.prototype['status'] = undefined;
 
 /**
  * @member {module:models/HistoricalMeta} meta
@@ -85,18 +91,17 @@ HistoricalUsageAggregateResponse.prototype['meta'] = undefined;
 HistoricalUsageAggregateResponse.prototype['msg'] = undefined;
 
 /**
- * Whether or not we were able to successfully execute the query.
- * @member {String} status
- */
-HistoricalUsageAggregateResponse.prototype['status'] = undefined;
-
-/**
  * @member {Object.<String, Object>} data
  */
 HistoricalUsageAggregateResponse.prototype['data'] = undefined;
 
 
 // Implement Historical interface:
+/**
+ * Whether or not we were able to successfully execute the query.
+ * @member {String} status
+ */
+Historical.prototype['status'] = undefined;
 /**
  * @member {module:models/HistoricalMeta} meta
  */
@@ -106,16 +111,11 @@ Historical.prototype['meta'] = undefined;
  * @member {String} msg
  */
 Historical.prototype['msg'] = undefined;
-/**
- * Whether or not we were able to successfully execute the query.
- * @member {String} status
- */
-Historical.prototype['status'] = undefined;
-// Implement HistoricalUsageAggregateResponseAllOf interface:
+// Implement HistoricalUsageServiceResponseAllOf interface:
 /**
  * @member {Object.<String, Object>} data
  */
-HistoricalUsageAggregateResponseAllOf.prototype['data'] = undefined;
+HistoricalUsageServiceResponseAllOf.prototype['data'] = undefined;
 
 
 

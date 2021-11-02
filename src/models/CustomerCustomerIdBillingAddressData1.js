@@ -49,14 +49,14 @@ class CustomerCustomerIdBillingAddressData1 {
         if (data) {
             obj = obj || new CustomerCustomerIdBillingAddressData1();
 
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = BillingAddress.constructFromObject(data['attributes']);
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeBillingAddress.constructFromObject(data['type']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeBillingAddress.constructFromObject(data['type']);
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = BillingAddress.constructFromObject(data['attributes']);
             }
         }
         return obj;
@@ -66,9 +66,9 @@ class CustomerCustomerIdBillingAddressData1 {
 }
 
 /**
- * @member {module:models/BillingAddress} attributes
+ * @member {module:models/TypeBillingAddress} type
  */
-CustomerCustomerIdBillingAddressData1.prototype['attributes'] = undefined;
+CustomerCustomerIdBillingAddressData1.prototype['type'] = undefined;
 
 /**
  * Alphanumeric string identifying the billing address.
@@ -77,9 +77,9 @@ CustomerCustomerIdBillingAddressData1.prototype['attributes'] = undefined;
 CustomerCustomerIdBillingAddressData1.prototype['id'] = undefined;
 
 /**
- * @member {module:models/TypeBillingAddress} type
+ * @member {module:models/BillingAddress} attributes
  */
-CustomerCustomerIdBillingAddressData1.prototype['type'] = undefined;
+CustomerCustomerIdBillingAddressData1.prototype['attributes'] = undefined;
 
 
 

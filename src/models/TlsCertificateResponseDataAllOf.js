@@ -48,11 +48,11 @@ class TlsCertificateResponseDataAllOf {
         if (data) {
             obj = obj || new TlsCertificateResponseDataAllOf();
 
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
             }
         }
         return obj;
@@ -62,15 +62,15 @@ class TlsCertificateResponseDataAllOf {
 }
 
 /**
- * @member {module:models/Timestamps} attributes
- */
-TlsCertificateResponseDataAllOf.prototype['attributes'] = undefined;
-
-/**
  * Alphanumeric string identifying a TLS certificate.
  * @member {String} id
  */
 TlsCertificateResponseDataAllOf.prototype['id'] = undefined;
+
+/**
+ * @member {module:models/Timestamps} attributes
+ */
+TlsCertificateResponseDataAllOf.prototype['attributes'] = undefined;
 
 
 

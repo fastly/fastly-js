@@ -50,14 +50,14 @@ class TlsBulkCertificateData {
         if (data) {
             obj = obj || new TlsBulkCertificateData();
 
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeTlsBulkCertificate.constructFromObject(data['type']);
+            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = TlsBulkCertificateDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = RelationshipsForTlsBulkCertificate.constructFromObject(data['relationships']);
-            }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeTlsBulkCertificate.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -65,6 +65,11 @@ class TlsBulkCertificateData {
 
 
 }
+
+/**
+ * @member {module:models/TypeTlsBulkCertificate} type
+ */
+TlsBulkCertificateData.prototype['type'] = undefined;
 
 /**
  * @member {module:models/TlsBulkCertificateDataAttributes} attributes
@@ -75,11 +80,6 @@ TlsBulkCertificateData.prototype['attributes'] = undefined;
  * @member {module:models/RelationshipsForTlsBulkCertificate} relationships
  */
 TlsBulkCertificateData.prototype['relationships'] = undefined;
-
-/**
- * @member {module:models/TypeTlsBulkCertificate} type
- */
-TlsBulkCertificateData.prototype['type'] = undefined;
 
 
 

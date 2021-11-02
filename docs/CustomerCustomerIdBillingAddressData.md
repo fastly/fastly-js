@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**BillingAddress**](BillingAddress.md) |  | [optional] 
 **type** | [**TypeBillingAddress**](TypeBillingAddress.md) |  | [optional] 
+**attributes** | [**BillingAddress**](BillingAddress.md) |  | [optional] 
 
 
 

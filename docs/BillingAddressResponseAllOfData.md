@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**Timestamps**](Timestamps.md) |  | [optional] 
 **id** | **String** | Alphanumeric string identifying the billing address. | [optional] [readonly] 
+**attributes** | [**Timestamps**](Timestamps.md) |  | [optional] 
 
 
 

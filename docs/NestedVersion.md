@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **service_id** | **String** | Alphanumeric string identifying the service. | [optional] [readonly] 
 **backends** | [**[BackendResponse]**](BackendResponse.md) | List of backends associated to this service. | [optional] 
 **cache_settings** | [**[CacheSettingResponse]**](CacheSettingResponse.md) | List of cache settings associated to this service. | [optional] 
-**conditions** | [**[ConditionResponse]**](ConditionResponse.md) | List of conditions associated to this service. | [optional] 
+**conditions** | [**[SchemasConditionResponse]**](SchemasConditionResponse.md) | List of conditions associated to this service. | [optional] 
 **directors** | [**[SchemasDirector]**](SchemasDirector.md) | List of directors associated to this service. | [optional] 
 **domains** | [**[DomainResponse]**](DomainResponse.md) | List of domains associated to this service. | [optional] 
 **gzips** | [**[GzipResponse]**](GzipResponse.md) | List of gzip rules associated to this service. | [optional] 
@@ -26,8 +26,8 @@ Name | Type | Description | Notes
 **request_settings** | [**[RequestSettingsResponse]**](RequestSettingsResponse.md) | List of request settings for this service. | [optional] 
 **response_objects** | [**[ResponseObjectResponse]**](ResponseObjectResponse.md) | List of response objects for this service. | [optional] 
 **settings** | [**Settings**](Settings.md) |  | [optional] 
-**snippets** | [**[SnippetResponse]**](SnippetResponse.md) | List of VCL snippets for this service. | [optional] 
-**vcls** | [**[VclResponse]**](VclResponse.md) | List of VCL files for this service. | [optional] 
+**snippets** | [**[SchemasSnippetResponse]**](SchemasSnippetResponse.md) | List of VCL snippets for this service. | [optional] 
+**vcls** | [**[SchemasVclResponse]**](SchemasVclResponse.md) | List of VCL files for this service. | [optional] 
 **wordpress** | **[Object]** | A list of Wordpress rules with this service. | [optional] 
 
 

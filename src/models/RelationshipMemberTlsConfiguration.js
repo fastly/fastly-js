@@ -48,11 +48,11 @@ class RelationshipMemberTlsConfiguration {
         if (data) {
             obj = obj || new RelationshipMemberTlsConfiguration();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeTlsConfiguration.constructFromObject(data['type']);
+            }
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
         }
         return obj;
@@ -62,15 +62,15 @@ class RelationshipMemberTlsConfiguration {
 }
 
 /**
+ * @member {module:models/TypeTlsConfiguration} type
+ */
+RelationshipMemberTlsConfiguration.prototype['type'] = undefined;
+
+/**
  * Alphanumeric string identifying a TLS configuration.
  * @member {String} id
  */
 RelationshipMemberTlsConfiguration.prototype['id'] = undefined;
-
-/**
- * @member {module:models/TypeTlsConfiguration} type
- */
-RelationshipMemberTlsConfiguration.prototype['type'] = undefined;
 
 
 

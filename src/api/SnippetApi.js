@@ -43,11 +43,11 @@ export default class SnippetApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @param {String} [options.content] - The VCL code that specifies exactly what the snippet does.
-     * @param {module:models/String} [options.dynamic] - Sets the snippet version.
      * @param {String} [options.name] - The name for the snippet.
-     * @param {String} [options.priority='100'] - Numeric string value. Priority determines execution order. Lower numbers execute first.
+     * @param {module:models/String} [options.dynamic] - Sets the snippet version.
      * @param {module:models/String} [options.type] - The location in generated VCL where the snippet should be placed.
+     * @param {String} [options.content] - The VCL code that specifies exactly what the snippet does.
+     * @param {String} [options.priority='100'] - Numeric string value. Priority determines execution order. Lower numbers execute first.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/SnippetResponse} and HTTP response
      */
     createSnippetWithHttpInfo(options = {}) {
@@ -70,11 +70,11 @@ export default class SnippetApi {
       let headerParams = {
       };
       let formParams = {
-        'content': options['content'],
-        'dynamic': options['dynamic'],
         'name': options['name'],
-        'priority': options['priority'],
-        'type': options['type']
+        'dynamic': options['dynamic'],
+        'type': options['type'],
+        'content': options['content'],
+        'priority': options['priority']
       };
 
       let authNames = ['token'];
@@ -93,11 +93,11 @@ export default class SnippetApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @param {String} [options.content] - The VCL code that specifies exactly what the snippet does.
-     * @param {module:models/String} [options.dynamic] - Sets the snippet version.
      * @param {String} [options.name] - The name for the snippet.
-     * @param {String} [options.priority='100'] - Numeric string value. Priority determines execution order. Lower numbers execute first.
+     * @param {module:models/String} [options.dynamic] - Sets the snippet version.
      * @param {module:models/String} [options.type] - The location in generated VCL where the snippet should be placed.
+     * @param {String} [options.content] - The VCL code that specifies exactly what the snippet does.
+     * @param {String} [options.priority='100'] - Numeric string value. Priority determines execution order. Lower numbers execute first.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/SnippetResponse}
      */
     createSnippet(options = {}) {
@@ -403,11 +403,11 @@ export default class SnippetApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {String} options.snippet_id
-     * @param {String} [options.content] - The VCL code that specifies exactly what the snippet does.
-     * @param {module:models/String} [options.dynamic] - Sets the snippet version.
      * @param {String} [options.name] - The name for the snippet.
-     * @param {String} [options.priority='100'] - Numeric string value. Priority determines execution order. Lower numbers execute first.
+     * @param {module:models/String} [options.dynamic] - Sets the snippet version.
      * @param {module:models/String} [options.type] - The location in generated VCL where the snippet should be placed.
+     * @param {String} [options.content] - The VCL code that specifies exactly what the snippet does.
+     * @param {String} [options.priority='100'] - Numeric string value. Priority determines execution order. Lower numbers execute first.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/SnippetResponse} and HTTP response
      */
     updateSnippetDynamicWithHttpInfo(options = {}) {
@@ -430,11 +430,11 @@ export default class SnippetApi {
       let headerParams = {
       };
       let formParams = {
-        'content': options['content'],
-        'dynamic': options['dynamic'],
         'name': options['name'],
-        'priority': options['priority'],
-        'type': options['type']
+        'dynamic': options['dynamic'],
+        'type': options['type'],
+        'content': options['content'],
+        'priority': options['priority']
       };
 
       let authNames = ['token'];
@@ -453,11 +453,11 @@ export default class SnippetApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {String} options.snippet_id
-     * @param {String} [options.content] - The VCL code that specifies exactly what the snippet does.
-     * @param {module:models/String} [options.dynamic] - Sets the snippet version.
      * @param {String} [options.name] - The name for the snippet.
-     * @param {String} [options.priority='100'] - Numeric string value. Priority determines execution order. Lower numbers execute first.
+     * @param {module:models/String} [options.dynamic] - Sets the snippet version.
      * @param {module:models/String} [options.type] - The location in generated VCL where the snippet should be placed.
+     * @param {String} [options.content] - The VCL code that specifies exactly what the snippet does.
+     * @param {String} [options.priority='100'] - Numeric string value. Priority determines execution order. Lower numbers execute first.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/SnippetResponse}
      */
     updateSnippetDynamic(options = {}) {

@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
-**name** | **String** | Name for the Dictionary. | [optional]
+**name** | **String** | Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace). | [optional]
 **write_only** | **Boolean** | Determines if items in the dictionary are readable or not. | [optional] [default to false]
 
 ### Return type
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
 **dictionary_name** | **String** |  |
-**name** | **String** | Name for the Dictionary. | [optional]
+**name** | **String** | Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace). | [optional]
 **write_only** | **Boolean** | Determines if items in the dictionary are readable or not. | [optional] [default to false]
 
 ### Return type

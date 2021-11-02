@@ -30,7 +30,7 @@ Create a WAF exclusion for a particular firewall version.
 const options = {
   firewall_id: "firewall_id_example", // required
   firewall_version_number: 56, // required
-  waf_exclusion: {"data":{"attributes":{"condition":"req.url.basename == \"index.html\"","exclusion_type":"rule","name":"test-waf-exclusion"},"relationships":{"waf_rules":{"data":[{"id":2500162,"type":"waf_rule"}]}},"type":"waf_exclusion"}},
+  waf_exclusion: {"data":{"type":"waf_exclusion","attributes":{"exclusion_type":"rule","condition":"req.url.basename == \"index.html\"","name":"test-waf-exclusion"},"relationships":{"waf_rules":{"data":[{"id":2500162,"type":"waf_rule"}]}}}},
 };
 
 apiInstance.createWafRuleExclusion(options)
@@ -150,7 +150,7 @@ const options = {
   filter_exclusion_type: ,
   filter_name: "filter_name_example",
   filter_waf_rules_modsec_rule_id: 56,
-  page_number: 1,
+  page_number: 56,
   page_size: 20,
   include: waf_rules,
 };
@@ -197,7 +197,7 @@ const options = {
   firewall_id: "firewall_id_example", // required
   firewall_version_number: 56, // required
   exclusion_number: 56, // required
-  waf_exclusion: {"data":{"attributes":{"condition":"req.url.basename == \"index.html\" || req.url.basename == \"admin.html\"","logging":false,"name":"updated-test-waf-exclusion"},"type":"waf_exclusion"}},
+  waf_exclusion: {"data":{"type":"waf_exclusion","attributes":{"logging":false,"condition":"req.url.basename == \"index.html\" || req.url.basename == \"admin.html\"","name":"updated-test-waf-exclusion"}}},
 };
 
 apiInstance.updateWafRuleExclusion(options)

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **customer_id** | **String** | Alphanumeric string identifying the customer. | [optional] [readonly] 
-**services** | **{String: Object}** |  | [optional] 
+**services** | **{String: {String: AdditionalProperties}}** |  | [optional] 
 **total** | **{String: Object}** |  | [optional] 
 
 

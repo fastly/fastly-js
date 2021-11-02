@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**attributes** | [**SchemasWafFirewallVersionDataAttributes**](SchemasWafFirewallVersionDataAttributes.md) |  | [optional] 
 **type** | [**TypeWafFirewallVersion**](TypeWafFirewallVersion.md) |  | [optional] 
+**attributes** | [**WafFirewallVersionDataAttributes**](WafFirewallVersionDataAttributes.md) |  | [optional] 
 
 
 

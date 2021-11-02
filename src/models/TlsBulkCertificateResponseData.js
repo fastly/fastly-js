@@ -56,14 +56,14 @@ class TlsBulkCertificateResponseData {
             TlsBulkCertificateData.constructFromObject(data, obj);
             TlsBulkCertificateResponseDataAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeTlsBulkCertificate.constructFromObject(data['type']);
+            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = RelationshipsForTlsBulkCertificate.constructFromObject(data['relationships']);
-            }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeTlsBulkCertificate.constructFromObject(data['type']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -76,6 +76,11 @@ class TlsBulkCertificateResponseData {
 }
 
 /**
+ * @member {module:models/TypeTlsBulkCertificate} type
+ */
+TlsBulkCertificateResponseData.prototype['type'] = undefined;
+
+/**
  * @member {module:models/Timestamps} attributes
  */
 TlsBulkCertificateResponseData.prototype['attributes'] = undefined;
@@ -86,11 +91,6 @@ TlsBulkCertificateResponseData.prototype['attributes'] = undefined;
 TlsBulkCertificateResponseData.prototype['relationships'] = undefined;
 
 /**
- * @member {module:models/TypeTlsBulkCertificate} type
- */
-TlsBulkCertificateResponseData.prototype['type'] = undefined;
-
-/**
  * Alphanumeric string identifying a TLS bulk certificate.
  * @member {String} id
  */
@@ -99,6 +99,10 @@ TlsBulkCertificateResponseData.prototype['id'] = undefined;
 
 // Implement TlsBulkCertificateData interface:
 /**
+ * @member {module:models/TypeTlsBulkCertificate} type
+ */
+TlsBulkCertificateData.prototype['type'] = undefined;
+/**
  * @member {module:models/TlsBulkCertificateDataAttributes} attributes
  */
 TlsBulkCertificateData.prototype['attributes'] = undefined;
@@ -106,20 +110,16 @@ TlsBulkCertificateData.prototype['attributes'] = undefined;
  * @member {module:models/RelationshipsForTlsBulkCertificate} relationships
  */
 TlsBulkCertificateData.prototype['relationships'] = undefined;
-/**
- * @member {module:models/TypeTlsBulkCertificate} type
- */
-TlsBulkCertificateData.prototype['type'] = undefined;
 // Implement TlsBulkCertificateResponseDataAllOf interface:
-/**
- * @member {module:models/Timestamps} attributes
- */
-TlsBulkCertificateResponseDataAllOf.prototype['attributes'] = undefined;
 /**
  * Alphanumeric string identifying a TLS bulk certificate.
  * @member {String} id
  */
 TlsBulkCertificateResponseDataAllOf.prototype['id'] = undefined;
+/**
+ * @member {module:models/Timestamps} attributes
+ */
+TlsBulkCertificateResponseDataAllOf.prototype['attributes'] = undefined;
 
 
 

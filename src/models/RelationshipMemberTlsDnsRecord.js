@@ -48,11 +48,11 @@ class RelationshipMemberTlsDnsRecord {
         if (data) {
             obj = obj || new RelationshipMemberTlsDnsRecord();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeTlsDnsRecord.constructFromObject(data['type']);
+            }
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
         }
         return obj;
@@ -62,15 +62,15 @@ class RelationshipMemberTlsDnsRecord {
 }
 
 /**
+ * @member {module:models/TypeTlsDnsRecord} type
+ */
+RelationshipMemberTlsDnsRecord.prototype['type'] = undefined;
+
+/**
  * The IP address or hostname of the DNS record.
  * @member {String} id
  */
 RelationshipMemberTlsDnsRecord.prototype['id'] = undefined;
-
-/**
- * @member {module:models/TypeTlsDnsRecord} type
- */
-RelationshipMemberTlsDnsRecord.prototype['type'] = undefined;
 
 
 

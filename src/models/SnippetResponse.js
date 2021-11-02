@@ -59,20 +59,20 @@ class SnippetResponse {
             Timestamps.constructFromObject(data, obj);
             SnippetResponseAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('content')) {
-                obj['content'] = ApiClient.convertToType(data['content'], 'String');
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('dynamic')) {
                 obj['dynamic'] = ApiClient.convertToType(data['dynamic'], 'String');
             }
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = ApiClient.convertToType(data['type'], 'String');
+            }
+            if (data.hasOwnProperty('content')) {
+                obj['content'] = ApiClient.convertToType(data['content'], 'String');
             }
             if (data.hasOwnProperty('priority')) {
                 obj['priority'] = ApiClient.convertToType(data['priority'], 'String');
-            }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
@@ -100,10 +100,10 @@ class SnippetResponse {
 }
 
 /**
- * The VCL code that specifies exactly what the snippet does.
- * @member {String} content
+ * The name for the snippet.
+ * @member {String} name
  */
-SnippetResponse.prototype['content'] = undefined;
+SnippetResponse.prototype['name'] = undefined;
 
 /**
  * Sets the snippet version.
@@ -112,10 +112,16 @@ SnippetResponse.prototype['content'] = undefined;
 SnippetResponse.prototype['dynamic'] = undefined;
 
 /**
- * The name for the snippet.
- * @member {String} name
+ * The location in generated VCL where the snippet should be placed.
+ * @member {module:models/SnippetResponse.TypeEnum} type
  */
-SnippetResponse.prototype['name'] = undefined;
+SnippetResponse.prototype['type'] = undefined;
+
+/**
+ * The VCL code that specifies exactly what the snippet does.
+ * @member {String} content
+ */
+SnippetResponse.prototype['content'] = undefined;
 
 /**
  * Numeric string value. Priority determines execution order. Lower numbers execute first.
@@ -123,12 +129,6 @@ SnippetResponse.prototype['name'] = undefined;
  * @default '100'
  */
 SnippetResponse.prototype['priority'] = '100';
-
-/**
- * The location in generated VCL where the snippet should be placed.
- * @member {module:models/SnippetResponse.TypeEnum} type
- */
-SnippetResponse.prototype['type'] = undefined;
 
 /**
  * Alphanumeric string identifying the service.
@@ -169,31 +169,31 @@ SnippetResponse.prototype['id'] = undefined;
 
 // Implement Snippet interface:
 /**
- * The VCL code that specifies exactly what the snippet does.
- * @member {String} content
+ * The name for the snippet.
+ * @member {String} name
  */
-Snippet.prototype['content'] = undefined;
+Snippet.prototype['name'] = undefined;
 /**
  * Sets the snippet version.
  * @member {module:models/Snippet.DynamicEnum} dynamic
  */
 Snippet.prototype['dynamic'] = undefined;
 /**
- * The name for the snippet.
- * @member {String} name
+ * The location in generated VCL where the snippet should be placed.
+ * @member {module:models/Snippet.TypeEnum} type
  */
-Snippet.prototype['name'] = undefined;
+Snippet.prototype['type'] = undefined;
+/**
+ * The VCL code that specifies exactly what the snippet does.
+ * @member {String} content
+ */
+Snippet.prototype['content'] = undefined;
 /**
  * Numeric string value. Priority determines execution order. Lower numbers execute first.
  * @member {String} priority
  * @default '100'
  */
 Snippet.prototype['priority'] = '100';
-/**
- * The location in generated VCL where the snippet should be placed.
- * @member {module:models/Snippet.TypeEnum} type
- */
-Snippet.prototype['type'] = undefined;
 // Implement ServiceIdAndVersion interface:
 /**
  * Alphanumeric string identifying the service.

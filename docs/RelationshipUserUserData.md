@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** | Alphanumeric string identifying the user. | [optional] [readonly] 
 **type** | [**TypeUser**](TypeUser.md) |  | [optional] 
+**id** | **String** | Alphanumeric string identifying the user. | [optional] [readonly] 
 
 
 

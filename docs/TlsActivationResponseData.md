@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**relationships** | [**RelationshipsForTlsActivation**](RelationshipsForTlsActivation.md) |  | [optional] 
 **type** | [**TypeTlsActivation**](TypeTlsActivation.md) |  | [optional] 
-**attributes** | [**Timestamps**](Timestamps.md) |  | [optional] 
+**relationships** | [**RelationshipsForTlsActivation**](RelationshipsForTlsActivation.md) |  | [optional] 
 **id** | **String** | Alphanumeric string identifying a TLS activation. | [optional] [readonly] 
+**attributes** | [**Timestamps**](Timestamps.md) |  | [optional] 
 
 
 

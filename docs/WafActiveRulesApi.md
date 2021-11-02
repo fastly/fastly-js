@@ -33,7 +33,7 @@ Delete many active rules on a particular firewall version using the active rule 
 const options = {
   firewall_id: "firewall_id_example", // required
   version_id: 56, // required
-  body: {"data":[{"attributes":{"modsec_rule_id":"MoDS3CuGZzb2W9Euo4moOr"},"type":"waf_active_rule"}]},
+  body: {"data":[{"type":"waf_active_rule","id":"3krg2uUGZzb2W9Euo4moOR"}]},
 };
 
 apiInstance.bulkDeleteWafActiveRules(options)
@@ -72,7 +72,7 @@ Bulk update all active rules on a [firewall version](https://developer.fastly.co
 const options = {
   firewall_id: "firewall_id_example", // required
   version_id: 56, // required
-  body: {"attributes":{"revision":"latest"},"type":"waf_active_rule"},
+  body: {"type":"waf_active_rule","attributes":{"revision":"latest"}},
 };
 
 apiInstance.bulkUpdateWafActiveRules(options)
@@ -111,7 +111,7 @@ Create an active rule for a particular firewall version.
 const options = {
   firewall_id: "firewall_id_example", // required
   version_id: 56, // required
-  waf_active_rule: {"data":{"attributes":{"modsec_rule_id":"MoDS3CuGZzb2W9Euo4moOr","status":"log"},"type":"waf_active_rule"}},
+  waf_active_rule: {"data":{"type":"waf_active_rule","attributes":{"status":"log"},"relationships":{"waf_rule_revision":{"data":{"type":"waf_rule_revision","id":"r3Vg2uUGZzb2W9Euo4mo0R","examples":null}}}}},
 };
 
 apiInstance.createWafActiveRule(options)
@@ -151,7 +151,7 @@ const options = {
   firewall_id: "firewall_id_example", // required
   version_id: 56, // required
   waf_tag_name: "waf_tag_name_example", // required
-  waf_active_rule: {"data":{"attributes":{"status":"log"},"type":"waf_active_rule"}},
+  waf_active_rule: {"data":{"type":"waf_active_rule","attributes":{"status":"log"}}},
 };
 
 apiInstance.createWafActiveRulesTag(options)
@@ -276,7 +276,7 @@ const options = {
   filter_waf_rule_revision_modsec_rule_id: "filter_waf_rule_revision_modsec_rule_id_example",
   filter_outdated: "filter_outdated_example",
   include: waf_rule_revision,waf_firewall_version,
-  page_number: 1,
+  page_number: 56,
   page_size: 20,
 };
 
@@ -323,7 +323,7 @@ const options = {
   firewall_id: "firewall_id_example", // required
   version_id: 56, // required
   waf_rule_id: "waf_rule_id_example", // required
-  waf_active_rule: {"data":{"attributes":{"status":"block"},"id":"3krg2uUGZzb2W9Euo4moOR","type":"waf_active_rule"}},
+  waf_active_rule: {"data":{"id":"3krg2uUGZzb2W9Euo4moOR","type":"waf_active_rule","attributes":{"status":"block"}}},
 };
 
 apiInstance.updateWafActiveRule(options)

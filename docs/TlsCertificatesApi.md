@@ -28,7 +28,7 @@ Create a TLS certificate.
 
 ```javascript
 const options = {
-  tls_certificate: {"data":{"attributes":{"cert_blob":"-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n","name":"My certificate"},"type":"tls_certificate"}},
+  tls_certificate: {"data":{"type":"tls_certificate","attributes":{"cert_blob":"-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n","name":"My certificate"}}},
 };
 
 apiInstance.createTlsCert(options)
@@ -136,7 +136,7 @@ const options = {
   filter_not_after: "filter_not_after_example",
   filter_tls_domains_id: "filter_tls_domains_id_example",
   include: "include_example",
-  page_number: 1,
+  page_number: 56,
   page_size: 20,
   sort: 'created_at',
 };
@@ -179,7 +179,7 @@ Replace a TLS certificate with a newly reissued TLS certificate, or update a TLS
 ```javascript
 const options = {
   tls_certificate_id: "tls_certificate_id_example", // required
-  tls_certificate: {"data":{"attributes":{"cert_blob":"-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n","name":"My certificate"},"type":"tls_certificate"}},
+  tls_certificate: {"data":{"type":"tls_certificate","attributes":{"cert_blob":"-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n","name":"My certificate"}}},
 };
 
 apiInstance.updateTlsCert(options)

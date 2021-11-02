@@ -12,9 +12,9 @@
  */
 
 import ApiClient from '../ApiClient';
-import SchemasWafActiveRule from './SchemasWafActiveRule';
-import SchemasWafActiveRuleData from './SchemasWafActiveRuleData';
 import SchemasWafFirewallVersion from './SchemasWafFirewallVersion';
+import WafActiveRule from './WafActiveRule';
+import WafActiveRuleData from './WafActiveRuleData';
 
 /**
  * The IncludedWithWafFirewallVersionItem model module.
@@ -26,10 +26,10 @@ class IncludedWithWafFirewallVersionItem {
      * Constructs a new <code>IncludedWithWafFirewallVersionItem</code>.
      * @alias module:models/IncludedWithWafFirewallVersionItem
      * @implements module:models/SchemasWafFirewallVersion
-     * @implements module:models/SchemasWafActiveRule
+     * @implements module:models/WafActiveRule
      */
     constructor() { 
-        SchemasWafFirewallVersion.initialize(this);SchemasWafActiveRule.initialize(this);
+        SchemasWafFirewallVersion.initialize(this);WafActiveRule.initialize(this);
         IncludedWithWafFirewallVersionItem.initialize(this);
     }
 
@@ -52,10 +52,10 @@ class IncludedWithWafFirewallVersionItem {
         if (data) {
             obj = obj || new IncludedWithWafFirewallVersionItem();
             SchemasWafFirewallVersion.constructFromObject(data, obj);
-            SchemasWafActiveRule.constructFromObject(data, obj);
+            WafActiveRule.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = SchemasWafActiveRuleData.constructFromObject(data['data']);
+                obj['data'] = WafActiveRuleData.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -65,7 +65,7 @@ class IncludedWithWafFirewallVersionItem {
 }
 
 /**
- * @member {module:models/SchemasWafActiveRuleData} data
+ * @member {module:models/WafActiveRuleData} data
  */
 IncludedWithWafFirewallVersionItem.prototype['data'] = undefined;
 
@@ -75,11 +75,11 @@ IncludedWithWafFirewallVersionItem.prototype['data'] = undefined;
  * @member {module:models/SchemasWafFirewallVersionData} data
  */
 SchemasWafFirewallVersion.prototype['data'] = undefined;
-// Implement SchemasWafActiveRule interface:
+// Implement WafActiveRule interface:
 /**
- * @member {module:models/SchemasWafActiveRuleData} data
+ * @member {module:models/WafActiveRuleData} data
  */
-SchemasWafActiveRule.prototype['data'] = undefined;
+WafActiveRule.prototype['data'] = undefined;
 
 
 

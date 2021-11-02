@@ -50,9 +50,6 @@ class Content {
             if (data.hasOwnProperty('hash')) {
                 obj['hash'] = ApiClient.convertToType(data['hash'], 'String');
             }
-            if (data.hasOwnProperty('pop')) {
-                obj['pop'] = ApiClient.convertToType(data['pop'], 'String');
-            }
             if (data.hasOwnProperty('request')) {
                 obj['request'] = ApiClient.convertToType(data['request'], Object);
             }
@@ -65,6 +62,9 @@ class Content {
             if (data.hasOwnProperty('server')) {
                 obj['server'] = ApiClient.convertToType(data['server'], 'String');
             }
+            if (data.hasOwnProperty('pop')) {
+                obj['pop'] = ApiClient.convertToType(data['pop'], 'String');
+            }
         }
         return obj;
     }
@@ -76,11 +76,6 @@ class Content {
  * @member {String} hash
  */
 Content.prototype['hash'] = undefined;
-
-/**
- * @member {String} pop
- */
-Content.prototype['pop'] = undefined;
 
 /**
  * @member {Object} request
@@ -101,6 +96,11 @@ Content.prototype['response_time'] = undefined;
  * @member {String} server
  */
 Content.prototype['server'] = undefined;
+
+/**
+ * @member {String} pop
+ */
+Content.prototype['pop'] = undefined;
 
 
 

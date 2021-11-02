@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**sent_at** | **String** |  | [optional] 
 **status** | **String** | What the current status of this invoice can be. | [optional] 
+**sent_at** | **String** |  | [optional] 
 
 
 

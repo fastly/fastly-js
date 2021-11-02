@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tls_domains** | [**RelationshipCommonNameCommonName**](RelationshipCommonNameCommonName.md) |  | [optional] 
+**tls_domains** | [**RelationshipTlsDomainTlsDomain**](RelationshipTlsDomainTlsDomain.md) |  | [optional] 
 **tls_certificates** | [**RelationshipTlsCertificateTlsCertificate**](RelationshipTlsCertificateTlsCertificate.md) |  | [optional] 
 **tls_configuration** | [**RelationshipTlsConfigurationTlsConfiguration**](RelationshipTlsConfigurationTlsConfiguration.md) |  | [optional] 
 

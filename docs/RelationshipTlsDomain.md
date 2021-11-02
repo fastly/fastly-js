@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**tls_domain** | [**RelationshipCommonNameCommonName**](RelationshipCommonNameCommonName.md) |  | [optional] 
+**tls_domain** | [**RelationshipTlsDomainTlsDomain**](RelationshipTlsDomainTlsDomain.md) |  | [optional] 
 
 
 

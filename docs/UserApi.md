@@ -21,7 +21,7 @@ Method | Fastly API endpoint | Description
 ## `createUser`
 
 ```javascript
-createUser({ , [limit_services, ][locked, ][login, ][name, ][require_new_password, ][role, ][two_factor_auth_enabled, ][two_factor_setup_required] })
+createUser({ , [login, ][name, ][limit_services, ][locked, ][require_new_password, ][role, ][two_factor_auth_enabled, ][two_factor_setup_required] })
 ```
 
 Create a user.
@@ -30,10 +30,10 @@ Create a user.
 
 ```javascript
 const options = {
-  limit_services: true,
-  locked: true,
   login: "login_example",
   name: "name_example",
+  limit_services: true,
+  locked: true,
   require_new_password: true,
   role: new Fastly.RoleUser(),
   two_factor_auth_enabled: true,
@@ -53,10 +53,10 @@ apiInstance.createUser(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**limit_services** | **Boolean** | Indicates that the user has limited access to the customer&#39;s services. | [optional]
-**locked** | **Boolean** | Indicates whether the is account is locked for editing or not. | [optional]
 **login** | **String** | The login associated with the user (typically, an email address). | [optional]
 **name** | **String** | The real life name of the user. | [optional]
+**limit_services** | **Boolean** | Indicates that the user has limited access to the customer&#39;s services. | [optional]
+**locked** | **Boolean** | Indicates whether the is account is locked for editing or not. | [optional]
 **require_new_password** | **Boolean** | Indicates if a new password is required at next login. | [optional]
 **role** | [**RoleUser**](../Model/RoleUser.md) |  | [optional]
 **two_factor_auth_enabled** | **Boolean** | Indicates if 2FA is enabled on the user. | [optional]
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 ## `updateUser`
 
 ```javascript
-updateUser({ user_id, [limit_services, ][locked, ][login, ][name, ][require_new_password, ][role, ][two_factor_auth_enabled, ][two_factor_setup_required] })
+updateUser({ user_id, [login, ][name, ][limit_services, ][locked, ][require_new_password, ][role, ][two_factor_auth_enabled, ][two_factor_setup_required] })
 ```
 
 Update a user. Only users with the role of `superuser` can make changes to other users on the account. Non-superusers may use this endpoint to make changes to their own account. Modifications to `login` email require a valid password in the request body. Two-factor attributes are not editable via this endpoint.
@@ -214,10 +214,10 @@ Update a user. Only users with the role of `superuser` can make changes to other
 ```javascript
 const options = {
   user_id: "user_id_example", // required
-  limit_services: true,
-  locked: true,
   login: "login_example",
   name: "name_example",
+  limit_services: true,
+  locked: true,
   require_new_password: true,
   role: new Fastly.RoleUser(),
   two_factor_auth_enabled: true,
@@ -238,10 +238,10 @@ apiInstance.updateUser(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **user_id** | **String** |  |
-**limit_services** | **Boolean** | Indicates that the user has limited access to the customer&#39;s services. | [optional]
-**locked** | **Boolean** | Indicates whether the is account is locked for editing or not. | [optional]
 **login** | **String** | The login associated with the user (typically, an email address). | [optional]
 **name** | **String** | The real life name of the user. | [optional]
+**limit_services** | **Boolean** | Indicates that the user has limited access to the customer&#39;s services. | [optional]
+**locked** | **Boolean** | Indicates whether the is account is locked for editing or not. | [optional]
 **require_new_password** | **Boolean** | Indicates if a new password is required at next login. | [optional]
 **role** | [**RoleUser**](../Model/RoleUser.md) |  | [optional]
 **two_factor_auth_enabled** | **Boolean** | Indicates if 2FA is enabled on the user. | [optional]
@@ -255,7 +255,7 @@ Name | Type | Description  | Notes
 ## `updateUserPassword`
 
 ```javascript
-updateUserPassword({ , [new_password, ][old_password] })
+updateUserPassword({ , [old_password, ][new_password] })
 ```
 
 Update the user's password to a new one.
@@ -264,8 +264,8 @@ Update the user's password to a new one.
 
 ```javascript
 const options = {
-  new_password: "new_password_example",
   old_password: "old_password_example",
+  new_password: "new_password_example",
 };
 
 apiInstance.updateUserPassword(options)
@@ -281,8 +281,8 @@ apiInstance.updateUserPassword(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**new_password** | **String** | The user&#39;s new password. | [optional]
 **old_password** | **String** | The user&#39;s current password. | [optional]
+**new_password** | **String** | The user&#39;s new password. | [optional]
 
 ### Return type
 

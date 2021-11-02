@@ -65,7 +65,7 @@ List all TLS configurations.
 const options = {
   filter_bulk: "filter_bulk_example",
   include: dns_records,
-  page_number: 1,
+  page_number: 56,
   page_size: 20,
 };
 
@@ -105,7 +105,7 @@ Update a TLS configuration.
 ```javascript
 const options = {
   tls_configuration_id: "tls_configuration_id_example", // required
-  tls_configuration: {"data":{"attributes":{"name":"New TLS configuration name"},"type":"tls_configuration"}},
+  tls_configuration: {"data":{"type":"tls_configuration","attributes":{"name":"New TLS configuration name"}}},
 };
 
 apiInstance.updateTlsConfig(options)

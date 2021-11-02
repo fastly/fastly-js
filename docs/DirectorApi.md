@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 ## `createDirector`
 
 ```javascript
-createDirector({ service_id, version_id, [backends, ][capacity, ][comment, ][name, ][quorum, ][retries, ][shield, ][type] })
+createDirector({ service_id, version_id, [backends, ][capacity, ][comment, ][name, ][quorum, ][shield, ][type, ][retries] })
 ```
 
 Create a director for a particular service and version.
@@ -35,9 +35,9 @@ const options = {
   comment: "comment_example",
   name: "name_example",
   quorum: 75,
-  retries: 5,
   shield: 'null',
   type: 1,
+  retries: 5,
 };
 
 apiInstance.createDirector(options)
@@ -60,9 +60,9 @@ Name | Type | Description  | Notes
 **comment** | **String** | A freeform descriptive note. | [optional]
 **name** | **String** | Name for the Director. | [optional]
 **quorum** | **Number** | The percentage of capacity that needs to be up for a director to be considered up. &#x60;0&#x60; to &#x60;100&#x60;. | [optional] [default to 75]
-**retries** | **Number** | How many backends to search if it fails. | [optional] [default to 5]
 **shield** | **String** | Selected POP to serve as a shield for the backends. Defaults to &#x60;null&#x60; meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding. | [optional] [default to &#39;null&#39;]
 **type** | **Number** | What type of load balance group to use. | [optional] [default to 1]
+**retries** | **Number** | How many backends to search if it fails. | [optional] [default to 5]
 
 ### Return type
 

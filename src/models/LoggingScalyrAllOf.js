@@ -47,14 +47,14 @@ class LoggingScalyrAllOf {
         if (data) {
             obj = obj || new LoggingScalyrAllOf();
 
-            if (data.hasOwnProperty('project_id')) {
-                obj['project_id'] = ApiClient.convertToType(data['project_id'], 'String');
-            }
             if (data.hasOwnProperty('region')) {
                 obj['region'] = ApiClient.convertToType(data['region'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
+            }
+            if (data.hasOwnProperty('project_id')) {
+                obj['project_id'] = ApiClient.convertToType(data['project_id'], 'String');
             }
         }
         return obj;
@@ -62,13 +62,6 @@ class LoggingScalyrAllOf {
 
 
 }
-
-/**
- * The name of the logfile within Scalyr.
- * @member {String} project_id
- * @default 'logplex'
- */
-LoggingScalyrAllOf.prototype['project_id'] = 'logplex';
 
 /**
  * The region that log data will be sent to.
@@ -82,6 +75,13 @@ LoggingScalyrAllOf.prototype['region'] = undefined;
  * @member {String} token
  */
 LoggingScalyrAllOf.prototype['token'] = undefined;
+
+/**
+ * The name of the logfile within Scalyr.
+ * @member {String} project_id
+ * @default 'logplex'
+ */
+LoggingScalyrAllOf.prototype['project_id'] = 'logplex';
 
 
 

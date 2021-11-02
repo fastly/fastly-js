@@ -99,7 +99,7 @@ List all certificates.
 ```javascript
 const options = {
   filter_tls_domain_id_match: "filter_tls_domain_id_match_example",
-  page_number: 1,
+  page_number: 56,
   page_size: 20,
   sort: 'created_at',
 };
@@ -140,7 +140,7 @@ Replace a certificate with a newly reissued certificate. By using this endpoint,
 ```javascript
 const options = {
   certificate_id: "certificate_id_example", // required
-  tls_bulk_certificate: {"data":{"attributes":{"allow_untrusted_root":false,"cert_blob":"-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n","intermediates_blob":"-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n"},"id":"cRTguUGZzb2W9Euo4moOr","type":"tls_bulk_certificate"}},
+  tls_bulk_certificate: {"data":{"id":"cRTguUGZzb2W9Euo4moOr","type":"tls_bulk_certificate","attributes":{"allow_untrusted_root":false,"cert_blob":"-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n","intermediates_blob":"-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n"}}},
 };
 
 apiInstance.updateBulkTlsCert(options)
@@ -176,7 +176,7 @@ Upload a new certificate. TLS domains are automatically enabled upon certificate
 
 ```javascript
 const options = {
-  tls_bulk_certificate: {"data":{"attributes":{"allow_untrusted_root":false,"cert_blob":"-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n","intermediates_blob":"-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n"},"relationships":{"tls_configurations":{"data":[{"id":"t7CguUGZzb2W9Euo5FoKa","type":"tls_configuration"}]}},"type":"tls_bulk_certificate"}},
+  tls_bulk_certificate: {"data":{"type":"tls_bulk_certificate","attributes":{"allow_untrusted_root":false,"cert_blob":"-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n","intermediates_blob":"-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n"},"relationships":{"tls_configurations":{"data":[{"type":"tls_configuration","id":"t7CguUGZzb2W9Euo5FoKa"}]}}}},
 };
 
 apiInstance.uploadTlsBulkCert(options)

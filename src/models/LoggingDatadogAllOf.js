@@ -47,11 +47,11 @@ class LoggingDatadogAllOf {
         if (data) {
             obj = obj || new LoggingDatadogAllOf();
 
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], Object);
-            }
             if (data.hasOwnProperty('region')) {
                 obj['region'] = ApiClient.convertToType(data['region'], 'String');
+            }
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], Object);
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -64,17 +64,17 @@ class LoggingDatadogAllOf {
 }
 
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest. 
- * @member {Object} format
- */
-LoggingDatadogAllOf.prototype['format'] = undefined;
-
-/**
  * The region that log data will be sent to.
  * @member {module:models/LoggingDatadogAllOf.RegionEnum} region
  * @default 'US'
  */
 LoggingDatadogAllOf.prototype['region'] = undefined;
+
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest. 
+ * @member {Object} format
+ */
+LoggingDatadogAllOf.prototype['format'] = undefined;
 
 /**
  * The API key from your Datadog account. Required.

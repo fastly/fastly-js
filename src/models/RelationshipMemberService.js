@@ -48,11 +48,11 @@ class RelationshipMemberService {
         if (data) {
             obj = obj || new RelationshipMemberService();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeService.constructFromObject(data['type']);
+            }
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
         }
         return obj;
@@ -62,15 +62,15 @@ class RelationshipMemberService {
 }
 
 /**
+ * @member {module:models/TypeService} type
+ */
+RelationshipMemberService.prototype['type'] = undefined;
+
+/**
  * Alphanumeric string identifying the service.
  * @member {String} id
  */
 RelationshipMemberService.prototype['id'] = undefined;
-
-/**
- * @member {module:models/TypeService} type
- */
-RelationshipMemberService.prototype['type'] = undefined;
 
 
 

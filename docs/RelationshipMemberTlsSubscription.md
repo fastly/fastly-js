@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** | Alphanumeric string identifying a TLS subscription. | [optional] [readonly] 
 **type** | [**TypeTlsSubscription**](TypeTlsSubscription.md) |  | [optional] 
+**id** | **String** | Alphanumeric string identifying a TLS subscription. | [optional] [readonly] 
 
 
 

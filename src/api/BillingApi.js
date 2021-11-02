@@ -70,7 +70,7 @@ export default class BillingApi {
 
       let authNames = ['token'];
       let contentTypes = [];
-      let accepts = ['application/json', 'application/pdf', 'text/csv'];
+      let accepts = ['application/json', 'text/csv', 'application/pdf'];
       let returnType = BillingResponse;
       return this.apiClient.callApi(
         '/billing/v2/year/{year}/month/{month}', 'GET',
@@ -124,7 +124,7 @@ export default class BillingApi {
 
       let authNames = ['token'];
       let contentTypes = [];
-      let accepts = ['application/json', 'application/pdf', 'text/csv'];
+      let accepts = ['application/json', 'text/csv', 'application/pdf'];
       let returnType = null;
       return this.apiClient.callApi(
         '/billing/v2/account_customers/{customer_id}/invoices/{invoice_id}', 'GET',

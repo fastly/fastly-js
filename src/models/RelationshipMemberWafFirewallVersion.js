@@ -48,11 +48,11 @@ class RelationshipMemberWafFirewallVersion {
         if (data) {
             obj = obj || new RelationshipMemberWafFirewallVersion();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeWafFirewallVersion.constructFromObject(data['type']);
+            }
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
         }
         return obj;
@@ -62,15 +62,15 @@ class RelationshipMemberWafFirewallVersion {
 }
 
 /**
+ * @member {module:models/TypeWafFirewallVersion} type
+ */
+RelationshipMemberWafFirewallVersion.prototype['type'] = undefined;
+
+/**
  * Alphanumeric string identifying a Firewall version.
  * @member {String} id
  */
 RelationshipMemberWafFirewallVersion.prototype['id'] = undefined;
-
-/**
- * @member {module:models/TypeWafFirewallVersion} type
- */
-RelationshipMemberWafFirewallVersion.prototype['type'] = undefined;
 
 
 

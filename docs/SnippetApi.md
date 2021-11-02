@@ -21,7 +21,7 @@ Method | Fastly API endpoint | Description
 ## `createSnippet`
 
 ```javascript
-createSnippet({ service_id, version_id, [content, ][dynamic, ][name, ][priority, ][type] })
+createSnippet({ service_id, version_id, [name, ][dynamic, ][type, ][content, ][priority] })
 ```
 
 Create a snippet for a particular service and version.
@@ -32,11 +32,11 @@ Create a snippet for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  content: "content_example",
-  dynamic: ,
   name: "name_example",
-  priority: '100',
+  dynamic: ,
   type: ,
+  content: "content_example",
+  priority: '100',
 };
 
 apiInstance.createSnippet(options)
@@ -54,11 +54,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
-**content** | **String** | The VCL code that specifies exactly what the snippet does. | [optional]
-**dynamic** | **String** | Sets the snippet version. | [optional]
 **name** | **String** | The name for the snippet. | [optional]
-**priority** | **String** | Numeric string value. Priority determines execution order. Lower numbers execute first. | [optional] [default to &#39;100&#39;]
+**dynamic** | **String** | Sets the snippet version. | [optional]
 **type** | **String** | The location in generated VCL where the snippet should be placed. | [optional]
+**content** | **String** | The VCL code that specifies exactly what the snippet does. | [optional]
+**priority** | **String** | Numeric string value. Priority determines execution order. Lower numbers execute first. | [optional] [default to &#39;100&#39;]
 
 ### Return type
 
@@ -259,7 +259,7 @@ Name | Type | Description  | Notes
 ## `updateSnippetDynamic`
 
 ```javascript
-updateSnippetDynamic({ service_id, snippet_id, [content, ][dynamic, ][name, ][priority, ][type] })
+updateSnippetDynamic({ service_id, snippet_id, [name, ][dynamic, ][type, ][content, ][priority] })
 ```
 
 Update a dynamic snippet for a particular service.
@@ -270,11 +270,11 @@ Update a dynamic snippet for a particular service.
 const options = {
   service_id: "service_id_example", // required
   snippet_id: "snippet_id_example", // required
-  content: "content_example",
-  dynamic: ,
   name: "name_example",
-  priority: '100',
+  dynamic: ,
   type: ,
+  content: "content_example",
+  priority: '100',
 };
 
 apiInstance.updateSnippetDynamic(options)
@@ -292,11 +292,11 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **snippet_id** | **String** |  |
-**content** | **String** | The VCL code that specifies exactly what the snippet does. | [optional]
-**dynamic** | **String** | Sets the snippet version. | [optional]
 **name** | **String** | The name for the snippet. | [optional]
-**priority** | **String** | Numeric string value. Priority determines execution order. Lower numbers execute first. | [optional] [default to &#39;100&#39;]
+**dynamic** | **String** | Sets the snippet version. | [optional]
 **type** | **String** | The location in generated VCL where the snippet should be placed. | [optional]
+**content** | **String** | The VCL code that specifies exactly what the snippet does. | [optional]
+**priority** | **String** | Numeric string value. Priority determines execution order. Lower numbers execute first. | [optional] [default to &#39;100&#39;]
 
 ### Return type
 

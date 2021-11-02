@@ -56,14 +56,14 @@ class InvitationResponseData {
             InvitationData.constructFromObject(data, obj);
             InvitationResponseDataAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeInvitation.constructFromObject(data['type']);
+            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = Timestamps.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = RelationshipsForInvitation.constructFromObject(data['relationships']);
-            }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeInvitation.constructFromObject(data['type']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -76,6 +76,11 @@ class InvitationResponseData {
 }
 
 /**
+ * @member {module:models/TypeInvitation} type
+ */
+InvitationResponseData.prototype['type'] = undefined;
+
+/**
  * @member {module:models/Timestamps} attributes
  */
 InvitationResponseData.prototype['attributes'] = undefined;
@@ -86,11 +91,6 @@ InvitationResponseData.prototype['attributes'] = undefined;
 InvitationResponseData.prototype['relationships'] = undefined;
 
 /**
- * @member {module:models/TypeInvitation} type
- */
-InvitationResponseData.prototype['type'] = undefined;
-
-/**
  * Alphanumeric string identifying an invitation.
  * @member {String} id
  */
@@ -99,6 +99,10 @@ InvitationResponseData.prototype['id'] = undefined;
 
 // Implement InvitationData interface:
 /**
+ * @member {module:models/TypeInvitation} type
+ */
+InvitationData.prototype['type'] = undefined;
+/**
  * @member {module:models/InvitationDataAttributes} attributes
  */
 InvitationData.prototype['attributes'] = undefined;
@@ -106,20 +110,16 @@ InvitationData.prototype['attributes'] = undefined;
  * @member {module:models/RelationshipServiceInvitationsCreate} relationships
  */
 InvitationData.prototype['relationships'] = undefined;
-/**
- * @member {module:models/TypeInvitation} type
- */
-InvitationData.prototype['type'] = undefined;
 // Implement InvitationResponseDataAllOf interface:
-/**
- * @member {module:models/Timestamps} attributes
- */
-InvitationResponseDataAllOf.prototype['attributes'] = undefined;
 /**
  * Alphanumeric string identifying an invitation.
  * @member {String} id
  */
 InvitationResponseDataAllOf.prototype['id'] = undefined;
+/**
+ * @member {module:models/Timestamps} attributes
+ */
+InvitationResponseDataAllOf.prototype['attributes'] = undefined;
 /**
  * @member {module:models/RelationshipsForInvitation} relationships
  */

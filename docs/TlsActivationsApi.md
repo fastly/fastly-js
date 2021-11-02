@@ -28,7 +28,7 @@ Enable TLS for a particular TLS domain and certificate combination. These relati
 
 ```javascript
 const options = {
-  tls_activation: {"data":{"relationships":{"tls_certificate":{"data":{"id":"cRTguUGZzb2W9Euo4moOr","type":"tls_certificate"}},"tls_configuration":{"data":{"id":"t7CguUGZzb2W9Euo5FoKa","type":"tls_configuration"}},"tls_domain":{"data":{"id":"DOMAIN_NAME","type":"tls_domain"}}},"type":"tls_activation"}},
+  tls_activation: {"data":{"type":"tls_activation","relationships":{"tls_certificate":{"data":[{"id":"cRTguUGZzb2W9Euo4moOr","type":"tls_certificate"}]},"tls_configuration":{"data":[{"id":"t7CguUGZzb2W9Euo5FoKa","type":"tls_configuration"}]},"tls_domain":{"data":[{"id":"example.com","type":"tls_domain"}]}}}},
 };
 
 apiInstance.createTlsActivation(options)
@@ -139,7 +139,7 @@ const options = {
   filter_tls_configuration_id: "filter_tls_configuration_id_example",
   filter_tls_domain_id: "filter_tls_domain_id_example",
   include: tls_certificate,tls_configuration,tls_domain,
-  page_number: 1,
+  page_number: 56,
   page_size: 20,
 };
 
@@ -181,7 +181,7 @@ Update the certificate used to terminate TLS traffic for the domain associated w
 ```javascript
 const options = {
   tls_activation_id: "tls_activation_id_example", // required
-  tls_activation: {"data":{"relationships":{"tls_certificate":{"data":{"id":"cRTguUGZzb2W9Euo4moOr","type":"tls_certificate"}}},"type":"tls_activation"}},
+  tls_activation: {"data":{"type":"tls_activation","relationships":{"tls_certificate":{"data":{"type":"tls_certificate","id":"cRTguUGZzb2W9Euo4moOr"}}}}},
 };
 
 apiInstance.updateTlsActivation(options)

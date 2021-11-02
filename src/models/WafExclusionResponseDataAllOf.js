@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import AnyOfrelationshipWafRulesrelationshipWafRuleRevisions from './AnyOfrelationshipWafRulesrelationshipWafRuleRevisions';
 import Timestamps from './Timestamps';
 
 /**
@@ -48,11 +49,14 @@ class WafExclusionResponseDataAllOf {
         if (data) {
             obj = obj || new WafExclusionResponseDataAllOf();
 
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = Timestamps.constructFromObject(data['attributes']);
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
+            }
+            if (data.hasOwnProperty('relationships')) {
+                obj['relationships'] = ApiClient.convertToType(data['relationships'], AnyOfrelationshipWafRulesrelationshipWafRuleRevisions);
             }
         }
         return obj;
@@ -62,15 +66,20 @@ class WafExclusionResponseDataAllOf {
 }
 
 /**
+ * Alphanumeric string identifying a WAF exclusion.
+ * @member {String} id
+ */
+WafExclusionResponseDataAllOf.prototype['id'] = undefined;
+
+/**
  * @member {module:models/Timestamps} attributes
  */
 WafExclusionResponseDataAllOf.prototype['attributes'] = undefined;
 
 /**
- * Alphanumeric string identifying a WAF exclusion.
- * @member {String} id
+ * @member {module:models/AnyOfrelationshipWafRulesrelationshipWafRuleRevisions} relationships
  */
-WafExclusionResponseDataAllOf.prototype['id'] = undefined;
+WafExclusionResponseDataAllOf.prototype['relationships'] = undefined;
 
 
 

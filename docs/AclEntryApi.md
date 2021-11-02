@@ -31,7 +31,7 @@ Update multiple ACL entries on the same ACL.
 const options = {
   service_id: "service_id_example", // required
   acl_id: "acl_id_example", // required
-  acl_entries: {"entries":[{"ip":"192.168.0.1","op":"create","subnet":8},{"id":"6yxNzlOpW1V7JfSwvLGtOc","ip":"192.168.0.2","op":"update","subnet":16},{"id":"6yxNzlOpW1V7JfSwvLGtOc","op":"delete"}]},
+  acl_entries: {"entries":[{"op":"create","ip":"192.168.0.1","subnet":8},{"op":"update","id":"6yxNzlOpW1V7JfSwvLGtOc","ip":"192.168.0.2","subnet":16},{"op":"delete","id":"6yxNzlOpW1V7JfSwvLGtOc"}]},
 };
 
 apiInstance.bulkUpdateAclEntries(options)
@@ -70,7 +70,7 @@ Add an ACL entry to an ACL.
 const options = {
   service_id: "service_id_example", // required
   acl_id: "acl_id_example", // required
-  acl_entry: {"ip":"127.0.0.1","subnet":0},
+  acl_entry: {"subnet":0,"ip":"127.0.0.1"},
 };
 
 apiInstance.createAclEntry(options)
@@ -187,7 +187,7 @@ List ACL entries for a specified ACL.
 const options = {
   service_id: "service_id_example", // required
   acl_id: "acl_id_example", // required
-  page: 1,
+  page: 56,
   per_page: 20,
   sort: 'created',
   direction: 'ascend',

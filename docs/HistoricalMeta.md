@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**by** | **String** |  | [optional] 
-**from** | **String** |  | [optional] 
-**region** | **String** |  | [optional] 
 **to** | **String** |  | [optional] 
+**from** | **String** |  | [optional] 
+**by** | **String** |  | [optional] 
+**region** | **String** |  | [optional] 
 
 
 

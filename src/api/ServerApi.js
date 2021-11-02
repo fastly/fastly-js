@@ -43,13 +43,13 @@ export default class ServerApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {String} options.pool_id
+     * @param {Number} [options.weight=100] - Weight (`1-100`) used to load balance this server against others.
+     * @param {Number} [options.max_conn=0] - Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
+     * @param {Number} [options.port=80] - Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
      * @param {String} [options.address] - A hostname, IPv4, or IPv6 address for the server. Required.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Boolean} [options.disabled=false] - Allows servers to be enabled and disabled in a pool.
-     * @param {Number} [options.max_conn=0] - Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
      * @param {String} [options.override_host='null'] - The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
-     * @param {Number} [options.port=80] - Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
-     * @param {Number} [options.weight=100] - Weight (`1-100`) used to load balance this server against others.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ServerResponse} and HTTP response
      */
     createPoolServerWithHttpInfo(options = {}) {
@@ -72,13 +72,13 @@ export default class ServerApi {
       let headerParams = {
       };
       let formParams = {
+        'weight': options['weight'],
+        'max_conn': options['max_conn'],
+        'port': options['port'],
         'address': options['address'],
         'comment': options['comment'],
         'disabled': options['disabled'],
-        'max_conn': options['max_conn'],
-        'override_host': options['override_host'],
-        'port': options['port'],
-        'weight': options['weight']
+        'override_host': options['override_host']
       };
 
       let authNames = ['token'];
@@ -97,13 +97,13 @@ export default class ServerApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {String} options.pool_id
+     * @param {Number} [options.weight=100] - Weight (`1-100`) used to load balance this server against others.
+     * @param {Number} [options.max_conn=0] - Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
+     * @param {Number} [options.port=80] - Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
      * @param {String} [options.address] - A hostname, IPv4, or IPv6 address for the server. Required.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Boolean} [options.disabled=false] - Allows servers to be enabled and disabled in a pool.
-     * @param {Number} [options.max_conn=0] - Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
      * @param {String} [options.override_host='null'] - The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
-     * @param {Number} [options.port=80] - Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
-     * @param {Number} [options.weight=100] - Weight (`1-100`) used to load balance this server against others.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ServerResponse}
      */
     createPoolServer(options = {}) {
@@ -295,13 +295,13 @@ export default class ServerApi {
      * @param {String} options.service_id
      * @param {String} options.pool_id
      * @param {String} options.server_id
+     * @param {Number} [options.weight=100] - Weight (`1-100`) used to load balance this server against others.
+     * @param {Number} [options.max_conn=0] - Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
+     * @param {Number} [options.port=80] - Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
      * @param {String} [options.address] - A hostname, IPv4, or IPv6 address for the server. Required.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Boolean} [options.disabled=false] - Allows servers to be enabled and disabled in a pool.
-     * @param {Number} [options.max_conn=0] - Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
      * @param {String} [options.override_host='null'] - The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
-     * @param {Number} [options.port=80] - Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
-     * @param {Number} [options.weight=100] - Weight (`1-100`) used to load balance this server against others.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ServerResponse} and HTTP response
      */
     updatePoolServerWithHttpInfo(options = {}) {
@@ -329,13 +329,13 @@ export default class ServerApi {
       let headerParams = {
       };
       let formParams = {
+        'weight': options['weight'],
+        'max_conn': options['max_conn'],
+        'port': options['port'],
         'address': options['address'],
         'comment': options['comment'],
         'disabled': options['disabled'],
-        'max_conn': options['max_conn'],
-        'override_host': options['override_host'],
-        'port': options['port'],
-        'weight': options['weight']
+        'override_host': options['override_host']
       };
 
       let authNames = ['token'];
@@ -355,13 +355,13 @@ export default class ServerApi {
      * @param {String} options.service_id
      * @param {String} options.pool_id
      * @param {String} options.server_id
+     * @param {Number} [options.weight=100] - Weight (`1-100`) used to load balance this server against others.
+     * @param {Number} [options.max_conn=0] - Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
+     * @param {Number} [options.port=80] - Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
      * @param {String} [options.address] - A hostname, IPv4, or IPv6 address for the server. Required.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Boolean} [options.disabled=false] - Allows servers to be enabled and disabled in a pool.
-     * @param {Number} [options.max_conn=0] - Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
      * @param {String} [options.override_host='null'] - The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
-     * @param {Number} [options.port=80] - Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
-     * @param {Number} [options.weight=100] - Weight (`1-100`) used to load balance this server against others.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ServerResponse}
      */
     updatePoolServer(options = {}) {

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | [optional] 
 **type** | [**TypeServiceAuthorization**](TypeServiceAuthorization.md) |  | [optional] 
+**id** | **String** |  | [optional] 
 
 
 

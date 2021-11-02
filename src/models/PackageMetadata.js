@@ -48,23 +48,23 @@ class PackageMetadata {
         if (data) {
             obj = obj || new PackageMetadata();
 
-            if (data.hasOwnProperty('authors')) {
-                obj['authors'] = ApiClient.convertToType(data['authors'], ['String']);
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('description')) {
                 obj['description'] = ApiClient.convertToType(data['description'], 'String');
             }
-            if (data.hasOwnProperty('hashsum')) {
-                obj['hashsum'] = ApiClient.convertToType(data['hashsum'], 'String');
+            if (data.hasOwnProperty('authors')) {
+                obj['authors'] = ApiClient.convertToType(data['authors'], ['String']);
             }
             if (data.hasOwnProperty('language')) {
                 obj['language'] = ApiClient.convertToType(data['language'], 'String');
             }
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
             if (data.hasOwnProperty('size')) {
                 obj['size'] = ApiClient.convertToType(data['size'], 'Number');
+            }
+            if (data.hasOwnProperty('hashsum')) {
+                obj['hashsum'] = ApiClient.convertToType(data['hashsum'], 'String');
             }
         }
         return obj;
@@ -74,10 +74,10 @@ class PackageMetadata {
 }
 
 /**
- * A list of package authors' email addresses.
- * @member {Array.<String>} authors
+ * Name of the Compute@Edge package.
+ * @member {String} name
  */
-PackageMetadata.prototype['authors'] = undefined;
+PackageMetadata.prototype['name'] = undefined;
 
 /**
  * Description of the Compute@Edge package.
@@ -86,10 +86,10 @@ PackageMetadata.prototype['authors'] = undefined;
 PackageMetadata.prototype['description'] = undefined;
 
 /**
- * Hash of the Compute@Edge package.
- * @member {String} hashsum
+ * A list of package authors' email addresses.
+ * @member {Array.<String>} authors
  */
-PackageMetadata.prototype['hashsum'] = undefined;
+PackageMetadata.prototype['authors'] = undefined;
 
 /**
  * The language of the Compute@Edge package.
@@ -98,16 +98,16 @@ PackageMetadata.prototype['hashsum'] = undefined;
 PackageMetadata.prototype['language'] = undefined;
 
 /**
- * Name of the Compute@Edge package.
- * @member {String} name
- */
-PackageMetadata.prototype['name'] = undefined;
-
-/**
  * Size of the Compute@Edge package in bytes.
  * @member {Number} size
  */
 PackageMetadata.prototype['size'] = undefined;
+
+/**
+ * Hash of the Compute@Edge package.
+ * @member {String} hashsum
+ */
+PackageMetadata.prototype['hashsum'] = undefined;
 
 
 

@@ -30,7 +30,7 @@ Create service authorization.
 
 ```javascript
 const options = {
-  service_authorization: {"data":{"attributes":{"permission":"read_only"},"relationships":{"service":{"data":{"id":"SU1Z0isxPaozGVKXdv0eY","type":"service"}},"user":{"data":{"id":"6c7kAlo4vACNchGOdQxP37","type":"user"}}},"type":"service_authorization"}},
+  service_authorization: {"data":{"type":"service_authorization","attributes":{"permission":"read_only"},"relationships":{"user":{"data":{"type":"user","id":"6c7kAlo4vACNchGOdQxP37"}},"service":{"data":[{"type":"service","id":"SU1Z0isxPaozGVKXdv0eY"}]}}}},
 };
 
 apiInstance.createServiceAuthorization(options)
@@ -135,7 +135,7 @@ List service authorizations.
 
 ```javascript
 const options = {
-  page_number: 1,
+  page_number: 56,
   page_size: 20,
 };
 
@@ -208,7 +208,7 @@ Update service authorization.
 ```javascript
 const options = {
   service_authorization_id: "service_authorization_id_example", // required
-  service_authorization: {"data":{"attributes":{"permission":"read_only"},"id":"3krg2uUGZzb2W9Euo4moOY","type":"service_authorization"}},
+  service_authorization: {"data":{"id":"3krg2uUGZzb2W9Euo4moOY","type":"service_authorization","attributes":{"permission":"read_only"}}},
 };
 
 apiInstance.updateServiceAuthorization(options)

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** | Alphanumeric string identifying a service invitation. | [optional] [readonly] 
 **type** | [**TypeServiceInvitation**](TypeServiceInvitation.md) |  | [optional] 
+**id** | **String** | Alphanumeric string identifying a service invitation. | [optional] [readonly] 
 
 
 

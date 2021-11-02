@@ -91,7 +91,7 @@ class DictionaryResponse {
 }
 
 /**
- * Name for the Dictionary.
+ * Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
  * @member {String} name
  */
 DictionaryResponse.prototype['name'] = undefined;
@@ -142,7 +142,7 @@ DictionaryResponse.prototype['id'] = undefined;
 
 // Implement Dictionary interface:
 /**
- * Name for the Dictionary.
+ * Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
  * @member {String} name
  */
 Dictionary.prototype['name'] = undefined;

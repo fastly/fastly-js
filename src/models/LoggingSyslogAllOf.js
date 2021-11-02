@@ -49,14 +49,14 @@ class LoggingSyslogAllOf {
         if (data) {
             obj = obj || new LoggingSyslogAllOf();
 
+            if (data.hasOwnProperty('message_type')) {
+                obj['message_type'] = LoggingMessageType.constructFromObject(data['message_type']);
+            }
             if (data.hasOwnProperty('hostname')) {
                 obj['hostname'] = ApiClient.convertToType(data['hostname'], 'String');
             }
             if (data.hasOwnProperty('ipv4')) {
                 obj['ipv4'] = ApiClient.convertToType(data['ipv4'], 'String');
-            }
-            if (data.hasOwnProperty('message_type')) {
-                obj['message_type'] = LoggingMessageType.constructFromObject(data['message_type']);
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -72,6 +72,11 @@ class LoggingSyslogAllOf {
 }
 
 /**
+ * @member {module:models/LoggingMessageType} message_type
+ */
+LoggingSyslogAllOf.prototype['message_type'] = undefined;
+
+/**
  * The hostname used for the syslog endpoint.
  * @member {String} hostname
  */
@@ -82,11 +87,6 @@ LoggingSyslogAllOf.prototype['hostname'] = undefined;
  * @member {String} ipv4
  */
 LoggingSyslogAllOf.prototype['ipv4'] = undefined;
-
-/**
- * @member {module:models/LoggingMessageType} message_type
- */
-LoggingSyslogAllOf.prototype['message_type'] = undefined;
 
 /**
  * Whether to prepend each message with a specific token.

@@ -48,11 +48,11 @@ class RelationshipUserUserData {
         if (data) {
             obj = obj || new RelationshipUserUserData();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeUser.constructFromObject(data['type']);
+            }
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
         }
         return obj;
@@ -62,15 +62,15 @@ class RelationshipUserUserData {
 }
 
 /**
+ * @member {module:models/TypeUser} type
+ */
+RelationshipUserUserData.prototype['type'] = undefined;
+
+/**
  * Alphanumeric string identifying the user.
  * @member {String} id
  */
 RelationshipUserUserData.prototype['id'] = undefined;
-
-/**
- * @member {module:models/TypeUser} type
- */
-RelationshipUserUserData.prototype['type'] = undefined;
 
 
 

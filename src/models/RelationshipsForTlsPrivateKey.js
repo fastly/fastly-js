@@ -12,9 +12,9 @@
  */
 
 import ApiClient from '../ApiClient';
-import RelationshipCommonNameCommonName from './RelationshipCommonNameCommonName';
 import RelationshipTlsActivationTlsActivation from './RelationshipTlsActivationTlsActivation';
 import RelationshipTlsActivations from './RelationshipTlsActivations';
+import RelationshipTlsDomainTlsDomain from './RelationshipTlsDomainTlsDomain';
 
 /**
  * The RelationshipsForTlsPrivateKey model module.
@@ -56,7 +56,7 @@ class RelationshipsForTlsPrivateKey {
                 obj['tls_activations'] = RelationshipTlsActivationTlsActivation.constructFromObject(data['tls_activations']);
             }
             if (data.hasOwnProperty('tls_domains')) {
-                obj['tls_domains'] = RelationshipCommonNameCommonName.constructFromObject(data['tls_domains']);
+                obj['tls_domains'] = RelationshipTlsDomainTlsDomain.constructFromObject(data['tls_domains']);
             }
         }
         return obj;
@@ -71,7 +71,7 @@ class RelationshipsForTlsPrivateKey {
 RelationshipsForTlsPrivateKey.prototype['tls_activations'] = undefined;
 
 /**
- * @member {module:models/RelationshipCommonNameCommonName} tls_domains
+ * @member {module:models/RelationshipTlsDomainTlsDomain} tls_domains
  */
 RelationshipsForTlsPrivateKey.prototype['tls_domains'] = undefined;
 

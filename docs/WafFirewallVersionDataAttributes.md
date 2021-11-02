@@ -1,4 +1,4 @@
-# Fastly.SchemasWafFirewallVersionDataAttributes
+# Fastly.WafFirewallVersionDataAttributes
 
 ## Properties
 
@@ -8,8 +8,8 @@ Name | Type | Description | Notes
 **allowed_methods** | **String** | A space-separated list of HTTP method names. | [optional] [default to &#39;GET HEAD POST OPTIONS PUT PATCH DELETE&#39;]
 **allowed_request_content_type** | **String** | Allowed request content types. | [optional] [default to &#39;application/x-www-form-urlencoded|multipart/form-data|text/xml|application/xml|application/x-amf|application/json|text/plain&#39;]
 **allowed_request_content_type_charset** | **String** | Allowed request content type charset. | [optional] [default to &#39;utf-8|iso-8859-1|iso-8859-15|windows-1252&#39;]
-**arg_length** | **Number** | The maximum number of arguments allowed. | [optional] [default to 400]
 **arg_name_length** | **Number** | The maximum allowed argument name length. | [optional] [default to 100]
+**arg_length** | **Number** | The maximum number of arguments allowed. | [optional] [default to 400]
 **combined_file_sizes** | **Number** | The maximum allowed size of all files (in bytes). | [optional] [default to 10000000]
 **comment** | **String** | A freeform descriptive note. | [optional] 
 **critical_anomaly_score** | **Number** | Score value to add for critical anomalies. | [optional] [default to 6]

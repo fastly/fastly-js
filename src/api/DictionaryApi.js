@@ -43,7 +43,7 @@ export default class DictionaryApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @param {String} [options.name] - Name for the Dictionary.
+     * @param {String} [options.name] - Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
      * @param {Boolean} [options.write_only=false] - Determines if items in the dictionary are readable or not.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/DictionaryResponse} and HTTP response
      */
@@ -87,7 +87,7 @@ export default class DictionaryApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @param {String} [options.name] - Name for the Dictionary.
+     * @param {String} [options.name] - Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
      * @param {Boolean} [options.write_only=false] - Determines if items in the dictionary are readable or not.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/DictionaryResponse}
      */
@@ -280,7 +280,7 @@ export default class DictionaryApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.dictionary_name
-     * @param {String} [options.name] - Name for the Dictionary.
+     * @param {String} [options.name] - Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
      * @param {Boolean} [options.write_only=false] - Determines if items in the dictionary are readable or not.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/DictionaryResponse} and HTTP response
      */
@@ -330,7 +330,7 @@ export default class DictionaryApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.dictionary_name
-     * @param {String} [options.name] - Name for the Dictionary.
+     * @param {String} [options.name] - Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
      * @param {Boolean} [options.write_only=false] - Determines if items in the dictionary are readable or not.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/DictionaryResponse}
      */

@@ -13,7 +13,9 @@
 
 import ApiClient from '../ApiClient';
 import LoggingCommon from './LoggingCommon';
+import LoggingFormatVersion from './LoggingFormatVersion';
 import LoggingKafkaAllOf from './LoggingKafkaAllOf';
+import LoggingPlacement from './LoggingPlacement';
 import LoggingTlsCommon from './LoggingTlsCommon';
 import LoggingUseTls from './LoggingUseTls';
 
@@ -57,20 +59,20 @@ class LoggingKafka {
             LoggingTlsCommon.constructFromObject(data, obj);
             LoggingKafkaAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], 'String');
-            }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'Number');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
-                obj['placement'] = ApiClient.convertToType(data['placement'], 'String');
+                obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
             }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
+            }
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
             if (data.hasOwnProperty('tls_ca_cert')) {
                 obj['tls_ca_cert'] = ApiClient.convertToType(data['tls_ca_cert'], 'String');
@@ -84,8 +86,8 @@ class LoggingKafka {
             if (data.hasOwnProperty('tls_hostname')) {
                 obj['tls_hostname'] = ApiClient.convertToType(data['tls_hostname'], 'String');
             }
-            if (data.hasOwnProperty('auth_method')) {
-                obj['auth_method'] = ApiClient.convertToType(data['auth_method'], 'String');
+            if (data.hasOwnProperty('topic')) {
+                obj['topic'] = ApiClient.convertToType(data['topic'], 'String');
             }
             if (data.hasOwnProperty('brokers')) {
                 obj['brokers'] = ApiClient.convertToType(data['brokers'], 'String');
@@ -93,26 +95,26 @@ class LoggingKafka {
             if (data.hasOwnProperty('compression_codec')) {
                 obj['compression_codec'] = ApiClient.convertToType(data['compression_codec'], 'String');
             }
-            if (data.hasOwnProperty('parse_log_keyvals')) {
-                obj['parse_log_keyvals'] = ApiClient.convertToType(data['parse_log_keyvals'], 'Boolean');
-            }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            if (data.hasOwnProperty('required_acks')) {
+                obj['required_acks'] = ApiClient.convertToType(data['required_acks'], 'Number');
             }
             if (data.hasOwnProperty('request_max_bytes')) {
                 obj['request_max_bytes'] = ApiClient.convertToType(data['request_max_bytes'], 'Number');
             }
-            if (data.hasOwnProperty('required_acks')) {
-                obj['required_acks'] = ApiClient.convertToType(data['required_acks'], 'Number');
+            if (data.hasOwnProperty('parse_log_keyvals')) {
+                obj['parse_log_keyvals'] = ApiClient.convertToType(data['parse_log_keyvals'], 'Boolean');
             }
-            if (data.hasOwnProperty('topic')) {
-                obj['topic'] = ApiClient.convertToType(data['topic'], 'String');
-            }
-            if (data.hasOwnProperty('use_tls')) {
-                obj['use_tls'] = LoggingUseTls.constructFromObject(data['use_tls']);
+            if (data.hasOwnProperty('auth_method')) {
+                obj['auth_method'] = ApiClient.convertToType(data['auth_method'], 'String');
             }
             if (data.hasOwnProperty('user')) {
                 obj['user'] = ApiClient.convertToType(data['user'], 'String');
+            }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
+            if (data.hasOwnProperty('use_tls')) {
+                obj['use_tls'] = LoggingUseTls.constructFromObject(data['use_tls']);
             }
         }
         return obj;
@@ -122,36 +124,33 @@ class LoggingKafka {
 }
 
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingKafka.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
- * @member {module:models/LoggingKafka.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingKafka.prototype['format_version'] = undefined;
-
-/**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
 LoggingKafka.prototype['name'] = undefined;
 
 /**
- * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
- * @member {module:models/LoggingKafka.PlacementEnum} placement
+ * @member {module:models/LoggingPlacement} placement
  */
 LoggingKafka.prototype['placement'] = undefined;
+
+/**
+ * @member {module:models/LoggingFormatVersion} format_version
+ */
+LoggingKafka.prototype['format_version'] = undefined;
 
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
 LoggingKafka.prototype['response_condition'] = undefined;
+
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
+LoggingKafka.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 
 /**
  * A secure certificate to authenticate a server with. Must be in PEM format.
@@ -182,10 +181,10 @@ LoggingKafka.prototype['tls_client_key'] = 'null';
 LoggingKafka.prototype['tls_hostname'] = 'null';
 
 /**
- * SASL authentication method.
- * @member {module:models/LoggingKafka.AuthMethodEnum} auth_method
+ * The Kafka topic to send logs to. Required.
+ * @member {String} topic
  */
-LoggingKafka.prototype['auth_method'] = undefined;
+LoggingKafka.prototype['topic'] = undefined;
 
 /**
  * A comma-separated list of IP addresses or hostnames of Kafka brokers. Required.
@@ -200,16 +199,11 @@ LoggingKafka.prototype['brokers'] = undefined;
 LoggingKafka.prototype['compression_codec'] = undefined;
 
 /**
- * Enables parsing of key=value tuples from the beginning of a logline, turning them into [record headers](https://cwiki.apache.org/confluence/display/KAFKA/KIP-82+-+Add+Record+Headers).
- * @member {Boolean} parse_log_keyvals
+ * The number of acknowledgements a leader must receive before a write is considered successful.
+ * @member {module:models/LoggingKafka.RequiredAcksEnum} required_acks
+ * @default RequiredAcksEnum.one
  */
-LoggingKafka.prototype['parse_log_keyvals'] = undefined;
-
-/**
- * SASL password.
- * @member {String} password
- */
-LoggingKafka.prototype['password'] = undefined;
+LoggingKafka.prototype['required_acks'] = undefined;
 
 /**
  * The maximum number of bytes sent in one request. Defaults `0` (no limit).
@@ -219,22 +213,16 @@ LoggingKafka.prototype['password'] = undefined;
 LoggingKafka.prototype['request_max_bytes'] = 0;
 
 /**
- * The number of acknowledgements a leader must receive before a write is considered successful.
- * @member {module:models/LoggingKafka.RequiredAcksEnum} required_acks
- * @default RequiredAcksEnum.one
+ * Enables parsing of key=value tuples from the beginning of a logline, turning them into [record headers](https://cwiki.apache.org/confluence/display/KAFKA/KIP-82+-+Add+Record+Headers).
+ * @member {Boolean} parse_log_keyvals
  */
-LoggingKafka.prototype['required_acks'] = undefined;
+LoggingKafka.prototype['parse_log_keyvals'] = undefined;
 
 /**
- * The Kafka topic to send logs to. Required.
- * @member {String} topic
+ * SASL authentication method.
+ * @member {module:models/LoggingKafka.AuthMethodEnum} auth_method
  */
-LoggingKafka.prototype['topic'] = undefined;
-
-/**
- * @member {module:models/LoggingUseTls} use_tls
- */
-LoggingKafka.prototype['use_tls'] = undefined;
+LoggingKafka.prototype['auth_method'] = undefined;
 
 /**
  * SASL user.
@@ -242,35 +230,43 @@ LoggingKafka.prototype['use_tls'] = undefined;
  */
 LoggingKafka.prototype['user'] = undefined;
 
+/**
+ * SASL password.
+ * @member {String} password
+ */
+LoggingKafka.prototype['password'] = undefined;
+
+/**
+ * @member {module:models/LoggingUseTls} use_tls
+ */
+LoggingKafka.prototype['use_tls'] = undefined;
+
 
 // Implement LoggingCommon interface:
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
- * @member {module:models/LoggingCommon.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingCommon.prototype['format_version'] = undefined;
 /**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
 LoggingCommon.prototype['name'] = undefined;
 /**
- * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
- * @member {module:models/LoggingCommon.PlacementEnum} placement
+ * @member {module:models/LoggingPlacement} placement
  */
 LoggingCommon.prototype['placement'] = undefined;
+/**
+ * @member {module:models/LoggingFormatVersion} format_version
+ */
+LoggingCommon.prototype['format_version'] = undefined;
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
 LoggingCommon.prototype['response_condition'] = undefined;
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
+LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 // Implement LoggingTlsCommon interface:
 /**
  * A secure certificate to authenticate a server with. Must be in PEM format.
@@ -298,10 +294,10 @@ LoggingTlsCommon.prototype['tls_client_key'] = 'null';
 LoggingTlsCommon.prototype['tls_hostname'] = 'null';
 // Implement LoggingKafkaAllOf interface:
 /**
- * SASL authentication method.
- * @member {module:models/LoggingKafkaAllOf.AuthMethodEnum} auth_method
+ * The Kafka topic to send logs to. Required.
+ * @member {String} topic
  */
-LoggingKafkaAllOf.prototype['auth_method'] = undefined;
+LoggingKafkaAllOf.prototype['topic'] = undefined;
 /**
  * A comma-separated list of IP addresses or hostnames of Kafka brokers. Required.
  * @member {String} brokers
@@ -313,15 +309,11 @@ LoggingKafkaAllOf.prototype['brokers'] = undefined;
  */
 LoggingKafkaAllOf.prototype['compression_codec'] = undefined;
 /**
- * Enables parsing of key=value tuples from the beginning of a logline, turning them into [record headers](https://cwiki.apache.org/confluence/display/KAFKA/KIP-82+-+Add+Record+Headers).
- * @member {Boolean} parse_log_keyvals
+ * The number of acknowledgements a leader must receive before a write is considered successful.
+ * @member {module:models/LoggingKafkaAllOf.RequiredAcksEnum} required_acks
+ * @default RequiredAcksEnum.one
  */
-LoggingKafkaAllOf.prototype['parse_log_keyvals'] = undefined;
-/**
- * SASL password.
- * @member {String} password
- */
-LoggingKafkaAllOf.prototype['password'] = undefined;
+LoggingKafkaAllOf.prototype['required_acks'] = undefined;
 /**
  * The maximum number of bytes sent in one request. Defaults `0` (no limit).
  * @member {Number} request_max_bytes
@@ -329,95 +321,30 @@ LoggingKafkaAllOf.prototype['password'] = undefined;
  */
 LoggingKafkaAllOf.prototype['request_max_bytes'] = 0;
 /**
- * The number of acknowledgements a leader must receive before a write is considered successful.
- * @member {module:models/LoggingKafkaAllOf.RequiredAcksEnum} required_acks
- * @default RequiredAcksEnum.one
+ * Enables parsing of key=value tuples from the beginning of a logline, turning them into [record headers](https://cwiki.apache.org/confluence/display/KAFKA/KIP-82+-+Add+Record+Headers).
+ * @member {Boolean} parse_log_keyvals
  */
-LoggingKafkaAllOf.prototype['required_acks'] = undefined;
+LoggingKafkaAllOf.prototype['parse_log_keyvals'] = undefined;
 /**
- * The Kafka topic to send logs to. Required.
- * @member {String} topic
+ * SASL authentication method.
+ * @member {module:models/LoggingKafkaAllOf.AuthMethodEnum} auth_method
  */
-LoggingKafkaAllOf.prototype['topic'] = undefined;
-/**
- * @member {module:models/LoggingUseTls} use_tls
- */
-LoggingKafkaAllOf.prototype['use_tls'] = undefined;
+LoggingKafkaAllOf.prototype['auth_method'] = undefined;
 /**
  * SASL user.
  * @member {String} user
  */
 LoggingKafkaAllOf.prototype['user'] = undefined;
-
-
-
 /**
- * Allowed values for the <code>format_version</code> property.
- * @enum {Number}
- * @readonly
+ * SASL password.
+ * @member {String} password
  */
-LoggingKafka['FormatVersionEnum'] = {
-
-    /**
-     * value: 1
-     * @const
-     */
-    "v1": 1,
-
-    /**
-     * value: 2
-     * @const
-     */
-    "v2": 2
-};
-
-
+LoggingKafkaAllOf.prototype['password'] = undefined;
 /**
- * Allowed values for the <code>placement</code> property.
- * @enum {String}
- * @readonly
+ * @member {module:models/LoggingUseTls} use_tls
  */
-LoggingKafka['PlacementEnum'] = {
+LoggingKafkaAllOf.prototype['use_tls'] = undefined;
 
-    /**
-     * value: "none"
-     * @const
-     */
-    "none": "none",
-
-    /**
-     * value: "waf_debug"
-     * @const
-     */
-    "waf_debug": "waf_debug"
-};
-
-
-/**
- * Allowed values for the <code>auth_method</code> property.
- * @enum {String}
- * @readonly
- */
-LoggingKafka['AuthMethodEnum'] = {
-
-    /**
-     * value: "plain"
-     * @const
-     */
-    "plain": "plain",
-
-    /**
-     * value: "scram-sha-256"
-     * @const
-     */
-    "scram-sha-256": "scram-sha-256",
-
-    /**
-     * value: "scram-sha-512"
-     * @const
-     */
-    "scram-sha-512": "scram-sha-512"
-};
 
 
 /**
@@ -477,6 +404,33 @@ LoggingKafka['RequiredAcksEnum'] = {
      * @const
      */
     "all": -1
+};
+
+
+/**
+ * Allowed values for the <code>auth_method</code> property.
+ * @enum {String}
+ * @readonly
+ */
+LoggingKafka['AuthMethodEnum'] = {
+
+    /**
+     * value: "plain"
+     * @const
+     */
+    "plain": "plain",
+
+    /**
+     * value: "scram-sha-256"
+     * @const
+     */
+    "scram-sha-256": "scram-sha-256",
+
+    /**
+     * value: "scram-sha-512"
+     * @const
+     */
+    "scram-sha-512": "scram-sha-512"
 };
 
 

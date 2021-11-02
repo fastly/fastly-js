@@ -48,11 +48,11 @@ class RelationshipMemberWafRuleRevision {
         if (data) {
             obj = obj || new RelationshipMemberWafRuleRevision();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeWafRuleRevision.constructFromObject(data['type']);
+            }
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
         }
         return obj;
@@ -62,15 +62,15 @@ class RelationshipMemberWafRuleRevision {
 }
 
 /**
+ * @member {module:models/TypeWafRuleRevision} type
+ */
+RelationshipMemberWafRuleRevision.prototype['type'] = undefined;
+
+/**
  * Alphanumeric string identifying a WAF rule revision.
  * @member {String} id
  */
 RelationshipMemberWafRuleRevision.prototype['id'] = undefined;
-
-/**
- * @member {module:models/TypeWafRuleRevision} type
- */
-RelationshipMemberWafRuleRevision.prototype['type'] = undefined;
 
 
 

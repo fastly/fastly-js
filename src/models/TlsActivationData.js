@@ -49,11 +49,11 @@ class TlsActivationData {
         if (data) {
             obj = obj || new TlsActivationData();
 
-            if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = RelationshipsForTlsActivation.constructFromObject(data['relationships']);
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeTlsActivation.constructFromObject(data['type']);
+            }
+            if (data.hasOwnProperty('relationships')) {
+                obj['relationships'] = RelationshipsForTlsActivation.constructFromObject(data['relationships']);
             }
         }
         return obj;
@@ -63,14 +63,14 @@ class TlsActivationData {
 }
 
 /**
- * @member {module:models/RelationshipsForTlsActivation} relationships
- */
-TlsActivationData.prototype['relationships'] = undefined;
-
-/**
  * @member {module:models/TypeTlsActivation} type
  */
 TlsActivationData.prototype['type'] = undefined;
+
+/**
+ * @member {module:models/RelationshipsForTlsActivation} relationships
+ */
+TlsActivationData.prototype['relationships'] = undefined;
 
 
 

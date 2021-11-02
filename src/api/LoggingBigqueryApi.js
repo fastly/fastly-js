@@ -14,6 +14,8 @@
 
 import ApiClient from "../ApiClient";
 import LoggingBigqueryResponse from '../models/LoggingBigqueryResponse';
+import LoggingFormatVersion from '../models/LoggingFormatVersion';
+import LoggingPlacement from '../models/LoggingPlacement';
 
 /**
 * LoggingBigquery service.
@@ -43,17 +45,17 @@ export default class LoggingBigqueryApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @param {String} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
-     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.name] - The name of the BigQuery logging object. Used as a primary key for API access.
-     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:models/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+     * @param {String} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
      * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+     * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
      * @param {String} [options.dataset] - Your BigQuery dataset.
-     * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
      * @param {String} [options.table] - Your BigQuery table.
      * @param {String} [options.template_suffix] - BigQuery table name suffix template. Optional.
+     * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingBigqueryResponse} and HTTP response
      */
     createLogBigqueryWithHttpInfo(options = {}) {
@@ -76,17 +78,17 @@ export default class LoggingBigqueryApi {
       let headerParams = {
       };
       let formParams = {
-        'format': options['format'],
-        'format_version': options['format_version'],
         'name': options['name'],
         'placement': options['placement'],
+        'format_version': options['format_version'],
         'response_condition': options['response_condition'],
-        'secret_key': options['secret_key'],
+        'format': options['format'],
         'user': options['user'],
+        'secret_key': options['secret_key'],
         'dataset': options['dataset'],
-        'project_id': options['project_id'],
         'table': options['table'],
-        'template_suffix': options['template_suffix']
+        'template_suffix': options['template_suffix'],
+        'project_id': options['project_id']
       };
 
       let authNames = ['token'];
@@ -105,17 +107,17 @@ export default class LoggingBigqueryApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @param {String} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
-     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.name] - The name of the BigQuery logging object. Used as a primary key for API access.
-     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:models/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+     * @param {String} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
      * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+     * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
      * @param {String} [options.dataset] - Your BigQuery dataset.
-     * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
      * @param {String} [options.table] - Your BigQuery table.
      * @param {String} [options.template_suffix] - BigQuery table name suffix template. Optional.
+     * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingBigqueryResponse}
      */
     createLogBigquery(options = {}) {
@@ -307,17 +309,17 @@ export default class LoggingBigqueryApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_bigquery_name
-     * @param {String} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
-     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.name] - The name of the BigQuery logging object. Used as a primary key for API access.
-     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:models/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+     * @param {String} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
      * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+     * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
      * @param {String} [options.dataset] - Your BigQuery dataset.
-     * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
      * @param {String} [options.table] - Your BigQuery table.
      * @param {String} [options.template_suffix] - BigQuery table name suffix template. Optional.
+     * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingBigqueryResponse} and HTTP response
      */
     updateLogBigqueryWithHttpInfo(options = {}) {
@@ -345,17 +347,17 @@ export default class LoggingBigqueryApi {
       let headerParams = {
       };
       let formParams = {
-        'format': options['format'],
-        'format_version': options['format_version'],
         'name': options['name'],
         'placement': options['placement'],
+        'format_version': options['format_version'],
         'response_condition': options['response_condition'],
-        'secret_key': options['secret_key'],
+        'format': options['format'],
         'user': options['user'],
+        'secret_key': options['secret_key'],
         'dataset': options['dataset'],
-        'project_id': options['project_id'],
         'table': options['table'],
-        'template_suffix': options['template_suffix']
+        'template_suffix': options['template_suffix'],
+        'project_id': options['project_id']
       };
 
       let authNames = ['token'];
@@ -375,17 +377,17 @@ export default class LoggingBigqueryApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_bigquery_name
-     * @param {String} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
-     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.name] - The name of the BigQuery logging object. Used as a primary key for API access.
-     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:models/LoggingPlacement} [options.placement]
+     * @param {module:models/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
-     * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+     * @param {String} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
      * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+     * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
      * @param {String} [options.dataset] - Your BigQuery dataset.
-     * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
      * @param {String} [options.table] - Your BigQuery table.
      * @param {String} [options.template_suffix] - BigQuery table name suffix template. Optional.
+     * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingBigqueryResponse}
      */
     updateLogBigquery(options = {}) {

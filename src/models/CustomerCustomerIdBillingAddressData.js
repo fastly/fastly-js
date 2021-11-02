@@ -49,11 +49,11 @@ class CustomerCustomerIdBillingAddressData {
         if (data) {
             obj = obj || new CustomerCustomerIdBillingAddressData();
 
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = BillingAddress.constructFromObject(data['attributes']);
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeBillingAddress.constructFromObject(data['type']);
+            }
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = BillingAddress.constructFromObject(data['attributes']);
             }
         }
         return obj;
@@ -63,14 +63,14 @@ class CustomerCustomerIdBillingAddressData {
 }
 
 /**
- * @member {module:models/BillingAddress} attributes
- */
-CustomerCustomerIdBillingAddressData.prototype['attributes'] = undefined;
-
-/**
  * @member {module:models/TypeBillingAddress} type
  */
 CustomerCustomerIdBillingAddressData.prototype['type'] = undefined;
+
+/**
+ * @member {module:models/BillingAddress} attributes
+ */
+CustomerCustomerIdBillingAddressData.prototype['attributes'] = undefined;
 
 
 
