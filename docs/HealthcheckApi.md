@@ -46,7 +46,7 @@ const options = {
 
 apiInstance.createHealthcheck(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -96,7 +96,7 @@ const options = {
 
 apiInstance.deleteHealthcheck(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -135,7 +135,7 @@ const options = {
 
 apiInstance.getHealthcheck(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -173,7 +173,7 @@ const options = {
 
 apiInstance.listHealthchecks(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -223,7 +223,7 @@ const options = {
 
 apiInstance.updateHealthcheck(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);

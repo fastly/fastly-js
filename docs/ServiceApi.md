@@ -34,12 +34,12 @@ const options = {
   comment: "comment_example",
   name: "name_example",
   customer_id: "customer_id_example",
-  type: ,
+  type: "vcl",
 };
 
 apiInstance.createService(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 **comment** | **String** | A freeform descriptive note. | [optional]
 **name** | **String** | The name of the service. | [optional]
 **customer_id** | **String** | Alphanumeric string identifying the customer. | [optional]
-**type** | **String** | The type of this service. | [optional]
+**type** | **String** | The type of this service. | [optional] [one of: "vcl", "wasm"]
 
 ### Return type
 
@@ -77,7 +77,7 @@ const options = {
 
 apiInstance.deleteService(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -112,7 +112,7 @@ const options = {
 
 apiInstance.getService(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -147,7 +147,7 @@ const options = {
 
 apiInstance.getServiceDetail(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -182,7 +182,7 @@ const options = {
 
 apiInstance.listServiceDomains(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[DomainResponse]**](DomainResponse.md)
+[**[SchemasDomainResponse]**](SchemasDomainResponse.md)
 
 
 ## `listServices`
@@ -212,15 +212,15 @@ List services.
 
 ```javascript
 const options = {
-  page: 56,
+  page: 1,
   per_page: 20,
-  sort: 'created',
-  direction: 'ascend',
+  sort: created,
+  direction: "ascend",
 };
 
 apiInstance.listServices(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -232,13 +232,13 @@ apiInstance.listServices(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **page** | **Number** | Current page. | [optional]
-**per_page** | **Number** | Number of records per page. | [optional] [default to 20]
-**sort** | **String** | Field on which to sort. | [optional] [default to &#39;created&#39;]
-**direction** | **String** | Direction in which to sort results. | [optional] [default to &#39;ascend&#39;]
+**per_page** | **Number** | Number of records per page. | [optional] [defaults to 20]
+**sort** | **String** | Field on which to sort. | [optional] [defaults to 'created']
+**direction** | **String** | Direction in which to sort results. | [optional] [one of: "ascend", "descend"] [defaults to 'ascend']
 
 ### Return type
 
-[**[ServiceResponse]**](ServiceResponse.md)
+[**[ServiceListResponse]**](ServiceListResponse.md)
 
 
 ## `searchService`
@@ -258,7 +258,7 @@ const options = {
 
 apiInstance.searchService(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -296,7 +296,7 @@ const options = {
 
 apiInstance.updateService(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);

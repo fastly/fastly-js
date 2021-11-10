@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**CustomerCustomerIdBillingAddressData1**](CustomerCustomerIdBillingAddressData1.md) |  | [optional] 
+**data** | [**CustomerCustomerIdBillingAddressData**](CustomerCustomerIdBillingAddressData.md) |  | [optional] 
 
 
 

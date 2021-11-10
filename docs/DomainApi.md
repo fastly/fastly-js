@@ -37,7 +37,7 @@ const options = {
 
 apiInstance.checkDomain(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -75,7 +75,7 @@ const options = {
 
 apiInstance.checkDomains(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -114,7 +114,7 @@ const options = {
 
 apiInstance.createDomain(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -154,7 +154,7 @@ const options = {
 
 apiInstance.deleteDomain(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -193,7 +193,7 @@ const options = {
 
 apiInstance.getDomain(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -231,7 +231,7 @@ const options = {
 
 apiInstance.listDomains(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -271,7 +271,7 @@ const options = {
 
 apiInstance.updateDomain(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);

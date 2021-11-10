@@ -35,7 +35,7 @@ const options = {
 
 apiInstance.createServiceAuthorization(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -91,7 +91,7 @@ null (empty response body)
 ## `deleteServiceAuthorization2`
 
 ```javascript
-deleteServiceAuthorization2({ , [inline_object2] })
+deleteServiceAuthorization2({ , [inline_object3] })
 ```
 
 Delete service authorizations.
@@ -100,12 +100,12 @@ Delete service authorizations.
 
 ```javascript
 const options = {
-  inline_object2: new Fastly.InlineObject2(),
+  inline_object3: new Fastly.InlineObject3(),
 };
 
 apiInstance.deleteServiceAuthorization2(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -116,7 +116,7 @@ apiInstance.deleteServiceAuthorization2(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**inline_object2** | [**InlineObject2**](../Model/InlineObject2.md) |  | [optional]
+**inline_object3** | [**InlineObject3**](../Model/InlineObject3.md) |  | [optional]
 
 ### Return type
 
@@ -135,13 +135,13 @@ List service authorizations.
 
 ```javascript
 const options = {
-  page_number: 56,
+  page_number: 1,
   page_size: 20,
 };
 
 apiInstance.listServiceAuthorization(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -153,7 +153,7 @@ apiInstance.listServiceAuthorization(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **page_number** | **Number** | Current page. | [optional]
-**page_size** | **Number** | Number of records per page. | [optional] [default to 20]
+**page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
 
 ### Return type
 
@@ -177,7 +177,7 @@ const options = {
 
 apiInstance.showServiceAuthorization(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -213,7 +213,7 @@ const options = {
 
 apiInstance.updateServiceAuthorization(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -235,7 +235,7 @@ Name | Type | Description  | Notes
 ## `updateServiceAuthorization2`
 
 ```javascript
-updateServiceAuthorization2({ , [inline_object3] })
+updateServiceAuthorization2({ , [inline_object4] })
 ```
 
 Update service authorizations.
@@ -244,12 +244,12 @@ Update service authorizations.
 
 ```javascript
 const options = {
-  inline_object3: new Fastly.InlineObject3(),
+  inline_object4: new Fastly.InlineObject4(),
 };
 
 apiInstance.updateServiceAuthorization2(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -260,7 +260,7 @@ apiInstance.updateServiceAuthorization2(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**inline_object3** | [**InlineObject3**](../Model/InlineObject3.md) |  | [optional]
+**inline_object4** | [**InlineObject4**](../Model/InlineObject4.md) |  | [optional]
 
 ### Return type
 

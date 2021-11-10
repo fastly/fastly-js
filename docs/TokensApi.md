@@ -66,7 +66,7 @@ Create an API token. If two-factor authentication is enabled for your account, r
 ```javascript
 apiInstance.createToken()
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -95,7 +95,7 @@ Get a single token based on the access_token used in the request.
 ```javascript
 apiInstance.getTokenCurrent()
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -128,7 +128,7 @@ const options = {
 
 apiInstance.listTokensCustomer(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -159,7 +159,7 @@ List all tokens belonging to the authenticated user.
 ```javascript
 apiInstance.listTokensUser()
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);

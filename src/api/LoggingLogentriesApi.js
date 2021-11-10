@@ -13,9 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import LoggingFormatVersion from '../models/LoggingFormatVersion';
 import LoggingLogentriesResponse from '../models/LoggingLogentriesResponse';
-import LoggingPlacement from '../models/LoggingPlacement';
 import LoggingUseTls from '../models/LoggingUseTls';
 
 /**
@@ -47,8 +45,8 @@ export default class LoggingLogentriesApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:models/LoggingPlacement} [options.placement]
-     * @param {module:models/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {Number} [options.port=20000] - The port number.
@@ -105,8 +103,8 @@ export default class LoggingLogentriesApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:models/LoggingPlacement} [options.placement]
-     * @param {module:models/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {Number} [options.port=20000] - The port number.
@@ -305,8 +303,8 @@ export default class LoggingLogentriesApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_logentries_name
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:models/LoggingPlacement} [options.placement]
-     * @param {module:models/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {Number} [options.port=20000] - The port number.
@@ -369,8 +367,8 @@ export default class LoggingLogentriesApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_logentries_name
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:models/LoggingPlacement} [options.placement]
-     * @param {module:models/LoggingFormatVersion} [options.format_version]
+     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {Number} [options.port=20000] - The port number.

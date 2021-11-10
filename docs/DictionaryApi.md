@@ -36,7 +36,7 @@ const options = {
 
 apiInstance.createDictionary(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
 **name** | **String** | Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace). | [optional]
-**write_only** | **Boolean** | Determines if items in the dictionary are readable or not. | [optional] [default to false]
+**write_only** | **Boolean** | Determines if items in the dictionary are readable or not. | [optional] [defaults to false]
 
 ### Return type
 
@@ -76,7 +76,7 @@ const options = {
 
 apiInstance.deleteDictionary(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -115,7 +115,7 @@ const options = {
 
 apiInstance.getDictionary(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -153,7 +153,7 @@ const options = {
 
 apiInstance.listDictionaries(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -193,7 +193,7 @@ const options = {
 
 apiInstance.updateDictionary(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 **version_id** | **Number** |  |
 **dictionary_name** | **String** |  |
 **name** | **String** | Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace). | [optional]
-**write_only** | **Boolean** | Determines if items in the dictionary are readable or not. | [optional] [default to false]
+**write_only** | **Boolean** | Determines if items in the dictionary are readable or not. | [optional] [defaults to false]
 
 ### Return type
 

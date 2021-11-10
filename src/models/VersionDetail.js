@@ -14,14 +14,14 @@
 import ApiClient from '../ApiClient';
 import BackendResponse from './BackendResponse';
 import CacheSettingResponse from './CacheSettingResponse';
-import DomainResponse from './DomainResponse';
+import ConditionResponse from './ConditionResponse';
 import GzipResponse from './GzipResponse';
 import HeaderResponse from './HeaderResponse';
 import HealthcheckResponse from './HealthcheckResponse';
 import RequestSettingsResponse from './RequestSettingsResponse';
 import ResponseObjectResponse from './ResponseObjectResponse';
-import SchemasConditionResponse from './SchemasConditionResponse';
 import SchemasDirector from './SchemasDirector';
+import SchemasDomainResponse from './SchemasDomainResponse';
 import SchemasSnippetResponse from './SchemasSnippetResponse';
 import SchemasVclResponse from './SchemasVclResponse';
 import Settings from './Settings';
@@ -67,13 +67,13 @@ class VersionDetail {
                 obj['cache_settings'] = ApiClient.convertToType(data['cache_settings'], [CacheSettingResponse]);
             }
             if (data.hasOwnProperty('conditions')) {
-                obj['conditions'] = ApiClient.convertToType(data['conditions'], [SchemasConditionResponse]);
+                obj['conditions'] = ApiClient.convertToType(data['conditions'], [ConditionResponse]);
             }
             if (data.hasOwnProperty('directors')) {
                 obj['directors'] = ApiClient.convertToType(data['directors'], [SchemasDirector]);
             }
             if (data.hasOwnProperty('domains')) {
-                obj['domains'] = ApiClient.convertToType(data['domains'], [DomainResponse]);
+                obj['domains'] = ApiClient.convertToType(data['domains'], [SchemasDomainResponse]);
             }
             if (data.hasOwnProperty('gzips')) {
                 obj['gzips'] = ApiClient.convertToType(data['gzips'], [GzipResponse]);
@@ -123,7 +123,7 @@ VersionDetail.prototype['cache_settings'] = undefined;
 
 /**
  * List of conditions associated to this service.
- * @member {Array.<module:models/SchemasConditionResponse>} conditions
+ * @member {Array.<module:models/ConditionResponse>} conditions
  */
 VersionDetail.prototype['conditions'] = undefined;
 
@@ -135,7 +135,7 @@ VersionDetail.prototype['directors'] = undefined;
 
 /**
  * List of domains associated to this service.
- * @member {Array.<module:models/DomainResponse>} domains
+ * @member {Array.<module:models/SchemasDomainResponse>} domains
  */
 VersionDetail.prototype['domains'] = undefined;
 

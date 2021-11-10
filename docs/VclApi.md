@@ -43,7 +43,7 @@ const options = {
 
 apiInstance.createCustomVcl(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
 **content** | **String** | The VCL code to be included. | [optional]
-**main** | **Boolean** | Set to &#x60;true&#x60; when this is the main VCL, otherwise &#x60;false&#x60;. | [optional]
+**main** | **Boolean** | Set to `true` when this is the main VCL, otherwise `false`. | [optional]
 **name** | **String** | The name of this VCL. | [optional]
 
 ### Return type
@@ -84,7 +84,7 @@ const options = {
 
 apiInstance.deleteCustomVcl(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -119,12 +119,12 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   vcl_name: "vcl_name_example", // required
-  no_content: '0',
+  no_content: "'0'",
 };
 
 apiInstance.getCustomVcl(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
 **vcl_name** | **String** |  |
-**no_content** | **String** | Omit VCL content. | [optional] [default to &#39;0&#39;]
+**no_content** | **String** | Omit VCL content. | [optional] [defaults to '0']
 
 ### Return type
 
@@ -163,7 +163,7 @@ const options = {
 
 apiInstance.getCustomVclBoilerplate(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -200,7 +200,7 @@ const options = {
 
 apiInstance.getCustomVclGenerated(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -314,7 +314,7 @@ const options = {
 
 apiInstance.getCustomVclRaw(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -352,7 +352,7 @@ const options = {
 
 apiInstance.listCustomVcl(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -390,7 +390,7 @@ const options = {
 
 apiInstance.setCustomVclMain(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -432,7 +432,7 @@ const options = {
 
 apiInstance.updateCustomVcl(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -447,7 +447,7 @@ Name | Type | Description  | Notes
 **version_id** | **Number** |  |
 **vcl_name** | **String** |  |
 **content** | **String** | The VCL code to be included. | [optional]
-**main** | **Boolean** | Set to &#x60;true&#x60; when this is the main VCL, otherwise &#x60;false&#x60;. | [optional]
+**main** | **Boolean** | Set to `true` when this is the main VCL, otherwise `false`. | [optional]
 **name** | **String** | The name of this VCL. | [optional]
 
 ### Return type

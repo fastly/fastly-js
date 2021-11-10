@@ -31,7 +31,7 @@ const options = {
 
 apiInstance.getPackage(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -70,7 +70,7 @@ const options = {
 
 apiInstance.putPackage(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);

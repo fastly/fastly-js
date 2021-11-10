@@ -33,7 +33,7 @@ const options = {
 
 apiInstance.createWafFirewall(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -102,12 +102,12 @@ Get a specific firewall object.
 const options = {
   firewall_id: "firewall_id_example", // required
   filter_service_version_number: "filter_service_version_number_example",
-  include: 'waf_firewall_versions',
+  include: "waf_firewall_versions",
 };
 
 apiInstance.getWafFirewall(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **firewall_id** | **String** |  |
 **filter_service_version_number** | **String** | Limit the results returned to a specific service version. | [optional]
-**include** | **String** | Include related objects. Optional. | [optional] [default to &#39;waf_firewall_versions&#39;]
+**include** | **String** | Include related objects. Optional. | [optional] [one of: "waf_firewall_versions"] [defaults to 'waf_firewall_versions']
 
 ### Return type
 
@@ -139,16 +139,16 @@ List all firewall objects.
 
 ```javascript
 const options = {
-  page_number: 56,
+  page_number: 1,
   page_size: 20,
   filter_service_id: "filter_service_id_example",
   filter_service_version_number: "filter_service_version_number_example",
-  include: 'waf_firewall_versions',
+  include: "waf_firewall_versions",
 };
 
 apiInstance.listWafFirewalls(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -160,10 +160,10 @@ apiInstance.listWafFirewalls(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **page_number** | **Number** | Current page. | [optional]
-**page_size** | **Number** | Number of records per page. | [optional] [default to 20]
+**page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
 **filter_service_id** | **String** | Limit the results returned to a specific service. | [optional]
 **filter_service_version_number** | **String** | Limit the results returned to a specific service version. | [optional]
-**include** | **String** | Include related objects. Optional. | [optional] [default to &#39;waf_firewall_versions&#39;]
+**include** | **String** | Include related objects. Optional. | [optional] [one of: "waf_firewall_versions"] [defaults to 'waf_firewall_versions']
 
 ### Return type
 
@@ -188,7 +188,7 @@ const options = {
 
 apiInstance.updateWafFirewall(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);

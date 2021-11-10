@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import ServiceAuthorizationsData from './ServiceAuthorizationsData';
+import CustomerCustomerIdBillingAddressData1 from './CustomerCustomerIdBillingAddressData1';
 
 /**
  * The InlineObject2 model module.
@@ -49,7 +49,7 @@ class InlineObject2 {
             obj = obj || new InlineObject2();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ServiceAuthorizationsData]);
+                obj['data'] = CustomerCustomerIdBillingAddressData1.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class InlineObject2 {
 }
 
 /**
- * @member {Array.<module:models/ServiceAuthorizationsData>} data
+ * @member {module:models/CustomerCustomerIdBillingAddressData1} data
  */
 InlineObject2.prototype['data'] = undefined;
 

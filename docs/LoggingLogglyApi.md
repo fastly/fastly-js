@@ -31,16 +31,16 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   name: "name_example",
-  placement: new Fastly.LoggingPlacement(),
-  format_version: new Fastly.LoggingFormatVersion(),
+  placement: "none",
+  format_version: 1,
   response_condition: "response_condition_example",
-  format: '%h %l %u %t "%r" %&gt;s %b',
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   token: "token_example",
 };
 
 apiInstance.createLogLoggly(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -54,10 +54,10 @@ Name | Type | Description  | Notes
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
 **name** | **String** | The name for the real-time logging configuration. | [optional]
-**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] [one of: "none", "waf_debug"]
+**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.   | [optional] [one of: 1, 2] [defaults to FormatVersionEnum.v2]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [defaults to '%h %l %u %t "%r" %&gt;s %b']
 **token** | **String** | The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)). | [optional]
 
 ### Return type
@@ -84,7 +84,7 @@ const options = {
 
 apiInstance.deleteLogLoggly(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -123,7 +123,7 @@ const options = {
 
 apiInstance.getLogLoggly(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -161,7 +161,7 @@ const options = {
 
 apiInstance.listLogLoggly(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -196,16 +196,16 @@ const options = {
   version_id: 56, // required
   logging_loggly_name: "logging_loggly_name_example", // required
   name: "name_example",
-  placement: new Fastly.LoggingPlacement(),
-  format_version: new Fastly.LoggingFormatVersion(),
+  placement: "none",
+  format_version: 1,
   response_condition: "response_condition_example",
-  format: '%h %l %u %t "%r" %&gt;s %b',
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   token: "token_example",
 };
 
 apiInstance.updateLogLoggly(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -220,10 +220,10 @@ Name | Type | Description  | Notes
 **version_id** | **Number** |  |
 **logging_loggly_name** | **String** |  |
 **name** | **String** | The name for the real-time logging configuration. | [optional]
-**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] [one of: "none", "waf_debug"]
+**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.   | [optional] [one of: 1, 2] [defaults to FormatVersionEnum.v2]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [defaults to '%h %l %u %t "%r" %&gt;s %b']
 **token** | **String** | The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)). | [optional]
 
 ### Return type

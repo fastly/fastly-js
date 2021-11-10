@@ -12,26 +12,26 @@
  */
 
 import ApiClient from '../ApiClient';
-import SchemasCondition from './SchemasCondition';
+import SchemasDomain from './SchemasDomain';
 import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Timestamps from './Timestamps';
 
 /**
- * The SchemasConditionResponse model module.
- * @module models/SchemasConditionResponse
+ * The SchemasDomainResponse model module.
+ * @module models/SchemasDomainResponse
  * @version 3.0.0-alpha1
  */
-class SchemasConditionResponse {
+class SchemasDomainResponse {
     /**
-     * Constructs a new <code>SchemasConditionResponse</code>.
-     * @alias module:models/SchemasConditionResponse
-     * @implements module:models/SchemasCondition
+     * Constructs a new <code>SchemasDomainResponse</code>.
+     * @alias module:models/SchemasDomainResponse
+     * @implements module:models/SchemasDomain
      * @implements module:models/ServiceIdAndVersion
      * @implements module:models/Timestamps
      */
     constructor() { 
-        SchemasCondition.initialize(this);ServiceIdAndVersion.initialize(this);Timestamps.initialize(this);
-        SchemasConditionResponse.initialize(this);
+        SchemasDomain.initialize(this);ServiceIdAndVersion.initialize(this);Timestamps.initialize(this);
+        SchemasDomainResponse.initialize(this);
     }
 
     /**
@@ -43,16 +43,16 @@ class SchemasConditionResponse {
     }
 
     /**
-     * Constructs a <code>SchemasConditionResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>SchemasDomainResponse</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:models/SchemasConditionResponse} obj Optional instance to populate.
-     * @return {module:models/SchemasConditionResponse} The populated <code>SchemasConditionResponse</code> instance.
+     * @param {module:models/SchemasDomainResponse} obj Optional instance to populate.
+     * @return {module:models/SchemasDomainResponse} The populated <code>SchemasDomainResponse</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new SchemasConditionResponse();
-            SchemasCondition.constructFromObject(data, obj);
+            obj = obj || new SchemasDomainResponse();
+            SchemasDomain.constructFromObject(data, obj);
             ServiceIdAndVersion.constructFromObject(data, obj);
             Timestamps.constructFromObject(data, obj);
 
@@ -61,15 +61,6 @@ class SchemasConditionResponse {
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
-            if (data.hasOwnProperty('priority')) {
-                obj['priority'] = ApiClient.convertToType(data['priority'], 'Number');
-            }
-            if (data.hasOwnProperty('statement')) {
-                obj['statement'] = ApiClient.convertToType(data['statement'], 'String');
-            }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
@@ -97,91 +88,56 @@ class SchemasConditionResponse {
  * A freeform descriptive note.
  * @member {String} comment
  */
-SchemasConditionResponse.prototype['comment'] = undefined;
+SchemasDomainResponse.prototype['comment'] = undefined;
 
 /**
- * Name of the condition. Required.
+ * The name of the domain or domains associated with this service.
  * @member {String} name
  */
-SchemasConditionResponse.prototype['name'] = undefined;
-
-/**
- * Priority determines execution order. Lower numbers execute first.
- * @member {Number} priority
- * @default 100
- */
-SchemasConditionResponse.prototype['priority'] = 100;
-
-/**
- * A conditional expression in VCL used to determine if the condition is met.
- * @member {String} statement
- */
-SchemasConditionResponse.prototype['statement'] = undefined;
-
-/**
- * Type of the condition. Required.
- * @member {module:models/SchemasConditionResponse.TypeEnum} type
- */
-SchemasConditionResponse.prototype['type'] = undefined;
+SchemasDomainResponse.prototype['name'] = undefined;
 
 /**
  * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
-SchemasConditionResponse.prototype['service_id'] = undefined;
+SchemasDomainResponse.prototype['service_id'] = undefined;
 
 /**
  * Integer identifying a service version.
  * @member {Number} version
  */
-SchemasConditionResponse.prototype['version'] = undefined;
+SchemasDomainResponse.prototype['version'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
  * @member {String} created_at
  */
-SchemasConditionResponse.prototype['created_at'] = undefined;
+SchemasDomainResponse.prototype['created_at'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
  * @member {String} deleted_at
  */
-SchemasConditionResponse.prototype['deleted_at'] = undefined;
+SchemasDomainResponse.prototype['deleted_at'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
  * @member {String} updated_at
  */
-SchemasConditionResponse.prototype['updated_at'] = undefined;
+SchemasDomainResponse.prototype['updated_at'] = undefined;
 
 
-// Implement SchemasCondition interface:
+// Implement SchemasDomain interface:
 /**
  * A freeform descriptive note.
  * @member {String} comment
  */
-SchemasCondition.prototype['comment'] = undefined;
+SchemasDomain.prototype['comment'] = undefined;
 /**
- * Name of the condition. Required.
+ * The name of the domain or domains associated with this service.
  * @member {String} name
  */
-SchemasCondition.prototype['name'] = undefined;
-/**
- * Priority determines execution order. Lower numbers execute first.
- * @member {Number} priority
- * @default 100
- */
-SchemasCondition.prototype['priority'] = 100;
-/**
- * A conditional expression in VCL used to determine if the condition is met.
- * @member {String} statement
- */
-SchemasCondition.prototype['statement'] = undefined;
-/**
- * Type of the condition. Required.
- * @member {module:models/SchemasCondition.TypeEnum} type
- */
-SchemasCondition.prototype['type'] = undefined;
+SchemasDomain.prototype['name'] = undefined;
 // Implement ServiceIdAndVersion interface:
 /**
  * Alphanumeric string identifying the service.
@@ -212,39 +168,6 @@ Timestamps.prototype['updated_at'] = undefined;
 
 
 
-/**
- * Allowed values for the <code>type</code> property.
- * @enum {String}
- * @readonly
- */
-SchemasConditionResponse['TypeEnum'] = {
 
-    /**
-     * value: "REQUEST"
-     * @const
-     */
-    "REQUEST": "REQUEST",
-
-    /**
-     * value: "CACHE"
-     * @const
-     */
-    "CACHE": "CACHE",
-
-    /**
-     * value: "RESPONSE"
-     * @const
-     */
-    "RESPONSE": "RESPONSE",
-
-    /**
-     * value: "PREFETCH"
-     * @const
-     */
-    "PREFETCH": "PREFETCH"
-};
-
-
-
-export default SchemasConditionResponse;
+export default SchemasDomainResponse;
 

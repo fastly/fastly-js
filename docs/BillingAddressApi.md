@@ -18,7 +18,7 @@ Method | Fastly API endpoint | Description
 ## `addBillingAddr`
 
 ```javascript
-addBillingAddr({ customer_id, [inline_object] })
+addBillingAddr({ customer_id, [inline_object1] })
 ```
 
 Add a billing address to a customer.
@@ -28,12 +28,12 @@ Add a billing address to a customer.
 ```javascript
 const options = {
   customer_id: "customer_id_example", // required
-  inline_object: new Fastly.InlineObject(),
+  inline_object1: new Fastly.InlineObject1(),
 };
 
 apiInstance.addBillingAddr(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -45,7 +45,7 @@ apiInstance.addBillingAddr(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **customer_id** | **String** |  |
-**inline_object** | [**InlineObject**](../Model/InlineObject.md) |  | [optional]
+**inline_object1** | [**InlineObject1**](../Model/InlineObject1.md) |  | [optional]
 
 ### Return type
 
@@ -104,7 +104,7 @@ const options = {
 
 apiInstance.getBillingAddr(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 ## `updateBillingAddr`
 
 ```javascript
-updateBillingAddr({ customer_id, [inline_object1] })
+updateBillingAddr({ customer_id, [inline_object2] })
 ```
 
 Update a customer's billing address. You may update only part of the customer's billing address.
@@ -135,12 +135,12 @@ Update a customer's billing address. You may update only part of the customer's 
 ```javascript
 const options = {
   customer_id: "customer_id_example", // required
-  inline_object1: new Fastly.InlineObject1(),
+  inline_object2: new Fastly.InlineObject2(),
 };
 
 apiInstance.updateBillingAddr(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -152,7 +152,7 @@ apiInstance.updateBillingAddr(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **customer_id** | **String** |  |
-**inline_object1** | [**InlineObject1**](../Model/InlineObject1.md) |  | [optional]
+**inline_object2** | [**InlineObject2**](../Model/InlineObject2.md) |  | [optional]
 
 ### Return type
 

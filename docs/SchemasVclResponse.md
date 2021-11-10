@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **content** | **String** | The VCL code to be included. | [optional] 
-**main** | **Boolean** | Set to &#x60;true&#x60; when this is the main VCL, otherwise &#x60;false&#x60;. | [optional] 
+**main** | **Boolean** | Set to `true` when this is the main VCL, otherwise `false`. | [optional] 
 **name** | **String** | The name of this VCL. | [optional] 
 **service_id** | **String** | Alphanumeric string identifying the service. | [optional] [readonly] 
 **version** | **Number** | Integer identifying a service version. | [optional] [readonly] 

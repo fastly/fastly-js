@@ -42,7 +42,7 @@ const options = {
 
 apiInstance.createUser(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -84,7 +84,7 @@ const options = {
 
 apiInstance.deleteUser(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -115,7 +115,7 @@ Get the logged in user.
 ```javascript
 apiInstance.getCurrentUser()
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -148,7 +148,7 @@ const options = {
 
 apiInstance.getUser(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -183,7 +183,7 @@ const options = {
 
 apiInstance.requestPasswordReset(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -226,7 +226,7 @@ const options = {
 
 apiInstance.updateUser(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -270,7 +270,7 @@ const options = {
 
 apiInstance.updateUserPassword(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);

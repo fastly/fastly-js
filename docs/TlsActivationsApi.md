@@ -33,7 +33,7 @@ const options = {
 
 apiInstance.createTlsActivation(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -104,7 +104,7 @@ const options = {
 
 apiInstance.getTlsActivation(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -116,7 +116,7 @@ apiInstance.getTlsActivation(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **tls_activation_id** | **String** |  |
-**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_certificate&#x60;, &#x60;tls_configuration&#x60;, and &#x60;tls_domain&#x60;.  | [optional]
+**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: `tls_certificate`, `tls_configuration`, and `tls_domain`.  | [optional]
 
 ### Return type
 
@@ -139,13 +139,13 @@ const options = {
   filter_tls_configuration_id: "filter_tls_configuration_id_example",
   filter_tls_domain_id: "filter_tls_domain_id_example",
   include: tls_certificate,tls_configuration,tls_domain,
-  page_number: 56,
+  page_number: 1,
   page_size: 20,
 };
 
 apiInstance.listTlsActivations(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -159,9 +159,9 @@ Name | Type | Description  | Notes
 **filter_tls_certificate_id** | **String** | Limit the returned activations to a specific certificate. | [optional]
 **filter_tls_configuration_id** | **String** | Limit the returned activations to a specific TLS configuration. | [optional]
 **filter_tls_domain_id** | **String** | Limit the returned rules to a specific domain name. | [optional]
-**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_certificate&#x60;, &#x60;tls_configuration&#x60;, and &#x60;tls_domain&#x60;.  | [optional]
+**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: `tls_certificate`, `tls_configuration`, and `tls_domain`.  | [optional]
 **page_number** | **Number** | Current page. | [optional]
-**page_size** | **Number** | Number of records per page. | [optional] [default to 20]
+**page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
 
 ### Return type
 
@@ -186,7 +186,7 @@ const options = {
 
 apiInstance.updateTlsActivation(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);

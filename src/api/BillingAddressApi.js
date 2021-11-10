@@ -14,8 +14,8 @@
 
 import ApiClient from "../ApiClient";
 import BillingAddressResponse from '../models/BillingAddressResponse';
-import InlineObject from '../models/InlineObject';
 import InlineObject1 from '../models/InlineObject1';
+import InlineObject2 from '../models/InlineObject2';
 
 /**
 * BillingAddress service.
@@ -44,11 +44,11 @@ export default class BillingAddressApi {
      * Add a billing address to a customer.
      * @param {Object} options
      * @param {String} options.customer_id
-     * @param {module:models/InlineObject} [options.inline_object]
+     * @param {module:models/InlineObject1} [options.inline_object1]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BillingAddressResponse} and HTTP response
      */
     addBillingAddrWithHttpInfo(options = {}) {
-      let postBody = options['inline_object'];
+      let postBody = options['inline_object1'];
       // Verify the required parameter 'customer_id' is set.
       if (options['customer_id'] === undefined || options['customer_id'] === null) {
         throw new Error("Missing the required parameter 'customer_id'.");
@@ -79,7 +79,7 @@ export default class BillingAddressApi {
      * Add a billing address to a customer.
      * @param {Object} options
      * @param {String} options.customer_id
-     * @param {module:models/InlineObject} [options.inline_object]
+     * @param {module:models/InlineObject1} [options.inline_object1]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BillingAddressResponse}
      */
     addBillingAddr(options = {}) {
@@ -187,11 +187,11 @@ export default class BillingAddressApi {
      * Update a customer's billing address. You may update only part of the customer's billing address.
      * @param {Object} options
      * @param {String} options.customer_id
-     * @param {module:models/InlineObject1} [options.inline_object1]
+     * @param {module:models/InlineObject2} [options.inline_object2]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BillingAddressResponse} and HTTP response
      */
     updateBillingAddrWithHttpInfo(options = {}) {
-      let postBody = options['inline_object1'];
+      let postBody = options['inline_object2'];
       // Verify the required parameter 'customer_id' is set.
       if (options['customer_id'] === undefined || options['customer_id'] === null) {
         throw new Error("Missing the required parameter 'customer_id'.");
@@ -222,7 +222,7 @@ export default class BillingAddressApi {
      * Update a customer's billing address. You may update only part of the customer's billing address.
      * @param {Object} options
      * @param {String} options.customer_id
-     * @param {module:models/InlineObject1} [options.inline_object1]
+     * @param {module:models/InlineObject2} [options.inline_object2]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BillingAddressResponse}
      */
     updateBillingAddr(options = {}) {

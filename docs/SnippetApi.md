@@ -33,15 +33,15 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   name: "name_example",
-  dynamic: ,
-  type: ,
+  dynamic: "0",
+  type: "init",
   content: "content_example",
-  priority: '100',
+  priority: "'100'",
 };
 
 apiInstance.createSnippet(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -55,10 +55,10 @@ Name | Type | Description  | Notes
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
 **name** | **String** | The name for the snippet. | [optional]
-**dynamic** | **String** | Sets the snippet version. | [optional]
-**type** | **String** | The location in generated VCL where the snippet should be placed. | [optional]
+**dynamic** | **String** | Sets the snippet version. | [optional] [one of: "0", "1"]
+**type** | **String** | The location in generated VCL where the snippet should be placed. | [optional] [one of: "init", "recv", "hash", "hit", "miss", "pass", "fetch", "error", "deliver", "log", "none"]
 **content** | **String** | The VCL code that specifies exactly what the snippet does. | [optional]
-**priority** | **String** | Numeric string value. Priority determines execution order. Lower numbers execute first. | [optional] [default to &#39;100&#39;]
+**priority** | **String** | Numeric string value. Priority determines execution order. Lower numbers execute first. | [optional] [defaults to '100']
 
 ### Return type
 
@@ -84,7 +84,7 @@ const options = {
 
 apiInstance.deleteSnippet(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -123,7 +123,7 @@ const options = {
 
 apiInstance.getSnippet(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -161,7 +161,7 @@ const options = {
 
 apiInstance.getSnippetDynamic(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -198,7 +198,7 @@ const options = {
 
 apiInstance.listSnippets(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -236,7 +236,7 @@ const options = {
 
 apiInstance.updateSnippet(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -271,15 +271,15 @@ const options = {
   service_id: "service_id_example", // required
   snippet_id: "snippet_id_example", // required
   name: "name_example",
-  dynamic: ,
-  type: ,
+  dynamic: "0",
+  type: "init",
   content: "content_example",
-  priority: '100',
+  priority: "'100'",
 };
 
 apiInstance.updateSnippetDynamic(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -293,10 +293,10 @@ Name | Type | Description  | Notes
 **service_id** | **String** |  |
 **snippet_id** | **String** |  |
 **name** | **String** | The name for the snippet. | [optional]
-**dynamic** | **String** | Sets the snippet version. | [optional]
-**type** | **String** | The location in generated VCL where the snippet should be placed. | [optional]
+**dynamic** | **String** | Sets the snippet version. | [optional] [one of: "0", "1"]
+**type** | **String** | The location in generated VCL where the snippet should be placed. | [optional] [one of: "init", "recv", "hash", "hit", "miss", "pass", "fetch", "error", "deliver", "log", "none"]
 **content** | **String** | The VCL code that specifies exactly what the snippet does. | [optional]
-**priority** | **String** | Numeric string value. Priority determines execution order. Lower numbers execute first. | [optional] [default to &#39;100&#39;]
+**priority** | **String** | Numeric string value. Priority determines execution order. Lower numbers execute first. | [optional] [defaults to '100']
 
 ### Return type
 

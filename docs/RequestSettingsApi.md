@@ -34,7 +34,7 @@ const options = {
 
 apiInstance.createRequestSettings(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -72,7 +72,7 @@ const options = {
 
 apiInstance.deleteRequestSettings(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -111,7 +111,7 @@ const options = {
 
 apiInstance.getRequestSettings(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -149,7 +149,7 @@ const options = {
 
 apiInstance.listRequestSettings(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -183,7 +183,7 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   request_settings_name: "request_settings_name_example", // required
-  action: ,
+  action: "lookup",
   bypass_busy_wait: 56,
   default_host: "default_host_example",
   force_miss: 56,
@@ -194,12 +194,12 @@ const options = {
   name: "name_example",
   request_condition: "request_condition_example",
   timer_support: 56,
-  xff: ,
+  xff: "clear",
 };
 
 apiInstance.updateRequestSettings(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
 **request_settings_name** | **String** |  |
-**action** | **String** | Allows you to terminate request handling and immediately perform an action. | [optional]
+**action** | **String** | Allows you to terminate request handling and immediately perform an action. | [optional] [one of: "lookup", "pass"]
 **bypass_busy_wait** | **Number** | Disable collapsed forwarding, so you don&#39;t wait for other objects to origin. | [optional]
 **default_host** | **String** | Sets the host header. | [optional]
 **force_miss** | **Number** | Allows you to force a cache miss for the request. Replaces the item in the cache if the content is cacheable. | [optional]
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 **name** | **String** | Name for the request settings. | [optional]
 **request_condition** | **String** | Condition which, if met, will select this configuration during a request. Optional. | [optional]
 **timer_support** | **Number** | Injects the X-Timer info into the request for viewing origin fetch durations. | [optional]
-**xff** | **String** | Short for X-Forwarded-For. | [optional]
+**xff** | **String** | Short for X-Forwarded-For. | [optional] [one of: "clear", "leave", "append", "append_all", "overwrite"]
 
 ### Return type
 

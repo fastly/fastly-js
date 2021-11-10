@@ -31,7 +31,7 @@ const options = {
 
 apiInstance.getStatsLast120Seconds(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -67,7 +67,7 @@ const options = {
 
 apiInstance.getStatsLast120SecondsLimitEntries(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -104,7 +104,7 @@ const options = {
 
 apiInstance.getStatsLastSecond(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);

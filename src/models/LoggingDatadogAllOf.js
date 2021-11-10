@@ -51,7 +51,7 @@ class LoggingDatadogAllOf {
                 obj['region'] = ApiClient.convertToType(data['region'], 'String');
             }
             if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], Object);
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -71,8 +71,7 @@ class LoggingDatadogAllOf {
 LoggingDatadogAllOf.prototype['region'] = undefined;
 
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest. 
- * @member {Object} format
+ * @member {String} format
  */
 LoggingDatadogAllOf.prototype['format'] = undefined;
 

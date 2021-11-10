@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**CustomerCustomerIdBillingAddressData**](CustomerCustomerIdBillingAddressData.md) |  | [optional] 
+**items** | [**[DictionaryItem]**](DictionaryItem.md) |  | [optional] 
 
 
 

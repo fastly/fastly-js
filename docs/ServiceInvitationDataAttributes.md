@@ -4,12 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**permission** | **String** | The permission the accepting user will have in relation to the service. | [optional] [default to &#39;full&#39;]
+**permission** | **String** | The permission the accepting user will have in relation to the service. | [optional]  [one of: "full", "read_only", "purge_select", "purge_all"][defaults to 'full']
 
 
 
-## Enum: PermissionEnum
+## Enums 
 
+### `permission`
 
 * `full` (value: `"full"`)
 

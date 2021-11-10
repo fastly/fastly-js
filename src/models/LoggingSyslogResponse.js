@@ -12,9 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import LoggingFormatVersion from './LoggingFormatVersion';
 import LoggingMessageType from './LoggingMessageType';
-import LoggingPlacement from './LoggingPlacement';
 import LoggingSyslog from './LoggingSyslog';
 import LoggingUseTls from './LoggingUseTls';
 import ServiceIdAndVersion from './ServiceIdAndVersion';
@@ -64,10 +62,10 @@ class LoggingSyslogResponse {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
-                obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
+                obj['placement'] = ApiClient.convertToType(data['placement'], 'String');
             }
             if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
+                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'Number');
             }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
@@ -137,12 +135,15 @@ class LoggingSyslogResponse {
 LoggingSyslogResponse.prototype['name'] = undefined;
 
 /**
- * @member {module:models/LoggingPlacement} placement
+ * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+ * @member {module:models/LoggingSyslogResponse.PlacementEnum} placement
  */
 LoggingSyslogResponse.prototype['placement'] = undefined;
 
 /**
- * @member {module:models/LoggingFormatVersion} format_version
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * @member {module:models/LoggingSyslogResponse.FormatVersionEnum} format_version
+ * @default FormatVersionEnum.v2
  */
 LoggingSyslogResponse.prototype['format_version'] = undefined;
 
@@ -267,11 +268,14 @@ LoggingSyslogResponse.prototype['version'] = undefined;
  */
 LoggingSyslog.prototype['name'] = undefined;
 /**
- * @member {module:models/LoggingPlacement} placement
+ * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+ * @member {module:models/LoggingSyslog.PlacementEnum} placement
  */
 LoggingSyslog.prototype['placement'] = undefined;
 /**
- * @member {module:models/LoggingFormatVersion} format_version
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * @member {module:models/LoggingSyslog.FormatVersionEnum} format_version
+ * @default FormatVersionEnum.v2
  */
 LoggingSyslog.prototype['format_version'] = undefined;
 /**
@@ -372,6 +376,48 @@ ServiceIdAndVersion.prototype['service_id'] = undefined;
  */
 ServiceIdAndVersion.prototype['version'] = undefined;
 
+
+
+/**
+ * Allowed values for the <code>placement</code> property.
+ * @enum {String}
+ * @readonly
+ */
+LoggingSyslogResponse['PlacementEnum'] = {
+
+    /**
+     * value: "none"
+     * @const
+     */
+    "none": "none",
+
+    /**
+     * value: "waf_debug"
+     * @const
+     */
+    "waf_debug": "waf_debug"
+};
+
+
+/**
+ * Allowed values for the <code>format_version</code> property.
+ * @enum {Number}
+ * @readonly
+ */
+LoggingSyslogResponse['FormatVersionEnum'] = {
+
+    /**
+     * value: 1
+     * @const
+     */
+    "v1": 1,
+
+    /**
+     * value: 2
+     * @const
+     */
+    "v2": 2
+};
 
 
 

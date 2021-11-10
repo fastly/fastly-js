@@ -33,7 +33,7 @@ const options = {
 
 apiInstance.createTlsCert(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -103,7 +103,7 @@ const options = {
 
 apiInstance.getTlsCert(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -136,14 +136,14 @@ const options = {
   filter_not_after: "filter_not_after_example",
   filter_tls_domains_id: "filter_tls_domains_id_example",
   include: "include_example",
-  page_number: 56,
+  page_number: 1,
   page_size: 20,
-  sort: 'created_at',
+  sort: "created_at",
 };
 
 apiInstance.listTlsCerts(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -156,10 +156,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter_not_after** | **String** | Limit the returned certificates to those that expire prior to the specified date in UTC. Accepts parameters: lte (e.g., filter[not_after][lte]&#x3D;2020-05-05).  | [optional]
 **filter_tls_domains_id** | **String** | Limit the returned certificates to those that include the specific domain. | [optional]
-**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_activations&#x60;.  | [optional]
+**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: `tls_activations`.  | [optional]
 **page_number** | **Number** | Current page. | [optional]
-**page_size** | **Number** | Number of records per page. | [optional] [default to 20]
-**sort** | **String** | The order in which to list the results by creation date. | [optional] [default to &#39;created_at&#39;]
+**page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
+**sort** | **String** | The order in which to list the results by creation date. | [optional] [one of: "created_at", "-created_at"] [defaults to 'created_at']
 
 ### Return type
 
@@ -184,7 +184,7 @@ const options = {
 
 apiInstance.updateTlsCert(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);

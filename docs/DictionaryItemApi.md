@@ -21,7 +21,7 @@ Method | Fastly API endpoint | Description
 ## `bulkUpdateDictionaryItem`
 
 ```javascript
-bulkUpdateDictionaryItem({ service_id, dictionary_id, [inline_object4] })
+bulkUpdateDictionaryItem({ service_id, dictionary_id, [inline_object] })
 ```
 
 Update DictionaryItem in batch for given service, dictionary ID and key/value pairs for items.
@@ -32,12 +32,12 @@ Update DictionaryItem in batch for given service, dictionary ID and key/value pa
 const options = {
   service_id: "service_id_example", // required
   dictionary_id: "dictionary_id_example", // required
-  inline_object4: new Fastly.InlineObject4(),
+  inline_object: new Fastly.InlineObject(),
 };
 
 apiInstance.bulkUpdateDictionaryItem(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **dictionary_id** | **String** |  |
-**inline_object4** | [**InlineObject4**](../Model/InlineObject4.md) |  | [optional]
+**inline_object** | [**InlineObject**](../Model/InlineObject.md) |  | [optional]
 
 ### Return type
 
@@ -77,7 +77,7 @@ const options = {
 
 apiInstance.createDictionaryItem(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -117,7 +117,7 @@ const options = {
 
 apiInstance.deleteDictionaryItem(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -156,7 +156,7 @@ const options = {
 
 apiInstance.getDictionaryItem(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -190,15 +190,15 @@ List of DictionaryItems given service and dictionary ID.
 const options = {
   service_id: "service_id_example", // required
   dictionary_id: "dictionary_id_example", // required
-  page: 56,
+  page: 1,
   per_page: 20,
-  sort: 'created',
-  direction: 'ascend',
+  sort: created,
+  direction: "ascend",
 };
 
 apiInstance.listDictionaryItems(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -212,9 +212,9 @@ Name | Type | Description  | Notes
 **service_id** | **String** |  |
 **dictionary_id** | **String** |  |
 **page** | **Number** | Current page. | [optional]
-**per_page** | **Number** | Number of records per page. | [optional] [default to 20]
-**sort** | **String** | Field on which to sort. | [optional] [default to &#39;created&#39;]
-**direction** | **String** | Direction in which to sort results. | [optional] [default to &#39;ascend&#39;]
+**per_page** | **Number** | Number of records per page. | [optional] [defaults to 20]
+**sort** | **String** | Field on which to sort. | [optional] [defaults to 'created']
+**direction** | **String** | Direction in which to sort results. | [optional] [one of: "ascend", "descend"] [defaults to 'ascend']
 
 ### Return type
 
@@ -242,7 +242,7 @@ const options = {
 
 apiInstance.updateDictionaryItem(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -285,7 +285,7 @@ const options = {
 
 apiInstance.upsertDictionaryItem(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);

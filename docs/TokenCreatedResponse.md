@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **services** | **[String]** | List of alphanumeric strings identifying services (optional). If no services are specified, the token will have access to all services on the account.  | [optional] 
 **name** | **String** | Name of the token. | [optional] 
-**scope** | **String** | Space-delimited list of authorization scope. | [optional] [default to &#39;global&#39;]
+**scope** | **String** | Space-delimited list of authorization scope. | [optional]  [one of: "global", "purge_select", "purge_all", "global:read"][defaults to 'global']
 **created_at** | **String** | Time-stamp (UTC) of when the token was created. | [optional] 
 **deleted_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **updated_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
@@ -20,8 +20,9 @@ Name | Type | Description | Notes
 
 
 
-## Enum: ScopeEnum
+ 
 
+### `scope`
 
 * `global` (value: `"global"`)
 

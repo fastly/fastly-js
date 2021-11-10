@@ -12,8 +12,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import LoggingCompressionCodec from './LoggingCompressionCodec';
-import LoggingMessageType from './LoggingMessageType';
 
 /**
  * The LoggingGenericCommon model module.
@@ -50,7 +48,7 @@ class LoggingGenericCommon {
             obj = obj || new LoggingGenericCommon();
 
             if (data.hasOwnProperty('message_type')) {
-                obj['message_type'] = LoggingMessageType.constructFromObject(data['message_type']);
+                obj['message_type'] = ApiClient.convertToType(data['message_type'], 'String');
             }
             if (data.hasOwnProperty('timestamp_format')) {
                 obj['timestamp_format'] = ApiClient.convertToType(data['timestamp_format'], 'String');
@@ -62,7 +60,7 @@ class LoggingGenericCommon {
                 obj['gzip_level'] = ApiClient.convertToType(data['gzip_level'], 'Number');
             }
             if (data.hasOwnProperty('compression_codec')) {
-                obj['compression_codec'] = LoggingCompressionCodec.constructFromObject(data['compression_codec']);
+                obj['compression_codec'] = ApiClient.convertToType(data['compression_codec'], 'String');
             }
         }
         return obj;
@@ -72,7 +70,9 @@ class LoggingGenericCommon {
 }
 
 /**
- * @member {module:models/LoggingMessageType} message_type
+ * How the message should be formatted.
+ * @member {module:models/LoggingGenericCommon.MessageTypeEnum} message_type
+ * @default 'classic'
  */
 LoggingGenericCommon.prototype['message_type'] = undefined;
 
@@ -97,12 +97,73 @@ LoggingGenericCommon.prototype['period'] = 3600;
 LoggingGenericCommon.prototype['gzip_level'] = 0;
 
 /**
- * @member {module:models/LoggingCompressionCodec} compression_codec
+ * The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \"gzip\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {module:models/LoggingGenericCommon.CompressionCodecEnum} compression_codec
  */
 LoggingGenericCommon.prototype['compression_codec'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>message_type</code> property.
+ * @enum {String}
+ * @readonly
+ */
+LoggingGenericCommon['MessageTypeEnum'] = {
+
+    /**
+     * value: "classic"
+     * @const
+     */
+    "classic": "classic",
+
+    /**
+     * value: "loggly"
+     * @const
+     */
+    "loggly": "loggly",
+
+    /**
+     * value: "logplex"
+     * @const
+     */
+    "logplex": "logplex",
+
+    /**
+     * value: "blank"
+     * @const
+     */
+    "blank": "blank"
+};
+
+
+/**
+ * Allowed values for the <code>compression_codec</code> property.
+ * @enum {String}
+ * @readonly
+ */
+LoggingGenericCommon['CompressionCodecEnum'] = {
+
+    /**
+     * value: "zstd"
+     * @const
+     */
+    "zstd": "zstd",
+
+    /**
+     * value: "snappy"
+     * @const
+     */
+    "snappy": "snappy",
+
+    /**
+     * value: "gzip"
+     * @const
+     */
+    "gzip": "gzip"
+};
 
 
 

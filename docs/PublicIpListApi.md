@@ -25,7 +25,7 @@ List the public IP addresses for the Fastly network.
 ```javascript
 apiInstance.listFastlyIps()
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);

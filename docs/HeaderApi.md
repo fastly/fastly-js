@@ -30,7 +30,7 @@ Creates a new Header object.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  action: ,
+  action: "set",
   cache_condition: "cache_condition_example",
   dst: "dst_example",
   ignore_if_set: 56,
@@ -41,12 +41,12 @@ const options = {
   response_condition: null,
   src: "src_example",
   substitution: "substitution_example",
-  type: ,
+  type: "request",
 };
 
 apiInstance.createHeaderObject(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -59,18 +59,18 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
-**action** | **String** | Accepts a string value. | [optional]
+**action** | **String** | Accepts a string value. | [optional] [one of: "set", "append", "delete", "regex", "regex_repeat"]
 **cache_condition** | **String** | Name of the cache condition controlling when this configuration applies. | [optional]
 **dst** | **String** | Header to set. | [optional]
 **ignore_if_set** | **Number** | Don&#39;t add the header if it is added already. Only applies to &#39;set&#39; action. | [optional]
 **name** | **String** | A handle to refer to this Header object. | [optional]
-**priority** | **Number** | Priority determines execution order. Lower numbers execute first. | [optional] [default to 100]
-**regex** | **String** | Regular expression to use. Only applies to &#x60;regex&#x60; and &#x60;regex_repeat&#x60; actions. | [optional]
+**priority** | **Number** | Priority determines execution order. Lower numbers execute first. | [optional] [defaults to 100]
+**regex** | **String** | Regular expression to use. Only applies to `regex` and `regex_repeat` actions. | [optional]
 **request_condition** | **String** | Condition which, if met, will select this configuration during a request. Optional. | [optional]
 **response_condition** | [**String**](../Model/String.md) |  | [optional]
-**src** | **String** | Variable to be used as a source for the header content. Does not apply to &#x60;delete&#x60; action. | [optional]
-**substitution** | **String** | Value to substitute in place of regular expression. Only applies to &#x60;regex&#x60; and &#x60;regex_repeat&#x60; actions. | [optional]
-**type** | **String** | Accepts a string value. | [optional]
+**src** | **String** | Variable to be used as a source for the header content. Does not apply to `delete` action. | [optional]
+**substitution** | **String** | Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions. | [optional]
+**type** | **String** | Accepts a string value. | [optional] [one of: "request", "cache", "response"]
 
 ### Return type
 
@@ -96,7 +96,7 @@ const options = {
 
 apiInstance.deleteHeaderObject(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -135,7 +135,7 @@ const options = {
 
 apiInstance.getHeaderObject(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -173,7 +173,7 @@ const options = {
 
 apiInstance.listHeaderObjects(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -207,7 +207,7 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   header_name: "header_name_example", // required
-  action: ,
+  action: "set",
   cache_condition: "cache_condition_example",
   dst: "dst_example",
   ignore_if_set: 56,
@@ -218,12 +218,12 @@ const options = {
   response_condition: null,
   src: "src_example",
   substitution: "substitution_example",
-  type: ,
+  type: "request",
 };
 
 apiInstance.updateHeaderObject(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -237,18 +237,18 @@ Name | Type | Description  | Notes
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
 **header_name** | **String** |  |
-**action** | **String** | Accepts a string value. | [optional]
+**action** | **String** | Accepts a string value. | [optional] [one of: "set", "append", "delete", "regex", "regex_repeat"]
 **cache_condition** | **String** | Name of the cache condition controlling when this configuration applies. | [optional]
 **dst** | **String** | Header to set. | [optional]
 **ignore_if_set** | **Number** | Don&#39;t add the header if it is added already. Only applies to &#39;set&#39; action. | [optional]
 **name** | **String** | A handle to refer to this Header object. | [optional]
-**priority** | **Number** | Priority determines execution order. Lower numbers execute first. | [optional] [default to 100]
-**regex** | **String** | Regular expression to use. Only applies to &#x60;regex&#x60; and &#x60;regex_repeat&#x60; actions. | [optional]
+**priority** | **Number** | Priority determines execution order. Lower numbers execute first. | [optional] [defaults to 100]
+**regex** | **String** | Regular expression to use. Only applies to `regex` and `regex_repeat` actions. | [optional]
 **request_condition** | **String** | Condition which, if met, will select this configuration during a request. Optional. | [optional]
 **response_condition** | [**String**](../Model/String.md) |  | [optional]
-**src** | **String** | Variable to be used as a source for the header content. Does not apply to &#x60;delete&#x60; action. | [optional]
-**substitution** | **String** | Value to substitute in place of regular expression. Only applies to &#x60;regex&#x60; and &#x60;regex_repeat&#x60; actions. | [optional]
-**type** | **String** | Accepts a string value. | [optional]
+**src** | **String** | Variable to be used as a source for the header content. Does not apply to `delete` action. | [optional]
+**substitution** | **String** | Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions. | [optional]
+**type** | **String** | Accepts a string value. | [optional] [one of: "request", "cache", "response"]
 
 ### Return type
 

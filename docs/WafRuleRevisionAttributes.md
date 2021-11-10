@@ -10,13 +10,14 @@ Name | Type | Description | Notes
 **revision** | **Number** | Revision number. | [optional] 
 **severity** | **Number** | Severity metadata for the rule. | [optional] [readonly] 
 **source** | **String** | The ModSecurity rule logic. | [optional] [readonly] 
-**state** | **String** | The state, indicating if the revision is the most recent version of the rule. | [optional] [readonly] 
+**state** | **String** | The state, indicating if the revision is the most recent version of the rule. | [optional] [readonly]  [one of: "latest", "outdated"]
 **vcl** | **String** | The VCL representation of the rule logic. | [optional] [readonly] 
 
 
 
-## Enum: StateEnum
+ 
 
+### `state`
 
 * `latest` (value: `"latest"`)
 

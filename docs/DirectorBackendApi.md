@@ -34,7 +34,7 @@ const options = {
 
 apiInstance.createDirectorBackend(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -75,7 +75,7 @@ const options = {
 
 apiInstance.deleteDirectorBackend(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -116,7 +116,7 @@ const options = {
 
 apiInstance.getDirectorBackend(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);

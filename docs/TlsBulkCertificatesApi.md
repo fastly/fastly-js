@@ -68,7 +68,7 @@ const options = {
 
 apiInstance.getTlsBulkCert(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -99,14 +99,14 @@ List all certificates.
 ```javascript
 const options = {
   filter_tls_domain_id_match: "filter_tls_domain_id_match_example",
-  page_number: 56,
+  page_number: 1,
   page_size: 20,
-  sort: 'created_at',
+  sort: "created_at",
 };
 
 apiInstance.listTlsBulkCerts(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -119,8 +119,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter_tls_domain_id_match** | **String** | Filter certificates by their matching, fully-qualified domain name. Returns all partial matches. Must provide a value longer than 3 characters. | [optional]
 **page_number** | **Number** | Current page. | [optional]
-**page_size** | **Number** | Number of records per page. | [optional] [default to 20]
-**sort** | **String** | The order in which to list the results by creation date. | [optional] [default to &#39;created_at&#39;]
+**page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
+**sort** | **String** | The order in which to list the results by creation date. | [optional] [one of: "created_at", "-created_at"] [defaults to 'created_at']
 
 ### Return type
 
@@ -145,7 +145,7 @@ const options = {
 
 apiInstance.updateBulkTlsCert(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -181,7 +181,7 @@ const options = {
 
 apiInstance.uploadTlsBulkCert(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);

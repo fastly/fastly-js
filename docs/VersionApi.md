@@ -38,7 +38,7 @@ const options = {
 
 apiInstance.activateServiceVersion(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -75,7 +75,7 @@ const options = {
 
 apiInstance.cloneServiceVersion(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -111,7 +111,7 @@ const options = {
 
 apiInstance.createServiceVersion(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -147,7 +147,7 @@ const options = {
 
 apiInstance.deactivateServiceVersion(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -184,7 +184,7 @@ const options = {
 
 apiInstance.getServiceVersion(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -220,7 +220,7 @@ const options = {
 
 apiInstance.listServiceVersions(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -256,7 +256,7 @@ const options = {
 
 apiInstance.lockServiceVersion(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -300,7 +300,7 @@ const options = {
 
 apiInstance.updateServiceVersion(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -313,13 +313,13 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
-**active** | **Boolean** | Whether this is the active version or not. | [optional] [default to false]
+**active** | **Boolean** | Whether this is the active version or not. | [optional] [defaults to false]
 **comment** | **String** | A freeform descriptive note. | [optional]
 **deployed** | **Boolean** | Unused at this time. | [optional]
-**locked** | **Boolean** | Whether this version is locked or not. Objects can not be added or edited on locked versions. | [optional] [default to false]
+**locked** | **Boolean** | Whether this version is locked or not. Objects can not be added or edited on locked versions. | [optional] [defaults to false]
 **number** | **Number** | The number of this version. | [optional]
-**staging** | **Boolean** | Unused at this time. | [optional] [default to false]
-**testing** | **Boolean** | Unused at this time. | [optional] [default to false]
+**staging** | **Boolean** | Unused at this time. | [optional] [defaults to false]
+**testing** | **Boolean** | Unused at this time. | [optional] [defaults to false]
 
 ### Return type
 
@@ -344,7 +344,7 @@ const options = {
 
 apiInstance.validateServiceVersion(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);

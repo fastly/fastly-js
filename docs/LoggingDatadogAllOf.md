@@ -4,14 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**region** | **String** | The region that log data will be sent to. | [optional] [default to &#39;US&#39;]
-**format** | **Object** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Datadog can ingest.  | [optional] 
+**region** | **String** | The region that log data will be sent to. | [optional]  [one of: "US", "EU"][defaults to 'US']
+**format** | **String** |  | [optional] 
 **token** | **String** | The API key from your Datadog account. Required. | [optional] 
 
 
 
-## Enum: RegionEnum
+## Enums 
 
+### `region`
 
 * `US` (value: `"US"`)
 

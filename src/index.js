@@ -126,7 +126,6 @@ import LoggingCloudfiles from './models/LoggingCloudfiles';
 import LoggingCloudfilesAllOf from './models/LoggingCloudfilesAllOf';
 import LoggingCloudfilesResponse from './models/LoggingCloudfilesResponse';
 import LoggingCommon from './models/LoggingCommon';
-import LoggingCompressionCodec from './models/LoggingCompressionCodec';
 import LoggingDatadog from './models/LoggingDatadog';
 import LoggingDatadogAllOf from './models/LoggingDatadogAllOf';
 import LoggingDatadogResponse from './models/LoggingDatadogResponse';
@@ -312,9 +311,9 @@ import ResponseObjectResponse from './models/ResponseObjectResponse';
 import Results from './models/Results';
 import RoleUser from './models/RoleUser';
 import SchemasBackend from './models/SchemasBackend';
-import SchemasCondition from './models/SchemasCondition';
-import SchemasConditionResponse from './models/SchemasConditionResponse';
 import SchemasDirector from './models/SchemasDirector';
+import SchemasDomain from './models/SchemasDomain';
+import SchemasDomainResponse from './models/SchemasDomainResponse';
 import SchemasSnippetResponse from './models/SchemasSnippetResponse';
 import SchemasUserResponse from './models/SchemasUserResponse';
 import SchemasVclResponse from './models/SchemasVclResponse';
@@ -346,6 +345,8 @@ import ServiceInvitationDataAttributes from './models/ServiceInvitationDataAttri
 import ServiceInvitationResponse from './models/ServiceInvitationResponse';
 import ServiceInvitationResponseAllOf from './models/ServiceInvitationResponseAllOf';
 import ServiceInvitationResponseAllOfData from './models/ServiceInvitationResponseAllOfData';
+import ServiceListResponse from './models/ServiceListResponse';
+import ServiceListResponseAllOf from './models/ServiceListResponseAllOf';
 import ServiceResponse from './models/ServiceResponse';
 import ServiceResponseAllOf from './models/ServiceResponseAllOf';
 import Settings from './models/Settings';
@@ -1304,12 +1305,6 @@ export {
      * @property {module:models/LoggingCommon}
      */
     LoggingCommon,
-
-    /**
-     * The LoggingCompressionCodec model constructor.
-     * @property {module:models/LoggingCompressionCodec}
-     */
-    LoggingCompressionCodec,
 
     /**
      * The LoggingDatadog model constructor.
@@ -2422,22 +2417,22 @@ export {
     SchemasBackend,
 
     /**
-     * The SchemasCondition model constructor.
-     * @property {module:models/SchemasCondition}
-     */
-    SchemasCondition,
-
-    /**
-     * The SchemasConditionResponse model constructor.
-     * @property {module:models/SchemasConditionResponse}
-     */
-    SchemasConditionResponse,
-
-    /**
      * The SchemasDirector model constructor.
      * @property {module:models/SchemasDirector}
      */
     SchemasDirector,
+
+    /**
+     * The SchemasDomain model constructor.
+     * @property {module:models/SchemasDomain}
+     */
+    SchemasDomain,
+
+    /**
+     * The SchemasDomainResponse model constructor.
+     * @property {module:models/SchemasDomainResponse}
+     */
+    SchemasDomainResponse,
 
     /**
      * The SchemasSnippetResponse model constructor.
@@ -2624,6 +2619,18 @@ export {
      * @property {module:models/ServiceInvitationResponseAllOfData}
      */
     ServiceInvitationResponseAllOfData,
+
+    /**
+     * The ServiceListResponse model constructor.
+     * @property {module:models/ServiceListResponse}
+     */
+    ServiceListResponse,
+
+    /**
+     * The ServiceListResponseAllOf model constructor.
+     * @property {module:models/ServiceListResponseAllOf}
+     */
+    ServiceListResponseAllOf,
 
     /**
      * The ServiceResponse model constructor.

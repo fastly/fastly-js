@@ -31,21 +31,21 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   name: "name_example",
-  placement: new Fastly.LoggingPlacement(),
-  format_version: new Fastly.LoggingFormatVersion(),
+  placement: "none",
+  format_version: 1,
   response_condition: "response_condition_example",
-  format: '%h %l %u %t "%r" %&gt;s %b',
-  tls_ca_cert: 'null',
-  tls_client_cert: 'null',
-  tls_client_key: 'null',
-  tls_hostname: 'null',
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  tls_ca_cert: "'null'",
+  tls_client_cert: "'null'",
+  tls_client_key: "'null'",
+  tls_hostname: "'null'",
   topic: "topic_example",
   brokers: "brokers_example",
-  compression_codec: ,
+  compression_codec: "gzip",
   required_acks: 1,
   request_max_bytes: 0,
   parse_log_keyvals: true,
-  auth_method: ,
+  auth_method: "plain",
   user: "user_example",
   password: "password_example",
   use_tls: new Fastly.LoggingUseTls(),
@@ -53,7 +53,7 @@ const options = {
 
 apiInstance.createLogKafka(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -67,21 +67,21 @@ Name | Type | Description  | Notes
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
 **name** | **String** | The name for the real-time logging configuration. | [optional]
-**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] [one of: "none", "waf_debug"]
+**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.   | [optional] [one of: 1, 2] [defaults to FormatVersionEnum.v2]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
-**tls_ca_cert** | **String** | A secure certificate to authenticate a server with. Must be in PEM format. | [optional] [default to &#39;null&#39;]
-**tls_client_cert** | **String** | The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [default to &#39;null&#39;]
-**tls_client_key** | **String** | The client private key used to make authenticated requests. Must be in PEM format. | [optional] [default to &#39;null&#39;]
-**tls_hostname** | **String** | The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported. | [optional] [default to &#39;null&#39;]
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [defaults to '%h %l %u %t "%r" %&gt;s %b']
+**tls_ca_cert** | **String** | A secure certificate to authenticate a server with. Must be in PEM format. | [optional] [defaults to 'null']
+**tls_client_cert** | **String** | The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [defaults to 'null']
+**tls_client_key** | **String** | The client private key used to make authenticated requests. Must be in PEM format. | [optional] [defaults to 'null']
+**tls_hostname** | **String** | The hostname to verify the server&#39;s certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported. | [optional] [defaults to 'null']
 **topic** | **String** | The Kafka topic to send logs to. Required. | [optional]
 **brokers** | **String** | A comma-separated list of IP addresses or hostnames of Kafka brokers. Required. | [optional]
-**compression_codec** | **String** | The codec used for compression of your logs. | [optional]
-**required_acks** | **Number** | The number of acknowledgements a leader must receive before a write is considered successful. | [optional] [default to 1]
-**request_max_bytes** | **Number** | The maximum number of bytes sent in one request. Defaults &#x60;0&#x60; (no limit). | [optional] [default to 0]
+**compression_codec** | **String** | The codec used for compression of your logs. | [optional] [one of: "gzip", "snappy", "lz4", "null"]
+**required_acks** | **Number** | The number of acknowledgements a leader must receive before a write is considered successful. | [optional] [one of: 1, 0, -1] [defaults to 1]
+**request_max_bytes** | **Number** | The maximum number of bytes sent in one request. Defaults `0` (no limit). | [optional] [defaults to 0]
 **parse_log_keyvals** | **Boolean** | Enables parsing of key&#x3D;value tuples from the beginning of a logline, turning them into [record headers](https://cwiki.apache.org/confluence/display/KAFKA/KIP-82+-+Add+Record+Headers). | [optional]
-**auth_method** | **String** | SASL authentication method. | [optional]
+**auth_method** | **String** | SASL authentication method. | [optional] [one of: "plain", "scram-sha-256", "scram-sha-512"]
 **user** | **String** | SASL user. | [optional]
 **password** | **String** | SASL password. | [optional]
 **use_tls** | [**LoggingUseTls**](../Model/LoggingUseTls.md) |  | [optional]
@@ -110,7 +110,7 @@ const options = {
 
 apiInstance.deleteLogKafka(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -149,7 +149,7 @@ const options = {
 
 apiInstance.getLogKafka(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -187,7 +187,7 @@ const options = {
 
 apiInstance.listLogKafka(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -225,7 +225,7 @@ const options = {
 
 apiInstance.updateLogKafka(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);

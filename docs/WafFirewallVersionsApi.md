@@ -35,7 +35,7 @@ const options = {
 
 apiInstance.cloneWafFirewallVersion(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -72,7 +72,7 @@ const options = {
 
 apiInstance.createWafFirewallVersion(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -109,7 +109,7 @@ const options = {
 
 apiInstance.deployActivateWafFirewallVersion(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -147,7 +147,7 @@ const options = {
 
 apiInstance.getWafFirewallVersion(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **firewall_id** | **String** |  |
 **firewall_version_number** | **Number** |  |
-**include** | **String** | Include relationships. Optional, comma-separated values. Permitted values: &#x60;waf_firewall&#x60; and &#x60;waf_active_rules&#x60;.  | [optional]
+**include** | **String** | Include relationships. Optional, comma-separated values. Permitted values: `waf_firewall` and `waf_active_rules`.  | [optional]
 
 ### Return type
 
@@ -181,13 +181,13 @@ Get a list of firewall versions associated with a specific firewall.
 const options = {
   firewall_id: "firewall_id_example", // required
   include: waf_firewall,
-  page_number: 56,
+  page_number: 1,
   page_size: 20,
 };
 
 apiInstance.listWafFirewallVersions(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 **firewall_id** | **String** |  |
 **include** | **String** | Include relationships. Optional. | [optional]
 **page_number** | **Number** | Current page. | [optional]
-**page_size** | **Number** | Number of records per page. | [optional] [default to 20]
+**page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
 
 ### Return type
 
@@ -227,7 +227,7 @@ const options = {
 
 apiInstance.updateWafFirewallVersion(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);

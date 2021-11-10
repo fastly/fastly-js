@@ -34,12 +34,12 @@ const options = {
   name: "name_example",
   priority: 100,
   statement: "statement_example",
-  type: ,
+  type: "REQUEST",
 };
 
 apiInstance.createCondition(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -54,9 +54,9 @@ Name | Type | Description  | Notes
 **version_id** | **Number** |  |
 **comment** | **String** | A freeform descriptive note. | [optional]
 **name** | **String** | Name of the condition. Required. | [optional]
-**priority** | **Number** | Priority determines execution order. Lower numbers execute first. | [optional] [default to 100]
+**priority** | **Number** | Priority determines execution order. Lower numbers execute first. | [optional] [defaults to 100]
 **statement** | **String** | A conditional expression in VCL used to determine if the condition is met. | [optional]
-**type** | **String** | Type of the condition. Required. | [optional]
+**type** | **String** | Type of the condition. Required. | [optional] [one of: "REQUEST", "CACHE", "RESPONSE", "PREFETCH"]
 
 ### Return type
 
@@ -82,7 +82,7 @@ const options = {
 
 apiInstance.deleteCondition(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -121,7 +121,7 @@ const options = {
 
 apiInstance.getCondition(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -159,7 +159,7 @@ const options = {
 
 apiInstance.listConditions(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -197,12 +197,12 @@ const options = {
   name: "name_example",
   priority: 100,
   statement: "statement_example",
-  type: ,
+  type: "REQUEST",
 };
 
 apiInstance.updateCondition(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -218,9 +218,9 @@ Name | Type | Description  | Notes
 **condition_name** | **String** |  |
 **comment** | **String** | A freeform descriptive note. | [optional]
 **name** | **String** | Name of the condition. Required. | [optional]
-**priority** | **Number** | Priority determines execution order. Lower numbers execute first. | [optional] [default to 100]
+**priority** | **Number** | Priority determines execution order. Lower numbers execute first. | [optional] [defaults to 100]
 **statement** | **String** | A conditional expression in VCL used to determine if the condition is met. | [optional]
-**type** | **String** | Type of the condition. Required. | [optional]
+**type** | **String** | Type of the condition. Required. | [optional] [one of: "REQUEST", "CACHE", "RESPONSE", "PREFETCH"]
 
 ### Return type
 

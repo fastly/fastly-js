@@ -32,7 +32,7 @@ const options = {
 
 apiInstance.getInvoice(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -107,7 +107,7 @@ const options = {
 
 apiInstance.getInvoiceMtd(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);

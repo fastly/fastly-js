@@ -116,7 +116,7 @@ const options = {
 
 apiInstance.createWafActiveRule(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -236,7 +236,7 @@ const options = {
 
 apiInstance.getWafActiveRule(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
 **firewall_id** | **String** |  |
 **version_id** | **Number** |  |
 **waf_rule_id** | **String** |  |
-**include** | **String** | Include relationships. Optional, comma-separated values. Permitted values: &#x60;waf_rule_revision&#x60; and &#x60;waf_firewall_version&#x60;.  | [optional]
+**include** | **String** | Include relationships. Optional, comma-separated values. Permitted values: `waf_rule_revision` and `waf_firewall_version`.  | [optional]
 
 ### Return type
 
@@ -276,13 +276,13 @@ const options = {
   filter_waf_rule_revision_modsec_rule_id: "filter_waf_rule_revision_modsec_rule_id_example",
   filter_outdated: "filter_outdated_example",
   include: waf_rule_revision,waf_firewall_version,
-  page_number: 56,
+  page_number: 1,
   page_size: 20,
 };
 
 apiInstance.listWafActiveRules(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -299,9 +299,9 @@ Name | Type | Description  | Notes
 **filter_waf_rule_revision_message** | **String** | Limit results to active rules with the specified message. | [optional]
 **filter_waf_rule_revision_modsec_rule_id** | **String** | Limit results to active rules that represent the specified ModSecurity modsec_rule_id. | [optional]
 **filter_outdated** | **String** | Limit results to active rules referencing an outdated rule revision. | [optional]
-**include** | **String** | Include relationships. Optional, comma-separated values. Permitted values: &#x60;waf_rule_revision&#x60; and &#x60;waf_firewall_version&#x60;.  | [optional]
+**include** | **String** | Include relationships. Optional, comma-separated values. Permitted values: `waf_rule_revision` and `waf_firewall_version`.  | [optional]
 **page_number** | **Number** | Current page. | [optional]
-**page_size** | **Number** | Number of records per page. | [optional] [default to 20]
+**page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
 
 ### Return type
 
@@ -328,7 +328,7 @@ const options = {
 
 apiInstance.updateWafActiveRule(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);

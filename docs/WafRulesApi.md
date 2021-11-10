@@ -31,7 +31,7 @@ const options = {
 
 apiInstance.getWafRule(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -43,7 +43,7 @@ apiInstance.getWafRule(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **waf_rule_id** | **String** |  |
-**include** | **String** | Include relationships. Optional, comma-separated values. Permitted values: &#x60;waf_tags&#x60; and &#x60;waf_rule_revisions&#x60;.  | [optional]
+**include** | **String** | Include relationships. Optional, comma-separated values. Permitted values: `waf_tags` and `waf_rule_revisions`.  | [optional]
 
 ### Return type
 
@@ -66,14 +66,14 @@ const options = {
   filter_waf_tags_name: "filter_waf_tags_name_example",
   filter_waf_rule_revisions_source: "filter_waf_rule_revisions_source_example",
   filter_waf_firewall_id_not_match: "filter_waf_firewall_id_not_match_example",
-  page_number: 56,
+  page_number: 1,
   page_size: 20,
   include: waf_tags,waf_rule_revisions,
 };
 
 apiInstance.listWafRules(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -89,8 +89,8 @@ Name | Type | Description  | Notes
 **filter_waf_rule_revisions_source** | **String** | Limit the returned rules to a set linked to a source. | [optional]
 **filter_waf_firewall_id_not_match** | **String** | Limit the returned rules to a set not included in the active firewall version for a firewall. | [optional]
 **page_number** | **Number** | Current page. | [optional]
-**page_size** | **Number** | Number of records per page. | [optional] [default to 20]
-**include** | **String** | Include relationships. Optional, comma-separated values. Permitted values: &#x60;waf_tags&#x60; and &#x60;waf_rule_revisions&#x60;.  | [optional]
+**page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
+**include** | **String** | Include relationships. Optional, comma-separated values. Permitted values: `waf_tags` and `waf_rule_revisions`.  | [optional]
 
 ### Return type
 

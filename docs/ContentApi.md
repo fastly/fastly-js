@@ -29,7 +29,7 @@ const options = {
 
 apiInstance.contentCheck(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);

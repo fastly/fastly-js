@@ -13,8 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
-import InlineObject2 from '../models/InlineObject2';
 import InlineObject3 from '../models/InlineObject3';
+import InlineObject4 from '../models/InlineObject4';
 import InlineResponse204 from '../models/InlineResponse204';
 import ServiceAuthorization from '../models/ServiceAuthorization';
 import ServiceAuthorizationResponse from '../models/ServiceAuthorizationResponse';
@@ -135,11 +135,11 @@ export default class ServiceAuthorizationsApi {
     /**
      * Delete service authorizations.
      * @param {Object} options
-     * @param {module:models/InlineObject2} [options.inline_object2]
+     * @param {module:models/InlineObject3} [options.inline_object3]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/InlineResponse204} and HTTP response
      */
     deleteServiceAuthorization2WithHttpInfo(options = {}) {
-      let postBody = options['inline_object2'];
+      let postBody = options['inline_object3'];
 
       let pathParams = {
       };
@@ -164,7 +164,7 @@ export default class ServiceAuthorizationsApi {
     /**
      * Delete service authorizations.
      * @param {Object} options
-     * @param {module:models/InlineObject2} [options.inline_object2]
+     * @param {module:models/InlineObject3} [options.inline_object3]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/InlineResponse204}
      */
     deleteServiceAuthorization2(options = {}) {
@@ -319,11 +319,11 @@ export default class ServiceAuthorizationsApi {
     /**
      * Update service authorizations.
      * @param {Object} options
-     * @param {module:models/InlineObject3} [options.inline_object3]
+     * @param {module:models/InlineObject4} [options.inline_object4]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ServiceAuthorizationsResponse} and HTTP response
      */
     updateServiceAuthorization2WithHttpInfo(options = {}) {
-      let postBody = options['inline_object3'];
+      let postBody = options['inline_object4'];
 
       let pathParams = {
       };
@@ -348,7 +348,7 @@ export default class ServiceAuthorizationsApi {
     /**
      * Update service authorizations.
      * @param {Object} options
-     * @param {module:models/InlineObject3} [options.inline_object3]
+     * @param {module:models/InlineObject4} [options.inline_object4]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ServiceAuthorizationsResponse}
      */
     updateServiceAuthorization2(options = {}) {

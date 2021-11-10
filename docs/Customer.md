@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **billing_contact_id** | **String** | The alphanumeric string representing the primary billing contact. | [optional] 
-**billing_network_type** | **String** | Customer&#39;s current network revenue type. | [optional] 
+**billing_network_type** | **String** | Customer&#39;s current network revenue type. | [optional]  [one of: "public", "private"]
 **billing_ref** | **String** | Used for adding purchased orders to customer&#39;s account. | [optional] 
 **can_configure_wordpress** | **Boolean** | Whether this customer can view or edit wordpress. | [optional] [readonly] 
 **can_reset_passwords** | **Boolean** | Whether this customer can reset passwords. | [optional] [readonly] 
@@ -31,8 +31,9 @@ Name | Type | Description | Notes
 
 
 
-## Enum: BillingNetworkTypeEnum
+ 
 
+### `billing_network_type`
 
 * `public` (value: `"public"`)
 

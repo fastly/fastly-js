@@ -13,8 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
-import DomainResponse from '../models/DomainResponse';
+import SchemasDomainResponse from '../models/SchemasDomainResponse';
 import ServiceDetail from '../models/ServiceDetail';
+import ServiceListResponse from '../models/ServiceListResponse';
 import ServiceResponse from '../models/ServiceResponse';
 
 /**
@@ -237,7 +238,7 @@ export default class ServiceApi {
      * List the domains within a service.
      * @param {Object} options
      * @param {String} options.service_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/DomainResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/SchemasDomainResponse>} and HTTP response
      */
     listServiceDomainsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -259,7 +260,7 @@ export default class ServiceApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [DomainResponse];
+      let returnType = [SchemasDomainResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/domain', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -271,7 +272,7 @@ export default class ServiceApi {
      * List the domains within a service.
      * @param {Object} options
      * @param {String} options.service_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/DomainResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/SchemasDomainResponse>}
      */
     listServiceDomains(options = {}) {
       return this.listServiceDomainsWithHttpInfo(options)
@@ -287,7 +288,7 @@ export default class ServiceApi {
      * @param {Number} [options.per_page=20] - Number of records per page.
      * @param {String} [options.sort='created'] - Field on which to sort.
      * @param {module:models/String} [options.direction='ascend'] - Direction in which to sort results.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/ServiceResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/ServiceListResponse>} and HTTP response
      */
     listServicesWithHttpInfo(options = {}) {
       let postBody = null;
@@ -308,7 +309,7 @@ export default class ServiceApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [ServiceResponse];
+      let returnType = [ServiceListResponse];
       return this.apiClient.callApi(
         '/service', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -323,7 +324,7 @@ export default class ServiceApi {
      * @param {Number} [options.per_page=20] - Number of records per page.
      * @param {String} [options.sort='created'] - Field on which to sort.
      * @param {module:models/String} [options.direction='ascend'] - Direction in which to sort results.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/ServiceResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/ServiceListResponse>}
      */
     listServices(options = {}) {
       return this.listServicesWithHttpInfo(options)

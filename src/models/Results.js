@@ -1454,7 +1454,7 @@ Results.prototype['segblock_origin_fetches'] = undefined;
 Results.prototype['segblock_shield_fetches'] = undefined;
 
 /**
- * The total number of requests that were received for your site by Fastly.
+ * The total number of requests that were received for your service by Fastly.
  * @member {Number} compute_requests
  */
 Results.prototype['compute_requests'] = undefined;
@@ -1466,7 +1466,7 @@ Results.prototype['compute_requests'] = undefined;
 Results.prototype['compute_request_time_ms'] = undefined;
 
 /**
- * The amount of RAM used for your site by Fastly, including a maximum indicating the highest usage within this timeframe and a static cap for usage.
+ * The amount of RAM used for your service by Fastly (in bytes).
  * @member {Number} compute_ram_used
  */
 Results.prototype['compute_ram_used'] = undefined;

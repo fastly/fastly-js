@@ -32,7 +32,7 @@ const options = {
 
 apiInstance.createTlsKey(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -102,7 +102,7 @@ const options = {
 
 apiInstance.getTlsKey(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -133,13 +133,13 @@ List all TLS private keys.
 ```javascript
 const options = {
   filter_in_use: "filter_in_use_example",
-  page_number: 56,
+  page_number: 1,
   page_size: 20,
 };
 
 apiInstance.listTlsKeys(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter_in_use** | **String** | Limit the returned keys to those without any matching TLS certificates. The only valid value is false. | [optional]
 **page_number** | **Number** | Current page. | [optional]
-**page_size** | **Number** | Number of records per page. | [optional] [default to 20]
+**page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
 
 ### Return type
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**action** | **String** | Allows you to terminate request handling and immediately perform an action. | [optional] 
+**action** | **String** | Allows you to terminate request handling and immediately perform an action. | [optional]  [one of: "lookup", "pass"]
 **bypass_busy_wait** | **Number** | Disable collapsed forwarding, so you don&#39;t wait for other objects to origin. | [optional] 
 **default_host** | **String** | Sets the host header. | [optional] 
 **force_miss** | **Number** | Allows you to force a cache miss for the request. Replaces the item in the cache if the content is cacheable. | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **name** | **String** | Name for the request settings. | [optional] 
 **request_condition** | **String** | Condition which, if met, will select this configuration during a request. Optional. | [optional] 
 **timer_support** | **Number** | Injects the X-Timer info into the request for viewing origin fetch durations. | [optional] 
-**xff** | **String** | Short for X-Forwarded-For. | [optional] 
+**xff** | **String** | Short for X-Forwarded-For. | [optional]  [one of: "clear", "leave", "append", "append_all", "overwrite"]
 **service_id** | **String** | Alphanumeric string identifying the service. | [optional] [readonly] 
 **version** | **Number** | Integer identifying a service version. | [optional] [readonly] 
 **created_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
@@ -24,8 +24,9 @@ Name | Type | Description | Notes
 
 
 
-## Enum: ActionEnum
+## Enums 
 
+### `action`
 
 * `lookup` (value: `"lookup"`)
 
@@ -35,8 +36,9 @@ Name | Type | Description | Notes
 
 
 
-## Enum: XffEnum
+ 
 
+### `xff`
 
 * `clear` (value: `"clear"`)
 

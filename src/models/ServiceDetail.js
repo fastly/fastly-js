@@ -85,14 +85,14 @@ class ServiceDetail {
             if (data.hasOwnProperty('paused')) {
                 obj['paused'] = ApiClient.convertToType(data['paused'], 'Boolean');
             }
-            if (data.hasOwnProperty('version')) {
-                obj['version'] = NestedVersion.constructFromObject(data['version']);
-            }
             if (data.hasOwnProperty('versions')) {
                 obj['versions'] = ApiClient.convertToType(data['versions'], [SchemasVersionResponse]);
             }
             if (data.hasOwnProperty('active_version')) {
                 obj['active_version'] = NestedVersion.constructFromObject(data['active_version']);
+            }
+            if (data.hasOwnProperty('version')) {
+                obj['version'] = NestedVersion.constructFromObject(data['version']);
             }
         }
         return obj;
@@ -162,11 +162,6 @@ ServiceDetail.prototype['publish_key'] = undefined;
 ServiceDetail.prototype['paused'] = undefined;
 
 /**
- * @member {module:models/NestedVersion} version
- */
-ServiceDetail.prototype['version'] = undefined;
-
-/**
  * A list of [versions](/reference/api/services/version/) associated with the service.
  * @member {Array.<module:models/SchemasVersionResponse>} versions
  */
@@ -176,6 +171,11 @@ ServiceDetail.prototype['versions'] = undefined;
  * @member {module:models/NestedVersion} active_version
  */
 ServiceDetail.prototype['active_version'] = undefined;
+
+/**
+ * @member {module:models/NestedVersion} version
+ */
+ServiceDetail.prototype['version'] = undefined;
 
 
 // Implement ServiceResponse interface:
@@ -229,11 +229,6 @@ ServiceResponse.prototype['publish_key'] = undefined;
  * @member {Boolean} paused
  */
 ServiceResponse.prototype['paused'] = undefined;
-/**
- * Current [version](/reference/api/services/version/) of the service.
- * @member {Number} version
- */
-ServiceResponse.prototype['version'] = undefined;
 /**
  * A list of [versions](/reference/api/services/version/) associated with the service.
  * @member {Array.<module:models/SchemasVersionResponse>} versions

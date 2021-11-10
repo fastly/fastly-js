@@ -4,12 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **String** | The type of this service. | [optional] 
+**type** | **String** | The type of this service. | [optional]  [one of: "vcl", "wasm"]
 
 
 
-## Enum: TypeEnum
+## Enums 
 
+### `type`
 
 * `vcl` (value: `"vcl"`)
 

@@ -36,7 +36,7 @@ const options = {
 
 apiInstance.bulkUpdateAclEntries(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -75,7 +75,7 @@ const options = {
 
 apiInstance.createAclEntry(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -114,7 +114,7 @@ const options = {
 
 apiInstance.deleteAclEntry(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -153,7 +153,7 @@ const options = {
 
 apiInstance.getAclEntry(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -187,15 +187,15 @@ List ACL entries for a specified ACL.
 const options = {
   service_id: "service_id_example", // required
   acl_id: "acl_id_example", // required
-  page: 56,
+  page: 1,
   per_page: 20,
-  sort: 'created',
-  direction: 'ascend',
+  sort: created,
+  direction: "ascend",
 };
 
 apiInstance.listAclEntries(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -209,9 +209,9 @@ Name | Type | Description  | Notes
 **service_id** | **String** |  |
 **acl_id** | **String** |  |
 **page** | **Number** | Current page. | [optional]
-**per_page** | **Number** | Number of records per page. | [optional] [default to 20]
-**sort** | **String** | Field on which to sort. | [optional] [default to &#39;created&#39;]
-**direction** | **String** | Direction in which to sort results. | [optional] [default to &#39;ascend&#39;]
+**per_page** | **Number** | Number of records per page. | [optional] [defaults to 20]
+**sort** | **String** | Field on which to sort. | [optional] [defaults to 'created']
+**direction** | **String** | Direction in which to sort results. | [optional] [one of: "ascend", "descend"] [defaults to 'ascend']
 
 ### Return type
 
@@ -238,7 +238,7 @@ const options = {
 
 apiInstance.updateAclEntry(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);

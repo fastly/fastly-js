@@ -31,7 +31,7 @@ const options = {
 
 apiInstance.createInvitation(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -96,13 +96,13 @@ List all invitations.
 
 ```javascript
 const options = {
-  page_number: 56,
+  page_number: 1,
   page_size: 20,
 };
 
 apiInstance.listInvitations(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -114,7 +114,7 @@ apiInstance.listInvitations(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **page_number** | **Number** | Current page. | [optional]
-**page_size** | **Number** | Number of records per page. | [optional] [default to 20]
+**page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
 
 ### Return type
 

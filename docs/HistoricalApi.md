@@ -34,13 +34,13 @@ Fetches historical stats for each of your Fastly services and groups the results
 const options = {
   from: 2020-04-09T18:14:30Z,
   to: 2020-04-09T18:14:30Z,
-  by: 'day',
-  region: ,
+  by: "hour",
+  region: "usa",
 };
 
 apiInstance.getHistStats(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -53,8 +53,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **from** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
 **to** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
-**by** | **String** | Duration of sample windows. One of:    * &#x60;hour&#x60; - Group data by hour.   * &#x60;minute&#x60; - Group data by minute.   * &#x60;day&#x60; - Group data by day.  | [optional] [default to &#39;day&#39;]
-**region** | **String** | Limit query to a specific geographic region. One of:    * &#x60;usa&#x60; - North America.   * &#x60;europe&#x60; - Europe.   * &#x60;anzac&#x60; - Australia and New Zealand.   * &#x60;asia&#x60; - Asia.   * &#x60;asia_india&#x60; - India.   * &#x60;asia_southkorea&#x60; - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * &#x60;africa_std&#x60; - Africa.   * &#x60;southamerica_std&#x60; - South America.  | [optional]
+**by** | **String** | Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [optional] [one of: "hour", "minute", "day"] [defaults to 'day']
+**region** | **String** | Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America.  | [optional] [one of: "usa", "europe", "asia", "asia_india", "asia_southkorea", "africa_std", "southamerica_std"]
 
 ### Return type
 
@@ -75,13 +75,13 @@ Fetches historical stats information aggregated across all of your Fastly servic
 const options = {
   from: 2020-04-09T18:14:30Z,
   to: 2020-04-09T18:14:30Z,
-  by: 'day',
-  region: ,
+  by: "hour",
+  region: "usa",
 };
 
 apiInstance.getHistStatsAggregated(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -94,8 +94,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **from** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
 **to** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
-**by** | **String** | Duration of sample windows. One of:    * &#x60;hour&#x60; - Group data by hour.   * &#x60;minute&#x60; - Group data by minute.   * &#x60;day&#x60; - Group data by day.  | [optional] [default to &#39;day&#39;]
-**region** | **String** | Limit query to a specific geographic region. One of:    * &#x60;usa&#x60; - North America.   * &#x60;europe&#x60; - Europe.   * &#x60;anzac&#x60; - Australia and New Zealand.   * &#x60;asia&#x60; - Asia.   * &#x60;asia_india&#x60; - India.   * &#x60;asia_southkorea&#x60; - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * &#x60;africa_std&#x60; - Africa.   * &#x60;southamerica_std&#x60; - South America.  | [optional]
+**by** | **String** | Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [optional] [one of: "hour", "minute", "day"] [defaults to 'day']
+**region** | **String** | Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America.  | [optional] [one of: "usa", "europe", "asia", "asia_india", "asia_southkorea", "africa_std", "southamerica_std"]
 
 ### Return type
 
@@ -117,13 +117,13 @@ const options = {
   field: hit_ratio, // required
   from: 2020-04-09T18:14:30Z,
   to: 2020-04-09T18:14:30Z,
-  by: 'day',
-  region: ,
+  by: "hour",
+  region: "usa",
 };
 
 apiInstance.getHistStatsField(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -137,8 +137,8 @@ Name | Type | Description  | Notes
 **field** | **String** | Name of the stats field. |
 **from** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
 **to** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
-**by** | **String** | Duration of sample windows. One of:    * &#x60;hour&#x60; - Group data by hour.   * &#x60;minute&#x60; - Group data by minute.   * &#x60;day&#x60; - Group data by day.  | [optional] [default to &#39;day&#39;]
-**region** | **String** | Limit query to a specific geographic region. One of:    * &#x60;usa&#x60; - North America.   * &#x60;europe&#x60; - Europe.   * &#x60;anzac&#x60; - Australia and New Zealand.   * &#x60;asia&#x60; - Asia.   * &#x60;asia_india&#x60; - India.   * &#x60;asia_southkorea&#x60; - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * &#x60;africa_std&#x60; - Africa.   * &#x60;southamerica_std&#x60; - South America.  | [optional]
+**by** | **String** | Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [optional] [one of: "hour", "minute", "day"] [defaults to 'day']
+**region** | **String** | Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America.  | [optional] [one of: "usa", "europe", "asia", "asia_india", "asia_southkorea", "africa_std", "southamerica_std"]
 
 ### Return type
 
@@ -160,13 +160,13 @@ const options = {
   service_id: "service_id_example", // required
   from: 2020-04-09T18:14:30Z,
   to: 2020-04-09T18:14:30Z,
-  by: 'day',
-  region: ,
+  by: "hour",
+  region: "usa",
 };
 
 apiInstance.getHistStatsService(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -180,8 +180,8 @@ Name | Type | Description  | Notes
 **service_id** | **String** |  |
 **from** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
 **to** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
-**by** | **String** | Duration of sample windows. One of:    * &#x60;hour&#x60; - Group data by hour.   * &#x60;minute&#x60; - Group data by minute.   * &#x60;day&#x60; - Group data by day.  | [optional] [default to &#39;day&#39;]
-**region** | **String** | Limit query to a specific geographic region. One of:    * &#x60;usa&#x60; - North America.   * &#x60;europe&#x60; - Europe.   * &#x60;anzac&#x60; - Australia and New Zealand.   * &#x60;asia&#x60; - Asia.   * &#x60;asia_india&#x60; - India.   * &#x60;asia_southkorea&#x60; - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * &#x60;africa_std&#x60; - Africa.   * &#x60;southamerica_std&#x60; - South America.  | [optional]
+**by** | **String** | Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [optional] [one of: "hour", "minute", "day"] [defaults to 'day']
+**region** | **String** | Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America.  | [optional] [one of: "usa", "europe", "asia", "asia_india", "asia_southkorea", "africa_std", "southamerica_std"]
 
 ### Return type
 
@@ -204,13 +204,13 @@ const options = {
   field: hit_ratio, // required
   from: 2020-04-09T18:14:30Z,
   to: 2020-04-09T18:14:30Z,
-  by: 'day',
-  region: ,
+  by: "hour",
+  region: "usa",
 };
 
 apiInstance.getHistStatsServiceField(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -225,8 +225,8 @@ Name | Type | Description  | Notes
 **field** | **String** | Name of the stats field. |
 **from** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
 **to** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
-**by** | **String** | Duration of sample windows. One of:    * &#x60;hour&#x60; - Group data by hour.   * &#x60;minute&#x60; - Group data by minute.   * &#x60;day&#x60; - Group data by day.  | [optional] [default to &#39;day&#39;]
-**region** | **String** | Limit query to a specific geographic region. One of:    * &#x60;usa&#x60; - North America.   * &#x60;europe&#x60; - Europe.   * &#x60;anzac&#x60; - Australia and New Zealand.   * &#x60;asia&#x60; - Asia.   * &#x60;asia_india&#x60; - India.   * &#x60;asia_southkorea&#x60; - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * &#x60;africa_std&#x60; - Africa.   * &#x60;southamerica_std&#x60; - South America.  | [optional]
+**by** | **String** | Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [optional] [one of: "hour", "minute", "day"] [defaults to 'day']
+**region** | **String** | Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America.  | [optional] [one of: "usa", "europe", "asia", "asia_india", "asia_southkorea", "africa_std", "southamerica_std"]
 
 ### Return type
 
@@ -246,7 +246,7 @@ Fetches the list of codes for regions that are covered by the Fastly CDN service
 ```javascript
 apiInstance.getRegions()
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -276,13 +276,13 @@ Returns usage information aggregated across all Fastly services and grouped by r
 const options = {
   from: 2020-04-09T18:14:30Z,
   to: 2020-04-09T18:14:30Z,
-  by: 'day',
-  region: ,
+  by: "hour",
+  region: "usa",
 };
 
 apiInstance.getUsage(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -295,8 +295,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **from** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
 **to** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
-**by** | **String** | Duration of sample windows. One of:    * &#x60;hour&#x60; - Group data by hour.   * &#x60;minute&#x60; - Group data by minute.   * &#x60;day&#x60; - Group data by day.  | [optional] [default to &#39;day&#39;]
-**region** | **String** | Limit query to a specific geographic region. One of:    * &#x60;usa&#x60; - North America.   * &#x60;europe&#x60; - Europe.   * &#x60;anzac&#x60; - Australia and New Zealand.   * &#x60;asia&#x60; - Asia.   * &#x60;asia_india&#x60; - India.   * &#x60;asia_southkorea&#x60; - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * &#x60;africa_std&#x60; - Africa.   * &#x60;southamerica_std&#x60; - South America.  | [optional]
+**by** | **String** | Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [optional] [one of: "hour", "minute", "day"] [defaults to 'day']
+**region** | **String** | Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America.  | [optional] [one of: "usa", "europe", "asia", "asia_india", "asia_southkorea", "africa_std", "southamerica_std"]
 
 ### Return type
 
@@ -318,12 +318,12 @@ const options = {
   year: 2020,
   month: 05,
   billable_units: true,
-  region: ,
+  region: "usa",
 };
 
 apiInstance.getUsageMonth(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -336,8 +336,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **year** | **String** | 4-digit year. | [optional]
 **month** | **String** | 2-digit month. | [optional]
-**billable_units** | **Boolean** | If &#x60;true&#x60;, return results as billable units. | [optional]
-**region** | **String** | Limit query to a specific geographic region. One of:    * &#x60;usa&#x60; - North America.   * &#x60;europe&#x60; - Europe.   * &#x60;anzac&#x60; - Australia and New Zealand.   * &#x60;asia&#x60; - Asia.   * &#x60;asia_india&#x60; - India.   * &#x60;asia_southkorea&#x60; - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * &#x60;africa_std&#x60; - Africa.   * &#x60;southamerica_std&#x60; - South America.  | [optional]
+**billable_units** | **Boolean** | If `true`, return results as billable units. | [optional]
+**region** | **String** | Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America.  | [optional] [one of: "usa", "europe", "asia", "asia_india", "asia_southkorea", "africa_std", "southamerica_std"]
 
 ### Return type
 
@@ -358,13 +358,13 @@ Returns usage information aggregated by service and grouped by service and regio
 const options = {
   from: 2020-04-09T18:14:30Z,
   to: 2020-04-09T18:14:30Z,
-  by: 'day',
-  region: ,
+  by: "hour",
+  region: "usa",
 };
 
 apiInstance.getUsageService(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -377,8 +377,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **from** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
 **to** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
-**by** | **String** | Duration of sample windows. One of:    * &#x60;hour&#x60; - Group data by hour.   * &#x60;minute&#x60; - Group data by minute.   * &#x60;day&#x60; - Group data by day.  | [optional] [default to &#39;day&#39;]
-**region** | **String** | Limit query to a specific geographic region. One of:    * &#x60;usa&#x60; - North America.   * &#x60;europe&#x60; - Europe.   * &#x60;anzac&#x60; - Australia and New Zealand.   * &#x60;asia&#x60; - Asia.   * &#x60;asia_india&#x60; - India.   * &#x60;asia_southkorea&#x60; - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * &#x60;africa_std&#x60; - Africa.   * &#x60;southamerica_std&#x60; - South America.  | [optional]
+**by** | **String** | Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [optional] [one of: "hour", "minute", "day"] [defaults to 'day']
+**region** | **String** | Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America.  | [optional] [one of: "usa", "europe", "asia", "asia_india", "asia_southkorea", "africa_std", "southamerica_std"]
 
 ### Return type
 

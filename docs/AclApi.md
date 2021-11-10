@@ -35,7 +35,7 @@ const options = {
 
 apiInstance.createAcl(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -74,7 +74,7 @@ const options = {
 
 apiInstance.deleteAcl(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -113,7 +113,7 @@ const options = {
 
 apiInstance.getAcl(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -151,7 +151,7 @@ const options = {
 
 apiInstance.listAcls(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -190,7 +190,7 @@ const options = {
 
 apiInstance.updateAcl(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **address** | **String** | A hostname or IPv4 address. | [optional] 
-**port** | **Number** | The port number. | [optional] [default to 514]
+**port** | **Number** | The port number. | [optional] [defaults to 514]
 
 
 

@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import DictionaryItem from './DictionaryItem';
+import ServiceAuthorization from './ServiceAuthorization';
 
 /**
  * The InlineObject4 model module.
@@ -48,8 +48,8 @@ class InlineObject4 {
         if (data) {
             obj = obj || new InlineObject4();
 
-            if (data.hasOwnProperty('items')) {
-                obj['items'] = ApiClient.convertToType(data['items'], [DictionaryItem]);
+            if (data.hasOwnProperty('data')) {
+                obj['data'] = ApiClient.convertToType(data['data'], [ServiceAuthorization]);
             }
         }
         return obj;
@@ -59,9 +59,9 @@ class InlineObject4 {
 }
 
 /**
- * @member {Array.<module:models/DictionaryItem>} items
+ * @member {Array.<module:models/ServiceAuthorization>} data
  */
-InlineObject4.prototype['items'] = undefined;
+InlineObject4.prototype['data'] = undefined;
 
 
 

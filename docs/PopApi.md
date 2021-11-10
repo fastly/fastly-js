@@ -25,7 +25,7 @@ Get a list of all Fastly POPs.
 ```javascript
 apiInstance.listPops()
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);

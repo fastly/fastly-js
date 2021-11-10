@@ -4,13 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**status** | **String** | What the current status of this invoice can be. | [optional] 
+**status** | **String** | What the current status of this invoice can be. | [optional]  [one of: "Pending", "Outstanding", "Paid", "MTD"]
 **sent_at** | **String** |  | [optional] 
 
 
 
-## Enum: StatusEnum
+## Enums 
 
+### `status`
 
 * `Pending` (value: `"Pending"`)
 

@@ -87,9 +87,6 @@ class ServiceResponse {
             if (data.hasOwnProperty('paused')) {
                 obj['paused'] = ApiClient.convertToType(data['paused'], 'Boolean');
             }
-            if (data.hasOwnProperty('version')) {
-                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
-            }
             if (data.hasOwnProperty('versions')) {
                 obj['versions'] = ApiClient.convertToType(data['versions'], [SchemasVersionResponse]);
             }
@@ -161,12 +158,6 @@ ServiceResponse.prototype['publish_key'] = undefined;
 ServiceResponse.prototype['paused'] = undefined;
 
 /**
- * Current [version](/reference/api/services/version/) of the service.
- * @member {Number} version
- */
-ServiceResponse.prototype['version'] = undefined;
-
-/**
  * A list of [versions](/reference/api/services/version/) associated with the service.
  * @member {Array.<module:models/SchemasVersionResponse>} versions
  */
@@ -226,11 +217,6 @@ ServiceResponseAllOf.prototype['publish_key'] = undefined;
  * @member {Boolean} paused
  */
 ServiceResponseAllOf.prototype['paused'] = undefined;
-/**
- * Current [version](/reference/api/services/version/) of the service.
- * @member {Number} version
- */
-ServiceResponseAllOf.prototype['version'] = undefined;
 /**
  * A list of [versions](/reference/api/services/version/) associated with the service.
  * @member {Array.<module:models/SchemasVersionResponse>} versions

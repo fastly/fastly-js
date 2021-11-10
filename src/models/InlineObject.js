@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import CustomerCustomerIdBillingAddressData from './CustomerCustomerIdBillingAddressData';
+import DictionaryItem from './DictionaryItem';
 
 /**
  * The InlineObject model module.
@@ -48,8 +48,8 @@ class InlineObject {
         if (data) {
             obj = obj || new InlineObject();
 
-            if (data.hasOwnProperty('data')) {
-                obj['data'] = CustomerCustomerIdBillingAddressData.constructFromObject(data['data']);
+            if (data.hasOwnProperty('items')) {
+                obj['items'] = ApiClient.convertToType(data['items'], [DictionaryItem]);
             }
         }
         return obj;
@@ -59,9 +59,9 @@ class InlineObject {
 }
 
 /**
- * @member {module:models/CustomerCustomerIdBillingAddressData} data
+ * @member {Array.<module:models/DictionaryItem>} items
  */
-InlineObject.prototype['data'] = undefined;
+InlineObject.prototype['items'] = undefined;
 
 
 

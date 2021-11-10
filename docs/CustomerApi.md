@@ -33,7 +33,7 @@ const options = {
 
 apiInstance.deleteCustomer(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -68,7 +68,7 @@ const options = {
 
 apiInstance.getCustomer(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -99,7 +99,7 @@ Get the logged in customer.
 ```javascript
 apiInstance.getLoggedInCustomer()
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -132,7 +132,7 @@ const options = {
 
 apiInstance.listUsers(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -164,7 +164,7 @@ Update a customer.
 const options = {
   customer_id: "customer_id_example", // required
   billing_contact_id: "billing_contact_id_example",
-  billing_network_type: ,
+  billing_network_type: "public",
   billing_ref: "billing_ref_example",
   can_configure_wordpress: true,
   can_reset_passwords: true,
@@ -191,7 +191,7 @@ const options = {
 
 apiInstance.updateCustomer(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **customer_id** | **String** |  |
 **billing_contact_id** | **String** | The alphanumeric string representing the primary billing contact. | [optional]
-**billing_network_type** | **String** | Customer&#39;s current network revenue type. | [optional]
+**billing_network_type** | **String** | Customer&#39;s current network revenue type. | [optional] [one of: "public", "private"]
 **billing_ref** | **String** | Used for adding purchased orders to customer&#39;s account. | [optional]
 **can_configure_wordpress** | **Boolean** | Whether this customer can view or edit wordpress. | [optional]
 **can_reset_passwords** | **Boolean** | Whether this customer can reset passwords. | [optional]

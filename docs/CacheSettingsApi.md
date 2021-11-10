@@ -30,7 +30,7 @@ Create a cache settings object.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  action: ,
+  action: "pass",
   cache_condition: "cache_condition_example",
   name: "name_example",
   stale_ttl: 56,
@@ -39,7 +39,7 @@ const options = {
 
 apiInstance.createCacheSettings(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
-**action** | **String** | If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule.  | [optional]
+**action** | **String** | If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule.  | [optional] [one of: "pass", "deliver", "restart"]
 **cache_condition** | **String** | Name of the cache condition controlling when this configuration applies. | [optional]
 **name** | **String** | Name for the cache settings object. | [optional]
 **stale_ttl** | **Number** | Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as &#39;stale if error&#39;). | [optional]
@@ -82,7 +82,7 @@ const options = {
 
 apiInstance.deleteCacheSettings(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -121,7 +121,7 @@ const options = {
 
 apiInstance.getCacheSettings(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -159,7 +159,7 @@ const options = {
 
 apiInstance.listCacheSettings(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -193,7 +193,7 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   cache_settings_name: "cache_settings_name_example", // required
-  action: ,
+  action: "pass",
   cache_condition: "cache_condition_example",
   name: "name_example",
   stale_ttl: 56,
@@ -202,7 +202,7 @@ const options = {
 
 apiInstance.updateCacheSettings(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
 **cache_settings_name** | **String** |  |
-**action** | **String** | If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule.  | [optional]
+**action** | **String** | If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule.  | [optional] [one of: "pass", "deliver", "restart"]
 **cache_condition** | **String** | Name of the cache condition controlling when this configuration applies. | [optional]
 **name** | **String** | Name for the cache settings object. | [optional]
 **stale_ttl** | **Number** | Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as &#39;stale if error&#39;). | [optional]

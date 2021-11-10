@@ -32,7 +32,7 @@ const options = {
 
 apiInstance.getTlsConfig(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -44,7 +44,7 @@ apiInstance.getTlsConfig(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **tls_configuration_id** | **String** |  |
-**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: &#x60;dns_records&#x60;.  | [optional]
+**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: `dns_records`.  | [optional]
 
 ### Return type
 
@@ -65,13 +65,13 @@ List all TLS configurations.
 const options = {
   filter_bulk: "filter_bulk_example",
   include: dns_records,
-  page_number: 56,
+  page_number: 1,
   page_size: 20,
 };
 
 apiInstance.listTlsConfigs(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -83,9 +83,9 @@ apiInstance.listTlsConfigs(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter_bulk** | **String** | Optionally filters by the bulk attribute. | [optional]
-**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: &#x60;dns_records&#x60;.  | [optional]
+**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: `dns_records`.  | [optional]
 **page_number** | **Number** | Current page. | [optional]
-**page_size** | **Number** | Number of records per page. | [optional] [default to 20]
+**page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
 
 ### Return type
 
@@ -110,7 +110,7 @@ const options = {
 
 apiInstance.updateTlsConfig(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);

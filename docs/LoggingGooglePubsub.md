@@ -5,14 +5,38 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** | The name for the real-time logging configuration. | [optional] 
-**placement** | [**LoggingPlacement**](LoggingPlacement.md) |  | [optional] 
-**format_version** | [**LoggingFormatVersion**](LoggingFormatVersion.md) |  | [optional] 
+**placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional]  [one of: "none", "waf_debug"]
+**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.   | [optional]  [one of: 1, 2][defaults to FormatVersionEnum.v2]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional] 
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
-**user** | **String** | Your Google Cloud Platform service account email address. The &#x60;client_email&#x60; field in your service account authentication JSON. Required. | [optional] 
-**secret_key** | **String** | Your Google Cloud Platform account secret key. The &#x60;private_key&#x60; field in your service account authentication JSON. Required. | [optional] 
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [defaults to '%h %l %u %t "%r" %&gt;s %b']
+**user** | **String** | Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required. | [optional] 
+**secret_key** | **String** | Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required. | [optional] 
 **topic** | **String** | The Google Cloud Pub/Sub topic to which logs will be published. Required. | [optional] 
 **project_id** | **String** | Your Google Cloud Platform project ID. Required | [optional] 
+
+
+
+ 
+
+### `placement`
+
+* `none` (value: `"none"`)
+
+* `waf_debug` (value: `"waf_debug"`)
+
+
+
+
+
+ 
+
+### `format_version`
+
+* `v1` (value: `1`)
+
+* `v2` (value: `2`)
+
+
 
 
 

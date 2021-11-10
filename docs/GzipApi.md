@@ -38,7 +38,7 @@ const options = {
 
 apiInstance.createGzipConfig(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -80,7 +80,7 @@ const options = {
 
 apiInstance.deleteGzipConfig(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -119,7 +119,7 @@ const options = {
 
 apiInstance.getGzipConfigs(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -157,7 +157,7 @@ const options = {
 
 apiInstance.listGzipConfigs(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -199,7 +199,7 @@ const options = {
 
 apiInstance.updateGzipConfig(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);

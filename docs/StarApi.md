@@ -32,7 +32,7 @@ const options = {
 
 apiInstance.createServiceStar(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -102,7 +102,7 @@ const options = {
 
 apiInstance.getServiceStar(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -133,7 +133,7 @@ List stars.
 ```javascript
 apiInstance.listServiceStars()
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);

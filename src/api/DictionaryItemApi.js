@@ -14,7 +14,7 @@
 
 import ApiClient from "../ApiClient";
 import DictionaryItemResponse from '../models/DictionaryItemResponse';
-import InlineObject4 from '../models/InlineObject4';
+import InlineObject from '../models/InlineObject';
 
 /**
 * DictionaryItem service.
@@ -44,11 +44,11 @@ export default class DictionaryItemApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {String} options.dictionary_id
-     * @param {module:models/InlineObject4} [options.inline_object4]
+     * @param {module:models/InlineObject} [options.inline_object]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     bulkUpdateDictionaryItemWithHttpInfo(options = {}) {
-      let postBody = options['inline_object4'];
+      let postBody = options['inline_object'];
       // Verify the required parameter 'service_id' is set.
       if (options['service_id'] === undefined || options['service_id'] === null) {
         throw new Error("Missing the required parameter 'service_id'.");
@@ -85,7 +85,7 @@ export default class DictionaryItemApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {String} options.dictionary_id
-     * @param {module:models/InlineObject4} [options.inline_object4]
+     * @param {module:models/InlineObject} [options.inline_object]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     bulkUpdateDictionaryItem(options = {}) {

@@ -36,7 +36,7 @@ const options = {
 
 apiInstance.createTlsSub(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -147,7 +147,7 @@ const options = {
 
 apiInstance.getTlsSub(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -159,7 +159,7 @@ apiInstance.getTlsSub(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **tls_subscription_id** | **String** |  |
-**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_authorizations&#x60; and &#x60;tls_authorizations.globalsign_email_challenge&#x60;.  | [optional]
+**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`.  | [optional]
 
 ### Return type
 
@@ -182,14 +182,14 @@ const options = {
   filter_tls_domains_id: "filter_tls_domains_id_example",
   filter_has_active_order: true,
   include: tls_authorizations,
-  page_number: 56,
+  page_number: 1,
   page_size: 20,
-  sort: 'created_at',
+  sort: "created_at",
 };
 
 apiInstance.listTlsSubs(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -200,13 +200,13 @@ apiInstance.listTlsSubs(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**filter_state** | **String** | Limit the returned subscriptions by state. Valid values are &#x60;pending&#x60;, &#x60;processing&#x60;, &#x60;issued&#x60;, and &#x60;renewing&#x60;. Accepts parameters: &#x60;not&#x60; (e.g., &#x60;filter[state][not]&#x3D;renewing&#x60;).  | [optional]
+**filter_state** | **String** | Limit the returned subscriptions by state. Valid values are `pending`, `processing`, `issued`, and `renewing`. Accepts parameters: `not` (e.g., `filter[state][not]&#x3D;renewing`).  | [optional]
 **filter_tls_domains_id** | **String** | Limit the returned subscriptions to those that include the specific domain. | [optional]
-**filter_has_active_order** | **Boolean** | Limit the returned subscriptions to those that have currently active orders. Permitted values: &#x60;true&#x60;.  | [optional]
-**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_authorizations&#x60; and &#x60;tls_authorizations.globalsign_email_challenge&#x60;.  | [optional]
+**filter_has_active_order** | **Boolean** | Limit the returned subscriptions to those that have currently active orders. Permitted values: `true`.  | [optional]
+**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`.  | [optional]
 **page_number** | **Number** | Current page. | [optional]
-**page_size** | **Number** | Number of records per page. | [optional] [default to 20]
-**sort** | **String** | The order in which to list the results by creation date. | [optional] [default to &#39;created_at&#39;]
+**page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
+**sort** | **String** | The order in which to list the results by creation date. | [optional] [one of: "created_at", "-created_at"] [defaults to 'created_at']
 
 ### Return type
 
@@ -232,7 +232,7 @@ const options = {
 
 apiInstance.patchTlsSub(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -271,7 +271,7 @@ const options = {
 
 apiInstance.postTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallenges(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
