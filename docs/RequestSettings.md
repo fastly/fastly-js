@@ -18,35 +18,4 @@ Name | Type | Description | Notes
 **xff** | **String** | Short for X-Forwarded-For. | [optional]  [one of: "clear", "leave", "append", "append_all", "overwrite"]
 
 
-
-## Enums 
-
-### `action`
-
-* `lookup` (value: `"lookup"`)
-
-* `pass` (value: `"pass"`)
-
-
-
-
-
- 
-
-### `xff`
-
-* `clear` (value: `"clear"`)
-
-* `leave` (value: `"leave"`)
-
-* `append` (value: `"append"`)
-
-* `append_all` (value: `"append_all"`)
-
-* `overwrite` (value: `"overwrite"`)
-
-
-
-
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

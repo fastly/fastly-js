@@ -17,17 +17,4 @@ Name | Type | Description | Notes
 **versions** | [**[SchemasVersionResponse]**](SchemasVersionResponse.md) | A list of [versions](/reference/api/services/version/) associated with the service. | [optional] 
 
 
-
- 
-
-### `type`
-
-* `vcl` (value: `"vcl"`)
-
-* `wasm` (value: `"wasm"`)
-
-
-
-
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

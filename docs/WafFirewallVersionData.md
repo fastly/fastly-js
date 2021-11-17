@@ -8,5 +8,4 @@ Name | Type | Description | Notes
 **attributes** | [**WafFirewallVersionDataAttributes**](WafFirewallVersionDataAttributes.md) |  | [optional] 
 
 
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

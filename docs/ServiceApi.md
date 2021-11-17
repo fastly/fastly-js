@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[SchemasDomainResponse]**](SchemasDomainResponse.md)
+[**[DomainResponse]**](DomainResponse.md)
 
 
 ## `listServices`

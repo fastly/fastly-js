@@ -10,19 +10,4 @@ Name | Type | Description | Notes
 **diff** | **String** | The differences between two specified versions. | [optional] 
 
 
-
- 
-
-### `format`
-
-* `text` (value: `"text"`)
-
-* `html` (value: `"html"`)
-
-* `html_simple` (value: `"html_simple"`)
-
-
-
-
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

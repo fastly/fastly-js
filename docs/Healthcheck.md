@@ -18,5 +18,4 @@ Name | Type | Description | Notes
 **window** | **Number** | The number of most recent healthcheck queries to keep for this healthcheck. | [optional] 
 
 
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

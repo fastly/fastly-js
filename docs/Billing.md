@@ -13,5 +13,4 @@ Name | Type | Description | Notes
 **regions** | **{String: {String: Object}}** |  | [optional] 
 
 
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

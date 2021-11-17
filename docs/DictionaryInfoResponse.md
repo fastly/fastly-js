@@ -9,5 +9,4 @@ Name | Type | Description | Notes
 **digest** | **String** | A hash of all the dictionary content. | [optional] 
 
 
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

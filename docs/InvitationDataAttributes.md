@@ -10,17 +10,4 @@ Name | Type | Description | Notes
 **status_code** | **Number** | Indicates whether or not the invitation is active. | [optional]  [one of: 0, 1]
 
 
-
- 
-
-### `status_code`
-
-* `inactive` (value: `0`)
-
-* `active` (value: `1`)
-
-
-
-
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

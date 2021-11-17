@@ -9,5 +9,4 @@ Name | Type | Description | Notes
 **attributes** | [**WafRuleAttributes**](WafRuleAttributes.md) |  | [optional] 
 
 
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

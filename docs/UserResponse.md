@@ -20,5 +20,4 @@ Name | Type | Description | Notes
 **customer_id** | **String** | Alphanumeric string identifying the customer. | [optional] [readonly] 
 
 
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

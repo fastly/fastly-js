@@ -11,19 +11,4 @@ Name | Type | Description | Notes
 **ttl** | **Number** | Maximum time to consider the object fresh in the cache (the cache &#39;time to live&#39;). | [optional] 
 
 
-
-## Enums 
-
-### `action`
-
-* `pass` (value: `"pass"`)
-
-* `deliver` (value: `"deliver"`)
-
-* `restart` (value: `"restart"`)
-
-
-
-
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

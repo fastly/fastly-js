@@ -8,5 +8,4 @@ Name | Type | Description | Notes
 **included** | [**[IncludedWithWafFirewallVersionItem]**](IncludedWithWafFirewallVersionItem.md) |  | [optional] 
 
 
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

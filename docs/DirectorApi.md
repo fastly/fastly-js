@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 **name** | **String** | Name for the Director. | [optional]
 **quorum** | **Number** | The percentage of capacity that needs to be up for a director to be considered up. `0` to `100`. | [optional] [defaults to 75]
 **shield** | **String** | Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding. | [optional] [defaults to 'null']
-**type** | **Number** | What type of load balance group to use. | [optional] [one of: 1, 3, 4] [defaults to 1]
+**type** | **Number** | What type of load balance group to use. | [optional] [one of: 1, 3, 4]
 **retries** | **Number** | How many backends to search if it fails. | [optional] [defaults to 5]
 
 ### Return type

@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **shield** | **String** | Data center POP code of the data center to use as a [shield](https://docs.fastly.com/en/guides/shielding). | [optional] 
 **ssl_ca_cert** | **String** | CA certificate attached to origin. | [optional] 
 **ssl_cert_hostname** | **String** | Overrides `ssl_hostname`, but only for cert verification. Does not affect SNI at all. | [optional] 
-**ssl_check_cert** | **Boolean** | Be strict on checking SSL certs. | [optional] [defaults to true]
+**ssl_check_cert** | **Boolean** | Be strict on checking SSL certs. | [optional]  [defaults to true]
 **ssl_ciphers** | **String** | List of [OpenSSL ciphers](https://www.openssl.org/docs/manmaster/man1/ciphers.html) to support for connections to this origin. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated. | [optional] 
 **ssl_client_cert** | **String** | Client certificate attached to origin. | [optional] 
 **ssl_client_key** | **String** | Client key attached to origin. | [optional] 
@@ -33,7 +33,6 @@ Name | Type | Description | Notes
 **ssl_sni_hostname** | **String** | Overrides `ssl_hostname`, but only for SNI in the handshake. Does not affect cert validation at all. | [optional] 
 **use_ssl** | **Boolean** | Whether or not to require TLS for connections to this backend. | [optional] 
 **weight** | **Number** | Weight used to load balance this backend against others. May be any positive integer. If `auto_loadbalance` is true, the chance of this backend being selected is equal to its own weight over the sum of all weights for backends that have `auto_loadbalance` set to true. | [optional] 
-
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

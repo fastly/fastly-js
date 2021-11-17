@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import SchemasDomainResponse from '../models/SchemasDomainResponse';
+import DomainResponse from '../models/DomainResponse';
 import ServiceDetail from '../models/ServiceDetail';
 import ServiceListResponse from '../models/ServiceListResponse';
 import ServiceResponse from '../models/ServiceResponse';
@@ -238,7 +238,7 @@ export default class ServiceApi {
      * List the domains within a service.
      * @param {Object} options
      * @param {String} options.service_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/SchemasDomainResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/DomainResponse>} and HTTP response
      */
     listServiceDomainsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -260,7 +260,7 @@ export default class ServiceApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [SchemasDomainResponse];
+      let returnType = [DomainResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/domain', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -272,7 +272,7 @@ export default class ServiceApi {
      * List the domains within a service.
      * @param {Object} options
      * @param {String} options.service_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/SchemasDomainResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/DomainResponse>}
      */
     listServiceDomains(options = {}) {
       return this.listServiceDomainsWithHttpInfo(options)

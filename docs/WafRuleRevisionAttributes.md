@@ -14,17 +14,4 @@ Name | Type | Description | Notes
 **vcl** | **String** | The VCL representation of the rule logic. | [optional] [readonly] 
 
 
-
- 
-
-### `state`
-
-* `latest` (value: `"latest"`)
-
-* `outdated` (value: `"outdated"`)
-
-
-
-
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

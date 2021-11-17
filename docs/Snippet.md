@@ -8,50 +8,7 @@ Name | Type | Description | Notes
 **dynamic** | **String** | Sets the snippet version. | [optional]  [one of: "0", "1"]
 **type** | **String** | The location in generated VCL where the snippet should be placed. | [optional]  [one of: "init", "recv", "hash", "hit", "miss", "pass", "fetch", "error", "deliver", "log", "none"]
 **content** | **String** | The VCL code that specifies exactly what the snippet does. | [optional] 
-**priority** | **String** | Numeric string value. Priority determines execution order. Lower numbers execute first. | [optional] [defaults to '100']
-
-
-
- 
-
-### `dynamic`
-
-* `0` (value: `"0"`)
-
-* `1` (value: `"1"`)
-
-
-
-
-
- 
-
-### `type`
-
-* `init` (value: `"init"`)
-
-* `recv` (value: `"recv"`)
-
-* `hash` (value: `"hash"`)
-
-* `hit` (value: `"hit"`)
-
-* `miss` (value: `"miss"`)
-
-* `pass` (value: `"pass"`)
-
-* `fetch` (value: `"fetch"`)
-
-* `error` (value: `"error"`)
-
-* `deliver` (value: `"deliver"`)
-
-* `log` (value: `"log"`)
-
-* `none` (value: `"none"`)
-
-
-
+**priority** | **String** | Numeric string value. Priority determines execution order. Lower numbers execute first. | [optional]  [defaults to '100']
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

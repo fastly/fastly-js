@@ -8,5 +8,4 @@ Name | Type | Description | Notes
 **id** | **String** | Alphanumeric string identifying the user. | [optional] [readonly] 
 
 
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

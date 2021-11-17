@@ -13,5 +13,4 @@ Name | Type | Description | Notes
 **user_agent** | **String** | User-Agent header of the client that last used the token. | [optional] 
 
 
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

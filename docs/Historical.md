@@ -9,5 +9,4 @@ Name | Type | Description | Notes
 **msg** | **String** | If the query was not successful, this will provide a string that explains why. | [optional] 
 
 
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

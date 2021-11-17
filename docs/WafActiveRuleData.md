@@ -9,5 +9,4 @@ Name | Type | Description | Notes
 **relationships** | [**RelationshipsForWafActiveRule**](RelationshipsForWafActiveRule.md) |  | [optional] 
 
 
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

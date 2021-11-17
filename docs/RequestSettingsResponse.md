@@ -23,35 +23,4 @@ Name | Type | Description | Notes
 **updated_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
 
 
-
-## Enums 
-
-### `action`
-
-* `lookup` (value: `"lookup"`)
-
-* `pass` (value: `"pass"`)
-
-
-
-
-
- 
-
-### `xff`
-
-* `clear` (value: `"clear"`)
-
-* `leave` (value: `"leave"`)
-
-* `append` (value: `"append"`)
-
-* `append_all` (value: `"append_all"`)
-
-* `overwrite` (value: `"overwrite"`)
-
-
-
-
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

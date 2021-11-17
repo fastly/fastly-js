@@ -10,5 +10,4 @@ Name | Type | Description | Notes
 **diff** | **String** | The differences between two specified service versions. Returns the full config if the version configurations are identical. | [optional] 
 
 
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

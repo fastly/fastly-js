@@ -22,5 +22,4 @@ Name | Type | Description | Notes
 **terms** | **String** | Payment terms. Almost always Net15. | [optional] 
 
 
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

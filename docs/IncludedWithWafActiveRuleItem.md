@@ -10,5 +10,4 @@ Name | Type | Description | Notes
 **attributes** | [**WafRuleRevisionAttributes**](WafRuleRevisionAttributes.md) |  | [optional] 
 
 
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

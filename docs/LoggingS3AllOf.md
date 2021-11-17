@@ -9,13 +9,12 @@ Name | Type | Description | Notes
 **bucket_name** | **String** | The bucket name for S3 account. | [optional] 
 **domain** | **String** | The domain of the Amazon S3 endpoint. | [optional] 
 **iam_role** | **String** | The Amazon Resource Name (ARN) for the IAM role granting Fastly access to S3. Not required if `access_key` and `secret_key` are provided. | [optional] 
-**path** | **String** | The path to upload logs to. | [optional] [defaults to 'null']
-**public_key** | **String** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional] [defaults to 'null']
-**redundancy** | **String** | The S3 redundancy level. | [optional] [defaults to 'null']
+**path** | **String** | The path to upload logs to. | [optional]  [defaults to 'null']
+**public_key** | **String** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional]  [defaults to 'null']
+**redundancy** | **String** | The S3 redundancy level. | [optional]  [defaults to 'null']
 **secret_key** | **String** | The secret key for your S3 account. Not required if `iam_role` is provided. | [optional] 
-**server_side_encryption_kms_key_id** | **String** | Optional server-side KMS Key Id. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`. | [optional] [defaults to 'null']
-**server_side_encryption** | **String** | Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption. | [optional] [defaults to 'null']
-
+**server_side_encryption_kms_key_id** | **String** | Optional server-side KMS Key Id. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`. | [optional]  [defaults to 'null']
+**server_side_encryption** | **String** | Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption. | [optional]  [defaults to 'null']
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

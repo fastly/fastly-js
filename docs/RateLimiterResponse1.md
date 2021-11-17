@@ -9,5 +9,4 @@ Name | Type | Description | Notes
 **content** | **String** | Response body for custom limit enforcement response. | [optional] 
 
 
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

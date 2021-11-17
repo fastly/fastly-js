@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **services** | **[String]** | List of alphanumeric strings identifying services (optional). If no services are specified, the token will have access to all services on the account.  | [optional] 
 **name** | **String** | Name of the token. | [optional] 
-**scope** | **String** | Space-delimited list of authorization scope. | [optional]  [one of: "global", "purge_select", "purge_all", "global:read"][defaults to 'global']
+**scope** | **String** | Space-delimited list of authorization scope. | [optional]  [one of: "global", "purge_select", "purge_all", "global:read"] [defaults to 'global']
 **created_at** | **String** | Time-stamp (UTC) of when the token was created. | [optional] 
 **deleted_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **updated_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
@@ -17,23 +17,6 @@ Name | Type | Description | Notes
 **ip** | **String** | IP Address of the client that last used the token. | [optional] 
 **user_agent** | **String** | User-Agent header of the client that last used the token. | [optional] 
 **access_token** | **String** | The alphanumeric string for accessing the API (only available on token creation). | [optional] 
-
-
-
- 
-
-### `scope`
-
-* `global` (value: `"global"`)
-
-* `purge_select` (value: `"purge_select"`)
-
-* `purge_all` (value: `"purge_all"`)
-
-* `global:read` (value: `"global:read"`)
-
-
-
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

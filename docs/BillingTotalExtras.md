@@ -9,5 +9,4 @@ Name | Type | Description | Notes
 **setup** | **Number** | Initial set up cost in USD. Not present if $0.0 or this is not the month the extra was added. | [optional] 
 
 
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

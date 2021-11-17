@@ -312,8 +312,6 @@ import Results from './models/Results';
 import RoleUser from './models/RoleUser';
 import SchemasBackend from './models/SchemasBackend';
 import SchemasDirector from './models/SchemasDirector';
-import SchemasDomain from './models/SchemasDomain';
-import SchemasDomainResponse from './models/SchemasDomainResponse';
 import SchemasSnippetResponse from './models/SchemasSnippetResponse';
 import SchemasUserResponse from './models/SchemasUserResponse';
 import SchemasVclResponse from './models/SchemasVclResponse';
@@ -2421,18 +2419,6 @@ export {
      * @property {module:models/SchemasDirector}
      */
     SchemasDirector,
-
-    /**
-     * The SchemasDomain model constructor.
-     * @property {module:models/SchemasDomain}
-     */
-    SchemasDomain,
-
-    /**
-     * The SchemasDomainResponse model constructor.
-     * @property {module:models/SchemasDomainResponse}
-     */
-    SchemasDomainResponse,
 
     /**
      * The SchemasSnippetResponse model constructor.

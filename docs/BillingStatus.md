@@ -8,21 +8,4 @@ Name | Type | Description | Notes
 **sent_at** | **String** |  | [optional] 
 
 
-
-## Enums 
-
-### `status`
-
-* `Pending` (value: `"Pending"`)
-
-* `Outstanding` (value: `"Outstanding"`)
-
-* `Paid` (value: `"Paid"`)
-
-* `MTD` (value: `"MTD"`)
-
-
-
-
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

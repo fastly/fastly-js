@@ -10,5 +10,4 @@ Name | Type | Description | Notes
 **name** | **String** | Name of the gzip configuration. | [optional] 
 
 
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

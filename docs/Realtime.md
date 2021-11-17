@@ -9,5 +9,4 @@ Name | Type | Description | Notes
 **data** | [**[RealtimeEntry]**](RealtimeEntry.md) | A list of [records](#record-data-model), each representing one second of time. | [optional] 
 
 
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

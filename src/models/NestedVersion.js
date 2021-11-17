@@ -15,13 +15,13 @@ import ApiClient from '../ApiClient';
 import BackendResponse from './BackendResponse';
 import CacheSettingResponse from './CacheSettingResponse';
 import ConditionResponse from './ConditionResponse';
+import DomainResponse from './DomainResponse';
 import GzipResponse from './GzipResponse';
 import HeaderResponse from './HeaderResponse';
 import HealthcheckResponse from './HealthcheckResponse';
 import RequestSettingsResponse from './RequestSettingsResponse';
 import ResponseObjectResponse from './ResponseObjectResponse';
 import SchemasDirector from './SchemasDirector';
-import SchemasDomainResponse from './SchemasDomainResponse';
 import SchemasSnippetResponse from './SchemasSnippetResponse';
 import SchemasVclResponse from './SchemasVclResponse';
 import SchemasVersionResponse from './SchemasVersionResponse';
@@ -112,7 +112,7 @@ class NestedVersion {
                 obj['directors'] = ApiClient.convertToType(data['directors'], [SchemasDirector]);
             }
             if (data.hasOwnProperty('domains')) {
-                obj['domains'] = ApiClient.convertToType(data['domains'], [SchemasDomainResponse]);
+                obj['domains'] = ApiClient.convertToType(data['domains'], [DomainResponse]);
             }
             if (data.hasOwnProperty('gzips')) {
                 obj['gzips'] = ApiClient.convertToType(data['gzips'], [GzipResponse]);
@@ -244,7 +244,7 @@ NestedVersion.prototype['directors'] = undefined;
 
 /**
  * List of domains associated to this service.
- * @member {Array.<module:models/SchemasDomainResponse>} domains
+ * @member {Array.<module:models/DomainResponse>} domains
  */
 NestedVersion.prototype['domains'] = undefined;
 
@@ -385,7 +385,7 @@ VersionDetail.prototype['conditions'] = undefined;
 VersionDetail.prototype['directors'] = undefined;
 /**
  * List of domains associated to this service.
- * @member {Array.<module:models/SchemasDomainResponse>} domains
+ * @member {Array.<module:models/DomainResponse>} domains
  */
 VersionDetail.prototype['domains'] = undefined;
 /**

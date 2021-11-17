@@ -9,5 +9,4 @@ Name | Type | Description | Notes
 **token** | **String** | The Write Key from the Account page of your Honeycomb account. | [optional] 
 
 
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -30,17 +30,4 @@ Name | Type | Description | Notes
 **technical_contact_id** | **String** | The alphanumeric string identifying the account&#39;s technical contact. | [optional] 
 
 
-
- 
-
-### `billing_network_type`
-
-* `public` (value: `"public"`)
-
-* `private` (value: `"private"`)
-
-
-
-
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

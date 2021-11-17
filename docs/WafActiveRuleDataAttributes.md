@@ -9,19 +9,4 @@ Name | Type | Description | Notes
 **status** | **String** | Describes the behavior for the particular rule revision within this firewall version. | [optional]  [one of: "log", "block", "score"]
 
 
-
- 
-
-### `status`
-
-* `log` (value: `"log"`)
-
-* `block` (value: `"block"`)
-
-* `score` (value: `"score"`)
-
-
-
-
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

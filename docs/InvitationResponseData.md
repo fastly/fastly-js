@@ -10,5 +10,4 @@ Name | Type | Description | Notes
 **id** | **String** | Alphanumeric string identifying an invitation. | [optional] [readonly] 
 
 
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -10,5 +10,4 @@ Name | Type | Description | Notes
 **included** | [**[IncludedWithWafActiveRuleItem]**](IncludedWithWafActiveRuleItem.md) |  | [optional] 
 
 
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

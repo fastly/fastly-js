@@ -19,17 +19,4 @@ Name | Type | Description | Notes
 **version** | [**NestedVersion**](NestedVersion.md) |  | [optional] 
 
 
-
- 
-
-### `type`
-
-* `vcl` (value: `"vcl"`)
-
-* `wasm` (value: `"wasm"`)
-
-
-
-
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

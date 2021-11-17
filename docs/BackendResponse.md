@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **shield** | **String** | Data center POP code of the data center to use as a [shield](https://docs.fastly.com/en/guides/shielding). | [optional] 
 **ssl_ca_cert** | **String** | CA certificate attached to origin. | [optional] 
 **ssl_cert_hostname** | **String** | Overrides `ssl_hostname`, but only for cert verification. Does not affect SNI at all. | [optional] 
-**ssl_check_cert** | **Boolean** | Be strict on checking SSL certs. | [optional] [defaults to true]
+**ssl_check_cert** | **Boolean** | Be strict on checking SSL certs. | [optional]  [defaults to true]
 **ssl_ciphers** | **String** | List of [OpenSSL ciphers](https://www.openssl.org/docs/manmaster/man1/ciphers.html) to support for connections to this origin. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated. | [optional] 
 **ssl_client_cert** | **String** | Client certificate attached to origin. | [optional] 
 **ssl_client_key** | **String** | Client key attached to origin. | [optional] 
@@ -39,7 +39,6 @@ Name | Type | Description | Notes
 **service_id** | **String** | Alphanumeric string identifying the service. | [optional] [readonly] 
 **version** | **Number** | Integer identifying a service version. | [optional] [readonly] 
 **locked** | **Boolean** | Indicates whether the version of the service this backend is attached to accepts edits. | [optional] [readonly] 
-
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
