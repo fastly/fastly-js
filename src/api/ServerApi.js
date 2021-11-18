@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import ServerResponse from '../models/ServerResponse';
+import ServerResponse from '../model/ServerResponse';
 
 /**
 * Server service.
@@ -50,7 +50,7 @@ export default class ServerApi {
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Boolean} [options.disabled=false] - Allows servers to be enabled and disabled in a pool.
      * @param {String} [options.override_host='null'] - The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ServerResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServerResponse} and HTTP response
      */
     createPoolServerWithHttpInfo(options = {}) {
       let postBody = null;
@@ -104,7 +104,7 @@ export default class ServerApi {
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Boolean} [options.disabled=false] - Allows servers to be enabled and disabled in a pool.
      * @param {String} [options.override_host='null'] - The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ServerResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServerResponse}
      */
     createPoolServer(options = {}) {
       return this.createPoolServerWithHttpInfo(options)
@@ -180,7 +180,7 @@ export default class ServerApi {
      * @param {String} options.service_id
      * @param {String} options.pool_id
      * @param {String} options.server_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ServerResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServerResponse} and HTTP response
      */
     getPoolServerWithHttpInfo(options = {}) {
       let postBody = null;
@@ -226,7 +226,7 @@ export default class ServerApi {
      * @param {String} options.service_id
      * @param {String} options.pool_id
      * @param {String} options.server_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ServerResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServerResponse}
      */
     getPoolServer(options = {}) {
       return this.getPoolServerWithHttpInfo(options)
@@ -240,7 +240,7 @@ export default class ServerApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {String} options.pool_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/ServerResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ServerResponse>} and HTTP response
      */
     listPoolServersWithHttpInfo(options = {}) {
       let postBody = null;
@@ -280,7 +280,7 @@ export default class ServerApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {String} options.pool_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/ServerResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ServerResponse>}
      */
     listPoolServers(options = {}) {
       return this.listPoolServersWithHttpInfo(options)
@@ -302,7 +302,7 @@ export default class ServerApi {
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Boolean} [options.disabled=false] - Allows servers to be enabled and disabled in a pool.
      * @param {String} [options.override_host='null'] - The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ServerResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServerResponse} and HTTP response
      */
     updatePoolServerWithHttpInfo(options = {}) {
       let postBody = null;
@@ -362,7 +362,7 @@ export default class ServerApi {
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Boolean} [options.disabled=false] - Allows servers to be enabled and disabled in a pool.
      * @param {String} [options.override_host='null'] - The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ServerResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServerResponse}
      */
     updatePoolServer(options = {}) {
       return this.updatePoolServerWithHttpInfo(options)

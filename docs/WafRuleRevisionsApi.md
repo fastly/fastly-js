@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 **waf_rule_id** | **String** |  |
 **page_number** | **Number** | Current page. | [optional]
 **page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
-**include** | **String** | Include relationships. Optional. | [optional] [one of: "waf_rule"] [defaults to 'waf_rule']
+**include** | **String** | Include relationships. Optional. | [optional] [one of: "waf_rule"]
 
 ### Return type
 

@@ -13,11 +13,11 @@
 
 
 import ApiClient from "../ApiClient";
-import WafActiveRule from '../models/WafActiveRule';
-import WafActiveRuleCreationResponse from '../models/WafActiveRuleCreationResponse';
-import WafActiveRuleData from '../models/WafActiveRuleData';
-import WafActiveRuleResponse from '../models/WafActiveRuleResponse';
-import WafActiveRulesResponse from '../models/WafActiveRulesResponse';
+import WafActiveRule from '../model/WafActiveRule';
+import WafActiveRuleCreationResponse from '../model/WafActiveRuleCreationResponse';
+import WafActiveRuleData from '../model/WafActiveRuleData';
+import WafActiveRuleResponse from '../model/WafActiveRuleResponse';
+import WafActiveRulesResponse from '../model/WafActiveRulesResponse';
 
 /**
 * WafActiveRules service.
@@ -103,7 +103,7 @@ export default class WafActiveRulesApi {
      * @param {Object} options
      * @param {String} options.firewall_id
      * @param {Number} options.version_id
-     * @param {module:models/WafActiveRuleData} [options.body]
+     * @param {module:model/WafActiveRuleData} [options.body]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     bulkUpdateWafActiveRulesWithHttpInfo(options = {}) {
@@ -144,7 +144,7 @@ export default class WafActiveRulesApi {
      * @param {Object} options
      * @param {String} options.firewall_id
      * @param {Number} options.version_id
-     * @param {module:models/WafActiveRuleData} [options.body]
+     * @param {module:model/WafActiveRuleData} [options.body]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     bulkUpdateWafActiveRules(options = {}) {
@@ -159,8 +159,8 @@ export default class WafActiveRulesApi {
      * @param {Object} options
      * @param {String} options.firewall_id
      * @param {Number} options.version_id
-     * @param {module:models/WafActiveRule} [options.waf_active_rule]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/WafActiveRuleCreationResponse} and HTTP response
+     * @param {module:model/WafActiveRule} [options.waf_active_rule]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafActiveRuleCreationResponse} and HTTP response
      */
     createWafActiveRuleWithHttpInfo(options = {}) {
       let postBody = options['waf_active_rule'];
@@ -200,8 +200,8 @@ export default class WafActiveRulesApi {
      * @param {Object} options
      * @param {String} options.firewall_id
      * @param {Number} options.version_id
-     * @param {module:models/WafActiveRule} [options.waf_active_rule]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/WafActiveRuleCreationResponse}
+     * @param {module:model/WafActiveRule} [options.waf_active_rule]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafActiveRuleCreationResponse}
      */
     createWafActiveRule(options = {}) {
       return this.createWafActiveRuleWithHttpInfo(options)
@@ -216,7 +216,7 @@ export default class WafActiveRulesApi {
      * @param {String} options.firewall_id
      * @param {Number} options.version_id
      * @param {String} options.waf_tag_name
-     * @param {module:models/WafActiveRule} [options.waf_active_rule]
+     * @param {module:model/WafActiveRule} [options.waf_active_rule]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     createWafActiveRulesTagWithHttpInfo(options = {}) {
@@ -263,7 +263,7 @@ export default class WafActiveRulesApi {
      * @param {String} options.firewall_id
      * @param {Number} options.version_id
      * @param {String} options.waf_tag_name
-     * @param {module:models/WafActiveRule} [options.waf_active_rule]
+     * @param {module:model/WafActiveRule} [options.waf_active_rule]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     createWafActiveRulesTag(options = {}) {
@@ -341,7 +341,7 @@ export default class WafActiveRulesApi {
      * @param {Number} options.version_id
      * @param {String} options.waf_rule_id
      * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_rule_revision` and `waf_firewall_version`. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/WafActiveRuleResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafActiveRuleResponse} and HTTP response
      */
     getWafActiveRuleWithHttpInfo(options = {}) {
       let postBody = null;
@@ -389,7 +389,7 @@ export default class WafActiveRulesApi {
      * @param {Number} options.version_id
      * @param {String} options.waf_rule_id
      * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_rule_revision` and `waf_firewall_version`. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/WafActiveRuleResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafActiveRuleResponse}
      */
     getWafActiveRule(options = {}) {
       return this.getWafActiveRuleWithHttpInfo(options)
@@ -410,7 +410,7 @@ export default class WafActiveRulesApi {
      * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_rule_revision` and `waf_firewall_version`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/WafActiveRulesResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafActiveRulesResponse} and HTTP response
      */
     listWafActiveRulesWithHttpInfo(options = {}) {
       let postBody = null;
@@ -464,7 +464,7 @@ export default class WafActiveRulesApi {
      * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_rule_revision` and `waf_firewall_version`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/WafActiveRulesResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafActiveRulesResponse}
      */
     listWafActiveRules(options = {}) {
       return this.listWafActiveRulesWithHttpInfo(options)
@@ -479,8 +479,8 @@ export default class WafActiveRulesApi {
      * @param {String} options.firewall_id
      * @param {Number} options.version_id
      * @param {String} options.waf_rule_id
-     * @param {module:models/WafActiveRule} [options.waf_active_rule]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/WafActiveRuleResponse} and HTTP response
+     * @param {module:model/WafActiveRule} [options.waf_active_rule]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafActiveRuleResponse} and HTTP response
      */
     updateWafActiveRuleWithHttpInfo(options = {}) {
       let postBody = options['waf_active_rule'];
@@ -526,8 +526,8 @@ export default class WafActiveRulesApi {
      * @param {String} options.firewall_id
      * @param {Number} options.version_id
      * @param {String} options.waf_rule_id
-     * @param {module:models/WafActiveRule} [options.waf_active_rule]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/WafActiveRuleResponse}
+     * @param {module:model/WafActiveRule} [options.waf_active_rule]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafActiveRuleResponse}
      */
     updateWafActiveRule(options = {}) {
       return this.updateWafActiveRuleWithHttpInfo(options)

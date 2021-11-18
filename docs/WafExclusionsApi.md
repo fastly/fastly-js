@@ -48,7 +48,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **firewall_id** | **String** |  |
 **firewall_version_number** | **Number** |  |
-**waf_exclusion** | [**WafExclusion**](../Model/WafExclusion.md) |  | [optional]
+**waf_exclusion** | [**WafExclusion**](WafExclusion.md) |  | [optional]
 
 ### Return type
 
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 **firewall_id** | **String** |  |
 **firewall_version_number** | **Number** |  |
 **exclusion_number** | **Number** |  |
-**waf_exclusion** | [**WafExclusion**](../Model/WafExclusion.md) |  | [optional]
+**waf_exclusion** | [**WafExclusion**](WafExclusion.md) |  | [optional]
 
 ### Return type
 

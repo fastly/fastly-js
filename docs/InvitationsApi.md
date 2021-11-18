@@ -42,7 +42,7 @@ apiInstance.createInvitation(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**invitation** | [**Invitation**](../Model/Invitation.md) |  | [optional]
+**invitation** | [**Invitation**](Invitation.md) |  | [optional]
 
 ### Return type
 

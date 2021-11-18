@@ -44,7 +44,7 @@ apiInstance.createWafFirewall(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**waf_firewall** | [**WafFirewall**](../Model/WafFirewall.md) |  | [optional]
+**waf_firewall** | [**WafFirewall**](WafFirewall.md) |  | [optional]
 
 ### Return type
 
@@ -81,7 +81,7 @@ apiInstance.deleteWafFirewall(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **firewall_id** | **String** |  |
-**waf_firewall** | [**WafFirewall**](../Model/WafFirewall.md) |  | [optional]
+**waf_firewall** | [**WafFirewall**](WafFirewall.md) |  | [optional]
 
 ### Return type
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **firewall_id** | **String** |  |
 **filter_service_version_number** | **String** | Limit the results returned to a specific service version. | [optional]
-**include** | **String** | Include related objects. Optional. | [optional] [one of: "waf_firewall_versions"] [defaults to 'waf_firewall_versions']
+**include** | **String** | Include related objects. Optional. | [optional] [one of: "waf_firewall_versions"]
 
 ### Return type
 
@@ -163,7 +163,7 @@ Name | Type | Description  | Notes
 **page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
 **filter_service_id** | **String** | Limit the results returned to a specific service. | [optional]
 **filter_service_version_number** | **String** | Limit the results returned to a specific service version. | [optional]
-**include** | **String** | Include related objects. Optional. | [optional] [one of: "waf_firewall_versions"] [defaults to 'waf_firewall_versions']
+**include** | **String** | Include related objects. Optional. | [optional] [one of: "waf_firewall_versions"]
 
 ### Return type
 
@@ -200,7 +200,7 @@ apiInstance.updateWafFirewall(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **firewall_id** | **String** |  |
-**waf_firewall** | [**WafFirewall**](../Model/WafFirewall.md) |  | [optional]
+**waf_firewall** | [**WafFirewall**](WafFirewall.md) |  | [optional]
 
 ### Return type
 

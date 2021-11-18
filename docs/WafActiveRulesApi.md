@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **firewall_id** | **String** |  |
 **version_id** | **Number** |  |
-**waf_active_rule** | [**WafActiveRule**](../Model/WafActiveRule.md) |  | [optional]
+**waf_active_rule** | [**WafActiveRule**](WafActiveRule.md) |  | [optional]
 
 ### Return type
 
@@ -170,7 +170,7 @@ Name | Type | Description  | Notes
 **firewall_id** | **String** |  |
 **version_id** | **Number** |  |
 **waf_tag_name** | **String** |  |
-**waf_active_rule** | [**WafActiveRule**](../Model/WafActiveRule.md) |  | [optional]
+**waf_active_rule** | [**WafActiveRule**](WafActiveRule.md) |  | [optional]
 
 ### Return type
 
@@ -342,7 +342,7 @@ Name | Type | Description  | Notes
 **firewall_id** | **String** |  |
 **version_id** | **Number** |  |
 **waf_rule_id** | **String** |  |
-**waf_active_rule** | [**WafActiveRule**](../Model/WafActiveRule.md) |  | [optional]
+**waf_active_rule** | [**WafActiveRule**](WafActiveRule.md) |  | [optional]
 
 ### Return type
 

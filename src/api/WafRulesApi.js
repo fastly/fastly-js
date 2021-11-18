@@ -13,8 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
-import WafRuleResponse from '../models/WafRuleResponse';
-import WafRulesResponse from '../models/WafRulesResponse';
+import WafRuleResponse from '../model/WafRuleResponse';
+import WafRulesResponse from '../model/WafRulesResponse';
 
 /**
 * WafRules service.
@@ -44,7 +44,7 @@ export default class WafRulesApi {
      * @param {Object} options
      * @param {String} options.waf_rule_id
      * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_tags` and `waf_rule_revisions`. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/WafRuleResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafRuleResponse} and HTTP response
      */
     getWafRuleWithHttpInfo(options = {}) {
       let postBody = null;
@@ -80,7 +80,7 @@ export default class WafRulesApi {
      * @param {Object} options
      * @param {String} options.waf_rule_id
      * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_tags` and `waf_rule_revisions`. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/WafRuleResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafRuleResponse}
      */
     getWafRule(options = {}) {
       return this.getWafRuleWithHttpInfo(options)
@@ -99,7 +99,7 @@ export default class WafRulesApi {
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_tags` and `waf_rule_revisions`. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/WafRulesResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafRulesResponse} and HTTP response
      */
     listWafRulesWithHttpInfo(options = {}) {
       let postBody = null;
@@ -141,7 +141,7 @@ export default class WafRulesApi {
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_tags` and `waf_rule_revisions`. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/WafRulesResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafRulesResponse}
      */
     listWafRules(options = {}) {
       return this.listWafRulesWithHttpInfo(options)

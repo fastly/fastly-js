@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
-import TlsActivation from '../models/TlsActivation';
-import TlsActivationResponse from '../models/TlsActivationResponse';
-import TlsActivationsResponse from '../models/TlsActivationsResponse';
+import TlsActivation from '../model/TlsActivation';
+import TlsActivationResponse from '../model/TlsActivationResponse';
+import TlsActivationsResponse from '../model/TlsActivationsResponse';
 
 /**
 * TlsActivations service.
@@ -43,8 +43,8 @@ export default class TlsActivationsApi {
     /**
      * Enable TLS for a particular TLS domain and certificate combination. These relationships must be specified to create the TLS activation.
      * @param {Object} options
-     * @param {module:models/TlsActivation} [options.tls_activation]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/TlsActivationResponse} and HTTP response
+     * @param {module:model/TlsActivation} [options.tls_activation]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsActivationResponse} and HTTP response
      */
     createTlsActivationWithHttpInfo(options = {}) {
       let postBody = options['tls_activation'];
@@ -72,8 +72,8 @@ export default class TlsActivationsApi {
     /**
      * Enable TLS for a particular TLS domain and certificate combination. These relationships must be specified to create the TLS activation.
      * @param {Object} options
-     * @param {module:models/TlsActivation} [options.tls_activation]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/TlsActivationResponse}
+     * @param {module:model/TlsActivation} [options.tls_activation]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsActivationResponse}
      */
     createTlsActivation(options = {}) {
       return this.createTlsActivationWithHttpInfo(options)
@@ -134,7 +134,7 @@ export default class TlsActivationsApi {
      * @param {Object} options
      * @param {String} options.tls_activation_id
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_certificate`, `tls_configuration`, and `tls_domain`. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/TlsActivationResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsActivationResponse} and HTTP response
      */
     getTlsActivationWithHttpInfo(options = {}) {
       let postBody = null;
@@ -170,7 +170,7 @@ export default class TlsActivationsApi {
      * @param {Object} options
      * @param {String} options.tls_activation_id
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_certificate`, `tls_configuration`, and `tls_domain`. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/TlsActivationResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsActivationResponse}
      */
     getTlsActivation(options = {}) {
       return this.getTlsActivationWithHttpInfo(options)
@@ -188,7 +188,7 @@ export default class TlsActivationsApi {
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_certificate`, `tls_configuration`, and `tls_domain`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/TlsActivationsResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsActivationsResponse} and HTTP response
      */
     listTlsActivationsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -228,7 +228,7 @@ export default class TlsActivationsApi {
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_certificate`, `tls_configuration`, and `tls_domain`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/TlsActivationsResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsActivationsResponse}
      */
     listTlsActivations(options = {}) {
       return this.listTlsActivationsWithHttpInfo(options)
@@ -241,8 +241,8 @@ export default class TlsActivationsApi {
      * Update the certificate used to terminate TLS traffic for the domain associated with this TLS activation.
      * @param {Object} options
      * @param {String} options.tls_activation_id
-     * @param {module:models/TlsActivation} [options.tls_activation]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/TlsActivationResponse} and HTTP response
+     * @param {module:model/TlsActivation} [options.tls_activation]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsActivationResponse} and HTTP response
      */
     updateTlsActivationWithHttpInfo(options = {}) {
       let postBody = options['tls_activation'];
@@ -276,8 +276,8 @@ export default class TlsActivationsApi {
      * Update the certificate used to terminate TLS traffic for the domain associated with this TLS activation.
      * @param {Object} options
      * @param {String} options.tls_activation_id
-     * @param {module:models/TlsActivation} [options.tls_activation]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/TlsActivationResponse}
+     * @param {module:model/TlsActivation} [options.tls_activation]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsActivationResponse}
      */
     updateTlsActivation(options = {}) {
       return this.updateTlsActivationWithHttpInfo(options)

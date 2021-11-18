@@ -13,8 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
-import LoggingHttpsResponse from '../models/LoggingHttpsResponse';
-import LoggingMessageType from '../models/LoggingMessageType';
+import LoggingHttpsResponse from '../model/LoggingHttpsResponse';
+import LoggingMessageType from '../model/LoggingMessageType';
 
 /**
 * LoggingHttps service.
@@ -45,8 +45,8 @@ export default class LoggingHttpsApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+     * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
@@ -58,11 +58,11 @@ export default class LoggingHttpsApi {
      * @param {String} [options.url] - The URL to send logs to. Must use HTTPS. Required.
      * @param {String} [options.content_type='null'] - Content type of the header sent with the request.
      * @param {String} [options.header_name='null'] - Name of the custom header sent with the request.
-     * @param {module:models/LoggingMessageType} [options.message_type]
+     * @param {module:model/LoggingMessageType} [options.message_type]
      * @param {String} [options.header_value='null'] - Value of the custom header sent with the request.
-     * @param {module:models/String} [options.method='POST'] - HTTP method used for request.
-     * @param {module:models/String} [options.json_format] - Enforces valid JSON formatting for log entries.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingHttpsResponse} and HTTP response
+     * @param {module:model/String} [options.method='POST'] - HTTP method used for request.
+     * @param {module:model/String} [options.json_format] - Enforces valid JSON formatting for log entries.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingHttpsResponse} and HTTP response
      */
     createLogHttpsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -121,8 +121,8 @@ export default class LoggingHttpsApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+     * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
@@ -134,11 +134,11 @@ export default class LoggingHttpsApi {
      * @param {String} [options.url] - The URL to send logs to. Must use HTTPS. Required.
      * @param {String} [options.content_type='null'] - Content type of the header sent with the request.
      * @param {String} [options.header_name='null'] - Name of the custom header sent with the request.
-     * @param {module:models/LoggingMessageType} [options.message_type]
+     * @param {module:model/LoggingMessageType} [options.message_type]
      * @param {String} [options.header_value='null'] - Value of the custom header sent with the request.
-     * @param {module:models/String} [options.method='POST'] - HTTP method used for request.
-     * @param {module:models/String} [options.json_format] - Enforces valid JSON formatting for log entries.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingHttpsResponse}
+     * @param {module:model/String} [options.method='POST'] - HTTP method used for request.
+     * @param {module:model/String} [options.json_format] - Enforces valid JSON formatting for log entries.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingHttpsResponse}
      */
     createLogHttps(options = {}) {
       return this.createLogHttpsWithHttpInfo(options)
@@ -214,7 +214,7 @@ export default class LoggingHttpsApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_https_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingHttpsResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingHttpsResponse} and HTTP response
      */
     getLogHttpsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -260,7 +260,7 @@ export default class LoggingHttpsApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_https_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingHttpsResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingHttpsResponse}
      */
     getLogHttps(options = {}) {
       return this.getLogHttpsWithHttpInfo(options)
@@ -274,7 +274,7 @@ export default class LoggingHttpsApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/LoggingHttpsResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingHttpsResponse>} and HTTP response
      */
     listLogHttpsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -314,7 +314,7 @@ export default class LoggingHttpsApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/LoggingHttpsResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingHttpsResponse>}
      */
     listLogHttps(options = {}) {
       return this.listLogHttpsWithHttpInfo(options)
@@ -330,8 +330,8 @@ export default class LoggingHttpsApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_https_name
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+     * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
@@ -343,11 +343,11 @@ export default class LoggingHttpsApi {
      * @param {String} [options.url] - The URL to send logs to. Must use HTTPS. Required.
      * @param {String} [options.content_type='null'] - Content type of the header sent with the request.
      * @param {String} [options.header_name='null'] - Name of the custom header sent with the request.
-     * @param {module:models/LoggingMessageType} [options.message_type]
+     * @param {module:model/LoggingMessageType} [options.message_type]
      * @param {String} [options.header_value='null'] - Value of the custom header sent with the request.
-     * @param {module:models/String} [options.method='POST'] - HTTP method used for request.
-     * @param {module:models/String} [options.json_format] - Enforces valid JSON formatting for log entries.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingHttpsResponse} and HTTP response
+     * @param {module:model/String} [options.method='POST'] - HTTP method used for request.
+     * @param {module:model/String} [options.json_format] - Enforces valid JSON formatting for log entries.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingHttpsResponse} and HTTP response
      */
     updateLogHttpsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -412,8 +412,8 @@ export default class LoggingHttpsApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_https_name
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+     * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
@@ -425,11 +425,11 @@ export default class LoggingHttpsApi {
      * @param {String} [options.url] - The URL to send logs to. Must use HTTPS. Required.
      * @param {String} [options.content_type='null'] - Content type of the header sent with the request.
      * @param {String} [options.header_name='null'] - Name of the custom header sent with the request.
-     * @param {module:models/LoggingMessageType} [options.message_type]
+     * @param {module:model/LoggingMessageType} [options.message_type]
      * @param {String} [options.header_value='null'] - Value of the custom header sent with the request.
-     * @param {module:models/String} [options.method='POST'] - HTTP method used for request.
-     * @param {module:models/String} [options.json_format] - Enforces valid JSON formatting for log entries.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingHttpsResponse}
+     * @param {module:model/String} [options.method='POST'] - HTTP method used for request.
+     * @param {module:model/String} [options.json_format] - Enforces valid JSON formatting for log entries.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingHttpsResponse}
      */
     updateLogHttps(options = {}) {
       return this.updateLogHttpsWithHttpInfo(options)

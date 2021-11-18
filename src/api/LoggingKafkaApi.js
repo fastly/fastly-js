@@ -13,8 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
-import LoggingKafkaResponse from '../models/LoggingKafkaResponse';
-import LoggingUseTls from '../models/LoggingUseTls';
+import LoggingKafkaResponse from '../model/LoggingKafkaResponse';
+import LoggingUseTls from '../model/LoggingUseTls';
 
 /**
 * LoggingKafka service.
@@ -45,8 +45,8 @@ export default class LoggingKafkaApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+     * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
@@ -55,15 +55,15 @@ export default class LoggingKafkaApi {
      * @param {String} [options.tls_hostname='null'] - The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
      * @param {String} [options.topic] - The Kafka topic to send logs to. Required.
      * @param {String} [options.brokers] - A comma-separated list of IP addresses or hostnames of Kafka brokers. Required.
-     * @param {module:models/String} [options.compression_codec] - The codec used for compression of your logs.
-     * @param {module:models/Number} [options.required_acks=1] - The number of acknowledgements a leader must receive before a write is considered successful.
+     * @param {module:model/String} [options.compression_codec] - The codec used for compression of your logs.
+     * @param {module:model/Number} [options.required_acks=1] - The number of acknowledgements a leader must receive before a write is considered successful.
      * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` (no limit).
      * @param {Boolean} [options.parse_log_keyvals] - Enables parsing of key=value tuples from the beginning of a logline, turning them into [record headers](https://cwiki.apache.org/confluence/display/KAFKA/KIP-82+-+Add+Record+Headers).
-     * @param {module:models/String} [options.auth_method] - SASL authentication method.
+     * @param {module:model/String} [options.auth_method] - SASL authentication method.
      * @param {String} [options.user] - SASL user.
      * @param {String} [options.password] - SASL password.
-     * @param {module:models/LoggingUseTls} [options.use_tls]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingKafkaResponse} and HTTP response
+     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingKafkaResponse} and HTTP response
      */
     createLogKafkaWithHttpInfo(options = {}) {
       let postBody = null;
@@ -123,8 +123,8 @@ export default class LoggingKafkaApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+     * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
@@ -133,15 +133,15 @@ export default class LoggingKafkaApi {
      * @param {String} [options.tls_hostname='null'] - The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
      * @param {String} [options.topic] - The Kafka topic to send logs to. Required.
      * @param {String} [options.brokers] - A comma-separated list of IP addresses or hostnames of Kafka brokers. Required.
-     * @param {module:models/String} [options.compression_codec] - The codec used for compression of your logs.
-     * @param {module:models/Number} [options.required_acks=1] - The number of acknowledgements a leader must receive before a write is considered successful.
+     * @param {module:model/String} [options.compression_codec] - The codec used for compression of your logs.
+     * @param {module:model/Number} [options.required_acks=1] - The number of acknowledgements a leader must receive before a write is considered successful.
      * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` (no limit).
      * @param {Boolean} [options.parse_log_keyvals] - Enables parsing of key=value tuples from the beginning of a logline, turning them into [record headers](https://cwiki.apache.org/confluence/display/KAFKA/KIP-82+-+Add+Record+Headers).
-     * @param {module:models/String} [options.auth_method] - SASL authentication method.
+     * @param {module:model/String} [options.auth_method] - SASL authentication method.
      * @param {String} [options.user] - SASL user.
      * @param {String} [options.password] - SASL password.
-     * @param {module:models/LoggingUseTls} [options.use_tls]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingKafkaResponse}
+     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingKafkaResponse}
      */
     createLogKafka(options = {}) {
       return this.createLogKafkaWithHttpInfo(options)
@@ -217,7 +217,7 @@ export default class LoggingKafkaApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_kafka_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingKafkaResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingKafkaResponse} and HTTP response
      */
     getLogKafkaWithHttpInfo(options = {}) {
       let postBody = null;
@@ -263,7 +263,7 @@ export default class LoggingKafkaApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_kafka_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingKafkaResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingKafkaResponse}
      */
     getLogKafka(options = {}) {
       return this.getLogKafkaWithHttpInfo(options)
@@ -277,7 +277,7 @@ export default class LoggingKafkaApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/LoggingKafkaResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingKafkaResponse>} and HTTP response
      */
     listLogKafkaWithHttpInfo(options = {}) {
       let postBody = null;
@@ -317,7 +317,7 @@ export default class LoggingKafkaApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/LoggingKafkaResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingKafkaResponse>}
      */
     listLogKafka(options = {}) {
       return this.listLogKafkaWithHttpInfo(options)
@@ -332,7 +332,7 @@ export default class LoggingKafkaApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_kafka_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingKafkaResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingKafkaResponse} and HTTP response
      */
     updateLogKafkaWithHttpInfo(options = {}) {
       let postBody = null;
@@ -378,7 +378,7 @@ export default class LoggingKafkaApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_kafka_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingKafkaResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingKafkaResponse}
      */
     updateLogKafka(options = {}) {
       return this.updateLogKafkaWithHttpInfo(options)

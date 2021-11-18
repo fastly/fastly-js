@@ -46,7 +46,7 @@ apiInstance.createServiceAuthorization(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_authorization** | [**ServiceAuthorization**](../Model/ServiceAuthorization.md) |  | [optional]
+**service_authorization** | [**ServiceAuthorization**](ServiceAuthorization.md) |  | [optional]
 
 ### Return type
 
@@ -116,7 +116,7 @@ apiInstance.deleteServiceAuthorization2(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**inline_object3** | [**InlineObject3**](../Model/InlineObject3.md) |  | [optional]
+**inline_object3** | [**InlineObject3**](InlineObject3.md) |  | [optional]
 
 ### Return type
 
@@ -225,7 +225,7 @@ apiInstance.updateServiceAuthorization(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_authorization_id** | **String** |  |
-**service_authorization** | [**ServiceAuthorization**](../Model/ServiceAuthorization.md) |  | [optional]
+**service_authorization** | [**ServiceAuthorization**](ServiceAuthorization.md) |  | [optional]
 
 ### Return type
 
@@ -260,7 +260,7 @@ apiInstance.updateServiceAuthorization2(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**inline_object4** | [**InlineObject4**](../Model/InlineObject4.md) |  | [optional]
+**inline_object4** | [**InlineObject4**](InlineObject4.md) |  | [optional]
 
 ### Return type
 

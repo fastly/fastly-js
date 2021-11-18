@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
-import WafExclusion from '../models/WafExclusion';
-import WafExclusionResponse from '../models/WafExclusionResponse';
-import WafExclusionsResponse from '../models/WafExclusionsResponse';
+import WafExclusion from '../model/WafExclusion';
+import WafExclusionResponse from '../model/WafExclusionResponse';
+import WafExclusionsResponse from '../model/WafExclusionsResponse';
 
 /**
 * WafExclusions service.
@@ -45,8 +45,8 @@ export default class WafExclusionsApi {
      * @param {Object} options
      * @param {String} options.firewall_id
      * @param {Number} options.firewall_version_number
-     * @param {module:models/WafExclusion} [options.waf_exclusion]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/WafExclusionResponse} and HTTP response
+     * @param {module:model/WafExclusion} [options.waf_exclusion]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafExclusionResponse} and HTTP response
      */
     createWafRuleExclusionWithHttpInfo(options = {}) {
       let postBody = options['waf_exclusion'];
@@ -86,8 +86,8 @@ export default class WafExclusionsApi {
      * @param {Object} options
      * @param {String} options.firewall_id
      * @param {Number} options.firewall_version_number
-     * @param {module:models/WafExclusion} [options.waf_exclusion]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/WafExclusionResponse}
+     * @param {module:model/WafExclusion} [options.waf_exclusion]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafExclusionResponse}
      */
     createWafRuleExclusion(options = {}) {
       return this.createWafRuleExclusionWithHttpInfo(options)
@@ -163,7 +163,7 @@ export default class WafExclusionsApi {
      * @param {String} options.firewall_id
      * @param {Number} options.firewall_version_number
      * @param {Number} options.exclusion_number
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/WafExclusionResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafExclusionResponse} and HTTP response
      */
     getWafRuleExclusionWithHttpInfo(options = {}) {
       let postBody = null;
@@ -209,7 +209,7 @@ export default class WafExclusionsApi {
      * @param {String} options.firewall_id
      * @param {Number} options.firewall_version_number
      * @param {Number} options.exclusion_number
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/WafExclusionResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafExclusionResponse}
      */
     getWafRuleExclusion(options = {}) {
       return this.getWafRuleExclusionWithHttpInfo(options)
@@ -223,13 +223,13 @@ export default class WafExclusionsApi {
      * @param {Object} options
      * @param {String} options.firewall_id
      * @param {Number} options.firewall_version_number
-     * @param {module:models/String} [options.filter_exclusion_type] - Filters the results based on this exclusion type.
+     * @param {module:model/String} [options.filter_exclusion_type] - Filters the results based on this exclusion type.
      * @param {String} [options.filter_name] - Filters the results based on name.
      * @param {Number} [options.filter_waf_rules_modsec_rule_id] - Filters the results based on this ModSecurity rule ID.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_rules` and `waf_rule_revisions`. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/WafExclusionsResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafExclusionsResponse} and HTTP response
      */
     listWafRuleExclusionsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -275,13 +275,13 @@ export default class WafExclusionsApi {
      * @param {Object} options
      * @param {String} options.firewall_id
      * @param {Number} options.firewall_version_number
-     * @param {module:models/String} [options.filter_exclusion_type] - Filters the results based on this exclusion type.
+     * @param {module:model/String} [options.filter_exclusion_type] - Filters the results based on this exclusion type.
      * @param {String} [options.filter_name] - Filters the results based on name.
      * @param {Number} [options.filter_waf_rules_modsec_rule_id] - Filters the results based on this ModSecurity rule ID.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_rules` and `waf_rule_revisions`. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/WafExclusionsResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafExclusionsResponse}
      */
     listWafRuleExclusions(options = {}) {
       return this.listWafRuleExclusionsWithHttpInfo(options)
@@ -296,8 +296,8 @@ export default class WafExclusionsApi {
      * @param {String} options.firewall_id
      * @param {Number} options.firewall_version_number
      * @param {Number} options.exclusion_number
-     * @param {module:models/WafExclusion} [options.waf_exclusion]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/WafExclusionResponse} and HTTP response
+     * @param {module:model/WafExclusion} [options.waf_exclusion]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafExclusionResponse} and HTTP response
      */
     updateWafRuleExclusionWithHttpInfo(options = {}) {
       let postBody = options['waf_exclusion'];
@@ -343,8 +343,8 @@ export default class WafExclusionsApi {
      * @param {String} options.firewall_id
      * @param {Number} options.firewall_version_number
      * @param {Number} options.exclusion_number
-     * @param {module:models/WafExclusion} [options.waf_exclusion]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/WafExclusionResponse}
+     * @param {module:model/WafExclusion} [options.waf_exclusion]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafExclusionResponse}
      */
     updateWafRuleExclusion(options = {}) {
       return this.updateWafRuleExclusionWithHttpInfo(options)

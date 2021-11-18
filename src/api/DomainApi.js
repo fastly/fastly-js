@@ -13,8 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
-import DomainCheckItem from '../models/DomainCheckItem';
-import DomainResponse from '../models/DomainResponse';
+import DomainCheckItem from '../model/DomainCheckItem';
+import DomainResponse from '../model/DomainResponse';
 
 /**
 * Domain service.
@@ -45,7 +45,7 @@ export default class DomainApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.domain_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/DomainCheckItem>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DomainCheckItem>} and HTTP response
      */
     checkDomainWithHttpInfo(options = {}) {
       let postBody = null;
@@ -91,7 +91,7 @@ export default class DomainApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.domain_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/DomainCheckItem>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DomainCheckItem>}
      */
     checkDomain(options = {}) {
       return this.checkDomainWithHttpInfo(options)
@@ -161,7 +161,7 @@ export default class DomainApi {
      * @param {Number} options.version_id
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - The name of the domain or domains associated with this service.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/DomainResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DomainResponse} and HTTP response
      */
     createDomainWithHttpInfo(options = {}) {
       let postBody = null;
@@ -205,7 +205,7 @@ export default class DomainApi {
      * @param {Number} options.version_id
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - The name of the domain or domains associated with this service.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/DomainResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DomainResponse}
      */
     createDomain(options = {}) {
       return this.createDomainWithHttpInfo(options)
@@ -281,7 +281,7 @@ export default class DomainApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.domain_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/DomainResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DomainResponse} and HTTP response
      */
     getDomainWithHttpInfo(options = {}) {
       let postBody = null;
@@ -327,7 +327,7 @@ export default class DomainApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.domain_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/DomainResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DomainResponse}
      */
     getDomain(options = {}) {
       return this.getDomainWithHttpInfo(options)
@@ -341,7 +341,7 @@ export default class DomainApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/DomainResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DomainResponse} and HTTP response
      */
     listDomainsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -381,7 +381,7 @@ export default class DomainApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/DomainResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DomainResponse}
      */
     listDomains(options = {}) {
       return this.listDomainsWithHttpInfo(options)
@@ -398,7 +398,7 @@ export default class DomainApi {
      * @param {String} options.domain_name
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - The name of the domain or domains associated with this service.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/DomainResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DomainResponse} and HTTP response
      */
     updateDomainWithHttpInfo(options = {}) {
       let postBody = null;
@@ -448,7 +448,7 @@ export default class DomainApi {
      * @param {String} options.domain_name
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - The name of the domain or domains associated with this service.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/DomainResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DomainResponse}
      */
     updateDomain(options = {}) {
       return this.updateDomainWithHttpInfo(options)

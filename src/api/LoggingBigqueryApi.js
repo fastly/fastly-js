@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import LoggingBigqueryResponse from '../models/LoggingBigqueryResponse';
+import LoggingBigqueryResponse from '../model/LoggingBigqueryResponse';
 
 /**
 * LoggingBigquery service.
@@ -44,8 +44,8 @@ export default class LoggingBigqueryApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.name] - The name of the BigQuery logging object. Used as a primary key for API access.
-     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+     * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
      * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
@@ -54,7 +54,7 @@ export default class LoggingBigqueryApi {
      * @param {String} [options.table] - Your BigQuery table.
      * @param {String} [options.template_suffix] - BigQuery table name suffix template. Optional.
      * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingBigqueryResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingBigqueryResponse} and HTTP response
      */
     createLogBigqueryWithHttpInfo(options = {}) {
       let postBody = null;
@@ -106,8 +106,8 @@ export default class LoggingBigqueryApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.name] - The name of the BigQuery logging object. Used as a primary key for API access.
-     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+     * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
      * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
@@ -116,7 +116,7 @@ export default class LoggingBigqueryApi {
      * @param {String} [options.table] - Your BigQuery table.
      * @param {String} [options.template_suffix] - BigQuery table name suffix template. Optional.
      * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingBigqueryResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingBigqueryResponse}
      */
     createLogBigquery(options = {}) {
       return this.createLogBigqueryWithHttpInfo(options)
@@ -192,7 +192,7 @@ export default class LoggingBigqueryApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_bigquery_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingBigqueryResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingBigqueryResponse} and HTTP response
      */
     getLogBigqueryWithHttpInfo(options = {}) {
       let postBody = null;
@@ -238,7 +238,7 @@ export default class LoggingBigqueryApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_bigquery_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingBigqueryResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingBigqueryResponse}
      */
     getLogBigquery(options = {}) {
       return this.getLogBigqueryWithHttpInfo(options)
@@ -252,7 +252,7 @@ export default class LoggingBigqueryApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/LoggingBigqueryResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingBigqueryResponse>} and HTTP response
      */
     listLogBigqueryWithHttpInfo(options = {}) {
       let postBody = null;
@@ -292,7 +292,7 @@ export default class LoggingBigqueryApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/LoggingBigqueryResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingBigqueryResponse>}
      */
     listLogBigquery(options = {}) {
       return this.listLogBigqueryWithHttpInfo(options)
@@ -308,8 +308,8 @@ export default class LoggingBigqueryApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_bigquery_name
      * @param {String} [options.name] - The name of the BigQuery logging object. Used as a primary key for API access.
-     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+     * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
      * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
@@ -318,7 +318,7 @@ export default class LoggingBigqueryApi {
      * @param {String} [options.table] - Your BigQuery table.
      * @param {String} [options.template_suffix] - BigQuery table name suffix template. Optional.
      * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingBigqueryResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingBigqueryResponse} and HTTP response
      */
     updateLogBigqueryWithHttpInfo(options = {}) {
       let postBody = null;
@@ -376,8 +376,8 @@ export default class LoggingBigqueryApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_bigquery_name
      * @param {String} [options.name] - The name of the BigQuery logging object. Used as a primary key for API access.
-     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+     * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
      * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
@@ -386,7 +386,7 @@ export default class LoggingBigqueryApi {
      * @param {String} [options.table] - Your BigQuery table.
      * @param {String} [options.template_suffix] - BigQuery table name suffix template. Optional.
      * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingBigqueryResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingBigqueryResponse}
      */
     updateLogBigquery(options = {}) {
       return this.updateLogBigqueryWithHttpInfo(options)

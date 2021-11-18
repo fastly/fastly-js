@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
-import Version from '../models/Version';
-import VersionCreateResponse from '../models/VersionCreateResponse';
-import VersionResponse from '../models/VersionResponse';
+import Version from '../model/Version';
+import VersionCreateResponse from '../model/VersionCreateResponse';
+import VersionResponse from '../model/VersionResponse';
 
 /**
 * Version service.
@@ -45,7 +45,7 @@ export default class VersionApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/VersionResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VersionResponse} and HTTP response
      */
     activateServiceVersionWithHttpInfo(options = {}) {
       let postBody = null;
@@ -85,7 +85,7 @@ export default class VersionApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/VersionResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VersionResponse}
      */
     activateServiceVersion(options = {}) {
       return this.activateServiceVersionWithHttpInfo(options)
@@ -99,7 +99,7 @@ export default class VersionApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Version} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Version} and HTTP response
      */
     cloneServiceVersionWithHttpInfo(options = {}) {
       let postBody = null;
@@ -139,7 +139,7 @@ export default class VersionApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Version}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Version}
      */
     cloneServiceVersion(options = {}) {
       return this.cloneServiceVersionWithHttpInfo(options)
@@ -152,7 +152,7 @@ export default class VersionApi {
      * Create a version for a particular service.
      * @param {Object} options
      * @param {String} options.service_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/VersionCreateResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VersionCreateResponse} and HTTP response
      */
     createServiceVersionWithHttpInfo(options = {}) {
       let postBody = null;
@@ -186,7 +186,7 @@ export default class VersionApi {
      * Create a version for a particular service.
      * @param {Object} options
      * @param {String} options.service_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/VersionCreateResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VersionCreateResponse}
      */
     createServiceVersion(options = {}) {
       return this.createServiceVersionWithHttpInfo(options)
@@ -200,7 +200,7 @@ export default class VersionApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/VersionResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VersionResponse} and HTTP response
      */
     deactivateServiceVersionWithHttpInfo(options = {}) {
       let postBody = null;
@@ -240,7 +240,7 @@ export default class VersionApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/VersionResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VersionResponse}
      */
     deactivateServiceVersion(options = {}) {
       return this.deactivateServiceVersionWithHttpInfo(options)
@@ -254,7 +254,7 @@ export default class VersionApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/VersionResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VersionResponse} and HTTP response
      */
     getServiceVersionWithHttpInfo(options = {}) {
       let postBody = null;
@@ -294,7 +294,7 @@ export default class VersionApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/VersionResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VersionResponse}
      */
     getServiceVersion(options = {}) {
       return this.getServiceVersionWithHttpInfo(options)
@@ -307,7 +307,7 @@ export default class VersionApi {
      * List the versions for a particular service.
      * @param {Object} options
      * @param {String} options.service_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/VersionResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/VersionResponse>} and HTTP response
      */
     listServiceVersionsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -341,7 +341,7 @@ export default class VersionApi {
      * List the versions for a particular service.
      * @param {Object} options
      * @param {String} options.service_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/VersionResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/VersionResponse>}
      */
     listServiceVersions(options = {}) {
       return this.listServiceVersionsWithHttpInfo(options)
@@ -355,7 +355,7 @@ export default class VersionApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Version} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Version} and HTTP response
      */
     lockServiceVersionWithHttpInfo(options = {}) {
       let postBody = null;
@@ -395,7 +395,7 @@ export default class VersionApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Version}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Version}
      */
     lockServiceVersion(options = {}) {
       return this.lockServiceVersionWithHttpInfo(options)
@@ -416,7 +416,7 @@ export default class VersionApi {
      * @param {Number} [options.number] - The number of this version.
      * @param {Boolean} [options.staging=false] - Unused at this time.
      * @param {Boolean} [options.testing=false] - Unused at this time.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/VersionResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VersionResponse} and HTTP response
      */
     updateServiceVersionWithHttpInfo(options = {}) {
       let postBody = null;
@@ -470,7 +470,7 @@ export default class VersionApi {
      * @param {Number} [options.number] - The number of this version.
      * @param {Boolean} [options.staging=false] - Unused at this time.
      * @param {Boolean} [options.testing=false] - Unused at this time.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/VersionResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VersionResponse}
      */
     updateServiceVersion(options = {}) {
       return this.updateServiceVersionWithHttpInfo(options)

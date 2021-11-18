@@ -13,493 +13,495 @@
 
 
 import ApiClient from './ApiClient';
-import Acl from './models/Acl';
-import AclEntries from './models/AclEntries';
-import AclEntry from './models/AclEntry';
-import AclEntryResponse from './models/AclEntryResponse';
-import AclEntryResponseAllOf from './models/AclEntryResponseAllOf';
-import AclResponse from './models/AclResponse';
-import AclResponseAllOf from './models/AclResponseAllOf';
-import Backend from './models/Backend';
-import BackendResponse from './models/BackendResponse';
-import BackendResponseAllOf from './models/BackendResponseAllOf';
-import Billing from './models/Billing';
-import BillingAddress from './models/BillingAddress';
-import BillingAddressData from './models/BillingAddressData';
-import BillingAddressDataAttributes from './models/BillingAddressDataAttributes';
-import BillingAddressResponse from './models/BillingAddressResponse';
-import BillingAddressResponseAllOf from './models/BillingAddressResponseAllOf';
-import BillingAddressResponseAllOfData from './models/BillingAddressResponseAllOfData';
-import BillingEstimateResponse from './models/BillingEstimateResponse';
-import BillingEstimateResponseAllOf from './models/BillingEstimateResponseAllOf';
-import BillingEstimateResponseAllOfLine from './models/BillingEstimateResponseAllOfLine';
-import BillingEstimateResponseAllOfLines from './models/BillingEstimateResponseAllOfLines';
-import BillingResponse from './models/BillingResponse';
-import BillingResponseAllOf from './models/BillingResponseAllOf';
-import BillingStatus from './models/BillingStatus';
-import BillingTotal from './models/BillingTotal';
-import BillingTotalExtras from './models/BillingTotalExtras';
-import BulkWafActiveRules from './models/BulkWafActiveRules';
-import CacheSetting from './models/CacheSetting';
-import CacheSettingResponse from './models/CacheSettingResponse';
-import Condition from './models/Condition';
-import ConditionResponse from './models/ConditionResponse';
-import Content from './models/Content';
-import Customer from './models/Customer';
-import CustomerCustomerIdBillingAddressData from './models/CustomerCustomerIdBillingAddressData';
-import CustomerCustomerIdBillingAddressData1 from './models/CustomerCustomerIdBillingAddressData1';
-import CustomerResponse from './models/CustomerResponse';
-import CustomerResponseAllOf from './models/CustomerResponseAllOf';
-import Dictionary from './models/Dictionary';
-import DictionaryInfoResponse from './models/DictionaryInfoResponse';
-import DictionaryItem from './models/DictionaryItem';
-import DictionaryItemResponse from './models/DictionaryItemResponse';
-import DictionaryItemResponseAllOf from './models/DictionaryItemResponseAllOf';
-import DictionaryResponse from './models/DictionaryResponse';
-import DictionaryResponseAllOf from './models/DictionaryResponseAllOf';
-import DiffResponse from './models/DiffResponse';
-import Director from './models/Director';
-import DirectorBackend from './models/DirectorBackend';
-import DirectorBackendAllOf from './models/DirectorBackendAllOf';
-import DirectorResponse from './models/DirectorResponse';
-import Domain from './models/Domain';
-import DomainCheckItem from './models/DomainCheckItem';
-import DomainResponse from './models/DomainResponse';
-import Event from './models/Event';
-import EventAttributes from './models/EventAttributes';
-import EventResponse from './models/EventResponse';
-import EventsResponse from './models/EventsResponse';
-import EventsResponseAllOf from './models/EventsResponseAllOf';
-import GenericTokenError from './models/GenericTokenError';
-import Gzip from './models/Gzip';
-import GzipResponse from './models/GzipResponse';
-import Header from './models/Header';
-import HeaderResponse from './models/HeaderResponse';
-import Healthcheck from './models/Healthcheck';
-import HealthcheckResponse from './models/HealthcheckResponse';
-import Historical from './models/Historical';
-import HistoricalAggregateResponse from './models/HistoricalAggregateResponse';
-import HistoricalAggregateResponseAllOf from './models/HistoricalAggregateResponseAllOf';
-import HistoricalFieldAggregateResponse from './models/HistoricalFieldAggregateResponse';
-import HistoricalFieldAggregateResponseAllOf from './models/HistoricalFieldAggregateResponseAllOf';
-import HistoricalFieldResponse from './models/HistoricalFieldResponse';
-import HistoricalFieldResponseAllOf from './models/HistoricalFieldResponseAllOf';
-import HistoricalMeta from './models/HistoricalMeta';
-import HistoricalRegionsResponse from './models/HistoricalRegionsResponse';
-import HistoricalRegionsResponseAllOf from './models/HistoricalRegionsResponseAllOf';
-import HistoricalResponse from './models/HistoricalResponse';
-import HistoricalResponseAllOf from './models/HistoricalResponseAllOf';
-import HistoricalUsageAggregateResponse from './models/HistoricalUsageAggregateResponse';
-import HistoricalUsageMonthResponse from './models/HistoricalUsageMonthResponse';
-import HistoricalUsageMonthResponseAllOf from './models/HistoricalUsageMonthResponseAllOf';
-import HistoricalUsageMonthResponseAllOfData from './models/HistoricalUsageMonthResponseAllOfData';
-import HistoricalUsageServiceResponse from './models/HistoricalUsageServiceResponse';
-import HistoricalUsageServiceResponseAllOf from './models/HistoricalUsageServiceResponseAllOf';
-import IncludedWithWafActiveRuleItem from './models/IncludedWithWafActiveRuleItem';
-import IncludedWithWafExclusionItem from './models/IncludedWithWafExclusionItem';
-import IncludedWithWafFirewallVersionItem from './models/IncludedWithWafFirewallVersionItem';
-import IncludedWithWafRuleItem from './models/IncludedWithWafRuleItem';
-import InlineObject from './models/InlineObject';
-import InlineObject1 from './models/InlineObject1';
-import InlineObject2 from './models/InlineObject2';
-import InlineObject3 from './models/InlineObject3';
-import InlineObject4 from './models/InlineObject4';
-import InlineResponse204 from './models/InlineResponse204';
-import InlineResponse400 from './models/InlineResponse400';
-import Invitation from './models/Invitation';
-import InvitationData from './models/InvitationData';
-import InvitationDataAttributes from './models/InvitationDataAttributes';
-import InvitationResponse from './models/InvitationResponse';
-import InvitationResponseAllOf from './models/InvitationResponseAllOf';
-import InvitationResponseData from './models/InvitationResponseData';
-import InvitationResponseDataAllOf from './models/InvitationResponseDataAllOf';
-import InvitationsResponse from './models/InvitationsResponse';
-import InvitationsResponseAllOf from './models/InvitationsResponseAllOf';
-import LoggingAddressAndPort from './models/LoggingAddressAndPort';
-import LoggingAzureblob from './models/LoggingAzureblob';
-import LoggingAzureblobAllOf from './models/LoggingAzureblobAllOf';
-import LoggingAzureblobResponse from './models/LoggingAzureblobResponse';
-import LoggingBigquery from './models/LoggingBigquery';
-import LoggingBigqueryAllOf from './models/LoggingBigqueryAllOf';
-import LoggingBigqueryResponse from './models/LoggingBigqueryResponse';
-import LoggingCloudfiles from './models/LoggingCloudfiles';
-import LoggingCloudfilesAllOf from './models/LoggingCloudfilesAllOf';
-import LoggingCloudfilesResponse from './models/LoggingCloudfilesResponse';
-import LoggingCommon from './models/LoggingCommon';
-import LoggingDatadog from './models/LoggingDatadog';
-import LoggingDatadogAllOf from './models/LoggingDatadogAllOf';
-import LoggingDatadogResponse from './models/LoggingDatadogResponse';
-import LoggingDigitalocean from './models/LoggingDigitalocean';
-import LoggingDigitaloceanAllOf from './models/LoggingDigitaloceanAllOf';
-import LoggingDigitaloceanResponse from './models/LoggingDigitaloceanResponse';
-import LoggingElasticsearch from './models/LoggingElasticsearch';
-import LoggingElasticsearchAllOf from './models/LoggingElasticsearchAllOf';
-import LoggingElasticsearchResponse from './models/LoggingElasticsearchResponse';
-import LoggingFormatVersion from './models/LoggingFormatVersion';
-import LoggingFtp from './models/LoggingFtp';
-import LoggingFtpAllOf from './models/LoggingFtpAllOf';
-import LoggingFtpResponse from './models/LoggingFtpResponse';
-import LoggingGcs from './models/LoggingGcs';
-import LoggingGcsAllOf from './models/LoggingGcsAllOf';
-import LoggingGcsCommon from './models/LoggingGcsCommon';
-import LoggingGcsResponse from './models/LoggingGcsResponse';
-import LoggingGenericCommon from './models/LoggingGenericCommon';
-import LoggingGooglePubsub from './models/LoggingGooglePubsub';
-import LoggingGooglePubsubAllOf from './models/LoggingGooglePubsubAllOf';
-import LoggingGooglePubsubResponse from './models/LoggingGooglePubsubResponse';
-import LoggingHeroku from './models/LoggingHeroku';
-import LoggingHerokuAllOf from './models/LoggingHerokuAllOf';
-import LoggingHerokuResponse from './models/LoggingHerokuResponse';
-import LoggingHoneycomb from './models/LoggingHoneycomb';
-import LoggingHoneycombAllOf from './models/LoggingHoneycombAllOf';
-import LoggingHoneycombResponse from './models/LoggingHoneycombResponse';
-import LoggingHttps from './models/LoggingHttps';
-import LoggingHttpsAllOf from './models/LoggingHttpsAllOf';
-import LoggingHttpsResponse from './models/LoggingHttpsResponse';
-import LoggingKafka from './models/LoggingKafka';
-import LoggingKafkaAllOf from './models/LoggingKafkaAllOf';
-import LoggingKafkaResponse from './models/LoggingKafkaResponse';
-import LoggingKinesis from './models/LoggingKinesis';
-import LoggingKinesisResponse from './models/LoggingKinesisResponse';
-import LoggingLogentries from './models/LoggingLogentries';
-import LoggingLogentriesAllOf from './models/LoggingLogentriesAllOf';
-import LoggingLogentriesResponse from './models/LoggingLogentriesResponse';
-import LoggingLoggly from './models/LoggingLoggly';
-import LoggingLogglyAllOf from './models/LoggingLogglyAllOf';
-import LoggingLogglyResponse from './models/LoggingLogglyResponse';
-import LoggingLogshuttle from './models/LoggingLogshuttle';
-import LoggingLogshuttleAllOf from './models/LoggingLogshuttleAllOf';
-import LoggingLogshuttleResponse from './models/LoggingLogshuttleResponse';
-import LoggingMessageType from './models/LoggingMessageType';
-import LoggingNewrelic from './models/LoggingNewrelic';
-import LoggingNewrelicAllOf from './models/LoggingNewrelicAllOf';
-import LoggingNewrelicResponse from './models/LoggingNewrelicResponse';
-import LoggingOpenstack from './models/LoggingOpenstack';
-import LoggingOpenstackAllOf from './models/LoggingOpenstackAllOf';
-import LoggingOpenstackResponse from './models/LoggingOpenstackResponse';
-import LoggingPapertrail from './models/LoggingPapertrail';
-import LoggingPapertrailResponse from './models/LoggingPapertrailResponse';
-import LoggingPlacement from './models/LoggingPlacement';
-import LoggingRequestCapsCommon from './models/LoggingRequestCapsCommon';
-import LoggingS3 from './models/LoggingS3';
-import LoggingS3AllOf from './models/LoggingS3AllOf';
-import LoggingS3Response from './models/LoggingS3Response';
-import LoggingScalyr from './models/LoggingScalyr';
-import LoggingScalyrAllOf from './models/LoggingScalyrAllOf';
-import LoggingScalyrResponse from './models/LoggingScalyrResponse';
-import LoggingSftp from './models/LoggingSftp';
-import LoggingSftpAllOf from './models/LoggingSftpAllOf';
-import LoggingSftpResponse from './models/LoggingSftpResponse';
-import LoggingSplunk from './models/LoggingSplunk';
-import LoggingSplunkAllOf from './models/LoggingSplunkAllOf';
-import LoggingSplunkResponse from './models/LoggingSplunkResponse';
-import LoggingSumologic from './models/LoggingSumologic';
-import LoggingSumologicAllOf from './models/LoggingSumologicAllOf';
-import LoggingSumologicResponse from './models/LoggingSumologicResponse';
-import LoggingSyslog from './models/LoggingSyslog';
-import LoggingSyslogAllOf from './models/LoggingSyslogAllOf';
-import LoggingSyslogResponse from './models/LoggingSyslogResponse';
-import LoggingTlsCommon from './models/LoggingTlsCommon';
-import LoggingUseTls from './models/LoggingUseTls';
-import NestedVersion from './models/NestedVersion';
-import Package from './models/Package';
-import PackageMetadata from './models/PackageMetadata';
-import PackageResponse from './models/PackageResponse';
-import PackageResponseAllOf from './models/PackageResponseAllOf';
-import Pagination from './models/Pagination';
-import PaginationLinks from './models/PaginationLinks';
-import PaginationMeta from './models/PaginationMeta';
-import Permission from './models/Permission';
-import Pool from './models/Pool';
-import PoolAllOf from './models/PoolAllOf';
-import PoolResponse from './models/PoolResponse';
-import PoolResponseAllOf from './models/PoolResponseAllOf';
-import Pop from './models/Pop';
-import PopCoordinates from './models/PopCoordinates';
-import PublicIpList from './models/PublicIpList';
-import RateLimiter from './models/RateLimiter';
-import RateLimiterResponse from './models/RateLimiterResponse';
-import RateLimiterResponse1 from './models/RateLimiterResponse1';
-import RateLimiterResponseAllOf from './models/RateLimiterResponseAllOf';
-import Realtime from './models/Realtime';
-import RealtimeEntry from './models/RealtimeEntry';
-import RealtimeMeasurements from './models/RealtimeMeasurements';
-import RelationshipCommonName from './models/RelationshipCommonName';
-import RelationshipCustomer from './models/RelationshipCustomer';
-import RelationshipCustomerCustomer from './models/RelationshipCustomerCustomer';
-import RelationshipMemberCustomer from './models/RelationshipMemberCustomer';
-import RelationshipMemberService from './models/RelationshipMemberService';
-import RelationshipMemberServiceInvitation from './models/RelationshipMemberServiceInvitation';
-import RelationshipMemberTlsActivation from './models/RelationshipMemberTlsActivation';
-import RelationshipMemberTlsBulkCertificate from './models/RelationshipMemberTlsBulkCertificate';
-import RelationshipMemberTlsCertificate from './models/RelationshipMemberTlsCertificate';
-import RelationshipMemberTlsConfiguration from './models/RelationshipMemberTlsConfiguration';
-import RelationshipMemberTlsDnsRecord from './models/RelationshipMemberTlsDnsRecord';
-import RelationshipMemberTlsDomain from './models/RelationshipMemberTlsDomain';
-import RelationshipMemberTlsPrivateKey from './models/RelationshipMemberTlsPrivateKey';
-import RelationshipMemberTlsSubscription from './models/RelationshipMemberTlsSubscription';
-import RelationshipMemberWafActiveRule from './models/RelationshipMemberWafActiveRule';
-import RelationshipMemberWafFirewall from './models/RelationshipMemberWafFirewall';
-import RelationshipMemberWafFirewallVersion from './models/RelationshipMemberWafFirewallVersion';
-import RelationshipMemberWafRule from './models/RelationshipMemberWafRule';
-import RelationshipMemberWafRuleRevision from './models/RelationshipMemberWafRuleRevision';
-import RelationshipMemberWafTag from './models/RelationshipMemberWafTag';
-import RelationshipService from './models/RelationshipService';
-import RelationshipServiceInvitations from './models/RelationshipServiceInvitations';
-import RelationshipServiceInvitationsCreate from './models/RelationshipServiceInvitationsCreate';
-import RelationshipServiceInvitationsCreateServiceInvitations from './models/RelationshipServiceInvitationsCreateServiceInvitations';
-import RelationshipServiceInvitationsServiceInvitations from './models/RelationshipServiceInvitationsServiceInvitations';
-import RelationshipServiceService from './models/RelationshipServiceService';
-import RelationshipServices from './models/RelationshipServices';
-import RelationshipTlsActivation from './models/RelationshipTlsActivation';
-import RelationshipTlsActivationTlsActivation from './models/RelationshipTlsActivationTlsActivation';
-import RelationshipTlsActivations from './models/RelationshipTlsActivations';
-import RelationshipTlsBulkCertificate from './models/RelationshipTlsBulkCertificate';
-import RelationshipTlsBulkCertificateTlsBulkCertificate from './models/RelationshipTlsBulkCertificateTlsBulkCertificate';
-import RelationshipTlsBulkCertificates from './models/RelationshipTlsBulkCertificates';
-import RelationshipTlsCertificate from './models/RelationshipTlsCertificate';
-import RelationshipTlsCertificateTlsCertificate from './models/RelationshipTlsCertificateTlsCertificate';
-import RelationshipTlsCertificates from './models/RelationshipTlsCertificates';
-import RelationshipTlsConfiguration from './models/RelationshipTlsConfiguration';
-import RelationshipTlsConfigurationTlsConfiguration from './models/RelationshipTlsConfigurationTlsConfiguration';
-import RelationshipTlsConfigurations from './models/RelationshipTlsConfigurations';
-import RelationshipTlsDnsRecord from './models/RelationshipTlsDnsRecord';
-import RelationshipTlsDnsRecordDnsRecord from './models/RelationshipTlsDnsRecordDnsRecord';
-import RelationshipTlsDnsRecords from './models/RelationshipTlsDnsRecords';
-import RelationshipTlsDomain from './models/RelationshipTlsDomain';
-import RelationshipTlsDomainTlsDomain from './models/RelationshipTlsDomainTlsDomain';
-import RelationshipTlsDomains from './models/RelationshipTlsDomains';
-import RelationshipTlsPrivateKey from './models/RelationshipTlsPrivateKey';
-import RelationshipTlsPrivateKeyTlsPrivateKey from './models/RelationshipTlsPrivateKeyTlsPrivateKey';
-import RelationshipTlsPrivateKeys from './models/RelationshipTlsPrivateKeys';
-import RelationshipTlsSubscription from './models/RelationshipTlsSubscription';
-import RelationshipTlsSubscriptionTlsSubscription from './models/RelationshipTlsSubscriptionTlsSubscription';
-import RelationshipTlsSubscriptions from './models/RelationshipTlsSubscriptions';
-import RelationshipUser from './models/RelationshipUser';
-import RelationshipUserUser from './models/RelationshipUserUser';
-import RelationshipUserUserData from './models/RelationshipUserUserData';
-import RelationshipWafActiveRules from './models/RelationshipWafActiveRules';
-import RelationshipWafActiveRulesWafActiveRules from './models/RelationshipWafActiveRulesWafActiveRules';
-import RelationshipWafFirewall from './models/RelationshipWafFirewall';
-import RelationshipWafFirewallVersion from './models/RelationshipWafFirewallVersion';
-import RelationshipWafFirewallVersionWafFirewallVersion from './models/RelationshipWafFirewallVersionWafFirewallVersion';
-import RelationshipWafFirewallVersions from './models/RelationshipWafFirewallVersions';
-import RelationshipWafFirewallWafFirewall from './models/RelationshipWafFirewallWafFirewall';
-import RelationshipWafRule from './models/RelationshipWafRule';
-import RelationshipWafRuleRevision from './models/RelationshipWafRuleRevision';
-import RelationshipWafRuleRevisionWafRuleRevisions from './models/RelationshipWafRuleRevisionWafRuleRevisions';
-import RelationshipWafRuleRevisions from './models/RelationshipWafRuleRevisions';
-import RelationshipWafRuleWafRule from './models/RelationshipWafRuleWafRule';
-import RelationshipWafRules from './models/RelationshipWafRules';
-import RelationshipWafTags from './models/RelationshipWafTags';
-import RelationshipWafTagsWafTags from './models/RelationshipWafTagsWafTags';
-import RelationshipsForInvitation from './models/RelationshipsForInvitation';
-import RelationshipsForTlsActivation from './models/RelationshipsForTlsActivation';
-import RelationshipsForTlsBulkCertificate from './models/RelationshipsForTlsBulkCertificate';
-import RelationshipsForTlsConfiguration from './models/RelationshipsForTlsConfiguration';
-import RelationshipsForTlsDomain from './models/RelationshipsForTlsDomain';
-import RelationshipsForTlsPrivateKey from './models/RelationshipsForTlsPrivateKey';
-import RelationshipsForTlsSubscription from './models/RelationshipsForTlsSubscription';
-import RelationshipsForWafActiveRule from './models/RelationshipsForWafActiveRule';
-import RelationshipsForWafExclusion from './models/RelationshipsForWafExclusion';
-import RelationshipsForWafFirewallVersion from './models/RelationshipsForWafFirewallVersion';
-import RelationshipsForWafRule from './models/RelationshipsForWafRule';
-import RequestSettings from './models/RequestSettings';
-import RequestSettingsResponse from './models/RequestSettingsResponse';
-import ResponseObject from './models/ResponseObject';
-import ResponseObjectResponse from './models/ResponseObjectResponse';
-import Results from './models/Results';
-import RoleUser from './models/RoleUser';
-import SchemasBackend from './models/SchemasBackend';
-import SchemasDirector from './models/SchemasDirector';
-import SchemasSnippetResponse from './models/SchemasSnippetResponse';
-import SchemasUserResponse from './models/SchemasUserResponse';
-import SchemasVclResponse from './models/SchemasVclResponse';
-import SchemasVersion from './models/SchemasVersion';
-import SchemasVersionResponse from './models/SchemasVersionResponse';
-import SchemasWafFirewallVersion from './models/SchemasWafFirewallVersion';
-import SchemasWafFirewallVersionData from './models/SchemasWafFirewallVersionData';
-import Server from './models/Server';
-import ServerResponse from './models/ServerResponse';
-import ServerResponseAllOf from './models/ServerResponseAllOf';
-import Service from './models/Service';
-import ServiceAuthorization from './models/ServiceAuthorization';
-import ServiceAuthorizationData from './models/ServiceAuthorizationData';
-import ServiceAuthorizationDataAttributes from './models/ServiceAuthorizationDataAttributes';
-import ServiceAuthorizationResponse from './models/ServiceAuthorizationResponse';
-import ServiceAuthorizationResponseData from './models/ServiceAuthorizationResponseData';
-import ServiceAuthorizationResponseDataAllOf from './models/ServiceAuthorizationResponseDataAllOf';
-import ServiceAuthorizationsData from './models/ServiceAuthorizationsData';
-import ServiceAuthorizationsResponse from './models/ServiceAuthorizationsResponse';
-import ServiceAuthorizationsResponseAllOf from './models/ServiceAuthorizationsResponseAllOf';
-import ServiceCreate from './models/ServiceCreate';
-import ServiceCreateAllOf from './models/ServiceCreateAllOf';
-import ServiceDetail from './models/ServiceDetail';
-import ServiceDetailAllOf from './models/ServiceDetailAllOf';
-import ServiceIdAndVersion from './models/ServiceIdAndVersion';
-import ServiceInvitation from './models/ServiceInvitation';
-import ServiceInvitationData from './models/ServiceInvitationData';
-import ServiceInvitationDataAttributes from './models/ServiceInvitationDataAttributes';
-import ServiceInvitationResponse from './models/ServiceInvitationResponse';
-import ServiceInvitationResponseAllOf from './models/ServiceInvitationResponseAllOf';
-import ServiceInvitationResponseAllOfData from './models/ServiceInvitationResponseAllOfData';
-import ServiceListResponse from './models/ServiceListResponse';
-import ServiceListResponseAllOf from './models/ServiceListResponseAllOf';
-import ServiceResponse from './models/ServiceResponse';
-import ServiceResponseAllOf from './models/ServiceResponseAllOf';
-import Settings from './models/Settings';
-import SettingsResponse from './models/SettingsResponse';
-import Snippet from './models/Snippet';
-import SnippetResponse from './models/SnippetResponse';
-import SnippetResponseAllOf from './models/SnippetResponseAllOf';
-import Star from './models/Star';
-import StarData from './models/StarData';
-import StarResponse from './models/StarResponse';
-import StarResponseAllOf from './models/StarResponseAllOf';
-import Stats from './models/Stats';
-import Timestamps from './models/Timestamps';
-import TlsActivation from './models/TlsActivation';
-import TlsActivationData from './models/TlsActivationData';
-import TlsActivationResponse from './models/TlsActivationResponse';
-import TlsActivationResponseData from './models/TlsActivationResponseData';
-import TlsActivationResponseDataAllOf from './models/TlsActivationResponseDataAllOf';
-import TlsActivationsResponse from './models/TlsActivationsResponse';
-import TlsActivationsResponseAllOf from './models/TlsActivationsResponseAllOf';
-import TlsBulkCertificate from './models/TlsBulkCertificate';
-import TlsBulkCertificateData from './models/TlsBulkCertificateData';
-import TlsBulkCertificateDataAttributes from './models/TlsBulkCertificateDataAttributes';
-import TlsBulkCertificateResponse from './models/TlsBulkCertificateResponse';
-import TlsBulkCertificateResponseData from './models/TlsBulkCertificateResponseData';
-import TlsBulkCertificateResponseDataAllOf from './models/TlsBulkCertificateResponseDataAllOf';
-import TlsBulkCertificatesResponse from './models/TlsBulkCertificatesResponse';
-import TlsBulkCertificatesResponseAllOf from './models/TlsBulkCertificatesResponseAllOf';
-import TlsCertificate from './models/TlsCertificate';
-import TlsCertificateData from './models/TlsCertificateData';
-import TlsCertificateDataAttributes from './models/TlsCertificateDataAttributes';
-import TlsCertificateResponse from './models/TlsCertificateResponse';
-import TlsCertificateResponseData from './models/TlsCertificateResponseData';
-import TlsCertificateResponseDataAllOf from './models/TlsCertificateResponseDataAllOf';
-import TlsCertificatesResponse from './models/TlsCertificatesResponse';
-import TlsCertificatesResponseAllOf from './models/TlsCertificatesResponseAllOf';
-import TlsCommon from './models/TlsCommon';
-import TlsConfiguration from './models/TlsConfiguration';
-import TlsConfigurationData from './models/TlsConfigurationData';
-import TlsConfigurationDataAttributes from './models/TlsConfigurationDataAttributes';
-import TlsConfigurationResponse from './models/TlsConfigurationResponse';
-import TlsConfigurationResponseData from './models/TlsConfigurationResponseData';
-import TlsConfigurationResponseDataAllOf from './models/TlsConfigurationResponseDataAllOf';
-import TlsConfigurationsResponse from './models/TlsConfigurationsResponse';
-import TlsConfigurationsResponseAllOf from './models/TlsConfigurationsResponseAllOf';
-import TlsDnsRecord from './models/TlsDnsRecord';
-import TlsDomainData from './models/TlsDomainData';
-import TlsDomainsResponse from './models/TlsDomainsResponse';
-import TlsDomainsResponseAllOf from './models/TlsDomainsResponseAllOf';
-import TlsPrivateKey from './models/TlsPrivateKey';
-import TlsPrivateKeyData from './models/TlsPrivateKeyData';
-import TlsPrivateKeyDataAttributes from './models/TlsPrivateKeyDataAttributes';
-import TlsPrivateKeyResponse from './models/TlsPrivateKeyResponse';
-import TlsPrivateKeyResponseData from './models/TlsPrivateKeyResponseData';
-import TlsPrivateKeysResponse from './models/TlsPrivateKeysResponse';
-import TlsPrivateKeysResponseAllOf from './models/TlsPrivateKeysResponseAllOf';
-import TlsSubscription from './models/TlsSubscription';
-import TlsSubscriptionData from './models/TlsSubscriptionData';
-import TlsSubscriptionDataAttributes from './models/TlsSubscriptionDataAttributes';
-import TlsSubscriptionResponse from './models/TlsSubscriptionResponse';
-import TlsSubscriptionResponseData from './models/TlsSubscriptionResponseData';
-import TlsSubscriptionResponseDataAllOf from './models/TlsSubscriptionResponseDataAllOf';
-import TlsSubscriptionsResponse from './models/TlsSubscriptionsResponse';
-import TlsSubscriptionsResponseAllOf from './models/TlsSubscriptionsResponseAllOf';
-import Token from './models/Token';
-import TokenCreatedResponse from './models/TokenCreatedResponse';
-import TokenCreatedResponseAllOf from './models/TokenCreatedResponseAllOf';
-import TokenResponse from './models/TokenResponse';
-import TokenResponseAllOf from './models/TokenResponseAllOf';
-import TypeBillingAddress from './models/TypeBillingAddress';
-import TypeCustomer from './models/TypeCustomer';
-import TypeEvent from './models/TypeEvent';
-import TypeInvitation from './models/TypeInvitation';
-import TypeService from './models/TypeService';
-import TypeServiceAuthorization from './models/TypeServiceAuthorization';
-import TypeServiceInvitation from './models/TypeServiceInvitation';
-import TypeStar from './models/TypeStar';
-import TypeTlsActivation from './models/TypeTlsActivation';
-import TypeTlsBulkCertificate from './models/TypeTlsBulkCertificate';
-import TypeTlsCertificate from './models/TypeTlsCertificate';
-import TypeTlsConfiguration from './models/TypeTlsConfiguration';
-import TypeTlsDnsRecord from './models/TypeTlsDnsRecord';
-import TypeTlsDomain from './models/TypeTlsDomain';
-import TypeTlsPrivateKey from './models/TypeTlsPrivateKey';
-import TypeTlsSubscription from './models/TypeTlsSubscription';
-import TypeUser from './models/TypeUser';
-import TypeWafActiveRule from './models/TypeWafActiveRule';
-import TypeWafExclusion from './models/TypeWafExclusion';
-import TypeWafFirewall from './models/TypeWafFirewall';
-import TypeWafFirewallVersion from './models/TypeWafFirewallVersion';
-import TypeWafRule from './models/TypeWafRule';
-import TypeWafRuleRevision from './models/TypeWafRuleRevision';
-import TypeWafTag from './models/TypeWafTag';
-import User from './models/User';
-import UserResponse from './models/UserResponse';
-import UserResponseAllOf from './models/UserResponseAllOf';
-import Vcl from './models/Vcl';
-import VclDiff from './models/VclDiff';
-import VclResponse from './models/VclResponse';
-import Version from './models/Version';
-import VersionCreateResponse from './models/VersionCreateResponse';
-import VersionDetail from './models/VersionDetail';
-import VersionResponse from './models/VersionResponse';
-import VersionResponseAllOf from './models/VersionResponseAllOf';
-import WafActiveRule from './models/WafActiveRule';
-import WafActiveRuleCreationResponse from './models/WafActiveRuleCreationResponse';
-import WafActiveRuleData from './models/WafActiveRuleData';
-import WafActiveRuleDataAttributes from './models/WafActiveRuleDataAttributes';
-import WafActiveRuleResponse from './models/WafActiveRuleResponse';
-import WafActiveRuleResponseData from './models/WafActiveRuleResponseData';
-import WafActiveRuleResponseDataAllOf from './models/WafActiveRuleResponseDataAllOf';
-import WafActiveRulesResponse from './models/WafActiveRulesResponse';
-import WafActiveRulesResponseAllOf from './models/WafActiveRulesResponseAllOf';
-import WafExclusion from './models/WafExclusion';
-import WafExclusionData from './models/WafExclusionData';
-import WafExclusionDataAttributes from './models/WafExclusionDataAttributes';
-import WafExclusionResponse from './models/WafExclusionResponse';
-import WafExclusionResponseData from './models/WafExclusionResponseData';
-import WafExclusionResponseDataAllOf from './models/WafExclusionResponseDataAllOf';
-import WafExclusionsResponse from './models/WafExclusionsResponse';
-import WafExclusionsResponseAllOf from './models/WafExclusionsResponseAllOf';
-import WafFirewall from './models/WafFirewall';
-import WafFirewallData from './models/WafFirewallData';
-import WafFirewallDataAttributes from './models/WafFirewallDataAttributes';
-import WafFirewallResponse from './models/WafFirewallResponse';
-import WafFirewallResponseData from './models/WafFirewallResponseData';
-import WafFirewallResponseDataAllOf from './models/WafFirewallResponseDataAllOf';
-import WafFirewallVersion from './models/WafFirewallVersion';
-import WafFirewallVersionData from './models/WafFirewallVersionData';
-import WafFirewallVersionDataAttributes from './models/WafFirewallVersionDataAttributes';
-import WafFirewallVersionResponse from './models/WafFirewallVersionResponse';
-import WafFirewallVersionResponseData from './models/WafFirewallVersionResponseData';
-import WafFirewallVersionResponseDataAllOf from './models/WafFirewallVersionResponseDataAllOf';
-import WafFirewallVersionsResponse from './models/WafFirewallVersionsResponse';
-import WafFirewallVersionsResponseAllOf from './models/WafFirewallVersionsResponseAllOf';
-import WafFirewallsResponse from './models/WafFirewallsResponse';
-import WafFirewallsResponseAllOf from './models/WafFirewallsResponseAllOf';
-import WafRule from './models/WafRule';
-import WafRuleAttributes from './models/WafRuleAttributes';
-import WafRuleResponse from './models/WafRuleResponse';
-import WafRuleResponseData from './models/WafRuleResponseData';
-import WafRuleResponseDataAllOf from './models/WafRuleResponseDataAllOf';
-import WafRuleRevision from './models/WafRuleRevision';
-import WafRuleRevisionAttributes from './models/WafRuleRevisionAttributes';
-import WafRuleRevisionResponse from './models/WafRuleRevisionResponse';
-import WafRuleRevisionResponseData from './models/WafRuleRevisionResponseData';
-import WafRuleRevisionResponseDataAllOf from './models/WafRuleRevisionResponseDataAllOf';
-import WafRuleRevisionsResponse from './models/WafRuleRevisionsResponse';
-import WafRuleRevisionsResponseAllOf from './models/WafRuleRevisionsResponseAllOf';
-import WafRulesResponse from './models/WafRulesResponse';
-import WafRulesResponseAllOf from './models/WafRulesResponseAllOf';
-import WafTag from './models/WafTag';
-import WafTagAttributes from './models/WafTagAttributes';
-import WafTagsResponse from './models/WafTagsResponse';
-import WafTagsResponseAllOf from './models/WafTagsResponseAllOf';
+import Acl from './model/Acl';
+import AclEntries from './model/AclEntries';
+import AclEntry from './model/AclEntry';
+import AclEntryResponse from './model/AclEntryResponse';
+import AclEntryResponseAllOf from './model/AclEntryResponseAllOf';
+import AclResponse from './model/AclResponse';
+import AclResponseAllOf from './model/AclResponseAllOf';
+import Backend from './model/Backend';
+import BackendResponse from './model/BackendResponse';
+import BackendResponseAllOf from './model/BackendResponseAllOf';
+import Billing from './model/Billing';
+import BillingAddress from './model/BillingAddress';
+import BillingAddressData from './model/BillingAddressData';
+import BillingAddressDataAttributes from './model/BillingAddressDataAttributes';
+import BillingAddressResponse from './model/BillingAddressResponse';
+import BillingAddressResponseAllOf from './model/BillingAddressResponseAllOf';
+import BillingAddressResponseAllOfData from './model/BillingAddressResponseAllOfData';
+import BillingEstimateResponse from './model/BillingEstimateResponse';
+import BillingEstimateResponseAllOf from './model/BillingEstimateResponseAllOf';
+import BillingEstimateResponseAllOfLine from './model/BillingEstimateResponseAllOfLine';
+import BillingEstimateResponseAllOfLines from './model/BillingEstimateResponseAllOfLines';
+import BillingResponse from './model/BillingResponse';
+import BillingResponseAllOf from './model/BillingResponseAllOf';
+import BillingStatus from './model/BillingStatus';
+import BillingTotal from './model/BillingTotal';
+import BillingTotalExtras from './model/BillingTotalExtras';
+import BulkWafActiveRules from './model/BulkWafActiveRules';
+import CacheSetting from './model/CacheSetting';
+import CacheSettingResponse from './model/CacheSettingResponse';
+import Condition from './model/Condition';
+import ConditionResponse from './model/ConditionResponse';
+import Content from './model/Content';
+import Customer from './model/Customer';
+import CustomerCustomerIdBillingAddressData from './model/CustomerCustomerIdBillingAddressData';
+import CustomerCustomerIdBillingAddressData1 from './model/CustomerCustomerIdBillingAddressData1';
+import CustomerResponse from './model/CustomerResponse';
+import CustomerResponseAllOf from './model/CustomerResponseAllOf';
+import Dictionary from './model/Dictionary';
+import DictionaryInfoResponse from './model/DictionaryInfoResponse';
+import DictionaryItem from './model/DictionaryItem';
+import DictionaryItemResponse from './model/DictionaryItemResponse';
+import DictionaryItemResponseAllOf from './model/DictionaryItemResponseAllOf';
+import DictionaryResponse from './model/DictionaryResponse';
+import DictionaryResponseAllOf from './model/DictionaryResponseAllOf';
+import DiffResponse from './model/DiffResponse';
+import Director from './model/Director';
+import DirectorBackend from './model/DirectorBackend';
+import DirectorBackendAllOf from './model/DirectorBackendAllOf';
+import DirectorResponse from './model/DirectorResponse';
+import Domain from './model/Domain';
+import DomainCheckItem from './model/DomainCheckItem';
+import DomainResponse from './model/DomainResponse';
+import Event from './model/Event';
+import EventAttributes from './model/EventAttributes';
+import EventResponse from './model/EventResponse';
+import EventsResponse from './model/EventsResponse';
+import EventsResponseAllOf from './model/EventsResponseAllOf';
+import GenericTokenError from './model/GenericTokenError';
+import Gzip from './model/Gzip';
+import GzipResponse from './model/GzipResponse';
+import Header from './model/Header';
+import HeaderResponse from './model/HeaderResponse';
+import Healthcheck from './model/Healthcheck';
+import HealthcheckResponse from './model/HealthcheckResponse';
+import Historical from './model/Historical';
+import HistoricalAggregateResponse from './model/HistoricalAggregateResponse';
+import HistoricalAggregateResponseAllOf from './model/HistoricalAggregateResponseAllOf';
+import HistoricalFieldAggregateResponse from './model/HistoricalFieldAggregateResponse';
+import HistoricalFieldAggregateResponseAllOf from './model/HistoricalFieldAggregateResponseAllOf';
+import HistoricalFieldResponse from './model/HistoricalFieldResponse';
+import HistoricalFieldResponseAllOf from './model/HistoricalFieldResponseAllOf';
+import HistoricalMeta from './model/HistoricalMeta';
+import HistoricalRegionsResponse from './model/HistoricalRegionsResponse';
+import HistoricalRegionsResponseAllOf from './model/HistoricalRegionsResponseAllOf';
+import HistoricalResponse from './model/HistoricalResponse';
+import HistoricalResponseAllOf from './model/HistoricalResponseAllOf';
+import HistoricalUsageAggregateResponse from './model/HistoricalUsageAggregateResponse';
+import HistoricalUsageMonthResponse from './model/HistoricalUsageMonthResponse';
+import HistoricalUsageMonthResponseAllOf from './model/HistoricalUsageMonthResponseAllOf';
+import HistoricalUsageMonthResponseAllOfData from './model/HistoricalUsageMonthResponseAllOfData';
+import HistoricalUsageServiceResponse from './model/HistoricalUsageServiceResponse';
+import HistoricalUsageServiceResponseAllOf from './model/HistoricalUsageServiceResponseAllOf';
+import IncludedWithWafActiveRuleItem from './model/IncludedWithWafActiveRuleItem';
+import IncludedWithWafExclusionItem from './model/IncludedWithWafExclusionItem';
+import IncludedWithWafFirewallVersionItem from './model/IncludedWithWafFirewallVersionItem';
+import IncludedWithWafRuleItem from './model/IncludedWithWafRuleItem';
+import InlineObject from './model/InlineObject';
+import InlineObject1 from './model/InlineObject1';
+import InlineObject2 from './model/InlineObject2';
+import InlineObject3 from './model/InlineObject3';
+import InlineObject4 from './model/InlineObject4';
+import InlineResponse204 from './model/InlineResponse204';
+import InlineResponse400 from './model/InlineResponse400';
+import Invitation from './model/Invitation';
+import InvitationData from './model/InvitationData';
+import InvitationDataAttributes from './model/InvitationDataAttributes';
+import InvitationResponse from './model/InvitationResponse';
+import InvitationResponseAllOf from './model/InvitationResponseAllOf';
+import InvitationResponseData from './model/InvitationResponseData';
+import InvitationResponseDataAllOf from './model/InvitationResponseDataAllOf';
+import InvitationsResponse from './model/InvitationsResponse';
+import InvitationsResponseAllOf from './model/InvitationsResponseAllOf';
+import LoggingAddressAndPort from './model/LoggingAddressAndPort';
+import LoggingAzureblob from './model/LoggingAzureblob';
+import LoggingAzureblobAllOf from './model/LoggingAzureblobAllOf';
+import LoggingAzureblobResponse from './model/LoggingAzureblobResponse';
+import LoggingBigquery from './model/LoggingBigquery';
+import LoggingBigqueryAllOf from './model/LoggingBigqueryAllOf';
+import LoggingBigqueryResponse from './model/LoggingBigqueryResponse';
+import LoggingCloudfiles from './model/LoggingCloudfiles';
+import LoggingCloudfilesAllOf from './model/LoggingCloudfilesAllOf';
+import LoggingCloudfilesResponse from './model/LoggingCloudfilesResponse';
+import LoggingCommon from './model/LoggingCommon';
+import LoggingDatadog from './model/LoggingDatadog';
+import LoggingDatadogAllOf from './model/LoggingDatadogAllOf';
+import LoggingDatadogResponse from './model/LoggingDatadogResponse';
+import LoggingDigitalocean from './model/LoggingDigitalocean';
+import LoggingDigitaloceanAllOf from './model/LoggingDigitaloceanAllOf';
+import LoggingDigitaloceanResponse from './model/LoggingDigitaloceanResponse';
+import LoggingElasticsearch from './model/LoggingElasticsearch';
+import LoggingElasticsearchAllOf from './model/LoggingElasticsearchAllOf';
+import LoggingElasticsearchResponse from './model/LoggingElasticsearchResponse';
+import LoggingFormatVersion from './model/LoggingFormatVersion';
+import LoggingFtp from './model/LoggingFtp';
+import LoggingFtpAllOf from './model/LoggingFtpAllOf';
+import LoggingFtpResponse from './model/LoggingFtpResponse';
+import LoggingGcs from './model/LoggingGcs';
+import LoggingGcsAllOf from './model/LoggingGcsAllOf';
+import LoggingGcsCommon from './model/LoggingGcsCommon';
+import LoggingGcsResponse from './model/LoggingGcsResponse';
+import LoggingGenericCommon from './model/LoggingGenericCommon';
+import LoggingGooglePubsub from './model/LoggingGooglePubsub';
+import LoggingGooglePubsubAllOf from './model/LoggingGooglePubsubAllOf';
+import LoggingGooglePubsubResponse from './model/LoggingGooglePubsubResponse';
+import LoggingHeroku from './model/LoggingHeroku';
+import LoggingHerokuAllOf from './model/LoggingHerokuAllOf';
+import LoggingHerokuResponse from './model/LoggingHerokuResponse';
+import LoggingHoneycomb from './model/LoggingHoneycomb';
+import LoggingHoneycombAllOf from './model/LoggingHoneycombAllOf';
+import LoggingHoneycombResponse from './model/LoggingHoneycombResponse';
+import LoggingHttps from './model/LoggingHttps';
+import LoggingHttpsAllOf from './model/LoggingHttpsAllOf';
+import LoggingHttpsResponse from './model/LoggingHttpsResponse';
+import LoggingKafka from './model/LoggingKafka';
+import LoggingKafkaAllOf from './model/LoggingKafkaAllOf';
+import LoggingKafkaResponse from './model/LoggingKafkaResponse';
+import LoggingKinesis from './model/LoggingKinesis';
+import LoggingKinesisResponse from './model/LoggingKinesisResponse';
+import LoggingLogentries from './model/LoggingLogentries';
+import LoggingLogentriesAllOf from './model/LoggingLogentriesAllOf';
+import LoggingLogentriesResponse from './model/LoggingLogentriesResponse';
+import LoggingLoggly from './model/LoggingLoggly';
+import LoggingLogglyAllOf from './model/LoggingLogglyAllOf';
+import LoggingLogglyResponse from './model/LoggingLogglyResponse';
+import LoggingLogshuttle from './model/LoggingLogshuttle';
+import LoggingLogshuttleAllOf from './model/LoggingLogshuttleAllOf';
+import LoggingLogshuttleResponse from './model/LoggingLogshuttleResponse';
+import LoggingMessageType from './model/LoggingMessageType';
+import LoggingNewrelic from './model/LoggingNewrelic';
+import LoggingNewrelicAllOf from './model/LoggingNewrelicAllOf';
+import LoggingNewrelicResponse from './model/LoggingNewrelicResponse';
+import LoggingOpenstack from './model/LoggingOpenstack';
+import LoggingOpenstackAllOf from './model/LoggingOpenstackAllOf';
+import LoggingOpenstackResponse from './model/LoggingOpenstackResponse';
+import LoggingPapertrail from './model/LoggingPapertrail';
+import LoggingPapertrailResponse from './model/LoggingPapertrailResponse';
+import LoggingPlacement from './model/LoggingPlacement';
+import LoggingRequestCapsCommon from './model/LoggingRequestCapsCommon';
+import LoggingS3 from './model/LoggingS3';
+import LoggingS3AllOf from './model/LoggingS3AllOf';
+import LoggingS3Response from './model/LoggingS3Response';
+import LoggingScalyr from './model/LoggingScalyr';
+import LoggingScalyrAllOf from './model/LoggingScalyrAllOf';
+import LoggingScalyrResponse from './model/LoggingScalyrResponse';
+import LoggingSftp from './model/LoggingSftp';
+import LoggingSftpAllOf from './model/LoggingSftpAllOf';
+import LoggingSftpResponse from './model/LoggingSftpResponse';
+import LoggingSplunk from './model/LoggingSplunk';
+import LoggingSplunkAllOf from './model/LoggingSplunkAllOf';
+import LoggingSplunkResponse from './model/LoggingSplunkResponse';
+import LoggingSumologic from './model/LoggingSumologic';
+import LoggingSumologicAllOf from './model/LoggingSumologicAllOf';
+import LoggingSumologicResponse from './model/LoggingSumologicResponse';
+import LoggingSyslog from './model/LoggingSyslog';
+import LoggingSyslogAllOf from './model/LoggingSyslogAllOf';
+import LoggingSyslogResponse from './model/LoggingSyslogResponse';
+import LoggingTlsCommon from './model/LoggingTlsCommon';
+import LoggingUseTls from './model/LoggingUseTls';
+import NestedVersion from './model/NestedVersion';
+import Package from './model/Package';
+import PackageMetadata from './model/PackageMetadata';
+import PackageResponse from './model/PackageResponse';
+import PackageResponseAllOf from './model/PackageResponseAllOf';
+import Pagination from './model/Pagination';
+import PaginationLinks from './model/PaginationLinks';
+import PaginationMeta from './model/PaginationMeta';
+import Permission from './model/Permission';
+import Pool from './model/Pool';
+import PoolAllOf from './model/PoolAllOf';
+import PoolResponse from './model/PoolResponse';
+import PoolResponseAllOf from './model/PoolResponseAllOf';
+import Pop from './model/Pop';
+import PopCoordinates from './model/PopCoordinates';
+import PublicIpList from './model/PublicIpList';
+import RateLimiter from './model/RateLimiter';
+import RateLimiterResponse from './model/RateLimiterResponse';
+import RateLimiterResponse1 from './model/RateLimiterResponse1';
+import RateLimiterResponseAllOf from './model/RateLimiterResponseAllOf';
+import Realtime from './model/Realtime';
+import RealtimeEntry from './model/RealtimeEntry';
+import RealtimeMeasurements from './model/RealtimeMeasurements';
+import RelationshipCommonName from './model/RelationshipCommonName';
+import RelationshipCustomer from './model/RelationshipCustomer';
+import RelationshipCustomerCustomer from './model/RelationshipCustomerCustomer';
+import RelationshipMemberCustomer from './model/RelationshipMemberCustomer';
+import RelationshipMemberService from './model/RelationshipMemberService';
+import RelationshipMemberServiceInvitation from './model/RelationshipMemberServiceInvitation';
+import RelationshipMemberTlsActivation from './model/RelationshipMemberTlsActivation';
+import RelationshipMemberTlsBulkCertificate from './model/RelationshipMemberTlsBulkCertificate';
+import RelationshipMemberTlsCertificate from './model/RelationshipMemberTlsCertificate';
+import RelationshipMemberTlsConfiguration from './model/RelationshipMemberTlsConfiguration';
+import RelationshipMemberTlsDnsRecord from './model/RelationshipMemberTlsDnsRecord';
+import RelationshipMemberTlsDomain from './model/RelationshipMemberTlsDomain';
+import RelationshipMemberTlsPrivateKey from './model/RelationshipMemberTlsPrivateKey';
+import RelationshipMemberTlsSubscription from './model/RelationshipMemberTlsSubscription';
+import RelationshipMemberWafActiveRule from './model/RelationshipMemberWafActiveRule';
+import RelationshipMemberWafFirewall from './model/RelationshipMemberWafFirewall';
+import RelationshipMemberWafFirewallVersion from './model/RelationshipMemberWafFirewallVersion';
+import RelationshipMemberWafRule from './model/RelationshipMemberWafRule';
+import RelationshipMemberWafRuleRevision from './model/RelationshipMemberWafRuleRevision';
+import RelationshipMemberWafTag from './model/RelationshipMemberWafTag';
+import RelationshipService from './model/RelationshipService';
+import RelationshipServiceInvitations from './model/RelationshipServiceInvitations';
+import RelationshipServiceInvitationsCreate from './model/RelationshipServiceInvitationsCreate';
+import RelationshipServiceInvitationsCreateServiceInvitations from './model/RelationshipServiceInvitationsCreateServiceInvitations';
+import RelationshipServiceInvitationsServiceInvitations from './model/RelationshipServiceInvitationsServiceInvitations';
+import RelationshipServiceService from './model/RelationshipServiceService';
+import RelationshipServices from './model/RelationshipServices';
+import RelationshipTlsActivation from './model/RelationshipTlsActivation';
+import RelationshipTlsActivationTlsActivation from './model/RelationshipTlsActivationTlsActivation';
+import RelationshipTlsActivations from './model/RelationshipTlsActivations';
+import RelationshipTlsBulkCertificate from './model/RelationshipTlsBulkCertificate';
+import RelationshipTlsBulkCertificateTlsBulkCertificate from './model/RelationshipTlsBulkCertificateTlsBulkCertificate';
+import RelationshipTlsBulkCertificates from './model/RelationshipTlsBulkCertificates';
+import RelationshipTlsCertificate from './model/RelationshipTlsCertificate';
+import RelationshipTlsCertificateTlsCertificate from './model/RelationshipTlsCertificateTlsCertificate';
+import RelationshipTlsCertificates from './model/RelationshipTlsCertificates';
+import RelationshipTlsConfiguration from './model/RelationshipTlsConfiguration';
+import RelationshipTlsConfigurationTlsConfiguration from './model/RelationshipTlsConfigurationTlsConfiguration';
+import RelationshipTlsConfigurations from './model/RelationshipTlsConfigurations';
+import RelationshipTlsDnsRecord from './model/RelationshipTlsDnsRecord';
+import RelationshipTlsDnsRecordDnsRecord from './model/RelationshipTlsDnsRecordDnsRecord';
+import RelationshipTlsDnsRecords from './model/RelationshipTlsDnsRecords';
+import RelationshipTlsDomain from './model/RelationshipTlsDomain';
+import RelationshipTlsDomainTlsDomain from './model/RelationshipTlsDomainTlsDomain';
+import RelationshipTlsDomains from './model/RelationshipTlsDomains';
+import RelationshipTlsPrivateKey from './model/RelationshipTlsPrivateKey';
+import RelationshipTlsPrivateKeyTlsPrivateKey from './model/RelationshipTlsPrivateKeyTlsPrivateKey';
+import RelationshipTlsPrivateKeys from './model/RelationshipTlsPrivateKeys';
+import RelationshipTlsSubscription from './model/RelationshipTlsSubscription';
+import RelationshipTlsSubscriptionTlsSubscription from './model/RelationshipTlsSubscriptionTlsSubscription';
+import RelationshipTlsSubscriptions from './model/RelationshipTlsSubscriptions';
+import RelationshipUser from './model/RelationshipUser';
+import RelationshipUserUser from './model/RelationshipUserUser';
+import RelationshipUserUserData from './model/RelationshipUserUserData';
+import RelationshipWafActiveRules from './model/RelationshipWafActiveRules';
+import RelationshipWafActiveRulesWafActiveRules from './model/RelationshipWafActiveRulesWafActiveRules';
+import RelationshipWafFirewall from './model/RelationshipWafFirewall';
+import RelationshipWafFirewallVersion from './model/RelationshipWafFirewallVersion';
+import RelationshipWafFirewallVersionWafFirewallVersion from './model/RelationshipWafFirewallVersionWafFirewallVersion';
+import RelationshipWafFirewallVersions from './model/RelationshipWafFirewallVersions';
+import RelationshipWafFirewallWafFirewall from './model/RelationshipWafFirewallWafFirewall';
+import RelationshipWafRule from './model/RelationshipWafRule';
+import RelationshipWafRuleRevision from './model/RelationshipWafRuleRevision';
+import RelationshipWafRuleRevisionWafRuleRevisions from './model/RelationshipWafRuleRevisionWafRuleRevisions';
+import RelationshipWafRuleRevisions from './model/RelationshipWafRuleRevisions';
+import RelationshipWafRuleWafRule from './model/RelationshipWafRuleWafRule';
+import RelationshipWafRules from './model/RelationshipWafRules';
+import RelationshipWafTags from './model/RelationshipWafTags';
+import RelationshipWafTagsWafTags from './model/RelationshipWafTagsWafTags';
+import RelationshipsForInvitation from './model/RelationshipsForInvitation';
+import RelationshipsForTlsActivation from './model/RelationshipsForTlsActivation';
+import RelationshipsForTlsBulkCertificate from './model/RelationshipsForTlsBulkCertificate';
+import RelationshipsForTlsConfiguration from './model/RelationshipsForTlsConfiguration';
+import RelationshipsForTlsDomain from './model/RelationshipsForTlsDomain';
+import RelationshipsForTlsPrivateKey from './model/RelationshipsForTlsPrivateKey';
+import RelationshipsForTlsSubscription from './model/RelationshipsForTlsSubscription';
+import RelationshipsForWafActiveRule from './model/RelationshipsForWafActiveRule';
+import RelationshipsForWafExclusion from './model/RelationshipsForWafExclusion';
+import RelationshipsForWafFirewallVersion from './model/RelationshipsForWafFirewallVersion';
+import RelationshipsForWafRule from './model/RelationshipsForWafRule';
+import RequestSettings from './model/RequestSettings';
+import RequestSettingsResponse from './model/RequestSettingsResponse';
+import ResponseObject from './model/ResponseObject';
+import ResponseObjectResponse from './model/ResponseObjectResponse';
+import Results from './model/Results';
+import RoleUser from './model/RoleUser';
+import SchemasBackend from './model/SchemasBackend';
+import SchemasDirector from './model/SchemasDirector';
+import SchemasResponseObject from './model/SchemasResponseObject';
+import SchemasResponseObjectResponse from './model/SchemasResponseObjectResponse';
+import SchemasSnippetResponse from './model/SchemasSnippetResponse';
+import SchemasUserResponse from './model/SchemasUserResponse';
+import SchemasVclResponse from './model/SchemasVclResponse';
+import SchemasVersion from './model/SchemasVersion';
+import SchemasVersionResponse from './model/SchemasVersionResponse';
+import SchemasWafFirewallVersion from './model/SchemasWafFirewallVersion';
+import SchemasWafFirewallVersionData from './model/SchemasWafFirewallVersionData';
+import Server from './model/Server';
+import ServerResponse from './model/ServerResponse';
+import ServerResponseAllOf from './model/ServerResponseAllOf';
+import Service from './model/Service';
+import ServiceAuthorization from './model/ServiceAuthorization';
+import ServiceAuthorizationData from './model/ServiceAuthorizationData';
+import ServiceAuthorizationDataAttributes from './model/ServiceAuthorizationDataAttributes';
+import ServiceAuthorizationResponse from './model/ServiceAuthorizationResponse';
+import ServiceAuthorizationResponseData from './model/ServiceAuthorizationResponseData';
+import ServiceAuthorizationResponseDataAllOf from './model/ServiceAuthorizationResponseDataAllOf';
+import ServiceAuthorizationsData from './model/ServiceAuthorizationsData';
+import ServiceAuthorizationsResponse from './model/ServiceAuthorizationsResponse';
+import ServiceAuthorizationsResponseAllOf from './model/ServiceAuthorizationsResponseAllOf';
+import ServiceCreate from './model/ServiceCreate';
+import ServiceCreateAllOf from './model/ServiceCreateAllOf';
+import ServiceDetail from './model/ServiceDetail';
+import ServiceDetailAllOf from './model/ServiceDetailAllOf';
+import ServiceIdAndVersion from './model/ServiceIdAndVersion';
+import ServiceInvitation from './model/ServiceInvitation';
+import ServiceInvitationData from './model/ServiceInvitationData';
+import ServiceInvitationDataAttributes from './model/ServiceInvitationDataAttributes';
+import ServiceInvitationResponse from './model/ServiceInvitationResponse';
+import ServiceInvitationResponseAllOf from './model/ServiceInvitationResponseAllOf';
+import ServiceInvitationResponseAllOfData from './model/ServiceInvitationResponseAllOfData';
+import ServiceListResponse from './model/ServiceListResponse';
+import ServiceListResponseAllOf from './model/ServiceListResponseAllOf';
+import ServiceResponse from './model/ServiceResponse';
+import ServiceResponseAllOf from './model/ServiceResponseAllOf';
+import Settings from './model/Settings';
+import SettingsResponse from './model/SettingsResponse';
+import Snippet from './model/Snippet';
+import SnippetResponse from './model/SnippetResponse';
+import SnippetResponseAllOf from './model/SnippetResponseAllOf';
+import Star from './model/Star';
+import StarData from './model/StarData';
+import StarResponse from './model/StarResponse';
+import StarResponseAllOf from './model/StarResponseAllOf';
+import Stats from './model/Stats';
+import Timestamps from './model/Timestamps';
+import TlsActivation from './model/TlsActivation';
+import TlsActivationData from './model/TlsActivationData';
+import TlsActivationResponse from './model/TlsActivationResponse';
+import TlsActivationResponseData from './model/TlsActivationResponseData';
+import TlsActivationResponseDataAllOf from './model/TlsActivationResponseDataAllOf';
+import TlsActivationsResponse from './model/TlsActivationsResponse';
+import TlsActivationsResponseAllOf from './model/TlsActivationsResponseAllOf';
+import TlsBulkCertificate from './model/TlsBulkCertificate';
+import TlsBulkCertificateData from './model/TlsBulkCertificateData';
+import TlsBulkCertificateDataAttributes from './model/TlsBulkCertificateDataAttributes';
+import TlsBulkCertificateResponse from './model/TlsBulkCertificateResponse';
+import TlsBulkCertificateResponseData from './model/TlsBulkCertificateResponseData';
+import TlsBulkCertificateResponseDataAllOf from './model/TlsBulkCertificateResponseDataAllOf';
+import TlsBulkCertificatesResponse from './model/TlsBulkCertificatesResponse';
+import TlsBulkCertificatesResponseAllOf from './model/TlsBulkCertificatesResponseAllOf';
+import TlsCertificate from './model/TlsCertificate';
+import TlsCertificateData from './model/TlsCertificateData';
+import TlsCertificateDataAttributes from './model/TlsCertificateDataAttributes';
+import TlsCertificateResponse from './model/TlsCertificateResponse';
+import TlsCertificateResponseData from './model/TlsCertificateResponseData';
+import TlsCertificateResponseDataAllOf from './model/TlsCertificateResponseDataAllOf';
+import TlsCertificatesResponse from './model/TlsCertificatesResponse';
+import TlsCertificatesResponseAllOf from './model/TlsCertificatesResponseAllOf';
+import TlsCommon from './model/TlsCommon';
+import TlsConfiguration from './model/TlsConfiguration';
+import TlsConfigurationData from './model/TlsConfigurationData';
+import TlsConfigurationDataAttributes from './model/TlsConfigurationDataAttributes';
+import TlsConfigurationResponse from './model/TlsConfigurationResponse';
+import TlsConfigurationResponseData from './model/TlsConfigurationResponseData';
+import TlsConfigurationResponseDataAllOf from './model/TlsConfigurationResponseDataAllOf';
+import TlsConfigurationsResponse from './model/TlsConfigurationsResponse';
+import TlsConfigurationsResponseAllOf from './model/TlsConfigurationsResponseAllOf';
+import TlsDnsRecord from './model/TlsDnsRecord';
+import TlsDomainData from './model/TlsDomainData';
+import TlsDomainsResponse from './model/TlsDomainsResponse';
+import TlsDomainsResponseAllOf from './model/TlsDomainsResponseAllOf';
+import TlsPrivateKey from './model/TlsPrivateKey';
+import TlsPrivateKeyData from './model/TlsPrivateKeyData';
+import TlsPrivateKeyDataAttributes from './model/TlsPrivateKeyDataAttributes';
+import TlsPrivateKeyResponse from './model/TlsPrivateKeyResponse';
+import TlsPrivateKeyResponseData from './model/TlsPrivateKeyResponseData';
+import TlsPrivateKeysResponse from './model/TlsPrivateKeysResponse';
+import TlsPrivateKeysResponseAllOf from './model/TlsPrivateKeysResponseAllOf';
+import TlsSubscription from './model/TlsSubscription';
+import TlsSubscriptionData from './model/TlsSubscriptionData';
+import TlsSubscriptionDataAttributes from './model/TlsSubscriptionDataAttributes';
+import TlsSubscriptionResponse from './model/TlsSubscriptionResponse';
+import TlsSubscriptionResponseData from './model/TlsSubscriptionResponseData';
+import TlsSubscriptionResponseDataAllOf from './model/TlsSubscriptionResponseDataAllOf';
+import TlsSubscriptionsResponse from './model/TlsSubscriptionsResponse';
+import TlsSubscriptionsResponseAllOf from './model/TlsSubscriptionsResponseAllOf';
+import Token from './model/Token';
+import TokenCreatedResponse from './model/TokenCreatedResponse';
+import TokenCreatedResponseAllOf from './model/TokenCreatedResponseAllOf';
+import TokenResponse from './model/TokenResponse';
+import TokenResponseAllOf from './model/TokenResponseAllOf';
+import TypeBillingAddress from './model/TypeBillingAddress';
+import TypeCustomer from './model/TypeCustomer';
+import TypeEvent from './model/TypeEvent';
+import TypeInvitation from './model/TypeInvitation';
+import TypeService from './model/TypeService';
+import TypeServiceAuthorization from './model/TypeServiceAuthorization';
+import TypeServiceInvitation from './model/TypeServiceInvitation';
+import TypeStar from './model/TypeStar';
+import TypeTlsActivation from './model/TypeTlsActivation';
+import TypeTlsBulkCertificate from './model/TypeTlsBulkCertificate';
+import TypeTlsCertificate from './model/TypeTlsCertificate';
+import TypeTlsConfiguration from './model/TypeTlsConfiguration';
+import TypeTlsDnsRecord from './model/TypeTlsDnsRecord';
+import TypeTlsDomain from './model/TypeTlsDomain';
+import TypeTlsPrivateKey from './model/TypeTlsPrivateKey';
+import TypeTlsSubscription from './model/TypeTlsSubscription';
+import TypeUser from './model/TypeUser';
+import TypeWafActiveRule from './model/TypeWafActiveRule';
+import TypeWafExclusion from './model/TypeWafExclusion';
+import TypeWafFirewall from './model/TypeWafFirewall';
+import TypeWafFirewallVersion from './model/TypeWafFirewallVersion';
+import TypeWafRule from './model/TypeWafRule';
+import TypeWafRuleRevision from './model/TypeWafRuleRevision';
+import TypeWafTag from './model/TypeWafTag';
+import User from './model/User';
+import UserResponse from './model/UserResponse';
+import UserResponseAllOf from './model/UserResponseAllOf';
+import Vcl from './model/Vcl';
+import VclDiff from './model/VclDiff';
+import VclResponse from './model/VclResponse';
+import Version from './model/Version';
+import VersionCreateResponse from './model/VersionCreateResponse';
+import VersionDetail from './model/VersionDetail';
+import VersionResponse from './model/VersionResponse';
+import VersionResponseAllOf from './model/VersionResponseAllOf';
+import WafActiveRule from './model/WafActiveRule';
+import WafActiveRuleCreationResponse from './model/WafActiveRuleCreationResponse';
+import WafActiveRuleData from './model/WafActiveRuleData';
+import WafActiveRuleDataAttributes from './model/WafActiveRuleDataAttributes';
+import WafActiveRuleResponse from './model/WafActiveRuleResponse';
+import WafActiveRuleResponseData from './model/WafActiveRuleResponseData';
+import WafActiveRuleResponseDataAllOf from './model/WafActiveRuleResponseDataAllOf';
+import WafActiveRulesResponse from './model/WafActiveRulesResponse';
+import WafActiveRulesResponseAllOf from './model/WafActiveRulesResponseAllOf';
+import WafExclusion from './model/WafExclusion';
+import WafExclusionData from './model/WafExclusionData';
+import WafExclusionDataAttributes from './model/WafExclusionDataAttributes';
+import WafExclusionResponse from './model/WafExclusionResponse';
+import WafExclusionResponseData from './model/WafExclusionResponseData';
+import WafExclusionResponseDataAllOf from './model/WafExclusionResponseDataAllOf';
+import WafExclusionsResponse from './model/WafExclusionsResponse';
+import WafExclusionsResponseAllOf from './model/WafExclusionsResponseAllOf';
+import WafFirewall from './model/WafFirewall';
+import WafFirewallData from './model/WafFirewallData';
+import WafFirewallDataAttributes from './model/WafFirewallDataAttributes';
+import WafFirewallResponse from './model/WafFirewallResponse';
+import WafFirewallResponseData from './model/WafFirewallResponseData';
+import WafFirewallResponseDataAllOf from './model/WafFirewallResponseDataAllOf';
+import WafFirewallVersion from './model/WafFirewallVersion';
+import WafFirewallVersionData from './model/WafFirewallVersionData';
+import WafFirewallVersionDataAttributes from './model/WafFirewallVersionDataAttributes';
+import WafFirewallVersionResponse from './model/WafFirewallVersionResponse';
+import WafFirewallVersionResponseData from './model/WafFirewallVersionResponseData';
+import WafFirewallVersionResponseDataAllOf from './model/WafFirewallVersionResponseDataAllOf';
+import WafFirewallVersionsResponse from './model/WafFirewallVersionsResponse';
+import WafFirewallVersionsResponseAllOf from './model/WafFirewallVersionsResponseAllOf';
+import WafFirewallsResponse from './model/WafFirewallsResponse';
+import WafFirewallsResponseAllOf from './model/WafFirewallsResponseAllOf';
+import WafRule from './model/WafRule';
+import WafRuleAttributes from './model/WafRuleAttributes';
+import WafRuleResponse from './model/WafRuleResponse';
+import WafRuleResponseData from './model/WafRuleResponseData';
+import WafRuleResponseDataAllOf from './model/WafRuleResponseDataAllOf';
+import WafRuleRevision from './model/WafRuleRevision';
+import WafRuleRevisionAttributes from './model/WafRuleRevisionAttributes';
+import WafRuleRevisionResponse from './model/WafRuleRevisionResponse';
+import WafRuleRevisionResponseData from './model/WafRuleRevisionResponseData';
+import WafRuleRevisionResponseDataAllOf from './model/WafRuleRevisionResponseDataAllOf';
+import WafRuleRevisionsResponse from './model/WafRuleRevisionsResponse';
+import WafRuleRevisionsResponseAllOf from './model/WafRuleRevisionsResponseAllOf';
+import WafRulesResponse from './model/WafRulesResponse';
+import WafRulesResponseAllOf from './model/WafRulesResponseAllOf';
+import WafTag from './model/WafTag';
+import WafTagAttributes from './model/WafTagAttributes';
+import WafTagsResponse from './model/WafTagsResponse';
+import WafTagsResponseAllOf from './model/WafTagsResponseAllOf';
 import AclApi from './api/AclApi';
 import AclEntryApi from './api/AclEntryApi';
 import BackendApi from './api/BackendApi';
@@ -628,2923 +630,2935 @@ export {
 
     /**
      * The Acl model constructor.
-     * @property {module:models/Acl}
+     * @property {module:model/Acl}
      */
     Acl,
 
     /**
      * The AclEntries model constructor.
-     * @property {module:models/AclEntries}
+     * @property {module:model/AclEntries}
      */
     AclEntries,
 
     /**
      * The AclEntry model constructor.
-     * @property {module:models/AclEntry}
+     * @property {module:model/AclEntry}
      */
     AclEntry,
 
     /**
      * The AclEntryResponse model constructor.
-     * @property {module:models/AclEntryResponse}
+     * @property {module:model/AclEntryResponse}
      */
     AclEntryResponse,
 
     /**
      * The AclEntryResponseAllOf model constructor.
-     * @property {module:models/AclEntryResponseAllOf}
+     * @property {module:model/AclEntryResponseAllOf}
      */
     AclEntryResponseAllOf,
 
     /**
      * The AclResponse model constructor.
-     * @property {module:models/AclResponse}
+     * @property {module:model/AclResponse}
      */
     AclResponse,
 
     /**
      * The AclResponseAllOf model constructor.
-     * @property {module:models/AclResponseAllOf}
+     * @property {module:model/AclResponseAllOf}
      */
     AclResponseAllOf,
 
     /**
      * The Backend model constructor.
-     * @property {module:models/Backend}
+     * @property {module:model/Backend}
      */
     Backend,
 
     /**
      * The BackendResponse model constructor.
-     * @property {module:models/BackendResponse}
+     * @property {module:model/BackendResponse}
      */
     BackendResponse,
 
     /**
      * The BackendResponseAllOf model constructor.
-     * @property {module:models/BackendResponseAllOf}
+     * @property {module:model/BackendResponseAllOf}
      */
     BackendResponseAllOf,
 
     /**
      * The Billing model constructor.
-     * @property {module:models/Billing}
+     * @property {module:model/Billing}
      */
     Billing,
 
     /**
      * The BillingAddress model constructor.
-     * @property {module:models/BillingAddress}
+     * @property {module:model/BillingAddress}
      */
     BillingAddress,
 
     /**
      * The BillingAddressData model constructor.
-     * @property {module:models/BillingAddressData}
+     * @property {module:model/BillingAddressData}
      */
     BillingAddressData,
 
     /**
      * The BillingAddressDataAttributes model constructor.
-     * @property {module:models/BillingAddressDataAttributes}
+     * @property {module:model/BillingAddressDataAttributes}
      */
     BillingAddressDataAttributes,
 
     /**
      * The BillingAddressResponse model constructor.
-     * @property {module:models/BillingAddressResponse}
+     * @property {module:model/BillingAddressResponse}
      */
     BillingAddressResponse,
 
     /**
      * The BillingAddressResponseAllOf model constructor.
-     * @property {module:models/BillingAddressResponseAllOf}
+     * @property {module:model/BillingAddressResponseAllOf}
      */
     BillingAddressResponseAllOf,
 
     /**
      * The BillingAddressResponseAllOfData model constructor.
-     * @property {module:models/BillingAddressResponseAllOfData}
+     * @property {module:model/BillingAddressResponseAllOfData}
      */
     BillingAddressResponseAllOfData,
 
     /**
      * The BillingEstimateResponse model constructor.
-     * @property {module:models/BillingEstimateResponse}
+     * @property {module:model/BillingEstimateResponse}
      */
     BillingEstimateResponse,
 
     /**
      * The BillingEstimateResponseAllOf model constructor.
-     * @property {module:models/BillingEstimateResponseAllOf}
+     * @property {module:model/BillingEstimateResponseAllOf}
      */
     BillingEstimateResponseAllOf,
 
     /**
      * The BillingEstimateResponseAllOfLine model constructor.
-     * @property {module:models/BillingEstimateResponseAllOfLine}
+     * @property {module:model/BillingEstimateResponseAllOfLine}
      */
     BillingEstimateResponseAllOfLine,
 
     /**
      * The BillingEstimateResponseAllOfLines model constructor.
-     * @property {module:models/BillingEstimateResponseAllOfLines}
+     * @property {module:model/BillingEstimateResponseAllOfLines}
      */
     BillingEstimateResponseAllOfLines,
 
     /**
      * The BillingResponse model constructor.
-     * @property {module:models/BillingResponse}
+     * @property {module:model/BillingResponse}
      */
     BillingResponse,
 
     /**
      * The BillingResponseAllOf model constructor.
-     * @property {module:models/BillingResponseAllOf}
+     * @property {module:model/BillingResponseAllOf}
      */
     BillingResponseAllOf,
 
     /**
      * The BillingStatus model constructor.
-     * @property {module:models/BillingStatus}
+     * @property {module:model/BillingStatus}
      */
     BillingStatus,
 
     /**
      * The BillingTotal model constructor.
-     * @property {module:models/BillingTotal}
+     * @property {module:model/BillingTotal}
      */
     BillingTotal,
 
     /**
      * The BillingTotalExtras model constructor.
-     * @property {module:models/BillingTotalExtras}
+     * @property {module:model/BillingTotalExtras}
      */
     BillingTotalExtras,
 
     /**
      * The BulkWafActiveRules model constructor.
-     * @property {module:models/BulkWafActiveRules}
+     * @property {module:model/BulkWafActiveRules}
      */
     BulkWafActiveRules,
 
     /**
      * The CacheSetting model constructor.
-     * @property {module:models/CacheSetting}
+     * @property {module:model/CacheSetting}
      */
     CacheSetting,
 
     /**
      * The CacheSettingResponse model constructor.
-     * @property {module:models/CacheSettingResponse}
+     * @property {module:model/CacheSettingResponse}
      */
     CacheSettingResponse,
 
     /**
      * The Condition model constructor.
-     * @property {module:models/Condition}
+     * @property {module:model/Condition}
      */
     Condition,
 
     /**
      * The ConditionResponse model constructor.
-     * @property {module:models/ConditionResponse}
+     * @property {module:model/ConditionResponse}
      */
     ConditionResponse,
 
     /**
      * The Content model constructor.
-     * @property {module:models/Content}
+     * @property {module:model/Content}
      */
     Content,
 
     /**
      * The Customer model constructor.
-     * @property {module:models/Customer}
+     * @property {module:model/Customer}
      */
     Customer,
 
     /**
      * The CustomerCustomerIdBillingAddressData model constructor.
-     * @property {module:models/CustomerCustomerIdBillingAddressData}
+     * @property {module:model/CustomerCustomerIdBillingAddressData}
      */
     CustomerCustomerIdBillingAddressData,
 
     /**
      * The CustomerCustomerIdBillingAddressData1 model constructor.
-     * @property {module:models/CustomerCustomerIdBillingAddressData1}
+     * @property {module:model/CustomerCustomerIdBillingAddressData1}
      */
     CustomerCustomerIdBillingAddressData1,
 
     /**
      * The CustomerResponse model constructor.
-     * @property {module:models/CustomerResponse}
+     * @property {module:model/CustomerResponse}
      */
     CustomerResponse,
 
     /**
      * The CustomerResponseAllOf model constructor.
-     * @property {module:models/CustomerResponseAllOf}
+     * @property {module:model/CustomerResponseAllOf}
      */
     CustomerResponseAllOf,
 
     /**
      * The Dictionary model constructor.
-     * @property {module:models/Dictionary}
+     * @property {module:model/Dictionary}
      */
     Dictionary,
 
     /**
      * The DictionaryInfoResponse model constructor.
-     * @property {module:models/DictionaryInfoResponse}
+     * @property {module:model/DictionaryInfoResponse}
      */
     DictionaryInfoResponse,
 
     /**
      * The DictionaryItem model constructor.
-     * @property {module:models/DictionaryItem}
+     * @property {module:model/DictionaryItem}
      */
     DictionaryItem,
 
     /**
      * The DictionaryItemResponse model constructor.
-     * @property {module:models/DictionaryItemResponse}
+     * @property {module:model/DictionaryItemResponse}
      */
     DictionaryItemResponse,
 
     /**
      * The DictionaryItemResponseAllOf model constructor.
-     * @property {module:models/DictionaryItemResponseAllOf}
+     * @property {module:model/DictionaryItemResponseAllOf}
      */
     DictionaryItemResponseAllOf,
 
     /**
      * The DictionaryResponse model constructor.
-     * @property {module:models/DictionaryResponse}
+     * @property {module:model/DictionaryResponse}
      */
     DictionaryResponse,
 
     /**
      * The DictionaryResponseAllOf model constructor.
-     * @property {module:models/DictionaryResponseAllOf}
+     * @property {module:model/DictionaryResponseAllOf}
      */
     DictionaryResponseAllOf,
 
     /**
      * The DiffResponse model constructor.
-     * @property {module:models/DiffResponse}
+     * @property {module:model/DiffResponse}
      */
     DiffResponse,
 
     /**
      * The Director model constructor.
-     * @property {module:models/Director}
+     * @property {module:model/Director}
      */
     Director,
 
     /**
      * The DirectorBackend model constructor.
-     * @property {module:models/DirectorBackend}
+     * @property {module:model/DirectorBackend}
      */
     DirectorBackend,
 
     /**
      * The DirectorBackendAllOf model constructor.
-     * @property {module:models/DirectorBackendAllOf}
+     * @property {module:model/DirectorBackendAllOf}
      */
     DirectorBackendAllOf,
 
     /**
      * The DirectorResponse model constructor.
-     * @property {module:models/DirectorResponse}
+     * @property {module:model/DirectorResponse}
      */
     DirectorResponse,
 
     /**
      * The Domain model constructor.
-     * @property {module:models/Domain}
+     * @property {module:model/Domain}
      */
     Domain,
 
     /**
      * The DomainCheckItem model constructor.
-     * @property {module:models/DomainCheckItem}
+     * @property {module:model/DomainCheckItem}
      */
     DomainCheckItem,
 
     /**
      * The DomainResponse model constructor.
-     * @property {module:models/DomainResponse}
+     * @property {module:model/DomainResponse}
      */
     DomainResponse,
 
     /**
      * The Event model constructor.
-     * @property {module:models/Event}
+     * @property {module:model/Event}
      */
     Event,
 
     /**
      * The EventAttributes model constructor.
-     * @property {module:models/EventAttributes}
+     * @property {module:model/EventAttributes}
      */
     EventAttributes,
 
     /**
      * The EventResponse model constructor.
-     * @property {module:models/EventResponse}
+     * @property {module:model/EventResponse}
      */
     EventResponse,
 
     /**
      * The EventsResponse model constructor.
-     * @property {module:models/EventsResponse}
+     * @property {module:model/EventsResponse}
      */
     EventsResponse,
 
     /**
      * The EventsResponseAllOf model constructor.
-     * @property {module:models/EventsResponseAllOf}
+     * @property {module:model/EventsResponseAllOf}
      */
     EventsResponseAllOf,
 
     /**
      * The GenericTokenError model constructor.
-     * @property {module:models/GenericTokenError}
+     * @property {module:model/GenericTokenError}
      */
     GenericTokenError,
 
     /**
      * The Gzip model constructor.
-     * @property {module:models/Gzip}
+     * @property {module:model/Gzip}
      */
     Gzip,
 
     /**
      * The GzipResponse model constructor.
-     * @property {module:models/GzipResponse}
+     * @property {module:model/GzipResponse}
      */
     GzipResponse,
 
     /**
      * The Header model constructor.
-     * @property {module:models/Header}
+     * @property {module:model/Header}
      */
     Header,
 
     /**
      * The HeaderResponse model constructor.
-     * @property {module:models/HeaderResponse}
+     * @property {module:model/HeaderResponse}
      */
     HeaderResponse,
 
     /**
      * The Healthcheck model constructor.
-     * @property {module:models/Healthcheck}
+     * @property {module:model/Healthcheck}
      */
     Healthcheck,
 
     /**
      * The HealthcheckResponse model constructor.
-     * @property {module:models/HealthcheckResponse}
+     * @property {module:model/HealthcheckResponse}
      */
     HealthcheckResponse,
 
     /**
      * The Historical model constructor.
-     * @property {module:models/Historical}
+     * @property {module:model/Historical}
      */
     Historical,
 
     /**
      * The HistoricalAggregateResponse model constructor.
-     * @property {module:models/HistoricalAggregateResponse}
+     * @property {module:model/HistoricalAggregateResponse}
      */
     HistoricalAggregateResponse,
 
     /**
      * The HistoricalAggregateResponseAllOf model constructor.
-     * @property {module:models/HistoricalAggregateResponseAllOf}
+     * @property {module:model/HistoricalAggregateResponseAllOf}
      */
     HistoricalAggregateResponseAllOf,
 
     /**
      * The HistoricalFieldAggregateResponse model constructor.
-     * @property {module:models/HistoricalFieldAggregateResponse}
+     * @property {module:model/HistoricalFieldAggregateResponse}
      */
     HistoricalFieldAggregateResponse,
 
     /**
      * The HistoricalFieldAggregateResponseAllOf model constructor.
-     * @property {module:models/HistoricalFieldAggregateResponseAllOf}
+     * @property {module:model/HistoricalFieldAggregateResponseAllOf}
      */
     HistoricalFieldAggregateResponseAllOf,
 
     /**
      * The HistoricalFieldResponse model constructor.
-     * @property {module:models/HistoricalFieldResponse}
+     * @property {module:model/HistoricalFieldResponse}
      */
     HistoricalFieldResponse,
 
     /**
      * The HistoricalFieldResponseAllOf model constructor.
-     * @property {module:models/HistoricalFieldResponseAllOf}
+     * @property {module:model/HistoricalFieldResponseAllOf}
      */
     HistoricalFieldResponseAllOf,
 
     /**
      * The HistoricalMeta model constructor.
-     * @property {module:models/HistoricalMeta}
+     * @property {module:model/HistoricalMeta}
      */
     HistoricalMeta,
 
     /**
      * The HistoricalRegionsResponse model constructor.
-     * @property {module:models/HistoricalRegionsResponse}
+     * @property {module:model/HistoricalRegionsResponse}
      */
     HistoricalRegionsResponse,
 
     /**
      * The HistoricalRegionsResponseAllOf model constructor.
-     * @property {module:models/HistoricalRegionsResponseAllOf}
+     * @property {module:model/HistoricalRegionsResponseAllOf}
      */
     HistoricalRegionsResponseAllOf,
 
     /**
      * The HistoricalResponse model constructor.
-     * @property {module:models/HistoricalResponse}
+     * @property {module:model/HistoricalResponse}
      */
     HistoricalResponse,
 
     /**
      * The HistoricalResponseAllOf model constructor.
-     * @property {module:models/HistoricalResponseAllOf}
+     * @property {module:model/HistoricalResponseAllOf}
      */
     HistoricalResponseAllOf,
 
     /**
      * The HistoricalUsageAggregateResponse model constructor.
-     * @property {module:models/HistoricalUsageAggregateResponse}
+     * @property {module:model/HistoricalUsageAggregateResponse}
      */
     HistoricalUsageAggregateResponse,
 
     /**
      * The HistoricalUsageMonthResponse model constructor.
-     * @property {module:models/HistoricalUsageMonthResponse}
+     * @property {module:model/HistoricalUsageMonthResponse}
      */
     HistoricalUsageMonthResponse,
 
     /**
      * The HistoricalUsageMonthResponseAllOf model constructor.
-     * @property {module:models/HistoricalUsageMonthResponseAllOf}
+     * @property {module:model/HistoricalUsageMonthResponseAllOf}
      */
     HistoricalUsageMonthResponseAllOf,
 
     /**
      * The HistoricalUsageMonthResponseAllOfData model constructor.
-     * @property {module:models/HistoricalUsageMonthResponseAllOfData}
+     * @property {module:model/HistoricalUsageMonthResponseAllOfData}
      */
     HistoricalUsageMonthResponseAllOfData,
 
     /**
      * The HistoricalUsageServiceResponse model constructor.
-     * @property {module:models/HistoricalUsageServiceResponse}
+     * @property {module:model/HistoricalUsageServiceResponse}
      */
     HistoricalUsageServiceResponse,
 
     /**
      * The HistoricalUsageServiceResponseAllOf model constructor.
-     * @property {module:models/HistoricalUsageServiceResponseAllOf}
+     * @property {module:model/HistoricalUsageServiceResponseAllOf}
      */
     HistoricalUsageServiceResponseAllOf,
 
     /**
      * The IncludedWithWafActiveRuleItem model constructor.
-     * @property {module:models/IncludedWithWafActiveRuleItem}
+     * @property {module:model/IncludedWithWafActiveRuleItem}
      */
     IncludedWithWafActiveRuleItem,
 
     /**
      * The IncludedWithWafExclusionItem model constructor.
-     * @property {module:models/IncludedWithWafExclusionItem}
+     * @property {module:model/IncludedWithWafExclusionItem}
      */
     IncludedWithWafExclusionItem,
 
     /**
      * The IncludedWithWafFirewallVersionItem model constructor.
-     * @property {module:models/IncludedWithWafFirewallVersionItem}
+     * @property {module:model/IncludedWithWafFirewallVersionItem}
      */
     IncludedWithWafFirewallVersionItem,
 
     /**
      * The IncludedWithWafRuleItem model constructor.
-     * @property {module:models/IncludedWithWafRuleItem}
+     * @property {module:model/IncludedWithWafRuleItem}
      */
     IncludedWithWafRuleItem,
 
     /**
      * The InlineObject model constructor.
-     * @property {module:models/InlineObject}
+     * @property {module:model/InlineObject}
      */
     InlineObject,
 
     /**
      * The InlineObject1 model constructor.
-     * @property {module:models/InlineObject1}
+     * @property {module:model/InlineObject1}
      */
     InlineObject1,
 
     /**
      * The InlineObject2 model constructor.
-     * @property {module:models/InlineObject2}
+     * @property {module:model/InlineObject2}
      */
     InlineObject2,
 
     /**
      * The InlineObject3 model constructor.
-     * @property {module:models/InlineObject3}
+     * @property {module:model/InlineObject3}
      */
     InlineObject3,
 
     /**
      * The InlineObject4 model constructor.
-     * @property {module:models/InlineObject4}
+     * @property {module:model/InlineObject4}
      */
     InlineObject4,
 
     /**
      * The InlineResponse204 model constructor.
-     * @property {module:models/InlineResponse204}
+     * @property {module:model/InlineResponse204}
      */
     InlineResponse204,
 
     /**
      * The InlineResponse400 model constructor.
-     * @property {module:models/InlineResponse400}
+     * @property {module:model/InlineResponse400}
      */
     InlineResponse400,
 
     /**
      * The Invitation model constructor.
-     * @property {module:models/Invitation}
+     * @property {module:model/Invitation}
      */
     Invitation,
 
     /**
      * The InvitationData model constructor.
-     * @property {module:models/InvitationData}
+     * @property {module:model/InvitationData}
      */
     InvitationData,
 
     /**
      * The InvitationDataAttributes model constructor.
-     * @property {module:models/InvitationDataAttributes}
+     * @property {module:model/InvitationDataAttributes}
      */
     InvitationDataAttributes,
 
     /**
      * The InvitationResponse model constructor.
-     * @property {module:models/InvitationResponse}
+     * @property {module:model/InvitationResponse}
      */
     InvitationResponse,
 
     /**
      * The InvitationResponseAllOf model constructor.
-     * @property {module:models/InvitationResponseAllOf}
+     * @property {module:model/InvitationResponseAllOf}
      */
     InvitationResponseAllOf,
 
     /**
      * The InvitationResponseData model constructor.
-     * @property {module:models/InvitationResponseData}
+     * @property {module:model/InvitationResponseData}
      */
     InvitationResponseData,
 
     /**
      * The InvitationResponseDataAllOf model constructor.
-     * @property {module:models/InvitationResponseDataAllOf}
+     * @property {module:model/InvitationResponseDataAllOf}
      */
     InvitationResponseDataAllOf,
 
     /**
      * The InvitationsResponse model constructor.
-     * @property {module:models/InvitationsResponse}
+     * @property {module:model/InvitationsResponse}
      */
     InvitationsResponse,
 
     /**
      * The InvitationsResponseAllOf model constructor.
-     * @property {module:models/InvitationsResponseAllOf}
+     * @property {module:model/InvitationsResponseAllOf}
      */
     InvitationsResponseAllOf,
 
     /**
      * The LoggingAddressAndPort model constructor.
-     * @property {module:models/LoggingAddressAndPort}
+     * @property {module:model/LoggingAddressAndPort}
      */
     LoggingAddressAndPort,
 
     /**
      * The LoggingAzureblob model constructor.
-     * @property {module:models/LoggingAzureblob}
+     * @property {module:model/LoggingAzureblob}
      */
     LoggingAzureblob,
 
     /**
      * The LoggingAzureblobAllOf model constructor.
-     * @property {module:models/LoggingAzureblobAllOf}
+     * @property {module:model/LoggingAzureblobAllOf}
      */
     LoggingAzureblobAllOf,
 
     /**
      * The LoggingAzureblobResponse model constructor.
-     * @property {module:models/LoggingAzureblobResponse}
+     * @property {module:model/LoggingAzureblobResponse}
      */
     LoggingAzureblobResponse,
 
     /**
      * The LoggingBigquery model constructor.
-     * @property {module:models/LoggingBigquery}
+     * @property {module:model/LoggingBigquery}
      */
     LoggingBigquery,
 
     /**
      * The LoggingBigqueryAllOf model constructor.
-     * @property {module:models/LoggingBigqueryAllOf}
+     * @property {module:model/LoggingBigqueryAllOf}
      */
     LoggingBigqueryAllOf,
 
     /**
      * The LoggingBigqueryResponse model constructor.
-     * @property {module:models/LoggingBigqueryResponse}
+     * @property {module:model/LoggingBigqueryResponse}
      */
     LoggingBigqueryResponse,
 
     /**
      * The LoggingCloudfiles model constructor.
-     * @property {module:models/LoggingCloudfiles}
+     * @property {module:model/LoggingCloudfiles}
      */
     LoggingCloudfiles,
 
     /**
      * The LoggingCloudfilesAllOf model constructor.
-     * @property {module:models/LoggingCloudfilesAllOf}
+     * @property {module:model/LoggingCloudfilesAllOf}
      */
     LoggingCloudfilesAllOf,
 
     /**
      * The LoggingCloudfilesResponse model constructor.
-     * @property {module:models/LoggingCloudfilesResponse}
+     * @property {module:model/LoggingCloudfilesResponse}
      */
     LoggingCloudfilesResponse,
 
     /**
      * The LoggingCommon model constructor.
-     * @property {module:models/LoggingCommon}
+     * @property {module:model/LoggingCommon}
      */
     LoggingCommon,
 
     /**
      * The LoggingDatadog model constructor.
-     * @property {module:models/LoggingDatadog}
+     * @property {module:model/LoggingDatadog}
      */
     LoggingDatadog,
 
     /**
      * The LoggingDatadogAllOf model constructor.
-     * @property {module:models/LoggingDatadogAllOf}
+     * @property {module:model/LoggingDatadogAllOf}
      */
     LoggingDatadogAllOf,
 
     /**
      * The LoggingDatadogResponse model constructor.
-     * @property {module:models/LoggingDatadogResponse}
+     * @property {module:model/LoggingDatadogResponse}
      */
     LoggingDatadogResponse,
 
     /**
      * The LoggingDigitalocean model constructor.
-     * @property {module:models/LoggingDigitalocean}
+     * @property {module:model/LoggingDigitalocean}
      */
     LoggingDigitalocean,
 
     /**
      * The LoggingDigitaloceanAllOf model constructor.
-     * @property {module:models/LoggingDigitaloceanAllOf}
+     * @property {module:model/LoggingDigitaloceanAllOf}
      */
     LoggingDigitaloceanAllOf,
 
     /**
      * The LoggingDigitaloceanResponse model constructor.
-     * @property {module:models/LoggingDigitaloceanResponse}
+     * @property {module:model/LoggingDigitaloceanResponse}
      */
     LoggingDigitaloceanResponse,
 
     /**
      * The LoggingElasticsearch model constructor.
-     * @property {module:models/LoggingElasticsearch}
+     * @property {module:model/LoggingElasticsearch}
      */
     LoggingElasticsearch,
 
     /**
      * The LoggingElasticsearchAllOf model constructor.
-     * @property {module:models/LoggingElasticsearchAllOf}
+     * @property {module:model/LoggingElasticsearchAllOf}
      */
     LoggingElasticsearchAllOf,
 
     /**
      * The LoggingElasticsearchResponse model constructor.
-     * @property {module:models/LoggingElasticsearchResponse}
+     * @property {module:model/LoggingElasticsearchResponse}
      */
     LoggingElasticsearchResponse,
 
     /**
      * The LoggingFormatVersion model constructor.
-     * @property {module:models/LoggingFormatVersion}
+     * @property {module:model/LoggingFormatVersion}
      */
     LoggingFormatVersion,
 
     /**
      * The LoggingFtp model constructor.
-     * @property {module:models/LoggingFtp}
+     * @property {module:model/LoggingFtp}
      */
     LoggingFtp,
 
     /**
      * The LoggingFtpAllOf model constructor.
-     * @property {module:models/LoggingFtpAllOf}
+     * @property {module:model/LoggingFtpAllOf}
      */
     LoggingFtpAllOf,
 
     /**
      * The LoggingFtpResponse model constructor.
-     * @property {module:models/LoggingFtpResponse}
+     * @property {module:model/LoggingFtpResponse}
      */
     LoggingFtpResponse,
 
     /**
      * The LoggingGcs model constructor.
-     * @property {module:models/LoggingGcs}
+     * @property {module:model/LoggingGcs}
      */
     LoggingGcs,
 
     /**
      * The LoggingGcsAllOf model constructor.
-     * @property {module:models/LoggingGcsAllOf}
+     * @property {module:model/LoggingGcsAllOf}
      */
     LoggingGcsAllOf,
 
     /**
      * The LoggingGcsCommon model constructor.
-     * @property {module:models/LoggingGcsCommon}
+     * @property {module:model/LoggingGcsCommon}
      */
     LoggingGcsCommon,
 
     /**
      * The LoggingGcsResponse model constructor.
-     * @property {module:models/LoggingGcsResponse}
+     * @property {module:model/LoggingGcsResponse}
      */
     LoggingGcsResponse,
 
     /**
      * The LoggingGenericCommon model constructor.
-     * @property {module:models/LoggingGenericCommon}
+     * @property {module:model/LoggingGenericCommon}
      */
     LoggingGenericCommon,
 
     /**
      * The LoggingGooglePubsub model constructor.
-     * @property {module:models/LoggingGooglePubsub}
+     * @property {module:model/LoggingGooglePubsub}
      */
     LoggingGooglePubsub,
 
     /**
      * The LoggingGooglePubsubAllOf model constructor.
-     * @property {module:models/LoggingGooglePubsubAllOf}
+     * @property {module:model/LoggingGooglePubsubAllOf}
      */
     LoggingGooglePubsubAllOf,
 
     /**
      * The LoggingGooglePubsubResponse model constructor.
-     * @property {module:models/LoggingGooglePubsubResponse}
+     * @property {module:model/LoggingGooglePubsubResponse}
      */
     LoggingGooglePubsubResponse,
 
     /**
      * The LoggingHeroku model constructor.
-     * @property {module:models/LoggingHeroku}
+     * @property {module:model/LoggingHeroku}
      */
     LoggingHeroku,
 
     /**
      * The LoggingHerokuAllOf model constructor.
-     * @property {module:models/LoggingHerokuAllOf}
+     * @property {module:model/LoggingHerokuAllOf}
      */
     LoggingHerokuAllOf,
 
     /**
      * The LoggingHerokuResponse model constructor.
-     * @property {module:models/LoggingHerokuResponse}
+     * @property {module:model/LoggingHerokuResponse}
      */
     LoggingHerokuResponse,
 
     /**
      * The LoggingHoneycomb model constructor.
-     * @property {module:models/LoggingHoneycomb}
+     * @property {module:model/LoggingHoneycomb}
      */
     LoggingHoneycomb,
 
     /**
      * The LoggingHoneycombAllOf model constructor.
-     * @property {module:models/LoggingHoneycombAllOf}
+     * @property {module:model/LoggingHoneycombAllOf}
      */
     LoggingHoneycombAllOf,
 
     /**
      * The LoggingHoneycombResponse model constructor.
-     * @property {module:models/LoggingHoneycombResponse}
+     * @property {module:model/LoggingHoneycombResponse}
      */
     LoggingHoneycombResponse,
 
     /**
      * The LoggingHttps model constructor.
-     * @property {module:models/LoggingHttps}
+     * @property {module:model/LoggingHttps}
      */
     LoggingHttps,
 
     /**
      * The LoggingHttpsAllOf model constructor.
-     * @property {module:models/LoggingHttpsAllOf}
+     * @property {module:model/LoggingHttpsAllOf}
      */
     LoggingHttpsAllOf,
 
     /**
      * The LoggingHttpsResponse model constructor.
-     * @property {module:models/LoggingHttpsResponse}
+     * @property {module:model/LoggingHttpsResponse}
      */
     LoggingHttpsResponse,
 
     /**
      * The LoggingKafka model constructor.
-     * @property {module:models/LoggingKafka}
+     * @property {module:model/LoggingKafka}
      */
     LoggingKafka,
 
     /**
      * The LoggingKafkaAllOf model constructor.
-     * @property {module:models/LoggingKafkaAllOf}
+     * @property {module:model/LoggingKafkaAllOf}
      */
     LoggingKafkaAllOf,
 
     /**
      * The LoggingKafkaResponse model constructor.
-     * @property {module:models/LoggingKafkaResponse}
+     * @property {module:model/LoggingKafkaResponse}
      */
     LoggingKafkaResponse,
 
     /**
      * The LoggingKinesis model constructor.
-     * @property {module:models/LoggingKinesis}
+     * @property {module:model/LoggingKinesis}
      */
     LoggingKinesis,
 
     /**
      * The LoggingKinesisResponse model constructor.
-     * @property {module:models/LoggingKinesisResponse}
+     * @property {module:model/LoggingKinesisResponse}
      */
     LoggingKinesisResponse,
 
     /**
      * The LoggingLogentries model constructor.
-     * @property {module:models/LoggingLogentries}
+     * @property {module:model/LoggingLogentries}
      */
     LoggingLogentries,
 
     /**
      * The LoggingLogentriesAllOf model constructor.
-     * @property {module:models/LoggingLogentriesAllOf}
+     * @property {module:model/LoggingLogentriesAllOf}
      */
     LoggingLogentriesAllOf,
 
     /**
      * The LoggingLogentriesResponse model constructor.
-     * @property {module:models/LoggingLogentriesResponse}
+     * @property {module:model/LoggingLogentriesResponse}
      */
     LoggingLogentriesResponse,
 
     /**
      * The LoggingLoggly model constructor.
-     * @property {module:models/LoggingLoggly}
+     * @property {module:model/LoggingLoggly}
      */
     LoggingLoggly,
 
     /**
      * The LoggingLogglyAllOf model constructor.
-     * @property {module:models/LoggingLogglyAllOf}
+     * @property {module:model/LoggingLogglyAllOf}
      */
     LoggingLogglyAllOf,
 
     /**
      * The LoggingLogglyResponse model constructor.
-     * @property {module:models/LoggingLogglyResponse}
+     * @property {module:model/LoggingLogglyResponse}
      */
     LoggingLogglyResponse,
 
     /**
      * The LoggingLogshuttle model constructor.
-     * @property {module:models/LoggingLogshuttle}
+     * @property {module:model/LoggingLogshuttle}
      */
     LoggingLogshuttle,
 
     /**
      * The LoggingLogshuttleAllOf model constructor.
-     * @property {module:models/LoggingLogshuttleAllOf}
+     * @property {module:model/LoggingLogshuttleAllOf}
      */
     LoggingLogshuttleAllOf,
 
     /**
      * The LoggingLogshuttleResponse model constructor.
-     * @property {module:models/LoggingLogshuttleResponse}
+     * @property {module:model/LoggingLogshuttleResponse}
      */
     LoggingLogshuttleResponse,
 
     /**
      * The LoggingMessageType model constructor.
-     * @property {module:models/LoggingMessageType}
+     * @property {module:model/LoggingMessageType}
      */
     LoggingMessageType,
 
     /**
      * The LoggingNewrelic model constructor.
-     * @property {module:models/LoggingNewrelic}
+     * @property {module:model/LoggingNewrelic}
      */
     LoggingNewrelic,
 
     /**
      * The LoggingNewrelicAllOf model constructor.
-     * @property {module:models/LoggingNewrelicAllOf}
+     * @property {module:model/LoggingNewrelicAllOf}
      */
     LoggingNewrelicAllOf,
 
     /**
      * The LoggingNewrelicResponse model constructor.
-     * @property {module:models/LoggingNewrelicResponse}
+     * @property {module:model/LoggingNewrelicResponse}
      */
     LoggingNewrelicResponse,
 
     /**
      * The LoggingOpenstack model constructor.
-     * @property {module:models/LoggingOpenstack}
+     * @property {module:model/LoggingOpenstack}
      */
     LoggingOpenstack,
 
     /**
      * The LoggingOpenstackAllOf model constructor.
-     * @property {module:models/LoggingOpenstackAllOf}
+     * @property {module:model/LoggingOpenstackAllOf}
      */
     LoggingOpenstackAllOf,
 
     /**
      * The LoggingOpenstackResponse model constructor.
-     * @property {module:models/LoggingOpenstackResponse}
+     * @property {module:model/LoggingOpenstackResponse}
      */
     LoggingOpenstackResponse,
 
     /**
      * The LoggingPapertrail model constructor.
-     * @property {module:models/LoggingPapertrail}
+     * @property {module:model/LoggingPapertrail}
      */
     LoggingPapertrail,
 
     /**
      * The LoggingPapertrailResponse model constructor.
-     * @property {module:models/LoggingPapertrailResponse}
+     * @property {module:model/LoggingPapertrailResponse}
      */
     LoggingPapertrailResponse,
 
     /**
      * The LoggingPlacement model constructor.
-     * @property {module:models/LoggingPlacement}
+     * @property {module:model/LoggingPlacement}
      */
     LoggingPlacement,
 
     /**
      * The LoggingRequestCapsCommon model constructor.
-     * @property {module:models/LoggingRequestCapsCommon}
+     * @property {module:model/LoggingRequestCapsCommon}
      */
     LoggingRequestCapsCommon,
 
     /**
      * The LoggingS3 model constructor.
-     * @property {module:models/LoggingS3}
+     * @property {module:model/LoggingS3}
      */
     LoggingS3,
 
     /**
      * The LoggingS3AllOf model constructor.
-     * @property {module:models/LoggingS3AllOf}
+     * @property {module:model/LoggingS3AllOf}
      */
     LoggingS3AllOf,
 
     /**
      * The LoggingS3Response model constructor.
-     * @property {module:models/LoggingS3Response}
+     * @property {module:model/LoggingS3Response}
      */
     LoggingS3Response,
 
     /**
      * The LoggingScalyr model constructor.
-     * @property {module:models/LoggingScalyr}
+     * @property {module:model/LoggingScalyr}
      */
     LoggingScalyr,
 
     /**
      * The LoggingScalyrAllOf model constructor.
-     * @property {module:models/LoggingScalyrAllOf}
+     * @property {module:model/LoggingScalyrAllOf}
      */
     LoggingScalyrAllOf,
 
     /**
      * The LoggingScalyrResponse model constructor.
-     * @property {module:models/LoggingScalyrResponse}
+     * @property {module:model/LoggingScalyrResponse}
      */
     LoggingScalyrResponse,
 
     /**
      * The LoggingSftp model constructor.
-     * @property {module:models/LoggingSftp}
+     * @property {module:model/LoggingSftp}
      */
     LoggingSftp,
 
     /**
      * The LoggingSftpAllOf model constructor.
-     * @property {module:models/LoggingSftpAllOf}
+     * @property {module:model/LoggingSftpAllOf}
      */
     LoggingSftpAllOf,
 
     /**
      * The LoggingSftpResponse model constructor.
-     * @property {module:models/LoggingSftpResponse}
+     * @property {module:model/LoggingSftpResponse}
      */
     LoggingSftpResponse,
 
     /**
      * The LoggingSplunk model constructor.
-     * @property {module:models/LoggingSplunk}
+     * @property {module:model/LoggingSplunk}
      */
     LoggingSplunk,
 
     /**
      * The LoggingSplunkAllOf model constructor.
-     * @property {module:models/LoggingSplunkAllOf}
+     * @property {module:model/LoggingSplunkAllOf}
      */
     LoggingSplunkAllOf,
 
     /**
      * The LoggingSplunkResponse model constructor.
-     * @property {module:models/LoggingSplunkResponse}
+     * @property {module:model/LoggingSplunkResponse}
      */
     LoggingSplunkResponse,
 
     /**
      * The LoggingSumologic model constructor.
-     * @property {module:models/LoggingSumologic}
+     * @property {module:model/LoggingSumologic}
      */
     LoggingSumologic,
 
     /**
      * The LoggingSumologicAllOf model constructor.
-     * @property {module:models/LoggingSumologicAllOf}
+     * @property {module:model/LoggingSumologicAllOf}
      */
     LoggingSumologicAllOf,
 
     /**
      * The LoggingSumologicResponse model constructor.
-     * @property {module:models/LoggingSumologicResponse}
+     * @property {module:model/LoggingSumologicResponse}
      */
     LoggingSumologicResponse,
 
     /**
      * The LoggingSyslog model constructor.
-     * @property {module:models/LoggingSyslog}
+     * @property {module:model/LoggingSyslog}
      */
     LoggingSyslog,
 
     /**
      * The LoggingSyslogAllOf model constructor.
-     * @property {module:models/LoggingSyslogAllOf}
+     * @property {module:model/LoggingSyslogAllOf}
      */
     LoggingSyslogAllOf,
 
     /**
      * The LoggingSyslogResponse model constructor.
-     * @property {module:models/LoggingSyslogResponse}
+     * @property {module:model/LoggingSyslogResponse}
      */
     LoggingSyslogResponse,
 
     /**
      * The LoggingTlsCommon model constructor.
-     * @property {module:models/LoggingTlsCommon}
+     * @property {module:model/LoggingTlsCommon}
      */
     LoggingTlsCommon,
 
     /**
      * The LoggingUseTls model constructor.
-     * @property {module:models/LoggingUseTls}
+     * @property {module:model/LoggingUseTls}
      */
     LoggingUseTls,
 
     /**
      * The NestedVersion model constructor.
-     * @property {module:models/NestedVersion}
+     * @property {module:model/NestedVersion}
      */
     NestedVersion,
 
     /**
      * The Package model constructor.
-     * @property {module:models/Package}
+     * @property {module:model/Package}
      */
     Package,
 
     /**
      * The PackageMetadata model constructor.
-     * @property {module:models/PackageMetadata}
+     * @property {module:model/PackageMetadata}
      */
     PackageMetadata,
 
     /**
      * The PackageResponse model constructor.
-     * @property {module:models/PackageResponse}
+     * @property {module:model/PackageResponse}
      */
     PackageResponse,
 
     /**
      * The PackageResponseAllOf model constructor.
-     * @property {module:models/PackageResponseAllOf}
+     * @property {module:model/PackageResponseAllOf}
      */
     PackageResponseAllOf,
 
     /**
      * The Pagination model constructor.
-     * @property {module:models/Pagination}
+     * @property {module:model/Pagination}
      */
     Pagination,
 
     /**
      * The PaginationLinks model constructor.
-     * @property {module:models/PaginationLinks}
+     * @property {module:model/PaginationLinks}
      */
     PaginationLinks,
 
     /**
      * The PaginationMeta model constructor.
-     * @property {module:models/PaginationMeta}
+     * @property {module:model/PaginationMeta}
      */
     PaginationMeta,
 
     /**
      * The Permission model constructor.
-     * @property {module:models/Permission}
+     * @property {module:model/Permission}
      */
     Permission,
 
     /**
      * The Pool model constructor.
-     * @property {module:models/Pool}
+     * @property {module:model/Pool}
      */
     Pool,
 
     /**
      * The PoolAllOf model constructor.
-     * @property {module:models/PoolAllOf}
+     * @property {module:model/PoolAllOf}
      */
     PoolAllOf,
 
     /**
      * The PoolResponse model constructor.
-     * @property {module:models/PoolResponse}
+     * @property {module:model/PoolResponse}
      */
     PoolResponse,
 
     /**
      * The PoolResponseAllOf model constructor.
-     * @property {module:models/PoolResponseAllOf}
+     * @property {module:model/PoolResponseAllOf}
      */
     PoolResponseAllOf,
 
     /**
      * The Pop model constructor.
-     * @property {module:models/Pop}
+     * @property {module:model/Pop}
      */
     Pop,
 
     /**
      * The PopCoordinates model constructor.
-     * @property {module:models/PopCoordinates}
+     * @property {module:model/PopCoordinates}
      */
     PopCoordinates,
 
     /**
      * The PublicIpList model constructor.
-     * @property {module:models/PublicIpList}
+     * @property {module:model/PublicIpList}
      */
     PublicIpList,
 
     /**
      * The RateLimiter model constructor.
-     * @property {module:models/RateLimiter}
+     * @property {module:model/RateLimiter}
      */
     RateLimiter,
 
     /**
      * The RateLimiterResponse model constructor.
-     * @property {module:models/RateLimiterResponse}
+     * @property {module:model/RateLimiterResponse}
      */
     RateLimiterResponse,
 
     /**
      * The RateLimiterResponse1 model constructor.
-     * @property {module:models/RateLimiterResponse1}
+     * @property {module:model/RateLimiterResponse1}
      */
     RateLimiterResponse1,
 
     /**
      * The RateLimiterResponseAllOf model constructor.
-     * @property {module:models/RateLimiterResponseAllOf}
+     * @property {module:model/RateLimiterResponseAllOf}
      */
     RateLimiterResponseAllOf,
 
     /**
      * The Realtime model constructor.
-     * @property {module:models/Realtime}
+     * @property {module:model/Realtime}
      */
     Realtime,
 
     /**
      * The RealtimeEntry model constructor.
-     * @property {module:models/RealtimeEntry}
+     * @property {module:model/RealtimeEntry}
      */
     RealtimeEntry,
 
     /**
      * The RealtimeMeasurements model constructor.
-     * @property {module:models/RealtimeMeasurements}
+     * @property {module:model/RealtimeMeasurements}
      */
     RealtimeMeasurements,
 
     /**
      * The RelationshipCommonName model constructor.
-     * @property {module:models/RelationshipCommonName}
+     * @property {module:model/RelationshipCommonName}
      */
     RelationshipCommonName,
 
     /**
      * The RelationshipCustomer model constructor.
-     * @property {module:models/RelationshipCustomer}
+     * @property {module:model/RelationshipCustomer}
      */
     RelationshipCustomer,
 
     /**
      * The RelationshipCustomerCustomer model constructor.
-     * @property {module:models/RelationshipCustomerCustomer}
+     * @property {module:model/RelationshipCustomerCustomer}
      */
     RelationshipCustomerCustomer,
 
     /**
      * The RelationshipMemberCustomer model constructor.
-     * @property {module:models/RelationshipMemberCustomer}
+     * @property {module:model/RelationshipMemberCustomer}
      */
     RelationshipMemberCustomer,
 
     /**
      * The RelationshipMemberService model constructor.
-     * @property {module:models/RelationshipMemberService}
+     * @property {module:model/RelationshipMemberService}
      */
     RelationshipMemberService,
 
     /**
      * The RelationshipMemberServiceInvitation model constructor.
-     * @property {module:models/RelationshipMemberServiceInvitation}
+     * @property {module:model/RelationshipMemberServiceInvitation}
      */
     RelationshipMemberServiceInvitation,
 
     /**
      * The RelationshipMemberTlsActivation model constructor.
-     * @property {module:models/RelationshipMemberTlsActivation}
+     * @property {module:model/RelationshipMemberTlsActivation}
      */
     RelationshipMemberTlsActivation,
 
     /**
      * The RelationshipMemberTlsBulkCertificate model constructor.
-     * @property {module:models/RelationshipMemberTlsBulkCertificate}
+     * @property {module:model/RelationshipMemberTlsBulkCertificate}
      */
     RelationshipMemberTlsBulkCertificate,
 
     /**
      * The RelationshipMemberTlsCertificate model constructor.
-     * @property {module:models/RelationshipMemberTlsCertificate}
+     * @property {module:model/RelationshipMemberTlsCertificate}
      */
     RelationshipMemberTlsCertificate,
 
     /**
      * The RelationshipMemberTlsConfiguration model constructor.
-     * @property {module:models/RelationshipMemberTlsConfiguration}
+     * @property {module:model/RelationshipMemberTlsConfiguration}
      */
     RelationshipMemberTlsConfiguration,
 
     /**
      * The RelationshipMemberTlsDnsRecord model constructor.
-     * @property {module:models/RelationshipMemberTlsDnsRecord}
+     * @property {module:model/RelationshipMemberTlsDnsRecord}
      */
     RelationshipMemberTlsDnsRecord,
 
     /**
      * The RelationshipMemberTlsDomain model constructor.
-     * @property {module:models/RelationshipMemberTlsDomain}
+     * @property {module:model/RelationshipMemberTlsDomain}
      */
     RelationshipMemberTlsDomain,
 
     /**
      * The RelationshipMemberTlsPrivateKey model constructor.
-     * @property {module:models/RelationshipMemberTlsPrivateKey}
+     * @property {module:model/RelationshipMemberTlsPrivateKey}
      */
     RelationshipMemberTlsPrivateKey,
 
     /**
      * The RelationshipMemberTlsSubscription model constructor.
-     * @property {module:models/RelationshipMemberTlsSubscription}
+     * @property {module:model/RelationshipMemberTlsSubscription}
      */
     RelationshipMemberTlsSubscription,
 
     /**
      * The RelationshipMemberWafActiveRule model constructor.
-     * @property {module:models/RelationshipMemberWafActiveRule}
+     * @property {module:model/RelationshipMemberWafActiveRule}
      */
     RelationshipMemberWafActiveRule,
 
     /**
      * The RelationshipMemberWafFirewall model constructor.
-     * @property {module:models/RelationshipMemberWafFirewall}
+     * @property {module:model/RelationshipMemberWafFirewall}
      */
     RelationshipMemberWafFirewall,
 
     /**
      * The RelationshipMemberWafFirewallVersion model constructor.
-     * @property {module:models/RelationshipMemberWafFirewallVersion}
+     * @property {module:model/RelationshipMemberWafFirewallVersion}
      */
     RelationshipMemberWafFirewallVersion,
 
     /**
      * The RelationshipMemberWafRule model constructor.
-     * @property {module:models/RelationshipMemberWafRule}
+     * @property {module:model/RelationshipMemberWafRule}
      */
     RelationshipMemberWafRule,
 
     /**
      * The RelationshipMemberWafRuleRevision model constructor.
-     * @property {module:models/RelationshipMemberWafRuleRevision}
+     * @property {module:model/RelationshipMemberWafRuleRevision}
      */
     RelationshipMemberWafRuleRevision,
 
     /**
      * The RelationshipMemberWafTag model constructor.
-     * @property {module:models/RelationshipMemberWafTag}
+     * @property {module:model/RelationshipMemberWafTag}
      */
     RelationshipMemberWafTag,
 
     /**
      * The RelationshipService model constructor.
-     * @property {module:models/RelationshipService}
+     * @property {module:model/RelationshipService}
      */
     RelationshipService,
 
     /**
      * The RelationshipServiceInvitations model constructor.
-     * @property {module:models/RelationshipServiceInvitations}
+     * @property {module:model/RelationshipServiceInvitations}
      */
     RelationshipServiceInvitations,
 
     /**
      * The RelationshipServiceInvitationsCreate model constructor.
-     * @property {module:models/RelationshipServiceInvitationsCreate}
+     * @property {module:model/RelationshipServiceInvitationsCreate}
      */
     RelationshipServiceInvitationsCreate,
 
     /**
      * The RelationshipServiceInvitationsCreateServiceInvitations model constructor.
-     * @property {module:models/RelationshipServiceInvitationsCreateServiceInvitations}
+     * @property {module:model/RelationshipServiceInvitationsCreateServiceInvitations}
      */
     RelationshipServiceInvitationsCreateServiceInvitations,
 
     /**
      * The RelationshipServiceInvitationsServiceInvitations model constructor.
-     * @property {module:models/RelationshipServiceInvitationsServiceInvitations}
+     * @property {module:model/RelationshipServiceInvitationsServiceInvitations}
      */
     RelationshipServiceInvitationsServiceInvitations,
 
     /**
      * The RelationshipServiceService model constructor.
-     * @property {module:models/RelationshipServiceService}
+     * @property {module:model/RelationshipServiceService}
      */
     RelationshipServiceService,
 
     /**
      * The RelationshipServices model constructor.
-     * @property {module:models/RelationshipServices}
+     * @property {module:model/RelationshipServices}
      */
     RelationshipServices,
 
     /**
      * The RelationshipTlsActivation model constructor.
-     * @property {module:models/RelationshipTlsActivation}
+     * @property {module:model/RelationshipTlsActivation}
      */
     RelationshipTlsActivation,
 
     /**
      * The RelationshipTlsActivationTlsActivation model constructor.
-     * @property {module:models/RelationshipTlsActivationTlsActivation}
+     * @property {module:model/RelationshipTlsActivationTlsActivation}
      */
     RelationshipTlsActivationTlsActivation,
 
     /**
      * The RelationshipTlsActivations model constructor.
-     * @property {module:models/RelationshipTlsActivations}
+     * @property {module:model/RelationshipTlsActivations}
      */
     RelationshipTlsActivations,
 
     /**
      * The RelationshipTlsBulkCertificate model constructor.
-     * @property {module:models/RelationshipTlsBulkCertificate}
+     * @property {module:model/RelationshipTlsBulkCertificate}
      */
     RelationshipTlsBulkCertificate,
 
     /**
      * The RelationshipTlsBulkCertificateTlsBulkCertificate model constructor.
-     * @property {module:models/RelationshipTlsBulkCertificateTlsBulkCertificate}
+     * @property {module:model/RelationshipTlsBulkCertificateTlsBulkCertificate}
      */
     RelationshipTlsBulkCertificateTlsBulkCertificate,
 
     /**
      * The RelationshipTlsBulkCertificates model constructor.
-     * @property {module:models/RelationshipTlsBulkCertificates}
+     * @property {module:model/RelationshipTlsBulkCertificates}
      */
     RelationshipTlsBulkCertificates,
 
     /**
      * The RelationshipTlsCertificate model constructor.
-     * @property {module:models/RelationshipTlsCertificate}
+     * @property {module:model/RelationshipTlsCertificate}
      */
     RelationshipTlsCertificate,
 
     /**
      * The RelationshipTlsCertificateTlsCertificate model constructor.
-     * @property {module:models/RelationshipTlsCertificateTlsCertificate}
+     * @property {module:model/RelationshipTlsCertificateTlsCertificate}
      */
     RelationshipTlsCertificateTlsCertificate,
 
     /**
      * The RelationshipTlsCertificates model constructor.
-     * @property {module:models/RelationshipTlsCertificates}
+     * @property {module:model/RelationshipTlsCertificates}
      */
     RelationshipTlsCertificates,
 
     /**
      * The RelationshipTlsConfiguration model constructor.
-     * @property {module:models/RelationshipTlsConfiguration}
+     * @property {module:model/RelationshipTlsConfiguration}
      */
     RelationshipTlsConfiguration,
 
     /**
      * The RelationshipTlsConfigurationTlsConfiguration model constructor.
-     * @property {module:models/RelationshipTlsConfigurationTlsConfiguration}
+     * @property {module:model/RelationshipTlsConfigurationTlsConfiguration}
      */
     RelationshipTlsConfigurationTlsConfiguration,
 
     /**
      * The RelationshipTlsConfigurations model constructor.
-     * @property {module:models/RelationshipTlsConfigurations}
+     * @property {module:model/RelationshipTlsConfigurations}
      */
     RelationshipTlsConfigurations,
 
     /**
      * The RelationshipTlsDnsRecord model constructor.
-     * @property {module:models/RelationshipTlsDnsRecord}
+     * @property {module:model/RelationshipTlsDnsRecord}
      */
     RelationshipTlsDnsRecord,
 
     /**
      * The RelationshipTlsDnsRecordDnsRecord model constructor.
-     * @property {module:models/RelationshipTlsDnsRecordDnsRecord}
+     * @property {module:model/RelationshipTlsDnsRecordDnsRecord}
      */
     RelationshipTlsDnsRecordDnsRecord,
 
     /**
      * The RelationshipTlsDnsRecords model constructor.
-     * @property {module:models/RelationshipTlsDnsRecords}
+     * @property {module:model/RelationshipTlsDnsRecords}
      */
     RelationshipTlsDnsRecords,
 
     /**
      * The RelationshipTlsDomain model constructor.
-     * @property {module:models/RelationshipTlsDomain}
+     * @property {module:model/RelationshipTlsDomain}
      */
     RelationshipTlsDomain,
 
     /**
      * The RelationshipTlsDomainTlsDomain model constructor.
-     * @property {module:models/RelationshipTlsDomainTlsDomain}
+     * @property {module:model/RelationshipTlsDomainTlsDomain}
      */
     RelationshipTlsDomainTlsDomain,
 
     /**
      * The RelationshipTlsDomains model constructor.
-     * @property {module:models/RelationshipTlsDomains}
+     * @property {module:model/RelationshipTlsDomains}
      */
     RelationshipTlsDomains,
 
     /**
      * The RelationshipTlsPrivateKey model constructor.
-     * @property {module:models/RelationshipTlsPrivateKey}
+     * @property {module:model/RelationshipTlsPrivateKey}
      */
     RelationshipTlsPrivateKey,
 
     /**
      * The RelationshipTlsPrivateKeyTlsPrivateKey model constructor.
-     * @property {module:models/RelationshipTlsPrivateKeyTlsPrivateKey}
+     * @property {module:model/RelationshipTlsPrivateKeyTlsPrivateKey}
      */
     RelationshipTlsPrivateKeyTlsPrivateKey,
 
     /**
      * The RelationshipTlsPrivateKeys model constructor.
-     * @property {module:models/RelationshipTlsPrivateKeys}
+     * @property {module:model/RelationshipTlsPrivateKeys}
      */
     RelationshipTlsPrivateKeys,
 
     /**
      * The RelationshipTlsSubscription model constructor.
-     * @property {module:models/RelationshipTlsSubscription}
+     * @property {module:model/RelationshipTlsSubscription}
      */
     RelationshipTlsSubscription,
 
     /**
      * The RelationshipTlsSubscriptionTlsSubscription model constructor.
-     * @property {module:models/RelationshipTlsSubscriptionTlsSubscription}
+     * @property {module:model/RelationshipTlsSubscriptionTlsSubscription}
      */
     RelationshipTlsSubscriptionTlsSubscription,
 
     /**
      * The RelationshipTlsSubscriptions model constructor.
-     * @property {module:models/RelationshipTlsSubscriptions}
+     * @property {module:model/RelationshipTlsSubscriptions}
      */
     RelationshipTlsSubscriptions,
 
     /**
      * The RelationshipUser model constructor.
-     * @property {module:models/RelationshipUser}
+     * @property {module:model/RelationshipUser}
      */
     RelationshipUser,
 
     /**
      * The RelationshipUserUser model constructor.
-     * @property {module:models/RelationshipUserUser}
+     * @property {module:model/RelationshipUserUser}
      */
     RelationshipUserUser,
 
     /**
      * The RelationshipUserUserData model constructor.
-     * @property {module:models/RelationshipUserUserData}
+     * @property {module:model/RelationshipUserUserData}
      */
     RelationshipUserUserData,
 
     /**
      * The RelationshipWafActiveRules model constructor.
-     * @property {module:models/RelationshipWafActiveRules}
+     * @property {module:model/RelationshipWafActiveRules}
      */
     RelationshipWafActiveRules,
 
     /**
      * The RelationshipWafActiveRulesWafActiveRules model constructor.
-     * @property {module:models/RelationshipWafActiveRulesWafActiveRules}
+     * @property {module:model/RelationshipWafActiveRulesWafActiveRules}
      */
     RelationshipWafActiveRulesWafActiveRules,
 
     /**
      * The RelationshipWafFirewall model constructor.
-     * @property {module:models/RelationshipWafFirewall}
+     * @property {module:model/RelationshipWafFirewall}
      */
     RelationshipWafFirewall,
 
     /**
      * The RelationshipWafFirewallVersion model constructor.
-     * @property {module:models/RelationshipWafFirewallVersion}
+     * @property {module:model/RelationshipWafFirewallVersion}
      */
     RelationshipWafFirewallVersion,
 
     /**
      * The RelationshipWafFirewallVersionWafFirewallVersion model constructor.
-     * @property {module:models/RelationshipWafFirewallVersionWafFirewallVersion}
+     * @property {module:model/RelationshipWafFirewallVersionWafFirewallVersion}
      */
     RelationshipWafFirewallVersionWafFirewallVersion,
 
     /**
      * The RelationshipWafFirewallVersions model constructor.
-     * @property {module:models/RelationshipWafFirewallVersions}
+     * @property {module:model/RelationshipWafFirewallVersions}
      */
     RelationshipWafFirewallVersions,
 
     /**
      * The RelationshipWafFirewallWafFirewall model constructor.
-     * @property {module:models/RelationshipWafFirewallWafFirewall}
+     * @property {module:model/RelationshipWafFirewallWafFirewall}
      */
     RelationshipWafFirewallWafFirewall,
 
     /**
      * The RelationshipWafRule model constructor.
-     * @property {module:models/RelationshipWafRule}
+     * @property {module:model/RelationshipWafRule}
      */
     RelationshipWafRule,
 
     /**
      * The RelationshipWafRuleRevision model constructor.
-     * @property {module:models/RelationshipWafRuleRevision}
+     * @property {module:model/RelationshipWafRuleRevision}
      */
     RelationshipWafRuleRevision,
 
     /**
      * The RelationshipWafRuleRevisionWafRuleRevisions model constructor.
-     * @property {module:models/RelationshipWafRuleRevisionWafRuleRevisions}
+     * @property {module:model/RelationshipWafRuleRevisionWafRuleRevisions}
      */
     RelationshipWafRuleRevisionWafRuleRevisions,
 
     /**
      * The RelationshipWafRuleRevisions model constructor.
-     * @property {module:models/RelationshipWafRuleRevisions}
+     * @property {module:model/RelationshipWafRuleRevisions}
      */
     RelationshipWafRuleRevisions,
 
     /**
      * The RelationshipWafRuleWafRule model constructor.
-     * @property {module:models/RelationshipWafRuleWafRule}
+     * @property {module:model/RelationshipWafRuleWafRule}
      */
     RelationshipWafRuleWafRule,
 
     /**
      * The RelationshipWafRules model constructor.
-     * @property {module:models/RelationshipWafRules}
+     * @property {module:model/RelationshipWafRules}
      */
     RelationshipWafRules,
 
     /**
      * The RelationshipWafTags model constructor.
-     * @property {module:models/RelationshipWafTags}
+     * @property {module:model/RelationshipWafTags}
      */
     RelationshipWafTags,
 
     /**
      * The RelationshipWafTagsWafTags model constructor.
-     * @property {module:models/RelationshipWafTagsWafTags}
+     * @property {module:model/RelationshipWafTagsWafTags}
      */
     RelationshipWafTagsWafTags,
 
     /**
      * The RelationshipsForInvitation model constructor.
-     * @property {module:models/RelationshipsForInvitation}
+     * @property {module:model/RelationshipsForInvitation}
      */
     RelationshipsForInvitation,
 
     /**
      * The RelationshipsForTlsActivation model constructor.
-     * @property {module:models/RelationshipsForTlsActivation}
+     * @property {module:model/RelationshipsForTlsActivation}
      */
     RelationshipsForTlsActivation,
 
     /**
      * The RelationshipsForTlsBulkCertificate model constructor.
-     * @property {module:models/RelationshipsForTlsBulkCertificate}
+     * @property {module:model/RelationshipsForTlsBulkCertificate}
      */
     RelationshipsForTlsBulkCertificate,
 
     /**
      * The RelationshipsForTlsConfiguration model constructor.
-     * @property {module:models/RelationshipsForTlsConfiguration}
+     * @property {module:model/RelationshipsForTlsConfiguration}
      */
     RelationshipsForTlsConfiguration,
 
     /**
      * The RelationshipsForTlsDomain model constructor.
-     * @property {module:models/RelationshipsForTlsDomain}
+     * @property {module:model/RelationshipsForTlsDomain}
      */
     RelationshipsForTlsDomain,
 
     /**
      * The RelationshipsForTlsPrivateKey model constructor.
-     * @property {module:models/RelationshipsForTlsPrivateKey}
+     * @property {module:model/RelationshipsForTlsPrivateKey}
      */
     RelationshipsForTlsPrivateKey,
 
     /**
      * The RelationshipsForTlsSubscription model constructor.
-     * @property {module:models/RelationshipsForTlsSubscription}
+     * @property {module:model/RelationshipsForTlsSubscription}
      */
     RelationshipsForTlsSubscription,
 
     /**
      * The RelationshipsForWafActiveRule model constructor.
-     * @property {module:models/RelationshipsForWafActiveRule}
+     * @property {module:model/RelationshipsForWafActiveRule}
      */
     RelationshipsForWafActiveRule,
 
     /**
      * The RelationshipsForWafExclusion model constructor.
-     * @property {module:models/RelationshipsForWafExclusion}
+     * @property {module:model/RelationshipsForWafExclusion}
      */
     RelationshipsForWafExclusion,
 
     /**
      * The RelationshipsForWafFirewallVersion model constructor.
-     * @property {module:models/RelationshipsForWafFirewallVersion}
+     * @property {module:model/RelationshipsForWafFirewallVersion}
      */
     RelationshipsForWafFirewallVersion,
 
     /**
      * The RelationshipsForWafRule model constructor.
-     * @property {module:models/RelationshipsForWafRule}
+     * @property {module:model/RelationshipsForWafRule}
      */
     RelationshipsForWafRule,
 
     /**
      * The RequestSettings model constructor.
-     * @property {module:models/RequestSettings}
+     * @property {module:model/RequestSettings}
      */
     RequestSettings,
 
     /**
      * The RequestSettingsResponse model constructor.
-     * @property {module:models/RequestSettingsResponse}
+     * @property {module:model/RequestSettingsResponse}
      */
     RequestSettingsResponse,
 
     /**
      * The ResponseObject model constructor.
-     * @property {module:models/ResponseObject}
+     * @property {module:model/ResponseObject}
      */
     ResponseObject,
 
     /**
      * The ResponseObjectResponse model constructor.
-     * @property {module:models/ResponseObjectResponse}
+     * @property {module:model/ResponseObjectResponse}
      */
     ResponseObjectResponse,
 
     /**
      * The Results model constructor.
-     * @property {module:models/Results}
+     * @property {module:model/Results}
      */
     Results,
 
     /**
      * The RoleUser model constructor.
-     * @property {module:models/RoleUser}
+     * @property {module:model/RoleUser}
      */
     RoleUser,
 
     /**
      * The SchemasBackend model constructor.
-     * @property {module:models/SchemasBackend}
+     * @property {module:model/SchemasBackend}
      */
     SchemasBackend,
 
     /**
      * The SchemasDirector model constructor.
-     * @property {module:models/SchemasDirector}
+     * @property {module:model/SchemasDirector}
      */
     SchemasDirector,
 
     /**
+     * The SchemasResponseObject model constructor.
+     * @property {module:model/SchemasResponseObject}
+     */
+    SchemasResponseObject,
+
+    /**
+     * The SchemasResponseObjectResponse model constructor.
+     * @property {module:model/SchemasResponseObjectResponse}
+     */
+    SchemasResponseObjectResponse,
+
+    /**
      * The SchemasSnippetResponse model constructor.
-     * @property {module:models/SchemasSnippetResponse}
+     * @property {module:model/SchemasSnippetResponse}
      */
     SchemasSnippetResponse,
 
     /**
      * The SchemasUserResponse model constructor.
-     * @property {module:models/SchemasUserResponse}
+     * @property {module:model/SchemasUserResponse}
      */
     SchemasUserResponse,
 
     /**
      * The SchemasVclResponse model constructor.
-     * @property {module:models/SchemasVclResponse}
+     * @property {module:model/SchemasVclResponse}
      */
     SchemasVclResponse,
 
     /**
      * The SchemasVersion model constructor.
-     * @property {module:models/SchemasVersion}
+     * @property {module:model/SchemasVersion}
      */
     SchemasVersion,
 
     /**
      * The SchemasVersionResponse model constructor.
-     * @property {module:models/SchemasVersionResponse}
+     * @property {module:model/SchemasVersionResponse}
      */
     SchemasVersionResponse,
 
     /**
      * The SchemasWafFirewallVersion model constructor.
-     * @property {module:models/SchemasWafFirewallVersion}
+     * @property {module:model/SchemasWafFirewallVersion}
      */
     SchemasWafFirewallVersion,
 
     /**
      * The SchemasWafFirewallVersionData model constructor.
-     * @property {module:models/SchemasWafFirewallVersionData}
+     * @property {module:model/SchemasWafFirewallVersionData}
      */
     SchemasWafFirewallVersionData,
 
     /**
      * The Server model constructor.
-     * @property {module:models/Server}
+     * @property {module:model/Server}
      */
     Server,
 
     /**
      * The ServerResponse model constructor.
-     * @property {module:models/ServerResponse}
+     * @property {module:model/ServerResponse}
      */
     ServerResponse,
 
     /**
      * The ServerResponseAllOf model constructor.
-     * @property {module:models/ServerResponseAllOf}
+     * @property {module:model/ServerResponseAllOf}
      */
     ServerResponseAllOf,
 
     /**
      * The Service model constructor.
-     * @property {module:models/Service}
+     * @property {module:model/Service}
      */
     Service,
 
     /**
      * The ServiceAuthorization model constructor.
-     * @property {module:models/ServiceAuthorization}
+     * @property {module:model/ServiceAuthorization}
      */
     ServiceAuthorization,
 
     /**
      * The ServiceAuthorizationData model constructor.
-     * @property {module:models/ServiceAuthorizationData}
+     * @property {module:model/ServiceAuthorizationData}
      */
     ServiceAuthorizationData,
 
     /**
      * The ServiceAuthorizationDataAttributes model constructor.
-     * @property {module:models/ServiceAuthorizationDataAttributes}
+     * @property {module:model/ServiceAuthorizationDataAttributes}
      */
     ServiceAuthorizationDataAttributes,
 
     /**
      * The ServiceAuthorizationResponse model constructor.
-     * @property {module:models/ServiceAuthorizationResponse}
+     * @property {module:model/ServiceAuthorizationResponse}
      */
     ServiceAuthorizationResponse,
 
     /**
      * The ServiceAuthorizationResponseData model constructor.
-     * @property {module:models/ServiceAuthorizationResponseData}
+     * @property {module:model/ServiceAuthorizationResponseData}
      */
     ServiceAuthorizationResponseData,
 
     /**
      * The ServiceAuthorizationResponseDataAllOf model constructor.
-     * @property {module:models/ServiceAuthorizationResponseDataAllOf}
+     * @property {module:model/ServiceAuthorizationResponseDataAllOf}
      */
     ServiceAuthorizationResponseDataAllOf,
 
     /**
      * The ServiceAuthorizationsData model constructor.
-     * @property {module:models/ServiceAuthorizationsData}
+     * @property {module:model/ServiceAuthorizationsData}
      */
     ServiceAuthorizationsData,
 
     /**
      * The ServiceAuthorizationsResponse model constructor.
-     * @property {module:models/ServiceAuthorizationsResponse}
+     * @property {module:model/ServiceAuthorizationsResponse}
      */
     ServiceAuthorizationsResponse,
 
     /**
      * The ServiceAuthorizationsResponseAllOf model constructor.
-     * @property {module:models/ServiceAuthorizationsResponseAllOf}
+     * @property {module:model/ServiceAuthorizationsResponseAllOf}
      */
     ServiceAuthorizationsResponseAllOf,
 
     /**
      * The ServiceCreate model constructor.
-     * @property {module:models/ServiceCreate}
+     * @property {module:model/ServiceCreate}
      */
     ServiceCreate,
 
     /**
      * The ServiceCreateAllOf model constructor.
-     * @property {module:models/ServiceCreateAllOf}
+     * @property {module:model/ServiceCreateAllOf}
      */
     ServiceCreateAllOf,
 
     /**
      * The ServiceDetail model constructor.
-     * @property {module:models/ServiceDetail}
+     * @property {module:model/ServiceDetail}
      */
     ServiceDetail,
 
     /**
      * The ServiceDetailAllOf model constructor.
-     * @property {module:models/ServiceDetailAllOf}
+     * @property {module:model/ServiceDetailAllOf}
      */
     ServiceDetailAllOf,
 
     /**
      * The ServiceIdAndVersion model constructor.
-     * @property {module:models/ServiceIdAndVersion}
+     * @property {module:model/ServiceIdAndVersion}
      */
     ServiceIdAndVersion,
 
     /**
      * The ServiceInvitation model constructor.
-     * @property {module:models/ServiceInvitation}
+     * @property {module:model/ServiceInvitation}
      */
     ServiceInvitation,
 
     /**
      * The ServiceInvitationData model constructor.
-     * @property {module:models/ServiceInvitationData}
+     * @property {module:model/ServiceInvitationData}
      */
     ServiceInvitationData,
 
     /**
      * The ServiceInvitationDataAttributes model constructor.
-     * @property {module:models/ServiceInvitationDataAttributes}
+     * @property {module:model/ServiceInvitationDataAttributes}
      */
     ServiceInvitationDataAttributes,
 
     /**
      * The ServiceInvitationResponse model constructor.
-     * @property {module:models/ServiceInvitationResponse}
+     * @property {module:model/ServiceInvitationResponse}
      */
     ServiceInvitationResponse,
 
     /**
      * The ServiceInvitationResponseAllOf model constructor.
-     * @property {module:models/ServiceInvitationResponseAllOf}
+     * @property {module:model/ServiceInvitationResponseAllOf}
      */
     ServiceInvitationResponseAllOf,
 
     /**
      * The ServiceInvitationResponseAllOfData model constructor.
-     * @property {module:models/ServiceInvitationResponseAllOfData}
+     * @property {module:model/ServiceInvitationResponseAllOfData}
      */
     ServiceInvitationResponseAllOfData,
 
     /**
      * The ServiceListResponse model constructor.
-     * @property {module:models/ServiceListResponse}
+     * @property {module:model/ServiceListResponse}
      */
     ServiceListResponse,
 
     /**
      * The ServiceListResponseAllOf model constructor.
-     * @property {module:models/ServiceListResponseAllOf}
+     * @property {module:model/ServiceListResponseAllOf}
      */
     ServiceListResponseAllOf,
 
     /**
      * The ServiceResponse model constructor.
-     * @property {module:models/ServiceResponse}
+     * @property {module:model/ServiceResponse}
      */
     ServiceResponse,
 
     /**
      * The ServiceResponseAllOf model constructor.
-     * @property {module:models/ServiceResponseAllOf}
+     * @property {module:model/ServiceResponseAllOf}
      */
     ServiceResponseAllOf,
 
     /**
      * The Settings model constructor.
-     * @property {module:models/Settings}
+     * @property {module:model/Settings}
      */
     Settings,
 
     /**
      * The SettingsResponse model constructor.
-     * @property {module:models/SettingsResponse}
+     * @property {module:model/SettingsResponse}
      */
     SettingsResponse,
 
     /**
      * The Snippet model constructor.
-     * @property {module:models/Snippet}
+     * @property {module:model/Snippet}
      */
     Snippet,
 
     /**
      * The SnippetResponse model constructor.
-     * @property {module:models/SnippetResponse}
+     * @property {module:model/SnippetResponse}
      */
     SnippetResponse,
 
     /**
      * The SnippetResponseAllOf model constructor.
-     * @property {module:models/SnippetResponseAllOf}
+     * @property {module:model/SnippetResponseAllOf}
      */
     SnippetResponseAllOf,
 
     /**
      * The Star model constructor.
-     * @property {module:models/Star}
+     * @property {module:model/Star}
      */
     Star,
 
     /**
      * The StarData model constructor.
-     * @property {module:models/StarData}
+     * @property {module:model/StarData}
      */
     StarData,
 
     /**
      * The StarResponse model constructor.
-     * @property {module:models/StarResponse}
+     * @property {module:model/StarResponse}
      */
     StarResponse,
 
     /**
      * The StarResponseAllOf model constructor.
-     * @property {module:models/StarResponseAllOf}
+     * @property {module:model/StarResponseAllOf}
      */
     StarResponseAllOf,
 
     /**
      * The Stats model constructor.
-     * @property {module:models/Stats}
+     * @property {module:model/Stats}
      */
     Stats,
 
     /**
      * The Timestamps model constructor.
-     * @property {module:models/Timestamps}
+     * @property {module:model/Timestamps}
      */
     Timestamps,
 
     /**
      * The TlsActivation model constructor.
-     * @property {module:models/TlsActivation}
+     * @property {module:model/TlsActivation}
      */
     TlsActivation,
 
     /**
      * The TlsActivationData model constructor.
-     * @property {module:models/TlsActivationData}
+     * @property {module:model/TlsActivationData}
      */
     TlsActivationData,
 
     /**
      * The TlsActivationResponse model constructor.
-     * @property {module:models/TlsActivationResponse}
+     * @property {module:model/TlsActivationResponse}
      */
     TlsActivationResponse,
 
     /**
      * The TlsActivationResponseData model constructor.
-     * @property {module:models/TlsActivationResponseData}
+     * @property {module:model/TlsActivationResponseData}
      */
     TlsActivationResponseData,
 
     /**
      * The TlsActivationResponseDataAllOf model constructor.
-     * @property {module:models/TlsActivationResponseDataAllOf}
+     * @property {module:model/TlsActivationResponseDataAllOf}
      */
     TlsActivationResponseDataAllOf,
 
     /**
      * The TlsActivationsResponse model constructor.
-     * @property {module:models/TlsActivationsResponse}
+     * @property {module:model/TlsActivationsResponse}
      */
     TlsActivationsResponse,
 
     /**
      * The TlsActivationsResponseAllOf model constructor.
-     * @property {module:models/TlsActivationsResponseAllOf}
+     * @property {module:model/TlsActivationsResponseAllOf}
      */
     TlsActivationsResponseAllOf,
 
     /**
      * The TlsBulkCertificate model constructor.
-     * @property {module:models/TlsBulkCertificate}
+     * @property {module:model/TlsBulkCertificate}
      */
     TlsBulkCertificate,
 
     /**
      * The TlsBulkCertificateData model constructor.
-     * @property {module:models/TlsBulkCertificateData}
+     * @property {module:model/TlsBulkCertificateData}
      */
     TlsBulkCertificateData,
 
     /**
      * The TlsBulkCertificateDataAttributes model constructor.
-     * @property {module:models/TlsBulkCertificateDataAttributes}
+     * @property {module:model/TlsBulkCertificateDataAttributes}
      */
     TlsBulkCertificateDataAttributes,
 
     /**
      * The TlsBulkCertificateResponse model constructor.
-     * @property {module:models/TlsBulkCertificateResponse}
+     * @property {module:model/TlsBulkCertificateResponse}
      */
     TlsBulkCertificateResponse,
 
     /**
      * The TlsBulkCertificateResponseData model constructor.
-     * @property {module:models/TlsBulkCertificateResponseData}
+     * @property {module:model/TlsBulkCertificateResponseData}
      */
     TlsBulkCertificateResponseData,
 
     /**
      * The TlsBulkCertificateResponseDataAllOf model constructor.
-     * @property {module:models/TlsBulkCertificateResponseDataAllOf}
+     * @property {module:model/TlsBulkCertificateResponseDataAllOf}
      */
     TlsBulkCertificateResponseDataAllOf,
 
     /**
      * The TlsBulkCertificatesResponse model constructor.
-     * @property {module:models/TlsBulkCertificatesResponse}
+     * @property {module:model/TlsBulkCertificatesResponse}
      */
     TlsBulkCertificatesResponse,
 
     /**
      * The TlsBulkCertificatesResponseAllOf model constructor.
-     * @property {module:models/TlsBulkCertificatesResponseAllOf}
+     * @property {module:model/TlsBulkCertificatesResponseAllOf}
      */
     TlsBulkCertificatesResponseAllOf,
 
     /**
      * The TlsCertificate model constructor.
-     * @property {module:models/TlsCertificate}
+     * @property {module:model/TlsCertificate}
      */
     TlsCertificate,
 
     /**
      * The TlsCertificateData model constructor.
-     * @property {module:models/TlsCertificateData}
+     * @property {module:model/TlsCertificateData}
      */
     TlsCertificateData,
 
     /**
      * The TlsCertificateDataAttributes model constructor.
-     * @property {module:models/TlsCertificateDataAttributes}
+     * @property {module:model/TlsCertificateDataAttributes}
      */
     TlsCertificateDataAttributes,
 
     /**
      * The TlsCertificateResponse model constructor.
-     * @property {module:models/TlsCertificateResponse}
+     * @property {module:model/TlsCertificateResponse}
      */
     TlsCertificateResponse,
 
     /**
      * The TlsCertificateResponseData model constructor.
-     * @property {module:models/TlsCertificateResponseData}
+     * @property {module:model/TlsCertificateResponseData}
      */
     TlsCertificateResponseData,
 
     /**
      * The TlsCertificateResponseDataAllOf model constructor.
-     * @property {module:models/TlsCertificateResponseDataAllOf}
+     * @property {module:model/TlsCertificateResponseDataAllOf}
      */
     TlsCertificateResponseDataAllOf,
 
     /**
      * The TlsCertificatesResponse model constructor.
-     * @property {module:models/TlsCertificatesResponse}
+     * @property {module:model/TlsCertificatesResponse}
      */
     TlsCertificatesResponse,
 
     /**
      * The TlsCertificatesResponseAllOf model constructor.
-     * @property {module:models/TlsCertificatesResponseAllOf}
+     * @property {module:model/TlsCertificatesResponseAllOf}
      */
     TlsCertificatesResponseAllOf,
 
     /**
      * The TlsCommon model constructor.
-     * @property {module:models/TlsCommon}
+     * @property {module:model/TlsCommon}
      */
     TlsCommon,
 
     /**
      * The TlsConfiguration model constructor.
-     * @property {module:models/TlsConfiguration}
+     * @property {module:model/TlsConfiguration}
      */
     TlsConfiguration,
 
     /**
      * The TlsConfigurationData model constructor.
-     * @property {module:models/TlsConfigurationData}
+     * @property {module:model/TlsConfigurationData}
      */
     TlsConfigurationData,
 
     /**
      * The TlsConfigurationDataAttributes model constructor.
-     * @property {module:models/TlsConfigurationDataAttributes}
+     * @property {module:model/TlsConfigurationDataAttributes}
      */
     TlsConfigurationDataAttributes,
 
     /**
      * The TlsConfigurationResponse model constructor.
-     * @property {module:models/TlsConfigurationResponse}
+     * @property {module:model/TlsConfigurationResponse}
      */
     TlsConfigurationResponse,
 
     /**
      * The TlsConfigurationResponseData model constructor.
-     * @property {module:models/TlsConfigurationResponseData}
+     * @property {module:model/TlsConfigurationResponseData}
      */
     TlsConfigurationResponseData,
 
     /**
      * The TlsConfigurationResponseDataAllOf model constructor.
-     * @property {module:models/TlsConfigurationResponseDataAllOf}
+     * @property {module:model/TlsConfigurationResponseDataAllOf}
      */
     TlsConfigurationResponseDataAllOf,
 
     /**
      * The TlsConfigurationsResponse model constructor.
-     * @property {module:models/TlsConfigurationsResponse}
+     * @property {module:model/TlsConfigurationsResponse}
      */
     TlsConfigurationsResponse,
 
     /**
      * The TlsConfigurationsResponseAllOf model constructor.
-     * @property {module:models/TlsConfigurationsResponseAllOf}
+     * @property {module:model/TlsConfigurationsResponseAllOf}
      */
     TlsConfigurationsResponseAllOf,
 
     /**
      * The TlsDnsRecord model constructor.
-     * @property {module:models/TlsDnsRecord}
+     * @property {module:model/TlsDnsRecord}
      */
     TlsDnsRecord,
 
     /**
      * The TlsDomainData model constructor.
-     * @property {module:models/TlsDomainData}
+     * @property {module:model/TlsDomainData}
      */
     TlsDomainData,
 
     /**
      * The TlsDomainsResponse model constructor.
-     * @property {module:models/TlsDomainsResponse}
+     * @property {module:model/TlsDomainsResponse}
      */
     TlsDomainsResponse,
 
     /**
      * The TlsDomainsResponseAllOf model constructor.
-     * @property {module:models/TlsDomainsResponseAllOf}
+     * @property {module:model/TlsDomainsResponseAllOf}
      */
     TlsDomainsResponseAllOf,
 
     /**
      * The TlsPrivateKey model constructor.
-     * @property {module:models/TlsPrivateKey}
+     * @property {module:model/TlsPrivateKey}
      */
     TlsPrivateKey,
 
     /**
      * The TlsPrivateKeyData model constructor.
-     * @property {module:models/TlsPrivateKeyData}
+     * @property {module:model/TlsPrivateKeyData}
      */
     TlsPrivateKeyData,
 
     /**
      * The TlsPrivateKeyDataAttributes model constructor.
-     * @property {module:models/TlsPrivateKeyDataAttributes}
+     * @property {module:model/TlsPrivateKeyDataAttributes}
      */
     TlsPrivateKeyDataAttributes,
 
     /**
      * The TlsPrivateKeyResponse model constructor.
-     * @property {module:models/TlsPrivateKeyResponse}
+     * @property {module:model/TlsPrivateKeyResponse}
      */
     TlsPrivateKeyResponse,
 
     /**
      * The TlsPrivateKeyResponseData model constructor.
-     * @property {module:models/TlsPrivateKeyResponseData}
+     * @property {module:model/TlsPrivateKeyResponseData}
      */
     TlsPrivateKeyResponseData,
 
     /**
      * The TlsPrivateKeysResponse model constructor.
-     * @property {module:models/TlsPrivateKeysResponse}
+     * @property {module:model/TlsPrivateKeysResponse}
      */
     TlsPrivateKeysResponse,
 
     /**
      * The TlsPrivateKeysResponseAllOf model constructor.
-     * @property {module:models/TlsPrivateKeysResponseAllOf}
+     * @property {module:model/TlsPrivateKeysResponseAllOf}
      */
     TlsPrivateKeysResponseAllOf,
 
     /**
      * The TlsSubscription model constructor.
-     * @property {module:models/TlsSubscription}
+     * @property {module:model/TlsSubscription}
      */
     TlsSubscription,
 
     /**
      * The TlsSubscriptionData model constructor.
-     * @property {module:models/TlsSubscriptionData}
+     * @property {module:model/TlsSubscriptionData}
      */
     TlsSubscriptionData,
 
     /**
      * The TlsSubscriptionDataAttributes model constructor.
-     * @property {module:models/TlsSubscriptionDataAttributes}
+     * @property {module:model/TlsSubscriptionDataAttributes}
      */
     TlsSubscriptionDataAttributes,
 
     /**
      * The TlsSubscriptionResponse model constructor.
-     * @property {module:models/TlsSubscriptionResponse}
+     * @property {module:model/TlsSubscriptionResponse}
      */
     TlsSubscriptionResponse,
 
     /**
      * The TlsSubscriptionResponseData model constructor.
-     * @property {module:models/TlsSubscriptionResponseData}
+     * @property {module:model/TlsSubscriptionResponseData}
      */
     TlsSubscriptionResponseData,
 
     /**
      * The TlsSubscriptionResponseDataAllOf model constructor.
-     * @property {module:models/TlsSubscriptionResponseDataAllOf}
+     * @property {module:model/TlsSubscriptionResponseDataAllOf}
      */
     TlsSubscriptionResponseDataAllOf,
 
     /**
      * The TlsSubscriptionsResponse model constructor.
-     * @property {module:models/TlsSubscriptionsResponse}
+     * @property {module:model/TlsSubscriptionsResponse}
      */
     TlsSubscriptionsResponse,
 
     /**
      * The TlsSubscriptionsResponseAllOf model constructor.
-     * @property {module:models/TlsSubscriptionsResponseAllOf}
+     * @property {module:model/TlsSubscriptionsResponseAllOf}
      */
     TlsSubscriptionsResponseAllOf,
 
     /**
      * The Token model constructor.
-     * @property {module:models/Token}
+     * @property {module:model/Token}
      */
     Token,
 
     /**
      * The TokenCreatedResponse model constructor.
-     * @property {module:models/TokenCreatedResponse}
+     * @property {module:model/TokenCreatedResponse}
      */
     TokenCreatedResponse,
 
     /**
      * The TokenCreatedResponseAllOf model constructor.
-     * @property {module:models/TokenCreatedResponseAllOf}
+     * @property {module:model/TokenCreatedResponseAllOf}
      */
     TokenCreatedResponseAllOf,
 
     /**
      * The TokenResponse model constructor.
-     * @property {module:models/TokenResponse}
+     * @property {module:model/TokenResponse}
      */
     TokenResponse,
 
     /**
      * The TokenResponseAllOf model constructor.
-     * @property {module:models/TokenResponseAllOf}
+     * @property {module:model/TokenResponseAllOf}
      */
     TokenResponseAllOf,
 
     /**
      * The TypeBillingAddress model constructor.
-     * @property {module:models/TypeBillingAddress}
+     * @property {module:model/TypeBillingAddress}
      */
     TypeBillingAddress,
 
     /**
      * The TypeCustomer model constructor.
-     * @property {module:models/TypeCustomer}
+     * @property {module:model/TypeCustomer}
      */
     TypeCustomer,
 
     /**
      * The TypeEvent model constructor.
-     * @property {module:models/TypeEvent}
+     * @property {module:model/TypeEvent}
      */
     TypeEvent,
 
     /**
      * The TypeInvitation model constructor.
-     * @property {module:models/TypeInvitation}
+     * @property {module:model/TypeInvitation}
      */
     TypeInvitation,
 
     /**
      * The TypeService model constructor.
-     * @property {module:models/TypeService}
+     * @property {module:model/TypeService}
      */
     TypeService,
 
     /**
      * The TypeServiceAuthorization model constructor.
-     * @property {module:models/TypeServiceAuthorization}
+     * @property {module:model/TypeServiceAuthorization}
      */
     TypeServiceAuthorization,
 
     /**
      * The TypeServiceInvitation model constructor.
-     * @property {module:models/TypeServiceInvitation}
+     * @property {module:model/TypeServiceInvitation}
      */
     TypeServiceInvitation,
 
     /**
      * The TypeStar model constructor.
-     * @property {module:models/TypeStar}
+     * @property {module:model/TypeStar}
      */
     TypeStar,
 
     /**
      * The TypeTlsActivation model constructor.
-     * @property {module:models/TypeTlsActivation}
+     * @property {module:model/TypeTlsActivation}
      */
     TypeTlsActivation,
 
     /**
      * The TypeTlsBulkCertificate model constructor.
-     * @property {module:models/TypeTlsBulkCertificate}
+     * @property {module:model/TypeTlsBulkCertificate}
      */
     TypeTlsBulkCertificate,
 
     /**
      * The TypeTlsCertificate model constructor.
-     * @property {module:models/TypeTlsCertificate}
+     * @property {module:model/TypeTlsCertificate}
      */
     TypeTlsCertificate,
 
     /**
      * The TypeTlsConfiguration model constructor.
-     * @property {module:models/TypeTlsConfiguration}
+     * @property {module:model/TypeTlsConfiguration}
      */
     TypeTlsConfiguration,
 
     /**
      * The TypeTlsDnsRecord model constructor.
-     * @property {module:models/TypeTlsDnsRecord}
+     * @property {module:model/TypeTlsDnsRecord}
      */
     TypeTlsDnsRecord,
 
     /**
      * The TypeTlsDomain model constructor.
-     * @property {module:models/TypeTlsDomain}
+     * @property {module:model/TypeTlsDomain}
      */
     TypeTlsDomain,
 
     /**
      * The TypeTlsPrivateKey model constructor.
-     * @property {module:models/TypeTlsPrivateKey}
+     * @property {module:model/TypeTlsPrivateKey}
      */
     TypeTlsPrivateKey,
 
     /**
      * The TypeTlsSubscription model constructor.
-     * @property {module:models/TypeTlsSubscription}
+     * @property {module:model/TypeTlsSubscription}
      */
     TypeTlsSubscription,
 
     /**
      * The TypeUser model constructor.
-     * @property {module:models/TypeUser}
+     * @property {module:model/TypeUser}
      */
     TypeUser,
 
     /**
      * The TypeWafActiveRule model constructor.
-     * @property {module:models/TypeWafActiveRule}
+     * @property {module:model/TypeWafActiveRule}
      */
     TypeWafActiveRule,
 
     /**
      * The TypeWafExclusion model constructor.
-     * @property {module:models/TypeWafExclusion}
+     * @property {module:model/TypeWafExclusion}
      */
     TypeWafExclusion,
 
     /**
      * The TypeWafFirewall model constructor.
-     * @property {module:models/TypeWafFirewall}
+     * @property {module:model/TypeWafFirewall}
      */
     TypeWafFirewall,
 
     /**
      * The TypeWafFirewallVersion model constructor.
-     * @property {module:models/TypeWafFirewallVersion}
+     * @property {module:model/TypeWafFirewallVersion}
      */
     TypeWafFirewallVersion,
 
     /**
      * The TypeWafRule model constructor.
-     * @property {module:models/TypeWafRule}
+     * @property {module:model/TypeWafRule}
      */
     TypeWafRule,
 
     /**
      * The TypeWafRuleRevision model constructor.
-     * @property {module:models/TypeWafRuleRevision}
+     * @property {module:model/TypeWafRuleRevision}
      */
     TypeWafRuleRevision,
 
     /**
      * The TypeWafTag model constructor.
-     * @property {module:models/TypeWafTag}
+     * @property {module:model/TypeWafTag}
      */
     TypeWafTag,
 
     /**
      * The User model constructor.
-     * @property {module:models/User}
+     * @property {module:model/User}
      */
     User,
 
     /**
      * The UserResponse model constructor.
-     * @property {module:models/UserResponse}
+     * @property {module:model/UserResponse}
      */
     UserResponse,
 
     /**
      * The UserResponseAllOf model constructor.
-     * @property {module:models/UserResponseAllOf}
+     * @property {module:model/UserResponseAllOf}
      */
     UserResponseAllOf,
 
     /**
      * The Vcl model constructor.
-     * @property {module:models/Vcl}
+     * @property {module:model/Vcl}
      */
     Vcl,
 
     /**
      * The VclDiff model constructor.
-     * @property {module:models/VclDiff}
+     * @property {module:model/VclDiff}
      */
     VclDiff,
 
     /**
      * The VclResponse model constructor.
-     * @property {module:models/VclResponse}
+     * @property {module:model/VclResponse}
      */
     VclResponse,
 
     /**
      * The Version model constructor.
-     * @property {module:models/Version}
+     * @property {module:model/Version}
      */
     Version,
 
     /**
      * The VersionCreateResponse model constructor.
-     * @property {module:models/VersionCreateResponse}
+     * @property {module:model/VersionCreateResponse}
      */
     VersionCreateResponse,
 
     /**
      * The VersionDetail model constructor.
-     * @property {module:models/VersionDetail}
+     * @property {module:model/VersionDetail}
      */
     VersionDetail,
 
     /**
      * The VersionResponse model constructor.
-     * @property {module:models/VersionResponse}
+     * @property {module:model/VersionResponse}
      */
     VersionResponse,
 
     /**
      * The VersionResponseAllOf model constructor.
-     * @property {module:models/VersionResponseAllOf}
+     * @property {module:model/VersionResponseAllOf}
      */
     VersionResponseAllOf,
 
     /**
      * The WafActiveRule model constructor.
-     * @property {module:models/WafActiveRule}
+     * @property {module:model/WafActiveRule}
      */
     WafActiveRule,
 
     /**
      * The WafActiveRuleCreationResponse model constructor.
-     * @property {module:models/WafActiveRuleCreationResponse}
+     * @property {module:model/WafActiveRuleCreationResponse}
      */
     WafActiveRuleCreationResponse,
 
     /**
      * The WafActiveRuleData model constructor.
-     * @property {module:models/WafActiveRuleData}
+     * @property {module:model/WafActiveRuleData}
      */
     WafActiveRuleData,
 
     /**
      * The WafActiveRuleDataAttributes model constructor.
-     * @property {module:models/WafActiveRuleDataAttributes}
+     * @property {module:model/WafActiveRuleDataAttributes}
      */
     WafActiveRuleDataAttributes,
 
     /**
      * The WafActiveRuleResponse model constructor.
-     * @property {module:models/WafActiveRuleResponse}
+     * @property {module:model/WafActiveRuleResponse}
      */
     WafActiveRuleResponse,
 
     /**
      * The WafActiveRuleResponseData model constructor.
-     * @property {module:models/WafActiveRuleResponseData}
+     * @property {module:model/WafActiveRuleResponseData}
      */
     WafActiveRuleResponseData,
 
     /**
      * The WafActiveRuleResponseDataAllOf model constructor.
-     * @property {module:models/WafActiveRuleResponseDataAllOf}
+     * @property {module:model/WafActiveRuleResponseDataAllOf}
      */
     WafActiveRuleResponseDataAllOf,
 
     /**
      * The WafActiveRulesResponse model constructor.
-     * @property {module:models/WafActiveRulesResponse}
+     * @property {module:model/WafActiveRulesResponse}
      */
     WafActiveRulesResponse,
 
     /**
      * The WafActiveRulesResponseAllOf model constructor.
-     * @property {module:models/WafActiveRulesResponseAllOf}
+     * @property {module:model/WafActiveRulesResponseAllOf}
      */
     WafActiveRulesResponseAllOf,
 
     /**
      * The WafExclusion model constructor.
-     * @property {module:models/WafExclusion}
+     * @property {module:model/WafExclusion}
      */
     WafExclusion,
 
     /**
      * The WafExclusionData model constructor.
-     * @property {module:models/WafExclusionData}
+     * @property {module:model/WafExclusionData}
      */
     WafExclusionData,
 
     /**
      * The WafExclusionDataAttributes model constructor.
-     * @property {module:models/WafExclusionDataAttributes}
+     * @property {module:model/WafExclusionDataAttributes}
      */
     WafExclusionDataAttributes,
 
     /**
      * The WafExclusionResponse model constructor.
-     * @property {module:models/WafExclusionResponse}
+     * @property {module:model/WafExclusionResponse}
      */
     WafExclusionResponse,
 
     /**
      * The WafExclusionResponseData model constructor.
-     * @property {module:models/WafExclusionResponseData}
+     * @property {module:model/WafExclusionResponseData}
      */
     WafExclusionResponseData,
 
     /**
      * The WafExclusionResponseDataAllOf model constructor.
-     * @property {module:models/WafExclusionResponseDataAllOf}
+     * @property {module:model/WafExclusionResponseDataAllOf}
      */
     WafExclusionResponseDataAllOf,
 
     /**
      * The WafExclusionsResponse model constructor.
-     * @property {module:models/WafExclusionsResponse}
+     * @property {module:model/WafExclusionsResponse}
      */
     WafExclusionsResponse,
 
     /**
      * The WafExclusionsResponseAllOf model constructor.
-     * @property {module:models/WafExclusionsResponseAllOf}
+     * @property {module:model/WafExclusionsResponseAllOf}
      */
     WafExclusionsResponseAllOf,
 
     /**
      * The WafFirewall model constructor.
-     * @property {module:models/WafFirewall}
+     * @property {module:model/WafFirewall}
      */
     WafFirewall,
 
     /**
      * The WafFirewallData model constructor.
-     * @property {module:models/WafFirewallData}
+     * @property {module:model/WafFirewallData}
      */
     WafFirewallData,
 
     /**
      * The WafFirewallDataAttributes model constructor.
-     * @property {module:models/WafFirewallDataAttributes}
+     * @property {module:model/WafFirewallDataAttributes}
      */
     WafFirewallDataAttributes,
 
     /**
      * The WafFirewallResponse model constructor.
-     * @property {module:models/WafFirewallResponse}
+     * @property {module:model/WafFirewallResponse}
      */
     WafFirewallResponse,
 
     /**
      * The WafFirewallResponseData model constructor.
-     * @property {module:models/WafFirewallResponseData}
+     * @property {module:model/WafFirewallResponseData}
      */
     WafFirewallResponseData,
 
     /**
      * The WafFirewallResponseDataAllOf model constructor.
-     * @property {module:models/WafFirewallResponseDataAllOf}
+     * @property {module:model/WafFirewallResponseDataAllOf}
      */
     WafFirewallResponseDataAllOf,
 
     /**
      * The WafFirewallVersion model constructor.
-     * @property {module:models/WafFirewallVersion}
+     * @property {module:model/WafFirewallVersion}
      */
     WafFirewallVersion,
 
     /**
      * The WafFirewallVersionData model constructor.
-     * @property {module:models/WafFirewallVersionData}
+     * @property {module:model/WafFirewallVersionData}
      */
     WafFirewallVersionData,
 
     /**
      * The WafFirewallVersionDataAttributes model constructor.
-     * @property {module:models/WafFirewallVersionDataAttributes}
+     * @property {module:model/WafFirewallVersionDataAttributes}
      */
     WafFirewallVersionDataAttributes,
 
     /**
      * The WafFirewallVersionResponse model constructor.
-     * @property {module:models/WafFirewallVersionResponse}
+     * @property {module:model/WafFirewallVersionResponse}
      */
     WafFirewallVersionResponse,
 
     /**
      * The WafFirewallVersionResponseData model constructor.
-     * @property {module:models/WafFirewallVersionResponseData}
+     * @property {module:model/WafFirewallVersionResponseData}
      */
     WafFirewallVersionResponseData,
 
     /**
      * The WafFirewallVersionResponseDataAllOf model constructor.
-     * @property {module:models/WafFirewallVersionResponseDataAllOf}
+     * @property {module:model/WafFirewallVersionResponseDataAllOf}
      */
     WafFirewallVersionResponseDataAllOf,
 
     /**
      * The WafFirewallVersionsResponse model constructor.
-     * @property {module:models/WafFirewallVersionsResponse}
+     * @property {module:model/WafFirewallVersionsResponse}
      */
     WafFirewallVersionsResponse,
 
     /**
      * The WafFirewallVersionsResponseAllOf model constructor.
-     * @property {module:models/WafFirewallVersionsResponseAllOf}
+     * @property {module:model/WafFirewallVersionsResponseAllOf}
      */
     WafFirewallVersionsResponseAllOf,
 
     /**
      * The WafFirewallsResponse model constructor.
-     * @property {module:models/WafFirewallsResponse}
+     * @property {module:model/WafFirewallsResponse}
      */
     WafFirewallsResponse,
 
     /**
      * The WafFirewallsResponseAllOf model constructor.
-     * @property {module:models/WafFirewallsResponseAllOf}
+     * @property {module:model/WafFirewallsResponseAllOf}
      */
     WafFirewallsResponseAllOf,
 
     /**
      * The WafRule model constructor.
-     * @property {module:models/WafRule}
+     * @property {module:model/WafRule}
      */
     WafRule,
 
     /**
      * The WafRuleAttributes model constructor.
-     * @property {module:models/WafRuleAttributes}
+     * @property {module:model/WafRuleAttributes}
      */
     WafRuleAttributes,
 
     /**
      * The WafRuleResponse model constructor.
-     * @property {module:models/WafRuleResponse}
+     * @property {module:model/WafRuleResponse}
      */
     WafRuleResponse,
 
     /**
      * The WafRuleResponseData model constructor.
-     * @property {module:models/WafRuleResponseData}
+     * @property {module:model/WafRuleResponseData}
      */
     WafRuleResponseData,
 
     /**
      * The WafRuleResponseDataAllOf model constructor.
-     * @property {module:models/WafRuleResponseDataAllOf}
+     * @property {module:model/WafRuleResponseDataAllOf}
      */
     WafRuleResponseDataAllOf,
 
     /**
      * The WafRuleRevision model constructor.
-     * @property {module:models/WafRuleRevision}
+     * @property {module:model/WafRuleRevision}
      */
     WafRuleRevision,
 
     /**
      * The WafRuleRevisionAttributes model constructor.
-     * @property {module:models/WafRuleRevisionAttributes}
+     * @property {module:model/WafRuleRevisionAttributes}
      */
     WafRuleRevisionAttributes,
 
     /**
      * The WafRuleRevisionResponse model constructor.
-     * @property {module:models/WafRuleRevisionResponse}
+     * @property {module:model/WafRuleRevisionResponse}
      */
     WafRuleRevisionResponse,
 
     /**
      * The WafRuleRevisionResponseData model constructor.
-     * @property {module:models/WafRuleRevisionResponseData}
+     * @property {module:model/WafRuleRevisionResponseData}
      */
     WafRuleRevisionResponseData,
 
     /**
      * The WafRuleRevisionResponseDataAllOf model constructor.
-     * @property {module:models/WafRuleRevisionResponseDataAllOf}
+     * @property {module:model/WafRuleRevisionResponseDataAllOf}
      */
     WafRuleRevisionResponseDataAllOf,
 
     /**
      * The WafRuleRevisionsResponse model constructor.
-     * @property {module:models/WafRuleRevisionsResponse}
+     * @property {module:model/WafRuleRevisionsResponse}
      */
     WafRuleRevisionsResponse,
 
     /**
      * The WafRuleRevisionsResponseAllOf model constructor.
-     * @property {module:models/WafRuleRevisionsResponseAllOf}
+     * @property {module:model/WafRuleRevisionsResponseAllOf}
      */
     WafRuleRevisionsResponseAllOf,
 
     /**
      * The WafRulesResponse model constructor.
-     * @property {module:models/WafRulesResponse}
+     * @property {module:model/WafRulesResponse}
      */
     WafRulesResponse,
 
     /**
      * The WafRulesResponseAllOf model constructor.
-     * @property {module:models/WafRulesResponseAllOf}
+     * @property {module:model/WafRulesResponseAllOf}
      */
     WafRulesResponseAllOf,
 
     /**
      * The WafTag model constructor.
-     * @property {module:models/WafTag}
+     * @property {module:model/WafTag}
      */
     WafTag,
 
     /**
      * The WafTagAttributes model constructor.
-     * @property {module:models/WafTagAttributes}
+     * @property {module:model/WafTagAttributes}
      */
     WafTagAttributes,
 
     /**
      * The WafTagsResponse model constructor.
-     * @property {module:models/WafTagsResponse}
+     * @property {module:model/WafTagsResponse}
      */
     WafTagsResponse,
 
     /**
      * The WafTagsResponseAllOf model constructor.
-     * @property {module:models/WafTagsResponseAllOf}
+     * @property {module:model/WafTagsResponseAllOf}
      */
     WafTagsResponseAllOf,
 

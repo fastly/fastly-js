@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **version_id** | **Number** |  |
-**backends** | [**[SchemasBackend]**](../Model/SchemasBackend.md) | List of backends associated to a director. | [optional]
+**backends** | [**[SchemasBackend]**](SchemasBackend.md) | List of backends associated to a director. | [optional]
 **capacity** | **Number** | Unused. | [optional]
 **comment** | **String** | A freeform descriptive note. | [optional]
 **name** | **String** | Name for the Director. | [optional]

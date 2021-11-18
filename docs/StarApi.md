@@ -43,7 +43,7 @@ apiInstance.createServiceStar(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**star** | [**Star**](../Model/Star.md) |  | [optional]
+**star** | [**Star**](Star.md) |  | [optional]
 
 ### Return type
 

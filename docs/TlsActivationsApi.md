@@ -44,7 +44,7 @@ apiInstance.createTlsActivation(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_activation** | [**TlsActivation**](../Model/TlsActivation.md) |  | [optional]
+**tls_activation** | [**TlsActivation**](TlsActivation.md) |  | [optional]
 
 ### Return type
 
@@ -198,7 +198,7 @@ apiInstance.updateTlsActivation(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **tls_activation_id** | **String** |  |
-**tls_activation** | [**TlsActivation**](../Model/TlsActivation.md) |  | [optional]
+**tls_activation** | [**TlsActivation**](TlsActivation.md) |  | [optional]
 
 ### Return type
 

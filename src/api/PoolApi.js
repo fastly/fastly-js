@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import PoolResponse from '../models/PoolResponse';
+import PoolResponse from '../model/PoolResponse';
 
 /**
 * Pool service.
@@ -47,7 +47,7 @@ export default class PoolApi {
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_cert_hostname='null'] - The hostname used to verify a server's certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
-     * @param {module:models/Number} [options.use_tls=0] - Whether to use TLS.
+     * @param {module:model/Number} [options.use_tls=0] - Whether to use TLS.
      * @param {String} [options.name] - Name for the Pool.
      * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
      * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
@@ -62,9 +62,9 @@ export default class PoolApi {
      * @param {Number} [options.max_tls_version] - Maximum allowed TLS version on connections to this server. Optional.
      * @param {String} [options.healthcheck] - Name of the healthcheck to use with this pool. Can be empty and could be reused across multiple backend and pools.
      * @param {String} [options.comment] - A freeform descriptive note.
-     * @param {module:models/String} [options.type] - What type of load balance group to use.
+     * @param {module:model/String} [options.type] - What type of load balance group to use.
      * @param {String} [options.override_host='null'] - The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to `null` meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PoolResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PoolResponse} and HTTP response
      */
     createServerPoolWithHttpInfo(options = {}) {
       let postBody = null;
@@ -129,7 +129,7 @@ export default class PoolApi {
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_cert_hostname='null'] - The hostname used to verify a server's certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
-     * @param {module:models/Number} [options.use_tls=0] - Whether to use TLS.
+     * @param {module:model/Number} [options.use_tls=0] - Whether to use TLS.
      * @param {String} [options.name] - Name for the Pool.
      * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
      * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
@@ -144,9 +144,9 @@ export default class PoolApi {
      * @param {Number} [options.max_tls_version] - Maximum allowed TLS version on connections to this server. Optional.
      * @param {String} [options.healthcheck] - Name of the healthcheck to use with this pool. Can be empty and could be reused across multiple backend and pools.
      * @param {String} [options.comment] - A freeform descriptive note.
-     * @param {module:models/String} [options.type] - What type of load balance group to use.
+     * @param {module:model/String} [options.type] - What type of load balance group to use.
      * @param {String} [options.override_host='null'] - The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to `null` meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PoolResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PoolResponse}
      */
     createServerPool(options = {}) {
       return this.createServerPoolWithHttpInfo(options)
@@ -222,7 +222,7 @@ export default class PoolApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.pool_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PoolResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PoolResponse} and HTTP response
      */
     getServerPoolWithHttpInfo(options = {}) {
       let postBody = null;
@@ -268,7 +268,7 @@ export default class PoolApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.pool_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PoolResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PoolResponse}
      */
     getServerPool(options = {}) {
       return this.getServerPoolWithHttpInfo(options)
@@ -282,7 +282,7 @@ export default class PoolApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/PoolResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PoolResponse>} and HTTP response
      */
     listServerPoolsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -322,7 +322,7 @@ export default class PoolApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/PoolResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PoolResponse>}
      */
     listServerPools(options = {}) {
       return this.listServerPoolsWithHttpInfo(options)
@@ -341,7 +341,7 @@ export default class PoolApi {
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_cert_hostname='null'] - The hostname used to verify a server's certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
-     * @param {module:models/Number} [options.use_tls=UseTlsEnum.no_tls] - Whether to use TLS.
+     * @param {module:model/Number} [options.use_tls=UseTlsEnum.no_tls] - Whether to use TLS.
      * @param {String} [options.name] - Name for the Pool.
      * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
      * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
@@ -356,9 +356,9 @@ export default class PoolApi {
      * @param {Number} [options.max_tls_version] - Maximum allowed TLS version on connections to this server. Optional.
      * @param {String} [options.healthcheck] - Name of the healthcheck to use with this pool. Can be empty and could be reused across multiple backend and pools.
      * @param {String} [options.comment] - A freeform descriptive note.
-     * @param {module:models/String} [options.type] - What type of load balance group to use.
+     * @param {module:model/String} [options.type] - What type of load balance group to use.
      * @param {String} [options.override_host='null'] - The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to `null` meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/PoolResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PoolResponse} and HTTP response
      */
     updateServerPoolWithHttpInfo(options = {}) {
       let postBody = null;
@@ -429,7 +429,7 @@ export default class PoolApi {
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_cert_hostname='null'] - The hostname used to verify a server's certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
-     * @param {module:models/Number} [options.use_tls=UseTlsEnum.no_tls] - Whether to use TLS.
+     * @param {module:model/Number} [options.use_tls=UseTlsEnum.no_tls] - Whether to use TLS.
      * @param {String} [options.name] - Name for the Pool.
      * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
      * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
@@ -444,9 +444,9 @@ export default class PoolApi {
      * @param {Number} [options.max_tls_version] - Maximum allowed TLS version on connections to this server. Optional.
      * @param {String} [options.healthcheck] - Name of the healthcheck to use with this pool. Can be empty and could be reused across multiple backend and pools.
      * @param {String} [options.comment] - A freeform descriptive note.
-     * @param {module:models/String} [options.type] - What type of load balance group to use.
+     * @param {module:model/String} [options.type] - What type of load balance group to use.
      * @param {String} [options.override_host='null'] - The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to `null` meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/PoolResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PoolResponse}
      */
     updateServerPool(options = {}) {
       return this.updateServerPoolWithHttpInfo(options)

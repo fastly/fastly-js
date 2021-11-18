@@ -122,7 +122,7 @@ apiInstance.updateTlsConfig(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **tls_configuration_id** | **String** |  |
-**tls_configuration** | [**TlsConfiguration**](../Model/TlsConfiguration.md) |  | [optional]
+**tls_configuration** | [**TlsConfiguration**](TlsConfiguration.md) |  | [optional]
 
 ### Return type
 

@@ -13,8 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
-import EventResponse from '../models/EventResponse';
-import EventsResponse from '../models/EventsResponse';
+import EventResponse from '../model/EventResponse';
+import EventsResponse from '../model/EventsResponse';
 
 /**
 * Events service.
@@ -43,7 +43,7 @@ export default class EventsApi {
      * Get a specific event.
      * @param {Object} options
      * @param {String} options.event_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/EventResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EventResponse} and HTTP response
      */
     getEventWithHttpInfo(options = {}) {
       let postBody = null;
@@ -77,7 +77,7 @@ export default class EventsApi {
      * Get a specific event.
      * @param {Object} options
      * @param {String} options.event_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/EventResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EventResponse}
      */
     getEvent(options = {}) {
       return this.getEventWithHttpInfo(options)
@@ -95,8 +95,8 @@ export default class EventsApi {
      * @param {String} [options.filter_user_id] - Limit the results returned to a specific user.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @param {module:models/String} [options.sort='created_at'] - The order in which to list the results by creation date.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/EventsResponse} and HTTP response
+     * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EventsResponse} and HTTP response
      */
     listEventsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -137,8 +137,8 @@ export default class EventsApi {
      * @param {String} [options.filter_user_id] - Limit the results returned to a specific user.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @param {module:models/String} [options.sort='created_at'] - The order in which to list the results by creation date.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/EventsResponse}
+     * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EventsResponse}
      */
     listEvents(options = {}) {
       return this.listEventsWithHttpInfo(options)

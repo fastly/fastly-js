@@ -84,7 +84,7 @@ apiInstance.createWafFirewallVersion(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **firewall_id** | **String** |  |
-**waf_firewall_version** | [**WafFirewallVersion**](../Model/WafFirewallVersion.md) |  | [optional]
+**waf_firewall_version** | [**WafFirewallVersion**](WafFirewallVersion.md) |  | [optional]
 
 ### Return type
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **firewall_id** | **String** |  |
 **firewall_version_number** | **Number** |  |
-**waf_firewall_version** | [**WafFirewallVersion**](../Model/WafFirewallVersion.md) |  | [optional]
+**waf_firewall_version** | [**WafFirewallVersion**](WafFirewallVersion.md) |  | [optional]
 
 ### Return type
 

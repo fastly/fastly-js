@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import HeaderResponse from '../models/HeaderResponse';
+import HeaderResponse from '../model/HeaderResponse';
 
 /**
 * Header service.
@@ -43,7 +43,7 @@ export default class HeaderApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @param {module:models/String} [options.action] - Accepts a string value.
+     * @param {module:model/String} [options.action] - Accepts a string value.
      * @param {String} [options.cache_condition] - Name of the cache condition controlling when this configuration applies.
      * @param {String} [options.dst] - Header to set.
      * @param {Number} [options.ignore_if_set] - Don't add the header if it is added already. Only applies to 'set' action.
@@ -54,8 +54,8 @@ export default class HeaderApi {
      * @param {String} [options.response_condition]
      * @param {String} [options.src] - Variable to be used as a source for the header content. Does not apply to `delete` action.
      * @param {String} [options.substitution] - Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions.
-     * @param {module:models/String} [options.type] - Accepts a string value.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/HeaderResponse} and HTTP response
+     * @param {module:model/String} [options.type] - Accepts a string value.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HeaderResponse} and HTTP response
      */
     createHeaderObjectWithHttpInfo(options = {}) {
       let postBody = null;
@@ -107,7 +107,7 @@ export default class HeaderApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @param {module:models/String} [options.action] - Accepts a string value.
+     * @param {module:model/String} [options.action] - Accepts a string value.
      * @param {String} [options.cache_condition] - Name of the cache condition controlling when this configuration applies.
      * @param {String} [options.dst] - Header to set.
      * @param {Number} [options.ignore_if_set] - Don't add the header if it is added already. Only applies to 'set' action.
@@ -118,8 +118,8 @@ export default class HeaderApi {
      * @param {String} [options.response_condition]
      * @param {String} [options.src] - Variable to be used as a source for the header content. Does not apply to `delete` action.
      * @param {String} [options.substitution] - Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions.
-     * @param {module:models/String} [options.type] - Accepts a string value.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/HeaderResponse}
+     * @param {module:model/String} [options.type] - Accepts a string value.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HeaderResponse}
      */
     createHeaderObject(options = {}) {
       return this.createHeaderObjectWithHttpInfo(options)
@@ -195,7 +195,7 @@ export default class HeaderApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.header_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/HeaderResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HeaderResponse} and HTTP response
      */
     getHeaderObjectWithHttpInfo(options = {}) {
       let postBody = null;
@@ -241,7 +241,7 @@ export default class HeaderApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.header_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/HeaderResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HeaderResponse}
      */
     getHeaderObject(options = {}) {
       return this.getHeaderObjectWithHttpInfo(options)
@@ -255,7 +255,7 @@ export default class HeaderApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/HeaderResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/HeaderResponse>} and HTTP response
      */
     listHeaderObjectsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -295,7 +295,7 @@ export default class HeaderApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/HeaderResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/HeaderResponse>}
      */
     listHeaderObjects(options = {}) {
       return this.listHeaderObjectsWithHttpInfo(options)
@@ -310,7 +310,7 @@ export default class HeaderApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.header_name
-     * @param {module:models/String} [options.action] - Accepts a string value.
+     * @param {module:model/String} [options.action] - Accepts a string value.
      * @param {String} [options.cache_condition] - Name of the cache condition controlling when this configuration applies.
      * @param {String} [options.dst] - Header to set.
      * @param {Number} [options.ignore_if_set] - Don't add the header if it is added already. Only applies to 'set' action.
@@ -321,8 +321,8 @@ export default class HeaderApi {
      * @param {String} [options.response_condition]
      * @param {String} [options.src] - Variable to be used as a source for the header content. Does not apply to `delete` action.
      * @param {String} [options.substitution] - Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions.
-     * @param {module:models/String} [options.type] - Accepts a string value.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/HeaderResponse} and HTTP response
+     * @param {module:model/String} [options.type] - Accepts a string value.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HeaderResponse} and HTTP response
      */
     updateHeaderObjectWithHttpInfo(options = {}) {
       let postBody = null;
@@ -380,7 +380,7 @@ export default class HeaderApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.header_name
-     * @param {module:models/String} [options.action] - Accepts a string value.
+     * @param {module:model/String} [options.action] - Accepts a string value.
      * @param {String} [options.cache_condition] - Name of the cache condition controlling when this configuration applies.
      * @param {String} [options.dst] - Header to set.
      * @param {Number} [options.ignore_if_set] - Don't add the header if it is added already. Only applies to 'set' action.
@@ -391,8 +391,8 @@ export default class HeaderApi {
      * @param {String} [options.response_condition]
      * @param {String} [options.src] - Variable to be used as a source for the header content. Does not apply to `delete` action.
      * @param {String} [options.substitution] - Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions.
-     * @param {module:models/String} [options.type] - Accepts a string value.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/HeaderResponse}
+     * @param {module:model/String} [options.type] - Accepts a string value.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HeaderResponse}
      */
     updateHeaderObject(options = {}) {
       return this.updateHeaderObjectWithHttpInfo(options)

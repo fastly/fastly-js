@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import BackendResponse from '../models/BackendResponse';
+import BackendResponse from '../model/BackendResponse';
 
 /**
 * Backend service.
@@ -72,7 +72,7 @@ export default class BackendApi {
      * @param {String} [options.ssl_sni_hostname] - Overrides `ssl_hostname`, but only for SNI in the handshake. Does not affect cert validation at all.
      * @param {Boolean} [options.use_ssl] - Whether or not to require TLS for connections to this backend.
      * @param {Number} [options.weight] - Weight used to load balance this backend against others. May be any positive integer. If `auto_loadbalance` is true, the chance of this backend being selected is equal to its own weight over the sum of all weights for backends that have `auto_loadbalance` set to true.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BackendResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BackendResponse} and HTTP response
      */
     createBackendWithHttpInfo(options = {}) {
       let postBody = null;
@@ -170,7 +170,7 @@ export default class BackendApi {
      * @param {String} [options.ssl_sni_hostname] - Overrides `ssl_hostname`, but only for SNI in the handshake. Does not affect cert validation at all.
      * @param {Boolean} [options.use_ssl] - Whether or not to require TLS for connections to this backend.
      * @param {Number} [options.weight] - Weight used to load balance this backend against others. May be any positive integer. If `auto_loadbalance` is true, the chance of this backend being selected is equal to its own weight over the sum of all weights for backends that have `auto_loadbalance` set to true.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BackendResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BackendResponse}
      */
     createBackend(options = {}) {
       return this.createBackendWithHttpInfo(options)
@@ -246,7 +246,7 @@ export default class BackendApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.backend_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BackendResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BackendResponse} and HTTP response
      */
     getBackendWithHttpInfo(options = {}) {
       let postBody = null;
@@ -292,7 +292,7 @@ export default class BackendApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.backend_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BackendResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BackendResponse}
      */
     getBackend(options = {}) {
       return this.getBackendWithHttpInfo(options)
@@ -306,7 +306,7 @@ export default class BackendApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/BackendResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/BackendResponse>} and HTTP response
      */
     listBackendsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -346,7 +346,7 @@ export default class BackendApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/BackendResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/BackendResponse>}
      */
     listBackends(options = {}) {
       return this.listBackendsWithHttpInfo(options)
@@ -390,7 +390,7 @@ export default class BackendApi {
      * @param {String} [options.ssl_sni_hostname] - Overrides `ssl_hostname`, but only for SNI in the handshake. Does not affect cert validation at all.
      * @param {Boolean} [options.use_ssl] - Whether or not to require TLS for connections to this backend.
      * @param {Number} [options.weight] - Weight used to load balance this backend against others. May be any positive integer. If `auto_loadbalance` is true, the chance of this backend being selected is equal to its own weight over the sum of all weights for backends that have `auto_loadbalance` set to true.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BackendResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BackendResponse} and HTTP response
      */
     updateBackendWithHttpInfo(options = {}) {
       let postBody = null;
@@ -494,7 +494,7 @@ export default class BackendApi {
      * @param {String} [options.ssl_sni_hostname] - Overrides `ssl_hostname`, but only for SNI in the handshake. Does not affect cert validation at all.
      * @param {Boolean} [options.use_ssl] - Whether or not to require TLS for connections to this backend.
      * @param {Number} [options.weight] - Weight used to load balance this backend against others. May be any positive integer. If `auto_loadbalance` is true, the chance of this backend being selected is equal to its own weight over the sum of all weights for backends that have `auto_loadbalance` set to true.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BackendResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BackendResponse}
      */
     updateBackend(options = {}) {
       return this.updateBackendWithHttpInfo(options)

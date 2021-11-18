@@ -45,7 +45,7 @@ apiInstance.addBillingAddr(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **customer_id** | **String** |  |
-**inline_object1** | [**InlineObject1**](../Model/InlineObject1.md) |  | [optional]
+**inline_object1** | [**InlineObject1**](InlineObject1.md) |  | [optional]
 
 ### Return type
 
@@ -152,7 +152,7 @@ apiInstance.updateBillingAddr(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **customer_id** | **String** |  |
-**inline_object2** | [**InlineObject2**](../Model/InlineObject2.md) |  | [optional]
+**inline_object2** | [**InlineObject2**](InlineObject2.md) |  | [optional]
 
 ### Return type
 

@@ -13,8 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
-import BillingEstimateResponse from '../models/BillingEstimateResponse';
-import BillingResponse from '../models/BillingResponse';
+import BillingEstimateResponse from '../model/BillingEstimateResponse';
+import BillingResponse from '../model/BillingResponse';
 
 /**
 * Billing service.
@@ -44,7 +44,7 @@ export default class BillingApi {
      * @param {Object} options
      * @param {String} options.month - 2-digit month.
      * @param {String} options.year - 4-digit year.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BillingResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BillingResponse} and HTTP response
      */
     getInvoiceWithHttpInfo(options = {}) {
       let postBody = null;
@@ -84,7 +84,7 @@ export default class BillingApi {
      * @param {Object} options
      * @param {String} options.month - 2-digit month.
      * @param {String} options.year - 4-digit year.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BillingResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BillingResponse}
      */
     getInvoice(options = {}) {
       return this.getInvoiceWithHttpInfo(options)
@@ -153,7 +153,7 @@ export default class BillingApi {
      * @param {String} options.customer_id
      * @param {String} [options.month] - 2-digit month.
      * @param {String} [options.year] - 4-digit year.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/BillingEstimateResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BillingEstimateResponse} and HTTP response
      */
     getInvoiceMtdWithHttpInfo(options = {}) {
       let postBody = null;
@@ -191,7 +191,7 @@ export default class BillingApi {
      * @param {String} options.customer_id
      * @param {String} [options.month] - 2-digit month.
      * @param {String} [options.year] - 4-digit year.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/BillingEstimateResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BillingEstimateResponse}
      */
     getInvoiceMtd(options = {}) {
       return this.getInvoiceMtdWithHttpInfo(options)

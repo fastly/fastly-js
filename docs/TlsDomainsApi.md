@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 **include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: `tls_activations`, `tls_certificates`, `tls_subscriptions`, `tls_subscriptions.tls_authorizations`, and `tls_authorizations.globalsign_email_challenge`.  | [optional]
 **page_number** | **Number** | Current page. | [optional]
 **page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
-**sort** | **String** | The order in which to list the results by creation date. | [optional] [one of: "created_at", "-created_at"] [defaults to 'created_at']
+**sort** | **String** | The order in which to list the results by creation date. | [optional] [one of: "created_at", "-created_at"]
 
 ### Return type
 

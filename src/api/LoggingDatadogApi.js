@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import LoggingDatadogResponse from '../models/LoggingDatadogResponse';
+import LoggingDatadogResponse from '../model/LoggingDatadogResponse';
 
 /**
 * LoggingDatadog service.
@@ -44,13 +44,13 @@ export default class LoggingDatadogApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+     * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format]
-     * @param {module:models/String} [options.region='US'] - The region that log data will be sent to.
+     * @param {module:model/String} [options.region='US'] - The region that log data will be sent to.
      * @param {String} [options.token] - The API key from your Datadog account. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingDatadogResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingDatadogResponse} and HTTP response
      */
     createLogDatadogWithHttpInfo(options = {}) {
       let postBody = null;
@@ -98,13 +98,13 @@ export default class LoggingDatadogApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+     * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format]
-     * @param {module:models/String} [options.region='US'] - The region that log data will be sent to.
+     * @param {module:model/String} [options.region='US'] - The region that log data will be sent to.
      * @param {String} [options.token] - The API key from your Datadog account. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingDatadogResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingDatadogResponse}
      */
     createLogDatadog(options = {}) {
       return this.createLogDatadogWithHttpInfo(options)
@@ -180,7 +180,7 @@ export default class LoggingDatadogApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_datadog_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingDatadogResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingDatadogResponse} and HTTP response
      */
     getLogDatadogWithHttpInfo(options = {}) {
       let postBody = null;
@@ -226,7 +226,7 @@ export default class LoggingDatadogApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_datadog_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingDatadogResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingDatadogResponse}
      */
     getLogDatadog(options = {}) {
       return this.getLogDatadogWithHttpInfo(options)
@@ -240,7 +240,7 @@ export default class LoggingDatadogApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/LoggingDatadogResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingDatadogResponse>} and HTTP response
      */
     listLogDatadogWithHttpInfo(options = {}) {
       let postBody = null;
@@ -280,7 +280,7 @@ export default class LoggingDatadogApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/LoggingDatadogResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingDatadogResponse>}
      */
     listLogDatadog(options = {}) {
       return this.listLogDatadogWithHttpInfo(options)
@@ -296,13 +296,13 @@ export default class LoggingDatadogApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_datadog_name
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+     * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format]
-     * @param {module:models/String} [options.region='US'] - The region that log data will be sent to.
+     * @param {module:model/String} [options.region='US'] - The region that log data will be sent to.
      * @param {String} [options.token] - The API key from your Datadog account. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingDatadogResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingDatadogResponse} and HTTP response
      */
     updateLogDatadogWithHttpInfo(options = {}) {
       let postBody = null;
@@ -356,13 +356,13 @@ export default class LoggingDatadogApi {
      * @param {Number} options.version_id
      * @param {String} options.logging_datadog_name
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:models/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:models/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+     * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format]
-     * @param {module:models/String} [options.region='US'] - The region that log data will be sent to.
+     * @param {module:model/String} [options.region='US'] - The region that log data will be sent to.
      * @param {String} [options.token] - The API key from your Datadog account. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingDatadogResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingDatadogResponse}
      */
     updateLogDatadog(options = {}) {
       return this.updateLogDatadogWithHttpInfo(options)

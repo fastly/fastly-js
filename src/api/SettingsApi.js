@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import SettingsResponse from '../models/SettingsResponse';
+import SettingsResponse from '../model/SettingsResponse';
 
 /**
 * Settings service.
@@ -43,7 +43,7 @@ export default class SettingsApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/SettingsResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SettingsResponse} and HTTP response
      */
     getServiceSettingsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -83,7 +83,7 @@ export default class SettingsApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/SettingsResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SettingsResponse}
      */
     getServiceSettings(options = {}) {
       return this.getServiceSettingsWithHttpInfo(options)
@@ -97,7 +97,7 @@ export default class SettingsApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/SettingsResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SettingsResponse} and HTTP response
      */
     updateServiceSettingsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -137,7 +137,7 @@ export default class SettingsApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/SettingsResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SettingsResponse}
      */
     updateServiceSettings(options = {}) {
       return this.updateServiceSettingsWithHttpInfo(options)

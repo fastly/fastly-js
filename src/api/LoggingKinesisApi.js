@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
-import LoggingFormatVersion from '../models/LoggingFormatVersion';
-import LoggingKinesisResponse from '../models/LoggingKinesisResponse';
-import LoggingPlacement from '../models/LoggingPlacement';
+import LoggingFormatVersion from '../model/LoggingFormatVersion';
+import LoggingKinesisResponse from '../model/LoggingKinesisResponse';
+import LoggingPlacement from '../model/LoggingPlacement';
 
 /**
 * LoggingKinesis service.
@@ -46,15 +46,15 @@ export default class LoggingKinesisApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:models/LoggingPlacement} [options.placement]
-     * @param {module:models/LoggingFormatVersion} [options.format_version]
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.format]
      * @param {String} [options.topic] - The Amazon Kinesis stream to send logs to. Required.
-     * @param {module:models/String} [options.region] - The [AWS region](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints) to stream logs to.
+     * @param {module:model/String} [options.region] - The [AWS region](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints) to stream logs to.
      * @param {String} [options.secret_key] - The secret key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
      * @param {String} [options.access_key] - The access key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
      * @param {String} [options.iam_role] - The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if `access_key` and `secret_key` are provided.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingKinesisResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingKinesisResponse} and HTTP response
      */
     createLogKinesisWithHttpInfo(options = {}) {
       let postBody = null;
@@ -104,15 +104,15 @@ export default class LoggingKinesisApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:models/LoggingPlacement} [options.placement]
-     * @param {module:models/LoggingFormatVersion} [options.format_version]
+     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:model/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.format]
      * @param {String} [options.topic] - The Amazon Kinesis stream to send logs to. Required.
-     * @param {module:models/String} [options.region] - The [AWS region](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints) to stream logs to.
+     * @param {module:model/String} [options.region] - The [AWS region](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints) to stream logs to.
      * @param {String} [options.secret_key] - The secret key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
      * @param {String} [options.access_key] - The access key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
      * @param {String} [options.iam_role] - The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if `access_key` and `secret_key` are provided.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingKinesisResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingKinesisResponse}
      */
     createLogKinesis(options = {}) {
       return this.createLogKinesisWithHttpInfo(options)
@@ -188,7 +188,7 @@ export default class LoggingKinesisApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_kinesis_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingKinesisResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingKinesisResponse} and HTTP response
      */
     getLogKinesisWithHttpInfo(options = {}) {
       let postBody = null;
@@ -234,7 +234,7 @@ export default class LoggingKinesisApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_kinesis_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingKinesisResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingKinesisResponse}
      */
     getLogKinesis(options = {}) {
       return this.getLogKinesisWithHttpInfo(options)
@@ -248,7 +248,7 @@ export default class LoggingKinesisApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/LoggingKinesisResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingKinesisResponse>} and HTTP response
      */
     listLogKinesisWithHttpInfo(options = {}) {
       let postBody = null;
@@ -288,7 +288,7 @@ export default class LoggingKinesisApi {
      * @param {Object} options
      * @param {String} options.service_id
      * @param {Number} options.version_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/LoggingKinesisResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingKinesisResponse>}
      */
     listLogKinesis(options = {}) {
       return this.listLogKinesisWithHttpInfo(options)
@@ -303,7 +303,7 @@ export default class LoggingKinesisApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_kinesis_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/LoggingKinesisResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingKinesisResponse} and HTTP response
      */
     updateLogKinesisWithHttpInfo(options = {}) {
       let postBody = null;
@@ -349,7 +349,7 @@ export default class LoggingKinesisApi {
      * @param {String} options.service_id
      * @param {Number} options.version_id
      * @param {String} options.logging_kinesis_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/LoggingKinesisResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingKinesisResponse}
      */
     updateLogKinesis(options = {}) {
       return this.updateLogKinesisWithHttpInfo(options)

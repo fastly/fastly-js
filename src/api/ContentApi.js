@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import Content from '../models/Content';
+import Content from '../model/Content';
 
 /**
 * Content service.
@@ -42,7 +42,7 @@ export default class ContentApi {
      * Retrieve headers and MD5 hash of the content for a particular URL from each Fastly edge server. This API is limited to 200 requests per hour.
      * @param {Object} options
      * @param {String} [options.url] - Full URL (host and path) to check on all nodes. if protocol is omitted, http will be assumed.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/Content>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Content>} and HTTP response
      */
     contentCheckWithHttpInfo(options = {}) {
       let postBody = null;
@@ -72,7 +72,7 @@ export default class ContentApi {
      * Retrieve headers and MD5 hash of the content for a particular URL from each Fastly edge server. This API is limited to 200 requests per hour.
      * @param {Object} options
      * @param {String} [options.url] - Full URL (host and path) to check on all nodes. if protocol is omitted, http will be assumed.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/Content>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Content>}
      */
     contentCheck(options = {}) {
       return this.contentCheckWithHttpInfo(options)

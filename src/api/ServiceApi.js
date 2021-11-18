@@ -13,10 +13,10 @@
 
 
 import ApiClient from "../ApiClient";
-import DomainResponse from '../models/DomainResponse';
-import ServiceDetail from '../models/ServiceDetail';
-import ServiceListResponse from '../models/ServiceListResponse';
-import ServiceResponse from '../models/ServiceResponse';
+import DomainResponse from '../model/DomainResponse';
+import ServiceDetail from '../model/ServiceDetail';
+import ServiceListResponse from '../model/ServiceListResponse';
+import ServiceResponse from '../model/ServiceResponse';
 
 /**
 * Service service.
@@ -47,8 +47,8 @@ export default class ServiceApi {
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - The name of the service.
      * @param {String} [options.customer_id] - Alphanumeric string identifying the customer.
-     * @param {module:models/String} [options.type] - The type of this service.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ServiceResponse} and HTTP response
+     * @param {module:model/String} [options.type] - The type of this service.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceResponse} and HTTP response
      */
     createServiceWithHttpInfo(options = {}) {
       let postBody = null;
@@ -83,8 +83,8 @@ export default class ServiceApi {
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - The name of the service.
      * @param {String} [options.customer_id] - Alphanumeric string identifying the customer.
-     * @param {module:models/String} [options.type] - The type of this service.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ServiceResponse}
+     * @param {module:model/String} [options.type] - The type of this service.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceResponse}
      */
     createService(options = {}) {
       return this.createServiceWithHttpInfo(options)
@@ -144,7 +144,7 @@ export default class ServiceApi {
      * Get a specific service by id.
      * @param {Object} options
      * @param {String} options.service_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ServiceResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceResponse} and HTTP response
      */
     getServiceWithHttpInfo(options = {}) {
       let postBody = null;
@@ -178,7 +178,7 @@ export default class ServiceApi {
      * Get a specific service by id.
      * @param {Object} options
      * @param {String} options.service_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ServiceResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceResponse}
      */
     getService(options = {}) {
       return this.getServiceWithHttpInfo(options)
@@ -191,7 +191,7 @@ export default class ServiceApi {
      * List detailed information on a specified service.
      * @param {Object} options
      * @param {String} options.service_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ServiceDetail} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceDetail} and HTTP response
      */
     getServiceDetailWithHttpInfo(options = {}) {
       let postBody = null;
@@ -225,7 +225,7 @@ export default class ServiceApi {
      * List detailed information on a specified service.
      * @param {Object} options
      * @param {String} options.service_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ServiceDetail}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceDetail}
      */
     getServiceDetail(options = {}) {
       return this.getServiceDetailWithHttpInfo(options)
@@ -238,7 +238,7 @@ export default class ServiceApi {
      * List the domains within a service.
      * @param {Object} options
      * @param {String} options.service_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/DomainResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DomainResponse>} and HTTP response
      */
     listServiceDomainsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -272,7 +272,7 @@ export default class ServiceApi {
      * List the domains within a service.
      * @param {Object} options
      * @param {String} options.service_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/DomainResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DomainResponse>}
      */
     listServiceDomains(options = {}) {
       return this.listServiceDomainsWithHttpInfo(options)
@@ -287,8 +287,8 @@ export default class ServiceApi {
      * @param {Number} [options.page] - Current page.
      * @param {Number} [options.per_page=20] - Number of records per page.
      * @param {String} [options.sort='created'] - Field on which to sort.
-     * @param {module:models/String} [options.direction='ascend'] - Direction in which to sort results.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/ServiceListResponse>} and HTTP response
+     * @param {module:model/String} [options.direction='ascend'] - Direction in which to sort results.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ServiceListResponse>} and HTTP response
      */
     listServicesWithHttpInfo(options = {}) {
       let postBody = null;
@@ -323,8 +323,8 @@ export default class ServiceApi {
      * @param {Number} [options.page] - Current page.
      * @param {Number} [options.per_page=20] - Number of records per page.
      * @param {String} [options.sort='created'] - Field on which to sort.
-     * @param {module:models/String} [options.direction='ascend'] - Direction in which to sort results.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/ServiceListResponse>}
+     * @param {module:model/String} [options.direction='ascend'] - Direction in which to sort results.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ServiceListResponse>}
      */
     listServices(options = {}) {
       return this.listServicesWithHttpInfo(options)
@@ -337,7 +337,7 @@ export default class ServiceApi {
      * Get a specific service by name.
      * @param {Object} options
      * @param {String} options.name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ServiceResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceResponse} and HTTP response
      */
     searchServiceWithHttpInfo(options = {}) {
       let postBody = null;
@@ -371,7 +371,7 @@ export default class ServiceApi {
      * Get a specific service by name.
      * @param {Object} options
      * @param {String} options.name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ServiceResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceResponse}
      */
     searchService(options = {}) {
       return this.searchServiceWithHttpInfo(options)
@@ -387,7 +387,7 @@ export default class ServiceApi {
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - The name of the service.
      * @param {String} [options.customer_id] - Alphanumeric string identifying the customer.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/ServiceResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceResponse} and HTTP response
      */
     updateServiceWithHttpInfo(options = {}) {
       let postBody = null;
@@ -427,7 +427,7 @@ export default class ServiceApi {
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - The name of the service.
      * @param {String} [options.customer_id] - Alphanumeric string identifying the customer.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/ServiceResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceResponse}
      */
     updateService(options = {}) {
       return this.updateServiceWithHttpInfo(options)

@@ -43,7 +43,7 @@ apiInstance.createTlsKey(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_private_key** | [**TlsPrivateKey**](../Model/TlsPrivateKey.md) |  | [optional]
+**tls_private_key** | [**TlsPrivateKey**](TlsPrivateKey.md) |  | [optional]
 
 ### Return type
 

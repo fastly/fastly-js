@@ -13,9 +13,9 @@
 
 
 import ApiClient from "../ApiClient";
-import Pagination from '../models/Pagination';
-import Star from '../models/Star';
-import StarResponse from '../models/StarResponse';
+import Pagination from '../model/Pagination';
+import Star from '../model/Star';
+import StarResponse from '../model/StarResponse';
 
 /**
 * Star service.
@@ -43,8 +43,8 @@ export default class StarApi {
     /**
      * Create star.
      * @param {Object} options
-     * @param {module:models/Star} [options.star]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/StarResponse} and HTTP response
+     * @param {module:model/Star} [options.star]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StarResponse} and HTTP response
      */
     createServiceStarWithHttpInfo(options = {}) {
       let postBody = options['star'];
@@ -72,8 +72,8 @@ export default class StarApi {
     /**
      * Create star.
      * @param {Object} options
-     * @param {module:models/Star} [options.star]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/StarResponse}
+     * @param {module:model/Star} [options.star]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StarResponse}
      */
     createServiceStar(options = {}) {
       return this.createServiceStarWithHttpInfo(options)
@@ -133,7 +133,7 @@ export default class StarApi {
      * Show star.
      * @param {Object} options
      * @param {String} options.star_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/StarResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StarResponse} and HTTP response
      */
     getServiceStarWithHttpInfo(options = {}) {
       let postBody = null;
@@ -167,7 +167,7 @@ export default class StarApi {
      * Show star.
      * @param {Object} options
      * @param {String} options.star_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/StarResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StarResponse}
      */
     getServiceStar(options = {}) {
       return this.getServiceStarWithHttpInfo(options)
@@ -179,7 +179,7 @@ export default class StarApi {
     /**
      * List stars.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/Pagination} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Pagination} and HTTP response
      */
     listServiceStarsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -207,7 +207,7 @@ export default class StarApi {
     /**
      * List stars.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/Pagination}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Pagination}
      */
     listServiceStars(options = {}) {
       return this.listServiceStarsWithHttpInfo(options)

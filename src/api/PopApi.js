@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import Pop from '../models/Pop';
+import Pop from '../model/Pop';
 
 /**
 * Pop service.
@@ -41,7 +41,7 @@ export default class PopApi {
     /**
      * Get a list of all Fastly POPs.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:models/Pop>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Pop>} and HTTP response
      */
     listPopsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -69,7 +69,7 @@ export default class PopApi {
     /**
      * Get a list of all Fastly POPs.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:models/Pop>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Pop>}
      */
     listPops(options = {}) {
       return this.listPopsWithHttpInfo(options)

@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **acl_id** | **String** |  |
-**acl_entries** | [**AclEntries**](../Model/AclEntries.md) |  | [optional]
+**acl_entries** | [**AclEntries**](AclEntries.md) |  | [optional]
 
 ### Return type
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** |  |
 **acl_id** | **String** |  |
-**acl_entry** | [**AclEntry**](../Model/AclEntry.md) |  | [optional]
+**acl_entry** | [**AclEntry**](AclEntry.md) |  | [optional]
 
 ### Return type
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 **page** | **Number** | Current page. | [optional]
 **per_page** | **Number** | Number of records per page. | [optional] [defaults to 20]
 **sort** | **String** | Field on which to sort. | [optional] [defaults to 'created']
-**direction** | **String** | Direction in which to sort results. | [optional] [one of: "ascend", "descend"] [defaults to 'ascend']
+**direction** | **String** | Direction in which to sort results. | [optional] [one of: "ascend", "descend"]
 
 ### Return type
 
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 **service_id** | **String** |  |
 **acl_id** | **String** |  |
 **acl_entry_id** | **String** |  |
-**acl_entry** | [**AclEntry**](../Model/AclEntry.md) |  | [optional]
+**acl_entry** | [**AclEntry**](AclEntry.md) |  | [optional]
 
 ### Return type
 

@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import WafTagsResponse from '../models/WafTagsResponse';
+import WafTagsResponse from '../model/WafTagsResponse';
 
 /**
 * WafTags service.
@@ -44,8 +44,8 @@ export default class WafTagsApi {
      * @param {String} [options.filter_name] - Limit the returned tags to a specific name.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @param {module:models/String} [options.include='waf_rules'] - Include relationships. Optional.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:models/WafTagsResponse} and HTTP response
+     * @param {module:model/String} [options.include='waf_rules'] - Include relationships. Optional.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafTagsResponse} and HTTP response
      */
     listWafTagsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -80,8 +80,8 @@ export default class WafTagsApi {
      * @param {String} [options.filter_name] - Limit the returned tags to a specific name.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @param {module:models/String} [options.include='waf_rules'] - Include relationships. Optional.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:models/WafTagsResponse}
+     * @param {module:model/String} [options.include='waf_rules'] - Include relationships. Optional.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafTagsResponse}
      */
     listWafTags(options = {}) {
       return this.listWafTagsWithHttpInfo(options)

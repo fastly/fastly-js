@@ -48,7 +48,7 @@ apiInstance.createTlsSub(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **force** | **Boolean** | A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain.  | [optional]
-**tls_subscription** | [**TlsSubscription**](../Model/TlsSubscription.md) |  | [optional]
+**tls_subscription** | [**TlsSubscription**](TlsSubscription.md) |  | [optional]
 
 ### Return type
 
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 **include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`.  | [optional]
 **page_number** | **Number** | Current page. | [optional]
 **page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
-**sort** | **String** | The order in which to list the results by creation date. | [optional] [one of: "created_at", "-created_at"] [defaults to 'created_at']
+**sort** | **String** | The order in which to list the results by creation date. | [optional] [one of: "created_at", "-created_at"]
 
 ### Return type
 
@@ -245,7 +245,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **tls_subscription_id** | **String** |  |
 **force** | **Boolean** | A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain.  | [optional]
-**tls_subscription** | [**TlsSubscription**](../Model/TlsSubscription.md) |  | [optional]
+**tls_subscription** | [**TlsSubscription**](TlsSubscription.md) |  | [optional]
 
 ### Return type
 

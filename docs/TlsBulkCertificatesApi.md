@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 **filter_tls_domain_id_match** | **String** | Filter certificates by their matching, fully-qualified domain name. Returns all partial matches. Must provide a value longer than 3 characters. | [optional]
 **page_number** | **Number** | Current page. | [optional]
 **page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
-**sort** | **String** | The order in which to list the results by creation date. | [optional] [one of: "created_at", "-created_at"] [defaults to 'created_at']
+**sort** | **String** | The order in which to list the results by creation date. | [optional] [one of: "created_at", "-created_at"]
 
 ### Return type
 
@@ -157,7 +157,7 @@ apiInstance.updateBulkTlsCert(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **certificate_id** | **String** |  |
-**tls_bulk_certificate** | [**TlsBulkCertificate**](../Model/TlsBulkCertificate.md) |  | [optional]
+**tls_bulk_certificate** | [**TlsBulkCertificate**](TlsBulkCertificate.md) |  | [optional]
 
 ### Return type
 
@@ -192,7 +192,7 @@ apiInstance.uploadTlsBulkCert(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_bulk_certificate** | [**TlsBulkCertificate**](../Model/TlsBulkCertificate.md) |  | [optional]
+**tls_bulk_certificate** | [**TlsBulkCertificate**](TlsBulkCertificate.md) |  | [optional]
 
 ### Return type
 
