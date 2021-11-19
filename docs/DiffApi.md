@@ -1,6 +1,5 @@
 # Fastly.DiffApi
 
-
 ```javascript
 const apiInstance = new Fastly.DiffApi();
 ```
@@ -9,7 +8,6 @@ const apiInstance = new Fastly.DiffApi();
 Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**diffServiceVersions**](DiffApi.md#diffServiceVersions) | **GET** /service/{service_id}/diff/from/{from_version_id}/to/{to_version_id} | Diff two service versions
-
 
 
 ## `diffServiceVersions`
@@ -43,7 +41,7 @@ apiInstance.diffServiceVersions(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
 **from_version_id** | **Number** | The version number of the service to which changes in the generated VCL are being compared. Can either be a positive number from 1 to your maximum version or a negative number from -1 down (-1 is latest version etc). |
 **to_version_id** | **Number** | The version number of the service from which changes in the generated VCL are being compared. Uses same numbering scheme as `from`. |
 **format** | **String** | Optional method to format the diff field. | [optional] [one of: "text", "html", "html_simple"]

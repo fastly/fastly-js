@@ -1,6 +1,5 @@
 # Fastly.ResponseObjectApi
 
-
 ```javascript
 const apiInstance = new Fastly.ResponseObjectApi();
 ```
@@ -13,7 +12,6 @@ Method | Fastly API endpoint | Description
 [**getResponseObject**](ResponseObjectApi.md#getResponseObject) | **GET** /service/{service_id}/version/{version_id}/response_object/{response_object_name} | Get a Response object
 [**listResponseObjects**](ResponseObjectApi.md#listResponseObjects) | **GET** /service/{service_id}/version/{version_id}/response_object | List Response objects
 [**updateResponseObject**](ResponseObjectApi.md#updateResponseObject) | **PUT** /service/{service_id}/version/{version_id}/response_object/{response_object_name} | Update a Response object
-
 
 
 ## `createResponseObject`
@@ -45,8 +43,8 @@ apiInstance.createResponseObject(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -83,9 +81,9 @@ apiInstance.deleteResponseObject(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**response_object_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**response_object_name** | **String** | Name for the request settings. |
 
 ### Return type
 
@@ -122,9 +120,9 @@ apiInstance.getResponseObject(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**response_object_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**response_object_name** | **String** | Name for the request settings. |
 
 ### Return type
 
@@ -160,8 +158,8 @@ apiInstance.listResponseObjects(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -198,9 +196,9 @@ apiInstance.updateResponseObject(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**response_object_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**response_object_name** | **String** | Name for the request settings. |
 
 ### Return type
 

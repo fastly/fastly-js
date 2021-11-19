@@ -1,6 +1,5 @@
 # Fastly.WafActiveRulesApi
 
-
 ```javascript
 const apiInstance = new Fastly.WafActiveRulesApi();
 ```
@@ -16,7 +15,6 @@ Method | Fastly API endpoint | Description
 [**getWafActiveRule**](WafActiveRulesApi.md#getWafActiveRule) | **GET** /waf/firewalls/{firewall_id}/versions/{version_id}/active-rules/{waf_rule_id} | Get an active WAF rule object
 [**listWafActiveRules**](WafActiveRulesApi.md#listWafActiveRules) | **GET** /waf/firewalls/{firewall_id}/versions/{version_id}/active-rules | List active rules on a WAF
 [**updateWafActiveRule**](WafActiveRulesApi.md#updateWafActiveRule) | **PATCH** /waf/firewalls/{firewall_id}/versions/{version_id}/active-rules/{waf_rule_id} | Update an active rule
-
 
 
 ## `bulkDeleteWafActiveRules`
@@ -49,8 +47,8 @@ apiInstance.bulkDeleteWafActiveRules(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**version_id** | **Number** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**version_id** | **Number** | Integer identifying a service version. |
 **body** | **Object** |  | [optional]
 
 ### Return type
@@ -88,8 +86,8 @@ apiInstance.bulkUpdateWafActiveRules(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**version_id** | **Number** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**version_id** | **Number** | Integer identifying a service version. |
 **body** | **WafActiveRuleData** |  | [optional]
 
 ### Return type
@@ -127,8 +125,8 @@ apiInstance.createWafActiveRule(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**version_id** | **Number** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**version_id** | **Number** | Integer identifying a service version. |
 **waf_active_rule** | [**WafActiveRule**](WafActiveRule.md) |  | [optional]
 
 ### Return type
@@ -167,9 +165,9 @@ apiInstance.createWafActiveRulesTag(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**version_id** | **Number** |  |
-**waf_tag_name** | **String** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**version_id** | **Number** | Integer identifying a service version. |
+**waf_tag_name** | **String** | Name of the tag. |
 **waf_active_rule** | [**WafActiveRule**](WafActiveRule.md) |  | [optional]
 
 ### Return type
@@ -207,9 +205,9 @@ apiInstance.deleteWafActiveRule(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**version_id** | **Number** |  |
-**waf_rule_id** | **String** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**version_id** | **Number** | Integer identifying a service version. |
+**waf_rule_id** | **String** | Alphanumeric string identifying a WAF rule. |
 
 ### Return type
 
@@ -247,9 +245,9 @@ apiInstance.getWafActiveRule(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**version_id** | **Number** |  |
-**waf_rule_id** | **String** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**version_id** | **Number** | Integer identifying a service version. |
+**waf_rule_id** | **String** | Alphanumeric string identifying a WAF rule. |
 **include** | **String** | Include relationships. Optional, comma-separated values. Permitted values: `waf_rule_revision` and `waf_firewall_version`.  | [optional]
 
 ### Return type
@@ -293,8 +291,8 @@ apiInstance.listWafActiveRules(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**version_id** | **Number** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**version_id** | **Number** | Integer identifying a service version. |
 **filter_status** | **String** | Limit results to active rules with the specified status. | [optional]
 **filter_waf_rule_revision_message** | **String** | Limit results to active rules with the specified message. | [optional]
 **filter_waf_rule_revision_modsec_rule_id** | **String** | Limit results to active rules that represent the specified ModSecurity modsec_rule_id. | [optional]
@@ -339,9 +337,9 @@ apiInstance.updateWafActiveRule(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**version_id** | **Number** |  |
-**waf_rule_id** | **String** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**version_id** | **Number** | Integer identifying a service version. |
+**waf_rule_id** | **String** | Alphanumeric string identifying a WAF rule. |
 **waf_active_rule** | [**WafActiveRule**](WafActiveRule.md) |  | [optional]
 
 ### Return type

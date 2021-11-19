@@ -1,6 +1,5 @@
 # Fastly.WafRulesApi
 
-
 ```javascript
 const apiInstance = new Fastly.WafRulesApi();
 ```
@@ -10,7 +9,6 @@ Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**getWafRule**](WafRulesApi.md#getWafRule) | **GET** /waf/rules/{waf_rule_id} | Get a rule
 [**listWafRules**](WafRulesApi.md#listWafRules) | **GET** /waf/rules | List available WAF rules
-
 
 
 ## `getWafRule`
@@ -42,7 +40,7 @@ apiInstance.getWafRule(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**waf_rule_id** | **String** |  |
+**waf_rule_id** | **String** | Alphanumeric string identifying a WAF rule. |
 **include** | **String** | Include relationships. Optional, comma-separated values. Permitted values: `waf_tags` and `waf_rule_revisions`.  | [optional]
 
 ### Return type

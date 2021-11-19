@@ -42,9 +42,9 @@ export default class DomainApi {
     /**
      * Checks the status of a specific domain's DNS record for a Service Version. Returns an array in the same format as domain/check_all.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.domain_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.domain_name - The name of the domain or domains associated with this service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DomainCheckItem>} and HTTP response
      */
     checkDomainWithHttpInfo(options = {}) {
@@ -88,9 +88,9 @@ export default class DomainApi {
     /**
      * Checks the status of a specific domain's DNS record for a Service Version. Returns an array in the same format as domain/check_all.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.domain_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.domain_name - The name of the domain or domains associated with this service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DomainCheckItem>}
      */
     checkDomain(options = {}) {
@@ -103,8 +103,8 @@ export default class DomainApi {
     /**
      * Checks the status of all domains' DNS records for a Service Version. Returns an array of 3 items for each domain; the first is the details for the domain, the second is the current CNAME of the domain, and the third is a boolean indicating whether or not it has been properly setup to use Fastly.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<Array>} and HTTP response
      */
     checkDomainsWithHttpInfo(options = {}) {
@@ -143,8 +143,8 @@ export default class DomainApi {
     /**
      * Checks the status of all domains' DNS records for a Service Version. Returns an array of 3 items for each domain; the first is the details for the domain, the second is the current CNAME of the domain, and the third is a boolean indicating whether or not it has been properly setup to use Fastly.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<Array>}
      */
     checkDomains(options = {}) {
@@ -157,8 +157,8 @@ export default class DomainApi {
     /**
      * Create a domain for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - The name of the domain or domains associated with this service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DomainResponse} and HTTP response
@@ -201,8 +201,8 @@ export default class DomainApi {
     /**
      * Create a domain for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - The name of the domain or domains associated with this service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DomainResponse}
@@ -217,9 +217,9 @@ export default class DomainApi {
     /**
      * Delete the domain for a particular service and versions.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.domain_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.domain_name - The name of the domain or domains associated with this service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     deleteDomainWithHttpInfo(options = {}) {
@@ -263,9 +263,9 @@ export default class DomainApi {
     /**
      * Delete the domain for a particular service and versions.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.domain_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.domain_name - The name of the domain or domains associated with this service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     deleteDomain(options = {}) {
@@ -278,9 +278,9 @@ export default class DomainApi {
     /**
      * Get the domain for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.domain_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.domain_name - The name of the domain or domains associated with this service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DomainResponse} and HTTP response
      */
     getDomainWithHttpInfo(options = {}) {
@@ -324,9 +324,9 @@ export default class DomainApi {
     /**
      * Get the domain for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.domain_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.domain_name - The name of the domain or domains associated with this service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DomainResponse}
      */
     getDomain(options = {}) {
@@ -339,8 +339,8 @@ export default class DomainApi {
     /**
      * List all the domains for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DomainResponse} and HTTP response
      */
     listDomainsWithHttpInfo(options = {}) {
@@ -379,8 +379,8 @@ export default class DomainApi {
     /**
      * List all the domains for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DomainResponse}
      */
     listDomains(options = {}) {
@@ -393,9 +393,9 @@ export default class DomainApi {
     /**
      * Update the domain for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.domain_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.domain_name - The name of the domain or domains associated with this service.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - The name of the domain or domains associated with this service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DomainResponse} and HTTP response
@@ -443,9 +443,9 @@ export default class DomainApi {
     /**
      * Update the domain for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.domain_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.domain_name - The name of the domain or domains associated with this service.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - The name of the domain or domains associated with this service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DomainResponse}

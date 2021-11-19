@@ -1,6 +1,5 @@
 # Fastly.SnippetApi
 
-
 ```javascript
 const apiInstance = new Fastly.SnippetApi();
 ```
@@ -15,7 +14,6 @@ Method | Fastly API endpoint | Description
 [**listSnippets**](SnippetApi.md#listSnippets) | **GET** /service/{service_id}/version/{version_id}/snippet | List snippets
 [**updateSnippet**](SnippetApi.md#updateSnippet) | **PUT** /service/{service_id}/version/{version_id}/snippet/{snippet_name} | Update a versioned snippet
 [**updateSnippetDynamic**](SnippetApi.md#updateSnippetDynamic) | **PUT** /service/{service_id}/snippet/{snippet_id} | Update a dynamic snippet
-
 
 
 ## `createSnippet`
@@ -52,8 +50,8 @@ apiInstance.createSnippet(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 **name** | **String** | The name for the snippet. | [optional]
 **dynamic** | **String** | Sets the snippet version. | [optional] [one of: "0", "1"]
 **type** | **String** | The location in generated VCL where the snippet should be placed. | [optional] [one of: "init", "recv", "hash", "hit", "miss", "pass", "fetch", "error", "deliver", "log", "none"]
@@ -95,9 +93,9 @@ apiInstance.deleteSnippet(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**snippet_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**snippet_name** | **String** | The name for the snippet. |
 
 ### Return type
 
@@ -134,9 +132,9 @@ apiInstance.getSnippet(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**snippet_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**snippet_name** | **String** | The name for the snippet. |
 
 ### Return type
 
@@ -172,8 +170,8 @@ apiInstance.getSnippetDynamic(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**snippet_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**snippet_id** | **String** | Alphanumeric string identifying a VCL Snippet. |
 
 ### Return type
 
@@ -209,8 +207,8 @@ apiInstance.listSnippets(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -247,9 +245,9 @@ apiInstance.updateSnippet(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**snippet_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**snippet_name** | **String** | The name for the snippet. |
 
 ### Return type
 
@@ -290,8 +288,8 @@ apiInstance.updateSnippetDynamic(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**snippet_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**snippet_id** | **String** | Alphanumeric string identifying a VCL Snippet. |
 **name** | **String** | The name for the snippet. | [optional]
 **dynamic** | **String** | Sets the snippet version. | [optional] [one of: "0", "1"]
 **type** | **String** | The location in generated VCL where the snippet should be placed. | [optional] [one of: "init", "recv", "hash", "hit", "miss", "pass", "fetch", "error", "deliver", "log", "none"]

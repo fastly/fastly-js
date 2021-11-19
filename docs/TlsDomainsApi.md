@@ -1,6 +1,5 @@
 # Fastly.TlsDomainsApi
 
-
 ```javascript
 const apiInstance = new Fastly.TlsDomainsApi();
 ```
@@ -9,7 +8,6 @@ const apiInstance = new Fastly.TlsDomainsApi();
 Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**listTlsDomains**](TlsDomainsApi.md#listTlsDomains) | **GET** /tls/domains | List TLS domains
-
 
 
 ## `listTlsDomains`

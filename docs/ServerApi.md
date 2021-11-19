@@ -1,6 +1,5 @@
 # Fastly.ServerApi
 
-
 ```javascript
 const apiInstance = new Fastly.ServerApi();
 ```
@@ -13,7 +12,6 @@ Method | Fastly API endpoint | Description
 [**getPoolServer**](ServerApi.md#getPoolServer) | **GET** /service/{service_id}/pool/{pool_id}/server/{server_id} | Get a pool server
 [**listPoolServers**](ServerApi.md#listPoolServers) | **GET** /service/{service_id}/pool/{pool_id}/servers | List servers in a pool
 [**updatePoolServer**](ServerApi.md#updatePoolServer) | **PUT** /service/{service_id}/pool/{pool_id}/server/{server_id} | Update a server
-
 
 
 ## `createPoolServer`
@@ -52,8 +50,8 @@ apiInstance.createPoolServer(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**pool_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**pool_id** | **String** | Alphanumeric string identifying a Pool. |
 **weight** | **Number** | Weight (`1-100`) used to load balance this server against others. | [optional] [defaults to 100]
 **max_conn** | **Number** | Maximum number of connections. If the value is `0`, it inherits the value from pool&#39;s `max_conn_default`. | [optional] [defaults to 0]
 **port** | **Number** | Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS. | [optional] [defaults to 80]
@@ -97,9 +95,9 @@ apiInstance.deletePoolServer(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**pool_id** | **String** |  |
-**server_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**pool_id** | **String** | Alphanumeric string identifying a Pool. |
+**server_id** | **String** | Alphanumeric string identifying a Server. |
 
 ### Return type
 
@@ -136,9 +134,9 @@ apiInstance.getPoolServer(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**pool_id** | **String** |  |
-**server_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**pool_id** | **String** | Alphanumeric string identifying a Pool. |
+**server_id** | **String** | Alphanumeric string identifying a Server. |
 
 ### Return type
 
@@ -174,8 +172,8 @@ apiInstance.listPoolServers(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**pool_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**pool_id** | **String** | Alphanumeric string identifying a Pool. |
 
 ### Return type
 
@@ -219,9 +217,9 @@ apiInstance.updatePoolServer(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**pool_id** | **String** |  |
-**server_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**pool_id** | **String** | Alphanumeric string identifying a Pool. |
+**server_id** | **String** | Alphanumeric string identifying a Server. |
 **weight** | **Number** | Weight (`1-100`) used to load balance this server against others. | [optional] [defaults to 100]
 **max_conn** | **Number** | Maximum number of connections. If the value is `0`, it inherits the value from pool&#39;s `max_conn_default`. | [optional] [defaults to 0]
 **port** | **Number** | Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS. | [optional] [defaults to 80]

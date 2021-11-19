@@ -1,6 +1,5 @@
 # Fastly.HealthcheckApi
 
-
 ```javascript
 const apiInstance = new Fastly.HealthcheckApi();
 ```
@@ -13,7 +12,6 @@ Method | Fastly API endpoint | Description
 [**getHealthcheck**](HealthcheckApi.md#getHealthcheck) | **GET** /service/{service_id}/version/{version_id}/healthcheck/{healthcheck_name} | Get a healthcheck
 [**listHealthchecks**](HealthcheckApi.md#listHealthchecks) | **GET** /service/{service_id}/version/{version_id}/healthcheck | List healthchecks
 [**updateHealthcheck**](HealthcheckApi.md#updateHealthcheck) | **PUT** /service/{service_id}/version/{version_id}/healthcheck/{healthcheck_name} | Update a healthcheck
-
 
 
 ## `createHealthcheck`
@@ -57,8 +55,8 @@ apiInstance.createHealthcheck(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 **check_interval** | **Number** | How often to run the healthcheck in milliseconds. | [optional]
 **comment** | **String** | A freeform descriptive note. | [optional]
 **expected_response** | **Number** | The status code expected from the host. | [optional]
@@ -107,9 +105,9 @@ apiInstance.deleteHealthcheck(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**healthcheck_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**healthcheck_name** | **String** | The name of the healthcheck. |
 
 ### Return type
 
@@ -146,9 +144,9 @@ apiInstance.getHealthcheck(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**healthcheck_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**healthcheck_name** | **String** | The name of the healthcheck. |
 
 ### Return type
 
@@ -184,8 +182,8 @@ apiInstance.listHealthchecks(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -234,9 +232,9 @@ apiInstance.updateHealthcheck(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**healthcheck_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**healthcheck_name** | **String** | The name of the healthcheck. |
 **check_interval** | **Number** | How often to run the healthcheck in milliseconds. | [optional]
 **comment** | **String** | A freeform descriptive note. | [optional]
 **expected_response** | **Number** | The status code expected from the host. | [optional]

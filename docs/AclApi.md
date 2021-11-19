@@ -1,6 +1,5 @@
 # Fastly.AclApi
 
-
 ```javascript
 const apiInstance = new Fastly.AclApi();
 ```
@@ -13,7 +12,6 @@ Method | Fastly API endpoint | Description
 [**getAcl**](AclApi.md#getAcl) | **GET** /service/{service_id}/version/{version_id}/acl/{acl_name} | Describe an ACL
 [**listAcls**](AclApi.md#listAcls) | **GET** /service/{service_id}/version/{version_id}/acl | List ACLs
 [**updateAcl**](AclApi.md#updateAcl) | **PUT** /service/{service_id}/version/{version_id}/acl/{acl_name} | Update an ACL
-
 
 
 ## `createAcl`
@@ -46,8 +44,8 @@ apiInstance.createAcl(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 **name** | **String** | Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace. | [optional]
 
 ### Return type
@@ -85,9 +83,9 @@ apiInstance.deleteAcl(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**acl_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**acl_name** | **String** | Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace. |
 
 ### Return type
 
@@ -124,9 +122,9 @@ apiInstance.getAcl(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**acl_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**acl_name** | **String** | Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace. |
 
 ### Return type
 
@@ -162,8 +160,8 @@ apiInstance.listAcls(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -201,9 +199,9 @@ apiInstance.updateAcl(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**acl_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**acl_name** | **String** | Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace. |
 **name** | **String** | Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace. | [optional]
 
 ### Return type

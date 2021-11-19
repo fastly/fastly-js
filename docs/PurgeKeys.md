@@ -1,10 +1,10 @@
-# Fastly.Package
+# Fastly.PurgeKeys
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**metadata** | [**PackageMetadata**](PackageMetadata.md) |  | [optional] 
+**surrogate_keys** | **[String]** |  | [optional] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

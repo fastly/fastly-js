@@ -1,6 +1,5 @@
 # Fastly.CacheSettingsApi
 
-
 ```javascript
 const apiInstance = new Fastly.CacheSettingsApi();
 ```
@@ -13,7 +12,6 @@ Method | Fastly API endpoint | Description
 [**getCacheSettings**](CacheSettingsApi.md#getCacheSettings) | **GET** /service/{service_id}/version/{version_id}/cache_settings/{cache_settings_name} | Get a cache settings object
 [**listCacheSettings**](CacheSettingsApi.md#listCacheSettings) | **GET** /service/{service_id}/version/{version_id}/cache_settings | List cache settings objects
 [**updateCacheSettings**](CacheSettingsApi.md#updateCacheSettings) | **PUT** /service/{service_id}/version/{version_id}/cache_settings/{cache_settings_name} | Update a cache settings object
-
 
 
 ## `createCacheSettings`
@@ -50,8 +48,8 @@ apiInstance.createCacheSettings(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 **action** | **String** | If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule.  | [optional] [one of: "pass", "deliver", "restart"]
 **cache_condition** | **String** | Name of the cache condition controlling when this configuration applies. | [optional]
 **name** | **String** | Name for the cache settings object. | [optional]
@@ -93,9 +91,9 @@ apiInstance.deleteCacheSettings(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**cache_settings_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**cache_settings_name** | **String** | Name for the cache settings object. |
 
 ### Return type
 
@@ -132,9 +130,9 @@ apiInstance.getCacheSettings(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**cache_settings_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**cache_settings_name** | **String** | Name for the cache settings object. |
 
 ### Return type
 
@@ -170,8 +168,8 @@ apiInstance.listCacheSettings(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -213,9 +211,9 @@ apiInstance.updateCacheSettings(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**cache_settings_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**cache_settings_name** | **String** | Name for the cache settings object. |
 **action** | **String** | If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule.  | [optional] [one of: "pass", "deliver", "restart"]
 **cache_condition** | **String** | Name of the cache condition controlling when this configuration applies. | [optional]
 **name** | **String** | Name for the cache settings object. | [optional]

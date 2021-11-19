@@ -41,8 +41,8 @@ export default class LoggingLogglyApi {
     /**
      * Create a Loggly logging object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
      * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
@@ -93,8 +93,8 @@ export default class LoggingLogglyApi {
     /**
      * Create a Loggly logging object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
      * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
@@ -113,9 +113,9 @@ export default class LoggingLogglyApi {
     /**
      * Delete the Loggly logging object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_loggly_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_loggly_name - The name for the real-time logging configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     deleteLogLogglyWithHttpInfo(options = {}) {
@@ -159,9 +159,9 @@ export default class LoggingLogglyApi {
     /**
      * Delete the Loggly logging object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_loggly_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_loggly_name - The name for the real-time logging configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     deleteLogLoggly(options = {}) {
@@ -174,9 +174,9 @@ export default class LoggingLogglyApi {
     /**
      * Get the Loggly logging object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_loggly_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_loggly_name - The name for the real-time logging configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogglyResponse} and HTTP response
      */
     getLogLogglyWithHttpInfo(options = {}) {
@@ -220,9 +220,9 @@ export default class LoggingLogglyApi {
     /**
      * Get the Loggly logging object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_loggly_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_loggly_name - The name for the real-time logging configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogglyResponse}
      */
     getLogLoggly(options = {}) {
@@ -235,8 +235,8 @@ export default class LoggingLogglyApi {
     /**
      * List all Loggly logging objects for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingLogglyResponse>} and HTTP response
      */
     listLogLogglyWithHttpInfo(options = {}) {
@@ -275,8 +275,8 @@ export default class LoggingLogglyApi {
     /**
      * List all Loggly logging objects for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingLogglyResponse>}
      */
     listLogLoggly(options = {}) {
@@ -289,9 +289,9 @@ export default class LoggingLogglyApi {
     /**
      * Update the Loggly logging object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_loggly_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_loggly_name - The name for the real-time logging configuration.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
      * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
@@ -347,9 +347,9 @@ export default class LoggingLogglyApi {
     /**
      * Update the Loggly logging object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_loggly_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_loggly_name - The name for the real-time logging configuration.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
      * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  

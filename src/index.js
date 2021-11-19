@@ -202,10 +202,6 @@ import LoggingSyslogResponse from './model/LoggingSyslogResponse';
 import LoggingTlsCommon from './model/LoggingTlsCommon';
 import LoggingUseTls from './model/LoggingUseTls';
 import NestedVersion from './model/NestedVersion';
-import Package from './model/Package';
-import PackageMetadata from './model/PackageMetadata';
-import PackageResponse from './model/PackageResponse';
-import PackageResponseAllOf from './model/PackageResponseAllOf';
 import Pagination from './model/Pagination';
 import PaginationLinks from './model/PaginationLinks';
 import PaginationMeta from './model/PaginationMeta';
@@ -217,6 +213,8 @@ import PoolResponseAllOf from './model/PoolResponseAllOf';
 import Pop from './model/Pop';
 import PopCoordinates from './model/PopCoordinates';
 import PublicIpList from './model/PublicIpList';
+import PurgeKeys from './model/PurgeKeys';
+import PurgeResponse from './model/PurgeResponse';
 import RateLimiter from './model/RateLimiter';
 import RateLimiterResponse from './model/RateLimiterResponse';
 import RateLimiterResponse1 from './model/RateLimiterResponse1';
@@ -312,9 +310,8 @@ import Results from './model/Results';
 import RoleUser from './model/RoleUser';
 import SchemasBackend from './model/SchemasBackend';
 import SchemasDirector from './model/SchemasDirector';
-import SchemasResponseObject from './model/SchemasResponseObject';
-import SchemasResponseObjectResponse from './model/SchemasResponseObjectResponse';
-import SchemasSnippetResponse from './model/SchemasSnippetResponse';
+import SchemasHealthcheck from './model/SchemasHealthcheck';
+import SchemasHealthcheckResponse from './model/SchemasHealthcheckResponse';
 import SchemasUserResponse from './model/SchemasUserResponse';
 import SchemasVclResponse from './model/SchemasVclResponse';
 import SchemasVersion from './model/SchemasVersion';
@@ -550,10 +547,10 @@ import LoggingSftpApi from './api/LoggingSftpApi';
 import LoggingSplunkApi from './api/LoggingSplunkApi';
 import LoggingSumologicApi from './api/LoggingSumologicApi';
 import LoggingSyslogApi from './api/LoggingSyslogApi';
-import PackageApi from './api/PackageApi';
 import PoolApi from './api/PoolApi';
 import PopApi from './api/PopApi';
 import PublicIpListApi from './api/PublicIpListApi';
+import PurgeApi from './api/PurgeApi';
 import RateLimiterApi from './api/RateLimiterApi';
 import RealtimeApi from './api/RealtimeApi';
 import RequestSettingsApi from './api/RequestSettingsApi';
@@ -1763,30 +1760,6 @@ export {
     NestedVersion,
 
     /**
-     * The Package model constructor.
-     * @property {module:model/Package}
-     */
-    Package,
-
-    /**
-     * The PackageMetadata model constructor.
-     * @property {module:model/PackageMetadata}
-     */
-    PackageMetadata,
-
-    /**
-     * The PackageResponse model constructor.
-     * @property {module:model/PackageResponse}
-     */
-    PackageResponse,
-
-    /**
-     * The PackageResponseAllOf model constructor.
-     * @property {module:model/PackageResponseAllOf}
-     */
-    PackageResponseAllOf,
-
-    /**
      * The Pagination model constructor.
      * @property {module:model/Pagination}
      */
@@ -1851,6 +1824,18 @@ export {
      * @property {module:model/PublicIpList}
      */
     PublicIpList,
+
+    /**
+     * The PurgeKeys model constructor.
+     * @property {module:model/PurgeKeys}
+     */
+    PurgeKeys,
+
+    /**
+     * The PurgeResponse model constructor.
+     * @property {module:model/PurgeResponse}
+     */
+    PurgeResponse,
 
     /**
      * The RateLimiter model constructor.
@@ -2423,22 +2408,16 @@ export {
     SchemasDirector,
 
     /**
-     * The SchemasResponseObject model constructor.
-     * @property {module:model/SchemasResponseObject}
+     * The SchemasHealthcheck model constructor.
+     * @property {module:model/SchemasHealthcheck}
      */
-    SchemasResponseObject,
+    SchemasHealthcheck,
 
     /**
-     * The SchemasResponseObjectResponse model constructor.
-     * @property {module:model/SchemasResponseObjectResponse}
+     * The SchemasHealthcheckResponse model constructor.
+     * @property {module:model/SchemasHealthcheckResponse}
      */
-    SchemasResponseObjectResponse,
-
-    /**
-     * The SchemasSnippetResponse model constructor.
-     * @property {module:model/SchemasSnippetResponse}
-     */
-    SchemasSnippetResponse,
+    SchemasHealthcheckResponse,
 
     /**
      * The SchemasUserResponse model constructor.
@@ -3851,12 +3830,6 @@ export {
     LoggingSyslogApi,
 
     /**
-    * The PackageApi service constructor.
-    * @property {module:api/PackageApi}
-    */
-    PackageApi,
-
-    /**
     * The PoolApi service constructor.
     * @property {module:api/PoolApi}
     */
@@ -3873,6 +3846,12 @@ export {
     * @property {module:api/PublicIpListApi}
     */
     PublicIpListApi,
+
+    /**
+    * The PurgeApi service constructor.
+    * @property {module:api/PurgeApi}
+    */
+    PurgeApi,
 
     /**
     * The RateLimiterApi service constructor.

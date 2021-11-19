@@ -1,6 +1,5 @@
 # Fastly.CustomerApi
 
-
 ```javascript
 const apiInstance = new Fastly.CustomerApi();
 ```
@@ -13,7 +12,6 @@ Method | Fastly API endpoint | Description
 [**getLoggedInCustomer**](CustomerApi.md#getLoggedInCustomer) | **GET** /current_customer | Get the logged in customer
 [**listUsers**](CustomerApi.md#listUsers) | **GET** /customer/{customer_id}/users | List users
 [**updateCustomer**](CustomerApi.md#updateCustomer) | **PUT** /customer/{customer_id} | Update a customer
-
 
 
 ## `deleteCustomer`
@@ -44,7 +42,7 @@ apiInstance.deleteCustomer(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**customer_id** | **String** |  |
+**customer_id** | **String** | Alphanumeric string identifying the customer. |
 
 ### Return type
 
@@ -79,7 +77,7 @@ apiInstance.getCustomer(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**customer_id** | **String** |  |
+**customer_id** | **String** | Alphanumeric string identifying the customer. |
 
 ### Return type
 
@@ -143,7 +141,7 @@ apiInstance.listUsers(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**customer_id** | **String** |  |
+**customer_id** | **String** | Alphanumeric string identifying the customer. |
 
 ### Return type
 
@@ -202,7 +200,7 @@ apiInstance.updateCustomer(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**customer_id** | **String** |  |
+**customer_id** | **String** | Alphanumeric string identifying the customer. |
 **billing_contact_id** | **String** | The alphanumeric string representing the primary billing contact. | [optional]
 **billing_network_type** | **String** | Customer&#39;s current network revenue type. | [optional] [one of: "public", "private"]
 **billing_ref** | **String** | Used for adding purchased orders to customer&#39;s account. | [optional]

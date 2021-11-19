@@ -41,7 +41,7 @@ export default class RealtimeApi {
     /**
      * Get data for the 120 seconds preceding the latest timestamp available for a service.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Realtime} and HTTP response
      */
     getStatsLast120SecondsWithHttpInfo(options = {}) {
@@ -75,7 +75,7 @@ export default class RealtimeApi {
     /**
      * Get data for the 120 seconds preceding the latest timestamp available for a service.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Realtime}
      */
     getStatsLast120Seconds(options = {}) {
@@ -88,7 +88,7 @@ export default class RealtimeApi {
     /**
      * Get data for the 120 seconds preceding the latest timestamp available for a service, up to a maximum of `max_entries` entries.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.max_entries - Maximum number of results to show.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Realtime} and HTTP response
      */
@@ -128,7 +128,7 @@ export default class RealtimeApi {
     /**
      * Get data for the 120 seconds preceding the latest timestamp available for a service, up to a maximum of `max_entries` entries.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.max_entries - Maximum number of results to show.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Realtime}
      */
@@ -142,7 +142,7 @@ export default class RealtimeApi {
     /**
      * Get real-time data for the last second. For the first request, the timestamp can be `0`. The response will then return a new timestamp field, which should be used for the next request.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.timestamp_in_seconds - Timestamp in seconds (Unix epoch time).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Realtime} and HTTP response
      */
@@ -182,7 +182,7 @@ export default class RealtimeApi {
     /**
      * Get real-time data for the last second. For the first request, the timestamp can be `0`. The response will then return a new timestamp field, which should be used for the next request.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.timestamp_in_seconds - Timestamp in seconds (Unix epoch time).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Realtime}
      */

@@ -1,6 +1,5 @@
 # Fastly.TlsSubscriptionsApi
 
-
 ```javascript
 const apiInstance = new Fastly.TlsSubscriptionsApi();
 ```
@@ -15,7 +14,6 @@ Method | Fastly API endpoint | Description
 [**listTlsSubs**](TlsSubscriptionsApi.md#listTlsSubs) | **GET** /tls/subscriptions | List TLS subscriptions
 [**patchTlsSub**](TlsSubscriptionsApi.md#patchTlsSub) | **PATCH** /tls/subscriptions/{tls_subscription_id} | Update a TLS subscription
 [**postTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallenges**](TlsSubscriptionsApi.md#postTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallenges) | **POST** /tls/subscriptions/{tls_subscription_id}/authorizations/{tls_authorization_id}/globalsign_email_challenges | Creates a GlobalSign email challenge.
-
 
 
 ## `createTlsSub`
@@ -83,7 +81,7 @@ apiInstance.deleteTlsSub(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_subscription_id** | **String** |  |
+**tls_subscription_id** | **String** | Alphanumeric string identifying a TLS subscription. |
 
 ### Return type
 
@@ -158,7 +156,7 @@ apiInstance.getTlsSub(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_subscription_id** | **String** |  |
+**tls_subscription_id** | **String** | Alphanumeric string identifying a TLS subscription. |
 **include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`.  | [optional]
 
 ### Return type
@@ -243,7 +241,7 @@ apiInstance.patchTlsSub(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_subscription_id** | **String** |  |
+**tls_subscription_id** | **String** | Alphanumeric string identifying a TLS subscription. |
 **force** | **Boolean** | A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain.  | [optional]
 **tls_subscription** | [**TlsSubscription**](TlsSubscription.md) |  | [optional]
 

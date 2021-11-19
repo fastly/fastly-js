@@ -1,6 +1,5 @@
 # Fastly.TokensApi
 
-
 ```javascript
 const apiInstance = new Fastly.TokensApi();
 ```
@@ -15,7 +14,6 @@ Method | Fastly API endpoint | Description
 [**listTokensUser**](TokensApi.md#listTokensUser) | **GET** /tokens | List tokens for the authenticated user
 [**revokeToken**](TokensApi.md#revokeToken) | **DELETE** /tokens/{token_id} | Revoke a token
 [**revokeTokenCurrent**](TokensApi.md#revokeTokenCurrent) | **DELETE** /tokens/self | Revoke the current token
-
 
 
 ## `bulkRevokeTokens`
@@ -139,7 +137,7 @@ apiInstance.listTokensCustomer(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**customer_id** | **String** |  |
+**customer_id** | **String** | Alphanumeric string identifying the customer. |
 
 ### Return type
 
@@ -203,7 +201,7 @@ apiInstance.revokeToken(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**token_id** | **String** |  |
+**token_id** | **String** | Alphanumeric string identifying a token. |
 
 ### Return type
 

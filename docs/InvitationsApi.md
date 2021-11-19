@@ -1,6 +1,5 @@
 # Fastly.InvitationsApi
 
-
 ```javascript
 const apiInstance = new Fastly.InvitationsApi();
 ```
@@ -11,7 +10,6 @@ Method | Fastly API endpoint | Description
 [**createInvitation**](InvitationsApi.md#createInvitation) | **POST** /invitations | Create an invitation
 [**deleteInvitation**](InvitationsApi.md#deleteInvitation) | **DELETE** /invitations/{invitation_id} | Delete an invitation
 [**listInvitations**](InvitationsApi.md#listInvitations) | **GET** /invitations | List invitations
-
 
 
 ## `createInvitation`
@@ -77,7 +75,7 @@ apiInstance.deleteInvitation(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**invitation_id** | **String** |  |
+**invitation_id** | **String** | Alphanumeric string identifying an invitation. |
 
 ### Return type
 

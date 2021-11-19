@@ -1,6 +1,5 @@
 # Fastly.ServiceAuthorizationsApi
 
-
 ```javascript
 const apiInstance = new Fastly.ServiceAuthorizationsApi();
 ```
@@ -15,7 +14,6 @@ Method | Fastly API endpoint | Description
 [**showServiceAuthorization**](ServiceAuthorizationsApi.md#showServiceAuthorization) | **GET** /service-authorizations/{service_authorization_id} | Show service authorization
 [**updateServiceAuthorization**](ServiceAuthorizationsApi.md#updateServiceAuthorization) | **PATCH** /service-authorizations/{service_authorization_id} | Update service authorization
 [**updateServiceAuthorization2**](ServiceAuthorizationsApi.md#updateServiceAuthorization2) | **PATCH** /service-authorizations | Update service authorizations
-
 
 
 ## `createServiceAuthorization`
@@ -81,7 +79,7 @@ apiInstance.deleteServiceAuthorization(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_authorization_id** | **String** |  |
+**service_authorization_id** | **String** | Alphanumeric string identifying a service authorization. |
 
 ### Return type
 
@@ -188,7 +186,7 @@ apiInstance.showServiceAuthorization(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_authorization_id** | **String** |  |
+**service_authorization_id** | **String** | Alphanumeric string identifying a service authorization. |
 
 ### Return type
 
@@ -224,7 +222,7 @@ apiInstance.updateServiceAuthorization(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_authorization_id** | **String** |  |
+**service_authorization_id** | **String** | Alphanumeric string identifying a service authorization. |
 **service_authorization** | [**ServiceAuthorization**](ServiceAuthorization.md) |  | [optional]
 
 ### Return type

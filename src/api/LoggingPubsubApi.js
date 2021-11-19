@@ -41,8 +41,8 @@ export default class LoggingPubsubApi {
     /**
      * Create a Pub/Sub logging object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
      * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
@@ -99,8 +99,8 @@ export default class LoggingPubsubApi {
     /**
      * Create a Pub/Sub logging object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
      * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
@@ -122,9 +122,9 @@ export default class LoggingPubsubApi {
     /**
      * Delete a Pub/Sub logging object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_google_pubsub_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_google_pubsub_name - The name for the real-time logging configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     deleteLogGcpPubsubWithHttpInfo(options = {}) {
@@ -168,9 +168,9 @@ export default class LoggingPubsubApi {
     /**
      * Delete a Pub/Sub logging object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_google_pubsub_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_google_pubsub_name - The name for the real-time logging configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     deleteLogGcpPubsub(options = {}) {
@@ -183,9 +183,9 @@ export default class LoggingPubsubApi {
     /**
      * Get the details for a Pub/Sub logging object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_google_pubsub_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_google_pubsub_name - The name for the real-time logging configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingGooglePubsubResponse} and HTTP response
      */
     getLogGcpPubsubWithHttpInfo(options = {}) {
@@ -229,9 +229,9 @@ export default class LoggingPubsubApi {
     /**
      * Get the details for a Pub/Sub logging object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_google_pubsub_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_google_pubsub_name - The name for the real-time logging configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingGooglePubsubResponse}
      */
     getLogGcpPubsub(options = {}) {
@@ -244,8 +244,8 @@ export default class LoggingPubsubApi {
     /**
      * List all of the Pub/Sub logging objects for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingGooglePubsubResponse>} and HTTP response
      */
     listLogGcpPubsubWithHttpInfo(options = {}) {
@@ -284,8 +284,8 @@ export default class LoggingPubsubApi {
     /**
      * List all of the Pub/Sub logging objects for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingGooglePubsubResponse>}
      */
     listLogGcpPubsub(options = {}) {
@@ -298,9 +298,9 @@ export default class LoggingPubsubApi {
     /**
      * Update a Pub/Sub logging object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_google_pubsub_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_google_pubsub_name - The name for the real-time logging configuration.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
      * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
@@ -362,9 +362,9 @@ export default class LoggingPubsubApi {
     /**
      * Update a Pub/Sub logging object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_google_pubsub_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_google_pubsub_name - The name for the real-time logging configuration.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
      * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  

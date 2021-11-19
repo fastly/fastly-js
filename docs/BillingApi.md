@@ -1,6 +1,5 @@
 # Fastly.BillingApi
 
-
 ```javascript
 const apiInstance = new Fastly.BillingApi();
 ```
@@ -11,7 +10,6 @@ Method | Fastly API endpoint | Description
 [**getInvoice**](BillingApi.md#getInvoice) | **GET** /billing/v2/year/{year}/month/{month} | Get an invoice
 [**getInvoiceById**](BillingApi.md#getInvoiceById) | **GET** /billing/v2/account_customers/{customer_id}/invoices/{invoice_id} | Get an invoice
 [**getInvoiceMtd**](BillingApi.md#getInvoiceMtd) | **GET** /billing/v2/account_customers/{customer_id}/mtd_invoice | Get month-to-date billing estimate
-
 
 
 ## `getInvoice`
@@ -80,8 +78,8 @@ apiInstance.getInvoiceById(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**customer_id** | **String** |  |
-**invoice_id** | **String** |  |
+**customer_id** | **String** | Alphanumeric string identifying the customer. |
+**invoice_id** | **String** | Alphanumeric string identifying the invoice. |
 
 ### Return type
 
@@ -118,7 +116,7 @@ apiInstance.getInvoiceMtd(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**customer_id** | **String** |  |
+**customer_id** | **String** | Alphanumeric string identifying the customer. |
 **month** | **String** | 2-digit month. | [optional]
 **year** | **String** | 4-digit year. | [optional]
 

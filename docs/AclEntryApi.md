@@ -1,6 +1,5 @@
 # Fastly.AclEntryApi
 
-
 ```javascript
 const apiInstance = new Fastly.AclEntryApi();
 ```
@@ -14,7 +13,6 @@ Method | Fastly API endpoint | Description
 [**getAclEntry**](AclEntryApi.md#getAclEntry) | **GET** /service/{service_id}/acl/{acl_id}/entry/{acl_entry_id} | Describe an ACL entry
 [**listAclEntries**](AclEntryApi.md#listAclEntries) | **GET** /service/{service_id}/acl/{acl_id}/entries | List ACL entries
 [**updateAclEntry**](AclEntryApi.md#updateAclEntry) | **PATCH** /service/{service_id}/acl/{acl_id}/entry/{acl_entry_id} | Update an ACL entry
-
 
 
 ## `bulkUpdateAclEntries`
@@ -47,8 +45,8 @@ apiInstance.bulkUpdateAclEntries(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**acl_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**acl_id** | **String** | Alphanumeric string identifying a ACL. |
 **acl_entries** | [**AclEntries**](AclEntries.md) |  | [optional]
 
 ### Return type
@@ -86,8 +84,8 @@ apiInstance.createAclEntry(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**acl_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**acl_id** | **String** | Alphanumeric string identifying a ACL. |
 **acl_entry** | [**AclEntry**](AclEntry.md) |  | [optional]
 
 ### Return type
@@ -125,9 +123,9 @@ apiInstance.deleteAclEntry(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**acl_id** | **String** |  |
-**acl_entry_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**acl_id** | **String** | Alphanumeric string identifying a ACL. |
+**acl_entry_id** | **String** | Alphanumeric string identifying an ACL Entry. |
 
 ### Return type
 
@@ -164,9 +162,9 @@ apiInstance.getAclEntry(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**acl_id** | **String** |  |
-**acl_entry_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**acl_id** | **String** | Alphanumeric string identifying a ACL. |
+**acl_entry_id** | **String** | Alphanumeric string identifying an ACL Entry. |
 
 ### Return type
 
@@ -206,8 +204,8 @@ apiInstance.listAclEntries(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**acl_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**acl_id** | **String** | Alphanumeric string identifying a ACL. |
 **page** | **Number** | Current page. | [optional]
 **per_page** | **Number** | Number of records per page. | [optional] [defaults to 20]
 **sort** | **String** | Field on which to sort. | [optional] [defaults to 'created']
@@ -249,9 +247,9 @@ apiInstance.updateAclEntry(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**acl_id** | **String** |  |
-**acl_entry_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**acl_id** | **String** | Alphanumeric string identifying a ACL. |
+**acl_entry_id** | **String** | Alphanumeric string identifying an ACL Entry. |
 **acl_entry** | [**AclEntry**](AclEntry.md) |  | [optional]
 
 ### Return type

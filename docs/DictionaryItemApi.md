@@ -1,6 +1,5 @@
 # Fastly.DictionaryItemApi
 
-
 ```javascript
 const apiInstance = new Fastly.DictionaryItemApi();
 ```
@@ -15,7 +14,6 @@ Method | Fastly API endpoint | Description
 [**listDictionaryItems**](DictionaryItemApi.md#listDictionaryItems) | **GET** /service/{service_id}/dictionary/{dictionary_id}/items | List items in an edge dictionary
 [**updateDictionaryItem**](DictionaryItemApi.md#updateDictionaryItem) | **PATCH** /service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key} | Update an entry in an edge dictionary
 [**upsertDictionaryItem**](DictionaryItemApi.md#upsertDictionaryItem) | **PUT** /service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key} | Insert or update an entry in an edge dictionary
-
 
 
 ## `bulkUpdateDictionaryItem`
@@ -48,8 +46,8 @@ apiInstance.bulkUpdateDictionaryItem(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**dictionary_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**dictionary_id** | **String** | Alphanumeric string identifying a Dictionary. |
 **inline_object** | [**InlineObject**](InlineObject.md) |  | [optional]
 
 ### Return type
@@ -88,8 +86,8 @@ apiInstance.createDictionaryItem(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**dictionary_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**dictionary_id** | **String** | Alphanumeric string identifying a Dictionary. |
 **item_key** | **String** | Item key, maximum 256 characters. | [optional]
 **item_value** | **String** | Item value, maximum 8000 characters. | [optional]
 
@@ -128,9 +126,9 @@ apiInstance.deleteDictionaryItem(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**dictionary_id** | **String** |  |
-**dictionary_item_key** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**dictionary_id** | **String** | Alphanumeric string identifying a Dictionary. |
+**dictionary_item_key** | **String** | Item key, maximum 256 characters. |
 
 ### Return type
 
@@ -167,9 +165,9 @@ apiInstance.getDictionaryItem(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**dictionary_id** | **String** |  |
-**dictionary_item_key** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**dictionary_id** | **String** | Alphanumeric string identifying a Dictionary. |
+**dictionary_item_key** | **String** | Item key, maximum 256 characters. |
 
 ### Return type
 
@@ -209,8 +207,8 @@ apiInstance.listDictionaryItems(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**dictionary_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**dictionary_id** | **String** | Alphanumeric string identifying a Dictionary. |
 **page** | **Number** | Current page. | [optional]
 **per_page** | **Number** | Number of records per page. | [optional] [defaults to 20]
 **sort** | **String** | Field on which to sort. | [optional] [defaults to 'created']
@@ -253,9 +251,9 @@ apiInstance.updateDictionaryItem(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**dictionary_id** | **String** |  |
-**dictionary_item_key** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**dictionary_id** | **String** | Alphanumeric string identifying a Dictionary. |
+**dictionary_item_key** | **String** | Item key, maximum 256 characters. |
 **item_key** | **String** | Item key, maximum 256 characters. | [optional]
 **item_value** | **String** | Item value, maximum 8000 characters. | [optional]
 
@@ -296,9 +294,9 @@ apiInstance.upsertDictionaryItem(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**dictionary_id** | **String** |  |
-**dictionary_item_key** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**dictionary_id** | **String** | Alphanumeric string identifying a Dictionary. |
+**dictionary_item_key** | **String** | Item key, maximum 256 characters. |
 **item_key** | **String** | Item key, maximum 256 characters. | [optional]
 **item_value** | **String** | Item value, maximum 8000 characters. | [optional]
 

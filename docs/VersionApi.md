@@ -1,6 +1,5 @@
 # Fastly.VersionApi
 
-
 ```javascript
 const apiInstance = new Fastly.VersionApi();
 ```
@@ -17,7 +16,6 @@ Method | Fastly API endpoint | Description
 [**lockServiceVersion**](VersionApi.md#lockServiceVersion) | **PUT** /service/{service_id}/version/{version_id}/lock | Lock a service version
 [**updateServiceVersion**](VersionApi.md#updateServiceVersion) | **PUT** /service/{service_id}/version/{version_id} | Update a service version
 [**validateServiceVersion**](VersionApi.md#validateServiceVersion) | **GET** /service/{service_id}/version/{version_id}/validate | Validate a service version
-
 
 
 ## `activateServiceVersion`
@@ -49,8 +47,8 @@ apiInstance.activateServiceVersion(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -86,8 +84,8 @@ apiInstance.cloneServiceVersion(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -122,7 +120,7 @@ apiInstance.createServiceVersion(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
 
 ### Return type
 
@@ -158,8 +156,8 @@ apiInstance.deactivateServiceVersion(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -195,8 +193,8 @@ apiInstance.getServiceVersion(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -231,7 +229,7 @@ apiInstance.listServiceVersions(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
 
 ### Return type
 
@@ -267,8 +265,8 @@ apiInstance.lockServiceVersion(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -311,8 +309,8 @@ apiInstance.updateServiceVersion(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 **active** | **Boolean** | Whether this is the active version or not. | [optional] [defaults to false]
 **comment** | **String** | A freeform descriptive note. | [optional]
 **deployed** | **Boolean** | Unused at this time. | [optional]
@@ -355,8 +353,8 @@ apiInstance.validateServiceVersion(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 

@@ -1,6 +1,5 @@
 # Fastly.WafFirewallsApi
 
-
 ```javascript
 const apiInstance = new Fastly.WafFirewallsApi();
 ```
@@ -13,7 +12,6 @@ Method | Fastly API endpoint | Description
 [**getWafFirewall**](WafFirewallsApi.md#getWafFirewall) | **GET** /waf/firewalls/{firewall_id} | Get a firewall
 [**listWafFirewalls**](WafFirewallsApi.md#listWafFirewalls) | **GET** /waf/firewalls | List firewalls
 [**updateWafFirewall**](WafFirewallsApi.md#updateWafFirewall) | **PATCH** /waf/firewalls/{firewall_id} | Update a firewall
-
 
 
 ## `createWafFirewall`
@@ -80,7 +78,7 @@ apiInstance.deleteWafFirewall(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
 **waf_firewall** | [**WafFirewall**](WafFirewall.md) |  | [optional]
 
 ### Return type
@@ -118,7 +116,7 @@ apiInstance.getWafFirewall(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
 **filter_service_version_number** | **String** | Limit the results returned to a specific service version. | [optional]
 **include** | **String** | Include related objects. Optional. | [optional] [one of: "waf_firewall_versions"]
 
@@ -199,7 +197,7 @@ apiInstance.updateWafFirewall(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
 **waf_firewall** | [**WafFirewall**](WafFirewall.md) |  | [optional]
 
 ### Return type

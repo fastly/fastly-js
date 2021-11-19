@@ -41,8 +41,8 @@ export default class SnippetApi {
     /**
      * Create a snippet for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.name] - The name for the snippet.
      * @param {module:model/String} [options.dynamic] - Sets the snippet version.
      * @param {module:model/String} [options.type] - The location in generated VCL where the snippet should be placed.
@@ -91,8 +91,8 @@ export default class SnippetApi {
     /**
      * Create a snippet for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.name] - The name for the snippet.
      * @param {module:model/String} [options.dynamic] - Sets the snippet version.
      * @param {module:model/String} [options.type] - The location in generated VCL where the snippet should be placed.
@@ -110,9 +110,9 @@ export default class SnippetApi {
     /**
      * Delete a specific snippet for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.snippet_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.snippet_name - The name for the snippet.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     deleteSnippetWithHttpInfo(options = {}) {
@@ -156,9 +156,9 @@ export default class SnippetApi {
     /**
      * Delete a specific snippet for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.snippet_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.snippet_name - The name for the snippet.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     deleteSnippet(options = {}) {
@@ -171,9 +171,9 @@ export default class SnippetApi {
     /**
      * Get a single snippet for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.snippet_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.snippet_name - The name for the snippet.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SnippetResponse} and HTTP response
      */
     getSnippetWithHttpInfo(options = {}) {
@@ -217,9 +217,9 @@ export default class SnippetApi {
     /**
      * Get a single snippet for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.snippet_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.snippet_name - The name for the snippet.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SnippetResponse}
      */
     getSnippet(options = {}) {
@@ -232,8 +232,8 @@ export default class SnippetApi {
     /**
      * Get a single dynamic snippet for a particular service.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.snippet_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.snippet_id - Alphanumeric string identifying a VCL Snippet.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SnippetResponse} and HTTP response
      */
     getSnippetDynamicWithHttpInfo(options = {}) {
@@ -272,8 +272,8 @@ export default class SnippetApi {
     /**
      * Get a single dynamic snippet for a particular service.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.snippet_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.snippet_id - Alphanumeric string identifying a VCL Snippet.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SnippetResponse}
      */
     getSnippetDynamic(options = {}) {
@@ -286,8 +286,8 @@ export default class SnippetApi {
     /**
      * List all snippets for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/SnippetResponse>} and HTTP response
      */
     listSnippetsWithHttpInfo(options = {}) {
@@ -326,8 +326,8 @@ export default class SnippetApi {
     /**
      * List all snippets for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/SnippetResponse>}
      */
     listSnippets(options = {}) {
@@ -340,9 +340,9 @@ export default class SnippetApi {
     /**
      * Update a specific snippet for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.snippet_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.snippet_name - The name for the snippet.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SnippetResponse} and HTTP response
      */
     updateSnippetWithHttpInfo(options = {}) {
@@ -386,9 +386,9 @@ export default class SnippetApi {
     /**
      * Update a specific snippet for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.snippet_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.snippet_name - The name for the snippet.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SnippetResponse}
      */
     updateSnippet(options = {}) {
@@ -401,8 +401,8 @@ export default class SnippetApi {
     /**
      * Update a dynamic snippet for a particular service.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.snippet_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.snippet_id - Alphanumeric string identifying a VCL Snippet.
      * @param {String} [options.name] - The name for the snippet.
      * @param {module:model/String} [options.dynamic] - Sets the snippet version.
      * @param {module:model/String} [options.type] - The location in generated VCL where the snippet should be placed.
@@ -451,8 +451,8 @@ export default class SnippetApi {
     /**
      * Update a dynamic snippet for a particular service.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.snippet_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.snippet_id - Alphanumeric string identifying a VCL Snippet.
      * @param {String} [options.name] - The name for the snippet.
      * @param {module:model/String} [options.dynamic] - Sets the snippet version.
      * @param {module:model/String} [options.type] - The location in generated VCL where the snippet should be placed.

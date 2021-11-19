@@ -1,6 +1,5 @@
 # Fastly.EventsApi
 
-
 ```javascript
 const apiInstance = new Fastly.EventsApi();
 ```
@@ -10,7 +9,6 @@ Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**getEvent**](EventsApi.md#getEvent) | **GET** /events/{event_id} | Get an event
 [**listEvents**](EventsApi.md#listEvents) | **GET** /events | List events
-
 
 
 ## `getEvent`
@@ -41,7 +39,7 @@ apiInstance.getEvent(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**event_id** | **String** |  |
+**event_id** | **String** | Alphanumeric string identifying an event. |
 
 ### Return type
 

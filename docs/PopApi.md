@@ -1,6 +1,5 @@
 # Fastly.PopApi
 
-
 ```javascript
 const apiInstance = new Fastly.PopApi();
 ```
@@ -9,7 +8,6 @@ const apiInstance = new Fastly.PopApi();
 Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**listPops**](PopApi.md#listPops) | **GET** /datacenters | List Fastly POPs
-
 
 
 ## `listPops`

@@ -88,7 +88,7 @@ export default class ServiceAuthorizationsApi {
     /**
      * Delete service authorization.
      * @param {Object} options
-     * @param {String} options.service_authorization_id
+     * @param {String} options.service_authorization_id - Alphanumeric string identifying a service authorization.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     deleteServiceAuthorizationWithHttpInfo(options = {}) {
@@ -122,7 +122,7 @@ export default class ServiceAuthorizationsApi {
     /**
      * Delete service authorization.
      * @param {Object} options
-     * @param {String} options.service_authorization_id
+     * @param {String} options.service_authorization_id - Alphanumeric string identifying a service authorization.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deleteServiceAuthorization(options = {}) {
@@ -223,7 +223,7 @@ export default class ServiceAuthorizationsApi {
     /**
      * Show service authorization.
      * @param {Object} options
-     * @param {String} options.service_authorization_id
+     * @param {String} options.service_authorization_id - Alphanumeric string identifying a service authorization.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceAuthorizationResponse} and HTTP response
      */
     showServiceAuthorizationWithHttpInfo(options = {}) {
@@ -257,7 +257,7 @@ export default class ServiceAuthorizationsApi {
     /**
      * Show service authorization.
      * @param {Object} options
-     * @param {String} options.service_authorization_id
+     * @param {String} options.service_authorization_id - Alphanumeric string identifying a service authorization.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceAuthorizationResponse}
      */
     showServiceAuthorization(options = {}) {
@@ -270,7 +270,7 @@ export default class ServiceAuthorizationsApi {
     /**
      * Update service authorization.
      * @param {Object} options
-     * @param {String} options.service_authorization_id
+     * @param {String} options.service_authorization_id - Alphanumeric string identifying a service authorization.
      * @param {module:model/ServiceAuthorization} [options.service_authorization]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceAuthorizationResponse} and HTTP response
      */
@@ -305,7 +305,7 @@ export default class ServiceAuthorizationsApi {
     /**
      * Update service authorization.
      * @param {Object} options
-     * @param {String} options.service_authorization_id
+     * @param {String} options.service_authorization_id - Alphanumeric string identifying a service authorization.
      * @param {module:model/ServiceAuthorization} [options.service_authorization]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceAuthorizationResponse}
      */

@@ -278,8 +278,6 @@ Class | Method | Description
 *Fastly.LoggingSyslogApi* | [**getLogSyslog**](docs/LoggingSyslogApi.md#getLogSyslog) | Get a syslog log endpoint
 *Fastly.LoggingSyslogApi* | [**listLogSyslog**](docs/LoggingSyslogApi.md#listLogSyslog) | List Syslog log endpoints
 *Fastly.LoggingSyslogApi* | [**updateLogSyslog**](docs/LoggingSyslogApi.md#updateLogSyslog) | Update a syslog log endpoint
-*Fastly.PackageApi* | [**getPackage**](docs/PackageApi.md#getPackage) | Get details of the service&#39;s Compute@Edge package.
-*Fastly.PackageApi* | [**putPackage**](docs/PackageApi.md#putPackage) | Upload a Compute@Edge package.
 *Fastly.PoolApi* | [**createServerPool**](docs/PoolApi.md#createServerPool) | Create a server pool
 *Fastly.PoolApi* | [**deleteServerPool**](docs/PoolApi.md#deleteServerPool) | Delete a server pool
 *Fastly.PoolApi* | [**getServerPool**](docs/PoolApi.md#getServerPool) | Get a server pool
@@ -287,6 +285,10 @@ Class | Method | Description
 *Fastly.PoolApi* | [**updateServerPool**](docs/PoolApi.md#updateServerPool) | Update a server pool
 *Fastly.PopApi* | [**listPops**](docs/PopApi.md#listPops) | List Fastly POPs
 *Fastly.PublicIpListApi* | [**listFastlyIps**](docs/PublicIpListApi.md#listFastlyIps) | List Fastly&#39;s public IPs
+*Fastly.PurgeApi* | [**bulkPurgeTag**](docs/PurgeApi.md#bulkPurgeTag) | Purge multiple surrogate key tags
+*Fastly.PurgeApi* | [**purgeAll**](docs/PurgeApi.md#purgeAll) | Purge everything from a service
+*Fastly.PurgeApi* | [**purgeSingleUrl**](docs/PurgeApi.md#purgeSingleUrl) | Purge a URL
+*Fastly.PurgeApi* | [**purgeTag**](docs/PurgeApi.md#purgeTag) | Purge by surrogate key tag
 *Fastly.RateLimiterApi* | [**createRateLimiter**](docs/RateLimiterApi.md#createRateLimiter) | Create a rate limiter
 *Fastly.RateLimiterApi* | [**deleteRateLimiter**](docs/RateLimiterApi.md#deleteRateLimiter) | Delete a rate limiter
 *Fastly.RateLimiterApi* | [**getRateLimiter**](docs/RateLimiterApi.md#getRateLimiter) | Get a rate limiter

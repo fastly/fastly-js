@@ -1,6 +1,5 @@
 # Fastly.DictionaryInfoApi
 
-
 ```javascript
 const apiInstance = new Fastly.DictionaryInfoApi();
 ```
@@ -9,7 +8,6 @@ const apiInstance = new Fastly.DictionaryInfoApi();
 Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**getDictionaryInfo**](DictionaryInfoApi.md#getDictionaryInfo) | **GET** /service/{service_id}/version/{version_id}/dictionary/{dictionary_id}/info | Get edge dictionary metadata
-
 
 
 ## `getDictionaryInfo`
@@ -42,9 +40,9 @@ apiInstance.getDictionaryInfo(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**dictionary_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**dictionary_id** | **String** | Alphanumeric string identifying a Dictionary. |
 
 ### Return type
 

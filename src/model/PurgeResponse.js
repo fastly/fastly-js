@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The PackageResponseAllOf model module.
- * @module model/PackageResponseAllOf
+ * The PurgeResponse model module.
+ * @module model/PurgeResponse
  * @version 3.0.0-alpha1
  */
-class PackageResponseAllOf {
+class PurgeResponse {
     /**
-     * Constructs a new <code>PackageResponseAllOf</code>.
-     * @alias module:model/PackageResponseAllOf
+     * Constructs a new <code>PurgeResponse</code>.
+     * @alias module:model/PurgeResponse
      */
     constructor() { 
         
-        PackageResponseAllOf.initialize(this);
+        PurgeResponse.initialize(this);
     }
 
     /**
@@ -37,16 +37,19 @@ class PackageResponseAllOf {
     }
 
     /**
-     * Constructs a <code>PackageResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>PurgeResponse</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/PackageResponseAllOf} obj Optional instance to populate.
-     * @return {module:model/PackageResponseAllOf} The populated <code>PackageResponseAllOf</code> instance.
+     * @param {module:model/PurgeResponse} obj Optional instance to populate.
+     * @return {module:model/PurgeResponse} The populated <code>PurgeResponse</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new PackageResponseAllOf();
+            obj = obj || new PurgeResponse();
 
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
@@ -58,15 +61,20 @@ class PackageResponseAllOf {
 }
 
 /**
- * Alphanumeric string identifying the package.
+ * @member {String} status
+ */
+PurgeResponse.prototype['status'] = undefined;
+
+/**
+ * Alphanumeric string identifying a Purging.
  * @member {String} id
  */
-PackageResponseAllOf.prototype['id'] = undefined;
+PurgeResponse.prototype['id'] = undefined;
 
 
 
 
 
 
-export default PackageResponseAllOf;
+export default PurgeResponse;
 

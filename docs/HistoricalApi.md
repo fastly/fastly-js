@@ -1,6 +1,5 @@
 # Fastly.HistoricalApi
 
-
 ```javascript
 const apiInstance = new Fastly.HistoricalApi();
 ```
@@ -17,7 +16,6 @@ Method | Fastly API endpoint | Description
 [**getUsage**](HistoricalApi.md#getUsage) | **GET** /stats/usage | Get usage statistics
 [**getUsageMonth**](HistoricalApi.md#getUsageMonth) | **GET** /stats/usage_by_month | Get month-to-date usage statistics
 [**getUsageService**](HistoricalApi.md#getUsageService) | **GET** /stats/usage_by_service | Get usage statistics per service
-
 
 
 ## `getHistStats`
@@ -177,7 +175,7 @@ apiInstance.getHistStatsService(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
 **from** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
 **to** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
 **by** | **String** | Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [optional] [one of: "hour", "minute", "day"]
@@ -221,7 +219,7 @@ apiInstance.getHistStatsServiceField(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
 **field** | **String** | Name of the stats field. |
 **from** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
 **to** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]

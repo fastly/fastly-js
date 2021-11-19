@@ -88,7 +88,7 @@ export default class TlsSubscriptionsApi {
     /**
      * Destroy a TLS subscription. A subscription cannot be destroyed if there are domains in the TLS enabled state.
      * @param {Object} options
-     * @param {String} options.tls_subscription_id
+     * @param {String} options.tls_subscription_id - Alphanumeric string identifying a TLS subscription.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     deleteTlsSubWithHttpInfo(options = {}) {
@@ -122,7 +122,7 @@ export default class TlsSubscriptionsApi {
     /**
      * Destroy a TLS subscription. A subscription cannot be destroyed if there are domains in the TLS enabled state.
      * @param {Object} options
-     * @param {String} options.tls_subscription_id
+     * @param {String} options.tls_subscription_id - Alphanumeric string identifying a TLS subscription.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deleteTlsSub(options = {}) {
@@ -196,7 +196,7 @@ export default class TlsSubscriptionsApi {
     /**
      * Show a TLS subscription.
      * @param {Object} options
-     * @param {String} options.tls_subscription_id
+     * @param {String} options.tls_subscription_id - Alphanumeric string identifying a TLS subscription.
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsSubscriptionResponse} and HTTP response
      */
@@ -232,7 +232,7 @@ export default class TlsSubscriptionsApi {
     /**
      * Show a TLS subscription.
      * @param {Object} options
-     * @param {String} options.tls_subscription_id
+     * @param {String} options.tls_subscription_id - Alphanumeric string identifying a TLS subscription.
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsSubscriptionResponse}
      */
@@ -307,7 +307,7 @@ export default class TlsSubscriptionsApi {
     /**
      * Change the TLS domains or common name associated with this subscription, or update the TLS configuration for this set of domains.
      * @param {Object} options
-     * @param {String} options.tls_subscription_id
+     * @param {String} options.tls_subscription_id - Alphanumeric string identifying a TLS subscription.
      * @param {Boolean} [options.force] - A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain. 
      * @param {module:model/TlsSubscription} [options.tls_subscription]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsSubscriptionResponse} and HTTP response
@@ -344,7 +344,7 @@ export default class TlsSubscriptionsApi {
     /**
      * Change the TLS domains or common name associated with this subscription, or update the TLS configuration for this set of domains.
      * @param {Object} options
-     * @param {String} options.tls_subscription_id
+     * @param {String} options.tls_subscription_id - Alphanumeric string identifying a TLS subscription.
      * @param {Boolean} [options.force] - A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain. 
      * @param {module:model/TlsSubscription} [options.tls_subscription]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsSubscriptionResponse}

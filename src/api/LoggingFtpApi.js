@@ -41,8 +41,8 @@ export default class LoggingFtpApi {
     /**
      * Create a FTP for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
      * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
@@ -117,8 +117,8 @@ export default class LoggingFtpApi {
     /**
      * Create a FTP for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
      * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
@@ -149,9 +149,9 @@ export default class LoggingFtpApi {
     /**
      * Delete the FTP for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_ftp_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_ftp_name - The name for the real-time logging configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     deleteLogFtpWithHttpInfo(options = {}) {
@@ -195,9 +195,9 @@ export default class LoggingFtpApi {
     /**
      * Delete the FTP for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_ftp_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_ftp_name - The name for the real-time logging configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     deleteLogFtp(options = {}) {
@@ -210,9 +210,9 @@ export default class LoggingFtpApi {
     /**
      * Get the FTP for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_ftp_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_ftp_name - The name for the real-time logging configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingFtpResponse} and HTTP response
      */
     getLogFtpWithHttpInfo(options = {}) {
@@ -256,9 +256,9 @@ export default class LoggingFtpApi {
     /**
      * Get the FTP for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_ftp_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_ftp_name - The name for the real-time logging configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingFtpResponse}
      */
     getLogFtp(options = {}) {
@@ -271,8 +271,8 @@ export default class LoggingFtpApi {
     /**
      * List all of the FTPs for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingFtpResponse>} and HTTP response
      */
     listLogFtpWithHttpInfo(options = {}) {
@@ -311,8 +311,8 @@ export default class LoggingFtpApi {
     /**
      * List all of the FTPs for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingFtpResponse>}
      */
     listLogFtp(options = {}) {
@@ -325,9 +325,9 @@ export default class LoggingFtpApi {
     /**
      * Update the FTP for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_ftp_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_ftp_name - The name for the real-time logging configuration.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
      * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
@@ -407,9 +407,9 @@ export default class LoggingFtpApi {
     /**
      * Update the FTP for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_ftp_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_ftp_name - The name for the real-time logging configuration.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
      * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  

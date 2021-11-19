@@ -41,8 +41,8 @@ export default class VclApi {
     /**
      * Upload a VCL for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.content] - The VCL code to be included.
      * @param {Boolean} [options.main] - Set to `true` when this is the main VCL, otherwise `false`.
      * @param {String} [options.name] - The name of this VCL.
@@ -87,8 +87,8 @@ export default class VclApi {
     /**
      * Upload a VCL for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.content] - The VCL code to be included.
      * @param {Boolean} [options.main] - Set to `true` when this is the main VCL, otherwise `false`.
      * @param {String} [options.name] - The name of this VCL.
@@ -104,9 +104,9 @@ export default class VclApi {
     /**
      * Delete the uploaded VCL for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.vcl_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.vcl_name - The name of this VCL.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     deleteCustomVclWithHttpInfo(options = {}) {
@@ -150,9 +150,9 @@ export default class VclApi {
     /**
      * Delete the uploaded VCL for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.vcl_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.vcl_name - The name of this VCL.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     deleteCustomVcl(options = {}) {
@@ -165,9 +165,9 @@ export default class VclApi {
     /**
      * Get the uploaded VCL for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.vcl_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.vcl_name - The name of this VCL.
      * @param {String} [options.no_content='0'] - Omit VCL content.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VclResponse} and HTTP response
      */
@@ -213,9 +213,9 @@ export default class VclApi {
     /**
      * Get the uploaded VCL for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.vcl_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.vcl_name - The name of this VCL.
      * @param {String} [options.no_content='0'] - Omit VCL content.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VclResponse}
      */
@@ -229,8 +229,8 @@ export default class VclApi {
     /**
      * Return boilerplate VCL with the service's TTL from the [settings](/reference/api/vcl-services/settings/).
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
      */
     getCustomVclBoilerplateWithHttpInfo(options = {}) {
@@ -269,8 +269,8 @@ export default class VclApi {
     /**
      * Return boilerplate VCL with the service's TTL from the [settings](/reference/api/vcl-services/settings/).
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
      */
     getCustomVclBoilerplate(options = {}) {
@@ -283,8 +283,8 @@ export default class VclApi {
     /**
      * Display the generated VCL for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VclResponse} and HTTP response
      */
     getCustomVclGeneratedWithHttpInfo(options = {}) {
@@ -323,8 +323,8 @@ export default class VclApi {
     /**
      * Display the generated VCL for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VclResponse}
      */
     getCustomVclGenerated(options = {}) {
@@ -337,8 +337,8 @@ export default class VclApi {
     /**
      * Display the content of generated VCL with HTML syntax highlighting. Include line numbers by sending `lineno=true` as a request parameter.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     getCustomVclGeneratedHighlightedWithHttpInfo(options = {}) {
@@ -377,8 +377,8 @@ export default class VclApi {
     /**
      * Display the content of generated VCL with HTML syntax highlighting. Include line numbers by sending `lineno=true` as a request parameter.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     getCustomVclGeneratedHighlighted(options = {}) {
@@ -391,9 +391,9 @@ export default class VclApi {
     /**
      * Get the uploaded VCL for a particular service and version with HTML syntax highlighting. Include line numbers by sending `lineno=true` as a request parameter.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.vcl_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.vcl_name - The name of this VCL.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     getCustomVclHighlightedWithHttpInfo(options = {}) {
@@ -437,9 +437,9 @@ export default class VclApi {
     /**
      * Get the uploaded VCL for a particular service and version with HTML syntax highlighting. Include line numbers by sending `lineno=true` as a request parameter.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.vcl_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.vcl_name - The name of this VCL.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     getCustomVclHighlighted(options = {}) {
@@ -452,9 +452,9 @@ export default class VclApi {
     /**
      * Download the specified VCL.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.vcl_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.vcl_name - The name of this VCL.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link String} and HTTP response
      */
     getCustomVclRawWithHttpInfo(options = {}) {
@@ -498,9 +498,9 @@ export default class VclApi {
     /**
      * Download the specified VCL.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.vcl_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.vcl_name - The name of this VCL.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link String}
      */
     getCustomVclRaw(options = {}) {
@@ -513,8 +513,8 @@ export default class VclApi {
     /**
      * List the uploaded VCLs for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/VclResponse>} and HTTP response
      */
     listCustomVclWithHttpInfo(options = {}) {
@@ -553,8 +553,8 @@ export default class VclApi {
     /**
      * List the uploaded VCLs for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/VclResponse>}
      */
     listCustomVcl(options = {}) {
@@ -567,9 +567,9 @@ export default class VclApi {
     /**
      * Set the specified VCL as the main.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.vcl_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.vcl_name - The name of this VCL.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VclResponse} and HTTP response
      */
     setCustomVclMainWithHttpInfo(options = {}) {
@@ -613,9 +613,9 @@ export default class VclApi {
     /**
      * Set the specified VCL as the main.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.vcl_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.vcl_name - The name of this VCL.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VclResponse}
      */
     setCustomVclMain(options = {}) {
@@ -628,9 +628,9 @@ export default class VclApi {
     /**
      * Update the uploaded VCL for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.vcl_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.vcl_name - The name of this VCL.
      * @param {String} [options.content] - The VCL code to be included.
      * @param {Boolean} [options.main] - Set to `true` when this is the main VCL, otherwise `false`.
      * @param {String} [options.name] - The name of this VCL.
@@ -680,9 +680,9 @@ export default class VclApi {
     /**
      * Update the uploaded VCL for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.vcl_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.vcl_name - The name of this VCL.
      * @param {String} [options.content] - The VCL code to be included.
      * @param {Boolean} [options.main] - Set to `true` when this is the main VCL, otherwise `false`.
      * @param {String} [options.name] - The name of this VCL.

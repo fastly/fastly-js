@@ -106,7 +106,7 @@ export default class UserApi {
     /**
      * Delete a user.
      * @param {Object} options
-     * @param {String} options.user_id
+     * @param {String} options.user_id - Alphanumeric string identifying the user.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     deleteUserWithHttpInfo(options = {}) {
@@ -140,7 +140,7 @@ export default class UserApi {
     /**
      * Delete a user.
      * @param {Object} options
-     * @param {String} options.user_id
+     * @param {String} options.user_id - Alphanumeric string identifying the user.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     deleteUser(options = {}) {
@@ -193,7 +193,7 @@ export default class UserApi {
     /**
      * Get a specific user.
      * @param {Object} options
-     * @param {String} options.user_id
+     * @param {String} options.user_id - Alphanumeric string identifying the user.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResponse} and HTTP response
      */
     getUserWithHttpInfo(options = {}) {
@@ -227,7 +227,7 @@ export default class UserApi {
     /**
      * Get a specific user.
      * @param {Object} options
-     * @param {String} options.user_id
+     * @param {String} options.user_id - Alphanumeric string identifying the user.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResponse}
      */
     getUser(options = {}) {
@@ -240,7 +240,7 @@ export default class UserApi {
     /**
      * Requests a password reset for the specified user.
      * @param {Object} options
-     * @param {String} options.user_login
+     * @param {String} options.user_login - The login associated with the user (typically, an email address).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     requestPasswordResetWithHttpInfo(options = {}) {
@@ -274,7 +274,7 @@ export default class UserApi {
     /**
      * Requests a password reset for the specified user.
      * @param {Object} options
-     * @param {String} options.user_login
+     * @param {String} options.user_login - The login associated with the user (typically, an email address).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     requestPasswordReset(options = {}) {
@@ -287,7 +287,7 @@ export default class UserApi {
     /**
      * Update a user. Only users with the role of `superuser` can make changes to other users on the account. Non-superusers may use this endpoint to make changes to their own account. Modifications to `login` email require a valid password in the request body. Two-factor attributes are not editable via this endpoint.
      * @param {Object} options
-     * @param {String} options.user_id
+     * @param {String} options.user_id - Alphanumeric string identifying the user.
      * @param {String} [options.login] - The login associated with the user (typically, an email address).
      * @param {String} [options.name] - The real life name of the user.
      * @param {Boolean} [options.limit_services] - Indicates that the user has limited access to the customer's services.
@@ -337,7 +337,7 @@ export default class UserApi {
     /**
      * Update a user. Only users with the role of `superuser` can make changes to other users on the account. Non-superusers may use this endpoint to make changes to their own account. Modifications to `login` email require a valid password in the request body. Two-factor attributes are not editable via this endpoint.
      * @param {Object} options
-     * @param {String} options.user_id
+     * @param {String} options.user_id - Alphanumeric string identifying the user.
      * @param {String} [options.login] - The login associated with the user (typically, an email address).
      * @param {String} [options.name] - The real life name of the user.
      * @param {Boolean} [options.limit_services] - Indicates that the user has limited access to the customer's services.

@@ -1,6 +1,5 @@
 # Fastly.DomainApi
 
-
 ```javascript
 const apiInstance = new Fastly.DomainApi();
 ```
@@ -15,7 +14,6 @@ Method | Fastly API endpoint | Description
 [**getDomain**](DomainApi.md#getDomain) | **GET** /service/{service_id}/version/{version_id}/domain/{domain_name} | Describe a domain
 [**listDomains**](DomainApi.md#listDomains) | **GET** /service/{service_id}/version/{version_id}/domain | List domains
 [**updateDomain**](DomainApi.md#updateDomain) | **PUT** /service/{service_id}/version/{version_id}/domain/{domain_name} | Update a domain
-
 
 
 ## `checkDomain`
@@ -48,9 +46,9 @@ apiInstance.checkDomain(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**domain_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**domain_name** | **String** | The name of the domain or domains associated with this service. |
 
 ### Return type
 
@@ -86,8 +84,8 @@ apiInstance.checkDomains(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -125,8 +123,8 @@ apiInstance.createDomain(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 **comment** | **String** | A freeform descriptive note. | [optional]
 **name** | **String** | The name of the domain or domains associated with this service. | [optional]
 
@@ -165,9 +163,9 @@ apiInstance.deleteDomain(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**domain_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**domain_name** | **String** | The name of the domain or domains associated with this service. |
 
 ### Return type
 
@@ -204,9 +202,9 @@ apiInstance.getDomain(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**domain_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**domain_name** | **String** | The name of the domain or domains associated with this service. |
 
 ### Return type
 
@@ -242,8 +240,8 @@ apiInstance.listDomains(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -282,9 +280,9 @@ apiInstance.updateDomain(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**domain_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**domain_name** | **String** | The name of the domain or domains associated with this service. |
 **comment** | **String** | A freeform descriptive note. | [optional]
 **name** | **String** | The name of the domain or domains associated with this service. | [optional]
 

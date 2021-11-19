@@ -1,6 +1,5 @@
 # Fastly.WafExclusionsApi
 
-
 ```javascript
 const apiInstance = new Fastly.WafExclusionsApi();
 ```
@@ -13,7 +12,6 @@ Method | Fastly API endpoint | Description
 [**getWafRuleExclusion**](WafExclusionsApi.md#getWafRuleExclusion) | **GET** /waf/firewalls/{firewall_id}/versions/{firewall_version_number}/exclusions/{exclusion_number} | Get a WAF rule exclusion
 [**listWafRuleExclusions**](WafExclusionsApi.md#listWafRuleExclusions) | **GET** /waf/firewalls/{firewall_id}/versions/{firewall_version_number}/exclusions | List WAF rule exclusions
 [**updateWafRuleExclusion**](WafExclusionsApi.md#updateWafRuleExclusion) | **PATCH** /waf/firewalls/{firewall_id}/versions/{firewall_version_number}/exclusions/{exclusion_number} | Update a WAF rule exclusion
-
 
 
 ## `createWafRuleExclusion`
@@ -46,8 +44,8 @@ apiInstance.createWafRuleExclusion(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**firewall_version_number** | **Number** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**firewall_version_number** | **Number** | Integer identifying a WAF firewall version. |
 **waf_exclusion** | [**WafExclusion**](WafExclusion.md) |  | [optional]
 
 ### Return type
@@ -85,9 +83,9 @@ apiInstance.deleteWafRuleExclusion(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**firewall_version_number** | **Number** |  |
-**exclusion_number** | **Number** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**firewall_version_number** | **Number** | Integer identifying a WAF firewall version. |
+**exclusion_number** | **Number** | A numeric ID identifying a WAF exclusion. |
 
 ### Return type
 
@@ -124,9 +122,9 @@ apiInstance.getWafRuleExclusion(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**firewall_version_number** | **Number** |  |
-**exclusion_number** | **Number** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**firewall_version_number** | **Number** | Integer identifying a WAF firewall version. |
+**exclusion_number** | **Number** | A numeric ID identifying a WAF exclusion. |
 
 ### Return type
 
@@ -168,8 +166,8 @@ apiInstance.listWafRuleExclusions(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**firewall_version_number** | **Number** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**firewall_version_number** | **Number** | Integer identifying a WAF firewall version. |
 **filter_exclusion_type** | **String** | Filters the results based on this exclusion type. | [optional] [one of: "rule", "variable", "waf"]
 **filter_name** | **String** | Filters the results based on name. | [optional]
 **filter_waf_rules_modsec_rule_id** | **Number** | Filters the results based on this ModSecurity rule ID. | [optional]
@@ -213,9 +211,9 @@ apiInstance.updateWafRuleExclusion(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**firewall_version_number** | **Number** |  |
-**exclusion_number** | **Number** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**firewall_version_number** | **Number** | Integer identifying a WAF firewall version. |
+**exclusion_number** | **Number** | A numeric ID identifying a WAF exclusion. |
 **waf_exclusion** | [**WafExclusion**](WafExclusion.md) |  | [optional]
 
 ### Return type

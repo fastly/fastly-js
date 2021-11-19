@@ -1,6 +1,5 @@
 # Fastly.VclApi
 
-
 ```javascript
 const apiInstance = new Fastly.VclApi();
 ```
@@ -19,7 +18,6 @@ Method | Fastly API endpoint | Description
 [**listCustomVcl**](VclApi.md#listCustomVcl) | **GET** /service/{service_id}/version/{version_id}/vcl | List custom VCL files
 [**setCustomVclMain**](VclApi.md#setCustomVclMain) | **PUT** /service/{service_id}/version/{version_id}/vcl/{vcl_name}/main | Set a custom VCL file as main
 [**updateCustomVcl**](VclApi.md#updateCustomVcl) | **PUT** /service/{service_id}/version/{version_id}/vcl/{vcl_name} | Update a custom VCL file
-
 
 
 ## `createCustomVcl`
@@ -54,8 +52,8 @@ apiInstance.createCustomVcl(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 **content** | **String** | The VCL code to be included. | [optional]
 **main** | **Boolean** | Set to `true` when this is the main VCL, otherwise `false`. | [optional]
 **name** | **String** | The name of this VCL. | [optional]
@@ -95,9 +93,9 @@ apiInstance.deleteCustomVcl(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**vcl_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**vcl_name** | **String** | The name of this VCL. |
 
 ### Return type
 
@@ -135,9 +133,9 @@ apiInstance.getCustomVcl(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**vcl_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**vcl_name** | **String** | The name of this VCL. |
 **no_content** | **String** | Omit VCL content. | [optional] [defaults to '0']
 
 ### Return type
@@ -174,8 +172,8 @@ apiInstance.getCustomVclBoilerplate(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -211,8 +209,8 @@ apiInstance.getCustomVclGenerated(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -248,8 +246,8 @@ apiInstance.getCustomVclGeneratedHighlighted(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -286,9 +284,9 @@ apiInstance.getCustomVclHighlighted(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**vcl_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**vcl_name** | **String** | The name of this VCL. |
 
 ### Return type
 
@@ -325,9 +323,9 @@ apiInstance.getCustomVclRaw(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**vcl_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**vcl_name** | **String** | The name of this VCL. |
 
 ### Return type
 
@@ -363,8 +361,8 @@ apiInstance.listCustomVcl(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -401,9 +399,9 @@ apiInstance.setCustomVclMain(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**vcl_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**vcl_name** | **String** | The name of this VCL. |
 
 ### Return type
 
@@ -443,9 +441,9 @@ apiInstance.updateCustomVcl(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**vcl_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**vcl_name** | **String** | The name of this VCL. |
 **content** | **String** | The VCL code to be included. | [optional]
 **main** | **Boolean** | Set to `true` when this is the main VCL, otherwise `false`. | [optional]
 **name** | **String** | The name of this VCL. | [optional]

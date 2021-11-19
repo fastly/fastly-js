@@ -1,6 +1,5 @@
 # Fastly.ServiceApi
 
-
 ```javascript
 const apiInstance = new Fastly.ServiceApi();
 ```
@@ -16,7 +15,6 @@ Method | Fastly API endpoint | Description
 [**listServices**](ServiceApi.md#listServices) | **GET** /service | List services
 [**searchService**](ServiceApi.md#searchService) | **GET** /service/search | Search for a service by name
 [**updateService**](ServiceApi.md#updateService) | **PUT** /service/{service_id} | Update a service
-
 
 
 ## `createService`
@@ -88,7 +86,7 @@ apiInstance.deleteService(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
 
 ### Return type
 
@@ -123,7 +121,7 @@ apiInstance.getService(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
 
 ### Return type
 
@@ -158,7 +156,7 @@ apiInstance.getServiceDetail(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
 
 ### Return type
 
@@ -193,7 +191,7 @@ apiInstance.listServiceDomains(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
 
 ### Return type
 
@@ -269,7 +267,7 @@ apiInstance.searchService(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**name** | **String** |  |
+**name** | **String** | The name of the service. |
 
 ### Return type
 
@@ -307,7 +305,7 @@ apiInstance.updateService(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
 **comment** | **String** | A freeform descriptive note. | [optional]
 **name** | **String** | The name of the service. | [optional]
 **customer_id** | **String** | Alphanumeric string identifying the customer. | [optional]

@@ -1,6 +1,5 @@
 # Fastly.StarApi
 
-
 ```javascript
 const apiInstance = new Fastly.StarApi();
 ```
@@ -12,7 +11,6 @@ Method | Fastly API endpoint | Description
 [**deleteServiceStar**](StarApi.md#deleteServiceStar) | **DELETE** /stars/{star_id} | Delete a star
 [**getServiceStar**](StarApi.md#getServiceStar) | **GET** /stars/{star_id} | Get a star
 [**listServiceStars**](StarApi.md#listServiceStars) | **GET** /stars | List stars
-
 
 
 ## `createServiceStar`
@@ -78,7 +76,7 @@ apiInstance.deleteServiceStar(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**star_id** | **String** |  |
+**star_id** | **String** | Alphanumeric string identifying a star. |
 
 ### Return type
 
@@ -113,7 +111,7 @@ apiInstance.getServiceStar(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**star_id** | **String** |  |
+**star_id** | **String** | Alphanumeric string identifying a star. |
 
 ### Return type
 

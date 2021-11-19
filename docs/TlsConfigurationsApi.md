@@ -1,6 +1,5 @@
 # Fastly.TlsConfigurationsApi
 
-
 ```javascript
 const apiInstance = new Fastly.TlsConfigurationsApi();
 ```
@@ -11,7 +10,6 @@ Method | Fastly API endpoint | Description
 [**getTlsConfig**](TlsConfigurationsApi.md#getTlsConfig) | **GET** /tls/configurations/{tls_configuration_id} | Get a TLS configuration
 [**listTlsConfigs**](TlsConfigurationsApi.md#listTlsConfigs) | **GET** /tls/configurations | List TLS configurations
 [**updateTlsConfig**](TlsConfigurationsApi.md#updateTlsConfig) | **PATCH** /tls/configurations/{tls_configuration_id} | Update a TLS configuration
-
 
 
 ## `getTlsConfig`
@@ -43,7 +41,7 @@ apiInstance.getTlsConfig(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_configuration_id** | **String** |  |
+**tls_configuration_id** | **String** | Alphanumeric string identifying a TLS configuration. |
 **include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: `dns_records`.  | [optional]
 
 ### Return type
@@ -121,7 +119,7 @@ apiInstance.updateTlsConfig(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_configuration_id** | **String** |  |
+**tls_configuration_id** | **String** | Alphanumeric string identifying a TLS configuration. |
 **tls_configuration** | [**TlsConfiguration**](TlsConfiguration.md) |  | [optional]
 
 ### Return type

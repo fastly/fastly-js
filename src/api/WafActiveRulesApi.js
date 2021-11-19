@@ -45,8 +45,8 @@ export default class WafActiveRulesApi {
     /**
      * Delete many active rules on a particular firewall version using the active rule ID. Limited to 500 rules per request.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.version_id
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {Object} [options.body]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -86,8 +86,8 @@ export default class WafActiveRulesApi {
     /**
      * Delete many active rules on a particular firewall version using the active rule ID. Limited to 500 rules per request.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.version_id
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {Object} [options.body]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -101,8 +101,8 @@ export default class WafActiveRulesApi {
     /**
      * Bulk update all active rules on a [firewall version](https://developer.fastly.com/reference/api/waf/firewall-version/). This endpoint will not add new active rules, only update existing active rules.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.version_id
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {module:model/WafActiveRuleData} [options.body]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -142,8 +142,8 @@ export default class WafActiveRulesApi {
     /**
      * Bulk update all active rules on a [firewall version](https://developer.fastly.com/reference/api/waf/firewall-version/). This endpoint will not add new active rules, only update existing active rules.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.version_id
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {module:model/WafActiveRuleData} [options.body]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -157,8 +157,8 @@ export default class WafActiveRulesApi {
     /**
      * Create an active rule for a particular firewall version.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.version_id
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {module:model/WafActiveRule} [options.waf_active_rule]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafActiveRuleCreationResponse} and HTTP response
      */
@@ -198,8 +198,8 @@ export default class WafActiveRulesApi {
     /**
      * Create an active rule for a particular firewall version.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.version_id
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {module:model/WafActiveRule} [options.waf_active_rule]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafActiveRuleCreationResponse}
      */
@@ -213,9 +213,9 @@ export default class WafActiveRulesApi {
     /**
      * Create active rules by tag. This endpoint will create active rules using the latest revision available for each rule.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.version_id
-     * @param {String} options.waf_tag_name
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.waf_tag_name - Name of the tag.
      * @param {module:model/WafActiveRule} [options.waf_active_rule]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
@@ -260,9 +260,9 @@ export default class WafActiveRulesApi {
     /**
      * Create active rules by tag. This endpoint will create active rules using the latest revision available for each rule.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.version_id
-     * @param {String} options.waf_tag_name
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.waf_tag_name - Name of the tag.
      * @param {module:model/WafActiveRule} [options.waf_active_rule]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
@@ -276,9 +276,9 @@ export default class WafActiveRulesApi {
     /**
      * Delete an active rule for a particular firewall version.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.version_id
-     * @param {String} options.waf_rule_id
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.waf_rule_id - Alphanumeric string identifying a WAF rule.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     deleteWafActiveRuleWithHttpInfo(options = {}) {
@@ -322,9 +322,9 @@ export default class WafActiveRulesApi {
     /**
      * Delete an active rule for a particular firewall version.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.version_id
-     * @param {String} options.waf_rule_id
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.waf_rule_id - Alphanumeric string identifying a WAF rule.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deleteWafActiveRule(options = {}) {
@@ -337,9 +337,9 @@ export default class WafActiveRulesApi {
     /**
      * Get a specific active rule object. Includes details of the rule revision associated with the active rule object by default.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.version_id
-     * @param {String} options.waf_rule_id
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.waf_rule_id - Alphanumeric string identifying a WAF rule.
      * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_rule_revision` and `waf_firewall_version`. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafActiveRuleResponse} and HTTP response
      */
@@ -385,9 +385,9 @@ export default class WafActiveRulesApi {
     /**
      * Get a specific active rule object. Includes details of the rule revision associated with the active rule object by default.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.version_id
-     * @param {String} options.waf_rule_id
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.waf_rule_id - Alphanumeric string identifying a WAF rule.
      * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_rule_revision` and `waf_firewall_version`. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafActiveRuleResponse}
      */
@@ -401,8 +401,8 @@ export default class WafActiveRulesApi {
     /**
      * List all active rules for a particular firewall version.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.version_id
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.filter_status] - Limit results to active rules with the specified status.
      * @param {String} [options.filter_waf_rule_revision_message] - Limit results to active rules with the specified message.
      * @param {String} [options.filter_waf_rule_revision_modsec_rule_id] - Limit results to active rules that represent the specified ModSecurity modsec_rule_id.
@@ -455,8 +455,8 @@ export default class WafActiveRulesApi {
     /**
      * List all active rules for a particular firewall version.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.version_id
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.filter_status] - Limit results to active rules with the specified status.
      * @param {String} [options.filter_waf_rule_revision_message] - Limit results to active rules with the specified message.
      * @param {String} [options.filter_waf_rule_revision_modsec_rule_id] - Limit results to active rules that represent the specified ModSecurity modsec_rule_id.
@@ -476,9 +476,9 @@ export default class WafActiveRulesApi {
     /**
      * Update an active rule's status for a particular firewall version.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.version_id
-     * @param {String} options.waf_rule_id
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.waf_rule_id - Alphanumeric string identifying a WAF rule.
      * @param {module:model/WafActiveRule} [options.waf_active_rule]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafActiveRuleResponse} and HTTP response
      */
@@ -523,9 +523,9 @@ export default class WafActiveRulesApi {
     /**
      * Update an active rule's status for a particular firewall version.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.version_id
-     * @param {String} options.waf_rule_id
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.waf_rule_id - Alphanumeric string identifying a WAF rule.
      * @param {module:model/WafActiveRule} [options.waf_active_rule]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafActiveRuleResponse}
      */

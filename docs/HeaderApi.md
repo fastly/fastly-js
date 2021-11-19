@@ -1,6 +1,5 @@
 # Fastly.HeaderApi
 
-
 ```javascript
 const apiInstance = new Fastly.HeaderApi();
 ```
@@ -13,7 +12,6 @@ Method | Fastly API endpoint | Description
 [**getHeaderObject**](HeaderApi.md#getHeaderObject) | **GET** /service/{service_id}/version/{version_id}/header/{header_name} | Get a Header object
 [**listHeaderObjects**](HeaderApi.md#listHeaderObjects) | **GET** /service/{service_id}/version/{version_id}/header | List Header objects
 [**updateHeaderObject**](HeaderApi.md#updateHeaderObject) | **PUT** /service/{service_id}/version/{version_id}/header/{header_name} | Update a Header object
-
 
 
 ## `createHeaderObject`
@@ -57,8 +55,8 @@ apiInstance.createHeaderObject(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 **action** | **String** | Accepts a string value. | [optional] [one of: "set", "append", "delete", "regex", "regex_repeat"]
 **cache_condition** | **String** | Name of the cache condition controlling when this configuration applies. | [optional]
 **dst** | **String** | Header to set. | [optional]
@@ -107,9 +105,9 @@ apiInstance.deleteHeaderObject(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**header_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**header_name** | **String** | A handle to refer to this Header object. |
 
 ### Return type
 
@@ -146,9 +144,9 @@ apiInstance.getHeaderObject(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**header_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**header_name** | **String** | A handle to refer to this Header object. |
 
 ### Return type
 
@@ -184,8 +182,8 @@ apiInstance.listHeaderObjects(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -234,9 +232,9 @@ apiInstance.updateHeaderObject(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**header_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**header_name** | **String** | A handle to refer to this Header object. |
 **action** | **String** | Accepts a string value. | [optional] [one of: "set", "append", "delete", "regex", "regex_repeat"]
 **cache_condition** | **String** | Name of the cache condition controlling when this configuration applies. | [optional]
 **dst** | **String** | Header to set. | [optional]

@@ -1,6 +1,5 @@
 # Fastly.BillingAddressApi
 
-
 ```javascript
 const apiInstance = new Fastly.BillingAddressApi();
 ```
@@ -12,7 +11,6 @@ Method | Fastly API endpoint | Description
 [**deleteBillingAddr**](BillingAddressApi.md#deleteBillingAddr) | **DELETE** /customer/{customer_id}/billing_address | Delete a billing address
 [**getBillingAddr**](BillingAddressApi.md#getBillingAddr) | **GET** /customer/{customer_id}/billing_address | Get a billing address
 [**updateBillingAddr**](BillingAddressApi.md#updateBillingAddr) | **PATCH** /customer/{customer_id}/billing_address | Update a billing address
-
 
 
 ## `addBillingAddr`
@@ -44,7 +42,7 @@ apiInstance.addBillingAddr(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**customer_id** | **String** |  |
+**customer_id** | **String** | Alphanumeric string identifying the customer. |
 **inline_object1** | [**InlineObject1**](InlineObject1.md) |  | [optional]
 
 ### Return type
@@ -80,7 +78,7 @@ apiInstance.deleteBillingAddr(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**customer_id** | **String** |  |
+**customer_id** | **String** | Alphanumeric string identifying the customer. |
 
 ### Return type
 
@@ -115,7 +113,7 @@ apiInstance.getBillingAddr(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**customer_id** | **String** |  |
+**customer_id** | **String** | Alphanumeric string identifying the customer. |
 
 ### Return type
 
@@ -151,7 +149,7 @@ apiInstance.updateBillingAddr(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**customer_id** | **String** |  |
+**customer_id** | **String** | Alphanumeric string identifying the customer. |
 **inline_object2** | [**InlineObject2**](InlineObject2.md) |  | [optional]
 
 ### Return type

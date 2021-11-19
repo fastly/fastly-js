@@ -1,6 +1,5 @@
 # Fastly.ContentApi
 
-
 ```javascript
 const apiInstance = new Fastly.ContentApi();
 ```
@@ -9,7 +8,6 @@ const apiInstance = new Fastly.ContentApi();
 Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**contentCheck**](ContentApi.md#contentCheck) | **GET** /content/edge_check | Check status of content in each data center cache
-
 
 
 ## `contentCheck`

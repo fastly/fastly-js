@@ -12,21 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import PackageMetadata from './PackageMetadata';
 
 /**
- * The Package model module.
- * @module model/Package
+ * The PurgeKeys model module.
+ * @module model/PurgeKeys
  * @version 3.0.0-alpha1
  */
-class Package {
+class PurgeKeys {
     /**
-     * Constructs a new <code>Package</code>.
-     * @alias module:model/Package
+     * Constructs a new <code>PurgeKeys</code>.
+     * Purge multiple surrogate key tags using a JSON POST body. Not required if the &#x60;Surrogate-Key&#x60; header is specified.
+     * @alias module:model/PurgeKeys
      */
     constructor() { 
         
-        Package.initialize(this);
+        PurgeKeys.initialize(this);
     }
 
     /**
@@ -38,18 +38,18 @@ class Package {
     }
 
     /**
-     * Constructs a <code>Package</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>PurgeKeys</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/Package} obj Optional instance to populate.
-     * @return {module:model/Package} The populated <code>Package</code> instance.
+     * @param {module:model/PurgeKeys} obj Optional instance to populate.
+     * @return {module:model/PurgeKeys} The populated <code>PurgeKeys</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new Package();
+            obj = obj || new PurgeKeys();
 
-            if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = PackageMetadata.constructFromObject(data['metadata']);
+            if (data.hasOwnProperty('surrogate_keys')) {
+                obj['surrogate_keys'] = ApiClient.convertToType(data['surrogate_keys'], ['String']);
             }
         }
         return obj;
@@ -59,14 +59,14 @@ class Package {
 }
 
 /**
- * @member {module:model/PackageMetadata} metadata
+ * @member {Array.<String>} surrogate_keys
  */
-Package.prototype['metadata'] = undefined;
+PurgeKeys.prototype['surrogate_keys'] = undefined;
 
 
 
 
 
 
-export default Package;
+export default PurgeKeys;
 

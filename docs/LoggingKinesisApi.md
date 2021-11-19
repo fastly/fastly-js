@@ -1,6 +1,5 @@
 # Fastly.LoggingKinesisApi
 
-
 ```javascript
 const apiInstance = new Fastly.LoggingKinesisApi();
 ```
@@ -13,7 +12,6 @@ Method | Fastly API endpoint | Description
 [**getLogKinesis**](LoggingKinesisApi.md#getLogKinesis) | **GET** /service/{service_id}/version/{version_id}/logging/kinesis/{logging_kinesis_name} | Get an Amazon Kinesis log endpoint
 [**listLogKinesis**](LoggingKinesisApi.md#listLogKinesis) | **GET** /service/{service_id}/version/{version_id}/logging/kinesis | List Amazon Kinesis log endpoints
 [**updateLogKinesis**](LoggingKinesisApi.md#updateLogKinesis) | **PUT** /service/{service_id}/version/{version_id}/logging/kinesis/{logging_kinesis_name} | Update the Amazon Kinesis log endpoint
-
 
 
 ## `createLogKinesis`
@@ -54,8 +52,8 @@ apiInstance.createLogKinesis(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | [**LoggingPlacement**](LoggingPlacement.md) |  | [optional]
 **format_version** | [**LoggingFormatVersion**](LoggingFormatVersion.md) |  | [optional]
@@ -101,9 +99,9 @@ apiInstance.deleteLogKinesis(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**logging_kinesis_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**logging_kinesis_name** | **String** | The name for the real-time logging configuration. |
 
 ### Return type
 
@@ -140,9 +138,9 @@ apiInstance.getLogKinesis(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**logging_kinesis_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**logging_kinesis_name** | **String** | The name for the real-time logging configuration. |
 
 ### Return type
 
@@ -178,8 +176,8 @@ apiInstance.listLogKinesis(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -216,9 +214,9 @@ apiInstance.updateLogKinesis(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**logging_kinesis_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**logging_kinesis_name** | **String** | The name for the real-time logging configuration. |
 
 ### Return type
 

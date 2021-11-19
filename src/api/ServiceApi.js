@@ -96,7 +96,7 @@ export default class ServiceApi {
     /**
      * Delete a service.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     deleteServiceWithHttpInfo(options = {}) {
@@ -130,7 +130,7 @@ export default class ServiceApi {
     /**
      * Delete a service.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     deleteService(options = {}) {
@@ -143,7 +143,7 @@ export default class ServiceApi {
     /**
      * Get a specific service by id.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceResponse} and HTTP response
      */
     getServiceWithHttpInfo(options = {}) {
@@ -177,7 +177,7 @@ export default class ServiceApi {
     /**
      * Get a specific service by id.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceResponse}
      */
     getService(options = {}) {
@@ -190,7 +190,7 @@ export default class ServiceApi {
     /**
      * List detailed information on a specified service.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceDetail} and HTTP response
      */
     getServiceDetailWithHttpInfo(options = {}) {
@@ -224,7 +224,7 @@ export default class ServiceApi {
     /**
      * List detailed information on a specified service.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceDetail}
      */
     getServiceDetail(options = {}) {
@@ -237,7 +237,7 @@ export default class ServiceApi {
     /**
      * List the domains within a service.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DomainResponse>} and HTTP response
      */
     listServiceDomainsWithHttpInfo(options = {}) {
@@ -271,7 +271,7 @@ export default class ServiceApi {
     /**
      * List the domains within a service.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DomainResponse>}
      */
     listServiceDomains(options = {}) {
@@ -336,7 +336,7 @@ export default class ServiceApi {
     /**
      * Get a specific service by name.
      * @param {Object} options
-     * @param {String} options.name
+     * @param {String} options.name - The name of the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceResponse} and HTTP response
      */
     searchServiceWithHttpInfo(options = {}) {
@@ -370,7 +370,7 @@ export default class ServiceApi {
     /**
      * Get a specific service by name.
      * @param {Object} options
-     * @param {String} options.name
+     * @param {String} options.name - The name of the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceResponse}
      */
     searchService(options = {}) {
@@ -383,7 +383,7 @@ export default class ServiceApi {
     /**
      * Update a service.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - The name of the service.
      * @param {String} [options.customer_id] - Alphanumeric string identifying the customer.
@@ -423,7 +423,7 @@ export default class ServiceApi {
     /**
      * Update a service.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - The name of the service.
      * @param {String} [options.customer_id] - Alphanumeric string identifying the customer.

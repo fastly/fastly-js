@@ -1,6 +1,5 @@
 # Fastly.DirectorBackendApi
 
-
 ```javascript
 const apiInstance = new Fastly.DirectorBackendApi();
 ```
@@ -11,7 +10,6 @@ Method | Fastly API endpoint | Description
 [**createDirectorBackend**](DirectorBackendApi.md#createDirectorBackend) | **POST** /service/{service_id}/version/{version_id}/director/{director_name}/backend/{backend_name} | Create a director-backend relationship
 [**deleteDirectorBackend**](DirectorBackendApi.md#deleteDirectorBackend) | **DELETE** /service/{service_id}/version/{version_id}/director/{director_name}/backend/{backend_name} | Delete a director-backend relationship
 [**getDirectorBackend**](DirectorBackendApi.md#getDirectorBackend) | **GET** /service/{service_id}/version/{version_id}/director/{director_name}/backend/{backend_name} | Get a director-backend relationship
-
 
 
 ## `createDirectorBackend`
@@ -45,10 +43,10 @@ apiInstance.createDirectorBackend(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**director_name** | **String** |  |
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**backend_name** | **String** |  |
+**director_name** | **String** | Name for the Director. |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**backend_name** | **String** | The name of the backend. |
 
 ### Return type
 
@@ -86,10 +84,10 @@ apiInstance.deleteDirectorBackend(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**director_name** | **String** |  |
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**backend_name** | **String** |  |
+**director_name** | **String** | Name for the Director. |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**backend_name** | **String** | The name of the backend. |
 
 ### Return type
 
@@ -127,10 +125,10 @@ apiInstance.getDirectorBackend(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**director_name** | **String** |  |
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**backend_name** | **String** |  |
+**director_name** | **String** | Name for the Director. |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**backend_name** | **String** | The name of the backend. |
 
 ### Return type
 

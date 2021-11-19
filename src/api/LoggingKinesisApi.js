@@ -43,8 +43,8 @@ export default class LoggingKinesisApi {
     /**
      * Create an Amazon Kinesis Data Streams logging object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/LoggingPlacement} [options.placement]
      * @param {module:model/LoggingFormatVersion} [options.format_version]
@@ -101,8 +101,8 @@ export default class LoggingKinesisApi {
     /**
      * Create an Amazon Kinesis Data Streams logging object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/LoggingPlacement} [options.placement]
      * @param {module:model/LoggingFormatVersion} [options.format_version]
@@ -124,9 +124,9 @@ export default class LoggingKinesisApi {
     /**
      * Delete an Amazon Kinesis Data Streams logging object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_kinesis_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_kinesis_name - The name for the real-time logging configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     deleteLogKinesisWithHttpInfo(options = {}) {
@@ -170,9 +170,9 @@ export default class LoggingKinesisApi {
     /**
      * Delete an Amazon Kinesis Data Streams logging object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_kinesis_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_kinesis_name - The name for the real-time logging configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     deleteLogKinesis(options = {}) {
@@ -185,9 +185,9 @@ export default class LoggingKinesisApi {
     /**
      * Get the details for an Amazon Kinesis Data Streams logging object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_kinesis_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_kinesis_name - The name for the real-time logging configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingKinesisResponse} and HTTP response
      */
     getLogKinesisWithHttpInfo(options = {}) {
@@ -231,9 +231,9 @@ export default class LoggingKinesisApi {
     /**
      * Get the details for an Amazon Kinesis Data Streams logging object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_kinesis_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_kinesis_name - The name for the real-time logging configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingKinesisResponse}
      */
     getLogKinesis(options = {}) {
@@ -246,8 +246,8 @@ export default class LoggingKinesisApi {
     /**
      * List all of the Amazon Kinesis Data Streams logging objects for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingKinesisResponse>} and HTTP response
      */
     listLogKinesisWithHttpInfo(options = {}) {
@@ -286,8 +286,8 @@ export default class LoggingKinesisApi {
     /**
      * List all of the Amazon Kinesis Data Streams logging objects for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingKinesisResponse>}
      */
     listLogKinesis(options = {}) {
@@ -300,9 +300,9 @@ export default class LoggingKinesisApi {
     /**
      * Update an Amazon Kinesis Data Streams logging object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_kinesis_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_kinesis_name - The name for the real-time logging configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingKinesisResponse} and HTTP response
      */
     updateLogKinesisWithHttpInfo(options = {}) {
@@ -346,9 +346,9 @@ export default class LoggingKinesisApi {
     /**
      * Update an Amazon Kinesis Data Streams logging object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_kinesis_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_kinesis_name - The name for the real-time logging configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingKinesisResponse}
      */
     updateLogKinesis(options = {}) {

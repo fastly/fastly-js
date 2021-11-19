@@ -1,6 +1,5 @@
 # Fastly.TlsCertificatesApi
 
-
 ```javascript
 const apiInstance = new Fastly.TlsCertificatesApi();
 ```
@@ -13,7 +12,6 @@ Method | Fastly API endpoint | Description
 [**getTlsCert**](TlsCertificatesApi.md#getTlsCert) | **GET** /tls/certificates/{tls_certificate_id} | Get a TLS certificate
 [**listTlsCerts**](TlsCertificatesApi.md#listTlsCerts) | **GET** /tls/certificates | List TLS certificates
 [**updateTlsCert**](TlsCertificatesApi.md#updateTlsCert) | **PATCH** /tls/certificates/{tls_certificate_id} | Update a TLS certificate
-
 
 
 ## `createTlsCert`
@@ -79,7 +77,7 @@ apiInstance.deleteTlsCert(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_certificate_id** | **String** |  |
+**tls_certificate_id** | **String** | Alphanumeric string identifying a TLS certificate. |
 
 ### Return type
 
@@ -114,7 +112,7 @@ apiInstance.getTlsCert(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_certificate_id** | **String** |  |
+**tls_certificate_id** | **String** | Alphanumeric string identifying a TLS certificate. |
 
 ### Return type
 
@@ -195,7 +193,7 @@ apiInstance.updateTlsCert(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_certificate_id** | **String** |  |
+**tls_certificate_id** | **String** | Alphanumeric string identifying a TLS certificate. |
 **tls_certificate** | [**TlsCertificate**](TlsCertificate.md) |  | [optional]
 
 ### Return type

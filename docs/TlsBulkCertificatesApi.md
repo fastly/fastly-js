@@ -1,6 +1,5 @@
 # Fastly.TlsBulkCertificatesApi
 
-
 ```javascript
 const apiInstance = new Fastly.TlsBulkCertificatesApi();
 ```
@@ -13,7 +12,6 @@ Method | Fastly API endpoint | Description
 [**listTlsBulkCerts**](TlsBulkCertificatesApi.md#listTlsBulkCerts) | **GET** /tls/bulk/certificates | List certificates
 [**updateBulkTlsCert**](TlsBulkCertificatesApi.md#updateBulkTlsCert) | **PATCH** /tls/bulk/certificates/{certificate_id} | Update a certificate
 [**uploadTlsBulkCert**](TlsBulkCertificatesApi.md#uploadTlsBulkCert) | **POST** /tls/bulk/certificates | Upload a certificate
-
 
 
 ## `deleteBulkTlsCert`
@@ -44,7 +42,7 @@ apiInstance.deleteBulkTlsCert(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**certificate_id** | **String** |  |
+**certificate_id** | **String** | Alphanumeric string identifying a TLS bulk certificate. |
 
 ### Return type
 
@@ -79,7 +77,7 @@ apiInstance.getTlsBulkCert(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**certificate_id** | **String** |  |
+**certificate_id** | **String** | Alphanumeric string identifying a TLS bulk certificate. |
 
 ### Return type
 
@@ -156,7 +154,7 @@ apiInstance.updateBulkTlsCert(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**certificate_id** | **String** |  |
+**certificate_id** | **String** | Alphanumeric string identifying a TLS bulk certificate. |
 **tls_bulk_certificate** | [**TlsBulkCertificate**](TlsBulkCertificate.md) |  | [optional]
 
 ### Return type

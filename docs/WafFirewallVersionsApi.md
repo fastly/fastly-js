@@ -1,6 +1,5 @@
 # Fastly.WafFirewallVersionsApi
 
-
 ```javascript
 const apiInstance = new Fastly.WafFirewallVersionsApi();
 ```
@@ -14,7 +13,6 @@ Method | Fastly API endpoint | Description
 [**getWafFirewallVersion**](WafFirewallVersionsApi.md#getWafFirewallVersion) | **GET** /waf/firewalls/{firewall_id}/versions/{firewall_version_number} | Get a firewall version
 [**listWafFirewallVersions**](WafFirewallVersionsApi.md#listWafFirewallVersions) | **GET** /waf/firewalls/{firewall_id}/versions | List firewall versions
 [**updateWafFirewallVersion**](WafFirewallVersionsApi.md#updateWafFirewallVersion) | **PATCH** /waf/firewalls/{firewall_id}/versions/{firewall_version_number} | Update a firewall version
-
 
 
 ## `cloneWafFirewallVersion`
@@ -46,8 +44,8 @@ apiInstance.cloneWafFirewallVersion(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**firewall_version_number** | **Number** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**firewall_version_number** | **Number** | Integer identifying a WAF firewall version. |
 
 ### Return type
 
@@ -83,7 +81,7 @@ apiInstance.createWafFirewallVersion(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
 **waf_firewall_version** | [**WafFirewallVersion**](WafFirewallVersion.md) |  | [optional]
 
 ### Return type
@@ -120,8 +118,8 @@ apiInstance.deployActivateWafFirewallVersion(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**firewall_version_number** | **Number** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**firewall_version_number** | **Number** | Integer identifying a WAF firewall version. |
 
 ### Return type
 
@@ -158,8 +156,8 @@ apiInstance.getWafFirewallVersion(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**firewall_version_number** | **Number** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**firewall_version_number** | **Number** | Integer identifying a WAF firewall version. |
 **include** | **String** | Include relationships. Optional, comma-separated values. Permitted values: `waf_firewall` and `waf_active_rules`.  | [optional]
 
 ### Return type
@@ -198,7 +196,7 @@ apiInstance.listWafFirewallVersions(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
 **include** | **String** | Include relationships. Optional. | [optional]
 **page_number** | **Number** | Current page. | [optional]
 **page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
@@ -238,8 +236,8 @@ apiInstance.updateWafFirewallVersion(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**firewall_version_number** | **Number** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**firewall_version_number** | **Number** | Integer identifying a WAF firewall version. |
 **waf_firewall_version** | [**WafFirewallVersion**](WafFirewallVersion.md) |  | [optional]
 
 ### Return type

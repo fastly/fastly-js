@@ -85,7 +85,7 @@ export default class TlsCertificatesApi {
     /**
      * Destroy a TLS certificate. TLS certificates already enabled for a domain cannot be destroyed.
      * @param {Object} options
-     * @param {String} options.tls_certificate_id
+     * @param {String} options.tls_certificate_id - Alphanumeric string identifying a TLS certificate.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     deleteTlsCertWithHttpInfo(options = {}) {
@@ -119,7 +119,7 @@ export default class TlsCertificatesApi {
     /**
      * Destroy a TLS certificate. TLS certificates already enabled for a domain cannot be destroyed.
      * @param {Object} options
-     * @param {String} options.tls_certificate_id
+     * @param {String} options.tls_certificate_id - Alphanumeric string identifying a TLS certificate.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deleteTlsCert(options = {}) {
@@ -132,7 +132,7 @@ export default class TlsCertificatesApi {
     /**
      * Show a TLS certificate.
      * @param {Object} options
-     * @param {String} options.tls_certificate_id
+     * @param {String} options.tls_certificate_id - Alphanumeric string identifying a TLS certificate.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsCertificateResponse} and HTTP response
      */
     getTlsCertWithHttpInfo(options = {}) {
@@ -166,7 +166,7 @@ export default class TlsCertificatesApi {
     /**
      * Show a TLS certificate.
      * @param {Object} options
-     * @param {String} options.tls_certificate_id
+     * @param {String} options.tls_certificate_id - Alphanumeric string identifying a TLS certificate.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsCertificateResponse}
      */
     getTlsCert(options = {}) {
@@ -237,7 +237,7 @@ export default class TlsCertificatesApi {
     /**
      * Replace a TLS certificate with a newly reissued TLS certificate, or update a TLS certificate's name. If replacing a TLS certificate, the new TLS certificate must contain all SAN entries as the current TLS certificate. It must either have an exact matching list or contain a superset.
      * @param {Object} options
-     * @param {String} options.tls_certificate_id
+     * @param {String} options.tls_certificate_id - Alphanumeric string identifying a TLS certificate.
      * @param {module:model/TlsCertificate} [options.tls_certificate]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsCertificateResponse} and HTTP response
      */
@@ -272,7 +272,7 @@ export default class TlsCertificatesApi {
     /**
      * Replace a TLS certificate with a newly reissued TLS certificate, or update a TLS certificate's name. If replacing a TLS certificate, the new TLS certificate must contain all SAN entries as the current TLS certificate. It must either have an exact matching list or contain a superset.
      * @param {Object} options
-     * @param {String} options.tls_certificate_id
+     * @param {String} options.tls_certificate_id - Alphanumeric string identifying a TLS certificate.
      * @param {module:model/TlsCertificate} [options.tls_certificate]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsCertificateResponse}
      */

@@ -1,6 +1,5 @@
 # Fastly.PublicIpListApi
 
-
 ```javascript
 const apiInstance = new Fastly.PublicIpListApi();
 ```
@@ -9,7 +8,6 @@ const apiInstance = new Fastly.PublicIpListApi();
 Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**listFastlyIps**](PublicIpListApi.md#listFastlyIps) | **GET** /public-ip-list | List Fastly&#39;s public IPs
-
 
 
 ## `listFastlyIps`

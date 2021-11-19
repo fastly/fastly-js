@@ -1,6 +1,5 @@
 # Fastly.ConditionApi
 
-
 ```javascript
 const apiInstance = new Fastly.ConditionApi();
 ```
@@ -13,7 +12,6 @@ Method | Fastly API endpoint | Description
 [**getCondition**](ConditionApi.md#getCondition) | **GET** /service/{service_id}/version/{version_id}/condition/{condition_name} | Describe a condition
 [**listConditions**](ConditionApi.md#listConditions) | **GET** /service/{service_id}/version/{version_id}/condition | List conditions
 [**updateCondition**](ConditionApi.md#updateCondition) | **PUT** /service/{service_id}/version/{version_id}/condition/{condition_name} | Update a condition
-
 
 
 ## `createCondition`
@@ -50,8 +48,8 @@ apiInstance.createCondition(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 **comment** | **String** | A freeform descriptive note. | [optional]
 **name** | **String** | Name of the condition. Required. | [optional]
 **priority** | **Number** | Priority determines execution order. Lower numbers execute first. | [optional] [defaults to 100]
@@ -93,9 +91,9 @@ apiInstance.deleteCondition(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**condition_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**condition_name** | **String** | Name of the condition. Required. |
 
 ### Return type
 
@@ -132,9 +130,9 @@ apiInstance.getCondition(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**condition_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**condition_name** | **String** | Name of the condition. Required. |
 
 ### Return type
 
@@ -170,8 +168,8 @@ apiInstance.listConditions(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -213,9 +211,9 @@ apiInstance.updateCondition(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**condition_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**condition_name** | **String** | Name of the condition. Required. |
 **comment** | **String** | A freeform descriptive note. | [optional]
 **name** | **String** | Name of the condition. Required. | [optional]
 **priority** | **Number** | Priority determines execution order. Lower numbers execute first. | [optional] [defaults to 100]

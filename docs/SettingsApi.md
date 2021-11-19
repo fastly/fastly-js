@@ -1,6 +1,5 @@
 # Fastly.SettingsApi
 
-
 ```javascript
 const apiInstance = new Fastly.SettingsApi();
 ```
@@ -10,7 +9,6 @@ Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**getServiceSettings**](SettingsApi.md#getServiceSettings) | **GET** /service/{service_id}/version/{version_id}/settings | Get service settings
 [**updateServiceSettings**](SettingsApi.md#updateServiceSettings) | **PUT** /service/{service_id}/version/{version_id}/settings | Update service settings
-
 
 
 ## `getServiceSettings`
@@ -42,8 +40,8 @@ apiInstance.getServiceSettings(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -79,8 +77,8 @@ apiInstance.updateServiceSettings(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 

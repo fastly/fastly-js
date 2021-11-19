@@ -1,6 +1,5 @@
 # Fastly.RequestSettingsApi
 
-
 ```javascript
 const apiInstance = new Fastly.RequestSettingsApi();
 ```
@@ -13,7 +12,6 @@ Method | Fastly API endpoint | Description
 [**getRequestSettings**](RequestSettingsApi.md#getRequestSettings) | **GET** /service/{service_id}/version/{version_id}/request_settings/{request_settings_name} | Get a Request Settings object
 [**listRequestSettings**](RequestSettingsApi.md#listRequestSettings) | **GET** /service/{service_id}/version/{version_id}/request_settings | List Request Settings objects
 [**updateRequestSettings**](RequestSettingsApi.md#updateRequestSettings) | **PUT** /service/{service_id}/version/{version_id}/request_settings/{request_settings_name} | Update a Request Settings object
-
 
 
 ## `createRequestSettings`
@@ -45,8 +43,8 @@ apiInstance.createRequestSettings(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -83,9 +81,9 @@ apiInstance.deleteRequestSettings(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**request_settings_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**request_settings_name** | **String** | Name for the request settings. |
 
 ### Return type
 
@@ -122,9 +120,9 @@ apiInstance.getRequestSettings(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**request_settings_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**request_settings_name** | **String** | Name for the request settings. |
 
 ### Return type
 
@@ -160,8 +158,8 @@ apiInstance.listRequestSettings(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -210,9 +208,9 @@ apiInstance.updateRequestSettings(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**request_settings_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**request_settings_name** | **String** | Name for the request settings. |
 **action** | **String** | Allows you to terminate request handling and immediately perform an action. | [optional] [one of: "lookup", "pass"]
 **bypass_busy_wait** | **Number** | Disable collapsed forwarding, so you don&#39;t wait for other objects to origin. | [optional]
 **default_host** | **String** | Sets the host header. | [optional]

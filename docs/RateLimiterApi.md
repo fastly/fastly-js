@@ -1,6 +1,5 @@
 # Fastly.RateLimiterApi
 
-
 ```javascript
 const apiInstance = new Fastly.RateLimiterApi();
 ```
@@ -13,7 +12,6 @@ Method | Fastly API endpoint | Description
 [**getRateLimiter**](RateLimiterApi.md#getRateLimiter) | **GET** /rate-limiters/{rate_limiter_id} | Get a rate limiter
 [**listRateLimiters**](RateLimiterApi.md#listRateLimiters) | **GET** /service/{service_id}/version/{version_id}/rate-limiters | List rate limiters
 [**updateRateLimiter**](RateLimiterApi.md#updateRateLimiter) | **PUT** /rate-limiters/{rate_limiter_id} | Update a rate limiter
-
 
 
 ## `createRateLimiter`
@@ -57,8 +55,8 @@ apiInstance.createRateLimiter(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 **name** | **String** | A human readable name for the rate limiting rule. | [optional]
 **uri_dictionary_name** | **String** | The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited. | [optional]
 **http_methods** | [**[String]**](String.md) | Array of HTTP methods to apply rate limiting to. | [optional] [one of: "HEAD", "OPTIONS", "GET", "POST", "PUT", "PATCH", "DELETE", "TRACE"]
@@ -105,7 +103,7 @@ apiInstance.deleteRateLimiter(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**rate_limiter_id** | **String** |  |
+**rate_limiter_id** | **String** | Alphanumeric string identifying the rate limiter. |
 
 ### Return type
 
@@ -140,7 +138,7 @@ apiInstance.getRateLimiter(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**rate_limiter_id** | **String** |  |
+**rate_limiter_id** | **String** | Alphanumeric string identifying the rate limiter. |
 
 ### Return type
 
@@ -176,8 +174,8 @@ apiInstance.listRateLimiters(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -224,7 +222,7 @@ apiInstance.updateRateLimiter(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**rate_limiter_id** | **String** |  |
+**rate_limiter_id** | **String** | Alphanumeric string identifying the rate limiter. |
 **name** | **String** | A human readable name for the rate limiting rule. | [optional]
 **uri_dictionary_name** | **String** | The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited. | [optional]
 **http_methods** | [**[String]**](String.md) | Array of HTTP methods to apply rate limiting to. | [optional] [one of: "HEAD", "OPTIONS", "GET", "POST", "PUT", "PATCH", "DELETE", "TRACE"]

@@ -41,8 +41,8 @@ export default class ServerApi {
     /**
      * Creates a single server for a particular service and pool.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.pool_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.pool_id - Alphanumeric string identifying a Pool.
      * @param {Number} [options.weight=100] - Weight (`1-100`) used to load balance this server against others.
      * @param {Number} [options.max_conn=0] - Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
      * @param {Number} [options.port=80] - Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
@@ -95,8 +95,8 @@ export default class ServerApi {
     /**
      * Creates a single server for a particular service and pool.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.pool_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.pool_id - Alphanumeric string identifying a Pool.
      * @param {Number} [options.weight=100] - Weight (`1-100`) used to load balance this server against others.
      * @param {Number} [options.max_conn=0] - Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
      * @param {Number} [options.port=80] - Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
@@ -116,9 +116,9 @@ export default class ServerApi {
     /**
      * Deletes a single server for a particular service and pool.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.pool_id
-     * @param {String} options.server_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.pool_id - Alphanumeric string identifying a Pool.
+     * @param {String} options.server_id - Alphanumeric string identifying a Server.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     deletePoolServerWithHttpInfo(options = {}) {
@@ -162,9 +162,9 @@ export default class ServerApi {
     /**
      * Deletes a single server for a particular service and pool.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.pool_id
-     * @param {String} options.server_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.pool_id - Alphanumeric string identifying a Pool.
+     * @param {String} options.server_id - Alphanumeric string identifying a Server.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     deletePoolServer(options = {}) {
@@ -177,9 +177,9 @@ export default class ServerApi {
     /**
      * Gets a single server for a particular service and pool.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.pool_id
-     * @param {String} options.server_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.pool_id - Alphanumeric string identifying a Pool.
+     * @param {String} options.server_id - Alphanumeric string identifying a Server.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServerResponse} and HTTP response
      */
     getPoolServerWithHttpInfo(options = {}) {
@@ -223,9 +223,9 @@ export default class ServerApi {
     /**
      * Gets a single server for a particular service and pool.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.pool_id
-     * @param {String} options.server_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.pool_id - Alphanumeric string identifying a Pool.
+     * @param {String} options.server_id - Alphanumeric string identifying a Server.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServerResponse}
      */
     getPoolServer(options = {}) {
@@ -238,8 +238,8 @@ export default class ServerApi {
     /**
      * Lists all servers for a particular service and pool.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.pool_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.pool_id - Alphanumeric string identifying a Pool.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ServerResponse>} and HTTP response
      */
     listPoolServersWithHttpInfo(options = {}) {
@@ -278,8 +278,8 @@ export default class ServerApi {
     /**
      * Lists all servers for a particular service and pool.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.pool_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.pool_id - Alphanumeric string identifying a Pool.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ServerResponse>}
      */
     listPoolServers(options = {}) {
@@ -292,9 +292,9 @@ export default class ServerApi {
     /**
      * Updates a single server for a particular service and pool.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.pool_id
-     * @param {String} options.server_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.pool_id - Alphanumeric string identifying a Pool.
+     * @param {String} options.server_id - Alphanumeric string identifying a Server.
      * @param {Number} [options.weight=100] - Weight (`1-100`) used to load balance this server against others.
      * @param {Number} [options.max_conn=0] - Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
      * @param {Number} [options.port=80] - Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
@@ -352,9 +352,9 @@ export default class ServerApi {
     /**
      * Updates a single server for a particular service and pool.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.pool_id
-     * @param {String} options.server_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.pool_id - Alphanumeric string identifying a Pool.
+     * @param {String} options.server_id - Alphanumeric string identifying a Server.
      * @param {Number} [options.weight=100] - Weight (`1-100`) used to load balance this server against others.
      * @param {Number} [options.max_conn=0] - Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
      * @param {Number} [options.port=80] - Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.

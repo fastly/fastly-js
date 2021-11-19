@@ -42,8 +42,8 @@ export default class RateLimiterApi {
     /**
      * Create a rate limiter for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.name] - A human readable name for the rate limiting rule.
      * @param {String} [options.uri_dictionary_name] - The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
      * @param {Array.<module:model/String>} [options.http_methods] - Array of HTTP methods to apply rate limiting to.
@@ -106,8 +106,8 @@ export default class RateLimiterApi {
     /**
      * Create a rate limiter for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.name] - A human readable name for the rate limiting rule.
      * @param {String} [options.uri_dictionary_name] - The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
      * @param {Array.<module:model/String>} [options.http_methods] - Array of HTTP methods to apply rate limiting to.
@@ -132,7 +132,7 @@ export default class RateLimiterApi {
     /**
      * Delete a rate limiter by its ID.
      * @param {Object} options
-     * @param {String} options.rate_limiter_id
+     * @param {String} options.rate_limiter_id - Alphanumeric string identifying the rate limiter.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     deleteRateLimiterWithHttpInfo(options = {}) {
@@ -166,7 +166,7 @@ export default class RateLimiterApi {
     /**
      * Delete a rate limiter by its ID.
      * @param {Object} options
-     * @param {String} options.rate_limiter_id
+     * @param {String} options.rate_limiter_id - Alphanumeric string identifying the rate limiter.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     deleteRateLimiter(options = {}) {
@@ -179,7 +179,7 @@ export default class RateLimiterApi {
     /**
      * Get a rate limiter by its ID.
      * @param {Object} options
-     * @param {String} options.rate_limiter_id
+     * @param {String} options.rate_limiter_id - Alphanumeric string identifying the rate limiter.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RateLimiterResponse} and HTTP response
      */
     getRateLimiterWithHttpInfo(options = {}) {
@@ -213,7 +213,7 @@ export default class RateLimiterApi {
     /**
      * Get a rate limiter by its ID.
      * @param {Object} options
-     * @param {String} options.rate_limiter_id
+     * @param {String} options.rate_limiter_id - Alphanumeric string identifying the rate limiter.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RateLimiterResponse}
      */
     getRateLimiter(options = {}) {
@@ -226,8 +226,8 @@ export default class RateLimiterApi {
     /**
      * List all rate limiters for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/RateLimiterResponse>} and HTTP response
      */
     listRateLimitersWithHttpInfo(options = {}) {
@@ -266,8 +266,8 @@ export default class RateLimiterApi {
     /**
      * List all rate limiters for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/RateLimiterResponse>}
      */
     listRateLimiters(options = {}) {
@@ -280,7 +280,7 @@ export default class RateLimiterApi {
     /**
      * Update a rate limiter by its ID.
      * @param {Object} options
-     * @param {String} options.rate_limiter_id
+     * @param {String} options.rate_limiter_id - Alphanumeric string identifying the rate limiter.
      * @param {String} [options.name] - A human readable name for the rate limiting rule.
      * @param {String} [options.uri_dictionary_name] - The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
      * @param {Array.<module:model/String>} [options.http_methods] - Array of HTTP methods to apply rate limiting to.
@@ -338,7 +338,7 @@ export default class RateLimiterApi {
     /**
      * Update a rate limiter by its ID.
      * @param {Object} options
-     * @param {String} options.rate_limiter_id
+     * @param {String} options.rate_limiter_id - Alphanumeric string identifying the rate limiter.
      * @param {String} [options.name] - A human readable name for the rate limiting rule.
      * @param {String} [options.uri_dictionary_name] - The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
      * @param {Array.<module:model/String>} [options.http_methods] - Array of HTTP methods to apply rate limiting to.

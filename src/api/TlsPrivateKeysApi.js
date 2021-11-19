@@ -85,7 +85,7 @@ export default class TlsPrivateKeysApi {
     /**
      * Destroy a TLS private key. Only private keys not already matched to any certificates can be deleted.
      * @param {Object} options
-     * @param {String} options.tls_private_key_id
+     * @param {String} options.tls_private_key_id - Alphanumeric string identifying a private Key.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     deleteTlsKeyWithHttpInfo(options = {}) {
@@ -119,7 +119,7 @@ export default class TlsPrivateKeysApi {
     /**
      * Destroy a TLS private key. Only private keys not already matched to any certificates can be deleted.
      * @param {Object} options
-     * @param {String} options.tls_private_key_id
+     * @param {String} options.tls_private_key_id - Alphanumeric string identifying a private Key.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deleteTlsKey(options = {}) {
@@ -132,7 +132,7 @@ export default class TlsPrivateKeysApi {
     /**
      * Show a TLS private key.
      * @param {Object} options
-     * @param {String} options.tls_private_key_id
+     * @param {String} options.tls_private_key_id - Alphanumeric string identifying a private Key.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsPrivateKeyResponse} and HTTP response
      */
     getTlsKeyWithHttpInfo(options = {}) {
@@ -166,7 +166,7 @@ export default class TlsPrivateKeysApi {
     /**
      * Show a TLS private key.
      * @param {Object} options
-     * @param {String} options.tls_private_key_id
+     * @param {String} options.tls_private_key_id - Alphanumeric string identifying a private Key.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsPrivateKeyResponse}
      */
     getTlsKey(options = {}) {

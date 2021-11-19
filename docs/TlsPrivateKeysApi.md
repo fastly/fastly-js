@@ -1,6 +1,5 @@
 # Fastly.TlsPrivateKeysApi
 
-
 ```javascript
 const apiInstance = new Fastly.TlsPrivateKeysApi();
 ```
@@ -12,7 +11,6 @@ Method | Fastly API endpoint | Description
 [**deleteTlsKey**](TlsPrivateKeysApi.md#deleteTlsKey) | **DELETE** /tls/private_keys/{tls_private_key_id} | Delete a TLS private key
 [**getTlsKey**](TlsPrivateKeysApi.md#getTlsKey) | **GET** /tls/private_keys/{tls_private_key_id} | Get a TLS private key
 [**listTlsKeys**](TlsPrivateKeysApi.md#listTlsKeys) | **GET** /tls/private_keys | List TLS private keys
-
 
 
 ## `createTlsKey`
@@ -78,7 +76,7 @@ apiInstance.deleteTlsKey(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_private_key_id** | **String** |  |
+**tls_private_key_id** | **String** | Alphanumeric string identifying a private Key. |
 
 ### Return type
 
@@ -113,7 +111,7 @@ apiInstance.getTlsKey(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_private_key_id** | **String** |  |
+**tls_private_key_id** | **String** | Alphanumeric string identifying a private Key. |
 
 ### Return type
 

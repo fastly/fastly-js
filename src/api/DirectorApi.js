@@ -42,8 +42,8 @@ export default class DirectorApi {
     /**
      * Create a director for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {Array.<module:model/SchemasBackend>} [options.backends] - List of backends associated to a director.
      * @param {Number} [options.capacity] - Unused.
      * @param {String} [options.comment] - A freeform descriptive note.
@@ -98,8 +98,8 @@ export default class DirectorApi {
     /**
      * Create a director for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {Array.<module:model/SchemasBackend>} [options.backends] - List of backends associated to a director.
      * @param {Number} [options.capacity] - Unused.
      * @param {String} [options.comment] - A freeform descriptive note.
@@ -120,9 +120,9 @@ export default class DirectorApi {
     /**
      * Delete the director for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.director_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.director_name - Name for the Director.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     deleteDirectorWithHttpInfo(options = {}) {
@@ -166,9 +166,9 @@ export default class DirectorApi {
     /**
      * Delete the director for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.director_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.director_name - Name for the Director.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     deleteDirector(options = {}) {
@@ -181,9 +181,9 @@ export default class DirectorApi {
     /**
      * Get the director for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.director_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.director_name - Name for the Director.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DirectorResponse} and HTTP response
      */
     getDirectorWithHttpInfo(options = {}) {
@@ -227,9 +227,9 @@ export default class DirectorApi {
     /**
      * Get the director for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.director_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.director_name - Name for the Director.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DirectorResponse}
      */
     getDirector(options = {}) {
@@ -242,8 +242,8 @@ export default class DirectorApi {
     /**
      * List the directors for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DirectorResponse>} and HTTP response
      */
     listDirectorsWithHttpInfo(options = {}) {
@@ -282,8 +282,8 @@ export default class DirectorApi {
     /**
      * List the directors for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DirectorResponse>}
      */
     listDirectors(options = {}) {
@@ -296,9 +296,9 @@ export default class DirectorApi {
     /**
      * Update the director for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.director_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.director_name - Name for the Director.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DirectorResponse} and HTTP response
      */
     updateDirectorWithHttpInfo(options = {}) {
@@ -342,9 +342,9 @@ export default class DirectorApi {
     /**
      * Update the director for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.director_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.director_name - Name for the Director.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DirectorResponse}
      */
     updateDirector(options = {}) {

@@ -1,6 +1,5 @@
 # Fastly.DirectorApi
 
-
 ```javascript
 const apiInstance = new Fastly.DirectorApi();
 ```
@@ -13,7 +12,6 @@ Method | Fastly API endpoint | Description
 [**getDirector**](DirectorApi.md#getDirector) | **GET** /service/{service_id}/version/{version_id}/director/{director_name} | Get a director
 [**listDirectors**](DirectorApi.md#listDirectors) | **GET** /service/{service_id}/version/{version_id}/director | List directors
 [**updateDirector**](DirectorApi.md#updateDirector) | **PUT** /service/{service_id}/version/{version_id}/director/{director_name} | Update a director
-
 
 
 ## `createDirector`
@@ -53,8 +51,8 @@ apiInstance.createDirector(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 **backends** | [**[SchemasBackend]**](SchemasBackend.md) | List of backends associated to a director. | [optional]
 **capacity** | **Number** | Unused. | [optional]
 **comment** | **String** | A freeform descriptive note. | [optional]
@@ -99,9 +97,9 @@ apiInstance.deleteDirector(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**director_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**director_name** | **String** | Name for the Director. |
 
 ### Return type
 
@@ -138,9 +136,9 @@ apiInstance.getDirector(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**director_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**director_name** | **String** | Name for the Director. |
 
 ### Return type
 
@@ -176,8 +174,8 @@ apiInstance.listDirectors(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -214,9 +212,9 @@ apiInstance.updateDirector(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**director_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**director_name** | **String** | Name for the Director. |
 
 ### Return type
 

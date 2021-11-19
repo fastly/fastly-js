@@ -1,6 +1,5 @@
 # Fastly.WafTagsApi
 
-
 ```javascript
 const apiInstance = new Fastly.WafTagsApi();
 ```
@@ -9,7 +8,6 @@ const apiInstance = new Fastly.WafTagsApi();
 Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**listWafTags**](WafTagsApi.md#listWafTags) | **GET** /waf/tags | List tags
-
 
 
 ## `listWafTags`

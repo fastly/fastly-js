@@ -1,6 +1,5 @@
 # Fastly.UserApi
 
-
 ```javascript
 const apiInstance = new Fastly.UserApi();
 ```
@@ -15,7 +14,6 @@ Method | Fastly API endpoint | Description
 [**requestPasswordReset**](UserApi.md#requestPasswordReset) | **POST** /user/{user_login}/password/request_reset | Request a password reset
 [**updateUser**](UserApi.md#updateUser) | **PUT** /user/{user_id} | Update a user
 [**updateUserPassword**](UserApi.md#updateUserPassword) | **POST** /current_user/password | Update the user&#39;s password
-
 
 
 ## `createUser`
@@ -95,7 +93,7 @@ apiInstance.deleteUser(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**user_id** | **String** |  |
+**user_id** | **String** | Alphanumeric string identifying the user. |
 
 ### Return type
 
@@ -159,7 +157,7 @@ apiInstance.getUser(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**user_id** | **String** |  |
+**user_id** | **String** | Alphanumeric string identifying the user. |
 
 ### Return type
 
@@ -194,7 +192,7 @@ apiInstance.requestPasswordReset(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**user_login** | **String** |  |
+**user_login** | **String** | The login associated with the user (typically, an email address). |
 
 ### Return type
 
@@ -237,7 +235,7 @@ apiInstance.updateUser(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**user_id** | **String** |  |
+**user_id** | **String** | Alphanumeric string identifying the user. |
 **login** | **String** | The login associated with the user (typically, an email address). | [optional]
 **name** | **String** | The real life name of the user. | [optional]
 **limit_services** | **Boolean** | Indicates that the user has limited access to the customer&#39;s services. | [optional]

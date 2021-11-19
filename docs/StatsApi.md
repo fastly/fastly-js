@@ -1,6 +1,5 @@
 # Fastly.StatsApi
 
-
 ```javascript
 const apiInstance = new Fastly.StatsApi();
 ```
@@ -9,7 +8,6 @@ const apiInstance = new Fastly.StatsApi();
 Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**getServiceStats**](StatsApi.md#getServiceStats) | **GET** /service/{service_id}/stats/summary | Get stats for a service
-
 
 
 ## `getServiceStats`
@@ -44,7 +42,7 @@ apiInstance.getServiceStats(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
 **month** | **String** | 2-digit month. | [optional]
 **year** | **String** | 4-digit year. | [optional]
 **start_time** | **Number** | Epoch timestamp. Limits the results returned. | [optional]

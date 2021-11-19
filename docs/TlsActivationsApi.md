@@ -1,6 +1,5 @@
 # Fastly.TlsActivationsApi
 
-
 ```javascript
 const apiInstance = new Fastly.TlsActivationsApi();
 ```
@@ -13,7 +12,6 @@ Method | Fastly API endpoint | Description
 [**getTlsActivation**](TlsActivationsApi.md#getTlsActivation) | **GET** /tls/activations/{tls_activation_id} | Get a TLS activation
 [**listTlsActivations**](TlsActivationsApi.md#listTlsActivations) | **GET** /tls/activations | List TLS activations
 [**updateTlsActivation**](TlsActivationsApi.md#updateTlsActivation) | **PATCH** /tls/activations/{tls_activation_id} | Update a certificate
-
 
 
 ## `createTlsActivation`
@@ -79,7 +77,7 @@ apiInstance.deleteTlsActivation(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_activation_id** | **String** |  |
+**tls_activation_id** | **String** | Alphanumeric string identifying a TLS activation. |
 
 ### Return type
 
@@ -115,7 +113,7 @@ apiInstance.getTlsActivation(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_activation_id** | **String** |  |
+**tls_activation_id** | **String** | Alphanumeric string identifying a TLS activation. |
 **include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: `tls_certificate`, `tls_configuration`, and `tls_domain`.  | [optional]
 
 ### Return type
@@ -197,7 +195,7 @@ apiInstance.updateTlsActivation(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_activation_id** | **String** |  |
+**tls_activation_id** | **String** | Alphanumeric string identifying a TLS activation. |
 **tls_activation** | [**TlsActivation**](TlsActivation.md) |  | [optional]
 
 ### Return type

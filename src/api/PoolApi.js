@@ -41,8 +41,8 @@ export default class PoolApi {
     /**
      * Creates a pool for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
@@ -123,8 +123,8 @@ export default class PoolApi {
     /**
      * Creates a pool for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
@@ -158,9 +158,9 @@ export default class PoolApi {
     /**
      * Deletes a specific pool for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.pool_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.pool_name - Name for the Pool.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     deleteServerPoolWithHttpInfo(options = {}) {
@@ -204,9 +204,9 @@ export default class PoolApi {
     /**
      * Deletes a specific pool for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.pool_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.pool_name - Name for the Pool.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     deleteServerPool(options = {}) {
@@ -219,9 +219,9 @@ export default class PoolApi {
     /**
      * Gets a single pool for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.pool_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.pool_name - Name for the Pool.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PoolResponse} and HTTP response
      */
     getServerPoolWithHttpInfo(options = {}) {
@@ -265,9 +265,9 @@ export default class PoolApi {
     /**
      * Gets a single pool for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.pool_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.pool_name - Name for the Pool.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PoolResponse}
      */
     getServerPool(options = {}) {
@@ -280,8 +280,8 @@ export default class PoolApi {
     /**
      * Lists all pools for a particular service and pool.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/PoolResponse>} and HTTP response
      */
     listServerPoolsWithHttpInfo(options = {}) {
@@ -320,8 +320,8 @@ export default class PoolApi {
     /**
      * Lists all pools for a particular service and pool.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/PoolResponse>}
      */
     listServerPools(options = {}) {
@@ -334,9 +334,9 @@ export default class PoolApi {
     /**
      * Updates a specific pool for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.pool_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.pool_name - Name for the Pool.
      * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
@@ -422,9 +422,9 @@ export default class PoolApi {
     /**
      * Updates a specific pool for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.pool_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.pool_name - Name for the Pool.
      * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.

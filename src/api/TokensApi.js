@@ -166,7 +166,7 @@ export default class TokensApi {
     /**
      * List all tokens belonging to a specific customer.
      * @param {Object} options
-     * @param {String} options.customer_id
+     * @param {String} options.customer_id - Alphanumeric string identifying the customer.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/TokenResponse>} and HTTP response
      */
     listTokensCustomerWithHttpInfo(options = {}) {
@@ -200,7 +200,7 @@ export default class TokensApi {
     /**
      * List all tokens belonging to a specific customer.
      * @param {Object} options
-     * @param {String} options.customer_id
+     * @param {String} options.customer_id - Alphanumeric string identifying the customer.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/TokenResponse>}
      */
     listTokensCustomer(options = {}) {
@@ -253,7 +253,7 @@ export default class TokensApi {
     /**
      * Revoke a specific token by its id.
      * @param {Object} options
-     * @param {String} options.token_id
+     * @param {String} options.token_id - Alphanumeric string identifying a token.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     revokeTokenWithHttpInfo(options = {}) {
@@ -287,7 +287,7 @@ export default class TokensApi {
     /**
      * Revoke a specific token by its id.
      * @param {Object} options
-     * @param {String} options.token_id
+     * @param {String} options.token_id - Alphanumeric string identifying a token.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     revokeToken(options = {}) {
