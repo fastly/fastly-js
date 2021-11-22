@@ -27,6 +27,7 @@ class WafExclusionData {
      * @alias module:model/WafExclusionData
      */
     constructor() { 
+        
         WafExclusionData.initialize(this);
     }
 
@@ -49,14 +50,14 @@ class WafExclusionData {
         if (data) {
             obj = obj || new WafExclusionData();
 
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeWafExclusion.constructFromObject(data['type']);
+            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = WafExclusionDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = RelationshipsForWafExclusion.constructFromObject(data['relationships']);
-            }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeWafExclusion.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -64,6 +65,11 @@ class WafExclusionData {
 
 
 }
+
+/**
+ * @member {module:model/TypeWafExclusion} type
+ */
+WafExclusionData.prototype['type'] = undefined;
 
 /**
  * @member {module:model/WafExclusionDataAttributes} attributes
@@ -74,11 +80,6 @@ WafExclusionData.prototype['attributes'] = undefined;
  * @member {module:model/RelationshipsForWafExclusion} relationships
  */
 WafExclusionData.prototype['relationships'] = undefined;
-
-/**
- * @member {module:model/TypeWafExclusion} type
- */
-WafExclusionData.prototype['type'] = undefined;
 
 
 

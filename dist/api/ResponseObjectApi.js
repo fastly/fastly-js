@@ -42,8 +42,8 @@ var ResponseObjectApi = /*#__PURE__*/function () {
   /**
    * Creates a new Response Object.
    * @param {Object} options
-   * @param {String} options.service_id
-   * @param {Number} options.version_id
+   * @param {String} options.service_id - Alphanumeric string identifying the service.
+   * @param {Number} options.version_id - Integer identifying a service version.
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseObjectResponse} and HTTP response
    */
 
@@ -79,8 +79,8 @@ var ResponseObjectApi = /*#__PURE__*/function () {
     /**
      * Creates a new Response Object.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseObjectResponse}
      */
 
@@ -95,9 +95,9 @@ var ResponseObjectApi = /*#__PURE__*/function () {
     /**
      * Deletes the specified Response Object.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.response_object_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.response_object_name - Name for the request settings.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
 
@@ -138,9 +138,9 @@ var ResponseObjectApi = /*#__PURE__*/function () {
     /**
      * Deletes the specified Response Object.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.response_object_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.response_object_name - Name for the request settings.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
 
@@ -155,9 +155,9 @@ var ResponseObjectApi = /*#__PURE__*/function () {
     /**
      * Gets the specified Response Object.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.response_object_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.response_object_name - Name for the request settings.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseObjectResponse} and HTTP response
      */
 
@@ -198,9 +198,9 @@ var ResponseObjectApi = /*#__PURE__*/function () {
     /**
      * Gets the specified Response Object.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.response_object_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.response_object_name - Name for the request settings.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseObjectResponse}
      */
 
@@ -215,8 +215,8 @@ var ResponseObjectApi = /*#__PURE__*/function () {
     /**
      * Returns all Response Objects for the specified service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ResponseObjectResponse>} and HTTP response
      */
 
@@ -251,8 +251,8 @@ var ResponseObjectApi = /*#__PURE__*/function () {
     /**
      * Returns all Response Objects for the specified service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ResponseObjectResponse>}
      */
 
@@ -267,9 +267,9 @@ var ResponseObjectApi = /*#__PURE__*/function () {
     /**
      * Updates the specified Response Object.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.response_object_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.response_object_name - Name for the request settings.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseObjectResponse} and HTTP response
      */
 
@@ -310,9 +310,9 @@ var ResponseObjectApi = /*#__PURE__*/function () {
     /**
      * Updates the specified Response Object.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.response_object_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.response_object_name - Name for the request settings.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseObjectResponse}
      */
 

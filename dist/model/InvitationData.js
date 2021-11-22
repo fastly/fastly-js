@@ -60,16 +60,16 @@ var InvitationData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new InvitationData();
 
+        if (data.hasOwnProperty('type')) {
+          obj['type'] = _TypeInvitation["default"].constructFromObject(data['type']);
+        }
+
         if (data.hasOwnProperty('attributes')) {
           obj['attributes'] = _InvitationDataAttributes["default"].constructFromObject(data['attributes']);
         }
 
         if (data.hasOwnProperty('relationships')) {
           obj['relationships'] = _RelationshipServiceInvitationsCreate["default"].constructFromObject(data['relationships']);
-        }
-
-        if (data.hasOwnProperty('type')) {
-          obj['type'] = _TypeInvitation["default"].constructFromObject(data['type']);
         }
       }
 
@@ -80,9 +80,14 @@ var InvitationData = /*#__PURE__*/function () {
   return InvitationData;
 }();
 /**
- * @member {module:model/InvitationDataAttributes} attributes
+ * @member {module:model/TypeInvitation} type
  */
 
+
+InvitationData.prototype['type'] = undefined;
+/**
+ * @member {module:model/InvitationDataAttributes} attributes
+ */
 
 InvitationData.prototype['attributes'] = undefined;
 /**
@@ -90,10 +95,5 @@ InvitationData.prototype['attributes'] = undefined;
  */
 
 InvitationData.prototype['relationships'] = undefined;
-/**
- * @member {module:model/TypeInvitation} type
- */
-
-InvitationData.prototype['type'] = undefined;
 var _default = InvitationData;
 exports["default"] = _default;

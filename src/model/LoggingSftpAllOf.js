@@ -24,6 +24,7 @@ class LoggingSftpAllOf {
      * @alias module:model/LoggingSftpAllOf
      */
     constructor() { 
+        
         LoggingSftpAllOf.initialize(this);
     }
 

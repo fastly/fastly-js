@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _RelationshipCommonNameCommonName = _interopRequireDefault(require("./RelationshipCommonNameCommonName"));
+var _RelationshipTlsDomainTlsDomain = _interopRequireDefault(require("./RelationshipTlsDomainTlsDomain"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -57,7 +57,7 @@ var RelationshipTlsDomains = /*#__PURE__*/function () {
         obj = obj || new RelationshipTlsDomains();
 
         if (data.hasOwnProperty('tls_domains')) {
-          obj['tls_domains'] = _RelationshipCommonNameCommonName["default"].constructFromObject(data['tls_domains']);
+          obj['tls_domains'] = _RelationshipTlsDomainTlsDomain["default"].constructFromObject(data['tls_domains']);
         }
       }
 
@@ -68,7 +68,7 @@ var RelationshipTlsDomains = /*#__PURE__*/function () {
   return RelationshipTlsDomains;
 }();
 /**
- * @member {module:model/RelationshipCommonNameCommonName} tls_domains
+ * @member {module:model/RelationshipTlsDomainTlsDomain} tls_domains
  */
 
 

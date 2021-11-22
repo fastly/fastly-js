@@ -44,8 +44,8 @@ var WafRuleRevisionsApi = /*#__PURE__*/function () {
   /**
    * Get a specific rule revision.
    * @param {Object} options
-   * @param {String} options.waf_rule_id
-   * @param {Number} options.waf_rule_revision_number
+   * @param {String} options.waf_rule_id - Alphanumeric string identifying a WAF rule.
+   * @param {Number} options.waf_rule_revision_number - Revision number.
    * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_rule`, `vcl`, and `source`. The `vcl` and `source` relationships show the WAF VCL and corresponding ModSecurity source. These fields are blank unless the relationship is included. 
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafRuleRevisionResponse} and HTTP response
    */
@@ -84,8 +84,8 @@ var WafRuleRevisionsApi = /*#__PURE__*/function () {
     /**
      * Get a specific rule revision.
      * @param {Object} options
-     * @param {String} options.waf_rule_id
-     * @param {Number} options.waf_rule_revision_number
+     * @param {String} options.waf_rule_id - Alphanumeric string identifying a WAF rule.
+     * @param {Number} options.waf_rule_revision_number - Revision number.
      * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_rule`, `vcl`, and `source`. The `vcl` and `source` relationships show the WAF VCL and corresponding ModSecurity source. These fields are blank unless the relationship is included. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafRuleRevisionResponse}
      */
@@ -101,7 +101,7 @@ var WafRuleRevisionsApi = /*#__PURE__*/function () {
     /**
      * List all revisions for a specific rule. The `rule_id` provided can be the ModSecurity Rule ID or the Fastly generated rule ID.
      * @param {Object} options
-     * @param {String} options.waf_rule_id
+     * @param {String} options.waf_rule_id - Alphanumeric string identifying a WAF rule.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {module:model/String} [options.include='waf_rule'] - Include relationships. Optional.
@@ -137,7 +137,7 @@ var WafRuleRevisionsApi = /*#__PURE__*/function () {
     /**
      * List all revisions for a specific rule. The `rule_id` provided can be the ModSecurity Rule ID or the Fastly generated rule ID.
      * @param {Object} options
-     * @param {String} options.waf_rule_id
+     * @param {String} options.waf_rule_id - Alphanumeric string identifying a WAF rule.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {module:model/String} [options.include='waf_rule'] - Include relationships. Optional.

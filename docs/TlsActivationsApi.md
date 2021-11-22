@@ -1,6 +1,5 @@
 # Fastly.TlsActivationsApi
 
-
 ```javascript
 const apiInstance = new Fastly.TlsActivationsApi();
 ```
@@ -15,11 +14,10 @@ Method | Fastly API endpoint | Description
 [**updateTlsActivation**](TlsActivationsApi.md#updateTlsActivation) | **PATCH** /tls/activations/{tls_activation_id} | Update a certificate
 
 
-
 ## `createTlsActivation`
 
 ```javascript
-createTlsActivation({ [tls_activation] })
+createTlsActivation({ , [tls_activation] })
 ```
 
 Enable TLS for a particular TLS domain and certificate combination. These relationships must be specified to create the TLS activation.
@@ -28,12 +26,12 @@ Enable TLS for a particular TLS domain and certificate combination. These relati
 
 ```javascript
 const options = {
-  tls_activation: new Fastly.TlsActivation(),
+  tls_activation: {"data":{"type":"tls_activation","relationships":{"tls_certificate":{"data":[{"id":"cRTguUGZzb2W9Euo4moOr","type":"tls_certificate"}]},"tls_configuration":{"data":[{"id":"t7CguUGZzb2W9Euo5FoKa","type":"tls_configuration"}]},"tls_domain":{"data":[{"id":"example.com","type":"tls_domain"}]}}}},
 };
 
 apiInstance.createTlsActivation(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -44,7 +42,7 @@ apiInstance.createTlsActivation(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_activation** | [**TlsActivation**](../Model/TlsActivation.md) |  | [optional]
+**tls_activation** | [**TlsActivation**](TlsActivation.md) |  | [optional]
 
 ### Return type
 
@@ -79,7 +77,7 @@ apiInstance.deleteTlsActivation(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_activation_id** | **String** |  |
+**tls_activation_id** | **String** | Alphanumeric string identifying a TLS activation. |
 
 ### Return type
 
@@ -104,7 +102,7 @@ const options = {
 
 apiInstance.getTlsActivation(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -115,8 +113,8 @@ apiInstance.getTlsActivation(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_activation_id** | **String** |  |
-**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_certificate&#x60;, &#x60;tls_configuration&#x60;, and &#x60;tls_domain&#x60;.  | [optional]
+**tls_activation_id** | **String** | Alphanumeric string identifying a TLS activation. |
+**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: `tls_certificate`, `tls_configuration`, and `tls_domain`.  | [optional]
 
 ### Return type
 
@@ -126,7 +124,7 @@ Name | Type | Description  | Notes
 ## `listTlsActivations`
 
 ```javascript
-listTlsActivations({ [filter_tls_certificate_id, ][filter_tls_configuration_id, ][filter_tls_domain_id, ][include, ][page_number, ][page_size] })
+listTlsActivations({ , [filter_tls_certificate_id, ][filter_tls_configuration_id, ][filter_tls_domain_id, ][include, ][page_number, ][page_size] })
 ```
 
 List all TLS activations.
@@ -139,13 +137,13 @@ const options = {
   filter_tls_configuration_id: "filter_tls_configuration_id_example",
   filter_tls_domain_id: "filter_tls_domain_id_example",
   include: tls_certificate,tls_configuration,tls_domain,
-  page_number: 56,
+  page_number: 1,
   page_size: 20,
 };
 
 apiInstance.listTlsActivations(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -159,9 +157,9 @@ Name | Type | Description  | Notes
 **filter_tls_certificate_id** | **String** | Limit the returned activations to a specific certificate. | [optional]
 **filter_tls_configuration_id** | **String** | Limit the returned activations to a specific TLS configuration. | [optional]
 **filter_tls_domain_id** | **String** | Limit the returned rules to a specific domain name. | [optional]
-**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_certificate&#x60;, &#x60;tls_configuration&#x60;, and &#x60;tls_domain&#x60;.  | [optional]
+**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: `tls_certificate`, `tls_configuration`, and `tls_domain`.  | [optional]
 **page_number** | **Number** | Current page. | [optional]
-**page_size** | **Number** | Number of records per page. | [optional] [default to 20]
+**page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
 
 ### Return type
 
@@ -181,12 +179,12 @@ Update the certificate used to terminate TLS traffic for the domain associated w
 ```javascript
 const options = {
   tls_activation_id: "tls_activation_id_example", // required
-  tls_activation: new Fastly.TlsActivation(),
+  tls_activation: {"data":{"type":"tls_activation","relationships":{"tls_certificate":{"data":{"type":"tls_certificate","id":"cRTguUGZzb2W9Euo4moOr"}}}}},
 };
 
 apiInstance.updateTlsActivation(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -197,8 +195,8 @@ apiInstance.updateTlsActivation(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_activation_id** | **String** |  |
-**tls_activation** | [**TlsActivation**](../Model/TlsActivation.md) |  | [optional]
+**tls_activation_id** | **String** | Alphanumeric string identifying a TLS activation. |
+**tls_activation** | [**TlsActivation**](TlsActivation.md) |  | [optional]
 
 ### Return type
 

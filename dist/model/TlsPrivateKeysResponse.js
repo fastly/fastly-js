@@ -34,9 +34,15 @@ var TlsPrivateKeysResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>TlsPrivateKeysResponse</code>.
    * @alias module:model/TlsPrivateKeysResponse
+   * @implements module:model/Pagination
+   * @implements module:model/TlsPrivateKeysResponseAllOf
    */
   function TlsPrivateKeysResponse() {
     _classCallCheck(this, TlsPrivateKeysResponse);
+
+    _Pagination["default"].initialize(this);
+
+    _TlsPrivateKeysResponseAllOf["default"].initialize(this);
 
     TlsPrivateKeysResponse.initialize(this);
   }
@@ -63,6 +69,10 @@ var TlsPrivateKeysResponse = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new TlsPrivateKeysResponse();
+
+        _Pagination["default"].constructFromObject(data, obj);
+
+        _TlsPrivateKeysResponseAllOf["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('links')) {
           obj['links'] = _PaginationLinks["default"].constructFromObject(data['links']);
@@ -98,6 +108,23 @@ TlsPrivateKeysResponse.prototype['meta'] = undefined;
  * @member {Array.<module:model/TlsPrivateKeyResponseData>} data
  */
 
-TlsPrivateKeysResponse.prototype['data'] = undefined;
+TlsPrivateKeysResponse.prototype['data'] = undefined; // Implement Pagination interface:
+
+/**
+ * @member {module:model/PaginationLinks} links
+ */
+
+_Pagination["default"].prototype['links'] = undefined;
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
+
+_Pagination["default"].prototype['meta'] = undefined; // Implement TlsPrivateKeysResponseAllOf interface:
+
+/**
+ * @member {Array.<module:model/TlsPrivateKeyResponseData>} data
+ */
+
+_TlsPrivateKeysResponseAllOf["default"].prototype['data'] = undefined;
 var _default = TlsPrivateKeysResponse;
 exports["default"] = _default;

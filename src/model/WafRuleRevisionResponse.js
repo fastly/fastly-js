@@ -26,6 +26,7 @@ class WafRuleRevisionResponse {
      * @alias module:model/WafRuleRevisionResponse
      */
     constructor() { 
+        
         WafRuleRevisionResponse.initialize(this);
     }
 

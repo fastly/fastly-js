@@ -1,6 +1,5 @@
 # Fastly.UserApi
 
-
 ```javascript
 const apiInstance = new Fastly.UserApi();
 ```
@@ -17,11 +16,10 @@ Method | Fastly API endpoint | Description
 [**updateUserPassword**](UserApi.md#updateUserPassword) | **POST** /current_user/password | Update the user&#39;s password
 
 
-
 ## `createUser`
 
 ```javascript
-createUser({ [limit_services, ][locked, ][login, ][name, ][require_new_password, ][role, ][two_factor_auth_enabled, ][two_factor_setup_required] })
+createUser({ , [login, ][name, ][limit_services, ][locked, ][require_new_password, ][role, ][two_factor_auth_enabled, ][two_factor_setup_required] })
 ```
 
 Create a user.
@@ -30,10 +28,10 @@ Create a user.
 
 ```javascript
 const options = {
-  limit_services: true,
-  locked: true,
   login: "login_example",
   name: "name_example",
+  limit_services: true,
+  locked: true,
   require_new_password: true,
   role: new Fastly.RoleUser(),
   two_factor_auth_enabled: true,
@@ -42,7 +40,7 @@ const options = {
 
 apiInstance.createUser(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -53,12 +51,12 @@ apiInstance.createUser(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**limit_services** | **Boolean** | Indicates that the user has limited access to the customer&#39;s services. | [optional]
-**locked** | **Boolean** | Indicates whether the is account is locked for editing or not. | [optional]
 **login** | **String** | The login associated with the user (typically, an email address). | [optional]
 **name** | **String** | The real life name of the user. | [optional]
+**limit_services** | **Boolean** | Indicates that the user has limited access to the customer&#39;s services. | [optional]
+**locked** | **Boolean** | Indicates whether the is account is locked for editing or not. | [optional]
 **require_new_password** | **Boolean** | Indicates if a new password is required at next login. | [optional]
-**role** | [**RoleUser**](../Model/RoleUser.md) |  | [optional]
+**role** | [**RoleUser**](RoleUser.md) |  | [optional]
 **two_factor_auth_enabled** | **Boolean** | Indicates if 2FA is enabled on the user. | [optional]
 **two_factor_setup_required** | **Boolean** | Indicates if 2FA is required by the user&#39;s customer account. | [optional]
 
@@ -84,7 +82,7 @@ const options = {
 
 apiInstance.deleteUser(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -95,7 +93,7 @@ apiInstance.deleteUser(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**user_id** | **String** |  |
+**user_id** | **String** | Alphanumeric string identifying the user. |
 
 ### Return type
 
@@ -115,7 +113,7 @@ Get the logged in user.
 ```javascript
 apiInstance.getCurrentUser()
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -148,7 +146,7 @@ const options = {
 
 apiInstance.getUser(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -159,7 +157,7 @@ apiInstance.getUser(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**user_id** | **String** |  |
+**user_id** | **String** | Alphanumeric string identifying the user. |
 
 ### Return type
 
@@ -183,7 +181,7 @@ const options = {
 
 apiInstance.requestPasswordReset(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -194,7 +192,7 @@ apiInstance.requestPasswordReset(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**user_login** | **String** |  |
+**user_login** | **String** | The login associated with the user (typically, an email address). |
 
 ### Return type
 
@@ -204,7 +202,7 @@ Name | Type | Description  | Notes
 ## `updateUser`
 
 ```javascript
-updateUser({ user_id, [limit_services, ], [locked, ], [login, ], [name, ], [require_new_password, ], [role, ], [two_factor_auth_enabled, ], [two_factor_setup_required] })
+updateUser({ user_id, [login, ][name, ][limit_services, ][locked, ][require_new_password, ][role, ][two_factor_auth_enabled, ][two_factor_setup_required] })
 ```
 
 Update a user. Only users with the role of `superuser` can make changes to other users on the account. Non-superusers may use this endpoint to make changes to their own account. Modifications to `login` email require a valid password in the request body. Two-factor attributes are not editable via this endpoint.
@@ -214,10 +212,10 @@ Update a user. Only users with the role of `superuser` can make changes to other
 ```javascript
 const options = {
   user_id: "user_id_example", // required
-  limit_services: true,
-  locked: true,
   login: "login_example",
   name: "name_example",
+  limit_services: true,
+  locked: true,
   require_new_password: true,
   role: new Fastly.RoleUser(),
   two_factor_auth_enabled: true,
@@ -226,7 +224,7 @@ const options = {
 
 apiInstance.updateUser(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -237,13 +235,13 @@ apiInstance.updateUser(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**user_id** | **String** |  |
-**limit_services** | **Boolean** | Indicates that the user has limited access to the customer&#39;s services. | [optional]
-**locked** | **Boolean** | Indicates whether the is account is locked for editing or not. | [optional]
+**user_id** | **String** | Alphanumeric string identifying the user. |
 **login** | **String** | The login associated with the user (typically, an email address). | [optional]
 **name** | **String** | The real life name of the user. | [optional]
+**limit_services** | **Boolean** | Indicates that the user has limited access to the customer&#39;s services. | [optional]
+**locked** | **Boolean** | Indicates whether the is account is locked for editing or not. | [optional]
 **require_new_password** | **Boolean** | Indicates if a new password is required at next login. | [optional]
-**role** | [**RoleUser**](../Model/RoleUser.md) |  | [optional]
+**role** | [**RoleUser**](RoleUser.md) |  | [optional]
 **two_factor_auth_enabled** | **Boolean** | Indicates if 2FA is enabled on the user. | [optional]
 **two_factor_setup_required** | **Boolean** | Indicates if 2FA is required by the user&#39;s customer account. | [optional]
 
@@ -255,7 +253,7 @@ Name | Type | Description  | Notes
 ## `updateUserPassword`
 
 ```javascript
-updateUserPassword({ [new_password, ][old_password] })
+updateUserPassword({ , [old_password, ][new_password] })
 ```
 
 Update the user's password to a new one.
@@ -264,13 +262,13 @@ Update the user's password to a new one.
 
 ```javascript
 const options = {
-  new_password: "new_password_example",
   old_password: "old_password_example",
+  new_password: "new_password_example",
 };
 
 apiInstance.updateUserPassword(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -281,8 +279,8 @@ apiInstance.updateUserPassword(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**new_password** | **String** | The user&#39;s new password. | [optional]
 **old_password** | **String** | The user&#39;s current password. | [optional]
+**new_password** | **String** | The user&#39;s new password. | [optional]
 
 ### Return type
 

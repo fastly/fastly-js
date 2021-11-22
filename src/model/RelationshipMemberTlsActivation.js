@@ -25,6 +25,7 @@ class RelationshipMemberTlsActivation {
      * @alias module:model/RelationshipMemberTlsActivation
      */
     constructor() { 
+        
         RelationshipMemberTlsActivation.initialize(this);
     }
 
@@ -47,11 +48,11 @@ class RelationshipMemberTlsActivation {
         if (data) {
             obj = obj || new RelationshipMemberTlsActivation();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeTlsActivation.constructFromObject(data['type']);
+            }
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
         }
         return obj;
@@ -61,15 +62,15 @@ class RelationshipMemberTlsActivation {
 }
 
 /**
+ * @member {module:model/TypeTlsActivation} type
+ */
+RelationshipMemberTlsActivation.prototype['type'] = undefined;
+
+/**
  * Alphanumeric string identifying a TLS activation.
  * @member {String} id
  */
 RelationshipMemberTlsActivation.prototype['id'] = undefined;
-
-/**
- * @member {module:model/TypeTlsActivation} type
- */
-RelationshipMemberTlsActivation.prototype['type'] = undefined;
 
 
 

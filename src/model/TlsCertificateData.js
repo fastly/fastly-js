@@ -27,6 +27,7 @@ class TlsCertificateData {
      * @alias module:model/TlsCertificateData
      */
     constructor() { 
+        
         TlsCertificateData.initialize(this);
     }
 
@@ -49,14 +50,14 @@ class TlsCertificateData {
         if (data) {
             obj = obj || new TlsCertificateData();
 
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeTlsCertificate.constructFromObject(data['type']);
+            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = TlsCertificateDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = RelationshipTlsDomains.constructFromObject(data['relationships']);
-            }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeTlsCertificate.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -64,6 +65,11 @@ class TlsCertificateData {
 
 
 }
+
+/**
+ * @member {module:model/TypeTlsCertificate} type
+ */
+TlsCertificateData.prototype['type'] = undefined;
 
 /**
  * @member {module:model/TlsCertificateDataAttributes} attributes
@@ -74,11 +80,6 @@ TlsCertificateData.prototype['attributes'] = undefined;
  * @member {module:model/RelationshipTlsDomains} relationships
  */
 TlsCertificateData.prototype['relationships'] = undefined;
-
-/**
- * @member {module:model/TypeTlsCertificate} type
- */
-TlsCertificateData.prototype['type'] = undefined;
 
 
 

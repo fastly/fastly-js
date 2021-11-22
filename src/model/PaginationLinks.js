@@ -24,6 +24,7 @@ class PaginationLinks {
      * @alias module:model/PaginationLinks
      */
     constructor() { 
+        
         PaginationLinks.initialize(this);
     }
 
@@ -52,11 +53,11 @@ class PaginationLinks {
             if (data.hasOwnProperty('last')) {
                 obj['last'] = ApiClient.convertToType(data['last'], 'String');
             }
-            if (data.hasOwnProperty('next')) {
-                obj['next'] = ApiClient.convertToType(data['next'], 'String');
-            }
             if (data.hasOwnProperty('prev')) {
                 obj['prev'] = ApiClient.convertToType(data['prev'], 'String');
+            }
+            if (data.hasOwnProperty('next')) {
+                obj['next'] = ApiClient.convertToType(data['next'], 'String');
             }
         }
         return obj;
@@ -78,16 +79,16 @@ PaginationLinks.prototype['first'] = undefined;
 PaginationLinks.prototype['last'] = undefined;
 
 /**
- * The next page of data.
- * @member {String} next
- */
-PaginationLinks.prototype['next'] = undefined;
-
-/**
  * The previous page of data.
  * @member {String} prev
  */
 PaginationLinks.prototype['prev'] = undefined;
+
+/**
+ * The next page of data.
+ * @member {String} next
+ */
+PaginationLinks.prototype['next'] = undefined;
 
 
 

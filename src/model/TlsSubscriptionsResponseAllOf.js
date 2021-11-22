@@ -25,6 +25,7 @@ class TlsSubscriptionsResponseAllOf {
      * @alias module:model/TlsSubscriptionsResponseAllOf
      */
     constructor() { 
+        
         TlsSubscriptionsResponseAllOf.initialize(this);
     }
 

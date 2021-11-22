@@ -25,8 +25,11 @@ class ServiceInvitationResponse {
     /**
      * Constructs a new <code>ServiceInvitationResponse</code>.
      * @alias module:model/ServiceInvitationResponse
+     * @implements module:model/ServiceInvitation
+     * @implements module:model/ServiceInvitationResponseAllOf
      */
     constructor() { 
+        ServiceInvitation.initialize(this);ServiceInvitationResponseAllOf.initialize(this);
         ServiceInvitationResponse.initialize(this);
     }
 
@@ -48,6 +51,8 @@ class ServiceInvitationResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ServiceInvitationResponse();
+            ServiceInvitation.constructFromObject(data, obj);
+            ServiceInvitationResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ServiceInvitationResponseAllOfData.constructFromObject(data['data']);
@@ -65,6 +70,16 @@ class ServiceInvitationResponse {
 ServiceInvitationResponse.prototype['data'] = undefined;
 
 
+// Implement ServiceInvitation interface:
+/**
+ * @member {module:model/ServiceInvitationData} data
+ */
+ServiceInvitation.prototype['data'] = undefined;
+// Implement ServiceInvitationResponseAllOf interface:
+/**
+ * @member {module:model/ServiceInvitationResponseAllOfData} data
+ */
+ServiceInvitationResponseAllOf.prototype['data'] = undefined;
 
 
 

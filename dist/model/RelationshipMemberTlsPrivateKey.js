@@ -56,12 +56,12 @@ var RelationshipMemberTlsPrivateKey = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new RelationshipMemberTlsPrivateKey();
 
-        if (data.hasOwnProperty('id')) {
-          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
-        }
-
         if (data.hasOwnProperty('type')) {
           obj['type'] = _TypeTlsPrivateKey["default"].constructFromObject(data['type']);
+        }
+
+        if (data.hasOwnProperty('id')) {
+          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
       }
 
@@ -72,16 +72,16 @@ var RelationshipMemberTlsPrivateKey = /*#__PURE__*/function () {
   return RelationshipMemberTlsPrivateKey;
 }();
 /**
+ * @member {module:model/TypeTlsPrivateKey} type
+ */
+
+
+RelationshipMemberTlsPrivateKey.prototype['type'] = undefined;
+/**
  * Alphanumeric string identifying a private Key.
  * @member {String} id
  */
 
-
 RelationshipMemberTlsPrivateKey.prototype['id'] = undefined;
-/**
- * @member {module:model/TypeTlsPrivateKey} type
- */
-
-RelationshipMemberTlsPrivateKey.prototype['type'] = undefined;
 var _default = RelationshipMemberTlsPrivateKey;
 exports["default"] = _default;

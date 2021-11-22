@@ -32,9 +32,21 @@ var AclResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>AclResponse</code>.
    * @alias module:model/AclResponse
+   * @implements module:model/Acl
+   * @implements module:model/Timestamps
+   * @implements module:model/ServiceIdAndVersion
+   * @implements module:model/AclResponseAllOf
    */
   function AclResponse() {
     _classCallCheck(this, AclResponse);
+
+    _Acl["default"].initialize(this);
+
+    _Timestamps["default"].initialize(this);
+
+    _ServiceIdAndVersion["default"].initialize(this);
+
+    _AclResponseAllOf["default"].initialize(this);
 
     AclResponse.initialize(this);
   }
@@ -61,6 +73,14 @@ var AclResponse = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new AclResponse();
+
+        _Acl["default"].constructFromObject(data, obj);
+
+        _Timestamps["default"].constructFromObject(data, obj);
+
+        _ServiceIdAndVersion["default"].constructFromObject(data, obj);
+
+        _AclResponseAllOf["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
@@ -139,6 +159,52 @@ AclResponse.prototype['version'] = undefined;
  * @member {String} id
  */
 
-AclResponse.prototype['id'] = undefined;
+AclResponse.prototype['id'] = undefined; // Implement Acl interface:
+
+/**
+ * Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace.
+ * @member {String} name
+ */
+
+_Acl["default"].prototype['name'] = undefined; // Implement Timestamps interface:
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+
+_Timestamps["default"].prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+
+_Timestamps["default"].prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+
+_Timestamps["default"].prototype['updated_at'] = undefined; // Implement ServiceIdAndVersion interface:
+
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+
+_ServiceIdAndVersion["default"].prototype['service_id'] = undefined;
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
+
+_ServiceIdAndVersion["default"].prototype['version'] = undefined; // Implement AclResponseAllOf interface:
+
+/**
+ * Alphanumeric string identifying a ACL.
+ * @member {String} id
+ */
+
+_AclResponseAllOf["default"].prototype['id'] = undefined;
 var _default = AclResponse;
 exports["default"] = _default;

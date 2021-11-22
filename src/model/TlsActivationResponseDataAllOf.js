@@ -25,6 +25,7 @@ class TlsActivationResponseDataAllOf {
      * @alias module:model/TlsActivationResponseDataAllOf
      */
     constructor() { 
+        
         TlsActivationResponseDataAllOf.initialize(this);
     }
 
@@ -47,11 +48,11 @@ class TlsActivationResponseDataAllOf {
         if (data) {
             obj = obj || new TlsActivationResponseDataAllOf();
 
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = Timestamps.constructFromObject(data['attributes']);
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = Timestamps.constructFromObject(data['attributes']);
             }
         }
         return obj;
@@ -61,15 +62,15 @@ class TlsActivationResponseDataAllOf {
 }
 
 /**
- * @member {module:model/Timestamps} attributes
- */
-TlsActivationResponseDataAllOf.prototype['attributes'] = undefined;
-
-/**
  * Alphanumeric string identifying a TLS activation.
  * @member {String} id
  */
 TlsActivationResponseDataAllOf.prototype['id'] = undefined;
+
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+TlsActivationResponseDataAllOf.prototype['attributes'] = undefined;
 
 
 

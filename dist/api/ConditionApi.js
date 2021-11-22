@@ -42,8 +42,8 @@ var ConditionApi = /*#__PURE__*/function () {
   /**
    * Creates a new condition.
    * @param {Object} options
-   * @param {String} options.service_id
-   * @param {Number} options.version_id
+   * @param {String} options.service_id - Alphanumeric string identifying the service.
+   * @param {Number} options.version_id - Integer identifying a service version.
    * @param {String} [options.comment] - A freeform descriptive note.
    * @param {String} [options.name] - Name of the condition. Required.
    * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
@@ -90,8 +90,8 @@ var ConditionApi = /*#__PURE__*/function () {
     /**
      * Creates a new condition.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - Name of the condition. Required.
      * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
@@ -111,9 +111,9 @@ var ConditionApi = /*#__PURE__*/function () {
     /**
      * Deletes the specified condition.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.condition_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.condition_name - Name of the condition. Required.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
 
@@ -154,9 +154,9 @@ var ConditionApi = /*#__PURE__*/function () {
     /**
      * Deletes the specified condition.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.condition_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.condition_name - Name of the condition. Required.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
 
@@ -171,9 +171,9 @@ var ConditionApi = /*#__PURE__*/function () {
     /**
      * Gets the specified condition.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.condition_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.condition_name - Name of the condition. Required.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ConditionResponse} and HTTP response
      */
 
@@ -214,9 +214,9 @@ var ConditionApi = /*#__PURE__*/function () {
     /**
      * Gets the specified condition.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.condition_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.condition_name - Name of the condition. Required.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ConditionResponse}
      */
 
@@ -231,8 +231,8 @@ var ConditionApi = /*#__PURE__*/function () {
     /**
      * Gets all conditions for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ConditionResponse>} and HTTP response
      */
 
@@ -267,8 +267,8 @@ var ConditionApi = /*#__PURE__*/function () {
     /**
      * Gets all conditions for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ConditionResponse>}
      */
 
@@ -283,9 +283,9 @@ var ConditionApi = /*#__PURE__*/function () {
     /**
      * Updates the specified condition.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.condition_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.condition_name - Name of the condition. Required.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - Name of the condition. Required.
      * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
@@ -337,9 +337,9 @@ var ConditionApi = /*#__PURE__*/function () {
     /**
      * Updates the specified condition.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.condition_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.condition_name - Name of the condition. Required.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - Name of the condition. Required.
      * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.

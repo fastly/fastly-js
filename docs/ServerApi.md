@@ -1,6 +1,5 @@
 # Fastly.ServerApi
 
-
 ```javascript
 const apiInstance = new Fastly.ServerApi();
 ```
@@ -15,11 +14,10 @@ Method | Fastly API endpoint | Description
 [**updatePoolServer**](ServerApi.md#updatePoolServer) | **PUT** /service/{service_id}/pool/{pool_id}/server/{server_id} | Update a server
 
 
-
 ## `createPoolServer`
 
 ```javascript
-createPoolServer({ service_id, pool_id, [address, ], [comment, ], [disabled, ], [max_conn, ], [override_host, ], [port, ], [weight] })
+createPoolServer({ service_id, pool_id, [weight, ][max_conn, ][port, ][address, ][comment, ][disabled, ][override_host] })
 ```
 
 Creates a single server for a particular service and pool.
@@ -30,18 +28,18 @@ Creates a single server for a particular service and pool.
 const options = {
   service_id: "service_id_example", // required
   pool_id: "pool_id_example", // required
+  weight: 100,
+  max_conn: 0,
+  port: 80,
   address: "address_example",
   comment: "comment_example",
   disabled: false,
-  max_conn: 0,
   override_host: "'null'",
-  port: 80,
-  weight: 100,
 };
 
 apiInstance.createPoolServer(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -52,15 +50,15 @@ apiInstance.createPoolServer(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**pool_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**pool_id** | **String** | Alphanumeric string identifying a Pool. |
+**weight** | **Number** | Weight (`1-100`) used to load balance this server against others. | [optional] [defaults to 100]
+**max_conn** | **Number** | Maximum number of connections. If the value is `0`, it inherits the value from pool&#39;s `max_conn_default`. | [optional] [defaults to 0]
+**port** | **Number** | Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS. | [optional] [defaults to 80]
 **address** | **String** | A hostname, IPv4, or IPv6 address for the server. Required. | [optional]
 **comment** | **String** | A freeform descriptive note. | [optional]
-**disabled** | **Boolean** | Allows servers to be enabled and disabled in a pool. | [optional] [default to false]
-**max_conn** | **Number** | Maximum number of connections. If the value is &#x60;0&#x60;, it inherits the value from pool&#39;s &#x60;max_conn_default&#x60;. | [optional] [default to 0]
-**override_host** | **String** | The hostname to override the Host header. Defaults to &#x60;null&#x60; meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting. | [optional] [default to &#39;null&#39;]
-**port** | **Number** | Port number. Setting port &#x60;443&#x60; does not force TLS. Set &#x60;use_tls&#x60; in pool to force TLS. | [optional] [default to 80]
-**weight** | **Number** | Weight (&#x60;1-100&#x60;) used to load balance this server against others. | [optional] [default to 100]
+**disabled** | **Boolean** | Allows servers to be enabled and disabled in a pool. | [optional] [defaults to false]
+**override_host** | **String** | The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting. | [optional] [defaults to 'null']
 
 ### Return type
 
@@ -86,7 +84,7 @@ const options = {
 
 apiInstance.deletePoolServer(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -97,9 +95,9 @@ apiInstance.deletePoolServer(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**pool_id** | **String** |  |
-**server_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**pool_id** | **String** | Alphanumeric string identifying a Pool. |
+**server_id** | **String** | Alphanumeric string identifying a Server. |
 
 ### Return type
 
@@ -125,7 +123,7 @@ const options = {
 
 apiInstance.getPoolServer(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -136,9 +134,9 @@ apiInstance.getPoolServer(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**pool_id** | **String** |  |
-**server_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**pool_id** | **String** | Alphanumeric string identifying a Pool. |
+**server_id** | **String** | Alphanumeric string identifying a Server. |
 
 ### Return type
 
@@ -163,7 +161,7 @@ const options = {
 
 apiInstance.listPoolServers(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -174,8 +172,8 @@ apiInstance.listPoolServers(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**pool_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**pool_id** | **String** | Alphanumeric string identifying a Pool. |
 
 ### Return type
 
@@ -185,7 +183,7 @@ Name | Type | Description  | Notes
 ## `updatePoolServer`
 
 ```javascript
-updatePoolServer({ service_id, pool_id, server_id, [address, ], [comment, ], [disabled, ], [max_conn, ], [override_host, ], [port, ], [weight] })
+updatePoolServer({ service_id, pool_id, server_id, [weight, ][max_conn, ][port, ][address, ][comment, ][disabled, ][override_host] })
 ```
 
 Updates a single server for a particular service and pool.
@@ -197,18 +195,18 @@ const options = {
   service_id: "service_id_example", // required
   pool_id: "pool_id_example", // required
   server_id: "server_id_example", // required
+  weight: 100,
+  max_conn: 0,
+  port: 80,
   address: "address_example",
   comment: "comment_example",
   disabled: false,
-  max_conn: 0,
   override_host: "'null'",
-  port: 80,
-  weight: 100,
 };
 
 apiInstance.updatePoolServer(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -219,16 +217,16 @@ apiInstance.updatePoolServer(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**pool_id** | **String** |  |
-**server_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**pool_id** | **String** | Alphanumeric string identifying a Pool. |
+**server_id** | **String** | Alphanumeric string identifying a Server. |
+**weight** | **Number** | Weight (`1-100`) used to load balance this server against others. | [optional] [defaults to 100]
+**max_conn** | **Number** | Maximum number of connections. If the value is `0`, it inherits the value from pool&#39;s `max_conn_default`. | [optional] [defaults to 0]
+**port** | **Number** | Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS. | [optional] [defaults to 80]
 **address** | **String** | A hostname, IPv4, or IPv6 address for the server. Required. | [optional]
 **comment** | **String** | A freeform descriptive note. | [optional]
-**disabled** | **Boolean** | Allows servers to be enabled and disabled in a pool. | [optional] [default to false]
-**max_conn** | **Number** | Maximum number of connections. If the value is &#x60;0&#x60;, it inherits the value from pool&#39;s &#x60;max_conn_default&#x60;. | [optional] [default to 0]
-**override_host** | **String** | The hostname to override the Host header. Defaults to &#x60;null&#x60; meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting. | [optional] [default to &#39;null&#39;]
-**port** | **Number** | Port number. Setting port &#x60;443&#x60; does not force TLS. Set &#x60;use_tls&#x60; in pool to force TLS. | [optional] [default to 80]
-**weight** | **Number** | Weight (&#x60;1-100&#x60;) used to load balance this server against others. | [optional] [default to 100]
+**disabled** | **Boolean** | Allows servers to be enabled and disabled in a pool. | [optional] [defaults to false]
+**override_host** | **String** | The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting. | [optional] [defaults to 'null']
 
 ### Return type
 

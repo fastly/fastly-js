@@ -85,7 +85,7 @@ export default class StarApi {
     /**
      * Delete star.
      * @param {Object} options
-     * @param {String} options.star_id
+     * @param {String} options.star_id - Alphanumeric string identifying a star.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     deleteServiceStarWithHttpInfo(options = {}) {
@@ -119,7 +119,7 @@ export default class StarApi {
     /**
      * Delete star.
      * @param {Object} options
-     * @param {String} options.star_id
+     * @param {String} options.star_id - Alphanumeric string identifying a star.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deleteServiceStar(options = {}) {
@@ -132,7 +132,7 @@ export default class StarApi {
     /**
      * Show star.
      * @param {Object} options
-     * @param {String} options.star_id
+     * @param {String} options.star_id - Alphanumeric string identifying a star.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StarResponse} and HTTP response
      */
     getServiceStarWithHttpInfo(options = {}) {
@@ -166,7 +166,7 @@ export default class StarApi {
     /**
      * Show star.
      * @param {Object} options
-     * @param {String} options.star_id
+     * @param {String} options.star_id - Alphanumeric string identifying a star.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StarResponse}
      */
     getServiceStar(options = {}) {

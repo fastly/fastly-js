@@ -24,6 +24,7 @@ class WafTagAttributes {
      * @alias module:model/WafTagAttributes
      */
     constructor() { 
+        
         WafTagAttributes.initialize(this);
     }
 

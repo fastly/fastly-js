@@ -1,6 +1,5 @@
 # Fastly.LoggingKinesisApi
 
-
 ```javascript
 const apiInstance = new Fastly.LoggingKinesisApi();
 ```
@@ -15,11 +14,10 @@ Method | Fastly API endpoint | Description
 [**updateLogKinesis**](LoggingKinesisApi.md#updateLogKinesis) | **PUT** /service/{service_id}/version/{version_id}/logging/kinesis/{logging_kinesis_name} | Update the Amazon Kinesis log endpoint
 
 
-
 ## `createLogKinesis`
 
 ```javascript
-createLogKinesis({ service_id, version_id, [access_key, ], [format, ], [format_version, ], [iam_role, ], [name, ], [placement, ], [region, ], [secret_key, ], [topic] })
+createLogKinesis({ service_id, version_id, [name, ][placement, ][format_version, ][format, ][topic, ][region, ][secret_key, ][access_key, ][iam_role] })
 ```
 
 Create an Amazon Kinesis Data Streams logging object for a particular service and version.
@@ -30,20 +28,20 @@ Create an Amazon Kinesis Data Streams logging object for a particular service an
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  access_key: "access_key_example",
-  format: null,
-  format_version: new Fastly.LoggingFormatVersion(),
-  iam_role: "iam_role_example",
   name: "name_example",
   placement: new Fastly.LoggingPlacement(),
-  region: "region_example",
-  secret_key: "secret_key_example",
+  format_version: new Fastly.LoggingFormatVersion(),
+  format: null,
   topic: "topic_example",
+  region: "us-east-1",
+  secret_key: "secret_key_example",
+  access_key: "access_key_example",
+  iam_role: "iam_role_example",
 };
 
 apiInstance.createLogKinesis(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -54,17 +52,17 @@ apiInstance.createLogKinesis(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**access_key** | **String** | The access key associated with the target Amazon Kinesis stream. Not required if &#x60;iam_role&#x60; is specified. | [optional]
-**format** | [**String**](../Model/String.md) |  | [optional]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
-**iam_role** | **String** | The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if &#x60;access_key&#x60; and &#x60;secret_key&#x60; are provided. | [optional]
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 **name** | **String** | The name for the real-time logging configuration. | [optional]
-**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
-**region** | **String** | The [AWS region](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints) to stream logs to. | [optional]
-**secret_key** | **String** | The secret key associated with the target Amazon Kinesis stream. Not required if &#x60;iam_role&#x60; is specified. | [optional]
+**placement** | [**LoggingPlacement**](LoggingPlacement.md) |  | [optional]
+**format_version** | [**LoggingFormatVersion**](LoggingFormatVersion.md) |  | [optional]
+**format** | [**String**](String.md) |  | [optional]
 **topic** | **String** | The Amazon Kinesis stream to send logs to. Required. | [optional]
+**region** | **String** | The [AWS region](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints) to stream logs to. | [optional] [one of: "us-east-1", "us-east-2", "us-west-1", "us-west-2", "af-south-1", "ap-east-1", "ap-south-1", "ap-northeast-3", "ap-northeast-2", "ap-southeast-1", "ap-southeast-2", "ap-northeast-1", "ca-central-1", "cn-north-1", "cn-northwest-1", "eu-central-1", "eu-west-1", "eu-west-2", "eu-south-1", "eu-west-3", "eu-north-1", "me-south-1", "sa-east-1"]
+**secret_key** | **String** | The secret key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified. | [optional]
+**access_key** | **String** | The access key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified. | [optional]
+**iam_role** | **String** | The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if `access_key` and `secret_key` are provided. | [optional]
 
 ### Return type
 
@@ -90,7 +88,7 @@ const options = {
 
 apiInstance.deleteLogKinesis(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -101,9 +99,9 @@ apiInstance.deleteLogKinesis(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**logging_kinesis_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**logging_kinesis_name** | **String** | The name for the real-time logging configuration. |
 
 ### Return type
 
@@ -129,7 +127,7 @@ const options = {
 
 apiInstance.getLogKinesis(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -140,9 +138,9 @@ apiInstance.getLogKinesis(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**logging_kinesis_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**logging_kinesis_name** | **String** | The name for the real-time logging configuration. |
 
 ### Return type
 
@@ -167,7 +165,7 @@ const options = {
 
 apiInstance.listLogKinesis(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -178,8 +176,8 @@ apiInstance.listLogKinesis(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -205,7 +203,7 @@ const options = {
 
 apiInstance.updateLogKinesis(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -216,9 +214,9 @@ apiInstance.updateLogKinesis(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**logging_kinesis_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**logging_kinesis_name** | **String** | The name for the real-time logging configuration. |
 
 ### Return type
 

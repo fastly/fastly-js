@@ -25,6 +25,7 @@ class WafExclusionResponse {
      * @alias module:model/WafExclusionResponse
      */
     constructor() { 
+        
         WafExclusionResponse.initialize(this);
     }
 

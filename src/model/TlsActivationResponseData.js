@@ -27,8 +27,11 @@ class TlsActivationResponseData {
     /**
      * Constructs a new <code>TlsActivationResponseData</code>.
      * @alias module:model/TlsActivationResponseData
+     * @implements module:model/TlsActivationData
+     * @implements module:model/TlsActivationResponseDataAllOf
      */
     constructor() { 
+        TlsActivationData.initialize(this);TlsActivationResponseDataAllOf.initialize(this);
         TlsActivationResponseData.initialize(this);
     }
 
@@ -50,18 +53,20 @@ class TlsActivationResponseData {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsActivationResponseData();
+            TlsActivationData.constructFromObject(data, obj);
+            TlsActivationResponseDataAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = RelationshipsForTlsActivation.constructFromObject(data['relationships']);
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeTlsActivation.constructFromObject(data['type']);
             }
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = Timestamps.constructFromObject(data['attributes']);
+            if (data.hasOwnProperty('relationships')) {
+                obj['relationships'] = RelationshipsForTlsActivation.constructFromObject(data['relationships']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = Timestamps.constructFromObject(data['attributes']);
             }
         }
         return obj;
@@ -71,19 +76,14 @@ class TlsActivationResponseData {
 }
 
 /**
- * @member {module:model/RelationshipsForTlsActivation} relationships
- */
-TlsActivationResponseData.prototype['relationships'] = undefined;
-
-/**
  * @member {module:model/TypeTlsActivation} type
  */
 TlsActivationResponseData.prototype['type'] = undefined;
 
 /**
- * @member {module:model/Timestamps} attributes
+ * @member {module:model/RelationshipsForTlsActivation} relationships
  */
-TlsActivationResponseData.prototype['attributes'] = undefined;
+TlsActivationResponseData.prototype['relationships'] = undefined;
 
 /**
  * Alphanumeric string identifying a TLS activation.
@@ -91,7 +91,31 @@ TlsActivationResponseData.prototype['attributes'] = undefined;
  */
 TlsActivationResponseData.prototype['id'] = undefined;
 
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+TlsActivationResponseData.prototype['attributes'] = undefined;
 
+
+// Implement TlsActivationData interface:
+/**
+ * @member {module:model/TypeTlsActivation} type
+ */
+TlsActivationData.prototype['type'] = undefined;
+/**
+ * @member {module:model/RelationshipsForTlsActivation} relationships
+ */
+TlsActivationData.prototype['relationships'] = undefined;
+// Implement TlsActivationResponseDataAllOf interface:
+/**
+ * Alphanumeric string identifying a TLS activation.
+ * @member {String} id
+ */
+TlsActivationResponseDataAllOf.prototype['id'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+TlsActivationResponseDataAllOf.prototype['attributes'] = undefined;
 
 
 

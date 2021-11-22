@@ -54,12 +54,12 @@ var BillingStatus = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new BillingStatus();
 
-        if (data.hasOwnProperty('sent_at')) {
-          obj['sent_at'] = _ApiClient["default"].convertToType(data['sent_at'], 'String');
-        }
-
         if (data.hasOwnProperty('status')) {
           obj['status'] = _ApiClient["default"].convertToType(data['status'], 'String');
+        }
+
+        if (data.hasOwnProperty('sent_at')) {
+          obj['sent_at'] = _ApiClient["default"].convertToType(data['sent_at'], 'String');
         }
       }
 
@@ -70,17 +70,17 @@ var BillingStatus = /*#__PURE__*/function () {
   return BillingStatus;
 }();
 /**
- * @member {String} sent_at
- */
-
-
-BillingStatus.prototype['sent_at'] = undefined;
-/**
  * What the current status of this invoice can be.
  * @member {module:model/BillingStatus.StatusEnum} status
  */
 
+
 BillingStatus.prototype['status'] = undefined;
+/**
+ * @member {String} sent_at
+ */
+
+BillingStatus.prototype['sent_at'] = undefined;
 /**
  * Allowed values for the <code>status</code> property.
  * @enum {String}

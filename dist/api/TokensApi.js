@@ -156,7 +156,7 @@ var TokensApi = /*#__PURE__*/function () {
     /**
      * List all tokens belonging to a specific customer.
      * @param {Object} options
-     * @param {String} options.customer_id
+     * @param {String} options.customer_id - Alphanumeric string identifying the customer.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/TokenResponse>} and HTTP response
      */
 
@@ -185,7 +185,7 @@ var TokensApi = /*#__PURE__*/function () {
     /**
      * List all tokens belonging to a specific customer.
      * @param {Object} options
-     * @param {String} options.customer_id
+     * @param {String} options.customer_id - Alphanumeric string identifying the customer.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/TokenResponse>}
      */
 
@@ -235,7 +235,7 @@ var TokensApi = /*#__PURE__*/function () {
     /**
      * Revoke a specific token by its id.
      * @param {Object} options
-     * @param {String} options.token_id
+     * @param {String} options.token_id - Alphanumeric string identifying a token.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
 
@@ -264,7 +264,7 @@ var TokensApi = /*#__PURE__*/function () {
     /**
      * Revoke a specific token by its id.
      * @param {Object} options
-     * @param {String} options.token_id
+     * @param {String} options.token_id - Alphanumeric string identifying a token.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
 

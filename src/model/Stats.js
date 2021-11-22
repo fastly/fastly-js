@@ -25,6 +25,7 @@ class Stats {
      * @alias module:model/Stats
      */
     constructor() { 
+        
         Stats.initialize(this);
     }
 

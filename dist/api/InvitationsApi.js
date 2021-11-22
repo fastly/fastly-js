@@ -84,7 +84,7 @@ var InvitationsApi = /*#__PURE__*/function () {
     /**
      * Delete an invitation.
      * @param {Object} options
-     * @param {String} options.invitation_id
+     * @param {String} options.invitation_id - Alphanumeric string identifying an invitation.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
 
@@ -113,7 +113,7 @@ var InvitationsApi = /*#__PURE__*/function () {
     /**
      * Delete an invitation.
      * @param {Object} options
-     * @param {String} options.invitation_id
+     * @param {String} options.invitation_id - Alphanumeric string identifying an invitation.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
 

@@ -25,6 +25,7 @@ class Invitation {
      * @alias module:model/Invitation
      */
     constructor() { 
+        
         Invitation.initialize(this);
     }
 

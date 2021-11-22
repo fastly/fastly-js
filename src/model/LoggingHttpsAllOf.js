@@ -25,6 +25,7 @@ class LoggingHttpsAllOf {
      * @alias module:model/LoggingHttpsAllOf
      */
     constructor() { 
+        
         LoggingHttpsAllOf.initialize(this);
     }
 
@@ -47,35 +48,35 @@ class LoggingHttpsAllOf {
         if (data) {
             obj = obj || new LoggingHttpsAllOf();
 
-            if (data.hasOwnProperty('content_type')) {
-                obj['content_type'] = ApiClient.convertToType(data['content_type'], 'String');
-            }
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], 'String');
-            }
-            if (data.hasOwnProperty('header_name')) {
-                obj['header_name'] = ApiClient.convertToType(data['header_name'], 'String');
-            }
-            if (data.hasOwnProperty('header_value')) {
-                obj['header_value'] = ApiClient.convertToType(data['header_value'], 'String');
-            }
-            if (data.hasOwnProperty('json_format')) {
-                obj['json_format'] = ApiClient.convertToType(data['json_format'], 'String');
-            }
-            if (data.hasOwnProperty('message_type')) {
-                obj['message_type'] = LoggingMessageType.constructFromObject(data['message_type']);
-            }
-            if (data.hasOwnProperty('method')) {
-                obj['method'] = ApiClient.convertToType(data['method'], 'String');
-            }
-            if (data.hasOwnProperty('request_max_bytes')) {
-                obj['request_max_bytes'] = ApiClient.convertToType(data['request_max_bytes'], 'Number');
+            if (data.hasOwnProperty('url')) {
+                obj['url'] = ApiClient.convertToType(data['url'], 'String');
             }
             if (data.hasOwnProperty('request_max_entries')) {
                 obj['request_max_entries'] = ApiClient.convertToType(data['request_max_entries'], 'Number');
             }
-            if (data.hasOwnProperty('url')) {
-                obj['url'] = ApiClient.convertToType(data['url'], 'String');
+            if (data.hasOwnProperty('request_max_bytes')) {
+                obj['request_max_bytes'] = ApiClient.convertToType(data['request_max_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('content_type')) {
+                obj['content_type'] = ApiClient.convertToType(data['content_type'], 'String');
+            }
+            if (data.hasOwnProperty('header_name')) {
+                obj['header_name'] = ApiClient.convertToType(data['header_name'], 'String');
+            }
+            if (data.hasOwnProperty('message_type')) {
+                obj['message_type'] = LoggingMessageType.constructFromObject(data['message_type']);
+            }
+            if (data.hasOwnProperty('header_value')) {
+                obj['header_value'] = ApiClient.convertToType(data['header_value'], 'String');
+            }
+            if (data.hasOwnProperty('method')) {
+                obj['method'] = ApiClient.convertToType(data['method'], 'String');
+            }
+            if (data.hasOwnProperty('json_format')) {
+                obj['json_format'] = ApiClient.convertToType(data['json_format'], 'String');
+            }
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
         }
         return obj;
@@ -85,57 +86,10 @@ class LoggingHttpsAllOf {
 }
 
 /**
- * Content type of the header sent with the request.
- * @member {String} content_type
- * @default 'null'
+ * The URL to send logs to. Must use HTTPS. Required.
+ * @member {String} url
  */
-LoggingHttpsAllOf.prototype['content_type'] = 'null';
-
-/**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingHttpsAllOf.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-
-/**
- * Name of the custom header sent with the request.
- * @member {String} header_name
- * @default 'null'
- */
-LoggingHttpsAllOf.prototype['header_name'] = 'null';
-
-/**
- * Value of the custom header sent with the request.
- * @member {String} header_value
- * @default 'null'
- */
-LoggingHttpsAllOf.prototype['header_value'] = 'null';
-
-/**
- * Enforces valid JSON formatting for log entries.
- * @member {module:model/LoggingHttpsAllOf.JsonFormatEnum} json_format
- */
-LoggingHttpsAllOf.prototype['json_format'] = undefined;
-
-/**
- * @member {module:model/LoggingMessageType} message_type
- */
-LoggingHttpsAllOf.prototype['message_type'] = undefined;
-
-/**
- * HTTP method used for request.
- * @member {module:model/LoggingHttpsAllOf.MethodEnum} method
- * @default 'POST'
- */
-LoggingHttpsAllOf.prototype['method'] = undefined;
-
-/**
- * The maximum number of bytes sent in one request. Defaults `0` (no limit).
- * @member {Number} request_max_bytes
- * @default 0
- */
-LoggingHttpsAllOf.prototype['request_max_bytes'] = 0;
+LoggingHttpsAllOf.prototype['url'] = undefined;
 
 /**
  * The maximum number of logs sent in one request. Defaults `0` (no limit).
@@ -145,13 +99,81 @@ LoggingHttpsAllOf.prototype['request_max_bytes'] = 0;
 LoggingHttpsAllOf.prototype['request_max_entries'] = 0;
 
 /**
- * The URL to send logs to. Must use HTTPS. Required.
- * @member {String} url
+ * The maximum number of bytes sent in one request. Defaults `0` (no limit).
+ * @member {Number} request_max_bytes
+ * @default 0
  */
-LoggingHttpsAllOf.prototype['url'] = undefined;
+LoggingHttpsAllOf.prototype['request_max_bytes'] = 0;
+
+/**
+ * Content type of the header sent with the request.
+ * @member {String} content_type
+ * @default 'null'
+ */
+LoggingHttpsAllOf.prototype['content_type'] = 'null';
+
+/**
+ * Name of the custom header sent with the request.
+ * @member {String} header_name
+ * @default 'null'
+ */
+LoggingHttpsAllOf.prototype['header_name'] = 'null';
+
+/**
+ * @member {module:model/LoggingMessageType} message_type
+ */
+LoggingHttpsAllOf.prototype['message_type'] = undefined;
+
+/**
+ * Value of the custom header sent with the request.
+ * @member {String} header_value
+ * @default 'null'
+ */
+LoggingHttpsAllOf.prototype['header_value'] = 'null';
+
+/**
+ * HTTP method used for request.
+ * @member {module:model/LoggingHttpsAllOf.MethodEnum} method
+ * @default 'POST'
+ */
+LoggingHttpsAllOf.prototype['method'] = undefined;
+
+/**
+ * Enforces valid JSON formatting for log entries.
+ * @member {module:model/LoggingHttpsAllOf.JsonFormatEnum} json_format
+ */
+LoggingHttpsAllOf.prototype['json_format'] = undefined;
+
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
+LoggingHttpsAllOf.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 
 
 
+
+
+/**
+ * Allowed values for the <code>method</code> property.
+ * @enum {String}
+ * @readonly
+ */
+LoggingHttpsAllOf['MethodEnum'] = {
+
+    /**
+     * value: "POST"
+     * @const
+     */
+    "POST": "POST",
+
+    /**
+     * value: "PUT"
+     * @const
+     */
+    "PUT": "PUT"
+};
 
 
 /**
@@ -178,27 +200,6 @@ LoggingHttpsAllOf['JsonFormatEnum'] = {
      * @const
      */
     "newline_delimited_json": "2"
-};
-
-
-/**
- * Allowed values for the <code>method</code> property.
- * @enum {String}
- * @readonly
- */
-LoggingHttpsAllOf['MethodEnum'] = {
-
-    /**
-     * value: "POST"
-     * @const
-     */
-    "POST": "POST",
-
-    /**
-     * value: "PUT"
-     * @const
-     */
-    "PUT": "PUT"
 };
 
 

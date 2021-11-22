@@ -24,6 +24,7 @@ class TlsConfigurationDataAttributes {
      * @alias module:model/TlsConfigurationDataAttributes
      */
     constructor() { 
+        
         TlsConfigurationDataAttributes.initialize(this);
     }
 

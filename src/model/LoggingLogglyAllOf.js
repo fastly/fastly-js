@@ -24,6 +24,7 @@ class LoggingLogglyAllOf {
      * @alias module:model/LoggingLogglyAllOf
      */
     constructor() { 
+        
         LoggingLogglyAllOf.initialize(this);
     }
 

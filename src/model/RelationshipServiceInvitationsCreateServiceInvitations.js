@@ -25,6 +25,7 @@ class RelationshipServiceInvitationsCreateServiceInvitations {
      * @alias module:model/RelationshipServiceInvitationsCreateServiceInvitations
      */
     constructor() { 
+        
         RelationshipServiceInvitationsCreateServiceInvitations.initialize(this);
     }
 

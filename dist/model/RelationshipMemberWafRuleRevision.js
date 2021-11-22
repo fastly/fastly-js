@@ -56,12 +56,12 @@ var RelationshipMemberWafRuleRevision = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new RelationshipMemberWafRuleRevision();
 
-        if (data.hasOwnProperty('id')) {
-          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
-        }
-
         if (data.hasOwnProperty('type')) {
           obj['type'] = _TypeWafRuleRevision["default"].constructFromObject(data['type']);
+        }
+
+        if (data.hasOwnProperty('id')) {
+          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
       }
 
@@ -72,16 +72,16 @@ var RelationshipMemberWafRuleRevision = /*#__PURE__*/function () {
   return RelationshipMemberWafRuleRevision;
 }();
 /**
+ * @member {module:model/TypeWafRuleRevision} type
+ */
+
+
+RelationshipMemberWafRuleRevision.prototype['type'] = undefined;
+/**
  * Alphanumeric string identifying a WAF rule revision.
  * @member {String} id
  */
 
-
 RelationshipMemberWafRuleRevision.prototype['id'] = undefined;
-/**
- * @member {module:model/TypeWafRuleRevision} type
- */
-
-RelationshipMemberWafRuleRevision.prototype['type'] = undefined;
 var _default = RelationshipMemberWafRuleRevision;
 exports["default"] = _default;

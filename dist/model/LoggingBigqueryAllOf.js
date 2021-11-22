@@ -54,20 +54,16 @@ var LoggingBigqueryAllOf = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new LoggingBigqueryAllOf();
 
-        if (data.hasOwnProperty('dataset')) {
-          obj['dataset'] = _ApiClient["default"].convertToType(data['dataset'], 'String');
+        if (data.hasOwnProperty('name')) {
+          obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
         }
 
         if (data.hasOwnProperty('format')) {
           obj['format'] = _ApiClient["default"].convertToType(data['format'], 'String');
         }
 
-        if (data.hasOwnProperty('name')) {
-          obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
-        }
-
-        if (data.hasOwnProperty('project_id')) {
-          obj['project_id'] = _ApiClient["default"].convertToType(data['project_id'], 'String');
+        if (data.hasOwnProperty('dataset')) {
+          obj['dataset'] = _ApiClient["default"].convertToType(data['dataset'], 'String');
         }
 
         if (data.hasOwnProperty('table')) {
@@ -76,6 +72,10 @@ var LoggingBigqueryAllOf = /*#__PURE__*/function () {
 
         if (data.hasOwnProperty('template_suffix')) {
           obj['template_suffix'] = _ApiClient["default"].convertToType(data['template_suffix'], 'String');
+        }
+
+        if (data.hasOwnProperty('project_id')) {
+          obj['project_id'] = _ApiClient["default"].convertToType(data['project_id'], 'String');
         }
       }
 
@@ -86,12 +86,12 @@ var LoggingBigqueryAllOf = /*#__PURE__*/function () {
   return LoggingBigqueryAllOf;
 }();
 /**
- * Your BigQuery dataset.
- * @member {String} dataset
+ * The name of the BigQuery logging object. Used as a primary key for API access.
+ * @member {String} name
  */
 
 
-LoggingBigqueryAllOf.prototype['dataset'] = undefined;
+LoggingBigqueryAllOf.prototype['name'] = undefined;
 /**
  * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
  * @member {String} format
@@ -99,17 +99,11 @@ LoggingBigqueryAllOf.prototype['dataset'] = undefined;
 
 LoggingBigqueryAllOf.prototype['format'] = undefined;
 /**
- * The name of the BigQuery logging object. Used as a primary key for API access.
- * @member {String} name
+ * Your BigQuery dataset.
+ * @member {String} dataset
  */
 
-LoggingBigqueryAllOf.prototype['name'] = undefined;
-/**
- * Your Google Cloud Platform project ID. Required
- * @member {String} project_id
- */
-
-LoggingBigqueryAllOf.prototype['project_id'] = undefined;
+LoggingBigqueryAllOf.prototype['dataset'] = undefined;
 /**
  * Your BigQuery table.
  * @member {String} table
@@ -122,5 +116,11 @@ LoggingBigqueryAllOf.prototype['table'] = undefined;
  */
 
 LoggingBigqueryAllOf.prototype['template_suffix'] = undefined;
+/**
+ * Your Google Cloud Platform project ID. Required
+ * @member {String} project_id
+ */
+
+LoggingBigqueryAllOf.prototype['project_id'] = undefined;
 var _default = LoggingBigqueryAllOf;
 exports["default"] = _default;

@@ -28,9 +28,15 @@ var StarResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>StarResponse</code>.
    * @alias module:model/StarResponse
+   * @implements module:model/Star
+   * @implements module:model/StarResponseAllOf
    */
   function StarResponse() {
     _classCallCheck(this, StarResponse);
+
+    _Star["default"].initialize(this);
+
+    _StarResponseAllOf["default"].initialize(this);
 
     StarResponse.initialize(this);
   }
@@ -58,6 +64,10 @@ var StarResponse = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new StarResponse();
 
+        _Star["default"].constructFromObject(data, obj);
+
+        _StarResponseAllOf["default"].constructFromObject(data, obj);
+
         if (data.hasOwnProperty('data')) {
           obj['data'] = _ApiClient["default"].convertToType(data['data'], Object);
         }
@@ -74,6 +84,18 @@ var StarResponse = /*#__PURE__*/function () {
  */
 
 
-StarResponse.prototype['data'] = undefined;
+StarResponse.prototype['data'] = undefined; // Implement Star interface:
+
+/**
+ * @member {module:model/StarData} data
+ */
+
+_Star["default"].prototype['data'] = undefined; // Implement StarResponseAllOf interface:
+
+/**
+ * @member {Object} data
+ */
+
+_StarResponseAllOf["default"].prototype['data'] = undefined;
 var _default = StarResponse;
 exports["default"] = _default;

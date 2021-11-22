@@ -24,6 +24,7 @@ class Header {
      * @alias module:model/Header
      */
     constructor() { 
+        
         Header.initialize(this);
     }
 
@@ -216,12 +217,6 @@ Header['TypeEnum'] = {
      * @const
      */
     "request": "request",
-
-    /**
-     * value: "fetch"
-     * @const
-     */
-    "fetch": "fetch",
 
     /**
      * value: "cache"

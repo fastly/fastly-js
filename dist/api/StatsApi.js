@@ -42,7 +42,7 @@ var StatsApi = /*#__PURE__*/function () {
   /**
    * Get the stats from a service for a block of time. This lists all stats by PoP location, starting with AMS. This call requires parameters to select block of time to query. Use either a timestamp range (using start_time and end_time) or a specified month/year combo (using month and year).
    * @param {Object} options
-   * @param {String} options.service_id
+   * @param {String} options.service_id - Alphanumeric string identifying the service.
    * @param {String} [options.month] - 2-digit month.
    * @param {String} [options.year] - 4-digit year.
    * @param {Number} [options.start_time] - Epoch timestamp. Limits the results returned.
@@ -81,7 +81,7 @@ var StatsApi = /*#__PURE__*/function () {
     /**
      * Get the stats from a service for a block of time. This lists all stats by PoP location, starting with AMS. This call requires parameters to select block of time to query. Use either a timestamp range (using start_time and end_time) or a specified month/year combo (using month and year).
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} [options.month] - 2-digit month.
      * @param {String} [options.year] - 4-digit year.
      * @param {Number} [options.start_time] - Epoch timestamp. Limits the results returned.

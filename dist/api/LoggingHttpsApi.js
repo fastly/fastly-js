@@ -7,13 +7,9 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _LoggingFormatVersion = _interopRequireDefault(require("../model/LoggingFormatVersion"));
-
 var _LoggingHttpsResponse = _interopRequireDefault(require("../model/LoggingHttpsResponse"));
 
 var _LoggingMessageType = _interopRequireDefault(require("../model/LoggingMessageType"));
-
-var _LoggingPlacement = _interopRequireDefault(require("../model/LoggingPlacement"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -48,26 +44,26 @@ var LoggingHttpsApi = /*#__PURE__*/function () {
   /**
    * Create an HTTPS object for a particular service and version.
    * @param {Object} options
-   * @param {String} options.service_id
-   * @param {Number} options.version_id
-   * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-   * @param {module:model/LoggingFormatVersion} [options.format_version]
+   * @param {String} options.service_id - Alphanumeric string identifying the service.
+   * @param {Number} options.version_id - Integer identifying a service version.
    * @param {String} [options.name] - The name for the real-time logging configuration.
-   * @param {module:model/LoggingPlacement} [options.placement]
+   * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+   * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
    * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+   * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
    * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
    * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
    * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
    * @param {String} [options.tls_hostname='null'] - The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
-   * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` (no limit).
    * @param {Number} [options.request_max_entries=0] - The maximum number of logs sent in one request. Defaults `0` (no limit).
+   * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` (no limit).
+   * @param {String} [options.url] - The URL to send logs to. Must use HTTPS. Required.
    * @param {String} [options.content_type='null'] - Content type of the header sent with the request.
    * @param {String} [options.header_name='null'] - Name of the custom header sent with the request.
-   * @param {String} [options.header_value='null'] - Value of the custom header sent with the request.
-   * @param {module:model/String} [options.json_format] - Enforces valid JSON formatting for log entries.
    * @param {module:model/LoggingMessageType} [options.message_type]
+   * @param {String} [options.header_value='null'] - Value of the custom header sent with the request.
    * @param {module:model/String} [options.method='POST'] - HTTP method used for request.
-   * @param {String} [options.url] - The URL to send logs to. Must use HTTPS. Required.
+   * @param {module:model/String} [options.json_format] - Enforces valid JSON formatting for log entries.
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingHttpsResponse} and HTTP response
    */
 
@@ -94,24 +90,24 @@ var LoggingHttpsApi = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {
-        'format': options['format'],
-        'format_version': options['format_version'],
         'name': options['name'],
         'placement': options['placement'],
+        'format_version': options['format_version'],
         'response_condition': options['response_condition'],
+        'format': options['format'],
         'tls_ca_cert': options['tls_ca_cert'],
         'tls_client_cert': options['tls_client_cert'],
         'tls_client_key': options['tls_client_key'],
         'tls_hostname': options['tls_hostname'],
-        'request_max_bytes': options['request_max_bytes'],
         'request_max_entries': options['request_max_entries'],
+        'request_max_bytes': options['request_max_bytes'],
+        'url': options['url'],
         'content_type': options['content_type'],
         'header_name': options['header_name'],
-        'header_value': options['header_value'],
-        'json_format': options['json_format'],
         'message_type': options['message_type'],
+        'header_value': options['header_value'],
         'method': options['method'],
-        'url': options['url']
+        'json_format': options['json_format']
       };
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
@@ -122,26 +118,26 @@ var LoggingHttpsApi = /*#__PURE__*/function () {
     /**
      * Create an HTTPS object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_hostname='null'] - The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
-     * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` (no limit).
      * @param {Number} [options.request_max_entries=0] - The maximum number of logs sent in one request. Defaults `0` (no limit).
+     * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` (no limit).
+     * @param {String} [options.url] - The URL to send logs to. Must use HTTPS. Required.
      * @param {String} [options.content_type='null'] - Content type of the header sent with the request.
      * @param {String} [options.header_name='null'] - Name of the custom header sent with the request.
-     * @param {String} [options.header_value='null'] - Value of the custom header sent with the request.
-     * @param {module:model/String} [options.json_format] - Enforces valid JSON formatting for log entries.
      * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {String} [options.header_value='null'] - Value of the custom header sent with the request.
      * @param {module:model/String} [options.method='POST'] - HTTP method used for request.
-     * @param {String} [options.url] - The URL to send logs to. Must use HTTPS. Required.
+     * @param {module:model/String} [options.json_format] - Enforces valid JSON formatting for log entries.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingHttpsResponse}
      */
 
@@ -156,9 +152,9 @@ var LoggingHttpsApi = /*#__PURE__*/function () {
     /**
      * Delete the HTTPS object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_https_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_https_name - The name for the real-time logging configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
 
@@ -199,9 +195,9 @@ var LoggingHttpsApi = /*#__PURE__*/function () {
     /**
      * Delete the HTTPS object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_https_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_https_name - The name for the real-time logging configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
 
@@ -216,9 +212,9 @@ var LoggingHttpsApi = /*#__PURE__*/function () {
     /**
      * Get the HTTPS object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_https_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_https_name - The name for the real-time logging configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingHttpsResponse} and HTTP response
      */
 
@@ -259,9 +255,9 @@ var LoggingHttpsApi = /*#__PURE__*/function () {
     /**
      * Get the HTTPS object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_https_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_https_name - The name for the real-time logging configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingHttpsResponse}
      */
 
@@ -276,8 +272,8 @@ var LoggingHttpsApi = /*#__PURE__*/function () {
     /**
      * List all of the HTTPS objects for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingHttpsResponse>} and HTTP response
      */
 
@@ -312,8 +308,8 @@ var LoggingHttpsApi = /*#__PURE__*/function () {
     /**
      * List all of the HTTPS objects for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingHttpsResponse>}
      */
 
@@ -328,27 +324,27 @@ var LoggingHttpsApi = /*#__PURE__*/function () {
     /**
      * Update the HTTPS object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_https_name
-     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_https_name - The name for the real-time logging configuration.
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_hostname='null'] - The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
-     * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` (no limit).
      * @param {Number} [options.request_max_entries=0] - The maximum number of logs sent in one request. Defaults `0` (no limit).
+     * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` (no limit).
+     * @param {String} [options.url] - The URL to send logs to. Must use HTTPS. Required.
      * @param {String} [options.content_type='null'] - Content type of the header sent with the request.
      * @param {String} [options.header_name='null'] - Name of the custom header sent with the request.
-     * @param {String} [options.header_value='null'] - Value of the custom header sent with the request.
-     * @param {module:model/String} [options.json_format] - Enforces valid JSON formatting for log entries.
      * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {String} [options.header_value='null'] - Value of the custom header sent with the request.
      * @param {module:model/String} [options.method='POST'] - HTTP method used for request.
-     * @param {String} [options.url] - The URL to send logs to. Must use HTTPS. Required.
+     * @param {module:model/String} [options.json_format] - Enforces valid JSON formatting for log entries.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingHttpsResponse} and HTTP response
      */
 
@@ -380,24 +376,24 @@ var LoggingHttpsApi = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {
-        'format': options['format'],
-        'format_version': options['format_version'],
         'name': options['name'],
         'placement': options['placement'],
+        'format_version': options['format_version'],
         'response_condition': options['response_condition'],
+        'format': options['format'],
         'tls_ca_cert': options['tls_ca_cert'],
         'tls_client_cert': options['tls_client_cert'],
         'tls_client_key': options['tls_client_key'],
         'tls_hostname': options['tls_hostname'],
-        'request_max_bytes': options['request_max_bytes'],
         'request_max_entries': options['request_max_entries'],
+        'request_max_bytes': options['request_max_bytes'],
+        'url': options['url'],
         'content_type': options['content_type'],
         'header_name': options['header_name'],
-        'header_value': options['header_value'],
-        'json_format': options['json_format'],
         'message_type': options['message_type'],
+        'header_value': options['header_value'],
         'method': options['method'],
-        'url': options['url']
+        'json_format': options['json_format']
       };
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
@@ -408,27 +404,27 @@ var LoggingHttpsApi = /*#__PURE__*/function () {
     /**
      * Update the HTTPS object for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_https_name
-     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_https_name - The name for the real-time logging configuration.
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_hostname='null'] - The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
-     * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` (no limit).
      * @param {Number} [options.request_max_entries=0] - The maximum number of logs sent in one request. Defaults `0` (no limit).
+     * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` (no limit).
+     * @param {String} [options.url] - The URL to send logs to. Must use HTTPS. Required.
      * @param {String} [options.content_type='null'] - Content type of the header sent with the request.
      * @param {String} [options.header_name='null'] - Name of the custom header sent with the request.
-     * @param {String} [options.header_value='null'] - Value of the custom header sent with the request.
-     * @param {module:model/String} [options.json_format] - Enforces valid JSON formatting for log entries.
      * @param {module:model/LoggingMessageType} [options.message_type]
+     * @param {String} [options.header_value='null'] - Value of the custom header sent with the request.
      * @param {module:model/String} [options.method='POST'] - HTTP method used for request.
-     * @param {String} [options.url] - The URL to send logs to. Must use HTTPS. Required.
+     * @param {module:model/String} [options.json_format] - Enforces valid JSON formatting for log entries.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingHttpsResponse}
      */
 

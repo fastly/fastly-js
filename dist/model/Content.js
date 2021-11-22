@@ -58,10 +58,6 @@ var Content = /*#__PURE__*/function () {
           obj['hash'] = _ApiClient["default"].convertToType(data['hash'], 'String');
         }
 
-        if (data.hasOwnProperty('pop')) {
-          obj['pop'] = _ApiClient["default"].convertToType(data['pop'], 'String');
-        }
-
         if (data.hasOwnProperty('request')) {
           obj['request'] = _ApiClient["default"].convertToType(data['request'], Object);
         }
@@ -77,6 +73,10 @@ var Content = /*#__PURE__*/function () {
         if (data.hasOwnProperty('server')) {
           obj['server'] = _ApiClient["default"].convertToType(data['server'], 'String');
         }
+
+        if (data.hasOwnProperty('pop')) {
+          obj['pop'] = _ApiClient["default"].convertToType(data['pop'], 'String');
+        }
       }
 
       return obj;
@@ -91,11 +91,6 @@ var Content = /*#__PURE__*/function () {
 
 
 Content.prototype['hash'] = undefined;
-/**
- * @member {String} pop
- */
-
-Content.prototype['pop'] = undefined;
 /**
  * @member {Object} request
  */
@@ -116,5 +111,10 @@ Content.prototype['response_time'] = undefined;
  */
 
 Content.prototype['server'] = undefined;
+/**
+ * @member {String} pop
+ */
+
+Content.prototype['pop'] = undefined;
 var _default = Content;
 exports["default"] = _default;

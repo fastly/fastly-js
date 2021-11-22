@@ -24,6 +24,7 @@ class Acl {
      * @alias module:model/Acl
      */
     constructor() { 
+        
         Acl.initialize(this);
     }
 

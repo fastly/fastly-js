@@ -30,9 +30,18 @@ var ConditionResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>ConditionResponse</code>.
    * @alias module:model/ConditionResponse
+   * @implements module:model/Condition
+   * @implements module:model/ServiceIdAndVersion
+   * @implements module:model/Timestamps
    */
   function ConditionResponse() {
     _classCallCheck(this, ConditionResponse);
+
+    _Condition["default"].initialize(this);
+
+    _ServiceIdAndVersion["default"].initialize(this);
+
+    _Timestamps["default"].initialize(this);
 
     ConditionResponse.initialize(this);
   }
@@ -59,6 +68,12 @@ var ConditionResponse = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new ConditionResponse();
+
+        _Condition["default"].constructFromObject(data, obj);
+
+        _ServiceIdAndVersion["default"].constructFromObject(data, obj);
+
+        _Timestamps["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('comment')) {
           obj['comment'] = _ApiClient["default"].convertToType(data['comment'], 'String');
@@ -168,7 +183,71 @@ ConditionResponse.prototype['deleted_at'] = undefined;
  * @member {String} updated_at
  */
 
-ConditionResponse.prototype['updated_at'] = undefined;
+ConditionResponse.prototype['updated_at'] = undefined; // Implement Condition interface:
+
+/**
+ * A freeform descriptive note.
+ * @member {String} comment
+ */
+
+_Condition["default"].prototype['comment'] = undefined;
+/**
+ * Name of the condition. Required.
+ * @member {String} name
+ */
+
+_Condition["default"].prototype['name'] = undefined;
+/**
+ * Priority determines execution order. Lower numbers execute first.
+ * @member {Number} priority
+ * @default 100
+ */
+
+_Condition["default"].prototype['priority'] = 100;
+/**
+ * A conditional expression in VCL used to determine if the condition is met.
+ * @member {String} statement
+ */
+
+_Condition["default"].prototype['statement'] = undefined;
+/**
+ * Type of the condition. Required.
+ * @member {module:model/Condition.TypeEnum} type
+ */
+
+_Condition["default"].prototype['type'] = undefined; // Implement ServiceIdAndVersion interface:
+
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+
+_ServiceIdAndVersion["default"].prototype['service_id'] = undefined;
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
+
+_ServiceIdAndVersion["default"].prototype['version'] = undefined; // Implement Timestamps interface:
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+
+_Timestamps["default"].prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+
+_Timestamps["default"].prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+
+_Timestamps["default"].prototype['updated_at'] = undefined;
 /**
  * Allowed values for the <code>type</code> property.
  * @enum {String}

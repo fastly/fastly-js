@@ -27,8 +27,11 @@ class WafRuleResponseData {
     /**
      * Constructs a new <code>WafRuleResponseData</code>.
      * @alias module:model/WafRuleResponseData
+     * @implements module:model/WafRule
+     * @implements module:model/WafRuleResponseDataAllOf
      */
     constructor() { 
+        WafRule.initialize(this);WafRuleResponseDataAllOf.initialize(this);
         WafRuleResponseData.initialize(this);
     }
 
@@ -50,15 +53,17 @@ class WafRuleResponseData {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafRuleResponseData();
+            WafRule.constructFromObject(data, obj);
+            WafRuleResponseDataAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = WafRuleAttributes.constructFromObject(data['attributes']);
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeWafRule.constructFromObject(data['type']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeWafRule.constructFromObject(data['type']);
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = WafRuleAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = RelationshipsForWafRule.constructFromObject(data['relationships']);
@@ -71,9 +76,9 @@ class WafRuleResponseData {
 }
 
 /**
- * @member {module:model/WafRuleAttributes} attributes
+ * @member {module:model/TypeWafRule} type
  */
-WafRuleResponseData.prototype['attributes'] = undefined;
+WafRuleResponseData.prototype['type'] = undefined;
 
 /**
  * Alphanumeric string identifying a WAF rule.
@@ -82,9 +87,9 @@ WafRuleResponseData.prototype['attributes'] = undefined;
 WafRuleResponseData.prototype['id'] = undefined;
 
 /**
- * @member {module:model/TypeWafRule} type
+ * @member {module:model/WafRuleAttributes} attributes
  */
-WafRuleResponseData.prototype['type'] = undefined;
+WafRuleResponseData.prototype['attributes'] = undefined;
 
 /**
  * @member {module:model/RelationshipsForWafRule} relationships
@@ -92,6 +97,25 @@ WafRuleResponseData.prototype['type'] = undefined;
 WafRuleResponseData.prototype['relationships'] = undefined;
 
 
+// Implement WafRule interface:
+/**
+ * @member {module:model/TypeWafRule} type
+ */
+WafRule.prototype['type'] = undefined;
+/**
+ * Alphanumeric string identifying a WAF rule.
+ * @member {String} id
+ */
+WafRule.prototype['id'] = undefined;
+/**
+ * @member {module:model/WafRuleAttributes} attributes
+ */
+WafRule.prototype['attributes'] = undefined;
+// Implement WafRuleResponseDataAllOf interface:
+/**
+ * @member {module:model/RelationshipsForWafRule} relationships
+ */
+WafRuleResponseDataAllOf.prototype['relationships'] = undefined;
 
 
 

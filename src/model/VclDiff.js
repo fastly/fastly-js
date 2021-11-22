@@ -24,6 +24,7 @@ class VclDiff {
      * @alias module:model/VclDiff
      */
     constructor() { 
+        
         VclDiff.initialize(this);
     }
 
@@ -46,17 +47,17 @@ class VclDiff {
         if (data) {
             obj = obj || new VclDiff();
 
-            if (data.hasOwnProperty('diff')) {
-                obj['diff'] = ApiClient.convertToType(data['diff'], 'String');
-            }
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], 'String');
-            }
             if (data.hasOwnProperty('from')) {
                 obj['from'] = ApiClient.convertToType(data['from'], 'Number');
             }
             if (data.hasOwnProperty('to')) {
                 obj['to'] = ApiClient.convertToType(data['to'], 'Number');
+            }
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('diff')) {
+                obj['diff'] = ApiClient.convertToType(data['diff'], 'String');
             }
         }
         return obj;
@@ -64,18 +65,6 @@ class VclDiff {
 
 
 }
-
-/**
- * The differences between two specified versions.
- * @member {String} diff
- */
-VclDiff.prototype['diff'] = undefined;
-
-/**
- * The format in which compared VCL changes are being returned in.
- * @member {module:model/VclDiff.FormatEnum} format
- */
-VclDiff.prototype['format'] = undefined;
 
 /**
  * The version number of the service to which changes in the generated VCL are being compared.
@@ -88,6 +77,18 @@ VclDiff.prototype['from'] = undefined;
  * @member {Number} to
  */
 VclDiff.prototype['to'] = undefined;
+
+/**
+ * The format in which compared VCL changes are being returned in.
+ * @member {module:model/VclDiff.FormatEnum} format
+ */
+VclDiff.prototype['format'] = undefined;
+
+/**
+ * The differences between two specified versions.
+ * @member {String} diff
+ */
+VclDiff.prototype['diff'] = undefined;
 
 
 

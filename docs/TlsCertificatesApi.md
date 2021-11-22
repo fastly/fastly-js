@@ -1,6 +1,5 @@
 # Fastly.TlsCertificatesApi
 
-
 ```javascript
 const apiInstance = new Fastly.TlsCertificatesApi();
 ```
@@ -15,11 +14,10 @@ Method | Fastly API endpoint | Description
 [**updateTlsCert**](TlsCertificatesApi.md#updateTlsCert) | **PATCH** /tls/certificates/{tls_certificate_id} | Update a TLS certificate
 
 
-
 ## `createTlsCert`
 
 ```javascript
-createTlsCert({ [tls_certificate] })
+createTlsCert({ , [tls_certificate] })
 ```
 
 Create a TLS certificate.
@@ -28,12 +26,12 @@ Create a TLS certificate.
 
 ```javascript
 const options = {
-  tls_certificate: new Fastly.TlsCertificate(),
+  tls_certificate: {"data":{"type":"tls_certificate","attributes":{"cert_blob":"-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n","name":"My certificate"}}},
 };
 
 apiInstance.createTlsCert(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -44,7 +42,7 @@ apiInstance.createTlsCert(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_certificate** | [**TlsCertificate**](../Model/TlsCertificate.md) |  | [optional]
+**tls_certificate** | [**TlsCertificate**](TlsCertificate.md) |  | [optional]
 
 ### Return type
 
@@ -79,7 +77,7 @@ apiInstance.deleteTlsCert(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_certificate_id** | **String** |  |
+**tls_certificate_id** | **String** | Alphanumeric string identifying a TLS certificate. |
 
 ### Return type
 
@@ -103,7 +101,7 @@ const options = {
 
 apiInstance.getTlsCert(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -114,7 +112,7 @@ apiInstance.getTlsCert(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_certificate_id** | **String** |  |
+**tls_certificate_id** | **String** | Alphanumeric string identifying a TLS certificate. |
 
 ### Return type
 
@@ -124,7 +122,7 @@ Name | Type | Description  | Notes
 ## `listTlsCerts`
 
 ```javascript
-listTlsCerts({ [filter_not_after, ][filter_tls_domains_id, ][include, ][page_number, ][page_size, ][sort] })
+listTlsCerts({ , [filter_not_after, ][filter_tls_domains_id, ][include, ][page_number, ][page_size, ][sort] })
 ```
 
 List all TLS certificates.
@@ -136,14 +134,14 @@ const options = {
   filter_not_after: "filter_not_after_example",
   filter_tls_domains_id: "filter_tls_domains_id_example",
   include: "include_example",
-  page_number: 56,
+  page_number: 1,
   page_size: 20,
-  sort: "'created_at'",
+  sort: "created_at",
 };
 
 apiInstance.listTlsCerts(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -156,10 +154,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter_not_after** | **String** | Limit the returned certificates to those that expire prior to the specified date in UTC. Accepts parameters: lte (e.g., filter[not_after][lte]&#x3D;2020-05-05).  | [optional]
 **filter_tls_domains_id** | **String** | Limit the returned certificates to those that include the specific domain. | [optional]
-**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_activations&#x60;.  | [optional]
+**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: `tls_activations`.  | [optional]
 **page_number** | **Number** | Current page. | [optional]
-**page_size** | **Number** | Number of records per page. | [optional] [default to 20]
-**sort** | **String** | The order in which to list the results by creation date. | [optional] [default to &#39;created_at&#39;]
+**page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
+**sort** | **String** | The order in which to list the results by creation date. | [optional] [one of: "created_at", "-created_at"]
 
 ### Return type
 
@@ -179,12 +177,12 @@ Replace a TLS certificate with a newly reissued TLS certificate, or update a TLS
 ```javascript
 const options = {
   tls_certificate_id: "tls_certificate_id_example", // required
-  tls_certificate: new Fastly.TlsCertificate(),
+  tls_certificate: {"data":{"type":"tls_certificate","attributes":{"cert_blob":"-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n","name":"My certificate"}}},
 };
 
 apiInstance.updateTlsCert(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -195,8 +193,8 @@ apiInstance.updateTlsCert(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_certificate_id** | **String** |  |
-**tls_certificate** | [**TlsCertificate**](../Model/TlsCertificate.md) |  | [optional]
+**tls_certificate_id** | **String** | Alphanumeric string identifying a TLS certificate. |
+**tls_certificate** | [**TlsCertificate**](TlsCertificate.md) |  | [optional]
 
 ### Return type
 

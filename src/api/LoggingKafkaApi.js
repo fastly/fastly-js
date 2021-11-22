@@ -13,9 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import LoggingFormatVersion from '../model/LoggingFormatVersion';
 import LoggingKafkaResponse from '../model/LoggingKafkaResponse';
-import LoggingPlacement from '../model/LoggingPlacement';
 import LoggingUseTls from '../model/LoggingUseTls';
 
 /**
@@ -44,27 +42,27 @@ export default class LoggingKafkaApi {
     /**
      * Create a Kafka logging endpoint for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_hostname='null'] - The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
-     * @param {module:model/String} [options.auth_method] - SASL authentication method.
+     * @param {String} [options.topic] - The Kafka topic to send logs to. Required.
      * @param {String} [options.brokers] - A comma-separated list of IP addresses or hostnames of Kafka brokers. Required.
      * @param {module:model/String} [options.compression_codec] - The codec used for compression of your logs.
-     * @param {Boolean} [options.parse_log_keyvals] - Enables parsing of key=value tuples from the beginning of a logline, turning them into [record headers](https://cwiki.apache.org/confluence/display/KAFKA/KIP-82+-+Add+Record+Headers).
-     * @param {String} [options.password] - SASL password.
-     * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` (no limit).
      * @param {module:model/Number} [options.required_acks=1] - The number of acknowledgements a leader must receive before a write is considered successful.
-     * @param {String} [options.topic] - The Kafka topic to send logs to. Required.
-     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` (no limit).
+     * @param {Boolean} [options.parse_log_keyvals] - Enables parsing of key=value tuples from the beginning of a logline, turning them into [record headers](https://cwiki.apache.org/confluence/display/KAFKA/KIP-82+-+Add+Record+Headers).
+     * @param {module:model/String} [options.auth_method] - SASL authentication method.
      * @param {String} [options.user] - SASL user.
+     * @param {String} [options.password] - SASL password.
+     * @param {module:model/LoggingUseTls} [options.use_tls]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingKafkaResponse} and HTTP response
      */
     createLogKafkaWithHttpInfo(options = {}) {
@@ -87,25 +85,25 @@ export default class LoggingKafkaApi {
       let headerParams = {
       };
       let formParams = {
-        'format': options['format'],
-        'format_version': options['format_version'],
         'name': options['name'],
         'placement': options['placement'],
+        'format_version': options['format_version'],
         'response_condition': options['response_condition'],
+        'format': options['format'],
         'tls_ca_cert': options['tls_ca_cert'],
         'tls_client_cert': options['tls_client_cert'],
         'tls_client_key': options['tls_client_key'],
         'tls_hostname': options['tls_hostname'],
-        'auth_method': options['auth_method'],
+        'topic': options['topic'],
         'brokers': options['brokers'],
         'compression_codec': options['compression_codec'],
-        'parse_log_keyvals': options['parse_log_keyvals'],
-        'password': options['password'],
-        'request_max_bytes': options['request_max_bytes'],
         'required_acks': options['required_acks'],
-        'topic': options['topic'],
-        'use_tls': options['use_tls'],
-        'user': options['user']
+        'request_max_bytes': options['request_max_bytes'],
+        'parse_log_keyvals': options['parse_log_keyvals'],
+        'auth_method': options['auth_method'],
+        'user': options['user'],
+        'password': options['password'],
+        'use_tls': options['use_tls']
       };
 
       let authNames = ['token'];
@@ -122,27 +120,27 @@ export default class LoggingKafkaApi {
     /**
      * Create a Kafka logging endpoint for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
-     * @param {module:model/LoggingFormatVersion} [options.format_version]
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.name] - The name for the real-time logging configuration.
-     * @param {module:model/LoggingPlacement} [options.placement]
+     * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
+     * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {String} [options.tls_ca_cert='null'] - A secure certificate to authenticate a server with. Must be in PEM format.
      * @param {String} [options.tls_client_cert='null'] - The client certificate used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_hostname='null'] - The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
-     * @param {module:model/String} [options.auth_method] - SASL authentication method.
+     * @param {String} [options.topic] - The Kafka topic to send logs to. Required.
      * @param {String} [options.brokers] - A comma-separated list of IP addresses or hostnames of Kafka brokers. Required.
      * @param {module:model/String} [options.compression_codec] - The codec used for compression of your logs.
-     * @param {Boolean} [options.parse_log_keyvals] - Enables parsing of key=value tuples from the beginning of a logline, turning them into [record headers](https://cwiki.apache.org/confluence/display/KAFKA/KIP-82+-+Add+Record+Headers).
-     * @param {String} [options.password] - SASL password.
-     * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` (no limit).
      * @param {module:model/Number} [options.required_acks=1] - The number of acknowledgements a leader must receive before a write is considered successful.
-     * @param {String} [options.topic] - The Kafka topic to send logs to. Required.
-     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` (no limit).
+     * @param {Boolean} [options.parse_log_keyvals] - Enables parsing of key=value tuples from the beginning of a logline, turning them into [record headers](https://cwiki.apache.org/confluence/display/KAFKA/KIP-82+-+Add+Record+Headers).
+     * @param {module:model/String} [options.auth_method] - SASL authentication method.
      * @param {String} [options.user] - SASL user.
+     * @param {String} [options.password] - SASL password.
+     * @param {module:model/LoggingUseTls} [options.use_tls]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingKafkaResponse}
      */
     createLogKafka(options = {}) {
@@ -155,9 +153,9 @@ export default class LoggingKafkaApi {
     /**
      * Delete the Kafka logging endpoint for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_kafka_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_kafka_name - The name for the real-time logging configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     deleteLogKafkaWithHttpInfo(options = {}) {
@@ -201,9 +199,9 @@ export default class LoggingKafkaApi {
     /**
      * Delete the Kafka logging endpoint for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_kafka_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_kafka_name - The name for the real-time logging configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     deleteLogKafka(options = {}) {
@@ -216,9 +214,9 @@ export default class LoggingKafkaApi {
     /**
      * Get the Kafka logging endpoint for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_kafka_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_kafka_name - The name for the real-time logging configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingKafkaResponse} and HTTP response
      */
     getLogKafkaWithHttpInfo(options = {}) {
@@ -262,9 +260,9 @@ export default class LoggingKafkaApi {
     /**
      * Get the Kafka logging endpoint for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_kafka_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_kafka_name - The name for the real-time logging configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingKafkaResponse}
      */
     getLogKafka(options = {}) {
@@ -277,8 +275,8 @@ export default class LoggingKafkaApi {
     /**
      * List all of the Kafka logging endpoints for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/LoggingKafkaResponse>} and HTTP response
      */
     listLogKafkaWithHttpInfo(options = {}) {
@@ -317,8 +315,8 @@ export default class LoggingKafkaApi {
     /**
      * List all of the Kafka logging endpoints for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/LoggingKafkaResponse>}
      */
     listLogKafka(options = {}) {
@@ -331,9 +329,9 @@ export default class LoggingKafkaApi {
     /**
      * Update the Kafka logging endpoint for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_kafka_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_kafka_name - The name for the real-time logging configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingKafkaResponse} and HTTP response
      */
     updateLogKafkaWithHttpInfo(options = {}) {
@@ -377,9 +375,9 @@ export default class LoggingKafkaApi {
     /**
      * Update the Kafka logging endpoint for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.logging_kafka_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_kafka_name - The name for the real-time logging configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingKafkaResponse}
      */
     updateLogKafka(options = {}) {

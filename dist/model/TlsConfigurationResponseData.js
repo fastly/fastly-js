@@ -34,9 +34,15 @@ var TlsConfigurationResponseData = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>TlsConfigurationResponseData</code>.
    * @alias module:model/TlsConfigurationResponseData
+   * @implements module:model/TlsConfigurationData
+   * @implements module:model/TlsConfigurationResponseDataAllOf
    */
   function TlsConfigurationResponseData() {
     _classCallCheck(this, TlsConfigurationResponseData);
+
+    _TlsConfigurationData["default"].initialize(this);
+
+    _TlsConfigurationResponseDataAllOf["default"].initialize(this);
 
     TlsConfigurationResponseData.initialize(this);
   }
@@ -64,16 +70,20 @@ var TlsConfigurationResponseData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new TlsConfigurationResponseData();
 
+        _TlsConfigurationData["default"].constructFromObject(data, obj);
+
+        _TlsConfigurationResponseDataAllOf["default"].constructFromObject(data, obj);
+
+        if (data.hasOwnProperty('type')) {
+          obj['type'] = _TypeTlsConfiguration["default"].constructFromObject(data['type']);
+        }
+
         if (data.hasOwnProperty('attributes')) {
           obj['attributes'] = _ApiClient["default"].convertToType(data['attributes'], _Timestamps["default"]);
         }
 
         if (data.hasOwnProperty('relationships')) {
           obj['relationships'] = _RelationshipsForTlsConfiguration["default"].constructFromObject(data['relationships']);
-        }
-
-        if (data.hasOwnProperty('type')) {
-          obj['type'] = _TypeTlsConfiguration["default"].constructFromObject(data['type']);
         }
 
         if (data.hasOwnProperty('id')) {
@@ -88,9 +98,14 @@ var TlsConfigurationResponseData = /*#__PURE__*/function () {
   return TlsConfigurationResponseData;
 }();
 /**
- * @member {module:model/Timestamps} attributes
+ * @member {module:model/TypeTlsConfiguration} type
  */
 
+
+TlsConfigurationResponseData.prototype['type'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
 
 TlsConfigurationResponseData.prototype['attributes'] = undefined;
 /**
@@ -99,15 +114,38 @@ TlsConfigurationResponseData.prototype['attributes'] = undefined;
 
 TlsConfigurationResponseData.prototype['relationships'] = undefined;
 /**
+ * Alphanumeric string identifying a TLS configuration.
+ * @member {String} id
+ */
+
+TlsConfigurationResponseData.prototype['id'] = undefined; // Implement TlsConfigurationData interface:
+
+/**
  * @member {module:model/TypeTlsConfiguration} type
  */
 
-TlsConfigurationResponseData.prototype['type'] = undefined;
+_TlsConfigurationData["default"].prototype['type'] = undefined;
+/**
+ * @member {module:model/TlsConfigurationDataAttributes} attributes
+ */
+
+_TlsConfigurationData["default"].prototype['attributes'] = undefined;
+/**
+ * @member {module:model/RelationshipsForTlsConfiguration} relationships
+ */
+
+_TlsConfigurationData["default"].prototype['relationships'] = undefined; // Implement TlsConfigurationResponseDataAllOf interface:
+
 /**
  * Alphanumeric string identifying a TLS configuration.
  * @member {String} id
  */
 
-TlsConfigurationResponseData.prototype['id'] = undefined;
+_TlsConfigurationResponseDataAllOf["default"].prototype['id'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+
+_TlsConfigurationResponseDataAllOf["default"].prototype['attributes'] = undefined;
 var _default = TlsConfigurationResponseData;
 exports["default"] = _default;

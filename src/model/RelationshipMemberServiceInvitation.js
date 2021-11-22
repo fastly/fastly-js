@@ -25,6 +25,7 @@ class RelationshipMemberServiceInvitation {
      * @alias module:model/RelationshipMemberServiceInvitation
      */
     constructor() { 
+        
         RelationshipMemberServiceInvitation.initialize(this);
     }
 
@@ -47,11 +48,11 @@ class RelationshipMemberServiceInvitation {
         if (data) {
             obj = obj || new RelationshipMemberServiceInvitation();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeServiceInvitation.constructFromObject(data['type']);
+            }
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
         }
         return obj;
@@ -61,15 +62,15 @@ class RelationshipMemberServiceInvitation {
 }
 
 /**
+ * @member {module:model/TypeServiceInvitation} type
+ */
+RelationshipMemberServiceInvitation.prototype['type'] = undefined;
+
+/**
  * Alphanumeric string identifying a service invitation.
  * @member {String} id
  */
 RelationshipMemberServiceInvitation.prototype['id'] = undefined;
-
-/**
- * @member {module:model/TypeServiceInvitation} type
- */
-RelationshipMemberServiceInvitation.prototype['type'] = undefined;
 
 
 

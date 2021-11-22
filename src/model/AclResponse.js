@@ -26,8 +26,13 @@ class AclResponse {
     /**
      * Constructs a new <code>AclResponse</code>.
      * @alias module:model/AclResponse
+     * @implements module:model/Acl
+     * @implements module:model/Timestamps
+     * @implements module:model/ServiceIdAndVersion
+     * @implements module:model/AclResponseAllOf
      */
     constructor() { 
+        Acl.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);AclResponseAllOf.initialize(this);
         AclResponse.initialize(this);
     }
 
@@ -49,6 +54,10 @@ class AclResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new AclResponse();
+            Acl.constructFromObject(data, obj);
+            Timestamps.constructFromObject(data, obj);
+            ServiceIdAndVersion.constructFromObject(data, obj);
+            AclResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -121,6 +130,45 @@ AclResponse.prototype['version'] = undefined;
 AclResponse.prototype['id'] = undefined;
 
 
+// Implement Acl interface:
+/**
+ * Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace.
+ * @member {String} name
+ */
+Acl.prototype['name'] = undefined;
+// Implement Timestamps interface:
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+Timestamps.prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+Timestamps.prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+Timestamps.prototype['updated_at'] = undefined;
+// Implement ServiceIdAndVersion interface:
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+ServiceIdAndVersion.prototype['service_id'] = undefined;
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
+ServiceIdAndVersion.prototype['version'] = undefined;
+// Implement AclResponseAllOf interface:
+/**
+ * Alphanumeric string identifying a ACL.
+ * @member {String} id
+ */
+AclResponseAllOf.prototype['id'] = undefined;
 
 
 

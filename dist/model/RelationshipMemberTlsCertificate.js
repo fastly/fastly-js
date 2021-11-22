@@ -56,12 +56,12 @@ var RelationshipMemberTlsCertificate = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new RelationshipMemberTlsCertificate();
 
-        if (data.hasOwnProperty('id')) {
-          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
-        }
-
         if (data.hasOwnProperty('type')) {
           obj['type'] = _TypeTlsCertificate["default"].constructFromObject(data['type']);
+        }
+
+        if (data.hasOwnProperty('id')) {
+          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
       }
 
@@ -72,16 +72,16 @@ var RelationshipMemberTlsCertificate = /*#__PURE__*/function () {
   return RelationshipMemberTlsCertificate;
 }();
 /**
+ * @member {module:model/TypeTlsCertificate} type
+ */
+
+
+RelationshipMemberTlsCertificate.prototype['type'] = undefined;
+/**
  * Alphanumeric string identifying a TLS certificate.
  * @member {String} id
  */
 
-
 RelationshipMemberTlsCertificate.prototype['id'] = undefined;
-/**
- * @member {module:model/TypeTlsCertificate} type
- */
-
-RelationshipMemberTlsCertificate.prototype['type'] = undefined;
 var _default = RelationshipMemberTlsCertificate;
 exports["default"] = _default;

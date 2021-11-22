@@ -1,6 +1,5 @@
 # Fastly.TlsPrivateKeysApi
 
-
 ```javascript
 const apiInstance = new Fastly.TlsPrivateKeysApi();
 ```
@@ -14,11 +13,10 @@ Method | Fastly API endpoint | Description
 [**listTlsKeys**](TlsPrivateKeysApi.md#listTlsKeys) | **GET** /tls/private_keys | List TLS private keys
 
 
-
 ## `createTlsKey`
 
 ```javascript
-createTlsKey({ [tls_private_key] })
+createTlsKey({ , [tls_private_key] })
 ```
 
 Create a TLS private key.
@@ -27,12 +25,12 @@ Create a TLS private key.
 
 ```javascript
 const options = {
-  tls_private_key: new Fastly.TlsPrivateKey(),
+  tls_private_key: {"data":{"type":"tls_private_key","attributes":{"key":"-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n","name":"My private key"}}},
 };
 
 apiInstance.createTlsKey(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -43,7 +41,7 @@ apiInstance.createTlsKey(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_private_key** | [**TlsPrivateKey**](../Model/TlsPrivateKey.md) |  | [optional]
+**tls_private_key** | [**TlsPrivateKey**](TlsPrivateKey.md) |  | [optional]
 
 ### Return type
 
@@ -78,7 +76,7 @@ apiInstance.deleteTlsKey(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_private_key_id** | **String** |  |
+**tls_private_key_id** | **String** | Alphanumeric string identifying a private Key. |
 
 ### Return type
 
@@ -102,7 +100,7 @@ const options = {
 
 apiInstance.getTlsKey(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -113,7 +111,7 @@ apiInstance.getTlsKey(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_private_key_id** | **String** |  |
+**tls_private_key_id** | **String** | Alphanumeric string identifying a private Key. |
 
 ### Return type
 
@@ -123,7 +121,7 @@ Name | Type | Description  | Notes
 ## `listTlsKeys`
 
 ```javascript
-listTlsKeys({ [filter_in_use, ][page_number, ][page_size] })
+listTlsKeys({ , [filter_in_use, ][page_number, ][page_size] })
 ```
 
 List all TLS private keys.
@@ -133,13 +131,13 @@ List all TLS private keys.
 ```javascript
 const options = {
   filter_in_use: "filter_in_use_example",
-  page_number: 56,
+  page_number: 1,
   page_size: 20,
 };
 
 apiInstance.listTlsKeys(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -152,7 +150,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter_in_use** | **String** | Limit the returned keys to those without any matching TLS certificates. The only valid value is false. | [optional]
 **page_number** | **Number** | Current page. | [optional]
-**page_size** | **Number** | Number of records per page. | [optional] [default to 20]
+**page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
 
 ### Return type
 

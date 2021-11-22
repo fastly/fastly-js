@@ -24,6 +24,7 @@ class LoggingGooglePubsubAllOf {
      * @alias module:model/LoggingGooglePubsubAllOf
      */
     constructor() { 
+        
         LoggingGooglePubsubAllOf.initialize(this);
     }
 
@@ -46,14 +47,14 @@ class LoggingGooglePubsubAllOf {
         if (data) {
             obj = obj || new LoggingGooglePubsubAllOf();
 
+            if (data.hasOwnProperty('topic')) {
+                obj['topic'] = ApiClient.convertToType(data['topic'], 'String');
+            }
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
             if (data.hasOwnProperty('project_id')) {
                 obj['project_id'] = ApiClient.convertToType(data['project_id'], 'String');
-            }
-            if (data.hasOwnProperty('topic')) {
-                obj['topic'] = ApiClient.convertToType(data['topic'], 'String');
             }
         }
         return obj;
@@ -61,6 +62,12 @@ class LoggingGooglePubsubAllOf {
 
 
 }
+
+/**
+ * The Google Cloud Pub/Sub topic to which logs will be published. Required.
+ * @member {String} topic
+ */
+LoggingGooglePubsubAllOf.prototype['topic'] = undefined;
 
 /**
  * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
@@ -74,12 +81,6 @@ LoggingGooglePubsubAllOf.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
  * @member {String} project_id
  */
 LoggingGooglePubsubAllOf.prototype['project_id'] = undefined;
-
-/**
- * The Google Cloud Pub/Sub topic to which logs will be published. Required.
- * @member {String} topic
- */
-LoggingGooglePubsubAllOf.prototype['topic'] = undefined;
 
 
 

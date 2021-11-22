@@ -1,6 +1,5 @@
 # Fastly.AclEntryApi
 
-
 ```javascript
 const apiInstance = new Fastly.AclEntryApi();
 ```
@@ -14,7 +13,6 @@ Method | Fastly API endpoint | Description
 [**getAclEntry**](AclEntryApi.md#getAclEntry) | **GET** /service/{service_id}/acl/{acl_id}/entry/{acl_entry_id} | Describe an ACL entry
 [**listAclEntries**](AclEntryApi.md#listAclEntries) | **GET** /service/{service_id}/acl/{acl_id}/entries | List ACL entries
 [**updateAclEntry**](AclEntryApi.md#updateAclEntry) | **PATCH** /service/{service_id}/acl/{acl_id}/entry/{acl_entry_id} | Update an ACL entry
-
 
 
 ## `bulkUpdateAclEntries`
@@ -31,12 +29,12 @@ Update multiple ACL entries on the same ACL.
 const options = {
   service_id: "service_id_example", // required
   acl_id: "acl_id_example", // required
-  acl_entries: new Fastly.AclEntries(),
+  acl_entries: {"entries":[{"op":"create","ip":"192.168.0.1","subnet":8},{"op":"update","id":"6yxNzlOpW1V7JfSwvLGtOc","ip":"192.168.0.2","subnet":16},{"op":"delete","id":"6yxNzlOpW1V7JfSwvLGtOc"}]},
 };
 
 apiInstance.bulkUpdateAclEntries(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -47,9 +45,9 @@ apiInstance.bulkUpdateAclEntries(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**acl_id** | **String** |  |
-**acl_entries** | [**AclEntries**](../Model/AclEntries.md) |  | [optional]
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**acl_id** | **String** | Alphanumeric string identifying a ACL. |
+**acl_entries** | [**AclEntries**](AclEntries.md) |  | [optional]
 
 ### Return type
 
@@ -70,12 +68,12 @@ Add an ACL entry to an ACL.
 const options = {
   service_id: "service_id_example", // required
   acl_id: "acl_id_example", // required
-  acl_entry: new Fastly.AclEntry(),
+  acl_entry: {"subnet":0,"ip":"127.0.0.1"},
 };
 
 apiInstance.createAclEntry(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -86,9 +84,9 @@ apiInstance.createAclEntry(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**acl_id** | **String** |  |
-**acl_entry** | [**AclEntry**](../Model/AclEntry.md) |  | [optional]
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**acl_id** | **String** | Alphanumeric string identifying a ACL. |
+**acl_entry** | [**AclEntry**](AclEntry.md) |  | [optional]
 
 ### Return type
 
@@ -114,7 +112,7 @@ const options = {
 
 apiInstance.deleteAclEntry(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -125,9 +123,9 @@ apiInstance.deleteAclEntry(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**acl_id** | **String** |  |
-**acl_entry_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**acl_id** | **String** | Alphanumeric string identifying a ACL. |
+**acl_entry_id** | **String** | Alphanumeric string identifying an ACL Entry. |
 
 ### Return type
 
@@ -153,7 +151,7 @@ const options = {
 
 apiInstance.getAclEntry(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -164,9 +162,9 @@ apiInstance.getAclEntry(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**acl_id** | **String** |  |
-**acl_entry_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**acl_id** | **String** | Alphanumeric string identifying a ACL. |
+**acl_entry_id** | **String** | Alphanumeric string identifying an ACL Entry. |
 
 ### Return type
 
@@ -176,7 +174,7 @@ Name | Type | Description  | Notes
 ## `listAclEntries`
 
 ```javascript
-listAclEntries({ service_id, acl_id, [page, ], [per_page, ], [sort, ], [direction] })
+listAclEntries({ service_id, acl_id, [page, ][per_page, ][sort, ][direction] })
 ```
 
 List ACL entries for a specified ACL.
@@ -187,15 +185,15 @@ List ACL entries for a specified ACL.
 const options = {
   service_id: "service_id_example", // required
   acl_id: "acl_id_example", // required
-  page: 56,
+  page: 1,
   per_page: 20,
-  sort: "'created'",
-  direction: ascend,
+  sort: created,
+  direction: "ascend",
 };
 
 apiInstance.listAclEntries(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -206,12 +204,12 @@ apiInstance.listAclEntries(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**acl_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**acl_id** | **String** | Alphanumeric string identifying a ACL. |
 **page** | **Number** | Current page. | [optional]
-**per_page** | **Number** | Number of records per page. | [optional] [default to 20]
-**sort** | **String** | Field on which to sort. | [optional] [default to &#39;created&#39;]
-**direction** | **String** | Direction in which to sort results. | [optional] [default to &#39;ascend&#39;]
+**per_page** | **Number** | Number of records per page. | [optional] [defaults to 20]
+**sort** | **String** | Field on which to sort. | [optional] [defaults to 'created']
+**direction** | **String** | Direction in which to sort results. | [optional] [one of: "ascend", "descend"]
 
 ### Return type
 
@@ -233,12 +231,12 @@ const options = {
   service_id: "service_id_example", // required
   acl_id: "acl_id_example", // required
   acl_entry_id: "acl_entry_id_example", // required
-  acl_entry: new Fastly.AclEntry(),
+  acl_entry: {"subnet":8},
 };
 
 apiInstance.updateAclEntry(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -249,10 +247,10 @@ apiInstance.updateAclEntry(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**acl_id** | **String** |  |
-**acl_entry_id** | **String** |  |
-**acl_entry** | [**AclEntry**](../Model/AclEntry.md) |  | [optional]
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**acl_id** | **String** | Alphanumeric string identifying a ACL. |
+**acl_entry_id** | **String** | Alphanumeric string identifying an ACL Entry. |
+**acl_entry** | [**AclEntry**](AclEntry.md) |  | [optional]
 
 ### Return type
 

@@ -56,12 +56,12 @@ var RelationshipMemberWafFirewall = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new RelationshipMemberWafFirewall();
 
-        if (data.hasOwnProperty('id')) {
-          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
-        }
-
         if (data.hasOwnProperty('type')) {
           obj['type'] = _TypeWafFirewall["default"].constructFromObject(data['type']);
+        }
+
+        if (data.hasOwnProperty('id')) {
+          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
       }
 
@@ -72,16 +72,16 @@ var RelationshipMemberWafFirewall = /*#__PURE__*/function () {
   return RelationshipMemberWafFirewall;
 }();
 /**
+ * @member {module:model/TypeWafFirewall} type
+ */
+
+
+RelationshipMemberWafFirewall.prototype['type'] = undefined;
+/**
  * Alphanumeric string identifying a WAF Firewall.
  * @member {String} id
  */
 
-
 RelationshipMemberWafFirewall.prototype['id'] = undefined;
-/**
- * @member {module:model/TypeWafFirewall} type
- */
-
-RelationshipMemberWafFirewall.prototype['type'] = undefined;
 var _default = RelationshipMemberWafFirewall;
 exports["default"] = _default;

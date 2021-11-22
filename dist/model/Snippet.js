@@ -54,24 +54,24 @@ var Snippet = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new Snippet();
 
-        if (data.hasOwnProperty('content')) {
-          obj['content'] = _ApiClient["default"].convertToType(data['content'], 'String');
+        if (data.hasOwnProperty('name')) {
+          obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
         }
 
         if (data.hasOwnProperty('dynamic')) {
           obj['dynamic'] = _ApiClient["default"].convertToType(data['dynamic'], 'String');
         }
 
-        if (data.hasOwnProperty('name')) {
-          obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
+        if (data.hasOwnProperty('type')) {
+          obj['type'] = _ApiClient["default"].convertToType(data['type'], 'String');
+        }
+
+        if (data.hasOwnProperty('content')) {
+          obj['content'] = _ApiClient["default"].convertToType(data['content'], 'String');
         }
 
         if (data.hasOwnProperty('priority')) {
           obj['priority'] = _ApiClient["default"].convertToType(data['priority'], 'String');
-        }
-
-        if (data.hasOwnProperty('type')) {
-          obj['type'] = _ApiClient["default"].convertToType(data['type'], 'String');
         }
       }
 
@@ -82,12 +82,12 @@ var Snippet = /*#__PURE__*/function () {
   return Snippet;
 }();
 /**
- * The VCL code that specifies exactly what the snippet does.
- * @member {String} content
+ * The name for the snippet.
+ * @member {String} name
  */
 
 
-Snippet.prototype['content'] = undefined;
+Snippet.prototype['name'] = undefined;
 /**
  * Sets the snippet version.
  * @member {module:model/Snippet.DynamicEnum} dynamic
@@ -95,11 +95,17 @@ Snippet.prototype['content'] = undefined;
 
 Snippet.prototype['dynamic'] = undefined;
 /**
- * The name for the snippet.
- * @member {String} name
+ * The location in generated VCL where the snippet should be placed.
+ * @member {module:model/Snippet.TypeEnum} type
  */
 
-Snippet.prototype['name'] = undefined;
+Snippet.prototype['type'] = undefined;
+/**
+ * The VCL code that specifies exactly what the snippet does.
+ * @member {String} content
+ */
+
+Snippet.prototype['content'] = undefined;
 /**
  * Numeric string value. Priority determines execution order. Lower numbers execute first.
  * @member {String} priority
@@ -107,12 +113,6 @@ Snippet.prototype['name'] = undefined;
  */
 
 Snippet.prototype['priority'] = '100';
-/**
- * The location in generated VCL where the snippet should be placed.
- * @member {module:model/Snippet.TypeEnum} type
- */
-
-Snippet.prototype['type'] = undefined;
 /**
  * Allowed values for the <code>dynamic</code> property.
  * @enum {String}

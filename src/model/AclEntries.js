@@ -25,6 +25,7 @@ class AclEntries {
      * @alias module:model/AclEntries
      */
     constructor() { 
+        
         AclEntries.initialize(this);
     }
 

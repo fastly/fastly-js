@@ -54,8 +54,20 @@ var PoolAllOf = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new PoolAllOf();
 
-        if (data.hasOwnProperty('comment')) {
-          obj['comment'] = _ApiClient["default"].convertToType(data['comment'], 'String');
+        if (data.hasOwnProperty('name')) {
+          obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
+        }
+
+        if (data.hasOwnProperty('shield')) {
+          obj['shield'] = _ApiClient["default"].convertToType(data['shield'], 'String');
+        }
+
+        if (data.hasOwnProperty('request_condition')) {
+          obj['request_condition'] = _ApiClient["default"].convertToType(data['request_condition'], 'String');
+        }
+
+        if (data.hasOwnProperty('max_conn_default')) {
+          obj['max_conn_default'] = _ApiClient["default"].convertToType(data['max_conn_default'], 'Number');
         }
 
         if (data.hasOwnProperty('connect_timeout')) {
@@ -66,44 +78,8 @@ var PoolAllOf = /*#__PURE__*/function () {
           obj['first_byte_timeout'] = _ApiClient["default"].convertToType(data['first_byte_timeout'], 'Number');
         }
 
-        if (data.hasOwnProperty('healthcheck')) {
-          obj['healthcheck'] = _ApiClient["default"].convertToType(data['healthcheck'], 'String');
-        }
-
-        if (data.hasOwnProperty('max_conn_default')) {
-          obj['max_conn_default'] = _ApiClient["default"].convertToType(data['max_conn_default'], 'Number');
-        }
-
-        if (data.hasOwnProperty('max_tls_version')) {
-          obj['max_tls_version'] = _ApiClient["default"].convertToType(data['max_tls_version'], 'Number');
-        }
-
-        if (data.hasOwnProperty('min_tls_version')) {
-          obj['min_tls_version'] = _ApiClient["default"].convertToType(data['min_tls_version'], 'Number');
-        }
-
-        if (data.hasOwnProperty('name')) {
-          obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
-        }
-
-        if (data.hasOwnProperty('override_host')) {
-          obj['override_host'] = _ApiClient["default"].convertToType(data['override_host'], 'String');
-        }
-
         if (data.hasOwnProperty('quorum')) {
           obj['quorum'] = _ApiClient["default"].convertToType(data['quorum'], 'Number');
-        }
-
-        if (data.hasOwnProperty('request_condition')) {
-          obj['request_condition'] = _ApiClient["default"].convertToType(data['request_condition'], 'String');
-        }
-
-        if (data.hasOwnProperty('shield')) {
-          obj['shield'] = _ApiClient["default"].convertToType(data['shield'], 'String');
-        }
-
-        if (data.hasOwnProperty('tls_check_cert')) {
-          obj['tls_check_cert'] = _ApiClient["default"].convertToType(data['tls_check_cert'], 'Number');
         }
 
         if (data.hasOwnProperty('tls_ciphers')) {
@@ -114,8 +90,32 @@ var PoolAllOf = /*#__PURE__*/function () {
           obj['tls_sni_hostname'] = _ApiClient["default"].convertToType(data['tls_sni_hostname'], 'String');
         }
 
+        if (data.hasOwnProperty('tls_check_cert')) {
+          obj['tls_check_cert'] = _ApiClient["default"].convertToType(data['tls_check_cert'], 'Number');
+        }
+
+        if (data.hasOwnProperty('min_tls_version')) {
+          obj['min_tls_version'] = _ApiClient["default"].convertToType(data['min_tls_version'], 'Number');
+        }
+
+        if (data.hasOwnProperty('max_tls_version')) {
+          obj['max_tls_version'] = _ApiClient["default"].convertToType(data['max_tls_version'], 'Number');
+        }
+
+        if (data.hasOwnProperty('healthcheck')) {
+          obj['healthcheck'] = _ApiClient["default"].convertToType(data['healthcheck'], 'String');
+        }
+
+        if (data.hasOwnProperty('comment')) {
+          obj['comment'] = _ApiClient["default"].convertToType(data['comment'], 'String');
+        }
+
         if (data.hasOwnProperty('type')) {
           obj['type'] = _ApiClient["default"].convertToType(data['type'], 'String');
+        }
+
+        if (data.hasOwnProperty('override_host')) {
+          obj['override_host'] = _ApiClient["default"].convertToType(data['override_host'], 'String');
         }
       }
 
@@ -126,12 +126,32 @@ var PoolAllOf = /*#__PURE__*/function () {
   return PoolAllOf;
 }();
 /**
- * A freeform descriptive note.
- * @member {String} comment
+ * Name for the Pool.
+ * @member {String} name
  */
 
 
-PoolAllOf.prototype['comment'] = undefined;
+PoolAllOf.prototype['name'] = undefined;
+/**
+ * Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
+ * @member {String} shield
+ * @default 'null'
+ */
+
+PoolAllOf.prototype['shield'] = 'null';
+/**
+ * Condition which, if met, will select this configuration during a request. Optional.
+ * @member {String} request_condition
+ */
+
+PoolAllOf.prototype['request_condition'] = undefined;
+/**
+ * Maximum number of connections. Optional.
+ * @member {Number} max_conn_default
+ * @default 200
+ */
+
+PoolAllOf.prototype['max_conn_default'] = 200;
 /**
  * How long to wait for a timeout in milliseconds. Optional.
  * @member {Number} connect_timeout
@@ -145,68 +165,12 @@ PoolAllOf.prototype['connect_timeout'] = undefined;
 
 PoolAllOf.prototype['first_byte_timeout'] = undefined;
 /**
- * Name of the healthcheck to use with this pool. Can be empty and could be reused across multiple backend and pools.
- * @member {String} healthcheck
- */
-
-PoolAllOf.prototype['healthcheck'] = undefined;
-/**
- * Maximum number of connections.
- * @member {Number} max_conn_default
- */
-
-PoolAllOf.prototype['max_conn_default'] = undefined;
-/**
- * Maximum allowed TLS version on connections to this server. Optional.
- * @member {Number} max_tls_version
- */
-
-PoolAllOf.prototype['max_tls_version'] = undefined;
-/**
- * Minimum allowed TLS version on connections to this server. Optional.
- * @member {Number} min_tls_version
- */
-
-PoolAllOf.prototype['min_tls_version'] = undefined;
-/**
- * Name for the Pool.
- * @member {String} name
- */
-
-PoolAllOf.prototype['name'] = undefined;
-/**
- * The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to `null` meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
- * @member {String} override_host
- * @default 'null'
- */
-
-PoolAllOf.prototype['override_host'] = 'null';
-/**
  * Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
  * @member {Number} quorum
  * @default 75
  */
 
 PoolAllOf.prototype['quorum'] = 75;
-/**
- * Condition which, if met, will select this configuration during a request. Optional.
- * @member {String} request_condition
- */
-
-PoolAllOf.prototype['request_condition'] = undefined;
-/**
- * Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
- * @member {String} shield
- * @default 'null'
- */
-
-PoolAllOf.prototype['shield'] = 'null';
-/**
- * Be strict on checking TLS certs. Optional.
- * @member {Number} tls_check_cert
- */
-
-PoolAllOf.prototype['tls_check_cert'] = undefined;
 /**
  * List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.0.2/man1/ciphers) for details). Optional.
  * @member {String} tls_ciphers
@@ -220,11 +184,48 @@ PoolAllOf.prototype['tls_ciphers'] = undefined;
 
 PoolAllOf.prototype['tls_sni_hostname'] = undefined;
 /**
+ * Be strict on checking TLS certs. Optional.
+ * @member {Number} tls_check_cert
+ */
+
+PoolAllOf.prototype['tls_check_cert'] = undefined;
+/**
+ * Minimum allowed TLS version on connections to this server. Optional.
+ * @member {Number} min_tls_version
+ */
+
+PoolAllOf.prototype['min_tls_version'] = undefined;
+/**
+ * Maximum allowed TLS version on connections to this server. Optional.
+ * @member {Number} max_tls_version
+ */
+
+PoolAllOf.prototype['max_tls_version'] = undefined;
+/**
+ * Name of the healthcheck to use with this pool. Can be empty and could be reused across multiple backend and pools.
+ * @member {String} healthcheck
+ */
+
+PoolAllOf.prototype['healthcheck'] = undefined;
+/**
+ * A freeform descriptive note.
+ * @member {String} comment
+ */
+
+PoolAllOf.prototype['comment'] = undefined;
+/**
  * What type of load balance group to use.
  * @member {module:model/PoolAllOf.TypeEnum} type
  */
 
 PoolAllOf.prototype['type'] = undefined;
+/**
+ * The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to `null` meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
+ * @member {String} override_host
+ * @default 'null'
+ */
+
+PoolAllOf.prototype['override_host'] = 'null';
 /**
  * Allowed values for the <code>type</code> property.
  * @enum {String}

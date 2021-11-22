@@ -42,9 +42,9 @@ var DictionaryApi = /*#__PURE__*/function () {
   /**
    * Create named dictionary for a particular service and version.
    * @param {Object} options
-   * @param {String} options.service_id
-   * @param {Number} options.version_id
-   * @param {String} [options.name] - Name for the Dictionary.
+   * @param {String} options.service_id - Alphanumeric string identifying the service.
+   * @param {Number} options.version_id - Integer identifying a service version.
+   * @param {String} [options.name] - Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
    * @param {Boolean} [options.write_only=false] - Determines if items in the dictionary are readable or not.
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryResponse} and HTTP response
    */
@@ -84,9 +84,9 @@ var DictionaryApi = /*#__PURE__*/function () {
     /**
      * Create named dictionary for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} [options.name] - Name for the Dictionary.
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} [options.name] - Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
      * @param {Boolean} [options.write_only=false] - Determines if items in the dictionary are readable or not.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryResponse}
      */
@@ -102,9 +102,9 @@ var DictionaryApi = /*#__PURE__*/function () {
     /**
      * Delete named dictionary for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.dictionary_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.dictionary_name - Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
 
@@ -145,9 +145,9 @@ var DictionaryApi = /*#__PURE__*/function () {
     /**
      * Delete named dictionary for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.dictionary_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.dictionary_name - Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
 
@@ -162,9 +162,9 @@ var DictionaryApi = /*#__PURE__*/function () {
     /**
      * Retrieve a single dictionary by name for the version and service.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.dictionary_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.dictionary_name - Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryResponse} and HTTP response
      */
 
@@ -205,9 +205,9 @@ var DictionaryApi = /*#__PURE__*/function () {
     /**
      * Retrieve a single dictionary by name for the version and service.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.dictionary_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.dictionary_name - Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryResponse}
      */
 
@@ -222,8 +222,8 @@ var DictionaryApi = /*#__PURE__*/function () {
     /**
      * List all dictionaries for the version of the service.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DictionaryResponse>} and HTTP response
      */
 
@@ -258,8 +258,8 @@ var DictionaryApi = /*#__PURE__*/function () {
     /**
      * List all dictionaries for the version of the service.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DictionaryResponse>}
      */
 
@@ -274,10 +274,10 @@ var DictionaryApi = /*#__PURE__*/function () {
     /**
      * Update named dictionary for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.dictionary_name
-     * @param {String} [options.name] - Name for the Dictionary.
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.dictionary_name - Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
+     * @param {String} [options.name] - Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
      * @param {Boolean} [options.write_only=false] - Determines if items in the dictionary are readable or not.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryResponse} and HTTP response
      */
@@ -322,10 +322,10 @@ var DictionaryApi = /*#__PURE__*/function () {
     /**
      * Update named dictionary for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.dictionary_name
-     * @param {String} [options.name] - Name for the Dictionary.
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.dictionary_name - Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
+     * @param {String} [options.name] - Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
      * @param {Boolean} [options.write_only=false] - Determines if items in the dictionary are readable or not.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryResponse}
      */

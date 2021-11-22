@@ -55,20 +55,20 @@ var HistoricalMeta = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new HistoricalMeta();
 
-        if (data.hasOwnProperty('by')) {
-          obj['by'] = _ApiClient["default"].convertToType(data['by'], 'String');
+        if (data.hasOwnProperty('to')) {
+          obj['to'] = _ApiClient["default"].convertToType(data['to'], 'String');
         }
 
         if (data.hasOwnProperty('from')) {
           obj['from'] = _ApiClient["default"].convertToType(data['from'], 'String');
         }
 
-        if (data.hasOwnProperty('region')) {
-          obj['region'] = _ApiClient["default"].convertToType(data['region'], 'String');
+        if (data.hasOwnProperty('by')) {
+          obj['by'] = _ApiClient["default"].convertToType(data['by'], 'String');
         }
 
-        if (data.hasOwnProperty('to')) {
-          obj['to'] = _ApiClient["default"].convertToType(data['to'], 'String');
+        if (data.hasOwnProperty('region')) {
+          obj['region'] = _ApiClient["default"].convertToType(data['region'], 'String');
         }
       }
 
@@ -79,25 +79,25 @@ var HistoricalMeta = /*#__PURE__*/function () {
   return HistoricalMeta;
 }();
 /**
- * @member {String} by
+ * @member {String} to
  */
 
 
-HistoricalMeta.prototype['by'] = undefined;
+HistoricalMeta.prototype['to'] = undefined;
 /**
  * @member {String} from
  */
 
 HistoricalMeta.prototype['from'] = undefined;
 /**
+ * @member {String} by
+ */
+
+HistoricalMeta.prototype['by'] = undefined;
+/**
  * @member {String} region
  */
 
 HistoricalMeta.prototype['region'] = undefined;
-/**
- * @member {String} to
- */
-
-HistoricalMeta.prototype['to'] = undefined;
 var _default = HistoricalMeta;
 exports["default"] = _default;

@@ -24,6 +24,7 @@ class EventAttributes {
      * @alias module:model/EventAttributes
      */
     constructor() { 
+        
         EventAttributes.initialize(this);
     }
 

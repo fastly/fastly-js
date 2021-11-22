@@ -25,6 +25,7 @@ class HistoricalUsageMonthResponseAllOf {
      * @alias module:model/HistoricalUsageMonthResponseAllOf
      */
     constructor() { 
+        
         HistoricalUsageMonthResponseAllOf.initialize(this);
     }
 

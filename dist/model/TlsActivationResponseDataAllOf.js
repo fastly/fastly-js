@@ -56,12 +56,12 @@ var TlsActivationResponseDataAllOf = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new TlsActivationResponseDataAllOf();
 
-        if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _Timestamps["default"].constructFromObject(data['attributes']);
-        }
-
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
+        }
+
+        if (data.hasOwnProperty('attributes')) {
+          obj['attributes'] = _Timestamps["default"].constructFromObject(data['attributes']);
         }
       }
 
@@ -72,16 +72,16 @@ var TlsActivationResponseDataAllOf = /*#__PURE__*/function () {
   return TlsActivationResponseDataAllOf;
 }();
 /**
- * @member {module:model/Timestamps} attributes
- */
-
-
-TlsActivationResponseDataAllOf.prototype['attributes'] = undefined;
-/**
  * Alphanumeric string identifying a TLS activation.
  * @member {String} id
  */
 
+
 TlsActivationResponseDataAllOf.prototype['id'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+
+TlsActivationResponseDataAllOf.prototype['attributes'] = undefined;
 var _default = TlsActivationResponseDataAllOf;
 exports["default"] = _default;

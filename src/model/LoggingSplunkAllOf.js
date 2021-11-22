@@ -25,6 +25,7 @@ class LoggingSplunkAllOf {
      * @alias module:model/LoggingSplunkAllOf
      */
     constructor() { 
+        
         LoggingSplunkAllOf.initialize(this);
     }
 
@@ -47,11 +48,11 @@ class LoggingSplunkAllOf {
         if (data) {
             obj = obj || new LoggingSplunkAllOf();
 
-            if (data.hasOwnProperty('token')) {
-                obj['token'] = ApiClient.convertToType(data['token'], 'String');
-            }
             if (data.hasOwnProperty('url')) {
                 obj['url'] = ApiClient.convertToType(data['url'], 'String');
+            }
+            if (data.hasOwnProperty('token')) {
+                obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('use_tls')) {
                 obj['use_tls'] = LoggingUseTls.constructFromObject(data['use_tls']);
@@ -64,16 +65,16 @@ class LoggingSplunkAllOf {
 }
 
 /**
- * A Splunk token for use in posting logs over HTTP to your collector.
- * @member {String} token
- */
-LoggingSplunkAllOf.prototype['token'] = undefined;
-
-/**
  * The URL to post logs to.
  * @member {String} url
  */
 LoggingSplunkAllOf.prototype['url'] = undefined;
+
+/**
+ * A Splunk token for use in posting logs over HTTP to your collector.
+ * @member {String} token
+ */
+LoggingSplunkAllOf.prototype['token'] = undefined;
 
 /**
  * @member {module:model/LoggingUseTls} use_tls

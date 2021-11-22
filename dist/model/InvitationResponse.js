@@ -30,9 +30,15 @@ var InvitationResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>InvitationResponse</code>.
    * @alias module:model/InvitationResponse
+   * @implements module:model/Invitation
+   * @implements module:model/InvitationResponseAllOf
    */
   function InvitationResponse() {
     _classCallCheck(this, InvitationResponse);
+
+    _Invitation["default"].initialize(this);
+
+    _InvitationResponseAllOf["default"].initialize(this);
 
     InvitationResponse.initialize(this);
   }
@@ -60,6 +66,10 @@ var InvitationResponse = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new InvitationResponse();
 
+        _Invitation["default"].constructFromObject(data, obj);
+
+        _InvitationResponseAllOf["default"].constructFromObject(data, obj);
+
         if (data.hasOwnProperty('data')) {
           obj['data'] = _InvitationResponseData["default"].constructFromObject(data['data']);
         }
@@ -76,6 +86,18 @@ var InvitationResponse = /*#__PURE__*/function () {
  */
 
 
-InvitationResponse.prototype['data'] = undefined;
+InvitationResponse.prototype['data'] = undefined; // Implement Invitation interface:
+
+/**
+ * @member {module:model/InvitationData} data
+ */
+
+_Invitation["default"].prototype['data'] = undefined; // Implement InvitationResponseAllOf interface:
+
+/**
+ * @member {module:model/InvitationResponseData} data
+ */
+
+_InvitationResponseAllOf["default"].prototype['data'] = undefined;
 var _default = InvitationResponse;
 exports["default"] = _default;

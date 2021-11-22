@@ -54,20 +54,20 @@ var VclDiff = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new VclDiff();
 
-        if (data.hasOwnProperty('diff')) {
-          obj['diff'] = _ApiClient["default"].convertToType(data['diff'], 'String');
-        }
-
-        if (data.hasOwnProperty('format')) {
-          obj['format'] = _ApiClient["default"].convertToType(data['format'], 'String');
-        }
-
         if (data.hasOwnProperty('from')) {
           obj['from'] = _ApiClient["default"].convertToType(data['from'], 'Number');
         }
 
         if (data.hasOwnProperty('to')) {
           obj['to'] = _ApiClient["default"].convertToType(data['to'], 'Number');
+        }
+
+        if (data.hasOwnProperty('format')) {
+          obj['format'] = _ApiClient["default"].convertToType(data['format'], 'String');
+        }
+
+        if (data.hasOwnProperty('diff')) {
+          obj['diff'] = _ApiClient["default"].convertToType(data['diff'], 'String');
         }
       }
 
@@ -78,22 +78,10 @@ var VclDiff = /*#__PURE__*/function () {
   return VclDiff;
 }();
 /**
- * The differences between two specified versions.
- * @member {String} diff
- */
-
-
-VclDiff.prototype['diff'] = undefined;
-/**
- * The format in which compared VCL changes are being returned in.
- * @member {module:model/VclDiff.FormatEnum} format
- */
-
-VclDiff.prototype['format'] = undefined;
-/**
  * The version number of the service to which changes in the generated VCL are being compared.
  * @member {Number} from
  */
+
 
 VclDiff.prototype['from'] = undefined;
 /**
@@ -102,6 +90,18 @@ VclDiff.prototype['from'] = undefined;
  */
 
 VclDiff.prototype['to'] = undefined;
+/**
+ * The format in which compared VCL changes are being returned in.
+ * @member {module:model/VclDiff.FormatEnum} format
+ */
+
+VclDiff.prototype['format'] = undefined;
+/**
+ * The differences between two specified versions.
+ * @member {String} diff
+ */
+
+VclDiff.prototype['diff'] = undefined;
 /**
  * Allowed values for the <code>format</code> property.
  * @enum {String}

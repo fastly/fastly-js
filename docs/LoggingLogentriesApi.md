@@ -1,6 +1,5 @@
 # Fastly.LoggingLogentriesApi
 
-
 ```javascript
 const apiInstance = new Fastly.LoggingLogentriesApi();
 ```
@@ -15,11 +14,10 @@ Method | Fastly API endpoint | Description
 [**updateLogLogentries**](LoggingLogentriesApi.md#updateLogLogentries) | **PUT** /service/{service_id}/version/{version_id}/logging/logentries/{logging_logentries_name} | Update a Logentries log endpoint
 
 
-
 ## `createLogLogentries`
 
 ```javascript
-createLogLogentries({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [port, ], [region, ], [token, ], [use_tls] })
+createLogLogentries({ service_id, version_id, [name, ][placement, ][format_version, ][response_condition, ][format, ][port, ][token, ][use_tls, ][region] })
 ```
 
 Create a Logentry for a particular service and version.
@@ -30,20 +28,20 @@ Create a Logentry for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
-  format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
-  placement: new Fastly.LoggingPlacement(),
+  placement: "none",
+  format_version: 1,
   response_condition: "response_condition_example",
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   port: 20000,
-  region: "region_example",
   token: "token_example",
   use_tls: new Fastly.LoggingUseTls(),
+  region: "US",
 };
 
 apiInstance.createLogLogentries(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -54,17 +52,17 @@ apiInstance.createLogLogentries(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 **name** | **String** | The name for the real-time logging configuration. | [optional]
-**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
+**placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] [one of: "none", "waf_debug", "null"]
+**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.   | [optional] [one of: 1, 2]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**port** | **Number** | The port number. | [optional] [default to 20000]
-**region** | **String** | The region to which to stream logs. | [optional]
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [defaults to '%h %l %u %t "%r" %&gt;s %b']
+**port** | **Number** | The port number. | [optional] [defaults to 20000]
 **token** | **String** | Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)). | [optional]
-**use_tls** | [**LoggingUseTls**](../Model/LoggingUseTls.md) |  | [optional]
+**use_tls** | [**LoggingUseTls**](LoggingUseTls.md) |  | [optional]
+**region** | **String** | The region to which to stream logs. | [optional] [one of: "US", "US-2", "US-3", "EU", "CA", "AU", "AP"]
 
 ### Return type
 
@@ -90,7 +88,7 @@ const options = {
 
 apiInstance.deleteLogLogentries(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -101,9 +99,9 @@ apiInstance.deleteLogLogentries(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**logging_logentries_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**logging_logentries_name** | **String** | The name for the real-time logging configuration. |
 
 ### Return type
 
@@ -129,7 +127,7 @@ const options = {
 
 apiInstance.getLogLogentries(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -140,9 +138,9 @@ apiInstance.getLogLogentries(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**logging_logentries_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**logging_logentries_name** | **String** | The name for the real-time logging configuration. |
 
 ### Return type
 
@@ -167,7 +165,7 @@ const options = {
 
 apiInstance.listLogLogentries(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -178,8 +176,8 @@ apiInstance.listLogLogentries(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -189,7 +187,7 @@ Name | Type | Description  | Notes
 ## `updateLogLogentries`
 
 ```javascript
-updateLogLogentries({ service_id, version_id, logging_logentries_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [port, ], [region, ], [token, ], [use_tls] })
+updateLogLogentries({ service_id, version_id, logging_logentries_name, [name, ][placement, ][format_version, ][response_condition, ][format, ][port, ][token, ][use_tls, ][region] })
 ```
 
 Update the Logentry for a particular service and version.
@@ -201,20 +199,20 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   logging_logentries_name: "logging_logentries_name_example", // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
-  format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
-  placement: new Fastly.LoggingPlacement(),
+  placement: "none",
+  format_version: 1,
   response_condition: "response_condition_example",
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   port: 20000,
-  region: "region_example",
   token: "token_example",
   use_tls: new Fastly.LoggingUseTls(),
+  region: "US",
 };
 
 apiInstance.updateLogLogentries(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -225,18 +223,18 @@ apiInstance.updateLogLogentries(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**logging_logentries_name** | **String** |  |
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**logging_logentries_name** | **String** | The name for the real-time logging configuration. |
 **name** | **String** | The name for the real-time logging configuration. | [optional]
-**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
+**placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] [one of: "none", "waf_debug", "null"]
+**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.   | [optional] [one of: 1, 2]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**port** | **Number** | The port number. | [optional] [default to 20000]
-**region** | **String** | The region to which to stream logs. | [optional]
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [defaults to '%h %l %u %t "%r" %&gt;s %b']
+**port** | **Number** | The port number. | [optional] [defaults to 20000]
 **token** | **String** | Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)). | [optional]
-**use_tls** | [**LoggingUseTls**](../Model/LoggingUseTls.md) |  | [optional]
+**use_tls** | [**LoggingUseTls**](LoggingUseTls.md) |  | [optional]
+**region** | **String** | The region to which to stream logs. | [optional] [one of: "US", "US-2", "US-3", "EU", "CA", "AU", "AP"]
 
 ### Return type
 

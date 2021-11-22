@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import ServiceAuthorization from './ServiceAuthorization';
+import ServiceAuthorizationsData from './ServiceAuthorizationsData';
 
 /**
  * The InlineObject3 model module.
@@ -25,6 +25,7 @@ class InlineObject3 {
      * @alias module:model/InlineObject3
      */
     constructor() { 
+        
         InlineObject3.initialize(this);
     }
 
@@ -48,7 +49,7 @@ class InlineObject3 {
             obj = obj || new InlineObject3();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [ServiceAuthorization]);
+                obj['data'] = ApiClient.convertToType(data['data'], [ServiceAuthorizationsData]);
             }
         }
         return obj;
@@ -58,7 +59,7 @@ class InlineObject3 {
 }
 
 /**
- * @member {Array.<module:model/ServiceAuthorization>} data
+ * @member {Array.<module:model/ServiceAuthorizationsData>} data
  */
 InlineObject3.prototype['data'] = undefined;
 

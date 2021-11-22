@@ -60,16 +60,16 @@ var TlsSubscriptionData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new TlsSubscriptionData();
 
+        if (data.hasOwnProperty('type')) {
+          obj['type'] = _TypeTlsSubscription["default"].constructFromObject(data['type']);
+        }
+
         if (data.hasOwnProperty('attributes')) {
           obj['attributes'] = _TlsSubscriptionDataAttributes["default"].constructFromObject(data['attributes']);
         }
 
         if (data.hasOwnProperty('relationships')) {
           obj['relationships'] = _RelationshipsForTlsSubscription["default"].constructFromObject(data['relationships']);
-        }
-
-        if (data.hasOwnProperty('type')) {
-          obj['type'] = _TypeTlsSubscription["default"].constructFromObject(data['type']);
         }
       }
 
@@ -80,9 +80,14 @@ var TlsSubscriptionData = /*#__PURE__*/function () {
   return TlsSubscriptionData;
 }();
 /**
- * @member {module:model/TlsSubscriptionDataAttributes} attributes
+ * @member {module:model/TypeTlsSubscription} type
  */
 
+
+TlsSubscriptionData.prototype['type'] = undefined;
+/**
+ * @member {module:model/TlsSubscriptionDataAttributes} attributes
+ */
 
 TlsSubscriptionData.prototype['attributes'] = undefined;
 /**
@@ -90,10 +95,5 @@ TlsSubscriptionData.prototype['attributes'] = undefined;
  */
 
 TlsSubscriptionData.prototype['relationships'] = undefined;
-/**
- * @member {module:model/TypeTlsSubscription} type
- */
-
-TlsSubscriptionData.prototype['type'] = undefined;
 var _default = TlsSubscriptionData;
 exports["default"] = _default;

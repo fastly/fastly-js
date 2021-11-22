@@ -44,16 +44,16 @@ var DirectorApi = /*#__PURE__*/function () {
   /**
    * Create a director for a particular service and version.
    * @param {Object} options
-   * @param {String} options.service_id
-   * @param {Number} options.version_id
+   * @param {String} options.service_id - Alphanumeric string identifying the service.
+   * @param {Number} options.version_id - Integer identifying a service version.
    * @param {Array.<module:model/SchemasBackend>} [options.backends] - List of backends associated to a director.
    * @param {Number} [options.capacity] - Unused.
    * @param {String} [options.comment] - A freeform descriptive note.
    * @param {String} [options.name] - Name for the Director.
    * @param {Number} [options.quorum=75] - The percentage of capacity that needs to be up for a director to be considered up. `0` to `100`.
-   * @param {Number} [options.retries=5] - How many backends to search if it fails.
    * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
    * @param {module:model/Number} [options.type=1] - What type of load balance group to use.
+   * @param {Number} [options.retries=5] - How many backends to search if it fails.
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DirectorResponse} and HTTP response
    */
 
@@ -85,9 +85,9 @@ var DirectorApi = /*#__PURE__*/function () {
         'comment': options['comment'],
         'name': options['name'],
         'quorum': options['quorum'],
-        'retries': options['retries'],
         'shield': options['shield'],
-        'type': options['type']
+        'type': options['type'],
+        'retries': options['retries']
       };
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
@@ -98,16 +98,16 @@ var DirectorApi = /*#__PURE__*/function () {
     /**
      * Create a director for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {Array.<module:model/SchemasBackend>} [options.backends] - List of backends associated to a director.
      * @param {Number} [options.capacity] - Unused.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - Name for the Director.
      * @param {Number} [options.quorum=75] - The percentage of capacity that needs to be up for a director to be considered up. `0` to `100`.
-     * @param {Number} [options.retries=5] - How many backends to search if it fails.
      * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
      * @param {module:model/Number} [options.type=1] - What type of load balance group to use.
+     * @param {Number} [options.retries=5] - How many backends to search if it fails.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DirectorResponse}
      */
 
@@ -122,9 +122,9 @@ var DirectorApi = /*#__PURE__*/function () {
     /**
      * Delete the director for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.director_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.director_name - Name for the Director.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
 
@@ -165,9 +165,9 @@ var DirectorApi = /*#__PURE__*/function () {
     /**
      * Delete the director for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.director_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.director_name - Name for the Director.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
 
@@ -182,9 +182,9 @@ var DirectorApi = /*#__PURE__*/function () {
     /**
      * Get the director for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.director_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.director_name - Name for the Director.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DirectorResponse} and HTTP response
      */
 
@@ -225,9 +225,9 @@ var DirectorApi = /*#__PURE__*/function () {
     /**
      * Get the director for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.director_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.director_name - Name for the Director.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DirectorResponse}
      */
 
@@ -242,8 +242,8 @@ var DirectorApi = /*#__PURE__*/function () {
     /**
      * List the directors for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DirectorResponse>} and HTTP response
      */
 
@@ -278,8 +278,8 @@ var DirectorApi = /*#__PURE__*/function () {
     /**
      * List the directors for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DirectorResponse>}
      */
 
@@ -294,9 +294,9 @@ var DirectorApi = /*#__PURE__*/function () {
     /**
      * Update the director for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.director_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.director_name - Name for the Director.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DirectorResponse} and HTTP response
      */
 
@@ -337,9 +337,9 @@ var DirectorApi = /*#__PURE__*/function () {
     /**
      * Update the director for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.director_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.director_name - Name for the Director.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DirectorResponse}
      */
 

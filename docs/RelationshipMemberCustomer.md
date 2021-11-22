@@ -4,9 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** | Alphanumeric string identifying the customer. | [optional] [readonly] 
 **type** | [**TypeCustomer**](TypeCustomer.md) |  | [optional] 
-
+**id** | **String** | Alphanumeric string identifying the customer. | [optional] [readonly] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

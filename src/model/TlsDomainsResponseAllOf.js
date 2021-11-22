@@ -25,6 +25,7 @@ class TlsDomainsResponseAllOf {
      * @alias module:model/TlsDomainsResponseAllOf
      */
     constructor() { 
+        
         TlsDomainsResponseAllOf.initialize(this);
     }
 

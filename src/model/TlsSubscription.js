@@ -25,6 +25,7 @@ class TlsSubscription {
      * @alias module:model/TlsSubscription
      */
     constructor() { 
+        
         TlsSubscription.initialize(this);
     }
 

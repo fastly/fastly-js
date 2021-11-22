@@ -24,6 +24,7 @@ class SchemasBackend {
      * @alias module:model/SchemasBackend
      */
     constructor() { 
+        
         SchemasBackend.initialize(this);
     }
 

@@ -54,16 +54,16 @@ var LoggingScalyrAllOf = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new LoggingScalyrAllOf();
 
-        if (data.hasOwnProperty('project_id')) {
-          obj['project_id'] = _ApiClient["default"].convertToType(data['project_id'], 'String');
-        }
-
         if (data.hasOwnProperty('region')) {
           obj['region'] = _ApiClient["default"].convertToType(data['region'], 'String');
         }
 
         if (data.hasOwnProperty('token')) {
           obj['token'] = _ApiClient["default"].convertToType(data['token'], 'String');
+        }
+
+        if (data.hasOwnProperty('project_id')) {
+          obj['project_id'] = _ApiClient["default"].convertToType(data['project_id'], 'String');
         }
       }
 
@@ -74,18 +74,11 @@ var LoggingScalyrAllOf = /*#__PURE__*/function () {
   return LoggingScalyrAllOf;
 }();
 /**
- * The name of the logfile within Scalyr.
- * @member {String} project_id
- * @default 'logplex'
- */
-
-
-LoggingScalyrAllOf.prototype['project_id'] = 'logplex';
-/**
  * The region that log data will be sent to.
  * @member {module:model/LoggingScalyrAllOf.RegionEnum} region
  * @default 'US'
  */
+
 
 LoggingScalyrAllOf.prototype['region'] = undefined;
 /**
@@ -94,6 +87,13 @@ LoggingScalyrAllOf.prototype['region'] = undefined;
  */
 
 LoggingScalyrAllOf.prototype['token'] = undefined;
+/**
+ * The name of the logfile within Scalyr.
+ * @member {String} project_id
+ * @default 'logplex'
+ */
+
+LoggingScalyrAllOf.prototype['project_id'] = 'logplex';
 /**
  * Allowed values for the <code>region</code> property.
  * @enum {String}

@@ -25,6 +25,7 @@ class RelationshipMemberTlsCertificate {
      * @alias module:model/RelationshipMemberTlsCertificate
      */
     constructor() { 
+        
         RelationshipMemberTlsCertificate.initialize(this);
     }
 
@@ -47,11 +48,11 @@ class RelationshipMemberTlsCertificate {
         if (data) {
             obj = obj || new RelationshipMemberTlsCertificate();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeTlsCertificate.constructFromObject(data['type']);
+            }
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
         }
         return obj;
@@ -61,15 +62,15 @@ class RelationshipMemberTlsCertificate {
 }
 
 /**
+ * @member {module:model/TypeTlsCertificate} type
+ */
+RelationshipMemberTlsCertificate.prototype['type'] = undefined;
+
+/**
  * Alphanumeric string identifying a TLS certificate.
  * @member {String} id
  */
 RelationshipMemberTlsCertificate.prototype['id'] = undefined;
-
-/**
- * @member {module:model/TypeTlsCertificate} type
- */
-RelationshipMemberTlsCertificate.prototype['type'] = undefined;
 
 
 

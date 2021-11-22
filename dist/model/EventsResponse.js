@@ -34,9 +34,15 @@ var EventsResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>EventsResponse</code>.
    * @alias module:model/EventsResponse
+   * @implements module:model/Pagination
+   * @implements module:model/EventsResponseAllOf
    */
   function EventsResponse() {
     _classCallCheck(this, EventsResponse);
+
+    _Pagination["default"].initialize(this);
+
+    _EventsResponseAllOf["default"].initialize(this);
 
     EventsResponse.initialize(this);
   }
@@ -63,6 +69,10 @@ var EventsResponse = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new EventsResponse();
+
+        _Pagination["default"].constructFromObject(data, obj);
+
+        _EventsResponseAllOf["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('links')) {
           obj['links'] = _PaginationLinks["default"].constructFromObject(data['links']);
@@ -98,6 +108,23 @@ EventsResponse.prototype['meta'] = undefined;
  * @member {Array.<module:model/Event>} data
  */
 
-EventsResponse.prototype['data'] = undefined;
+EventsResponse.prototype['data'] = undefined; // Implement Pagination interface:
+
+/**
+ * @member {module:model/PaginationLinks} links
+ */
+
+_Pagination["default"].prototype['links'] = undefined;
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
+
+_Pagination["default"].prototype['meta'] = undefined; // Implement EventsResponseAllOf interface:
+
+/**
+ * @member {Array.<module:model/Event>} data
+ */
+
+_EventsResponseAllOf["default"].prototype['data'] = undefined;
 var _default = EventsResponse;
 exports["default"] = _default;

@@ -25,6 +25,7 @@ class RelationshipCustomer {
      * @alias module:model/RelationshipCustomer
      */
     constructor() { 
+        
         RelationshipCustomer.initialize(this);
     }
 

@@ -42,15 +42,15 @@ var ServerApi = /*#__PURE__*/function () {
   /**
    * Creates a single server for a particular service and pool.
    * @param {Object} options
-   * @param {String} options.service_id
-   * @param {String} options.pool_id
+   * @param {String} options.service_id - Alphanumeric string identifying the service.
+   * @param {String} options.pool_id - Alphanumeric string identifying a Pool.
+   * @param {Number} [options.weight=100] - Weight (`1-100`) used to load balance this server against others.
+   * @param {Number} [options.max_conn=0] - Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
+   * @param {Number} [options.port=80] - Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
    * @param {String} [options.address] - A hostname, IPv4, or IPv6 address for the server. Required.
    * @param {String} [options.comment] - A freeform descriptive note.
    * @param {Boolean} [options.disabled=false] - Allows servers to be enabled and disabled in a pool.
-   * @param {Number} [options.max_conn=0] - Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
    * @param {String} [options.override_host='null'] - The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
-   * @param {Number} [options.port=80] - Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
-   * @param {Number} [options.weight=100] - Weight (`1-100`) used to load balance this server against others.
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServerResponse} and HTTP response
    */
 
@@ -77,13 +77,13 @@ var ServerApi = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {
+        'weight': options['weight'],
+        'max_conn': options['max_conn'],
+        'port': options['port'],
         'address': options['address'],
         'comment': options['comment'],
         'disabled': options['disabled'],
-        'max_conn': options['max_conn'],
-        'override_host': options['override_host'],
-        'port': options['port'],
-        'weight': options['weight']
+        'override_host': options['override_host']
       };
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
@@ -94,15 +94,15 @@ var ServerApi = /*#__PURE__*/function () {
     /**
      * Creates a single server for a particular service and pool.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.pool_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.pool_id - Alphanumeric string identifying a Pool.
+     * @param {Number} [options.weight=100] - Weight (`1-100`) used to load balance this server against others.
+     * @param {Number} [options.max_conn=0] - Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
+     * @param {Number} [options.port=80] - Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
      * @param {String} [options.address] - A hostname, IPv4, or IPv6 address for the server. Required.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Boolean} [options.disabled=false] - Allows servers to be enabled and disabled in a pool.
-     * @param {Number} [options.max_conn=0] - Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
      * @param {String} [options.override_host='null'] - The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
-     * @param {Number} [options.port=80] - Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
-     * @param {Number} [options.weight=100] - Weight (`1-100`) used to load balance this server against others.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServerResponse}
      */
 
@@ -117,9 +117,9 @@ var ServerApi = /*#__PURE__*/function () {
     /**
      * Deletes a single server for a particular service and pool.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.pool_id
-     * @param {String} options.server_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.pool_id - Alphanumeric string identifying a Pool.
+     * @param {String} options.server_id - Alphanumeric string identifying a Server.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
 
@@ -160,9 +160,9 @@ var ServerApi = /*#__PURE__*/function () {
     /**
      * Deletes a single server for a particular service and pool.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.pool_id
-     * @param {String} options.server_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.pool_id - Alphanumeric string identifying a Pool.
+     * @param {String} options.server_id - Alphanumeric string identifying a Server.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
 
@@ -177,9 +177,9 @@ var ServerApi = /*#__PURE__*/function () {
     /**
      * Gets a single server for a particular service and pool.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.pool_id
-     * @param {String} options.server_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.pool_id - Alphanumeric string identifying a Pool.
+     * @param {String} options.server_id - Alphanumeric string identifying a Server.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServerResponse} and HTTP response
      */
 
@@ -220,9 +220,9 @@ var ServerApi = /*#__PURE__*/function () {
     /**
      * Gets a single server for a particular service and pool.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.pool_id
-     * @param {String} options.server_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.pool_id - Alphanumeric string identifying a Pool.
+     * @param {String} options.server_id - Alphanumeric string identifying a Server.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServerResponse}
      */
 
@@ -237,8 +237,8 @@ var ServerApi = /*#__PURE__*/function () {
     /**
      * Lists all servers for a particular service and pool.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.pool_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.pool_id - Alphanumeric string identifying a Pool.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ServerResponse>} and HTTP response
      */
 
@@ -273,8 +273,8 @@ var ServerApi = /*#__PURE__*/function () {
     /**
      * Lists all servers for a particular service and pool.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.pool_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.pool_id - Alphanumeric string identifying a Pool.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ServerResponse>}
      */
 
@@ -289,16 +289,16 @@ var ServerApi = /*#__PURE__*/function () {
     /**
      * Updates a single server for a particular service and pool.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.pool_id
-     * @param {String} options.server_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.pool_id - Alphanumeric string identifying a Pool.
+     * @param {String} options.server_id - Alphanumeric string identifying a Server.
+     * @param {Number} [options.weight=100] - Weight (`1-100`) used to load balance this server against others.
+     * @param {Number} [options.max_conn=0] - Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
+     * @param {Number} [options.port=80] - Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
      * @param {String} [options.address] - A hostname, IPv4, or IPv6 address for the server. Required.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Boolean} [options.disabled=false] - Allows servers to be enabled and disabled in a pool.
-     * @param {Number} [options.max_conn=0] - Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
      * @param {String} [options.override_host='null'] - The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
-     * @param {Number} [options.port=80] - Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
-     * @param {Number} [options.weight=100] - Weight (`1-100`) used to load balance this server against others.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServerResponse} and HTTP response
      */
 
@@ -330,13 +330,13 @@ var ServerApi = /*#__PURE__*/function () {
       var queryParams = {};
       var headerParams = {};
       var formParams = {
+        'weight': options['weight'],
+        'max_conn': options['max_conn'],
+        'port': options['port'],
         'address': options['address'],
         'comment': options['comment'],
         'disabled': options['disabled'],
-        'max_conn': options['max_conn'],
-        'override_host': options['override_host'],
-        'port': options['port'],
-        'weight': options['weight']
+        'override_host': options['override_host']
       };
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
@@ -347,16 +347,16 @@ var ServerApi = /*#__PURE__*/function () {
     /**
      * Updates a single server for a particular service and pool.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.pool_id
-     * @param {String} options.server_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.pool_id - Alphanumeric string identifying a Pool.
+     * @param {String} options.server_id - Alphanumeric string identifying a Server.
+     * @param {Number} [options.weight=100] - Weight (`1-100`) used to load balance this server against others.
+     * @param {Number} [options.max_conn=0] - Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
+     * @param {Number} [options.port=80] - Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
      * @param {String} [options.address] - A hostname, IPv4, or IPv6 address for the server. Required.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Boolean} [options.disabled=false] - Allows servers to be enabled and disabled in a pool.
-     * @param {Number} [options.max_conn=0] - Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
      * @param {String} [options.override_host='null'] - The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
-     * @param {Number} [options.port=80] - Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
-     * @param {Number} [options.weight=100] - Weight (`1-100`) used to load balance this server against others.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServerResponse}
      */
 

@@ -27,6 +27,7 @@ class BillingAddressData {
      * @alias module:model/BillingAddressData
      */
     constructor() { 
+        
         BillingAddressData.initialize(this);
     }
 
@@ -49,14 +50,14 @@ class BillingAddressData {
         if (data) {
             obj = obj || new BillingAddressData();
 
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeBillingAddress.constructFromObject(data['type']);
+            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = BillingAddressDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = RelationshipCustomer.constructFromObject(data['relationships']);
-            }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeBillingAddress.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -64,6 +65,11 @@ class BillingAddressData {
 
 
 }
+
+/**
+ * @member {module:model/TypeBillingAddress} type
+ */
+BillingAddressData.prototype['type'] = undefined;
 
 /**
  * @member {module:model/BillingAddressDataAttributes} attributes
@@ -74,11 +80,6 @@ BillingAddressData.prototype['attributes'] = undefined;
  * @member {module:model/RelationshipCustomer} relationships
  */
 BillingAddressData.prototype['relationships'] = undefined;
-
-/**
- * @member {module:model/TypeBillingAddress} type
- */
-BillingAddressData.prototype['type'] = undefined;
 
 
 

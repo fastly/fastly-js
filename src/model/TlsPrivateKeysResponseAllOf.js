@@ -25,6 +25,7 @@ class TlsPrivateKeysResponseAllOf {
      * @alias module:model/TlsPrivateKeysResponseAllOf
      */
     constructor() { 
+        
         TlsPrivateKeysResponseAllOf.initialize(this);
     }
 

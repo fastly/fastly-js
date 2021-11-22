@@ -24,6 +24,7 @@ class StarResponseAllOf {
      * @alias module:model/StarResponseAllOf
      */
     constructor() { 
+        
         StarResponseAllOf.initialize(this);
     }
 

@@ -7,10 +7,6 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _LoggingFormatVersion = _interopRequireDefault(require("./LoggingFormatVersion"));
-
-var _LoggingPlacement = _interopRequireDefault(require("./LoggingPlacement"));
-
 var _LoggingSplunk = _interopRequireDefault(require("./LoggingSplunk"));
 
 var _LoggingUseTls = _interopRequireDefault(require("./LoggingUseTls"));
@@ -36,9 +32,18 @@ var LoggingSplunkResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>LoggingSplunkResponse</code>.
    * @alias module:model/LoggingSplunkResponse
+   * @implements module:model/LoggingSplunk
+   * @implements module:model/Timestamps
+   * @implements module:model/ServiceIdAndVersion
    */
   function LoggingSplunkResponse() {
     _classCallCheck(this, LoggingSplunkResponse);
+
+    _LoggingSplunk["default"].initialize(this);
+
+    _Timestamps["default"].initialize(this);
+
+    _ServiceIdAndVersion["default"].initialize(this);
 
     LoggingSplunkResponse.initialize(this);
   }
@@ -66,24 +71,30 @@ var LoggingSplunkResponse = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new LoggingSplunkResponse();
 
-        if (data.hasOwnProperty('format')) {
-          obj['format'] = _ApiClient["default"].convertToType(data['format'], 'String');
-        }
+        _LoggingSplunk["default"].constructFromObject(data, obj);
 
-        if (data.hasOwnProperty('format_version')) {
-          obj['format_version'] = _LoggingFormatVersion["default"].constructFromObject(data['format_version']);
-        }
+        _Timestamps["default"].constructFromObject(data, obj);
+
+        _ServiceIdAndVersion["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
         }
 
         if (data.hasOwnProperty('placement')) {
-          obj['placement'] = _LoggingPlacement["default"].constructFromObject(data['placement']);
+          obj['placement'] = _ApiClient["default"].convertToType(data['placement'], 'String');
+        }
+
+        if (data.hasOwnProperty('format_version')) {
+          obj['format_version'] = _ApiClient["default"].convertToType(data['format_version'], 'Number');
         }
 
         if (data.hasOwnProperty('response_condition')) {
           obj['response_condition'] = _ApiClient["default"].convertToType(data['response_condition'], 'String');
+        }
+
+        if (data.hasOwnProperty('format')) {
+          obj['format'] = _ApiClient["default"].convertToType(data['format'], 'String');
         }
 
         if (data.hasOwnProperty('tls_ca_cert')) {
@@ -102,20 +113,20 @@ var LoggingSplunkResponse = /*#__PURE__*/function () {
           obj['tls_hostname'] = _ApiClient["default"].convertToType(data['tls_hostname'], 'String');
         }
 
-        if (data.hasOwnProperty('request_max_bytes')) {
-          obj['request_max_bytes'] = _ApiClient["default"].convertToType(data['request_max_bytes'], 'Number');
-        }
-
         if (data.hasOwnProperty('request_max_entries')) {
           obj['request_max_entries'] = _ApiClient["default"].convertToType(data['request_max_entries'], 'Number');
         }
 
-        if (data.hasOwnProperty('token')) {
-          obj['token'] = _ApiClient["default"].convertToType(data['token'], 'String');
+        if (data.hasOwnProperty('request_max_bytes')) {
+          obj['request_max_bytes'] = _ApiClient["default"].convertToType(data['request_max_bytes'], 'Number');
         }
 
         if (data.hasOwnProperty('url')) {
           obj['url'] = _ApiClient["default"].convertToType(data['url'], 'String');
+        }
+
+        if (data.hasOwnProperty('token')) {
+          obj['token'] = _ApiClient["default"].convertToType(data['token'], 'String');
         }
 
         if (data.hasOwnProperty('use_tls')) {
@@ -150,35 +161,38 @@ var LoggingSplunkResponse = /*#__PURE__*/function () {
   return LoggingSplunkResponse;
 }();
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-
-
-LoggingSplunkResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-
-LoggingSplunkResponse.prototype['format_version'] = undefined;
-/**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
 
+
 LoggingSplunkResponse.prototype['name'] = undefined;
 /**
- * @member {module:model/LoggingPlacement} placement
+ * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+ * @member {module:model/LoggingSplunkResponse.PlacementEnum} placement
  */
 
 LoggingSplunkResponse.prototype['placement'] = undefined;
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * @member {module:model/LoggingSplunkResponse.FormatVersionEnum} format_version
+ * @default FormatVersionEnum.v2
+ */
+
+LoggingSplunkResponse.prototype['format_version'] = undefined;
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
 
 LoggingSplunkResponse.prototype['response_condition'] = undefined;
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
+
+LoggingSplunkResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 /**
  * A secure certificate to authenticate a server with. Must be in PEM format.
  * @member {String} tls_ca_cert
@@ -208,13 +222,6 @@ LoggingSplunkResponse.prototype['tls_client_key'] = 'null';
 
 LoggingSplunkResponse.prototype['tls_hostname'] = 'null';
 /**
- * The maximum number of bytes sent in one request. Defaults `0` for unbounded.
- * @member {Number} request_max_bytes
- * @default 0
- */
-
-LoggingSplunkResponse.prototype['request_max_bytes'] = 0;
-/**
  * The maximum number of logs sent in one request. Defaults `0` for unbounded.
  * @member {Number} request_max_entries
  * @default 0
@@ -222,17 +229,24 @@ LoggingSplunkResponse.prototype['request_max_bytes'] = 0;
 
 LoggingSplunkResponse.prototype['request_max_entries'] = 0;
 /**
- * A Splunk token for use in posting logs over HTTP to your collector.
- * @member {String} token
+ * The maximum number of bytes sent in one request. Defaults `0` for unbounded.
+ * @member {Number} request_max_bytes
+ * @default 0
  */
 
-LoggingSplunkResponse.prototype['token'] = undefined;
+LoggingSplunkResponse.prototype['request_max_bytes'] = 0;
 /**
  * The URL to post logs to.
  * @member {String} url
  */
 
 LoggingSplunkResponse.prototype['url'] = undefined;
+/**
+ * A Splunk token for use in posting logs over HTTP to your collector.
+ * @member {String} token
+ */
+
+LoggingSplunkResponse.prototype['token'] = undefined;
 /**
  * @member {module:model/LoggingUseTls} use_tls
  */
@@ -267,6 +281,174 @@ LoggingSplunkResponse.prototype['service_id'] = undefined;
  * @member {Number} version
  */
 
-LoggingSplunkResponse.prototype['version'] = undefined;
+LoggingSplunkResponse.prototype['version'] = undefined; // Implement LoggingSplunk interface:
+
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+
+_LoggingSplunk["default"].prototype['name'] = undefined;
+/**
+ * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+ * @member {module:model/LoggingSplunk.PlacementEnum} placement
+ */
+
+_LoggingSplunk["default"].prototype['placement'] = undefined;
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * @member {module:model/LoggingSplunk.FormatVersionEnum} format_version
+ * @default FormatVersionEnum.v2
+ */
+
+_LoggingSplunk["default"].prototype['format_version'] = undefined;
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+
+_LoggingSplunk["default"].prototype['response_condition'] = undefined;
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
+
+_LoggingSplunk["default"].prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
+ * A secure certificate to authenticate a server with. Must be in PEM format.
+ * @member {String} tls_ca_cert
+ * @default 'null'
+ */
+
+_LoggingSplunk["default"].prototype['tls_ca_cert'] = 'null';
+/**
+ * The client certificate used to make authenticated requests. Must be in PEM format.
+ * @member {String} tls_client_cert
+ * @default 'null'
+ */
+
+_LoggingSplunk["default"].prototype['tls_client_cert'] = 'null';
+/**
+ * The client private key used to make authenticated requests. Must be in PEM format.
+ * @member {String} tls_client_key
+ * @default 'null'
+ */
+
+_LoggingSplunk["default"].prototype['tls_client_key'] = 'null';
+/**
+ * The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
+ * @member {String} tls_hostname
+ * @default 'null'
+ */
+
+_LoggingSplunk["default"].prototype['tls_hostname'] = 'null';
+/**
+ * The maximum number of logs sent in one request. Defaults `0` for unbounded.
+ * @member {Number} request_max_entries
+ * @default 0
+ */
+
+_LoggingSplunk["default"].prototype['request_max_entries'] = 0;
+/**
+ * The maximum number of bytes sent in one request. Defaults `0` for unbounded.
+ * @member {Number} request_max_bytes
+ * @default 0
+ */
+
+_LoggingSplunk["default"].prototype['request_max_bytes'] = 0;
+/**
+ * The URL to post logs to.
+ * @member {String} url
+ */
+
+_LoggingSplunk["default"].prototype['url'] = undefined;
+/**
+ * A Splunk token for use in posting logs over HTTP to your collector.
+ * @member {String} token
+ */
+
+_LoggingSplunk["default"].prototype['token'] = undefined;
+/**
+ * @member {module:model/LoggingUseTls} use_tls
+ */
+
+_LoggingSplunk["default"].prototype['use_tls'] = undefined; // Implement Timestamps interface:
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+
+_Timestamps["default"].prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+
+_Timestamps["default"].prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+
+_Timestamps["default"].prototype['updated_at'] = undefined; // Implement ServiceIdAndVersion interface:
+
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+
+_ServiceIdAndVersion["default"].prototype['service_id'] = undefined;
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
+
+_ServiceIdAndVersion["default"].prototype['version'] = undefined;
+/**
+ * Allowed values for the <code>placement</code> property.
+ * @enum {String}
+ * @readonly
+ */
+
+LoggingSplunkResponse['PlacementEnum'] = {
+  /**
+   * value: "none"
+   * @const
+   */
+  "none": "none",
+
+  /**
+   * value: "waf_debug"
+   * @const
+   */
+  "waf_debug": "waf_debug",
+
+  /**
+   * value: "null"
+   * @const
+   */
+  "null": "null"
+};
+/**
+ * Allowed values for the <code>format_version</code> property.
+ * @enum {Number}
+ * @readonly
+ */
+
+LoggingSplunkResponse['FormatVersionEnum'] = {
+  /**
+   * value: 1
+   * @const
+   */
+  "v1": 1,
+
+  /**
+   * value: 2
+   * @const
+   */
+  "v2": 2
+};
 var _default = LoggingSplunkResponse;
 exports["default"] = _default;

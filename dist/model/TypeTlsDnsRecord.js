@@ -26,7 +26,7 @@ var TypeTlsDnsRecord = /*#__PURE__*/function () {
   function TypeTlsDnsRecord() {
     _classCallCheck(this, TypeTlsDnsRecord);
 
-    _defineProperty(this, "tls_dns_record", "tls_dns_record");
+    _defineProperty(this, "dns_record", "dns_record");
   }
 
   _createClass(TypeTlsDnsRecord, null, [{

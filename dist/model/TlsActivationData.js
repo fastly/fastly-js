@@ -58,12 +58,12 @@ var TlsActivationData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new TlsActivationData();
 
-        if (data.hasOwnProperty('relationships')) {
-          obj['relationships'] = _RelationshipsForTlsActivation["default"].constructFromObject(data['relationships']);
-        }
-
         if (data.hasOwnProperty('type')) {
           obj['type'] = _TypeTlsActivation["default"].constructFromObject(data['type']);
+        }
+
+        if (data.hasOwnProperty('relationships')) {
+          obj['relationships'] = _RelationshipsForTlsActivation["default"].constructFromObject(data['relationships']);
         }
       }
 
@@ -74,15 +74,15 @@ var TlsActivationData = /*#__PURE__*/function () {
   return TlsActivationData;
 }();
 /**
- * @member {module:model/RelationshipsForTlsActivation} relationships
- */
-
-
-TlsActivationData.prototype['relationships'] = undefined;
-/**
  * @member {module:model/TypeTlsActivation} type
  */
 
+
 TlsActivationData.prototype['type'] = undefined;
+/**
+ * @member {module:model/RelationshipsForTlsActivation} relationships
+ */
+
+TlsActivationData.prototype['relationships'] = undefined;
 var _default = TlsActivationData;
 exports["default"] = _default;

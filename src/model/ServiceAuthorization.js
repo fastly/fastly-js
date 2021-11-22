@@ -25,6 +25,7 @@ class ServiceAuthorization {
      * @alias module:model/ServiceAuthorization
      */
     constructor() { 
+        
         ServiceAuthorization.initialize(this);
     }
 

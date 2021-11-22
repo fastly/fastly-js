@@ -25,6 +25,7 @@ class RelationshipWafRuleWafRule {
      * @alias module:model/RelationshipWafRuleWafRule
      */
     constructor() { 
+        
         RelationshipWafRuleWafRule.initialize(this);
     }
 

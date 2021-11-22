@@ -58,16 +58,16 @@ var ServiceAuthorizationData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new ServiceAuthorizationData();
 
+        if (data.hasOwnProperty('type')) {
+          obj['type'] = _TypeServiceAuthorization["default"].constructFromObject(data['type']);
+        }
+
         if (data.hasOwnProperty('attributes')) {
           obj['attributes'] = _ServiceAuthorizationDataAttributes["default"].constructFromObject(data['attributes']);
         }
 
         if (data.hasOwnProperty('relationships')) {
           obj['relationships'] = _ApiClient["default"].convertToType(data['relationships'], Object);
-        }
-
-        if (data.hasOwnProperty('type')) {
-          obj['type'] = _TypeServiceAuthorization["default"].constructFromObject(data['type']);
         }
       }
 
@@ -78,9 +78,14 @@ var ServiceAuthorizationData = /*#__PURE__*/function () {
   return ServiceAuthorizationData;
 }();
 /**
- * @member {module:model/ServiceAuthorizationDataAttributes} attributes
+ * @member {module:model/TypeServiceAuthorization} type
  */
 
+
+ServiceAuthorizationData.prototype['type'] = undefined;
+/**
+ * @member {module:model/ServiceAuthorizationDataAttributes} attributes
+ */
 
 ServiceAuthorizationData.prototype['attributes'] = undefined;
 /**
@@ -88,10 +93,5 @@ ServiceAuthorizationData.prototype['attributes'] = undefined;
  */
 
 ServiceAuthorizationData.prototype['relationships'] = undefined;
-/**
- * @member {module:model/TypeServiceAuthorization} type
- */
-
-ServiceAuthorizationData.prototype['type'] = undefined;
 var _default = ServiceAuthorizationData;
 exports["default"] = _default;

@@ -25,8 +25,12 @@ class AclEntryResponse {
     /**
      * Constructs a new <code>AclEntryResponse</code>.
      * @alias module:model/AclEntryResponse
+     * @implements module:model/AclEntry
+     * @implements module:model/Timestamps
+     * @implements module:model/AclEntryResponseAllOf
      */
     constructor() { 
+        AclEntry.initialize(this);Timestamps.initialize(this);AclEntryResponseAllOf.initialize(this);
         AclEntryResponse.initialize(this);
     }
 
@@ -48,15 +52,18 @@ class AclEntryResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new AclEntryResponse();
+            AclEntry.constructFromObject(data, obj);
+            Timestamps.constructFromObject(data, obj);
+            AclEntryResponseAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('negated')) {
+                obj['negated'] = ApiClient.convertToType(data['negated'], 'Number');
+            }
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
             }
             if (data.hasOwnProperty('ip')) {
                 obj['ip'] = ApiClient.convertToType(data['ip'], 'String');
-            }
-            if (data.hasOwnProperty('negated')) {
-                obj['negated'] = ApiClient.convertToType(data['negated'], 'Number');
             }
             if (data.hasOwnProperty('subnet')) {
                 obj['subnet'] = ApiClient.convertToType(data['subnet'], 'Number');
@@ -87,6 +94,13 @@ class AclEntryResponse {
 }
 
 /**
+ * Whether to negate the match. Useful primarily when creating individual exceptions to larger subnets.
+ * @member {module:model/AclEntryResponse.NegatedEnum} negated
+ * @default NegatedEnum.0
+ */
+AclEntryResponse.prototype['negated'] = undefined;
+
+/**
  * A freeform descriptive note.
  * @member {String} comment
  */
@@ -97,13 +111,6 @@ AclEntryResponse.prototype['comment'] = undefined;
  * @member {String} ip
  */
 AclEntryResponse.prototype['ip'] = undefined;
-
-/**
- * Whether to negate the match. Useful primarily when creating individual exceptions to larger subnets.
- * @member {module:model/AclEntryResponse.NegatedEnum} negated
- * @default NegatedEnum.0
- */
-AclEntryResponse.prototype['negated'] = undefined;
 
 /**
  * Number of bits for the subnet mask applied to the IP address.  For IPv4 addresses, a value of 32 represents the smallest subnet mask (1 address), 24 represents a class C subnet mask (256 addresses), 16 represents a class B subnet mask (65k addresses),  and 8 is class A subnet mask (16m addresses). If not provided, no mask is applied.
@@ -148,6 +155,60 @@ AclEntryResponse.prototype['id'] = undefined;
 AclEntryResponse.prototype['service_id'] = undefined;
 
 
+// Implement AclEntry interface:
+/**
+ * Whether to negate the match. Useful primarily when creating individual exceptions to larger subnets.
+ * @member {module:model/AclEntry.NegatedEnum} negated
+ * @default NegatedEnum.0
+ */
+AclEntry.prototype['negated'] = undefined;
+/**
+ * A freeform descriptive note.
+ * @member {String} comment
+ */
+AclEntry.prototype['comment'] = undefined;
+/**
+ * An IP address.
+ * @member {String} ip
+ */
+AclEntry.prototype['ip'] = undefined;
+/**
+ * Number of bits for the subnet mask applied to the IP address.  For IPv4 addresses, a value of 32 represents the smallest subnet mask (1 address), 24 represents a class C subnet mask (256 addresses), 16 represents a class B subnet mask (65k addresses),  and 8 is class A subnet mask (16m addresses). If not provided, no mask is applied.
+ * @member {Number} subnet
+ */
+AclEntry.prototype['subnet'] = undefined;
+// Implement Timestamps interface:
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+Timestamps.prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+Timestamps.prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+Timestamps.prototype['updated_at'] = undefined;
+// Implement AclEntryResponseAllOf interface:
+/**
+ * Alphanumeric string identifying a ACL.
+ * @member {String} acl_id
+ */
+AclEntryResponseAllOf.prototype['acl_id'] = undefined;
+/**
+ * Alphanumeric string identifying an ACL Entry.
+ * @member {String} id
+ */
+AclEntryResponseAllOf.prototype['id'] = undefined;
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+AclEntryResponseAllOf.prototype['service_id'] = undefined;
 
 
 

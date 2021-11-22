@@ -30,9 +30,12 @@ var RelationshipsForTlsDomain = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>RelationshipsForTlsDomain</code>.
    * @alias module:model/RelationshipsForTlsDomain
+   * @implements module:model/RelationshipTlsSubscriptions
    */
   function RelationshipsForTlsDomain() {
     _classCallCheck(this, RelationshipsForTlsDomain);
+
+    _RelationshipTlsSubscriptions["default"].initialize(this);
 
     RelationshipsForTlsDomain.initialize(this);
   }
@@ -60,6 +63,8 @@ var RelationshipsForTlsDomain = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new RelationshipsForTlsDomain();
 
+        _RelationshipTlsSubscriptions["default"].constructFromObject(data, obj);
+
         if (data.hasOwnProperty('tls_subscriptions')) {
           obj['tls_subscriptions'] = _RelationshipTlsSubscriptionTlsSubscription["default"].constructFromObject(data['tls_subscriptions']);
         }
@@ -85,6 +90,12 @@ RelationshipsForTlsDomain.prototype['tls_subscriptions'] = undefined;
  * @member {module:model/RelationshipTlsActivationTlsActivation} tls_activations
  */
 
-RelationshipsForTlsDomain.prototype['tls_activations'] = undefined;
+RelationshipsForTlsDomain.prototype['tls_activations'] = undefined; // Implement RelationshipTlsSubscriptions interface:
+
+/**
+ * @member {module:model/RelationshipTlsSubscriptionTlsSubscription} tls_subscriptions
+ */
+
+_RelationshipTlsSubscriptions["default"].prototype['tls_subscriptions'] = undefined;
 var _default = RelationshipsForTlsDomain;
 exports["default"] = _default;

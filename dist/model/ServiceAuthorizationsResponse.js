@@ -34,9 +34,15 @@ var ServiceAuthorizationsResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>ServiceAuthorizationsResponse</code>.
    * @alias module:model/ServiceAuthorizationsResponse
+   * @implements module:model/Pagination
+   * @implements module:model/ServiceAuthorizationsResponseAllOf
    */
   function ServiceAuthorizationsResponse() {
     _classCallCheck(this, ServiceAuthorizationsResponse);
+
+    _Pagination["default"].initialize(this);
+
+    _ServiceAuthorizationsResponseAllOf["default"].initialize(this);
 
     ServiceAuthorizationsResponse.initialize(this);
   }
@@ -63,6 +69,10 @@ var ServiceAuthorizationsResponse = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new ServiceAuthorizationsResponse();
+
+        _Pagination["default"].constructFromObject(data, obj);
+
+        _ServiceAuthorizationsResponseAllOf["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('links')) {
           obj['links'] = _PaginationLinks["default"].constructFromObject(data['links']);
@@ -98,6 +108,23 @@ ServiceAuthorizationsResponse.prototype['meta'] = undefined;
  * @member {Array.<module:model/ServiceAuthorizationResponseData>} data
  */
 
-ServiceAuthorizationsResponse.prototype['data'] = undefined;
+ServiceAuthorizationsResponse.prototype['data'] = undefined; // Implement Pagination interface:
+
+/**
+ * @member {module:model/PaginationLinks} links
+ */
+
+_Pagination["default"].prototype['links'] = undefined;
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
+
+_Pagination["default"].prototype['meta'] = undefined; // Implement ServiceAuthorizationsResponseAllOf interface:
+
+/**
+ * @member {Array.<module:model/ServiceAuthorizationResponseData>} data
+ */
+
+_ServiceAuthorizationsResponseAllOf["default"].prototype['data'] = undefined;
 var _default = ServiceAuthorizationsResponse;
 exports["default"] = _default;

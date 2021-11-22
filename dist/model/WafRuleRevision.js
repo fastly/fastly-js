@@ -58,16 +58,16 @@ var WafRuleRevision = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new WafRuleRevision();
 
-        if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _WafRuleRevisionAttributes["default"].constructFromObject(data['attributes']);
+        if (data.hasOwnProperty('type')) {
+          obj['type'] = _TypeWafRuleRevision["default"].constructFromObject(data['type']);
         }
 
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
 
-        if (data.hasOwnProperty('type')) {
-          obj['type'] = _TypeWafRuleRevision["default"].constructFromObject(data['type']);
+        if (data.hasOwnProperty('attributes')) {
+          obj['attributes'] = _WafRuleRevisionAttributes["default"].constructFromObject(data['attributes']);
         }
       }
 
@@ -78,11 +78,11 @@ var WafRuleRevision = /*#__PURE__*/function () {
   return WafRuleRevision;
 }();
 /**
- * @member {module:model/WafRuleRevisionAttributes} attributes
+ * @member {module:model/TypeWafRuleRevision} type
  */
 
 
-WafRuleRevision.prototype['attributes'] = undefined;
+WafRuleRevision.prototype['type'] = undefined;
 /**
  * Alphanumeric string identifying a WAF rule revision.
  * @member {String} id
@@ -90,9 +90,9 @@ WafRuleRevision.prototype['attributes'] = undefined;
 
 WafRuleRevision.prototype['id'] = undefined;
 /**
- * @member {module:model/TypeWafRuleRevision} type
+ * @member {module:model/WafRuleRevisionAttributes} attributes
  */
 
-WafRuleRevision.prototype['type'] = undefined;
+WafRuleRevision.prototype['attributes'] = undefined;
 var _default = WafRuleRevision;
 exports["default"] = _default;

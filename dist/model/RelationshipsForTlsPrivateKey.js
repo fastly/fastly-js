@@ -7,11 +7,11 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _RelationshipCommonNameCommonName = _interopRequireDefault(require("./RelationshipCommonNameCommonName"));
-
 var _RelationshipTlsActivationTlsActivation = _interopRequireDefault(require("./RelationshipTlsActivationTlsActivation"));
 
 var _RelationshipTlsActivations = _interopRequireDefault(require("./RelationshipTlsActivations"));
+
+var _RelationshipTlsDomainTlsDomain = _interopRequireDefault(require("./RelationshipTlsDomainTlsDomain"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -30,9 +30,12 @@ var RelationshipsForTlsPrivateKey = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>RelationshipsForTlsPrivateKey</code>.
    * @alias module:model/RelationshipsForTlsPrivateKey
+   * @implements module:model/RelationshipTlsActivations
    */
   function RelationshipsForTlsPrivateKey() {
     _classCallCheck(this, RelationshipsForTlsPrivateKey);
+
+    _RelationshipTlsActivations["default"].initialize(this);
 
     RelationshipsForTlsPrivateKey.initialize(this);
   }
@@ -60,12 +63,14 @@ var RelationshipsForTlsPrivateKey = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new RelationshipsForTlsPrivateKey();
 
+        _RelationshipTlsActivations["default"].constructFromObject(data, obj);
+
         if (data.hasOwnProperty('tls_activations')) {
           obj['tls_activations'] = _RelationshipTlsActivationTlsActivation["default"].constructFromObject(data['tls_activations']);
         }
 
         if (data.hasOwnProperty('tls_domains')) {
-          obj['tls_domains'] = _RelationshipCommonNameCommonName["default"].constructFromObject(data['tls_domains']);
+          obj['tls_domains'] = _RelationshipTlsDomainTlsDomain["default"].constructFromObject(data['tls_domains']);
         }
       }
 
@@ -82,9 +87,15 @@ var RelationshipsForTlsPrivateKey = /*#__PURE__*/function () {
 
 RelationshipsForTlsPrivateKey.prototype['tls_activations'] = undefined;
 /**
- * @member {module:model/RelationshipCommonNameCommonName} tls_domains
+ * @member {module:model/RelationshipTlsDomainTlsDomain} tls_domains
  */
 
-RelationshipsForTlsPrivateKey.prototype['tls_domains'] = undefined;
+RelationshipsForTlsPrivateKey.prototype['tls_domains'] = undefined; // Implement RelationshipTlsActivations interface:
+
+/**
+ * @member {module:model/RelationshipTlsActivationTlsActivation} tls_activations
+ */
+
+_RelationshipTlsActivations["default"].prototype['tls_activations'] = undefined;
 var _default = RelationshipsForTlsPrivateKey;
 exports["default"] = _default;

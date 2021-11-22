@@ -27,8 +27,11 @@ class ServiceAuthorizationsResponse {
     /**
      * Constructs a new <code>ServiceAuthorizationsResponse</code>.
      * @alias module:model/ServiceAuthorizationsResponse
+     * @implements module:model/Pagination
+     * @implements module:model/ServiceAuthorizationsResponseAllOf
      */
     constructor() { 
+        Pagination.initialize(this);ServiceAuthorizationsResponseAllOf.initialize(this);
         ServiceAuthorizationsResponse.initialize(this);
     }
 
@@ -50,6 +53,8 @@ class ServiceAuthorizationsResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ServiceAuthorizationsResponse();
+            Pagination.constructFromObject(data, obj);
+            ServiceAuthorizationsResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('links')) {
                 obj['links'] = PaginationLinks.constructFromObject(data['links']);
@@ -83,6 +88,20 @@ ServiceAuthorizationsResponse.prototype['meta'] = undefined;
 ServiceAuthorizationsResponse.prototype['data'] = undefined;
 
 
+// Implement Pagination interface:
+/**
+ * @member {module:model/PaginationLinks} links
+ */
+Pagination.prototype['links'] = undefined;
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
+Pagination.prototype['meta'] = undefined;
+// Implement ServiceAuthorizationsResponseAllOf interface:
+/**
+ * @member {Array.<module:model/ServiceAuthorizationResponseData>} data
+ */
+ServiceAuthorizationsResponseAllOf.prototype['data'] = undefined;
 
 
 

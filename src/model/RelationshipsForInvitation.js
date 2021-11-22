@@ -26,8 +26,11 @@ class RelationshipsForInvitation {
     /**
      * Constructs a new <code>RelationshipsForInvitation</code>.
      * @alias module:model/RelationshipsForInvitation
+     * @implements module:model/RelationshipCustomer
+     * @implements module:model/RelationshipServiceInvitations
      */
     constructor() { 
+        RelationshipCustomer.initialize(this);RelationshipServiceInvitations.initialize(this);
         RelationshipsForInvitation.initialize(this);
     }
 
@@ -49,6 +52,8 @@ class RelationshipsForInvitation {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipsForInvitation();
+            RelationshipCustomer.constructFromObject(data, obj);
+            RelationshipServiceInvitations.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('customer')) {
                 obj['customer'] = RelationshipCustomerCustomer.constructFromObject(data['customer']);
@@ -74,6 +79,16 @@ RelationshipsForInvitation.prototype['customer'] = undefined;
 RelationshipsForInvitation.prototype['service_invitations'] = undefined;
 
 
+// Implement RelationshipCustomer interface:
+/**
+ * @member {module:model/RelationshipCustomerCustomer} customer
+ */
+RelationshipCustomer.prototype['customer'] = undefined;
+// Implement RelationshipServiceInvitations interface:
+/**
+ * @member {module:model/RelationshipServiceInvitationsServiceInvitations} service_invitations
+ */
+RelationshipServiceInvitations.prototype['service_invitations'] = undefined;
 
 
 

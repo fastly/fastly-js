@@ -46,7 +46,7 @@ var TlsBulkCertificatesApi = /*#__PURE__*/function () {
   /**
    * Destroy a certificate. This disables TLS for all domains listed as SAN entries.
    * @param {Object} options
-   * @param {String} options.certificate_id
+   * @param {String} options.certificate_id - Alphanumeric string identifying a TLS bulk certificate.
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
    */
 
@@ -76,7 +76,7 @@ var TlsBulkCertificatesApi = /*#__PURE__*/function () {
     /**
      * Destroy a certificate. This disables TLS for all domains listed as SAN entries.
      * @param {Object} options
-     * @param {String} options.certificate_id
+     * @param {String} options.certificate_id - Alphanumeric string identifying a TLS bulk certificate.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
 
@@ -91,7 +91,7 @@ var TlsBulkCertificatesApi = /*#__PURE__*/function () {
     /**
      * Retrieve a single certificate.
      * @param {Object} options
-     * @param {String} options.certificate_id
+     * @param {String} options.certificate_id - Alphanumeric string identifying a TLS bulk certificate.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsBulkCertificateResponse} and HTTP response
      */
 
@@ -120,7 +120,7 @@ var TlsBulkCertificatesApi = /*#__PURE__*/function () {
     /**
      * Retrieve a single certificate.
      * @param {Object} options
-     * @param {String} options.certificate_id
+     * @param {String} options.certificate_id - Alphanumeric string identifying a TLS bulk certificate.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsBulkCertificateResponse}
      */
 
@@ -183,7 +183,7 @@ var TlsBulkCertificatesApi = /*#__PURE__*/function () {
     /**
      * Replace a certificate with a newly reissued certificate. By using this endpoint, the original certificate will cease to be used for future TLS handshakes. Thus, only SAN entries that appear in the replacement certificate will become TLS enabled. Any SAN entries that are missing in the replacement certificate will become disabled.
      * @param {Object} options
-     * @param {String} options.certificate_id
+     * @param {String} options.certificate_id - Alphanumeric string identifying a TLS bulk certificate.
      * @param {module:model/TlsBulkCertificate} [options.tls_bulk_certificate]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsBulkCertificateResponse} and HTTP response
      */
@@ -213,7 +213,7 @@ var TlsBulkCertificatesApi = /*#__PURE__*/function () {
     /**
      * Replace a certificate with a newly reissued certificate. By using this endpoint, the original certificate will cease to be used for future TLS handshakes. Thus, only SAN entries that appear in the replacement certificate will become TLS enabled. Any SAN entries that are missing in the replacement certificate will become disabled.
      * @param {Object} options
-     * @param {String} options.certificate_id
+     * @param {String} options.certificate_id - Alphanumeric string identifying a TLS bulk certificate.
      * @param {module:model/TlsBulkCertificate} [options.tls_bulk_certificate]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsBulkCertificateResponse}
      */

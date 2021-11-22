@@ -26,6 +26,7 @@ class WafFirewallData {
      * @alias module:model/WafFirewallData
      */
     constructor() { 
+        
         WafFirewallData.initialize(this);
     }
 
@@ -48,11 +49,11 @@ class WafFirewallData {
         if (data) {
             obj = obj || new WafFirewallData();
 
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = WafFirewallDataAttributes.constructFromObject(data['attributes']);
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeWafFirewall.constructFromObject(data['type']);
+            }
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = WafFirewallDataAttributes.constructFromObject(data['attributes']);
             }
         }
         return obj;
@@ -62,14 +63,14 @@ class WafFirewallData {
 }
 
 /**
- * @member {module:model/WafFirewallDataAttributes} attributes
- */
-WafFirewallData.prototype['attributes'] = undefined;
-
-/**
  * @member {module:model/TypeWafFirewall} type
  */
 WafFirewallData.prototype['type'] = undefined;
+
+/**
+ * @member {module:model/WafFirewallDataAttributes} attributes
+ */
+WafFirewallData.prototype['attributes'] = undefined;
 
 
 

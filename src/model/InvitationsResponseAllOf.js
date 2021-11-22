@@ -25,6 +25,7 @@ class InvitationsResponseAllOf {
      * @alias module:model/InvitationsResponseAllOf
      */
     constructor() { 
+        
         InvitationsResponseAllOf.initialize(this);
     }
 

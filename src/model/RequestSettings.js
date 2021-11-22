@@ -24,6 +24,7 @@ class RequestSettings {
      * @alias module:model/RequestSettings
      */
     constructor() { 
+        
         RequestSettings.initialize(this);
     }
 

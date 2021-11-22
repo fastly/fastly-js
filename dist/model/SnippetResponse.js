@@ -7,11 +7,11 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _SchemasSnippetResponseAllOf = _interopRequireDefault(require("./SchemasSnippetResponseAllOf"));
-
 var _ServiceIdAndVersion = _interopRequireDefault(require("./ServiceIdAndVersion"));
 
 var _Snippet = _interopRequireDefault(require("./Snippet"));
+
+var _SnippetResponseAllOf = _interopRequireDefault(require("./SnippetResponseAllOf"));
 
 var _Timestamps = _interopRequireDefault(require("./Timestamps"));
 
@@ -32,9 +32,21 @@ var SnippetResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>SnippetResponse</code>.
    * @alias module:model/SnippetResponse
+   * @implements module:model/Snippet
+   * @implements module:model/ServiceIdAndVersion
+   * @implements module:model/Timestamps
+   * @implements module:model/SnippetResponseAllOf
    */
   function SnippetResponse() {
     _classCallCheck(this, SnippetResponse);
+
+    _Snippet["default"].initialize(this);
+
+    _ServiceIdAndVersion["default"].initialize(this);
+
+    _Timestamps["default"].initialize(this);
+
+    _SnippetResponseAllOf["default"].initialize(this);
 
     SnippetResponse.initialize(this);
   }
@@ -62,24 +74,32 @@ var SnippetResponse = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new SnippetResponse();
 
-        if (data.hasOwnProperty('content')) {
-          obj['content'] = _ApiClient["default"].convertToType(data['content'], 'String');
+        _Snippet["default"].constructFromObject(data, obj);
+
+        _ServiceIdAndVersion["default"].constructFromObject(data, obj);
+
+        _Timestamps["default"].constructFromObject(data, obj);
+
+        _SnippetResponseAllOf["default"].constructFromObject(data, obj);
+
+        if (data.hasOwnProperty('name')) {
+          obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
         }
 
         if (data.hasOwnProperty('dynamic')) {
           obj['dynamic'] = _ApiClient["default"].convertToType(data['dynamic'], 'String');
         }
 
-        if (data.hasOwnProperty('name')) {
-          obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
+        if (data.hasOwnProperty('type')) {
+          obj['type'] = _ApiClient["default"].convertToType(data['type'], 'String');
+        }
+
+        if (data.hasOwnProperty('content')) {
+          obj['content'] = _ApiClient["default"].convertToType(data['content'], 'String');
         }
 
         if (data.hasOwnProperty('priority')) {
           obj['priority'] = _ApiClient["default"].convertToType(data['priority'], 'String');
-        }
-
-        if (data.hasOwnProperty('type')) {
-          obj['type'] = _ApiClient["default"].convertToType(data['type'], 'String');
         }
 
         if (data.hasOwnProperty('service_id')) {
@@ -114,12 +134,12 @@ var SnippetResponse = /*#__PURE__*/function () {
   return SnippetResponse;
 }();
 /**
- * The VCL code that specifies exactly what the snippet does.
- * @member {String} content
+ * The name for the snippet.
+ * @member {String} name
  */
 
 
-SnippetResponse.prototype['content'] = undefined;
+SnippetResponse.prototype['name'] = undefined;
 /**
  * Sets the snippet version.
  * @member {module:model/SnippetResponse.DynamicEnum} dynamic
@@ -127,11 +147,17 @@ SnippetResponse.prototype['content'] = undefined;
 
 SnippetResponse.prototype['dynamic'] = undefined;
 /**
- * The name for the snippet.
- * @member {String} name
+ * The location in generated VCL where the snippet should be placed.
+ * @member {module:model/SnippetResponse.TypeEnum} type
  */
 
-SnippetResponse.prototype['name'] = undefined;
+SnippetResponse.prototype['type'] = undefined;
+/**
+ * The VCL code that specifies exactly what the snippet does.
+ * @member {String} content
+ */
+
+SnippetResponse.prototype['content'] = undefined;
 /**
  * Numeric string value. Priority determines execution order. Lower numbers execute first.
  * @member {String} priority
@@ -139,12 +165,6 @@ SnippetResponse.prototype['name'] = undefined;
  */
 
 SnippetResponse.prototype['priority'] = '100';
-/**
- * The location in generated VCL where the snippet should be placed.
- * @member {module:model/SnippetResponse.TypeEnum} type
- */
-
-SnippetResponse.prototype['type'] = undefined;
 /**
  * Alphanumeric string identifying the service.
  * @member {String} service_id
@@ -180,7 +200,78 @@ SnippetResponse.prototype['updated_at'] = undefined;
  * @member {String} id
  */
 
-SnippetResponse.prototype['id'] = undefined;
+SnippetResponse.prototype['id'] = undefined; // Implement Snippet interface:
+
+/**
+ * The name for the snippet.
+ * @member {String} name
+ */
+
+_Snippet["default"].prototype['name'] = undefined;
+/**
+ * Sets the snippet version.
+ * @member {module:model/Snippet.DynamicEnum} dynamic
+ */
+
+_Snippet["default"].prototype['dynamic'] = undefined;
+/**
+ * The location in generated VCL where the snippet should be placed.
+ * @member {module:model/Snippet.TypeEnum} type
+ */
+
+_Snippet["default"].prototype['type'] = undefined;
+/**
+ * The VCL code that specifies exactly what the snippet does.
+ * @member {String} content
+ */
+
+_Snippet["default"].prototype['content'] = undefined;
+/**
+ * Numeric string value. Priority determines execution order. Lower numbers execute first.
+ * @member {String} priority
+ * @default '100'
+ */
+
+_Snippet["default"].prototype['priority'] = '100'; // Implement ServiceIdAndVersion interface:
+
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+
+_ServiceIdAndVersion["default"].prototype['service_id'] = undefined;
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
+
+_ServiceIdAndVersion["default"].prototype['version'] = undefined; // Implement Timestamps interface:
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+
+_Timestamps["default"].prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+
+_Timestamps["default"].prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+
+_Timestamps["default"].prototype['updated_at'] = undefined; // Implement SnippetResponseAllOf interface:
+
+/**
+ * Alphanumeric string identifying a VCL Snippet.
+ * @member {String} id
+ */
+
+_SnippetResponseAllOf["default"].prototype['id'] = undefined;
 /**
  * Allowed values for the <code>dynamic</code> property.
  * @enum {String}

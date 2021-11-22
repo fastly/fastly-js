@@ -27,8 +27,11 @@ class WafFirewallResponseData {
     /**
      * Constructs a new <code>WafFirewallResponseData</code>.
      * @alias module:model/WafFirewallResponseData
+     * @implements module:model/WafFirewallData
+     * @implements module:model/WafFirewallResponseDataAllOf
      */
     constructor() { 
+        WafFirewallData.initialize(this);WafFirewallResponseDataAllOf.initialize(this);
         WafFirewallResponseData.initialize(this);
     }
 
@@ -50,12 +53,14 @@ class WafFirewallResponseData {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafFirewallResponseData();
+            WafFirewallData.constructFromObject(data, obj);
+            WafFirewallResponseDataAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeWafFirewall.constructFromObject(data['type']);
+            }
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -71,14 +76,14 @@ class WafFirewallResponseData {
 }
 
 /**
- * @member {module:model/Timestamps} attributes
- */
-WafFirewallResponseData.prototype['attributes'] = undefined;
-
-/**
  * @member {module:model/TypeWafFirewall} type
  */
 WafFirewallResponseData.prototype['type'] = undefined;
+
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+WafFirewallResponseData.prototype['attributes'] = undefined;
 
 /**
  * Alphanumeric string identifying a WAF Firewall.
@@ -92,6 +97,29 @@ WafFirewallResponseData.prototype['id'] = undefined;
 WafFirewallResponseData.prototype['relationships'] = undefined;
 
 
+// Implement WafFirewallData interface:
+/**
+ * @member {module:model/TypeWafFirewall} type
+ */
+WafFirewallData.prototype['type'] = undefined;
+/**
+ * @member {module:model/WafFirewallDataAttributes} attributes
+ */
+WafFirewallData.prototype['attributes'] = undefined;
+// Implement WafFirewallResponseDataAllOf interface:
+/**
+ * Alphanumeric string identifying a WAF Firewall.
+ * @member {String} id
+ */
+WafFirewallResponseDataAllOf.prototype['id'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+WafFirewallResponseDataAllOf.prototype['attributes'] = undefined;
+/**
+ * @member {module:model/RelationshipWafFirewallVersions} relationships
+ */
+WafFirewallResponseDataAllOf.prototype['relationships'] = undefined;
 
 
 

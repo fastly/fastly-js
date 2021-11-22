@@ -30,9 +30,18 @@ var ResponseObjectResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>ResponseObjectResponse</code>.
    * @alias module:model/ResponseObjectResponse
+   * @implements module:model/ResponseObject
+   * @implements module:model/ServiceIdAndVersion
+   * @implements module:model/Timestamps
    */
   function ResponseObjectResponse() {
     _classCallCheck(this, ResponseObjectResponse);
+
+    _ResponseObject["default"].initialize(this);
+
+    _ServiceIdAndVersion["default"].initialize(this);
+
+    _Timestamps["default"].initialize(this);
 
     ResponseObjectResponse.initialize(this);
   }
@@ -60,6 +69,12 @@ var ResponseObjectResponse = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new ResponseObjectResponse();
 
+        _ResponseObject["default"].constructFromObject(data, obj);
+
+        _ServiceIdAndVersion["default"].constructFromObject(data, obj);
+
+        _Timestamps["default"].constructFromObject(data, obj);
+
         if (data.hasOwnProperty('cache_condition')) {
           obj['cache_condition'] = _ApiClient["default"].convertToType(data['cache_condition'], 'String');
         }
@@ -76,16 +91,16 @@ var ResponseObjectResponse = /*#__PURE__*/function () {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
         }
 
-        if (data.hasOwnProperty('request_condition')) {
-          obj['request_condition'] = _ApiClient["default"].convertToType(data['request_condition'], 'String');
+        if (data.hasOwnProperty('status')) {
+          obj['status'] = _ApiClient["default"].convertToType(data['status'], 'Number');
         }
 
         if (data.hasOwnProperty('response')) {
           obj['response'] = _ApiClient["default"].convertToType(data['response'], 'String');
         }
 
-        if (data.hasOwnProperty('status')) {
-          obj['status'] = _ApiClient["default"].convertToType(data['status'], 'Number');
+        if (data.hasOwnProperty('request_condition')) {
+          obj['request_condition'] = _ApiClient["default"].convertToType(data['request_condition'], 'String');
         }
 
         if (data.hasOwnProperty('service_id')) {
@@ -141,11 +156,12 @@ ResponseObjectResponse.prototype['content_type'] = undefined;
 
 ResponseObjectResponse.prototype['name'] = undefined;
 /**
- * Condition which, if met, will select this configuration during a request. Optional.
- * @member {String} request_condition
+ * The HTTP status code.
+ * @member {Number} status
+ * @default 200
  */
 
-ResponseObjectResponse.prototype['request_condition'] = undefined;
+ResponseObjectResponse.prototype['status'] = 200;
 /**
  * The HTTP response.
  * @member {String} response
@@ -154,12 +170,11 @@ ResponseObjectResponse.prototype['request_condition'] = undefined;
 
 ResponseObjectResponse.prototype['response'] = 'Ok';
 /**
- * The HTTP status code.
- * @member {Number} status
- * @default 200
+ * Condition which, if met, will select this configuration during a request. Optional.
+ * @member {String} request_condition
  */
 
-ResponseObjectResponse.prototype['status'] = 200;
+ResponseObjectResponse.prototype['request_condition'] = undefined;
 /**
  * Alphanumeric string identifying the service.
  * @member {String} service_id
@@ -189,6 +204,83 @@ ResponseObjectResponse.prototype['deleted_at'] = undefined;
  * @member {String} updated_at
  */
 
-ResponseObjectResponse.prototype['updated_at'] = undefined;
+ResponseObjectResponse.prototype['updated_at'] = undefined; // Implement ResponseObject interface:
+
+/**
+ * Name of the cache condition controlling when this configuration applies.
+ * @member {String} cache_condition
+ */
+
+_ResponseObject["default"].prototype['cache_condition'] = undefined;
+/**
+ * The content to deliver for the response object, can be empty.
+ * @member {String} content
+ */
+
+_ResponseObject["default"].prototype['content'] = undefined;
+/**
+ * The MIME type of the content, can be empty.
+ * @member {String} content_type
+ */
+
+_ResponseObject["default"].prototype['content_type'] = undefined;
+/**
+ * Name for the request settings.
+ * @member {String} name
+ */
+
+_ResponseObject["default"].prototype['name'] = undefined;
+/**
+ * The HTTP status code.
+ * @member {Number} status
+ * @default 200
+ */
+
+_ResponseObject["default"].prototype['status'] = 200;
+/**
+ * The HTTP response.
+ * @member {String} response
+ * @default 'Ok'
+ */
+
+_ResponseObject["default"].prototype['response'] = 'Ok';
+/**
+ * Condition which, if met, will select this configuration during a request. Optional.
+ * @member {String} request_condition
+ */
+
+_ResponseObject["default"].prototype['request_condition'] = undefined; // Implement ServiceIdAndVersion interface:
+
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+
+_ServiceIdAndVersion["default"].prototype['service_id'] = undefined;
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
+
+_ServiceIdAndVersion["default"].prototype['version'] = undefined; // Implement Timestamps interface:
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+
+_Timestamps["default"].prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+
+_Timestamps["default"].prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+
+_Timestamps["default"].prototype['updated_at'] = undefined;
 var _default = ResponseObjectResponse;
 exports["default"] = _default;

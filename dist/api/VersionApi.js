@@ -46,8 +46,8 @@ var VersionApi = /*#__PURE__*/function () {
   /**
    * Activate the current version.
    * @param {Object} options
-   * @param {String} options.service_id
-   * @param {Number} options.version_id
+   * @param {String} options.service_id - Alphanumeric string identifying the service.
+   * @param {Number} options.version_id - Integer identifying a service version.
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VersionResponse} and HTTP response
    */
 
@@ -83,8 +83,8 @@ var VersionApi = /*#__PURE__*/function () {
     /**
      * Activate the current version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VersionResponse}
      */
 
@@ -99,8 +99,8 @@ var VersionApi = /*#__PURE__*/function () {
     /**
      * Clone the current configuration into a new version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Version} and HTTP response
      */
 
@@ -135,8 +135,8 @@ var VersionApi = /*#__PURE__*/function () {
     /**
      * Clone the current configuration into a new version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Version}
      */
 
@@ -151,7 +151,7 @@ var VersionApi = /*#__PURE__*/function () {
     /**
      * Create a version for a particular service.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VersionCreateResponse} and HTTP response
      */
 
@@ -180,7 +180,7 @@ var VersionApi = /*#__PURE__*/function () {
     /**
      * Create a version for a particular service.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VersionCreateResponse}
      */
 
@@ -195,8 +195,8 @@ var VersionApi = /*#__PURE__*/function () {
     /**
      * Deactivate the current version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VersionResponse} and HTTP response
      */
 
@@ -231,8 +231,8 @@ var VersionApi = /*#__PURE__*/function () {
     /**
      * Deactivate the current version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VersionResponse}
      */
 
@@ -247,8 +247,8 @@ var VersionApi = /*#__PURE__*/function () {
     /**
      * Get the version for a particular service.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VersionResponse} and HTTP response
      */
 
@@ -283,8 +283,8 @@ var VersionApi = /*#__PURE__*/function () {
     /**
      * Get the version for a particular service.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VersionResponse}
      */
 
@@ -299,7 +299,7 @@ var VersionApi = /*#__PURE__*/function () {
     /**
      * List the versions for a particular service.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/VersionResponse>} and HTTP response
      */
 
@@ -328,7 +328,7 @@ var VersionApi = /*#__PURE__*/function () {
     /**
      * List the versions for a particular service.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/VersionResponse>}
      */
 
@@ -343,8 +343,8 @@ var VersionApi = /*#__PURE__*/function () {
     /**
      * Locks the specified version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Version} and HTTP response
      */
 
@@ -379,8 +379,8 @@ var VersionApi = /*#__PURE__*/function () {
     /**
      * Locks the specified version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Version}
      */
 
@@ -395,8 +395,8 @@ var VersionApi = /*#__PURE__*/function () {
     /**
      * Update a particular version for a particular service.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {Boolean} [options.active=false] - Whether this is the active version or not.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Boolean} [options.deployed] - Unused at this time.
@@ -446,8 +446,8 @@ var VersionApi = /*#__PURE__*/function () {
     /**
      * Update a particular version for a particular service.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {Boolean} [options.active=false] - Whether this is the active version or not.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Boolean} [options.deployed] - Unused at this time.
@@ -469,8 +469,8 @@ var VersionApi = /*#__PURE__*/function () {
     /**
      * Validate the version for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
 
@@ -505,8 +505,8 @@ var VersionApi = /*#__PURE__*/function () {
     /**
      * Validate the version for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
 

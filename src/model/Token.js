@@ -24,6 +24,7 @@ class Token {
      * @alias module:model/Token
      */
     constructor() { 
+        
         Token.initialize(this);
     }
 
@@ -46,14 +47,14 @@ class Token {
         if (data) {
             obj = obj || new Token();
 
+            if (data.hasOwnProperty('services')) {
+                obj['services'] = ApiClient.convertToType(data['services'], ['String']);
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('scope')) {
                 obj['scope'] = ApiClient.convertToType(data['scope'], 'String');
-            }
-            if (data.hasOwnProperty('services')) {
-                obj['services'] = ApiClient.convertToType(data['services'], ['String']);
             }
         }
         return obj;
@@ -61,6 +62,12 @@ class Token {
 
 
 }
+
+/**
+ * List of alphanumeric strings identifying services (optional). If no services are specified, the token will have access to all services on the account. 
+ * @member {Array.<String>} services
+ */
+Token.prototype['services'] = undefined;
 
 /**
  * Name of the token.
@@ -74,12 +81,6 @@ Token.prototype['name'] = undefined;
  * @default 'global'
  */
 Token.prototype['scope'] = undefined;
-
-/**
- * List of alphanumeric strings identifying services (optional). If no services are specified, the token will have access to all services on the account. 
- * @member {Array.<String>} services
- */
-Token.prototype['services'] = undefined;
 
 
 

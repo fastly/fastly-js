@@ -42,7 +42,7 @@ export default class EventsApi {
     /**
      * Get a specific event.
      * @param {Object} options
-     * @param {String} options.event_id
+     * @param {String} options.event_id - Alphanumeric string identifying an event.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EventResponse} and HTTP response
      */
     getEventWithHttpInfo(options = {}) {
@@ -76,7 +76,7 @@ export default class EventsApi {
     /**
      * Get a specific event.
      * @param {Object} options
-     * @param {String} options.event_id
+     * @param {String} options.event_id - Alphanumeric string identifying an event.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EventResponse}
      */
     getEvent(options = {}) {

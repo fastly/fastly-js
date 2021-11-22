@@ -25,6 +25,7 @@ class RelationshipTlsDnsRecordDnsRecord {
      * @alias module:model/RelationshipTlsDnsRecordDnsRecord
      */
     constructor() { 
+        
         RelationshipTlsDnsRecordDnsRecord.initialize(this);
     }
 

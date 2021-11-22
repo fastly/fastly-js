@@ -24,6 +24,7 @@ class WafExclusionDataAttributes {
      * @alias module:model/WafExclusionDataAttributes
      */
     constructor() { 
+        
         WafExclusionDataAttributes.initialize(this);
     }
 
@@ -150,31 +151,37 @@ WafExclusionDataAttributes['VariableEnum'] = {
      * value: "req.cookies"
      * @const
      */
-    "cookies": "req.cookies",
+    "req.cookies": "req.cookies",
 
     /**
      * value: "req.headers"
      * @const
      */
-    "headers": "req.headers",
+    "req.headers": "req.headers",
 
     /**
      * value: "req.post"
      * @const
      */
-    "post": "req.post",
+    "req.post": "req.post",
 
     /**
      * value: "req.post_filename"
      * @const
      */
-    "post_filename": "req.post_filename",
+    "req.post_filename": "req.post_filename",
 
     /**
      * value: "req.qs"
      * @const
      */
-    "qs": "req.qs"
+    "req.qs": "req.qs",
+
+    /**
+     * value: "null"
+     * @const
+     */
+    "null": "null"
 };
 
 

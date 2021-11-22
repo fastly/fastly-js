@@ -24,6 +24,7 @@ class BillingAddressDataAttributes {
      * @alias module:model/BillingAddressDataAttributes
      */
     constructor() { 
+        
         BillingAddressDataAttributes.initialize(this);
     }
 

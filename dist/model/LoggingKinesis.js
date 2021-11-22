@@ -58,28 +58,24 @@ var LoggingKinesis = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new LoggingKinesis();
 
-        if (data.hasOwnProperty('access_key')) {
-          obj['access_key'] = _ApiClient["default"].convertToType(data['access_key'], 'String');
-        }
-
-        if (data.hasOwnProperty('format')) {
-          obj['format'] = _ApiClient["default"].convertToType(data['format'], 'String');
-        }
-
-        if (data.hasOwnProperty('format_version')) {
-          obj['format_version'] = _LoggingFormatVersion["default"].constructFromObject(data['format_version']);
-        }
-
-        if (data.hasOwnProperty('iam_role')) {
-          obj['iam_role'] = _ApiClient["default"].convertToType(data['iam_role'], 'String');
-        }
-
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
         }
 
         if (data.hasOwnProperty('placement')) {
           obj['placement'] = _LoggingPlacement["default"].constructFromObject(data['placement']);
+        }
+
+        if (data.hasOwnProperty('format_version')) {
+          obj['format_version'] = _LoggingFormatVersion["default"].constructFromObject(data['format_version']);
+        }
+
+        if (data.hasOwnProperty('format')) {
+          obj['format'] = _ApiClient["default"].convertToType(data['format'], 'String');
+        }
+
+        if (data.hasOwnProperty('topic')) {
+          obj['topic'] = _ApiClient["default"].convertToType(data['topic'], 'String');
         }
 
         if (data.hasOwnProperty('region')) {
@@ -90,8 +86,12 @@ var LoggingKinesis = /*#__PURE__*/function () {
           obj['secret_key'] = _ApiClient["default"].convertToType(data['secret_key'], 'String');
         }
 
-        if (data.hasOwnProperty('topic')) {
-          obj['topic'] = _ApiClient["default"].convertToType(data['topic'], 'String');
+        if (data.hasOwnProperty('access_key')) {
+          obj['access_key'] = _ApiClient["default"].convertToType(data['access_key'], 'String');
+        }
+
+        if (data.hasOwnProperty('iam_role')) {
+          obj['iam_role'] = _ApiClient["default"].convertToType(data['iam_role'], 'String');
         }
       }
 
@@ -102,32 +102,10 @@ var LoggingKinesis = /*#__PURE__*/function () {
   return LoggingKinesis;
 }();
 /**
- * The access key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
- * @member {String} access_key
- */
-
-
-LoggingKinesis.prototype['access_key'] = undefined;
-/**
- * @member {String} format
- */
-
-LoggingKinesis.prototype['format'] = undefined;
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-
-LoggingKinesis.prototype['format_version'] = undefined;
-/**
- * The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if `access_key` and `secret_key` are provided.
- * @member {String} iam_role
- */
-
-LoggingKinesis.prototype['iam_role'] = undefined;
-/**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
+
 
 LoggingKinesis.prototype['name'] = undefined;
 /**
@@ -135,6 +113,22 @@ LoggingKinesis.prototype['name'] = undefined;
  */
 
 LoggingKinesis.prototype['placement'] = undefined;
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+
+LoggingKinesis.prototype['format_version'] = undefined;
+/**
+ * @member {String} format
+ */
+
+LoggingKinesis.prototype['format'] = undefined;
+/**
+ * The Amazon Kinesis stream to send logs to. Required.
+ * @member {String} topic
+ */
+
+LoggingKinesis.prototype['topic'] = undefined;
 /**
  * The [AWS region](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints) to stream logs to.
  * @member {module:model/LoggingKinesis.RegionEnum} region
@@ -148,11 +142,17 @@ LoggingKinesis.prototype['region'] = undefined;
 
 LoggingKinesis.prototype['secret_key'] = undefined;
 /**
- * The Amazon Kinesis stream to send logs to. Required.
- * @member {String} topic
+ * The access key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
+ * @member {String} access_key
  */
 
-LoggingKinesis.prototype['topic'] = undefined;
+LoggingKinesis.prototype['access_key'] = undefined;
+/**
+ * The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if `access_key` and `secret_key` are provided.
+ * @member {String} iam_role
+ */
+
+LoggingKinesis.prototype['iam_role'] = undefined;
 /**
  * Allowed values for the <code>region</code> property.
  * @enum {String}

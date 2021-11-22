@@ -1,6 +1,5 @@
 # Fastly.InvitationsApi
 
-
 ```javascript
 const apiInstance = new Fastly.InvitationsApi();
 ```
@@ -13,11 +12,10 @@ Method | Fastly API endpoint | Description
 [**listInvitations**](InvitationsApi.md#listInvitations) | **GET** /invitations | List invitations
 
 
-
 ## `createInvitation`
 
 ```javascript
-createInvitation({ [invitation] })
+createInvitation({ , [invitation] })
 ```
 
 Create an invitation.
@@ -26,12 +24,12 @@ Create an invitation.
 
 ```javascript
 const options = {
-  invitation: new Fastly.Invitation(),
+  invitation: {"data":{"type":"invitation","attributes":{"email":"thelma@example.com","limit_services":true,"role":"engineer"},"relationships":{"customer":{"data":{"id":"44tb1D3asjhhuh2SH8e8YD","type":"customer"}},"service_invitations":{"data":[{"type":"service_invitation","attributes":{"permission":"purge_all"},"relationships":{"service":{"data":{"type":"service","id":"6yrrdleXQ9QDtum9rMB0nr"}}}}]}}}},
 };
 
 apiInstance.createInvitation(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -42,7 +40,7 @@ apiInstance.createInvitation(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**invitation** | [**Invitation**](../Model/Invitation.md) |  | [optional]
+**invitation** | [**Invitation**](Invitation.md) |  | [optional]
 
 ### Return type
 
@@ -77,7 +75,7 @@ apiInstance.deleteInvitation(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**invitation_id** | **String** |  |
+**invitation_id** | **String** | Alphanumeric string identifying an invitation. |
 
 ### Return type
 
@@ -87,7 +85,7 @@ null (empty response body)
 ## `listInvitations`
 
 ```javascript
-listInvitations({ [page_number, ][page_size] })
+listInvitations({ , [page_number, ][page_size] })
 ```
 
 List all invitations.
@@ -96,13 +94,13 @@ List all invitations.
 
 ```javascript
 const options = {
-  page_number: 56,
+  page_number: 1,
   page_size: 20,
 };
 
 apiInstance.listInvitations(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -114,7 +112,7 @@ apiInstance.listInvitations(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **page_number** | **Number** | Current page. | [optional]
-**page_size** | **Number** | Number of records per page. | [optional] [default to 20]
+**page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
 
 ### Return type
 

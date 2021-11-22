@@ -36,9 +36,15 @@ var WafActiveRuleCreationResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>WafActiveRuleCreationResponse</code>.
    * @alias module:model/WafActiveRuleCreationResponse
+   * @implements module:model/WafActiveRuleResponse
+   * @implements module:model/WafActiveRulesResponse
    */
   function WafActiveRuleCreationResponse() {
     _classCallCheck(this, WafActiveRuleCreationResponse);
+
+    _WafActiveRuleResponse["default"].initialize(this);
+
+    _WafActiveRulesResponse["default"].initialize(this);
 
     WafActiveRuleCreationResponse.initialize(this);
   }
@@ -65,6 +71,10 @@ var WafActiveRuleCreationResponse = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new WafActiveRuleCreationResponse();
+
+        _WafActiveRuleResponse["default"].constructFromObject(data, obj);
+
+        _WafActiveRulesResponse["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('data')) {
           obj['data'] = _ApiClient["default"].convertToType(data['data'], [_WafActiveRuleResponseData["default"]]);
@@ -109,6 +119,33 @@ WafActiveRuleCreationResponse.prototype['meta'] = undefined;
  * @member {Array.<module:model/IncludedWithWafActiveRuleItem>} included
  */
 
-WafActiveRuleCreationResponse.prototype['included'] = undefined;
+WafActiveRuleCreationResponse.prototype['included'] = undefined; // Implement WafActiveRuleResponse interface:
+
+/**
+ * @member {module:model/WafActiveRuleResponseData} data
+ */
+
+_WafActiveRuleResponse["default"].prototype['data'] = undefined; // Implement WafActiveRulesResponse interface:
+
+/**
+ * @member {module:model/PaginationLinks} links
+ */
+
+_WafActiveRulesResponse["default"].prototype['links'] = undefined;
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
+
+_WafActiveRulesResponse["default"].prototype['meta'] = undefined;
+/**
+ * @member {Array.<module:model/WafActiveRuleResponseData>} data
+ */
+
+_WafActiveRulesResponse["default"].prototype['data'] = undefined;
+/**
+ * @member {Array.<module:model/IncludedWithWafActiveRuleItem>} included
+ */
+
+_WafActiveRulesResponse["default"].prototype['included'] = undefined;
 var _default = WafActiveRuleCreationResponse;
 exports["default"] = _default;

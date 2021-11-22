@@ -26,8 +26,13 @@ class BackendResponse {
     /**
      * Constructs a new <code>BackendResponse</code>.
      * @alias module:model/BackendResponse
+     * @implements module:model/Backend
+     * @implements module:model/Timestamps
+     * @implements module:model/ServiceIdAndVersion
+     * @implements module:model/BackendResponseAllOf
      */
     constructor() { 
+        Backend.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);BackendResponseAllOf.initialize(this);
         BackendResponse.initialize(this);
     }
 
@@ -49,6 +54,10 @@ class BackendResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new BackendResponse();
+            Backend.constructFromObject(data, obj);
+            Timestamps.constructFromObject(data, obj);
+            ServiceIdAndVersion.constructFromObject(data, obj);
+            BackendResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('address')) {
                 obj['address'] = ApiClient.convertToType(data['address'], 'String');
@@ -374,6 +383,186 @@ BackendResponse.prototype['version'] = undefined;
 BackendResponse.prototype['locked'] = undefined;
 
 
+// Implement Backend interface:
+/**
+ * A hostname, IPv4, or IPv6 address for the backend. This is the preferred way to specify the location of your backend.
+ * @member {String} address
+ */
+Backend.prototype['address'] = undefined;
+/**
+ * Whether or not this backend should be automatically load balanced. If true, all backends with this setting that don't have a `request_condition` will be selected based on their `weight`.
+ * @member {Boolean} auto_loadbalance
+ */
+Backend.prototype['auto_loadbalance'] = undefined;
+/**
+ * Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, the response received so far will be considered complete and the fetch will end. May be set at runtime using `bereq.between_bytes_timeout`.
+ * @member {Number} between_bytes_timeout
+ */
+Backend.prototype['between_bytes_timeout'] = undefined;
+/**
+ * Unused.
+ * @member {String} client_cert
+ */
+Backend.prototype['client_cert'] = undefined;
+/**
+ * A freeform descriptive note.
+ * @member {String} comment
+ */
+Backend.prototype['comment'] = undefined;
+/**
+ * Maximum duration in milliseconds to wait for a connection to this backend to be established. If exceeded, the connection is aborted and a synthethic `503` response will be presented instead. May be set at runtime using `bereq.connect_timeout`.
+ * @member {Number} connect_timeout
+ */
+Backend.prototype['connect_timeout'] = undefined;
+/**
+ * Maximum duration in milliseconds to wait for the server response to begin after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthethic `503` response will be presented instead. May be set at runtime using `bereq.first_byte_timeout`.
+ * @member {Number} first_byte_timeout
+ */
+Backend.prototype['first_byte_timeout'] = undefined;
+/**
+ * The name of the healthcheck to use with this backend.
+ * @member {String} healthcheck
+ */
+Backend.prototype['healthcheck'] = undefined;
+/**
+ * The hostname of the backend. May be used as an alternative to `address` to set the backend location.
+ * @member {String} hostname
+ */
+Backend.prototype['hostname'] = undefined;
+/**
+ * IPv4 address of the backend. May be used as an alternative to `address` to set the backend location.
+ * @member {String} ipv4
+ */
+Backend.prototype['ipv4'] = undefined;
+/**
+ * IPv6 address of the backend. May be used as an alternative to `address` to set the backend location.
+ * @member {String} ipv6
+ */
+Backend.prototype['ipv6'] = undefined;
+/**
+ * Maximum number of concurrent connections this backend will accept.
+ * @member {Number} max_conn
+ */
+Backend.prototype['max_conn'] = undefined;
+/**
+ * Maximum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
+ * @member {String} max_tls_version
+ */
+Backend.prototype['max_tls_version'] = undefined;
+/**
+ * Minimum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
+ * @member {String} min_tls_version
+ */
+Backend.prototype['min_tls_version'] = undefined;
+/**
+ * The name of the backend.
+ * @member {String} name
+ */
+Backend.prototype['name'] = undefined;
+/**
+ * If set, will replace the client-supplied HTTP `Host` header on connections to this backend. Applied after VCL has been processed, so this setting will take precedence over changing `bereq.http.Host` in VCL.
+ * @member {String} override_host
+ */
+Backend.prototype['override_host'] = undefined;
+/**
+ * Port on which the backend server is listening for connections from Fastly. Setting `port` to 80 or 443 will also set `use_ssl` automatically (to false and true respectively), unless explicitly overridden by setting `use_ssl` in the same request.
+ * @member {Number} port
+ */
+Backend.prototype['port'] = undefined;
+/**
+ * Name of a Condition, which if satisfied, will select this backend during a request. If set, will override any `auto_loadbalance` setting. By default, the first backend added to a service is selected for all requests.
+ * @member {String} request_condition
+ */
+Backend.prototype['request_condition'] = undefined;
+/**
+ * Data center POP code of the data center to use as a [shield](https://docs.fastly.com/en/guides/shielding).
+ * @member {String} shield
+ */
+Backend.prototype['shield'] = undefined;
+/**
+ * CA certificate attached to origin.
+ * @member {String} ssl_ca_cert
+ */
+Backend.prototype['ssl_ca_cert'] = undefined;
+/**
+ * Overrides `ssl_hostname`, but only for cert verification. Does not affect SNI at all.
+ * @member {String} ssl_cert_hostname
+ */
+Backend.prototype['ssl_cert_hostname'] = undefined;
+/**
+ * Be strict on checking SSL certs.
+ * @member {Boolean} ssl_check_cert
+ * @default true
+ */
+Backend.prototype['ssl_check_cert'] = true;
+/**
+ * List of [OpenSSL ciphers](https://www.openssl.org/docs/manmaster/man1/ciphers.html) to support for connections to this origin. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
+ * @member {String} ssl_ciphers
+ */
+Backend.prototype['ssl_ciphers'] = undefined;
+/**
+ * Client certificate attached to origin.
+ * @member {String} ssl_client_cert
+ */
+Backend.prototype['ssl_client_cert'] = undefined;
+/**
+ * Client key attached to origin.
+ * @member {String} ssl_client_key
+ */
+Backend.prototype['ssl_client_key'] = undefined;
+/**
+ * Use `ssl_cert_hostname` and `ssl_sni_hostname` to configure certificate validation.
+ * @member {String} ssl_hostname
+ */
+Backend.prototype['ssl_hostname'] = undefined;
+/**
+ * Overrides `ssl_hostname`, but only for SNI in the handshake. Does not affect cert validation at all.
+ * @member {String} ssl_sni_hostname
+ */
+Backend.prototype['ssl_sni_hostname'] = undefined;
+/**
+ * Whether or not to require TLS for connections to this backend.
+ * @member {Boolean} use_ssl
+ */
+Backend.prototype['use_ssl'] = undefined;
+/**
+ * Weight used to load balance this backend against others. May be any positive integer. If `auto_loadbalance` is true, the chance of this backend being selected is equal to its own weight over the sum of all weights for backends that have `auto_loadbalance` set to true.
+ * @member {Number} weight
+ */
+Backend.prototype['weight'] = undefined;
+// Implement Timestamps interface:
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+Timestamps.prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+Timestamps.prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+Timestamps.prototype['updated_at'] = undefined;
+// Implement ServiceIdAndVersion interface:
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+ServiceIdAndVersion.prototype['service_id'] = undefined;
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
+ServiceIdAndVersion.prototype['version'] = undefined;
+// Implement BackendResponseAllOf interface:
+/**
+ * Indicates whether the version of the service this backend is attached to accepts edits.
+ * @member {Boolean} locked
+ */
+BackendResponseAllOf.prototype['locked'] = undefined;
 
 
 

@@ -30,9 +30,15 @@ var ServiceInvitationResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>ServiceInvitationResponse</code>.
    * @alias module:model/ServiceInvitationResponse
+   * @implements module:model/ServiceInvitation
+   * @implements module:model/ServiceInvitationResponseAllOf
    */
   function ServiceInvitationResponse() {
     _classCallCheck(this, ServiceInvitationResponse);
+
+    _ServiceInvitation["default"].initialize(this);
+
+    _ServiceInvitationResponseAllOf["default"].initialize(this);
 
     ServiceInvitationResponse.initialize(this);
   }
@@ -60,6 +66,10 @@ var ServiceInvitationResponse = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new ServiceInvitationResponse();
 
+        _ServiceInvitation["default"].constructFromObject(data, obj);
+
+        _ServiceInvitationResponseAllOf["default"].constructFromObject(data, obj);
+
         if (data.hasOwnProperty('data')) {
           obj['data'] = _ServiceInvitationResponseAllOfData["default"].constructFromObject(data['data']);
         }
@@ -76,6 +86,18 @@ var ServiceInvitationResponse = /*#__PURE__*/function () {
  */
 
 
-ServiceInvitationResponse.prototype['data'] = undefined;
+ServiceInvitationResponse.prototype['data'] = undefined; // Implement ServiceInvitation interface:
+
+/**
+ * @member {module:model/ServiceInvitationData} data
+ */
+
+_ServiceInvitation["default"].prototype['data'] = undefined; // Implement ServiceInvitationResponseAllOf interface:
+
+/**
+ * @member {module:model/ServiceInvitationResponseAllOfData} data
+ */
+
+_ServiceInvitationResponseAllOf["default"].prototype['data'] = undefined;
 var _default = ServiceInvitationResponse;
 exports["default"] = _default;

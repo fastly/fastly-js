@@ -24,6 +24,7 @@ class HistoricalRegionsResponseAllOf {
      * @alias module:model/HistoricalRegionsResponseAllOf
      */
     constructor() { 
+        
         HistoricalRegionsResponseAllOf.initialize(this);
     }
 

@@ -56,12 +56,12 @@ var BillingAddressResponseAllOfData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new BillingAddressResponseAllOfData();
 
-        if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _ApiClient["default"].convertToType(data['attributes'], _Timestamps["default"]);
-        }
-
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
+        }
+
+        if (data.hasOwnProperty('attributes')) {
+          obj['attributes'] = _ApiClient["default"].convertToType(data['attributes'], _Timestamps["default"]);
         }
       }
 
@@ -72,16 +72,16 @@ var BillingAddressResponseAllOfData = /*#__PURE__*/function () {
   return BillingAddressResponseAllOfData;
 }();
 /**
- * @member {module:model/Timestamps} attributes
- */
-
-
-BillingAddressResponseAllOfData.prototype['attributes'] = undefined;
-/**
  * Alphanumeric string identifying the billing address.
  * @member {String} id
  */
 
+
 BillingAddressResponseAllOfData.prototype['id'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+
+BillingAddressResponseAllOfData.prototype['attributes'] = undefined;
 var _default = BillingAddressResponseAllOfData;
 exports["default"] = _default;

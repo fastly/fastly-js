@@ -25,6 +25,7 @@ class ServiceAuthorizationResponseDataAllOf {
      * @alias module:model/ServiceAuthorizationResponseDataAllOf
      */
     constructor() { 
+        
         ServiceAuthorizationResponseDataAllOf.initialize(this);
     }
 
@@ -47,11 +48,11 @@ class ServiceAuthorizationResponseDataAllOf {
         if (data) {
             obj = obj || new ServiceAuthorizationResponseDataAllOf();
 
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = Timestamps.constructFromObject(data['attributes']);
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = Timestamps.constructFromObject(data['attributes']);
             }
         }
         return obj;
@@ -61,15 +62,15 @@ class ServiceAuthorizationResponseDataAllOf {
 }
 
 /**
- * @member {module:model/Timestamps} attributes
- */
-ServiceAuthorizationResponseDataAllOf.prototype['attributes'] = undefined;
-
-/**
  * Alphanumeric string identifying a service authorization.
  * @member {String} id
  */
 ServiceAuthorizationResponseDataAllOf.prototype['id'] = undefined;
+
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+ServiceAuthorizationResponseDataAllOf.prototype['attributes'] = undefined;
 
 
 

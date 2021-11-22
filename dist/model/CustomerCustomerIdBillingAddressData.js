@@ -58,12 +58,12 @@ var CustomerCustomerIdBillingAddressData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new CustomerCustomerIdBillingAddressData();
 
-        if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _BillingAddress["default"].constructFromObject(data['attributes']);
-        }
-
         if (data.hasOwnProperty('type')) {
           obj['type'] = _TypeBillingAddress["default"].constructFromObject(data['type']);
+        }
+
+        if (data.hasOwnProperty('attributes')) {
+          obj['attributes'] = _BillingAddress["default"].constructFromObject(data['attributes']);
         }
       }
 
@@ -74,15 +74,15 @@ var CustomerCustomerIdBillingAddressData = /*#__PURE__*/function () {
   return CustomerCustomerIdBillingAddressData;
 }();
 /**
- * @member {module:model/BillingAddress} attributes
- */
-
-
-CustomerCustomerIdBillingAddressData.prototype['attributes'] = undefined;
-/**
  * @member {module:model/TypeBillingAddress} type
  */
 
+
 CustomerCustomerIdBillingAddressData.prototype['type'] = undefined;
+/**
+ * @member {module:model/BillingAddress} attributes
+ */
+
+CustomerCustomerIdBillingAddressData.prototype['attributes'] = undefined;
 var _default = CustomerCustomerIdBillingAddressData;
 exports["default"] = _default;

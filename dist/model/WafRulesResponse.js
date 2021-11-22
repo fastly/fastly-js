@@ -36,9 +36,15 @@ var WafRulesResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>WafRulesResponse</code>.
    * @alias module:model/WafRulesResponse
+   * @implements module:model/Pagination
+   * @implements module:model/WafRulesResponseAllOf
    */
   function WafRulesResponse() {
     _classCallCheck(this, WafRulesResponse);
+
+    _Pagination["default"].initialize(this);
+
+    _WafRulesResponseAllOf["default"].initialize(this);
 
     WafRulesResponse.initialize(this);
   }
@@ -65,6 +71,10 @@ var WafRulesResponse = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new WafRulesResponse();
+
+        _Pagination["default"].constructFromObject(data, obj);
+
+        _WafRulesResponseAllOf["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('links')) {
           obj['links'] = _PaginationLinks["default"].constructFromObject(data['links']);
@@ -109,6 +119,28 @@ WafRulesResponse.prototype['data'] = undefined;
  * @member {Array.<module:model/IncludedWithWafRuleItem>} included
  */
 
-WafRulesResponse.prototype['included'] = undefined;
+WafRulesResponse.prototype['included'] = undefined; // Implement Pagination interface:
+
+/**
+ * @member {module:model/PaginationLinks} links
+ */
+
+_Pagination["default"].prototype['links'] = undefined;
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
+
+_Pagination["default"].prototype['meta'] = undefined; // Implement WafRulesResponseAllOf interface:
+
+/**
+ * @member {Array.<module:model/WafRuleResponseData>} data
+ */
+
+_WafRulesResponseAllOf["default"].prototype['data'] = undefined;
+/**
+ * @member {Array.<module:model/IncludedWithWafRuleItem>} included
+ */
+
+_WafRulesResponseAllOf["default"].prototype['included'] = undefined;
 var _default = WafRulesResponse;
 exports["default"] = _default;

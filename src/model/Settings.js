@@ -24,6 +24,7 @@ class Settings {
      * @alias module:model/Settings
      */
     constructor() { 
+        
         Settings.initialize(this);
     }
 

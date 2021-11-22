@@ -1,6 +1,5 @@
 # Fastly.TlsSubscriptionsApi
 
-
 ```javascript
 const apiInstance = new Fastly.TlsSubscriptionsApi();
 ```
@@ -10,16 +9,17 @@ Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**createTlsSub**](TlsSubscriptionsApi.md#createTlsSub) | **POST** /tls/subscriptions | Create a TLS subscription
 [**deleteTlsSub**](TlsSubscriptionsApi.md#deleteTlsSub) | **DELETE** /tls/subscriptions/{tls_subscription_id} | Delete a TLS subscription
+[**deleteTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallengesGlobalsignEmailChallengeId**](TlsSubscriptionsApi.md#deleteTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallengesGlobalsignEmailChallengeId) | **DELETE** /tls/subscriptions/{tls_subscription_id}/authorizations/{tls_authorization_id}/globalsign_email_challenges/{globalsign_email_challenge_id} | Delete a GlobalSign email challenge
 [**getTlsSub**](TlsSubscriptionsApi.md#getTlsSub) | **GET** /tls/subscriptions/{tls_subscription_id} | Get a TLS subscription
 [**listTlsSubs**](TlsSubscriptionsApi.md#listTlsSubs) | **GET** /tls/subscriptions | List TLS subscriptions
 [**patchTlsSub**](TlsSubscriptionsApi.md#patchTlsSub) | **PATCH** /tls/subscriptions/{tls_subscription_id} | Update a TLS subscription
-
+[**postTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallenges**](TlsSubscriptionsApi.md#postTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallenges) | **POST** /tls/subscriptions/{tls_subscription_id}/authorizations/{tls_authorization_id}/globalsign_email_challenges | Creates a GlobalSign email challenge.
 
 
 ## `createTlsSub`
 
 ```javascript
-createTlsSub({ [force, ][tls_subscription] })
+createTlsSub({ , [force, ][tls_subscription] })
 ```
 
 Create a new TLS subscription. This response includes a list of possible challenges to verify domain ownership.
@@ -29,12 +29,12 @@ Create a new TLS subscription. This response includes a list of possible challen
 ```javascript
 const options = {
   force: true,
-  tls_subscription: new Fastly.TlsSubscription(),
+  tls_subscription: {"data":{"type":"tls_subscription","attributes":{"certificate_authority":"lets-encrypt"},"relationships":{"tls_domains":{"data":[{"type":"tls_domain","id":"DOMAIN_NAME"}]},"tls_configuration":{"data":{"type":"tls_configuration","id":"t7CguUGZzb2W9Euo5FoKa"}}}}},
 };
 
 apiInstance.createTlsSub(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -46,7 +46,7 @@ apiInstance.createTlsSub(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **force** | **Boolean** | A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain.  | [optional]
-**tls_subscription** | [**TlsSubscription**](../Model/TlsSubscription.md) |  | [optional]
+**tls_subscription** | [**TlsSubscription**](TlsSubscription.md) |  | [optional]
 
 ### Return type
 
@@ -81,7 +81,46 @@ apiInstance.deleteTlsSub(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+**tls_subscription_id** | **String** | Alphanumeric string identifying a TLS subscription. |
+
+### Return type
+
+null (empty response body)
+
+
+## `deleteTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallengesGlobalsignEmailChallengeId`
+
+```javascript
+deleteTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallengesGlobalsignEmailChallengeId({ tls_subscription_id, globalsign_email_challenge_id, tls_authorization_id })
+```
+
+Deletes a GlobalSign email challenge. After a GlobalSign email challenge is deleted, the domain can use HTTP and DNS validation methods again.
+
+### Example
+
+```javascript
+const options = {
+  tls_subscription_id: "tls_subscription_id_example", // required
+  globalsign_email_challenge_id: "globalsign_email_challenge_id_example", // required
+  tls_authorization_id: "tls_authorization_id_example", // required
+};
+
+apiInstance.deleteTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallengesGlobalsignEmailChallengeId(options)
+  .then(() => {
+    console.log('API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
 **tls_subscription_id** | **String** |  |
+**globalsign_email_challenge_id** | **String** |  |
+**tls_authorization_id** | **String** |  |
 
 ### Return type
 
@@ -106,7 +145,7 @@ const options = {
 
 apiInstance.getTlsSub(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -117,8 +156,8 @@ apiInstance.getTlsSub(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_subscription_id** | **String** |  |
-**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_authorizations&#x60; and &#x60;tls_authorizations.globalsign_email_challenge&#x60;.  | [optional]
+**tls_subscription_id** | **String** | Alphanumeric string identifying a TLS subscription. |
+**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`.  | [optional]
 
 ### Return type
 
@@ -128,7 +167,7 @@ Name | Type | Description  | Notes
 ## `listTlsSubs`
 
 ```javascript
-listTlsSubs({ [filter_state, ][filter_tls_domains_id, ][include, ][page_number, ][page_size, ][sort] })
+listTlsSubs({ , [filter_state, ][filter_tls_domains_id, ][filter_has_active_order, ][include, ][page_number, ][page_size, ][sort] })
 ```
 
 List all TLS subscriptions.
@@ -139,15 +178,16 @@ List all TLS subscriptions.
 const options = {
   filter_state: "filter_state_example",
   filter_tls_domains_id: "filter_tls_domains_id_example",
+  filter_has_active_order: true,
   include: tls_authorizations,
-  page_number: 56,
+  page_number: 1,
   page_size: 20,
-  sort: "'created_at'",
+  sort: "created_at",
 };
 
 apiInstance.listTlsSubs(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -158,12 +198,13 @@ apiInstance.listTlsSubs(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**filter_state** | **String** | Limit the returned subscriptions by state. Valid values are pending, processing, issued, and renewing. Accepts parameters: not (e.g., filter[state][not]&#x3D;renewing).  | [optional]
+**filter_state** | **String** | Limit the returned subscriptions by state. Valid values are `pending`, `processing`, `issued`, and `renewing`. Accepts parameters: `not` (e.g., `filter[state][not]&#x3D;renewing`).  | [optional]
 **filter_tls_domains_id** | **String** | Limit the returned subscriptions to those that include the specific domain. | [optional]
-**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: &#x60;tls_authorizations&#x60; and &#x60;tls_authorizations.globalsign_email_challenge&#x60;.  | [optional]
+**filter_has_active_order** | **Boolean** | Limit the returned subscriptions to those that have currently active orders. Permitted values: `true`.  | [optional]
+**include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`.  | [optional]
 **page_number** | **Number** | Current page. | [optional]
-**page_size** | **Number** | Number of records per page. | [optional] [default to 20]
-**sort** | **String** | The order in which to list the results by creation date. | [optional] [default to &#39;created_at&#39;]
+**page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
+**sort** | **String** | The order in which to list the results by creation date. | [optional] [one of: "created_at", "-created_at"]
 
 ### Return type
 
@@ -173,7 +214,7 @@ Name | Type | Description  | Notes
 ## `patchTlsSub`
 
 ```javascript
-patchTlsSub({ tls_subscription_id, [force, ], [tls_subscription] })
+patchTlsSub({ tls_subscription_id, [force, ][tls_subscription] })
 ```
 
 Change the TLS domains or common name associated with this subscription, or update the TLS configuration for this set of domains.
@@ -184,12 +225,51 @@ Change the TLS domains or common name associated with this subscription, or upda
 const options = {
   tls_subscription_id: "tls_subscription_id_example", // required
   force: true,
-  tls_subscription: new Fastly.TlsSubscription(),
+  tls_subscription: {"data":{"type":"tls_subscription","relationships":{"common_name":{"data":{"type":"tls_domain","id":"DOMAIN_NAME"}},"tls_domains":{"data":[{"type":"tls_domain","id":"DOMAIN_NAME"}]},"tls_configuration":{"data":{"type":"tls_configuration","id":"t7CguUGZzb2W9Euo5FoKa"}}}}},
 };
 
 apiInstance.patchTlsSub(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**tls_subscription_id** | **String** | Alphanumeric string identifying a TLS subscription. |
+**force** | **Boolean** | A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain.  | [optional]
+**tls_subscription** | [**TlsSubscription**](TlsSubscription.md) |  | [optional]
+
+### Return type
+
+[**TlsSubscriptionResponse**](TlsSubscriptionResponse.md)
+
+
+## `postTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallenges`
+
+```javascript
+postTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallenges({ tls_subscription_id, tls_authorization_id, [body] })
+```
+
+Creates an email challenge for domain on a GlobalSign subscription. An email challenge will generate an email that can be used to validate domain ownership. If this challenge is created, then the domain can only be validated using email for the given subscription.
+
+### Example
+
+```javascript
+const options = {
+  tls_subscription_id: "tls_subscription_id_example", // required
+  tls_authorization_id: "tls_authorization_id_example", // required
+  body: {"data":{"type":"globalsign_email_challenge","attributes":{"preferred_email":"admin@example.com"}}},
+};
+
+apiInstance.postTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallenges(options)
+  .then((data) => {
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -201,12 +281,12 @@ apiInstance.patchTlsSub(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **tls_subscription_id** | **String** |  |
-**force** | **Boolean** | A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain.  | [optional]
-**tls_subscription** | [**TlsSubscription**](../Model/TlsSubscription.md) |  | [optional]
+**tls_authorization_id** | **String** |  |
+**body** | **Object** |  | [optional]
 
 ### Return type
 
-[**TlsSubscriptionResponse**](TlsSubscriptionResponse.md)
+**Object**
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

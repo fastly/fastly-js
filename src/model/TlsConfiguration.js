@@ -25,6 +25,7 @@ class TlsConfiguration {
      * @alias module:model/TlsConfiguration
      */
     constructor() { 
+        
         TlsConfiguration.initialize(this);
     }
 

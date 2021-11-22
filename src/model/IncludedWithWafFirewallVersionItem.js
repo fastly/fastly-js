@@ -12,9 +12,9 @@
  */
 
 import ApiClient from '../ApiClient';
-import SchemasWafActiveRule from './SchemasWafActiveRule';
-import SchemasWafActiveRuleData from './SchemasWafActiveRuleData';
 import SchemasWafFirewallVersion from './SchemasWafFirewallVersion';
+import WafActiveRule from './WafActiveRule';
+import WafActiveRuleData from './WafActiveRuleData';
 
 /**
  * The IncludedWithWafFirewallVersionItem model module.
@@ -25,8 +25,11 @@ class IncludedWithWafFirewallVersionItem {
     /**
      * Constructs a new <code>IncludedWithWafFirewallVersionItem</code>.
      * @alias module:model/IncludedWithWafFirewallVersionItem
+     * @implements module:model/SchemasWafFirewallVersion
+     * @implements module:model/WafActiveRule
      */
     constructor() { 
+        SchemasWafFirewallVersion.initialize(this);WafActiveRule.initialize(this);
         IncludedWithWafFirewallVersionItem.initialize(this);
     }
 
@@ -48,9 +51,11 @@ class IncludedWithWafFirewallVersionItem {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new IncludedWithWafFirewallVersionItem();
+            SchemasWafFirewallVersion.constructFromObject(data, obj);
+            WafActiveRule.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = SchemasWafActiveRuleData.constructFromObject(data['data']);
+                obj['data'] = WafActiveRuleData.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -60,11 +65,21 @@ class IncludedWithWafFirewallVersionItem {
 }
 
 /**
- * @member {module:model/SchemasWafActiveRuleData} data
+ * @member {module:model/WafActiveRuleData} data
  */
 IncludedWithWafFirewallVersionItem.prototype['data'] = undefined;
 
 
+// Implement SchemasWafFirewallVersion interface:
+/**
+ * @member {module:model/SchemasWafFirewallVersionData} data
+ */
+SchemasWafFirewallVersion.prototype['data'] = undefined;
+// Implement WafActiveRule interface:
+/**
+ * @member {module:model/WafActiveRuleData} data
+ */
+WafActiveRule.prototype['data'] = undefined;
 
 
 

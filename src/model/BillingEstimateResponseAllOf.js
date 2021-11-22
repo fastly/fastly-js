@@ -25,6 +25,7 @@ class BillingEstimateResponseAllOf {
      * @alias module:model/BillingEstimateResponseAllOf
      */
     constructor() { 
+        
         BillingEstimateResponseAllOf.initialize(this);
     }
 

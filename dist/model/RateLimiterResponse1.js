@@ -55,16 +55,16 @@ var RateLimiterResponse1 = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new RateLimiterResponse1();
 
-        if (data.hasOwnProperty('content')) {
-          obj['content'] = _ApiClient["default"].convertToType(data['content'], 'String');
+        if (data.hasOwnProperty('status')) {
+          obj['status'] = _ApiClient["default"].convertToType(data['status'], 'Number');
         }
 
         if (data.hasOwnProperty('content_type')) {
           obj['content_type'] = _ApiClient["default"].convertToType(data['content_type'], 'String');
         }
 
-        if (data.hasOwnProperty('status')) {
-          obj['status'] = _ApiClient["default"].convertToType(data['status'], 'Number');
+        if (data.hasOwnProperty('content')) {
+          obj['content'] = _ApiClient["default"].convertToType(data['content'], 'String');
         }
       }
 
@@ -75,12 +75,12 @@ var RateLimiterResponse1 = /*#__PURE__*/function () {
   return RateLimiterResponse1;
 }();
 /**
- * Response body for custom limit enforcement response.
- * @member {String} content
+ * HTTP status code for custom limit enforcement response.
+ * @member {Number} status
  */
 
 
-RateLimiterResponse1.prototype['content'] = undefined;
+RateLimiterResponse1.prototype['status'] = undefined;
 /**
  * MIME type for custom limit enforcement response.
  * @member {String} content_type
@@ -88,10 +88,10 @@ RateLimiterResponse1.prototype['content'] = undefined;
 
 RateLimiterResponse1.prototype['content_type'] = undefined;
 /**
- * HTTP status code for custom limit enforcement response.
- * @member {Number} status
+ * Response body for custom limit enforcement response.
+ * @member {String} content
  */
 
-RateLimiterResponse1.prototype['status'] = undefined;
+RateLimiterResponse1.prototype['content'] = undefined;
 var _default = RateLimiterResponse1;
 exports["default"] = _default;

@@ -24,6 +24,7 @@ class TlsSubscriptionDataAttributes {
      * @alias module:model/TlsSubscriptionDataAttributes
      */
     constructor() { 
+        
         TlsSubscriptionDataAttributes.initialize(this);
     }
 

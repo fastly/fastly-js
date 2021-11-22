@@ -57,6 +57,10 @@ var RealtimeEntry = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new RealtimeEntry();
 
+        if (data.hasOwnProperty('recorded')) {
+          obj['recorded'] = _ApiClient["default"].convertToType(data['recorded'], 'Number');
+        }
+
         if (data.hasOwnProperty('aggregated')) {
           obj['aggregated'] = _ApiClient["default"].convertToType(data['aggregated'], _RealtimeMeasurements["default"]);
         }
@@ -65,10 +69,6 @@ var RealtimeEntry = /*#__PURE__*/function () {
           obj['datacenter'] = _ApiClient["default"].convertToType(data['datacenter'], {
             'String': _RealtimeMeasurements["default"]
           });
-        }
-
-        if (data.hasOwnProperty('recorded')) {
-          obj['recorded'] = _ApiClient["default"].convertToType(data['recorded'], 'Number');
         }
       }
 
@@ -79,9 +79,14 @@ var RealtimeEntry = /*#__PURE__*/function () {
   return RealtimeEntry;
 }();
 /**
- * @member {module:model/RealtimeMeasurements} aggregated
+ * @member {Number} recorded
  */
 
+
+RealtimeEntry.prototype['recorded'] = undefined;
+/**
+ * @member {module:model/RealtimeMeasurements} aggregated
+ */
 
 RealtimeEntry.prototype['aggregated'] = undefined;
 /**
@@ -90,10 +95,5 @@ RealtimeEntry.prototype['aggregated'] = undefined;
  */
 
 RealtimeEntry.prototype['datacenter'] = undefined;
-/**
- * @member {Number} recorded
- */
-
-RealtimeEntry.prototype['recorded'] = undefined;
 var _default = RealtimeEntry;
 exports["default"] = _default;

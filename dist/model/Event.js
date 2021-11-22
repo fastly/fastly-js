@@ -58,16 +58,16 @@ var Event = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new Event();
 
-        if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _EventAttributes["default"].constructFromObject(data['attributes']);
+        if (data.hasOwnProperty('type')) {
+          obj['type'] = _TypeEvent["default"].constructFromObject(data['type']);
         }
 
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
 
-        if (data.hasOwnProperty('type')) {
-          obj['type'] = _TypeEvent["default"].constructFromObject(data['type']);
+        if (data.hasOwnProperty('attributes')) {
+          obj['attributes'] = _EventAttributes["default"].constructFromObject(data['attributes']);
         }
       }
 
@@ -78,11 +78,11 @@ var Event = /*#__PURE__*/function () {
   return Event;
 }();
 /**
- * @member {module:model/EventAttributes} attributes
+ * @member {module:model/TypeEvent} type
  */
 
 
-Event.prototype['attributes'] = undefined;
+Event.prototype['type'] = undefined;
 /**
  * Alphanumeric string identifying an event.
  * @member {String} id
@@ -90,9 +90,9 @@ Event.prototype['attributes'] = undefined;
 
 Event.prototype['id'] = undefined;
 /**
- * @member {module:model/TypeEvent} type
+ * @member {module:model/EventAttributes} attributes
  */
 
-Event.prototype['type'] = undefined;
+Event.prototype['attributes'] = undefined;
 var _default = Event;
 exports["default"] = _default;

@@ -36,9 +36,15 @@ var WafFirewallVersionsResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>WafFirewallVersionsResponse</code>.
    * @alias module:model/WafFirewallVersionsResponse
+   * @implements module:model/Pagination
+   * @implements module:model/WafFirewallVersionsResponseAllOf
    */
   function WafFirewallVersionsResponse() {
     _classCallCheck(this, WafFirewallVersionsResponse);
+
+    _Pagination["default"].initialize(this);
+
+    _WafFirewallVersionsResponseAllOf["default"].initialize(this);
 
     WafFirewallVersionsResponse.initialize(this);
   }
@@ -65,6 +71,10 @@ var WafFirewallVersionsResponse = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new WafFirewallVersionsResponse();
+
+        _Pagination["default"].constructFromObject(data, obj);
+
+        _WafFirewallVersionsResponseAllOf["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('links')) {
           obj['links'] = _PaginationLinks["default"].constructFromObject(data['links']);
@@ -109,6 +119,28 @@ WafFirewallVersionsResponse.prototype['data'] = undefined;
  * @member {Array.<module:model/IncludedWithWafFirewallVersionItem>} included
  */
 
-WafFirewallVersionsResponse.prototype['included'] = undefined;
+WafFirewallVersionsResponse.prototype['included'] = undefined; // Implement Pagination interface:
+
+/**
+ * @member {module:model/PaginationLinks} links
+ */
+
+_Pagination["default"].prototype['links'] = undefined;
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
+
+_Pagination["default"].prototype['meta'] = undefined; // Implement WafFirewallVersionsResponseAllOf interface:
+
+/**
+ * @member {Array.<module:model/WafFirewallVersionResponseData>} data
+ */
+
+_WafFirewallVersionsResponseAllOf["default"].prototype['data'] = undefined;
+/**
+ * @member {Array.<module:model/IncludedWithWafFirewallVersionItem>} included
+ */
+
+_WafFirewallVersionsResponseAllOf["default"].prototype['included'] = undefined;
 var _default = WafFirewallVersionsResponse;
 exports["default"] = _default;

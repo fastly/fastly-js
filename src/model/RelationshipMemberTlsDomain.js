@@ -25,6 +25,7 @@ class RelationshipMemberTlsDomain {
      * @alias module:model/RelationshipMemberTlsDomain
      */
     constructor() { 
+        
         RelationshipMemberTlsDomain.initialize(this);
     }
 
@@ -47,11 +48,11 @@ class RelationshipMemberTlsDomain {
         if (data) {
             obj = obj || new RelationshipMemberTlsDomain();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeTlsDomain.constructFromObject(data['type']);
+            }
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
         }
         return obj;
@@ -61,15 +62,15 @@ class RelationshipMemberTlsDomain {
 }
 
 /**
+ * @member {module:model/TypeTlsDomain} type
+ */
+RelationshipMemberTlsDomain.prototype['type'] = undefined;
+
+/**
  * The domain name.
  * @member {String} id
  */
 RelationshipMemberTlsDomain.prototype['id'] = undefined;
-
-/**
- * @member {module:model/TypeTlsDomain} type
- */
-RelationshipMemberTlsDomain.prototype['type'] = undefined;
 
 
 

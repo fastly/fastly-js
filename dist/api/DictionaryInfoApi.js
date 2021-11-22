@@ -42,9 +42,9 @@ var DictionaryInfoApi = /*#__PURE__*/function () {
   /**
    * Retrieve metadata for a single dictionary by ID for a version and service.
    * @param {Object} options
-   * @param {String} options.service_id
-   * @param {Number} options.version_id
-   * @param {String} options.dictionary_id
+   * @param {String} options.service_id - Alphanumeric string identifying the service.
+   * @param {Number} options.version_id - Integer identifying a service version.
+   * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryInfoResponse} and HTTP response
    */
 
@@ -86,9 +86,9 @@ var DictionaryInfoApi = /*#__PURE__*/function () {
     /**
      * Retrieve metadata for a single dictionary by ID for a version and service.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.dictionary_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryInfoResponse}
      */
 

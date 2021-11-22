@@ -25,6 +25,7 @@ class RelationshipWafFirewallVersion {
      * @alias module:model/RelationshipWafFirewallVersion
      */
     constructor() { 
+        
         RelationshipWafFirewallVersion.initialize(this);
     }
 

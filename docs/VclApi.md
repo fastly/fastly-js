@@ -1,6 +1,5 @@
 # Fastly.VclApi
 
-
 ```javascript
 const apiInstance = new Fastly.VclApi();
 ```
@@ -21,11 +20,10 @@ Method | Fastly API endpoint | Description
 [**updateCustomVcl**](VclApi.md#updateCustomVcl) | **PUT** /service/{service_id}/version/{version_id}/vcl/{vcl_name} | Update a custom VCL file
 
 
-
 ## `createCustomVcl`
 
 ```javascript
-createCustomVcl({ service_id, version_id, [content, ], [main, ], [name] })
+createCustomVcl({ service_id, version_id, [content, ][main, ][name] })
 ```
 
 Upload a VCL for a particular service and version.
@@ -43,7 +41,7 @@ const options = {
 
 apiInstance.createCustomVcl(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -54,10 +52,10 @@ apiInstance.createCustomVcl(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 **content** | **String** | The VCL code to be included. | [optional]
-**main** | **Boolean** | Set to &#x60;true&#x60; when this is the main VCL, otherwise &#x60;false&#x60;. | [optional]
+**main** | **Boolean** | Set to `true` when this is the main VCL, otherwise `false`. | [optional]
 **name** | **String** | The name of this VCL. | [optional]
 
 ### Return type
@@ -84,7 +82,7 @@ const options = {
 
 apiInstance.deleteCustomVcl(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -95,9 +93,9 @@ apiInstance.deleteCustomVcl(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**vcl_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**vcl_name** | **String** | The name of this VCL. |
 
 ### Return type
 
@@ -124,7 +122,7 @@ const options = {
 
 apiInstance.getCustomVcl(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -135,10 +133,10 @@ apiInstance.getCustomVcl(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**vcl_name** | **String** |  |
-**no_content** | **String** | Omit VCL content. | [optional] [default to &#39;0&#39;]
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**vcl_name** | **String** | The name of this VCL. |
+**no_content** | **String** | Omit VCL content. | [optional] [defaults to '0']
 
 ### Return type
 
@@ -163,7 +161,7 @@ const options = {
 
 apiInstance.getCustomVclBoilerplate(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -174,8 +172,8 @@ apiInstance.getCustomVclBoilerplate(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -200,7 +198,7 @@ const options = {
 
 apiInstance.getCustomVclGenerated(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -211,8 +209,8 @@ apiInstance.getCustomVclGenerated(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -248,8 +246,8 @@ apiInstance.getCustomVclGeneratedHighlighted(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -286,9 +284,9 @@ apiInstance.getCustomVclHighlighted(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**vcl_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**vcl_name** | **String** | The name of this VCL. |
 
 ### Return type
 
@@ -314,7 +312,7 @@ const options = {
 
 apiInstance.getCustomVclRaw(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -325,9 +323,9 @@ apiInstance.getCustomVclRaw(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**vcl_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**vcl_name** | **String** | The name of this VCL. |
 
 ### Return type
 
@@ -352,7 +350,7 @@ const options = {
 
 apiInstance.listCustomVcl(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -363,8 +361,8 @@ apiInstance.listCustomVcl(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -390,7 +388,7 @@ const options = {
 
 apiInstance.setCustomVclMain(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -401,9 +399,9 @@ apiInstance.setCustomVclMain(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**vcl_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**vcl_name** | **String** | The name of this VCL. |
 
 ### Return type
 
@@ -413,7 +411,7 @@ Name | Type | Description  | Notes
 ## `updateCustomVcl`
 
 ```javascript
-updateCustomVcl({ service_id, version_id, vcl_name, [content, ], [main, ], [name] })
+updateCustomVcl({ service_id, version_id, vcl_name, [content, ][main, ][name] })
 ```
 
 Update the uploaded VCL for a particular service and version.
@@ -432,7 +430,7 @@ const options = {
 
 apiInstance.updateCustomVcl(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -443,11 +441,11 @@ apiInstance.updateCustomVcl(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**vcl_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**vcl_name** | **String** | The name of this VCL. |
 **content** | **String** | The VCL code to be included. | [optional]
-**main** | **Boolean** | Set to &#x60;true&#x60; when this is the main VCL, otherwise &#x60;false&#x60;. | [optional]
+**main** | **Boolean** | Set to `true` when this is the main VCL, otherwise `false`. | [optional]
 **name** | **String** | The name of this VCL. | [optional]
 
 ### Return type

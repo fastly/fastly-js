@@ -25,8 +25,11 @@ class HistoricalUsageServiceResponse {
     /**
      * Constructs a new <code>HistoricalUsageServiceResponse</code>.
      * @alias module:model/HistoricalUsageServiceResponse
+     * @implements module:model/Historical
+     * @implements module:model/HistoricalUsageServiceResponseAllOf
      */
     constructor() { 
+        Historical.initialize(this);HistoricalUsageServiceResponseAllOf.initialize(this);
         HistoricalUsageServiceResponse.initialize(this);
     }
 
@@ -48,15 +51,17 @@ class HistoricalUsageServiceResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new HistoricalUsageServiceResponse();
+            Historical.constructFromObject(data, obj);
+            HistoricalUsageServiceResponseAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            }
             if (data.hasOwnProperty('meta')) {
                 obj['meta'] = HistoricalMeta.constructFromObject(data['meta']);
             }
             if (data.hasOwnProperty('msg')) {
                 obj['msg'] = ApiClient.convertToType(data['msg'], 'String');
-            }
-            if (data.hasOwnProperty('status')) {
-                obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], {'String': Object});
@@ -67,6 +72,12 @@ class HistoricalUsageServiceResponse {
 
 
 }
+
+/**
+ * Whether or not we were able to successfully execute the query.
+ * @member {String} status
+ */
+HistoricalUsageServiceResponse.prototype['status'] = undefined;
 
 /**
  * @member {module:model/HistoricalMeta} meta
@@ -80,17 +91,31 @@ HistoricalUsageServiceResponse.prototype['meta'] = undefined;
 HistoricalUsageServiceResponse.prototype['msg'] = undefined;
 
 /**
- * Whether or not we were able to successfully execute the query.
- * @member {String} status
- */
-HistoricalUsageServiceResponse.prototype['status'] = undefined;
-
-/**
- * @member {Object.<String, Object.<String, Object>>} data
+ * @member {Object.<String, Object>} data
  */
 HistoricalUsageServiceResponse.prototype['data'] = undefined;
 
 
+// Implement Historical interface:
+/**
+ * Whether or not we were able to successfully execute the query.
+ * @member {String} status
+ */
+Historical.prototype['status'] = undefined;
+/**
+ * @member {module:model/HistoricalMeta} meta
+ */
+Historical.prototype['meta'] = undefined;
+/**
+ * If the query was not successful, this will provide a string that explains why.
+ * @member {String} msg
+ */
+Historical.prototype['msg'] = undefined;
+// Implement HistoricalUsageServiceResponseAllOf interface:
+/**
+ * @member {Object.<String, Object>} data
+ */
+HistoricalUsageServiceResponseAllOf.prototype['data'] = undefined;
 
 
 

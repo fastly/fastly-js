@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _AdditionalProperties = _interopRequireDefault(require("./AdditionalProperties"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -60,7 +62,9 @@ var HistoricalUsageMonthResponseAllOfData = /*#__PURE__*/function () {
 
         if (data.hasOwnProperty('services')) {
           obj['services'] = _ApiClient["default"].convertToType(data['services'], {
-            'String': Object
+            'String': {
+              'String': _AdditionalProperties["default"]
+            }
           });
         }
 
@@ -85,12 +89,12 @@ var HistoricalUsageMonthResponseAllOfData = /*#__PURE__*/function () {
 
 HistoricalUsageMonthResponseAllOfData.prototype['customer_id'] = undefined;
 /**
- * @member {Object.<String, Object.<String, Object>>} services
+ * @member {Object.<String, Object.<String, module:model/AdditionalProperties>>} services
  */
 
 HistoricalUsageMonthResponseAllOfData.prototype['services'] = undefined;
 /**
- * @member {Object.<String, Object.<String, Object>>} total
+ * @member {Object.<String, Object>} total
  */
 
 HistoricalUsageMonthResponseAllOfData.prototype['total'] = undefined;

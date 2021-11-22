@@ -62,12 +62,12 @@ var PaginationLinks = /*#__PURE__*/function () {
           obj['last'] = _ApiClient["default"].convertToType(data['last'], 'String');
         }
 
-        if (data.hasOwnProperty('next')) {
-          obj['next'] = _ApiClient["default"].convertToType(data['next'], 'String');
-        }
-
         if (data.hasOwnProperty('prev')) {
           obj['prev'] = _ApiClient["default"].convertToType(data['prev'], 'String');
+        }
+
+        if (data.hasOwnProperty('next')) {
+          obj['next'] = _ApiClient["default"].convertToType(data['next'], 'String');
         }
       }
 
@@ -91,16 +91,16 @@ PaginationLinks.prototype['first'] = undefined;
 
 PaginationLinks.prototype['last'] = undefined;
 /**
- * The next page of data.
- * @member {String} next
- */
-
-PaginationLinks.prototype['next'] = undefined;
-/**
  * The previous page of data.
  * @member {String} prev
  */
 
 PaginationLinks.prototype['prev'] = undefined;
+/**
+ * The next page of data.
+ * @member {String} next
+ */
+
+PaginationLinks.prototype['next'] = undefined;
 var _default = PaginationLinks;
 exports["default"] = _default;

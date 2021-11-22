@@ -25,6 +25,7 @@ class LoggingKafkaAllOf {
      * @alias module:model/LoggingKafkaAllOf
      */
     constructor() { 
+        
         LoggingKafkaAllOf.initialize(this);
     }
 
@@ -47,8 +48,8 @@ class LoggingKafkaAllOf {
         if (data) {
             obj = obj || new LoggingKafkaAllOf();
 
-            if (data.hasOwnProperty('auth_method')) {
-                obj['auth_method'] = ApiClient.convertToType(data['auth_method'], 'String');
+            if (data.hasOwnProperty('topic')) {
+                obj['topic'] = ApiClient.convertToType(data['topic'], 'String');
             }
             if (data.hasOwnProperty('brokers')) {
                 obj['brokers'] = ApiClient.convertToType(data['brokers'], 'String');
@@ -56,26 +57,26 @@ class LoggingKafkaAllOf {
             if (data.hasOwnProperty('compression_codec')) {
                 obj['compression_codec'] = ApiClient.convertToType(data['compression_codec'], 'String');
             }
-            if (data.hasOwnProperty('parse_log_keyvals')) {
-                obj['parse_log_keyvals'] = ApiClient.convertToType(data['parse_log_keyvals'], 'Boolean');
-            }
-            if (data.hasOwnProperty('password')) {
-                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            if (data.hasOwnProperty('required_acks')) {
+                obj['required_acks'] = ApiClient.convertToType(data['required_acks'], 'Number');
             }
             if (data.hasOwnProperty('request_max_bytes')) {
                 obj['request_max_bytes'] = ApiClient.convertToType(data['request_max_bytes'], 'Number');
             }
-            if (data.hasOwnProperty('required_acks')) {
-                obj['required_acks'] = ApiClient.convertToType(data['required_acks'], 'Number');
+            if (data.hasOwnProperty('parse_log_keyvals')) {
+                obj['parse_log_keyvals'] = ApiClient.convertToType(data['parse_log_keyvals'], 'Boolean');
             }
-            if (data.hasOwnProperty('topic')) {
-                obj['topic'] = ApiClient.convertToType(data['topic'], 'String');
-            }
-            if (data.hasOwnProperty('use_tls')) {
-                obj['use_tls'] = LoggingUseTls.constructFromObject(data['use_tls']);
+            if (data.hasOwnProperty('auth_method')) {
+                obj['auth_method'] = ApiClient.convertToType(data['auth_method'], 'String');
             }
             if (data.hasOwnProperty('user')) {
                 obj['user'] = ApiClient.convertToType(data['user'], 'String');
+            }
+            if (data.hasOwnProperty('password')) {
+                obj['password'] = ApiClient.convertToType(data['password'], 'String');
+            }
+            if (data.hasOwnProperty('use_tls')) {
+                obj['use_tls'] = LoggingUseTls.constructFromObject(data['use_tls']);
             }
         }
         return obj;
@@ -85,10 +86,10 @@ class LoggingKafkaAllOf {
 }
 
 /**
- * SASL authentication method.
- * @member {module:model/LoggingKafkaAllOf.AuthMethodEnum} auth_method
+ * The Kafka topic to send logs to. Required.
+ * @member {String} topic
  */
-LoggingKafkaAllOf.prototype['auth_method'] = undefined;
+LoggingKafkaAllOf.prototype['topic'] = undefined;
 
 /**
  * A comma-separated list of IP addresses or hostnames of Kafka brokers. Required.
@@ -103,16 +104,11 @@ LoggingKafkaAllOf.prototype['brokers'] = undefined;
 LoggingKafkaAllOf.prototype['compression_codec'] = undefined;
 
 /**
- * Enables parsing of key=value tuples from the beginning of a logline, turning them into [record headers](https://cwiki.apache.org/confluence/display/KAFKA/KIP-82+-+Add+Record+Headers).
- * @member {Boolean} parse_log_keyvals
+ * The number of acknowledgements a leader must receive before a write is considered successful.
+ * @member {module:model/LoggingKafkaAllOf.RequiredAcksEnum} required_acks
+ * @default RequiredAcksEnum.one
  */
-LoggingKafkaAllOf.prototype['parse_log_keyvals'] = undefined;
-
-/**
- * SASL password.
- * @member {String} password
- */
-LoggingKafkaAllOf.prototype['password'] = undefined;
+LoggingKafkaAllOf.prototype['required_acks'] = undefined;
 
 /**
  * The maximum number of bytes sent in one request. Defaults `0` (no limit).
@@ -122,22 +118,16 @@ LoggingKafkaAllOf.prototype['password'] = undefined;
 LoggingKafkaAllOf.prototype['request_max_bytes'] = 0;
 
 /**
- * The number of acknowledgements a leader must receive before a write is considered successful.
- * @member {module:model/LoggingKafkaAllOf.RequiredAcksEnum} required_acks
- * @default RequiredAcksEnum.one
+ * Enables parsing of key=value tuples from the beginning of a logline, turning them into [record headers](https://cwiki.apache.org/confluence/display/KAFKA/KIP-82+-+Add+Record+Headers).
+ * @member {Boolean} parse_log_keyvals
  */
-LoggingKafkaAllOf.prototype['required_acks'] = undefined;
+LoggingKafkaAllOf.prototype['parse_log_keyvals'] = undefined;
 
 /**
- * The Kafka topic to send logs to. Required.
- * @member {String} topic
+ * SASL authentication method.
+ * @member {module:model/LoggingKafkaAllOf.AuthMethodEnum} auth_method
  */
-LoggingKafkaAllOf.prototype['topic'] = undefined;
-
-/**
- * @member {module:model/LoggingUseTls} use_tls
- */
-LoggingKafkaAllOf.prototype['use_tls'] = undefined;
+LoggingKafkaAllOf.prototype['auth_method'] = undefined;
 
 /**
  * SASL user.
@@ -145,35 +135,19 @@ LoggingKafkaAllOf.prototype['use_tls'] = undefined;
  */
 LoggingKafkaAllOf.prototype['user'] = undefined;
 
-
-
-
+/**
+ * SASL password.
+ * @member {String} password
+ */
+LoggingKafkaAllOf.prototype['password'] = undefined;
 
 /**
- * Allowed values for the <code>auth_method</code> property.
- * @enum {String}
- * @readonly
+ * @member {module:model/LoggingUseTls} use_tls
  */
-LoggingKafkaAllOf['AuthMethodEnum'] = {
+LoggingKafkaAllOf.prototype['use_tls'] = undefined;
 
-    /**
-     * value: "plain"
-     * @const
-     */
-    "plain": "plain",
 
-    /**
-     * value: "scram-sha-256"
-     * @const
-     */
-    "scram-sha-256": "scram-sha-256",
 
-    /**
-     * value: "scram-sha-512"
-     * @const
-     */
-    "scram-sha-512": "scram-sha-512"
-};
 
 
 /**
@@ -233,6 +207,33 @@ LoggingKafkaAllOf['RequiredAcksEnum'] = {
      * @const
      */
     "all": -1
+};
+
+
+/**
+ * Allowed values for the <code>auth_method</code> property.
+ * @enum {String}
+ * @readonly
+ */
+LoggingKafkaAllOf['AuthMethodEnum'] = {
+
+    /**
+     * value: "plain"
+     * @const
+     */
+    "plain": "plain",
+
+    /**
+     * value: "scram-sha-256"
+     * @const
+     */
+    "scram-sha-256": "scram-sha-256",
+
+    /**
+     * value: "scram-sha-512"
+     * @const
+     */
+    "scram-sha-512": "scram-sha-512"
 };
 
 

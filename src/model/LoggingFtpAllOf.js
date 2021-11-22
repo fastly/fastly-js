@@ -24,6 +24,7 @@ class LoggingFtpAllOf {
      * @alias module:model/LoggingFtpAllOf
      */
     constructor() { 
+        
         LoggingFtpAllOf.initialize(this);
     }
 

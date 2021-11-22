@@ -24,6 +24,7 @@ class LoggingTlsCommon {
      * @alias module:model/LoggingTlsCommon
      */
     constructor() { 
+        
         LoggingTlsCommon.initialize(this);
     }
 

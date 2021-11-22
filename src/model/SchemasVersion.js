@@ -24,6 +24,7 @@ class SchemasVersion {
      * @alias module:model/SchemasVersion
      */
     constructor() { 
+        
         SchemasVersion.initialize(this);
     }
 

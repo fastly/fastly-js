@@ -70,7 +70,7 @@ export default class BillingApi {
 
       let authNames = ['token'];
       let contentTypes = [];
-      let accepts = ['application/json', 'application/pdf', 'text/csv'];
+      let accepts = ['application/json', 'text/csv', 'application/pdf'];
       let returnType = BillingResponse;
       return this.apiClient.callApi(
         '/billing/v2/year/{year}/month/{month}', 'GET',
@@ -96,8 +96,8 @@ export default class BillingApi {
     /**
      * Get the invoice for the given invoice_id.
      * @param {Object} options
-     * @param {String} options.customer_id
-     * @param {String} options.invoice_id
+     * @param {String} options.customer_id - Alphanumeric string identifying the customer.
+     * @param {String} options.invoice_id - Alphanumeric string identifying the invoice.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     getInvoiceByIdWithHttpInfo(options = {}) {
@@ -124,7 +124,7 @@ export default class BillingApi {
 
       let authNames = ['token'];
       let contentTypes = [];
-      let accepts = ['application/json', 'application/pdf', 'text/csv'];
+      let accepts = ['application/json', 'text/csv', 'application/pdf'];
       let returnType = null;
       return this.apiClient.callApi(
         '/billing/v2/account_customers/{customer_id}/invoices/{invoice_id}', 'GET',
@@ -136,8 +136,8 @@ export default class BillingApi {
     /**
      * Get the invoice for the given invoice_id.
      * @param {Object} options
-     * @param {String} options.customer_id
-     * @param {String} options.invoice_id
+     * @param {String} options.customer_id - Alphanumeric string identifying the customer.
+     * @param {String} options.invoice_id - Alphanumeric string identifying the invoice.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     getInvoiceById(options = {}) {
@@ -150,7 +150,7 @@ export default class BillingApi {
     /**
      * Get the current month-to-date estimate. This endpoint has two different responses. Under normal circumstances, it generally takes less than 5 seconds to generate but in certain cases can take up to 60 seconds. Once generated the month-to-date estimate is cached for 4 hours, and is available the next request will return the JSON representation of the month-to-date estimate. While a report is being generated in the background, this endpoint will return a `202 Accepted` response. The full format of which can be found in detail in our [billing calculation guide](https://docs.fastly.com/en/guides/how-we-calculate-your-bill). There are certain accounts for which we are unable to generate a month-to-date estimate. For example, accounts who have parent-pay are unable to generate an MTD estimate. The parent accounts are able to generate a month-to-date estimate but that estimate will not include the child accounts amounts at this time.
      * @param {Object} options
-     * @param {String} options.customer_id
+     * @param {String} options.customer_id - Alphanumeric string identifying the customer.
      * @param {String} [options.month] - 2-digit month.
      * @param {String} [options.year] - 4-digit year.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BillingEstimateResponse} and HTTP response
@@ -188,7 +188,7 @@ export default class BillingApi {
     /**
      * Get the current month-to-date estimate. This endpoint has two different responses. Under normal circumstances, it generally takes less than 5 seconds to generate but in certain cases can take up to 60 seconds. Once generated the month-to-date estimate is cached for 4 hours, and is available the next request will return the JSON representation of the month-to-date estimate. While a report is being generated in the background, this endpoint will return a `202 Accepted` response. The full format of which can be found in detail in our [billing calculation guide](https://docs.fastly.com/en/guides/how-we-calculate-your-bill). There are certain accounts for which we are unable to generate a month-to-date estimate. For example, accounts who have parent-pay are unable to generate an MTD estimate. The parent accounts are able to generate a month-to-date estimate but that estimate will not include the child accounts amounts at this time.
      * @param {Object} options
-     * @param {String} options.customer_id
+     * @param {String} options.customer_id - Alphanumeric string identifying the customer.
      * @param {String} [options.month] - 2-digit month.
      * @param {String} [options.year] - 4-digit year.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BillingEstimateResponse}

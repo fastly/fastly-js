@@ -25,6 +25,7 @@ class RelationshipMemberTlsPrivateKey {
      * @alias module:model/RelationshipMemberTlsPrivateKey
      */
     constructor() { 
+        
         RelationshipMemberTlsPrivateKey.initialize(this);
     }
 
@@ -47,11 +48,11 @@ class RelationshipMemberTlsPrivateKey {
         if (data) {
             obj = obj || new RelationshipMemberTlsPrivateKey();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeTlsPrivateKey.constructFromObject(data['type']);
+            }
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
         }
         return obj;
@@ -61,15 +62,15 @@ class RelationshipMemberTlsPrivateKey {
 }
 
 /**
+ * @member {module:model/TypeTlsPrivateKey} type
+ */
+RelationshipMemberTlsPrivateKey.prototype['type'] = undefined;
+
+/**
  * Alphanumeric string identifying a private Key.
  * @member {String} id
  */
 RelationshipMemberTlsPrivateKey.prototype['id'] = undefined;
-
-/**
- * @member {module:model/TypeTlsPrivateKey} type
- */
-RelationshipMemberTlsPrivateKey.prototype['type'] = undefined;
 
 
 

@@ -26,6 +26,7 @@ class WafRuleRevision {
      * @alias module:model/WafRuleRevision
      */
     constructor() { 
+        
         WafRuleRevision.initialize(this);
     }
 
@@ -48,14 +49,14 @@ class WafRuleRevision {
         if (data) {
             obj = obj || new WafRuleRevision();
 
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = WafRuleRevisionAttributes.constructFromObject(data['attributes']);
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeWafRuleRevision.constructFromObject(data['type']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeWafRuleRevision.constructFromObject(data['type']);
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = WafRuleRevisionAttributes.constructFromObject(data['attributes']);
             }
         }
         return obj;
@@ -65,9 +66,9 @@ class WafRuleRevision {
 }
 
 /**
- * @member {module:model/WafRuleRevisionAttributes} attributes
+ * @member {module:model/TypeWafRuleRevision} type
  */
-WafRuleRevision.prototype['attributes'] = undefined;
+WafRuleRevision.prototype['type'] = undefined;
 
 /**
  * Alphanumeric string identifying a WAF rule revision.
@@ -76,9 +77,9 @@ WafRuleRevision.prototype['attributes'] = undefined;
 WafRuleRevision.prototype['id'] = undefined;
 
 /**
- * @member {module:model/TypeWafRuleRevision} type
+ * @member {module:model/WafRuleRevisionAttributes} attributes
  */
-WafRuleRevision.prototype['type'] = undefined;
+WafRuleRevision.prototype['attributes'] = undefined;
 
 
 

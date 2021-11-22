@@ -25,6 +25,7 @@ class BillingAddress {
      * @alias module:model/BillingAddress
      */
     constructor() { 
+        
         BillingAddress.initialize(this);
     }
 

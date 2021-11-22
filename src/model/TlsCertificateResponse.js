@@ -25,6 +25,7 @@ class TlsCertificateResponse {
      * @alias module:model/TlsCertificateResponse
      */
     constructor() { 
+        
         TlsCertificateResponse.initialize(this);
     }
 

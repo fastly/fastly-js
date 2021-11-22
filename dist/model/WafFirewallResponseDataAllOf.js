@@ -58,12 +58,12 @@ var WafFirewallResponseDataAllOf = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new WafFirewallResponseDataAllOf();
 
-        if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _ApiClient["default"].convertToType(data['attributes'], _Timestamps["default"]);
-        }
-
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
+        }
+
+        if (data.hasOwnProperty('attributes')) {
+          obj['attributes'] = _ApiClient["default"].convertToType(data['attributes'], _Timestamps["default"]);
         }
 
         if (data.hasOwnProperty('relationships')) {
@@ -78,17 +78,17 @@ var WafFirewallResponseDataAllOf = /*#__PURE__*/function () {
   return WafFirewallResponseDataAllOf;
 }();
 /**
- * @member {module:model/Timestamps} attributes
- */
-
-
-WafFirewallResponseDataAllOf.prototype['attributes'] = undefined;
-/**
  * Alphanumeric string identifying a WAF Firewall.
  * @member {String} id
  */
 
+
 WafFirewallResponseDataAllOf.prototype['id'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+
+WafFirewallResponseDataAllOf.prototype['attributes'] = undefined;
 /**
  * @member {module:model/RelationshipWafFirewallVersions} relationships
  */

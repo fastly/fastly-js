@@ -24,6 +24,7 @@ class LoggingLogshuttleAllOf {
      * @alias module:model/LoggingLogshuttleAllOf
      */
     constructor() { 
+        
         LoggingLogshuttleAllOf.initialize(this);
     }
 

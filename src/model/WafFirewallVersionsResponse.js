@@ -28,8 +28,11 @@ class WafFirewallVersionsResponse {
     /**
      * Constructs a new <code>WafFirewallVersionsResponse</code>.
      * @alias module:model/WafFirewallVersionsResponse
+     * @implements module:model/Pagination
+     * @implements module:model/WafFirewallVersionsResponseAllOf
      */
     constructor() { 
+        Pagination.initialize(this);WafFirewallVersionsResponseAllOf.initialize(this);
         WafFirewallVersionsResponse.initialize(this);
     }
 
@@ -51,6 +54,8 @@ class WafFirewallVersionsResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafFirewallVersionsResponse();
+            Pagination.constructFromObject(data, obj);
+            WafFirewallVersionsResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('links')) {
                 obj['links'] = PaginationLinks.constructFromObject(data['links']);
@@ -92,6 +97,24 @@ WafFirewallVersionsResponse.prototype['data'] = undefined;
 WafFirewallVersionsResponse.prototype['included'] = undefined;
 
 
+// Implement Pagination interface:
+/**
+ * @member {module:model/PaginationLinks} links
+ */
+Pagination.prototype['links'] = undefined;
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
+Pagination.prototype['meta'] = undefined;
+// Implement WafFirewallVersionsResponseAllOf interface:
+/**
+ * @member {Array.<module:model/WafFirewallVersionResponseData>} data
+ */
+WafFirewallVersionsResponseAllOf.prototype['data'] = undefined;
+/**
+ * @member {Array.<module:model/IncludedWithWafFirewallVersionItem>} included
+ */
+WafFirewallVersionsResponseAllOf.prototype['included'] = undefined;
 
 
 

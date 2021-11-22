@@ -25,6 +25,7 @@ class RelationshipWafFirewall {
      * @alias module:model/RelationshipWafFirewall
      */
     constructor() { 
+        
         RelationshipWafFirewall.initialize(this);
     }
 

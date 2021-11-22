@@ -25,6 +25,7 @@ class InlineResponse204 {
      * @alias module:model/InlineResponse204
      */
     constructor() { 
+        
         InlineResponse204.initialize(this);
     }
 

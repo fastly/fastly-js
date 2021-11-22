@@ -58,12 +58,12 @@ var Service = /*#__PURE__*/function () {
           obj['comment'] = _ApiClient["default"].convertToType(data['comment'], 'String');
         }
 
-        if (data.hasOwnProperty('customer_id')) {
-          obj['customer_id'] = _ApiClient["default"].convertToType(data['customer_id'], 'String');
-        }
-
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
+        }
+
+        if (data.hasOwnProperty('customer_id')) {
+          obj['customer_id'] = _ApiClient["default"].convertToType(data['customer_id'], 'String');
         }
       }
 
@@ -81,16 +81,16 @@ var Service = /*#__PURE__*/function () {
 
 Service.prototype['comment'] = undefined;
 /**
- * Alphanumeric string identifying the customer.
- * @member {String} customer_id
- */
-
-Service.prototype['customer_id'] = undefined;
-/**
  * The name of the service.
  * @member {String} name
  */
 
 Service.prototype['name'] = undefined;
+/**
+ * Alphanumeric string identifying the customer.
+ * @member {String} customer_id
+ */
+
+Service.prototype['customer_id'] = undefined;
 var _default = Service;
 exports["default"] = _default;

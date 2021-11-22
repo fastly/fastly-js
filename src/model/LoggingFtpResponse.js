@@ -12,11 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import LoggingCompressionCodec from './LoggingCompressionCodec';
-import LoggingFormatVersion from './LoggingFormatVersion';
 import LoggingFtp from './LoggingFtp';
-import LoggingMessageType from './LoggingMessageType';
-import LoggingPlacement from './LoggingPlacement';
 import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Timestamps from './Timestamps';
 
@@ -29,8 +25,12 @@ class LoggingFtpResponse {
     /**
      * Constructs a new <code>LoggingFtpResponse</code>.
      * @alias module:model/LoggingFtpResponse
+     * @implements module:model/LoggingFtp
+     * @implements module:model/Timestamps
+     * @implements module:model/ServiceIdAndVersion
      */
     constructor() { 
+        LoggingFtp.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
         LoggingFtpResponse.initialize(this);
     }
 
@@ -52,36 +52,39 @@ class LoggingFtpResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingFtpResponse();
+            LoggingFtp.constructFromObject(data, obj);
+            Timestamps.constructFromObject(data, obj);
+            ServiceIdAndVersion.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], 'String');
-            }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
-                obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
+                obj['placement'] = ApiClient.convertToType(data['placement'], 'String');
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'Number');
             }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
             }
-            if (data.hasOwnProperty('compression_codec')) {
-                obj['compression_codec'] = LoggingCompressionCodec.constructFromObject(data['compression_codec']);
-            }
-            if (data.hasOwnProperty('gzip_level')) {
-                obj['gzip_level'] = ApiClient.convertToType(data['gzip_level'], 'Number');
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
             if (data.hasOwnProperty('message_type')) {
-                obj['message_type'] = LoggingMessageType.constructFromObject(data['message_type']);
+                obj['message_type'] = ApiClient.convertToType(data['message_type'], 'String');
+            }
+            if (data.hasOwnProperty('timestamp_format')) {
+                obj['timestamp_format'] = ApiClient.convertToType(data['timestamp_format'], 'String');
             }
             if (data.hasOwnProperty('period')) {
                 obj['period'] = ApiClient.convertToType(data['period'], 'Number');
             }
-            if (data.hasOwnProperty('timestamp_format')) {
-                obj['timestamp_format'] = ApiClient.convertToType(data['timestamp_format'], 'String');
+            if (data.hasOwnProperty('gzip_level')) {
+                obj['gzip_level'] = ApiClient.convertToType(data['gzip_level'], 'Number');
+            }
+            if (data.hasOwnProperty('compression_codec')) {
+                obj['compression_codec'] = ApiClient.convertToType(data['compression_codec'], 'String');
             }
             if (data.hasOwnProperty('address')) {
                 obj['address'] = ApiClient.convertToType(data['address'], 'String');
@@ -130,27 +133,23 @@ class LoggingFtpResponse {
 }
 
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingFtpResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingFtpResponse.prototype['format_version'] = undefined;
-
-/**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
 LoggingFtpResponse.prototype['name'] = undefined;
 
 /**
- * @member {module:model/LoggingPlacement} placement
+ * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+ * @member {module:model/LoggingFtpResponse.PlacementEnum} placement
  */
 LoggingFtpResponse.prototype['placement'] = undefined;
+
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * @member {module:model/LoggingFtpResponse.FormatVersionEnum} format_version
+ * @default FormatVersionEnum.v2
+ */
+LoggingFtpResponse.prototype['format_version'] = undefined;
 
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
@@ -159,21 +158,24 @@ LoggingFtpResponse.prototype['placement'] = undefined;
 LoggingFtpResponse.prototype['response_condition'] = undefined;
 
 /**
- * @member {module:model/LoggingCompressionCodec} compression_codec
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
  */
-LoggingFtpResponse.prototype['compression_codec'] = undefined;
+LoggingFtpResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 
 /**
- * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {Number} gzip_level
- * @default 0
- */
-LoggingFtpResponse.prototype['gzip_level'] = 0;
-
-/**
- * @member {module:model/LoggingMessageType} message_type
+ * How the message should be formatted.
+ * @member {module:model/LoggingFtpResponse.MessageTypeEnum} message_type
+ * @default 'classic'
  */
 LoggingFtpResponse.prototype['message_type'] = undefined;
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} timestamp_format
+ */
+LoggingFtpResponse.prototype['timestamp_format'] = undefined;
 
 /**
  * How frequently log files are finalized so they can be available for reading (in seconds).
@@ -183,10 +185,17 @@ LoggingFtpResponse.prototype['message_type'] = undefined;
 LoggingFtpResponse.prototype['period'] = 3600;
 
 /**
- * Date and time in ISO 8601 format.
- * @member {String} timestamp_format
+ * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {Number} gzip_level
+ * @default 0
  */
-LoggingFtpResponse.prototype['timestamp_format'] = undefined;
+LoggingFtpResponse.prototype['gzip_level'] = 0;
+
+/**
+ * The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \"gzip\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {module:model/LoggingFtpResponse.CompressionCodecEnum} compression_codec
+ */
+LoggingFtpResponse.prototype['compression_codec'] = undefined;
 
 /**
  * An hostname or IPv4 address.
@@ -269,7 +278,240 @@ LoggingFtpResponse.prototype['service_id'] = undefined;
 LoggingFtpResponse.prototype['version'] = undefined;
 
 
+// Implement LoggingFtp interface:
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingFtp.prototype['name'] = undefined;
+/**
+ * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+ * @member {module:model/LoggingFtp.PlacementEnum} placement
+ */
+LoggingFtp.prototype['placement'] = undefined;
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * @member {module:model/LoggingFtp.FormatVersionEnum} format_version
+ * @default FormatVersionEnum.v2
+ */
+LoggingFtp.prototype['format_version'] = undefined;
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingFtp.prototype['response_condition'] = undefined;
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
+LoggingFtp.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
+ * How the message should be formatted.
+ * @member {module:model/LoggingFtp.MessageTypeEnum} message_type
+ * @default 'classic'
+ */
+LoggingFtp.prototype['message_type'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} timestamp_format
+ */
+LoggingFtp.prototype['timestamp_format'] = undefined;
+/**
+ * How frequently log files are finalized so they can be available for reading (in seconds).
+ * @member {Number} period
+ * @default 3600
+ */
+LoggingFtp.prototype['period'] = 3600;
+/**
+ * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {Number} gzip_level
+ * @default 0
+ */
+LoggingFtp.prototype['gzip_level'] = 0;
+/**
+ * The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \"gzip\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {module:model/LoggingFtp.CompressionCodecEnum} compression_codec
+ */
+LoggingFtp.prototype['compression_codec'] = undefined;
+/**
+ * An hostname or IPv4 address.
+ * @member {String} address
+ */
+LoggingFtp.prototype['address'] = undefined;
+/**
+ * Hostname used.
+ * @member {String} hostname
+ */
+LoggingFtp.prototype['hostname'] = undefined;
+/**
+ * IPv4 address of the host.
+ * @member {String} ipv4
+ */
+LoggingFtp.prototype['ipv4'] = undefined;
+/**
+ * The password for the server. For anonymous use an email address.
+ * @member {String} password
+ */
+LoggingFtp.prototype['password'] = undefined;
+/**
+ * The path to upload log files to. If the path ends in `/` then it is treated as a directory.
+ * @member {String} path
+ */
+LoggingFtp.prototype['path'] = undefined;
+/**
+ * The port number.
+ * @member {Number} port
+ * @default 21
+ */
+LoggingFtp.prototype['port'] = 21;
+/**
+ * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+ * @member {String} public_key
+ * @default 'null'
+ */
+LoggingFtp.prototype['public_key'] = 'null';
+/**
+ * The username for the server. Can be anonymous.
+ * @member {String} user
+ */
+LoggingFtp.prototype['user'] = undefined;
+// Implement Timestamps interface:
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+Timestamps.prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+Timestamps.prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+Timestamps.prototype['updated_at'] = undefined;
+// Implement ServiceIdAndVersion interface:
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+ServiceIdAndVersion.prototype['service_id'] = undefined;
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
+ServiceIdAndVersion.prototype['version'] = undefined;
 
+
+
+/**
+ * Allowed values for the <code>placement</code> property.
+ * @enum {String}
+ * @readonly
+ */
+LoggingFtpResponse['PlacementEnum'] = {
+
+    /**
+     * value: "none"
+     * @const
+     */
+    "none": "none",
+
+    /**
+     * value: "waf_debug"
+     * @const
+     */
+    "waf_debug": "waf_debug",
+
+    /**
+     * value: "null"
+     * @const
+     */
+    "null": "null"
+};
+
+
+/**
+ * Allowed values for the <code>format_version</code> property.
+ * @enum {Number}
+ * @readonly
+ */
+LoggingFtpResponse['FormatVersionEnum'] = {
+
+    /**
+     * value: 1
+     * @const
+     */
+    "v1": 1,
+
+    /**
+     * value: 2
+     * @const
+     */
+    "v2": 2
+};
+
+
+/**
+ * Allowed values for the <code>message_type</code> property.
+ * @enum {String}
+ * @readonly
+ */
+LoggingFtpResponse['MessageTypeEnum'] = {
+
+    /**
+     * value: "classic"
+     * @const
+     */
+    "classic": "classic",
+
+    /**
+     * value: "loggly"
+     * @const
+     */
+    "loggly": "loggly",
+
+    /**
+     * value: "logplex"
+     * @const
+     */
+    "logplex": "logplex",
+
+    /**
+     * value: "blank"
+     * @const
+     */
+    "blank": "blank"
+};
+
+
+/**
+ * Allowed values for the <code>compression_codec</code> property.
+ * @enum {String}
+ * @readonly
+ */
+LoggingFtpResponse['CompressionCodecEnum'] = {
+
+    /**
+     * value: "zstd"
+     * @const
+     */
+    "zstd": "zstd",
+
+    /**
+     * value: "snappy"
+     * @const
+     */
+    "snappy": "snappy",
+
+    /**
+     * value: "gzip"
+     * @const
+     */
+    "gzip": "gzip"
+};
 
 
 

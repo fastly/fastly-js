@@ -25,6 +25,7 @@ class WafFirewallVersion {
      * @alias module:model/WafFirewallVersion
      */
     constructor() { 
+        
         WafFirewallVersion.initialize(this);
     }
 

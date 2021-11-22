@@ -25,6 +25,7 @@ class TlsConfigurationResponse {
      * @alias module:model/TlsConfigurationResponse
      */
     constructor() { 
+        
         TlsConfigurationResponse.initialize(this);
     }
 

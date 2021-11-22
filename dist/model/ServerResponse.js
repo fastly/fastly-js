@@ -30,9 +30,18 @@ var ServerResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>ServerResponse</code>.
    * @alias module:model/ServerResponse
+   * @implements module:model/Server
+   * @implements module:model/Timestamps
+   * @implements module:model/ServerResponseAllOf
    */
   function ServerResponse() {
     _classCallCheck(this, ServerResponse);
+
+    _Server["default"].initialize(this);
+
+    _Timestamps["default"].initialize(this);
+
+    _ServerResponseAllOf["default"].initialize(this);
 
     ServerResponse.initialize(this);
   }
@@ -60,6 +69,24 @@ var ServerResponse = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new ServerResponse();
 
+        _Server["default"].constructFromObject(data, obj);
+
+        _Timestamps["default"].constructFromObject(data, obj);
+
+        _ServerResponseAllOf["default"].constructFromObject(data, obj);
+
+        if (data.hasOwnProperty('weight')) {
+          obj['weight'] = _ApiClient["default"].convertToType(data['weight'], 'Number');
+        }
+
+        if (data.hasOwnProperty('max_conn')) {
+          obj['max_conn'] = _ApiClient["default"].convertToType(data['max_conn'], 'Number');
+        }
+
+        if (data.hasOwnProperty('port')) {
+          obj['port'] = _ApiClient["default"].convertToType(data['port'], 'Number');
+        }
+
         if (data.hasOwnProperty('address')) {
           obj['address'] = _ApiClient["default"].convertToType(data['address'], 'String');
         }
@@ -72,20 +99,8 @@ var ServerResponse = /*#__PURE__*/function () {
           obj['disabled'] = _ApiClient["default"].convertToType(data['disabled'], 'Boolean');
         }
 
-        if (data.hasOwnProperty('max_conn')) {
-          obj['max_conn'] = _ApiClient["default"].convertToType(data['max_conn'], 'Number');
-        }
-
         if (data.hasOwnProperty('override_host')) {
           obj['override_host'] = _ApiClient["default"].convertToType(data['override_host'], 'String');
-        }
-
-        if (data.hasOwnProperty('port')) {
-          obj['port'] = _ApiClient["default"].convertToType(data['port'], 'Number');
-        }
-
-        if (data.hasOwnProperty('weight')) {
-          obj['weight'] = _ApiClient["default"].convertToType(data['weight'], 'Number');
         }
 
         if (data.hasOwnProperty('created_at')) {
@@ -100,16 +115,16 @@ var ServerResponse = /*#__PURE__*/function () {
           obj['updated_at'] = _ApiClient["default"].convertToType(data['updated_at'], 'String');
         }
 
+        if (data.hasOwnProperty('service_id')) {
+          obj['service_id'] = _ApiClient["default"].convertToType(data['service_id'], 'String');
+        }
+
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
 
         if (data.hasOwnProperty('pool_id')) {
           obj['pool_id'] = _ApiClient["default"].convertToType(data['pool_id'], 'String');
-        }
-
-        if (data.hasOwnProperty('service_id')) {
-          obj['service_id'] = _ApiClient["default"].convertToType(data['service_id'], 'String');
         }
       }
 
@@ -120,10 +135,31 @@ var ServerResponse = /*#__PURE__*/function () {
   return ServerResponse;
 }();
 /**
+ * Weight (`1-100`) used to load balance this server against others.
+ * @member {Number} weight
+ * @default 100
+ */
+
+
+ServerResponse.prototype['weight'] = 100;
+/**
+ * Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
+ * @member {Number} max_conn
+ * @default 0
+ */
+
+ServerResponse.prototype['max_conn'] = 0;
+/**
+ * Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
+ * @member {Number} port
+ * @default 80
+ */
+
+ServerResponse.prototype['port'] = 80;
+/**
  * A hostname, IPv4, or IPv6 address for the server. Required.
  * @member {String} address
  */
-
 
 ServerResponse.prototype['address'] = undefined;
 /**
@@ -140,33 +176,12 @@ ServerResponse.prototype['comment'] = undefined;
 
 ServerResponse.prototype['disabled'] = false;
 /**
- * Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
- * @member {Number} max_conn
- * @default 0
- */
-
-ServerResponse.prototype['max_conn'] = 0;
-/**
  * The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
  * @member {String} override_host
  * @default 'null'
  */
 
 ServerResponse.prototype['override_host'] = 'null';
-/**
- * Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
- * @member {Number} port
- * @default 80
- */
-
-ServerResponse.prototype['port'] = 80;
-/**
- * Weight (`1-100`) used to load balance this server against others.
- * @member {Number} weight
- * @default 100
- */
-
-ServerResponse.prototype['weight'] = 100;
 /**
  * Date and time in ISO 8601 format.
  * @member {String} created_at
@@ -186,6 +201,12 @@ ServerResponse.prototype['deleted_at'] = undefined;
 
 ServerResponse.prototype['updated_at'] = undefined;
 /**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+
+ServerResponse.prototype['service_id'] = undefined;
+/**
  * Alphanumeric string identifying a Server.
  * @member {String} id
  */
@@ -196,12 +217,92 @@ ServerResponse.prototype['id'] = undefined;
  * @member {String} pool_id
  */
 
-ServerResponse.prototype['pool_id'] = undefined;
+ServerResponse.prototype['pool_id'] = undefined; // Implement Server interface:
+
+/**
+ * Weight (`1-100`) used to load balance this server against others.
+ * @member {Number} weight
+ * @default 100
+ */
+
+_Server["default"].prototype['weight'] = 100;
+/**
+ * Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
+ * @member {Number} max_conn
+ * @default 0
+ */
+
+_Server["default"].prototype['max_conn'] = 0;
+/**
+ * Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
+ * @member {Number} port
+ * @default 80
+ */
+
+_Server["default"].prototype['port'] = 80;
+/**
+ * A hostname, IPv4, or IPv6 address for the server. Required.
+ * @member {String} address
+ */
+
+_Server["default"].prototype['address'] = undefined;
+/**
+ * A freeform descriptive note.
+ * @member {String} comment
+ */
+
+_Server["default"].prototype['comment'] = undefined;
+/**
+ * Allows servers to be enabled and disabled in a pool.
+ * @member {Boolean} disabled
+ * @default false
+ */
+
+_Server["default"].prototype['disabled'] = false;
+/**
+ * The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
+ * @member {String} override_host
+ * @default 'null'
+ */
+
+_Server["default"].prototype['override_host'] = 'null'; // Implement Timestamps interface:
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+
+_Timestamps["default"].prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+
+_Timestamps["default"].prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+
+_Timestamps["default"].prototype['updated_at'] = undefined; // Implement ServerResponseAllOf interface:
+
 /**
  * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
 
-ServerResponse.prototype['service_id'] = undefined;
+_ServerResponseAllOf["default"].prototype['service_id'] = undefined;
+/**
+ * Alphanumeric string identifying a Server.
+ * @member {String} id
+ */
+
+_ServerResponseAllOf["default"].prototype['id'] = undefined;
+/**
+ * Alphanumeric string identifying a Pool.
+ * @member {String} pool_id
+ */
+
+_ServerResponseAllOf["default"].prototype['pool_id'] = undefined;
 var _default = ServerResponse;
 exports["default"] = _default;

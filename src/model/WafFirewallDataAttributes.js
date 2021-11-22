@@ -24,6 +24,7 @@ class WafFirewallDataAttributes {
      * @alias module:model/WafFirewallDataAttributes
      */
     constructor() { 
+        
         WafFirewallDataAttributes.initialize(this);
     }
 

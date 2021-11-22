@@ -25,6 +25,7 @@ class RelationshipTlsSubscriptions {
      * @alias module:model/RelationshipTlsSubscriptions
      */
     constructor() { 
+        
         RelationshipTlsSubscriptions.initialize(this);
     }
 

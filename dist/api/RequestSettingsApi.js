@@ -42,8 +42,8 @@ var RequestSettingsApi = /*#__PURE__*/function () {
   /**
    * Creates a new Request Settings object.
    * @param {Object} options
-   * @param {String} options.service_id
-   * @param {Number} options.version_id
+   * @param {String} options.service_id - Alphanumeric string identifying the service.
+   * @param {Number} options.version_id - Integer identifying a service version.
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RequestSettingsResponse} and HTTP response
    */
 
@@ -79,8 +79,8 @@ var RequestSettingsApi = /*#__PURE__*/function () {
     /**
      * Creates a new Request Settings object.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RequestSettingsResponse}
      */
 
@@ -95,9 +95,9 @@ var RequestSettingsApi = /*#__PURE__*/function () {
     /**
      * Removes the specified Request Settings object.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.request_settings_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.request_settings_name - Name for the request settings.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
 
@@ -138,9 +138,9 @@ var RequestSettingsApi = /*#__PURE__*/function () {
     /**
      * Removes the specified Request Settings object.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.request_settings_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.request_settings_name - Name for the request settings.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
 
@@ -155,9 +155,9 @@ var RequestSettingsApi = /*#__PURE__*/function () {
     /**
      * Gets the specified Request Settings object.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.request_settings_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.request_settings_name - Name for the request settings.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RequestSettingsResponse} and HTTP response
      */
 
@@ -198,9 +198,9 @@ var RequestSettingsApi = /*#__PURE__*/function () {
     /**
      * Gets the specified Request Settings object.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.request_settings_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.request_settings_name - Name for the request settings.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RequestSettingsResponse}
      */
 
@@ -215,8 +215,8 @@ var RequestSettingsApi = /*#__PURE__*/function () {
     /**
      * Returns a list of all Request Settings objects for the given service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/RequestSettingsResponse>} and HTTP response
      */
 
@@ -251,8 +251,8 @@ var RequestSettingsApi = /*#__PURE__*/function () {
     /**
      * Returns a list of all Request Settings objects for the given service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/RequestSettingsResponse>}
      */
 
@@ -267,9 +267,9 @@ var RequestSettingsApi = /*#__PURE__*/function () {
     /**
      * Updates the specified Request Settings object.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.request_settings_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.request_settings_name - Name for the request settings.
      * @param {module:model/String} [options.action] - Allows you to terminate request handling and immediately perform an action.
      * @param {Number} [options.bypass_busy_wait] - Disable collapsed forwarding, so you don't wait for other objects to origin.
      * @param {String} [options.default_host] - Sets the host header.
@@ -335,9 +335,9 @@ var RequestSettingsApi = /*#__PURE__*/function () {
     /**
      * Updates the specified Request Settings object.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.request_settings_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.request_settings_name - Name for the request settings.
      * @param {module:model/String} [options.action] - Allows you to terminate request handling and immediately perform an action.
      * @param {Number} [options.bypass_busy_wait] - Disable collapsed forwarding, so you don't wait for other objects to origin.
      * @param {String} [options.default_host] - Sets the host header.

@@ -76,16 +76,16 @@ var Director = /*#__PURE__*/function () {
           obj['quorum'] = _ApiClient["default"].convertToType(data['quorum'], 'Number');
         }
 
-        if (data.hasOwnProperty('retries')) {
-          obj['retries'] = _ApiClient["default"].convertToType(data['retries'], 'Number');
-        }
-
         if (data.hasOwnProperty('shield')) {
           obj['shield'] = _ApiClient["default"].convertToType(data['shield'], 'String');
         }
 
         if (data.hasOwnProperty('type')) {
           obj['type'] = _ApiClient["default"].convertToType(data['type'], 'Number');
+        }
+
+        if (data.hasOwnProperty('retries')) {
+          obj['retries'] = _ApiClient["default"].convertToType(data['retries'], 'Number');
         }
       }
 
@@ -128,13 +128,6 @@ Director.prototype['name'] = undefined;
 
 Director.prototype['quorum'] = 75;
 /**
- * How many backends to search if it fails.
- * @member {Number} retries
- * @default 5
- */
-
-Director.prototype['retries'] = 5;
-/**
  * Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
  * @member {String} shield
  * @default 'null'
@@ -148,6 +141,13 @@ Director.prototype['shield'] = 'null';
  */
 
 Director.prototype['type'] = undefined;
+/**
+ * How many backends to search if it fails.
+ * @member {Number} retries
+ * @default 5
+ */
+
+Director.prototype['retries'] = 5;
 /**
  * Allowed values for the <code>type</code> property.
  * @enum {Number}

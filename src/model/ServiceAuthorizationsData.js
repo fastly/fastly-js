@@ -25,6 +25,7 @@ class ServiceAuthorizationsData {
      * @alias module:model/ServiceAuthorizationsData
      */
     constructor() { 
+        
         ServiceAuthorizationsData.initialize(this);
     }
 
@@ -47,11 +48,11 @@ class ServiceAuthorizationsData {
         if (data) {
             obj = obj || new ServiceAuthorizationsData();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeServiceAuthorization.constructFromObject(data['type']);
+            }
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
         }
         return obj;
@@ -61,14 +62,14 @@ class ServiceAuthorizationsData {
 }
 
 /**
- * @member {String} id
- */
-ServiceAuthorizationsData.prototype['id'] = undefined;
-
-/**
  * @member {module:model/TypeServiceAuthorization} type
  */
 ServiceAuthorizationsData.prototype['type'] = undefined;
+
+/**
+ * @member {String} id
+ */
+ServiceAuthorizationsData.prototype['id'] = undefined;
 
 
 

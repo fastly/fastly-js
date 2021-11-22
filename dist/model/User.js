@@ -56,20 +56,20 @@ var User = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new User();
 
-        if (data.hasOwnProperty('limit_services')) {
-          obj['limit_services'] = _ApiClient["default"].convertToType(data['limit_services'], 'Boolean');
-        }
-
-        if (data.hasOwnProperty('locked')) {
-          obj['locked'] = _ApiClient["default"].convertToType(data['locked'], 'Boolean');
-        }
-
         if (data.hasOwnProperty('login')) {
           obj['login'] = _ApiClient["default"].convertToType(data['login'], 'String');
         }
 
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
+        }
+
+        if (data.hasOwnProperty('limit_services')) {
+          obj['limit_services'] = _ApiClient["default"].convertToType(data['limit_services'], 'Boolean');
+        }
+
+        if (data.hasOwnProperty('locked')) {
+          obj['locked'] = _ApiClient["default"].convertToType(data['locked'], 'Boolean');
         }
 
         if (data.hasOwnProperty('require_new_password')) {
@@ -96,22 +96,10 @@ var User = /*#__PURE__*/function () {
   return User;
 }();
 /**
- * Indicates that the user has limited access to the customer's services.
- * @member {Boolean} limit_services
- */
-
-
-User.prototype['limit_services'] = undefined;
-/**
- * Indicates whether the is account is locked for editing or not.
- * @member {Boolean} locked
- */
-
-User.prototype['locked'] = undefined;
-/**
  * The login associated with the user (typically, an email address).
  * @member {String} login
  */
+
 
 User.prototype['login'] = undefined;
 /**
@@ -120,6 +108,18 @@ User.prototype['login'] = undefined;
  */
 
 User.prototype['name'] = undefined;
+/**
+ * Indicates that the user has limited access to the customer's services.
+ * @member {Boolean} limit_services
+ */
+
+User.prototype['limit_services'] = undefined;
+/**
+ * Indicates whether the is account is locked for editing or not.
+ * @member {Boolean} locked
+ */
+
+User.prototype['locked'] = undefined;
 /**
  * Indicates if a new password is required at next login.
  * @member {Boolean} require_new_password

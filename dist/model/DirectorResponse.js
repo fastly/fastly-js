@@ -32,9 +32,18 @@ var DirectorResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>DirectorResponse</code>.
    * @alias module:model/DirectorResponse
+   * @implements module:model/Director
+   * @implements module:model/ServiceIdAndVersion
+   * @implements module:model/Timestamps
    */
   function DirectorResponse() {
     _classCallCheck(this, DirectorResponse);
+
+    _Director["default"].initialize(this);
+
+    _ServiceIdAndVersion["default"].initialize(this);
+
+    _Timestamps["default"].initialize(this);
 
     DirectorResponse.initialize(this);
   }
@@ -62,6 +71,12 @@ var DirectorResponse = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new DirectorResponse();
 
+        _Director["default"].constructFromObject(data, obj);
+
+        _ServiceIdAndVersion["default"].constructFromObject(data, obj);
+
+        _Timestamps["default"].constructFromObject(data, obj);
+
         if (data.hasOwnProperty('backends')) {
           obj['backends'] = _ApiClient["default"].convertToType(data['backends'], [_SchemasBackend["default"]]);
         }
@@ -82,16 +97,16 @@ var DirectorResponse = /*#__PURE__*/function () {
           obj['quorum'] = _ApiClient["default"].convertToType(data['quorum'], 'Number');
         }
 
-        if (data.hasOwnProperty('retries')) {
-          obj['retries'] = _ApiClient["default"].convertToType(data['retries'], 'Number');
-        }
-
         if (data.hasOwnProperty('shield')) {
           obj['shield'] = _ApiClient["default"].convertToType(data['shield'], 'String');
         }
 
         if (data.hasOwnProperty('type')) {
           obj['type'] = _ApiClient["default"].convertToType(data['type'], 'Number');
+        }
+
+        if (data.hasOwnProperty('retries')) {
+          obj['retries'] = _ApiClient["default"].convertToType(data['retries'], 'Number');
         }
 
         if (data.hasOwnProperty('service_id')) {
@@ -154,13 +169,6 @@ DirectorResponse.prototype['name'] = undefined;
 
 DirectorResponse.prototype['quorum'] = 75;
 /**
- * How many backends to search if it fails.
- * @member {Number} retries
- * @default 5
- */
-
-DirectorResponse.prototype['retries'] = 5;
-/**
  * Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
  * @member {String} shield
  * @default 'null'
@@ -174,6 +182,13 @@ DirectorResponse.prototype['shield'] = 'null';
  */
 
 DirectorResponse.prototype['type'] = undefined;
+/**
+ * How many backends to search if it fails.
+ * @member {Number} retries
+ * @default 5
+ */
+
+DirectorResponse.prototype['retries'] = 5;
 /**
  * Alphanumeric string identifying the service.
  * @member {String} service_id
@@ -203,7 +218,92 @@ DirectorResponse.prototype['deleted_at'] = undefined;
  * @member {String} updated_at
  */
 
-DirectorResponse.prototype['updated_at'] = undefined;
+DirectorResponse.prototype['updated_at'] = undefined; // Implement Director interface:
+
+/**
+ * List of backends associated to a director.
+ * @member {Array.<module:model/SchemasBackend>} backends
+ */
+
+_Director["default"].prototype['backends'] = undefined;
+/**
+ * Unused.
+ * @member {Number} capacity
+ */
+
+_Director["default"].prototype['capacity'] = undefined;
+/**
+ * A freeform descriptive note.
+ * @member {String} comment
+ */
+
+_Director["default"].prototype['comment'] = undefined;
+/**
+ * Name for the Director.
+ * @member {String} name
+ */
+
+_Director["default"].prototype['name'] = undefined;
+/**
+ * The percentage of capacity that needs to be up for a director to be considered up. `0` to `100`.
+ * @member {Number} quorum
+ * @default 75
+ */
+
+_Director["default"].prototype['quorum'] = 75;
+/**
+ * Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
+ * @member {String} shield
+ * @default 'null'
+ */
+
+_Director["default"].prototype['shield'] = 'null';
+/**
+ * What type of load balance group to use.
+ * @member {module:model/Director.TypeEnum} type
+ * @default TypeEnum.random
+ */
+
+_Director["default"].prototype['type'] = undefined;
+/**
+ * How many backends to search if it fails.
+ * @member {Number} retries
+ * @default 5
+ */
+
+_Director["default"].prototype['retries'] = 5; // Implement ServiceIdAndVersion interface:
+
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+
+_ServiceIdAndVersion["default"].prototype['service_id'] = undefined;
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
+
+_ServiceIdAndVersion["default"].prototype['version'] = undefined; // Implement Timestamps interface:
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+
+_Timestamps["default"].prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+
+_Timestamps["default"].prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+
+_Timestamps["default"].prototype['updated_at'] = undefined;
 /**
  * Allowed values for the <code>type</code> property.
  * @enum {Number}

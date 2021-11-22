@@ -60,16 +60,16 @@ var BillingAddressData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new BillingAddressData();
 
+        if (data.hasOwnProperty('type')) {
+          obj['type'] = _TypeBillingAddress["default"].constructFromObject(data['type']);
+        }
+
         if (data.hasOwnProperty('attributes')) {
           obj['attributes'] = _BillingAddressDataAttributes["default"].constructFromObject(data['attributes']);
         }
 
         if (data.hasOwnProperty('relationships')) {
           obj['relationships'] = _RelationshipCustomer["default"].constructFromObject(data['relationships']);
-        }
-
-        if (data.hasOwnProperty('type')) {
-          obj['type'] = _TypeBillingAddress["default"].constructFromObject(data['type']);
         }
       }
 
@@ -80,9 +80,14 @@ var BillingAddressData = /*#__PURE__*/function () {
   return BillingAddressData;
 }();
 /**
- * @member {module:model/BillingAddressDataAttributes} attributes
+ * @member {module:model/TypeBillingAddress} type
  */
 
+
+BillingAddressData.prototype['type'] = undefined;
+/**
+ * @member {module:model/BillingAddressDataAttributes} attributes
+ */
 
 BillingAddressData.prototype['attributes'] = undefined;
 /**
@@ -90,10 +95,5 @@ BillingAddressData.prototype['attributes'] = undefined;
  */
 
 BillingAddressData.prototype['relationships'] = undefined;
-/**
- * @member {module:model/TypeBillingAddress} type
- */
-
-BillingAddressData.prototype['type'] = undefined;
 var _default = BillingAddressData;
 exports["default"] = _default;

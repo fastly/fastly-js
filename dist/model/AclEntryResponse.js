@@ -30,9 +30,18 @@ var AclEntryResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>AclEntryResponse</code>.
    * @alias module:model/AclEntryResponse
+   * @implements module:model/AclEntry
+   * @implements module:model/Timestamps
+   * @implements module:model/AclEntryResponseAllOf
    */
   function AclEntryResponse() {
     _classCallCheck(this, AclEntryResponse);
+
+    _AclEntry["default"].initialize(this);
+
+    _Timestamps["default"].initialize(this);
+
+    _AclEntryResponseAllOf["default"].initialize(this);
 
     AclEntryResponse.initialize(this);
   }
@@ -60,16 +69,22 @@ var AclEntryResponse = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new AclEntryResponse();
 
+        _AclEntry["default"].constructFromObject(data, obj);
+
+        _Timestamps["default"].constructFromObject(data, obj);
+
+        _AclEntryResponseAllOf["default"].constructFromObject(data, obj);
+
+        if (data.hasOwnProperty('negated')) {
+          obj['negated'] = _ApiClient["default"].convertToType(data['negated'], 'Number');
+        }
+
         if (data.hasOwnProperty('comment')) {
           obj['comment'] = _ApiClient["default"].convertToType(data['comment'], 'String');
         }
 
         if (data.hasOwnProperty('ip')) {
           obj['ip'] = _ApiClient["default"].convertToType(data['ip'], 'String');
-        }
-
-        if (data.hasOwnProperty('negated')) {
-          obj['negated'] = _ApiClient["default"].convertToType(data['negated'], 'Number');
         }
 
         if (data.hasOwnProperty('subnet')) {
@@ -108,10 +123,17 @@ var AclEntryResponse = /*#__PURE__*/function () {
   return AclEntryResponse;
 }();
 /**
+ * Whether to negate the match. Useful primarily when creating individual exceptions to larger subnets.
+ * @member {module:model/AclEntryResponse.NegatedEnum} negated
+ * @default NegatedEnum.0
+ */
+
+
+AclEntryResponse.prototype['negated'] = undefined;
+/**
  * A freeform descriptive note.
  * @member {String} comment
  */
-
 
 AclEntryResponse.prototype['comment'] = undefined;
 /**
@@ -120,13 +142,6 @@ AclEntryResponse.prototype['comment'] = undefined;
  */
 
 AclEntryResponse.prototype['ip'] = undefined;
-/**
- * Whether to negate the match. Useful primarily when creating individual exceptions to larger subnets.
- * @member {module:model/AclEntryResponse.NegatedEnum} negated
- * @default NegatedEnum.0
- */
-
-AclEntryResponse.prototype['negated'] = undefined;
 /**
  * Number of bits for the subnet mask applied to the IP address.  For IPv4 addresses, a value of 32 represents the smallest subnet mask (1 address), 24 represents a class C subnet mask (256 addresses), 16 represents a class B subnet mask (65k addresses),  and 8 is class A subnet mask (16m addresses). If not provided, no mask is applied.
  * @member {Number} subnet
@@ -168,7 +183,71 @@ AclEntryResponse.prototype['id'] = undefined;
  * @member {String} service_id
  */
 
-AclEntryResponse.prototype['service_id'] = undefined;
+AclEntryResponse.prototype['service_id'] = undefined; // Implement AclEntry interface:
+
+/**
+ * Whether to negate the match. Useful primarily when creating individual exceptions to larger subnets.
+ * @member {module:model/AclEntry.NegatedEnum} negated
+ * @default NegatedEnum.0
+ */
+
+_AclEntry["default"].prototype['negated'] = undefined;
+/**
+ * A freeform descriptive note.
+ * @member {String} comment
+ */
+
+_AclEntry["default"].prototype['comment'] = undefined;
+/**
+ * An IP address.
+ * @member {String} ip
+ */
+
+_AclEntry["default"].prototype['ip'] = undefined;
+/**
+ * Number of bits for the subnet mask applied to the IP address.  For IPv4 addresses, a value of 32 represents the smallest subnet mask (1 address), 24 represents a class C subnet mask (256 addresses), 16 represents a class B subnet mask (65k addresses),  and 8 is class A subnet mask (16m addresses). If not provided, no mask is applied.
+ * @member {Number} subnet
+ */
+
+_AclEntry["default"].prototype['subnet'] = undefined; // Implement Timestamps interface:
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+
+_Timestamps["default"].prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+
+_Timestamps["default"].prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+
+_Timestamps["default"].prototype['updated_at'] = undefined; // Implement AclEntryResponseAllOf interface:
+
+/**
+ * Alphanumeric string identifying a ACL.
+ * @member {String} acl_id
+ */
+
+_AclEntryResponseAllOf["default"].prototype['acl_id'] = undefined;
+/**
+ * Alphanumeric string identifying an ACL Entry.
+ * @member {String} id
+ */
+
+_AclEntryResponseAllOf["default"].prototype['id'] = undefined;
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+
+_AclEntryResponseAllOf["default"].prototype['service_id'] = undefined;
 /**
  * Allowed values for the <code>negated</code> property.
  * @enum {Number}

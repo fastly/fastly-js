@@ -13,8 +13,8 @@
 
 import ApiClient from '../ApiClient';
 import RelationshipsForWafActiveRule from './RelationshipsForWafActiveRule';
-import SchemasWafActiveRuleDataAttributes from './SchemasWafActiveRuleDataAttributes';
 import TypeWafActiveRule from './TypeWafActiveRule';
+import WafActiveRuleDataAttributes from './WafActiveRuleDataAttributes';
 
 /**
  * The WafActiveRuleData model module.
@@ -27,6 +27,7 @@ class WafActiveRuleData {
      * @alias module:model/WafActiveRuleData
      */
     constructor() { 
+        
         WafActiveRuleData.initialize(this);
     }
 
@@ -49,14 +50,14 @@ class WafActiveRuleData {
         if (data) {
             obj = obj || new WafActiveRuleData();
 
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeWafActiveRule.constructFromObject(data['type']);
+            }
             if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = SchemasWafActiveRuleDataAttributes.constructFromObject(data['attributes']);
+                obj['attributes'] = WafActiveRuleDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = RelationshipsForWafActiveRule.constructFromObject(data['relationships']);
-            }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeWafActiveRule.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -66,7 +67,12 @@ class WafActiveRuleData {
 }
 
 /**
- * @member {module:model/SchemasWafActiveRuleDataAttributes} attributes
+ * @member {module:model/TypeWafActiveRule} type
+ */
+WafActiveRuleData.prototype['type'] = undefined;
+
+/**
+ * @member {module:model/WafActiveRuleDataAttributes} attributes
  */
 WafActiveRuleData.prototype['attributes'] = undefined;
 
@@ -74,11 +80,6 @@ WafActiveRuleData.prototype['attributes'] = undefined;
  * @member {module:model/RelationshipsForWafActiveRule} relationships
  */
 WafActiveRuleData.prototype['relationships'] = undefined;
-
-/**
- * @member {module:model/TypeWafActiveRule} type
- */
-WafActiveRuleData.prototype['type'] = undefined;
 
 
 

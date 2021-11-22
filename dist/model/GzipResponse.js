@@ -30,9 +30,18 @@ var GzipResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>GzipResponse</code>.
    * @alias module:model/GzipResponse
+   * @implements module:model/Gzip
+   * @implements module:model/ServiceIdAndVersion
+   * @implements module:model/Timestamps
    */
   function GzipResponse() {
     _classCallCheck(this, GzipResponse);
+
+    _Gzip["default"].initialize(this);
+
+    _ServiceIdAndVersion["default"].initialize(this);
+
+    _Timestamps["default"].initialize(this);
 
     GzipResponse.initialize(this);
   }
@@ -59,6 +68,12 @@ var GzipResponse = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new GzipResponse();
+
+        _Gzip["default"].constructFromObject(data, obj);
+
+        _ServiceIdAndVersion["default"].constructFromObject(data, obj);
+
+        _Timestamps["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('cache_condition')) {
           obj['cache_condition'] = _ApiClient["default"].convertToType(data['cache_condition'], 'String');
@@ -157,6 +172,63 @@ GzipResponse.prototype['deleted_at'] = undefined;
  * @member {String} updated_at
  */
 
-GzipResponse.prototype['updated_at'] = undefined;
+GzipResponse.prototype['updated_at'] = undefined; // Implement Gzip interface:
+
+/**
+ * Name of the cache condition controlling when this configuration applies.
+ * @member {String} cache_condition
+ */
+
+_Gzip["default"].prototype['cache_condition'] = undefined;
+/**
+ * Space-separated list of content types to compress. If you omit this field a default list will be used.
+ * @member {String} content_types
+ */
+
+_Gzip["default"].prototype['content_types'] = undefined;
+/**
+ * Space-separated list of file extensions to compress. If you omit this field a default list will be used.
+ * @member {String} extensions
+ */
+
+_Gzip["default"].prototype['extensions'] = undefined;
+/**
+ * Name of the gzip configuration.
+ * @member {String} name
+ */
+
+_Gzip["default"].prototype['name'] = undefined; // Implement ServiceIdAndVersion interface:
+
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+
+_ServiceIdAndVersion["default"].prototype['service_id'] = undefined;
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
+
+_ServiceIdAndVersion["default"].prototype['version'] = undefined; // Implement Timestamps interface:
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+
+_Timestamps["default"].prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+
+_Timestamps["default"].prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+
+_Timestamps["default"].prototype['updated_at'] = undefined;
 var _default = GzipResponse;
 exports["default"] = _default;

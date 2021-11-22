@@ -24,6 +24,7 @@ class DiffResponse {
      * @alias module:model/DiffResponse
      */
     constructor() { 
+        
         DiffResponse.initialize(this);
     }
 
@@ -46,17 +47,17 @@ class DiffResponse {
         if (data) {
             obj = obj || new DiffResponse();
 
-            if (data.hasOwnProperty('diff')) {
-                obj['diff'] = ApiClient.convertToType(data['diff'], 'String');
-            }
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], 'String');
-            }
             if (data.hasOwnProperty('from')) {
                 obj['from'] = ApiClient.convertToType(data['from'], 'Number');
             }
             if (data.hasOwnProperty('to')) {
                 obj['to'] = ApiClient.convertToType(data['to'], 'Number');
+            }
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('diff')) {
+                obj['diff'] = ApiClient.convertToType(data['diff'], 'String');
             }
         }
         return obj;
@@ -64,18 +65,6 @@ class DiffResponse {
 
 
 }
-
-/**
- * The differences between two specified service versions. Returns the full config if the version configurations are identical.
- * @member {String} diff
- */
-DiffResponse.prototype['diff'] = undefined;
-
-/**
- * The format the diff is being returned in (`text`, `html` or `html_simple`).
- * @member {String} format
- */
-DiffResponse.prototype['format'] = undefined;
 
 /**
  * The version number being diffed from.
@@ -88,6 +77,18 @@ DiffResponse.prototype['from'] = undefined;
  * @member {Number} to
  */
 DiffResponse.prototype['to'] = undefined;
+
+/**
+ * The format the diff is being returned in (`text`, `html` or `html_simple`).
+ * @member {String} format
+ */
+DiffResponse.prototype['format'] = undefined;
+
+/**
+ * The differences between two specified service versions. Returns the full config if the version configurations are identical.
+ * @member {String} diff
+ */
+DiffResponse.prototype['diff'] = undefined;
 
 
 

@@ -26,6 +26,7 @@ class InvitationResponseDataAllOf {
      * @alias module:model/InvitationResponseDataAllOf
      */
     constructor() { 
+        
         InvitationResponseDataAllOf.initialize(this);
     }
 
@@ -48,11 +49,11 @@ class InvitationResponseDataAllOf {
         if (data) {
             obj = obj || new InvitationResponseDataAllOf();
 
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = Timestamps.constructFromObject(data['attributes']);
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = Timestamps.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = RelationshipsForInvitation.constructFromObject(data['relationships']);
@@ -65,15 +66,15 @@ class InvitationResponseDataAllOf {
 }
 
 /**
- * @member {module:model/Timestamps} attributes
- */
-InvitationResponseDataAllOf.prototype['attributes'] = undefined;
-
-/**
  * Alphanumeric string identifying an invitation.
  * @member {String} id
  */
 InvitationResponseDataAllOf.prototype['id'] = undefined;
+
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+InvitationResponseDataAllOf.prototype['attributes'] = undefined;
 
 /**
  * @member {module:model/RelationshipsForInvitation} relationships

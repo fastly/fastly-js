@@ -24,6 +24,7 @@ class PaginationMeta {
      * @alias module:model/PaginationMeta
      */
     constructor() { 
+        
         PaginationMeta.initialize(this);
     }
 

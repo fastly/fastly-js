@@ -28,8 +28,11 @@ class WafRulesResponse {
     /**
      * Constructs a new <code>WafRulesResponse</code>.
      * @alias module:model/WafRulesResponse
+     * @implements module:model/Pagination
+     * @implements module:model/WafRulesResponseAllOf
      */
     constructor() { 
+        Pagination.initialize(this);WafRulesResponseAllOf.initialize(this);
         WafRulesResponse.initialize(this);
     }
 
@@ -51,6 +54,8 @@ class WafRulesResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafRulesResponse();
+            Pagination.constructFromObject(data, obj);
+            WafRulesResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('links')) {
                 obj['links'] = PaginationLinks.constructFromObject(data['links']);
@@ -92,6 +97,24 @@ WafRulesResponse.prototype['data'] = undefined;
 WafRulesResponse.prototype['included'] = undefined;
 
 
+// Implement Pagination interface:
+/**
+ * @member {module:model/PaginationLinks} links
+ */
+Pagination.prototype['links'] = undefined;
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
+Pagination.prototype['meta'] = undefined;
+// Implement WafRulesResponseAllOf interface:
+/**
+ * @member {Array.<module:model/WafRuleResponseData>} data
+ */
+WafRulesResponseAllOf.prototype['data'] = undefined;
+/**
+ * @member {Array.<module:model/IncludedWithWafRuleItem>} included
+ */
+WafRulesResponseAllOf.prototype['included'] = undefined;
 
 
 

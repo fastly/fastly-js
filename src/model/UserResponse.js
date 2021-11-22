@@ -13,9 +13,9 @@
 
 import ApiClient from '../ApiClient';
 import RoleUser from './RoleUser';
-import SchemasUserResponseAllOf from './SchemasUserResponseAllOf';
 import Timestamps from './Timestamps';
 import User from './User';
+import UserResponseAllOf from './UserResponseAllOf';
 
 /**
  * The UserResponse model module.
@@ -26,8 +26,12 @@ class UserResponse {
     /**
      * Constructs a new <code>UserResponse</code>.
      * @alias module:model/UserResponse
+     * @implements module:model/User
+     * @implements module:model/Timestamps
+     * @implements module:model/UserResponseAllOf
      */
     constructor() { 
+        User.initialize(this);Timestamps.initialize(this);UserResponseAllOf.initialize(this);
         UserResponse.initialize(this);
     }
 
@@ -49,18 +53,21 @@ class UserResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new UserResponse();
+            User.constructFromObject(data, obj);
+            Timestamps.constructFromObject(data, obj);
+            UserResponseAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('limit_services')) {
-                obj['limit_services'] = ApiClient.convertToType(data['limit_services'], 'Boolean');
-            }
-            if (data.hasOwnProperty('locked')) {
-                obj['locked'] = ApiClient.convertToType(data['locked'], 'Boolean');
-            }
             if (data.hasOwnProperty('login')) {
                 obj['login'] = ApiClient.convertToType(data['login'], 'String');
             }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('limit_services')) {
+                obj['limit_services'] = ApiClient.convertToType(data['limit_services'], 'Boolean');
+            }
+            if (data.hasOwnProperty('locked')) {
+                obj['locked'] = ApiClient.convertToType(data['locked'], 'Boolean');
             }
             if (data.hasOwnProperty('require_new_password')) {
                 obj['require_new_password'] = ApiClient.convertToType(data['require_new_password'], 'Boolean');
@@ -83,14 +90,14 @@ class UserResponse {
             if (data.hasOwnProperty('updated_at')) {
                 obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'String');
             }
-            if (data.hasOwnProperty('customer_id')) {
-                obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
             if (data.hasOwnProperty('email_hash')) {
                 obj['email_hash'] = ApiClient.convertToType(data['email_hash'], 'String');
             }
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            if (data.hasOwnProperty('customer_id')) {
+                obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
             }
         }
         return obj;
@@ -98,18 +105,6 @@ class UserResponse {
 
 
 }
-
-/**
- * Indicates that the user has limited access to the customer's services.
- * @member {Boolean} limit_services
- */
-UserResponse.prototype['limit_services'] = undefined;
-
-/**
- * Indicates whether the is account is locked for editing or not.
- * @member {Boolean} locked
- */
-UserResponse.prototype['locked'] = undefined;
 
 /**
  * The login associated with the user (typically, an email address).
@@ -122,6 +117,18 @@ UserResponse.prototype['login'] = undefined;
  * @member {String} name
  */
 UserResponse.prototype['name'] = undefined;
+
+/**
+ * Indicates that the user has limited access to the customer's services.
+ * @member {Boolean} limit_services
+ */
+UserResponse.prototype['limit_services'] = undefined;
+
+/**
+ * Indicates whether the is account is locked for editing or not.
+ * @member {Boolean} locked
+ */
+UserResponse.prototype['locked'] = undefined;
 
 /**
  * Indicates if a new password is required at next login.
@@ -165,10 +172,10 @@ UserResponse.prototype['deleted_at'] = undefined;
 UserResponse.prototype['updated_at'] = undefined;
 
 /**
- * Alphanumeric string identifying the customer.
- * @member {String} customer_id
+ * Alphanumeric string identifying the user.
+ * @member {String} id
  */
-UserResponse.prototype['customer_id'] = undefined;
+UserResponse.prototype['id'] = undefined;
 
 /**
  * The alphanumeric string identifying a email login.
@@ -177,12 +184,84 @@ UserResponse.prototype['customer_id'] = undefined;
 UserResponse.prototype['email_hash'] = undefined;
 
 /**
+ * Alphanumeric string identifying the customer.
+ * @member {String} customer_id
+ */
+UserResponse.prototype['customer_id'] = undefined;
+
+
+// Implement User interface:
+/**
+ * The login associated with the user (typically, an email address).
+ * @member {String} login
+ */
+User.prototype['login'] = undefined;
+/**
+ * The real life name of the user.
+ * @member {String} name
+ */
+User.prototype['name'] = undefined;
+/**
+ * Indicates that the user has limited access to the customer's services.
+ * @member {Boolean} limit_services
+ */
+User.prototype['limit_services'] = undefined;
+/**
+ * Indicates whether the is account is locked for editing or not.
+ * @member {Boolean} locked
+ */
+User.prototype['locked'] = undefined;
+/**
+ * Indicates if a new password is required at next login.
+ * @member {Boolean} require_new_password
+ */
+User.prototype['require_new_password'] = undefined;
+/**
+ * @member {module:model/RoleUser} role
+ */
+User.prototype['role'] = undefined;
+/**
+ * Indicates if 2FA is enabled on the user.
+ * @member {Boolean} two_factor_auth_enabled
+ */
+User.prototype['two_factor_auth_enabled'] = undefined;
+/**
+ * Indicates if 2FA is required by the user's customer account.
+ * @member {Boolean} two_factor_setup_required
+ */
+User.prototype['two_factor_setup_required'] = undefined;
+// Implement Timestamps interface:
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+Timestamps.prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+Timestamps.prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+Timestamps.prototype['updated_at'] = undefined;
+// Implement UserResponseAllOf interface:
+/**
  * Alphanumeric string identifying the user.
  * @member {String} id
  */
-UserResponse.prototype['id'] = undefined;
-
-
+UserResponseAllOf.prototype['id'] = undefined;
+/**
+ * The alphanumeric string identifying a email login.
+ * @member {String} email_hash
+ */
+UserResponseAllOf.prototype['email_hash'] = undefined;
+/**
+ * Alphanumeric string identifying the customer.
+ * @member {String} customer_id
+ */
+UserResponseAllOf.prototype['customer_id'] = undefined;
 
 
 

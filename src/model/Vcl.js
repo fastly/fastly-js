@@ -24,6 +24,7 @@ class Vcl {
      * @alias module:model/Vcl
      */
     constructor() { 
+        
         Vcl.initialize(this);
     }
 

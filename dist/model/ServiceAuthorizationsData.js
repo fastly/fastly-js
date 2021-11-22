@@ -56,12 +56,12 @@ var ServiceAuthorizationsData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new ServiceAuthorizationsData();
 
-        if (data.hasOwnProperty('id')) {
-          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
-        }
-
         if (data.hasOwnProperty('type')) {
           obj['type'] = _TypeServiceAuthorization["default"].constructFromObject(data['type']);
+        }
+
+        if (data.hasOwnProperty('id')) {
+          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
       }
 
@@ -72,15 +72,15 @@ var ServiceAuthorizationsData = /*#__PURE__*/function () {
   return ServiceAuthorizationsData;
 }();
 /**
- * @member {String} id
- */
-
-
-ServiceAuthorizationsData.prototype['id'] = undefined;
-/**
  * @member {module:model/TypeServiceAuthorization} type
  */
 
+
 ServiceAuthorizationsData.prototype['type'] = undefined;
+/**
+ * @member {String} id
+ */
+
+ServiceAuthorizationsData.prototype['id'] = undefined;
 var _default = ServiceAuthorizationsData;
 exports["default"] = _default;

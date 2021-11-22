@@ -24,6 +24,7 @@ class LoggingGcsAllOf {
      * @alias module:model/LoggingGcsAllOf
      */
     constructor() { 
+        
         LoggingGcsAllOf.initialize(this);
     }
 

@@ -25,8 +25,12 @@ class ResponseObjectResponse {
     /**
      * Constructs a new <code>ResponseObjectResponse</code>.
      * @alias module:model/ResponseObjectResponse
+     * @implements module:model/ResponseObject
+     * @implements module:model/ServiceIdAndVersion
+     * @implements module:model/Timestamps
      */
     constructor() { 
+        ResponseObject.initialize(this);ServiceIdAndVersion.initialize(this);Timestamps.initialize(this);
         ResponseObjectResponse.initialize(this);
     }
 
@@ -48,6 +52,9 @@ class ResponseObjectResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ResponseObjectResponse();
+            ResponseObject.constructFromObject(data, obj);
+            ServiceIdAndVersion.constructFromObject(data, obj);
+            Timestamps.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('cache_condition')) {
                 obj['cache_condition'] = ApiClient.convertToType(data['cache_condition'], 'String');
@@ -61,14 +68,14 @@ class ResponseObjectResponse {
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('request_condition')) {
-                obj['request_condition'] = ApiClient.convertToType(data['request_condition'], 'String');
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ApiClient.convertToType(data['status'], 'Number');
             }
             if (data.hasOwnProperty('response')) {
                 obj['response'] = ApiClient.convertToType(data['response'], 'String');
             }
-            if (data.hasOwnProperty('status')) {
-                obj['status'] = ApiClient.convertToType(data['status'], 'Number');
+            if (data.hasOwnProperty('request_condition')) {
+                obj['request_condition'] = ApiClient.convertToType(data['request_condition'], 'String');
             }
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
@@ -117,10 +124,11 @@ ResponseObjectResponse.prototype['content_type'] = undefined;
 ResponseObjectResponse.prototype['name'] = undefined;
 
 /**
- * Condition which, if met, will select this configuration during a request. Optional.
- * @member {String} request_condition
+ * The HTTP status code.
+ * @member {Number} status
+ * @default 200
  */
-ResponseObjectResponse.prototype['request_condition'] = undefined;
+ResponseObjectResponse.prototype['status'] = 200;
 
 /**
  * The HTTP response.
@@ -130,11 +138,10 @@ ResponseObjectResponse.prototype['request_condition'] = undefined;
 ResponseObjectResponse.prototype['response'] = 'Ok';
 
 /**
- * The HTTP status code.
- * @member {Number} status
- * @default 200
+ * Condition which, if met, will select this configuration during a request. Optional.
+ * @member {String} request_condition
  */
-ResponseObjectResponse.prototype['status'] = 200;
+ResponseObjectResponse.prototype['request_condition'] = undefined;
 
 /**
  * Alphanumeric string identifying the service.
@@ -167,6 +174,71 @@ ResponseObjectResponse.prototype['deleted_at'] = undefined;
 ResponseObjectResponse.prototype['updated_at'] = undefined;
 
 
+// Implement ResponseObject interface:
+/**
+ * Name of the cache condition controlling when this configuration applies.
+ * @member {String} cache_condition
+ */
+ResponseObject.prototype['cache_condition'] = undefined;
+/**
+ * The content to deliver for the response object, can be empty.
+ * @member {String} content
+ */
+ResponseObject.prototype['content'] = undefined;
+/**
+ * The MIME type of the content, can be empty.
+ * @member {String} content_type
+ */
+ResponseObject.prototype['content_type'] = undefined;
+/**
+ * Name for the request settings.
+ * @member {String} name
+ */
+ResponseObject.prototype['name'] = undefined;
+/**
+ * The HTTP status code.
+ * @member {Number} status
+ * @default 200
+ */
+ResponseObject.prototype['status'] = 200;
+/**
+ * The HTTP response.
+ * @member {String} response
+ * @default 'Ok'
+ */
+ResponseObject.prototype['response'] = 'Ok';
+/**
+ * Condition which, if met, will select this configuration during a request. Optional.
+ * @member {String} request_condition
+ */
+ResponseObject.prototype['request_condition'] = undefined;
+// Implement ServiceIdAndVersion interface:
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+ServiceIdAndVersion.prototype['service_id'] = undefined;
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
+ServiceIdAndVersion.prototype['version'] = undefined;
+// Implement Timestamps interface:
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+Timestamps.prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+Timestamps.prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+Timestamps.prototype['updated_at'] = undefined;
 
 
 

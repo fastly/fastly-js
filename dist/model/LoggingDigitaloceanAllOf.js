@@ -54,12 +54,16 @@ var LoggingDigitaloceanAllOf = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new LoggingDigitaloceanAllOf();
 
+        if (data.hasOwnProperty('bucket_name')) {
+          obj['bucket_name'] = _ApiClient["default"].convertToType(data['bucket_name'], 'String');
+        }
+
         if (data.hasOwnProperty('access_key')) {
           obj['access_key'] = _ApiClient["default"].convertToType(data['access_key'], 'String');
         }
 
-        if (data.hasOwnProperty('bucket_name')) {
-          obj['bucket_name'] = _ApiClient["default"].convertToType(data['bucket_name'], 'String');
+        if (data.hasOwnProperty('secret_key')) {
+          obj['secret_key'] = _ApiClient["default"].convertToType(data['secret_key'], 'String');
         }
 
         if (data.hasOwnProperty('domain')) {
@@ -73,10 +77,6 @@ var LoggingDigitaloceanAllOf = /*#__PURE__*/function () {
         if (data.hasOwnProperty('public_key')) {
           obj['public_key'] = _ApiClient["default"].convertToType(data['public_key'], 'String');
         }
-
-        if (data.hasOwnProperty('secret_key')) {
-          obj['secret_key'] = _ApiClient["default"].convertToType(data['secret_key'], 'String');
-        }
       }
 
       return obj;
@@ -86,18 +86,24 @@ var LoggingDigitaloceanAllOf = /*#__PURE__*/function () {
   return LoggingDigitaloceanAllOf;
 }();
 /**
- * Your DigitalOcean Spaces account access key.
- * @member {String} access_key
- */
-
-
-LoggingDigitaloceanAllOf.prototype['access_key'] = undefined;
-/**
  * The name of the DigitalOcean Space.
  * @member {String} bucket_name
  */
 
+
 LoggingDigitaloceanAllOf.prototype['bucket_name'] = undefined;
+/**
+ * Your DigitalOcean Spaces account access key.
+ * @member {String} access_key
+ */
+
+LoggingDigitaloceanAllOf.prototype['access_key'] = undefined;
+/**
+ * Your DigitalOcean Spaces account secret key.
+ * @member {String} secret_key
+ */
+
+LoggingDigitaloceanAllOf.prototype['secret_key'] = undefined;
 /**
  * The domain of the DigitalOcean Spaces endpoint.
  * @member {String} domain
@@ -119,11 +125,5 @@ LoggingDigitaloceanAllOf.prototype['path'] = 'null';
  */
 
 LoggingDigitaloceanAllOf.prototype['public_key'] = 'null';
-/**
- * Your DigitalOcean Spaces account secret key.
- * @member {String} secret_key
- */
-
-LoggingDigitaloceanAllOf.prototype['secret_key'] = undefined;
 var _default = LoggingDigitaloceanAllOf;
 exports["default"] = _default;

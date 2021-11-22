@@ -56,16 +56,16 @@ var Historical = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new Historical();
 
+        if (data.hasOwnProperty('status')) {
+          obj['status'] = _ApiClient["default"].convertToType(data['status'], 'String');
+        }
+
         if (data.hasOwnProperty('meta')) {
           obj['meta'] = _HistoricalMeta["default"].constructFromObject(data['meta']);
         }
 
         if (data.hasOwnProperty('msg')) {
           obj['msg'] = _ApiClient["default"].convertToType(data['msg'], 'String');
-        }
-
-        if (data.hasOwnProperty('status')) {
-          obj['status'] = _ApiClient["default"].convertToType(data['status'], 'String');
         }
       }
 
@@ -76,9 +76,15 @@ var Historical = /*#__PURE__*/function () {
   return Historical;
 }();
 /**
- * @member {module:model/HistoricalMeta} meta
+ * Whether or not we were able to successfully execute the query.
+ * @member {String} status
  */
 
+
+Historical.prototype['status'] = undefined;
+/**
+ * @member {module:model/HistoricalMeta} meta
+ */
 
 Historical.prototype['meta'] = undefined;
 /**
@@ -87,11 +93,5 @@ Historical.prototype['meta'] = undefined;
  */
 
 Historical.prototype['msg'] = undefined;
-/**
- * Whether or not we were able to successfully execute the query.
- * @member {String} status
- */
-
-Historical.prototype['status'] = undefined;
 var _default = Historical;
 exports["default"] = _default;

@@ -25,6 +25,7 @@ class WafRuleRevisionResponseDataAllOf {
      * @alias module:model/WafRuleRevisionResponseDataAllOf
      */
     constructor() { 
+        
         WafRuleRevisionResponseDataAllOf.initialize(this);
     }
 

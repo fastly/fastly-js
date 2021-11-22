@@ -56,12 +56,12 @@ var RelationshipMemberTlsConfiguration = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new RelationshipMemberTlsConfiguration();
 
-        if (data.hasOwnProperty('id')) {
-          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
-        }
-
         if (data.hasOwnProperty('type')) {
           obj['type'] = _TypeTlsConfiguration["default"].constructFromObject(data['type']);
+        }
+
+        if (data.hasOwnProperty('id')) {
+          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
       }
 
@@ -72,16 +72,16 @@ var RelationshipMemberTlsConfiguration = /*#__PURE__*/function () {
   return RelationshipMemberTlsConfiguration;
 }();
 /**
+ * @member {module:model/TypeTlsConfiguration} type
+ */
+
+
+RelationshipMemberTlsConfiguration.prototype['type'] = undefined;
+/**
  * Alphanumeric string identifying a TLS configuration.
  * @member {String} id
  */
 
-
 RelationshipMemberTlsConfiguration.prototype['id'] = undefined;
-/**
- * @member {module:model/TypeTlsConfiguration} type
- */
-
-RelationshipMemberTlsConfiguration.prototype['type'] = undefined;
 var _default = RelationshipMemberTlsConfiguration;
 exports["default"] = _default;

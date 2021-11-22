@@ -25,6 +25,7 @@ class RelationshipTlsCertificates {
      * @alias module:model/RelationshipTlsCertificates
      */
     constructor() { 
+        
         RelationshipTlsCertificates.initialize(this);
     }
 

@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import CustomerCustomerIdBillingAddressData1 from './CustomerCustomerIdBillingAddressData1';
+import CustomerCustomerIdBillingAddressData from './CustomerCustomerIdBillingAddressData';
 
 /**
  * The InlineObject1 model module.
@@ -25,6 +25,7 @@ class InlineObject1 {
      * @alias module:model/InlineObject1
      */
     constructor() { 
+        
         InlineObject1.initialize(this);
     }
 
@@ -48,7 +49,7 @@ class InlineObject1 {
             obj = obj || new InlineObject1();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = CustomerCustomerIdBillingAddressData1.constructFromObject(data['data']);
+                obj['data'] = CustomerCustomerIdBillingAddressData.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -58,7 +59,7 @@ class InlineObject1 {
 }
 
 /**
- * @member {module:model/CustomerCustomerIdBillingAddressData1} data
+ * @member {module:model/CustomerCustomerIdBillingAddressData} data
  */
 InlineObject1.prototype['data'] = undefined;
 

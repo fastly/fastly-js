@@ -41,8 +41,8 @@ export default class HealthcheckApi {
     /**
      * Create a healthcheck for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {Number} [options.check_interval] - How often to run the healthcheck in milliseconds.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Number} [options.expected_response] - The status code expected from the host.
@@ -105,8 +105,8 @@ export default class HealthcheckApi {
     /**
      * Create a healthcheck for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {Number} [options.check_interval] - How often to run the healthcheck in milliseconds.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Number} [options.expected_response] - The status code expected from the host.
@@ -131,9 +131,9 @@ export default class HealthcheckApi {
     /**
      * Delete the healthcheck for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.healthcheck_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.healthcheck_name - The name of the healthcheck.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     deleteHealthcheckWithHttpInfo(options = {}) {
@@ -177,9 +177,9 @@ export default class HealthcheckApi {
     /**
      * Delete the healthcheck for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.healthcheck_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.healthcheck_name - The name of the healthcheck.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     deleteHealthcheck(options = {}) {
@@ -192,9 +192,9 @@ export default class HealthcheckApi {
     /**
      * Get the healthcheck for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.healthcheck_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.healthcheck_name - The name of the healthcheck.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HealthcheckResponse} and HTTP response
      */
     getHealthcheckWithHttpInfo(options = {}) {
@@ -238,9 +238,9 @@ export default class HealthcheckApi {
     /**
      * Get the healthcheck for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.healthcheck_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.healthcheck_name - The name of the healthcheck.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HealthcheckResponse}
      */
     getHealthcheck(options = {}) {
@@ -253,8 +253,8 @@ export default class HealthcheckApi {
     /**
      * List all of the healthchecks for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/HealthcheckResponse>} and HTTP response
      */
     listHealthchecksWithHttpInfo(options = {}) {
@@ -293,8 +293,8 @@ export default class HealthcheckApi {
     /**
      * List all of the healthchecks for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/HealthcheckResponse>}
      */
     listHealthchecks(options = {}) {
@@ -307,9 +307,9 @@ export default class HealthcheckApi {
     /**
      * Update the healthcheck for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.healthcheck_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.healthcheck_name - The name of the healthcheck.
      * @param {Number} [options.check_interval] - How often to run the healthcheck in milliseconds.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Number} [options.expected_response] - The status code expected from the host.
@@ -377,9 +377,9 @@ export default class HealthcheckApi {
     /**
      * Update the healthcheck for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.healthcheck_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.healthcheck_name - The name of the healthcheck.
      * @param {Number} [options.check_interval] - How often to run the healthcheck in milliseconds.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Number} [options.expected_response] - The status code expected from the host.

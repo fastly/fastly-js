@@ -24,6 +24,7 @@ class GenericTokenError {
      * @alias module:model/GenericTokenError
      */
     constructor() { 
+        
         GenericTokenError.initialize(this);
     }
 

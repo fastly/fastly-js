@@ -26,6 +26,7 @@ class StarData {
      * @alias module:model/StarData
      */
     constructor() { 
+        
         StarData.initialize(this);
     }
 
@@ -48,11 +49,11 @@ class StarData {
         if (data) {
             obj = obj || new StarData();
 
-            if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = ApiClient.convertToType(data['relationships'], RelationshipUser);
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeStar.constructFromObject(data['type']);
+            }
+            if (data.hasOwnProperty('relationships')) {
+                obj['relationships'] = ApiClient.convertToType(data['relationships'], RelationshipUser);
             }
         }
         return obj;
@@ -62,14 +63,14 @@ class StarData {
 }
 
 /**
- * @member {module:model/RelationshipUser} relationships
- */
-StarData.prototype['relationships'] = undefined;
-
-/**
  * @member {module:model/TypeStar} type
  */
 StarData.prototype['type'] = undefined;
+
+/**
+ * @member {module:model/RelationshipUser} relationships
+ */
+StarData.prototype['relationships'] = undefined;
 
 
 

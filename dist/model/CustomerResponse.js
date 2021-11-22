@@ -30,9 +30,18 @@ var CustomerResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>CustomerResponse</code>.
    * @alias module:model/CustomerResponse
+   * @implements module:model/Customer
+   * @implements module:model/Timestamps
+   * @implements module:model/CustomerResponseAllOf
    */
   function CustomerResponse() {
     _classCallCheck(this, CustomerResponse);
+
+    _Customer["default"].initialize(this);
+
+    _Timestamps["default"].initialize(this);
+
+    _CustomerResponseAllOf["default"].initialize(this);
 
     CustomerResponse.initialize(this);
   }
@@ -59,6 +68,12 @@ var CustomerResponse = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new CustomerResponse();
+
+        _Customer["default"].constructFromObject(data, obj);
+
+        _Timestamps["default"].constructFromObject(data, obj);
+
+        _CustomerResponseAllOf["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('billing_contact_id')) {
           obj['billing_contact_id'] = _ApiClient["default"].convertToType(data['billing_contact_id'], 'String');
@@ -347,7 +362,178 @@ CustomerResponse.prototype['updated_at'] = undefined;
  * @member {String} id
  */
 
-CustomerResponse.prototype['id'] = undefined;
+CustomerResponse.prototype['id'] = undefined; // Implement Customer interface:
+
+/**
+ * The alphanumeric string representing the primary billing contact.
+ * @member {String} billing_contact_id
+ */
+
+_Customer["default"].prototype['billing_contact_id'] = undefined;
+/**
+ * Customer's current network revenue type.
+ * @member {module:model/Customer.BillingNetworkTypeEnum} billing_network_type
+ */
+
+_Customer["default"].prototype['billing_network_type'] = undefined;
+/**
+ * Used for adding purchased orders to customer's account.
+ * @member {String} billing_ref
+ */
+
+_Customer["default"].prototype['billing_ref'] = undefined;
+/**
+ * Whether this customer can view or edit wordpress.
+ * @member {Boolean} can_configure_wordpress
+ */
+
+_Customer["default"].prototype['can_configure_wordpress'] = undefined;
+/**
+ * Whether this customer can reset passwords.
+ * @member {Boolean} can_reset_passwords
+ */
+
+_Customer["default"].prototype['can_reset_passwords'] = undefined;
+/**
+ * Whether this customer can upload VCL.
+ * @member {Boolean} can_upload_vcl
+ */
+
+_Customer["default"].prototype['can_upload_vcl'] = undefined;
+/**
+ * Specifies whether 2FA is forced or not forced on the customer account. Logs out non-2FA users once 2FA is force enabled.
+ * @member {Boolean} force_2fa
+ */
+
+_Customer["default"].prototype['force_2fa'] = undefined;
+/**
+ * Specifies whether SSO is forced or not forced on the customer account.
+ * @member {Boolean} force_sso
+ */
+
+_Customer["default"].prototype['force_sso'] = undefined;
+/**
+ * Specifies whether the account has access or does not have access to the account panel.
+ * @member {Boolean} has_account_panel
+ */
+
+_Customer["default"].prototype['has_account_panel'] = undefined;
+/**
+ * Specifies whether the account has access or does not have access to the improved events.
+ * @member {Boolean} has_improved_events
+ */
+
+_Customer["default"].prototype['has_improved_events'] = undefined;
+/**
+ * Whether this customer can view or edit the SSL config.
+ * @member {Boolean} has_improved_ssl_config
+ */
+
+_Customer["default"].prototype['has_improved_ssl_config'] = undefined;
+/**
+ * Specifies whether the account has enabled or not enabled openstack logging.
+ * @member {Boolean} has_openstack_logging
+ */
+
+_Customer["default"].prototype['has_openstack_logging'] = undefined;
+/**
+ * Specifies whether the account can edit PCI for a service.
+ * @member {Boolean} has_pci
+ */
+
+_Customer["default"].prototype['has_pci'] = undefined;
+/**
+ * Specifies whether PCI passwords are required for the account.
+ * @member {Boolean} has_pci_passwords
+ */
+
+_Customer["default"].prototype['has_pci_passwords'] = undefined;
+/**
+ * The range of IP addresses authorized to access the customer account.
+ * @member {String} ip_whitelist
+ */
+
+_Customer["default"].prototype['ip_whitelist'] = undefined;
+/**
+ * The alphanumeric string identifying the account's legal contact.
+ * @member {String} legal_contact_id
+ */
+
+_Customer["default"].prototype['legal_contact_id'] = undefined;
+/**
+ * The name of the customer, generally the company name.
+ * @member {String} name
+ */
+
+_Customer["default"].prototype['name'] = undefined;
+/**
+ * The alphanumeric string identifying the account owner.
+ * @member {String} owner_id
+ */
+
+_Customer["default"].prototype['owner_id'] = undefined;
+/**
+ * The phone number associated with the account.
+ * @member {String} phone_number
+ */
+
+_Customer["default"].prototype['phone_number'] = undefined;
+/**
+ * The postal address associated with the account.
+ * @member {String} postal_address
+ */
+
+_Customer["default"].prototype['postal_address'] = undefined;
+/**
+ * The pricing plan this customer is under.
+ * @member {String} pricing_plan
+ */
+
+_Customer["default"].prototype['pricing_plan'] = undefined;
+/**
+ * The alphanumeric string identifying the pricing plan.
+ * @member {String} pricing_plan_id
+ */
+
+_Customer["default"].prototype['pricing_plan_id'] = undefined;
+/**
+ * The alphanumeric string identifying the account's security contact.
+ * @member {String} security_contact_id
+ */
+
+_Customer["default"].prototype['security_contact_id'] = undefined;
+/**
+ * The alphanumeric string identifying the account's technical contact.
+ * @member {String} technical_contact_id
+ */
+
+_Customer["default"].prototype['technical_contact_id'] = undefined; // Implement Timestamps interface:
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+
+_Timestamps["default"].prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+
+_Timestamps["default"].prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+
+_Timestamps["default"].prototype['updated_at'] = undefined; // Implement CustomerResponseAllOf interface:
+
+/**
+ * Alphanumeric string identifying the customer.
+ * @member {String} id
+ */
+
+_CustomerResponseAllOf["default"].prototype['id'] = undefined;
 /**
  * Allowed values for the <code>billing_network_type</code> property.
  * @enum {String}

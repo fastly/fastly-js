@@ -34,9 +34,15 @@ var InvitationResponseData = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>InvitationResponseData</code>.
    * @alias module:model/InvitationResponseData
+   * @implements module:model/InvitationData
+   * @implements module:model/InvitationResponseDataAllOf
    */
   function InvitationResponseData() {
     _classCallCheck(this, InvitationResponseData);
+
+    _InvitationData["default"].initialize(this);
+
+    _InvitationResponseDataAllOf["default"].initialize(this);
 
     InvitationResponseData.initialize(this);
   }
@@ -64,16 +70,20 @@ var InvitationResponseData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new InvitationResponseData();
 
+        _InvitationData["default"].constructFromObject(data, obj);
+
+        _InvitationResponseDataAllOf["default"].constructFromObject(data, obj);
+
+        if (data.hasOwnProperty('type')) {
+          obj['type'] = _TypeInvitation["default"].constructFromObject(data['type']);
+        }
+
         if (data.hasOwnProperty('attributes')) {
           obj['attributes'] = _Timestamps["default"].constructFromObject(data['attributes']);
         }
 
         if (data.hasOwnProperty('relationships')) {
           obj['relationships'] = _RelationshipsForInvitation["default"].constructFromObject(data['relationships']);
-        }
-
-        if (data.hasOwnProperty('type')) {
-          obj['type'] = _TypeInvitation["default"].constructFromObject(data['type']);
         }
 
         if (data.hasOwnProperty('id')) {
@@ -88,9 +98,14 @@ var InvitationResponseData = /*#__PURE__*/function () {
   return InvitationResponseData;
 }();
 /**
- * @member {module:model/Timestamps} attributes
+ * @member {module:model/TypeInvitation} type
  */
 
+
+InvitationResponseData.prototype['type'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
 
 InvitationResponseData.prototype['attributes'] = undefined;
 /**
@@ -99,15 +114,43 @@ InvitationResponseData.prototype['attributes'] = undefined;
 
 InvitationResponseData.prototype['relationships'] = undefined;
 /**
+ * Alphanumeric string identifying an invitation.
+ * @member {String} id
+ */
+
+InvitationResponseData.prototype['id'] = undefined; // Implement InvitationData interface:
+
+/**
  * @member {module:model/TypeInvitation} type
  */
 
-InvitationResponseData.prototype['type'] = undefined;
+_InvitationData["default"].prototype['type'] = undefined;
+/**
+ * @member {module:model/InvitationDataAttributes} attributes
+ */
+
+_InvitationData["default"].prototype['attributes'] = undefined;
+/**
+ * @member {module:model/RelationshipServiceInvitationsCreate} relationships
+ */
+
+_InvitationData["default"].prototype['relationships'] = undefined; // Implement InvitationResponseDataAllOf interface:
+
 /**
  * Alphanumeric string identifying an invitation.
  * @member {String} id
  */
 
-InvitationResponseData.prototype['id'] = undefined;
+_InvitationResponseDataAllOf["default"].prototype['id'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+
+_InvitationResponseDataAllOf["default"].prototype['attributes'] = undefined;
+/**
+ * @member {module:model/RelationshipsForInvitation} relationships
+ */
+
+_InvitationResponseDataAllOf["default"].prototype['relationships'] = undefined;
 var _default = InvitationResponseData;
 exports["default"] = _default;

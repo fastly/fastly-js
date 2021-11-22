@@ -58,12 +58,12 @@ var TlsDnsRecord = /*#__PURE__*/function () {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
 
-        if (data.hasOwnProperty('record_type')) {
-          obj['record_type'] = _ApiClient["default"].convertToType(data['record_type'], 'String');
-        }
-
         if (data.hasOwnProperty('region')) {
           obj['region'] = _ApiClient["default"].convertToType(data['region'], 'String');
+        }
+
+        if (data.hasOwnProperty('record_type')) {
+          obj['record_type'] = _ApiClient["default"].convertToType(data['record_type'], 'String');
         }
       }
 
@@ -81,16 +81,16 @@ var TlsDnsRecord = /*#__PURE__*/function () {
 
 TlsDnsRecord.prototype['id'] = undefined;
 /**
- * The type of the DNS record. `A` specifies an IPv4 address to be used for an A record to be used for apex domains (e.g., `example.com`). `AAAA` specifies an IPv6 address for use in an A record for apex domains. `CNAME` specifies the hostname to be used for a CNAME record for subdomains or wildcard domains (e.g., `www.example.com` or `*.example.com`).
- * @member {String} record_type
- */
-
-TlsDnsRecord.prototype['record_type'] = undefined;
-/**
  * Specifies the regions that will be used to route traffic. Select DNS Records with a `global` region to route traffic to the most performant point of presence (POP) worldwide (global pricing will apply). Select DNS records with a `us-eu` region to exclusively land traffic on North American and European POPs.
  * @member {String} region
  */
 
 TlsDnsRecord.prototype['region'] = undefined;
+/**
+ * The type of the DNS record. `A` specifies an IPv4 address to be used for an A record to be used for apex domains (e.g., `example.com`). `AAAA` specifies an IPv6 address for use in an A record for apex domains. `CNAME` specifies the hostname to be used for a CNAME record for subdomains or wildcard domains (e.g., `www.example.com` or `*.example.com`).
+ * @member {String} record_type
+ */
+
+TlsDnsRecord.prototype['record_type'] = undefined;
 var _default = TlsDnsRecord;
 exports["default"] = _default;

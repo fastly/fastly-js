@@ -1,6 +1,5 @@
 # Fastly.RequestSettingsApi
 
-
 ```javascript
 const apiInstance = new Fastly.RequestSettingsApi();
 ```
@@ -13,7 +12,6 @@ Method | Fastly API endpoint | Description
 [**getRequestSettings**](RequestSettingsApi.md#getRequestSettings) | **GET** /service/{service_id}/version/{version_id}/request_settings/{request_settings_name} | Get a Request Settings object
 [**listRequestSettings**](RequestSettingsApi.md#listRequestSettings) | **GET** /service/{service_id}/version/{version_id}/request_settings | List Request Settings objects
 [**updateRequestSettings**](RequestSettingsApi.md#updateRequestSettings) | **PUT** /service/{service_id}/version/{version_id}/request_settings/{request_settings_name} | Update a Request Settings object
-
 
 
 ## `createRequestSettings`
@@ -34,7 +32,7 @@ const options = {
 
 apiInstance.createRequestSettings(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -45,8 +43,8 @@ apiInstance.createRequestSettings(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -72,7 +70,7 @@ const options = {
 
 apiInstance.deleteRequestSettings(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -83,9 +81,9 @@ apiInstance.deleteRequestSettings(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**request_settings_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**request_settings_name** | **String** | Name for the request settings. |
 
 ### Return type
 
@@ -111,7 +109,7 @@ const options = {
 
 apiInstance.getRequestSettings(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -122,9 +120,9 @@ apiInstance.getRequestSettings(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**request_settings_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**request_settings_name** | **String** | Name for the request settings. |
 
 ### Return type
 
@@ -149,7 +147,7 @@ const options = {
 
 apiInstance.listRequestSettings(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -160,8 +158,8 @@ apiInstance.listRequestSettings(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -171,7 +169,7 @@ Name | Type | Description  | Notes
 ## `updateRequestSettings`
 
 ```javascript
-updateRequestSettings({ service_id, version_id, request_settings_name, [action, ], [bypass_busy_wait, ], [default_host, ], [force_miss, ], [force_ssl, ], [geo_headers, ], [hash_keys, ], [max_stale_age, ], [name, ], [request_condition, ], [timer_support, ], [xff] })
+updateRequestSettings({ service_id, version_id, request_settings_name, [action, ][bypass_busy_wait, ][default_host, ][force_miss, ][force_ssl, ][geo_headers, ][hash_keys, ][max_stale_age, ][name, ][request_condition, ][timer_support, ][xff] })
 ```
 
 Updates the specified Request Settings object.
@@ -183,7 +181,7 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   request_settings_name: "request_settings_name_example", // required
-  action: "action_example",
+  action: "lookup",
   bypass_busy_wait: 56,
   default_host: "default_host_example",
   force_miss: 56,
@@ -194,12 +192,12 @@ const options = {
   name: "name_example",
   request_condition: "request_condition_example",
   timer_support: 56,
-  xff: "xff_example",
+  xff: "clear",
 };
 
 apiInstance.updateRequestSettings(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -210,10 +208,10 @@ apiInstance.updateRequestSettings(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**request_settings_name** | **String** |  |
-**action** | **String** | Allows you to terminate request handling and immediately perform an action. | [optional]
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**request_settings_name** | **String** | Name for the request settings. |
+**action** | **String** | Allows you to terminate request handling and immediately perform an action. | [optional] [one of: "lookup", "pass"]
 **bypass_busy_wait** | **Number** | Disable collapsed forwarding, so you don&#39;t wait for other objects to origin. | [optional]
 **default_host** | **String** | Sets the host header. | [optional]
 **force_miss** | **Number** | Allows you to force a cache miss for the request. Replaces the item in the cache if the content is cacheable. | [optional]
@@ -224,7 +222,7 @@ Name | Type | Description  | Notes
 **name** | **String** | Name for the request settings. | [optional]
 **request_condition** | **String** | Condition which, if met, will select this configuration during a request. Optional. | [optional]
 **timer_support** | **Number** | Injects the X-Timer info into the request for viewing origin fetch durations. | [optional]
-**xff** | **String** | Short for X-Forwarded-For. | [optional]
+**xff** | **String** | Short for X-Forwarded-For. | [optional] [one of: "clear", "leave", "append", "append_all", "overwrite"]
 
 ### Return type
 

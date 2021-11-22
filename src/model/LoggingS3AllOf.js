@@ -24,6 +24,7 @@ class LoggingS3AllOf {
      * @alias module:model/LoggingS3AllOf
      */
     constructor() { 
+        
         LoggingS3AllOf.initialize(this);
     }
 
@@ -73,11 +74,11 @@ class LoggingS3AllOf {
             if (data.hasOwnProperty('secret_key')) {
                 obj['secret_key'] = ApiClient.convertToType(data['secret_key'], 'String');
             }
-            if (data.hasOwnProperty('server_side_encryption')) {
-                obj['server_side_encryption'] = ApiClient.convertToType(data['server_side_encryption'], 'String');
-            }
             if (data.hasOwnProperty('server_side_encryption_kms_key_id')) {
                 obj['server_side_encryption_kms_key_id'] = ApiClient.convertToType(data['server_side_encryption_kms_key_id'], 'String');
+            }
+            if (data.hasOwnProperty('server_side_encryption')) {
+                obj['server_side_encryption'] = ApiClient.convertToType(data['server_side_encryption'], 'String');
             }
         }
         return obj;
@@ -144,18 +145,18 @@ LoggingS3AllOf.prototype['redundancy'] = 'null';
 LoggingS3AllOf.prototype['secret_key'] = undefined;
 
 /**
- * Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption.
- * @member {String} server_side_encryption
- * @default 'null'
- */
-LoggingS3AllOf.prototype['server_side_encryption'] = 'null';
-
-/**
  * Optional server-side KMS Key Id. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`.
  * @member {String} server_side_encryption_kms_key_id
  * @default 'null'
  */
 LoggingS3AllOf.prototype['server_side_encryption_kms_key_id'] = 'null';
+
+/**
+ * Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption.
+ * @member {String} server_side_encryption
+ * @default 'null'
+ */
+LoggingS3AllOf.prototype['server_side_encryption'] = 'null';
 
 
 

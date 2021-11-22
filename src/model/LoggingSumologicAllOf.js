@@ -25,6 +25,7 @@ class LoggingSumologicAllOf {
      * @alias module:model/LoggingSumologicAllOf
      */
     constructor() { 
+        
         LoggingSumologicAllOf.initialize(this);
     }
 

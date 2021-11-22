@@ -28,8 +28,11 @@ class WafActiveRuleCreationResponse {
     /**
      * Constructs a new <code>WafActiveRuleCreationResponse</code>.
      * @alias module:model/WafActiveRuleCreationResponse
+     * @implements module:model/WafActiveRuleResponse
+     * @implements module:model/WafActiveRulesResponse
      */
     constructor() { 
+        WafActiveRuleResponse.initialize(this);WafActiveRulesResponse.initialize(this);
         WafActiveRuleCreationResponse.initialize(this);
     }
 
@@ -51,6 +54,8 @@ class WafActiveRuleCreationResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafActiveRuleCreationResponse();
+            WafActiveRuleResponse.constructFromObject(data, obj);
+            WafActiveRulesResponse.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], [WafActiveRuleResponseData]);
@@ -92,6 +97,28 @@ WafActiveRuleCreationResponse.prototype['meta'] = undefined;
 WafActiveRuleCreationResponse.prototype['included'] = undefined;
 
 
+// Implement WafActiveRuleResponse interface:
+/**
+ * @member {module:model/WafActiveRuleResponseData} data
+ */
+WafActiveRuleResponse.prototype['data'] = undefined;
+// Implement WafActiveRulesResponse interface:
+/**
+ * @member {module:model/PaginationLinks} links
+ */
+WafActiveRulesResponse.prototype['links'] = undefined;
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
+WafActiveRulesResponse.prototype['meta'] = undefined;
+/**
+ * @member {Array.<module:model/WafActiveRuleResponseData>} data
+ */
+WafActiveRulesResponse.prototype['data'] = undefined;
+/**
+ * @member {Array.<module:model/IncludedWithWafActiveRuleItem>} included
+ */
+WafActiveRulesResponse.prototype['included'] = undefined;
 
 
 

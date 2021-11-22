@@ -46,8 +46,8 @@ var WafFirewallVersionsApi = /*#__PURE__*/function () {
   /**
    * Clone a specific, existing firewall version into a new, draft firewall version.
    * @param {Object} options
-   * @param {String} options.firewall_id
-   * @param {Number} options.firewall_version_number
+   * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+   * @param {Number} options.firewall_version_number - Integer identifying a WAF firewall version.
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafFirewallVersionResponse} and HTTP response
    */
 
@@ -83,8 +83,8 @@ var WafFirewallVersionsApi = /*#__PURE__*/function () {
     /**
      * Clone a specific, existing firewall version into a new, draft firewall version.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.firewall_version_number
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.firewall_version_number - Integer identifying a WAF firewall version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafFirewallVersionResponse}
      */
 
@@ -99,7 +99,7 @@ var WafFirewallVersionsApi = /*#__PURE__*/function () {
     /**
      * Create a new, draft firewall version.
      * @param {Object} options
-     * @param {String} options.firewall_id
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
      * @param {module:model/WafFirewallVersion} [options.waf_firewall_version]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafFirewallVersionResponse} and HTTP response
      */
@@ -129,7 +129,7 @@ var WafFirewallVersionsApi = /*#__PURE__*/function () {
     /**
      * Create a new, draft firewall version.
      * @param {Object} options
-     * @param {String} options.firewall_id
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
      * @param {module:model/WafFirewallVersion} [options.waf_firewall_version]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafFirewallVersionResponse}
      */
@@ -145,8 +145,8 @@ var WafFirewallVersionsApi = /*#__PURE__*/function () {
     /**
      * Deploy or activate a specific firewall version. If a firewall has been disabled, deploying a firewall version will automatically enable the firewall again.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.firewall_version_number
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.firewall_version_number - Integer identifying a WAF firewall version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
 
@@ -181,8 +181,8 @@ var WafFirewallVersionsApi = /*#__PURE__*/function () {
     /**
      * Deploy or activate a specific firewall version. If a firewall has been disabled, deploying a firewall version will automatically enable the firewall again.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.firewall_version_number
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.firewall_version_number - Integer identifying a WAF firewall version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
 
@@ -197,8 +197,8 @@ var WafFirewallVersionsApi = /*#__PURE__*/function () {
     /**
      * Get details about a specific firewall version.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.firewall_version_number
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.firewall_version_number - Integer identifying a WAF firewall version.
      * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_firewall` and `waf_active_rules`. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafFirewallVersionResponse} and HTTP response
      */
@@ -236,8 +236,8 @@ var WafFirewallVersionsApi = /*#__PURE__*/function () {
     /**
      * Get details about a specific firewall version.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.firewall_version_number
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.firewall_version_number - Integer identifying a WAF firewall version.
      * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_firewall` and `waf_active_rules`. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafFirewallVersionResponse}
      */
@@ -253,7 +253,7 @@ var WafFirewallVersionsApi = /*#__PURE__*/function () {
     /**
      * Get a list of firewall versions associated with a specific firewall.
      * @param {Object} options
-     * @param {String} options.firewall_id
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
      * @param {String} [options.include] - Include relationships. Optional.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
@@ -289,7 +289,7 @@ var WafFirewallVersionsApi = /*#__PURE__*/function () {
     /**
      * Get a list of firewall versions associated with a specific firewall.
      * @param {Object} options
-     * @param {String} options.firewall_id
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
      * @param {String} [options.include] - Include relationships. Optional.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
@@ -307,8 +307,8 @@ var WafFirewallVersionsApi = /*#__PURE__*/function () {
     /**
      * Update a specific firewall version.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.firewall_version_number
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.firewall_version_number - Integer identifying a WAF firewall version.
      * @param {module:model/WafFirewallVersion} [options.waf_firewall_version]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafFirewallVersionResponse} and HTTP response
      */
@@ -344,8 +344,8 @@ var WafFirewallVersionsApi = /*#__PURE__*/function () {
     /**
      * Update a specific firewall version.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.firewall_version_number
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.firewall_version_number - Integer identifying a WAF firewall version.
      * @param {module:model/WafFirewallVersion} [options.waf_firewall_version]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafFirewallVersionResponse}
      */

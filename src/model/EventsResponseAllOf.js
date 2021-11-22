@@ -25,6 +25,7 @@ class EventsResponseAllOf {
      * @alias module:model/EventsResponseAllOf
      */
     constructor() { 
+        
         EventsResponseAllOf.initialize(this);
     }
 

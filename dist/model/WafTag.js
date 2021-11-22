@@ -58,16 +58,16 @@ var WafTag = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new WafTag();
 
-        if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _WafTagAttributes["default"].constructFromObject(data['attributes']);
+        if (data.hasOwnProperty('type')) {
+          obj['type'] = _TypeWafTag["default"].constructFromObject(data['type']);
         }
 
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
 
-        if (data.hasOwnProperty('type')) {
-          obj['type'] = _TypeWafTag["default"].constructFromObject(data['type']);
+        if (data.hasOwnProperty('attributes')) {
+          obj['attributes'] = _WafTagAttributes["default"].constructFromObject(data['attributes']);
         }
       }
 
@@ -78,11 +78,11 @@ var WafTag = /*#__PURE__*/function () {
   return WafTag;
 }();
 /**
- * @member {module:model/WafTagAttributes} attributes
+ * @member {module:model/TypeWafTag} type
  */
 
 
-WafTag.prototype['attributes'] = undefined;
+WafTag.prototype['type'] = undefined;
 /**
  * Alphanumeric string identifying a WAF tag.
  * @member {String} id
@@ -90,9 +90,9 @@ WafTag.prototype['attributes'] = undefined;
 
 WafTag.prototype['id'] = undefined;
 /**
- * @member {module:model/TypeWafTag} type
+ * @member {module:model/WafTagAttributes} attributes
  */
 
-WafTag.prototype['type'] = undefined;
+WafTag.prototype['attributes'] = undefined;
 var _default = WafTag;
 exports["default"] = _default;

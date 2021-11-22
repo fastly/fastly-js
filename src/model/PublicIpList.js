@@ -24,6 +24,7 @@ class PublicIpList {
      * @alias module:model/PublicIpList
      */
     constructor() { 
+        
         PublicIpList.initialize(this);
     }
 

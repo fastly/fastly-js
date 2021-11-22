@@ -26,8 +26,11 @@ class IncludedWithWafExclusionItem {
     /**
      * Constructs a new <code>IncludedWithWafExclusionItem</code>.
      * @alias module:model/IncludedWithWafExclusionItem
+     * @implements module:model/WafRule
+     * @implements module:model/WafRuleRevision
      */
     constructor() { 
+        WafRule.initialize(this);WafRuleRevision.initialize(this);
         IncludedWithWafExclusionItem.initialize(this);
     }
 
@@ -49,15 +52,17 @@ class IncludedWithWafExclusionItem {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new IncludedWithWafExclusionItem();
+            WafRule.constructFromObject(data, obj);
+            WafRuleRevision.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = WafRuleRevisionAttributes.constructFromObject(data['attributes']);
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeWafRuleRevision.constructFromObject(data['type']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeWafRuleRevision.constructFromObject(data['type']);
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = WafRuleRevisionAttributes.constructFromObject(data['attributes']);
             }
         }
         return obj;
@@ -67,9 +72,9 @@ class IncludedWithWafExclusionItem {
 }
 
 /**
- * @member {module:model/WafRuleRevisionAttributes} attributes
+ * @member {module:model/TypeWafRuleRevision} type
  */
-IncludedWithWafExclusionItem.prototype['attributes'] = undefined;
+IncludedWithWafExclusionItem.prototype['type'] = undefined;
 
 /**
  * Alphanumeric string identifying a WAF rule revision.
@@ -78,11 +83,39 @@ IncludedWithWafExclusionItem.prototype['attributes'] = undefined;
 IncludedWithWafExclusionItem.prototype['id'] = undefined;
 
 /**
+ * @member {module:model/WafRuleRevisionAttributes} attributes
+ */
+IncludedWithWafExclusionItem.prototype['attributes'] = undefined;
+
+
+// Implement WafRule interface:
+/**
+ * @member {module:model/TypeWafRule} type
+ */
+WafRule.prototype['type'] = undefined;
+/**
+ * Alphanumeric string identifying a WAF rule.
+ * @member {String} id
+ */
+WafRule.prototype['id'] = undefined;
+/**
+ * @member {module:model/WafRuleAttributes} attributes
+ */
+WafRule.prototype['attributes'] = undefined;
+// Implement WafRuleRevision interface:
+/**
  * @member {module:model/TypeWafRuleRevision} type
  */
-IncludedWithWafExclusionItem.prototype['type'] = undefined;
-
-
+WafRuleRevision.prototype['type'] = undefined;
+/**
+ * Alphanumeric string identifying a WAF rule revision.
+ * @member {String} id
+ */
+WafRuleRevision.prototype['id'] = undefined;
+/**
+ * @member {module:model/WafRuleRevisionAttributes} attributes
+ */
+WafRuleRevision.prototype['attributes'] = undefined;
 
 
 

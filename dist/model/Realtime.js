@@ -56,16 +56,16 @@ var Realtime = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new Realtime();
 
+        if (data.hasOwnProperty('Timestamp')) {
+          obj['Timestamp'] = _ApiClient["default"].convertToType(data['Timestamp'], 'Number');
+        }
+
         if (data.hasOwnProperty('AggregateDelay')) {
           obj['AggregateDelay'] = _ApiClient["default"].convertToType(data['AggregateDelay'], 'Number');
         }
 
         if (data.hasOwnProperty('Data')) {
           obj['Data'] = _ApiClient["default"].convertToType(data['Data'], [_RealtimeEntry["default"]]);
-        }
-
-        if (data.hasOwnProperty('Timestamp')) {
-          obj['Timestamp'] = _ApiClient["default"].convertToType(data['Timestamp'], 'Number');
         }
       }
 
@@ -76,10 +76,15 @@ var Realtime = /*#__PURE__*/function () {
   return Realtime;
 }();
 /**
+ * @member {Number} Timestamp
+ */
+
+
+Realtime.prototype['Timestamp'] = undefined;
+/**
  * How long the system will wait before aggregating messages for each second. The most recent data returned will have happened at the moment of the request, minus the aggregation delay.
  * @member {Number} AggregateDelay
  */
-
 
 Realtime.prototype['AggregateDelay'] = undefined;
 /**
@@ -88,10 +93,5 @@ Realtime.prototype['AggregateDelay'] = undefined;
  */
 
 Realtime.prototype['Data'] = undefined;
-/**
- * @member {Number} Timestamp
- */
-
-Realtime.prototype['Timestamp'] = undefined;
 var _default = Realtime;
 exports["default"] = _default;

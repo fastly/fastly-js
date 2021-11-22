@@ -30,9 +30,18 @@ var VclResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>VclResponse</code>.
    * @alias module:model/VclResponse
+   * @implements module:model/Vcl
+   * @implements module:model/ServiceIdAndVersion
+   * @implements module:model/Timestamps
    */
   function VclResponse() {
     _classCallCheck(this, VclResponse);
+
+    _Vcl["default"].initialize(this);
+
+    _ServiceIdAndVersion["default"].initialize(this);
+
+    _Timestamps["default"].initialize(this);
 
     VclResponse.initialize(this);
   }
@@ -59,6 +68,12 @@ var VclResponse = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new VclResponse();
+
+        _Vcl["default"].constructFromObject(data, obj);
+
+        _ServiceIdAndVersion["default"].constructFromObject(data, obj);
+
+        _Timestamps["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('content')) {
           obj['content'] = _ApiClient["default"].convertToType(data['content'], 'String');
@@ -147,6 +162,57 @@ VclResponse.prototype['deleted_at'] = undefined;
  * @member {String} updated_at
  */
 
-VclResponse.prototype['updated_at'] = undefined;
+VclResponse.prototype['updated_at'] = undefined; // Implement Vcl interface:
+
+/**
+ * The VCL code to be included.
+ * @member {String} content
+ */
+
+_Vcl["default"].prototype['content'] = undefined;
+/**
+ * Set to `true` when this is the main VCL, otherwise `false`.
+ * @member {Boolean} main
+ */
+
+_Vcl["default"].prototype['main'] = undefined;
+/**
+ * The name of this VCL.
+ * @member {String} name
+ */
+
+_Vcl["default"].prototype['name'] = undefined; // Implement ServiceIdAndVersion interface:
+
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+
+_ServiceIdAndVersion["default"].prototype['service_id'] = undefined;
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
+
+_ServiceIdAndVersion["default"].prototype['version'] = undefined; // Implement Timestamps interface:
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+
+_Timestamps["default"].prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+
+_Timestamps["default"].prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+
+_Timestamps["default"].prototype['updated_at'] = undefined;
 var _default = VclResponse;
 exports["default"] = _default;

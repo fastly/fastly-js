@@ -24,6 +24,7 @@ class AclResponseAllOf {
      * @alias module:model/AclResponseAllOf
      */
     constructor() { 
+        
         AclResponseAllOf.initialize(this);
     }
 

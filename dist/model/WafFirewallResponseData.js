@@ -34,9 +34,15 @@ var WafFirewallResponseData = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>WafFirewallResponseData</code>.
    * @alias module:model/WafFirewallResponseData
+   * @implements module:model/WafFirewallData
+   * @implements module:model/WafFirewallResponseDataAllOf
    */
   function WafFirewallResponseData() {
     _classCallCheck(this, WafFirewallResponseData);
+
+    _WafFirewallData["default"].initialize(this);
+
+    _WafFirewallResponseDataAllOf["default"].initialize(this);
 
     WafFirewallResponseData.initialize(this);
   }
@@ -64,12 +70,16 @@ var WafFirewallResponseData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new WafFirewallResponseData();
 
-        if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _ApiClient["default"].convertToType(data['attributes'], _Timestamps["default"]);
-        }
+        _WafFirewallData["default"].constructFromObject(data, obj);
+
+        _WafFirewallResponseDataAllOf["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('type')) {
           obj['type'] = _TypeWafFirewall["default"].constructFromObject(data['type']);
+        }
+
+        if (data.hasOwnProperty('attributes')) {
+          obj['attributes'] = _ApiClient["default"].convertToType(data['attributes'], _Timestamps["default"]);
         }
 
         if (data.hasOwnProperty('id')) {
@@ -88,16 +98,16 @@ var WafFirewallResponseData = /*#__PURE__*/function () {
   return WafFirewallResponseData;
 }();
 /**
- * @member {module:model/Timestamps} attributes
- */
-
-
-WafFirewallResponseData.prototype['attributes'] = undefined;
-/**
  * @member {module:model/TypeWafFirewall} type
  */
 
+
 WafFirewallResponseData.prototype['type'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+
+WafFirewallResponseData.prototype['attributes'] = undefined;
 /**
  * Alphanumeric string identifying a WAF Firewall.
  * @member {String} id
@@ -108,6 +118,34 @@ WafFirewallResponseData.prototype['id'] = undefined;
  * @member {module:model/RelationshipWafFirewallVersions} relationships
  */
 
-WafFirewallResponseData.prototype['relationships'] = undefined;
+WafFirewallResponseData.prototype['relationships'] = undefined; // Implement WafFirewallData interface:
+
+/**
+ * @member {module:model/TypeWafFirewall} type
+ */
+
+_WafFirewallData["default"].prototype['type'] = undefined;
+/**
+ * @member {module:model/WafFirewallDataAttributes} attributes
+ */
+
+_WafFirewallData["default"].prototype['attributes'] = undefined; // Implement WafFirewallResponseDataAllOf interface:
+
+/**
+ * Alphanumeric string identifying a WAF Firewall.
+ * @member {String} id
+ */
+
+_WafFirewallResponseDataAllOf["default"].prototype['id'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+
+_WafFirewallResponseDataAllOf["default"].prototype['attributes'] = undefined;
+/**
+ * @member {module:model/RelationshipWafFirewallVersions} relationships
+ */
+
+_WafFirewallResponseDataAllOf["default"].prototype['relationships'] = undefined;
 var _default = WafFirewallResponseData;
 exports["default"] = _default;

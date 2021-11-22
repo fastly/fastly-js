@@ -1,6 +1,5 @@
 # Fastly.HealthcheckApi
 
-
 ```javascript
 const apiInstance = new Fastly.HealthcheckApi();
 ```
@@ -15,11 +14,10 @@ Method | Fastly API endpoint | Description
 [**updateHealthcheck**](HealthcheckApi.md#updateHealthcheck) | **PUT** /service/{service_id}/version/{version_id}/healthcheck/{healthcheck_name} | Update a healthcheck
 
 
-
 ## `createHealthcheck`
 
 ```javascript
-createHealthcheck({ service_id, version_id, [check_interval, ], [comment, ], [expected_response, ], [host, ], [http_version, ], [initial, ], [method, ], [name, ], [path, ], [threshold, ], [timeout, ], [window] })
+createHealthcheck({ service_id, version_id, [check_interval, ][comment, ][expected_response, ][host, ][http_version, ][initial, ][method, ][name, ][path, ][threshold, ][timeout, ][window] })
 ```
 
 Create a healthcheck for a particular service and version.
@@ -46,7 +44,7 @@ const options = {
 
 apiInstance.createHealthcheck(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -57,8 +55,8 @@ apiInstance.createHealthcheck(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 **check_interval** | **Number** | How often to run the healthcheck in milliseconds. | [optional]
 **comment** | **String** | A freeform descriptive note. | [optional]
 **expected_response** | **Number** | The status code expected from the host. | [optional]
@@ -96,7 +94,7 @@ const options = {
 
 apiInstance.deleteHealthcheck(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -107,9 +105,9 @@ apiInstance.deleteHealthcheck(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**healthcheck_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**healthcheck_name** | **String** | The name of the healthcheck. |
 
 ### Return type
 
@@ -135,7 +133,7 @@ const options = {
 
 apiInstance.getHealthcheck(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -146,9 +144,9 @@ apiInstance.getHealthcheck(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**healthcheck_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**healthcheck_name** | **String** | The name of the healthcheck. |
 
 ### Return type
 
@@ -173,7 +171,7 @@ const options = {
 
 apiInstance.listHealthchecks(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -184,8 +182,8 @@ apiInstance.listHealthchecks(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -195,7 +193,7 @@ Name | Type | Description  | Notes
 ## `updateHealthcheck`
 
 ```javascript
-updateHealthcheck({ service_id, version_id, healthcheck_name, [check_interval, ], [comment, ], [expected_response, ], [host, ], [http_version, ], [initial, ], [method, ], [name, ], [path, ], [threshold, ], [timeout, ], [window] })
+updateHealthcheck({ service_id, version_id, healthcheck_name, [check_interval, ][comment, ][expected_response, ][host, ][http_version, ][initial, ][method, ][name, ][path, ][threshold, ][timeout, ][window] })
 ```
 
 Update the healthcheck for a particular service and version.
@@ -223,7 +221,7 @@ const options = {
 
 apiInstance.updateHealthcheck(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -234,9 +232,9 @@ apiInstance.updateHealthcheck(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**healthcheck_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**healthcheck_name** | **String** | The name of the healthcheck. |
 **check_interval** | **Number** | How often to run the healthcheck in milliseconds. | [optional]
 **comment** | **String** | A freeform descriptive note. | [optional]
 **expected_response** | **Number** | The status code expected from the host. | [optional]

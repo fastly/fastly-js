@@ -19,21 +19,21 @@ var _GzipResponse = _interopRequireDefault(require("./GzipResponse"));
 
 var _HeaderResponse = _interopRequireDefault(require("./HeaderResponse"));
 
-var _HealthcheckResponse = _interopRequireDefault(require("./HealthcheckResponse"));
+var _RequestSettingsResponse = _interopRequireDefault(require("./RequestSettingsResponse"));
+
+var _ResponseObjectResponse = _interopRequireDefault(require("./ResponseObjectResponse"));
 
 var _SchemasDirector = _interopRequireDefault(require("./SchemasDirector"));
 
-var _SchemasRequestSettingsResponse = _interopRequireDefault(require("./SchemasRequestSettingsResponse"));
-
-var _SchemasResponseObjectResponse = _interopRequireDefault(require("./SchemasResponseObjectResponse"));
-
-var _SchemasSnippetResponse = _interopRequireDefault(require("./SchemasSnippetResponse"));
+var _SchemasHealthcheckResponse = _interopRequireDefault(require("./SchemasHealthcheckResponse"));
 
 var _SchemasVclResponse = _interopRequireDefault(require("./SchemasVclResponse"));
 
 var _SchemasVersionResponse = _interopRequireDefault(require("./SchemasVersionResponse"));
 
 var _Settings = _interopRequireDefault(require("./Settings"));
+
+var _SnippetResponse = _interopRequireDefault(require("./SnippetResponse"));
 
 var _VersionDetail = _interopRequireDefault(require("./VersionDetail"));
 
@@ -54,9 +54,15 @@ var NestedVersion = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>NestedVersion</code>.
    * @alias module:model/NestedVersion
+   * @implements module:model/SchemasVersionResponse
+   * @implements module:model/VersionDetail
    */
   function NestedVersion() {
     _classCallCheck(this, NestedVersion);
+
+    _SchemasVersionResponse["default"].initialize(this);
+
+    _VersionDetail["default"].initialize(this);
 
     NestedVersion.initialize(this);
   }
@@ -83,6 +89,10 @@ var NestedVersion = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new NestedVersion();
+
+        _SchemasVersionResponse["default"].constructFromObject(data, obj);
+
+        _VersionDetail["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('active')) {
           obj['active'] = _ApiClient["default"].convertToType(data['active'], 'Boolean');
@@ -157,15 +167,15 @@ var NestedVersion = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('healthchecks')) {
-          obj['healthchecks'] = _ApiClient["default"].convertToType(data['healthchecks'], [_HealthcheckResponse["default"]]);
+          obj['healthchecks'] = _ApiClient["default"].convertToType(data['healthchecks'], [_SchemasHealthcheckResponse["default"]]);
         }
 
         if (data.hasOwnProperty('request_settings')) {
-          obj['request_settings'] = _ApiClient["default"].convertToType(data['request_settings'], [_SchemasRequestSettingsResponse["default"]]);
+          obj['request_settings'] = _ApiClient["default"].convertToType(data['request_settings'], [_RequestSettingsResponse["default"]]);
         }
 
         if (data.hasOwnProperty('response_objects')) {
-          obj['response_objects'] = _ApiClient["default"].convertToType(data['response_objects'], [_SchemasResponseObjectResponse["default"]]);
+          obj['response_objects'] = _ApiClient["default"].convertToType(data['response_objects'], [_ResponseObjectResponse["default"]]);
         }
 
         if (data.hasOwnProperty('settings')) {
@@ -173,7 +183,7 @@ var NestedVersion = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('snippets')) {
-          obj['snippets'] = _ApiClient["default"].convertToType(data['snippets'], [_SchemasSnippetResponse["default"]]);
+          obj['snippets'] = _ApiClient["default"].convertToType(data['snippets'], [_SnippetResponse["default"]]);
         }
 
         if (data.hasOwnProperty('vcls')) {
@@ -306,19 +316,19 @@ NestedVersion.prototype['gzips'] = undefined;
 NestedVersion.prototype['headers'] = undefined;
 /**
  * List of healthchecks associated to this service.
- * @member {Array.<module:model/HealthcheckResponse>} healthchecks
+ * @member {Array.<module:model/SchemasHealthcheckResponse>} healthchecks
  */
 
 NestedVersion.prototype['healthchecks'] = undefined;
 /**
  * List of request settings for this service.
- * @member {Array.<module:model/SchemasRequestSettingsResponse>} request_settings
+ * @member {Array.<module:model/RequestSettingsResponse>} request_settings
  */
 
 NestedVersion.prototype['request_settings'] = undefined;
 /**
  * List of response objects for this service.
- * @member {Array.<module:model/SchemasResponseObjectResponse>} response_objects
+ * @member {Array.<module:model/ResponseObjectResponse>} response_objects
  */
 
 NestedVersion.prototype['response_objects'] = undefined;
@@ -329,7 +339,7 @@ NestedVersion.prototype['response_objects'] = undefined;
 NestedVersion.prototype['settings'] = undefined;
 /**
  * List of VCL snippets for this service.
- * @member {Array.<module:model/SchemasSnippetResponse>} snippets
+ * @member {Array.<module:model/SnippetResponse>} snippets
  */
 
 NestedVersion.prototype['snippets'] = undefined;
@@ -344,6 +354,161 @@ NestedVersion.prototype['vcls'] = undefined;
  * @member {Array.<Object>} wordpress
  */
 
-NestedVersion.prototype['wordpress'] = undefined;
+NestedVersion.prototype['wordpress'] = undefined; // Implement SchemasVersionResponse interface:
+
+/**
+ * Whether this is the active version or not.
+ * @member {Boolean} active
+ * @default false
+ */
+
+_SchemasVersionResponse["default"].prototype['active'] = false;
+/**
+ * A freeform descriptive note.
+ * @member {String} comment
+ */
+
+_SchemasVersionResponse["default"].prototype['comment'] = undefined;
+/**
+ * Unused at this time.
+ * @member {Boolean} deployed
+ */
+
+_SchemasVersionResponse["default"].prototype['deployed'] = undefined;
+/**
+ * Whether this version is locked or not. Objects can not be added or edited on locked versions.
+ * @member {Boolean} locked
+ * @default false
+ */
+
+_SchemasVersionResponse["default"].prototype['locked'] = false;
+/**
+ * The number of this version.
+ * @member {Number} number
+ */
+
+_SchemasVersionResponse["default"].prototype['number'] = undefined;
+/**
+ * Unused at this time.
+ * @member {Boolean} staging
+ * @default false
+ */
+
+_SchemasVersionResponse["default"].prototype['staging'] = false;
+/**
+ * Unused at this time.
+ * @member {Boolean} testing
+ * @default false
+ */
+
+_SchemasVersionResponse["default"].prototype['testing'] = false;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+
+_SchemasVersionResponse["default"].prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+
+_SchemasVersionResponse["default"].prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+
+_SchemasVersionResponse["default"].prototype['updated_at'] = undefined;
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+
+_SchemasVersionResponse["default"].prototype['service_id'] = undefined; // Implement VersionDetail interface:
+
+/**
+ * List of backends associated to this service.
+ * @member {Array.<module:model/BackendResponse>} backends
+ */
+
+_VersionDetail["default"].prototype['backends'] = undefined;
+/**
+ * List of cache settings associated to this service.
+ * @member {Array.<module:model/CacheSettingResponse>} cache_settings
+ */
+
+_VersionDetail["default"].prototype['cache_settings'] = undefined;
+/**
+ * List of conditions associated to this service.
+ * @member {Array.<module:model/ConditionResponse>} conditions
+ */
+
+_VersionDetail["default"].prototype['conditions'] = undefined;
+/**
+ * List of directors associated to this service.
+ * @member {Array.<module:model/SchemasDirector>} directors
+ */
+
+_VersionDetail["default"].prototype['directors'] = undefined;
+/**
+ * List of domains associated to this service.
+ * @member {Array.<module:model/DomainResponse>} domains
+ */
+
+_VersionDetail["default"].prototype['domains'] = undefined;
+/**
+ * List of gzip rules associated to this service.
+ * @member {Array.<module:model/GzipResponse>} gzips
+ */
+
+_VersionDetail["default"].prototype['gzips'] = undefined;
+/**
+ * List of headers associated to this service.
+ * @member {Array.<module:model/HeaderResponse>} headers
+ */
+
+_VersionDetail["default"].prototype['headers'] = undefined;
+/**
+ * List of healthchecks associated to this service.
+ * @member {Array.<module:model/SchemasHealthcheckResponse>} healthchecks
+ */
+
+_VersionDetail["default"].prototype['healthchecks'] = undefined;
+/**
+ * List of request settings for this service.
+ * @member {Array.<module:model/RequestSettingsResponse>} request_settings
+ */
+
+_VersionDetail["default"].prototype['request_settings'] = undefined;
+/**
+ * List of response objects for this service.
+ * @member {Array.<module:model/ResponseObjectResponse>} response_objects
+ */
+
+_VersionDetail["default"].prototype['response_objects'] = undefined;
+/**
+ * @member {module:model/Settings} settings
+ */
+
+_VersionDetail["default"].prototype['settings'] = undefined;
+/**
+ * List of VCL snippets for this service.
+ * @member {Array.<module:model/SnippetResponse>} snippets
+ */
+
+_VersionDetail["default"].prototype['snippets'] = undefined;
+/**
+ * List of VCL files for this service.
+ * @member {Array.<module:model/SchemasVclResponse>} vcls
+ */
+
+_VersionDetail["default"].prototype['vcls'] = undefined;
+/**
+ * A list of Wordpress rules with this service.
+ * @member {Array.<Object>} wordpress
+ */
+
+_VersionDetail["default"].prototype['wordpress'] = undefined;
 var _default = NestedVersion;
 exports["default"] = _default;

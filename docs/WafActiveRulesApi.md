@@ -1,6 +1,5 @@
 # Fastly.WafActiveRulesApi
 
-
 ```javascript
 const apiInstance = new Fastly.WafActiveRulesApi();
 ```
@@ -18,7 +17,6 @@ Method | Fastly API endpoint | Description
 [**updateWafActiveRule**](WafActiveRulesApi.md#updateWafActiveRule) | **PATCH** /waf/firewalls/{firewall_id}/versions/{version_id}/active-rules/{waf_rule_id} | Update an active rule
 
 
-
 ## `bulkDeleteWafActiveRules`
 
 ```javascript
@@ -33,7 +31,7 @@ Delete many active rules on a particular firewall version using the active rule 
 const options = {
   firewall_id: "firewall_id_example", // required
   version_id: 56, // required
-  body: null,
+  body: {"data":[{"type":"waf_active_rule","id":"3krg2uUGZzb2W9Euo4moOR"}]},
 };
 
 apiInstance.bulkDeleteWafActiveRules(options)
@@ -49,8 +47,8 @@ apiInstance.bulkDeleteWafActiveRules(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**version_id** | **Number** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**version_id** | **Number** | Integer identifying a service version. |
 **body** | **Object** |  | [optional]
 
 ### Return type
@@ -72,7 +70,7 @@ Bulk update all active rules on a [firewall version](https://developer.fastly.co
 const options = {
   firewall_id: "firewall_id_example", // required
   version_id: 56, // required
-  body: new Fastly.WafActiveRuleData(),
+  body: {"type":"waf_active_rule","attributes":{"revision":"latest"}},
 };
 
 apiInstance.bulkUpdateWafActiveRules(options)
@@ -88,8 +86,8 @@ apiInstance.bulkUpdateWafActiveRules(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**version_id** | **Number** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**version_id** | **Number** | Integer identifying a service version. |
 **body** | **WafActiveRuleData** |  | [optional]
 
 ### Return type
@@ -111,12 +109,12 @@ Create an active rule for a particular firewall version.
 const options = {
   firewall_id: "firewall_id_example", // required
   version_id: 56, // required
-  waf_active_rule: new Fastly.WafActiveRule(),
+  waf_active_rule: {"data":{"type":"waf_active_rule","attributes":{"status":"log"},"relationships":{"waf_rule_revision":{"data":{"type":"waf_rule_revision","id":"r3Vg2uUGZzb2W9Euo4mo0R","examples":null}}}}},
 };
 
 apiInstance.createWafActiveRule(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -127,9 +125,9 @@ apiInstance.createWafActiveRule(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**version_id** | **Number** |  |
-**waf_active_rule** | [**WafActiveRule**](../Model/WafActiveRule.md) |  | [optional]
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**version_id** | **Number** | Integer identifying a service version. |
+**waf_active_rule** | [**WafActiveRule**](WafActiveRule.md) |  | [optional]
 
 ### Return type
 
@@ -151,7 +149,7 @@ const options = {
   firewall_id: "firewall_id_example", // required
   version_id: 56, // required
   waf_tag_name: "waf_tag_name_example", // required
-  waf_active_rule: new Fastly.WafActiveRule(),
+  waf_active_rule: {"data":{"type":"waf_active_rule","attributes":{"status":"log"}}},
 };
 
 apiInstance.createWafActiveRulesTag(options)
@@ -167,10 +165,10 @@ apiInstance.createWafActiveRulesTag(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**version_id** | **Number** |  |
-**waf_tag_name** | **String** |  |
-**waf_active_rule** | [**WafActiveRule**](../Model/WafActiveRule.md) |  | [optional]
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**version_id** | **Number** | Integer identifying a service version. |
+**waf_tag_name** | **String** | Name of the tag. |
+**waf_active_rule** | [**WafActiveRule**](WafActiveRule.md) |  | [optional]
 
 ### Return type
 
@@ -207,9 +205,9 @@ apiInstance.deleteWafActiveRule(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**version_id** | **Number** |  |
-**waf_rule_id** | **String** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**version_id** | **Number** | Integer identifying a service version. |
+**waf_rule_id** | **String** | Alphanumeric string identifying a WAF rule. |
 
 ### Return type
 
@@ -236,7 +234,7 @@ const options = {
 
 apiInstance.getWafActiveRule(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -247,10 +245,10 @@ apiInstance.getWafActiveRule(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**version_id** | **Number** |  |
-**waf_rule_id** | **String** |  |
-**include** | **String** | Include relationships. Optional, comma-separated values. Permitted values: &#x60;waf_rule_revision&#x60; and &#x60;waf_firewall_version&#x60;.  | [optional]
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**version_id** | **Number** | Integer identifying a service version. |
+**waf_rule_id** | **String** | Alphanumeric string identifying a WAF rule. |
+**include** | **String** | Include relationships. Optional, comma-separated values. Permitted values: `waf_rule_revision` and `waf_firewall_version`.  | [optional]
 
 ### Return type
 
@@ -260,7 +258,7 @@ Name | Type | Description  | Notes
 ## `listWafActiveRules`
 
 ```javascript
-listWafActiveRules({ firewall_id, version_id, [filter_status, ], [filter_waf_rule_revision_message, ], [filter_waf_rule_revision_modsec_rule_id, ], [filter_outdated, ], [include, ], [page_number, ], [page_size] })
+listWafActiveRules({ firewall_id, version_id, [filter_status, ][filter_waf_rule_revision_message, ][filter_waf_rule_revision_modsec_rule_id, ][filter_outdated, ][include, ][page_number, ][page_size] })
 ```
 
 List all active rules for a particular firewall version.
@@ -276,13 +274,13 @@ const options = {
   filter_waf_rule_revision_modsec_rule_id: "filter_waf_rule_revision_modsec_rule_id_example",
   filter_outdated: "filter_outdated_example",
   include: waf_rule_revision,waf_firewall_version,
-  page_number: 56,
+  page_number: 1,
   page_size: 20,
 };
 
 apiInstance.listWafActiveRules(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -293,15 +291,15 @@ apiInstance.listWafActiveRules(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**version_id** | **Number** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**version_id** | **Number** | Integer identifying a service version. |
 **filter_status** | **String** | Limit results to active rules with the specified status. | [optional]
 **filter_waf_rule_revision_message** | **String** | Limit results to active rules with the specified message. | [optional]
 **filter_waf_rule_revision_modsec_rule_id** | **String** | Limit results to active rules that represent the specified ModSecurity modsec_rule_id. | [optional]
 **filter_outdated** | **String** | Limit results to active rules referencing an outdated rule revision. | [optional]
-**include** | **String** | Include relationships. Optional, comma-separated values. Permitted values: &#x60;waf_rule_revision&#x60; and &#x60;waf_firewall_version&#x60;.  | [optional]
+**include** | **String** | Include relationships. Optional, comma-separated values. Permitted values: `waf_rule_revision` and `waf_firewall_version`.  | [optional]
 **page_number** | **Number** | Current page. | [optional]
-**page_size** | **Number** | Number of records per page. | [optional] [default to 20]
+**page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
 
 ### Return type
 
@@ -323,12 +321,12 @@ const options = {
   firewall_id: "firewall_id_example", // required
   version_id: 56, // required
   waf_rule_id: "waf_rule_id_example", // required
-  waf_active_rule: new Fastly.WafActiveRule(),
+  waf_active_rule: {"data":{"id":"3krg2uUGZzb2W9Euo4moOR","type":"waf_active_rule","attributes":{"status":"block"}}},
 };
 
 apiInstance.updateWafActiveRule(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -339,10 +337,10 @@ apiInstance.updateWafActiveRule(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**version_id** | **Number** |  |
-**waf_rule_id** | **String** |  |
-**waf_active_rule** | [**WafActiveRule**](../Model/WafActiveRule.md) |  | [optional]
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**version_id** | **Number** | Integer identifying a service version. |
+**waf_rule_id** | **String** | Alphanumeric string identifying a WAF rule. |
+**waf_active_rule** | [**WafActiveRule**](WafActiveRule.md) |  | [optional]
 
 ### Return type
 

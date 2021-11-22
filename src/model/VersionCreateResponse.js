@@ -24,6 +24,7 @@ class VersionCreateResponse {
      * @alias module:model/VersionCreateResponse
      */
     constructor() { 
+        
         VersionCreateResponse.initialize(this);
     }
 

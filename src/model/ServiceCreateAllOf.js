@@ -24,6 +24,7 @@ class ServiceCreateAllOf {
      * @alias module:model/ServiceCreateAllOf
      */
     constructor() { 
+        
         ServiceCreateAllOf.initialize(this);
     }
 

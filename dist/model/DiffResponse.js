@@ -54,20 +54,20 @@ var DiffResponse = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new DiffResponse();
 
-        if (data.hasOwnProperty('diff')) {
-          obj['diff'] = _ApiClient["default"].convertToType(data['diff'], 'String');
-        }
-
-        if (data.hasOwnProperty('format')) {
-          obj['format'] = _ApiClient["default"].convertToType(data['format'], 'String');
-        }
-
         if (data.hasOwnProperty('from')) {
           obj['from'] = _ApiClient["default"].convertToType(data['from'], 'Number');
         }
 
         if (data.hasOwnProperty('to')) {
           obj['to'] = _ApiClient["default"].convertToType(data['to'], 'Number');
+        }
+
+        if (data.hasOwnProperty('format')) {
+          obj['format'] = _ApiClient["default"].convertToType(data['format'], 'String');
+        }
+
+        if (data.hasOwnProperty('diff')) {
+          obj['diff'] = _ApiClient["default"].convertToType(data['diff'], 'String');
         }
       }
 
@@ -78,22 +78,10 @@ var DiffResponse = /*#__PURE__*/function () {
   return DiffResponse;
 }();
 /**
- * The differences between two specified service versions. Returns the full config if the version configurations are identical.
- * @member {String} diff
- */
-
-
-DiffResponse.prototype['diff'] = undefined;
-/**
- * The format the diff is being returned in (`text`, `html` or `html_simple`).
- * @member {String} format
- */
-
-DiffResponse.prototype['format'] = undefined;
-/**
  * The version number being diffed from.
  * @member {Number} from
  */
+
 
 DiffResponse.prototype['from'] = undefined;
 /**
@@ -102,5 +90,17 @@ DiffResponse.prototype['from'] = undefined;
  */
 
 DiffResponse.prototype['to'] = undefined;
+/**
+ * The format the diff is being returned in (`text`, `html` or `html_simple`).
+ * @member {String} format
+ */
+
+DiffResponse.prototype['format'] = undefined;
+/**
+ * The differences between two specified service versions. Returns the full config if the version configurations are identical.
+ * @member {String} diff
+ */
+
+DiffResponse.prototype['diff'] = undefined;
 var _default = DiffResponse;
 exports["default"] = _default;

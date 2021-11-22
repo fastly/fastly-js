@@ -25,6 +25,7 @@ class TlsPrivateKey {
      * @alias module:model/TlsPrivateKey
      */
     constructor() { 
+        
         TlsPrivateKey.initialize(this);
     }
 

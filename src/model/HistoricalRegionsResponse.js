@@ -25,8 +25,11 @@ class HistoricalRegionsResponse {
     /**
      * Constructs a new <code>HistoricalRegionsResponse</code>.
      * @alias module:model/HistoricalRegionsResponse
+     * @implements module:model/Historical
+     * @implements module:model/HistoricalRegionsResponseAllOf
      */
     constructor() { 
+        Historical.initialize(this);HistoricalRegionsResponseAllOf.initialize(this);
         HistoricalRegionsResponse.initialize(this);
     }
 
@@ -48,15 +51,17 @@ class HistoricalRegionsResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new HistoricalRegionsResponse();
+            Historical.constructFromObject(data, obj);
+            HistoricalRegionsResponseAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            }
             if (data.hasOwnProperty('meta')) {
                 obj['meta'] = HistoricalMeta.constructFromObject(data['meta']);
             }
             if (data.hasOwnProperty('msg')) {
                 obj['msg'] = ApiClient.convertToType(data['msg'], 'String');
-            }
-            if (data.hasOwnProperty('status')) {
-                obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], ['String']);
@@ -67,6 +72,12 @@ class HistoricalRegionsResponse {
 
 
 }
+
+/**
+ * Whether or not we were able to successfully execute the query.
+ * @member {String} status
+ */
+HistoricalRegionsResponse.prototype['status'] = undefined;
 
 /**
  * @member {module:model/HistoricalMeta} meta
@@ -80,17 +91,31 @@ HistoricalRegionsResponse.prototype['meta'] = undefined;
 HistoricalRegionsResponse.prototype['msg'] = undefined;
 
 /**
- * Whether or not we were able to successfully execute the query.
- * @member {String} status
- */
-HistoricalRegionsResponse.prototype['status'] = undefined;
-
-/**
  * @member {Array.<String>} data
  */
 HistoricalRegionsResponse.prototype['data'] = undefined;
 
 
+// Implement Historical interface:
+/**
+ * Whether or not we were able to successfully execute the query.
+ * @member {String} status
+ */
+Historical.prototype['status'] = undefined;
+/**
+ * @member {module:model/HistoricalMeta} meta
+ */
+Historical.prototype['meta'] = undefined;
+/**
+ * If the query was not successful, this will provide a string that explains why.
+ * @member {String} msg
+ */
+Historical.prototype['msg'] = undefined;
+// Implement HistoricalRegionsResponseAllOf interface:
+/**
+ * @member {Array.<String>} data
+ */
+HistoricalRegionsResponseAllOf.prototype['data'] = undefined;
 
 
 

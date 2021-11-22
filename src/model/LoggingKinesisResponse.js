@@ -27,8 +27,12 @@ class LoggingKinesisResponse {
     /**
      * Constructs a new <code>LoggingKinesisResponse</code>.
      * @alias module:model/LoggingKinesisResponse
+     * @implements module:model/LoggingKinesis
+     * @implements module:model/Timestamps
+     * @implements module:model/ServiceIdAndVersion
      */
     constructor() { 
+        LoggingKinesis.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
         LoggingKinesisResponse.initialize(this);
     }
 
@@ -50,24 +54,24 @@ class LoggingKinesisResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingKinesisResponse();
+            LoggingKinesis.constructFromObject(data, obj);
+            Timestamps.constructFromObject(data, obj);
+            ServiceIdAndVersion.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('access_key')) {
-                obj['access_key'] = ApiClient.convertToType(data['access_key'], 'String');
-            }
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], 'String');
-            }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
-            }
-            if (data.hasOwnProperty('iam_role')) {
-                obj['iam_role'] = ApiClient.convertToType(data['iam_role'], 'String');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
+            }
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('topic')) {
+                obj['topic'] = ApiClient.convertToType(data['topic'], 'String');
             }
             if (data.hasOwnProperty('region')) {
                 obj['region'] = ApiClient.convertToType(data['region'], 'String');
@@ -75,8 +79,11 @@ class LoggingKinesisResponse {
             if (data.hasOwnProperty('secret_key')) {
                 obj['secret_key'] = ApiClient.convertToType(data['secret_key'], 'String');
             }
-            if (data.hasOwnProperty('topic')) {
-                obj['topic'] = ApiClient.convertToType(data['topic'], 'String');
+            if (data.hasOwnProperty('access_key')) {
+                obj['access_key'] = ApiClient.convertToType(data['access_key'], 'String');
+            }
+            if (data.hasOwnProperty('iam_role')) {
+                obj['iam_role'] = ApiClient.convertToType(data['iam_role'], 'String');
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
@@ -101,28 +108,6 @@ class LoggingKinesisResponse {
 }
 
 /**
- * The access key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
- * @member {String} access_key
- */
-LoggingKinesisResponse.prototype['access_key'] = undefined;
-
-/**
- * @member {String} format
- */
-LoggingKinesisResponse.prototype['format'] = undefined;
-
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingKinesisResponse.prototype['format_version'] = undefined;
-
-/**
- * The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if `access_key` and `secret_key` are provided.
- * @member {String} iam_role
- */
-LoggingKinesisResponse.prototype['iam_role'] = undefined;
-
-/**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
@@ -132,6 +117,22 @@ LoggingKinesisResponse.prototype['name'] = undefined;
  * @member {module:model/LoggingPlacement} placement
  */
 LoggingKinesisResponse.prototype['placement'] = undefined;
+
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingKinesisResponse.prototype['format_version'] = undefined;
+
+/**
+ * @member {String} format
+ */
+LoggingKinesisResponse.prototype['format'] = undefined;
+
+/**
+ * The Amazon Kinesis stream to send logs to. Required.
+ * @member {String} topic
+ */
+LoggingKinesisResponse.prototype['topic'] = undefined;
 
 /**
  * The [AWS region](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints) to stream logs to.
@@ -146,10 +147,16 @@ LoggingKinesisResponse.prototype['region'] = undefined;
 LoggingKinesisResponse.prototype['secret_key'] = undefined;
 
 /**
- * The Amazon Kinesis stream to send logs to. Required.
- * @member {String} topic
+ * The access key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
+ * @member {String} access_key
  */
-LoggingKinesisResponse.prototype['topic'] = undefined;
+LoggingKinesisResponse.prototype['access_key'] = undefined;
+
+/**
+ * The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if `access_key` and `secret_key` are provided.
+ * @member {String} iam_role
+ */
+LoggingKinesisResponse.prototype['iam_role'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
@@ -182,6 +189,76 @@ LoggingKinesisResponse.prototype['service_id'] = undefined;
 LoggingKinesisResponse.prototype['version'] = undefined;
 
 
+// Implement LoggingKinesis interface:
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingKinesis.prototype['name'] = undefined;
+/**
+ * @member {module:model/LoggingPlacement} placement
+ */
+LoggingKinesis.prototype['placement'] = undefined;
+/**
+ * @member {module:model/LoggingFormatVersion} format_version
+ */
+LoggingKinesis.prototype['format_version'] = undefined;
+/**
+ * @member {String} format
+ */
+LoggingKinesis.prototype['format'] = undefined;
+/**
+ * The Amazon Kinesis stream to send logs to. Required.
+ * @member {String} topic
+ */
+LoggingKinesis.prototype['topic'] = undefined;
+/**
+ * The [AWS region](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints) to stream logs to.
+ * @member {module:model/LoggingKinesis.RegionEnum} region
+ */
+LoggingKinesis.prototype['region'] = undefined;
+/**
+ * The secret key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
+ * @member {String} secret_key
+ */
+LoggingKinesis.prototype['secret_key'] = undefined;
+/**
+ * The access key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
+ * @member {String} access_key
+ */
+LoggingKinesis.prototype['access_key'] = undefined;
+/**
+ * The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if `access_key` and `secret_key` are provided.
+ * @member {String} iam_role
+ */
+LoggingKinesis.prototype['iam_role'] = undefined;
+// Implement Timestamps interface:
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+Timestamps.prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+Timestamps.prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+Timestamps.prototype['updated_at'] = undefined;
+// Implement ServiceIdAndVersion interface:
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+ServiceIdAndVersion.prototype['service_id'] = undefined;
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
+ServiceIdAndVersion.prototype['version'] = undefined;
 
 
 

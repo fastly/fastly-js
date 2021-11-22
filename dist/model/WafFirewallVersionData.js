@@ -7,9 +7,9 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _SchemasWafFirewallVersionDataAttributes = _interopRequireDefault(require("./SchemasWafFirewallVersionDataAttributes"));
-
 var _TypeWafFirewallVersion = _interopRequireDefault(require("./TypeWafFirewallVersion"));
+
+var _WafFirewallVersionDataAttributes = _interopRequireDefault(require("./WafFirewallVersionDataAttributes"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -58,12 +58,12 @@ var WafFirewallVersionData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new WafFirewallVersionData();
 
-        if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _SchemasWafFirewallVersionDataAttributes["default"].constructFromObject(data['attributes']);
-        }
-
         if (data.hasOwnProperty('type')) {
           obj['type'] = _TypeWafFirewallVersion["default"].constructFromObject(data['type']);
+        }
+
+        if (data.hasOwnProperty('attributes')) {
+          obj['attributes'] = _WafFirewallVersionDataAttributes["default"].constructFromObject(data['attributes']);
         }
       }
 
@@ -74,15 +74,15 @@ var WafFirewallVersionData = /*#__PURE__*/function () {
   return WafFirewallVersionData;
 }();
 /**
- * @member {module:model/SchemasWafFirewallVersionDataAttributes} attributes
- */
-
-
-WafFirewallVersionData.prototype['attributes'] = undefined;
-/**
  * @member {module:model/TypeWafFirewallVersion} type
  */
 
+
 WafFirewallVersionData.prototype['type'] = undefined;
+/**
+ * @member {module:model/WafFirewallVersionDataAttributes} attributes
+ */
+
+WafFirewallVersionData.prototype['attributes'] = undefined;
 var _default = WafFirewallVersionData;
 exports["default"] = _default;

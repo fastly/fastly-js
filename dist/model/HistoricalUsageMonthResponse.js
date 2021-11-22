@@ -32,9 +32,15 @@ var HistoricalUsageMonthResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>HistoricalUsageMonthResponse</code>.
    * @alias module:model/HistoricalUsageMonthResponse
+   * @implements module:model/Historical
+   * @implements module:model/HistoricalUsageMonthResponseAllOf
    */
   function HistoricalUsageMonthResponse() {
     _classCallCheck(this, HistoricalUsageMonthResponse);
+
+    _Historical["default"].initialize(this);
+
+    _HistoricalUsageMonthResponseAllOf["default"].initialize(this);
 
     HistoricalUsageMonthResponse.initialize(this);
   }
@@ -62,16 +68,20 @@ var HistoricalUsageMonthResponse = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new HistoricalUsageMonthResponse();
 
+        _Historical["default"].constructFromObject(data, obj);
+
+        _HistoricalUsageMonthResponseAllOf["default"].constructFromObject(data, obj);
+
+        if (data.hasOwnProperty('status')) {
+          obj['status'] = _ApiClient["default"].convertToType(data['status'], 'String');
+        }
+
         if (data.hasOwnProperty('meta')) {
           obj['meta'] = _HistoricalMeta["default"].constructFromObject(data['meta']);
         }
 
         if (data.hasOwnProperty('msg')) {
           obj['msg'] = _ApiClient["default"].convertToType(data['msg'], 'String');
-        }
-
-        if (data.hasOwnProperty('status')) {
-          obj['status'] = _ApiClient["default"].convertToType(data['status'], 'String');
         }
 
         if (data.hasOwnProperty('data')) {
@@ -86,9 +96,15 @@ var HistoricalUsageMonthResponse = /*#__PURE__*/function () {
   return HistoricalUsageMonthResponse;
 }();
 /**
- * @member {module:model/HistoricalMeta} meta
+ * Whether or not we were able to successfully execute the query.
+ * @member {String} status
  */
 
+
+HistoricalUsageMonthResponse.prototype['status'] = undefined;
+/**
+ * @member {module:model/HistoricalMeta} meta
+ */
 
 HistoricalUsageMonthResponse.prototype['meta'] = undefined;
 /**
@@ -98,15 +114,33 @@ HistoricalUsageMonthResponse.prototype['meta'] = undefined;
 
 HistoricalUsageMonthResponse.prototype['msg'] = undefined;
 /**
+ * @member {module:model/HistoricalUsageMonthResponseAllOfData} data
+ */
+
+HistoricalUsageMonthResponse.prototype['data'] = undefined; // Implement Historical interface:
+
+/**
  * Whether or not we were able to successfully execute the query.
  * @member {String} status
  */
 
-HistoricalUsageMonthResponse.prototype['status'] = undefined;
+_Historical["default"].prototype['status'] = undefined;
+/**
+ * @member {module:model/HistoricalMeta} meta
+ */
+
+_Historical["default"].prototype['meta'] = undefined;
+/**
+ * If the query was not successful, this will provide a string that explains why.
+ * @member {String} msg
+ */
+
+_Historical["default"].prototype['msg'] = undefined; // Implement HistoricalUsageMonthResponseAllOf interface:
+
 /**
  * @member {module:model/HistoricalUsageMonthResponseAllOfData} data
  */
 
-HistoricalUsageMonthResponse.prototype['data'] = undefined;
+_HistoricalUsageMonthResponseAllOf["default"].prototype['data'] = undefined;
 var _default = HistoricalUsageMonthResponse;
 exports["default"] = _default;

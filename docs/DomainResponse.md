@@ -13,5 +13,4 @@ Name | Type | Description | Notes
 **updated_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
 
 
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

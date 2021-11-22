@@ -28,9 +28,15 @@ var ServiceCreate = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>ServiceCreate</code>.
    * @alias module:model/ServiceCreate
+   * @implements module:model/Service
+   * @implements module:model/ServiceCreateAllOf
    */
   function ServiceCreate() {
     _classCallCheck(this, ServiceCreate);
+
+    _Service["default"].initialize(this);
+
+    _ServiceCreateAllOf["default"].initialize(this);
 
     ServiceCreate.initialize(this);
   }
@@ -58,16 +64,20 @@ var ServiceCreate = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new ServiceCreate();
 
+        _Service["default"].constructFromObject(data, obj);
+
+        _ServiceCreateAllOf["default"].constructFromObject(data, obj);
+
         if (data.hasOwnProperty('comment')) {
           obj['comment'] = _ApiClient["default"].convertToType(data['comment'], 'String');
         }
 
-        if (data.hasOwnProperty('customer_id')) {
-          obj['customer_id'] = _ApiClient["default"].convertToType(data['customer_id'], 'String');
-        }
-
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
+        }
+
+        if (data.hasOwnProperty('customer_id')) {
+          obj['customer_id'] = _ApiClient["default"].convertToType(data['customer_id'], 'String');
         }
 
         if (data.hasOwnProperty('type')) {
@@ -89,23 +99,49 @@ var ServiceCreate = /*#__PURE__*/function () {
 
 ServiceCreate.prototype['comment'] = undefined;
 /**
- * Alphanumeric string identifying the customer.
- * @member {String} customer_id
- */
-
-ServiceCreate.prototype['customer_id'] = undefined;
-/**
  * The name of the service.
  * @member {String} name
  */
 
 ServiceCreate.prototype['name'] = undefined;
 /**
+ * Alphanumeric string identifying the customer.
+ * @member {String} customer_id
+ */
+
+ServiceCreate.prototype['customer_id'] = undefined;
+/**
  * The type of this service.
  * @member {module:model/ServiceCreate.TypeEnum} type
  */
 
-ServiceCreate.prototype['type'] = undefined;
+ServiceCreate.prototype['type'] = undefined; // Implement Service interface:
+
+/**
+ * A freeform descriptive note.
+ * @member {String} comment
+ */
+
+_Service["default"].prototype['comment'] = undefined;
+/**
+ * The name of the service.
+ * @member {String} name
+ */
+
+_Service["default"].prototype['name'] = undefined;
+/**
+ * Alphanumeric string identifying the customer.
+ * @member {String} customer_id
+ */
+
+_Service["default"].prototype['customer_id'] = undefined; // Implement ServiceCreateAllOf interface:
+
+/**
+ * The type of this service.
+ * @member {module:model/ServiceCreateAllOf.TypeEnum} type
+ */
+
+_ServiceCreateAllOf["default"].prototype['type'] = undefined;
 /**
  * Allowed values for the <code>type</code> property.
  * @enum {String}

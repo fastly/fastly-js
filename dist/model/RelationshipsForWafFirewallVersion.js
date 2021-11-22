@@ -32,9 +32,15 @@ var RelationshipsForWafFirewallVersion = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>RelationshipsForWafFirewallVersion</code>.
    * @alias module:model/RelationshipsForWafFirewallVersion
+   * @implements module:model/RelationshipWafFirewallVersions
+   * @implements module:model/RelationshipWafActiveRules
    */
   function RelationshipsForWafFirewallVersion() {
     _classCallCheck(this, RelationshipsForWafFirewallVersion);
+
+    _RelationshipWafFirewallVersions["default"].initialize(this);
+
+    _RelationshipWafActiveRules["default"].initialize(this);
 
     RelationshipsForWafFirewallVersion.initialize(this);
   }
@@ -62,6 +68,10 @@ var RelationshipsForWafFirewallVersion = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new RelationshipsForWafFirewallVersion();
 
+        _RelationshipWafFirewallVersions["default"].constructFromObject(data, obj);
+
+        _RelationshipWafActiveRules["default"].constructFromObject(data, obj);
+
         if (data.hasOwnProperty('waf_firewall_versions')) {
           obj['waf_firewall_versions'] = _RelationshipWafFirewallVersionWafFirewallVersion["default"].constructFromObject(data['waf_firewall_versions']);
         }
@@ -87,6 +97,18 @@ RelationshipsForWafFirewallVersion.prototype['waf_firewall_versions'] = undefine
  * @member {module:model/RelationshipWafActiveRulesWafActiveRules} waf_active_rules
  */
 
-RelationshipsForWafFirewallVersion.prototype['waf_active_rules'] = undefined;
+RelationshipsForWafFirewallVersion.prototype['waf_active_rules'] = undefined; // Implement RelationshipWafFirewallVersions interface:
+
+/**
+ * @member {module:model/RelationshipWafFirewallVersionWafFirewallVersion} waf_firewall_versions
+ */
+
+_RelationshipWafFirewallVersions["default"].prototype['waf_firewall_versions'] = undefined; // Implement RelationshipWafActiveRules interface:
+
+/**
+ * @member {module:model/RelationshipWafActiveRulesWafActiveRules} waf_active_rules
+ */
+
+_RelationshipWafActiveRules["default"].prototype['waf_active_rules'] = undefined;
 var _default = RelationshipsForWafFirewallVersion;
 exports["default"] = _default;

@@ -1,6 +1,5 @@
 # Fastly.LoggingSumologicApi
 
-
 ```javascript
 const apiInstance = new Fastly.LoggingSumologicApi();
 ```
@@ -15,11 +14,10 @@ Method | Fastly API endpoint | Description
 [**updateLogSumologic**](LoggingSumologicApi.md#updateLogSumologic) | **PUT** /service/{service_id}/version/{version_id}/logging/sumologic/{logging_sumologic_name} | Update a Sumologic log endpoint
 
 
-
 ## `createLogSumologic`
 
 ```javascript
-createLogSumologic({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [message_type, ], [url] })
+createLogSumologic({ service_id, version_id, [name, ][placement, ][format_version, ][response_condition, ][format, ][message_type, ][url] })
 ```
 
 Create a Sumologic for a particular service and version.
@@ -30,18 +28,18 @@ Create a Sumologic for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
-  format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
-  placement: new Fastly.LoggingPlacement(),
+  placement: "none",
+  format_version: 1,
   response_condition: "response_condition_example",
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   message_type: new Fastly.LoggingMessageType(),
   url: "url_example",
 };
 
 apiInstance.createLogSumologic(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -52,14 +50,14 @@ apiInstance.createLogSumologic(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 **name** | **String** | The name for the real-time logging configuration. | [optional]
-**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
+**placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] [one of: "none", "waf_debug", "null"]
+**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.   | [optional] [one of: 1, 2]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**message_type** | [**LoggingMessageType**](../Model/LoggingMessageType.md) |  | [optional]
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [defaults to '%h %l %u %t "%r" %&gt;s %b']
+**message_type** | [**LoggingMessageType**](LoggingMessageType.md) |  | [optional]
 **url** | **String** | The URL to post logs to. | [optional]
 
 ### Return type
@@ -86,7 +84,7 @@ const options = {
 
 apiInstance.deleteLogSumologic(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -97,9 +95,9 @@ apiInstance.deleteLogSumologic(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**logging_sumologic_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**logging_sumologic_name** | **String** | The name for the real-time logging configuration. |
 
 ### Return type
 
@@ -125,7 +123,7 @@ const options = {
 
 apiInstance.getLogSumologic(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -136,9 +134,9 @@ apiInstance.getLogSumologic(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**logging_sumologic_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**logging_sumologic_name** | **String** | The name for the real-time logging configuration. |
 
 ### Return type
 
@@ -163,7 +161,7 @@ const options = {
 
 apiInstance.listLogSumologic(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -174,8 +172,8 @@ apiInstance.listLogSumologic(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -185,7 +183,7 @@ Name | Type | Description  | Notes
 ## `updateLogSumologic`
 
 ```javascript
-updateLogSumologic({ service_id, version_id, logging_sumologic_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [message_type, ], [url] })
+updateLogSumologic({ service_id, version_id, logging_sumologic_name, [name, ][placement, ][format_version, ][response_condition, ][format, ][message_type, ][url] })
 ```
 
 Update the Sumologic for a particular service and version.
@@ -197,18 +195,18 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   logging_sumologic_name: "logging_sumologic_name_example", // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
-  format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
-  placement: new Fastly.LoggingPlacement(),
+  placement: "none",
+  format_version: 1,
   response_condition: "response_condition_example",
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
   message_type: new Fastly.LoggingMessageType(),
   url: "url_example",
 };
 
 apiInstance.updateLogSumologic(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -219,15 +217,15 @@ apiInstance.updateLogSumologic(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**logging_sumologic_name** | **String** |  |
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**logging_sumologic_name** | **String** | The name for the real-time logging configuration. |
 **name** | **String** | The name for the real-time logging configuration. | [optional]
-**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
+**placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] [one of: "none", "waf_debug", "null"]
+**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.   | [optional] [one of: 1, 2]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**message_type** | [**LoggingMessageType**](../Model/LoggingMessageType.md) |  | [optional]
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [defaults to '%h %l %u %t "%r" %&gt;s %b']
+**message_type** | [**LoggingMessageType**](LoggingMessageType.md) |  | [optional]
 **url** | **String** | The URL to post logs to. | [optional]
 
 ### Return type

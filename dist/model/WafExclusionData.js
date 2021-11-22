@@ -60,16 +60,16 @@ var WafExclusionData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new WafExclusionData();
 
+        if (data.hasOwnProperty('type')) {
+          obj['type'] = _TypeWafExclusion["default"].constructFromObject(data['type']);
+        }
+
         if (data.hasOwnProperty('attributes')) {
           obj['attributes'] = _WafExclusionDataAttributes["default"].constructFromObject(data['attributes']);
         }
 
         if (data.hasOwnProperty('relationships')) {
           obj['relationships'] = _RelationshipsForWafExclusion["default"].constructFromObject(data['relationships']);
-        }
-
-        if (data.hasOwnProperty('type')) {
-          obj['type'] = _TypeWafExclusion["default"].constructFromObject(data['type']);
         }
       }
 
@@ -80,9 +80,14 @@ var WafExclusionData = /*#__PURE__*/function () {
   return WafExclusionData;
 }();
 /**
- * @member {module:model/WafExclusionDataAttributes} attributes
+ * @member {module:model/TypeWafExclusion} type
  */
 
+
+WafExclusionData.prototype['type'] = undefined;
+/**
+ * @member {module:model/WafExclusionDataAttributes} attributes
+ */
 
 WafExclusionData.prototype['attributes'] = undefined;
 /**
@@ -90,10 +95,5 @@ WafExclusionData.prototype['attributes'] = undefined;
  */
 
 WafExclusionData.prototype['relationships'] = undefined;
-/**
- * @member {module:model/TypeWafExclusion} type
- */
-
-WafExclusionData.prototype['type'] = undefined;
 var _default = WafExclusionData;
 exports["default"] = _default;

@@ -26,6 +26,7 @@ class WafTagsResponseAllOf {
      * @alias module:model/WafTagsResponseAllOf
      */
     constructor() { 
+        
         WafTagsResponseAllOf.initialize(this);
     }
 

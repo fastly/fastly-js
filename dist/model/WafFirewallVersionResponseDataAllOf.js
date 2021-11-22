@@ -58,12 +58,12 @@ var WafFirewallVersionResponseDataAllOf = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new WafFirewallVersionResponseDataAllOf();
 
-        if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _ApiClient["default"].convertToType(data['attributes'], _Timestamps["default"]);
-        }
-
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
+        }
+
+        if (data.hasOwnProperty('attributes')) {
+          obj['attributes'] = _ApiClient["default"].convertToType(data['attributes'], _Timestamps["default"]);
         }
 
         if (data.hasOwnProperty('relationships')) {
@@ -78,17 +78,17 @@ var WafFirewallVersionResponseDataAllOf = /*#__PURE__*/function () {
   return WafFirewallVersionResponseDataAllOf;
 }();
 /**
- * @member {module:model/Timestamps} attributes
- */
-
-
-WafFirewallVersionResponseDataAllOf.prototype['attributes'] = undefined;
-/**
  * Alphanumeric string identifying a Firewall version.
  * @member {String} id
  */
 
+
 WafFirewallVersionResponseDataAllOf.prototype['id'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+
+WafFirewallVersionResponseDataAllOf.prototype['attributes'] = undefined;
 /**
  * @member {module:model/RelationshipsForWafFirewallVersion} relationships
  */

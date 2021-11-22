@@ -12,9 +12,9 @@
  */
 
 import ApiClient from '../ApiClient';
-import RelationshipCommonNameCommonName from './RelationshipCommonNameCommonName';
 import RelationshipTlsActivationTlsActivation from './RelationshipTlsActivationTlsActivation';
 import RelationshipTlsActivations from './RelationshipTlsActivations';
+import RelationshipTlsDomainTlsDomain from './RelationshipTlsDomainTlsDomain';
 
 /**
  * The RelationshipsForTlsPrivateKey model module.
@@ -25,8 +25,10 @@ class RelationshipsForTlsPrivateKey {
     /**
      * Constructs a new <code>RelationshipsForTlsPrivateKey</code>.
      * @alias module:model/RelationshipsForTlsPrivateKey
+     * @implements module:model/RelationshipTlsActivations
      */
     constructor() { 
+        RelationshipTlsActivations.initialize(this);
         RelationshipsForTlsPrivateKey.initialize(this);
     }
 
@@ -48,12 +50,13 @@ class RelationshipsForTlsPrivateKey {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipsForTlsPrivateKey();
+            RelationshipTlsActivations.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('tls_activations')) {
                 obj['tls_activations'] = RelationshipTlsActivationTlsActivation.constructFromObject(data['tls_activations']);
             }
             if (data.hasOwnProperty('tls_domains')) {
-                obj['tls_domains'] = RelationshipCommonNameCommonName.constructFromObject(data['tls_domains']);
+                obj['tls_domains'] = RelationshipTlsDomainTlsDomain.constructFromObject(data['tls_domains']);
             }
         }
         return obj;
@@ -68,11 +71,16 @@ class RelationshipsForTlsPrivateKey {
 RelationshipsForTlsPrivateKey.prototype['tls_activations'] = undefined;
 
 /**
- * @member {module:model/RelationshipCommonNameCommonName} tls_domains
+ * @member {module:model/RelationshipTlsDomainTlsDomain} tls_domains
  */
 RelationshipsForTlsPrivateKey.prototype['tls_domains'] = undefined;
 
 
+// Implement RelationshipTlsActivations interface:
+/**
+ * @member {module:model/RelationshipTlsActivationTlsActivation} tls_activations
+ */
+RelationshipTlsActivations.prototype['tls_activations'] = undefined;
 
 
 

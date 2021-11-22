@@ -32,9 +32,15 @@ var RelationshipsForWafRule = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>RelationshipsForWafRule</code>.
    * @alias module:model/RelationshipsForWafRule
+   * @implements module:model/RelationshipWafTags
+   * @implements module:model/RelationshipWafRuleRevisions
    */
   function RelationshipsForWafRule() {
     _classCallCheck(this, RelationshipsForWafRule);
+
+    _RelationshipWafTags["default"].initialize(this);
+
+    _RelationshipWafRuleRevisions["default"].initialize(this);
 
     RelationshipsForWafRule.initialize(this);
   }
@@ -62,6 +68,10 @@ var RelationshipsForWafRule = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new RelationshipsForWafRule();
 
+        _RelationshipWafTags["default"].constructFromObject(data, obj);
+
+        _RelationshipWafRuleRevisions["default"].constructFromObject(data, obj);
+
         if (data.hasOwnProperty('waf_tags')) {
           obj['waf_tags'] = _RelationshipWafTagsWafTags["default"].constructFromObject(data['waf_tags']);
         }
@@ -87,6 +97,18 @@ RelationshipsForWafRule.prototype['waf_tags'] = undefined;
  * @member {module:model/RelationshipWafRuleRevisionWafRuleRevisions} waf_rule_revisions
  */
 
-RelationshipsForWafRule.prototype['waf_rule_revisions'] = undefined;
+RelationshipsForWafRule.prototype['waf_rule_revisions'] = undefined; // Implement RelationshipWafTags interface:
+
+/**
+ * @member {module:model/RelationshipWafTagsWafTags} waf_tags
+ */
+
+_RelationshipWafTags["default"].prototype['waf_tags'] = undefined; // Implement RelationshipWafRuleRevisions interface:
+
+/**
+ * @member {module:model/RelationshipWafRuleRevisionWafRuleRevisions} waf_rule_revisions
+ */
+
+_RelationshipWafRuleRevisions["default"].prototype['waf_rule_revisions'] = undefined;
 var _default = RelationshipsForWafRule;
 exports["default"] = _default;

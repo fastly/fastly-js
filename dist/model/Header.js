@@ -233,12 +233,6 @@ Header['TypeEnum'] = {
   "request": "request",
 
   /**
-   * value: "fetch"
-   * @const
-   */
-  "fetch": "fetch",
-
-  /**
    * value: "cache"
    * @const
    */

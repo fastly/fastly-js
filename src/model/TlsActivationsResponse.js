@@ -27,8 +27,11 @@ class TlsActivationsResponse {
     /**
      * Constructs a new <code>TlsActivationsResponse</code>.
      * @alias module:model/TlsActivationsResponse
+     * @implements module:model/Pagination
+     * @implements module:model/TlsActivationsResponseAllOf
      */
     constructor() { 
+        Pagination.initialize(this);TlsActivationsResponseAllOf.initialize(this);
         TlsActivationsResponse.initialize(this);
     }
 
@@ -50,6 +53,8 @@ class TlsActivationsResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsActivationsResponse();
+            Pagination.constructFromObject(data, obj);
+            TlsActivationsResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('links')) {
                 obj['links'] = PaginationLinks.constructFromObject(data['links']);
@@ -83,6 +88,20 @@ TlsActivationsResponse.prototype['meta'] = undefined;
 TlsActivationsResponse.prototype['data'] = undefined;
 
 
+// Implement Pagination interface:
+/**
+ * @member {module:model/PaginationLinks} links
+ */
+Pagination.prototype['links'] = undefined;
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
+Pagination.prototype['meta'] = undefined;
+// Implement TlsActivationsResponseAllOf interface:
+/**
+ * @member {Array.<module:model/TlsActivationResponseData>} data
+ */
+TlsActivationsResponseAllOf.prototype['data'] = undefined;
 
 
 

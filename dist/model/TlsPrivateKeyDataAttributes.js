@@ -54,12 +54,12 @@ var TlsPrivateKeyDataAttributes = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new TlsPrivateKeyDataAttributes();
 
-        if (data.hasOwnProperty('key')) {
-          obj['key'] = _ApiClient["default"].convertToType(data['key'], 'String');
-        }
-
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
+        }
+
+        if (data.hasOwnProperty('key')) {
+          obj['key'] = _ApiClient["default"].convertToType(data['key'], 'String');
         }
       }
 
@@ -70,17 +70,17 @@ var TlsPrivateKeyDataAttributes = /*#__PURE__*/function () {
   return TlsPrivateKeyDataAttributes;
 }();
 /**
- * The contents of the private key. Must be a PEM-formatted key. Not returned in response body. Required.
- * @member {String} key
- */
-
-
-TlsPrivateKeyDataAttributes.prototype['key'] = undefined;
-/**
  * A customizable name for your private key. Optional.
  * @member {String} name
  */
 
+
 TlsPrivateKeyDataAttributes.prototype['name'] = undefined;
+/**
+ * The contents of the private key. Must be a PEM-formatted key. Not returned in response body. Required.
+ * @member {String} key
+ */
+
+TlsPrivateKeyDataAttributes.prototype['key'] = undefined;
 var _default = TlsPrivateKeyDataAttributes;
 exports["default"] = _default;

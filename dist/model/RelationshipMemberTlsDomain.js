@@ -56,12 +56,12 @@ var RelationshipMemberTlsDomain = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new RelationshipMemberTlsDomain();
 
-        if (data.hasOwnProperty('id')) {
-          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
-        }
-
         if (data.hasOwnProperty('type')) {
           obj['type'] = _TypeTlsDomain["default"].constructFromObject(data['type']);
+        }
+
+        if (data.hasOwnProperty('id')) {
+          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
       }
 
@@ -72,16 +72,16 @@ var RelationshipMemberTlsDomain = /*#__PURE__*/function () {
   return RelationshipMemberTlsDomain;
 }();
 /**
+ * @member {module:model/TypeTlsDomain} type
+ */
+
+
+RelationshipMemberTlsDomain.prototype['type'] = undefined;
+/**
  * The domain name.
  * @member {String} id
  */
 
-
 RelationshipMemberTlsDomain.prototype['id'] = undefined;
-/**
- * @member {module:model/TypeTlsDomain} type
- */
-
-RelationshipMemberTlsDomain.prototype['type'] = undefined;
 var _default = RelationshipMemberTlsDomain;
 exports["default"] = _default;

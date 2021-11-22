@@ -60,16 +60,16 @@ var TlsPrivateKeyData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new TlsPrivateKeyData();
 
+        if (data.hasOwnProperty('type')) {
+          obj['type'] = _TypeTlsPrivateKey["default"].constructFromObject(data['type']);
+        }
+
         if (data.hasOwnProperty('attributes')) {
           obj['attributes'] = _TlsPrivateKeyDataAttributes["default"].constructFromObject(data['attributes']);
         }
 
         if (data.hasOwnProperty('relationships')) {
           obj['relationships'] = _RelationshipsForTlsPrivateKey["default"].constructFromObject(data['relationships']);
-        }
-
-        if (data.hasOwnProperty('type')) {
-          obj['type'] = _TypeTlsPrivateKey["default"].constructFromObject(data['type']);
         }
       }
 
@@ -80,9 +80,14 @@ var TlsPrivateKeyData = /*#__PURE__*/function () {
   return TlsPrivateKeyData;
 }();
 /**
- * @member {module:model/TlsPrivateKeyDataAttributes} attributes
+ * @member {module:model/TypeTlsPrivateKey} type
  */
 
+
+TlsPrivateKeyData.prototype['type'] = undefined;
+/**
+ * @member {module:model/TlsPrivateKeyDataAttributes} attributes
+ */
 
 TlsPrivateKeyData.prototype['attributes'] = undefined;
 /**
@@ -90,10 +95,5 @@ TlsPrivateKeyData.prototype['attributes'] = undefined;
  */
 
 TlsPrivateKeyData.prototype['relationships'] = undefined;
-/**
- * @member {module:model/TypeTlsPrivateKey} type
- */
-
-TlsPrivateKeyData.prototype['type'] = undefined;
 var _default = TlsPrivateKeyData;
 exports["default"] = _default;

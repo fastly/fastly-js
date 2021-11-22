@@ -32,9 +32,15 @@ var IncludedWithWafRuleItem = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>IncludedWithWafRuleItem</code>.
    * @alias module:model/IncludedWithWafRuleItem
+   * @implements module:model/WafTag
+   * @implements module:model/WafRuleRevision
    */
   function IncludedWithWafRuleItem() {
     _classCallCheck(this, IncludedWithWafRuleItem);
+
+    _WafTag["default"].initialize(this);
+
+    _WafRuleRevision["default"].initialize(this);
 
     IncludedWithWafRuleItem.initialize(this);
   }
@@ -62,16 +68,20 @@ var IncludedWithWafRuleItem = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new IncludedWithWafRuleItem();
 
-        if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _WafRuleRevisionAttributes["default"].constructFromObject(data['attributes']);
+        _WafTag["default"].constructFromObject(data, obj);
+
+        _WafRuleRevision["default"].constructFromObject(data, obj);
+
+        if (data.hasOwnProperty('type')) {
+          obj['type'] = _TypeWafRuleRevision["default"].constructFromObject(data['type']);
         }
 
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
 
-        if (data.hasOwnProperty('type')) {
-          obj['type'] = _TypeWafRuleRevision["default"].constructFromObject(data['type']);
+        if (data.hasOwnProperty('attributes')) {
+          obj['attributes'] = _WafRuleRevisionAttributes["default"].constructFromObject(data['attributes']);
         }
       }
 
@@ -82,11 +92,11 @@ var IncludedWithWafRuleItem = /*#__PURE__*/function () {
   return IncludedWithWafRuleItem;
 }();
 /**
- * @member {module:model/WafRuleRevisionAttributes} attributes
+ * @member {module:model/TypeWafRuleRevision} type
  */
 
 
-IncludedWithWafRuleItem.prototype['attributes'] = undefined;
+IncludedWithWafRuleItem.prototype['type'] = undefined;
 /**
  * Alphanumeric string identifying a WAF rule revision.
  * @member {String} id
@@ -94,9 +104,43 @@ IncludedWithWafRuleItem.prototype['attributes'] = undefined;
 
 IncludedWithWafRuleItem.prototype['id'] = undefined;
 /**
+ * @member {module:model/WafRuleRevisionAttributes} attributes
+ */
+
+IncludedWithWafRuleItem.prototype['attributes'] = undefined; // Implement WafTag interface:
+
+/**
+ * @member {module:model/TypeWafTag} type
+ */
+
+_WafTag["default"].prototype['type'] = undefined;
+/**
+ * Alphanumeric string identifying a WAF tag.
+ * @member {String} id
+ */
+
+_WafTag["default"].prototype['id'] = undefined;
+/**
+ * @member {module:model/WafTagAttributes} attributes
+ */
+
+_WafTag["default"].prototype['attributes'] = undefined; // Implement WafRuleRevision interface:
+
+/**
  * @member {module:model/TypeWafRuleRevision} type
  */
 
-IncludedWithWafRuleItem.prototype['type'] = undefined;
+_WafRuleRevision["default"].prototype['type'] = undefined;
+/**
+ * Alphanumeric string identifying a WAF rule revision.
+ * @member {String} id
+ */
+
+_WafRuleRevision["default"].prototype['id'] = undefined;
+/**
+ * @member {module:model/WafRuleRevisionAttributes} attributes
+ */
+
+_WafRuleRevision["default"].prototype['attributes'] = undefined;
 var _default = IncludedWithWafRuleItem;
 exports["default"] = _default;

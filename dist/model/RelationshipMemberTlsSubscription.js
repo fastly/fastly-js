@@ -56,12 +56,12 @@ var RelationshipMemberTlsSubscription = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new RelationshipMemberTlsSubscription();
 
-        if (data.hasOwnProperty('id')) {
-          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
-        }
-
         if (data.hasOwnProperty('type')) {
           obj['type'] = _TypeTlsSubscription["default"].constructFromObject(data['type']);
+        }
+
+        if (data.hasOwnProperty('id')) {
+          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
       }
 
@@ -72,16 +72,16 @@ var RelationshipMemberTlsSubscription = /*#__PURE__*/function () {
   return RelationshipMemberTlsSubscription;
 }();
 /**
+ * @member {module:model/TypeTlsSubscription} type
+ */
+
+
+RelationshipMemberTlsSubscription.prototype['type'] = undefined;
+/**
  * Alphanumeric string identifying a TLS subscription.
  * @member {String} id
  */
 
-
 RelationshipMemberTlsSubscription.prototype['id'] = undefined;
-/**
- * @member {module:model/TypeTlsSubscription} type
- */
-
-RelationshipMemberTlsSubscription.prototype['type'] = undefined;
 var _default = RelationshipMemberTlsSubscription;
 exports["default"] = _default;

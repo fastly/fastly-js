@@ -44,7 +44,7 @@ var CustomerApi = /*#__PURE__*/function () {
   /**
    * Delete a customer.
    * @param {Object} options
-   * @param {String} options.customer_id
+   * @param {String} options.customer_id - Alphanumeric string identifying the customer.
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
    */
 
@@ -74,7 +74,7 @@ var CustomerApi = /*#__PURE__*/function () {
     /**
      * Delete a customer.
      * @param {Object} options
-     * @param {String} options.customer_id
+     * @param {String} options.customer_id - Alphanumeric string identifying the customer.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
 
@@ -89,7 +89,7 @@ var CustomerApi = /*#__PURE__*/function () {
     /**
      * Get a specific customer.
      * @param {Object} options
-     * @param {String} options.customer_id
+     * @param {String} options.customer_id - Alphanumeric string identifying the customer.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CustomerResponse} and HTTP response
      */
 
@@ -118,7 +118,7 @@ var CustomerApi = /*#__PURE__*/function () {
     /**
      * Get a specific customer.
      * @param {Object} options
-     * @param {String} options.customer_id
+     * @param {String} options.customer_id - Alphanumeric string identifying the customer.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CustomerResponse}
      */
 
@@ -168,7 +168,7 @@ var CustomerApi = /*#__PURE__*/function () {
     /**
      * List all users from a specified customer id.
      * @param {Object} options
-     * @param {String} options.customer_id
+     * @param {String} options.customer_id - Alphanumeric string identifying the customer.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/SchemasUserResponse>} and HTTP response
      */
 
@@ -197,7 +197,7 @@ var CustomerApi = /*#__PURE__*/function () {
     /**
      * List all users from a specified customer id.
      * @param {Object} options
-     * @param {String} options.customer_id
+     * @param {String} options.customer_id - Alphanumeric string identifying the customer.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/SchemasUserResponse>}
      */
 
@@ -212,7 +212,7 @@ var CustomerApi = /*#__PURE__*/function () {
     /**
      * Update a customer.
      * @param {Object} options
-     * @param {String} options.customer_id
+     * @param {String} options.customer_id - Alphanumeric string identifying the customer.
      * @param {String} [options.billing_contact_id] - The alphanumeric string representing the primary billing contact.
      * @param {module:model/String} [options.billing_network_type] - Customer's current network revenue type.
      * @param {String} [options.billing_ref] - Used for adding purchased orders to customer's account.
@@ -290,7 +290,7 @@ var CustomerApi = /*#__PURE__*/function () {
     /**
      * Update a customer.
      * @param {Object} options
-     * @param {String} options.customer_id
+     * @param {String} options.customer_id - Alphanumeric string identifying the customer.
      * @param {String} [options.billing_contact_id] - The alphanumeric string representing the primary billing contact.
      * @param {module:model/String} [options.billing_network_type] - Customer's current network revenue type.
      * @param {String} [options.billing_ref] - Used for adding purchased orders to customer's account.

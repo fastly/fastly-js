@@ -24,6 +24,7 @@ class PoolResponseAllOf {
      * @alias module:model/PoolResponseAllOf
      */
     constructor() { 
+        
         PoolResponseAllOf.initialize(this);
     }
 

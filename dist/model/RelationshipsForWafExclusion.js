@@ -32,9 +32,15 @@ var RelationshipsForWafExclusion = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>RelationshipsForWafExclusion</code>.
    * @alias module:model/RelationshipsForWafExclusion
+   * @implements module:model/RelationshipWafRules
+   * @implements module:model/RelationshipWafRuleRevisions
    */
   function RelationshipsForWafExclusion() {
     _classCallCheck(this, RelationshipsForWafExclusion);
+
+    _RelationshipWafRules["default"].initialize(this);
+
+    _RelationshipWafRuleRevisions["default"].initialize(this);
 
     RelationshipsForWafExclusion.initialize(this);
   }
@@ -62,6 +68,10 @@ var RelationshipsForWafExclusion = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new RelationshipsForWafExclusion();
 
+        _RelationshipWafRules["default"].constructFromObject(data, obj);
+
+        _RelationshipWafRuleRevisions["default"].constructFromObject(data, obj);
+
         if (data.hasOwnProperty('waf_rules')) {
           obj['waf_rules'] = _RelationshipWafRuleWafRule["default"].constructFromObject(data['waf_rules']);
         }
@@ -87,6 +97,18 @@ RelationshipsForWafExclusion.prototype['waf_rules'] = undefined;
  * @member {module:model/RelationshipWafRuleRevisionWafRuleRevisions} waf_rule_revisions
  */
 
-RelationshipsForWafExclusion.prototype['waf_rule_revisions'] = undefined;
+RelationshipsForWafExclusion.prototype['waf_rule_revisions'] = undefined; // Implement RelationshipWafRules interface:
+
+/**
+ * @member {module:model/RelationshipWafRuleWafRule} waf_rules
+ */
+
+_RelationshipWafRules["default"].prototype['waf_rules'] = undefined; // Implement RelationshipWafRuleRevisions interface:
+
+/**
+ * @member {module:model/RelationshipWafRuleRevisionWafRuleRevisions} waf_rule_revisions
+ */
+
+_RelationshipWafRuleRevisions["default"].prototype['waf_rule_revisions'] = undefined;
 var _default = RelationshipsForWafExclusion;
 exports["default"] = _default;

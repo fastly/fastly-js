@@ -24,6 +24,7 @@ class Gzip {
      * @alias module:model/Gzip
      */
     constructor() { 
+        
         Gzip.initialize(this);
     }
 

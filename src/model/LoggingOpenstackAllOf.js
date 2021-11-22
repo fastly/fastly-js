@@ -24,6 +24,7 @@ class LoggingOpenstackAllOf {
      * @alias module:model/LoggingOpenstackAllOf
      */
     constructor() { 
+        
         LoggingOpenstackAllOf.initialize(this);
     }
 

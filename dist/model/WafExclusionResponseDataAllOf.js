@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _AnyOfrelationshipWafRulesrelationshipWafRuleRevisions = _interopRequireDefault(require("./AnyOfrelationshipWafRulesrelationshipWafRuleRevisions"));
+
 var _Timestamps = _interopRequireDefault(require("./Timestamps"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -56,12 +58,16 @@ var WafExclusionResponseDataAllOf = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new WafExclusionResponseDataAllOf();
 
-        if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _Timestamps["default"].constructFromObject(data['attributes']);
-        }
-
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
+        }
+
+        if (data.hasOwnProperty('attributes')) {
+          obj['attributes'] = _ApiClient["default"].convertToType(data['attributes'], _Timestamps["default"]);
+        }
+
+        if (data.hasOwnProperty('relationships')) {
+          obj['relationships'] = _ApiClient["default"].convertToType(data['relationships'], _AnyOfrelationshipWafRulesrelationshipWafRuleRevisions["default"]);
         }
       }
 
@@ -72,16 +78,21 @@ var WafExclusionResponseDataAllOf = /*#__PURE__*/function () {
   return WafExclusionResponseDataAllOf;
 }();
 /**
- * @member {module:model/Timestamps} attributes
- */
-
-
-WafExclusionResponseDataAllOf.prototype['attributes'] = undefined;
-/**
  * Alphanumeric string identifying a WAF exclusion.
  * @member {String} id
  */
 
+
 WafExclusionResponseDataAllOf.prototype['id'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+
+WafExclusionResponseDataAllOf.prototype['attributes'] = undefined;
+/**
+ * @member {module:model/AnyOfrelationshipWafRulesrelationshipWafRuleRevisions} relationships
+ */
+
+WafExclusionResponseDataAllOf.prototype['relationships'] = undefined;
 var _default = WafExclusionResponseDataAllOf;
 exports["default"] = _default;

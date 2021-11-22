@@ -26,6 +26,7 @@ class WafFirewallsResponseAllOf {
      * @alias module:model/WafFirewallsResponseAllOf
      */
     constructor() { 
+        
         WafFirewallsResponseAllOf.initialize(this);
     }
 

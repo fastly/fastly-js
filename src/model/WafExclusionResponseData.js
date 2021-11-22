@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import RelationshipsForWafExclusion from './RelationshipsForWafExclusion';
+import AnyOfrelationshipWafRulesrelationshipWafRuleRevisions from './AnyOfrelationshipWafRulesrelationshipWafRuleRevisions';
 import Timestamps from './Timestamps';
 import TypeWafExclusion from './TypeWafExclusion';
 import WafExclusionData from './WafExclusionData';
@@ -27,8 +27,11 @@ class WafExclusionResponseData {
     /**
      * Constructs a new <code>WafExclusionResponseData</code>.
      * @alias module:model/WafExclusionResponseData
+     * @implements module:model/WafExclusionData
+     * @implements module:model/WafExclusionResponseDataAllOf
      */
     constructor() { 
+        WafExclusionData.initialize(this);WafExclusionResponseDataAllOf.initialize(this);
         WafExclusionResponseData.initialize(this);
     }
 
@@ -50,15 +53,17 @@ class WafExclusionResponseData {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafExclusionResponseData();
+            WafExclusionData.constructFromObject(data, obj);
+            WafExclusionResponseDataAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = Timestamps.constructFromObject(data['attributes']);
-            }
-            if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = RelationshipsForWafExclusion.constructFromObject(data['relationships']);
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeWafExclusion.constructFromObject(data['type']);
+            }
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
+            }
+            if (data.hasOwnProperty('relationships')) {
+                obj['relationships'] = ApiClient.convertToType(data['relationships'], AnyOfrelationshipWafRulesrelationshipWafRuleRevisions);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -71,19 +76,19 @@ class WafExclusionResponseData {
 }
 
 /**
+ * @member {module:model/TypeWafExclusion} type
+ */
+WafExclusionResponseData.prototype['type'] = undefined;
+
+/**
  * @member {module:model/Timestamps} attributes
  */
 WafExclusionResponseData.prototype['attributes'] = undefined;
 
 /**
- * @member {module:model/RelationshipsForWafExclusion} relationships
+ * @member {module:model/AnyOfrelationshipWafRulesrelationshipWafRuleRevisions} relationships
  */
 WafExclusionResponseData.prototype['relationships'] = undefined;
-
-/**
- * @member {module:model/TypeWafExclusion} type
- */
-WafExclusionResponseData.prototype['type'] = undefined;
 
 /**
  * Alphanumeric string identifying a WAF exclusion.
@@ -92,6 +97,33 @@ WafExclusionResponseData.prototype['type'] = undefined;
 WafExclusionResponseData.prototype['id'] = undefined;
 
 
+// Implement WafExclusionData interface:
+/**
+ * @member {module:model/TypeWafExclusion} type
+ */
+WafExclusionData.prototype['type'] = undefined;
+/**
+ * @member {module:model/WafExclusionDataAttributes} attributes
+ */
+WafExclusionData.prototype['attributes'] = undefined;
+/**
+ * @member {module:model/RelationshipsForWafExclusion} relationships
+ */
+WafExclusionData.prototype['relationships'] = undefined;
+// Implement WafExclusionResponseDataAllOf interface:
+/**
+ * Alphanumeric string identifying a WAF exclusion.
+ * @member {String} id
+ */
+WafExclusionResponseDataAllOf.prototype['id'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+WafExclusionResponseDataAllOf.prototype['attributes'] = undefined;
+/**
+ * @member {module:model/AnyOfrelationshipWafRulesrelationshipWafRuleRevisions} relationships
+ */
+WafExclusionResponseDataAllOf.prototype['relationships'] = undefined;
 
 
 

@@ -58,12 +58,12 @@ var InvitationResponseDataAllOf = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new InvitationResponseDataAllOf();
 
-        if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _Timestamps["default"].constructFromObject(data['attributes']);
-        }
-
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
+        }
+
+        if (data.hasOwnProperty('attributes')) {
+          obj['attributes'] = _Timestamps["default"].constructFromObject(data['attributes']);
         }
 
         if (data.hasOwnProperty('relationships')) {
@@ -78,17 +78,17 @@ var InvitationResponseDataAllOf = /*#__PURE__*/function () {
   return InvitationResponseDataAllOf;
 }();
 /**
- * @member {module:model/Timestamps} attributes
- */
-
-
-InvitationResponseDataAllOf.prototype['attributes'] = undefined;
-/**
  * Alphanumeric string identifying an invitation.
  * @member {String} id
  */
 
+
 InvitationResponseDataAllOf.prototype['id'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+
+InvitationResponseDataAllOf.prototype['attributes'] = undefined;
 /**
  * @member {module:model/RelationshipsForInvitation} relationships
  */

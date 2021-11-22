@@ -56,12 +56,12 @@ var RelationshipMemberWafFirewallVersion = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new RelationshipMemberWafFirewallVersion();
 
-        if (data.hasOwnProperty('id')) {
-          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
-        }
-
         if (data.hasOwnProperty('type')) {
           obj['type'] = _TypeWafFirewallVersion["default"].constructFromObject(data['type']);
+        }
+
+        if (data.hasOwnProperty('id')) {
+          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
       }
 
@@ -72,16 +72,16 @@ var RelationshipMemberWafFirewallVersion = /*#__PURE__*/function () {
   return RelationshipMemberWafFirewallVersion;
 }();
 /**
+ * @member {module:model/TypeWafFirewallVersion} type
+ */
+
+
+RelationshipMemberWafFirewallVersion.prototype['type'] = undefined;
+/**
  * Alphanumeric string identifying a Firewall version.
  * @member {String} id
  */
 
-
 RelationshipMemberWafFirewallVersion.prototype['id'] = undefined;
-/**
- * @member {module:model/TypeWafFirewallVersion} type
- */
-
-RelationshipMemberWafFirewallVersion.prototype['type'] = undefined;
 var _default = RelationshipMemberWafFirewallVersion;
 exports["default"] = _default;

@@ -43,7 +43,7 @@ export default class TlsConfigurationsApi {
     /**
      * Show a TLS configuration.
      * @param {Object} options
-     * @param {String} options.tls_configuration_id
+     * @param {String} options.tls_configuration_id - Alphanumeric string identifying a TLS configuration.
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `dns_records`. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsConfigurationResponse} and HTTP response
      */
@@ -79,7 +79,7 @@ export default class TlsConfigurationsApi {
     /**
      * Show a TLS configuration.
      * @param {Object} options
-     * @param {String} options.tls_configuration_id
+     * @param {String} options.tls_configuration_id - Alphanumeric string identifying a TLS configuration.
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `dns_records`. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsConfigurationResponse}
      */
@@ -145,7 +145,7 @@ export default class TlsConfigurationsApi {
     /**
      * Update a TLS configuration.
      * @param {Object} options
-     * @param {String} options.tls_configuration_id
+     * @param {String} options.tls_configuration_id - Alphanumeric string identifying a TLS configuration.
      * @param {module:model/TlsConfiguration} [options.tls_configuration]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsConfigurationResponse} and HTTP response
      */
@@ -180,7 +180,7 @@ export default class TlsConfigurationsApi {
     /**
      * Update a TLS configuration.
      * @param {Object} options
-     * @param {String} options.tls_configuration_id
+     * @param {String} options.tls_configuration_id - Alphanumeric string identifying a TLS configuration.
      * @param {module:model/TlsConfiguration} [options.tls_configuration]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsConfigurationResponse}
      */

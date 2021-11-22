@@ -25,8 +25,11 @@ class InvitationResponse {
     /**
      * Constructs a new <code>InvitationResponse</code>.
      * @alias module:model/InvitationResponse
+     * @implements module:model/Invitation
+     * @implements module:model/InvitationResponseAllOf
      */
     constructor() { 
+        Invitation.initialize(this);InvitationResponseAllOf.initialize(this);
         InvitationResponse.initialize(this);
     }
 
@@ -48,6 +51,8 @@ class InvitationResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new InvitationResponse();
+            Invitation.constructFromObject(data, obj);
+            InvitationResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('data')) {
                 obj['data'] = InvitationResponseData.constructFromObject(data['data']);
@@ -65,6 +70,16 @@ class InvitationResponse {
 InvitationResponse.prototype['data'] = undefined;
 
 
+// Implement Invitation interface:
+/**
+ * @member {module:model/InvitationData} data
+ */
+Invitation.prototype['data'] = undefined;
+// Implement InvitationResponseAllOf interface:
+/**
+ * @member {module:model/InvitationResponseData} data
+ */
+InvitationResponseAllOf.prototype['data'] = undefined;
 
 
 

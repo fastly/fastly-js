@@ -34,9 +34,15 @@ var TlsBulkCertificateResponseData = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>TlsBulkCertificateResponseData</code>.
    * @alias module:model/TlsBulkCertificateResponseData
+   * @implements module:model/TlsBulkCertificateData
+   * @implements module:model/TlsBulkCertificateResponseDataAllOf
    */
   function TlsBulkCertificateResponseData() {
     _classCallCheck(this, TlsBulkCertificateResponseData);
+
+    _TlsBulkCertificateData["default"].initialize(this);
+
+    _TlsBulkCertificateResponseDataAllOf["default"].initialize(this);
 
     TlsBulkCertificateResponseData.initialize(this);
   }
@@ -64,16 +70,20 @@ var TlsBulkCertificateResponseData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new TlsBulkCertificateResponseData();
 
+        _TlsBulkCertificateData["default"].constructFromObject(data, obj);
+
+        _TlsBulkCertificateResponseDataAllOf["default"].constructFromObject(data, obj);
+
+        if (data.hasOwnProperty('type')) {
+          obj['type'] = _TypeTlsBulkCertificate["default"].constructFromObject(data['type']);
+        }
+
         if (data.hasOwnProperty('attributes')) {
           obj['attributes'] = _ApiClient["default"].convertToType(data['attributes'], _Timestamps["default"]);
         }
 
         if (data.hasOwnProperty('relationships')) {
           obj['relationships'] = _RelationshipsForTlsBulkCertificate["default"].constructFromObject(data['relationships']);
-        }
-
-        if (data.hasOwnProperty('type')) {
-          obj['type'] = _TypeTlsBulkCertificate["default"].constructFromObject(data['type']);
         }
 
         if (data.hasOwnProperty('id')) {
@@ -88,9 +98,14 @@ var TlsBulkCertificateResponseData = /*#__PURE__*/function () {
   return TlsBulkCertificateResponseData;
 }();
 /**
- * @member {module:model/Timestamps} attributes
+ * @member {module:model/TypeTlsBulkCertificate} type
  */
 
+
+TlsBulkCertificateResponseData.prototype['type'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
 
 TlsBulkCertificateResponseData.prototype['attributes'] = undefined;
 /**
@@ -99,15 +114,38 @@ TlsBulkCertificateResponseData.prototype['attributes'] = undefined;
 
 TlsBulkCertificateResponseData.prototype['relationships'] = undefined;
 /**
+ * Alphanumeric string identifying a TLS bulk certificate.
+ * @member {String} id
+ */
+
+TlsBulkCertificateResponseData.prototype['id'] = undefined; // Implement TlsBulkCertificateData interface:
+
+/**
  * @member {module:model/TypeTlsBulkCertificate} type
  */
 
-TlsBulkCertificateResponseData.prototype['type'] = undefined;
+_TlsBulkCertificateData["default"].prototype['type'] = undefined;
+/**
+ * @member {module:model/TlsBulkCertificateDataAttributes} attributes
+ */
+
+_TlsBulkCertificateData["default"].prototype['attributes'] = undefined;
+/**
+ * @member {module:model/RelationshipsForTlsBulkCertificate} relationships
+ */
+
+_TlsBulkCertificateData["default"].prototype['relationships'] = undefined; // Implement TlsBulkCertificateResponseDataAllOf interface:
+
 /**
  * Alphanumeric string identifying a TLS bulk certificate.
  * @member {String} id
  */
 
-TlsBulkCertificateResponseData.prototype['id'] = undefined;
+_TlsBulkCertificateResponseDataAllOf["default"].prototype['id'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+
+_TlsBulkCertificateResponseDataAllOf["default"].prototype['attributes'] = undefined;
 var _default = TlsBulkCertificateResponseData;
 exports["default"] = _default;

@@ -25,6 +25,7 @@ class ServiceAuthorizationDataAttributes {
      * @alias module:model/ServiceAuthorizationDataAttributes
      */
     constructor() { 
+        
         ServiceAuthorizationDataAttributes.initialize(this);
     }
 

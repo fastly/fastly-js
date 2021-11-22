@@ -1,6 +1,5 @@
 # Fastly.LoggingScalyrApi
 
-
 ```javascript
 const apiInstance = new Fastly.LoggingScalyrApi();
 ```
@@ -15,11 +14,10 @@ Method | Fastly API endpoint | Description
 [**updateLogScalyr**](LoggingScalyrApi.md#updateLogScalyr) | **PUT** /service/{service_id}/version/{version_id}/logging/scalyr/{logging_scalyr_name} | Update the Scalyr log endpoint
 
 
-
 ## `createLogScalyr`
 
 ```javascript
-createLogScalyr({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [project_id, ], [region, ], [token] })
+createLogScalyr({ service_id, version_id, [name, ][placement, ][format_version, ][response_condition, ][format, ][region, ][token, ][project_id] })
 ```
 
 Create a Scalyr for a particular service and version.
@@ -30,19 +28,19 @@ Create a Scalyr for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
-  format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
-  placement: new Fastly.LoggingPlacement(),
+  placement: "none",
+  format_version: 1,
   response_condition: "response_condition_example",
-  project_id: "'logplex'",
-  region: "'US'",
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  region: "US",
   token: "token_example",
+  project_id: "'logplex'",
 };
 
 apiInstance.createLogScalyr(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -53,16 +51,16 @@ apiInstance.createLogScalyr(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 **name** | **String** | The name for the real-time logging configuration. | [optional]
-**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
+**placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] [one of: "none", "waf_debug", "null"]
+**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.   | [optional] [one of: 1, 2]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**project_id** | **String** | The name of the logfile within Scalyr. | [optional] [default to &#39;logplex&#39;]
-**region** | **String** | The region that log data will be sent to. | [optional] [default to &#39;US&#39;]
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [defaults to '%h %l %u %t "%r" %&gt;s %b']
+**region** | **String** | The region that log data will be sent to. | [optional] [one of: "US", "EU"]
 **token** | **String** | The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)). | [optional]
+**project_id** | **String** | The name of the logfile within Scalyr. | [optional] [defaults to 'logplex']
 
 ### Return type
 
@@ -88,7 +86,7 @@ const options = {
 
 apiInstance.deleteLogScalyr(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -99,9 +97,9 @@ apiInstance.deleteLogScalyr(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**logging_scalyr_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**logging_scalyr_name** | **String** | The name for the real-time logging configuration. |
 
 ### Return type
 
@@ -127,7 +125,7 @@ const options = {
 
 apiInstance.getLogScalyr(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -138,9 +136,9 @@ apiInstance.getLogScalyr(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**logging_scalyr_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**logging_scalyr_name** | **String** | The name for the real-time logging configuration. |
 
 ### Return type
 
@@ -165,7 +163,7 @@ const options = {
 
 apiInstance.listLogScalyr(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -176,8 +174,8 @@ apiInstance.listLogScalyr(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -187,7 +185,7 @@ Name | Type | Description  | Notes
 ## `updateLogScalyr`
 
 ```javascript
-updateLogScalyr({ service_id, version_id, logging_scalyr_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [project_id, ], [region, ], [token] })
+updateLogScalyr({ service_id, version_id, logging_scalyr_name, [name, ][placement, ][format_version, ][response_condition, ][format, ][region, ][token, ][project_id] })
 ```
 
 Update the Scalyr for a particular service and version.
@@ -199,19 +197,19 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   logging_scalyr_name: "logging_scalyr_name_example", // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
-  format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
-  placement: new Fastly.LoggingPlacement(),
+  placement: "none",
+  format_version: 1,
   response_condition: "response_condition_example",
-  project_id: "'logplex'",
-  region: "'US'",
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  region: "US",
   token: "token_example",
+  project_id: "'logplex'",
 };
 
 apiInstance.updateLogScalyr(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -222,17 +220,17 @@ apiInstance.updateLogScalyr(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**logging_scalyr_name** | **String** |  |
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**logging_scalyr_name** | **String** | The name for the real-time logging configuration. |
 **name** | **String** | The name for the real-time logging configuration. | [optional]
-**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
+**placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] [one of: "none", "waf_debug", "null"]
+**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.   | [optional] [one of: 1, 2]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**project_id** | **String** | The name of the logfile within Scalyr. | [optional] [default to &#39;logplex&#39;]
-**region** | **String** | The region that log data will be sent to. | [optional] [default to &#39;US&#39;]
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [defaults to '%h %l %u %t "%r" %&gt;s %b']
+**region** | **String** | The region that log data will be sent to. | [optional] [one of: "US", "EU"]
 **token** | **String** | The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)). | [optional]
+**project_id** | **String** | The name of the logfile within Scalyr. | [optional] [defaults to 'logplex']
 
 ### Return type
 

@@ -24,6 +24,7 @@ class RateLimiterResponseAllOf {
      * @alias module:model/RateLimiterResponseAllOf
      */
     constructor() { 
+        
         RateLimiterResponseAllOf.initialize(this);
     }
 

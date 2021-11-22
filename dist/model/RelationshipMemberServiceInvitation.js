@@ -56,12 +56,12 @@ var RelationshipMemberServiceInvitation = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new RelationshipMemberServiceInvitation();
 
-        if (data.hasOwnProperty('id')) {
-          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
-        }
-
         if (data.hasOwnProperty('type')) {
           obj['type'] = _TypeServiceInvitation["default"].constructFromObject(data['type']);
+        }
+
+        if (data.hasOwnProperty('id')) {
+          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
       }
 
@@ -72,16 +72,16 @@ var RelationshipMemberServiceInvitation = /*#__PURE__*/function () {
   return RelationshipMemberServiceInvitation;
 }();
 /**
+ * @member {module:model/TypeServiceInvitation} type
+ */
+
+
+RelationshipMemberServiceInvitation.prototype['type'] = undefined;
+/**
  * Alphanumeric string identifying a service invitation.
  * @member {String} id
  */
 
-
 RelationshipMemberServiceInvitation.prototype['id'] = undefined;
-/**
- * @member {module:model/TypeServiceInvitation} type
- */
-
-RelationshipMemberServiceInvitation.prototype['type'] = undefined;
 var _default = RelationshipMemberServiceInvitation;
 exports["default"] = _default;

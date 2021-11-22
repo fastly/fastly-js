@@ -4,9 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** | Alphanumeric string identifying a TLS activation. | [optional] [readonly] 
 **type** | [**TypeTlsActivation**](TypeTlsActivation.md) |  | [optional] 
-
+**id** | **String** | Alphanumeric string identifying a TLS activation. | [optional] [readonly] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

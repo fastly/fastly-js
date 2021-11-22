@@ -25,6 +25,7 @@ class TlsPrivateKeyResponse {
      * @alias module:model/TlsPrivateKeyResponse
      */
     constructor() { 
+        
         TlsPrivateKeyResponse.initialize(this);
     }
 

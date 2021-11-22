@@ -56,12 +56,12 @@ var RelationshipMemberTlsActivation = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new RelationshipMemberTlsActivation();
 
-        if (data.hasOwnProperty('id')) {
-          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
-        }
-
         if (data.hasOwnProperty('type')) {
           obj['type'] = _TypeTlsActivation["default"].constructFromObject(data['type']);
+        }
+
+        if (data.hasOwnProperty('id')) {
+          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
       }
 
@@ -72,16 +72,16 @@ var RelationshipMemberTlsActivation = /*#__PURE__*/function () {
   return RelationshipMemberTlsActivation;
 }();
 /**
+ * @member {module:model/TypeTlsActivation} type
+ */
+
+
+RelationshipMemberTlsActivation.prototype['type'] = undefined;
+/**
  * Alphanumeric string identifying a TLS activation.
  * @member {String} id
  */
 
-
 RelationshipMemberTlsActivation.prototype['id'] = undefined;
-/**
- * @member {module:model/TypeTlsActivation} type
- */
-
-RelationshipMemberTlsActivation.prototype['type'] = undefined;
 var _default = RelationshipMemberTlsActivation;
 exports["default"] = _default;

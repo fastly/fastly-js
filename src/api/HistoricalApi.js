@@ -211,7 +211,7 @@ export default class HistoricalApi {
     /**
      * Fetches historical stats for a given service.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} [options.from] - Absolute, relative or epoch timestamp. Limits the results returned.
      * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
@@ -253,7 +253,7 @@ export default class HistoricalApi {
     /**
      * Fetches historical stats for a given service.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} [options.from] - Absolute, relative or epoch timestamp. Limits the results returned.
      * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
@@ -270,7 +270,7 @@ export default class HistoricalApi {
     /**
      * Fetches the specified field from the historical stats for a given service.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.field - Name of the stats field.
      * @param {String} [options.from] - Absolute, relative or epoch timestamp. Limits the results returned.
      * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
@@ -318,7 +318,7 @@ export default class HistoricalApi {
     /**
      * Fetches the specified field from the historical stats for a given service.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.field - Name of the stats field.
      * @param {String} [options.from] - Absolute, relative or epoch timestamp. Limits the results returned.
      * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.

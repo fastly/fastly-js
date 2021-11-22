@@ -54,12 +54,12 @@ var LoggingGcsCommon = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new LoggingGcsCommon();
 
-        if (data.hasOwnProperty('secret_key')) {
-          obj['secret_key'] = _ApiClient["default"].convertToType(data['secret_key'], 'String');
-        }
-
         if (data.hasOwnProperty('user')) {
           obj['user'] = _ApiClient["default"].convertToType(data['user'], 'String');
+        }
+
+        if (data.hasOwnProperty('secret_key')) {
+          obj['secret_key'] = _ApiClient["default"].convertToType(data['secret_key'], 'String');
         }
       }
 
@@ -70,17 +70,17 @@ var LoggingGcsCommon = /*#__PURE__*/function () {
   return LoggingGcsCommon;
 }();
 /**
- * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
- * @member {String} secret_key
- */
-
-
-LoggingGcsCommon.prototype['secret_key'] = undefined;
-/**
  * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
  * @member {String} user
  */
 
+
 LoggingGcsCommon.prototype['user'] = undefined;
+/**
+ * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+ * @member {String} secret_key
+ */
+
+LoggingGcsCommon.prototype['secret_key'] = undefined;
 var _default = LoggingGcsCommon;
 exports["default"] = _default;

@@ -27,8 +27,11 @@ class TlsBulkCertificateResponseData {
     /**
      * Constructs a new <code>TlsBulkCertificateResponseData</code>.
      * @alias module:model/TlsBulkCertificateResponseData
+     * @implements module:model/TlsBulkCertificateData
+     * @implements module:model/TlsBulkCertificateResponseDataAllOf
      */
     constructor() { 
+        TlsBulkCertificateData.initialize(this);TlsBulkCertificateResponseDataAllOf.initialize(this);
         TlsBulkCertificateResponseData.initialize(this);
     }
 
@@ -50,15 +53,17 @@ class TlsBulkCertificateResponseData {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsBulkCertificateResponseData();
+            TlsBulkCertificateData.constructFromObject(data, obj);
+            TlsBulkCertificateResponseDataAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeTlsBulkCertificate.constructFromObject(data['type']);
+            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = RelationshipsForTlsBulkCertificate.constructFromObject(data['relationships']);
-            }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeTlsBulkCertificate.constructFromObject(data['type']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -71,6 +76,11 @@ class TlsBulkCertificateResponseData {
 }
 
 /**
+ * @member {module:model/TypeTlsBulkCertificate} type
+ */
+TlsBulkCertificateResponseData.prototype['type'] = undefined;
+
+/**
  * @member {module:model/Timestamps} attributes
  */
 TlsBulkCertificateResponseData.prototype['attributes'] = undefined;
@@ -81,17 +91,35 @@ TlsBulkCertificateResponseData.prototype['attributes'] = undefined;
 TlsBulkCertificateResponseData.prototype['relationships'] = undefined;
 
 /**
- * @member {module:model/TypeTlsBulkCertificate} type
- */
-TlsBulkCertificateResponseData.prototype['type'] = undefined;
-
-/**
  * Alphanumeric string identifying a TLS bulk certificate.
  * @member {String} id
  */
 TlsBulkCertificateResponseData.prototype['id'] = undefined;
 
 
+// Implement TlsBulkCertificateData interface:
+/**
+ * @member {module:model/TypeTlsBulkCertificate} type
+ */
+TlsBulkCertificateData.prototype['type'] = undefined;
+/**
+ * @member {module:model/TlsBulkCertificateDataAttributes} attributes
+ */
+TlsBulkCertificateData.prototype['attributes'] = undefined;
+/**
+ * @member {module:model/RelationshipsForTlsBulkCertificate} relationships
+ */
+TlsBulkCertificateData.prototype['relationships'] = undefined;
+// Implement TlsBulkCertificateResponseDataAllOf interface:
+/**
+ * Alphanumeric string identifying a TLS bulk certificate.
+ * @member {String} id
+ */
+TlsBulkCertificateResponseDataAllOf.prototype['id'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+TlsBulkCertificateResponseDataAllOf.prototype['attributes'] = undefined;
 
 
 

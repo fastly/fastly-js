@@ -34,9 +34,15 @@ var WafRuleResponseData = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>WafRuleResponseData</code>.
    * @alias module:model/WafRuleResponseData
+   * @implements module:model/WafRule
+   * @implements module:model/WafRuleResponseDataAllOf
    */
   function WafRuleResponseData() {
     _classCallCheck(this, WafRuleResponseData);
+
+    _WafRule["default"].initialize(this);
+
+    _WafRuleResponseDataAllOf["default"].initialize(this);
 
     WafRuleResponseData.initialize(this);
   }
@@ -64,16 +70,20 @@ var WafRuleResponseData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new WafRuleResponseData();
 
-        if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _WafRuleAttributes["default"].constructFromObject(data['attributes']);
+        _WafRule["default"].constructFromObject(data, obj);
+
+        _WafRuleResponseDataAllOf["default"].constructFromObject(data, obj);
+
+        if (data.hasOwnProperty('type')) {
+          obj['type'] = _TypeWafRule["default"].constructFromObject(data['type']);
         }
 
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
 
-        if (data.hasOwnProperty('type')) {
-          obj['type'] = _TypeWafRule["default"].constructFromObject(data['type']);
+        if (data.hasOwnProperty('attributes')) {
+          obj['attributes'] = _WafRuleAttributes["default"].constructFromObject(data['attributes']);
         }
 
         if (data.hasOwnProperty('relationships')) {
@@ -88,11 +98,11 @@ var WafRuleResponseData = /*#__PURE__*/function () {
   return WafRuleResponseData;
 }();
 /**
- * @member {module:model/WafRuleAttributes} attributes
+ * @member {module:model/TypeWafRule} type
  */
 
 
-WafRuleResponseData.prototype['attributes'] = undefined;
+WafRuleResponseData.prototype['type'] = undefined;
 /**
  * Alphanumeric string identifying a WAF rule.
  * @member {String} id
@@ -100,14 +110,37 @@ WafRuleResponseData.prototype['attributes'] = undefined;
 
 WafRuleResponseData.prototype['id'] = undefined;
 /**
- * @member {module:model/TypeWafRule} type
+ * @member {module:model/WafRuleAttributes} attributes
  */
 
-WafRuleResponseData.prototype['type'] = undefined;
+WafRuleResponseData.prototype['attributes'] = undefined;
 /**
  * @member {module:model/RelationshipsForWafRule} relationships
  */
 
-WafRuleResponseData.prototype['relationships'] = undefined;
+WafRuleResponseData.prototype['relationships'] = undefined; // Implement WafRule interface:
+
+/**
+ * @member {module:model/TypeWafRule} type
+ */
+
+_WafRule["default"].prototype['type'] = undefined;
+/**
+ * Alphanumeric string identifying a WAF rule.
+ * @member {String} id
+ */
+
+_WafRule["default"].prototype['id'] = undefined;
+/**
+ * @member {module:model/WafRuleAttributes} attributes
+ */
+
+_WafRule["default"].prototype['attributes'] = undefined; // Implement WafRuleResponseDataAllOf interface:
+
+/**
+ * @member {module:model/RelationshipsForWafRule} relationships
+ */
+
+_WafRuleResponseDataAllOf["default"].prototype['relationships'] = undefined;
 var _default = WafRuleResponseData;
 exports["default"] = _default;

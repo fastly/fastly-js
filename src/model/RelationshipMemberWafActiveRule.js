@@ -25,6 +25,7 @@ class RelationshipMemberWafActiveRule {
      * @alias module:model/RelationshipMemberWafActiveRule
      */
     constructor() { 
+        
         RelationshipMemberWafActiveRule.initialize(this);
     }
 
@@ -47,11 +48,11 @@ class RelationshipMemberWafActiveRule {
         if (data) {
             obj = obj || new RelationshipMemberWafActiveRule();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeWafActiveRule.constructFromObject(data['type']);
+            }
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
         }
         return obj;
@@ -61,15 +62,15 @@ class RelationshipMemberWafActiveRule {
 }
 
 /**
+ * @member {module:model/TypeWafActiveRule} type
+ */
+RelationshipMemberWafActiveRule.prototype['type'] = undefined;
+
+/**
  * Alphanumeric string identifying a WAF active rule.
  * @member {String} id
  */
 RelationshipMemberWafActiveRule.prototype['id'] = undefined;
-
-/**
- * @member {module:model/TypeWafActiveRule} type
- */
-RelationshipMemberWafActiveRule.prototype['type'] = undefined;
 
 
 

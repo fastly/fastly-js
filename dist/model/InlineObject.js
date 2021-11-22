@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _CustomerCustomerIdBillingAddressData = _interopRequireDefault(require("./CustomerCustomerIdBillingAddressData"));
+var _DictionaryItem = _interopRequireDefault(require("./DictionaryItem"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -56,8 +56,8 @@ var InlineObject = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new InlineObject();
 
-        if (data.hasOwnProperty('data')) {
-          obj['data'] = _CustomerCustomerIdBillingAddressData["default"].constructFromObject(data['data']);
+        if (data.hasOwnProperty('items')) {
+          obj['items'] = _ApiClient["default"].convertToType(data['items'], [_DictionaryItem["default"]]);
         }
       }
 
@@ -68,10 +68,10 @@ var InlineObject = /*#__PURE__*/function () {
   return InlineObject;
 }();
 /**
- * @member {module:model/CustomerCustomerIdBillingAddressData} data
+ * @member {Array.<module:model/DictionaryItem>} items
  */
 
 
-InlineObject.prototype['data'] = undefined;
+InlineObject.prototype['items'] = undefined;
 var _default = InlineObject;
 exports["default"] = _default;

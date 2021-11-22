@@ -34,9 +34,15 @@ var WafRuleRevisionResponseData = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>WafRuleRevisionResponseData</code>.
    * @alias module:model/WafRuleRevisionResponseData
+   * @implements module:model/WafRuleRevision
+   * @implements module:model/WafRuleRevisionResponseDataAllOf
    */
   function WafRuleRevisionResponseData() {
     _classCallCheck(this, WafRuleRevisionResponseData);
+
+    _WafRuleRevision["default"].initialize(this);
+
+    _WafRuleRevisionResponseDataAllOf["default"].initialize(this);
 
     WafRuleRevisionResponseData.initialize(this);
   }
@@ -64,16 +70,20 @@ var WafRuleRevisionResponseData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new WafRuleRevisionResponseData();
 
-        if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _WafRuleRevisionAttributes["default"].constructFromObject(data['attributes']);
+        _WafRuleRevision["default"].constructFromObject(data, obj);
+
+        _WafRuleRevisionResponseDataAllOf["default"].constructFromObject(data, obj);
+
+        if (data.hasOwnProperty('type')) {
+          obj['type'] = _TypeWafRuleRevision["default"].constructFromObject(data['type']);
         }
 
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
 
-        if (data.hasOwnProperty('type')) {
-          obj['type'] = _TypeWafRuleRevision["default"].constructFromObject(data['type']);
+        if (data.hasOwnProperty('attributes')) {
+          obj['attributes'] = _WafRuleRevisionAttributes["default"].constructFromObject(data['attributes']);
         }
 
         if (data.hasOwnProperty('relationships')) {
@@ -88,11 +98,11 @@ var WafRuleRevisionResponseData = /*#__PURE__*/function () {
   return WafRuleRevisionResponseData;
 }();
 /**
- * @member {module:model/WafRuleRevisionAttributes} attributes
+ * @member {module:model/TypeWafRuleRevision} type
  */
 
 
-WafRuleRevisionResponseData.prototype['attributes'] = undefined;
+WafRuleRevisionResponseData.prototype['type'] = undefined;
 /**
  * Alphanumeric string identifying a WAF rule revision.
  * @member {String} id
@@ -100,14 +110,37 @@ WafRuleRevisionResponseData.prototype['attributes'] = undefined;
 
 WafRuleRevisionResponseData.prototype['id'] = undefined;
 /**
- * @member {module:model/TypeWafRuleRevision} type
+ * @member {module:model/WafRuleRevisionAttributes} attributes
  */
 
-WafRuleRevisionResponseData.prototype['type'] = undefined;
+WafRuleRevisionResponseData.prototype['attributes'] = undefined;
 /**
  * @member {module:model/RelationshipWafRule} relationships
  */
 
-WafRuleRevisionResponseData.prototype['relationships'] = undefined;
+WafRuleRevisionResponseData.prototype['relationships'] = undefined; // Implement WafRuleRevision interface:
+
+/**
+ * @member {module:model/TypeWafRuleRevision} type
+ */
+
+_WafRuleRevision["default"].prototype['type'] = undefined;
+/**
+ * Alphanumeric string identifying a WAF rule revision.
+ * @member {String} id
+ */
+
+_WafRuleRevision["default"].prototype['id'] = undefined;
+/**
+ * @member {module:model/WafRuleRevisionAttributes} attributes
+ */
+
+_WafRuleRevision["default"].prototype['attributes'] = undefined; // Implement WafRuleRevisionResponseDataAllOf interface:
+
+/**
+ * @member {module:model/RelationshipWafRule} relationships
+ */
+
+_WafRuleRevisionResponseDataAllOf["default"].prototype['relationships'] = undefined;
 var _default = WafRuleRevisionResponseData;
 exports["default"] = _default;

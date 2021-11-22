@@ -36,9 +36,15 @@ var WafFirewallsResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>WafFirewallsResponse</code>.
    * @alias module:model/WafFirewallsResponse
+   * @implements module:model/Pagination
+   * @implements module:model/WafFirewallsResponseAllOf
    */
   function WafFirewallsResponse() {
     _classCallCheck(this, WafFirewallsResponse);
+
+    _Pagination["default"].initialize(this);
+
+    _WafFirewallsResponseAllOf["default"].initialize(this);
 
     WafFirewallsResponse.initialize(this);
   }
@@ -65,6 +71,10 @@ var WafFirewallsResponse = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new WafFirewallsResponse();
+
+        _Pagination["default"].constructFromObject(data, obj);
+
+        _WafFirewallsResponseAllOf["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('links')) {
           obj['links'] = _PaginationLinks["default"].constructFromObject(data['links']);
@@ -109,6 +119,28 @@ WafFirewallsResponse.prototype['data'] = undefined;
  * @member {Array.<module:model/SchemasWafFirewallVersion>} included
  */
 
-WafFirewallsResponse.prototype['included'] = undefined;
+WafFirewallsResponse.prototype['included'] = undefined; // Implement Pagination interface:
+
+/**
+ * @member {module:model/PaginationLinks} links
+ */
+
+_Pagination["default"].prototype['links'] = undefined;
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
+
+_Pagination["default"].prototype['meta'] = undefined; // Implement WafFirewallsResponseAllOf interface:
+
+/**
+ * @member {Array.<module:model/WafFirewallResponseData>} data
+ */
+
+_WafFirewallsResponseAllOf["default"].prototype['data'] = undefined;
+/**
+ * @member {Array.<module:model/SchemasWafFirewallVersion>} included
+ */
+
+_WafFirewallsResponseAllOf["default"].prototype['included'] = undefined;
 var _default = WafFirewallsResponse;
 exports["default"] = _default;

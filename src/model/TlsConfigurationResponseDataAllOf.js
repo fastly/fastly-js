@@ -25,6 +25,7 @@ class TlsConfigurationResponseDataAllOf {
      * @alias module:model/TlsConfigurationResponseDataAllOf
      */
     constructor() { 
+        
         TlsConfigurationResponseDataAllOf.initialize(this);
     }
 
@@ -47,11 +48,11 @@ class TlsConfigurationResponseDataAllOf {
         if (data) {
             obj = obj || new TlsConfigurationResponseDataAllOf();
 
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
             }
         }
         return obj;
@@ -61,15 +62,15 @@ class TlsConfigurationResponseDataAllOf {
 }
 
 /**
- * @member {module:model/Timestamps} attributes
- */
-TlsConfigurationResponseDataAllOf.prototype['attributes'] = undefined;
-
-/**
  * Alphanumeric string identifying a TLS configuration.
  * @member {String} id
  */
 TlsConfigurationResponseDataAllOf.prototype['id'] = undefined;
+
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+TlsConfigurationResponseDataAllOf.prototype['attributes'] = undefined;
 
 
 

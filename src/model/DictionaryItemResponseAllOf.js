@@ -24,6 +24,7 @@ class DictionaryItemResponseAllOf {
      * @alias module:model/DictionaryItemResponseAllOf
      */
     constructor() { 
+        
         DictionaryItemResponseAllOf.initialize(this);
     }
 

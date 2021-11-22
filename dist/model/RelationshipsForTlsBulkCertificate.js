@@ -7,11 +7,11 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _RelationshipCommonNameCommonName = _interopRequireDefault(require("./RelationshipCommonNameCommonName"));
-
 var _RelationshipTlsConfigurationTlsConfiguration = _interopRequireDefault(require("./RelationshipTlsConfigurationTlsConfiguration"));
 
 var _RelationshipTlsConfigurations = _interopRequireDefault(require("./RelationshipTlsConfigurations"));
+
+var _RelationshipTlsDomainTlsDomain = _interopRequireDefault(require("./RelationshipTlsDomainTlsDomain"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -30,9 +30,12 @@ var RelationshipsForTlsBulkCertificate = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>RelationshipsForTlsBulkCertificate</code>.
    * @alias module:model/RelationshipsForTlsBulkCertificate
+   * @implements module:model/RelationshipTlsConfigurations
    */
   function RelationshipsForTlsBulkCertificate() {
     _classCallCheck(this, RelationshipsForTlsBulkCertificate);
+
+    _RelationshipTlsConfigurations["default"].initialize(this);
 
     RelationshipsForTlsBulkCertificate.initialize(this);
   }
@@ -60,12 +63,14 @@ var RelationshipsForTlsBulkCertificate = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new RelationshipsForTlsBulkCertificate();
 
+        _RelationshipTlsConfigurations["default"].constructFromObject(data, obj);
+
         if (data.hasOwnProperty('tls_configurations')) {
           obj['tls_configurations'] = _RelationshipTlsConfigurationTlsConfiguration["default"].constructFromObject(data['tls_configurations']);
         }
 
         if (data.hasOwnProperty('tls_domains')) {
-          obj['tls_domains'] = _RelationshipCommonNameCommonName["default"].constructFromObject(data['tls_domains']);
+          obj['tls_domains'] = _RelationshipTlsDomainTlsDomain["default"].constructFromObject(data['tls_domains']);
         }
       }
 
@@ -82,9 +87,15 @@ var RelationshipsForTlsBulkCertificate = /*#__PURE__*/function () {
 
 RelationshipsForTlsBulkCertificate.prototype['tls_configurations'] = undefined;
 /**
- * @member {module:model/RelationshipCommonNameCommonName} tls_domains
+ * @member {module:model/RelationshipTlsDomainTlsDomain} tls_domains
  */
 
-RelationshipsForTlsBulkCertificate.prototype['tls_domains'] = undefined;
+RelationshipsForTlsBulkCertificate.prototype['tls_domains'] = undefined; // Implement RelationshipTlsConfigurations interface:
+
+/**
+ * @member {module:model/RelationshipTlsConfigurationTlsConfiguration} tls_configurations
+ */
+
+_RelationshipTlsConfigurations["default"].prototype['tls_configurations'] = undefined;
 var _default = RelationshipsForTlsBulkCertificate;
 exports["default"] = _default;

@@ -56,12 +56,12 @@ var ServiceAuthorizationResponseDataAllOf = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new ServiceAuthorizationResponseDataAllOf();
 
-        if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _Timestamps["default"].constructFromObject(data['attributes']);
-        }
-
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
+        }
+
+        if (data.hasOwnProperty('attributes')) {
+          obj['attributes'] = _Timestamps["default"].constructFromObject(data['attributes']);
         }
       }
 
@@ -72,16 +72,16 @@ var ServiceAuthorizationResponseDataAllOf = /*#__PURE__*/function () {
   return ServiceAuthorizationResponseDataAllOf;
 }();
 /**
- * @member {module:model/Timestamps} attributes
- */
-
-
-ServiceAuthorizationResponseDataAllOf.prototype['attributes'] = undefined;
-/**
  * Alphanumeric string identifying a service authorization.
  * @member {String} id
  */
 
+
 ServiceAuthorizationResponseDataAllOf.prototype['id'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+
+ServiceAuthorizationResponseDataAllOf.prototype['attributes'] = undefined;
 var _default = ServiceAuthorizationResponseDataAllOf;
 exports["default"] = _default;

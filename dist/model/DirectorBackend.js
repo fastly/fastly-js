@@ -30,9 +30,18 @@ var DirectorBackend = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>DirectorBackend</code>.
    * @alias module:model/DirectorBackend
+   * @implements module:model/Timestamps
+   * @implements module:model/ServiceIdAndVersion
+   * @implements module:model/DirectorBackendAllOf
    */
   function DirectorBackend() {
     _classCallCheck(this, DirectorBackend);
+
+    _Timestamps["default"].initialize(this);
+
+    _ServiceIdAndVersion["default"].initialize(this);
+
+    _DirectorBackendAllOf["default"].initialize(this);
 
     DirectorBackend.initialize(this);
   }
@@ -59,6 +68,12 @@ var DirectorBackend = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new DirectorBackend();
+
+        _Timestamps["default"].constructFromObject(data, obj);
+
+        _ServiceIdAndVersion["default"].constructFromObject(data, obj);
+
+        _DirectorBackendAllOf["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('created_at')) {
           obj['created_at'] = _ApiClient["default"].convertToType(data['created_at'], 'String');
@@ -137,6 +152,51 @@ DirectorBackend.prototype['backend_name'] = undefined;
  * @member {String} director
  */
 
-DirectorBackend.prototype['director'] = undefined;
+DirectorBackend.prototype['director'] = undefined; // Implement Timestamps interface:
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+
+_Timestamps["default"].prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+
+_Timestamps["default"].prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+
+_Timestamps["default"].prototype['updated_at'] = undefined; // Implement ServiceIdAndVersion interface:
+
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+
+_ServiceIdAndVersion["default"].prototype['service_id'] = undefined;
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
+
+_ServiceIdAndVersion["default"].prototype['version'] = undefined; // Implement DirectorBackendAllOf interface:
+
+/**
+ * The name of the backend.
+ * @member {String} backend_name
+ */
+
+_DirectorBackendAllOf["default"].prototype['backend_name'] = undefined;
+/**
+ * Name for the Director.
+ * @member {String} director
+ */
+
+_DirectorBackendAllOf["default"].prototype['director'] = undefined;
 var _default = DirectorBackend;
 exports["default"] = _default;

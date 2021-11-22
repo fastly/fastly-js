@@ -24,6 +24,7 @@ class ServiceIdAndVersion {
      * @alias module:model/ServiceIdAndVersion
      */
     constructor() { 
+        
         ServiceIdAndVersion.initialize(this);
     }
 

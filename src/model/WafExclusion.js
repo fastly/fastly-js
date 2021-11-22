@@ -25,6 +25,7 @@ class WafExclusion {
      * @alias module:model/WafExclusion
      */
     constructor() { 
+        
         WafExclusion.initialize(this);
     }
 

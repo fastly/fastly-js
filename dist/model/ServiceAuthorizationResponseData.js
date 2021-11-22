@@ -32,9 +32,15 @@ var ServiceAuthorizationResponseData = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>ServiceAuthorizationResponseData</code>.
    * @alias module:model/ServiceAuthorizationResponseData
+   * @implements module:model/ServiceAuthorizationData
+   * @implements module:model/ServiceAuthorizationResponseDataAllOf
    */
   function ServiceAuthorizationResponseData() {
     _classCallCheck(this, ServiceAuthorizationResponseData);
+
+    _ServiceAuthorizationData["default"].initialize(this);
+
+    _ServiceAuthorizationResponseDataAllOf["default"].initialize(this);
 
     ServiceAuthorizationResponseData.initialize(this);
   }
@@ -62,16 +68,20 @@ var ServiceAuthorizationResponseData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new ServiceAuthorizationResponseData();
 
+        _ServiceAuthorizationData["default"].constructFromObject(data, obj);
+
+        _ServiceAuthorizationResponseDataAllOf["default"].constructFromObject(data, obj);
+
+        if (data.hasOwnProperty('type')) {
+          obj['type'] = _TypeServiceAuthorization["default"].constructFromObject(data['type']);
+        }
+
         if (data.hasOwnProperty('attributes')) {
           obj['attributes'] = _Timestamps["default"].constructFromObject(data['attributes']);
         }
 
         if (data.hasOwnProperty('relationships')) {
           obj['relationships'] = _ApiClient["default"].convertToType(data['relationships'], Object);
-        }
-
-        if (data.hasOwnProperty('type')) {
-          obj['type'] = _TypeServiceAuthorization["default"].constructFromObject(data['type']);
         }
 
         if (data.hasOwnProperty('id')) {
@@ -86,9 +96,14 @@ var ServiceAuthorizationResponseData = /*#__PURE__*/function () {
   return ServiceAuthorizationResponseData;
 }();
 /**
- * @member {module:model/Timestamps} attributes
+ * @member {module:model/TypeServiceAuthorization} type
  */
 
+
+ServiceAuthorizationResponseData.prototype['type'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
 
 ServiceAuthorizationResponseData.prototype['attributes'] = undefined;
 /**
@@ -97,15 +112,38 @@ ServiceAuthorizationResponseData.prototype['attributes'] = undefined;
 
 ServiceAuthorizationResponseData.prototype['relationships'] = undefined;
 /**
+ * Alphanumeric string identifying a service authorization.
+ * @member {String} id
+ */
+
+ServiceAuthorizationResponseData.prototype['id'] = undefined; // Implement ServiceAuthorizationData interface:
+
+/**
  * @member {module:model/TypeServiceAuthorization} type
  */
 
-ServiceAuthorizationResponseData.prototype['type'] = undefined;
+_ServiceAuthorizationData["default"].prototype['type'] = undefined;
+/**
+ * @member {module:model/ServiceAuthorizationDataAttributes} attributes
+ */
+
+_ServiceAuthorizationData["default"].prototype['attributes'] = undefined;
+/**
+ * @member {Object} relationships
+ */
+
+_ServiceAuthorizationData["default"].prototype['relationships'] = undefined; // Implement ServiceAuthorizationResponseDataAllOf interface:
+
 /**
  * Alphanumeric string identifying a service authorization.
  * @member {String} id
  */
 
-ServiceAuthorizationResponseData.prototype['id'] = undefined;
+_ServiceAuthorizationResponseDataAllOf["default"].prototype['id'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+
+_ServiceAuthorizationResponseDataAllOf["default"].prototype['attributes'] = undefined;
 var _default = ServiceAuthorizationResponseData;
 exports["default"] = _default;

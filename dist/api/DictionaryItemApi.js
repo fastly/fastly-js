@@ -9,7 +9,7 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _DictionaryItemResponse = _interopRequireDefault(require("../model/DictionaryItemResponse"));
 
-var _InlineObject = _interopRequireDefault(require("../model/InlineObject4"));
+var _InlineObject = _interopRequireDefault(require("../model/InlineObject"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -44,9 +44,9 @@ var DictionaryItemApi = /*#__PURE__*/function () {
   /**
    * Update DictionaryItem in batch for given service, dictionary ID and key/value pairs for items.
    * @param {Object} options
-   * @param {String} options.service_id
-   * @param {String} options.dictionary_id
-   * @param {module:model/InlineObject4} [options.inline_object4]
+   * @param {String} options.service_id - Alphanumeric string identifying the service.
+   * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
+   * @param {module:model/InlineObject} [options.inline_object]
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
    */
 
@@ -55,7 +55,7 @@ var DictionaryItemApi = /*#__PURE__*/function () {
     key: "bulkUpdateDictionaryItemWithHttpInfo",
     value: function bulkUpdateDictionaryItemWithHttpInfo() {
       var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-      var postBody = options['inline_object4']; // Verify the required parameter 'service_id' is set.
+      var postBody = options['inline_object']; // Verify the required parameter 'service_id' is set.
 
       if (options['service_id'] === undefined || options['service_id'] === null) {
         throw new Error("Missing the required parameter 'service_id'.");
@@ -82,9 +82,9 @@ var DictionaryItemApi = /*#__PURE__*/function () {
     /**
      * Update DictionaryItem in batch for given service, dictionary ID and key/value pairs for items.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.dictionary_id
-     * @param {module:model/InlineObject4} [options.inline_object4]
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
+     * @param {module:model/InlineObject} [options.inline_object]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
 
@@ -99,8 +99,8 @@ var DictionaryItemApi = /*#__PURE__*/function () {
     /**
      * Create DictionaryItem given service, dictionary ID, item key, and item value.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.dictionary_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
      * @param {String} [options.item_key] - Item key, maximum 256 characters.
      * @param {String} [options.item_value] - Item value, maximum 8000 characters.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryItemResponse} and HTTP response
@@ -140,8 +140,8 @@ var DictionaryItemApi = /*#__PURE__*/function () {
     /**
      * Create DictionaryItem given service, dictionary ID, item key, and item value.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.dictionary_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
      * @param {String} [options.item_key] - Item key, maximum 256 characters.
      * @param {String} [options.item_value] - Item value, maximum 8000 characters.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryItemResponse}
@@ -158,9 +158,9 @@ var DictionaryItemApi = /*#__PURE__*/function () {
     /**
      * Delete DictionaryItem given service, dictionary ID, and item key.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.dictionary_id
-     * @param {String} options.dictionary_item_key
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
+     * @param {String} options.dictionary_item_key - Item key, maximum 256 characters.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
 
@@ -201,9 +201,9 @@ var DictionaryItemApi = /*#__PURE__*/function () {
     /**
      * Delete DictionaryItem given service, dictionary ID, and item key.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.dictionary_id
-     * @param {String} options.dictionary_item_key
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
+     * @param {String} options.dictionary_item_key - Item key, maximum 256 characters.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
 
@@ -218,9 +218,9 @@ var DictionaryItemApi = /*#__PURE__*/function () {
     /**
      * Retrieve a single DictionaryItem given service, dictionary ID and item key.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.dictionary_id
-     * @param {String} options.dictionary_item_key
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
+     * @param {String} options.dictionary_item_key - Item key, maximum 256 characters.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryItemResponse} and HTTP response
      */
 
@@ -261,9 +261,9 @@ var DictionaryItemApi = /*#__PURE__*/function () {
     /**
      * Retrieve a single DictionaryItem given service, dictionary ID and item key.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.dictionary_id
-     * @param {String} options.dictionary_item_key
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
+     * @param {String} options.dictionary_item_key - Item key, maximum 256 characters.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryItemResponse}
      */
 
@@ -278,8 +278,8 @@ var DictionaryItemApi = /*#__PURE__*/function () {
     /**
      * List of DictionaryItems given service and dictionary ID.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.dictionary_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
      * @param {Number} [options.page] - Current page.
      * @param {Number} [options.per_page=20] - Number of records per page.
      * @param {String} [options.sort='created'] - Field on which to sort.
@@ -323,8 +323,8 @@ var DictionaryItemApi = /*#__PURE__*/function () {
     /**
      * List of DictionaryItems given service and dictionary ID.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.dictionary_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
      * @param {Number} [options.page] - Current page.
      * @param {Number} [options.per_page=20] - Number of records per page.
      * @param {String} [options.sort='created'] - Field on which to sort.
@@ -343,9 +343,9 @@ var DictionaryItemApi = /*#__PURE__*/function () {
     /**
      * Update DictionaryItem given service, dictionary ID, item key, and item value.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.dictionary_id
-     * @param {String} options.dictionary_item_key
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
+     * @param {String} options.dictionary_item_key - Item key, maximum 256 characters.
      * @param {String} [options.item_key] - Item key, maximum 256 characters.
      * @param {String} [options.item_value] - Item value, maximum 8000 characters.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryItemResponse} and HTTP response
@@ -391,9 +391,9 @@ var DictionaryItemApi = /*#__PURE__*/function () {
     /**
      * Update DictionaryItem given service, dictionary ID, item key, and item value.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.dictionary_id
-     * @param {String} options.dictionary_item_key
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
+     * @param {String} options.dictionary_item_key - Item key, maximum 256 characters.
      * @param {String} [options.item_key] - Item key, maximum 256 characters.
      * @param {String} [options.item_value] - Item value, maximum 8000 characters.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryItemResponse}
@@ -410,9 +410,9 @@ var DictionaryItemApi = /*#__PURE__*/function () {
     /**
      * Upsert DictionaryItem given service, dictionary ID, item key, and item value.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.dictionary_id
-     * @param {String} options.dictionary_item_key
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
+     * @param {String} options.dictionary_item_key - Item key, maximum 256 characters.
      * @param {String} [options.item_key] - Item key, maximum 256 characters.
      * @param {String} [options.item_value] - Item value, maximum 8000 characters.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DictionaryItemResponse} and HTTP response
@@ -458,9 +458,9 @@ var DictionaryItemApi = /*#__PURE__*/function () {
     /**
      * Upsert DictionaryItem given service, dictionary ID, item key, and item value.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.dictionary_id
-     * @param {String} options.dictionary_item_key
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
+     * @param {String} options.dictionary_item_key - Item key, maximum 256 characters.
      * @param {String} [options.item_key] - Item key, maximum 256 characters.
      * @param {String} [options.item_value] - Item value, maximum 8000 characters.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DictionaryItemResponse}

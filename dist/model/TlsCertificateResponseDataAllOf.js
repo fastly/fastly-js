@@ -56,12 +56,12 @@ var TlsCertificateResponseDataAllOf = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new TlsCertificateResponseDataAllOf();
 
-        if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _ApiClient["default"].convertToType(data['attributes'], _Timestamps["default"]);
-        }
-
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
+        }
+
+        if (data.hasOwnProperty('attributes')) {
+          obj['attributes'] = _ApiClient["default"].convertToType(data['attributes'], _Timestamps["default"]);
         }
       }
 
@@ -72,16 +72,16 @@ var TlsCertificateResponseDataAllOf = /*#__PURE__*/function () {
   return TlsCertificateResponseDataAllOf;
 }();
 /**
- * @member {module:model/Timestamps} attributes
- */
-
-
-TlsCertificateResponseDataAllOf.prototype['attributes'] = undefined;
-/**
  * Alphanumeric string identifying a TLS certificate.
  * @member {String} id
  */
 
+
 TlsCertificateResponseDataAllOf.prototype['id'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+
+TlsCertificateResponseDataAllOf.prototype['attributes'] = undefined;
 var _default = TlsCertificateResponseDataAllOf;
 exports["default"] = _default;

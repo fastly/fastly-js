@@ -24,6 +24,7 @@ class CacheSetting {
      * @alias module:model/CacheSetting
      */
     constructor() { 
+        
         CacheSetting.initialize(this);
     }
 

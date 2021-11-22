@@ -26,8 +26,11 @@ class HistoricalUsageMonthResponse {
     /**
      * Constructs a new <code>HistoricalUsageMonthResponse</code>.
      * @alias module:model/HistoricalUsageMonthResponse
+     * @implements module:model/Historical
+     * @implements module:model/HistoricalUsageMonthResponseAllOf
      */
     constructor() { 
+        Historical.initialize(this);HistoricalUsageMonthResponseAllOf.initialize(this);
         HistoricalUsageMonthResponse.initialize(this);
     }
 
@@ -49,15 +52,17 @@ class HistoricalUsageMonthResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new HistoricalUsageMonthResponse();
+            Historical.constructFromObject(data, obj);
+            HistoricalUsageMonthResponseAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            }
             if (data.hasOwnProperty('meta')) {
                 obj['meta'] = HistoricalMeta.constructFromObject(data['meta']);
             }
             if (data.hasOwnProperty('msg')) {
                 obj['msg'] = ApiClient.convertToType(data['msg'], 'String');
-            }
-            if (data.hasOwnProperty('status')) {
-                obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
             if (data.hasOwnProperty('data')) {
                 obj['data'] = HistoricalUsageMonthResponseAllOfData.constructFromObject(data['data']);
@@ -68,6 +73,12 @@ class HistoricalUsageMonthResponse {
 
 
 }
+
+/**
+ * Whether or not we were able to successfully execute the query.
+ * @member {String} status
+ */
+HistoricalUsageMonthResponse.prototype['status'] = undefined;
 
 /**
  * @member {module:model/HistoricalMeta} meta
@@ -81,17 +92,31 @@ HistoricalUsageMonthResponse.prototype['meta'] = undefined;
 HistoricalUsageMonthResponse.prototype['msg'] = undefined;
 
 /**
- * Whether or not we were able to successfully execute the query.
- * @member {String} status
- */
-HistoricalUsageMonthResponse.prototype['status'] = undefined;
-
-/**
  * @member {module:model/HistoricalUsageMonthResponseAllOfData} data
  */
 HistoricalUsageMonthResponse.prototype['data'] = undefined;
 
 
+// Implement Historical interface:
+/**
+ * Whether or not we were able to successfully execute the query.
+ * @member {String} status
+ */
+Historical.prototype['status'] = undefined;
+/**
+ * @member {module:model/HistoricalMeta} meta
+ */
+Historical.prototype['meta'] = undefined;
+/**
+ * If the query was not successful, this will provide a string that explains why.
+ * @member {String} msg
+ */
+Historical.prototype['msg'] = undefined;
+// Implement HistoricalUsageMonthResponseAllOf interface:
+/**
+ * @member {module:model/HistoricalUsageMonthResponseAllOfData} data
+ */
+HistoricalUsageMonthResponseAllOf.prototype['data'] = undefined;
 
 
 

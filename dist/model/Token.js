@@ -54,16 +54,16 @@ var Token = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new Token();
 
+        if (data.hasOwnProperty('services')) {
+          obj['services'] = _ApiClient["default"].convertToType(data['services'], ['String']);
+        }
+
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
         }
 
         if (data.hasOwnProperty('scope')) {
           obj['scope'] = _ApiClient["default"].convertToType(data['scope'], 'String');
-        }
-
-        if (data.hasOwnProperty('services')) {
-          obj['services'] = _ApiClient["default"].convertToType(data['services'], ['String']);
         }
       }
 
@@ -74,10 +74,16 @@ var Token = /*#__PURE__*/function () {
   return Token;
 }();
 /**
+ * List of alphanumeric strings identifying services (optional). If no services are specified, the token will have access to all services on the account. 
+ * @member {Array.<String>} services
+ */
+
+
+Token.prototype['services'] = undefined;
+/**
  * Name of the token.
  * @member {String} name
  */
-
 
 Token.prototype['name'] = undefined;
 /**
@@ -87,12 +93,6 @@ Token.prototype['name'] = undefined;
  */
 
 Token.prototype['scope'] = undefined;
-/**
- * List of alphanumeric strings identifying services (optional). If no services are specified, the token will have access to all services on the account. 
- * @member {Array.<String>} services
- */
-
-Token.prototype['services'] = undefined;
 /**
  * Allowed values for the <code>scope</code> property.
  * @enum {String}

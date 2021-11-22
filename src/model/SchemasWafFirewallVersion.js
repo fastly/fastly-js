@@ -25,6 +25,7 @@ class SchemasWafFirewallVersion {
      * @alias module:model/SchemasWafFirewallVersion
      */
     constructor() { 
+        
         SchemasWafFirewallVersion.initialize(this);
     }
 

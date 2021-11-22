@@ -54,16 +54,16 @@ var DictionaryInfoResponse = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new DictionaryInfoResponse();
 
-        if (data.hasOwnProperty('digest')) {
-          obj['digest'] = _ApiClient["default"].convertToType(data['digest'], 'String');
+        if (data.hasOwnProperty('last_updated')) {
+          obj['last_updated'] = _ApiClient["default"].convertToType(data['last_updated'], 'String');
         }
 
         if (data.hasOwnProperty('item_count')) {
           obj['item_count'] = _ApiClient["default"].convertToType(data['item_count'], 'Number');
         }
 
-        if (data.hasOwnProperty('last_updated')) {
-          obj['last_updated'] = _ApiClient["default"].convertToType(data['last_updated'], 'String');
+        if (data.hasOwnProperty('digest')) {
+          obj['digest'] = _ApiClient["default"].convertToType(data['digest'], 'String');
         }
       }
 
@@ -74,12 +74,12 @@ var DictionaryInfoResponse = /*#__PURE__*/function () {
   return DictionaryInfoResponse;
 }();
 /**
- * A hash of all the dictionary content.
- * @member {String} digest
+ * Timestamp (UTC) when the dictionary was last updated or an item was added or removed.
+ * @member {String} last_updated
  */
 
 
-DictionaryInfoResponse.prototype['digest'] = undefined;
+DictionaryInfoResponse.prototype['last_updated'] = undefined;
 /**
  * The number of items currently in the dictionary.
  * @member {Number} item_count
@@ -87,10 +87,10 @@ DictionaryInfoResponse.prototype['digest'] = undefined;
 
 DictionaryInfoResponse.prototype['item_count'] = undefined;
 /**
- * Timestamp (UTC) when the dictionary was last updated or an item was added or removed.
- * @member {String} last_updated
+ * A hash of all the dictionary content.
+ * @member {String} digest
  */
 
-DictionaryInfoResponse.prototype['last_updated'] = undefined;
+DictionaryInfoResponse.prototype['digest'] = undefined;
 var _default = DictionaryInfoResponse;
 exports["default"] = _default;

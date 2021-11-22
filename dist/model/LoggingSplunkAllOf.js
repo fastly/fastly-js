@@ -56,12 +56,12 @@ var LoggingSplunkAllOf = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new LoggingSplunkAllOf();
 
-        if (data.hasOwnProperty('token')) {
-          obj['token'] = _ApiClient["default"].convertToType(data['token'], 'String');
-        }
-
         if (data.hasOwnProperty('url')) {
           obj['url'] = _ApiClient["default"].convertToType(data['url'], 'String');
+        }
+
+        if (data.hasOwnProperty('token')) {
+          obj['token'] = _ApiClient["default"].convertToType(data['token'], 'String');
         }
 
         if (data.hasOwnProperty('use_tls')) {
@@ -76,18 +76,18 @@ var LoggingSplunkAllOf = /*#__PURE__*/function () {
   return LoggingSplunkAllOf;
 }();
 /**
- * A Splunk token for use in posting logs over HTTP to your collector.
- * @member {String} token
- */
-
-
-LoggingSplunkAllOf.prototype['token'] = undefined;
-/**
  * The URL to post logs to.
  * @member {String} url
  */
 
+
 LoggingSplunkAllOf.prototype['url'] = undefined;
+/**
+ * A Splunk token for use in posting logs over HTTP to your collector.
+ * @member {String} token
+ */
+
+LoggingSplunkAllOf.prototype['token'] = undefined;
 /**
  * @member {module:model/LoggingUseTls} use_tls
  */

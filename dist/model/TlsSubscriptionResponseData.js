@@ -7,11 +7,11 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _RelationshipsForTlsSubscription = _interopRequireDefault(require("./RelationshipsForTlsSubscription"));
-
-var _Timestamps = _interopRequireDefault(require("./Timestamps"));
+var _AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates = _interopRequireDefault(require("./AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates"));
 
 var _TlsSubscriptionData = _interopRequireDefault(require("./TlsSubscriptionData"));
+
+var _TlsSubscriptionDataAttributes = _interopRequireDefault(require("./TlsSubscriptionDataAttributes"));
 
 var _TlsSubscriptionResponseDataAllOf = _interopRequireDefault(require("./TlsSubscriptionResponseDataAllOf"));
 
@@ -34,9 +34,15 @@ var TlsSubscriptionResponseData = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>TlsSubscriptionResponseData</code>.
    * @alias module:model/TlsSubscriptionResponseData
+   * @implements module:model/TlsSubscriptionData
+   * @implements module:model/TlsSubscriptionResponseDataAllOf
    */
   function TlsSubscriptionResponseData() {
     _classCallCheck(this, TlsSubscriptionResponseData);
+
+    _TlsSubscriptionData["default"].initialize(this);
+
+    _TlsSubscriptionResponseDataAllOf["default"].initialize(this);
 
     TlsSubscriptionResponseData.initialize(this);
   }
@@ -64,16 +70,20 @@ var TlsSubscriptionResponseData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new TlsSubscriptionResponseData();
 
-        if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _ApiClient["default"].convertToType(data['attributes'], _Timestamps["default"]);
-        }
+        _TlsSubscriptionData["default"].constructFromObject(data, obj);
 
-        if (data.hasOwnProperty('relationships')) {
-          obj['relationships'] = _RelationshipsForTlsSubscription["default"].constructFromObject(data['relationships']);
-        }
+        _TlsSubscriptionResponseDataAllOf["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('type')) {
           obj['type'] = _TypeTlsSubscription["default"].constructFromObject(data['type']);
+        }
+
+        if (data.hasOwnProperty('attributes')) {
+          obj['attributes'] = _TlsSubscriptionDataAttributes["default"].constructFromObject(data['attributes']);
+        }
+
+        if (data.hasOwnProperty('relationships')) {
+          obj['relationships'] = _ApiClient["default"].convertToType(data['relationships'], _AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates["default"]);
         }
 
         if (data.hasOwnProperty('id')) {
@@ -88,26 +98,59 @@ var TlsSubscriptionResponseData = /*#__PURE__*/function () {
   return TlsSubscriptionResponseData;
 }();
 /**
- * @member {module:model/Timestamps} attributes
- */
-
-
-TlsSubscriptionResponseData.prototype['attributes'] = undefined;
-/**
- * @member {module:model/RelationshipsForTlsSubscription} relationships
- */
-
-TlsSubscriptionResponseData.prototype['relationships'] = undefined;
-/**
  * @member {module:model/TypeTlsSubscription} type
  */
 
+
 TlsSubscriptionResponseData.prototype['type'] = undefined;
+/**
+ * @member {module:model/TlsSubscriptionDataAttributes} attributes
+ */
+
+TlsSubscriptionResponseData.prototype['attributes'] = undefined;
+/**
+ * @member {module:model/AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates} relationships
+ */
+
+TlsSubscriptionResponseData.prototype['relationships'] = undefined;
 /**
  * Alphanumeric string identifying a TLS subscription.
  * @member {String} id
  */
 
-TlsSubscriptionResponseData.prototype['id'] = undefined;
+TlsSubscriptionResponseData.prototype['id'] = undefined; // Implement TlsSubscriptionData interface:
+
+/**
+ * @member {module:model/TypeTlsSubscription} type
+ */
+
+_TlsSubscriptionData["default"].prototype['type'] = undefined;
+/**
+ * @member {module:model/TlsSubscriptionDataAttributes} attributes
+ */
+
+_TlsSubscriptionData["default"].prototype['attributes'] = undefined;
+/**
+ * @member {module:model/RelationshipsForTlsSubscription} relationships
+ */
+
+_TlsSubscriptionData["default"].prototype['relationships'] = undefined; // Implement TlsSubscriptionResponseDataAllOf interface:
+
+/**
+ * Alphanumeric string identifying a TLS subscription.
+ * @member {String} id
+ */
+
+_TlsSubscriptionResponseDataAllOf["default"].prototype['id'] = undefined;
+/**
+ * @member {module:model/TlsSubscriptionDataAttributes} attributes
+ */
+
+_TlsSubscriptionResponseDataAllOf["default"].prototype['attributes'] = undefined;
+/**
+ * @member {module:model/AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates} relationships
+ */
+
+_TlsSubscriptionResponseDataAllOf["default"].prototype['relationships'] = undefined;
 var _default = TlsSubscriptionResponseData;
 exports["default"] = _default;

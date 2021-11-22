@@ -26,6 +26,7 @@ class Pagination {
      * @alias module:model/Pagination
      */
     constructor() { 
+        
         Pagination.initialize(this);
     }
 

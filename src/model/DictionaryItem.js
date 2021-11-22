@@ -24,6 +24,7 @@ class DictionaryItem {
      * @alias module:model/DictionaryItem
      */
     constructor() { 
+        
         DictionaryItem.initialize(this);
     }
 

@@ -7,13 +7,13 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _RelationshipCommonNameCommonName = _interopRequireDefault(require("./RelationshipCommonNameCommonName"));
-
 var _RelationshipTlsCertificateTlsCertificate = _interopRequireDefault(require("./RelationshipTlsCertificateTlsCertificate"));
 
 var _RelationshipTlsCertificates = _interopRequireDefault(require("./RelationshipTlsCertificates"));
 
 var _RelationshipTlsConfigurationTlsConfiguration = _interopRequireDefault(require("./RelationshipTlsConfigurationTlsConfiguration"));
+
+var _RelationshipTlsDomainTlsDomain = _interopRequireDefault(require("./RelationshipTlsDomainTlsDomain"));
 
 var _RelationshipTlsDomains = _interopRequireDefault(require("./RelationshipTlsDomains"));
 
@@ -34,9 +34,15 @@ var RelationshipsForTlsSubscription = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>RelationshipsForTlsSubscription</code>.
    * @alias module:model/RelationshipsForTlsSubscription
+   * @implements module:model/RelationshipTlsDomains
+   * @implements module:model/RelationshipTlsCertificates
    */
   function RelationshipsForTlsSubscription() {
     _classCallCheck(this, RelationshipsForTlsSubscription);
+
+    _RelationshipTlsDomains["default"].initialize(this);
+
+    _RelationshipTlsCertificates["default"].initialize(this);
 
     RelationshipsForTlsSubscription.initialize(this);
   }
@@ -64,8 +70,12 @@ var RelationshipsForTlsSubscription = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new RelationshipsForTlsSubscription();
 
+        _RelationshipTlsDomains["default"].constructFromObject(data, obj);
+
+        _RelationshipTlsCertificates["default"].constructFromObject(data, obj);
+
         if (data.hasOwnProperty('tls_domains')) {
-          obj['tls_domains'] = _RelationshipCommonNameCommonName["default"].constructFromObject(data['tls_domains']);
+          obj['tls_domains'] = _RelationshipTlsDomainTlsDomain["default"].constructFromObject(data['tls_domains']);
         }
 
         if (data.hasOwnProperty('tls_certificates')) {
@@ -84,7 +94,7 @@ var RelationshipsForTlsSubscription = /*#__PURE__*/function () {
   return RelationshipsForTlsSubscription;
 }();
 /**
- * @member {module:model/RelationshipCommonNameCommonName} tls_domains
+ * @member {module:model/RelationshipTlsDomainTlsDomain} tls_domains
  */
 
 
@@ -98,6 +108,18 @@ RelationshipsForTlsSubscription.prototype['tls_certificates'] = undefined;
  * @member {module:model/RelationshipTlsConfigurationTlsConfiguration} tls_configuration
  */
 
-RelationshipsForTlsSubscription.prototype['tls_configuration'] = undefined;
+RelationshipsForTlsSubscription.prototype['tls_configuration'] = undefined; // Implement RelationshipTlsDomains interface:
+
+/**
+ * @member {module:model/RelationshipTlsDomainTlsDomain} tls_domains
+ */
+
+_RelationshipTlsDomains["default"].prototype['tls_domains'] = undefined; // Implement RelationshipTlsCertificates interface:
+
+/**
+ * @member {module:model/RelationshipTlsCertificateTlsCertificate} tls_certificates
+ */
+
+_RelationshipTlsCertificates["default"].prototype['tls_certificates'] = undefined;
 var _default = RelationshipsForTlsSubscription;
 exports["default"] = _default;

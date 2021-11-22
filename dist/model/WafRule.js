@@ -58,16 +58,16 @@ var WafRule = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new WafRule();
 
-        if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _WafRuleAttributes["default"].constructFromObject(data['attributes']);
+        if (data.hasOwnProperty('type')) {
+          obj['type'] = _TypeWafRule["default"].constructFromObject(data['type']);
         }
 
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
 
-        if (data.hasOwnProperty('type')) {
-          obj['type'] = _TypeWafRule["default"].constructFromObject(data['type']);
+        if (data.hasOwnProperty('attributes')) {
+          obj['attributes'] = _WafRuleAttributes["default"].constructFromObject(data['attributes']);
         }
       }
 
@@ -78,11 +78,11 @@ var WafRule = /*#__PURE__*/function () {
   return WafRule;
 }();
 /**
- * @member {module:model/WafRuleAttributes} attributes
+ * @member {module:model/TypeWafRule} type
  */
 
 
-WafRule.prototype['attributes'] = undefined;
+WafRule.prototype['type'] = undefined;
 /**
  * Alphanumeric string identifying a WAF rule.
  * @member {String} id
@@ -90,9 +90,9 @@ WafRule.prototype['attributes'] = undefined;
 
 WafRule.prototype['id'] = undefined;
 /**
- * @member {module:model/TypeWafRule} type
+ * @member {module:model/WafRuleAttributes} attributes
  */
 
-WafRule.prototype['type'] = undefined;
+WafRule.prototype['attributes'] = undefined;
 var _default = WafRule;
 exports["default"] = _default;

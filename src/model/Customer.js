@@ -24,6 +24,7 @@ class Customer {
      * @alias module:model/Customer
      */
     constructor() { 
+        
         Customer.initialize(this);
     }
 

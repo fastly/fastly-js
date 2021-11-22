@@ -1,6 +1,5 @@
 # Fastly.ConditionApi
 
-
 ```javascript
 const apiInstance = new Fastly.ConditionApi();
 ```
@@ -15,11 +14,10 @@ Method | Fastly API endpoint | Description
 [**updateCondition**](ConditionApi.md#updateCondition) | **PUT** /service/{service_id}/version/{version_id}/condition/{condition_name} | Update a condition
 
 
-
 ## `createCondition`
 
 ```javascript
-createCondition({ service_id, version_id, [comment, ], [name, ], [priority, ], [statement, ], [type] })
+createCondition({ service_id, version_id, [comment, ][name, ][priority, ][statement, ][type] })
 ```
 
 Creates a new condition.
@@ -34,12 +32,12 @@ const options = {
   name: "name_example",
   priority: 100,
   statement: "statement_example",
-  type: "type_example",
+  type: "REQUEST",
 };
 
 apiInstance.createCondition(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -50,13 +48,13 @@ apiInstance.createCondition(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 **comment** | **String** | A freeform descriptive note. | [optional]
 **name** | **String** | Name of the condition. Required. | [optional]
-**priority** | **Number** | Priority determines execution order. Lower numbers execute first. | [optional] [default to 100]
+**priority** | **Number** | Priority determines execution order. Lower numbers execute first. | [optional] [defaults to 100]
 **statement** | **String** | A conditional expression in VCL used to determine if the condition is met. | [optional]
-**type** | **String** | Type of the condition. Required. | [optional]
+**type** | **String** | Type of the condition. Required. | [optional] [one of: "REQUEST", "CACHE", "RESPONSE", "PREFETCH"]
 
 ### Return type
 
@@ -82,7 +80,7 @@ const options = {
 
 apiInstance.deleteCondition(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -93,9 +91,9 @@ apiInstance.deleteCondition(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**condition_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**condition_name** | **String** | Name of the condition. Required. |
 
 ### Return type
 
@@ -121,7 +119,7 @@ const options = {
 
 apiInstance.getCondition(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -132,9 +130,9 @@ apiInstance.getCondition(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**condition_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**condition_name** | **String** | Name of the condition. Required. |
 
 ### Return type
 
@@ -159,7 +157,7 @@ const options = {
 
 apiInstance.listConditions(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -170,8 +168,8 @@ apiInstance.listConditions(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -181,7 +179,7 @@ Name | Type | Description  | Notes
 ## `updateCondition`
 
 ```javascript
-updateCondition({ service_id, version_id, condition_name, [comment, ], [name, ], [priority, ], [statement, ], [type] })
+updateCondition({ service_id, version_id, condition_name, [comment, ][name, ][priority, ][statement, ][type] })
 ```
 
 Updates the specified condition.
@@ -197,12 +195,12 @@ const options = {
   name: "name_example",
   priority: 100,
   statement: "statement_example",
-  type: "type_example",
+  type: "REQUEST",
 };
 
 apiInstance.updateCondition(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -213,14 +211,14 @@ apiInstance.updateCondition(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**condition_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**condition_name** | **String** | Name of the condition. Required. |
 **comment** | **String** | A freeform descriptive note. | [optional]
 **name** | **String** | Name of the condition. Required. | [optional]
-**priority** | **Number** | Priority determines execution order. Lower numbers execute first. | [optional] [default to 100]
+**priority** | **Number** | Priority determines execution order. Lower numbers execute first. | [optional] [defaults to 100]
 **statement** | **String** | A conditional expression in VCL used to determine if the condition is met. | [optional]
-**type** | **String** | Type of the condition. Required. | [optional]
+**type** | **String** | Type of the condition. Required. | [optional] [one of: "REQUEST", "CACHE", "RESPONSE", "PREFETCH"]
 
 ### Return type
 

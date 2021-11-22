@@ -27,8 +27,11 @@ class InvitationsResponse {
     /**
      * Constructs a new <code>InvitationsResponse</code>.
      * @alias module:model/InvitationsResponse
+     * @implements module:model/Pagination
+     * @implements module:model/InvitationsResponseAllOf
      */
     constructor() { 
+        Pagination.initialize(this);InvitationsResponseAllOf.initialize(this);
         InvitationsResponse.initialize(this);
     }
 
@@ -50,6 +53,8 @@ class InvitationsResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new InvitationsResponse();
+            Pagination.constructFromObject(data, obj);
+            InvitationsResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('links')) {
                 obj['links'] = PaginationLinks.constructFromObject(data['links']);
@@ -83,6 +88,20 @@ InvitationsResponse.prototype['meta'] = undefined;
 InvitationsResponse.prototype['data'] = undefined;
 
 
+// Implement Pagination interface:
+/**
+ * @member {module:model/PaginationLinks} links
+ */
+Pagination.prototype['links'] = undefined;
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
+Pagination.prototype['meta'] = undefined;
+// Implement InvitationsResponseAllOf interface:
+/**
+ * @member {Array.<module:model/InvitationResponseData>} data
+ */
+InvitationsResponseAllOf.prototype['data'] = undefined;
 
 
 

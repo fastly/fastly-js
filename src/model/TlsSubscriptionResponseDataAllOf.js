@@ -12,7 +12,8 @@
  */
 
 import ApiClient from '../ApiClient';
-import Timestamps from './Timestamps';
+import AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates from './AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates';
+import TlsSubscriptionDataAttributes from './TlsSubscriptionDataAttributes';
 
 /**
  * The TlsSubscriptionResponseDataAllOf model module.
@@ -25,6 +26,7 @@ class TlsSubscriptionResponseDataAllOf {
      * @alias module:model/TlsSubscriptionResponseDataAllOf
      */
     constructor() { 
+        
         TlsSubscriptionResponseDataAllOf.initialize(this);
     }
 
@@ -47,11 +49,14 @@ class TlsSubscriptionResponseDataAllOf {
         if (data) {
             obj = obj || new TlsSubscriptionResponseDataAllOf();
 
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = TlsSubscriptionDataAttributes.constructFromObject(data['attributes']);
+            }
+            if (data.hasOwnProperty('relationships')) {
+                obj['relationships'] = ApiClient.convertToType(data['relationships'], AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates);
             }
         }
         return obj;
@@ -61,15 +66,20 @@ class TlsSubscriptionResponseDataAllOf {
 }
 
 /**
- * @member {module:model/Timestamps} attributes
- */
-TlsSubscriptionResponseDataAllOf.prototype['attributes'] = undefined;
-
-/**
  * Alphanumeric string identifying a TLS subscription.
  * @member {String} id
  */
 TlsSubscriptionResponseDataAllOf.prototype['id'] = undefined;
+
+/**
+ * @member {module:model/TlsSubscriptionDataAttributes} attributes
+ */
+TlsSubscriptionResponseDataAllOf.prototype['attributes'] = undefined;
+
+/**
+ * @member {module:model/AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates} relationships
+ */
+TlsSubscriptionResponseDataAllOf.prototype['relationships'] = undefined;
 
 
 

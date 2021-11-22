@@ -13,5 +13,4 @@ Name | Type | Description | Notes
 **state** | **String** | The state or province name. | [optional] 
 
 
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

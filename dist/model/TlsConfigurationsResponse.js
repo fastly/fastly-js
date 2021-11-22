@@ -34,9 +34,15 @@ var TlsConfigurationsResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>TlsConfigurationsResponse</code>.
    * @alias module:model/TlsConfigurationsResponse
+   * @implements module:model/Pagination
+   * @implements module:model/TlsConfigurationsResponseAllOf
    */
   function TlsConfigurationsResponse() {
     _classCallCheck(this, TlsConfigurationsResponse);
+
+    _Pagination["default"].initialize(this);
+
+    _TlsConfigurationsResponseAllOf["default"].initialize(this);
 
     TlsConfigurationsResponse.initialize(this);
   }
@@ -63,6 +69,10 @@ var TlsConfigurationsResponse = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new TlsConfigurationsResponse();
+
+        _Pagination["default"].constructFromObject(data, obj);
+
+        _TlsConfigurationsResponseAllOf["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('links')) {
           obj['links'] = _PaginationLinks["default"].constructFromObject(data['links']);
@@ -98,6 +108,23 @@ TlsConfigurationsResponse.prototype['meta'] = undefined;
  * @member {Array.<module:model/TlsConfigurationResponseData>} data
  */
 
-TlsConfigurationsResponse.prototype['data'] = undefined;
+TlsConfigurationsResponse.prototype['data'] = undefined; // Implement Pagination interface:
+
+/**
+ * @member {module:model/PaginationLinks} links
+ */
+
+_Pagination["default"].prototype['links'] = undefined;
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
+
+_Pagination["default"].prototype['meta'] = undefined; // Implement TlsConfigurationsResponseAllOf interface:
+
+/**
+ * @member {Array.<module:model/TlsConfigurationResponseData>} data
+ */
+
+_TlsConfigurationsResponseAllOf["default"].prototype['data'] = undefined;
 var _default = TlsConfigurationsResponse;
 exports["default"] = _default;

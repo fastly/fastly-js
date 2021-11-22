@@ -30,9 +30,18 @@ var TokenResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>TokenResponse</code>.
    * @alias module:model/TokenResponse
+   * @implements module:model/Token
+   * @implements module:model/Timestamps
+   * @implements module:model/TokenResponseAllOf
    */
   function TokenResponse() {
     _classCallCheck(this, TokenResponse);
+
+    _Token["default"].initialize(this);
+
+    _Timestamps["default"].initialize(this);
+
+    _TokenResponseAllOf["default"].initialize(this);
 
     TokenResponse.initialize(this);
   }
@@ -60,16 +69,22 @@ var TokenResponse = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new TokenResponse();
 
+        _Token["default"].constructFromObject(data, obj);
+
+        _Timestamps["default"].constructFromObject(data, obj);
+
+        _TokenResponseAllOf["default"].constructFromObject(data, obj);
+
+        if (data.hasOwnProperty('services')) {
+          obj['services'] = _ApiClient["default"].convertToType(data['services'], ['String']);
+        }
+
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
         }
 
         if (data.hasOwnProperty('scope')) {
           obj['scope'] = _ApiClient["default"].convertToType(data['scope'], 'String');
-        }
-
-        if (data.hasOwnProperty('services')) {
-          obj['services'] = _ApiClient["default"].convertToType(data['services'], ['String']);
         }
 
         if (data.hasOwnProperty('created_at')) {
@@ -84,28 +99,28 @@ var TokenResponse = /*#__PURE__*/function () {
           obj['updated_at'] = _ApiClient["default"].convertToType(data['updated_at'], 'String');
         }
 
-        if (data.hasOwnProperty('expires_at')) {
-          obj['expires_at'] = _ApiClient["default"].convertToType(data['expires_at'], 'String');
-        }
-
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
 
-        if (data.hasOwnProperty('ip')) {
-          obj['ip'] = _ApiClient["default"].convertToType(data['ip'], 'String');
+        if (data.hasOwnProperty('user_id')) {
+          obj['user_id'] = _ApiClient["default"].convertToType(data['user_id'], 'String');
         }
 
         if (data.hasOwnProperty('last_used_at')) {
           obj['last_used_at'] = _ApiClient["default"].convertToType(data['last_used_at'], 'String');
         }
 
-        if (data.hasOwnProperty('user_agent')) {
-          obj['user_agent'] = _ApiClient["default"].convertToType(data['user_agent'], 'String');
+        if (data.hasOwnProperty('expires_at')) {
+          obj['expires_at'] = _ApiClient["default"].convertToType(data['expires_at'], 'String');
         }
 
-        if (data.hasOwnProperty('user_id')) {
-          obj['user_id'] = _ApiClient["default"].convertToType(data['user_id'], 'String');
+        if (data.hasOwnProperty('ip')) {
+          obj['ip'] = _ApiClient["default"].convertToType(data['ip'], 'String');
+        }
+
+        if (data.hasOwnProperty('user_agent')) {
+          obj['user_agent'] = _ApiClient["default"].convertToType(data['user_agent'], 'String');
         }
       }
 
@@ -116,10 +131,16 @@ var TokenResponse = /*#__PURE__*/function () {
   return TokenResponse;
 }();
 /**
+ * List of alphanumeric strings identifying services (optional). If no services are specified, the token will have access to all services on the account. 
+ * @member {Array.<String>} services
+ */
+
+
+TokenResponse.prototype['services'] = undefined;
+/**
  * Name of the token.
  * @member {String} name
  */
-
 
 TokenResponse.prototype['name'] = undefined;
 /**
@@ -129,12 +150,6 @@ TokenResponse.prototype['name'] = undefined;
  */
 
 TokenResponse.prototype['scope'] = undefined;
-/**
- * List of alphanumeric strings identifying services (optional). If no services are specified, the token will have access to all services on the account. 
- * @member {Array.<String>} services
- */
-
-TokenResponse.prototype['services'] = undefined;
 /**
  * Time-stamp (UTC) of when the token was created.
  * @member {String} created_at
@@ -154,23 +169,17 @@ TokenResponse.prototype['deleted_at'] = undefined;
 
 TokenResponse.prototype['updated_at'] = undefined;
 /**
- * Time-stamp (UTC) of when the token will expire (optional).
- * @member {String} expires_at
- */
-
-TokenResponse.prototype['expires_at'] = undefined;
-/**
  * Alphanumeric string identifying a token.
  * @member {String} id
  */
 
 TokenResponse.prototype['id'] = undefined;
 /**
- * IP Address of the client that last used the token.
- * @member {String} ip
+ * Alphanumeric string identifying the user.
+ * @member {String} user_id
  */
 
-TokenResponse.prototype['ip'] = undefined;
+TokenResponse.prototype['user_id'] = undefined;
 /**
  * Time-stamp (UTC) of when the token was last used.
  * @member {String} last_used_at
@@ -178,17 +187,105 @@ TokenResponse.prototype['ip'] = undefined;
 
 TokenResponse.prototype['last_used_at'] = undefined;
 /**
+ * Time-stamp (UTC) of when the token will expire (optional).
+ * @member {String} expires_at
+ */
+
+TokenResponse.prototype['expires_at'] = undefined;
+/**
+ * IP Address of the client that last used the token.
+ * @member {String} ip
+ */
+
+TokenResponse.prototype['ip'] = undefined;
+/**
  * User-Agent header of the client that last used the token.
  * @member {String} user_agent
  */
 
-TokenResponse.prototype['user_agent'] = undefined;
+TokenResponse.prototype['user_agent'] = undefined; // Implement Token interface:
+
+/**
+ * List of alphanumeric strings identifying services (optional). If no services are specified, the token will have access to all services on the account. 
+ * @member {Array.<String>} services
+ */
+
+_Token["default"].prototype['services'] = undefined;
+/**
+ * Name of the token.
+ * @member {String} name
+ */
+
+_Token["default"].prototype['name'] = undefined;
+/**
+ * Space-delimited list of authorization scope.
+ * @member {module:model/Token.ScopeEnum} scope
+ * @default 'global'
+ */
+
+_Token["default"].prototype['scope'] = undefined; // Implement Timestamps interface:
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+
+_Timestamps["default"].prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+
+_Timestamps["default"].prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+
+_Timestamps["default"].prototype['updated_at'] = undefined; // Implement TokenResponseAllOf interface:
+
+/**
+ * Alphanumeric string identifying a token.
+ * @member {String} id
+ */
+
+_TokenResponseAllOf["default"].prototype['id'] = undefined;
 /**
  * Alphanumeric string identifying the user.
  * @member {String} user_id
  */
 
-TokenResponse.prototype['user_id'] = undefined;
+_TokenResponseAllOf["default"].prototype['user_id'] = undefined;
+/**
+ * Time-stamp (UTC) of when the token was created.
+ * @member {String} created_at
+ */
+
+_TokenResponseAllOf["default"].prototype['created_at'] = undefined;
+/**
+ * Time-stamp (UTC) of when the token was last used.
+ * @member {String} last_used_at
+ */
+
+_TokenResponseAllOf["default"].prototype['last_used_at'] = undefined;
+/**
+ * Time-stamp (UTC) of when the token will expire (optional).
+ * @member {String} expires_at
+ */
+
+_TokenResponseAllOf["default"].prototype['expires_at'] = undefined;
+/**
+ * IP Address of the client that last used the token.
+ * @member {String} ip
+ */
+
+_TokenResponseAllOf["default"].prototype['ip'] = undefined;
+/**
+ * User-Agent header of the client that last used the token.
+ * @member {String} user_agent
+ */
+
+_TokenResponseAllOf["default"].prototype['user_agent'] = undefined;
 /**
  * Allowed values for the <code>scope</code> property.
  * @enum {String}

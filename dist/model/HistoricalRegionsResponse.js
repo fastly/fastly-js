@@ -30,9 +30,15 @@ var HistoricalRegionsResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>HistoricalRegionsResponse</code>.
    * @alias module:model/HistoricalRegionsResponse
+   * @implements module:model/Historical
+   * @implements module:model/HistoricalRegionsResponseAllOf
    */
   function HistoricalRegionsResponse() {
     _classCallCheck(this, HistoricalRegionsResponse);
+
+    _Historical["default"].initialize(this);
+
+    _HistoricalRegionsResponseAllOf["default"].initialize(this);
 
     HistoricalRegionsResponse.initialize(this);
   }
@@ -60,16 +66,20 @@ var HistoricalRegionsResponse = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new HistoricalRegionsResponse();
 
+        _Historical["default"].constructFromObject(data, obj);
+
+        _HistoricalRegionsResponseAllOf["default"].constructFromObject(data, obj);
+
+        if (data.hasOwnProperty('status')) {
+          obj['status'] = _ApiClient["default"].convertToType(data['status'], 'String');
+        }
+
         if (data.hasOwnProperty('meta')) {
           obj['meta'] = _HistoricalMeta["default"].constructFromObject(data['meta']);
         }
 
         if (data.hasOwnProperty('msg')) {
           obj['msg'] = _ApiClient["default"].convertToType(data['msg'], 'String');
-        }
-
-        if (data.hasOwnProperty('status')) {
-          obj['status'] = _ApiClient["default"].convertToType(data['status'], 'String');
         }
 
         if (data.hasOwnProperty('data')) {
@@ -84,9 +94,15 @@ var HistoricalRegionsResponse = /*#__PURE__*/function () {
   return HistoricalRegionsResponse;
 }();
 /**
- * @member {module:model/HistoricalMeta} meta
+ * Whether or not we were able to successfully execute the query.
+ * @member {String} status
  */
 
+
+HistoricalRegionsResponse.prototype['status'] = undefined;
+/**
+ * @member {module:model/HistoricalMeta} meta
+ */
 
 HistoricalRegionsResponse.prototype['meta'] = undefined;
 /**
@@ -96,15 +112,33 @@ HistoricalRegionsResponse.prototype['meta'] = undefined;
 
 HistoricalRegionsResponse.prototype['msg'] = undefined;
 /**
+ * @member {Array.<String>} data
+ */
+
+HistoricalRegionsResponse.prototype['data'] = undefined; // Implement Historical interface:
+
+/**
  * Whether or not we were able to successfully execute the query.
  * @member {String} status
  */
 
-HistoricalRegionsResponse.prototype['status'] = undefined;
+_Historical["default"].prototype['status'] = undefined;
+/**
+ * @member {module:model/HistoricalMeta} meta
+ */
+
+_Historical["default"].prototype['meta'] = undefined;
+/**
+ * If the query was not successful, this will provide a string that explains why.
+ * @member {String} msg
+ */
+
+_Historical["default"].prototype['msg'] = undefined; // Implement HistoricalRegionsResponseAllOf interface:
+
 /**
  * @member {Array.<String>} data
  */
 
-HistoricalRegionsResponse.prototype['data'] = undefined;
+_HistoricalRegionsResponseAllOf["default"].prototype['data'] = undefined;
 var _default = HistoricalRegionsResponse;
 exports["default"] = _default;

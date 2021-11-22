@@ -24,6 +24,7 @@ class Version {
      * @alias module:model/Version
      */
     constructor() { 
+        
         Version.initialize(this);
     }
 

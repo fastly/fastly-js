@@ -27,8 +27,11 @@ class InvitationResponseData {
     /**
      * Constructs a new <code>InvitationResponseData</code>.
      * @alias module:model/InvitationResponseData
+     * @implements module:model/InvitationData
+     * @implements module:model/InvitationResponseDataAllOf
      */
     constructor() { 
+        InvitationData.initialize(this);InvitationResponseDataAllOf.initialize(this);
         InvitationResponseData.initialize(this);
     }
 
@@ -50,15 +53,17 @@ class InvitationResponseData {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new InvitationResponseData();
+            InvitationData.constructFromObject(data, obj);
+            InvitationResponseDataAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeInvitation.constructFromObject(data['type']);
+            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = Timestamps.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = RelationshipsForInvitation.constructFromObject(data['relationships']);
-            }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeInvitation.constructFromObject(data['type']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -71,6 +76,11 @@ class InvitationResponseData {
 }
 
 /**
+ * @member {module:model/TypeInvitation} type
+ */
+InvitationResponseData.prototype['type'] = undefined;
+
+/**
  * @member {module:model/Timestamps} attributes
  */
 InvitationResponseData.prototype['attributes'] = undefined;
@@ -81,17 +91,39 @@ InvitationResponseData.prototype['attributes'] = undefined;
 InvitationResponseData.prototype['relationships'] = undefined;
 
 /**
- * @member {module:model/TypeInvitation} type
- */
-InvitationResponseData.prototype['type'] = undefined;
-
-/**
  * Alphanumeric string identifying an invitation.
  * @member {String} id
  */
 InvitationResponseData.prototype['id'] = undefined;
 
 
+// Implement InvitationData interface:
+/**
+ * @member {module:model/TypeInvitation} type
+ */
+InvitationData.prototype['type'] = undefined;
+/**
+ * @member {module:model/InvitationDataAttributes} attributes
+ */
+InvitationData.prototype['attributes'] = undefined;
+/**
+ * @member {module:model/RelationshipServiceInvitationsCreate} relationships
+ */
+InvitationData.prototype['relationships'] = undefined;
+// Implement InvitationResponseDataAllOf interface:
+/**
+ * Alphanumeric string identifying an invitation.
+ * @member {String} id
+ */
+InvitationResponseDataAllOf.prototype['id'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+InvitationResponseDataAllOf.prototype['attributes'] = undefined;
+/**
+ * @member {module:model/RelationshipsForInvitation} relationships
+ */
+InvitationResponseDataAllOf.prototype['relationships'] = undefined;
 
 
 

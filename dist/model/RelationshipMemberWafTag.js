@@ -56,12 +56,12 @@ var RelationshipMemberWafTag = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new RelationshipMemberWafTag();
 
-        if (data.hasOwnProperty('id')) {
-          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
-        }
-
         if (data.hasOwnProperty('type')) {
           obj['type'] = _TypeWafTag["default"].constructFromObject(data['type']);
+        }
+
+        if (data.hasOwnProperty('id')) {
+          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
       }
 
@@ -72,16 +72,16 @@ var RelationshipMemberWafTag = /*#__PURE__*/function () {
   return RelationshipMemberWafTag;
 }();
 /**
+ * @member {module:model/TypeWafTag} type
+ */
+
+
+RelationshipMemberWafTag.prototype['type'] = undefined;
+/**
  * Alphanumeric string identifying a WAF tag.
  * @member {String} id
  */
 
-
 RelationshipMemberWafTag.prototype['id'] = undefined;
-/**
- * @member {module:model/TypeWafTag} type
- */
-
-RelationshipMemberWafTag.prototype['type'] = undefined;
 var _default = RelationshipMemberWafTag;
 exports["default"] = _default;

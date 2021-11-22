@@ -60,16 +60,16 @@ var TlsBulkCertificateData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new TlsBulkCertificateData();
 
+        if (data.hasOwnProperty('type')) {
+          obj['type'] = _TypeTlsBulkCertificate["default"].constructFromObject(data['type']);
+        }
+
         if (data.hasOwnProperty('attributes')) {
           obj['attributes'] = _TlsBulkCertificateDataAttributes["default"].constructFromObject(data['attributes']);
         }
 
         if (data.hasOwnProperty('relationships')) {
           obj['relationships'] = _RelationshipsForTlsBulkCertificate["default"].constructFromObject(data['relationships']);
-        }
-
-        if (data.hasOwnProperty('type')) {
-          obj['type'] = _TypeTlsBulkCertificate["default"].constructFromObject(data['type']);
         }
       }
 
@@ -80,9 +80,14 @@ var TlsBulkCertificateData = /*#__PURE__*/function () {
   return TlsBulkCertificateData;
 }();
 /**
- * @member {module:model/TlsBulkCertificateDataAttributes} attributes
+ * @member {module:model/TypeTlsBulkCertificate} type
  */
 
+
+TlsBulkCertificateData.prototype['type'] = undefined;
+/**
+ * @member {module:model/TlsBulkCertificateDataAttributes} attributes
+ */
 
 TlsBulkCertificateData.prototype['attributes'] = undefined;
 /**
@@ -90,10 +95,5 @@ TlsBulkCertificateData.prototype['attributes'] = undefined;
  */
 
 TlsBulkCertificateData.prototype['relationships'] = undefined;
-/**
- * @member {module:model/TypeTlsBulkCertificate} type
- */
-
-TlsBulkCertificateData.prototype['type'] = undefined;
 var _default = TlsBulkCertificateData;
 exports["default"] = _default;

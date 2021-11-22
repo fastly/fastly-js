@@ -24,6 +24,7 @@ class ServiceInvitationDataAttributes {
      * @alias module:model/ServiceInvitationDataAttributes
      */
     constructor() { 
+        
         ServiceInvitationDataAttributes.initialize(this);
     }
 

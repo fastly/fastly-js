@@ -25,6 +25,7 @@ class WafActiveRuleResponse {
      * @alias module:model/WafActiveRuleResponse
      */
     constructor() { 
+        
         WafActiveRuleResponse.initialize(this);
     }
 

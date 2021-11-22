@@ -43,8 +43,8 @@ export default class WafExclusionsApi {
     /**
      * Create a WAF exclusion for a particular firewall version.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.firewall_version_number
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.firewall_version_number - Integer identifying a WAF firewall version.
      * @param {module:model/WafExclusion} [options.waf_exclusion]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafExclusionResponse} and HTTP response
      */
@@ -84,8 +84,8 @@ export default class WafExclusionsApi {
     /**
      * Create a WAF exclusion for a particular firewall version.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.firewall_version_number
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.firewall_version_number - Integer identifying a WAF firewall version.
      * @param {module:model/WafExclusion} [options.waf_exclusion]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafExclusionResponse}
      */
@@ -99,9 +99,9 @@ export default class WafExclusionsApi {
     /**
      * Delete a WAF exclusion for a particular firewall version.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.firewall_version_number
-     * @param {Number} options.exclusion_number
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.firewall_version_number - Integer identifying a WAF firewall version.
+     * @param {Number} options.exclusion_number - A numeric ID identifying a WAF exclusion.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     deleteWafRuleExclusionWithHttpInfo(options = {}) {
@@ -145,9 +145,9 @@ export default class WafExclusionsApi {
     /**
      * Delete a WAF exclusion for a particular firewall version.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.firewall_version_number
-     * @param {Number} options.exclusion_number
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.firewall_version_number - Integer identifying a WAF firewall version.
+     * @param {Number} options.exclusion_number - A numeric ID identifying a WAF exclusion.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deleteWafRuleExclusion(options = {}) {
@@ -160,9 +160,9 @@ export default class WafExclusionsApi {
     /**
      * Get a specific WAF exclusion object.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.firewall_version_number
-     * @param {Number} options.exclusion_number
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.firewall_version_number - Integer identifying a WAF firewall version.
+     * @param {Number} options.exclusion_number - A numeric ID identifying a WAF exclusion.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafExclusionResponse} and HTTP response
      */
     getWafRuleExclusionWithHttpInfo(options = {}) {
@@ -206,9 +206,9 @@ export default class WafExclusionsApi {
     /**
      * Get a specific WAF exclusion object.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.firewall_version_number
-     * @param {Number} options.exclusion_number
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.firewall_version_number - Integer identifying a WAF firewall version.
+     * @param {Number} options.exclusion_number - A numeric ID identifying a WAF exclusion.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafExclusionResponse}
      */
     getWafRuleExclusion(options = {}) {
@@ -221,8 +221,8 @@ export default class WafExclusionsApi {
     /**
      * List all exclusions for a particular firewall version.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.firewall_version_number
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.firewall_version_number - Integer identifying a WAF firewall version.
      * @param {module:model/String} [options.filter_exclusion_type] - Filters the results based on this exclusion type.
      * @param {String} [options.filter_name] - Filters the results based on name.
      * @param {Number} [options.filter_waf_rules_modsec_rule_id] - Filters the results based on this ModSecurity rule ID.
@@ -273,8 +273,8 @@ export default class WafExclusionsApi {
     /**
      * List all exclusions for a particular firewall version.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.firewall_version_number
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.firewall_version_number - Integer identifying a WAF firewall version.
      * @param {module:model/String} [options.filter_exclusion_type] - Filters the results based on this exclusion type.
      * @param {String} [options.filter_name] - Filters the results based on name.
      * @param {Number} [options.filter_waf_rules_modsec_rule_id] - Filters the results based on this ModSecurity rule ID.
@@ -293,9 +293,9 @@ export default class WafExclusionsApi {
     /**
      * Update a WAF exclusion for a particular firewall version.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.firewall_version_number
-     * @param {Number} options.exclusion_number
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.firewall_version_number - Integer identifying a WAF firewall version.
+     * @param {Number} options.exclusion_number - A numeric ID identifying a WAF exclusion.
      * @param {module:model/WafExclusion} [options.waf_exclusion]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafExclusionResponse} and HTTP response
      */
@@ -340,9 +340,9 @@ export default class WafExclusionsApi {
     /**
      * Update a WAF exclusion for a particular firewall version.
      * @param {Object} options
-     * @param {String} options.firewall_id
-     * @param {Number} options.firewall_version_number
-     * @param {Number} options.exclusion_number
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.firewall_version_number - Integer identifying a WAF firewall version.
+     * @param {Number} options.exclusion_number - A numeric ID identifying a WAF exclusion.
      * @param {module:model/WafExclusion} [options.waf_exclusion]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafExclusionResponse}
      */

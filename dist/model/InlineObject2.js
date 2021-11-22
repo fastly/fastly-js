@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _ServiceAuthorizationsData = _interopRequireDefault(require("./ServiceAuthorizationsData"));
+var _CustomerCustomerIdBillingAddressData = _interopRequireDefault(require("./CustomerCustomerIdBillingAddressData1"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -57,7 +57,7 @@ var InlineObject2 = /*#__PURE__*/function () {
         obj = obj || new InlineObject2();
 
         if (data.hasOwnProperty('data')) {
-          obj['data'] = _ApiClient["default"].convertToType(data['data'], [_ServiceAuthorizationsData["default"]]);
+          obj['data'] = _CustomerCustomerIdBillingAddressData["default"].constructFromObject(data['data']);
         }
       }
 
@@ -68,7 +68,7 @@ var InlineObject2 = /*#__PURE__*/function () {
   return InlineObject2;
 }();
 /**
- * @member {Array.<module:model/ServiceAuthorizationsData>} data
+ * @member {module:model/CustomerCustomerIdBillingAddressData1} data
  */
 
 

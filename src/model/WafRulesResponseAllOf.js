@@ -26,6 +26,7 @@ class WafRulesResponseAllOf {
      * @alias module:model/WafRulesResponseAllOf
      */
     constructor() { 
+        
         WafRulesResponseAllOf.initialize(this);
     }
 

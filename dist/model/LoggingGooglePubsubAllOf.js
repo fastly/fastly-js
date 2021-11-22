@@ -54,16 +54,16 @@ var LoggingGooglePubsubAllOf = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new LoggingGooglePubsubAllOf();
 
+        if (data.hasOwnProperty('topic')) {
+          obj['topic'] = _ApiClient["default"].convertToType(data['topic'], 'String');
+        }
+
         if (data.hasOwnProperty('format')) {
           obj['format'] = _ApiClient["default"].convertToType(data['format'], 'String');
         }
 
         if (data.hasOwnProperty('project_id')) {
           obj['project_id'] = _ApiClient["default"].convertToType(data['project_id'], 'String');
-        }
-
-        if (data.hasOwnProperty('topic')) {
-          obj['topic'] = _ApiClient["default"].convertToType(data['topic'], 'String');
         }
       }
 
@@ -74,11 +74,17 @@ var LoggingGooglePubsubAllOf = /*#__PURE__*/function () {
   return LoggingGooglePubsubAllOf;
 }();
 /**
+ * The Google Cloud Pub/Sub topic to which logs will be published. Required.
+ * @member {String} topic
+ */
+
+
+LoggingGooglePubsubAllOf.prototype['topic'] = undefined;
+/**
  * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
  * @member {String} format
  * @default '%h %l %u %t "%r" %&gt;s %b'
  */
-
 
 LoggingGooglePubsubAllOf.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 /**
@@ -87,11 +93,5 @@ LoggingGooglePubsubAllOf.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
  */
 
 LoggingGooglePubsubAllOf.prototype['project_id'] = undefined;
-/**
- * The Google Cloud Pub/Sub topic to which logs will be published. Required.
- * @member {String} topic
- */
-
-LoggingGooglePubsubAllOf.prototype['topic'] = undefined;
 var _default = LoggingGooglePubsubAllOf;
 exports["default"] = _default;

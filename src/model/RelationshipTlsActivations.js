@@ -25,6 +25,7 @@ class RelationshipTlsActivations {
      * @alias module:model/RelationshipTlsActivations
      */
     constructor() { 
+        
         RelationshipTlsActivations.initialize(this);
     }
 

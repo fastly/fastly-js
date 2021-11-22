@@ -25,6 +25,7 @@ class TlsBulkCertificatesResponseAllOf {
      * @alias module:model/TlsBulkCertificatesResponseAllOf
      */
     constructor() { 
+        
         TlsBulkCertificatesResponseAllOf.initialize(this);
     }
 

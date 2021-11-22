@@ -25,6 +25,7 @@ class BillingAddressResponseAllOfData {
      * @alias module:model/BillingAddressResponseAllOfData
      */
     constructor() { 
+        
         BillingAddressResponseAllOfData.initialize(this);
     }
 
@@ -47,11 +48,11 @@ class BillingAddressResponseAllOfData {
         if (data) {
             obj = obj || new BillingAddressResponseAllOfData();
 
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
             }
         }
         return obj;
@@ -61,15 +62,15 @@ class BillingAddressResponseAllOfData {
 }
 
 /**
- * @member {module:model/Timestamps} attributes
- */
-BillingAddressResponseAllOfData.prototype['attributes'] = undefined;
-
-/**
  * Alphanumeric string identifying the billing address.
  * @member {String} id
  */
 BillingAddressResponseAllOfData.prototype['id'] = undefined;
+
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+BillingAddressResponseAllOfData.prototype['attributes'] = undefined;
 
 
 

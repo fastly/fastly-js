@@ -1,6 +1,5 @@
 # Fastly.ContentApi
 
-
 ```javascript
 const apiInstance = new Fastly.ContentApi();
 ```
@@ -11,11 +10,10 @@ Method | Fastly API endpoint | Description
 [**contentCheck**](ContentApi.md#contentCheck) | **GET** /content/edge_check | Check status of content in each data center cache
 
 
-
 ## `contentCheck`
 
 ```javascript
-contentCheck({ [url] })
+contentCheck({ , [url] })
 ```
 
 Retrieve headers and MD5 hash of the content for a particular URL from each Fastly edge server. This API is limited to 200 requests per hour.
@@ -29,7 +27,7 @@ const options = {
 
 apiInstance.contentCheck(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);

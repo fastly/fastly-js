@@ -24,6 +24,7 @@ class DomainCheckItem {
      * @alias module:model/DomainCheckItem
      */
     constructor() { 
+        
         DomainCheckItem.initialize(this);
     }
 

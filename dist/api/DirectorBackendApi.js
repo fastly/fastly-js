@@ -42,10 +42,10 @@ var DirectorBackendApi = /*#__PURE__*/function () {
   /**
    * Establishes a relationship between a Backend and a Director. The Backend is then considered a member of the Director and can be used to balance traffic onto.
    * @param {Object} options
-   * @param {String} options.director_name
-   * @param {String} options.service_id
-   * @param {Number} options.version_id
-   * @param {String} options.backend_name
+   * @param {String} options.director_name - Name for the Director.
+   * @param {String} options.service_id - Alphanumeric string identifying the service.
+   * @param {Number} options.version_id - Integer identifying a service version.
+   * @param {String} options.backend_name - The name of the backend.
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DirectorBackend} and HTTP response
    */
 
@@ -93,10 +93,10 @@ var DirectorBackendApi = /*#__PURE__*/function () {
     /**
      * Establishes a relationship between a Backend and a Director. The Backend is then considered a member of the Director and can be used to balance traffic onto.
      * @param {Object} options
-     * @param {String} options.director_name
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.backend_name
+     * @param {String} options.director_name - Name for the Director.
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.backend_name - The name of the backend.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DirectorBackend}
      */
 
@@ -111,10 +111,10 @@ var DirectorBackendApi = /*#__PURE__*/function () {
     /**
      * Deletes the relationship between a Backend and a Director. The Backend is no longer considered a member of the Director and thus will not have traffic balanced onto it from this Director.
      * @param {Object} options
-     * @param {String} options.director_name
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.backend_name
+     * @param {String} options.director_name - Name for the Director.
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.backend_name - The name of the backend.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
 
@@ -161,10 +161,10 @@ var DirectorBackendApi = /*#__PURE__*/function () {
     /**
      * Deletes the relationship between a Backend and a Director. The Backend is no longer considered a member of the Director and thus will not have traffic balanced onto it from this Director.
      * @param {Object} options
-     * @param {String} options.director_name
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.backend_name
+     * @param {String} options.director_name - Name for the Director.
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.backend_name - The name of the backend.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
 
@@ -179,10 +179,10 @@ var DirectorBackendApi = /*#__PURE__*/function () {
     /**
      * Returns the relationship between a Backend and a Director. If the Backend has been associated with the Director, it returns a simple record indicating this. Otherwise, returns a 404.
      * @param {Object} options
-     * @param {String} options.director_name
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.backend_name
+     * @param {String} options.director_name - Name for the Director.
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.backend_name - The name of the backend.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DirectorBackend} and HTTP response
      */
 
@@ -229,10 +229,10 @@ var DirectorBackendApi = /*#__PURE__*/function () {
     /**
      * Returns the relationship between a Backend and a Director. If the Backend has been associated with the Director, it returns a simple record indicating this. Otherwise, returns a 404.
      * @param {Object} options
-     * @param {String} options.director_name
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.backend_name
+     * @param {String} options.director_name - Name for the Director.
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.backend_name - The name of the backend.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DirectorBackend}
      */
 

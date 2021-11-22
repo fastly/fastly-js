@@ -42,8 +42,8 @@ var GzipApi = /*#__PURE__*/function () {
   /**
    * Create a named gzip configuration on a particular service and version.
    * @param {Object} options
-   * @param {String} options.service_id
-   * @param {Number} options.version_id
+   * @param {String} options.service_id - Alphanumeric string identifying the service.
+   * @param {Number} options.version_id - Integer identifying a service version.
    * @param {String} [options.cache_condition] - Name of the cache condition controlling when this configuration applies.
    * @param {String} [options.content_types] - Space-separated list of content types to compress. If you omit this field a default list will be used.
    * @param {String} [options.extensions] - Space-separated list of file extensions to compress. If you omit this field a default list will be used.
@@ -88,8 +88,8 @@ var GzipApi = /*#__PURE__*/function () {
     /**
      * Create a named gzip configuration on a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.cache_condition] - Name of the cache condition controlling when this configuration applies.
      * @param {String} [options.content_types] - Space-separated list of content types to compress. If you omit this field a default list will be used.
      * @param {String} [options.extensions] - Space-separated list of file extensions to compress. If you omit this field a default list will be used.
@@ -108,9 +108,9 @@ var GzipApi = /*#__PURE__*/function () {
     /**
      * Delete a named gzip configuration on a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.gzip_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.gzip_name - Name of the gzip configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
 
@@ -151,9 +151,9 @@ var GzipApi = /*#__PURE__*/function () {
     /**
      * Delete a named gzip configuration on a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.gzip_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.gzip_name - Name of the gzip configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
 
@@ -168,9 +168,9 @@ var GzipApi = /*#__PURE__*/function () {
     /**
      * Get the gzip configuration for a particular service, version, and name.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.gzip_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.gzip_name - Name of the gzip configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/GzipResponse} and HTTP response
      */
 
@@ -211,9 +211,9 @@ var GzipApi = /*#__PURE__*/function () {
     /**
      * Get the gzip configuration for a particular service, version, and name.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.gzip_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.gzip_name - Name of the gzip configuration.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/GzipResponse}
      */
 
@@ -228,8 +228,8 @@ var GzipApi = /*#__PURE__*/function () {
     /**
      * List all gzip configurations for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/GzipResponse>} and HTTP response
      */
 
@@ -264,8 +264,8 @@ var GzipApi = /*#__PURE__*/function () {
     /**
      * List all gzip configurations for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/GzipResponse>}
      */
 
@@ -280,9 +280,9 @@ var GzipApi = /*#__PURE__*/function () {
     /**
      * Update a named gzip configuration on a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.gzip_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.gzip_name - Name of the gzip configuration.
      * @param {String} [options.cache_condition] - Name of the cache condition controlling when this configuration applies.
      * @param {String} [options.content_types] - Space-separated list of content types to compress. If you omit this field a default list will be used.
      * @param {String} [options.extensions] - Space-separated list of file extensions to compress. If you omit this field a default list will be used.
@@ -332,9 +332,9 @@ var GzipApi = /*#__PURE__*/function () {
     /**
      * Update a named gzip configuration on a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.gzip_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.gzip_name - Name of the gzip configuration.
      * @param {String} [options.cache_condition] - Name of the cache condition controlling when this configuration applies.
      * @param {String} [options.content_types] - Space-separated list of content types to compress. If you omit this field a default list will be used.
      * @param {String} [options.extensions] - Space-separated list of file extensions to compress. If you omit this field a default list will be used.

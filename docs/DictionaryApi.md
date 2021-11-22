@@ -1,6 +1,5 @@
 # Fastly.DictionaryApi
 
-
 ```javascript
 const apiInstance = new Fastly.DictionaryApi();
 ```
@@ -15,11 +14,10 @@ Method | Fastly API endpoint | Description
 [**updateDictionary**](DictionaryApi.md#updateDictionary) | **PUT** /service/{service_id}/version/{version_id}/dictionary/{dictionary_name} | Update an edge dictionary
 
 
-
 ## `createDictionary`
 
 ```javascript
-createDictionary({ service_id, version_id, [name, ], [write_only] })
+createDictionary({ service_id, version_id, [name, ][write_only] })
 ```
 
 Create named dictionary for a particular service and version.
@@ -36,7 +34,7 @@ const options = {
 
 apiInstance.createDictionary(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -47,10 +45,10 @@ apiInstance.createDictionary(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**name** | **String** | Name for the Dictionary. | [optional]
-**write_only** | **Boolean** | Determines if items in the dictionary are readable or not. | [optional] [default to false]
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**name** | **String** | Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace). | [optional]
+**write_only** | **Boolean** | Determines if items in the dictionary are readable or not. | [optional] [defaults to false]
 
 ### Return type
 
@@ -76,7 +74,7 @@ const options = {
 
 apiInstance.deleteDictionary(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -87,9 +85,9 @@ apiInstance.deleteDictionary(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**dictionary_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**dictionary_name** | **String** | Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace). |
 
 ### Return type
 
@@ -115,7 +113,7 @@ const options = {
 
 apiInstance.getDictionary(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -126,9 +124,9 @@ apiInstance.getDictionary(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**dictionary_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**dictionary_name** | **String** | Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace). |
 
 ### Return type
 
@@ -153,7 +151,7 @@ const options = {
 
 apiInstance.listDictionaries(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -164,8 +162,8 @@ apiInstance.listDictionaries(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -175,7 +173,7 @@ Name | Type | Description  | Notes
 ## `updateDictionary`
 
 ```javascript
-updateDictionary({ service_id, version_id, dictionary_name, [name, ], [write_only] })
+updateDictionary({ service_id, version_id, dictionary_name, [name, ][write_only] })
 ```
 
 Update named dictionary for a particular service and version.
@@ -193,7 +191,7 @@ const options = {
 
 apiInstance.updateDictionary(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -204,11 +202,11 @@ apiInstance.updateDictionary(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**dictionary_name** | **String** |  |
-**name** | **String** | Name for the Dictionary. | [optional]
-**write_only** | **Boolean** | Determines if items in the dictionary are readable or not. | [optional] [default to false]
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**dictionary_name** | **String** | Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace). |
+**name** | **String** | Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace). | [optional]
+**write_only** | **Boolean** | Determines if items in the dictionary are readable or not. | [optional] [defaults to false]
 
 ### Return type
 

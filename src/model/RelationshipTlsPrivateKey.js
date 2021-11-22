@@ -25,6 +25,7 @@ class RelationshipTlsPrivateKey {
      * @alias module:model/RelationshipTlsPrivateKey
      */
     constructor() { 
+        
         RelationshipTlsPrivateKey.initialize(this);
     }
 

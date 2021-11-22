@@ -30,9 +30,18 @@ var HeaderResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>HeaderResponse</code>.
    * @alias module:model/HeaderResponse
+   * @implements module:model/Header
+   * @implements module:model/ServiceIdAndVersion
+   * @implements module:model/Timestamps
    */
   function HeaderResponse() {
     _classCallCheck(this, HeaderResponse);
+
+    _Header["default"].initialize(this);
+
+    _ServiceIdAndVersion["default"].initialize(this);
+
+    _Timestamps["default"].initialize(this);
 
     HeaderResponse.initialize(this);
   }
@@ -59,6 +68,12 @@ var HeaderResponse = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new HeaderResponse();
+
+        _Header["default"].constructFromObject(data, obj);
+
+        _ServiceIdAndVersion["default"].constructFromObject(data, obj);
+
+        _Timestamps["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('action')) {
           obj['action'] = _ApiClient["default"].convertToType(data['action'], 'String');
@@ -237,7 +252,112 @@ HeaderResponse.prototype['deleted_at'] = undefined;
  * @member {String} updated_at
  */
 
-HeaderResponse.prototype['updated_at'] = undefined;
+HeaderResponse.prototype['updated_at'] = undefined; // Implement Header interface:
+
+/**
+ * Accepts a string value.
+ * @member {module:model/Header.ActionEnum} action
+ */
+
+_Header["default"].prototype['action'] = undefined;
+/**
+ * Name of the cache condition controlling when this configuration applies.
+ * @member {String} cache_condition
+ */
+
+_Header["default"].prototype['cache_condition'] = undefined;
+/**
+ * Header to set.
+ * @member {String} dst
+ */
+
+_Header["default"].prototype['dst'] = undefined;
+/**
+ * Don't add the header if it is added already. Only applies to 'set' action.
+ * @member {Number} ignore_if_set
+ */
+
+_Header["default"].prototype['ignore_if_set'] = undefined;
+/**
+ * A handle to refer to this Header object.
+ * @member {String} name
+ */
+
+_Header["default"].prototype['name'] = undefined;
+/**
+ * Priority determines execution order. Lower numbers execute first.
+ * @member {Number} priority
+ * @default 100
+ */
+
+_Header["default"].prototype['priority'] = 100;
+/**
+ * Regular expression to use. Only applies to `regex` and `regex_repeat` actions.
+ * @member {String} regex
+ */
+
+_Header["default"].prototype['regex'] = undefined;
+/**
+ * Condition which, if met, will select this configuration during a request. Optional.
+ * @member {String} request_condition
+ */
+
+_Header["default"].prototype['request_condition'] = undefined;
+/**
+ * @member {String} response_condition
+ */
+
+_Header["default"].prototype['response_condition'] = undefined;
+/**
+ * Variable to be used as a source for the header content. Does not apply to `delete` action.
+ * @member {String} src
+ */
+
+_Header["default"].prototype['src'] = undefined;
+/**
+ * Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions.
+ * @member {String} substitution
+ */
+
+_Header["default"].prototype['substitution'] = undefined;
+/**
+ * Accepts a string value.
+ * @member {module:model/Header.TypeEnum} type
+ */
+
+_Header["default"].prototype['type'] = undefined; // Implement ServiceIdAndVersion interface:
+
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+
+_ServiceIdAndVersion["default"].prototype['service_id'] = undefined;
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
+
+_ServiceIdAndVersion["default"].prototype['version'] = undefined; // Implement Timestamps interface:
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+
+_Timestamps["default"].prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+
+_Timestamps["default"].prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+
+_Timestamps["default"].prototype['updated_at'] = undefined;
 /**
  * Allowed values for the <code>action</code> property.
  * @enum {String}
@@ -287,12 +407,6 @@ HeaderResponse['TypeEnum'] = {
    * @const
    */
   "request": "request",
-
-  /**
-   * value: "fetch"
-   * @const
-   */
-  "fetch": "fetch",
 
   /**
    * value: "cache"

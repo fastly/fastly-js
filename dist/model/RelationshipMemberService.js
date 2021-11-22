@@ -56,12 +56,12 @@ var RelationshipMemberService = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new RelationshipMemberService();
 
-        if (data.hasOwnProperty('id')) {
-          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
-        }
-
         if (data.hasOwnProperty('type')) {
           obj['type'] = _TypeService["default"].constructFromObject(data['type']);
+        }
+
+        if (data.hasOwnProperty('id')) {
+          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
       }
 
@@ -72,16 +72,16 @@ var RelationshipMemberService = /*#__PURE__*/function () {
   return RelationshipMemberService;
 }();
 /**
+ * @member {module:model/TypeService} type
+ */
+
+
+RelationshipMemberService.prototype['type'] = undefined;
+/**
  * Alphanumeric string identifying the service.
  * @member {String} id
  */
 
-
 RelationshipMemberService.prototype['id'] = undefined;
-/**
- * @member {module:model/TypeService} type
- */
-
-RelationshipMemberService.prototype['type'] = undefined;
 var _default = RelationshipMemberService;
 exports["default"] = _default;

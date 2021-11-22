@@ -7,7 +7,9 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _Timestamps = _interopRequireDefault(require("./Timestamps"));
+var _AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates = _interopRequireDefault(require("./AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates"));
+
+var _TlsSubscriptionDataAttributes = _interopRequireDefault(require("./TlsSubscriptionDataAttributes"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -56,12 +58,16 @@ var TlsSubscriptionResponseDataAllOf = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new TlsSubscriptionResponseDataAllOf();
 
-        if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _ApiClient["default"].convertToType(data['attributes'], _Timestamps["default"]);
-        }
-
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
+        }
+
+        if (data.hasOwnProperty('attributes')) {
+          obj['attributes'] = _TlsSubscriptionDataAttributes["default"].constructFromObject(data['attributes']);
+        }
+
+        if (data.hasOwnProperty('relationships')) {
+          obj['relationships'] = _ApiClient["default"].convertToType(data['relationships'], _AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates["default"]);
         }
       }
 
@@ -72,16 +78,21 @@ var TlsSubscriptionResponseDataAllOf = /*#__PURE__*/function () {
   return TlsSubscriptionResponseDataAllOf;
 }();
 /**
- * @member {module:model/Timestamps} attributes
- */
-
-
-TlsSubscriptionResponseDataAllOf.prototype['attributes'] = undefined;
-/**
  * Alphanumeric string identifying a TLS subscription.
  * @member {String} id
  */
 
+
 TlsSubscriptionResponseDataAllOf.prototype['id'] = undefined;
+/**
+ * @member {module:model/TlsSubscriptionDataAttributes} attributes
+ */
+
+TlsSubscriptionResponseDataAllOf.prototype['attributes'] = undefined;
+/**
+ * @member {module:model/AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates} relationships
+ */
+
+TlsSubscriptionResponseDataAllOf.prototype['relationships'] = undefined;
 var _default = TlsSubscriptionResponseDataAllOf;
 exports["default"] = _default;

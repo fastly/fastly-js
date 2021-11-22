@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import RelationshipsForWafActiveRule from './RelationshipsForWafActiveRule';
+import AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision from './AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision';
 import Timestamps from './Timestamps';
 import TypeWafActiveRule from './TypeWafActiveRule';
 import WafActiveRuleData from './WafActiveRuleData';
@@ -27,8 +27,11 @@ class WafActiveRuleResponseData {
     /**
      * Constructs a new <code>WafActiveRuleResponseData</code>.
      * @alias module:model/WafActiveRuleResponseData
+     * @implements module:model/WafActiveRuleData
+     * @implements module:model/WafActiveRuleResponseDataAllOf
      */
     constructor() { 
+        WafActiveRuleData.initialize(this);WafActiveRuleResponseDataAllOf.initialize(this);
         WafActiveRuleResponseData.initialize(this);
     }
 
@@ -50,15 +53,17 @@ class WafActiveRuleResponseData {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafActiveRuleResponseData();
+            WafActiveRuleData.constructFromObject(data, obj);
+            WafActiveRuleResponseDataAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeWafActiveRule.constructFromObject(data['type']);
+            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
             }
             if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = RelationshipsForWafActiveRule.constructFromObject(data['relationships']);
-            }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeWafActiveRule.constructFromObject(data['type']);
+                obj['relationships'] = ApiClient.convertToType(data['relationships'], AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -71,19 +76,19 @@ class WafActiveRuleResponseData {
 }
 
 /**
+ * @member {module:model/TypeWafActiveRule} type
+ */
+WafActiveRuleResponseData.prototype['type'] = undefined;
+
+/**
  * @member {module:model/Timestamps} attributes
  */
 WafActiveRuleResponseData.prototype['attributes'] = undefined;
 
 /**
- * @member {module:model/RelationshipsForWafActiveRule} relationships
+ * @member {module:model/AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision} relationships
  */
 WafActiveRuleResponseData.prototype['relationships'] = undefined;
-
-/**
- * @member {module:model/TypeWafActiveRule} type
- */
-WafActiveRuleResponseData.prototype['type'] = undefined;
 
 /**
  * Alphanumeric string identifying a WAF active rule.
@@ -92,6 +97,33 @@ WafActiveRuleResponseData.prototype['type'] = undefined;
 WafActiveRuleResponseData.prototype['id'] = undefined;
 
 
+// Implement WafActiveRuleData interface:
+/**
+ * @member {module:model/TypeWafActiveRule} type
+ */
+WafActiveRuleData.prototype['type'] = undefined;
+/**
+ * @member {module:model/WafActiveRuleDataAttributes} attributes
+ */
+WafActiveRuleData.prototype['attributes'] = undefined;
+/**
+ * @member {module:model/RelationshipsForWafActiveRule} relationships
+ */
+WafActiveRuleData.prototype['relationships'] = undefined;
+// Implement WafActiveRuleResponseDataAllOf interface:
+/**
+ * Alphanumeric string identifying a WAF active rule.
+ * @member {String} id
+ */
+WafActiveRuleResponseDataAllOf.prototype['id'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+WafActiveRuleResponseDataAllOf.prototype['attributes'] = undefined;
+/**
+ * @member {module:model/AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision} relationships
+ */
+WafActiveRuleResponseDataAllOf.prototype['relationships'] = undefined;
 
 
 

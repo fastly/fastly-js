@@ -25,8 +25,10 @@ class RelationshipsForTlsDomain {
     /**
      * Constructs a new <code>RelationshipsForTlsDomain</code>.
      * @alias module:model/RelationshipsForTlsDomain
+     * @implements module:model/RelationshipTlsSubscriptions
      */
     constructor() { 
+        RelationshipTlsSubscriptions.initialize(this);
         RelationshipsForTlsDomain.initialize(this);
     }
 
@@ -48,6 +50,7 @@ class RelationshipsForTlsDomain {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipsForTlsDomain();
+            RelationshipTlsSubscriptions.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('tls_subscriptions')) {
                 obj['tls_subscriptions'] = RelationshipTlsSubscriptionTlsSubscription.constructFromObject(data['tls_subscriptions']);
@@ -73,6 +76,11 @@ RelationshipsForTlsDomain.prototype['tls_subscriptions'] = undefined;
 RelationshipsForTlsDomain.prototype['tls_activations'] = undefined;
 
 
+// Implement RelationshipTlsSubscriptions interface:
+/**
+ * @member {module:model/RelationshipTlsSubscriptionTlsSubscription} tls_subscriptions
+ */
+RelationshipTlsSubscriptions.prototype['tls_subscriptions'] = undefined;
 
 
 

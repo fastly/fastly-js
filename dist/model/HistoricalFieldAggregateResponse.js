@@ -30,9 +30,15 @@ var HistoricalFieldAggregateResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>HistoricalFieldAggregateResponse</code>.
    * @alias module:model/HistoricalFieldAggregateResponse
+   * @implements module:model/Historical
+   * @implements module:model/HistoricalFieldAggregateResponseAllOf
    */
   function HistoricalFieldAggregateResponse() {
     _classCallCheck(this, HistoricalFieldAggregateResponse);
+
+    _Historical["default"].initialize(this);
+
+    _HistoricalFieldAggregateResponseAllOf["default"].initialize(this);
 
     HistoricalFieldAggregateResponse.initialize(this);
   }
@@ -60,16 +66,20 @@ var HistoricalFieldAggregateResponse = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new HistoricalFieldAggregateResponse();
 
+        _Historical["default"].constructFromObject(data, obj);
+
+        _HistoricalFieldAggregateResponseAllOf["default"].constructFromObject(data, obj);
+
+        if (data.hasOwnProperty('status')) {
+          obj['status'] = _ApiClient["default"].convertToType(data['status'], 'String');
+        }
+
         if (data.hasOwnProperty('meta')) {
           obj['meta'] = _HistoricalMeta["default"].constructFromObject(data['meta']);
         }
 
         if (data.hasOwnProperty('msg')) {
           obj['msg'] = _ApiClient["default"].convertToType(data['msg'], 'String');
-        }
-
-        if (data.hasOwnProperty('status')) {
-          obj['status'] = _ApiClient["default"].convertToType(data['status'], 'String');
         }
 
         if (data.hasOwnProperty('data')) {
@@ -86,9 +96,15 @@ var HistoricalFieldAggregateResponse = /*#__PURE__*/function () {
   return HistoricalFieldAggregateResponse;
 }();
 /**
- * @member {module:model/HistoricalMeta} meta
+ * Whether or not we were able to successfully execute the query.
+ * @member {String} status
  */
 
+
+HistoricalFieldAggregateResponse.prototype['status'] = undefined;
+/**
+ * @member {module:model/HistoricalMeta} meta
+ */
 
 HistoricalFieldAggregateResponse.prototype['meta'] = undefined;
 /**
@@ -98,15 +114,33 @@ HistoricalFieldAggregateResponse.prototype['meta'] = undefined;
 
 HistoricalFieldAggregateResponse.prototype['msg'] = undefined;
 /**
+ * @member {Array.<Object.<String, String>>} data
+ */
+
+HistoricalFieldAggregateResponse.prototype['data'] = undefined; // Implement Historical interface:
+
+/**
  * Whether or not we were able to successfully execute the query.
  * @member {String} status
  */
 
-HistoricalFieldAggregateResponse.prototype['status'] = undefined;
+_Historical["default"].prototype['status'] = undefined;
+/**
+ * @member {module:model/HistoricalMeta} meta
+ */
+
+_Historical["default"].prototype['meta'] = undefined;
+/**
+ * If the query was not successful, this will provide a string that explains why.
+ * @member {String} msg
+ */
+
+_Historical["default"].prototype['msg'] = undefined; // Implement HistoricalFieldAggregateResponseAllOf interface:
+
 /**
  * @member {Array.<Object.<String, String>>} data
  */
 
-HistoricalFieldAggregateResponse.prototype['data'] = undefined;
+_HistoricalFieldAggregateResponseAllOf["default"].prototype['data'] = undefined;
 var _default = HistoricalFieldAggregateResponse;
 exports["default"] = _default;

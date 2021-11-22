@@ -60,16 +60,16 @@ var LoggingLogentriesAllOf = /*#__PURE__*/function () {
           obj['port'] = _ApiClient["default"].convertToType(data['port'], 'Number');
         }
 
-        if (data.hasOwnProperty('region')) {
-          obj['region'] = _ApiClient["default"].convertToType(data['region'], 'String');
-        }
-
         if (data.hasOwnProperty('token')) {
           obj['token'] = _ApiClient["default"].convertToType(data['token'], 'String');
         }
 
         if (data.hasOwnProperty('use_tls')) {
           obj['use_tls'] = _LoggingUseTls["default"].constructFromObject(data['use_tls']);
+        }
+
+        if (data.hasOwnProperty('region')) {
+          obj['region'] = _ApiClient["default"].convertToType(data['region'], 'String');
         }
       }
 
@@ -88,12 +88,6 @@ var LoggingLogentriesAllOf = /*#__PURE__*/function () {
 
 LoggingLogentriesAllOf.prototype['port'] = 20000;
 /**
- * The region to which to stream logs.
- * @member {module:model/LoggingLogentriesAllOf.RegionEnum} region
- */
-
-LoggingLogentriesAllOf.prototype['region'] = undefined;
-/**
  * Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
  * @member {String} token
  */
@@ -104,6 +98,12 @@ LoggingLogentriesAllOf.prototype['token'] = undefined;
  */
 
 LoggingLogentriesAllOf.prototype['use_tls'] = undefined;
+/**
+ * The region to which to stream logs.
+ * @member {module:model/LoggingLogentriesAllOf.RegionEnum} region
+ */
+
+LoggingLogentriesAllOf.prototype['region'] = undefined;
 /**
  * Allowed values for the <code>region</code> property.
  * @enum {String}

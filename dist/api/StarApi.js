@@ -84,7 +84,7 @@ var StarApi = /*#__PURE__*/function () {
     /**
      * Delete star.
      * @param {Object} options
-     * @param {String} options.star_id
+     * @param {String} options.star_id - Alphanumeric string identifying a star.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
 
@@ -113,7 +113,7 @@ var StarApi = /*#__PURE__*/function () {
     /**
      * Delete star.
      * @param {Object} options
-     * @param {String} options.star_id
+     * @param {String} options.star_id - Alphanumeric string identifying a star.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
 
@@ -128,7 +128,7 @@ var StarApi = /*#__PURE__*/function () {
     /**
      * Show star.
      * @param {Object} options
-     * @param {String} options.star_id
+     * @param {String} options.star_id - Alphanumeric string identifying a star.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StarResponse} and HTTP response
      */
 
@@ -157,7 +157,7 @@ var StarApi = /*#__PURE__*/function () {
     /**
      * Show star.
      * @param {Object} options
-     * @param {String} options.star_id
+     * @param {String} options.star_id - Alphanumeric string identifying a star.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StarResponse}
      */
 

@@ -30,9 +30,18 @@ var DomainResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>DomainResponse</code>.
    * @alias module:model/DomainResponse
+   * @implements module:model/Domain
+   * @implements module:model/ServiceIdAndVersion
+   * @implements module:model/Timestamps
    */
   function DomainResponse() {
     _classCallCheck(this, DomainResponse);
+
+    _Domain["default"].initialize(this);
+
+    _ServiceIdAndVersion["default"].initialize(this);
+
+    _Timestamps["default"].initialize(this);
 
     DomainResponse.initialize(this);
   }
@@ -59,6 +68,12 @@ var DomainResponse = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new DomainResponse();
+
+        _Domain["default"].constructFromObject(data, obj);
+
+        _ServiceIdAndVersion["default"].constructFromObject(data, obj);
+
+        _Timestamps["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('comment')) {
           obj['comment'] = _ApiClient["default"].convertToType(data['comment'], 'String');
@@ -137,6 +152,51 @@ DomainResponse.prototype['deleted_at'] = undefined;
  * @member {String} updated_at
  */
 
-DomainResponse.prototype['updated_at'] = undefined;
+DomainResponse.prototype['updated_at'] = undefined; // Implement Domain interface:
+
+/**
+ * A freeform descriptive note.
+ * @member {String} comment
+ */
+
+_Domain["default"].prototype['comment'] = undefined;
+/**
+ * The name of the domain or domains associated with this service.
+ * @member {String} name
+ */
+
+_Domain["default"].prototype['name'] = undefined; // Implement ServiceIdAndVersion interface:
+
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+
+_ServiceIdAndVersion["default"].prototype['service_id'] = undefined;
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
+
+_ServiceIdAndVersion["default"].prototype['version'] = undefined; // Implement Timestamps interface:
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+
+_Timestamps["default"].prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+
+_Timestamps["default"].prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+
+_Timestamps["default"].prototype['updated_at'] = undefined;
 var _default = DomainResponse;
 exports["default"] = _default;

@@ -11,6 +11,8 @@ var _DomainResponse = _interopRequireDefault(require("../model/DomainResponse"))
 
 var _ServiceDetail = _interopRequireDefault(require("../model/ServiceDetail"));
 
+var _ServiceListResponse = _interopRequireDefault(require("../model/ServiceListResponse"));
+
 var _ServiceResponse = _interopRequireDefault(require("../model/ServiceResponse"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -47,8 +49,8 @@ var ServiceApi = /*#__PURE__*/function () {
    * Create a service.
    * @param {Object} options
    * @param {String} [options.comment] - A freeform descriptive note.
-   * @param {String} [options.customer_id] - Alphanumeric string identifying the customer.
    * @param {String} [options.name] - The name of the service.
+   * @param {String} [options.customer_id] - Alphanumeric string identifying the customer.
    * @param {module:model/String} [options.type] - The type of this service.
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceResponse} and HTTP response
    */
@@ -64,8 +66,8 @@ var ServiceApi = /*#__PURE__*/function () {
       var headerParams = {};
       var formParams = {
         'comment': options['comment'],
-        'customer_id': options['customer_id'],
         'name': options['name'],
+        'customer_id': options['customer_id'],
         'type': options['type']
       };
       var authNames = ['token'];
@@ -78,8 +80,8 @@ var ServiceApi = /*#__PURE__*/function () {
      * Create a service.
      * @param {Object} options
      * @param {String} [options.comment] - A freeform descriptive note.
-     * @param {String} [options.customer_id] - Alphanumeric string identifying the customer.
      * @param {String} [options.name] - The name of the service.
+     * @param {String} [options.customer_id] - Alphanumeric string identifying the customer.
      * @param {module:model/String} [options.type] - The type of this service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceResponse}
      */
@@ -95,7 +97,7 @@ var ServiceApi = /*#__PURE__*/function () {
     /**
      * Delete a service.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
 
@@ -124,7 +126,7 @@ var ServiceApi = /*#__PURE__*/function () {
     /**
      * Delete a service.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
 
@@ -139,7 +141,7 @@ var ServiceApi = /*#__PURE__*/function () {
     /**
      * Get a specific service by id.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceResponse} and HTTP response
      */
 
@@ -168,7 +170,7 @@ var ServiceApi = /*#__PURE__*/function () {
     /**
      * Get a specific service by id.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceResponse}
      */
 
@@ -183,7 +185,7 @@ var ServiceApi = /*#__PURE__*/function () {
     /**
      * List detailed information on a specified service.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceDetail} and HTTP response
      */
 
@@ -212,7 +214,7 @@ var ServiceApi = /*#__PURE__*/function () {
     /**
      * List detailed information on a specified service.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceDetail}
      */
 
@@ -227,7 +229,7 @@ var ServiceApi = /*#__PURE__*/function () {
     /**
      * List the domains within a service.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DomainResponse>} and HTTP response
      */
 
@@ -256,7 +258,7 @@ var ServiceApi = /*#__PURE__*/function () {
     /**
      * List the domains within a service.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DomainResponse>}
      */
 
@@ -275,7 +277,7 @@ var ServiceApi = /*#__PURE__*/function () {
      * @param {Number} [options.per_page=20] - Number of records per page.
      * @param {String} [options.sort='created'] - Field on which to sort.
      * @param {module:model/String} [options.direction='ascend'] - Direction in which to sort results.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ServiceResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ServiceListResponse>} and HTTP response
      */
 
   }, {
@@ -295,7 +297,7 @@ var ServiceApi = /*#__PURE__*/function () {
       var authNames = ['token'];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = [_ServiceResponse["default"]];
+      var returnType = [_ServiceListResponse["default"]];
       return this.apiClient.callApi('/service', 'GET', pathParams, queryParams, headerParams, formParams, postBody, authNames, contentTypes, accepts, returnType, null);
     }
     /**
@@ -305,7 +307,7 @@ var ServiceApi = /*#__PURE__*/function () {
      * @param {Number} [options.per_page=20] - Number of records per page.
      * @param {String} [options.sort='created'] - Field on which to sort.
      * @param {module:model/String} [options.direction='ascend'] - Direction in which to sort results.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ServiceResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ServiceListResponse>}
      */
 
   }, {
@@ -319,7 +321,7 @@ var ServiceApi = /*#__PURE__*/function () {
     /**
      * Get a specific service by name.
      * @param {Object} options
-     * @param {String} options.name
+     * @param {String} options.name - The name of the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceResponse} and HTTP response
      */
 
@@ -348,7 +350,7 @@ var ServiceApi = /*#__PURE__*/function () {
     /**
      * Get a specific service by name.
      * @param {Object} options
-     * @param {String} options.name
+     * @param {String} options.name - The name of the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceResponse}
      */
 
@@ -363,10 +365,10 @@ var ServiceApi = /*#__PURE__*/function () {
     /**
      * Update a service.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} [options.comment] - A freeform descriptive note.
-     * @param {String} [options.customer_id] - Alphanumeric string identifying the customer.
      * @param {String} [options.name] - The name of the service.
+     * @param {String} [options.customer_id] - Alphanumeric string identifying the customer.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceResponse} and HTTP response
      */
 
@@ -387,8 +389,8 @@ var ServiceApi = /*#__PURE__*/function () {
       var headerParams = {};
       var formParams = {
         'comment': options['comment'],
-        'customer_id': options['customer_id'],
-        'name': options['name']
+        'name': options['name'],
+        'customer_id': options['customer_id']
       };
       var authNames = ['token'];
       var contentTypes = ['application/x-www-form-urlencoded'];
@@ -399,10 +401,10 @@ var ServiceApi = /*#__PURE__*/function () {
     /**
      * Update a service.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} [options.comment] - A freeform descriptive note.
-     * @param {String} [options.customer_id] - Alphanumeric string identifying the customer.
      * @param {String} [options.name] - The name of the service.
+     * @param {String} [options.customer_id] - Alphanumeric string identifying the customer.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceResponse}
      */
 

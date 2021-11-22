@@ -1,6 +1,5 @@
 # Fastly.CustomerApi
 
-
 ```javascript
 const apiInstance = new Fastly.CustomerApi();
 ```
@@ -13,7 +12,6 @@ Method | Fastly API endpoint | Description
 [**getLoggedInCustomer**](CustomerApi.md#getLoggedInCustomer) | **GET** /current_customer | Get the logged in customer
 [**listUsers**](CustomerApi.md#listUsers) | **GET** /customer/{customer_id}/users | List users
 [**updateCustomer**](CustomerApi.md#updateCustomer) | **PUT** /customer/{customer_id} | Update a customer
-
 
 
 ## `deleteCustomer`
@@ -33,7 +31,7 @@ const options = {
 
 apiInstance.deleteCustomer(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -44,7 +42,7 @@ apiInstance.deleteCustomer(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**customer_id** | **String** |  |
+**customer_id** | **String** | Alphanumeric string identifying the customer. |
 
 ### Return type
 
@@ -68,7 +66,7 @@ const options = {
 
 apiInstance.getCustomer(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -79,7 +77,7 @@ apiInstance.getCustomer(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**customer_id** | **String** |  |
+**customer_id** | **String** | Alphanumeric string identifying the customer. |
 
 ### Return type
 
@@ -99,7 +97,7 @@ Get the logged in customer.
 ```javascript
 apiInstance.getLoggedInCustomer()
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -132,7 +130,7 @@ const options = {
 
 apiInstance.listUsers(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -143,7 +141,7 @@ apiInstance.listUsers(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**customer_id** | **String** |  |
+**customer_id** | **String** | Alphanumeric string identifying the customer. |
 
 ### Return type
 
@@ -153,7 +151,7 @@ Name | Type | Description  | Notes
 ## `updateCustomer`
 
 ```javascript
-updateCustomer({ customer_id, [billing_contact_id, ], [billing_network_type, ], [billing_ref, ], [can_configure_wordpress, ], [can_reset_passwords, ], [can_upload_vcl, ], [force_2fa, ], [force_sso, ], [has_account_panel, ], [has_improved_events, ], [has_improved_ssl_config, ], [has_openstack_logging, ], [has_pci, ], [has_pci_passwords, ], [ip_whitelist, ], [legal_contact_id, ], [name, ], [owner_id, ], [phone_number, ], [postal_address, ], [pricing_plan, ], [pricing_plan_id, ], [security_contact_id, ], [technical_contact_id] })
+updateCustomer({ customer_id, [billing_contact_id, ][billing_network_type, ][billing_ref, ][can_configure_wordpress, ][can_reset_passwords, ][can_upload_vcl, ][force_2fa, ][force_sso, ][has_account_panel, ][has_improved_events, ][has_improved_ssl_config, ][has_openstack_logging, ][has_pci, ][has_pci_passwords, ][ip_whitelist, ][legal_contact_id, ][name, ][owner_id, ][phone_number, ][postal_address, ][pricing_plan, ][pricing_plan_id, ][security_contact_id, ][technical_contact_id] })
 ```
 
 Update a customer.
@@ -164,7 +162,7 @@ Update a customer.
 const options = {
   customer_id: "customer_id_example", // required
   billing_contact_id: "billing_contact_id_example",
-  billing_network_type: "billing_network_type_example",
+  billing_network_type: "public",
   billing_ref: "billing_ref_example",
   can_configure_wordpress: true,
   can_reset_passwords: true,
@@ -191,7 +189,7 @@ const options = {
 
 apiInstance.updateCustomer(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -202,9 +200,9 @@ apiInstance.updateCustomer(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**customer_id** | **String** |  |
+**customer_id** | **String** | Alphanumeric string identifying the customer. |
 **billing_contact_id** | **String** | The alphanumeric string representing the primary billing contact. | [optional]
-**billing_network_type** | **String** | Customer&#39;s current network revenue type. | [optional]
+**billing_network_type** | **String** | Customer&#39;s current network revenue type. | [optional] [one of: "public", "private"]
 **billing_ref** | **String** | Used for adding purchased orders to customer&#39;s account. | [optional]
 **can_configure_wordpress** | **Boolean** | Whether this customer can view or edit wordpress. | [optional]
 **can_reset_passwords** | **Boolean** | Whether this customer can reset passwords. | [optional]

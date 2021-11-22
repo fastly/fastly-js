@@ -26,8 +26,11 @@ class ServiceAuthorizationResponseData {
     /**
      * Constructs a new <code>ServiceAuthorizationResponseData</code>.
      * @alias module:model/ServiceAuthorizationResponseData
+     * @implements module:model/ServiceAuthorizationData
+     * @implements module:model/ServiceAuthorizationResponseDataAllOf
      */
     constructor() { 
+        ServiceAuthorizationData.initialize(this);ServiceAuthorizationResponseDataAllOf.initialize(this);
         ServiceAuthorizationResponseData.initialize(this);
     }
 
@@ -49,15 +52,17 @@ class ServiceAuthorizationResponseData {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ServiceAuthorizationResponseData();
+            ServiceAuthorizationData.constructFromObject(data, obj);
+            ServiceAuthorizationResponseDataAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeServiceAuthorization.constructFromObject(data['type']);
+            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = Timestamps.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = ApiClient.convertToType(data['relationships'], Object);
-            }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeServiceAuthorization.constructFromObject(data['type']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -70,6 +75,11 @@ class ServiceAuthorizationResponseData {
 }
 
 /**
+ * @member {module:model/TypeServiceAuthorization} type
+ */
+ServiceAuthorizationResponseData.prototype['type'] = undefined;
+
+/**
  * @member {module:model/Timestamps} attributes
  */
 ServiceAuthorizationResponseData.prototype['attributes'] = undefined;
@@ -80,17 +90,35 @@ ServiceAuthorizationResponseData.prototype['attributes'] = undefined;
 ServiceAuthorizationResponseData.prototype['relationships'] = undefined;
 
 /**
- * @member {module:model/TypeServiceAuthorization} type
- */
-ServiceAuthorizationResponseData.prototype['type'] = undefined;
-
-/**
  * Alphanumeric string identifying a service authorization.
  * @member {String} id
  */
 ServiceAuthorizationResponseData.prototype['id'] = undefined;
 
 
+// Implement ServiceAuthorizationData interface:
+/**
+ * @member {module:model/TypeServiceAuthorization} type
+ */
+ServiceAuthorizationData.prototype['type'] = undefined;
+/**
+ * @member {module:model/ServiceAuthorizationDataAttributes} attributes
+ */
+ServiceAuthorizationData.prototype['attributes'] = undefined;
+/**
+ * @member {Object} relationships
+ */
+ServiceAuthorizationData.prototype['relationships'] = undefined;
+// Implement ServiceAuthorizationResponseDataAllOf interface:
+/**
+ * Alphanumeric string identifying a service authorization.
+ * @member {String} id
+ */
+ServiceAuthorizationResponseDataAllOf.prototype['id'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+ServiceAuthorizationResponseDataAllOf.prototype['attributes'] = undefined;
 
 
 

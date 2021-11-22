@@ -32,9 +32,15 @@ var RelationshipsForInvitation = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>RelationshipsForInvitation</code>.
    * @alias module:model/RelationshipsForInvitation
+   * @implements module:model/RelationshipCustomer
+   * @implements module:model/RelationshipServiceInvitations
    */
   function RelationshipsForInvitation() {
     _classCallCheck(this, RelationshipsForInvitation);
+
+    _RelationshipCustomer["default"].initialize(this);
+
+    _RelationshipServiceInvitations["default"].initialize(this);
 
     RelationshipsForInvitation.initialize(this);
   }
@@ -62,6 +68,10 @@ var RelationshipsForInvitation = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new RelationshipsForInvitation();
 
+        _RelationshipCustomer["default"].constructFromObject(data, obj);
+
+        _RelationshipServiceInvitations["default"].constructFromObject(data, obj);
+
         if (data.hasOwnProperty('customer')) {
           obj['customer'] = _RelationshipCustomerCustomer["default"].constructFromObject(data['customer']);
         }
@@ -87,6 +97,18 @@ RelationshipsForInvitation.prototype['customer'] = undefined;
  * @member {module:model/RelationshipServiceInvitationsServiceInvitations} service_invitations
  */
 
-RelationshipsForInvitation.prototype['service_invitations'] = undefined;
+RelationshipsForInvitation.prototype['service_invitations'] = undefined; // Implement RelationshipCustomer interface:
+
+/**
+ * @member {module:model/RelationshipCustomerCustomer} customer
+ */
+
+_RelationshipCustomer["default"].prototype['customer'] = undefined; // Implement RelationshipServiceInvitations interface:
+
+/**
+ * @member {module:model/RelationshipServiceInvitationsServiceInvitations} service_invitations
+ */
+
+_RelationshipServiceInvitations["default"].prototype['service_invitations'] = undefined;
 var _default = RelationshipsForInvitation;
 exports["default"] = _default;

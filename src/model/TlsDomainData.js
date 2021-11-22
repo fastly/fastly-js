@@ -26,6 +26,7 @@ class TlsDomainData {
      * @alias module:model/TlsDomainData
      */
     constructor() { 
+        
         TlsDomainData.initialize(this);
     }
 
@@ -51,11 +52,11 @@ class TlsDomainData {
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
-            if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = RelationshipsForTlsDomain.constructFromObject(data['relationships']);
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeTlsDomain.constructFromObject(data['type']);
+            }
+            if (data.hasOwnProperty('relationships')) {
+                obj['relationships'] = RelationshipsForTlsDomain.constructFromObject(data['relationships']);
             }
         }
         return obj;
@@ -71,14 +72,14 @@ class TlsDomainData {
 TlsDomainData.prototype['id'] = undefined;
 
 /**
- * @member {module:model/RelationshipsForTlsDomain} relationships
- */
-TlsDomainData.prototype['relationships'] = undefined;
-
-/**
  * @member {module:model/TypeTlsDomain} type
  */
 TlsDomainData.prototype['type'] = undefined;
+
+/**
+ * @member {module:model/RelationshipsForTlsDomain} relationships
+ */
+TlsDomainData.prototype['relationships'] = undefined;
 
 
 

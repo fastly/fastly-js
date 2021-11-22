@@ -3,7 +3,7 @@
 ## Enum
 
 
-* `tls_dns_record` (value: `"tls_dns_record"`)
+* `dns_record` (value: `"dns_record"`)
 
 
 

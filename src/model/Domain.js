@@ -24,6 +24,7 @@ class Domain {
      * @alias module:model/Domain
      */
     constructor() { 
+        
         Domain.initialize(this);
     }
 

@@ -30,9 +30,18 @@ var HealthcheckResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>HealthcheckResponse</code>.
    * @alias module:model/HealthcheckResponse
+   * @implements module:model/Healthcheck
+   * @implements module:model/ServiceIdAndVersion
+   * @implements module:model/Timestamps
    */
   function HealthcheckResponse() {
     _classCallCheck(this, HealthcheckResponse);
+
+    _Healthcheck["default"].initialize(this);
+
+    _ServiceIdAndVersion["default"].initialize(this);
+
+    _Timestamps["default"].initialize(this);
 
     HealthcheckResponse.initialize(this);
   }
@@ -59,6 +68,12 @@ var HealthcheckResponse = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new HealthcheckResponse();
+
+        _Healthcheck["default"].constructFromObject(data, obj);
+
+        _ServiceIdAndVersion["default"].constructFromObject(data, obj);
+
+        _Timestamps["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('check_interval')) {
           obj['check_interval'] = _ApiClient["default"].convertToType(data['check_interval'], 'Number');
@@ -237,6 +252,111 @@ HealthcheckResponse.prototype['deleted_at'] = undefined;
  * @member {String} updated_at
  */
 
-HealthcheckResponse.prototype['updated_at'] = undefined;
+HealthcheckResponse.prototype['updated_at'] = undefined; // Implement Healthcheck interface:
+
+/**
+ * How often to run the healthcheck in milliseconds.
+ * @member {Number} check_interval
+ */
+
+_Healthcheck["default"].prototype['check_interval'] = undefined;
+/**
+ * A freeform descriptive note.
+ * @member {String} comment
+ */
+
+_Healthcheck["default"].prototype['comment'] = undefined;
+/**
+ * The status code expected from the host.
+ * @member {Number} expected_response
+ */
+
+_Healthcheck["default"].prototype['expected_response'] = undefined;
+/**
+ * Which host to check.
+ * @member {String} host
+ */
+
+_Healthcheck["default"].prototype['host'] = undefined;
+/**
+ * Whether to use version 1.0 or 1.1 HTTP.
+ * @member {String} http_version
+ */
+
+_Healthcheck["default"].prototype['http_version'] = undefined;
+/**
+ * When loading a config, the initial number of probes to be seen as OK.
+ * @member {Number} initial
+ */
+
+_Healthcheck["default"].prototype['initial'] = undefined;
+/**
+ * Which HTTP method to use.
+ * @member {String} method
+ */
+
+_Healthcheck["default"].prototype['method'] = undefined;
+/**
+ * The name of the healthcheck.
+ * @member {String} name
+ */
+
+_Healthcheck["default"].prototype['name'] = undefined;
+/**
+ * The path to check.
+ * @member {String} path
+ */
+
+_Healthcheck["default"].prototype['path'] = undefined;
+/**
+ * How many healthchecks must succeed to be considered healthy.
+ * @member {Number} threshold
+ */
+
+_Healthcheck["default"].prototype['threshold'] = undefined;
+/**
+ * Timeout in milliseconds.
+ * @member {Number} timeout
+ */
+
+_Healthcheck["default"].prototype['timeout'] = undefined;
+/**
+ * The number of most recent healthcheck queries to keep for this healthcheck.
+ * @member {Number} window
+ */
+
+_Healthcheck["default"].prototype['window'] = undefined; // Implement ServiceIdAndVersion interface:
+
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+
+_ServiceIdAndVersion["default"].prototype['service_id'] = undefined;
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
+
+_ServiceIdAndVersion["default"].prototype['version'] = undefined; // Implement Timestamps interface:
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+
+_Timestamps["default"].prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+
+_Timestamps["default"].prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+
+_Timestamps["default"].prototype['updated_at'] = undefined;
 var _default = HealthcheckResponse;
 exports["default"] = _default;

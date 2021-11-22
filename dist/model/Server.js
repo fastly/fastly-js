@@ -54,6 +54,18 @@ var Server = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new Server();
 
+        if (data.hasOwnProperty('weight')) {
+          obj['weight'] = _ApiClient["default"].convertToType(data['weight'], 'Number');
+        }
+
+        if (data.hasOwnProperty('max_conn')) {
+          obj['max_conn'] = _ApiClient["default"].convertToType(data['max_conn'], 'Number');
+        }
+
+        if (data.hasOwnProperty('port')) {
+          obj['port'] = _ApiClient["default"].convertToType(data['port'], 'Number');
+        }
+
         if (data.hasOwnProperty('address')) {
           obj['address'] = _ApiClient["default"].convertToType(data['address'], 'String');
         }
@@ -66,20 +78,8 @@ var Server = /*#__PURE__*/function () {
           obj['disabled'] = _ApiClient["default"].convertToType(data['disabled'], 'Boolean');
         }
 
-        if (data.hasOwnProperty('max_conn')) {
-          obj['max_conn'] = _ApiClient["default"].convertToType(data['max_conn'], 'Number');
-        }
-
         if (data.hasOwnProperty('override_host')) {
           obj['override_host'] = _ApiClient["default"].convertToType(data['override_host'], 'String');
-        }
-
-        if (data.hasOwnProperty('port')) {
-          obj['port'] = _ApiClient["default"].convertToType(data['port'], 'Number');
-        }
-
-        if (data.hasOwnProperty('weight')) {
-          obj['weight'] = _ApiClient["default"].convertToType(data['weight'], 'Number');
         }
       }
 
@@ -90,10 +90,31 @@ var Server = /*#__PURE__*/function () {
   return Server;
 }();
 /**
+ * Weight (`1-100`) used to load balance this server against others.
+ * @member {Number} weight
+ * @default 100
+ */
+
+
+Server.prototype['weight'] = 100;
+/**
+ * Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
+ * @member {Number} max_conn
+ * @default 0
+ */
+
+Server.prototype['max_conn'] = 0;
+/**
+ * Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
+ * @member {Number} port
+ * @default 80
+ */
+
+Server.prototype['port'] = 80;
+/**
  * A hostname, IPv4, or IPv6 address for the server. Required.
  * @member {String} address
  */
-
 
 Server.prototype['address'] = undefined;
 /**
@@ -110,32 +131,11 @@ Server.prototype['comment'] = undefined;
 
 Server.prototype['disabled'] = false;
 /**
- * Maximum number of connections. If the value is `0`, it inherits the value from pool's `max_conn_default`.
- * @member {Number} max_conn
- * @default 0
- */
-
-Server.prototype['max_conn'] = 0;
-/**
  * The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting.
  * @member {String} override_host
  * @default 'null'
  */
 
 Server.prototype['override_host'] = 'null';
-/**
- * Port number. Setting port `443` does not force TLS. Set `use_tls` in pool to force TLS.
- * @member {Number} port
- * @default 80
- */
-
-Server.prototype['port'] = 80;
-/**
- * Weight (`1-100`) used to load balance this server against others.
- * @member {Number} weight
- * @default 100
- */
-
-Server.prototype['weight'] = 100;
 var _default = Server;
 exports["default"] = _default;

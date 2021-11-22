@@ -42,8 +42,8 @@ var BackendApi = /*#__PURE__*/function () {
   /**
    * Create a backend for a particular service and version.
    * @param {Object} options
-   * @param {String} options.service_id
-   * @param {Number} options.version_id
+   * @param {String} options.service_id - Alphanumeric string identifying the service.
+   * @param {Number} options.version_id - Integer identifying a service version.
    * @param {String} [options.address] - A hostname, IPv4, or IPv6 address for the backend. This is the preferred way to specify the location of your backend.
    * @param {Boolean} [options.auto_loadbalance] - Whether or not this backend should be automatically load balanced. If true, all backends with this setting that don't have a `request_condition` will be selected based on their `weight`.
    * @param {Number} [options.between_bytes_timeout] - Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, the response received so far will be considered complete and the fetch will end. May be set at runtime using `bereq.between_bytes_timeout`.
@@ -138,8 +138,8 @@ var BackendApi = /*#__PURE__*/function () {
     /**
      * Create a backend for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.address] - A hostname, IPv4, or IPv6 address for the backend. This is the preferred way to specify the location of your backend.
      * @param {Boolean} [options.auto_loadbalance] - Whether or not this backend should be automatically load balanced. If true, all backends with this setting that don't have a `request_condition` will be selected based on their `weight`.
      * @param {Number} [options.between_bytes_timeout] - Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, the response received so far will be considered complete and the fetch will end. May be set at runtime using `bereq.between_bytes_timeout`.
@@ -183,9 +183,9 @@ var BackendApi = /*#__PURE__*/function () {
     /**
      * Delete the backend for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.backend_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.backend_name - The name of the backend.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
 
@@ -226,9 +226,9 @@ var BackendApi = /*#__PURE__*/function () {
     /**
      * Delete the backend for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.backend_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.backend_name - The name of the backend.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
 
@@ -243,9 +243,9 @@ var BackendApi = /*#__PURE__*/function () {
     /**
      * Get the backend for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.backend_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.backend_name - The name of the backend.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BackendResponse} and HTTP response
      */
 
@@ -286,9 +286,9 @@ var BackendApi = /*#__PURE__*/function () {
     /**
      * Get the backend for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.backend_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.backend_name - The name of the backend.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BackendResponse}
      */
 
@@ -303,8 +303,8 @@ var BackendApi = /*#__PURE__*/function () {
     /**
      * List all backends for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/BackendResponse>} and HTTP response
      */
 
@@ -339,8 +339,8 @@ var BackendApi = /*#__PURE__*/function () {
     /**
      * List all backends for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/BackendResponse>}
      */
 
@@ -355,9 +355,9 @@ var BackendApi = /*#__PURE__*/function () {
     /**
      * Update the backend for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.backend_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.backend_name - The name of the backend.
      * @param {String} [options.address] - A hostname, IPv4, or IPv6 address for the backend. This is the preferred way to specify the location of your backend.
      * @param {Boolean} [options.auto_loadbalance] - Whether or not this backend should be automatically load balanced. If true, all backends with this setting that don't have a `request_condition` will be selected based on their `weight`.
      * @param {Number} [options.between_bytes_timeout] - Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, the response received so far will be considered complete and the fetch will end. May be set at runtime using `bereq.between_bytes_timeout`.
@@ -457,9 +457,9 @@ var BackendApi = /*#__PURE__*/function () {
     /**
      * Update the backend for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.backend_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.backend_name - The name of the backend.
      * @param {String} [options.address] - A hostname, IPv4, or IPv6 address for the backend. This is the preferred way to specify the location of your backend.
      * @param {Boolean} [options.auto_loadbalance] - Whether or not this backend should be automatically load balanced. If true, all backends with this setting that don't have a `request_condition` will be selected based on their `weight`.
      * @param {Number} [options.between_bytes_timeout] - Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, the response received so far will be considered complete and the fetch will end. May be set at runtime using `bereq.between_bytes_timeout`.

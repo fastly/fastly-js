@@ -25,6 +25,7 @@ class InvitationDataAttributes {
      * @alias module:model/InvitationDataAttributes
      */
     constructor() { 
+        
         InvitationDataAttributes.initialize(this);
     }
 

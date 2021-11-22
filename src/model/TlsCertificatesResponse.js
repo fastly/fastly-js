@@ -27,8 +27,11 @@ class TlsCertificatesResponse {
     /**
      * Constructs a new <code>TlsCertificatesResponse</code>.
      * @alias module:model/TlsCertificatesResponse
+     * @implements module:model/Pagination
+     * @implements module:model/TlsCertificatesResponseAllOf
      */
     constructor() { 
+        Pagination.initialize(this);TlsCertificatesResponseAllOf.initialize(this);
         TlsCertificatesResponse.initialize(this);
     }
 
@@ -50,6 +53,8 @@ class TlsCertificatesResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsCertificatesResponse();
+            Pagination.constructFromObject(data, obj);
+            TlsCertificatesResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('links')) {
                 obj['links'] = PaginationLinks.constructFromObject(data['links']);
@@ -83,6 +88,20 @@ TlsCertificatesResponse.prototype['meta'] = undefined;
 TlsCertificatesResponse.prototype['data'] = undefined;
 
 
+// Implement Pagination interface:
+/**
+ * @member {module:model/PaginationLinks} links
+ */
+Pagination.prototype['links'] = undefined;
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
+Pagination.prototype['meta'] = undefined;
+// Implement TlsCertificatesResponseAllOf interface:
+/**
+ * @member {Array.<module:model/TlsCertificateResponseData>} data
+ */
+TlsCertificatesResponseAllOf.prototype['data'] = undefined;
 
 
 

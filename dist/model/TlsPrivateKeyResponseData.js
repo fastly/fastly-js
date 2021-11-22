@@ -58,16 +58,16 @@ var TlsPrivateKeyResponseData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new TlsPrivateKeyResponseData();
 
-        if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _ApiClient["default"].convertToType(data['attributes'], _Timestamps["default"]);
+        if (data.hasOwnProperty('type')) {
+          obj['type'] = _TypeTlsPrivateKey["default"].constructFromObject(data['type']);
         }
 
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
 
-        if (data.hasOwnProperty('type')) {
-          obj['type'] = _TypeTlsPrivateKey["default"].constructFromObject(data['type']);
+        if (data.hasOwnProperty('attributes')) {
+          obj['attributes'] = _ApiClient["default"].convertToType(data['attributes'], _Timestamps["default"]);
         }
       }
 
@@ -78,11 +78,11 @@ var TlsPrivateKeyResponseData = /*#__PURE__*/function () {
   return TlsPrivateKeyResponseData;
 }();
 /**
- * @member {module:model/Timestamps} attributes
+ * @member {module:model/TypeTlsPrivateKey} type
  */
 
 
-TlsPrivateKeyResponseData.prototype['attributes'] = undefined;
+TlsPrivateKeyResponseData.prototype['type'] = undefined;
 /**
  * Alphanumeric string identifying a private Key.
  * @member {String} id
@@ -90,9 +90,9 @@ TlsPrivateKeyResponseData.prototype['attributes'] = undefined;
 
 TlsPrivateKeyResponseData.prototype['id'] = undefined;
 /**
- * @member {module:model/TypeTlsPrivateKey} type
+ * @member {module:model/Timestamps} attributes
  */
 
-TlsPrivateKeyResponseData.prototype['type'] = undefined;
+TlsPrivateKeyResponseData.prototype['attributes'] = undefined;
 var _default = TlsPrivateKeyResponseData;
 exports["default"] = _default;

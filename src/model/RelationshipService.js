@@ -25,6 +25,7 @@ class RelationshipService {
      * @alias module:model/RelationshipService
      */
     constructor() { 
+        
         RelationshipService.initialize(this);
     }
 

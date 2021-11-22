@@ -24,6 +24,7 @@ class LoggingHerokuAllOf {
      * @alias module:model/LoggingHerokuAllOf
      */
     constructor() { 
+        
         LoggingHerokuAllOf.initialize(this);
     }
 

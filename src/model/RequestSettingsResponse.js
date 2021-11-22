@@ -25,8 +25,12 @@ class RequestSettingsResponse {
     /**
      * Constructs a new <code>RequestSettingsResponse</code>.
      * @alias module:model/RequestSettingsResponse
+     * @implements module:model/RequestSettings
+     * @implements module:model/ServiceIdAndVersion
+     * @implements module:model/Timestamps
      */
     constructor() { 
+        RequestSettings.initialize(this);ServiceIdAndVersion.initialize(this);Timestamps.initialize(this);
         RequestSettingsResponse.initialize(this);
     }
 
@@ -48,6 +52,9 @@ class RequestSettingsResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RequestSettingsResponse();
+            RequestSettings.constructFromObject(data, obj);
+            ServiceIdAndVersion.constructFromObject(data, obj);
+            Timestamps.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('action')) {
                 obj['action'] = ApiClient.convertToType(data['action'], 'String');
@@ -210,6 +217,94 @@ RequestSettingsResponse.prototype['deleted_at'] = undefined;
 RequestSettingsResponse.prototype['updated_at'] = undefined;
 
 
+// Implement RequestSettings interface:
+/**
+ * Allows you to terminate request handling and immediately perform an action.
+ * @member {module:model/RequestSettings.ActionEnum} action
+ */
+RequestSettings.prototype['action'] = undefined;
+/**
+ * Disable collapsed forwarding, so you don't wait for other objects to origin.
+ * @member {Number} bypass_busy_wait
+ */
+RequestSettings.prototype['bypass_busy_wait'] = undefined;
+/**
+ * Sets the host header.
+ * @member {String} default_host
+ */
+RequestSettings.prototype['default_host'] = undefined;
+/**
+ * Allows you to force a cache miss for the request. Replaces the item in the cache if the content is cacheable.
+ * @member {Number} force_miss
+ */
+RequestSettings.prototype['force_miss'] = undefined;
+/**
+ * Forces the request use SSL (redirects a non-SSL to SSL).
+ * @member {Number} force_ssl
+ */
+RequestSettings.prototype['force_ssl'] = undefined;
+/**
+ * Injects Fastly-Geo-Country, Fastly-Geo-City, and Fastly-Geo-Region into the request headers.
+ * @member {Number} geo_headers
+ */
+RequestSettings.prototype['geo_headers'] = undefined;
+/**
+ * Comma separated list of varnish request object fields that should be in the hash key.
+ * @member {String} hash_keys
+ */
+RequestSettings.prototype['hash_keys'] = undefined;
+/**
+ * How old an object is allowed to be to serve stale-if-error or stale-while-revalidate.
+ * @member {Number} max_stale_age
+ */
+RequestSettings.prototype['max_stale_age'] = undefined;
+/**
+ * Name for the request settings.
+ * @member {String} name
+ */
+RequestSettings.prototype['name'] = undefined;
+/**
+ * Condition which, if met, will select this configuration during a request. Optional.
+ * @member {String} request_condition
+ */
+RequestSettings.prototype['request_condition'] = undefined;
+/**
+ * Injects the X-Timer info into the request for viewing origin fetch durations.
+ * @member {Number} timer_support
+ */
+RequestSettings.prototype['timer_support'] = undefined;
+/**
+ * Short for X-Forwarded-For.
+ * @member {module:model/RequestSettings.XffEnum} xff
+ */
+RequestSettings.prototype['xff'] = undefined;
+// Implement ServiceIdAndVersion interface:
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+ServiceIdAndVersion.prototype['service_id'] = undefined;
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
+ServiceIdAndVersion.prototype['version'] = undefined;
+// Implement Timestamps interface:
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+Timestamps.prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+Timestamps.prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+Timestamps.prototype['updated_at'] = undefined;
 
 
 

@@ -25,6 +25,7 @@ class BillingAddressResponseAllOf {
      * @alias module:model/BillingAddressResponseAllOf
      */
     constructor() { 
+        
         BillingAddressResponseAllOf.initialize(this);
     }
 

@@ -24,6 +24,7 @@ class BillingTotalExtras {
      * @alias module:model/BillingTotalExtras
      */
     constructor() { 
+        
         BillingTotalExtras.initialize(this);
     }
 

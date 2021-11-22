@@ -25,6 +25,7 @@ class BulkWafActiveRules {
      * @alias module:model/BulkWafActiveRules
      */
     constructor() { 
+        
         BulkWafActiveRules.initialize(this);
     }
 

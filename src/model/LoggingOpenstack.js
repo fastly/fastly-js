@@ -13,12 +13,8 @@
 
 import ApiClient from '../ApiClient';
 import LoggingCommon from './LoggingCommon';
-import LoggingCompressionCodec from './LoggingCompressionCodec';
-import LoggingFormatVersion from './LoggingFormatVersion';
 import LoggingGenericCommon from './LoggingGenericCommon';
-import LoggingMessageType from './LoggingMessageType';
 import LoggingOpenstackAllOf from './LoggingOpenstackAllOf';
-import LoggingPlacement from './LoggingPlacement';
 
 /**
  * The LoggingOpenstack model module.
@@ -29,8 +25,12 @@ class LoggingOpenstack {
     /**
      * Constructs a new <code>LoggingOpenstack</code>.
      * @alias module:model/LoggingOpenstack
+     * @implements module:model/LoggingCommon
+     * @implements module:model/LoggingGenericCommon
+     * @implements module:model/LoggingOpenstackAllOf
      */
     constructor() { 
+        LoggingCommon.initialize(this);LoggingGenericCommon.initialize(this);LoggingOpenstackAllOf.initialize(this);
         LoggingOpenstack.initialize(this);
     }
 
@@ -52,36 +52,39 @@ class LoggingOpenstack {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingOpenstack();
+            LoggingCommon.constructFromObject(data, obj);
+            LoggingGenericCommon.constructFromObject(data, obj);
+            LoggingOpenstackAllOf.constructFromObject(data, obj);
 
-            if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], 'String');
-            }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
-                obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
+                obj['placement'] = ApiClient.convertToType(data['placement'], 'String');
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'Number');
             }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
             }
-            if (data.hasOwnProperty('compression_codec')) {
-                obj['compression_codec'] = LoggingCompressionCodec.constructFromObject(data['compression_codec']);
-            }
-            if (data.hasOwnProperty('gzip_level')) {
-                obj['gzip_level'] = ApiClient.convertToType(data['gzip_level'], 'Number');
+            if (data.hasOwnProperty('format')) {
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
             if (data.hasOwnProperty('message_type')) {
-                obj['message_type'] = LoggingMessageType.constructFromObject(data['message_type']);
+                obj['message_type'] = ApiClient.convertToType(data['message_type'], 'String');
+            }
+            if (data.hasOwnProperty('timestamp_format')) {
+                obj['timestamp_format'] = ApiClient.convertToType(data['timestamp_format'], 'String');
             }
             if (data.hasOwnProperty('period')) {
                 obj['period'] = ApiClient.convertToType(data['period'], 'Number');
             }
-            if (data.hasOwnProperty('timestamp_format')) {
-                obj['timestamp_format'] = ApiClient.convertToType(data['timestamp_format'], 'String');
+            if (data.hasOwnProperty('gzip_level')) {
+                obj['gzip_level'] = ApiClient.convertToType(data['gzip_level'], 'Number');
+            }
+            if (data.hasOwnProperty('compression_codec')) {
+                obj['compression_codec'] = ApiClient.convertToType(data['compression_codec'], 'String');
             }
             if (data.hasOwnProperty('access_key')) {
                 obj['access_key'] = ApiClient.convertToType(data['access_key'], 'String');
@@ -109,27 +112,23 @@ class LoggingOpenstack {
 }
 
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-LoggingOpenstack.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingOpenstack.prototype['format_version'] = undefined;
-
-/**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
 LoggingOpenstack.prototype['name'] = undefined;
 
 /**
- * @member {module:model/LoggingPlacement} placement
+ * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+ * @member {module:model/LoggingOpenstack.PlacementEnum} placement
  */
 LoggingOpenstack.prototype['placement'] = undefined;
+
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * @member {module:model/LoggingOpenstack.FormatVersionEnum} format_version
+ * @default FormatVersionEnum.v2
+ */
+LoggingOpenstack.prototype['format_version'] = undefined;
 
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
@@ -138,21 +137,24 @@ LoggingOpenstack.prototype['placement'] = undefined;
 LoggingOpenstack.prototype['response_condition'] = undefined;
 
 /**
- * @member {module:model/LoggingCompressionCodec} compression_codec
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
  */
-LoggingOpenstack.prototype['compression_codec'] = undefined;
+LoggingOpenstack.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 
 /**
- * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {Number} gzip_level
- * @default 0
- */
-LoggingOpenstack.prototype['gzip_level'] = 0;
-
-/**
- * @member {module:model/LoggingMessageType} message_type
+ * How the message should be formatted.
+ * @member {module:model/LoggingOpenstack.MessageTypeEnum} message_type
+ * @default 'classic'
  */
 LoggingOpenstack.prototype['message_type'] = undefined;
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} timestamp_format
+ */
+LoggingOpenstack.prototype['timestamp_format'] = undefined;
 
 /**
  * How frequently log files are finalized so they can be available for reading (in seconds).
@@ -162,10 +164,17 @@ LoggingOpenstack.prototype['message_type'] = undefined;
 LoggingOpenstack.prototype['period'] = 3600;
 
 /**
- * Date and time in ISO 8601 format.
- * @member {String} timestamp_format
+ * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {Number} gzip_level
+ * @default 0
  */
-LoggingOpenstack.prototype['timestamp_format'] = undefined;
+LoggingOpenstack.prototype['gzip_level'] = 0;
+
+/**
+ * The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \"gzip\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {module:model/LoggingOpenstack.CompressionCodecEnum} compression_codec
+ */
+LoggingOpenstack.prototype['compression_codec'] = undefined;
 
 /**
  * Your OpenStack account access key.
@@ -206,7 +215,205 @@ LoggingOpenstack.prototype['url'] = undefined;
 LoggingOpenstack.prototype['user'] = undefined;
 
 
+// Implement LoggingCommon interface:
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+LoggingCommon.prototype['name'] = undefined;
+/**
+ * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+ * @member {module:model/LoggingCommon.PlacementEnum} placement
+ */
+LoggingCommon.prototype['placement'] = undefined;
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * @member {module:model/LoggingCommon.FormatVersionEnum} format_version
+ * @default FormatVersionEnum.v2
+ */
+LoggingCommon.prototype['format_version'] = undefined;
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+LoggingCommon.prototype['response_condition'] = undefined;
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
+LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+// Implement LoggingGenericCommon interface:
+/**
+ * How the message should be formatted.
+ * @member {module:model/LoggingGenericCommon.MessageTypeEnum} message_type
+ * @default 'classic'
+ */
+LoggingGenericCommon.prototype['message_type'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} timestamp_format
+ */
+LoggingGenericCommon.prototype['timestamp_format'] = undefined;
+/**
+ * How frequently log files are finalized so they can be available for reading (in seconds).
+ * @member {Number} period
+ * @default 3600
+ */
+LoggingGenericCommon.prototype['period'] = 3600;
+/**
+ * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {Number} gzip_level
+ * @default 0
+ */
+LoggingGenericCommon.prototype['gzip_level'] = 0;
+/**
+ * The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \"gzip\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {module:model/LoggingGenericCommon.CompressionCodecEnum} compression_codec
+ */
+LoggingGenericCommon.prototype['compression_codec'] = undefined;
+// Implement LoggingOpenstackAllOf interface:
+/**
+ * Your OpenStack account access key.
+ * @member {String} access_key
+ */
+LoggingOpenstackAllOf.prototype['access_key'] = undefined;
+/**
+ * The name of your OpenStack container.
+ * @member {String} bucket_name
+ */
+LoggingOpenstackAllOf.prototype['bucket_name'] = undefined;
+/**
+ * The path to upload logs to.
+ * @member {String} path
+ * @default 'null'
+ */
+LoggingOpenstackAllOf.prototype['path'] = 'null';
+/**
+ * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+ * @member {String} public_key
+ * @default 'null'
+ */
+LoggingOpenstackAllOf.prototype['public_key'] = 'null';
+/**
+ * Your OpenStack auth url.
+ * @member {String} url
+ */
+LoggingOpenstackAllOf.prototype['url'] = undefined;
+/**
+ * The username for your OpenStack account.
+ * @member {String} user
+ */
+LoggingOpenstackAllOf.prototype['user'] = undefined;
 
+
+
+/**
+ * Allowed values for the <code>placement</code> property.
+ * @enum {String}
+ * @readonly
+ */
+LoggingOpenstack['PlacementEnum'] = {
+
+    /**
+     * value: "none"
+     * @const
+     */
+    "none": "none",
+
+    /**
+     * value: "waf_debug"
+     * @const
+     */
+    "waf_debug": "waf_debug",
+
+    /**
+     * value: "null"
+     * @const
+     */
+    "null": "null"
+};
+
+
+/**
+ * Allowed values for the <code>format_version</code> property.
+ * @enum {Number}
+ * @readonly
+ */
+LoggingOpenstack['FormatVersionEnum'] = {
+
+    /**
+     * value: 1
+     * @const
+     */
+    "v1": 1,
+
+    /**
+     * value: 2
+     * @const
+     */
+    "v2": 2
+};
+
+
+/**
+ * Allowed values for the <code>message_type</code> property.
+ * @enum {String}
+ * @readonly
+ */
+LoggingOpenstack['MessageTypeEnum'] = {
+
+    /**
+     * value: "classic"
+     * @const
+     */
+    "classic": "classic",
+
+    /**
+     * value: "loggly"
+     * @const
+     */
+    "loggly": "loggly",
+
+    /**
+     * value: "logplex"
+     * @const
+     */
+    "logplex": "logplex",
+
+    /**
+     * value: "blank"
+     * @const
+     */
+    "blank": "blank"
+};
+
+
+/**
+ * Allowed values for the <code>compression_codec</code> property.
+ * @enum {String}
+ * @readonly
+ */
+LoggingOpenstack['CompressionCodecEnum'] = {
+
+    /**
+     * value: "zstd"
+     * @const
+     */
+    "zstd": "zstd",
+
+    /**
+     * value: "snappy"
+     * @const
+     */
+    "snappy": "snappy",
+
+    /**
+     * value: "gzip"
+     * @const
+     */
+    "gzip": "gzip"
+};
 
 
 

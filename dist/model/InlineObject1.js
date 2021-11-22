@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _CustomerCustomerIdBillingAddressData = _interopRequireDefault(require("./CustomerCustomerIdBillingAddressData1"));
+var _CustomerCustomerIdBillingAddressData = _interopRequireDefault(require("./CustomerCustomerIdBillingAddressData"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -68,7 +68,7 @@ var InlineObject1 = /*#__PURE__*/function () {
   return InlineObject1;
 }();
 /**
- * @member {module:model/CustomerCustomerIdBillingAddressData1} data
+ * @member {module:model/CustomerCustomerIdBillingAddressData} data
  */
 
 

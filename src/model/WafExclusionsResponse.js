@@ -28,8 +28,11 @@ class WafExclusionsResponse {
     /**
      * Constructs a new <code>WafExclusionsResponse</code>.
      * @alias module:model/WafExclusionsResponse
+     * @implements module:model/Pagination
+     * @implements module:model/WafExclusionsResponseAllOf
      */
     constructor() { 
+        Pagination.initialize(this);WafExclusionsResponseAllOf.initialize(this);
         WafExclusionsResponse.initialize(this);
     }
 
@@ -51,6 +54,8 @@ class WafExclusionsResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafExclusionsResponse();
+            Pagination.constructFromObject(data, obj);
+            WafExclusionsResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('links')) {
                 obj['links'] = PaginationLinks.constructFromObject(data['links']);
@@ -92,6 +97,24 @@ WafExclusionsResponse.prototype['data'] = undefined;
 WafExclusionsResponse.prototype['included'] = undefined;
 
 
+// Implement Pagination interface:
+/**
+ * @member {module:model/PaginationLinks} links
+ */
+Pagination.prototype['links'] = undefined;
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
+Pagination.prototype['meta'] = undefined;
+// Implement WafExclusionsResponseAllOf interface:
+/**
+ * @member {Array.<module:model/WafExclusionResponseData>} data
+ */
+WafExclusionsResponseAllOf.prototype['data'] = undefined;
+/**
+ * @member {Array.<module:model/IncludedWithWafExclusionItem>} included
+ */
+WafExclusionsResponseAllOf.prototype['included'] = undefined;
 
 
 

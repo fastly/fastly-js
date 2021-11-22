@@ -32,9 +32,15 @@ var HistoricalAggregateResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>HistoricalAggregateResponse</code>.
    * @alias module:model/HistoricalAggregateResponse
+   * @implements module:model/Historical
+   * @implements module:model/HistoricalAggregateResponseAllOf
    */
   function HistoricalAggregateResponse() {
     _classCallCheck(this, HistoricalAggregateResponse);
+
+    _Historical["default"].initialize(this);
+
+    _HistoricalAggregateResponseAllOf["default"].initialize(this);
 
     HistoricalAggregateResponse.initialize(this);
   }
@@ -62,16 +68,20 @@ var HistoricalAggregateResponse = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new HistoricalAggregateResponse();
 
+        _Historical["default"].constructFromObject(data, obj);
+
+        _HistoricalAggregateResponseAllOf["default"].constructFromObject(data, obj);
+
+        if (data.hasOwnProperty('status')) {
+          obj['status'] = _ApiClient["default"].convertToType(data['status'], 'String');
+        }
+
         if (data.hasOwnProperty('meta')) {
           obj['meta'] = _HistoricalMeta["default"].constructFromObject(data['meta']);
         }
 
         if (data.hasOwnProperty('msg')) {
           obj['msg'] = _ApiClient["default"].convertToType(data['msg'], 'String');
-        }
-
-        if (data.hasOwnProperty('status')) {
-          obj['status'] = _ApiClient["default"].convertToType(data['status'], 'String');
         }
 
         if (data.hasOwnProperty('data')) {
@@ -86,9 +96,15 @@ var HistoricalAggregateResponse = /*#__PURE__*/function () {
   return HistoricalAggregateResponse;
 }();
 /**
- * @member {module:model/HistoricalMeta} meta
+ * Whether or not we were able to successfully execute the query.
+ * @member {String} status
  */
 
+
+HistoricalAggregateResponse.prototype['status'] = undefined;
+/**
+ * @member {module:model/HistoricalMeta} meta
+ */
 
 HistoricalAggregateResponse.prototype['meta'] = undefined;
 /**
@@ -98,15 +114,33 @@ HistoricalAggregateResponse.prototype['meta'] = undefined;
 
 HistoricalAggregateResponse.prototype['msg'] = undefined;
 /**
+ * @member {Array.<module:model/Results>} data
+ */
+
+HistoricalAggregateResponse.prototype['data'] = undefined; // Implement Historical interface:
+
+/**
  * Whether or not we were able to successfully execute the query.
  * @member {String} status
  */
 
-HistoricalAggregateResponse.prototype['status'] = undefined;
+_Historical["default"].prototype['status'] = undefined;
+/**
+ * @member {module:model/HistoricalMeta} meta
+ */
+
+_Historical["default"].prototype['meta'] = undefined;
+/**
+ * If the query was not successful, this will provide a string that explains why.
+ * @member {String} msg
+ */
+
+_Historical["default"].prototype['msg'] = undefined; // Implement HistoricalAggregateResponseAllOf interface:
+
 /**
  * @member {Array.<module:model/Results>} data
  */
 
-HistoricalAggregateResponse.prototype['data'] = undefined;
+_HistoricalAggregateResponseAllOf["default"].prototype['data'] = undefined;
 var _default = HistoricalAggregateResponse;
 exports["default"] = _default;

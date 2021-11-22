@@ -42,8 +42,8 @@ var HeaderApi = /*#__PURE__*/function () {
   /**
    * Creates a new Header object.
    * @param {Object} options
-   * @param {String} options.service_id
-   * @param {Number} options.version_id
+   * @param {String} options.service_id - Alphanumeric string identifying the service.
+   * @param {Number} options.version_id - Integer identifying a service version.
    * @param {module:model/String} [options.action] - Accepts a string value.
    * @param {String} [options.cache_condition] - Name of the cache condition controlling when this configuration applies.
    * @param {String} [options.dst] - Header to set.
@@ -104,8 +104,8 @@ var HeaderApi = /*#__PURE__*/function () {
     /**
      * Creates a new Header object.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {module:model/String} [options.action] - Accepts a string value.
      * @param {String} [options.cache_condition] - Name of the cache condition controlling when this configuration applies.
      * @param {String} [options.dst] - Header to set.
@@ -132,9 +132,9 @@ var HeaderApi = /*#__PURE__*/function () {
     /**
      * Deletes a Header object by name.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.header_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.header_name - A handle to refer to this Header object.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
 
@@ -175,9 +175,9 @@ var HeaderApi = /*#__PURE__*/function () {
     /**
      * Deletes a Header object by name.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.header_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.header_name - A handle to refer to this Header object.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
 
@@ -192,9 +192,9 @@ var HeaderApi = /*#__PURE__*/function () {
     /**
      * Retrieves a Header object by name.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.header_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.header_name - A handle to refer to this Header object.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HeaderResponse} and HTTP response
      */
 
@@ -235,9 +235,9 @@ var HeaderApi = /*#__PURE__*/function () {
     /**
      * Retrieves a Header object by name.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.header_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.header_name - A handle to refer to this Header object.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HeaderResponse}
      */
 
@@ -252,8 +252,8 @@ var HeaderApi = /*#__PURE__*/function () {
     /**
      * Retrieves all Header objects for a particular Version of a Service.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/HeaderResponse>} and HTTP response
      */
 
@@ -288,8 +288,8 @@ var HeaderApi = /*#__PURE__*/function () {
     /**
      * Retrieves all Header objects for a particular Version of a Service.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/HeaderResponse>}
      */
 
@@ -304,9 +304,9 @@ var HeaderApi = /*#__PURE__*/function () {
     /**
      * Modifies an existing Header object by name.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.header_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.header_name - A handle to refer to this Header object.
      * @param {module:model/String} [options.action] - Accepts a string value.
      * @param {String} [options.cache_condition] - Name of the cache condition controlling when this configuration applies.
      * @param {String} [options.dst] - Header to set.
@@ -372,9 +372,9 @@ var HeaderApi = /*#__PURE__*/function () {
     /**
      * Modifies an existing Header object by name.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.header_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.header_name - A handle to refer to this Header object.
      * @param {module:model/String} [options.action] - Accepts a string value.
      * @param {String} [options.cache_condition] - Name of the cache condition controlling when this configuration applies.
      * @param {String} [options.dst] - Header to set.

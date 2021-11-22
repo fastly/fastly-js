@@ -56,12 +56,12 @@ var RelationshipMemberTlsDnsRecord = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new RelationshipMemberTlsDnsRecord();
 
-        if (data.hasOwnProperty('id')) {
-          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
-        }
-
         if (data.hasOwnProperty('type')) {
           obj['type'] = _TypeTlsDnsRecord["default"].constructFromObject(data['type']);
+        }
+
+        if (data.hasOwnProperty('id')) {
+          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
       }
 
@@ -72,16 +72,16 @@ var RelationshipMemberTlsDnsRecord = /*#__PURE__*/function () {
   return RelationshipMemberTlsDnsRecord;
 }();
 /**
+ * @member {module:model/TypeTlsDnsRecord} type
+ */
+
+
+RelationshipMemberTlsDnsRecord.prototype['type'] = undefined;
+/**
  * The IP address or hostname of the DNS record.
  * @member {String} id
  */
 
-
 RelationshipMemberTlsDnsRecord.prototype['id'] = undefined;
-/**
- * @member {module:model/TypeTlsDnsRecord} type
- */
-
-RelationshipMemberTlsDnsRecord.prototype['type'] = undefined;
 var _default = RelationshipMemberTlsDnsRecord;
 exports["default"] = _default;

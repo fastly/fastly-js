@@ -24,6 +24,7 @@ class CustomerResponseAllOf {
      * @alias module:model/CustomerResponseAllOf
      */
     constructor() { 
+        
         CustomerResponseAllOf.initialize(this);
     }
 

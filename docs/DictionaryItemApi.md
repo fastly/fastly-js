@@ -1,6 +1,5 @@
 # Fastly.DictionaryItemApi
 
-
 ```javascript
 const apiInstance = new Fastly.DictionaryItemApi();
 ```
@@ -17,11 +16,10 @@ Method | Fastly API endpoint | Description
 [**upsertDictionaryItem**](DictionaryItemApi.md#upsertDictionaryItem) | **PUT** /service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key} | Insert or update an entry in an edge dictionary
 
 
-
 ## `bulkUpdateDictionaryItem`
 
 ```javascript
-bulkUpdateDictionaryItem({ service_id, dictionary_id, [inline_object4] })
+bulkUpdateDictionaryItem({ service_id, dictionary_id, [inline_object] })
 ```
 
 Update DictionaryItem in batch for given service, dictionary ID and key/value pairs for items.
@@ -32,12 +30,12 @@ Update DictionaryItem in batch for given service, dictionary ID and key/value pa
 const options = {
   service_id: "service_id_example", // required
   dictionary_id: "dictionary_id_example", // required
-  inline_object4: new Fastly.InlineObject4(),
+  inline_object: new Fastly.InlineObject(),
 };
 
 apiInstance.bulkUpdateDictionaryItem(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -48,9 +46,9 @@ apiInstance.bulkUpdateDictionaryItem(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**dictionary_id** | **String** |  |
-**inline_object4** | [**InlineObject4**](../Model/InlineObject4.md) |  | [optional]
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**dictionary_id** | **String** | Alphanumeric string identifying a Dictionary. |
+**inline_object** | [**InlineObject**](InlineObject.md) |  | [optional]
 
 ### Return type
 
@@ -60,7 +58,7 @@ Name | Type | Description  | Notes
 ## `createDictionaryItem`
 
 ```javascript
-createDictionaryItem({ service_id, dictionary_id, [item_key, ], [item_value] })
+createDictionaryItem({ service_id, dictionary_id, [item_key, ][item_value] })
 ```
 
 Create DictionaryItem given service, dictionary ID, item key, and item value.
@@ -77,7 +75,7 @@ const options = {
 
 apiInstance.createDictionaryItem(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -88,8 +86,8 @@ apiInstance.createDictionaryItem(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**dictionary_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**dictionary_id** | **String** | Alphanumeric string identifying a Dictionary. |
 **item_key** | **String** | Item key, maximum 256 characters. | [optional]
 **item_value** | **String** | Item value, maximum 8000 characters. | [optional]
 
@@ -117,7 +115,7 @@ const options = {
 
 apiInstance.deleteDictionaryItem(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -128,9 +126,9 @@ apiInstance.deleteDictionaryItem(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**dictionary_id** | **String** |  |
-**dictionary_item_key** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**dictionary_id** | **String** | Alphanumeric string identifying a Dictionary. |
+**dictionary_item_key** | **String** | Item key, maximum 256 characters. |
 
 ### Return type
 
@@ -156,7 +154,7 @@ const options = {
 
 apiInstance.getDictionaryItem(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -167,9 +165,9 @@ apiInstance.getDictionaryItem(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**dictionary_id** | **String** |  |
-**dictionary_item_key** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**dictionary_id** | **String** | Alphanumeric string identifying a Dictionary. |
+**dictionary_item_key** | **String** | Item key, maximum 256 characters. |
 
 ### Return type
 
@@ -179,7 +177,7 @@ Name | Type | Description  | Notes
 ## `listDictionaryItems`
 
 ```javascript
-listDictionaryItems({ service_id, dictionary_id, [page, ], [per_page, ], [sort, ], [direction] })
+listDictionaryItems({ service_id, dictionary_id, [page, ][per_page, ][sort, ][direction] })
 ```
 
 List of DictionaryItems given service and dictionary ID.
@@ -190,15 +188,15 @@ List of DictionaryItems given service and dictionary ID.
 const options = {
   service_id: "service_id_example", // required
   dictionary_id: "dictionary_id_example", // required
-  page: 56,
+  page: 1,
   per_page: 20,
-  sort: "'created'",
-  direction: ascend,
+  sort: created,
+  direction: "ascend",
 };
 
 apiInstance.listDictionaryItems(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -209,12 +207,12 @@ apiInstance.listDictionaryItems(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**dictionary_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**dictionary_id** | **String** | Alphanumeric string identifying a Dictionary. |
 **page** | **Number** | Current page. | [optional]
-**per_page** | **Number** | Number of records per page. | [optional] [default to 20]
-**sort** | **String** | Field on which to sort. | [optional] [default to &#39;created&#39;]
-**direction** | **String** | Direction in which to sort results. | [optional] [default to &#39;ascend&#39;]
+**per_page** | **Number** | Number of records per page. | [optional] [defaults to 20]
+**sort** | **String** | Field on which to sort. | [optional] [defaults to 'created']
+**direction** | **String** | Direction in which to sort results. | [optional] [one of: "ascend", "descend"]
 
 ### Return type
 
@@ -224,7 +222,7 @@ Name | Type | Description  | Notes
 ## `updateDictionaryItem`
 
 ```javascript
-updateDictionaryItem({ service_id, dictionary_id, dictionary_item_key, [item_key, ], [item_value] })
+updateDictionaryItem({ service_id, dictionary_id, dictionary_item_key, [item_key, ][item_value] })
 ```
 
 Update DictionaryItem given service, dictionary ID, item key, and item value.
@@ -242,7 +240,7 @@ const options = {
 
 apiInstance.updateDictionaryItem(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -253,9 +251,9 @@ apiInstance.updateDictionaryItem(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**dictionary_id** | **String** |  |
-**dictionary_item_key** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**dictionary_id** | **String** | Alphanumeric string identifying a Dictionary. |
+**dictionary_item_key** | **String** | Item key, maximum 256 characters. |
 **item_key** | **String** | Item key, maximum 256 characters. | [optional]
 **item_value** | **String** | Item value, maximum 8000 characters. | [optional]
 
@@ -267,7 +265,7 @@ Name | Type | Description  | Notes
 ## `upsertDictionaryItem`
 
 ```javascript
-upsertDictionaryItem({ service_id, dictionary_id, dictionary_item_key, [item_key, ], [item_value] })
+upsertDictionaryItem({ service_id, dictionary_id, dictionary_item_key, [item_key, ][item_value] })
 ```
 
 Upsert DictionaryItem given service, dictionary ID, item key, and item value.
@@ -285,7 +283,7 @@ const options = {
 
 apiInstance.upsertDictionaryItem(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -296,9 +294,9 @@ apiInstance.upsertDictionaryItem(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**dictionary_id** | **String** |  |
-**dictionary_item_key** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**dictionary_id** | **String** | Alphanumeric string identifying a Dictionary. |
+**dictionary_item_key** | **String** | Item key, maximum 256 characters. |
 **item_key** | **String** | Item key, maximum 256 characters. | [optional]
 **item_value** | **String** | Item value, maximum 8000 characters. | [optional]
 

@@ -25,6 +25,7 @@ class RelationshipUser {
      * @alias module:model/RelationshipUser
      */
     constructor() { 
+        
         RelationshipUser.initialize(this);
     }
 

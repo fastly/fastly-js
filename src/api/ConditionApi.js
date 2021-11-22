@@ -41,8 +41,8 @@ export default class ConditionApi {
     /**
      * Creates a new condition.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - Name of the condition. Required.
      * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
@@ -91,8 +91,8 @@ export default class ConditionApi {
     /**
      * Creates a new condition.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - Name of the condition. Required.
      * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
@@ -110,9 +110,9 @@ export default class ConditionApi {
     /**
      * Deletes the specified condition.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.condition_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.condition_name - Name of the condition. Required.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     deleteConditionWithHttpInfo(options = {}) {
@@ -156,9 +156,9 @@ export default class ConditionApi {
     /**
      * Deletes the specified condition.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.condition_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.condition_name - Name of the condition. Required.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     deleteCondition(options = {}) {
@@ -171,9 +171,9 @@ export default class ConditionApi {
     /**
      * Gets the specified condition.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.condition_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.condition_name - Name of the condition. Required.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ConditionResponse} and HTTP response
      */
     getConditionWithHttpInfo(options = {}) {
@@ -217,9 +217,9 @@ export default class ConditionApi {
     /**
      * Gets the specified condition.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.condition_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.condition_name - Name of the condition. Required.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ConditionResponse}
      */
     getCondition(options = {}) {
@@ -232,8 +232,8 @@ export default class ConditionApi {
     /**
      * Gets all conditions for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ConditionResponse>} and HTTP response
      */
     listConditionsWithHttpInfo(options = {}) {
@@ -272,8 +272,8 @@ export default class ConditionApi {
     /**
      * Gets all conditions for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ConditionResponse>}
      */
     listConditions(options = {}) {
@@ -286,9 +286,9 @@ export default class ConditionApi {
     /**
      * Updates the specified condition.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.condition_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.condition_name - Name of the condition. Required.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - Name of the condition. Required.
      * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
@@ -342,9 +342,9 @@ export default class ConditionApi {
     /**
      * Updates the specified condition.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.condition_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.condition_name - Name of the condition. Required.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - Name of the condition. Required.
      * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.

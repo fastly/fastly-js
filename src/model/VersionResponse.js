@@ -12,9 +12,9 @@
  */
 
 import ApiClient from '../ApiClient';
-import SchemasVersionResponseAllOf from './SchemasVersionResponseAllOf';
 import Timestamps from './Timestamps';
 import Version from './Version';
+import VersionResponseAllOf from './VersionResponseAllOf';
 
 /**
  * The VersionResponse model module.
@@ -25,8 +25,12 @@ class VersionResponse {
     /**
      * Constructs a new <code>VersionResponse</code>.
      * @alias module:model/VersionResponse
+     * @implements module:model/Version
+     * @implements module:model/Timestamps
+     * @implements module:model/VersionResponseAllOf
      */
     constructor() { 
+        Version.initialize(this);Timestamps.initialize(this);VersionResponseAllOf.initialize(this);
         VersionResponse.initialize(this);
     }
 
@@ -48,6 +52,9 @@ class VersionResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new VersionResponse();
+            Version.constructFromObject(data, obj);
+            Timestamps.constructFromObject(data, obj);
+            VersionResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('active')) {
                 obj['active'] = ApiClient.convertToType(data['active'], 'Boolean');
@@ -160,6 +167,68 @@ VersionResponse.prototype['updated_at'] = undefined;
 VersionResponse.prototype['service_id'] = undefined;
 
 
+// Implement Version interface:
+/**
+ * Whether this is the active version or not.
+ * @member {Boolean} active
+ * @default false
+ */
+Version.prototype['active'] = false;
+/**
+ * A freeform descriptive note.
+ * @member {String} comment
+ */
+Version.prototype['comment'] = undefined;
+/**
+ * Unused at this time.
+ * @member {Boolean} deployed
+ */
+Version.prototype['deployed'] = undefined;
+/**
+ * Whether this version is locked or not. Objects can not be added or edited on locked versions.
+ * @member {Boolean} locked
+ * @default false
+ */
+Version.prototype['locked'] = false;
+/**
+ * The number of this version.
+ * @member {Number} number
+ */
+Version.prototype['number'] = undefined;
+/**
+ * Unused at this time.
+ * @member {Boolean} staging
+ * @default false
+ */
+Version.prototype['staging'] = false;
+/**
+ * Unused at this time.
+ * @member {Boolean} testing
+ * @default false
+ */
+Version.prototype['testing'] = false;
+// Implement Timestamps interface:
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+Timestamps.prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+Timestamps.prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+Timestamps.prototype['updated_at'] = undefined;
+// Implement VersionResponseAllOf interface:
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+VersionResponseAllOf.prototype['service_id'] = undefined;
 
 
 

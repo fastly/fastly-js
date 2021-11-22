@@ -25,6 +25,7 @@ class HistoricalAggregateResponseAllOf {
      * @alias module:model/HistoricalAggregateResponseAllOf
      */
     constructor() { 
+        
         HistoricalAggregateResponseAllOf.initialize(this);
     }
 

@@ -24,6 +24,7 @@ class Timestamps {
      * @alias module:model/Timestamps
      */
     constructor() { 
+        
         Timestamps.initialize(this);
     }
 

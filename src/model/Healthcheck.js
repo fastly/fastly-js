@@ -24,6 +24,7 @@ class Healthcheck {
      * @alias module:model/Healthcheck
      */
     constructor() { 
+        
         Healthcheck.initialize(this);
     }
 

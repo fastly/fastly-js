@@ -68,7 +68,7 @@ var HistoricalUsageServiceResponseAllOf = /*#__PURE__*/function () {
   return HistoricalUsageServiceResponseAllOf;
 }();
 /**
- * @member {Object.<String, Object.<String, Object>>} data
+ * @member {Object.<String, Object>} data
  */
 
 

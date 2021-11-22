@@ -7,11 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _LoggingFormatVersion = _interopRequireDefault(require("./LoggingFormatVersion"));
-
 var _LoggingMessageType = _interopRequireDefault(require("./LoggingMessageType"));
-
-var _LoggingPlacement = _interopRequireDefault(require("./LoggingPlacement"));
 
 var _LoggingSyslog = _interopRequireDefault(require("./LoggingSyslog"));
 
@@ -38,9 +34,18 @@ var LoggingSyslogResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>LoggingSyslogResponse</code>.
    * @alias module:model/LoggingSyslogResponse
+   * @implements module:model/LoggingSyslog
+   * @implements module:model/Timestamps
+   * @implements module:model/ServiceIdAndVersion
    */
   function LoggingSyslogResponse() {
     _classCallCheck(this, LoggingSyslogResponse);
+
+    _LoggingSyslog["default"].initialize(this);
+
+    _Timestamps["default"].initialize(this);
+
+    _ServiceIdAndVersion["default"].initialize(this);
 
     LoggingSyslogResponse.initialize(this);
   }
@@ -68,24 +73,30 @@ var LoggingSyslogResponse = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new LoggingSyslogResponse();
 
-        if (data.hasOwnProperty('format')) {
-          obj['format'] = _ApiClient["default"].convertToType(data['format'], 'String');
-        }
+        _LoggingSyslog["default"].constructFromObject(data, obj);
 
-        if (data.hasOwnProperty('format_version')) {
-          obj['format_version'] = _LoggingFormatVersion["default"].constructFromObject(data['format_version']);
-        }
+        _Timestamps["default"].constructFromObject(data, obj);
+
+        _ServiceIdAndVersion["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
         }
 
         if (data.hasOwnProperty('placement')) {
-          obj['placement'] = _LoggingPlacement["default"].constructFromObject(data['placement']);
+          obj['placement'] = _ApiClient["default"].convertToType(data['placement'], 'String');
+        }
+
+        if (data.hasOwnProperty('format_version')) {
+          obj['format_version'] = _ApiClient["default"].convertToType(data['format_version'], 'Number');
         }
 
         if (data.hasOwnProperty('response_condition')) {
           obj['response_condition'] = _ApiClient["default"].convertToType(data['response_condition'], 'String');
+        }
+
+        if (data.hasOwnProperty('format')) {
+          obj['format'] = _ApiClient["default"].convertToType(data['format'], 'String');
         }
 
         if (data.hasOwnProperty('tls_ca_cert')) {
@@ -112,16 +123,16 @@ var LoggingSyslogResponse = /*#__PURE__*/function () {
           obj['port'] = _ApiClient["default"].convertToType(data['port'], 'Number');
         }
 
+        if (data.hasOwnProperty('message_type')) {
+          obj['message_type'] = _LoggingMessageType["default"].constructFromObject(data['message_type']);
+        }
+
         if (data.hasOwnProperty('hostname')) {
           obj['hostname'] = _ApiClient["default"].convertToType(data['hostname'], 'String');
         }
 
         if (data.hasOwnProperty('ipv4')) {
           obj['ipv4'] = _ApiClient["default"].convertToType(data['ipv4'], 'String');
-        }
-
-        if (data.hasOwnProperty('message_type')) {
-          obj['message_type'] = _LoggingMessageType["default"].constructFromObject(data['message_type']);
         }
 
         if (data.hasOwnProperty('token')) {
@@ -160,35 +171,38 @@ var LoggingSyslogResponse = /*#__PURE__*/function () {
   return LoggingSyslogResponse;
 }();
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-
-
-LoggingSyslogResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-
-LoggingSyslogResponse.prototype['format_version'] = undefined;
-/**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
 
+
 LoggingSyslogResponse.prototype['name'] = undefined;
 /**
- * @member {module:model/LoggingPlacement} placement
+ * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+ * @member {module:model/LoggingSyslogResponse.PlacementEnum} placement
  */
 
 LoggingSyslogResponse.prototype['placement'] = undefined;
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * @member {module:model/LoggingSyslogResponse.FormatVersionEnum} format_version
+ * @default FormatVersionEnum.v2
+ */
+
+LoggingSyslogResponse.prototype['format_version'] = undefined;
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
 
 LoggingSyslogResponse.prototype['response_condition'] = undefined;
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
+
+LoggingSyslogResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 /**
  * A secure certificate to authenticate a server with. Must be in PEM format.
  * @member {String} tls_ca_cert
@@ -231,6 +245,11 @@ LoggingSyslogResponse.prototype['address'] = undefined;
 
 LoggingSyslogResponse.prototype['port'] = 514;
 /**
+ * @member {module:model/LoggingMessageType} message_type
+ */
+
+LoggingSyslogResponse.prototype['message_type'] = undefined;
+/**
  * The hostname used for the syslog endpoint.
  * @member {String} hostname
  */
@@ -242,11 +261,6 @@ LoggingSyslogResponse.prototype['hostname'] = undefined;
  */
 
 LoggingSyslogResponse.prototype['ipv4'] = undefined;
-/**
- * @member {module:model/LoggingMessageType} message_type
- */
-
-LoggingSyslogResponse.prototype['message_type'] = undefined;
 /**
  * Whether to prepend each message with a specific token.
  * @member {String} token
@@ -288,6 +302,185 @@ LoggingSyslogResponse.prototype['service_id'] = undefined;
  * @member {Number} version
  */
 
-LoggingSyslogResponse.prototype['version'] = undefined;
+LoggingSyslogResponse.prototype['version'] = undefined; // Implement LoggingSyslog interface:
+
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+
+_LoggingSyslog["default"].prototype['name'] = undefined;
+/**
+ * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+ * @member {module:model/LoggingSyslog.PlacementEnum} placement
+ */
+
+_LoggingSyslog["default"].prototype['placement'] = undefined;
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * @member {module:model/LoggingSyslog.FormatVersionEnum} format_version
+ * @default FormatVersionEnum.v2
+ */
+
+_LoggingSyslog["default"].prototype['format_version'] = undefined;
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+
+_LoggingSyslog["default"].prototype['response_condition'] = undefined;
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
+
+_LoggingSyslog["default"].prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
+ * A secure certificate to authenticate a server with. Must be in PEM format.
+ * @member {String} tls_ca_cert
+ * @default 'null'
+ */
+
+_LoggingSyslog["default"].prototype['tls_ca_cert'] = 'null';
+/**
+ * The client certificate used to make authenticated requests. Must be in PEM format.
+ * @member {String} tls_client_cert
+ * @default 'null'
+ */
+
+_LoggingSyslog["default"].prototype['tls_client_cert'] = 'null';
+/**
+ * The client private key used to make authenticated requests. Must be in PEM format.
+ * @member {String} tls_client_key
+ * @default 'null'
+ */
+
+_LoggingSyslog["default"].prototype['tls_client_key'] = 'null';
+/**
+ * The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
+ * @member {String} tls_hostname
+ * @default 'null'
+ */
+
+_LoggingSyslog["default"].prototype['tls_hostname'] = 'null';
+/**
+ * A hostname or IPv4 address.
+ * @member {String} address
+ */
+
+_LoggingSyslog["default"].prototype['address'] = undefined;
+/**
+ * The port number.
+ * @member {Number} port
+ * @default 514
+ */
+
+_LoggingSyslog["default"].prototype['port'] = 514;
+/**
+ * @member {module:model/LoggingMessageType} message_type
+ */
+
+_LoggingSyslog["default"].prototype['message_type'] = undefined;
+/**
+ * The hostname used for the syslog endpoint.
+ * @member {String} hostname
+ */
+
+_LoggingSyslog["default"].prototype['hostname'] = undefined;
+/**
+ * The IPv4 address used for the syslog endpoint.
+ * @member {String} ipv4
+ */
+
+_LoggingSyslog["default"].prototype['ipv4'] = undefined;
+/**
+ * Whether to prepend each message with a specific token.
+ * @member {String} token
+ * @default 'null'
+ */
+
+_LoggingSyslog["default"].prototype['token'] = 'null';
+/**
+ * @member {module:model/LoggingUseTls} use_tls
+ */
+
+_LoggingSyslog["default"].prototype['use_tls'] = undefined; // Implement Timestamps interface:
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+
+_Timestamps["default"].prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+
+_Timestamps["default"].prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+
+_Timestamps["default"].prototype['updated_at'] = undefined; // Implement ServiceIdAndVersion interface:
+
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+
+_ServiceIdAndVersion["default"].prototype['service_id'] = undefined;
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
+
+_ServiceIdAndVersion["default"].prototype['version'] = undefined;
+/**
+ * Allowed values for the <code>placement</code> property.
+ * @enum {String}
+ * @readonly
+ */
+
+LoggingSyslogResponse['PlacementEnum'] = {
+  /**
+   * value: "none"
+   * @const
+   */
+  "none": "none",
+
+  /**
+   * value: "waf_debug"
+   * @const
+   */
+  "waf_debug": "waf_debug",
+
+  /**
+   * value: "null"
+   * @const
+   */
+  "null": "null"
+};
+/**
+ * Allowed values for the <code>format_version</code> property.
+ * @enum {Number}
+ * @readonly
+ */
+
+LoggingSyslogResponse['FormatVersionEnum'] = {
+  /**
+   * value: 1
+   * @const
+   */
+  "v1": 1,
+
+  /**
+   * value: 2
+   * @const
+   */
+  "v2": 2
+};
 var _default = LoggingSyslogResponse;
 exports["default"] = _default;

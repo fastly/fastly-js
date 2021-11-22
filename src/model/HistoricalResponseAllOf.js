@@ -25,6 +25,7 @@ class HistoricalResponseAllOf {
      * @alias module:model/HistoricalResponseAllOf
      */
     constructor() { 
+        
         HistoricalResponseAllOf.initialize(this);
     }
 

@@ -25,6 +25,7 @@ class SchemasDirector {
      * @alias module:model/SchemasDirector
      */
     constructor() { 
+        
         SchemasDirector.initialize(this);
     }
 
@@ -62,14 +63,14 @@ class SchemasDirector {
             if (data.hasOwnProperty('quorum')) {
                 obj['quorum'] = ApiClient.convertToType(data['quorum'], 'Number');
             }
-            if (data.hasOwnProperty('retries')) {
-                obj['retries'] = ApiClient.convertToType(data['retries'], 'Number');
-            }
             if (data.hasOwnProperty('shield')) {
                 obj['shield'] = ApiClient.convertToType(data['shield'], 'String');
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'Number');
+            }
+            if (data.hasOwnProperty('retries')) {
+                obj['retries'] = ApiClient.convertToType(data['retries'], 'Number');
             }
         }
         return obj;
@@ -110,13 +111,6 @@ SchemasDirector.prototype['name'] = undefined;
 SchemasDirector.prototype['quorum'] = 75;
 
 /**
- * How many backends to search if it fails.
- * @member {Number} retries
- * @default 5
- */
-SchemasDirector.prototype['retries'] = 5;
-
-/**
  * Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
  * @member {String} shield
  * @default 'null'
@@ -129,6 +123,13 @@ SchemasDirector.prototype['shield'] = 'null';
  * @default TypeEnum.random
  */
 SchemasDirector.prototype['type'] = undefined;
+
+/**
+ * How many backends to search if it fails.
+ * @member {Number} retries
+ * @default 5
+ */
+SchemasDirector.prototype['retries'] = 5;
 
 
 

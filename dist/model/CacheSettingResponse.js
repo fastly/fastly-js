@@ -30,9 +30,18 @@ var CacheSettingResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>CacheSettingResponse</code>.
    * @alias module:model/CacheSettingResponse
+   * @implements module:model/CacheSetting
+   * @implements module:model/ServiceIdAndVersion
+   * @implements module:model/Timestamps
    */
   function CacheSettingResponse() {
     _classCallCheck(this, CacheSettingResponse);
+
+    _CacheSetting["default"].initialize(this);
+
+    _ServiceIdAndVersion["default"].initialize(this);
+
+    _Timestamps["default"].initialize(this);
 
     CacheSettingResponse.initialize(this);
   }
@@ -59,6 +68,12 @@ var CacheSettingResponse = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new CacheSettingResponse();
+
+        _CacheSetting["default"].constructFromObject(data, obj);
+
+        _ServiceIdAndVersion["default"].constructFromObject(data, obj);
+
+        _Timestamps["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('action')) {
           obj['action'] = _ApiClient["default"].convertToType(data['action'], 'String');
@@ -167,7 +182,70 @@ CacheSettingResponse.prototype['deleted_at'] = undefined;
  * @member {String} updated_at
  */
 
-CacheSettingResponse.prototype['updated_at'] = undefined;
+CacheSettingResponse.prototype['updated_at'] = undefined; // Implement CacheSetting interface:
+
+/**
+ * If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule. 
+ * @member {module:model/CacheSetting.ActionEnum} action
+ */
+
+_CacheSetting["default"].prototype['action'] = undefined;
+/**
+ * Name of the cache condition controlling when this configuration applies.
+ * @member {String} cache_condition
+ */
+
+_CacheSetting["default"].prototype['cache_condition'] = undefined;
+/**
+ * Name for the cache settings object.
+ * @member {String} name
+ */
+
+_CacheSetting["default"].prototype['name'] = undefined;
+/**
+ * Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as 'stale if error').
+ * @member {Number} stale_ttl
+ */
+
+_CacheSetting["default"].prototype['stale_ttl'] = undefined;
+/**
+ * Maximum time to consider the object fresh in the cache (the cache 'time to live').
+ * @member {Number} ttl
+ */
+
+_CacheSetting["default"].prototype['ttl'] = undefined; // Implement ServiceIdAndVersion interface:
+
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+
+_ServiceIdAndVersion["default"].prototype['service_id'] = undefined;
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
+
+_ServiceIdAndVersion["default"].prototype['version'] = undefined; // Implement Timestamps interface:
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+
+_Timestamps["default"].prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+
+_Timestamps["default"].prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+
+_Timestamps["default"].prototype['updated_at'] = undefined;
 /**
  * Allowed values for the <code>action</code> property.
  * @enum {String}

@@ -60,16 +60,16 @@ var ServiceInvitationData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new ServiceInvitationData();
 
+        if (data.hasOwnProperty('type')) {
+          obj['type'] = _TypeServiceInvitation["default"].constructFromObject(data['type']);
+        }
+
         if (data.hasOwnProperty('attributes')) {
           obj['attributes'] = _ServiceInvitationDataAttributes["default"].constructFromObject(data['attributes']);
         }
 
         if (data.hasOwnProperty('relationships')) {
           obj['relationships'] = _ApiClient["default"].convertToType(data['relationships'], _RelationshipService["default"]);
-        }
-
-        if (data.hasOwnProperty('type')) {
-          obj['type'] = _TypeServiceInvitation["default"].constructFromObject(data['type']);
         }
       }
 
@@ -80,9 +80,14 @@ var ServiceInvitationData = /*#__PURE__*/function () {
   return ServiceInvitationData;
 }();
 /**
- * @member {module:model/ServiceInvitationDataAttributes} attributes
+ * @member {module:model/TypeServiceInvitation} type
  */
 
+
+ServiceInvitationData.prototype['type'] = undefined;
+/**
+ * @member {module:model/ServiceInvitationDataAttributes} attributes
+ */
 
 ServiceInvitationData.prototype['attributes'] = undefined;
 /**
@@ -90,10 +95,5 @@ ServiceInvitationData.prototype['attributes'] = undefined;
  */
 
 ServiceInvitationData.prototype['relationships'] = undefined;
-/**
- * @member {module:model/TypeServiceInvitation} type
- */
-
-ServiceInvitationData.prototype['type'] = undefined;
 var _default = ServiceInvitationData;
 exports["default"] = _default;

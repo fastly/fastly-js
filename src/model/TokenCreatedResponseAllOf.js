@@ -24,6 +24,7 @@ class TokenCreatedResponseAllOf {
      * @alias module:model/TokenCreatedResponseAllOf
      */
     constructor() { 
+        
         TokenCreatedResponseAllOf.initialize(this);
     }
 

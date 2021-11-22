@@ -7,6 +7,8 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
+var _AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision = _interopRequireDefault(require("./AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision"));
+
 var _Timestamps = _interopRequireDefault(require("./Timestamps"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
@@ -56,12 +58,16 @@ var WafActiveRuleResponseDataAllOf = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new WafActiveRuleResponseDataAllOf();
 
+        if (data.hasOwnProperty('id')) {
+          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
+        }
+
         if (data.hasOwnProperty('attributes')) {
           obj['attributes'] = _ApiClient["default"].convertToType(data['attributes'], _Timestamps["default"]);
         }
 
-        if (data.hasOwnProperty('id')) {
-          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
+        if (data.hasOwnProperty('relationships')) {
+          obj['relationships'] = _ApiClient["default"].convertToType(data['relationships'], _AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision["default"]);
         }
       }
 
@@ -72,16 +78,21 @@ var WafActiveRuleResponseDataAllOf = /*#__PURE__*/function () {
   return WafActiveRuleResponseDataAllOf;
 }();
 /**
- * @member {module:model/Timestamps} attributes
- */
-
-
-WafActiveRuleResponseDataAllOf.prototype['attributes'] = undefined;
-/**
  * Alphanumeric string identifying a WAF active rule.
  * @member {String} id
  */
 
+
 WafActiveRuleResponseDataAllOf.prototype['id'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+
+WafActiveRuleResponseDataAllOf.prototype['attributes'] = undefined;
+/**
+ * @member {module:model/AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision} relationships
+ */
+
+WafActiveRuleResponseDataAllOf.prototype['relationships'] = undefined;
 var _default = WafActiveRuleResponseDataAllOf;
 exports["default"] = _default;

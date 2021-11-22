@@ -44,7 +44,7 @@ var EventsApi = /*#__PURE__*/function () {
   /**
    * Get a specific event.
    * @param {Object} options
-   * @param {String} options.event_id
+   * @param {String} options.event_id - Alphanumeric string identifying an event.
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EventResponse} and HTTP response
    */
 
@@ -74,7 +74,7 @@ var EventsApi = /*#__PURE__*/function () {
     /**
      * Get a specific event.
      * @param {Object} options
-     * @param {String} options.event_id
+     * @param {String} options.event_id - Alphanumeric string identifying an event.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EventResponse}
      */
 

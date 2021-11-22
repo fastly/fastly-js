@@ -58,12 +58,12 @@ var StarData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new StarData();
 
-        if (data.hasOwnProperty('relationships')) {
-          obj['relationships'] = _ApiClient["default"].convertToType(data['relationships'], _RelationshipUser["default"]);
-        }
-
         if (data.hasOwnProperty('type')) {
           obj['type'] = _TypeStar["default"].constructFromObject(data['type']);
+        }
+
+        if (data.hasOwnProperty('relationships')) {
+          obj['relationships'] = _ApiClient["default"].convertToType(data['relationships'], _RelationshipUser["default"]);
         }
       }
 
@@ -74,15 +74,15 @@ var StarData = /*#__PURE__*/function () {
   return StarData;
 }();
 /**
- * @member {module:model/RelationshipUser} relationships
- */
-
-
-StarData.prototype['relationships'] = undefined;
-/**
  * @member {module:model/TypeStar} type
  */
 
+
 StarData.prototype['type'] = undefined;
+/**
+ * @member {module:model/RelationshipUser} relationships
+ */
+
+StarData.prototype['relationships'] = undefined;
 var _default = StarData;
 exports["default"] = _default;

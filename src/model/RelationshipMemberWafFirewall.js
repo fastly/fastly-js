@@ -25,6 +25,7 @@ class RelationshipMemberWafFirewall {
      * @alias module:model/RelationshipMemberWafFirewall
      */
     constructor() { 
+        
         RelationshipMemberWafFirewall.initialize(this);
     }
 
@@ -47,11 +48,11 @@ class RelationshipMemberWafFirewall {
         if (data) {
             obj = obj || new RelationshipMemberWafFirewall();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeWafFirewall.constructFromObject(data['type']);
+            }
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
         }
         return obj;
@@ -61,15 +62,15 @@ class RelationshipMemberWafFirewall {
 }
 
 /**
+ * @member {module:model/TypeWafFirewall} type
+ */
+RelationshipMemberWafFirewall.prototype['type'] = undefined;
+
+/**
  * Alphanumeric string identifying a WAF Firewall.
  * @member {String} id
  */
 RelationshipMemberWafFirewall.prototype['id'] = undefined;
-
-/**
- * @member {module:model/TypeWafFirewall} type
- */
-RelationshipMemberWafFirewall.prototype['type'] = undefined;
 
 
 

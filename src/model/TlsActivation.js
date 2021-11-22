@@ -25,6 +25,7 @@ class TlsActivation {
      * @alias module:model/TlsActivation
      */
     constructor() { 
+        
         TlsActivation.initialize(this);
     }
 

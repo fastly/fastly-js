@@ -24,6 +24,7 @@ class Dictionary {
      * @alias module:model/Dictionary
      */
     constructor() { 
+        
         Dictionary.initialize(this);
     }
 
@@ -60,7 +61,7 @@ class Dictionary {
 }
 
 /**
- * Name for the Dictionary.
+ * Name for the Dictionary (must start with an alphabetic character and can contain only alphanumeric characters, underscores, and whitespace).
  * @member {String} name
  */
 Dictionary.prototype['name'] = undefined;

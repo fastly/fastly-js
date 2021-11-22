@@ -26,8 +26,11 @@ class RelationshipsForWafFirewallVersion {
     /**
      * Constructs a new <code>RelationshipsForWafFirewallVersion</code>.
      * @alias module:model/RelationshipsForWafFirewallVersion
+     * @implements module:model/RelationshipWafFirewallVersions
+     * @implements module:model/RelationshipWafActiveRules
      */
     constructor() { 
+        RelationshipWafFirewallVersions.initialize(this);RelationshipWafActiveRules.initialize(this);
         RelationshipsForWafFirewallVersion.initialize(this);
     }
 
@@ -49,6 +52,8 @@ class RelationshipsForWafFirewallVersion {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipsForWafFirewallVersion();
+            RelationshipWafFirewallVersions.constructFromObject(data, obj);
+            RelationshipWafActiveRules.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('waf_firewall_versions')) {
                 obj['waf_firewall_versions'] = RelationshipWafFirewallVersionWafFirewallVersion.constructFromObject(data['waf_firewall_versions']);
@@ -74,6 +79,16 @@ RelationshipsForWafFirewallVersion.prototype['waf_firewall_versions'] = undefine
 RelationshipsForWafFirewallVersion.prototype['waf_active_rules'] = undefined;
 
 
+// Implement RelationshipWafFirewallVersions interface:
+/**
+ * @member {module:model/RelationshipWafFirewallVersionWafFirewallVersion} waf_firewall_versions
+ */
+RelationshipWafFirewallVersions.prototype['waf_firewall_versions'] = undefined;
+// Implement RelationshipWafActiveRules interface:
+/**
+ * @member {module:model/RelationshipWafActiveRulesWafActiveRules} waf_active_rules
+ */
+RelationshipWafActiveRules.prototype['waf_active_rules'] = undefined;
 
 
 

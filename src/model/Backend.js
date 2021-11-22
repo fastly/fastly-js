@@ -24,6 +24,7 @@ class Backend {
      * @alias module:model/Backend
      */
     constructor() { 
+        
         Backend.initialize(this);
     }
 

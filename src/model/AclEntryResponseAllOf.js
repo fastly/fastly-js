@@ -24,6 +24,7 @@ class AclEntryResponseAllOf {
      * @alias module:model/AclEntryResponseAllOf
      */
     constructor() { 
+        
         AclEntryResponseAllOf.initialize(this);
     }
 

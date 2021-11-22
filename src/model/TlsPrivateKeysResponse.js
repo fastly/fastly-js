@@ -27,8 +27,11 @@ class TlsPrivateKeysResponse {
     /**
      * Constructs a new <code>TlsPrivateKeysResponse</code>.
      * @alias module:model/TlsPrivateKeysResponse
+     * @implements module:model/Pagination
+     * @implements module:model/TlsPrivateKeysResponseAllOf
      */
     constructor() { 
+        Pagination.initialize(this);TlsPrivateKeysResponseAllOf.initialize(this);
         TlsPrivateKeysResponse.initialize(this);
     }
 
@@ -50,6 +53,8 @@ class TlsPrivateKeysResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsPrivateKeysResponse();
+            Pagination.constructFromObject(data, obj);
+            TlsPrivateKeysResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('links')) {
                 obj['links'] = PaginationLinks.constructFromObject(data['links']);
@@ -83,6 +88,20 @@ TlsPrivateKeysResponse.prototype['meta'] = undefined;
 TlsPrivateKeysResponse.prototype['data'] = undefined;
 
 
+// Implement Pagination interface:
+/**
+ * @member {module:model/PaginationLinks} links
+ */
+Pagination.prototype['links'] = undefined;
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
+Pagination.prototype['meta'] = undefined;
+// Implement TlsPrivateKeysResponseAllOf interface:
+/**
+ * @member {Array.<module:model/TlsPrivateKeyResponseData>} data
+ */
+TlsPrivateKeysResponseAllOf.prototype['data'] = undefined;
 
 
 

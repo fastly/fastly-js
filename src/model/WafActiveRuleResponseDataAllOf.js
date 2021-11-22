@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision from './AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision';
 import Timestamps from './Timestamps';
 
 /**
@@ -25,6 +26,7 @@ class WafActiveRuleResponseDataAllOf {
      * @alias module:model/WafActiveRuleResponseDataAllOf
      */
     constructor() { 
+        
         WafActiveRuleResponseDataAllOf.initialize(this);
     }
 
@@ -47,11 +49,14 @@ class WafActiveRuleResponseDataAllOf {
         if (data) {
             obj = obj || new WafActiveRuleResponseDataAllOf();
 
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
             }
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            if (data.hasOwnProperty('relationships')) {
+                obj['relationships'] = ApiClient.convertToType(data['relationships'], AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision);
             }
         }
         return obj;
@@ -61,15 +66,20 @@ class WafActiveRuleResponseDataAllOf {
 }
 
 /**
+ * Alphanumeric string identifying a WAF active rule.
+ * @member {String} id
+ */
+WafActiveRuleResponseDataAllOf.prototype['id'] = undefined;
+
+/**
  * @member {module:model/Timestamps} attributes
  */
 WafActiveRuleResponseDataAllOf.prototype['attributes'] = undefined;
 
 /**
- * Alphanumeric string identifying a WAF active rule.
- * @member {String} id
+ * @member {module:model/AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision} relationships
  */
-WafActiveRuleResponseDataAllOf.prototype['id'] = undefined;
+WafActiveRuleResponseDataAllOf.prototype['relationships'] = undefined;
 
 
 

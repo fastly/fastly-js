@@ -9,11 +9,7 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _LoggingCommon = _interopRequireDefault(require("./LoggingCommon"));
 
-var _LoggingFormatVersion = _interopRequireDefault(require("./LoggingFormatVersion"));
-
 var _LoggingLogentriesAllOf = _interopRequireDefault(require("./LoggingLogentriesAllOf"));
-
-var _LoggingPlacement = _interopRequireDefault(require("./LoggingPlacement"));
 
 var _LoggingUseTls = _interopRequireDefault(require("./LoggingUseTls"));
 
@@ -34,9 +30,15 @@ var LoggingLogentries = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>LoggingLogentries</code>.
    * @alias module:model/LoggingLogentries
+   * @implements module:model/LoggingCommon
+   * @implements module:model/LoggingLogentriesAllOf
    */
   function LoggingLogentries() {
     _classCallCheck(this, LoggingLogentries);
+
+    _LoggingCommon["default"].initialize(this);
+
+    _LoggingLogentriesAllOf["default"].initialize(this);
 
     LoggingLogentries.initialize(this);
   }
@@ -64,32 +66,32 @@ var LoggingLogentries = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new LoggingLogentries();
 
-        if (data.hasOwnProperty('format')) {
-          obj['format'] = _ApiClient["default"].convertToType(data['format'], 'String');
-        }
+        _LoggingCommon["default"].constructFromObject(data, obj);
 
-        if (data.hasOwnProperty('format_version')) {
-          obj['format_version'] = _LoggingFormatVersion["default"].constructFromObject(data['format_version']);
-        }
+        _LoggingLogentriesAllOf["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
         }
 
         if (data.hasOwnProperty('placement')) {
-          obj['placement'] = _LoggingPlacement["default"].constructFromObject(data['placement']);
+          obj['placement'] = _ApiClient["default"].convertToType(data['placement'], 'String');
+        }
+
+        if (data.hasOwnProperty('format_version')) {
+          obj['format_version'] = _ApiClient["default"].convertToType(data['format_version'], 'Number');
         }
 
         if (data.hasOwnProperty('response_condition')) {
           obj['response_condition'] = _ApiClient["default"].convertToType(data['response_condition'], 'String');
         }
 
-        if (data.hasOwnProperty('port')) {
-          obj['port'] = _ApiClient["default"].convertToType(data['port'], 'Number');
+        if (data.hasOwnProperty('format')) {
+          obj['format'] = _ApiClient["default"].convertToType(data['format'], 'String');
         }
 
-        if (data.hasOwnProperty('region')) {
-          obj['region'] = _ApiClient["default"].convertToType(data['region'], 'String');
+        if (data.hasOwnProperty('port')) {
+          obj['port'] = _ApiClient["default"].convertToType(data['port'], 'Number');
         }
 
         if (data.hasOwnProperty('token')) {
@@ -98,6 +100,10 @@ var LoggingLogentries = /*#__PURE__*/function () {
 
         if (data.hasOwnProperty('use_tls')) {
           obj['use_tls'] = _LoggingUseTls["default"].constructFromObject(data['use_tls']);
+        }
+
+        if (data.hasOwnProperty('region')) {
+          obj['region'] = _ApiClient["default"].convertToType(data['region'], 'String');
         }
       }
 
@@ -108,29 +114,25 @@ var LoggingLogentries = /*#__PURE__*/function () {
   return LoggingLogentries;
 }();
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-
-
-LoggingLogentries.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-
-LoggingLogentries.prototype['format_version'] = undefined;
-/**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
 
+
 LoggingLogentries.prototype['name'] = undefined;
 /**
- * @member {module:model/LoggingPlacement} placement
+ * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+ * @member {module:model/LoggingLogentries.PlacementEnum} placement
  */
 
 LoggingLogentries.prototype['placement'] = undefined;
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * @member {module:model/LoggingLogentries.FormatVersionEnum} format_version
+ * @default FormatVersionEnum.v2
+ */
+
+LoggingLogentries.prototype['format_version'] = undefined;
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
@@ -138,18 +140,19 @@ LoggingLogentries.prototype['placement'] = undefined;
 
 LoggingLogentries.prototype['response_condition'] = undefined;
 /**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
+
+LoggingLogentries.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
  * The port number.
  * @member {Number} port
  * @default 20000
  */
 
 LoggingLogentries.prototype['port'] = 20000;
-/**
- * The region to which to stream logs.
- * @member {module:model/LoggingLogentries.RegionEnum} region
- */
-
-LoggingLogentries.prototype['region'] = undefined;
 /**
  * Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
  * @member {String} token
@@ -161,6 +164,114 @@ LoggingLogentries.prototype['token'] = undefined;
  */
 
 LoggingLogentries.prototype['use_tls'] = undefined;
+/**
+ * The region to which to stream logs.
+ * @member {module:model/LoggingLogentries.RegionEnum} region
+ */
+
+LoggingLogentries.prototype['region'] = undefined; // Implement LoggingCommon interface:
+
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+
+_LoggingCommon["default"].prototype['name'] = undefined;
+/**
+ * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+ * @member {module:model/LoggingCommon.PlacementEnum} placement
+ */
+
+_LoggingCommon["default"].prototype['placement'] = undefined;
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * @member {module:model/LoggingCommon.FormatVersionEnum} format_version
+ * @default FormatVersionEnum.v2
+ */
+
+_LoggingCommon["default"].prototype['format_version'] = undefined;
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+
+_LoggingCommon["default"].prototype['response_condition'] = undefined;
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
+
+_LoggingCommon["default"].prototype['format'] = '%h %l %u %t "%r" %&gt;s %b'; // Implement LoggingLogentriesAllOf interface:
+
+/**
+ * The port number.
+ * @member {Number} port
+ * @default 20000
+ */
+
+_LoggingLogentriesAllOf["default"].prototype['port'] = 20000;
+/**
+ * Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
+ * @member {String} token
+ */
+
+_LoggingLogentriesAllOf["default"].prototype['token'] = undefined;
+/**
+ * @member {module:model/LoggingUseTls} use_tls
+ */
+
+_LoggingLogentriesAllOf["default"].prototype['use_tls'] = undefined;
+/**
+ * The region to which to stream logs.
+ * @member {module:model/LoggingLogentriesAllOf.RegionEnum} region
+ */
+
+_LoggingLogentriesAllOf["default"].prototype['region'] = undefined;
+/**
+ * Allowed values for the <code>placement</code> property.
+ * @enum {String}
+ * @readonly
+ */
+
+LoggingLogentries['PlacementEnum'] = {
+  /**
+   * value: "none"
+   * @const
+   */
+  "none": "none",
+
+  /**
+   * value: "waf_debug"
+   * @const
+   */
+  "waf_debug": "waf_debug",
+
+  /**
+   * value: "null"
+   * @const
+   */
+  "null": "null"
+};
+/**
+ * Allowed values for the <code>format_version</code> property.
+ * @enum {Number}
+ * @readonly
+ */
+
+LoggingLogentries['FormatVersionEnum'] = {
+  /**
+   * value: 1
+   * @const
+   */
+  "v1": 1,
+
+  /**
+   * value: 2
+   * @const
+   */
+  "v2": 2
+};
 /**
  * Allowed values for the <code>region</code> property.
  * @enum {String}

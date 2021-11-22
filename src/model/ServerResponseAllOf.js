@@ -24,6 +24,7 @@ class ServerResponseAllOf {
      * @alias module:model/ServerResponseAllOf
      */
     constructor() { 
+        
         ServerResponseAllOf.initialize(this);
     }
 
@@ -46,14 +47,14 @@ class ServerResponseAllOf {
         if (data) {
             obj = obj || new ServerResponseAllOf();
 
+            if (data.hasOwnProperty('service_id')) {
+                obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
+            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
             if (data.hasOwnProperty('pool_id')) {
                 obj['pool_id'] = ApiClient.convertToType(data['pool_id'], 'String');
-            }
-            if (data.hasOwnProperty('service_id')) {
-                obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
             }
         }
         return obj;
@@ -61,6 +62,12 @@ class ServerResponseAllOf {
 
 
 }
+
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+ServerResponseAllOf.prototype['service_id'] = undefined;
 
 /**
  * Alphanumeric string identifying a Server.
@@ -73,12 +80,6 @@ ServerResponseAllOf.prototype['id'] = undefined;
  * @member {String} pool_id
  */
 ServerResponseAllOf.prototype['pool_id'] = undefined;
-
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServerResponseAllOf.prototype['service_id'] = undefined;
 
 
 

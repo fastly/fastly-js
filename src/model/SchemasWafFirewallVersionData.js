@@ -12,8 +12,8 @@
  */
 
 import ApiClient from '../ApiClient';
-import SchemasWafFirewallVersionDataAttributes from './SchemasWafFirewallVersionDataAttributes';
 import TypeWafFirewallVersion from './TypeWafFirewallVersion';
+import WafFirewallVersionDataAttributes from './WafFirewallVersionDataAttributes';
 
 /**
  * The SchemasWafFirewallVersionData model module.
@@ -26,6 +26,7 @@ class SchemasWafFirewallVersionData {
      * @alias module:model/SchemasWafFirewallVersionData
      */
     constructor() { 
+        
         SchemasWafFirewallVersionData.initialize(this);
     }
 
@@ -48,11 +49,11 @@ class SchemasWafFirewallVersionData {
         if (data) {
             obj = obj || new SchemasWafFirewallVersionData();
 
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = SchemasWafFirewallVersionDataAttributes.constructFromObject(data['attributes']);
-            }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = TypeWafFirewallVersion.constructFromObject(data['type']);
+            }
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = WafFirewallVersionDataAttributes.constructFromObject(data['attributes']);
             }
         }
         return obj;
@@ -62,14 +63,14 @@ class SchemasWafFirewallVersionData {
 }
 
 /**
- * @member {module:model/SchemasWafFirewallVersionDataAttributes} attributes
- */
-SchemasWafFirewallVersionData.prototype['attributes'] = undefined;
-
-/**
  * @member {module:model/TypeWafFirewallVersion} type
  */
 SchemasWafFirewallVersionData.prototype['type'] = undefined;
+
+/**
+ * @member {module:model/WafFirewallVersionDataAttributes} attributes
+ */
+SchemasWafFirewallVersionData.prototype['attributes'] = undefined;
 
 
 

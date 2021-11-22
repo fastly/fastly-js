@@ -34,9 +34,15 @@ var TlsCertificateResponseData = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>TlsCertificateResponseData</code>.
    * @alias module:model/TlsCertificateResponseData
+   * @implements module:model/TlsCertificateData
+   * @implements module:model/TlsCertificateResponseDataAllOf
    */
   function TlsCertificateResponseData() {
     _classCallCheck(this, TlsCertificateResponseData);
+
+    _TlsCertificateData["default"].initialize(this);
+
+    _TlsCertificateResponseDataAllOf["default"].initialize(this);
 
     TlsCertificateResponseData.initialize(this);
   }
@@ -64,16 +70,20 @@ var TlsCertificateResponseData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new TlsCertificateResponseData();
 
+        _TlsCertificateData["default"].constructFromObject(data, obj);
+
+        _TlsCertificateResponseDataAllOf["default"].constructFromObject(data, obj);
+
+        if (data.hasOwnProperty('type')) {
+          obj['type'] = _TypeTlsCertificate["default"].constructFromObject(data['type']);
+        }
+
         if (data.hasOwnProperty('attributes')) {
           obj['attributes'] = _ApiClient["default"].convertToType(data['attributes'], _Timestamps["default"]);
         }
 
         if (data.hasOwnProperty('relationships')) {
           obj['relationships'] = _RelationshipTlsDomains["default"].constructFromObject(data['relationships']);
-        }
-
-        if (data.hasOwnProperty('type')) {
-          obj['type'] = _TypeTlsCertificate["default"].constructFromObject(data['type']);
         }
 
         if (data.hasOwnProperty('id')) {
@@ -88,9 +98,14 @@ var TlsCertificateResponseData = /*#__PURE__*/function () {
   return TlsCertificateResponseData;
 }();
 /**
- * @member {module:model/Timestamps} attributes
+ * @member {module:model/TypeTlsCertificate} type
  */
 
+
+TlsCertificateResponseData.prototype['type'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
 
 TlsCertificateResponseData.prototype['attributes'] = undefined;
 /**
@@ -99,15 +114,38 @@ TlsCertificateResponseData.prototype['attributes'] = undefined;
 
 TlsCertificateResponseData.prototype['relationships'] = undefined;
 /**
+ * Alphanumeric string identifying a TLS certificate.
+ * @member {String} id
+ */
+
+TlsCertificateResponseData.prototype['id'] = undefined; // Implement TlsCertificateData interface:
+
+/**
  * @member {module:model/TypeTlsCertificate} type
  */
 
-TlsCertificateResponseData.prototype['type'] = undefined;
+_TlsCertificateData["default"].prototype['type'] = undefined;
+/**
+ * @member {module:model/TlsCertificateDataAttributes} attributes
+ */
+
+_TlsCertificateData["default"].prototype['attributes'] = undefined;
+/**
+ * @member {module:model/RelationshipTlsDomains} relationships
+ */
+
+_TlsCertificateData["default"].prototype['relationships'] = undefined; // Implement TlsCertificateResponseDataAllOf interface:
+
 /**
  * Alphanumeric string identifying a TLS certificate.
  * @member {String} id
  */
 
-TlsCertificateResponseData.prototype['id'] = undefined;
+_TlsCertificateResponseDataAllOf["default"].prototype['id'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+
+_TlsCertificateResponseDataAllOf["default"].prototype['attributes'] = undefined;
 var _default = TlsCertificateResponseData;
 exports["default"] = _default;

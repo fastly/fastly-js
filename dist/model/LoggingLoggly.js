@@ -9,11 +9,7 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _LoggingCommon = _interopRequireDefault(require("./LoggingCommon"));
 
-var _LoggingFormatVersion = _interopRequireDefault(require("./LoggingFormatVersion"));
-
 var _LoggingLogglyAllOf = _interopRequireDefault(require("./LoggingLogglyAllOf"));
-
-var _LoggingPlacement = _interopRequireDefault(require("./LoggingPlacement"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -32,9 +28,15 @@ var LoggingLoggly = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>LoggingLoggly</code>.
    * @alias module:model/LoggingLoggly
+   * @implements module:model/LoggingCommon
+   * @implements module:model/LoggingLogglyAllOf
    */
   function LoggingLoggly() {
     _classCallCheck(this, LoggingLoggly);
+
+    _LoggingCommon["default"].initialize(this);
+
+    _LoggingLogglyAllOf["default"].initialize(this);
 
     LoggingLoggly.initialize(this);
   }
@@ -62,24 +64,28 @@ var LoggingLoggly = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new LoggingLoggly();
 
-        if (data.hasOwnProperty('format')) {
-          obj['format'] = _ApiClient["default"].convertToType(data['format'], 'String');
-        }
+        _LoggingCommon["default"].constructFromObject(data, obj);
 
-        if (data.hasOwnProperty('format_version')) {
-          obj['format_version'] = _LoggingFormatVersion["default"].constructFromObject(data['format_version']);
-        }
+        _LoggingLogglyAllOf["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
         }
 
         if (data.hasOwnProperty('placement')) {
-          obj['placement'] = _LoggingPlacement["default"].constructFromObject(data['placement']);
+          obj['placement'] = _ApiClient["default"].convertToType(data['placement'], 'String');
+        }
+
+        if (data.hasOwnProperty('format_version')) {
+          obj['format_version'] = _ApiClient["default"].convertToType(data['format_version'], 'Number');
         }
 
         if (data.hasOwnProperty('response_condition')) {
           obj['response_condition'] = _ApiClient["default"].convertToType(data['response_condition'], 'String');
+        }
+
+        if (data.hasOwnProperty('format')) {
+          obj['format'] = _ApiClient["default"].convertToType(data['format'], 'String');
         }
 
         if (data.hasOwnProperty('token')) {
@@ -94,29 +100,25 @@ var LoggingLoggly = /*#__PURE__*/function () {
   return LoggingLoggly;
 }();
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-
-
-LoggingLoggly.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-
-LoggingLoggly.prototype['format_version'] = undefined;
-/**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
 
+
 LoggingLoggly.prototype['name'] = undefined;
 /**
- * @member {module:model/LoggingPlacement} placement
+ * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+ * @member {module:model/LoggingLoggly.PlacementEnum} placement
  */
 
 LoggingLoggly.prototype['placement'] = undefined;
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * @member {module:model/LoggingLoggly.FormatVersionEnum} format_version
+ * @default FormatVersionEnum.v2
+ */
+
+LoggingLoggly.prototype['format_version'] = undefined;
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
@@ -124,10 +126,101 @@ LoggingLoggly.prototype['placement'] = undefined;
 
 LoggingLoggly.prototype['response_condition'] = undefined;
 /**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
+
+LoggingLoggly.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
  * The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)).
  * @member {String} token
  */
 
-LoggingLoggly.prototype['token'] = undefined;
+LoggingLoggly.prototype['token'] = undefined; // Implement LoggingCommon interface:
+
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+
+_LoggingCommon["default"].prototype['name'] = undefined;
+/**
+ * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+ * @member {module:model/LoggingCommon.PlacementEnum} placement
+ */
+
+_LoggingCommon["default"].prototype['placement'] = undefined;
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * @member {module:model/LoggingCommon.FormatVersionEnum} format_version
+ * @default FormatVersionEnum.v2
+ */
+
+_LoggingCommon["default"].prototype['format_version'] = undefined;
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+
+_LoggingCommon["default"].prototype['response_condition'] = undefined;
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
+
+_LoggingCommon["default"].prototype['format'] = '%h %l %u %t "%r" %&gt;s %b'; // Implement LoggingLogglyAllOf interface:
+
+/**
+ * The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)).
+ * @member {String} token
+ */
+
+_LoggingLogglyAllOf["default"].prototype['token'] = undefined;
+/**
+ * Allowed values for the <code>placement</code> property.
+ * @enum {String}
+ * @readonly
+ */
+
+LoggingLoggly['PlacementEnum'] = {
+  /**
+   * value: "none"
+   * @const
+   */
+  "none": "none",
+
+  /**
+   * value: "waf_debug"
+   * @const
+   */
+  "waf_debug": "waf_debug",
+
+  /**
+   * value: "null"
+   * @const
+   */
+  "null": "null"
+};
+/**
+ * Allowed values for the <code>format_version</code> property.
+ * @enum {Number}
+ * @readonly
+ */
+
+LoggingLoggly['FormatVersionEnum'] = {
+  /**
+   * value: 1
+   * @const
+   */
+  "v1": 1,
+
+  /**
+   * value: 2
+   * @const
+   */
+  "v2": 2
+};
 var _default = LoggingLoggly;
 exports["default"] = _default;

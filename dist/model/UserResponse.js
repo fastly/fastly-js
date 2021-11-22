@@ -9,11 +9,11 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _RoleUser = _interopRequireDefault(require("./RoleUser"));
 
-var _SchemasUserResponseAllOf = _interopRequireDefault(require("./SchemasUserResponseAllOf"));
-
 var _Timestamps = _interopRequireDefault(require("./Timestamps"));
 
 var _User = _interopRequireDefault(require("./User"));
+
+var _UserResponseAllOf = _interopRequireDefault(require("./UserResponseAllOf"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -32,9 +32,18 @@ var UserResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>UserResponse</code>.
    * @alias module:model/UserResponse
+   * @implements module:model/User
+   * @implements module:model/Timestamps
+   * @implements module:model/UserResponseAllOf
    */
   function UserResponse() {
     _classCallCheck(this, UserResponse);
+
+    _User["default"].initialize(this);
+
+    _Timestamps["default"].initialize(this);
+
+    _UserResponseAllOf["default"].initialize(this);
 
     UserResponse.initialize(this);
   }
@@ -62,13 +71,11 @@ var UserResponse = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new UserResponse();
 
-        if (data.hasOwnProperty('limit_services')) {
-          obj['limit_services'] = _ApiClient["default"].convertToType(data['limit_services'], 'Boolean');
-        }
+        _User["default"].constructFromObject(data, obj);
 
-        if (data.hasOwnProperty('locked')) {
-          obj['locked'] = _ApiClient["default"].convertToType(data['locked'], 'Boolean');
-        }
+        _Timestamps["default"].constructFromObject(data, obj);
+
+        _UserResponseAllOf["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('login')) {
           obj['login'] = _ApiClient["default"].convertToType(data['login'], 'String');
@@ -76,6 +83,14 @@ var UserResponse = /*#__PURE__*/function () {
 
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
+        }
+
+        if (data.hasOwnProperty('limit_services')) {
+          obj['limit_services'] = _ApiClient["default"].convertToType(data['limit_services'], 'Boolean');
+        }
+
+        if (data.hasOwnProperty('locked')) {
+          obj['locked'] = _ApiClient["default"].convertToType(data['locked'], 'Boolean');
         }
 
         if (data.hasOwnProperty('require_new_password')) {
@@ -106,16 +121,16 @@ var UserResponse = /*#__PURE__*/function () {
           obj['updated_at'] = _ApiClient["default"].convertToType(data['updated_at'], 'String');
         }
 
-        if (data.hasOwnProperty('customer_id')) {
-          obj['customer_id'] = _ApiClient["default"].convertToType(data['customer_id'], 'String');
+        if (data.hasOwnProperty('id')) {
+          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
 
         if (data.hasOwnProperty('email_hash')) {
           obj['email_hash'] = _ApiClient["default"].convertToType(data['email_hash'], 'String');
         }
 
-        if (data.hasOwnProperty('id')) {
-          obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
+        if (data.hasOwnProperty('customer_id')) {
+          obj['customer_id'] = _ApiClient["default"].convertToType(data['customer_id'], 'String');
         }
       }
 
@@ -126,22 +141,10 @@ var UserResponse = /*#__PURE__*/function () {
   return UserResponse;
 }();
 /**
- * Indicates that the user has limited access to the customer's services.
- * @member {Boolean} limit_services
- */
-
-
-UserResponse.prototype['limit_services'] = undefined;
-/**
- * Indicates whether the is account is locked for editing or not.
- * @member {Boolean} locked
- */
-
-UserResponse.prototype['locked'] = undefined;
-/**
  * The login associated with the user (typically, an email address).
  * @member {String} login
  */
+
 
 UserResponse.prototype['login'] = undefined;
 /**
@@ -150,6 +153,18 @@ UserResponse.prototype['login'] = undefined;
  */
 
 UserResponse.prototype['name'] = undefined;
+/**
+ * Indicates that the user has limited access to the customer's services.
+ * @member {Boolean} limit_services
+ */
+
+UserResponse.prototype['limit_services'] = undefined;
+/**
+ * Indicates whether the is account is locked for editing or not.
+ * @member {Boolean} locked
+ */
+
+UserResponse.prototype['locked'] = undefined;
 /**
  * Indicates if a new password is required at next login.
  * @member {Boolean} require_new_password
@@ -192,11 +207,11 @@ UserResponse.prototype['deleted_at'] = undefined;
 
 UserResponse.prototype['updated_at'] = undefined;
 /**
- * Alphanumeric string identifying the customer.
- * @member {String} customer_id
+ * Alphanumeric string identifying the user.
+ * @member {String} id
  */
 
-UserResponse.prototype['customer_id'] = undefined;
+UserResponse.prototype['id'] = undefined;
 /**
  * The alphanumeric string identifying a email login.
  * @member {String} email_hash
@@ -204,10 +219,96 @@ UserResponse.prototype['customer_id'] = undefined;
 
 UserResponse.prototype['email_hash'] = undefined;
 /**
+ * Alphanumeric string identifying the customer.
+ * @member {String} customer_id
+ */
+
+UserResponse.prototype['customer_id'] = undefined; // Implement User interface:
+
+/**
+ * The login associated with the user (typically, an email address).
+ * @member {String} login
+ */
+
+_User["default"].prototype['login'] = undefined;
+/**
+ * The real life name of the user.
+ * @member {String} name
+ */
+
+_User["default"].prototype['name'] = undefined;
+/**
+ * Indicates that the user has limited access to the customer's services.
+ * @member {Boolean} limit_services
+ */
+
+_User["default"].prototype['limit_services'] = undefined;
+/**
+ * Indicates whether the is account is locked for editing or not.
+ * @member {Boolean} locked
+ */
+
+_User["default"].prototype['locked'] = undefined;
+/**
+ * Indicates if a new password is required at next login.
+ * @member {Boolean} require_new_password
+ */
+
+_User["default"].prototype['require_new_password'] = undefined;
+/**
+ * @member {module:model/RoleUser} role
+ */
+
+_User["default"].prototype['role'] = undefined;
+/**
+ * Indicates if 2FA is enabled on the user.
+ * @member {Boolean} two_factor_auth_enabled
+ */
+
+_User["default"].prototype['two_factor_auth_enabled'] = undefined;
+/**
+ * Indicates if 2FA is required by the user's customer account.
+ * @member {Boolean} two_factor_setup_required
+ */
+
+_User["default"].prototype['two_factor_setup_required'] = undefined; // Implement Timestamps interface:
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+
+_Timestamps["default"].prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+
+_Timestamps["default"].prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+
+_Timestamps["default"].prototype['updated_at'] = undefined; // Implement UserResponseAllOf interface:
+
+/**
  * Alphanumeric string identifying the user.
  * @member {String} id
  */
 
-UserResponse.prototype['id'] = undefined;
+_UserResponseAllOf["default"].prototype['id'] = undefined;
+/**
+ * The alphanumeric string identifying a email login.
+ * @member {String} email_hash
+ */
+
+_UserResponseAllOf["default"].prototype['email_hash'] = undefined;
+/**
+ * Alphanumeric string identifying the customer.
+ * @member {String} customer_id
+ */
+
+_UserResponseAllOf["default"].prototype['customer_id'] = undefined;
 var _default = UserResponse;
 exports["default"] = _default;

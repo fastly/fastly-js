@@ -7,11 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _LoggingFormatVersion = _interopRequireDefault(require("./LoggingFormatVersion"));
-
 var _LoggingMessageType = _interopRequireDefault(require("./LoggingMessageType"));
-
-var _LoggingPlacement = _interopRequireDefault(require("./LoggingPlacement"));
 
 var _LoggingSumologic = _interopRequireDefault(require("./LoggingSumologic"));
 
@@ -36,9 +32,18 @@ var LoggingSumologicResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>LoggingSumologicResponse</code>.
    * @alias module:model/LoggingSumologicResponse
+   * @implements module:model/LoggingSumologic
+   * @implements module:model/Timestamps
+   * @implements module:model/ServiceIdAndVersion
    */
   function LoggingSumologicResponse() {
     _classCallCheck(this, LoggingSumologicResponse);
+
+    _LoggingSumologic["default"].initialize(this);
+
+    _Timestamps["default"].initialize(this);
+
+    _ServiceIdAndVersion["default"].initialize(this);
 
     LoggingSumologicResponse.initialize(this);
   }
@@ -66,24 +71,30 @@ var LoggingSumologicResponse = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new LoggingSumologicResponse();
 
-        if (data.hasOwnProperty('format')) {
-          obj['format'] = _ApiClient["default"].convertToType(data['format'], 'String');
-        }
+        _LoggingSumologic["default"].constructFromObject(data, obj);
 
-        if (data.hasOwnProperty('format_version')) {
-          obj['format_version'] = _LoggingFormatVersion["default"].constructFromObject(data['format_version']);
-        }
+        _Timestamps["default"].constructFromObject(data, obj);
+
+        _ServiceIdAndVersion["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('name')) {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
         }
 
         if (data.hasOwnProperty('placement')) {
-          obj['placement'] = _LoggingPlacement["default"].constructFromObject(data['placement']);
+          obj['placement'] = _ApiClient["default"].convertToType(data['placement'], 'String');
+        }
+
+        if (data.hasOwnProperty('format_version')) {
+          obj['format_version'] = _ApiClient["default"].convertToType(data['format_version'], 'Number');
         }
 
         if (data.hasOwnProperty('response_condition')) {
           obj['response_condition'] = _ApiClient["default"].convertToType(data['response_condition'], 'String');
+        }
+
+        if (data.hasOwnProperty('format')) {
+          obj['format'] = _ApiClient["default"].convertToType(data['format'], 'String');
         }
 
         if (data.hasOwnProperty('message_type')) {
@@ -122,35 +133,38 @@ var LoggingSumologicResponse = /*#__PURE__*/function () {
   return LoggingSumologicResponse;
 }();
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
- * @member {String} format
- * @default '%h %l %u %t "%r" %&gt;s %b'
- */
-
-
-LoggingSumologicResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-
-LoggingSumologicResponse.prototype['format_version'] = undefined;
-/**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
 
+
 LoggingSumologicResponse.prototype['name'] = undefined;
 /**
- * @member {module:model/LoggingPlacement} placement
+ * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+ * @member {module:model/LoggingSumologicResponse.PlacementEnum} placement
  */
 
 LoggingSumologicResponse.prototype['placement'] = undefined;
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * @member {module:model/LoggingSumologicResponse.FormatVersionEnum} format_version
+ * @default FormatVersionEnum.v2
+ */
+
+LoggingSumologicResponse.prototype['format_version'] = undefined;
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
 
 LoggingSumologicResponse.prototype['response_condition'] = undefined;
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
+
+LoggingSumologicResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 /**
  * @member {module:model/LoggingMessageType} message_type
  */
@@ -191,6 +205,126 @@ LoggingSumologicResponse.prototype['service_id'] = undefined;
  * @member {Number} version
  */
 
-LoggingSumologicResponse.prototype['version'] = undefined;
+LoggingSumologicResponse.prototype['version'] = undefined; // Implement LoggingSumologic interface:
+
+/**
+ * The name for the real-time logging configuration.
+ * @member {String} name
+ */
+
+_LoggingSumologic["default"].prototype['name'] = undefined;
+/**
+ * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
+ * @member {module:model/LoggingSumologic.PlacementEnum} placement
+ */
+
+_LoggingSumologic["default"].prototype['placement'] = undefined;
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * @member {module:model/LoggingSumologic.FormatVersionEnum} format_version
+ * @default FormatVersionEnum.v2
+ */
+
+_LoggingSumologic["default"].prototype['format_version'] = undefined;
+/**
+ * The name of an existing condition in the configured endpoint, or leave blank to always execute.
+ * @member {String} response_condition
+ */
+
+_LoggingSumologic["default"].prototype['response_condition'] = undefined;
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
+
+_LoggingSumologic["default"].prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
+ * @member {module:model/LoggingMessageType} message_type
+ */
+
+_LoggingSumologic["default"].prototype['message_type'] = undefined;
+/**
+ * The URL to post logs to.
+ * @member {String} url
+ */
+
+_LoggingSumologic["default"].prototype['url'] = undefined; // Implement Timestamps interface:
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+
+_Timestamps["default"].prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+
+_Timestamps["default"].prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+
+_Timestamps["default"].prototype['updated_at'] = undefined; // Implement ServiceIdAndVersion interface:
+
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+
+_ServiceIdAndVersion["default"].prototype['service_id'] = undefined;
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
+
+_ServiceIdAndVersion["default"].prototype['version'] = undefined;
+/**
+ * Allowed values for the <code>placement</code> property.
+ * @enum {String}
+ * @readonly
+ */
+
+LoggingSumologicResponse['PlacementEnum'] = {
+  /**
+   * value: "none"
+   * @const
+   */
+  "none": "none",
+
+  /**
+   * value: "waf_debug"
+   * @const
+   */
+  "waf_debug": "waf_debug",
+
+  /**
+   * value: "null"
+   * @const
+   */
+  "null": "null"
+};
+/**
+ * Allowed values for the <code>format_version</code> property.
+ * @enum {Number}
+ * @readonly
+ */
+
+LoggingSumologicResponse['FormatVersionEnum'] = {
+  /**
+   * value: 1
+   * @const
+   */
+  "v1": 1,
+
+  /**
+   * value: 2
+   * @const
+   */
+  "v2": 2
+};
 var _default = LoggingSumologicResponse;
 exports["default"] = _default;

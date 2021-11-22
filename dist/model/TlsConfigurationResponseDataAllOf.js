@@ -56,12 +56,12 @@ var TlsConfigurationResponseDataAllOf = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new TlsConfigurationResponseDataAllOf();
 
-        if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _ApiClient["default"].convertToType(data['attributes'], _Timestamps["default"]);
-        }
-
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
+        }
+
+        if (data.hasOwnProperty('attributes')) {
+          obj['attributes'] = _ApiClient["default"].convertToType(data['attributes'], _Timestamps["default"]);
         }
       }
 
@@ -72,16 +72,16 @@ var TlsConfigurationResponseDataAllOf = /*#__PURE__*/function () {
   return TlsConfigurationResponseDataAllOf;
 }();
 /**
- * @member {module:model/Timestamps} attributes
- */
-
-
-TlsConfigurationResponseDataAllOf.prototype['attributes'] = undefined;
-/**
  * Alphanumeric string identifying a TLS configuration.
  * @member {String} id
  */
 
+
 TlsConfigurationResponseDataAllOf.prototype['id'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+
+TlsConfigurationResponseDataAllOf.prototype['attributes'] = undefined;
 var _default = TlsConfigurationResponseDataAllOf;
 exports["default"] = _default;

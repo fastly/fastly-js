@@ -43,8 +43,8 @@ export default class AclEntryApi {
     /**
      * Update multiple ACL entries on the same ACL.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.acl_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.acl_id - Alphanumeric string identifying a ACL.
      * @param {module:model/AclEntries} [options.acl_entries]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
@@ -84,8 +84,8 @@ export default class AclEntryApi {
     /**
      * Update multiple ACL entries on the same ACL.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.acl_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.acl_id - Alphanumeric string identifying a ACL.
      * @param {module:model/AclEntries} [options.acl_entries]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
@@ -99,8 +99,8 @@ export default class AclEntryApi {
     /**
      * Add an ACL entry to an ACL.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.acl_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.acl_id - Alphanumeric string identifying a ACL.
      * @param {module:model/AclEntry} [options.acl_entry]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AclEntryResponse} and HTTP response
      */
@@ -140,8 +140,8 @@ export default class AclEntryApi {
     /**
      * Add an ACL entry to an ACL.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.acl_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.acl_id - Alphanumeric string identifying a ACL.
      * @param {module:model/AclEntry} [options.acl_entry]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AclEntryResponse}
      */
@@ -155,9 +155,9 @@ export default class AclEntryApi {
     /**
      * Delete an ACL entry from a specified ACL.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.acl_id
-     * @param {String} options.acl_entry_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.acl_id - Alphanumeric string identifying a ACL.
+     * @param {String} options.acl_entry_id - Alphanumeric string identifying an ACL Entry.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     deleteAclEntryWithHttpInfo(options = {}) {
@@ -201,9 +201,9 @@ export default class AclEntryApi {
     /**
      * Delete an ACL entry from a specified ACL.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.acl_id
-     * @param {String} options.acl_entry_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.acl_id - Alphanumeric string identifying a ACL.
+     * @param {String} options.acl_entry_id - Alphanumeric string identifying an ACL Entry.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     deleteAclEntry(options = {}) {
@@ -216,9 +216,9 @@ export default class AclEntryApi {
     /**
      * Retrieve a single ACL entry.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.acl_id
-     * @param {String} options.acl_entry_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.acl_id - Alphanumeric string identifying a ACL.
+     * @param {String} options.acl_entry_id - Alphanumeric string identifying an ACL Entry.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AclEntry} and HTTP response
      */
     getAclEntryWithHttpInfo(options = {}) {
@@ -262,9 +262,9 @@ export default class AclEntryApi {
     /**
      * Retrieve a single ACL entry.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.acl_id
-     * @param {String} options.acl_entry_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.acl_id - Alphanumeric string identifying a ACL.
+     * @param {String} options.acl_entry_id - Alphanumeric string identifying an ACL Entry.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AclEntry}
      */
     getAclEntry(options = {}) {
@@ -277,8 +277,8 @@ export default class AclEntryApi {
     /**
      * List ACL entries for a specified ACL.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.acl_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.acl_id - Alphanumeric string identifying a ACL.
      * @param {Number} [options.page] - Current page.
      * @param {Number} [options.per_page=20] - Number of records per page.
      * @param {String} [options.sort='created'] - Field on which to sort.
@@ -325,8 +325,8 @@ export default class AclEntryApi {
     /**
      * List ACL entries for a specified ACL.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.acl_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.acl_id - Alphanumeric string identifying a ACL.
      * @param {Number} [options.page] - Current page.
      * @param {Number} [options.per_page=20] - Number of records per page.
      * @param {String} [options.sort='created'] - Field on which to sort.
@@ -343,9 +343,9 @@ export default class AclEntryApi {
     /**
      * Update an ACL entry for a specified ACL.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.acl_id
-     * @param {String} options.acl_entry_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.acl_id - Alphanumeric string identifying a ACL.
+     * @param {String} options.acl_entry_id - Alphanumeric string identifying an ACL Entry.
      * @param {module:model/AclEntry} [options.acl_entry]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AclEntry} and HTTP response
      */
@@ -390,9 +390,9 @@ export default class AclEntryApi {
     /**
      * Update an ACL entry for a specified ACL.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {String} options.acl_id
-     * @param {String} options.acl_entry_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.acl_id - Alphanumeric string identifying a ACL.
+     * @param {String} options.acl_entry_id - Alphanumeric string identifying an ACL Entry.
      * @param {module:model/AclEntry} [options.acl_entry]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AclEntry}
      */

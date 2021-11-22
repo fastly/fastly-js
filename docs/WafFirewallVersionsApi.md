@@ -1,6 +1,5 @@
 # Fastly.WafFirewallVersionsApi
 
-
 ```javascript
 const apiInstance = new Fastly.WafFirewallVersionsApi();
 ```
@@ -14,7 +13,6 @@ Method | Fastly API endpoint | Description
 [**getWafFirewallVersion**](WafFirewallVersionsApi.md#getWafFirewallVersion) | **GET** /waf/firewalls/{firewall_id}/versions/{firewall_version_number} | Get a firewall version
 [**listWafFirewallVersions**](WafFirewallVersionsApi.md#listWafFirewallVersions) | **GET** /waf/firewalls/{firewall_id}/versions | List firewall versions
 [**updateWafFirewallVersion**](WafFirewallVersionsApi.md#updateWafFirewallVersion) | **PATCH** /waf/firewalls/{firewall_id}/versions/{firewall_version_number} | Update a firewall version
-
 
 
 ## `cloneWafFirewallVersion`
@@ -35,7 +33,7 @@ const options = {
 
 apiInstance.cloneWafFirewallVersion(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -46,8 +44,8 @@ apiInstance.cloneWafFirewallVersion(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**firewall_version_number** | **Number** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**firewall_version_number** | **Number** | Integer identifying a WAF firewall version. |
 
 ### Return type
 
@@ -67,12 +65,12 @@ Create a new, draft firewall version.
 ```javascript
 const options = {
   firewall_id: "firewall_id_example", // required
-  waf_firewall_version: new Fastly.WafFirewallVersion(),
+  waf_firewall_version: {},
 };
 
 apiInstance.createWafFirewallVersion(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -83,8 +81,8 @@ apiInstance.createWafFirewallVersion(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**waf_firewall_version** | [**WafFirewallVersion**](../Model/WafFirewallVersion.md) |  | [optional]
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**waf_firewall_version** | [**WafFirewallVersion**](WafFirewallVersion.md) |  | [optional]
 
 ### Return type
 
@@ -109,7 +107,7 @@ const options = {
 
 apiInstance.deployActivateWafFirewallVersion(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -120,8 +118,8 @@ apiInstance.deployActivateWafFirewallVersion(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**firewall_version_number** | **Number** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**firewall_version_number** | **Number** | Integer identifying a WAF firewall version. |
 
 ### Return type
 
@@ -147,7 +145,7 @@ const options = {
 
 apiInstance.getWafFirewallVersion(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -158,9 +156,9 @@ apiInstance.getWafFirewallVersion(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**firewall_version_number** | **Number** |  |
-**include** | **String** | Include relationships. Optional, comma-separated values. Permitted values: &#x60;waf_firewall&#x60; and &#x60;waf_active_rules&#x60;.  | [optional]
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**firewall_version_number** | **Number** | Integer identifying a WAF firewall version. |
+**include** | **String** | Include relationships. Optional, comma-separated values. Permitted values: `waf_firewall` and `waf_active_rules`.  | [optional]
 
 ### Return type
 
@@ -170,7 +168,7 @@ Name | Type | Description  | Notes
 ## `listWafFirewallVersions`
 
 ```javascript
-listWafFirewallVersions({ firewall_id, [include, ], [page_number, ], [page_size] })
+listWafFirewallVersions({ firewall_id, [include, ][page_number, ][page_size] })
 ```
 
 Get a list of firewall versions associated with a specific firewall.
@@ -181,13 +179,13 @@ Get a list of firewall versions associated with a specific firewall.
 const options = {
   firewall_id: "firewall_id_example", // required
   include: waf_firewall,
-  page_number: 56,
+  page_number: 1,
   page_size: 20,
 };
 
 apiInstance.listWafFirewallVersions(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -198,10 +196,10 @@ apiInstance.listWafFirewallVersions(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
 **include** | **String** | Include relationships. Optional. | [optional]
 **page_number** | **Number** | Current page. | [optional]
-**page_size** | **Number** | Number of records per page. | [optional] [default to 20]
+**page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
 
 ### Return type
 
@@ -222,12 +220,12 @@ Update a specific firewall version.
 const options = {
   firewall_id: "firewall_id_example", // required
   firewall_version_number: 56, // required
-  waf_firewall_version: new Fastly.WafFirewallVersion(),
+  waf_firewall_version: {"data":{"type":"waf_firewall_version","attributes":{"notice_anomaly_score":12}}},
 };
 
 apiInstance.updateWafFirewallVersion(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -238,9 +236,9 @@ apiInstance.updateWafFirewallVersion(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** |  |
-**firewall_version_number** | **Number** |  |
-**waf_firewall_version** | [**WafFirewallVersion**](../Model/WafFirewallVersion.md) |  | [optional]
+**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
+**firewall_version_number** | **Number** | Integer identifying a WAF firewall version. |
+**waf_firewall_version** | [**WafFirewallVersion**](WafFirewallVersion.md) |  | [optional]
 
 ### Return type
 

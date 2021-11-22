@@ -36,9 +36,15 @@ var WafTagsResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>WafTagsResponse</code>.
    * @alias module:model/WafTagsResponse
+   * @implements module:model/Pagination
+   * @implements module:model/WafTagsResponseAllOf
    */
   function WafTagsResponse() {
     _classCallCheck(this, WafTagsResponse);
+
+    _Pagination["default"].initialize(this);
+
+    _WafTagsResponseAllOf["default"].initialize(this);
 
     WafTagsResponse.initialize(this);
   }
@@ -65,6 +71,10 @@ var WafTagsResponse = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new WafTagsResponse();
+
+        _Pagination["default"].constructFromObject(data, obj);
+
+        _WafTagsResponseAllOf["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('links')) {
           obj['links'] = _PaginationLinks["default"].constructFromObject(data['links']);
@@ -109,6 +119,28 @@ WafTagsResponse.prototype['data'] = undefined;
  * @member {Array.<module:model/WafRule>} included
  */
 
-WafTagsResponse.prototype['included'] = undefined;
+WafTagsResponse.prototype['included'] = undefined; // Implement Pagination interface:
+
+/**
+ * @member {module:model/PaginationLinks} links
+ */
+
+_Pagination["default"].prototype['links'] = undefined;
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
+
+_Pagination["default"].prototype['meta'] = undefined; // Implement WafTagsResponseAllOf interface:
+
+/**
+ * @member {Array.<module:model/WafTag>} data
+ */
+
+_WafTagsResponseAllOf["default"].prototype['data'] = undefined;
+/**
+ * @member {Array.<module:model/WafRule>} included
+ */
+
+_WafTagsResponseAllOf["default"].prototype['included'] = undefined;
 var _default = WafTagsResponse;
 exports["default"] = _default;

@@ -42,7 +42,7 @@ var VclDiffApi = /*#__PURE__*/function () {
   /**
    * Get a comparison of the VCL changes between two service versions.
    * @param {Object} options
-   * @param {String} options.service_id
+   * @param {String} options.service_id - Alphanumeric string identifying the service.
    * @param {Number} options.from_version_id - The version number of the service to which changes in the generated VCL are being compared. Can either be a positive number from 1 to your maximum version or a negative number from -1 down (-1 is latest version etc).
    * @param {Number} options.to_version_id - The version number of the service from which changes in the generated VCL are being compared. Uses same numbering scheme as `from`.
    * @param {module:model/String} [options.format='text'] - Optional method to format the diff field.
@@ -89,7 +89,7 @@ var VclDiffApi = /*#__PURE__*/function () {
     /**
      * Get a comparison of the VCL changes between two service versions.
      * @param {Object} options
-     * @param {String} options.service_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.from_version_id - The version number of the service to which changes in the generated VCL are being compared. Can either be a positive number from 1 to your maximum version or a negative number from -1 down (-1 is latest version etc).
      * @param {Number} options.to_version_id - The version number of the service from which changes in the generated VCL are being compared. Uses same numbering scheme as `from`.
      * @param {module:model/String} [options.format='text'] - Optional method to format the diff field.

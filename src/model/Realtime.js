@@ -25,6 +25,7 @@ class Realtime {
      * @alias module:model/Realtime
      */
     constructor() { 
+        
         Realtime.initialize(this);
     }
 
@@ -47,14 +48,14 @@ class Realtime {
         if (data) {
             obj = obj || new Realtime();
 
+            if (data.hasOwnProperty('Timestamp')) {
+                obj['Timestamp'] = ApiClient.convertToType(data['Timestamp'], 'Number');
+            }
             if (data.hasOwnProperty('AggregateDelay')) {
                 obj['AggregateDelay'] = ApiClient.convertToType(data['AggregateDelay'], 'Number');
             }
             if (data.hasOwnProperty('Data')) {
                 obj['Data'] = ApiClient.convertToType(data['Data'], [RealtimeEntry]);
-            }
-            if (data.hasOwnProperty('Timestamp')) {
-                obj['Timestamp'] = ApiClient.convertToType(data['Timestamp'], 'Number');
             }
         }
         return obj;
@@ -62,6 +63,11 @@ class Realtime {
 
 
 }
+
+/**
+ * @member {Number} Timestamp
+ */
+Realtime.prototype['Timestamp'] = undefined;
 
 /**
  * How long the system will wait before aggregating messages for each second. The most recent data returned will have happened at the moment of the request, minus the aggregation delay.
@@ -74,11 +80,6 @@ Realtime.prototype['AggregateDelay'] = undefined;
  * @member {Array.<module:model/RealtimeEntry>} Data
  */
 Realtime.prototype['Data'] = undefined;
-
-/**
- * @member {Number} Timestamp
- */
-Realtime.prototype['Timestamp'] = undefined;
 
 
 

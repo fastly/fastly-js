@@ -56,12 +56,12 @@ var ServiceInvitationResponseAllOfData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new ServiceInvitationResponseAllOfData();
 
-        if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _Timestamps["default"].constructFromObject(data['attributes']);
-        }
-
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
+        }
+
+        if (data.hasOwnProperty('attributes')) {
+          obj['attributes'] = _Timestamps["default"].constructFromObject(data['attributes']);
         }
       }
 
@@ -72,16 +72,16 @@ var ServiceInvitationResponseAllOfData = /*#__PURE__*/function () {
   return ServiceInvitationResponseAllOfData;
 }();
 /**
- * @member {module:model/Timestamps} attributes
- */
-
-
-ServiceInvitationResponseAllOfData.prototype['attributes'] = undefined;
-/**
  * Alphanumeric string identifying an invitation.
  * @member {String} id
  */
 
+
 ServiceInvitationResponseAllOfData.prototype['id'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+
+ServiceInvitationResponseAllOfData.prototype['attributes'] = undefined;
 var _default = ServiceInvitationResponseAllOfData;
 exports["default"] = _default;

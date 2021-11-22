@@ -1,6 +1,5 @@
 # Fastly.SnippetApi
 
-
 ```javascript
 const apiInstance = new Fastly.SnippetApi();
 ```
@@ -17,11 +16,10 @@ Method | Fastly API endpoint | Description
 [**updateSnippetDynamic**](SnippetApi.md#updateSnippetDynamic) | **PUT** /service/{service_id}/snippet/{snippet_id} | Update a dynamic snippet
 
 
-
 ## `createSnippet`
 
 ```javascript
-createSnippet({ service_id, version_id, [content, ], [dynamic, ], [name, ], [priority, ], [type] })
+createSnippet({ service_id, version_id, [name, ][dynamic, ][type, ][content, ][priority] })
 ```
 
 Create a snippet for a particular service and version.
@@ -32,16 +30,16 @@ Create a snippet for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  content: "content_example",
-  dynamic: "dynamic_example",
   name: "name_example",
+  dynamic: "0",
+  type: "init",
+  content: "content_example",
   priority: "'100'",
-  type: "type_example",
 };
 
 apiInstance.createSnippet(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -52,13 +50,13 @@ apiInstance.createSnippet(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**content** | **String** | The VCL code that specifies exactly what the snippet does. | [optional]
-**dynamic** | **String** | Sets the snippet version. | [optional]
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 **name** | **String** | The name for the snippet. | [optional]
-**priority** | **String** | Numeric string value. Priority determines execution order. Lower numbers execute first. | [optional] [default to &#39;100&#39;]
-**type** | **String** | The location in generated VCL where the snippet should be placed. | [optional]
+**dynamic** | **String** | Sets the snippet version. | [optional] [one of: "0", "1"]
+**type** | **String** | The location in generated VCL where the snippet should be placed. | [optional] [one of: "init", "recv", "hash", "hit", "miss", "pass", "fetch", "error", "deliver", "log", "none"]
+**content** | **String** | The VCL code that specifies exactly what the snippet does. | [optional]
+**priority** | **String** | Numeric string value. Priority determines execution order. Lower numbers execute first. | [optional] [defaults to '100']
 
 ### Return type
 
@@ -84,7 +82,7 @@ const options = {
 
 apiInstance.deleteSnippet(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -95,9 +93,9 @@ apiInstance.deleteSnippet(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**snippet_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**snippet_name** | **String** | The name for the snippet. |
 
 ### Return type
 
@@ -123,7 +121,7 @@ const options = {
 
 apiInstance.getSnippet(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -134,9 +132,9 @@ apiInstance.getSnippet(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**snippet_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**snippet_name** | **String** | The name for the snippet. |
 
 ### Return type
 
@@ -161,7 +159,7 @@ const options = {
 
 apiInstance.getSnippetDynamic(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -172,8 +170,8 @@ apiInstance.getSnippetDynamic(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**snippet_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**snippet_id** | **String** | Alphanumeric string identifying a VCL Snippet. |
 
 ### Return type
 
@@ -198,7 +196,7 @@ const options = {
 
 apiInstance.listSnippets(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -209,8 +207,8 @@ apiInstance.listSnippets(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -236,7 +234,7 @@ const options = {
 
 apiInstance.updateSnippet(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -247,9 +245,9 @@ apiInstance.updateSnippet(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**snippet_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**snippet_name** | **String** | The name for the snippet. |
 
 ### Return type
 
@@ -259,7 +257,7 @@ Name | Type | Description  | Notes
 ## `updateSnippetDynamic`
 
 ```javascript
-updateSnippetDynamic({ service_id, snippet_id, [content, ], [dynamic, ], [name, ], [priority, ], [type] })
+updateSnippetDynamic({ service_id, snippet_id, [name, ][dynamic, ][type, ][content, ][priority] })
 ```
 
 Update a dynamic snippet for a particular service.
@@ -270,16 +268,16 @@ Update a dynamic snippet for a particular service.
 const options = {
   service_id: "service_id_example", // required
   snippet_id: "snippet_id_example", // required
-  content: "content_example",
-  dynamic: "dynamic_example",
   name: "name_example",
+  dynamic: "0",
+  type: "init",
+  content: "content_example",
   priority: "'100'",
-  type: "type_example",
 };
 
 apiInstance.updateSnippetDynamic(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -290,13 +288,13 @@ apiInstance.updateSnippetDynamic(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**snippet_id** | **String** |  |
-**content** | **String** | The VCL code that specifies exactly what the snippet does. | [optional]
-**dynamic** | **String** | Sets the snippet version. | [optional]
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**snippet_id** | **String** | Alphanumeric string identifying a VCL Snippet. |
 **name** | **String** | The name for the snippet. | [optional]
-**priority** | **String** | Numeric string value. Priority determines execution order. Lower numbers execute first. | [optional] [default to &#39;100&#39;]
-**type** | **String** | The location in generated VCL where the snippet should be placed. | [optional]
+**dynamic** | **String** | Sets the snippet version. | [optional] [one of: "0", "1"]
+**type** | **String** | The location in generated VCL where the snippet should be placed. | [optional] [one of: "init", "recv", "hash", "hit", "miss", "pass", "fetch", "error", "deliver", "log", "none"]
+**content** | **String** | The VCL code that specifies exactly what the snippet does. | [optional]
+**priority** | **String** | Numeric string value. Priority determines execution order. Lower numbers execute first. | [optional] [defaults to '100']
 
 ### Return type
 

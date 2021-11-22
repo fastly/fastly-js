@@ -24,6 +24,7 @@ class BackendResponseAllOf {
      * @alias module:model/BackendResponseAllOf
      */
     constructor() { 
+        
         BackendResponseAllOf.initialize(this);
     }
 

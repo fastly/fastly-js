@@ -34,9 +34,15 @@ var InvitationsResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>InvitationsResponse</code>.
    * @alias module:model/InvitationsResponse
+   * @implements module:model/Pagination
+   * @implements module:model/InvitationsResponseAllOf
    */
   function InvitationsResponse() {
     _classCallCheck(this, InvitationsResponse);
+
+    _Pagination["default"].initialize(this);
+
+    _InvitationsResponseAllOf["default"].initialize(this);
 
     InvitationsResponse.initialize(this);
   }
@@ -63,6 +69,10 @@ var InvitationsResponse = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new InvitationsResponse();
+
+        _Pagination["default"].constructFromObject(data, obj);
+
+        _InvitationsResponseAllOf["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('links')) {
           obj['links'] = _PaginationLinks["default"].constructFromObject(data['links']);
@@ -98,6 +108,23 @@ InvitationsResponse.prototype['meta'] = undefined;
  * @member {Array.<module:model/InvitationResponseData>} data
  */
 
-InvitationsResponse.prototype['data'] = undefined;
+InvitationsResponse.prototype['data'] = undefined; // Implement Pagination interface:
+
+/**
+ * @member {module:model/PaginationLinks} links
+ */
+
+_Pagination["default"].prototype['links'] = undefined;
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
+
+_Pagination["default"].prototype['meta'] = undefined; // Implement InvitationsResponseAllOf interface:
+
+/**
+ * @member {Array.<module:model/InvitationResponseData>} data
+ */
+
+_InvitationsResponseAllOf["default"].prototype['data'] = undefined;
 var _default = InvitationsResponse;
 exports["default"] = _default;

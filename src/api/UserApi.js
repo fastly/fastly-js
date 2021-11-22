@@ -42,10 +42,10 @@ export default class UserApi {
     /**
      * Create a user.
      * @param {Object} options
-     * @param {Boolean} [options.limit_services] - Indicates that the user has limited access to the customer's services.
-     * @param {Boolean} [options.locked] - Indicates whether the is account is locked for editing or not.
      * @param {String} [options.login] - The login associated with the user (typically, an email address).
      * @param {String} [options.name] - The real life name of the user.
+     * @param {Boolean} [options.limit_services] - Indicates that the user has limited access to the customer's services.
+     * @param {Boolean} [options.locked] - Indicates whether the is account is locked for editing or not.
      * @param {Boolean} [options.require_new_password] - Indicates if a new password is required at next login.
      * @param {module:model/RoleUser} [options.role]
      * @param {Boolean} [options.two_factor_auth_enabled] - Indicates if 2FA is enabled on the user.
@@ -62,10 +62,10 @@ export default class UserApi {
       let headerParams = {
       };
       let formParams = {
-        'limit_services': options['limit_services'],
-        'locked': options['locked'],
         'login': options['login'],
         'name': options['name'],
+        'limit_services': options['limit_services'],
+        'locked': options['locked'],
         'require_new_password': options['require_new_password'],
         'role': options['role'],
         'two_factor_auth_enabled': options['two_factor_auth_enabled'],
@@ -86,10 +86,10 @@ export default class UserApi {
     /**
      * Create a user.
      * @param {Object} options
-     * @param {Boolean} [options.limit_services] - Indicates that the user has limited access to the customer's services.
-     * @param {Boolean} [options.locked] - Indicates whether the is account is locked for editing or not.
      * @param {String} [options.login] - The login associated with the user (typically, an email address).
      * @param {String} [options.name] - The real life name of the user.
+     * @param {Boolean} [options.limit_services] - Indicates that the user has limited access to the customer's services.
+     * @param {Boolean} [options.locked] - Indicates whether the is account is locked for editing or not.
      * @param {Boolean} [options.require_new_password] - Indicates if a new password is required at next login.
      * @param {module:model/RoleUser} [options.role]
      * @param {Boolean} [options.two_factor_auth_enabled] - Indicates if 2FA is enabled on the user.
@@ -106,7 +106,7 @@ export default class UserApi {
     /**
      * Delete a user.
      * @param {Object} options
-     * @param {String} options.user_id
+     * @param {String} options.user_id - Alphanumeric string identifying the user.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     deleteUserWithHttpInfo(options = {}) {
@@ -140,7 +140,7 @@ export default class UserApi {
     /**
      * Delete a user.
      * @param {Object} options
-     * @param {String} options.user_id
+     * @param {String} options.user_id - Alphanumeric string identifying the user.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     deleteUser(options = {}) {
@@ -193,7 +193,7 @@ export default class UserApi {
     /**
      * Get a specific user.
      * @param {Object} options
-     * @param {String} options.user_id
+     * @param {String} options.user_id - Alphanumeric string identifying the user.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResponse} and HTTP response
      */
     getUserWithHttpInfo(options = {}) {
@@ -227,7 +227,7 @@ export default class UserApi {
     /**
      * Get a specific user.
      * @param {Object} options
-     * @param {String} options.user_id
+     * @param {String} options.user_id - Alphanumeric string identifying the user.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResponse}
      */
     getUser(options = {}) {
@@ -240,7 +240,7 @@ export default class UserApi {
     /**
      * Requests a password reset for the specified user.
      * @param {Object} options
-     * @param {String} options.user_login
+     * @param {String} options.user_login - The login associated with the user (typically, an email address).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
     requestPasswordResetWithHttpInfo(options = {}) {
@@ -274,7 +274,7 @@ export default class UserApi {
     /**
      * Requests a password reset for the specified user.
      * @param {Object} options
-     * @param {String} options.user_login
+     * @param {String} options.user_login - The login associated with the user (typically, an email address).
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
     requestPasswordReset(options = {}) {
@@ -287,11 +287,11 @@ export default class UserApi {
     /**
      * Update a user. Only users with the role of `superuser` can make changes to other users on the account. Non-superusers may use this endpoint to make changes to their own account. Modifications to `login` email require a valid password in the request body. Two-factor attributes are not editable via this endpoint.
      * @param {Object} options
-     * @param {String} options.user_id
-     * @param {Boolean} [options.limit_services] - Indicates that the user has limited access to the customer's services.
-     * @param {Boolean} [options.locked] - Indicates whether the is account is locked for editing or not.
+     * @param {String} options.user_id - Alphanumeric string identifying the user.
      * @param {String} [options.login] - The login associated with the user (typically, an email address).
      * @param {String} [options.name] - The real life name of the user.
+     * @param {Boolean} [options.limit_services] - Indicates that the user has limited access to the customer's services.
+     * @param {Boolean} [options.locked] - Indicates whether the is account is locked for editing or not.
      * @param {Boolean} [options.require_new_password] - Indicates if a new password is required at next login.
      * @param {module:model/RoleUser} [options.role]
      * @param {Boolean} [options.two_factor_auth_enabled] - Indicates if 2FA is enabled on the user.
@@ -313,10 +313,10 @@ export default class UserApi {
       let headerParams = {
       };
       let formParams = {
-        'limit_services': options['limit_services'],
-        'locked': options['locked'],
         'login': options['login'],
         'name': options['name'],
+        'limit_services': options['limit_services'],
+        'locked': options['locked'],
         'require_new_password': options['require_new_password'],
         'role': options['role'],
         'two_factor_auth_enabled': options['two_factor_auth_enabled'],
@@ -337,11 +337,11 @@ export default class UserApi {
     /**
      * Update a user. Only users with the role of `superuser` can make changes to other users on the account. Non-superusers may use this endpoint to make changes to their own account. Modifications to `login` email require a valid password in the request body. Two-factor attributes are not editable via this endpoint.
      * @param {Object} options
-     * @param {String} options.user_id
-     * @param {Boolean} [options.limit_services] - Indicates that the user has limited access to the customer's services.
-     * @param {Boolean} [options.locked] - Indicates whether the is account is locked for editing or not.
+     * @param {String} options.user_id - Alphanumeric string identifying the user.
      * @param {String} [options.login] - The login associated with the user (typically, an email address).
      * @param {String} [options.name] - The real life name of the user.
+     * @param {Boolean} [options.limit_services] - Indicates that the user has limited access to the customer's services.
+     * @param {Boolean} [options.locked] - Indicates whether the is account is locked for editing or not.
      * @param {Boolean} [options.require_new_password] - Indicates if a new password is required at next login.
      * @param {module:model/RoleUser} [options.role]
      * @param {Boolean} [options.two_factor_auth_enabled] - Indicates if 2FA is enabled on the user.
@@ -358,8 +358,8 @@ export default class UserApi {
     /**
      * Update the user's password to a new one.
      * @param {Object} options
-     * @param {String} [options.new_password] - The user's new password.
      * @param {String} [options.old_password] - The user's current password.
+     * @param {String} [options.new_password] - The user's new password.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/UserResponse} and HTTP response
      */
     updateUserPasswordWithHttpInfo(options = {}) {
@@ -372,8 +372,8 @@ export default class UserApi {
       let headerParams = {
       };
       let formParams = {
-        'new_password': options['new_password'],
-        'old_password': options['old_password']
+        'old_password': options['old_password'],
+        'new_password': options['new_password']
       };
 
       let authNames = [];
@@ -390,8 +390,8 @@ export default class UserApi {
     /**
      * Update the user's password to a new one.
      * @param {Object} options
-     * @param {String} [options.new_password] - The user's new password.
      * @param {String} [options.old_password] - The user's current password.
+     * @param {String} [options.new_password] - The user's new password.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/UserResponse}
      */
     updateUserPassword(options = {}) {

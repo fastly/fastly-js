@@ -32,9 +32,15 @@ var IncludedWithWafExclusionItem = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>IncludedWithWafExclusionItem</code>.
    * @alias module:model/IncludedWithWafExclusionItem
+   * @implements module:model/WafRule
+   * @implements module:model/WafRuleRevision
    */
   function IncludedWithWafExclusionItem() {
     _classCallCheck(this, IncludedWithWafExclusionItem);
+
+    _WafRule["default"].initialize(this);
+
+    _WafRuleRevision["default"].initialize(this);
 
     IncludedWithWafExclusionItem.initialize(this);
   }
@@ -62,16 +68,20 @@ var IncludedWithWafExclusionItem = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new IncludedWithWafExclusionItem();
 
-        if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _WafRuleRevisionAttributes["default"].constructFromObject(data['attributes']);
+        _WafRule["default"].constructFromObject(data, obj);
+
+        _WafRuleRevision["default"].constructFromObject(data, obj);
+
+        if (data.hasOwnProperty('type')) {
+          obj['type'] = _TypeWafRuleRevision["default"].constructFromObject(data['type']);
         }
 
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
 
-        if (data.hasOwnProperty('type')) {
-          obj['type'] = _TypeWafRuleRevision["default"].constructFromObject(data['type']);
+        if (data.hasOwnProperty('attributes')) {
+          obj['attributes'] = _WafRuleRevisionAttributes["default"].constructFromObject(data['attributes']);
         }
       }
 
@@ -82,11 +92,11 @@ var IncludedWithWafExclusionItem = /*#__PURE__*/function () {
   return IncludedWithWafExclusionItem;
 }();
 /**
- * @member {module:model/WafRuleRevisionAttributes} attributes
+ * @member {module:model/TypeWafRuleRevision} type
  */
 
 
-IncludedWithWafExclusionItem.prototype['attributes'] = undefined;
+IncludedWithWafExclusionItem.prototype['type'] = undefined;
 /**
  * Alphanumeric string identifying a WAF rule revision.
  * @member {String} id
@@ -94,9 +104,43 @@ IncludedWithWafExclusionItem.prototype['attributes'] = undefined;
 
 IncludedWithWafExclusionItem.prototype['id'] = undefined;
 /**
+ * @member {module:model/WafRuleRevisionAttributes} attributes
+ */
+
+IncludedWithWafExclusionItem.prototype['attributes'] = undefined; // Implement WafRule interface:
+
+/**
+ * @member {module:model/TypeWafRule} type
+ */
+
+_WafRule["default"].prototype['type'] = undefined;
+/**
+ * Alphanumeric string identifying a WAF rule.
+ * @member {String} id
+ */
+
+_WafRule["default"].prototype['id'] = undefined;
+/**
+ * @member {module:model/WafRuleAttributes} attributes
+ */
+
+_WafRule["default"].prototype['attributes'] = undefined; // Implement WafRuleRevision interface:
+
+/**
  * @member {module:model/TypeWafRuleRevision} type
  */
 
-IncludedWithWafExclusionItem.prototype['type'] = undefined;
+_WafRuleRevision["default"].prototype['type'] = undefined;
+/**
+ * Alphanumeric string identifying a WAF rule revision.
+ * @member {String} id
+ */
+
+_WafRuleRevision["default"].prototype['id'] = undefined;
+/**
+ * @member {module:model/WafRuleRevisionAttributes} attributes
+ */
+
+_WafRuleRevision["default"].prototype['attributes'] = undefined;
 var _default = IncludedWithWafExclusionItem;
 exports["default"] = _default;

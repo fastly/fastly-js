@@ -26,6 +26,7 @@ class WafFirewallVersionResponseDataAllOf {
      * @alias module:model/WafFirewallVersionResponseDataAllOf
      */
     constructor() { 
+        
         WafFirewallVersionResponseDataAllOf.initialize(this);
     }
 
@@ -48,11 +49,11 @@ class WafFirewallVersionResponseDataAllOf {
         if (data) {
             obj = obj || new WafFirewallVersionResponseDataAllOf();
 
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = RelationshipsForWafFirewallVersion.constructFromObject(data['relationships']);
@@ -65,15 +66,15 @@ class WafFirewallVersionResponseDataAllOf {
 }
 
 /**
- * @member {module:model/Timestamps} attributes
- */
-WafFirewallVersionResponseDataAllOf.prototype['attributes'] = undefined;
-
-/**
  * Alphanumeric string identifying a Firewall version.
  * @member {String} id
  */
 WafFirewallVersionResponseDataAllOf.prototype['id'] = undefined;
+
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+WafFirewallVersionResponseDataAllOf.prototype['attributes'] = undefined;
 
 /**
  * @member {module:model/RelationshipsForWafFirewallVersion} relationships

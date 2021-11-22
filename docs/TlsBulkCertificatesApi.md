@@ -1,6 +1,5 @@
 # Fastly.TlsBulkCertificatesApi
 
-
 ```javascript
 const apiInstance = new Fastly.TlsBulkCertificatesApi();
 ```
@@ -13,7 +12,6 @@ Method | Fastly API endpoint | Description
 [**listTlsBulkCerts**](TlsBulkCertificatesApi.md#listTlsBulkCerts) | **GET** /tls/bulk/certificates | List certificates
 [**updateBulkTlsCert**](TlsBulkCertificatesApi.md#updateBulkTlsCert) | **PATCH** /tls/bulk/certificates/{certificate_id} | Update a certificate
 [**uploadTlsBulkCert**](TlsBulkCertificatesApi.md#uploadTlsBulkCert) | **POST** /tls/bulk/certificates | Upload a certificate
-
 
 
 ## `deleteBulkTlsCert`
@@ -44,7 +42,7 @@ apiInstance.deleteBulkTlsCert(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**certificate_id** | **String** |  |
+**certificate_id** | **String** | Alphanumeric string identifying a TLS bulk certificate. |
 
 ### Return type
 
@@ -68,7 +66,7 @@ const options = {
 
 apiInstance.getTlsBulkCert(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -79,7 +77,7 @@ apiInstance.getTlsBulkCert(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**certificate_id** | **String** |  |
+**certificate_id** | **String** | Alphanumeric string identifying a TLS bulk certificate. |
 
 ### Return type
 
@@ -89,7 +87,7 @@ Name | Type | Description  | Notes
 ## `listTlsBulkCerts`
 
 ```javascript
-listTlsBulkCerts({ [filter_tls_domain_id_match, ][page_number, ][page_size, ][sort] })
+listTlsBulkCerts({ , [filter_tls_domain_id_match, ][page_number, ][page_size, ][sort] })
 ```
 
 List all certificates.
@@ -99,14 +97,14 @@ List all certificates.
 ```javascript
 const options = {
   filter_tls_domain_id_match: "filter_tls_domain_id_match_example",
-  page_number: 56,
+  page_number: 1,
   page_size: 20,
-  sort: "'created_at'",
+  sort: "created_at",
 };
 
 apiInstance.listTlsBulkCerts(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -119,8 +117,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter_tls_domain_id_match** | **String** | Filter certificates by their matching, fully-qualified domain name. Returns all partial matches. Must provide a value longer than 3 characters. | [optional]
 **page_number** | **Number** | Current page. | [optional]
-**page_size** | **Number** | Number of records per page. | [optional] [default to 20]
-**sort** | **String** | The order in which to list the results by creation date. | [optional] [default to &#39;created_at&#39;]
+**page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
+**sort** | **String** | The order in which to list the results by creation date. | [optional] [one of: "created_at", "-created_at"]
 
 ### Return type
 
@@ -140,12 +138,12 @@ Replace a certificate with a newly reissued certificate. By using this endpoint,
 ```javascript
 const options = {
   certificate_id: "certificate_id_example", // required
-  tls_bulk_certificate: new Fastly.TlsBulkCertificate(),
+  tls_bulk_certificate: {"data":{"id":"cRTguUGZzb2W9Euo4moOr","type":"tls_bulk_certificate","attributes":{"allow_untrusted_root":false,"cert_blob":"-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n","intermediates_blob":"-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n"}}},
 };
 
 apiInstance.updateBulkTlsCert(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -156,8 +154,8 @@ apiInstance.updateBulkTlsCert(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**certificate_id** | **String** |  |
-**tls_bulk_certificate** | [**TlsBulkCertificate**](../Model/TlsBulkCertificate.md) |  | [optional]
+**certificate_id** | **String** | Alphanumeric string identifying a TLS bulk certificate. |
+**tls_bulk_certificate** | [**TlsBulkCertificate**](TlsBulkCertificate.md) |  | [optional]
 
 ### Return type
 
@@ -167,7 +165,7 @@ Name | Type | Description  | Notes
 ## `uploadTlsBulkCert`
 
 ```javascript
-uploadTlsBulkCert({ [tls_bulk_certificate] })
+uploadTlsBulkCert({ , [tls_bulk_certificate] })
 ```
 
 Upload a new certificate. TLS domains are automatically enabled upon certificate creation. If a domain is already enabled on a previously uploaded certificate, that domain will be updated to use the new certificate for all future TLS handshake requests.
@@ -176,12 +174,12 @@ Upload a new certificate. TLS domains are automatically enabled upon certificate
 
 ```javascript
 const options = {
-  tls_bulk_certificate: new Fastly.TlsBulkCertificate(),
+  tls_bulk_certificate: {"data":{"type":"tls_bulk_certificate","attributes":{"allow_untrusted_root":false,"cert_blob":"-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n","intermediates_blob":"-----BEGIN CERTIFICATE-----\n...\n-----END CERTIFICATE-----\n"},"relationships":{"tls_configurations":{"data":[{"type":"tls_configuration","id":"t7CguUGZzb2W9Euo5FoKa"}]}}}},
 };
 
 apiInstance.uploadTlsBulkCert(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -192,7 +190,7 @@ apiInstance.uploadTlsBulkCert(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_bulk_certificate** | [**TlsBulkCertificate**](../Model/TlsBulkCertificate.md) |  | [optional]
+**tls_bulk_certificate** | [**TlsBulkCertificate**](TlsBulkCertificate.md) |  | [optional]
 
 ### Return type
 

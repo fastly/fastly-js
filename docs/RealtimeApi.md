@@ -1,6 +1,5 @@
 # Fastly.RealtimeApi
 
-
 ```javascript
 const apiInstance = new Fastly.RealtimeApi();
 ```
@@ -11,7 +10,6 @@ Method | Fastly API endpoint | Description
 [**getStatsLast120Seconds**](RealtimeApi.md#getStatsLast120Seconds) | **GET** /v1/channel/{service_id}/ts/h | Get real-time data for the last 120 seconds
 [**getStatsLast120SecondsLimitEntries**](RealtimeApi.md#getStatsLast120SecondsLimitEntries) | **GET** /v1/channel/{service_id}/ts/h/limit/{max_entries} | Get a limited number of real-time data entries
 [**getStatsLastSecond**](RealtimeApi.md#getStatsLastSecond) | **GET** /v1/channel/{service_id}/ts/{timestamp_in_seconds} | Get real-time data for the last second
-
 
 
 ## `getStatsLast120Seconds`
@@ -31,7 +29,7 @@ const options = {
 
 apiInstance.getStatsLast120Seconds(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -42,7 +40,7 @@ apiInstance.getStatsLast120Seconds(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
 
 ### Return type
 
@@ -67,7 +65,7 @@ const options = {
 
 apiInstance.getStatsLast120SecondsLimitEntries(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -78,7 +76,7 @@ apiInstance.getStatsLast120SecondsLimitEntries(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
 **max_entries** | **Number** | Maximum number of results to show. |
 
 ### Return type
@@ -104,7 +102,7 @@ const options = {
 
 apiInstance.getStatsLastSecond(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -115,7 +113,7 @@ apiInstance.getStatsLastSecond(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
 **timestamp_in_seconds** | **Number** | Timestamp in seconds (Unix epoch time). |
 
 ### Return type

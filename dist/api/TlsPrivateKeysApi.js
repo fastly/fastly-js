@@ -84,7 +84,7 @@ var TlsPrivateKeysApi = /*#__PURE__*/function () {
     /**
      * Destroy a TLS private key. Only private keys not already matched to any certificates can be deleted.
      * @param {Object} options
-     * @param {String} options.tls_private_key_id
+     * @param {String} options.tls_private_key_id - Alphanumeric string identifying a private Key.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
 
@@ -113,7 +113,7 @@ var TlsPrivateKeysApi = /*#__PURE__*/function () {
     /**
      * Destroy a TLS private key. Only private keys not already matched to any certificates can be deleted.
      * @param {Object} options
-     * @param {String} options.tls_private_key_id
+     * @param {String} options.tls_private_key_id - Alphanumeric string identifying a private Key.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
 
@@ -128,7 +128,7 @@ var TlsPrivateKeysApi = /*#__PURE__*/function () {
     /**
      * Show a TLS private key.
      * @param {Object} options
-     * @param {String} options.tls_private_key_id
+     * @param {String} options.tls_private_key_id - Alphanumeric string identifying a private Key.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsPrivateKeyResponse} and HTTP response
      */
 
@@ -157,7 +157,7 @@ var TlsPrivateKeysApi = /*#__PURE__*/function () {
     /**
      * Show a TLS private key.
      * @param {Object} options
-     * @param {String} options.tls_private_key_id
+     * @param {String} options.tls_private_key_id - Alphanumeric string identifying a private Key.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsPrivateKeyResponse}
      */
 

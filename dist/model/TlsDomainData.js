@@ -62,12 +62,12 @@ var TlsDomainData = /*#__PURE__*/function () {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
 
-        if (data.hasOwnProperty('relationships')) {
-          obj['relationships'] = _RelationshipsForTlsDomain["default"].constructFromObject(data['relationships']);
-        }
-
         if (data.hasOwnProperty('type')) {
           obj['type'] = _TypeTlsDomain["default"].constructFromObject(data['type']);
+        }
+
+        if (data.hasOwnProperty('relationships')) {
+          obj['relationships'] = _RelationshipsForTlsDomain["default"].constructFromObject(data['relationships']);
         }
       }
 
@@ -85,14 +85,14 @@ var TlsDomainData = /*#__PURE__*/function () {
 
 TlsDomainData.prototype['id'] = undefined;
 /**
- * @member {module:model/RelationshipsForTlsDomain} relationships
- */
-
-TlsDomainData.prototype['relationships'] = undefined;
-/**
  * @member {module:model/TypeTlsDomain} type
  */
 
 TlsDomainData.prototype['type'] = undefined;
+/**
+ * @member {module:model/RelationshipsForTlsDomain} relationships
+ */
+
+TlsDomainData.prototype['relationships'] = undefined;
 var _default = TlsDomainData;
 exports["default"] = _default;

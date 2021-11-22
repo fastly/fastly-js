@@ -32,9 +32,15 @@ var RelationshipsForWafActiveRule = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>RelationshipsForWafActiveRule</code>.
    * @alias module:model/RelationshipsForWafActiveRule
+   * @implements module:model/RelationshipWafFirewallVersion
+   * @implements module:model/RelationshipWafRuleRevision
    */
   function RelationshipsForWafActiveRule() {
     _classCallCheck(this, RelationshipsForWafActiveRule);
+
+    _RelationshipWafFirewallVersion["default"].initialize(this);
+
+    _RelationshipWafRuleRevision["default"].initialize(this);
 
     RelationshipsForWafActiveRule.initialize(this);
   }
@@ -62,6 +68,10 @@ var RelationshipsForWafActiveRule = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new RelationshipsForWafActiveRule();
 
+        _RelationshipWafFirewallVersion["default"].constructFromObject(data, obj);
+
+        _RelationshipWafRuleRevision["default"].constructFromObject(data, obj);
+
         if (data.hasOwnProperty('waf_firewall_version')) {
           obj['waf_firewall_version'] = _RelationshipWafFirewallVersionWafFirewallVersion["default"].constructFromObject(data['waf_firewall_version']);
         }
@@ -87,6 +97,18 @@ RelationshipsForWafActiveRule.prototype['waf_firewall_version'] = undefined;
  * @member {module:model/RelationshipWafRuleRevisionWafRuleRevisions} waf_rule_revisions
  */
 
-RelationshipsForWafActiveRule.prototype['waf_rule_revisions'] = undefined;
+RelationshipsForWafActiveRule.prototype['waf_rule_revisions'] = undefined; // Implement RelationshipWafFirewallVersion interface:
+
+/**
+ * @member {module:model/RelationshipWafFirewallVersionWafFirewallVersion} waf_firewall_version
+ */
+
+_RelationshipWafFirewallVersion["default"].prototype['waf_firewall_version'] = undefined; // Implement RelationshipWafRuleRevision interface:
+
+/**
+ * @member {module:model/RelationshipWafRuleRevisionWafRuleRevisions} waf_rule_revisions
+ */
+
+_RelationshipWafRuleRevision["default"].prototype['waf_rule_revisions'] = undefined;
 var _default = RelationshipsForWafActiveRule;
 exports["default"] = _default;

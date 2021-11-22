@@ -1,6 +1,5 @@
 # Fastly.LoggingSftpApi
 
-
 ```javascript
 const apiInstance = new Fastly.LoggingSftpApi();
 ```
@@ -15,11 +14,10 @@ Method | Fastly API endpoint | Description
 [**updateLogSftp**](LoggingSftpApi.md#updateLogSftp) | **PUT** /service/{service_id}/version/{version_id}/logging/sftp/{logging_sftp_name} | Update an SFTP log endpoint
 
 
-
 ## `createLogSftp`
 
 ```javascript
-createLogSftp({ service_id, version_id, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [address, ], [port, ], [password, ], [path, ], [public_key, ], [secret_key, ], [ssh_known_hosts, ], [user] })
+createLogSftp({ service_id, version_id, [name, ][placement, ][format_version, ][response_condition, ][format, ][message_type, ][timestamp_format, ][period, ][gzip_level, ][compression_codec, ][address, ][port, ][password, ][path, ][public_key, ][secret_key, ][ssh_known_hosts, ][user] })
 ```
 
 Create a SFTP for a particular service and version.
@@ -30,16 +28,16 @@ Create a SFTP for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
-  format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
-  placement: new Fastly.LoggingPlacement(),
+  placement: "none",
+  format_version: 1,
   response_condition: "response_condition_example",
-  compression_codec: new Fastly.LoggingCompressionCodec(),
-  gzip_level: 0,
-  message_type: new Fastly.LoggingMessageType(),
-  period: 3600,
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  message_type: "classic",
   timestamp_format: "timestamp_format_example",
+  period: 3600,
+  gzip_level: 0,
+  compression_codec: "zstd",
   address: "address_example",
   port: null,
   password: "password_example",
@@ -52,7 +50,7 @@ const options = {
 
 apiInstance.createLogSftp(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -63,24 +61,24 @@ apiInstance.createLogSftp(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 **name** | **String** | The name for the real-time logging configuration. | [optional]
-**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
+**placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] [one of: "none", "waf_debug", "null"]
+**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.   | [optional] [one of: 1, 2]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**compression_codec** | [**LoggingCompressionCodec**](../Model/LoggingCompressionCodec.md) |  | [optional]
-**gzip_level** | **Number** | What level of gzip encoding to have when sending logs (default &#x60;0&#x60;, no compression). If an explicit non-zero value is set, then &#x60;compression_codec&#x60; will default to \\\&quot;gzip.\\\&quot; Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error. | [optional] [default to 0]
-**message_type** | [**LoggingMessageType**](../Model/LoggingMessageType.md) |  | [optional]
-**period** | **Number** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [default to 3600]
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [defaults to '%h %l %u %t "%r" %&gt;s %b']
+**message_type** | **String** | How the message should be formatted. | [optional] [one of: "classic", "loggly", "logplex", "blank"]
 **timestamp_format** | **String** | Date and time in ISO 8601 format. | [optional]
+**period** | **Number** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [defaults to 3600]
+**gzip_level** | **Number** | What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\&quot;gzip.\\\&quot; Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [optional] [defaults to 0]
+**compression_codec** | **String** | The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \\\&quot;gzip\\\&quot;, `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [optional] [one of: "zstd", "snappy", "gzip"]
 **address** | **String** | A hostname or IPv4 address. | [optional]
-**port** | [**Object**](../Model/Object.md) | The port number. | [optional]
-**password** | **String** | The password for the server. If both &#x60;password&#x60; and &#x60;secret_key&#x60; are passed, &#x60;secret_key&#x60; will be used in preference. | [optional]
-**path** | **String** | The path to upload logs to. | [optional] [default to &#39;null&#39;]
-**public_key** | **String** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional] [default to &#39;null&#39;]
-**secret_key** | **String** | The SSH private key for the server. If both &#x60;password&#x60; and &#x60;secret_key&#x60; are passed, &#x60;secret_key&#x60; will be used in preference. | [optional] [default to &#39;null&#39;]
+**port** | [**Object**](Object.md) | The port number. | [optional]
+**password** | **String** | The password for the server. If both `password` and `secret_key` are passed, `secret_key` will be used in preference. | [optional]
+**path** | **String** | The path to upload logs to. | [optional] [defaults to 'null']
+**public_key** | **String** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional] [defaults to 'null']
+**secret_key** | **String** | The SSH private key for the server. If both `password` and `secret_key` are passed, `secret_key` will be used in preference. | [optional] [defaults to 'null']
 **ssh_known_hosts** | **String** | A list of host keys for all hosts we can connect to over SFTP. | [optional]
 **user** | **String** | The username for the server. | [optional]
 
@@ -108,7 +106,7 @@ const options = {
 
 apiInstance.deleteLogSftp(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -119,9 +117,9 @@ apiInstance.deleteLogSftp(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**logging_sftp_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**logging_sftp_name** | **String** | The name for the real-time logging configuration. |
 
 ### Return type
 
@@ -147,7 +145,7 @@ const options = {
 
 apiInstance.getLogSftp(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -158,9 +156,9 @@ apiInstance.getLogSftp(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**logging_sftp_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**logging_sftp_name** | **String** | The name for the real-time logging configuration. |
 
 ### Return type
 
@@ -185,7 +183,7 @@ const options = {
 
 apiInstance.listLogSftp(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -196,8 +194,8 @@ apiInstance.listLogSftp(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -207,7 +205,7 @@ Name | Type | Description  | Notes
 ## `updateLogSftp`
 
 ```javascript
-updateLogSftp({ service_id, version_id, logging_sftp_name, [format, ], [format_version, ], [name, ], [placement, ], [response_condition, ], [compression_codec, ], [gzip_level, ], [message_type, ], [period, ], [timestamp_format, ], [address, ], [port, ], [password, ], [path, ], [public_key, ], [secret_key, ], [ssh_known_hosts, ], [user] })
+updateLogSftp({ service_id, version_id, logging_sftp_name, [name, ][placement, ][format_version, ][response_condition, ][format, ][message_type, ][timestamp_format, ][period, ][gzip_level, ][compression_codec, ][address, ][port, ][password, ][path, ][public_key, ][secret_key, ][ssh_known_hosts, ][user] })
 ```
 
 Update the SFTP for a particular service and version.
@@ -219,16 +217,16 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   logging_sftp_name: "logging_sftp_name_example", // required
-  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
-  format_version: new Fastly.LoggingFormatVersion(),
   name: "name_example",
-  placement: new Fastly.LoggingPlacement(),
+  placement: "none",
+  format_version: 1,
   response_condition: "response_condition_example",
-  compression_codec: new Fastly.LoggingCompressionCodec(),
-  gzip_level: 0,
-  message_type: new Fastly.LoggingMessageType(),
-  period: 3600,
+  format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  message_type: "classic",
   timestamp_format: "timestamp_format_example",
+  period: 3600,
+  gzip_level: 0,
+  compression_codec: "zstd",
   address: "address_example",
   port: null,
   password: "password_example",
@@ -241,7 +239,7 @@ const options = {
 
 apiInstance.updateLogSftp(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -252,25 +250,25 @@ apiInstance.updateLogSftp(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**logging_sftp_name** | **String** |  |
-**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [default to &#39;%h %l %u %t &quot;%r&quot; %&amp;gt;s %b&#39;]
-**format_version** | [**LoggingFormatVersion**](../Model/LoggingFormatVersion.md) |  | [optional]
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**logging_sftp_name** | **String** | The name for the real-time logging configuration. |
 **name** | **String** | The name for the real-time logging configuration. | [optional]
-**placement** | [**LoggingPlacement**](../Model/LoggingPlacement.md) |  | [optional]
+**placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] [one of: "none", "waf_debug", "null"]
+**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.   | [optional] [one of: 1, 2]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
-**compression_codec** | [**LoggingCompressionCodec**](../Model/LoggingCompressionCodec.md) |  | [optional]
-**gzip_level** | **Number** | What level of gzip encoding to have when sending logs (default &#x60;0&#x60;, no compression). If an explicit non-zero value is set, then &#x60;compression_codec&#x60; will default to \\\&quot;gzip.\\\&quot; Specifying both &#x60;compression_codec&#x60; and &#x60;gzip_level&#x60; in the same API request will result in an error. | [optional] [default to 0]
-**message_type** | [**LoggingMessageType**](../Model/LoggingMessageType.md) |  | [optional]
-**period** | **Number** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [default to 3600]
+**format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [defaults to '%h %l %u %t "%r" %&gt;s %b']
+**message_type** | **String** | How the message should be formatted. | [optional] [one of: "classic", "loggly", "logplex", "blank"]
 **timestamp_format** | **String** | Date and time in ISO 8601 format. | [optional]
+**period** | **Number** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [defaults to 3600]
+**gzip_level** | **Number** | What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\&quot;gzip.\\\&quot; Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [optional] [defaults to 0]
+**compression_codec** | **String** | The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \\\&quot;gzip\\\&quot;, `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [optional] [one of: "zstd", "snappy", "gzip"]
 **address** | **String** | A hostname or IPv4 address. | [optional]
-**port** | [**Object**](../Model/Object.md) | The port number. | [optional]
-**password** | **String** | The password for the server. If both &#x60;password&#x60; and &#x60;secret_key&#x60; are passed, &#x60;secret_key&#x60; will be used in preference. | [optional]
-**path** | **String** | The path to upload logs to. | [optional] [default to &#39;null&#39;]
-**public_key** | **String** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional] [default to &#39;null&#39;]
-**secret_key** | **String** | The SSH private key for the server. If both &#x60;password&#x60; and &#x60;secret_key&#x60; are passed, &#x60;secret_key&#x60; will be used in preference. | [optional] [default to &#39;null&#39;]
+**port** | [**Object**](Object.md) | The port number. | [optional]
+**password** | **String** | The password for the server. If both `password` and `secret_key` are passed, `secret_key` will be used in preference. | [optional]
+**path** | **String** | The path to upload logs to. | [optional] [defaults to 'null']
+**public_key** | **String** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional] [defaults to 'null']
+**secret_key** | **String** | The SSH private key for the server. If both `password` and `secret_key` are passed, `secret_key` will be used in preference. | [optional] [defaults to 'null']
 **ssh_known_hosts** | **String** | A list of host keys for all hosts we can connect to over SFTP. | [optional]
 **user** | **String** | The username for the server. | [optional]
 

@@ -24,6 +24,7 @@ class DirectorBackendAllOf {
      * @alias module:model/DirectorBackendAllOf
      */
     constructor() { 
+        
         DirectorBackendAllOf.initialize(this);
     }
 

@@ -4,19 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | **String** | The type of this service. | [optional] 
-
-
-
-## Enum: TypeEnum
-
-
-* `vcl` (value: `"vcl"`)
-
-* `wasm` (value: `"wasm"`)
-
-
-
+**type** | **String** | The type of this service. | [optional]  [one of: "vcl", "wasm"]
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

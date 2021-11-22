@@ -25,6 +25,7 @@ class Star {
      * @alias module:model/Star
      */
     constructor() { 
+        
         Star.initialize(this);
     }
 

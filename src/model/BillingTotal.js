@@ -25,6 +25,7 @@ class BillingTotal {
      * @alias module:model/BillingTotal
      */
     constructor() { 
+        
         BillingTotal.initialize(this);
     }
 

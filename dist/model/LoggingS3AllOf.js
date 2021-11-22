@@ -90,12 +90,12 @@ var LoggingS3AllOf = /*#__PURE__*/function () {
           obj['secret_key'] = _ApiClient["default"].convertToType(data['secret_key'], 'String');
         }
 
-        if (data.hasOwnProperty('server_side_encryption')) {
-          obj['server_side_encryption'] = _ApiClient["default"].convertToType(data['server_side_encryption'], 'String');
-        }
-
         if (data.hasOwnProperty('server_side_encryption_kms_key_id')) {
           obj['server_side_encryption_kms_key_id'] = _ApiClient["default"].convertToType(data['server_side_encryption_kms_key_id'], 'String');
+        }
+
+        if (data.hasOwnProperty('server_side_encryption')) {
+          obj['server_side_encryption'] = _ApiClient["default"].convertToType(data['server_side_encryption'], 'String');
         }
       }
 
@@ -164,18 +164,18 @@ LoggingS3AllOf.prototype['redundancy'] = 'null';
 
 LoggingS3AllOf.prototype['secret_key'] = undefined;
 /**
- * Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption.
- * @member {String} server_side_encryption
- * @default 'null'
- */
-
-LoggingS3AllOf.prototype['server_side_encryption'] = 'null';
-/**
  * Optional server-side KMS Key Id. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`.
  * @member {String} server_side_encryption_kms_key_id
  * @default 'null'
  */
 
 LoggingS3AllOf.prototype['server_side_encryption_kms_key_id'] = 'null';
+/**
+ * Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption.
+ * @member {String} server_side_encryption
+ * @default 'null'
+ */
+
+LoggingS3AllOf.prototype['server_side_encryption'] = 'null';
 var _default = LoggingS3AllOf;
 exports["default"] = _default;

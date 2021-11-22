@@ -56,12 +56,12 @@ var TlsBulkCertificateResponseDataAllOf = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new TlsBulkCertificateResponseDataAllOf();
 
-        if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _ApiClient["default"].convertToType(data['attributes'], _Timestamps["default"]);
-        }
-
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
+        }
+
+        if (data.hasOwnProperty('attributes')) {
+          obj['attributes'] = _ApiClient["default"].convertToType(data['attributes'], _Timestamps["default"]);
         }
       }
 
@@ -72,16 +72,16 @@ var TlsBulkCertificateResponseDataAllOf = /*#__PURE__*/function () {
   return TlsBulkCertificateResponseDataAllOf;
 }();
 /**
- * @member {module:model/Timestamps} attributes
- */
-
-
-TlsBulkCertificateResponseDataAllOf.prototype['attributes'] = undefined;
-/**
  * Alphanumeric string identifying a TLS bulk certificate.
  * @member {String} id
  */
 
+
 TlsBulkCertificateResponseDataAllOf.prototype['id'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+
+TlsBulkCertificateResponseDataAllOf.prototype['attributes'] = undefined;
 var _default = TlsBulkCertificateResponseDataAllOf;
 exports["default"] = _default;

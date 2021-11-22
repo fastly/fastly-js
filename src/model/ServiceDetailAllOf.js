@@ -25,6 +25,7 @@ class ServiceDetailAllOf {
      * @alias module:model/ServiceDetailAllOf
      */
     constructor() { 
+        
         ServiceDetailAllOf.initialize(this);
     }
 

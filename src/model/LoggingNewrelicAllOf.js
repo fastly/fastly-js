@@ -24,6 +24,7 @@ class LoggingNewrelicAllOf {
      * @alias module:model/LoggingNewrelicAllOf
      */
     constructor() { 
+        
         LoggingNewrelicAllOf.initialize(this);
     }
 
@@ -49,11 +50,11 @@ class LoggingNewrelicAllOf {
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], Object);
             }
-            if (data.hasOwnProperty('region')) {
-                obj['region'] = ApiClient.convertToType(data['region'], 'String');
-            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
+            }
+            if (data.hasOwnProperty('region')) {
+                obj['region'] = ApiClient.convertToType(data['region'], 'String');
             }
         }
         return obj;
@@ -69,17 +70,17 @@ class LoggingNewrelicAllOf {
 LoggingNewrelicAllOf.prototype['format'] = undefined;
 
 /**
+ * The Insert API key from the Account page of your New Relic account. Required.
+ * @member {String} token
+ */
+LoggingNewrelicAllOf.prototype['token'] = undefined;
+
+/**
  * The region to which to stream logs.
  * @member {module:model/LoggingNewrelicAllOf.RegionEnum} region
  * @default 'US'
  */
 LoggingNewrelicAllOf.prototype['region'] = undefined;
-
-/**
- * The Insert API key from the Account page of your New Relic account. Required.
- * @member {String} token
- */
-LoggingNewrelicAllOf.prototype['token'] = undefined;
 
 
 

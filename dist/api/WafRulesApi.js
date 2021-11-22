@@ -44,7 +44,7 @@ var WafRulesApi = /*#__PURE__*/function () {
   /**
    * Get a specific rule. The `id` provided can be the ModSecurity Rule ID or the Fastly generated rule ID.
    * @param {Object} options
-   * @param {String} options.waf_rule_id
+   * @param {String} options.waf_rule_id - Alphanumeric string identifying a WAF rule.
    * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_tags` and `waf_rule_revisions`. 
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/WafRuleResponse} and HTTP response
    */
@@ -77,7 +77,7 @@ var WafRulesApi = /*#__PURE__*/function () {
     /**
      * Get a specific rule. The `id` provided can be the ModSecurity Rule ID or the Fastly generated rule ID.
      * @param {Object} options
-     * @param {String} options.waf_rule_id
+     * @param {String} options.waf_rule_id - Alphanumeric string identifying a WAF rule.
      * @param {String} [options.include] - Include relationships. Optional, comma-separated values. Permitted values: `waf_tags` and `waf_rule_revisions`. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/WafRuleResponse}
      */

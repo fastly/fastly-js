@@ -66,12 +66,12 @@ var LoggingCloudfilesAllOf = /*#__PURE__*/function () {
           obj['path'] = _ApiClient["default"].convertToType(data['path'], 'String');
         }
 
-        if (data.hasOwnProperty('public_key')) {
-          obj['public_key'] = _ApiClient["default"].convertToType(data['public_key'], 'String');
-        }
-
         if (data.hasOwnProperty('region')) {
           obj['region'] = _ApiClient["default"].convertToType(data['region'], 'String');
+        }
+
+        if (data.hasOwnProperty('public_key')) {
+          obj['public_key'] = _ApiClient["default"].convertToType(data['public_key'], 'String');
         }
 
         if (data.hasOwnProperty('user')) {
@@ -106,18 +106,18 @@ LoggingCloudfilesAllOf.prototype['bucket_name'] = undefined;
 
 LoggingCloudfilesAllOf.prototype['path'] = 'null';
 /**
+ * The region to stream logs to.
+ * @member {module:model/LoggingCloudfilesAllOf.RegionEnum} region
+ */
+
+LoggingCloudfilesAllOf.prototype['region'] = undefined;
+/**
  * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
  * @member {String} public_key
  * @default 'null'
  */
 
 LoggingCloudfilesAllOf.prototype['public_key'] = 'null';
-/**
- * The region to stream logs to.
- * @member {module:model/LoggingCloudfilesAllOf.RegionEnum} region
- */
-
-LoggingCloudfilesAllOf.prototype['region'] = undefined;
 /**
  * The username for your Cloud Files account.
  * @member {String} user
@@ -165,7 +165,13 @@ LoggingCloudfilesAllOf['RegionEnum'] = {
    * value: "HKG"
    * @const
    */
-  "HKG": "HKG"
+  "HKG": "HKG",
+
+  /**
+   * value: "null"
+   * @const
+   */
+  "null": "null"
 };
 var _default = LoggingCloudfilesAllOf;
 exports["default"] = _default;

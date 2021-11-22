@@ -32,9 +32,15 @@ var HistoricalResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>HistoricalResponse</code>.
    * @alias module:model/HistoricalResponse
+   * @implements module:model/Historical
+   * @implements module:model/HistoricalResponseAllOf
    */
   function HistoricalResponse() {
     _classCallCheck(this, HistoricalResponse);
+
+    _Historical["default"].initialize(this);
+
+    _HistoricalResponseAllOf["default"].initialize(this);
 
     HistoricalResponse.initialize(this);
   }
@@ -62,16 +68,20 @@ var HistoricalResponse = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new HistoricalResponse();
 
+        _Historical["default"].constructFromObject(data, obj);
+
+        _HistoricalResponseAllOf["default"].constructFromObject(data, obj);
+
+        if (data.hasOwnProperty('status')) {
+          obj['status'] = _ApiClient["default"].convertToType(data['status'], 'String');
+        }
+
         if (data.hasOwnProperty('meta')) {
           obj['meta'] = _HistoricalMeta["default"].constructFromObject(data['meta']);
         }
 
         if (data.hasOwnProperty('msg')) {
           obj['msg'] = _ApiClient["default"].convertToType(data['msg'], 'String');
-        }
-
-        if (data.hasOwnProperty('status')) {
-          obj['status'] = _ApiClient["default"].convertToType(data['status'], 'String');
         }
 
         if (data.hasOwnProperty('data')) {
@@ -88,9 +98,15 @@ var HistoricalResponse = /*#__PURE__*/function () {
   return HistoricalResponse;
 }();
 /**
- * @member {module:model/HistoricalMeta} meta
+ * Whether or not we were able to successfully execute the query.
+ * @member {String} status
  */
 
+
+HistoricalResponse.prototype['status'] = undefined;
+/**
+ * @member {module:model/HistoricalMeta} meta
+ */
 
 HistoricalResponse.prototype['meta'] = undefined;
 /**
@@ -100,15 +116,33 @@ HistoricalResponse.prototype['meta'] = undefined;
 
 HistoricalResponse.prototype['msg'] = undefined;
 /**
+ * @member {Object.<String, Array.<module:model/Results>>} data
+ */
+
+HistoricalResponse.prototype['data'] = undefined; // Implement Historical interface:
+
+/**
  * Whether or not we were able to successfully execute the query.
  * @member {String} status
  */
 
-HistoricalResponse.prototype['status'] = undefined;
+_Historical["default"].prototype['status'] = undefined;
+/**
+ * @member {module:model/HistoricalMeta} meta
+ */
+
+_Historical["default"].prototype['meta'] = undefined;
+/**
+ * If the query was not successful, this will provide a string that explains why.
+ * @member {String} msg
+ */
+
+_Historical["default"].prototype['msg'] = undefined; // Implement HistoricalResponseAllOf interface:
+
 /**
  * @member {Object.<String, Array.<module:model/Results>>} data
  */
 
-HistoricalResponse.prototype['data'] = undefined;
+_HistoricalResponseAllOf["default"].prototype['data'] = undefined;
 var _default = HistoricalResponse;
 exports["default"] = _default;

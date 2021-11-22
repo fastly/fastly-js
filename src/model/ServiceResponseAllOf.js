@@ -25,6 +25,7 @@ class ServiceResponseAllOf {
      * @alias module:model/ServiceResponseAllOf
      */
     constructor() { 
+        
         ServiceResponseAllOf.initialize(this);
     }
 
@@ -50,14 +51,11 @@ class ServiceResponseAllOf {
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
-            if (data.hasOwnProperty('paused')) {
-                obj['paused'] = ApiClient.convertToType(data['paused'], 'Boolean');
-            }
             if (data.hasOwnProperty('publish_key')) {
                 obj['publish_key'] = ApiClient.convertToType(data['publish_key'], 'String');
             }
-            if (data.hasOwnProperty('version')) {
-                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
+            if (data.hasOwnProperty('paused')) {
+                obj['paused'] = ApiClient.convertToType(data['paused'], 'Boolean');
             }
             if (data.hasOwnProperty('versions')) {
                 obj['versions'] = ApiClient.convertToType(data['versions'], [SchemasVersionResponse]);
@@ -76,22 +74,16 @@ class ServiceResponseAllOf {
 ServiceResponseAllOf.prototype['id'] = undefined;
 
 /**
- * Whether the service is paused. Services are paused due to a lack of traffic for an extended period of time. Services are resumed either when a draft version is activated or a locked version is cloned and reactivated.
- * @member {Boolean} paused
- */
-ServiceResponseAllOf.prototype['paused'] = undefined;
-
-/**
  * Unused at this time.
  * @member {String} publish_key
  */
 ServiceResponseAllOf.prototype['publish_key'] = undefined;
 
 /**
- * Current [version](/reference/api/services/version/) of the service.
- * @member {Number} version
+ * Whether the service is paused. Services are paused due to a lack of traffic for an extended period of time. Services are resumed either when a draft version is activated or a locked version is cloned and reactivated.
+ * @member {Boolean} paused
  */
-ServiceResponseAllOf.prototype['version'] = undefined;
+ServiceResponseAllOf.prototype['paused'] = undefined;
 
 /**
  * A list of [versions](/reference/api/services/version/) associated with the service.

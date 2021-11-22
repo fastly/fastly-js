@@ -26,8 +26,11 @@ class RelationshipsForWafRule {
     /**
      * Constructs a new <code>RelationshipsForWafRule</code>.
      * @alias module:model/RelationshipsForWafRule
+     * @implements module:model/RelationshipWafTags
+     * @implements module:model/RelationshipWafRuleRevisions
      */
     constructor() { 
+        RelationshipWafTags.initialize(this);RelationshipWafRuleRevisions.initialize(this);
         RelationshipsForWafRule.initialize(this);
     }
 
@@ -49,6 +52,8 @@ class RelationshipsForWafRule {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipsForWafRule();
+            RelationshipWafTags.constructFromObject(data, obj);
+            RelationshipWafRuleRevisions.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('waf_tags')) {
                 obj['waf_tags'] = RelationshipWafTagsWafTags.constructFromObject(data['waf_tags']);
@@ -74,6 +79,16 @@ RelationshipsForWafRule.prototype['waf_tags'] = undefined;
 RelationshipsForWafRule.prototype['waf_rule_revisions'] = undefined;
 
 
+// Implement RelationshipWafTags interface:
+/**
+ * @member {module:model/RelationshipWafTagsWafTags} waf_tags
+ */
+RelationshipWafTags.prototype['waf_tags'] = undefined;
+// Implement RelationshipWafRuleRevisions interface:
+/**
+ * @member {module:model/RelationshipWafRuleRevisionWafRuleRevisions} waf_rule_revisions
+ */
+RelationshipWafRuleRevisions.prototype['waf_rule_revisions'] = undefined;
 
 
 

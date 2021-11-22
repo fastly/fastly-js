@@ -34,9 +34,15 @@ var WafFirewallVersionResponseData = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>WafFirewallVersionResponseData</code>.
    * @alias module:model/WafFirewallVersionResponseData
+   * @implements module:model/WafFirewallVersionData
+   * @implements module:model/WafFirewallVersionResponseDataAllOf
    */
   function WafFirewallVersionResponseData() {
     _classCallCheck(this, WafFirewallVersionResponseData);
+
+    _WafFirewallVersionData["default"].initialize(this);
+
+    _WafFirewallVersionResponseDataAllOf["default"].initialize(this);
 
     WafFirewallVersionResponseData.initialize(this);
   }
@@ -64,12 +70,16 @@ var WafFirewallVersionResponseData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new WafFirewallVersionResponseData();
 
-        if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _ApiClient["default"].convertToType(data['attributes'], _Timestamps["default"]);
-        }
+        _WafFirewallVersionData["default"].constructFromObject(data, obj);
+
+        _WafFirewallVersionResponseDataAllOf["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('type')) {
           obj['type'] = _TypeWafFirewallVersion["default"].constructFromObject(data['type']);
+        }
+
+        if (data.hasOwnProperty('attributes')) {
+          obj['attributes'] = _ApiClient["default"].convertToType(data['attributes'], _Timestamps["default"]);
         }
 
         if (data.hasOwnProperty('id')) {
@@ -88,16 +98,16 @@ var WafFirewallVersionResponseData = /*#__PURE__*/function () {
   return WafFirewallVersionResponseData;
 }();
 /**
- * @member {module:model/Timestamps} attributes
- */
-
-
-WafFirewallVersionResponseData.prototype['attributes'] = undefined;
-/**
  * @member {module:model/TypeWafFirewallVersion} type
  */
 
+
 WafFirewallVersionResponseData.prototype['type'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+
+WafFirewallVersionResponseData.prototype['attributes'] = undefined;
 /**
  * Alphanumeric string identifying a Firewall version.
  * @member {String} id
@@ -108,6 +118,34 @@ WafFirewallVersionResponseData.prototype['id'] = undefined;
  * @member {module:model/RelationshipsForWafFirewallVersion} relationships
  */
 
-WafFirewallVersionResponseData.prototype['relationships'] = undefined;
+WafFirewallVersionResponseData.prototype['relationships'] = undefined; // Implement WafFirewallVersionData interface:
+
+/**
+ * @member {module:model/TypeWafFirewallVersion} type
+ */
+
+_WafFirewallVersionData["default"].prototype['type'] = undefined;
+/**
+ * @member {module:model/WafFirewallVersionDataAttributes} attributes
+ */
+
+_WafFirewallVersionData["default"].prototype['attributes'] = undefined; // Implement WafFirewallVersionResponseDataAllOf interface:
+
+/**
+ * Alphanumeric string identifying a Firewall version.
+ * @member {String} id
+ */
+
+_WafFirewallVersionResponseDataAllOf["default"].prototype['id'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+
+_WafFirewallVersionResponseDataAllOf["default"].prototype['attributes'] = undefined;
+/**
+ * @member {module:model/RelationshipsForWafFirewallVersion} relationships
+ */
+
+_WafFirewallVersionResponseDataAllOf["default"].prototype['relationships'] = undefined;
 var _default = WafFirewallVersionResponseData;
 exports["default"] = _default;

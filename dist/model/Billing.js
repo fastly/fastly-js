@@ -58,28 +58,20 @@ var Billing = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new Billing();
 
-        if (data.hasOwnProperty('customer_id')) {
-          obj['customer_id'] = _ApiClient["default"].convertToType(data['customer_id'], 'String');
-        }
-
         if (data.hasOwnProperty('end_time')) {
           obj['end_time'] = _ApiClient["default"].convertToType(data['end_time'], 'String');
+        }
+
+        if (data.hasOwnProperty('start_time')) {
+          obj['start_time'] = _ApiClient["default"].convertToType(data['start_time'], 'String');
         }
 
         if (data.hasOwnProperty('invoice_id')) {
           obj['invoice_id'] = _ApiClient["default"].convertToType(data['invoice_id'], 'String');
         }
 
-        if (data.hasOwnProperty('regions')) {
-          obj['regions'] = _ApiClient["default"].convertToType(data['regions'], {
-            'String': {
-              'String': Object
-            }
-          });
-        }
-
-        if (data.hasOwnProperty('start_time')) {
-          obj['start_time'] = _ApiClient["default"].convertToType(data['start_time'], 'String');
+        if (data.hasOwnProperty('customer_id')) {
+          obj['customer_id'] = _ApiClient["default"].convertToType(data['customer_id'], 'String');
         }
 
         if (data.hasOwnProperty('status')) {
@@ -88,6 +80,14 @@ var Billing = /*#__PURE__*/function () {
 
         if (data.hasOwnProperty('total')) {
           obj['total'] = _BillingTotal["default"].constructFromObject(data['total']);
+        }
+
+        if (data.hasOwnProperty('regions')) {
+          obj['regions'] = _ApiClient["default"].convertToType(data['regions'], {
+            'String': {
+              'String': Object
+            }
+          });
         }
       }
 
@@ -98,18 +98,18 @@ var Billing = /*#__PURE__*/function () {
   return Billing;
 }();
 /**
- * Alphanumeric string identifying the customer.
- * @member {String} customer_id
- */
-
-
-Billing.prototype['customer_id'] = undefined;
-/**
  * Date and time in ISO 8601 format.
  * @member {String} end_time
  */
 
+
 Billing.prototype['end_time'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} start_time
+ */
+
+Billing.prototype['start_time'] = undefined;
 /**
  * Alphanumeric string identifying the invoice.
  * @member {String} invoice_id
@@ -117,16 +117,11 @@ Billing.prototype['end_time'] = undefined;
 
 Billing.prototype['invoice_id'] = undefined;
 /**
- * @member {Object.<String, Object.<String, Object>>} regions
+ * Alphanumeric string identifying the customer.
+ * @member {String} customer_id
  */
 
-Billing.prototype['regions'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {String} start_time
- */
-
-Billing.prototype['start_time'] = undefined;
+Billing.prototype['customer_id'] = undefined;
 /**
  * @member {module:model/BillingStatus} status
  */
@@ -137,5 +132,10 @@ Billing.prototype['status'] = undefined;
  */
 
 Billing.prototype['total'] = undefined;
+/**
+ * @member {Object.<String, Object.<String, Object>>} regions
+ */
+
+Billing.prototype['regions'] = undefined;
 var _default = Billing;
 exports["default"] = _default;

@@ -34,9 +34,15 @@ var TlsActivationResponseData = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>TlsActivationResponseData</code>.
    * @alias module:model/TlsActivationResponseData
+   * @implements module:model/TlsActivationData
+   * @implements module:model/TlsActivationResponseDataAllOf
    */
   function TlsActivationResponseData() {
     _classCallCheck(this, TlsActivationResponseData);
+
+    _TlsActivationData["default"].initialize(this);
+
+    _TlsActivationResponseDataAllOf["default"].initialize(this);
 
     TlsActivationResponseData.initialize(this);
   }
@@ -64,20 +70,24 @@ var TlsActivationResponseData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new TlsActivationResponseData();
 
-        if (data.hasOwnProperty('relationships')) {
-          obj['relationships'] = _RelationshipsForTlsActivation["default"].constructFromObject(data['relationships']);
-        }
+        _TlsActivationData["default"].constructFromObject(data, obj);
+
+        _TlsActivationResponseDataAllOf["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('type')) {
           obj['type'] = _TypeTlsActivation["default"].constructFromObject(data['type']);
         }
 
-        if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _Timestamps["default"].constructFromObject(data['attributes']);
+        if (data.hasOwnProperty('relationships')) {
+          obj['relationships'] = _RelationshipsForTlsActivation["default"].constructFromObject(data['relationships']);
         }
 
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
+        }
+
+        if (data.hasOwnProperty('attributes')) {
+          obj['attributes'] = _Timestamps["default"].constructFromObject(data['attributes']);
         }
       }
 
@@ -88,26 +98,49 @@ var TlsActivationResponseData = /*#__PURE__*/function () {
   return TlsActivationResponseData;
 }();
 /**
- * @member {module:model/RelationshipsForTlsActivation} relationships
- */
-
-
-TlsActivationResponseData.prototype['relationships'] = undefined;
-/**
  * @member {module:model/TypeTlsActivation} type
  */
 
+
 TlsActivationResponseData.prototype['type'] = undefined;
 /**
- * @member {module:model/Timestamps} attributes
+ * @member {module:model/RelationshipsForTlsActivation} relationships
  */
 
-TlsActivationResponseData.prototype['attributes'] = undefined;
+TlsActivationResponseData.prototype['relationships'] = undefined;
 /**
  * Alphanumeric string identifying a TLS activation.
  * @member {String} id
  */
 
 TlsActivationResponseData.prototype['id'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+
+TlsActivationResponseData.prototype['attributes'] = undefined; // Implement TlsActivationData interface:
+
+/**
+ * @member {module:model/TypeTlsActivation} type
+ */
+
+_TlsActivationData["default"].prototype['type'] = undefined;
+/**
+ * @member {module:model/RelationshipsForTlsActivation} relationships
+ */
+
+_TlsActivationData["default"].prototype['relationships'] = undefined; // Implement TlsActivationResponseDataAllOf interface:
+
+/**
+ * Alphanumeric string identifying a TLS activation.
+ * @member {String} id
+ */
+
+_TlsActivationResponseDataAllOf["default"].prototype['id'] = undefined;
+/**
+ * @member {module:model/Timestamps} attributes
+ */
+
+_TlsActivationResponseDataAllOf["default"].prototype['attributes'] = undefined;
 var _default = TlsActivationResponseData;
 exports["default"] = _default;

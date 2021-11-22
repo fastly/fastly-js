@@ -24,6 +24,7 @@ class BillingStatus {
      * @alias module:model/BillingStatus
      */
     constructor() { 
+        
         BillingStatus.initialize(this);
     }
 
@@ -46,11 +47,11 @@ class BillingStatus {
         if (data) {
             obj = obj || new BillingStatus();
 
-            if (data.hasOwnProperty('sent_at')) {
-                obj['sent_at'] = ApiClient.convertToType(data['sent_at'], 'String');
-            }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            }
+            if (data.hasOwnProperty('sent_at')) {
+                obj['sent_at'] = ApiClient.convertToType(data['sent_at'], 'String');
             }
         }
         return obj;
@@ -60,15 +61,15 @@ class BillingStatus {
 }
 
 /**
- * @member {String} sent_at
- */
-BillingStatus.prototype['sent_at'] = undefined;
-
-/**
  * What the current status of this invoice can be.
  * @member {module:model/BillingStatus.StatusEnum} status
  */
 BillingStatus.prototype['status'] = undefined;
+
+/**
+ * @member {String} sent_at
+ */
+BillingStatus.prototype['sent_at'] = undefined;
 
 
 

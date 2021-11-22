@@ -12,9 +12,9 @@
  */
 
 import ApiClient from '../ApiClient';
-import RelationshipCommonNameCommonName from './RelationshipCommonNameCommonName';
 import RelationshipTlsConfigurationTlsConfiguration from './RelationshipTlsConfigurationTlsConfiguration';
 import RelationshipTlsConfigurations from './RelationshipTlsConfigurations';
+import RelationshipTlsDomainTlsDomain from './RelationshipTlsDomainTlsDomain';
 
 /**
  * The RelationshipsForTlsBulkCertificate model module.
@@ -25,8 +25,10 @@ class RelationshipsForTlsBulkCertificate {
     /**
      * Constructs a new <code>RelationshipsForTlsBulkCertificate</code>.
      * @alias module:model/RelationshipsForTlsBulkCertificate
+     * @implements module:model/RelationshipTlsConfigurations
      */
     constructor() { 
+        RelationshipTlsConfigurations.initialize(this);
         RelationshipsForTlsBulkCertificate.initialize(this);
     }
 
@@ -48,12 +50,13 @@ class RelationshipsForTlsBulkCertificate {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipsForTlsBulkCertificate();
+            RelationshipTlsConfigurations.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('tls_configurations')) {
                 obj['tls_configurations'] = RelationshipTlsConfigurationTlsConfiguration.constructFromObject(data['tls_configurations']);
             }
             if (data.hasOwnProperty('tls_domains')) {
-                obj['tls_domains'] = RelationshipCommonNameCommonName.constructFromObject(data['tls_domains']);
+                obj['tls_domains'] = RelationshipTlsDomainTlsDomain.constructFromObject(data['tls_domains']);
             }
         }
         return obj;
@@ -68,11 +71,16 @@ class RelationshipsForTlsBulkCertificate {
 RelationshipsForTlsBulkCertificate.prototype['tls_configurations'] = undefined;
 
 /**
- * @member {module:model/RelationshipCommonNameCommonName} tls_domains
+ * @member {module:model/RelationshipTlsDomainTlsDomain} tls_domains
  */
 RelationshipsForTlsBulkCertificate.prototype['tls_domains'] = undefined;
 
 
+// Implement RelationshipTlsConfigurations interface:
+/**
+ * @member {module:model/RelationshipTlsConfigurationTlsConfiguration} tls_configurations
+ */
+RelationshipTlsConfigurations.prototype['tls_configurations'] = undefined;
 
 
 

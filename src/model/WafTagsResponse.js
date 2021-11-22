@@ -28,8 +28,11 @@ class WafTagsResponse {
     /**
      * Constructs a new <code>WafTagsResponse</code>.
      * @alias module:model/WafTagsResponse
+     * @implements module:model/Pagination
+     * @implements module:model/WafTagsResponseAllOf
      */
     constructor() { 
+        Pagination.initialize(this);WafTagsResponseAllOf.initialize(this);
         WafTagsResponse.initialize(this);
     }
 
@@ -51,6 +54,8 @@ class WafTagsResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new WafTagsResponse();
+            Pagination.constructFromObject(data, obj);
+            WafTagsResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('links')) {
                 obj['links'] = PaginationLinks.constructFromObject(data['links']);
@@ -92,6 +97,24 @@ WafTagsResponse.prototype['data'] = undefined;
 WafTagsResponse.prototype['included'] = undefined;
 
 
+// Implement Pagination interface:
+/**
+ * @member {module:model/PaginationLinks} links
+ */
+Pagination.prototype['links'] = undefined;
+/**
+ * @member {module:model/PaginationMeta} meta
+ */
+Pagination.prototype['meta'] = undefined;
+// Implement WafTagsResponseAllOf interface:
+/**
+ * @member {Array.<module:model/WafTag>} data
+ */
+WafTagsResponseAllOf.prototype['data'] = undefined;
+/**
+ * @member {Array.<module:model/WafRule>} included
+ */
+WafTagsResponseAllOf.prototype['included'] = undefined;
 
 
 

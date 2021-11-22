@@ -24,6 +24,7 @@ class LoggingAzureblobAllOf {
      * @alias module:model/LoggingAzureblobAllOf
      */
     constructor() { 
+        
         LoggingAzureblobAllOf.initialize(this);
     }
 
@@ -46,23 +47,23 @@ class LoggingAzureblobAllOf {
         if (data) {
             obj = obj || new LoggingAzureblobAllOf();
 
+            if (data.hasOwnProperty('path')) {
+                obj['path'] = ApiClient.convertToType(data['path'], 'String');
+            }
             if (data.hasOwnProperty('account_name')) {
                 obj['account_name'] = ApiClient.convertToType(data['account_name'], 'String');
             }
             if (data.hasOwnProperty('container')) {
                 obj['container'] = ApiClient.convertToType(data['container'], 'String');
             }
-            if (data.hasOwnProperty('file_max_bytes')) {
-                obj['file_max_bytes'] = ApiClient.convertToType(data['file_max_bytes'], 'Number');
-            }
-            if (data.hasOwnProperty('path')) {
-                obj['path'] = ApiClient.convertToType(data['path'], 'String');
+            if (data.hasOwnProperty('sas_token')) {
+                obj['sas_token'] = ApiClient.convertToType(data['sas_token'], 'String');
             }
             if (data.hasOwnProperty('public_key')) {
                 obj['public_key'] = ApiClient.convertToType(data['public_key'], 'String');
             }
-            if (data.hasOwnProperty('sas_token')) {
-                obj['sas_token'] = ApiClient.convertToType(data['sas_token'], 'String');
+            if (data.hasOwnProperty('file_max_bytes')) {
+                obj['file_max_bytes'] = ApiClient.convertToType(data['file_max_bytes'], 'Number');
             }
         }
         return obj;
@@ -70,6 +71,13 @@ class LoggingAzureblobAllOf {
 
 
 }
+
+/**
+ * The path to upload logs to.
+ * @member {String} path
+ * @default 'null'
+ */
+LoggingAzureblobAllOf.prototype['path'] = 'null';
 
 /**
  * The unique Azure Blob Storage namespace in which your data objects are stored. Required.
@@ -84,17 +92,10 @@ LoggingAzureblobAllOf.prototype['account_name'] = undefined;
 LoggingAzureblobAllOf.prototype['container'] = undefined;
 
 /**
- * The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
- * @member {Number} file_max_bytes
+ * The Azure shared access signature providing write access to the blob service objects. Be sure to update your token before it expires or the logging functionality will not work. Required.
+ * @member {String} sas_token
  */
-LoggingAzureblobAllOf.prototype['file_max_bytes'] = undefined;
-
-/**
- * The path to upload logs to.
- * @member {String} path
- * @default 'null'
- */
-LoggingAzureblobAllOf.prototype['path'] = 'null';
+LoggingAzureblobAllOf.prototype['sas_token'] = undefined;
 
 /**
  * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
@@ -104,10 +105,10 @@ LoggingAzureblobAllOf.prototype['path'] = 'null';
 LoggingAzureblobAllOf.prototype['public_key'] = 'null';
 
 /**
- * The Azure shared access signature providing write access to the blob service objects. Be sure to update your token before it expires or the logging functionality will not work. Required.
- * @member {String} sas_token
+ * The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
+ * @member {Number} file_max_bytes
  */
-LoggingAzureblobAllOf.prototype['sas_token'] = undefined;
+LoggingAzureblobAllOf.prototype['file_max_bytes'] = undefined;
 
 
 

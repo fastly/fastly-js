@@ -25,6 +25,7 @@ class EventResponse {
      * @alias module:model/EventResponse
      */
     constructor() { 
+        
         EventResponse.initialize(this);
     }
 

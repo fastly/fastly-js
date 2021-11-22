@@ -30,9 +30,18 @@ var DictionaryItemResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>DictionaryItemResponse</code>.
    * @alias module:model/DictionaryItemResponse
+   * @implements module:model/DictionaryItem
+   * @implements module:model/Timestamps
+   * @implements module:model/DictionaryItemResponseAllOf
    */
   function DictionaryItemResponse() {
     _classCallCheck(this, DictionaryItemResponse);
+
+    _DictionaryItem["default"].initialize(this);
+
+    _Timestamps["default"].initialize(this);
+
+    _DictionaryItemResponseAllOf["default"].initialize(this);
 
     DictionaryItemResponse.initialize(this);
   }
@@ -59,6 +68,12 @@ var DictionaryItemResponse = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new DictionaryItemResponse();
+
+        _DictionaryItem["default"].constructFromObject(data, obj);
+
+        _Timestamps["default"].constructFromObject(data, obj);
+
+        _DictionaryItemResponseAllOf["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('item_key')) {
           obj['item_key'] = _ApiClient["default"].convertToType(data['item_key'], 'String');
@@ -137,6 +152,51 @@ DictionaryItemResponse.prototype['dictionary_id'] = undefined;
  * @member {String} service_id
  */
 
-DictionaryItemResponse.prototype['service_id'] = undefined;
+DictionaryItemResponse.prototype['service_id'] = undefined; // Implement DictionaryItem interface:
+
+/**
+ * Item key, maximum 256 characters.
+ * @member {String} item_key
+ */
+
+_DictionaryItem["default"].prototype['item_key'] = undefined;
+/**
+ * Item value, maximum 8000 characters.
+ * @member {String} item_value
+ */
+
+_DictionaryItem["default"].prototype['item_value'] = undefined; // Implement Timestamps interface:
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+
+_Timestamps["default"].prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+
+_Timestamps["default"].prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+
+_Timestamps["default"].prototype['updated_at'] = undefined; // Implement DictionaryItemResponseAllOf interface:
+
+/**
+ * Alphanumeric string identifying a Dictionary.
+ * @member {String} dictionary_id
+ */
+
+_DictionaryItemResponseAllOf["default"].prototype['dictionary_id'] = undefined;
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+
+_DictionaryItemResponseAllOf["default"].prototype['service_id'] = undefined;
 var _default = DictionaryItemResponse;
 exports["default"] = _default;

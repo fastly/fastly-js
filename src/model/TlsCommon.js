@@ -24,6 +24,7 @@ class TlsCommon {
      * @alias module:model/TlsCommon
      */
     constructor() { 
+        
         TlsCommon.initialize(this);
     }
 
@@ -49,14 +50,14 @@ class TlsCommon {
             if (data.hasOwnProperty('tls_ca_cert')) {
                 obj['tls_ca_cert'] = ApiClient.convertToType(data['tls_ca_cert'], 'String');
             }
-            if (data.hasOwnProperty('tls_cert_hostname')) {
-                obj['tls_cert_hostname'] = ApiClient.convertToType(data['tls_cert_hostname'], 'String');
-            }
             if (data.hasOwnProperty('tls_client_cert')) {
                 obj['tls_client_cert'] = ApiClient.convertToType(data['tls_client_cert'], 'String');
             }
             if (data.hasOwnProperty('tls_client_key')) {
                 obj['tls_client_key'] = ApiClient.convertToType(data['tls_client_key'], 'String');
+            }
+            if (data.hasOwnProperty('tls_cert_hostname')) {
+                obj['tls_cert_hostname'] = ApiClient.convertToType(data['tls_cert_hostname'], 'String');
             }
             if (data.hasOwnProperty('use_tls')) {
                 obj['use_tls'] = ApiClient.convertToType(data['use_tls'], 'Number');
@@ -76,13 +77,6 @@ class TlsCommon {
 TlsCommon.prototype['tls_ca_cert'] = 'null';
 
 /**
- * The hostname used to verify a server's certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
- * @member {String} tls_cert_hostname
- * @default 'null'
- */
-TlsCommon.prototype['tls_cert_hostname'] = 'null';
-
-/**
  * The client certificate used to make authenticated requests. Must be in PEM format.
  * @member {String} tls_client_cert
  * @default 'null'
@@ -95,6 +89,13 @@ TlsCommon.prototype['tls_client_cert'] = 'null';
  * @default 'null'
  */
 TlsCommon.prototype['tls_client_key'] = 'null';
+
+/**
+ * The hostname used to verify a server's certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
+ * @member {String} tls_cert_hostname
+ * @default 'null'
+ */
+TlsCommon.prototype['tls_cert_hostname'] = 'null';
 
 /**
  * Whether to use TLS.

@@ -26,6 +26,7 @@ class Billing {
      * @alias module:model/Billing
      */
     constructor() { 
+        
         Billing.initialize(this);
     }
 
@@ -48,26 +49,26 @@ class Billing {
         if (data) {
             obj = obj || new Billing();
 
-            if (data.hasOwnProperty('customer_id')) {
-                obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
-            }
             if (data.hasOwnProperty('end_time')) {
                 obj['end_time'] = ApiClient.convertToType(data['end_time'], 'String');
+            }
+            if (data.hasOwnProperty('start_time')) {
+                obj['start_time'] = ApiClient.convertToType(data['start_time'], 'String');
             }
             if (data.hasOwnProperty('invoice_id')) {
                 obj['invoice_id'] = ApiClient.convertToType(data['invoice_id'], 'String');
             }
-            if (data.hasOwnProperty('regions')) {
-                obj['regions'] = ApiClient.convertToType(data['regions'], {'String': {'String': Object}});
-            }
-            if (data.hasOwnProperty('start_time')) {
-                obj['start_time'] = ApiClient.convertToType(data['start_time'], 'String');
+            if (data.hasOwnProperty('customer_id')) {
+                obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = BillingStatus.constructFromObject(data['status']);
             }
             if (data.hasOwnProperty('total')) {
                 obj['total'] = BillingTotal.constructFromObject(data['total']);
+            }
+            if (data.hasOwnProperty('regions')) {
+                obj['regions'] = ApiClient.convertToType(data['regions'], {'String': {'String': Object}});
             }
         }
         return obj;
@@ -77,16 +78,16 @@ class Billing {
 }
 
 /**
- * Alphanumeric string identifying the customer.
- * @member {String} customer_id
- */
-Billing.prototype['customer_id'] = undefined;
-
-/**
  * Date and time in ISO 8601 format.
  * @member {String} end_time
  */
 Billing.prototype['end_time'] = undefined;
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} start_time
+ */
+Billing.prototype['start_time'] = undefined;
 
 /**
  * Alphanumeric string identifying the invoice.
@@ -95,15 +96,10 @@ Billing.prototype['end_time'] = undefined;
 Billing.prototype['invoice_id'] = undefined;
 
 /**
- * @member {Object.<String, Object.<String, Object>>} regions
+ * Alphanumeric string identifying the customer.
+ * @member {String} customer_id
  */
-Billing.prototype['regions'] = undefined;
-
-/**
- * Date and time in ISO 8601 format.
- * @member {String} start_time
- */
-Billing.prototype['start_time'] = undefined;
+Billing.prototype['customer_id'] = undefined;
 
 /**
  * @member {module:model/BillingStatus} status
@@ -114,6 +110,11 @@ Billing.prototype['status'] = undefined;
  * @member {module:model/BillingTotal} total
  */
 Billing.prototype['total'] = undefined;
+
+/**
+ * @member {Object.<String, Object.<String, Object>>} regions
+ */
+Billing.prototype['regions'] = undefined;
 
 
 

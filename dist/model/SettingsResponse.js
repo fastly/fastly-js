@@ -28,9 +28,15 @@ var SettingsResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>SettingsResponse</code>.
    * @alias module:model/SettingsResponse
+   * @implements module:model/Settings
+   * @implements module:model/ServiceIdAndVersion
    */
   function SettingsResponse() {
     _classCallCheck(this, SettingsResponse);
+
+    _Settings["default"].initialize(this);
+
+    _ServiceIdAndVersion["default"].initialize(this);
 
     SettingsResponse.initialize(this);
   }
@@ -57,6 +63,10 @@ var SettingsResponse = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new SettingsResponse();
+
+        _Settings["default"].constructFromObject(data, obj);
+
+        _ServiceIdAndVersion["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('general.default_host')) {
           obj['general.default_host'] = _ApiClient["default"].convertToType(data['general.default_host'], 'String');
@@ -127,6 +137,46 @@ SettingsResponse.prototype['service_id'] = undefined;
  * @member {Number} version
  */
 
-SettingsResponse.prototype['version'] = undefined;
+SettingsResponse.prototype['version'] = undefined; // Implement Settings interface:
+
+/**
+ * The default host name for the version.
+ * @member {String} general.default_host
+ */
+
+_Settings["default"].prototype['general.default_host'] = undefined;
+/**
+ * The default time-to-live (TTL) for the version.
+ * @member {Number} general.default_ttl
+ */
+
+_Settings["default"].prototype['general.default_ttl'] = undefined;
+/**
+ * Enables serving a stale object if there is an error.
+ * @member {Boolean} general.stale_if_error
+ * @default false
+ */
+
+_Settings["default"].prototype['general.stale_if_error'] = false;
+/**
+ * The default time-to-live (TTL) for serving the stale object for the version.
+ * @member {Number} general.stale_if_error_ttl
+ * @default 43200
+ */
+
+_Settings["default"].prototype['general.stale_if_error_ttl'] = 43200; // Implement ServiceIdAndVersion interface:
+
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+
+_ServiceIdAndVersion["default"].prototype['service_id'] = undefined;
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
+
+_ServiceIdAndVersion["default"].prototype['version'] = undefined;
 var _default = SettingsResponse;
 exports["default"] = _default;

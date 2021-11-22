@@ -54,16 +54,16 @@ var ServerResponseAllOf = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new ServerResponseAllOf();
 
+        if (data.hasOwnProperty('service_id')) {
+          obj['service_id'] = _ApiClient["default"].convertToType(data['service_id'], 'String');
+        }
+
         if (data.hasOwnProperty('id')) {
           obj['id'] = _ApiClient["default"].convertToType(data['id'], 'String');
         }
 
         if (data.hasOwnProperty('pool_id')) {
           obj['pool_id'] = _ApiClient["default"].convertToType(data['pool_id'], 'String');
-        }
-
-        if (data.hasOwnProperty('service_id')) {
-          obj['service_id'] = _ApiClient["default"].convertToType(data['service_id'], 'String');
         }
       }
 
@@ -74,10 +74,16 @@ var ServerResponseAllOf = /*#__PURE__*/function () {
   return ServerResponseAllOf;
 }();
 /**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+
+
+ServerResponseAllOf.prototype['service_id'] = undefined;
+/**
  * Alphanumeric string identifying a Server.
  * @member {String} id
  */
-
 
 ServerResponseAllOf.prototype['id'] = undefined;
 /**
@@ -86,11 +92,5 @@ ServerResponseAllOf.prototype['id'] = undefined;
  */
 
 ServerResponseAllOf.prototype['pool_id'] = undefined;
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-
-ServerResponseAllOf.prototype['service_id'] = undefined;
 var _default = ServerResponseAllOf;
 exports["default"] = _default;

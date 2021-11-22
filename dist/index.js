@@ -3,17 +3,16 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.authenticate = authenticate;
-Object.defineProperty(exports, "ApiClient", {
-  enumerable: true,
-  get: function get() {
-    return _ApiClient["default"];
-  }
-});
 Object.defineProperty(exports, "Acl", {
   enumerable: true,
   get: function get() {
     return _Acl["default"];
+  }
+});
+Object.defineProperty(exports, "AclApi", {
+  enumerable: true,
+  get: function get() {
+    return _AclApi["default"];
   }
 });
 Object.defineProperty(exports, "AclEntries", {
@@ -26,6 +25,12 @@ Object.defineProperty(exports, "AclEntry", {
   enumerable: true,
   get: function get() {
     return _AclEntry["default"];
+  }
+});
+Object.defineProperty(exports, "AclEntryApi", {
+  enumerable: true,
+  get: function get() {
+    return _AclEntryApi["default"];
   }
 });
 Object.defineProperty(exports, "AclEntryResponse", {
@@ -52,10 +57,22 @@ Object.defineProperty(exports, "AclResponseAllOf", {
     return _AclResponseAllOf["default"];
   }
 });
+Object.defineProperty(exports, "ApiClient", {
+  enumerable: true,
+  get: function get() {
+    return _ApiClient["default"];
+  }
+});
 Object.defineProperty(exports, "Backend", {
   enumerable: true,
   get: function get() {
     return _Backend["default"];
+  }
+});
+Object.defineProperty(exports, "BackendApi", {
+  enumerable: true,
+  get: function get() {
+    return _BackendApi["default"];
   }
 });
 Object.defineProperty(exports, "BackendResponse", {
@@ -80,6 +97,12 @@ Object.defineProperty(exports, "BillingAddress", {
   enumerable: true,
   get: function get() {
     return _BillingAddress["default"];
+  }
+});
+Object.defineProperty(exports, "BillingAddressApi", {
+  enumerable: true,
+  get: function get() {
+    return _BillingAddressApi["default"];
   }
 });
 Object.defineProperty(exports, "BillingAddressData", {
@@ -110,6 +133,12 @@ Object.defineProperty(exports, "BillingAddressResponseAllOfData", {
   enumerable: true,
   get: function get() {
     return _BillingAddressResponseAllOfData["default"];
+  }
+});
+Object.defineProperty(exports, "BillingApi", {
+  enumerable: true,
+  get: function get() {
+    return _BillingApi["default"];
   }
 });
 Object.defineProperty(exports, "BillingEstimateResponse", {
@@ -184,10 +213,22 @@ Object.defineProperty(exports, "CacheSettingResponse", {
     return _CacheSettingResponse["default"];
   }
 });
+Object.defineProperty(exports, "CacheSettingsApi", {
+  enumerable: true,
+  get: function get() {
+    return _CacheSettingsApi["default"];
+  }
+});
 Object.defineProperty(exports, "Condition", {
   enumerable: true,
   get: function get() {
     return _Condition["default"];
+  }
+});
+Object.defineProperty(exports, "ConditionApi", {
+  enumerable: true,
+  get: function get() {
+    return _ConditionApi["default"];
   }
 });
 Object.defineProperty(exports, "ConditionResponse", {
@@ -202,10 +243,22 @@ Object.defineProperty(exports, "Content", {
     return _Content["default"];
   }
 });
+Object.defineProperty(exports, "ContentApi", {
+  enumerable: true,
+  get: function get() {
+    return _ContentApi["default"];
+  }
+});
 Object.defineProperty(exports, "Customer", {
   enumerable: true,
   get: function get() {
     return _Customer["default"];
+  }
+});
+Object.defineProperty(exports, "CustomerApi", {
+  enumerable: true,
+  get: function get() {
+    return _CustomerApi["default"];
   }
 });
 Object.defineProperty(exports, "CustomerCustomerIdBillingAddressData", {
@@ -238,6 +291,18 @@ Object.defineProperty(exports, "Dictionary", {
     return _Dictionary["default"];
   }
 });
+Object.defineProperty(exports, "DictionaryApi", {
+  enumerable: true,
+  get: function get() {
+    return _DictionaryApi["default"];
+  }
+});
+Object.defineProperty(exports, "DictionaryInfoApi", {
+  enumerable: true,
+  get: function get() {
+    return _DictionaryInfoApi["default"];
+  }
+});
 Object.defineProperty(exports, "DictionaryInfoResponse", {
   enumerable: true,
   get: function get() {
@@ -248,6 +313,12 @@ Object.defineProperty(exports, "DictionaryItem", {
   enumerable: true,
   get: function get() {
     return _DictionaryItem["default"];
+  }
+});
+Object.defineProperty(exports, "DictionaryItemApi", {
+  enumerable: true,
+  get: function get() {
+    return _DictionaryItemApi["default"];
   }
 });
 Object.defineProperty(exports, "DictionaryItemResponse", {
@@ -274,6 +345,12 @@ Object.defineProperty(exports, "DictionaryResponseAllOf", {
     return _DictionaryResponseAllOf["default"];
   }
 });
+Object.defineProperty(exports, "DiffApi", {
+  enumerable: true,
+  get: function get() {
+    return _DiffApi["default"];
+  }
+});
 Object.defineProperty(exports, "DiffResponse", {
   enumerable: true,
   get: function get() {
@@ -284,6 +361,12 @@ Object.defineProperty(exports, "Director", {
   enumerable: true,
   get: function get() {
     return _Director["default"];
+  }
+});
+Object.defineProperty(exports, "DirectorApi", {
+  enumerable: true,
+  get: function get() {
+    return _DirectorApi["default"];
   }
 });
 Object.defineProperty(exports, "DirectorBackend", {
@@ -298,6 +381,12 @@ Object.defineProperty(exports, "DirectorBackendAllOf", {
     return _DirectorBackendAllOf["default"];
   }
 });
+Object.defineProperty(exports, "DirectorBackendApi", {
+  enumerable: true,
+  get: function get() {
+    return _DirectorBackendApi["default"];
+  }
+});
 Object.defineProperty(exports, "DirectorResponse", {
   enumerable: true,
   get: function get() {
@@ -308,6 +397,12 @@ Object.defineProperty(exports, "Domain", {
   enumerable: true,
   get: function get() {
     return _Domain["default"];
+  }
+});
+Object.defineProperty(exports, "DomainApi", {
+  enumerable: true,
+  get: function get() {
+    return _DomainApi["default"];
   }
 });
 Object.defineProperty(exports, "DomainCheckItem", {
@@ -340,6 +435,12 @@ Object.defineProperty(exports, "EventResponse", {
     return _EventResponse["default"];
   }
 });
+Object.defineProperty(exports, "EventsApi", {
+  enumerable: true,
+  get: function get() {
+    return _EventsApi["default"];
+  }
+});
 Object.defineProperty(exports, "EventsResponse", {
   enumerable: true,
   get: function get() {
@@ -364,6 +465,12 @@ Object.defineProperty(exports, "Gzip", {
     return _Gzip["default"];
   }
 });
+Object.defineProperty(exports, "GzipApi", {
+  enumerable: true,
+  get: function get() {
+    return _GzipApi["default"];
+  }
+});
 Object.defineProperty(exports, "GzipResponse", {
   enumerable: true,
   get: function get() {
@@ -376,6 +483,12 @@ Object.defineProperty(exports, "Header", {
     return _Header["default"];
   }
 });
+Object.defineProperty(exports, "HeaderApi", {
+  enumerable: true,
+  get: function get() {
+    return _HeaderApi["default"];
+  }
+});
 Object.defineProperty(exports, "HeaderResponse", {
   enumerable: true,
   get: function get() {
@@ -386,6 +499,12 @@ Object.defineProperty(exports, "Healthcheck", {
   enumerable: true,
   get: function get() {
     return _Healthcheck["default"];
+  }
+});
+Object.defineProperty(exports, "HealthcheckApi", {
+  enumerable: true,
+  get: function get() {
+    return _HealthcheckApi["default"];
   }
 });
 Object.defineProperty(exports, "HealthcheckResponse", {
@@ -410,6 +529,12 @@ Object.defineProperty(exports, "HistoricalAggregateResponseAllOf", {
   enumerable: true,
   get: function get() {
     return _HistoricalAggregateResponseAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "HistoricalApi", {
+  enumerable: true,
+  get: function get() {
+    return _HistoricalApi["default"];
   }
 });
 Object.defineProperty(exports, "HistoricalFieldAggregateResponse", {
@@ -470,12 +595,6 @@ Object.defineProperty(exports, "HistoricalUsageAggregateResponse", {
   enumerable: true,
   get: function get() {
     return _HistoricalUsageAggregateResponse["default"];
-  }
-});
-Object.defineProperty(exports, "HistoricalUsageAggregateResponseAllOf", {
-  enumerable: true,
-  get: function get() {
-    return _HistoricalUsageAggregateResponseAllOf["default"];
   }
 });
 Object.defineProperty(exports, "HistoricalUsageMonthResponse", {
@@ -616,6 +735,12 @@ Object.defineProperty(exports, "InvitationResponseDataAllOf", {
     return _InvitationResponseDataAllOf["default"];
   }
 });
+Object.defineProperty(exports, "InvitationsApi", {
+  enumerable: true,
+  get: function get() {
+    return _InvitationsApi["default"];
+  }
+});
 Object.defineProperty(exports, "InvitationsResponse", {
   enumerable: true,
   get: function get() {
@@ -646,6 +771,12 @@ Object.defineProperty(exports, "LoggingAzureblobAllOf", {
     return _LoggingAzureblobAllOf["default"];
   }
 });
+Object.defineProperty(exports, "LoggingAzureblobApi", {
+  enumerable: true,
+  get: function get() {
+    return _LoggingAzureblobApi["default"];
+  }
+});
 Object.defineProperty(exports, "LoggingAzureblobResponse", {
   enumerable: true,
   get: function get() {
@@ -662,6 +793,12 @@ Object.defineProperty(exports, "LoggingBigqueryAllOf", {
   enumerable: true,
   get: function get() {
     return _LoggingBigqueryAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "LoggingBigqueryApi", {
+  enumerable: true,
+  get: function get() {
+    return _LoggingBigqueryApi["default"];
   }
 });
 Object.defineProperty(exports, "LoggingBigqueryResponse", {
@@ -682,6 +819,12 @@ Object.defineProperty(exports, "LoggingCloudfilesAllOf", {
     return _LoggingCloudfilesAllOf["default"];
   }
 });
+Object.defineProperty(exports, "LoggingCloudfilesApi", {
+  enumerable: true,
+  get: function get() {
+    return _LoggingCloudfilesApi["default"];
+  }
+});
 Object.defineProperty(exports, "LoggingCloudfilesResponse", {
   enumerable: true,
   get: function get() {
@@ -694,12 +837,6 @@ Object.defineProperty(exports, "LoggingCommon", {
     return _LoggingCommon["default"];
   }
 });
-Object.defineProperty(exports, "LoggingCompressionCodec", {
-  enumerable: true,
-  get: function get() {
-    return _LoggingCompressionCodec["default"];
-  }
-});
 Object.defineProperty(exports, "LoggingDatadog", {
   enumerable: true,
   get: function get() {
@@ -710,6 +847,12 @@ Object.defineProperty(exports, "LoggingDatadogAllOf", {
   enumerable: true,
   get: function get() {
     return _LoggingDatadogAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "LoggingDatadogApi", {
+  enumerable: true,
+  get: function get() {
+    return _LoggingDatadogApi["default"];
   }
 });
 Object.defineProperty(exports, "LoggingDatadogResponse", {
@@ -730,6 +873,12 @@ Object.defineProperty(exports, "LoggingDigitaloceanAllOf", {
     return _LoggingDigitaloceanAllOf["default"];
   }
 });
+Object.defineProperty(exports, "LoggingDigitaloceanApi", {
+  enumerable: true,
+  get: function get() {
+    return _LoggingDigitaloceanApi["default"];
+  }
+});
 Object.defineProperty(exports, "LoggingDigitaloceanResponse", {
   enumerable: true,
   get: function get() {
@@ -746,6 +895,12 @@ Object.defineProperty(exports, "LoggingElasticsearchAllOf", {
   enumerable: true,
   get: function get() {
     return _LoggingElasticsearchAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "LoggingElasticsearchApi", {
+  enumerable: true,
+  get: function get() {
+    return _LoggingElasticsearchApi["default"];
   }
 });
 Object.defineProperty(exports, "LoggingElasticsearchResponse", {
@@ -772,6 +927,12 @@ Object.defineProperty(exports, "LoggingFtpAllOf", {
     return _LoggingFtpAllOf["default"];
   }
 });
+Object.defineProperty(exports, "LoggingFtpApi", {
+  enumerable: true,
+  get: function get() {
+    return _LoggingFtpApi["default"];
+  }
+});
 Object.defineProperty(exports, "LoggingFtpResponse", {
   enumerable: true,
   get: function get() {
@@ -788,6 +949,12 @@ Object.defineProperty(exports, "LoggingGcsAllOf", {
   enumerable: true,
   get: function get() {
     return _LoggingGcsAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "LoggingGcsApi", {
+  enumerable: true,
+  get: function get() {
+    return _LoggingGcsApi["default"];
   }
 });
 Object.defineProperty(exports, "LoggingGcsCommon", {
@@ -838,6 +1005,12 @@ Object.defineProperty(exports, "LoggingHerokuAllOf", {
     return _LoggingHerokuAllOf["default"];
   }
 });
+Object.defineProperty(exports, "LoggingHerokuApi", {
+  enumerable: true,
+  get: function get() {
+    return _LoggingHerokuApi["default"];
+  }
+});
 Object.defineProperty(exports, "LoggingHerokuResponse", {
   enumerable: true,
   get: function get() {
@@ -854,6 +1027,12 @@ Object.defineProperty(exports, "LoggingHoneycombAllOf", {
   enumerable: true,
   get: function get() {
     return _LoggingHoneycombAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "LoggingHoneycombApi", {
+  enumerable: true,
+  get: function get() {
+    return _LoggingHoneycombApi["default"];
   }
 });
 Object.defineProperty(exports, "LoggingHoneycombResponse", {
@@ -874,6 +1053,12 @@ Object.defineProperty(exports, "LoggingHttpsAllOf", {
     return _LoggingHttpsAllOf["default"];
   }
 });
+Object.defineProperty(exports, "LoggingHttpsApi", {
+  enumerable: true,
+  get: function get() {
+    return _LoggingHttpsApi["default"];
+  }
+});
 Object.defineProperty(exports, "LoggingHttpsResponse", {
   enumerable: true,
   get: function get() {
@@ -892,6 +1077,12 @@ Object.defineProperty(exports, "LoggingKafkaAllOf", {
     return _LoggingKafkaAllOf["default"];
   }
 });
+Object.defineProperty(exports, "LoggingKafkaApi", {
+  enumerable: true,
+  get: function get() {
+    return _LoggingKafkaApi["default"];
+  }
+});
 Object.defineProperty(exports, "LoggingKafkaResponse", {
   enumerable: true,
   get: function get() {
@@ -902,6 +1093,12 @@ Object.defineProperty(exports, "LoggingKinesis", {
   enumerable: true,
   get: function get() {
     return _LoggingKinesis["default"];
+  }
+});
+Object.defineProperty(exports, "LoggingKinesisApi", {
+  enumerable: true,
+  get: function get() {
+    return _LoggingKinesisApi["default"];
   }
 });
 Object.defineProperty(exports, "LoggingKinesisResponse", {
@@ -922,6 +1119,12 @@ Object.defineProperty(exports, "LoggingLogentriesAllOf", {
     return _LoggingLogentriesAllOf["default"];
   }
 });
+Object.defineProperty(exports, "LoggingLogentriesApi", {
+  enumerable: true,
+  get: function get() {
+    return _LoggingLogentriesApi["default"];
+  }
+});
 Object.defineProperty(exports, "LoggingLogentriesResponse", {
   enumerable: true,
   get: function get() {
@@ -940,6 +1143,12 @@ Object.defineProperty(exports, "LoggingLogglyAllOf", {
     return _LoggingLogglyAllOf["default"];
   }
 });
+Object.defineProperty(exports, "LoggingLogglyApi", {
+  enumerable: true,
+  get: function get() {
+    return _LoggingLogglyApi["default"];
+  }
+});
 Object.defineProperty(exports, "LoggingLogglyResponse", {
   enumerable: true,
   get: function get() {
@@ -956,6 +1165,12 @@ Object.defineProperty(exports, "LoggingLogshuttleAllOf", {
   enumerable: true,
   get: function get() {
     return _LoggingLogshuttleAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "LoggingLogshuttleApi", {
+  enumerable: true,
+  get: function get() {
+    return _LoggingLogshuttleApi["default"];
   }
 });
 Object.defineProperty(exports, "LoggingLogshuttleResponse", {
@@ -982,6 +1197,12 @@ Object.defineProperty(exports, "LoggingNewrelicAllOf", {
     return _LoggingNewrelicAllOf["default"];
   }
 });
+Object.defineProperty(exports, "LoggingNewrelicApi", {
+  enumerable: true,
+  get: function get() {
+    return _LoggingNewrelicApi["default"];
+  }
+});
 Object.defineProperty(exports, "LoggingNewrelicResponse", {
   enumerable: true,
   get: function get() {
@@ -1000,6 +1221,12 @@ Object.defineProperty(exports, "LoggingOpenstackAllOf", {
     return _LoggingOpenstackAllOf["default"];
   }
 });
+Object.defineProperty(exports, "LoggingOpenstackApi", {
+  enumerable: true,
+  get: function get() {
+    return _LoggingOpenstackApi["default"];
+  }
+});
 Object.defineProperty(exports, "LoggingOpenstackResponse", {
   enumerable: true,
   get: function get() {
@@ -1012,6 +1239,12 @@ Object.defineProperty(exports, "LoggingPapertrail", {
     return _LoggingPapertrail["default"];
   }
 });
+Object.defineProperty(exports, "LoggingPapertrailApi", {
+  enumerable: true,
+  get: function get() {
+    return _LoggingPapertrailApi["default"];
+  }
+});
 Object.defineProperty(exports, "LoggingPapertrailResponse", {
   enumerable: true,
   get: function get() {
@@ -1022,6 +1255,12 @@ Object.defineProperty(exports, "LoggingPlacement", {
   enumerable: true,
   get: function get() {
     return _LoggingPlacement["default"];
+  }
+});
+Object.defineProperty(exports, "LoggingPubsubApi", {
+  enumerable: true,
+  get: function get() {
+    return _LoggingPubsubApi["default"];
   }
 });
 Object.defineProperty(exports, "LoggingRequestCapsCommon", {
@@ -1042,6 +1281,12 @@ Object.defineProperty(exports, "LoggingS3AllOf", {
     return _LoggingS3AllOf["default"];
   }
 });
+Object.defineProperty(exports, "LoggingS3Api", {
+  enumerable: true,
+  get: function get() {
+    return _LoggingS3Api["default"];
+  }
+});
 Object.defineProperty(exports, "LoggingS3Response", {
   enumerable: true,
   get: function get() {
@@ -1058,6 +1303,12 @@ Object.defineProperty(exports, "LoggingScalyrAllOf", {
   enumerable: true,
   get: function get() {
     return _LoggingScalyrAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "LoggingScalyrApi", {
+  enumerable: true,
+  get: function get() {
+    return _LoggingScalyrApi["default"];
   }
 });
 Object.defineProperty(exports, "LoggingScalyrResponse", {
@@ -1078,6 +1329,12 @@ Object.defineProperty(exports, "LoggingSftpAllOf", {
     return _LoggingSftpAllOf["default"];
   }
 });
+Object.defineProperty(exports, "LoggingSftpApi", {
+  enumerable: true,
+  get: function get() {
+    return _LoggingSftpApi["default"];
+  }
+});
 Object.defineProperty(exports, "LoggingSftpResponse", {
   enumerable: true,
   get: function get() {
@@ -1094,6 +1351,12 @@ Object.defineProperty(exports, "LoggingSplunkAllOf", {
   enumerable: true,
   get: function get() {
     return _LoggingSplunkAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "LoggingSplunkApi", {
+  enumerable: true,
+  get: function get() {
+    return _LoggingSplunkApi["default"];
   }
 });
 Object.defineProperty(exports, "LoggingSplunkResponse", {
@@ -1114,6 +1377,12 @@ Object.defineProperty(exports, "LoggingSumologicAllOf", {
     return _LoggingSumologicAllOf["default"];
   }
 });
+Object.defineProperty(exports, "LoggingSumologicApi", {
+  enumerable: true,
+  get: function get() {
+    return _LoggingSumologicApi["default"];
+  }
+});
 Object.defineProperty(exports, "LoggingSumologicResponse", {
   enumerable: true,
   get: function get() {
@@ -1130,6 +1399,12 @@ Object.defineProperty(exports, "LoggingSyslogAllOf", {
   enumerable: true,
   get: function get() {
     return _LoggingSyslogAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "LoggingSyslogApi", {
+  enumerable: true,
+  get: function get() {
+    return _LoggingSyslogApi["default"];
   }
 });
 Object.defineProperty(exports, "LoggingSyslogResponse", {
@@ -1154,30 +1429,6 @@ Object.defineProperty(exports, "NestedVersion", {
   enumerable: true,
   get: function get() {
     return _NestedVersion["default"];
-  }
-});
-Object.defineProperty(exports, "Package", {
-  enumerable: true,
-  get: function get() {
-    return _Package["default"];
-  }
-});
-Object.defineProperty(exports, "PackageMetadata", {
-  enumerable: true,
-  get: function get() {
-    return _PackageMetadata["default"];
-  }
-});
-Object.defineProperty(exports, "PackageResponse", {
-  enumerable: true,
-  get: function get() {
-    return _PackageResponse["default"];
-  }
-});
-Object.defineProperty(exports, "PackageResponseAllOf", {
-  enumerable: true,
-  get: function get() {
-    return _PackageResponseAllOf["default"];
   }
 });
 Object.defineProperty(exports, "Pagination", {
@@ -1216,6 +1467,12 @@ Object.defineProperty(exports, "PoolAllOf", {
     return _PoolAllOf["default"];
   }
 });
+Object.defineProperty(exports, "PoolApi", {
+  enumerable: true,
+  get: function get() {
+    return _PoolApi["default"];
+  }
+});
 Object.defineProperty(exports, "PoolResponse", {
   enumerable: true,
   get: function get() {
@@ -1228,16 +1485,64 @@ Object.defineProperty(exports, "PoolResponseAllOf", {
     return _PoolResponseAllOf["default"];
   }
 });
+Object.defineProperty(exports, "Pop", {
+  enumerable: true,
+  get: function get() {
+    return _Pop["default"];
+  }
+});
+Object.defineProperty(exports, "PopApi", {
+  enumerable: true,
+  get: function get() {
+    return _PopApi["default"];
+  }
+});
+Object.defineProperty(exports, "PopCoordinates", {
+  enumerable: true,
+  get: function get() {
+    return _PopCoordinates["default"];
+  }
+});
 Object.defineProperty(exports, "PublicIpList", {
   enumerable: true,
   get: function get() {
     return _PublicIpList["default"];
   }
 });
+Object.defineProperty(exports, "PublicIpListApi", {
+  enumerable: true,
+  get: function get() {
+    return _PublicIpListApi["default"];
+  }
+});
+Object.defineProperty(exports, "PurgeApi", {
+  enumerable: true,
+  get: function get() {
+    return _PurgeApi["default"];
+  }
+});
+Object.defineProperty(exports, "PurgeKeys", {
+  enumerable: true,
+  get: function get() {
+    return _PurgeKeys["default"];
+  }
+});
+Object.defineProperty(exports, "PurgeResponse", {
+  enumerable: true,
+  get: function get() {
+    return _PurgeResponse["default"];
+  }
+});
 Object.defineProperty(exports, "RateLimiter", {
   enumerable: true,
   get: function get() {
     return _RateLimiter["default"];
+  }
+});
+Object.defineProperty(exports, "RateLimiterApi", {
+  enumerable: true,
+  get: function get() {
+    return _RateLimiterApi["default"];
   }
 });
 Object.defineProperty(exports, "RateLimiterResponse", {
@@ -1264,6 +1569,12 @@ Object.defineProperty(exports, "Realtime", {
     return _Realtime["default"];
   }
 });
+Object.defineProperty(exports, "RealtimeApi", {
+  enumerable: true,
+  get: function get() {
+    return _RealtimeApi["default"];
+  }
+});
 Object.defineProperty(exports, "RealtimeEntry", {
   enumerable: true,
   get: function get() {
@@ -1280,12 +1591,6 @@ Object.defineProperty(exports, "RelationshipCommonName", {
   enumerable: true,
   get: function get() {
     return _RelationshipCommonName["default"];
-  }
-});
-Object.defineProperty(exports, "RelationshipCommonNameCommonName", {
-  enumerable: true,
-  get: function get() {
-    return _RelationshipCommonNameCommonName["default"];
   }
 });
 Object.defineProperty(exports, "RelationshipCustomer", {
@@ -1540,6 +1845,12 @@ Object.defineProperty(exports, "RelationshipTlsDomain", {
     return _RelationshipTlsDomain["default"];
   }
 });
+Object.defineProperty(exports, "RelationshipTlsDomainTlsDomain", {
+  enumerable: true,
+  get: function get() {
+    return _RelationshipTlsDomainTlsDomain["default"];
+  }
+});
 Object.defineProperty(exports, "RelationshipTlsDomains", {
   enumerable: true,
   get: function get() {
@@ -1762,6 +2073,12 @@ Object.defineProperty(exports, "RequestSettings", {
     return _RequestSettings["default"];
   }
 });
+Object.defineProperty(exports, "RequestSettingsApi", {
+  enumerable: true,
+  get: function get() {
+    return _RequestSettingsApi["default"];
+  }
+});
 Object.defineProperty(exports, "RequestSettingsResponse", {
   enumerable: true,
   get: function get() {
@@ -1772,6 +2089,12 @@ Object.defineProperty(exports, "ResponseObject", {
   enumerable: true,
   get: function get() {
     return _ResponseObject["default"];
+  }
+});
+Object.defineProperty(exports, "ResponseObjectApi", {
+  enumerable: true,
+  get: function get() {
+    return _ResponseObjectApi["default"];
   }
 });
 Object.defineProperty(exports, "ResponseObjectResponse", {
@@ -1804,58 +2127,22 @@ Object.defineProperty(exports, "SchemasDirector", {
     return _SchemasDirector["default"];
   }
 });
-Object.defineProperty(exports, "SchemasRelationshipsForWafActiveRule", {
+Object.defineProperty(exports, "SchemasHealthcheck", {
   enumerable: true,
   get: function get() {
-    return _SchemasRelationshipsForWafActiveRule["default"];
+    return _SchemasHealthcheck["default"];
   }
 });
-Object.defineProperty(exports, "SchemasRequestSettings", {
+Object.defineProperty(exports, "SchemasHealthcheckResponse", {
   enumerable: true,
   get: function get() {
-    return _SchemasRequestSettings["default"];
-  }
-});
-Object.defineProperty(exports, "SchemasRequestSettingsResponse", {
-  enumerable: true,
-  get: function get() {
-    return _SchemasRequestSettingsResponse["default"];
-  }
-});
-Object.defineProperty(exports, "SchemasResponseObject", {
-  enumerable: true,
-  get: function get() {
-    return _SchemasResponseObject["default"];
-  }
-});
-Object.defineProperty(exports, "SchemasResponseObjectResponse", {
-  enumerable: true,
-  get: function get() {
-    return _SchemasResponseObjectResponse["default"];
-  }
-});
-Object.defineProperty(exports, "SchemasSnippetResponse", {
-  enumerable: true,
-  get: function get() {
-    return _SchemasSnippetResponse["default"];
-  }
-});
-Object.defineProperty(exports, "SchemasSnippetResponseAllOf", {
-  enumerable: true,
-  get: function get() {
-    return _SchemasSnippetResponseAllOf["default"];
+    return _SchemasHealthcheckResponse["default"];
   }
 });
 Object.defineProperty(exports, "SchemasUserResponse", {
   enumerable: true,
   get: function get() {
     return _SchemasUserResponse["default"];
-  }
-});
-Object.defineProperty(exports, "SchemasUserResponseAllOf", {
-  enumerable: true,
-  get: function get() {
-    return _SchemasUserResponseAllOf["default"];
   }
 });
 Object.defineProperty(exports, "SchemasVclResponse", {
@@ -1876,30 +2163,6 @@ Object.defineProperty(exports, "SchemasVersionResponse", {
     return _SchemasVersionResponse["default"];
   }
 });
-Object.defineProperty(exports, "SchemasVersionResponseAllOf", {
-  enumerable: true,
-  get: function get() {
-    return _SchemasVersionResponseAllOf["default"];
-  }
-});
-Object.defineProperty(exports, "SchemasWafActiveRule", {
-  enumerable: true,
-  get: function get() {
-    return _SchemasWafActiveRule["default"];
-  }
-});
-Object.defineProperty(exports, "SchemasWafActiveRuleData", {
-  enumerable: true,
-  get: function get() {
-    return _SchemasWafActiveRuleData["default"];
-  }
-});
-Object.defineProperty(exports, "SchemasWafActiveRuleDataAttributes", {
-  enumerable: true,
-  get: function get() {
-    return _SchemasWafActiveRuleDataAttributes["default"];
-  }
-});
 Object.defineProperty(exports, "SchemasWafFirewallVersion", {
   enumerable: true,
   get: function get() {
@@ -1912,16 +2175,16 @@ Object.defineProperty(exports, "SchemasWafFirewallVersionData", {
     return _SchemasWafFirewallVersionData["default"];
   }
 });
-Object.defineProperty(exports, "SchemasWafFirewallVersionDataAttributes", {
-  enumerable: true,
-  get: function get() {
-    return _SchemasWafFirewallVersionDataAttributes["default"];
-  }
-});
 Object.defineProperty(exports, "Server", {
   enumerable: true,
   get: function get() {
     return _Server["default"];
+  }
+});
+Object.defineProperty(exports, "ServerApi", {
+  enumerable: true,
+  get: function get() {
+    return _ServerApi["default"];
   }
 });
 Object.defineProperty(exports, "ServerResponse", {
@@ -1940,6 +2203,12 @@ Object.defineProperty(exports, "Service", {
   enumerable: true,
   get: function get() {
     return _Service["default"];
+  }
+});
+Object.defineProperty(exports, "ServiceApi", {
+  enumerable: true,
+  get: function get() {
+    return _ServiceApi["default"];
   }
 });
 Object.defineProperty(exports, "ServiceAuthorization", {
@@ -1976,6 +2245,12 @@ Object.defineProperty(exports, "ServiceAuthorizationResponseDataAllOf", {
   enumerable: true,
   get: function get() {
     return _ServiceAuthorizationResponseDataAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "ServiceAuthorizationsApi", {
+  enumerable: true,
+  get: function get() {
+    return _ServiceAuthorizationsApi["default"];
   }
 });
 Object.defineProperty(exports, "ServiceAuthorizationsData", {
@@ -2062,6 +2337,18 @@ Object.defineProperty(exports, "ServiceInvitationResponseAllOfData", {
     return _ServiceInvitationResponseAllOfData["default"];
   }
 });
+Object.defineProperty(exports, "ServiceListResponse", {
+  enumerable: true,
+  get: function get() {
+    return _ServiceListResponse["default"];
+  }
+});
+Object.defineProperty(exports, "ServiceListResponseAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _ServiceListResponseAllOf["default"];
+  }
+});
 Object.defineProperty(exports, "ServiceResponse", {
   enumerable: true,
   get: function get() {
@@ -2080,6 +2367,12 @@ Object.defineProperty(exports, "Settings", {
     return _Settings["default"];
   }
 });
+Object.defineProperty(exports, "SettingsApi", {
+  enumerable: true,
+  get: function get() {
+    return _SettingsApi["default"];
+  }
+});
 Object.defineProperty(exports, "SettingsResponse", {
   enumerable: true,
   get: function get() {
@@ -2092,16 +2385,34 @@ Object.defineProperty(exports, "Snippet", {
     return _Snippet["default"];
   }
 });
+Object.defineProperty(exports, "SnippetApi", {
+  enumerable: true,
+  get: function get() {
+    return _SnippetApi["default"];
+  }
+});
 Object.defineProperty(exports, "SnippetResponse", {
   enumerable: true,
   get: function get() {
     return _SnippetResponse["default"];
   }
 });
+Object.defineProperty(exports, "SnippetResponseAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _SnippetResponseAllOf["default"];
+  }
+});
 Object.defineProperty(exports, "Star", {
   enumerable: true,
   get: function get() {
     return _Star["default"];
+  }
+});
+Object.defineProperty(exports, "StarApi", {
+  enumerable: true,
+  get: function get() {
+    return _StarApi["default"];
   }
 });
 Object.defineProperty(exports, "StarData", {
@@ -2126,6 +2437,12 @@ Object.defineProperty(exports, "Stats", {
   enumerable: true,
   get: function get() {
     return _Stats["default"];
+  }
+});
+Object.defineProperty(exports, "StatsApi", {
+  enumerable: true,
+  get: function get() {
+    return _StatsApi["default"];
   }
 });
 Object.defineProperty(exports, "Timestamps", {
@@ -2162,6 +2479,12 @@ Object.defineProperty(exports, "TlsActivationResponseDataAllOf", {
   enumerable: true,
   get: function get() {
     return _TlsActivationResponseDataAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "TlsActivationsApi", {
+  enumerable: true,
+  get: function get() {
+    return _TlsActivationsApi["default"];
   }
 });
 Object.defineProperty(exports, "TlsActivationsResponse", {
@@ -2212,6 +2535,12 @@ Object.defineProperty(exports, "TlsBulkCertificateResponseDataAllOf", {
     return _TlsBulkCertificateResponseDataAllOf["default"];
   }
 });
+Object.defineProperty(exports, "TlsBulkCertificatesApi", {
+  enumerable: true,
+  get: function get() {
+    return _TlsBulkCertificatesApi["default"];
+  }
+});
 Object.defineProperty(exports, "TlsBulkCertificatesResponse", {
   enumerable: true,
   get: function get() {
@@ -2258,6 +2587,12 @@ Object.defineProperty(exports, "TlsCertificateResponseDataAllOf", {
   enumerable: true,
   get: function get() {
     return _TlsCertificateResponseDataAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "TlsCertificatesApi", {
+  enumerable: true,
+  get: function get() {
+    return _TlsCertificatesApi["default"];
   }
 });
 Object.defineProperty(exports, "TlsCertificatesResponse", {
@@ -2314,6 +2649,12 @@ Object.defineProperty(exports, "TlsConfigurationResponseDataAllOf", {
     return _TlsConfigurationResponseDataAllOf["default"];
   }
 });
+Object.defineProperty(exports, "TlsConfigurationsApi", {
+  enumerable: true,
+  get: function get() {
+    return _TlsConfigurationsApi["default"];
+  }
+});
 Object.defineProperty(exports, "TlsConfigurationsResponse", {
   enumerable: true,
   get: function get() {
@@ -2336,6 +2677,12 @@ Object.defineProperty(exports, "TlsDomainData", {
   enumerable: true,
   get: function get() {
     return _TlsDomainData["default"];
+  }
+});
+Object.defineProperty(exports, "TlsDomainsApi", {
+  enumerable: true,
+  get: function get() {
+    return _TlsDomainsApi["default"];
   }
 });
 Object.defineProperty(exports, "TlsDomainsResponse", {
@@ -2378,6 +2725,12 @@ Object.defineProperty(exports, "TlsPrivateKeyResponseData", {
   enumerable: true,
   get: function get() {
     return _TlsPrivateKeyResponseData["default"];
+  }
+});
+Object.defineProperty(exports, "TlsPrivateKeysApi", {
+  enumerable: true,
+  get: function get() {
+    return _TlsPrivateKeysApi["default"];
   }
 });
 Object.defineProperty(exports, "TlsPrivateKeysResponse", {
@@ -2428,6 +2781,12 @@ Object.defineProperty(exports, "TlsSubscriptionResponseDataAllOf", {
     return _TlsSubscriptionResponseDataAllOf["default"];
   }
 });
+Object.defineProperty(exports, "TlsSubscriptionsApi", {
+  enumerable: true,
+  get: function get() {
+    return _TlsSubscriptionsApi["default"];
+  }
+});
 Object.defineProperty(exports, "TlsSubscriptionsResponse", {
   enumerable: true,
   get: function get() {
@@ -2468,6 +2827,12 @@ Object.defineProperty(exports, "TokenResponseAllOf", {
   enumerable: true,
   get: function get() {
     return _TokenResponseAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "TokensApi", {
+  enumerable: true,
+  get: function get() {
+    return _TokensApi["default"];
   }
 });
 Object.defineProperty(exports, "TypeBillingAddress", {
@@ -2620,10 +2985,22 @@ Object.defineProperty(exports, "User", {
     return _User["default"];
   }
 });
+Object.defineProperty(exports, "UserApi", {
+  enumerable: true,
+  get: function get() {
+    return _UserApi["default"];
+  }
+});
 Object.defineProperty(exports, "UserResponse", {
   enumerable: true,
   get: function get() {
     return _UserResponse["default"];
+  }
+});
+Object.defineProperty(exports, "UserResponseAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _UserResponseAllOf["default"];
   }
 });
 Object.defineProperty(exports, "Vcl", {
@@ -2632,10 +3009,22 @@ Object.defineProperty(exports, "Vcl", {
     return _Vcl["default"];
   }
 });
+Object.defineProperty(exports, "VclApi", {
+  enumerable: true,
+  get: function get() {
+    return _VclApi["default"];
+  }
+});
 Object.defineProperty(exports, "VclDiff", {
   enumerable: true,
   get: function get() {
     return _VclDiff["default"];
+  }
+});
+Object.defineProperty(exports, "VclDiffApi", {
+  enumerable: true,
+  get: function get() {
+    return _VclDiffApi["default"];
   }
 });
 Object.defineProperty(exports, "VclResponse", {
@@ -2648,6 +3037,12 @@ Object.defineProperty(exports, "Version", {
   enumerable: true,
   get: function get() {
     return _Version["default"];
+  }
+});
+Object.defineProperty(exports, "VersionApi", {
+  enumerable: true,
+  get: function get() {
+    return _VersionApi["default"];
   }
 });
 Object.defineProperty(exports, "VersionCreateResponse", {
@@ -2668,6 +3063,12 @@ Object.defineProperty(exports, "VersionResponse", {
     return _VersionResponse["default"];
   }
 });
+Object.defineProperty(exports, "VersionResponseAllOf", {
+  enumerable: true,
+  get: function get() {
+    return _VersionResponseAllOf["default"];
+  }
+});
 Object.defineProperty(exports, "WafActiveRule", {
   enumerable: true,
   get: function get() {
@@ -2686,6 +3087,12 @@ Object.defineProperty(exports, "WafActiveRuleData", {
     return _WafActiveRuleData["default"];
   }
 });
+Object.defineProperty(exports, "WafActiveRuleDataAttributes", {
+  enumerable: true,
+  get: function get() {
+    return _WafActiveRuleDataAttributes["default"];
+  }
+});
 Object.defineProperty(exports, "WafActiveRuleResponse", {
   enumerable: true,
   get: function get() {
@@ -2702,6 +3109,12 @@ Object.defineProperty(exports, "WafActiveRuleResponseDataAllOf", {
   enumerable: true,
   get: function get() {
     return _WafActiveRuleResponseDataAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "WafActiveRulesApi", {
+  enumerable: true,
+  get: function get() {
+    return _WafActiveRulesApi["default"];
   }
 });
 Object.defineProperty(exports, "WafActiveRulesResponse", {
@@ -2750,6 +3163,12 @@ Object.defineProperty(exports, "WafExclusionResponseDataAllOf", {
   enumerable: true,
   get: function get() {
     return _WafExclusionResponseDataAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "WafExclusionsApi", {
+  enumerable: true,
+  get: function get() {
+    return _WafExclusionsApi["default"];
   }
 });
 Object.defineProperty(exports, "WafExclusionsResponse", {
@@ -2812,6 +3231,12 @@ Object.defineProperty(exports, "WafFirewallVersionData", {
     return _WafFirewallVersionData["default"];
   }
 });
+Object.defineProperty(exports, "WafFirewallVersionDataAttributes", {
+  enumerable: true,
+  get: function get() {
+    return _WafFirewallVersionDataAttributes["default"];
+  }
+});
 Object.defineProperty(exports, "WafFirewallVersionResponse", {
   enumerable: true,
   get: function get() {
@@ -2830,6 +3255,12 @@ Object.defineProperty(exports, "WafFirewallVersionResponseDataAllOf", {
     return _WafFirewallVersionResponseDataAllOf["default"];
   }
 });
+Object.defineProperty(exports, "WafFirewallVersionsApi", {
+  enumerable: true,
+  get: function get() {
+    return _WafFirewallVersionsApi["default"];
+  }
+});
 Object.defineProperty(exports, "WafFirewallVersionsResponse", {
   enumerable: true,
   get: function get() {
@@ -2840,6 +3271,12 @@ Object.defineProperty(exports, "WafFirewallVersionsResponseAllOf", {
   enumerable: true,
   get: function get() {
     return _WafFirewallVersionsResponseAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "WafFirewallsApi", {
+  enumerable: true,
+  get: function get() {
+    return _WafFirewallsApi["default"];
   }
 });
 Object.defineProperty(exports, "WafFirewallsResponse", {
@@ -2914,6 +3351,12 @@ Object.defineProperty(exports, "WafRuleRevisionResponseDataAllOf", {
     return _WafRuleRevisionResponseDataAllOf["default"];
   }
 });
+Object.defineProperty(exports, "WafRuleRevisionsApi", {
+  enumerable: true,
+  get: function get() {
+    return _WafRuleRevisionsApi["default"];
+  }
+});
 Object.defineProperty(exports, "WafRuleRevisionsResponse", {
   enumerable: true,
   get: function get() {
@@ -2924,6 +3367,12 @@ Object.defineProperty(exports, "WafRuleRevisionsResponseAllOf", {
   enumerable: true,
   get: function get() {
     return _WafRuleRevisionsResponseAllOf["default"];
+  }
+});
+Object.defineProperty(exports, "WafRulesApi", {
+  enumerable: true,
+  get: function get() {
+    return _WafRulesApi["default"];
   }
 });
 Object.defineProperty(exports, "WafRulesResponse", {
@@ -2950,6 +3399,12 @@ Object.defineProperty(exports, "WafTagAttributes", {
     return _WafTagAttributes["default"];
   }
 });
+Object.defineProperty(exports, "WafTagsApi", {
+  enumerable: true,
+  get: function get() {
+    return _WafTagsApi["default"];
+  }
+});
 Object.defineProperty(exports, "WafTagsResponse", {
   enumerable: true,
   get: function get() {
@@ -2962,498 +3417,7 @@ Object.defineProperty(exports, "WafTagsResponseAllOf", {
     return _WafTagsResponseAllOf["default"];
   }
 });
-Object.defineProperty(exports, "AclApi", {
-  enumerable: true,
-  get: function get() {
-    return _AclApi["default"];
-  }
-});
-Object.defineProperty(exports, "AclEntryApi", {
-  enumerable: true,
-  get: function get() {
-    return _AclEntryApi["default"];
-  }
-});
-Object.defineProperty(exports, "BackendApi", {
-  enumerable: true,
-  get: function get() {
-    return _BackendApi["default"];
-  }
-});
-Object.defineProperty(exports, "BillingApi", {
-  enumerable: true,
-  get: function get() {
-    return _BillingApi["default"];
-  }
-});
-Object.defineProperty(exports, "BillingAddressApi", {
-  enumerable: true,
-  get: function get() {
-    return _BillingAddressApi["default"];
-  }
-});
-Object.defineProperty(exports, "CacheSettingsApi", {
-  enumerable: true,
-  get: function get() {
-    return _CacheSettingsApi["default"];
-  }
-});
-Object.defineProperty(exports, "ConditionApi", {
-  enumerable: true,
-  get: function get() {
-    return _ConditionApi["default"];
-  }
-});
-Object.defineProperty(exports, "ContentApi", {
-  enumerable: true,
-  get: function get() {
-    return _ContentApi["default"];
-  }
-});
-Object.defineProperty(exports, "CustomerApi", {
-  enumerable: true,
-  get: function get() {
-    return _CustomerApi["default"];
-  }
-});
-Object.defineProperty(exports, "DictionaryApi", {
-  enumerable: true,
-  get: function get() {
-    return _DictionaryApi["default"];
-  }
-});
-Object.defineProperty(exports, "DictionaryInfoApi", {
-  enumerable: true,
-  get: function get() {
-    return _DictionaryInfoApi["default"];
-  }
-});
-Object.defineProperty(exports, "DictionaryItemApi", {
-  enumerable: true,
-  get: function get() {
-    return _DictionaryItemApi["default"];
-  }
-});
-Object.defineProperty(exports, "DiffApi", {
-  enumerable: true,
-  get: function get() {
-    return _DiffApi["default"];
-  }
-});
-Object.defineProperty(exports, "DirectorApi", {
-  enumerable: true,
-  get: function get() {
-    return _DirectorApi["default"];
-  }
-});
-Object.defineProperty(exports, "DirectorBackendApi", {
-  enumerable: true,
-  get: function get() {
-    return _DirectorBackendApi["default"];
-  }
-});
-Object.defineProperty(exports, "DomainApi", {
-  enumerable: true,
-  get: function get() {
-    return _DomainApi["default"];
-  }
-});
-Object.defineProperty(exports, "EventsApi", {
-  enumerable: true,
-  get: function get() {
-    return _EventsApi["default"];
-  }
-});
-Object.defineProperty(exports, "GzipApi", {
-  enumerable: true,
-  get: function get() {
-    return _GzipApi["default"];
-  }
-});
-Object.defineProperty(exports, "HeaderApi", {
-  enumerable: true,
-  get: function get() {
-    return _HeaderApi["default"];
-  }
-});
-Object.defineProperty(exports, "HealthcheckApi", {
-  enumerable: true,
-  get: function get() {
-    return _HealthcheckApi["default"];
-  }
-});
-Object.defineProperty(exports, "HistoricalApi", {
-  enumerable: true,
-  get: function get() {
-    return _HistoricalApi["default"];
-  }
-});
-Object.defineProperty(exports, "InvitationsApi", {
-  enumerable: true,
-  get: function get() {
-    return _InvitationsApi["default"];
-  }
-});
-Object.defineProperty(exports, "LoggingAzureblobApi", {
-  enumerable: true,
-  get: function get() {
-    return _LoggingAzureblobApi["default"];
-  }
-});
-Object.defineProperty(exports, "LoggingBigqueryApi", {
-  enumerable: true,
-  get: function get() {
-    return _LoggingBigqueryApi["default"];
-  }
-});
-Object.defineProperty(exports, "LoggingCloudfilesApi", {
-  enumerable: true,
-  get: function get() {
-    return _LoggingCloudfilesApi["default"];
-  }
-});
-Object.defineProperty(exports, "LoggingDatadogApi", {
-  enumerable: true,
-  get: function get() {
-    return _LoggingDatadogApi["default"];
-  }
-});
-Object.defineProperty(exports, "LoggingDigitaloceanApi", {
-  enumerable: true,
-  get: function get() {
-    return _LoggingDigitaloceanApi["default"];
-  }
-});
-Object.defineProperty(exports, "LoggingElasticsearchApi", {
-  enumerable: true,
-  get: function get() {
-    return _LoggingElasticsearchApi["default"];
-  }
-});
-Object.defineProperty(exports, "LoggingFtpApi", {
-  enumerable: true,
-  get: function get() {
-    return _LoggingFtpApi["default"];
-  }
-});
-Object.defineProperty(exports, "LoggingGcsApi", {
-  enumerable: true,
-  get: function get() {
-    return _LoggingGcsApi["default"];
-  }
-});
-Object.defineProperty(exports, "LoggingHerokuApi", {
-  enumerable: true,
-  get: function get() {
-    return _LoggingHerokuApi["default"];
-  }
-});
-Object.defineProperty(exports, "LoggingHoneycombApi", {
-  enumerable: true,
-  get: function get() {
-    return _LoggingHoneycombApi["default"];
-  }
-});
-Object.defineProperty(exports, "LoggingHttpsApi", {
-  enumerable: true,
-  get: function get() {
-    return _LoggingHttpsApi["default"];
-  }
-});
-Object.defineProperty(exports, "LoggingKafkaApi", {
-  enumerable: true,
-  get: function get() {
-    return _LoggingKafkaApi["default"];
-  }
-});
-Object.defineProperty(exports, "LoggingKinesisApi", {
-  enumerable: true,
-  get: function get() {
-    return _LoggingKinesisApi["default"];
-  }
-});
-Object.defineProperty(exports, "LoggingLogentriesApi", {
-  enumerable: true,
-  get: function get() {
-    return _LoggingLogentriesApi["default"];
-  }
-});
-Object.defineProperty(exports, "LoggingLogglyApi", {
-  enumerable: true,
-  get: function get() {
-    return _LoggingLogglyApi["default"];
-  }
-});
-Object.defineProperty(exports, "LoggingLogshuttleApi", {
-  enumerable: true,
-  get: function get() {
-    return _LoggingLogshuttleApi["default"];
-  }
-});
-Object.defineProperty(exports, "LoggingNewrelicApi", {
-  enumerable: true,
-  get: function get() {
-    return _LoggingNewrelicApi["default"];
-  }
-});
-Object.defineProperty(exports, "LoggingOpenstackApi", {
-  enumerable: true,
-  get: function get() {
-    return _LoggingOpenstackApi["default"];
-  }
-});
-Object.defineProperty(exports, "LoggingPapertrailApi", {
-  enumerable: true,
-  get: function get() {
-    return _LoggingPapertrailApi["default"];
-  }
-});
-Object.defineProperty(exports, "LoggingPubsubApi", {
-  enumerable: true,
-  get: function get() {
-    return _LoggingPubsubApi["default"];
-  }
-});
-Object.defineProperty(exports, "LoggingS3Api", {
-  enumerable: true,
-  get: function get() {
-    return _LoggingS3Api["default"];
-  }
-});
-Object.defineProperty(exports, "LoggingScalyrApi", {
-  enumerable: true,
-  get: function get() {
-    return _LoggingScalyrApi["default"];
-  }
-});
-Object.defineProperty(exports, "LoggingSftpApi", {
-  enumerable: true,
-  get: function get() {
-    return _LoggingSftpApi["default"];
-  }
-});
-Object.defineProperty(exports, "LoggingSplunkApi", {
-  enumerable: true,
-  get: function get() {
-    return _LoggingSplunkApi["default"];
-  }
-});
-Object.defineProperty(exports, "LoggingSumologicApi", {
-  enumerable: true,
-  get: function get() {
-    return _LoggingSumologicApi["default"];
-  }
-});
-Object.defineProperty(exports, "LoggingSyslogApi", {
-  enumerable: true,
-  get: function get() {
-    return _LoggingSyslogApi["default"];
-  }
-});
-Object.defineProperty(exports, "PackageApi", {
-  enumerable: true,
-  get: function get() {
-    return _PackageApi["default"];
-  }
-});
-Object.defineProperty(exports, "PoolApi", {
-  enumerable: true,
-  get: function get() {
-    return _PoolApi["default"];
-  }
-});
-Object.defineProperty(exports, "PublicIpListApi", {
-  enumerable: true,
-  get: function get() {
-    return _PublicIpListApi["default"];
-  }
-});
-Object.defineProperty(exports, "RateLimiterApi", {
-  enumerable: true,
-  get: function get() {
-    return _RateLimiterApi["default"];
-  }
-});
-Object.defineProperty(exports, "RealtimeApi", {
-  enumerable: true,
-  get: function get() {
-    return _RealtimeApi["default"];
-  }
-});
-Object.defineProperty(exports, "RequestSettingsApi", {
-  enumerable: true,
-  get: function get() {
-    return _RequestSettingsApi["default"];
-  }
-});
-Object.defineProperty(exports, "ResponseObjectApi", {
-  enumerable: true,
-  get: function get() {
-    return _ResponseObjectApi["default"];
-  }
-});
-Object.defineProperty(exports, "ServerApi", {
-  enumerable: true,
-  get: function get() {
-    return _ServerApi["default"];
-  }
-});
-Object.defineProperty(exports, "ServiceApi", {
-  enumerable: true,
-  get: function get() {
-    return _ServiceApi["default"];
-  }
-});
-Object.defineProperty(exports, "ServiceAuthorizationsApi", {
-  enumerable: true,
-  get: function get() {
-    return _ServiceAuthorizationsApi["default"];
-  }
-});
-Object.defineProperty(exports, "SettingsApi", {
-  enumerable: true,
-  get: function get() {
-    return _SettingsApi["default"];
-  }
-});
-Object.defineProperty(exports, "SnippetApi", {
-  enumerable: true,
-  get: function get() {
-    return _SnippetApi["default"];
-  }
-});
-Object.defineProperty(exports, "StarApi", {
-  enumerable: true,
-  get: function get() {
-    return _StarApi["default"];
-  }
-});
-Object.defineProperty(exports, "StatsApi", {
-  enumerable: true,
-  get: function get() {
-    return _StatsApi["default"];
-  }
-});
-Object.defineProperty(exports, "TlsActivationsApi", {
-  enumerable: true,
-  get: function get() {
-    return _TlsActivationsApi["default"];
-  }
-});
-Object.defineProperty(exports, "TlsBulkCertificatesApi", {
-  enumerable: true,
-  get: function get() {
-    return _TlsBulkCertificatesApi["default"];
-  }
-});
-Object.defineProperty(exports, "TlsCertificatesApi", {
-  enumerable: true,
-  get: function get() {
-    return _TlsCertificatesApi["default"];
-  }
-});
-Object.defineProperty(exports, "TlsConfigurationsApi", {
-  enumerable: true,
-  get: function get() {
-    return _TlsConfigurationsApi["default"];
-  }
-});
-Object.defineProperty(exports, "TlsDomainsApi", {
-  enumerable: true,
-  get: function get() {
-    return _TlsDomainsApi["default"];
-  }
-});
-Object.defineProperty(exports, "TlsPrivateKeysApi", {
-  enumerable: true,
-  get: function get() {
-    return _TlsPrivateKeysApi["default"];
-  }
-});
-Object.defineProperty(exports, "TlsSubscriptionsApi", {
-  enumerable: true,
-  get: function get() {
-    return _TlsSubscriptionsApi["default"];
-  }
-});
-Object.defineProperty(exports, "TlsSubscriptionsOtherApi", {
-  enumerable: true,
-  get: function get() {
-    return _TlsSubscriptionsOtherApi["default"];
-  }
-});
-Object.defineProperty(exports, "TokensApi", {
-  enumerable: true,
-  get: function get() {
-    return _TokensApi["default"];
-  }
-});
-Object.defineProperty(exports, "UserApi", {
-  enumerable: true,
-  get: function get() {
-    return _UserApi["default"];
-  }
-});
-Object.defineProperty(exports, "VclApi", {
-  enumerable: true,
-  get: function get() {
-    return _VclApi["default"];
-  }
-});
-Object.defineProperty(exports, "VclDiffApi", {
-  enumerable: true,
-  get: function get() {
-    return _VclDiffApi["default"];
-  }
-});
-Object.defineProperty(exports, "VersionApi", {
-  enumerable: true,
-  get: function get() {
-    return _VersionApi["default"];
-  }
-});
-Object.defineProperty(exports, "WafActiveRulesApi", {
-  enumerable: true,
-  get: function get() {
-    return _WafActiveRulesApi["default"];
-  }
-});
-Object.defineProperty(exports, "WafExclusionsApi", {
-  enumerable: true,
-  get: function get() {
-    return _WafExclusionsApi["default"];
-  }
-});
-Object.defineProperty(exports, "WafFirewallVersionsApi", {
-  enumerable: true,
-  get: function get() {
-    return _WafFirewallVersionsApi["default"];
-  }
-});
-Object.defineProperty(exports, "WafFirewallsApi", {
-  enumerable: true,
-  get: function get() {
-    return _WafFirewallsApi["default"];
-  }
-});
-Object.defineProperty(exports, "WafRuleRevisionsApi", {
-  enumerable: true,
-  get: function get() {
-    return _WafRuleRevisionsApi["default"];
-  }
-});
-Object.defineProperty(exports, "WafRulesApi", {
-  enumerable: true,
-  get: function get() {
-    return _WafRulesApi["default"];
-  }
-});
-Object.defineProperty(exports, "WafTagsApi", {
-  enumerable: true,
-  get: function get() {
-    return _WafTagsApi["default"];
-  }
-});
+exports.authenticate = authenticate;
 
 var _ApiClient = _interopRequireDefault(require("./ApiClient"));
 
@@ -3611,8 +3575,6 @@ var _HistoricalResponseAllOf = _interopRequireDefault(require("./model/Historica
 
 var _HistoricalUsageAggregateResponse = _interopRequireDefault(require("./model/HistoricalUsageAggregateResponse"));
 
-var _HistoricalUsageAggregateResponseAllOf = _interopRequireDefault(require("./model/HistoricalUsageAggregateResponseAllOf"));
-
 var _HistoricalUsageMonthResponse = _interopRequireDefault(require("./model/HistoricalUsageMonthResponse"));
 
 var _HistoricalUsageMonthResponseAllOf = _interopRequireDefault(require("./model/HistoricalUsageMonthResponseAllOf"));
@@ -3684,8 +3646,6 @@ var _LoggingCloudfilesAllOf = _interopRequireDefault(require("./model/LoggingClo
 var _LoggingCloudfilesResponse = _interopRequireDefault(require("./model/LoggingCloudfilesResponse"));
 
 var _LoggingCommon = _interopRequireDefault(require("./model/LoggingCommon"));
-
-var _LoggingCompressionCodec = _interopRequireDefault(require("./model/LoggingCompressionCodec"));
 
 var _LoggingDatadog = _interopRequireDefault(require("./model/LoggingDatadog"));
 
@@ -3839,14 +3799,6 @@ var _LoggingUseTls = _interopRequireDefault(require("./model/LoggingUseTls"));
 
 var _NestedVersion = _interopRequireDefault(require("./model/NestedVersion"));
 
-var _Package = _interopRequireDefault(require("./model/Package"));
-
-var _PackageMetadata = _interopRequireDefault(require("./model/PackageMetadata"));
-
-var _PackageResponse = _interopRequireDefault(require("./model/PackageResponse"));
-
-var _PackageResponseAllOf = _interopRequireDefault(require("./model/PackageResponseAllOf"));
-
 var _Pagination = _interopRequireDefault(require("./model/Pagination"));
 
 var _PaginationLinks = _interopRequireDefault(require("./model/PaginationLinks"));
@@ -3863,7 +3815,15 @@ var _PoolResponse = _interopRequireDefault(require("./model/PoolResponse"));
 
 var _PoolResponseAllOf = _interopRequireDefault(require("./model/PoolResponseAllOf"));
 
+var _Pop = _interopRequireDefault(require("./model/Pop"));
+
+var _PopCoordinates = _interopRequireDefault(require("./model/PopCoordinates"));
+
 var _PublicIpList = _interopRequireDefault(require("./model/PublicIpList"));
+
+var _PurgeKeys = _interopRequireDefault(require("./model/PurgeKeys"));
+
+var _PurgeResponse = _interopRequireDefault(require("./model/PurgeResponse"));
 
 var _RateLimiter = _interopRequireDefault(require("./model/RateLimiter"));
 
@@ -3880,8 +3840,6 @@ var _RealtimeEntry = _interopRequireDefault(require("./model/RealtimeEntry"));
 var _RealtimeMeasurements = _interopRequireDefault(require("./model/RealtimeMeasurements"));
 
 var _RelationshipCommonName = _interopRequireDefault(require("./model/RelationshipCommonName"));
-
-var _RelationshipCommonNameCommonName = _interopRequireDefault(require("./model/RelationshipCommonNameCommonName"));
 
 var _RelationshipCustomer = _interopRequireDefault(require("./model/RelationshipCustomer"));
 
@@ -3966,6 +3924,8 @@ var _RelationshipTlsDnsRecordDnsRecord = _interopRequireDefault(require("./model
 var _RelationshipTlsDnsRecords = _interopRequireDefault(require("./model/RelationshipTlsDnsRecords"));
 
 var _RelationshipTlsDomain = _interopRequireDefault(require("./model/RelationshipTlsDomain"));
+
+var _RelationshipTlsDomainTlsDomain = _interopRequireDefault(require("./model/RelationshipTlsDomainTlsDomain"));
 
 var _RelationshipTlsDomains = _interopRequireDefault(require("./model/RelationshipTlsDomains"));
 
@@ -4055,23 +4015,11 @@ var _SchemasBackend = _interopRequireDefault(require("./model/SchemasBackend"));
 
 var _SchemasDirector = _interopRequireDefault(require("./model/SchemasDirector"));
 
-var _SchemasRelationshipsForWafActiveRule = _interopRequireDefault(require("./model/SchemasRelationshipsForWafActiveRule"));
+var _SchemasHealthcheck = _interopRequireDefault(require("./model/SchemasHealthcheck"));
 
-var _SchemasRequestSettings = _interopRequireDefault(require("./model/SchemasRequestSettings"));
-
-var _SchemasRequestSettingsResponse = _interopRequireDefault(require("./model/SchemasRequestSettingsResponse"));
-
-var _SchemasResponseObject = _interopRequireDefault(require("./model/SchemasResponseObject"));
-
-var _SchemasResponseObjectResponse = _interopRequireDefault(require("./model/SchemasResponseObjectResponse"));
-
-var _SchemasSnippetResponse = _interopRequireDefault(require("./model/SchemasSnippetResponse"));
-
-var _SchemasSnippetResponseAllOf = _interopRequireDefault(require("./model/SchemasSnippetResponseAllOf"));
+var _SchemasHealthcheckResponse = _interopRequireDefault(require("./model/SchemasHealthcheckResponse"));
 
 var _SchemasUserResponse = _interopRequireDefault(require("./model/SchemasUserResponse"));
-
-var _SchemasUserResponseAllOf = _interopRequireDefault(require("./model/SchemasUserResponseAllOf"));
 
 var _SchemasVclResponse = _interopRequireDefault(require("./model/SchemasVclResponse"));
 
@@ -4079,19 +4027,9 @@ var _SchemasVersion = _interopRequireDefault(require("./model/SchemasVersion"));
 
 var _SchemasVersionResponse = _interopRequireDefault(require("./model/SchemasVersionResponse"));
 
-var _SchemasVersionResponseAllOf = _interopRequireDefault(require("./model/SchemasVersionResponseAllOf"));
-
-var _SchemasWafActiveRule = _interopRequireDefault(require("./model/SchemasWafActiveRule"));
-
-var _SchemasWafActiveRuleData = _interopRequireDefault(require("./model/SchemasWafActiveRuleData"));
-
-var _SchemasWafActiveRuleDataAttributes = _interopRequireDefault(require("./model/SchemasWafActiveRuleDataAttributes"));
-
 var _SchemasWafFirewallVersion = _interopRequireDefault(require("./model/SchemasWafFirewallVersion"));
 
 var _SchemasWafFirewallVersionData = _interopRequireDefault(require("./model/SchemasWafFirewallVersionData"));
-
-var _SchemasWafFirewallVersionDataAttributes = _interopRequireDefault(require("./model/SchemasWafFirewallVersionDataAttributes"));
 
 var _Server = _interopRequireDefault(require("./model/Server"));
 
@@ -4141,6 +4079,10 @@ var _ServiceInvitationResponseAllOf = _interopRequireDefault(require("./model/Se
 
 var _ServiceInvitationResponseAllOfData = _interopRequireDefault(require("./model/ServiceInvitationResponseAllOfData"));
 
+var _ServiceListResponse = _interopRequireDefault(require("./model/ServiceListResponse"));
+
+var _ServiceListResponseAllOf = _interopRequireDefault(require("./model/ServiceListResponseAllOf"));
+
 var _ServiceResponse = _interopRequireDefault(require("./model/ServiceResponse"));
 
 var _ServiceResponseAllOf = _interopRequireDefault(require("./model/ServiceResponseAllOf"));
@@ -4152,6 +4094,8 @@ var _SettingsResponse = _interopRequireDefault(require("./model/SettingsResponse
 var _Snippet = _interopRequireDefault(require("./model/Snippet"));
 
 var _SnippetResponse = _interopRequireDefault(require("./model/SnippetResponse"));
+
+var _SnippetResponseAllOf = _interopRequireDefault(require("./model/SnippetResponseAllOf"));
 
 var _Star = _interopRequireDefault(require("./model/Star"));
 
@@ -4329,6 +4273,8 @@ var _User = _interopRequireDefault(require("./model/User"));
 
 var _UserResponse = _interopRequireDefault(require("./model/UserResponse"));
 
+var _UserResponseAllOf = _interopRequireDefault(require("./model/UserResponseAllOf"));
+
 var _Vcl = _interopRequireDefault(require("./model/Vcl"));
 
 var _VclDiff = _interopRequireDefault(require("./model/VclDiff"));
@@ -4343,11 +4289,15 @@ var _VersionDetail = _interopRequireDefault(require("./model/VersionDetail"));
 
 var _VersionResponse = _interopRequireDefault(require("./model/VersionResponse"));
 
+var _VersionResponseAllOf = _interopRequireDefault(require("./model/VersionResponseAllOf"));
+
 var _WafActiveRule = _interopRequireDefault(require("./model/WafActiveRule"));
 
 var _WafActiveRuleCreationResponse = _interopRequireDefault(require("./model/WafActiveRuleCreationResponse"));
 
 var _WafActiveRuleData = _interopRequireDefault(require("./model/WafActiveRuleData"));
+
+var _WafActiveRuleDataAttributes = _interopRequireDefault(require("./model/WafActiveRuleDataAttributes"));
 
 var _WafActiveRuleResponse = _interopRequireDefault(require("./model/WafActiveRuleResponse"));
 
@@ -4390,6 +4340,8 @@ var _WafFirewallResponseDataAllOf = _interopRequireDefault(require("./model/WafF
 var _WafFirewallVersion = _interopRequireDefault(require("./model/WafFirewallVersion"));
 
 var _WafFirewallVersionData = _interopRequireDefault(require("./model/WafFirewallVersionData"));
+
+var _WafFirewallVersionDataAttributes = _interopRequireDefault(require("./model/WafFirewallVersionDataAttributes"));
 
 var _WafFirewallVersionResponse = _interopRequireDefault(require("./model/WafFirewallVersionResponse"));
 
@@ -4537,11 +4489,13 @@ var _LoggingSumologicApi = _interopRequireDefault(require("./api/LoggingSumologi
 
 var _LoggingSyslogApi = _interopRequireDefault(require("./api/LoggingSyslogApi"));
 
-var _PackageApi = _interopRequireDefault(require("./api/PackageApi"));
-
 var _PoolApi = _interopRequireDefault(require("./api/PoolApi"));
 
+var _PopApi = _interopRequireDefault(require("./api/PopApi"));
+
 var _PublicIpListApi = _interopRequireDefault(require("./api/PublicIpListApi"));
+
+var _PurgeApi = _interopRequireDefault(require("./api/PurgeApi"));
 
 var _RateLimiterApi = _interopRequireDefault(require("./api/RateLimiterApi"));
 
@@ -4578,8 +4532,6 @@ var _TlsDomainsApi = _interopRequireDefault(require("./api/TlsDomainsApi"));
 var _TlsPrivateKeysApi = _interopRequireDefault(require("./api/TlsPrivateKeysApi"));
 
 var _TlsSubscriptionsApi = _interopRequireDefault(require("./api/TlsSubscriptionsApi"));
-
-var _TlsSubscriptionsOtherApi = _interopRequireDefault(require("./api/TlsSubscriptionsOtherApi"));
 
 var _TokensApi = _interopRequireDefault(require("./api/TokensApi"));
 

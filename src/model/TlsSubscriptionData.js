@@ -27,6 +27,7 @@ class TlsSubscriptionData {
      * @alias module:model/TlsSubscriptionData
      */
     constructor() { 
+        
         TlsSubscriptionData.initialize(this);
     }
 
@@ -49,14 +50,14 @@ class TlsSubscriptionData {
         if (data) {
             obj = obj || new TlsSubscriptionData();
 
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeTlsSubscription.constructFromObject(data['type']);
+            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = TlsSubscriptionDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = RelationshipsForTlsSubscription.constructFromObject(data['relationships']);
-            }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeTlsSubscription.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -64,6 +65,11 @@ class TlsSubscriptionData {
 
 
 }
+
+/**
+ * @member {module:model/TypeTlsSubscription} type
+ */
+TlsSubscriptionData.prototype['type'] = undefined;
 
 /**
  * @member {module:model/TlsSubscriptionDataAttributes} attributes
@@ -74,11 +80,6 @@ TlsSubscriptionData.prototype['attributes'] = undefined;
  * @member {module:model/RelationshipsForTlsSubscription} relationships
  */
 TlsSubscriptionData.prototype['relationships'] = undefined;
-
-/**
- * @member {module:model/TypeTlsSubscription} type
- */
-TlsSubscriptionData.prototype['type'] = undefined;
 
 
 

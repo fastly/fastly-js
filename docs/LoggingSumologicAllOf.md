@@ -8,5 +8,4 @@ Name | Type | Description | Notes
 **url** | **String** | The URL to post logs to. | [optional] 
 
 
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

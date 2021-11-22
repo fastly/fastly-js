@@ -30,9 +30,18 @@ var RequestSettingsResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>RequestSettingsResponse</code>.
    * @alias module:model/RequestSettingsResponse
+   * @implements module:model/RequestSettings
+   * @implements module:model/ServiceIdAndVersion
+   * @implements module:model/Timestamps
    */
   function RequestSettingsResponse() {
     _classCallCheck(this, RequestSettingsResponse);
+
+    _RequestSettings["default"].initialize(this);
+
+    _ServiceIdAndVersion["default"].initialize(this);
+
+    _Timestamps["default"].initialize(this);
 
     RequestSettingsResponse.initialize(this);
   }
@@ -59,6 +68,12 @@ var RequestSettingsResponse = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new RequestSettingsResponse();
+
+        _RequestSettings["default"].constructFromObject(data, obj);
+
+        _ServiceIdAndVersion["default"].constructFromObject(data, obj);
+
+        _Timestamps["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('action')) {
           obj['action'] = _ApiClient["default"].convertToType(data['action'], 'String');
@@ -237,7 +252,112 @@ RequestSettingsResponse.prototype['deleted_at'] = undefined;
  * @member {String} updated_at
  */
 
-RequestSettingsResponse.prototype['updated_at'] = undefined;
+RequestSettingsResponse.prototype['updated_at'] = undefined; // Implement RequestSettings interface:
+
+/**
+ * Allows you to terminate request handling and immediately perform an action.
+ * @member {module:model/RequestSettings.ActionEnum} action
+ */
+
+_RequestSettings["default"].prototype['action'] = undefined;
+/**
+ * Disable collapsed forwarding, so you don't wait for other objects to origin.
+ * @member {Number} bypass_busy_wait
+ */
+
+_RequestSettings["default"].prototype['bypass_busy_wait'] = undefined;
+/**
+ * Sets the host header.
+ * @member {String} default_host
+ */
+
+_RequestSettings["default"].prototype['default_host'] = undefined;
+/**
+ * Allows you to force a cache miss for the request. Replaces the item in the cache if the content is cacheable.
+ * @member {Number} force_miss
+ */
+
+_RequestSettings["default"].prototype['force_miss'] = undefined;
+/**
+ * Forces the request use SSL (redirects a non-SSL to SSL).
+ * @member {Number} force_ssl
+ */
+
+_RequestSettings["default"].prototype['force_ssl'] = undefined;
+/**
+ * Injects Fastly-Geo-Country, Fastly-Geo-City, and Fastly-Geo-Region into the request headers.
+ * @member {Number} geo_headers
+ */
+
+_RequestSettings["default"].prototype['geo_headers'] = undefined;
+/**
+ * Comma separated list of varnish request object fields that should be in the hash key.
+ * @member {String} hash_keys
+ */
+
+_RequestSettings["default"].prototype['hash_keys'] = undefined;
+/**
+ * How old an object is allowed to be to serve stale-if-error or stale-while-revalidate.
+ * @member {Number} max_stale_age
+ */
+
+_RequestSettings["default"].prototype['max_stale_age'] = undefined;
+/**
+ * Name for the request settings.
+ * @member {String} name
+ */
+
+_RequestSettings["default"].prototype['name'] = undefined;
+/**
+ * Condition which, if met, will select this configuration during a request. Optional.
+ * @member {String} request_condition
+ */
+
+_RequestSettings["default"].prototype['request_condition'] = undefined;
+/**
+ * Injects the X-Timer info into the request for viewing origin fetch durations.
+ * @member {Number} timer_support
+ */
+
+_RequestSettings["default"].prototype['timer_support'] = undefined;
+/**
+ * Short for X-Forwarded-For.
+ * @member {module:model/RequestSettings.XffEnum} xff
+ */
+
+_RequestSettings["default"].prototype['xff'] = undefined; // Implement ServiceIdAndVersion interface:
+
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+
+_ServiceIdAndVersion["default"].prototype['service_id'] = undefined;
+/**
+ * Integer identifying a service version.
+ * @member {Number} version
+ */
+
+_ServiceIdAndVersion["default"].prototype['version'] = undefined; // Implement Timestamps interface:
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+
+_Timestamps["default"].prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+
+_Timestamps["default"].prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+
+_Timestamps["default"].prototype['updated_at'] = undefined;
 /**
  * Allowed values for the <code>action</code> property.
  * @enum {String}

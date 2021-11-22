@@ -25,6 +25,7 @@ class TlsBulkCertificate {
      * @alias module:model/TlsBulkCertificate
      */
     constructor() { 
+        
         TlsBulkCertificate.initialize(this);
     }
 

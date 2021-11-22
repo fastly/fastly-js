@@ -24,6 +24,7 @@ class LoggingAddressAndPort {
      * @alias module:model/LoggingAddressAndPort
      */
     constructor() { 
+        
         LoggingAddressAndPort.initialize(this);
     }
 

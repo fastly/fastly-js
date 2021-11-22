@@ -25,6 +25,7 @@ class RelationshipWafTags {
      * @alias module:model/RelationshipWafTags
      */
     constructor() { 
+        
         RelationshipWafTags.initialize(this);
     }
 

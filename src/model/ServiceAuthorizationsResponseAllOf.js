@@ -25,6 +25,7 @@ class ServiceAuthorizationsResponseAllOf {
      * @alias module:model/ServiceAuthorizationsResponseAllOf
      */
     constructor() { 
+        
         ServiceAuthorizationsResponseAllOf.initialize(this);
     }
 

@@ -26,8 +26,11 @@ class HistoricalAggregateResponse {
     /**
      * Constructs a new <code>HistoricalAggregateResponse</code>.
      * @alias module:model/HistoricalAggregateResponse
+     * @implements module:model/Historical
+     * @implements module:model/HistoricalAggregateResponseAllOf
      */
     constructor() { 
+        Historical.initialize(this);HistoricalAggregateResponseAllOf.initialize(this);
         HistoricalAggregateResponse.initialize(this);
     }
 
@@ -49,15 +52,17 @@ class HistoricalAggregateResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new HistoricalAggregateResponse();
+            Historical.constructFromObject(data, obj);
+            HistoricalAggregateResponseAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            }
             if (data.hasOwnProperty('meta')) {
                 obj['meta'] = HistoricalMeta.constructFromObject(data['meta']);
             }
             if (data.hasOwnProperty('msg')) {
                 obj['msg'] = ApiClient.convertToType(data['msg'], 'String');
-            }
-            if (data.hasOwnProperty('status')) {
-                obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], [Results]);
@@ -68,6 +73,12 @@ class HistoricalAggregateResponse {
 
 
 }
+
+/**
+ * Whether or not we were able to successfully execute the query.
+ * @member {String} status
+ */
+HistoricalAggregateResponse.prototype['status'] = undefined;
 
 /**
  * @member {module:model/HistoricalMeta} meta
@@ -81,17 +92,31 @@ HistoricalAggregateResponse.prototype['meta'] = undefined;
 HistoricalAggregateResponse.prototype['msg'] = undefined;
 
 /**
- * Whether or not we were able to successfully execute the query.
- * @member {String} status
- */
-HistoricalAggregateResponse.prototype['status'] = undefined;
-
-/**
  * @member {Array.<module:model/Results>} data
  */
 HistoricalAggregateResponse.prototype['data'] = undefined;
 
 
+// Implement Historical interface:
+/**
+ * Whether or not we were able to successfully execute the query.
+ * @member {String} status
+ */
+Historical.prototype['status'] = undefined;
+/**
+ * @member {module:model/HistoricalMeta} meta
+ */
+Historical.prototype['meta'] = undefined;
+/**
+ * If the query was not successful, this will provide a string that explains why.
+ * @member {String} msg
+ */
+Historical.prototype['msg'] = undefined;
+// Implement HistoricalAggregateResponseAllOf interface:
+/**
+ * @member {Array.<module:model/Results>} data
+ */
+HistoricalAggregateResponseAllOf.prototype['data'] = undefined;
 
 
 

@@ -1,6 +1,5 @@
 # Fastly.StarApi
 
-
 ```javascript
 const apiInstance = new Fastly.StarApi();
 ```
@@ -14,11 +13,10 @@ Method | Fastly API endpoint | Description
 [**listServiceStars**](StarApi.md#listServiceStars) | **GET** /stars | List stars
 
 
-
 ## `createServiceStar`
 
 ```javascript
-createServiceStar({ [star] })
+createServiceStar({ , [star] })
 ```
 
 Create star.
@@ -27,12 +25,12 @@ Create star.
 
 ```javascript
 const options = {
-  star: new Fastly.Star(),
+  star: {"data":{"type":"star","relationships":{"user":{"data":{"type":"user","id":"6c7kAlo4vACNchGOdQxP37"}},"service":{"data":[{"type":"service","id":"SU1Z0isxPaozGVKXdv0eY"}]}}}},
 };
 
 apiInstance.createServiceStar(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -43,7 +41,7 @@ apiInstance.createServiceStar(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**star** | [**Star**](../Model/Star.md) |  | [optional]
+**star** | [**Star**](Star.md) |  | [optional]
 
 ### Return type
 
@@ -78,7 +76,7 @@ apiInstance.deleteServiceStar(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**star_id** | **String** |  |
+**star_id** | **String** | Alphanumeric string identifying a star. |
 
 ### Return type
 
@@ -102,7 +100,7 @@ const options = {
 
 apiInstance.getServiceStar(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -113,7 +111,7 @@ apiInstance.getServiceStar(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**star_id** | **String** |  |
+**star_id** | **String** | Alphanumeric string identifying a star. |
 
 ### Return type
 
@@ -133,7 +131,7 @@ List stars.
 ```javascript
 apiInstance.listServiceStars()
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);

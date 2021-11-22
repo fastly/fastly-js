@@ -60,16 +60,16 @@ var TlsCertificateData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new TlsCertificateData();
 
+        if (data.hasOwnProperty('type')) {
+          obj['type'] = _TypeTlsCertificate["default"].constructFromObject(data['type']);
+        }
+
         if (data.hasOwnProperty('attributes')) {
           obj['attributes'] = _TlsCertificateDataAttributes["default"].constructFromObject(data['attributes']);
         }
 
         if (data.hasOwnProperty('relationships')) {
           obj['relationships'] = _RelationshipTlsDomains["default"].constructFromObject(data['relationships']);
-        }
-
-        if (data.hasOwnProperty('type')) {
-          obj['type'] = _TypeTlsCertificate["default"].constructFromObject(data['type']);
         }
       }
 
@@ -80,9 +80,14 @@ var TlsCertificateData = /*#__PURE__*/function () {
   return TlsCertificateData;
 }();
 /**
- * @member {module:model/TlsCertificateDataAttributes} attributes
+ * @member {module:model/TypeTlsCertificate} type
  */
 
+
+TlsCertificateData.prototype['type'] = undefined;
+/**
+ * @member {module:model/TlsCertificateDataAttributes} attributes
+ */
 
 TlsCertificateData.prototype['attributes'] = undefined;
 /**
@@ -90,10 +95,5 @@ TlsCertificateData.prototype['attributes'] = undefined;
  */
 
 TlsCertificateData.prototype['relationships'] = undefined;
-/**
- * @member {module:model/TypeTlsCertificate} type
- */
-
-TlsCertificateData.prototype['type'] = undefined;
 var _default = TlsCertificateData;
 exports["default"] = _default;

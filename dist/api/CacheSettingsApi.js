@@ -42,8 +42,8 @@ var CacheSettingsApi = /*#__PURE__*/function () {
   /**
    * Create a cache settings object.
    * @param {Object} options
-   * @param {String} options.service_id
-   * @param {Number} options.version_id
+   * @param {String} options.service_id - Alphanumeric string identifying the service.
+   * @param {Number} options.version_id - Integer identifying a service version.
    * @param {module:model/String} [options.action] - If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule. 
    * @param {String} [options.cache_condition] - Name of the cache condition controlling when this configuration applies.
    * @param {String} [options.name] - Name for the cache settings object.
@@ -90,8 +90,8 @@ var CacheSettingsApi = /*#__PURE__*/function () {
     /**
      * Create a cache settings object.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @param {module:model/String} [options.action] - If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule. 
      * @param {String} [options.cache_condition] - Name of the cache condition controlling when this configuration applies.
      * @param {String} [options.name] - Name for the cache settings object.
@@ -111,9 +111,9 @@ var CacheSettingsApi = /*#__PURE__*/function () {
     /**
      * Delete a specific cache settings object.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.cache_settings_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.cache_settings_name - Name for the cache settings object.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
 
@@ -154,9 +154,9 @@ var CacheSettingsApi = /*#__PURE__*/function () {
     /**
      * Delete a specific cache settings object.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.cache_settings_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.cache_settings_name - Name for the cache settings object.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
 
@@ -171,9 +171,9 @@ var CacheSettingsApi = /*#__PURE__*/function () {
     /**
      * Get a specific cache settings object.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.cache_settings_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.cache_settings_name - Name for the cache settings object.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/CacheSettingResponse} and HTTP response
      */
 
@@ -214,9 +214,9 @@ var CacheSettingsApi = /*#__PURE__*/function () {
     /**
      * Get a specific cache settings object.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.cache_settings_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.cache_settings_name - Name for the cache settings object.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/CacheSettingResponse}
      */
 
@@ -231,8 +231,8 @@ var CacheSettingsApi = /*#__PURE__*/function () {
     /**
      * Get a list of all cache settings for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/CacheSettingResponse>} and HTTP response
      */
 
@@ -267,8 +267,8 @@ var CacheSettingsApi = /*#__PURE__*/function () {
     /**
      * Get a list of all cache settings for a particular service and version.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/CacheSettingResponse>}
      */
 
@@ -283,9 +283,9 @@ var CacheSettingsApi = /*#__PURE__*/function () {
     /**
      * Update a specific cache settings object.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.cache_settings_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.cache_settings_name - Name for the cache settings object.
      * @param {module:model/String} [options.action] - If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule. 
      * @param {String} [options.cache_condition] - Name of the cache condition controlling when this configuration applies.
      * @param {String} [options.name] - Name for the cache settings object.
@@ -337,9 +337,9 @@ var CacheSettingsApi = /*#__PURE__*/function () {
     /**
      * Update a specific cache settings object.
      * @param {Object} options
-     * @param {String} options.service_id
-     * @param {Number} options.version_id
-     * @param {String} options.cache_settings_name
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.cache_settings_name - Name for the cache settings object.
      * @param {module:model/String} [options.action] - If set, will cause vcl_fetch to terminate after processing this rule with the return state specified. If not set, other configuration logic in vcl_fetch with a lower priority will run after this rule. 
      * @param {String} [options.cache_condition] - Name of the cache condition controlling when this configuration applies.
      * @param {String} [options.name] - Name for the cache settings object.

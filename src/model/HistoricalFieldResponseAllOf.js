@@ -24,6 +24,7 @@ class HistoricalFieldResponseAllOf {
      * @alias module:model/HistoricalFieldResponseAllOf
      */
     constructor() { 
+        
         HistoricalFieldResponseAllOf.initialize(this);
     }
 

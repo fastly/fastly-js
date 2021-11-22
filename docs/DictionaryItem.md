@@ -8,5 +8,4 @@ Name | Type | Description | Notes
 **item_value** | **String** | Item value, maximum 8000 characters. | [optional] 
 
 
-
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -70,16 +70,16 @@ var ResponseObject = /*#__PURE__*/function () {
           obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
         }
 
-        if (data.hasOwnProperty('request_condition')) {
-          obj['request_condition'] = _ApiClient["default"].convertToType(data['request_condition'], 'String');
+        if (data.hasOwnProperty('status')) {
+          obj['status'] = _ApiClient["default"].convertToType(data['status'], 'Number');
         }
 
         if (data.hasOwnProperty('response')) {
           obj['response'] = _ApiClient["default"].convertToType(data['response'], 'String');
         }
 
-        if (data.hasOwnProperty('status')) {
-          obj['status'] = _ApiClient["default"].convertToType(data['status'], 'Number');
+        if (data.hasOwnProperty('request_condition')) {
+          obj['request_condition'] = _ApiClient["default"].convertToType(data['request_condition'], 'String');
         }
       }
 
@@ -115,11 +115,12 @@ ResponseObject.prototype['content_type'] = undefined;
 
 ResponseObject.prototype['name'] = undefined;
 /**
- * Condition which, if met, will select this configuration during a request. Optional.
- * @member {String} request_condition
+ * The HTTP status code.
+ * @member {Number} status
+ * @default 200
  */
 
-ResponseObject.prototype['request_condition'] = undefined;
+ResponseObject.prototype['status'] = 200;
 /**
  * The HTTP response.
  * @member {String} response
@@ -128,11 +129,10 @@ ResponseObject.prototype['request_condition'] = undefined;
 
 ResponseObject.prototype['response'] = 'Ok';
 /**
- * The HTTP status code.
- * @member {Number} status
- * @default 200
+ * Condition which, if met, will select this configuration during a request. Optional.
+ * @member {String} request_condition
  */
 
-ResponseObject.prototype['status'] = 200;
+ResponseObject.prototype['request_condition'] = undefined;
 var _default = ResponseObject;
 exports["default"] = _default;

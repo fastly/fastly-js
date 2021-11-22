@@ -19,19 +19,19 @@ var _GzipResponse = _interopRequireDefault(require("./GzipResponse"));
 
 var _HeaderResponse = _interopRequireDefault(require("./HeaderResponse"));
 
-var _HealthcheckResponse = _interopRequireDefault(require("./HealthcheckResponse"));
+var _RequestSettingsResponse = _interopRequireDefault(require("./RequestSettingsResponse"));
+
+var _ResponseObjectResponse = _interopRequireDefault(require("./ResponseObjectResponse"));
 
 var _SchemasDirector = _interopRequireDefault(require("./SchemasDirector"));
 
-var _SchemasRequestSettingsResponse = _interopRequireDefault(require("./SchemasRequestSettingsResponse"));
-
-var _SchemasResponseObjectResponse = _interopRequireDefault(require("./SchemasResponseObjectResponse"));
-
-var _SchemasSnippetResponse = _interopRequireDefault(require("./SchemasSnippetResponse"));
+var _SchemasHealthcheckResponse = _interopRequireDefault(require("./SchemasHealthcheckResponse"));
 
 var _SchemasVclResponse = _interopRequireDefault(require("./SchemasVclResponse"));
 
 var _Settings = _interopRequireDefault(require("./Settings"));
+
+var _SnippetResponse = _interopRequireDefault(require("./SnippetResponse"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -109,15 +109,15 @@ var VersionDetail = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('healthchecks')) {
-          obj['healthchecks'] = _ApiClient["default"].convertToType(data['healthchecks'], [_HealthcheckResponse["default"]]);
+          obj['healthchecks'] = _ApiClient["default"].convertToType(data['healthchecks'], [_SchemasHealthcheckResponse["default"]]);
         }
 
         if (data.hasOwnProperty('request_settings')) {
-          obj['request_settings'] = _ApiClient["default"].convertToType(data['request_settings'], [_SchemasRequestSettingsResponse["default"]]);
+          obj['request_settings'] = _ApiClient["default"].convertToType(data['request_settings'], [_RequestSettingsResponse["default"]]);
         }
 
         if (data.hasOwnProperty('response_objects')) {
-          obj['response_objects'] = _ApiClient["default"].convertToType(data['response_objects'], [_SchemasResponseObjectResponse["default"]]);
+          obj['response_objects'] = _ApiClient["default"].convertToType(data['response_objects'], [_ResponseObjectResponse["default"]]);
         }
 
         if (data.hasOwnProperty('settings')) {
@@ -125,7 +125,7 @@ var VersionDetail = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('snippets')) {
-          obj['snippets'] = _ApiClient["default"].convertToType(data['snippets'], [_SchemasSnippetResponse["default"]]);
+          obj['snippets'] = _ApiClient["default"].convertToType(data['snippets'], [_SnippetResponse["default"]]);
         }
 
         if (data.hasOwnProperty('vcls')) {
@@ -188,19 +188,19 @@ VersionDetail.prototype['gzips'] = undefined;
 VersionDetail.prototype['headers'] = undefined;
 /**
  * List of healthchecks associated to this service.
- * @member {Array.<module:model/HealthcheckResponse>} healthchecks
+ * @member {Array.<module:model/SchemasHealthcheckResponse>} healthchecks
  */
 
 VersionDetail.prototype['healthchecks'] = undefined;
 /**
  * List of request settings for this service.
- * @member {Array.<module:model/SchemasRequestSettingsResponse>} request_settings
+ * @member {Array.<module:model/RequestSettingsResponse>} request_settings
  */
 
 VersionDetail.prototype['request_settings'] = undefined;
 /**
  * List of response objects for this service.
- * @member {Array.<module:model/SchemasResponseObjectResponse>} response_objects
+ * @member {Array.<module:model/ResponseObjectResponse>} response_objects
  */
 
 VersionDetail.prototype['response_objects'] = undefined;
@@ -211,7 +211,7 @@ VersionDetail.prototype['response_objects'] = undefined;
 VersionDetail.prototype['settings'] = undefined;
 /**
  * List of VCL snippets for this service.
- * @member {Array.<module:model/SchemasSnippetResponse>} snippets
+ * @member {Array.<module:model/SnippetResponse>} snippets
  */
 
 VersionDetail.prototype['snippets'] = undefined;

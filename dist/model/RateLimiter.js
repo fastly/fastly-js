@@ -56,32 +56,36 @@ var RateLimiter = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new RateLimiter();
 
-        if (data.hasOwnProperty('action')) {
-          obj['action'] = _ApiClient["default"].convertToType(data['action'], 'String');
+        if (data.hasOwnProperty('name')) {
+          obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
         }
 
-        if (data.hasOwnProperty('client_key')) {
-          obj['client_key'] = _ApiClient["default"].convertToType(data['client_key'], ['String']);
-        }
-
-        if (data.hasOwnProperty('feature_revision')) {
-          obj['feature_revision'] = _ApiClient["default"].convertToType(data['feature_revision'], 'Number');
+        if (data.hasOwnProperty('uri_dictionary_name')) {
+          obj['uri_dictionary_name'] = _ApiClient["default"].convertToType(data['uri_dictionary_name'], 'String');
         }
 
         if (data.hasOwnProperty('http_methods')) {
           obj['http_methods'] = _ApiClient["default"].convertToType(data['http_methods'], ['String']);
         }
 
-        if (data.hasOwnProperty('logger_type')) {
-          obj['logger_type'] = _ApiClient["default"].convertToType(data['logger_type'], 'String');
+        if (data.hasOwnProperty('rps_limit')) {
+          obj['rps_limit'] = _ApiClient["default"].convertToType(data['rps_limit'], 'Number');
         }
 
-        if (data.hasOwnProperty('name')) {
-          obj['name'] = _ApiClient["default"].convertToType(data['name'], 'String');
+        if (data.hasOwnProperty('window_size')) {
+          obj['window_size'] = _ApiClient["default"].convertToType(data['window_size'], 'Number');
+        }
+
+        if (data.hasOwnProperty('client_key')) {
+          obj['client_key'] = _ApiClient["default"].convertToType(data['client_key'], ['String']);
         }
 
         if (data.hasOwnProperty('penalty_box_duration')) {
           obj['penalty_box_duration'] = _ApiClient["default"].convertToType(data['penalty_box_duration'], 'Number');
+        }
+
+        if (data.hasOwnProperty('action')) {
+          obj['action'] = _ApiClient["default"].convertToType(data['action'], 'String');
         }
 
         if (data.hasOwnProperty('response')) {
@@ -92,16 +96,12 @@ var RateLimiter = /*#__PURE__*/function () {
           obj['response_object_name'] = _ApiClient["default"].convertToType(data['response_object_name'], 'String');
         }
 
-        if (data.hasOwnProperty('rps_limit')) {
-          obj['rps_limit'] = _ApiClient["default"].convertToType(data['rps_limit'], 'Number');
+        if (data.hasOwnProperty('logger_type')) {
+          obj['logger_type'] = _ApiClient["default"].convertToType(data['logger_type'], 'String');
         }
 
-        if (data.hasOwnProperty('uri_dictionary_name')) {
-          obj['uri_dictionary_name'] = _ApiClient["default"].convertToType(data['uri_dictionary_name'], 'String');
-        }
-
-        if (data.hasOwnProperty('window_size')) {
-          obj['window_size'] = _ApiClient["default"].convertToType(data['window_size'], 'Number');
+        if (data.hasOwnProperty('feature_revision')) {
+          obj['feature_revision'] = _ApiClient["default"].convertToType(data['feature_revision'], 'Number');
         }
       }
 
@@ -112,24 +112,18 @@ var RateLimiter = /*#__PURE__*/function () {
   return RateLimiter;
 }();
 /**
- * The action to take when a rate limiter violation is detected.
- * @member {module:model/RateLimiter.ActionEnum} action
+ * A human readable name for the rate limiting rule.
+ * @member {String} name
  */
 
 
-RateLimiter.prototype['action'] = undefined;
+RateLimiter.prototype['name'] = undefined;
 /**
- * Array of VCL variables used to generate a counter key to identify a client. Example variables include `req.http.Fastly-Client-IP`, `req.http.User-Agent`, or a custom header like `req.http.API-Key`.
- * @member {Array.<String>} client_key
+ * The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
+ * @member {String} uri_dictionary_name
  */
 
-RateLimiter.prototype['client_key'] = undefined;
-/**
- * Revision number of the rate limiting feature implementation. Defaults to the most recent revision.
- * @member {Number} feature_revision
- */
-
-RateLimiter.prototype['feature_revision'] = undefined;
+RateLimiter.prototype['uri_dictionary_name'] = undefined;
 /**
  * Array of HTTP methods to apply rate limiting to.
  * @member {Array.<module:model/RateLimiter.HttpMethodsEnum>} http_methods
@@ -137,23 +131,35 @@ RateLimiter.prototype['feature_revision'] = undefined;
 
 RateLimiter.prototype['http_methods'] = undefined;
 /**
- * Name of the type of logging endpoint to be used when action is `log_only`. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries.
- * @member {module:model/RateLimiter.LoggerTypeEnum} logger_type
+ * Upper limit of requests per second allowed by the rate limiter.
+ * @member {Number} rps_limit
  */
 
-RateLimiter.prototype['logger_type'] = undefined;
+RateLimiter.prototype['rps_limit'] = undefined;
 /**
- * A human readable name for the rate limiting rule.
- * @member {String} name
+ * Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.
+ * @member {module:model/RateLimiter.WindowSizeEnum} window_size
  */
 
-RateLimiter.prototype['name'] = undefined;
+RateLimiter.prototype['window_size'] = undefined;
 /**
- * Length of time in seconds that the rate limiter is in effect after the initial violation is detected.
+ * Array of VCL variables used to generate a counter key to identify a client. Example variables include `req.http.Fastly-Client-IP`, `req.http.User-Agent`, or a custom header like `req.http.API-Key`.
+ * @member {Array.<String>} client_key
+ */
+
+RateLimiter.prototype['client_key'] = undefined;
+/**
+ * Length of time in minutes that the rate limiter is in effect after the initial violation is detected.
  * @member {Number} penalty_box_duration
  */
 
 RateLimiter.prototype['penalty_box_duration'] = undefined;
+/**
+ * The action to take when a rate limiter violation is detected.
+ * @member {module:model/RateLimiter.ActionEnum} action
+ */
+
+RateLimiter.prototype['action'] = undefined;
 /**
  * @member {module:model/RateLimiterResponse1} response
  */
@@ -166,48 +172,17 @@ RateLimiter.prototype['response'] = undefined;
 
 RateLimiter.prototype['response_object_name'] = undefined;
 /**
- * Upper limit of requests per second allowed by the rate limiter.
- * @member {Number} rps_limit
+ * Name of the type of logging endpoint to be used when action is `log_only`. The logging endpoint type is used to determine the appropriate log format to use when emitting log entries.
+ * @member {module:model/RateLimiter.LoggerTypeEnum} logger_type
  */
 
-RateLimiter.prototype['rps_limit'] = undefined;
+RateLimiter.prototype['logger_type'] = undefined;
 /**
- * The name of an Edge Dictionary containing URIs as keys. If not defined or `null`, all origin URIs will be rate limited.
- * @member {String} uri_dictionary_name
+ * Revision number of the rate limiting feature implementation. Defaults to the most recent revision.
+ * @member {Number} feature_revision
  */
 
-RateLimiter.prototype['uri_dictionary_name'] = undefined;
-/**
- * Number of seconds during which the RPS limit must be exceeded in order to trigger a violation.
- * @member {module:model/RateLimiter.WindowSizeEnum} window_size
- */
-
-RateLimiter.prototype['window_size'] = undefined;
-/**
- * Allowed values for the <code>action</code> property.
- * @enum {String}
- * @readonly
- */
-
-RateLimiter['ActionEnum'] = {
-  /**
-   * value: "response"
-   * @const
-   */
-  "response": "response",
-
-  /**
-   * value: "response_object"
-   * @const
-   */
-  "response_object": "response_object",
-
-  /**
-   * value: "log_only"
-   * @const
-   */
-  "log_only": "log_only"
-};
+RateLimiter.prototype['feature_revision'] = undefined;
 /**
  * Allowed values for the <code>http_methods</code> property.
  * @enum {String}
@@ -262,6 +237,56 @@ RateLimiter['HttpMethodsEnum'] = {
    * @const
    */
   "TRACE": "TRACE"
+};
+/**
+ * Allowed values for the <code>window_size</code> property.
+ * @enum {Number}
+ * @readonly
+ */
+
+RateLimiter['WindowSizeEnum'] = {
+  /**
+   * value: 1
+   * @const
+   */
+  "one_second": 1,
+
+  /**
+   * value: 10
+   * @const
+   */
+  "ten_seconds": 10,
+
+  /**
+   * value: 60
+   * @const
+   */
+  "one_minute": 60
+};
+/**
+ * Allowed values for the <code>action</code> property.
+ * @enum {String}
+ * @readonly
+ */
+
+RateLimiter['ActionEnum'] = {
+  /**
+   * value: "response"
+   * @const
+   */
+  "response": "response",
+
+  /**
+   * value: "response_object"
+   * @const
+   */
+  "response_object": "response_object",
+
+  /**
+   * value: "log_only"
+   * @const
+   */
+  "log_only": "log_only"
 };
 /**
  * Allowed values for the <code>logger_type</code> property.
@@ -443,31 +468,6 @@ RateLimiter['LoggerTypeEnum'] = {
    * @const
    */
   "syslog": "syslog"
-};
-/**
- * Allowed values for the <code>window_size</code> property.
- * @enum {Number}
- * @readonly
- */
-
-RateLimiter['WindowSizeEnum'] = {
-  /**
-   * value: 1
-   * @const
-   */
-  "one_second": 1,
-
-  /**
-   * value: 10
-   * @const
-   */
-  "ten_seconds": 10,
-
-  /**
-   * value: 60
-   * @const
-   */
-  "one_minute": 60
 };
 var _default = RateLimiter;
 exports["default"] = _default;

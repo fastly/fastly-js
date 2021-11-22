@@ -9,9 +9,9 @@ var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
 var _SchemasVersion = _interopRequireDefault(require("./SchemasVersion"));
 
-var _SchemasVersionResponseAllOf = _interopRequireDefault(require("./SchemasVersionResponseAllOf"));
-
 var _Timestamps = _interopRequireDefault(require("./Timestamps"));
+
+var _VersionResponseAllOf = _interopRequireDefault(require("./VersionResponseAllOf"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -30,9 +30,18 @@ var SchemasVersionResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>SchemasVersionResponse</code>.
    * @alias module:model/SchemasVersionResponse
+   * @implements module:model/SchemasVersion
+   * @implements module:model/Timestamps
+   * @implements module:model/VersionResponseAllOf
    */
   function SchemasVersionResponse() {
     _classCallCheck(this, SchemasVersionResponse);
+
+    _SchemasVersion["default"].initialize(this);
+
+    _Timestamps["default"].initialize(this);
+
+    _VersionResponseAllOf["default"].initialize(this);
 
     SchemasVersionResponse.initialize(this);
   }
@@ -59,6 +68,12 @@ var SchemasVersionResponse = /*#__PURE__*/function () {
     value: function constructFromObject(data, obj) {
       if (data) {
         obj = obj || new SchemasVersionResponse();
+
+        _SchemasVersion["default"].constructFromObject(data, obj);
+
+        _Timestamps["default"].constructFromObject(data, obj);
+
+        _VersionResponseAllOf["default"].constructFromObject(data, obj);
 
         if (data.hasOwnProperty('active')) {
           obj['active'] = _ApiClient["default"].convertToType(data['active'], 'Boolean');
@@ -181,6 +196,79 @@ SchemasVersionResponse.prototype['updated_at'] = undefined;
  * @member {String} service_id
  */
 
-SchemasVersionResponse.prototype['service_id'] = undefined;
+SchemasVersionResponse.prototype['service_id'] = undefined; // Implement SchemasVersion interface:
+
+/**
+ * Whether this is the active version or not.
+ * @member {Boolean} active
+ * @default false
+ */
+
+_SchemasVersion["default"].prototype['active'] = false;
+/**
+ * A freeform descriptive note.
+ * @member {String} comment
+ */
+
+_SchemasVersion["default"].prototype['comment'] = undefined;
+/**
+ * Unused at this time.
+ * @member {Boolean} deployed
+ */
+
+_SchemasVersion["default"].prototype['deployed'] = undefined;
+/**
+ * Whether this version is locked or not. Objects can not be added or edited on locked versions.
+ * @member {Boolean} locked
+ * @default false
+ */
+
+_SchemasVersion["default"].prototype['locked'] = false;
+/**
+ * The number of this version.
+ * @member {Number} number
+ */
+
+_SchemasVersion["default"].prototype['number'] = undefined;
+/**
+ * Unused at this time.
+ * @member {Boolean} staging
+ * @default false
+ */
+
+_SchemasVersion["default"].prototype['staging'] = false;
+/**
+ * Unused at this time.
+ * @member {Boolean} testing
+ * @default false
+ */
+
+_SchemasVersion["default"].prototype['testing'] = false; // Implement Timestamps interface:
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} created_at
+ */
+
+_Timestamps["default"].prototype['created_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} deleted_at
+ */
+
+_Timestamps["default"].prototype['deleted_at'] = undefined;
+/**
+ * Date and time in ISO 8601 format.
+ * @member {String} updated_at
+ */
+
+_Timestamps["default"].prototype['updated_at'] = undefined; // Implement VersionResponseAllOf interface:
+
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+
+_VersionResponseAllOf["default"].prototype['service_id'] = undefined;
 var _default = SchemasVersionResponse;
 exports["default"] = _default;

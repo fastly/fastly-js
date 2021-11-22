@@ -25,6 +25,7 @@ class ServiceInvitation {
      * @alias module:model/ServiceInvitation
      */
     constructor() { 
+        
         ServiceInvitation.initialize(this);
     }
 

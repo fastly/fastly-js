@@ -58,12 +58,12 @@ var WafFirewallData = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new WafFirewallData();
 
-        if (data.hasOwnProperty('attributes')) {
-          obj['attributes'] = _WafFirewallDataAttributes["default"].constructFromObject(data['attributes']);
-        }
-
         if (data.hasOwnProperty('type')) {
           obj['type'] = _TypeWafFirewall["default"].constructFromObject(data['type']);
+        }
+
+        if (data.hasOwnProperty('attributes')) {
+          obj['attributes'] = _WafFirewallDataAttributes["default"].constructFromObject(data['attributes']);
         }
       }
 
@@ -74,15 +74,15 @@ var WafFirewallData = /*#__PURE__*/function () {
   return WafFirewallData;
 }();
 /**
- * @member {module:model/WafFirewallDataAttributes} attributes
- */
-
-
-WafFirewallData.prototype['attributes'] = undefined;
-/**
  * @member {module:model/TypeWafFirewall} type
  */
 
+
 WafFirewallData.prototype['type'] = undefined;
+/**
+ * @member {module:model/WafFirewallDataAttributes} attributes
+ */
+
+WafFirewallData.prototype['attributes'] = undefined;
 var _default = WafFirewallData;
 exports["default"] = _default;

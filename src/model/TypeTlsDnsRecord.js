@@ -20,10 +20,10 @@ import ApiClient from '../ApiClient';
 export default class TypeTlsDnsRecord {
     
         /**
-         * value: "tls_dns_record"
+         * value: "dns_record"
          * @const
          */
-        "tls_dns_record" = "tls_dns_record";
+        "dns_record" = "dns_record";
 
     
 

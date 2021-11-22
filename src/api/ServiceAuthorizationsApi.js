@@ -13,8 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
-import InlineObject2 from '../model/InlineObject2';
 import InlineObject3 from '../model/InlineObject3';
+import InlineObject4 from '../model/InlineObject4';
 import InlineResponse204 from '../model/InlineResponse204';
 import ServiceAuthorization from '../model/ServiceAuthorization';
 import ServiceAuthorizationResponse from '../model/ServiceAuthorizationResponse';
@@ -88,7 +88,7 @@ export default class ServiceAuthorizationsApi {
     /**
      * Delete service authorization.
      * @param {Object} options
-     * @param {String} options.service_authorization_id
+     * @param {String} options.service_authorization_id - Alphanumeric string identifying a service authorization.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     deleteServiceAuthorizationWithHttpInfo(options = {}) {
@@ -122,7 +122,7 @@ export default class ServiceAuthorizationsApi {
     /**
      * Delete service authorization.
      * @param {Object} options
-     * @param {String} options.service_authorization_id
+     * @param {String} options.service_authorization_id - Alphanumeric string identifying a service authorization.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deleteServiceAuthorization(options = {}) {
@@ -135,11 +135,11 @@ export default class ServiceAuthorizationsApi {
     /**
      * Delete service authorizations.
      * @param {Object} options
-     * @param {module:model/InlineObject2} [options.inline_object2]
+     * @param {module:model/InlineObject3} [options.inline_object3]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse204} and HTTP response
      */
     deleteServiceAuthorization2WithHttpInfo(options = {}) {
-      let postBody = options['inline_object2'];
+      let postBody = options['inline_object3'];
 
       let pathParams = {
       };
@@ -164,7 +164,7 @@ export default class ServiceAuthorizationsApi {
     /**
      * Delete service authorizations.
      * @param {Object} options
-     * @param {module:model/InlineObject2} [options.inline_object2]
+     * @param {module:model/InlineObject3} [options.inline_object3]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse204}
      */
     deleteServiceAuthorization2(options = {}) {
@@ -223,7 +223,7 @@ export default class ServiceAuthorizationsApi {
     /**
      * Show service authorization.
      * @param {Object} options
-     * @param {String} options.service_authorization_id
+     * @param {String} options.service_authorization_id - Alphanumeric string identifying a service authorization.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceAuthorizationResponse} and HTTP response
      */
     showServiceAuthorizationWithHttpInfo(options = {}) {
@@ -257,7 +257,7 @@ export default class ServiceAuthorizationsApi {
     /**
      * Show service authorization.
      * @param {Object} options
-     * @param {String} options.service_authorization_id
+     * @param {String} options.service_authorization_id - Alphanumeric string identifying a service authorization.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceAuthorizationResponse}
      */
     showServiceAuthorization(options = {}) {
@@ -270,7 +270,7 @@ export default class ServiceAuthorizationsApi {
     /**
      * Update service authorization.
      * @param {Object} options
-     * @param {String} options.service_authorization_id
+     * @param {String} options.service_authorization_id - Alphanumeric string identifying a service authorization.
      * @param {module:model/ServiceAuthorization} [options.service_authorization]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceAuthorizationResponse} and HTTP response
      */
@@ -305,7 +305,7 @@ export default class ServiceAuthorizationsApi {
     /**
      * Update service authorization.
      * @param {Object} options
-     * @param {String} options.service_authorization_id
+     * @param {String} options.service_authorization_id - Alphanumeric string identifying a service authorization.
      * @param {module:model/ServiceAuthorization} [options.service_authorization]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceAuthorizationResponse}
      */
@@ -319,11 +319,11 @@ export default class ServiceAuthorizationsApi {
     /**
      * Update service authorizations.
      * @param {Object} options
-     * @param {module:model/InlineObject3} [options.inline_object3]
+     * @param {module:model/InlineObject4} [options.inline_object4]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceAuthorizationsResponse} and HTTP response
      */
     updateServiceAuthorization2WithHttpInfo(options = {}) {
-      let postBody = options['inline_object3'];
+      let postBody = options['inline_object4'];
 
       let pathParams = {
       };
@@ -348,7 +348,7 @@ export default class ServiceAuthorizationsApi {
     /**
      * Update service authorizations.
      * @param {Object} options
-     * @param {module:model/InlineObject3} [options.inline_object3]
+     * @param {module:model/InlineObject4} [options.inline_object4]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceAuthorizationsResponse}
      */
     updateServiceAuthorization2(options = {}) {

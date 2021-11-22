@@ -30,9 +30,15 @@ var BillingAddressResponse = /*#__PURE__*/function () {
   /**
    * Constructs a new <code>BillingAddressResponse</code>.
    * @alias module:model/BillingAddressResponse
+   * @implements module:model/BillingAddress
+   * @implements module:model/BillingAddressResponseAllOf
    */
   function BillingAddressResponse() {
     _classCallCheck(this, BillingAddressResponse);
+
+    _BillingAddress["default"].initialize(this);
+
+    _BillingAddressResponseAllOf["default"].initialize(this);
 
     BillingAddressResponse.initialize(this);
   }
@@ -60,6 +66,10 @@ var BillingAddressResponse = /*#__PURE__*/function () {
       if (data) {
         obj = obj || new BillingAddressResponse();
 
+        _BillingAddress["default"].constructFromObject(data, obj);
+
+        _BillingAddressResponseAllOf["default"].constructFromObject(data, obj);
+
         if (data.hasOwnProperty('data')) {
           obj['data'] = _BillingAddressResponseAllOfData["default"].constructFromObject(data['data']);
         }
@@ -76,6 +86,18 @@ var BillingAddressResponse = /*#__PURE__*/function () {
  */
 
 
-BillingAddressResponse.prototype['data'] = undefined;
+BillingAddressResponse.prototype['data'] = undefined; // Implement BillingAddress interface:
+
+/**
+ * @member {module:model/BillingAddressData} data
+ */
+
+_BillingAddress["default"].prototype['data'] = undefined; // Implement BillingAddressResponseAllOf interface:
+
+/**
+ * @member {module:model/BillingAddressResponseAllOfData} data
+ */
+
+_BillingAddressResponseAllOf["default"].prototype['data'] = undefined;
 var _default = BillingAddressResponse;
 exports["default"] = _default;

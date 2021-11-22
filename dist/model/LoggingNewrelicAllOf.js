@@ -58,12 +58,12 @@ var LoggingNewrelicAllOf = /*#__PURE__*/function () {
           obj['format'] = _ApiClient["default"].convertToType(data['format'], Object);
         }
 
-        if (data.hasOwnProperty('region')) {
-          obj['region'] = _ApiClient["default"].convertToType(data['region'], 'String');
-        }
-
         if (data.hasOwnProperty('token')) {
           obj['token'] = _ApiClient["default"].convertToType(data['token'], 'String');
+        }
+
+        if (data.hasOwnProperty('region')) {
+          obj['region'] = _ApiClient["default"].convertToType(data['region'], 'String');
         }
       }
 
@@ -81,18 +81,18 @@ var LoggingNewrelicAllOf = /*#__PURE__*/function () {
 
 LoggingNewrelicAllOf.prototype['format'] = undefined;
 /**
+ * The Insert API key from the Account page of your New Relic account. Required.
+ * @member {String} token
+ */
+
+LoggingNewrelicAllOf.prototype['token'] = undefined;
+/**
  * The region to which to stream logs.
  * @member {module:model/LoggingNewrelicAllOf.RegionEnum} region
  * @default 'US'
  */
 
 LoggingNewrelicAllOf.prototype['region'] = undefined;
-/**
- * The Insert API key from the Account page of your New Relic account. Required.
- * @member {String} token
- */
-
-LoggingNewrelicAllOf.prototype['token'] = undefined;
 /**
  * Allowed values for the <code>region</code> property.
  * @enum {String}

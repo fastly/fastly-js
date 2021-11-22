@@ -25,8 +25,11 @@ class BillingAddressResponse {
     /**
      * Constructs a new <code>BillingAddressResponse</code>.
      * @alias module:model/BillingAddressResponse
+     * @implements module:model/BillingAddress
+     * @implements module:model/BillingAddressResponseAllOf
      */
     constructor() { 
+        BillingAddress.initialize(this);BillingAddressResponseAllOf.initialize(this);
         BillingAddressResponse.initialize(this);
     }
 
@@ -48,6 +51,8 @@ class BillingAddressResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new BillingAddressResponse();
+            BillingAddress.constructFromObject(data, obj);
+            BillingAddressResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('data')) {
                 obj['data'] = BillingAddressResponseAllOfData.constructFromObject(data['data']);
@@ -65,6 +70,16 @@ class BillingAddressResponse {
 BillingAddressResponse.prototype['data'] = undefined;
 
 
+// Implement BillingAddress interface:
+/**
+ * @member {module:model/BillingAddressData} data
+ */
+BillingAddress.prototype['data'] = undefined;
+// Implement BillingAddressResponseAllOf interface:
+/**
+ * @member {module:model/BillingAddressResponseAllOfData} data
+ */
+BillingAddressResponseAllOf.prototype['data'] = undefined;
 
 
 

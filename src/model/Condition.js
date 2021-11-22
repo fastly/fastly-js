@@ -24,6 +24,7 @@ class Condition {
      * @alias module:model/Condition
      */
     constructor() { 
+        
         Condition.initialize(this);
     }
 

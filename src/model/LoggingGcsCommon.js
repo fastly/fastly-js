@@ -24,6 +24,7 @@ class LoggingGcsCommon {
      * @alias module:model/LoggingGcsCommon
      */
     constructor() { 
+        
         LoggingGcsCommon.initialize(this);
     }
 
@@ -46,11 +47,11 @@ class LoggingGcsCommon {
         if (data) {
             obj = obj || new LoggingGcsCommon();
 
-            if (data.hasOwnProperty('secret_key')) {
-                obj['secret_key'] = ApiClient.convertToType(data['secret_key'], 'String');
-            }
             if (data.hasOwnProperty('user')) {
                 obj['user'] = ApiClient.convertToType(data['user'], 'String');
+            }
+            if (data.hasOwnProperty('secret_key')) {
+                obj['secret_key'] = ApiClient.convertToType(data['secret_key'], 'String');
             }
         }
         return obj;
@@ -60,16 +61,16 @@ class LoggingGcsCommon {
 }
 
 /**
- * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
- * @member {String} secret_key
- */
-LoggingGcsCommon.prototype['secret_key'] = undefined;
-
-/**
  * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
  * @member {String} user
  */
 LoggingGcsCommon.prototype['user'] = undefined;
+
+/**
+ * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+ * @member {String} secret_key
+ */
+LoggingGcsCommon.prototype['secret_key'] = undefined;
 
 
 

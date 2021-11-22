@@ -27,6 +27,7 @@ class InvitationData {
      * @alias module:model/InvitationData
      */
     constructor() { 
+        
         InvitationData.initialize(this);
     }
 
@@ -49,14 +50,14 @@ class InvitationData {
         if (data) {
             obj = obj || new InvitationData();
 
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeInvitation.constructFromObject(data['type']);
+            }
             if (data.hasOwnProperty('attributes')) {
                 obj['attributes'] = InvitationDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = RelationshipServiceInvitationsCreate.constructFromObject(data['relationships']);
-            }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeInvitation.constructFromObject(data['type']);
             }
         }
         return obj;
@@ -64,6 +65,11 @@ class InvitationData {
 
 
 }
+
+/**
+ * @member {module:model/TypeInvitation} type
+ */
+InvitationData.prototype['type'] = undefined;
 
 /**
  * @member {module:model/InvitationDataAttributes} attributes
@@ -74,11 +80,6 @@ InvitationData.prototype['attributes'] = undefined;
  * @member {module:model/RelationshipServiceInvitationsCreate} relationships
  */
 InvitationData.prototype['relationships'] = undefined;
-
-/**
- * @member {module:model/TypeInvitation} type
- */
-InvitationData.prototype['type'] = undefined;
 
 
 

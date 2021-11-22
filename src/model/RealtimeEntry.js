@@ -26,6 +26,7 @@ class RealtimeEntry {
      * @alias module:model/RealtimeEntry
      */
     constructor() { 
+        
         RealtimeEntry.initialize(this);
     }
 
@@ -48,14 +49,14 @@ class RealtimeEntry {
         if (data) {
             obj = obj || new RealtimeEntry();
 
+            if (data.hasOwnProperty('recorded')) {
+                obj['recorded'] = ApiClient.convertToType(data['recorded'], 'Number');
+            }
             if (data.hasOwnProperty('aggregated')) {
                 obj['aggregated'] = ApiClient.convertToType(data['aggregated'], RealtimeMeasurements);
             }
             if (data.hasOwnProperty('datacenter')) {
                 obj['datacenter'] = ApiClient.convertToType(data['datacenter'], {'String': RealtimeMeasurements});
-            }
-            if (data.hasOwnProperty('recorded')) {
-                obj['recorded'] = ApiClient.convertToType(data['recorded'], 'Number');
             }
         }
         return obj;
@@ -63,6 +64,11 @@ class RealtimeEntry {
 
 
 }
+
+/**
+ * @member {Number} recorded
+ */
+RealtimeEntry.prototype['recorded'] = undefined;
 
 /**
  * @member {module:model/RealtimeMeasurements} aggregated
@@ -74,11 +80,6 @@ RealtimeEntry.prototype['aggregated'] = undefined;
  * @member {Object.<String, module:model/RealtimeMeasurements>} datacenter
  */
 RealtimeEntry.prototype['datacenter'] = undefined;
-
-/**
- * @member {Number} recorded
- */
-RealtimeEntry.prototype['recorded'] = undefined;
 
 
 

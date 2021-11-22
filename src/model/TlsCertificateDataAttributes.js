@@ -24,6 +24,7 @@ class TlsCertificateDataAttributes {
      * @alias module:model/TlsCertificateDataAttributes
      */
     constructor() { 
+        
         TlsCertificateDataAttributes.initialize(this);
     }
 

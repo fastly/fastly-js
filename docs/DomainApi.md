@@ -1,6 +1,5 @@
 # Fastly.DomainApi
 
-
 ```javascript
 const apiInstance = new Fastly.DomainApi();
 ```
@@ -15,7 +14,6 @@ Method | Fastly API endpoint | Description
 [**getDomain**](DomainApi.md#getDomain) | **GET** /service/{service_id}/version/{version_id}/domain/{domain_name} | Describe a domain
 [**listDomains**](DomainApi.md#listDomains) | **GET** /service/{service_id}/version/{version_id}/domain | List domains
 [**updateDomain**](DomainApi.md#updateDomain) | **PUT** /service/{service_id}/version/{version_id}/domain/{domain_name} | Update a domain
-
 
 
 ## `checkDomain`
@@ -37,7 +35,7 @@ const options = {
 
 apiInstance.checkDomain(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -48,9 +46,9 @@ apiInstance.checkDomain(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**domain_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**domain_name** | **String** | The name of the domain or domains associated with this service. |
 
 ### Return type
 
@@ -75,7 +73,7 @@ const options = {
 
 apiInstance.checkDomains(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -86,8 +84,8 @@ apiInstance.checkDomains(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -97,7 +95,7 @@ Name | Type | Description  | Notes
 ## `createDomain`
 
 ```javascript
-createDomain({ service_id, version_id, [comment, ], [name] })
+createDomain({ service_id, version_id, [comment, ][name] })
 ```
 
 Create a domain for a particular service and version.
@@ -114,7 +112,7 @@ const options = {
 
 apiInstance.createDomain(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -125,8 +123,8 @@ apiInstance.createDomain(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 **comment** | **String** | A freeform descriptive note. | [optional]
 **name** | **String** | The name of the domain or domains associated with this service. | [optional]
 
@@ -154,7 +152,7 @@ const options = {
 
 apiInstance.deleteDomain(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -165,9 +163,9 @@ apiInstance.deleteDomain(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**domain_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**domain_name** | **String** | The name of the domain or domains associated with this service. |
 
 ### Return type
 
@@ -193,7 +191,7 @@ const options = {
 
 apiInstance.getDomain(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -204,9 +202,9 @@ apiInstance.getDomain(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**domain_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**domain_name** | **String** | The name of the domain or domains associated with this service. |
 
 ### Return type
 
@@ -231,7 +229,7 @@ const options = {
 
 apiInstance.listDomains(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -242,8 +240,8 @@ apiInstance.listDomains(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -253,7 +251,7 @@ Name | Type | Description  | Notes
 ## `updateDomain`
 
 ```javascript
-updateDomain({ service_id, version_id, domain_name, [comment, ], [name] })
+updateDomain({ service_id, version_id, domain_name, [comment, ][name] })
 ```
 
 Update the domain for a particular service and version.
@@ -271,7 +269,7 @@ const options = {
 
 apiInstance.updateDomain(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -282,9 +280,9 @@ apiInstance.updateDomain(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**domain_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**domain_name** | **String** | The name of the domain or domains associated with this service. |
 **comment** | **String** | A freeform descriptive note. | [optional]
 **name** | **String** | The name of the domain or domains associated with this service. | [optional]
 

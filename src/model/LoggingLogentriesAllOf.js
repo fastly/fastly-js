@@ -25,6 +25,7 @@ class LoggingLogentriesAllOf {
      * @alias module:model/LoggingLogentriesAllOf
      */
     constructor() { 
+        
         LoggingLogentriesAllOf.initialize(this);
     }
 
@@ -50,14 +51,14 @@ class LoggingLogentriesAllOf {
             if (data.hasOwnProperty('port')) {
                 obj['port'] = ApiClient.convertToType(data['port'], 'Number');
             }
-            if (data.hasOwnProperty('region')) {
-                obj['region'] = ApiClient.convertToType(data['region'], 'String');
-            }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('use_tls')) {
                 obj['use_tls'] = LoggingUseTls.constructFromObject(data['use_tls']);
+            }
+            if (data.hasOwnProperty('region')) {
+                obj['region'] = ApiClient.convertToType(data['region'], 'String');
             }
         }
         return obj;
@@ -74,12 +75,6 @@ class LoggingLogentriesAllOf {
 LoggingLogentriesAllOf.prototype['port'] = 20000;
 
 /**
- * The region to which to stream logs.
- * @member {module:model/LoggingLogentriesAllOf.RegionEnum} region
- */
-LoggingLogentriesAllOf.prototype['region'] = undefined;
-
-/**
  * Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
  * @member {String} token
  */
@@ -89,6 +84,12 @@ LoggingLogentriesAllOf.prototype['token'] = undefined;
  * @member {module:model/LoggingUseTls} use_tls
  */
 LoggingLogentriesAllOf.prototype['use_tls'] = undefined;
+
+/**
+ * The region to which to stream logs.
+ * @member {module:model/LoggingLogentriesAllOf.RegionEnum} region
+ */
+LoggingLogentriesAllOf.prototype['region'] = undefined;
 
 
 

@@ -1,6 +1,5 @@
 # Fastly.GzipApi
 
-
 ```javascript
 const apiInstance = new Fastly.GzipApi();
 ```
@@ -15,11 +14,10 @@ Method | Fastly API endpoint | Description
 [**updateGzipConfig**](GzipApi.md#updateGzipConfig) | **PUT** /service/{service_id}/version/{version_id}/gzip/{gzip_name} | Update a gzip configuration
 
 
-
 ## `createGzipConfig`
 
 ```javascript
-createGzipConfig({ service_id, version_id, [cache_condition, ], [content_types, ], [extensions, ], [name] })
+createGzipConfig({ service_id, version_id, [cache_condition, ][content_types, ][extensions, ][name] })
 ```
 
 Create a named gzip configuration on a particular service and version.
@@ -38,7 +36,7 @@ const options = {
 
 apiInstance.createGzipConfig(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -49,8 +47,8 @@ apiInstance.createGzipConfig(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 **cache_condition** | **String** | Name of the cache condition controlling when this configuration applies. | [optional]
 **content_types** | **String** | Space-separated list of content types to compress. If you omit this field a default list will be used. | [optional]
 **extensions** | **String** | Space-separated list of file extensions to compress. If you omit this field a default list will be used. | [optional]
@@ -80,7 +78,7 @@ const options = {
 
 apiInstance.deleteGzipConfig(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -91,9 +89,9 @@ apiInstance.deleteGzipConfig(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**gzip_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**gzip_name** | **String** | Name of the gzip configuration. |
 
 ### Return type
 
@@ -119,7 +117,7 @@ const options = {
 
 apiInstance.getGzipConfigs(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -130,9 +128,9 @@ apiInstance.getGzipConfigs(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**gzip_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**gzip_name** | **String** | Name of the gzip configuration. |
 
 ### Return type
 
@@ -157,7 +155,7 @@ const options = {
 
 apiInstance.listGzipConfigs(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -168,8 +166,8 @@ apiInstance.listGzipConfigs(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
 
 ### Return type
 
@@ -179,7 +177,7 @@ Name | Type | Description  | Notes
 ## `updateGzipConfig`
 
 ```javascript
-updateGzipConfig({ service_id, version_id, gzip_name, [cache_condition, ], [content_types, ], [extensions, ], [name] })
+updateGzipConfig({ service_id, version_id, gzip_name, [cache_condition, ][content_types, ][extensions, ][name] })
 ```
 
 Update a named gzip configuration on a particular service and version.
@@ -199,7 +197,7 @@ const options = {
 
 apiInstance.updateGzipConfig(options)
   .then((data) => {
-    console.log(data, 'API called successfully.');
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -210,9 +208,9 @@ apiInstance.updateGzipConfig(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**service_id** | **String** |  |
-**version_id** | **Number** |  |
-**gzip_name** | **String** |  |
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**gzip_name** | **String** | Name of the gzip configuration. |
 **cache_condition** | **String** | Name of the cache condition controlling when this configuration applies. | [optional]
 **content_types** | **String** | Space-separated list of content types to compress. If you omit this field a default list will be used. | [optional]
 **extensions** | **String** | Space-separated list of file extensions to compress. If you omit this field a default list will be used. | [optional]

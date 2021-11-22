@@ -26,6 +26,7 @@ class WafTag {
      * @alias module:model/WafTag
      */
     constructor() { 
+        
         WafTag.initialize(this);
     }
 
@@ -48,14 +49,14 @@ class WafTag {
         if (data) {
             obj = obj || new WafTag();
 
-            if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = WafTagAttributes.constructFromObject(data['attributes']);
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = TypeWafTag.constructFromObject(data['type']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeWafTag.constructFromObject(data['type']);
+            if (data.hasOwnProperty('attributes')) {
+                obj['attributes'] = WafTagAttributes.constructFromObject(data['attributes']);
             }
         }
         return obj;
@@ -65,9 +66,9 @@ class WafTag {
 }
 
 /**
- * @member {module:model/WafTagAttributes} attributes
+ * @member {module:model/TypeWafTag} type
  */
-WafTag.prototype['attributes'] = undefined;
+WafTag.prototype['type'] = undefined;
 
 /**
  * Alphanumeric string identifying a WAF tag.
@@ -76,9 +77,9 @@ WafTag.prototype['attributes'] = undefined;
 WafTag.prototype['id'] = undefined;
 
 /**
- * @member {module:model/TypeWafTag} type
+ * @member {module:model/WafTagAttributes} attributes
  */
-WafTag.prototype['type'] = undefined;
+WafTag.prototype['attributes'] = undefined;
 
 
 
