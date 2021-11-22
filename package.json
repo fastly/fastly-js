@@ -12,7 +12,7 @@
     "fs": false
   },
   "engines": {
-    "node": "^14"
+    "node": "^16"
   },
   "dependencies": {
     "superagent": "^6.1.0"
