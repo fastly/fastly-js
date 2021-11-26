@@ -310,8 +310,9 @@ import Results from './model/Results';
 import RoleUser from './model/RoleUser';
 import SchemasBackend from './model/SchemasBackend';
 import SchemasDirector from './model/SchemasDirector';
-import SchemasHealthcheck from './model/SchemasHealthcheck';
-import SchemasHealthcheckResponse from './model/SchemasHealthcheckResponse';
+import SchemasHeader from './model/SchemasHeader';
+import SchemasHeaderResponse from './model/SchemasHeaderResponse';
+import SchemasSnippetResponse from './model/SchemasSnippetResponse';
 import SchemasUserResponse from './model/SchemasUserResponse';
 import SchemasVclResponse from './model/SchemasVclResponse';
 import SchemasVersion from './model/SchemasVersion';
@@ -2408,16 +2409,22 @@ export {
     SchemasDirector,
 
     /**
-     * The SchemasHealthcheck model constructor.
-     * @property {module:model/SchemasHealthcheck}
+     * The SchemasHeader model constructor.
+     * @property {module:model/SchemasHeader}
      */
-    SchemasHealthcheck,
+    SchemasHeader,
 
     /**
-     * The SchemasHealthcheckResponse model constructor.
-     * @property {module:model/SchemasHealthcheckResponse}
+     * The SchemasHeaderResponse model constructor.
+     * @property {module:model/SchemasHeaderResponse}
      */
-    SchemasHealthcheckResponse,
+    SchemasHeaderResponse,
+
+    /**
+     * The SchemasSnippetResponse model constructor.
+     * @property {module:model/SchemasSnippetResponse}
+     */
+    SchemasSnippetResponse,
 
     /**
      * The SchemasUserResponse model constructor.

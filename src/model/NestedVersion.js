@@ -17,15 +17,15 @@ import CacheSettingResponse from './CacheSettingResponse';
 import ConditionResponse from './ConditionResponse';
 import DomainResponse from './DomainResponse';
 import GzipResponse from './GzipResponse';
-import HeaderResponse from './HeaderResponse';
+import HealthcheckResponse from './HealthcheckResponse';
 import RequestSettingsResponse from './RequestSettingsResponse';
 import ResponseObjectResponse from './ResponseObjectResponse';
 import SchemasDirector from './SchemasDirector';
-import SchemasHealthcheckResponse from './SchemasHealthcheckResponse';
+import SchemasHeaderResponse from './SchemasHeaderResponse';
+import SchemasSnippetResponse from './SchemasSnippetResponse';
 import SchemasVclResponse from './SchemasVclResponse';
 import SchemasVersionResponse from './SchemasVersionResponse';
 import Settings from './Settings';
-import SnippetResponse from './SnippetResponse';
 import VersionDetail from './VersionDetail';
 
 /**
@@ -118,10 +118,10 @@ class NestedVersion {
                 obj['gzips'] = ApiClient.convertToType(data['gzips'], [GzipResponse]);
             }
             if (data.hasOwnProperty('headers')) {
-                obj['headers'] = ApiClient.convertToType(data['headers'], [HeaderResponse]);
+                obj['headers'] = ApiClient.convertToType(data['headers'], [SchemasHeaderResponse]);
             }
             if (data.hasOwnProperty('healthchecks')) {
-                obj['healthchecks'] = ApiClient.convertToType(data['healthchecks'], [SchemasHealthcheckResponse]);
+                obj['healthchecks'] = ApiClient.convertToType(data['healthchecks'], [HealthcheckResponse]);
             }
             if (data.hasOwnProperty('request_settings')) {
                 obj['request_settings'] = ApiClient.convertToType(data['request_settings'], [RequestSettingsResponse]);
@@ -133,7 +133,7 @@ class NestedVersion {
                 obj['settings'] = ApiClient.convertToType(data['settings'], Settings);
             }
             if (data.hasOwnProperty('snippets')) {
-                obj['snippets'] = ApiClient.convertToType(data['snippets'], [SnippetResponse]);
+                obj['snippets'] = ApiClient.convertToType(data['snippets'], [SchemasSnippetResponse]);
             }
             if (data.hasOwnProperty('vcls')) {
                 obj['vcls'] = ApiClient.convertToType(data['vcls'], [SchemasVclResponse]);
@@ -256,13 +256,13 @@ NestedVersion.prototype['gzips'] = undefined;
 
 /**
  * List of headers associated to this service.
- * @member {Array.<module:model/HeaderResponse>} headers
+ * @member {Array.<module:model/SchemasHeaderResponse>} headers
  */
 NestedVersion.prototype['headers'] = undefined;
 
 /**
  * List of healthchecks associated to this service.
- * @member {Array.<module:model/SchemasHealthcheckResponse>} healthchecks
+ * @member {Array.<module:model/HealthcheckResponse>} healthchecks
  */
 NestedVersion.prototype['healthchecks'] = undefined;
 
@@ -285,7 +285,7 @@ NestedVersion.prototype['settings'] = undefined;
 
 /**
  * List of VCL snippets for this service.
- * @member {Array.<module:model/SnippetResponse>} snippets
+ * @member {Array.<module:model/SchemasSnippetResponse>} snippets
  */
 NestedVersion.prototype['snippets'] = undefined;
 
@@ -395,12 +395,12 @@ VersionDetail.prototype['domains'] = undefined;
 VersionDetail.prototype['gzips'] = undefined;
 /**
  * List of headers associated to this service.
- * @member {Array.<module:model/HeaderResponse>} headers
+ * @member {Array.<module:model/SchemasHeaderResponse>} headers
  */
 VersionDetail.prototype['headers'] = undefined;
 /**
  * List of healthchecks associated to this service.
- * @member {Array.<module:model/SchemasHealthcheckResponse>} healthchecks
+ * @member {Array.<module:model/HealthcheckResponse>} healthchecks
  */
 VersionDetail.prototype['healthchecks'] = undefined;
 /**
@@ -419,7 +419,7 @@ VersionDetail.prototype['response_objects'] = undefined;
 VersionDetail.prototype['settings'] = undefined;
 /**
  * List of VCL snippets for this service.
- * @member {Array.<module:model/SnippetResponse>} snippets
+ * @member {Array.<module:model/SchemasSnippetResponse>} snippets
  */
 VersionDetail.prototype['snippets'] = undefined;
 /**

@@ -2127,16 +2127,22 @@ Object.defineProperty(exports, "SchemasDirector", {
     return _SchemasDirector["default"];
   }
 });
-Object.defineProperty(exports, "SchemasHealthcheck", {
+Object.defineProperty(exports, "SchemasHeader", {
   enumerable: true,
   get: function get() {
-    return _SchemasHealthcheck["default"];
+    return _SchemasHeader["default"];
   }
 });
-Object.defineProperty(exports, "SchemasHealthcheckResponse", {
+Object.defineProperty(exports, "SchemasHeaderResponse", {
   enumerable: true,
   get: function get() {
-    return _SchemasHealthcheckResponse["default"];
+    return _SchemasHeaderResponse["default"];
+  }
+});
+Object.defineProperty(exports, "SchemasSnippetResponse", {
+  enumerable: true,
+  get: function get() {
+    return _SchemasSnippetResponse["default"];
   }
 });
 Object.defineProperty(exports, "SchemasUserResponse", {
@@ -4015,9 +4021,11 @@ var _SchemasBackend = _interopRequireDefault(require("./model/SchemasBackend"));
 
 var _SchemasDirector = _interopRequireDefault(require("./model/SchemasDirector"));
 
-var _SchemasHealthcheck = _interopRequireDefault(require("./model/SchemasHealthcheck"));
+var _SchemasHeader = _interopRequireDefault(require("./model/SchemasHeader"));
 
-var _SchemasHealthcheckResponse = _interopRequireDefault(require("./model/SchemasHealthcheckResponse"));
+var _SchemasHeaderResponse = _interopRequireDefault(require("./model/SchemasHeaderResponse"));
+
+var _SchemasSnippetResponse = _interopRequireDefault(require("./model/SchemasSnippetResponse"));
 
 var _SchemasUserResponse = _interopRequireDefault(require("./model/SchemasUserResponse"));
 

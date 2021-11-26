@@ -17,7 +17,7 @@ var _DomainResponse = _interopRequireDefault(require("./DomainResponse"));
 
 var _GzipResponse = _interopRequireDefault(require("./GzipResponse"));
 
-var _HeaderResponse = _interopRequireDefault(require("./HeaderResponse"));
+var _HealthcheckResponse = _interopRequireDefault(require("./HealthcheckResponse"));
 
 var _RequestSettingsResponse = _interopRequireDefault(require("./RequestSettingsResponse"));
 
@@ -25,15 +25,15 @@ var _ResponseObjectResponse = _interopRequireDefault(require("./ResponseObjectRe
 
 var _SchemasDirector = _interopRequireDefault(require("./SchemasDirector"));
 
-var _SchemasHealthcheckResponse = _interopRequireDefault(require("./SchemasHealthcheckResponse"));
+var _SchemasHeaderResponse = _interopRequireDefault(require("./SchemasHeaderResponse"));
+
+var _SchemasSnippetResponse = _interopRequireDefault(require("./SchemasSnippetResponse"));
 
 var _SchemasVclResponse = _interopRequireDefault(require("./SchemasVclResponse"));
 
 var _SchemasVersionResponse = _interopRequireDefault(require("./SchemasVersionResponse"));
 
 var _Settings = _interopRequireDefault(require("./Settings"));
-
-var _SnippetResponse = _interopRequireDefault(require("./SnippetResponse"));
 
 var _VersionDetail = _interopRequireDefault(require("./VersionDetail"));
 
@@ -163,11 +163,11 @@ var NestedVersion = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('headers')) {
-          obj['headers'] = _ApiClient["default"].convertToType(data['headers'], [_HeaderResponse["default"]]);
+          obj['headers'] = _ApiClient["default"].convertToType(data['headers'], [_SchemasHeaderResponse["default"]]);
         }
 
         if (data.hasOwnProperty('healthchecks')) {
-          obj['healthchecks'] = _ApiClient["default"].convertToType(data['healthchecks'], [_SchemasHealthcheckResponse["default"]]);
+          obj['healthchecks'] = _ApiClient["default"].convertToType(data['healthchecks'], [_HealthcheckResponse["default"]]);
         }
 
         if (data.hasOwnProperty('request_settings')) {
@@ -183,7 +183,7 @@ var NestedVersion = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('snippets')) {
-          obj['snippets'] = _ApiClient["default"].convertToType(data['snippets'], [_SnippetResponse["default"]]);
+          obj['snippets'] = _ApiClient["default"].convertToType(data['snippets'], [_SchemasSnippetResponse["default"]]);
         }
 
         if (data.hasOwnProperty('vcls')) {
@@ -310,13 +310,13 @@ NestedVersion.prototype['domains'] = undefined;
 NestedVersion.prototype['gzips'] = undefined;
 /**
  * List of headers associated to this service.
- * @member {Array.<module:model/HeaderResponse>} headers
+ * @member {Array.<module:model/SchemasHeaderResponse>} headers
  */
 
 NestedVersion.prototype['headers'] = undefined;
 /**
  * List of healthchecks associated to this service.
- * @member {Array.<module:model/SchemasHealthcheckResponse>} healthchecks
+ * @member {Array.<module:model/HealthcheckResponse>} healthchecks
  */
 
 NestedVersion.prototype['healthchecks'] = undefined;
@@ -339,7 +339,7 @@ NestedVersion.prototype['response_objects'] = undefined;
 NestedVersion.prototype['settings'] = undefined;
 /**
  * List of VCL snippets for this service.
- * @member {Array.<module:model/SnippetResponse>} snippets
+ * @member {Array.<module:model/SchemasSnippetResponse>} snippets
  */
 
 NestedVersion.prototype['snippets'] = undefined;
@@ -465,13 +465,13 @@ _VersionDetail["default"].prototype['domains'] = undefined;
 _VersionDetail["default"].prototype['gzips'] = undefined;
 /**
  * List of headers associated to this service.
- * @member {Array.<module:model/HeaderResponse>} headers
+ * @member {Array.<module:model/SchemasHeaderResponse>} headers
  */
 
 _VersionDetail["default"].prototype['headers'] = undefined;
 /**
  * List of healthchecks associated to this service.
- * @member {Array.<module:model/SchemasHealthcheckResponse>} healthchecks
+ * @member {Array.<module:model/HealthcheckResponse>} healthchecks
  */
 
 _VersionDetail["default"].prototype['healthchecks'] = undefined;
@@ -494,7 +494,7 @@ _VersionDetail["default"].prototype['response_objects'] = undefined;
 _VersionDetail["default"].prototype['settings'] = undefined;
 /**
  * List of VCL snippets for this service.
- * @member {Array.<module:model/SnippetResponse>} snippets
+ * @member {Array.<module:model/SchemasSnippetResponse>} snippets
  */
 
 _VersionDetail["default"].prototype['snippets'] = undefined;

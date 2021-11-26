@@ -17,7 +17,7 @@ var _DomainResponse = _interopRequireDefault(require("./DomainResponse"));
 
 var _GzipResponse = _interopRequireDefault(require("./GzipResponse"));
 
-var _HeaderResponse = _interopRequireDefault(require("./HeaderResponse"));
+var _HealthcheckResponse = _interopRequireDefault(require("./HealthcheckResponse"));
 
 var _RequestSettingsResponse = _interopRequireDefault(require("./RequestSettingsResponse"));
 
@@ -25,13 +25,13 @@ var _ResponseObjectResponse = _interopRequireDefault(require("./ResponseObjectRe
 
 var _SchemasDirector = _interopRequireDefault(require("./SchemasDirector"));
 
-var _SchemasHealthcheckResponse = _interopRequireDefault(require("./SchemasHealthcheckResponse"));
+var _SchemasHeaderResponse = _interopRequireDefault(require("./SchemasHeaderResponse"));
+
+var _SchemasSnippetResponse = _interopRequireDefault(require("./SchemasSnippetResponse"));
 
 var _SchemasVclResponse = _interopRequireDefault(require("./SchemasVclResponse"));
 
 var _Settings = _interopRequireDefault(require("./Settings"));
-
-var _SnippetResponse = _interopRequireDefault(require("./SnippetResponse"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
@@ -105,11 +105,11 @@ var VersionDetail = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('headers')) {
-          obj['headers'] = _ApiClient["default"].convertToType(data['headers'], [_HeaderResponse["default"]]);
+          obj['headers'] = _ApiClient["default"].convertToType(data['headers'], [_SchemasHeaderResponse["default"]]);
         }
 
         if (data.hasOwnProperty('healthchecks')) {
-          obj['healthchecks'] = _ApiClient["default"].convertToType(data['healthchecks'], [_SchemasHealthcheckResponse["default"]]);
+          obj['healthchecks'] = _ApiClient["default"].convertToType(data['healthchecks'], [_HealthcheckResponse["default"]]);
         }
 
         if (data.hasOwnProperty('request_settings')) {
@@ -125,7 +125,7 @@ var VersionDetail = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('snippets')) {
-          obj['snippets'] = _ApiClient["default"].convertToType(data['snippets'], [_SnippetResponse["default"]]);
+          obj['snippets'] = _ApiClient["default"].convertToType(data['snippets'], [_SchemasSnippetResponse["default"]]);
         }
 
         if (data.hasOwnProperty('vcls')) {
@@ -182,13 +182,13 @@ VersionDetail.prototype['domains'] = undefined;
 VersionDetail.prototype['gzips'] = undefined;
 /**
  * List of headers associated to this service.
- * @member {Array.<module:model/HeaderResponse>} headers
+ * @member {Array.<module:model/SchemasHeaderResponse>} headers
  */
 
 VersionDetail.prototype['headers'] = undefined;
 /**
  * List of healthchecks associated to this service.
- * @member {Array.<module:model/SchemasHealthcheckResponse>} healthchecks
+ * @member {Array.<module:model/HealthcheckResponse>} healthchecks
  */
 
 VersionDetail.prototype['healthchecks'] = undefined;
@@ -211,7 +211,7 @@ VersionDetail.prototype['response_objects'] = undefined;
 VersionDetail.prototype['settings'] = undefined;
 /**
  * List of VCL snippets for this service.
- * @member {Array.<module:model/SnippetResponse>} snippets
+ * @member {Array.<module:model/SchemasSnippetResponse>} snippets
  */
 
 VersionDetail.prototype['snippets'] = undefined;
