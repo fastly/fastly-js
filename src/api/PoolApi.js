@@ -55,7 +55,7 @@ export default class PoolApi {
      * @param {Number} [options.connect_timeout] - How long to wait for a timeout in milliseconds. Optional.
      * @param {Number} [options.first_byte_timeout] - How long to wait for the first byte in milliseconds. Optional.
      * @param {Number} [options.quorum=75] - Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
-     * @param {String} [options.tls_ciphers] - List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.0.2/man1/ciphers) for details). Optional.
+     * @param {String} [options.tls_ciphers] - List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) for details). Optional.
      * @param {String} [options.tls_sni_hostname] - SNI hostname. Optional.
      * @param {Number} [options.tls_check_cert] - Be strict on checking TLS certs. Optional.
      * @param {Number} [options.min_tls_version] - Minimum allowed TLS version on connections to this server. Optional.
@@ -137,7 +137,7 @@ export default class PoolApi {
      * @param {Number} [options.connect_timeout] - How long to wait for a timeout in milliseconds. Optional.
      * @param {Number} [options.first_byte_timeout] - How long to wait for the first byte in milliseconds. Optional.
      * @param {Number} [options.quorum=75] - Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
-     * @param {String} [options.tls_ciphers] - List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.0.2/man1/ciphers) for details). Optional.
+     * @param {String} [options.tls_ciphers] - List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) for details). Optional.
      * @param {String} [options.tls_sni_hostname] - SNI hostname. Optional.
      * @param {Number} [options.tls_check_cert] - Be strict on checking TLS certs. Optional.
      * @param {Number} [options.min_tls_version] - Minimum allowed TLS version on connections to this server. Optional.
@@ -349,7 +349,7 @@ export default class PoolApi {
      * @param {Number} [options.connect_timeout] - How long to wait for a timeout in milliseconds. Optional.
      * @param {Number} [options.first_byte_timeout] - How long to wait for the first byte in milliseconds. Optional.
      * @param {Number} [options.quorum=75] - Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
-     * @param {String} [options.tls_ciphers] - List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.0.2/man1/ciphers) for details). Optional.
+     * @param {String} [options.tls_ciphers] - List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) for details). Optional.
      * @param {String} [options.tls_sni_hostname] - SNI hostname. Optional.
      * @param {Number} [options.tls_check_cert] - Be strict on checking TLS certs. Optional.
      * @param {Number} [options.min_tls_version] - Minimum allowed TLS version on connections to this server. Optional.
@@ -437,7 +437,7 @@ export default class PoolApi {
      * @param {Number} [options.connect_timeout] - How long to wait for a timeout in milliseconds. Optional.
      * @param {Number} [options.first_byte_timeout] - How long to wait for the first byte in milliseconds. Optional.
      * @param {Number} [options.quorum=75] - Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
-     * @param {String} [options.tls_ciphers] - List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.0.2/man1/ciphers) for details). Optional.
+     * @param {String} [options.tls_ciphers] - List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) for details). Optional.
      * @param {String} [options.tls_sni_hostname] - SNI hostname. Optional.
      * @param {Number} [options.tls_check_cert] - Be strict on checking TLS certs. Optional.
      * @param {Number} [options.min_tls_version] - Minimum allowed TLS version on connections to this server. Optional.

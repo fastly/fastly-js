@@ -17,15 +17,15 @@ var _DomainResponse = _interopRequireDefault(require("./DomainResponse"));
 
 var _GzipResponse = _interopRequireDefault(require("./GzipResponse"));
 
-var _HealthcheckResponse = _interopRequireDefault(require("./HealthcheckResponse"));
+var _HeaderResponse = _interopRequireDefault(require("./HeaderResponse"));
 
-var _RequestSettingsResponse = _interopRequireDefault(require("./RequestSettingsResponse"));
+var _HealthcheckResponse = _interopRequireDefault(require("./HealthcheckResponse"));
 
 var _ResponseObjectResponse = _interopRequireDefault(require("./ResponseObjectResponse"));
 
 var _SchemasDirector = _interopRequireDefault(require("./SchemasDirector"));
 
-var _SchemasHeaderResponse = _interopRequireDefault(require("./SchemasHeaderResponse"));
+var _SchemasRequestSettingsResponse = _interopRequireDefault(require("./SchemasRequestSettingsResponse"));
 
 var _SchemasSnippetResponse = _interopRequireDefault(require("./SchemasSnippetResponse"));
 
@@ -105,7 +105,7 @@ var VersionDetail = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('headers')) {
-          obj['headers'] = _ApiClient["default"].convertToType(data['headers'], [_SchemasHeaderResponse["default"]]);
+          obj['headers'] = _ApiClient["default"].convertToType(data['headers'], [_HeaderResponse["default"]]);
         }
 
         if (data.hasOwnProperty('healthchecks')) {
@@ -113,7 +113,7 @@ var VersionDetail = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('request_settings')) {
-          obj['request_settings'] = _ApiClient["default"].convertToType(data['request_settings'], [_RequestSettingsResponse["default"]]);
+          obj['request_settings'] = _ApiClient["default"].convertToType(data['request_settings'], [_SchemasRequestSettingsResponse["default"]]);
         }
 
         if (data.hasOwnProperty('response_objects')) {
@@ -182,7 +182,7 @@ VersionDetail.prototype['domains'] = undefined;
 VersionDetail.prototype['gzips'] = undefined;
 /**
  * List of headers associated to this service.
- * @member {Array.<module:model/SchemasHeaderResponse>} headers
+ * @member {Array.<module:model/HeaderResponse>} headers
  */
 
 VersionDetail.prototype['headers'] = undefined;
@@ -194,7 +194,7 @@ VersionDetail.prototype['headers'] = undefined;
 VersionDetail.prototype['healthchecks'] = undefined;
 /**
  * List of request settings for this service.
- * @member {Array.<module:model/RequestSettingsResponse>} request_settings
+ * @member {Array.<module:model/SchemasRequestSettingsResponse>} request_settings
  */
 
 VersionDetail.prototype['request_settings'] = undefined;

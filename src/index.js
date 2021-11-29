@@ -310,8 +310,8 @@ import Results from './model/Results';
 import RoleUser from './model/RoleUser';
 import SchemasBackend from './model/SchemasBackend';
 import SchemasDirector from './model/SchemasDirector';
-import SchemasHeader from './model/SchemasHeader';
-import SchemasHeaderResponse from './model/SchemasHeaderResponse';
+import SchemasRequestSettings from './model/SchemasRequestSettings';
+import SchemasRequestSettingsResponse from './model/SchemasRequestSettingsResponse';
 import SchemasSnippetResponse from './model/SchemasSnippetResponse';
 import SchemasUserResponse from './model/SchemasUserResponse';
 import SchemasVclResponse from './model/SchemasVclResponse';
@@ -2409,16 +2409,16 @@ export {
     SchemasDirector,
 
     /**
-     * The SchemasHeader model constructor.
-     * @property {module:model/SchemasHeader}
+     * The SchemasRequestSettings model constructor.
+     * @property {module:model/SchemasRequestSettings}
      */
-    SchemasHeader,
+    SchemasRequestSettings,
 
     /**
-     * The SchemasHeaderResponse model constructor.
-     * @property {module:model/SchemasHeaderResponse}
+     * The SchemasRequestSettingsResponse model constructor.
+     * @property {module:model/SchemasRequestSettingsResponse}
      */
-    SchemasHeaderResponse,
+    SchemasRequestSettingsResponse,
 
     /**
      * The SchemasSnippetResponse model constructor.

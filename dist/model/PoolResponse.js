@@ -279,7 +279,7 @@ PoolResponse.prototype['first_byte_timeout'] = undefined;
 
 PoolResponse.prototype['quorum'] = 75;
 /**
- * List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.0.2/man1/ciphers) for details). Optional.
+ * List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) for details). Optional.
  * @member {String} tls_ciphers
  */
 
@@ -451,7 +451,7 @@ _Pool["default"].prototype['first_byte_timeout'] = undefined;
 
 _Pool["default"].prototype['quorum'] = 75;
 /**
- * List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.0.2/man1/ciphers) for details). Optional.
+ * List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) for details). Optional.
  * @member {String} tls_ciphers
  */
 

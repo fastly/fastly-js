@@ -17,11 +17,11 @@ import CacheSettingResponse from './CacheSettingResponse';
 import ConditionResponse from './ConditionResponse';
 import DomainResponse from './DomainResponse';
 import GzipResponse from './GzipResponse';
+import HeaderResponse from './HeaderResponse';
 import HealthcheckResponse from './HealthcheckResponse';
-import RequestSettingsResponse from './RequestSettingsResponse';
 import ResponseObjectResponse from './ResponseObjectResponse';
 import SchemasDirector from './SchemasDirector';
-import SchemasHeaderResponse from './SchemasHeaderResponse';
+import SchemasRequestSettingsResponse from './SchemasRequestSettingsResponse';
 import SchemasSnippetResponse from './SchemasSnippetResponse';
 import SchemasVclResponse from './SchemasVclResponse';
 import SchemasVersionResponse from './SchemasVersionResponse';
@@ -118,13 +118,13 @@ class NestedVersion {
                 obj['gzips'] = ApiClient.convertToType(data['gzips'], [GzipResponse]);
             }
             if (data.hasOwnProperty('headers')) {
-                obj['headers'] = ApiClient.convertToType(data['headers'], [SchemasHeaderResponse]);
+                obj['headers'] = ApiClient.convertToType(data['headers'], [HeaderResponse]);
             }
             if (data.hasOwnProperty('healthchecks')) {
                 obj['healthchecks'] = ApiClient.convertToType(data['healthchecks'], [HealthcheckResponse]);
             }
             if (data.hasOwnProperty('request_settings')) {
-                obj['request_settings'] = ApiClient.convertToType(data['request_settings'], [RequestSettingsResponse]);
+                obj['request_settings'] = ApiClient.convertToType(data['request_settings'], [SchemasRequestSettingsResponse]);
             }
             if (data.hasOwnProperty('response_objects')) {
                 obj['response_objects'] = ApiClient.convertToType(data['response_objects'], [ResponseObjectResponse]);
@@ -256,7 +256,7 @@ NestedVersion.prototype['gzips'] = undefined;
 
 /**
  * List of headers associated to this service.
- * @member {Array.<module:model/SchemasHeaderResponse>} headers
+ * @member {Array.<module:model/HeaderResponse>} headers
  */
 NestedVersion.prototype['headers'] = undefined;
 
@@ -268,7 +268,7 @@ NestedVersion.prototype['healthchecks'] = undefined;
 
 /**
  * List of request settings for this service.
- * @member {Array.<module:model/RequestSettingsResponse>} request_settings
+ * @member {Array.<module:model/SchemasRequestSettingsResponse>} request_settings
  */
 NestedVersion.prototype['request_settings'] = undefined;
 
@@ -395,7 +395,7 @@ VersionDetail.prototype['domains'] = undefined;
 VersionDetail.prototype['gzips'] = undefined;
 /**
  * List of headers associated to this service.
- * @member {Array.<module:model/SchemasHeaderResponse>} headers
+ * @member {Array.<module:model/HeaderResponse>} headers
  */
 VersionDetail.prototype['headers'] = undefined;
 /**
@@ -405,7 +405,7 @@ VersionDetail.prototype['headers'] = undefined;
 VersionDetail.prototype['healthchecks'] = undefined;
 /**
  * List of request settings for this service.
- * @member {Array.<module:model/RequestSettingsResponse>} request_settings
+ * @member {Array.<module:model/SchemasRequestSettingsResponse>} request_settings
  */
 VersionDetail.prototype['request_settings'] = undefined;
 /**

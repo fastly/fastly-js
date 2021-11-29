@@ -2127,16 +2127,16 @@ Object.defineProperty(exports, "SchemasDirector", {
     return _SchemasDirector["default"];
   }
 });
-Object.defineProperty(exports, "SchemasHeader", {
+Object.defineProperty(exports, "SchemasRequestSettings", {
   enumerable: true,
   get: function get() {
-    return _SchemasHeader["default"];
+    return _SchemasRequestSettings["default"];
   }
 });
-Object.defineProperty(exports, "SchemasHeaderResponse", {
+Object.defineProperty(exports, "SchemasRequestSettingsResponse", {
   enumerable: true,
   get: function get() {
-    return _SchemasHeaderResponse["default"];
+    return _SchemasRequestSettingsResponse["default"];
   }
 });
 Object.defineProperty(exports, "SchemasSnippetResponse", {
@@ -4021,9 +4021,9 @@ var _SchemasBackend = _interopRequireDefault(require("./model/SchemasBackend"));
 
 var _SchemasDirector = _interopRequireDefault(require("./model/SchemasDirector"));
 
-var _SchemasHeader = _interopRequireDefault(require("./model/SchemasHeader"));
+var _SchemasRequestSettings = _interopRequireDefault(require("./model/SchemasRequestSettings"));
 
-var _SchemasHeaderResponse = _interopRequireDefault(require("./model/SchemasHeaderResponse"));
+var _SchemasRequestSettingsResponse = _interopRequireDefault(require("./model/SchemasRequestSettingsResponse"));
 
 var _SchemasSnippetResponse = _interopRequireDefault(require("./model/SchemasSnippetResponse"));
 
