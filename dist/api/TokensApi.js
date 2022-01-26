@@ -48,7 +48,7 @@ var TokensApi = /*#__PURE__*/function () {
   /**
    * Revoke Tokens in bulk format. Users may only revoke their own tokens. Superusers may revoke tokens of others.
    * @param {Object} options
-   * @param {Object} [options.body]
+   * @param {Object.<String, Object>} [options.body]
    * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
    */
 
@@ -71,7 +71,7 @@ var TokensApi = /*#__PURE__*/function () {
     /**
      * Revoke Tokens in bulk format. Users may only revoke their own tokens. Superusers may revoke tokens of others.
      * @param {Object} options
-     * @param {Object} [options.body]
+     * @param {Object.<String, Object>} [options.body]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
 

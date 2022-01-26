@@ -19,9 +19,9 @@ import DomainResponse from './DomainResponse';
 import GzipResponse from './GzipResponse';
 import HeaderResponse from './HeaderResponse';
 import HealthcheckResponse from './HealthcheckResponse';
-import ResponseObjectResponse from './ResponseObjectResponse';
 import SchemasDirector from './SchemasDirector';
 import SchemasRequestSettingsResponse from './SchemasRequestSettingsResponse';
+import SchemasResponseObjectResponse from './SchemasResponseObjectResponse';
 import SchemasSnippetResponse from './SchemasSnippetResponse';
 import SchemasVclResponse from './SchemasVclResponse';
 import Settings from './Settings';
@@ -88,7 +88,7 @@ class VersionDetail {
                 obj['request_settings'] = ApiClient.convertToType(data['request_settings'], [SchemasRequestSettingsResponse]);
             }
             if (data.hasOwnProperty('response_objects')) {
-                obj['response_objects'] = ApiClient.convertToType(data['response_objects'], [ResponseObjectResponse]);
+                obj['response_objects'] = ApiClient.convertToType(data['response_objects'], [SchemasResponseObjectResponse]);
             }
             if (data.hasOwnProperty('settings')) {
                 obj['settings'] = ApiClient.convertToType(data['settings'], Settings);
@@ -165,7 +165,7 @@ VersionDetail.prototype['request_settings'] = undefined;
 
 /**
  * List of response objects for this service.
- * @member {Array.<module:model/ResponseObjectResponse>} response_objects
+ * @member {Array.<module:model/SchemasResponseObjectResponse>} response_objects
  */
 VersionDetail.prototype['response_objects'] = undefined;
 

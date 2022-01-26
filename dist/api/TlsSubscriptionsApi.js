@@ -349,7 +349,7 @@ var TlsSubscriptionsApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.tls_subscription_id
      * @param {String} options.tls_authorization_id
-     * @param {Object} [options.body]
+     * @param {Object.<String, Object>} [options.body]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
 
@@ -386,7 +386,7 @@ var TlsSubscriptionsApi = /*#__PURE__*/function () {
      * @param {Object} options
      * @param {String} options.tls_subscription_id
      * @param {String} options.tls_authorization_id
-     * @param {Object} [options.body]
+     * @param {Object.<String, Object>} [options.body]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
 

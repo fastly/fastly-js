@@ -50,7 +50,7 @@ class ApiClient {
          * @default {}
          */
         this.defaultHeaders = {
-            'User-Agent': 'fastly/3.0.0-alpha1'
+            'User-Agent': 'fastly-js/3.0.0-alpha1'
         };
 
         /**
@@ -105,7 +105,7 @@ class ApiClient {
         const authType = {
             token: "apiKey"
         };
-        if (authType[type] == undefined || authType[type] == null) {
+        if (authType[type] == null) {
             throw new Error('Authentication method is unsupported.');
         }
         this.authentications[type][authType[type]] = token;
@@ -704,5 +704,4 @@ ApiClient.CollectionFormatEnum = {
 * @type {module:ApiClient}
 */
 ApiClient.instance = new ApiClient();
-
 export default ApiClient;

@@ -46,7 +46,7 @@ Name | Type | Description | Notes
 **shield** | **Number** | Number of requests from edge to the shield POP. | [optional] 
 **shield_resp_body_bytes** | **Number** | Total body bytes delivered via a shield. | [optional] 
 **shield_resp_header_bytes** | **Number** | Total header bytes delivered via a shield. | [optional] 
-**shield_fetches** | **Number** | Number of requests made from one Fastly data center to another, as part of shielding. | [optional] 
+**shield_fetches** | **Number** | Number of requests made from one Fastly POP to another, as part of shielding. | [optional] 
 **shield_fetch_header_bytes** | **Number** | Total request header bytes sent to a shield. | [optional] 
 **shield_fetch_body_bytes** | **Number** | Total request body bytes sent to a shield. | [optional] 
 **shield_fetch_resp_header_bytes** | **Number** | Total response header bytes sent from a shield to the edge. | [optional] 
@@ -176,6 +176,12 @@ Name | Type | Description | Notes
 **compute_globals_limit_exceeded** | **Number** | Number of times a guest exceeded its globals limit. | [optional] 
 **compute_guest_errors** | **Number** | Number of times a service experienced a guest code error. | [optional] 
 **compute_runtime_errors** | **Number** | Number of times a service experienced a guest runtime error. | [optional] 
+**edge_hit_resp_body_bytes** | **Number** | Body bytes delivered for edge hits. | [optional] 
+**edge_hit_resp_header_bytes** | **Number** | Header bytes delivered for edge hits. | [optional] 
+**edge_miss_resp_body_bytes** | **Number** | Body bytes delivered for edge misses. | [optional] 
+**edge_miss_resp_header_bytes** | **Number** | Header bytes delivered for edge misses. | [optional] 
+**origin_cache_fetch_resp_body_bytes** | **Number** | Body bytes received from origin for cacheable content. | [optional] 
+**origin_cache_fetch_resp_header_bytes** | **Number** | Header bytes received from an origin for cacheable content. | [optional] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -51,8 +51,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **from** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
 **to** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
-**by** | **String** | Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [optional] [one of: "hour", "minute", "day"]
-**region** | **String** | Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America.  | [optional] [one of: "usa", "europe", "asia", "asia_india", "asia_southkorea", "africa_std", "southamerica_std"]
+**by** | **String** | Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [optional] [one of: "hour", "minute", "day"]
+**region** | **String** | Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America.  | [optional] [one of: "usa", "europe", "asia", "asia_india", "asia_southkorea", "africa_std", "southamerica_std"]
 
 ### Return type
 
@@ -92,8 +92,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **from** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
 **to** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
-**by** | **String** | Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [optional] [one of: "hour", "minute", "day"]
-**region** | **String** | Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America.  | [optional] [one of: "usa", "europe", "asia", "asia_india", "asia_southkorea", "africa_std", "southamerica_std"]
+**by** | **String** | Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [optional] [one of: "hour", "minute", "day"]
+**region** | **String** | Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America.  | [optional] [one of: "usa", "europe", "asia", "asia_india", "asia_southkorea", "africa_std", "southamerica_std"]
 
 ### Return type
 
@@ -135,8 +135,8 @@ Name | Type | Description  | Notes
 **field** | **String** | Name of the stats field. |
 **from** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
 **to** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
-**by** | **String** | Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [optional] [one of: "hour", "minute", "day"]
-**region** | **String** | Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America.  | [optional] [one of: "usa", "europe", "asia", "asia_india", "asia_southkorea", "africa_std", "southamerica_std"]
+**by** | **String** | Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [optional] [one of: "hour", "minute", "day"]
+**region** | **String** | Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America.  | [optional] [one of: "usa", "europe", "asia", "asia_india", "asia_southkorea", "africa_std", "southamerica_std"]
 
 ### Return type
 
@@ -178,8 +178,8 @@ Name | Type | Description  | Notes
 **service_id** | **String** | Alphanumeric string identifying the service. |
 **from** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
 **to** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
-**by** | **String** | Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [optional] [one of: "hour", "minute", "day"]
-**region** | **String** | Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America.  | [optional] [one of: "usa", "europe", "asia", "asia_india", "asia_southkorea", "africa_std", "southamerica_std"]
+**by** | **String** | Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [optional] [one of: "hour", "minute", "day"]
+**region** | **String** | Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America.  | [optional] [one of: "usa", "europe", "asia", "asia_india", "asia_southkorea", "africa_std", "southamerica_std"]
 
 ### Return type
 
@@ -223,8 +223,8 @@ Name | Type | Description  | Notes
 **field** | **String** | Name of the stats field. |
 **from** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
 **to** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
-**by** | **String** | Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [optional] [one of: "hour", "minute", "day"]
-**region** | **String** | Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America.  | [optional] [one of: "usa", "europe", "asia", "asia_india", "asia_southkorea", "africa_std", "southamerica_std"]
+**by** | **String** | Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [optional] [one of: "hour", "minute", "day"]
+**region** | **String** | Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America.  | [optional] [one of: "usa", "europe", "asia", "asia_india", "asia_southkorea", "africa_std", "southamerica_std"]
 
 ### Return type
 
@@ -263,7 +263,7 @@ This endpoint does not need any parameters.
 ## `getUsage`
 
 ```javascript
-getUsage({ , [from, ][to, ][by, ][region] })
+getUsage({ , [from, ][to, ][by] })
 ```
 
 Returns usage information aggregated across all Fastly services and grouped by region.
@@ -275,7 +275,6 @@ const options = {
   from: 2020-04-09T18:14:30Z,
   to: 2020-04-09T18:14:30Z,
   by: "hour",
-  region: "usa",
 };
 
 apiInstance.getUsage(options)
@@ -293,8 +292,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **from** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
 **to** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
-**by** | **String** | Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [optional] [one of: "hour", "minute", "day"]
-**region** | **String** | Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America.  | [optional] [one of: "usa", "europe", "asia", "asia_india", "asia_southkorea", "africa_std", "southamerica_std"]
+**by** | **String** | Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [optional] [one of: "hour", "minute", "day"]
 
 ### Return type
 
@@ -304,7 +302,7 @@ Name | Type | Description  | Notes
 ## `getUsageMonth`
 
 ```javascript
-getUsageMonth({ , [year, ][month, ][billable_units, ][region] })
+getUsageMonth({ , [year, ][month, ][billable_units] })
 ```
 
 Returns month-to-date usage details for a given month and year. Usage details are aggregated by service and across all Fastly services, and then grouped by region. This endpoint does not use the `from` or `to` fields for selecting the date for which data is requested. Instead, it uses `month` and `year` integer fields. Both fields are optional and default to the current month and year respectively. When set, an optional `billable_units` field will convert bandwidth to GB and divide requests by 10,000.
@@ -316,7 +314,6 @@ const options = {
   year: 2020,
   month: 05,
   billable_units: true,
-  region: "usa",
 };
 
 apiInstance.getUsageMonth(options)
@@ -335,7 +332,6 @@ Name | Type | Description  | Notes
 **year** | **String** | 4-digit year. | [optional]
 **month** | **String** | 2-digit month. | [optional]
 **billable_units** | **Boolean** | If `true`, return results as billable units. | [optional]
-**region** | **String** | Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America.  | [optional] [one of: "usa", "europe", "asia", "asia_india", "asia_southkorea", "africa_std", "southamerica_std"]
 
 ### Return type
 
@@ -345,7 +341,7 @@ Name | Type | Description  | Notes
 ## `getUsageService`
 
 ```javascript
-getUsageService({ , [from, ][to, ][by, ][region] })
+getUsageService({ , [from, ][to, ][by] })
 ```
 
 Returns usage information aggregated by service and grouped by service and region.
@@ -357,7 +353,6 @@ const options = {
   from: 2020-04-09T18:14:30Z,
   to: 2020-04-09T18:14:30Z,
   by: "hour",
-  region: "usa",
 };
 
 apiInstance.getUsageService(options)
@@ -375,8 +370,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **from** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
 **to** | **String** | Absolute, relative or epoch timestamp. Limits the results returned. | [optional]
-**by** | **String** | Duration of sample windows. One of:    * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [optional] [one of: "hour", "minute", "day"]
-**region** | **String** | Limit query to a specific geographic region. One of:    * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America.  | [optional] [one of: "usa", "europe", "asia", "asia_india", "asia_southkorea", "africa_std", "southamerica_std"]
+**by** | **String** | Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day.  | [optional] [one of: "hour", "minute", "day"]
 
 ### Return type
 

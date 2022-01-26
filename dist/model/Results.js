@@ -742,6 +742,30 @@ var Results = /*#__PURE__*/function () {
         if (data.hasOwnProperty('compute_runtime_errors')) {
           obj['compute_runtime_errors'] = _ApiClient["default"].convertToType(data['compute_runtime_errors'], 'Number');
         }
+
+        if (data.hasOwnProperty('edge_hit_resp_body_bytes')) {
+          obj['edge_hit_resp_body_bytes'] = _ApiClient["default"].convertToType(data['edge_hit_resp_body_bytes'], 'Number');
+        }
+
+        if (data.hasOwnProperty('edge_hit_resp_header_bytes')) {
+          obj['edge_hit_resp_header_bytes'] = _ApiClient["default"].convertToType(data['edge_hit_resp_header_bytes'], 'Number');
+        }
+
+        if (data.hasOwnProperty('edge_miss_resp_body_bytes')) {
+          obj['edge_miss_resp_body_bytes'] = _ApiClient["default"].convertToType(data['edge_miss_resp_body_bytes'], 'Number');
+        }
+
+        if (data.hasOwnProperty('edge_miss_resp_header_bytes')) {
+          obj['edge_miss_resp_header_bytes'] = _ApiClient["default"].convertToType(data['edge_miss_resp_header_bytes'], 'Number');
+        }
+
+        if (data.hasOwnProperty('origin_cache_fetch_resp_body_bytes')) {
+          obj['origin_cache_fetch_resp_body_bytes'] = _ApiClient["default"].convertToType(data['origin_cache_fetch_resp_body_bytes'], 'Number');
+        }
+
+        if (data.hasOwnProperty('origin_cache_fetch_resp_header_bytes')) {
+          obj['origin_cache_fetch_resp_header_bytes'] = _ApiClient["default"].convertToType(data['origin_cache_fetch_resp_header_bytes'], 'Number');
+        }
       }
 
       return obj;
@@ -1004,7 +1028,7 @@ Results.prototype['shield_resp_body_bytes'] = undefined;
 
 Results.prototype['shield_resp_header_bytes'] = undefined;
 /**
- * Number of requests made from one Fastly data center to another, as part of shielding.
+ * Number of requests made from one Fastly POP to another, as part of shielding.
  * @member {Number} shield_fetches
  */
 
@@ -1783,5 +1807,41 @@ Results.prototype['compute_guest_errors'] = undefined;
  */
 
 Results.prototype['compute_runtime_errors'] = undefined;
+/**
+ * Body bytes delivered for edge hits.
+ * @member {Number} edge_hit_resp_body_bytes
+ */
+
+Results.prototype['edge_hit_resp_body_bytes'] = undefined;
+/**
+ * Header bytes delivered for edge hits.
+ * @member {Number} edge_hit_resp_header_bytes
+ */
+
+Results.prototype['edge_hit_resp_header_bytes'] = undefined;
+/**
+ * Body bytes delivered for edge misses.
+ * @member {Number} edge_miss_resp_body_bytes
+ */
+
+Results.prototype['edge_miss_resp_body_bytes'] = undefined;
+/**
+ * Header bytes delivered for edge misses.
+ * @member {Number} edge_miss_resp_header_bytes
+ */
+
+Results.prototype['edge_miss_resp_header_bytes'] = undefined;
+/**
+ * Body bytes received from origin for cacheable content.
+ * @member {Number} origin_cache_fetch_resp_body_bytes
+ */
+
+Results.prototype['origin_cache_fetch_resp_body_bytes'] = undefined;
+/**
+ * Header bytes received from an origin for cacheable content.
+ * @member {Number} origin_cache_fetch_resp_header_bytes
+ */
+
+Results.prototype['origin_cache_fetch_resp_header_bytes'] = undefined;
 var _default = Results;
 exports["default"] = _default;

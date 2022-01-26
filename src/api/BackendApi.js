@@ -61,7 +61,7 @@ export default class BackendApi {
      * @param {String} [options.override_host] - If set, will replace the client-supplied HTTP `Host` header on connections to this backend. Applied after VCL has been processed, so this setting will take precedence over changing `bereq.http.Host` in VCL.
      * @param {Number} [options.port] - Port on which the backend server is listening for connections from Fastly. Setting `port` to 80 or 443 will also set `use_ssl` automatically (to false and true respectively), unless explicitly overridden by setting `use_ssl` in the same request.
      * @param {String} [options.request_condition] - Name of a Condition, which if satisfied, will select this backend during a request. If set, will override any `auto_loadbalance` setting. By default, the first backend added to a service is selected for all requests.
-     * @param {String} [options.shield] - Data center POP code of the data center to use as a [shield](https://docs.fastly.com/en/guides/shielding).
+     * @param {String} [options.shield] - Identifier of the POP to use as a [shield](https://docs.fastly.com/en/guides/shielding).
      * @param {String} [options.ssl_ca_cert] - CA certificate attached to origin.
      * @param {String} [options.ssl_cert_hostname] - Overrides `ssl_hostname`, but only for cert verification. Does not affect SNI at all.
      * @param {Boolean} [options.ssl_check_cert=true] - Be strict on checking SSL certs.
@@ -159,7 +159,7 @@ export default class BackendApi {
      * @param {String} [options.override_host] - If set, will replace the client-supplied HTTP `Host` header on connections to this backend. Applied after VCL has been processed, so this setting will take precedence over changing `bereq.http.Host` in VCL.
      * @param {Number} [options.port] - Port on which the backend server is listening for connections from Fastly. Setting `port` to 80 or 443 will also set `use_ssl` automatically (to false and true respectively), unless explicitly overridden by setting `use_ssl` in the same request.
      * @param {String} [options.request_condition] - Name of a Condition, which if satisfied, will select this backend during a request. If set, will override any `auto_loadbalance` setting. By default, the first backend added to a service is selected for all requests.
-     * @param {String} [options.shield] - Data center POP code of the data center to use as a [shield](https://docs.fastly.com/en/guides/shielding).
+     * @param {String} [options.shield] - Identifier of the POP to use as a [shield](https://docs.fastly.com/en/guides/shielding).
      * @param {String} [options.ssl_ca_cert] - CA certificate attached to origin.
      * @param {String} [options.ssl_cert_hostname] - Overrides `ssl_hostname`, but only for cert verification. Does not affect SNI at all.
      * @param {Boolean} [options.ssl_check_cert=true] - Be strict on checking SSL certs.
@@ -379,7 +379,7 @@ export default class BackendApi {
      * @param {String} [options.override_host] - If set, will replace the client-supplied HTTP `Host` header on connections to this backend. Applied after VCL has been processed, so this setting will take precedence over changing `bereq.http.Host` in VCL.
      * @param {Number} [options.port] - Port on which the backend server is listening for connections from Fastly. Setting `port` to 80 or 443 will also set `use_ssl` automatically (to false and true respectively), unless explicitly overridden by setting `use_ssl` in the same request.
      * @param {String} [options.request_condition] - Name of a Condition, which if satisfied, will select this backend during a request. If set, will override any `auto_loadbalance` setting. By default, the first backend added to a service is selected for all requests.
-     * @param {String} [options.shield] - Data center POP code of the data center to use as a [shield](https://docs.fastly.com/en/guides/shielding).
+     * @param {String} [options.shield] - Identifier of the POP to use as a [shield](https://docs.fastly.com/en/guides/shielding).
      * @param {String} [options.ssl_ca_cert] - CA certificate attached to origin.
      * @param {String} [options.ssl_cert_hostname] - Overrides `ssl_hostname`, but only for cert verification. Does not affect SNI at all.
      * @param {Boolean} [options.ssl_check_cert=true] - Be strict on checking SSL certs.
@@ -483,7 +483,7 @@ export default class BackendApi {
      * @param {String} [options.override_host] - If set, will replace the client-supplied HTTP `Host` header on connections to this backend. Applied after VCL has been processed, so this setting will take precedence over changing `bereq.http.Host` in VCL.
      * @param {Number} [options.port] - Port on which the backend server is listening for connections from Fastly. Setting `port` to 80 or 443 will also set `use_ssl` automatically (to false and true respectively), unless explicitly overridden by setting `use_ssl` in the same request.
      * @param {String} [options.request_condition] - Name of a Condition, which if satisfied, will select this backend during a request. If set, will override any `auto_loadbalance` setting. By default, the first backend added to a service is selected for all requests.
-     * @param {String} [options.shield] - Data center POP code of the data center to use as a [shield](https://docs.fastly.com/en/guides/shielding).
+     * @param {String} [options.shield] - Identifier of the POP to use as a [shield](https://docs.fastly.com/en/guides/shielding).
      * @param {String} [options.ssl_ca_cert] - CA certificate attached to origin.
      * @param {String} [options.ssl_cert_hostname] - Overrides `ssl_hostname`, but only for cert verification. Does not affect SNI at all.
      * @param {Boolean} [options.ssl_check_cert=true] - Be strict on checking SSL certs.

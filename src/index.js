@@ -312,6 +312,8 @@ import SchemasBackend from './model/SchemasBackend';
 import SchemasDirector from './model/SchemasDirector';
 import SchemasRequestSettings from './model/SchemasRequestSettings';
 import SchemasRequestSettingsResponse from './model/SchemasRequestSettingsResponse';
+import SchemasResponseObject from './model/SchemasResponseObject';
+import SchemasResponseObjectResponse from './model/SchemasResponseObjectResponse';
 import SchemasSnippetResponse from './model/SchemasSnippetResponse';
 import SchemasUserResponse from './model/SchemasUserResponse';
 import SchemasVclResponse from './model/SchemasVclResponse';
@@ -589,7 +591,7 @@ function authenticate (key) {
 }
 
 /**
-* A JavaScript client library for interacting with most facets of the Fastly API.<br>
+* A JavaScript client library for interacting with most facets of the Fastly API..<br>
 * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
@@ -2419,6 +2421,18 @@ export {
      * @property {module:model/SchemasRequestSettingsResponse}
      */
     SchemasRequestSettingsResponse,
+
+    /**
+     * The SchemasResponseObject model constructor.
+     * @property {module:model/SchemasResponseObject}
+     */
+    SchemasResponseObject,
+
+    /**
+     * The SchemasResponseObjectResponse model constructor.
+     * @property {module:model/SchemasResponseObjectResponse}
+     */
+    SchemasResponseObjectResponse,
 
     /**
      * The SchemasSnippetResponse model constructor.

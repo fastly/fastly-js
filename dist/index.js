@@ -2139,6 +2139,18 @@ Object.defineProperty(exports, "SchemasRequestSettingsResponse", {
     return _SchemasRequestSettingsResponse["default"];
   }
 });
+Object.defineProperty(exports, "SchemasResponseObject", {
+  enumerable: true,
+  get: function get() {
+    return _SchemasResponseObject["default"];
+  }
+});
+Object.defineProperty(exports, "SchemasResponseObjectResponse", {
+  enumerable: true,
+  get: function get() {
+    return _SchemasResponseObjectResponse["default"];
+  }
+});
 Object.defineProperty(exports, "SchemasSnippetResponse", {
   enumerable: true,
   get: function get() {
@@ -4025,6 +4037,10 @@ var _SchemasRequestSettings = _interopRequireDefault(require("./model/SchemasReq
 
 var _SchemasRequestSettingsResponse = _interopRequireDefault(require("./model/SchemasRequestSettingsResponse"));
 
+var _SchemasResponseObject = _interopRequireDefault(require("./model/SchemasResponseObject"));
+
+var _SchemasResponseObjectResponse = _interopRequireDefault(require("./model/SchemasResponseObjectResponse"));
+
 var _SchemasSnippetResponse = _interopRequireDefault(require("./model/SchemasSnippetResponse"));
 
 var _SchemasUserResponse = _interopRequireDefault(require("./model/SchemasUserResponse"));
@@ -4583,7 +4599,7 @@ function authenticate(key) {
   _ApiClient["default"].instance.authenticate(key);
 }
 /**
-* A JavaScript client library for interacting with most facets of the Fastly API.<br>
+* A JavaScript client library for interacting with most facets of the Fastly API..<br>
 * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:

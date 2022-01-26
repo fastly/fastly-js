@@ -60,7 +60,7 @@ var ApiClient = /*#__PURE__*/function () {
      */
 
     this.defaultHeaders = {
-      'User-Agent': 'fastly/3.0.0-alpha1'
+      'User-Agent': 'fastly-js/3.0.0-alpha1'
     };
     /**
      * The default HTTP timeout for all API calls.
@@ -123,7 +123,7 @@ var ApiClient = /*#__PURE__*/function () {
         token: "apiKey"
       };
 
-      if (authType[type] == undefined || authType[type] == null) {
+      if (authType[type] == null) {
         throw new Error('Authentication method is unsupported.');
       }
 

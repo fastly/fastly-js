@@ -47,7 +47,7 @@ export default class WafActiveRulesApi {
      * @param {Object} options
      * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
      * @param {Number} options.version_id - Integer identifying a service version.
-     * @param {Object} [options.body]
+     * @param {Object.<String, Object>} [options.body]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     bulkDeleteWafActiveRulesWithHttpInfo(options = {}) {
@@ -88,7 +88,7 @@ export default class WafActiveRulesApi {
      * @param {Object} options
      * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
      * @param {Number} options.version_id - Integer identifying a service version.
-     * @param {Object} [options.body]
+     * @param {Object.<String, Object>} [options.body]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     bulkDeleteWafActiveRules(options = {}) {

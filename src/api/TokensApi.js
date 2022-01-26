@@ -44,7 +44,7 @@ export default class TokensApi {
     /**
      * Revoke Tokens in bulk format. Users may only revoke their own tokens. Superusers may revoke tokens of others.
      * @param {Object} options
-     * @param {Object} [options.body]
+     * @param {Object.<String, Object>} [options.body]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     bulkRevokeTokensWithHttpInfo(options = {}) {
@@ -73,7 +73,7 @@ export default class TokensApi {
     /**
      * Revoke Tokens in bulk format. Users may only revoke their own tokens. Superusers may revoke tokens of others.
      * @param {Object} options
-     * @param {Object} [options.body]
+     * @param {Object.<String, Object>} [options.body]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     bulkRevokeTokens(options = {}) {

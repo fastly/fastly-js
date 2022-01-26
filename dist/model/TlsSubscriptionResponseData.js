@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates = _interopRequireDefault(require("./AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates"));
+var _AnyOfAnyTypeAnyTyperelationshipTlsDomainsrelationshipTlsCertificates = _interopRequireDefault(require("./AnyOfAnyTypeAnyTyperelationshipTlsDomainsrelationshipTlsCertificates"));
 
 var _TlsSubscriptionData = _interopRequireDefault(require("./TlsSubscriptionData"));
 
@@ -83,7 +83,7 @@ var TlsSubscriptionResponseData = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('relationships')) {
-          obj['relationships'] = _ApiClient["default"].convertToType(data['relationships'], _AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates["default"]);
+          obj['relationships'] = _ApiClient["default"].convertToType(data['relationships'], _AnyOfAnyTypeAnyTyperelationshipTlsDomainsrelationshipTlsCertificates["default"]);
         }
 
         if (data.hasOwnProperty('id')) {
@@ -109,7 +109,7 @@ TlsSubscriptionResponseData.prototype['type'] = undefined;
 
 TlsSubscriptionResponseData.prototype['attributes'] = undefined;
 /**
- * @member {module:model/AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates} relationships
+ * @member {module:model/AnyOfAnyTypeAnyTyperelationshipTlsDomainsrelationshipTlsCertificates} relationships
  */
 
 TlsSubscriptionResponseData.prototype['relationships'] = undefined;
@@ -148,7 +148,7 @@ _TlsSubscriptionResponseDataAllOf["default"].prototype['id'] = undefined;
 
 _TlsSubscriptionResponseDataAllOf["default"].prototype['attributes'] = undefined;
 /**
- * @member {module:model/AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates} relationships
+ * @member {module:model/AnyOfAnyTypeAnyTyperelationshipTlsDomainsrelationshipTlsCertificates} relationships
  */
 
 _TlsSubscriptionResponseDataAllOf["default"].prototype['relationships'] = undefined;

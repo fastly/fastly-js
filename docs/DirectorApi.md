@@ -28,7 +28,7 @@ Create a director for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  backends: new Fastly.SchemasBackend(),
+  backends: [new Fastly.SchemasBackend()],
   capacity: 56,
   comment: "comment_example",
   name: "name_example",

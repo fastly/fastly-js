@@ -84,7 +84,7 @@ Class | Method | Description
 *Fastly.ConditionApi* | [**getCondition**](docs/ConditionApi.md#getCondition) | Describe a condition
 *Fastly.ConditionApi* | [**listConditions**](docs/ConditionApi.md#listConditions) | List conditions
 *Fastly.ConditionApi* | [**updateCondition**](docs/ConditionApi.md#updateCondition) | Update a condition
-*Fastly.ContentApi* | [**contentCheck**](docs/ContentApi.md#contentCheck) | Check status of content in each data center cache
+*Fastly.ContentApi* | [**contentCheck**](docs/ContentApi.md#contentCheck) | Check status of content in each POP&#39;s cache
 *Fastly.CustomerApi* | [**deleteCustomer**](docs/CustomerApi.md#deleteCustomer) | Delete a customer
 *Fastly.CustomerApi* | [**getCustomer**](docs/CustomerApi.md#getCustomer) | Get a customer
 *Fastly.CustomerApi* | [**getLoggedInCustomer**](docs/CustomerApi.md#getLoggedInCustomer) | Get the logged in customer

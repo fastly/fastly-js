@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates from './AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates';
+import AnyOfAnyTypeAnyTyperelationshipTlsDomainsrelationshipTlsCertificates from './AnyOfAnyTypeAnyTyperelationshipTlsDomainsrelationshipTlsCertificates';
 import TlsSubscriptionDataAttributes from './TlsSubscriptionDataAttributes';
 
 /**
@@ -56,7 +56,7 @@ class TlsSubscriptionResponseDataAllOf {
                 obj['attributes'] = TlsSubscriptionDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = ApiClient.convertToType(data['relationships'], AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates);
+                obj['relationships'] = ApiClient.convertToType(data['relationships'], AnyOfAnyTypeAnyTyperelationshipTlsDomainsrelationshipTlsCertificates);
             }
         }
         return obj;
@@ -77,7 +77,7 @@ TlsSubscriptionResponseDataAllOf.prototype['id'] = undefined;
 TlsSubscriptionResponseDataAllOf.prototype['attributes'] = undefined;
 
 /**
- * @member {module:model/AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates} relationships
+ * @member {module:model/AnyOfAnyTypeAnyTyperelationshipTlsDomainsrelationshipTlsCertificates} relationships
  */
 TlsSubscriptionResponseDataAllOf.prototype['relationships'] = undefined;
 

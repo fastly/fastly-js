@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _ApiClient = _interopRequireDefault(require("../ApiClient"));
 
-var _AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates = _interopRequireDefault(require("./AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates"));
+var _AnyOfAnyTypeAnyTyperelationshipTlsDomainsrelationshipTlsCertificates = _interopRequireDefault(require("./AnyOfAnyTypeAnyTyperelationshipTlsDomainsrelationshipTlsCertificates"));
 
 var _TlsSubscriptionDataAttributes = _interopRequireDefault(require("./TlsSubscriptionDataAttributes"));
 
@@ -67,7 +67,7 @@ var TlsSubscriptionResponseDataAllOf = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('relationships')) {
-          obj['relationships'] = _ApiClient["default"].convertToType(data['relationships'], _AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates["default"]);
+          obj['relationships'] = _ApiClient["default"].convertToType(data['relationships'], _AnyOfAnyTypeAnyTyperelationshipTlsDomainsrelationshipTlsCertificates["default"]);
         }
       }
 
@@ -90,7 +90,7 @@ TlsSubscriptionResponseDataAllOf.prototype['id'] = undefined;
 
 TlsSubscriptionResponseDataAllOf.prototype['attributes'] = undefined;
 /**
- * @member {module:model/AnyOfobjectobjectrelationshipTlsDomainsrelationshipTlsCertificates} relationships
+ * @member {module:model/AnyOfAnyTypeAnyTyperelationshipTlsDomainsrelationshipTlsCertificates} relationships
  */
 
 TlsSubscriptionResponseDataAllOf.prototype['relationships'] = undefined;

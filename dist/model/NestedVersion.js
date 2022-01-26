@@ -21,11 +21,11 @@ var _HeaderResponse = _interopRequireDefault(require("./HeaderResponse"));
 
 var _HealthcheckResponse = _interopRequireDefault(require("./HealthcheckResponse"));
 
-var _ResponseObjectResponse = _interopRequireDefault(require("./ResponseObjectResponse"));
-
 var _SchemasDirector = _interopRequireDefault(require("./SchemasDirector"));
 
 var _SchemasRequestSettingsResponse = _interopRequireDefault(require("./SchemasRequestSettingsResponse"));
+
+var _SchemasResponseObjectResponse = _interopRequireDefault(require("./SchemasResponseObjectResponse"));
 
 var _SchemasSnippetResponse = _interopRequireDefault(require("./SchemasSnippetResponse"));
 
@@ -175,7 +175,7 @@ var NestedVersion = /*#__PURE__*/function () {
         }
 
         if (data.hasOwnProperty('response_objects')) {
-          obj['response_objects'] = _ApiClient["default"].convertToType(data['response_objects'], [_ResponseObjectResponse["default"]]);
+          obj['response_objects'] = _ApiClient["default"].convertToType(data['response_objects'], [_SchemasResponseObjectResponse["default"]]);
         }
 
         if (data.hasOwnProperty('settings')) {
@@ -328,7 +328,7 @@ NestedVersion.prototype['healthchecks'] = undefined;
 NestedVersion.prototype['request_settings'] = undefined;
 /**
  * List of response objects for this service.
- * @member {Array.<module:model/ResponseObjectResponse>} response_objects
+ * @member {Array.<module:model/SchemasResponseObjectResponse>} response_objects
  */
 
 NestedVersion.prototype['response_objects'] = undefined;
@@ -483,7 +483,7 @@ _VersionDetail["default"].prototype['healthchecks'] = undefined;
 _VersionDetail["default"].prototype['request_settings'] = undefined;
 /**
  * List of response objects for this service.
- * @member {Array.<module:model/ResponseObjectResponse>} response_objects
+ * @member {Array.<module:model/SchemasResponseObjectResponse>} response_objects
  */
 
 _VersionDetail["default"].prototype['response_objects'] = undefined;

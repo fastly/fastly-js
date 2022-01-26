@@ -250,7 +250,7 @@ SchemasBackend.prototype['port'] = undefined;
 SchemasBackend.prototype['request_condition'] = undefined;
 
 /**
- * Data center POP code of the data center to use as a [shield](https://docs.fastly.com/en/guides/shielding).
+ * Identifier of the POP to use as a [shield](https://docs.fastly.com/en/guides/shielding).
  * @member {String} shield
  */
 SchemasBackend.prototype['shield'] = undefined;
