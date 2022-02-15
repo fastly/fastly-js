@@ -17,7 +17,7 @@ import Timestamps from './Timestamps';
 /**
  * The TlsBulkCertificateResponseDataAllOf model module.
  * @module model/TlsBulkCertificateResponseDataAllOf
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class TlsBulkCertificateResponseDataAllOf {
     /**
@@ -62,7 +62,6 @@ class TlsBulkCertificateResponseDataAllOf {
 }
 
 /**
- * Alphanumeric string identifying a TLS bulk certificate.
  * @member {String} id
  */
 TlsBulkCertificateResponseDataAllOf.prototype['id'] = undefined;

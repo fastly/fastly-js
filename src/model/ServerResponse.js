@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The ServerResponse model module.
  * @module model/ServerResponse
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class ServerResponse {
     /**
@@ -78,13 +78,13 @@ class ServerResponse {
                 obj['override_host'] = ApiClient.convertToType(data['override_host'], 'String');
             }
             if (data.hasOwnProperty('created_at')) {
-                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
+                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
             if (data.hasOwnProperty('deleted_at')) {
-                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'String');
+                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'Date');
             }
             if (data.hasOwnProperty('updated_at')) {
-                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'String');
+                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
@@ -151,36 +151,33 @@ ServerResponse.prototype['override_host'] = 'null';
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} created_at
+ * @member {Date} created_at
  */
 ServerResponse.prototype['created_at'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} deleted_at
+ * @member {Date} deleted_at
  */
 ServerResponse.prototype['deleted_at'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} updated_at
+ * @member {Date} updated_at
  */
 ServerResponse.prototype['updated_at'] = undefined;
 
 /**
- * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
 ServerResponse.prototype['service_id'] = undefined;
 
 /**
- * Alphanumeric string identifying a Server.
  * @member {String} id
  */
 ServerResponse.prototype['id'] = undefined;
 
 /**
- * Alphanumeric string identifying a Pool.
  * @member {String} pool_id
  */
 ServerResponse.prototype['pool_id'] = undefined;
@@ -230,32 +227,29 @@ Server.prototype['override_host'] = 'null';
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
- * @member {String} created_at
+ * @member {Date} created_at
  */
 Timestamps.prototype['created_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
- * @member {String} deleted_at
+ * @member {Date} deleted_at
  */
 Timestamps.prototype['deleted_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
- * @member {String} updated_at
+ * @member {Date} updated_at
  */
 Timestamps.prototype['updated_at'] = undefined;
 // Implement ServerResponseAllOf interface:
 /**
- * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
 ServerResponseAllOf.prototype['service_id'] = undefined;
 /**
- * Alphanumeric string identifying a Server.
  * @member {String} id
  */
 ServerResponseAllOf.prototype['id'] = undefined;
 /**
- * Alphanumeric string identifying a Pool.
  * @member {String} pool_id
  */
 ServerResponseAllOf.prototype['pool_id'] = undefined;

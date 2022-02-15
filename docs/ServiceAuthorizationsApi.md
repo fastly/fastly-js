@@ -9,11 +9,9 @@ Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**createServiceAuthorization**](ServiceAuthorizationsApi.md#createServiceAuthorization) | **POST** /service-authorizations | Create service authorization
 [**deleteServiceAuthorization**](ServiceAuthorizationsApi.md#deleteServiceAuthorization) | **DELETE** /service-authorizations/{service_authorization_id} | Delete service authorization
-[**deleteServiceAuthorization2**](ServiceAuthorizationsApi.md#deleteServiceAuthorization2) | **DELETE** /service-authorizations | Delete service authorizations
 [**listServiceAuthorization**](ServiceAuthorizationsApi.md#listServiceAuthorization) | **GET** /service-authorizations | List service authorizations
 [**showServiceAuthorization**](ServiceAuthorizationsApi.md#showServiceAuthorization) | **GET** /service-authorizations/{service_authorization_id} | Show service authorization
 [**updateServiceAuthorization**](ServiceAuthorizationsApi.md#updateServiceAuthorization) | **PATCH** /service-authorizations/{service_authorization_id} | Update service authorization
-[**updateServiceAuthorization2**](ServiceAuthorizationsApi.md#updateServiceAuthorization2) | **PATCH** /service-authorizations | Update service authorizations
 
 
 ## `createServiceAuthorization`
@@ -84,41 +82,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 null (empty response body)
-
-
-## `deleteServiceAuthorization2`
-
-```javascript
-deleteServiceAuthorization2({ , [inline_object3] })
-```
-
-Delete service authorizations.
-
-### Example
-
-```javascript
-const options = {
-  inline_object3: new Fastly.InlineObject3(),
-};
-
-apiInstance.deleteServiceAuthorization2(options)
-  .then((data) => {
-    console.log(data, "API called successfully.");
-  })
-  .catch((error) => {
-    console.error(error);
-  });
-```
-
-### Options
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**inline_object3** | [**InlineObject3**](InlineObject3.md) |  | [optional]
-
-### Return type
-
-[**InlineResponse204**](InlineResponse204.md)
 
 
 ## `listServiceAuthorization`
@@ -228,41 +191,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ServiceAuthorizationResponse**](ServiceAuthorizationResponse.md)
-
-
-## `updateServiceAuthorization2`
-
-```javascript
-updateServiceAuthorization2({ , [inline_object4] })
-```
-
-Update service authorizations.
-
-### Example
-
-```javascript
-const options = {
-  inline_object4: new Fastly.InlineObject4(),
-};
-
-apiInstance.updateServiceAuthorization2(options)
-  .then((data) => {
-    console.log(data, "API called successfully.");
-  })
-  .catch((error) => {
-    console.error(error);
-  });
-```
-
-### Options
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**inline_object4** | [**InlineObject4**](InlineObject4.md) |  | [optional]
-
-### Return type
-
-[**ServiceAuthorizationsResponse**](ServiceAuthorizationsResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

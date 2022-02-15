@@ -8,11 +8,11 @@ Name | Type | Description | Notes
 **content_types** | **String** | Space-separated list of content types to compress. If you omit this field a default list will be used. | [optional] 
 **extensions** | **String** | Space-separated list of file extensions to compress. If you omit this field a default list will be used. | [optional] 
 **name** | **String** | Name of the gzip configuration. | [optional] 
-**service_id** | **String** | Alphanumeric string identifying the service. | [optional] [readonly] 
-**version** | **Number** | Integer identifying a service version. | [optional] [readonly] 
-**created_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**deleted_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**updated_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**service_id** | **String** |  | [optional] [readonly] 
+**version** | **Number** |  | [optional] [readonly] 
+**created_at** | **Date** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**deleted_at** | **Date** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**updated_at** | **Date** | Date and time in ISO 8601 format. | [optional] [readonly] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

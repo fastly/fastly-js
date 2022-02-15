@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse200**](InlineResponse200.md)
 
 
 ## `getAcl`
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Acl**](Acl.md)
+[**AclResponse**](AclResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

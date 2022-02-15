@@ -20,7 +20,7 @@ import WafRuleRevisionAttributes from './WafRuleRevisionAttributes';
 /**
  * The IncludedWithWafExclusionItem model module.
  * @module model/IncludedWithWafExclusionItem
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class IncludedWithWafExclusionItem {
     /**
@@ -94,7 +94,6 @@ IncludedWithWafExclusionItem.prototype['attributes'] = undefined;
  */
 WafRule.prototype['type'] = undefined;
 /**
- * Alphanumeric string identifying a WAF rule.
  * @member {String} id
  */
 WafRule.prototype['id'] = undefined;

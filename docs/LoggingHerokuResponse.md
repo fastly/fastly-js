@@ -11,11 +11,11 @@ Name | Type | Description | Notes
 **format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional]  [defaults to '%h %l %u %t "%r" %&gt;s %b']
 **token** | **String** | The token to use for authentication ([https://devcenter.heroku.com/articles/add-on-partner-log-integration](https://devcenter.heroku.com/articles/add-on-partner-log-integration)). | [optional] 
 **url** | **String** | The URL to stream logs to. | [optional] 
-**created_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**deleted_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**updated_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**service_id** | **String** | Alphanumeric string identifying the service. | [optional] [readonly] 
-**version** | **Number** | Integer identifying a service version. | [optional] [readonly] 
+**created_at** | **Date** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**deleted_at** | **Date** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**updated_at** | **Date** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**service_id** | **String** |  | [optional] [readonly] 
+**version** | **Number** |  | [optional] [readonly] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

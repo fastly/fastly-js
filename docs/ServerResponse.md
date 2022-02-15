@@ -11,12 +11,12 @@ Name | Type | Description | Notes
 **comment** | **String** | A freeform descriptive note. | [optional] 
 **disabled** | **Boolean** | Allows servers to be enabled and disabled in a pool. | [optional]  [defaults to false]
 **override_host** | **String** | The hostname to override the Host header. Defaults to `null` meaning no override of the Host header if not set. This setting can also be added to a Pool definition. However, the server setting will override the Pool setting. | [optional]  [defaults to 'null']
-**created_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**deleted_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**updated_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**service_id** | **String** | Alphanumeric string identifying the service. | [optional] [readonly] 
-**id** | **String** | Alphanumeric string identifying a Server. | [optional] [readonly] 
-**pool_id** | **String** | Alphanumeric string identifying a Pool. | [optional] [readonly] 
+**created_at** | **Date** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**deleted_at** | **Date** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**updated_at** | **Date** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**service_id** | **String** |  | [optional] [readonly] 
+**id** | **String** |  | [optional] [readonly] 
+**pool_id** | **String** |  | [optional] [readonly] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

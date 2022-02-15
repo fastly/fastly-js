@@ -18,7 +18,7 @@ import TokenResponse from './TokenResponse';
 /**
  * The TokenCreatedResponse model module.
  * @module model/TokenCreatedResponse
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class TokenCreatedResponse {
     /**
@@ -66,10 +66,10 @@ class TokenCreatedResponse {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
             }
             if (data.hasOwnProperty('deleted_at')) {
-                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'String');
+                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'Date');
             }
             if (data.hasOwnProperty('updated_at')) {
-                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'String');
+                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -126,24 +126,22 @@ TokenCreatedResponse.prototype['created_at'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} deleted_at
+ * @member {Date} deleted_at
  */
 TokenCreatedResponse.prototype['deleted_at'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} updated_at
+ * @member {Date} updated_at
  */
 TokenCreatedResponse.prototype['updated_at'] = undefined;
 
 /**
- * Alphanumeric string identifying a token.
  * @member {String} id
  */
 TokenCreatedResponse.prototype['id'] = undefined;
 
 /**
- * Alphanumeric string identifying the user.
  * @member {String} user_id
  */
 TokenCreatedResponse.prototype['user_id'] = undefined;
@@ -203,21 +201,19 @@ TokenResponse.prototype['scope'] = undefined;
 TokenResponse.prototype['created_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
- * @member {String} deleted_at
+ * @member {Date} deleted_at
  */
 TokenResponse.prototype['deleted_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
- * @member {String} updated_at
+ * @member {Date} updated_at
  */
 TokenResponse.prototype['updated_at'] = undefined;
 /**
- * Alphanumeric string identifying a token.
  * @member {String} id
  */
 TokenResponse.prototype['id'] = undefined;
 /**
- * Alphanumeric string identifying the user.
  * @member {String} user_id
  */
 TokenResponse.prototype['user_id'] = undefined;

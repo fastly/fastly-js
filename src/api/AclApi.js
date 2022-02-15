@@ -13,13 +13,13 @@
 
 
 import ApiClient from "../ApiClient";
-import Acl from '../model/Acl';
 import AclResponse from '../model/AclResponse';
+import InlineResponse200 from '../model/InlineResponse200';
 
 /**
 * Acl service.
 * @module api/AclApi
-* @version 3.0.0-alpha1
+* @version 3.0.0-beta1
 */
 export default class AclApi {
 
@@ -102,7 +102,7 @@ export default class AclApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.acl_name - Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     deleteAclWithHttpInfo(options = {}) {
       let postBody = null;
@@ -134,7 +134,7 @@ export default class AclApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Object;
+      let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/acl/{acl_name}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -148,7 +148,7 @@ export default class AclApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.acl_name - Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     deleteAcl(options = {}) {
       return this.deleteAclWithHttpInfo(options)
@@ -279,7 +279,7 @@ export default class AclApi {
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.acl_name - Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace.
      * @param {String} [options.name] - Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Acl} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AclResponse} and HTTP response
      */
     updateAclWithHttpInfo(options = {}) {
       let postBody = null;
@@ -312,7 +312,7 @@ export default class AclApi {
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = Acl;
+      let returnType = AclResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/acl/{acl_name}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -327,7 +327,7 @@ export default class AclApi {
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.acl_name - Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace.
      * @param {String} [options.name] - Name for the ACL. Must start with an alphanumeric character and contain only alphanumeric characters, underscores, and whitespace.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Acl}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AclResponse}
      */
     updateAcl(options = {}) {
       return this.updateAclWithHttpInfo(options)

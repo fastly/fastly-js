@@ -17,7 +17,7 @@ import BillingAddressResponseAllOfData from './BillingAddressResponseAllOfData';
 /**
  * The BillingAddressResponseAllOf model module.
  * @module model/BillingAddressResponseAllOf
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class BillingAddressResponseAllOf {
     /**

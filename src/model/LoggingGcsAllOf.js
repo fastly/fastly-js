@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingGcsAllOf model module.
  * @module model/LoggingGcsAllOf
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class LoggingGcsAllOf {
     /**
@@ -70,6 +70,7 @@ class LoggingGcsAllOf {
 LoggingGcsAllOf.prototype['bucket_name'] = undefined;
 
 /**
+ * The path to upload logs to.
  * @member {String} path
  */
 LoggingGcsAllOf.prototype['path'] = undefined;

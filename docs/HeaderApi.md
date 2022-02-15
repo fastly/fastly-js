@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 **priority** | **Number** | Priority determines execution order. Lower numbers execute first. | [optional] [defaults to 100]
 **regex** | **String** | Regular expression to use. Only applies to `regex` and `regex_repeat` actions. | [optional]
 **request_condition** | **String** | Condition which, if met, will select this configuration during a request. Optional. | [optional]
-**response_condition** | [**String**](String.md) |  | [optional]
+**response_condition** | [**String**](String.md) | Optional name of a response condition to apply. | [optional]
 **src** | **String** | Variable to be used as a source for the header content. Does not apply to `delete` action. | [optional]
 **substitution** | **String** | Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions. | [optional]
 **type** | **String** | Accepts a string value. | [optional] [one of: "request", "cache", "response"]
@@ -111,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse200**](InlineResponse200.md)
 
 
 ## `getHeaderObject`
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 **priority** | **Number** | Priority determines execution order. Lower numbers execute first. | [optional] [defaults to 100]
 **regex** | **String** | Regular expression to use. Only applies to `regex` and `regex_repeat` actions. | [optional]
 **request_condition** | **String** | Condition which, if met, will select this configuration during a request. Optional. | [optional]
-**response_condition** | [**String**](String.md) |  | [optional]
+**response_condition** | [**String**](String.md) | Optional name of a response condition to apply. | [optional]
 **src** | **String** | Variable to be used as a source for the header content. Does not apply to `delete` action. | [optional]
 **substitution** | **String** | Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions. | [optional]
 **type** | **String** | Accepts a string value. | [optional] [one of: "request", "cache", "response"]

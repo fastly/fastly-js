@@ -17,7 +17,7 @@ import TypeTlsActivation from './TypeTlsActivation';
 /**
  * The RelationshipMemberTlsActivation model module.
  * @module model/RelationshipMemberTlsActivation
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class RelationshipMemberTlsActivation {
     /**
@@ -67,7 +67,6 @@ class RelationshipMemberTlsActivation {
 RelationshipMemberTlsActivation.prototype['type'] = undefined;
 
 /**
- * Alphanumeric string identifying a TLS activation.
  * @member {String} id
  */
 RelationshipMemberTlsActivation.prototype['id'] = undefined;

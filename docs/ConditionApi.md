@@ -17,7 +17,7 @@ Method | Fastly API endpoint | Description
 ## `createCondition`
 
 ```javascript
-createCondition({ service_id, version_id, [comment, ][name, ][priority, ][statement, ][type] })
+createCondition({ service_id, version_id, [comment, ][name, ][priority, ][statement, ][service_id2, ][version, ][type] })
 ```
 
 Creates a new condition.
@@ -30,8 +30,10 @@ const options = {
   version_id: 56, // required
   comment: "comment_example",
   name: "name_example",
-  priority: 100,
+  priority: "'100'",
   statement: "statement_example",
+  service_id2: null,
+  version: "version_example",
   type: "REQUEST",
 };
 
@@ -52,8 +54,10 @@ Name | Type | Description  | Notes
 **version_id** | **Number** | Integer identifying a service version. |
 **comment** | **String** | A freeform descriptive note. | [optional]
 **name** | **String** | Name of the condition. Required. | [optional]
-**priority** | **Number** | Priority determines execution order. Lower numbers execute first. | [optional] [defaults to 100]
+**priority** | **String** | A numeric string. Priority determines execution order. Lower numbers execute first. | [optional] [defaults to '100']
 **statement** | **String** | A conditional expression in VCL used to determine if the condition is met. | [optional]
+**service_id2** | [**String**](String.md) |  | [optional]
+**version** | **String** | A numeric string that represents the service version. | [optional]
 **type** | **String** | Type of the condition. Required. | [optional] [one of: "REQUEST", "CACHE", "RESPONSE", "PREFETCH"]
 
 ### Return type
@@ -97,7 +101,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse200**](InlineResponse200.md)
 
 
 ## `getCondition`
@@ -179,7 +183,7 @@ Name | Type | Description  | Notes
 ## `updateCondition`
 
 ```javascript
-updateCondition({ service_id, version_id, condition_name, [comment, ][name, ][priority, ][statement, ][type] })
+updateCondition({ service_id, version_id, condition_name, [comment, ][name, ][priority, ][statement, ][service_id2, ][version, ][type] })
 ```
 
 Updates the specified condition.
@@ -193,8 +197,10 @@ const options = {
   condition_name: "condition_name_example", // required
   comment: "comment_example",
   name: "name_example",
-  priority: 100,
+  priority: "'100'",
   statement: "statement_example",
+  service_id2: null,
+  version: "version_example",
   type: "REQUEST",
 };
 
@@ -216,8 +222,10 @@ Name | Type | Description  | Notes
 **condition_name** | **String** | Name of the condition. Required. |
 **comment** | **String** | A freeform descriptive note. | [optional]
 **name** | **String** | Name of the condition. Required. | [optional]
-**priority** | **Number** | Priority determines execution order. Lower numbers execute first. | [optional] [defaults to 100]
+**priority** | **String** | A numeric string. Priority determines execution order. Lower numbers execute first. | [optional] [defaults to '100']
 **statement** | **String** | A conditional expression in VCL used to determine if the condition is met. | [optional]
+**service_id2** | [**String**](String.md) |  | [optional]
+**version** | **String** | A numeric string that represents the service version. | [optional]
 **type** | **String** | Type of the condition. Required. | [optional] [one of: "REQUEST", "CACHE", "RESPONSE", "PREFETCH"]
 
 ### Return type

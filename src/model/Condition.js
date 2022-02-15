@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Condition model module.
  * @module model/Condition
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class Condition {
     /**
@@ -54,10 +54,16 @@ class Condition {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('priority')) {
-                obj['priority'] = ApiClient.convertToType(data['priority'], 'Number');
+                obj['priority'] = ApiClient.convertToType(data['priority'], 'String');
             }
             if (data.hasOwnProperty('statement')) {
                 obj['statement'] = ApiClient.convertToType(data['statement'], 'String');
+            }
+            if (data.hasOwnProperty('service_id')) {
+                obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
+            }
+            if (data.hasOwnProperty('version')) {
+                obj['version'] = ApiClient.convertToType(data['version'], 'String');
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
@@ -82,17 +88,28 @@ Condition.prototype['comment'] = undefined;
 Condition.prototype['name'] = undefined;
 
 /**
- * Priority determines execution order. Lower numbers execute first.
- * @member {Number} priority
- * @default 100
+ * A numeric string. Priority determines execution order. Lower numbers execute first.
+ * @member {String} priority
+ * @default '100'
  */
-Condition.prototype['priority'] = 100;
+Condition.prototype['priority'] = '100';
 
 /**
  * A conditional expression in VCL used to determine if the condition is met.
  * @member {String} statement
  */
 Condition.prototype['statement'] = undefined;
+
+/**
+ * @member {String} service_id
+ */
+Condition.prototype['service_id'] = undefined;
+
+/**
+ * A numeric string that represents the service version.
+ * @member {String} version
+ */
+Condition.prototype['version'] = undefined;
 
 /**
  * Type of the condition. Required.

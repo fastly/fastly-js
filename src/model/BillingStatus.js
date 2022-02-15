@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BillingStatus model module.
  * @module model/BillingStatus
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class BillingStatus {
     /**
@@ -51,7 +51,7 @@ class BillingStatus {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
             if (data.hasOwnProperty('sent_at')) {
-                obj['sent_at'] = ApiClient.convertToType(data['sent_at'], 'String');
+                obj['sent_at'] = ApiClient.convertToType(data['sent_at'], 'Date');
             }
         }
         return obj;
@@ -67,7 +67,7 @@ class BillingStatus {
 BillingStatus.prototype['status'] = undefined;
 
 /**
- * @member {String} sent_at
+ * @member {Date} sent_at
  */
 BillingStatus.prototype['sent_at'] = undefined;
 

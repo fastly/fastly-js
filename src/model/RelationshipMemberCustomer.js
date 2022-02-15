@@ -17,7 +17,7 @@ import TypeCustomer from './TypeCustomer';
 /**
  * The RelationshipMemberCustomer model module.
  * @module model/RelationshipMemberCustomer
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class RelationshipMemberCustomer {
     /**
@@ -67,7 +67,6 @@ class RelationshipMemberCustomer {
 RelationshipMemberCustomer.prototype['type'] = undefined;
 
 /**
- * Alphanumeric string identifying the customer.
  * @member {String} id
  */
 RelationshipMemberCustomer.prototype['id'] = undefined;

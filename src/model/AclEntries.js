@@ -17,7 +17,7 @@ import AclEntry from './AclEntry';
 /**
  * The AclEntries model module.
  * @module model/AclEntries
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class AclEntries {
     /**

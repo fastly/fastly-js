@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** | Alphanumeric string identifying an invitation. | [optional] [readonly] 
+**id** | **String** |  | [optional] [readonly] 
 **attributes** | [**Timestamps**](Timestamps.md) |  | [optional] 
 **relationships** | [**RelationshipsForInvitation**](RelationshipsForInvitation.md) |  | [optional] 
 

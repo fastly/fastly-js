@@ -17,7 +17,7 @@ import HistoricalMeta from './HistoricalMeta';
 /**
  * The Historical model module.
  * @module model/Historical
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class Historical {
     /**

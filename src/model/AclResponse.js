@@ -20,7 +20,7 @@ import Timestamps from './Timestamps';
 /**
  * The AclResponse model module.
  * @module model/AclResponse
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class AclResponse {
     /**
@@ -63,13 +63,13 @@ class AclResponse {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('created_at')) {
-                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
+                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
             if (data.hasOwnProperty('deleted_at')) {
-                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'String');
+                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'Date');
             }
             if (data.hasOwnProperty('updated_at')) {
-                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'String');
+                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
@@ -95,36 +95,33 @@ AclResponse.prototype['name'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} created_at
+ * @member {Date} created_at
  */
 AclResponse.prototype['created_at'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} deleted_at
+ * @member {Date} deleted_at
  */
 AclResponse.prototype['deleted_at'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} updated_at
+ * @member {Date} updated_at
  */
 AclResponse.prototype['updated_at'] = undefined;
 
 /**
- * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
 AclResponse.prototype['service_id'] = undefined;
 
 /**
- * Integer identifying a service version.
  * @member {Number} version
  */
 AclResponse.prototype['version'] = undefined;
 
 /**
- * Alphanumeric string identifying a ACL.
  * @member {String} id
  */
 AclResponse.prototype['id'] = undefined;
@@ -139,33 +136,30 @@ Acl.prototype['name'] = undefined;
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
- * @member {String} created_at
+ * @member {Date} created_at
  */
 Timestamps.prototype['created_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
- * @member {String} deleted_at
+ * @member {Date} deleted_at
  */
 Timestamps.prototype['deleted_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
- * @member {String} updated_at
+ * @member {Date} updated_at
  */
 Timestamps.prototype['updated_at'] = undefined;
 // Implement ServiceIdAndVersion interface:
 /**
- * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
 ServiceIdAndVersion.prototype['service_id'] = undefined;
 /**
- * Integer identifying a service version.
  * @member {Number} version
  */
 ServiceIdAndVersion.prototype['version'] = undefined;
 // Implement AclResponseAllOf interface:
 /**
- * Alphanumeric string identifying a ACL.
  * @member {String} id
  */
 AclResponseAllOf.prototype['id'] = undefined;

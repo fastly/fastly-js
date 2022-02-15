@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The DictionaryItemResponse model module.
  * @module model/DictionaryItemResponse
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class DictionaryItemResponse {
     /**
@@ -63,13 +63,13 @@ class DictionaryItemResponse {
                 obj['item_value'] = ApiClient.convertToType(data['item_value'], 'String');
             }
             if (data.hasOwnProperty('created_at')) {
-                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
+                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
             if (data.hasOwnProperty('deleted_at')) {
-                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'String');
+                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'Date');
             }
             if (data.hasOwnProperty('updated_at')) {
-                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'String');
+                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
             if (data.hasOwnProperty('dictionary_id')) {
                 obj['dictionary_id'] = ApiClient.convertToType(data['dictionary_id'], 'String');
@@ -98,30 +98,28 @@ DictionaryItemResponse.prototype['item_value'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} created_at
+ * @member {Date} created_at
  */
 DictionaryItemResponse.prototype['created_at'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} deleted_at
+ * @member {Date} deleted_at
  */
 DictionaryItemResponse.prototype['deleted_at'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} updated_at
+ * @member {Date} updated_at
  */
 DictionaryItemResponse.prototype['updated_at'] = undefined;
 
 /**
- * Alphanumeric string identifying a Dictionary.
  * @member {String} dictionary_id
  */
 DictionaryItemResponse.prototype['dictionary_id'] = undefined;
 
 /**
- * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
 DictionaryItemResponse.prototype['service_id'] = undefined;
@@ -141,27 +139,25 @@ DictionaryItem.prototype['item_value'] = undefined;
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
- * @member {String} created_at
+ * @member {Date} created_at
  */
 Timestamps.prototype['created_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
- * @member {String} deleted_at
+ * @member {Date} deleted_at
  */
 Timestamps.prototype['deleted_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
- * @member {String} updated_at
+ * @member {Date} updated_at
  */
 Timestamps.prototype['updated_at'] = undefined;
 // Implement DictionaryItemResponseAllOf interface:
 /**
- * Alphanumeric string identifying a Dictionary.
  * @member {String} dictionary_id
  */
 DictionaryItemResponseAllOf.prototype['dictionary_id'] = undefined;
 /**
- * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
 DictionaryItemResponseAllOf.prototype['service_id'] = undefined;

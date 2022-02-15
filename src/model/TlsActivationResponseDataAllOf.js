@@ -17,7 +17,7 @@ import Timestamps from './Timestamps';
 /**
  * The TlsActivationResponseDataAllOf model module.
  * @module model/TlsActivationResponseDataAllOf
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class TlsActivationResponseDataAllOf {
     /**
@@ -62,7 +62,6 @@ class TlsActivationResponseDataAllOf {
 }
 
 /**
- * Alphanumeric string identifying a TLS activation.
  * @member {String} id
  */
 TlsActivationResponseDataAllOf.prototype['id'] = undefined;

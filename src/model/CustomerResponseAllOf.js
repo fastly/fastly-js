@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CustomerResponseAllOf model module.
  * @module model/CustomerResponseAllOf
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class CustomerResponseAllOf {
     /**
@@ -58,7 +58,6 @@ class CustomerResponseAllOf {
 }
 
 /**
- * Alphanumeric string identifying the customer.
  * @member {String} id
  */
 CustomerResponseAllOf.prototype['id'] = undefined;

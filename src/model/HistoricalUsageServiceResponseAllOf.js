@@ -12,11 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import HistoricalUsageResults from './HistoricalUsageResults';
 
 /**
  * The HistoricalUsageServiceResponseAllOf model module.
  * @module model/HistoricalUsageServiceResponseAllOf
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class HistoricalUsageServiceResponseAllOf {
     /**
@@ -48,7 +49,7 @@ class HistoricalUsageServiceResponseAllOf {
             obj = obj || new HistoricalUsageServiceResponseAllOf();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], {'String': Object});
+                obj['data'] = HistoricalUsageResults.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -58,7 +59,7 @@ class HistoricalUsageServiceResponseAllOf {
 }
 
 /**
- * @member {Object.<String, Object>} data
+ * @member {module:model/HistoricalUsageResults} data
  */
 HistoricalUsageServiceResponseAllOf.prototype['data'] = undefined;
 

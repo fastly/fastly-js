@@ -15,11 +15,11 @@ Name | Type | Description | Notes
 **table** | **String** | Your BigQuery table. | [optional] 
 **template_suffix** | **String** | BigQuery table name suffix template. Optional. | [optional] 
 **project_id** | **String** | Your Google Cloud Platform project ID. Required | [optional] 
-**created_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**deleted_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**updated_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**service_id** | **String** | Alphanumeric string identifying the service. | [optional] [readonly] 
-**version** | **Number** | Integer identifying a service version. | [optional] [readonly] 
+**created_at** | **Date** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**deleted_at** | **Date** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**updated_at** | **Date** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**service_id** | **String** |  | [optional] [readonly] 
+**version** | **Number** |  | [optional] [readonly] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

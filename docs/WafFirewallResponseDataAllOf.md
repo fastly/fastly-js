@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** | Alphanumeric string identifying a WAF Firewall. | [optional] [readonly] 
+**id** | **String** |  | [optional] [readonly] 
 **attributes** | [**Timestamps**](Timestamps.md) |  | [optional] 
 **relationships** | [**RelationshipWafFirewallVersions**](RelationshipWafFirewallVersions.md) |  | [optional] 
 

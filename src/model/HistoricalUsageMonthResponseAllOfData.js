@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import AdditionalProperties from './AdditionalProperties';
+import HistoricalUsageResults from './HistoricalUsageResults';
 
 /**
  * The HistoricalUsageMonthResponseAllOfData model module.
  * @module model/HistoricalUsageMonthResponseAllOfData
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class HistoricalUsageMonthResponseAllOfData {
     /**
@@ -52,10 +52,10 @@ class HistoricalUsageMonthResponseAllOfData {
                 obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
             }
             if (data.hasOwnProperty('services')) {
-                obj['services'] = ApiClient.convertToType(data['services'], {'String': {'String': AdditionalProperties}});
+                obj['services'] = ApiClient.convertToType(data['services'], {'String': {'String': HistoricalUsageResults}});
             }
             if (data.hasOwnProperty('total')) {
-                obj['total'] = ApiClient.convertToType(data['total'], {'String': Object});
+                obj['total'] = HistoricalUsageResults.constructFromObject(data['total']);
             }
         }
         return obj;
@@ -65,18 +65,17 @@ class HistoricalUsageMonthResponseAllOfData {
 }
 
 /**
- * Alphanumeric string identifying the customer.
  * @member {String} customer_id
  */
 HistoricalUsageMonthResponseAllOfData.prototype['customer_id'] = undefined;
 
 /**
- * @member {Object.<String, Object.<String, module:model/AdditionalProperties>>} services
+ * @member {Object.<String, Object.<String, module:model/HistoricalUsageResults>>} services
  */
 HistoricalUsageMonthResponseAllOfData.prototype['services'] = undefined;
 
 /**
- * @member {Object.<String, Object>} total
+ * @member {module:model/HistoricalUsageResults} total
  */
 HistoricalUsageMonthResponseAllOfData.prototype['total'] = undefined;
 

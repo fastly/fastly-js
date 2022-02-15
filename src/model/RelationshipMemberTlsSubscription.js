@@ -17,7 +17,7 @@ import TypeTlsSubscription from './TypeTlsSubscription';
 /**
  * The RelationshipMemberTlsSubscription model module.
  * @module model/RelationshipMemberTlsSubscription
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class RelationshipMemberTlsSubscription {
     /**
@@ -67,7 +67,6 @@ class RelationshipMemberTlsSubscription {
 RelationshipMemberTlsSubscription.prototype['type'] = undefined;
 
 /**
- * Alphanumeric string identifying a TLS subscription.
  * @member {String} id
  */
 RelationshipMemberTlsSubscription.prototype['id'] = undefined;

@@ -17,7 +17,7 @@ import RealtimeEntry from './RealtimeEntry';
 /**
  * The Realtime model module.
  * @module model/Realtime
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class Realtime {
     /**
@@ -65,6 +65,7 @@ class Realtime {
 }
 
 /**
+ * Value to use for subsequent requests.
  * @member {Number} Timestamp
  */
 Realtime.prototype['Timestamp'] = undefined;

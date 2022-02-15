@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse200**](InlineResponse200.md)
 
 
 ## `getDomain`
@@ -245,7 +245,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DomainResponse**](DomainResponse.md)
+[**[DomainResponse]**](DomainResponse.md)
 
 
 ## `updateDomain`

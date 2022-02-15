@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WafFirewallDataAttributes model module.
  * @module model/WafFirewallDataAttributes
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class WafFirewallDataAttributes {
     /**
@@ -86,7 +86,6 @@ WafFirewallDataAttributes.prototype['prefetch_condition'] = undefined;
 WafFirewallDataAttributes.prototype['response'] = undefined;
 
 /**
- * Integer identifying a service version.
  * @member {Number} service_version_number
  */
 WafFirewallDataAttributes.prototype['service_version_number'] = undefined;

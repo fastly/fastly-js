@@ -12,7 +12,6 @@ Method | Fastly API endpoint | Description
 [**getSnippet**](SnippetApi.md#getSnippet) | **GET** /service/{service_id}/version/{version_id}/snippet/{snippet_name} | Get a versioned snippet
 [**getSnippetDynamic**](SnippetApi.md#getSnippetDynamic) | **GET** /service/{service_id}/snippet/{snippet_id} | Get a dynamic snippet
 [**listSnippets**](SnippetApi.md#listSnippets) | **GET** /service/{service_id}/version/{version_id}/snippet | List snippets
-[**updateSnippet**](SnippetApi.md#updateSnippet) | **PUT** /service/{service_id}/version/{version_id}/snippet/{snippet_name} | Update a versioned snippet
 [**updateSnippetDynamic**](SnippetApi.md#updateSnippetDynamic) | **PUT** /service/{service_id}/snippet/{snippet_id} | Update a dynamic snippet
 
 
@@ -31,10 +30,10 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   name: "name_example",
-  dynamic: "0",
+  dynamic: 0,
   type: "init",
   content: "content_example",
-  priority: "'100'",
+  priority: 100,
 };
 
 apiInstance.createSnippet(options)
@@ -53,10 +52,10 @@ Name | Type | Description  | Notes
 **service_id** | **String** | Alphanumeric string identifying the service. |
 **version_id** | **Number** | Integer identifying a service version. |
 **name** | **String** | The name for the snippet. | [optional]
-**dynamic** | **String** | Sets the snippet version. | [optional] [one of: "0", "1"]
+**dynamic** | **Number** | Sets the snippet version. | [optional] [one of: 0, 1]
 **type** | **String** | The location in generated VCL where the snippet should be placed. | [optional] [one of: "init", "recv", "hash", "hit", "miss", "pass", "fetch", "error", "deliver", "log", "none"]
 **content** | **String** | The VCL code that specifies exactly what the snippet does. | [optional]
-**priority** | **String** | Numeric string value. Priority determines execution order. Lower numbers execute first. | [optional] [defaults to '100']
+**priority** | **Number** | Priority determines execution order. Lower numbers execute first. | [optional] [defaults to 100]
 
 ### Return type
 
@@ -99,7 +98,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse200**](InlineResponse200.md)
 
 
 ## `getSnippet`
@@ -215,45 +214,6 @@ Name | Type | Description  | Notes
 [**[SnippetResponse]**](SnippetResponse.md)
 
 
-## `updateSnippet`
-
-```javascript
-updateSnippet({ service_id, version_id, snippet_name })
-```
-
-Update a specific snippet for a particular service and version.
-
-### Example
-
-```javascript
-const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-  snippet_name: "snippet_name_example", // required
-};
-
-apiInstance.updateSnippet(options)
-  .then((data) => {
-    console.log(data, "API called successfully.");
-  })
-  .catch((error) => {
-    console.error(error);
-  });
-```
-
-### Options
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**service_id** | **String** | Alphanumeric string identifying the service. |
-**version_id** | **Number** | Integer identifying a service version. |
-**snippet_name** | **String** | The name for the snippet. |
-
-### Return type
-
-[**SnippetResponse**](SnippetResponse.md)
-
-
 ## `updateSnippetDynamic`
 
 ```javascript
@@ -269,10 +229,10 @@ const options = {
   service_id: "service_id_example", // required
   snippet_id: "snippet_id_example", // required
   name: "name_example",
-  dynamic: "0",
+  dynamic: 0,
   type: "init",
   content: "content_example",
-  priority: "'100'",
+  priority: 100,
 };
 
 apiInstance.updateSnippetDynamic(options)
@@ -291,10 +251,10 @@ Name | Type | Description  | Notes
 **service_id** | **String** | Alphanumeric string identifying the service. |
 **snippet_id** | **String** | Alphanumeric string identifying a VCL Snippet. |
 **name** | **String** | The name for the snippet. | [optional]
-**dynamic** | **String** | Sets the snippet version. | [optional] [one of: "0", "1"]
+**dynamic** | **Number** | Sets the snippet version. | [optional] [one of: 0, 1]
 **type** | **String** | The location in generated VCL where the snippet should be placed. | [optional] [one of: "init", "recv", "hash", "hit", "miss", "pass", "fetch", "error", "deliver", "log", "none"]
 **content** | **String** | The VCL code that specifies exactly what the snippet does. | [optional]
-**priority** | **String** | Numeric string value. Priority determines execution order. Lower numbers execute first. | [optional] [defaults to '100']
+**priority** | **Number** | Priority determines execution order. Lower numbers execute first. | [optional] [defaults to 100]
 
 ### Return type
 

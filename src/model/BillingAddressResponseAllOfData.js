@@ -17,7 +17,7 @@ import Timestamps from './Timestamps';
 /**
  * The BillingAddressResponseAllOfData model module.
  * @module model/BillingAddressResponseAllOfData
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class BillingAddressResponseAllOfData {
     /**

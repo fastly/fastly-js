@@ -18,7 +18,7 @@ import Realtime from '../model/Realtime';
 /**
 * Realtime service.
 * @module api/RealtimeApi
-* @version 3.0.0-alpha1
+* @version 3.0.0-beta1
 */
 export default class RealtimeApi {
 
@@ -140,7 +140,7 @@ export default class RealtimeApi {
     }
 
     /**
-     * Get real-time data for the last second. For the first request, the timestamp can be `0`. The response will then return a new timestamp field, which should be used for the next request.
+     * Get real-time data for the specified reporting period. Specify `0` to get a single entry for the last complete second. The `Timestamp` field included in the response provides the time index of the latest entry in the dataset and can be provided as the `start_timestamp` of the next request for a seamless continuation of the dataset from one request to the next.
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.timestamp_in_seconds - Timestamp in seconds (Unix epoch time).
@@ -180,7 +180,7 @@ export default class RealtimeApi {
     }
 
     /**
-     * Get real-time data for the last second. For the first request, the timestamp can be `0`. The response will then return a new timestamp field, which should be used for the next request.
+     * Get real-time data for the specified reporting period. Specify `0` to get a single entry for the last complete second. The `Timestamp` field included in the response provides the time index of the latest entry in the dataset and can be provided as the `start_timestamp` of the next request for a seamless continuation of the dataset from one request to the next.
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.timestamp_in_seconds - Timestamp in seconds (Unix epoch time).

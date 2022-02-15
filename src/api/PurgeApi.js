@@ -13,12 +13,13 @@
 
 
 import ApiClient from "../ApiClient";
+import InlineResponse200 from '../model/InlineResponse200';
 import PurgeResponse from '../model/PurgeResponse';
 
 /**
 * Purge service.
 * @module api/PurgeApi
-* @version 3.0.0-alpha1
+* @version 3.0.0-beta1
 */
 export default class PurgeApi {
 
@@ -60,8 +61,8 @@ export default class PurgeApi {
       let queryParams = {
       };
       let headerParams = {
-        'Fastly-Soft-Purge': options['fastly_soft_purge'],
-        'Surrogate-Key': options['surrogate_key']
+        'fastly-soft-purge': options['fastly_soft_purge'],
+        'surrogate-key': options['surrogate_key']
       };
       let formParams = {
       };
@@ -97,7 +98,7 @@ export default class PurgeApi {
      * Instant Purge everything from a service.  Purge-all requests cannot be done in soft mode and will always immediately invalidate all cached content associated with the service. To do a soft-purge-all, consider applying a constant [surrogate key](https://docs.fastly.com/en/guides/getting-started-with-surrogate-keys) tag (e.g., `\"all\"`) to all objects. 
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     purgeAllWithHttpInfo(options = {}) {
       let postBody = null;
@@ -116,10 +117,10 @@ export default class PurgeApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Object;
+      let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/purge_all', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -131,7 +132,7 @@ export default class PurgeApi {
      * Instant Purge everything from a service.  Purge-all requests cannot be done in soft mode and will always immediately invalidate all cached content associated with the service. To do a soft-purge-all, consider applying a constant [surrogate key](https://docs.fastly.com/en/guides/getting-started-with-surrogate-keys) tag (e.g., `\"all\"`) to all objects. 
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     purgeAll(options = {}) {
       return this.purgeAllWithHttpInfo(options)
@@ -159,13 +160,13 @@ export default class PurgeApi {
       let queryParams = {
       };
       let headerParams = {
-        'Fastly-Soft-Purge': options['fastly_soft_purge'],
-        'Host': options['host']
+        'fastly-soft-purge': options['fastly_soft_purge'],
+        'host': options['host']
       };
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['url_purge'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = PurgeResponse;
@@ -216,7 +217,7 @@ export default class PurgeApi {
       let queryParams = {
       };
       let headerParams = {
-        'Fastly-Soft-Purge': options['fastly_soft_purge']
+        'fastly-soft-purge': options['fastly_soft_purge']
       };
       let formParams = {
       };

@@ -22,7 +22,7 @@ import WafRuleRevisionsResponseAllOf from './WafRuleRevisionsResponseAllOf';
 /**
  * The WafRuleRevisionsResponse model module.
  * @module model/WafRuleRevisionsResponse
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class WafRuleRevisionsResponse {
     /**

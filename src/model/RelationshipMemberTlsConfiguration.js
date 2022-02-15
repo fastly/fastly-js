@@ -17,7 +17,7 @@ import TypeTlsConfiguration from './TypeTlsConfiguration';
 /**
  * The RelationshipMemberTlsConfiguration model module.
  * @module model/RelationshipMemberTlsConfiguration
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class RelationshipMemberTlsConfiguration {
     /**
@@ -67,7 +67,6 @@ class RelationshipMemberTlsConfiguration {
 RelationshipMemberTlsConfiguration.prototype['type'] = undefined;
 
 /**
- * Alphanumeric string identifying a TLS configuration.
  * @member {String} id
  */
 RelationshipMemberTlsConfiguration.prototype['id'] = undefined;

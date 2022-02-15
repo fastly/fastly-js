@@ -20,7 +20,7 @@ import LoggingTlsCommon from './LoggingTlsCommon';
 /**
  * The LoggingElasticsearch model module.
  * @module model/LoggingElasticsearch
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class LoggingElasticsearch {
     /**
@@ -72,7 +72,7 @@ class LoggingElasticsearch {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
             }
             if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], Object);
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
             if (data.hasOwnProperty('tls_ca_cert')) {
                 obj['tls_ca_cert'] = ApiClient.convertToType(data['tls_ca_cert'], 'String');
@@ -141,7 +141,7 @@ LoggingElasticsearch.prototype['response_condition'] = undefined;
 
 /**
  * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Elasticsearch can ingest.
- * @member {Object} format
+ * @member {String} format
  */
 LoggingElasticsearch.prototype['format'] = undefined;
 
@@ -312,7 +312,7 @@ LoggingElasticsearchAllOf.prototype['user'] = undefined;
 LoggingElasticsearchAllOf.prototype['password'] = undefined;
 /**
  * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Elasticsearch can ingest.
- * @member {Object} format
+ * @member {String} format
  */
 LoggingElasticsearchAllOf.prototype['format'] = undefined;
 

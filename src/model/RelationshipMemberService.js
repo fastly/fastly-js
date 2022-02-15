@@ -17,7 +17,7 @@ import TypeService from './TypeService';
 /**
  * The RelationshipMemberService model module.
  * @module model/RelationshipMemberService
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class RelationshipMemberService {
     /**
@@ -67,7 +67,6 @@ class RelationshipMemberService {
 RelationshipMemberService.prototype['type'] = undefined;
 
 /**
- * Alphanumeric string identifying the service.
  * @member {String} id
  */
 RelationshipMemberService.prototype['id'] = undefined;

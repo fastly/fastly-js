@@ -18,7 +18,7 @@ import WafTag from './WafTag';
 /**
  * The WafTagsResponseAllOf model module.
  * @module model/WafTagsResponseAllOf
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class WafTagsResponseAllOf {
     /**

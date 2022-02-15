@@ -13,9 +13,6 @@
 
 
 import ApiClient from "../ApiClient";
-import InlineObject3 from '../model/InlineObject3';
-import InlineObject4 from '../model/InlineObject4';
-import InlineResponse204 from '../model/InlineResponse204';
 import ServiceAuthorization from '../model/ServiceAuthorization';
 import ServiceAuthorizationResponse from '../model/ServiceAuthorizationResponse';
 import ServiceAuthorizationsResponse from '../model/ServiceAuthorizationsResponse';
@@ -23,7 +20,7 @@ import ServiceAuthorizationsResponse from '../model/ServiceAuthorizationsRespons
 /**
 * ServiceAuthorizations service.
 * @module api/ServiceAuthorizationsApi
-* @version 3.0.0-alpha1
+* @version 3.0.0-beta1
 */
 export default class ServiceAuthorizationsApi {
 
@@ -127,48 +124,6 @@ export default class ServiceAuthorizationsApi {
      */
     deleteServiceAuthorization(options = {}) {
       return this.deleteServiceAuthorizationWithHttpInfo(options)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-    /**
-     * Delete service authorizations.
-     * @param {Object} options
-     * @param {module:model/InlineObject3} [options.inline_object3]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse204} and HTTP response
-     */
-    deleteServiceAuthorization2WithHttpInfo(options = {}) {
-      let postBody = options['inline_object3'];
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['token'];
-      let contentTypes = ['application/vnd.api+json; ext=bulk'];
-      let accepts = ['application/vnd.api+json; ext=bulk'];
-      let returnType = InlineResponse204;
-      return this.apiClient.callApi(
-        '/service-authorizations', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Delete service authorizations.
-     * @param {Object} options
-     * @param {module:model/InlineObject3} [options.inline_object3]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse204}
-     */
-    deleteServiceAuthorization2(options = {}) {
-      return this.deleteServiceAuthorization2WithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -311,48 +266,6 @@ export default class ServiceAuthorizationsApi {
      */
     updateServiceAuthorization(options = {}) {
       return this.updateServiceAuthorizationWithHttpInfo(options)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-    /**
-     * Update service authorizations.
-     * @param {Object} options
-     * @param {module:model/InlineObject4} [options.inline_object4]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceAuthorizationsResponse} and HTTP response
-     */
-    updateServiceAuthorization2WithHttpInfo(options = {}) {
-      let postBody = options['inline_object4'];
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['token'];
-      let contentTypes = ['application/vnd.api+json; ext=bulk'];
-      let accepts = ['application/vnd.api+json; ext=bulk'];
-      let returnType = ServiceAuthorizationsResponse;
-      return this.apiClient.callApi(
-        '/service-authorizations', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Update service authorizations.
-     * @param {Object} options
-     * @param {module:model/InlineObject4} [options.inline_object4]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceAuthorizationsResponse}
-     */
-    updateServiceAuthorization2(options = {}) {
-      return this.updateServiceAuthorization2WithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

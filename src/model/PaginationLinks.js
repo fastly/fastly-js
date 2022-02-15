@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PaginationLinks model module.
  * @module model/PaginationLinks
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class PaginationLinks {
     /**

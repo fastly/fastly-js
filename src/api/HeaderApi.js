@@ -14,11 +14,12 @@
 
 import ApiClient from "../ApiClient";
 import HeaderResponse from '../model/HeaderResponse';
+import InlineResponse200 from '../model/InlineResponse200';
 
 /**
 * Header service.
 * @module api/HeaderApi
-* @version 3.0.0-alpha1
+* @version 3.0.0-beta1
 */
 export default class HeaderApi {
 
@@ -51,7 +52,7 @@ export default class HeaderApi {
      * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
      * @param {String} [options.regex] - Regular expression to use. Only applies to `regex` and `regex_repeat` actions.
      * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
-     * @param {String} [options.response_condition]
+     * @param {String} [options.response_condition] - Optional name of a response condition to apply.
      * @param {String} [options.src] - Variable to be used as a source for the header content. Does not apply to `delete` action.
      * @param {String} [options.substitution] - Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions.
      * @param {module:model/String} [options.type] - Accepts a string value.
@@ -115,7 +116,7 @@ export default class HeaderApi {
      * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
      * @param {String} [options.regex] - Regular expression to use. Only applies to `regex` and `regex_repeat` actions.
      * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
-     * @param {String} [options.response_condition]
+     * @param {String} [options.response_condition] - Optional name of a response condition to apply.
      * @param {String} [options.src] - Variable to be used as a source for the header content. Does not apply to `delete` action.
      * @param {String} [options.substitution] - Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions.
      * @param {module:model/String} [options.type] - Accepts a string value.
@@ -134,7 +135,7 @@ export default class HeaderApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.header_name - A handle to refer to this Header object.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     deleteHeaderObjectWithHttpInfo(options = {}) {
       let postBody = null;
@@ -166,7 +167,7 @@ export default class HeaderApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Object;
+      let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/header/{header_name}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -180,7 +181,7 @@ export default class HeaderApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.header_name - A handle to refer to this Header object.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     deleteHeaderObject(options = {}) {
       return this.deleteHeaderObjectWithHttpInfo(options)
@@ -318,7 +319,7 @@ export default class HeaderApi {
      * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
      * @param {String} [options.regex] - Regular expression to use. Only applies to `regex` and `regex_repeat` actions.
      * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
-     * @param {String} [options.response_condition]
+     * @param {String} [options.response_condition] - Optional name of a response condition to apply.
      * @param {String} [options.src] - Variable to be used as a source for the header content. Does not apply to `delete` action.
      * @param {String} [options.substitution] - Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions.
      * @param {module:model/String} [options.type] - Accepts a string value.
@@ -388,7 +389,7 @@ export default class HeaderApi {
      * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
      * @param {String} [options.regex] - Regular expression to use. Only applies to `regex` and `regex_repeat` actions.
      * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
-     * @param {String} [options.response_condition]
+     * @param {String} [options.response_condition] - Optional name of a response condition to apply.
      * @param {String} [options.src] - Variable to be used as a source for the header content. Does not apply to `delete` action.
      * @param {String} [options.substitution] - Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions.
      * @param {module:model/String} [options.type] - Accepts a string value.

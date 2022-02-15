@@ -20,7 +20,7 @@ import TlsBulkCertificatesResponse from '../model/TlsBulkCertificatesResponse';
 /**
 * TlsBulkCertificates service.
 * @module api/TlsBulkCertificatesApi
-* @version 3.0.0-alpha1
+* @version 3.0.0-beta1
 */
 export default class TlsBulkCertificatesApi {
 
@@ -137,7 +137,7 @@ export default class TlsBulkCertificatesApi {
     /**
      * List all certificates.
      * @param {Object} options
-     * @param {String} [options.filter_tls_domain_id_match] - Filter certificates by their matching, fully-qualified domain name. Returns all partial matches. Must provide a value longer than 3 characters.
+     * @param {String} [options.filter_tls_domain_id] - Filter certificates by their matching, fully-qualified domain name.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
@@ -149,7 +149,7 @@ export default class TlsBulkCertificatesApi {
       let pathParams = {
       };
       let queryParams = {
-        'filter[tls_domain.id][match]': options['filter_tls_domain_id_match'],
+        'filter[tls_domain.id]': options['filter_tls_domain_id'],
         'page[number]': options['page_number'],
         'page[size]': options['page_size'],
         'sort': options['sort']
@@ -173,7 +173,7 @@ export default class TlsBulkCertificatesApi {
     /**
      * List all certificates.
      * @param {Object} options
-     * @param {String} [options.filter_tls_domain_id_match] - Filter certificates by their matching, fully-qualified domain name. Returns all partial matches. Must provide a value longer than 3 characters.
+     * @param {String} [options.filter_tls_domain_id] - Filter certificates by their matching, fully-qualified domain name.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.

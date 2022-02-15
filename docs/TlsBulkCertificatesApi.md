@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 ## `listTlsBulkCerts`
 
 ```javascript
-listTlsBulkCerts({ , [filter_tls_domain_id_match, ][page_number, ][page_size, ][sort] })
+listTlsBulkCerts({ , [filter_tls_domain_id, ][page_number, ][page_size, ][sort] })
 ```
 
 List all certificates.
@@ -96,7 +96,7 @@ List all certificates.
 
 ```javascript
 const options = {
-  filter_tls_domain_id_match: "filter_tls_domain_id_match_example",
+  filter_tls_domain_id: "filter_tls_domain_id_example",
   page_number: 1,
   page_size: 20,
   sort: "created_at",
@@ -115,7 +115,7 @@ apiInstance.listTlsBulkCerts(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**filter_tls_domain_id_match** | **String** | Filter certificates by their matching, fully-qualified domain name. Returns all partial matches. Must provide a value longer than 3 characters. | [optional]
+**filter_tls_domain_id** | **String** | Filter certificates by their matching, fully-qualified domain name. | [optional]
 **page_number** | **Number** | Current page. | [optional]
 **page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
 **sort** | **String** | The order in which to list the results by creation date. | [optional] [one of: "created_at", "-created_at"]

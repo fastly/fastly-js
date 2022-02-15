@@ -13,13 +13,14 @@
 
 
 import ApiClient from "../ApiClient";
+import Backend from '../model/Backend';
 import DirectorResponse from '../model/DirectorResponse';
-import SchemasBackend from '../model/SchemasBackend';
+import InlineResponse200 from '../model/InlineResponse200';
 
 /**
 * Director service.
 * @module api/DirectorApi
-* @version 3.0.0-alpha1
+* @version 3.0.0-beta1
 */
 export default class DirectorApi {
 
@@ -44,7 +45,7 @@ export default class DirectorApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
-     * @param {Array.<module:model/SchemasBackend>} [options.backends] - List of backends associated to a director.
+     * @param {Array.<module:model/Backend>} [options.backends] - List of backends associated to a director.
      * @param {Number} [options.capacity] - Unused.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - Name for the Director.
@@ -100,7 +101,7 @@ export default class DirectorApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
-     * @param {Array.<module:model/SchemasBackend>} [options.backends] - List of backends associated to a director.
+     * @param {Array.<module:model/Backend>} [options.backends] - List of backends associated to a director.
      * @param {Number} [options.capacity] - Unused.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - Name for the Director.
@@ -123,7 +124,7 @@ export default class DirectorApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.director_name - Name for the Director.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     deleteDirectorWithHttpInfo(options = {}) {
       let postBody = null;
@@ -155,7 +156,7 @@ export default class DirectorApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Object;
+      let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/director/{director_name}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -169,7 +170,7 @@ export default class DirectorApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.director_name - Name for the Director.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     deleteDirector(options = {}) {
       return this.deleteDirectorWithHttpInfo(options)
@@ -288,67 +289,6 @@ export default class DirectorApi {
      */
     listDirectors(options = {}) {
       return this.listDirectorsWithHttpInfo(options)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-    /**
-     * Update the director for a particular service and version.
-     * @param {Object} options
-     * @param {String} options.service_id - Alphanumeric string identifying the service.
-     * @param {Number} options.version_id - Integer identifying a service version.
-     * @param {String} options.director_name - Name for the Director.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DirectorResponse} and HTTP response
-     */
-    updateDirectorWithHttpInfo(options = {}) {
-      let postBody = null;
-      // Verify the required parameter 'service_id' is set.
-      if (options['service_id'] === undefined || options['service_id'] === null) {
-        throw new Error("Missing the required parameter 'service_id'.");
-      }
-      // Verify the required parameter 'version_id' is set.
-      if (options['version_id'] === undefined || options['version_id'] === null) {
-        throw new Error("Missing the required parameter 'version_id'.");
-      }
-      // Verify the required parameter 'director_name' is set.
-      if (options['director_name'] === undefined || options['director_name'] === null) {
-        throw new Error("Missing the required parameter 'director_name'.");
-      }
-
-      let pathParams = {
-        'service_id': options['service_id'],
-        'version_id': options['version_id'],
-        'director_name': options['director_name']
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['token'];
-      let contentTypes = ['application/x-www-form-urlencoded'];
-      let accepts = ['application/json'];
-      let returnType = DirectorResponse;
-      return this.apiClient.callApi(
-        '/service/{service_id}/version/{version_id}/director/{director_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Update the director for a particular service and version.
-     * @param {Object} options
-     * @param {String} options.service_id - Alphanumeric string identifying the service.
-     * @param {Number} options.version_id - Integer identifying a service version.
-     * @param {String} options.director_name - Name for the Director.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DirectorResponse}
-     */
-    updateDirector(options = {}) {
-      return this.updateDirectorWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

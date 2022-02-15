@@ -20,7 +20,7 @@ import InvitationsResponse from '../model/InvitationsResponse';
 /**
 * Invitations service.
 * @module api/InvitationsApi
-* @version 3.0.0-alpha1
+* @version 3.0.0-beta1
 */
 export default class InvitationsApi {
 
@@ -58,7 +58,7 @@ export default class InvitationsApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['token'];
       let contentTypes = ['application/vnd.api+json'];
       let accepts = ['application/vnd.api+json'];
       let returnType = InvitationResponse;
@@ -105,7 +105,7 @@ export default class InvitationsApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['token'];
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
@@ -150,7 +150,7 @@ export default class InvitationsApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/vnd.api+json'];
       let returnType = InvitationsResponse;

@@ -17,7 +17,7 @@ import TypeTlsDnsRecord from './TypeTlsDnsRecord';
 /**
  * The RelationshipMemberTlsDnsRecord model module.
  * @module model/RelationshipMemberTlsDnsRecord
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class RelationshipMemberTlsDnsRecord {
     /**
@@ -67,7 +67,6 @@ class RelationshipMemberTlsDnsRecord {
 RelationshipMemberTlsDnsRecord.prototype['type'] = undefined;
 
 /**
- * The IP address or hostname of the DNS record.
  * @member {String} id
  */
 RelationshipMemberTlsDnsRecord.prototype['id'] = undefined;

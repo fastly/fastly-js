@@ -17,7 +17,7 @@ import TypeTlsPrivateKey from './TypeTlsPrivateKey';
 /**
  * The RelationshipMemberTlsPrivateKey model module.
  * @module model/RelationshipMemberTlsPrivateKey
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class RelationshipMemberTlsPrivateKey {
     /**
@@ -67,7 +67,6 @@ class RelationshipMemberTlsPrivateKey {
 RelationshipMemberTlsPrivateKey.prototype['type'] = undefined;
 
 /**
- * Alphanumeric string identifying a private Key.
  * @member {String} id
  */
 RelationshipMemberTlsPrivateKey.prototype['id'] = undefined;

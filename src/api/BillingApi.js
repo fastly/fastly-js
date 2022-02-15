@@ -19,7 +19,7 @@ import BillingResponse from '../model/BillingResponse';
 /**
 * Billing service.
 * @module api/BillingApi
-* @version 3.0.0-alpha1
+* @version 3.0.0-beta1
 */
 export default class BillingApi {
 
@@ -98,7 +98,7 @@ export default class BillingApi {
      * @param {Object} options
      * @param {String} options.customer_id - Alphanumeric string identifying the customer.
      * @param {String} options.invoice_id - Alphanumeric string identifying the invoice.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BillingResponse} and HTTP response
      */
     getInvoiceByIdWithHttpInfo(options = {}) {
       let postBody = null;
@@ -125,7 +125,7 @@ export default class BillingApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json', 'text/csv', 'application/pdf'];
-      let returnType = null;
+      let returnType = BillingResponse;
       return this.apiClient.callApi(
         '/billing/v2/account_customers/{customer_id}/invoices/{invoice_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -138,7 +138,7 @@ export default class BillingApi {
      * @param {Object} options
      * @param {String} options.customer_id - Alphanumeric string identifying the customer.
      * @param {String} options.invoice_id - Alphanumeric string identifying the invoice.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BillingResponse}
      */
     getInvoiceById(options = {}) {
       return this.getInvoiceByIdWithHttpInfo(options)

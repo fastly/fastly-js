@@ -14,12 +14,13 @@
 
 import ApiClient from "../ApiClient";
 import CustomerResponse from '../model/CustomerResponse';
+import InlineResponse200 from '../model/InlineResponse200';
 import SchemasUserResponse from '../model/SchemasUserResponse';
 
 /**
 * Customer service.
 * @module api/CustomerApi
-* @version 3.0.0-alpha1
+* @version 3.0.0-beta1
 */
 export default class CustomerApi {
 
@@ -43,7 +44,7 @@ export default class CustomerApi {
      * Delete a customer.
      * @param {Object} options
      * @param {String} options.customer_id - Alphanumeric string identifying the customer.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     deleteCustomerWithHttpInfo(options = {}) {
       let postBody = null;
@@ -65,7 +66,7 @@ export default class CustomerApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Object;
+      let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/customer/{customer_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -77,7 +78,7 @@ export default class CustomerApi {
      * Delete a customer.
      * @param {Object} options
      * @param {String} options.customer_id - Alphanumeric string identifying the customer.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     deleteCustomer(options = {}) {
       return this.deleteCustomerWithHttpInfo(options)

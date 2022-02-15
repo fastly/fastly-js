@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WafFirewallVersionDataAttributes model module.
  * @module model/WafFirewallVersionDataAttributes
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class WafFirewallVersionDataAttributes {
     /**
@@ -275,7 +275,6 @@ WafFirewallVersionDataAttributes.prototype['max_num_args'] = 255;
 WafFirewallVersionDataAttributes.prototype['notice_anomaly_score'] = 4;
 
 /**
- * Integer identifying a WAF firewall version.
  * @member {Number} number
  */
 WafFirewallVersionDataAttributes.prototype['number'] = undefined;

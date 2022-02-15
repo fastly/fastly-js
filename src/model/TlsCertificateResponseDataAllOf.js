@@ -17,7 +17,7 @@ import Timestamps from './Timestamps';
 /**
  * The TlsCertificateResponseDataAllOf model module.
  * @module model/TlsCertificateResponseDataAllOf
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class TlsCertificateResponseDataAllOf {
     /**
@@ -62,7 +62,6 @@ class TlsCertificateResponseDataAllOf {
 }
 
 /**
- * Alphanumeric string identifying a TLS certificate.
  * @member {String} id
  */
 TlsCertificateResponseDataAllOf.prototype['id'] = undefined;

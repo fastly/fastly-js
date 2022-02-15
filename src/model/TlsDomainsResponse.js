@@ -21,7 +21,7 @@ import TlsDomainsResponseAllOf from './TlsDomainsResponseAllOf';
 /**
  * The TlsDomainsResponse model module.
  * @module model/TlsDomainsResponse
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class TlsDomainsResponse {
     /**

@@ -14,11 +14,12 @@
 
 import ApiClient from "../ApiClient";
 import GzipResponse from '../model/GzipResponse';
+import InlineResponse200 from '../model/InlineResponse200';
 
 /**
 * Gzip service.
 * @module api/GzipApi
-* @version 3.0.0-alpha1
+* @version 3.0.0-beta1
 */
 export default class GzipApi {
 
@@ -110,7 +111,7 @@ export default class GzipApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.gzip_name - Name of the gzip configuration.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     deleteGzipConfigWithHttpInfo(options = {}) {
       let postBody = null;
@@ -142,7 +143,7 @@ export default class GzipApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Object;
+      let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/gzip/{gzip_name}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -156,7 +157,7 @@ export default class GzipApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.gzip_name - Name of the gzip configuration.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     deleteGzipConfig(options = {}) {
       return this.deleteGzipConfigWithHttpInfo(options)

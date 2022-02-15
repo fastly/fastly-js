@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingFtpResponse model module.
  * @module model/LoggingFtpResponse
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class LoggingFtpResponse {
     /**
@@ -111,13 +111,13 @@ class LoggingFtpResponse {
                 obj['user'] = ApiClient.convertToType(data['user'], 'String');
             }
             if (data.hasOwnProperty('created_at')) {
-                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
+                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
             if (data.hasOwnProperty('deleted_at')) {
-                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'String');
+                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'Date');
             }
             if (data.hasOwnProperty('updated_at')) {
-                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'String');
+                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
@@ -172,7 +172,7 @@ LoggingFtpResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 LoggingFtpResponse.prototype['message_type'] = undefined;
 
 /**
- * Date and time in ISO 8601 format.
+ * A timestamp format
  * @member {String} timestamp_format
  */
 LoggingFtpResponse.prototype['timestamp_format'] = undefined;
@@ -249,30 +249,28 @@ LoggingFtpResponse.prototype['user'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} created_at
+ * @member {Date} created_at
  */
 LoggingFtpResponse.prototype['created_at'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} deleted_at
+ * @member {Date} deleted_at
  */
 LoggingFtpResponse.prototype['deleted_at'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} updated_at
+ * @member {Date} updated_at
  */
 LoggingFtpResponse.prototype['updated_at'] = undefined;
 
 /**
- * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
 LoggingFtpResponse.prototype['service_id'] = undefined;
 
 /**
- * Integer identifying a service version.
  * @member {Number} version
  */
 LoggingFtpResponse.prototype['version'] = undefined;
@@ -313,7 +311,7 @@ LoggingFtp.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
  */
 LoggingFtp.prototype['message_type'] = undefined;
 /**
- * Date and time in ISO 8601 format.
+ * A timestamp format
  * @member {String} timestamp_format
  */
 LoggingFtp.prototype['timestamp_format'] = undefined;
@@ -379,27 +377,25 @@ LoggingFtp.prototype['user'] = undefined;
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
- * @member {String} created_at
+ * @member {Date} created_at
  */
 Timestamps.prototype['created_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
- * @member {String} deleted_at
+ * @member {Date} deleted_at
  */
 Timestamps.prototype['deleted_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
- * @member {String} updated_at
+ * @member {Date} updated_at
  */
 Timestamps.prototype['updated_at'] = undefined;
 // Implement ServiceIdAndVersion interface:
 /**
- * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
 ServiceIdAndVersion.prototype['service_id'] = undefined;
 /**
- * Integer identifying a service version.
  * @member {Number} version
  */
 ServiceIdAndVersion.prototype['version'] = undefined;

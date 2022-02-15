@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VersionResponseAllOf model module.
  * @module model/VersionResponseAllOf
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class VersionResponseAllOf {
     /**
@@ -58,7 +58,6 @@ class VersionResponseAllOf {
 }
 
 /**
- * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
 VersionResponseAllOf.prototype['service_id'] = undefined;

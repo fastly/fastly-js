@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The HeaderResponse model module.
  * @module model/HeaderResponse
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class HeaderResponse {
     /**
@@ -99,13 +99,13 @@ class HeaderResponse {
                 obj['version'] = ApiClient.convertToType(data['version'], 'Number');
             }
             if (data.hasOwnProperty('created_at')) {
-                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
+                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
             if (data.hasOwnProperty('deleted_at')) {
-                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'String');
+                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'Date');
             }
             if (data.hasOwnProperty('updated_at')) {
-                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'String');
+                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
         }
         return obj;
@@ -164,6 +164,7 @@ HeaderResponse.prototype['regex'] = undefined;
 HeaderResponse.prototype['request_condition'] = undefined;
 
 /**
+ * Optional name of a response condition to apply.
  * @member {String} response_condition
  */
 HeaderResponse.prototype['response_condition'] = undefined;
@@ -187,32 +188,30 @@ HeaderResponse.prototype['substitution'] = undefined;
 HeaderResponse.prototype['type'] = undefined;
 
 /**
- * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
 HeaderResponse.prototype['service_id'] = undefined;
 
 /**
- * Integer identifying a service version.
  * @member {Number} version
  */
 HeaderResponse.prototype['version'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} created_at
+ * @member {Date} created_at
  */
 HeaderResponse.prototype['created_at'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} deleted_at
+ * @member {Date} deleted_at
  */
 HeaderResponse.prototype['deleted_at'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} updated_at
+ * @member {Date} updated_at
  */
 HeaderResponse.prototype['updated_at'] = undefined;
 
@@ -260,6 +259,7 @@ Header.prototype['regex'] = undefined;
  */
 Header.prototype['request_condition'] = undefined;
 /**
+ * Optional name of a response condition to apply.
  * @member {String} response_condition
  */
 Header.prototype['response_condition'] = undefined;
@@ -280,29 +280,27 @@ Header.prototype['substitution'] = undefined;
 Header.prototype['type'] = undefined;
 // Implement ServiceIdAndVersion interface:
 /**
- * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
 ServiceIdAndVersion.prototype['service_id'] = undefined;
 /**
- * Integer identifying a service version.
  * @member {Number} version
  */
 ServiceIdAndVersion.prototype['version'] = undefined;
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
- * @member {String} created_at
+ * @member {Date} created_at
  */
 Timestamps.prototype['created_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
- * @member {String} deleted_at
+ * @member {Date} deleted_at
  */
 Timestamps.prototype['deleted_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
- * @member {String} updated_at
+ * @member {Date} updated_at
  */
 Timestamps.prototype['updated_at'] = undefined;
 

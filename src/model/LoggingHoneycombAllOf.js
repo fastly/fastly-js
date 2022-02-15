@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingHoneycombAllOf model module.
  * @module model/LoggingHoneycombAllOf
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class LoggingHoneycombAllOf {
     /**
@@ -48,7 +48,7 @@ class LoggingHoneycombAllOf {
             obj = obj || new LoggingHoneycombAllOf();
 
             if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], Object);
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
             if (data.hasOwnProperty('dataset')) {
                 obj['dataset'] = ApiClient.convertToType(data['dataset'], 'String');
@@ -65,7 +65,7 @@ class LoggingHoneycombAllOf {
 
 /**
  * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Honeycomb can ingest.
- * @member {Object} format
+ * @member {String} format
  */
 LoggingHoneycombAllOf.prototype['format'] = undefined;
 

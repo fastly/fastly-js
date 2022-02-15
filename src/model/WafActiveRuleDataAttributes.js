@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import OneOfnumberstring from './OneOfnumberstring';
+import WafRuleRevisionOrLatest from './WafRuleRevisionOrLatest';
 
 /**
  * The WafActiveRuleDataAttributes model module.
  * @module model/WafActiveRuleDataAttributes
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class WafActiveRuleDataAttributes {
     /**
@@ -52,7 +52,7 @@ class WafActiveRuleDataAttributes {
                 obj['modsec_rule_id'] = ApiClient.convertToType(data['modsec_rule_id'], 'Number');
             }
             if (data.hasOwnProperty('revision')) {
-                obj['revision'] = ApiClient.convertToType(data['revision'], OneOfnumberstring);
+                obj['revision'] = WafRuleRevisionOrLatest.constructFromObject(data['revision']);
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -71,7 +71,7 @@ class WafActiveRuleDataAttributes {
 WafActiveRuleDataAttributes.prototype['modsec_rule_id'] = undefined;
 
 /**
- * @member {module:model/OneOfnumberstring} revision
+ * @member {module:model/WafRuleRevisionOrLatest} revision
  */
 WafActiveRuleDataAttributes.prototype['revision'] = undefined;
 

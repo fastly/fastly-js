@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WafTagAttributes model module.
  * @module model/WafTagAttributes
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class WafTagAttributes {
     /**
@@ -58,7 +58,6 @@ class WafTagAttributes {
 }
 
 /**
- * Name of the tag.
  * @member {String} name
  */
 WafTagAttributes.prototype['name'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ServerResponseAllOf model module.
  * @module model/ServerResponseAllOf
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class ServerResponseAllOf {
     /**
@@ -64,19 +64,16 @@ class ServerResponseAllOf {
 }
 
 /**
- * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
 ServerResponseAllOf.prototype['service_id'] = undefined;
 
 /**
- * Alphanumeric string identifying a Server.
  * @member {String} id
  */
 ServerResponseAllOf.prototype['id'] = undefined;
 
 /**
- * Alphanumeric string identifying a Pool.
  * @member {String} pool_id
  */
 ServerResponseAllOf.prototype['pool_id'] = undefined;

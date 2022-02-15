@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**TypeTlsActivation**](TypeTlsActivation.md) |  | [optional] 
 **relationships** | [**RelationshipsForTlsActivation**](RelationshipsForTlsActivation.md) |  | [optional] 
-**id** | **String** | Alphanumeric string identifying a TLS activation. | [optional] [readonly] 
+**id** | **String** |  | [optional] [readonly] 
 **attributes** | [**Timestamps**](Timestamps.md) |  | [optional] 
 
 

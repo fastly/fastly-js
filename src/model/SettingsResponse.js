@@ -18,7 +18,7 @@ import Settings from './Settings';
 /**
  * The SettingsResponse model module.
  * @module model/SettingsResponse
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class SettingsResponse {
     /**
@@ -105,13 +105,11 @@ SettingsResponse.prototype['general.stale_if_error'] = false;
 SettingsResponse.prototype['general.stale_if_error_ttl'] = 43200;
 
 /**
- * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
 SettingsResponse.prototype['service_id'] = undefined;
 
 /**
- * Integer identifying a service version.
  * @member {Number} version
  */
 SettingsResponse.prototype['version'] = undefined;
@@ -142,12 +140,10 @@ Settings.prototype['general.stale_if_error'] = false;
 Settings.prototype['general.stale_if_error_ttl'] = 43200;
 // Implement ServiceIdAndVersion interface:
 /**
- * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
 ServiceIdAndVersion.prototype['service_id'] = undefined;
 /**
- * Integer identifying a service version.
  * @member {Number} version
  */
 ServiceIdAndVersion.prototype['version'] = undefined;

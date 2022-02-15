@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ServiceIdAndVersion model module.
  * @module model/ServiceIdAndVersion
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class ServiceIdAndVersion {
     /**
@@ -61,13 +61,11 @@ class ServiceIdAndVersion {
 }
 
 /**
- * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
 ServiceIdAndVersion.prototype['service_id'] = undefined;
 
 /**
- * Integer identifying a service version.
  * @member {Number} version
  */
 ServiceIdAndVersion.prototype['version'] = undefined;

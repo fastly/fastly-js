@@ -12,16 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-import AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision from './AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision';
 import Timestamps from './Timestamps';
 import TypeWafActiveRule from './TypeWafActiveRule';
 import WafActiveRuleData from './WafActiveRuleData';
 import WafActiveRuleResponseDataAllOf from './WafActiveRuleResponseDataAllOf';
+import WafActiveRuleResponseDataRelationships from './WafActiveRuleResponseDataRelationships';
 
 /**
  * The WafActiveRuleResponseData model module.
  * @module model/WafActiveRuleResponseData
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class WafActiveRuleResponseData {
     /**
@@ -63,7 +63,7 @@ class WafActiveRuleResponseData {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
             }
             if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = ApiClient.convertToType(data['relationships'], AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision);
+                obj['relationships'] = WafActiveRuleResponseDataRelationships.constructFromObject(data['relationships']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -86,12 +86,11 @@ WafActiveRuleResponseData.prototype['type'] = undefined;
 WafActiveRuleResponseData.prototype['attributes'] = undefined;
 
 /**
- * @member {module:model/AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision} relationships
+ * @member {module:model/WafActiveRuleResponseDataRelationships} relationships
  */
 WafActiveRuleResponseData.prototype['relationships'] = undefined;
 
 /**
- * Alphanumeric string identifying a WAF active rule.
  * @member {String} id
  */
 WafActiveRuleResponseData.prototype['id'] = undefined;
@@ -112,7 +111,6 @@ WafActiveRuleData.prototype['attributes'] = undefined;
 WafActiveRuleData.prototype['relationships'] = undefined;
 // Implement WafActiveRuleResponseDataAllOf interface:
 /**
- * Alphanumeric string identifying a WAF active rule.
  * @member {String} id
  */
 WafActiveRuleResponseDataAllOf.prototype['id'] = undefined;
@@ -121,7 +119,7 @@ WafActiveRuleResponseDataAllOf.prototype['id'] = undefined;
  */
 WafActiveRuleResponseDataAllOf.prototype['attributes'] = undefined;
 /**
- * @member {module:model/AnyOfrelationshipWafFirewallVersionrelationshipWafRuleRevision} relationships
+ * @member {module:model/WafActiveRuleResponseDataRelationships} relationships
  */
 WafActiveRuleResponseDataAllOf.prototype['relationships'] = undefined;
 

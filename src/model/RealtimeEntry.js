@@ -17,7 +17,7 @@ import RealtimeMeasurements from './RealtimeMeasurements';
 /**
  * The RealtimeEntry model module.
  * @module model/RealtimeEntry
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class RealtimeEntry {
     /**
@@ -66,11 +66,13 @@ class RealtimeEntry {
 }
 
 /**
+ * The Unix timestamp at which this record's data was generated.
  * @member {Number} recorded
  */
 RealtimeEntry.prototype['recorded'] = undefined;
 
 /**
+ * Aggregates [measurements](#measurements-data-model) across all Fastly POPs.
  * @member {module:model/RealtimeMeasurements} aggregated
  */
 RealtimeEntry.prototype['aggregated'] = undefined;

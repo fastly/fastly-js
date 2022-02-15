@@ -18,7 +18,7 @@ import ServiceCreateAllOf from './ServiceCreateAllOf';
 /**
  * The ServiceCreate model module.
  * @module model/ServiceCreate
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class ServiceCreate {
     /**
@@ -85,7 +85,6 @@ ServiceCreate.prototype['comment'] = undefined;
 ServiceCreate.prototype['name'] = undefined;
 
 /**
- * Alphanumeric string identifying the customer.
  * @member {String} customer_id
  */
 ServiceCreate.prototype['customer_id'] = undefined;
@@ -109,7 +108,6 @@ Service.prototype['comment'] = undefined;
  */
 Service.prototype['name'] = undefined;
 /**
- * Alphanumeric string identifying the customer.
  * @member {String} customer_id
  */
 Service.prototype['customer_id'] = undefined;

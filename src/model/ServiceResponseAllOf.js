@@ -17,7 +17,7 @@ import SchemasVersionResponse from './SchemasVersionResponse';
 /**
  * The ServiceResponseAllOf model module.
  * @module model/ServiceResponseAllOf
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class ServiceResponseAllOf {
     /**
@@ -68,7 +68,6 @@ class ServiceResponseAllOf {
 }
 
 /**
- * Alphanumeric string identifying the service.
  * @member {String} id
  */
 ServiceResponseAllOf.prototype['id'] = undefined;

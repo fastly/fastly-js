@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**TypeWafFirewall**](TypeWafFirewall.md) |  | [optional] 
 **attributes** | [**Timestamps**](Timestamps.md) |  | [optional] 
-**id** | **String** | Alphanumeric string identifying a WAF Firewall. | [optional] [readonly] 
+**id** | **String** |  | [optional] [readonly] 
 **relationships** | [**RelationshipWafFirewallVersions**](RelationshipWafFirewallVersions.md) |  | [optional] 
 
 

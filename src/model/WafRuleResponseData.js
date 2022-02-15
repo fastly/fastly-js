@@ -21,7 +21,7 @@ import WafRuleResponseDataAllOf from './WafRuleResponseDataAllOf';
 /**
  * The WafRuleResponseData model module.
  * @module model/WafRuleResponseData
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class WafRuleResponseData {
     /**
@@ -81,7 +81,6 @@ class WafRuleResponseData {
 WafRuleResponseData.prototype['type'] = undefined;
 
 /**
- * Alphanumeric string identifying a WAF rule.
  * @member {String} id
  */
 WafRuleResponseData.prototype['id'] = undefined;
@@ -103,7 +102,6 @@ WafRuleResponseData.prototype['relationships'] = undefined;
  */
 WafRule.prototype['type'] = undefined;
 /**
- * Alphanumeric string identifying a WAF rule.
  * @member {String} id
  */
 WafRule.prototype['id'] = undefined;

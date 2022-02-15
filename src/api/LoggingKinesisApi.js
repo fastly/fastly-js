@@ -13,6 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
+import InlineResponse200 from '../model/InlineResponse200';
 import LoggingFormatVersion from '../model/LoggingFormatVersion';
 import LoggingKinesisResponse from '../model/LoggingKinesisResponse';
 import LoggingPlacement from '../model/LoggingPlacement';
@@ -20,7 +21,7 @@ import LoggingPlacement from '../model/LoggingPlacement';
 /**
 * LoggingKinesis service.
 * @module api/LoggingKinesisApi
-* @version 3.0.0-alpha1
+* @version 3.0.0-beta1
 */
 export default class LoggingKinesisApi {
 
@@ -48,7 +49,7 @@ export default class LoggingKinesisApi {
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/LoggingPlacement} [options.placement]
      * @param {module:model/LoggingFormatVersion} [options.format_version]
-     * @param {String} [options.format]
+     * @param {String} [options.format='{"timestamp":"%{begin:%Y-%m-%dT%H:%M:%S}t","time_elapsed":"%{time.elapsed.usec}V","is_tls":"%{if(req.is_ssl, \"true\", \"false\")}V","client_ip":"%{req.http.Fastly-Client-IP}V","geo_city":"%{client.geo.city}V","geo_country_code":"%{client.geo.country_code}V","request":"%{req.request}V","host":"%{req.http.Fastly-Orig-Host}V","url":"%{json.escape(req.url)}V","request_referer":"%{json.escape(req.http.Referer)}V","request_user_agent":"%{json.escape(req.http.User-Agent)}V","request_accept_language":"%{json.escape(req.http.Accept-Language)}V","request_accept_charset":"%{json.escape(req.http.Accept-Charset)}V","cache_status":"%{regsub(fastly_info.state, \"^(HIT-(SYNTH)|(HITPASS|HIT|MISS|PASS|ERROR|PIPE)).*\", \"\\2\\3\") }V"}'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Kinesis can ingest.
      * @param {String} [options.topic] - The Amazon Kinesis stream to send logs to. Required.
      * @param {module:model/String} [options.region] - The [AWS region](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints) to stream logs to.
      * @param {String} [options.secret_key] - The secret key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
@@ -106,7 +107,7 @@ export default class LoggingKinesisApi {
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/LoggingPlacement} [options.placement]
      * @param {module:model/LoggingFormatVersion} [options.format_version]
-     * @param {String} [options.format]
+     * @param {String} [options.format='{"timestamp":"%{begin:%Y-%m-%dT%H:%M:%S}t","time_elapsed":"%{time.elapsed.usec}V","is_tls":"%{if(req.is_ssl, \"true\", \"false\")}V","client_ip":"%{req.http.Fastly-Client-IP}V","geo_city":"%{client.geo.city}V","geo_country_code":"%{client.geo.country_code}V","request":"%{req.request}V","host":"%{req.http.Fastly-Orig-Host}V","url":"%{json.escape(req.url)}V","request_referer":"%{json.escape(req.http.Referer)}V","request_user_agent":"%{json.escape(req.http.User-Agent)}V","request_accept_language":"%{json.escape(req.http.Accept-Language)}V","request_accept_charset":"%{json.escape(req.http.Accept-Charset)}V","cache_status":"%{regsub(fastly_info.state, \"^(HIT-(SYNTH)|(HITPASS|HIT|MISS|PASS|ERROR|PIPE)).*\", \"\\2\\3\") }V"}'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Kinesis can ingest.
      * @param {String} [options.topic] - The Amazon Kinesis stream to send logs to. Required.
      * @param {module:model/String} [options.region] - The [AWS region](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints) to stream logs to.
      * @param {String} [options.secret_key] - The secret key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
@@ -127,7 +128,7 @@ export default class LoggingKinesisApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.logging_kinesis_name - The name for the real-time logging configuration.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     deleteLogKinesisWithHttpInfo(options = {}) {
       let postBody = null;
@@ -159,7 +160,7 @@ export default class LoggingKinesisApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Object;
+      let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/kinesis/{logging_kinesis_name}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -173,7 +174,7 @@ export default class LoggingKinesisApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.logging_kinesis_name - The name for the real-time logging configuration.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     deleteLogKinesis(options = {}) {
       return this.deleteLogKinesisWithHttpInfo(options)
@@ -292,67 +293,6 @@ export default class LoggingKinesisApi {
      */
     listLogKinesis(options = {}) {
       return this.listLogKinesisWithHttpInfo(options)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-    /**
-     * Update an Amazon Kinesis Data Streams logging object for a particular service and version.
-     * @param {Object} options
-     * @param {String} options.service_id - Alphanumeric string identifying the service.
-     * @param {Number} options.version_id - Integer identifying a service version.
-     * @param {String} options.logging_kinesis_name - The name for the real-time logging configuration.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingKinesisResponse} and HTTP response
-     */
-    updateLogKinesisWithHttpInfo(options = {}) {
-      let postBody = null;
-      // Verify the required parameter 'service_id' is set.
-      if (options['service_id'] === undefined || options['service_id'] === null) {
-        throw new Error("Missing the required parameter 'service_id'.");
-      }
-      // Verify the required parameter 'version_id' is set.
-      if (options['version_id'] === undefined || options['version_id'] === null) {
-        throw new Error("Missing the required parameter 'version_id'.");
-      }
-      // Verify the required parameter 'logging_kinesis_name' is set.
-      if (options['logging_kinesis_name'] === undefined || options['logging_kinesis_name'] === null) {
-        throw new Error("Missing the required parameter 'logging_kinesis_name'.");
-      }
-
-      let pathParams = {
-        'service_id': options['service_id'],
-        'version_id': options['version_id'],
-        'logging_kinesis_name': options['logging_kinesis_name']
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['token'];
-      let contentTypes = ['application/x-www-form-urlencoded'];
-      let accepts = ['application/json'];
-      let returnType = LoggingKinesisResponse;
-      return this.apiClient.callApi(
-        '/service/{service_id}/version/{version_id}/logging/kinesis/{logging_kinesis_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Update an Amazon Kinesis Data Streams logging object for a particular service and version.
-     * @param {Object} options
-     * @param {String} options.service_id - Alphanumeric string identifying the service.
-     * @param {Number} options.version_id - Integer identifying a service version.
-     * @param {String} options.logging_kinesis_name - The name for the real-time logging configuration.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingKinesisResponse}
-     */
-    updateLogKinesis(options = {}) {
-      return this.updateLogKinesisWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

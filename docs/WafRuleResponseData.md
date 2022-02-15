@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**TypeWafRule**](TypeWafRule.md) |  | [optional] 
-**id** | **String** | Alphanumeric string identifying a WAF rule. | [optional] [readonly] 
+**id** | **String** |  | [optional] [readonly] 
 **attributes** | [**WafRuleAttributes**](WafRuleAttributes.md) |  | [optional] 
 **relationships** | [**RelationshipsForWafRule**](RelationshipsForWafRule.md) |  | [optional] 
 

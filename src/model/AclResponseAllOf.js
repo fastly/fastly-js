@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AclResponseAllOf model module.
  * @module model/AclResponseAllOf
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class AclResponseAllOf {
     /**
@@ -58,7 +58,6 @@ class AclResponseAllOf {
 }
 
 /**
- * Alphanumeric string identifying a ACL.
  * @member {String} id
  */
 AclResponseAllOf.prototype['id'] = undefined;

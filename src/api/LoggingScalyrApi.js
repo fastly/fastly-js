@@ -13,12 +13,13 @@
 
 
 import ApiClient from "../ApiClient";
+import InlineResponse200 from '../model/InlineResponse200';
 import LoggingScalyrResponse from '../model/LoggingScalyrResponse';
 
 /**
 * LoggingScalyr service.
 * @module api/LoggingScalyrApi
-* @version 3.0.0-alpha1
+* @version 3.0.0-beta1
 */
 export default class LoggingScalyrApi {
 
@@ -122,7 +123,7 @@ export default class LoggingScalyrApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.logging_scalyr_name - The name for the real-time logging configuration.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     deleteLogScalyrWithHttpInfo(options = {}) {
       let postBody = null;
@@ -154,7 +155,7 @@ export default class LoggingScalyrApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Object;
+      let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/scalyr/{logging_scalyr_name}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -168,7 +169,7 @@ export default class LoggingScalyrApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.logging_scalyr_name - The name for the real-time logging configuration.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     deleteLogScalyr(options = {}) {
       return this.deleteLogScalyrWithHttpInfo(options)

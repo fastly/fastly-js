@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PoolResponseAllOf model module.
  * @module model/PoolResponseAllOf
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class PoolResponseAllOf {
     /**
@@ -58,7 +58,6 @@ class PoolResponseAllOf {
 }
 
 /**
- * Alphanumeric string identifying a Pool.
  * @member {String} id
  */
 PoolResponseAllOf.prototype['id'] = undefined;

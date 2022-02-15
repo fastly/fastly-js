@@ -15,12 +15,12 @@ import ApiClient from '../ApiClient';
 import BackendResponse from './BackendResponse';
 import CacheSettingResponse from './CacheSettingResponse';
 import ConditionResponse from './ConditionResponse';
+import Director from './Director';
 import DomainResponse from './DomainResponse';
 import GzipResponse from './GzipResponse';
 import HeaderResponse from './HeaderResponse';
 import HealthcheckResponse from './HealthcheckResponse';
 import ResponseObjectResponse from './ResponseObjectResponse';
-import SchemasDirector from './SchemasDirector';
 import SchemasRequestSettingsResponse from './SchemasRequestSettingsResponse';
 import SchemasSnippetResponse from './SchemasSnippetResponse';
 import SchemasVclResponse from './SchemasVclResponse';
@@ -29,7 +29,7 @@ import Settings from './Settings';
 /**
  * The VersionDetail model module.
  * @module model/VersionDetail
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class VersionDetail {
     /**
@@ -70,7 +70,7 @@ class VersionDetail {
                 obj['conditions'] = ApiClient.convertToType(data['conditions'], [ConditionResponse]);
             }
             if (data.hasOwnProperty('directors')) {
-                obj['directors'] = ApiClient.convertToType(data['directors'], [SchemasDirector]);
+                obj['directors'] = ApiClient.convertToType(data['directors'], [Director]);
             }
             if (data.hasOwnProperty('domains')) {
                 obj['domains'] = ApiClient.convertToType(data['domains'], [DomainResponse]);
@@ -129,7 +129,7 @@ VersionDetail.prototype['conditions'] = undefined;
 
 /**
  * List of directors associated to this service.
- * @member {Array.<module:model/SchemasDirector>} directors
+ * @member {Array.<module:model/Director>} directors
  */
 VersionDetail.prototype['directors'] = undefined;
 
@@ -170,6 +170,7 @@ VersionDetail.prototype['request_settings'] = undefined;
 VersionDetail.prototype['response_objects'] = undefined;
 
 /**
+ * List of default settings for this service.
  * @member {module:model/Settings} settings
  */
 VersionDetail.prototype['settings'] = undefined;

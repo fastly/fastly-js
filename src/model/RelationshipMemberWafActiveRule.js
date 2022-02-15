@@ -17,7 +17,7 @@ import TypeWafActiveRule from './TypeWafActiveRule';
 /**
  * The RelationshipMemberWafActiveRule model module.
  * @module model/RelationshipMemberWafActiveRule
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class RelationshipMemberWafActiveRule {
     /**
@@ -67,7 +67,6 @@ class RelationshipMemberWafActiveRule {
 RelationshipMemberWafActiveRule.prototype['type'] = undefined;
 
 /**
- * Alphanumeric string identifying a WAF active rule.
  * @member {String} id
  */
 RelationshipMemberWafActiveRule.prototype['id'] = undefined;

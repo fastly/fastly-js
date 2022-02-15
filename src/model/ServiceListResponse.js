@@ -20,7 +20,7 @@ import Timestamps from './Timestamps';
 /**
  * The ServiceListResponse model module.
  * @module model/ServiceListResponse
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class ServiceListResponse {
     /**
@@ -58,13 +58,13 @@ class ServiceListResponse {
             ServiceListResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('created_at')) {
-                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
+                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
             if (data.hasOwnProperty('deleted_at')) {
-                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'String');
+                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'Date');
             }
             if (data.hasOwnProperty('updated_at')) {
-                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'String');
+                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
@@ -96,19 +96,19 @@ class ServiceListResponse {
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} created_at
+ * @member {Date} created_at
  */
 ServiceListResponse.prototype['created_at'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} deleted_at
+ * @member {Date} deleted_at
  */
 ServiceListResponse.prototype['deleted_at'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} updated_at
+ * @member {Date} updated_at
  */
 ServiceListResponse.prototype['updated_at'] = undefined;
 
@@ -125,7 +125,6 @@ ServiceListResponse.prototype['comment'] = undefined;
 ServiceListResponse.prototype['name'] = undefined;
 
 /**
- * Alphanumeric string identifying the customer.
  * @member {String} customer_id
  */
 ServiceListResponse.prototype['customer_id'] = undefined;
@@ -137,7 +136,6 @@ ServiceListResponse.prototype['customer_id'] = undefined;
 ServiceListResponse.prototype['type'] = undefined;
 
 /**
- * Alphanumeric string identifying the service.
  * @member {String} id
  */
 ServiceListResponse.prototype['id'] = undefined;
@@ -158,17 +156,17 @@ ServiceListResponse.prototype['versions'] = undefined;
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
- * @member {String} created_at
+ * @member {Date} created_at
  */
 Timestamps.prototype['created_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
- * @member {String} deleted_at
+ * @member {Date} deleted_at
  */
 Timestamps.prototype['deleted_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
- * @member {String} updated_at
+ * @member {Date} updated_at
  */
 Timestamps.prototype['updated_at'] = undefined;
 // Implement ServiceCreate interface:
@@ -183,7 +181,6 @@ ServiceCreate.prototype['comment'] = undefined;
  */
 ServiceCreate.prototype['name'] = undefined;
 /**
- * Alphanumeric string identifying the customer.
  * @member {String} customer_id
  */
 ServiceCreate.prototype['customer_id'] = undefined;
@@ -194,7 +191,6 @@ ServiceCreate.prototype['customer_id'] = undefined;
 ServiceCreate.prototype['type'] = undefined;
 // Implement ServiceListResponseAllOf interface:
 /**
- * Alphanumeric string identifying the service.
  * @member {String} id
  */
 ServiceListResponseAllOf.prototype['id'] = undefined;

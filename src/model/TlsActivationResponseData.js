@@ -21,7 +21,7 @@ import TypeTlsActivation from './TypeTlsActivation';
 /**
  * The TlsActivationResponseData model module.
  * @module model/TlsActivationResponseData
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class TlsActivationResponseData {
     /**
@@ -86,7 +86,6 @@ TlsActivationResponseData.prototype['type'] = undefined;
 TlsActivationResponseData.prototype['relationships'] = undefined;
 
 /**
- * Alphanumeric string identifying a TLS activation.
  * @member {String} id
  */
 TlsActivationResponseData.prototype['id'] = undefined;
@@ -108,7 +107,6 @@ TlsActivationData.prototype['type'] = undefined;
 TlsActivationData.prototype['relationships'] = undefined;
 // Implement TlsActivationResponseDataAllOf interface:
 /**
- * Alphanumeric string identifying a TLS activation.
  * @member {String} id
  */
 TlsActivationResponseDataAllOf.prototype['id'] = undefined;

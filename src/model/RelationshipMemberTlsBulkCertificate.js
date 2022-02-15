@@ -17,7 +17,7 @@ import TypeTlsBulkCertificate from './TypeTlsBulkCertificate';
 /**
  * The RelationshipMemberTlsBulkCertificate model module.
  * @module model/RelationshipMemberTlsBulkCertificate
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class RelationshipMemberTlsBulkCertificate {
     /**
@@ -67,7 +67,6 @@ class RelationshipMemberTlsBulkCertificate {
 RelationshipMemberTlsBulkCertificate.prototype['type'] = undefined;
 
 /**
- * Alphanumeric string identifying a TLS bulk certificate.
  * @member {String} id
  */
 RelationshipMemberTlsBulkCertificate.prototype['id'] = undefined;

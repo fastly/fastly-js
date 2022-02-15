@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import Timestamps from './Timestamps';
+import BillingResponseLineItem from './BillingResponseLineItem';
 
 /**
  * The BillingResponseAllOf model module.
  * @module model/BillingResponseAllOf
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class BillingResponseAllOf {
     /**
@@ -49,7 +49,7 @@ class BillingResponseAllOf {
             obj = obj || new BillingResponseAllOf();
 
             if (data.hasOwnProperty('line_items')) {
-                obj['line_items'] = ApiClient.convertToType(data['line_items'], [Timestamps]);
+                obj['line_items'] = ApiClient.convertToType(data['line_items'], [BillingResponseLineItem]);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class BillingResponseAllOf {
 }
 
 /**
- * @member {Array.<module:model/Timestamps>} line_items
+ * @member {Array.<module:model/BillingResponseLineItem>} line_items
  */
 BillingResponseAllOf.prototype['line_items'] = undefined;
 

@@ -11,10 +11,10 @@ Name | Type | Description | Notes
 **number** | **Number** | The number of this version. | [optional] [readonly] 
 **staging** | **Boolean** | Unused at this time. | [optional]  [defaults to false]
 **testing** | **Boolean** | Unused at this time. | [optional]  [defaults to false]
-**created_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**deleted_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**updated_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**service_id** | **String** | Alphanumeric string identifying the service. | [optional] [readonly] 
+**created_at** | **Date** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**deleted_at** | **Date** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**updated_at** | **Date** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**service_id** | **String** |  | [optional] [readonly] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

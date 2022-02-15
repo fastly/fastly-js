@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Header model module.
  * @module model/Header
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class Header {
     /**
@@ -140,6 +140,7 @@ Header.prototype['regex'] = undefined;
 Header.prototype['request_condition'] = undefined;
 
 /**
+ * Optional name of a response condition to apply.
  * @member {String} response_condition
  */
 Header.prototype['response_condition'] = undefined;

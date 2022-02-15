@@ -14,14 +14,14 @@
 import ApiClient from '../ApiClient';
 import Billing from './Billing';
 import BillingResponseAllOf from './BillingResponseAllOf';
+import BillingResponseLineItem from './BillingResponseLineItem';
 import BillingStatus from './BillingStatus';
 import BillingTotal from './BillingTotal';
-import Timestamps from './Timestamps';
 
 /**
  * The BillingResponse model module.
  * @module model/BillingResponse
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class BillingResponse {
     /**
@@ -57,10 +57,10 @@ class BillingResponse {
             BillingResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('end_time')) {
-                obj['end_time'] = ApiClient.convertToType(data['end_time'], 'String');
+                obj['end_time'] = ApiClient.convertToType(data['end_time'], 'Date');
             }
             if (data.hasOwnProperty('start_time')) {
-                obj['start_time'] = ApiClient.convertToType(data['start_time'], 'String');
+                obj['start_time'] = ApiClient.convertToType(data['start_time'], 'Date');
             }
             if (data.hasOwnProperty('invoice_id')) {
                 obj['invoice_id'] = ApiClient.convertToType(data['invoice_id'], 'String');
@@ -78,7 +78,7 @@ class BillingResponse {
                 obj['regions'] = ApiClient.convertToType(data['regions'], {'String': {'String': Object}});
             }
             if (data.hasOwnProperty('line_items')) {
-                obj['line_items'] = ApiClient.convertToType(data['line_items'], [Timestamps]);
+                obj['line_items'] = ApiClient.convertToType(data['line_items'], [BillingResponseLineItem]);
             }
         }
         return obj;
@@ -89,24 +89,22 @@ class BillingResponse {
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} end_time
+ * @member {Date} end_time
  */
 BillingResponse.prototype['end_time'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} start_time
+ * @member {Date} start_time
  */
 BillingResponse.prototype['start_time'] = undefined;
 
 /**
- * Alphanumeric string identifying the invoice.
  * @member {String} invoice_id
  */
 BillingResponse.prototype['invoice_id'] = undefined;
 
 /**
- * Alphanumeric string identifying the customer.
  * @member {String} customer_id
  */
 BillingResponse.prototype['customer_id'] = undefined;
@@ -127,7 +125,7 @@ BillingResponse.prototype['total'] = undefined;
 BillingResponse.prototype['regions'] = undefined;
 
 /**
- * @member {Array.<module:model/Timestamps>} line_items
+ * @member {Array.<module:model/BillingResponseLineItem>} line_items
  */
 BillingResponse.prototype['line_items'] = undefined;
 
@@ -135,21 +133,19 @@ BillingResponse.prototype['line_items'] = undefined;
 // Implement Billing interface:
 /**
  * Date and time in ISO 8601 format.
- * @member {String} end_time
+ * @member {Date} end_time
  */
 Billing.prototype['end_time'] = undefined;
 /**
  * Date and time in ISO 8601 format.
- * @member {String} start_time
+ * @member {Date} start_time
  */
 Billing.prototype['start_time'] = undefined;
 /**
- * Alphanumeric string identifying the invoice.
  * @member {String} invoice_id
  */
 Billing.prototype['invoice_id'] = undefined;
 /**
- * Alphanumeric string identifying the customer.
  * @member {String} customer_id
  */
 Billing.prototype['customer_id'] = undefined;
@@ -167,7 +163,7 @@ Billing.prototype['total'] = undefined;
 Billing.prototype['regions'] = undefined;
 // Implement BillingResponseAllOf interface:
 /**
- * @member {Array.<module:model/Timestamps>} line_items
+ * @member {Array.<module:model/BillingResponseLineItem>} line_items
  */
 BillingResponseAllOf.prototype['line_items'] = undefined;
 

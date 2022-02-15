@@ -17,7 +17,7 @@ import Timestamps from './Timestamps';
 /**
  * The ServiceAuthorizationResponseDataAllOf model module.
  * @module model/ServiceAuthorizationResponseDataAllOf
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class ServiceAuthorizationResponseDataAllOf {
     /**
@@ -62,7 +62,6 @@ class ServiceAuthorizationResponseDataAllOf {
 }
 
 /**
- * Alphanumeric string identifying a service authorization.
  * @member {String} id
  */
 ServiceAuthorizationResponseDataAllOf.prototype['id'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UserResponseAllOf model module.
  * @module model/UserResponseAllOf
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class UserResponseAllOf {
     /**
@@ -64,7 +64,6 @@ class UserResponseAllOf {
 }
 
 /**
- * Alphanumeric string identifying the user.
  * @member {String} id
  */
 UserResponseAllOf.prototype['id'] = undefined;
@@ -76,7 +75,6 @@ UserResponseAllOf.prototype['id'] = undefined;
 UserResponseAllOf.prototype['email_hash'] = undefined;
 
 /**
- * Alphanumeric string identifying the customer.
  * @member {String} customer_id
  */
 UserResponseAllOf.prototype['customer_id'] = undefined;

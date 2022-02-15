@@ -17,7 +17,7 @@ import RelationshipTlsDomainTlsDomain from './RelationshipTlsDomainTlsDomain';
 /**
  * The RelationshipCommonName model module.
  * @module model/RelationshipCommonName
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class RelationshipCommonName {
     /**
