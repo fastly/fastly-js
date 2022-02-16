@@ -2,9 +2,12 @@
 
 An asynchronous JavaScript client library for interacting with most facets of the [Fastly API](https://developer.fastly.com/reference/api).
 
-> ⚠️ This client library  is an early-access release. Features may change without notice. Use at your own risk.
+> ⚠️ This client library (`3.0.0-beta1`)  is an early-access release. Features may change without notice. Use at your own risk.
 
 **We strongly recommend that you do not install alpha and beta releases on live production services.** No official support is provided for such releases. Please try out the library in a test environment, see what breaks without worrying about consequences, and give us [feedback](#issues).
+
+See [Fastly Product Lifecycle](https://docs.fastly.com/products/fastly-product-lifecycle) for details.
+
 
 ## Usage
 

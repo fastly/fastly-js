@@ -325,8 +325,6 @@ import ResponseObjectResponse from './model/ResponseObjectResponse';
 import Results from './model/Results';
 import RoleUser from './model/RoleUser';
 import SchemasContactResponse from './model/SchemasContactResponse';
-import SchemasRequestSettings from './model/SchemasRequestSettings';
-import SchemasRequestSettingsResponse from './model/SchemasRequestSettingsResponse';
 import SchemasSnippetResponse from './model/SchemasSnippetResponse';
 import SchemasUserResponse from './model/SchemasUserResponse';
 import SchemasVclResponse from './model/SchemasVclResponse';
@@ -2525,18 +2523,6 @@ export {
      * @property {module:model/SchemasContactResponse}
      */
     SchemasContactResponse,
-
-    /**
-     * The SchemasRequestSettings model constructor.
-     * @property {module:model/SchemasRequestSettings}
-     */
-    SchemasRequestSettings,
-
-    /**
-     * The SchemasRequestSettingsResponse model constructor.
-     * @property {module:model/SchemasRequestSettingsResponse}
-     */
-    SchemasRequestSettingsResponse,
 
     /**
      * The SchemasSnippetResponse model constructor.

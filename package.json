@@ -6,7 +6,8 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src -d dist",
-    "prepack": "npm run build"
+    "prepack": "npm run build",
+    "test": "echo \"No test specified\""
   },
   "browser": {
     "fs": false
