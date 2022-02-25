@@ -7,13 +7,52 @@ const apiInstance = new Fastly.TlsSubscriptionsApi();
 
 Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
+[**createGlobalsignEmailChallenge**](TlsSubscriptionsApi.md#createGlobalsignEmailChallenge) | **POST** /tls/subscriptions/{tls_subscription_id}/authorizations/{tls_authorization_id}/globalsign_email_challenges | Creates a GlobalSign email challenge.
 [**createTlsSub**](TlsSubscriptionsApi.md#createTlsSub) | **POST** /tls/subscriptions | Create a TLS subscription
+[**deleteGlobalsignEmailChallenge**](TlsSubscriptionsApi.md#deleteGlobalsignEmailChallenge) | **DELETE** /tls/subscriptions/{tls_subscription_id}/authorizations/{tls_authorization_id}/globalsign_email_challenges/{globalsign_email_challenge_id} | Delete a GlobalSign email challenge
 [**deleteTlsSub**](TlsSubscriptionsApi.md#deleteTlsSub) | **DELETE** /tls/subscriptions/{tls_subscription_id} | Delete a TLS subscription
-[**deleteTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallengesGlobalsignEmailChallengeId**](TlsSubscriptionsApi.md#deleteTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallengesGlobalsignEmailChallengeId) | **DELETE** /tls/subscriptions/{tls_subscription_id}/authorizations/{tls_authorization_id}/globalsign_email_challenges/{globalsign_email_challenge_id} | Delete a GlobalSign email challenge
 [**getTlsSub**](TlsSubscriptionsApi.md#getTlsSub) | **GET** /tls/subscriptions/{tls_subscription_id} | Get a TLS subscription
 [**listTlsSubs**](TlsSubscriptionsApi.md#listTlsSubs) | **GET** /tls/subscriptions | List TLS subscriptions
 [**patchTlsSub**](TlsSubscriptionsApi.md#patchTlsSub) | **PATCH** /tls/subscriptions/{tls_subscription_id} | Update a TLS subscription
-[**postTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallenges**](TlsSubscriptionsApi.md#postTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallenges) | **POST** /tls/subscriptions/{tls_subscription_id}/authorizations/{tls_authorization_id}/globalsign_email_challenges | Creates a GlobalSign email challenge.
+
+
+## `createGlobalsignEmailChallenge`
+
+```javascript
+createGlobalsignEmailChallenge({ tls_subscription_id, tls_authorization_id, [request_body] })
+```
+
+Creates an email challenge for domain on a GlobalSign subscription. An email challenge will generate an email that can be used to validate domain ownership. If this challenge is created, then the domain can only be validated using email for the given subscription.
+
+### Example
+
+```javascript
+const options = {
+  tls_subscription_id: "tls_subscription_id_example", // required
+  tls_authorization_id: "tls_authorization_id_example", // required
+  request_body: {"data":{"type":"globalsign_email_challenge","attributes":{"preferred_email":"admin@example.com"}}},
+};
+
+apiInstance.createGlobalsignEmailChallenge(options)
+  .then((data) => {
+    console.log(data, "API called successfully.");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**tls_subscription_id** | **String** |  |
+**tls_authorization_id** | **String** |  |
+**request_body** | [**{String: Object}**](Object.md) |  | [optional]
+
+### Return type
+
+**Object**
 
 
 ## `createTlsSub`
@@ -53,6 +92,45 @@ Name | Type | Description  | Notes
 [**TlsSubscriptionResponse**](TlsSubscriptionResponse.md)
 
 
+## `deleteGlobalsignEmailChallenge`
+
+```javascript
+deleteGlobalsignEmailChallenge({ tls_subscription_id, globalsign_email_challenge_id, tls_authorization_id })
+```
+
+Deletes a GlobalSign email challenge. After a GlobalSign email challenge is deleted, the domain can use HTTP and DNS validation methods again.
+
+### Example
+
+```javascript
+const options = {
+  tls_subscription_id: "tls_subscription_id_example", // required
+  globalsign_email_challenge_id: "globalsign_email_challenge_id_example", // required
+  tls_authorization_id: "tls_authorization_id_example", // required
+};
+
+apiInstance.deleteGlobalsignEmailChallenge(options)
+  .then(() => {
+    console.log('API called successfully.');
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**tls_subscription_id** | **String** |  |
+**globalsign_email_challenge_id** | **String** |  |
+**tls_authorization_id** | **String** |  |
+
+### Return type
+
+null (empty response body)
+
+
 ## `deleteTlsSub`
 
 ```javascript
@@ -82,45 +160,6 @@ apiInstance.deleteTlsSub(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **tls_subscription_id** | **String** | Alphanumeric string identifying a TLS subscription. |
-
-### Return type
-
-null (empty response body)
-
-
-## `deleteTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallengesGlobalsignEmailChallengeId`
-
-```javascript
-deleteTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallengesGlobalsignEmailChallengeId({ tls_subscription_id, globalsign_email_challenge_id, tls_authorization_id })
-```
-
-Deletes a GlobalSign email challenge. After a GlobalSign email challenge is deleted, the domain can use HTTP and DNS validation methods again.
-
-### Example
-
-```javascript
-const options = {
-  tls_subscription_id: "tls_subscription_id_example", // required
-  globalsign_email_challenge_id: "globalsign_email_challenge_id_example", // required
-  tls_authorization_id: "tls_authorization_id_example", // required
-};
-
-apiInstance.deleteTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallengesGlobalsignEmailChallengeId(options)
-  .then(() => {
-    console.log('API called successfully.');
-  })
-  .catch((error) => {
-    console.error(error);
-  });
-```
-
-### Options
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**tls_subscription_id** | **String** |  |
-**globalsign_email_challenge_id** | **String** |  |
-**tls_authorization_id** | **String** |  |
 
 ### Return type
 
@@ -248,45 +287,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TlsSubscriptionResponse**](TlsSubscriptionResponse.md)
-
-
-## `postTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallenges`
-
-```javascript
-postTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallenges({ tls_subscription_id, tls_authorization_id, [body] })
-```
-
-Creates an email challenge for domain on a GlobalSign subscription. An email challenge will generate an email that can be used to validate domain ownership. If this challenge is created, then the domain can only be validated using email for the given subscription.
-
-### Example
-
-```javascript
-const options = {
-  tls_subscription_id: "tls_subscription_id_example", // required
-  tls_authorization_id: "tls_authorization_id_example", // required
-  body: {"data":{"type":"globalsign_email_challenge","attributes":{"preferred_email":"admin@example.com"}}},
-};
-
-apiInstance.postTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallenges(options)
-  .then((data) => {
-    console.log(data, "API called successfully.");
-  })
-  .catch((error) => {
-    console.error(error);
-  });
-```
-
-### Options
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**tls_subscription_id** | **String** |  |
-**tls_authorization_id** | **String** |  |
-**body** | **Object** |  | [optional]
-
-### Return type
-
-**Object**
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

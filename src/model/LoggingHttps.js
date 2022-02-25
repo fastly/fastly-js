@@ -21,7 +21,7 @@ import LoggingTlsCommon from './LoggingTlsCommon';
 /**
  * The LoggingHttps model module.
  * @module model/LoggingHttps
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class LoggingHttps {
     /**

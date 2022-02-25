@@ -22,7 +22,7 @@ import WafFirewallsResponseAllOf from './WafFirewallsResponseAllOf';
 /**
  * The WafFirewallsResponse model module.
  * @module model/WafFirewallsResponse
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class WafFirewallsResponse {
     /**

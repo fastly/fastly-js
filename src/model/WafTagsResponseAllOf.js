@@ -13,12 +13,12 @@
 
 import ApiClient from '../ApiClient';
 import WafRule from './WafRule';
-import WafTag from './WafTag';
+import WafTagsResponseDataItem from './WafTagsResponseDataItem';
 
 /**
  * The WafTagsResponseAllOf model module.
  * @module model/WafTagsResponseAllOf
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class WafTagsResponseAllOf {
     /**
@@ -50,7 +50,7 @@ class WafTagsResponseAllOf {
             obj = obj || new WafTagsResponseAllOf();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [WafTag]);
+                obj['data'] = ApiClient.convertToType(data['data'], [WafTagsResponseDataItem]);
             }
             if (data.hasOwnProperty('included')) {
                 obj['included'] = ApiClient.convertToType(data['included'], [WafRule]);
@@ -63,7 +63,7 @@ class WafTagsResponseAllOf {
 }
 
 /**
- * @member {Array.<module:model/WafTag>} data
+ * @member {Array.<module:model/WafTagsResponseDataItem>} data
  */
 WafTagsResponseAllOf.prototype['data'] = undefined;
 

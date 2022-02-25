@@ -17,7 +17,7 @@ import TlsActivationResponseData from './TlsActivationResponseData';
 /**
  * The TlsActivationsResponseAllOf model module.
  * @module model/TlsActivationsResponseAllOf
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class TlsActivationsResponseAllOf {
     /**

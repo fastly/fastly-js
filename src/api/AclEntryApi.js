@@ -13,15 +13,15 @@
 
 
 import ApiClient from "../ApiClient";
-import AclEntries from '../model/AclEntries';
 import AclEntry from '../model/AclEntry';
 import AclEntryResponse from '../model/AclEntryResponse';
+import BulkUpdateAclEntriesRequest from '../model/BulkUpdateAclEntriesRequest';
 import InlineResponse200 from '../model/InlineResponse200';
 
 /**
 * AclEntry service.
 * @module api/AclEntryApi
-* @version 3.0.0-beta1
+* @version 3.0.0-beta2
 */
 export default class AclEntryApi {
 
@@ -46,11 +46,11 @@ export default class AclEntryApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.acl_id - Alphanumeric string identifying a ACL.
-     * @param {module:model/AclEntries} [options.acl_entries]
+     * @param {module:model/BulkUpdateAclEntriesRequest} [options.bulk_update_acl_entries_request]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     bulkUpdateAclEntriesWithHttpInfo(options = {}) {
-      let postBody = options['acl_entries'];
+      let postBody = options['bulk_update_acl_entries_request'];
       // Verify the required parameter 'service_id' is set.
       if (options['service_id'] === undefined || options['service_id'] === null) {
         throw new Error("Missing the required parameter 'service_id'.");
@@ -87,7 +87,7 @@ export default class AclEntryApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.acl_id - Alphanumeric string identifying a ACL.
-     * @param {module:model/AclEntries} [options.acl_entries]
+     * @param {module:model/BulkUpdateAclEntriesRequest} [options.bulk_update_acl_entries_request]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     bulkUpdateAclEntries(options = {}) {

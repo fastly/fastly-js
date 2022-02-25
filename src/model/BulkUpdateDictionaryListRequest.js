@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import DictionaryItem from './DictionaryItem';
+import BulkUpdateDictionaryItem from './BulkUpdateDictionaryItem';
 
 /**
  * The BulkUpdateDictionaryListRequest model module.
  * @module model/BulkUpdateDictionaryListRequest
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class BulkUpdateDictionaryListRequest {
     /**
@@ -49,7 +49,7 @@ class BulkUpdateDictionaryListRequest {
             obj = obj || new BulkUpdateDictionaryListRequest();
 
             if (data.hasOwnProperty('items')) {
-                obj['items'] = ApiClient.convertToType(data['items'], [DictionaryItem]);
+                obj['items'] = ApiClient.convertToType(data['items'], [BulkUpdateDictionaryItem]);
             }
         }
         return obj;
@@ -59,7 +59,7 @@ class BulkUpdateDictionaryListRequest {
 }
 
 /**
- * @member {Array.<module:model/DictionaryItem>} items
+ * @member {Array.<module:model/BulkUpdateDictionaryItem>} items
  */
 BulkUpdateDictionaryListRequest.prototype['items'] = undefined;
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**TypeTlsCertificate**](TypeTlsCertificate.md) |  | [optional] 
-**attributes** | [**Timestamps**](Timestamps.md) |  | [optional] 
+**attributes** | [**TlsCertificateResponseAttributes**](TlsCertificateResponseAttributes.md) |  | [optional] 
 **relationships** | [**RelationshipTlsDomains**](RelationshipTlsDomains.md) |  | [optional] 
 **id** | **String** |  | [optional] [readonly] 
 

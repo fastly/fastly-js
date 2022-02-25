@@ -12,13 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
-import Timestamps from './Timestamps';
+import WafActiveRuleResponseDataAttributes from './WafActiveRuleResponseDataAttributes';
 import WafActiveRuleResponseDataRelationships from './WafActiveRuleResponseDataRelationships';
 
 /**
  * The WafActiveRuleResponseDataAllOf model module.
  * @module model/WafActiveRuleResponseDataAllOf
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class WafActiveRuleResponseDataAllOf {
     /**
@@ -53,7 +53,7 @@ class WafActiveRuleResponseDataAllOf {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
             if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
+                obj['attributes'] = WafActiveRuleResponseDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = WafActiveRuleResponseDataRelationships.constructFromObject(data['relationships']);
@@ -71,7 +71,7 @@ class WafActiveRuleResponseDataAllOf {
 WafActiveRuleResponseDataAllOf.prototype['id'] = undefined;
 
 /**
- * @member {module:model/Timestamps} attributes
+ * @member {module:model/WafActiveRuleResponseDataAttributes} attributes
  */
 WafActiveRuleResponseDataAllOf.prototype['attributes'] = undefined;
 

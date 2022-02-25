@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | Alphanumeric string identifying a WAF exclusion. | [optional] [readonly] 
-**attributes** | [**Timestamps**](Timestamps.md) |  | [optional] 
+**attributes** | [**WafExclusionResponseDataAttributes**](WafExclusionResponseDataAttributes.md) |  | [optional] 
 **relationships** | [**WafExclusionResponseDataRelationships**](WafExclusionResponseDataRelationships.md) |  | [optional] 
 
 

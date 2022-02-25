@@ -20,7 +20,7 @@ import LoggingSftpAllOf from './LoggingSftpAllOf';
 /**
  * The LoggingSftp model module.
  * @module model/LoggingSftp
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class LoggingSftp {
     /**

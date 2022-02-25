@@ -12,13 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
-import BillingAddress from './BillingAddress';
+import BillingAddressAttributes from './BillingAddressAttributes';
 import TypeBillingAddress from './TypeBillingAddress';
 
 /**
  * The BillingAddressRequestData model module.
  * @module model/BillingAddressRequestData
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class BillingAddressRequestData {
     /**
@@ -53,7 +53,7 @@ class BillingAddressRequestData {
                 obj['type'] = TypeBillingAddress.constructFromObject(data['type']);
             }
             if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = BillingAddress.constructFromObject(data['attributes']);
+                obj['attributes'] = BillingAddressAttributes.constructFromObject(data['attributes']);
             }
         }
         return obj;
@@ -68,7 +68,7 @@ class BillingAddressRequestData {
 BillingAddressRequestData.prototype['type'] = undefined;
 
 /**
- * @member {module:model/BillingAddress} attributes
+ * @member {module:model/BillingAddressAttributes} attributes
  */
 BillingAddressRequestData.prototype['attributes'] = undefined;
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**TypeTlsConfiguration**](TypeTlsConfiguration.md) |  | [optional] 
-**attributes** | [**Timestamps**](Timestamps.md) |  | [optional] 
+**attributes** | [**TlsConfigurationResponseAttributes**](TlsConfigurationResponseAttributes.md) |  | [optional] 
 **relationships** | [**RelationshipsForTlsConfiguration**](RelationshipsForTlsConfiguration.md) |  | [optional] 
 **id** | **String** |  | [optional] [readonly] 
 

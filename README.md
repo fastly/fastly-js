@@ -2,11 +2,11 @@
 
 An asynchronous JavaScript client library for interacting with most facets of the [Fastly API](https://developer.fastly.com/reference/api).
 
-> ⚠️ This client library (`3.0.0-beta1`)  is an early-access release. Features may change without notice. Use at your own risk.
+> ⚠️ This client library (`3.0.0-beta2`)  is an early-access release. Features may change without notice. Use at your own risk.
 
 **We strongly recommend that you do not install alpha and beta releases on live production services.** No official support is provided for such releases. Please try out the library in a test environment, see what breaks without worrying about consequences, and give us [feedback](#issues).
 
-See [Fastly Product Lifecycle](https://docs.fastly.com/products/fastly-product-lifecycle) for details.
+Read about the [Fastly Product Lifecycle](https://docs.fastly.com/products/fastly-product-lifecycle).
 
 
 ## Usage
@@ -129,6 +129,7 @@ Class | Method | Description
 *Fastly.DomainApi* | [**getDomain**](docs/DomainApi.md#getDomain) | Describe a domain
 *Fastly.DomainApi* | [**listDomains**](docs/DomainApi.md#listDomains) | List domains
 *Fastly.DomainApi* | [**updateDomain**](docs/DomainApi.md#updateDomain) | Update a domain
+*Fastly.DomainOwnershipsApi* | [**listDomainOwnerships**](docs/DomainOwnershipsApi.md#listDomainOwnerships) | List domain-ownerships
 *Fastly.EventsApi* | [**getEvent**](docs/EventsApi.md#getEvent) | Get an event
 *Fastly.EventsApi* | [**listEvents**](docs/EventsApi.md#listEvents) | List events
 *Fastly.GzipApi* | [**createGzipConfig**](docs/GzipApi.md#createGzipConfig) | Create a gzip configuration
@@ -327,6 +328,11 @@ Class | Method | Description
 *Fastly.RequestSettingsApi* | [**getRequestSettings**](docs/RequestSettingsApi.md#getRequestSettings) | Get a Request Settings object
 *Fastly.RequestSettingsApi* | [**listRequestSettings**](docs/RequestSettingsApi.md#listRequestSettings) | List Request Settings objects
 *Fastly.RequestSettingsApi* | [**updateRequestSettings**](docs/RequestSettingsApi.md#updateRequestSettings) | Update a Request Settings object
+*Fastly.ResourceApi* | [**createResource**](docs/ResourceApi.md#createResource) | Create a resource
+*Fastly.ResourceApi* | [**deleteResource**](docs/ResourceApi.md#deleteResource) | Delete a resource
+*Fastly.ResourceApi* | [**getResource**](docs/ResourceApi.md#getResource) | Display a resource
+*Fastly.ResourceApi* | [**listResources**](docs/ResourceApi.md#listResources) | List resources
+*Fastly.ResourceApi* | [**updateResource**](docs/ResourceApi.md#updateResource) | Update a resource
 *Fastly.ResponseObjectApi* | [**deleteResponseObject**](docs/ResponseObjectApi.md#deleteResponseObject) | Delete a Response Object
 *Fastly.ResponseObjectApi* | [**getResponseObject**](docs/ResponseObjectApi.md#getResponseObject) | Get a Response object
 *Fastly.ResponseObjectApi* | [**listResponseObjects**](docs/ResponseObjectApi.md#listResponseObjects) | List Response objects
@@ -383,13 +389,13 @@ Class | Method | Description
 *Fastly.TlsPrivateKeysApi* | [**deleteTlsKey**](docs/TlsPrivateKeysApi.md#deleteTlsKey) | Delete a TLS private key
 *Fastly.TlsPrivateKeysApi* | [**getTlsKey**](docs/TlsPrivateKeysApi.md#getTlsKey) | Get a TLS private key
 *Fastly.TlsPrivateKeysApi* | [**listTlsKeys**](docs/TlsPrivateKeysApi.md#listTlsKeys) | List TLS private keys
+*Fastly.TlsSubscriptionsApi* | [**createGlobalsignEmailChallenge**](docs/TlsSubscriptionsApi.md#createGlobalsignEmailChallenge) | Creates a GlobalSign email challenge.
 *Fastly.TlsSubscriptionsApi* | [**createTlsSub**](docs/TlsSubscriptionsApi.md#createTlsSub) | Create a TLS subscription
+*Fastly.TlsSubscriptionsApi* | [**deleteGlobalsignEmailChallenge**](docs/TlsSubscriptionsApi.md#deleteGlobalsignEmailChallenge) | Delete a GlobalSign email challenge
 *Fastly.TlsSubscriptionsApi* | [**deleteTlsSub**](docs/TlsSubscriptionsApi.md#deleteTlsSub) | Delete a TLS subscription
-*Fastly.TlsSubscriptionsApi* | [**deleteTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallengesGlobalsignEmailChallengeId**](docs/TlsSubscriptionsApi.md#deleteTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallengesGlobalsignEmailChallengeId) | Delete a GlobalSign email challenge
 *Fastly.TlsSubscriptionsApi* | [**getTlsSub**](docs/TlsSubscriptionsApi.md#getTlsSub) | Get a TLS subscription
 *Fastly.TlsSubscriptionsApi* | [**listTlsSubs**](docs/TlsSubscriptionsApi.md#listTlsSubs) | List TLS subscriptions
 *Fastly.TlsSubscriptionsApi* | [**patchTlsSub**](docs/TlsSubscriptionsApi.md#patchTlsSub) | Update a TLS subscription
-*Fastly.TlsSubscriptionsApi* | [**postTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallenges**](docs/TlsSubscriptionsApi.md#postTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallenges) | Creates a GlobalSign email challenge.
 *Fastly.TokensApi* | [**getTokenCurrent**](docs/TokensApi.md#getTokenCurrent) | Get the current token
 *Fastly.TokensApi* | [**listTokensCustomer**](docs/TokensApi.md#listTokensCustomer) | List tokens for a customer
 *Fastly.TokensApi* | [**listTokensUser**](docs/TokensApi.md#listTokensUser) | List tokens for the authenticated user

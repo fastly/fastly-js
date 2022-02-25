@@ -19,7 +19,7 @@ import LoggingGenericCommon from './LoggingGenericCommon';
 /**
  * The LoggingCloudfiles model module.
  * @module model/LoggingCloudfiles
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class LoggingCloudfiles {
     /**

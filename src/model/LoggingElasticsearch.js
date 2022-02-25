@@ -20,7 +20,7 @@ import LoggingTlsCommon from './LoggingTlsCommon';
 /**
  * The LoggingElasticsearch model module.
  * @module model/LoggingElasticsearch
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class LoggingElasticsearch {
     /**

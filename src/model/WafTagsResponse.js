@@ -16,13 +16,13 @@ import Pagination from './Pagination';
 import PaginationLinks from './PaginationLinks';
 import PaginationMeta from './PaginationMeta';
 import WafRule from './WafRule';
-import WafTag from './WafTag';
 import WafTagsResponseAllOf from './WafTagsResponseAllOf';
+import WafTagsResponseDataItem from './WafTagsResponseDataItem';
 
 /**
  * The WafTagsResponse model module.
  * @module model/WafTagsResponse
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class WafTagsResponse {
     /**
@@ -64,7 +64,7 @@ class WafTagsResponse {
                 obj['meta'] = PaginationMeta.constructFromObject(data['meta']);
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [WafTag]);
+                obj['data'] = ApiClient.convertToType(data['data'], [WafTagsResponseDataItem]);
             }
             if (data.hasOwnProperty('included')) {
                 obj['included'] = ApiClient.convertToType(data['included'], [WafRule]);
@@ -87,7 +87,7 @@ WafTagsResponse.prototype['links'] = undefined;
 WafTagsResponse.prototype['meta'] = undefined;
 
 /**
- * @member {Array.<module:model/WafTag>} data
+ * @member {Array.<module:model/WafTagsResponseDataItem>} data
  */
 WafTagsResponse.prototype['data'] = undefined;
 
@@ -108,7 +108,7 @@ Pagination.prototype['links'] = undefined;
 Pagination.prototype['meta'] = undefined;
 // Implement WafTagsResponseAllOf interface:
 /**
- * @member {Array.<module:model/WafTag>} data
+ * @member {Array.<module:model/WafTagsResponseDataItem>} data
  */
 WafTagsResponseAllOf.prototype['data'] = undefined;
 /**

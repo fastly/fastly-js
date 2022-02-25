@@ -13,15 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import RelationshipsForWafFirewallVersion from './RelationshipsForWafFirewallVersion';
-import Timestamps from './Timestamps';
 import TypeWafFirewallVersion from './TypeWafFirewallVersion';
 import WafFirewallVersionData from './WafFirewallVersionData';
 import WafFirewallVersionResponseDataAllOf from './WafFirewallVersionResponseDataAllOf';
+import WafFirewallVersionResponseDataAttributes from './WafFirewallVersionResponseDataAttributes';
 
 /**
  * The WafFirewallVersionResponseData model module.
  * @module model/WafFirewallVersionResponseData
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class WafFirewallVersionResponseData {
     /**
@@ -60,7 +60,7 @@ class WafFirewallVersionResponseData {
                 obj['type'] = TypeWafFirewallVersion.constructFromObject(data['type']);
             }
             if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
+                obj['attributes'] = WafFirewallVersionResponseDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -81,7 +81,7 @@ class WafFirewallVersionResponseData {
 WafFirewallVersionResponseData.prototype['type'] = undefined;
 
 /**
- * @member {module:model/Timestamps} attributes
+ * @member {module:model/WafFirewallVersionResponseDataAttributes} attributes
  */
 WafFirewallVersionResponseData.prototype['attributes'] = undefined;
 
@@ -113,7 +113,7 @@ WafFirewallVersionData.prototype['attributes'] = undefined;
  */
 WafFirewallVersionResponseDataAllOf.prototype['id'] = undefined;
 /**
- * @member {module:model/Timestamps} attributes
+ * @member {module:model/WafFirewallVersionResponseDataAttributes} attributes
  */
 WafFirewallVersionResponseDataAllOf.prototype['attributes'] = undefined;
 /**

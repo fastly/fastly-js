@@ -19,7 +19,7 @@ import ServerResponse from '../model/ServerResponse';
 /**
 * Server service.
 * @module api/ServerApi
-* @version 3.0.0-beta1
+* @version 3.0.0-beta2
 */
 export default class ServerApi {
 

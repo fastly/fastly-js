@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The Http3 model module.
  * @module model/Http3
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class Http3 {
     /**

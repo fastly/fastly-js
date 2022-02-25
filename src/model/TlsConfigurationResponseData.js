@@ -13,15 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import RelationshipsForTlsConfiguration from './RelationshipsForTlsConfiguration';
-import Timestamps from './Timestamps';
 import TlsConfigurationData from './TlsConfigurationData';
+import TlsConfigurationResponseAttributes from './TlsConfigurationResponseAttributes';
 import TlsConfigurationResponseDataAllOf from './TlsConfigurationResponseDataAllOf';
 import TypeTlsConfiguration from './TypeTlsConfiguration';
 
 /**
  * The TlsConfigurationResponseData model module.
  * @module model/TlsConfigurationResponseData
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class TlsConfigurationResponseData {
     /**
@@ -60,7 +60,7 @@ class TlsConfigurationResponseData {
                 obj['type'] = TypeTlsConfiguration.constructFromObject(data['type']);
             }
             if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
+                obj['attributes'] = TlsConfigurationResponseAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = RelationshipsForTlsConfiguration.constructFromObject(data['relationships']);
@@ -81,7 +81,7 @@ class TlsConfigurationResponseData {
 TlsConfigurationResponseData.prototype['type'] = undefined;
 
 /**
- * @member {module:model/Timestamps} attributes
+ * @member {module:model/TlsConfigurationResponseAttributes} attributes
  */
 TlsConfigurationResponseData.prototype['attributes'] = undefined;
 
@@ -115,7 +115,7 @@ TlsConfigurationData.prototype['relationships'] = undefined;
  */
 TlsConfigurationResponseDataAllOf.prototype['id'] = undefined;
 /**
- * @member {module:model/Timestamps} attributes
+ * @member {module:model/TlsConfigurationResponseAttributes} attributes
  */
 TlsConfigurationResponseDataAllOf.prototype['attributes'] = undefined;
 

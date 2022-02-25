@@ -22,7 +22,7 @@ import ServiceResponse from '../model/ServiceResponse';
 /**
 * Service service.
 * @module api/ServiceApi
-* @version 3.0.0-beta1
+* @version 3.0.0-beta2
 */
 export default class ServiceApi {
 
@@ -192,6 +192,7 @@ export default class ServiceApi {
      * List detailed information on a specified service.
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} [options.version] - Number identifying a version of the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceDetail} and HTTP response
      */
     getServiceDetailWithHttpInfo(options = {}) {
@@ -205,6 +206,7 @@ export default class ServiceApi {
         'service_id': options['service_id']
       };
       let queryParams = {
+        'version': options['version']
       };
       let headerParams = {
       };
@@ -226,6 +228,7 @@ export default class ServiceApi {
      * List detailed information on a specified service.
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} [options.version] - Number identifying a version of the service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceDetail}
      */
     getServiceDetail(options = {}) {

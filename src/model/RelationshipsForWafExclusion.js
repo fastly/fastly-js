@@ -20,7 +20,7 @@ import RelationshipWafRules from './RelationshipWafRules';
 /**
  * The RelationshipsForWafExclusion model module.
  * @module model/RelationshipsForWafExclusion
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class RelationshipsForWafExclusion {
     /**

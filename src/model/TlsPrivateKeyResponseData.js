@@ -12,13 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
-import Timestamps from './Timestamps';
+import TlsPrivateKeyResponseAttributes from './TlsPrivateKeyResponseAttributes';
 import TypeTlsPrivateKey from './TypeTlsPrivateKey';
 
 /**
  * The TlsPrivateKeyResponseData model module.
  * @module model/TlsPrivateKeyResponseData
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class TlsPrivateKeyResponseData {
     /**
@@ -56,7 +56,7 @@ class TlsPrivateKeyResponseData {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
             if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
+                obj['attributes'] = TlsPrivateKeyResponseAttributes.constructFromObject(data['attributes']);
             }
         }
         return obj;
@@ -76,7 +76,7 @@ TlsPrivateKeyResponseData.prototype['type'] = undefined;
 TlsPrivateKeyResponseData.prototype['id'] = undefined;
 
 /**
- * @member {module:model/Timestamps} attributes
+ * @member {module:model/TlsPrivateKeyResponseAttributes} attributes
  */
 TlsPrivateKeyResponseData.prototype['attributes'] = undefined;
 

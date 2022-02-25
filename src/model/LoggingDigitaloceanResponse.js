@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingDigitaloceanResponse model module.
  * @module model/LoggingDigitaloceanResponse
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class LoggingDigitaloceanResponse {
     /**

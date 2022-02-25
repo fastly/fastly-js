@@ -17,7 +17,7 @@ import RelationshipTlsBulkCertificateTlsBulkCertificate from './RelationshipTlsB
 /**
  * The RelationshipTlsBulkCertificates model module.
  * @module model/RelationshipTlsBulkCertificates
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class RelationshipTlsBulkCertificates {
     /**

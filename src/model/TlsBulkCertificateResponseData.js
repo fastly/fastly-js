@@ -13,15 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import RelationshipsForTlsBulkCertificate from './RelationshipsForTlsBulkCertificate';
-import Timestamps from './Timestamps';
 import TlsBulkCertificateData from './TlsBulkCertificateData';
+import TlsBulkCertificateResponseAttributes from './TlsBulkCertificateResponseAttributes';
 import TlsBulkCertificateResponseDataAllOf from './TlsBulkCertificateResponseDataAllOf';
 import TypeTlsBulkCertificate from './TypeTlsBulkCertificate';
 
 /**
  * The TlsBulkCertificateResponseData model module.
  * @module model/TlsBulkCertificateResponseData
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class TlsBulkCertificateResponseData {
     /**
@@ -60,7 +60,7 @@ class TlsBulkCertificateResponseData {
                 obj['type'] = TypeTlsBulkCertificate.constructFromObject(data['type']);
             }
             if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
+                obj['attributes'] = TlsBulkCertificateResponseAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = RelationshipsForTlsBulkCertificate.constructFromObject(data['relationships']);
@@ -81,7 +81,7 @@ class TlsBulkCertificateResponseData {
 TlsBulkCertificateResponseData.prototype['type'] = undefined;
 
 /**
- * @member {module:model/Timestamps} attributes
+ * @member {module:model/TlsBulkCertificateResponseAttributes} attributes
  */
 TlsBulkCertificateResponseData.prototype['attributes'] = undefined;
 
@@ -115,7 +115,7 @@ TlsBulkCertificateData.prototype['relationships'] = undefined;
  */
 TlsBulkCertificateResponseDataAllOf.prototype['id'] = undefined;
 /**
- * @member {module:model/Timestamps} attributes
+ * @member {module:model/TlsBulkCertificateResponseAttributes} attributes
  */
 TlsBulkCertificateResponseDataAllOf.prototype['attributes'] = undefined;
 

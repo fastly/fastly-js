@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 ## `getServiceDetail`
 
 ```javascript
-getServiceDetail({ service_id })
+getServiceDetail({ service_id, [version] })
 ```
 
 List detailed information on a specified service.
@@ -141,6 +141,7 @@ List detailed information on a specified service.
 ```javascript
 const options = {
   service_id: "service_id_example", // required
+  version: 56,
 };
 
 apiInstance.getServiceDetail(options)
@@ -157,6 +158,7 @@ apiInstance.getServiceDetail(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** | Alphanumeric string identifying the service. |
+**version** | **Number** | Number identifying a version of the service. | [optional]
 
 ### Return type
 
