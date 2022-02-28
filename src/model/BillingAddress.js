@@ -17,7 +17,7 @@ import BillingAddressData from './BillingAddressData';
 /**
  * The BillingAddress model module.
  * @module model/BillingAddress
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class BillingAddress {
     /**

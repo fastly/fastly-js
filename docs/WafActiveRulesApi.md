@@ -7,7 +7,6 @@ const apiInstance = new Fastly.WafActiveRulesApi();
 
 Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
-[**bulkDeleteWafActiveRules**](WafActiveRulesApi.md#bulkDeleteWafActiveRules) | **DELETE** /waf/firewalls/{firewall_id}/versions/{version_id}/active-rules | Delete multiple active rules from a WAF
 [**bulkUpdateWafActiveRules**](WafActiveRulesApi.md#bulkUpdateWafActiveRules) | **PATCH** /waf/firewalls/{firewall_id}/versions/{version_id}/active-rules/bulk | Update multiple active rules
 [**createWafActiveRule**](WafActiveRulesApi.md#createWafActiveRule) | **POST** /waf/firewalls/{firewall_id}/versions/{version_id}/active-rules | Add a rule to a WAF as an active rule
 [**createWafActiveRulesTag**](WafActiveRulesApi.md#createWafActiveRulesTag) | **POST** /waf/firewalls/{firewall_id}/versions/{version_id}/tags/{waf_tag_name}/active-rules | Create active rules by tag
@@ -15,45 +14,6 @@ Method | Fastly API endpoint | Description
 [**getWafActiveRule**](WafActiveRulesApi.md#getWafActiveRule) | **GET** /waf/firewalls/{firewall_id}/versions/{version_id}/active-rules/{waf_rule_id} | Get an active WAF rule object
 [**listWafActiveRules**](WafActiveRulesApi.md#listWafActiveRules) | **GET** /waf/firewalls/{firewall_id}/versions/{version_id}/active-rules | List active rules on a WAF
 [**updateWafActiveRule**](WafActiveRulesApi.md#updateWafActiveRule) | **PATCH** /waf/firewalls/{firewall_id}/versions/{version_id}/active-rules/{waf_rule_id} | Update an active rule
-
-
-## `bulkDeleteWafActiveRules`
-
-```javascript
-bulkDeleteWafActiveRules({ firewall_id, version_id, [body] })
-```
-
-Delete many active rules on a particular firewall version using the active rule ID. Limited to 500 rules per request.
-
-### Example
-
-```javascript
-const options = {
-  firewall_id: "firewall_id_example", // required
-  version_id: 56, // required
-  body: {"data":[{"type":"waf_active_rule","id":"3krg2uUGZzb2W9Euo4moOR"}]},
-};
-
-apiInstance.bulkDeleteWafActiveRules(options)
-  .then(() => {
-    console.log('API called successfully.');
-  })
-  .catch((error) => {
-    console.error(error);
-  });
-```
-
-### Options
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**firewall_id** | **String** | Alphanumeric string identifying a WAF Firewall. |
-**version_id** | **Number** | Integer identifying a service version. |
-**body** | **Object** |  | [optional]
-
-### Return type
-
-null (empty response body)
 
 
 ## `bulkUpdateWafActiveRules`
@@ -109,7 +69,7 @@ Create an active rule for a particular firewall version.
 const options = {
   firewall_id: "firewall_id_example", // required
   version_id: 56, // required
-  waf_active_rule: {"data":{"type":"waf_active_rule","attributes":{"status":"log"},"relationships":{"waf_rule_revision":{"data":{"type":"waf_rule_revision","id":"r3Vg2uUGZzb2W9Euo4mo0R","examples":null}}}}},
+  waf_active_rule: {"data":{"type":"waf_active_rule","attributes":{"status":"log"},"relationships":{"waf_rule_revision":{"data":[{"type":"waf_rule_revision","id":"r3Vg2uUGZzb2W9Euo4mo0R"}]}}}},
 };
 
 apiInstance.createWafActiveRule(options)

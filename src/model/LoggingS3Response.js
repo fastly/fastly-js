@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingS3Response model module.
  * @module model/LoggingS3Response
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class LoggingS3Response {
     /**
@@ -120,13 +120,13 @@ class LoggingS3Response {
                 obj['server_side_encryption'] = ApiClient.convertToType(data['server_side_encryption'], 'String');
             }
             if (data.hasOwnProperty('created_at')) {
-                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
+                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
             if (data.hasOwnProperty('deleted_at')) {
-                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'String');
+                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'Date');
             }
             if (data.hasOwnProperty('updated_at')) {
-                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'String');
+                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
@@ -181,7 +181,7 @@ LoggingS3Response.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 LoggingS3Response.prototype['message_type'] = undefined;
 
 /**
- * Date and time in ISO 8601 format.
+ * A timestamp format
  * @member {String} timestamp_format
  */
 LoggingS3Response.prototype['timestamp_format'] = undefined;
@@ -279,30 +279,28 @@ LoggingS3Response.prototype['server_side_encryption'] = 'null';
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} created_at
+ * @member {Date} created_at
  */
 LoggingS3Response.prototype['created_at'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} deleted_at
+ * @member {Date} deleted_at
  */
 LoggingS3Response.prototype['deleted_at'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} updated_at
+ * @member {Date} updated_at
  */
 LoggingS3Response.prototype['updated_at'] = undefined;
 
 /**
- * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
 LoggingS3Response.prototype['service_id'] = undefined;
 
 /**
- * Integer identifying a service version.
  * @member {Number} version
  */
 LoggingS3Response.prototype['version'] = undefined;
@@ -343,7 +341,7 @@ LoggingS3.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
  */
 LoggingS3.prototype['message_type'] = undefined;
 /**
- * Date and time in ISO 8601 format.
+ * A timestamp format
  * @member {String} timestamp_format
  */
 LoggingS3.prototype['timestamp_format'] = undefined;
@@ -427,27 +425,25 @@ LoggingS3.prototype['server_side_encryption'] = 'null';
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
- * @member {String} created_at
+ * @member {Date} created_at
  */
 Timestamps.prototype['created_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
- * @member {String} deleted_at
+ * @member {Date} deleted_at
  */
 Timestamps.prototype['deleted_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
- * @member {String} updated_at
+ * @member {Date} updated_at
  */
 Timestamps.prototype['updated_at'] = undefined;
 // Implement ServiceIdAndVersion interface:
 /**
- * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
 ServiceIdAndVersion.prototype['service_id'] = undefined;
 /**
- * Integer identifying a service version.
  * @member {Number} version
  */
 ServiceIdAndVersion.prototype['version'] = undefined;

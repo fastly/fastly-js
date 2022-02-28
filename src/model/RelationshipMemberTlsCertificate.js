@@ -17,7 +17,7 @@ import TypeTlsCertificate from './TypeTlsCertificate';
 /**
  * The RelationshipMemberTlsCertificate model module.
  * @module model/RelationshipMemberTlsCertificate
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class RelationshipMemberTlsCertificate {
     /**
@@ -67,7 +67,6 @@ class RelationshipMemberTlsCertificate {
 RelationshipMemberTlsCertificate.prototype['type'] = undefined;
 
 /**
- * Alphanumeric string identifying a TLS certificate.
  * @member {String} id
  */
 RelationshipMemberTlsCertificate.prototype['id'] = undefined;

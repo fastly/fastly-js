@@ -18,7 +18,7 @@ import TypeTlsPrivateKey from './TypeTlsPrivateKey';
 /**
  * The TlsPrivateKeyResponseData model module.
  * @module model/TlsPrivateKeyResponseData
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class TlsPrivateKeyResponseData {
     /**
@@ -71,7 +71,6 @@ class TlsPrivateKeyResponseData {
 TlsPrivateKeyResponseData.prototype['type'] = undefined;
 
 /**
- * Alphanumeric string identifying a private Key.
  * @member {String} id
  */
 TlsPrivateKeyResponseData.prototype['id'] = undefined;

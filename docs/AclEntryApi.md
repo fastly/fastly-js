@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse200**](InlineResponse200.md)
 
 
 ## `createAclEntry`
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse200**](InlineResponse200.md)
 
 
 ## `getAclEntry`
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AclEntry**](AclEntry.md)
+[**AclEntryResponse**](AclEntryResponse.md)
 
 
 ## `listAclEntries`
@@ -254,7 +254,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AclEntry**](AclEntry.md)
+[**AclEntryResponse**](AclEntryResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

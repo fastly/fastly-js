@@ -19,7 +19,7 @@ import TokenResponseAllOf from './TokenResponseAllOf';
 /**
  * The TokenResponse model module.
  * @module model/TokenResponse
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class TokenResponse {
     /**
@@ -69,10 +69,10 @@ class TokenResponse {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
             }
             if (data.hasOwnProperty('deleted_at')) {
-                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'String');
+                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'Date');
             }
             if (data.hasOwnProperty('updated_at')) {
-                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'String');
+                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -126,24 +126,22 @@ TokenResponse.prototype['created_at'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} deleted_at
+ * @member {Date} deleted_at
  */
 TokenResponse.prototype['deleted_at'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} updated_at
+ * @member {Date} updated_at
  */
 TokenResponse.prototype['updated_at'] = undefined;
 
 /**
- * Alphanumeric string identifying a token.
  * @member {String} id
  */
 TokenResponse.prototype['id'] = undefined;
 
 /**
- * Alphanumeric string identifying the user.
  * @member {String} user_id
  */
 TokenResponse.prototype['user_id'] = undefined;
@@ -193,27 +191,25 @@ Token.prototype['scope'] = undefined;
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
- * @member {String} created_at
+ * @member {Date} created_at
  */
 Timestamps.prototype['created_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
- * @member {String} deleted_at
+ * @member {Date} deleted_at
  */
 Timestamps.prototype['deleted_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
- * @member {String} updated_at
+ * @member {Date} updated_at
  */
 Timestamps.prototype['updated_at'] = undefined;
 // Implement TokenResponseAllOf interface:
 /**
- * Alphanumeric string identifying a token.
  * @member {String} id
  */
 TokenResponseAllOf.prototype['id'] = undefined;
 /**
- * Alphanumeric string identifying the user.
  * @member {String} user_id
  */
 TokenResponseAllOf.prototype['user_id'] = undefined;

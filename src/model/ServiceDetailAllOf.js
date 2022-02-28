@@ -17,7 +17,7 @@ import NestedVersion from './NestedVersion';
 /**
  * The ServiceDetailAllOf model module.
  * @module model/ServiceDetailAllOf
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class ServiceDetailAllOf {
     /**
@@ -49,7 +49,7 @@ class ServiceDetailAllOf {
             obj = obj || new ServiceDetailAllOf();
 
             if (data.hasOwnProperty('active_version')) {
-                obj['active_version'] = NestedVersion.constructFromObject(data['active_version']);
+                obj['active_version'] = ApiClient.convertToType(data['active_version'], NestedVersion);
             }
             if (data.hasOwnProperty('version')) {
                 obj['version'] = NestedVersion.constructFromObject(data['version']);

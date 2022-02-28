@@ -15,13 +15,13 @@ import ApiClient from '../ApiClient';
 import BackendResponse from './BackendResponse';
 import CacheSettingResponse from './CacheSettingResponse';
 import ConditionResponse from './ConditionResponse';
+import Director from './Director';
 import DomainResponse from './DomainResponse';
 import GzipResponse from './GzipResponse';
 import HeaderResponse from './HeaderResponse';
 import HealthcheckResponse from './HealthcheckResponse';
+import RequestSettingsResponse from './RequestSettingsResponse';
 import ResponseObjectResponse from './ResponseObjectResponse';
-import SchemasDirector from './SchemasDirector';
-import SchemasRequestSettingsResponse from './SchemasRequestSettingsResponse';
 import SchemasSnippetResponse from './SchemasSnippetResponse';
 import SchemasVclResponse from './SchemasVclResponse';
 import Settings from './Settings';
@@ -29,7 +29,7 @@ import Settings from './Settings';
 /**
  * The VersionDetail model module.
  * @module model/VersionDetail
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class VersionDetail {
     /**
@@ -70,7 +70,7 @@ class VersionDetail {
                 obj['conditions'] = ApiClient.convertToType(data['conditions'], [ConditionResponse]);
             }
             if (data.hasOwnProperty('directors')) {
-                obj['directors'] = ApiClient.convertToType(data['directors'], [SchemasDirector]);
+                obj['directors'] = ApiClient.convertToType(data['directors'], [Director]);
             }
             if (data.hasOwnProperty('domains')) {
                 obj['domains'] = ApiClient.convertToType(data['domains'], [DomainResponse]);
@@ -85,7 +85,7 @@ class VersionDetail {
                 obj['healthchecks'] = ApiClient.convertToType(data['healthchecks'], [HealthcheckResponse]);
             }
             if (data.hasOwnProperty('request_settings')) {
-                obj['request_settings'] = ApiClient.convertToType(data['request_settings'], [SchemasRequestSettingsResponse]);
+                obj['request_settings'] = ApiClient.convertToType(data['request_settings'], [RequestSettingsResponse]);
             }
             if (data.hasOwnProperty('response_objects')) {
                 obj['response_objects'] = ApiClient.convertToType(data['response_objects'], [ResponseObjectResponse]);
@@ -129,7 +129,7 @@ VersionDetail.prototype['conditions'] = undefined;
 
 /**
  * List of directors associated to this service.
- * @member {Array.<module:model/SchemasDirector>} directors
+ * @member {Array.<module:model/Director>} directors
  */
 VersionDetail.prototype['directors'] = undefined;
 
@@ -159,7 +159,7 @@ VersionDetail.prototype['healthchecks'] = undefined;
 
 /**
  * List of request settings for this service.
- * @member {Array.<module:model/SchemasRequestSettingsResponse>} request_settings
+ * @member {Array.<module:model/RequestSettingsResponse>} request_settings
  */
 VersionDetail.prototype['request_settings'] = undefined;
 
@@ -170,6 +170,7 @@ VersionDetail.prototype['request_settings'] = undefined;
 VersionDetail.prototype['response_objects'] = undefined;
 
 /**
+ * List of default settings for this service.
  * @member {module:model/Settings} settings
  */
 VersionDetail.prototype['settings'] = undefined;

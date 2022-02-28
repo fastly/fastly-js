@@ -21,7 +21,7 @@ import TypeInvitation from './TypeInvitation';
 /**
  * The InvitationResponseData model module.
  * @module model/InvitationResponseData
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class InvitationResponseData {
     /**
@@ -91,7 +91,6 @@ InvitationResponseData.prototype['attributes'] = undefined;
 InvitationResponseData.prototype['relationships'] = undefined;
 
 /**
- * Alphanumeric string identifying an invitation.
  * @member {String} id
  */
 InvitationResponseData.prototype['id'] = undefined;
@@ -112,7 +111,6 @@ InvitationData.prototype['attributes'] = undefined;
 InvitationData.prototype['relationships'] = undefined;
 // Implement InvitationResponseDataAllOf interface:
 /**
- * Alphanumeric string identifying an invitation.
  * @member {String} id
  */
 InvitationResponseDataAllOf.prototype['id'] = undefined;

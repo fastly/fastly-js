@@ -19,7 +19,7 @@ import TypeTlsBulkCertificate from './TypeTlsBulkCertificate';
 /**
  * The TlsBulkCertificateData model module.
  * @module model/TlsBulkCertificateData
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class TlsBulkCertificateData {
     /**

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingElasticsearchAllOf model module.
  * @module model/LoggingElasticsearchAllOf
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class LoggingElasticsearchAllOf {
     /**
@@ -63,7 +63,7 @@ class LoggingElasticsearchAllOf {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('format')) {
-                obj['format'] = ApiClient.convertToType(data['format'], Object);
+                obj['format'] = ApiClient.convertToType(data['format'], 'String');
             }
         }
         return obj;
@@ -104,7 +104,7 @@ LoggingElasticsearchAllOf.prototype['password'] = undefined;
 
 /**
  * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Elasticsearch can ingest.
- * @member {Object} format
+ * @member {String} format
  */
 LoggingElasticsearchAllOf.prototype['format'] = undefined;
 

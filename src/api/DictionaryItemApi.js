@@ -14,12 +14,12 @@
 
 import ApiClient from "../ApiClient";
 import DictionaryItemResponse from '../model/DictionaryItemResponse';
-import InlineObject from '../model/InlineObject';
+import InlineResponse200 from '../model/InlineResponse200';
 
 /**
 * DictionaryItem service.
 * @module api/DictionaryItemApi
-* @version 3.0.0-alpha1
+* @version 3.0.0-beta1
 */
 export default class DictionaryItemApi {
 
@@ -38,62 +38,6 @@ export default class DictionaryItemApi {
         }
     }
 
-
-    /**
-     * Update DictionaryItem in batch for given service, dictionary ID and key/value pairs for items.
-     * @param {Object} options
-     * @param {String} options.service_id - Alphanumeric string identifying the service.
-     * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
-     * @param {module:model/InlineObject} [options.inline_object]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
-     */
-    bulkUpdateDictionaryItemWithHttpInfo(options = {}) {
-      let postBody = options['inline_object'];
-      // Verify the required parameter 'service_id' is set.
-      if (options['service_id'] === undefined || options['service_id'] === null) {
-        throw new Error("Missing the required parameter 'service_id'.");
-      }
-      // Verify the required parameter 'dictionary_id' is set.
-      if (options['dictionary_id'] === undefined || options['dictionary_id'] === null) {
-        throw new Error("Missing the required parameter 'dictionary_id'.");
-      }
-
-      let pathParams = {
-        'service_id': options['service_id'],
-        'dictionary_id': options['dictionary_id']
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['token'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = Object;
-      return this.apiClient.callApi(
-        '/service/{service_id}/dictionary/{dictionary_id}/items', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Update DictionaryItem in batch for given service, dictionary ID and key/value pairs for items.
-     * @param {Object} options
-     * @param {String} options.service_id - Alphanumeric string identifying the service.
-     * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
-     * @param {module:model/InlineObject} [options.inline_object]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
-     */
-    bulkUpdateDictionaryItem(options = {}) {
-      return this.bulkUpdateDictionaryItemWithHttpInfo(options)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
 
     /**
      * Create DictionaryItem given service, dictionary ID, item key, and item value.
@@ -161,7 +105,7 @@ export default class DictionaryItemApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
      * @param {String} options.dictionary_item_key - Item key, maximum 256 characters.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     deleteDictionaryItemWithHttpInfo(options = {}) {
       let postBody = null;
@@ -193,7 +137,7 @@ export default class DictionaryItemApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Object;
+      let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -207,7 +151,7 @@ export default class DictionaryItemApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
      * @param {String} options.dictionary_item_key - Item key, maximum 256 characters.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     deleteDictionaryItem(options = {}) {
       return this.deleteDictionaryItemWithHttpInfo(options)

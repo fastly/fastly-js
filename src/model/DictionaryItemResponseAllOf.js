@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DictionaryItemResponseAllOf model module.
  * @module model/DictionaryItemResponseAllOf
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class DictionaryItemResponseAllOf {
     /**
@@ -61,13 +61,11 @@ class DictionaryItemResponseAllOf {
 }
 
 /**
- * Alphanumeric string identifying a Dictionary.
  * @member {String} dictionary_id
  */
 DictionaryItemResponseAllOf.prototype['dictionary_id'] = undefined;
 
 /**
- * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
 DictionaryItemResponseAllOf.prototype['service_id'] = undefined;

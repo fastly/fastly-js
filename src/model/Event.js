@@ -18,7 +18,7 @@ import TypeEvent from './TypeEvent';
 /**
  * The Event model module.
  * @module model/Event
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class Event {
     /**
@@ -71,7 +71,6 @@ class Event {
 Event.prototype['type'] = undefined;
 
 /**
- * Alphanumeric string identifying an event.
  * @member {String} id
  */
 Event.prototype['id'] = undefined;

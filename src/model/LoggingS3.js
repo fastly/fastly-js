@@ -19,7 +19,7 @@ import LoggingS3AllOf from './LoggingS3AllOf';
 /**
  * The LoggingS3 model module.
  * @module model/LoggingS3
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class LoggingS3 {
     /**
@@ -166,7 +166,7 @@ LoggingS3.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 LoggingS3.prototype['message_type'] = undefined;
 
 /**
- * Date and time in ISO 8601 format.
+ * A timestamp format
  * @member {String} timestamp_format
  */
 LoggingS3.prototype['timestamp_format'] = undefined;
@@ -299,7 +299,7 @@ LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
  */
 LoggingGenericCommon.prototype['message_type'] = undefined;
 /**
- * Date and time in ISO 8601 format.
+ * A timestamp format
  * @member {String} timestamp_format
  */
 LoggingGenericCommon.prototype['timestamp_format'] = undefined;

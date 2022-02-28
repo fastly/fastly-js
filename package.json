@@ -1,12 +1,13 @@
 {
   "name": "fastly",
-  "version": "3.0.0-alpha1",
+  "version": "3.0.0-beta1",
   "description": "A JavaScript client library for interacting with most facets of the Fastly API.",
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src -d dist",
-    "prepack": "npm run build"
+    "prepack": "npm run build",
+    "test": "echo \"No test specified\""
   },
   "browser": {
     "fs": false

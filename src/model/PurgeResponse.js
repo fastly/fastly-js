@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PurgeResponse model module.
  * @module model/PurgeResponse
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class PurgeResponse {
     /**
@@ -66,7 +66,6 @@ class PurgeResponse {
 PurgeResponse.prototype['status'] = undefined;
 
 /**
- * Alphanumeric string identifying a Purging.
  * @member {String} id
  */
 PurgeResponse.prototype['id'] = undefined;

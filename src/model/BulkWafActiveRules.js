@@ -17,7 +17,7 @@ import WafActiveRuleData from './WafActiveRuleData';
 /**
  * The BulkWafActiveRules model module.
  * @module model/BulkWafActiveRules
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class BulkWafActiveRules {
     /**

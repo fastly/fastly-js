@@ -13,12 +13,13 @@
 
 
 import ApiClient from "../ApiClient";
+import InlineResponse200 from '../model/InlineResponse200';
 import RequestSettingsResponse from '../model/RequestSettingsResponse';
 
 /**
 * RequestSettings service.
 * @module api/RequestSettingsApi
-* @version 3.0.0-alpha1
+* @version 3.0.0-beta1
 */
 export default class RequestSettingsApi {
 
@@ -39,66 +40,12 @@ export default class RequestSettingsApi {
 
 
     /**
-     * Creates a new Request Settings object.
-     * @param {Object} options
-     * @param {String} options.service_id - Alphanumeric string identifying the service.
-     * @param {Number} options.version_id - Integer identifying a service version.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RequestSettingsResponse} and HTTP response
-     */
-    createRequestSettingsWithHttpInfo(options = {}) {
-      let postBody = null;
-      // Verify the required parameter 'service_id' is set.
-      if (options['service_id'] === undefined || options['service_id'] === null) {
-        throw new Error("Missing the required parameter 'service_id'.");
-      }
-      // Verify the required parameter 'version_id' is set.
-      if (options['version_id'] === undefined || options['version_id'] === null) {
-        throw new Error("Missing the required parameter 'version_id'.");
-      }
-
-      let pathParams = {
-        'service_id': options['service_id'],
-        'version_id': options['version_id']
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['token'];
-      let contentTypes = ['application/x-www-form-urlencoded'];
-      let accepts = ['application/json'];
-      let returnType = RequestSettingsResponse;
-      return this.apiClient.callApi(
-        '/service/{service_id}/version/{version_id}/request_settings', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Creates a new Request Settings object.
-     * @param {Object} options
-     * @param {String} options.service_id - Alphanumeric string identifying the service.
-     * @param {Number} options.version_id - Integer identifying a service version.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RequestSettingsResponse}
-     */
-    createRequestSettings(options = {}) {
-      return this.createRequestSettingsWithHttpInfo(options)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-    /**
      * Removes the specified Request Settings object.
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.request_settings_name - Name for the request settings.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     deleteRequestSettingsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -130,7 +77,7 @@ export default class RequestSettingsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Object;
+      let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/request_settings/{request_settings_name}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -144,7 +91,7 @@ export default class RequestSettingsApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.request_settings_name - Name for the request settings.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     deleteRequestSettings(options = {}) {
       return this.deleteRequestSettingsWithHttpInfo(options)

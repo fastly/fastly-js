@@ -13,24 +13,22 @@
 
 import ApiClient from '../ApiClient';
 import Condition from './Condition';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Timestamps from './Timestamps';
 
 /**
  * The ConditionResponse model module.
  * @module model/ConditionResponse
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class ConditionResponse {
     /**
      * Constructs a new <code>ConditionResponse</code>.
      * @alias module:model/ConditionResponse
      * @implements module:model/Condition
-     * @implements module:model/ServiceIdAndVersion
      * @implements module:model/Timestamps
      */
     constructor() { 
-        Condition.initialize(this);ServiceIdAndVersion.initialize(this);Timestamps.initialize(this);
+        Condition.initialize(this);Timestamps.initialize(this);
         ConditionResponse.initialize(this);
     }
 
@@ -53,7 +51,6 @@ class ConditionResponse {
         if (data) {
             obj = obj || new ConditionResponse();
             Condition.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
             Timestamps.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('comment')) {
@@ -63,28 +60,28 @@ class ConditionResponse {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('priority')) {
-                obj['priority'] = ApiClient.convertToType(data['priority'], 'Number');
+                obj['priority'] = ApiClient.convertToType(data['priority'], 'String');
             }
             if (data.hasOwnProperty('statement')) {
                 obj['statement'] = ApiClient.convertToType(data['statement'], 'String');
-            }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
             }
             if (data.hasOwnProperty('version')) {
-                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
+                obj['version'] = ApiClient.convertToType(data['version'], 'String');
+            }
+            if (data.hasOwnProperty('type')) {
+                obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
             if (data.hasOwnProperty('created_at')) {
-                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
+                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
             if (data.hasOwnProperty('deleted_at')) {
-                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'String');
+                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'Date');
             }
             if (data.hasOwnProperty('updated_at')) {
-                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'String');
+                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
         }
         return obj;
@@ -106,11 +103,11 @@ ConditionResponse.prototype['comment'] = undefined;
 ConditionResponse.prototype['name'] = undefined;
 
 /**
- * Priority determines execution order. Lower numbers execute first.
- * @member {Number} priority
- * @default 100
+ * A numeric string. Priority determines execution order. Lower numbers execute first.
+ * @member {String} priority
+ * @default '100'
  */
-ConditionResponse.prototype['priority'] = 100;
+ConditionResponse.prototype['priority'] = '100';
 
 /**
  * A conditional expression in VCL used to determine if the condition is met.
@@ -119,38 +116,37 @@ ConditionResponse.prototype['priority'] = 100;
 ConditionResponse.prototype['statement'] = undefined;
 
 /**
+ * @member {String} service_id
+ */
+ConditionResponse.prototype['service_id'] = undefined;
+
+/**
+ * A numeric string that represents the service version.
+ * @member {String} version
+ */
+ConditionResponse.prototype['version'] = undefined;
+
+/**
  * Type of the condition. Required.
  * @member {module:model/ConditionResponse.TypeEnum} type
  */
 ConditionResponse.prototype['type'] = undefined;
 
 /**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ConditionResponse.prototype['service_id'] = undefined;
-
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ConditionResponse.prototype['version'] = undefined;
-
-/**
  * Date and time in ISO 8601 format.
- * @member {String} created_at
+ * @member {Date} created_at
  */
 ConditionResponse.prototype['created_at'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} deleted_at
+ * @member {Date} deleted_at
  */
 ConditionResponse.prototype['deleted_at'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} updated_at
+ * @member {Date} updated_at
  */
 ConditionResponse.prototype['updated_at'] = undefined;
 
@@ -167,46 +163,44 @@ Condition.prototype['comment'] = undefined;
  */
 Condition.prototype['name'] = undefined;
 /**
- * Priority determines execution order. Lower numbers execute first.
- * @member {Number} priority
- * @default 100
+ * A numeric string. Priority determines execution order. Lower numbers execute first.
+ * @member {String} priority
+ * @default '100'
  */
-Condition.prototype['priority'] = 100;
+Condition.prototype['priority'] = '100';
 /**
  * A conditional expression in VCL used to determine if the condition is met.
  * @member {String} statement
  */
 Condition.prototype['statement'] = undefined;
 /**
+ * @member {String} service_id
+ */
+Condition.prototype['service_id'] = undefined;
+/**
+ * A numeric string that represents the service version.
+ * @member {String} version
+ */
+Condition.prototype['version'] = undefined;
+/**
  * Type of the condition. Required.
  * @member {module:model/Condition.TypeEnum} type
  */
 Condition.prototype['type'] = undefined;
-// Implement ServiceIdAndVersion interface:
-/**
- * Alphanumeric string identifying the service.
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * Integer identifying a service version.
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
- * @member {String} created_at
+ * @member {Date} created_at
  */
 Timestamps.prototype['created_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
- * @member {String} deleted_at
+ * @member {Date} deleted_at
  */
 Timestamps.prototype['deleted_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
- * @member {String} updated_at
+ * @member {Date} updated_at
  */
 Timestamps.prototype['updated_at'] = undefined;
 

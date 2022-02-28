@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Snippet model module.
  * @module model/Snippet
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class Snippet {
     /**
@@ -51,7 +51,7 @@ class Snippet {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('dynamic')) {
-                obj['dynamic'] = ApiClient.convertToType(data['dynamic'], 'String');
+                obj['dynamic'] = ApiClient.convertToType(data['dynamic'], 'Number');
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
@@ -60,7 +60,7 @@ class Snippet {
                 obj['content'] = ApiClient.convertToType(data['content'], 'String');
             }
             if (data.hasOwnProperty('priority')) {
-                obj['priority'] = ApiClient.convertToType(data['priority'], 'String');
+                obj['priority'] = ApiClient.convertToType(data['priority'], 'Number');
             }
         }
         return obj;
@@ -94,11 +94,11 @@ Snippet.prototype['type'] = undefined;
 Snippet.prototype['content'] = undefined;
 
 /**
- * Numeric string value. Priority determines execution order. Lower numbers execute first.
- * @member {String} priority
- * @default '100'
+ * Priority determines execution order. Lower numbers execute first.
+ * @member {Number} priority
+ * @default 100
  */
-Snippet.prototype['priority'] = '100';
+Snippet.prototype['priority'] = 100;
 
 
 
@@ -106,22 +106,22 @@ Snippet.prototype['priority'] = '100';
 
 /**
  * Allowed values for the <code>dynamic</code> property.
- * @enum {String}
+ * @enum {Number}
  * @readonly
  */
 Snippet['DynamicEnum'] = {
 
     /**
-     * value: "0"
+     * value: 0
      * @const
      */
-    "0": "0",
+    "0": 0,
 
     /**
-     * value: "1"
+     * value: 1
      * @const
      */
-    "1": "1"
+    "1": 1
 };
 
 

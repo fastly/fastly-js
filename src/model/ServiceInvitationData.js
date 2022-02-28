@@ -19,7 +19,7 @@ import TypeServiceInvitation from './TypeServiceInvitation';
 /**
  * The ServiceInvitationData model module.
  * @module model/ServiceInvitationData
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class ServiceInvitationData {
     /**
@@ -77,6 +77,7 @@ ServiceInvitationData.prototype['type'] = undefined;
 ServiceInvitationData.prototype['attributes'] = undefined;
 
 /**
+ * Service the accepting user will have access to.
  * @member {module:model/RelationshipService} relationships
  */
 ServiceInvitationData.prototype['relationships'] = undefined;

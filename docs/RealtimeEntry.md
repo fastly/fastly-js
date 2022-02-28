@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**recorded** | **Number** |  | [optional] 
-**aggregated** | [**RealtimeMeasurements**](RealtimeMeasurements.md) |  | [optional] 
+**recorded** | **Number** | The Unix timestamp at which this record&#39;s data was generated. | [optional] 
+**aggregated** | [**RealtimeMeasurements**](RealtimeMeasurements.md) | Aggregates [measurements](#measurements-data-model) across all Fastly POPs. | [optional] 
 **datacenter** | [**{String: RealtimeMeasurements}**](RealtimeMeasurements.md) | Groups [measurements](#measurements-data-model) by POP. See the [POPs API](/reference/api/utils/pops/) for details of POP identifiers. | [optional] 
 
 

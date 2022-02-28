@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 ## `addBillingAddr`
 
 ```javascript
-addBillingAddr({ customer_id, [inline_object1] })
+addBillingAddr({ customer_id, [billing_address_request] })
 ```
 
 Add a billing address to a customer.
@@ -26,7 +26,7 @@ Add a billing address to a customer.
 ```javascript
 const options = {
   customer_id: "customer_id_example", // required
-  inline_object1: new Fastly.InlineObject1(),
+  billing_address_request: {"data":{"type":"billing_address","attributes":{"address_1":"80719 Dorothea Mountain","address_2":"Apt. 652","city":"New Rasheedville","state":"DE","country":"US","postal_code":"53538-5902"}}},
 };
 
 apiInstance.addBillingAddr(options)
@@ -43,7 +43,7 @@ apiInstance.addBillingAddr(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **customer_id** | **String** | Alphanumeric string identifying the customer. |
-**inline_object1** | [**InlineObject1**](InlineObject1.md) |  | [optional]
+**billing_address_request** | [**BillingAddressRequest**](BillingAddressRequest.md) | Billing address | [optional]
 
 ### Return type
 
@@ -123,7 +123,7 @@ Name | Type | Description  | Notes
 ## `updateBillingAddr`
 
 ```javascript
-updateBillingAddr({ customer_id, [inline_object2] })
+updateBillingAddr({ customer_id, [update_billing_address_request] })
 ```
 
 Update a customer's billing address. You may update only part of the customer's billing address.
@@ -133,7 +133,7 @@ Update a customer's billing address. You may update only part of the customer's 
 ```javascript
 const options = {
   customer_id: "customer_id_example", // required
-  inline_object2: new Fastly.InlineObject2(),
+  update_billing_address_request: {"data":{"type":"billing_address","id":"3DTWpamEUGISvrUiDWkesQ","attributes":{"state":"DE"}}},
 };
 
 apiInstance.updateBillingAddr(options)
@@ -150,7 +150,7 @@ apiInstance.updateBillingAddr(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **customer_id** | **String** | Alphanumeric string identifying the customer. |
-**inline_object2** | [**InlineObject2**](InlineObject2.md) |  | [optional]
+**update_billing_address_request** | [**UpdateBillingAddressRequest**](UpdateBillingAddressRequest.md) | One or more billing address attributes | [optional]
 
 ### Return type
 

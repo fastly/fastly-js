@@ -20,7 +20,7 @@ import Timestamps from './Timestamps';
 /**
  * The SchemasSnippetResponse model module.
  * @module model/SchemasSnippetResponse
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class SchemasSnippetResponse {
     /**
@@ -63,7 +63,7 @@ class SchemasSnippetResponse {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('dynamic')) {
-                obj['dynamic'] = ApiClient.convertToType(data['dynamic'], 'String');
+                obj['dynamic'] = ApiClient.convertToType(data['dynamic'], 'Number');
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
@@ -72,7 +72,7 @@ class SchemasSnippetResponse {
                 obj['content'] = ApiClient.convertToType(data['content'], 'String');
             }
             if (data.hasOwnProperty('priority')) {
-                obj['priority'] = ApiClient.convertToType(data['priority'], 'String');
+                obj['priority'] = ApiClient.convertToType(data['priority'], 'Number');
             }
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
@@ -81,13 +81,13 @@ class SchemasSnippetResponse {
                 obj['version'] = ApiClient.convertToType(data['version'], 'Number');
             }
             if (data.hasOwnProperty('created_at')) {
-                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
+                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
             if (data.hasOwnProperty('deleted_at')) {
-                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'String');
+                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'Date');
             }
             if (data.hasOwnProperty('updated_at')) {
-                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'String');
+                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -124,44 +124,41 @@ SchemasSnippetResponse.prototype['type'] = undefined;
 SchemasSnippetResponse.prototype['content'] = undefined;
 
 /**
- * Numeric string value. Priority determines execution order. Lower numbers execute first.
- * @member {String} priority
- * @default '100'
+ * Priority determines execution order. Lower numbers execute first.
+ * @member {Number} priority
+ * @default 100
  */
-SchemasSnippetResponse.prototype['priority'] = '100';
+SchemasSnippetResponse.prototype['priority'] = 100;
 
 /**
- * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
 SchemasSnippetResponse.prototype['service_id'] = undefined;
 
 /**
- * Integer identifying a service version.
  * @member {Number} version
  */
 SchemasSnippetResponse.prototype['version'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} created_at
+ * @member {Date} created_at
  */
 SchemasSnippetResponse.prototype['created_at'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} deleted_at
+ * @member {Date} deleted_at
  */
 SchemasSnippetResponse.prototype['deleted_at'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} updated_at
+ * @member {Date} updated_at
  */
 SchemasSnippetResponse.prototype['updated_at'] = undefined;
 
 /**
- * Alphanumeric string identifying a VCL Snippet.
  * @member {String} id
  */
 SchemasSnippetResponse.prototype['id'] = undefined;
@@ -189,41 +186,38 @@ Snippet.prototype['type'] = undefined;
  */
 Snippet.prototype['content'] = undefined;
 /**
- * Numeric string value. Priority determines execution order. Lower numbers execute first.
- * @member {String} priority
- * @default '100'
+ * Priority determines execution order. Lower numbers execute first.
+ * @member {Number} priority
+ * @default 100
  */
-Snippet.prototype['priority'] = '100';
+Snippet.prototype['priority'] = 100;
 // Implement ServiceIdAndVersion interface:
 /**
- * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
 ServiceIdAndVersion.prototype['service_id'] = undefined;
 /**
- * Integer identifying a service version.
  * @member {Number} version
  */
 ServiceIdAndVersion.prototype['version'] = undefined;
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
- * @member {String} created_at
+ * @member {Date} created_at
  */
 Timestamps.prototype['created_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
- * @member {String} deleted_at
+ * @member {Date} deleted_at
  */
 Timestamps.prototype['deleted_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
- * @member {String} updated_at
+ * @member {Date} updated_at
  */
 Timestamps.prototype['updated_at'] = undefined;
 // Implement SnippetResponseAllOf interface:
 /**
- * Alphanumeric string identifying a VCL Snippet.
  * @member {String} id
  */
 SnippetResponseAllOf.prototype['id'] = undefined;
@@ -232,22 +226,22 @@ SnippetResponseAllOf.prototype['id'] = undefined;
 
 /**
  * Allowed values for the <code>dynamic</code> property.
- * @enum {String}
+ * @enum {Number}
  * @readonly
  */
 SchemasSnippetResponse['DynamicEnum'] = {
 
     /**
-     * value: "0"
+     * value: 0
      * @const
      */
-    "0": "0",
+    "0": 0,
 
     /**
-     * value: "1"
+     * value: 1
      * @const
      */
-    "1": "1"
+    "1": 1
 };
 
 

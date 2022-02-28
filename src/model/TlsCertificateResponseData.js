@@ -21,7 +21,7 @@ import TypeTlsCertificate from './TypeTlsCertificate';
 /**
  * The TlsCertificateResponseData model module.
  * @module model/TlsCertificateResponseData
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class TlsCertificateResponseData {
     /**
@@ -91,7 +91,6 @@ TlsCertificateResponseData.prototype['attributes'] = undefined;
 TlsCertificateResponseData.prototype['relationships'] = undefined;
 
 /**
- * Alphanumeric string identifying a TLS certificate.
  * @member {String} id
  */
 TlsCertificateResponseData.prototype['id'] = undefined;
@@ -112,7 +111,6 @@ TlsCertificateData.prototype['attributes'] = undefined;
 TlsCertificateData.prototype['relationships'] = undefined;
 // Implement TlsCertificateResponseDataAllOf interface:
 /**
- * Alphanumeric string identifying a TLS certificate.
  * @member {String} id
  */
 TlsCertificateResponseDataAllOf.prototype['id'] = undefined;

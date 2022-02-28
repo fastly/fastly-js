@@ -14,11 +14,12 @@
 
 import ApiClient from "../ApiClient";
 import HealthcheckResponse from '../model/HealthcheckResponse';
+import InlineResponse200 from '../model/InlineResponse200';
 
 /**
 * Healthcheck service.
 * @module api/HealthcheckApi
-* @version 3.0.0-alpha1
+* @version 3.0.0-beta1
 */
 export default class HealthcheckApi {
 
@@ -134,7 +135,7 @@ export default class HealthcheckApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.healthcheck_name - The name of the healthcheck.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     deleteHealthcheckWithHttpInfo(options = {}) {
       let postBody = null;
@@ -166,7 +167,7 @@ export default class HealthcheckApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Object;
+      let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/healthcheck/{healthcheck_name}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -180,7 +181,7 @@ export default class HealthcheckApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.healthcheck_name - The name of the healthcheck.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     deleteHealthcheck(options = {}) {
       return this.deleteHealthcheckWithHttpInfo(options)

@@ -17,7 +17,7 @@ import TypeWafFirewall from './TypeWafFirewall';
 /**
  * The RelationshipMemberWafFirewall model module.
  * @module model/RelationshipMemberWafFirewall
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class RelationshipMemberWafFirewall {
     /**
@@ -67,7 +67,6 @@ class RelationshipMemberWafFirewall {
 RelationshipMemberWafFirewall.prototype['type'] = undefined;
 
 /**
- * Alphanumeric string identifying a WAF Firewall.
  * @member {String} id
  */
 RelationshipMemberWafFirewall.prototype['id'] = undefined;

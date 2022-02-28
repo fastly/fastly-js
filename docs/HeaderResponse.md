@@ -12,15 +12,15 @@ Name | Type | Description | Notes
 **priority** | **Number** | Priority determines execution order. Lower numbers execute first. | [optional]  [defaults to 100]
 **regex** | **String** | Regular expression to use. Only applies to `regex` and `regex_repeat` actions. | [optional] 
 **request_condition** | **String** | Condition which, if met, will select this configuration during a request. Optional. | [optional] 
-**response_condition** | **String** |  | [optional] 
+**response_condition** | **String** | Optional name of a response condition to apply. | [optional] 
 **src** | **String** | Variable to be used as a source for the header content. Does not apply to `delete` action. | [optional] 
 **substitution** | **String** | Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions. | [optional] 
 **type** | **String** | Accepts a string value. | [optional]  [one of: "request", "cache", "response"]
-**service_id** | **String** | Alphanumeric string identifying the service. | [optional] [readonly] 
-**version** | **Number** | Integer identifying a service version. | [optional] [readonly] 
-**created_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**deleted_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
-**updated_at** | **String** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**service_id** | **String** |  | [optional] [readonly] 
+**version** | **Number** |  | [optional] [readonly] 
+**created_at** | **Date** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**deleted_at** | **Date** | Date and time in ISO 8601 format. | [optional] [readonly] 
+**updated_at** | **Date** | Date and time in ISO 8601 format. | [optional] [readonly] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

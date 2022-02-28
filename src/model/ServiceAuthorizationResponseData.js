@@ -20,7 +20,7 @@ import TypeServiceAuthorization from './TypeServiceAuthorization';
 /**
  * The ServiceAuthorizationResponseData model module.
  * @module model/ServiceAuthorizationResponseData
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class ServiceAuthorizationResponseData {
     /**
@@ -90,7 +90,6 @@ ServiceAuthorizationResponseData.prototype['attributes'] = undefined;
 ServiceAuthorizationResponseData.prototype['relationships'] = undefined;
 
 /**
- * Alphanumeric string identifying a service authorization.
  * @member {String} id
  */
 ServiceAuthorizationResponseData.prototype['id'] = undefined;
@@ -111,7 +110,6 @@ ServiceAuthorizationData.prototype['attributes'] = undefined;
 ServiceAuthorizationData.prototype['relationships'] = undefined;
 // Implement ServiceAuthorizationResponseDataAllOf interface:
 /**
- * Alphanumeric string identifying a service authorization.
  * @member {String} id
  */
 ServiceAuthorizationResponseDataAllOf.prototype['id'] = undefined;

@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DictionaryInfoResponse model module.
  * @module model/DictionaryInfoResponse
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class DictionaryInfoResponse {
     /**

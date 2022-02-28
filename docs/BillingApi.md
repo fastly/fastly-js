@@ -66,8 +66,8 @@ const options = {
 };
 
 apiInstance.getInvoiceById(options)
-  .then(() => {
-    console.log('API called successfully.');
+  .then((data) => {
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**BillingResponse**](BillingResponse.md)
 
 
 ## `getInvoiceMtd`

@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The InvitationResponseDataAllOf model module.
  * @module model/InvitationResponseDataAllOf
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class InvitationResponseDataAllOf {
     /**
@@ -66,7 +66,6 @@ class InvitationResponseDataAllOf {
 }
 
 /**
- * Alphanumeric string identifying an invitation.
  * @member {String} id
  */
 InvitationResponseDataAllOf.prototype['id'] = undefined;

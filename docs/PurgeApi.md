@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse200**](InlineResponse200.md)
 
 
 ## `purgeSingleUrl`
@@ -139,7 +139,7 @@ Instant Purge a particular service of items tagged with a Surrogate Key. Only on
 ```javascript
 const options = {
   service_id: "service_id_example", // required
-  surrogate_key: "surrogate_key_example", // required
+  surrogate_key: key_1, // required
   fastly_soft_purge: 1,
 };
 

@@ -19,7 +19,7 @@ import WafRulesResponse from '../model/WafRulesResponse';
 /**
 * WafRules service.
 * @module api/WafRulesApi
-* @version 3.0.0-alpha1
+* @version 3.0.0-beta1
 */
 export default class WafRulesApi {
 

@@ -14,11 +14,12 @@
 
 import ApiClient from "../ApiClient";
 import ConditionResponse from '../model/ConditionResponse';
+import InlineResponse200 from '../model/InlineResponse200';
 
 /**
 * Condition service.
 * @module api/ConditionApi
-* @version 3.0.0-alpha1
+* @version 3.0.0-beta1
 */
 export default class ConditionApi {
 
@@ -45,8 +46,10 @@ export default class ConditionApi {
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - Name of the condition. Required.
-     * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
+     * @param {String} [options.priority='100'] - A numeric string. Priority determines execution order. Lower numbers execute first.
      * @param {String} [options.statement] - A conditional expression in VCL used to determine if the condition is met.
+     * @param {String} [options.service_id2]
+     * @param {String} [options.version] - A numeric string that represents the service version.
      * @param {module:model/String} [options.type] - Type of the condition. Required.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ConditionResponse} and HTTP response
      */
@@ -74,6 +77,8 @@ export default class ConditionApi {
         'name': options['name'],
         'priority': options['priority'],
         'statement': options['statement'],
+        'service_id': options['service_id2'],
+        'version': options['version'],
         'type': options['type']
       };
 
@@ -95,8 +100,10 @@ export default class ConditionApi {
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - Name of the condition. Required.
-     * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
+     * @param {String} [options.priority='100'] - A numeric string. Priority determines execution order. Lower numbers execute first.
      * @param {String} [options.statement] - A conditional expression in VCL used to determine if the condition is met.
+     * @param {String} [options.service_id2]
+     * @param {String} [options.version] - A numeric string that represents the service version.
      * @param {module:model/String} [options.type] - Type of the condition. Required.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ConditionResponse}
      */
@@ -113,7 +120,7 @@ export default class ConditionApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.condition_name - Name of the condition. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     deleteConditionWithHttpInfo(options = {}) {
       let postBody = null;
@@ -145,7 +152,7 @@ export default class ConditionApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Object;
+      let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/condition/{condition_name}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -159,7 +166,7 @@ export default class ConditionApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.condition_name - Name of the condition. Required.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     deleteCondition(options = {}) {
       return this.deleteConditionWithHttpInfo(options)
@@ -291,8 +298,10 @@ export default class ConditionApi {
      * @param {String} options.condition_name - Name of the condition. Required.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - Name of the condition. Required.
-     * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
+     * @param {String} [options.priority='100'] - A numeric string. Priority determines execution order. Lower numbers execute first.
      * @param {String} [options.statement] - A conditional expression in VCL used to determine if the condition is met.
+     * @param {String} [options.service_id2]
+     * @param {String} [options.version] - A numeric string that represents the service version.
      * @param {module:model/String} [options.type] - Type of the condition. Required.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ConditionResponse} and HTTP response
      */
@@ -325,6 +334,8 @@ export default class ConditionApi {
         'name': options['name'],
         'priority': options['priority'],
         'statement': options['statement'],
+        'service_id': options['service_id2'],
+        'version': options['version'],
         'type': options['type']
       };
 
@@ -347,8 +358,10 @@ export default class ConditionApi {
      * @param {String} options.condition_name - Name of the condition. Required.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - Name of the condition. Required.
-     * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
+     * @param {String} [options.priority='100'] - A numeric string. Priority determines execution order. Lower numbers execute first.
      * @param {String} [options.statement] - A conditional expression in VCL used to determine if the condition is met.
+     * @param {String} [options.service_id2]
+     * @param {String} [options.version] - A numeric string that represents the service version.
      * @param {module:model/String} [options.type] - Type of the condition. Required.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ConditionResponse}
      */

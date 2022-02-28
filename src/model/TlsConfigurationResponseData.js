@@ -21,7 +21,7 @@ import TypeTlsConfiguration from './TypeTlsConfiguration';
 /**
  * The TlsConfigurationResponseData model module.
  * @module model/TlsConfigurationResponseData
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class TlsConfigurationResponseData {
     /**
@@ -91,7 +91,6 @@ TlsConfigurationResponseData.prototype['attributes'] = undefined;
 TlsConfigurationResponseData.prototype['relationships'] = undefined;
 
 /**
- * Alphanumeric string identifying a TLS configuration.
  * @member {String} id
  */
 TlsConfigurationResponseData.prototype['id'] = undefined;
@@ -112,7 +111,6 @@ TlsConfigurationData.prototype['attributes'] = undefined;
 TlsConfigurationData.prototype['relationships'] = undefined;
 // Implement TlsConfigurationResponseDataAllOf interface:
 /**
- * Alphanumeric string identifying a TLS configuration.
  * @member {String} id
  */
 TlsConfigurationResponseDataAllOf.prototype['id'] = undefined;

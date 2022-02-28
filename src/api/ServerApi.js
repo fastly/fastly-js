@@ -13,12 +13,13 @@
 
 
 import ApiClient from "../ApiClient";
+import InlineResponse200 from '../model/InlineResponse200';
 import ServerResponse from '../model/ServerResponse';
 
 /**
 * Server service.
 * @module api/ServerApi
-* @version 3.0.0-alpha1
+* @version 3.0.0-beta1
 */
 export default class ServerApi {
 
@@ -119,7 +120,7 @@ export default class ServerApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.pool_id - Alphanumeric string identifying a Pool.
      * @param {String} options.server_id - Alphanumeric string identifying a Server.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     deletePoolServerWithHttpInfo(options = {}) {
       let postBody = null;
@@ -151,7 +152,7 @@ export default class ServerApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Object;
+      let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/pool/{pool_id}/server/{server_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -165,7 +166,7 @@ export default class ServerApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.pool_id - Alphanumeric string identifying a Pool.
      * @param {String} options.server_id - Alphanumeric string identifying a Server.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     deletePoolServer(options = {}) {
       return this.deletePoolServerWithHttpInfo(options)

@@ -17,7 +17,7 @@ import ServiceInvitationData from './ServiceInvitationData';
 /**
  * The ServiceInvitation model module.
  * @module model/ServiceInvitation
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class ServiceInvitation {
     /**

@@ -16,11 +16,12 @@ import ApiClient from "../ApiClient";
 import AclEntries from '../model/AclEntries';
 import AclEntry from '../model/AclEntry';
 import AclEntryResponse from '../model/AclEntryResponse';
+import InlineResponse200 from '../model/InlineResponse200';
 
 /**
 * AclEntry service.
 * @module api/AclEntryApi
-* @version 3.0.0-alpha1
+* @version 3.0.0-beta1
 */
 export default class AclEntryApi {
 
@@ -46,7 +47,7 @@ export default class AclEntryApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.acl_id - Alphanumeric string identifying a ACL.
      * @param {module:model/AclEntries} [options.acl_entries]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     bulkUpdateAclEntriesWithHttpInfo(options = {}) {
       let postBody = options['acl_entries'];
@@ -73,7 +74,7 @@ export default class AclEntryApi {
       let authNames = ['token'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = Object;
+      let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/acl/{acl_id}/entries', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -87,7 +88,7 @@ export default class AclEntryApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.acl_id - Alphanumeric string identifying a ACL.
      * @param {module:model/AclEntries} [options.acl_entries]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     bulkUpdateAclEntries(options = {}) {
       return this.bulkUpdateAclEntriesWithHttpInfo(options)
@@ -158,7 +159,7 @@ export default class AclEntryApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.acl_id - Alphanumeric string identifying a ACL.
      * @param {String} options.acl_entry_id - Alphanumeric string identifying an ACL Entry.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     deleteAclEntryWithHttpInfo(options = {}) {
       let postBody = null;
@@ -190,7 +191,7 @@ export default class AclEntryApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Object;
+      let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/acl/{acl_id}/entry/{acl_entry_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -204,7 +205,7 @@ export default class AclEntryApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.acl_id - Alphanumeric string identifying a ACL.
      * @param {String} options.acl_entry_id - Alphanumeric string identifying an ACL Entry.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     deleteAclEntry(options = {}) {
       return this.deleteAclEntryWithHttpInfo(options)
@@ -219,7 +220,7 @@ export default class AclEntryApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.acl_id - Alphanumeric string identifying a ACL.
      * @param {String} options.acl_entry_id - Alphanumeric string identifying an ACL Entry.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AclEntry} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AclEntryResponse} and HTTP response
      */
     getAclEntryWithHttpInfo(options = {}) {
       let postBody = null;
@@ -251,7 +252,7 @@ export default class AclEntryApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = AclEntry;
+      let returnType = AclEntryResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/acl/{acl_id}/entry/{acl_entry_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -265,7 +266,7 @@ export default class AclEntryApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.acl_id - Alphanumeric string identifying a ACL.
      * @param {String} options.acl_entry_id - Alphanumeric string identifying an ACL Entry.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AclEntry}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AclEntryResponse}
      */
     getAclEntry(options = {}) {
       return this.getAclEntryWithHttpInfo(options)
@@ -347,7 +348,7 @@ export default class AclEntryApi {
      * @param {String} options.acl_id - Alphanumeric string identifying a ACL.
      * @param {String} options.acl_entry_id - Alphanumeric string identifying an ACL Entry.
      * @param {module:model/AclEntry} [options.acl_entry]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AclEntry} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AclEntryResponse} and HTTP response
      */
     updateAclEntryWithHttpInfo(options = {}) {
       let postBody = options['acl_entry'];
@@ -379,7 +380,7 @@ export default class AclEntryApi {
       let authNames = ['token'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = AclEntry;
+      let returnType = AclEntryResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/acl/{acl_id}/entry/{acl_entry_id}', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -394,7 +395,7 @@ export default class AclEntryApi {
      * @param {String} options.acl_id - Alphanumeric string identifying a ACL.
      * @param {String} options.acl_entry_id - Alphanumeric string identifying an ACL Entry.
      * @param {module:model/AclEntry} [options.acl_entry]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AclEntry}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AclEntryResponse}
      */
     updateAclEntry(options = {}) {
       return this.updateAclEntryWithHttpInfo(options)

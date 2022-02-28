@@ -7,52 +7,12 @@ const apiInstance = new Fastly.DictionaryItemApi();
 
 Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
-[**bulkUpdateDictionaryItem**](DictionaryItemApi.md#bulkUpdateDictionaryItem) | **PATCH** /service/{service_id}/dictionary/{dictionary_id}/items | Update multiple entries in an edge dictionary
 [**createDictionaryItem**](DictionaryItemApi.md#createDictionaryItem) | **POST** /service/{service_id}/dictionary/{dictionary_id}/item | Create an entry in an edge dictionary
 [**deleteDictionaryItem**](DictionaryItemApi.md#deleteDictionaryItem) | **DELETE** /service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key} | Delete an item from an edge dictionary
 [**getDictionaryItem**](DictionaryItemApi.md#getDictionaryItem) | **GET** /service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key} | Get an item from an edge dictionary
 [**listDictionaryItems**](DictionaryItemApi.md#listDictionaryItems) | **GET** /service/{service_id}/dictionary/{dictionary_id}/items | List items in an edge dictionary
 [**updateDictionaryItem**](DictionaryItemApi.md#updateDictionaryItem) | **PATCH** /service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key} | Update an entry in an edge dictionary
 [**upsertDictionaryItem**](DictionaryItemApi.md#upsertDictionaryItem) | **PUT** /service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key} | Insert or update an entry in an edge dictionary
-
-
-## `bulkUpdateDictionaryItem`
-
-```javascript
-bulkUpdateDictionaryItem({ service_id, dictionary_id, [inline_object] })
-```
-
-Update DictionaryItem in batch for given service, dictionary ID and key/value pairs for items.
-
-### Example
-
-```javascript
-const options = {
-  service_id: "service_id_example", // required
-  dictionary_id: "dictionary_id_example", // required
-  inline_object: new Fastly.InlineObject(),
-};
-
-apiInstance.bulkUpdateDictionaryItem(options)
-  .then((data) => {
-    console.log(data, "API called successfully.");
-  })
-  .catch((error) => {
-    console.error(error);
-  });
-```
-
-### Options
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**service_id** | **String** | Alphanumeric string identifying the service. |
-**dictionary_id** | **String** | Alphanumeric string identifying a Dictionary. |
-**inline_object** | [**InlineObject**](InlineObject.md) |  | [optional]
-
-### Return type
-
-**Object**
 
 
 ## `createDictionaryItem`
@@ -132,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse200**](InlineResponse200.md)
 
 
 ## `getDictionaryItem`

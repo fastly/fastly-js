@@ -7,48 +7,10 @@ const apiInstance = new Fastly.RequestSettingsApi();
 
 Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
-[**createRequestSettings**](RequestSettingsApi.md#createRequestSettings) | **POST** /service/{service_id}/version/{version_id}/request_settings | Create a Request Settings object
 [**deleteRequestSettings**](RequestSettingsApi.md#deleteRequestSettings) | **DELETE** /service/{service_id}/version/{version_id}/request_settings/{request_settings_name} | Delete a Request Settings object
 [**getRequestSettings**](RequestSettingsApi.md#getRequestSettings) | **GET** /service/{service_id}/version/{version_id}/request_settings/{request_settings_name} | Get a Request Settings object
 [**listRequestSettings**](RequestSettingsApi.md#listRequestSettings) | **GET** /service/{service_id}/version/{version_id}/request_settings | List Request Settings objects
 [**updateRequestSettings**](RequestSettingsApi.md#updateRequestSettings) | **PUT** /service/{service_id}/version/{version_id}/request_settings/{request_settings_name} | Update a Request Settings object
-
-
-## `createRequestSettings`
-
-```javascript
-createRequestSettings({ service_id, version_id })
-```
-
-Creates a new Request Settings object.
-
-### Example
-
-```javascript
-const options = {
-  service_id: "service_id_example", // required
-  version_id: 56, // required
-};
-
-apiInstance.createRequestSettings(options)
-  .then((data) => {
-    console.log(data, "API called successfully.");
-  })
-  .catch((error) => {
-    console.error(error);
-  });
-```
-
-### Options
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**service_id** | **String** | Alphanumeric string identifying the service. |
-**version_id** | **Number** | Integer identifying a service version. |
-
-### Return type
-
-[**RequestSettingsResponse**](RequestSettingsResponse.md)
 
 
 ## `deleteRequestSettings`
@@ -87,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**InlineResponse200**](InlineResponse200.md)
 
 
 ## `getRequestSettings`

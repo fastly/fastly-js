@@ -20,6 +20,8 @@ import AclEntryResponse from './model/AclEntryResponse';
 import AclEntryResponseAllOf from './model/AclEntryResponseAllOf';
 import AclResponse from './model/AclResponse';
 import AclResponseAllOf from './model/AclResponseAllOf';
+import ApexRedirect from './model/ApexRedirect';
+import ApexRedirectAllOf from './model/ApexRedirectAllOf';
 import Backend from './model/Backend';
 import BackendResponse from './model/BackendResponse';
 import BackendResponseAllOf from './model/BackendResponseAllOf';
@@ -27,6 +29,8 @@ import Billing from './model/Billing';
 import BillingAddress from './model/BillingAddress';
 import BillingAddressData from './model/BillingAddressData';
 import BillingAddressDataAttributes from './model/BillingAddressDataAttributes';
+import BillingAddressRequest from './model/BillingAddressRequest';
+import BillingAddressRequestData from './model/BillingAddressRequestData';
 import BillingAddressResponse from './model/BillingAddressResponse';
 import BillingAddressResponseAllOf from './model/BillingAddressResponseAllOf';
 import BillingAddressResponseAllOfData from './model/BillingAddressResponseAllOfData';
@@ -36,18 +40,22 @@ import BillingEstimateResponseAllOfLine from './model/BillingEstimateResponseAll
 import BillingEstimateResponseAllOfLines from './model/BillingEstimateResponseAllOfLines';
 import BillingResponse from './model/BillingResponse';
 import BillingResponseAllOf from './model/BillingResponseAllOf';
+import BillingResponseLineItem from './model/BillingResponseLineItem';
+import BillingResponseLineItemAllOf from './model/BillingResponseLineItemAllOf';
 import BillingStatus from './model/BillingStatus';
 import BillingTotal from './model/BillingTotal';
 import BillingTotalExtras from './model/BillingTotalExtras';
+import BulkUpdateDictionaryListRequest from './model/BulkUpdateDictionaryListRequest';
 import BulkWafActiveRules from './model/BulkWafActiveRules';
 import CacheSetting from './model/CacheSetting';
 import CacheSettingResponse from './model/CacheSettingResponse';
 import Condition from './model/Condition';
 import ConditionResponse from './model/ConditionResponse';
+import Contact from './model/Contact';
+import ContactResponse from './model/ContactResponse';
+import ContactResponseAllOf from './model/ContactResponseAllOf';
 import Content from './model/Content';
 import Customer from './model/Customer';
-import CustomerCustomerIdBillingAddressData from './model/CustomerCustomerIdBillingAddressData';
-import CustomerCustomerIdBillingAddressData1 from './model/CustomerCustomerIdBillingAddressData1';
 import CustomerResponse from './model/CustomerResponse';
 import CustomerResponseAllOf from './model/CustomerResponseAllOf';
 import Dictionary from './model/Dictionary';
@@ -93,19 +101,23 @@ import HistoricalUsageAggregateResponse from './model/HistoricalUsageAggregateRe
 import HistoricalUsageMonthResponse from './model/HistoricalUsageMonthResponse';
 import HistoricalUsageMonthResponseAllOf from './model/HistoricalUsageMonthResponseAllOf';
 import HistoricalUsageMonthResponseAllOfData from './model/HistoricalUsageMonthResponseAllOfData';
+import HistoricalUsageResults from './model/HistoricalUsageResults';
 import HistoricalUsageServiceResponse from './model/HistoricalUsageServiceResponse';
 import HistoricalUsageServiceResponseAllOf from './model/HistoricalUsageServiceResponseAllOf';
+import Http3 from './model/Http3';
+import Http3AllOf from './model/Http3AllOf';
+import IamPermission from './model/IamPermission';
+import IamRole from './model/IamRole';
+import IamRoleAllOf from './model/IamRoleAllOf';
+import IamServiceGroup from './model/IamServiceGroup';
+import IamServiceGroupAllOf from './model/IamServiceGroupAllOf';
+import IamUserGroup from './model/IamUserGroup';
+import IamUserGroupAllOf from './model/IamUserGroupAllOf';
 import IncludedWithWafActiveRuleItem from './model/IncludedWithWafActiveRuleItem';
 import IncludedWithWafExclusionItem from './model/IncludedWithWafExclusionItem';
 import IncludedWithWafFirewallVersionItem from './model/IncludedWithWafFirewallVersionItem';
 import IncludedWithWafRuleItem from './model/IncludedWithWafRuleItem';
-import InlineObject from './model/InlineObject';
-import InlineObject1 from './model/InlineObject1';
-import InlineObject2 from './model/InlineObject2';
-import InlineObject3 from './model/InlineObject3';
-import InlineObject4 from './model/InlineObject4';
-import InlineResponse204 from './model/InlineResponse204';
-import InlineResponse400 from './model/InlineResponse400';
+import InlineResponse200 from './model/InlineResponse200';
 import Invitation from './model/Invitation';
 import InvitationData from './model/InvitationData';
 import InvitationDataAttributes from './model/InvitationDataAttributes';
@@ -202,6 +214,10 @@ import LoggingSyslogResponse from './model/LoggingSyslogResponse';
 import LoggingTlsCommon from './model/LoggingTlsCommon';
 import LoggingUseTls from './model/LoggingUseTls';
 import NestedVersion from './model/NestedVersion';
+import Package from './model/Package';
+import PackageMetadata from './model/PackageMetadata';
+import PackageResponse from './model/PackageResponse';
+import PackageResponseAllOf from './model/PackageResponseAllOf';
 import Pagination from './model/Pagination';
 import PaginationLinks from './model/PaginationLinks';
 import PaginationMeta from './model/PaginationMeta';
@@ -308,10 +324,7 @@ import ResponseObject from './model/ResponseObject';
 import ResponseObjectResponse from './model/ResponseObjectResponse';
 import Results from './model/Results';
 import RoleUser from './model/RoleUser';
-import SchemasBackend from './model/SchemasBackend';
-import SchemasDirector from './model/SchemasDirector';
-import SchemasRequestSettings from './model/SchemasRequestSettings';
-import SchemasRequestSettingsResponse from './model/SchemasRequestSettingsResponse';
+import SchemasContactResponse from './model/SchemasContactResponse';
 import SchemasSnippetResponse from './model/SchemasSnippetResponse';
 import SchemasUserResponse from './model/SchemasUserResponse';
 import SchemasVclResponse from './model/SchemasVclResponse';
@@ -329,7 +342,6 @@ import ServiceAuthorizationDataAttributes from './model/ServiceAuthorizationData
 import ServiceAuthorizationResponse from './model/ServiceAuthorizationResponse';
 import ServiceAuthorizationResponseData from './model/ServiceAuthorizationResponseData';
 import ServiceAuthorizationResponseDataAllOf from './model/ServiceAuthorizationResponseDataAllOf';
-import ServiceAuthorizationsData from './model/ServiceAuthorizationsData';
 import ServiceAuthorizationsResponse from './model/ServiceAuthorizationsResponse';
 import ServiceAuthorizationsResponseAllOf from './model/ServiceAuthorizationsResponseAllOf';
 import ServiceCreate from './model/ServiceCreate';
@@ -358,6 +370,7 @@ import StarResponse from './model/StarResponse';
 import StarResponseAllOf from './model/StarResponseAllOf';
 import Stats from './model/Stats';
 import Timestamps from './model/Timestamps';
+import TimestampsNoDelete from './model/TimestampsNoDelete';
 import TlsActivation from './model/TlsActivation';
 import TlsActivationData from './model/TlsActivationData';
 import TlsActivationResponse from './model/TlsActivationResponse';
@@ -405,8 +418,6 @@ import TlsSubscription from './model/TlsSubscription';
 import TlsSubscriptionData from './model/TlsSubscriptionData';
 import TlsSubscriptionDataAttributes from './model/TlsSubscriptionDataAttributes';
 import TlsSubscriptionResponse from './model/TlsSubscriptionResponse';
-import TlsSubscriptionResponseData from './model/TlsSubscriptionResponseData';
-import TlsSubscriptionResponseDataAllOf from './model/TlsSubscriptionResponseDataAllOf';
 import TlsSubscriptionsResponse from './model/TlsSubscriptionsResponse';
 import TlsSubscriptionsResponseAllOf from './model/TlsSubscriptionsResponseAllOf';
 import Token from './model/Token';
@@ -415,6 +426,7 @@ import TokenCreatedResponseAllOf from './model/TokenCreatedResponseAllOf';
 import TokenResponse from './model/TokenResponse';
 import TokenResponseAllOf from './model/TokenResponseAllOf';
 import TypeBillingAddress from './model/TypeBillingAddress';
+import TypeContact from './model/TypeContact';
 import TypeCustomer from './model/TypeCustomer';
 import TypeEvent from './model/TypeEvent';
 import TypeInvitation from './model/TypeInvitation';
@@ -438,6 +450,8 @@ import TypeWafFirewallVersion from './model/TypeWafFirewallVersion';
 import TypeWafRule from './model/TypeWafRule';
 import TypeWafRuleRevision from './model/TypeWafRuleRevision';
 import TypeWafTag from './model/TypeWafTag';
+import UpdateBillingAddressRequest from './model/UpdateBillingAddressRequest';
+import UpdateBillingAddressRequestData from './model/UpdateBillingAddressRequestData';
 import User from './model/User';
 import UserResponse from './model/UserResponse';
 import UserResponseAllOf from './model/UserResponseAllOf';
@@ -456,6 +470,7 @@ import WafActiveRuleDataAttributes from './model/WafActiveRuleDataAttributes';
 import WafActiveRuleResponse from './model/WafActiveRuleResponse';
 import WafActiveRuleResponseData from './model/WafActiveRuleResponseData';
 import WafActiveRuleResponseDataAllOf from './model/WafActiveRuleResponseDataAllOf';
+import WafActiveRuleResponseDataRelationships from './model/WafActiveRuleResponseDataRelationships';
 import WafActiveRulesResponse from './model/WafActiveRulesResponse';
 import WafActiveRulesResponseAllOf from './model/WafActiveRulesResponseAllOf';
 import WafExclusion from './model/WafExclusion';
@@ -464,6 +479,7 @@ import WafExclusionDataAttributes from './model/WafExclusionDataAttributes';
 import WafExclusionResponse from './model/WafExclusionResponse';
 import WafExclusionResponseData from './model/WafExclusionResponseData';
 import WafExclusionResponseDataAllOf from './model/WafExclusionResponseDataAllOf';
+import WafExclusionResponseDataRelationships from './model/WafExclusionResponseDataRelationships';
 import WafExclusionsResponse from './model/WafExclusionsResponse';
 import WafExclusionsResponseAllOf from './model/WafExclusionsResponseAllOf';
 import WafFirewall from './model/WafFirewall';
@@ -489,6 +505,7 @@ import WafRuleResponseData from './model/WafRuleResponseData';
 import WafRuleResponseDataAllOf from './model/WafRuleResponseDataAllOf';
 import WafRuleRevision from './model/WafRuleRevision';
 import WafRuleRevisionAttributes from './model/WafRuleRevisionAttributes';
+import WafRuleRevisionOrLatest from './model/WafRuleRevisionOrLatest';
 import WafRuleRevisionResponse from './model/WafRuleRevisionResponse';
 import WafRuleRevisionResponseData from './model/WafRuleRevisionResponseData';
 import WafRuleRevisionResponseDataAllOf from './model/WafRuleRevisionResponseDataAllOf';
@@ -502,11 +519,13 @@ import WafTagsResponse from './model/WafTagsResponse';
 import WafTagsResponseAllOf from './model/WafTagsResponseAllOf';
 import AclApi from './api/AclApi';
 import AclEntryApi from './api/AclEntryApi';
+import ApexRedirectApi from './api/ApexRedirectApi';
 import BackendApi from './api/BackendApi';
 import BillingApi from './api/BillingApi';
 import BillingAddressApi from './api/BillingAddressApi';
 import CacheSettingsApi from './api/CacheSettingsApi';
 import ConditionApi from './api/ConditionApi';
+import ContactApi from './api/ContactApi';
 import ContentApi from './api/ContentApi';
 import CustomerApi from './api/CustomerApi';
 import DictionaryApi from './api/DictionaryApi';
@@ -515,12 +534,18 @@ import DictionaryItemApi from './api/DictionaryItemApi';
 import DiffApi from './api/DiffApi';
 import DirectorApi from './api/DirectorApi';
 import DirectorBackendApi from './api/DirectorBackendApi';
+import DocsApi from './api/DocsApi';
 import DomainApi from './api/DomainApi';
 import EventsApi from './api/EventsApi';
 import GzipApi from './api/GzipApi';
 import HeaderApi from './api/HeaderApi';
 import HealthcheckApi from './api/HealthcheckApi';
 import HistoricalApi from './api/HistoricalApi';
+import Http3Api from './api/Http3Api';
+import IamPermissionsApi from './api/IamPermissionsApi';
+import IamRolesApi from './api/IamRolesApi';
+import IamServiceGroupsApi from './api/IamServiceGroupsApi';
+import IamUserGroupsApi from './api/IamUserGroupsApi';
 import InvitationsApi from './api/InvitationsApi';
 import LoggingAzureblobApi from './api/LoggingAzureblobApi';
 import LoggingBigqueryApi from './api/LoggingBigqueryApi';
@@ -548,6 +573,7 @@ import LoggingSftpApi from './api/LoggingSftpApi';
 import LoggingSplunkApi from './api/LoggingSplunkApi';
 import LoggingSumologicApi from './api/LoggingSumologicApi';
 import LoggingSyslogApi from './api/LoggingSyslogApi';
+import PackageApi from './api/PackageApi';
 import PoolApi from './api/PoolApi';
 import PopApi from './api/PopApi';
 import PublicIpListApi from './api/PublicIpListApi';
@@ -589,7 +615,7 @@ function authenticate (key) {
 }
 
 /**
-* A JavaScript client library for interacting with most facets of the Fastly API.<br>
+* A JavaScript client library for interacting with most facets of the Fastly API..<br>
 * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
@@ -617,7 +643,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 3.0.0-alpha1
+* @version 3.0.0-beta1
 */
 export {
     /**
@@ -669,6 +695,18 @@ export {
     AclResponseAllOf,
 
     /**
+     * The ApexRedirect model constructor.
+     * @property {module:model/ApexRedirect}
+     */
+    ApexRedirect,
+
+    /**
+     * The ApexRedirectAllOf model constructor.
+     * @property {module:model/ApexRedirectAllOf}
+     */
+    ApexRedirectAllOf,
+
+    /**
      * The Backend model constructor.
      * @property {module:model/Backend}
      */
@@ -709,6 +747,18 @@ export {
      * @property {module:model/BillingAddressDataAttributes}
      */
     BillingAddressDataAttributes,
+
+    /**
+     * The BillingAddressRequest model constructor.
+     * @property {module:model/BillingAddressRequest}
+     */
+    BillingAddressRequest,
+
+    /**
+     * The BillingAddressRequestData model constructor.
+     * @property {module:model/BillingAddressRequestData}
+     */
+    BillingAddressRequestData,
 
     /**
      * The BillingAddressResponse model constructor.
@@ -765,6 +815,18 @@ export {
     BillingResponseAllOf,
 
     /**
+     * The BillingResponseLineItem model constructor.
+     * @property {module:model/BillingResponseLineItem}
+     */
+    BillingResponseLineItem,
+
+    /**
+     * The BillingResponseLineItemAllOf model constructor.
+     * @property {module:model/BillingResponseLineItemAllOf}
+     */
+    BillingResponseLineItemAllOf,
+
+    /**
      * The BillingStatus model constructor.
      * @property {module:model/BillingStatus}
      */
@@ -781,6 +843,12 @@ export {
      * @property {module:model/BillingTotalExtras}
      */
     BillingTotalExtras,
+
+    /**
+     * The BulkUpdateDictionaryListRequest model constructor.
+     * @property {module:model/BulkUpdateDictionaryListRequest}
+     */
+    BulkUpdateDictionaryListRequest,
 
     /**
      * The BulkWafActiveRules model constructor.
@@ -813,6 +881,24 @@ export {
     ConditionResponse,
 
     /**
+     * The Contact model constructor.
+     * @property {module:model/Contact}
+     */
+    Contact,
+
+    /**
+     * The ContactResponse model constructor.
+     * @property {module:model/ContactResponse}
+     */
+    ContactResponse,
+
+    /**
+     * The ContactResponseAllOf model constructor.
+     * @property {module:model/ContactResponseAllOf}
+     */
+    ContactResponseAllOf,
+
+    /**
      * The Content model constructor.
      * @property {module:model/Content}
      */
@@ -823,18 +909,6 @@ export {
      * @property {module:model/Customer}
      */
     Customer,
-
-    /**
-     * The CustomerCustomerIdBillingAddressData model constructor.
-     * @property {module:model/CustomerCustomerIdBillingAddressData}
-     */
-    CustomerCustomerIdBillingAddressData,
-
-    /**
-     * The CustomerCustomerIdBillingAddressData1 model constructor.
-     * @property {module:model/CustomerCustomerIdBillingAddressData1}
-     */
-    CustomerCustomerIdBillingAddressData1,
 
     /**
      * The CustomerResponse model constructor.
@@ -1107,6 +1181,12 @@ export {
     HistoricalUsageMonthResponseAllOfData,
 
     /**
+     * The HistoricalUsageResults model constructor.
+     * @property {module:model/HistoricalUsageResults}
+     */
+    HistoricalUsageResults,
+
+    /**
      * The HistoricalUsageServiceResponse model constructor.
      * @property {module:model/HistoricalUsageServiceResponse}
      */
@@ -1117,6 +1197,60 @@ export {
      * @property {module:model/HistoricalUsageServiceResponseAllOf}
      */
     HistoricalUsageServiceResponseAllOf,
+
+    /**
+     * The Http3 model constructor.
+     * @property {module:model/Http3}
+     */
+    Http3,
+
+    /**
+     * The Http3AllOf model constructor.
+     * @property {module:model/Http3AllOf}
+     */
+    Http3AllOf,
+
+    /**
+     * The IamPermission model constructor.
+     * @property {module:model/IamPermission}
+     */
+    IamPermission,
+
+    /**
+     * The IamRole model constructor.
+     * @property {module:model/IamRole}
+     */
+    IamRole,
+
+    /**
+     * The IamRoleAllOf model constructor.
+     * @property {module:model/IamRoleAllOf}
+     */
+    IamRoleAllOf,
+
+    /**
+     * The IamServiceGroup model constructor.
+     * @property {module:model/IamServiceGroup}
+     */
+    IamServiceGroup,
+
+    /**
+     * The IamServiceGroupAllOf model constructor.
+     * @property {module:model/IamServiceGroupAllOf}
+     */
+    IamServiceGroupAllOf,
+
+    /**
+     * The IamUserGroup model constructor.
+     * @property {module:model/IamUserGroup}
+     */
+    IamUserGroup,
+
+    /**
+     * The IamUserGroupAllOf model constructor.
+     * @property {module:model/IamUserGroupAllOf}
+     */
+    IamUserGroupAllOf,
 
     /**
      * The IncludedWithWafActiveRuleItem model constructor.
@@ -1143,46 +1277,10 @@ export {
     IncludedWithWafRuleItem,
 
     /**
-     * The InlineObject model constructor.
-     * @property {module:model/InlineObject}
+     * The InlineResponse200 model constructor.
+     * @property {module:model/InlineResponse200}
      */
-    InlineObject,
-
-    /**
-     * The InlineObject1 model constructor.
-     * @property {module:model/InlineObject1}
-     */
-    InlineObject1,
-
-    /**
-     * The InlineObject2 model constructor.
-     * @property {module:model/InlineObject2}
-     */
-    InlineObject2,
-
-    /**
-     * The InlineObject3 model constructor.
-     * @property {module:model/InlineObject3}
-     */
-    InlineObject3,
-
-    /**
-     * The InlineObject4 model constructor.
-     * @property {module:model/InlineObject4}
-     */
-    InlineObject4,
-
-    /**
-     * The InlineResponse204 model constructor.
-     * @property {module:model/InlineResponse204}
-     */
-    InlineResponse204,
-
-    /**
-     * The InlineResponse400 model constructor.
-     * @property {module:model/InlineResponse400}
-     */
-    InlineResponse400,
+    InlineResponse200,
 
     /**
      * The Invitation model constructor.
@@ -1759,6 +1857,30 @@ export {
      * @property {module:model/NestedVersion}
      */
     NestedVersion,
+
+    /**
+     * The Package model constructor.
+     * @property {module:model/Package}
+     */
+    Package,
+
+    /**
+     * The PackageMetadata model constructor.
+     * @property {module:model/PackageMetadata}
+     */
+    PackageMetadata,
+
+    /**
+     * The PackageResponse model constructor.
+     * @property {module:model/PackageResponse}
+     */
+    PackageResponse,
+
+    /**
+     * The PackageResponseAllOf model constructor.
+     * @property {module:model/PackageResponseAllOf}
+     */
+    PackageResponseAllOf,
 
     /**
      * The Pagination model constructor.
@@ -2397,28 +2519,10 @@ export {
     RoleUser,
 
     /**
-     * The SchemasBackend model constructor.
-     * @property {module:model/SchemasBackend}
+     * The SchemasContactResponse model constructor.
+     * @property {module:model/SchemasContactResponse}
      */
-    SchemasBackend,
-
-    /**
-     * The SchemasDirector model constructor.
-     * @property {module:model/SchemasDirector}
-     */
-    SchemasDirector,
-
-    /**
-     * The SchemasRequestSettings model constructor.
-     * @property {module:model/SchemasRequestSettings}
-     */
-    SchemasRequestSettings,
-
-    /**
-     * The SchemasRequestSettingsResponse model constructor.
-     * @property {module:model/SchemasRequestSettingsResponse}
-     */
-    SchemasRequestSettingsResponse,
+    SchemasContactResponse,
 
     /**
      * The SchemasSnippetResponse model constructor.
@@ -2521,12 +2625,6 @@ export {
      * @property {module:model/ServiceAuthorizationResponseDataAllOf}
      */
     ServiceAuthorizationResponseDataAllOf,
-
-    /**
-     * The ServiceAuthorizationsData model constructor.
-     * @property {module:model/ServiceAuthorizationsData}
-     */
-    ServiceAuthorizationsData,
 
     /**
      * The ServiceAuthorizationsResponse model constructor.
@@ -2695,6 +2793,12 @@ export {
      * @property {module:model/Timestamps}
      */
     Timestamps,
+
+    /**
+     * The TimestampsNoDelete model constructor.
+     * @property {module:model/TimestampsNoDelete}
+     */
+    TimestampsNoDelete,
 
     /**
      * The TlsActivation model constructor.
@@ -2979,18 +3083,6 @@ export {
     TlsSubscriptionResponse,
 
     /**
-     * The TlsSubscriptionResponseData model constructor.
-     * @property {module:model/TlsSubscriptionResponseData}
-     */
-    TlsSubscriptionResponseData,
-
-    /**
-     * The TlsSubscriptionResponseDataAllOf model constructor.
-     * @property {module:model/TlsSubscriptionResponseDataAllOf}
-     */
-    TlsSubscriptionResponseDataAllOf,
-
-    /**
      * The TlsSubscriptionsResponse model constructor.
      * @property {module:model/TlsSubscriptionsResponse}
      */
@@ -3037,6 +3129,12 @@ export {
      * @property {module:model/TypeBillingAddress}
      */
     TypeBillingAddress,
+
+    /**
+     * The TypeContact model constructor.
+     * @property {module:model/TypeContact}
+     */
+    TypeContact,
 
     /**
      * The TypeCustomer model constructor.
@@ -3177,6 +3275,18 @@ export {
     TypeWafTag,
 
     /**
+     * The UpdateBillingAddressRequest model constructor.
+     * @property {module:model/UpdateBillingAddressRequest}
+     */
+    UpdateBillingAddressRequest,
+
+    /**
+     * The UpdateBillingAddressRequestData model constructor.
+     * @property {module:model/UpdateBillingAddressRequestData}
+     */
+    UpdateBillingAddressRequestData,
+
+    /**
      * The User model constructor.
      * @property {module:model/User}
      */
@@ -3285,6 +3395,12 @@ export {
     WafActiveRuleResponseDataAllOf,
 
     /**
+     * The WafActiveRuleResponseDataRelationships model constructor.
+     * @property {module:model/WafActiveRuleResponseDataRelationships}
+     */
+    WafActiveRuleResponseDataRelationships,
+
+    /**
      * The WafActiveRulesResponse model constructor.
      * @property {module:model/WafActiveRulesResponse}
      */
@@ -3331,6 +3447,12 @@ export {
      * @property {module:model/WafExclusionResponseDataAllOf}
      */
     WafExclusionResponseDataAllOf,
+
+    /**
+     * The WafExclusionResponseDataRelationships model constructor.
+     * @property {module:model/WafExclusionResponseDataRelationships}
+     */
+    WafExclusionResponseDataRelationships,
 
     /**
      * The WafExclusionsResponse model constructor.
@@ -3483,6 +3605,12 @@ export {
     WafRuleRevisionAttributes,
 
     /**
+     * The WafRuleRevisionOrLatest model constructor.
+     * @property {module:model/WafRuleRevisionOrLatest}
+     */
+    WafRuleRevisionOrLatest,
+
+    /**
      * The WafRuleRevisionResponse model constructor.
      * @property {module:model/WafRuleRevisionResponse}
      */
@@ -3561,6 +3689,12 @@ export {
     AclEntryApi,
 
     /**
+    * The ApexRedirectApi service constructor.
+    * @property {module:api/ApexRedirectApi}
+    */
+    ApexRedirectApi,
+
+    /**
     * The BackendApi service constructor.
     * @property {module:api/BackendApi}
     */
@@ -3589,6 +3723,12 @@ export {
     * @property {module:api/ConditionApi}
     */
     ConditionApi,
+
+    /**
+    * The ContactApi service constructor.
+    * @property {module:api/ContactApi}
+    */
+    ContactApi,
 
     /**
     * The ContentApi service constructor.
@@ -3639,6 +3779,12 @@ export {
     DirectorBackendApi,
 
     /**
+    * The DocsApi service constructor.
+    * @property {module:api/DocsApi}
+    */
+    DocsApi,
+
+    /**
     * The DomainApi service constructor.
     * @property {module:api/DomainApi}
     */
@@ -3673,6 +3819,36 @@ export {
     * @property {module:api/HistoricalApi}
     */
     HistoricalApi,
+
+    /**
+    * The Http3Api service constructor.
+    * @property {module:api/Http3Api}
+    */
+    Http3Api,
+
+    /**
+    * The IamPermissionsApi service constructor.
+    * @property {module:api/IamPermissionsApi}
+    */
+    IamPermissionsApi,
+
+    /**
+    * The IamRolesApi service constructor.
+    * @property {module:api/IamRolesApi}
+    */
+    IamRolesApi,
+
+    /**
+    * The IamServiceGroupsApi service constructor.
+    * @property {module:api/IamServiceGroupsApi}
+    */
+    IamServiceGroupsApi,
+
+    /**
+    * The IamUserGroupsApi service constructor.
+    * @property {module:api/IamUserGroupsApi}
+    */
+    IamUserGroupsApi,
 
     /**
     * The InvitationsApi service constructor.
@@ -3835,6 +4011,12 @@ export {
     * @property {module:api/LoggingSyslogApi}
     */
     LoggingSyslogApi,
+
+    /**
+    * The PackageApi service constructor.
+    * @property {module:api/PackageApi}
+    */
+    PackageApi,
 
     /**
     * The PoolApi service constructor.

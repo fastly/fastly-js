@@ -21,7 +21,7 @@ import TypeTlsBulkCertificate from './TypeTlsBulkCertificate';
 /**
  * The TlsBulkCertificateResponseData model module.
  * @module model/TlsBulkCertificateResponseData
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class TlsBulkCertificateResponseData {
     /**
@@ -91,7 +91,6 @@ TlsBulkCertificateResponseData.prototype['attributes'] = undefined;
 TlsBulkCertificateResponseData.prototype['relationships'] = undefined;
 
 /**
- * Alphanumeric string identifying a TLS bulk certificate.
  * @member {String} id
  */
 TlsBulkCertificateResponseData.prototype['id'] = undefined;
@@ -112,7 +111,6 @@ TlsBulkCertificateData.prototype['attributes'] = undefined;
 TlsBulkCertificateData.prototype['relationships'] = undefined;
 // Implement TlsBulkCertificateResponseDataAllOf interface:
 /**
- * Alphanumeric string identifying a TLS bulk certificate.
  * @member {String} id
  */
 TlsBulkCertificateResponseDataAllOf.prototype['id'] = undefined;

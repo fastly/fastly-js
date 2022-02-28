@@ -13,13 +13,14 @@
 
 
 import ApiClient from "../ApiClient";
+import InlineResponse200 from '../model/InlineResponse200';
 import LoggingKafkaResponse from '../model/LoggingKafkaResponse';
 import LoggingUseTls from '../model/LoggingUseTls';
 
 /**
 * LoggingKafka service.
 * @module api/LoggingKafkaApi
-* @version 3.0.0-alpha1
+* @version 3.0.0-beta1
 */
 export default class LoggingKafkaApi {
 
@@ -156,7 +157,7 @@ export default class LoggingKafkaApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.logging_kafka_name - The name for the real-time logging configuration.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     deleteLogKafkaWithHttpInfo(options = {}) {
       let postBody = null;
@@ -188,7 +189,7 @@ export default class LoggingKafkaApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Object;
+      let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/kafka/{logging_kafka_name}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -202,7 +203,7 @@ export default class LoggingKafkaApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.logging_kafka_name - The name for the real-time logging configuration.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     deleteLogKafka(options = {}) {
       return this.deleteLogKafkaWithHttpInfo(options)
@@ -321,67 +322,6 @@ export default class LoggingKafkaApi {
      */
     listLogKafka(options = {}) {
       return this.listLogKafkaWithHttpInfo(options)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-    /**
-     * Update the Kafka logging endpoint for a particular service and version.
-     * @param {Object} options
-     * @param {String} options.service_id - Alphanumeric string identifying the service.
-     * @param {Number} options.version_id - Integer identifying a service version.
-     * @param {String} options.logging_kafka_name - The name for the real-time logging configuration.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingKafkaResponse} and HTTP response
-     */
-    updateLogKafkaWithHttpInfo(options = {}) {
-      let postBody = null;
-      // Verify the required parameter 'service_id' is set.
-      if (options['service_id'] === undefined || options['service_id'] === null) {
-        throw new Error("Missing the required parameter 'service_id'.");
-      }
-      // Verify the required parameter 'version_id' is set.
-      if (options['version_id'] === undefined || options['version_id'] === null) {
-        throw new Error("Missing the required parameter 'version_id'.");
-      }
-      // Verify the required parameter 'logging_kafka_name' is set.
-      if (options['logging_kafka_name'] === undefined || options['logging_kafka_name'] === null) {
-        throw new Error("Missing the required parameter 'logging_kafka_name'.");
-      }
-
-      let pathParams = {
-        'service_id': options['service_id'],
-        'version_id': options['version_id'],
-        'logging_kafka_name': options['logging_kafka_name']
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['token'];
-      let contentTypes = ['application/x-www-form-urlencoded'];
-      let accepts = ['application/json'];
-      let returnType = LoggingKafkaResponse;
-      return this.apiClient.callApi(
-        '/service/{service_id}/version/{version_id}/logging/kafka/{logging_kafka_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Update the Kafka logging endpoint for a particular service and version.
-     * @param {Object} options
-     * @param {String} options.service_id - Alphanumeric string identifying the service.
-     * @param {Number} options.version_id - Integer identifying a service version.
-     * @param {String} options.logging_kafka_name - The name for the real-time logging configuration.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingKafkaResponse}
-     */
-    updateLogKafka(options = {}) {
-      return this.updateLogKafkaWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

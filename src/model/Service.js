@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Service model module.
  * @module model/Service
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class Service {
     /**
@@ -76,7 +76,6 @@ Service.prototype['comment'] = undefined;
 Service.prototype['name'] = undefined;
 
 /**
- * Alphanumeric string identifying the customer.
  * @member {String} customer_id
  */
 Service.prototype['customer_id'] = undefined;

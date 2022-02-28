@@ -179,7 +179,7 @@ Update the certificate used to terminate TLS traffic for the domain associated w
 ```javascript
 const options = {
   tls_activation_id: "tls_activation_id_example", // required
-  tls_activation: {"data":{"type":"tls_activation","relationships":{"tls_certificate":{"data":{"type":"tls_certificate","id":"cRTguUGZzb2W9Euo4moOr"}}}}},
+  tls_activation: {"data":{"type":"tls_activation","relationships":{"tls_certificate":{"data":[{"type":"tls_certificate","id":"cRTguUGZzb2W9Euo4moOr"}]}}}},
 };
 
 apiInstance.updateTlsActivation(options)

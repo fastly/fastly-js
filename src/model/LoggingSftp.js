@@ -20,7 +20,7 @@ import LoggingSftpAllOf from './LoggingSftpAllOf';
 /**
  * The LoggingSftp model module.
  * @module model/LoggingSftp
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class LoggingSftp {
     /**
@@ -160,7 +160,7 @@ LoggingSftp.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 LoggingSftp.prototype['message_type'] = undefined;
 
 /**
- * Date and time in ISO 8601 format.
+ * A timestamp format
  * @member {String} timestamp_format
  */
 LoggingSftp.prototype['timestamp_format'] = undefined;
@@ -273,7 +273,7 @@ LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
  */
 LoggingGenericCommon.prototype['message_type'] = undefined;
 /**
- * Date and time in ISO 8601 format.
+ * A timestamp format
  * @member {String} timestamp_format
  */
 LoggingGenericCommon.prototype['timestamp_format'] = undefined;

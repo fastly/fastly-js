@@ -12,16 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-import AnyOfrelationshipWafRulesrelationshipWafRuleRevisions from './AnyOfrelationshipWafRulesrelationshipWafRuleRevisions';
 import Timestamps from './Timestamps';
 import TypeWafExclusion from './TypeWafExclusion';
 import WafExclusionData from './WafExclusionData';
 import WafExclusionResponseDataAllOf from './WafExclusionResponseDataAllOf';
+import WafExclusionResponseDataRelationships from './WafExclusionResponseDataRelationships';
 
 /**
  * The WafExclusionResponseData model module.
  * @module model/WafExclusionResponseData
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class WafExclusionResponseData {
     /**
@@ -63,7 +63,7 @@ class WafExclusionResponseData {
                 obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
             }
             if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = ApiClient.convertToType(data['relationships'], AnyOfrelationshipWafRulesrelationshipWafRuleRevisions);
+                obj['relationships'] = WafExclusionResponseDataRelationships.constructFromObject(data['relationships']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -86,7 +86,7 @@ WafExclusionResponseData.prototype['type'] = undefined;
 WafExclusionResponseData.prototype['attributes'] = undefined;
 
 /**
- * @member {module:model/AnyOfrelationshipWafRulesrelationshipWafRuleRevisions} relationships
+ * @member {module:model/WafExclusionResponseDataRelationships} relationships
  */
 WafExclusionResponseData.prototype['relationships'] = undefined;
 
@@ -121,7 +121,7 @@ WafExclusionResponseDataAllOf.prototype['id'] = undefined;
  */
 WafExclusionResponseDataAllOf.prototype['attributes'] = undefined;
 /**
- * @member {module:model/AnyOfrelationshipWafRulesrelationshipWafRuleRevisions} relationships
+ * @member {module:model/WafExclusionResponseDataRelationships} relationships
  */
 WafExclusionResponseDataAllOf.prototype['relationships'] = undefined;
 

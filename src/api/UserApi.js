@@ -13,13 +13,14 @@
 
 
 import ApiClient from "../ApiClient";
+import InlineResponse200 from '../model/InlineResponse200';
 import RoleUser from '../model/RoleUser';
 import UserResponse from '../model/UserResponse';
 
 /**
 * User service.
 * @module api/UserApi
-* @version 3.0.0-alpha1
+* @version 3.0.0-beta1
 */
 export default class UserApi {
 
@@ -72,7 +73,7 @@ export default class UserApi {
         'two_factor_setup_required': options['two_factor_setup_required']
       };
 
-      let authNames = [];
+      let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
       let returnType = UserResponse;
@@ -107,7 +108,7 @@ export default class UserApi {
      * Delete a user.
      * @param {Object} options
      * @param {String} options.user_id - Alphanumeric string identifying the user.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     deleteUserWithHttpInfo(options = {}) {
       let postBody = null;
@@ -126,10 +127,10 @@ export default class UserApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Object;
+      let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/user/{user_id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -141,7 +142,7 @@ export default class UserApi {
      * Delete a user.
      * @param {Object} options
      * @param {String} options.user_id - Alphanumeric string identifying the user.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     deleteUser(options = {}) {
       return this.deleteUserWithHttpInfo(options)
@@ -167,7 +168,7 @@ export default class UserApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = UserResponse;
@@ -213,7 +214,7 @@ export default class UserApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = UserResponse;
@@ -241,7 +242,7 @@ export default class UserApi {
      * Requests a password reset for the specified user.
      * @param {Object} options
      * @param {String} options.user_login - The login associated with the user (typically, an email address).
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     requestPasswordResetWithHttpInfo(options = {}) {
       let postBody = null;
@@ -263,7 +264,7 @@ export default class UserApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Object;
+      let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/user/{user_login}/password/request_reset', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -275,7 +276,7 @@ export default class UserApi {
      * Requests a password reset for the specified user.
      * @param {Object} options
      * @param {String} options.user_login - The login associated with the user (typically, an email address).
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     requestPasswordReset(options = {}) {
       return this.requestPasswordResetWithHttpInfo(options)
@@ -376,7 +377,7 @@ export default class UserApi {
         'new_password': options['new_password']
       };
 
-      let authNames = [];
+      let authNames = ['session_password_change'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
       let returnType = UserResponse;

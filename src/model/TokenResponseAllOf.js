@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TokenResponseAllOf model module.
  * @module model/TokenResponseAllOf
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class TokenResponseAllOf {
     /**
@@ -76,13 +76,11 @@ class TokenResponseAllOf {
 }
 
 /**
- * Alphanumeric string identifying a token.
  * @member {String} id
  */
 TokenResponseAllOf.prototype['id'] = undefined;
 
 /**
- * Alphanumeric string identifying the user.
  * @member {String} user_id
  */
 TokenResponseAllOf.prototype['user_id'] = undefined;

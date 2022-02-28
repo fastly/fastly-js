@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VersionCreateResponse model module.
  * @module model/VersionCreateResponse
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class VersionCreateResponse {
     /**
@@ -61,13 +61,11 @@ class VersionCreateResponse {
 }
 
 /**
- * Integer identifying a service version.
  * @member {Number} number
  */
 VersionCreateResponse.prototype['number'] = undefined;
 
 /**
- * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
 VersionCreateResponse.prototype['service_id'] = undefined;

@@ -21,7 +21,7 @@ import WafFirewallResponseDataAllOf from './WafFirewallResponseDataAllOf';
 /**
  * The WafFirewallResponseData model module.
  * @module model/WafFirewallResponseData
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class WafFirewallResponseData {
     /**
@@ -86,7 +86,6 @@ WafFirewallResponseData.prototype['type'] = undefined;
 WafFirewallResponseData.prototype['attributes'] = undefined;
 
 /**
- * Alphanumeric string identifying a WAF Firewall.
  * @member {String} id
  */
 WafFirewallResponseData.prototype['id'] = undefined;
@@ -108,7 +107,6 @@ WafFirewallData.prototype['type'] = undefined;
 WafFirewallData.prototype['attributes'] = undefined;
 // Implement WafFirewallResponseDataAllOf interface:
 /**
- * Alphanumeric string identifying a WAF Firewall.
  * @member {String} id
  */
 WafFirewallResponseDataAllOf.prototype['id'] = undefined;

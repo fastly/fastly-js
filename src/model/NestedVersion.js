@@ -15,13 +15,13 @@ import ApiClient from '../ApiClient';
 import BackendResponse from './BackendResponse';
 import CacheSettingResponse from './CacheSettingResponse';
 import ConditionResponse from './ConditionResponse';
+import Director from './Director';
 import DomainResponse from './DomainResponse';
 import GzipResponse from './GzipResponse';
 import HeaderResponse from './HeaderResponse';
 import HealthcheckResponse from './HealthcheckResponse';
+import RequestSettingsResponse from './RequestSettingsResponse';
 import ResponseObjectResponse from './ResponseObjectResponse';
-import SchemasDirector from './SchemasDirector';
-import SchemasRequestSettingsResponse from './SchemasRequestSettingsResponse';
 import SchemasSnippetResponse from './SchemasSnippetResponse';
 import SchemasVclResponse from './SchemasVclResponse';
 import SchemasVersionResponse from './SchemasVersionResponse';
@@ -31,11 +31,12 @@ import VersionDetail from './VersionDetail';
 /**
  * The NestedVersion model module.
  * @module model/NestedVersion
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class NestedVersion {
     /**
      * Constructs a new <code>NestedVersion</code>.
+     * Configuration for the active [version](/reference/api/services/version/) of this service.
      * @alias module:model/NestedVersion
      * @implements module:model/SchemasVersionResponse
      * @implements module:model/VersionDetail
@@ -88,13 +89,13 @@ class NestedVersion {
                 obj['testing'] = ApiClient.convertToType(data['testing'], 'Boolean');
             }
             if (data.hasOwnProperty('created_at')) {
-                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
+                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
             if (data.hasOwnProperty('deleted_at')) {
-                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'String');
+                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'Date');
             }
             if (data.hasOwnProperty('updated_at')) {
-                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'String');
+                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
@@ -109,7 +110,7 @@ class NestedVersion {
                 obj['conditions'] = ApiClient.convertToType(data['conditions'], [ConditionResponse]);
             }
             if (data.hasOwnProperty('directors')) {
-                obj['directors'] = ApiClient.convertToType(data['directors'], [SchemasDirector]);
+                obj['directors'] = ApiClient.convertToType(data['directors'], [Director]);
             }
             if (data.hasOwnProperty('domains')) {
                 obj['domains'] = ApiClient.convertToType(data['domains'], [DomainResponse]);
@@ -124,7 +125,7 @@ class NestedVersion {
                 obj['healthchecks'] = ApiClient.convertToType(data['healthchecks'], [HealthcheckResponse]);
             }
             if (data.hasOwnProperty('request_settings')) {
-                obj['request_settings'] = ApiClient.convertToType(data['request_settings'], [SchemasRequestSettingsResponse]);
+                obj['request_settings'] = ApiClient.convertToType(data['request_settings'], [RequestSettingsResponse]);
             }
             if (data.hasOwnProperty('response_objects')) {
                 obj['response_objects'] = ApiClient.convertToType(data['response_objects'], [ResponseObjectResponse]);
@@ -196,24 +197,23 @@ NestedVersion.prototype['testing'] = false;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} created_at
+ * @member {Date} created_at
  */
 NestedVersion.prototype['created_at'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} deleted_at
+ * @member {Date} deleted_at
  */
 NestedVersion.prototype['deleted_at'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} updated_at
+ * @member {Date} updated_at
  */
 NestedVersion.prototype['updated_at'] = undefined;
 
 /**
- * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
 NestedVersion.prototype['service_id'] = undefined;
@@ -238,7 +238,7 @@ NestedVersion.prototype['conditions'] = undefined;
 
 /**
  * List of directors associated to this service.
- * @member {Array.<module:model/SchemasDirector>} directors
+ * @member {Array.<module:model/Director>} directors
  */
 NestedVersion.prototype['directors'] = undefined;
 
@@ -268,7 +268,7 @@ NestedVersion.prototype['healthchecks'] = undefined;
 
 /**
  * List of request settings for this service.
- * @member {Array.<module:model/SchemasRequestSettingsResponse>} request_settings
+ * @member {Array.<module:model/RequestSettingsResponse>} request_settings
  */
 NestedVersion.prototype['request_settings'] = undefined;
 
@@ -279,6 +279,7 @@ NestedVersion.prototype['request_settings'] = undefined;
 NestedVersion.prototype['response_objects'] = undefined;
 
 /**
+ * List of default settings for this service.
  * @member {module:model/Settings} settings
  */
 NestedVersion.prototype['settings'] = undefined;
@@ -344,21 +345,20 @@ SchemasVersionResponse.prototype['staging'] = false;
 SchemasVersionResponse.prototype['testing'] = false;
 /**
  * Date and time in ISO 8601 format.
- * @member {String} created_at
+ * @member {Date} created_at
  */
 SchemasVersionResponse.prototype['created_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
- * @member {String} deleted_at
+ * @member {Date} deleted_at
  */
 SchemasVersionResponse.prototype['deleted_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
- * @member {String} updated_at
+ * @member {Date} updated_at
  */
 SchemasVersionResponse.prototype['updated_at'] = undefined;
 /**
- * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
 SchemasVersionResponse.prototype['service_id'] = undefined;
@@ -380,7 +380,7 @@ VersionDetail.prototype['cache_settings'] = undefined;
 VersionDetail.prototype['conditions'] = undefined;
 /**
  * List of directors associated to this service.
- * @member {Array.<module:model/SchemasDirector>} directors
+ * @member {Array.<module:model/Director>} directors
  */
 VersionDetail.prototype['directors'] = undefined;
 /**
@@ -405,7 +405,7 @@ VersionDetail.prototype['headers'] = undefined;
 VersionDetail.prototype['healthchecks'] = undefined;
 /**
  * List of request settings for this service.
- * @member {Array.<module:model/SchemasRequestSettingsResponse>} request_settings
+ * @member {Array.<module:model/RequestSettingsResponse>} request_settings
  */
 VersionDetail.prototype['request_settings'] = undefined;
 /**
@@ -414,6 +414,7 @@ VersionDetail.prototype['request_settings'] = undefined;
  */
 VersionDetail.prototype['response_objects'] = undefined;
 /**
+ * List of default settings for this service.
  * @member {module:model/Settings} settings
  */
 VersionDetail.prototype['settings'] = undefined;

@@ -17,7 +17,7 @@ import TypeUser from './TypeUser';
 /**
  * The RelationshipUserUserData model module.
  * @module model/RelationshipUserUserData
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class RelationshipUserUserData {
     /**
@@ -67,7 +67,6 @@ class RelationshipUserUserData {
 RelationshipUserUserData.prototype['type'] = undefined;
 
 /**
- * Alphanumeric string identifying the user.
  * @member {String} id
  */
 RelationshipUserUserData.prototype['id'] = undefined;

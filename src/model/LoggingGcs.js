@@ -20,7 +20,7 @@ import LoggingGenericCommon from './LoggingGenericCommon';
 /**
  * The LoggingGcs model module.
  * @module model/LoggingGcs
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class LoggingGcs {
     /**
@@ -151,7 +151,7 @@ LoggingGcs.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 LoggingGcs.prototype['message_type'] = undefined;
 
 /**
- * Date and time in ISO 8601 format.
+ * A timestamp format
  * @member {String} timestamp_format
  */
 LoggingGcs.prototype['timestamp_format'] = undefined;
@@ -195,6 +195,7 @@ LoggingGcs.prototype['secret_key'] = undefined;
 LoggingGcs.prototype['bucket_name'] = undefined;
 
 /**
+ * The path to upload logs to.
  * @member {String} path
  */
 LoggingGcs.prototype['path'] = undefined;
@@ -243,7 +244,7 @@ LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
  */
 LoggingGenericCommon.prototype['message_type'] = undefined;
 /**
- * Date and time in ISO 8601 format.
+ * A timestamp format
  * @member {String} timestamp_format
  */
 LoggingGenericCommon.prototype['timestamp_format'] = undefined;
@@ -282,6 +283,7 @@ LoggingGcsCommon.prototype['secret_key'] = undefined;
  */
 LoggingGcsAllOf.prototype['bucket_name'] = undefined;
 /**
+ * The path to upload logs to.
  * @member {String} path
  */
 LoggingGcsAllOf.prototype['path'] = undefined;

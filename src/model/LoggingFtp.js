@@ -19,7 +19,7 @@ import LoggingGenericCommon from './LoggingGenericCommon';
 /**
  * The LoggingFtp model module.
  * @module model/LoggingFtp
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class LoggingFtp {
     /**
@@ -157,7 +157,7 @@ LoggingFtp.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 LoggingFtp.prototype['message_type'] = undefined;
 
 /**
- * Date and time in ISO 8601 format.
+ * A timestamp format
  * @member {String} timestamp_format
  */
 LoggingFtp.prototype['timestamp_format'] = undefined;
@@ -269,7 +269,7 @@ LoggingCommon.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
  */
 LoggingGenericCommon.prototype['message_type'] = undefined;
 /**
- * Date and time in ISO 8601 format.
+ * A timestamp format
  * @member {String} timestamp_format
  */
 LoggingGenericCommon.prototype['timestamp_format'] = undefined;

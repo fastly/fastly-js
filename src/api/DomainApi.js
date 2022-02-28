@@ -15,11 +15,12 @@
 import ApiClient from "../ApiClient";
 import DomainCheckItem from '../model/DomainCheckItem';
 import DomainResponse from '../model/DomainResponse';
+import InlineResponse200 from '../model/InlineResponse200';
 
 /**
 * Domain service.
 * @module api/DomainApi
-* @version 3.0.0-alpha1
+* @version 3.0.0-beta1
 */
 export default class DomainApi {
 
@@ -220,7 +221,7 @@ export default class DomainApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.domain_name - The name of the domain or domains associated with this service.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     deleteDomainWithHttpInfo(options = {}) {
       let postBody = null;
@@ -252,7 +253,7 @@ export default class DomainApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Object;
+      let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/domain/{domain_name}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -266,7 +267,7 @@ export default class DomainApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.domain_name - The name of the domain or domains associated with this service.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     deleteDomain(options = {}) {
       return this.deleteDomainWithHttpInfo(options)
@@ -341,7 +342,7 @@ export default class DomainApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DomainResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DomainResponse>} and HTTP response
      */
     listDomainsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -368,7 +369,7 @@ export default class DomainApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = DomainResponse;
+      let returnType = [DomainResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/domain', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -381,7 +382,7 @@ export default class DomainApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DomainResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DomainResponse>}
      */
     listDomains(options = {}) {
       return this.listDomainsWithHttpInfo(options)

@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The WafFirewallResponseDataAllOf model module.
  * @module model/WafFirewallResponseDataAllOf
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class WafFirewallResponseDataAllOf {
     /**
@@ -66,7 +66,6 @@ class WafFirewallResponseDataAllOf {
 }
 
 /**
- * Alphanumeric string identifying a WAF Firewall.
  * @member {String} id
  */
 WafFirewallResponseDataAllOf.prototype['id'] = undefined;

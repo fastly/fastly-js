@@ -13,12 +13,13 @@
 
 
 import ApiClient from "../ApiClient";
+import InlineResponse200 from '../model/InlineResponse200';
 import LoggingGooglePubsubResponse from '../model/LoggingGooglePubsubResponse';
 
 /**
 * LoggingPubsub service.
 * @module api/LoggingPubsubApi
-* @version 3.0.0-alpha1
+* @version 3.0.0-beta1
 */
 export default class LoggingPubsubApi {
 
@@ -125,7 +126,7 @@ export default class LoggingPubsubApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.logging_google_pubsub_name - The name for the real-time logging configuration.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     deleteLogGcpPubsubWithHttpInfo(options = {}) {
       let postBody = null;
@@ -157,7 +158,7 @@ export default class LoggingPubsubApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Object;
+      let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/pubsub/{logging_google_pubsub_name}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -171,7 +172,7 @@ export default class LoggingPubsubApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.logging_google_pubsub_name - The name for the real-time logging configuration.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     deleteLogGcpPubsub(options = {}) {
       return this.deleteLogGcpPubsubWithHttpInfo(options)

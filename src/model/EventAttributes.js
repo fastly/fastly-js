@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventAttributes model module.
  * @module model/EventAttributes
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class EventAttributes {
     /**
@@ -51,7 +51,7 @@ class EventAttributes {
                 obj['admin'] = ApiClient.convertToType(data['admin'], 'Boolean');
             }
             if (data.hasOwnProperty('created_at')) {
-                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
+                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
             if (data.hasOwnProperty('customer_id')) {
                 obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
@@ -89,12 +89,11 @@ EventAttributes.prototype['admin'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} created_at
+ * @member {Date} created_at
  */
 EventAttributes.prototype['created_at'] = undefined;
 
 /**
- * Alphanumeric string identifying the customer.
  * @member {String} customer_id
  */
 EventAttributes.prototype['customer_id'] = undefined;
@@ -124,13 +123,11 @@ EventAttributes.prototype['ip'] = undefined;
 EventAttributes.prototype['metadata'] = undefined;
 
 /**
- * Alphanumeric string identifying the service.
  * @member {String} service_id
  */
 EventAttributes.prototype['service_id'] = undefined;
 
 /**
- * Alphanumeric string identifying the user.
  * @member {String} user_id
  */
 EventAttributes.prototype['user_id'] = undefined;

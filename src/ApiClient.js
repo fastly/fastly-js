@@ -17,7 +17,7 @@ import querystring from "querystring";
 
 /**
 * @module ApiClient
-* @version 3.0.0-alpha1
+* @version 3.0.0-beta1
 */
 
 /**
@@ -41,7 +41,10 @@ class ApiClient {
          * @type {Array.<String>}
          */
         this.authentications = {
-            'token': {type: 'apiKey', 'in': 'header', name: 'Fastly-Key'}
+            'session_password_change': {type: 'basic'},
+            'token': {type: 'apiKey', 'in': 'header', name: 'Fastly-Key'},
+            'url_purge': {type: 'basic'},
+            'username_and_password': {type: 'basic'}
         }
 
         /**
@@ -50,7 +53,7 @@ class ApiClient {
          * @default {}
          */
         this.defaultHeaders = {
-            'User-Agent': 'fastly/3.0.0-alpha1'
+            'User-Agent': 'fastly-js/3.0.0-beta1'
         };
 
         /**
@@ -105,7 +108,7 @@ class ApiClient {
         const authType = {
             token: "apiKey"
         };
-        if (authType[type] == undefined || authType[type] == null) {
+        if (authType[type] == null) {
             throw new Error('Authentication method is unsupported.');
         }
         this.authentications[type][authType[type]] = token;
@@ -704,5 +707,4 @@ ApiClient.CollectionFormatEnum = {
 * @type {module:ApiClient}
 */
 ApiClient.instance = new ApiClient();
-
 export default ApiClient;

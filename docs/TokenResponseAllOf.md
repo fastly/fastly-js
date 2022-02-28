@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** | Alphanumeric string identifying a token. | [optional] [readonly] 
-**user_id** | **String** | Alphanumeric string identifying the user. | [optional] [readonly] 
+**id** | **String** |  | [optional] [readonly] 
+**user_id** | **String** |  | [optional] [readonly] 
 **created_at** | **String** | Time-stamp (UTC) of when the token was created. | [optional] 
 **last_used_at** | **String** | Time-stamp (UTC) of when the token was last used. | [optional] [readonly] 
 **expires_at** | **String** | Time-stamp (UTC) of when the token will expire (optional). | [optional] 

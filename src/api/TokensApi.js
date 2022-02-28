@@ -14,14 +14,12 @@
 
 import ApiClient from "../ApiClient";
 import GenericTokenError from '../model/GenericTokenError';
-import InlineResponse400 from '../model/InlineResponse400';
-import TokenCreatedResponse from '../model/TokenCreatedResponse';
 import TokenResponse from '../model/TokenResponse';
 
 /**
 * Tokens service.
 * @module api/TokensApi
-* @version 3.0.0-alpha1
+* @version 3.0.0-beta1
 */
 export default class TokensApi {
 
@@ -40,88 +38,6 @@ export default class TokensApi {
         }
     }
 
-
-    /**
-     * Revoke Tokens in bulk format. Users may only revoke their own tokens. Superusers may revoke tokens of others.
-     * @param {Object} options
-     * @param {Object} [options.body]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    bulkRevokeTokensWithHttpInfo(options = {}) {
-      let postBody = options['body'];
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['token'];
-      let contentTypes = ['application/vnd.api+json; ext=bulk'];
-      let accepts = [];
-      let returnType = null;
-      return this.apiClient.callApi(
-        '/tokens', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Revoke Tokens in bulk format. Users may only revoke their own tokens. Superusers may revoke tokens of others.
-     * @param {Object} options
-     * @param {Object} [options.body]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    bulkRevokeTokens(options = {}) {
-      return this.bulkRevokeTokensWithHttpInfo(options)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-    /**
-     * Create an API token. If two-factor authentication is enabled for your account, review [the instructions](/reference/api/auth/) for including a one-time password in the request. 
-     * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TokenCreatedResponse} and HTTP response
-     */
-    createTokenWithHttpInfo(options = {}) {
-      let postBody = null;
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = [];
-      let contentTypes = ['application/x-www-form-urlencoded'];
-      let accepts = ['application/json'];
-      let returnType = TokenCreatedResponse;
-      return this.apiClient.callApi(
-        '/tokens', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Create an API token. If two-factor authentication is enabled for your account, review [the instructions](/reference/api/auth/) for including a one-time password in the request. 
-     * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TokenCreatedResponse}
-     */
-    createToken(options = {}) {
-      return this.createTokenWithHttpInfo(options)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
 
     /**
      * Get a single token based on the access_token used in the request.
@@ -186,7 +102,7 @@ export default class TokensApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [TokenResponse];
@@ -227,7 +143,7 @@ export default class TokensApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [TokenResponse];
@@ -273,7 +189,7 @@ export default class TokensApi {
       let formParams = {
       };
 
-      let authNames = [];
+      let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = null;

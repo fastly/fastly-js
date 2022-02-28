@@ -14,12 +14,13 @@
 import ApiClient from '../ApiClient';
 import Historical from './Historical';
 import HistoricalMeta from './HistoricalMeta';
+import HistoricalUsageResults from './HistoricalUsageResults';
 import HistoricalUsageServiceResponseAllOf from './HistoricalUsageServiceResponseAllOf';
 
 /**
  * The HistoricalUsageServiceResponse model module.
  * @module model/HistoricalUsageServiceResponse
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class HistoricalUsageServiceResponse {
     /**
@@ -64,7 +65,7 @@ class HistoricalUsageServiceResponse {
                 obj['msg'] = ApiClient.convertToType(data['msg'], 'String');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], {'String': Object});
+                obj['data'] = HistoricalUsageResults.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -91,7 +92,7 @@ HistoricalUsageServiceResponse.prototype['meta'] = undefined;
 HistoricalUsageServiceResponse.prototype['msg'] = undefined;
 
 /**
- * @member {Object.<String, Object>} data
+ * @member {module:model/HistoricalUsageResults} data
  */
 HistoricalUsageServiceResponse.prototype['data'] = undefined;
 
@@ -113,7 +114,7 @@ Historical.prototype['meta'] = undefined;
 Historical.prototype['msg'] = undefined;
 // Implement HistoricalUsageServiceResponseAllOf interface:
 /**
- * @member {Object.<String, Object>} data
+ * @member {module:model/HistoricalUsageResults} data
  */
 HistoricalUsageServiceResponseAllOf.prototype['data'] = undefined;
 

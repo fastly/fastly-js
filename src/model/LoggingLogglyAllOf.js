@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingLogglyAllOf model module.
  * @module model/LoggingLogglyAllOf
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class LoggingLogglyAllOf {
     /**

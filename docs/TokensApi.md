@@ -7,77 +7,11 @@ const apiInstance = new Fastly.TokensApi();
 
 Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
-[**bulkRevokeTokens**](TokensApi.md#bulkRevokeTokens) | **DELETE** /tokens | Revoke multiple tokens
-[**createToken**](TokensApi.md#createToken) | **POST** /tokens | Create a token
 [**getTokenCurrent**](TokensApi.md#getTokenCurrent) | **GET** /tokens/self | Get the current token
 [**listTokensCustomer**](TokensApi.md#listTokensCustomer) | **GET** /customer/{customer_id}/tokens | List tokens for a customer
 [**listTokensUser**](TokensApi.md#listTokensUser) | **GET** /tokens | List tokens for the authenticated user
 [**revokeToken**](TokensApi.md#revokeToken) | **DELETE** /tokens/{token_id} | Revoke a token
 [**revokeTokenCurrent**](TokensApi.md#revokeTokenCurrent) | **DELETE** /tokens/self | Revoke the current token
-
-
-## `bulkRevokeTokens`
-
-```javascript
-bulkRevokeTokens({ , [body] })
-```
-
-Revoke Tokens in bulk format. Users may only revoke their own tokens. Superusers may revoke tokens of others.
-
-### Example
-
-```javascript
-const options = {
-  body: {"data":[{"id":"3krg2uUGZzb2W9Euo4moOY","type":"token"},{"id":"71ZA6hv2FO6tGEQIE203Xj","type":"token"}]},
-};
-
-apiInstance.bulkRevokeTokens(options)
-  .then(() => {
-    console.log('API called successfully.');
-  })
-  .catch((error) => {
-    console.error(error);
-  });
-```
-
-### Options
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**body** | **Object** |  | [optional]
-
-### Return type
-
-null (empty response body)
-
-
-## `createToken`
-
-```javascript
-createToken()
-```
-
-Create an API token. If two-factor authentication is enabled for your account, review [the instructions](/reference/api/auth/) for including a one-time password in the request. 
-
-### Example
-
-```javascript
-apiInstance.createToken()
-  .then((data) => {
-    console.log(data, "API called successfully.");
-  })
-  .catch((error) => {
-    console.error(error);
-  });
-```
-
-### Options
-
-This endpoint does not need any parameters.
-
-### Return type
-
-[**TokenCreatedResponse**](TokenCreatedResponse.md)
 
 
 ## `getTokenCurrent`

@@ -18,7 +18,7 @@ import BillingTotal from './BillingTotal';
 /**
  * The Billing model module.
  * @module model/Billing
- * @version 3.0.0-alpha1
+ * @version 3.0.0-beta1
  */
 class Billing {
     /**
@@ -50,10 +50,10 @@ class Billing {
             obj = obj || new Billing();
 
             if (data.hasOwnProperty('end_time')) {
-                obj['end_time'] = ApiClient.convertToType(data['end_time'], 'String');
+                obj['end_time'] = ApiClient.convertToType(data['end_time'], 'Date');
             }
             if (data.hasOwnProperty('start_time')) {
-                obj['start_time'] = ApiClient.convertToType(data['start_time'], 'String');
+                obj['start_time'] = ApiClient.convertToType(data['start_time'], 'Date');
             }
             if (data.hasOwnProperty('invoice_id')) {
                 obj['invoice_id'] = ApiClient.convertToType(data['invoice_id'], 'String');
@@ -79,24 +79,22 @@ class Billing {
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} end_time
+ * @member {Date} end_time
  */
 Billing.prototype['end_time'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
- * @member {String} start_time
+ * @member {Date} start_time
  */
 Billing.prototype['start_time'] = undefined;
 
 /**
- * Alphanumeric string identifying the invoice.
  * @member {String} invoice_id
  */
 Billing.prototype['invoice_id'] = undefined;
 
 /**
- * Alphanumeric string identifying the customer.
  * @member {String} customer_id
  */
 Billing.prototype['customer_id'] = undefined;
