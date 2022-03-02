@@ -21,7 +21,7 @@ import TlsConfigurationsResponseAllOf from './TlsConfigurationsResponseAllOf';
 /**
  * The TlsConfigurationsResponse model module.
  * @module model/TlsConfigurationsResponse
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class TlsConfigurationsResponse {
     /**

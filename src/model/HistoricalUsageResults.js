@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HistoricalUsageResults model module.
  * @module model/HistoricalUsageResults
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class HistoricalUsageResults {
     /**

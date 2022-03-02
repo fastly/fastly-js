@@ -13,12 +13,12 @@
 
 import ApiClient from '../ApiClient';
 import RelationshipsForWafFirewallVersion from './RelationshipsForWafFirewallVersion';
-import Timestamps from './Timestamps';
+import WafFirewallVersionResponseDataAttributes from './WafFirewallVersionResponseDataAttributes';
 
 /**
  * The WafFirewallVersionResponseDataAllOf model module.
  * @module model/WafFirewallVersionResponseDataAllOf
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class WafFirewallVersionResponseDataAllOf {
     /**
@@ -53,7 +53,7 @@ class WafFirewallVersionResponseDataAllOf {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
             if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
+                obj['attributes'] = WafFirewallVersionResponseDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = RelationshipsForWafFirewallVersion.constructFromObject(data['relationships']);
@@ -72,7 +72,7 @@ class WafFirewallVersionResponseDataAllOf {
 WafFirewallVersionResponseDataAllOf.prototype['id'] = undefined;
 
 /**
- * @member {module:model/Timestamps} attributes
+ * @member {module:model/WafFirewallVersionResponseDataAttributes} attributes
  */
 WafFirewallVersionResponseDataAllOf.prototype['attributes'] = undefined;
 

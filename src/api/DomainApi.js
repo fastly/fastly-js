@@ -20,7 +20,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Domain service.
 * @module api/DomainApi
-* @version 3.0.0-beta1
+* @version 3.0.0-beta2
 */
 export default class DomainApi {
 

@@ -13,15 +13,15 @@
 
 import ApiClient from '../ApiClient';
 import RelationshipTlsDomains from './RelationshipTlsDomains';
-import Timestamps from './Timestamps';
 import TlsCertificateData from './TlsCertificateData';
+import TlsCertificateResponseAttributes from './TlsCertificateResponseAttributes';
 import TlsCertificateResponseDataAllOf from './TlsCertificateResponseDataAllOf';
 import TypeTlsCertificate from './TypeTlsCertificate';
 
 /**
  * The TlsCertificateResponseData model module.
  * @module model/TlsCertificateResponseData
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class TlsCertificateResponseData {
     /**
@@ -60,7 +60,7 @@ class TlsCertificateResponseData {
                 obj['type'] = TypeTlsCertificate.constructFromObject(data['type']);
             }
             if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
+                obj['attributes'] = TlsCertificateResponseAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = RelationshipTlsDomains.constructFromObject(data['relationships']);
@@ -81,7 +81,7 @@ class TlsCertificateResponseData {
 TlsCertificateResponseData.prototype['type'] = undefined;
 
 /**
- * @member {module:model/Timestamps} attributes
+ * @member {module:model/TlsCertificateResponseAttributes} attributes
  */
 TlsCertificateResponseData.prototype['attributes'] = undefined;
 
@@ -115,7 +115,7 @@ TlsCertificateData.prototype['relationships'] = undefined;
  */
 TlsCertificateResponseDataAllOf.prototype['id'] = undefined;
 /**
- * @member {module:model/Timestamps} attributes
+ * @member {module:model/TlsCertificateResponseAttributes} attributes
  */
 TlsCertificateResponseDataAllOf.prototype['attributes'] = undefined;
 

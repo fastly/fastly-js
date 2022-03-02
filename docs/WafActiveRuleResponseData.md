@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**TypeWafActiveRule**](TypeWafActiveRule.md) |  | [optional] 
-**attributes** | [**Timestamps**](Timestamps.md) |  | [optional] 
+**attributes** | [**WafActiveRuleResponseDataAttributes**](WafActiveRuleResponseDataAttributes.md) |  | [optional] 
 **relationships** | [**WafActiveRuleResponseDataRelationships**](WafActiveRuleResponseDataRelationships.md) |  | [optional] 
 **id** | **String** |  | [optional] [readonly] 
 

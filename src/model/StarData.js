@@ -12,13 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
-import RelationshipUser from './RelationshipUser';
+import RelationshipsForStar from './RelationshipsForStar';
 import TypeStar from './TypeStar';
 
 /**
  * The StarData model module.
  * @module model/StarData
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class StarData {
     /**
@@ -53,7 +53,7 @@ class StarData {
                 obj['type'] = TypeStar.constructFromObject(data['type']);
             }
             if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = ApiClient.convertToType(data['relationships'], RelationshipUser);
+                obj['relationships'] = RelationshipsForStar.constructFromObject(data['relationships']);
             }
         }
         return obj;
@@ -68,7 +68,7 @@ class StarData {
 StarData.prototype['type'] = undefined;
 
 /**
- * @member {module:model/RelationshipUser} relationships
+ * @member {module:model/RelationshipsForStar} relationships
  */
 StarData.prototype['relationships'] = undefined;
 

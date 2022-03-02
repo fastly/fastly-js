@@ -12,6 +12,8 @@
  */
 
 import ApiClient from '../ApiClient';
+import RelationshipService from './RelationshipService';
+import RelationshipUser from './RelationshipUser';
 import ServiceAuthorizationData from './ServiceAuthorizationData';
 import ServiceAuthorizationResponseDataAllOf from './ServiceAuthorizationResponseDataAllOf';
 import Timestamps from './Timestamps';
@@ -20,7 +22,7 @@ import TypeServiceAuthorization from './TypeServiceAuthorization';
 /**
  * The ServiceAuthorizationResponseData model module.
  * @module model/ServiceAuthorizationResponseData
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class ServiceAuthorizationResponseData {
     /**

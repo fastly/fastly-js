@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import Timestamps from './Timestamps';
+import TlsBulkCertificateResponseAttributes from './TlsBulkCertificateResponseAttributes';
 
 /**
  * The TlsBulkCertificateResponseDataAllOf model module.
  * @module model/TlsBulkCertificateResponseDataAllOf
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class TlsBulkCertificateResponseDataAllOf {
     /**
@@ -52,7 +52,7 @@ class TlsBulkCertificateResponseDataAllOf {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
             if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
+                obj['attributes'] = TlsBulkCertificateResponseAttributes.constructFromObject(data['attributes']);
             }
         }
         return obj;
@@ -67,7 +67,7 @@ class TlsBulkCertificateResponseDataAllOf {
 TlsBulkCertificateResponseDataAllOf.prototype['id'] = undefined;
 
 /**
- * @member {module:model/Timestamps} attributes
+ * @member {module:model/TlsBulkCertificateResponseAttributes} attributes
  */
 TlsBulkCertificateResponseDataAllOf.prototype['attributes'] = undefined;
 

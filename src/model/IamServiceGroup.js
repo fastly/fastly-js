@@ -18,7 +18,7 @@ import TimestampsNoDelete from './TimestampsNoDelete';
 /**
  * The IamServiceGroup model module.
  * @module model/IamServiceGroup
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class IamServiceGroup {
     /**

@@ -14,7 +14,6 @@
 
 import ApiClient from './ApiClient';
 import Acl from './model/Acl';
-import AclEntries from './model/AclEntries';
 import AclEntry from './model/AclEntry';
 import AclEntryResponse from './model/AclEntryResponse';
 import AclEntryResponseAllOf from './model/AclEntryResponseAllOf';
@@ -26,14 +25,11 @@ import Backend from './model/Backend';
 import BackendResponse from './model/BackendResponse';
 import BackendResponseAllOf from './model/BackendResponseAllOf';
 import Billing from './model/Billing';
-import BillingAddress from './model/BillingAddress';
-import BillingAddressData from './model/BillingAddressData';
-import BillingAddressDataAttributes from './model/BillingAddressDataAttributes';
+import BillingAddressAttributes from './model/BillingAddressAttributes';
 import BillingAddressRequest from './model/BillingAddressRequest';
 import BillingAddressRequestData from './model/BillingAddressRequestData';
 import BillingAddressResponse from './model/BillingAddressResponse';
-import BillingAddressResponseAllOf from './model/BillingAddressResponseAllOf';
-import BillingAddressResponseAllOfData from './model/BillingAddressResponseAllOfData';
+import BillingAddressResponseData from './model/BillingAddressResponseData';
 import BillingEstimateResponse from './model/BillingEstimateResponse';
 import BillingEstimateResponseAllOf from './model/BillingEstimateResponseAllOf';
 import BillingEstimateResponseAllOfLine from './model/BillingEstimateResponseAllOfLine';
@@ -45,6 +41,11 @@ import BillingResponseLineItemAllOf from './model/BillingResponseLineItemAllOf';
 import BillingStatus from './model/BillingStatus';
 import BillingTotal from './model/BillingTotal';
 import BillingTotalExtras from './model/BillingTotalExtras';
+import BulkUpdateAclEntriesRequest from './model/BulkUpdateAclEntriesRequest';
+import BulkUpdateAclEntry from './model/BulkUpdateAclEntry';
+import BulkUpdateAclEntryAllOf from './model/BulkUpdateAclEntryAllOf';
+import BulkUpdateDictionaryItem from './model/BulkUpdateDictionaryItem';
+import BulkUpdateDictionaryItemAllOf from './model/BulkUpdateDictionaryItemAllOf';
 import BulkUpdateDictionaryListRequest from './model/BulkUpdateDictionaryListRequest';
 import BulkWafActiveRules from './model/BulkWafActiveRules';
 import CacheSetting from './model/CacheSetting';
@@ -118,6 +119,7 @@ import IncludedWithWafExclusionItem from './model/IncludedWithWafExclusionItem';
 import IncludedWithWafFirewallVersionItem from './model/IncludedWithWafFirewallVersionItem';
 import IncludedWithWafRuleItem from './model/IncludedWithWafRuleItem';
 import InlineResponse200 from './model/InlineResponse200';
+import InlineResponse2001 from './model/InlineResponse2001';
 import Invitation from './model/Invitation';
 import InvitationData from './model/InvitationData';
 import InvitationDataAttributes from './model/InvitationDataAttributes';
@@ -213,7 +215,6 @@ import LoggingSyslogAllOf from './model/LoggingSyslogAllOf';
 import LoggingSyslogResponse from './model/LoggingSyslogResponse';
 import LoggingTlsCommon from './model/LoggingTlsCommon';
 import LoggingUseTls from './model/LoggingUseTls';
-import NestedVersion from './model/NestedVersion';
 import Package from './model/Package';
 import PackageMetadata from './model/PackageMetadata';
 import PackageResponse from './model/PackageResponse';
@@ -308,6 +309,7 @@ import RelationshipWafRules from './model/RelationshipWafRules';
 import RelationshipWafTags from './model/RelationshipWafTags';
 import RelationshipWafTagsWafTags from './model/RelationshipWafTagsWafTags';
 import RelationshipsForInvitation from './model/RelationshipsForInvitation';
+import RelationshipsForStar from './model/RelationshipsForStar';
 import RelationshipsForTlsActivation from './model/RelationshipsForTlsActivation';
 import RelationshipsForTlsBulkCertificate from './model/RelationshipsForTlsBulkCertificate';
 import RelationshipsForTlsConfiguration from './model/RelationshipsForTlsConfiguration';
@@ -320,6 +322,11 @@ import RelationshipsForWafFirewallVersion from './model/RelationshipsForWafFirew
 import RelationshipsForWafRule from './model/RelationshipsForWafRule';
 import RequestSettings from './model/RequestSettings';
 import RequestSettingsResponse from './model/RequestSettingsResponse';
+import Resource from './model/Resource';
+import ResourceCreate from './model/ResourceCreate';
+import ResourceCreateAllOf from './model/ResourceCreateAllOf';
+import ResourceResponse from './model/ResourceResponse';
+import ResourceResponseAllOf from './model/ResourceResponseAllOf';
 import ResponseObject from './model/ResponseObject';
 import ResponseObjectResponse from './model/ResponseObjectResponse';
 import Results from './model/Results';
@@ -359,6 +366,8 @@ import ServiceListResponse from './model/ServiceListResponse';
 import ServiceListResponseAllOf from './model/ServiceListResponseAllOf';
 import ServiceResponse from './model/ServiceResponse';
 import ServiceResponseAllOf from './model/ServiceResponseAllOf';
+import ServiceVersionDetail from './model/ServiceVersionDetail';
+import ServiceVersionDetailOrNull from './model/ServiceVersionDetailOrNull';
 import Settings from './model/Settings';
 import SettingsResponse from './model/SettingsResponse';
 import Snippet from './model/Snippet';
@@ -382,6 +391,8 @@ import TlsBulkCertificate from './model/TlsBulkCertificate';
 import TlsBulkCertificateData from './model/TlsBulkCertificateData';
 import TlsBulkCertificateDataAttributes from './model/TlsBulkCertificateDataAttributes';
 import TlsBulkCertificateResponse from './model/TlsBulkCertificateResponse';
+import TlsBulkCertificateResponseAttributes from './model/TlsBulkCertificateResponseAttributes';
+import TlsBulkCertificateResponseAttributesAllOf from './model/TlsBulkCertificateResponseAttributesAllOf';
 import TlsBulkCertificateResponseData from './model/TlsBulkCertificateResponseData';
 import TlsBulkCertificateResponseDataAllOf from './model/TlsBulkCertificateResponseDataAllOf';
 import TlsBulkCertificatesResponse from './model/TlsBulkCertificatesResponse';
@@ -390,6 +401,8 @@ import TlsCertificate from './model/TlsCertificate';
 import TlsCertificateData from './model/TlsCertificateData';
 import TlsCertificateDataAttributes from './model/TlsCertificateDataAttributes';
 import TlsCertificateResponse from './model/TlsCertificateResponse';
+import TlsCertificateResponseAttributes from './model/TlsCertificateResponseAttributes';
+import TlsCertificateResponseAttributesAllOf from './model/TlsCertificateResponseAttributesAllOf';
 import TlsCertificateResponseData from './model/TlsCertificateResponseData';
 import TlsCertificateResponseDataAllOf from './model/TlsCertificateResponseDataAllOf';
 import TlsCertificatesResponse from './model/TlsCertificatesResponse';
@@ -399,6 +412,8 @@ import TlsConfiguration from './model/TlsConfiguration';
 import TlsConfigurationData from './model/TlsConfigurationData';
 import TlsConfigurationDataAttributes from './model/TlsConfigurationDataAttributes';
 import TlsConfigurationResponse from './model/TlsConfigurationResponse';
+import TlsConfigurationResponseAttributes from './model/TlsConfigurationResponseAttributes';
+import TlsConfigurationResponseAttributesAllOf from './model/TlsConfigurationResponseAttributesAllOf';
 import TlsConfigurationResponseData from './model/TlsConfigurationResponseData';
 import TlsConfigurationResponseDataAllOf from './model/TlsConfigurationResponseDataAllOf';
 import TlsConfigurationsResponse from './model/TlsConfigurationsResponse';
@@ -411,6 +426,8 @@ import TlsPrivateKey from './model/TlsPrivateKey';
 import TlsPrivateKeyData from './model/TlsPrivateKeyData';
 import TlsPrivateKeyDataAttributes from './model/TlsPrivateKeyDataAttributes';
 import TlsPrivateKeyResponse from './model/TlsPrivateKeyResponse';
+import TlsPrivateKeyResponseAttributes from './model/TlsPrivateKeyResponseAttributes';
+import TlsPrivateKeyResponseAttributesAllOf from './model/TlsPrivateKeyResponseAttributesAllOf';
 import TlsPrivateKeyResponseData from './model/TlsPrivateKeyResponseData';
 import TlsPrivateKeysResponse from './model/TlsPrivateKeysResponse';
 import TlsPrivateKeysResponseAllOf from './model/TlsPrivateKeysResponseAllOf';
@@ -418,6 +435,10 @@ import TlsSubscription from './model/TlsSubscription';
 import TlsSubscriptionData from './model/TlsSubscriptionData';
 import TlsSubscriptionDataAttributes from './model/TlsSubscriptionDataAttributes';
 import TlsSubscriptionResponse from './model/TlsSubscriptionResponse';
+import TlsSubscriptionResponseAttributes from './model/TlsSubscriptionResponseAttributes';
+import TlsSubscriptionResponseAttributesAllOf from './model/TlsSubscriptionResponseAttributesAllOf';
+import TlsSubscriptionResponseData from './model/TlsSubscriptionResponseData';
+import TlsSubscriptionResponseDataAllOf from './model/TlsSubscriptionResponseDataAllOf';
 import TlsSubscriptionsResponse from './model/TlsSubscriptionsResponse';
 import TlsSubscriptionsResponseAllOf from './model/TlsSubscriptionsResponseAllOf';
 import Token from './model/Token';
@@ -430,6 +451,7 @@ import TypeContact from './model/TypeContact';
 import TypeCustomer from './model/TypeCustomer';
 import TypeEvent from './model/TypeEvent';
 import TypeInvitation from './model/TypeInvitation';
+import TypeResource from './model/TypeResource';
 import TypeService from './model/TypeService';
 import TypeServiceAuthorization from './model/TypeServiceAuthorization';
 import TypeServiceInvitation from './model/TypeServiceInvitation';
@@ -470,6 +492,8 @@ import WafActiveRuleDataAttributes from './model/WafActiveRuleDataAttributes';
 import WafActiveRuleResponse from './model/WafActiveRuleResponse';
 import WafActiveRuleResponseData from './model/WafActiveRuleResponseData';
 import WafActiveRuleResponseDataAllOf from './model/WafActiveRuleResponseDataAllOf';
+import WafActiveRuleResponseDataAttributes from './model/WafActiveRuleResponseDataAttributes';
+import WafActiveRuleResponseDataAttributesAllOf from './model/WafActiveRuleResponseDataAttributesAllOf';
 import WafActiveRuleResponseDataRelationships from './model/WafActiveRuleResponseDataRelationships';
 import WafActiveRulesResponse from './model/WafActiveRulesResponse';
 import WafActiveRulesResponseAllOf from './model/WafActiveRulesResponseAllOf';
@@ -479,6 +503,8 @@ import WafExclusionDataAttributes from './model/WafExclusionDataAttributes';
 import WafExclusionResponse from './model/WafExclusionResponse';
 import WafExclusionResponseData from './model/WafExclusionResponseData';
 import WafExclusionResponseDataAllOf from './model/WafExclusionResponseDataAllOf';
+import WafExclusionResponseDataAttributes from './model/WafExclusionResponseDataAttributes';
+import WafExclusionResponseDataAttributesAllOf from './model/WafExclusionResponseDataAttributesAllOf';
 import WafExclusionResponseDataRelationships from './model/WafExclusionResponseDataRelationships';
 import WafExclusionsResponse from './model/WafExclusionsResponse';
 import WafExclusionsResponseAllOf from './model/WafExclusionsResponseAllOf';
@@ -488,12 +514,16 @@ import WafFirewallDataAttributes from './model/WafFirewallDataAttributes';
 import WafFirewallResponse from './model/WafFirewallResponse';
 import WafFirewallResponseData from './model/WafFirewallResponseData';
 import WafFirewallResponseDataAllOf from './model/WafFirewallResponseDataAllOf';
+import WafFirewallResponseDataAttributes from './model/WafFirewallResponseDataAttributes';
+import WafFirewallResponseDataAttributesAllOf from './model/WafFirewallResponseDataAttributesAllOf';
 import WafFirewallVersion from './model/WafFirewallVersion';
 import WafFirewallVersionData from './model/WafFirewallVersionData';
 import WafFirewallVersionDataAttributes from './model/WafFirewallVersionDataAttributes';
 import WafFirewallVersionResponse from './model/WafFirewallVersionResponse';
 import WafFirewallVersionResponseData from './model/WafFirewallVersionResponseData';
 import WafFirewallVersionResponseDataAllOf from './model/WafFirewallVersionResponseDataAllOf';
+import WafFirewallVersionResponseDataAttributes from './model/WafFirewallVersionResponseDataAttributes';
+import WafFirewallVersionResponseDataAttributesAllOf from './model/WafFirewallVersionResponseDataAttributesAllOf';
 import WafFirewallVersionsResponse from './model/WafFirewallVersionsResponse';
 import WafFirewallVersionsResponseAllOf from './model/WafFirewallVersionsResponseAllOf';
 import WafFirewallsResponse from './model/WafFirewallsResponse';
@@ -517,6 +547,7 @@ import WafTag from './model/WafTag';
 import WafTagAttributes from './model/WafTagAttributes';
 import WafTagsResponse from './model/WafTagsResponse';
 import WafTagsResponseAllOf from './model/WafTagsResponseAllOf';
+import WafTagsResponseDataItem from './model/WafTagsResponseDataItem';
 import AclApi from './api/AclApi';
 import AclEntryApi from './api/AclEntryApi';
 import ApexRedirectApi from './api/ApexRedirectApi';
@@ -536,6 +567,7 @@ import DirectorApi from './api/DirectorApi';
 import DirectorBackendApi from './api/DirectorBackendApi';
 import DocsApi from './api/DocsApi';
 import DomainApi from './api/DomainApi';
+import DomainOwnershipsApi from './api/DomainOwnershipsApi';
 import EventsApi from './api/EventsApi';
 import GzipApi from './api/GzipApi';
 import HeaderApi from './api/HeaderApi';
@@ -581,6 +613,7 @@ import PurgeApi from './api/PurgeApi';
 import RateLimiterApi from './api/RateLimiterApi';
 import RealtimeApi from './api/RealtimeApi';
 import RequestSettingsApi from './api/RequestSettingsApi';
+import ResourceApi from './api/ResourceApi';
 import ResponseObjectApi from './api/ResponseObjectApi';
 import ServerApi from './api/ServerApi';
 import ServiceApi from './api/ServiceApi';
@@ -643,7 +676,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 3.0.0-beta1
+* @version 3.0.0-beta2
 */
 export {
     /**
@@ -657,12 +690,6 @@ export {
      * @property {module:model/Acl}
      */
     Acl,
-
-    /**
-     * The AclEntries model constructor.
-     * @property {module:model/AclEntries}
-     */
-    AclEntries,
 
     /**
      * The AclEntry model constructor.
@@ -731,22 +758,10 @@ export {
     Billing,
 
     /**
-     * The BillingAddress model constructor.
-     * @property {module:model/BillingAddress}
+     * The BillingAddressAttributes model constructor.
+     * @property {module:model/BillingAddressAttributes}
      */
-    BillingAddress,
-
-    /**
-     * The BillingAddressData model constructor.
-     * @property {module:model/BillingAddressData}
-     */
-    BillingAddressData,
-
-    /**
-     * The BillingAddressDataAttributes model constructor.
-     * @property {module:model/BillingAddressDataAttributes}
-     */
-    BillingAddressDataAttributes,
+    BillingAddressAttributes,
 
     /**
      * The BillingAddressRequest model constructor.
@@ -767,16 +782,10 @@ export {
     BillingAddressResponse,
 
     /**
-     * The BillingAddressResponseAllOf model constructor.
-     * @property {module:model/BillingAddressResponseAllOf}
+     * The BillingAddressResponseData model constructor.
+     * @property {module:model/BillingAddressResponseData}
      */
-    BillingAddressResponseAllOf,
-
-    /**
-     * The BillingAddressResponseAllOfData model constructor.
-     * @property {module:model/BillingAddressResponseAllOfData}
-     */
-    BillingAddressResponseAllOfData,
+    BillingAddressResponseData,
 
     /**
      * The BillingEstimateResponse model constructor.
@@ -843,6 +852,36 @@ export {
      * @property {module:model/BillingTotalExtras}
      */
     BillingTotalExtras,
+
+    /**
+     * The BulkUpdateAclEntriesRequest model constructor.
+     * @property {module:model/BulkUpdateAclEntriesRequest}
+     */
+    BulkUpdateAclEntriesRequest,
+
+    /**
+     * The BulkUpdateAclEntry model constructor.
+     * @property {module:model/BulkUpdateAclEntry}
+     */
+    BulkUpdateAclEntry,
+
+    /**
+     * The BulkUpdateAclEntryAllOf model constructor.
+     * @property {module:model/BulkUpdateAclEntryAllOf}
+     */
+    BulkUpdateAclEntryAllOf,
+
+    /**
+     * The BulkUpdateDictionaryItem model constructor.
+     * @property {module:model/BulkUpdateDictionaryItem}
+     */
+    BulkUpdateDictionaryItem,
+
+    /**
+     * The BulkUpdateDictionaryItemAllOf model constructor.
+     * @property {module:model/BulkUpdateDictionaryItemAllOf}
+     */
+    BulkUpdateDictionaryItemAllOf,
 
     /**
      * The BulkUpdateDictionaryListRequest model constructor.
@@ -1281,6 +1320,12 @@ export {
      * @property {module:model/InlineResponse200}
      */
     InlineResponse200,
+
+    /**
+     * The InlineResponse2001 model constructor.
+     * @property {module:model/InlineResponse2001}
+     */
+    InlineResponse2001,
 
     /**
      * The Invitation model constructor.
@@ -1853,12 +1898,6 @@ export {
     LoggingUseTls,
 
     /**
-     * The NestedVersion model constructor.
-     * @property {module:model/NestedVersion}
-     */
-    NestedVersion,
-
-    /**
      * The Package model constructor.
      * @property {module:model/Package}
      */
@@ -2423,6 +2462,12 @@ export {
     RelationshipsForInvitation,
 
     /**
+     * The RelationshipsForStar model constructor.
+     * @property {module:model/RelationshipsForStar}
+     */
+    RelationshipsForStar,
+
+    /**
      * The RelationshipsForTlsActivation model constructor.
      * @property {module:model/RelationshipsForTlsActivation}
      */
@@ -2493,6 +2538,36 @@ export {
      * @property {module:model/RequestSettingsResponse}
      */
     RequestSettingsResponse,
+
+    /**
+     * The Resource model constructor.
+     * @property {module:model/Resource}
+     */
+    Resource,
+
+    /**
+     * The ResourceCreate model constructor.
+     * @property {module:model/ResourceCreate}
+     */
+    ResourceCreate,
+
+    /**
+     * The ResourceCreateAllOf model constructor.
+     * @property {module:model/ResourceCreateAllOf}
+     */
+    ResourceCreateAllOf,
+
+    /**
+     * The ResourceResponse model constructor.
+     * @property {module:model/ResourceResponse}
+     */
+    ResourceResponse,
+
+    /**
+     * The ResourceResponseAllOf model constructor.
+     * @property {module:model/ResourceResponseAllOf}
+     */
+    ResourceResponseAllOf,
 
     /**
      * The ResponseObject model constructor.
@@ -2729,6 +2804,18 @@ export {
     ServiceResponseAllOf,
 
     /**
+     * The ServiceVersionDetail model constructor.
+     * @property {module:model/ServiceVersionDetail}
+     */
+    ServiceVersionDetail,
+
+    /**
+     * The ServiceVersionDetailOrNull model constructor.
+     * @property {module:model/ServiceVersionDetailOrNull}
+     */
+    ServiceVersionDetailOrNull,
+
+    /**
      * The Settings model constructor.
      * @property {module:model/Settings}
      */
@@ -2867,6 +2954,18 @@ export {
     TlsBulkCertificateResponse,
 
     /**
+     * The TlsBulkCertificateResponseAttributes model constructor.
+     * @property {module:model/TlsBulkCertificateResponseAttributes}
+     */
+    TlsBulkCertificateResponseAttributes,
+
+    /**
+     * The TlsBulkCertificateResponseAttributesAllOf model constructor.
+     * @property {module:model/TlsBulkCertificateResponseAttributesAllOf}
+     */
+    TlsBulkCertificateResponseAttributesAllOf,
+
+    /**
      * The TlsBulkCertificateResponseData model constructor.
      * @property {module:model/TlsBulkCertificateResponseData}
      */
@@ -2913,6 +3012,18 @@ export {
      * @property {module:model/TlsCertificateResponse}
      */
     TlsCertificateResponse,
+
+    /**
+     * The TlsCertificateResponseAttributes model constructor.
+     * @property {module:model/TlsCertificateResponseAttributes}
+     */
+    TlsCertificateResponseAttributes,
+
+    /**
+     * The TlsCertificateResponseAttributesAllOf model constructor.
+     * @property {module:model/TlsCertificateResponseAttributesAllOf}
+     */
+    TlsCertificateResponseAttributesAllOf,
 
     /**
      * The TlsCertificateResponseData model constructor.
@@ -2967,6 +3078,18 @@ export {
      * @property {module:model/TlsConfigurationResponse}
      */
     TlsConfigurationResponse,
+
+    /**
+     * The TlsConfigurationResponseAttributes model constructor.
+     * @property {module:model/TlsConfigurationResponseAttributes}
+     */
+    TlsConfigurationResponseAttributes,
+
+    /**
+     * The TlsConfigurationResponseAttributesAllOf model constructor.
+     * @property {module:model/TlsConfigurationResponseAttributesAllOf}
+     */
+    TlsConfigurationResponseAttributesAllOf,
 
     /**
      * The TlsConfigurationResponseData model constructor.
@@ -3041,6 +3164,18 @@ export {
     TlsPrivateKeyResponse,
 
     /**
+     * The TlsPrivateKeyResponseAttributes model constructor.
+     * @property {module:model/TlsPrivateKeyResponseAttributes}
+     */
+    TlsPrivateKeyResponseAttributes,
+
+    /**
+     * The TlsPrivateKeyResponseAttributesAllOf model constructor.
+     * @property {module:model/TlsPrivateKeyResponseAttributesAllOf}
+     */
+    TlsPrivateKeyResponseAttributesAllOf,
+
+    /**
      * The TlsPrivateKeyResponseData model constructor.
      * @property {module:model/TlsPrivateKeyResponseData}
      */
@@ -3081,6 +3216,30 @@ export {
      * @property {module:model/TlsSubscriptionResponse}
      */
     TlsSubscriptionResponse,
+
+    /**
+     * The TlsSubscriptionResponseAttributes model constructor.
+     * @property {module:model/TlsSubscriptionResponseAttributes}
+     */
+    TlsSubscriptionResponseAttributes,
+
+    /**
+     * The TlsSubscriptionResponseAttributesAllOf model constructor.
+     * @property {module:model/TlsSubscriptionResponseAttributesAllOf}
+     */
+    TlsSubscriptionResponseAttributesAllOf,
+
+    /**
+     * The TlsSubscriptionResponseData model constructor.
+     * @property {module:model/TlsSubscriptionResponseData}
+     */
+    TlsSubscriptionResponseData,
+
+    /**
+     * The TlsSubscriptionResponseDataAllOf model constructor.
+     * @property {module:model/TlsSubscriptionResponseDataAllOf}
+     */
+    TlsSubscriptionResponseDataAllOf,
 
     /**
      * The TlsSubscriptionsResponse model constructor.
@@ -3153,6 +3312,12 @@ export {
      * @property {module:model/TypeInvitation}
      */
     TypeInvitation,
+
+    /**
+     * The TypeResource model constructor.
+     * @property {module:model/TypeResource}
+     */
+    TypeResource,
 
     /**
      * The TypeService model constructor.
@@ -3395,6 +3560,18 @@ export {
     WafActiveRuleResponseDataAllOf,
 
     /**
+     * The WafActiveRuleResponseDataAttributes model constructor.
+     * @property {module:model/WafActiveRuleResponseDataAttributes}
+     */
+    WafActiveRuleResponseDataAttributes,
+
+    /**
+     * The WafActiveRuleResponseDataAttributesAllOf model constructor.
+     * @property {module:model/WafActiveRuleResponseDataAttributesAllOf}
+     */
+    WafActiveRuleResponseDataAttributesAllOf,
+
+    /**
      * The WafActiveRuleResponseDataRelationships model constructor.
      * @property {module:model/WafActiveRuleResponseDataRelationships}
      */
@@ -3447,6 +3624,18 @@ export {
      * @property {module:model/WafExclusionResponseDataAllOf}
      */
     WafExclusionResponseDataAllOf,
+
+    /**
+     * The WafExclusionResponseDataAttributes model constructor.
+     * @property {module:model/WafExclusionResponseDataAttributes}
+     */
+    WafExclusionResponseDataAttributes,
+
+    /**
+     * The WafExclusionResponseDataAttributesAllOf model constructor.
+     * @property {module:model/WafExclusionResponseDataAttributesAllOf}
+     */
+    WafExclusionResponseDataAttributesAllOf,
 
     /**
      * The WafExclusionResponseDataRelationships model constructor.
@@ -3503,6 +3692,18 @@ export {
     WafFirewallResponseDataAllOf,
 
     /**
+     * The WafFirewallResponseDataAttributes model constructor.
+     * @property {module:model/WafFirewallResponseDataAttributes}
+     */
+    WafFirewallResponseDataAttributes,
+
+    /**
+     * The WafFirewallResponseDataAttributesAllOf model constructor.
+     * @property {module:model/WafFirewallResponseDataAttributesAllOf}
+     */
+    WafFirewallResponseDataAttributesAllOf,
+
+    /**
      * The WafFirewallVersion model constructor.
      * @property {module:model/WafFirewallVersion}
      */
@@ -3537,6 +3738,18 @@ export {
      * @property {module:model/WafFirewallVersionResponseDataAllOf}
      */
     WafFirewallVersionResponseDataAllOf,
+
+    /**
+     * The WafFirewallVersionResponseDataAttributes model constructor.
+     * @property {module:model/WafFirewallVersionResponseDataAttributes}
+     */
+    WafFirewallVersionResponseDataAttributes,
+
+    /**
+     * The WafFirewallVersionResponseDataAttributesAllOf model constructor.
+     * @property {module:model/WafFirewallVersionResponseDataAttributesAllOf}
+     */
+    WafFirewallVersionResponseDataAttributesAllOf,
 
     /**
      * The WafFirewallVersionsResponse model constructor.
@@ -3677,6 +3890,12 @@ export {
     WafTagsResponseAllOf,
 
     /**
+     * The WafTagsResponseDataItem model constructor.
+     * @property {module:model/WafTagsResponseDataItem}
+     */
+    WafTagsResponseDataItem,
+
+    /**
     * The AclApi service constructor.
     * @property {module:api/AclApi}
     */
@@ -3789,6 +4008,12 @@ export {
     * @property {module:api/DomainApi}
     */
     DomainApi,
+
+    /**
+    * The DomainOwnershipsApi service constructor.
+    * @property {module:api/DomainOwnershipsApi}
+    */
+    DomainOwnershipsApi,
 
     /**
     * The EventsApi service constructor.
@@ -4059,6 +4284,12 @@ export {
     * @property {module:api/RequestSettingsApi}
     */
     RequestSettingsApi,
+
+    /**
+    * The ResourceApi service constructor.
+    * @property {module:api/ResourceApi}
+    */
+    ResourceApi,
 
     /**
     * The ResponseObjectApi service constructor.

@@ -12,12 +12,13 @@
  */
 
 import ApiClient from '../ApiClient';
-import NestedVersion from './NestedVersion';
+import ServiceVersionDetail from './ServiceVersionDetail';
+import ServiceVersionDetailOrNull from './ServiceVersionDetailOrNull';
 
 /**
  * The ServiceDetailAllOf model module.
  * @module model/ServiceDetailAllOf
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class ServiceDetailAllOf {
     /**
@@ -49,10 +50,10 @@ class ServiceDetailAllOf {
             obj = obj || new ServiceDetailAllOf();
 
             if (data.hasOwnProperty('active_version')) {
-                obj['active_version'] = ApiClient.convertToType(data['active_version'], NestedVersion);
+                obj['active_version'] = ServiceVersionDetailOrNull.constructFromObject(data['active_version']);
             }
             if (data.hasOwnProperty('version')) {
-                obj['version'] = NestedVersion.constructFromObject(data['version']);
+                obj['version'] = ServiceVersionDetail.constructFromObject(data['version']);
             }
         }
         return obj;
@@ -62,12 +63,12 @@ class ServiceDetailAllOf {
 }
 
 /**
- * @member {module:model/NestedVersion} active_version
+ * @member {module:model/ServiceVersionDetailOrNull} active_version
  */
 ServiceDetailAllOf.prototype['active_version'] = undefined;
 
 /**
- * @member {module:model/NestedVersion} version
+ * @member {module:model/ServiceVersionDetail} version
  */
 ServiceDetailAllOf.prototype['version'] = undefined;
 

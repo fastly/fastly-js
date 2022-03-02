@@ -17,7 +17,7 @@ import ApiClient from "../ApiClient";
 /**
 * Docs service.
 * @module api/DocsApi
-* @version 3.0.0-beta1
+* @version 3.0.0-beta2
 */
 export default class DocsApi {
 

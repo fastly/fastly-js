@@ -17,7 +17,7 @@ import querystring from "querystring";
 
 /**
 * @module ApiClient
-* @version 3.0.0-beta1
+* @version 3.0.0-beta2
 */
 
 /**
@@ -53,7 +53,7 @@ class ApiClient {
          * @default {}
          */
         this.defaultHeaders = {
-            'User-Agent': 'fastly-js/3.0.0-beta1'
+            'User-Agent': 'fastly-js/3.0.0-beta2'
         };
 
         /**

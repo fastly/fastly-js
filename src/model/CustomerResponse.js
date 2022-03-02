@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The CustomerResponse model module.
  * @module model/CustomerResponse
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class CustomerResponse {
     /**

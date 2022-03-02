@@ -18,7 +18,7 @@ Method | Fastly API endpoint | Description
 ## `bulkUpdateAclEntries`
 
 ```javascript
-bulkUpdateAclEntries({ service_id, acl_id, [acl_entries] })
+bulkUpdateAclEntries({ service_id, acl_id, [bulk_update_acl_entries_request] })
 ```
 
 Update multiple ACL entries on the same ACL.
@@ -29,7 +29,7 @@ Update multiple ACL entries on the same ACL.
 const options = {
   service_id: "service_id_example", // required
   acl_id: "acl_id_example", // required
-  acl_entries: {"entries":[{"op":"create","ip":"192.168.0.1","subnet":8},{"op":"update","id":"6yxNzlOpW1V7JfSwvLGtOc","ip":"192.168.0.2","subnet":16},{"op":"delete","id":"6yxNzlOpW1V7JfSwvLGtOc"}]},
+  bulk_update_acl_entries_request: {"entries":[{"op":"create","ip":"192.168.0.1","subnet":8},{"op":"update","id":"6yxNzlOpW1V7JfSwvLGtOc","ip":"192.168.0.2","subnet":16},{"op":"delete","id":"6yxNzlOpW1V7JfSwvLGtOc"}]},
 };
 
 apiInstance.bulkUpdateAclEntries(options)
@@ -47,7 +47,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** | Alphanumeric string identifying the service. |
 **acl_id** | **String** | Alphanumeric string identifying a ACL. |
-**acl_entries** | [**AclEntries**](AclEntries.md) |  | [optional]
+**bulk_update_acl_entries_request** | [**BulkUpdateAclEntriesRequest**](BulkUpdateAclEntriesRequest.md) |  | [optional]
 
 ### Return type
 

@@ -12,24 +12,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import BillingAddress from './BillingAddress';
-import BillingAddressResponseAllOf from './BillingAddressResponseAllOf';
-import BillingAddressResponseAllOfData from './BillingAddressResponseAllOfData';
+import BillingAddressResponseData from './BillingAddressResponseData';
 
 /**
  * The BillingAddressResponse model module.
  * @module model/BillingAddressResponse
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class BillingAddressResponse {
     /**
      * Constructs a new <code>BillingAddressResponse</code>.
      * @alias module:model/BillingAddressResponse
-     * @implements module:model/BillingAddress
-     * @implements module:model/BillingAddressResponseAllOf
      */
     constructor() { 
-        BillingAddress.initialize(this);BillingAddressResponseAllOf.initialize(this);
+        
         BillingAddressResponse.initialize(this);
     }
 
@@ -51,11 +47,9 @@ class BillingAddressResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new BillingAddressResponse();
-            BillingAddress.constructFromObject(data, obj);
-            BillingAddressResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = BillingAddressResponseAllOfData.constructFromObject(data['data']);
+                obj['data'] = BillingAddressResponseData.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -65,21 +59,11 @@ class BillingAddressResponse {
 }
 
 /**
- * @member {module:model/BillingAddressResponseAllOfData} data
+ * @member {module:model/BillingAddressResponseData} data
  */
 BillingAddressResponse.prototype['data'] = undefined;
 
 
-// Implement BillingAddress interface:
-/**
- * @member {module:model/BillingAddressData} data
- */
-BillingAddress.prototype['data'] = undefined;
-// Implement BillingAddressResponseAllOf interface:
-/**
- * @member {module:model/BillingAddressResponseAllOfData} data
- */
-BillingAddressResponseAllOf.prototype['data'] = undefined;
 
 
 

@@ -12,13 +12,15 @@
  */
 
 import ApiClient from '../ApiClient';
+import RelationshipService from './RelationshipService';
+import RelationshipUser from './RelationshipUser';
 import ServiceAuthorizationDataAttributes from './ServiceAuthorizationDataAttributes';
 import TypeServiceAuthorization from './TypeServiceAuthorization';
 
 /**
  * The ServiceAuthorizationData model module.
  * @module model/ServiceAuthorizationData
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class ServiceAuthorizationData {
     /**

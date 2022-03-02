@@ -13,6 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
+import BulkWafActiveRules from '../model/BulkWafActiveRules';
 import WafActiveRule from '../model/WafActiveRule';
 import WafActiveRuleCreationResponse from '../model/WafActiveRuleCreationResponse';
 import WafActiveRuleData from '../model/WafActiveRuleData';
@@ -22,7 +23,7 @@ import WafActiveRulesResponse from '../model/WafActiveRulesResponse';
 /**
 * WafActiveRules service.
 * @module api/WafActiveRulesApi
-* @version 3.0.0-beta1
+* @version 3.0.0-beta2
 */
 export default class WafActiveRulesApi {
 

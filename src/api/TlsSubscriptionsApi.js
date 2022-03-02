@@ -20,7 +20,7 @@ import TlsSubscriptionsResponse from '../model/TlsSubscriptionsResponse';
 /**
 * TlsSubscriptions service.
 * @module api/TlsSubscriptionsApi
-* @version 3.0.0-beta1
+* @version 3.0.0-beta2
 */
 export default class TlsSubscriptionsApi {
 
@@ -39,6 +39,62 @@ export default class TlsSubscriptionsApi {
         }
     }
 
+
+    /**
+     * Creates an email challenge for domain on a GlobalSign subscription. An email challenge will generate an email that can be used to validate domain ownership. If this challenge is created, then the domain can only be validated using email for the given subscription.
+     * @param {Object} options
+     * @param {String} options.tls_subscription_id
+     * @param {String} options.tls_authorization_id
+     * @param {Object.<String, {String: Object}>} [options.request_body]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    createGlobalsignEmailChallengeWithHttpInfo(options = {}) {
+      let postBody = options['request_body'];
+      // Verify the required parameter 'tls_subscription_id' is set.
+      if (options['tls_subscription_id'] === undefined || options['tls_subscription_id'] === null) {
+        throw new Error("Missing the required parameter 'tls_subscription_id'.");
+      }
+      // Verify the required parameter 'tls_authorization_id' is set.
+      if (options['tls_authorization_id'] === undefined || options['tls_authorization_id'] === null) {
+        throw new Error("Missing the required parameter 'tls_authorization_id'.");
+      }
+
+      let pathParams = {
+        'tls_subscription_id': options['tls_subscription_id'],
+        'tls_authorization_id': options['tls_authorization_id']
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      return this.apiClient.callApi(
+        '/tls/subscriptions/{tls_subscription_id}/authorizations/{tls_authorization_id}/globalsign_email_challenges', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Creates an email challenge for domain on a GlobalSign subscription. An email challenge will generate an email that can be used to validate domain ownership. If this challenge is created, then the domain can only be validated using email for the given subscription.
+     * @param {Object} options
+     * @param {String} options.tls_subscription_id
+     * @param {String} options.tls_authorization_id
+     * @param {Object.<String, {String: Object}>} [options.request_body]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    createGlobalsignEmailChallenge(options = {}) {
+      return this.createGlobalsignEmailChallengeWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
 
     /**
      * Create a new TLS subscription. This response includes a list of possible challenges to verify domain ownership.
@@ -86,53 +142,6 @@ export default class TlsSubscriptionsApi {
     }
 
     /**
-     * Destroy a TLS subscription. A subscription cannot be destroyed if there are domains in the TLS enabled state.
-     * @param {Object} options
-     * @param {String} options.tls_subscription_id - Alphanumeric string identifying a TLS subscription.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
-     */
-    deleteTlsSubWithHttpInfo(options = {}) {
-      let postBody = null;
-      // Verify the required parameter 'tls_subscription_id' is set.
-      if (options['tls_subscription_id'] === undefined || options['tls_subscription_id'] === null) {
-        throw new Error("Missing the required parameter 'tls_subscription_id'.");
-      }
-
-      let pathParams = {
-        'tls_subscription_id': options['tls_subscription_id']
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['token'];
-      let contentTypes = [];
-      let accepts = [];
-      let returnType = null;
-      return this.apiClient.callApi(
-        '/tls/subscriptions/{tls_subscription_id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Destroy a TLS subscription. A subscription cannot be destroyed if there are domains in the TLS enabled state.
-     * @param {Object} options
-     * @param {String} options.tls_subscription_id - Alphanumeric string identifying a TLS subscription.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
-     */
-    deleteTlsSub(options = {}) {
-      return this.deleteTlsSubWithHttpInfo(options)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-    /**
      * Deletes a GlobalSign email challenge. After a GlobalSign email challenge is deleted, the domain can use HTTP and DNS validation methods again.
      * @param {Object} options
      * @param {String} options.tls_subscription_id
@@ -140,7 +149,7 @@ export default class TlsSubscriptionsApi {
      * @param {String} options.tls_authorization_id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallengesGlobalsignEmailChallengeIdWithHttpInfo(options = {}) {
+    deleteGlobalsignEmailChallengeWithHttpInfo(options = {}) {
       let postBody = null;
       // Verify the required parameter 'tls_subscription_id' is set.
       if (options['tls_subscription_id'] === undefined || options['tls_subscription_id'] === null) {
@@ -186,8 +195,55 @@ export default class TlsSubscriptionsApi {
      * @param {String} options.tls_authorization_id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallengesGlobalsignEmailChallengeId(options = {}) {
-      return this.deleteTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallengesGlobalsignEmailChallengeIdWithHttpInfo(options)
+    deleteGlobalsignEmailChallenge(options = {}) {
+      return this.deleteGlobalsignEmailChallengeWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+    /**
+     * Destroy a TLS subscription. A subscription cannot be destroyed if there are domains in the TLS enabled state.
+     * @param {Object} options
+     * @param {String} options.tls_subscription_id - Alphanumeric string identifying a TLS subscription.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    deleteTlsSubWithHttpInfo(options = {}) {
+      let postBody = null;
+      // Verify the required parameter 'tls_subscription_id' is set.
+      if (options['tls_subscription_id'] === undefined || options['tls_subscription_id'] === null) {
+        throw new Error("Missing the required parameter 'tls_subscription_id'.");
+      }
+
+      let pathParams = {
+        'tls_subscription_id': options['tls_subscription_id']
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/tls/subscriptions/{tls_subscription_id}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Destroy a TLS subscription. A subscription cannot be destroyed if there are domains in the TLS enabled state.
+     * @param {Object} options
+     * @param {String} options.tls_subscription_id - Alphanumeric string identifying a TLS subscription.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    deleteTlsSub(options = {}) {
+      return this.deleteTlsSubWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -351,62 +407,6 @@ export default class TlsSubscriptionsApi {
      */
     patchTlsSub(options = {}) {
       return this.patchTlsSubWithHttpInfo(options)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-    /**
-     * Creates an email challenge for domain on a GlobalSign subscription. An email challenge will generate an email that can be used to validate domain ownership. If this challenge is created, then the domain can only be validated using email for the given subscription.
-     * @param {Object} options
-     * @param {String} options.tls_subscription_id
-     * @param {String} options.tls_authorization_id
-     * @param {Object.<String, Object>} [options.body]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
-     */
-    postTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallengesWithHttpInfo(options = {}) {
-      let postBody = options['body'];
-      // Verify the required parameter 'tls_subscription_id' is set.
-      if (options['tls_subscription_id'] === undefined || options['tls_subscription_id'] === null) {
-        throw new Error("Missing the required parameter 'tls_subscription_id'.");
-      }
-      // Verify the required parameter 'tls_authorization_id' is set.
-      if (options['tls_authorization_id'] === undefined || options['tls_authorization_id'] === null) {
-        throw new Error("Missing the required parameter 'tls_authorization_id'.");
-      }
-
-      let pathParams = {
-        'tls_subscription_id': options['tls_subscription_id'],
-        'tls_authorization_id': options['tls_authorization_id']
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = ['token'];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = Object;
-      return this.apiClient.callApi(
-        '/tls/subscriptions/{tls_subscription_id}/authorizations/{tls_authorization_id}/globalsign_email_challenges', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Creates an email challenge for domain on a GlobalSign subscription. An email challenge will generate an email that can be used to validate domain ownership. If this challenge is created, then the domain can only be validated using email for the given subscription.
-     * @param {Object} options
-     * @param {String} options.tls_subscription_id
-     * @param {String} options.tls_authorization_id
-     * @param {Object.<String, Object>} [options.body]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
-     */
-    postTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallenges(options = {}) {
-      return this.postTlsSubscriptionsTlsSubscriptionIdAuthorizationsTlsAuthorizationIdGlobalsignEmailChallengesWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

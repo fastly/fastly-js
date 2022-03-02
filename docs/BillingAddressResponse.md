@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**BillingAddressResponseAllOfData**](BillingAddressResponseAllOfData.md) |  | [optional] 
+**data** | [**BillingAddressResponseData**](BillingAddressResponseData.md) |  | [optional] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

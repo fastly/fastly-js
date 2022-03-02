@@ -12,16 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-import Timestamps from './Timestamps';
 import TypeWafExclusion from './TypeWafExclusion';
 import WafExclusionData from './WafExclusionData';
 import WafExclusionResponseDataAllOf from './WafExclusionResponseDataAllOf';
+import WafExclusionResponseDataAttributes from './WafExclusionResponseDataAttributes';
 import WafExclusionResponseDataRelationships from './WafExclusionResponseDataRelationships';
 
 /**
  * The WafExclusionResponseData model module.
  * @module model/WafExclusionResponseData
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class WafExclusionResponseData {
     /**
@@ -60,7 +60,7 @@ class WafExclusionResponseData {
                 obj['type'] = TypeWafExclusion.constructFromObject(data['type']);
             }
             if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
+                obj['attributes'] = WafExclusionResponseDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
                 obj['relationships'] = WafExclusionResponseDataRelationships.constructFromObject(data['relationships']);
@@ -81,7 +81,7 @@ class WafExclusionResponseData {
 WafExclusionResponseData.prototype['type'] = undefined;
 
 /**
- * @member {module:model/Timestamps} attributes
+ * @member {module:model/WafExclusionResponseDataAttributes} attributes
  */
 WafExclusionResponseData.prototype['attributes'] = undefined;
 
@@ -117,7 +117,7 @@ WafExclusionData.prototype['relationships'] = undefined;
  */
 WafExclusionResponseDataAllOf.prototype['id'] = undefined;
 /**
- * @member {module:model/Timestamps} attributes
+ * @member {module:model/WafExclusionResponseDataAttributes} attributes
  */
 WafExclusionResponseDataAllOf.prototype['attributes'] = undefined;
 /**

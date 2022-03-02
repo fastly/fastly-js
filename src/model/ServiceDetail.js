@@ -12,15 +12,16 @@
  */
 
 import ApiClient from '../ApiClient';
-import NestedVersion from './NestedVersion';
 import SchemasVersionResponse from './SchemasVersionResponse';
 import ServiceDetailAllOf from './ServiceDetailAllOf';
 import ServiceResponse from './ServiceResponse';
+import ServiceVersionDetail from './ServiceVersionDetail';
+import ServiceVersionDetailOrNull from './ServiceVersionDetailOrNull';
 
 /**
  * The ServiceDetail model module.
  * @module model/ServiceDetail
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class ServiceDetail {
     /**
@@ -89,10 +90,10 @@ class ServiceDetail {
                 obj['versions'] = ApiClient.convertToType(data['versions'], [SchemasVersionResponse]);
             }
             if (data.hasOwnProperty('active_version')) {
-                obj['active_version'] = ApiClient.convertToType(data['active_version'], NestedVersion);
+                obj['active_version'] = ServiceVersionDetailOrNull.constructFromObject(data['active_version']);
             }
             if (data.hasOwnProperty('version')) {
-                obj['version'] = NestedVersion.constructFromObject(data['version']);
+                obj['version'] = ServiceVersionDetail.constructFromObject(data['version']);
             }
         }
         return obj;
@@ -166,12 +167,12 @@ ServiceDetail.prototype['paused'] = undefined;
 ServiceDetail.prototype['versions'] = undefined;
 
 /**
- * @member {module:model/NestedVersion} active_version
+ * @member {module:model/ServiceVersionDetailOrNull} active_version
  */
 ServiceDetail.prototype['active_version'] = undefined;
 
 /**
- * @member {module:model/NestedVersion} version
+ * @member {module:model/ServiceVersionDetail} version
  */
 ServiceDetail.prototype['version'] = undefined;
 
@@ -232,11 +233,11 @@ ServiceResponse.prototype['paused'] = undefined;
 ServiceResponse.prototype['versions'] = undefined;
 // Implement ServiceDetailAllOf interface:
 /**
- * @member {module:model/NestedVersion} active_version
+ * @member {module:model/ServiceVersionDetailOrNull} active_version
  */
 ServiceDetailAllOf.prototype['active_version'] = undefined;
 /**
- * @member {module:model/NestedVersion} version
+ * @member {module:model/ServiceVersionDetail} version
  */
 ServiceDetailAllOf.prototype['version'] = undefined;
 

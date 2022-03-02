@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**TypeWafFirewall**](TypeWafFirewall.md) |  | [optional] 
-**attributes** | [**Timestamps**](Timestamps.md) |  | [optional] 
+**attributes** | [**WafFirewallResponseDataAttributes**](WafFirewallResponseDataAttributes.md) |  | [optional] 
 **id** | **String** |  | [optional] [readonly] 
 **relationships** | [**RelationshipWafFirewallVersions**](RelationshipWafFirewallVersions.md) |  | [optional] 
 

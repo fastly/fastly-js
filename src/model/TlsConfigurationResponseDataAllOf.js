@@ -12,12 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import Timestamps from './Timestamps';
+import TlsConfigurationResponseAttributes from './TlsConfigurationResponseAttributes';
 
 /**
  * The TlsConfigurationResponseDataAllOf model module.
  * @module model/TlsConfigurationResponseDataAllOf
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class TlsConfigurationResponseDataAllOf {
     /**
@@ -52,7 +52,7 @@ class TlsConfigurationResponseDataAllOf {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
             if (data.hasOwnProperty('attributes')) {
-                obj['attributes'] = ApiClient.convertToType(data['attributes'], Timestamps);
+                obj['attributes'] = TlsConfigurationResponseAttributes.constructFromObject(data['attributes']);
             }
         }
         return obj;
@@ -67,7 +67,7 @@ class TlsConfigurationResponseDataAllOf {
 TlsConfigurationResponseDataAllOf.prototype['id'] = undefined;
 
 /**
- * @member {module:model/Timestamps} attributes
+ * @member {module:model/TlsConfigurationResponseAttributes} attributes
  */
 TlsConfigurationResponseDataAllOf.prototype['attributes'] = undefined;
 

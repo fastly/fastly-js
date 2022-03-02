@@ -18,7 +18,7 @@ import TlsCommon from './TlsCommon';
 /**
  * The Pool model module.
  * @module model/Pool
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class Pool {
     /**

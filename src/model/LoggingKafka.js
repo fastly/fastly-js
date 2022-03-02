@@ -20,7 +20,7 @@ import LoggingUseTls from './LoggingUseTls';
 /**
  * The LoggingKafka model module.
  * @module model/LoggingKafka
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class LoggingKafka {
     /**

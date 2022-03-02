@@ -9,7 +9,7 @@ assignees: ''
 
 **Version**
 
-Please provide the version of `fastly-js` that you're using.
+Please provide the version of `fastly` that you're using.
 
 **What happened**
 

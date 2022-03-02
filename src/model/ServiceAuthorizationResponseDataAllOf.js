@@ -17,7 +17,7 @@ import Timestamps from './Timestamps';
 /**
  * The ServiceAuthorizationResponseDataAllOf model module.
  * @module model/ServiceAuthorizationResponseDataAllOf
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class ServiceAuthorizationResponseDataAllOf {
     /**

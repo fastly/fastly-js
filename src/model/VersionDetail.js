@@ -29,7 +29,7 @@ import Settings from './Settings';
 /**
  * The VersionDetail model module.
  * @module model/VersionDetail
- * @version 3.0.0-beta1
+ * @version 3.0.0-beta2
  */
 class VersionDetail {
     /**
