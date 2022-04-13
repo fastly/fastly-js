@@ -22,7 +22,7 @@ Method | Fastly API endpoint | Description
 createGlobalsignEmailChallenge({ tls_subscription_id, tls_authorization_id, [request_body] })
 ```
 
-Creates an email challenge for domain on a GlobalSign subscription. An email challenge will generate an email that can be used to validate domain ownership. If this challenge is created, then the domain can only be validated using email for the given subscription.
+Creates an email challenge for a domain on a GlobalSign subscription. An email challenge will generate an email that can be used to validate domain ownership. If this challenge is created, then the domain can only be validated using email for the given subscription. 
 
 ### Example
 
@@ -46,8 +46,8 @@ apiInstance.createGlobalsignEmailChallenge(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_subscription_id** | **String** |  |
-**tls_authorization_id** | **String** |  |
+**tls_subscription_id** | **String** | Alphanumeric string identifying a TLS subscription. |
+**tls_authorization_id** | **String** | Alphanumeric string identifying a TLS subscription. |
 **request_body** | [**{String: Object}**](Object.md) |  | [optional]
 
 ### Return type
@@ -68,7 +68,7 @@ Create a new TLS subscription. This response includes a list of possible challen
 ```javascript
 const options = {
   force: true,
-  tls_subscription: {"data":{"type":"tls_subscription","attributes":{"certificate_authority":"lets-encrypt"},"relationships":{"tls_domains":{"data":[{"type":"tls_domain","id":"DOMAIN_NAME"}]},"tls_configuration":{"data":[{"type":"tls_configuration","id":"t7CguUGZzb2W9Euo5FoKa"}]}}}},
+  tls_subscription: {"data":{"type":"tls_subscription","attributes":{"certificate_authority":"lets-encrypt"},"relationships":{"tls_domains":{"data":[{"type":"tls_domain","id":"DOMAIN_NAME"}]},"tls_configuration":{"data":{"type":"tls_configuration","id":"t7CguUGZzb2W9Euo5FoKa"}}}}},
 };
 
 apiInstance.createTlsSub(options)
@@ -105,7 +105,7 @@ Deletes a GlobalSign email challenge. After a GlobalSign email challenge is dele
 ```javascript
 const options = {
   tls_subscription_id: "tls_subscription_id_example", // required
-  globalsign_email_challenge_id: "globalsign_email_challenge_id_example", // required
+  globalsign_email_challenge_id: gU3guUGZzb2W9Euo4Mo0r, // required
   tls_authorization_id: "tls_authorization_id_example", // required
 };
 
@@ -122,9 +122,9 @@ apiInstance.deleteGlobalsignEmailChallenge(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**tls_subscription_id** | **String** |  |
-**globalsign_email_challenge_id** | **String** |  |
-**tls_authorization_id** | **String** |  |
+**tls_subscription_id** | **String** | Alphanumeric string identifying a TLS subscription. |
+**globalsign_email_challenge_id** | **String** | Alphanumeric string identifying a GlobalSign email challenge. |
+**tls_authorization_id** | **String** | Alphanumeric string identifying a TLS subscription. |
 
 ### Return type
 
@@ -264,7 +264,7 @@ Change the TLS domains or common name associated with this subscription, or upda
 const options = {
   tls_subscription_id: "tls_subscription_id_example", // required
   force: true,
-  tls_subscription: {"data":{"type":"tls_subscription","relationships":{"common_name":{"data":[{"type":"tls_domain","id":"DOMAIN_NAME"}]},"tls_domains":{"data":[{"type":"tls_domain","id":"DOMAIN_NAME"}]},"tls_configuration":{"data":[{"type":"tls_configuration","id":"t7CguUGZzb2W9Euo5FoKa"}]}}}},
+  tls_subscription: {"data":{"type":"tls_subscription","relationships":{"common_name":{"data":[{"type":"tls_domain","id":"DOMAIN_NAME"}]},"tls_domains":{"data":[{"type":"tls_domain","id":"DOMAIN_NAME"}]},"tls_configuration":{"data":{"type":"tls_configuration","id":"t7CguUGZzb2W9Euo5FoKa"}}}}},
 };
 
 apiInstance.patchTlsSub(options)

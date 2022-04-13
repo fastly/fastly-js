@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **url** | **String** | The URL to send logs to. Must use HTTPS. Required. | [optional] 
-**request_max_entries** | **Number** | The maximum number of logs sent in one request. Defaults `0` (no limit). | [optional]  [defaults to 0]
-**request_max_bytes** | **Number** | The maximum number of bytes sent in one request. Defaults `0` (no limit). | [optional]  [defaults to 0]
+**request_max_entries** | **Number** | The maximum number of logs sent in one request. Defaults `0` (10k). | [optional]  [defaults to 0]
+**request_max_bytes** | **Number** | The maximum number of bytes sent in one request. Defaults `0` (100MB). | [optional]  [defaults to 0]
 **content_type** | **String** | Content type of the header sent with the request. | [optional]  [defaults to 'null']
 **header_name** | **String** | Name of the custom header sent with the request. | [optional]  [defaults to 'null']
 **message_type** | [**LoggingMessageType**](LoggingMessageType.md) |  | [optional] 
