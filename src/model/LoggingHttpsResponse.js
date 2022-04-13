@@ -3,7 +3,7 @@
  * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
  *
  * The version of the OpenAPI document: 1.0.0
- * 
+ * Contact: oss@fastly.com
  *
  * NOTE: This class is auto generated.
  * Do not edit the class manually.
@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingHttpsResponse model module.
  * @module model/LoggingHttpsResponse
- * @version 3.0.0-beta2
+ * @version 3.0.0-beta3
  */
 class LoggingHttpsResponse {
     /**
@@ -193,14 +193,14 @@ LoggingHttpsResponse.prototype['tls_client_key'] = 'null';
 LoggingHttpsResponse.prototype['tls_hostname'] = 'null';
 
 /**
- * The maximum number of logs sent in one request. Defaults `0` (no limit).
+ * The maximum number of logs sent in one request. Defaults `0` (10k).
  * @member {Number} request_max_entries
  * @default 0
  */
 LoggingHttpsResponse.prototype['request_max_entries'] = 0;
 
 /**
- * The maximum number of bytes sent in one request. Defaults `0` (no limit).
+ * The maximum number of bytes sent in one request. Defaults `0` (100MB).
  * @member {Number} request_max_bytes
  * @default 0
  */
@@ -333,13 +333,13 @@ LoggingHttps.prototype['tls_client_key'] = 'null';
  */
 LoggingHttps.prototype['tls_hostname'] = 'null';
 /**
- * The maximum number of logs sent in one request. Defaults `0` (no limit).
+ * The maximum number of logs sent in one request. Defaults `0` (10k).
  * @member {Number} request_max_entries
  * @default 0
  */
 LoggingHttps.prototype['request_max_entries'] = 0;
 /**
- * The maximum number of bytes sent in one request. Defaults `0` (no limit).
+ * The maximum number of bytes sent in one request. Defaults `0` (100MB).
  * @member {Number} request_max_bytes
  * @default 0
  */

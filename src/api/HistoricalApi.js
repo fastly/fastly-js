@@ -3,7 +3,7 @@
  * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
  *
  * The version of the OpenAPI document: 1.0.0
- * 
+ * Contact: oss@fastly.com
  *
  * NOTE: This class is auto generated.
  * Do not edit the class manually.
@@ -24,7 +24,7 @@ import HistoricalUsageServiceResponse from '../model/HistoricalUsageServiceRespo
 /**
 * Historical service.
 * @module api/HistoricalApi
-* @version 3.0.0-beta2
+* @version 3.0.0-beta3
 */
 export default class HistoricalApi {
 
@@ -47,8 +47,8 @@ export default class HistoricalApi {
     /**
      * Fetches historical stats for each of your Fastly services and groups the results by service ID.
      * @param {Object} options
-     * @param {String} [options.from] - Absolute, relative or epoch timestamp. Limits the results returned.
-     * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
+     * @param {String} [options.from] - Timestamp that defines the start of the window for which to fetch statistics, including the timestamp itself. Accepts Unix timestamps, or any form of input parsable by the [Chronic Ruby library](https://github.com/mojombo/chronic), such as 'yesterday', or 'two weeks ago'. Default varies based on the value of `by`. 
+     * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalResponse} and HTTP response
@@ -83,8 +83,8 @@ export default class HistoricalApi {
     /**
      * Fetches historical stats for each of your Fastly services and groups the results by service ID.
      * @param {Object} options
-     * @param {String} [options.from] - Absolute, relative or epoch timestamp. Limits the results returned.
-     * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
+     * @param {String} [options.from] - Timestamp that defines the start of the window for which to fetch statistics, including the timestamp itself. Accepts Unix timestamps, or any form of input parsable by the [Chronic Ruby library](https://github.com/mojombo/chronic), such as 'yesterday', or 'two weeks ago'. Default varies based on the value of `by`. 
+     * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalResponse}
@@ -99,8 +99,8 @@ export default class HistoricalApi {
     /**
      * Fetches historical stats information aggregated across all of your Fastly services.
      * @param {Object} options
-     * @param {String} [options.from] - Absolute, relative or epoch timestamp. Limits the results returned.
-     * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
+     * @param {String} [options.from] - Timestamp that defines the start of the window for which to fetch statistics, including the timestamp itself. Accepts Unix timestamps, or any form of input parsable by the [Chronic Ruby library](https://github.com/mojombo/chronic), such as 'yesterday', or 'two weeks ago'. Default varies based on the value of `by`. 
+     * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalAggregateResponse} and HTTP response
@@ -135,8 +135,8 @@ export default class HistoricalApi {
     /**
      * Fetches historical stats information aggregated across all of your Fastly services.
      * @param {Object} options
-     * @param {String} [options.from] - Absolute, relative or epoch timestamp. Limits the results returned.
-     * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
+     * @param {String} [options.from] - Timestamp that defines the start of the window for which to fetch statistics, including the timestamp itself. Accepts Unix timestamps, or any form of input parsable by the [Chronic Ruby library](https://github.com/mojombo/chronic), such as 'yesterday', or 'two weeks ago'. Default varies based on the value of `by`. 
+     * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalAggregateResponse}
@@ -152,8 +152,8 @@ export default class HistoricalApi {
      * Fetches the specified field from the historical stats for each of your services and groups the results by service ID.
      * @param {Object} options
      * @param {String} options.field - Name of the stats field.
-     * @param {String} [options.from] - Absolute, relative or epoch timestamp. Limits the results returned.
-     * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
+     * @param {String} [options.from] - Timestamp that defines the start of the window for which to fetch statistics, including the timestamp itself. Accepts Unix timestamps, or any form of input parsable by the [Chronic Ruby library](https://github.com/mojombo/chronic), such as 'yesterday', or 'two weeks ago'. Default varies based on the value of `by`. 
+     * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalFieldResponse} and HTTP response
@@ -194,8 +194,8 @@ export default class HistoricalApi {
      * Fetches the specified field from the historical stats for each of your services and groups the results by service ID.
      * @param {Object} options
      * @param {String} options.field - Name of the stats field.
-     * @param {String} [options.from] - Absolute, relative or epoch timestamp. Limits the results returned.
-     * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
+     * @param {String} [options.from] - Timestamp that defines the start of the window for which to fetch statistics, including the timestamp itself. Accepts Unix timestamps, or any form of input parsable by the [Chronic Ruby library](https://github.com/mojombo/chronic), such as 'yesterday', or 'two weeks ago'. Default varies based on the value of `by`. 
+     * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalFieldResponse}
@@ -211,8 +211,8 @@ export default class HistoricalApi {
      * Fetches historical stats for a given service.
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
-     * @param {String} [options.from] - Absolute, relative or epoch timestamp. Limits the results returned.
-     * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
+     * @param {String} [options.from] - Timestamp that defines the start of the window for which to fetch statistics, including the timestamp itself. Accepts Unix timestamps, or any form of input parsable by the [Chronic Ruby library](https://github.com/mojombo/chronic), such as 'yesterday', or 'two weeks ago'. Default varies based on the value of `by`. 
+     * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalAggregateResponse} and HTTP response
@@ -253,8 +253,8 @@ export default class HistoricalApi {
      * Fetches historical stats for a given service.
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
-     * @param {String} [options.from] - Absolute, relative or epoch timestamp. Limits the results returned.
-     * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
+     * @param {String} [options.from] - Timestamp that defines the start of the window for which to fetch statistics, including the timestamp itself. Accepts Unix timestamps, or any form of input parsable by the [Chronic Ruby library](https://github.com/mojombo/chronic), such as 'yesterday', or 'two weeks ago'. Default varies based on the value of `by`. 
+     * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalAggregateResponse}
@@ -271,8 +271,8 @@ export default class HistoricalApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.field - Name of the stats field.
-     * @param {String} [options.from] - Absolute, relative or epoch timestamp. Limits the results returned.
-     * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
+     * @param {String} [options.from] - Timestamp that defines the start of the window for which to fetch statistics, including the timestamp itself. Accepts Unix timestamps, or any form of input parsable by the [Chronic Ruby library](https://github.com/mojombo/chronic), such as 'yesterday', or 'two weeks ago'. Default varies based on the value of `by`. 
+     * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalFieldAggregateResponse} and HTTP response
@@ -319,8 +319,8 @@ export default class HistoricalApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.field - Name of the stats field.
-     * @param {String} [options.from] - Absolute, relative or epoch timestamp. Limits the results returned.
-     * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
+     * @param {String} [options.from] - Timestamp that defines the start of the window for which to fetch statistics, including the timestamp itself. Accepts Unix timestamps, or any form of input parsable by the [Chronic Ruby library](https://github.com/mojombo/chronic), such as 'yesterday', or 'two weeks ago'. Default varies based on the value of `by`. 
+     * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea ([from Aug 2, 2021](https://status.fastly.com/incidents/f83m70cqm258))   * `africa_std` - Africa.   * `southamerica_std` - South America. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalFieldAggregateResponse}
@@ -375,8 +375,8 @@ export default class HistoricalApi {
     /**
      * Returns usage information aggregated across all Fastly services and grouped by region. To aggregate across all Fastly services by time period, see [`/stats/aggregate`](#get-hist-stats-aggregated).
      * @param {Object} options
-     * @param {String} [options.from] - Absolute, relative or epoch timestamp. Limits the results returned.
-     * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
+     * @param {String} [options.from] - Timestamp that defines the start of the window for which to fetch statistics, including the timestamp itself. Accepts Unix timestamps, or any form of input parsable by the [Chronic Ruby library](https://github.com/mojombo/chronic), such as 'yesterday', or 'two weeks ago'. Default varies based on the value of `by`. 
+     * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalUsageAggregateResponse} and HTTP response
      */
     getUsageWithHttpInfo(options = {}) {
@@ -407,8 +407,8 @@ export default class HistoricalApi {
     /**
      * Returns usage information aggregated across all Fastly services and grouped by region. To aggregate across all Fastly services by time period, see [`/stats/aggregate`](#get-hist-stats-aggregated).
      * @param {Object} options
-     * @param {String} [options.from] - Absolute, relative or epoch timestamp. Limits the results returned.
-     * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
+     * @param {String} [options.from] - Timestamp that defines the start of the window for which to fetch statistics, including the timestamp itself. Accepts Unix timestamps, or any form of input parsable by the [Chronic Ruby library](https://github.com/mojombo/chronic), such as 'yesterday', or 'two weeks ago'. Default varies based on the value of `by`. 
+     * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalUsageAggregateResponse}
      */
     getUsage(options = {}) {
@@ -470,8 +470,8 @@ export default class HistoricalApi {
     /**
      * Returns usage information aggregated by service and grouped by service and region. For service stats by time period, see [`/stats`](#get-hist-stats) and [`/stats/field/:field`](#get-hist-stats-field).
      * @param {Object} options
-     * @param {String} [options.from] - Absolute, relative or epoch timestamp. Limits the results returned.
-     * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
+     * @param {String} [options.from] - Timestamp that defines the start of the window for which to fetch statistics, including the timestamp itself. Accepts Unix timestamps, or any form of input parsable by the [Chronic Ruby library](https://github.com/mojombo/chronic), such as 'yesterday', or 'two weeks ago'. Default varies based on the value of `by`. 
+     * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalUsageServiceResponse} and HTTP response
      */
     getUsageServiceWithHttpInfo(options = {}) {
@@ -502,8 +502,8 @@ export default class HistoricalApi {
     /**
      * Returns usage information aggregated by service and grouped by service and region. For service stats by time period, see [`/stats`](#get-hist-stats) and [`/stats/field/:field`](#get-hist-stats-field).
      * @param {Object} options
-     * @param {String} [options.from] - Absolute, relative or epoch timestamp. Limits the results returned.
-     * @param {String} [options.to] - Absolute, relative or epoch timestamp. Limits the results returned.
+     * @param {String} [options.from] - Timestamp that defines the start of the window for which to fetch statistics, including the timestamp itself. Accepts Unix timestamps, or any form of input parsable by the [Chronic Ruby library](https://github.com/mojombo/chronic), such as 'yesterday', or 'two weeks ago'. Default varies based on the value of `by`. 
+     * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalUsageServiceResponse}
      */
     getUsageService(options = {}) {

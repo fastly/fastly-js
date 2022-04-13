@@ -3,7 +3,7 @@
  * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
  *
  * The version of the OpenAPI document: 1.0.0
- * 
+ * Contact: oss@fastly.com
  *
  * NOTE: This class is auto generated.
  * Do not edit the class manually.
@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Results model module.
  * @module model/Results
- * @version 3.0.0-beta2
+ * @version 3.0.0-beta3
  */
 class Results {
     /**
@@ -580,6 +580,24 @@ class Results {
             }
             if (data.hasOwnProperty('origin_cache_fetch_resp_header_bytes')) {
                 obj['origin_cache_fetch_resp_header_bytes'] = ApiClient.convertToType(data['origin_cache_fetch_resp_header_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('shield_hit_requests')) {
+                obj['shield_hit_requests'] = ApiClient.convertToType(data['shield_hit_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('shield_miss_requests')) {
+                obj['shield_miss_requests'] = ApiClient.convertToType(data['shield_miss_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('shield_hit_resp_header_bytes')) {
+                obj['shield_hit_resp_header_bytes'] = ApiClient.convertToType(data['shield_hit_resp_header_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('shield_hit_resp_body_bytes')) {
+                obj['shield_hit_resp_body_bytes'] = ApiClient.convertToType(data['shield_hit_resp_body_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('shield_miss_resp_header_bytes')) {
+                obj['shield_miss_resp_header_bytes'] = ApiClient.convertToType(data['shield_miss_resp_header_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('shield_miss_resp_body_bytes')) {
+                obj['shield_miss_resp_body_bytes'] = ApiClient.convertToType(data['shield_miss_resp_body_bytes'], 'Number');
             }
         }
         return obj;
@@ -1655,6 +1673,42 @@ Results.prototype['origin_cache_fetch_resp_body_bytes'] = undefined;
  * @member {Number} origin_cache_fetch_resp_header_bytes
  */
 Results.prototype['origin_cache_fetch_resp_header_bytes'] = undefined;
+
+/**
+ * Number of requests that resulted in a hit at a shield.
+ * @member {Number} shield_hit_requests
+ */
+Results.prototype['shield_hit_requests'] = undefined;
+
+/**
+ * Number of requests that resulted in a miss at a shield.
+ * @member {Number} shield_miss_requests
+ */
+Results.prototype['shield_miss_requests'] = undefined;
+
+/**
+ * Header bytes delivered for shield hits.
+ * @member {Number} shield_hit_resp_header_bytes
+ */
+Results.prototype['shield_hit_resp_header_bytes'] = undefined;
+
+/**
+ * Body bytes delivered for shield hits.
+ * @member {Number} shield_hit_resp_body_bytes
+ */
+Results.prototype['shield_hit_resp_body_bytes'] = undefined;
+
+/**
+ * Header bytes delivered for shield misses.
+ * @member {Number} shield_miss_resp_header_bytes
+ */
+Results.prototype['shield_miss_resp_header_bytes'] = undefined;
+
+/**
+ * Body bytes delivered for shield misses.
+ * @member {Number} shield_miss_resp_body_bytes
+ */
+Results.prototype['shield_miss_resp_body_bytes'] = undefined;
 
 
 

@@ -24,7 +24,7 @@ Get a specific rule revision.
 ```javascript
 const options = {
   waf_rule_id: "waf_rule_id_example", // required
-  waf_rule_revision_number: 3.4, // required
+  waf_rule_revision_number: 56, // required
   include: source,vcl,waf_rule,
 };
 

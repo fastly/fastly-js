@@ -3,7 +3,7 @@
  * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
  *
  * The version of the OpenAPI document: 1.0.0
- * 
+ * Contact: oss@fastly.com
  *
  * NOTE: This class is auto generated.
  * Do not edit the class manually.
@@ -19,7 +19,7 @@ import TlsSubscriptionsResponse from '../model/TlsSubscriptionsResponse';
 /**
 * TlsSubscriptions service.
 * @module api/TlsSubscriptionsApi
-* @version 3.0.0-beta2
+* @version 3.0.0-beta3
 */
 export default class TlsSubscriptionsApi {
 
@@ -40,10 +40,10 @@ export default class TlsSubscriptionsApi {
 
 
     /**
-     * Creates an email challenge for domain on a GlobalSign subscription. An email challenge will generate an email that can be used to validate domain ownership. If this challenge is created, then the domain can only be validated using email for the given subscription.
+     * Creates an email challenge for a domain on a GlobalSign subscription. An email challenge will generate an email that can be used to validate domain ownership. If this challenge is created, then the domain can only be validated using email for the given subscription. 
      * @param {Object} options
-     * @param {String} options.tls_subscription_id
-     * @param {String} options.tls_authorization_id
+     * @param {String} options.tls_subscription_id - Alphanumeric string identifying a TLS subscription.
+     * @param {String} options.tls_authorization_id - Alphanumeric string identifying a TLS subscription.
      * @param {Object.<String, {String: Object}>} [options.request_body]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
@@ -70,7 +70,7 @@ export default class TlsSubscriptionsApi {
       };
 
       let authNames = ['token'];
-      let contentTypes = ['application/json'];
+      let contentTypes = ['application/vnd.api+json'];
       let accepts = ['application/json'];
       let returnType = Object;
       return this.apiClient.callApi(
@@ -81,10 +81,10 @@ export default class TlsSubscriptionsApi {
     }
 
     /**
-     * Creates an email challenge for domain on a GlobalSign subscription. An email challenge will generate an email that can be used to validate domain ownership. If this challenge is created, then the domain can only be validated using email for the given subscription.
+     * Creates an email challenge for a domain on a GlobalSign subscription. An email challenge will generate an email that can be used to validate domain ownership. If this challenge is created, then the domain can only be validated using email for the given subscription. 
      * @param {Object} options
-     * @param {String} options.tls_subscription_id
-     * @param {String} options.tls_authorization_id
+     * @param {String} options.tls_subscription_id - Alphanumeric string identifying a TLS subscription.
+     * @param {String} options.tls_authorization_id - Alphanumeric string identifying a TLS subscription.
      * @param {Object.<String, {String: Object}>} [options.request_body]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
@@ -143,9 +143,9 @@ export default class TlsSubscriptionsApi {
     /**
      * Deletes a GlobalSign email challenge. After a GlobalSign email challenge is deleted, the domain can use HTTP and DNS validation methods again.
      * @param {Object} options
-     * @param {String} options.tls_subscription_id
-     * @param {String} options.globalsign_email_challenge_id
-     * @param {String} options.tls_authorization_id
+     * @param {String} options.tls_subscription_id - Alphanumeric string identifying a TLS subscription.
+     * @param {String} options.globalsign_email_challenge_id - Alphanumeric string identifying a GlobalSign email challenge.
+     * @param {String} options.tls_authorization_id - Alphanumeric string identifying a TLS subscription.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     deleteGlobalsignEmailChallengeWithHttpInfo(options = {}) {
@@ -189,9 +189,9 @@ export default class TlsSubscriptionsApi {
     /**
      * Deletes a GlobalSign email challenge. After a GlobalSign email challenge is deleted, the domain can use HTTP and DNS validation methods again.
      * @param {Object} options
-     * @param {String} options.tls_subscription_id
-     * @param {String} options.globalsign_email_challenge_id
-     * @param {String} options.tls_authorization_id
+     * @param {String} options.tls_subscription_id - Alphanumeric string identifying a TLS subscription.
+     * @param {String} options.globalsign_email_challenge_id - Alphanumeric string identifying a GlobalSign email challenge.
+     * @param {String} options.tls_authorization_id - Alphanumeric string identifying a TLS subscription.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deleteGlobalsignEmailChallenge(options = {}) {
