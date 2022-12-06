@@ -16,7 +16,7 @@ import LoggingUseTls from './LoggingUseTls';
 /**
  * The LoggingKafkaAllOf model module.
  * @module model/LoggingKafkaAllOf
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class LoggingKafkaAllOf {
     /**

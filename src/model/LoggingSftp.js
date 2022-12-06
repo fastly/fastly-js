@@ -19,7 +19,7 @@ import LoggingSftpAllOf from './LoggingSftpAllOf';
 /**
  * The LoggingSftp model module.
  * @module model/LoggingSftp
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class LoggingSftp {
     /**
@@ -92,7 +92,7 @@ class LoggingSftp {
                 obj['address'] = ApiClient.convertToType(data['address'], 'String');
             }
             if (data.hasOwnProperty('port')) {
-                obj['port'] = ApiClient.convertToType(data['port'], Object);
+                obj['port'] = ApiClient.convertToType(data['port'], 'Number');
             }
             if (data.hasOwnProperty('password')) {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
@@ -132,7 +132,7 @@ LoggingSftp.prototype['name'] = undefined;
 LoggingSftp.prototype['placement'] = undefined;
 
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
  * @member {module:model/LoggingSftp.FormatVersionEnum} format_version
  * @default FormatVersionEnum.v2
  */
@@ -172,14 +172,14 @@ LoggingSftp.prototype['timestamp_format'] = undefined;
 LoggingSftp.prototype['period'] = 3600;
 
 /**
- * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
  * @member {Number} gzip_level
  * @default 0
  */
 LoggingSftp.prototype['gzip_level'] = 0;
 
 /**
- * The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \"gzip\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
  * @member {module:model/LoggingSftp.CompressionCodecEnum} compression_codec
  */
 LoggingSftp.prototype['compression_codec'] = undefined;
@@ -192,9 +192,10 @@ LoggingSftp.prototype['address'] = undefined;
 
 /**
  * The port number.
- * @member {Object} port
+ * @member {Number} port
+ * @default 22
  */
-LoggingSftp.prototype['port'] = undefined;
+LoggingSftp.prototype['port'] = 22;
 
 /**
  * The password for the server. If both `password` and `secret_key` are passed, `secret_key` will be used in preference.
@@ -248,7 +249,7 @@ LoggingCommon.prototype['name'] = undefined;
  */
 LoggingCommon.prototype['placement'] = undefined;
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
  * @member {module:model/LoggingCommon.FormatVersionEnum} format_version
  * @default FormatVersionEnum.v2
  */
@@ -283,13 +284,13 @@ LoggingGenericCommon.prototype['timestamp_format'] = undefined;
  */
 LoggingGenericCommon.prototype['period'] = 3600;
 /**
- * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
  * @member {Number} gzip_level
  * @default 0
  */
 LoggingGenericCommon.prototype['gzip_level'] = 0;
 /**
- * The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \"gzip\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
  * @member {module:model/LoggingGenericCommon.CompressionCodecEnum} compression_codec
  */
 LoggingGenericCommon.prototype['compression_codec'] = undefined;
@@ -319,9 +320,10 @@ LoggingSftpAllOf.prototype['password'] = undefined;
 LoggingSftpAllOf.prototype['path'] = 'null';
 /**
  * The port number.
- * @member {Object} port
+ * @member {Number} port
+ * @default 22
  */
-LoggingSftpAllOf.prototype['port'] = undefined;
+LoggingSftpAllOf.prototype['port'] = 22;
 /**
  * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
  * @member {String} public_key

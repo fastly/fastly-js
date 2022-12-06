@@ -21,7 +21,7 @@ import ServiceResponse from '../model/ServiceResponse';
 /**
 * Service service.
 * @module api/ServiceApi
-* @version 3.0.0-beta3
+* @version 3.0.0
 */
 export default class ServiceApi {
 
@@ -46,7 +46,7 @@ export default class ServiceApi {
      * @param {Object} options
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - The name of the service.
-     * @param {String} [options.customer_id]
+     * @param {String} [options.customer_id] - Alphanumeric string identifying the customer.
      * @param {module:model/String} [options.type] - The type of this service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceResponse} and HTTP response
      */
@@ -82,7 +82,7 @@ export default class ServiceApi {
      * @param {Object} options
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - The name of the service.
-     * @param {String} [options.customer_id]
+     * @param {String} [options.customer_id] - Alphanumeric string identifying the customer.
      * @param {module:model/String} [options.type] - The type of this service.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceResponse}
      */
@@ -389,7 +389,7 @@ export default class ServiceApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - The name of the service.
-     * @param {String} [options.customer_id]
+     * @param {String} [options.customer_id] - Alphanumeric string identifying the customer.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceResponse} and HTTP response
      */
     updateServiceWithHttpInfo(options = {}) {
@@ -429,7 +429,7 @@ export default class ServiceApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - The name of the service.
-     * @param {String} [options.customer_id]
+     * @param {String} [options.customer_id] - Alphanumeric string identifying the customer.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceResponse}
      */
     updateService(options = {}) {

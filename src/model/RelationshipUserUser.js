@@ -11,12 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import RelationshipUserUserData from './RelationshipUserUserData';
+import ServiceAuthorizationDataRelationshipsUserData from './ServiceAuthorizationDataRelationshipsUserData';
 
 /**
  * The RelationshipUserUser model module.
  * @module model/RelationshipUserUser
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class RelationshipUserUser {
     /**
@@ -48,7 +48,7 @@ class RelationshipUserUser {
             obj = obj || new RelationshipUserUser();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = RelationshipUserUserData.constructFromObject(data['data']);
+                obj['data'] = ServiceAuthorizationDataRelationshipsUserData.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class RelationshipUserUser {
 }
 
 /**
- * @member {module:model/RelationshipUserUserData} data
+ * @member {module:model/ServiceAuthorizationDataRelationshipsUserData} data
  */
 RelationshipUserUser.prototype['data'] = undefined;
 

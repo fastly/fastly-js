@@ -16,7 +16,7 @@ import BillingResponseLineItem from './BillingResponseLineItem';
 /**
  * The BillingResponseAllOf model module.
  * @module model/BillingResponseAllOf
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class BillingResponseAllOf {
     /**

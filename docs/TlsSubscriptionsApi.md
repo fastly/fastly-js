@@ -264,7 +264,7 @@ Change the TLS domains or common name associated with this subscription, or upda
 const options = {
   tls_subscription_id: "tls_subscription_id_example", // required
   force: true,
-  tls_subscription: {"data":{"type":"tls_subscription","relationships":{"common_name":{"data":[{"type":"tls_domain","id":"DOMAIN_NAME"}]},"tls_domains":{"data":[{"type":"tls_domain","id":"DOMAIN_NAME"}]},"tls_configuration":{"data":{"type":"tls_configuration","id":"t7CguUGZzb2W9Euo5FoKa"}}}}},
+  tls_subscription: {"data":{"type":"tls_subscription","relationships":{"common_name":{"data":{"type":"tls_domain","id":"DOMAIN_NAME"}},"tls_domains":{"data":[{"type":"tls_domain","id":"DOMAIN_NAME"}]},"tls_configuration":{"data":{"type":"tls_configuration","id":"t7CguUGZzb2W9Euo5FoKa"}}}}},
 };
 
 apiInstance.patchTlsSub(options)

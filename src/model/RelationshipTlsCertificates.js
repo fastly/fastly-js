@@ -11,12 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import RelationshipTlsCertificateTlsCertificate from './RelationshipTlsCertificateTlsCertificate';
+import RelationshipTlsCertificatesTlsCertificates from './RelationshipTlsCertificatesTlsCertificates';
 
 /**
  * The RelationshipTlsCertificates model module.
  * @module model/RelationshipTlsCertificates
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class RelationshipTlsCertificates {
     /**
@@ -48,7 +48,7 @@ class RelationshipTlsCertificates {
             obj = obj || new RelationshipTlsCertificates();
 
             if (data.hasOwnProperty('tls_certificates')) {
-                obj['tls_certificates'] = RelationshipTlsCertificateTlsCertificate.constructFromObject(data['tls_certificates']);
+                obj['tls_certificates'] = RelationshipTlsCertificatesTlsCertificates.constructFromObject(data['tls_certificates']);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class RelationshipTlsCertificates {
 }
 
 /**
- * @member {module:model/RelationshipTlsCertificateTlsCertificate} tls_certificates
+ * @member {module:model/RelationshipTlsCertificatesTlsCertificates} tls_certificates
  */
 RelationshipTlsCertificates.prototype['tls_certificates'] = undefined;
 

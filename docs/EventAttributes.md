@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **metadata** | **Object** | Hash of key value pairs of additional information. | [optional] 
 **service_id** | **String** |  | [optional] [readonly] 
 **user_id** | **String** |  | [optional] [readonly] 
+**token_id** | **String** |  | [optional] [readonly] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

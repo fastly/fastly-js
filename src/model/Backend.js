@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Backend model module.
  * @module model/Backend
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class Backend {
     /**
@@ -78,6 +78,9 @@ class Backend {
             }
             if (data.hasOwnProperty('ipv6')) {
                 obj['ipv6'] = ApiClient.convertToType(data['ipv6'], 'String');
+            }
+            if (data.hasOwnProperty('keepalive_time')) {
+                obj['keepalive_time'] = ApiClient.convertToType(data['keepalive_time'], 'Number');
             }
             if (data.hasOwnProperty('max_conn')) {
                 obj['max_conn'] = ApiClient.convertToType(data['max_conn'], 'Number');
@@ -205,6 +208,12 @@ Backend.prototype['ipv4'] = undefined;
  * @member {String} ipv6
  */
 Backend.prototype['ipv6'] = undefined;
+
+/**
+ * How long to keep a persistent connection to the backend between requests.
+ * @member {Number} keepalive_time
+ */
+Backend.prototype['keepalive_time'] = undefined;
 
 /**
  * Maximum number of concurrent connections this backend will accept.

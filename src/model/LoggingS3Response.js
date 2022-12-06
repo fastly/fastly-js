@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingS3Response model module.
  * @module model/LoggingS3Response
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class LoggingS3Response {
     /**
@@ -153,7 +153,7 @@ LoggingS3Response.prototype['name'] = undefined;
 LoggingS3Response.prototype['placement'] = undefined;
 
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
  * @member {module:model/LoggingS3Response.FormatVersionEnum} format_version
  * @default FormatVersionEnum.v2
  */
@@ -193,14 +193,14 @@ LoggingS3Response.prototype['timestamp_format'] = undefined;
 LoggingS3Response.prototype['period'] = 3600;
 
 /**
- * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
  * @member {Number} gzip_level
  * @default 0
  */
 LoggingS3Response.prototype['gzip_level'] = 0;
 
 /**
- * The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \"gzip\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
  * @member {module:model/LoggingS3Response.CompressionCodecEnum} compression_codec
  */
 LoggingS3Response.prototype['compression_codec'] = undefined;
@@ -317,7 +317,7 @@ LoggingS3.prototype['name'] = undefined;
  */
 LoggingS3.prototype['placement'] = undefined;
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
  * @member {module:model/LoggingS3.FormatVersionEnum} format_version
  * @default FormatVersionEnum.v2
  */
@@ -351,13 +351,13 @@ LoggingS3.prototype['timestamp_format'] = undefined;
  */
 LoggingS3.prototype['period'] = 3600;
 /**
- * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
  * @member {Number} gzip_level
  * @default 0
  */
 LoggingS3.prototype['gzip_level'] = 0;
 /**
- * The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \"gzip\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
  * @member {module:model/LoggingS3.CompressionCodecEnum} compression_codec
  */
 LoggingS3.prototype['compression_codec'] = undefined;

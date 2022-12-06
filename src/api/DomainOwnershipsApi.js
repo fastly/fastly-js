@@ -12,12 +12,12 @@
 
 
 import ApiClient from "../ApiClient";
-import InlineResponse2001 from '../model/InlineResponse2001';
+import InlineResponse2002 from '../model/InlineResponse2002';
 
 /**
 * DomainOwnerships service.
 * @module api/DomainOwnershipsApi
-* @version 3.0.0-beta3
+* @version 3.0.0
 */
 export default class DomainOwnershipsApi {
 
@@ -40,7 +40,7 @@ export default class DomainOwnershipsApi {
     /**
      * List all domain-ownerships.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2002} and HTTP response
      */
     listDomainOwnershipsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -57,7 +57,7 @@ export default class DomainOwnershipsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/vnd.api+json'];
-      let returnType = InlineResponse2001;
+      let returnType = InlineResponse2002;
       return this.apiClient.callApi(
         '/domain-ownerships', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -68,7 +68,7 @@ export default class DomainOwnershipsApi {
     /**
      * List all domain-ownerships.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2002}
      */
     listDomainOwnerships(options = {}) {
       return this.listDomainOwnershipsWithHttpInfo(options)

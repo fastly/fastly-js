@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BackendResponseAllOf model module.
  * @module model/BackendResponseAllOf
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class BackendResponseAllOf {
     /**

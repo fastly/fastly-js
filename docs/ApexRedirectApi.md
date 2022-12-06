@@ -133,8 +133,8 @@ Update an apex redirect by its ID.
 ```javascript
 const options = {
   apex_redirect_id: 6QI9o6ZZrSP3y9gI0OhMwZ, // required
-  service_id: null,
-  version: null,
+  service_id: "service_id_example",
+  version: 56,
   created_at: new Date("2013-10-20T19:20:30+01:00"),
   deleted_at: new Date("2013-10-20T19:20:30+01:00"),
   updated_at: new Date("2013-10-20T19:20:30+01:00"),
@@ -157,8 +157,8 @@ apiInstance.updateApexRedirect(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **apex_redirect_id** | **String** |  |
-**service_id** | [**String**](String.md) |  | [optional]
-**version** | [**Number**](Number.md) |  | [optional]
+**service_id** | **String** |  | [optional]
+**version** | **Number** |  | [optional]
 **created_at** | **Date** | Date and time in ISO 8601 format. | [optional]
 **deleted_at** | **Date** | Date and time in ISO 8601 format. | [optional]
 **updated_at** | **Date** | Date and time in ISO 8601 format. | [optional]

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WafFirewallVersionDataAttributes model module.
  * @module model/WafFirewallVersionDataAttributes
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class WafFirewallVersionDataAttributes {
     /**
@@ -182,7 +182,7 @@ WafFirewallVersionDataAttributes.prototype['allowed_request_content_type_charset
 WafFirewallVersionDataAttributes.prototype['arg_name_length'] = 100;
 
 /**
- * The maximum number of arguments allowed.
+ * The maximum allowed length of an argument.
  * @member {Number} arg_length
  * @default 400
  */

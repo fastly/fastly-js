@@ -16,7 +16,7 @@ import RelationshipMemberTlsConfiguration from './RelationshipMemberTlsConfigura
 /**
  * The RelationshipTlsConfigurationTlsConfiguration model module.
  * @module model/RelationshipTlsConfigurationTlsConfiguration
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class RelationshipTlsConfigurationTlsConfiguration {
     /**
@@ -48,7 +48,7 @@ class RelationshipTlsConfigurationTlsConfiguration {
             obj = obj || new RelationshipTlsConfigurationTlsConfiguration();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [RelationshipMemberTlsConfiguration]);
+                obj['data'] = RelationshipMemberTlsConfiguration.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class RelationshipTlsConfigurationTlsConfiguration {
 }
 
 /**
- * @member {Array.<module:model/RelationshipMemberTlsConfiguration>} data
+ * @member {module:model/RelationshipMemberTlsConfiguration} data
  */
 RelationshipTlsConfigurationTlsConfiguration.prototype['data'] = undefined;
 

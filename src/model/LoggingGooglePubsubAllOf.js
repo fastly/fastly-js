@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingGooglePubsubAllOf model module.
  * @module model/LoggingGooglePubsubAllOf
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class LoggingGooglePubsubAllOf {
     /**

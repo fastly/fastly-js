@@ -20,7 +20,7 @@ import BillingTotal from './BillingTotal';
 /**
  * The BillingEstimateResponse model module.
  * @module model/BillingEstimateResponse
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class BillingEstimateResponse {
     /**
@@ -67,6 +67,9 @@ class BillingEstimateResponse {
             if (data.hasOwnProperty('customer_id')) {
                 obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
             }
+            if (data.hasOwnProperty('vendor_state')) {
+                obj['vendor_state'] = ApiClient.convertToType(data['vendor_state'], 'String');
+            }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = BillingStatus.constructFromObject(data['status']);
             }
@@ -109,6 +112,12 @@ BillingEstimateResponse.prototype['invoice_id'] = undefined;
 BillingEstimateResponse.prototype['customer_id'] = undefined;
 
 /**
+ * The current state of our third-party billing vendor. One of `up` or `down`.
+ * @member {String} vendor_state
+ */
+BillingEstimateResponse.prototype['vendor_state'] = undefined;
+
+/**
  * @member {module:model/BillingStatus} status
  */
 BillingEstimateResponse.prototype['status'] = undefined;
@@ -119,6 +128,7 @@ BillingEstimateResponse.prototype['status'] = undefined;
 BillingEstimateResponse.prototype['total'] = undefined;
 
 /**
+ * Breakdown of regional data for products that are region based.
  * @member {Object.<String, Object.<String, Object>>} regions
  */
 BillingEstimateResponse.prototype['regions'] = undefined;
@@ -149,6 +159,11 @@ Billing.prototype['invoice_id'] = undefined;
  */
 Billing.prototype['customer_id'] = undefined;
 /**
+ * The current state of our third-party billing vendor. One of `up` or `down`.
+ * @member {String} vendor_state
+ */
+Billing.prototype['vendor_state'] = undefined;
+/**
  * @member {module:model/BillingStatus} status
  */
 Billing.prototype['status'] = undefined;
@@ -157,6 +172,7 @@ Billing.prototype['status'] = undefined;
  */
 Billing.prototype['total'] = undefined;
 /**
+ * Breakdown of regional data for products that are region based.
  * @member {Object.<String, Object.<String, Object>>} regions
  */
 Billing.prototype['regions'] = undefined;

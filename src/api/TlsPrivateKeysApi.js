@@ -19,7 +19,7 @@ import TlsPrivateKeysResponse from '../model/TlsPrivateKeysResponse';
 /**
 * TlsPrivateKeys service.
 * @module api/TlsPrivateKeysApi
-* @version 3.0.0-beta3
+* @version 3.0.0
 */
 export default class TlsPrivateKeysApi {
 

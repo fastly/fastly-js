@@ -11,12 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import RelationshipTlsPrivateKeyTlsPrivateKey from './RelationshipTlsPrivateKeyTlsPrivateKey';
+import RelationshipTlsPrivateKeysTlsPrivateKeys from './RelationshipTlsPrivateKeysTlsPrivateKeys';
 
 /**
  * The RelationshipTlsPrivateKeys model module.
  * @module model/RelationshipTlsPrivateKeys
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class RelationshipTlsPrivateKeys {
     /**
@@ -48,7 +48,7 @@ class RelationshipTlsPrivateKeys {
             obj = obj || new RelationshipTlsPrivateKeys();
 
             if (data.hasOwnProperty('tls_private_keys')) {
-                obj['tls_private_keys'] = RelationshipTlsPrivateKeyTlsPrivateKey.constructFromObject(data['tls_private_keys']);
+                obj['tls_private_keys'] = RelationshipTlsPrivateKeysTlsPrivateKeys.constructFromObject(data['tls_private_keys']);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class RelationshipTlsPrivateKeys {
 }
 
 /**
- * @member {module:model/RelationshipTlsPrivateKeyTlsPrivateKey} tls_private_keys
+ * @member {module:model/RelationshipTlsPrivateKeysTlsPrivateKeys} tls_private_keys
  */
 RelationshipTlsPrivateKeys.prototype['tls_private_keys'] = undefined;
 

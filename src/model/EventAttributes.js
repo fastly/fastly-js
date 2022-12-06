@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventAttributes model module.
  * @module model/EventAttributes
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class EventAttributes {
     /**
@@ -72,6 +72,9 @@ class EventAttributes {
             }
             if (data.hasOwnProperty('user_id')) {
                 obj['user_id'] = ApiClient.convertToType(data['user_id'], 'String');
+            }
+            if (data.hasOwnProperty('token_id')) {
+                obj['token_id'] = ApiClient.convertToType(data['token_id'], 'String');
             }
         }
         return obj;
@@ -130,6 +133,11 @@ EventAttributes.prototype['service_id'] = undefined;
  * @member {String} user_id
  */
 EventAttributes.prototype['user_id'] = undefined;
+
+/**
+ * @member {String} token_id
+ */
+EventAttributes.prototype['token_id'] = undefined;
 
 
 

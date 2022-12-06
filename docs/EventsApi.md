@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 ## `listEvents`
 
 ```javascript
-listEvents({ , [filter_event_type, ][filter_customer_id, ][filter_service_id, ][filter_user_id, ][page_number, ][page_size, ][sort] })
+listEvents({ , [filter_customer_id, ][filter_event_type, ][filter_service_id, ][filter_user_id, ][filter_token_id, ][page_number, ][page_size, ][sort] })
 ```
 
 List all events for a particular customer. Events can be filtered by user, customer and event type. Events can be sorted by date.
@@ -58,10 +58,11 @@ List all events for a particular customer. Events can be filtered by user, custo
 
 ```javascript
 const options = {
-  filter_event_type: "filter_event_type_example",
   filter_customer_id: x4xCwxxJxGCx123Rx5xTx,
+  filter_event_type: "filter_event_type_example",
   filter_service_id: "filter_service_id_example",
   filter_user_id: "filter_user_id_example",
+  filter_token_id: "filter_token_id_example",
   page_number: 1,
   page_size: 20,
   sort: "created_at",
@@ -80,10 +81,11 @@ apiInstance.listEvents(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**filter_event_type** | **String** | Limit the returned events to a specific `event_type`. | [optional]
 **filter_customer_id** | **String** | Limit the results returned to a specific customer. | [optional]
+**filter_event_type** | **String** | Limit the returned events to a specific `event_type`. | [optional]
 **filter_service_id** | **String** | Limit the results returned to a specific service. | [optional]
 **filter_user_id** | **String** | Limit the results returned to a specific user. | [optional]
+**filter_token_id** | **String** | Limit the returned events to a specific token. | [optional]
 **page_number** | **Number** | Current page. | [optional]
 **page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
 **sort** | **String** | The order in which to list the results by creation date. | [optional] [one of: "created_at", "-created_at"]

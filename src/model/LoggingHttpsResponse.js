@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingHttpsResponse model module.
  * @module model/LoggingHttpsResponse
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class LoggingHttpsResponse {
     /**
@@ -145,7 +145,7 @@ LoggingHttpsResponse.prototype['name'] = undefined;
 LoggingHttpsResponse.prototype['placement'] = undefined;
 
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
  * @member {module:model/LoggingHttpsResponse.FormatVersionEnum} format_version
  * @default FormatVersionEnum.v2
  */
@@ -292,7 +292,7 @@ LoggingHttps.prototype['name'] = undefined;
  */
 LoggingHttps.prototype['placement'] = undefined;
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
  * @member {module:model/LoggingHttps.FormatVersionEnum} format_version
  * @default FormatVersionEnum.v2
  */

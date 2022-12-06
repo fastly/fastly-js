@@ -1,11 +1,10 @@
-# Fastly.RelationshipUserUserData
+# Fastly.MutualAuthenticationsResponseAllOf
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**TypeUser**](TypeUser.md) |  | [optional] 
-**id** | **String** |  | [optional] [readonly] 
+**data** | [**[MutualAuthenticationResponseData]**](MutualAuthenticationResponseData.md) |  | [optional] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

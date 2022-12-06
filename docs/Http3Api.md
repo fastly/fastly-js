@@ -26,8 +26,8 @@ Enable HTTP/3 (QUIC) support for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  service_id2: null,
-  version: null,
+  service_id2: "service_id_example",
+  version: 56,
   created_at: new Date("2013-10-20T19:20:30+01:00"),
   deleted_at: new Date("2013-10-20T19:20:30+01:00"),
   updated_at: new Date("2013-10-20T19:20:30+01:00"),
@@ -49,8 +49,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** | Alphanumeric string identifying the service. |
 **version_id** | **Number** | Integer identifying a service version. |
-**service_id2** | [**String**](String.md) |  | [optional]
-**version** | [**Number**](Number.md) |  | [optional]
+**service_id2** | **String** |  | [optional]
+**version** | **Number** |  | [optional]
 **created_at** | **Date** | Date and time in ISO 8601 format. | [optional]
 **deleted_at** | **Date** | Date and time in ISO 8601 format. | [optional]
 **updated_at** | **Date** | Date and time in ISO 8601 format. | [optional]

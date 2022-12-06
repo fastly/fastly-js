@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingBigqueryResponse model module.
  * @module model/LoggingBigqueryResponse
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class LoggingBigqueryResponse {
     /**
@@ -76,6 +76,9 @@ class LoggingBigqueryResponse {
             if (data.hasOwnProperty('secret_key')) {
                 obj['secret_key'] = ApiClient.convertToType(data['secret_key'], 'String');
             }
+            if (data.hasOwnProperty('account_name')) {
+                obj['account_name'] = ApiClient.convertToType(data['account_name'], 'String');
+            }
             if (data.hasOwnProperty('dataset')) {
                 obj['dataset'] = ApiClient.convertToType(data['dataset'], 'String');
             }
@@ -123,7 +126,7 @@ LoggingBigqueryResponse.prototype['name'] = undefined;
 LoggingBigqueryResponse.prototype['placement'] = undefined;
 
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
  * @member {module:model/LoggingBigqueryResponse.FormatVersionEnum} format_version
  * @default FormatVersionEnum.v2
  */
@@ -142,16 +145,22 @@ LoggingBigqueryResponse.prototype['response_condition'] = undefined;
 LoggingBigqueryResponse.prototype['format'] = undefined;
 
 /**
- * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+ * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Not required if `account_name` is specified.
  * @member {String} user
  */
 LoggingBigqueryResponse.prototype['user'] = undefined;
 
 /**
- * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+ * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified.
  * @member {String} secret_key
  */
 LoggingBigqueryResponse.prototype['secret_key'] = undefined;
+
+/**
+ * The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided.
+ * @member {String} account_name
+ */
+LoggingBigqueryResponse.prototype['account_name'] = undefined;
 
 /**
  * Your BigQuery dataset.
@@ -218,7 +227,7 @@ LoggingBigquery.prototype['name'] = undefined;
  */
 LoggingBigquery.prototype['placement'] = undefined;
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
  * @member {module:model/LoggingBigquery.FormatVersionEnum} format_version
  * @default FormatVersionEnum.v2
  */
@@ -234,15 +243,20 @@ LoggingBigquery.prototype['response_condition'] = undefined;
  */
 LoggingBigquery.prototype['format'] = undefined;
 /**
- * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+ * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Not required if `account_name` is specified.
  * @member {String} user
  */
 LoggingBigquery.prototype['user'] = undefined;
 /**
- * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+ * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified.
  * @member {String} secret_key
  */
 LoggingBigquery.prototype['secret_key'] = undefined;
+/**
+ * The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided.
+ * @member {String} account_name
+ */
+LoggingBigquery.prototype['account_name'] = undefined;
 /**
  * Your BigQuery dataset.
  * @member {String} dataset

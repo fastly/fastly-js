@@ -25,7 +25,7 @@ Create star.
 
 ```javascript
 const options = {
-  star: {"data":{"type":"star","relationships":{"user":{"data":{"type":"user","id":"6c7kAlo4vACNchGOdQxP37"}},"service":{"data":[{"type":"service","id":"SU1Z0isxPaozGVKXdv0eY"}]}}}},
+  star: {"data":{"type":"star","relationships":{"user":{"data":{"type":"user","id":"6c7kAlo4vACNchGOdQxP37"}},"service":{"data":{"type":"service","id":"SU1Z0isxPaozGVKXdv0eY"}}}}},
 };
 
 apiInstance.createServiceStar(options)

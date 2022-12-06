@@ -12,6 +12,7 @@
 
 
 import ApiClient from "../ApiClient";
+import AwsRegion from '../model/AwsRegion';
 import InlineResponse200 from '../model/InlineResponse200';
 import LoggingFormatVersion from '../model/LoggingFormatVersion';
 import LoggingKinesisResponse from '../model/LoggingKinesisResponse';
@@ -20,7 +21,7 @@ import LoggingPlacement from '../model/LoggingPlacement';
 /**
 * LoggingKinesis service.
 * @module api/LoggingKinesisApi
-* @version 3.0.0-beta3
+* @version 3.0.0
 */
 export default class LoggingKinesisApi {
 
@@ -50,7 +51,7 @@ export default class LoggingKinesisApi {
      * @param {module:model/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.format='{"timestamp":"%{begin:%Y-%m-%dT%H:%M:%S}t","time_elapsed":"%{time.elapsed.usec}V","is_tls":"%{if(req.is_ssl, \"true\", \"false\")}V","client_ip":"%{req.http.Fastly-Client-IP}V","geo_city":"%{client.geo.city}V","geo_country_code":"%{client.geo.country_code}V","request":"%{req.request}V","host":"%{req.http.Fastly-Orig-Host}V","url":"%{json.escape(req.url)}V","request_referer":"%{json.escape(req.http.Referer)}V","request_user_agent":"%{json.escape(req.http.User-Agent)}V","request_accept_language":"%{json.escape(req.http.Accept-Language)}V","request_accept_charset":"%{json.escape(req.http.Accept-Charset)}V","cache_status":"%{regsub(fastly_info.state, \"^(HIT-(SYNTH)|(HITPASS|HIT|MISS|PASS|ERROR|PIPE)).*\", \"\\2\\3\") }V"}'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Kinesis can ingest.
      * @param {String} [options.topic] - The Amazon Kinesis stream to send logs to. Required.
-     * @param {module:model/String} [options.region] - The [AWS region](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints) to stream logs to.
+     * @param {module:model/AwsRegion} [options.region]
      * @param {String} [options.secret_key] - The secret key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
      * @param {String} [options.access_key] - The access key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
      * @param {String} [options.iam_role] - The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if `access_key` and `secret_key` are provided.
@@ -108,7 +109,7 @@ export default class LoggingKinesisApi {
      * @param {module:model/LoggingFormatVersion} [options.format_version]
      * @param {String} [options.format='{"timestamp":"%{begin:%Y-%m-%dT%H:%M:%S}t","time_elapsed":"%{time.elapsed.usec}V","is_tls":"%{if(req.is_ssl, \"true\", \"false\")}V","client_ip":"%{req.http.Fastly-Client-IP}V","geo_city":"%{client.geo.city}V","geo_country_code":"%{client.geo.country_code}V","request":"%{req.request}V","host":"%{req.http.Fastly-Orig-Host}V","url":"%{json.escape(req.url)}V","request_referer":"%{json.escape(req.http.Referer)}V","request_user_agent":"%{json.escape(req.http.User-Agent)}V","request_accept_language":"%{json.escape(req.http.Accept-Language)}V","request_accept_charset":"%{json.escape(req.http.Accept-Charset)}V","cache_status":"%{regsub(fastly_info.state, \"^(HIT-(SYNTH)|(HITPASS|HIT|MISS|PASS|ERROR|PIPE)).*\", \"\\2\\3\") }V"}'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Kinesis can ingest.
      * @param {String} [options.topic] - The Amazon Kinesis stream to send logs to. Required.
-     * @param {module:model/String} [options.region] - The [AWS region](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints) to stream logs to.
+     * @param {module:model/AwsRegion} [options.region]
      * @param {String} [options.secret_key] - The secret key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
      * @param {String} [options.access_key] - The access key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
      * @param {String} [options.iam_role] - The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if `access_key` and `secret_key` are provided.

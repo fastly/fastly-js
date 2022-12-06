@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DirectorBackendAllOf model module.
  * @module model/DirectorBackendAllOf
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class DirectorBackendAllOf {
     /**

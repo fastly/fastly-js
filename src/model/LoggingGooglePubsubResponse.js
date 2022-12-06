@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingGooglePubsubResponse model module.
  * @module model/LoggingGooglePubsubResponse
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class LoggingGooglePubsubResponse {
     /**
@@ -76,6 +76,9 @@ class LoggingGooglePubsubResponse {
             if (data.hasOwnProperty('secret_key')) {
                 obj['secret_key'] = ApiClient.convertToType(data['secret_key'], 'String');
             }
+            if (data.hasOwnProperty('account_name')) {
+                obj['account_name'] = ApiClient.convertToType(data['account_name'], 'String');
+            }
             if (data.hasOwnProperty('topic')) {
                 obj['topic'] = ApiClient.convertToType(data['topic'], 'String');
             }
@@ -117,7 +120,7 @@ LoggingGooglePubsubResponse.prototype['name'] = undefined;
 LoggingGooglePubsubResponse.prototype['placement'] = undefined;
 
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
  * @member {module:model/LoggingGooglePubsubResponse.FormatVersionEnum} format_version
  * @default FormatVersionEnum.v2
  */
@@ -137,16 +140,22 @@ LoggingGooglePubsubResponse.prototype['response_condition'] = undefined;
 LoggingGooglePubsubResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 
 /**
- * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+ * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Not required if `account_name` is specified.
  * @member {String} user
  */
 LoggingGooglePubsubResponse.prototype['user'] = undefined;
 
 /**
- * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+ * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified.
  * @member {String} secret_key
  */
 LoggingGooglePubsubResponse.prototype['secret_key'] = undefined;
+
+/**
+ * The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided.
+ * @member {String} account_name
+ */
+LoggingGooglePubsubResponse.prototype['account_name'] = undefined;
 
 /**
  * The Google Cloud Pub/Sub topic to which logs will be published. Required.
@@ -201,7 +210,7 @@ LoggingGooglePubsub.prototype['name'] = undefined;
  */
 LoggingGooglePubsub.prototype['placement'] = undefined;
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
  * @member {module:model/LoggingGooglePubsub.FormatVersionEnum} format_version
  * @default FormatVersionEnum.v2
  */
@@ -218,15 +227,20 @@ LoggingGooglePubsub.prototype['response_condition'] = undefined;
  */
 LoggingGooglePubsub.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 /**
- * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+ * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Not required if `account_name` is specified.
  * @member {String} user
  */
 LoggingGooglePubsub.prototype['user'] = undefined;
 /**
- * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+ * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified.
  * @member {String} secret_key
  */
 LoggingGooglePubsub.prototype['secret_key'] = undefined;
+/**
+ * The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided.
+ * @member {String} account_name
+ */
+LoggingGooglePubsub.prototype['account_name'] = undefined;
 /**
  * The Google Cloud Pub/Sub topic to which logs will be published. Required.
  * @member {String} topic

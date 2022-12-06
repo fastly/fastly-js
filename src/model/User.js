@@ -16,7 +16,7 @@ import RoleUser from './RoleUser';
 /**
  * The User model module.
  * @module model/User
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class User {
     /**
@@ -79,7 +79,6 @@ class User {
 }
 
 /**
- * The login associated with the user (typically, an email address).
  * @member {String} login
  */
 User.prototype['login'] = undefined;

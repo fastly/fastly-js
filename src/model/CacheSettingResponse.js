@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The CacheSettingResponse model module.
  * @module model/CacheSettingResponse
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class CacheSettingResponse {
     /**
@@ -219,10 +219,10 @@ CacheSettingResponse['ActionEnum'] = {
     "pass": "pass",
 
     /**
-     * value: "deliver"
+     * value: "cache"
      * @const
      */
-    "deliver": "deliver",
+    "cache": "cache",
 
     /**
      * value: "restart"

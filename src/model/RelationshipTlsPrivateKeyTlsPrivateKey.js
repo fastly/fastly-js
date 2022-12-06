@@ -16,7 +16,7 @@ import RelationshipMemberTlsPrivateKey from './RelationshipMemberTlsPrivateKey';
 /**
  * The RelationshipTlsPrivateKeyTlsPrivateKey model module.
  * @module model/RelationshipTlsPrivateKeyTlsPrivateKey
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class RelationshipTlsPrivateKeyTlsPrivateKey {
     /**
@@ -48,7 +48,7 @@ class RelationshipTlsPrivateKeyTlsPrivateKey {
             obj = obj || new RelationshipTlsPrivateKeyTlsPrivateKey();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [RelationshipMemberTlsPrivateKey]);
+                obj['data'] = RelationshipMemberTlsPrivateKey.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class RelationshipTlsPrivateKeyTlsPrivateKey {
 }
 
 /**
- * @member {Array.<module:model/RelationshipMemberTlsPrivateKey>} data
+ * @member {module:model/RelationshipMemberTlsPrivateKey} data
  */
 RelationshipTlsPrivateKeyTlsPrivateKey.prototype['data'] = undefined;
 

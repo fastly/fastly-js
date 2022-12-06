@@ -16,7 +16,7 @@ import RealtimeEntry from './RealtimeEntry';
 /**
  * The Realtime model module.
  * @module model/Realtime
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class Realtime {
     /**

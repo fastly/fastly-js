@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingGcsCommon model module.
  * @module model/LoggingGcsCommon
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class LoggingGcsCommon {
     /**
@@ -52,6 +52,9 @@ class LoggingGcsCommon {
             if (data.hasOwnProperty('secret_key')) {
                 obj['secret_key'] = ApiClient.convertToType(data['secret_key'], 'String');
             }
+            if (data.hasOwnProperty('account_name')) {
+                obj['account_name'] = ApiClient.convertToType(data['account_name'], 'String');
+            }
         }
         return obj;
     }
@@ -60,16 +63,22 @@ class LoggingGcsCommon {
 }
 
 /**
- * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+ * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Not required if `account_name` is specified.
  * @member {String} user
  */
 LoggingGcsCommon.prototype['user'] = undefined;
 
 /**
- * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+ * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified.
  * @member {String} secret_key
  */
 LoggingGcsCommon.prototype['secret_key'] = undefined;
+
+/**
+ * The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided.
+ * @member {String} account_name
+ */
+LoggingGcsCommon.prototype['account_name'] = undefined;
 
 
 

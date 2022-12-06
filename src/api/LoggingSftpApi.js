@@ -18,7 +18,7 @@ import LoggingSftpResponse from '../model/LoggingSftpResponse';
 /**
 * LoggingSftp service.
 * @module api/LoggingSftpApi
-* @version 3.0.0-beta3
+* @version 3.0.0
 */
 export default class LoggingSftpApi {
 
@@ -45,16 +45,16 @@ export default class LoggingSftpApi {
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {module:model/String} [options.message_type='classic'] - How the message should be formatted.
      * @param {String} [options.timestamp_format] - A timestamp format
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
-     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:model/String} [options.compression_codec] - The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \\\"gzip\\\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {Number} [options.gzip_level=0] - The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:model/String} [options.compression_codec] - The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {String} [options.address] - A hostname or IPv4 address.
-     * @param {Object} [options.port] - The port number.
+     * @param {Number} [options.port=22] - The port number.
      * @param {String} [options.password] - The password for the server. If both `password` and `secret_key` are passed, `secret_key` will be used in preference.
      * @param {String} [options.path='null'] - The path to upload logs to.
      * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
@@ -121,16 +121,16 @@ export default class LoggingSftpApi {
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {module:model/String} [options.message_type='classic'] - How the message should be formatted.
      * @param {String} [options.timestamp_format] - A timestamp format
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
-     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:model/String} [options.compression_codec] - The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \\\"gzip\\\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {Number} [options.gzip_level=0] - The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:model/String} [options.compression_codec] - The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {String} [options.address] - A hostname or IPv4 address.
-     * @param {Object} [options.port] - The port number.
+     * @param {Number} [options.port=22] - The port number.
      * @param {String} [options.password] - The password for the server. If both `password` and `secret_key` are passed, `secret_key` will be used in preference.
      * @param {String} [options.path='null'] - The path to upload logs to.
      * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
@@ -330,16 +330,16 @@ export default class LoggingSftpApi {
      * @param {String} options.logging_sftp_name - The name for the real-time logging configuration.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {module:model/String} [options.message_type='classic'] - How the message should be formatted.
      * @param {String} [options.timestamp_format] - A timestamp format
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
-     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:model/String} [options.compression_codec] - The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \\\"gzip\\\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {Number} [options.gzip_level=0] - The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:model/String} [options.compression_codec] - The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {String} [options.address] - A hostname or IPv4 address.
-     * @param {Object} [options.port] - The port number.
+     * @param {Number} [options.port=22] - The port number.
      * @param {String} [options.password] - The password for the server. If both `password` and `secret_key` are passed, `secret_key` will be used in preference.
      * @param {String} [options.path='null'] - The path to upload logs to.
      * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
@@ -412,16 +412,16 @@ export default class LoggingSftpApi {
      * @param {String} options.logging_sftp_name - The name for the real-time logging configuration.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {module:model/String} [options.message_type='classic'] - How the message should be formatted.
      * @param {String} [options.timestamp_format] - A timestamp format
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
-     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:model/String} [options.compression_codec] - The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \\\"gzip\\\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {Number} [options.gzip_level=0] - The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:model/String} [options.compression_codec] - The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {String} [options.address] - A hostname or IPv4 address.
-     * @param {Object} [options.port] - The port number.
+     * @param {Number} [options.port=22] - The port number.
      * @param {String} [options.password] - The password for the server. If both `password` and `secret_key` are passed, `secret_key` will be used in preference.
      * @param {String} [options.path='null'] - The path to upload logs to.
      * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.

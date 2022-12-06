@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CacheSetting model module.
  * @module model/CacheSetting
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class CacheSetting {
     /**
@@ -116,10 +116,10 @@ CacheSetting['ActionEnum'] = {
     "pass": "pass",
 
     /**
-     * value: "deliver"
+     * value: "cache"
      * @const
      */
-    "deliver": "deliver",
+    "cache": "cache",
 
     /**
      * value: "restart"

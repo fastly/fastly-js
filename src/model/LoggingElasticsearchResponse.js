@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingElasticsearchResponse model module.
  * @module model/LoggingElasticsearchResponse
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class LoggingElasticsearchResponse {
     /**
@@ -138,7 +138,7 @@ LoggingElasticsearchResponse.prototype['name'] = undefined;
 LoggingElasticsearchResponse.prototype['placement'] = undefined;
 
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
  * @member {module:model/LoggingElasticsearchResponse.FormatVersionEnum} format_version
  * @default FormatVersionEnum.v2
  */
@@ -269,7 +269,7 @@ LoggingElasticsearch.prototype['name'] = undefined;
  */
 LoggingElasticsearch.prototype['placement'] = undefined;
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
  * @member {module:model/LoggingElasticsearch.FormatVersionEnum} format_version
  * @default FormatVersionEnum.v2
  */

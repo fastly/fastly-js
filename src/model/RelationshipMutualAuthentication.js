@@ -11,21 +11,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import RelationshipMemberService from './RelationshipMemberService';
+import RelationshipMutualAuthenticationMutualAuthentication from './RelationshipMutualAuthenticationMutualAuthentication';
 
 /**
- * The RelationshipServiceService model module.
- * @module model/RelationshipServiceService
- * @version 3.0.0-beta3
+ * The RelationshipMutualAuthentication model module.
+ * @module model/RelationshipMutualAuthentication
+ * @version 3.0.0
  */
-class RelationshipServiceService {
+class RelationshipMutualAuthentication {
     /**
-     * Constructs a new <code>RelationshipServiceService</code>.
-     * @alias module:model/RelationshipServiceService
+     * Constructs a new <code>RelationshipMutualAuthentication</code>.
+     * @alias module:model/RelationshipMutualAuthentication
      */
     constructor() { 
         
-        RelationshipServiceService.initialize(this);
+        RelationshipMutualAuthentication.initialize(this);
     }
 
     /**
@@ -37,18 +37,18 @@ class RelationshipServiceService {
     }
 
     /**
-     * Constructs a <code>RelationshipServiceService</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>RelationshipMutualAuthentication</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RelationshipServiceService} obj Optional instance to populate.
-     * @return {module:model/RelationshipServiceService} The populated <code>RelationshipServiceService</code> instance.
+     * @param {module:model/RelationshipMutualAuthentication} obj Optional instance to populate.
+     * @return {module:model/RelationshipMutualAuthentication} The populated <code>RelationshipMutualAuthentication</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new RelationshipServiceService();
+            obj = obj || new RelationshipMutualAuthentication();
 
-            if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [RelationshipMemberService]);
+            if (data.hasOwnProperty('mutual_authentication')) {
+                obj['mutual_authentication'] = RelationshipMutualAuthenticationMutualAuthentication.constructFromObject(data['mutual_authentication']);
             }
         }
         return obj;
@@ -58,14 +58,14 @@ class RelationshipServiceService {
 }
 
 /**
- * @member {Array.<module:model/RelationshipMemberService>} data
+ * @member {module:model/RelationshipMutualAuthenticationMutualAuthentication} mutual_authentication
  */
-RelationshipServiceService.prototype['data'] = undefined;
+RelationshipMutualAuthentication.prototype['mutual_authentication'] = undefined;
 
 
 
 
 
 
-export default RelationshipServiceService;
+export default RelationshipMutualAuthentication;
 

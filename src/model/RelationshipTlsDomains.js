@@ -11,12 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import RelationshipTlsDomainTlsDomain from './RelationshipTlsDomainTlsDomain';
+import RelationshipTlsDomainsTlsDomains from './RelationshipTlsDomainsTlsDomains';
 
 /**
  * The RelationshipTlsDomains model module.
  * @module model/RelationshipTlsDomains
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class RelationshipTlsDomains {
     /**
@@ -48,7 +48,7 @@ class RelationshipTlsDomains {
             obj = obj || new RelationshipTlsDomains();
 
             if (data.hasOwnProperty('tls_domains')) {
-                obj['tls_domains'] = RelationshipTlsDomainTlsDomain.constructFromObject(data['tls_domains']);
+                obj['tls_domains'] = RelationshipTlsDomainsTlsDomains.constructFromObject(data['tls_domains']);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class RelationshipTlsDomains {
 }
 
 /**
- * @member {module:model/RelationshipTlsDomainTlsDomain} tls_domains
+ * @member {module:model/RelationshipTlsDomainsTlsDomains} tls_domains
  */
 RelationshipTlsDomains.prototype['tls_domains'] = undefined;
 

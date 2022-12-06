@@ -19,7 +19,7 @@ import UserResponseAllOf from './UserResponseAllOf';
 /**
  * The UserResponse model module.
  * @module model/UserResponse
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class UserResponse {
     /**
@@ -106,7 +106,6 @@ class UserResponse {
 }
 
 /**
- * The login associated with the user (typically, an email address).
  * @member {String} login
  */
 UserResponse.prototype['login'] = undefined;
@@ -189,7 +188,6 @@ UserResponse.prototype['customer_id'] = undefined;
 
 // Implement User interface:
 /**
- * The login associated with the user (typically, an email address).
  * @member {String} login
  */
 User.prototype['login'] = undefined;

@@ -181,7 +181,7 @@ Update a firewall object for a particular service and service version. Specifyin
 ```javascript
 const options = {
   firewall_id: "firewall_id_example", // required
-  waf_firewall: {"update":{"summary":"Update a firewall object for a particular service and service version. Specifying a `service_version_number` is required.","value":{"data":{"id":"fW7g2uUGZzb2W9Euo4Mo0r","type":"waf_firewall","attributes":{"response":"NEW_RESPONSE","service_version_number":1}}}}},
+  waf_firewall: {"data":{"id":"fW7g2uUGZzb2W9Euo4Mo0r","type":"waf_firewall","attributes":{"response":"NEW_RESPONSE","service_version_number":1}}},
 };
 
 apiInstance.updateWafFirewall(options)

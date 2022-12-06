@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PoolAllOf model module.
  * @module model/PoolAllOf
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class PoolAllOf {
     /**

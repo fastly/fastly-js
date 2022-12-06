@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Http3AllOf model module.
  * @module model/Http3AllOf
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class Http3AllOf {
     /**

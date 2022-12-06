@@ -17,7 +17,7 @@ import PublicIpList from '../model/PublicIpList';
 /**
 * PublicIpList service.
 * @module api/PublicIpListApi
-* @version 3.0.0-beta3
+* @version 3.0.0
 */
 export default class PublicIpListApi {
 

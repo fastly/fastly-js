@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingDatadogResponse model module.
  * @module model/LoggingDatadogResponse
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class LoggingDatadogResponse {
     /**
@@ -111,7 +111,7 @@ LoggingDatadogResponse.prototype['name'] = undefined;
 LoggingDatadogResponse.prototype['placement'] = undefined;
 
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
  * @member {module:model/LoggingDatadogResponse.FormatVersionEnum} format_version
  * @default FormatVersionEnum.v2
  */
@@ -184,7 +184,7 @@ LoggingDatadog.prototype['name'] = undefined;
  */
 LoggingDatadog.prototype['placement'] = undefined;
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
  * @member {module:model/LoggingDatadog.FormatVersionEnum} format_version
  * @default FormatVersionEnum.v2
  */

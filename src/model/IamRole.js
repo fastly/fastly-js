@@ -17,7 +17,7 @@ import TimestampsNoDelete from './TimestampsNoDelete';
 /**
  * The IamRole model module.
  * @module model/IamRole
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class IamRole {
     /**

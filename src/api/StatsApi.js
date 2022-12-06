@@ -17,7 +17,7 @@ import Stats from '../model/Stats';
 /**
 * Stats service.
 * @module api/StatsApi
-* @version 3.0.0-beta3
+* @version 3.0.0
 */
 export default class StatsApi {
 

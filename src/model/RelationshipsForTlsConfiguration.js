@@ -11,12 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import RelationshipServiceService from './RelationshipServiceService';
+import RelationshipMemberService from './RelationshipMemberService';
 
 /**
  * The RelationshipsForTlsConfiguration model module.
  * @module model/RelationshipsForTlsConfiguration
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class RelationshipsForTlsConfiguration {
     /**
@@ -48,7 +48,7 @@ class RelationshipsForTlsConfiguration {
             obj = obj || new RelationshipsForTlsConfiguration();
 
             if (data.hasOwnProperty('service')) {
-                obj['service'] = RelationshipServiceService.constructFromObject(data['service']);
+                obj['service'] = RelationshipMemberService.constructFromObject(data['service']);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class RelationshipsForTlsConfiguration {
 }
 
 /**
- * @member {module:model/RelationshipServiceService} service
+ * @member {module:model/RelationshipMemberService} service
  */
 RelationshipsForTlsConfiguration.prototype['service'] = undefined;
 

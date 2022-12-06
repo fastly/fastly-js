@@ -9,7 +9,7 @@ Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**bulkPurgeTag**](PurgeApi.md#bulkPurgeTag) | **POST** /service/{service_id}/purge | Purge multiple surrogate key tags
 [**purgeAll**](PurgeApi.md#purgeAll) | **POST** /service/{service_id}/purge_all | Purge everything from a service
-[**purgeSingleUrl**](PurgeApi.md#purgeSingleUrl) | **GET** /* | Purge a URL
+[**purgeSingleUrl**](PurgeApi.md#purgeSingleUrl) | **POST** /purge/{cached_url} | Purge a URL
 [**purgeTag**](PurgeApi.md#purgeTag) | **POST** /service/{service_id}/purge/{surrogate_key} | Purge by surrogate key tag
 
 
@@ -45,7 +45,7 @@ apiInstance.bulkPurgeTag(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** | Alphanumeric string identifying the service. |
-**fastly_soft_purge** | **Number** | Optional header indicating that the operation should be a &#39;soft&#39; purge, which marks the affected object as stale rather than making it inaccessible. | [optional] [defaults to 1]
+**fastly_soft_purge** | **Number** | If present, this header triggers the purge to be &#39;soft&#39;, which marks the affected object as stale rather than making it inaccessible.  Typically set to \&quot;1\&quot; when used, but the value is not important. | [optional]
 **surrogate_key** | **String** | Purge multiple surrogate key tags using a request header. Not required if a JSON POST body is specified. | [optional]
 **purge_response** | [**PurgeResponse**](PurgeResponse.md) |  | [optional]
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 ## `purgeSingleUrl`
 
 ```javascript
-purgeSingleUrl({ host, [fastly_soft_purge] })
+purgeSingleUrl({ cached_url, [fastly_soft_purge] })
 ```
 
 Instant Purge an individual URL.
@@ -101,7 +101,7 @@ Instant Purge an individual URL.
 
 ```javascript
 const options = {
-  host: www.example.com, // required
+  cached_url: www.example.com/path/to/object-to-purge, // required
   fastly_soft_purge: 1,
 };
 
@@ -118,8 +118,8 @@ apiInstance.purgeSingleUrl(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**host** | **String** | The hostname for the content you&#39;ll be purging. |
-**fastly_soft_purge** | **Number** | Optional header indicating that the operation should be a &#39;soft&#39; purge, which marks the affected object as stale rather than making it inaccessible. | [optional] [defaults to 1]
+**cached_url** | **String** | URL of object in cache to be purged. |
+**fastly_soft_purge** | **Number** | If present, this header triggers the purge to be &#39;soft&#39;, which marks the affected object as stale rather than making it inaccessible.  Typically set to \&quot;1\&quot; when used, but the value is not important. | [optional]
 
 ### Return type
 
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** | Alphanumeric string identifying the service. |
 **surrogate_key** | **String** | Surrogate keys are used to efficiently purge content from cache. Instead of purging your entire site or individual URLs, you can tag related assets (like all images and descriptions associated with a single product) with surrogate keys, and these grouped URLs can be purged in a single request. |
-**fastly_soft_purge** | **Number** | Optional header indicating that the operation should be a &#39;soft&#39; purge, which marks the affected object as stale rather than making it inaccessible. | [optional] [defaults to 1]
+**fastly_soft_purge** | **Number** | If present, this header triggers the purge to be &#39;soft&#39;, which marks the affected object as stale rather than making it inaccessible.  Typically set to \&quot;1\&quot; when used, but the value is not important. | [optional]
 
 ### Return type
 

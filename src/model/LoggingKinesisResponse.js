@@ -11,6 +11,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import AwsRegion from './AwsRegion';
 import LoggingFormatVersion from './LoggingFormatVersion';
 import LoggingKinesis from './LoggingKinesis';
 import LoggingPlacement from './LoggingPlacement';
@@ -20,7 +21,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingKinesisResponse model module.
  * @module model/LoggingKinesisResponse
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class LoggingKinesisResponse {
     /**
@@ -73,7 +74,7 @@ class LoggingKinesisResponse {
                 obj['topic'] = ApiClient.convertToType(data['topic'], 'String');
             }
             if (data.hasOwnProperty('region')) {
-                obj['region'] = ApiClient.convertToType(data['region'], 'String');
+                obj['region'] = AwsRegion.constructFromObject(data['region']);
             }
             if (data.hasOwnProperty('secret_key')) {
                 obj['secret_key'] = ApiClient.convertToType(data['secret_key'], 'String');
@@ -136,8 +137,7 @@ LoggingKinesisResponse.prototype['format'] = '{"timestamp":"%{begin:%Y-%m-%dT%H:
 LoggingKinesisResponse.prototype['topic'] = undefined;
 
 /**
- * The [AWS region](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints) to stream logs to.
- * @member {module:model/LoggingKinesisResponse.RegionEnum} region
+ * @member {module:model/AwsRegion} region
  */
 LoggingKinesisResponse.prototype['region'] = undefined;
 
@@ -214,8 +214,7 @@ LoggingKinesis.prototype['format'] = '{"timestamp":"%{begin:%Y-%m-%dT%H:%M:%S}t"
  */
 LoggingKinesis.prototype['topic'] = undefined;
 /**
- * The [AWS region](https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints) to stream logs to.
- * @member {module:model/LoggingKinesis.RegionEnum} region
+ * @member {module:model/AwsRegion} region
  */
 LoggingKinesis.prototype['region'] = undefined;
 /**
@@ -259,153 +258,6 @@ ServiceIdAndVersion.prototype['service_id'] = undefined;
  */
 ServiceIdAndVersion.prototype['version'] = undefined;
 
-
-
-/**
- * Allowed values for the <code>region</code> property.
- * @enum {String}
- * @readonly
- */
-LoggingKinesisResponse['RegionEnum'] = {
-
-    /**
-     * value: "us-east-1"
-     * @const
-     */
-    "us-east-1": "us-east-1",
-
-    /**
-     * value: "us-east-2"
-     * @const
-     */
-    "us-east-2": "us-east-2",
-
-    /**
-     * value: "us-west-1"
-     * @const
-     */
-    "us-west-1": "us-west-1",
-
-    /**
-     * value: "us-west-2"
-     * @const
-     */
-    "us-west-2": "us-west-2",
-
-    /**
-     * value: "af-south-1"
-     * @const
-     */
-    "af-south-1": "af-south-1",
-
-    /**
-     * value: "ap-east-1"
-     * @const
-     */
-    "ap-east-1": "ap-east-1",
-
-    /**
-     * value: "ap-south-1"
-     * @const
-     */
-    "ap-south-1": "ap-south-1",
-
-    /**
-     * value: "ap-northeast-3"
-     * @const
-     */
-    "ap-northeast-3": "ap-northeast-3",
-
-    /**
-     * value: "ap-northeast-2"
-     * @const
-     */
-    "ap-northeast-2": "ap-northeast-2",
-
-    /**
-     * value: "ap-southeast-1"
-     * @const
-     */
-    "ap-southeast-1": "ap-southeast-1",
-
-    /**
-     * value: "ap-southeast-2"
-     * @const
-     */
-    "ap-southeast-2": "ap-southeast-2",
-
-    /**
-     * value: "ap-northeast-1"
-     * @const
-     */
-    "ap-northeast-1": "ap-northeast-1",
-
-    /**
-     * value: "ca-central-1"
-     * @const
-     */
-    "ca-central-1": "ca-central-1",
-
-    /**
-     * value: "cn-north-1"
-     * @const
-     */
-    "cn-north-1": "cn-north-1",
-
-    /**
-     * value: "cn-northwest-1"
-     * @const
-     */
-    "cn-northwest-1": "cn-northwest-1",
-
-    /**
-     * value: "eu-central-1"
-     * @const
-     */
-    "eu-central-1": "eu-central-1",
-
-    /**
-     * value: "eu-west-1"
-     * @const
-     */
-    "eu-west-1": "eu-west-1",
-
-    /**
-     * value: "eu-west-2"
-     * @const
-     */
-    "eu-west-2": "eu-west-2",
-
-    /**
-     * value: "eu-south-1"
-     * @const
-     */
-    "eu-south-1": "eu-south-1",
-
-    /**
-     * value: "eu-west-3"
-     * @const
-     */
-    "eu-west-3": "eu-west-3",
-
-    /**
-     * value: "eu-north-1"
-     * @const
-     */
-    "eu-north-1": "eu-north-1",
-
-    /**
-     * value: "me-south-1"
-     * @const
-     */
-    "me-south-1": "me-south-1",
-
-    /**
-     * value: "sa-east-1"
-     * @const
-     */
-    "sa-east-1": "sa-east-1"
-};
 
 
 

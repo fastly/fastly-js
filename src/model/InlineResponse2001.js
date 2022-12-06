@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The InlineResponse2001 model module.
  * @module model/InlineResponse2001
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class InlineResponse2001 {
     /**
@@ -46,8 +46,8 @@ class InlineResponse2001 {
         if (data) {
             obj = obj || new InlineResponse2001();
 
-            if (data.hasOwnProperty('expires_at')) {
-                obj['expires_at'] = ApiClient.convertToType(data['expires_at'], 'String');
+            if (data.hasOwnProperty('data')) {
+                obj['data'] = ApiClient.convertToType(data['data'], ['String']);
             }
         }
         return obj;
@@ -57,10 +57,10 @@ class InlineResponse2001 {
 }
 
 /**
- * Time-stamp (GMT) when the domain_ownership validation will expire.
- * @member {String} expires_at
+ * The service IDs of the services the token will have access to. Separate service IDs with a space.
+ * @member {Array.<String>} data
  */
-InlineResponse2001.prototype['expires_at'] = undefined;
+InlineResponse2001.prototype['data'] = undefined;
 
 
 

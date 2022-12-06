@@ -18,7 +18,7 @@ import LoggingGcsResponse from '../model/LoggingGcsResponse';
 /**
 * LoggingGcs service.
 * @module api/LoggingGcsApi
-* @version 3.0.0-beta3
+* @version 3.0.0
 */
 export default class LoggingGcsApi {
 
@@ -45,19 +45,21 @@ export default class LoggingGcsApi {
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {module:model/String} [options.message_type='classic'] - How the message should be formatted.
      * @param {String} [options.timestamp_format] - A timestamp format
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
-     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:model/String} [options.compression_codec] - The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \\\"gzip\\\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
-     * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+     * @param {Number} [options.gzip_level=0] - The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:model/String} [options.compression_codec] - The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Not required if `account_name` is specified.
+     * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified.
+     * @param {String} [options.account_name] - The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided.
      * @param {String} [options.bucket_name] - The name of the GCS bucket.
      * @param {String} [options.path] - The path to upload logs to.
      * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingGcsResponse} and HTTP response
      */
     createLogGcsWithHttpInfo(options = {}) {
@@ -92,9 +94,11 @@ export default class LoggingGcsApi {
         'compression_codec': options['compression_codec'],
         'user': options['user'],
         'secret_key': options['secret_key'],
+        'account_name': options['account_name'],
         'bucket_name': options['bucket_name'],
         'path': options['path'],
-        'public_key': options['public_key']
+        'public_key': options['public_key'],
+        'project_id': options['project_id']
       };
 
       let authNames = ['token'];
@@ -115,19 +119,21 @@ export default class LoggingGcsApi {
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {module:model/String} [options.message_type='classic'] - How the message should be formatted.
      * @param {String} [options.timestamp_format] - A timestamp format
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
-     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:model/String} [options.compression_codec] - The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \\\"gzip\\\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
-     * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+     * @param {Number} [options.gzip_level=0] - The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:model/String} [options.compression_codec] - The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Not required if `account_name` is specified.
+     * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified.
+     * @param {String} [options.account_name] - The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided.
      * @param {String} [options.bucket_name] - The name of the GCS bucket.
      * @param {String} [options.path] - The path to upload logs to.
      * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingGcsResponse}
      */
     createLogGcs(options = {}) {
@@ -321,19 +327,21 @@ export default class LoggingGcsApi {
      * @param {String} options.logging_gcs_name - The name for the real-time logging configuration.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {module:model/String} [options.message_type='classic'] - How the message should be formatted.
      * @param {String} [options.timestamp_format] - A timestamp format
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
-     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:model/String} [options.compression_codec] - The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \\\"gzip\\\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
-     * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+     * @param {Number} [options.gzip_level=0] - The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:model/String} [options.compression_codec] - The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Not required if `account_name` is specified.
+     * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified.
+     * @param {String} [options.account_name] - The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided.
      * @param {String} [options.bucket_name] - The name of the GCS bucket.
      * @param {String} [options.path] - The path to upload logs to.
      * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingGcsResponse} and HTTP response
      */
     updateLogGcsWithHttpInfo(options = {}) {
@@ -373,9 +381,11 @@ export default class LoggingGcsApi {
         'compression_codec': options['compression_codec'],
         'user': options['user'],
         'secret_key': options['secret_key'],
+        'account_name': options['account_name'],
         'bucket_name': options['bucket_name'],
         'path': options['path'],
-        'public_key': options['public_key']
+        'public_key': options['public_key'],
+        'project_id': options['project_id']
       };
 
       let authNames = ['token'];
@@ -397,19 +407,21 @@ export default class LoggingGcsApi {
      * @param {String} options.logging_gcs_name - The name for the real-time logging configuration.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {module:model/String} [options.message_type='classic'] - How the message should be formatted.
      * @param {String} [options.timestamp_format] - A timestamp format
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
-     * @param {Number} [options.gzip_level=0] - What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \\\"gzip.\\\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:model/String} [options.compression_codec] - The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \\\"gzip\\\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
-     * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+     * @param {Number} [options.gzip_level=0] - The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {module:model/String} [options.compression_codec] - The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+     * @param {String} [options.user] - Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Not required if `account_name` is specified.
+     * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified.
+     * @param {String} [options.account_name] - The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided.
      * @param {String} [options.bucket_name] - The name of the GCS bucket.
      * @param {String} [options.path] - The path to upload logs to.
      * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+     * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingGcsResponse}
      */
     updateLogGcs(options = {}) {

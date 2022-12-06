@@ -14,9 +14,12 @@
 import superagent from "superagent";
 import querystring from "querystring";
 
+// https://developer.fastly.com/reference/api/#rate-limiting
+const DEFAULT_RATELIMIT = 1000;
+
 /**
 * @module ApiClient
-* @version 3.0.0-beta3
+* @version 3.0.0
 */
 
 /**
@@ -28,6 +31,17 @@ import querystring from "querystring";
 */
 class ApiClient {
     constructor() {
+        /*
+         * The last observed value of http header Fastly-RateLimit-Remaining
+         * https://developer.fastly.com/reference/api/#rate-limiting
+         */
+        this.rateLimitRemaining = DEFAULT_RATELIMIT;
+
+        /*
+         * The last observed value of http header Fastly-RateLimit-Reset
+         */
+        this.rateLimitReset = null;
+
         /**
          * The base URL against which to resolve every API call's (relative) path.
          * @type {String}
@@ -52,7 +66,7 @@ class ApiClient {
          * @default {}
          */
         this.defaultHeaders = {
-            'User-Agent': 'fastly-js/3.0.0-beta3'
+            'User-Agent': 'fastly-js/3.0.0'
         };
 
         /**
@@ -507,6 +521,17 @@ class ApiClient {
                         var data = this.deserialize(response, returnType);
                         if (this.enableCookies && typeof window === 'undefined'){
                             this.agent._saveCookies(response);
+                        }
+
+                        if (httpMethod.toUpperCase() !== 'GET' && httpMethod.toUpperCase() !== 'HEAD') {
+                            let remaining = response.get('Fastly-RateLimit-Remaining');
+                            if (remaining !== undefined) {
+                               this.rateLimitRemaining = Number(remaining);
+                            }
+                            let reset = response.get('Fastly-RateLimit-Reset');
+                            if (reset !== undefined) {
+                               this.rateLimitReset = Number(reset);
+                            }
                         }
 
                         resolve({data, response});

@@ -11,21 +11,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import TypeUser from './TypeUser';
+import RelationshipMemberTlsCertificate from './RelationshipMemberTlsCertificate';
 
 /**
- * The RelationshipUserUserData model module.
- * @module model/RelationshipUserUserData
- * @version 3.0.0-beta3
+ * The RelationshipTlsCertificatesTlsCertificates model module.
+ * @module model/RelationshipTlsCertificatesTlsCertificates
+ * @version 3.0.0
  */
-class RelationshipUserUserData {
+class RelationshipTlsCertificatesTlsCertificates {
     /**
-     * Constructs a new <code>RelationshipUserUserData</code>.
-     * @alias module:model/RelationshipUserUserData
+     * Constructs a new <code>RelationshipTlsCertificatesTlsCertificates</code>.
+     * @alias module:model/RelationshipTlsCertificatesTlsCertificates
      */
     constructor() { 
         
-        RelationshipUserUserData.initialize(this);
+        RelationshipTlsCertificatesTlsCertificates.initialize(this);
     }
 
     /**
@@ -37,21 +37,18 @@ class RelationshipUserUserData {
     }
 
     /**
-     * Constructs a <code>RelationshipUserUserData</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>RelationshipTlsCertificatesTlsCertificates</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RelationshipUserUserData} obj Optional instance to populate.
-     * @return {module:model/RelationshipUserUserData} The populated <code>RelationshipUserUserData</code> instance.
+     * @param {module:model/RelationshipTlsCertificatesTlsCertificates} obj Optional instance to populate.
+     * @return {module:model/RelationshipTlsCertificatesTlsCertificates} The populated <code>RelationshipTlsCertificatesTlsCertificates</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new RelationshipUserUserData();
+            obj = obj || new RelationshipTlsCertificatesTlsCertificates();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeUser.constructFromObject(data['type']);
-            }
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            if (data.hasOwnProperty('data')) {
+                obj['data'] = ApiClient.convertToType(data['data'], [RelationshipMemberTlsCertificate]);
             }
         }
         return obj;
@@ -61,19 +58,14 @@ class RelationshipUserUserData {
 }
 
 /**
- * @member {module:model/TypeUser} type
+ * @member {Array.<module:model/RelationshipMemberTlsCertificate>} data
  */
-RelationshipUserUserData.prototype['type'] = undefined;
-
-/**
- * @member {String} id
- */
-RelationshipUserUserData.prototype['id'] = undefined;
+RelationshipTlsCertificatesTlsCertificates.prototype['data'] = undefined;
 
 
 
 
 
 
-export default RelationshipUserUserData;
+export default RelationshipTlsCertificatesTlsCertificates;
 

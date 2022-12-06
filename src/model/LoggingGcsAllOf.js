@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingGcsAllOf model module.
  * @module model/LoggingGcsAllOf
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class LoggingGcsAllOf {
     /**
@@ -55,6 +55,9 @@ class LoggingGcsAllOf {
             if (data.hasOwnProperty('public_key')) {
                 obj['public_key'] = ApiClient.convertToType(data['public_key'], 'String');
             }
+            if (data.hasOwnProperty('project_id')) {
+                obj['project_id'] = ApiClient.convertToType(data['project_id'], 'String');
+            }
         }
         return obj;
     }
@@ -80,6 +83,12 @@ LoggingGcsAllOf.prototype['path'] = undefined;
  * @default 'null'
  */
 LoggingGcsAllOf.prototype['public_key'] = 'null';
+
+/**
+ * Your Google Cloud Platform project ID. Required
+ * @member {String} project_id
+ */
+LoggingGcsAllOf.prototype['project_id'] = undefined;
 
 
 

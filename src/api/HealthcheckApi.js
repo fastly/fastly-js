@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Healthcheck service.
 * @module api/HealthcheckApi
-* @version 3.0.0-beta3
+* @version 3.0.0
 */
 export default class HealthcheckApi {
 
@@ -39,22 +39,23 @@ export default class HealthcheckApi {
 
 
     /**
-     * Create a healthcheck for a particular service and version.
+     * Create a health check for a particular service and version.
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
-     * @param {Number} [options.check_interval] - How often to run the healthcheck in milliseconds.
+     * @param {Number} [options.check_interval] - How often to run the health check in milliseconds.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Number} [options.expected_response] - The status code expected from the host.
+     * @param {Array.<String>} [options.headers] - Array of custom headers that will be added to the health check probes. This feature is part of an **alpha release**, which may be subject to breaking changes and improvements over time.
      * @param {String} [options.host] - Which host to check.
      * @param {String} [options.http_version] - Whether to use version 1.0 or 1.1 HTTP.
      * @param {Number} [options.initial] - When loading a config, the initial number of probes to be seen as OK.
      * @param {String} [options.method] - Which HTTP method to use.
-     * @param {String} [options.name] - The name of the healthcheck.
+     * @param {String} [options.name] - The name of the health check.
      * @param {String} [options.path] - The path to check.
-     * @param {Number} [options.threshold] - How many healthchecks must succeed to be considered healthy.
+     * @param {Number} [options.threshold] - How many health checks must succeed to be considered healthy.
      * @param {Number} [options.timeout] - Timeout in milliseconds.
-     * @param {Number} [options.window] - The number of most recent healthcheck queries to keep for this healthcheck.
+     * @param {Number} [options.window] - The number of most recent health check queries to keep for this health check.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HealthcheckResponse} and HTTP response
      */
     createHealthcheckWithHttpInfo(options = {}) {
@@ -80,6 +81,7 @@ export default class HealthcheckApi {
         'check_interval': options['check_interval'],
         'comment': options['comment'],
         'expected_response': options['expected_response'],
+        'headers': this.apiClient.buildCollectionParam(options['headers'], 'csv'),
         'host': options['host'],
         'http_version': options['http_version'],
         'initial': options['initial'],
@@ -103,22 +105,23 @@ export default class HealthcheckApi {
     }
 
     /**
-     * Create a healthcheck for a particular service and version.
+     * Create a health check for a particular service and version.
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
-     * @param {Number} [options.check_interval] - How often to run the healthcheck in milliseconds.
+     * @param {Number} [options.check_interval] - How often to run the health check in milliseconds.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Number} [options.expected_response] - The status code expected from the host.
+     * @param {Array.<String>} [options.headers] - Array of custom headers that will be added to the health check probes. This feature is part of an **alpha release**, which may be subject to breaking changes and improvements over time.
      * @param {String} [options.host] - Which host to check.
      * @param {String} [options.http_version] - Whether to use version 1.0 or 1.1 HTTP.
      * @param {Number} [options.initial] - When loading a config, the initial number of probes to be seen as OK.
      * @param {String} [options.method] - Which HTTP method to use.
-     * @param {String} [options.name] - The name of the healthcheck.
+     * @param {String} [options.name] - The name of the health check.
      * @param {String} [options.path] - The path to check.
-     * @param {Number} [options.threshold] - How many healthchecks must succeed to be considered healthy.
+     * @param {Number} [options.threshold] - How many health checks must succeed to be considered healthy.
      * @param {Number} [options.timeout] - Timeout in milliseconds.
-     * @param {Number} [options.window] - The number of most recent healthcheck queries to keep for this healthcheck.
+     * @param {Number} [options.window] - The number of most recent health check queries to keep for this health check.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HealthcheckResponse}
      */
     createHealthcheck(options = {}) {
@@ -129,11 +132,11 @@ export default class HealthcheckApi {
     }
 
     /**
-     * Delete the healthcheck for a particular service and version.
+     * Delete the health check for a particular service and version.
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
-     * @param {String} options.healthcheck_name - The name of the healthcheck.
+     * @param {String} options.healthcheck_name - The name of the health check.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     deleteHealthcheckWithHttpInfo(options = {}) {
@@ -175,11 +178,11 @@ export default class HealthcheckApi {
     }
 
     /**
-     * Delete the healthcheck for a particular service and version.
+     * Delete the health check for a particular service and version.
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
-     * @param {String} options.healthcheck_name - The name of the healthcheck.
+     * @param {String} options.healthcheck_name - The name of the health check.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     deleteHealthcheck(options = {}) {
@@ -190,11 +193,11 @@ export default class HealthcheckApi {
     }
 
     /**
-     * Get the healthcheck for a particular service and version.
+     * Get the health check for a particular service and version.
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
-     * @param {String} options.healthcheck_name - The name of the healthcheck.
+     * @param {String} options.healthcheck_name - The name of the health check.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HealthcheckResponse} and HTTP response
      */
     getHealthcheckWithHttpInfo(options = {}) {
@@ -236,11 +239,11 @@ export default class HealthcheckApi {
     }
 
     /**
-     * Get the healthcheck for a particular service and version.
+     * Get the health check for a particular service and version.
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
-     * @param {String} options.healthcheck_name - The name of the healthcheck.
+     * @param {String} options.healthcheck_name - The name of the health check.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HealthcheckResponse}
      */
     getHealthcheck(options = {}) {
@@ -251,7 +254,7 @@ export default class HealthcheckApi {
     }
 
     /**
-     * List all of the healthchecks for a particular service and version.
+     * List all of the health checks for a particular service and version.
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
@@ -291,7 +294,7 @@ export default class HealthcheckApi {
     }
 
     /**
-     * List all of the healthchecks for a particular service and version.
+     * List all of the health checks for a particular service and version.
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
@@ -305,23 +308,24 @@ export default class HealthcheckApi {
     }
 
     /**
-     * Update the healthcheck for a particular service and version.
+     * Update the health check for a particular service and version.
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
-     * @param {String} options.healthcheck_name - The name of the healthcheck.
-     * @param {Number} [options.check_interval] - How often to run the healthcheck in milliseconds.
+     * @param {String} options.healthcheck_name - The name of the health check.
+     * @param {Number} [options.check_interval] - How often to run the health check in milliseconds.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Number} [options.expected_response] - The status code expected from the host.
+     * @param {Array.<String>} [options.headers] - Array of custom headers that will be added to the health check probes. This feature is part of an **alpha release**, which may be subject to breaking changes and improvements over time.
      * @param {String} [options.host] - Which host to check.
      * @param {String} [options.http_version] - Whether to use version 1.0 or 1.1 HTTP.
      * @param {Number} [options.initial] - When loading a config, the initial number of probes to be seen as OK.
      * @param {String} [options.method] - Which HTTP method to use.
-     * @param {String} [options.name] - The name of the healthcheck.
+     * @param {String} [options.name] - The name of the health check.
      * @param {String} [options.path] - The path to check.
-     * @param {Number} [options.threshold] - How many healthchecks must succeed to be considered healthy.
+     * @param {Number} [options.threshold] - How many health checks must succeed to be considered healthy.
      * @param {Number} [options.timeout] - Timeout in milliseconds.
-     * @param {Number} [options.window] - The number of most recent healthcheck queries to keep for this healthcheck.
+     * @param {Number} [options.window] - The number of most recent health check queries to keep for this health check.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HealthcheckResponse} and HTTP response
      */
     updateHealthcheckWithHttpInfo(options = {}) {
@@ -352,6 +356,7 @@ export default class HealthcheckApi {
         'check_interval': options['check_interval'],
         'comment': options['comment'],
         'expected_response': options['expected_response'],
+        'headers': this.apiClient.buildCollectionParam(options['headers'], 'csv'),
         'host': options['host'],
         'http_version': options['http_version'],
         'initial': options['initial'],
@@ -375,23 +380,24 @@ export default class HealthcheckApi {
     }
 
     /**
-     * Update the healthcheck for a particular service and version.
+     * Update the health check for a particular service and version.
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
-     * @param {String} options.healthcheck_name - The name of the healthcheck.
-     * @param {Number} [options.check_interval] - How often to run the healthcheck in milliseconds.
+     * @param {String} options.healthcheck_name - The name of the health check.
+     * @param {Number} [options.check_interval] - How often to run the health check in milliseconds.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Number} [options.expected_response] - The status code expected from the host.
+     * @param {Array.<String>} [options.headers] - Array of custom headers that will be added to the health check probes. This feature is part of an **alpha release**, which may be subject to breaking changes and improvements over time.
      * @param {String} [options.host] - Which host to check.
      * @param {String} [options.http_version] - Whether to use version 1.0 or 1.1 HTTP.
      * @param {Number} [options.initial] - When loading a config, the initial number of probes to be seen as OK.
      * @param {String} [options.method] - Which HTTP method to use.
-     * @param {String} [options.name] - The name of the healthcheck.
+     * @param {String} [options.name] - The name of the health check.
      * @param {String} [options.path] - The path to check.
-     * @param {Number} [options.threshold] - How many healthchecks must succeed to be considered healthy.
+     * @param {Number} [options.threshold] - How many health checks must succeed to be considered healthy.
      * @param {Number} [options.timeout] - Timeout in milliseconds.
-     * @param {Number} [options.window] - The number of most recent healthcheck queries to keep for this healthcheck.
+     * @param {Number} [options.window] - The number of most recent health check queries to keep for this health check.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HealthcheckResponse}
      */
     updateHealthcheck(options = {}) {

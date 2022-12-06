@@ -11,9 +11,8 @@
  */
 
 import ApiClient from '../ApiClient';
-import RelationshipService from './RelationshipService';
-import RelationshipUser from './RelationshipUser';
 import ServiceAuthorizationData from './ServiceAuthorizationData';
+import ServiceAuthorizationDataRelationships from './ServiceAuthorizationDataRelationships';
 import ServiceAuthorizationResponseDataAllOf from './ServiceAuthorizationResponseDataAllOf';
 import Timestamps from './Timestamps';
 import TypeServiceAuthorization from './TypeServiceAuthorization';
@@ -21,7 +20,7 @@ import TypeServiceAuthorization from './TypeServiceAuthorization';
 /**
  * The ServiceAuthorizationResponseData model module.
  * @module model/ServiceAuthorizationResponseData
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class ServiceAuthorizationResponseData {
     /**
@@ -63,7 +62,7 @@ class ServiceAuthorizationResponseData {
                 obj['attributes'] = Timestamps.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = ApiClient.convertToType(data['relationships'], Object);
+                obj['relationships'] = ServiceAuthorizationDataRelationships.constructFromObject(data['relationships']);
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -86,7 +85,7 @@ ServiceAuthorizationResponseData.prototype['type'] = undefined;
 ServiceAuthorizationResponseData.prototype['attributes'] = undefined;
 
 /**
- * @member {Object} relationships
+ * @member {module:model/ServiceAuthorizationDataRelationships} relationships
  */
 ServiceAuthorizationResponseData.prototype['relationships'] = undefined;
 
@@ -106,7 +105,7 @@ ServiceAuthorizationData.prototype['type'] = undefined;
  */
 ServiceAuthorizationData.prototype['attributes'] = undefined;
 /**
- * @member {Object} relationships
+ * @member {module:model/ServiceAuthorizationDataRelationships} relationships
  */
 ServiceAuthorizationData.prototype['relationships'] = undefined;
 // Implement ServiceAuthorizationResponseDataAllOf interface:

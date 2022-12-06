@@ -11,16 +11,16 @@
  */
 
 import ApiClient from '../ApiClient';
-import RelationshipTlsCertificateTlsCertificate from './RelationshipTlsCertificateTlsCertificate';
 import RelationshipTlsCertificates from './RelationshipTlsCertificates';
+import RelationshipTlsCertificatesTlsCertificates from './RelationshipTlsCertificatesTlsCertificates';
 import RelationshipTlsConfigurationTlsConfiguration from './RelationshipTlsConfigurationTlsConfiguration';
-import RelationshipTlsDomainTlsDomain from './RelationshipTlsDomainTlsDomain';
 import RelationshipTlsDomains from './RelationshipTlsDomains';
+import RelationshipTlsDomainsTlsDomains from './RelationshipTlsDomainsTlsDomains';
 
 /**
  * The RelationshipsForTlsSubscription model module.
  * @module model/RelationshipsForTlsSubscription
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class RelationshipsForTlsSubscription {
     /**
@@ -56,10 +56,10 @@ class RelationshipsForTlsSubscription {
             RelationshipTlsCertificates.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('tls_domains')) {
-                obj['tls_domains'] = RelationshipTlsDomainTlsDomain.constructFromObject(data['tls_domains']);
+                obj['tls_domains'] = RelationshipTlsDomainsTlsDomains.constructFromObject(data['tls_domains']);
             }
             if (data.hasOwnProperty('tls_certificates')) {
-                obj['tls_certificates'] = RelationshipTlsCertificateTlsCertificate.constructFromObject(data['tls_certificates']);
+                obj['tls_certificates'] = RelationshipTlsCertificatesTlsCertificates.constructFromObject(data['tls_certificates']);
             }
             if (data.hasOwnProperty('tls_configuration')) {
                 obj['tls_configuration'] = RelationshipTlsConfigurationTlsConfiguration.constructFromObject(data['tls_configuration']);
@@ -72,12 +72,12 @@ class RelationshipsForTlsSubscription {
 }
 
 /**
- * @member {module:model/RelationshipTlsDomainTlsDomain} tls_domains
+ * @member {module:model/RelationshipTlsDomainsTlsDomains} tls_domains
  */
 RelationshipsForTlsSubscription.prototype['tls_domains'] = undefined;
 
 /**
- * @member {module:model/RelationshipTlsCertificateTlsCertificate} tls_certificates
+ * @member {module:model/RelationshipTlsCertificatesTlsCertificates} tls_certificates
  */
 RelationshipsForTlsSubscription.prototype['tls_certificates'] = undefined;
 
@@ -89,12 +89,12 @@ RelationshipsForTlsSubscription.prototype['tls_configuration'] = undefined;
 
 // Implement RelationshipTlsDomains interface:
 /**
- * @member {module:model/RelationshipTlsDomainTlsDomain} tls_domains
+ * @member {module:model/RelationshipTlsDomainsTlsDomains} tls_domains
  */
 RelationshipTlsDomains.prototype['tls_domains'] = undefined;
 // Implement RelationshipTlsCertificates interface:
 /**
- * @member {module:model/RelationshipTlsCertificateTlsCertificate} tls_certificates
+ * @member {module:model/RelationshipTlsCertificatesTlsCertificates} tls_certificates
  */
 RelationshipTlsCertificates.prototype['tls_certificates'] = undefined;
 
