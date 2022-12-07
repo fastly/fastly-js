@@ -41,6 +41,7 @@
     "@babel/register": "^7.16.0"
   },
   "files": [
-    "dist"
+    "dist",
+    "sig.json"
   ]
 }
