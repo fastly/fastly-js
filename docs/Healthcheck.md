@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **check_interval** | **Number** | How often to run the health check in milliseconds. | [optional] 
 **comment** | **String** | A freeform descriptive note. | [optional] 
 **expected_response** | **Number** | The status code expected from the host. | [optional] 
-**headers** | **[String]** | Array of custom headers that will be added to the health check probes. This feature is part of an **alpha release**, which may be subject to breaking changes and improvements over time. | [optional] 
+**headers** | **[String]** | Array of custom headers that will be added to the health check probes. | [optional] 
 **host** | **String** | Which host to check. | [optional] 
 **http_version** | **String** | Whether to use version 1.0 or 1.1 HTTP. | [optional] 
 **initial** | **Number** | When loading a config, the initial number of probes to be seen as OK. | [optional] 

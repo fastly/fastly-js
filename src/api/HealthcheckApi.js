@@ -46,7 +46,7 @@ export default class HealthcheckApi {
      * @param {Number} [options.check_interval] - How often to run the health check in milliseconds.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Number} [options.expected_response] - The status code expected from the host.
-     * @param {Array.<String>} [options.headers] - Array of custom headers that will be added to the health check probes. This feature is part of an **alpha release**, which may be subject to breaking changes and improvements over time.
+     * @param {Array.<String>} [options.headers] - Array of custom headers that will be added to the health check probes.
      * @param {String} [options.host] - Which host to check.
      * @param {String} [options.http_version] - Whether to use version 1.0 or 1.1 HTTP.
      * @param {Number} [options.initial] - When loading a config, the initial number of probes to be seen as OK.
@@ -112,7 +112,7 @@ export default class HealthcheckApi {
      * @param {Number} [options.check_interval] - How often to run the health check in milliseconds.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Number} [options.expected_response] - The status code expected from the host.
-     * @param {Array.<String>} [options.headers] - Array of custom headers that will be added to the health check probes. This feature is part of an **alpha release**, which may be subject to breaking changes and improvements over time.
+     * @param {Array.<String>} [options.headers] - Array of custom headers that will be added to the health check probes.
      * @param {String} [options.host] - Which host to check.
      * @param {String} [options.http_version] - Whether to use version 1.0 or 1.1 HTTP.
      * @param {Number} [options.initial] - When loading a config, the initial number of probes to be seen as OK.
@@ -316,7 +316,7 @@ export default class HealthcheckApi {
      * @param {Number} [options.check_interval] - How often to run the health check in milliseconds.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Number} [options.expected_response] - The status code expected from the host.
-     * @param {Array.<String>} [options.headers] - Array of custom headers that will be added to the health check probes. This feature is part of an **alpha release**, which may be subject to breaking changes and improvements over time.
+     * @param {Array.<String>} [options.headers] - Array of custom headers that will be added to the health check probes.
      * @param {String} [options.host] - Which host to check.
      * @param {String} [options.http_version] - Whether to use version 1.0 or 1.1 HTTP.
      * @param {Number} [options.initial] - When loading a config, the initial number of probes to be seen as OK.
@@ -388,7 +388,7 @@ export default class HealthcheckApi {
      * @param {Number} [options.check_interval] - How often to run the health check in milliseconds.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {Number} [options.expected_response] - The status code expected from the host.
-     * @param {Array.<String>} [options.headers] - Array of custom headers that will be added to the health check probes. This feature is part of an **alpha release**, which may be subject to breaking changes and improvements over time.
+     * @param {Array.<String>} [options.headers] - Array of custom headers that will be added to the health check probes.
      * @param {String} [options.host] - Which host to check.
      * @param {String} [options.http_version] - Whether to use version 1.0 or 1.1 HTTP.
      * @param {Number} [options.initial] - When loading a config, the initial number of probes to be seen as OK.

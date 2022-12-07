@@ -111,7 +111,7 @@ Healthcheck.prototype['comment'] = undefined;
 Healthcheck.prototype['expected_response'] = undefined;
 
 /**
- * Array of custom headers that will be added to the health check probes. This feature is part of an **alpha release**, which may be subject to breaking changes and improvements over time.
+ * Array of custom headers that will be added to the health check probes.
  * @member {Array.<String>} headers
  */
 Healthcheck.prototype['headers'] = undefined;

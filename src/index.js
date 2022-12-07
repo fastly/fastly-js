@@ -136,7 +136,6 @@ import IncludedWithWafFirewallVersionItem from './model/IncludedWithWafFirewallV
 import IncludedWithWafRuleItem from './model/IncludedWithWafRuleItem';
 import InlineResponse200 from './model/InlineResponse200';
 import InlineResponse2001 from './model/InlineResponse2001';
-import InlineResponse2002 from './model/InlineResponse2002';
 import Invitation from './model/Invitation';
 import InvitationData from './model/InvitationData';
 import InvitationDataAttributes from './model/InvitationDataAttributes';
@@ -619,9 +618,7 @@ import DictionaryItemApi from './api/DictionaryItemApi';
 import DiffApi from './api/DiffApi';
 import DirectorApi from './api/DirectorApi';
 import DirectorBackendApi from './api/DirectorBackendApi';
-import DocsApi from './api/DocsApi';
 import DomainApi from './api/DomainApi';
-import DomainOwnershipsApi from './api/DomainOwnershipsApi';
 import EnabledProductsApi from './api/EnabledProductsApi';
 import EventsApi from './api/EventsApi';
 import GzipApi from './api/GzipApi';
@@ -1485,12 +1482,6 @@ export {
      * @property {module:model/InlineResponse2001}
      */
     InlineResponse2001,
-
-    /**
-     * The InlineResponse2002 model constructor.
-     * @property {module:model/InlineResponse2002}
-     */
-    InlineResponse2002,
 
     /**
      * The Invitation model constructor.
@@ -4385,22 +4376,10 @@ export {
     DirectorBackendApi,
 
     /**
-    * The DocsApi service constructor.
-    * @property {module:api/DocsApi}
-    */
-    DocsApi,
-
-    /**
     * The DomainApi service constructor.
     * @property {module:api/DomainApi}
     */
     DomainApi,
-
-    /**
-    * The DomainOwnershipsApi service constructor.
-    * @property {module:api/DomainOwnershipsApi}
-    */
-    DomainOwnershipsApi,
 
     /**
     * The EnabledProductsApi service constructor.

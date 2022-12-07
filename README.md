@@ -118,9 +118,6 @@ Class | Method | Description
 *Fastly.DirectorBackendApi* | [**createDirectorBackend**](docs/DirectorBackendApi.md#createDirectorBackend) | Create a director-backend relationship
 *Fastly.DirectorBackendApi* | [**deleteDirectorBackend**](docs/DirectorBackendApi.md#deleteDirectorBackend) | Delete a director-backend relationship
 *Fastly.DirectorBackendApi* | [**getDirectorBackend**](docs/DirectorBackendApi.md#getDirectorBackend) | Get a director-backend relationship
-*Fastly.DocsApi* | [**getDocs**](docs/DocsApi.md#getDocs) | Get Fastly API docs as structured data
-*Fastly.DocsApi* | [**getDocsSection**](docs/DocsApi.md#getDocsSection) | Get API docs matching a section filter
-*Fastly.DocsApi* | [**getDocsSubject**](docs/DocsApi.md#getDocsSubject) | Get API docs for a single subject
 *Fastly.DomainApi* | [**checkDomain**](docs/DomainApi.md#checkDomain) | Validate DNS configuration for a single domain on a service
 *Fastly.DomainApi* | [**checkDomains**](docs/DomainApi.md#checkDomains) | Validate DNS configuration for all domains on a service
 *Fastly.DomainApi* | [**createDomain**](docs/DomainApi.md#createDomain) | Add a domain name to a service
@@ -128,7 +125,6 @@ Class | Method | Description
 *Fastly.DomainApi* | [**getDomain**](docs/DomainApi.md#getDomain) | Describe a domain
 *Fastly.DomainApi* | [**listDomains**](docs/DomainApi.md#listDomains) | List domains
 *Fastly.DomainApi* | [**updateDomain**](docs/DomainApi.md#updateDomain) | Update a domain
-*Fastly.DomainOwnershipsApi* | [**listDomainOwnerships**](docs/DomainOwnershipsApi.md#listDomainOwnerships) | List domain-ownerships
 *Fastly.EnabledProductsApi* | [**disableProduct**](docs/EnabledProductsApi.md#disableProduct) | Disable a product
 *Fastly.EnabledProductsApi* | [**enableProduct**](docs/EnabledProductsApi.md#enableProduct) | Enable a product
 *Fastly.EnabledProductsApi* | [**getEnabledProduct**](docs/EnabledProductsApi.md#getEnabledProduct) | Get enabled product
