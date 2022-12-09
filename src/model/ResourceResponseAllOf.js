@@ -16,7 +16,7 @@ import TypeResource from './TypeResource';
 /**
  * The ResourceResponseAllOf model module.
  * @module model/ResourceResponseAllOf
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class ResourceResponseAllOf {
     /**

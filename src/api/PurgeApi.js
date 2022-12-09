@@ -18,7 +18,7 @@ import PurgeResponse from '../model/PurgeResponse';
 /**
 * Purge service.
 * @module api/PurgeApi
-* @version 3.0.0-beta3
+* @version 3.0.0
 */
 export default class PurgeApi {
 
@@ -42,7 +42,7 @@ export default class PurgeApi {
      * Instant Purge a particular service of items tagged with surrogate keys. Up to 256 surrogate keys can be purged in one batch request. As an alternative to sending the keys in a JSON object in the body of the request, this endpoint also supports listing keys in a <code>Surrogate-Key</code> request header, e.g. <code>Surrogate-Key: key_1 key_2 key_3</code>. 
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
-     * @param {Number} [options.fastly_soft_purge=1] - Optional header indicating that the operation should be a 'soft' purge, which marks the affected object as stale rather than making it inaccessible.
+     * @param {Number} [options.fastly_soft_purge] - If present, this header triggers the purge to be 'soft', which marks the affected object as stale rather than making it inaccessible.  Typically set to \"1\" when used, but the value is not important.
      * @param {String} [options.surrogate_key] - Purge multiple surrogate key tags using a request header. Not required if a JSON POST body is specified.
      * @param {module:model/PurgeResponse} [options.purge_response]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: String}>} and HTTP response
@@ -81,7 +81,7 @@ export default class PurgeApi {
      * Instant Purge a particular service of items tagged with surrogate keys. Up to 256 surrogate keys can be purged in one batch request. As an alternative to sending the keys in a JSON object in the body of the request, this endpoint also supports listing keys in a <code>Surrogate-Key</code> request header, e.g. <code>Surrogate-Key: key_1 key_2 key_3</code>. 
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
-     * @param {Number} [options.fastly_soft_purge=1] - Optional header indicating that the operation should be a 'soft' purge, which marks the affected object as stale rather than making it inaccessible.
+     * @param {Number} [options.fastly_soft_purge] - If present, this header triggers the purge to be 'soft', which marks the affected object as stale rather than making it inaccessible.  Typically set to \"1\" when used, but the value is not important.
      * @param {String} [options.surrogate_key] - Purge multiple surrogate key tags using a request header. Not required if a JSON POST body is specified.
      * @param {module:model/PurgeResponse} [options.purge_response]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: String}>}
@@ -143,24 +143,24 @@ export default class PurgeApi {
     /**
      * Instant Purge an individual URL.
      * @param {Object} options
-     * @param {String} options.host - The hostname for the content you'll be purging.
-     * @param {Number} [options.fastly_soft_purge=1] - Optional header indicating that the operation should be a 'soft' purge, which marks the affected object as stale rather than making it inaccessible.
+     * @param {String} options.cached_url - URL of object in cache to be purged.
+     * @param {Number} [options.fastly_soft_purge] - If present, this header triggers the purge to be 'soft', which marks the affected object as stale rather than making it inaccessible.  Typically set to \"1\" when used, but the value is not important.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PurgeResponse} and HTTP response
      */
     purgeSingleUrlWithHttpInfo(options = {}) {
       let postBody = null;
-      // Verify the required parameter 'host' is set.
-      if (options['host'] === undefined || options['host'] === null) {
-        throw new Error("Missing the required parameter 'host'.");
+      // Verify the required parameter 'cached_url' is set.
+      if (options['cached_url'] === undefined || options['cached_url'] === null) {
+        throw new Error("Missing the required parameter 'cached_url'.");
       }
 
       let pathParams = {
+        'cached_url': options['cached_url']
       };
       let queryParams = {
       };
       let headerParams = {
-        'fastly-soft-purge': options['fastly_soft_purge'],
-        'host': options['host']
+        'fastly-soft-purge': options['fastly_soft_purge']
       };
       let formParams = {
       };
@@ -170,7 +170,7 @@ export default class PurgeApi {
       let accepts = ['application/json'];
       let returnType = PurgeResponse;
       return this.apiClient.callApi(
-        '/*', 'GET',
+        '/purge/{cached_url}', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -179,8 +179,8 @@ export default class PurgeApi {
     /**
      * Instant Purge an individual URL.
      * @param {Object} options
-     * @param {String} options.host - The hostname for the content you'll be purging.
-     * @param {Number} [options.fastly_soft_purge=1] - Optional header indicating that the operation should be a 'soft' purge, which marks the affected object as stale rather than making it inaccessible.
+     * @param {String} options.cached_url - URL of object in cache to be purged.
+     * @param {Number} [options.fastly_soft_purge] - If present, this header triggers the purge to be 'soft', which marks the affected object as stale rather than making it inaccessible.  Typically set to \"1\" when used, but the value is not important.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PurgeResponse}
      */
     purgeSingleUrl(options = {}) {
@@ -195,7 +195,7 @@ export default class PurgeApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.surrogate_key - Surrogate keys are used to efficiently purge content from cache. Instead of purging your entire site or individual URLs, you can tag related assets (like all images and descriptions associated with a single product) with surrogate keys, and these grouped URLs can be purged in a single request.
-     * @param {Number} [options.fastly_soft_purge=1] - Optional header indicating that the operation should be a 'soft' purge, which marks the affected object as stale rather than making it inaccessible.
+     * @param {Number} [options.fastly_soft_purge] - If present, this header triggers the purge to be 'soft', which marks the affected object as stale rather than making it inaccessible.  Typically set to \"1\" when used, but the value is not important.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PurgeResponse} and HTTP response
      */
     purgeTagWithHttpInfo(options = {}) {
@@ -237,7 +237,7 @@ export default class PurgeApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.surrogate_key - Surrogate keys are used to efficiently purge content from cache. Instead of purging your entire site or individual URLs, you can tag related assets (like all images and descriptions associated with a single product) with surrogate keys, and these grouped URLs can be purged in a single request.
-     * @param {Number} [options.fastly_soft_purge=1] - Optional header indicating that the operation should be a 'soft' purge, which marks the affected object as stale rather than making it inaccessible.
+     * @param {Number} [options.fastly_soft_purge] - If present, this header triggers the purge to be 'soft', which marks the affected object as stale rather than making it inaccessible.  Typically set to \"1\" when used, but the value is not important.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PurgeResponse}
      */
     purgeTag(options = {}) {

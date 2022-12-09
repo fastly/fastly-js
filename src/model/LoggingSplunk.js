@@ -20,7 +20,7 @@ import LoggingUseTls from './LoggingUseTls';
 /**
  * The LoggingSplunk model module.
  * @module model/LoggingSplunk
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class LoggingSplunk {
     /**
@@ -121,7 +121,7 @@ LoggingSplunk.prototype['name'] = undefined;
 LoggingSplunk.prototype['placement'] = undefined;
 
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
  * @member {module:model/LoggingSplunk.FormatVersionEnum} format_version
  * @default FormatVersionEnum.v2
  */
@@ -212,7 +212,7 @@ LoggingCommon.prototype['name'] = undefined;
  */
 LoggingCommon.prototype['placement'] = undefined;
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
  * @member {module:model/LoggingCommon.FormatVersionEnum} format_version
  * @default FormatVersionEnum.v2
  */

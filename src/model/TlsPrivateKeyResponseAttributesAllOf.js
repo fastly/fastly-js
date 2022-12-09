@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TlsPrivateKeyResponseAttributesAllOf model module.
  * @module model/TlsPrivateKeyResponseAttributesAllOf
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class TlsPrivateKeyResponseAttributesAllOf {
     /**

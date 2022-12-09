@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RealtimeMeasurements model module.
  * @module model/RealtimeMeasurements
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class RealtimeMeasurements {
     /**
@@ -271,6 +271,9 @@ class RealtimeMeasurements {
             }
             if (data.hasOwnProperty('status_404')) {
                 obj['status_404'] = ApiClient.convertToType(data['status_404'], 'Number');
+            }
+            if (data.hasOwnProperty('status_406')) {
+                obj['status_406'] = ApiClient.convertToType(data['status_406'], 'Number');
             }
             if (data.hasOwnProperty('status_416')) {
                 obj['status_416'] = ApiClient.convertToType(data['status_416'], 'Number');
@@ -604,6 +607,72 @@ class RealtimeMeasurements {
             }
             if (data.hasOwnProperty('shield_miss_resp_body_bytes')) {
                 obj['shield_miss_resp_body_bytes'] = ApiClient.convertToType(data['shield_miss_resp_body_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('websocket_req_header_bytes')) {
+                obj['websocket_req_header_bytes'] = ApiClient.convertToType(data['websocket_req_header_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('websocket_req_body_bytes')) {
+                obj['websocket_req_body_bytes'] = ApiClient.convertToType(data['websocket_req_body_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('websocket_resp_header_bytes')) {
+                obj['websocket_resp_header_bytes'] = ApiClient.convertToType(data['websocket_resp_header_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('websocket_bereq_header_bytes')) {
+                obj['websocket_bereq_header_bytes'] = ApiClient.convertToType(data['websocket_bereq_header_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('websocket_bereq_body_bytes')) {
+                obj['websocket_bereq_body_bytes'] = ApiClient.convertToType(data['websocket_bereq_body_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('websocket_beresp_header_bytes')) {
+                obj['websocket_beresp_header_bytes'] = ApiClient.convertToType(data['websocket_beresp_header_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('websocket_beresp_body_bytes')) {
+                obj['websocket_beresp_body_bytes'] = ApiClient.convertToType(data['websocket_beresp_body_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('websocket_conn_time_ms')) {
+                obj['websocket_conn_time_ms'] = ApiClient.convertToType(data['websocket_conn_time_ms'], 'Number');
+            }
+            if (data.hasOwnProperty('websocket_resp_body_bytes')) {
+                obj['websocket_resp_body_bytes'] = ApiClient.convertToType(data['websocket_resp_body_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('fanout_recv_publishes')) {
+                obj['fanout_recv_publishes'] = ApiClient.convertToType(data['fanout_recv_publishes'], 'Number');
+            }
+            if (data.hasOwnProperty('fanout_send_publishes')) {
+                obj['fanout_send_publishes'] = ApiClient.convertToType(data['fanout_send_publishes'], 'Number');
+            }
+            if (data.hasOwnProperty('object_store_read_requests')) {
+                obj['object_store_read_requests'] = ApiClient.convertToType(data['object_store_read_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('object_store_write_requests')) {
+                obj['object_store_write_requests'] = ApiClient.convertToType(data['object_store_write_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('fanout_req_header_bytes')) {
+                obj['fanout_req_header_bytes'] = ApiClient.convertToType(data['fanout_req_header_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('fanout_req_body_bytes')) {
+                obj['fanout_req_body_bytes'] = ApiClient.convertToType(data['fanout_req_body_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('fanout_resp_header_bytes')) {
+                obj['fanout_resp_header_bytes'] = ApiClient.convertToType(data['fanout_resp_header_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('fanout_resp_body_bytes')) {
+                obj['fanout_resp_body_bytes'] = ApiClient.convertToType(data['fanout_resp_body_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('fanout_bereq_header_bytes')) {
+                obj['fanout_bereq_header_bytes'] = ApiClient.convertToType(data['fanout_bereq_header_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('fanout_bereq_body_bytes')) {
+                obj['fanout_bereq_body_bytes'] = ApiClient.convertToType(data['fanout_bereq_body_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('fanout_beresp_header_bytes')) {
+                obj['fanout_beresp_header_bytes'] = ApiClient.convertToType(data['fanout_beresp_header_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('fanout_beresp_body_bytes')) {
+                obj['fanout_beresp_body_bytes'] = ApiClient.convertToType(data['fanout_beresp_body_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('fanout_conn_time_ms')) {
+                obj['fanout_conn_time_ms'] = ApiClient.convertToType(data['fanout_conn_time_ms'], 'Number');
             }
         }
         return obj;
@@ -1061,6 +1130,12 @@ RealtimeMeasurements.prototype['status_403'] = undefined;
  * @member {Number} status_404
  */
 RealtimeMeasurements.prototype['status_404'] = undefined;
+
+/**
+ * Number of responses sent with status code 406 (Not Acceptable).
+ * @member {Number} status_406
+ */
+RealtimeMeasurements.prototype['status_406'] = undefined;
 
 /**
  * Number of responses sent with status code 416 (Range Not Satisfiable).
@@ -1727,6 +1802,138 @@ RealtimeMeasurements.prototype['shield_miss_resp_header_bytes'] = undefined;
  * @member {Number} shield_miss_resp_body_bytes
  */
 RealtimeMeasurements.prototype['shield_miss_resp_body_bytes'] = undefined;
+
+/**
+ * Total header bytes received from end users over passthrough WebSocket connections.
+ * @member {Number} websocket_req_header_bytes
+ */
+RealtimeMeasurements.prototype['websocket_req_header_bytes'] = undefined;
+
+/**
+ * Total message content bytes received from end users over passthrough WebSocket connections.
+ * @member {Number} websocket_req_body_bytes
+ */
+RealtimeMeasurements.prototype['websocket_req_body_bytes'] = undefined;
+
+/**
+ * Total header bytes sent to end users over passthrough WebSocket connections.
+ * @member {Number} websocket_resp_header_bytes
+ */
+RealtimeMeasurements.prototype['websocket_resp_header_bytes'] = undefined;
+
+/**
+ * Total header bytes sent to backends over passthrough WebSocket connections.
+ * @member {Number} websocket_bereq_header_bytes
+ */
+RealtimeMeasurements.prototype['websocket_bereq_header_bytes'] = undefined;
+
+/**
+ * Total message content bytes sent to backends over passthrough WebSocket connections.
+ * @member {Number} websocket_bereq_body_bytes
+ */
+RealtimeMeasurements.prototype['websocket_bereq_body_bytes'] = undefined;
+
+/**
+ * Total header bytes received from backends over passthrough WebSocket connections.
+ * @member {Number} websocket_beresp_header_bytes
+ */
+RealtimeMeasurements.prototype['websocket_beresp_header_bytes'] = undefined;
+
+/**
+ * Total message content bytes received from backends over passthrough WebSocket connections.
+ * @member {Number} websocket_beresp_body_bytes
+ */
+RealtimeMeasurements.prototype['websocket_beresp_body_bytes'] = undefined;
+
+/**
+ * Total duration of passthrough WebSocket connections with end users.
+ * @member {Number} websocket_conn_time_ms
+ */
+RealtimeMeasurements.prototype['websocket_conn_time_ms'] = undefined;
+
+/**
+ * Total message content bytes sent to end users over passthrough WebSocket connections.
+ * @member {Number} websocket_resp_body_bytes
+ */
+RealtimeMeasurements.prototype['websocket_resp_body_bytes'] = undefined;
+
+/**
+ * Total published messages received from the publish API endpoint.
+ * @member {Number} fanout_recv_publishes
+ */
+RealtimeMeasurements.prototype['fanout_recv_publishes'] = undefined;
+
+/**
+ * Total published messages sent to end users.
+ * @member {Number} fanout_send_publishes
+ */
+RealtimeMeasurements.prototype['fanout_send_publishes'] = undefined;
+
+/**
+ * The total number of reads received for the object store.
+ * @member {Number} object_store_read_requests
+ */
+RealtimeMeasurements.prototype['object_store_read_requests'] = undefined;
+
+/**
+ * The total number of writes received for the object store.
+ * @member {Number} object_store_write_requests
+ */
+RealtimeMeasurements.prototype['object_store_write_requests'] = undefined;
+
+/**
+ * Total header bytes received from end users over Fanout connections.
+ * @member {Number} fanout_req_header_bytes
+ */
+RealtimeMeasurements.prototype['fanout_req_header_bytes'] = undefined;
+
+/**
+ * Total body or message content bytes received from end users over Fanout connections.
+ * @member {Number} fanout_req_body_bytes
+ */
+RealtimeMeasurements.prototype['fanout_req_body_bytes'] = undefined;
+
+/**
+ * Total header bytes sent to end users over Fanout connections.
+ * @member {Number} fanout_resp_header_bytes
+ */
+RealtimeMeasurements.prototype['fanout_resp_header_bytes'] = undefined;
+
+/**
+ * Total body or message content bytes sent to end users over Fanout connections, excluding published message content.
+ * @member {Number} fanout_resp_body_bytes
+ */
+RealtimeMeasurements.prototype['fanout_resp_body_bytes'] = undefined;
+
+/**
+ * Total header bytes sent to backends over Fanout connections.
+ * @member {Number} fanout_bereq_header_bytes
+ */
+RealtimeMeasurements.prototype['fanout_bereq_header_bytes'] = undefined;
+
+/**
+ * Total body or message content bytes sent to backends over Fanout connections.
+ * @member {Number} fanout_bereq_body_bytes
+ */
+RealtimeMeasurements.prototype['fanout_bereq_body_bytes'] = undefined;
+
+/**
+ * Total header bytes received from backends over Fanout connections.
+ * @member {Number} fanout_beresp_header_bytes
+ */
+RealtimeMeasurements.prototype['fanout_beresp_header_bytes'] = undefined;
+
+/**
+ * Total body or message content bytes received from backends over Fanout connections.
+ * @member {Number} fanout_beresp_body_bytes
+ */
+RealtimeMeasurements.prototype['fanout_beresp_body_bytes'] = undefined;
+
+/**
+ * Total duration of Fanout connections with end users.
+ * @member {Number} fanout_conn_time_ms
+ */
+RealtimeMeasurements.prototype['fanout_conn_time_ms'] = undefined;
 
 
 

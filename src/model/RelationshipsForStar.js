@@ -11,15 +11,15 @@
  */
 
 import ApiClient from '../ApiClient';
+import RelationshipMemberService from './RelationshipMemberService';
 import RelationshipService from './RelationshipService';
-import RelationshipServiceService from './RelationshipServiceService';
 import RelationshipUser from './RelationshipUser';
 import RelationshipUserUser from './RelationshipUserUser';
 
 /**
  * The RelationshipsForStar model module.
  * @module model/RelationshipsForStar
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class RelationshipsForStar {
     /**
@@ -58,7 +58,7 @@ class RelationshipsForStar {
                 obj['user'] = RelationshipUserUser.constructFromObject(data['user']);
             }
             if (data.hasOwnProperty('service')) {
-                obj['service'] = RelationshipServiceService.constructFromObject(data['service']);
+                obj['service'] = RelationshipMemberService.constructFromObject(data['service']);
             }
         }
         return obj;
@@ -73,7 +73,7 @@ class RelationshipsForStar {
 RelationshipsForStar.prototype['user'] = undefined;
 
 /**
- * @member {module:model/RelationshipServiceService} service
+ * @member {module:model/RelationshipMemberService} service
  */
 RelationshipsForStar.prototype['service'] = undefined;
 
@@ -85,7 +85,7 @@ RelationshipsForStar.prototype['service'] = undefined;
 RelationshipUser.prototype['user'] = undefined;
 // Implement RelationshipService interface:
 /**
- * @member {module:model/RelationshipServiceService} service
+ * @member {module:model/RelationshipMemberService} service
  */
 RelationshipService.prototype['service'] = undefined;
 

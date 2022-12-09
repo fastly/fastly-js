@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**login** | **String** | The login associated with the user (typically, an email address). | [optional] 
+**login** | **String** |  | [optional] [readonly] 
 **name** | **String** | The real life name of the user. | [optional] 
 **limit_services** | **Boolean** | Indicates that the user has limited access to the customer&#39;s services. | [optional] 
 **locked** | **Boolean** | Indicates whether the is account is locked for editing or not. | [optional] 

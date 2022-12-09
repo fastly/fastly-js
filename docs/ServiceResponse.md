@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **updated_at** | **Date** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **comment** | **String** | A freeform descriptive note. | [optional] 
 **name** | **String** | The name of the service. | [optional] 
-**customer_id** | **String** |  | [optional] [readonly] 
+**customer_id** | **String** | Alphanumeric string identifying the customer. | [optional] 
 **type** | **String** | The type of this service. | [optional]  [one of: "vcl", "wasm"]
 **id** | **String** |  | [optional] [readonly] 
 **publish_key** | **String** | Unused at this time. | [optional] 

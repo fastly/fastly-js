@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**expires_at** | **String** | Time-stamp (GMT) when the domain_ownership validation will expire. | [optional] [readonly] 
+**data** | **[String]** | The service IDs of the services the token will have access to. Separate service IDs with a space. | [optional] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

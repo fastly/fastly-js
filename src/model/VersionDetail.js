@@ -22,13 +22,13 @@ import HealthcheckResponse from './HealthcheckResponse';
 import RequestSettingsResponse from './RequestSettingsResponse';
 import ResponseObjectResponse from './ResponseObjectResponse';
 import SchemasSnippetResponse from './SchemasSnippetResponse';
-import SchemasVclResponse from './SchemasVclResponse';
-import Settings from './Settings';
+import VclResponse from './VclResponse';
+import VersionDetailSettings from './VersionDetailSettings';
 
 /**
  * The VersionDetail model module.
  * @module model/VersionDetail
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class VersionDetail {
     /**
@@ -90,13 +90,13 @@ class VersionDetail {
                 obj['response_objects'] = ApiClient.convertToType(data['response_objects'], [ResponseObjectResponse]);
             }
             if (data.hasOwnProperty('settings')) {
-                obj['settings'] = ApiClient.convertToType(data['settings'], Settings);
+                obj['settings'] = VersionDetailSettings.constructFromObject(data['settings']);
             }
             if (data.hasOwnProperty('snippets')) {
                 obj['snippets'] = ApiClient.convertToType(data['snippets'], [SchemasSnippetResponse]);
             }
             if (data.hasOwnProperty('vcls')) {
-                obj['vcls'] = ApiClient.convertToType(data['vcls'], [SchemasVclResponse]);
+                obj['vcls'] = ApiClient.convertToType(data['vcls'], [VclResponse]);
             }
             if (data.hasOwnProperty('wordpress')) {
                 obj['wordpress'] = ApiClient.convertToType(data['wordpress'], [Object]);
@@ -169,8 +169,7 @@ VersionDetail.prototype['request_settings'] = undefined;
 VersionDetail.prototype['response_objects'] = undefined;
 
 /**
- * List of default settings for this service.
- * @member {module:model/Settings} settings
+ * @member {module:model/VersionDetailSettings} settings
  */
 VersionDetail.prototype['settings'] = undefined;
 
@@ -182,7 +181,7 @@ VersionDetail.prototype['snippets'] = undefined;
 
 /**
  * List of VCL files for this service.
- * @member {Array.<module:model/SchemasVclResponse>} vcls
+ * @member {Array.<module:model/VclResponse>} vcls
  */
 VersionDetail.prototype['vcls'] = undefined;
 

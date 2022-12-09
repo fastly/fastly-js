@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The AclResponse model module.
  * @module model/AclResponse
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class AclResponse {
     /**

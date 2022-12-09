@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingFtpResponse model module.
  * @module model/LoggingFtpResponse
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class LoggingFtpResponse {
     /**
@@ -144,7 +144,7 @@ LoggingFtpResponse.prototype['name'] = undefined;
 LoggingFtpResponse.prototype['placement'] = undefined;
 
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
  * @member {module:model/LoggingFtpResponse.FormatVersionEnum} format_version
  * @default FormatVersionEnum.v2
  */
@@ -184,14 +184,14 @@ LoggingFtpResponse.prototype['timestamp_format'] = undefined;
 LoggingFtpResponse.prototype['period'] = 3600;
 
 /**
- * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
  * @member {Number} gzip_level
  * @default 0
  */
 LoggingFtpResponse.prototype['gzip_level'] = 0;
 
 /**
- * The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \"gzip\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
  * @member {module:model/LoggingFtpResponse.CompressionCodecEnum} compression_codec
  */
 LoggingFtpResponse.prototype['compression_codec'] = undefined;
@@ -287,7 +287,7 @@ LoggingFtp.prototype['name'] = undefined;
  */
 LoggingFtp.prototype['placement'] = undefined;
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
  * @member {module:model/LoggingFtp.FormatVersionEnum} format_version
  * @default FormatVersionEnum.v2
  */
@@ -321,13 +321,13 @@ LoggingFtp.prototype['timestamp_format'] = undefined;
  */
 LoggingFtp.prototype['period'] = 3600;
 /**
- * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
  * @member {Number} gzip_level
  * @default 0
  */
 LoggingFtp.prototype['gzip_level'] = 0;
 /**
- * The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \"gzip\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
  * @member {module:model/LoggingFtp.CompressionCodecEnum} compression_codec
  */
 LoggingFtp.prototype['compression_codec'] = undefined;

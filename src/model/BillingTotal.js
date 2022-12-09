@@ -16,11 +16,12 @@ import BillingTotalExtras from './BillingTotalExtras';
 /**
  * The BillingTotal model module.
  * @module model/BillingTotal
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class BillingTotal {
     /**
      * Constructs a new <code>BillingTotal</code>.
+     * Complete summary of the billing information.
      * @alias module:model/BillingTotal
      */
     constructor() { 

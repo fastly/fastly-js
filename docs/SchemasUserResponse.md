@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**login** | **String** | The login associated with the user (typically, an email address). | [optional] 
+**login** | **String** |  | [optional] [readonly] 
 **name** | **String** | The real life name of the user. | [optional] 
 **limit_services** | **Boolean** | Indicates that the user has limited access to the customer&#39;s services. | [optional] 
 **locked** | **Boolean** | Indicates whether the is account is locked for editing or not. | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **deleted_at** | **Date** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **updated_at** | **Date** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **id** | **String** |  | [optional] [readonly] 
-**email_hash** | **String** | The alphanumeric string identifying a email login. | [optional] 
+**email_hash** | **String** | The alphanumeric string identifying a email login. | [optional] [readonly] 
 **customer_id** | **String** |  | [optional] [readonly] 
 
 

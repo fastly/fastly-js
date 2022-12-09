@@ -31,7 +31,7 @@ Create a service.
 const options = {
   comment: "comment_example",
   name: "name_example",
-  customer_id: null,
+  customer_id: "customer_id_example",
   type: "vcl",
 };
 
@@ -50,7 +50,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **comment** | **String** | A freeform descriptive note. | [optional]
 **name** | **String** | The name of the service. | [optional]
-**customer_id** | [**String**](String.md) |  | [optional]
+**customer_id** | **String** | Alphanumeric string identifying the customer. | [optional]
 **type** | **String** | The type of this service. | [optional] [one of: "vcl", "wasm"]
 
 ### Return type
@@ -291,7 +291,7 @@ const options = {
   service_id: "service_id_example", // required
   comment: "comment_example",
   name: "name_example",
-  customer_id: null,
+  customer_id: "customer_id_example",
 };
 
 apiInstance.updateService(options)
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 **service_id** | **String** | Alphanumeric string identifying the service. |
 **comment** | **String** | A freeform descriptive note. | [optional]
 **name** | **String** | The name of the service. | [optional]
-**customer_id** | [**String**](String.md) |  | [optional]
+**customer_id** | **String** | Alphanumeric string identifying the customer. | [optional]
 
 ### Return type
 

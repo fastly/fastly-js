@@ -16,7 +16,7 @@ import RelationshipMemberTlsCertificate from './RelationshipMemberTlsCertificate
 /**
  * The RelationshipTlsCertificateTlsCertificate model module.
  * @module model/RelationshipTlsCertificateTlsCertificate
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class RelationshipTlsCertificateTlsCertificate {
     /**
@@ -48,7 +48,7 @@ class RelationshipTlsCertificateTlsCertificate {
             obj = obj || new RelationshipTlsCertificateTlsCertificate();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [RelationshipMemberTlsCertificate]);
+                obj['data'] = RelationshipMemberTlsCertificate.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class RelationshipTlsCertificateTlsCertificate {
 }
 
 /**
- * @member {Array.<module:model/RelationshipMemberTlsCertificate>} data
+ * @member {module:model/RelationshipMemberTlsCertificate} data
  */
 RelationshipTlsCertificateTlsCertificate.prototype['data'] = undefined;
 

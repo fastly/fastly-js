@@ -19,7 +19,7 @@ import UserResponse from '../model/UserResponse';
 /**
 * User service.
 * @module api/UserApi
-* @version 3.0.0-beta3
+* @version 3.0.0
 */
 export default class UserApi {
 
@@ -42,7 +42,7 @@ export default class UserApi {
     /**
      * Create a user.
      * @param {Object} options
-     * @param {String} [options.login] - The login associated with the user (typically, an email address).
+     * @param {String} [options.login]
      * @param {String} [options.name] - The real life name of the user.
      * @param {Boolean} [options.limit_services] - Indicates that the user has limited access to the customer's services.
      * @param {Boolean} [options.locked] - Indicates whether the is account is locked for editing or not.
@@ -86,7 +86,7 @@ export default class UserApi {
     /**
      * Create a user.
      * @param {Object} options
-     * @param {String} [options.login] - The login associated with the user (typically, an email address).
+     * @param {String} [options.login]
      * @param {String} [options.name] - The real life name of the user.
      * @param {Boolean} [options.limit_services] - Indicates that the user has limited access to the customer's services.
      * @param {Boolean} [options.locked] - Indicates whether the is account is locked for editing or not.
@@ -288,7 +288,7 @@ export default class UserApi {
      * Update a user. Only users with the role of `superuser` can make changes to other users on the account. Non-superusers may use this endpoint to make changes to their own account. Modifications to `login` email require a valid password in the request body. Two-factor attributes are not editable via this endpoint.
      * @param {Object} options
      * @param {String} options.user_id - Alphanumeric string identifying the user.
-     * @param {String} [options.login] - The login associated with the user (typically, an email address).
+     * @param {String} [options.login]
      * @param {String} [options.name] - The real life name of the user.
      * @param {Boolean} [options.limit_services] - Indicates that the user has limited access to the customer's services.
      * @param {Boolean} [options.locked] - Indicates whether the is account is locked for editing or not.
@@ -338,7 +338,7 @@ export default class UserApi {
      * Update a user. Only users with the role of `superuser` can make changes to other users on the account. Non-superusers may use this endpoint to make changes to their own account. Modifications to `login` email require a valid password in the request body. Two-factor attributes are not editable via this endpoint.
      * @param {Object} options
      * @param {String} options.user_id - Alphanumeric string identifying the user.
-     * @param {String} [options.login] - The login associated with the user (typically, an email address).
+     * @param {String} [options.login]
      * @param {String} [options.name] - The real life name of the user.
      * @param {Boolean} [options.limit_services] - Indicates that the user has limited access to the customer's services.
      * @param {Boolean} [options.locked] - Indicates whether the is account is locked for editing or not.

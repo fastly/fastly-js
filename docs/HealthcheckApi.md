@@ -7,20 +7,20 @@ const apiInstance = new Fastly.HealthcheckApi();
 
 Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
-[**createHealthcheck**](HealthcheckApi.md#createHealthcheck) | **POST** /service/{service_id}/version/{version_id}/healthcheck | Create a healthcheck
-[**deleteHealthcheck**](HealthcheckApi.md#deleteHealthcheck) | **DELETE** /service/{service_id}/version/{version_id}/healthcheck/{healthcheck_name} | Delete a healthcheck
-[**getHealthcheck**](HealthcheckApi.md#getHealthcheck) | **GET** /service/{service_id}/version/{version_id}/healthcheck/{healthcheck_name} | Get a healthcheck
-[**listHealthchecks**](HealthcheckApi.md#listHealthchecks) | **GET** /service/{service_id}/version/{version_id}/healthcheck | List healthchecks
-[**updateHealthcheck**](HealthcheckApi.md#updateHealthcheck) | **PUT** /service/{service_id}/version/{version_id}/healthcheck/{healthcheck_name} | Update a healthcheck
+[**createHealthcheck**](HealthcheckApi.md#createHealthcheck) | **POST** /service/{service_id}/version/{version_id}/healthcheck | Create a health check
+[**deleteHealthcheck**](HealthcheckApi.md#deleteHealthcheck) | **DELETE** /service/{service_id}/version/{version_id}/healthcheck/{healthcheck_name} | Delete a health check
+[**getHealthcheck**](HealthcheckApi.md#getHealthcheck) | **GET** /service/{service_id}/version/{version_id}/healthcheck/{healthcheck_name} | Get a health check
+[**listHealthchecks**](HealthcheckApi.md#listHealthchecks) | **GET** /service/{service_id}/version/{version_id}/healthcheck | List health checks
+[**updateHealthcheck**](HealthcheckApi.md#updateHealthcheck) | **PUT** /service/{service_id}/version/{version_id}/healthcheck/{healthcheck_name} | Update a health check
 
 
 ## `createHealthcheck`
 
 ```javascript
-createHealthcheck({ service_id, version_id, [check_interval, ][comment, ][expected_response, ][host, ][http_version, ][initial, ][method, ][name, ][path, ][threshold, ][timeout, ][window] })
+createHealthcheck({ service_id, version_id, [check_interval, ][comment, ][expected_response, ][headers, ][host, ][http_version, ][initial, ][method, ][name, ][path, ][threshold, ][timeout, ][window] })
 ```
 
-Create a healthcheck for a particular service and version.
+Create a health check for a particular service and version.
 
 ### Example
 
@@ -31,6 +31,7 @@ const options = {
   check_interval: 56,
   comment: "comment_example",
   expected_response: 56,
+  headers: ["null"],
   host: "host_example",
   http_version: "http_version_example",
   initial: 56,
@@ -57,18 +58,19 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** | Alphanumeric string identifying the service. |
 **version_id** | **Number** | Integer identifying a service version. |
-**check_interval** | **Number** | How often to run the healthcheck in milliseconds. | [optional]
+**check_interval** | **Number** | How often to run the health check in milliseconds. | [optional]
 **comment** | **String** | A freeform descriptive note. | [optional]
 **expected_response** | **Number** | The status code expected from the host. | [optional]
+**headers** | [**[String]**](String.md) | Array of custom headers that will be added to the health check probes. | [optional]
 **host** | **String** | Which host to check. | [optional]
 **http_version** | **String** | Whether to use version 1.0 or 1.1 HTTP. | [optional]
 **initial** | **Number** | When loading a config, the initial number of probes to be seen as OK. | [optional]
 **method** | **String** | Which HTTP method to use. | [optional]
-**name** | **String** | The name of the healthcheck. | [optional]
+**name** | **String** | The name of the health check. | [optional]
 **path** | **String** | The path to check. | [optional]
-**threshold** | **Number** | How many healthchecks must succeed to be considered healthy. | [optional]
+**threshold** | **Number** | How many health checks must succeed to be considered healthy. | [optional]
 **timeout** | **Number** | Timeout in milliseconds. | [optional]
-**window** | **Number** | The number of most recent healthcheck queries to keep for this healthcheck. | [optional]
+**window** | **Number** | The number of most recent health check queries to keep for this health check. | [optional]
 
 ### Return type
 
@@ -81,7 +83,7 @@ Name | Type | Description  | Notes
 deleteHealthcheck({ service_id, version_id, healthcheck_name })
 ```
 
-Delete the healthcheck for a particular service and version.
+Delete the health check for a particular service and version.
 
 ### Example
 
@@ -107,7 +109,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** | Alphanumeric string identifying the service. |
 **version_id** | **Number** | Integer identifying a service version. |
-**healthcheck_name** | **String** | The name of the healthcheck. |
+**healthcheck_name** | **String** | The name of the health check. |
 
 ### Return type
 
@@ -120,7 +122,7 @@ Name | Type | Description  | Notes
 getHealthcheck({ service_id, version_id, healthcheck_name })
 ```
 
-Get the healthcheck for a particular service and version.
+Get the health check for a particular service and version.
 
 ### Example
 
@@ -146,7 +148,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** | Alphanumeric string identifying the service. |
 **version_id** | **Number** | Integer identifying a service version. |
-**healthcheck_name** | **String** | The name of the healthcheck. |
+**healthcheck_name** | **String** | The name of the health check. |
 
 ### Return type
 
@@ -159,7 +161,7 @@ Name | Type | Description  | Notes
 listHealthchecks({ service_id, version_id })
 ```
 
-List all of the healthchecks for a particular service and version.
+List all of the health checks for a particular service and version.
 
 ### Example
 
@@ -193,10 +195,10 @@ Name | Type | Description  | Notes
 ## `updateHealthcheck`
 
 ```javascript
-updateHealthcheck({ service_id, version_id, healthcheck_name, [check_interval, ][comment, ][expected_response, ][host, ][http_version, ][initial, ][method, ][name, ][path, ][threshold, ][timeout, ][window] })
+updateHealthcheck({ service_id, version_id, healthcheck_name, [check_interval, ][comment, ][expected_response, ][headers, ][host, ][http_version, ][initial, ][method, ][name, ][path, ][threshold, ][timeout, ][window] })
 ```
 
-Update the healthcheck for a particular service and version.
+Update the health check for a particular service and version.
 
 ### Example
 
@@ -208,6 +210,7 @@ const options = {
   check_interval: 56,
   comment: "comment_example",
   expected_response: 56,
+  headers: ["null"],
   host: "host_example",
   http_version: "http_version_example",
   initial: 56,
@@ -234,19 +237,20 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** | Alphanumeric string identifying the service. |
 **version_id** | **Number** | Integer identifying a service version. |
-**healthcheck_name** | **String** | The name of the healthcheck. |
-**check_interval** | **Number** | How often to run the healthcheck in milliseconds. | [optional]
+**healthcheck_name** | **String** | The name of the health check. |
+**check_interval** | **Number** | How often to run the health check in milliseconds. | [optional]
 **comment** | **String** | A freeform descriptive note. | [optional]
 **expected_response** | **Number** | The status code expected from the host. | [optional]
+**headers** | [**[String]**](String.md) | Array of custom headers that will be added to the health check probes. | [optional]
 **host** | **String** | Which host to check. | [optional]
 **http_version** | **String** | Whether to use version 1.0 or 1.1 HTTP. | [optional]
 **initial** | **Number** | When loading a config, the initial number of probes to be seen as OK. | [optional]
 **method** | **String** | Which HTTP method to use. | [optional]
-**name** | **String** | The name of the healthcheck. | [optional]
+**name** | **String** | The name of the health check. | [optional]
 **path** | **String** | The path to check. | [optional]
-**threshold** | **Number** | How many healthchecks must succeed to be considered healthy. | [optional]
+**threshold** | **Number** | How many health checks must succeed to be considered healthy. | [optional]
 **timeout** | **Number** | Timeout in milliseconds. | [optional]
-**window** | **Number** | The number of most recent healthcheck queries to keep for this healthcheck. | [optional]
+**window** | **Number** | The number of most recent health check queries to keep for this health check. | [optional]
 
 ### Return type
 

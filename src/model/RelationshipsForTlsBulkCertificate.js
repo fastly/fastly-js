@@ -11,14 +11,14 @@
  */
 
 import ApiClient from '../ApiClient';
-import RelationshipTlsConfigurationTlsConfiguration from './RelationshipTlsConfigurationTlsConfiguration';
 import RelationshipTlsConfigurations from './RelationshipTlsConfigurations';
-import RelationshipTlsDomainTlsDomain from './RelationshipTlsDomainTlsDomain';
+import RelationshipTlsConfigurationsTlsConfigurations from './RelationshipTlsConfigurationsTlsConfigurations';
+import RelationshipTlsDomainsTlsDomains from './RelationshipTlsDomainsTlsDomains';
 
 /**
  * The RelationshipsForTlsBulkCertificate model module.
  * @module model/RelationshipsForTlsBulkCertificate
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class RelationshipsForTlsBulkCertificate {
     /**
@@ -52,10 +52,10 @@ class RelationshipsForTlsBulkCertificate {
             RelationshipTlsConfigurations.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('tls_configurations')) {
-                obj['tls_configurations'] = RelationshipTlsConfigurationTlsConfiguration.constructFromObject(data['tls_configurations']);
+                obj['tls_configurations'] = RelationshipTlsConfigurationsTlsConfigurations.constructFromObject(data['tls_configurations']);
             }
             if (data.hasOwnProperty('tls_domains')) {
-                obj['tls_domains'] = RelationshipTlsDomainTlsDomain.constructFromObject(data['tls_domains']);
+                obj['tls_domains'] = RelationshipTlsDomainsTlsDomains.constructFromObject(data['tls_domains']);
             }
         }
         return obj;
@@ -65,19 +65,19 @@ class RelationshipsForTlsBulkCertificate {
 }
 
 /**
- * @member {module:model/RelationshipTlsConfigurationTlsConfiguration} tls_configurations
+ * @member {module:model/RelationshipTlsConfigurationsTlsConfigurations} tls_configurations
  */
 RelationshipsForTlsBulkCertificate.prototype['tls_configurations'] = undefined;
 
 /**
- * @member {module:model/RelationshipTlsDomainTlsDomain} tls_domains
+ * @member {module:model/RelationshipTlsDomainsTlsDomains} tls_domains
  */
 RelationshipsForTlsBulkCertificate.prototype['tls_domains'] = undefined;
 
 
 // Implement RelationshipTlsConfigurations interface:
 /**
- * @member {module:model/RelationshipTlsConfigurationTlsConfiguration} tls_configurations
+ * @member {module:model/RelationshipTlsConfigurationsTlsConfigurations} tls_configurations
  */
 RelationshipTlsConfigurations.prototype['tls_configurations'] = undefined;
 

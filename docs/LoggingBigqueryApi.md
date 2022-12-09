@@ -17,7 +17,7 @@ Method | Fastly API endpoint | Description
 ## `createLogBigquery`
 
 ```javascript
-createLogBigquery({ service_id, version_id, [name, ][placement, ][format_version, ][response_condition, ][format, ][user, ][secret_key, ][dataset, ][table, ][template_suffix, ][project_id] })
+createLogBigquery({ service_id, version_id, [name, ][placement, ][format_version, ][response_condition, ][format, ][user, ][secret_key, ][account_name, ][dataset, ][table, ][template_suffix, ][project_id] })
 ```
 
 Create a BigQuery logging object for a particular service and version.
@@ -35,6 +35,7 @@ const options = {
   format: "format_example",
   user: "user_example",
   secret_key: "secret_key_example",
+  account_name: "account_name_example",
   dataset: "dataset_example",
   table: "table_example",
   template_suffix: "template_suffix_example",
@@ -58,11 +59,12 @@ Name | Type | Description  | Notes
 **version_id** | **Number** | Integer identifying a service version. |
 **name** | **String** | The name of the BigQuery logging object. Used as a primary key for API access. | [optional]
 **placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] [one of: "none", "waf_debug", "null"]
-**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.   | [optional] [one of: 1, 2]
+**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [one of: 1, 2]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
 **format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table. | [optional]
-**user** | **String** | Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required. | [optional]
-**secret_key** | **String** | Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required. | [optional]
+**user** | **String** | Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Not required if `account_name` is specified. | [optional]
+**secret_key** | **String** | Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified. | [optional]
+**account_name** | **String** | The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided. | [optional]
 **dataset** | **String** | Your BigQuery dataset. | [optional]
 **table** | **String** | Your BigQuery table. | [optional]
 **template_suffix** | **String** | BigQuery table name suffix template. Optional. | [optional]
@@ -191,7 +193,7 @@ Name | Type | Description  | Notes
 ## `updateLogBigquery`
 
 ```javascript
-updateLogBigquery({ service_id, version_id, logging_bigquery_name, [name, ][placement, ][format_version, ][response_condition, ][format, ][user, ][secret_key, ][dataset, ][table, ][template_suffix, ][project_id] })
+updateLogBigquery({ service_id, version_id, logging_bigquery_name, [name, ][placement, ][format_version, ][response_condition, ][format, ][user, ][secret_key, ][account_name, ][dataset, ][table, ][template_suffix, ][project_id] })
 ```
 
 Update a BigQuery logging object for a particular service and version.
@@ -210,6 +212,7 @@ const options = {
   format: "format_example",
   user: "user_example",
   secret_key: "secret_key_example",
+  account_name: "account_name_example",
   dataset: "dataset_example",
   table: "table_example",
   template_suffix: "template_suffix_example",
@@ -234,11 +237,12 @@ Name | Type | Description  | Notes
 **logging_bigquery_name** | **String** | The name for the real-time logging configuration. |
 **name** | **String** | The name of the BigQuery logging object. Used as a primary key for API access. | [optional]
 **placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] [one of: "none", "waf_debug", "null"]
-**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.   | [optional] [one of: 1, 2]
+**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [one of: 1, 2]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
 **format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table. | [optional]
-**user** | **String** | Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required. | [optional]
-**secret_key** | **String** | Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required. | [optional]
+**user** | **String** | Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Not required if `account_name` is specified. | [optional]
+**secret_key** | **String** | Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified. | [optional]
+**account_name** | **String** | The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided. | [optional]
 **dataset** | **String** | Your BigQuery dataset. | [optional]
 **table** | **String** | Your BigQuery table. | [optional]
 **template_suffix** | **String** | BigQuery table name suffix template. Optional. | [optional]

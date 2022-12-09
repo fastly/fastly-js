@@ -32,7 +32,7 @@ const options = {
   name: "name_example",
   priority: "'100'",
   statement: "statement_example",
-  service_id2: null,
+  service_id2: "service_id_example",
   version: "version_example",
   type: "REQUEST",
 };
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 **name** | **String** | Name of the condition. Required. | [optional]
 **priority** | **String** | A numeric string. Priority determines execution order. Lower numbers execute first. | [optional] [defaults to '100']
 **statement** | **String** | A conditional expression in VCL used to determine if the condition is met. | [optional]
-**service_id2** | [**String**](String.md) |  | [optional]
+**service_id2** | **String** |  | [optional]
 **version** | **String** | A numeric string that represents the service version. | [optional]
 **type** | **String** | Type of the condition. Required. | [optional] [one of: "REQUEST", "CACHE", "RESPONSE", "PREFETCH"]
 
@@ -199,7 +199,7 @@ const options = {
   name: "name_example",
   priority: "'100'",
   statement: "statement_example",
-  service_id2: null,
+  service_id2: "service_id_example",
   version: "version_example",
   type: "REQUEST",
 };
@@ -224,7 +224,7 @@ Name | Type | Description  | Notes
 **name** | **String** | Name of the condition. Required. | [optional]
 **priority** | **String** | A numeric string. Priority determines execution order. Lower numbers execute first. | [optional] [defaults to '100']
 **statement** | **String** | A conditional expression in VCL used to determine if the condition is met. | [optional]
-**service_id2** | [**String**](String.md) |  | [optional]
+**service_id2** | **String** |  | [optional]
 **version** | **String** | A numeric string that represents the service version. | [optional]
 **type** | **String** | Type of the condition. Required. | [optional] [one of: "REQUEST", "CACHE", "RESPONSE", "PREFETCH"]
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | [**TypeServiceAuthorization**](TypeServiceAuthorization.md) |  | [optional] 
 **attributes** | [**Timestamps**](Timestamps.md) |  | [optional] 
-**relationships** | **Object** |  | [optional] 
+**relationships** | [**ServiceAuthorizationDataRelationships**](ServiceAuthorizationDataRelationships.md) |  | [optional] 
 **id** | **String** |  | [optional] [readonly] 
 
 

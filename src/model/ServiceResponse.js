@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The ServiceResponse model module.
  * @module model/ServiceResponse
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class ServiceResponse {
     /**
@@ -127,6 +127,7 @@ ServiceResponse.prototype['comment'] = undefined;
 ServiceResponse.prototype['name'] = undefined;
 
 /**
+ * Alphanumeric string identifying the customer.
  * @member {String} customer_id
  */
 ServiceResponse.prototype['customer_id'] = undefined;
@@ -189,6 +190,7 @@ ServiceCreate.prototype['comment'] = undefined;
  */
 ServiceCreate.prototype['name'] = undefined;
 /**
+ * Alphanumeric string identifying the customer.
  * @member {String} customer_id
  */
 ServiceCreate.prototype['customer_id'] = undefined;

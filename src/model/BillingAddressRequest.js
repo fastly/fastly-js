@@ -16,7 +16,7 @@ import BillingAddressRequestData from './BillingAddressRequestData';
 /**
  * The BillingAddressRequest model module.
  * @module model/BillingAddressRequest
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class BillingAddressRequest {
     /**
@@ -47,6 +47,9 @@ class BillingAddressRequest {
         if (data) {
             obj = obj || new BillingAddressRequest();
 
+            if (data.hasOwnProperty('skip_verification')) {
+                obj['skip_verification'] = ApiClient.convertToType(data['skip_verification'], 'Boolean');
+            }
             if (data.hasOwnProperty('data')) {
                 obj['data'] = BillingAddressRequestData.constructFromObject(data['data']);
             }
@@ -56,6 +59,12 @@ class BillingAddressRequest {
 
 
 }
+
+/**
+ * When set to true, the address will be saved without verification
+ * @member {Boolean} skip_verification
+ */
+BillingAddressRequest.prototype['skip_verification'] = undefined;
 
 /**
  * @member {module:model/BillingAddressRequestData} data

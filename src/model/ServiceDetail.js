@@ -20,7 +20,7 @@ import ServiceVersionDetailOrNull from './ServiceVersionDetailOrNull';
 /**
  * The ServiceDetail model module.
  * @module model/ServiceDetail
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class ServiceDetail {
     /**
@@ -132,6 +132,7 @@ ServiceDetail.prototype['comment'] = undefined;
 ServiceDetail.prototype['name'] = undefined;
 
 /**
+ * Alphanumeric string identifying the customer.
  * @member {String} customer_id
  */
 ServiceDetail.prototype['customer_id'] = undefined;
@@ -203,6 +204,7 @@ ServiceResponse.prototype['comment'] = undefined;
  */
 ServiceResponse.prototype['name'] = undefined;
 /**
+ * Alphanumeric string identifying the customer.
  * @member {String} customer_id
  */
 ServiceResponse.prototype['customer_id'] = undefined;

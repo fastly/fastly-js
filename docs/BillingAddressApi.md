@@ -26,7 +26,7 @@ Add a billing address to a customer.
 ```javascript
 const options = {
   customer_id: "customer_id_example", // required
-  billing_address_request: {"data":{"type":"billing_address","attributes":{"address_1":"80719 Dorothea Mountain","address_2":"Apt. 652","city":"New Rasheedville","state":"DE","country":"US","postal_code":"53538-5902"}}},
+  billing_address_request: {"skip_verification":false,"data":{"type":"billing_address","attributes":{"address_1":"80719 Dorothea Mountain","address_2":"Apt. 652","city":"New Rasheedville","state":"DE","country":"US","postal_code":"53538-5902"}}},
 };
 
 apiInstance.addBillingAddr(options)
@@ -133,7 +133,7 @@ Update a customer's billing address. You may update only part of the customer's 
 ```javascript
 const options = {
   customer_id: "customer_id_example", // required
-  update_billing_address_request: {"data":{"type":"billing_address","id":"3DTWpamEUGISvrUiDWkesQ","attributes":{"state":"DE"}}},
+  update_billing_address_request: {"skip_verification":false,"data":{"type":"billing_address","id":"3DTWpamEUGISvrUiDWkesQ","attributes":{"state":"DE"}}},
 };
 
 apiInstance.updateBillingAddr(options)

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingSftpAllOf model module.
  * @module model/LoggingSftpAllOf
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class LoggingSftpAllOf {
     /**
@@ -53,7 +53,7 @@ class LoggingSftpAllOf {
                 obj['path'] = ApiClient.convertToType(data['path'], 'String');
             }
             if (data.hasOwnProperty('port')) {
-                obj['port'] = ApiClient.convertToType(data['port'], Object);
+                obj['port'] = ApiClient.convertToType(data['port'], 'Number');
             }
             if (data.hasOwnProperty('public_key')) {
                 obj['public_key'] = ApiClient.convertToType(data['public_key'], 'String');
@@ -89,9 +89,10 @@ LoggingSftpAllOf.prototype['path'] = 'null';
 
 /**
  * The port number.
- * @member {Object} port
+ * @member {Number} port
+ * @default 22
  */
-LoggingSftpAllOf.prototype['port'] = undefined;
+LoggingSftpAllOf.prototype['port'] = 22;
 
 /**
  * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.

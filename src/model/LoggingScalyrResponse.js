@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingScalyrResponse model module.
  * @module model/LoggingScalyrResponse
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class LoggingScalyrResponse {
     /**
@@ -114,7 +114,7 @@ LoggingScalyrResponse.prototype['name'] = undefined;
 LoggingScalyrResponse.prototype['placement'] = undefined;
 
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
  * @member {module:model/LoggingScalyrResponse.FormatVersionEnum} format_version
  * @default FormatVersionEnum.v2
  */
@@ -194,7 +194,7 @@ LoggingScalyr.prototype['name'] = undefined;
  */
 LoggingScalyr.prototype['placement'] = undefined;
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
  * @member {module:model/LoggingScalyr.FormatVersionEnum} format_version
  * @default FormatVersionEnum.v2
  */

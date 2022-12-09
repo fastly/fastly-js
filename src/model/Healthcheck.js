@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Healthcheck model module.
  * @module model/Healthcheck
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class Healthcheck {
     /**
@@ -55,6 +55,9 @@ class Healthcheck {
             if (data.hasOwnProperty('expected_response')) {
                 obj['expected_response'] = ApiClient.convertToType(data['expected_response'], 'Number');
             }
+            if (data.hasOwnProperty('headers')) {
+                obj['headers'] = ApiClient.convertToType(data['headers'], ['String']);
+            }
             if (data.hasOwnProperty('host')) {
                 obj['host'] = ApiClient.convertToType(data['host'], 'String');
             }
@@ -90,7 +93,7 @@ class Healthcheck {
 }
 
 /**
- * How often to run the healthcheck in milliseconds.
+ * How often to run the health check in milliseconds.
  * @member {Number} check_interval
  */
 Healthcheck.prototype['check_interval'] = undefined;
@@ -106,6 +109,12 @@ Healthcheck.prototype['comment'] = undefined;
  * @member {Number} expected_response
  */
 Healthcheck.prototype['expected_response'] = undefined;
+
+/**
+ * Array of custom headers that will be added to the health check probes.
+ * @member {Array.<String>} headers
+ */
+Healthcheck.prototype['headers'] = undefined;
 
 /**
  * Which host to check.
@@ -132,7 +141,7 @@ Healthcheck.prototype['initial'] = undefined;
 Healthcheck.prototype['method'] = undefined;
 
 /**
- * The name of the healthcheck.
+ * The name of the health check.
  * @member {String} name
  */
 Healthcheck.prototype['name'] = undefined;
@@ -144,7 +153,7 @@ Healthcheck.prototype['name'] = undefined;
 Healthcheck.prototype['path'] = undefined;
 
 /**
- * How many healthchecks must succeed to be considered healthy.
+ * How many health checks must succeed to be considered healthy.
  * @member {Number} threshold
  */
 Healthcheck.prototype['threshold'] = undefined;
@@ -156,7 +165,7 @@ Healthcheck.prototype['threshold'] = undefined;
 Healthcheck.prototype['timeout'] = undefined;
 
 /**
- * The number of most recent healthcheck queries to keep for this healthcheck.
+ * The number of most recent health check queries to keep for this health check.
  * @member {Number} window
  */
 Healthcheck.prototype['window'] = undefined;

@@ -19,7 +19,7 @@ import LoggingGenericCommon from './LoggingGenericCommon';
 /**
  * The LoggingGcs model module.
  * @module model/LoggingGcs
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class LoggingGcs {
     /**
@@ -94,6 +94,9 @@ class LoggingGcs {
             if (data.hasOwnProperty('secret_key')) {
                 obj['secret_key'] = ApiClient.convertToType(data['secret_key'], 'String');
             }
+            if (data.hasOwnProperty('account_name')) {
+                obj['account_name'] = ApiClient.convertToType(data['account_name'], 'String');
+            }
             if (data.hasOwnProperty('bucket_name')) {
                 obj['bucket_name'] = ApiClient.convertToType(data['bucket_name'], 'String');
             }
@@ -102,6 +105,9 @@ class LoggingGcs {
             }
             if (data.hasOwnProperty('public_key')) {
                 obj['public_key'] = ApiClient.convertToType(data['public_key'], 'String');
+            }
+            if (data.hasOwnProperty('project_id')) {
+                obj['project_id'] = ApiClient.convertToType(data['project_id'], 'String');
             }
         }
         return obj;
@@ -123,7 +129,7 @@ LoggingGcs.prototype['name'] = undefined;
 LoggingGcs.prototype['placement'] = undefined;
 
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
  * @member {module:model/LoggingGcs.FormatVersionEnum} format_version
  * @default FormatVersionEnum.v2
  */
@@ -163,29 +169,35 @@ LoggingGcs.prototype['timestamp_format'] = undefined;
 LoggingGcs.prototype['period'] = 3600;
 
 /**
- * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
  * @member {Number} gzip_level
  * @default 0
  */
 LoggingGcs.prototype['gzip_level'] = 0;
 
 /**
- * The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \"gzip\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
  * @member {module:model/LoggingGcs.CompressionCodecEnum} compression_codec
  */
 LoggingGcs.prototype['compression_codec'] = undefined;
 
 /**
- * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+ * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Not required if `account_name` is specified.
  * @member {String} user
  */
 LoggingGcs.prototype['user'] = undefined;
 
 /**
- * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+ * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified.
  * @member {String} secret_key
  */
 LoggingGcs.prototype['secret_key'] = undefined;
+
+/**
+ * The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided.
+ * @member {String} account_name
+ */
+LoggingGcs.prototype['account_name'] = undefined;
 
 /**
  * The name of the GCS bucket.
@@ -206,6 +218,12 @@ LoggingGcs.prototype['path'] = undefined;
  */
 LoggingGcs.prototype['public_key'] = 'null';
 
+/**
+ * Your Google Cloud Platform project ID. Required
+ * @member {String} project_id
+ */
+LoggingGcs.prototype['project_id'] = undefined;
+
 
 // Implement LoggingCommon interface:
 /**
@@ -219,7 +237,7 @@ LoggingCommon.prototype['name'] = undefined;
  */
 LoggingCommon.prototype['placement'] = undefined;
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
  * @member {module:model/LoggingCommon.FormatVersionEnum} format_version
  * @default FormatVersionEnum.v2
  */
@@ -254,27 +272,32 @@ LoggingGenericCommon.prototype['timestamp_format'] = undefined;
  */
 LoggingGenericCommon.prototype['period'] = 3600;
 /**
- * What level of gzip encoding to have when sending logs (default `0`, no compression). If an explicit non-zero value is set, then `compression_codec` will default to \"gzip.\" Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
  * @member {Number} gzip_level
  * @default 0
  */
 LoggingGenericCommon.prototype['gzip_level'] = 0;
 /**
- * The codec used for compression of your logs. Valid values are `zstd`, `snappy`, and `gzip`. If the specified codec is \"gzip\", `gzip_level` will default to 3. To specify a different level, leave `compression_codec` blank and explicitly set the level using `gzip_level`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
  * @member {module:model/LoggingGenericCommon.CompressionCodecEnum} compression_codec
  */
 LoggingGenericCommon.prototype['compression_codec'] = undefined;
 // Implement LoggingGcsCommon interface:
 /**
- * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Required.
+ * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Not required if `account_name` is specified.
  * @member {String} user
  */
 LoggingGcsCommon.prototype['user'] = undefined;
 /**
- * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Required.
+ * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified.
  * @member {String} secret_key
  */
 LoggingGcsCommon.prototype['secret_key'] = undefined;
+/**
+ * The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided.
+ * @member {String} account_name
+ */
+LoggingGcsCommon.prototype['account_name'] = undefined;
 // Implement LoggingGcsAllOf interface:
 /**
  * The name of the GCS bucket.
@@ -292,6 +315,11 @@ LoggingGcsAllOf.prototype['path'] = undefined;
  * @default 'null'
  */
 LoggingGcsAllOf.prototype['public_key'] = 'null';
+/**
+ * Your Google Cloud Platform project ID. Required
+ * @member {String} project_id
+ */
+LoggingGcsAllOf.prototype['project_id'] = undefined;
 
 
 

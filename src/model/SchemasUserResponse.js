@@ -19,7 +19,7 @@ import UserResponseAllOf from './UserResponseAllOf';
 /**
  * The SchemasUserResponse model module.
  * @module model/SchemasUserResponse
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class SchemasUserResponse {
     /**
@@ -106,7 +106,6 @@ class SchemasUserResponse {
 }
 
 /**
- * The login associated with the user (typically, an email address).
  * @member {String} login
  */
 SchemasUserResponse.prototype['login'] = undefined;
@@ -189,7 +188,6 @@ SchemasUserResponse.prototype['customer_id'] = undefined;
 
 // Implement User interface:
 /**
- * The login associated with the user (typically, an email address).
  * @member {String} login
  */
 User.prototype['login'] = undefined;

@@ -11,12 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import RelationshipServiceService from './RelationshipServiceService';
+import RelationshipMemberService from './RelationshipMemberService';
 
 /**
  * The RelationshipService model module.
  * @module model/RelationshipService
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class RelationshipService {
     /**
@@ -48,7 +48,7 @@ class RelationshipService {
             obj = obj || new RelationshipService();
 
             if (data.hasOwnProperty('service')) {
-                obj['service'] = RelationshipServiceService.constructFromObject(data['service']);
+                obj['service'] = RelationshipMemberService.constructFromObject(data['service']);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class RelationshipService {
 }
 
 /**
- * @member {module:model/RelationshipServiceService} service
+ * @member {module:model/RelationshipMemberService} service
  */
 RelationshipService.prototype['service'] = undefined;
 

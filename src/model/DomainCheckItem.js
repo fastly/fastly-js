@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DomainCheckItem model module.
  * @module model/DomainCheckItem
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class DomainCheckItem {
     /**

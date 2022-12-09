@@ -20,6 +20,14 @@ import AclResponse from './model/AclResponse';
 import AclResponseAllOf from './model/AclResponseAllOf';
 import ApexRedirect from './model/ApexRedirect';
 import ApexRedirectAllOf from './model/ApexRedirectAllOf';
+import AutomationToken from './model/AutomationToken';
+import AutomationTokenCreateRequest from './model/AutomationTokenCreateRequest';
+import AutomationTokenCreateRequestAttributes from './model/AutomationTokenCreateRequestAttributes';
+import AutomationTokenCreateResponse from './model/AutomationTokenCreateResponse';
+import AutomationTokenCreateResponseAllOf from './model/AutomationTokenCreateResponseAllOf';
+import AutomationTokenResponse from './model/AutomationTokenResponse';
+import AutomationTokenResponseAllOf from './model/AutomationTokenResponseAllOf';
+import AwsRegion from './model/AwsRegion';
 import Backend from './model/Backend';
 import BackendResponse from './model/BackendResponse';
 import BackendResponseAllOf from './model/BackendResponseAllOf';
@@ -29,6 +37,8 @@ import BillingAddressRequest from './model/BillingAddressRequest';
 import BillingAddressRequestData from './model/BillingAddressRequestData';
 import BillingAddressResponse from './model/BillingAddressResponse';
 import BillingAddressResponseData from './model/BillingAddressResponseData';
+import BillingAddressVerificationErrorResponse from './model/BillingAddressVerificationErrorResponse';
+import BillingAddressVerificationErrorResponseErrors from './model/BillingAddressVerificationErrorResponseErrors';
 import BillingEstimateResponse from './model/BillingEstimateResponse';
 import BillingEstimateResponseAllOf from './model/BillingEstimateResponseAllOf';
 import BillingEstimateResponseAllOfLine from './model/BillingEstimateResponseAllOfLine';
@@ -73,6 +83,11 @@ import DirectorResponse from './model/DirectorResponse';
 import Domain from './model/Domain';
 import DomainCheckItem from './model/DomainCheckItem';
 import DomainResponse from './model/DomainResponse';
+import EnabledProduct from './model/EnabledProduct';
+import EnabledProductLinks from './model/EnabledProductLinks';
+import EnabledProductProduct from './model/EnabledProductProduct';
+import ErrorResponse from './model/ErrorResponse';
+import ErrorResponseData from './model/ErrorResponseData';
 import Event from './model/Event';
 import EventAttributes from './model/EventAttributes';
 import EventResponse from './model/EventResponse';
@@ -106,6 +121,8 @@ import HistoricalUsageServiceResponse from './model/HistoricalUsageServiceRespon
 import HistoricalUsageServiceResponseAllOf from './model/HistoricalUsageServiceResponseAllOf';
 import Http3 from './model/Http3';
 import Http3AllOf from './model/Http3AllOf';
+import HttpResponseFormat from './model/HttpResponseFormat';
+import HttpStreamFormat from './model/HttpStreamFormat';
 import IamPermission from './model/IamPermission';
 import IamRole from './model/IamRole';
 import IamRoleAllOf from './model/IamRoleAllOf';
@@ -214,6 +231,16 @@ import LoggingSyslogAllOf from './model/LoggingSyslogAllOf';
 import LoggingSyslogResponse from './model/LoggingSyslogResponse';
 import LoggingTlsCommon from './model/LoggingTlsCommon';
 import LoggingUseTls from './model/LoggingUseTls';
+import MutualAuthentication from './model/MutualAuthentication';
+import MutualAuthenticationData from './model/MutualAuthenticationData';
+import MutualAuthenticationDataAttributes from './model/MutualAuthenticationDataAttributes';
+import MutualAuthenticationResponse from './model/MutualAuthenticationResponse';
+import MutualAuthenticationResponseAttributes from './model/MutualAuthenticationResponseAttributes';
+import MutualAuthenticationResponseAttributesAllOf from './model/MutualAuthenticationResponseAttributesAllOf';
+import MutualAuthenticationResponseData from './model/MutualAuthenticationResponseData';
+import MutualAuthenticationResponseDataAllOf from './model/MutualAuthenticationResponseDataAllOf';
+import MutualAuthenticationsResponse from './model/MutualAuthenticationsResponse';
+import MutualAuthenticationsResponseAllOf from './model/MutualAuthenticationsResponseAllOf';
 import Package from './model/Package';
 import PackageMetadata from './model/PackageMetadata';
 import PackageResponse from './model/PackageResponse';
@@ -229,6 +256,9 @@ import PoolResponseAllOf from './model/PoolResponseAllOf';
 import Pop from './model/Pop';
 import PopCoordinates from './model/PopCoordinates';
 import PublicIpList from './model/PublicIpList';
+import PublishItem from './model/PublishItem';
+import PublishItemFormats from './model/PublishItemFormats';
+import PublishRequest from './model/PublishRequest';
 import PurgeKeys from './model/PurgeKeys';
 import PurgeResponse from './model/PurgeResponse';
 import RateLimiter from './model/RateLimiter';
@@ -242,6 +272,7 @@ import RelationshipCommonName from './model/RelationshipCommonName';
 import RelationshipCustomer from './model/RelationshipCustomer';
 import RelationshipCustomerCustomer from './model/RelationshipCustomerCustomer';
 import RelationshipMemberCustomer from './model/RelationshipMemberCustomer';
+import RelationshipMemberMutualAuthentication from './model/RelationshipMemberMutualAuthentication';
 import RelationshipMemberService from './model/RelationshipMemberService';
 import RelationshipMemberServiceInvitation from './model/RelationshipMemberServiceInvitation';
 import RelationshipMemberTlsActivation from './model/RelationshipMemberTlsActivation';
@@ -258,13 +289,17 @@ import RelationshipMemberWafFirewallVersion from './model/RelationshipMemberWafF
 import RelationshipMemberWafRule from './model/RelationshipMemberWafRule';
 import RelationshipMemberWafRuleRevision from './model/RelationshipMemberWafRuleRevision';
 import RelationshipMemberWafTag from './model/RelationshipMemberWafTag';
+import RelationshipMutualAuthentication from './model/RelationshipMutualAuthentication';
+import RelationshipMutualAuthenticationMutualAuthentication from './model/RelationshipMutualAuthenticationMutualAuthentication';
+import RelationshipMutualAuthentications from './model/RelationshipMutualAuthentications';
+import RelationshipMutualAuthenticationsMutualAuthentications from './model/RelationshipMutualAuthenticationsMutualAuthentications';
 import RelationshipService from './model/RelationshipService';
 import RelationshipServiceInvitations from './model/RelationshipServiceInvitations';
 import RelationshipServiceInvitationsCreate from './model/RelationshipServiceInvitationsCreate';
 import RelationshipServiceInvitationsCreateServiceInvitations from './model/RelationshipServiceInvitationsCreateServiceInvitations';
 import RelationshipServiceInvitationsServiceInvitations from './model/RelationshipServiceInvitationsServiceInvitations';
-import RelationshipServiceService from './model/RelationshipServiceService';
 import RelationshipServices from './model/RelationshipServices';
+import RelationshipServicesServices from './model/RelationshipServicesServices';
 import RelationshipTlsActivation from './model/RelationshipTlsActivation';
 import RelationshipTlsActivationTlsActivation from './model/RelationshipTlsActivationTlsActivation';
 import RelationshipTlsActivations from './model/RelationshipTlsActivations';
@@ -274,24 +309,27 @@ import RelationshipTlsBulkCertificates from './model/RelationshipTlsBulkCertific
 import RelationshipTlsCertificate from './model/RelationshipTlsCertificate';
 import RelationshipTlsCertificateTlsCertificate from './model/RelationshipTlsCertificateTlsCertificate';
 import RelationshipTlsCertificates from './model/RelationshipTlsCertificates';
+import RelationshipTlsCertificatesTlsCertificates from './model/RelationshipTlsCertificatesTlsCertificates';
 import RelationshipTlsConfiguration from './model/RelationshipTlsConfiguration';
 import RelationshipTlsConfigurationTlsConfiguration from './model/RelationshipTlsConfigurationTlsConfiguration';
 import RelationshipTlsConfigurations from './model/RelationshipTlsConfigurations';
+import RelationshipTlsConfigurationsTlsConfigurations from './model/RelationshipTlsConfigurationsTlsConfigurations';
 import RelationshipTlsDnsRecord from './model/RelationshipTlsDnsRecord';
 import RelationshipTlsDnsRecordDnsRecord from './model/RelationshipTlsDnsRecordDnsRecord';
 import RelationshipTlsDnsRecords from './model/RelationshipTlsDnsRecords';
 import RelationshipTlsDomain from './model/RelationshipTlsDomain';
 import RelationshipTlsDomainTlsDomain from './model/RelationshipTlsDomainTlsDomain';
 import RelationshipTlsDomains from './model/RelationshipTlsDomains';
+import RelationshipTlsDomainsTlsDomains from './model/RelationshipTlsDomainsTlsDomains';
 import RelationshipTlsPrivateKey from './model/RelationshipTlsPrivateKey';
 import RelationshipTlsPrivateKeyTlsPrivateKey from './model/RelationshipTlsPrivateKeyTlsPrivateKey';
 import RelationshipTlsPrivateKeys from './model/RelationshipTlsPrivateKeys';
+import RelationshipTlsPrivateKeysTlsPrivateKeys from './model/RelationshipTlsPrivateKeysTlsPrivateKeys';
 import RelationshipTlsSubscription from './model/RelationshipTlsSubscription';
 import RelationshipTlsSubscriptionTlsSubscription from './model/RelationshipTlsSubscriptionTlsSubscription';
 import RelationshipTlsSubscriptions from './model/RelationshipTlsSubscriptions';
 import RelationshipUser from './model/RelationshipUser';
 import RelationshipUserUser from './model/RelationshipUserUser';
-import RelationshipUserUserData from './model/RelationshipUserUserData';
 import RelationshipWafActiveRules from './model/RelationshipWafActiveRules';
 import RelationshipWafActiveRulesWafActiveRules from './model/RelationshipWafActiveRulesWafActiveRules';
 import RelationshipWafFirewall from './model/RelationshipWafFirewall';
@@ -308,10 +346,12 @@ import RelationshipWafRules from './model/RelationshipWafRules';
 import RelationshipWafTags from './model/RelationshipWafTags';
 import RelationshipWafTagsWafTags from './model/RelationshipWafTagsWafTags';
 import RelationshipsForInvitation from './model/RelationshipsForInvitation';
+import RelationshipsForMutualAuthentication from './model/RelationshipsForMutualAuthentication';
 import RelationshipsForStar from './model/RelationshipsForStar';
 import RelationshipsForTlsActivation from './model/RelationshipsForTlsActivation';
 import RelationshipsForTlsBulkCertificate from './model/RelationshipsForTlsBulkCertificate';
 import RelationshipsForTlsConfiguration from './model/RelationshipsForTlsConfiguration';
+import RelationshipsForTlsCsr from './model/RelationshipsForTlsCsr';
 import RelationshipsForTlsDomain from './model/RelationshipsForTlsDomain';
 import RelationshipsForTlsPrivateKey from './model/RelationshipsForTlsPrivateKey';
 import RelationshipsForTlsSubscription from './model/RelationshipsForTlsSubscription';
@@ -333,7 +373,6 @@ import RoleUser from './model/RoleUser';
 import SchemasContactResponse from './model/SchemasContactResponse';
 import SchemasSnippetResponse from './model/SchemasSnippetResponse';
 import SchemasUserResponse from './model/SchemasUserResponse';
-import SchemasVclResponse from './model/SchemasVclResponse';
 import SchemasVersion from './model/SchemasVersion';
 import SchemasVersionResponse from './model/SchemasVersionResponse';
 import SchemasWafFirewallVersion from './model/SchemasWafFirewallVersion';
@@ -345,6 +384,9 @@ import Service from './model/Service';
 import ServiceAuthorization from './model/ServiceAuthorization';
 import ServiceAuthorizationData from './model/ServiceAuthorizationData';
 import ServiceAuthorizationDataAttributes from './model/ServiceAuthorizationDataAttributes';
+import ServiceAuthorizationDataRelationships from './model/ServiceAuthorizationDataRelationships';
+import ServiceAuthorizationDataRelationshipsUser from './model/ServiceAuthorizationDataRelationshipsUser';
+import ServiceAuthorizationDataRelationshipsUserData from './model/ServiceAuthorizationDataRelationshipsUserData';
 import ServiceAuthorizationResponse from './model/ServiceAuthorizationResponse';
 import ServiceAuthorizationResponseData from './model/ServiceAuthorizationResponseData';
 import ServiceAuthorizationResponseDataAllOf from './model/ServiceAuthorizationResponseDataAllOf';
@@ -358,6 +400,7 @@ import ServiceIdAndVersion from './model/ServiceIdAndVersion';
 import ServiceInvitation from './model/ServiceInvitation';
 import ServiceInvitationData from './model/ServiceInvitationData';
 import ServiceInvitationDataAttributes from './model/ServiceInvitationDataAttributes';
+import ServiceInvitationDataRelationships from './model/ServiceInvitationDataRelationships';
 import ServiceInvitationResponse from './model/ServiceInvitationResponse';
 import ServiceInvitationResponseAllOf from './model/ServiceInvitationResponseAllOf';
 import ServiceInvitationResponseAllOfData from './model/ServiceInvitationResponseAllOfData';
@@ -417,6 +460,12 @@ import TlsConfigurationResponseData from './model/TlsConfigurationResponseData';
 import TlsConfigurationResponseDataAllOf from './model/TlsConfigurationResponseDataAllOf';
 import TlsConfigurationsResponse from './model/TlsConfigurationsResponse';
 import TlsConfigurationsResponseAllOf from './model/TlsConfigurationsResponseAllOf';
+import TlsCsr from './model/TlsCsr';
+import TlsCsrData from './model/TlsCsrData';
+import TlsCsrDataAttributes from './model/TlsCsrDataAttributes';
+import TlsCsrResponse from './model/TlsCsrResponse';
+import TlsCsrResponseAttributes from './model/TlsCsrResponseAttributes';
+import TlsCsrResponseData from './model/TlsCsrResponseData';
 import TlsDnsRecord from './model/TlsDnsRecord';
 import TlsDomainData from './model/TlsDomainData';
 import TlsDomainsResponse from './model/TlsDomainsResponse';
@@ -450,6 +499,7 @@ import TypeContact from './model/TypeContact';
 import TypeCustomer from './model/TypeCustomer';
 import TypeEvent from './model/TypeEvent';
 import TypeInvitation from './model/TypeInvitation';
+import TypeMutualAuthentication from './model/TypeMutualAuthentication';
 import TypeResource from './model/TypeResource';
 import TypeService from './model/TypeService';
 import TypeServiceAuthorization from './model/TypeServiceAuthorization';
@@ -459,6 +509,7 @@ import TypeTlsActivation from './model/TypeTlsActivation';
 import TypeTlsBulkCertificate from './model/TypeTlsBulkCertificate';
 import TypeTlsCertificate from './model/TypeTlsCertificate';
 import TypeTlsConfiguration from './model/TypeTlsConfiguration';
+import TypeTlsCsr from './model/TypeTlsCsr';
 import TypeTlsDnsRecord from './model/TypeTlsDnsRecord';
 import TypeTlsDomain from './model/TypeTlsDomain';
 import TypeTlsPrivateKey from './model/TypeTlsPrivateKey';
@@ -482,6 +533,7 @@ import VclResponse from './model/VclResponse';
 import Version from './model/Version';
 import VersionCreateResponse from './model/VersionCreateResponse';
 import VersionDetail from './model/VersionDetail';
+import VersionDetailSettings from './model/VersionDetailSettings';
 import VersionResponse from './model/VersionResponse';
 import VersionResponseAllOf from './model/VersionResponseAllOf';
 import WafActiveRule from './model/WafActiveRule';
@@ -547,9 +599,11 @@ import WafTagAttributes from './model/WafTagAttributes';
 import WafTagsResponse from './model/WafTagsResponse';
 import WafTagsResponseAllOf from './model/WafTagsResponseAllOf';
 import WafTagsResponseDataItem from './model/WafTagsResponseDataItem';
+import WsMessageFormat from './model/WsMessageFormat';
 import AclApi from './api/AclApi';
 import AclEntryApi from './api/AclEntryApi';
 import ApexRedirectApi from './api/ApexRedirectApi';
+import AutomationTokensApi from './api/AutomationTokensApi';
 import BackendApi from './api/BackendApi';
 import BillingApi from './api/BillingApi';
 import BillingAddressApi from './api/BillingAddressApi';
@@ -564,9 +618,8 @@ import DictionaryItemApi from './api/DictionaryItemApi';
 import DiffApi from './api/DiffApi';
 import DirectorApi from './api/DirectorApi';
 import DirectorBackendApi from './api/DirectorBackendApi';
-import DocsApi from './api/DocsApi';
 import DomainApi from './api/DomainApi';
-import DomainOwnershipsApi from './api/DomainOwnershipsApi';
+import EnabledProductsApi from './api/EnabledProductsApi';
 import EventsApi from './api/EventsApi';
 import GzipApi from './api/GzipApi';
 import HeaderApi from './api/HeaderApi';
@@ -604,10 +657,12 @@ import LoggingSftpApi from './api/LoggingSftpApi';
 import LoggingSplunkApi from './api/LoggingSplunkApi';
 import LoggingSumologicApi from './api/LoggingSumologicApi';
 import LoggingSyslogApi from './api/LoggingSyslogApi';
+import MutualAuthenticationApi from './api/MutualAuthenticationApi';
 import PackageApi from './api/PackageApi';
 import PoolApi from './api/PoolApi';
 import PopApi from './api/PopApi';
 import PublicIpListApi from './api/PublicIpListApi';
+import PublishApi from './api/PublishApi';
 import PurgeApi from './api/PurgeApi';
 import RateLimiterApi from './api/RateLimiterApi';
 import RealtimeApi from './api/RealtimeApi';
@@ -625,12 +680,12 @@ import TlsActivationsApi from './api/TlsActivationsApi';
 import TlsBulkCertificatesApi from './api/TlsBulkCertificatesApi';
 import TlsCertificatesApi from './api/TlsCertificatesApi';
 import TlsConfigurationsApi from './api/TlsConfigurationsApi';
+import TlsCsrsApi from './api/TlsCsrsApi';
 import TlsDomainsApi from './api/TlsDomainsApi';
 import TlsPrivateKeysApi from './api/TlsPrivateKeysApi';
 import TlsSubscriptionsApi from './api/TlsSubscriptionsApi';
 import TokensApi from './api/TokensApi';
 import UserApi from './api/UserApi';
-import VclApi from './api/VclApi';
 import VclDiffApi from './api/VclDiffApi';
 import VersionApi from './api/VersionApi';
 import WafActiveRulesApi from './api/WafActiveRulesApi';
@@ -675,7 +730,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 3.0.0-beta3
+* @version 3.0.0
 */
 export {
     /**
@@ -733,6 +788,54 @@ export {
     ApexRedirectAllOf,
 
     /**
+     * The AutomationToken model constructor.
+     * @property {module:model/AutomationToken}
+     */
+    AutomationToken,
+
+    /**
+     * The AutomationTokenCreateRequest model constructor.
+     * @property {module:model/AutomationTokenCreateRequest}
+     */
+    AutomationTokenCreateRequest,
+
+    /**
+     * The AutomationTokenCreateRequestAttributes model constructor.
+     * @property {module:model/AutomationTokenCreateRequestAttributes}
+     */
+    AutomationTokenCreateRequestAttributes,
+
+    /**
+     * The AutomationTokenCreateResponse model constructor.
+     * @property {module:model/AutomationTokenCreateResponse}
+     */
+    AutomationTokenCreateResponse,
+
+    /**
+     * The AutomationTokenCreateResponseAllOf model constructor.
+     * @property {module:model/AutomationTokenCreateResponseAllOf}
+     */
+    AutomationTokenCreateResponseAllOf,
+
+    /**
+     * The AutomationTokenResponse model constructor.
+     * @property {module:model/AutomationTokenResponse}
+     */
+    AutomationTokenResponse,
+
+    /**
+     * The AutomationTokenResponseAllOf model constructor.
+     * @property {module:model/AutomationTokenResponseAllOf}
+     */
+    AutomationTokenResponseAllOf,
+
+    /**
+     * The AwsRegion model constructor.
+     * @property {module:model/AwsRegion}
+     */
+    AwsRegion,
+
+    /**
      * The Backend model constructor.
      * @property {module:model/Backend}
      */
@@ -785,6 +888,18 @@ export {
      * @property {module:model/BillingAddressResponseData}
      */
     BillingAddressResponseData,
+
+    /**
+     * The BillingAddressVerificationErrorResponse model constructor.
+     * @property {module:model/BillingAddressVerificationErrorResponse}
+     */
+    BillingAddressVerificationErrorResponse,
+
+    /**
+     * The BillingAddressVerificationErrorResponseErrors model constructor.
+     * @property {module:model/BillingAddressVerificationErrorResponseErrors}
+     */
+    BillingAddressVerificationErrorResponseErrors,
 
     /**
      * The BillingEstimateResponse model constructor.
@@ -1051,6 +1166,36 @@ export {
     DomainResponse,
 
     /**
+     * The EnabledProduct model constructor.
+     * @property {module:model/EnabledProduct}
+     */
+    EnabledProduct,
+
+    /**
+     * The EnabledProductLinks model constructor.
+     * @property {module:model/EnabledProductLinks}
+     */
+    EnabledProductLinks,
+
+    /**
+     * The EnabledProductProduct model constructor.
+     * @property {module:model/EnabledProductProduct}
+     */
+    EnabledProductProduct,
+
+    /**
+     * The ErrorResponse model constructor.
+     * @property {module:model/ErrorResponse}
+     */
+    ErrorResponse,
+
+    /**
+     * The ErrorResponseData model constructor.
+     * @property {module:model/ErrorResponseData}
+     */
+    ErrorResponseData,
+
+    /**
      * The Event model constructor.
      * @property {module:model/Event}
      */
@@ -1247,6 +1392,18 @@ export {
      * @property {module:model/Http3AllOf}
      */
     Http3AllOf,
+
+    /**
+     * The HttpResponseFormat model constructor.
+     * @property {module:model/HttpResponseFormat}
+     */
+    HttpResponseFormat,
+
+    /**
+     * The HttpStreamFormat model constructor.
+     * @property {module:model/HttpStreamFormat}
+     */
+    HttpStreamFormat,
 
     /**
      * The IamPermission model constructor.
@@ -1897,6 +2054,66 @@ export {
     LoggingUseTls,
 
     /**
+     * The MutualAuthentication model constructor.
+     * @property {module:model/MutualAuthentication}
+     */
+    MutualAuthentication,
+
+    /**
+     * The MutualAuthenticationData model constructor.
+     * @property {module:model/MutualAuthenticationData}
+     */
+    MutualAuthenticationData,
+
+    /**
+     * The MutualAuthenticationDataAttributes model constructor.
+     * @property {module:model/MutualAuthenticationDataAttributes}
+     */
+    MutualAuthenticationDataAttributes,
+
+    /**
+     * The MutualAuthenticationResponse model constructor.
+     * @property {module:model/MutualAuthenticationResponse}
+     */
+    MutualAuthenticationResponse,
+
+    /**
+     * The MutualAuthenticationResponseAttributes model constructor.
+     * @property {module:model/MutualAuthenticationResponseAttributes}
+     */
+    MutualAuthenticationResponseAttributes,
+
+    /**
+     * The MutualAuthenticationResponseAttributesAllOf model constructor.
+     * @property {module:model/MutualAuthenticationResponseAttributesAllOf}
+     */
+    MutualAuthenticationResponseAttributesAllOf,
+
+    /**
+     * The MutualAuthenticationResponseData model constructor.
+     * @property {module:model/MutualAuthenticationResponseData}
+     */
+    MutualAuthenticationResponseData,
+
+    /**
+     * The MutualAuthenticationResponseDataAllOf model constructor.
+     * @property {module:model/MutualAuthenticationResponseDataAllOf}
+     */
+    MutualAuthenticationResponseDataAllOf,
+
+    /**
+     * The MutualAuthenticationsResponse model constructor.
+     * @property {module:model/MutualAuthenticationsResponse}
+     */
+    MutualAuthenticationsResponse,
+
+    /**
+     * The MutualAuthenticationsResponseAllOf model constructor.
+     * @property {module:model/MutualAuthenticationsResponseAllOf}
+     */
+    MutualAuthenticationsResponseAllOf,
+
+    /**
      * The Package model constructor.
      * @property {module:model/Package}
      */
@@ -1987,6 +2204,24 @@ export {
     PublicIpList,
 
     /**
+     * The PublishItem model constructor.
+     * @property {module:model/PublishItem}
+     */
+    PublishItem,
+
+    /**
+     * The PublishItemFormats model constructor.
+     * @property {module:model/PublishItemFormats}
+     */
+    PublishItemFormats,
+
+    /**
+     * The PublishRequest model constructor.
+     * @property {module:model/PublishRequest}
+     */
+    PublishRequest,
+
+    /**
      * The PurgeKeys model constructor.
      * @property {module:model/PurgeKeys}
      */
@@ -2063,6 +2298,12 @@ export {
      * @property {module:model/RelationshipMemberCustomer}
      */
     RelationshipMemberCustomer,
+
+    /**
+     * The RelationshipMemberMutualAuthentication model constructor.
+     * @property {module:model/RelationshipMemberMutualAuthentication}
+     */
+    RelationshipMemberMutualAuthentication,
 
     /**
      * The RelationshipMemberService model constructor.
@@ -2161,6 +2402,30 @@ export {
     RelationshipMemberWafTag,
 
     /**
+     * The RelationshipMutualAuthentication model constructor.
+     * @property {module:model/RelationshipMutualAuthentication}
+     */
+    RelationshipMutualAuthentication,
+
+    /**
+     * The RelationshipMutualAuthenticationMutualAuthentication model constructor.
+     * @property {module:model/RelationshipMutualAuthenticationMutualAuthentication}
+     */
+    RelationshipMutualAuthenticationMutualAuthentication,
+
+    /**
+     * The RelationshipMutualAuthentications model constructor.
+     * @property {module:model/RelationshipMutualAuthentications}
+     */
+    RelationshipMutualAuthentications,
+
+    /**
+     * The RelationshipMutualAuthenticationsMutualAuthentications model constructor.
+     * @property {module:model/RelationshipMutualAuthenticationsMutualAuthentications}
+     */
+    RelationshipMutualAuthenticationsMutualAuthentications,
+
+    /**
      * The RelationshipService model constructor.
      * @property {module:model/RelationshipService}
      */
@@ -2191,16 +2456,16 @@ export {
     RelationshipServiceInvitationsServiceInvitations,
 
     /**
-     * The RelationshipServiceService model constructor.
-     * @property {module:model/RelationshipServiceService}
-     */
-    RelationshipServiceService,
-
-    /**
      * The RelationshipServices model constructor.
      * @property {module:model/RelationshipServices}
      */
     RelationshipServices,
+
+    /**
+     * The RelationshipServicesServices model constructor.
+     * @property {module:model/RelationshipServicesServices}
+     */
+    RelationshipServicesServices,
 
     /**
      * The RelationshipTlsActivation model constructor.
@@ -2257,6 +2522,12 @@ export {
     RelationshipTlsCertificates,
 
     /**
+     * The RelationshipTlsCertificatesTlsCertificates model constructor.
+     * @property {module:model/RelationshipTlsCertificatesTlsCertificates}
+     */
+    RelationshipTlsCertificatesTlsCertificates,
+
+    /**
      * The RelationshipTlsConfiguration model constructor.
      * @property {module:model/RelationshipTlsConfiguration}
      */
@@ -2273,6 +2544,12 @@ export {
      * @property {module:model/RelationshipTlsConfigurations}
      */
     RelationshipTlsConfigurations,
+
+    /**
+     * The RelationshipTlsConfigurationsTlsConfigurations model constructor.
+     * @property {module:model/RelationshipTlsConfigurationsTlsConfigurations}
+     */
+    RelationshipTlsConfigurationsTlsConfigurations,
 
     /**
      * The RelationshipTlsDnsRecord model constructor.
@@ -2311,6 +2588,12 @@ export {
     RelationshipTlsDomains,
 
     /**
+     * The RelationshipTlsDomainsTlsDomains model constructor.
+     * @property {module:model/RelationshipTlsDomainsTlsDomains}
+     */
+    RelationshipTlsDomainsTlsDomains,
+
+    /**
      * The RelationshipTlsPrivateKey model constructor.
      * @property {module:model/RelationshipTlsPrivateKey}
      */
@@ -2327,6 +2610,12 @@ export {
      * @property {module:model/RelationshipTlsPrivateKeys}
      */
     RelationshipTlsPrivateKeys,
+
+    /**
+     * The RelationshipTlsPrivateKeysTlsPrivateKeys model constructor.
+     * @property {module:model/RelationshipTlsPrivateKeysTlsPrivateKeys}
+     */
+    RelationshipTlsPrivateKeysTlsPrivateKeys,
 
     /**
      * The RelationshipTlsSubscription model constructor.
@@ -2357,12 +2646,6 @@ export {
      * @property {module:model/RelationshipUserUser}
      */
     RelationshipUserUser,
-
-    /**
-     * The RelationshipUserUserData model constructor.
-     * @property {module:model/RelationshipUserUserData}
-     */
-    RelationshipUserUserData,
 
     /**
      * The RelationshipWafActiveRules model constructor.
@@ -2461,6 +2744,12 @@ export {
     RelationshipsForInvitation,
 
     /**
+     * The RelationshipsForMutualAuthentication model constructor.
+     * @property {module:model/RelationshipsForMutualAuthentication}
+     */
+    RelationshipsForMutualAuthentication,
+
+    /**
      * The RelationshipsForStar model constructor.
      * @property {module:model/RelationshipsForStar}
      */
@@ -2483,6 +2772,12 @@ export {
      * @property {module:model/RelationshipsForTlsConfiguration}
      */
     RelationshipsForTlsConfiguration,
+
+    /**
+     * The RelationshipsForTlsCsr model constructor.
+     * @property {module:model/RelationshipsForTlsCsr}
+     */
+    RelationshipsForTlsCsr,
 
     /**
      * The RelationshipsForTlsDomain model constructor.
@@ -2611,12 +2906,6 @@ export {
     SchemasUserResponse,
 
     /**
-     * The SchemasVclResponse model constructor.
-     * @property {module:model/SchemasVclResponse}
-     */
-    SchemasVclResponse,
-
-    /**
      * The SchemasVersion model constructor.
      * @property {module:model/SchemasVersion}
      */
@@ -2681,6 +2970,24 @@ export {
      * @property {module:model/ServiceAuthorizationDataAttributes}
      */
     ServiceAuthorizationDataAttributes,
+
+    /**
+     * The ServiceAuthorizationDataRelationships model constructor.
+     * @property {module:model/ServiceAuthorizationDataRelationships}
+     */
+    ServiceAuthorizationDataRelationships,
+
+    /**
+     * The ServiceAuthorizationDataRelationshipsUser model constructor.
+     * @property {module:model/ServiceAuthorizationDataRelationshipsUser}
+     */
+    ServiceAuthorizationDataRelationshipsUser,
+
+    /**
+     * The ServiceAuthorizationDataRelationshipsUserData model constructor.
+     * @property {module:model/ServiceAuthorizationDataRelationshipsUserData}
+     */
+    ServiceAuthorizationDataRelationshipsUserData,
 
     /**
      * The ServiceAuthorizationResponse model constructor.
@@ -2759,6 +3066,12 @@ export {
      * @property {module:model/ServiceInvitationDataAttributes}
      */
     ServiceInvitationDataAttributes,
+
+    /**
+     * The ServiceInvitationDataRelationships model constructor.
+     * @property {module:model/ServiceInvitationDataRelationships}
+     */
+    ServiceInvitationDataRelationships,
 
     /**
      * The ServiceInvitationResponse model constructor.
@@ -3115,6 +3428,42 @@ export {
     TlsConfigurationsResponseAllOf,
 
     /**
+     * The TlsCsr model constructor.
+     * @property {module:model/TlsCsr}
+     */
+    TlsCsr,
+
+    /**
+     * The TlsCsrData model constructor.
+     * @property {module:model/TlsCsrData}
+     */
+    TlsCsrData,
+
+    /**
+     * The TlsCsrDataAttributes model constructor.
+     * @property {module:model/TlsCsrDataAttributes}
+     */
+    TlsCsrDataAttributes,
+
+    /**
+     * The TlsCsrResponse model constructor.
+     * @property {module:model/TlsCsrResponse}
+     */
+    TlsCsrResponse,
+
+    /**
+     * The TlsCsrResponseAttributes model constructor.
+     * @property {module:model/TlsCsrResponseAttributes}
+     */
+    TlsCsrResponseAttributes,
+
+    /**
+     * The TlsCsrResponseData model constructor.
+     * @property {module:model/TlsCsrResponseData}
+     */
+    TlsCsrResponseData,
+
+    /**
      * The TlsDnsRecord model constructor.
      * @property {module:model/TlsDnsRecord}
      */
@@ -3313,6 +3662,12 @@ export {
     TypeInvitation,
 
     /**
+     * The TypeMutualAuthentication model constructor.
+     * @property {module:model/TypeMutualAuthentication}
+     */
+    TypeMutualAuthentication,
+
+    /**
      * The TypeResource model constructor.
      * @property {module:model/TypeResource}
      */
@@ -3365,6 +3720,12 @@ export {
      * @property {module:model/TypeTlsConfiguration}
      */
     TypeTlsConfiguration,
+
+    /**
+     * The TypeTlsCsr model constructor.
+     * @property {module:model/TypeTlsCsr}
+     */
+    TypeTlsCsr,
 
     /**
      * The TypeTlsDnsRecord model constructor.
@@ -3503,6 +3864,12 @@ export {
      * @property {module:model/VersionDetail}
      */
     VersionDetail,
+
+    /**
+     * The VersionDetailSettings model constructor.
+     * @property {module:model/VersionDetailSettings}
+     */
+    VersionDetailSettings,
 
     /**
      * The VersionResponse model constructor.
@@ -3895,6 +4262,12 @@ export {
     WafTagsResponseDataItem,
 
     /**
+     * The WsMessageFormat model constructor.
+     * @property {module:model/WsMessageFormat}
+     */
+    WsMessageFormat,
+
+    /**
     * The AclApi service constructor.
     * @property {module:api/AclApi}
     */
@@ -3911,6 +4284,12 @@ export {
     * @property {module:api/ApexRedirectApi}
     */
     ApexRedirectApi,
+
+    /**
+    * The AutomationTokensApi service constructor.
+    * @property {module:api/AutomationTokensApi}
+    */
+    AutomationTokensApi,
 
     /**
     * The BackendApi service constructor.
@@ -3997,22 +4376,16 @@ export {
     DirectorBackendApi,
 
     /**
-    * The DocsApi service constructor.
-    * @property {module:api/DocsApi}
-    */
-    DocsApi,
-
-    /**
     * The DomainApi service constructor.
     * @property {module:api/DomainApi}
     */
     DomainApi,
 
     /**
-    * The DomainOwnershipsApi service constructor.
-    * @property {module:api/DomainOwnershipsApi}
+    * The EnabledProductsApi service constructor.
+    * @property {module:api/EnabledProductsApi}
     */
-    DomainOwnershipsApi,
+    EnabledProductsApi,
 
     /**
     * The EventsApi service constructor.
@@ -4237,6 +4610,12 @@ export {
     LoggingSyslogApi,
 
     /**
+    * The MutualAuthenticationApi service constructor.
+    * @property {module:api/MutualAuthenticationApi}
+    */
+    MutualAuthenticationApi,
+
+    /**
     * The PackageApi service constructor.
     * @property {module:api/PackageApi}
     */
@@ -4259,6 +4638,12 @@ export {
     * @property {module:api/PublicIpListApi}
     */
     PublicIpListApi,
+
+    /**
+    * The PublishApi service constructor.
+    * @property {module:api/PublishApi}
+    */
+    PublishApi,
 
     /**
     * The PurgeApi service constructor.
@@ -4363,6 +4748,12 @@ export {
     TlsConfigurationsApi,
 
     /**
+    * The TlsCsrsApi service constructor.
+    * @property {module:api/TlsCsrsApi}
+    */
+    TlsCsrsApi,
+
+    /**
     * The TlsDomainsApi service constructor.
     * @property {module:api/TlsDomainsApi}
     */
@@ -4391,12 +4782,6 @@ export {
     * @property {module:api/UserApi}
     */
     UserApi,
-
-    /**
-    * The VclApi service constructor.
-    * @property {module:api/VclApi}
-    */
-    VclApi,
 
     /**
     * The VclDiffApi service constructor.

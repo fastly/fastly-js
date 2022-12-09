@@ -17,7 +17,7 @@ import TypeBillingAddress from './TypeBillingAddress';
 /**
  * The UpdateBillingAddressRequestData model module.
  * @module model/UpdateBillingAddressRequestData
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class UpdateBillingAddressRequestData {
     /**

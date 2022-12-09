@@ -18,7 +18,7 @@ import EventsResponse from '../model/EventsResponse';
 /**
 * Events service.
 * @module api/EventsApi
-* @version 3.0.0-beta3
+* @version 3.0.0
 */
 export default class EventsApi {
 
@@ -88,10 +88,11 @@ export default class EventsApi {
     /**
      * List all events for a particular customer. Events can be filtered by user, customer and event type. Events can be sorted by date.
      * @param {Object} options
-     * @param {String} [options.filter_event_type] - Limit the returned events to a specific `event_type`.
      * @param {String} [options.filter_customer_id] - Limit the results returned to a specific customer.
+     * @param {String} [options.filter_event_type] - Limit the returned events to a specific `event_type`.
      * @param {String} [options.filter_service_id] - Limit the results returned to a specific service.
      * @param {String} [options.filter_user_id] - Limit the results returned to a specific user.
+     * @param {String} [options.filter_token_id] - Limit the returned events to a specific token.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
@@ -103,10 +104,11 @@ export default class EventsApi {
       let pathParams = {
       };
       let queryParams = {
-        'filter[event_type]': options['filter_event_type'],
         'filter[customer_id]': options['filter_customer_id'],
+        'filter[event_type]': options['filter_event_type'],
         'filter[service_id]': options['filter_service_id'],
         'filter[user_id]': options['filter_user_id'],
+        'filter[token_id]': options['filter_token_id'],
         'page[number]': options['page_number'],
         'page[size]': options['page_size'],
         'sort': options['sort']
@@ -130,10 +132,11 @@ export default class EventsApi {
     /**
      * List all events for a particular customer. Events can be filtered by user, customer and event type. Events can be sorted by date.
      * @param {Object} options
-     * @param {String} [options.filter_event_type] - Limit the returned events to a specific `event_type`.
      * @param {String} [options.filter_customer_id] - Limit the results returned to a specific customer.
+     * @param {String} [options.filter_event_type] - Limit the returned events to a specific `event_type`.
      * @param {String} [options.filter_service_id] - Limit the results returned to a specific service.
      * @param {String} [options.filter_user_id] - Limit the results returned to a specific user.
+     * @param {String} [options.filter_token_id] - Limit the returned events to a specific token.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.

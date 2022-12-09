@@ -16,7 +16,7 @@ import RelationshipMemberTlsDomain from './RelationshipMemberTlsDomain';
 /**
  * The RelationshipTlsDomainTlsDomain model module.
  * @module model/RelationshipTlsDomainTlsDomain
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class RelationshipTlsDomainTlsDomain {
     /**
@@ -48,7 +48,7 @@ class RelationshipTlsDomainTlsDomain {
             obj = obj || new RelationshipTlsDomainTlsDomain();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [RelationshipMemberTlsDomain]);
+                obj['data'] = RelationshipMemberTlsDomain.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class RelationshipTlsDomainTlsDomain {
 }
 
 /**
- * @member {Array.<module:model/RelationshipMemberTlsDomain>} data
+ * @member {module:model/RelationshipMemberTlsDomain} data
  */
 RelationshipTlsDomainTlsDomain.prototype['data'] = undefined;
 

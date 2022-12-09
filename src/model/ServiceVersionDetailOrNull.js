@@ -22,23 +22,25 @@ import HealthcheckResponse from './HealthcheckResponse';
 import RequestSettingsResponse from './RequestSettingsResponse';
 import ResponseObjectResponse from './ResponseObjectResponse';
 import SchemasSnippetResponse from './SchemasSnippetResponse';
-import SchemasVclResponse from './SchemasVclResponse';
-import ServiceVersionDetail from './ServiceVersionDetail';
-import Settings from './Settings';
+import SchemasVersionResponse from './SchemasVersionResponse';
+import VclResponse from './VclResponse';
+import VersionDetail from './VersionDetail';
+import VersionDetailSettings from './VersionDetailSettings';
 
 /**
  * The ServiceVersionDetailOrNull model module.
  * @module model/ServiceVersionDetailOrNull
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class ServiceVersionDetailOrNull {
     /**
      * Constructs a new <code>ServiceVersionDetailOrNull</code>.
      * @alias module:model/ServiceVersionDetailOrNull
-     * @implements module:model/ServiceVersionDetail
+     * @implements module:model/SchemasVersionResponse
+     * @implements module:model/VersionDetail
      */
     constructor() { 
-        ServiceVersionDetail.initialize(this);
+        SchemasVersionResponse.initialize(this);VersionDetail.initialize(this);
         ServiceVersionDetailOrNull.initialize(this);
     }
 
@@ -60,7 +62,8 @@ class ServiceVersionDetailOrNull {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ServiceVersionDetailOrNull();
-            ServiceVersionDetail.constructFromObject(data, obj);
+            SchemasVersionResponse.constructFromObject(data, obj);
+            VersionDetail.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('active')) {
                 obj['active'] = ApiClient.convertToType(data['active'], 'Boolean');
@@ -126,13 +129,13 @@ class ServiceVersionDetailOrNull {
                 obj['response_objects'] = ApiClient.convertToType(data['response_objects'], [ResponseObjectResponse]);
             }
             if (data.hasOwnProperty('settings')) {
-                obj['settings'] = ApiClient.convertToType(data['settings'], Settings);
+                obj['settings'] = VersionDetailSettings.constructFromObject(data['settings']);
             }
             if (data.hasOwnProperty('snippets')) {
                 obj['snippets'] = ApiClient.convertToType(data['snippets'], [SchemasSnippetResponse]);
             }
             if (data.hasOwnProperty('vcls')) {
-                obj['vcls'] = ApiClient.convertToType(data['vcls'], [SchemasVclResponse]);
+                obj['vcls'] = ApiClient.convertToType(data['vcls'], [VclResponse]);
             }
             if (data.hasOwnProperty('wordpress')) {
                 obj['wordpress'] = ApiClient.convertToType(data['wordpress'], [Object]);
@@ -274,8 +277,7 @@ ServiceVersionDetailOrNull.prototype['request_settings'] = undefined;
 ServiceVersionDetailOrNull.prototype['response_objects'] = undefined;
 
 /**
- * List of default settings for this service.
- * @member {module:model/Settings} settings
+ * @member {module:model/VersionDetailSettings} settings
  */
 ServiceVersionDetailOrNull.prototype['settings'] = undefined;
 
@@ -287,7 +289,7 @@ ServiceVersionDetailOrNull.prototype['snippets'] = undefined;
 
 /**
  * List of VCL files for this service.
- * @member {Array.<module:model/SchemasVclResponse>} vcls
+ * @member {Array.<module:model/VclResponse>} vcls
  */
 ServiceVersionDetailOrNull.prototype['vcls'] = undefined;
 
@@ -298,135 +300,135 @@ ServiceVersionDetailOrNull.prototype['vcls'] = undefined;
 ServiceVersionDetailOrNull.prototype['wordpress'] = undefined;
 
 
-// Implement ServiceVersionDetail interface:
+// Implement SchemasVersionResponse interface:
 /**
  * Whether this is the active version or not.
  * @member {Boolean} active
  * @default false
  */
-ServiceVersionDetail.prototype['active'] = false;
+SchemasVersionResponse.prototype['active'] = false;
 /**
  * A freeform descriptive note.
  * @member {String} comment
  */
-ServiceVersionDetail.prototype['comment'] = undefined;
+SchemasVersionResponse.prototype['comment'] = undefined;
 /**
  * Unused at this time.
  * @member {Boolean} deployed
  */
-ServiceVersionDetail.prototype['deployed'] = undefined;
+SchemasVersionResponse.prototype['deployed'] = undefined;
 /**
  * Whether this version is locked or not. Objects can not be added or edited on locked versions.
  * @member {Boolean} locked
  * @default false
  */
-ServiceVersionDetail.prototype['locked'] = false;
+SchemasVersionResponse.prototype['locked'] = false;
 /**
  * The number of this version.
  * @member {Number} number
  */
-ServiceVersionDetail.prototype['number'] = undefined;
+SchemasVersionResponse.prototype['number'] = undefined;
 /**
  * Unused at this time.
  * @member {Boolean} staging
  * @default false
  */
-ServiceVersionDetail.prototype['staging'] = false;
+SchemasVersionResponse.prototype['staging'] = false;
 /**
  * Unused at this time.
  * @member {Boolean} testing
  * @default false
  */
-ServiceVersionDetail.prototype['testing'] = false;
+SchemasVersionResponse.prototype['testing'] = false;
 /**
  * Date and time in ISO 8601 format.
  * @member {Date} created_at
  */
-ServiceVersionDetail.prototype['created_at'] = undefined;
+SchemasVersionResponse.prototype['created_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
  * @member {Date} deleted_at
  */
-ServiceVersionDetail.prototype['deleted_at'] = undefined;
+SchemasVersionResponse.prototype['deleted_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
  * @member {Date} updated_at
  */
-ServiceVersionDetail.prototype['updated_at'] = undefined;
+SchemasVersionResponse.prototype['updated_at'] = undefined;
 /**
  * @member {String} service_id
  */
-ServiceVersionDetail.prototype['service_id'] = undefined;
+SchemasVersionResponse.prototype['service_id'] = undefined;
+// Implement VersionDetail interface:
 /**
  * List of backends associated to this service.
  * @member {Array.<module:model/BackendResponse>} backends
  */
-ServiceVersionDetail.prototype['backends'] = undefined;
+VersionDetail.prototype['backends'] = undefined;
 /**
  * List of cache settings associated to this service.
  * @member {Array.<module:model/CacheSettingResponse>} cache_settings
  */
-ServiceVersionDetail.prototype['cache_settings'] = undefined;
+VersionDetail.prototype['cache_settings'] = undefined;
 /**
  * List of conditions associated to this service.
  * @member {Array.<module:model/ConditionResponse>} conditions
  */
-ServiceVersionDetail.prototype['conditions'] = undefined;
+VersionDetail.prototype['conditions'] = undefined;
 /**
  * List of directors associated to this service.
  * @member {Array.<module:model/Director>} directors
  */
-ServiceVersionDetail.prototype['directors'] = undefined;
+VersionDetail.prototype['directors'] = undefined;
 /**
  * List of domains associated to this service.
  * @member {Array.<module:model/DomainResponse>} domains
  */
-ServiceVersionDetail.prototype['domains'] = undefined;
+VersionDetail.prototype['domains'] = undefined;
 /**
  * List of gzip rules associated to this service.
  * @member {Array.<module:model/GzipResponse>} gzips
  */
-ServiceVersionDetail.prototype['gzips'] = undefined;
+VersionDetail.prototype['gzips'] = undefined;
 /**
  * List of headers associated to this service.
  * @member {Array.<module:model/HeaderResponse>} headers
  */
-ServiceVersionDetail.prototype['headers'] = undefined;
+VersionDetail.prototype['headers'] = undefined;
 /**
  * List of healthchecks associated to this service.
  * @member {Array.<module:model/HealthcheckResponse>} healthchecks
  */
-ServiceVersionDetail.prototype['healthchecks'] = undefined;
+VersionDetail.prototype['healthchecks'] = undefined;
 /**
  * List of request settings for this service.
  * @member {Array.<module:model/RequestSettingsResponse>} request_settings
  */
-ServiceVersionDetail.prototype['request_settings'] = undefined;
+VersionDetail.prototype['request_settings'] = undefined;
 /**
  * List of response objects for this service.
  * @member {Array.<module:model/ResponseObjectResponse>} response_objects
  */
-ServiceVersionDetail.prototype['response_objects'] = undefined;
+VersionDetail.prototype['response_objects'] = undefined;
 /**
- * List of default settings for this service.
- * @member {module:model/Settings} settings
+ * @member {module:model/VersionDetailSettings} settings
  */
-ServiceVersionDetail.prototype['settings'] = undefined;
+VersionDetail.prototype['settings'] = undefined;
 /**
  * List of VCL snippets for this service.
  * @member {Array.<module:model/SchemasSnippetResponse>} snippets
  */
-ServiceVersionDetail.prototype['snippets'] = undefined;
+VersionDetail.prototype['snippets'] = undefined;
 /**
  * List of VCL files for this service.
- * @member {Array.<module:model/SchemasVclResponse>} vcls
+ * @member {Array.<module:model/VclResponse>} vcls
  */
-ServiceVersionDetail.prototype['vcls'] = undefined;
+VersionDetail.prototype['vcls'] = undefined;
 /**
  * A list of Wordpress rules with this service.
  * @member {Array.<Object>} wordpress
  */
-ServiceVersionDetail.prototype['wordpress'] = undefined;
+VersionDetail.prototype['wordpress'] = undefined;
 
 
 

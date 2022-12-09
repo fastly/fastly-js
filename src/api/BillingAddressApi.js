@@ -14,12 +14,13 @@
 import ApiClient from "../ApiClient";
 import BillingAddressRequest from '../model/BillingAddressRequest';
 import BillingAddressResponse from '../model/BillingAddressResponse';
+import BillingAddressVerificationErrorResponse from '../model/BillingAddressVerificationErrorResponse';
 import UpdateBillingAddressRequest from '../model/UpdateBillingAddressRequest';
 
 /**
 * BillingAddress service.
 * @module api/BillingAddressApi
-* @version 3.0.0-beta3
+* @version 3.0.0
 */
 export default class BillingAddressApi {
 

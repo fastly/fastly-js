@@ -11,12 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import RelationshipTlsConfigurationTlsConfiguration from './RelationshipTlsConfigurationTlsConfiguration';
+import RelationshipTlsConfigurationsTlsConfigurations from './RelationshipTlsConfigurationsTlsConfigurations';
 
 /**
  * The RelationshipTlsConfigurations model module.
  * @module model/RelationshipTlsConfigurations
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class RelationshipTlsConfigurations {
     /**
@@ -48,7 +48,7 @@ class RelationshipTlsConfigurations {
             obj = obj || new RelationshipTlsConfigurations();
 
             if (data.hasOwnProperty('tls_configurations')) {
-                obj['tls_configurations'] = RelationshipTlsConfigurationTlsConfiguration.constructFromObject(data['tls_configurations']);
+                obj['tls_configurations'] = RelationshipTlsConfigurationsTlsConfigurations.constructFromObject(data['tls_configurations']);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class RelationshipTlsConfigurations {
 }
 
 /**
- * @member {module:model/RelationshipTlsConfigurationTlsConfiguration} tls_configurations
+ * @member {module:model/RelationshipTlsConfigurationsTlsConfigurations} tls_configurations
  */
 RelationshipTlsConfigurations.prototype['tls_configurations'] = undefined;
 

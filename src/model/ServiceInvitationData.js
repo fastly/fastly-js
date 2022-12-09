@@ -11,14 +11,14 @@
  */
 
 import ApiClient from '../ApiClient';
-import RelationshipService from './RelationshipService';
 import ServiceInvitationDataAttributes from './ServiceInvitationDataAttributes';
+import ServiceInvitationDataRelationships from './ServiceInvitationDataRelationships';
 import TypeServiceInvitation from './TypeServiceInvitation';
 
 /**
  * The ServiceInvitationData model module.
  * @module model/ServiceInvitationData
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class ServiceInvitationData {
     /**
@@ -56,7 +56,7 @@ class ServiceInvitationData {
                 obj['attributes'] = ServiceInvitationDataAttributes.constructFromObject(data['attributes']);
             }
             if (data.hasOwnProperty('relationships')) {
-                obj['relationships'] = ApiClient.convertToType(data['relationships'], RelationshipService);
+                obj['relationships'] = ServiceInvitationDataRelationships.constructFromObject(data['relationships']);
             }
         }
         return obj;
@@ -76,8 +76,7 @@ ServiceInvitationData.prototype['type'] = undefined;
 ServiceInvitationData.prototype['attributes'] = undefined;
 
 /**
- * Service the accepting user will have access to.
- * @member {module:model/RelationshipService} relationships
+ * @member {module:model/ServiceInvitationDataRelationships} relationships
  */
 ServiceInvitationData.prototype['relationships'] = undefined;
 

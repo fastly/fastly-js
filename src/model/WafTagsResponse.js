@@ -21,7 +21,7 @@ import WafTagsResponseDataItem from './WafTagsResponseDataItem';
 /**
  * The WafTagsResponse model module.
  * @module model/WafTagsResponse
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class WafTagsResponse {
     /**

@@ -18,7 +18,7 @@ import LoggingSumologicAllOf from './LoggingSumologicAllOf';
 /**
  * The LoggingSumologic model module.
  * @module model/LoggingSumologic
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class LoggingSumologic {
     /**
@@ -94,7 +94,7 @@ LoggingSumologic.prototype['name'] = undefined;
 LoggingSumologic.prototype['placement'] = undefined;
 
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
  * @member {module:model/LoggingSumologic.FormatVersionEnum} format_version
  * @default FormatVersionEnum.v2
  */
@@ -137,7 +137,7 @@ LoggingCommon.prototype['name'] = undefined;
  */
 LoggingCommon.prototype['placement'] = undefined;
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
  * @member {module:model/LoggingCommon.FormatVersionEnum} format_version
  * @default FormatVersionEnum.v2
  */

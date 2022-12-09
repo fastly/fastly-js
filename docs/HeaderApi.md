@@ -36,7 +36,7 @@ const options = {
   priority: 100,
   regex: "regex_example",
   request_condition: "request_condition_example",
-  response_condition: null,
+  response_condition: "response_condition_example",
   src: "src_example",
   substitution: "substitution_example",
   type: "request",
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 **priority** | **Number** | Priority determines execution order. Lower numbers execute first. | [optional] [defaults to 100]
 **regex** | **String** | Regular expression to use. Only applies to `regex` and `regex_repeat` actions. | [optional]
 **request_condition** | **String** | Condition which, if met, will select this configuration during a request. Optional. | [optional]
-**response_condition** | [**String**](String.md) | Optional name of a response condition to apply. | [optional]
+**response_condition** | **String** | Optional name of a response condition to apply. | [optional]
 **src** | **String** | Variable to be used as a source for the header content. Does not apply to `delete` action. | [optional]
 **substitution** | **String** | Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions. | [optional]
 **type** | **String** | Accepts a string value. | [optional] [one of: "request", "cache", "response"]
@@ -213,7 +213,7 @@ const options = {
   priority: 100,
   regex: "regex_example",
   request_condition: "request_condition_example",
-  response_condition: null,
+  response_condition: "response_condition_example",
   src: "src_example",
   substitution: "substitution_example",
   type: "request",
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 **priority** | **Number** | Priority determines execution order. Lower numbers execute first. | [optional] [defaults to 100]
 **regex** | **String** | Regular expression to use. Only applies to `regex` and `regex_repeat` actions. | [optional]
 **request_condition** | **String** | Condition which, if met, will select this configuration during a request. Optional. | [optional]
-**response_condition** | [**String**](String.md) | Optional name of a response condition to apply. | [optional]
+**response_condition** | **String** | Optional name of a response condition to apply. | [optional]
 **src** | **String** | Variable to be used as a source for the header content. Does not apply to `delete` action. | [optional]
 **substitution** | **String** | Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions. | [optional]
 **type** | **String** | Accepts a string value. | [optional] [one of: "request", "cache", "response"]

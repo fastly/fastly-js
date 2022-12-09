@@ -20,7 +20,7 @@ import WafRuleRevisionResponseDataAllOf from './WafRuleRevisionResponseDataAllOf
 /**
  * The WafRuleRevisionResponseData model module.
  * @module model/WafRuleRevisionResponseData
- * @version 3.0.0-beta3
+ * @version 3.0.0
  */
 class WafRuleRevisionResponseData {
     /**
