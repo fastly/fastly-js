@@ -6,15 +6,23 @@ TAG="${RELEASE_TAG#release/}"
 # strip leading v
 TAG_VALUE="${TAG#v}"
 
-# detect trailing -dry
+# strip trailing -dry
 VERSION="${TAG_VALUE%-dry}"
+
+# detect valid semver
+VALID_VERSION=$(npx -y semver-parser-cli@0.2.0 "${VERSION}" --field matches)
+if [ "${VALID_VERSION}" != "true" ]; then
+  exit 1
+fi
+
+# Detect dry run mode
 DRY_RUN=0
 if [ "${TAG_VALUE}" != "${VERSION}" ]; then
     DRY_RUN=1
 fi
 
 # publish tag ('alpha', 'beta', etc.) is
-PUBLISH_TAG="$(npx -y semver-parser-cli@latest "${VERSION}" --field preid)"
+PUBLISH_TAG="$(npx -y semver-parser-cli@0.2.0 "${VERSION}" --field preid)"
 if [ "${PUBLISH_TAG}" == "undefined" ]; then
   PUBLISH_TAG=latest
 fi
