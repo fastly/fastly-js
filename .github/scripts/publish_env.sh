@@ -21,7 +21,7 @@ if [ "${TAG_VALUE}" != "${VERSION}" ]; then
     DRY_RUN=1
 fi
 
-# publish tag ('alpha', 'beta', etc.) is
+# publish tag ('alpha', 'beta', etc.) is used to tag the release
 PUBLISH_TAG="$(npx -y semver-parser-cli@0.2.0 "${VERSION}" --field preid)"
 if [ "${PUBLISH_TAG}" == "undefined" ]; then
   PUBLISH_TAG=latest
