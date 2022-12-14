@@ -33,7 +33,7 @@ jobs:
         working-directory: ./main
         shell: bash
       - name: Write release body file
-        run: API_CLIENT_NAME=JavaScript CODE_PATH=./main ./main/.github/scripts/release_body.sh > ./dist/release_body.txt
+        run: CODE_PATH=./main ./main/.github/scripts/release_body.sh > ./dist/release_body.txt
         shell: bash
       - name: Create release (dry run)
         if: ${{ env.DRY_RUN == '1' }}
