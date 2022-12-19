@@ -19,7 +19,7 @@ const DEFAULT_RATELIMIT = 1000;
 
 /**
 * @module ApiClient
-* @version 3.0.0
+* @version 3.0.1-alpha.1
 */
 
 /**
@@ -66,7 +66,7 @@ class ApiClient {
          * @default {}
          */
         this.defaultHeaders = {
-            'User-Agent': 'fastly-js/3.0.0'
+            'User-Agent': 'fastly-js/3.0.1-alpha.1'
         };
 
         /**

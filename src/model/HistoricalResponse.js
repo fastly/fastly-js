@@ -19,7 +19,7 @@ import Results from './Results';
 /**
  * The HistoricalResponse model module.
  * @module model/HistoricalResponse
- * @version 3.0.0
+ * @version 3.0.1-alpha.1
  */
 class HistoricalResponse {
     /**

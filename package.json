@@ -1,6 +1,6 @@
 {
   "name": "fastly",
-  "version": "3.0.0",
+  "version": "3.0.1-alpha.1",
   "description": "A JavaScript client library for interacting with most facets of the Fastly API.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -13,7 +13,7 @@
     "fs": false
   },
   "engines": {
-    "node": ">= 16.0.0"
+    "node": "^16"
   },
   "dependencies": {
     "superagent": "^6.1.0"

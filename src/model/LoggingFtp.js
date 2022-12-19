@@ -18,7 +18,7 @@ import LoggingGenericCommon from './LoggingGenericCommon';
 /**
  * The LoggingFtp model module.
  * @module model/LoggingFtp
- * @version 3.0.0
+ * @version 3.0.1-alpha.1
  */
 class LoggingFtp {
     /**

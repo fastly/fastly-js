@@ -17,7 +17,7 @@ import EnabledProductProduct from './EnabledProductProduct';
 /**
  * The EnabledProduct model module.
  * @module model/EnabledProduct
- * @version 3.0.0
+ * @version 3.0.1-alpha.1
  */
 class EnabledProduct {
     /**

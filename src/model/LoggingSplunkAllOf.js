@@ -16,7 +16,7 @@ import LoggingUseTls from './LoggingUseTls';
 /**
  * The LoggingSplunkAllOf model module.
  * @module model/LoggingSplunkAllOf
- * @version 3.0.0
+ * @version 3.0.1-alpha.1
  */
 class LoggingSplunkAllOf {
     /**

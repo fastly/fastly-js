@@ -16,7 +16,7 @@ import TlsDomainData from './TlsDomainData';
 /**
  * The TlsDomainsResponseAllOf model module.
  * @module model/TlsDomainsResponseAllOf
- * @version 3.0.0
+ * @version 3.0.1-alpha.1
  */
 class TlsDomainsResponseAllOf {
     /**

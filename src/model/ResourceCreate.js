@@ -17,7 +17,7 @@ import ResourceCreateAllOf from './ResourceCreateAllOf';
 /**
  * The ResourceCreate model module.
  * @module model/ResourceCreate
- * @version 3.0.0
+ * @version 3.0.1-alpha.1
  */
 class ResourceCreate {
     /**

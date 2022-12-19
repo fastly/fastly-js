@@ -17,7 +17,7 @@ import EnabledProduct from '../model/EnabledProduct';
 /**
 * EnabledProducts service.
 * @module api/EnabledProductsApi
-* @version 3.0.0
+* @version 3.0.1-alpha.1
 */
 export default class EnabledProductsApi {
 

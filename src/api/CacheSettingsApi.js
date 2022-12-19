@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * CacheSettings service.
 * @module api/CacheSettingsApi
-* @version 3.0.0
+* @version 3.0.1-alpha.1
 */
 export default class CacheSettingsApi {
 
