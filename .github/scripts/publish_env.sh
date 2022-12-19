@@ -27,7 +27,9 @@ if [ "${PUBLISH_TAG}" == "undefined" ]; then
   PUBLISH_TAG=latest
 fi
 
+echo "API_CLIENT_NAME=JavaScript"
+echo "PROJECT_NAME=fastly-js"
+echo "PACKAGE_REPO_NAME=NPM"
 echo "VERSION=${VERSION}"
 echo "DRY_RUN=${DRY_RUN}"
 echo "PUBLISH_TAG=${PUBLISH_TAG}"
-echo "PACKAGE_FILENAME=fastly-${VERSION}.tgz"
