@@ -48,7 +48,7 @@ The Fastly API requires an [API token](https://developer.fastly.com/reference/ap
 Fastly.ApiClient.instance.authenticate("YOUR_API_TOKEN");
 ```
 
-## Endpoints
+## Documentation for API Endpoints
 
 The main documentation for the Fastly API can be found on our [Developer Hub](https://developer.fastly.com/reference/api).
 
