@@ -94,6 +94,8 @@ import EventResponse from './model/EventResponse';
 import EventsResponse from './model/EventsResponse';
 import EventsResponseAllOf from './model/EventsResponseAllOf';
 import GenericTokenError from './model/GenericTokenError';
+import GetStoresResponse from './model/GetStoresResponse';
+import GetStoresResponseMeta from './model/GetStoresResponseMeta';
 import Gzip from './model/Gzip';
 import GzipResponse from './model/GzipResponse';
 import Header from './model/Header';
@@ -145,6 +147,7 @@ import InvitationResponseData from './model/InvitationResponseData';
 import InvitationResponseDataAllOf from './model/InvitationResponseDataAllOf';
 import InvitationsResponse from './model/InvitationsResponse';
 import InvitationsResponseAllOf from './model/InvitationsResponseAllOf';
+import KeyResponse from './model/KeyResponse';
 import LoggingAddressAndPort from './model/LoggingAddressAndPort';
 import LoggingAzureblob from './model/LoggingAzureblob';
 import LoggingAzureblobAllOf from './model/LoggingAzureblobAllOf';
@@ -420,6 +423,8 @@ import StarData from './model/StarData';
 import StarResponse from './model/StarResponse';
 import StarResponseAllOf from './model/StarResponseAllOf';
 import Stats from './model/Stats';
+import Store from './model/Store';
+import StoreResponse from './model/StoreResponse';
 import Timestamps from './model/Timestamps';
 import TimestampsNoDelete from './model/TimestampsNoDelete';
 import TlsActivation from './model/TlsActivation';
@@ -658,6 +663,7 @@ import LoggingSplunkApi from './api/LoggingSplunkApi';
 import LoggingSumologicApi from './api/LoggingSumologicApi';
 import LoggingSyslogApi from './api/LoggingSyslogApi';
 import MutualAuthenticationApi from './api/MutualAuthenticationApi';
+import ObjectStoreApi from './api/ObjectStoreApi';
 import PackageApi from './api/PackageApi';
 import PoolApi from './api/PoolApi';
 import PopApi from './api/PopApi';
@@ -730,7 +736,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 3.0.1-alpha.1
+* @version v3.1.0
 */
 export {
     /**
@@ -1232,6 +1238,18 @@ export {
     GenericTokenError,
 
     /**
+     * The GetStoresResponse model constructor.
+     * @property {module:model/GetStoresResponse}
+     */
+    GetStoresResponse,
+
+    /**
+     * The GetStoresResponseMeta model constructor.
+     * @property {module:model/GetStoresResponseMeta}
+     */
+    GetStoresResponseMeta,
+
+    /**
      * The Gzip model constructor.
      * @property {module:model/Gzip}
      */
@@ -1536,6 +1554,12 @@ export {
      * @property {module:model/InvitationsResponseAllOf}
      */
     InvitationsResponseAllOf,
+
+    /**
+     * The KeyResponse model constructor.
+     * @property {module:model/KeyResponse}
+     */
+    KeyResponse,
 
     /**
      * The LoggingAddressAndPort model constructor.
@@ -3188,6 +3212,18 @@ export {
     Stats,
 
     /**
+     * The Store model constructor.
+     * @property {module:model/Store}
+     */
+    Store,
+
+    /**
+     * The StoreResponse model constructor.
+     * @property {module:model/StoreResponse}
+     */
+    StoreResponse,
+
+    /**
      * The Timestamps model constructor.
      * @property {module:model/Timestamps}
      */
@@ -4614,6 +4650,12 @@ export {
     * @property {module:api/MutualAuthenticationApi}
     */
     MutualAuthenticationApi,
+
+    /**
+    * The ObjectStoreApi service constructor.
+    * @property {module:api/ObjectStoreApi}
+    */
+    ObjectStoreApi,
 
     /**
     * The PackageApi service constructor.

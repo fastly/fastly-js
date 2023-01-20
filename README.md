@@ -2,7 +2,11 @@
 
 An asynchronous JavaScript client library for interacting with most facets of the [Fastly API](https://developer.fastly.com/reference/api).
 
-> ⚠️ This client library (`3.0.1-alpha.1`)  is an early-access release. Features may change without notice. Use at your own risk.
+> NOTE: This 3.x release is a new [generated API client](https://dev.to/fastly/better-fastly-api-clients-with-openapi-generator-3lno) for the Fastly API.
+> The previous 2.x version is no longer supported, but can be found at https://github.com/thisandagain/fastly.
+
+
+> ⚠️ This client library (`v3.1.0`)  is an early-access release. Features may change without notice. Use at your own risk.
 
 **We strongly recommend that you do not install alpha and beta releases on live production services.** No official support is provided for such releases. Please try out the library in a test environment, see what breaks without worrying about consequences, and give us [feedback](#issues).
 
@@ -18,10 +22,10 @@ import Fastly from "fastly";
 
 const apiInstance = new Fastly.AclApi();
 
-// If the FASTLY_API_TOKEN environment variable is set, 
+// If the FASTLY_API_TOKEN environment variable is set,
 // the client will use it to authenticate all API requests.
 // Alternatively, you may authorize the client instance
-// with a Fastly API token, which will override 
+// with a Fastly API token, which will override
 // the environment variable.
 // Fastly.ApiClient.instance.authenticate("YOUR_API_TOKEN");
 
@@ -314,6 +318,14 @@ Class | Method | Description
 *Fastly.MutualAuthenticationApi* | [**getMutualAuthentication**](docs/MutualAuthenticationApi.md#getMutualAuthentication) | Get a Mutual Authentication
 *Fastly.MutualAuthenticationApi* | [**listMutualAuthentications**](docs/MutualAuthenticationApi.md#listMutualAuthentications) | List Mutual Authentications
 *Fastly.MutualAuthenticationApi* | [**patchMutualAuthentication**](docs/MutualAuthenticationApi.md#patchMutualAuthentication) | Update a Mutual Authentication
+*Fastly.ObjectStoreApi* | [**createStore**](docs/ObjectStoreApi.md#createStore) | Create an object store.
+*Fastly.ObjectStoreApi* | [**deleteKeyFromStore**](docs/ObjectStoreApi.md#deleteKeyFromStore) | Delete object store key.
+*Fastly.ObjectStoreApi* | [**deleteStore**](docs/ObjectStoreApi.md#deleteStore) | Delete an object store.
+*Fastly.ObjectStoreApi* | [**getKeys**](docs/ObjectStoreApi.md#getKeys) | List object store keys.
+*Fastly.ObjectStoreApi* | [**getStore**](docs/ObjectStoreApi.md#getStore) | Describe an object store.
+*Fastly.ObjectStoreApi* | [**getStores**](docs/ObjectStoreApi.md#getStores) | List object stores.
+*Fastly.ObjectStoreApi* | [**getValueForKey**](docs/ObjectStoreApi.md#getValueForKey) | Get object store key value.
+*Fastly.ObjectStoreApi* | [**setValueForKey**](docs/ObjectStoreApi.md#setValueForKey) | Insert object store key-value.
 *Fastly.PackageApi* | [**getPackage**](docs/PackageApi.md#getPackage) | Get details of the service&#39;s Compute@Edge package.
 *Fastly.PackageApi* | [**putPackage**](docs/PackageApi.md#putPackage) | Upload a Compute@Edge package.
 *Fastly.PoolApi* | [**createServerPool**](docs/PoolApi.md#createServerPool) | Create a server pool
@@ -365,6 +377,7 @@ Class | Method | Description
 *Fastly.ServiceAuthorizationsApi* | [**showServiceAuthorization**](docs/ServiceAuthorizationsApi.md#showServiceAuthorization) | Show service authorization
 *Fastly.ServiceAuthorizationsApi* | [**updateServiceAuthorization**](docs/ServiceAuthorizationsApi.md#updateServiceAuthorization) | Update service authorization
 *Fastly.SettingsApi* | [**getServiceSettings**](docs/SettingsApi.md#getServiceSettings) | Get service settings
+*Fastly.SettingsApi* | [**updateServiceSettings**](docs/SettingsApi.md#updateServiceSettings) | Update service settings
 *Fastly.SnippetApi* | [**createSnippet**](docs/SnippetApi.md#createSnippet) | Create a snippet
 *Fastly.SnippetApi* | [**deleteSnippet**](docs/SnippetApi.md#deleteSnippet) | Delete a snippet
 *Fastly.SnippetApi* | [**getSnippet**](docs/SnippetApi.md#getSnippet) | Get a versioned snippet

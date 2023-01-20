@@ -87,7 +87,7 @@ null (empty response body)
 ## `getMutualAuthentication`
 
 ```javascript
-getMutualAuthentication({ mutual_authentication_id })
+getMutualAuthentication({ mutual_authentication_id, [include] })
 ```
 
 Show a Mutual Authentication.
@@ -97,6 +97,7 @@ Show a Mutual Authentication.
 ```javascript
 const options = {
   mutual_authentication_id: "mutual_authentication_id_example", // required
+  include: "include_example",
 };
 
 apiInstance.getMutualAuthentication(options)
@@ -113,6 +114,7 @@ apiInstance.getMutualAuthentication(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **mutual_authentication_id** | **String** | Alphanumeric string identifying a mutual authentication. |
+**include** | **String** | Comma-separated list of related objects to include (optional). Permitted values: `tls_activations`. Including TLS activations will provide you with the TLS domain names that are related to your Mutual TLS authentication.  | [optional]
 
 ### Return type
 
@@ -122,7 +124,7 @@ Name | Type | Description  | Notes
 ## `listMutualAuthentications`
 
 ```javascript
-listMutualAuthentications({ , [page_number, ][page_size] })
+listMutualAuthentications({ , [include, ][page_number, ][page_size] })
 ```
 
 List all mutual authentications.
@@ -131,6 +133,7 @@ List all mutual authentications.
 
 ```javascript
 const options = {
+  include: "include_example",
   page_number: 1,
   page_size: 20,
 };
@@ -148,6 +151,7 @@ apiInstance.listMutualAuthentications(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+**include** | **String** | Comma-separated list of related objects to include (optional). Permitted values: `tls_activations`. Including TLS activations will provide you with the TLS domain names that are related to your Mutual TLS authentication.  | [optional]
 **page_number** | **Number** | Current page. | [optional]
 **page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
 

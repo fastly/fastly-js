@@ -19,7 +19,7 @@ import MutualAuthenticationsResponse from '../model/MutualAuthenticationsRespons
 /**
 * MutualAuthentication service.
 * @module api/MutualAuthenticationApi
-* @version 3.0.1-alpha.1
+* @version v3.1.0
 */
 export default class MutualAuthenticationApi {
 
@@ -132,6 +132,7 @@ export default class MutualAuthenticationApi {
      * Show a Mutual Authentication.
      * @param {Object} options
      * @param {String} options.mutual_authentication_id - Alphanumeric string identifying a mutual authentication.
+     * @param {String} [options.include] - Comma-separated list of related objects to include (optional). Permitted values: `tls_activations`. Including TLS activations will provide you with the TLS domain names that are related to your Mutual TLS authentication. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/MutualAuthenticationResponse} and HTTP response
      */
     getMutualAuthenticationWithHttpInfo(options = {}) {
@@ -145,6 +146,7 @@ export default class MutualAuthenticationApi {
         'mutual_authentication_id': options['mutual_authentication_id']
       };
       let queryParams = {
+        'include': options['include']
       };
       let headerParams = {
       };
@@ -166,6 +168,7 @@ export default class MutualAuthenticationApi {
      * Show a Mutual Authentication.
      * @param {Object} options
      * @param {String} options.mutual_authentication_id - Alphanumeric string identifying a mutual authentication.
+     * @param {String} [options.include] - Comma-separated list of related objects to include (optional). Permitted values: `tls_activations`. Including TLS activations will provide you with the TLS domain names that are related to your Mutual TLS authentication. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/MutualAuthenticationResponse}
      */
     getMutualAuthentication(options = {}) {
@@ -178,6 +181,7 @@ export default class MutualAuthenticationApi {
     /**
      * List all mutual authentications.
      * @param {Object} options
+     * @param {String} [options.include] - Comma-separated list of related objects to include (optional). Permitted values: `tls_activations`. Including TLS activations will provide you with the TLS domain names that are related to your Mutual TLS authentication. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/MutualAuthenticationsResponse} and HTTP response
@@ -188,6 +192,7 @@ export default class MutualAuthenticationApi {
       let pathParams = {
       };
       let queryParams = {
+        'include': options['include'],
         'page[number]': options['page_number'],
         'page[size]': options['page_size']
       };
@@ -210,6 +215,7 @@ export default class MutualAuthenticationApi {
     /**
      * List all mutual authentications.
      * @param {Object} options
+     * @param {String} [options.include] - Comma-separated list of related objects to include (optional). Permitted values: `tls_activations`. Including TLS activations will provide you with the TLS domain names that are related to your Mutual TLS authentication. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/MutualAuthenticationsResponse}

@@ -20,7 +20,7 @@ import TlsActivationsResponseAllOf from './TlsActivationsResponseAllOf';
 /**
  * The TlsActivationsResponse model module.
  * @module model/TlsActivationsResponse
- * @version 3.0.1-alpha.1
+ * @version v3.1.0
  */
 class TlsActivationsResponse {
     /**

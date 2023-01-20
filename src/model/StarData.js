@@ -17,7 +17,7 @@ import TypeStar from './TypeStar';
 /**
  * The StarData model module.
  * @module model/StarData
- * @version 3.0.1-alpha.1
+ * @version v3.1.0
  */
 class StarData {
     /**

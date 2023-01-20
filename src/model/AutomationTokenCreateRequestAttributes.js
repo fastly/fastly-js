@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AutomationTokenCreateRequestAttributes model module.
  * @module model/AutomationTokenCreateRequestAttributes
- * @version 3.0.1-alpha.1
+ * @version v3.1.0
  */
 class AutomationTokenCreateRequestAttributes {
     /**

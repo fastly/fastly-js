@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingS3AllOf model module.
  * @module model/LoggingS3AllOf
- * @version 3.0.1-alpha.1
+ * @version v3.1.0
  */
 class LoggingS3AllOf {
     /**

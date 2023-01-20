@@ -21,7 +21,7 @@ import WafFirewallsResponseAllOf from './WafFirewallsResponseAllOf';
 /**
  * The WafFirewallsResponse model module.
  * @module model/WafFirewallsResponse
- * @version 3.0.1-alpha.1
+ * @version v3.1.0
  */
 class WafFirewallsResponse {
     /**
