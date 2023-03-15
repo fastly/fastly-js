@@ -18,7 +18,7 @@ import TypeTlsSubscription from './TypeTlsSubscription';
 /**
  * The TlsSubscriptionData model module.
  * @module model/TlsSubscriptionData
- * @version v3.1.0
+ * @version 3.1.1
  */
 class TlsSubscriptionData {
     /**

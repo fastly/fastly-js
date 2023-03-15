@@ -4,8 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**x** | **Number** |  | [optional] 
-**y** | **Number** |  | [optional] 
 **latitude** | **Number** |  | [optional] 
 **longitude** | **Number** |  | [optional] 
 

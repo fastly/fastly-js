@@ -20,7 +20,7 @@ import WafActiveRuleResponseDataRelationships from './WafActiveRuleResponseDataR
 /**
  * The WafActiveRuleResponseData model module.
  * @module model/WafActiveRuleResponseData
- * @version v3.1.0
+ * @version 3.1.1
  */
 class WafActiveRuleResponseData {
     /**

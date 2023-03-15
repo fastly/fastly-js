@@ -13,18 +13,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The EnabledProductLinks model module.
- * @module model/EnabledProductLinks
- * @version v3.1.0
+ * The EnabledProductResponseService model module.
+ * @module model/EnabledProductResponseService
+ * @version 3.1.1
  */
-class EnabledProductLinks {
+class EnabledProductResponseService {
     /**
-     * Constructs a new <code>EnabledProductLinks</code>.
-     * @alias module:model/EnabledProductLinks
+     * Constructs a new <code>EnabledProductResponseService</code>.
+     * @alias module:model/EnabledProductResponseService
      */
     constructor() { 
         
-        EnabledProductLinks.initialize(this);
+        EnabledProductResponseService.initialize(this);
     }
 
     /**
@@ -36,21 +36,21 @@ class EnabledProductLinks {
     }
 
     /**
-     * Constructs a <code>EnabledProductLinks</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>EnabledProductResponseService</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/EnabledProductLinks} obj Optional instance to populate.
-     * @return {module:model/EnabledProductLinks} The populated <code>EnabledProductLinks</code> instance.
+     * @param {module:model/EnabledProductResponseService} obj Optional instance to populate.
+     * @return {module:model/EnabledProductResponseService} The populated <code>EnabledProductResponseService</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new EnabledProductLinks();
+            obj = obj || new EnabledProductResponseService();
 
-            if (data.hasOwnProperty('self')) {
-                obj['self'] = ApiClient.convertToType(data['self'], 'String');
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
-            if (data.hasOwnProperty('service')) {
-                obj['service'] = ApiClient.convertToType(data['service'], 'String');
+            if (data.hasOwnProperty('object')) {
+                obj['object'] = ApiClient.convertToType(data['object'], 'String');
             }
         }
         return obj;
@@ -60,19 +60,21 @@ class EnabledProductLinks {
 }
 
 /**
- * @member {String} self
+ * Service identifier
+ * @member {String} id
  */
-EnabledProductLinks.prototype['self'] = undefined;
+EnabledProductResponseService.prototype['id'] = undefined;
 
 /**
- * @member {String} service
+ * Name of the object
+ * @member {String} object
  */
-EnabledProductLinks.prototype['service'] = undefined;
+EnabledProductResponseService.prototype['object'] = undefined;
 
 
 
 
 
 
-export default EnabledProductLinks;
+export default EnabledProductResponseService;
 

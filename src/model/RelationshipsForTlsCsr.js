@@ -17,7 +17,7 @@ import RelationshipTlsPrivateKeyTlsPrivateKey from './RelationshipTlsPrivateKeyT
 /**
  * The RelationshipsForTlsCsr model module.
  * @module model/RelationshipsForTlsCsr
- * @version v3.1.0
+ * @version 3.1.1
  */
 class RelationshipsForTlsCsr {
     /**

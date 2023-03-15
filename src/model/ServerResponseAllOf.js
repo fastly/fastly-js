@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ServerResponseAllOf model module.
  * @module model/ServerResponseAllOf
- * @version v3.1.0
+ * @version 3.1.1
  */
 class ServerResponseAllOf {
     /**

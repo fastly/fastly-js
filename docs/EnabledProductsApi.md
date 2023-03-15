@@ -18,7 +18,7 @@ Method | Fastly API endpoint | Description
 disableProduct({ product_id, service_id })
 ```
 
-Disable a product on a service. Supported product IDs: `origin_inspector`,`domain_inspector`,`image_optimizer`, and `websockets`.
+Disable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, and `websockets`.
 
 ### Example
 
@@ -55,7 +55,7 @@ null (empty response body)
 enableProduct({ product_id, service_id })
 ```
 
-Enable a product on a service. Supported product IDs: `origin_inspector`,`domain_inspector`,`image_optimizer`, and `websockets`.
+Enable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, and `websockets`.
 
 ### Example
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EnabledProduct**](EnabledProduct.md)
+[**EnabledProductResponse**](EnabledProductResponse.md)
 
 
 ## `getEnabledProduct`
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 getEnabledProduct({ product_id, service_id })
 ```
 
-Get enabled product on a service. Supported product IDs: `origin_inspector`,`domain_inspector`,`image_optimizer`, and `websockets`.
+Get enabled product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, and `websockets`.
 
 ### Example
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EnabledProduct**](EnabledProduct.md)
+[**EnabledProductResponse**](EnabledProductResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

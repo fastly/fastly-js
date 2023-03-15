@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Results model module.
  * @module model/Results
- * @version v3.1.0
+ * @version 3.1.1
  */
 class Results {
     /**
@@ -635,6 +635,12 @@ class Results {
             if (data.hasOwnProperty('fanout_send_publishes')) {
                 obj['fanout_send_publishes'] = ApiClient.convertToType(data['fanout_send_publishes'], 'Number');
             }
+            if (data.hasOwnProperty('object_store_class_a_operations')) {
+                obj['object_store_class_a_operations'] = ApiClient.convertToType(data['object_store_class_a_operations'], 'Number');
+            }
+            if (data.hasOwnProperty('object_store_class_b_operations')) {
+                obj['object_store_class_b_operations'] = ApiClient.convertToType(data['object_store_class_b_operations'], 'Number');
+            }
             if (data.hasOwnProperty('object_store_read_requests')) {
                 obj['object_store_read_requests'] = ApiClient.convertToType(data['object_store_read_requests'], 'Number');
             }
@@ -736,7 +742,7 @@ Results.prototype['restarts'] = undefined;
 Results.prototype['hit_ratio'] = undefined;
 
 /**
- * Total bytes delivered (`resp_header_bytes` + `resp_body_bytes` + `bereq_header_bytes` + `bereq_body_bytes` + `compute_resp_header_bytes` + `compute_resp_body_bytes` + `compute_bereq_header_bytes` + `compute_bereq_body_bytes` + `websocket_resp_header_bytes` + `websocket_resp_body_bytes` + `websocket_bereq_header_bytes` + `websocket_bereq_body_bytes`).
+ * Total bytes delivered (`resp_header_bytes` + `resp_body_bytes` + `bereq_header_bytes` + `bereq_body_bytes` + `compute_resp_header_bytes` + `compute_resp_body_bytes` + `compute_bereq_header_bytes` + `compute_bereq_body_bytes` + `websocket_resp_header_bytes` + `websocket_resp_body_bytes` + `websocket_bereq_header_bytes` + `websocket_bereq_body_bytes` + `fanout_resp_header_bytes` + `fanout_resp_body_bytes` + `fanout_bereq_header_bytes` + `fanout_bereq_body_bytes`).
  * @member {Number} bandwidth
  */
 Results.prototype['bandwidth'] = undefined;
@@ -1852,13 +1858,25 @@ Results.prototype['fanout_recv_publishes'] = undefined;
 Results.prototype['fanout_send_publishes'] = undefined;
 
 /**
- * The total number of reads received for the object store.
+ * The total number of class a operations for the object store.
+ * @member {Number} object_store_class_a_operations
+ */
+Results.prototype['object_store_class_a_operations'] = undefined;
+
+/**
+ * The total number of class b operations for the object store.
+ * @member {Number} object_store_class_b_operations
+ */
+Results.prototype['object_store_class_b_operations'] = undefined;
+
+/**
+ * Use object_store_class_b_operations.
  * @member {Number} object_store_read_requests
  */
 Results.prototype['object_store_read_requests'] = undefined;
 
 /**
- * The total number of writes received for the object store.
+ * Use object_store_class_a_operations.
  * @member {Number} object_store_write_requests
  */
 Results.prototype['object_store_write_requests'] = undefined;

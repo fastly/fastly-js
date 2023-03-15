@@ -17,7 +17,7 @@ import ServiceVersionDetailOrNull from './ServiceVersionDetailOrNull';
 /**
  * The ServiceDetailAllOf model module.
  * @module model/ServiceDetailAllOf
- * @version v3.1.0
+ * @version 3.1.1
  */
 class ServiceDetailAllOf {
     /**

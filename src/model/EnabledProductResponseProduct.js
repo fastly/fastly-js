@@ -13,18 +13,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The EnabledProductProduct model module.
- * @module model/EnabledProductProduct
- * @version v3.1.0
+ * The EnabledProductResponseProduct model module.
+ * @module model/EnabledProductResponseProduct
+ * @version 3.1.1
  */
-class EnabledProductProduct {
+class EnabledProductResponseProduct {
     /**
-     * Constructs a new <code>EnabledProductProduct</code>.
-     * @alias module:model/EnabledProductProduct
+     * Constructs a new <code>EnabledProductResponseProduct</code>.
+     * @alias module:model/EnabledProductResponseProduct
      */
     constructor() { 
         
-        EnabledProductProduct.initialize(this);
+        EnabledProductResponseProduct.initialize(this);
     }
 
     /**
@@ -36,15 +36,15 @@ class EnabledProductProduct {
     }
 
     /**
-     * Constructs a <code>EnabledProductProduct</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>EnabledProductResponseProduct</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/EnabledProductProduct} obj Optional instance to populate.
-     * @return {module:model/EnabledProductProduct} The populated <code>EnabledProductProduct</code> instance.
+     * @param {module:model/EnabledProductResponseProduct} obj Optional instance to populate.
+     * @return {module:model/EnabledProductResponseProduct} The populated <code>EnabledProductResponseProduct</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new EnabledProductProduct();
+            obj = obj || new EnabledProductResponseProduct();
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -60,19 +60,21 @@ class EnabledProductProduct {
 }
 
 /**
+ * Product identifier
  * @member {String} id
  */
-EnabledProductProduct.prototype['id'] = undefined;
+EnabledProductResponseProduct.prototype['id'] = undefined;
 
 /**
+ * Name of the object
  * @member {String} object
  */
-EnabledProductProduct.prototype['object'] = undefined;
+EnabledProductResponseProduct.prototype['object'] = undefined;
 
 
 
 
 
 
-export default EnabledProductProduct;
+export default EnabledProductResponseProduct;
 

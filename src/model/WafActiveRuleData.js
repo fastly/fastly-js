@@ -18,7 +18,7 @@ import WafActiveRuleDataAttributes from './WafActiveRuleDataAttributes';
 /**
  * The WafActiveRuleData model module.
  * @module model/WafActiveRuleData
- * @version v3.1.0
+ * @version 3.1.1
  */
 class WafActiveRuleData {
     /**

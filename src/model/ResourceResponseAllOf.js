@@ -16,7 +16,7 @@ import TypeResource from './TypeResource';
 /**
  * The ResourceResponseAllOf model module.
  * @module model/ResourceResponseAllOf
- * @version v3.1.0
+ * @version 3.1.1
  */
 class ResourceResponseAllOf {
     /**
@@ -70,7 +70,7 @@ class ResourceResponseAllOf {
 }
 
 /**
- * An alphanumeric string identifying the resource.
+ * An alphanumeric string identifying the resource link.
  * @member {String} id
  */
 ResourceResponseAllOf.prototype['id'] = undefined;

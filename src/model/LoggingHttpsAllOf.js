@@ -16,7 +16,7 @@ import LoggingMessageType from './LoggingMessageType';
 /**
  * The LoggingHttpsAllOf model module.
  * @module model/LoggingHttpsAllOf
- * @version v3.1.0
+ * @version 3.1.1
  */
 class LoggingHttpsAllOf {
     /**

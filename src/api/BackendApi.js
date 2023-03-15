@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Backend service.
 * @module api/BackendApi
-* @version v3.1.0
+* @version 3.1.1
 */
 export default class BackendApi {
 
@@ -54,7 +54,7 @@ export default class BackendApi {
      * @param {String} [options.hostname] - The hostname of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {String} [options.ipv4] - IPv4 address of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {String} [options.ipv6] - IPv6 address of the backend. May be used as an alternative to `address` to set the backend location.
-     * @param {Number} [options.keepalive_time] - How long to keep a persistent connection to the backend between requests.
+     * @param {Number} [options.keepalive_time] - How long in seconds to keep a persistent connection to the backend between requests.
      * @param {Number} [options.max_conn] - Maximum number of concurrent connections this backend will accept.
      * @param {String} [options.max_tls_version] - Maximum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
      * @param {String} [options.min_tls_version] - Minimum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
@@ -154,7 +154,7 @@ export default class BackendApi {
      * @param {String} [options.hostname] - The hostname of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {String} [options.ipv4] - IPv4 address of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {String} [options.ipv6] - IPv6 address of the backend. May be used as an alternative to `address` to set the backend location.
-     * @param {Number} [options.keepalive_time] - How long to keep a persistent connection to the backend between requests.
+     * @param {Number} [options.keepalive_time] - How long in seconds to keep a persistent connection to the backend between requests.
      * @param {Number} [options.max_conn] - Maximum number of concurrent connections this backend will accept.
      * @param {String} [options.max_tls_version] - Maximum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
      * @param {String} [options.min_tls_version] - Minimum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
@@ -375,7 +375,7 @@ export default class BackendApi {
      * @param {String} [options.hostname] - The hostname of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {String} [options.ipv4] - IPv4 address of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {String} [options.ipv6] - IPv6 address of the backend. May be used as an alternative to `address` to set the backend location.
-     * @param {Number} [options.keepalive_time] - How long to keep a persistent connection to the backend between requests.
+     * @param {Number} [options.keepalive_time] - How long in seconds to keep a persistent connection to the backend between requests.
      * @param {Number} [options.max_conn] - Maximum number of concurrent connections this backend will accept.
      * @param {String} [options.max_tls_version] - Maximum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
      * @param {String} [options.min_tls_version] - Minimum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
@@ -481,7 +481,7 @@ export default class BackendApi {
      * @param {String} [options.hostname] - The hostname of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {String} [options.ipv4] - IPv4 address of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {String} [options.ipv6] - IPv6 address of the backend. May be used as an alternative to `address` to set the backend location.
-     * @param {Number} [options.keepalive_time] - How long to keep a persistent connection to the backend between requests.
+     * @param {Number} [options.keepalive_time] - How long in seconds to keep a persistent connection to the backend between requests.
      * @param {Number} [options.max_conn] - Maximum number of concurrent connections this backend will accept.
      * @param {String} [options.max_tls_version] - Maximum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
      * @param {String} [options.min_tls_version] - Minimum allowed TLS version on SSL connections to this backend. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.

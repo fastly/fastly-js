@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The SnippetResponse model module.
  * @module model/SnippetResponse
- * @version v3.1.0
+ * @version 3.1.1
  */
 class SnippetResponse {
     /**

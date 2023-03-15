@@ -8,10 +8,10 @@ const apiInstance = new Fastly.ResourceApi();
 Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
 [**createResource**](ResourceApi.md#createResource) | **POST** /service/{service_id}/version/{version_id}/resource | Create a resource
-[**deleteResource**](ResourceApi.md#deleteResource) | **DELETE** /service/{service_id}/version/{version_id}/resource/{resource_id} | Delete a resource
-[**getResource**](ResourceApi.md#getResource) | **GET** /service/{service_id}/version/{version_id}/resource/{resource_id} | Display a resource
+[**deleteResource**](ResourceApi.md#deleteResource) | **DELETE** /service/{service_id}/version/{version_id}/resource/{id} | Delete a resource
+[**getResource**](ResourceApi.md#getResource) | **GET** /service/{service_id}/version/{version_id}/resource/{id} | Display a resource
 [**listResources**](ResourceApi.md#listResources) | **GET** /service/{service_id}/version/{version_id}/resource | List resources
-[**updateResource**](ResourceApi.md#updateResource) | **PUT** /service/{service_id}/version/{version_id}/resource/{resource_id} | Update a resource
+[**updateResource**](ResourceApi.md#updateResource) | **PUT** /service/{service_id}/version/{version_id}/resource/{id} | Update a resource
 
 
 ## `createResource`
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 ## `deleteResource`
 
 ```javascript
-deleteResource({ service_id, version_id, resource_id })
+deleteResource({ service_id, version_id, id })
 ```
 
 Delete a resource.
@@ -69,7 +69,7 @@ Delete a resource.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  resource_id: "resource_id_example", // required
+  id: "id_example", // required
 };
 
 apiInstance.deleteResource(options)
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** | Alphanumeric string identifying the service. |
 **version_id** | **Number** | Integer identifying a service version. |
-**resource_id** | **String** | An alphanumeric string identifying the resource. |
+**id** | **String** | An alphanumeric string identifying the resource link. |
 
 ### Return type
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 ## `getResource`
 
 ```javascript
-getResource({ service_id, version_id, resource_id })
+getResource({ service_id, version_id, id })
 ```
 
 Display a resource by its identifier.
@@ -108,7 +108,7 @@ Display a resource by its identifier.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  resource_id: "resource_id_example", // required
+  id: "id_example", // required
 };
 
 apiInstance.getResource(options)
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** | Alphanumeric string identifying the service. |
 **version_id** | **Number** | Integer identifying a service version. |
-**resource_id** | **String** | An alphanumeric string identifying the resource. |
+**id** | **String** | An alphanumeric string identifying the resource link. |
 
 ### Return type
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 ## `updateResource`
 
 ```javascript
-updateResource({ service_id, version_id, resource_id, [name] })
+updateResource({ service_id, version_id, id, [name] })
 ```
 
 Update a resource.
@@ -184,7 +184,7 @@ Update a resource.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  resource_id: "resource_id_example", // required
+  id: "id_example", // required
   name: "name_example",
 };
 
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** | Alphanumeric string identifying the service. |
 **version_id** | **Number** | Integer identifying a service version. |
-**resource_id** | **String** | An alphanumeric string identifying the resource. |
+**id** | **String** | An alphanumeric string identifying the resource link. |
 **name** | **String** | The name of the resource. | [optional]
 
 ### Return type

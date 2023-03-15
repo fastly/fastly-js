@@ -19,7 +19,7 @@ import TypeResource from './TypeResource';
 /**
  * The ResourceResponse model module.
  * @module model/ResourceResponse
- * @version v3.1.0
+ * @version 3.1.1
  */
 class ResourceResponse {
     /**
@@ -124,7 +124,7 @@ ResourceResponse.prototype['name'] = undefined;
 ResourceResponse.prototype['resource_id'] = undefined;
 
 /**
- * An alphanumeric string identifying the resource.
+ * An alphanumeric string identifying the resource link.
  * @member {String} id
  */
 ResourceResponse.prototype['id'] = undefined;
@@ -182,7 +182,7 @@ ResourceCreate.prototype['name'] = undefined;
 ResourceCreate.prototype['resource_id'] = undefined;
 // Implement ResourceResponseAllOf interface:
 /**
- * An alphanumeric string identifying the resource.
+ * An alphanumeric string identifying the resource link.
  * @member {String} id
  */
 ResourceResponseAllOf.prototype['id'] = undefined;

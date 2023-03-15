@@ -18,7 +18,7 @@ import LoggingGcsCommon from './LoggingGcsCommon';
 /**
  * The LoggingBigquery model module.
  * @module model/LoggingBigquery
- * @version v3.1.0
+ * @version 3.1.1
  */
 class LoggingBigquery {
     /**

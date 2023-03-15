@@ -16,7 +16,7 @@ import RelationshipsForWafRule from './RelationshipsForWafRule';
 /**
  * The WafRuleResponseDataAllOf model module.
  * @module model/WafRuleResponseDataAllOf
- * @version v3.1.0
+ * @version 3.1.1
  */
 class WafRuleResponseDataAllOf {
     /**

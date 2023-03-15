@@ -11,22 +11,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import EnabledProductLinks from './EnabledProductLinks';
-import EnabledProductProduct from './EnabledProductProduct';
+import EnabledProductResponseLinks from './EnabledProductResponseLinks';
+import EnabledProductResponseProduct from './EnabledProductResponseProduct';
+import EnabledProductResponseService from './EnabledProductResponseService';
 
 /**
- * The EnabledProduct model module.
- * @module model/EnabledProduct
- * @version v3.1.0
+ * The EnabledProductResponse model module.
+ * @module model/EnabledProductResponse
+ * @version 3.1.1
  */
-class EnabledProduct {
+class EnabledProductResponse {
     /**
-     * Constructs a new <code>EnabledProduct</code>.
-     * @alias module:model/EnabledProduct
+     * Constructs a new <code>EnabledProductResponse</code>.
+     * @alias module:model/EnabledProductResponse
      */
     constructor() { 
         
-        EnabledProduct.initialize(this);
+        EnabledProductResponse.initialize(this);
     }
 
     /**
@@ -38,24 +39,24 @@ class EnabledProduct {
     }
 
     /**
-     * Constructs a <code>EnabledProduct</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>EnabledProductResponse</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/EnabledProduct} obj Optional instance to populate.
-     * @return {module:model/EnabledProduct} The populated <code>EnabledProduct</code> instance.
+     * @param {module:model/EnabledProductResponse} obj Optional instance to populate.
+     * @return {module:model/EnabledProductResponse} The populated <code>EnabledProductResponse</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new EnabledProduct();
+            obj = obj || new EnabledProductResponse();
 
             if (data.hasOwnProperty('product')) {
-                obj['product'] = EnabledProductProduct.constructFromObject(data['product']);
+                obj['product'] = EnabledProductResponseProduct.constructFromObject(data['product']);
             }
             if (data.hasOwnProperty('service')) {
-                obj['service'] = EnabledProductProduct.constructFromObject(data['service']);
+                obj['service'] = EnabledProductResponseService.constructFromObject(data['service']);
             }
             if (data.hasOwnProperty('_links')) {
-                obj['_links'] = EnabledProductLinks.constructFromObject(data['_links']);
+                obj['_links'] = EnabledProductResponseLinks.constructFromObject(data['_links']);
             }
         }
         return obj;
@@ -65,24 +66,24 @@ class EnabledProduct {
 }
 
 /**
- * @member {module:model/EnabledProductProduct} product
+ * @member {module:model/EnabledProductResponseProduct} product
  */
-EnabledProduct.prototype['product'] = undefined;
+EnabledProductResponse.prototype['product'] = undefined;
 
 /**
- * @member {module:model/EnabledProductProduct} service
+ * @member {module:model/EnabledProductResponseService} service
  */
-EnabledProduct.prototype['service'] = undefined;
+EnabledProductResponse.prototype['service'] = undefined;
 
 /**
- * @member {module:model/EnabledProductLinks} _links
+ * @member {module:model/EnabledProductResponseLinks} _links
  */
-EnabledProduct.prototype['_links'] = undefined;
+EnabledProductResponse.prototype['_links'] = undefined;
 
 
 
 
 
 
-export default EnabledProduct;
+export default EnabledProductResponse;
 

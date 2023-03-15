@@ -18,7 +18,7 @@ import ResourceResponse from '../model/ResourceResponse';
 /**
 * Resource service.
 * @module api/ResourceApi
-* @version v3.1.0
+* @version 3.1.1
 */
 export default class ResourceApi {
 
@@ -103,7 +103,7 @@ export default class ResourceApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
-     * @param {String} options.resource_id - An alphanumeric string identifying the resource.
+     * @param {String} options.id - An alphanumeric string identifying the resource link.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
      */
     deleteResourceWithHttpInfo(options = {}) {
@@ -116,15 +116,15 @@ export default class ResourceApi {
       if (options['version_id'] === undefined || options['version_id'] === null) {
         throw new Error("Missing the required parameter 'version_id'.");
       }
-      // Verify the required parameter 'resource_id' is set.
-      if (options['resource_id'] === undefined || options['resource_id'] === null) {
-        throw new Error("Missing the required parameter 'resource_id'.");
+      // Verify the required parameter 'id' is set.
+      if (options['id'] === undefined || options['id'] === null) {
+        throw new Error("Missing the required parameter 'id'.");
       }
 
       let pathParams = {
         'service_id': options['service_id'],
         'version_id': options['version_id'],
-        'resource_id': options['resource_id']
+        'id': options['id']
       };
       let queryParams = {
       };
@@ -138,7 +138,7 @@ export default class ResourceApi {
       let accepts = ['application/json'];
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
-        '/service/{service_id}/version/{version_id}/resource/{resource_id}', 'DELETE',
+        '/service/{service_id}/version/{version_id}/resource/{id}', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -149,7 +149,7 @@ export default class ResourceApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
-     * @param {String} options.resource_id - An alphanumeric string identifying the resource.
+     * @param {String} options.id - An alphanumeric string identifying the resource link.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
      */
     deleteResource(options = {}) {
@@ -164,7 +164,7 @@ export default class ResourceApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
-     * @param {String} options.resource_id - An alphanumeric string identifying the resource.
+     * @param {String} options.id - An alphanumeric string identifying the resource link.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceResponse} and HTTP response
      */
     getResourceWithHttpInfo(options = {}) {
@@ -177,15 +177,15 @@ export default class ResourceApi {
       if (options['version_id'] === undefined || options['version_id'] === null) {
         throw new Error("Missing the required parameter 'version_id'.");
       }
-      // Verify the required parameter 'resource_id' is set.
-      if (options['resource_id'] === undefined || options['resource_id'] === null) {
-        throw new Error("Missing the required parameter 'resource_id'.");
+      // Verify the required parameter 'id' is set.
+      if (options['id'] === undefined || options['id'] === null) {
+        throw new Error("Missing the required parameter 'id'.");
       }
 
       let pathParams = {
         'service_id': options['service_id'],
         'version_id': options['version_id'],
-        'resource_id': options['resource_id']
+        'id': options['id']
       };
       let queryParams = {
       };
@@ -199,7 +199,7 @@ export default class ResourceApi {
       let accepts = ['application/json'];
       let returnType = ResourceResponse;
       return this.apiClient.callApi(
-        '/service/{service_id}/version/{version_id}/resource/{resource_id}', 'GET',
+        '/service/{service_id}/version/{version_id}/resource/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -210,7 +210,7 @@ export default class ResourceApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
-     * @param {String} options.resource_id - An alphanumeric string identifying the resource.
+     * @param {String} options.id - An alphanumeric string identifying the resource link.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceResponse}
      */
     getResource(options = {}) {
@@ -279,7 +279,7 @@ export default class ResourceApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
-     * @param {String} options.resource_id - An alphanumeric string identifying the resource.
+     * @param {String} options.id - An alphanumeric string identifying the resource link.
      * @param {String} [options.name] - The name of the resource.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResourceResponse} and HTTP response
      */
@@ -293,15 +293,15 @@ export default class ResourceApi {
       if (options['version_id'] === undefined || options['version_id'] === null) {
         throw new Error("Missing the required parameter 'version_id'.");
       }
-      // Verify the required parameter 'resource_id' is set.
-      if (options['resource_id'] === undefined || options['resource_id'] === null) {
-        throw new Error("Missing the required parameter 'resource_id'.");
+      // Verify the required parameter 'id' is set.
+      if (options['id'] === undefined || options['id'] === null) {
+        throw new Error("Missing the required parameter 'id'.");
       }
 
       let pathParams = {
         'service_id': options['service_id'],
         'version_id': options['version_id'],
-        'resource_id': options['resource_id']
+        'id': options['id']
       };
       let queryParams = {
       };
@@ -316,7 +316,7 @@ export default class ResourceApi {
       let accepts = ['application/json'];
       let returnType = ResourceResponse;
       return this.apiClient.callApi(
-        '/service/{service_id}/version/{version_id}/resource/{resource_id}', 'PUT',
+        '/service/{service_id}/version/{version_id}/resource/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -327,7 +327,7 @@ export default class ResourceApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
-     * @param {String} options.resource_id - An alphanumeric string identifying the resource.
+     * @param {String} options.id - An alphanumeric string identifying the resource link.
      * @param {String} [options.name] - The name of the resource.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResourceResponse}
      */

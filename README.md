@@ -6,7 +6,7 @@ An asynchronous JavaScript client library for interacting with most facets of th
 > The previous 2.x version is no longer supported, but can be found at https://github.com/thisandagain/fastly.
 
 
-> ⚠️ This client library (`v3.1.0`)  is an early-access release. Features may change without notice. Use at your own risk.
+> ⚠️ This client library (`3.1.1`)  is an early-access release. Features may change without notice. Use at your own risk.
 
 **We strongly recommend that you do not install alpha and beta releases on live production services.** No official support is provided for such releases. Please try out the library in a test environment, see what breaks without worrying about consequences, and give us [feedback](#issues).
 

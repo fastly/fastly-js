@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingElasticsearchAllOf model module.
  * @module model/LoggingElasticsearchAllOf
- * @version v3.1.0
+ * @version 3.1.1
  */
 class LoggingElasticsearchAllOf {
     /**

@@ -16,7 +16,7 @@ import PopCoordinates from './PopCoordinates';
 /**
  * The Pop model module.
  * @module model/Pop
- * @version v3.1.0
+ * @version 3.1.1
  */
 class Pop {
     /**
@@ -56,6 +56,15 @@ class Pop {
             if (data.hasOwnProperty('group')) {
                 obj['group'] = ApiClient.convertToType(data['group'], 'String');
             }
+            if (data.hasOwnProperty('region')) {
+                obj['region'] = ApiClient.convertToType(data['region'], 'String');
+            }
+            if (data.hasOwnProperty('stats_region')) {
+                obj['stats_region'] = ApiClient.convertToType(data['stats_region'], 'String');
+            }
+            if (data.hasOwnProperty('billing_region')) {
+                obj['billing_region'] = ApiClient.convertToType(data['billing_region'], 'String');
+            }
             if (data.hasOwnProperty('coordinates')) {
                 obj['coordinates'] = PopCoordinates.constructFromObject(data['coordinates']);
             }
@@ -83,6 +92,21 @@ Pop.prototype['name'] = undefined;
  * @member {String} group
  */
 Pop.prototype['group'] = undefined;
+
+/**
+ * @member {String} region
+ */
+Pop.prototype['region'] = undefined;
+
+/**
+ * @member {String} stats_region
+ */
+Pop.prototype['stats_region'] = undefined;
+
+/**
+ * @member {String} billing_region
+ */
+Pop.prototype['billing_region'] = undefined;
 
 /**
  * @member {module:model/PopCoordinates} coordinates

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Backend model module.
  * @module model/Backend
- * @version v3.1.0
+ * @version 3.1.1
  */
 class Backend {
     /**
@@ -210,7 +210,7 @@ Backend.prototype['ipv4'] = undefined;
 Backend.prototype['ipv6'] = undefined;
 
 /**
- * How long to keep a persistent connection to the backend between requests.
+ * How long in seconds to keep a persistent connection to the backend between requests.
  * @member {Number} keepalive_time
  */
 Backend.prototype['keepalive_time'] = undefined;

@@ -18,7 +18,7 @@ import RateLimiterResponse from '../model/RateLimiterResponse';
 /**
 * RateLimiter service.
 * @module api/RateLimiterApi
-* @version v3.1.0
+* @version 3.1.1
 */
 export default class RateLimiterApi {
 

@@ -16,7 +16,7 @@ import ServiceInvitation from './ServiceInvitation';
 /**
  * The RelationshipServiceInvitationsCreateServiceInvitations model module.
  * @module model/RelationshipServiceInvitationsCreateServiceInvitations
- * @version v3.1.0
+ * @version 3.1.1
  */
 class RelationshipServiceInvitationsCreateServiceInvitations {
     /**

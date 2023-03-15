@@ -18,7 +18,7 @@ import EventsResponse from '../model/EventsResponse';
 /**
 * Events service.
 * @module api/EventsApi
-* @version v3.1.0
+* @version 3.1.1
 */
 export default class EventsApi {
 
@@ -93,6 +93,7 @@ export default class EventsApi {
      * @param {String} [options.filter_service_id] - Limit the results returned to a specific service.
      * @param {String} [options.filter_user_id] - Limit the results returned to a specific user.
      * @param {String} [options.filter_token_id] - Limit the returned events to a specific token.
+     * @param {String} [options.filter_created_at] - Limit the returned events to a specific time frame. Accepts sub-parameters: lt, lte, gt, gte (e.g., filter[created_at][gt]=2022-01-12). 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
@@ -109,6 +110,7 @@ export default class EventsApi {
         'filter[service_id]': options['filter_service_id'],
         'filter[user_id]': options['filter_user_id'],
         'filter[token_id]': options['filter_token_id'],
+        'filter[created_at]': options['filter_created_at'],
         'page[number]': options['page_number'],
         'page[size]': options['page_size'],
         'sort': options['sort']
@@ -137,6 +139,7 @@ export default class EventsApi {
      * @param {String} [options.filter_service_id] - Limit the results returned to a specific service.
      * @param {String} [options.filter_user_id] - Limit the results returned to a specific user.
      * @param {String} [options.filter_token_id] - Limit the returned events to a specific token.
+     * @param {String} [options.filter_created_at] - Limit the returned events to a specific time frame. Accepts sub-parameters: lt, lte, gt, gte (e.g., filter[created_at][gt]=2022-01-12). 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.

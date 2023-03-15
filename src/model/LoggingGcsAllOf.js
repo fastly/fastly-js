@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingGcsAllOf model module.
  * @module model/LoggingGcsAllOf
- * @version v3.1.0
+ * @version 3.1.1
  */
 class LoggingGcsAllOf {
     /**

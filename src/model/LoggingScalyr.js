@@ -17,7 +17,7 @@ import LoggingScalyrAllOf from './LoggingScalyrAllOf';
 /**
  * The LoggingScalyr model module.
  * @module model/LoggingScalyr
- * @version v3.1.0
+ * @version 3.1.1
  */
 class LoggingScalyr {
     /**

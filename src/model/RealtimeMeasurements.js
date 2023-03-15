@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RealtimeMeasurements model module.
  * @module model/RealtimeMeasurements
- * @version v3.1.0
+ * @version 3.1.1
  */
 class RealtimeMeasurements {
     /**
@@ -640,6 +640,12 @@ class RealtimeMeasurements {
             }
             if (data.hasOwnProperty('fanout_send_publishes')) {
                 obj['fanout_send_publishes'] = ApiClient.convertToType(data['fanout_send_publishes'], 'Number');
+            }
+            if (data.hasOwnProperty('object_store_class_a_operations')) {
+                obj['object_store_class_a_operations'] = ApiClient.convertToType(data['object_store_class_a_operations'], 'Number');
+            }
+            if (data.hasOwnProperty('object_store_class_b_operations')) {
+                obj['object_store_class_b_operations'] = ApiClient.convertToType(data['object_store_class_b_operations'], 'Number');
             }
             if (data.hasOwnProperty('object_store_read_requests')) {
                 obj['object_store_read_requests'] = ApiClient.convertToType(data['object_store_read_requests'], 'Number');
@@ -1870,13 +1876,25 @@ RealtimeMeasurements.prototype['fanout_recv_publishes'] = undefined;
 RealtimeMeasurements.prototype['fanout_send_publishes'] = undefined;
 
 /**
- * The total number of reads received for the object store.
+ * The total number of class a operations for the object store.
+ * @member {Number} object_store_class_a_operations
+ */
+RealtimeMeasurements.prototype['object_store_class_a_operations'] = undefined;
+
+/**
+ * The total number of class b operations for the object store.
+ * @member {Number} object_store_class_b_operations
+ */
+RealtimeMeasurements.prototype['object_store_class_b_operations'] = undefined;
+
+/**
+ * Use object_store_class_b_operations.
  * @member {Number} object_store_read_requests
  */
 RealtimeMeasurements.prototype['object_store_read_requests'] = undefined;
 
 /**
- * The total number of writes received for the object store.
+ * Use object_store_class_a_operations.
  * @member {Number} object_store_write_requests
  */
 RealtimeMeasurements.prototype['object_store_write_requests'] = undefined;

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PopCoordinates model module.
  * @module model/PopCoordinates
- * @version v3.1.0
+ * @version 3.1.1
  */
 class PopCoordinates {
     /**
@@ -46,12 +46,6 @@ class PopCoordinates {
         if (data) {
             obj = obj || new PopCoordinates();
 
-            if (data.hasOwnProperty('x')) {
-                obj['x'] = ApiClient.convertToType(data['x'], 'Number');
-            }
-            if (data.hasOwnProperty('y')) {
-                obj['y'] = ApiClient.convertToType(data['y'], 'Number');
-            }
             if (data.hasOwnProperty('latitude')) {
                 obj['latitude'] = ApiClient.convertToType(data['latitude'], 'Number');
             }
@@ -64,16 +58,6 @@ class PopCoordinates {
 
 
 }
-
-/**
- * @member {Number} x
- */
-PopCoordinates.prototype['x'] = undefined;
-
-/**
- * @member {Number} y
- */
-PopCoordinates.prototype['y'] = undefined;
 
 /**
  * @member {Number} latitude

@@ -83,9 +83,10 @@ import DirectorResponse from './model/DirectorResponse';
 import Domain from './model/Domain';
 import DomainCheckItem from './model/DomainCheckItem';
 import DomainResponse from './model/DomainResponse';
-import EnabledProduct from './model/EnabledProduct';
-import EnabledProductLinks from './model/EnabledProductLinks';
-import EnabledProductProduct from './model/EnabledProductProduct';
+import EnabledProductResponse from './model/EnabledProductResponse';
+import EnabledProductResponseLinks from './model/EnabledProductResponseLinks';
+import EnabledProductResponseProduct from './model/EnabledProductResponseProduct';
+import EnabledProductResponseService from './model/EnabledProductResponseService';
 import ErrorResponse from './model/ErrorResponse';
 import ErrorResponseData from './model/ErrorResponseData';
 import Event from './model/Event';
@@ -736,7 +737,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version v3.1.0
+* @version 3.1.1
 */
 export {
     /**
@@ -1172,22 +1173,28 @@ export {
     DomainResponse,
 
     /**
-     * The EnabledProduct model constructor.
-     * @property {module:model/EnabledProduct}
+     * The EnabledProductResponse model constructor.
+     * @property {module:model/EnabledProductResponse}
      */
-    EnabledProduct,
+    EnabledProductResponse,
 
     /**
-     * The EnabledProductLinks model constructor.
-     * @property {module:model/EnabledProductLinks}
+     * The EnabledProductResponseLinks model constructor.
+     * @property {module:model/EnabledProductResponseLinks}
      */
-    EnabledProductLinks,
+    EnabledProductResponseLinks,
 
     /**
-     * The EnabledProductProduct model constructor.
-     * @property {module:model/EnabledProductProduct}
+     * The EnabledProductResponseProduct model constructor.
+     * @property {module:model/EnabledProductResponseProduct}
      */
-    EnabledProductProduct,
+    EnabledProductResponseProduct,
+
+    /**
+     * The EnabledProductResponseService model constructor.
+     * @property {module:model/EnabledProductResponseService}
+     */
+    EnabledProductResponseService,
 
     /**
      * The ErrorResponse model constructor.

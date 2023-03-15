@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ResourceCreateAllOf model module.
  * @module model/ResourceCreateAllOf
- * @version v3.1.0
+ * @version 3.1.1
  */
 class ResourceCreateAllOf {
     /**

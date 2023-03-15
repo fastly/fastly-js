@@ -18,7 +18,7 @@ import LoggingCloudfilesResponse from '../model/LoggingCloudfilesResponse';
 /**
 * LoggingCloudfiles service.
 * @module api/LoggingCloudfilesApi
-* @version v3.1.0
+* @version 3.1.1
 */
 export default class LoggingCloudfilesApi {
 

@@ -21,7 +21,7 @@ import WafRulesResponseAllOf from './WafRulesResponseAllOf';
 /**
  * The WafRulesResponse model module.
  * @module model/WafRulesResponse
- * @version v3.1.0
+ * @version 3.1.1
  */
 class WafRulesResponse {
     /**

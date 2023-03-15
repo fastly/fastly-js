@@ -12,12 +12,12 @@
 
 
 import ApiClient from "../ApiClient";
-import EnabledProduct from '../model/EnabledProduct';
+import EnabledProductResponse from '../model/EnabledProductResponse';
 
 /**
 * EnabledProducts service.
 * @module api/EnabledProductsApi
-* @version v3.1.0
+* @version 3.1.1
 */
 export default class EnabledProductsApi {
 
@@ -38,7 +38,7 @@ export default class EnabledProductsApi {
 
 
     /**
-     * Disable a product on a service. Supported product IDs: `origin_inspector`,`domain_inspector`,`image_optimizer`, and `websockets`.
+     * Disable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, and `websockets`.
      * @param {Object} options
      * @param {String} options.product_id
      * @param {String} options.service_id - Alphanumeric string identifying the service.
@@ -78,7 +78,7 @@ export default class EnabledProductsApi {
     }
 
     /**
-     * Disable a product on a service. Supported product IDs: `origin_inspector`,`domain_inspector`,`image_optimizer`, and `websockets`.
+     * Disable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, and `websockets`.
      * @param {Object} options
      * @param {String} options.product_id
      * @param {String} options.service_id - Alphanumeric string identifying the service.
@@ -92,11 +92,11 @@ export default class EnabledProductsApi {
     }
 
     /**
-     * Enable a product on a service. Supported product IDs: `origin_inspector`,`domain_inspector`,`image_optimizer`, and `websockets`.
+     * Enable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, and `websockets`.
      * @param {Object} options
      * @param {String} options.product_id
      * @param {String} options.service_id - Alphanumeric string identifying the service.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EnabledProduct} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EnabledProductResponse} and HTTP response
      */
     enableProductWithHttpInfo(options = {}) {
       let postBody = null;
@@ -123,7 +123,7 @@ export default class EnabledProductsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = EnabledProduct;
+      let returnType = EnabledProductResponse;
       return this.apiClient.callApi(
         '/enabled-products/{product_id}/services/{service_id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -132,11 +132,11 @@ export default class EnabledProductsApi {
     }
 
     /**
-     * Enable a product on a service. Supported product IDs: `origin_inspector`,`domain_inspector`,`image_optimizer`, and `websockets`.
+     * Enable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, and `websockets`.
      * @param {Object} options
      * @param {String} options.product_id
      * @param {String} options.service_id - Alphanumeric string identifying the service.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EnabledProduct}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EnabledProductResponse}
      */
     enableProduct(options = {}) {
       return this.enableProductWithHttpInfo(options)
@@ -146,11 +146,11 @@ export default class EnabledProductsApi {
     }
 
     /**
-     * Get enabled product on a service. Supported product IDs: `origin_inspector`,`domain_inspector`,`image_optimizer`, and `websockets`.
+     * Get enabled product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, and `websockets`.
      * @param {Object} options
      * @param {String} options.product_id
      * @param {String} options.service_id - Alphanumeric string identifying the service.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EnabledProduct} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EnabledProductResponse} and HTTP response
      */
     getEnabledProductWithHttpInfo(options = {}) {
       let postBody = null;
@@ -177,7 +177,7 @@ export default class EnabledProductsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = EnabledProduct;
+      let returnType = EnabledProductResponse;
       return this.apiClient.callApi(
         '/enabled-products/{product_id}/services/{service_id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -186,11 +186,11 @@ export default class EnabledProductsApi {
     }
 
     /**
-     * Get enabled product on a service. Supported product IDs: `origin_inspector`,`domain_inspector`,`image_optimizer`, and `websockets`.
+     * Get enabled product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, and `websockets`.
      * @param {Object} options
      * @param {String} options.product_id
      * @param {String} options.service_id - Alphanumeric string identifying the service.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EnabledProduct}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EnabledProductResponse}
      */
     getEnabledProduct(options = {}) {
       return this.getEnabledProductWithHttpInfo(options)

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TlsPrivateKeyDataAttributes model module.
  * @module model/TlsPrivateKeyDataAttributes
- * @version v3.1.0
+ * @version 3.1.1
  */
 class TlsPrivateKeyDataAttributes {
     /**

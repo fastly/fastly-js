@@ -20,7 +20,7 @@ import StoreResponse from '../model/StoreResponse';
 /**
 * ObjectStore service.
 * @module api/ObjectStoreApi
-* @version v3.1.0
+* @version 3.1.1
 */
 export default class ObjectStoreApi {
 

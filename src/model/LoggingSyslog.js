@@ -21,7 +21,7 @@ import LoggingUseTls from './LoggingUseTls';
 /**
  * The LoggingSyslog model module.
  * @module model/LoggingSyslog
- * @version v3.1.0
+ * @version 3.1.1
  */
 class LoggingSyslog {
     /**

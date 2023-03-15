@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 ## `listEvents`
 
 ```javascript
-listEvents({ , [filter_customer_id, ][filter_event_type, ][filter_service_id, ][filter_user_id, ][filter_token_id, ][page_number, ][page_size, ][sort] })
+listEvents({ , [filter_customer_id, ][filter_event_type, ][filter_service_id, ][filter_user_id, ][filter_token_id, ][filter_created_at, ][page_number, ][page_size, ][sort] })
 ```
 
 List all events for a particular customer. Events can be filtered by user, customer and event type. Events can be sorted by date.
@@ -63,6 +63,7 @@ const options = {
   filter_service_id: "filter_service_id_example",
   filter_user_id: "filter_user_id_example",
   filter_token_id: "filter_token_id_example",
+  filter_created_at: "filter_created_at_example",
   page_number: 1,
   page_size: 20,
   sort: "created_at",
@@ -86,6 +87,7 @@ Name | Type | Description  | Notes
 **filter_service_id** | **String** | Limit the results returned to a specific service. | [optional]
 **filter_user_id** | **String** | Limit the results returned to a specific user. | [optional]
 **filter_token_id** | **String** | Limit the returned events to a specific token. | [optional]
+**filter_created_at** | **String** | Limit the returned events to a specific time frame. Accepts sub-parameters: lt, lte, gt, gte (e.g., filter[created_at][gt]&#x3D;2022-01-12).  | [optional]
 **page_number** | **Number** | Current page. | [optional]
 **page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
 **sort** | **String** | The order in which to list the results by creation date. | [optional] [one of: "created_at", "-created_at"]

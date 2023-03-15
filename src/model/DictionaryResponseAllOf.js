@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DictionaryResponseAllOf model module.
  * @module model/DictionaryResponseAllOf
- * @version v3.1.0
+ * @version 3.1.1
  */
 class DictionaryResponseAllOf {
     /**

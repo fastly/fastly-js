@@ -17,7 +17,7 @@ import PublishRequest from '../model/PublishRequest';
 /**
 * Publish service.
 * @module api/PublishApi
-* @version v3.1.0
+* @version 3.1.1
 */
 export default class PublishApi {
 

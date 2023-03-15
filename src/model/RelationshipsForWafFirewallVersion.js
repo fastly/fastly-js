@@ -19,7 +19,7 @@ import RelationshipWafFirewallVersions from './RelationshipWafFirewallVersions';
 /**
  * The RelationshipsForWafFirewallVersion model module.
  * @module model/RelationshipsForWafFirewallVersion
- * @version v3.1.0
+ * @version 3.1.1
  */
 class RelationshipsForWafFirewallVersion {
     /**

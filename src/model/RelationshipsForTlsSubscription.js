@@ -20,7 +20,7 @@ import RelationshipTlsDomainsTlsDomains from './RelationshipTlsDomainsTlsDomains
 /**
  * The RelationshipsForTlsSubscription model module.
  * @module model/RelationshipsForTlsSubscription
- * @version v3.1.0
+ * @version 3.1.1
  */
 class RelationshipsForTlsSubscription {
     /**

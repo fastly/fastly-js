@@ -1,11 +1,11 @@
-# Fastly.EnabledProductProduct
+# Fastly.EnabledProductResponseLinks
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | [optional] 
-**object** | **String** |  | [optional] 
+**self** | **String** | Location of resource | [optional] 
+**service** | **String** | Location of the service resource | [optional] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

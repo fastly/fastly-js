@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BillingResponseLineItemAllOf model module.
  * @module model/BillingResponseLineItemAllOf
- * @version v3.1.0
+ * @version 3.1.1
  */
 class BillingResponseLineItemAllOf {
     /**
