@@ -11,21 +11,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import GetStoresResponseMeta from './GetStoresResponseMeta';
+import InlineResponse2002Meta from './InlineResponse2002Meta';
+import StoreResponse from './StoreResponse';
 
 /**
- * The KeyResponse model module.
- * @module model/KeyResponse
- * @version 3.1.1
+ * The InlineResponse2002 model module.
+ * @module model/InlineResponse2002
+ * @version 3.2.0
  */
-class KeyResponse {
+class InlineResponse2002 {
     /**
-     * Constructs a new <code>KeyResponse</code>.
-     * @alias module:model/KeyResponse
+     * Constructs a new <code>InlineResponse2002</code>.
+     * @alias module:model/InlineResponse2002
      */
     constructor() { 
         
-        KeyResponse.initialize(this);
+        InlineResponse2002.initialize(this);
     }
 
     /**
@@ -37,21 +38,21 @@ class KeyResponse {
     }
 
     /**
-     * Constructs a <code>KeyResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>InlineResponse2002</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/KeyResponse} obj Optional instance to populate.
-     * @return {module:model/KeyResponse} The populated <code>KeyResponse</code> instance.
+     * @param {module:model/InlineResponse2002} obj Optional instance to populate.
+     * @return {module:model/InlineResponse2002} The populated <code>InlineResponse2002</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new KeyResponse();
+            obj = obj || new InlineResponse2002();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], ['String']);
+                obj['data'] = ApiClient.convertToType(data['data'], [StoreResponse]);
             }
             if (data.hasOwnProperty('meta')) {
-                obj['meta'] = GetStoresResponseMeta.constructFromObject(data['meta']);
+                obj['meta'] = InlineResponse2002Meta.constructFromObject(data['meta']);
             }
         }
         return obj;
@@ -61,19 +62,19 @@ class KeyResponse {
 }
 
 /**
- * @member {Array.<String>} data
+ * @member {Array.<module:model/StoreResponse>} data
  */
-KeyResponse.prototype['data'] = undefined;
+InlineResponse2002.prototype['data'] = undefined;
 
 /**
- * @member {module:model/GetStoresResponseMeta} meta
+ * @member {module:model/InlineResponse2002Meta} meta
  */
-KeyResponse.prototype['meta'] = undefined;
+InlineResponse2002.prototype['meta'] = undefined;
 
 
 
 
 
 
-export default KeyResponse;
+export default InlineResponse2002;
 

@@ -18,7 +18,7 @@ import PurgeResponse from '../model/PurgeResponse';
 /**
 * Purge service.
 * @module api/PurgeApi
-* @version 3.1.1
+* @version 3.2.0
 */
 export default class PurgeApi {
 
@@ -165,7 +165,7 @@ export default class PurgeApi {
       let formParams = {
       };
 
-      let authNames = ['url_purge'];
+      let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = PurgeResponse;

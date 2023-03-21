@@ -32,6 +32,13 @@ export default class TypeResource {
         "secret-store" = "secret-store";
 
     
+        /**
+         * value: "config-store"
+         * @const
+         */
+        "config-store" = "config-store";
+
+    
 
     /**
     * Returns a <code>TypeResource</code> enum value from a Javascript object name.

@@ -1,11 +1,11 @@
-# Fastly.KeyResponse
+# Fastly.InlineResponse2002Meta
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | **[String]** |  | [optional] 
-**meta** | [**GetStoresResponseMeta**](GetStoresResponseMeta.md) |  | [optional] 
+**next_cursor** | **String** | Cursor for the next page. | [optional] 
+**limit** | **Number** | Entries returned. | [optional] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

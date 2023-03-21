@@ -18,7 +18,7 @@ import LoggingSftpResponse from '../model/LoggingSftpResponse';
 /**
 * LoggingSftp service.
 * @module api/LoggingSftpApi
-* @version 3.1.1
+* @version 3.2.0
 */
 export default class LoggingSftpApi {
 

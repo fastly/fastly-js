@@ -17,7 +17,7 @@ import LoggingDatadogAllOf from './LoggingDatadogAllOf';
 /**
  * The LoggingDatadog model module.
  * @module model/LoggingDatadog
- * @version 3.1.1
+ * @version 3.2.0
  */
 class LoggingDatadog {
     /**

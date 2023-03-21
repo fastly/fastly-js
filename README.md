@@ -6,7 +6,7 @@ An asynchronous JavaScript client library for interacting with most facets of th
 > The previous 2.x version is no longer supported, but can be found at https://github.com/thisandagain/fastly.
 
 
-> ⚠️ This client library (`3.1.1`)  is an early-access release. Features may change without notice. Use at your own risk.
+> ⚠️ This client library (`3.2.0`)  is an early-access release. Features may change without notice. Use at your own risk.
 
 **We strongly recommend that you do not install alpha and beta releases on live production services.** No official support is provided for such releases. Please try out the library in a test environment, see what breaks without worrying about consequences, and give us [feedback](#issues).
 
@@ -319,13 +319,9 @@ Class | Method | Description
 *Fastly.MutualAuthenticationApi* | [**listMutualAuthentications**](docs/MutualAuthenticationApi.md#listMutualAuthentications) | List Mutual Authentications
 *Fastly.MutualAuthenticationApi* | [**patchMutualAuthentication**](docs/MutualAuthenticationApi.md#patchMutualAuthentication) | Update a Mutual Authentication
 *Fastly.ObjectStoreApi* | [**createStore**](docs/ObjectStoreApi.md#createStore) | Create an object store.
-*Fastly.ObjectStoreApi* | [**deleteKeyFromStore**](docs/ObjectStoreApi.md#deleteKeyFromStore) | Delete object store key.
 *Fastly.ObjectStoreApi* | [**deleteStore**](docs/ObjectStoreApi.md#deleteStore) | Delete an object store.
-*Fastly.ObjectStoreApi* | [**getKeys**](docs/ObjectStoreApi.md#getKeys) | List object store keys.
 *Fastly.ObjectStoreApi* | [**getStore**](docs/ObjectStoreApi.md#getStore) | Describe an object store.
 *Fastly.ObjectStoreApi* | [**getStores**](docs/ObjectStoreApi.md#getStores) | List object stores.
-*Fastly.ObjectStoreApi* | [**getValueForKey**](docs/ObjectStoreApi.md#getValueForKey) | Get object store key value.
-*Fastly.ObjectStoreApi* | [**setValueForKey**](docs/ObjectStoreApi.md#setValueForKey) | Insert object store key-value.
 *Fastly.PackageApi* | [**getPackage**](docs/PackageApi.md#getPackage) | Get details of the service&#39;s Compute@Edge package.
 *Fastly.PackageApi* | [**putPackage**](docs/PackageApi.md#putPackage) | Upload a Compute@Edge package.
 *Fastly.PoolApi* | [**createServerPool**](docs/PoolApi.md#createServerPool) | Create a server pool
@@ -350,11 +346,11 @@ Class | Method | Description
 *Fastly.RequestSettingsApi* | [**getRequestSettings**](docs/RequestSettingsApi.md#getRequestSettings) | Get a Request Settings object
 *Fastly.RequestSettingsApi* | [**listRequestSettings**](docs/RequestSettingsApi.md#listRequestSettings) | List Request Settings objects
 *Fastly.RequestSettingsApi* | [**updateRequestSettings**](docs/RequestSettingsApi.md#updateRequestSettings) | Update a Request Settings object
-*Fastly.ResourceApi* | [**createResource**](docs/ResourceApi.md#createResource) | Create a resource
-*Fastly.ResourceApi* | [**deleteResource**](docs/ResourceApi.md#deleteResource) | Delete a resource
-*Fastly.ResourceApi* | [**getResource**](docs/ResourceApi.md#getResource) | Display a resource
-*Fastly.ResourceApi* | [**listResources**](docs/ResourceApi.md#listResources) | List resources
-*Fastly.ResourceApi* | [**updateResource**](docs/ResourceApi.md#updateResource) | Update a resource
+*Fastly.ResourceApi* | [**createResource**](docs/ResourceApi.md#createResource) | Create a resource link
+*Fastly.ResourceApi* | [**deleteResource**](docs/ResourceApi.md#deleteResource) | Delete a resource link
+*Fastly.ResourceApi* | [**getResource**](docs/ResourceApi.md#getResource) | Display a resource link
+*Fastly.ResourceApi* | [**listResources**](docs/ResourceApi.md#listResources) | List resource links
+*Fastly.ResourceApi* | [**updateResource**](docs/ResourceApi.md#updateResource) | Update a resource link
 *Fastly.ResponseObjectApi* | [**deleteResponseObject**](docs/ResponseObjectApi.md#deleteResponseObject) | Delete a Response Object
 *Fastly.ResponseObjectApi* | [**getResponseObject**](docs/ResponseObjectApi.md#getResponseObject) | Get a Response object
 *Fastly.ResponseObjectApi* | [**listResponseObjects**](docs/ResponseObjectApi.md#listResponseObjects) | List Response objects

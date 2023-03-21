@@ -19,7 +19,7 @@ import UserResponseAllOf from './UserResponseAllOf';
 /**
  * The UserResponse model module.
  * @module model/UserResponse
- * @version 3.1.1
+ * @version 3.2.0
  */
 class UserResponse {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Resource model module.
  * @module model/Resource
- * @version 3.1.1
+ * @version 3.2.0
  */
 class Resource {
     /**
@@ -46,6 +46,9 @@ class Resource {
         if (data) {
             obj = obj || new Resource();
 
+            if (data.hasOwnProperty('resource_id')) {
+                obj['resource_id'] = ApiClient.convertToType(data['resource_id'], 'String');
+            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
@@ -57,7 +60,13 @@ class Resource {
 }
 
 /**
- * The name of the resource.
+ * The ID of the underlying linked resource.
+ * @member {String} resource_id
+ */
+Resource.prototype['resource_id'] = undefined;
+
+/**
+ * The name of the resource link.
  * @member {String} name
  */
 Resource.prototype['name'] = undefined;

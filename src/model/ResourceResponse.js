@@ -11,7 +11,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import ResourceCreate from './ResourceCreate';
+import Resource from './Resource';
 import ResourceResponseAllOf from './ResourceResponseAllOf';
 import Timestamps from './Timestamps';
 import TypeResource from './TypeResource';
@@ -19,18 +19,18 @@ import TypeResource from './TypeResource';
 /**
  * The ResourceResponse model module.
  * @module model/ResourceResponse
- * @version 3.1.1
+ * @version 3.2.0
  */
 class ResourceResponse {
     /**
      * Constructs a new <code>ResourceResponse</code>.
      * @alias module:model/ResourceResponse
+     * @implements module:model/Resource
      * @implements module:model/Timestamps
-     * @implements module:model/ResourceCreate
      * @implements module:model/ResourceResponseAllOf
      */
     constructor() { 
-        Timestamps.initialize(this);ResourceCreate.initialize(this);ResourceResponseAllOf.initialize(this);
+        Resource.initialize(this);Timestamps.initialize(this);ResourceResponseAllOf.initialize(this);
         ResourceResponse.initialize(this);
     }
 
@@ -52,10 +52,16 @@ class ResourceResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new ResourceResponse();
+            Resource.constructFromObject(data, obj);
             Timestamps.constructFromObject(data, obj);
-            ResourceCreate.constructFromObject(data, obj);
             ResourceResponseAllOf.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('resource_id')) {
+                obj['resource_id'] = ApiClient.convertToType(data['resource_id'], 'String');
+            }
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
@@ -64,12 +70,6 @@ class ResourceResponse {
             }
             if (data.hasOwnProperty('updated_at')) {
                 obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
-            }
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
-            if (data.hasOwnProperty('resource_id')) {
-                obj['resource_id'] = ApiClient.convertToType(data['resource_id'], 'String');
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -94,6 +94,18 @@ class ResourceResponse {
 }
 
 /**
+ * The ID of the underlying linked resource.
+ * @member {String} resource_id
+ */
+ResourceResponse.prototype['resource_id'] = undefined;
+
+/**
+ * The name of the resource link.
+ * @member {String} name
+ */
+ResourceResponse.prototype['name'] = undefined;
+
+/**
  * Date and time in ISO 8601 format.
  * @member {Date} created_at
  */
@@ -110,18 +122,6 @@ ResourceResponse.prototype['deleted_at'] = undefined;
  * @member {Date} updated_at
  */
 ResourceResponse.prototype['updated_at'] = undefined;
-
-/**
- * The name of the resource.
- * @member {String} name
- */
-ResourceResponse.prototype['name'] = undefined;
-
-/**
- * The ID of the linked resource.
- * @member {String} resource_id
- */
-ResourceResponse.prototype['resource_id'] = undefined;
 
 /**
  * An alphanumeric string identifying the resource link.
@@ -153,6 +153,17 @@ ResourceResponse.prototype['version'] = undefined;
 ResourceResponse.prototype['resource_type'] = undefined;
 
 
+// Implement Resource interface:
+/**
+ * The ID of the underlying linked resource.
+ * @member {String} resource_id
+ */
+Resource.prototype['resource_id'] = undefined;
+/**
+ * The name of the resource link.
+ * @member {String} name
+ */
+Resource.prototype['name'] = undefined;
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
@@ -169,17 +180,6 @@ Timestamps.prototype['deleted_at'] = undefined;
  * @member {Date} updated_at
  */
 Timestamps.prototype['updated_at'] = undefined;
-// Implement ResourceCreate interface:
-/**
- * The name of the resource.
- * @member {String} name
- */
-ResourceCreate.prototype['name'] = undefined;
-/**
- * The ID of the linked resource.
- * @member {String} resource_id
- */
-ResourceCreate.prototype['resource_id'] = undefined;
 // Implement ResourceResponseAllOf interface:
 /**
  * An alphanumeric string identifying the resource link.

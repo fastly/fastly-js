@@ -18,7 +18,7 @@ import WafRuleRevisionsResponse from '../model/WafRuleRevisionsResponse';
 /**
 * WafRuleRevisions service.
 * @module api/WafRuleRevisionsApi
-* @version 3.1.1
+* @version 3.2.0
 */
 export default class WafRuleRevisionsApi {
 

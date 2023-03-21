@@ -95,8 +95,6 @@ import EventResponse from './model/EventResponse';
 import EventsResponse from './model/EventsResponse';
 import EventsResponseAllOf from './model/EventsResponseAllOf';
 import GenericTokenError from './model/GenericTokenError';
-import GetStoresResponse from './model/GetStoresResponse';
-import GetStoresResponseMeta from './model/GetStoresResponseMeta';
 import Gzip from './model/Gzip';
 import GzipResponse from './model/GzipResponse';
 import Header from './model/Header';
@@ -139,6 +137,8 @@ import IncludedWithWafFirewallVersionItem from './model/IncludedWithWafFirewallV
 import IncludedWithWafRuleItem from './model/IncludedWithWafRuleItem';
 import InlineResponse200 from './model/InlineResponse200';
 import InlineResponse2001 from './model/InlineResponse2001';
+import InlineResponse2002 from './model/InlineResponse2002';
+import InlineResponse2002Meta from './model/InlineResponse2002Meta';
 import Invitation from './model/Invitation';
 import InvitationData from './model/InvitationData';
 import InvitationDataAttributes from './model/InvitationDataAttributes';
@@ -148,7 +148,6 @@ import InvitationResponseData from './model/InvitationResponseData';
 import InvitationResponseDataAllOf from './model/InvitationResponseDataAllOf';
 import InvitationsResponse from './model/InvitationsResponse';
 import InvitationsResponseAllOf from './model/InvitationsResponseAllOf';
-import KeyResponse from './model/KeyResponse';
 import LoggingAddressAndPort from './model/LoggingAddressAndPort';
 import LoggingAzureblob from './model/LoggingAzureblob';
 import LoggingAzureblobAllOf from './model/LoggingAzureblobAllOf';
@@ -366,8 +365,6 @@ import RelationshipsForWafRule from './model/RelationshipsForWafRule';
 import RequestSettings from './model/RequestSettings';
 import RequestSettingsResponse from './model/RequestSettingsResponse';
 import Resource from './model/Resource';
-import ResourceCreate from './model/ResourceCreate';
-import ResourceCreateAllOf from './model/ResourceCreateAllOf';
 import ResourceResponse from './model/ResourceResponse';
 import ResourceResponseAllOf from './model/ResourceResponseAllOf';
 import ResponseObject from './model/ResponseObject';
@@ -737,7 +734,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 3.1.1
+* @version 3.2.0
 */
 export {
     /**
@@ -1245,18 +1242,6 @@ export {
     GenericTokenError,
 
     /**
-     * The GetStoresResponse model constructor.
-     * @property {module:model/GetStoresResponse}
-     */
-    GetStoresResponse,
-
-    /**
-     * The GetStoresResponseMeta model constructor.
-     * @property {module:model/GetStoresResponseMeta}
-     */
-    GetStoresResponseMeta,
-
-    /**
      * The Gzip model constructor.
      * @property {module:model/Gzip}
      */
@@ -1509,6 +1494,18 @@ export {
     InlineResponse2001,
 
     /**
+     * The InlineResponse2002 model constructor.
+     * @property {module:model/InlineResponse2002}
+     */
+    InlineResponse2002,
+
+    /**
+     * The InlineResponse2002Meta model constructor.
+     * @property {module:model/InlineResponse2002Meta}
+     */
+    InlineResponse2002Meta,
+
+    /**
      * The Invitation model constructor.
      * @property {module:model/Invitation}
      */
@@ -1561,12 +1558,6 @@ export {
      * @property {module:model/InvitationsResponseAllOf}
      */
     InvitationsResponseAllOf,
-
-    /**
-     * The KeyResponse model constructor.
-     * @property {module:model/KeyResponse}
-     */
-    KeyResponse,
 
     /**
      * The LoggingAddressAndPort model constructor.
@@ -2869,18 +2860,6 @@ export {
      * @property {module:model/Resource}
      */
     Resource,
-
-    /**
-     * The ResourceCreate model constructor.
-     * @property {module:model/ResourceCreate}
-     */
-    ResourceCreate,
-
-    /**
-     * The ResourceCreateAllOf model constructor.
-     * @property {module:model/ResourceCreateAllOf}
-     */
-    ResourceCreateAllOf,
 
     /**
      * The ResourceResponse model constructor.

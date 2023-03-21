@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingElasticsearchResponse model module.
  * @module model/LoggingElasticsearchResponse
- * @version 3.1.1
+ * @version 3.2.0
  */
 class LoggingElasticsearchResponse {
     /**

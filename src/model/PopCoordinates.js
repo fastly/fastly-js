@@ -15,16 +15,19 @@ import ApiClient from '../ApiClient';
 /**
  * The PopCoordinates model module.
  * @module model/PopCoordinates
- * @version 3.1.1
+ * @version 3.2.0
  */
 class PopCoordinates {
     /**
      * Constructs a new <code>PopCoordinates</code>.
+     * the geographic location of the POP
      * @alias module:model/PopCoordinates
+     * @param latitude {Number} 
+     * @param longitude {Number} 
      */
-    constructor() { 
+    constructor(latitude, longitude) { 
         
-        PopCoordinates.initialize(this);
+        PopCoordinates.initialize(this, latitude, longitude);
     }
 
     /**
@@ -32,7 +35,9 @@ class PopCoordinates {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, latitude, longitude) { 
+        obj['latitude'] = latitude;
+        obj['longitude'] = longitude;
     }
 
     /**

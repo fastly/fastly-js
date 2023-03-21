@@ -16,7 +16,7 @@ import TlsPrivateKeyData from './TlsPrivateKeyData';
 /**
  * The TlsPrivateKey model module.
  * @module model/TlsPrivateKey
- * @version 3.1.1
+ * @version 3.2.0
  */
 class TlsPrivateKey {
     /**

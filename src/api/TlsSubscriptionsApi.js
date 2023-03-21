@@ -19,7 +19,7 @@ import TlsSubscriptionsResponse from '../model/TlsSubscriptionsResponse';
 /**
 * TlsSubscriptions service.
 * @module api/TlsSubscriptionsApi
-* @version 3.1.1
+* @version 3.2.0
 */
 export default class TlsSubscriptionsApi {
 
@@ -301,7 +301,7 @@ export default class TlsSubscriptionsApi {
     /**
      * List all TLS subscriptions.
      * @param {Object} options
-     * @param {String} [options.filter_state] - Limit the returned subscriptions by state. Valid values are `pending`, `processing`, `issued`, and `renewing`. Accepts parameters: `not` (e.g., `filter[state][not]=renewing`). 
+     * @param {String} [options.filter_state] - Limit the returned subscriptions by state. Valid values are `pending`, `processing`, `issued`, `renewing`, and `failed`. Accepts parameters: `not` (e.g., `filter[state][not]=renewing`). 
      * @param {String} [options.filter_tls_domains_id] - Limit the returned subscriptions to those that include the specific domain.
      * @param {Boolean} [options.filter_has_active_order] - Limit the returned subscriptions to those that have currently active orders. Permitted values: `true`. 
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`. 
@@ -343,7 +343,7 @@ export default class TlsSubscriptionsApi {
     /**
      * List all TLS subscriptions.
      * @param {Object} options
-     * @param {String} [options.filter_state] - Limit the returned subscriptions by state. Valid values are `pending`, `processing`, `issued`, and `renewing`. Accepts parameters: `not` (e.g., `filter[state][not]=renewing`). 
+     * @param {String} [options.filter_state] - Limit the returned subscriptions by state. Valid values are `pending`, `processing`, `issued`, `renewing`, and `failed`. Accepts parameters: `not` (e.g., `filter[state][not]=renewing`). 
      * @param {String} [options.filter_tls_domains_id] - Limit the returned subscriptions to those that include the specific domain.
      * @param {Boolean} [options.filter_has_active_order] - Limit the returned subscriptions to those that have currently active orders. Permitted values: `true`. 
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`. 
@@ -360,7 +360,7 @@ export default class TlsSubscriptionsApi {
     }
 
     /**
-     * Change the TLS domains or common name associated with this subscription, or update the TLS configuration for this set of domains.
+     * Change the TLS domains or common name associated with this subscription, update the TLS configuration for this set of domains, or retry a subscription with state `failed` by setting the state to `retry`.
      * @param {Object} options
      * @param {String} options.tls_subscription_id - Alphanumeric string identifying a TLS subscription.
      * @param {Boolean} [options.force] - A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain. 
@@ -397,7 +397,7 @@ export default class TlsSubscriptionsApi {
     }
 
     /**
-     * Change the TLS domains or common name associated with this subscription, or update the TLS configuration for this set of domains.
+     * Change the TLS domains or common name associated with this subscription, update the TLS configuration for this set of domains, or retry a subscription with state `failed` by setting the state to `retry`.
      * @param {Object} options
      * @param {String} options.tls_subscription_id - Alphanumeric string identifying a TLS subscription.
      * @param {Boolean} [options.force] - A flag that allows you to edit and delete a subscription with active domains. Valid to use on PATCH and DELETE actions. As a warning, removing an active domain from a subscription or forcing the deletion of a subscription may result in breaking TLS termination to that domain. 

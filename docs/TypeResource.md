@@ -7,6 +7,8 @@
 
 * `secret-store` (value: `"secret-store"`)
 
+* `config-store` (value: `"config-store"`)
+
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

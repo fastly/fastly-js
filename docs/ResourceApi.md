@@ -7,20 +7,20 @@ const apiInstance = new Fastly.ResourceApi();
 
 Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
-[**createResource**](ResourceApi.md#createResource) | **POST** /service/{service_id}/version/{version_id}/resource | Create a resource
-[**deleteResource**](ResourceApi.md#deleteResource) | **DELETE** /service/{service_id}/version/{version_id}/resource/{id} | Delete a resource
-[**getResource**](ResourceApi.md#getResource) | **GET** /service/{service_id}/version/{version_id}/resource/{id} | Display a resource
-[**listResources**](ResourceApi.md#listResources) | **GET** /service/{service_id}/version/{version_id}/resource | List resources
-[**updateResource**](ResourceApi.md#updateResource) | **PUT** /service/{service_id}/version/{version_id}/resource/{id} | Update a resource
+[**createResource**](ResourceApi.md#createResource) | **POST** /service/{service_id}/version/{version_id}/resource | Create a resource link
+[**deleteResource**](ResourceApi.md#deleteResource) | **DELETE** /service/{service_id}/version/{version_id}/resource/{id} | Delete a resource link
+[**getResource**](ResourceApi.md#getResource) | **GET** /service/{service_id}/version/{version_id}/resource/{id} | Display a resource link
+[**listResources**](ResourceApi.md#listResources) | **GET** /service/{service_id}/version/{version_id}/resource | List resource links
+[**updateResource**](ResourceApi.md#updateResource) | **PUT** /service/{service_id}/version/{version_id}/resource/{id} | Update a resource link
 
 
 ## `createResource`
 
 ```javascript
-createResource({ service_id, version_id, [name, ][resource_id] })
+createResource({ service_id, version_id, [resource_id, ][name] })
 ```
 
-Create a resource.
+Create a link between a resource and a service version.
 
 ### Example
 
@@ -28,8 +28,8 @@ Create a resource.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  name: "name_example",
   resource_id: "resource_id_example",
+  name: "name_example",
 };
 
 apiInstance.createResource(options)
@@ -47,8 +47,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** | Alphanumeric string identifying the service. |
 **version_id** | **Number** | Integer identifying a service version. |
-**name** | **String** | The name of the resource. | [optional]
-**resource_id** | **String** | The ID of the linked resource. | [optional]
+**resource_id** | **String** | The ID of the underlying linked resource. | [optional]
+**name** | **String** | The name of the resource link. | [optional]
 
 ### Return type
 
@@ -61,7 +61,7 @@ Name | Type | Description  | Notes
 deleteResource({ service_id, version_id, id })
 ```
 
-Delete a resource.
+Delete a link between a resource and a service version.
 
 ### Example
 
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 getResource({ service_id, version_id, id })
 ```
 
-Display a resource by its identifier.
+Display a resource link by its identifier.
 
 ### Example
 
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 listResources({ service_id, version_id })
 ```
 
-List resources.
+List links between resources and services
 
 ### Example
 
@@ -173,10 +173,10 @@ Name | Type | Description  | Notes
 ## `updateResource`
 
 ```javascript
-updateResource({ service_id, version_id, id, [name] })
+updateResource({ service_id, version_id, id, [resource_id, ][name] })
 ```
 
-Update a resource.
+Update a link between a resource and a service version.
 
 ### Example
 
@@ -185,6 +185,7 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   id: "id_example", // required
+  resource_id: "resource_id_example",
   name: "name_example",
 };
 
@@ -204,7 +205,8 @@ Name | Type | Description  | Notes
 **service_id** | **String** | Alphanumeric string identifying the service. |
 **version_id** | **Number** | Integer identifying a service version. |
 **id** | **String** | An alphanumeric string identifying the resource link. |
-**name** | **String** | The name of the resource. | [optional]
+**resource_id** | **String** | The ID of the underlying linked resource. | [optional]
+**name** | **String** | The name of the resource link. | [optional]
 
 ### Return type
 

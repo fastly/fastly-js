@@ -11,22 +11,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import GetStoresResponseMeta from './GetStoresResponseMeta';
-import StoreResponse from './StoreResponse';
 
 /**
- * The GetStoresResponse model module.
- * @module model/GetStoresResponse
- * @version 3.1.1
+ * The InlineResponse2002Meta model module.
+ * @module model/InlineResponse2002Meta
+ * @version 3.2.0
  */
-class GetStoresResponse {
+class InlineResponse2002Meta {
     /**
-     * Constructs a new <code>GetStoresResponse</code>.
-     * @alias module:model/GetStoresResponse
+     * Constructs a new <code>InlineResponse2002Meta</code>.
+     * Meta for the pagination.
+     * @alias module:model/InlineResponse2002Meta
      */
     constructor() { 
         
-        GetStoresResponse.initialize(this);
+        InlineResponse2002Meta.initialize(this);
     }
 
     /**
@@ -38,21 +37,21 @@ class GetStoresResponse {
     }
 
     /**
-     * Constructs a <code>GetStoresResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>InlineResponse2002Meta</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/GetStoresResponse} obj Optional instance to populate.
-     * @return {module:model/GetStoresResponse} The populated <code>GetStoresResponse</code> instance.
+     * @param {module:model/InlineResponse2002Meta} obj Optional instance to populate.
+     * @return {module:model/InlineResponse2002Meta} The populated <code>InlineResponse2002Meta</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new GetStoresResponse();
+            obj = obj || new InlineResponse2002Meta();
 
-            if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [StoreResponse]);
+            if (data.hasOwnProperty('next_cursor')) {
+                obj['next_cursor'] = ApiClient.convertToType(data['next_cursor'], 'String');
             }
-            if (data.hasOwnProperty('meta')) {
-                obj['meta'] = GetStoresResponseMeta.constructFromObject(data['meta']);
+            if (data.hasOwnProperty('limit')) {
+                obj['limit'] = ApiClient.convertToType(data['limit'], 'Number');
             }
         }
         return obj;
@@ -62,19 +61,21 @@ class GetStoresResponse {
 }
 
 /**
- * @member {Array.<module:model/StoreResponse>} data
+ * Cursor for the next page.
+ * @member {String} next_cursor
  */
-GetStoresResponse.prototype['data'] = undefined;
+InlineResponse2002Meta.prototype['next_cursor'] = undefined;
 
 /**
- * @member {module:model/GetStoresResponseMeta} meta
+ * Entries returned.
+ * @member {Number} limit
  */
-GetStoresResponse.prototype['meta'] = undefined;
+InlineResponse2002Meta.prototype['limit'] = undefined;
 
 
 
 
 
 
-export default GetStoresResponse;
+export default InlineResponse2002Meta;
 

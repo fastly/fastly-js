@@ -20,7 +20,7 @@ import WafTagAttributes from './WafTagAttributes';
 /**
  * The WafTagsResponseDataItem model module.
  * @module model/WafTagsResponseDataItem
- * @version 3.1.1
+ * @version 3.2.0
  */
 class WafTagsResponseDataItem {
     /**

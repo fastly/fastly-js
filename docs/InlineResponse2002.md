@@ -1,10 +1,11 @@
-# Fastly.ResourceCreateAllOf
+# Fastly.InlineResponse2002
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**resource_id** | **String** | The ID of the linked resource. | [optional] 
+**data** | [**[StoreResponse]**](StoreResponse.md) |  | [optional] 
+**meta** | [**InlineResponse2002Meta**](InlineResponse2002Meta.md) |  | [optional] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

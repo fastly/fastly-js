@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TlsSubscriptionResponseAttributesAllOf model module.
  * @module model/TlsSubscriptionResponseAttributesAllOf
- * @version 3.1.1
+ * @version 3.2.0
  */
 class TlsSubscriptionResponseAttributesAllOf {
     /**
@@ -95,7 +95,13 @@ TlsSubscriptionResponseAttributesAllOf['StateEnum'] = {
      * value: "renewing"
      * @const
      */
-    "renewing": "renewing"
+    "renewing": "renewing",
+
+    /**
+     * value: "failed"
+     * @const
+     */
+    "failed": "failed"
 };
 
 

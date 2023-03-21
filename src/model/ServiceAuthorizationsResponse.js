@@ -20,7 +20,7 @@ import ServiceAuthorizationsResponseAllOf from './ServiceAuthorizationsResponseA
 /**
  * The ServiceAuthorizationsResponse model module.
  * @module model/ServiceAuthorizationsResponse
- * @version 3.1.1
+ * @version 3.2.0
  */
 class ServiceAuthorizationsResponse {
     /**
