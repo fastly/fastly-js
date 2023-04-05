@@ -138,7 +138,10 @@ import IncludedWithWafRuleItem from './model/IncludedWithWafRuleItem';
 import InlineResponse200 from './model/InlineResponse200';
 import InlineResponse2001 from './model/InlineResponse2001';
 import InlineResponse2002 from './model/InlineResponse2002';
-import InlineResponse2002Meta from './model/InlineResponse2002Meta';
+import InlineResponse2003 from './model/InlineResponse2003';
+import InlineResponse2003Meta from './model/InlineResponse2003Meta';
+import InlineResponse2004 from './model/InlineResponse2004';
+import InlineResponse2004Meta from './model/InlineResponse2004Meta';
 import Invitation from './model/Invitation';
 import InvitationData from './model/InvitationData';
 import InvitationDataAttributes from './model/InvitationDataAttributes';
@@ -622,6 +625,7 @@ import DiffApi from './api/DiffApi';
 import DirectorApi from './api/DirectorApi';
 import DirectorBackendApi from './api/DirectorBackendApi';
 import DomainApi from './api/DomainApi';
+import DomainOwnershipsApi from './api/DomainOwnershipsApi';
 import EnabledProductsApi from './api/EnabledProductsApi';
 import EventsApi from './api/EventsApi';
 import GzipApi from './api/GzipApi';
@@ -662,6 +666,7 @@ import LoggingSumologicApi from './api/LoggingSumologicApi';
 import LoggingSyslogApi from './api/LoggingSyslogApi';
 import MutualAuthenticationApi from './api/MutualAuthenticationApi';
 import ObjectStoreApi from './api/ObjectStoreApi';
+import ObjectStoreItemApi from './api/ObjectStoreItemApi';
 import PackageApi from './api/PackageApi';
 import PoolApi from './api/PoolApi';
 import PopApi from './api/PopApi';
@@ -734,7 +739,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 3.2.0
+* @version 3.3.0
 */
 export {
     /**
@@ -1500,10 +1505,28 @@ export {
     InlineResponse2002,
 
     /**
-     * The InlineResponse2002Meta model constructor.
-     * @property {module:model/InlineResponse2002Meta}
+     * The InlineResponse2003 model constructor.
+     * @property {module:model/InlineResponse2003}
      */
-    InlineResponse2002Meta,
+    InlineResponse2003,
+
+    /**
+     * The InlineResponse2003Meta model constructor.
+     * @property {module:model/InlineResponse2003Meta}
+     */
+    InlineResponse2003Meta,
+
+    /**
+     * The InlineResponse2004 model constructor.
+     * @property {module:model/InlineResponse2004}
+     */
+    InlineResponse2004,
+
+    /**
+     * The InlineResponse2004Meta model constructor.
+     * @property {module:model/InlineResponse2004Meta}
+     */
+    InlineResponse2004Meta,
 
     /**
      * The Invitation model constructor.
@@ -4404,6 +4427,12 @@ export {
     DomainApi,
 
     /**
+    * The DomainOwnershipsApi service constructor.
+    * @property {module:api/DomainOwnershipsApi}
+    */
+    DomainOwnershipsApi,
+
+    /**
     * The EnabledProductsApi service constructor.
     * @property {module:api/EnabledProductsApi}
     */
@@ -4642,6 +4671,12 @@ export {
     * @property {module:api/ObjectStoreApi}
     */
     ObjectStoreApi,
+
+    /**
+    * The ObjectStoreItemApi service constructor.
+    * @property {module:api/ObjectStoreItemApi}
+    */
+    ObjectStoreItemApi,
 
     /**
     * The PackageApi service constructor.

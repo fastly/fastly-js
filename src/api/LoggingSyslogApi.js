@@ -20,7 +20,7 @@ import LoggingUseTls from '../model/LoggingUseTls';
 /**
 * LoggingSyslog service.
 * @module api/LoggingSyslogApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class LoggingSyslogApi {
 
@@ -78,6 +78,8 @@ export default class LoggingSyslogApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -107,7 +109,7 @@ export default class LoggingSyslogApi {
       let returnType = LoggingSyslogResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/syslog', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -170,6 +172,8 @@ export default class LoggingSyslogApi {
         'version_id': options['version_id'],
         'logging_syslog_name': options['logging_syslog_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -183,7 +187,7 @@ export default class LoggingSyslogApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/syslog/{logging_syslog_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -231,6 +235,8 @@ export default class LoggingSyslogApi {
         'version_id': options['version_id'],
         'logging_syslog_name': options['logging_syslog_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -244,7 +250,7 @@ export default class LoggingSyslogApi {
       let returnType = LoggingSyslogResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/syslog/{logging_syslog_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -286,6 +292,8 @@ export default class LoggingSyslogApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -299,7 +307,7 @@ export default class LoggingSyslogApi {
       let returnType = [LoggingSyslogResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/syslog', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -362,6 +370,8 @@ export default class LoggingSyslogApi {
         'version_id': options['version_id'],
         'logging_syslog_name': options['logging_syslog_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -391,7 +401,7 @@ export default class LoggingSyslogApi {
       let returnType = LoggingSyslogResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/syslog/{logging_syslog_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

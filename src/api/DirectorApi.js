@@ -19,7 +19,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Director service.
 * @module api/DirectorApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class DirectorApi {
 
@@ -69,6 +69,8 @@ export default class DirectorApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -90,7 +92,7 @@ export default class DirectorApi {
       let returnType = DirectorResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/director', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -145,6 +147,8 @@ export default class DirectorApi {
         'version_id': options['version_id'],
         'director_name': options['director_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -158,7 +162,7 @@ export default class DirectorApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/director/{director_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -206,6 +210,8 @@ export default class DirectorApi {
         'version_id': options['version_id'],
         'director_name': options['director_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -219,7 +225,7 @@ export default class DirectorApi {
       let returnType = DirectorResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/director/{director_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -261,6 +267,8 @@ export default class DirectorApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -274,7 +282,7 @@ export default class DirectorApi {
       let returnType = [DirectorResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/director', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

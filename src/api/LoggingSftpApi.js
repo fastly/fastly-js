@@ -18,7 +18,7 @@ import LoggingSftpResponse from '../model/LoggingSftpResponse';
 /**
 * LoggingSftp service.
 * @module api/LoggingSftpApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class LoggingSftpApi {
 
@@ -78,6 +78,8 @@ export default class LoggingSftpApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -109,7 +111,7 @@ export default class LoggingSftpApi {
       let returnType = LoggingSftpResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/sftp', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -174,6 +176,8 @@ export default class LoggingSftpApi {
         'version_id': options['version_id'],
         'logging_sftp_name': options['logging_sftp_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -187,7 +191,7 @@ export default class LoggingSftpApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/sftp/{logging_sftp_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -235,6 +239,8 @@ export default class LoggingSftpApi {
         'version_id': options['version_id'],
         'logging_sftp_name': options['logging_sftp_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -248,7 +254,7 @@ export default class LoggingSftpApi {
       let returnType = LoggingSftpResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/sftp/{logging_sftp_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -290,6 +296,8 @@ export default class LoggingSftpApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -303,7 +311,7 @@ export default class LoggingSftpApi {
       let returnType = [LoggingSftpResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/sftp', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -368,6 +376,8 @@ export default class LoggingSftpApi {
         'version_id': options['version_id'],
         'logging_sftp_name': options['logging_sftp_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -399,7 +409,7 @@ export default class LoggingSftpApi {
       let returnType = LoggingSftpResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/sftp/{logging_sftp_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

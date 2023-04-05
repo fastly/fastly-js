@@ -19,7 +19,7 @@ import TlsPrivateKeysResponse from '../model/TlsPrivateKeysResponse';
 /**
 * TlsPrivateKeys service.
 * @module api/TlsPrivateKeysApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class TlsPrivateKeysApi {
 
@@ -50,6 +50,8 @@ export default class TlsPrivateKeysApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -63,7 +65,7 @@ export default class TlsPrivateKeysApi {
       let returnType = TlsPrivateKeyResponse;
       return this.apiClient.callApi(
         '/tls/private_keys', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -97,6 +99,8 @@ export default class TlsPrivateKeysApi {
       let pathParams = {
         'tls_private_key_id': options['tls_private_key_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -110,7 +114,7 @@ export default class TlsPrivateKeysApi {
       let returnType = null;
       return this.apiClient.callApi(
         '/tls/private_keys/{tls_private_key_id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -144,6 +148,8 @@ export default class TlsPrivateKeysApi {
       let pathParams = {
         'tls_private_key_id': options['tls_private_key_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -157,7 +163,7 @@ export default class TlsPrivateKeysApi {
       let returnType = TlsPrivateKeyResponse;
       return this.apiClient.callApi(
         '/tls/private_keys/{tls_private_key_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -188,6 +194,8 @@ export default class TlsPrivateKeysApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'filter[in_use]': options['filter_in_use'],
         'page[number]': options['page_number'],
@@ -204,7 +212,7 @@ export default class TlsPrivateKeysApi {
       let returnType = TlsPrivateKeysResponse;
       return this.apiClient.callApi(
         '/tls/private_keys', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

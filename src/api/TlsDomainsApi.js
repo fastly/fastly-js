@@ -17,7 +17,7 @@ import TlsDomainsResponse from '../model/TlsDomainsResponse';
 /**
 * TlsDomains service.
 * @module api/TlsDomainsApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class TlsDomainsApi {
 
@@ -54,6 +54,8 @@ export default class TlsDomainsApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'filter[in_use]': options['filter_in_use'],
         'filter[tls_certificates.id]': options['filter_tls_certificates_id'],
@@ -74,7 +76,7 @@ export default class TlsDomainsApi {
       let returnType = TlsDomainsResponse;
       return this.apiClient.callApi(
         '/tls/domains', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

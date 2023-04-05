@@ -19,7 +19,7 @@ import TlsActivationsResponse from '../model/TlsActivationsResponse';
 /**
 * TlsActivations service.
 * @module api/TlsActivationsApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class TlsActivationsApi {
 
@@ -50,6 +50,8 @@ export default class TlsActivationsApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -63,7 +65,7 @@ export default class TlsActivationsApi {
       let returnType = TlsActivationResponse;
       return this.apiClient.callApi(
         '/tls/activations', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -97,6 +99,8 @@ export default class TlsActivationsApi {
       let pathParams = {
         'tls_activation_id': options['tls_activation_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -110,7 +114,7 @@ export default class TlsActivationsApi {
       let returnType = null;
       return this.apiClient.callApi(
         '/tls/activations/{tls_activation_id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -145,6 +149,8 @@ export default class TlsActivationsApi {
       let pathParams = {
         'tls_activation_id': options['tls_activation_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'include': options['include']
       };
@@ -159,7 +165,7 @@ export default class TlsActivationsApi {
       let returnType = TlsActivationResponse;
       return this.apiClient.callApi(
         '/tls/activations/{tls_activation_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -194,6 +200,8 @@ export default class TlsActivationsApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'filter[tls_certificate.id]': options['filter_tls_certificate_id'],
         'filter[tls_configuration.id]': options['filter_tls_configuration_id'],
@@ -213,7 +221,7 @@ export default class TlsActivationsApi {
       let returnType = TlsActivationsResponse;
       return this.apiClient.callApi(
         '/tls/activations', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -253,6 +261,8 @@ export default class TlsActivationsApi {
       let pathParams = {
         'tls_activation_id': options['tls_activation_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -266,7 +276,7 @@ export default class TlsActivationsApi {
       let returnType = TlsActivationResponse;
       return this.apiClient.callApi(
         '/tls/activations/{tls_activation_id}', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

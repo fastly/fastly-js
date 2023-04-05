@@ -21,7 +21,7 @@ import LoggingPlacement from '../model/LoggingPlacement';
 /**
 * LoggingKinesis service.
 * @module api/LoggingKinesisApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class LoggingKinesisApi {
 
@@ -72,6 +72,8 @@ export default class LoggingKinesisApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -94,7 +96,7 @@ export default class LoggingKinesisApi {
       let returnType = LoggingKinesisResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/kinesis', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -150,6 +152,8 @@ export default class LoggingKinesisApi {
         'version_id': options['version_id'],
         'logging_kinesis_name': options['logging_kinesis_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -163,7 +167,7 @@ export default class LoggingKinesisApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/kinesis/{logging_kinesis_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -211,6 +215,8 @@ export default class LoggingKinesisApi {
         'version_id': options['version_id'],
         'logging_kinesis_name': options['logging_kinesis_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -224,7 +230,7 @@ export default class LoggingKinesisApi {
       let returnType = LoggingKinesisResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/kinesis/{logging_kinesis_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -266,6 +272,8 @@ export default class LoggingKinesisApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -279,7 +287,7 @@ export default class LoggingKinesisApi {
       let returnType = [LoggingKinesisResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/kinesis', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

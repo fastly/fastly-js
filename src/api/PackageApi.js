@@ -17,7 +17,7 @@ import PackageResponse from '../model/PackageResponse';
 /**
 * Package service.
 * @module api/PackageApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class PackageApi {
 
@@ -59,6 +59,8 @@ export default class PackageApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -72,7 +74,7 @@ export default class PackageApi {
       let returnType = PackageResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/package', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -115,6 +117,8 @@ export default class PackageApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -130,7 +134,7 @@ export default class PackageApi {
       let returnType = PackageResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/package', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

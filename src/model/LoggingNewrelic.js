@@ -17,7 +17,7 @@ import LoggingNewrelicAllOf from './LoggingNewrelicAllOf';
 /**
  * The LoggingNewrelic model module.
  * @module model/LoggingNewrelic
- * @version 3.2.0
+ * @version 3.3.0
  */
 class LoggingNewrelic {
     /**

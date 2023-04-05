@@ -18,7 +18,7 @@ import SchemasContactResponse from '../model/SchemasContactResponse';
 /**
 * Contact service.
 * @module api/ContactApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class ContactApi {
 
@@ -60,6 +60,8 @@ export default class ContactApi {
         'customer_id': options['customer_id'],
         'contact_id': options['contact_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -73,7 +75,7 @@ export default class ContactApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/customer/{customer_id}/contact/{contact_id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -108,6 +110,8 @@ export default class ContactApi {
       let pathParams = {
         'customer_id': options['customer_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -121,7 +125,7 @@ export default class ContactApi {
       let returnType = [SchemasContactResponse];
       return this.apiClient.callApi(
         '/customer/{customer_id}/contacts', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

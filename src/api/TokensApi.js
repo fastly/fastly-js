@@ -18,7 +18,7 @@ import TokenResponse from '../model/TokenResponse';
 /**
 * Tokens service.
 * @module api/TokensApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class TokensApi {
 
@@ -48,6 +48,8 @@ export default class TokensApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -61,7 +63,7 @@ export default class TokensApi {
       let returnType = TokenResponse;
       return this.apiClient.callApi(
         '/tokens/self', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -94,6 +96,8 @@ export default class TokensApi {
       let pathParams = {
         'customer_id': options['customer_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -107,7 +111,7 @@ export default class TokensApi {
       let returnType = [TokenResponse];
       return this.apiClient.callApi(
         '/customer/{customer_id}/tokens', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -135,6 +139,8 @@ export default class TokensApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -148,7 +154,7 @@ export default class TokensApi {
       let returnType = [TokenResponse];
       return this.apiClient.callApi(
         '/tokens', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -181,6 +187,8 @@ export default class TokensApi {
       let pathParams = {
         'token_id': options['token_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -194,7 +202,7 @@ export default class TokensApi {
       let returnType = null;
       return this.apiClient.callApi(
         '/tokens/{token_id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -222,6 +230,8 @@ export default class TokensApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -235,7 +245,7 @@ export default class TokensApi {
       let returnType = null;
       return this.apiClient.callApi(
         '/tokens/self', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

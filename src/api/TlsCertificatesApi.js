@@ -19,7 +19,7 @@ import TlsCertificatesResponse from '../model/TlsCertificatesResponse';
 /**
 * TlsCertificates service.
 * @module api/TlsCertificatesApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class TlsCertificatesApi {
 
@@ -50,6 +50,8 @@ export default class TlsCertificatesApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -63,7 +65,7 @@ export default class TlsCertificatesApi {
       let returnType = Object;
       return this.apiClient.callApi(
         '/tls/certificates', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -97,6 +99,8 @@ export default class TlsCertificatesApi {
       let pathParams = {
         'tls_certificate_id': options['tls_certificate_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -110,7 +114,7 @@ export default class TlsCertificatesApi {
       let returnType = null;
       return this.apiClient.callApi(
         '/tls/certificates/{tls_certificate_id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -144,6 +148,8 @@ export default class TlsCertificatesApi {
       let pathParams = {
         'tls_certificate_id': options['tls_certificate_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -157,7 +163,7 @@ export default class TlsCertificatesApi {
       let returnType = TlsCertificateResponse;
       return this.apiClient.callApi(
         '/tls/certificates/{tls_certificate_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -191,6 +197,8 @@ export default class TlsCertificatesApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'filter[not_after]': options['filter_not_after'],
         'filter[tls_domains.id]': options['filter_tls_domains_id'],
@@ -210,7 +218,7 @@ export default class TlsCertificatesApi {
       let returnType = TlsCertificatesResponse;
       return this.apiClient.callApi(
         '/tls/certificates', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -250,6 +258,8 @@ export default class TlsCertificatesApi {
       let pathParams = {
         'tls_certificate_id': options['tls_certificate_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -263,7 +273,7 @@ export default class TlsCertificatesApi {
       let returnType = TlsCertificateResponse;
       return this.apiClient.callApi(
         '/tls/certificates/{tls_certificate_id}', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

@@ -19,7 +19,7 @@ import WafFirewallsResponse from '../model/WafFirewallsResponse';
 /**
 * WafFirewalls service.
 * @module api/WafFirewallsApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class WafFirewallsApi {
 
@@ -50,6 +50,8 @@ export default class WafFirewallsApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -63,7 +65,7 @@ export default class WafFirewallsApi {
       let returnType = WafFirewallResponse;
       return this.apiClient.callApi(
         '/waf/firewalls', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -98,6 +100,8 @@ export default class WafFirewallsApi {
       let pathParams = {
         'firewall_id': options['firewall_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -111,7 +115,7 @@ export default class WafFirewallsApi {
       let returnType = null;
       return this.apiClient.callApi(
         '/waf/firewalls/{firewall_id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -148,6 +152,8 @@ export default class WafFirewallsApi {
       let pathParams = {
         'firewall_id': options['firewall_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'filter[service_version_number]': options['filter_service_version_number'],
         'include': options['include']
@@ -163,7 +169,7 @@ export default class WafFirewallsApi {
       let returnType = WafFirewallResponse;
       return this.apiClient.callApi(
         '/waf/firewalls/{firewall_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -198,6 +204,8 @@ export default class WafFirewallsApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'page[number]': options['page_number'],
         'page[size]': options['page_size'],
@@ -216,7 +224,7 @@ export default class WafFirewallsApi {
       let returnType = WafFirewallsResponse;
       return this.apiClient.callApi(
         '/waf/firewalls', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -255,6 +263,8 @@ export default class WafFirewallsApi {
       let pathParams = {
         'firewall_id': options['firewall_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -268,7 +278,7 @@ export default class WafFirewallsApi {
       let returnType = WafFirewallResponse;
       return this.apiClient.callApi(
         '/waf/firewalls/{firewall_id}', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

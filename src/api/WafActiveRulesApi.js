@@ -22,7 +22,7 @@ import WafActiveRulesResponse from '../model/WafActiveRulesResponse';
 /**
 * WafActiveRules service.
 * @module api/WafActiveRulesApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class WafActiveRulesApi {
 
@@ -65,6 +65,8 @@ export default class WafActiveRulesApi {
         'firewall_id': options['firewall_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -78,7 +80,7 @@ export default class WafActiveRulesApi {
       let returnType = null;
       return this.apiClient.callApi(
         '/waf/firewalls/{firewall_id}/versions/{version_id}/active-rules/bulk', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -121,6 +123,8 @@ export default class WafActiveRulesApi {
         'firewall_id': options['firewall_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -134,7 +138,7 @@ export default class WafActiveRulesApi {
       let returnType = WafActiveRuleCreationResponse;
       return this.apiClient.callApi(
         '/waf/firewalls/{firewall_id}/versions/{version_id}/active-rules', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -183,6 +187,8 @@ export default class WafActiveRulesApi {
         'version_id': options['version_id'],
         'waf_tag_name': options['waf_tag_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -196,7 +202,7 @@ export default class WafActiveRulesApi {
       let returnType = null;
       return this.apiClient.callApi(
         '/waf/firewalls/{firewall_id}/versions/{version_id}/tags/{waf_tag_name}/active-rules', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -245,6 +251,8 @@ export default class WafActiveRulesApi {
         'version_id': options['version_id'],
         'waf_rule_id': options['waf_rule_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -258,7 +266,7 @@ export default class WafActiveRulesApi {
       let returnType = null;
       return this.apiClient.callApi(
         '/waf/firewalls/{firewall_id}/versions/{version_id}/active-rules/{waf_rule_id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -307,6 +315,8 @@ export default class WafActiveRulesApi {
         'version_id': options['version_id'],
         'waf_rule_id': options['waf_rule_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'include': options['include']
       };
@@ -321,7 +331,7 @@ export default class WafActiveRulesApi {
       let returnType = WafActiveRuleResponse;
       return this.apiClient.callApi(
         '/waf/firewalls/{firewall_id}/versions/{version_id}/active-rules/{waf_rule_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -371,6 +381,8 @@ export default class WafActiveRulesApi {
         'firewall_id': options['firewall_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'filter[status]': options['filter_status'],
         'filter[waf_rule_revision][message]': options['filter_waf_rule_revision_message'],
@@ -391,7 +403,7 @@ export default class WafActiveRulesApi {
       let returnType = WafActiveRulesResponse;
       return this.apiClient.callApi(
         '/waf/firewalls/{firewall_id}/versions/{version_id}/active-rules', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -446,6 +458,8 @@ export default class WafActiveRulesApi {
         'version_id': options['version_id'],
         'waf_rule_id': options['waf_rule_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -459,7 +473,7 @@ export default class WafActiveRulesApi {
       let returnType = WafActiveRuleResponse;
       return this.apiClient.callApi(
         '/waf/firewalls/{firewall_id}/versions/{version_id}/active-rules/{waf_rule_id}', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

@@ -17,7 +17,7 @@ import PublicIpList from '../model/PublicIpList';
 /**
 * PublicIpList service.
 * @module api/PublicIpListApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class PublicIpListApi {
 
@@ -47,6 +47,8 @@ export default class PublicIpListApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -60,7 +62,7 @@ export default class PublicIpListApi {
       let returnType = PublicIpList;
       return this.apiClient.callApi(
         '/public-ip-list', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

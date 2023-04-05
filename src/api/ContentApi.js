@@ -17,7 +17,7 @@ import Content from '../model/Content';
 /**
 * Content service.
 * @module api/ContentApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class ContentApi {
 
@@ -48,6 +48,8 @@ export default class ContentApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'url': options['url']
       };
@@ -62,7 +64,7 @@ export default class ContentApi {
       let returnType = [Content];
       return this.apiClient.callApi(
         '/content/edge_check', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

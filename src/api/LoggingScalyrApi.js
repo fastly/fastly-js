@@ -18,7 +18,7 @@ import LoggingScalyrResponse from '../model/LoggingScalyrResponse';
 /**
 * LoggingScalyr service.
 * @module api/LoggingScalyrApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class LoggingScalyrApi {
 
@@ -68,6 +68,8 @@ export default class LoggingScalyrApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -89,7 +91,7 @@ export default class LoggingScalyrApi {
       let returnType = LoggingScalyrResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/scalyr', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -144,6 +146,8 @@ export default class LoggingScalyrApi {
         'version_id': options['version_id'],
         'logging_scalyr_name': options['logging_scalyr_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -157,7 +161,7 @@ export default class LoggingScalyrApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/scalyr/{logging_scalyr_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -205,6 +209,8 @@ export default class LoggingScalyrApi {
         'version_id': options['version_id'],
         'logging_scalyr_name': options['logging_scalyr_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -218,7 +224,7 @@ export default class LoggingScalyrApi {
       let returnType = LoggingScalyrResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/scalyr/{logging_scalyr_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -260,6 +266,8 @@ export default class LoggingScalyrApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -273,7 +281,7 @@ export default class LoggingScalyrApi {
       let returnType = [LoggingScalyrResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/scalyr', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -328,6 +336,8 @@ export default class LoggingScalyrApi {
         'version_id': options['version_id'],
         'logging_scalyr_name': options['logging_scalyr_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -349,7 +359,7 @@ export default class LoggingScalyrApi {
       let returnType = LoggingScalyrResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/scalyr/{logging_scalyr_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

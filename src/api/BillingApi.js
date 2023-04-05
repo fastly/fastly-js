@@ -18,7 +18,7 @@ import BillingResponse from '../model/BillingResponse';
 /**
 * Billing service.
 * @module api/BillingApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class BillingApi {
 
@@ -60,6 +60,8 @@ export default class BillingApi {
         'month': options['month'],
         'year': options['year']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -73,7 +75,7 @@ export default class BillingApi {
       let returnType = BillingResponse;
       return this.apiClient.callApi(
         '/billing/v2/year/{year}/month/{month}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -114,6 +116,8 @@ export default class BillingApi {
         'customer_id': options['customer_id'],
         'invoice_id': options['invoice_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -127,7 +131,7 @@ export default class BillingApi {
       let returnType = BillingResponse;
       return this.apiClient.callApi(
         '/billing/v2/account_customers/{customer_id}/invoices/{invoice_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -164,6 +168,8 @@ export default class BillingApi {
       let pathParams = {
         'customer_id': options['customer_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'month': options['month'],
         'year': options['year']
@@ -179,7 +185,7 @@ export default class BillingApi {
       let returnType = BillingEstimateResponse;
       return this.apiClient.callApi(
         '/billing/v2/account_customers/{customer_id}/mtd_invoice', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

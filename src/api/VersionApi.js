@@ -20,7 +20,7 @@ import VersionResponse from '../model/VersionResponse';
 /**
 * Version service.
 * @module api/VersionApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class VersionApi {
 
@@ -62,6 +62,8 @@ export default class VersionApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -75,7 +77,7 @@ export default class VersionApi {
       let returnType = VersionResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/activate', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -116,6 +118,8 @@ export default class VersionApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -129,7 +133,7 @@ export default class VersionApi {
       let returnType = Version;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/clone', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -164,6 +168,8 @@ export default class VersionApi {
       let pathParams = {
         'service_id': options['service_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -177,7 +183,7 @@ export default class VersionApi {
       let returnType = VersionCreateResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -217,6 +223,8 @@ export default class VersionApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -230,7 +238,7 @@ export default class VersionApi {
       let returnType = VersionResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/deactivate', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -271,6 +279,8 @@ export default class VersionApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -284,7 +294,7 @@ export default class VersionApi {
       let returnType = VersionResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -319,6 +329,8 @@ export default class VersionApi {
       let pathParams = {
         'service_id': options['service_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -332,7 +344,7 @@ export default class VersionApi {
       let returnType = [VersionResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -372,6 +384,8 @@ export default class VersionApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -385,7 +399,7 @@ export default class VersionApi {
       let returnType = Version;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/lock', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -433,6 +447,8 @@ export default class VersionApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -453,7 +469,7 @@ export default class VersionApi {
       let returnType = VersionResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -501,6 +517,8 @@ export default class VersionApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -514,7 +532,7 @@ export default class VersionApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/validate', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

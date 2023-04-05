@@ -18,7 +18,7 @@ import LoggingLogglyResponse from '../model/LoggingLogglyResponse';
 /**
 * LoggingLoggly service.
 * @module api/LoggingLogglyApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class LoggingLogglyApi {
 
@@ -66,6 +66,8 @@ export default class LoggingLogglyApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -85,7 +87,7 @@ export default class LoggingLogglyApi {
       let returnType = LoggingLogglyResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/loggly', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -138,6 +140,8 @@ export default class LoggingLogglyApi {
         'version_id': options['version_id'],
         'logging_loggly_name': options['logging_loggly_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -151,7 +155,7 @@ export default class LoggingLogglyApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/loggly/{logging_loggly_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -199,6 +203,8 @@ export default class LoggingLogglyApi {
         'version_id': options['version_id'],
         'logging_loggly_name': options['logging_loggly_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -212,7 +218,7 @@ export default class LoggingLogglyApi {
       let returnType = LoggingLogglyResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/loggly/{logging_loggly_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -254,6 +260,8 @@ export default class LoggingLogglyApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -267,7 +275,7 @@ export default class LoggingLogglyApi {
       let returnType = [LoggingLogglyResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/loggly', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -320,6 +328,8 @@ export default class LoggingLogglyApi {
         'version_id': options['version_id'],
         'logging_loggly_name': options['logging_loggly_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -339,7 +349,7 @@ export default class LoggingLogglyApi {
       let returnType = LoggingLogglyResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/loggly/{logging_loggly_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

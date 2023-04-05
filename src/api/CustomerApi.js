@@ -19,7 +19,7 @@ import SchemasUserResponse from '../model/SchemasUserResponse';
 /**
 * Customer service.
 * @module api/CustomerApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class CustomerApi {
 
@@ -55,6 +55,8 @@ export default class CustomerApi {
       let pathParams = {
         'customer_id': options['customer_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -68,7 +70,7 @@ export default class CustomerApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/customer/{customer_id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -102,6 +104,8 @@ export default class CustomerApi {
       let pathParams = {
         'customer_id': options['customer_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -115,7 +119,7 @@ export default class CustomerApi {
       let returnType = CustomerResponse;
       return this.apiClient.callApi(
         '/customer/{customer_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -143,6 +147,8 @@ export default class CustomerApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -156,7 +162,7 @@ export default class CustomerApi {
       let returnType = CustomerResponse;
       return this.apiClient.callApi(
         '/current_customer', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -189,6 +195,8 @@ export default class CustomerApi {
       let pathParams = {
         'customer_id': options['customer_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -202,7 +210,7 @@ export default class CustomerApi {
       let returnType = [SchemasUserResponse];
       return this.apiClient.callApi(
         '/customer/{customer_id}/users', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -260,6 +268,8 @@ export default class CustomerApi {
       let pathParams = {
         'customer_id': options['customer_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -297,7 +307,7 @@ export default class CustomerApi {
       let returnType = CustomerResponse;
       return this.apiClient.callApi(
         '/customer/{customer_id}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

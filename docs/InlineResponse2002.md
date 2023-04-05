@@ -4,8 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[StoreResponse]**](StoreResponse.md) |  | [optional] 
-**meta** | [**InlineResponse2002Meta**](InlineResponse2002Meta.md) |  | [optional] 
+**expires_at** | **String** | Time-stamp (GMT) when the domain_ownership validation will expire. | [optional] [readonly] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

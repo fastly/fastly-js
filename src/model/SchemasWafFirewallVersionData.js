@@ -17,7 +17,7 @@ import WafFirewallVersionDataAttributes from './WafFirewallVersionDataAttributes
 /**
  * The SchemasWafFirewallVersionData model module.
  * @module model/SchemasWafFirewallVersionData
- * @version 3.2.0
+ * @version 3.3.0
  */
 class SchemasWafFirewallVersionData {
     /**

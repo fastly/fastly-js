@@ -19,7 +19,7 @@ import TlsCsrResponse from '../model/TlsCsrResponse';
 /**
 * TlsCsrs service.
 * @module api/TlsCsrsApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class TlsCsrsApi {
 
@@ -50,6 +50,8 @@ export default class TlsCsrsApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -63,7 +65,7 @@ export default class TlsCsrsApi {
       let returnType = TlsCsrResponse;
       return this.apiClient.callApi(
         '/tls/certificate_signing_requests', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

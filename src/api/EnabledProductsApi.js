@@ -17,7 +17,7 @@ import EnabledProductResponse from '../model/EnabledProductResponse';
 /**
 * EnabledProducts service.
 * @module api/EnabledProductsApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class EnabledProductsApi {
 
@@ -59,6 +59,8 @@ export default class EnabledProductsApi {
         'product_id': options['product_id'],
         'service_id': options['service_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -72,7 +74,7 @@ export default class EnabledProductsApi {
       let returnType = null;
       return this.apiClient.callApi(
         '/enabled-products/{product_id}/services/{service_id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -113,6 +115,8 @@ export default class EnabledProductsApi {
         'product_id': options['product_id'],
         'service_id': options['service_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -126,7 +130,7 @@ export default class EnabledProductsApi {
       let returnType = EnabledProductResponse;
       return this.apiClient.callApi(
         '/enabled-products/{product_id}/services/{service_id}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -167,6 +171,8 @@ export default class EnabledProductsApi {
         'product_id': options['product_id'],
         'service_id': options['service_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -180,7 +186,7 @@ export default class EnabledProductsApi {
       let returnType = EnabledProductResponse;
       return this.apiClient.callApi(
         '/enabled-products/{product_id}/services/{service_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

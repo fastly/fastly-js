@@ -18,7 +18,7 @@ import SnippetResponse from '../model/SnippetResponse';
 /**
 * Snippet service.
 * @module api/SnippetApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class SnippetApi {
 
@@ -65,6 +65,8 @@ export default class SnippetApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -83,7 +85,7 @@ export default class SnippetApi {
       let returnType = SnippetResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/snippet', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -135,6 +137,8 @@ export default class SnippetApi {
         'version_id': options['version_id'],
         'snippet_name': options['snippet_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -148,7 +152,7 @@ export default class SnippetApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/snippet/{snippet_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -196,6 +200,8 @@ export default class SnippetApi {
         'version_id': options['version_id'],
         'snippet_name': options['snippet_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -209,7 +215,7 @@ export default class SnippetApi {
       let returnType = SnippetResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/snippet/{snippet_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -251,6 +257,8 @@ export default class SnippetApi {
         'service_id': options['service_id'],
         'snippet_id': options['snippet_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -264,7 +272,7 @@ export default class SnippetApi {
       let returnType = SnippetResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/snippet/{snippet_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -305,6 +313,8 @@ export default class SnippetApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -318,7 +328,7 @@ export default class SnippetApi {
       let returnType = [SnippetResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/snippet', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -364,6 +374,8 @@ export default class SnippetApi {
         'service_id': options['service_id'],
         'snippet_id': options['snippet_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -382,7 +394,7 @@ export default class SnippetApi {
       let returnType = SnippetResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/snippet/{snippet_id}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

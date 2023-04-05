@@ -18,7 +18,7 @@ import EventsResponse from '../model/EventsResponse';
 /**
 * Events service.
 * @module api/EventsApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class EventsApi {
 
@@ -54,6 +54,8 @@ export default class EventsApi {
       let pathParams = {
         'event_id': options['event_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -67,7 +69,7 @@ export default class EventsApi {
       let returnType = EventResponse;
       return this.apiClient.callApi(
         '/events/{event_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -104,6 +106,8 @@ export default class EventsApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'filter[customer_id]': options['filter_customer_id'],
         'filter[event_type]': options['filter_event_type'],
@@ -126,7 +130,7 @@ export default class EventsApi {
       let returnType = EventsResponse;
       return this.apiClient.callApi(
         '/events', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

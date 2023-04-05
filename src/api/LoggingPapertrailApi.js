@@ -18,7 +18,7 @@ import LoggingPapertrailResponse from '../model/LoggingPapertrailResponse';
 /**
 * LoggingPapertrail service.
 * @module api/LoggingPapertrailApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class LoggingPapertrailApi {
 
@@ -67,6 +67,8 @@ export default class LoggingPapertrailApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -87,7 +89,7 @@ export default class LoggingPapertrailApi {
       let returnType = LoggingPapertrailResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/papertrail', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -141,6 +143,8 @@ export default class LoggingPapertrailApi {
         'version_id': options['version_id'],
         'logging_papertrail_name': options['logging_papertrail_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -154,7 +158,7 @@ export default class LoggingPapertrailApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/papertrail/{logging_papertrail_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -202,6 +206,8 @@ export default class LoggingPapertrailApi {
         'version_id': options['version_id'],
         'logging_papertrail_name': options['logging_papertrail_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -215,7 +221,7 @@ export default class LoggingPapertrailApi {
       let returnType = LoggingPapertrailResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/papertrail/{logging_papertrail_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -257,6 +263,8 @@ export default class LoggingPapertrailApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -270,7 +278,7 @@ export default class LoggingPapertrailApi {
       let returnType = [LoggingPapertrailResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/papertrail', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -324,6 +332,8 @@ export default class LoggingPapertrailApi {
         'version_id': options['version_id'],
         'logging_papertrail_name': options['logging_papertrail_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -344,7 +354,7 @@ export default class LoggingPapertrailApi {
       let returnType = LoggingPapertrailResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/papertrail/{logging_papertrail_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

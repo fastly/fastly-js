@@ -19,7 +19,7 @@ import LoggingSumologicResponse from '../model/LoggingSumologicResponse';
 /**
 * LoggingSumologic service.
 * @module api/LoggingSumologicApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class LoggingSumologicApi {
 
@@ -68,6 +68,8 @@ export default class LoggingSumologicApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -88,7 +90,7 @@ export default class LoggingSumologicApi {
       let returnType = LoggingSumologicResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/sumologic', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -142,6 +144,8 @@ export default class LoggingSumologicApi {
         'version_id': options['version_id'],
         'logging_sumologic_name': options['logging_sumologic_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -155,7 +159,7 @@ export default class LoggingSumologicApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/sumologic/{logging_sumologic_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -203,6 +207,8 @@ export default class LoggingSumologicApi {
         'version_id': options['version_id'],
         'logging_sumologic_name': options['logging_sumologic_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -216,7 +222,7 @@ export default class LoggingSumologicApi {
       let returnType = LoggingSumologicResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/sumologic/{logging_sumologic_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -258,6 +264,8 @@ export default class LoggingSumologicApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -271,7 +279,7 @@ export default class LoggingSumologicApi {
       let returnType = [LoggingSumologicResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/sumologic', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -325,6 +333,8 @@ export default class LoggingSumologicApi {
         'version_id': options['version_id'],
         'logging_sumologic_name': options['logging_sumologic_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -345,7 +355,7 @@ export default class LoggingSumologicApi {
       let returnType = LoggingSumologicResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/sumologic/{logging_sumologic_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

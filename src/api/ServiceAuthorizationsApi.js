@@ -19,7 +19,7 @@ import ServiceAuthorizationsResponse from '../model/ServiceAuthorizationsRespons
 /**
 * ServiceAuthorizations service.
 * @module api/ServiceAuthorizationsApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class ServiceAuthorizationsApi {
 
@@ -50,6 +50,8 @@ export default class ServiceAuthorizationsApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -63,7 +65,7 @@ export default class ServiceAuthorizationsApi {
       let returnType = ServiceAuthorizationResponse;
       return this.apiClient.callApi(
         '/service-authorizations', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -97,6 +99,8 @@ export default class ServiceAuthorizationsApi {
       let pathParams = {
         'service_authorization_id': options['service_authorization_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -110,7 +114,7 @@ export default class ServiceAuthorizationsApi {
       let returnType = null;
       return this.apiClient.callApi(
         '/service-authorizations/{service_authorization_id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -140,6 +144,8 @@ export default class ServiceAuthorizationsApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'page[number]': options['page_number'],
         'page[size]': options['page_size']
@@ -155,7 +161,7 @@ export default class ServiceAuthorizationsApi {
       let returnType = ServiceAuthorizationsResponse;
       return this.apiClient.callApi(
         '/service-authorizations', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -190,6 +196,8 @@ export default class ServiceAuthorizationsApi {
       let pathParams = {
         'service_authorization_id': options['service_authorization_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -203,7 +211,7 @@ export default class ServiceAuthorizationsApi {
       let returnType = ServiceAuthorizationResponse;
       return this.apiClient.callApi(
         '/service-authorizations/{service_authorization_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -238,6 +246,8 @@ export default class ServiceAuthorizationsApi {
       let pathParams = {
         'service_authorization_id': options['service_authorization_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -251,7 +261,7 @@ export default class ServiceAuthorizationsApi {
       let returnType = ServiceAuthorizationResponse;
       return this.apiClient.callApi(
         '/service-authorizations/{service_authorization_id}', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

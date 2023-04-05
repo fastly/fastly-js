@@ -16,7 +16,7 @@ import ApiClient from "../ApiClient";
 /**
 * IamUserGroups service.
 * @module api/IamUserGroupsApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class IamUserGroupsApi {
 
@@ -52,6 +52,8 @@ export default class IamUserGroupsApi {
       let pathParams = {
         'user_group_id': options['user_group_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -65,7 +67,7 @@ export default class IamUserGroupsApi {
       let returnType = null;
       return this.apiClient.callApi(
         '/user-groups/{user_group_id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -99,6 +101,8 @@ export default class IamUserGroupsApi {
       let pathParams = {
         'user_group_id': options['user_group_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -112,7 +116,7 @@ export default class IamUserGroupsApi {
       let returnType = Object;
       return this.apiClient.callApi(
         '/user-groups/{user_group_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -148,6 +152,8 @@ export default class IamUserGroupsApi {
       let pathParams = {
         'user_group_id': options['user_group_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'per_page': options['per_page'],
         'page': options['page']
@@ -163,7 +169,7 @@ export default class IamUserGroupsApi {
       let returnType = Object;
       return this.apiClient.callApi(
         '/user-groups/{user_group_id}/members', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -201,6 +207,8 @@ export default class IamUserGroupsApi {
       let pathParams = {
         'user_group_id': options['user_group_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'per_page': options['per_page'],
         'page': options['page']
@@ -216,7 +224,7 @@ export default class IamUserGroupsApi {
       let returnType = Object;
       return this.apiClient.callApi(
         '/user-groups/{user_group_id}/roles', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -254,6 +262,8 @@ export default class IamUserGroupsApi {
       let pathParams = {
         'user_group_id': options['user_group_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'per_page': options['per_page'],
         'page': options['page']
@@ -269,7 +279,7 @@ export default class IamUserGroupsApi {
       let returnType = Object;
       return this.apiClient.callApi(
         '/user-groups/{user_group_id}/service-groups', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -301,6 +311,8 @@ export default class IamUserGroupsApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'per_page': options['per_page'],
         'page': options['page']
@@ -316,7 +328,7 @@ export default class IamUserGroupsApi {
       let returnType = Object;
       return this.apiClient.callApi(
         '/user-groups', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

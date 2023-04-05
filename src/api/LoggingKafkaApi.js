@@ -19,7 +19,7 @@ import LoggingUseTls from '../model/LoggingUseTls';
 /**
 * LoggingKafka service.
 * @module api/LoggingKafkaApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class LoggingKafkaApi {
 
@@ -80,6 +80,8 @@ export default class LoggingKafkaApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -112,7 +114,7 @@ export default class LoggingKafkaApi {
       let returnType = LoggingKafkaResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/kafka', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -178,6 +180,8 @@ export default class LoggingKafkaApi {
         'version_id': options['version_id'],
         'logging_kafka_name': options['logging_kafka_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -191,7 +195,7 @@ export default class LoggingKafkaApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/kafka/{logging_kafka_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -239,6 +243,8 @@ export default class LoggingKafkaApi {
         'version_id': options['version_id'],
         'logging_kafka_name': options['logging_kafka_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -252,7 +258,7 @@ export default class LoggingKafkaApi {
       let returnType = LoggingKafkaResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/kafka/{logging_kafka_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -294,6 +300,8 @@ export default class LoggingKafkaApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -307,7 +315,7 @@ export default class LoggingKafkaApi {
       let returnType = [LoggingKafkaResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/kafka', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

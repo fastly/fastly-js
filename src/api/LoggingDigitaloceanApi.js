@@ -18,7 +18,7 @@ import LoggingDigitaloceanResponse from '../model/LoggingDigitaloceanResponse';
 /**
 * LoggingDigitalocean service.
 * @module api/LoggingDigitaloceanApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class LoggingDigitaloceanApi {
 
@@ -76,6 +76,8 @@ export default class LoggingDigitaloceanApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -105,7 +107,7 @@ export default class LoggingDigitaloceanApi {
       let returnType = LoggingDigitaloceanResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/digitalocean', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -168,6 +170,8 @@ export default class LoggingDigitaloceanApi {
         'version_id': options['version_id'],
         'logging_digitalocean_name': options['logging_digitalocean_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -181,7 +185,7 @@ export default class LoggingDigitaloceanApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/digitalocean/{logging_digitalocean_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -229,6 +233,8 @@ export default class LoggingDigitaloceanApi {
         'version_id': options['version_id'],
         'logging_digitalocean_name': options['logging_digitalocean_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -242,7 +248,7 @@ export default class LoggingDigitaloceanApi {
       let returnType = LoggingDigitaloceanResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/digitalocean/{logging_digitalocean_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -284,6 +290,8 @@ export default class LoggingDigitaloceanApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -297,7 +305,7 @@ export default class LoggingDigitaloceanApi {
       let returnType = [LoggingDigitaloceanResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/digitalocean', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -360,6 +368,8 @@ export default class LoggingDigitaloceanApi {
         'version_id': options['version_id'],
         'logging_digitalocean_name': options['logging_digitalocean_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -389,7 +399,7 @@ export default class LoggingDigitaloceanApi {
       let returnType = LoggingDigitaloceanResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/digitalocean/{logging_digitalocean_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

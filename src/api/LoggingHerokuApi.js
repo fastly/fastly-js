@@ -18,7 +18,7 @@ import LoggingHerokuResponse from '../model/LoggingHerokuResponse';
 /**
 * LoggingHeroku service.
 * @module api/LoggingHerokuApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class LoggingHerokuApi {
 
@@ -67,6 +67,8 @@ export default class LoggingHerokuApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -87,7 +89,7 @@ export default class LoggingHerokuApi {
       let returnType = LoggingHerokuResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/heroku', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -141,6 +143,8 @@ export default class LoggingHerokuApi {
         'version_id': options['version_id'],
         'logging_heroku_name': options['logging_heroku_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -154,7 +158,7 @@ export default class LoggingHerokuApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/heroku/{logging_heroku_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -202,6 +206,8 @@ export default class LoggingHerokuApi {
         'version_id': options['version_id'],
         'logging_heroku_name': options['logging_heroku_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -215,7 +221,7 @@ export default class LoggingHerokuApi {
       let returnType = LoggingHerokuResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/heroku/{logging_heroku_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -257,6 +263,8 @@ export default class LoggingHerokuApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -270,7 +278,7 @@ export default class LoggingHerokuApi {
       let returnType = [LoggingHerokuResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/heroku', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -324,6 +332,8 @@ export default class LoggingHerokuApi {
         'version_id': options['version_id'],
         'logging_heroku_name': options['logging_heroku_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -344,7 +354,7 @@ export default class LoggingHerokuApi {
       let returnType = LoggingHerokuResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/heroku/{logging_heroku_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

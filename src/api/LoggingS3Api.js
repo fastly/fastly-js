@@ -18,7 +18,7 @@ import LoggingS3Response from '../model/LoggingS3Response';
 /**
 * LoggingS3 service.
 * @module api/LoggingS3Api
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class LoggingS3Api {
 
@@ -81,6 +81,8 @@ export default class LoggingS3Api {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -115,7 +117,7 @@ export default class LoggingS3Api {
       let returnType = LoggingS3Response;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/s3', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -183,6 +185,8 @@ export default class LoggingS3Api {
         'version_id': options['version_id'],
         'logging_s3_name': options['logging_s3_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -196,7 +200,7 @@ export default class LoggingS3Api {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/s3/{logging_s3_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -244,6 +248,8 @@ export default class LoggingS3Api {
         'version_id': options['version_id'],
         'logging_s3_name': options['logging_s3_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -257,7 +263,7 @@ export default class LoggingS3Api {
       let returnType = LoggingS3Response;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/s3/{logging_s3_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -299,6 +305,8 @@ export default class LoggingS3Api {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -312,7 +320,7 @@ export default class LoggingS3Api {
       let returnType = [LoggingS3Response];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/s3', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -380,6 +388,8 @@ export default class LoggingS3Api {
         'version_id': options['version_id'],
         'logging_s3_name': options['logging_s3_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -414,7 +424,7 @@ export default class LoggingS3Api {
       let returnType = LoggingS3Response;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/s3/{logging_s3_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

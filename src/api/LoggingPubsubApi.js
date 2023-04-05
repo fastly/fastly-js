@@ -18,7 +18,7 @@ import LoggingGooglePubsubResponse from '../model/LoggingGooglePubsubResponse';
 /**
 * LoggingPubsub service.
 * @module api/LoggingPubsubApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class LoggingPubsubApi {
 
@@ -70,6 +70,8 @@ export default class LoggingPubsubApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -93,7 +95,7 @@ export default class LoggingPubsubApi {
       let returnType = LoggingGooglePubsubResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/pubsub', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -150,6 +152,8 @@ export default class LoggingPubsubApi {
         'version_id': options['version_id'],
         'logging_google_pubsub_name': options['logging_google_pubsub_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -163,7 +167,7 @@ export default class LoggingPubsubApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/pubsub/{logging_google_pubsub_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -211,6 +215,8 @@ export default class LoggingPubsubApi {
         'version_id': options['version_id'],
         'logging_google_pubsub_name': options['logging_google_pubsub_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -224,7 +230,7 @@ export default class LoggingPubsubApi {
       let returnType = LoggingGooglePubsubResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/pubsub/{logging_google_pubsub_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -266,6 +272,8 @@ export default class LoggingPubsubApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -279,7 +287,7 @@ export default class LoggingPubsubApi {
       let returnType = [LoggingGooglePubsubResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/pubsub', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -336,6 +344,8 @@ export default class LoggingPubsubApi {
         'version_id': options['version_id'],
         'logging_google_pubsub_name': options['logging_google_pubsub_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -359,7 +369,7 @@ export default class LoggingPubsubApi {
       let returnType = LoggingGooglePubsubResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/pubsub/{logging_google_pubsub_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

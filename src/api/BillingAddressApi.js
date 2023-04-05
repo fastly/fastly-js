@@ -20,7 +20,7 @@ import UpdateBillingAddressRequest from '../model/UpdateBillingAddressRequest';
 /**
 * BillingAddress service.
 * @module api/BillingAddressApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class BillingAddressApi {
 
@@ -57,6 +57,8 @@ export default class BillingAddressApi {
       let pathParams = {
         'customer_id': options['customer_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -70,7 +72,7 @@ export default class BillingAddressApi {
       let returnType = BillingAddressResponse;
       return this.apiClient.callApi(
         '/customer/{customer_id}/billing_address', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -105,6 +107,8 @@ export default class BillingAddressApi {
       let pathParams = {
         'customer_id': options['customer_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -118,7 +122,7 @@ export default class BillingAddressApi {
       let returnType = null;
       return this.apiClient.callApi(
         '/customer/{customer_id}/billing_address', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -152,6 +156,8 @@ export default class BillingAddressApi {
       let pathParams = {
         'customer_id': options['customer_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -165,7 +171,7 @@ export default class BillingAddressApi {
       let returnType = BillingAddressResponse;
       return this.apiClient.callApi(
         '/customer/{customer_id}/billing_address', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -200,6 +206,8 @@ export default class BillingAddressApi {
       let pathParams = {
         'customer_id': options['customer_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -213,7 +221,7 @@ export default class BillingAddressApi {
       let returnType = BillingAddressResponse;
       return this.apiClient.callApi(
         '/customer/{customer_id}/billing_address', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

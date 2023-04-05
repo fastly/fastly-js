@@ -11,13 +11,11 @@
  */
 
 import ApiClient from '../ApiClient';
-import InlineResponse2002Meta from './InlineResponse2002Meta';
-import StoreResponse from './StoreResponse';
 
 /**
  * The InlineResponse2002 model module.
  * @module model/InlineResponse2002
- * @version 3.2.0
+ * @version 3.3.0
  */
 class InlineResponse2002 {
     /**
@@ -48,11 +46,8 @@ class InlineResponse2002 {
         if (data) {
             obj = obj || new InlineResponse2002();
 
-            if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [StoreResponse]);
-            }
-            if (data.hasOwnProperty('meta')) {
-                obj['meta'] = InlineResponse2002Meta.constructFromObject(data['meta']);
+            if (data.hasOwnProperty('expires_at')) {
+                obj['expires_at'] = ApiClient.convertToType(data['expires_at'], 'String');
             }
         }
         return obj;
@@ -62,14 +57,10 @@ class InlineResponse2002 {
 }
 
 /**
- * @member {Array.<module:model/StoreResponse>} data
+ * Time-stamp (GMT) when the domain_ownership validation will expire.
+ * @member {String} expires_at
  */
-InlineResponse2002.prototype['data'] = undefined;
-
-/**
- * @member {module:model/InlineResponse2002Meta} meta
- */
-InlineResponse2002.prototype['meta'] = undefined;
+InlineResponse2002.prototype['expires_at'] = undefined;
 
 
 

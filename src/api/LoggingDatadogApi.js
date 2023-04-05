@@ -18,7 +18,7 @@ import LoggingDatadogResponse from '../model/LoggingDatadogResponse';
 /**
 * LoggingDatadog service.
 * @module api/LoggingDatadogApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class LoggingDatadogApi {
 
@@ -67,6 +67,8 @@ export default class LoggingDatadogApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -87,7 +89,7 @@ export default class LoggingDatadogApi {
       let returnType = LoggingDatadogResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/datadog', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -141,6 +143,8 @@ export default class LoggingDatadogApi {
         'version_id': options['version_id'],
         'logging_datadog_name': options['logging_datadog_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -154,7 +158,7 @@ export default class LoggingDatadogApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/datadog/{logging_datadog_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -202,6 +206,8 @@ export default class LoggingDatadogApi {
         'version_id': options['version_id'],
         'logging_datadog_name': options['logging_datadog_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -215,7 +221,7 @@ export default class LoggingDatadogApi {
       let returnType = LoggingDatadogResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/datadog/{logging_datadog_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -257,6 +263,8 @@ export default class LoggingDatadogApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -270,7 +278,7 @@ export default class LoggingDatadogApi {
       let returnType = [LoggingDatadogResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/datadog', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -324,6 +332,8 @@ export default class LoggingDatadogApi {
         'version_id': options['version_id'],
         'logging_datadog_name': options['logging_datadog_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -344,7 +354,7 @@ export default class LoggingDatadogApi {
       let returnType = LoggingDatadogResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/datadog/{logging_datadog_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

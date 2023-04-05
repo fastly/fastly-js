@@ -19,7 +19,7 @@ import TlsSubscriptionsResponse from '../model/TlsSubscriptionsResponse';
 /**
 * TlsSubscriptions service.
 * @module api/TlsSubscriptionsApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class TlsSubscriptionsApi {
 
@@ -62,6 +62,8 @@ export default class TlsSubscriptionsApi {
         'tls_subscription_id': options['tls_subscription_id'],
         'tls_authorization_id': options['tls_authorization_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -75,7 +77,7 @@ export default class TlsSubscriptionsApi {
       let returnType = Object;
       return this.apiClient.callApi(
         '/tls/subscriptions/{tls_subscription_id}/authorizations/{tls_authorization_id}/globalsign_email_challenges', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -107,6 +109,8 @@ export default class TlsSubscriptionsApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'force': options['force']
       };
@@ -121,7 +125,7 @@ export default class TlsSubscriptionsApi {
       let returnType = TlsSubscriptionResponse;
       return this.apiClient.callApi(
         '/tls/subscriptions', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -168,6 +172,8 @@ export default class TlsSubscriptionsApi {
         'globalsign_email_challenge_id': options['globalsign_email_challenge_id'],
         'tls_authorization_id': options['tls_authorization_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -181,7 +187,7 @@ export default class TlsSubscriptionsApi {
       let returnType = null;
       return this.apiClient.callApi(
         '/tls/subscriptions/{tls_subscription_id}/authorizations/{tls_authorization_id}/globalsign_email_challenges/{globalsign_email_challenge_id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -217,6 +223,8 @@ export default class TlsSubscriptionsApi {
       let pathParams = {
         'tls_subscription_id': options['tls_subscription_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -230,7 +238,7 @@ export default class TlsSubscriptionsApi {
       let returnType = null;
       return this.apiClient.callApi(
         '/tls/subscriptions/{tls_subscription_id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -265,6 +273,8 @@ export default class TlsSubscriptionsApi {
       let pathParams = {
         'tls_subscription_id': options['tls_subscription_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'include': options['include']
       };
@@ -279,7 +289,7 @@ export default class TlsSubscriptionsApi {
       let returnType = TlsSubscriptionResponse;
       return this.apiClient.callApi(
         '/tls/subscriptions/{tls_subscription_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -315,6 +325,8 @@ export default class TlsSubscriptionsApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'filter[state]': options['filter_state'],
         'filter[tls_domains.id]': options['filter_tls_domains_id'],
@@ -335,7 +347,7 @@ export default class TlsSubscriptionsApi {
       let returnType = TlsSubscriptionsResponse;
       return this.apiClient.callApi(
         '/tls/subscriptions', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -377,6 +389,8 @@ export default class TlsSubscriptionsApi {
       let pathParams = {
         'tls_subscription_id': options['tls_subscription_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'force': options['force']
       };
@@ -391,7 +405,7 @@ export default class TlsSubscriptionsApi {
       let returnType = TlsSubscriptionResponse;
       return this.apiClient.callApi(
         '/tls/subscriptions/{tls_subscription_id}', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

@@ -19,7 +19,7 @@ import WafExclusionsResponse from '../model/WafExclusionsResponse';
 /**
 * WafExclusions service.
 * @module api/WafExclusionsApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class WafExclusionsApi {
 
@@ -62,6 +62,8 @@ export default class WafExclusionsApi {
         'firewall_id': options['firewall_id'],
         'firewall_version_number': options['firewall_version_number']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -75,7 +77,7 @@ export default class WafExclusionsApi {
       let returnType = WafExclusionResponse;
       return this.apiClient.callApi(
         '/waf/firewalls/{firewall_id}/versions/{firewall_version_number}/exclusions', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -123,6 +125,8 @@ export default class WafExclusionsApi {
         'firewall_version_number': options['firewall_version_number'],
         'exclusion_number': options['exclusion_number']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -136,7 +140,7 @@ export default class WafExclusionsApi {
       let returnType = null;
       return this.apiClient.callApi(
         '/waf/firewalls/{firewall_id}/versions/{firewall_version_number}/exclusions/{exclusion_number}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -184,6 +188,8 @@ export default class WafExclusionsApi {
         'firewall_version_number': options['firewall_version_number'],
         'exclusion_number': options['exclusion_number']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -197,7 +203,7 @@ export default class WafExclusionsApi {
       let returnType = WafExclusionResponse;
       return this.apiClient.callApi(
         '/waf/firewalls/{firewall_id}/versions/{firewall_version_number}/exclusions/{exclusion_number}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -245,6 +251,8 @@ export default class WafExclusionsApi {
         'firewall_id': options['firewall_id'],
         'firewall_version_number': options['firewall_version_number']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'filter[exclusion_type]': options['filter_exclusion_type'],
         'filter[name]': options['filter_name'],
@@ -264,7 +272,7 @@ export default class WafExclusionsApi {
       let returnType = WafExclusionsResponse;
       return this.apiClient.callApi(
         '/waf/firewalls/{firewall_id}/versions/{firewall_version_number}/exclusions', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -318,6 +326,8 @@ export default class WafExclusionsApi {
         'firewall_version_number': options['firewall_version_number'],
         'exclusion_number': options['exclusion_number']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -331,7 +341,7 @@ export default class WafExclusionsApi {
       let returnType = WafExclusionResponse;
       return this.apiClient.callApi(
         '/waf/firewalls/{firewall_id}/versions/{firewall_version_number}/exclusions/{exclusion_number}', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

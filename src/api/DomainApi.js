@@ -19,7 +19,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Domain service.
 * @module api/DomainApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class DomainApi {
 
@@ -67,6 +67,8 @@ export default class DomainApi {
         'version_id': options['version_id'],
         'domain_name': options['domain_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -80,7 +82,7 @@ export default class DomainApi {
       let returnType = [DomainCheckItem];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/domain/{domain_name}/check', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -122,6 +124,8 @@ export default class DomainApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -135,7 +139,7 @@ export default class DomainApi {
       let returnType = [Array];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/domain/check_all', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -178,6 +182,8 @@ export default class DomainApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -193,7 +199,7 @@ export default class DomainApi {
       let returnType = DomainResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/domain', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -242,6 +248,8 @@ export default class DomainApi {
         'version_id': options['version_id'],
         'domain_name': options['domain_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -255,7 +263,7 @@ export default class DomainApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/domain/{domain_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -303,6 +311,8 @@ export default class DomainApi {
         'version_id': options['version_id'],
         'domain_name': options['domain_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -316,7 +326,7 @@ export default class DomainApi {
       let returnType = DomainResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/domain/{domain_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -358,6 +368,8 @@ export default class DomainApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -371,7 +383,7 @@ export default class DomainApi {
       let returnType = [DomainResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/domain', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -420,6 +432,8 @@ export default class DomainApi {
         'version_id': options['version_id'],
         'domain_name': options['domain_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -435,7 +449,7 @@ export default class DomainApi {
       let returnType = DomainResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/domain/{domain_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

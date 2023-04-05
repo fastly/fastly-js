@@ -17,7 +17,7 @@ import WafTagsResponse from '../model/WafTagsResponse';
 /**
 * WafTags service.
 * @module api/WafTagsApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class WafTagsApi {
 
@@ -51,6 +51,8 @@ export default class WafTagsApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'filter[name]': options['filter_name'],
         'page[number]': options['page_number'],
@@ -68,7 +70,7 @@ export default class WafTagsApi {
       let returnType = WafTagsResponse;
       return this.apiClient.callApi(
         '/waf/tags', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Http3 service.
 * @module api/Http3Api
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class Http3Api {
 
@@ -66,6 +66,8 @@ export default class Http3Api {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -85,7 +87,7 @@ export default class Http3Api {
       let returnType = Http3;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/http3', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -132,6 +134,8 @@ export default class Http3Api {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -145,7 +149,7 @@ export default class Http3Api {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/http3', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -186,6 +190,8 @@ export default class Http3Api {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -199,7 +205,7 @@ export default class Http3Api {
       let returnType = Http3;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/http3', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

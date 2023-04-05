@@ -18,7 +18,7 @@ import RequestSettingsResponse from '../model/RequestSettingsResponse';
 /**
 * RequestSettings service.
 * @module api/RequestSettingsApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class RequestSettingsApi {
 
@@ -66,6 +66,8 @@ export default class RequestSettingsApi {
         'version_id': options['version_id'],
         'request_settings_name': options['request_settings_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -79,7 +81,7 @@ export default class RequestSettingsApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/request_settings/{request_settings_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -127,6 +129,8 @@ export default class RequestSettingsApi {
         'version_id': options['version_id'],
         'request_settings_name': options['request_settings_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -140,7 +144,7 @@ export default class RequestSettingsApi {
       let returnType = RequestSettingsResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/request_settings/{request_settings_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -182,6 +186,8 @@ export default class RequestSettingsApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -195,7 +201,7 @@ export default class RequestSettingsApi {
       let returnType = [RequestSettingsResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/request_settings', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -254,6 +260,8 @@ export default class RequestSettingsApi {
         'version_id': options['version_id'],
         'request_settings_name': options['request_settings_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -279,7 +287,7 @@ export default class RequestSettingsApi {
       let returnType = RequestSettingsResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/request_settings/{request_settings_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

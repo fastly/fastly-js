@@ -19,7 +19,7 @@ import TlsConfigurationsResponse from '../model/TlsConfigurationsResponse';
 /**
 * TlsConfigurations service.
 * @module api/TlsConfigurationsApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class TlsConfigurationsApi {
 
@@ -56,6 +56,8 @@ export default class TlsConfigurationsApi {
       let pathParams = {
         'tls_configuration_id': options['tls_configuration_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'include': options['include']
       };
@@ -70,7 +72,7 @@ export default class TlsConfigurationsApi {
       let returnType = TlsConfigurationResponse;
       return this.apiClient.callApi(
         '/tls/configurations/{tls_configuration_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -103,6 +105,8 @@ export default class TlsConfigurationsApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'filter[bulk]': options['filter_bulk'],
         'include': options['include'],
@@ -120,7 +124,7 @@ export default class TlsConfigurationsApi {
       let returnType = TlsConfigurationsResponse;
       return this.apiClient.callApi(
         '/tls/configurations', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -158,6 +162,8 @@ export default class TlsConfigurationsApi {
       let pathParams = {
         'tls_configuration_id': options['tls_configuration_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -171,7 +177,7 @@ export default class TlsConfigurationsApi {
       let returnType = TlsConfigurationResponse;
       return this.apiClient.callApi(
         '/tls/configurations/{tls_configuration_id}', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

@@ -12,14 +12,14 @@
 
 
 import ApiClient from "../ApiClient";
-import InlineResponse2002 from '../model/InlineResponse2002';
+import InlineResponse2003 from '../model/InlineResponse2003';
 import Store from '../model/Store';
 import StoreResponse from '../model/StoreResponse';
 
 /**
 * ObjectStore service.
 * @module api/ObjectStoreApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class ObjectStoreApi {
 
@@ -42,6 +42,7 @@ export default class ObjectStoreApi {
     /**
      * Create a new object store.
      * @param {Object} options
+     * @param {String} [options.location]
      * @param {module:model/Store} [options.store]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StoreResponse} and HTTP response
      */
@@ -50,7 +51,10 @@ export default class ObjectStoreApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
+        'location': options['location']
       };
       let headerParams = {
       };
@@ -63,7 +67,7 @@ export default class ObjectStoreApi {
       let returnType = StoreResponse;
       return this.apiClient.callApi(
         '/resources/stores/object', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -71,6 +75,7 @@ export default class ObjectStoreApi {
     /**
      * Create a new object store.
      * @param {Object} options
+     * @param {String} [options.location]
      * @param {module:model/Store} [options.store]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StoreResponse}
      */
@@ -85,6 +90,7 @@ export default class ObjectStoreApi {
      * An object store must be empty before it can be deleted.  Deleting an object store that still contains keys will result in a `409` (Conflict).
      * @param {Object} options
      * @param {String} options.store_id
+     * @param {Boolean} [options.force]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     deleteStoreWithHttpInfo(options = {}) {
@@ -97,9 +103,12 @@ export default class ObjectStoreApi {
       let pathParams = {
         'store_id': options['store_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
+        'force': options['force']
       };
       let formParams = {
       };
@@ -110,7 +119,7 @@ export default class ObjectStoreApi {
       let returnType = null;
       return this.apiClient.callApi(
         '/resources/stores/object/{store_id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -119,6 +128,7 @@ export default class ObjectStoreApi {
      * An object store must be empty before it can be deleted.  Deleting an object store that still contains keys will result in a `409` (Conflict).
      * @param {Object} options
      * @param {String} options.store_id
+     * @param {Boolean} [options.force]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deleteStore(options = {}) {
@@ -144,6 +154,8 @@ export default class ObjectStoreApi {
       let pathParams = {
         'store_id': options['store_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -157,7 +169,7 @@ export default class ObjectStoreApi {
       let returnType = StoreResponse;
       return this.apiClient.callApi(
         '/resources/stores/object/{store_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -180,12 +192,14 @@ export default class ObjectStoreApi {
      * @param {Object} options
      * @param {String} [options.cursor]
      * @param {Number} [options.limit=100]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2002} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
      */
     getStoresWithHttpInfo(options = {}) {
       let postBody = null;
 
       let pathParams = {
+      };
+      let pathParamsAllowReserved = {
       };
       let queryParams = {
         'cursor': options['cursor'],
@@ -199,10 +213,10 @@ export default class ObjectStoreApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = InlineResponse2002;
+      let returnType = InlineResponse2003;
       return this.apiClient.callApi(
         '/resources/stores/object', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -212,7 +226,7 @@ export default class ObjectStoreApi {
      * @param {Object} options
      * @param {String} [options.cursor]
      * @param {Number} [options.limit=100]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2002}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
      */
     getStores(options = {}) {
       return this.getStoresWithHttpInfo(options)

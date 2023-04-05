@@ -19,7 +19,7 @@ const DEFAULT_RATELIMIT = 1000;
 
 /**
 * @module ApiClient
-* @version 3.2.0
+* @version 3.3.0
 */
 
 /**
@@ -66,7 +66,7 @@ class ApiClient {
          * @default {}
          */
         this.defaultHeaders = {
-            'User-Agent': 'fastly-js/3.2.0'
+            'User-Agent': 'fastly-js/3.3.0'
         };
 
         /**
@@ -167,10 +167,11 @@ class ApiClient {
     * NOTE: query parameters are not handled here.
     * @param {String} path The path to append to the base URL.
     * @param {Object} pathParams The parameter values to append.
+    * @param {Object} pathParamsAllowReserved Object specifying if each path param should be passed unencoded
     * @param {String} apiBasePath Base path defined in the path, operation level to override the default one
     * @returns {String} The encoded path with parameter values substituted.
     */
-    buildUrl(path, pathParams, apiBasePath) {
+    buildUrl(path, pathParams, pathParamsAllowReserved, apiBasePath) {
         if (!path.match(/^\//)) {
             path = '/' + path;
         }
@@ -183,14 +184,17 @@ class ApiClient {
         }
 
         url = url.replace(/\{([\w-\.]+)\}/g, (fullMatch, key) => {
-            var value;
+            var value, allowReserved;
             if (pathParams.hasOwnProperty(key)) {
                 value = this.paramToString(pathParams[key]);
+                allowReserved = pathParamsAllowReserved[key];
             } else {
                 value = fullMatch;
             }
-
-            return encodeURIComponent(value);
+            if (!allowReserved) {
+                value = encodeURIComponent(value);
+            }
+            return value;
         });
 
         return url;
@@ -400,6 +404,7 @@ class ApiClient {
     * @param {String} path The base URL to invoke.
     * @param {String} httpMethod The HTTP method to use.
     * @param {Object.<String, String>} pathParams A map of path parameters and their values.
+    * @param {Object.<String, Boolean>} pathParamsAllowReserved A map of path parameters and whether their values should be passed without encoding
     * @param {Object.<String, Object>} queryParams A map of query parameters and their values.
     * @param {Object.<String, Object>} headerParams A map of header parameters and their values.
     * @param {Object.<String, Object>} formParams A map of form parameters and their values.
@@ -412,11 +417,11 @@ class ApiClient {
     * @param {String} apiBasePath base path defined in the operation/path level to override the default one
     * @returns {Promise} A {@link https://www.promisejs.org/|Promise} object.
     */
-    callApi(path, httpMethod, pathParams,
+    callApi(path, httpMethod, pathParams, pathParamsAllowReserved,
         queryParams, headerParams, formParams, bodyParam, authNames, contentTypes, accepts,
         returnType, apiBasePath) {
 
-        var url = this.buildUrl(path, pathParams, apiBasePath);
+        var url = this.buildUrl(path, pathParams, pathParamsAllowReserved, apiBasePath);
         var request = superagent(httpMethod, url);
 
         if (this.plugins !== null) {

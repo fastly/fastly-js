@@ -19,7 +19,7 @@ import RelationshipServiceInvitationsServiceInvitations from './RelationshipServ
 /**
  * The RelationshipsForInvitation model module.
  * @module model/RelationshipsForInvitation
- * @version 3.2.0
+ * @version 3.3.0
  */
 class RelationshipsForInvitation {
     /**

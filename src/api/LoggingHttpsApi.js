@@ -19,7 +19,7 @@ import LoggingMessageType from '../model/LoggingMessageType';
 /**
 * LoggingHttps service.
 * @module api/LoggingHttpsApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class LoggingHttpsApi {
 
@@ -79,6 +79,8 @@ export default class LoggingHttpsApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -110,7 +112,7 @@ export default class LoggingHttpsApi {
       let returnType = LoggingHttpsResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/https', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -175,6 +177,8 @@ export default class LoggingHttpsApi {
         'version_id': options['version_id'],
         'logging_https_name': options['logging_https_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -188,7 +192,7 @@ export default class LoggingHttpsApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/https/{logging_https_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -236,6 +240,8 @@ export default class LoggingHttpsApi {
         'version_id': options['version_id'],
         'logging_https_name': options['logging_https_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -249,7 +255,7 @@ export default class LoggingHttpsApi {
       let returnType = LoggingHttpsResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/https/{logging_https_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -291,6 +297,8 @@ export default class LoggingHttpsApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -304,7 +312,7 @@ export default class LoggingHttpsApi {
       let returnType = [LoggingHttpsResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/https', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -369,6 +377,8 @@ export default class LoggingHttpsApi {
         'version_id': options['version_id'],
         'logging_https_name': options['logging_https_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -400,7 +410,7 @@ export default class LoggingHttpsApi {
       let returnType = LoggingHttpsResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/https/{logging_https_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

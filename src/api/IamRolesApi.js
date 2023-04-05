@@ -16,7 +16,7 @@ import ApiClient from "../ApiClient";
 /**
 * IamRoles service.
 * @module api/IamRolesApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class IamRolesApi {
 
@@ -52,6 +52,8 @@ export default class IamRolesApi {
       let pathParams = {
         'role_id': options['role_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -65,7 +67,7 @@ export default class IamRolesApi {
       let returnType = null;
       return this.apiClient.callApi(
         '/roles/{role_id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -99,6 +101,8 @@ export default class IamRolesApi {
       let pathParams = {
         'role_id': options['role_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -112,7 +116,7 @@ export default class IamRolesApi {
       let returnType = Object;
       return this.apiClient.callApi(
         '/roles/{role_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -146,6 +150,8 @@ export default class IamRolesApi {
       let pathParams = {
         'role_id': options['role_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -159,7 +165,7 @@ export default class IamRolesApi {
       let returnType = Object;
       return this.apiClient.callApi(
         '/roles/{role_id}/permissions', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -189,6 +195,8 @@ export default class IamRolesApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'per_page': options['per_page'],
         'page': options['page']
@@ -204,7 +212,7 @@ export default class IamRolesApi {
       let returnType = Object;
       return this.apiClient.callApi(
         '/roles', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

@@ -19,7 +19,7 @@ import LoggingUseTls from '../model/LoggingUseTls';
 /**
 * LoggingSplunk service.
 * @module api/LoggingSplunkApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class LoggingSplunkApi {
 
@@ -75,6 +75,8 @@ export default class LoggingSplunkApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -102,7 +104,7 @@ export default class LoggingSplunkApi {
       let returnType = LoggingSplunkResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/splunk', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -163,6 +165,8 @@ export default class LoggingSplunkApi {
         'version_id': options['version_id'],
         'logging_splunk_name': options['logging_splunk_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -176,7 +180,7 @@ export default class LoggingSplunkApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/splunk/{logging_splunk_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -224,6 +228,8 @@ export default class LoggingSplunkApi {
         'version_id': options['version_id'],
         'logging_splunk_name': options['logging_splunk_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -237,7 +243,7 @@ export default class LoggingSplunkApi {
       let returnType = LoggingSplunkResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/splunk/{logging_splunk_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -279,6 +285,8 @@ export default class LoggingSplunkApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -292,7 +300,7 @@ export default class LoggingSplunkApi {
       let returnType = [LoggingSplunkResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/splunk', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -353,6 +361,8 @@ export default class LoggingSplunkApi {
         'version_id': options['version_id'],
         'logging_splunk_name': options['logging_splunk_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -380,7 +390,7 @@ export default class LoggingSplunkApi {
       let returnType = LoggingSplunkResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/splunk/{logging_splunk_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

@@ -18,7 +18,7 @@ import PoolResponse from '../model/PoolResponse';
 /**
 * Pool service.
 * @module api/PoolApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class PoolApi {
 
@@ -81,6 +81,8 @@ export default class PoolApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -115,7 +117,7 @@ export default class PoolApi {
       let returnType = PoolResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/pool', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -183,6 +185,8 @@ export default class PoolApi {
         'version_id': options['version_id'],
         'pool_name': options['pool_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -196,7 +200,7 @@ export default class PoolApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/pool/{pool_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -244,6 +248,8 @@ export default class PoolApi {
         'version_id': options['version_id'],
         'pool_name': options['pool_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -257,7 +263,7 @@ export default class PoolApi {
       let returnType = PoolResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/pool/{pool_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -299,6 +305,8 @@ export default class PoolApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -312,7 +320,7 @@ export default class PoolApi {
       let returnType = [PoolResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/pool', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -380,6 +388,8 @@ export default class PoolApi {
         'version_id': options['version_id'],
         'pool_name': options['pool_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -414,7 +424,7 @@ export default class PoolApi {
       let returnType = PoolResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/pool/{pool_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

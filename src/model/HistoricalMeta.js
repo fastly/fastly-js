@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HistoricalMeta model module.
  * @module model/HistoricalMeta
- * @version 3.2.0
+ * @version 3.3.0
  */
 class HistoricalMeta {
     /**

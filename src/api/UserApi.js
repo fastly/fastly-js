@@ -19,7 +19,7 @@ import UserResponse from '../model/UserResponse';
 /**
 * User service.
 * @module api/UserApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class UserApi {
 
@@ -57,6 +57,8 @@ export default class UserApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -78,7 +80,7 @@ export default class UserApi {
       let returnType = UserResponse;
       return this.apiClient.callApi(
         '/user', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -119,6 +121,8 @@ export default class UserApi {
       let pathParams = {
         'user_id': options['user_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -132,7 +136,7 @@ export default class UserApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/user/{user_id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -160,6 +164,8 @@ export default class UserApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -173,7 +179,7 @@ export default class UserApi {
       let returnType = UserResponse;
       return this.apiClient.callApi(
         '/current_user', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -206,6 +212,8 @@ export default class UserApi {
       let pathParams = {
         'user_id': options['user_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -219,7 +227,7 @@ export default class UserApi {
       let returnType = UserResponse;
       return this.apiClient.callApi(
         '/user/{user_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -253,6 +261,8 @@ export default class UserApi {
       let pathParams = {
         'user_login': options['user_login']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -266,7 +276,7 @@ export default class UserApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/user/{user_login}/password/request_reset', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -308,6 +318,8 @@ export default class UserApi {
       let pathParams = {
         'user_id': options['user_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -329,7 +341,7 @@ export default class UserApi {
       let returnType = UserResponse;
       return this.apiClient.callApi(
         '/user/{user_id}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -367,6 +379,8 @@ export default class UserApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -382,7 +396,7 @@ export default class UserApi {
       let returnType = UserResponse;
       return this.apiClient.callApi(
         '/current_user/password', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

@@ -19,7 +19,7 @@ import InvitationsResponse from '../model/InvitationsResponse';
 /**
 * Invitations service.
 * @module api/InvitationsApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class InvitationsApi {
 
@@ -50,6 +50,8 @@ export default class InvitationsApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -63,7 +65,7 @@ export default class InvitationsApi {
       let returnType = InvitationResponse;
       return this.apiClient.callApi(
         '/invitations', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -97,6 +99,8 @@ export default class InvitationsApi {
       let pathParams = {
         'invitation_id': options['invitation_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -110,7 +114,7 @@ export default class InvitationsApi {
       let returnType = null;
       return this.apiClient.callApi(
         '/invitations/{invitation_id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -140,6 +144,8 @@ export default class InvitationsApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'page[number]': options['page_number'],
         'page[size]': options['page_size']
@@ -155,7 +161,7 @@ export default class InvitationsApi {
       let returnType = InvitationsResponse;
       return this.apiClient.callApi(
         '/invitations', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

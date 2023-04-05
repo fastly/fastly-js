@@ -13,19 +13,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The InlineResponse2002Meta model module.
- * @module model/InlineResponse2002Meta
- * @version 3.2.0
+ * The InlineResponse2004Meta model module.
+ * @module model/InlineResponse2004Meta
+ * @version 3.3.0
  */
-class InlineResponse2002Meta {
+class InlineResponse2004Meta {
     /**
-     * Constructs a new <code>InlineResponse2002Meta</code>.
-     * Meta for the pagination.
-     * @alias module:model/InlineResponse2002Meta
+     * Constructs a new <code>InlineResponse2004Meta</code>.
+     * @alias module:model/InlineResponse2004Meta
      */
     constructor() { 
         
-        InlineResponse2002Meta.initialize(this);
+        InlineResponse2004Meta.initialize(this);
     }
 
     /**
@@ -37,15 +36,15 @@ class InlineResponse2002Meta {
     }
 
     /**
-     * Constructs a <code>InlineResponse2002Meta</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>InlineResponse2004Meta</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/InlineResponse2002Meta} obj Optional instance to populate.
-     * @return {module:model/InlineResponse2002Meta} The populated <code>InlineResponse2002Meta</code> instance.
+     * @param {module:model/InlineResponse2004Meta} obj Optional instance to populate.
+     * @return {module:model/InlineResponse2004Meta} The populated <code>InlineResponse2004Meta</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new InlineResponse2002Meta();
+            obj = obj || new InlineResponse2004Meta();
 
             if (data.hasOwnProperty('next_cursor')) {
                 obj['next_cursor'] = ApiClient.convertToType(data['next_cursor'], 'String');
@@ -61,21 +60,19 @@ class InlineResponse2002Meta {
 }
 
 /**
- * Cursor for the next page.
  * @member {String} next_cursor
  */
-InlineResponse2002Meta.prototype['next_cursor'] = undefined;
+InlineResponse2004Meta.prototype['next_cursor'] = undefined;
 
 /**
- * Entries returned.
  * @member {Number} limit
  */
-InlineResponse2002Meta.prototype['limit'] = undefined;
+InlineResponse2004Meta.prototype['limit'] = undefined;
 
 
 
 
 
 
-export default InlineResponse2002Meta;
+export default InlineResponse2004Meta;
 

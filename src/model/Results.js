@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Results model module.
  * @module model/Results
- * @version 3.2.0
+ * @version 3.3.0
  */
 class Results {
     /**
@@ -673,6 +673,24 @@ class Results {
             }
             if (data.hasOwnProperty('fanout_conn_time_ms')) {
                 obj['fanout_conn_time_ms'] = ApiClient.convertToType(data['fanout_conn_time_ms'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_action_limit_streams_connections')) {
+                obj['ddos_action_limit_streams_connections'] = ApiClient.convertToType(data['ddos_action_limit_streams_connections'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_action_limit_streams_requests')) {
+                obj['ddos_action_limit_streams_requests'] = ApiClient.convertToType(data['ddos_action_limit_streams_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_action_tarpit_accept')) {
+                obj['ddos_action_tarpit_accept'] = ApiClient.convertToType(data['ddos_action_tarpit_accept'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_action_tarpit')) {
+                obj['ddos_action_tarpit'] = ApiClient.convertToType(data['ddos_action_tarpit'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_action_close')) {
+                obj['ddos_action_close'] = ApiClient.convertToType(data['ddos_action_close'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_action_blackhole')) {
+                obj['ddos_action_blackhole'] = ApiClient.convertToType(data['ddos_action_blackhole'], 'Number');
             }
         }
         return obj;
@@ -1934,6 +1952,42 @@ Results.prototype['fanout_beresp_body_bytes'] = undefined;
  * @member {Number} fanout_conn_time_ms
  */
 Results.prototype['fanout_conn_time_ms'] = undefined;
+
+/**
+ * For HTTP/2, the number of connections the limit-streams action was applied to. The limit-streams action caps the allowed number of concurrent streams in a connection.
+ * @member {Number} ddos_action_limit_streams_connections
+ */
+Results.prototype['ddos_action_limit_streams_connections'] = undefined;
+
+/**
+ * For HTTP/2, the number of requests made on a connection for which the limit-streams action was taken. The limit-streams action caps the allowed number of concurrent streams in a connection.
+ * @member {Number} ddos_action_limit_streams_requests
+ */
+Results.prototype['ddos_action_limit_streams_requests'] = undefined;
+
+/**
+ * The number of times the tarpit-accept action was taken. The tarpit-accept action adds a delay when accepting future connections.
+ * @member {Number} ddos_action_tarpit_accept
+ */
+Results.prototype['ddos_action_tarpit_accept'] = undefined;
+
+/**
+ * The number of times the tarpit action was taken. The tarpit action delays writing the response to the client.
+ * @member {Number} ddos_action_tarpit
+ */
+Results.prototype['ddos_action_tarpit'] = undefined;
+
+/**
+ * The number of times the close action was taken. The close action aborts the connection as soon as possible. The close action takes effect either right after accept, right after the client hello, or right after the response was sent.
+ * @member {Number} ddos_action_close
+ */
+Results.prototype['ddos_action_close'] = undefined;
+
+/**
+ * The number of times the blackhole action was taken. The blackhole action quietly closes a TCP connection without sending a reset. The blackhole action quietly closes a TCP connection without notifying its peer (all TCP state is dropped).
+ * @member {Number} ddos_action_blackhole
+ */
+Results.prototype['ddos_action_blackhole'] = undefined;
 
 
 

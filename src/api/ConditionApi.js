@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Condition service.
 * @module api/ConditionApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class ConditionApi {
 
@@ -67,6 +67,8 @@ export default class ConditionApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -87,7 +89,7 @@ export default class ConditionApi {
       let returnType = ConditionResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/condition', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -141,6 +143,8 @@ export default class ConditionApi {
         'version_id': options['version_id'],
         'condition_name': options['condition_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -154,7 +158,7 @@ export default class ConditionApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/condition/{condition_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -202,6 +206,8 @@ export default class ConditionApi {
         'version_id': options['version_id'],
         'condition_name': options['condition_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -215,7 +221,7 @@ export default class ConditionApi {
       let returnType = ConditionResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/condition/{condition_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -257,6 +263,8 @@ export default class ConditionApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -270,7 +278,7 @@ export default class ConditionApi {
       let returnType = [ConditionResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/condition', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -324,6 +332,8 @@ export default class ConditionApi {
         'version_id': options['version_id'],
         'condition_name': options['condition_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -344,7 +354,7 @@ export default class ConditionApi {
       let returnType = ConditionResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/condition/{condition_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

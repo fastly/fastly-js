@@ -19,7 +19,7 @@ import StarResponse from '../model/StarResponse';
 /**
 * Star service.
 * @module api/StarApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class StarApi {
 
@@ -50,6 +50,8 @@ export default class StarApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -63,7 +65,7 @@ export default class StarApi {
       let returnType = StarResponse;
       return this.apiClient.callApi(
         '/stars', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -97,6 +99,8 @@ export default class StarApi {
       let pathParams = {
         'star_id': options['star_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -110,7 +114,7 @@ export default class StarApi {
       let returnType = null;
       return this.apiClient.callApi(
         '/stars/{star_id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -144,6 +148,8 @@ export default class StarApi {
       let pathParams = {
         'star_id': options['star_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -157,7 +163,7 @@ export default class StarApi {
       let returnType = StarResponse;
       return this.apiClient.callApi(
         '/stars/{star_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -185,6 +191,8 @@ export default class StarApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -198,7 +206,7 @@ export default class StarApi {
       let returnType = Pagination;
       return this.apiClient.callApi(
         '/stars', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

@@ -18,7 +18,7 @@ import RateLimiterResponse from '../model/RateLimiterResponse';
 /**
 * RateLimiter service.
 * @module api/RateLimiterApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class RateLimiterApi {
 
@@ -54,6 +54,8 @@ export default class RateLimiterApi {
       let pathParams = {
         'rate_limiter_id': options['rate_limiter_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -67,7 +69,7 @@ export default class RateLimiterApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/rate-limiters/{rate_limiter_id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -101,6 +103,8 @@ export default class RateLimiterApi {
       let pathParams = {
         'rate_limiter_id': options['rate_limiter_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -114,7 +118,7 @@ export default class RateLimiterApi {
       let returnType = RateLimiterResponse;
       return this.apiClient.callApi(
         '/rate-limiters/{rate_limiter_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -154,6 +158,8 @@ export default class RateLimiterApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -167,7 +173,7 @@ export default class RateLimiterApi {
       let returnType = [RateLimiterResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/rate-limiters', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

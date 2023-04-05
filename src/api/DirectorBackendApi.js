@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * DirectorBackend service.
 * @module api/DirectorBackendApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class DirectorBackendApi {
 
@@ -72,6 +72,8 @@ export default class DirectorBackendApi {
         'version_id': options['version_id'],
         'backend_name': options['backend_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -85,7 +87,7 @@ export default class DirectorBackendApi {
       let returnType = DirectorBackend;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/director/{director_name}/backend/{backend_name}', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -140,6 +142,8 @@ export default class DirectorBackendApi {
         'version_id': options['version_id'],
         'backend_name': options['backend_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -153,7 +157,7 @@ export default class DirectorBackendApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/director/{director_name}/backend/{backend_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -208,6 +212,8 @@ export default class DirectorBackendApi {
         'version_id': options['version_id'],
         'backend_name': options['backend_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -221,7 +227,7 @@ export default class DirectorBackendApi {
       let returnType = DirectorBackend;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/director/{director_name}/backend/{backend_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

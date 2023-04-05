@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Header service.
 * @module api/HeaderApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class HeaderApi {
 
@@ -72,6 +72,8 @@ export default class HeaderApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -97,7 +99,7 @@ export default class HeaderApi {
       let returnType = HeaderResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/header', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -156,6 +158,8 @@ export default class HeaderApi {
         'version_id': options['version_id'],
         'header_name': options['header_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -169,7 +173,7 @@ export default class HeaderApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/header/{header_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -217,6 +221,8 @@ export default class HeaderApi {
         'version_id': options['version_id'],
         'header_name': options['header_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -230,7 +236,7 @@ export default class HeaderApi {
       let returnType = HeaderResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/header/{header_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -272,6 +278,8 @@ export default class HeaderApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -285,7 +293,7 @@ export default class HeaderApi {
       let returnType = [HeaderResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/header', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -344,6 +352,8 @@ export default class HeaderApi {
         'version_id': options['version_id'],
         'header_name': options['header_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -369,7 +379,7 @@ export default class HeaderApi {
       let returnType = HeaderResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/header/{header_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

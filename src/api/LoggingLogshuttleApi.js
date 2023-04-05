@@ -18,7 +18,7 @@ import LoggingLogshuttleResponse from '../model/LoggingLogshuttleResponse';
 /**
 * LoggingLogshuttle service.
 * @module api/LoggingLogshuttleApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class LoggingLogshuttleApi {
 
@@ -67,6 +67,8 @@ export default class LoggingLogshuttleApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -87,7 +89,7 @@ export default class LoggingLogshuttleApi {
       let returnType = LoggingLogshuttleResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/logshuttle', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -141,6 +143,8 @@ export default class LoggingLogshuttleApi {
         'version_id': options['version_id'],
         'logging_logshuttle_name': options['logging_logshuttle_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -154,7 +158,7 @@ export default class LoggingLogshuttleApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/logshuttle/{logging_logshuttle_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -202,6 +206,8 @@ export default class LoggingLogshuttleApi {
         'version_id': options['version_id'],
         'logging_logshuttle_name': options['logging_logshuttle_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -215,7 +221,7 @@ export default class LoggingLogshuttleApi {
       let returnType = LoggingLogshuttleResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/logshuttle/{logging_logshuttle_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -257,6 +263,8 @@ export default class LoggingLogshuttleApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -270,7 +278,7 @@ export default class LoggingLogshuttleApi {
       let returnType = [LoggingLogshuttleResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/logshuttle', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -324,6 +332,8 @@ export default class LoggingLogshuttleApi {
         'version_id': options['version_id'],
         'logging_logshuttle_name': options['logging_logshuttle_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -344,7 +354,7 @@ export default class LoggingLogshuttleApi {
       let returnType = LoggingLogshuttleResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/logshuttle/{logging_logshuttle_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

@@ -18,7 +18,7 @@ import LoggingAzureblobResponse from '../model/LoggingAzureblobResponse';
 /**
 * LoggingAzureblob service.
 * @module api/LoggingAzureblobApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class LoggingAzureblobApi {
 
@@ -76,6 +76,8 @@ export default class LoggingAzureblobApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -105,7 +107,7 @@ export default class LoggingAzureblobApi {
       let returnType = LoggingAzureblobResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/azureblob', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -168,6 +170,8 @@ export default class LoggingAzureblobApi {
         'version_id': options['version_id'],
         'logging_azureblob_name': options['logging_azureblob_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -181,7 +185,7 @@ export default class LoggingAzureblobApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/azureblob/{logging_azureblob_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -229,6 +233,8 @@ export default class LoggingAzureblobApi {
         'version_id': options['version_id'],
         'logging_azureblob_name': options['logging_azureblob_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -242,7 +248,7 @@ export default class LoggingAzureblobApi {
       let returnType = LoggingAzureblobResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/azureblob/{logging_azureblob_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -284,6 +290,8 @@ export default class LoggingAzureblobApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -297,7 +305,7 @@ export default class LoggingAzureblobApi {
       let returnType = [LoggingAzureblobResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/azureblob', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -360,6 +368,8 @@ export default class LoggingAzureblobApi {
         'version_id': options['version_id'],
         'logging_azureblob_name': options['logging_azureblob_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -389,7 +399,7 @@ export default class LoggingAzureblobApi {
       let returnType = LoggingAzureblobResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/azureblob/{logging_azureblob_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

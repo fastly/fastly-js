@@ -17,7 +17,7 @@ import DiffResponse from '../model/DiffResponse';
 /**
 * Diff service.
 * @module api/DiffApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class DiffApi {
 
@@ -66,6 +66,8 @@ export default class DiffApi {
         'from_version_id': options['from_version_id'],
         'to_version_id': options['to_version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'format': options['format']
       };
@@ -80,7 +82,7 @@ export default class DiffApi {
       let returnType = DiffResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/diff/from/{from_version_id}/to/{to_version_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

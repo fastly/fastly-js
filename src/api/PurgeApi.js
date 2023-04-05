@@ -18,7 +18,7 @@ import PurgeResponse from '../model/PurgeResponse';
 /**
 * Purge service.
 * @module api/PurgeApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class PurgeApi {
 
@@ -57,6 +57,8 @@ export default class PurgeApi {
       let pathParams = {
         'service_id': options['service_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -72,7 +74,7 @@ export default class PurgeApi {
       let returnType = {'String': 'String'};
       return this.apiClient.callApi(
         '/service/{service_id}/purge', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -109,6 +111,8 @@ export default class PurgeApi {
       let pathParams = {
         'service_id': options['service_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -122,7 +126,7 @@ export default class PurgeApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/purge_all', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -157,6 +161,9 @@ export default class PurgeApi {
       let pathParams = {
         'cached_url': options['cached_url']
       };
+      let pathParamsAllowReserved = {
+        'cached_url': true,
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -171,7 +178,7 @@ export default class PurgeApi {
       let returnType = PurgeResponse;
       return this.apiClient.callApi(
         '/purge/{cached_url}', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -213,6 +220,8 @@ export default class PurgeApi {
         'service_id': options['service_id'],
         'surrogate_key': options['surrogate_key']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -227,7 +236,7 @@ export default class PurgeApi {
       let returnType = PurgeResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/purge/{surrogate_key}', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

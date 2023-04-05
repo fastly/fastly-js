@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * DictionaryItem service.
 * @module api/DictionaryItemApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class DictionaryItemApi {
 
@@ -62,6 +62,8 @@ export default class DictionaryItemApi {
         'service_id': options['service_id'],
         'dictionary_id': options['dictionary_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -77,7 +79,7 @@ export default class DictionaryItemApi {
       let returnType = DictionaryItemResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/dictionary/{dictionary_id}/item', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -126,6 +128,8 @@ export default class DictionaryItemApi {
         'dictionary_id': options['dictionary_id'],
         'dictionary_item_key': options['dictionary_item_key']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -139,7 +143,7 @@ export default class DictionaryItemApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -187,6 +191,8 @@ export default class DictionaryItemApi {
         'dictionary_id': options['dictionary_id'],
         'dictionary_item_key': options['dictionary_item_key']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -200,7 +206,7 @@ export default class DictionaryItemApi {
       let returnType = DictionaryItemResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -246,6 +252,8 @@ export default class DictionaryItemApi {
         'service_id': options['service_id'],
         'dictionary_id': options['dictionary_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'page': options['page'],
         'per_page': options['per_page'],
@@ -263,7 +271,7 @@ export default class DictionaryItemApi {
       let returnType = [DictionaryItemResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/dictionary/{dictionary_id}/items', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -316,6 +324,8 @@ export default class DictionaryItemApi {
         'dictionary_id': options['dictionary_id'],
         'dictionary_item_key': options['dictionary_item_key']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -331,7 +341,7 @@ export default class DictionaryItemApi {
       let returnType = DictionaryItemResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -383,6 +393,8 @@ export default class DictionaryItemApi {
         'dictionary_id': options['dictionary_id'],
         'dictionary_item_key': options['dictionary_item_key']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -398,7 +410,7 @@ export default class DictionaryItemApi {
       let returnType = DictionaryItemResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/dictionary/{dictionary_id}/item/{dictionary_item_key}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

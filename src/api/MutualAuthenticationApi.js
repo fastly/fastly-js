@@ -19,7 +19,7 @@ import MutualAuthenticationsResponse from '../model/MutualAuthenticationsRespons
 /**
 * MutualAuthentication service.
 * @module api/MutualAuthenticationApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class MutualAuthenticationApi {
 
@@ -50,6 +50,8 @@ export default class MutualAuthenticationApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -63,7 +65,7 @@ export default class MutualAuthenticationApi {
       let returnType = MutualAuthenticationResponse;
       return this.apiClient.callApi(
         '/tls/mutual_authentications', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -97,6 +99,8 @@ export default class MutualAuthenticationApi {
       let pathParams = {
         'mutual_authentication_id': options['mutual_authentication_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -110,7 +114,7 @@ export default class MutualAuthenticationApi {
       let returnType = null;
       return this.apiClient.callApi(
         '/tls/mutual_authentications/{mutual_authentication_id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -145,6 +149,8 @@ export default class MutualAuthenticationApi {
       let pathParams = {
         'mutual_authentication_id': options['mutual_authentication_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'include': options['include']
       };
@@ -159,7 +165,7 @@ export default class MutualAuthenticationApi {
       let returnType = MutualAuthenticationResponse;
       return this.apiClient.callApi(
         '/tls/mutual_authentications/{mutual_authentication_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -191,6 +197,8 @@ export default class MutualAuthenticationApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'include': options['include'],
         'page[number]': options['page_number'],
@@ -207,7 +215,7 @@ export default class MutualAuthenticationApi {
       let returnType = MutualAuthenticationsResponse;
       return this.apiClient.callApi(
         '/tls/mutual_authentications', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -244,6 +252,8 @@ export default class MutualAuthenticationApi {
       let pathParams = {
         'mutual_authentication_id': options['mutual_authentication_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -257,7 +267,7 @@ export default class MutualAuthenticationApi {
       let returnType = MutualAuthenticationResponse;
       return this.apiClient.callApi(
         '/tls/mutual_authentications/{mutual_authentication_id}', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

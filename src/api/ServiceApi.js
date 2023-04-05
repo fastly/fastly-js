@@ -21,7 +21,7 @@ import ServiceResponse from '../model/ServiceResponse';
 /**
 * Service service.
 * @module api/ServiceApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class ServiceApi {
 
@@ -55,6 +55,8 @@ export default class ServiceApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -72,7 +74,7 @@ export default class ServiceApi {
       let returnType = ServiceResponse;
       return this.apiClient.callApi(
         '/service', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -109,6 +111,8 @@ export default class ServiceApi {
       let pathParams = {
         'service_id': options['service_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -122,7 +126,7 @@ export default class ServiceApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -156,6 +160,8 @@ export default class ServiceApi {
       let pathParams = {
         'service_id': options['service_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -169,7 +175,7 @@ export default class ServiceApi {
       let returnType = ServiceResponse;
       return this.apiClient.callApi(
         '/service/{service_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -204,6 +210,8 @@ export default class ServiceApi {
       let pathParams = {
         'service_id': options['service_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'version': options['version']
       };
@@ -218,7 +226,7 @@ export default class ServiceApi {
       let returnType = ServiceDetail;
       return this.apiClient.callApi(
         '/service/{service_id}/details', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -253,6 +261,8 @@ export default class ServiceApi {
       let pathParams = {
         'service_id': options['service_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -266,7 +276,7 @@ export default class ServiceApi {
       let returnType = [DomainResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/domain', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -298,6 +308,8 @@ export default class ServiceApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'page': options['page'],
         'per_page': options['per_page'],
@@ -315,7 +327,7 @@ export default class ServiceApi {
       let returnType = [ServiceListResponse];
       return this.apiClient.callApi(
         '/service', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -351,6 +363,8 @@ export default class ServiceApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'name': options['name']
       };
@@ -365,7 +379,7 @@ export default class ServiceApi {
       let returnType = ServiceResponse;
       return this.apiClient.callApi(
         '/service/search', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -402,6 +416,8 @@ export default class ServiceApi {
       let pathParams = {
         'service_id': options['service_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -418,7 +434,7 @@ export default class ServiceApi {
       let returnType = ServiceResponse;
       return this.apiClient.callApi(
         '/service/{service_id}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

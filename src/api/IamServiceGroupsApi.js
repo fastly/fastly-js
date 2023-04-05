@@ -16,7 +16,7 @@ import ApiClient from "../ApiClient";
 /**
 * IamServiceGroups service.
 * @module api/IamServiceGroupsApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class IamServiceGroupsApi {
 
@@ -52,6 +52,8 @@ export default class IamServiceGroupsApi {
       let pathParams = {
         'service_group_id': options['service_group_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -65,7 +67,7 @@ export default class IamServiceGroupsApi {
       let returnType = null;
       return this.apiClient.callApi(
         '/service-groups/{service_group_id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -99,6 +101,8 @@ export default class IamServiceGroupsApi {
       let pathParams = {
         'service_group_id': options['service_group_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -112,7 +116,7 @@ export default class IamServiceGroupsApi {
       let returnType = Object;
       return this.apiClient.callApi(
         '/service-groups/{service_group_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -148,6 +152,8 @@ export default class IamServiceGroupsApi {
       let pathParams = {
         'service_group_id': options['service_group_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'per_page': options['per_page'],
         'page': options['page']
@@ -163,7 +169,7 @@ export default class IamServiceGroupsApi {
       let returnType = Object;
       return this.apiClient.callApi(
         '/service-groups/{service_group_id}/services', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -195,6 +201,8 @@ export default class IamServiceGroupsApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'per_page': options['per_page'],
         'page': options['page']
@@ -210,7 +218,7 @@ export default class IamServiceGroupsApi {
       let returnType = Object;
       return this.apiClient.callApi(
         '/service-groups', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

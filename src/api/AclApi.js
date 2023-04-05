@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Acl service.
 * @module api/AclApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class AclApi {
 
@@ -61,6 +61,8 @@ export default class AclApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -75,7 +77,7 @@ export default class AclApi {
       let returnType = AclResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/acl', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -123,6 +125,8 @@ export default class AclApi {
         'version_id': options['version_id'],
         'acl_name': options['acl_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -136,7 +140,7 @@ export default class AclApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/acl/{acl_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -184,6 +188,8 @@ export default class AclApi {
         'version_id': options['version_id'],
         'acl_name': options['acl_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -197,7 +203,7 @@ export default class AclApi {
       let returnType = AclResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/acl/{acl_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -239,6 +245,8 @@ export default class AclApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -252,7 +260,7 @@ export default class AclApi {
       let returnType = [AclResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/acl', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -300,6 +308,8 @@ export default class AclApi {
         'version_id': options['version_id'],
         'acl_name': options['acl_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -314,7 +324,7 @@ export default class AclApi {
       let returnType = AclResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/acl/{acl_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

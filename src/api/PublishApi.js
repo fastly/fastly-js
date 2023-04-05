@@ -17,7 +17,7 @@ import PublishRequest from '../model/PublishRequest';
 /**
 * Publish service.
 * @module api/PublishApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class PublishApi {
 
@@ -54,6 +54,8 @@ export default class PublishApi {
       let pathParams = {
         'service_id': options['service_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -67,7 +69,7 @@ export default class PublishApi {
       let returnType = 'String';
       return this.apiClient.callApi(
         '/service/{service_id}/publish/', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

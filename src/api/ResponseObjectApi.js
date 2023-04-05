@@ -18,7 +18,7 @@ import ResponseObjectResponse from '../model/ResponseObjectResponse';
 /**
 * ResponseObject service.
 * @module api/ResponseObjectApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class ResponseObjectApi {
 
@@ -66,6 +66,8 @@ export default class ResponseObjectApi {
         'version_id': options['version_id'],
         'response_object_name': options['response_object_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -79,7 +81,7 @@ export default class ResponseObjectApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/response_object/{response_object_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -127,6 +129,8 @@ export default class ResponseObjectApi {
         'version_id': options['version_id'],
         'response_object_name': options['response_object_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -140,7 +144,7 @@ export default class ResponseObjectApi {
       let returnType = ResponseObjectResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/response_object/{response_object_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -182,6 +186,8 @@ export default class ResponseObjectApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -195,7 +201,7 @@ export default class ResponseObjectApi {
       let returnType = [ResponseObjectResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/response_object', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

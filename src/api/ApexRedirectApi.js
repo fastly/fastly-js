@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * ApexRedirect service.
 * @module api/ApexRedirectApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class ApexRedirectApi {
 
@@ -54,6 +54,8 @@ export default class ApexRedirectApi {
       let pathParams = {
         'apex_redirect_id': options['apex_redirect_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -67,7 +69,7 @@ export default class ApexRedirectApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/apex-redirects/{apex_redirect_id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -101,6 +103,8 @@ export default class ApexRedirectApi {
       let pathParams = {
         'apex_redirect_id': options['apex_redirect_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -114,7 +118,7 @@ export default class ApexRedirectApi {
       let returnType = ApexRedirect;
       return this.apiClient.callApi(
         '/apex-redirects/{apex_redirect_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -154,6 +158,8 @@ export default class ApexRedirectApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -167,7 +173,7 @@ export default class ApexRedirectApi {
       let returnType = [ApexRedirect];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/apex-redirects', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -210,6 +216,8 @@ export default class ApexRedirectApi {
       let pathParams = {
         'apex_redirect_id': options['apex_redirect_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -231,7 +239,7 @@ export default class ApexRedirectApi {
       let returnType = ApexRedirect;
       return this.apiClient.callApi(
         '/apex-redirects/{apex_redirect_id}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

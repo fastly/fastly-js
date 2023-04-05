@@ -20,7 +20,7 @@ import InlineResponse2001 from '../model/InlineResponse2001';
 /**
 * AutomationTokens service.
 * @module api/AutomationTokensApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class AutomationTokensApi {
 
@@ -51,6 +51,8 @@ export default class AutomationTokensApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -64,7 +66,7 @@ export default class AutomationTokensApi {
       let returnType = AutomationTokenCreateResponse;
       return this.apiClient.callApi(
         '/automation-tokens', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -98,6 +100,8 @@ export default class AutomationTokensApi {
       let pathParams = {
         'id': options['id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -111,7 +115,7 @@ export default class AutomationTokensApi {
       let returnType = AutomationTokenResponse;
       return this.apiClient.callApi(
         '/automation-tokens/{id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -147,6 +151,8 @@ export default class AutomationTokensApi {
       let pathParams = {
         'id': options['id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'per_page': options['per_page'],
         'page': options['page']
@@ -162,7 +168,7 @@ export default class AutomationTokensApi {
       let returnType = InlineResponse2001;
       return this.apiClient.callApi(
         '/automation-tokens/{id}/services', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -194,6 +200,8 @@ export default class AutomationTokensApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'per_page': options['per_page'],
         'page': options['page']
@@ -209,7 +217,7 @@ export default class AutomationTokensApi {
       let returnType = [AutomationTokenResponse];
       return this.apiClient.callApi(
         '/automation-tokens', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -244,6 +252,8 @@ export default class AutomationTokensApi {
       let pathParams = {
         'id': options['id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -257,7 +267,7 @@ export default class AutomationTokensApi {
       let returnType = null;
       return this.apiClient.callApi(
         '/automation-tokens/{id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

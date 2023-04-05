@@ -18,7 +18,7 @@ import LoggingBigqueryResponse from '../model/LoggingBigqueryResponse';
 /**
 * LoggingBigquery service.
 * @module api/LoggingBigqueryApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class LoggingBigqueryApi {
 
@@ -72,6 +72,8 @@ export default class LoggingBigqueryApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -97,7 +99,7 @@ export default class LoggingBigqueryApi {
       let returnType = LoggingBigqueryResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/bigquery', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -156,6 +158,8 @@ export default class LoggingBigqueryApi {
         'version_id': options['version_id'],
         'logging_bigquery_name': options['logging_bigquery_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -169,7 +173,7 @@ export default class LoggingBigqueryApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/bigquery/{logging_bigquery_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -217,6 +221,8 @@ export default class LoggingBigqueryApi {
         'version_id': options['version_id'],
         'logging_bigquery_name': options['logging_bigquery_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -230,7 +236,7 @@ export default class LoggingBigqueryApi {
       let returnType = LoggingBigqueryResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/bigquery/{logging_bigquery_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -272,6 +278,8 @@ export default class LoggingBigqueryApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -285,7 +293,7 @@ export default class LoggingBigqueryApi {
       let returnType = [LoggingBigqueryResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/bigquery', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -344,6 +352,8 @@ export default class LoggingBigqueryApi {
         'version_id': options['version_id'],
         'logging_bigquery_name': options['logging_bigquery_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -369,7 +379,7 @@ export default class LoggingBigqueryApi {
       let returnType = LoggingBigqueryResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/bigquery/{logging_bigquery_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

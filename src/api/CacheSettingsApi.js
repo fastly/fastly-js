@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * CacheSettings service.
 * @module api/CacheSettingsApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class CacheSettingsApi {
 
@@ -65,6 +65,8 @@ export default class CacheSettingsApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -83,7 +85,7 @@ export default class CacheSettingsApi {
       let returnType = CacheSettingResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/cache_settings', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -135,6 +137,8 @@ export default class CacheSettingsApi {
         'version_id': options['version_id'],
         'cache_settings_name': options['cache_settings_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -148,7 +152,7 @@ export default class CacheSettingsApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/cache_settings/{cache_settings_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -196,6 +200,8 @@ export default class CacheSettingsApi {
         'version_id': options['version_id'],
         'cache_settings_name': options['cache_settings_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -209,7 +215,7 @@ export default class CacheSettingsApi {
       let returnType = CacheSettingResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/cache_settings/{cache_settings_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -251,6 +257,8 @@ export default class CacheSettingsApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -264,7 +272,7 @@ export default class CacheSettingsApi {
       let returnType = [CacheSettingResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/cache_settings', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -316,6 +324,8 @@ export default class CacheSettingsApi {
         'version_id': options['version_id'],
         'cache_settings_name': options['cache_settings_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -334,7 +344,7 @@ export default class CacheSettingsApi {
       let returnType = CacheSettingResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/cache_settings/{cache_settings_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

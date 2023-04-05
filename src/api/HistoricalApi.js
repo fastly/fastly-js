@@ -24,7 +24,7 @@ import HistoricalUsageServiceResponse from '../model/HistoricalUsageServiceRespo
 /**
 * Historical service.
 * @module api/HistoricalApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class HistoricalApi {
 
@@ -58,6 +58,8 @@ export default class HistoricalApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'from': options['from'],
         'to': options['to'],
@@ -75,7 +77,7 @@ export default class HistoricalApi {
       let returnType = HistoricalResponse;
       return this.apiClient.callApi(
         '/stats', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -110,6 +112,8 @@ export default class HistoricalApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'from': options['from'],
         'to': options['to'],
@@ -127,7 +131,7 @@ export default class HistoricalApi {
       let returnType = HistoricalAggregateResponse;
       return this.apiClient.callApi(
         '/stats/aggregate', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -168,6 +172,8 @@ export default class HistoricalApi {
       let pathParams = {
         'field': options['field']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'from': options['from'],
         'to': options['to'],
@@ -185,7 +191,7 @@ export default class HistoricalApi {
       let returnType = HistoricalFieldResponse;
       return this.apiClient.callApi(
         '/stats/field/{field}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -227,6 +233,8 @@ export default class HistoricalApi {
       let pathParams = {
         'service_id': options['service_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'from': options['from'],
         'to': options['to'],
@@ -244,7 +252,7 @@ export default class HistoricalApi {
       let returnType = HistoricalAggregateResponse;
       return this.apiClient.callApi(
         '/stats/service/{service_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -292,6 +300,8 @@ export default class HistoricalApi {
         'service_id': options['service_id'],
         'field': options['field']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'from': options['from'],
         'to': options['to'],
@@ -309,7 +319,7 @@ export default class HistoricalApi {
       let returnType = HistoricalFieldAggregateResponse;
       return this.apiClient.callApi(
         '/stats/service/{service_id}/field/{field}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -342,6 +352,8 @@ export default class HistoricalApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -355,7 +367,7 @@ export default class HistoricalApi {
       let returnType = HistoricalRegionsResponse;
       return this.apiClient.callApi(
         '/stats/regions', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -384,6 +396,8 @@ export default class HistoricalApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'from': options['from'],
         'to': options['to']
@@ -399,7 +413,7 @@ export default class HistoricalApi {
       let returnType = HistoricalUsageAggregateResponse;
       return this.apiClient.callApi(
         '/stats/usage', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -431,6 +445,8 @@ export default class HistoricalApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'year': options['year'],
         'month': options['month'],
@@ -447,7 +463,7 @@ export default class HistoricalApi {
       let returnType = HistoricalUsageMonthResponse;
       return this.apiClient.callApi(
         '/stats/usage_by_month', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -479,6 +495,8 @@ export default class HistoricalApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'from': options['from'],
         'to': options['to']
@@ -494,7 +512,7 @@ export default class HistoricalApi {
       let returnType = HistoricalUsageServiceResponse;
       return this.apiClient.callApi(
         '/stats/usage_by_service', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

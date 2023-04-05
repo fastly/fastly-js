@@ -18,7 +18,7 @@ import WafRuleRevisionsResponse from '../model/WafRuleRevisionsResponse';
 /**
 * WafRuleRevisions service.
 * @module api/WafRuleRevisionsApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class WafRuleRevisionsApi {
 
@@ -61,6 +61,8 @@ export default class WafRuleRevisionsApi {
         'waf_rule_id': options['waf_rule_id'],
         'waf_rule_revision_number': options['waf_rule_revision_number']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'include': options['include']
       };
@@ -75,7 +77,7 @@ export default class WafRuleRevisionsApi {
       let returnType = WafRuleRevisionResponse;
       return this.apiClient.callApi(
         '/waf/rules/{waf_rule_id}/revisions/{waf_rule_revision_number}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -114,6 +116,8 @@ export default class WafRuleRevisionsApi {
       let pathParams = {
         'waf_rule_id': options['waf_rule_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'page[number]': options['page_number'],
         'page[size]': options['page_size'],
@@ -130,7 +134,7 @@ export default class WafRuleRevisionsApi {
       let returnType = WafRuleRevisionsResponse;
       return this.apiClient.callApi(
         '/waf/rules/{waf_rule_id}/revisions', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

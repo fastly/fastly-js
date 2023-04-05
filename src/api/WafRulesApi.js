@@ -18,7 +18,7 @@ import WafRulesResponse from '../model/WafRulesResponse';
 /**
 * WafRules service.
 * @module api/WafRulesApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class WafRulesApi {
 
@@ -55,6 +55,8 @@ export default class WafRulesApi {
       let pathParams = {
         'waf_rule_id': options['waf_rule_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'include': options['include']
       };
@@ -69,7 +71,7 @@ export default class WafRulesApi {
       let returnType = WafRuleResponse;
       return this.apiClient.callApi(
         '/waf/rules/{waf_rule_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -105,6 +107,8 @@ export default class WafRulesApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'filter[modsec_rule_id]': options['filter_modsec_rule_id'],
         'filter[waf_tags][name]': options['filter_waf_tags_name'],
@@ -125,7 +129,7 @@ export default class WafRulesApi {
       let returnType = WafRulesResponse;
       return this.apiClient.callApi(
         '/waf/rules', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

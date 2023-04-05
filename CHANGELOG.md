@@ -1,6 +1,24 @@
 # Changelog
 
-## [v3.2.0](https://github.com/fastly/fastly-js/releases/tag/v3.2.0) (2023-03-21)
+## [v3.3.0](https://github.com/fastly/fastly-js/releases/tag/release/v3.3.0) (2023-04-05)
+
+**Bug fixes:**
+
+- fix(purge): avoid encodeURIComponent with x-allow-reserved
+
+**Enhancements:**
+
+- feat(domain-ownership): list API endpoint
+- feat(object-store): items API endpoints
+- feat(object-store): add 'location' property to 'create_store'
+- feat(object-store): add 'force' property to 'delete_store'
+- feat(realtime): additional DDoS properties
+
+**Documentation:**
+
+- docs(acl-entries): document batch updating
+
+## [v3.2.0](https://github.com/fastly/fastly-js/releases/tag/release/v3.2.0) (2023-03-21)
 
 ## Bug fixes
 

@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 ## `createStore`
 
 ```javascript
-createStore({ , [store] })
+createStore({ , [location, ][store] })
 ```
 
 Create a new object store.
@@ -25,6 +25,7 @@ Create a new object store.
 
 ```javascript
 const options = {
+  location: "location_example",
   store: {"name":"my-store"},
 };
 
@@ -41,6 +42,7 @@ apiInstance.createStore(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+**location** | **String** |  | [optional]
 **store** | [**Store**](Store.md) |  | [optional]
 
 ### Return type
@@ -51,7 +53,7 @@ Name | Type | Description  | Notes
 ## `deleteStore`
 
 ```javascript
-deleteStore({ store_id })
+deleteStore({ store_id, [force] })
 ```
 
 An object store must be empty before it can be deleted.  Deleting an object store that still contains keys will result in a `409` (Conflict).
@@ -61,6 +63,7 @@ An object store must be empty before it can be deleted.  Deleting an object stor
 ```javascript
 const options = {
   store_id: "store_id_example", // required
+  force: true,
 };
 
 apiInstance.deleteStore(options)
@@ -77,6 +80,7 @@ apiInstance.deleteStore(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **store_id** | **String** |  |
+**force** | **Boolean** |  | [optional]
 
 ### Return type
 
@@ -152,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InlineResponse2002**](InlineResponse2002.md)
+[**InlineResponse2003**](InlineResponse2003.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

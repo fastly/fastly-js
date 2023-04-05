@@ -1,11 +1,11 @@
-# Fastly.InlineResponse2002Meta
+# Fastly.InlineResponse2004Meta
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**next_cursor** | **String** | Cursor for the next page. | [optional] 
-**limit** | **Number** | Entries returned. | [optional] 
+**next_cursor** | **String** |  | [optional] 
+**limit** | **Number** |  | [optional] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

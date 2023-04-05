@@ -16,7 +16,7 @@ import RelationshipMemberWafRule from './RelationshipMemberWafRule';
 /**
  * The RelationshipWafRuleWafRule model module.
  * @module model/RelationshipWafRuleWafRule
- * @version 3.2.0
+ * @version 3.3.0
  */
 class RelationshipWafRuleWafRule {
     /**

@@ -19,7 +19,7 @@ import LoggingHoneycombResponse from '../model/LoggingHoneycombResponse';
 /**
 * LoggingHoneycomb service.
 * @module api/LoggingHoneycombApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class LoggingHoneycombApi {
 
@@ -68,6 +68,8 @@ export default class LoggingHoneycombApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -88,7 +90,7 @@ export default class LoggingHoneycombApi {
       let returnType = LoggingHoneycomb;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/honeycomb', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -142,6 +144,8 @@ export default class LoggingHoneycombApi {
         'version_id': options['version_id'],
         'logging_honeycomb_name': options['logging_honeycomb_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -155,7 +159,7 @@ export default class LoggingHoneycombApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/honeycomb/{logging_honeycomb_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -203,6 +207,8 @@ export default class LoggingHoneycombApi {
         'version_id': options['version_id'],
         'logging_honeycomb_name': options['logging_honeycomb_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -216,7 +222,7 @@ export default class LoggingHoneycombApi {
       let returnType = LoggingHoneycomb;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/honeycomb/{logging_honeycomb_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -258,6 +264,8 @@ export default class LoggingHoneycombApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -271,7 +279,7 @@ export default class LoggingHoneycombApi {
       let returnType = [LoggingHoneycombResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/honeycomb', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -325,6 +333,8 @@ export default class LoggingHoneycombApi {
         'version_id': options['version_id'],
         'logging_honeycomb_name': options['logging_honeycomb_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -345,7 +355,7 @@ export default class LoggingHoneycombApi {
       let returnType = LoggingHoneycombResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/honeycomb/{logging_honeycomb_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

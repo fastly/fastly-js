@@ -20,7 +20,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * AclEntry service.
 * @module api/AclEntryApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class AclEntryApi {
 
@@ -41,7 +41,7 @@ export default class AclEntryApi {
 
 
     /**
-     * Update multiple ACL entries on the same ACL.
+     * Update multiple ACL entries on the same ACL. For faster updates to your service, group your changes into large batches. The maximum batch size is 1000 entries. [Contact support](https://support.fastly.com/) to discuss raising this limit.
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.acl_id - Alphanumeric string identifying a ACL.
@@ -63,6 +63,8 @@ export default class AclEntryApi {
         'service_id': options['service_id'],
         'acl_id': options['acl_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -76,13 +78,13 @@ export default class AclEntryApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/acl/{acl_id}/entries', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Update multiple ACL entries on the same ACL.
+     * Update multiple ACL entries on the same ACL. For faster updates to your service, group your changes into large batches. The maximum batch size is 1000 entries. [Contact support](https://support.fastly.com/) to discuss raising this limit.
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.acl_id - Alphanumeric string identifying a ACL.
@@ -119,6 +121,8 @@ export default class AclEntryApi {
         'service_id': options['service_id'],
         'acl_id': options['acl_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -132,7 +136,7 @@ export default class AclEntryApi {
       let returnType = AclEntryResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/acl/{acl_id}/entry', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -180,6 +184,8 @@ export default class AclEntryApi {
         'acl_id': options['acl_id'],
         'acl_entry_id': options['acl_entry_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -193,7 +199,7 @@ export default class AclEntryApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/acl/{acl_id}/entry/{acl_entry_id}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -241,6 +247,8 @@ export default class AclEntryApi {
         'acl_id': options['acl_id'],
         'acl_entry_id': options['acl_entry_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -254,7 +262,7 @@ export default class AclEntryApi {
       let returnType = AclEntryResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/acl/{acl_id}/entry/{acl_entry_id}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -300,6 +308,8 @@ export default class AclEntryApi {
         'service_id': options['service_id'],
         'acl_id': options['acl_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'page': options['page'],
         'per_page': options['per_page'],
@@ -317,7 +327,7 @@ export default class AclEntryApi {
       let returnType = [AclEntryResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/acl/{acl_id}/entries', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -369,6 +379,8 @@ export default class AclEntryApi {
         'acl_id': options['acl_id'],
         'acl_entry_id': options['acl_entry_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -382,7 +394,7 @@ export default class AclEntryApi {
       let returnType = AclEntryResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/acl/{acl_id}/entry/{acl_entry_id}', 'PATCH',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

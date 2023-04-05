@@ -17,7 +17,7 @@ import Stats from '../model/Stats';
 /**
 * Stats service.
 * @module api/StatsApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class StatsApi {
 
@@ -57,6 +57,8 @@ export default class StatsApi {
       let pathParams = {
         'service_id': options['service_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
         'month': options['month'],
         'year': options['year'],
@@ -74,7 +76,7 @@ export default class StatsApi {
       let returnType = Stats;
       return this.apiClient.callApi(
         '/service/{service_id}/stats/summary', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

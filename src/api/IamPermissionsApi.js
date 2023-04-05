@@ -16,7 +16,7 @@ import ApiClient from "../ApiClient";
 /**
 * IamPermissions service.
 * @module api/IamPermissionsApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class IamPermissionsApi {
 
@@ -46,6 +46,8 @@ export default class IamPermissionsApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -59,7 +61,7 @@ export default class IamPermissionsApi {
       let returnType = Object;
       return this.apiClient.callApi(
         '/permissions', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

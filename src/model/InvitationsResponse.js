@@ -20,7 +20,7 @@ import PaginationMeta from './PaginationMeta';
 /**
  * The InvitationsResponse model module.
  * @module model/InvitationsResponse
- * @version 3.2.0
+ * @version 3.3.0
  */
 class InvitationsResponse {
     /**

@@ -17,7 +17,7 @@ import Realtime from '../model/Realtime';
 /**
 * Realtime service.
 * @module api/RealtimeApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class RealtimeApi {
 
@@ -53,6 +53,8 @@ export default class RealtimeApi {
       let pathParams = {
         'service_id': options['service_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -66,7 +68,7 @@ export default class RealtimeApi {
       let returnType = Realtime;
       return this.apiClient.callApi(
         '/v1/channel/{service_id}/ts/h', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -106,6 +108,8 @@ export default class RealtimeApi {
         'service_id': options['service_id'],
         'max_entries': options['max_entries']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -119,7 +123,7 @@ export default class RealtimeApi {
       let returnType = Realtime;
       return this.apiClient.callApi(
         '/v1/channel/{service_id}/ts/h/limit/{max_entries}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -160,6 +164,8 @@ export default class RealtimeApi {
         'service_id': options['service_id'],
         'timestamp_in_seconds': options['timestamp_in_seconds']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -173,7 +179,7 @@ export default class RealtimeApi {
       let returnType = Realtime;
       return this.apiClient.callApi(
         '/v1/channel/{service_id}/ts/{timestamp_in_seconds}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

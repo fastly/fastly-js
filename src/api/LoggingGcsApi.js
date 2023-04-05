@@ -18,7 +18,7 @@ import LoggingGcsResponse from '../model/LoggingGcsResponse';
 /**
 * LoggingGcs service.
 * @module api/LoggingGcsApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class LoggingGcsApi {
 
@@ -77,6 +77,8 @@ export default class LoggingGcsApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -107,7 +109,7 @@ export default class LoggingGcsApi {
       let returnType = LoggingGcsResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/gcs', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -171,6 +173,8 @@ export default class LoggingGcsApi {
         'version_id': options['version_id'],
         'logging_gcs_name': options['logging_gcs_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -184,7 +188,7 @@ export default class LoggingGcsApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/gcs/{logging_gcs_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -232,6 +236,8 @@ export default class LoggingGcsApi {
         'version_id': options['version_id'],
         'logging_gcs_name': options['logging_gcs_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -245,7 +251,7 @@ export default class LoggingGcsApi {
       let returnType = LoggingGcsResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/gcs/{logging_gcs_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -287,6 +293,8 @@ export default class LoggingGcsApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -300,7 +308,7 @@ export default class LoggingGcsApi {
       let returnType = [LoggingGcsResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/gcs', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -364,6 +372,8 @@ export default class LoggingGcsApi {
         'version_id': options['version_id'],
         'logging_gcs_name': options['logging_gcs_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -394,7 +404,7 @@ export default class LoggingGcsApi {
       let returnType = LoggingGcsResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/gcs/{logging_gcs_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

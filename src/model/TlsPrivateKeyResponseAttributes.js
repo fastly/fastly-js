@@ -17,7 +17,7 @@ import TlsPrivateKeyResponseAttributesAllOf from './TlsPrivateKeyResponseAttribu
 /**
  * The TlsPrivateKeyResponseAttributes model module.
  * @module model/TlsPrivateKeyResponseAttributes
- * @version 3.2.0
+ * @version 3.3.0
  */
 class TlsPrivateKeyResponseAttributes {
     /**

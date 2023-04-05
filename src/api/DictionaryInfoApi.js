@@ -17,7 +17,7 @@ import DictionaryInfoResponse from '../model/DictionaryInfoResponse';
 /**
 * DictionaryInfo service.
 * @module api/DictionaryInfoApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class DictionaryInfoApi {
 
@@ -65,6 +65,8 @@ export default class DictionaryInfoApi {
         'version_id': options['version_id'],
         'dictionary_id': options['dictionary_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -78,7 +80,7 @@ export default class DictionaryInfoApi {
       let returnType = DictionaryInfoResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/dictionary/{dictionary_id}/info', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

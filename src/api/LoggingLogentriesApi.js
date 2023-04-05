@@ -19,7 +19,7 @@ import LoggingUseTls from '../model/LoggingUseTls';
 /**
 * LoggingLogentries service.
 * @module api/LoggingLogentriesApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class LoggingLogentriesApi {
 
@@ -70,6 +70,8 @@ export default class LoggingLogentriesApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -92,7 +94,7 @@ export default class LoggingLogentriesApi {
       let returnType = LoggingLogentriesResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/logentries', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -148,6 +150,8 @@ export default class LoggingLogentriesApi {
         'version_id': options['version_id'],
         'logging_logentries_name': options['logging_logentries_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -161,7 +165,7 @@ export default class LoggingLogentriesApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/logentries/{logging_logentries_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -209,6 +213,8 @@ export default class LoggingLogentriesApi {
         'version_id': options['version_id'],
         'logging_logentries_name': options['logging_logentries_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -222,7 +228,7 @@ export default class LoggingLogentriesApi {
       let returnType = LoggingLogentriesResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/logentries/{logging_logentries_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -264,6 +270,8 @@ export default class LoggingLogentriesApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -277,7 +285,7 @@ export default class LoggingLogentriesApi {
       let returnType = [LoggingLogentriesResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/logentries', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -333,6 +341,8 @@ export default class LoggingLogentriesApi {
         'version_id': options['version_id'],
         'logging_logentries_name': options['logging_logentries_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -355,7 +365,7 @@ export default class LoggingLogentriesApi {
       let returnType = LoggingLogentriesResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/logging/logentries/{logging_logentries_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

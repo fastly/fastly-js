@@ -17,7 +17,7 @@ import Pop from '../model/Pop';
 /**
 * Pop service.
 * @module api/PopApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class PopApi {
 
@@ -47,6 +47,8 @@ export default class PopApi {
 
       let pathParams = {
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -60,7 +62,7 @@ export default class PopApi {
       let returnType = [Pop];
       return this.apiClient.callApi(
         '/datacenters', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

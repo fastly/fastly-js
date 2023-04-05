@@ -17,7 +17,7 @@ import SettingsResponse from '../model/SettingsResponse';
 /**
 * Settings service.
 * @module api/SettingsApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class SettingsApi {
 
@@ -59,6 +59,8 @@ export default class SettingsApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -72,7 +74,7 @@ export default class SettingsApi {
       let returnType = SettingsResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/settings', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -117,6 +119,8 @@ export default class SettingsApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -134,7 +138,7 @@ export default class SettingsApi {
       let returnType = SettingsResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/settings', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }

@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Gzip service.
 * @module api/GzipApi
-* @version 3.2.0
+* @version 3.3.0
 */
 export default class GzipApi {
 
@@ -64,6 +64,8 @@ export default class GzipApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -81,7 +83,7 @@ export default class GzipApi {
       let returnType = GzipResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/gzip', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -132,6 +134,8 @@ export default class GzipApi {
         'version_id': options['version_id'],
         'gzip_name': options['gzip_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -145,7 +149,7 @@ export default class GzipApi {
       let returnType = InlineResponse200;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/gzip/{gzip_name}', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -193,6 +197,8 @@ export default class GzipApi {
         'version_id': options['version_id'],
         'gzip_name': options['gzip_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -206,7 +212,7 @@ export default class GzipApi {
       let returnType = GzipResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/gzip/{gzip_name}', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -248,6 +254,8 @@ export default class GzipApi {
         'service_id': options['service_id'],
         'version_id': options['version_id']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -261,7 +269,7 @@ export default class GzipApi {
       let returnType = [GzipResponse];
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/gzip', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
@@ -312,6 +320,8 @@ export default class GzipApi {
         'version_id': options['version_id'],
         'gzip_name': options['gzip_name']
       };
+      let pathParamsAllowReserved = {
+      };
       let queryParams = {
       };
       let headerParams = {
@@ -329,7 +339,7 @@ export default class GzipApi {
       let returnType = GzipResponse;
       return this.apiClient.callApi(
         '/service/{service_id}/version/{version_id}/gzip/{gzip_name}', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
