@@ -20,7 +20,7 @@ import WafRuleRevisionAttributes from './WafRuleRevisionAttributes';
 /**
  * The IncludedWithWafActiveRuleItem model module.
  * @module model/IncludedWithWafActiveRuleItem
- * @version 3.3.0
+ * @version 3.3.1
  */
 class IncludedWithWafActiveRuleItem {
     /**

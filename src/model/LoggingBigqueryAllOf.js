@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingBigqueryAllOf model module.
  * @module model/LoggingBigqueryAllOf
- * @version 3.3.0
+ * @version 3.3.1
  */
 class LoggingBigqueryAllOf {
     /**

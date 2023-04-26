@@ -16,7 +16,7 @@ import RelationshipCustomerCustomer from './RelationshipCustomerCustomer';
 /**
  * The RelationshipCustomer model module.
  * @module model/RelationshipCustomer
- * @version 3.3.0
+ * @version 3.3.1
  */
 class RelationshipCustomer {
     /**

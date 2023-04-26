@@ -17,7 +17,7 @@ import DictionaryInfoResponse from '../model/DictionaryInfoResponse';
 /**
 * DictionaryInfo service.
 * @module api/DictionaryInfoApi
-* @version 3.3.0
+* @version 3.3.1
 */
 export default class DictionaryInfoApi {
 

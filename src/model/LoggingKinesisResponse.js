@@ -21,7 +21,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingKinesisResponse model module.
  * @module model/LoggingKinesisResponse
- * @version 3.3.0
+ * @version 3.3.1
  */
 class LoggingKinesisResponse {
     /**

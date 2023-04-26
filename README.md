@@ -6,12 +6,6 @@ An asynchronous JavaScript client library for interacting with most facets of th
 > The previous 2.x version is no longer supported, but can be found at https://github.com/thisandagain/fastly.
 
 
-> ⚠️ This client library (`3.3.0`)  is an early-access release. Features may change without notice. Use at your own risk.
-
-**We strongly recommend that you do not install alpha and beta releases on live production services.** No official support is provided for such releases. Please try out the library in a test environment, see what breaks without worrying about consequences, and give us [feedback](#issues).
-
-Read about the [Fastly Product Lifecycle](https://docs.fastly.com/products/fastly-product-lifecycle).
-
 
 ## Usage
 
@@ -408,7 +402,6 @@ Class | Method | Description
 *Fastly.TlsConfigurationsApi* | [**getTlsConfig**](docs/TlsConfigurationsApi.md#getTlsConfig) | Get a TLS configuration
 *Fastly.TlsConfigurationsApi* | [**listTlsConfigs**](docs/TlsConfigurationsApi.md#listTlsConfigs) | List TLS configurations
 *Fastly.TlsConfigurationsApi* | [**updateTlsConfig**](docs/TlsConfigurationsApi.md#updateTlsConfig) | Update a TLS configuration
-*Fastly.TlsCsrsApi* | [**createCsr**](docs/TlsCsrsApi.md#createCsr) | Create CSR
 *Fastly.TlsDomainsApi* | [**listTlsDomains**](docs/TlsDomainsApi.md#listTlsDomains) | List TLS domains
 *Fastly.TlsPrivateKeysApi* | [**createTlsKey**](docs/TlsPrivateKeysApi.md#createTlsKey) | Create a TLS private key
 *Fastly.TlsPrivateKeysApi* | [**deleteTlsKey**](docs/TlsPrivateKeysApi.md#deleteTlsKey) | Delete a TLS private key

@@ -16,7 +16,7 @@ import HistoricalUsageResults from './HistoricalUsageResults';
 /**
  * The HistoricalUsageMonthResponseAllOfData model module.
  * @module model/HistoricalUsageMonthResponseAllOfData
- * @version 3.3.0
+ * @version 3.3.1
  */
 class HistoricalUsageMonthResponseAllOfData {
     /**

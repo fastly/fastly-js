@@ -18,7 +18,7 @@ import RelationshipTlsSubscriptions from './RelationshipTlsSubscriptions';
 /**
  * The RelationshipsForTlsDomain model module.
  * @module model/RelationshipsForTlsDomain
- * @version 3.3.0
+ * @version 3.3.1
  */
 class RelationshipsForTlsDomain {
     /**

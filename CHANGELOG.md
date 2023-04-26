@@ -1,5 +1,12 @@
 # Changelog
 
+## [v3.3.1](https://github.com/fastly/fastly-js/releases/tag/release/v3.3.1) (2023-04-26)
+
+**Bug fixes:**
+
+- fix(object-store-item): use correct type for key value.
+- fix(tls-csrs): remove internal endpoint.
+
 ## [v3.3.0](https://github.com/fastly/fastly-js/releases/tag/release/v3.3.0) (2023-04-05)
 
 **Bug fixes:**

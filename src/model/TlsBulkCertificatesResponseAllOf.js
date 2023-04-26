@@ -16,7 +16,7 @@ import TlsBulkCertificateResponseData from './TlsBulkCertificateResponseData';
 /**
  * The TlsBulkCertificatesResponseAllOf model module.
  * @module model/TlsBulkCertificatesResponseAllOf
- * @version 3.3.0
+ * @version 3.3.1
  */
 class TlsBulkCertificatesResponseAllOf {
     /**

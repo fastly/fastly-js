@@ -17,7 +17,7 @@ import InlineResponse2004 from '../model/InlineResponse2004';
 /**
 * ObjectStoreItem service.
 * @module api/ObjectStoreItemApi
-* @version 3.3.0
+* @version 3.3.1
 */
 export default class ObjectStoreItemApi {
 
@@ -159,7 +159,7 @@ export default class ObjectStoreItemApi {
      * @param {Object} options
      * @param {String} options.store_id
      * @param {String} options.key_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link File} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Blob} and HTTP response
      */
     getValueForKeyWithHttpInfo(options = {}) {
       let postBody = null;
@@ -188,7 +188,7 @@ export default class ObjectStoreItemApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/octet-stream'];
-      let returnType = File;
+      let returnType = 'Blob';
       return this.apiClient.callApi(
         '/resources/stores/object/{store_id}/keys/{key_name}', 'GET',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
@@ -201,7 +201,7 @@ export default class ObjectStoreItemApi {
      * @param {Object} options
      * @param {String} options.store_id
      * @param {String} options.key_name
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link File}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Blob}
      */
     getValueForKey(options = {}) {
       return this.getValueForKeyWithHttpInfo(options)
@@ -222,8 +222,8 @@ export default class ObjectStoreItemApi {
      * @param {Boolean} [options.append]
      * @param {Boolean} [options.prepend]
      * @param {Boolean} [options.background_fetch]
-     * @param {File} [options.body]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link File} and HTTP response
+     * @param {Blob} [options.body]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Blob} and HTTP response
      */
     setValueForKeyWithHttpInfo(options = {}) {
       let postBody = options['body'];
@@ -259,7 +259,7 @@ export default class ObjectStoreItemApi {
       let authNames = ['token'];
       let contentTypes = ['application/octet-stream'];
       let accepts = ['application/octet-stream'];
-      let returnType = File;
+      let returnType = 'Blob';
       return this.apiClient.callApi(
         '/resources/stores/object/{store_id}/keys/{key_name}', 'PUT',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
@@ -279,8 +279,8 @@ export default class ObjectStoreItemApi {
      * @param {Boolean} [options.append]
      * @param {Boolean} [options.prepend]
      * @param {Boolean} [options.background_fetch]
-     * @param {File} [options.body]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link File}
+     * @param {Blob} [options.body]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Blob}
      */
     setValueForKey(options = {}) {
       return this.setValueForKeyWithHttpInfo(options)

@@ -127,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**File**
+**Blob**
 
 
 ## `setValueForKey`
@@ -151,7 +151,7 @@ const options = {
   append: true,
   prepend: true,
   background_fetch: true,
-  body: "/path/to/file",
+  body: null,
 };
 
 apiInstance.setValueForKey(options)
@@ -176,11 +176,11 @@ Name | Type | Description  | Notes
 **append** | **Boolean** |  | [optional]
 **prepend** | **Boolean** |  | [optional]
 **background_fetch** | **Boolean** |  | [optional]
-**body** | **File****File** |  | [optional]
+**body** | **Blob** |  | [optional]
 
 ### Return type
 
-**File**
+**Blob**
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

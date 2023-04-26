@@ -19,7 +19,7 @@ import LoggingMessageType from '../model/LoggingMessageType';
 /**
 * LoggingHttps service.
 * @module api/LoggingHttpsApi
-* @version 3.3.0
+* @version 3.3.1
 */
 export default class LoggingHttpsApi {
 

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Customer model module.
  * @module model/Customer
- * @version 3.3.0
+ * @version 3.3.1
  */
 class Customer {
     /**

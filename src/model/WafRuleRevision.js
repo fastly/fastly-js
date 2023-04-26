@@ -17,7 +17,7 @@ import WafRuleRevisionAttributes from './WafRuleRevisionAttributes';
 /**
  * The WafRuleRevision model module.
  * @module model/WafRuleRevision
- * @version 3.3.0
+ * @version 3.3.1
  */
 class WafRuleRevision {
     /**

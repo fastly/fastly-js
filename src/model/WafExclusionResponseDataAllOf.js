@@ -17,7 +17,7 @@ import WafExclusionResponseDataRelationships from './WafExclusionResponseDataRel
 /**
  * The WafExclusionResponseDataAllOf model module.
  * @module model/WafExclusionResponseDataAllOf
- * @version 3.3.0
+ * @version 3.3.1
  */
 class WafExclusionResponseDataAllOf {
     /**

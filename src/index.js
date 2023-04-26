@@ -87,8 +87,6 @@ import EnabledProductResponse from './model/EnabledProductResponse';
 import EnabledProductResponseLinks from './model/EnabledProductResponseLinks';
 import EnabledProductResponseProduct from './model/EnabledProductResponseProduct';
 import EnabledProductResponseService from './model/EnabledProductResponseService';
-import ErrorResponse from './model/ErrorResponse';
-import ErrorResponseData from './model/ErrorResponseData';
 import Event from './model/Event';
 import EventAttributes from './model/EventAttributes';
 import EventResponse from './model/EventResponse';
@@ -357,7 +355,6 @@ import RelationshipsForStar from './model/RelationshipsForStar';
 import RelationshipsForTlsActivation from './model/RelationshipsForTlsActivation';
 import RelationshipsForTlsBulkCertificate from './model/RelationshipsForTlsBulkCertificate';
 import RelationshipsForTlsConfiguration from './model/RelationshipsForTlsConfiguration';
-import RelationshipsForTlsCsr from './model/RelationshipsForTlsCsr';
 import RelationshipsForTlsDomain from './model/RelationshipsForTlsDomain';
 import RelationshipsForTlsPrivateKey from './model/RelationshipsForTlsPrivateKey';
 import RelationshipsForTlsSubscription from './model/RelationshipsForTlsSubscription';
@@ -466,12 +463,6 @@ import TlsConfigurationResponseData from './model/TlsConfigurationResponseData';
 import TlsConfigurationResponseDataAllOf from './model/TlsConfigurationResponseDataAllOf';
 import TlsConfigurationsResponse from './model/TlsConfigurationsResponse';
 import TlsConfigurationsResponseAllOf from './model/TlsConfigurationsResponseAllOf';
-import TlsCsr from './model/TlsCsr';
-import TlsCsrData from './model/TlsCsrData';
-import TlsCsrDataAttributes from './model/TlsCsrDataAttributes';
-import TlsCsrResponse from './model/TlsCsrResponse';
-import TlsCsrResponseAttributes from './model/TlsCsrResponseAttributes';
-import TlsCsrResponseData from './model/TlsCsrResponseData';
 import TlsDnsRecord from './model/TlsDnsRecord';
 import TlsDomainData from './model/TlsDomainData';
 import TlsDomainsResponse from './model/TlsDomainsResponse';
@@ -515,7 +506,6 @@ import TypeTlsActivation from './model/TypeTlsActivation';
 import TypeTlsBulkCertificate from './model/TypeTlsBulkCertificate';
 import TypeTlsCertificate from './model/TypeTlsCertificate';
 import TypeTlsConfiguration from './model/TypeTlsConfiguration';
-import TypeTlsCsr from './model/TypeTlsCsr';
 import TypeTlsDnsRecord from './model/TypeTlsDnsRecord';
 import TypeTlsDomain from './model/TypeTlsDomain';
 import TypeTlsPrivateKey from './model/TypeTlsPrivateKey';
@@ -689,7 +679,6 @@ import TlsActivationsApi from './api/TlsActivationsApi';
 import TlsBulkCertificatesApi from './api/TlsBulkCertificatesApi';
 import TlsCertificatesApi from './api/TlsCertificatesApi';
 import TlsConfigurationsApi from './api/TlsConfigurationsApi';
-import TlsCsrsApi from './api/TlsCsrsApi';
 import TlsDomainsApi from './api/TlsDomainsApi';
 import TlsPrivateKeysApi from './api/TlsPrivateKeysApi';
 import TlsSubscriptionsApi from './api/TlsSubscriptionsApi';
@@ -739,7 +728,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 3.3.0
+* @version 3.3.1
 */
 export {
     /**
@@ -1197,18 +1186,6 @@ export {
      * @property {module:model/EnabledProductResponseService}
      */
     EnabledProductResponseService,
-
-    /**
-     * The ErrorResponse model constructor.
-     * @property {module:model/ErrorResponse}
-     */
-    ErrorResponse,
-
-    /**
-     * The ErrorResponseData model constructor.
-     * @property {module:model/ErrorResponseData}
-     */
-    ErrorResponseData,
 
     /**
      * The Event model constructor.
@@ -2819,12 +2796,6 @@ export {
     RelationshipsForTlsConfiguration,
 
     /**
-     * The RelationshipsForTlsCsr model constructor.
-     * @property {module:model/RelationshipsForTlsCsr}
-     */
-    RelationshipsForTlsCsr,
-
-    /**
      * The RelationshipsForTlsDomain model constructor.
      * @property {module:model/RelationshipsForTlsDomain}
      */
@@ -3473,42 +3444,6 @@ export {
     TlsConfigurationsResponseAllOf,
 
     /**
-     * The TlsCsr model constructor.
-     * @property {module:model/TlsCsr}
-     */
-    TlsCsr,
-
-    /**
-     * The TlsCsrData model constructor.
-     * @property {module:model/TlsCsrData}
-     */
-    TlsCsrData,
-
-    /**
-     * The TlsCsrDataAttributes model constructor.
-     * @property {module:model/TlsCsrDataAttributes}
-     */
-    TlsCsrDataAttributes,
-
-    /**
-     * The TlsCsrResponse model constructor.
-     * @property {module:model/TlsCsrResponse}
-     */
-    TlsCsrResponse,
-
-    /**
-     * The TlsCsrResponseAttributes model constructor.
-     * @property {module:model/TlsCsrResponseAttributes}
-     */
-    TlsCsrResponseAttributes,
-
-    /**
-     * The TlsCsrResponseData model constructor.
-     * @property {module:model/TlsCsrResponseData}
-     */
-    TlsCsrResponseData,
-
-    /**
      * The TlsDnsRecord model constructor.
      * @property {module:model/TlsDnsRecord}
      */
@@ -3765,12 +3700,6 @@ export {
      * @property {module:model/TypeTlsConfiguration}
      */
     TypeTlsConfiguration,
-
-    /**
-     * The TypeTlsCsr model constructor.
-     * @property {module:model/TypeTlsCsr}
-     */
-    TypeTlsCsr,
 
     /**
      * The TypeTlsDnsRecord model constructor.
@@ -4809,12 +4738,6 @@ export {
     * @property {module:api/TlsConfigurationsApi}
     */
     TlsConfigurationsApi,
-
-    /**
-    * The TlsCsrsApi service constructor.
-    * @property {module:api/TlsCsrsApi}
-    */
-    TlsCsrsApi,
 
     /**
     * The TlsDomainsApi service constructor.

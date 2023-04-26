@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TlsConfigurationDataAttributes model module.
  * @module model/TlsConfigurationDataAttributes
- * @version 3.3.0
+ * @version 3.3.1
  */
 class TlsConfigurationDataAttributes {
     /**

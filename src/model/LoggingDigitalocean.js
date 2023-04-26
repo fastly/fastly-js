@@ -18,7 +18,7 @@ import LoggingGenericCommon from './LoggingGenericCommon';
 /**
  * The LoggingDigitalocean model module.
  * @module model/LoggingDigitalocean
- * @version 3.3.0
+ * @version 3.3.1
  */
 class LoggingDigitalocean {
     /**

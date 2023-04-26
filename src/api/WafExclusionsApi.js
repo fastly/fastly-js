@@ -19,7 +19,7 @@ import WafExclusionsResponse from '../model/WafExclusionsResponse';
 /**
 * WafExclusions service.
 * @module api/WafExclusionsApi
-* @version 3.3.0
+* @version 3.3.1
 */
 export default class WafExclusionsApi {
 

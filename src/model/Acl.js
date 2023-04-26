@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Acl model module.
  * @module model/Acl
- * @version 3.3.0
+ * @version 3.3.1
  */
 class Acl {
     /**
