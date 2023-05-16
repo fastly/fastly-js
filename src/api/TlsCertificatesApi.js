@@ -19,7 +19,7 @@ import TlsCertificatesResponse from '../model/TlsCertificatesResponse';
 /**
 * TlsCertificates service.
 * @module api/TlsCertificatesApi
-* @version 3.3.1
+* @version 4.0.0
 */
 export default class TlsCertificatesApi {
 
@@ -184,6 +184,7 @@ export default class TlsCertificatesApi {
     /**
      * List all TLS certificates.
      * @param {Object} options
+     * @param {String} [options.filter_in_use] - Optional. Limit the returned certificates to those currently using Fastly to terminate TLS (that is, certificates associated with an activation). Permitted values: true, false.
      * @param {String} [options.filter_not_after] - Limit the returned certificates to those that expire prior to the specified date in UTC. Accepts parameters: lte (e.g., filter[not_after][lte]=2020-05-05). 
      * @param {String} [options.filter_tls_domains_id] - Limit the returned certificates to those that include the specific domain.
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_activations`. 
@@ -200,6 +201,7 @@ export default class TlsCertificatesApi {
       let pathParamsAllowReserved = {
       };
       let queryParams = {
+        'filter[in_use]': options['filter_in_use'],
         'filter[not_after]': options['filter_not_after'],
         'filter[tls_domains.id]': options['filter_tls_domains_id'],
         'include': options['include'],
@@ -226,6 +228,7 @@ export default class TlsCertificatesApi {
     /**
      * List all TLS certificates.
      * @param {Object} options
+     * @param {String} [options.filter_in_use] - Optional. Limit the returned certificates to those currently using Fastly to terminate TLS (that is, certificates associated with an activation). Permitted values: true, false.
      * @param {String} [options.filter_not_after] - Limit the returned certificates to those that expire prior to the specified date in UTC. Accepts parameters: lte (e.g., filter[not_after][lte]=2020-05-05). 
      * @param {String} [options.filter_tls_domains_id] - Limit the returned certificates to those that include the specific domain.
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_activations`. 

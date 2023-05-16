@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BulkUpdateDictionaryItemAllOf model module.
  * @module model/BulkUpdateDictionaryItemAllOf
- * @version 3.3.1
+ * @version 4.0.0
  */
 class BulkUpdateDictionaryItemAllOf {
     /**

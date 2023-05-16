@@ -15,15 +15,15 @@ import ApiClient from "../ApiClient";
 import InlineResponse2004 from '../model/InlineResponse2004';
 
 /**
-* ObjectStoreItem service.
-* @module api/ObjectStoreItemApi
-* @version 3.3.1
+* KvStoreItem service.
+* @module api/KvStoreItemApi
+* @version 4.0.0
 */
-export default class ObjectStoreItemApi {
+export default class KvStoreItemApi {
 
     /**
-    * Constructs a new ObjectStoreItemApi. 
-    * @alias module:api/ObjectStoreItemApi
+    * Constructs a new KvStoreItemApi. 
+    * @alias module:api/KvStoreItemApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -38,7 +38,7 @@ export default class ObjectStoreItemApi {
 
 
     /**
-     * Delete an item from an object store
+     * Delete an item from an kv store
      * @param {Object} options
      * @param {String} options.store_id
      * @param {String} options.key_name
@@ -75,14 +75,14 @@ export default class ObjectStoreItemApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/resources/stores/object/{store_id}/keys/{key_name}', 'DELETE',
+        '/resources/stores/kv/{store_id}/keys/{key_name}', 'DELETE',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Delete an item from an object store
+     * Delete an item from an kv store
      * @param {Object} options
      * @param {String} options.store_id
      * @param {String} options.key_name
@@ -97,7 +97,7 @@ export default class ObjectStoreItemApi {
     }
 
     /**
-     * List the keys of all items within an object store.
+     * List the keys of all items within an kv store.
      * @param {Object} options
      * @param {String} options.store_id
      * @param {String} [options.cursor]
@@ -132,14 +132,14 @@ export default class ObjectStoreItemApi {
       let accepts = ['application/json'];
       let returnType = InlineResponse2004;
       return this.apiClient.callApi(
-        '/resources/stores/object/{store_id}/keys', 'GET',
+        '/resources/stores/kv/{store_id}/keys', 'GET',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * List the keys of all items within an object store.
+     * List the keys of all items within an kv store.
      * @param {Object} options
      * @param {String} options.store_id
      * @param {String} [options.cursor]
@@ -190,7 +190,7 @@ export default class ObjectStoreItemApi {
       let accepts = ['application/octet-stream'];
       let returnType = 'Blob';
       return this.apiClient.callApi(
-        '/resources/stores/object/{store_id}/keys/{key_name}', 'GET',
+        '/resources/stores/kv/{store_id}/keys/{key_name}', 'GET',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
@@ -211,7 +211,7 @@ export default class ObjectStoreItemApi {
     }
 
     /**
-     * Set a new value for a new or existing key in an object store.
+     * Set a new value for a new or existing key in an kv store.
      * @param {Object} options
      * @param {String} options.store_id
      * @param {String} options.key_name
@@ -261,14 +261,14 @@ export default class ObjectStoreItemApi {
       let accepts = ['application/octet-stream'];
       let returnType = 'Blob';
       return this.apiClient.callApi(
-        '/resources/stores/object/{store_id}/keys/{key_name}', 'PUT',
+        '/resources/stores/kv/{store_id}/keys/{key_name}', 'PUT',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Set a new value for a new or existing key in an object store.
+     * Set a new value for a new or existing key in an kv store.
      * @param {Object} options
      * @param {String} options.store_id
      * @param {String} options.key_name

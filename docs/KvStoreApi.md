@@ -1,16 +1,16 @@
-# Fastly.ObjectStoreApi
+# Fastly.KvStoreApi
 
 ```javascript
-const apiInstance = new Fastly.ObjectStoreApi();
+const apiInstance = new Fastly.KvStoreApi();
 ```
 ## Methods
 
 Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
-[**createStore**](ObjectStoreApi.md#createStore) | **POST** /resources/stores/object | Create an object store.
-[**deleteStore**](ObjectStoreApi.md#deleteStore) | **DELETE** /resources/stores/object/{store_id} | Delete an object store.
-[**getStore**](ObjectStoreApi.md#getStore) | **GET** /resources/stores/object/{store_id} | Describe an object store.
-[**getStores**](ObjectStoreApi.md#getStores) | **GET** /resources/stores/object | List object stores.
+[**createStore**](KvStoreApi.md#createStore) | **POST** /resources/stores/kv | Create an kv store.
+[**deleteStore**](KvStoreApi.md#deleteStore) | **DELETE** /resources/stores/kv/{store_id} | Delete an kv store.
+[**getStore**](KvStoreApi.md#getStore) | **GET** /resources/stores/kv/{store_id} | Describe an kv store.
+[**getStores**](KvStoreApi.md#getStores) | **GET** /resources/stores/kv | List kv stores.
 
 
 ## `createStore`
@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 createStore({ , [location, ][store] })
 ```
 
-Create a new object store.
+Create a new kv store.
 
 ### Example
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 deleteStore({ store_id, [force] })
 ```
 
-An object store must be empty before it can be deleted.  Deleting an object store that still contains keys will result in a `409` (Conflict).
+An kv store must be empty before it can be deleted.  Deleting an kv store that still contains keys will result in a `409` (Conflict).
 
 ### Example
 
@@ -93,7 +93,7 @@ null (empty response body)
 getStore({ store_id })
 ```
 
-Get an object store by ID.
+Get an kv store by ID.
 
 ### Example
 

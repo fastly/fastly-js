@@ -17,7 +17,7 @@ import TypeTlsActivation from './TypeTlsActivation';
 /**
  * The TlsActivationData model module.
  * @module model/TlsActivationData
- * @version 3.3.1
+ * @version 4.0.0
  */
 class TlsActivationData {
     /**

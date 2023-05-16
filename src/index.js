@@ -628,6 +628,8 @@ import IamRolesApi from './api/IamRolesApi';
 import IamServiceGroupsApi from './api/IamServiceGroupsApi';
 import IamUserGroupsApi from './api/IamUserGroupsApi';
 import InvitationsApi from './api/InvitationsApi';
+import KvStoreApi from './api/KvStoreApi';
+import KvStoreItemApi from './api/KvStoreItemApi';
 import LoggingAzureblobApi from './api/LoggingAzureblobApi';
 import LoggingBigqueryApi from './api/LoggingBigqueryApi';
 import LoggingCloudfilesApi from './api/LoggingCloudfilesApi';
@@ -655,8 +657,6 @@ import LoggingSplunkApi from './api/LoggingSplunkApi';
 import LoggingSumologicApi from './api/LoggingSumologicApi';
 import LoggingSyslogApi from './api/LoggingSyslogApi';
 import MutualAuthenticationApi from './api/MutualAuthenticationApi';
-import ObjectStoreApi from './api/ObjectStoreApi';
-import ObjectStoreItemApi from './api/ObjectStoreItemApi';
 import PackageApi from './api/PackageApi';
 import PoolApi from './api/PoolApi';
 import PopApi from './api/PopApi';
@@ -728,7 +728,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 3.3.1
+* @version 4.0.0
 */
 export {
     /**
@@ -4434,6 +4434,18 @@ export {
     InvitationsApi,
 
     /**
+    * The KvStoreApi service constructor.
+    * @property {module:api/KvStoreApi}
+    */
+    KvStoreApi,
+
+    /**
+    * The KvStoreItemApi service constructor.
+    * @property {module:api/KvStoreItemApi}
+    */
+    KvStoreItemApi,
+
+    /**
     * The LoggingAzureblobApi service constructor.
     * @property {module:api/LoggingAzureblobApi}
     */
@@ -4594,18 +4606,6 @@ export {
     * @property {module:api/MutualAuthenticationApi}
     */
     MutualAuthenticationApi,
-
-    /**
-    * The ObjectStoreApi service constructor.
-    * @property {module:api/ObjectStoreApi}
-    */
-    ObjectStoreApi,
-
-    /**
-    * The ObjectStoreItemApi service constructor.
-    * @property {module:api/ObjectStoreItemApi}
-    */
-    ObjectStoreItemApi,
 
     /**
     * The PackageApi service constructor.

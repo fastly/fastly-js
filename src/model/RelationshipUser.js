@@ -16,7 +16,7 @@ import RelationshipUserUser from './RelationshipUserUser';
 /**
  * The RelationshipUser model module.
  * @module model/RelationshipUser
- * @version 3.3.1
+ * @version 4.0.0
  */
 class RelationshipUser {
     /**

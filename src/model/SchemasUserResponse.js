@@ -19,7 +19,7 @@ import UserResponseAllOf from './UserResponseAllOf';
 /**
  * The SchemasUserResponse model module.
  * @module model/SchemasUserResponse
- * @version 3.3.1
+ * @version 4.0.0
  */
 class SchemasUserResponse {
     /**

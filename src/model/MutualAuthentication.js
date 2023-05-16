@@ -16,7 +16,7 @@ import MutualAuthenticationData from './MutualAuthenticationData';
 /**
  * The MutualAuthentication model module.
  * @module model/MutualAuthentication
- * @version 3.3.1
+ * @version 4.0.0
  */
 class MutualAuthentication {
     /**

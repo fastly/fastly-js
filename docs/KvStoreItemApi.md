@@ -1,16 +1,16 @@
-# Fastly.ObjectStoreItemApi
+# Fastly.KvStoreItemApi
 
 ```javascript
-const apiInstance = new Fastly.ObjectStoreItemApi();
+const apiInstance = new Fastly.KvStoreItemApi();
 ```
 ## Methods
 
 Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
-[**deleteKeyFromStore**](ObjectStoreItemApi.md#deleteKeyFromStore) | **DELETE** /resources/stores/object/{store_id}/keys/{key_name} | Delete object store item.
-[**getKeys**](ObjectStoreItemApi.md#getKeys) | **GET** /resources/stores/object/{store_id}/keys | List object store keys.
-[**getValueForKey**](ObjectStoreItemApi.md#getValueForKey) | **GET** /resources/stores/object/{store_id}/keys/{key_name} | Get the value of an object store item
-[**setValueForKey**](ObjectStoreItemApi.md#setValueForKey) | **PUT** /resources/stores/object/{store_id}/keys/{key_name} | Insert an item into an object store
+[**deleteKeyFromStore**](KvStoreItemApi.md#deleteKeyFromStore) | **DELETE** /resources/stores/kv/{store_id}/keys/{key_name} | Delete kv store item.
+[**getKeys**](KvStoreItemApi.md#getKeys) | **GET** /resources/stores/kv/{store_id}/keys | List kv store keys.
+[**getValueForKey**](KvStoreItemApi.md#getValueForKey) | **GET** /resources/stores/kv/{store_id}/keys/{key_name} | Get the value of an kv store item
+[**setValueForKey**](KvStoreItemApi.md#setValueForKey) | **PUT** /resources/stores/kv/{store_id}/keys/{key_name} | Insert an item into an kv store
 
 
 ## `deleteKeyFromStore`
@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 deleteKeyFromStore({ store_id, key_name, [force] })
 ```
 
-Delete an item from an object store
+Delete an item from an kv store
 
 ### Example
 
@@ -58,7 +58,7 @@ null (empty response body)
 getKeys({ store_id, [cursor, ][limit, ][prefix] })
 ```
 
-List the keys of all items within an object store.
+List the keys of all items within an kv store.
 
 ### Example
 
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 setValueForKey({ store_id, key_name, [if_generation_match, ][time_to_live_sec, ][metadata, ][add, ][append, ][prepend, ][background_fetch, ][body] })
 ```
 
-Set a new value for a new or existing key in an object store.
+Set a new value for a new or existing key in an kv store.
 
 ### Example
 

@@ -17,7 +17,7 @@ import WafTagsResponse from '../model/WafTagsResponse';
 /**
 * WafTags service.
 * @module api/WafTagsApi
-* @version 3.3.1
+* @version 4.0.0
 */
 export default class WafTagsApi {
 

@@ -12,13 +12,14 @@
 
 
 import ApiClient from "../ApiClient";
+import BulkUpdateDictionaryListRequest from '../model/BulkUpdateDictionaryListRequest';
 import DictionaryItemResponse from '../model/DictionaryItemResponse';
 import InlineResponse200 from '../model/InlineResponse200';
 
 /**
 * DictionaryItem service.
 * @module api/DictionaryItemApi
-* @version 3.3.1
+* @version 4.0.0
 */
 export default class DictionaryItemApi {
 
@@ -37,6 +38,64 @@ export default class DictionaryItemApi {
         }
     }
 
+
+    /**
+     * Update multiple items in the same dictionary. For faster updates to your service, group your changes into large batches. The maximum batch size is 1000 items. [Contact support](https://support.fastly.com/) to discuss raising this limit.
+     * @param {Object} options
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
+     * @param {module:model/BulkUpdateDictionaryListRequest} [options.bulk_update_dictionary_list_request]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse200} and HTTP response
+     */
+    bulkUpdateDictionaryItemWithHttpInfo(options = {}) {
+      let postBody = options['bulk_update_dictionary_list_request'];
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
+      }
+      // Verify the required parameter 'dictionary_id' is set.
+      if (options['dictionary_id'] === undefined || options['dictionary_id'] === null) {
+        throw new Error("Missing the required parameter 'dictionary_id'.");
+      }
+
+      let pathParams = {
+        'service_id': options['service_id'],
+        'dictionary_id': options['dictionary_id']
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse200;
+      return this.apiClient.callApi(
+        '/service/{service_id}/dictionary/{dictionary_id}/items', 'PATCH',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Update multiple items in the same dictionary. For faster updates to your service, group your changes into large batches. The maximum batch size is 1000 items. [Contact support](https://support.fastly.com/) to discuss raising this limit.
+     * @param {Object} options
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {String} options.dictionary_id - Alphanumeric string identifying a Dictionary.
+     * @param {module:model/BulkUpdateDictionaryListRequest} [options.bulk_update_dictionary_list_request]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse200}
+     */
+    bulkUpdateDictionaryItem(options = {}) {
+      return this.bulkUpdateDictionaryItemWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
 
     /**
      * Create DictionaryItem given service, dictionary ID, item key, and item value.

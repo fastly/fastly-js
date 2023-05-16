@@ -17,15 +17,15 @@ import Store from '../model/Store';
 import StoreResponse from '../model/StoreResponse';
 
 /**
-* ObjectStore service.
-* @module api/ObjectStoreApi
-* @version 3.3.1
+* KvStore service.
+* @module api/KvStoreApi
+* @version 4.0.0
 */
-export default class ObjectStoreApi {
+export default class KvStoreApi {
 
     /**
-    * Constructs a new ObjectStoreApi. 
-    * @alias module:api/ObjectStoreApi
+    * Constructs a new KvStoreApi. 
+    * @alias module:api/KvStoreApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.
@@ -40,7 +40,7 @@ export default class ObjectStoreApi {
 
 
     /**
-     * Create a new object store.
+     * Create a new kv store.
      * @param {Object} options
      * @param {String} [options.location]
      * @param {module:model/Store} [options.store]
@@ -66,14 +66,14 @@ export default class ObjectStoreApi {
       let accepts = ['application/json'];
       let returnType = StoreResponse;
       return this.apiClient.callApi(
-        '/resources/stores/object', 'POST',
+        '/resources/stores/kv', 'POST',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Create a new object store.
+     * Create a new kv store.
      * @param {Object} options
      * @param {String} [options.location]
      * @param {module:model/Store} [options.store]
@@ -87,7 +87,7 @@ export default class ObjectStoreApi {
     }
 
     /**
-     * An object store must be empty before it can be deleted.  Deleting an object store that still contains keys will result in a `409` (Conflict).
+     * An kv store must be empty before it can be deleted.  Deleting an kv store that still contains keys will result in a `409` (Conflict).
      * @param {Object} options
      * @param {String} options.store_id
      * @param {Boolean} [options.force]
@@ -118,14 +118,14 @@ export default class ObjectStoreApi {
       let accepts = [];
       let returnType = null;
       return this.apiClient.callApi(
-        '/resources/stores/object/{store_id}', 'DELETE',
+        '/resources/stores/kv/{store_id}', 'DELETE',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * An object store must be empty before it can be deleted.  Deleting an object store that still contains keys will result in a `409` (Conflict).
+     * An kv store must be empty before it can be deleted.  Deleting an kv store that still contains keys will result in a `409` (Conflict).
      * @param {Object} options
      * @param {String} options.store_id
      * @param {Boolean} [options.force]
@@ -139,7 +139,7 @@ export default class ObjectStoreApi {
     }
 
     /**
-     * Get an object store by ID.
+     * Get an kv store by ID.
      * @param {Object} options
      * @param {String} options.store_id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StoreResponse} and HTTP response
@@ -168,14 +168,14 @@ export default class ObjectStoreApi {
       let accepts = ['application/json'];
       let returnType = StoreResponse;
       return this.apiClient.callApi(
-        '/resources/stores/object/{store_id}', 'GET',
+        '/resources/stores/kv/{store_id}', 'GET',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );
     }
 
     /**
-     * Get an object store by ID.
+     * Get an kv store by ID.
      * @param {Object} options
      * @param {String} options.store_id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StoreResponse}
@@ -215,7 +215,7 @@ export default class ObjectStoreApi {
       let accepts = ['application/json'];
       let returnType = InlineResponse2003;
       return this.apiClient.callApi(
-        '/resources/stores/object', 'GET',
+        '/resources/stores/kv', 'GET',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null
       );

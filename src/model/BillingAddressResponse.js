@@ -16,7 +16,7 @@ import BillingAddressResponseData from './BillingAddressResponseData';
 /**
  * The BillingAddressResponse model module.
  * @module model/BillingAddressResponse
- * @version 3.3.1
+ * @version 4.0.0
  */
 class BillingAddressResponse {
     /**

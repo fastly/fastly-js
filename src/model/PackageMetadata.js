@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PackageMetadata model module.
  * @module model/PackageMetadata
- * @version 3.3.1
+ * @version 4.0.0
  */
 class PackageMetadata {
     /**
@@ -65,6 +65,9 @@ class PackageMetadata {
             if (data.hasOwnProperty('hashsum')) {
                 obj['hashsum'] = ApiClient.convertToType(data['hashsum'], 'String');
             }
+            if (data.hasOwnProperty('files_hash')) {
+                obj['files_hash'] = ApiClient.convertToType(data['files_hash'], 'String');
+            }
         }
         return obj;
     }
@@ -107,6 +110,12 @@ PackageMetadata.prototype['size'] = undefined;
  * @member {String} hashsum
  */
 PackageMetadata.prototype['hashsum'] = undefined;
+
+/**
+ * Hash of the files within the Compute@Edge package.
+ * @member {String} files_hash
+ */
+PackageMetadata.prototype['files_hash'] = undefined;
 
 
 

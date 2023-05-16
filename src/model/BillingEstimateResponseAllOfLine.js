@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BillingEstimateResponseAllOfLine model module.
  * @module model/BillingEstimateResponseAllOfLine
- * @version 3.3.1
+ * @version 4.0.0
  */
 class BillingEstimateResponseAllOfLine {
     /**

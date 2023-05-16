@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **language** | **String** | The language of the Compute@Edge package. | [optional] 
 **size** | **Number** | Size of the Compute@Edge package in bytes. | [optional] 
 **hashsum** | **String** | Hash of the Compute@Edge package. | [optional] 
+**files_hash** | **String** | Hash of the files within the Compute@Edge package. | [optional] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -20,7 +20,7 @@ import PaginationMeta from './PaginationMeta';
 /**
  * The EventsResponse model module.
  * @module model/EventsResponse
- * @version 3.3.1
+ * @version 4.0.0
  */
 class EventsResponse {
     /**

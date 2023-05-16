@@ -122,7 +122,7 @@ Name | Type | Description  | Notes
 ## `listTlsCerts`
 
 ```javascript
-listTlsCerts({ , [filter_not_after, ][filter_tls_domains_id, ][include, ][page_number, ][page_size, ][sort] })
+listTlsCerts({ , [filter_in_use, ][filter_not_after, ][filter_tls_domains_id, ][include, ][page_number, ][page_size, ][sort] })
 ```
 
 List all TLS certificates.
@@ -131,6 +131,7 @@ List all TLS certificates.
 
 ```javascript
 const options = {
+  filter_in_use: "filter_in_use_example",
   filter_not_after: "filter_not_after_example",
   filter_tls_domains_id: "filter_tls_domains_id_example",
   include: "include_example",
@@ -152,6 +153,7 @@ apiInstance.listTlsCerts(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+**filter_in_use** | **String** | Optional. Limit the returned certificates to those currently using Fastly to terminate TLS (that is, certificates associated with an activation). Permitted values: true, false. | [optional]
 **filter_not_after** | **String** | Limit the returned certificates to those that expire prior to the specified date in UTC. Accepts parameters: lte (e.g., filter[not_after][lte]&#x3D;2020-05-05).  | [optional]
 **filter_tls_domains_id** | **String** | Limit the returned certificates to those that include the specific domain. | [optional]
 **include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: `tls_activations`.  | [optional]

@@ -108,6 +108,7 @@ Class | Method | Description
 *Fastly.DictionaryApi* | [**listDictionaries**](docs/DictionaryApi.md#listDictionaries) | List edge dictionaries
 *Fastly.DictionaryApi* | [**updateDictionary**](docs/DictionaryApi.md#updateDictionary) | Update an edge dictionary
 *Fastly.DictionaryInfoApi* | [**getDictionaryInfo**](docs/DictionaryInfoApi.md#getDictionaryInfo) | Get edge dictionary metadata
+*Fastly.DictionaryItemApi* | [**bulkUpdateDictionaryItem**](docs/DictionaryItemApi.md#bulkUpdateDictionaryItem) | Update multiple entries in an edge dictionary
 *Fastly.DictionaryItemApi* | [**createDictionaryItem**](docs/DictionaryItemApi.md#createDictionaryItem) | Create an entry in an edge dictionary
 *Fastly.DictionaryItemApi* | [**deleteDictionaryItem**](docs/DictionaryItemApi.md#deleteDictionaryItem) | Delete an item from an edge dictionary
 *Fastly.DictionaryItemApi* | [**getDictionaryItem**](docs/DictionaryItemApi.md#getDictionaryItem) | Get an item from an edge dictionary
@@ -180,6 +181,14 @@ Class | Method | Description
 *Fastly.InvitationsApi* | [**createInvitation**](docs/InvitationsApi.md#createInvitation) | Create an invitation
 *Fastly.InvitationsApi* | [**deleteInvitation**](docs/InvitationsApi.md#deleteInvitation) | Delete an invitation
 *Fastly.InvitationsApi* | [**listInvitations**](docs/InvitationsApi.md#listInvitations) | List invitations
+*Fastly.KvStoreApi* | [**createStore**](docs/KvStoreApi.md#createStore) | Create an kv store.
+*Fastly.KvStoreApi* | [**deleteStore**](docs/KvStoreApi.md#deleteStore) | Delete an kv store.
+*Fastly.KvStoreApi* | [**getStore**](docs/KvStoreApi.md#getStore) | Describe an kv store.
+*Fastly.KvStoreApi* | [**getStores**](docs/KvStoreApi.md#getStores) | List kv stores.
+*Fastly.KvStoreItemApi* | [**deleteKeyFromStore**](docs/KvStoreItemApi.md#deleteKeyFromStore) | Delete kv store item.
+*Fastly.KvStoreItemApi* | [**getKeys**](docs/KvStoreItemApi.md#getKeys) | List kv store keys.
+*Fastly.KvStoreItemApi* | [**getValueForKey**](docs/KvStoreItemApi.md#getValueForKey) | Get the value of an kv store item
+*Fastly.KvStoreItemApi* | [**setValueForKey**](docs/KvStoreItemApi.md#setValueForKey) | Insert an item into an kv store
 *Fastly.LoggingAzureblobApi* | [**createLogAzure**](docs/LoggingAzureblobApi.md#createLogAzure) | Create an Azure Blob Storage log endpoint
 *Fastly.LoggingAzureblobApi* | [**deleteLogAzure**](docs/LoggingAzureblobApi.md#deleteLogAzure) | Delete the Azure Blob Storage log endpoint
 *Fastly.LoggingAzureblobApi* | [**getLogAzure**](docs/LoggingAzureblobApi.md#getLogAzure) | Get an Azure Blob Storage log endpoint
@@ -313,14 +322,6 @@ Class | Method | Description
 *Fastly.MutualAuthenticationApi* | [**getMutualAuthentication**](docs/MutualAuthenticationApi.md#getMutualAuthentication) | Get a Mutual Authentication
 *Fastly.MutualAuthenticationApi* | [**listMutualAuthentications**](docs/MutualAuthenticationApi.md#listMutualAuthentications) | List Mutual Authentications
 *Fastly.MutualAuthenticationApi* | [**patchMutualAuthentication**](docs/MutualAuthenticationApi.md#patchMutualAuthentication) | Update a Mutual Authentication
-*Fastly.ObjectStoreApi* | [**createStore**](docs/ObjectStoreApi.md#createStore) | Create an object store.
-*Fastly.ObjectStoreApi* | [**deleteStore**](docs/ObjectStoreApi.md#deleteStore) | Delete an object store.
-*Fastly.ObjectStoreApi* | [**getStore**](docs/ObjectStoreApi.md#getStore) | Describe an object store.
-*Fastly.ObjectStoreApi* | [**getStores**](docs/ObjectStoreApi.md#getStores) | List object stores.
-*Fastly.ObjectStoreItemApi* | [**deleteKeyFromStore**](docs/ObjectStoreItemApi.md#deleteKeyFromStore) | Delete object store item.
-*Fastly.ObjectStoreItemApi* | [**getKeys**](docs/ObjectStoreItemApi.md#getKeys) | List object store keys.
-*Fastly.ObjectStoreItemApi* | [**getValueForKey**](docs/ObjectStoreItemApi.md#getValueForKey) | Get the value of an object store item
-*Fastly.ObjectStoreItemApi* | [**setValueForKey**](docs/ObjectStoreItemApi.md#setValueForKey) | Insert an item into an object store
 *Fastly.PackageApi* | [**getPackage**](docs/PackageApi.md#getPackage) | Get details of the service&#39;s Compute@Edge package.
 *Fastly.PackageApi* | [**putPackage**](docs/PackageApi.md#putPackage) | Upload a Compute@Edge package.
 *Fastly.PoolApi* | [**createServerPool**](docs/PoolApi.md#createServerPool) | Create a server pool
@@ -484,7 +485,7 @@ The fastly-js API client currently does not support the following endpoints:
 - [`/resources/stores/secret/client-key`](https://developer.fastly.com/reference/api/services/resources/secret-store) (POST)
 - [`/resources/stores/secret/signing-key`](https://developer.fastly.com/reference/api/services/resources/secret-store) (GET)
 - [`/resources/stores/secret/{store_id}/secrets/{secret_name}`](https://developer.fastly.com/reference/api/services/resources/secret) (DELETE, GET)
-- [`/resources/stores/secret/{store_id}/secrets`](https://developer.fastly.com/reference/api/services/resources/secret) (GET, POST)
+- [`/resources/stores/secret/{store_id}/secrets`](https://developer.fastly.com/reference/api/services/resources/secret) (GET, PATCH, POST, PUT)
 - [`/resources/stores/secret/{store_id}`](https://developer.fastly.com/reference/api/services/resources/secret-store) (DELETE, GET)
 - [`/resources/stores/secret`](https://developer.fastly.com/reference/api/services/resources/secret-store) (GET, POST)
 - [`/roles/{role_id}/permissions`](https://developer.fastly.com/reference/api/account/roles) (DELETE, POST)
@@ -494,7 +495,6 @@ The fastly-js API client currently does not support the following endpoints:
 - [`/service-groups/{service_group_id}/services`](https://developer.fastly.com/reference/api/account/service-groups) (DELETE, POST)
 - [`/service-groups/{service_group_id}`](https://developer.fastly.com/reference/api/account/service-groups) (PATCH)
 - [`/service-groups`](https://developer.fastly.com/reference/api/account/service-groups) (POST)
-- [`/service/{service_id}/dictionary/{dictionary_id}/items`](https://developer.fastly.com/reference/api/dictionaries/dictionary-item) (PATCH)
 - [`/service/{service_id}/lint`](https://developer.fastly.com/reference/api/vcl-services/vcl) (POST)
 - [`/service/{service_id}/version/{version_id}/apex-redirects`](https://developer.fastly.com/reference/api/vcl-services/apex-redirect) (POST)
 - [`/service/{service_id}/version/{version_id}/boilerplate`](https://developer.fastly.com/reference/api/vcl-services/vcl) (GET)

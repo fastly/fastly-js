@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ServiceIdAndVersion model module.
  * @module model/ServiceIdAndVersion
- * @version 3.3.1
+ * @version 4.0.0
  */
 class ServiceIdAndVersion {
     /**

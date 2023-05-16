@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The SchemasContactResponse model module.
  * @module model/SchemasContactResponse
- * @version 3.3.1
+ * @version 4.0.0
  */
 class SchemasContactResponse {
     /**

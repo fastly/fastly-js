@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Header service.
 * @module api/HeaderApi
-* @version 3.3.1
+* @version 4.0.0
 */
 export default class HeaderApi {
 

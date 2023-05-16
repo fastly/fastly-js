@@ -20,7 +20,7 @@ import InlineResponse2001 from '../model/InlineResponse2001';
 /**
 * AutomationTokens service.
 * @module api/AutomationTokensApi
-* @version 3.3.1
+* @version 4.0.0
 */
 export default class AutomationTokensApi {
 

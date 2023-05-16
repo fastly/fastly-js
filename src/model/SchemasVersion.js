@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SchemasVersion model module.
  * @module model/SchemasVersion
- * @version 3.3.1
+ * @version 4.0.0
  */
 class SchemasVersion {
     /**

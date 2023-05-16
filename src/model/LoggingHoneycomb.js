@@ -17,7 +17,7 @@ import LoggingHoneycombAllOf from './LoggingHoneycombAllOf';
 /**
  * The LoggingHoneycomb model module.
  * @module model/LoggingHoneycomb
- * @version 3.3.1
+ * @version 4.0.0
  */
 class LoggingHoneycomb {
     /**
