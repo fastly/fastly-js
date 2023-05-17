@@ -17,7 +17,7 @@ import TokenResponse from './TokenResponse';
 /**
  * The TokenCreatedResponse model module.
  * @module model/TokenCreatedResponse
- * @version 4.0.0
+ * @version 4.1.0
  */
 class TokenCreatedResponse {
     /**

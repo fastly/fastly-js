@@ -18,7 +18,7 @@ import WsMessageFormat from './WsMessageFormat';
 /**
  * The PublishItemFormats model module.
  * @module model/PublishItemFormats
- * @version 4.0.0
+ * @version 4.1.0
  */
 class PublishItemFormats {
     /**

@@ -13,18 +13,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The BulkUpdateDictionaryItemAllOf model module.
- * @module model/BulkUpdateDictionaryItemAllOf
- * @version 4.0.0
+ * The BulkUpdateConfigStoreItemAllOf model module.
+ * @module model/BulkUpdateConfigStoreItemAllOf
+ * @version 4.1.0
  */
-class BulkUpdateDictionaryItemAllOf {
+class BulkUpdateConfigStoreItemAllOf {
     /**
-     * Constructs a new <code>BulkUpdateDictionaryItemAllOf</code>.
-     * @alias module:model/BulkUpdateDictionaryItemAllOf
+     * Constructs a new <code>BulkUpdateConfigStoreItemAllOf</code>.
+     * @alias module:model/BulkUpdateConfigStoreItemAllOf
      */
     constructor() { 
         
-        BulkUpdateDictionaryItemAllOf.initialize(this);
+        BulkUpdateConfigStoreItemAllOf.initialize(this);
     }
 
     /**
@@ -36,15 +36,15 @@ class BulkUpdateDictionaryItemAllOf {
     }
 
     /**
-     * Constructs a <code>BulkUpdateDictionaryItemAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>BulkUpdateConfigStoreItemAllOf</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/BulkUpdateDictionaryItemAllOf} obj Optional instance to populate.
-     * @return {module:model/BulkUpdateDictionaryItemAllOf} The populated <code>BulkUpdateDictionaryItemAllOf</code> instance.
+     * @param {module:model/BulkUpdateConfigStoreItemAllOf} obj Optional instance to populate.
+     * @return {module:model/BulkUpdateConfigStoreItemAllOf} The populated <code>BulkUpdateConfigStoreItemAllOf</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new BulkUpdateDictionaryItemAllOf();
+            obj = obj || new BulkUpdateConfigStoreItemAllOf();
 
             if (data.hasOwnProperty('op')) {
                 obj['op'] = ApiClient.convertToType(data['op'], 'String');
@@ -57,9 +57,9 @@ class BulkUpdateDictionaryItemAllOf {
 }
 
 /**
- * @member {module:model/BulkUpdateDictionaryItemAllOf.OpEnum} op
+ * @member {module:model/BulkUpdateConfigStoreItemAllOf.OpEnum} op
  */
-BulkUpdateDictionaryItemAllOf.prototype['op'] = undefined;
+BulkUpdateConfigStoreItemAllOf.prototype['op'] = undefined;
 
 
 
@@ -70,7 +70,7 @@ BulkUpdateDictionaryItemAllOf.prototype['op'] = undefined;
  * @enum {String}
  * @readonly
  */
-BulkUpdateDictionaryItemAllOf['OpEnum'] = {
+BulkUpdateConfigStoreItemAllOf['OpEnum'] = {
 
     /**
      * value: "create"
@@ -99,5 +99,5 @@ BulkUpdateDictionaryItemAllOf['OpEnum'] = {
 
 
 
-export default BulkUpdateDictionaryItemAllOf;
+export default BulkUpdateConfigStoreItemAllOf;
 

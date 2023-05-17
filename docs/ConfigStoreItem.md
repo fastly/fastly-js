@@ -1,10 +1,11 @@
-# Fastly.BulkUpdateDictionaryItemAllOf
+# Fastly.ConfigStoreItem
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**op** | **String** |  | [optional]  [one of: "create", "update", "delete", "upsert"]
+**item_key** | **String** | Item key, maximum 256 characters. | [optional] 
+**item_value** | **String** | Item value, maximum 8000 characters. | [optional] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

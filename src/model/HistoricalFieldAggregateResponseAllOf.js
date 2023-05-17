@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HistoricalFieldAggregateResponseAllOf model module.
  * @module model/HistoricalFieldAggregateResponseAllOf
- * @version 4.0.0
+ * @version 4.1.0
  */
 class HistoricalFieldAggregateResponseAllOf {
     /**

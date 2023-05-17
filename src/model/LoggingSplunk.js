@@ -20,7 +20,7 @@ import LoggingUseTls from './LoggingUseTls';
 /**
  * The LoggingSplunk model module.
  * @module model/LoggingSplunk
- * @version 4.0.0
+ * @version 4.1.0
  */
 class LoggingSplunk {
     /**

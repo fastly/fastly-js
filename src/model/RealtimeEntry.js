@@ -16,7 +16,7 @@ import RealtimeMeasurements from './RealtimeMeasurements';
 /**
  * The RealtimeEntry model module.
  * @module model/RealtimeEntry
- * @version 4.0.0
+ * @version 4.1.0
  */
 class RealtimeEntry {
     /**

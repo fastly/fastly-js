@@ -22,7 +22,7 @@ import WafActiveRulesResponse from '../model/WafActiveRulesResponse';
 /**
 * WafActiveRules service.
 * @module api/WafActiveRulesApi
-* @version 4.0.0
+* @version 4.1.0
 */
 export default class WafActiveRulesApi {
 

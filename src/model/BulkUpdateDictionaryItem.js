@@ -11,23 +11,23 @@
  */
 
 import ApiClient from '../ApiClient';
-import BulkUpdateDictionaryItemAllOf from './BulkUpdateDictionaryItemAllOf';
+import BulkUpdateConfigStoreItemAllOf from './BulkUpdateConfigStoreItemAllOf';
 import DictionaryItem from './DictionaryItem';
 
 /**
  * The BulkUpdateDictionaryItem model module.
  * @module model/BulkUpdateDictionaryItem
- * @version 4.0.0
+ * @version 4.1.0
  */
 class BulkUpdateDictionaryItem {
     /**
      * Constructs a new <code>BulkUpdateDictionaryItem</code>.
      * @alias module:model/BulkUpdateDictionaryItem
      * @implements module:model/DictionaryItem
-     * @implements module:model/BulkUpdateDictionaryItemAllOf
+     * @implements module:model/BulkUpdateConfigStoreItemAllOf
      */
     constructor() { 
-        DictionaryItem.initialize(this);BulkUpdateDictionaryItemAllOf.initialize(this);
+        DictionaryItem.initialize(this);BulkUpdateConfigStoreItemAllOf.initialize(this);
         BulkUpdateDictionaryItem.initialize(this);
     }
 
@@ -50,7 +50,7 @@ class BulkUpdateDictionaryItem {
         if (data) {
             obj = obj || new BulkUpdateDictionaryItem();
             DictionaryItem.constructFromObject(data, obj);
-            BulkUpdateDictionaryItemAllOf.constructFromObject(data, obj);
+            BulkUpdateConfigStoreItemAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('item_key')) {
                 obj['item_key'] = ApiClient.convertToType(data['item_key'], 'String');
@@ -97,11 +97,11 @@ DictionaryItem.prototype['item_key'] = undefined;
  * @member {String} item_value
  */
 DictionaryItem.prototype['item_value'] = undefined;
-// Implement BulkUpdateDictionaryItemAllOf interface:
+// Implement BulkUpdateConfigStoreItemAllOf interface:
 /**
- * @member {module:model/BulkUpdateDictionaryItemAllOf.OpEnum} op
+ * @member {module:model/BulkUpdateConfigStoreItemAllOf.OpEnum} op
  */
-BulkUpdateDictionaryItemAllOf.prototype['op'] = undefined;
+BulkUpdateConfigStoreItemAllOf.prototype['op'] = undefined;
 
 
 

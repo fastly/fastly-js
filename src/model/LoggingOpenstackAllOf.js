@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingOpenstackAllOf model module.
  * @module model/LoggingOpenstackAllOf
- * @version 4.0.0
+ * @version 4.1.0
  */
 class LoggingOpenstackAllOf {
     /**

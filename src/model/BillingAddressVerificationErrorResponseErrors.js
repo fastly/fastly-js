@@ -16,7 +16,7 @@ import BillingAddressAttributes from './BillingAddressAttributes';
 /**
  * The BillingAddressVerificationErrorResponseErrors model module.
  * @module model/BillingAddressVerificationErrorResponseErrors
- * @version 4.0.0
+ * @version 4.1.0
  */
 class BillingAddressVerificationErrorResponseErrors {
     /**

@@ -94,6 +94,20 @@ Class | Method | Description
 *Fastly.ConditionApi* | [**getCondition**](docs/ConditionApi.md#getCondition) | Describe a condition
 *Fastly.ConditionApi* | [**listConditions**](docs/ConditionApi.md#listConditions) | List conditions
 *Fastly.ConditionApi* | [**updateCondition**](docs/ConditionApi.md#updateCondition) | Update a condition
+*Fastly.ConfigStoreApi* | [**createConfigStore**](docs/ConfigStoreApi.md#createConfigStore) | Create a config store
+*Fastly.ConfigStoreApi* | [**deleteConfigStore**](docs/ConfigStoreApi.md#deleteConfigStore) | Delete a config store
+*Fastly.ConfigStoreApi* | [**getConfigStore**](docs/ConfigStoreApi.md#getConfigStore) | Describe a config store
+*Fastly.ConfigStoreApi* | [**getConfigStoreInfo**](docs/ConfigStoreApi.md#getConfigStoreInfo) | Get config store metadata
+*Fastly.ConfigStoreApi* | [**listConfigStoreServices**](docs/ConfigStoreApi.md#listConfigStoreServices) | List linked services
+*Fastly.ConfigStoreApi* | [**listConfigStores**](docs/ConfigStoreApi.md#listConfigStores) | List config stores
+*Fastly.ConfigStoreApi* | [**updateConfigStore**](docs/ConfigStoreApi.md#updateConfigStore) | Update a config store
+*Fastly.ConfigStoreItemApi* | [**bulkUpdateConfigStoreItem**](docs/ConfigStoreItemApi.md#bulkUpdateConfigStoreItem) | Update multiple entries in a config store
+*Fastly.ConfigStoreItemApi* | [**createConfigStoreItem**](docs/ConfigStoreItemApi.md#createConfigStoreItem) | Create an entry in a config store
+*Fastly.ConfigStoreItemApi* | [**deleteConfigStoreItem**](docs/ConfigStoreItemApi.md#deleteConfigStoreItem) | Delete an item from a config store
+*Fastly.ConfigStoreItemApi* | [**getConfigStoreItem**](docs/ConfigStoreItemApi.md#getConfigStoreItem) | Get an item from a config store
+*Fastly.ConfigStoreItemApi* | [**listConfigStoreItems**](docs/ConfigStoreItemApi.md#listConfigStoreItems) | List items in a config store
+*Fastly.ConfigStoreItemApi* | [**updateConfigStoreItem**](docs/ConfigStoreItemApi.md#updateConfigStoreItem) | Update an entry in a config store
+*Fastly.ConfigStoreItemApi* | [**upsertConfigStoreItem**](docs/ConfigStoreItemApi.md#upsertConfigStoreItem) | Insert or update an entry in a config store
 *Fastly.ContactApi* | [**deleteContact**](docs/ContactApi.md#deleteContact) | Delete a contact
 *Fastly.ContactApi* | [**listContacts**](docs/ContactApi.md#listContacts) | List contacts
 *Fastly.ContentApi* | [**contentCheck**](docs/ContentApi.md#contentCheck) | Check status of content in each POP&#39;s cache
@@ -475,13 +489,6 @@ The fastly-js API client currently does not support the following endpoints:
 - [`/metrics/domains/services/{service_id}`](https://developer.fastly.com/reference/api/metrics-stats/domain-inspector/historical) (GET)
 - [`/metrics/origins/services/{service_id}`](https://developer.fastly.com/reference/api/metrics-stats/origin-inspector/historical) (GET)
 - [`/rate-limiters/{rate_limiter_id}`](https://developer.fastly.com/reference/api/vcl-services/rate-limiter) (PUT)
-- [`/resources/stores/config/{config_store_id}/info`](https://developer.fastly.com/reference/api/services/resources/config-store) (GET)
-- [`/resources/stores/config/{config_store_id}/item/{config_store_item_key}`](https://developer.fastly.com/reference/api/services/resources/config-store-item) (DELETE, GET, PATCH, PUT)
-- [`/resources/stores/config/{config_store_id}/item`](https://developer.fastly.com/reference/api/services/resources/config-store-item) (POST)
-- [`/resources/stores/config/{config_store_id}/items`](https://developer.fastly.com/reference/api/services/resources/config-store-item) (GET, PATCH)
-- [`/resources/stores/config/{config_store_id}/services`](https://developer.fastly.com/reference/api/services/resources/config-store) (GET)
-- [`/resources/stores/config/{config_store_id}`](https://developer.fastly.com/reference/api/services/resources/config-store) (DELETE, GET, PUT)
-- [`/resources/stores/config`](https://developer.fastly.com/reference/api/services/resources/config-store) (GET, POST)
 - [`/resources/stores/secret/client-key`](https://developer.fastly.com/reference/api/services/resources/secret-store) (POST)
 - [`/resources/stores/secret/signing-key`](https://developer.fastly.com/reference/api/services/resources/secret-store) (GET)
 - [`/resources/stores/secret/{store_id}/secrets/{secret_name}`](https://developer.fastly.com/reference/api/services/resources/secret) (DELETE, GET)

@@ -16,7 +16,7 @@ import Results from './Results';
 /**
  * The HistoricalResponseAllOf model module.
  * @module model/HistoricalResponseAllOf
- * @version 4.0.0
+ * @version 4.1.0
  */
 class HistoricalResponseAllOf {
     /**

@@ -19,7 +19,7 @@ import LoggingUseTls from '../model/LoggingUseTls';
 /**
 * LoggingSplunk service.
 * @module api/LoggingSplunkApi
-* @version 4.0.0
+* @version 4.1.0
 */
 export default class LoggingSplunkApi {
 

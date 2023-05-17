@@ -53,14 +53,23 @@ import BillingTotalExtras from './model/BillingTotalExtras';
 import BulkUpdateAclEntriesRequest from './model/BulkUpdateAclEntriesRequest';
 import BulkUpdateAclEntry from './model/BulkUpdateAclEntry';
 import BulkUpdateAclEntryAllOf from './model/BulkUpdateAclEntryAllOf';
+import BulkUpdateConfigStoreItem from './model/BulkUpdateConfigStoreItem';
+import BulkUpdateConfigStoreItemAllOf from './model/BulkUpdateConfigStoreItemAllOf';
+import BulkUpdateConfigStoreListRequest from './model/BulkUpdateConfigStoreListRequest';
 import BulkUpdateDictionaryItem from './model/BulkUpdateDictionaryItem';
-import BulkUpdateDictionaryItemAllOf from './model/BulkUpdateDictionaryItemAllOf';
 import BulkUpdateDictionaryListRequest from './model/BulkUpdateDictionaryListRequest';
 import BulkWafActiveRules from './model/BulkWafActiveRules';
 import CacheSetting from './model/CacheSetting';
 import CacheSettingResponse from './model/CacheSettingResponse';
 import Condition from './model/Condition';
 import ConditionResponse from './model/ConditionResponse';
+import ConfigStore from './model/ConfigStore';
+import ConfigStoreInfoResponse from './model/ConfigStoreInfoResponse';
+import ConfigStoreItem from './model/ConfigStoreItem';
+import ConfigStoreItemResponse from './model/ConfigStoreItemResponse';
+import ConfigStoreItemResponseAllOf from './model/ConfigStoreItemResponseAllOf';
+import ConfigStoreResponse from './model/ConfigStoreResponse';
+import ConfigStoreResponseAllOf from './model/ConfigStoreResponseAllOf';
 import Contact from './model/Contact';
 import ContactResponse from './model/ContactResponse';
 import ContactResponseAllOf from './model/ContactResponseAllOf';
@@ -605,6 +614,8 @@ import BillingApi from './api/BillingApi';
 import BillingAddressApi from './api/BillingAddressApi';
 import CacheSettingsApi from './api/CacheSettingsApi';
 import ConditionApi from './api/ConditionApi';
+import ConfigStoreApi from './api/ConfigStoreApi';
+import ConfigStoreItemApi from './api/ConfigStoreItemApi';
 import ContactApi from './api/ContactApi';
 import ContentApi from './api/ContentApi';
 import CustomerApi from './api/CustomerApi';
@@ -728,7 +739,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 4.0.0
+* @version 4.1.0
 */
 export {
     /**
@@ -984,16 +995,28 @@ export {
     BulkUpdateAclEntryAllOf,
 
     /**
+     * The BulkUpdateConfigStoreItem model constructor.
+     * @property {module:model/BulkUpdateConfigStoreItem}
+     */
+    BulkUpdateConfigStoreItem,
+
+    /**
+     * The BulkUpdateConfigStoreItemAllOf model constructor.
+     * @property {module:model/BulkUpdateConfigStoreItemAllOf}
+     */
+    BulkUpdateConfigStoreItemAllOf,
+
+    /**
+     * The BulkUpdateConfigStoreListRequest model constructor.
+     * @property {module:model/BulkUpdateConfigStoreListRequest}
+     */
+    BulkUpdateConfigStoreListRequest,
+
+    /**
      * The BulkUpdateDictionaryItem model constructor.
      * @property {module:model/BulkUpdateDictionaryItem}
      */
     BulkUpdateDictionaryItem,
-
-    /**
-     * The BulkUpdateDictionaryItemAllOf model constructor.
-     * @property {module:model/BulkUpdateDictionaryItemAllOf}
-     */
-    BulkUpdateDictionaryItemAllOf,
 
     /**
      * The BulkUpdateDictionaryListRequest model constructor.
@@ -1030,6 +1053,48 @@ export {
      * @property {module:model/ConditionResponse}
      */
     ConditionResponse,
+
+    /**
+     * The ConfigStore model constructor.
+     * @property {module:model/ConfigStore}
+     */
+    ConfigStore,
+
+    /**
+     * The ConfigStoreInfoResponse model constructor.
+     * @property {module:model/ConfigStoreInfoResponse}
+     */
+    ConfigStoreInfoResponse,
+
+    /**
+     * The ConfigStoreItem model constructor.
+     * @property {module:model/ConfigStoreItem}
+     */
+    ConfigStoreItem,
+
+    /**
+     * The ConfigStoreItemResponse model constructor.
+     * @property {module:model/ConfigStoreItemResponse}
+     */
+    ConfigStoreItemResponse,
+
+    /**
+     * The ConfigStoreItemResponseAllOf model constructor.
+     * @property {module:model/ConfigStoreItemResponseAllOf}
+     */
+    ConfigStoreItemResponseAllOf,
+
+    /**
+     * The ConfigStoreResponse model constructor.
+     * @property {module:model/ConfigStoreResponse}
+     */
+    ConfigStoreResponse,
+
+    /**
+     * The ConfigStoreResponseAllOf model constructor.
+     * @property {module:model/ConfigStoreResponseAllOf}
+     */
+    ConfigStoreResponseAllOf,
 
     /**
      * The Contact model constructor.
@@ -4294,6 +4359,18 @@ export {
     * @property {module:api/ConditionApi}
     */
     ConditionApi,
+
+    /**
+    * The ConfigStoreApi service constructor.
+    * @property {module:api/ConfigStoreApi}
+    */
+    ConfigStoreApi,
+
+    /**
+    * The ConfigStoreItemApi service constructor.
+    * @property {module:api/ConfigStoreItemApi}
+    */
+    ConfigStoreItemApi,
 
     /**
     * The ContactApi service constructor.
