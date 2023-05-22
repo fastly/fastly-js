@@ -20,7 +20,7 @@ import TlsCertificatesResponseAllOf from './TlsCertificatesResponseAllOf';
 /**
  * The TlsCertificatesResponse model module.
  * @module model/TlsCertificatesResponse
- * @version 4.1.0
+ * @version 4.1.1
  */
 class TlsCertificatesResponse {
     /**

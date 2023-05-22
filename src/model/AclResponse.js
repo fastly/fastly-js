@@ -13,13 +13,12 @@
 import ApiClient from '../ApiClient';
 import Acl from './Acl';
 import AclResponseAllOf from './AclResponseAllOf';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Timestamps from './Timestamps';
 
 /**
  * The AclResponse model module.
  * @module model/AclResponse
- * @version 4.1.0
+ * @version 4.1.1
  */
 class AclResponse {
     /**
@@ -27,11 +26,10 @@ class AclResponse {
      * @alias module:model/AclResponse
      * @implements module:model/Acl
      * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
      * @implements module:model/AclResponseAllOf
      */
     constructor() { 
-        Acl.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);AclResponseAllOf.initialize(this);
+        Acl.initialize(this);Timestamps.initialize(this);AclResponseAllOf.initialize(this);
         AclResponse.initialize(this);
     }
 
@@ -55,7 +53,6 @@ class AclResponse {
             obj = obj || new AclResponse();
             Acl.constructFromObject(data, obj);
             Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
             AclResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('name')) {
@@ -74,7 +71,7 @@ class AclResponse {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
             }
             if (data.hasOwnProperty('version')) {
-                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
+                obj['version'] = ApiClient.convertToType(data['version'], 'String');
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -116,7 +113,8 @@ AclResponse.prototype['updated_at'] = undefined;
 AclResponse.prototype['service_id'] = undefined;
 
 /**
- * @member {Number} version
+ * String representing the number identifying a version of the service.
+ * @member {String} version
  */
 AclResponse.prototype['version'] = undefined;
 
@@ -148,16 +146,16 @@ Timestamps.prototype['deleted_at'] = undefined;
  * @member {Date} updated_at
  */
 Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
+// Implement AclResponseAllOf interface:
 /**
  * @member {String} service_id
  */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
+AclResponseAllOf.prototype['service_id'] = undefined;
 /**
- * @member {Number} version
+ * String representing the number identifying a version of the service.
+ * @member {String} version
  */
-ServiceIdAndVersion.prototype['version'] = undefined;
-// Implement AclResponseAllOf interface:
+AclResponseAllOf.prototype['version'] = undefined;
 /**
  * @member {String} id
  */

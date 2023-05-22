@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MutualAuthenticationResponseAttributesAllOf model module.
  * @module model/MutualAuthenticationResponseAttributesAllOf
- * @version 4.1.0
+ * @version 4.1.1
  */
 class MutualAuthenticationResponseAttributesAllOf {
     /**

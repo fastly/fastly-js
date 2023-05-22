@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AclResponseAllOf model module.
  * @module model/AclResponseAllOf
- * @version 4.1.0
+ * @version 4.1.1
  */
 class AclResponseAllOf {
     /**
@@ -46,6 +46,12 @@ class AclResponseAllOf {
         if (data) {
             obj = obj || new AclResponseAllOf();
 
+            if (data.hasOwnProperty('service_id')) {
+                obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
+            }
+            if (data.hasOwnProperty('version')) {
+                obj['version'] = ApiClient.convertToType(data['version'], 'String');
+            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
@@ -55,6 +61,17 @@ class AclResponseAllOf {
 
 
 }
+
+/**
+ * @member {String} service_id
+ */
+AclResponseAllOf.prototype['service_id'] = undefined;
+
+/**
+ * String representing the number identifying a version of the service.
+ * @member {String} version
+ */
+AclResponseAllOf.prototype['version'] = undefined;
 
 /**
  * @member {String} id

@@ -16,7 +16,7 @@ import Timestamps from './Timestamps';
 /**
  * The TlsActivationResponseDataAllOf model module.
  * @module model/TlsActivationResponseDataAllOf
- * @version 4.1.0
+ * @version 4.1.1
  */
 class TlsActivationResponseDataAllOf {
     /**

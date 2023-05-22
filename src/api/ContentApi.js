@@ -17,7 +17,7 @@ import Content from '../model/Content';
 /**
 * Content service.
 * @module api/ContentApi
-* @version 4.1.0
+* @version 4.1.1
 */
 export default class ContentApi {
 

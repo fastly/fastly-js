@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WafRuleAttributes model module.
  * @module model/WafRuleAttributes
- * @version 4.1.0
+ * @version 4.1.1
  */
 class WafRuleAttributes {
     /**

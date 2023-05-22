@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Snippet model module.
  * @module model/Snippet
- * @version 4.1.0
+ * @version 4.1.1
  */
 class Snippet {
     /**
@@ -59,7 +59,7 @@ class Snippet {
                 obj['content'] = ApiClient.convertToType(data['content'], 'String');
             }
             if (data.hasOwnProperty('priority')) {
-                obj['priority'] = ApiClient.convertToType(data['priority'], 'Number');
+                obj['priority'] = ApiClient.convertToType(data['priority'], 'String');
             }
         }
         return obj;
@@ -94,10 +94,10 @@ Snippet.prototype['content'] = undefined;
 
 /**
  * Priority determines execution order. Lower numbers execute first.
- * @member {Number} priority
- * @default 100
+ * @member {String} priority
+ * @default '100'
  */
-Snippet.prototype['priority'] = 100;
+Snippet.prototype['priority'] = '100';
 
 
 

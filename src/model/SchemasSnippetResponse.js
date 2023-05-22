@@ -11,7 +11,6 @@
  */
 
 import ApiClient from '../ApiClient';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
 import Snippet from './Snippet';
 import SnippetResponseAllOf from './SnippetResponseAllOf';
 import Timestamps from './Timestamps';
@@ -19,19 +18,18 @@ import Timestamps from './Timestamps';
 /**
  * The SchemasSnippetResponse model module.
  * @module model/SchemasSnippetResponse
- * @version 4.1.0
+ * @version 4.1.1
  */
 class SchemasSnippetResponse {
     /**
      * Constructs a new <code>SchemasSnippetResponse</code>.
      * @alias module:model/SchemasSnippetResponse
      * @implements module:model/Snippet
-     * @implements module:model/ServiceIdAndVersion
      * @implements module:model/Timestamps
      * @implements module:model/SnippetResponseAllOf
      */
     constructor() { 
-        Snippet.initialize(this);ServiceIdAndVersion.initialize(this);Timestamps.initialize(this);SnippetResponseAllOf.initialize(this);
+        Snippet.initialize(this);Timestamps.initialize(this);SnippetResponseAllOf.initialize(this);
         SchemasSnippetResponse.initialize(this);
     }
 
@@ -54,7 +52,6 @@ class SchemasSnippetResponse {
         if (data) {
             obj = obj || new SchemasSnippetResponse();
             Snippet.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
             Timestamps.constructFromObject(data, obj);
             SnippetResponseAllOf.constructFromObject(data, obj);
 
@@ -71,13 +68,7 @@ class SchemasSnippetResponse {
                 obj['content'] = ApiClient.convertToType(data['content'], 'String');
             }
             if (data.hasOwnProperty('priority')) {
-                obj['priority'] = ApiClient.convertToType(data['priority'], 'Number');
-            }
-            if (data.hasOwnProperty('service_id')) {
-                obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
-            }
-            if (data.hasOwnProperty('version')) {
-                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
+                obj['priority'] = ApiClient.convertToType(data['priority'], 'String');
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
@@ -87,6 +78,12 @@ class SchemasSnippetResponse {
             }
             if (data.hasOwnProperty('updated_at')) {
                 obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
+            }
+            if (data.hasOwnProperty('service_id')) {
+                obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
+            }
+            if (data.hasOwnProperty('version')) {
+                obj['version'] = ApiClient.convertToType(data['version'], 'String');
             }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -124,20 +121,10 @@ SchemasSnippetResponse.prototype['content'] = undefined;
 
 /**
  * Priority determines execution order. Lower numbers execute first.
- * @member {Number} priority
- * @default 100
+ * @member {String} priority
+ * @default '100'
  */
-SchemasSnippetResponse.prototype['priority'] = 100;
-
-/**
- * @member {String} service_id
- */
-SchemasSnippetResponse.prototype['service_id'] = undefined;
-
-/**
- * @member {Number} version
- */
-SchemasSnippetResponse.prototype['version'] = undefined;
+SchemasSnippetResponse.prototype['priority'] = '100';
 
 /**
  * Date and time in ISO 8601 format.
@@ -156,6 +143,17 @@ SchemasSnippetResponse.prototype['deleted_at'] = undefined;
  * @member {Date} updated_at
  */
 SchemasSnippetResponse.prototype['updated_at'] = undefined;
+
+/**
+ * @member {String} service_id
+ */
+SchemasSnippetResponse.prototype['service_id'] = undefined;
+
+/**
+ * String representing the number identifying a version of the service.
+ * @member {String} version
+ */
+SchemasSnippetResponse.prototype['version'] = undefined;
 
 /**
  * @member {String} id
@@ -186,19 +184,10 @@ Snippet.prototype['type'] = undefined;
 Snippet.prototype['content'] = undefined;
 /**
  * Priority determines execution order. Lower numbers execute first.
- * @member {Number} priority
- * @default 100
+ * @member {String} priority
+ * @default '100'
  */
-Snippet.prototype['priority'] = 100;
-// Implement ServiceIdAndVersion interface:
-/**
- * @member {String} service_id
- */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
-/**
- * @member {Number} version
- */
-ServiceIdAndVersion.prototype['version'] = undefined;
+Snippet.prototype['priority'] = '100';
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
@@ -216,6 +205,15 @@ Timestamps.prototype['deleted_at'] = undefined;
  */
 Timestamps.prototype['updated_at'] = undefined;
 // Implement SnippetResponseAllOf interface:
+/**
+ * @member {String} service_id
+ */
+SnippetResponseAllOf.prototype['service_id'] = undefined;
+/**
+ * String representing the number identifying a version of the service.
+ * @member {String} version
+ */
+SnippetResponseAllOf.prototype['version'] = undefined;
 /**
  * @member {String} id
  */

@@ -18,7 +18,7 @@ import PoolResponse from '../model/PoolResponse';
 /**
 * Pool service.
 * @module api/PoolApi
-* @version 4.1.0
+* @version 4.1.1
 */
 export default class PoolApi {
 

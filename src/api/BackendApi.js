@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Backend service.
 * @module api/BackendApi
-* @version 4.1.0
+* @version 4.1.1
 */
 export default class BackendApi {
 

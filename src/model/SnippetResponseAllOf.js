@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SnippetResponseAllOf model module.
  * @module model/SnippetResponseAllOf
- * @version 4.1.0
+ * @version 4.1.1
  */
 class SnippetResponseAllOf {
     /**
@@ -46,6 +46,12 @@ class SnippetResponseAllOf {
         if (data) {
             obj = obj || new SnippetResponseAllOf();
 
+            if (data.hasOwnProperty('service_id')) {
+                obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
+            }
+            if (data.hasOwnProperty('version')) {
+                obj['version'] = ApiClient.convertToType(data['version'], 'String');
+            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
@@ -55,6 +61,17 @@ class SnippetResponseAllOf {
 
 
 }
+
+/**
+ * @member {String} service_id
+ */
+SnippetResponseAllOf.prototype['service_id'] = undefined;
+
+/**
+ * String representing the number identifying a version of the service.
+ * @member {String} version
+ */
+SnippetResponseAllOf.prototype['version'] = undefined;
 
 /**
  * @member {String} id

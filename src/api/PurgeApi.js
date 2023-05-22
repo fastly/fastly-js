@@ -18,7 +18,7 @@ import PurgeResponse from '../model/PurgeResponse';
 /**
 * Purge service.
 * @module api/PurgeApi
-* @version 4.1.0
+* @version 4.1.1
 */
 export default class PurgeApi {
 
@@ -221,6 +221,7 @@ export default class PurgeApi {
         'surrogate_key': options['surrogate_key']
       };
       let pathParamsAllowReserved = {
+        'surrogate_key': true,
       };
       let queryParams = {
       };

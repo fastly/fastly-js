@@ -20,7 +20,7 @@ import TlsSubscriptionsResponseAllOf from './TlsSubscriptionsResponseAllOf';
 /**
  * The TlsSubscriptionsResponse model module.
  * @module model/TlsSubscriptionsResponse
- * @version 4.1.0
+ * @version 4.1.1
  */
 class TlsSubscriptionsResponse {
     /**

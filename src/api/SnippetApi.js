@@ -18,7 +18,7 @@ import SnippetResponse from '../model/SnippetResponse';
 /**
 * Snippet service.
 * @module api/SnippetApi
-* @version 4.1.0
+* @version 4.1.1
 */
 export default class SnippetApi {
 
@@ -47,7 +47,7 @@ export default class SnippetApi {
      * @param {module:model/Number} [options.dynamic] - Sets the snippet version.
      * @param {module:model/String} [options.type] - The location in generated VCL where the snippet should be placed.
      * @param {String} [options.content] - The VCL code that specifies exactly what the snippet does.
-     * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
+     * @param {String} [options.priority='100'] - Priority determines execution order. Lower numbers execute first.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SnippetResponse} and HTTP response
      */
     createSnippetWithHttpInfo(options = {}) {
@@ -99,7 +99,7 @@ export default class SnippetApi {
      * @param {module:model/Number} [options.dynamic] - Sets the snippet version.
      * @param {module:model/String} [options.type] - The location in generated VCL where the snippet should be placed.
      * @param {String} [options.content] - The VCL code that specifies exactly what the snippet does.
-     * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
+     * @param {String} [options.priority='100'] - Priority determines execution order. Lower numbers execute first.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SnippetResponse}
      */
     createSnippet(options = {}) {
@@ -356,7 +356,7 @@ export default class SnippetApi {
      * @param {module:model/Number} [options.dynamic] - Sets the snippet version.
      * @param {module:model/String} [options.type] - The location in generated VCL where the snippet should be placed.
      * @param {String} [options.content] - The VCL code that specifies exactly what the snippet does.
-     * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
+     * @param {String} [options.priority='100'] - Priority determines execution order. Lower numbers execute first.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/SnippetResponse} and HTTP response
      */
     updateSnippetDynamicWithHttpInfo(options = {}) {
@@ -408,7 +408,7 @@ export default class SnippetApi {
      * @param {module:model/Number} [options.dynamic] - Sets the snippet version.
      * @param {module:model/String} [options.type] - The location in generated VCL where the snippet should be placed.
      * @param {String} [options.content] - The VCL code that specifies exactly what the snippet does.
-     * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
+     * @param {String} [options.priority='100'] - Priority determines execution order. Lower numbers execute first.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/SnippetResponse}
      */
     updateSnippetDynamic(options = {}) {

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VersionResponseAllOf model module.
  * @module model/VersionResponseAllOf
- * @version 4.1.0
+ * @version 4.1.1
  */
 class VersionResponseAllOf {
     /**

@@ -30,7 +30,7 @@ import VersionDetailSettings from './VersionDetailSettings';
 /**
  * The ServiceVersionDetail model module.
  * @module model/ServiceVersionDetail
- * @version 4.1.0
+ * @version 4.1.1
  */
 class ServiceVersionDetail {
     /**
