@@ -31,6 +31,10 @@ export default class RealtimeApi {
     constructor(apiClient) {
         this.apiClient = apiClient || ApiClient.instance;
 
+        // Adding the new  api call as per documentation found here : https://developer.fastly.com/reference/api/metrics-stats/realtime/
+        this.rtdBasedUrl = 'https://rt.fastly.com';
+  
+
         if (typeof window === 'undefined' && Boolean(process.env.FASTLY_API_TOKEN)) {
             this.apiClient.authenticate(process.env.FASTLY_API_TOKEN);
         }
@@ -45,6 +49,9 @@ export default class RealtimeApi {
      */
     getStatsLast120SecondsWithHttpInfo(options = {}) {
       let postBody = null;
+
+      let rtdBasedUrl = 'https://rt.fastly.com';
+
       // Verify the required parameter 'service_id' is set.
       if (options['service_id'] === undefined || options['service_id'] === null) {
         throw new Error("Missing the required parameter 'service_id'.");
@@ -67,9 +74,9 @@ export default class RealtimeApi {
       let accepts = ['application/json'];
       let returnType = Realtime;
       return this.apiClient.callApi(
-        '/v1/channel/{service_id}/ts/h', 'GET',
+        '/v1/channel/{service_id}/ts/h', 'GET', 
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, this.rtdBasedUrl
       );
     }
 
@@ -124,7 +131,7 @@ export default class RealtimeApi {
       return this.apiClient.callApi(
         '/v1/channel/{service_id}/ts/h/limit/{max_entries}', 'GET',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, this.rtdBasedUrl
       );
     }
 
@@ -180,7 +187,7 @@ export default class RealtimeApi {
       return this.apiClient.callApi(
         '/v1/channel/{service_id}/ts/{timestamp_in_seconds}', 'GET',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, this.rtdBasedUrl
       );
     }
 
