@@ -2,11 +2,6 @@
 
 An asynchronous JavaScript client library for interacting with most facets of the [Fastly API](https://developer.fastly.com/reference/api).
 
-> NOTE: This 3.x release is a new [generated API client](https://dev.to/fastly/better-fastly-api-clients-with-openapi-generator-3lno) for the Fastly API.
-> The previous 2.x version is no longer supported, but can be found at https://github.com/thisandagain/fastly.
-
-
-
 ## Usage
 
 Please follow the [installation](#installation) instructions and execute the following JS code:
