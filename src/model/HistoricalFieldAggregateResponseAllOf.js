@@ -11,11 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import HistoricalFieldResultsAttributes from './HistoricalFieldResultsAttributes';
 
 /**
  * The HistoricalFieldAggregateResponseAllOf model module.
  * @module model/HistoricalFieldAggregateResponseAllOf
- * @version 4.1.1
+ * @version 4.2.0
  */
 class HistoricalFieldAggregateResponseAllOf {
     /**
@@ -47,7 +48,7 @@ class HistoricalFieldAggregateResponseAllOf {
             obj = obj || new HistoricalFieldAggregateResponseAllOf();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [{'String': 'String'}]);
+                obj['data'] = ApiClient.convertToType(data['data'], [HistoricalFieldResultsAttributes]);
             }
         }
         return obj;
@@ -57,7 +58,7 @@ class HistoricalFieldAggregateResponseAllOf {
 }
 
 /**
- * @member {Array.<Object.<String, String>>} data
+ * @member {Array.<module:model/HistoricalFieldResultsAttributes>} data
  */
 HistoricalFieldAggregateResponseAllOf.prototype['data'] = undefined;
 

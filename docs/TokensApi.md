@@ -7,11 +7,47 @@ const apiInstance = new Fastly.TokensApi();
 
 Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
+[**getToken**](TokensApi.md#getToken) | **GET** /tokens/{token_id} | Get a token
 [**getTokenCurrent**](TokensApi.md#getTokenCurrent) | **GET** /tokens/self | Get the current token
 [**listTokensCustomer**](TokensApi.md#listTokensCustomer) | **GET** /customer/{customer_id}/tokens | List tokens for a customer
 [**listTokensUser**](TokensApi.md#listTokensUser) | **GET** /tokens | List tokens for the authenticated user
 [**revokeToken**](TokensApi.md#revokeToken) | **DELETE** /tokens/{token_id} | Revoke a token
 [**revokeTokenCurrent**](TokensApi.md#revokeTokenCurrent) | **DELETE** /tokens/self | Revoke the current token
+
+
+## `getToken`
+
+```javascript
+getToken({ token_id })
+```
+
+Get a single token by its id.
+
+### Example
+
+```javascript
+const options = {
+  token_id: "token_id_example", // required
+};
+
+apiInstance.getToken(options)
+  .then((data) => {
+    console.log(data, "API called successfully.");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**token_id** | **String** | Alphanumeric string identifying a token. |
+
+### Return type
+
+[**TokenResponse**](TokenResponse.md)
 
 
 ## `getTokenCurrent`

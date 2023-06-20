@@ -18,7 +18,7 @@ import BillingResponse from '../model/BillingResponse';
 /**
 * Billing service.
 * @module api/BillingApi
-* @version 4.1.1
+* @version 4.2.0
 */
 export default class BillingApi {
 
@@ -73,10 +73,19 @@ export default class BillingApi {
       let contentTypes = [];
       let accepts = ['application/json', 'text/csv', 'application/pdf'];
       let returnType = BillingResponse;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
       return this.apiClient.callApi(
         '/billing/v2/year/{year}/month/{month}', 'GET',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, basePath
       );
     }
 
@@ -129,10 +138,19 @@ export default class BillingApi {
       let contentTypes = [];
       let accepts = ['application/json', 'text/csv', 'application/pdf'];
       let returnType = BillingResponse;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
       return this.apiClient.callApi(
         '/billing/v2/account_customers/{customer_id}/invoices/{invoice_id}', 'GET',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, basePath
       );
     }
 
@@ -183,10 +201,19 @@ export default class BillingApi {
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = BillingEstimateResponse;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
       return this.apiClient.callApi(
         '/billing/v2/account_customers/{customer_id}/mtd_invoice', 'GET',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, basePath
       );
     }
 

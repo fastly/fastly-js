@@ -16,7 +16,7 @@ import RelationshipMemberService from './RelationshipMemberService';
 /**
  * The RelationshipService model module.
  * @module model/RelationshipService
- * @version 4.1.1
+ * @version 4.2.0
  */
 class RelationshipService {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Gzip model module.
  * @module model/Gzip
- * @version 4.1.1
+ * @version 4.2.0
  */
 class Gzip {
     /**

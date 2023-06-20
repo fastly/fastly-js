@@ -17,7 +17,7 @@ import RelationshipTlsActivations from './RelationshipTlsActivations';
 /**
  * The RelationshipsForMutualAuthentication model module.
  * @module model/RelationshipsForMutualAuthentication
- * @version 4.1.1
+ * @version 4.2.0
  */
 class RelationshipsForMutualAuthentication {
     /**

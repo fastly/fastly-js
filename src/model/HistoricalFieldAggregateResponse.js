@@ -13,12 +13,13 @@
 import ApiClient from '../ApiClient';
 import Historical from './Historical';
 import HistoricalFieldAggregateResponseAllOf from './HistoricalFieldAggregateResponseAllOf';
+import HistoricalFieldResultsAttributes from './HistoricalFieldResultsAttributes';
 import HistoricalMeta from './HistoricalMeta';
 
 /**
  * The HistoricalFieldAggregateResponse model module.
  * @module model/HistoricalFieldAggregateResponse
- * @version 4.1.1
+ * @version 4.2.0
  */
 class HistoricalFieldAggregateResponse {
     /**
@@ -63,7 +64,7 @@ class HistoricalFieldAggregateResponse {
                 obj['msg'] = ApiClient.convertToType(data['msg'], 'String');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [{'String': 'String'}]);
+                obj['data'] = ApiClient.convertToType(data['data'], [HistoricalFieldResultsAttributes]);
             }
         }
         return obj;
@@ -90,7 +91,7 @@ HistoricalFieldAggregateResponse.prototype['meta'] = undefined;
 HistoricalFieldAggregateResponse.prototype['msg'] = undefined;
 
 /**
- * @member {Array.<Object.<String, String>>} data
+ * @member {Array.<module:model/HistoricalFieldResultsAttributes>} data
  */
 HistoricalFieldAggregateResponse.prototype['data'] = undefined;
 
@@ -112,7 +113,7 @@ Historical.prototype['meta'] = undefined;
 Historical.prototype['msg'] = undefined;
 // Implement HistoricalFieldAggregateResponseAllOf interface:
 /**
- * @member {Array.<Object.<String, String>>} data
+ * @member {Array.<module:model/HistoricalFieldResultsAttributes>} data
  */
 HistoricalFieldAggregateResponseAllOf.prototype['data'] = undefined;
 

@@ -53,7 +53,7 @@ Name | Type | Description  | Notes
 ## `deleteStore`
 
 ```javascript
-deleteStore({ store_id, [force] })
+deleteStore({ store_id })
 ```
 
 An kv store must be empty before it can be deleted.  Deleting an kv store that still contains keys will result in a `409` (Conflict).
@@ -63,7 +63,6 @@ An kv store must be empty before it can be deleted.  Deleting an kv store that s
 ```javascript
 const options = {
   store_id: "store_id_example", // required
-  force: true,
 };
 
 apiInstance.deleteStore(options)
@@ -80,7 +79,6 @@ apiInstance.deleteStore(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **store_id** | **String** |  |
-**force** | **Boolean** |  | [optional]
 
 ### Return type
 

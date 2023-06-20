@@ -20,7 +20,7 @@ import InlineResponse2001 from '../model/InlineResponse2001';
 /**
 * AutomationTokens service.
 * @module api/AutomationTokensApi
-* @version 4.1.1
+* @version 4.2.0
 */
 export default class AutomationTokensApi {
 
@@ -64,10 +64,19 @@ export default class AutomationTokensApi {
       let contentTypes = ['application/vnd.api+json'];
       let accepts = ['application/vnd.api+json'];
       let returnType = AutomationTokenCreateResponse;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
       return this.apiClient.callApi(
         '/automation-tokens', 'POST',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, basePath
       );
     }
 
@@ -113,10 +122,19 @@ export default class AutomationTokensApi {
       let contentTypes = [];
       let accepts = ['application/vnd.api+json', 'application/problem+json'];
       let returnType = AutomationTokenResponse;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
       return this.apiClient.callApi(
         '/automation-tokens/{id}', 'GET',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, basePath
       );
     }
 
@@ -166,10 +184,19 @@ export default class AutomationTokensApi {
       let contentTypes = [];
       let accepts = ['application/vnd.api+json', 'application/problem+json'];
       let returnType = InlineResponse2001;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
       return this.apiClient.callApi(
         '/automation-tokens/{id}/services', 'GET',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, basePath
       );
     }
 
@@ -215,10 +242,19 @@ export default class AutomationTokensApi {
       let contentTypes = [];
       let accepts = ['application/vnd.api+json', 'application/problem+json'];
       let returnType = [AutomationTokenResponse];
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
       return this.apiClient.callApi(
         '/automation-tokens', 'GET',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, basePath
       );
     }
 
@@ -265,10 +301,19 @@ export default class AutomationTokensApi {
       let contentTypes = [];
       let accepts = ['application/vnd.api+json', 'application/problem+json'];
       let returnType = null;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
       return this.apiClient.callApi(
         '/automation-tokens/{id}', 'DELETE',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, basePath
       );
     }
 

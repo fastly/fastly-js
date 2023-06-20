@@ -18,7 +18,7 @@ import TypeServiceAuthorization from './TypeServiceAuthorization';
 /**
  * The ServiceAuthorizationData model module.
  * @module model/ServiceAuthorizationData
- * @version 4.1.1
+ * @version 4.2.0
  */
 class ServiceAuthorizationData {
     /**

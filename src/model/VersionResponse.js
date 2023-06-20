@@ -18,7 +18,7 @@ import VersionResponseAllOf from './VersionResponseAllOf';
 /**
  * The VersionResponse model module.
  * @module model/VersionResponse
- * @version 4.1.1
+ * @version 4.2.0
  */
 class VersionResponse {
     /**

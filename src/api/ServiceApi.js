@@ -21,7 +21,7 @@ import ServiceResponse from '../model/ServiceResponse';
 /**
 * Service service.
 * @module api/ServiceApi
-* @version 4.1.1
+* @version 4.2.0
 */
 export default class ServiceApi {
 
@@ -72,10 +72,19 @@ export default class ServiceApi {
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
       let returnType = ServiceResponse;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
       return this.apiClient.callApi(
         '/service', 'POST',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, basePath
       );
     }
 
@@ -124,10 +133,19 @@ export default class ServiceApi {
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse200;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
       return this.apiClient.callApi(
         '/service/{service_id}', 'DELETE',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, basePath
       );
     }
 
@@ -173,10 +191,19 @@ export default class ServiceApi {
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ServiceResponse;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
       return this.apiClient.callApi(
         '/service/{service_id}', 'GET',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, basePath
       );
     }
 
@@ -224,10 +251,19 @@ export default class ServiceApi {
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ServiceDetail;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
       return this.apiClient.callApi(
         '/service/{service_id}/details', 'GET',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, basePath
       );
     }
 
@@ -274,10 +310,19 @@ export default class ServiceApi {
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [DomainResponse];
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
       return this.apiClient.callApi(
         '/service/{service_id}/domain', 'GET',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, basePath
       );
     }
 
@@ -325,10 +370,19 @@ export default class ServiceApi {
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = [ServiceListResponse];
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
       return this.apiClient.callApi(
         '/service', 'GET',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, basePath
       );
     }
 
@@ -377,10 +431,19 @@ export default class ServiceApi {
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = ServiceResponse;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
       return this.apiClient.callApi(
         '/service/search', 'GET',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, basePath
       );
     }
 
@@ -432,10 +495,19 @@ export default class ServiceApi {
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
       let returnType = ServiceResponse;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
       return this.apiClient.callApi(
         '/service/{service_id}', 'PUT',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, basePath
       );
     }
 

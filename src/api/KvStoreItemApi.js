@@ -17,7 +17,7 @@ import InlineResponse2004 from '../model/InlineResponse2004';
 /**
 * KvStoreItem service.
 * @module api/KvStoreItemApi
-* @version 4.1.1
+* @version 4.2.0
 */
 export default class KvStoreItemApi {
 
@@ -42,7 +42,6 @@ export default class KvStoreItemApi {
      * @param {Object} options
      * @param {String} options.store_id
      * @param {String} options.key_name
-     * @param {Boolean} [options.force]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     deleteKeyFromStoreWithHttpInfo(options = {}) {
@@ -63,7 +62,6 @@ export default class KvStoreItemApi {
       let pathParamsAllowReserved = {
       };
       let queryParams = {
-        'force': options['force']
       };
       let headerParams = {
       };
@@ -74,10 +72,19 @@ export default class KvStoreItemApi {
       let contentTypes = [];
       let accepts = [];
       let returnType = null;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
       return this.apiClient.callApi(
         '/resources/stores/kv/{store_id}/keys/{key_name}', 'DELETE',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, basePath
       );
     }
 
@@ -86,7 +93,6 @@ export default class KvStoreItemApi {
      * @param {Object} options
      * @param {String} options.store_id
      * @param {String} options.key_name
-     * @param {Boolean} [options.force]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deleteKeyFromStore(options = {}) {
@@ -131,10 +137,19 @@ export default class KvStoreItemApi {
       let contentTypes = [];
       let accepts = ['application/json'];
       let returnType = InlineResponse2004;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
       return this.apiClient.callApi(
         '/resources/stores/kv/{store_id}/keys', 'GET',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, basePath
       );
     }
 
@@ -189,10 +204,19 @@ export default class KvStoreItemApi {
       let contentTypes = [];
       let accepts = ['application/octet-stream'];
       let returnType = 'Blob';
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
       return this.apiClient.callApi(
         '/resources/stores/kv/{store_id}/keys/{key_name}', 'GET',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, basePath
       );
     }
 
@@ -260,10 +284,19 @@ export default class KvStoreItemApi {
       let contentTypes = ['application/octet-stream'];
       let accepts = ['application/octet-stream'];
       let returnType = 'Blob';
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
       return this.apiClient.callApi(
         '/resources/stores/kv/{store_id}/keys/{key_name}', 'PUT',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
+        authNames, contentTypes, accepts, returnType, basePath
       );
     }
 

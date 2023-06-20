@@ -16,7 +16,7 @@ import RoleUser from './RoleUser';
 /**
  * The InvitationDataAttributes model module.
  * @module model/InvitationDataAttributes
- * @version 4.1.1
+ * @version 4.2.0
  */
 class InvitationDataAttributes {
     /**

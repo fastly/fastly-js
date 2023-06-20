@@ -2,6 +2,7 @@
 
 An asynchronous JavaScript client library for interacting with most facets of the [Fastly API](https://developer.fastly.com/reference/api).
 
+
 ## Usage
 
 Please follow the [installation](#installation) instructions and execute the following JS code:
@@ -424,6 +425,7 @@ Class | Method | Description
 *Fastly.TlsSubscriptionsApi* | [**getTlsSub**](docs/TlsSubscriptionsApi.md#getTlsSub) | Get a TLS subscription
 *Fastly.TlsSubscriptionsApi* | [**listTlsSubs**](docs/TlsSubscriptionsApi.md#listTlsSubs) | List TLS subscriptions
 *Fastly.TlsSubscriptionsApi* | [**patchTlsSub**](docs/TlsSubscriptionsApi.md#patchTlsSub) | Update a TLS subscription
+*Fastly.TokensApi* | [**getToken**](docs/TokensApi.md#getToken) | Get a token
 *Fastly.TokensApi* | [**getTokenCurrent**](docs/TokensApi.md#getTokenCurrent) | Get the current token
 *Fastly.TokensApi* | [**listTokensCustomer**](docs/TokensApi.md#listTokensCustomer) | List tokens for a customer
 *Fastly.TokensApi* | [**listTokensUser**](docs/TokensApi.md#listTokensUser) | List tokens for the authenticated user

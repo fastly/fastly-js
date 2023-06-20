@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The AclEntryResponse model module.
  * @module model/AclEntryResponse
- * @version 4.1.1
+ * @version 4.2.0
  */
 class AclEntryResponse {
     /**

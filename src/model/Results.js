@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Results model module.
  * @module model/Results
- * @version 4.1.1
+ * @version 4.2.0
  */
 class Results {
     /**
@@ -497,6 +497,9 @@ class Results {
             if (data.hasOwnProperty('compute_request_time_ms')) {
                 obj['compute_request_time_ms'] = ApiClient.convertToType(data['compute_request_time_ms'], 'Number');
             }
+            if (data.hasOwnProperty('compute_request_time_billed_ms')) {
+                obj['compute_request_time_billed_ms'] = ApiClient.convertToType(data['compute_request_time_billed_ms'], 'Number');
+            }
             if (data.hasOwnProperty('compute_ram_used')) {
                 obj['compute_ram_used'] = ApiClient.convertToType(data['compute_ram_used'], 'Number');
             }
@@ -635,17 +638,17 @@ class Results {
             if (data.hasOwnProperty('fanout_send_publishes')) {
                 obj['fanout_send_publishes'] = ApiClient.convertToType(data['fanout_send_publishes'], 'Number');
             }
+            if (data.hasOwnProperty('kv_store_class_a_operations')) {
+                obj['kv_store_class_a_operations'] = ApiClient.convertToType(data['kv_store_class_a_operations'], 'Number');
+            }
+            if (data.hasOwnProperty('kv_store_class_b_operations')) {
+                obj['kv_store_class_b_operations'] = ApiClient.convertToType(data['kv_store_class_b_operations'], 'Number');
+            }
             if (data.hasOwnProperty('object_store_class_a_operations')) {
                 obj['object_store_class_a_operations'] = ApiClient.convertToType(data['object_store_class_a_operations'], 'Number');
             }
             if (data.hasOwnProperty('object_store_class_b_operations')) {
                 obj['object_store_class_b_operations'] = ApiClient.convertToType(data['object_store_class_b_operations'], 'Number');
-            }
-            if (data.hasOwnProperty('object_store_read_requests')) {
-                obj['object_store_read_requests'] = ApiClient.convertToType(data['object_store_read_requests'], 'Number');
-            }
-            if (data.hasOwnProperty('object_store_write_requests')) {
-                obj['object_store_write_requests'] = ApiClient.convertToType(data['object_store_write_requests'], 'Number');
             }
             if (data.hasOwnProperty('fanout_req_header_bytes')) {
                 obj['fanout_req_header_bytes'] = ApiClient.convertToType(data['fanout_req_header_bytes'], 'Number');
@@ -1600,6 +1603,12 @@ Results.prototype['compute_requests'] = undefined;
 Results.prototype['compute_request_time_ms'] = undefined;
 
 /**
+ * The total amount of request processing time you will be billed for, measured in 50 millisecond increments.
+ * @member {Number} compute_request_time_billed_ms
+ */
+Results.prototype['compute_request_time_billed_ms'] = undefined;
+
+/**
  * The amount of RAM used for your service by Fastly (in bytes).
  * @member {Number} compute_ram_used
  */
@@ -1876,28 +1885,28 @@ Results.prototype['fanout_recv_publishes'] = undefined;
 Results.prototype['fanout_send_publishes'] = undefined;
 
 /**
- * The total number of class a operations for the object store.
+ * The total number of class a operations for the KV store.
+ * @member {Number} kv_store_class_a_operations
+ */
+Results.prototype['kv_store_class_a_operations'] = undefined;
+
+/**
+ * The total number of class b operations for the KV store.
+ * @member {Number} kv_store_class_b_operations
+ */
+Results.prototype['kv_store_class_b_operations'] = undefined;
+
+/**
+ * Use kv_store_class_a_operations.
  * @member {Number} object_store_class_a_operations
  */
 Results.prototype['object_store_class_a_operations'] = undefined;
 
 /**
- * The total number of class b operations for the object store.
+ * Use kv_store_class_b_operations.
  * @member {Number} object_store_class_b_operations
  */
 Results.prototype['object_store_class_b_operations'] = undefined;
-
-/**
- * Use object_store_class_b_operations.
- * @member {Number} object_store_read_requests
- */
-Results.prototype['object_store_read_requests'] = undefined;
-
-/**
- * Use object_store_class_a_operations.
- * @member {Number} object_store_write_requests
- */
-Results.prototype['object_store_write_requests'] = undefined;
 
 /**
  * Total header bytes received from end users over Fanout connections.

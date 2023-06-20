@@ -16,7 +16,7 @@ Method | Fastly API endpoint | Description
 ## `deleteKeyFromStore`
 
 ```javascript
-deleteKeyFromStore({ store_id, key_name, [force] })
+deleteKeyFromStore({ store_id, key_name })
 ```
 
 Delete an item from an kv store
@@ -27,7 +27,6 @@ Delete an item from an kv store
 const options = {
   store_id: "store_id_example", // required
   key_name: "key_name_example", // required
-  force: true,
 };
 
 apiInstance.deleteKeyFromStore(options)
@@ -45,7 +44,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **store_id** | **String** |  |
 **key_name** | **String** |  |
-**force** | **Boolean** |  | [optional]
 
 ### Return type
 

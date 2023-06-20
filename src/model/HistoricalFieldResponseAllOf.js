@@ -11,11 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import HistoricalFieldResultsAttributes from './HistoricalFieldResultsAttributes';
 
 /**
  * The HistoricalFieldResponseAllOf model module.
  * @module model/HistoricalFieldResponseAllOf
- * @version 4.1.1
+ * @version 4.2.0
  */
 class HistoricalFieldResponseAllOf {
     /**
@@ -57,7 +58,7 @@ class HistoricalFieldResponseAllOf {
 }
 
 /**
- * @member {Object.<String, Array.<Object.<String, String>>>} data
+ * @member {Object.<String, Array.<module:model/HistoricalFieldResultsAttributes>>} data
  */
 HistoricalFieldResponseAllOf.prototype['data'] = undefined;
 

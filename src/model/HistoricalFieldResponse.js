@@ -13,12 +13,13 @@
 import ApiClient from '../ApiClient';
 import Historical from './Historical';
 import HistoricalFieldResponseAllOf from './HistoricalFieldResponseAllOf';
+import HistoricalFieldResultsAttributes from './HistoricalFieldResultsAttributes';
 import HistoricalMeta from './HistoricalMeta';
 
 /**
  * The HistoricalFieldResponse model module.
  * @module model/HistoricalFieldResponse
- * @version 4.1.1
+ * @version 4.2.0
  */
 class HistoricalFieldResponse {
     /**
@@ -90,7 +91,7 @@ HistoricalFieldResponse.prototype['meta'] = undefined;
 HistoricalFieldResponse.prototype['msg'] = undefined;
 
 /**
- * @member {Object.<String, Array.<Object.<String, String>>>} data
+ * @member {Object.<String, Array.<module:model/HistoricalFieldResultsAttributes>>} data
  */
 HistoricalFieldResponse.prototype['data'] = undefined;
 
@@ -112,7 +113,7 @@ Historical.prototype['meta'] = undefined;
 Historical.prototype['msg'] = undefined;
 // Implement HistoricalFieldResponseAllOf interface:
 /**
- * @member {Object.<String, Array.<Object.<String, String>>>} data
+ * @member {Object.<String, Array.<module:model/HistoricalFieldResultsAttributes>>} data
  */
 HistoricalFieldResponseAllOf.prototype['data'] = undefined;
 

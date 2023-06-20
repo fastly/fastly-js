@@ -115,6 +115,8 @@ import HistoricalFieldAggregateResponse from './model/HistoricalFieldAggregateRe
 import HistoricalFieldAggregateResponseAllOf from './model/HistoricalFieldAggregateResponseAllOf';
 import HistoricalFieldResponse from './model/HistoricalFieldResponse';
 import HistoricalFieldResponseAllOf from './model/HistoricalFieldResponseAllOf';
+import HistoricalFieldResultsAttributes from './model/HistoricalFieldResultsAttributes';
+import HistoricalFieldResultsAttributesAllOf from './model/HistoricalFieldResultsAttributesAllOf';
 import HistoricalMeta from './model/HistoricalMeta';
 import HistoricalRegionsResponse from './model/HistoricalRegionsResponse';
 import HistoricalRegionsResponseAllOf from './model/HistoricalRegionsResponseAllOf';
@@ -739,7 +741,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 4.1.1
+* @version 4.2.0
 */
 export {
     /**
@@ -1365,6 +1367,18 @@ export {
      * @property {module:model/HistoricalFieldResponseAllOf}
      */
     HistoricalFieldResponseAllOf,
+
+    /**
+     * The HistoricalFieldResultsAttributes model constructor.
+     * @property {module:model/HistoricalFieldResultsAttributes}
+     */
+    HistoricalFieldResultsAttributes,
+
+    /**
+     * The HistoricalFieldResultsAttributesAllOf model constructor.
+     * @property {module:model/HistoricalFieldResultsAttributesAllOf}
+     */
+    HistoricalFieldResultsAttributesAllOf,
 
     /**
      * The HistoricalMeta model constructor.

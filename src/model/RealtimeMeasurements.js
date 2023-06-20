@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RealtimeMeasurements model module.
  * @module model/RealtimeMeasurements
- * @version 4.1.1
+ * @version 4.2.0
  */
 class RealtimeMeasurements {
     /**
@@ -103,6 +103,9 @@ class RealtimeMeasurements {
             }
             if (data.hasOwnProperty('compute_request_time_ms')) {
                 obj['compute_request_time_ms'] = ApiClient.convertToType(data['compute_request_time_ms'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_request_time_billed_ms')) {
+                obj['compute_request_time_billed_ms'] = ApiClient.convertToType(data['compute_request_time_billed_ms'], 'Number');
             }
             if (data.hasOwnProperty('shield')) {
                 obj['shield'] = ApiClient.convertToType(data['shield'], 'Number');
@@ -641,17 +644,17 @@ class RealtimeMeasurements {
             if (data.hasOwnProperty('fanout_send_publishes')) {
                 obj['fanout_send_publishes'] = ApiClient.convertToType(data['fanout_send_publishes'], 'Number');
             }
+            if (data.hasOwnProperty('kv_store_class_a_operations')) {
+                obj['kv_store_class_a_operations'] = ApiClient.convertToType(data['kv_store_class_a_operations'], 'Number');
+            }
+            if (data.hasOwnProperty('kv_store_class_b_operations')) {
+                obj['kv_store_class_b_operations'] = ApiClient.convertToType(data['kv_store_class_b_operations'], 'Number');
+            }
             if (data.hasOwnProperty('object_store_class_a_operations')) {
                 obj['object_store_class_a_operations'] = ApiClient.convertToType(data['object_store_class_a_operations'], 'Number');
             }
             if (data.hasOwnProperty('object_store_class_b_operations')) {
                 obj['object_store_class_b_operations'] = ApiClient.convertToType(data['object_store_class_b_operations'], 'Number');
-            }
-            if (data.hasOwnProperty('object_store_read_requests')) {
-                obj['object_store_read_requests'] = ApiClient.convertToType(data['object_store_read_requests'], 'Number');
-            }
-            if (data.hasOwnProperty('object_store_write_requests')) {
-                obj['object_store_write_requests'] = ApiClient.convertToType(data['object_store_write_requests'], 'Number');
             }
             if (data.hasOwnProperty('fanout_req_header_bytes')) {
                 obj['fanout_req_header_bytes'] = ApiClient.convertToType(data['fanout_req_header_bytes'], 'Number');
@@ -818,6 +821,12 @@ RealtimeMeasurements.prototype['compute_ram_used'] = undefined;
  * @member {Number} compute_request_time_ms
  */
 RealtimeMeasurements.prototype['compute_request_time_ms'] = undefined;
+
+/**
+ * The total amount of request processing time you will be billed for, measured in 50 millisecond increments.
+ * @member {Number} compute_request_time_billed_ms
+ */
+RealtimeMeasurements.prototype['compute_request_time_billed_ms'] = undefined;
 
 /**
  * Number of requests from edge to the shield POP.
@@ -1894,28 +1903,28 @@ RealtimeMeasurements.prototype['fanout_recv_publishes'] = undefined;
 RealtimeMeasurements.prototype['fanout_send_publishes'] = undefined;
 
 /**
- * The total number of class a operations for the object store.
+ * The total number of class a operations for the KV store.
+ * @member {Number} kv_store_class_a_operations
+ */
+RealtimeMeasurements.prototype['kv_store_class_a_operations'] = undefined;
+
+/**
+ * The total number of class b operations for the KV store.
+ * @member {Number} kv_store_class_b_operations
+ */
+RealtimeMeasurements.prototype['kv_store_class_b_operations'] = undefined;
+
+/**
+ * Use kv_store_class_a_operations.
  * @member {Number} object_store_class_a_operations
  */
 RealtimeMeasurements.prototype['object_store_class_a_operations'] = undefined;
 
 /**
- * The total number of class b operations for the object store.
+ * Use kv_store_class_b_operations.
  * @member {Number} object_store_class_b_operations
  */
 RealtimeMeasurements.prototype['object_store_class_b_operations'] = undefined;
-
-/**
- * Use object_store_class_b_operations.
- * @member {Number} object_store_read_requests
- */
-RealtimeMeasurements.prototype['object_store_read_requests'] = undefined;
-
-/**
- * Use object_store_class_a_operations.
- * @member {Number} object_store_write_requests
- */
-RealtimeMeasurements.prototype['object_store_write_requests'] = undefined;
 
 /**
  * Total header bytes received from end users over Fanout connections.

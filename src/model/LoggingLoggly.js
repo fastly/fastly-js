@@ -17,7 +17,7 @@ import LoggingLogglyAllOf from './LoggingLogglyAllOf';
 /**
  * The LoggingLoggly model module.
  * @module model/LoggingLoggly
- * @version 4.1.1
+ * @version 4.2.0
  */
 class LoggingLoggly {
     /**

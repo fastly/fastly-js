@@ -16,7 +16,7 @@ import LoggingUseTls from './LoggingUseTls';
 /**
  * The LoggingLogentriesAllOf model module.
  * @module model/LoggingLogentriesAllOf
- * @version 4.1.1
+ * @version 4.2.0
  */
 class LoggingLogentriesAllOf {
     /**

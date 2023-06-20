@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingFtpResponse model module.
  * @module model/LoggingFtpResponse
- * @version 4.1.1
+ * @version 4.2.0
  */
 class LoggingFtpResponse {
     /**

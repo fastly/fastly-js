@@ -17,7 +17,7 @@ import Settings from './Settings';
 /**
  * The SettingsResponse model module.
  * @module model/SettingsResponse
- * @version 4.1.1
+ * @version 4.2.0
  */
 class SettingsResponse {
     /**
