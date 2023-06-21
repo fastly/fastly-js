@@ -326,6 +326,7 @@ import RelationshipTlsCertificateTlsCertificate from './model/RelationshipTlsCer
 import RelationshipTlsCertificates from './model/RelationshipTlsCertificates';
 import RelationshipTlsCertificatesTlsCertificates from './model/RelationshipTlsCertificatesTlsCertificates';
 import RelationshipTlsConfiguration from './model/RelationshipTlsConfiguration';
+import RelationshipTlsConfigurationForTlsSubscription from './model/RelationshipTlsConfigurationForTlsSubscription';
 import RelationshipTlsConfigurationTlsConfiguration from './model/RelationshipTlsConfigurationTlsConfiguration';
 import RelationshipTlsConfigurations from './model/RelationshipTlsConfigurations';
 import RelationshipTlsConfigurationsTlsConfigurations from './model/RelationshipTlsConfigurationsTlsConfigurations';
@@ -741,7 +742,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 4.2.0
+* @version 4.2.1
 */
 export {
     /**
@@ -2633,6 +2634,12 @@ export {
      * @property {module:model/RelationshipTlsConfiguration}
      */
     RelationshipTlsConfiguration,
+
+    /**
+     * The RelationshipTlsConfigurationForTlsSubscription model constructor.
+     * @property {module:model/RelationshipTlsConfigurationForTlsSubscription}
+     */
+    RelationshipTlsConfigurationForTlsSubscription,
 
     /**
      * The RelationshipTlsConfigurationTlsConfiguration model constructor.

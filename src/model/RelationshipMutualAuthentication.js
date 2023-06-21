@@ -16,11 +16,12 @@ import RelationshipMutualAuthenticationMutualAuthentication from './Relationship
 /**
  * The RelationshipMutualAuthentication model module.
  * @module model/RelationshipMutualAuthentication
- * @version 4.2.0
+ * @version 4.2.1
  */
 class RelationshipMutualAuthentication {
     /**
      * Constructs a new <code>RelationshipMutualAuthentication</code>.
+     * The [Mutual Authentication](/reference/api/tls/mutual-tls/authentication/) for client-to-server authentication. Optional.
      * @alias module:model/RelationshipMutualAuthentication
      */
     constructor() { 

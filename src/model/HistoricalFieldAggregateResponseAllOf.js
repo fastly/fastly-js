@@ -16,7 +16,7 @@ import HistoricalFieldResultsAttributes from './HistoricalFieldResultsAttributes
 /**
  * The HistoricalFieldAggregateResponseAllOf model module.
  * @module model/HistoricalFieldAggregateResponseAllOf
- * @version 4.2.0
+ * @version 4.2.1
  */
 class HistoricalFieldAggregateResponseAllOf {
     /**

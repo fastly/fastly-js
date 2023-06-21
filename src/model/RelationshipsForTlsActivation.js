@@ -11,20 +11,28 @@
  */
 
 import ApiClient from '../ApiClient';
+import RelationshipTlsCertificate from './RelationshipTlsCertificate';
 import RelationshipTlsCertificateTlsCertificate from './RelationshipTlsCertificateTlsCertificate';
+import RelationshipTlsConfiguration from './RelationshipTlsConfiguration';
+import RelationshipTlsConfigurationTlsConfiguration from './RelationshipTlsConfigurationTlsConfiguration';
+import RelationshipTlsDomain from './RelationshipTlsDomain';
+import RelationshipTlsDomainTlsDomain from './RelationshipTlsDomainTlsDomain';
 
 /**
  * The RelationshipsForTlsActivation model module.
  * @module model/RelationshipsForTlsActivation
- * @version 4.2.0
+ * @version 4.2.1
  */
 class RelationshipsForTlsActivation {
     /**
      * Constructs a new <code>RelationshipsForTlsActivation</code>.
      * @alias module:model/RelationshipsForTlsActivation
+     * @implements module:model/RelationshipTlsCertificate
+     * @implements module:model/RelationshipTlsConfiguration
+     * @implements module:model/RelationshipTlsDomain
      */
     constructor() { 
-        
+        RelationshipTlsCertificate.initialize(this);RelationshipTlsConfiguration.initialize(this);RelationshipTlsDomain.initialize(this);
         RelationshipsForTlsActivation.initialize(this);
     }
 
@@ -46,9 +54,18 @@ class RelationshipsForTlsActivation {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipsForTlsActivation();
+            RelationshipTlsCertificate.constructFromObject(data, obj);
+            RelationshipTlsConfiguration.constructFromObject(data, obj);
+            RelationshipTlsDomain.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('tls_certificate')) {
                 obj['tls_certificate'] = RelationshipTlsCertificateTlsCertificate.constructFromObject(data['tls_certificate']);
+            }
+            if (data.hasOwnProperty('tls_configuration')) {
+                obj['tls_configuration'] = RelationshipTlsConfigurationTlsConfiguration.constructFromObject(data['tls_configuration']);
+            }
+            if (data.hasOwnProperty('tls_domain')) {
+                obj['tls_domain'] = RelationshipTlsDomainTlsDomain.constructFromObject(data['tls_domain']);
             }
         }
         return obj;
@@ -62,7 +79,32 @@ class RelationshipsForTlsActivation {
  */
 RelationshipsForTlsActivation.prototype['tls_certificate'] = undefined;
 
+/**
+ * @member {module:model/RelationshipTlsConfigurationTlsConfiguration} tls_configuration
+ */
+RelationshipsForTlsActivation.prototype['tls_configuration'] = undefined;
 
+/**
+ * @member {module:model/RelationshipTlsDomainTlsDomain} tls_domain
+ */
+RelationshipsForTlsActivation.prototype['tls_domain'] = undefined;
+
+
+// Implement RelationshipTlsCertificate interface:
+/**
+ * @member {module:model/RelationshipTlsCertificateTlsCertificate} tls_certificate
+ */
+RelationshipTlsCertificate.prototype['tls_certificate'] = undefined;
+// Implement RelationshipTlsConfiguration interface:
+/**
+ * @member {module:model/RelationshipTlsConfigurationTlsConfiguration} tls_configuration
+ */
+RelationshipTlsConfiguration.prototype['tls_configuration'] = undefined;
+// Implement RelationshipTlsDomain interface:
+/**
+ * @member {module:model/RelationshipTlsDomainTlsDomain} tls_domain
+ */
+RelationshipTlsDomain.prototype['tls_domain'] = undefined;
 
 
 

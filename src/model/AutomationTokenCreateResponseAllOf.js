@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AutomationTokenCreateResponseAllOf model module.
  * @module model/AutomationTokenCreateResponseAllOf
- * @version 4.2.0
+ * @version 4.2.1
  */
 class AutomationTokenCreateResponseAllOf {
     /**

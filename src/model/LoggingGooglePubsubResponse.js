@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingGooglePubsubResponse model module.
  * @module model/LoggingGooglePubsubResponse
- * @version 4.2.0
+ * @version 4.2.1
  */
 class LoggingGooglePubsubResponse {
     /**

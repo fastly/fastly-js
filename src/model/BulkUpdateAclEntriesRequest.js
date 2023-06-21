@@ -16,7 +16,7 @@ import BulkUpdateAclEntry from './BulkUpdateAclEntry';
 /**
  * The BulkUpdateAclEntriesRequest model module.
  * @module model/BulkUpdateAclEntriesRequest
- * @version 4.2.0
+ * @version 4.2.1
  */
 class BulkUpdateAclEntriesRequest {
     /**

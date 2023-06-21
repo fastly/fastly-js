@@ -17,7 +17,7 @@ import WafRuleAttributes from './WafRuleAttributes';
 /**
  * The WafRule model module.
  * @module model/WafRule
- * @version 4.2.0
+ * @version 4.2.1
  */
 class WafRule {
     /**

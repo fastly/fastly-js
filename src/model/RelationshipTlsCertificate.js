@@ -16,11 +16,12 @@ import RelationshipTlsCertificateTlsCertificate from './RelationshipTlsCertifica
 /**
  * The RelationshipTlsCertificate model module.
  * @module model/RelationshipTlsCertificate
- * @version 4.2.0
+ * @version 4.2.1
  */
 class RelationshipTlsCertificate {
     /**
      * Constructs a new <code>RelationshipTlsCertificate</code>.
+     * The [TLS certificate](/reference/api/tls/custom-certs/certificates/) being used to terminate TLS traffic for a domain. Required.
      * @alias module:model/RelationshipTlsCertificate
      */
     constructor() { 

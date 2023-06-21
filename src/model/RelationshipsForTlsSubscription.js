@@ -11,8 +11,11 @@
  */
 
 import ApiClient from '../ApiClient';
+import RelationshipCommonName from './RelationshipCommonName';
+import RelationshipMemberTlsDomain from './RelationshipMemberTlsDomain';
 import RelationshipTlsCertificates from './RelationshipTlsCertificates';
 import RelationshipTlsCertificatesTlsCertificates from './RelationshipTlsCertificatesTlsCertificates';
+import RelationshipTlsConfigurationForTlsSubscription from './RelationshipTlsConfigurationForTlsSubscription';
 import RelationshipTlsConfigurationTlsConfiguration from './RelationshipTlsConfigurationTlsConfiguration';
 import RelationshipTlsDomains from './RelationshipTlsDomains';
 import RelationshipTlsDomainsTlsDomains from './RelationshipTlsDomainsTlsDomains';
@@ -20,17 +23,19 @@ import RelationshipTlsDomainsTlsDomains from './RelationshipTlsDomainsTlsDomains
 /**
  * The RelationshipsForTlsSubscription model module.
  * @module model/RelationshipsForTlsSubscription
- * @version 4.2.0
+ * @version 4.2.1
  */
 class RelationshipsForTlsSubscription {
     /**
      * Constructs a new <code>RelationshipsForTlsSubscription</code>.
      * @alias module:model/RelationshipsForTlsSubscription
+     * @implements module:model/RelationshipTlsConfigurationForTlsSubscription
+     * @implements module:model/RelationshipCommonName
      * @implements module:model/RelationshipTlsDomains
      * @implements module:model/RelationshipTlsCertificates
      */
     constructor() { 
-        RelationshipTlsDomains.initialize(this);RelationshipTlsCertificates.initialize(this);
+        RelationshipTlsConfigurationForTlsSubscription.initialize(this);RelationshipCommonName.initialize(this);RelationshipTlsDomains.initialize(this);RelationshipTlsCertificates.initialize(this);
         RelationshipsForTlsSubscription.initialize(this);
     }
 
@@ -52,17 +57,22 @@ class RelationshipsForTlsSubscription {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new RelationshipsForTlsSubscription();
+            RelationshipTlsConfigurationForTlsSubscription.constructFromObject(data, obj);
+            RelationshipCommonName.constructFromObject(data, obj);
             RelationshipTlsDomains.constructFromObject(data, obj);
             RelationshipTlsCertificates.constructFromObject(data, obj);
 
+            if (data.hasOwnProperty('tls_configuration')) {
+                obj['tls_configuration'] = RelationshipTlsConfigurationTlsConfiguration.constructFromObject(data['tls_configuration']);
+            }
+            if (data.hasOwnProperty('common_name')) {
+                obj['common_name'] = RelationshipMemberTlsDomain.constructFromObject(data['common_name']);
+            }
             if (data.hasOwnProperty('tls_domains')) {
                 obj['tls_domains'] = RelationshipTlsDomainsTlsDomains.constructFromObject(data['tls_domains']);
             }
             if (data.hasOwnProperty('tls_certificates')) {
                 obj['tls_certificates'] = RelationshipTlsCertificatesTlsCertificates.constructFromObject(data['tls_certificates']);
-            }
-            if (data.hasOwnProperty('tls_configuration')) {
-                obj['tls_configuration'] = RelationshipTlsConfigurationTlsConfiguration.constructFromObject(data['tls_configuration']);
             }
         }
         return obj;
@@ -70,6 +80,16 @@ class RelationshipsForTlsSubscription {
 
 
 }
+
+/**
+ * @member {module:model/RelationshipTlsConfigurationTlsConfiguration} tls_configuration
+ */
+RelationshipsForTlsSubscription.prototype['tls_configuration'] = undefined;
+
+/**
+ * @member {module:model/RelationshipMemberTlsDomain} common_name
+ */
+RelationshipsForTlsSubscription.prototype['common_name'] = undefined;
 
 /**
  * @member {module:model/RelationshipTlsDomainsTlsDomains} tls_domains
@@ -81,12 +101,17 @@ RelationshipsForTlsSubscription.prototype['tls_domains'] = undefined;
  */
 RelationshipsForTlsSubscription.prototype['tls_certificates'] = undefined;
 
+
+// Implement RelationshipTlsConfigurationForTlsSubscription interface:
 /**
  * @member {module:model/RelationshipTlsConfigurationTlsConfiguration} tls_configuration
  */
-RelationshipsForTlsSubscription.prototype['tls_configuration'] = undefined;
-
-
+RelationshipTlsConfigurationForTlsSubscription.prototype['tls_configuration'] = undefined;
+// Implement RelationshipCommonName interface:
+/**
+ * @member {module:model/RelationshipMemberTlsDomain} common_name
+ */
+RelationshipCommonName.prototype['common_name'] = undefined;
 // Implement RelationshipTlsDomains interface:
 /**
  * @member {module:model/RelationshipTlsDomainsTlsDomains} tls_domains

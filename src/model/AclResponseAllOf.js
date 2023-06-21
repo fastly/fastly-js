@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AclResponseAllOf model module.
  * @module model/AclResponseAllOf
- * @version 4.2.0
+ * @version 4.2.1
  */
 class AclResponseAllOf {
     /**

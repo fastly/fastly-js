@@ -16,11 +16,12 @@ import RelationshipTlsConfigurationTlsConfiguration from './RelationshipTlsConfi
 /**
  * The RelationshipTlsConfiguration model module.
  * @module model/RelationshipTlsConfiguration
- * @version 4.2.0
+ * @version 4.2.1
  */
 class RelationshipTlsConfiguration {
     /**
      * Constructs a new <code>RelationshipTlsConfiguration</code>.
+     * The [TLS configuration](/reference/api/tls/custom-certs/configuration/) being used to terminate TLS traffic. Optional.
      * @alias module:model/RelationshipTlsConfiguration
      */
     constructor() { 

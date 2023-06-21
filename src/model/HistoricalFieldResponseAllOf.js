@@ -16,7 +16,7 @@ import HistoricalFieldResultsAttributes from './HistoricalFieldResultsAttributes
 /**
  * The HistoricalFieldResponseAllOf model module.
  * @module model/HistoricalFieldResponseAllOf
- * @version 4.2.0
+ * @version 4.2.1
  */
 class HistoricalFieldResponseAllOf {
     /**

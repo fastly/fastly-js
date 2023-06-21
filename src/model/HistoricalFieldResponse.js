@@ -19,7 +19,7 @@ import HistoricalMeta from './HistoricalMeta';
 /**
  * The HistoricalFieldResponse model module.
  * @module model/HistoricalFieldResponse
- * @version 4.2.0
+ * @version 4.2.1
  */
 class HistoricalFieldResponse {
     /**

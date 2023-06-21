@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ResponseObject model module.
  * @module model/ResponseObject
- * @version 4.2.0
+ * @version 4.2.1
  */
 class ResponseObject {
     /**

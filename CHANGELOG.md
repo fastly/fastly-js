@@ -1,5 +1,12 @@
 # Changelog
 
+## [v4.2.1](https://github.com/fastly/fastly-js/releases/tag/release/v4.2.1) (2023-06-21)
+
+**Bug fixes:**
+
+- fix(tls_activation): add tls_configuration and tls_domains.
+- fix(tls_subscription): add tls_configuration and common name.
+
 ## [v4.2.0](https://github.com/fastly/fastly-js/releases/tag/release/v4.2.0) (2023-06-20)
 
 **Enhancements:**

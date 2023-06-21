@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StoreResponse model module.
  * @module model/StoreResponse
- * @version 4.2.0
+ * @version 4.2.1
  */
 class StoreResponse {
     /**

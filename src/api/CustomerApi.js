@@ -19,7 +19,7 @@ import SchemasUserResponse from '../model/SchemasUserResponse';
 /**
 * Customer service.
 * @module api/CustomerApi
-* @version 4.2.0
+* @version 4.2.1
 */
 export default class CustomerApi {
 
