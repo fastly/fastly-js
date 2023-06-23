@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VersionDetailSettings model module.
  * @module model/VersionDetailSettings
- * @version 4.2.1
+ * @version 4.2.2
  */
 class VersionDetailSettings {
     /**

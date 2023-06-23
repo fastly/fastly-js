@@ -16,7 +16,7 @@ import Backend from './Backend';
 /**
  * The Director model module.
  * @module model/Director
- * @version 4.2.1
+ * @version 4.2.2
  */
 class Director {
     /**

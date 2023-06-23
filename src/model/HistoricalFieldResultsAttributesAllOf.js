@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HistoricalFieldResultsAttributesAllOf model module.
  * @module model/HistoricalFieldResultsAttributesAllOf
- * @version 4.2.1
+ * @version 4.2.2
  */
 class HistoricalFieldResultsAttributesAllOf {
     /**

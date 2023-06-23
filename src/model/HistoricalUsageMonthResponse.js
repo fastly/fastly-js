@@ -14,12 +14,12 @@ import ApiClient from '../ApiClient';
 import Historical from './Historical';
 import HistoricalMeta from './HistoricalMeta';
 import HistoricalUsageMonthResponseAllOf from './HistoricalUsageMonthResponseAllOf';
-import HistoricalUsageMonthResponseAllOfData from './HistoricalUsageMonthResponseAllOfData';
+import HistoricalUsageMonthResponseData from './HistoricalUsageMonthResponseData';
 
 /**
  * The HistoricalUsageMonthResponse model module.
  * @module model/HistoricalUsageMonthResponse
- * @version 4.2.1
+ * @version 4.2.2
  */
 class HistoricalUsageMonthResponse {
     /**
@@ -64,7 +64,7 @@ class HistoricalUsageMonthResponse {
                 obj['msg'] = ApiClient.convertToType(data['msg'], 'String');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = HistoricalUsageMonthResponseAllOfData.constructFromObject(data['data']);
+                obj['data'] = HistoricalUsageMonthResponseData.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -91,7 +91,7 @@ HistoricalUsageMonthResponse.prototype['meta'] = undefined;
 HistoricalUsageMonthResponse.prototype['msg'] = undefined;
 
 /**
- * @member {module:model/HistoricalUsageMonthResponseAllOfData} data
+ * @member {module:model/HistoricalUsageMonthResponseData} data
  */
 HistoricalUsageMonthResponse.prototype['data'] = undefined;
 
@@ -113,7 +113,7 @@ Historical.prototype['meta'] = undefined;
 Historical.prototype['msg'] = undefined;
 // Implement HistoricalUsageMonthResponseAllOf interface:
 /**
- * @member {module:model/HistoricalUsageMonthResponseAllOfData} data
+ * @member {module:model/HistoricalUsageMonthResponseData} data
  */
 HistoricalUsageMonthResponseAllOf.prototype['data'] = undefined;
 

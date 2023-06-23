@@ -14,18 +14,18 @@ import ApiClient from '../ApiClient';
 import HistoricalFieldResultsAttributes from './HistoricalFieldResultsAttributes';
 
 /**
- * The HistoricalFieldResponseAllOf model module.
- * @module model/HistoricalFieldResponseAllOf
- * @version 4.2.1
+ * The HistoricalFieldResponseDataField model module.
+ * @module model/HistoricalFieldResponseDataField
+ * @version 4.2.2
  */
-class HistoricalFieldResponseAllOf {
+class HistoricalFieldResponseDataField {
     /**
-     * Constructs a new <code>HistoricalFieldResponseAllOf</code>.
-     * @alias module:model/HistoricalFieldResponseAllOf
+     * Constructs a new <code>HistoricalFieldResponseDataField</code>.
+     * @alias module:model/HistoricalFieldResponseDataField
      */
     constructor() { 
         
-        HistoricalFieldResponseAllOf.initialize(this);
+        HistoricalFieldResponseDataField.initialize(this);
     }
 
     /**
@@ -37,15 +37,15 @@ class HistoricalFieldResponseAllOf {
     }
 
     /**
-     * Constructs a <code>HistoricalFieldResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>HistoricalFieldResponseDataField</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/HistoricalFieldResponseAllOf} obj Optional instance to populate.
-     * @return {module:model/HistoricalFieldResponseAllOf} The populated <code>HistoricalFieldResponseAllOf</code> instance.
+     * @param {module:model/HistoricalFieldResponseDataField} obj Optional instance to populate.
+     * @return {module:model/HistoricalFieldResponseDataField} The populated <code>HistoricalFieldResponseDataField</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new HistoricalFieldResponseAllOf();
+            obj = obj || new HistoricalFieldResponseDataField();
 
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], {'String': Array});
@@ -60,12 +60,12 @@ class HistoricalFieldResponseAllOf {
 /**
  * @member {Object.<String, Array.<module:model/HistoricalFieldResultsAttributes>>} data
  */
-HistoricalFieldResponseAllOf.prototype['data'] = undefined;
+HistoricalFieldResponseDataField.prototype['data'] = undefined;
 
 
 
 
 
 
-export default HistoricalFieldResponseAllOf;
+export default HistoricalFieldResponseDataField;
 

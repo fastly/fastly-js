@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingDigitaloceanAllOf model module.
  * @module model/LoggingDigitaloceanAllOf
- * @version 4.2.1
+ * @version 4.2.2
  */
 class LoggingDigitaloceanAllOf {
     /**

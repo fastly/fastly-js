@@ -19,7 +19,7 @@ import WafTag from './WafTag';
 /**
  * The IncludedWithWafRuleItem model module.
  * @module model/IncludedWithWafRuleItem
- * @version 4.2.1
+ * @version 4.2.2
  */
 class IncludedWithWafRuleItem {
     /**

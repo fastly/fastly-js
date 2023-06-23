@@ -18,7 +18,7 @@ import LoggingHerokuResponse from '../model/LoggingHerokuResponse';
 /**
 * LoggingHeroku service.
 * @module api/LoggingHerokuApi
-* @version 4.2.1
+* @version 4.2.2
 */
 export default class LoggingHerokuApi {
 

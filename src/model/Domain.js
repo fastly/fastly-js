@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Domain model module.
  * @module model/Domain
- * @version 4.2.1
+ * @version 4.2.2
  */
 class Domain {
     /**

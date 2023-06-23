@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * ApexRedirect service.
 * @module api/ApexRedirectApi
-* @version 4.2.1
+* @version 4.2.2
 */
 export default class ApexRedirectApi {
 

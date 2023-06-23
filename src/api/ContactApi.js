@@ -18,7 +18,7 @@ import SchemasContactResponse from '../model/SchemasContactResponse';
 /**
 * Contact service.
 * @module api/ContactApi
-* @version 4.2.1
+* @version 4.2.2
 */
 export default class ContactApi {
 

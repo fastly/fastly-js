@@ -16,7 +16,7 @@ import TypeUser from './TypeUser';
 /**
  * The ServiceAuthorizationDataRelationshipsUserData model module.
  * @module model/ServiceAuthorizationDataRelationshipsUserData
- * @version 4.2.1
+ * @version 4.2.2
  */
 class ServiceAuthorizationDataRelationshipsUserData {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WafActiveRuleResponseDataAttributesAllOf model module.
  * @module model/WafActiveRuleResponseDataAttributesAllOf
- * @version 4.2.1
+ * @version 4.2.2
  */
 class WafActiveRuleResponseDataAttributesAllOf {
     /**

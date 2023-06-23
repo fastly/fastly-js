@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingHerokuAllOf model module.
  * @module model/LoggingHerokuAllOf
- * @version 4.2.1
+ * @version 4.2.2
  */
 class LoggingHerokuAllOf {
     /**

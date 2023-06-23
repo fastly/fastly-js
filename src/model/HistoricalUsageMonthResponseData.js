@@ -11,21 +11,22 @@
  */
 
 import ApiClient from '../ApiClient';
+import HistoricalService from './HistoricalService';
 import HistoricalUsageResults from './HistoricalUsageResults';
 
 /**
- * The HistoricalUsageMonthResponseAllOfData model module.
- * @module model/HistoricalUsageMonthResponseAllOfData
- * @version 4.2.1
+ * The HistoricalUsageMonthResponseData model module.
+ * @module model/HistoricalUsageMonthResponseData
+ * @version 4.2.2
  */
-class HistoricalUsageMonthResponseAllOfData {
+class HistoricalUsageMonthResponseData {
     /**
-     * Constructs a new <code>HistoricalUsageMonthResponseAllOfData</code>.
-     * @alias module:model/HistoricalUsageMonthResponseAllOfData
+     * Constructs a new <code>HistoricalUsageMonthResponseData</code>.
+     * @alias module:model/HistoricalUsageMonthResponseData
      */
     constructor() { 
         
-        HistoricalUsageMonthResponseAllOfData.initialize(this);
+        HistoricalUsageMonthResponseData.initialize(this);
     }
 
     /**
@@ -37,21 +38,21 @@ class HistoricalUsageMonthResponseAllOfData {
     }
 
     /**
-     * Constructs a <code>HistoricalUsageMonthResponseAllOfData</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>HistoricalUsageMonthResponseData</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/HistoricalUsageMonthResponseAllOfData} obj Optional instance to populate.
-     * @return {module:model/HistoricalUsageMonthResponseAllOfData} The populated <code>HistoricalUsageMonthResponseAllOfData</code> instance.
+     * @param {module:model/HistoricalUsageMonthResponseData} obj Optional instance to populate.
+     * @return {module:model/HistoricalUsageMonthResponseData} The populated <code>HistoricalUsageMonthResponseData</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new HistoricalUsageMonthResponseAllOfData();
+            obj = obj || new HistoricalUsageMonthResponseData();
 
             if (data.hasOwnProperty('customer_id')) {
                 obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
             }
             if (data.hasOwnProperty('services')) {
-                obj['services'] = ApiClient.convertToType(data['services'], {'String': {'String': HistoricalUsageResults}});
+                obj['services'] = ApiClient.convertToType(data['services'], {'String': HistoricalService});
             }
             if (data.hasOwnProperty('total')) {
                 obj['total'] = HistoricalUsageResults.constructFromObject(data['total']);
@@ -66,22 +67,22 @@ class HistoricalUsageMonthResponseAllOfData {
 /**
  * @member {String} customer_id
  */
-HistoricalUsageMonthResponseAllOfData.prototype['customer_id'] = undefined;
+HistoricalUsageMonthResponseData.prototype['customer_id'] = undefined;
 
 /**
- * @member {Object.<String, Object.<String, module:model/HistoricalUsageResults>>} services
+ * @member {Object.<String, module:model/HistoricalService>} services
  */
-HistoricalUsageMonthResponseAllOfData.prototype['services'] = undefined;
+HistoricalUsageMonthResponseData.prototype['services'] = undefined;
 
 /**
  * @member {module:model/HistoricalUsageResults} total
  */
-HistoricalUsageMonthResponseAllOfData.prototype['total'] = undefined;
+HistoricalUsageMonthResponseData.prototype['total'] = undefined;
 
 
 
 
 
 
-export default HistoricalUsageMonthResponseAllOfData;
+export default HistoricalUsageMonthResponseData;
 

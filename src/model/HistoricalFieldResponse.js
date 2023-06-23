@@ -12,24 +12,24 @@
 
 import ApiClient from '../ApiClient';
 import Historical from './Historical';
-import HistoricalFieldResponseAllOf from './HistoricalFieldResponseAllOf';
+import HistoricalFieldResponseDataField from './HistoricalFieldResponseDataField';
 import HistoricalFieldResultsAttributes from './HistoricalFieldResultsAttributes';
 import HistoricalMeta from './HistoricalMeta';
 
 /**
  * The HistoricalFieldResponse model module.
  * @module model/HistoricalFieldResponse
- * @version 4.2.1
+ * @version 4.2.2
  */
 class HistoricalFieldResponse {
     /**
      * Constructs a new <code>HistoricalFieldResponse</code>.
      * @alias module:model/HistoricalFieldResponse
      * @implements module:model/Historical
-     * @implements module:model/HistoricalFieldResponseAllOf
+     * @implements module:model/HistoricalFieldResponseDataField
      */
     constructor() { 
-        Historical.initialize(this);HistoricalFieldResponseAllOf.initialize(this);
+        Historical.initialize(this);HistoricalFieldResponseDataField.initialize(this);
         HistoricalFieldResponse.initialize(this);
     }
 
@@ -52,7 +52,7 @@ class HistoricalFieldResponse {
         if (data) {
             obj = obj || new HistoricalFieldResponse();
             Historical.constructFromObject(data, obj);
-            HistoricalFieldResponseAllOf.constructFromObject(data, obj);
+            HistoricalFieldResponseDataField.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -111,11 +111,11 @@ Historical.prototype['meta'] = undefined;
  * @member {String} msg
  */
 Historical.prototype['msg'] = undefined;
-// Implement HistoricalFieldResponseAllOf interface:
+// Implement HistoricalFieldResponseDataField interface:
 /**
  * @member {Object.<String, Array.<module:model/HistoricalFieldResultsAttributes>>} data
  */
-HistoricalFieldResponseAllOf.prototype['data'] = undefined;
+HistoricalFieldResponseDataField.prototype['data'] = undefined;
 
 
 

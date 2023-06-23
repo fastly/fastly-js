@@ -18,7 +18,7 @@ import LoggingPlacement from './LoggingPlacement';
 /**
  * The LoggingKinesis model module.
  * @module model/LoggingKinesis
- * @version 4.2.1
+ * @version 4.2.2
  */
 class LoggingKinesis {
     /**

@@ -14,18 +14,18 @@ import ApiClient from '../ApiClient';
 import Results from './Results';
 
 /**
- * The HistoricalResponseAllOf model module.
- * @module model/HistoricalResponseAllOf
- * @version 4.2.1
+ * The HistoricalResponseDataField model module.
+ * @module model/HistoricalResponseDataField
+ * @version 4.2.2
  */
-class HistoricalResponseAllOf {
+class HistoricalResponseDataField {
     /**
-     * Constructs a new <code>HistoricalResponseAllOf</code>.
-     * @alias module:model/HistoricalResponseAllOf
+     * Constructs a new <code>HistoricalResponseDataField</code>.
+     * @alias module:model/HistoricalResponseDataField
      */
     constructor() { 
         
-        HistoricalResponseAllOf.initialize(this);
+        HistoricalResponseDataField.initialize(this);
     }
 
     /**
@@ -37,15 +37,15 @@ class HistoricalResponseAllOf {
     }
 
     /**
-     * Constructs a <code>HistoricalResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>HistoricalResponseDataField</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/HistoricalResponseAllOf} obj Optional instance to populate.
-     * @return {module:model/HistoricalResponseAllOf} The populated <code>HistoricalResponseAllOf</code> instance.
+     * @param {module:model/HistoricalResponseDataField} obj Optional instance to populate.
+     * @return {module:model/HistoricalResponseDataField} The populated <code>HistoricalResponseDataField</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new HistoricalResponseAllOf();
+            obj = obj || new HistoricalResponseDataField();
 
             if (data.hasOwnProperty('data')) {
                 obj['data'] = ApiClient.convertToType(data['data'], {'String': Array});
@@ -61,12 +61,12 @@ class HistoricalResponseAllOf {
  * Contains the results of the query, organized by *service ID*, into arrays where each element describes one service over a *time span*.
  * @member {Object.<String, Array.<module:model/Results>>} data
  */
-HistoricalResponseAllOf.prototype['data'] = undefined;
+HistoricalResponseDataField.prototype['data'] = undefined;
 
 
 
 
 
 
-export default HistoricalResponseAllOf;
+export default HistoricalResponseDataField;
 

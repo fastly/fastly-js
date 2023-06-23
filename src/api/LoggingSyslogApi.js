@@ -20,7 +20,7 @@ import LoggingUseTls from '../model/LoggingUseTls';
 /**
 * LoggingSyslog service.
 * @module api/LoggingSyslogApi
-* @version 4.2.1
+* @version 4.2.2
 */
 export default class LoggingSyslogApi {
 

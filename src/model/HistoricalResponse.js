@@ -13,23 +13,23 @@
 import ApiClient from '../ApiClient';
 import Historical from './Historical';
 import HistoricalMeta from './HistoricalMeta';
-import HistoricalResponseAllOf from './HistoricalResponseAllOf';
+import HistoricalResponseDataField from './HistoricalResponseDataField';
 import Results from './Results';
 
 /**
  * The HistoricalResponse model module.
  * @module model/HistoricalResponse
- * @version 4.2.1
+ * @version 4.2.2
  */
 class HistoricalResponse {
     /**
      * Constructs a new <code>HistoricalResponse</code>.
      * @alias module:model/HistoricalResponse
      * @implements module:model/Historical
-     * @implements module:model/HistoricalResponseAllOf
+     * @implements module:model/HistoricalResponseDataField
      */
     constructor() { 
-        Historical.initialize(this);HistoricalResponseAllOf.initialize(this);
+        Historical.initialize(this);HistoricalResponseDataField.initialize(this);
         HistoricalResponse.initialize(this);
     }
 
@@ -52,7 +52,7 @@ class HistoricalResponse {
         if (data) {
             obj = obj || new HistoricalResponse();
             Historical.constructFromObject(data, obj);
-            HistoricalResponseAllOf.constructFromObject(data, obj);
+            HistoricalResponseDataField.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -112,12 +112,12 @@ Historical.prototype['meta'] = undefined;
  * @member {String} msg
  */
 Historical.prototype['msg'] = undefined;
-// Implement HistoricalResponseAllOf interface:
+// Implement HistoricalResponseDataField interface:
 /**
  * Contains the results of the query, organized by *service ID*, into arrays where each element describes one service over a *time span*.
  * @member {Object.<String, Array.<module:model/Results>>} data
  */
-HistoricalResponseAllOf.prototype['data'] = undefined;
+HistoricalResponseDataField.prototype['data'] = undefined;
 
 
 

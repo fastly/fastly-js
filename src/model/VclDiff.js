@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VclDiff model module.
  * @module model/VclDiff
- * @version 4.2.1
+ * @version 4.2.2
  */
 class VclDiff {
     /**

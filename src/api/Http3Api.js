@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Http3 service.
 * @module api/Http3Api
-* @version 4.2.1
+* @version 4.2.2
 */
 export default class Http3Api {
 

@@ -18,7 +18,7 @@ import EventsResponse from '../model/EventsResponse';
 /**
 * Events service.
 * @module api/EventsApi
-* @version 4.2.1
+* @version 4.2.2
 */
 export default class EventsApi {
 

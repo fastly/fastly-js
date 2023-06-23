@@ -16,7 +16,7 @@ import RateLimiterResponse1 from './RateLimiterResponse1';
 /**
  * The RateLimiter model module.
  * @module model/RateLimiter
- * @version 4.2.1
+ * @version 4.2.2
  */
 class RateLimiter {
     /**

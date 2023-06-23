@@ -17,7 +17,7 @@ import Results from './Results';
 /**
  * The HistoricalFieldResultsAttributes model module.
  * @module model/HistoricalFieldResultsAttributes
- * @version 4.2.1
+ * @version 4.2.2
  */
 class HistoricalFieldResultsAttributes {
     /**

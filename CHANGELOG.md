@@ -1,5 +1,11 @@
 # Changelog
 
+## [v4.2.2](https://github.com/fastly/fastly-js/releases/tag/release/v4.2.2) (2023-06-23)
+
+**Bug fixes:**
+
+- fix(historical_stats): generate missing models.
+
 ## [v4.2.1](https://github.com/fastly/fastly-js/releases/tag/release/v4.2.1) (2023-06-21)
 
 **Bug fixes:**

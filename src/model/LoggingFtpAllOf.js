@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingFtpAllOf model module.
  * @module model/LoggingFtpAllOf
- * @version 4.2.1
+ * @version 4.2.2
  */
 class LoggingFtpAllOf {
     /**

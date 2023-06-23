@@ -114,18 +114,19 @@ import HistoricalAggregateResponseAllOf from './model/HistoricalAggregateRespons
 import HistoricalFieldAggregateResponse from './model/HistoricalFieldAggregateResponse';
 import HistoricalFieldAggregateResponseAllOf from './model/HistoricalFieldAggregateResponseAllOf';
 import HistoricalFieldResponse from './model/HistoricalFieldResponse';
-import HistoricalFieldResponseAllOf from './model/HistoricalFieldResponseAllOf';
+import HistoricalFieldResponseDataField from './model/HistoricalFieldResponseDataField';
 import HistoricalFieldResultsAttributes from './model/HistoricalFieldResultsAttributes';
 import HistoricalFieldResultsAttributesAllOf from './model/HistoricalFieldResultsAttributesAllOf';
 import HistoricalMeta from './model/HistoricalMeta';
 import HistoricalRegionsResponse from './model/HistoricalRegionsResponse';
 import HistoricalRegionsResponseAllOf from './model/HistoricalRegionsResponseAllOf';
 import HistoricalResponse from './model/HistoricalResponse';
-import HistoricalResponseAllOf from './model/HistoricalResponseAllOf';
+import HistoricalResponseDataField from './model/HistoricalResponseDataField';
+import HistoricalService from './model/HistoricalService';
 import HistoricalUsageAggregateResponse from './model/HistoricalUsageAggregateResponse';
 import HistoricalUsageMonthResponse from './model/HistoricalUsageMonthResponse';
 import HistoricalUsageMonthResponseAllOf from './model/HistoricalUsageMonthResponseAllOf';
-import HistoricalUsageMonthResponseAllOfData from './model/HistoricalUsageMonthResponseAllOfData';
+import HistoricalUsageMonthResponseData from './model/HistoricalUsageMonthResponseData';
 import HistoricalUsageResults from './model/HistoricalUsageResults';
 import HistoricalUsageServiceResponse from './model/HistoricalUsageServiceResponse';
 import HistoricalUsageServiceResponseAllOf from './model/HistoricalUsageServiceResponseAllOf';
@@ -742,7 +743,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 4.2.1
+* @version 4.2.2
 */
 export {
     /**
@@ -1364,10 +1365,10 @@ export {
     HistoricalFieldResponse,
 
     /**
-     * The HistoricalFieldResponseAllOf model constructor.
-     * @property {module:model/HistoricalFieldResponseAllOf}
+     * The HistoricalFieldResponseDataField model constructor.
+     * @property {module:model/HistoricalFieldResponseDataField}
      */
-    HistoricalFieldResponseAllOf,
+    HistoricalFieldResponseDataField,
 
     /**
      * The HistoricalFieldResultsAttributes model constructor.
@@ -1406,10 +1407,16 @@ export {
     HistoricalResponse,
 
     /**
-     * The HistoricalResponseAllOf model constructor.
-     * @property {module:model/HistoricalResponseAllOf}
+     * The HistoricalResponseDataField model constructor.
+     * @property {module:model/HistoricalResponseDataField}
      */
-    HistoricalResponseAllOf,
+    HistoricalResponseDataField,
+
+    /**
+     * The HistoricalService model constructor.
+     * @property {module:model/HistoricalService}
+     */
+    HistoricalService,
 
     /**
      * The HistoricalUsageAggregateResponse model constructor.
@@ -1430,10 +1437,10 @@ export {
     HistoricalUsageMonthResponseAllOf,
 
     /**
-     * The HistoricalUsageMonthResponseAllOfData model constructor.
-     * @property {module:model/HistoricalUsageMonthResponseAllOfData}
+     * The HistoricalUsageMonthResponseData model constructor.
+     * @property {module:model/HistoricalUsageMonthResponseData}
      */
-    HistoricalUsageMonthResponseAllOfData,
+    HistoricalUsageMonthResponseData,
 
     /**
      * The HistoricalUsageResults model constructor.

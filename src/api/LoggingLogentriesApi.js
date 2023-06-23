@@ -19,7 +19,7 @@ import LoggingUseTls from '../model/LoggingUseTls';
 /**
 * LoggingLogentries service.
 * @module api/LoggingLogentriesApi
-* @version 4.2.1
+* @version 4.2.2
 */
 export default class LoggingLogentriesApi {
 

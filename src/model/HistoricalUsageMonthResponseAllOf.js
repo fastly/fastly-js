@@ -11,12 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import HistoricalUsageMonthResponseAllOfData from './HistoricalUsageMonthResponseAllOfData';
+import HistoricalUsageMonthResponseData from './HistoricalUsageMonthResponseData';
 
 /**
  * The HistoricalUsageMonthResponseAllOf model module.
  * @module model/HistoricalUsageMonthResponseAllOf
- * @version 4.2.1
+ * @version 4.2.2
  */
 class HistoricalUsageMonthResponseAllOf {
     /**
@@ -48,7 +48,7 @@ class HistoricalUsageMonthResponseAllOf {
             obj = obj || new HistoricalUsageMonthResponseAllOf();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = HistoricalUsageMonthResponseAllOfData.constructFromObject(data['data']);
+                obj['data'] = HistoricalUsageMonthResponseData.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class HistoricalUsageMonthResponseAllOf {
 }
 
 /**
- * @member {module:model/HistoricalUsageMonthResponseAllOfData} data
+ * @member {module:model/HistoricalUsageMonthResponseData} data
  */
 HistoricalUsageMonthResponseAllOf.prototype['data'] = undefined;
 
