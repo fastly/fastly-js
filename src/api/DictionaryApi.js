@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Dictionary service.
 * @module api/DictionaryApi
-* @version 4.2.2
+* @version 4.3.0
 */
 export default class DictionaryApi {
 

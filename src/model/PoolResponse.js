@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The PoolResponse model module.
  * @module model/PoolResponse
- * @version 4.2.2
+ * @version 4.3.0
  */
 class PoolResponse {
     /**

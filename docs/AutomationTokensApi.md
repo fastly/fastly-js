@@ -176,8 +176,8 @@ const options = {
 };
 
 apiInstance.revokeAutomationTokenId(options)
-  .then(() => {
-    console.log('API called successfully.');
+  .then((data) => {
+    console.log(data, "API called successfully.");
   })
   .catch((error) => {
     console.error(error);
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-null (empty response body)
+[**ErrorResponse**](ErrorResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

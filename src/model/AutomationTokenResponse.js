@@ -13,12 +13,14 @@
 import ApiClient from '../ApiClient';
 import AutomationToken from './AutomationToken';
 import AutomationTokenResponseAllOf from './AutomationTokenResponseAllOf';
+import ReadOnlyCustomerId from './ReadOnlyCustomerId';
+import ReadOnlyId from './ReadOnlyId';
 import Timestamps from './Timestamps';
 
 /**
  * The AutomationTokenResponse model module.
  * @module model/AutomationTokenResponse
- * @version 4.2.2
+ * @version 4.3.0
  */
 class AutomationTokenResponse {
     /**
@@ -80,10 +82,10 @@ class AutomationTokenResponse {
                 obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
             }
             if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
+                obj['id'] = ReadOnlyId.constructFromObject(data['id']);
             }
             if (data.hasOwnProperty('customer_id')) {
-                obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
+                obj['customer_id'] = ReadOnlyCustomerId.constructFromObject(data['customer_id']);
             }
             if (data.hasOwnProperty('ip')) {
                 obj['ip'] = ApiClient.convertToType(data['ip'], 'String');
@@ -153,12 +155,12 @@ AutomationTokenResponse.prototype['deleted_at'] = undefined;
 AutomationTokenResponse.prototype['updated_at'] = undefined;
 
 /**
- * @member {String} id
+ * @member {module:model/ReadOnlyId} id
  */
 AutomationTokenResponse.prototype['id'] = undefined;
 
 /**
- * @member {String} customer_id
+ * @member {module:model/ReadOnlyCustomerId} customer_id
  */
 AutomationTokenResponse.prototype['customer_id'] = undefined;
 
@@ -231,11 +233,11 @@ Timestamps.prototype['deleted_at'] = undefined;
 Timestamps.prototype['updated_at'] = undefined;
 // Implement AutomationTokenResponseAllOf interface:
 /**
- * @member {String} id
+ * @member {module:model/ReadOnlyId} id
  */
 AutomationTokenResponseAllOf.prototype['id'] = undefined;
 /**
- * @member {String} customer_id
+ * @member {module:model/ReadOnlyCustomerId} customer_id
  */
 AutomationTokenResponseAllOf.prototype['customer_id'] = undefined;
 /**

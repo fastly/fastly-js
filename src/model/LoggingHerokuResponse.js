@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingHerokuResponse model module.
  * @module model/LoggingHerokuResponse
- * @version 4.2.2
+ * @version 4.3.0
  */
 class LoggingHerokuResponse {
     /**

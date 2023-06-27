@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingCloudfilesResponse model module.
  * @module model/LoggingCloudfilesResponse
- * @version 4.2.2
+ * @version 4.3.0
  */
 class LoggingCloudfilesResponse {
     /**

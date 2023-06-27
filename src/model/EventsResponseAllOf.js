@@ -16,7 +16,7 @@ import Event from './Event';
 /**
  * The EventsResponseAllOf model module.
  * @module model/EventsResponseAllOf
- * @version 4.2.2
+ * @version 4.3.0
  */
 class EventsResponseAllOf {
     /**

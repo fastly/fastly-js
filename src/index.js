@@ -96,6 +96,7 @@ import EnabledProductResponse from './model/EnabledProductResponse';
 import EnabledProductResponseLinks from './model/EnabledProductResponseLinks';
 import EnabledProductResponseProduct from './model/EnabledProductResponseProduct';
 import EnabledProductResponseService from './model/EnabledProductResponseService';
+import ErrorResponse from './model/ErrorResponse';
 import Event from './model/Event';
 import EventAttributes from './model/EventAttributes';
 import EventResponse from './model/EventResponse';
@@ -279,8 +280,11 @@ import PurgeKeys from './model/PurgeKeys';
 import PurgeResponse from './model/PurgeResponse';
 import RateLimiter from './model/RateLimiter';
 import RateLimiterResponse from './model/RateLimiterResponse';
-import RateLimiterResponse1 from './model/RateLimiterResponse1';
 import RateLimiterResponseAllOf from './model/RateLimiterResponseAllOf';
+import ReadOnlyCustomerId from './model/ReadOnlyCustomerId';
+import ReadOnlyId from './model/ReadOnlyId';
+import ReadOnlyIdService from './model/ReadOnlyIdService';
+import ReadOnlyUserId from './model/ReadOnlyUserId';
 import Realtime from './model/Realtime';
 import RealtimeEntry from './model/RealtimeEntry';
 import RealtimeMeasurements from './model/RealtimeMeasurements';
@@ -743,7 +747,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 4.2.2
+* @version 4.3.0
 */
 export {
     /**
@@ -1255,6 +1259,12 @@ export {
      * @property {module:model/EnabledProductResponseService}
      */
     EnabledProductResponseService,
+
+    /**
+     * The ErrorResponse model constructor.
+     * @property {module:model/ErrorResponse}
+     */
+    ErrorResponse,
 
     /**
      * The Event model constructor.
@@ -2355,16 +2365,34 @@ export {
     RateLimiterResponse,
 
     /**
-     * The RateLimiterResponse1 model constructor.
-     * @property {module:model/RateLimiterResponse1}
-     */
-    RateLimiterResponse1,
-
-    /**
      * The RateLimiterResponseAllOf model constructor.
      * @property {module:model/RateLimiterResponseAllOf}
      */
     RateLimiterResponseAllOf,
+
+    /**
+     * The ReadOnlyCustomerId model constructor.
+     * @property {module:model/ReadOnlyCustomerId}
+     */
+    ReadOnlyCustomerId,
+
+    /**
+     * The ReadOnlyId model constructor.
+     * @property {module:model/ReadOnlyId}
+     */
+    ReadOnlyId,
+
+    /**
+     * The ReadOnlyIdService model constructor.
+     * @property {module:model/ReadOnlyIdService}
+     */
+    ReadOnlyIdService,
+
+    /**
+     * The ReadOnlyUserId model constructor.
+     * @property {module:model/ReadOnlyUserId}
+     */
+    ReadOnlyUserId,
 
     /**
      * The Realtime model constructor.

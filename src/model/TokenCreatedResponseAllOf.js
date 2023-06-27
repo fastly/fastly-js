@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TokenCreatedResponseAllOf model module.
  * @module model/TokenCreatedResponseAllOf
- * @version 4.2.2
+ * @version 4.3.0
  */
 class TokenCreatedResponseAllOf {
     /**

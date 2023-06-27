@@ -11,11 +11,13 @@
  */
 
 import ApiClient from '../ApiClient';
+import ReadOnlyCustomerId from './ReadOnlyCustomerId';
+import ReadOnlyId from './ReadOnlyId';
 
 /**
  * The AutomationTokenResponseAllOf model module.
  * @module model/AutomationTokenResponseAllOf
- * @version 4.2.2
+ * @version 4.3.0
  */
 class AutomationTokenResponseAllOf {
     /**
@@ -47,10 +49,10 @@ class AutomationTokenResponseAllOf {
             obj = obj || new AutomationTokenResponseAllOf();
 
             if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
+                obj['id'] = ReadOnlyId.constructFromObject(data['id']);
             }
             if (data.hasOwnProperty('customer_id')) {
-                obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
+                obj['customer_id'] = ReadOnlyCustomerId.constructFromObject(data['customer_id']);
             }
             if (data.hasOwnProperty('role')) {
                 obj['role'] = ApiClient.convertToType(data['role'], 'String');
@@ -81,12 +83,12 @@ class AutomationTokenResponseAllOf {
 }
 
 /**
- * @member {String} id
+ * @member {module:model/ReadOnlyId} id
  */
 AutomationTokenResponseAllOf.prototype['id'] = undefined;
 
 /**
- * @member {String} customer_id
+ * @member {module:model/ReadOnlyCustomerId} customer_id
  */
 AutomationTokenResponseAllOf.prototype['customer_id'] = undefined;
 

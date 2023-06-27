@@ -11,11 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import ReadOnlyIdService from './ReadOnlyIdService';
 
 /**
  * The HistoricalFieldResultsAttributesAllOf model module.
  * @module model/HistoricalFieldResultsAttributesAllOf
- * @version 4.2.2
+ * @version 4.3.0
  */
 class HistoricalFieldResultsAttributesAllOf {
     /**
@@ -47,7 +48,7 @@ class HistoricalFieldResultsAttributesAllOf {
             obj = obj || new HistoricalFieldResultsAttributesAllOf();
 
             if (data.hasOwnProperty('service_id')) {
-                obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
+                obj['service_id'] = ReadOnlyIdService.constructFromObject(data['service_id']);
             }
             if (data.hasOwnProperty('start_time')) {
                 obj['start_time'] = ApiClient.convertToType(data['start_time'], 'Number');
@@ -60,7 +61,7 @@ class HistoricalFieldResultsAttributesAllOf {
 }
 
 /**
- * @member {String} service_id
+ * @member {module:model/ReadOnlyIdService} service_id
  */
 HistoricalFieldResultsAttributesAllOf.prototype['service_id'] = undefined;
 

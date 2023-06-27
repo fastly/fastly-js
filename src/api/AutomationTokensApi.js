@@ -15,12 +15,13 @@ import ApiClient from "../ApiClient";
 import AutomationTokenCreateRequest from '../model/AutomationTokenCreateRequest';
 import AutomationTokenCreateResponse from '../model/AutomationTokenCreateResponse';
 import AutomationTokenResponse from '../model/AutomationTokenResponse';
+import ErrorResponse from '../model/ErrorResponse';
 import InlineResponse2001 from '../model/InlineResponse2001';
 
 /**
 * AutomationTokens service.
 * @module api/AutomationTokensApi
-* @version 4.2.2
+* @version 4.3.0
 */
 export default class AutomationTokensApi {
 
@@ -276,7 +277,7 @@ export default class AutomationTokensApi {
      * Revoke an automation token by ID.
      * @param {Object} options
      * @param {String} options.id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ErrorResponse} and HTTP response
      */
     revokeAutomationTokenIdWithHttpInfo(options = {}) {
       let postBody = null;
@@ -300,7 +301,7 @@ export default class AutomationTokensApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/vnd.api+json', 'application/problem+json'];
-      let returnType = null;
+      let returnType = ErrorResponse;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -321,7 +322,7 @@ export default class AutomationTokensApi {
      * Revoke an automation token by ID.
      * @param {Object} options
      * @param {String} options.id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ErrorResponse}
      */
     revokeAutomationTokenId(options = {}) {
       return this.revokeAutomationTokenIdWithHttpInfo(options)

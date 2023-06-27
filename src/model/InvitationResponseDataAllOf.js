@@ -17,7 +17,7 @@ import Timestamps from './Timestamps';
 /**
  * The InvitationResponseDataAllOf model module.
  * @module model/InvitationResponseDataAllOf
- * @version 4.2.2
+ * @version 4.3.0
  */
 class InvitationResponseDataAllOf {
     /**

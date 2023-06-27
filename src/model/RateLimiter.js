@@ -11,12 +11,11 @@
  */
 
 import ApiClient from '../ApiClient';
-import RateLimiterResponse1 from './RateLimiterResponse1';
 
 /**
  * The RateLimiter model module.
  * @module model/RateLimiter
- * @version 4.2.2
+ * @version 4.3.0
  */
 class RateLimiter {
     /**
@@ -72,7 +71,7 @@ class RateLimiter {
                 obj['action'] = ApiClient.convertToType(data['action'], 'String');
             }
             if (data.hasOwnProperty('response')) {
-                obj['response'] = RateLimiterResponse1.constructFromObject(data['response']);
+                obj['response'] = ApiClient.convertToType(data['response'], {'String': 'String'});
             }
             if (data.hasOwnProperty('response_object_name')) {
                 obj['response_object_name'] = ApiClient.convertToType(data['response_object_name'], 'String');
@@ -139,7 +138,8 @@ RateLimiter.prototype['penalty_box_duration'] = undefined;
 RateLimiter.prototype['action'] = undefined;
 
 /**
- * @member {module:model/RateLimiterResponse1} response
+ * Custom response to be sent when the rate limit is exceeded. Required if `action` is `response`.
+ * @member {Object.<String, String>} response
  */
 RateLimiter.prototype['response'] = undefined;
 

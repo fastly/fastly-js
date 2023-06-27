@@ -16,7 +16,7 @@ import RelationshipMemberTlsCertificate from './RelationshipMemberTlsCertificate
 /**
  * The RelationshipTlsCertificateTlsCertificate model module.
  * @module model/RelationshipTlsCertificateTlsCertificate
- * @version 4.2.2
+ * @version 4.3.0
  */
 class RelationshipTlsCertificateTlsCertificate {
     /**

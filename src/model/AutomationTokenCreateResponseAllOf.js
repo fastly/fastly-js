@@ -11,11 +11,14 @@
  */
 
 import ApiClient from '../ApiClient';
+import ReadOnlyCustomerId from './ReadOnlyCustomerId';
+import ReadOnlyId from './ReadOnlyId';
+import ReadOnlyUserId from './ReadOnlyUserId';
 
 /**
  * The AutomationTokenCreateResponseAllOf model module.
  * @module model/AutomationTokenCreateResponseAllOf
- * @version 4.2.2
+ * @version 4.3.0
  */
 class AutomationTokenCreateResponseAllOf {
     /**
@@ -47,13 +50,13 @@ class AutomationTokenCreateResponseAllOf {
             obj = obj || new AutomationTokenCreateResponseAllOf();
 
             if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
+                obj['id'] = ReadOnlyId.constructFromObject(data['id']);
             }
             if (data.hasOwnProperty('user_id')) {
-                obj['user_id'] = ApiClient.convertToType(data['user_id'], 'String');
+                obj['user_id'] = ReadOnlyUserId.constructFromObject(data['user_id']);
             }
             if (data.hasOwnProperty('customer_id')) {
-                obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
+                obj['customer_id'] = ReadOnlyCustomerId.constructFromObject(data['customer_id']);
             }
             if (data.hasOwnProperty('sudo_expires_at')) {
                 obj['sudo_expires_at'] = ApiClient.convertToType(data['sudo_expires_at'], 'Date');
@@ -78,17 +81,17 @@ class AutomationTokenCreateResponseAllOf {
 }
 
 /**
- * @member {String} id
+ * @member {module:model/ReadOnlyId} id
  */
 AutomationTokenCreateResponseAllOf.prototype['id'] = undefined;
 
 /**
- * @member {String} user_id
+ * @member {module:model/ReadOnlyUserId} user_id
  */
 AutomationTokenCreateResponseAllOf.prototype['user_id'] = undefined;
 
 /**
- * @member {String} customer_id
+ * @member {module:model/ReadOnlyCustomerId} customer_id
  */
 AutomationTokenCreateResponseAllOf.prototype['customer_id'] = undefined;
 

@@ -13,19 +13,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The RateLimiterResponse1 model module.
- * @module model/RateLimiterResponse1
- * @version 4.2.2
+ * The ErrorResponse model module.
+ * @module model/ErrorResponse
+ * @version 4.3.0
  */
-class RateLimiterResponse1 {
+class ErrorResponse {
     /**
-     * Constructs a new <code>RateLimiterResponse1</code>.
-     * Custom response to be sent when the rate limit is exceeded. Required if &#x60;action&#x60; is &#x60;response&#x60;.
-     * @alias module:model/RateLimiterResponse1
+     * Constructs a new <code>ErrorResponse</code>.
+     * @alias module:model/ErrorResponse
      */
     constructor() { 
         
-        RateLimiterResponse1.initialize(this);
+        ErrorResponse.initialize(this);
     }
 
     /**
@@ -37,24 +36,27 @@ class RateLimiterResponse1 {
     }
 
     /**
-     * Constructs a <code>RateLimiterResponse1</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>ErrorResponse</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RateLimiterResponse1} obj Optional instance to populate.
-     * @return {module:model/RateLimiterResponse1} The populated <code>RateLimiterResponse1</code> instance.
+     * @param {module:model/ErrorResponse} obj Optional instance to populate.
+     * @return {module:model/ErrorResponse} The populated <code>ErrorResponse</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new RateLimiterResponse1();
+            obj = obj || new ErrorResponse();
 
+            if (data.hasOwnProperty('detail')) {
+                obj['detail'] = ApiClient.convertToType(data['detail'], 'String');
+            }
+            if (data.hasOwnProperty('errors')) {
+                obj['errors'] = ApiClient.convertToType(data['errors'], [Object]);
+            }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'Number');
             }
-            if (data.hasOwnProperty('content_type')) {
-                obj['content_type'] = ApiClient.convertToType(data['content_type'], 'String');
-            }
-            if (data.hasOwnProperty('content')) {
-                obj['content'] = ApiClient.convertToType(data['content'], 'String');
+            if (data.hasOwnProperty('title')) {
+                obj['title'] = ApiClient.convertToType(data['title'], 'String');
             }
         }
         return obj;
@@ -64,27 +66,29 @@ class RateLimiterResponse1 {
 }
 
 /**
- * HTTP status code for custom limit enforcement response.
+ * @member {String} detail
+ */
+ErrorResponse.prototype['detail'] = undefined;
+
+/**
+ * @member {Array.<Object>} errors
+ */
+ErrorResponse.prototype['errors'] = undefined;
+
+/**
  * @member {Number} status
  */
-RateLimiterResponse1.prototype['status'] = undefined;
+ErrorResponse.prototype['status'] = undefined;
 
 /**
- * MIME type for custom limit enforcement response.
- * @member {String} content_type
+ * @member {String} title
  */
-RateLimiterResponse1.prototype['content_type'] = undefined;
-
-/**
- * Response body for custom limit enforcement response.
- * @member {String} content
- */
-RateLimiterResponse1.prototype['content'] = undefined;
+ErrorResponse.prototype['title'] = undefined;
 
 
 
 
 
 
-export default RateLimiterResponse1;
+export default ErrorResponse;
 

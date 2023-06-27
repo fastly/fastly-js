@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**service_id** | **String** |  | [optional] [readonly] 
+**service_id** | [**ReadOnlyIdService**](ReadOnlyIdService.md) |  | [optional] 
 **start_time** | **Number** |  | [optional] 
 
 

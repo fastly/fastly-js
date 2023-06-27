@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingScalyrAllOf model module.
  * @module model/LoggingScalyrAllOf
- * @version 4.2.2
+ * @version 4.3.0
  */
 class LoggingScalyrAllOf {
     /**

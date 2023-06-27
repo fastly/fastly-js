@@ -346,9 +346,11 @@ Class | Method | Description
 *Fastly.PurgeApi* | [**purgeAll**](docs/PurgeApi.md#purgeAll) | Purge everything from a service
 *Fastly.PurgeApi* | [**purgeSingleUrl**](docs/PurgeApi.md#purgeSingleUrl) | Purge a URL
 *Fastly.PurgeApi* | [**purgeTag**](docs/PurgeApi.md#purgeTag) | Purge by surrogate key tag
+*Fastly.RateLimiterApi* | [**createRateLimiter**](docs/RateLimiterApi.md#createRateLimiter) | Create a rate limiter
 *Fastly.RateLimiterApi* | [**deleteRateLimiter**](docs/RateLimiterApi.md#deleteRateLimiter) | Delete a rate limiter
 *Fastly.RateLimiterApi* | [**getRateLimiter**](docs/RateLimiterApi.md#getRateLimiter) | Get a rate limiter
 *Fastly.RateLimiterApi* | [**listRateLimiters**](docs/RateLimiterApi.md#listRateLimiters) | List rate limiters
+*Fastly.RateLimiterApi* | [**updateRateLimiter**](docs/RateLimiterApi.md#updateRateLimiter) | Update a rate limiter
 *Fastly.RealtimeApi* | [**getStatsLast120Seconds**](docs/RealtimeApi.md#getStatsLast120Seconds) | Get real-time data for the last 120 seconds
 *Fastly.RealtimeApi* | [**getStatsLast120SecondsLimitEntries**](docs/RealtimeApi.md#getStatsLast120SecondsLimitEntries) | Get a limited number of real-time data entries
 *Fastly.RealtimeApi* | [**getStatsLastSecond**](docs/RealtimeApi.md#getStatsLastSecond) | Get real-time data from specified time
@@ -485,7 +487,6 @@ The fastly-js API client currently does not support the following endpoints:
 - [`/customer/{customer_id}/contacts`](https://developer.fastly.com/reference/api/account/contact) (POST)
 - [`/metrics/domains/services/{service_id}`](https://developer.fastly.com/reference/api/metrics-stats/domain-inspector/historical) (GET)
 - [`/metrics/origins/services/{service_id}`](https://developer.fastly.com/reference/api/metrics-stats/origin-inspector/historical) (GET)
-- [`/rate-limiters/{rate_limiter_id}`](https://developer.fastly.com/reference/api/vcl-services/rate-limiter) (PUT)
 - [`/resources/stores/secret/client-key`](https://developer.fastly.com/reference/api/services/resources/secret-store) (POST)
 - [`/resources/stores/secret/signing-key`](https://developer.fastly.com/reference/api/services/resources/secret-store) (GET)
 - [`/resources/stores/secret/{store_id}/secrets/{secret_name}`](https://developer.fastly.com/reference/api/services/resources/secret) (DELETE, GET)
@@ -507,7 +508,6 @@ The fastly-js API client currently does not support the following endpoints:
 - [`/service/{service_id}/version/{version_id}/generated_vcl`](https://developer.fastly.com/reference/api/vcl-services/vcl) (GET)
 - [`/service/{service_id}/version/{version_id}/logging/kafka/{logging_kafka_name}`](https://developer.fastly.com/reference/api/logging/kafka) (PUT)
 - [`/service/{service_id}/version/{version_id}/logging/kinesis/{logging_kinesis_name}`](https://developer.fastly.com/reference/api/logging/kinesis) (PUT)
-- [`/service/{service_id}/version/{version_id}/rate-limiters`](https://developer.fastly.com/reference/api/vcl-services/rate-limiter) (POST)
 - [`/service/{service_id}/version/{version_id}/request_settings`](https://developer.fastly.com/reference/api/vcl-services/request-settings) (POST)
 - [`/service/{service_id}/version/{version_id}/response_object/{response_object_name}`](https://developer.fastly.com/reference/api/vcl-services/response-object) (PUT)
 - [`/service/{service_id}/version/{version_id}/response_object`](https://developer.fastly.com/reference/api/vcl-services/response-object) (POST)

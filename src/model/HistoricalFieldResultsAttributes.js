@@ -12,12 +12,13 @@
 
 import ApiClient from '../ApiClient';
 import HistoricalFieldResultsAttributesAllOf from './HistoricalFieldResultsAttributesAllOf';
+import ReadOnlyIdService from './ReadOnlyIdService';
 import Results from './Results';
 
 /**
  * The HistoricalFieldResultsAttributes model module.
  * @module model/HistoricalFieldResultsAttributes
- * @version 4.2.2
+ * @version 4.3.0
  */
 class HistoricalFieldResultsAttributes {
     /**
@@ -701,7 +702,7 @@ class HistoricalFieldResultsAttributes {
                 obj['ddos_action_blackhole'] = ApiClient.convertToType(data['ddos_action_blackhole'], 'Number');
             }
             if (data.hasOwnProperty('service_id')) {
-                obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
+                obj['service_id'] = ReadOnlyIdService.constructFromObject(data['service_id']);
             }
             if (data.hasOwnProperty('start_time')) {
                 obj['start_time'] = ApiClient.convertToType(data['start_time'], 'Number');
@@ -2010,7 +2011,7 @@ HistoricalFieldResultsAttributes.prototype['ddos_action_close'] = undefined;
 HistoricalFieldResultsAttributes.prototype['ddos_action_blackhole'] = undefined;
 
 /**
- * @member {String} service_id
+ * @member {module:model/ReadOnlyIdService} service_id
  */
 HistoricalFieldResultsAttributes.prototype['service_id'] = undefined;
 
@@ -3103,7 +3104,7 @@ Results.prototype['ddos_action_close'] = undefined;
 Results.prototype['ddos_action_blackhole'] = undefined;
 // Implement HistoricalFieldResultsAttributesAllOf interface:
 /**
- * @member {String} service_id
+ * @member {module:model/ReadOnlyIdService} service_id
  */
 HistoricalFieldResultsAttributesAllOf.prototype['service_id'] = undefined;
 /**

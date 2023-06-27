@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AutomationToken model module.
  * @module model/AutomationToken
- * @version 4.2.2
+ * @version 4.3.0
  */
 class AutomationToken {
     /**

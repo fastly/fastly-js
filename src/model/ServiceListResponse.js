@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The ServiceListResponse model module.
  * @module model/ServiceListResponse
- * @version 4.2.2
+ * @version 4.3.0
  */
 class ServiceListResponse {
     /**
