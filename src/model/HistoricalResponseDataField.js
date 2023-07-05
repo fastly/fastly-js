@@ -16,7 +16,7 @@ import Results from './Results';
 /**
  * The HistoricalResponseDataField model module.
  * @module model/HistoricalResponseDataField
- * @version 4.3.0
+ * @version 4.4.0
  */
 class HistoricalResponseDataField {
     /**

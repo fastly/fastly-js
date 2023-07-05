@@ -31,6 +31,8 @@ import AwsRegion from './model/AwsRegion';
 import Backend from './model/Backend';
 import BackendResponse from './model/BackendResponse';
 import BackendResponseAllOf from './model/BackendResponseAllOf';
+import Batch from './model/Batch';
+import BatchErrors from './model/BatchErrors';
 import Billing from './model/Billing';
 import BillingAddressAttributes from './model/BillingAddressAttributes';
 import BillingAddressRequest from './model/BillingAddressRequest';
@@ -146,6 +148,8 @@ import IncludedWithWafActiveRuleItem from './model/IncludedWithWafActiveRuleItem
 import IncludedWithWafExclusionItem from './model/IncludedWithWafExclusionItem';
 import IncludedWithWafFirewallVersionItem from './model/IncludedWithWafFirewallVersionItem';
 import IncludedWithWafRuleItem from './model/IncludedWithWafRuleItem';
+import InlineObject from './model/InlineObject';
+import InlineObject1 from './model/InlineObject1';
 import InlineResponse200 from './model/InlineResponse200';
 import InlineResponse2001 from './model/InlineResponse2001';
 import InlineResponse2002 from './model/InlineResponse2002';
@@ -391,6 +395,7 @@ import RoleUser from './model/RoleUser';
 import SchemasContactResponse from './model/SchemasContactResponse';
 import SchemasSnippetResponse from './model/SchemasSnippetResponse';
 import SchemasUserResponse from './model/SchemasUserResponse';
+import SchemasVclResponse from './model/SchemasVclResponse';
 import SchemasVersion from './model/SchemasVersion';
 import SchemasVersionResponse from './model/SchemasVersionResponse';
 import SchemasWafFirewallVersion from './model/SchemasWafFirewallVersion';
@@ -508,6 +513,7 @@ import TokenCreatedResponse from './model/TokenCreatedResponse';
 import TokenCreatedResponseAllOf from './model/TokenCreatedResponseAllOf';
 import TokenResponse from './model/TokenResponse';
 import TokenResponseAllOf from './model/TokenResponseAllOf';
+import TokensAdditionalProps from './model/TokensAdditionalProps';
 import TypeBillingAddress from './model/TypeBillingAddress';
 import TypeContact from './model/TypeContact';
 import TypeCustomer from './model/TypeCustomer';
@@ -540,9 +546,14 @@ import UpdateBillingAddressRequestData from './model/UpdateBillingAddressRequest
 import User from './model/User';
 import UserResponse from './model/UserResponse';
 import UserResponseAllOf from './model/UserResponseAllOf';
+import ValidatorResult from './model/ValidatorResult';
+import ValidatorResultData from './model/ValidatorResultData';
+import ValidatorResultDataAttributes from './model/ValidatorResultDataAttributes';
+import ValidatorResultDataAttributesMessages from './model/ValidatorResultDataAttributesMessages';
 import Vcl from './model/Vcl';
 import VclDiff from './model/VclDiff';
 import VclResponse from './model/VclResponse';
+import VclSyntaxHighlightingResponse from './model/VclSyntaxHighlightingResponse';
 import Version from './model/Version';
 import VersionCreateResponse from './model/VersionCreateResponse';
 import VersionDetail from './model/VersionDetail';
@@ -703,6 +714,7 @@ import TlsPrivateKeysApi from './api/TlsPrivateKeysApi';
 import TlsSubscriptionsApi from './api/TlsSubscriptionsApi';
 import TokensApi from './api/TokensApi';
 import UserApi from './api/UserApi';
+import VclApi from './api/VclApi';
 import VclDiffApi from './api/VclDiffApi';
 import VersionApi from './api/VersionApi';
 import WafActiveRulesApi from './api/WafActiveRulesApi';
@@ -747,7 +759,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 4.3.0
+* @version 4.4.0
 */
 export {
     /**
@@ -869,6 +881,18 @@ export {
      * @property {module:model/BackendResponseAllOf}
      */
     BackendResponseAllOf,
+
+    /**
+     * The Batch model constructor.
+     * @property {module:model/Batch}
+     */
+    Batch,
+
+    /**
+     * The BatchErrors model constructor.
+     * @property {module:model/BatchErrors}
+     */
+    BatchErrors,
 
     /**
      * The Billing model constructor.
@@ -1559,6 +1583,18 @@ export {
      * @property {module:model/IncludedWithWafRuleItem}
      */
     IncludedWithWafRuleItem,
+
+    /**
+     * The InlineObject model constructor.
+     * @property {module:model/InlineObject}
+     */
+    InlineObject,
+
+    /**
+     * The InlineObject1 model constructor.
+     * @property {module:model/InlineObject1}
+     */
+    InlineObject1,
 
     /**
      * The InlineResponse200 model constructor.
@@ -3031,6 +3067,12 @@ export {
     SchemasUserResponse,
 
     /**
+     * The SchemasVclResponse model constructor.
+     * @property {module:model/SchemasVclResponse}
+     */
+    SchemasVclResponse,
+
+    /**
      * The SchemasVersion model constructor.
      * @property {module:model/SchemasVersion}
      */
@@ -3733,6 +3775,12 @@ export {
     TokenResponseAllOf,
 
     /**
+     * The TokensAdditionalProps model constructor.
+     * @property {module:model/TokensAdditionalProps}
+     */
+    TokensAdditionalProps,
+
+    /**
      * The TypeBillingAddress model constructor.
      * @property {module:model/TypeBillingAddress}
      */
@@ -3925,6 +3973,30 @@ export {
     UserResponseAllOf,
 
     /**
+     * The ValidatorResult model constructor.
+     * @property {module:model/ValidatorResult}
+     */
+    ValidatorResult,
+
+    /**
+     * The ValidatorResultData model constructor.
+     * @property {module:model/ValidatorResultData}
+     */
+    ValidatorResultData,
+
+    /**
+     * The ValidatorResultDataAttributes model constructor.
+     * @property {module:model/ValidatorResultDataAttributes}
+     */
+    ValidatorResultDataAttributes,
+
+    /**
+     * The ValidatorResultDataAttributesMessages model constructor.
+     * @property {module:model/ValidatorResultDataAttributesMessages}
+     */
+    ValidatorResultDataAttributesMessages,
+
+    /**
      * The Vcl model constructor.
      * @property {module:model/Vcl}
      */
@@ -3941,6 +4013,12 @@ export {
      * @property {module:model/VclResponse}
      */
     VclResponse,
+
+    /**
+     * The VclSyntaxHighlightingResponse model constructor.
+     * @property {module:model/VclSyntaxHighlightingResponse}
+     */
+    VclSyntaxHighlightingResponse,
 
     /**
      * The Version model constructor.
@@ -4901,6 +4979,12 @@ export {
     * @property {module:api/UserApi}
     */
     UserApi,
+
+    /**
+    * The VclApi service constructor.
+    * @property {module:api/VclApi}
+    */
+    VclApi,
 
     /**
     * The VclDiffApi service constructor.

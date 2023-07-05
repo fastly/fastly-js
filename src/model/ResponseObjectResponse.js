@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The ResponseObjectResponse model module.
  * @module model/ResponseObjectResponse
- * @version 4.3.0
+ * @version 4.4.0
  */
 class ResponseObjectResponse {
     /**

@@ -1,5 +1,15 @@
 # Changelog
 
+## [v4.4.0](https://github.com/fastly/fastly-js/releases/tag/release/v4.4.0) (2023-07-05)
+
+**Enhancements:**
+
+- feat(vcl): support all vcl endpoints.
+
+**Bug fixes:**
+
+- fix(snippet): dynamic field switched from int to string.
+
 ## [v4.3.0](https://github.com/fastly/fastly-js/releases/tag/release/v4.3.0) (2023-06-27)
 
 **Enhancements:**

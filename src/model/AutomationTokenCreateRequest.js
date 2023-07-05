@@ -16,7 +16,7 @@ import AutomationTokenCreateRequestAttributes from './AutomationTokenCreateReque
 /**
  * The AutomationTokenCreateRequest model module.
  * @module model/AutomationTokenCreateRequest
- * @version 4.3.0
+ * @version 4.4.0
  */
 class AutomationTokenCreateRequest {
     /**

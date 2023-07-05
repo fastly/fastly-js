@@ -21,7 +21,7 @@ import RelationshipTlsDomainTlsDomain from './RelationshipTlsDomainTlsDomain';
 /**
  * The RelationshipsForTlsActivation model module.
  * @module model/RelationshipsForTlsActivation
- * @version 4.3.0
+ * @version 4.4.0
  */
 class RelationshipsForTlsActivation {
     /**

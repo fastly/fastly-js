@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingDatadogAllOf model module.
  * @module model/LoggingDatadogAllOf
- * @version 4.3.0
+ * @version 4.4.0
  */
 class LoggingDatadogAllOf {
     /**

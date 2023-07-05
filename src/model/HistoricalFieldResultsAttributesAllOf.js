@@ -16,7 +16,7 @@ import ReadOnlyIdService from './ReadOnlyIdService';
 /**
  * The HistoricalFieldResultsAttributesAllOf model module.
  * @module model/HistoricalFieldResultsAttributesAllOf
- * @version 4.3.0
+ * @version 4.4.0
  */
 class HistoricalFieldResultsAttributesAllOf {
     /**

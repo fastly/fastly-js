@@ -20,7 +20,7 @@ import TypeInvitation from './TypeInvitation';
 /**
  * The InvitationResponseData model module.
  * @module model/InvitationResponseData
- * @version 4.3.0
+ * @version 4.4.0
  */
 class InvitationResponseData {
     /**

@@ -22,13 +22,13 @@ import HealthcheckResponse from './HealthcheckResponse';
 import RequestSettingsResponse from './RequestSettingsResponse';
 import ResponseObjectResponse from './ResponseObjectResponse';
 import SchemasSnippetResponse from './SchemasSnippetResponse';
-import VclResponse from './VclResponse';
+import SchemasVclResponse from './SchemasVclResponse';
 import VersionDetailSettings from './VersionDetailSettings';
 
 /**
  * The VersionDetail model module.
  * @module model/VersionDetail
- * @version 4.3.0
+ * @version 4.4.0
  */
 class VersionDetail {
     /**
@@ -96,7 +96,7 @@ class VersionDetail {
                 obj['snippets'] = ApiClient.convertToType(data['snippets'], [SchemasSnippetResponse]);
             }
             if (data.hasOwnProperty('vcls')) {
-                obj['vcls'] = ApiClient.convertToType(data['vcls'], [VclResponse]);
+                obj['vcls'] = ApiClient.convertToType(data['vcls'], [SchemasVclResponse]);
             }
             if (data.hasOwnProperty('wordpress')) {
                 obj['wordpress'] = ApiClient.convertToType(data['wordpress'], [Object]);
@@ -181,7 +181,7 @@ VersionDetail.prototype['snippets'] = undefined;
 
 /**
  * List of VCL files for this service.
- * @member {Array.<module:model/VclResponse>} vcls
+ * @member {Array.<module:model/SchemasVclResponse>} vcls
  */
 VersionDetail.prototype['vcls'] = undefined;
 

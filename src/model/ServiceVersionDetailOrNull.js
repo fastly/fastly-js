@@ -22,15 +22,15 @@ import HealthcheckResponse from './HealthcheckResponse';
 import RequestSettingsResponse from './RequestSettingsResponse';
 import ResponseObjectResponse from './ResponseObjectResponse';
 import SchemasSnippetResponse from './SchemasSnippetResponse';
+import SchemasVclResponse from './SchemasVclResponse';
 import SchemasVersionResponse from './SchemasVersionResponse';
-import VclResponse from './VclResponse';
 import VersionDetail from './VersionDetail';
 import VersionDetailSettings from './VersionDetailSettings';
 
 /**
  * The ServiceVersionDetailOrNull model module.
  * @module model/ServiceVersionDetailOrNull
- * @version 4.3.0
+ * @version 4.4.0
  */
 class ServiceVersionDetailOrNull {
     /**
@@ -135,7 +135,7 @@ class ServiceVersionDetailOrNull {
                 obj['snippets'] = ApiClient.convertToType(data['snippets'], [SchemasSnippetResponse]);
             }
             if (data.hasOwnProperty('vcls')) {
-                obj['vcls'] = ApiClient.convertToType(data['vcls'], [VclResponse]);
+                obj['vcls'] = ApiClient.convertToType(data['vcls'], [SchemasVclResponse]);
             }
             if (data.hasOwnProperty('wordpress')) {
                 obj['wordpress'] = ApiClient.convertToType(data['wordpress'], [Object]);
@@ -289,7 +289,7 @@ ServiceVersionDetailOrNull.prototype['snippets'] = undefined;
 
 /**
  * List of VCL files for this service.
- * @member {Array.<module:model/VclResponse>} vcls
+ * @member {Array.<module:model/SchemasVclResponse>} vcls
  */
 ServiceVersionDetailOrNull.prototype['vcls'] = undefined;
 
@@ -421,7 +421,7 @@ VersionDetail.prototype['settings'] = undefined;
 VersionDetail.prototype['snippets'] = undefined;
 /**
  * List of VCL files for this service.
- * @member {Array.<module:model/VclResponse>} vcls
+ * @member {Array.<module:model/SchemasVclResponse>} vcls
  */
 VersionDetail.prototype['vcls'] = undefined;
 /**

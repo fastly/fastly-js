@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Snippet model module.
  * @module model/Snippet
- * @version 4.3.0
+ * @version 4.4.0
  */
 class Snippet {
     /**
@@ -50,7 +50,7 @@ class Snippet {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('dynamic')) {
-                obj['dynamic'] = ApiClient.convertToType(data['dynamic'], 'Number');
+                obj['dynamic'] = ApiClient.convertToType(data['dynamic'], 'String');
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
@@ -105,22 +105,22 @@ Snippet.prototype['priority'] = '100';
 
 /**
  * Allowed values for the <code>dynamic</code> property.
- * @enum {Number}
+ * @enum {String}
  * @readonly
  */
 Snippet['DynamicEnum'] = {
 
     /**
-     * value: 0
+     * value: "0"
      * @const
      */
-    "0": 0,
+    "regular": "0",
 
     /**
-     * value: 1
+     * value: "1"
      * @const
      */
-    "1": 1
+    "dynamic": "1"
 };
 
 

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TlsCommon model module.
  * @module model/TlsCommon
- * @version 4.3.0
+ * @version 4.4.0
  */
 class TlsCommon {
     /**

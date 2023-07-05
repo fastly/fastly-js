@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Timestamps model module.
  * @module model/Timestamps
- * @version 4.3.0
+ * @version 4.4.0
  */
 class Timestamps {
     /**

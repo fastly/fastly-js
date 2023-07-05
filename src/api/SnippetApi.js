@@ -18,7 +18,7 @@ import SnippetResponse from '../model/SnippetResponse';
 /**
 * Snippet service.
 * @module api/SnippetApi
-* @version 4.3.0
+* @version 4.4.0
 */
 export default class SnippetApi {
 
@@ -44,7 +44,7 @@ export default class SnippetApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.name] - The name for the snippet.
-     * @param {module:model/Number} [options.dynamic] - Sets the snippet version.
+     * @param {module:model/String} [options.dynamic] - Sets the snippet version.
      * @param {module:model/String} [options.type] - The location in generated VCL where the snippet should be placed.
      * @param {String} [options.content] - The VCL code that specifies exactly what the snippet does.
      * @param {String} [options.priority='100'] - Priority determines execution order. Lower numbers execute first.
@@ -105,7 +105,7 @@ export default class SnippetApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.name] - The name for the snippet.
-     * @param {module:model/Number} [options.dynamic] - Sets the snippet version.
+     * @param {module:model/String} [options.dynamic] - Sets the snippet version.
      * @param {module:model/String} [options.type] - The location in generated VCL where the snippet should be placed.
      * @param {String} [options.content] - The VCL code that specifies exactly what the snippet does.
      * @param {String} [options.priority='100'] - Priority determines execution order. Lower numbers execute first.
@@ -398,7 +398,7 @@ export default class SnippetApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.snippet_id - Alphanumeric string identifying a VCL Snippet.
      * @param {String} [options.name] - The name for the snippet.
-     * @param {module:model/Number} [options.dynamic] - Sets the snippet version.
+     * @param {module:model/String} [options.dynamic] - Sets the snippet version.
      * @param {module:model/String} [options.type] - The location in generated VCL where the snippet should be placed.
      * @param {String} [options.content] - The VCL code that specifies exactly what the snippet does.
      * @param {String} [options.priority='100'] - Priority determines execution order. Lower numbers execute first.
@@ -459,7 +459,7 @@ export default class SnippetApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {String} options.snippet_id - Alphanumeric string identifying a VCL Snippet.
      * @param {String} [options.name] - The name for the snippet.
-     * @param {module:model/Number} [options.dynamic] - Sets the snippet version.
+     * @param {module:model/String} [options.dynamic] - Sets the snippet version.
      * @param {module:model/String} [options.type] - The location in generated VCL where the snippet should be placed.
      * @param {String} [options.content] - The VCL code that specifies exactly what the snippet does.
      * @param {String} [options.priority='100'] - Priority determines execution order. Lower numbers execute first.

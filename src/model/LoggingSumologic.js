@@ -18,7 +18,7 @@ import LoggingSumologicAllOf from './LoggingSumologicAllOf';
 /**
  * The LoggingSumologic model module.
  * @module model/LoggingSumologic
- * @version 4.3.0
+ * @version 4.4.0
  */
 class LoggingSumologic {
     /**

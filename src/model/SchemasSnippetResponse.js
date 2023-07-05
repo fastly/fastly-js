@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The SchemasSnippetResponse model module.
  * @module model/SchemasSnippetResponse
- * @version 4.3.0
+ * @version 4.4.0
  */
 class SchemasSnippetResponse {
     /**
@@ -59,7 +59,7 @@ class SchemasSnippetResponse {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('dynamic')) {
-                obj['dynamic'] = ApiClient.convertToType(data['dynamic'], 'Number');
+                obj['dynamic'] = ApiClient.convertToType(data['dynamic'], 'String');
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
@@ -223,22 +223,22 @@ SnippetResponseAllOf.prototype['id'] = undefined;
 
 /**
  * Allowed values for the <code>dynamic</code> property.
- * @enum {Number}
+ * @enum {String}
  * @readonly
  */
 SchemasSnippetResponse['DynamicEnum'] = {
 
     /**
-     * value: 0
+     * value: "0"
      * @const
      */
-    "0": 0,
+    "regular": "0",
 
     /**
-     * value: 1
+     * value: "1"
      * @const
      */
-    "1": 1
+    "dynamic": "1"
 };
 
 

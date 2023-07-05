@@ -18,7 +18,7 @@ import ResponseObjectResponse from '../model/ResponseObjectResponse';
 /**
 * ResponseObject service.
 * @module api/ResponseObjectApi
-* @version 4.3.0
+* @version 4.4.0
 */
 export default class ResponseObjectApi {
 

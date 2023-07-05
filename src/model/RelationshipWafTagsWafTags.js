@@ -16,7 +16,7 @@ import RelationshipMemberWafTag from './RelationshipMemberWafTag';
 /**
  * The RelationshipWafTagsWafTags model module.
  * @module model/RelationshipWafTagsWafTags
- * @version 4.3.0
+ * @version 4.4.0
  */
 class RelationshipWafTagsWafTags {
     /**

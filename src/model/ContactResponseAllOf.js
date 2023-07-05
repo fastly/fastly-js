@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ContactResponseAllOf model module.
  * @module model/ContactResponseAllOf
- * @version 4.3.0
+ * @version 4.4.0
  */
 class ContactResponseAllOf {
     /**
