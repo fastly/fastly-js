@@ -16,7 +16,7 @@ import BillingEstimateResponseAllOfLine from './BillingEstimateResponseAllOfLine
 /**
  * The BillingEstimateResponseAllOfLines model module.
  * @module model/BillingEstimateResponseAllOfLines
- * @version 4.4.0
+ * @version 5.0.0
  */
 class BillingEstimateResponseAllOfLines {
     /**

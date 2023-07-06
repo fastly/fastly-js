@@ -17,7 +17,7 @@ import BulkUpdateAclEntryAllOf from './BulkUpdateAclEntryAllOf';
 /**
  * The BulkUpdateAclEntry model module.
  * @module model/BulkUpdateAclEntry
- * @version 4.4.0
+ * @version 5.0.0
  */
 class BulkUpdateAclEntry {
     /**
@@ -80,7 +80,7 @@ class BulkUpdateAclEntry {
 /**
  * Whether to negate the match. Useful primarily when creating individual exceptions to larger subnets.
  * @member {module:model/BulkUpdateAclEntry.NegatedEnum} negated
- * @default NegatedEnum.0
+ * @default NegatedEnum.disable
  */
 BulkUpdateAclEntry.prototype['negated'] = undefined;
 
@@ -117,7 +117,7 @@ BulkUpdateAclEntry.prototype['id'] = undefined;
 /**
  * Whether to negate the match. Useful primarily when creating individual exceptions to larger subnets.
  * @member {module:model/AclEntry.NegatedEnum} negated
- * @default NegatedEnum.0
+ * @default NegatedEnum.disable
  */
 AclEntry.prototype['negated'] = undefined;
 /**
@@ -158,13 +158,13 @@ BulkUpdateAclEntry['NegatedEnum'] = {
      * value: 0
      * @const
      */
-    "0": 0,
+    "disable": 0,
 
     /**
      * value: 1
      * @const
      */
-    "1": 1
+    "enable": 1
 };
 
 

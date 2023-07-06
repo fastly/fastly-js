@@ -16,7 +16,7 @@ import ApiClient from "../ApiClient";
 /**
 * IamServiceGroups service.
 * @module api/IamServiceGroupsApi
-* @version 4.4.0
+* @version 5.0.0
 */
 export default class IamServiceGroupsApi {
 
@@ -35,6 +35,119 @@ export default class IamServiceGroupsApi {
         }
     }
 
+
+    /**
+     * Add services in a service group.
+     * @param {Object} options
+     * @param {String} options.service_group_id - Alphanumeric string identifying the service group.
+     * @param {Object.<String, {String: Object}>} [options.request_body]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    addServiceGroupServicesWithHttpInfo(options = {}) {
+      let postBody = options['request_body'];
+      // Verify the required parameter 'service_group_id' is set.
+      if (options['service_group_id'] === undefined || options['service_group_id'] === null) {
+        throw new Error("Missing the required parameter 'service_group_id'.");
+      }
+
+      let pathParams = {
+        'service_group_id': options['service_group_id']
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/service-groups/{service_group_id}/services', 'POST',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Add services in a service group.
+     * @param {Object} options
+     * @param {String} options.service_group_id - Alphanumeric string identifying the service group.
+     * @param {Object.<String, {String: Object}>} [options.request_body]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    addServiceGroupServices(options = {}) {
+      return this.addServiceGroupServicesWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+    /**
+     * Create a service group.
+     * @param {Object} options
+     * @param {Object.<String, {String: Object}>} [options.request_body]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    createAServiceGroupWithHttpInfo(options = {}) {
+      let postBody = options['request_body'];
+
+      let pathParams = {
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/service-groups', 'POST',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Create a service group.
+     * @param {Object} options
+     * @param {Object.<String, {String: Object}>} [options.request_body]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    createAServiceGroup(options = {}) {
+      return this.createAServiceGroupWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
 
     /**
      * Delete a service group.
@@ -268,6 +381,126 @@ export default class IamServiceGroupsApi {
      */
     listServiceGroups(options = {}) {
       return this.listServiceGroupsWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+    /**
+     * Remove services from a service group.
+     * @param {Object} options
+     * @param {String} options.service_group_id - Alphanumeric string identifying the service group.
+     * @param {Object.<String, {String: Object}>} [options.request_body]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    removeServiceGroupServicesWithHttpInfo(options = {}) {
+      let postBody = options['request_body'];
+      // Verify the required parameter 'service_group_id' is set.
+      if (options['service_group_id'] === undefined || options['service_group_id'] === null) {
+        throw new Error("Missing the required parameter 'service_group_id'.");
+      }
+
+      let pathParams = {
+        'service_group_id': options['service_group_id']
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = ['application/json'];
+      let accepts = [];
+      let returnType = null;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/service-groups/{service_group_id}/services', 'DELETE',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Remove services from a service group.
+     * @param {Object} options
+     * @param {String} options.service_group_id - Alphanumeric string identifying the service group.
+     * @param {Object.<String, {String: Object}>} [options.request_body]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    removeServiceGroupServices(options = {}) {
+      return this.removeServiceGroupServicesWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+    /**
+     * Update a service group.
+     * @param {Object} options
+     * @param {String} options.service_group_id - Alphanumeric string identifying the service group.
+     * @param {Object.<String, {String: Object}>} [options.request_body]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
+     */
+    updateAServiceGroupWithHttpInfo(options = {}) {
+      let postBody = options['request_body'];
+      // Verify the required parameter 'service_group_id' is set.
+      if (options['service_group_id'] === undefined || options['service_group_id'] === null) {
+        throw new Error("Missing the required parameter 'service_group_id'.");
+      }
+
+      let pathParams = {
+        'service_group_id': options['service_group_id']
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = Object;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/service-groups/{service_group_id}', 'PATCH',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Update a service group.
+     * @param {Object} options
+     * @param {String} options.service_group_id - Alphanumeric string identifying the service group.
+     * @param {Object.<String, {String: Object}>} [options.request_body]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
+     */
+    updateAServiceGroup(options = {}) {
+      return this.updateAServiceGroupWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -11,12 +11,14 @@
  */
 
 import ApiClient from '../ApiClient';
+import RealtimeEntryAggregated from './RealtimeEntryAggregated';
+import RealtimeEntryRecorded from './RealtimeEntryRecorded';
 import RealtimeMeasurements from './RealtimeMeasurements';
 
 /**
  * The RealtimeEntry model module.
  * @module model/RealtimeEntry
- * @version 4.4.0
+ * @version 5.0.0
  */
 class RealtimeEntry {
     /**
@@ -49,10 +51,10 @@ class RealtimeEntry {
             obj = obj || new RealtimeEntry();
 
             if (data.hasOwnProperty('recorded')) {
-                obj['recorded'] = ApiClient.convertToType(data['recorded'], 'Number');
+                obj['recorded'] = RealtimeEntryRecorded.constructFromObject(data['recorded']);
             }
             if (data.hasOwnProperty('aggregated')) {
-                obj['aggregated'] = ApiClient.convertToType(data['aggregated'], RealtimeMeasurements);
+                obj['aggregated'] = RealtimeEntryAggregated.constructFromObject(data['aggregated']);
             }
             if (data.hasOwnProperty('datacenter')) {
                 obj['datacenter'] = ApiClient.convertToType(data['datacenter'], {'String': RealtimeMeasurements});
@@ -65,14 +67,12 @@ class RealtimeEntry {
 }
 
 /**
- * The Unix timestamp at which this record's data was generated.
- * @member {Number} recorded
+ * @member {module:model/RealtimeEntryRecorded} recorded
  */
 RealtimeEntry.prototype['recorded'] = undefined;
 
 /**
- * Aggregates [measurements](#measurements-data-model) across all Fastly POPs.
- * @member {module:model/RealtimeMeasurements} aggregated
+ * @member {module:model/RealtimeEntryAggregated} aggregated
  */
 RealtimeEntry.prototype['aggregated'] = undefined;
 

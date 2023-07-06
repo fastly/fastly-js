@@ -19,7 +19,7 @@ import LoggingUseTls from '../model/LoggingUseTls';
 /**
 * LoggingKafka service.
 * @module api/LoggingKafkaApi
-* @version 4.4.0
+* @version 5.0.0
 */
 export default class LoggingKafkaApi {
 
@@ -365,6 +365,78 @@ export default class LoggingKafkaApi {
      */
     listLogKafka(options = {}) {
       return this.listLogKafkaWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+    /**
+     * Update the Kafka logging endpoint for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_kafka_name - The name for the real-time logging configuration.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingKafkaResponse} and HTTP response
+     */
+    updateLogKafkaWithHttpInfo(options = {}) {
+      let postBody = null;
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
+      }
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
+      }
+      // Verify the required parameter 'logging_kafka_name' is set.
+      if (options['logging_kafka_name'] === undefined || options['logging_kafka_name'] === null) {
+        throw new Error("Missing the required parameter 'logging_kafka_name'.");
+      }
+
+      let pathParams = {
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'logging_kafka_name': options['logging_kafka_name']
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = ['application/x-www-form-urlencoded'];
+      let accepts = ['application/json'];
+      let returnType = LoggingKafkaResponse;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/service/{service_id}/version/{version_id}/logging/kafka/{logging_kafka_name}', 'PUT',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Update the Kafka logging endpoint for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.logging_kafka_name - The name for the real-time logging configuration.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingKafkaResponse}
+     */
+    updateLogKafka(options = {}) {
+      return this.updateLogKafkaWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

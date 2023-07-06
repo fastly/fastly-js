@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RateLimiterResponseAllOf model module.
  * @module model/RateLimiterResponseAllOf
- * @version 4.4.0
+ * @version 5.0.0
  */
 class RateLimiterResponseAllOf {
     /**

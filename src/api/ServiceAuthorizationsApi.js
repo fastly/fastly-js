@@ -12,6 +12,7 @@
 
 
 import ApiClient from "../ApiClient";
+import InlineResponse2007 from '../model/InlineResponse2007';
 import ServiceAuthorization from '../model/ServiceAuthorization';
 import ServiceAuthorizationResponse from '../model/ServiceAuthorizationResponse';
 import ServiceAuthorizationsResponse from '../model/ServiceAuthorizationsResponse';
@@ -19,7 +20,7 @@ import ServiceAuthorizationsResponse from '../model/ServiceAuthorizationsRespons
 /**
 * ServiceAuthorizations service.
 * @module api/ServiceAuthorizationsApi
-* @version 4.4.0
+* @version 5.0.0
 */
 export default class ServiceAuthorizationsApi {
 
@@ -145,6 +146,59 @@ export default class ServiceAuthorizationsApi {
      */
     deleteServiceAuthorization(options = {}) {
       return this.deleteServiceAuthorizationWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+    /**
+     * Delete service authorizations.
+     * @param {Object} options
+     * @param {Object.<String, {String: Object}>} [options.request_body]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2007} and HTTP response
+     */
+    deleteServiceAuthorization2WithHttpInfo(options = {}) {
+      let postBody = options['request_body'];
+
+      let pathParams = {
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = ['application/vnd.api+json; ext=bulk'];
+      let accepts = ['application/vnd.api+json; ext=bulk'];
+      let returnType = InlineResponse2007;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/service-authorizations', 'DELETE',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Delete service authorizations.
+     * @param {Object} options
+     * @param {Object.<String, {String: Object}>} [options.request_body]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2007}
+     */
+    deleteServiceAuthorization2(options = {}) {
+      return this.deleteServiceAuthorization2WithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -320,6 +374,59 @@ export default class ServiceAuthorizationsApi {
      */
     updateServiceAuthorization(options = {}) {
       return this.updateServiceAuthorizationWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+    /**
+     * Update service authorizations.
+     * @param {Object} options
+     * @param {Object.<String, {String: Object}>} [options.request_body]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ServiceAuthorizationsResponse} and HTTP response
+     */
+    updateServiceAuthorization2WithHttpInfo(options = {}) {
+      let postBody = options['request_body'];
+
+      let pathParams = {
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = ['application/vnd.api+json; ext=bulk'];
+      let accepts = ['application/vnd.api+json; ext=bulk'];
+      let returnType = ServiceAuthorizationsResponse;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/service-authorizations', 'PATCH',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Update service authorizations.
+     * @param {Object} options
+     * @param {Object.<String, {String: Object}>} [options.request_body]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ServiceAuthorizationsResponse}
+     */
+    updateServiceAuthorization2(options = {}) {
+      return this.updateServiceAuthorization2WithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

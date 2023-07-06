@@ -11,6 +11,7 @@ Method | Fastly API endpoint | Description
 [**deleteDirector**](DirectorApi.md#deleteDirector) | **DELETE** /service/{service_id}/version/{version_id}/director/{director_name} | Delete a director
 [**getDirector**](DirectorApi.md#getDirector) | **GET** /service/{service_id}/version/{version_id}/director/{director_name} | Get a director
 [**listDirectors**](DirectorApi.md#listDirectors) | **GET** /service/{service_id}/version/{version_id}/director | List directors
+[**updateDirector**](DirectorApi.md#updateDirector) | **PUT** /service/{service_id}/version/{version_id}/director/{director_name} | Update a director
 
 
 ## `createDirector`
@@ -179,6 +180,45 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[DirectorResponse]**](DirectorResponse.md)
+
+
+## `updateDirector`
+
+```javascript
+updateDirector({ service_id, version_id, director_name })
+```
+
+Update the director for a particular service and version.
+
+### Example
+
+```javascript
+const options = {
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  director_name: "director_name_example", // required
+};
+
+apiInstance.updateDirector(options)
+  .then((data) => {
+    console.log(data, "API called successfully.");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**director_name** | **String** | Name for the Director. |
+
+### Return type
+
+[**DirectorResponse**](DirectorResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

@@ -11,21 +11,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import Event from './Event';
 
 /**
- * The EventsResponseAllOf model module.
- * @module model/EventsResponseAllOf
- * @version 4.4.0
+ * The LegacyWafRuleset model module.
+ * @module model/LegacyWafRuleset
+ * @version 5.0.0
  */
-class EventsResponseAllOf {
+class LegacyWafRuleset {
     /**
-     * Constructs a new <code>EventsResponseAllOf</code>.
-     * @alias module:model/EventsResponseAllOf
+     * Constructs a new <code>LegacyWafRuleset</code>.
+     * @alias module:model/LegacyWafRuleset
      */
     constructor() { 
         
-        EventsResponseAllOf.initialize(this);
+        LegacyWafRuleset.initialize(this);
     }
 
     /**
@@ -37,18 +36,21 @@ class EventsResponseAllOf {
     }
 
     /**
-     * Constructs a <code>EventsResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>LegacyWafRuleset</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/EventsResponseAllOf} obj Optional instance to populate.
-     * @return {module:model/EventsResponseAllOf} The populated <code>EventsResponseAllOf</code> instance.
+     * @param {module:model/LegacyWafRuleset} obj Optional instance to populate.
+     * @return {module:model/LegacyWafRuleset} The populated <code>LegacyWafRuleset</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new EventsResponseAllOf();
+            obj = obj || new LegacyWafRuleset();
 
-            if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Event]);
+            if (data.hasOwnProperty('last_push')) {
+                obj['last_push'] = ApiClient.convertToType(data['last_push'], 'String');
+            }
+            if (data.hasOwnProperty('vcl')) {
+                obj['vcl'] = ApiClient.convertToType(data['vcl'], 'String');
             }
         }
         return obj;
@@ -58,14 +60,21 @@ class EventsResponseAllOf {
 }
 
 /**
- * @member {Array.<module:model/Event>} data
+ * Date and time WAF ruleset VCL was last deployed.
+ * @member {String} last_push
  */
-EventsResponseAllOf.prototype['data'] = undefined;
+LegacyWafRuleset.prototype['last_push'] = undefined;
+
+/**
+ * The WAF ruleset VCL currently deployed.
+ * @member {String} vcl
+ */
+LegacyWafRuleset.prototype['vcl'] = undefined;
 
 
 
 
 
 
-export default EventsResponseAllOf;
+export default LegacyWafRuleset;
 

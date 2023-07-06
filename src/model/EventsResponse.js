@@ -12,7 +12,7 @@
 
 import ApiClient from '../ApiClient';
 import Event from './Event';
-import EventsResponseAllOf from './EventsResponseAllOf';
+import EventData from './EventData';
 import Pagination from './Pagination';
 import PaginationLinks from './PaginationLinks';
 import PaginationMeta from './PaginationMeta';
@@ -20,17 +20,17 @@ import PaginationMeta from './PaginationMeta';
 /**
  * The EventsResponse model module.
  * @module model/EventsResponse
- * @version 4.4.0
+ * @version 5.0.0
  */
 class EventsResponse {
     /**
      * Constructs a new <code>EventsResponse</code>.
      * @alias module:model/EventsResponse
      * @implements module:model/Pagination
-     * @implements module:model/EventsResponseAllOf
+     * @implements module:model/EventData
      */
     constructor() { 
-        Pagination.initialize(this);EventsResponseAllOf.initialize(this);
+        Pagination.initialize(this);EventData.initialize(this);
         EventsResponse.initialize(this);
     }
 
@@ -53,7 +53,7 @@ class EventsResponse {
         if (data) {
             obj = obj || new EventsResponse();
             Pagination.constructFromObject(data, obj);
-            EventsResponseAllOf.constructFromObject(data, obj);
+            EventData.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('links')) {
                 obj['links'] = PaginationLinks.constructFromObject(data['links']);
@@ -96,11 +96,11 @@ Pagination.prototype['links'] = undefined;
  * @member {module:model/PaginationMeta} meta
  */
 Pagination.prototype['meta'] = undefined;
-// Implement EventsResponseAllOf interface:
+// Implement EventData interface:
 /**
  * @member {Array.<module:model/Event>} data
  */
-EventsResponseAllOf.prototype['data'] = undefined;
+EventData.prototype['data'] = undefined;
 
 
 

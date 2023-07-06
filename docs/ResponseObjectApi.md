@@ -7,9 +7,48 @@ const apiInstance = new Fastly.ResponseObjectApi();
 
 Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
+[**createResponseObject**](ResponseObjectApi.md#createResponseObject) | **POST** /service/{service_id}/version/{version_id}/response_object | Create a Response object
 [**deleteResponseObject**](ResponseObjectApi.md#deleteResponseObject) | **DELETE** /service/{service_id}/version/{version_id}/response_object/{response_object_name} | Delete a Response Object
 [**getResponseObject**](ResponseObjectApi.md#getResponseObject) | **GET** /service/{service_id}/version/{version_id}/response_object/{response_object_name} | Get a Response object
 [**listResponseObjects**](ResponseObjectApi.md#listResponseObjects) | **GET** /service/{service_id}/version/{version_id}/response_object | List Response objects
+[**updateResponseObject**](ResponseObjectApi.md#updateResponseObject) | **PUT** /service/{service_id}/version/{version_id}/response_object/{response_object_name} | Update a Response object
+
+
+## `createResponseObject`
+
+```javascript
+createResponseObject({ service_id, version_id })
+```
+
+Creates a new Response Object.
+
+### Example
+
+```javascript
+const options = {
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+};
+
+apiInstance.createResponseObject(options)
+  .then((data) => {
+    console.log(data, "API called successfully.");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+
+### Return type
+
+[**ResponseObjectResponse**](ResponseObjectResponse.md)
 
 
 ## `deleteResponseObject`
@@ -125,6 +164,45 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[ResponseObjectResponse]**](ResponseObjectResponse.md)
+
+
+## `updateResponseObject`
+
+```javascript
+updateResponseObject({ service_id, version_id, response_object_name })
+```
+
+Updates the specified Response Object.
+
+### Example
+
+```javascript
+const options = {
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  response_object_name: "response_object_name_example", // required
+};
+
+apiInstance.updateResponseObject(options)
+  .then((data) => {
+    console.log(data, "API called successfully.");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**response_object_name** | **String** | Name for the request settings. |
+
+### Return type
+
+[**ResponseObjectResponse**](ResponseObjectResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

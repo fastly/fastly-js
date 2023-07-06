@@ -18,7 +18,7 @@ import ResponseObjectResponse from '../model/ResponseObjectResponse';
 /**
 * ResponseObject service.
 * @module api/ResponseObjectApi
-* @version 4.4.0
+* @version 5.0.0
 */
 export default class ResponseObjectApi {
 
@@ -37,6 +37,71 @@ export default class ResponseObjectApi {
         }
     }
 
+
+    /**
+     * Creates a new Response Object.
+     * @param {Object} options
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseObjectResponse} and HTTP response
+     */
+    createResponseObjectWithHttpInfo(options = {}) {
+      let postBody = null;
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
+      }
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
+      }
+
+      let pathParams = {
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = ['application/x-www-form-urlencoded'];
+      let accepts = ['application/json'];
+      let returnType = ResponseObjectResponse;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/service/{service_id}/version/{version_id}/response_object', 'POST',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Creates a new Response Object.
+     * @param {Object} options
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseObjectResponse}
+     */
+    createResponseObject(options = {}) {
+      return this.createResponseObjectWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
 
     /**
      * Deletes the specified Response Object.
@@ -242,6 +307,78 @@ export default class ResponseObjectApi {
      */
     listResponseObjects(options = {}) {
       return this.listResponseObjectsWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+    /**
+     * Updates the specified Response Object.
+     * @param {Object} options
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.response_object_name - Name for the request settings.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseObjectResponse} and HTTP response
+     */
+    updateResponseObjectWithHttpInfo(options = {}) {
+      let postBody = null;
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
+      }
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
+      }
+      // Verify the required parameter 'response_object_name' is set.
+      if (options['response_object_name'] === undefined || options['response_object_name'] === null) {
+        throw new Error("Missing the required parameter 'response_object_name'.");
+      }
+
+      let pathParams = {
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'response_object_name': options['response_object_name']
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = ['application/x-www-form-urlencoded'];
+      let accepts = ['application/json'];
+      let returnType = ResponseObjectResponse;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/service/{service_id}/version/{version_id}/response_object/{response_object_name}', 'PUT',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Updates the specified Response Object.
+     * @param {Object} options
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.response_object_name - Name for the request settings.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseObjectResponse}
+     */
+    updateResponseObject(options = {}) {
+      return this.updateResponseObjectWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

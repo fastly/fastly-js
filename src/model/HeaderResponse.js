@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The HeaderResponse model module.
  * @module model/HeaderResponse
- * @version 4.4.0
+ * @version 5.0.0
  */
 class HeaderResponse {
     /**

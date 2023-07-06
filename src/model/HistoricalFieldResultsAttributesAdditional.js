@@ -14,18 +14,18 @@ import ApiClient from '../ApiClient';
 import ReadOnlyIdService from './ReadOnlyIdService';
 
 /**
- * The HistoricalFieldResultsAttributesAllOf model module.
- * @module model/HistoricalFieldResultsAttributesAllOf
- * @version 4.4.0
+ * The HistoricalFieldResultsAttributesAdditional model module.
+ * @module model/HistoricalFieldResultsAttributesAdditional
+ * @version 5.0.0
  */
-class HistoricalFieldResultsAttributesAllOf {
+class HistoricalFieldResultsAttributesAdditional {
     /**
-     * Constructs a new <code>HistoricalFieldResultsAttributesAllOf</code>.
-     * @alias module:model/HistoricalFieldResultsAttributesAllOf
+     * Constructs a new <code>HistoricalFieldResultsAttributesAdditional</code>.
+     * @alias module:model/HistoricalFieldResultsAttributesAdditional
      */
     constructor() { 
         
-        HistoricalFieldResultsAttributesAllOf.initialize(this);
+        HistoricalFieldResultsAttributesAdditional.initialize(this);
     }
 
     /**
@@ -37,15 +37,15 @@ class HistoricalFieldResultsAttributesAllOf {
     }
 
     /**
-     * Constructs a <code>HistoricalFieldResultsAttributesAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>HistoricalFieldResultsAttributesAdditional</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/HistoricalFieldResultsAttributesAllOf} obj Optional instance to populate.
-     * @return {module:model/HistoricalFieldResultsAttributesAllOf} The populated <code>HistoricalFieldResultsAttributesAllOf</code> instance.
+     * @param {module:model/HistoricalFieldResultsAttributesAdditional} obj Optional instance to populate.
+     * @return {module:model/HistoricalFieldResultsAttributesAdditional} The populated <code>HistoricalFieldResultsAttributesAdditional</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new HistoricalFieldResultsAttributesAllOf();
+            obj = obj || new HistoricalFieldResultsAttributesAdditional();
 
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ReadOnlyIdService.constructFromObject(data['service_id']);
@@ -63,17 +63,17 @@ class HistoricalFieldResultsAttributesAllOf {
 /**
  * @member {module:model/ReadOnlyIdService} service_id
  */
-HistoricalFieldResultsAttributesAllOf.prototype['service_id'] = undefined;
+HistoricalFieldResultsAttributesAdditional.prototype['service_id'] = undefined;
 
 /**
  * @member {Number} start_time
  */
-HistoricalFieldResultsAttributesAllOf.prototype['start_time'] = undefined;
+HistoricalFieldResultsAttributesAdditional.prototype['start_time'] = undefined;
 
 
 
 
 
 
-export default HistoricalFieldResultsAttributesAllOf;
+export default HistoricalFieldResultsAttributesAdditional;
 

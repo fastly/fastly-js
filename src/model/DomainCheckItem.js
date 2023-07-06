@@ -11,19 +11,21 @@
  */
 
 import ApiClient from '../ApiClient';
+import Domain from './Domain';
 
 /**
  * The DomainCheckItem model module.
  * @module model/DomainCheckItem
- * @version 4.4.0
+ * @version 5.0.0
  */
 class DomainCheckItem {
     /**
      * Constructs a new <code>DomainCheckItem</code>.
      * @alias module:model/DomainCheckItem
+     * @implements module:model/Domain
      */
     constructor() { 
-        
+        Domain.initialize(this);
         DomainCheckItem.initialize(this);
     }
 
@@ -45,6 +47,7 @@ class DomainCheckItem {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new DomainCheckItem();
+            Domain.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('comment')) {
                 obj['comment'] = ApiClient.convertToType(data['comment'], 'String');
@@ -72,6 +75,17 @@ DomainCheckItem.prototype['comment'] = undefined;
 DomainCheckItem.prototype['name'] = undefined;
 
 
+// Implement Domain interface:
+/**
+ * A freeform descriptive note.
+ * @member {String} comment
+ */
+Domain.prototype['comment'] = undefined;
+/**
+ * The name of the domain or domains associated with this service.
+ * @member {String} name
+ */
+Domain.prototype['name'] = undefined;
 
 
 

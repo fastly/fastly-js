@@ -19,7 +19,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Director service.
 * @module api/DirectorApi
-* @version 4.4.0
+* @version 5.0.0
 */
 export default class DirectorApi {
 
@@ -332,6 +332,78 @@ export default class DirectorApi {
      */
     listDirectors(options = {}) {
       return this.listDirectorsWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+    /**
+     * Update the director for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.director_name - Name for the Director.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DirectorResponse} and HTTP response
+     */
+    updateDirectorWithHttpInfo(options = {}) {
+      let postBody = null;
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
+      }
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
+      }
+      // Verify the required parameter 'director_name' is set.
+      if (options['director_name'] === undefined || options['director_name'] === null) {
+        throw new Error("Missing the required parameter 'director_name'.");
+      }
+
+      let pathParams = {
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'director_name': options['director_name']
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = ['application/x-www-form-urlencoded'];
+      let accepts = ['application/json'];
+      let returnType = DirectorResponse;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/service/{service_id}/version/{version_id}/director/{director_name}', 'PUT',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Update the director for a particular service and version.
+     * @param {Object} options
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {String} options.director_name - Name for the Director.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DirectorResponse}
+     */
+    updateDirector(options = {}) {
+      return this.updateDirectorWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

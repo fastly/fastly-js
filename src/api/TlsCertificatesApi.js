@@ -19,7 +19,7 @@ import TlsCertificatesResponse from '../model/TlsCertificatesResponse';
 /**
 * TlsCertificates service.
 * @module api/TlsCertificatesApi
-* @version 4.4.0
+* @version 5.0.0
 */
 export default class TlsCertificatesApi {
 

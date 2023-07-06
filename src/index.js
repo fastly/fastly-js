@@ -63,6 +63,7 @@ import BulkUpdateDictionaryListRequest from './model/BulkUpdateDictionaryListReq
 import BulkWafActiveRules from './model/BulkWafActiveRules';
 import CacheSetting from './model/CacheSetting';
 import CacheSettingResponse from './model/CacheSettingResponse';
+import ClientKey from './model/ClientKey';
 import Condition from './model/Condition';
 import ConditionResponse from './model/ConditionResponse';
 import ConfigStore from './model/ConfigStore';
@@ -93,6 +94,11 @@ import DirectorBackendAllOf from './model/DirectorBackendAllOf';
 import DirectorResponse from './model/DirectorResponse';
 import Domain from './model/Domain';
 import DomainCheckItem from './model/DomainCheckItem';
+import DomainInspector from './model/DomainInspector';
+import DomainInspectorEntry from './model/DomainInspectorEntry';
+import DomainInspectorEntryDimensions from './model/DomainInspectorEntryDimensions';
+import DomainInspectorMeasurements from './model/DomainInspectorMeasurements';
+import DomainInspectorRealtimeEntry from './model/DomainInspectorRealtimeEntry';
 import DomainResponse from './model/DomainResponse';
 import EnabledProductResponse from './model/EnabledProductResponse';
 import EnabledProductResponseLinks from './model/EnabledProductResponseLinks';
@@ -101,9 +107,9 @@ import EnabledProductResponseService from './model/EnabledProductResponseService
 import ErrorResponse from './model/ErrorResponse';
 import Event from './model/Event';
 import EventAttributes from './model/EventAttributes';
+import EventData from './model/EventData';
 import EventResponse from './model/EventResponse';
 import EventsResponse from './model/EventsResponse';
-import EventsResponseAllOf from './model/EventsResponseAllOf';
 import GenericTokenError from './model/GenericTokenError';
 import Gzip from './model/Gzip';
 import GzipResponse from './model/GzipResponse';
@@ -114,13 +120,21 @@ import HealthcheckResponse from './model/HealthcheckResponse';
 import Historical from './model/Historical';
 import HistoricalAggregateResponse from './model/HistoricalAggregateResponse';
 import HistoricalAggregateResponseAllOf from './model/HistoricalAggregateResponseAllOf';
+import HistoricalDomains from './model/HistoricalDomains';
+import HistoricalDomainsData from './model/HistoricalDomainsData';
+import HistoricalDomainsMeta from './model/HistoricalDomainsMeta';
+import HistoricalDomainsMetaFilters from './model/HistoricalDomainsMetaFilters';
+import HistoricalDomainsResponse from './model/HistoricalDomainsResponse';
+import HistoricalDomainsResponseAllOf from './model/HistoricalDomainsResponseAllOf';
 import HistoricalFieldAggregateResponse from './model/HistoricalFieldAggregateResponse';
 import HistoricalFieldAggregateResponseAllOf from './model/HistoricalFieldAggregateResponseAllOf';
 import HistoricalFieldResponse from './model/HistoricalFieldResponse';
 import HistoricalFieldResponseDataField from './model/HistoricalFieldResponseDataField';
 import HistoricalFieldResultsAttributes from './model/HistoricalFieldResultsAttributes';
-import HistoricalFieldResultsAttributesAllOf from './model/HistoricalFieldResultsAttributesAllOf';
+import HistoricalFieldResultsAttributesAdditional from './model/HistoricalFieldResultsAttributesAdditional';
 import HistoricalMeta from './model/HistoricalMeta';
+import HistoricalOriginsResponse from './model/HistoricalOriginsResponse';
+import HistoricalOriginsResponseAllOf from './model/HistoricalOriginsResponseAllOf';
 import HistoricalRegionsResponse from './model/HistoricalRegionsResponse';
 import HistoricalRegionsResponseAllOf from './model/HistoricalRegionsResponseAllOf';
 import HistoricalResponse from './model/HistoricalResponse';
@@ -157,6 +171,10 @@ import InlineResponse2003 from './model/InlineResponse2003';
 import InlineResponse2003Meta from './model/InlineResponse2003Meta';
 import InlineResponse2004 from './model/InlineResponse2004';
 import InlineResponse2004Meta from './model/InlineResponse2004Meta';
+import InlineResponse2005 from './model/InlineResponse2005';
+import InlineResponse2006 from './model/InlineResponse2006';
+import InlineResponse2007 from './model/InlineResponse2007';
+import InlineResponse400 from './model/InlineResponse400';
 import Invitation from './model/Invitation';
 import InvitationData from './model/InvitationData';
 import InvitationDataAttributes from './model/InvitationDataAttributes';
@@ -166,6 +184,14 @@ import InvitationResponseData from './model/InvitationResponseData';
 import InvitationResponseDataAllOf from './model/InvitationResponseDataAllOf';
 import InvitationsResponse from './model/InvitationsResponse';
 import InvitationsResponseAllOf from './model/InvitationsResponseAllOf';
+import LegacyWafConfigurationSet from './model/LegacyWafConfigurationSet';
+import LegacyWafFirewall from './model/LegacyWafFirewall';
+import LegacyWafOwasp from './model/LegacyWafOwasp';
+import LegacyWafRule from './model/LegacyWafRule';
+import LegacyWafRuleStatus from './model/LegacyWafRuleStatus';
+import LegacyWafRuleset from './model/LegacyWafRuleset';
+import LegacyWafTag from './model/LegacyWafTag';
+import LegacyWafUpdateStatus from './model/LegacyWafUpdateStatus';
 import LoggingAddressAndPort from './model/LoggingAddressAndPort';
 import LoggingAzureblob from './model/LoggingAzureblob';
 import LoggingAzureblobAllOf from './model/LoggingAzureblobAllOf';
@@ -262,11 +288,24 @@ import MutualAuthenticationResponseData from './model/MutualAuthenticationRespon
 import MutualAuthenticationResponseDataAllOf from './model/MutualAuthenticationResponseDataAllOf';
 import MutualAuthenticationsResponse from './model/MutualAuthenticationsResponse';
 import MutualAuthenticationsResponseAllOf from './model/MutualAuthenticationsResponseAllOf';
+import OriginInspector from './model/OriginInspector';
+import OriginInspectorDimensions from './model/OriginInspectorDimensions';
+import OriginInspectorEntry from './model/OriginInspectorEntry';
+import OriginInspectorHistorical from './model/OriginInspectorHistorical';
+import OriginInspectorHistoricalData from './model/OriginInspectorHistoricalData';
+import OriginInspectorHistoricalMeta from './model/OriginInspectorHistoricalMeta';
+import OriginInspectorHistoricalMetaFilters from './model/OriginInspectorHistoricalMetaFilters';
+import OriginInspectorMeasurements from './model/OriginInspectorMeasurements';
+import OriginInspectorRealtimeEntry from './model/OriginInspectorRealtimeEntry';
+import OriginInspectorRealtimeEntryRecorded from './model/OriginInspectorRealtimeEntryRecorded';
+import OriginInspectorSubsequentRequestTimestamp from './model/OriginInspectorSubsequentRequestTimestamp';
+import OriginInspectorValues from './model/OriginInspectorValues';
 import Package from './model/Package';
 import PackageMetadata from './model/PackageMetadata';
 import PackageResponse from './model/PackageResponse';
 import PackageResponseAllOf from './model/PackageResponseAllOf';
 import Pagination from './model/Pagination';
+import PaginationCursorMeta from './model/PaginationCursorMeta';
 import PaginationLinks from './model/PaginationLinks';
 import PaginationMeta from './model/PaginationMeta';
 import Permission from './model/Permission';
@@ -288,10 +327,15 @@ import RateLimiterResponseAllOf from './model/RateLimiterResponseAllOf';
 import ReadOnlyCustomerId from './model/ReadOnlyCustomerId';
 import ReadOnlyId from './model/ReadOnlyId';
 import ReadOnlyIdService from './model/ReadOnlyIdService';
+import ReadOnlyServiceId from './model/ReadOnlyServiceId';
 import ReadOnlyUserId from './model/ReadOnlyUserId';
+import ReadOnlyVersion from './model/ReadOnlyVersion';
 import Realtime from './model/Realtime';
 import RealtimeEntry from './model/RealtimeEntry';
+import RealtimeEntryAggregated from './model/RealtimeEntryAggregated';
+import RealtimeEntryRecorded from './model/RealtimeEntryRecorded';
 import RealtimeMeasurements from './model/RealtimeMeasurements';
+import RecordedTimestamp from './model/RecordedTimestamp';
 import RelationshipCommonName from './model/RelationshipCommonName';
 import RelationshipCustomer from './model/RelationshipCustomer';
 import RelationshipCustomerCustomer from './model/RelationshipCustomerCustomer';
@@ -400,6 +444,10 @@ import SchemasVersion from './model/SchemasVersion';
 import SchemasVersionResponse from './model/SchemasVersionResponse';
 import SchemasWafFirewallVersion from './model/SchemasWafFirewallVersion';
 import SchemasWafFirewallVersionData from './model/SchemasWafFirewallVersionData';
+import Secret from './model/Secret';
+import SecretResponse from './model/SecretResponse';
+import SecretStore from './model/SecretStore';
+import SecretStoreResponse from './model/SecretStoreResponse';
 import Server from './model/Server';
 import ServerResponse from './model/ServerResponse';
 import ServerResponseAllOf from './model/ServerResponseAllOf';
@@ -435,6 +483,7 @@ import ServiceVersionDetail from './model/ServiceVersionDetail';
 import ServiceVersionDetailOrNull from './model/ServiceVersionDetailOrNull';
 import Settings from './model/Settings';
 import SettingsResponse from './model/SettingsResponse';
+import SigningKey from './model/SigningKey';
 import Snippet from './model/Snippet';
 import SnippetResponse from './model/SnippetResponse';
 import SnippetResponseAllOf from './model/SnippetResponseAllOf';
@@ -445,6 +494,10 @@ import StarResponseAllOf from './model/StarResponseAllOf';
 import Stats from './model/Stats';
 import Store from './model/Store';
 import StoreResponse from './model/StoreResponse';
+import SubsequentRequestTimestamp from './model/SubsequentRequestTimestamp';
+import SudoGenericTokenError from './model/SudoGenericTokenError';
+import SudoRequest from './model/SudoRequest';
+import SudoResponse from './model/SudoResponse';
 import Timestamps from './model/Timestamps';
 import TimestampsNoDelete from './model/TimestampsNoDelete';
 import TlsActivation from './model/TlsActivation';
@@ -550,6 +603,7 @@ import ValidatorResult from './model/ValidatorResult';
 import ValidatorResultData from './model/ValidatorResultData';
 import ValidatorResultDataAttributes from './model/ValidatorResultDataAttributes';
 import ValidatorResultDataAttributesMessages from './model/ValidatorResultDataAttributesMessages';
+import Values from './model/Values';
 import Vcl from './model/Vcl';
 import VclDiff from './model/VclDiff';
 import VclResponse from './model/VclResponse';
@@ -645,6 +699,8 @@ import DiffApi from './api/DiffApi';
 import DirectorApi from './api/DirectorApi';
 import DirectorBackendApi from './api/DirectorBackendApi';
 import DomainApi from './api/DomainApi';
+import DomainInspectorHistoricalApi from './api/DomainInspectorHistoricalApi';
+import DomainInspectorRealtimeApi from './api/DomainInspectorRealtimeApi';
 import DomainOwnershipsApi from './api/DomainOwnershipsApi';
 import EnabledProductsApi from './api/EnabledProductsApi';
 import EventsApi from './api/EventsApi';
@@ -660,6 +716,14 @@ import IamUserGroupsApi from './api/IamUserGroupsApi';
 import InvitationsApi from './api/InvitationsApi';
 import KvStoreApi from './api/KvStoreApi';
 import KvStoreItemApi from './api/KvStoreItemApi';
+import LegacyWafConfigurationSetsApi from './api/LegacyWafConfigurationSetsApi';
+import LegacyWafFirewallApi from './api/LegacyWafFirewallApi';
+import LegacyWafOwaspApi from './api/LegacyWafOwaspApi';
+import LegacyWafRuleApi from './api/LegacyWafRuleApi';
+import LegacyWafRuleStatusApi from './api/LegacyWafRuleStatusApi';
+import LegacyWafRulesetApi from './api/LegacyWafRulesetApi';
+import LegacyWafTagApi from './api/LegacyWafTagApi';
+import LegacyWafUpdateStatusApi from './api/LegacyWafUpdateStatusApi';
 import LoggingAzureblobApi from './api/LoggingAzureblobApi';
 import LoggingBigqueryApi from './api/LoggingBigqueryApi';
 import LoggingCloudfilesApi from './api/LoggingCloudfilesApi';
@@ -687,6 +751,8 @@ import LoggingSplunkApi from './api/LoggingSplunkApi';
 import LoggingSumologicApi from './api/LoggingSumologicApi';
 import LoggingSyslogApi from './api/LoggingSyslogApi';
 import MutualAuthenticationApi from './api/MutualAuthenticationApi';
+import OriginInspectorHistoricalApi from './api/OriginInspectorHistoricalApi';
+import OriginInspectorRealtimeApi from './api/OriginInspectorRealtimeApi';
 import PackageApi from './api/PackageApi';
 import PoolApi from './api/PoolApi';
 import PopApi from './api/PopApi';
@@ -698,6 +764,8 @@ import RealtimeApi from './api/RealtimeApi';
 import RequestSettingsApi from './api/RequestSettingsApi';
 import ResourceApi from './api/ResourceApi';
 import ResponseObjectApi from './api/ResponseObjectApi';
+import SecretStoreApi from './api/SecretStoreApi';
+import SecretStoreItemApi from './api/SecretStoreItemApi';
 import ServerApi from './api/ServerApi';
 import ServiceApi from './api/ServiceApi';
 import ServiceAuthorizationsApi from './api/ServiceAuthorizationsApi';
@@ -705,6 +773,7 @@ import SettingsApi from './api/SettingsApi';
 import SnippetApi from './api/SnippetApi';
 import StarApi from './api/StarApi';
 import StatsApi from './api/StatsApi';
+import SudoApi from './api/SudoApi';
 import TlsActivationsApi from './api/TlsActivationsApi';
 import TlsBulkCertificatesApi from './api/TlsBulkCertificatesApi';
 import TlsCertificatesApi from './api/TlsCertificatesApi';
@@ -759,7 +828,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 4.4.0
+* @version 5.0.0
 */
 export {
     /**
@@ -1075,6 +1144,12 @@ export {
     CacheSettingResponse,
 
     /**
+     * The ClientKey model constructor.
+     * @property {module:model/ClientKey}
+     */
+    ClientKey,
+
+    /**
      * The Condition model constructor.
      * @property {module:model/Condition}
      */
@@ -1255,6 +1330,36 @@ export {
     DomainCheckItem,
 
     /**
+     * The DomainInspector model constructor.
+     * @property {module:model/DomainInspector}
+     */
+    DomainInspector,
+
+    /**
+     * The DomainInspectorEntry model constructor.
+     * @property {module:model/DomainInspectorEntry}
+     */
+    DomainInspectorEntry,
+
+    /**
+     * The DomainInspectorEntryDimensions model constructor.
+     * @property {module:model/DomainInspectorEntryDimensions}
+     */
+    DomainInspectorEntryDimensions,
+
+    /**
+     * The DomainInspectorMeasurements model constructor.
+     * @property {module:model/DomainInspectorMeasurements}
+     */
+    DomainInspectorMeasurements,
+
+    /**
+     * The DomainInspectorRealtimeEntry model constructor.
+     * @property {module:model/DomainInspectorRealtimeEntry}
+     */
+    DomainInspectorRealtimeEntry,
+
+    /**
      * The DomainResponse model constructor.
      * @property {module:model/DomainResponse}
      */
@@ -1303,6 +1408,12 @@ export {
     EventAttributes,
 
     /**
+     * The EventData model constructor.
+     * @property {module:model/EventData}
+     */
+    EventData,
+
+    /**
      * The EventResponse model constructor.
      * @property {module:model/EventResponse}
      */
@@ -1313,12 +1424,6 @@ export {
      * @property {module:model/EventsResponse}
      */
     EventsResponse,
-
-    /**
-     * The EventsResponseAllOf model constructor.
-     * @property {module:model/EventsResponseAllOf}
-     */
-    EventsResponseAllOf,
 
     /**
      * The GenericTokenError model constructor.
@@ -1381,6 +1486,42 @@ export {
     HistoricalAggregateResponseAllOf,
 
     /**
+     * The HistoricalDomains model constructor.
+     * @property {module:model/HistoricalDomains}
+     */
+    HistoricalDomains,
+
+    /**
+     * The HistoricalDomainsData model constructor.
+     * @property {module:model/HistoricalDomainsData}
+     */
+    HistoricalDomainsData,
+
+    /**
+     * The HistoricalDomainsMeta model constructor.
+     * @property {module:model/HistoricalDomainsMeta}
+     */
+    HistoricalDomainsMeta,
+
+    /**
+     * The HistoricalDomainsMetaFilters model constructor.
+     * @property {module:model/HistoricalDomainsMetaFilters}
+     */
+    HistoricalDomainsMetaFilters,
+
+    /**
+     * The HistoricalDomainsResponse model constructor.
+     * @property {module:model/HistoricalDomainsResponse}
+     */
+    HistoricalDomainsResponse,
+
+    /**
+     * The HistoricalDomainsResponseAllOf model constructor.
+     * @property {module:model/HistoricalDomainsResponseAllOf}
+     */
+    HistoricalDomainsResponseAllOf,
+
+    /**
      * The HistoricalFieldAggregateResponse model constructor.
      * @property {module:model/HistoricalFieldAggregateResponse}
      */
@@ -1411,16 +1552,28 @@ export {
     HistoricalFieldResultsAttributes,
 
     /**
-     * The HistoricalFieldResultsAttributesAllOf model constructor.
-     * @property {module:model/HistoricalFieldResultsAttributesAllOf}
+     * The HistoricalFieldResultsAttributesAdditional model constructor.
+     * @property {module:model/HistoricalFieldResultsAttributesAdditional}
      */
-    HistoricalFieldResultsAttributesAllOf,
+    HistoricalFieldResultsAttributesAdditional,
 
     /**
      * The HistoricalMeta model constructor.
      * @property {module:model/HistoricalMeta}
      */
     HistoricalMeta,
+
+    /**
+     * The HistoricalOriginsResponse model constructor.
+     * @property {module:model/HistoricalOriginsResponse}
+     */
+    HistoricalOriginsResponse,
+
+    /**
+     * The HistoricalOriginsResponseAllOf model constructor.
+     * @property {module:model/HistoricalOriginsResponseAllOf}
+     */
+    HistoricalOriginsResponseAllOf,
 
     /**
      * The HistoricalRegionsResponse model constructor.
@@ -1639,6 +1792,30 @@ export {
     InlineResponse2004Meta,
 
     /**
+     * The InlineResponse2005 model constructor.
+     * @property {module:model/InlineResponse2005}
+     */
+    InlineResponse2005,
+
+    /**
+     * The InlineResponse2006 model constructor.
+     * @property {module:model/InlineResponse2006}
+     */
+    InlineResponse2006,
+
+    /**
+     * The InlineResponse2007 model constructor.
+     * @property {module:model/InlineResponse2007}
+     */
+    InlineResponse2007,
+
+    /**
+     * The InlineResponse400 model constructor.
+     * @property {module:model/InlineResponse400}
+     */
+    InlineResponse400,
+
+    /**
      * The Invitation model constructor.
      * @property {module:model/Invitation}
      */
@@ -1691,6 +1868,54 @@ export {
      * @property {module:model/InvitationsResponseAllOf}
      */
     InvitationsResponseAllOf,
+
+    /**
+     * The LegacyWafConfigurationSet model constructor.
+     * @property {module:model/LegacyWafConfigurationSet}
+     */
+    LegacyWafConfigurationSet,
+
+    /**
+     * The LegacyWafFirewall model constructor.
+     * @property {module:model/LegacyWafFirewall}
+     */
+    LegacyWafFirewall,
+
+    /**
+     * The LegacyWafOwasp model constructor.
+     * @property {module:model/LegacyWafOwasp}
+     */
+    LegacyWafOwasp,
+
+    /**
+     * The LegacyWafRule model constructor.
+     * @property {module:model/LegacyWafRule}
+     */
+    LegacyWafRule,
+
+    /**
+     * The LegacyWafRuleStatus model constructor.
+     * @property {module:model/LegacyWafRuleStatus}
+     */
+    LegacyWafRuleStatus,
+
+    /**
+     * The LegacyWafRuleset model constructor.
+     * @property {module:model/LegacyWafRuleset}
+     */
+    LegacyWafRuleset,
+
+    /**
+     * The LegacyWafTag model constructor.
+     * @property {module:model/LegacyWafTag}
+     */
+    LegacyWafTag,
+
+    /**
+     * The LegacyWafUpdateStatus model constructor.
+     * @property {module:model/LegacyWafUpdateStatus}
+     */
+    LegacyWafUpdateStatus,
 
     /**
      * The LoggingAddressAndPort model constructor.
@@ -2269,6 +2494,78 @@ export {
     MutualAuthenticationsResponseAllOf,
 
     /**
+     * The OriginInspector model constructor.
+     * @property {module:model/OriginInspector}
+     */
+    OriginInspector,
+
+    /**
+     * The OriginInspectorDimensions model constructor.
+     * @property {module:model/OriginInspectorDimensions}
+     */
+    OriginInspectorDimensions,
+
+    /**
+     * The OriginInspectorEntry model constructor.
+     * @property {module:model/OriginInspectorEntry}
+     */
+    OriginInspectorEntry,
+
+    /**
+     * The OriginInspectorHistorical model constructor.
+     * @property {module:model/OriginInspectorHistorical}
+     */
+    OriginInspectorHistorical,
+
+    /**
+     * The OriginInspectorHistoricalData model constructor.
+     * @property {module:model/OriginInspectorHistoricalData}
+     */
+    OriginInspectorHistoricalData,
+
+    /**
+     * The OriginInspectorHistoricalMeta model constructor.
+     * @property {module:model/OriginInspectorHistoricalMeta}
+     */
+    OriginInspectorHistoricalMeta,
+
+    /**
+     * The OriginInspectorHistoricalMetaFilters model constructor.
+     * @property {module:model/OriginInspectorHistoricalMetaFilters}
+     */
+    OriginInspectorHistoricalMetaFilters,
+
+    /**
+     * The OriginInspectorMeasurements model constructor.
+     * @property {module:model/OriginInspectorMeasurements}
+     */
+    OriginInspectorMeasurements,
+
+    /**
+     * The OriginInspectorRealtimeEntry model constructor.
+     * @property {module:model/OriginInspectorRealtimeEntry}
+     */
+    OriginInspectorRealtimeEntry,
+
+    /**
+     * The OriginInspectorRealtimeEntryRecorded model constructor.
+     * @property {module:model/OriginInspectorRealtimeEntryRecorded}
+     */
+    OriginInspectorRealtimeEntryRecorded,
+
+    /**
+     * The OriginInspectorSubsequentRequestTimestamp model constructor.
+     * @property {module:model/OriginInspectorSubsequentRequestTimestamp}
+     */
+    OriginInspectorSubsequentRequestTimestamp,
+
+    /**
+     * The OriginInspectorValues model constructor.
+     * @property {module:model/OriginInspectorValues}
+     */
+    OriginInspectorValues,
+
+    /**
      * The Package model constructor.
      * @property {module:model/Package}
      */
@@ -2297,6 +2594,12 @@ export {
      * @property {module:model/Pagination}
      */
     Pagination,
+
+    /**
+     * The PaginationCursorMeta model constructor.
+     * @property {module:model/PaginationCursorMeta}
+     */
+    PaginationCursorMeta,
 
     /**
      * The PaginationLinks model constructor.
@@ -2425,10 +2728,22 @@ export {
     ReadOnlyIdService,
 
     /**
+     * The ReadOnlyServiceId model constructor.
+     * @property {module:model/ReadOnlyServiceId}
+     */
+    ReadOnlyServiceId,
+
+    /**
      * The ReadOnlyUserId model constructor.
      * @property {module:model/ReadOnlyUserId}
      */
     ReadOnlyUserId,
+
+    /**
+     * The ReadOnlyVersion model constructor.
+     * @property {module:model/ReadOnlyVersion}
+     */
+    ReadOnlyVersion,
 
     /**
      * The Realtime model constructor.
@@ -2443,10 +2758,28 @@ export {
     RealtimeEntry,
 
     /**
+     * The RealtimeEntryAggregated model constructor.
+     * @property {module:model/RealtimeEntryAggregated}
+     */
+    RealtimeEntryAggregated,
+
+    /**
+     * The RealtimeEntryRecorded model constructor.
+     * @property {module:model/RealtimeEntryRecorded}
+     */
+    RealtimeEntryRecorded,
+
+    /**
      * The RealtimeMeasurements model constructor.
      * @property {module:model/RealtimeMeasurements}
      */
     RealtimeMeasurements,
+
+    /**
+     * The RecordedTimestamp model constructor.
+     * @property {module:model/RecordedTimestamp}
+     */
+    RecordedTimestamp,
 
     /**
      * The RelationshipCommonName model constructor.
@@ -3097,6 +3430,30 @@ export {
     SchemasWafFirewallVersionData,
 
     /**
+     * The Secret model constructor.
+     * @property {module:model/Secret}
+     */
+    Secret,
+
+    /**
+     * The SecretResponse model constructor.
+     * @property {module:model/SecretResponse}
+     */
+    SecretResponse,
+
+    /**
+     * The SecretStore model constructor.
+     * @property {module:model/SecretStore}
+     */
+    SecretStore,
+
+    /**
+     * The SecretStoreResponse model constructor.
+     * @property {module:model/SecretStoreResponse}
+     */
+    SecretStoreResponse,
+
+    /**
      * The Server model constructor.
      * @property {module:model/Server}
      */
@@ -3307,6 +3664,12 @@ export {
     SettingsResponse,
 
     /**
+     * The SigningKey model constructor.
+     * @property {module:model/SigningKey}
+     */
+    SigningKey,
+
+    /**
      * The Snippet model constructor.
      * @property {module:model/Snippet}
      */
@@ -3365,6 +3728,30 @@ export {
      * @property {module:model/StoreResponse}
      */
     StoreResponse,
+
+    /**
+     * The SubsequentRequestTimestamp model constructor.
+     * @property {module:model/SubsequentRequestTimestamp}
+     */
+    SubsequentRequestTimestamp,
+
+    /**
+     * The SudoGenericTokenError model constructor.
+     * @property {module:model/SudoGenericTokenError}
+     */
+    SudoGenericTokenError,
+
+    /**
+     * The SudoRequest model constructor.
+     * @property {module:model/SudoRequest}
+     */
+    SudoRequest,
+
+    /**
+     * The SudoResponse model constructor.
+     * @property {module:model/SudoResponse}
+     */
+    SudoResponse,
 
     /**
      * The Timestamps model constructor.
@@ -3997,6 +4384,12 @@ export {
     ValidatorResultDataAttributesMessages,
 
     /**
+     * The Values model constructor.
+     * @property {module:model/Values}
+     */
+    Values,
+
+    /**
      * The Vcl model constructor.
      * @property {module:model/Vcl}
      */
@@ -4567,6 +4960,18 @@ export {
     DomainApi,
 
     /**
+    * The DomainInspectorHistoricalApi service constructor.
+    * @property {module:api/DomainInspectorHistoricalApi}
+    */
+    DomainInspectorHistoricalApi,
+
+    /**
+    * The DomainInspectorRealtimeApi service constructor.
+    * @property {module:api/DomainInspectorRealtimeApi}
+    */
+    DomainInspectorRealtimeApi,
+
+    /**
     * The DomainOwnershipsApi service constructor.
     * @property {module:api/DomainOwnershipsApi}
     */
@@ -4655,6 +5060,54 @@ export {
     * @property {module:api/KvStoreItemApi}
     */
     KvStoreItemApi,
+
+    /**
+    * The LegacyWafConfigurationSetsApi service constructor.
+    * @property {module:api/LegacyWafConfigurationSetsApi}
+    */
+    LegacyWafConfigurationSetsApi,
+
+    /**
+    * The LegacyWafFirewallApi service constructor.
+    * @property {module:api/LegacyWafFirewallApi}
+    */
+    LegacyWafFirewallApi,
+
+    /**
+    * The LegacyWafOwaspApi service constructor.
+    * @property {module:api/LegacyWafOwaspApi}
+    */
+    LegacyWafOwaspApi,
+
+    /**
+    * The LegacyWafRuleApi service constructor.
+    * @property {module:api/LegacyWafRuleApi}
+    */
+    LegacyWafRuleApi,
+
+    /**
+    * The LegacyWafRuleStatusApi service constructor.
+    * @property {module:api/LegacyWafRuleStatusApi}
+    */
+    LegacyWafRuleStatusApi,
+
+    /**
+    * The LegacyWafRulesetApi service constructor.
+    * @property {module:api/LegacyWafRulesetApi}
+    */
+    LegacyWafRulesetApi,
+
+    /**
+    * The LegacyWafTagApi service constructor.
+    * @property {module:api/LegacyWafTagApi}
+    */
+    LegacyWafTagApi,
+
+    /**
+    * The LegacyWafUpdateStatusApi service constructor.
+    * @property {module:api/LegacyWafUpdateStatusApi}
+    */
+    LegacyWafUpdateStatusApi,
 
     /**
     * The LoggingAzureblobApi service constructor.
@@ -4819,6 +5272,18 @@ export {
     MutualAuthenticationApi,
 
     /**
+    * The OriginInspectorHistoricalApi service constructor.
+    * @property {module:api/OriginInspectorHistoricalApi}
+    */
+    OriginInspectorHistoricalApi,
+
+    /**
+    * The OriginInspectorRealtimeApi service constructor.
+    * @property {module:api/OriginInspectorRealtimeApi}
+    */
+    OriginInspectorRealtimeApi,
+
+    /**
     * The PackageApi service constructor.
     * @property {module:api/PackageApi}
     */
@@ -4885,6 +5350,18 @@ export {
     ResponseObjectApi,
 
     /**
+    * The SecretStoreApi service constructor.
+    * @property {module:api/SecretStoreApi}
+    */
+    SecretStoreApi,
+
+    /**
+    * The SecretStoreItemApi service constructor.
+    * @property {module:api/SecretStoreItemApi}
+    */
+    SecretStoreItemApi,
+
+    /**
     * The ServerApi service constructor.
     * @property {module:api/ServerApi}
     */
@@ -4925,6 +5402,12 @@ export {
     * @property {module:api/StatsApi}
     */
     StatsApi,
+
+    /**
+    * The SudoApi service constructor.
+    * @property {module:api/SudoApi}
+    */
+    SudoApi,
 
     /**
     * The TlsActivationsApi service constructor.

@@ -11,24 +11,24 @@
  */
 
 import ApiClient from '../ApiClient';
-import HistoricalFieldResultsAttributesAllOf from './HistoricalFieldResultsAttributesAllOf';
+import HistoricalFieldResultsAttributesAdditional from './HistoricalFieldResultsAttributesAdditional';
 import ReadOnlyIdService from './ReadOnlyIdService';
 import Results from './Results';
 
 /**
  * The HistoricalFieldResultsAttributes model module.
  * @module model/HistoricalFieldResultsAttributes
- * @version 4.4.0
+ * @version 5.0.0
  */
 class HistoricalFieldResultsAttributes {
     /**
      * Constructs a new <code>HistoricalFieldResultsAttributes</code>.
      * @alias module:model/HistoricalFieldResultsAttributes
      * @implements module:model/Results
-     * @implements module:model/HistoricalFieldResultsAttributesAllOf
+     * @implements module:model/HistoricalFieldResultsAttributesAdditional
      */
     constructor() { 
-        Results.initialize(this);HistoricalFieldResultsAttributesAllOf.initialize(this);
+        Results.initialize(this);HistoricalFieldResultsAttributesAdditional.initialize(this);
         HistoricalFieldResultsAttributes.initialize(this);
     }
 
@@ -51,7 +51,7 @@ class HistoricalFieldResultsAttributes {
         if (data) {
             obj = obj || new HistoricalFieldResultsAttributes();
             Results.constructFromObject(data, obj);
-            HistoricalFieldResultsAttributesAllOf.constructFromObject(data, obj);
+            HistoricalFieldResultsAttributesAdditional.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('requests')) {
                 obj['requests'] = ApiClient.convertToType(data['requests'], 'Number');
@@ -3102,15 +3102,15 @@ Results.prototype['ddos_action_close'] = undefined;
  * @member {Number} ddos_action_blackhole
  */
 Results.prototype['ddos_action_blackhole'] = undefined;
-// Implement HistoricalFieldResultsAttributesAllOf interface:
+// Implement HistoricalFieldResultsAttributesAdditional interface:
 /**
  * @member {module:model/ReadOnlyIdService} service_id
  */
-HistoricalFieldResultsAttributesAllOf.prototype['service_id'] = undefined;
+HistoricalFieldResultsAttributesAdditional.prototype['service_id'] = undefined;
 /**
  * @member {Number} start_time
  */
-HistoricalFieldResultsAttributesAllOf.prototype['start_time'] = undefined;
+HistoricalFieldResultsAttributesAdditional.prototype['start_time'] = undefined;
 
 
 

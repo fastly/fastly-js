@@ -12,13 +12,14 @@
 
 
 import ApiClient from "../ApiClient";
+import ContactResponse from '../model/ContactResponse';
 import InlineResponse200 from '../model/InlineResponse200';
 import SchemasContactResponse from '../model/SchemasContactResponse';
 
 /**
 * Contact service.
 * @module api/ContactApi
-* @version 4.4.0
+* @version 5.0.0
 */
 export default class ContactApi {
 
@@ -37,6 +38,82 @@ export default class ContactApi {
         }
     }
 
+
+    /**
+     * Create a contact.
+     * @param {Object} options
+     * @param {String} options.customer_id - Alphanumeric string identifying the customer.
+     * @param {String} [options.user_id] - The alphanumeric string representing the user for this customer contact.
+     * @param {module:model/String} [options.contact_type] - The type of contact.
+     * @param {String} [options.name] - The name of this contact, when user_id is not provided.
+     * @param {String} [options.email] - The email of this contact, when a user_id is not provided.
+     * @param {String} [options.phone] - The phone number for this contact. Required for primary, technical, and security contact types.
+     * @param {String} [options.customer_id2] - The alphanumeric string representing the customer for this customer contact.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ContactResponse} and HTTP response
+     */
+    createContactsWithHttpInfo(options = {}) {
+      let postBody = null;
+      // Verify the required parameter 'customer_id' is set.
+      if (options['customer_id'] === undefined || options['customer_id'] === null) {
+        throw new Error("Missing the required parameter 'customer_id'.");
+      }
+
+      let pathParams = {
+        'customer_id': options['customer_id']
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+        'user_id': options['user_id'],
+        'contact_type': options['contact_type'],
+        'name': options['name'],
+        'email': options['email'],
+        'phone': options['phone'],
+        'customer_id': options['customer_id2']
+      };
+
+      let authNames = ['token'];
+      let contentTypes = ['application/x-www-form-urlencoded'];
+      let accepts = ['application/json'];
+      let returnType = ContactResponse;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/customer/{customer_id}/contacts', 'POST',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Create a contact.
+     * @param {Object} options
+     * @param {String} options.customer_id - Alphanumeric string identifying the customer.
+     * @param {String} [options.user_id] - The alphanumeric string representing the user for this customer contact.
+     * @param {module:model/String} [options.contact_type] - The type of contact.
+     * @param {String} [options.name] - The name of this contact, when user_id is not provided.
+     * @param {String} [options.email] - The email of this contact, when a user_id is not provided.
+     * @param {String} [options.phone] - The phone number for this contact. Required for primary, technical, and security contact types.
+     * @param {String} [options.customer_id2] - The alphanumeric string representing the customer for this customer contact.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ContactResponse}
+     */
+    createContacts(options = {}) {
+      return this.createContactsWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
 
     /**
      * Delete a contact.

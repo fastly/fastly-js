@@ -16,7 +16,7 @@ import WafExclusionResponseData from './WafExclusionResponseData';
 /**
  * The WafExclusionResponse model module.
  * @module model/WafExclusionResponse
- * @version 4.4.0
+ * @version 5.0.0
  */
 class WafExclusionResponse {
     /**

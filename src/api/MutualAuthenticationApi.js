@@ -19,7 +19,7 @@ import MutualAuthenticationsResponse from '../model/MutualAuthenticationsRespons
 /**
 * MutualAuthentication service.
 * @module api/MutualAuthenticationApi
-* @version 4.4.0
+* @version 5.0.0
 */
 export default class MutualAuthenticationApi {
 

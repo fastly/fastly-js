@@ -19,7 +19,7 @@ import LoggingGenericCommon from './LoggingGenericCommon';
 /**
  * The LoggingGcs model module.
  * @module model/LoggingGcs
- * @version 4.4.0
+ * @version 5.0.0
  */
 class LoggingGcs {
     /**

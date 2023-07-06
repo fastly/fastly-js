@@ -22,7 +22,7 @@ import WafActiveRulesResponse from '../model/WafActiveRulesResponse';
 /**
 * WafActiveRules service.
 * @module api/WafActiveRulesApi
-* @version 4.4.0
+* @version 5.0.0
 */
 export default class WafActiveRulesApi {
 
@@ -41,6 +41,73 @@ export default class WafActiveRulesApi {
         }
     }
 
+
+    /**
+     * Delete many active rules on a particular firewall version using the active rule ID. Limited to 500 rules per request.
+     * @param {Object} options
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {Object.<String, {String: Object}>} [options.request_body]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    bulkDeleteWafActiveRulesWithHttpInfo(options = {}) {
+      let postBody = options['request_body'];
+      // Verify the required parameter 'firewall_id' is set.
+      if (options['firewall_id'] === undefined || options['firewall_id'] === null) {
+        throw new Error("Missing the required parameter 'firewall_id'.");
+      }
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
+      }
+
+      let pathParams = {
+        'firewall_id': options['firewall_id'],
+        'version_id': options['version_id']
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = ['application/vnd.api+json; ext=bulk'];
+      let accepts = [];
+      let returnType = null;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/waf/firewalls/{firewall_id}/versions/{version_id}/active-rules', 'DELETE',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Delete many active rules on a particular firewall version using the active rule ID. Limited to 500 rules per request.
+     * @param {Object} options
+     * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {Object.<String, {String: Object}>} [options.request_body]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    bulkDeleteWafActiveRules(options = {}) {
+      return this.bulkDeleteWafActiveRulesWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
 
     /**
      * Bulk update all active rules on a [firewall version](https://developer.fastly.com/reference/api/waf/firewall-version/). This endpoint will not add new active rules, only update existing active rules.

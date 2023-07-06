@@ -15,11 +15,12 @@ import ApiClient from '../ApiClient';
 /**
  * The Domain model module.
  * @module model/Domain
- * @version 4.4.0
+ * @version 5.0.0
  */
 class Domain {
     /**
      * Constructs a new <code>Domain</code>.
+     * Domain details
      * @alias module:model/Domain
      */
     constructor() { 

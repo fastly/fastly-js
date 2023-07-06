@@ -11,6 +11,7 @@ Method | Fastly API endpoint | Description
 [**deleteLogKinesis**](LoggingKinesisApi.md#deleteLogKinesis) | **DELETE** /service/{service_id}/version/{version_id}/logging/kinesis/{logging_kinesis_name} | Delete the Amazon Kinesis log endpoint
 [**getLogKinesis**](LoggingKinesisApi.md#getLogKinesis) | **GET** /service/{service_id}/version/{version_id}/logging/kinesis/{logging_kinesis_name} | Get an Amazon Kinesis log endpoint
 [**listLogKinesis**](LoggingKinesisApi.md#listLogKinesis) | **GET** /service/{service_id}/version/{version_id}/logging/kinesis | List Amazon Kinesis log endpoints
+[**updateLogKinesis**](LoggingKinesisApi.md#updateLogKinesis) | **PUT** /service/{service_id}/version/{version_id}/logging/kinesis/{logging_kinesis_name} | Update the Amazon Kinesis log endpoint
 
 
 ## `createLogKinesis`
@@ -181,6 +182,45 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[LoggingKinesisResponse]**](LoggingKinesisResponse.md)
+
+
+## `updateLogKinesis`
+
+```javascript
+updateLogKinesis({ service_id, version_id, logging_kinesis_name })
+```
+
+Update an Amazon Kinesis Data Streams logging object for a particular service and version.
+
+### Example
+
+```javascript
+const options = {
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_kinesis_name: "logging_kinesis_name_example", // required
+};
+
+apiInstance.updateLogKinesis(options)
+  .then((data) => {
+    console.log(data, "API called successfully.");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**logging_kinesis_name** | **String** | The name for the real-time logging configuration. |
+
+### Return type
+
+[**LoggingKinesisResponse**](LoggingKinesisResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

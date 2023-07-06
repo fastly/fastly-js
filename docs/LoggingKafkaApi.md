@@ -11,6 +11,7 @@ Method | Fastly API endpoint | Description
 [**deleteLogKafka**](LoggingKafkaApi.md#deleteLogKafka) | **DELETE** /service/{service_id}/version/{version_id}/logging/kafka/{logging_kafka_name} | Delete the Kafka log endpoint
 [**getLogKafka**](LoggingKafkaApi.md#getLogKafka) | **GET** /service/{service_id}/version/{version_id}/logging/kafka/{logging_kafka_name} | Get a Kafka log endpoint
 [**listLogKafka**](LoggingKafkaApi.md#listLogKafka) | **GET** /service/{service_id}/version/{version_id}/logging/kafka | List Kafka log endpoints
+[**updateLogKafka**](LoggingKafkaApi.md#updateLogKafka) | **PUT** /service/{service_id}/version/{version_id}/logging/kafka/{logging_kafka_name} | Update the Kafka log endpoint
 
 
 ## `createLogKafka`
@@ -201,6 +202,45 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[LoggingKafkaResponse]**](LoggingKafkaResponse.md)
+
+
+## `updateLogKafka`
+
+```javascript
+updateLogKafka({ service_id, version_id, logging_kafka_name })
+```
+
+Update the Kafka logging endpoint for a particular service and version.
+
+### Example
+
+```javascript
+const options = {
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  logging_kafka_name: "logging_kafka_name_example", // required
+};
+
+apiInstance.updateLogKafka(options)
+  .then((data) => {
+    console.log(data, "API called successfully.");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**logging_kafka_name** | **String** | The name for the real-time logging configuration. |
+
+### Return type
+
+[**LoggingKafkaResponse**](LoggingKafkaResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

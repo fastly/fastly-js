@@ -13,12 +13,14 @@
 
 import ApiClient from "../ApiClient";
 import GenericTokenError from '../model/GenericTokenError';
+import InlineResponse400 from '../model/InlineResponse400';
+import TokenCreatedResponse from '../model/TokenCreatedResponse';
 import TokenResponse from '../model/TokenResponse';
 
 /**
 * Tokens service.
 * @module api/TokensApi
-* @version 4.4.0
+* @version 5.0.0
 */
 export default class TokensApi {
 
@@ -37,6 +39,110 @@ export default class TokensApi {
         }
     }
 
+
+    /**
+     * Revoke Tokens in bulk format. Users may only revoke their own tokens. Superusers may revoke tokens of others.
+     * @param {Object} options
+     * @param {Object.<String, {String: Object}>} [options.request_body]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
+     */
+    bulkRevokeTokensWithHttpInfo(options = {}) {
+      let postBody = options['request_body'];
+
+      let pathParams = {
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = ['application/vnd.api+json; ext=bulk'];
+      let accepts = [];
+      let returnType = null;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/tokens', 'DELETE',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Revoke Tokens in bulk format. Users may only revoke their own tokens. Superusers may revoke tokens of others.
+     * @param {Object} options
+     * @param {Object.<String, {String: Object}>} [options.request_body]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}
+     */
+    bulkRevokeTokens(options = {}) {
+      return this.bulkRevokeTokensWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+    /**
+     * Create an API token. If two-factor authentication is enabled for your account, review [the instructions](/reference/api/auth-tokens/user/) for including a one-time password in the request. 
+     * @param {Object} options
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TokenCreatedResponse} and HTTP response
+     */
+    createTokenWithHttpInfo(options = {}) {
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token', 'username_and_password'];
+      let contentTypes = ['application/x-www-form-urlencoded'];
+      let accepts = ['application/json'];
+      let returnType = TokenCreatedResponse;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/tokens', 'POST',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Create an API token. If two-factor authentication is enabled for your account, review [the instructions](/reference/api/auth-tokens/user/) for including a one-time password in the request. 
+     * @param {Object} options
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TokenCreatedResponse}
+     */
+    createToken(options = {}) {
+      return this.createTokenWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
 
     /**
      * Get a single token by its id.

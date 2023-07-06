@@ -12,6 +12,7 @@ Method | Fastly API endpoint | Description
 [**getSnippet**](SnippetApi.md#getSnippet) | **GET** /service/{service_id}/version/{version_id}/snippet/{snippet_name} | Get a versioned snippet
 [**getSnippetDynamic**](SnippetApi.md#getSnippetDynamic) | **GET** /service/{service_id}/snippet/{snippet_id} | Get a dynamic snippet
 [**listSnippets**](SnippetApi.md#listSnippets) | **GET** /service/{service_id}/version/{version_id}/snippet | List snippets
+[**updateSnippet**](SnippetApi.md#updateSnippet) | **PUT** /service/{service_id}/version/{version_id}/snippet/{snippet_name} | Update a versioned snippet
 [**updateSnippetDynamic**](SnippetApi.md#updateSnippetDynamic) | **PUT** /service/{service_id}/snippet/{snippet_id} | Update a dynamic snippet
 
 
@@ -212,6 +213,45 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[SnippetResponse]**](SnippetResponse.md)
+
+
+## `updateSnippet`
+
+```javascript
+updateSnippet({ service_id, version_id, snippet_name })
+```
+
+Update a specific snippet for a particular service and version.
+
+### Example
+
+```javascript
+const options = {
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  snippet_name: "snippet_name_example", // required
+};
+
+apiInstance.updateSnippet(options)
+  .then((data) => {
+    console.log(data, "API called successfully.");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**snippet_name** | **String** | The name for the snippet. |
+
+### Return type
+
+[**SnippetResponse**](SnippetResponse.md)
 
 
 ## `updateSnippetDynamic`

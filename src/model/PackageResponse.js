@@ -20,7 +20,7 @@ import Timestamps from './Timestamps';
 /**
  * The PackageResponse model module.
  * @module model/PackageResponse
- * @version 4.4.0
+ * @version 5.0.0
  */
 class PackageResponse {
     /**

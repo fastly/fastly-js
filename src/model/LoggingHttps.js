@@ -20,7 +20,7 @@ import LoggingTlsCommon from './LoggingTlsCommon';
 /**
  * The LoggingHttps model module.
  * @module model/LoggingHttps
- * @version 4.4.0
+ * @version 5.0.0
  */
 class LoggingHttps {
     /**

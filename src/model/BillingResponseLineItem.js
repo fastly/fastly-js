@@ -17,7 +17,7 @@ import Timestamps from './Timestamps';
 /**
  * The BillingResponseLineItem model module.
  * @module model/BillingResponseLineItem
- * @version 4.4.0
+ * @version 5.0.0
  */
 class BillingResponseLineItem {
     /**

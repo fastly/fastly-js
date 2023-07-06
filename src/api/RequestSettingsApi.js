@@ -18,7 +18,7 @@ import RequestSettingsResponse from '../model/RequestSettingsResponse';
 /**
 * RequestSettings service.
 * @module api/RequestSettingsApi
-* @version 4.4.0
+* @version 5.0.0
 */
 export default class RequestSettingsApi {
 
@@ -37,6 +37,71 @@ export default class RequestSettingsApi {
         }
     }
 
+
+    /**
+     * Creates a new Request Settings object.
+     * @param {Object} options
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RequestSettingsResponse} and HTTP response
+     */
+    createRequestSettingsWithHttpInfo(options = {}) {
+      let postBody = null;
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
+      }
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
+      }
+
+      let pathParams = {
+        'service_id': options['service_id'],
+        'version_id': options['version_id']
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = ['application/x-www-form-urlencoded'];
+      let accepts = ['application/json'];
+      let returnType = RequestSettingsResponse;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/service/{service_id}/version/{version_id}/request_settings', 'POST',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Creates a new Request Settings object.
+     * @param {Object} options
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RequestSettingsResponse}
+     */
+    createRequestSettings(options = {}) {
+      return this.createRequestSettingsWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
 
     /**
      * Removes the specified Request Settings object.

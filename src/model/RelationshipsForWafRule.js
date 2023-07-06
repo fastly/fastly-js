@@ -19,7 +19,7 @@ import RelationshipWafTagsWafTags from './RelationshipWafTagsWafTags';
 /**
  * The RelationshipsForWafRule model module.
  * @module model/RelationshipsForWafRule
- * @version 4.4.0
+ * @version 5.0.0
  */
 class RelationshipsForWafRule {
     /**

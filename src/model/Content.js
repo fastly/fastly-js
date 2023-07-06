@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Content model module.
  * @module model/Content
- * @version 4.4.0
+ * @version 5.0.0
  */
 class Content {
     /**
@@ -50,10 +50,10 @@ class Content {
                 obj['hash'] = ApiClient.convertToType(data['hash'], 'String');
             }
             if (data.hasOwnProperty('request')) {
-                obj['request'] = ApiClient.convertToType(data['request'], Object);
+                obj['request'] = ApiClient.convertToType(data['request'], {'String': Object});
             }
             if (data.hasOwnProperty('response')) {
-                obj['response'] = ApiClient.convertToType(data['response'], Object);
+                obj['response'] = ApiClient.convertToType(data['response'], {'String': Object});
             }
             if (data.hasOwnProperty('response_time')) {
                 obj['response_time'] = ApiClient.convertToType(data['response_time'], 'Number');
@@ -77,12 +77,12 @@ class Content {
 Content.prototype['hash'] = undefined;
 
 /**
- * @member {Object} request
+ * @member {Object.<String, Object>} request
  */
 Content.prototype['request'] = undefined;
 
 /**
- * @member {Object} response
+ * @member {Object.<String, Object>} response
  */
 Content.prototype['response'] = undefined;
 

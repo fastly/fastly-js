@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AclEntry model module.
  * @module model/AclEntry
- * @version 4.4.0
+ * @version 5.0.0
  */
 class AclEntry {
     /**
@@ -68,7 +68,7 @@ class AclEntry {
 /**
  * Whether to negate the match. Useful primarily when creating individual exceptions to larger subnets.
  * @member {module:model/AclEntry.NegatedEnum} negated
- * @default NegatedEnum.0
+ * @default NegatedEnum.disable
  */
 AclEntry.prototype['negated'] = undefined;
 
@@ -105,13 +105,13 @@ AclEntry['NegatedEnum'] = {
      * value: 0
      * @const
      */
-    "0": 0,
+    "disable": 0,
 
     /**
      * value: 1
      * @const
      */
-    "1": 1
+    "enable": 1
 };
 
 

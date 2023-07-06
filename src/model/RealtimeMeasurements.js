@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RealtimeMeasurements model module.
  * @module model/RealtimeMeasurements
- * @version 4.4.0
+ * @version 5.0.0
  */
 class RealtimeMeasurements {
     /**
@@ -90,7 +90,7 @@ class RealtimeMeasurements {
                 obj['miss_time'] = ApiClient.convertToType(data['miss_time'], 'Number');
             }
             if (data.hasOwnProperty('miss_histogram')) {
-                obj['miss_histogram'] = ApiClient.convertToType(data['miss_histogram'], Object);
+                obj['miss_histogram'] = ApiClient.convertToType(data['miss_histogram'], {'String': Object});
             }
             if (data.hasOwnProperty('compute_requests')) {
                 obj['compute_requests'] = ApiClient.convertToType(data['compute_requests'], 'Number');
@@ -794,7 +794,7 @@ RealtimeMeasurements.prototype['miss_time'] = undefined;
 
 /**
  * A histogram. Each key represents the upper bound of a span of 10 milliseconds and the values represent the number of requests to origin during that 10ms period. Any origin request that takes more than 60 seconds to return will be in the 60000 bucket.
- * @member {Object} miss_histogram
+ * @member {Object.<String, Object>} miss_histogram
  */
 RealtimeMeasurements.prototype['miss_histogram'] = undefined;
 

@@ -59,6 +59,7 @@ Class | Method | Description
 *Fastly.AclEntryApi* | [**getAclEntry**](docs/AclEntryApi.md#getAclEntry) | Describe an ACL entry
 *Fastly.AclEntryApi* | [**listAclEntries**](docs/AclEntryApi.md#listAclEntries) | List ACL entries
 *Fastly.AclEntryApi* | [**updateAclEntry**](docs/AclEntryApi.md#updateAclEntry) | Update an ACL entry
+*Fastly.ApexRedirectApi* | [**createApexRedirect**](docs/ApexRedirectApi.md#createApexRedirect) | Create an apex redirect
 *Fastly.ApexRedirectApi* | [**deleteApexRedirect**](docs/ApexRedirectApi.md#deleteApexRedirect) | Delete an apex redirect
 *Fastly.ApexRedirectApi* | [**getApexRedirect**](docs/ApexRedirectApi.md#getApexRedirect) | Get an apex redirect
 *Fastly.ApexRedirectApi* | [**listApexRedirects**](docs/ApexRedirectApi.md#listApexRedirects) | List apex redirects
@@ -104,6 +105,7 @@ Class | Method | Description
 *Fastly.ConfigStoreItemApi* | [**listConfigStoreItems**](docs/ConfigStoreItemApi.md#listConfigStoreItems) | List items in a config store
 *Fastly.ConfigStoreItemApi* | [**updateConfigStoreItem**](docs/ConfigStoreItemApi.md#updateConfigStoreItem) | Update an entry in a config store
 *Fastly.ConfigStoreItemApi* | [**upsertConfigStoreItem**](docs/ConfigStoreItemApi.md#upsertConfigStoreItem) | Insert or update an entry in a config store
+*Fastly.ContactApi* | [**createContacts**](docs/ContactApi.md#createContacts) | Add a new customer contact
 *Fastly.ContactApi* | [**deleteContact**](docs/ContactApi.md#deleteContact) | Delete a contact
 *Fastly.ContactApi* | [**listContacts**](docs/ContactApi.md#listContacts) | List contacts
 *Fastly.ContentApi* | [**contentCheck**](docs/ContentApi.md#contentCheck) | Check status of content in each POP&#39;s cache
@@ -130,6 +132,7 @@ Class | Method | Description
 *Fastly.DirectorApi* | [**deleteDirector**](docs/DirectorApi.md#deleteDirector) | Delete a director
 *Fastly.DirectorApi* | [**getDirector**](docs/DirectorApi.md#getDirector) | Get a director
 *Fastly.DirectorApi* | [**listDirectors**](docs/DirectorApi.md#listDirectors) | List directors
+*Fastly.DirectorApi* | [**updateDirector**](docs/DirectorApi.md#updateDirector) | Update a director
 *Fastly.DirectorBackendApi* | [**createDirectorBackend**](docs/DirectorBackendApi.md#createDirectorBackend) | Create a director-backend relationship
 *Fastly.DirectorBackendApi* | [**deleteDirectorBackend**](docs/DirectorBackendApi.md#deleteDirectorBackend) | Delete a director-backend relationship
 *Fastly.DirectorBackendApi* | [**getDirectorBackend**](docs/DirectorBackendApi.md#getDirectorBackend) | Get a director-backend relationship
@@ -140,6 +143,10 @@ Class | Method | Description
 *Fastly.DomainApi* | [**getDomain**](docs/DomainApi.md#getDomain) | Describe a domain
 *Fastly.DomainApi* | [**listDomains**](docs/DomainApi.md#listDomains) | List domains
 *Fastly.DomainApi* | [**updateDomain**](docs/DomainApi.md#updateDomain) | Update a domain
+*Fastly.DomainInspectorHistoricalApi* | [**getDomainInspectorHistorical**](docs/DomainInspectorHistoricalApi.md#getDomainInspectorHistorical) | Get historical domain data for a service
+*Fastly.DomainInspectorRealtimeApi* | [**getDomainInspectorLast120Seconds**](docs/DomainInspectorRealtimeApi.md#getDomainInspectorLast120Seconds) | Get real-time domain data for the last 120 seconds
+*Fastly.DomainInspectorRealtimeApi* | [**getDomainInspectorLastMaxEntries**](docs/DomainInspectorRealtimeApi.md#getDomainInspectorLastMaxEntries) | Get a limited number of real-time domain data entries
+*Fastly.DomainInspectorRealtimeApi* | [**getDomainInspectorLastSecond**](docs/DomainInspectorRealtimeApi.md#getDomainInspectorLastSecond) | Get real-time domain data from a specified time
 *Fastly.DomainOwnershipsApi* | [**listDomainOwnerships**](docs/DomainOwnershipsApi.md#listDomainOwnerships) | List domain-ownerships
 *Fastly.EnabledProductsApi* | [**disableProduct**](docs/EnabledProductsApi.md#disableProduct) | Disable a product
 *Fastly.EnabledProductsApi* | [**enableProduct**](docs/EnabledProductsApi.md#enableProduct) | Enable a product
@@ -174,20 +181,36 @@ Class | Method | Description
 *Fastly.Http3Api* | [**deleteHttp3**](docs/Http3Api.md#deleteHttp3) | Disable support for HTTP/3
 *Fastly.Http3Api* | [**getHttp3**](docs/Http3Api.md#getHttp3) | Get HTTP/3 status
 *Fastly.IamPermissionsApi* | [**listPermissions**](docs/IamPermissionsApi.md#listPermissions) | List permissions
+*Fastly.IamRolesApi* | [**addRolePermissions**](docs/IamRolesApi.md#addRolePermissions) | Add permissions to a role
+*Fastly.IamRolesApi* | [**createARole**](docs/IamRolesApi.md#createARole) | Create a role
 *Fastly.IamRolesApi* | [**deleteARole**](docs/IamRolesApi.md#deleteARole) | Delete a role
 *Fastly.IamRolesApi* | [**getARole**](docs/IamRolesApi.md#getARole) | Get a role
 *Fastly.IamRolesApi* | [**listRolePermissions**](docs/IamRolesApi.md#listRolePermissions) | List permissions in a role
 *Fastly.IamRolesApi* | [**listRoles**](docs/IamRolesApi.md#listRoles) | List roles
+*Fastly.IamRolesApi* | [**removeRolePermissions**](docs/IamRolesApi.md#removeRolePermissions) | Remove permissions from a role
+*Fastly.IamRolesApi* | [**updateARole**](docs/IamRolesApi.md#updateARole) | Update a role
+*Fastly.IamServiceGroupsApi* | [**addServiceGroupServices**](docs/IamServiceGroupsApi.md#addServiceGroupServices) | Add services in a service group
+*Fastly.IamServiceGroupsApi* | [**createAServiceGroup**](docs/IamServiceGroupsApi.md#createAServiceGroup) | Create a service group
 *Fastly.IamServiceGroupsApi* | [**deleteAServiceGroup**](docs/IamServiceGroupsApi.md#deleteAServiceGroup) | Delete a service group
 *Fastly.IamServiceGroupsApi* | [**getAServiceGroup**](docs/IamServiceGroupsApi.md#getAServiceGroup) | Get a service group
 *Fastly.IamServiceGroupsApi* | [**listServiceGroupServices**](docs/IamServiceGroupsApi.md#listServiceGroupServices) | List services to a service group
 *Fastly.IamServiceGroupsApi* | [**listServiceGroups**](docs/IamServiceGroupsApi.md#listServiceGroups) | List service groups
+*Fastly.IamServiceGroupsApi* | [**removeServiceGroupServices**](docs/IamServiceGroupsApi.md#removeServiceGroupServices) | Remove services from a service group
+*Fastly.IamServiceGroupsApi* | [**updateAServiceGroup**](docs/IamServiceGroupsApi.md#updateAServiceGroup) | Update a service group
+*Fastly.IamUserGroupsApi* | [**addUserGroupMembers**](docs/IamUserGroupsApi.md#addUserGroupMembers) | Add members to a user group
+*Fastly.IamUserGroupsApi* | [**addUserGroupRoles**](docs/IamUserGroupsApi.md#addUserGroupRoles) | Add roles to a user group
+*Fastly.IamUserGroupsApi* | [**addUserGroupServiceGroups**](docs/IamUserGroupsApi.md#addUserGroupServiceGroups) | Add service groups to a user group
+*Fastly.IamUserGroupsApi* | [**createAUserGroup**](docs/IamUserGroupsApi.md#createAUserGroup) | Create a user group
 *Fastly.IamUserGroupsApi* | [**deleteAUserGroup**](docs/IamUserGroupsApi.md#deleteAUserGroup) | Delete a user group
 *Fastly.IamUserGroupsApi* | [**getAUserGroup**](docs/IamUserGroupsApi.md#getAUserGroup) | Get a user group
 *Fastly.IamUserGroupsApi* | [**listUserGroupMembers**](docs/IamUserGroupsApi.md#listUserGroupMembers) | List members of a user group
 *Fastly.IamUserGroupsApi* | [**listUserGroupRoles**](docs/IamUserGroupsApi.md#listUserGroupRoles) | List roles in a user group
 *Fastly.IamUserGroupsApi* | [**listUserGroupServiceGroups**](docs/IamUserGroupsApi.md#listUserGroupServiceGroups) | List service groups in a user group
 *Fastly.IamUserGroupsApi* | [**listUserGroups**](docs/IamUserGroupsApi.md#listUserGroups) | List user groups
+*Fastly.IamUserGroupsApi* | [**removeUserGroupMembers**](docs/IamUserGroupsApi.md#removeUserGroupMembers) | Remove members of a user group
+*Fastly.IamUserGroupsApi* | [**removeUserGroupRoles**](docs/IamUserGroupsApi.md#removeUserGroupRoles) | Remove roles from a user group
+*Fastly.IamUserGroupsApi* | [**removeUserGroupServiceGroups**](docs/IamUserGroupsApi.md#removeUserGroupServiceGroups) | Remove service groups from a user group
+*Fastly.IamUserGroupsApi* | [**updateAUserGroup**](docs/IamUserGroupsApi.md#updateAUserGroup) | Update a user group
 *Fastly.InvitationsApi* | [**createInvitation**](docs/InvitationsApi.md#createInvitation) | Create an invitation
 *Fastly.InvitationsApi* | [**deleteInvitation**](docs/InvitationsApi.md#deleteInvitation) | Delete an invitation
 *Fastly.InvitationsApi* | [**listInvitations**](docs/InvitationsApi.md#listInvitations) | List invitations
@@ -199,6 +222,34 @@ Class | Method | Description
 *Fastly.KvStoreItemApi* | [**getKeys**](docs/KvStoreItemApi.md#getKeys) | List kv store keys.
 *Fastly.KvStoreItemApi* | [**getValueForKey**](docs/KvStoreItemApi.md#getValueForKey) | Get the value of an kv store item
 *Fastly.KvStoreItemApi* | [**setValueForKey**](docs/KvStoreItemApi.md#setValueForKey) | Insert an item into an kv store
+*Fastly.LegacyWafConfigurationSetsApi* | [**listWafConfigSets**](docs/LegacyWafConfigurationSetsApi.md#listWafConfigSets) | List configuration sets
+*Fastly.LegacyWafConfigurationSetsApi* | [**listWafsConfigSet**](docs/LegacyWafConfigurationSetsApi.md#listWafsConfigSet) | List WAFs currently using a configuration set
+*Fastly.LegacyWafConfigurationSetsApi* | [**useWafConfigSet**](docs/LegacyWafConfigurationSetsApi.md#useWafConfigSet) | Apply a configuration set to a WAF
+*Fastly.LegacyWafFirewallApi* | [**createLegacyWafFirewallService**](docs/LegacyWafFirewallApi.md#createLegacyWafFirewallService) | Create a firewall
+*Fastly.LegacyWafFirewallApi* | [**disableLegacyWafFirewall**](docs/LegacyWafFirewallApi.md#disableLegacyWafFirewall) | Disable a firewall
+*Fastly.LegacyWafFirewallApi* | [**enableLegacyWafFirewall**](docs/LegacyWafFirewallApi.md#enableLegacyWafFirewall) | Enable a firewall
+*Fastly.LegacyWafFirewallApi* | [**getLegacyWafFirewall**](docs/LegacyWafFirewallApi.md#getLegacyWafFirewall) | Get a firewall object
+*Fastly.LegacyWafFirewallApi* | [**getLegacyWafFirewallService**](docs/LegacyWafFirewallApi.md#getLegacyWafFirewallService) | Get a firewall
+*Fastly.LegacyWafFirewallApi* | [**listLegacyWafFirewalls**](docs/LegacyWafFirewallApi.md#listLegacyWafFirewalls) | List active firewalls
+*Fastly.LegacyWafFirewallApi* | [**listLegacyWafFirewallsService**](docs/LegacyWafFirewallApi.md#listLegacyWafFirewallsService) | List firewalls
+*Fastly.LegacyWafFirewallApi* | [**updateLegacyWafFirewallService**](docs/LegacyWafFirewallApi.md#updateLegacyWafFirewallService) | Update a firewall
+*Fastly.LegacyWafOwaspApi* | [**createOwaspSettings**](docs/LegacyWafOwaspApi.md#createOwaspSettings) | Create an OWASP settings object
+*Fastly.LegacyWafOwaspApi* | [**getOwaspSettings**](docs/LegacyWafOwaspApi.md#getOwaspSettings) | Get the OWASP settings object
+*Fastly.LegacyWafOwaspApi* | [**updateOwaspSettings**](docs/LegacyWafOwaspApi.md#updateOwaspSettings) | Update the OWASP settings object
+*Fastly.LegacyWafRuleApi* | [**getLegacyWafFirewallRuleVcl**](docs/LegacyWafRuleApi.md#getLegacyWafFirewallRuleVcl) | Get VCL for a rule associated with a firewall
+*Fastly.LegacyWafRuleApi* | [**getLegacyWafRule**](docs/LegacyWafRuleApi.md#getLegacyWafRule) | Get a rule
+*Fastly.LegacyWafRuleApi* | [**getLegacyWafRuleVcl**](docs/LegacyWafRuleApi.md#getLegacyWafRuleVcl) | Get VCL for a rule
+*Fastly.LegacyWafRuleApi* | [**listLegacyWafRules**](docs/LegacyWafRuleApi.md#listLegacyWafRules) | List rules in the latest configuration set
+*Fastly.LegacyWafRuleStatusApi* | [**getWafFirewallRuleStatus**](docs/LegacyWafRuleStatusApi.md#getWafFirewallRuleStatus) | Get the status of a rule on a firewall
+*Fastly.LegacyWafRuleStatusApi* | [**listWafFirewallRuleStatuses**](docs/LegacyWafRuleStatusApi.md#listWafFirewallRuleStatuses) | List rule statuses
+*Fastly.LegacyWafRuleStatusApi* | [**updateWafFirewallRuleStatus**](docs/LegacyWafRuleStatusApi.md#updateWafFirewallRuleStatus) | Update the status of a rule
+*Fastly.LegacyWafRuleStatusApi* | [**updateWafFirewallRuleStatusesTag**](docs/LegacyWafRuleStatusApi.md#updateWafFirewallRuleStatusesTag) | Create or update status of a tagged group of rules
+*Fastly.LegacyWafRulesetApi* | [**getWafRuleset**](docs/LegacyWafRulesetApi.md#getWafRuleset) | Get a WAF ruleset
+*Fastly.LegacyWafRulesetApi* | [**getWafRulesetVcl**](docs/LegacyWafRulesetApi.md#getWafRulesetVcl) | Generate WAF ruleset VCL
+*Fastly.LegacyWafRulesetApi* | [**updateWafRuleset**](docs/LegacyWafRulesetApi.md#updateWafRuleset) | Update a WAF ruleset
+*Fastly.LegacyWafTagApi* | [**listLegacyWafTags**](docs/LegacyWafTagApi.md#listLegacyWafTags) | List WAF tags
+*Fastly.LegacyWafUpdateStatusApi* | [**getWafUpdateStatus**](docs/LegacyWafUpdateStatusApi.md#getWafUpdateStatus) | Get the status of a WAF update
+*Fastly.LegacyWafUpdateStatusApi* | [**listWafUpdateStatuses**](docs/LegacyWafUpdateStatusApi.md#listWafUpdateStatuses) | List update statuses
 *Fastly.LoggingAzureblobApi* | [**createLogAzure**](docs/LoggingAzureblobApi.md#createLogAzure) | Create an Azure Blob Storage log endpoint
 *Fastly.LoggingAzureblobApi* | [**deleteLogAzure**](docs/LoggingAzureblobApi.md#deleteLogAzure) | Delete the Azure Blob Storage log endpoint
 *Fastly.LoggingAzureblobApi* | [**getLogAzure**](docs/LoggingAzureblobApi.md#getLogAzure) | Get an Azure Blob Storage log endpoint
@@ -258,10 +309,12 @@ Class | Method | Description
 *Fastly.LoggingKafkaApi* | [**deleteLogKafka**](docs/LoggingKafkaApi.md#deleteLogKafka) | Delete the Kafka log endpoint
 *Fastly.LoggingKafkaApi* | [**getLogKafka**](docs/LoggingKafkaApi.md#getLogKafka) | Get a Kafka log endpoint
 *Fastly.LoggingKafkaApi* | [**listLogKafka**](docs/LoggingKafkaApi.md#listLogKafka) | List Kafka log endpoints
+*Fastly.LoggingKafkaApi* | [**updateLogKafka**](docs/LoggingKafkaApi.md#updateLogKafka) | Update the Kafka log endpoint
 *Fastly.LoggingKinesisApi* | [**createLogKinesis**](docs/LoggingKinesisApi.md#createLogKinesis) | Create  an Amazon Kinesis log endpoint
 *Fastly.LoggingKinesisApi* | [**deleteLogKinesis**](docs/LoggingKinesisApi.md#deleteLogKinesis) | Delete the Amazon Kinesis log endpoint
 *Fastly.LoggingKinesisApi* | [**getLogKinesis**](docs/LoggingKinesisApi.md#getLogKinesis) | Get an Amazon Kinesis log endpoint
 *Fastly.LoggingKinesisApi* | [**listLogKinesis**](docs/LoggingKinesisApi.md#listLogKinesis) | List Amazon Kinesis log endpoints
+*Fastly.LoggingKinesisApi* | [**updateLogKinesis**](docs/LoggingKinesisApi.md#updateLogKinesis) | Update the Amazon Kinesis log endpoint
 *Fastly.LoggingLogentriesApi* | [**createLogLogentries**](docs/LoggingLogentriesApi.md#createLogLogentries) | Create a Logentries log endpoint
 *Fastly.LoggingLogentriesApi* | [**deleteLogLogentries**](docs/LoggingLogentriesApi.md#deleteLogLogentries) | Delete a Logentries log endpoint
 *Fastly.LoggingLogentriesApi* | [**getLogLogentries**](docs/LoggingLogentriesApi.md#getLogLogentries) | Get a Logentries log endpoint
@@ -332,6 +385,10 @@ Class | Method | Description
 *Fastly.MutualAuthenticationApi* | [**getMutualAuthentication**](docs/MutualAuthenticationApi.md#getMutualAuthentication) | Get a Mutual Authentication
 *Fastly.MutualAuthenticationApi* | [**listMutualAuthentications**](docs/MutualAuthenticationApi.md#listMutualAuthentications) | List Mutual Authentications
 *Fastly.MutualAuthenticationApi* | [**patchMutualAuthentication**](docs/MutualAuthenticationApi.md#patchMutualAuthentication) | Update a Mutual Authentication
+*Fastly.OriginInspectorHistoricalApi* | [**getOriginInspectorHistorical**](docs/OriginInspectorHistoricalApi.md#getOriginInspectorHistorical) | Get historical origin data for a service
+*Fastly.OriginInspectorRealtimeApi* | [**getOriginInspectorLast120Seconds**](docs/OriginInspectorRealtimeApi.md#getOriginInspectorLast120Seconds) | Get real-time origin data for the last 120 seconds
+*Fastly.OriginInspectorRealtimeApi* | [**getOriginInspectorLastMaxEntries**](docs/OriginInspectorRealtimeApi.md#getOriginInspectorLastMaxEntries) | Get a limited number of real-time origin data entries
+*Fastly.OriginInspectorRealtimeApi* | [**getOriginInspectorLastSecond**](docs/OriginInspectorRealtimeApi.md#getOriginInspectorLastSecond) | Get real-time origin data from specific time.
 *Fastly.PackageApi* | [**getPackage**](docs/PackageApi.md#getPackage) | Get details of the service&#39;s Compute@Edge package.
 *Fastly.PackageApi* | [**putPackage**](docs/PackageApi.md#putPackage) | Upload a Compute@Edge package.
 *Fastly.PoolApi* | [**createServerPool**](docs/PoolApi.md#createServerPool) | Create a server pool
@@ -354,6 +411,7 @@ Class | Method | Description
 *Fastly.RealtimeApi* | [**getStatsLast120Seconds**](docs/RealtimeApi.md#getStatsLast120Seconds) | Get real-time data for the last 120 seconds
 *Fastly.RealtimeApi* | [**getStatsLast120SecondsLimitEntries**](docs/RealtimeApi.md#getStatsLast120SecondsLimitEntries) | Get a limited number of real-time data entries
 *Fastly.RealtimeApi* | [**getStatsLastSecond**](docs/RealtimeApi.md#getStatsLastSecond) | Get real-time data from specified time
+*Fastly.RequestSettingsApi* | [**createRequestSettings**](docs/RequestSettingsApi.md#createRequestSettings) | Create a Request Settings object
 *Fastly.RequestSettingsApi* | [**deleteRequestSettings**](docs/RequestSettingsApi.md#deleteRequestSettings) | Delete a Request Settings object
 *Fastly.RequestSettingsApi* | [**getRequestSettings**](docs/RequestSettingsApi.md#getRequestSettings) | Get a Request Settings object
 *Fastly.RequestSettingsApi* | [**listRequestSettings**](docs/RequestSettingsApi.md#listRequestSettings) | List Request Settings objects
@@ -363,9 +421,23 @@ Class | Method | Description
 *Fastly.ResourceApi* | [**getResource**](docs/ResourceApi.md#getResource) | Display a resource link
 *Fastly.ResourceApi* | [**listResources**](docs/ResourceApi.md#listResources) | List resource links
 *Fastly.ResourceApi* | [**updateResource**](docs/ResourceApi.md#updateResource) | Update a resource link
+*Fastly.ResponseObjectApi* | [**createResponseObject**](docs/ResponseObjectApi.md#createResponseObject) | Create a Response object
 *Fastly.ResponseObjectApi* | [**deleteResponseObject**](docs/ResponseObjectApi.md#deleteResponseObject) | Delete a Response Object
 *Fastly.ResponseObjectApi* | [**getResponseObject**](docs/ResponseObjectApi.md#getResponseObject) | Get a Response object
 *Fastly.ResponseObjectApi* | [**listResponseObjects**](docs/ResponseObjectApi.md#listResponseObjects) | List Response objects
+*Fastly.ResponseObjectApi* | [**updateResponseObject**](docs/ResponseObjectApi.md#updateResponseObject) | Update a Response object
+*Fastly.SecretStoreApi* | [**clientKey**](docs/SecretStoreApi.md#clientKey) | Create new client key
+*Fastly.SecretStoreApi* | [**createSecretStore**](docs/SecretStoreApi.md#createSecretStore) | Create new secret store
+*Fastly.SecretStoreApi* | [**deleteSecretStore**](docs/SecretStoreApi.md#deleteSecretStore) | Delete secret store
+*Fastly.SecretStoreApi* | [**getSecretStore**](docs/SecretStoreApi.md#getSecretStore) | Create secret store by ID
+*Fastly.SecretStoreApi* | [**getSecretStores**](docs/SecretStoreApi.md#getSecretStores) | Get all secret stores
+*Fastly.SecretStoreApi* | [**signingKey**](docs/SecretStoreApi.md#signingKey) | Get public key
+*Fastly.SecretStoreItemApi* | [**createSecret**](docs/SecretStoreItemApi.md#createSecret) | Create a new secret in a store.
+*Fastly.SecretStoreItemApi* | [**deleteSecret**](docs/SecretStoreItemApi.md#deleteSecret) | Delete a secret from a store.
+*Fastly.SecretStoreItemApi* | [**getSecret**](docs/SecretStoreItemApi.md#getSecret) | Get secret metadata.
+*Fastly.SecretStoreItemApi* | [**getSecrets**](docs/SecretStoreItemApi.md#getSecrets) | List secrets within a store.
+*Fastly.SecretStoreItemApi* | [**mustRecreateSecret**](docs/SecretStoreItemApi.md#mustRecreateSecret) | Recreate a secret in a store.
+*Fastly.SecretStoreItemApi* | [**recreateSecret**](docs/SecretStoreItemApi.md#recreateSecret) | Create or recreate a secret in a store.
 *Fastly.ServerApi* | [**createPoolServer**](docs/ServerApi.md#createPoolServer) | Add a server to a pool
 *Fastly.ServerApi* | [**deletePoolServer**](docs/ServerApi.md#deletePoolServer) | Delete a server from a pool
 *Fastly.ServerApi* | [**getPoolServer**](docs/ServerApi.md#getPoolServer) | Get a pool server
@@ -381,9 +453,11 @@ Class | Method | Description
 *Fastly.ServiceApi* | [**updateService**](docs/ServiceApi.md#updateService) | Update a service
 *Fastly.ServiceAuthorizationsApi* | [**createServiceAuthorization**](docs/ServiceAuthorizationsApi.md#createServiceAuthorization) | Create service authorization
 *Fastly.ServiceAuthorizationsApi* | [**deleteServiceAuthorization**](docs/ServiceAuthorizationsApi.md#deleteServiceAuthorization) | Delete service authorization
+*Fastly.ServiceAuthorizationsApi* | [**deleteServiceAuthorization2**](docs/ServiceAuthorizationsApi.md#deleteServiceAuthorization2) | Delete service authorizations
 *Fastly.ServiceAuthorizationsApi* | [**listServiceAuthorization**](docs/ServiceAuthorizationsApi.md#listServiceAuthorization) | List service authorizations
 *Fastly.ServiceAuthorizationsApi* | [**showServiceAuthorization**](docs/ServiceAuthorizationsApi.md#showServiceAuthorization) | Show service authorization
 *Fastly.ServiceAuthorizationsApi* | [**updateServiceAuthorization**](docs/ServiceAuthorizationsApi.md#updateServiceAuthorization) | Update service authorization
+*Fastly.ServiceAuthorizationsApi* | [**updateServiceAuthorization2**](docs/ServiceAuthorizationsApi.md#updateServiceAuthorization2) | Update service authorizations
 *Fastly.SettingsApi* | [**getServiceSettings**](docs/SettingsApi.md#getServiceSettings) | Get service settings
 *Fastly.SettingsApi* | [**updateServiceSettings**](docs/SettingsApi.md#updateServiceSettings) | Update service settings
 *Fastly.SnippetApi* | [**createSnippet**](docs/SnippetApi.md#createSnippet) | Create a snippet
@@ -391,12 +465,14 @@ Class | Method | Description
 *Fastly.SnippetApi* | [**getSnippet**](docs/SnippetApi.md#getSnippet) | Get a versioned snippet
 *Fastly.SnippetApi* | [**getSnippetDynamic**](docs/SnippetApi.md#getSnippetDynamic) | Get a dynamic snippet
 *Fastly.SnippetApi* | [**listSnippets**](docs/SnippetApi.md#listSnippets) | List snippets
+*Fastly.SnippetApi* | [**updateSnippet**](docs/SnippetApi.md#updateSnippet) | Update a versioned snippet
 *Fastly.SnippetApi* | [**updateSnippetDynamic**](docs/SnippetApi.md#updateSnippetDynamic) | Update a dynamic snippet
 *Fastly.StarApi* | [**createServiceStar**](docs/StarApi.md#createServiceStar) | Create a star
 *Fastly.StarApi* | [**deleteServiceStar**](docs/StarApi.md#deleteServiceStar) | Delete a star
 *Fastly.StarApi* | [**getServiceStar**](docs/StarApi.md#getServiceStar) | Get a star
 *Fastly.StarApi* | [**listServiceStars**](docs/StarApi.md#listServiceStars) | List stars
 *Fastly.StatsApi* | [**getServiceStats**](docs/StatsApi.md#getServiceStats) | Get stats for a service
+*Fastly.SudoApi* | [**requestSudoAccess**](docs/SudoApi.md#requestSudoAccess) | Request Sudo access
 *Fastly.TlsActivationsApi* | [**createTlsActivation**](docs/TlsActivationsApi.md#createTlsActivation) | Enable TLS for a domain using a custom certificate
 *Fastly.TlsActivationsApi* | [**deleteTlsActivation**](docs/TlsActivationsApi.md#deleteTlsActivation) | Disable TLS on a domain
 *Fastly.TlsActivationsApi* | [**getTlsActivation**](docs/TlsActivationsApi.md#getTlsActivation) | Get a TLS activation
@@ -427,6 +503,8 @@ Class | Method | Description
 *Fastly.TlsSubscriptionsApi* | [**getTlsSub**](docs/TlsSubscriptionsApi.md#getTlsSub) | Get a TLS subscription
 *Fastly.TlsSubscriptionsApi* | [**listTlsSubs**](docs/TlsSubscriptionsApi.md#listTlsSubs) | List TLS subscriptions
 *Fastly.TlsSubscriptionsApi* | [**patchTlsSub**](docs/TlsSubscriptionsApi.md#patchTlsSub) | Update a TLS subscription
+*Fastly.TokensApi* | [**bulkRevokeTokens**](docs/TokensApi.md#bulkRevokeTokens) | Revoke multiple tokens
+*Fastly.TokensApi* | [**createToken**](docs/TokensApi.md#createToken) | Create a token
 *Fastly.TokensApi* | [**getToken**](docs/TokensApi.md#getToken) | Get a token
 *Fastly.TokensApi* | [**getTokenCurrent**](docs/TokensApi.md#getTokenCurrent) | Get the current token
 *Fastly.TokensApi* | [**listTokensCustomer**](docs/TokensApi.md#listTokensCustomer) | List tokens for a customer
@@ -463,6 +541,7 @@ Class | Method | Description
 *Fastly.VersionApi* | [**lockServiceVersion**](docs/VersionApi.md#lockServiceVersion) | Lock a service version
 *Fastly.VersionApi* | [**updateServiceVersion**](docs/VersionApi.md#updateServiceVersion) | Update a service version
 *Fastly.VersionApi* | [**validateServiceVersion**](docs/VersionApi.md#validateServiceVersion) | Validate a service version
+*Fastly.WafActiveRulesApi* | [**bulkDeleteWafActiveRules**](docs/WafActiveRulesApi.md#bulkDeleteWafActiveRules) | Delete multiple active rules from a WAF
 *Fastly.WafActiveRulesApi* | [**bulkUpdateWafActiveRules**](docs/WafActiveRulesApi.md#bulkUpdateWafActiveRules) | Update multiple active rules
 *Fastly.WafActiveRulesApi* | [**createWafActiveRule**](docs/WafActiveRulesApi.md#createWafActiveRule) | Add a rule to a WAF as an active rule
 *Fastly.WafActiveRulesApi* | [**createWafActiveRulesTag**](docs/WafActiveRulesApi.md#createWafActiveRulesTag) | Create active rules by tag
@@ -497,70 +576,12 @@ Class | Method | Description
 
 The fastly-js API client currently does not support the following endpoints:
 
-- [`/customer/{customer_id}/contacts`](https://developer.fastly.com/reference/api/account/contact) (POST)
-- [`/metrics/domains/services/{service_id}`](https://developer.fastly.com/reference/api/metrics-stats/domain-inspector/historical) (GET)
-- [`/metrics/origins/services/{service_id}`](https://developer.fastly.com/reference/api/metrics-stats/origin-inspector/historical) (GET)
 - [`/resources/stores/kv/{store_id}/batch`](https://developer.fastly.com/reference/api/services/resources/kv-store-item) (PUT)
-- [`/resources/stores/secret/client-key`](https://developer.fastly.com/reference/api/services/resources/secret-store) (POST)
-- [`/resources/stores/secret/signing-key`](https://developer.fastly.com/reference/api/services/resources/secret-store) (GET)
-- [`/resources/stores/secret/{store_id}/secrets/{secret_name}`](https://developer.fastly.com/reference/api/services/resources/secret) (DELETE, GET)
-- [`/resources/stores/secret/{store_id}/secrets`](https://developer.fastly.com/reference/api/services/resources/secret) (GET, PATCH, POST, PUT)
-- [`/resources/stores/secret/{store_id}`](https://developer.fastly.com/reference/api/services/resources/secret-store) (DELETE, GET)
-- [`/resources/stores/secret`](https://developer.fastly.com/reference/api/services/resources/secret-store) (GET, POST)
-- [`/roles/{role_id}/permissions`](https://developer.fastly.com/reference/api/account/roles) (DELETE, POST)
-- [`/roles/{role_id}`](https://developer.fastly.com/reference/api/account/roles) (PATCH)
-- [`/roles`](https://developer.fastly.com/reference/api/account/roles) (POST)
-- [`/service-authorizations`](https://developer.fastly.com/reference/api/account/service-authorization) (DELETE, PATCH)
-- [`/service-groups/{service_group_id}/services`](https://developer.fastly.com/reference/api/account/service-groups) (DELETE, POST)
-- [`/service-groups/{service_group_id}`](https://developer.fastly.com/reference/api/account/service-groups) (PATCH)
-- [`/service-groups`](https://developer.fastly.com/reference/api/account/service-groups) (POST)
-- [`/service/{service_id}/version/{version_id}/apex-redirects`](https://developer.fastly.com/reference/api/vcl-services/apex-redirect) (POST)
-- [`/service/{service_id}/version/{version_id}/director/{director_name}`](https://developer.fastly.com/reference/api/load-balancing/directors/director) (PUT)
-- [`/service/{service_id}/version/{version_id}/logging/kafka/{logging_kafka_name}`](https://developer.fastly.com/reference/api/logging/kafka) (PUT)
-- [`/service/{service_id}/version/{version_id}/logging/kinesis/{logging_kinesis_name}`](https://developer.fastly.com/reference/api/logging/kinesis) (PUT)
-- [`/service/{service_id}/version/{version_id}/request_settings`](https://developer.fastly.com/reference/api/vcl-services/request-settings) (POST)
-- [`/service/{service_id}/version/{version_id}/response_object/{response_object_name}`](https://developer.fastly.com/reference/api/vcl-services/response-object) (PUT)
-- [`/service/{service_id}/version/{version_id}/response_object`](https://developer.fastly.com/reference/api/vcl-services/response-object) (POST)
-- [`/service/{service_id}/version/{version_id}/snippet/{snippet_name}`](https://developer.fastly.com/reference/api/vcl-services/snippet) (PUT)
-- [`/service/{service_id}/version/{version_id}/wafs/{firewall_id}`](https://developer.fastly.com/reference/api/legacy-waf/firewall) (GET, PATCH)
-- [`/service/{service_id}/version/{version_id}/wafs`](https://developer.fastly.com/reference/api/legacy-waf/firewall) (GET, POST)
-- [`/service/{service_id}/wafs/{firewall_id}/owasp`](https://developer.fastly.com/reference/api/legacy-waf/owasp) (GET, PATCH, POST)
-- [`/service/{service_id}/wafs/{firewall_id}/rule_statuses`](https://developer.fastly.com/reference/api/legacy-waf/rule-status) (GET, POST)
-- [`/service/{service_id}/wafs/{firewall_id}/rules/{waf_rule_id}/rule_status`](https://developer.fastly.com/reference/api/legacy-waf/rule-status) (GET, PATCH)
-- [`/service/{service_id}/wafs/{firewall_id}/ruleset/preview`](https://developer.fastly.com/reference/api/legacy-waf/ruleset) (GET)
-- [`/service/{service_id}/wafs/{firewall_id}/ruleset`](https://developer.fastly.com/reference/api/legacy-waf/ruleset) (GET, PATCH)
-- [`/service/{service_id}/wafs/{firewall_id}/update_statuses/{update_status_id}`](https://developer.fastly.com/reference/api/legacy-waf/update-status) (GET)
-- [`/service/{service_id}/wafs/{firewall_id}/update_statuses`](https://developer.fastly.com/reference/api/legacy-waf/update-status) (GET)
-- [`/sudo`](https://developer.fastly.com/reference/api/utils/sudo) (POST)
 - [`/tls/activations/{tls_activation_id}`](https://developer.fastly.com/reference/api/tls/mutual-tls/activations) (GET, PATCH)
 - [`/tls/activations`](https://developer.fastly.com/reference/api/tls/mutual-tls/activations) (GET)
-- [`/tokens`](https://developer.fastly.com/reference/api/auth-tokens/user) (DELETE, POST)
-- [`/user-groups/{user_group_id}/members`](https://developer.fastly.com/reference/api/account/user-groups) (DELETE, POST)
-- [`/user-groups/{user_group_id}/roles`](https://developer.fastly.com/reference/api/account/user-groups) (DELETE, POST)
-- [`/user-groups/{user_group_id}/service-groups`](https://developer.fastly.com/reference/api/account/user-groups) (DELETE, POST)
-- [`/user-groups/{user_group_id}`](https://developer.fastly.com/reference/api/account/user-groups) (PATCH)
-- [`/user-groups`](https://developer.fastly.com/reference/api/account/user-groups) (POST)
 - [`/v1/channel/{service_id}/ts/h/limit/{max_entries}`](https://developer.fastly.com/reference/api/metrics-stats/origin-insights) (GET)
 - [`/v1/channel/{service_id}/ts/h`](https://developer.fastly.com/reference/api/metrics-stats/origin-insights) (GET)
 - [`/v1/channel/{service_id}/ts/{start_timestamp}`](https://developer.fastly.com/reference/api/metrics-stats/origin-insights) (GET)
-- [`/v1/domains/{service_id}/ts/h/limit/{max_entries}`](https://developer.fastly.com/reference/api/metrics-stats/domain-inspector/real-time) (GET)
-- [`/v1/domains/{service_id}/ts/h`](https://developer.fastly.com/reference/api/metrics-stats/domain-inspector/real-time) (GET)
-- [`/v1/domains/{service_id}/ts/{start_timestamp}`](https://developer.fastly.com/reference/api/metrics-stats/domain-inspector/real-time) (GET)
-- [`/v1/origins/{service_id}/ts/h/limit/{max_entries}`](https://developer.fastly.com/reference/api/metrics-stats/origin-inspector/real-time) (GET)
-- [`/v1/origins/{service_id}/ts/h`](https://developer.fastly.com/reference/api/metrics-stats/origin-inspector/real-time) (GET)
-- [`/v1/origins/{service_id}/ts/{start_timestamp}`](https://developer.fastly.com/reference/api/metrics-stats/origin-inspector/real-time) (GET)
-- [`/waf/firewalls/{firewall_id}/versions/{version_id}/active-rules`](https://developer.fastly.com/reference/api/waf/rules/active) (DELETE)
-- [`/wafs/configuration_sets/{configuration_set_id}/relationships/wafs`](https://developer.fastly.com/reference/api/legacy-waf/configuration-set) (GET, PATCH)
-- [`/wafs/configuration_sets`](https://developer.fastly.com/reference/api/legacy-waf/configuration-set) (GET)
-- [`/wafs/rules/{waf_rule_id}/vcl`](https://developer.fastly.com/reference/api/legacy-waf/rule) (GET)
-- [`/wafs/rules/{waf_rule_id}`](https://developer.fastly.com/reference/api/legacy-waf/rule) (GET)
-- [`/wafs/rules`](https://developer.fastly.com/reference/api/legacy-waf/rule) (GET)
-- [`/wafs/tags`](https://developer.fastly.com/reference/api/legacy-waf/tag) (GET)
-- [`/wafs/{firewall_id}/disable`](https://developer.fastly.com/reference/api/legacy-waf/firewall) (PATCH)
-- [`/wafs/{firewall_id}/enable`](https://developer.fastly.com/reference/api/legacy-waf/firewall) (PATCH)
-- [`/wafs/{firewall_id}/rules/{waf_rule_id}/vcl`](https://developer.fastly.com/reference/api/legacy-waf/rule) (GET)
-- [`/wafs/{firewall_id}`](https://developer.fastly.com/reference/api/legacy-waf/firewall) (GET)
-- [`/wafs`](https://developer.fastly.com/reference/api/legacy-waf/firewall) (GET)
 
 
 If you encounter any non-security-related bug or unexpected behavior, please [file an issue][bug]

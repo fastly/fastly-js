@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventAttributes model module.
  * @module model/EventAttributes
- * @version 4.4.0
+ * @version 5.0.0
  */
 class EventAttributes {
     /**
@@ -65,7 +65,7 @@ class EventAttributes {
                 obj['ip'] = ApiClient.convertToType(data['ip'], 'String');
             }
             if (data.hasOwnProperty('metadata')) {
-                obj['metadata'] = ApiClient.convertToType(data['metadata'], Object);
+                obj['metadata'] = ApiClient.convertToType(data['metadata'], {'String': Object});
             }
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
@@ -120,7 +120,7 @@ EventAttributes.prototype['ip'] = undefined;
 
 /**
  * Hash of key value pairs of additional information.
- * @member {Object} metadata
+ * @member {Object.<String, Object>} metadata
  */
 EventAttributes.prototype['metadata'] = undefined;
 

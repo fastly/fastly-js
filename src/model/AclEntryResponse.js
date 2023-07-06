@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The AclEntryResponse model module.
  * @module model/AclEntryResponse
- * @version 4.4.0
+ * @version 5.0.0
  */
 class AclEntryResponse {
     /**
@@ -95,7 +95,7 @@ class AclEntryResponse {
 /**
  * Whether to negate the match. Useful primarily when creating individual exceptions to larger subnets.
  * @member {module:model/AclEntryResponse.NegatedEnum} negated
- * @default NegatedEnum.0
+ * @default NegatedEnum.disable
  */
 AclEntryResponse.prototype['negated'] = undefined;
 
@@ -155,7 +155,7 @@ AclEntryResponse.prototype['service_id'] = undefined;
 /**
  * Whether to negate the match. Useful primarily when creating individual exceptions to larger subnets.
  * @member {module:model/AclEntry.NegatedEnum} negated
- * @default NegatedEnum.0
+ * @default NegatedEnum.disable
  */
 AclEntry.prototype['negated'] = undefined;
 /**
@@ -216,13 +216,13 @@ AclEntryResponse['NegatedEnum'] = {
      * value: 0
      * @const
      */
-    "0": 0,
+    "disable": 0,
 
     /**
      * value: 1
      * @const
      */
-    "1": 1
+    "enable": 1
 };
 
 

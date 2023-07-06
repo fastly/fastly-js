@@ -19,7 +19,7 @@ import Results from './Results';
 /**
  * The HistoricalAggregateResponse model module.
  * @module model/HistoricalAggregateResponse
- * @version 4.4.0
+ * @version 5.0.0
  */
 class HistoricalAggregateResponse {
     /**

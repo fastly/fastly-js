@@ -18,7 +18,7 @@ import RelationshipTlsDomainsTlsDomains from './RelationshipTlsDomainsTlsDomains
 /**
  * The RelationshipsForTlsBulkCertificate model module.
  * @module model/RelationshipsForTlsBulkCertificate
- * @version 4.4.0
+ * @version 5.0.0
  */
 class RelationshipsForTlsBulkCertificate {
     /**
