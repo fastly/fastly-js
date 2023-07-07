@@ -5,8 +5,6 @@ An asynchronous JavaScript client library for interacting with most facets of th
 
 ## Usage
 
-Please follow the [installation](#installation) instructions and execute the following JS code:
-
 ```javascript
 import Fastly from "fastly";
 
