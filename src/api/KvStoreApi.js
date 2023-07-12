@@ -19,7 +19,7 @@ import StoreResponse from '../model/StoreResponse';
 /**
 * KvStore service.
 * @module api/KvStoreApi
-* @version 5.0.0
+* @version 5.0.1
 */
 export default class KvStoreApi {
 

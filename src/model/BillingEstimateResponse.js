@@ -12,25 +12,25 @@
 
 import ApiClient from '../ApiClient';
 import Billing from './Billing';
-import BillingEstimateResponseAllOf from './BillingEstimateResponseAllOf';
-import BillingEstimateResponseAllOfLines from './BillingEstimateResponseAllOfLines';
+import BillingEstimateLines from './BillingEstimateLines';
+import BillingEstimateLinesLineItems from './BillingEstimateLinesLineItems';
 import BillingStatus from './BillingStatus';
 import BillingTotal from './BillingTotal';
 
 /**
  * The BillingEstimateResponse model module.
  * @module model/BillingEstimateResponse
- * @version 5.0.0
+ * @version 5.0.1
  */
 class BillingEstimateResponse {
     /**
      * Constructs a new <code>BillingEstimateResponse</code>.
      * @alias module:model/BillingEstimateResponse
      * @implements module:model/Billing
-     * @implements module:model/BillingEstimateResponseAllOf
+     * @implements module:model/BillingEstimateLines
      */
     constructor() { 
-        Billing.initialize(this);BillingEstimateResponseAllOf.initialize(this);
+        Billing.initialize(this);BillingEstimateLines.initialize(this);
         BillingEstimateResponse.initialize(this);
     }
 
@@ -53,7 +53,7 @@ class BillingEstimateResponse {
         if (data) {
             obj = obj || new BillingEstimateResponse();
             Billing.constructFromObject(data, obj);
-            BillingEstimateResponseAllOf.constructFromObject(data, obj);
+            BillingEstimateLines.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('end_time')) {
                 obj['end_time'] = ApiClient.convertToType(data['end_time'], 'Date');
@@ -79,8 +79,8 @@ class BillingEstimateResponse {
             if (data.hasOwnProperty('regions')) {
                 obj['regions'] = ApiClient.convertToType(data['regions'], {'String': {'String': Object}});
             }
-            if (data.hasOwnProperty('lines')) {
-                obj['lines'] = ApiClient.convertToType(data['lines'], [BillingEstimateResponseAllOfLines]);
+            if (data.hasOwnProperty('line_items')) {
+                obj['line_items'] = ApiClient.convertToType(data['line_items'], [BillingEstimateLinesLineItems]);
             }
         }
         return obj;
@@ -134,9 +134,9 @@ BillingEstimateResponse.prototype['total'] = undefined;
 BillingEstimateResponse.prototype['regions'] = undefined;
 
 /**
- * @member {Array.<module:model/BillingEstimateResponseAllOfLines>} lines
+ * @member {Array.<module:model/BillingEstimateLinesLineItems>} line_items
  */
-BillingEstimateResponse.prototype['lines'] = undefined;
+BillingEstimateResponse.prototype['line_items'] = undefined;
 
 
 // Implement Billing interface:
@@ -176,11 +176,11 @@ Billing.prototype['total'] = undefined;
  * @member {Object.<String, Object.<String, Object>>} regions
  */
 Billing.prototype['regions'] = undefined;
-// Implement BillingEstimateResponseAllOf interface:
+// Implement BillingEstimateLines interface:
 /**
- * @member {Array.<module:model/BillingEstimateResponseAllOfLines>} lines
+ * @member {Array.<module:model/BillingEstimateLinesLineItems>} line_items
  */
-BillingEstimateResponseAllOf.prototype['lines'] = undefined;
+BillingEstimateLines.prototype['line_items'] = undefined;
 
 
 

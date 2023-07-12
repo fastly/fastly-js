@@ -17,7 +17,7 @@ import LoggingCommon from './LoggingCommon';
 /**
  * The LoggingPapertrail model module.
  * @module model/LoggingPapertrail
- * @version 5.0.0
+ * @version 5.0.1
  */
 class LoggingPapertrail {
     /**

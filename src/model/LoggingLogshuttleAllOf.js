@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingLogshuttleAllOf model module.
  * @module model/LoggingLogshuttleAllOf
- * @version 5.0.0
+ * @version 5.0.1
  */
 class LoggingLogshuttleAllOf {
     /**

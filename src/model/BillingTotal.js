@@ -16,7 +16,7 @@ import BillingTotalExtras from './BillingTotalExtras';
 /**
  * The BillingTotal model module.
  * @module model/BillingTotal
- * @version 5.0.0
+ * @version 5.0.1
  */
 class BillingTotal {
     /**

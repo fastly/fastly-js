@@ -20,7 +20,7 @@ import TokenResponse from '../model/TokenResponse';
 /**
 * Tokens service.
 * @module api/TokensApi
-* @version 5.0.0
+* @version 5.0.1
 */
 export default class TokensApi {
 

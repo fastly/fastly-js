@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingCloudfilesAllOf model module.
  * @module model/LoggingCloudfilesAllOf
- * @version 5.0.0
+ * @version 5.0.1
  */
 class LoggingCloudfilesAllOf {
     /**

@@ -16,7 +16,7 @@ import Event from './Event';
 /**
  * The EventResponse model module.
  * @module model/EventResponse
- * @version 5.0.0
+ * @version 5.0.1
  */
 class EventResponse {
     /**

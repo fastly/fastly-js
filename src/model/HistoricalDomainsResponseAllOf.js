@@ -16,7 +16,7 @@ import DomainInspectorEntry from './DomainInspectorEntry';
 /**
  * The HistoricalDomainsResponseAllOf model module.
  * @module model/HistoricalDomainsResponseAllOf
- * @version 5.0.0
+ * @version 5.0.1
  */
 class HistoricalDomainsResponseAllOf {
     /**

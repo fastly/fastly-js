@@ -11,20 +11,21 @@
  */
 
 import ApiClient from '../ApiClient';
+import LineItemDataReadOnlyInvoiceId from './LineItemDataReadOnlyInvoiceId';
 
 /**
- * The BillingResponseLineItemAllOf model module.
- * @module model/BillingResponseLineItemAllOf
- * @version 5.0.0
+ * The LineItemData model module.
+ * @module model/LineItemData
+ * @version 5.0.1
  */
-class BillingResponseLineItemAllOf {
+class LineItemData {
     /**
-     * Constructs a new <code>BillingResponseLineItemAllOf</code>.
-     * @alias module:model/BillingResponseLineItemAllOf
+     * Constructs a new <code>LineItemData</code>.
+     * @alias module:model/LineItemData
      */
     constructor() { 
         
-        BillingResponseLineItemAllOf.initialize(this);
+        LineItemData.initialize(this);
     }
 
     /**
@@ -36,21 +37,21 @@ class BillingResponseLineItemAllOf {
     }
 
     /**
-     * Constructs a <code>BillingResponseLineItemAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>LineItemData</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/BillingResponseLineItemAllOf} obj Optional instance to populate.
-     * @return {module:model/BillingResponseLineItemAllOf} The populated <code>BillingResponseLineItemAllOf</code> instance.
+     * @param {module:model/LineItemData} obj Optional instance to populate.
+     * @return {module:model/LineItemData} The populated <code>LineItemData</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new BillingResponseLineItemAllOf();
+            obj = obj || new LineItemData();
 
             if (data.hasOwnProperty('amount')) {
                 obj['amount'] = ApiClient.convertToType(data['amount'], 'Number');
             }
             if (data.hasOwnProperty('aria_invoice_id')) {
-                obj['aria_invoice_id'] = ApiClient.convertToType(data['aria_invoice_id'], 'String');
+                obj['aria_invoice_id'] = LineItemDataReadOnlyInvoiceId.constructFromObject(data['aria_invoice_id']);
             }
             if (data.hasOwnProperty('client_service_id')) {
                 obj['client_service_id'] = ApiClient.convertToType(data['client_service_id'], 'String');
@@ -107,92 +108,92 @@ class BillingResponseLineItemAllOf {
 /**
  * @member {Number} amount
  */
-BillingResponseLineItemAllOf.prototype['amount'] = undefined;
+LineItemData.prototype['amount'] = undefined;
 
 /**
- * @member {String} aria_invoice_id
+ * @member {module:model/LineItemDataReadOnlyInvoiceId} aria_invoice_id
  */
-BillingResponseLineItemAllOf.prototype['aria_invoice_id'] = undefined;
+LineItemData.prototype['aria_invoice_id'] = undefined;
 
 /**
  * @member {String} client_service_id
  */
-BillingResponseLineItemAllOf.prototype['client_service_id'] = undefined;
+LineItemData.prototype['client_service_id'] = undefined;
 
 /**
  * @member {String} credit_coupon_code
  */
-BillingResponseLineItemAllOf.prototype['credit_coupon_code'] = undefined;
+LineItemData.prototype['credit_coupon_code'] = undefined;
 
 /**
  * @member {String} description
  */
-BillingResponseLineItemAllOf.prototype['description'] = undefined;
+LineItemData.prototype['description'] = undefined;
 
 /**
  * @member {String} id
  */
-BillingResponseLineItemAllOf.prototype['id'] = undefined;
+LineItemData.prototype['id'] = undefined;
 
 /**
  * @member {Number} line_number
  */
-BillingResponseLineItemAllOf.prototype['line_number'] = undefined;
+LineItemData.prototype['line_number'] = undefined;
 
 /**
  * @member {String} plan_name
  */
-BillingResponseLineItemAllOf.prototype['plan_name'] = undefined;
+LineItemData.prototype['plan_name'] = undefined;
 
 /**
  * @member {Number} plan_no
  */
-BillingResponseLineItemAllOf.prototype['plan_no'] = undefined;
+LineItemData.prototype['plan_no'] = undefined;
 
 /**
  * @member {Number} rate_per_unit
  */
-BillingResponseLineItemAllOf.prototype['rate_per_unit'] = undefined;
+LineItemData.prototype['rate_per_unit'] = undefined;
 
 /**
  * @member {Number} rate_schedule_no
  */
-BillingResponseLineItemAllOf.prototype['rate_schedule_no'] = undefined;
+LineItemData.prototype['rate_schedule_no'] = undefined;
 
 /**
  * @member {Number} rate_schedule_tier_no
  */
-BillingResponseLineItemAllOf.prototype['rate_schedule_tier_no'] = undefined;
+LineItemData.prototype['rate_schedule_tier_no'] = undefined;
 
 /**
  * @member {String} service_name
  */
-BillingResponseLineItemAllOf.prototype['service_name'] = undefined;
+LineItemData.prototype['service_name'] = undefined;
 
 /**
  * @member {Number} service_no
  */
-BillingResponseLineItemAllOf.prototype['service_no'] = undefined;
+LineItemData.prototype['service_no'] = undefined;
 
 /**
  * @member {Number} units
  */
-BillingResponseLineItemAllOf.prototype['units'] = undefined;
+LineItemData.prototype['units'] = undefined;
 
 /**
  * @member {String} usage_type_cd
  */
-BillingResponseLineItemAllOf.prototype['usage_type_cd'] = undefined;
+LineItemData.prototype['usage_type_cd'] = undefined;
 
 /**
  * @member {Number} usage_type_no
  */
-BillingResponseLineItemAllOf.prototype['usage_type_no'] = undefined;
+LineItemData.prototype['usage_type_no'] = undefined;
 
 
 
 
 
 
-export default BillingResponseLineItemAllOf;
+export default LineItemData;
 

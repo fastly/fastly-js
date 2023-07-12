@@ -13,18 +13,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The BillingEstimateResponseAllOfLine model module.
- * @module model/BillingEstimateResponseAllOfLine
- * @version 5.0.0
+ * The BillingEstimateLinesLineItems model module.
+ * @module model/BillingEstimateLinesLineItems
+ * @version 5.0.1
  */
-class BillingEstimateResponseAllOfLine {
+class BillingEstimateLinesLineItems {
     /**
-     * Constructs a new <code>BillingEstimateResponseAllOfLine</code>.
-     * @alias module:model/BillingEstimateResponseAllOfLine
+     * Constructs a new <code>BillingEstimateLinesLineItems</code>.
+     * @alias module:model/BillingEstimateLinesLineItems
      */
     constructor() { 
         
-        BillingEstimateResponseAllOfLine.initialize(this);
+        BillingEstimateLinesLineItems.initialize(this);
     }
 
     /**
@@ -36,15 +36,15 @@ class BillingEstimateResponseAllOfLine {
     }
 
     /**
-     * Constructs a <code>BillingEstimateResponseAllOfLine</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>BillingEstimateLinesLineItems</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/BillingEstimateResponseAllOfLine} obj Optional instance to populate.
-     * @return {module:model/BillingEstimateResponseAllOfLine} The populated <code>BillingEstimateResponseAllOfLine</code> instance.
+     * @param {module:model/BillingEstimateLinesLineItems} obj Optional instance to populate.
+     * @return {module:model/BillingEstimateLinesLineItems} The populated <code>BillingEstimateLinesLineItems</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new BillingEstimateResponseAllOfLine();
+            obj = obj || new BillingEstimateLinesLineItems();
 
             if (data.hasOwnProperty('plan_no')) {
                 obj['plan_no'] = ApiClient.convertToType(data['plan_no'], 'Number');
@@ -83,52 +83,52 @@ class BillingEstimateResponseAllOfLine {
 /**
  * @member {Number} plan_no
  */
-BillingEstimateResponseAllOfLine.prototype['plan_no'] = undefined;
+BillingEstimateLinesLineItems.prototype['plan_no'] = undefined;
 
 /**
  * @member {String} description
  */
-BillingEstimateResponseAllOfLine.prototype['description'] = undefined;
+BillingEstimateLinesLineItems.prototype['description'] = undefined;
 
 /**
  * @member {Number} units
  */
-BillingEstimateResponseAllOfLine.prototype['units'] = undefined;
+BillingEstimateLinesLineItems.prototype['units'] = undefined;
 
 /**
  * @member {Number} per_unit_cost
  */
-BillingEstimateResponseAllOfLine.prototype['per_unit_cost'] = undefined;
+BillingEstimateLinesLineItems.prototype['per_unit_cost'] = undefined;
 
 /**
  * @member {Number} service_no
  */
-BillingEstimateResponseAllOfLine.prototype['service_no'] = undefined;
+BillingEstimateLinesLineItems.prototype['service_no'] = undefined;
 
 /**
  * @member {String} service_type
  */
-BillingEstimateResponseAllOfLine.prototype['service_type'] = undefined;
+BillingEstimateLinesLineItems.prototype['service_type'] = undefined;
 
 /**
  * @member {Number} amount
  */
-BillingEstimateResponseAllOfLine.prototype['amount'] = undefined;
+BillingEstimateLinesLineItems.prototype['amount'] = undefined;
 
 /**
  * @member {String} client_service_id
  */
-BillingEstimateResponseAllOfLine.prototype['client_service_id'] = undefined;
+BillingEstimateLinesLineItems.prototype['client_service_id'] = undefined;
 
 /**
  * @member {String} client_plan_id
  */
-BillingEstimateResponseAllOfLine.prototype['client_plan_id'] = undefined;
+BillingEstimateLinesLineItems.prototype['client_plan_id'] = undefined;
 
 
 
 
 
 
-export default BillingEstimateResponseAllOfLine;
+export default BillingEstimateLinesLineItems;
 

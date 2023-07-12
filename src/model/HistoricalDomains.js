@@ -17,7 +17,7 @@ import HistoricalDomainsMeta from './HistoricalDomainsMeta';
 /**
  * The HistoricalDomains model module.
  * @module model/HistoricalDomains
- * @version 5.0.0
+ * @version 5.0.1
  */
 class HistoricalDomains {
     /**

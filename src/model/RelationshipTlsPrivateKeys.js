@@ -16,7 +16,7 @@ import RelationshipTlsPrivateKeysTlsPrivateKeys from './RelationshipTlsPrivateKe
 /**
  * The RelationshipTlsPrivateKeys model module.
  * @module model/RelationshipTlsPrivateKeys
- * @version 5.0.0
+ * @version 5.0.1
  */
 class RelationshipTlsPrivateKeys {
     /**

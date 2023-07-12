@@ -41,14 +41,12 @@ import BillingAddressResponse from './model/BillingAddressResponse';
 import BillingAddressResponseData from './model/BillingAddressResponseData';
 import BillingAddressVerificationErrorResponse from './model/BillingAddressVerificationErrorResponse';
 import BillingAddressVerificationErrorResponseErrors from './model/BillingAddressVerificationErrorResponseErrors';
+import BillingEstimateLines from './model/BillingEstimateLines';
+import BillingEstimateLinesLineItems from './model/BillingEstimateLinesLineItems';
 import BillingEstimateResponse from './model/BillingEstimateResponse';
-import BillingEstimateResponseAllOf from './model/BillingEstimateResponseAllOf';
-import BillingEstimateResponseAllOfLine from './model/BillingEstimateResponseAllOfLine';
-import BillingEstimateResponseAllOfLines from './model/BillingEstimateResponseAllOfLines';
 import BillingResponse from './model/BillingResponse';
-import BillingResponseAllOf from './model/BillingResponseAllOf';
+import BillingResponseItemItemsData from './model/BillingResponseItemItemsData';
 import BillingResponseLineItem from './model/BillingResponseLineItem';
-import BillingResponseLineItemAllOf from './model/BillingResponseLineItemAllOf';
 import BillingStatus from './model/BillingStatus';
 import BillingTotal from './model/BillingTotal';
 import BillingTotalExtras from './model/BillingTotalExtras';
@@ -192,6 +190,8 @@ import LegacyWafRuleStatus from './model/LegacyWafRuleStatus';
 import LegacyWafRuleset from './model/LegacyWafRuleset';
 import LegacyWafTag from './model/LegacyWafTag';
 import LegacyWafUpdateStatus from './model/LegacyWafUpdateStatus';
+import LineItemData from './model/LineItemData';
+import LineItemDataReadOnlyInvoiceId from './model/LineItemDataReadOnlyInvoiceId';
 import LoggingAddressAndPort from './model/LoggingAddressAndPort';
 import LoggingAzureblob from './model/LoggingAzureblob';
 import LoggingAzureblobAllOf from './model/LoggingAzureblobAllOf';
@@ -439,6 +439,7 @@ import RoleUser from './model/RoleUser';
 import SchemasContactResponse from './model/SchemasContactResponse';
 import SchemasSnippetResponse from './model/SchemasSnippetResponse';
 import SchemasUserResponse from './model/SchemasUserResponse';
+import SchemasUserResponseReadOnly from './model/SchemasUserResponseReadOnly';
 import SchemasVclResponse from './model/SchemasVclResponse';
 import SchemasVersion from './model/SchemasVersion';
 import SchemasVersionResponse from './model/SchemasVersionResponse';
@@ -598,7 +599,7 @@ import UpdateBillingAddressRequest from './model/UpdateBillingAddressRequest';
 import UpdateBillingAddressRequestData from './model/UpdateBillingAddressRequestData';
 import User from './model/User';
 import UserResponse from './model/UserResponse';
-import UserResponseAllOf from './model/UserResponseAllOf';
+import UserResponseReadOnly from './model/UserResponseReadOnly';
 import ValidatorResult from './model/ValidatorResult';
 import ValidatorResultData from './model/ValidatorResultData';
 import ValidatorResultDataAttributes from './model/ValidatorResultDataAttributes';
@@ -828,7 +829,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 5.0.0
+* @version 5.0.1
 */
 export {
     /**
@@ -1012,28 +1013,22 @@ export {
     BillingAddressVerificationErrorResponseErrors,
 
     /**
+     * The BillingEstimateLines model constructor.
+     * @property {module:model/BillingEstimateLines}
+     */
+    BillingEstimateLines,
+
+    /**
+     * The BillingEstimateLinesLineItems model constructor.
+     * @property {module:model/BillingEstimateLinesLineItems}
+     */
+    BillingEstimateLinesLineItems,
+
+    /**
      * The BillingEstimateResponse model constructor.
      * @property {module:model/BillingEstimateResponse}
      */
     BillingEstimateResponse,
-
-    /**
-     * The BillingEstimateResponseAllOf model constructor.
-     * @property {module:model/BillingEstimateResponseAllOf}
-     */
-    BillingEstimateResponseAllOf,
-
-    /**
-     * The BillingEstimateResponseAllOfLine model constructor.
-     * @property {module:model/BillingEstimateResponseAllOfLine}
-     */
-    BillingEstimateResponseAllOfLine,
-
-    /**
-     * The BillingEstimateResponseAllOfLines model constructor.
-     * @property {module:model/BillingEstimateResponseAllOfLines}
-     */
-    BillingEstimateResponseAllOfLines,
 
     /**
      * The BillingResponse model constructor.
@@ -1042,22 +1037,16 @@ export {
     BillingResponse,
 
     /**
-     * The BillingResponseAllOf model constructor.
-     * @property {module:model/BillingResponseAllOf}
+     * The BillingResponseItemItemsData model constructor.
+     * @property {module:model/BillingResponseItemItemsData}
      */
-    BillingResponseAllOf,
+    BillingResponseItemItemsData,
 
     /**
      * The BillingResponseLineItem model constructor.
      * @property {module:model/BillingResponseLineItem}
      */
     BillingResponseLineItem,
-
-    /**
-     * The BillingResponseLineItemAllOf model constructor.
-     * @property {module:model/BillingResponseLineItemAllOf}
-     */
-    BillingResponseLineItemAllOf,
 
     /**
      * The BillingStatus model constructor.
@@ -1916,6 +1905,18 @@ export {
      * @property {module:model/LegacyWafUpdateStatus}
      */
     LegacyWafUpdateStatus,
+
+    /**
+     * The LineItemData model constructor.
+     * @property {module:model/LineItemData}
+     */
+    LineItemData,
+
+    /**
+     * The LineItemDataReadOnlyInvoiceId model constructor.
+     * @property {module:model/LineItemDataReadOnlyInvoiceId}
+     */
+    LineItemDataReadOnlyInvoiceId,
 
     /**
      * The LoggingAddressAndPort model constructor.
@@ -3400,6 +3401,12 @@ export {
     SchemasUserResponse,
 
     /**
+     * The SchemasUserResponseReadOnly model constructor.
+     * @property {module:model/SchemasUserResponseReadOnly}
+     */
+    SchemasUserResponseReadOnly,
+
+    /**
      * The SchemasVclResponse model constructor.
      * @property {module:model/SchemasVclResponse}
      */
@@ -4354,10 +4361,10 @@ export {
     UserResponse,
 
     /**
-     * The UserResponseAllOf model constructor.
-     * @property {module:model/UserResponseAllOf}
+     * The UserResponseReadOnly model constructor.
+     * @property {module:model/UserResponseReadOnly}
      */
-    UserResponseAllOf,
+    UserResponseReadOnly,
 
     /**
      * The ValidatorResult model constructor.

@@ -1,4 +1,4 @@
-# Fastly.UserResponseAllOf
+# Fastly.SchemasUserResponseReadOnly
 
 ## Properties
 

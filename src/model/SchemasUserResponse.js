@@ -12,14 +12,14 @@
 
 import ApiClient from '../ApiClient';
 import RoleUser from './RoleUser';
+import SchemasUserResponseReadOnly from './SchemasUserResponseReadOnly';
 import Timestamps from './Timestamps';
 import User from './User';
-import UserResponseAllOf from './UserResponseAllOf';
 
 /**
  * The SchemasUserResponse model module.
  * @module model/SchemasUserResponse
- * @version 5.0.0
+ * @version 5.0.1
  */
 class SchemasUserResponse {
     /**
@@ -27,10 +27,10 @@ class SchemasUserResponse {
      * @alias module:model/SchemasUserResponse
      * @implements module:model/User
      * @implements module:model/Timestamps
-     * @implements module:model/UserResponseAllOf
+     * @implements module:model/SchemasUserResponseReadOnly
      */
     constructor() { 
-        User.initialize(this);Timestamps.initialize(this);UserResponseAllOf.initialize(this);
+        User.initialize(this);Timestamps.initialize(this);SchemasUserResponseReadOnly.initialize(this);
         SchemasUserResponse.initialize(this);
     }
 
@@ -54,7 +54,7 @@ class SchemasUserResponse {
             obj = obj || new SchemasUserResponse();
             User.constructFromObject(data, obj);
             Timestamps.constructFromObject(data, obj);
-            UserResponseAllOf.constructFromObject(data, obj);
+            SchemasUserResponseReadOnly.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('login')) {
                 obj['login'] = ApiClient.convertToType(data['login'], 'String');
@@ -241,20 +241,20 @@ Timestamps.prototype['deleted_at'] = undefined;
  * @member {Date} updated_at
  */
 Timestamps.prototype['updated_at'] = undefined;
-// Implement UserResponseAllOf interface:
+// Implement SchemasUserResponseReadOnly interface:
 /**
  * @member {String} id
  */
-UserResponseAllOf.prototype['id'] = undefined;
+SchemasUserResponseReadOnly.prototype['id'] = undefined;
 /**
  * The alphanumeric string identifying a email login.
  * @member {String} email_hash
  */
-UserResponseAllOf.prototype['email_hash'] = undefined;
+SchemasUserResponseReadOnly.prototype['email_hash'] = undefined;
 /**
  * @member {String} customer_id
  */
-UserResponseAllOf.prototype['customer_id'] = undefined;
+SchemasUserResponseReadOnly.prototype['customer_id'] = undefined;
 
 
 

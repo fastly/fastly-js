@@ -11,21 +11,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import BillingEstimateResponseAllOfLines from './BillingEstimateResponseAllOfLines';
 
 /**
- * The BillingEstimateResponseAllOf model module.
- * @module model/BillingEstimateResponseAllOf
- * @version 5.0.0
+ * The LineItemDataReadOnlyInvoiceId model module.
+ * @module model/LineItemDataReadOnlyInvoiceId
+ * @version 5.0.1
  */
-class BillingEstimateResponseAllOf {
+class LineItemDataReadOnlyInvoiceId {
     /**
-     * Constructs a new <code>BillingEstimateResponseAllOf</code>.
-     * @alias module:model/BillingEstimateResponseAllOf
+     * Constructs a new <code>LineItemDataReadOnlyInvoiceId</code>.
+     * @alias module:model/LineItemDataReadOnlyInvoiceId
      */
     constructor() { 
         
-        BillingEstimateResponseAllOf.initialize(this);
+        LineItemDataReadOnlyInvoiceId.initialize(this);
     }
 
     /**
@@ -37,19 +36,16 @@ class BillingEstimateResponseAllOf {
     }
 
     /**
-     * Constructs a <code>BillingEstimateResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>LineItemDataReadOnlyInvoiceId</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/BillingEstimateResponseAllOf} obj Optional instance to populate.
-     * @return {module:model/BillingEstimateResponseAllOf} The populated <code>BillingEstimateResponseAllOf</code> instance.
+     * @param {module:model/LineItemDataReadOnlyInvoiceId} obj Optional instance to populate.
+     * @return {module:model/LineItemDataReadOnlyInvoiceId} The populated <code>LineItemDataReadOnlyInvoiceId</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new BillingEstimateResponseAllOf();
+            obj = obj || new LineItemDataReadOnlyInvoiceId();
 
-            if (data.hasOwnProperty('lines')) {
-                obj['lines'] = ApiClient.convertToType(data['lines'], [BillingEstimateResponseAllOfLines]);
-            }
         }
         return obj;
     }
@@ -57,15 +53,10 @@ class BillingEstimateResponseAllOf {
 
 }
 
-/**
- * @member {Array.<module:model/BillingEstimateResponseAllOfLines>} lines
- */
-BillingEstimateResponseAllOf.prototype['lines'] = undefined;
 
 
 
 
 
-
-export default BillingEstimateResponseAllOf;
+export default LineItemDataReadOnlyInvoiceId;
 

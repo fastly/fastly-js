@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BillingStatus model module.
  * @module model/BillingStatus
- * @version 5.0.0
+ * @version 5.0.1
  */
 class BillingStatus {
     /**
@@ -66,6 +66,7 @@ class BillingStatus {
 BillingStatus.prototype['status'] = undefined;
 
 /**
+ * Date and time in ISO 8601 format.
  * @member {Date} sent_at
  */
 BillingStatus.prototype['sent_at'] = undefined;

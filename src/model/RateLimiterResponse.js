@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The RateLimiterResponse model module.
  * @module model/RateLimiterResponse
- * @version 5.0.0
+ * @version 5.0.1
  */
 class RateLimiterResponse {
     /**

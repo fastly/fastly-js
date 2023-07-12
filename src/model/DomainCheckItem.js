@@ -16,7 +16,7 @@ import Domain from './Domain';
 /**
  * The DomainCheckItem model module.
  * @module model/DomainCheckItem
- * @version 5.0.0
+ * @version 5.0.1
  */
 class DomainCheckItem {
     /**

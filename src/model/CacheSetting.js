@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CacheSetting model module.
  * @module model/CacheSetting
- * @version 5.0.0
+ * @version 5.0.1
  */
 class CacheSetting {
     /**

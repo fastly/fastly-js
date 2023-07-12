@@ -19,7 +19,7 @@ import UserResponse from '../model/UserResponse';
 /**
 * User service.
 * @module api/UserApi
-* @version 5.0.0
+* @version 5.0.1
 */
 export default class UserApi {
 

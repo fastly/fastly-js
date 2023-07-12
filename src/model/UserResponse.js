@@ -14,12 +14,12 @@ import ApiClient from '../ApiClient';
 import RoleUser from './RoleUser';
 import Timestamps from './Timestamps';
 import User from './User';
-import UserResponseAllOf from './UserResponseAllOf';
+import UserResponseReadOnly from './UserResponseReadOnly';
 
 /**
  * The UserResponse model module.
  * @module model/UserResponse
- * @version 5.0.0
+ * @version 5.0.1
  */
 class UserResponse {
     /**
@@ -27,10 +27,10 @@ class UserResponse {
      * @alias module:model/UserResponse
      * @implements module:model/User
      * @implements module:model/Timestamps
-     * @implements module:model/UserResponseAllOf
+     * @implements module:model/UserResponseReadOnly
      */
     constructor() { 
-        User.initialize(this);Timestamps.initialize(this);UserResponseAllOf.initialize(this);
+        User.initialize(this);Timestamps.initialize(this);UserResponseReadOnly.initialize(this);
         UserResponse.initialize(this);
     }
 
@@ -54,7 +54,7 @@ class UserResponse {
             obj = obj || new UserResponse();
             User.constructFromObject(data, obj);
             Timestamps.constructFromObject(data, obj);
-            UserResponseAllOf.constructFromObject(data, obj);
+            UserResponseReadOnly.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('login')) {
                 obj['login'] = ApiClient.convertToType(data['login'], 'String');
@@ -241,20 +241,20 @@ Timestamps.prototype['deleted_at'] = undefined;
  * @member {Date} updated_at
  */
 Timestamps.prototype['updated_at'] = undefined;
-// Implement UserResponseAllOf interface:
+// Implement UserResponseReadOnly interface:
 /**
  * @member {String} id
  */
-UserResponseAllOf.prototype['id'] = undefined;
+UserResponseReadOnly.prototype['id'] = undefined;
 /**
  * The alphanumeric string identifying a email login.
  * @member {String} email_hash
  */
-UserResponseAllOf.prototype['email_hash'] = undefined;
+UserResponseReadOnly.prototype['email_hash'] = undefined;
 /**
  * @member {String} customer_id
  */
-UserResponseAllOf.prototype['customer_id'] = undefined;
+UserResponseReadOnly.prototype['customer_id'] = undefined;
 
 
 

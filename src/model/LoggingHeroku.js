@@ -17,7 +17,7 @@ import LoggingHerokuAllOf from './LoggingHerokuAllOf';
 /**
  * The LoggingHeroku model module.
  * @module model/LoggingHeroku
- * @version 5.0.0
+ * @version 5.0.1
  */
 class LoggingHeroku {
     /**

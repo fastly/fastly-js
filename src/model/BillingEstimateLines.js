@@ -11,20 +11,21 @@
  */
 
 import ApiClient from '../ApiClient';
+import BillingEstimateLinesLineItems from './BillingEstimateLinesLineItems';
 
 /**
- * The UserResponseAllOf model module.
- * @module model/UserResponseAllOf
- * @version 5.0.0
+ * The BillingEstimateLines model module.
+ * @module model/BillingEstimateLines
+ * @version 5.0.1
  */
-class UserResponseAllOf {
+class BillingEstimateLines {
     /**
-     * Constructs a new <code>UserResponseAllOf</code>.
-     * @alias module:model/UserResponseAllOf
+     * Constructs a new <code>BillingEstimateLines</code>.
+     * @alias module:model/BillingEstimateLines
      */
     constructor() { 
         
-        UserResponseAllOf.initialize(this);
+        BillingEstimateLines.initialize(this);
     }
 
     /**
@@ -36,24 +37,18 @@ class UserResponseAllOf {
     }
 
     /**
-     * Constructs a <code>UserResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>BillingEstimateLines</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/UserResponseAllOf} obj Optional instance to populate.
-     * @return {module:model/UserResponseAllOf} The populated <code>UserResponseAllOf</code> instance.
+     * @param {module:model/BillingEstimateLines} obj Optional instance to populate.
+     * @return {module:model/BillingEstimateLines} The populated <code>BillingEstimateLines</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new UserResponseAllOf();
+            obj = obj || new BillingEstimateLines();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
-            if (data.hasOwnProperty('email_hash')) {
-                obj['email_hash'] = ApiClient.convertToType(data['email_hash'], 'String');
-            }
-            if (data.hasOwnProperty('customer_id')) {
-                obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
+            if (data.hasOwnProperty('line_items')) {
+                obj['line_items'] = ApiClient.convertToType(data['line_items'], [BillingEstimateLinesLineItems]);
             }
         }
         return obj;
@@ -63,25 +58,14 @@ class UserResponseAllOf {
 }
 
 /**
- * @member {String} id
+ * @member {Array.<module:model/BillingEstimateLinesLineItems>} line_items
  */
-UserResponseAllOf.prototype['id'] = undefined;
-
-/**
- * The alphanumeric string identifying a email login.
- * @member {String} email_hash
- */
-UserResponseAllOf.prototype['email_hash'] = undefined;
-
-/**
- * @member {String} customer_id
- */
-UserResponseAllOf.prototype['customer_id'] = undefined;
+BillingEstimateLines.prototype['line_items'] = undefined;
 
 
 
 
 
 
-export default UserResponseAllOf;
+export default BillingEstimateLines;
 

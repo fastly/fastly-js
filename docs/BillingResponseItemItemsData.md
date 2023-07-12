@@ -1,10 +1,10 @@
-# Fastly.BillingEstimateResponseAllOf
+# Fastly.BillingResponseItemItemsData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**lines** | [**[BillingEstimateResponseAllOfLines]**](BillingEstimateResponseAllOfLines.md) |  | [optional] 
+**line_items** | [**[BillingResponseLineItem]**](BillingResponseLineItem.md) |  | [optional] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

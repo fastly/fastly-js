@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TimestampsNoDelete model module.
  * @module model/TimestampsNoDelete
- * @version 5.0.0
+ * @version 5.0.1
  */
 class TimestampsNoDelete {
     /**

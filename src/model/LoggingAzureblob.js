@@ -18,7 +18,7 @@ import LoggingGenericCommon from './LoggingGenericCommon';
 /**
  * The LoggingAzureblob model module.
  * @module model/LoggingAzureblob
- * @version 5.0.0
+ * @version 5.0.1
  */
 class LoggingAzureblob {
     /**

@@ -18,7 +18,7 @@ import LoggingGooglePubsubAllOf from './LoggingGooglePubsubAllOf';
 /**
  * The LoggingGooglePubsub model module.
  * @module model/LoggingGooglePubsub
- * @version 5.0.0
+ * @version 5.0.1
  */
 class LoggingGooglePubsub {
     /**

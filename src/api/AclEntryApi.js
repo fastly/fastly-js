@@ -20,7 +20,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * AclEntry service.
 * @module api/AclEntryApi
-* @version 5.0.0
+* @version 5.0.1
 */
 export default class AclEntryApi {
 

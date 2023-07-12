@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **status** | [**BillingStatus**](BillingStatus.md) |  | [optional] 
 **total** | [**BillingTotal**](BillingTotal.md) |  | [optional] 
 **regions** | **{String: {String: Object}}** | Breakdown of regional data for products that are region based. | [optional] 
-**lines** | [**[BillingEstimateResponseAllOfLines]**](BillingEstimateResponseAllOfLines.md) |  | [optional] 
+**line_items** | [**[BillingEstimateLinesLineItems]**](BillingEstimateLinesLineItems.md) |  | [optional] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -12,7 +12,7 @@
 
 import ApiClient from '../ApiClient';
 import Billing from './Billing';
-import BillingResponseAllOf from './BillingResponseAllOf';
+import BillingResponseItemItemsData from './BillingResponseItemItemsData';
 import BillingResponseLineItem from './BillingResponseLineItem';
 import BillingStatus from './BillingStatus';
 import BillingTotal from './BillingTotal';
@@ -20,17 +20,17 @@ import BillingTotal from './BillingTotal';
 /**
  * The BillingResponse model module.
  * @module model/BillingResponse
- * @version 5.0.0
+ * @version 5.0.1
  */
 class BillingResponse {
     /**
      * Constructs a new <code>BillingResponse</code>.
      * @alias module:model/BillingResponse
      * @implements module:model/Billing
-     * @implements module:model/BillingResponseAllOf
+     * @implements module:model/BillingResponseItemItemsData
      */
     constructor() { 
-        Billing.initialize(this);BillingResponseAllOf.initialize(this);
+        Billing.initialize(this);BillingResponseItemItemsData.initialize(this);
         BillingResponse.initialize(this);
     }
 
@@ -53,7 +53,7 @@ class BillingResponse {
         if (data) {
             obj = obj || new BillingResponse();
             Billing.constructFromObject(data, obj);
-            BillingResponseAllOf.constructFromObject(data, obj);
+            BillingResponseItemItemsData.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('end_time')) {
                 obj['end_time'] = ApiClient.convertToType(data['end_time'], 'Date');
@@ -176,11 +176,11 @@ Billing.prototype['total'] = undefined;
  * @member {Object.<String, Object.<String, Object>>} regions
  */
 Billing.prototype['regions'] = undefined;
-// Implement BillingResponseAllOf interface:
+// Implement BillingResponseItemItemsData interface:
 /**
  * @member {Array.<module:model/BillingResponseLineItem>} line_items
  */
-BillingResponseAllOf.prototype['line_items'] = undefined;
+BillingResponseItemItemsData.prototype['line_items'] = undefined;
 
 
 

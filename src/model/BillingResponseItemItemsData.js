@@ -14,18 +14,18 @@ import ApiClient from '../ApiClient';
 import BillingResponseLineItem from './BillingResponseLineItem';
 
 /**
- * The BillingResponseAllOf model module.
- * @module model/BillingResponseAllOf
- * @version 5.0.0
+ * The BillingResponseItemItemsData model module.
+ * @module model/BillingResponseItemItemsData
+ * @version 5.0.1
  */
-class BillingResponseAllOf {
+class BillingResponseItemItemsData {
     /**
-     * Constructs a new <code>BillingResponseAllOf</code>.
-     * @alias module:model/BillingResponseAllOf
+     * Constructs a new <code>BillingResponseItemItemsData</code>.
+     * @alias module:model/BillingResponseItemItemsData
      */
     constructor() { 
         
-        BillingResponseAllOf.initialize(this);
+        BillingResponseItemItemsData.initialize(this);
     }
 
     /**
@@ -37,15 +37,15 @@ class BillingResponseAllOf {
     }
 
     /**
-     * Constructs a <code>BillingResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>BillingResponseItemItemsData</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/BillingResponseAllOf} obj Optional instance to populate.
-     * @return {module:model/BillingResponseAllOf} The populated <code>BillingResponseAllOf</code> instance.
+     * @param {module:model/BillingResponseItemItemsData} obj Optional instance to populate.
+     * @return {module:model/BillingResponseItemItemsData} The populated <code>BillingResponseItemItemsData</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new BillingResponseAllOf();
+            obj = obj || new BillingResponseItemItemsData();
 
             if (data.hasOwnProperty('line_items')) {
                 obj['line_items'] = ApiClient.convertToType(data['line_items'], [BillingResponseLineItem]);
@@ -60,12 +60,12 @@ class BillingResponseAllOf {
 /**
  * @member {Array.<module:model/BillingResponseLineItem>} line_items
  */
-BillingResponseAllOf.prototype['line_items'] = undefined;
+BillingResponseItemItemsData.prototype['line_items'] = undefined;
 
 
 
 
 
 
-export default BillingResponseAllOf;
+export default BillingResponseItemItemsData;
 

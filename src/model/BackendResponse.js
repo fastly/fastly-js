@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The BackendResponse model module.
  * @module model/BackendResponse
- * @version 5.0.0
+ * @version 5.0.1
  */
 class BackendResponse {
     /**

@@ -20,7 +20,7 @@ import TlsConfigurationsResponseAllOf from './TlsConfigurationsResponseAllOf';
 /**
  * The TlsConfigurationsResponse model module.
  * @module model/TlsConfigurationsResponse
- * @version 5.0.0
+ * @version 5.0.1
  */
 class TlsConfigurationsResponse {
     /**

@@ -19,7 +19,7 @@ import RelationshipWafRuleRevisionWafRuleRevisions from './RelationshipWafRuleRe
 /**
  * The WafActiveRuleResponseDataRelationships model module.
  * @module model/WafActiveRuleResponseDataRelationships
- * @version 5.0.0
+ * @version 5.0.1
  */
 class WafActiveRuleResponseDataRelationships {
     /**

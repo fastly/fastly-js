@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **deleted_at** | **Date** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **updated_at** | **Date** | Date and time in ISO 8601 format. | [optional] [readonly] 
 **amount** | **Number** |  | [optional] 
-**aria_invoice_id** | **String** |  | [optional] [readonly] 
+**aria_invoice_id** | [**LineItemDataReadOnlyInvoiceId**](LineItemDataReadOnlyInvoiceId.md) |  | [optional] 
 **client_service_id** | **String** |  | [optional] 
 **credit_coupon_code** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 
