@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ErrorResponse model module.
  * @module model/ErrorResponse
- * @version 5.0.1
+ * @version 5.0.2
  */
 class ErrorResponse {
     /**

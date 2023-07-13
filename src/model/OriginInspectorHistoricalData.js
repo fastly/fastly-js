@@ -12,12 +12,12 @@
 
 import ApiClient from '../ApiClient';
 import OriginInspectorDimensions from './OriginInspectorDimensions';
-import Values from './Values';
+import OriginInspectorValues from './OriginInspectorValues';
 
 /**
  * The OriginInspectorHistoricalData model module.
  * @module model/OriginInspectorHistoricalData
- * @version 5.0.1
+ * @version 5.0.2
  */
 class OriginInspectorHistoricalData {
     /**
@@ -52,7 +52,7 @@ class OriginInspectorHistoricalData {
                 obj['dimensions'] = OriginInspectorDimensions.constructFromObject(data['dimensions']);
             }
             if (data.hasOwnProperty('values')) {
-                obj['values'] = Values.constructFromObject(data['values']);
+                obj['values'] = ApiClient.convertToType(data['values'], [OriginInspectorValues]);
             }
         }
         return obj;
@@ -67,7 +67,8 @@ class OriginInspectorHistoricalData {
 OriginInspectorHistoricalData.prototype['dimensions'] = undefined;
 
 /**
- * @member {module:model/Values} values
+ * An array of values representing the metric values at each point in time. Note that this dataset is sparse: only the keys with non-zero values will be included in the record. 
+ * @member {Array.<module:model/OriginInspectorValues>} values
  */
 OriginInspectorHistoricalData.prototype['values'] = undefined;
 

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RecordedTimestamp model module.
  * @module model/RecordedTimestamp
- * @version 5.0.1
+ * @version 5.0.2
  */
 class RecordedTimestamp {
     /**

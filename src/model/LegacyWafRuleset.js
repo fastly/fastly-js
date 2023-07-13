@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LegacyWafRuleset model module.
  * @module model/LegacyWafRuleset
- * @version 5.0.1
+ * @version 5.0.2
  */
 class LegacyWafRuleset {
     /**

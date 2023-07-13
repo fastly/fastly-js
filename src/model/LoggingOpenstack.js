@@ -18,7 +18,7 @@ import LoggingOpenstackAllOf from './LoggingOpenstackAllOf';
 /**
  * The LoggingOpenstack model module.
  * @module model/LoggingOpenstack
- * @version 5.0.1
+ * @version 5.0.2
  */
 class LoggingOpenstack {
     /**

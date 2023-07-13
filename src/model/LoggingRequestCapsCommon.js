@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingRequestCapsCommon model module.
  * @module model/LoggingRequestCapsCommon
- * @version 5.0.1
+ * @version 5.0.2
  */
 class LoggingRequestCapsCommon {
     /**

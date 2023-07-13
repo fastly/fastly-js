@@ -21,7 +21,7 @@ import ServiceResponse from '../model/ServiceResponse';
 /**
 * Service service.
 * @module api/ServiceApi
-* @version 5.0.1
+* @version 5.0.2
 */
 export default class ServiceApi {
 

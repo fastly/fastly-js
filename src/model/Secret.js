@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Secret model module.
  * @module model/Secret
- * @version 5.0.1
+ * @version 5.0.2
  */
 class Secret {
     /**

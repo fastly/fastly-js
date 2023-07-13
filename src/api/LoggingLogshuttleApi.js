@@ -18,7 +18,7 @@ import LoggingLogshuttleResponse from '../model/LoggingLogshuttleResponse';
 /**
 * LoggingLogshuttle service.
 * @module api/LoggingLogshuttleApi
-* @version 5.0.1
+* @version 5.0.2
 */
 export default class LoggingLogshuttleApi {
 

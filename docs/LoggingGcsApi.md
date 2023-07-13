@@ -42,7 +42,7 @@ const options = {
   secret_key: "secret_key_example",
   account_name: "account_name_example",
   bucket_name: "bucket_name_example",
-  path: "path_example",
+  path: "'/'",
   public_key: "'null'",
   project_id: "project_id_example",
 };
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 **secret_key** | **String** | Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified. | [optional]
 **account_name** | **String** | The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided. | [optional]
 **bucket_name** | **String** | The name of the GCS bucket. | [optional]
-**path** | **String** | The path to upload logs to. | [optional]
+**path** | **String** |  | [optional] [defaults to '/']
 **public_key** | **String** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional] [defaults to 'null']
 **project_id** | **String** | Your Google Cloud Platform project ID. Required | [optional]
 
@@ -229,7 +229,7 @@ const options = {
   secret_key: "secret_key_example",
   account_name: "account_name_example",
   bucket_name: "bucket_name_example",
-  path: "path_example",
+  path: "'/'",
   public_key: "'null'",
   project_id: "project_id_example",
 };
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 **secret_key** | **String** | Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified. | [optional]
 **account_name** | **String** | The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided. | [optional]
 **bucket_name** | **String** | The name of the GCS bucket. | [optional]
-**path** | **String** | The path to upload logs to. | [optional]
+**path** | **String** |  | [optional] [defaults to '/']
 **public_key** | **String** | A PGP public key that Fastly will use to encrypt your log files before writing them to disk. | [optional] [defaults to 'null']
 **project_id** | **String** | Your Google Cloud Platform project ID. Required | [optional]
 

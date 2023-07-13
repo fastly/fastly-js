@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingLogshuttleResponse model module.
  * @module model/LoggingLogshuttleResponse
- * @version 5.0.1
+ * @version 5.0.2
  */
 class LoggingLogshuttleResponse {
     /**

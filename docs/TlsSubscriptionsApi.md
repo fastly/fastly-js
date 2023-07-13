@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 ## `deleteGlobalsignEmailChallenge`
 
 ```javascript
-deleteGlobalsignEmailChallenge({ tls_subscription_id, globalsign_email_challenge_id, tls_authorization_id })
+deleteGlobalsignEmailChallenge({ tls_subscription_id, tls_authorization_id, globalsign_email_challenge_id })
 ```
 
 Deletes a GlobalSign email challenge. After a GlobalSign email challenge is deleted, the domain can use HTTP and DNS validation methods again.
@@ -105,8 +105,8 @@ Deletes a GlobalSign email challenge. After a GlobalSign email challenge is dele
 ```javascript
 const options = {
   tls_subscription_id: "tls_subscription_id_example", // required
-  globalsign_email_challenge_id: gU3guUGZzb2W9Euo4Mo0r, // required
   tls_authorization_id: "tls_authorization_id_example", // required
+  globalsign_email_challenge_id: gU3guUGZzb2W9Euo4Mo0r, // required
 };
 
 apiInstance.deleteGlobalsignEmailChallenge(options)
@@ -123,8 +123,8 @@ apiInstance.deleteGlobalsignEmailChallenge(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **tls_subscription_id** | **String** | Alphanumeric string identifying a TLS subscription. |
-**globalsign_email_challenge_id** | **String** | Alphanumeric string identifying a GlobalSign email challenge. |
 **tls_authorization_id** | **String** | Alphanumeric string identifying a TLS subscription. |
+**globalsign_email_challenge_id** | **String** | Alphanumeric string identifying a GlobalSign email challenge. |
 
 ### Return type
 

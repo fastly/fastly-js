@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingGcsResponse model module.
  * @module model/LoggingGcsResponse
- * @version 5.0.1
+ * @version 5.0.2
  */
 class LoggingGcsResponse {
     /**
@@ -218,10 +218,10 @@ LoggingGcsResponse.prototype['account_name'] = undefined;
 LoggingGcsResponse.prototype['bucket_name'] = undefined;
 
 /**
- * The path to upload logs to.
  * @member {String} path
+ * @default '/'
  */
-LoggingGcsResponse.prototype['path'] = undefined;
+LoggingGcsResponse.prototype['path'] = '/';
 
 /**
  * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
@@ -342,10 +342,10 @@ LoggingGcs.prototype['account_name'] = undefined;
  */
 LoggingGcs.prototype['bucket_name'] = undefined;
 /**
- * The path to upload logs to.
  * @member {String} path
+ * @default '/'
  */
-LoggingGcs.prototype['path'] = undefined;
+LoggingGcs.prototype['path'] = '/';
 /**
  * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
  * @member {String} public_key

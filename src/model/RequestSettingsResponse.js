@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The RequestSettingsResponse model module.
  * @module model/RequestSettingsResponse
- * @version 5.0.1
+ * @version 5.0.2
  */
 class RequestSettingsResponse {
     /**

@@ -17,7 +17,7 @@ import LoggingLogshuttleAllOf from './LoggingLogshuttleAllOf';
 /**
  * The LoggingLogshuttle model module.
  * @module model/LoggingLogshuttle
- * @version 5.0.1
+ * @version 5.0.2
  */
 class LoggingLogshuttle {
     /**

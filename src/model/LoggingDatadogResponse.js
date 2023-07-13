@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingDatadogResponse model module.
  * @module model/LoggingDatadogResponse
- * @version 5.0.1
+ * @version 5.0.2
  */
 class LoggingDatadogResponse {
     /**

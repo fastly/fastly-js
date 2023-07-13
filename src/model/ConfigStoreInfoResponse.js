@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ConfigStoreInfoResponse model module.
  * @module model/ConfigStoreInfoResponse
- * @version 5.0.1
+ * @version 5.0.2
  */
 class ConfigStoreInfoResponse {
     /**

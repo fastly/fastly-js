@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The StarResponseAllOf model module.
  * @module model/StarResponseAllOf
- * @version 5.0.1
+ * @version 5.0.2
  */
 class StarResponseAllOf {
     /**

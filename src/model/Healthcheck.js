@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Healthcheck model module.
  * @module model/Healthcheck
- * @version 5.0.1
+ * @version 5.0.2
  */
 class Healthcheck {
     /**

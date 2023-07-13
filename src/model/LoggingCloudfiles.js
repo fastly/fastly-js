@@ -18,7 +18,7 @@ import LoggingGenericCommon from './LoggingGenericCommon';
 /**
  * The LoggingCloudfiles model module.
  * @module model/LoggingCloudfiles
- * @version 5.0.1
+ * @version 5.0.2
  */
 class LoggingCloudfiles {
     /**

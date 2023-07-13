@@ -17,7 +17,7 @@ import OriginInspectorSubsequentRequestTimestamp from './OriginInspectorSubseque
 /**
  * The OriginInspector model module.
  * @module model/OriginInspector
- * @version 5.0.1
+ * @version 5.0.2
  */
 class OriginInspector {
     /**

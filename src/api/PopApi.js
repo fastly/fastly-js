@@ -17,7 +17,7 @@ import Pop from '../model/Pop';
 /**
 * Pop service.
 * @module api/PopApi
-* @version 5.0.1
+* @version 5.0.2
 */
 export default class PopApi {
 

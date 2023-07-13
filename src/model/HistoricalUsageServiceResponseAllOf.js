@@ -16,7 +16,7 @@ import HistoricalUsageResults from './HistoricalUsageResults';
 /**
  * The HistoricalUsageServiceResponseAllOf model module.
  * @module model/HistoricalUsageServiceResponseAllOf
- * @version 5.0.1
+ * @version 5.0.2
  */
 class HistoricalUsageServiceResponseAllOf {
     /**

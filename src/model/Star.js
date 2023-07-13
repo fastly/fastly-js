@@ -16,7 +16,7 @@ import StarData from './StarData';
 /**
  * The Star model module.
  * @module model/Star
- * @version 5.0.1
+ * @version 5.0.2
  */
 class Star {
     /**

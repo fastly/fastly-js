@@ -18,7 +18,7 @@ import LoggingGcsResponse from '../model/LoggingGcsResponse';
 /**
 * LoggingGcs service.
 * @module api/LoggingGcsApi
-* @version 5.0.1
+* @version 5.0.2
 */
 export default class LoggingGcsApi {
 
@@ -57,7 +57,7 @@ export default class LoggingGcsApi {
      * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified.
      * @param {String} [options.account_name] - The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided.
      * @param {String} [options.bucket_name] - The name of the GCS bucket.
-     * @param {String} [options.path] - The path to upload logs to.
+     * @param {String} [options.path='/']
      * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
      * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingGcsResponse} and HTTP response
@@ -142,7 +142,7 @@ export default class LoggingGcsApi {
      * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified.
      * @param {String} [options.account_name] - The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided.
      * @param {String} [options.bucket_name] - The name of the GCS bucket.
-     * @param {String} [options.path] - The path to upload logs to.
+     * @param {String} [options.path='/']
      * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
      * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingGcsResponse}
@@ -383,7 +383,7 @@ export default class LoggingGcsApi {
      * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified.
      * @param {String} [options.account_name] - The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided.
      * @param {String} [options.bucket_name] - The name of the GCS bucket.
-     * @param {String} [options.path] - The path to upload logs to.
+     * @param {String} [options.path='/']
      * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
      * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingGcsResponse} and HTTP response
@@ -474,7 +474,7 @@ export default class LoggingGcsApi {
      * @param {String} [options.secret_key] - Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified.
      * @param {String} [options.account_name] - The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided.
      * @param {String} [options.bucket_name] - The name of the GCS bucket.
-     * @param {String} [options.path] - The path to upload logs to.
+     * @param {String} [options.path='/']
      * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
      * @param {String} [options.project_id] - Your Google Cloud Platform project ID. Required
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingGcsResponse}

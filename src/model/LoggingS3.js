@@ -18,7 +18,7 @@ import LoggingS3AllOf from './LoggingS3AllOf';
 /**
  * The LoggingS3 model module.
  * @module model/LoggingS3
- * @version 5.0.1
+ * @version 5.0.2
  */
 class LoggingS3 {
     /**

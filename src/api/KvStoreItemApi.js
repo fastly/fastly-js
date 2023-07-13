@@ -17,7 +17,7 @@ import InlineResponse2004 from '../model/InlineResponse2004';
 /**
 * KvStoreItem service.
 * @module api/KvStoreItemApi
-* @version 5.0.1
+* @version 5.0.2
 */
 export default class KvStoreItemApi {
 

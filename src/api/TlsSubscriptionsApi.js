@@ -19,7 +19,7 @@ import TlsSubscriptionsResponse from '../model/TlsSubscriptionsResponse';
 /**
 * TlsSubscriptions service.
 * @module api/TlsSubscriptionsApi
-* @version 5.0.1
+* @version 5.0.2
 */
 export default class TlsSubscriptionsApi {
 
@@ -166,8 +166,8 @@ export default class TlsSubscriptionsApi {
      * Deletes a GlobalSign email challenge. After a GlobalSign email challenge is deleted, the domain can use HTTP and DNS validation methods again.
      * @param {Object} options
      * @param {String} options.tls_subscription_id - Alphanumeric string identifying a TLS subscription.
-     * @param {String} options.globalsign_email_challenge_id - Alphanumeric string identifying a GlobalSign email challenge.
      * @param {String} options.tls_authorization_id - Alphanumeric string identifying a TLS subscription.
+     * @param {String} options.globalsign_email_challenge_id - Alphanumeric string identifying a GlobalSign email challenge.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     deleteGlobalsignEmailChallengeWithHttpInfo(options = {}) {
@@ -176,19 +176,19 @@ export default class TlsSubscriptionsApi {
       if (options['tls_subscription_id'] === undefined || options['tls_subscription_id'] === null) {
         throw new Error("Missing the required parameter 'tls_subscription_id'.");
       }
-      // Verify the required parameter 'globalsign_email_challenge_id' is set.
-      if (options['globalsign_email_challenge_id'] === undefined || options['globalsign_email_challenge_id'] === null) {
-        throw new Error("Missing the required parameter 'globalsign_email_challenge_id'.");
-      }
       // Verify the required parameter 'tls_authorization_id' is set.
       if (options['tls_authorization_id'] === undefined || options['tls_authorization_id'] === null) {
         throw new Error("Missing the required parameter 'tls_authorization_id'.");
       }
+      // Verify the required parameter 'globalsign_email_challenge_id' is set.
+      if (options['globalsign_email_challenge_id'] === undefined || options['globalsign_email_challenge_id'] === null) {
+        throw new Error("Missing the required parameter 'globalsign_email_challenge_id'.");
+      }
 
       let pathParams = {
         'tls_subscription_id': options['tls_subscription_id'],
-        'globalsign_email_challenge_id': options['globalsign_email_challenge_id'],
-        'tls_authorization_id': options['tls_authorization_id']
+        'tls_authorization_id': options['tls_authorization_id'],
+        'globalsign_email_challenge_id': options['globalsign_email_challenge_id']
       };
       let pathParamsAllowReserved = {
       };
@@ -223,8 +223,8 @@ export default class TlsSubscriptionsApi {
      * Deletes a GlobalSign email challenge. After a GlobalSign email challenge is deleted, the domain can use HTTP and DNS validation methods again.
      * @param {Object} options
      * @param {String} options.tls_subscription_id - Alphanumeric string identifying a TLS subscription.
-     * @param {String} options.globalsign_email_challenge_id - Alphanumeric string identifying a GlobalSign email challenge.
      * @param {String} options.tls_authorization_id - Alphanumeric string identifying a TLS subscription.
+     * @param {String} options.globalsign_email_challenge_id - Alphanumeric string identifying a GlobalSign email challenge.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     deleteGlobalsignEmailChallenge(options = {}) {

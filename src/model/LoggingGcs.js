@@ -19,7 +19,7 @@ import LoggingGenericCommon from './LoggingGenericCommon';
 /**
  * The LoggingGcs model module.
  * @module model/LoggingGcs
- * @version 5.0.1
+ * @version 5.0.2
  */
 class LoggingGcs {
     /**
@@ -206,10 +206,10 @@ LoggingGcs.prototype['account_name'] = undefined;
 LoggingGcs.prototype['bucket_name'] = undefined;
 
 /**
- * The path to upload logs to.
  * @member {String} path
+ * @default '/'
  */
-LoggingGcs.prototype['path'] = undefined;
+LoggingGcs.prototype['path'] = '/';
 
 /**
  * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
@@ -305,10 +305,10 @@ LoggingGcsCommon.prototype['account_name'] = undefined;
  */
 LoggingGcsAllOf.prototype['bucket_name'] = undefined;
 /**
- * The path to upload logs to.
  * @member {String} path
+ * @default '/'
  */
-LoggingGcsAllOf.prototype['path'] = undefined;
+LoggingGcsAllOf.prototype['path'] = '/';
 /**
  * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
  * @member {String} public_key

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingGcsAllOf model module.
  * @module model/LoggingGcsAllOf
- * @version 5.0.1
+ * @version 5.0.2
  */
 class LoggingGcsAllOf {
     /**
@@ -72,10 +72,10 @@ class LoggingGcsAllOf {
 LoggingGcsAllOf.prototype['bucket_name'] = undefined;
 
 /**
- * The path to upload logs to.
  * @member {String} path
+ * @default '/'
  */
-LoggingGcsAllOf.prototype['path'] = undefined;
+LoggingGcsAllOf.prototype['path'] = '/';
 
 /**
  * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.

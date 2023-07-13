@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The DictionaryItemResponse model module.
  * @module model/DictionaryItemResponse
- * @version 5.0.1
+ * @version 5.0.2
  */
 class DictionaryItemResponse {
     /**
