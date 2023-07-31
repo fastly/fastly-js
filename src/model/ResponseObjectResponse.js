@@ -12,24 +12,24 @@
 
 import ApiClient from '../ApiClient';
 import ResponseObject from './ResponseObject';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
+import ServiceIdAndVersionString from './ServiceIdAndVersionString';
 import Timestamps from './Timestamps';
 
 /**
  * The ResponseObjectResponse model module.
  * @module model/ResponseObjectResponse
- * @version 5.0.2
+ * @version 6.0.0
  */
 class ResponseObjectResponse {
     /**
      * Constructs a new <code>ResponseObjectResponse</code>.
      * @alias module:model/ResponseObjectResponse
      * @implements module:model/ResponseObject
-     * @implements module:model/ServiceIdAndVersion
+     * @implements module:model/ServiceIdAndVersionString
      * @implements module:model/Timestamps
      */
     constructor() { 
-        ResponseObject.initialize(this);ServiceIdAndVersion.initialize(this);Timestamps.initialize(this);
+        ResponseObject.initialize(this);ServiceIdAndVersionString.initialize(this);Timestamps.initialize(this);
         ResponseObjectResponse.initialize(this);
     }
 
@@ -52,7 +52,7 @@ class ResponseObjectResponse {
         if (data) {
             obj = obj || new ResponseObjectResponse();
             ResponseObject.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
+            ServiceIdAndVersionString.constructFromObject(data, obj);
             Timestamps.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('cache_condition')) {
@@ -68,7 +68,7 @@ class ResponseObjectResponse {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('status')) {
-                obj['status'] = ApiClient.convertToType(data['status'], 'Number');
+                obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
             if (data.hasOwnProperty('response')) {
                 obj['response'] = ApiClient.convertToType(data['response'], 'String');
@@ -80,7 +80,7 @@ class ResponseObjectResponse {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
             }
             if (data.hasOwnProperty('version')) {
-                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
+                obj['version'] = ApiClient.convertToType(data['version'], 'String');
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
@@ -124,10 +124,10 @@ ResponseObjectResponse.prototype['name'] = undefined;
 
 /**
  * The HTTP status code.
- * @member {Number} status
- * @default 200
+ * @member {String} status
+ * @default '200'
  */
-ResponseObjectResponse.prototype['status'] = 200;
+ResponseObjectResponse.prototype['status'] = '200';
 
 /**
  * The HTTP response.
@@ -148,7 +148,7 @@ ResponseObjectResponse.prototype['request_condition'] = undefined;
 ResponseObjectResponse.prototype['service_id'] = undefined;
 
 /**
- * @member {Number} version
+ * @member {String} version
  */
 ResponseObjectResponse.prototype['version'] = undefined;
 
@@ -194,10 +194,10 @@ ResponseObject.prototype['content_type'] = undefined;
 ResponseObject.prototype['name'] = undefined;
 /**
  * The HTTP status code.
- * @member {Number} status
- * @default 200
+ * @member {String} status
+ * @default '200'
  */
-ResponseObject.prototype['status'] = 200;
+ResponseObject.prototype['status'] = '200';
 /**
  * The HTTP response.
  * @member {String} response
@@ -209,15 +209,15 @@ ResponseObject.prototype['response'] = 'Ok';
  * @member {String} request_condition
  */
 ResponseObject.prototype['request_condition'] = undefined;
-// Implement ServiceIdAndVersion interface:
+// Implement ServiceIdAndVersionString interface:
 /**
  * @member {String} service_id
  */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
+ServiceIdAndVersionString.prototype['service_id'] = undefined;
 /**
- * @member {Number} version
+ * @member {String} version
  */
-ServiceIdAndVersion.prototype['version'] = undefined;
+ServiceIdAndVersionString.prototype['version'] = undefined;
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.

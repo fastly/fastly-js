@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[DomainCheckItem]**](DomainCheckItem.md)
+**[Object]**
 
 
 ## `checkDomains`

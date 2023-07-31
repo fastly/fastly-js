@@ -17,7 +17,7 @@ import DiffResponse from '../model/DiffResponse';
 /**
 * Diff service.
 * @module api/DiffApi
-* @version 5.0.2
+* @version 6.0.0
 */
 export default class DiffApi {
 

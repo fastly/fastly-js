@@ -11,25 +11,27 @@
  */
 
 import ApiClient from '../ApiClient';
-import LoggingLoggly from './LoggingLoggly';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
+import LoggingCommonResponse from './LoggingCommonResponse';
+import LoggingLogglyAdditional from './LoggingLogglyAdditional';
+import ServiceIdAndVersionString from './ServiceIdAndVersionString';
 import Timestamps from './Timestamps';
 
 /**
  * The LoggingLogglyResponse model module.
  * @module model/LoggingLogglyResponse
- * @version 5.0.2
+ * @version 6.0.0
  */
 class LoggingLogglyResponse {
     /**
      * Constructs a new <code>LoggingLogglyResponse</code>.
      * @alias module:model/LoggingLogglyResponse
-     * @implements module:model/LoggingLoggly
+     * @implements module:model/LoggingCommonResponse
+     * @implements module:model/LoggingLogglyAdditional
      * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
+     * @implements module:model/ServiceIdAndVersionString
      */
     constructor() { 
-        LoggingLoggly.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
+        LoggingCommonResponse.initialize(this);LoggingLogglyAdditional.initialize(this);Timestamps.initialize(this);ServiceIdAndVersionString.initialize(this);
         LoggingLogglyResponse.initialize(this);
     }
 
@@ -51,9 +53,10 @@ class LoggingLogglyResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingLogglyResponse();
-            LoggingLoggly.constructFromObject(data, obj);
+            LoggingCommonResponse.constructFromObject(data, obj);
+            LoggingLogglyAdditional.constructFromObject(data, obj);
             Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
+            ServiceIdAndVersionString.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -61,14 +64,14 @@ class LoggingLogglyResponse {
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = ApiClient.convertToType(data['placement'], 'String');
             }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'Number');
-            }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
             }
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'String');
             }
             if (data.hasOwnProperty('token')) {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
@@ -86,7 +89,7 @@ class LoggingLogglyResponse {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
             }
             if (data.hasOwnProperty('version')) {
-                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
+                obj['version'] = ApiClient.convertToType(data['version'], 'String');
             }
         }
         return obj;
@@ -108,13 +111,6 @@ LoggingLogglyResponse.prototype['name'] = undefined;
 LoggingLogglyResponse.prototype['placement'] = undefined;
 
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
- * @member {module:model/LoggingLogglyResponse.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingLogglyResponse.prototype['format_version'] = undefined;
-
-/**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
@@ -126,6 +122,13 @@ LoggingLogglyResponse.prototype['response_condition'] = undefined;
  * @default '%h %l %u %t "%r" %&gt;s %b'
  */
 LoggingLogglyResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+ * @member {module:model/LoggingLogglyResponse.FormatVersionEnum} format_version
+ * @default '2'
+ */
+LoggingLogglyResponse.prototype['format_version'] = undefined;
 
 /**
  * The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)).
@@ -157,44 +160,45 @@ LoggingLogglyResponse.prototype['updated_at'] = undefined;
 LoggingLogglyResponse.prototype['service_id'] = undefined;
 
 /**
- * @member {Number} version
+ * @member {String} version
  */
 LoggingLogglyResponse.prototype['version'] = undefined;
 
 
-// Implement LoggingLoggly interface:
+// Implement LoggingCommonResponse interface:
 /**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
-LoggingLoggly.prototype['name'] = undefined;
+LoggingCommonResponse.prototype['name'] = undefined;
 /**
  * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
- * @member {module:model/LoggingLoggly.PlacementEnum} placement
+ * @member {module:model/LoggingCommonResponse.PlacementEnum} placement
  */
-LoggingLoggly.prototype['placement'] = undefined;
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
- * @member {module:model/LoggingLoggly.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingLoggly.prototype['format_version'] = undefined;
+LoggingCommonResponse.prototype['placement'] = undefined;
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
-LoggingLoggly.prototype['response_condition'] = undefined;
+LoggingCommonResponse.prototype['response_condition'] = undefined;
 /**
  * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
  * @member {String} format
  * @default '%h %l %u %t "%r" %&gt;s %b'
  */
-LoggingLoggly.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+LoggingCommonResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+ * @member {module:model/LoggingCommonResponse.FormatVersionEnum} format_version
+ * @default '2'
+ */
+LoggingCommonResponse.prototype['format_version'] = undefined;
+// Implement LoggingLogglyAdditional interface:
 /**
  * The token to use for authentication ([https://www.loggly.com/docs/customer-token-authentication-token/](https://www.loggly.com/docs/customer-token-authentication-token/)).
  * @member {String} token
  */
-LoggingLoggly.prototype['token'] = undefined;
+LoggingLogglyAdditional.prototype['token'] = undefined;
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
@@ -211,15 +215,15 @@ Timestamps.prototype['deleted_at'] = undefined;
  * @member {Date} updated_at
  */
 Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
+// Implement ServiceIdAndVersionString interface:
 /**
  * @member {String} service_id
  */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
+ServiceIdAndVersionString.prototype['service_id'] = undefined;
 /**
- * @member {Number} version
+ * @member {String} version
  */
-ServiceIdAndVersion.prototype['version'] = undefined;
+ServiceIdAndVersionString.prototype['version'] = undefined;
 
 
 
@@ -252,22 +256,22 @@ LoggingLogglyResponse['PlacementEnum'] = {
 
 /**
  * Allowed values for the <code>format_version</code> property.
- * @enum {Number}
+ * @enum {String}
  * @readonly
  */
 LoggingLogglyResponse['FormatVersionEnum'] = {
 
     /**
-     * value: 1
+     * value: "1"
      * @const
      */
-    "v1": 1,
+    "v1": "1",
 
     /**
-     * value: 2
+     * value: "2"
      * @const
      */
-    "v2": 2
+    "v2": "2"
 };
 
 

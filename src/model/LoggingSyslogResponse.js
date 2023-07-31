@@ -11,27 +11,33 @@
  */
 
 import ApiClient from '../ApiClient';
+import LoggingAddressAndPort from './LoggingAddressAndPort';
+import LoggingCommonResponse from './LoggingCommonResponse';
 import LoggingMessageType from './LoggingMessageType';
-import LoggingSyslog from './LoggingSyslog';
+import LoggingSyslogAdditional from './LoggingSyslogAdditional';
+import LoggingTlsCommon from './LoggingTlsCommon';
 import LoggingUseTls from './LoggingUseTls';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
+import ServiceIdAndVersionString from './ServiceIdAndVersionString';
 import Timestamps from './Timestamps';
 
 /**
  * The LoggingSyslogResponse model module.
  * @module model/LoggingSyslogResponse
- * @version 5.0.2
+ * @version 6.0.0
  */
 class LoggingSyslogResponse {
     /**
      * Constructs a new <code>LoggingSyslogResponse</code>.
      * @alias module:model/LoggingSyslogResponse
-     * @implements module:model/LoggingSyslog
+     * @implements module:model/LoggingCommonResponse
+     * @implements module:model/LoggingTlsCommon
+     * @implements module:model/LoggingAddressAndPort
+     * @implements module:model/LoggingSyslogAdditional
      * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
+     * @implements module:model/ServiceIdAndVersionString
      */
     constructor() { 
-        LoggingSyslog.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
+        LoggingCommonResponse.initialize(this);LoggingTlsCommon.initialize(this);LoggingAddressAndPort.initialize(this);LoggingSyslogAdditional.initialize(this);Timestamps.initialize(this);ServiceIdAndVersionString.initialize(this);
         LoggingSyslogResponse.initialize(this);
     }
 
@@ -53,9 +59,12 @@ class LoggingSyslogResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingSyslogResponse();
-            LoggingSyslog.constructFromObject(data, obj);
+            LoggingCommonResponse.constructFromObject(data, obj);
+            LoggingTlsCommon.constructFromObject(data, obj);
+            LoggingAddressAndPort.constructFromObject(data, obj);
+            LoggingSyslogAdditional.constructFromObject(data, obj);
             Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
+            ServiceIdAndVersionString.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -63,14 +72,14 @@ class LoggingSyslogResponse {
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = ApiClient.convertToType(data['placement'], 'String');
             }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'Number');
-            }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
             }
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'String');
             }
             if (data.hasOwnProperty('tls_ca_cert')) {
                 obj['tls_ca_cert'] = ApiClient.convertToType(data['tls_ca_cert'], 'String');
@@ -118,7 +127,7 @@ class LoggingSyslogResponse {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
             }
             if (data.hasOwnProperty('version')) {
-                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
+                obj['version'] = ApiClient.convertToType(data['version'], 'String');
             }
         }
         return obj;
@@ -140,13 +149,6 @@ LoggingSyslogResponse.prototype['name'] = undefined;
 LoggingSyslogResponse.prototype['placement'] = undefined;
 
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
- * @member {module:model/LoggingSyslogResponse.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingSyslogResponse.prototype['format_version'] = undefined;
-
-/**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
@@ -158,6 +160,13 @@ LoggingSyslogResponse.prototype['response_condition'] = undefined;
  * @default '%h %l %u %t "%r" %&gt;s %b'
  */
 LoggingSyslogResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+ * @member {module:model/LoggingSyslogResponse.FormatVersionEnum} format_version
+ * @default '2'
+ */
+LoggingSyslogResponse.prototype['format_version'] = undefined;
 
 /**
  * A secure certificate to authenticate a server with. Must be in PEM format.
@@ -253,98 +262,101 @@ LoggingSyslogResponse.prototype['updated_at'] = undefined;
 LoggingSyslogResponse.prototype['service_id'] = undefined;
 
 /**
- * @member {Number} version
+ * @member {String} version
  */
 LoggingSyslogResponse.prototype['version'] = undefined;
 
 
-// Implement LoggingSyslog interface:
+// Implement LoggingCommonResponse interface:
 /**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
-LoggingSyslog.prototype['name'] = undefined;
+LoggingCommonResponse.prototype['name'] = undefined;
 /**
  * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
- * @member {module:model/LoggingSyslog.PlacementEnum} placement
+ * @member {module:model/LoggingCommonResponse.PlacementEnum} placement
  */
-LoggingSyslog.prototype['placement'] = undefined;
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
- * @member {module:model/LoggingSyslog.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingSyslog.prototype['format_version'] = undefined;
+LoggingCommonResponse.prototype['placement'] = undefined;
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
-LoggingSyslog.prototype['response_condition'] = undefined;
+LoggingCommonResponse.prototype['response_condition'] = undefined;
 /**
  * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
  * @member {String} format
  * @default '%h %l %u %t "%r" %&gt;s %b'
  */
-LoggingSyslog.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+LoggingCommonResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+ * @member {module:model/LoggingCommonResponse.FormatVersionEnum} format_version
+ * @default '2'
+ */
+LoggingCommonResponse.prototype['format_version'] = undefined;
+// Implement LoggingTlsCommon interface:
 /**
  * A secure certificate to authenticate a server with. Must be in PEM format.
  * @member {String} tls_ca_cert
  * @default 'null'
  */
-LoggingSyslog.prototype['tls_ca_cert'] = 'null';
+LoggingTlsCommon.prototype['tls_ca_cert'] = 'null';
 /**
  * The client certificate used to make authenticated requests. Must be in PEM format.
  * @member {String} tls_client_cert
  * @default 'null'
  */
-LoggingSyslog.prototype['tls_client_cert'] = 'null';
+LoggingTlsCommon.prototype['tls_client_cert'] = 'null';
 /**
  * The client private key used to make authenticated requests. Must be in PEM format.
  * @member {String} tls_client_key
  * @default 'null'
  */
-LoggingSyslog.prototype['tls_client_key'] = 'null';
+LoggingTlsCommon.prototype['tls_client_key'] = 'null';
 /**
  * The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
  * @member {String} tls_hostname
  * @default 'null'
  */
-LoggingSyslog.prototype['tls_hostname'] = 'null';
+LoggingTlsCommon.prototype['tls_hostname'] = 'null';
+// Implement LoggingAddressAndPort interface:
 /**
  * A hostname or IPv4 address.
  * @member {String} address
  */
-LoggingSyslog.prototype['address'] = undefined;
+LoggingAddressAndPort.prototype['address'] = undefined;
 /**
  * The port number.
  * @member {Number} port
  * @default 514
  */
-LoggingSyslog.prototype['port'] = 514;
+LoggingAddressAndPort.prototype['port'] = 514;
+// Implement LoggingSyslogAdditional interface:
 /**
  * @member {module:model/LoggingMessageType} message_type
  */
-LoggingSyslog.prototype['message_type'] = undefined;
+LoggingSyslogAdditional.prototype['message_type'] = undefined;
 /**
  * The hostname used for the syslog endpoint.
  * @member {String} hostname
  */
-LoggingSyslog.prototype['hostname'] = undefined;
+LoggingSyslogAdditional.prototype['hostname'] = undefined;
 /**
  * The IPv4 address used for the syslog endpoint.
  * @member {String} ipv4
  */
-LoggingSyslog.prototype['ipv4'] = undefined;
+LoggingSyslogAdditional.prototype['ipv4'] = undefined;
 /**
  * Whether to prepend each message with a specific token.
  * @member {String} token
  * @default 'null'
  */
-LoggingSyslog.prototype['token'] = 'null';
+LoggingSyslogAdditional.prototype['token'] = 'null';
 /**
  * @member {module:model/LoggingUseTls} use_tls
  */
-LoggingSyslog.prototype['use_tls'] = undefined;
+LoggingSyslogAdditional.prototype['use_tls'] = undefined;
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
@@ -361,15 +373,15 @@ Timestamps.prototype['deleted_at'] = undefined;
  * @member {Date} updated_at
  */
 Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
+// Implement ServiceIdAndVersionString interface:
 /**
  * @member {String} service_id
  */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
+ServiceIdAndVersionString.prototype['service_id'] = undefined;
 /**
- * @member {Number} version
+ * @member {String} version
  */
-ServiceIdAndVersion.prototype['version'] = undefined;
+ServiceIdAndVersionString.prototype['version'] = undefined;
 
 
 
@@ -402,22 +414,22 @@ LoggingSyslogResponse['PlacementEnum'] = {
 
 /**
  * Allowed values for the <code>format_version</code> property.
- * @enum {Number}
+ * @enum {String}
  * @readonly
  */
 LoggingSyslogResponse['FormatVersionEnum'] = {
 
     /**
-     * value: 1
+     * value: "1"
      * @const
      */
-    "v1": 1,
+    "v1": "1",
 
     /**
-     * value: 2
+     * value: "2"
      * @const
      */
-    "v2": 2
+    "v2": "2"
 };
 
 

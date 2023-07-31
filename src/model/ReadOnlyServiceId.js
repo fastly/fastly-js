@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ReadOnlyServiceId model module.
  * @module model/ReadOnlyServiceId
- * @version 5.0.2
+ * @version 6.0.0
  */
 class ReadOnlyServiceId {
     /**

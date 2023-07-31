@@ -18,7 +18,7 @@ import RequestSettingsResponse from '../model/RequestSettingsResponse';
 /**
 * RequestSettings service.
 * @module api/RequestSettingsApi
-* @version 5.0.2
+* @version 6.0.0
 */
 export default class RequestSettingsApi {
 
@@ -319,17 +319,17 @@ export default class RequestSettingsApi {
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.request_settings_name - Name for the request settings.
      * @param {module:model/String} [options.action] - Allows you to terminate request handling and immediately perform an action.
-     * @param {Number} [options.bypass_busy_wait] - Disable collapsed forwarding, so you don't wait for other objects to origin.
      * @param {String} [options.default_host] - Sets the host header.
+     * @param {String} [options.hash_keys] - Comma separated list of varnish request object fields that should be in the hash key.
+     * @param {String} [options.name] - Name for the request settings.
+     * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
+     * @param {module:model/String} [options.xff] - Short for X-Forwarded-For.
+     * @param {Number} [options.bypass_busy_wait] - Disable collapsed forwarding, so you don't wait for other objects to origin.
      * @param {Number} [options.force_miss] - Allows you to force a cache miss for the request. Replaces the item in the cache if the content is cacheable.
      * @param {Number} [options.force_ssl] - Forces the request use SSL (redirects a non-SSL to SSL).
      * @param {Number} [options.geo_headers] - Injects Fastly-Geo-Country, Fastly-Geo-City, and Fastly-Geo-Region into the request headers.
-     * @param {String} [options.hash_keys] - Comma separated list of varnish request object fields that should be in the hash key.
      * @param {Number} [options.max_stale_age] - How old an object is allowed to be to serve stale-if-error or stale-while-revalidate.
-     * @param {String} [options.name] - Name for the request settings.
-     * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
      * @param {Number} [options.timer_support] - Injects the X-Timer info into the request for viewing origin fetch durations.
-     * @param {module:model/String} [options.xff] - Short for X-Forwarded-For.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/RequestSettingsResponse} and HTTP response
      */
     updateRequestSettingsWithHttpInfo(options = {}) {
@@ -360,17 +360,17 @@ export default class RequestSettingsApi {
       };
       let formParams = {
         'action': options['action'],
-        'bypass_busy_wait': options['bypass_busy_wait'],
         'default_host': options['default_host'],
+        'hash_keys': options['hash_keys'],
+        'name': options['name'],
+        'request_condition': options['request_condition'],
+        'xff': options['xff'],
+        'bypass_busy_wait': options['bypass_busy_wait'],
         'force_miss': options['force_miss'],
         'force_ssl': options['force_ssl'],
         'geo_headers': options['geo_headers'],
-        'hash_keys': options['hash_keys'],
         'max_stale_age': options['max_stale_age'],
-        'name': options['name'],
-        'request_condition': options['request_condition'],
-        'timer_support': options['timer_support'],
-        'xff': options['xff']
+        'timer_support': options['timer_support']
       };
 
       let authNames = ['token'];
@@ -400,17 +400,17 @@ export default class RequestSettingsApi {
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.request_settings_name - Name for the request settings.
      * @param {module:model/String} [options.action] - Allows you to terminate request handling and immediately perform an action.
-     * @param {Number} [options.bypass_busy_wait] - Disable collapsed forwarding, so you don't wait for other objects to origin.
      * @param {String} [options.default_host] - Sets the host header.
+     * @param {String} [options.hash_keys] - Comma separated list of varnish request object fields that should be in the hash key.
+     * @param {String} [options.name] - Name for the request settings.
+     * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
+     * @param {module:model/String} [options.xff] - Short for X-Forwarded-For.
+     * @param {Number} [options.bypass_busy_wait] - Disable collapsed forwarding, so you don't wait for other objects to origin.
      * @param {Number} [options.force_miss] - Allows you to force a cache miss for the request. Replaces the item in the cache if the content is cacheable.
      * @param {Number} [options.force_ssl] - Forces the request use SSL (redirects a non-SSL to SSL).
      * @param {Number} [options.geo_headers] - Injects Fastly-Geo-Country, Fastly-Geo-City, and Fastly-Geo-Region into the request headers.
-     * @param {String} [options.hash_keys] - Comma separated list of varnish request object fields that should be in the hash key.
      * @param {Number} [options.max_stale_age] - How old an object is allowed to be to serve stale-if-error or stale-while-revalidate.
-     * @param {String} [options.name] - Name for the request settings.
-     * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
      * @param {Number} [options.timer_support] - Injects the X-Timer info into the request for viewing origin fetch durations.
-     * @param {module:model/String} [options.xff] - Short for X-Forwarded-For.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/RequestSettingsResponse}
      */
     updateRequestSettings(options = {}) {

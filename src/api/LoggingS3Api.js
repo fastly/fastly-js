@@ -18,7 +18,7 @@ import LoggingS3Response from '../model/LoggingS3Response';
 /**
 * LoggingS3 service.
 * @module api/LoggingS3Api
-* @version 5.0.2
+* @version 6.0.0
 */
 export default class LoggingS3Api {
 
@@ -45,14 +45,14 @@ export default class LoggingS3Api {
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {module:model/String} [options.message_type='classic'] - How the message should be formatted.
      * @param {String} [options.timestamp_format] - A timestamp format
+     * @param {module:model/String} [options.compression_codec] - The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
      * @param {Number} [options.gzip_level=0] - The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:model/String} [options.compression_codec] - The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {String} [options.access_key] - The access key for your S3 account. Not required if `iam_role` is provided.
      * @param {String} [options.acl] - The access control list (ACL) specific request header. See the AWS documentation for [Access Control List (ACL) Specific Request Headers](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html#initiate-mpu-acl-specific-request-headers) for more information.
      * @param {String} [options.bucket_name] - The bucket name for S3 account.
@@ -90,14 +90,14 @@ export default class LoggingS3Api {
       let formParams = {
         'name': options['name'],
         'placement': options['placement'],
-        'format_version': options['format_version'],
         'response_condition': options['response_condition'],
         'format': options['format'],
+        'format_version': options['format_version'],
         'message_type': options['message_type'],
         'timestamp_format': options['timestamp_format'],
+        'compression_codec': options['compression_codec'],
         'period': options['period'],
         'gzip_level': options['gzip_level'],
-        'compression_codec': options['compression_codec'],
         'access_key': options['access_key'],
         'acl': options['acl'],
         'bucket_name': options['bucket_name'],
@@ -138,14 +138,14 @@ export default class LoggingS3Api {
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {module:model/String} [options.message_type='classic'] - How the message should be formatted.
      * @param {String} [options.timestamp_format] - A timestamp format
+     * @param {module:model/String} [options.compression_codec] - The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
      * @param {Number} [options.gzip_level=0] - The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:model/String} [options.compression_codec] - The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {String} [options.access_key] - The access key for your S3 account. Not required if `iam_role` is provided.
      * @param {String} [options.acl] - The access control list (ACL) specific request header. See the AWS documentation for [Access Control List (ACL) Specific Request Headers](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html#initiate-mpu-acl-specific-request-headers) for more information.
      * @param {String} [options.bucket_name] - The bucket name for S3 account.
@@ -383,14 +383,14 @@ export default class LoggingS3Api {
      * @param {String} options.logging_s3_name - The name for the real-time logging configuration.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {module:model/String} [options.message_type='classic'] - How the message should be formatted.
      * @param {String} [options.timestamp_format] - A timestamp format
+     * @param {module:model/String} [options.compression_codec] - The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
      * @param {Number} [options.gzip_level=0] - The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:model/String} [options.compression_codec] - The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {String} [options.access_key] - The access key for your S3 account. Not required if `iam_role` is provided.
      * @param {String} [options.acl] - The access control list (ACL) specific request header. See the AWS documentation for [Access Control List (ACL) Specific Request Headers](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html#initiate-mpu-acl-specific-request-headers) for more information.
      * @param {String} [options.bucket_name] - The bucket name for S3 account.
@@ -433,14 +433,14 @@ export default class LoggingS3Api {
       let formParams = {
         'name': options['name'],
         'placement': options['placement'],
-        'format_version': options['format_version'],
         'response_condition': options['response_condition'],
         'format': options['format'],
+        'format_version': options['format_version'],
         'message_type': options['message_type'],
         'timestamp_format': options['timestamp_format'],
+        'compression_codec': options['compression_codec'],
         'period': options['period'],
         'gzip_level': options['gzip_level'],
-        'compression_codec': options['compression_codec'],
         'access_key': options['access_key'],
         'acl': options['acl'],
         'bucket_name': options['bucket_name'],
@@ -482,14 +482,14 @@ export default class LoggingS3Api {
      * @param {String} options.logging_s3_name - The name for the real-time logging configuration.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {module:model/String} [options.message_type='classic'] - How the message should be formatted.
      * @param {String} [options.timestamp_format] - A timestamp format
+     * @param {module:model/String} [options.compression_codec] - The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
      * @param {Number} [options.gzip_level=0] - The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:model/String} [options.compression_codec] - The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {String} [options.access_key] - The access key for your S3 account. Not required if `iam_role` is provided.
      * @param {String} [options.acl] - The access control list (ACL) specific request header. See the AWS documentation for [Access Control List (ACL) Specific Request Headers](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html#initiate-mpu-acl-specific-request-headers) for more information.
      * @param {String} [options.bucket_name] - The bucket name for S3 account.

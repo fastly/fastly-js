@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Acl service.
 * @module api/AclApi
-* @version 5.0.2
+* @version 6.0.0
 */
 export default class AclApi {
 

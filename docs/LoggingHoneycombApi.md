@@ -17,7 +17,7 @@ Method | Fastly API endpoint | Description
 ## `createLogHoneycomb`
 
 ```javascript
-createLogHoneycomb({ service_id, version_id, [name, ][placement, ][format_version, ][response_condition, ][format, ][dataset, ][token] })
+createLogHoneycomb({ service_id, version_id, [name, ][placement, ][response_condition, ][format, ][format_version, ][dataset, ][token] })
 ```
 
 Create a Honeycomb logging object for a particular service and version.
@@ -30,9 +30,9 @@ const options = {
   version_id: 56, // required
   name: "name_example",
   placement: "none",
-  format_version: 1,
   response_condition: "response_condition_example",
   format: "format_example",
+  format_version: 1,
   dataset: "dataset_example",
   token: "token_example",
 };
@@ -54,15 +54,15 @@ Name | Type | Description  | Notes
 **version_id** | **Number** | Integer identifying a service version. |
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] [one of: "none", "waf_debug", "null"]
-**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [one of: 1, 2]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
 **format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Honeycomb can ingest. | [optional]
+**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [one of: 1, 2]
 **dataset** | **String** | The Honeycomb Dataset you want to log to. | [optional]
 **token** | **String** | The Write Key from the Account page of your Honeycomb account. | [optional]
 
 ### Return type
 
-[**LoggingHoneycomb**](LoggingHoneycomb.md)
+[**LoggingHoneycombResponse**](LoggingHoneycombResponse.md)
 
 
 ## `deleteLogHoneycomb`
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LoggingHoneycomb**](LoggingHoneycomb.md)
+[**LoggingHoneycombResponse**](LoggingHoneycombResponse.md)
 
 
 ## `listLogHoneycomb`
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 ## `updateLogHoneycomb`
 
 ```javascript
-updateLogHoneycomb({ service_id, version_id, logging_honeycomb_name, [name, ][placement, ][format_version, ][response_condition, ][format, ][dataset, ][token] })
+updateLogHoneycomb({ service_id, version_id, logging_honeycomb_name, [name, ][placement, ][response_condition, ][format, ][format_version, ][dataset, ][token] })
 ```
 
 Update a Honeycomb logging object for a particular service and version.
@@ -197,9 +197,9 @@ const options = {
   logging_honeycomb_name: "logging_honeycomb_name_example", // required
   name: "name_example",
   placement: "none",
-  format_version: 1,
   response_condition: "response_condition_example",
   format: "format_example",
+  format_version: 1,
   dataset: "dataset_example",
   token: "token_example",
 };
@@ -222,9 +222,9 @@ Name | Type | Description  | Notes
 **logging_honeycomb_name** | **String** | The name for the real-time logging configuration. |
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] [one of: "none", "waf_debug", "null"]
-**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [one of: 1, 2]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
 **format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Honeycomb can ingest. | [optional]
+**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [one of: 1, 2]
 **dataset** | **String** | The Honeycomb Dataset you want to log to. | [optional]
 **token** | **String** | The Write Key from the Account page of your Honeycomb account. | [optional]
 

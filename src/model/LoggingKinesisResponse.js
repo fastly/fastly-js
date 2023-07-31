@@ -12,27 +12,28 @@
 
 import ApiClient from '../ApiClient';
 import AwsRegion from './AwsRegion';
-import LoggingFormatVersion from './LoggingFormatVersion';
-import LoggingKinesis from './LoggingKinesis';
+import LoggingFormatVersionString from './LoggingFormatVersionString';
+import LoggingKinesisAdditional from './LoggingKinesisAdditional';
 import LoggingPlacement from './LoggingPlacement';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
+import ServiceIdAndVersionString from './ServiceIdAndVersionString';
 import Timestamps from './Timestamps';
 
 /**
  * The LoggingKinesisResponse model module.
  * @module model/LoggingKinesisResponse
- * @version 5.0.2
+ * @version 6.0.0
  */
 class LoggingKinesisResponse {
     /**
      * Constructs a new <code>LoggingKinesisResponse</code>.
      * @alias module:model/LoggingKinesisResponse
-     * @implements module:model/LoggingKinesis
+     * @implements module:model/LoggingKinesisAdditional
+     * @implements module:model/LoggingFormatVersionString
      * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
+     * @implements module:model/ServiceIdAndVersionString
      */
     constructor() { 
-        LoggingKinesis.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
+        LoggingKinesisAdditional.initialize(this);LoggingFormatVersionString.initialize(this);Timestamps.initialize(this);ServiceIdAndVersionString.initialize(this);
         LoggingKinesisResponse.initialize(this);
     }
 
@@ -54,18 +55,16 @@ class LoggingKinesisResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingKinesisResponse();
-            LoggingKinesis.constructFromObject(data, obj);
+            LoggingKinesisAdditional.constructFromObject(data, obj);
+            LoggingFormatVersionString.constructFromObject(data, obj);
             Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
+            ServiceIdAndVersionString.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = LoggingPlacement.constructFromObject(data['placement']);
-            }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = LoggingFormatVersion.constructFromObject(data['format_version']);
             }
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
@@ -85,6 +84,9 @@ class LoggingKinesisResponse {
             if (data.hasOwnProperty('iam_role')) {
                 obj['iam_role'] = ApiClient.convertToType(data['iam_role'], 'String');
             }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'String');
+            }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
@@ -98,7 +100,7 @@ class LoggingKinesisResponse {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
             }
             if (data.hasOwnProperty('version')) {
-                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
+                obj['version'] = ApiClient.convertToType(data['version'], 'String');
             }
         }
         return obj;
@@ -117,11 +119,6 @@ LoggingKinesisResponse.prototype['name'] = undefined;
  * @member {module:model/LoggingPlacement} placement
  */
 LoggingKinesisResponse.prototype['placement'] = undefined;
-
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingKinesisResponse.prototype['format_version'] = undefined;
 
 /**
  * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Kinesis can ingest.
@@ -160,6 +157,13 @@ LoggingKinesisResponse.prototype['access_key'] = undefined;
 LoggingKinesisResponse.prototype['iam_role'] = undefined;
 
 /**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+ * @member {module:model/LoggingKinesisResponse.FormatVersionEnum} format_version
+ * @default '2'
+ */
+LoggingKinesisResponse.prototype['format_version'] = undefined;
+
+/**
  * Date and time in ISO 8601 format.
  * @member {Date} created_at
  */
@@ -183,55 +187,58 @@ LoggingKinesisResponse.prototype['updated_at'] = undefined;
 LoggingKinesisResponse.prototype['service_id'] = undefined;
 
 /**
- * @member {Number} version
+ * @member {String} version
  */
 LoggingKinesisResponse.prototype['version'] = undefined;
 
 
-// Implement LoggingKinesis interface:
+// Implement LoggingKinesisAdditional interface:
 /**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
-LoggingKinesis.prototype['name'] = undefined;
+LoggingKinesisAdditional.prototype['name'] = undefined;
 /**
  * @member {module:model/LoggingPlacement} placement
  */
-LoggingKinesis.prototype['placement'] = undefined;
-/**
- * @member {module:model/LoggingFormatVersion} format_version
- */
-LoggingKinesis.prototype['format_version'] = undefined;
+LoggingKinesisAdditional.prototype['placement'] = undefined;
 /**
  * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce valid JSON that Kinesis can ingest.
  * @member {String} format
  * @default '{"timestamp":"%{begin:%Y-%m-%dT%H:%M:%S}t","time_elapsed":"%{time.elapsed.usec}V","is_tls":"%{if(req.is_ssl, \"true\", \"false\")}V","client_ip":"%{req.http.Fastly-Client-IP}V","geo_city":"%{client.geo.city}V","geo_country_code":"%{client.geo.country_code}V","request":"%{req.request}V","host":"%{req.http.Fastly-Orig-Host}V","url":"%{json.escape(req.url)}V","request_referer":"%{json.escape(req.http.Referer)}V","request_user_agent":"%{json.escape(req.http.User-Agent)}V","request_accept_language":"%{json.escape(req.http.Accept-Language)}V","request_accept_charset":"%{json.escape(req.http.Accept-Charset)}V","cache_status":"%{regsub(fastly_info.state, \"^(HIT-(SYNTH)|(HITPASS|HIT|MISS|PASS|ERROR|PIPE)).*\", \"\\2\\3\") }V"}'
  */
-LoggingKinesis.prototype['format'] = '{"timestamp":"%{begin:%Y-%m-%dT%H:%M:%S}t","time_elapsed":"%{time.elapsed.usec}V","is_tls":"%{if(req.is_ssl, \"true\", \"false\")}V","client_ip":"%{req.http.Fastly-Client-IP}V","geo_city":"%{client.geo.city}V","geo_country_code":"%{client.geo.country_code}V","request":"%{req.request}V","host":"%{req.http.Fastly-Orig-Host}V","url":"%{json.escape(req.url)}V","request_referer":"%{json.escape(req.http.Referer)}V","request_user_agent":"%{json.escape(req.http.User-Agent)}V","request_accept_language":"%{json.escape(req.http.Accept-Language)}V","request_accept_charset":"%{json.escape(req.http.Accept-Charset)}V","cache_status":"%{regsub(fastly_info.state, \"^(HIT-(SYNTH)|(HITPASS|HIT|MISS|PASS|ERROR|PIPE)).*\", \"\\2\\3\") }V"}';
+LoggingKinesisAdditional.prototype['format'] = '{"timestamp":"%{begin:%Y-%m-%dT%H:%M:%S}t","time_elapsed":"%{time.elapsed.usec}V","is_tls":"%{if(req.is_ssl, \"true\", \"false\")}V","client_ip":"%{req.http.Fastly-Client-IP}V","geo_city":"%{client.geo.city}V","geo_country_code":"%{client.geo.country_code}V","request":"%{req.request}V","host":"%{req.http.Fastly-Orig-Host}V","url":"%{json.escape(req.url)}V","request_referer":"%{json.escape(req.http.Referer)}V","request_user_agent":"%{json.escape(req.http.User-Agent)}V","request_accept_language":"%{json.escape(req.http.Accept-Language)}V","request_accept_charset":"%{json.escape(req.http.Accept-Charset)}V","cache_status":"%{regsub(fastly_info.state, \"^(HIT-(SYNTH)|(HITPASS|HIT|MISS|PASS|ERROR|PIPE)).*\", \"\\2\\3\") }V"}';
 /**
  * The Amazon Kinesis stream to send logs to. Required.
  * @member {String} topic
  */
-LoggingKinesis.prototype['topic'] = undefined;
+LoggingKinesisAdditional.prototype['topic'] = undefined;
 /**
  * @member {module:model/AwsRegion} region
  */
-LoggingKinesis.prototype['region'] = undefined;
+LoggingKinesisAdditional.prototype['region'] = undefined;
 /**
  * The secret key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
  * @member {String} secret_key
  */
-LoggingKinesis.prototype['secret_key'] = undefined;
+LoggingKinesisAdditional.prototype['secret_key'] = undefined;
 /**
  * The access key associated with the target Amazon Kinesis stream. Not required if `iam_role` is specified.
  * @member {String} access_key
  */
-LoggingKinesis.prototype['access_key'] = undefined;
+LoggingKinesisAdditional.prototype['access_key'] = undefined;
 /**
  * The ARN for an IAM role granting Fastly access to the target Amazon Kinesis stream. Not required if `access_key` and `secret_key` are provided.
  * @member {String} iam_role
  */
-LoggingKinesis.prototype['iam_role'] = undefined;
+LoggingKinesisAdditional.prototype['iam_role'] = undefined;
+// Implement LoggingFormatVersionString interface:
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+ * @member {module:model/LoggingFormatVersionString.FormatVersionEnum} format_version
+ * @default '2'
+ */
+LoggingFormatVersionString.prototype['format_version'] = undefined;
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
@@ -248,16 +255,37 @@ Timestamps.prototype['deleted_at'] = undefined;
  * @member {Date} updated_at
  */
 Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
+// Implement ServiceIdAndVersionString interface:
 /**
  * @member {String} service_id
  */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
+ServiceIdAndVersionString.prototype['service_id'] = undefined;
 /**
- * @member {Number} version
+ * @member {String} version
  */
-ServiceIdAndVersion.prototype['version'] = undefined;
+ServiceIdAndVersionString.prototype['version'] = undefined;
 
+
+
+/**
+ * Allowed values for the <code>format_version</code> property.
+ * @enum {String}
+ * @readonly
+ */
+LoggingKinesisResponse['FormatVersionEnum'] = {
+
+    /**
+     * value: "1"
+     * @const
+     */
+    "v1": "1",
+
+    /**
+     * value: "2"
+     * @const
+     */
+    "v2": "2"
+};
 
 
 

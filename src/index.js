@@ -91,7 +91,6 @@ import DirectorBackend from './model/DirectorBackend';
 import DirectorBackendAllOf from './model/DirectorBackendAllOf';
 import DirectorResponse from './model/DirectorResponse';
 import Domain from './model/Domain';
-import DomainCheckItem from './model/DomainCheckItem';
 import DomainInspector from './model/DomainInspector';
 import DomainInspectorEntry from './model/DomainInspectorEntry';
 import DomainInspectorEntryDimensions from './model/DomainInspectorEntryDimensions';
@@ -113,6 +112,7 @@ import Gzip from './model/Gzip';
 import GzipResponse from './model/GzipResponse';
 import Header from './model/Header';
 import HeaderResponse from './model/HeaderResponse';
+import HeaderResponseAdditional from './model/HeaderResponseAdditional';
 import Healthcheck from './model/Healthcheck';
 import HealthcheckResponse from './model/HealthcheckResponse';
 import Historical from './model/Historical';
@@ -193,88 +193,73 @@ import LegacyWafUpdateStatus from './model/LegacyWafUpdateStatus';
 import LineItemData from './model/LineItemData';
 import LineItemDataReadOnlyInvoiceId from './model/LineItemDataReadOnlyInvoiceId';
 import LoggingAddressAndPort from './model/LoggingAddressAndPort';
-import LoggingAzureblob from './model/LoggingAzureblob';
-import LoggingAzureblobAllOf from './model/LoggingAzureblobAllOf';
+import LoggingAzureblobAdditional from './model/LoggingAzureblobAdditional';
 import LoggingAzureblobResponse from './model/LoggingAzureblobResponse';
-import LoggingBigquery from './model/LoggingBigquery';
-import LoggingBigqueryAllOf from './model/LoggingBigqueryAllOf';
+import LoggingBigqueryAdditional from './model/LoggingBigqueryAdditional';
 import LoggingBigqueryResponse from './model/LoggingBigqueryResponse';
-import LoggingCloudfiles from './model/LoggingCloudfiles';
-import LoggingCloudfilesAllOf from './model/LoggingCloudfilesAllOf';
+import LoggingCloudfilesAdditional from './model/LoggingCloudfilesAdditional';
 import LoggingCloudfilesResponse from './model/LoggingCloudfilesResponse';
 import LoggingCommon from './model/LoggingCommon';
-import LoggingDatadog from './model/LoggingDatadog';
-import LoggingDatadogAllOf from './model/LoggingDatadogAllOf';
+import LoggingCommonResponse from './model/LoggingCommonResponse';
+import LoggingCommonResponseAllOf from './model/LoggingCommonResponseAllOf';
+import LoggingCommonResponseAllOf1 from './model/LoggingCommonResponseAllOf1';
+import LoggingDatadogAdditional from './model/LoggingDatadogAdditional';
 import LoggingDatadogResponse from './model/LoggingDatadogResponse';
-import LoggingDigitalocean from './model/LoggingDigitalocean';
-import LoggingDigitaloceanAllOf from './model/LoggingDigitaloceanAllOf';
+import LoggingDigitaloceanAdditional from './model/LoggingDigitaloceanAdditional';
 import LoggingDigitaloceanResponse from './model/LoggingDigitaloceanResponse';
-import LoggingElasticsearch from './model/LoggingElasticsearch';
-import LoggingElasticsearchAllOf from './model/LoggingElasticsearchAllOf';
+import LoggingElasticsearchAdditional from './model/LoggingElasticsearchAdditional';
 import LoggingElasticsearchResponse from './model/LoggingElasticsearchResponse';
-import LoggingFormatVersion from './model/LoggingFormatVersion';
-import LoggingFtp from './model/LoggingFtp';
-import LoggingFtpAllOf from './model/LoggingFtpAllOf';
+import LoggingFormatVersionInteger from './model/LoggingFormatVersionInteger';
+import LoggingFormatVersionString from './model/LoggingFormatVersionString';
+import LoggingFtpAdditional from './model/LoggingFtpAdditional';
 import LoggingFtpResponse from './model/LoggingFtpResponse';
-import LoggingGcs from './model/LoggingGcs';
-import LoggingGcsAllOf from './model/LoggingGcsAllOf';
+import LoggingFtpResponseAllOf from './model/LoggingFtpResponseAllOf';
+import LoggingGcsAdditional from './model/LoggingGcsAdditional';
 import LoggingGcsCommon from './model/LoggingGcsCommon';
 import LoggingGcsResponse from './model/LoggingGcsResponse';
 import LoggingGenericCommon from './model/LoggingGenericCommon';
-import LoggingGooglePubsub from './model/LoggingGooglePubsub';
-import LoggingGooglePubsubAllOf from './model/LoggingGooglePubsubAllOf';
+import LoggingGenericCommonResponse from './model/LoggingGenericCommonResponse';
+import LoggingGenericCommonResponseAllOf from './model/LoggingGenericCommonResponseAllOf';
+import LoggingGenericCommonResponseAllOf1 from './model/LoggingGenericCommonResponseAllOf1';
+import LoggingGooglePubsubAdditional from './model/LoggingGooglePubsubAdditional';
 import LoggingGooglePubsubResponse from './model/LoggingGooglePubsubResponse';
-import LoggingHeroku from './model/LoggingHeroku';
-import LoggingHerokuAllOf from './model/LoggingHerokuAllOf';
+import LoggingHerokuAdditional from './model/LoggingHerokuAdditional';
 import LoggingHerokuResponse from './model/LoggingHerokuResponse';
-import LoggingHoneycomb from './model/LoggingHoneycomb';
-import LoggingHoneycombAllOf from './model/LoggingHoneycombAllOf';
+import LoggingHoneycombAdditional from './model/LoggingHoneycombAdditional';
 import LoggingHoneycombResponse from './model/LoggingHoneycombResponse';
-import LoggingHttps from './model/LoggingHttps';
-import LoggingHttpsAllOf from './model/LoggingHttpsAllOf';
+import LoggingHttpsAdditional from './model/LoggingHttpsAdditional';
 import LoggingHttpsResponse from './model/LoggingHttpsResponse';
-import LoggingKafka from './model/LoggingKafka';
-import LoggingKafkaAllOf from './model/LoggingKafkaAllOf';
+import LoggingKafkaAdditional from './model/LoggingKafkaAdditional';
 import LoggingKafkaResponse from './model/LoggingKafkaResponse';
-import LoggingKinesis from './model/LoggingKinesis';
+import LoggingKafkaResponsePost from './model/LoggingKafkaResponsePost';
+import LoggingKinesisAdditional from './model/LoggingKinesisAdditional';
 import LoggingKinesisResponse from './model/LoggingKinesisResponse';
-import LoggingLogentries from './model/LoggingLogentries';
-import LoggingLogentriesAllOf from './model/LoggingLogentriesAllOf';
+import LoggingLogentriesAdditional from './model/LoggingLogentriesAdditional';
 import LoggingLogentriesResponse from './model/LoggingLogentriesResponse';
-import LoggingLoggly from './model/LoggingLoggly';
-import LoggingLogglyAllOf from './model/LoggingLogglyAllOf';
+import LoggingLogglyAdditional from './model/LoggingLogglyAdditional';
 import LoggingLogglyResponse from './model/LoggingLogglyResponse';
-import LoggingLogshuttle from './model/LoggingLogshuttle';
-import LoggingLogshuttleAllOf from './model/LoggingLogshuttleAllOf';
+import LoggingLogshuttleAdditional from './model/LoggingLogshuttleAdditional';
 import LoggingLogshuttleResponse from './model/LoggingLogshuttleResponse';
 import LoggingMessageType from './model/LoggingMessageType';
-import LoggingNewrelic from './model/LoggingNewrelic';
-import LoggingNewrelicAllOf from './model/LoggingNewrelicAllOf';
+import LoggingNewrelicAdditional from './model/LoggingNewrelicAdditional';
 import LoggingNewrelicResponse from './model/LoggingNewrelicResponse';
-import LoggingOpenstack from './model/LoggingOpenstack';
-import LoggingOpenstackAllOf from './model/LoggingOpenstackAllOf';
+import LoggingOpenstackAdditional from './model/LoggingOpenstackAdditional';
 import LoggingOpenstackResponse from './model/LoggingOpenstackResponse';
-import LoggingPapertrail from './model/LoggingPapertrail';
 import LoggingPapertrailResponse from './model/LoggingPapertrailResponse';
 import LoggingPlacement from './model/LoggingPlacement';
 import LoggingRequestCapsCommon from './model/LoggingRequestCapsCommon';
-import LoggingS3 from './model/LoggingS3';
-import LoggingS3AllOf from './model/LoggingS3AllOf';
+import LoggingS3Additional from './model/LoggingS3Additional';
 import LoggingS3Response from './model/LoggingS3Response';
-import LoggingScalyr from './model/LoggingScalyr';
-import LoggingScalyrAllOf from './model/LoggingScalyrAllOf';
+import LoggingScalyrAdditional from './model/LoggingScalyrAdditional';
 import LoggingScalyrResponse from './model/LoggingScalyrResponse';
-import LoggingSftp from './model/LoggingSftp';
-import LoggingSftpAllOf from './model/LoggingSftpAllOf';
+import LoggingSftpAdditional from './model/LoggingSftpAdditional';
 import LoggingSftpResponse from './model/LoggingSftpResponse';
-import LoggingSplunk from './model/LoggingSplunk';
-import LoggingSplunkAllOf from './model/LoggingSplunkAllOf';
+import LoggingSftpResponseAllOf from './model/LoggingSftpResponseAllOf';
+import LoggingSplunkAdditional from './model/LoggingSplunkAdditional';
 import LoggingSplunkResponse from './model/LoggingSplunkResponse';
-import LoggingSumologic from './model/LoggingSumologic';
-import LoggingSumologicAllOf from './model/LoggingSumologicAllOf';
+import LoggingSumologicAdditional from './model/LoggingSumologicAdditional';
 import LoggingSumologicResponse from './model/LoggingSumologicResponse';
-import LoggingSyslog from './model/LoggingSyslog';
-import LoggingSyslogAllOf from './model/LoggingSyslogAllOf';
+import LoggingSyslogAdditional from './model/LoggingSyslogAdditional';
 import LoggingSyslogResponse from './model/LoggingSyslogResponse';
 import LoggingTlsCommon from './model/LoggingTlsCommon';
 import LoggingUseTls from './model/LoggingUseTls';
@@ -309,10 +294,12 @@ import PaginationCursorMeta from './model/PaginationCursorMeta';
 import PaginationLinks from './model/PaginationLinks';
 import PaginationMeta from './model/PaginationMeta';
 import Permission from './model/Permission';
-import Pool from './model/Pool';
-import PoolAllOf from './model/PoolAllOf';
+import PoolAdditional from './model/PoolAdditional';
 import PoolResponse from './model/PoolResponse';
 import PoolResponseAllOf from './model/PoolResponseAllOf';
+import PoolResponseCommon from './model/PoolResponseCommon';
+import PoolResponsePost from './model/PoolResponsePost';
+import PoolResponsePostAllOf from './model/PoolResponsePostAllOf';
 import Pop from './model/Pop';
 import PopCoordinates from './model/PopCoordinates';
 import PublicIpList from './model/PublicIpList';
@@ -427,8 +414,9 @@ import RelationshipsForWafActiveRule from './model/RelationshipsForWafActiveRule
 import RelationshipsForWafExclusion from './model/RelationshipsForWafExclusion';
 import RelationshipsForWafFirewallVersion from './model/RelationshipsForWafFirewallVersion';
 import RelationshipsForWafRule from './model/RelationshipsForWafRule';
-import RequestSettings from './model/RequestSettings';
+import RequestSettingsAdditional from './model/RequestSettingsAdditional';
 import RequestSettingsResponse from './model/RequestSettingsResponse';
+import RequestSettingsResponseAllOf from './model/RequestSettingsResponseAllOf';
 import Resource from './model/Resource';
 import ResourceResponse from './model/ResourceResponse';
 import ResourceResponseAllOf from './model/ResourceResponseAllOf';
@@ -469,6 +457,7 @@ import ServiceCreateAllOf from './model/ServiceCreateAllOf';
 import ServiceDetail from './model/ServiceDetail';
 import ServiceDetailAllOf from './model/ServiceDetailAllOf';
 import ServiceIdAndVersion from './model/ServiceIdAndVersion';
+import ServiceIdAndVersionString from './model/ServiceIdAndVersionString';
 import ServiceInvitation from './model/ServiceInvitation';
 import ServiceInvitationData from './model/ServiceInvitationData';
 import ServiceInvitationDataAttributes from './model/ServiceInvitationDataAttributes';
@@ -528,7 +517,9 @@ import TlsCertificateResponseData from './model/TlsCertificateResponseData';
 import TlsCertificateResponseDataAllOf from './model/TlsCertificateResponseDataAllOf';
 import TlsCertificatesResponse from './model/TlsCertificatesResponse';
 import TlsCertificatesResponseAllOf from './model/TlsCertificatesResponseAllOf';
-import TlsCommon from './model/TlsCommon';
+import TlsCommonResponse from './model/TlsCommonResponse';
+import TlsCommonResponseAllOf from './model/TlsCommonResponseAllOf';
+import TlsCommonResponseAllOf1 from './model/TlsCommonResponseAllOf1';
 import TlsConfiguration from './model/TlsConfiguration';
 import TlsConfigurationData from './model/TlsConfigurationData';
 import TlsConfigurationDataAttributes from './model/TlsConfigurationDataAttributes';
@@ -559,7 +550,6 @@ import TlsSubscriptionResponse from './model/TlsSubscriptionResponse';
 import TlsSubscriptionResponseAttributes from './model/TlsSubscriptionResponseAttributes';
 import TlsSubscriptionResponseAttributesAllOf from './model/TlsSubscriptionResponseAttributesAllOf';
 import TlsSubscriptionResponseData from './model/TlsSubscriptionResponseData';
-import TlsSubscriptionResponseDataAllOf from './model/TlsSubscriptionResponseDataAllOf';
 import TlsSubscriptionsResponse from './model/TlsSubscriptionsResponse';
 import TlsSubscriptionsResponseAllOf from './model/TlsSubscriptionsResponseAllOf';
 import Token from './model/Token';
@@ -829,7 +819,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 5.0.2
+* @version 6.0.0
 */
 export {
     /**
@@ -1313,12 +1303,6 @@ export {
     Domain,
 
     /**
-     * The DomainCheckItem model constructor.
-     * @property {module:model/DomainCheckItem}
-     */
-    DomainCheckItem,
-
-    /**
      * The DomainInspector model constructor.
      * @property {module:model/DomainInspector}
      */
@@ -1443,6 +1427,12 @@ export {
      * @property {module:model/HeaderResponse}
      */
     HeaderResponse,
+
+    /**
+     * The HeaderResponseAdditional model constructor.
+     * @property {module:model/HeaderResponseAdditional}
+     */
+    HeaderResponseAdditional,
 
     /**
      * The Healthcheck model constructor.
@@ -1925,16 +1915,10 @@ export {
     LoggingAddressAndPort,
 
     /**
-     * The LoggingAzureblob model constructor.
-     * @property {module:model/LoggingAzureblob}
+     * The LoggingAzureblobAdditional model constructor.
+     * @property {module:model/LoggingAzureblobAdditional}
      */
-    LoggingAzureblob,
-
-    /**
-     * The LoggingAzureblobAllOf model constructor.
-     * @property {module:model/LoggingAzureblobAllOf}
-     */
-    LoggingAzureblobAllOf,
+    LoggingAzureblobAdditional,
 
     /**
      * The LoggingAzureblobResponse model constructor.
@@ -1943,16 +1927,10 @@ export {
     LoggingAzureblobResponse,
 
     /**
-     * The LoggingBigquery model constructor.
-     * @property {module:model/LoggingBigquery}
+     * The LoggingBigqueryAdditional model constructor.
+     * @property {module:model/LoggingBigqueryAdditional}
      */
-    LoggingBigquery,
-
-    /**
-     * The LoggingBigqueryAllOf model constructor.
-     * @property {module:model/LoggingBigqueryAllOf}
-     */
-    LoggingBigqueryAllOf,
+    LoggingBigqueryAdditional,
 
     /**
      * The LoggingBigqueryResponse model constructor.
@@ -1961,16 +1939,10 @@ export {
     LoggingBigqueryResponse,
 
     /**
-     * The LoggingCloudfiles model constructor.
-     * @property {module:model/LoggingCloudfiles}
+     * The LoggingCloudfilesAdditional model constructor.
+     * @property {module:model/LoggingCloudfilesAdditional}
      */
-    LoggingCloudfiles,
-
-    /**
-     * The LoggingCloudfilesAllOf model constructor.
-     * @property {module:model/LoggingCloudfilesAllOf}
-     */
-    LoggingCloudfilesAllOf,
+    LoggingCloudfilesAdditional,
 
     /**
      * The LoggingCloudfilesResponse model constructor.
@@ -1985,16 +1957,28 @@ export {
     LoggingCommon,
 
     /**
-     * The LoggingDatadog model constructor.
-     * @property {module:model/LoggingDatadog}
+     * The LoggingCommonResponse model constructor.
+     * @property {module:model/LoggingCommonResponse}
      */
-    LoggingDatadog,
+    LoggingCommonResponse,
 
     /**
-     * The LoggingDatadogAllOf model constructor.
-     * @property {module:model/LoggingDatadogAllOf}
+     * The LoggingCommonResponseAllOf model constructor.
+     * @property {module:model/LoggingCommonResponseAllOf}
      */
-    LoggingDatadogAllOf,
+    LoggingCommonResponseAllOf,
+
+    /**
+     * The LoggingCommonResponseAllOf1 model constructor.
+     * @property {module:model/LoggingCommonResponseAllOf1}
+     */
+    LoggingCommonResponseAllOf1,
+
+    /**
+     * The LoggingDatadogAdditional model constructor.
+     * @property {module:model/LoggingDatadogAdditional}
+     */
+    LoggingDatadogAdditional,
 
     /**
      * The LoggingDatadogResponse model constructor.
@@ -2003,16 +1987,10 @@ export {
     LoggingDatadogResponse,
 
     /**
-     * The LoggingDigitalocean model constructor.
-     * @property {module:model/LoggingDigitalocean}
+     * The LoggingDigitaloceanAdditional model constructor.
+     * @property {module:model/LoggingDigitaloceanAdditional}
      */
-    LoggingDigitalocean,
-
-    /**
-     * The LoggingDigitaloceanAllOf model constructor.
-     * @property {module:model/LoggingDigitaloceanAllOf}
-     */
-    LoggingDigitaloceanAllOf,
+    LoggingDigitaloceanAdditional,
 
     /**
      * The LoggingDigitaloceanResponse model constructor.
@@ -2021,16 +1999,10 @@ export {
     LoggingDigitaloceanResponse,
 
     /**
-     * The LoggingElasticsearch model constructor.
-     * @property {module:model/LoggingElasticsearch}
+     * The LoggingElasticsearchAdditional model constructor.
+     * @property {module:model/LoggingElasticsearchAdditional}
      */
-    LoggingElasticsearch,
-
-    /**
-     * The LoggingElasticsearchAllOf model constructor.
-     * @property {module:model/LoggingElasticsearchAllOf}
-     */
-    LoggingElasticsearchAllOf,
+    LoggingElasticsearchAdditional,
 
     /**
      * The LoggingElasticsearchResponse model constructor.
@@ -2039,22 +2011,22 @@ export {
     LoggingElasticsearchResponse,
 
     /**
-     * The LoggingFormatVersion model constructor.
-     * @property {module:model/LoggingFormatVersion}
+     * The LoggingFormatVersionInteger model constructor.
+     * @property {module:model/LoggingFormatVersionInteger}
      */
-    LoggingFormatVersion,
+    LoggingFormatVersionInteger,
 
     /**
-     * The LoggingFtp model constructor.
-     * @property {module:model/LoggingFtp}
+     * The LoggingFormatVersionString model constructor.
+     * @property {module:model/LoggingFormatVersionString}
      */
-    LoggingFtp,
+    LoggingFormatVersionString,
 
     /**
-     * The LoggingFtpAllOf model constructor.
-     * @property {module:model/LoggingFtpAllOf}
+     * The LoggingFtpAdditional model constructor.
+     * @property {module:model/LoggingFtpAdditional}
      */
-    LoggingFtpAllOf,
+    LoggingFtpAdditional,
 
     /**
      * The LoggingFtpResponse model constructor.
@@ -2063,16 +2035,16 @@ export {
     LoggingFtpResponse,
 
     /**
-     * The LoggingGcs model constructor.
-     * @property {module:model/LoggingGcs}
+     * The LoggingFtpResponseAllOf model constructor.
+     * @property {module:model/LoggingFtpResponseAllOf}
      */
-    LoggingGcs,
+    LoggingFtpResponseAllOf,
 
     /**
-     * The LoggingGcsAllOf model constructor.
-     * @property {module:model/LoggingGcsAllOf}
+     * The LoggingGcsAdditional model constructor.
+     * @property {module:model/LoggingGcsAdditional}
      */
-    LoggingGcsAllOf,
+    LoggingGcsAdditional,
 
     /**
      * The LoggingGcsCommon model constructor.
@@ -2093,16 +2065,28 @@ export {
     LoggingGenericCommon,
 
     /**
-     * The LoggingGooglePubsub model constructor.
-     * @property {module:model/LoggingGooglePubsub}
+     * The LoggingGenericCommonResponse model constructor.
+     * @property {module:model/LoggingGenericCommonResponse}
      */
-    LoggingGooglePubsub,
+    LoggingGenericCommonResponse,
 
     /**
-     * The LoggingGooglePubsubAllOf model constructor.
-     * @property {module:model/LoggingGooglePubsubAllOf}
+     * The LoggingGenericCommonResponseAllOf model constructor.
+     * @property {module:model/LoggingGenericCommonResponseAllOf}
      */
-    LoggingGooglePubsubAllOf,
+    LoggingGenericCommonResponseAllOf,
+
+    /**
+     * The LoggingGenericCommonResponseAllOf1 model constructor.
+     * @property {module:model/LoggingGenericCommonResponseAllOf1}
+     */
+    LoggingGenericCommonResponseAllOf1,
+
+    /**
+     * The LoggingGooglePubsubAdditional model constructor.
+     * @property {module:model/LoggingGooglePubsubAdditional}
+     */
+    LoggingGooglePubsubAdditional,
 
     /**
      * The LoggingGooglePubsubResponse model constructor.
@@ -2111,16 +2095,10 @@ export {
     LoggingGooglePubsubResponse,
 
     /**
-     * The LoggingHeroku model constructor.
-     * @property {module:model/LoggingHeroku}
+     * The LoggingHerokuAdditional model constructor.
+     * @property {module:model/LoggingHerokuAdditional}
      */
-    LoggingHeroku,
-
-    /**
-     * The LoggingHerokuAllOf model constructor.
-     * @property {module:model/LoggingHerokuAllOf}
-     */
-    LoggingHerokuAllOf,
+    LoggingHerokuAdditional,
 
     /**
      * The LoggingHerokuResponse model constructor.
@@ -2129,16 +2107,10 @@ export {
     LoggingHerokuResponse,
 
     /**
-     * The LoggingHoneycomb model constructor.
-     * @property {module:model/LoggingHoneycomb}
+     * The LoggingHoneycombAdditional model constructor.
+     * @property {module:model/LoggingHoneycombAdditional}
      */
-    LoggingHoneycomb,
-
-    /**
-     * The LoggingHoneycombAllOf model constructor.
-     * @property {module:model/LoggingHoneycombAllOf}
-     */
-    LoggingHoneycombAllOf,
+    LoggingHoneycombAdditional,
 
     /**
      * The LoggingHoneycombResponse model constructor.
@@ -2147,16 +2119,10 @@ export {
     LoggingHoneycombResponse,
 
     /**
-     * The LoggingHttps model constructor.
-     * @property {module:model/LoggingHttps}
+     * The LoggingHttpsAdditional model constructor.
+     * @property {module:model/LoggingHttpsAdditional}
      */
-    LoggingHttps,
-
-    /**
-     * The LoggingHttpsAllOf model constructor.
-     * @property {module:model/LoggingHttpsAllOf}
-     */
-    LoggingHttpsAllOf,
+    LoggingHttpsAdditional,
 
     /**
      * The LoggingHttpsResponse model constructor.
@@ -2165,16 +2131,10 @@ export {
     LoggingHttpsResponse,
 
     /**
-     * The LoggingKafka model constructor.
-     * @property {module:model/LoggingKafka}
+     * The LoggingKafkaAdditional model constructor.
+     * @property {module:model/LoggingKafkaAdditional}
      */
-    LoggingKafka,
-
-    /**
-     * The LoggingKafkaAllOf model constructor.
-     * @property {module:model/LoggingKafkaAllOf}
-     */
-    LoggingKafkaAllOf,
+    LoggingKafkaAdditional,
 
     /**
      * The LoggingKafkaResponse model constructor.
@@ -2183,10 +2143,16 @@ export {
     LoggingKafkaResponse,
 
     /**
-     * The LoggingKinesis model constructor.
-     * @property {module:model/LoggingKinesis}
+     * The LoggingKafkaResponsePost model constructor.
+     * @property {module:model/LoggingKafkaResponsePost}
      */
-    LoggingKinesis,
+    LoggingKafkaResponsePost,
+
+    /**
+     * The LoggingKinesisAdditional model constructor.
+     * @property {module:model/LoggingKinesisAdditional}
+     */
+    LoggingKinesisAdditional,
 
     /**
      * The LoggingKinesisResponse model constructor.
@@ -2195,16 +2161,10 @@ export {
     LoggingKinesisResponse,
 
     /**
-     * The LoggingLogentries model constructor.
-     * @property {module:model/LoggingLogentries}
+     * The LoggingLogentriesAdditional model constructor.
+     * @property {module:model/LoggingLogentriesAdditional}
      */
-    LoggingLogentries,
-
-    /**
-     * The LoggingLogentriesAllOf model constructor.
-     * @property {module:model/LoggingLogentriesAllOf}
-     */
-    LoggingLogentriesAllOf,
+    LoggingLogentriesAdditional,
 
     /**
      * The LoggingLogentriesResponse model constructor.
@@ -2213,16 +2173,10 @@ export {
     LoggingLogentriesResponse,
 
     /**
-     * The LoggingLoggly model constructor.
-     * @property {module:model/LoggingLoggly}
+     * The LoggingLogglyAdditional model constructor.
+     * @property {module:model/LoggingLogglyAdditional}
      */
-    LoggingLoggly,
-
-    /**
-     * The LoggingLogglyAllOf model constructor.
-     * @property {module:model/LoggingLogglyAllOf}
-     */
-    LoggingLogglyAllOf,
+    LoggingLogglyAdditional,
 
     /**
      * The LoggingLogglyResponse model constructor.
@@ -2231,16 +2185,10 @@ export {
     LoggingLogglyResponse,
 
     /**
-     * The LoggingLogshuttle model constructor.
-     * @property {module:model/LoggingLogshuttle}
+     * The LoggingLogshuttleAdditional model constructor.
+     * @property {module:model/LoggingLogshuttleAdditional}
      */
-    LoggingLogshuttle,
-
-    /**
-     * The LoggingLogshuttleAllOf model constructor.
-     * @property {module:model/LoggingLogshuttleAllOf}
-     */
-    LoggingLogshuttleAllOf,
+    LoggingLogshuttleAdditional,
 
     /**
      * The LoggingLogshuttleResponse model constructor.
@@ -2255,16 +2203,10 @@ export {
     LoggingMessageType,
 
     /**
-     * The LoggingNewrelic model constructor.
-     * @property {module:model/LoggingNewrelic}
+     * The LoggingNewrelicAdditional model constructor.
+     * @property {module:model/LoggingNewrelicAdditional}
      */
-    LoggingNewrelic,
-
-    /**
-     * The LoggingNewrelicAllOf model constructor.
-     * @property {module:model/LoggingNewrelicAllOf}
-     */
-    LoggingNewrelicAllOf,
+    LoggingNewrelicAdditional,
 
     /**
      * The LoggingNewrelicResponse model constructor.
@@ -2273,28 +2215,16 @@ export {
     LoggingNewrelicResponse,
 
     /**
-     * The LoggingOpenstack model constructor.
-     * @property {module:model/LoggingOpenstack}
+     * The LoggingOpenstackAdditional model constructor.
+     * @property {module:model/LoggingOpenstackAdditional}
      */
-    LoggingOpenstack,
-
-    /**
-     * The LoggingOpenstackAllOf model constructor.
-     * @property {module:model/LoggingOpenstackAllOf}
-     */
-    LoggingOpenstackAllOf,
+    LoggingOpenstackAdditional,
 
     /**
      * The LoggingOpenstackResponse model constructor.
      * @property {module:model/LoggingOpenstackResponse}
      */
     LoggingOpenstackResponse,
-
-    /**
-     * The LoggingPapertrail model constructor.
-     * @property {module:model/LoggingPapertrail}
-     */
-    LoggingPapertrail,
 
     /**
      * The LoggingPapertrailResponse model constructor.
@@ -2315,16 +2245,10 @@ export {
     LoggingRequestCapsCommon,
 
     /**
-     * The LoggingS3 model constructor.
-     * @property {module:model/LoggingS3}
+     * The LoggingS3Additional model constructor.
+     * @property {module:model/LoggingS3Additional}
      */
-    LoggingS3,
-
-    /**
-     * The LoggingS3AllOf model constructor.
-     * @property {module:model/LoggingS3AllOf}
-     */
-    LoggingS3AllOf,
+    LoggingS3Additional,
 
     /**
      * The LoggingS3Response model constructor.
@@ -2333,16 +2257,10 @@ export {
     LoggingS3Response,
 
     /**
-     * The LoggingScalyr model constructor.
-     * @property {module:model/LoggingScalyr}
+     * The LoggingScalyrAdditional model constructor.
+     * @property {module:model/LoggingScalyrAdditional}
      */
-    LoggingScalyr,
-
-    /**
-     * The LoggingScalyrAllOf model constructor.
-     * @property {module:model/LoggingScalyrAllOf}
-     */
-    LoggingScalyrAllOf,
+    LoggingScalyrAdditional,
 
     /**
      * The LoggingScalyrResponse model constructor.
@@ -2351,16 +2269,10 @@ export {
     LoggingScalyrResponse,
 
     /**
-     * The LoggingSftp model constructor.
-     * @property {module:model/LoggingSftp}
+     * The LoggingSftpAdditional model constructor.
+     * @property {module:model/LoggingSftpAdditional}
      */
-    LoggingSftp,
-
-    /**
-     * The LoggingSftpAllOf model constructor.
-     * @property {module:model/LoggingSftpAllOf}
-     */
-    LoggingSftpAllOf,
+    LoggingSftpAdditional,
 
     /**
      * The LoggingSftpResponse model constructor.
@@ -2369,16 +2281,16 @@ export {
     LoggingSftpResponse,
 
     /**
-     * The LoggingSplunk model constructor.
-     * @property {module:model/LoggingSplunk}
+     * The LoggingSftpResponseAllOf model constructor.
+     * @property {module:model/LoggingSftpResponseAllOf}
      */
-    LoggingSplunk,
+    LoggingSftpResponseAllOf,
 
     /**
-     * The LoggingSplunkAllOf model constructor.
-     * @property {module:model/LoggingSplunkAllOf}
+     * The LoggingSplunkAdditional model constructor.
+     * @property {module:model/LoggingSplunkAdditional}
      */
-    LoggingSplunkAllOf,
+    LoggingSplunkAdditional,
 
     /**
      * The LoggingSplunkResponse model constructor.
@@ -2387,16 +2299,10 @@ export {
     LoggingSplunkResponse,
 
     /**
-     * The LoggingSumologic model constructor.
-     * @property {module:model/LoggingSumologic}
+     * The LoggingSumologicAdditional model constructor.
+     * @property {module:model/LoggingSumologicAdditional}
      */
-    LoggingSumologic,
-
-    /**
-     * The LoggingSumologicAllOf model constructor.
-     * @property {module:model/LoggingSumologicAllOf}
-     */
-    LoggingSumologicAllOf,
+    LoggingSumologicAdditional,
 
     /**
      * The LoggingSumologicResponse model constructor.
@@ -2405,16 +2311,10 @@ export {
     LoggingSumologicResponse,
 
     /**
-     * The LoggingSyslog model constructor.
-     * @property {module:model/LoggingSyslog}
+     * The LoggingSyslogAdditional model constructor.
+     * @property {module:model/LoggingSyslogAdditional}
      */
-    LoggingSyslog,
-
-    /**
-     * The LoggingSyslogAllOf model constructor.
-     * @property {module:model/LoggingSyslogAllOf}
-     */
-    LoggingSyslogAllOf,
+    LoggingSyslogAdditional,
 
     /**
      * The LoggingSyslogResponse model constructor.
@@ -2621,16 +2521,10 @@ export {
     Permission,
 
     /**
-     * The Pool model constructor.
-     * @property {module:model/Pool}
+     * The PoolAdditional model constructor.
+     * @property {module:model/PoolAdditional}
      */
-    Pool,
-
-    /**
-     * The PoolAllOf model constructor.
-     * @property {module:model/PoolAllOf}
-     */
-    PoolAllOf,
+    PoolAdditional,
 
     /**
      * The PoolResponse model constructor.
@@ -2643,6 +2537,24 @@ export {
      * @property {module:model/PoolResponseAllOf}
      */
     PoolResponseAllOf,
+
+    /**
+     * The PoolResponseCommon model constructor.
+     * @property {module:model/PoolResponseCommon}
+     */
+    PoolResponseCommon,
+
+    /**
+     * The PoolResponsePost model constructor.
+     * @property {module:model/PoolResponsePost}
+     */
+    PoolResponsePost,
+
+    /**
+     * The PoolResponsePostAllOf model constructor.
+     * @property {module:model/PoolResponsePostAllOf}
+     */
+    PoolResponsePostAllOf,
 
     /**
      * The Pop model constructor.
@@ -3329,16 +3241,22 @@ export {
     RelationshipsForWafRule,
 
     /**
-     * The RequestSettings model constructor.
-     * @property {module:model/RequestSettings}
+     * The RequestSettingsAdditional model constructor.
+     * @property {module:model/RequestSettingsAdditional}
      */
-    RequestSettings,
+    RequestSettingsAdditional,
 
     /**
      * The RequestSettingsResponse model constructor.
      * @property {module:model/RequestSettingsResponse}
      */
     RequestSettingsResponse,
+
+    /**
+     * The RequestSettingsResponseAllOf model constructor.
+     * @property {module:model/RequestSettingsResponseAllOf}
+     */
+    RequestSettingsResponseAllOf,
 
     /**
      * The Resource model constructor.
@@ -3579,6 +3497,12 @@ export {
      * @property {module:model/ServiceIdAndVersion}
      */
     ServiceIdAndVersion,
+
+    /**
+     * The ServiceIdAndVersionString model constructor.
+     * @property {module:model/ServiceIdAndVersionString}
+     */
+    ServiceIdAndVersionString,
 
     /**
      * The ServiceInvitation model constructor.
@@ -3935,10 +3859,22 @@ export {
     TlsCertificatesResponseAllOf,
 
     /**
-     * The TlsCommon model constructor.
-     * @property {module:model/TlsCommon}
+     * The TlsCommonResponse model constructor.
+     * @property {module:model/TlsCommonResponse}
      */
-    TlsCommon,
+    TlsCommonResponse,
+
+    /**
+     * The TlsCommonResponseAllOf model constructor.
+     * @property {module:model/TlsCommonResponseAllOf}
+     */
+    TlsCommonResponseAllOf,
+
+    /**
+     * The TlsCommonResponseAllOf1 model constructor.
+     * @property {module:model/TlsCommonResponseAllOf1}
+     */
+    TlsCommonResponseAllOf1,
 
     /**
      * The TlsConfiguration model constructor.
@@ -4119,12 +4055,6 @@ export {
      * @property {module:model/TlsSubscriptionResponseData}
      */
     TlsSubscriptionResponseData,
-
-    /**
-     * The TlsSubscriptionResponseDataAllOf model constructor.
-     * @property {module:model/TlsSubscriptionResponseDataAllOf}
-     */
-    TlsSubscriptionResponseDataAllOf,
 
     /**
      * The TlsSubscriptionsResponse model constructor.

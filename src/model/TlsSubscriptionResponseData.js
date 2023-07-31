@@ -12,21 +12,19 @@
 
 import ApiClient from '../ApiClient';
 import TlsSubscriptionResponseAttributes from './TlsSubscriptionResponseAttributes';
-import TlsSubscriptionResponseDataAllOf from './TlsSubscriptionResponseDataAllOf';
 
 /**
  * The TlsSubscriptionResponseData model module.
  * @module model/TlsSubscriptionResponseData
- * @version 5.0.2
+ * @version 6.0.0
  */
 class TlsSubscriptionResponseData {
     /**
      * Constructs a new <code>TlsSubscriptionResponseData</code>.
      * @alias module:model/TlsSubscriptionResponseData
-     * @implements module:model/TlsSubscriptionResponseDataAllOf
      */
     constructor() { 
-        TlsSubscriptionResponseDataAllOf.initialize(this);
+        
         TlsSubscriptionResponseData.initialize(this);
     }
 
@@ -48,7 +46,6 @@ class TlsSubscriptionResponseData {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new TlsSubscriptionResponseData();
-            TlsSubscriptionResponseDataAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -74,15 +71,6 @@ TlsSubscriptionResponseData.prototype['id'] = undefined;
 TlsSubscriptionResponseData.prototype['attributes'] = undefined;
 
 
-// Implement TlsSubscriptionResponseDataAllOf interface:
-/**
- * @member {String} id
- */
-TlsSubscriptionResponseDataAllOf.prototype['id'] = undefined;
-/**
- * @member {module:model/TlsSubscriptionResponseAttributes} attributes
- */
-TlsSubscriptionResponseDataAllOf.prototype['attributes'] = undefined;
 
 
 

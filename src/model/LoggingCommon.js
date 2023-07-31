@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingCommon model module.
  * @module model/LoggingCommon
- * @version 5.0.2
+ * @version 6.0.0
  */
 class LoggingCommon {
     /**
@@ -52,9 +52,6 @@ class LoggingCommon {
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = ApiClient.convertToType(data['placement'], 'String');
             }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'Number');
-            }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
             }
@@ -79,13 +76,6 @@ LoggingCommon.prototype['name'] = undefined;
  * @member {module:model/LoggingCommon.PlacementEnum} placement
  */
 LoggingCommon.prototype['placement'] = undefined;
-
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
- * @member {module:model/LoggingCommon.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingCommon.prototype['format_version'] = undefined;
 
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
@@ -128,27 +118,6 @@ LoggingCommon['PlacementEnum'] = {
      * @const
      */
     "null": "null"
-};
-
-
-/**
- * Allowed values for the <code>format_version</code> property.
- * @enum {Number}
- * @readonly
- */
-LoggingCommon['FormatVersionEnum'] = {
-
-    /**
-     * value: 1
-     * @const
-     */
-    "v1": 1,
-
-    /**
-     * value: 2
-     * @const
-     */
-    "v2": 2
 };
 
 

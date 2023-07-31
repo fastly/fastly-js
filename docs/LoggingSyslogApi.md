@@ -17,7 +17,7 @@ Method | Fastly API endpoint | Description
 ## `createLogSyslog`
 
 ```javascript
-createLogSyslog({ service_id, version_id, [name, ][placement, ][format_version, ][response_condition, ][format, ][tls_ca_cert, ][tls_client_cert, ][tls_client_key, ][tls_hostname, ][address, ][port, ][message_type, ][hostname, ][ipv4, ][token, ][use_tls] })
+createLogSyslog({ service_id, version_id, [name, ][placement, ][response_condition, ][format, ][format_version, ][tls_ca_cert, ][tls_client_cert, ][tls_client_key, ][tls_hostname, ][address, ][port, ][message_type, ][hostname, ][ipv4, ][token, ][use_tls] })
 ```
 
 Create a Syslog for a particular service and version.
@@ -30,9 +30,9 @@ const options = {
   version_id: 56, // required
   name: "name_example",
   placement: "none",
-  format_version: 1,
   response_condition: "response_condition_example",
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format_version: 1,
   tls_ca_cert: "'null'",
   tls_client_cert: "'null'",
   tls_client_key: "'null'",
@@ -63,9 +63,9 @@ Name | Type | Description  | Notes
 **version_id** | **Number** | Integer identifying a service version. |
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] [one of: "none", "waf_debug", "null"]
-**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [one of: 1, 2]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
 **format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [defaults to '%h %l %u %t "%r" %&gt;s %b']
+**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [one of: 1, 2]
 **tls_ca_cert** | **String** | A secure certificate to authenticate a server with. Must be in PEM format. | [optional] [defaults to 'null']
 **tls_client_cert** | **String** | The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [defaults to 'null']
 **tls_client_key** | **String** | The client private key used to make authenticated requests. Must be in PEM format. | [optional] [defaults to 'null']
@@ -201,7 +201,7 @@ Name | Type | Description  | Notes
 ## `updateLogSyslog`
 
 ```javascript
-updateLogSyslog({ service_id, version_id, logging_syslog_name, [name, ][placement, ][format_version, ][response_condition, ][format, ][tls_ca_cert, ][tls_client_cert, ][tls_client_key, ][tls_hostname, ][address, ][port, ][message_type, ][hostname, ][ipv4, ][token, ][use_tls] })
+updateLogSyslog({ service_id, version_id, logging_syslog_name, [name, ][placement, ][response_condition, ][format, ][format_version, ][tls_ca_cert, ][tls_client_cert, ][tls_client_key, ][tls_hostname, ][address, ][port, ][message_type, ][hostname, ][ipv4, ][token, ][use_tls] })
 ```
 
 Update the Syslog for a particular service and version.
@@ -215,9 +215,9 @@ const options = {
   logging_syslog_name: "logging_syslog_name_example", // required
   name: "name_example",
   placement: "none",
-  format_version: 1,
   response_condition: "response_condition_example",
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format_version: 1,
   tls_ca_cert: "'null'",
   tls_client_cert: "'null'",
   tls_client_key: "'null'",
@@ -249,9 +249,9 @@ Name | Type | Description  | Notes
 **logging_syslog_name** | **String** | The name for the real-time logging configuration. |
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] [one of: "none", "waf_debug", "null"]
-**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [one of: 1, 2]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
 **format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [defaults to '%h %l %u %t "%r" %&gt;s %b']
+**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [one of: 1, 2]
 **tls_ca_cert** | **String** | A secure certificate to authenticate a server with. Must be in PEM format. | [optional] [defaults to 'null']
 **tls_client_cert** | **String** | The client certificate used to make authenticated requests. Must be in PEM format. | [optional] [defaults to 'null']
 **tls_client_key** | **String** | The client private key used to make authenticated requests. Must be in PEM format. | [optional] [defaults to 'null']

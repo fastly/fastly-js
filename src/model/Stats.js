@@ -16,7 +16,7 @@ import Results from './Results';
 /**
  * The Stats model module.
  * @module model/Stats
- * @version 5.0.2
+ * @version 6.0.0
  */
 class Stats {
     /**

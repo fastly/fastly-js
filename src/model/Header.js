@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Header model module.
  * @module model/Header
- * @version 5.0.2
+ * @version 6.0.0
  */
 class Header {
     /**
@@ -55,14 +55,8 @@ class Header {
             if (data.hasOwnProperty('dst')) {
                 obj['dst'] = ApiClient.convertToType(data['dst'], 'String');
             }
-            if (data.hasOwnProperty('ignore_if_set')) {
-                obj['ignore_if_set'] = ApiClient.convertToType(data['ignore_if_set'], 'Number');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
-            if (data.hasOwnProperty('priority')) {
-                obj['priority'] = ApiClient.convertToType(data['priority'], 'Number');
             }
             if (data.hasOwnProperty('regex')) {
                 obj['regex'] = ApiClient.convertToType(data['regex'], 'String');
@@ -108,23 +102,10 @@ Header.prototype['cache_condition'] = undefined;
 Header.prototype['dst'] = undefined;
 
 /**
- * Don't add the header if it is added already. Only applies to 'set' action.
- * @member {Number} ignore_if_set
- */
-Header.prototype['ignore_if_set'] = undefined;
-
-/**
  * A handle to refer to this Header object.
  * @member {String} name
  */
 Header.prototype['name'] = undefined;
-
-/**
- * Priority determines execution order. Lower numbers execute first.
- * @member {Number} priority
- * @default 100
- */
-Header.prototype['priority'] = 100;
 
 /**
  * Regular expression to use. Only applies to `regex` and `regex_repeat` actions.

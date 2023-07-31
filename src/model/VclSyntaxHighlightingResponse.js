@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VclSyntaxHighlightingResponse model module.
  * @module model/VclSyntaxHighlightingResponse
- * @version 5.0.2
+ * @version 6.0.0
  */
 class VclSyntaxHighlightingResponse {
     /**

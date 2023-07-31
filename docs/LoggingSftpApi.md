@@ -17,7 +17,7 @@ Method | Fastly API endpoint | Description
 ## `createLogSftp`
 
 ```javascript
-createLogSftp({ service_id, version_id, [name, ][placement, ][format_version, ][response_condition, ][format, ][message_type, ][timestamp_format, ][period, ][gzip_level, ][compression_codec, ][address, ][port, ][password, ][path, ][public_key, ][secret_key, ][ssh_known_hosts, ][user] })
+createLogSftp({ service_id, version_id, [name, ][placement, ][response_condition, ][format, ][format_version, ][message_type, ][timestamp_format, ][compression_codec, ][period, ][gzip_level, ][address, ][port, ][password, ][path, ][public_key, ][secret_key, ][ssh_known_hosts, ][user] })
 ```
 
 Create a SFTP for a particular service and version.
@@ -30,14 +30,14 @@ const options = {
   version_id: 56, // required
   name: "name_example",
   placement: "none",
-  format_version: 1,
   response_condition: "response_condition_example",
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format_version: 1,
   message_type: "classic",
   timestamp_format: "timestamp_format_example",
+  compression_codec: "zstd",
   period: 3600,
   gzip_level: 0,
-  compression_codec: "zstd",
   address: "address_example",
   port: 22,
   password: "password_example",
@@ -65,14 +65,14 @@ Name | Type | Description  | Notes
 **version_id** | **Number** | Integer identifying a service version. |
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] [one of: "none", "waf_debug", "null"]
-**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [one of: 1, 2]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
 **format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [defaults to '%h %l %u %t "%r" %&gt;s %b']
+**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [one of: 1, 2]
 **message_type** | **String** | How the message should be formatted. | [optional] [one of: "classic", "loggly", "logplex", "blank"]
 **timestamp_format** | **String** | A timestamp format | [optional]
+**compression_codec** | **String** | The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [optional] [one of: "zstd", "snappy", "gzip"]
 **period** | **Number** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [defaults to 3600]
 **gzip_level** | **Number** | The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [optional] [defaults to 0]
-**compression_codec** | **String** | The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [optional] [one of: "zstd", "snappy", "gzip"]
 **address** | **String** | A hostname or IPv4 address. | [optional]
 **port** | **Number** | The port number. | [optional] [defaults to 22]
 **password** | **String** | The password for the server. If both `password` and `secret_key` are passed, `secret_key` will be used in preference. | [optional]
@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 ## `updateLogSftp`
 
 ```javascript
-updateLogSftp({ service_id, version_id, logging_sftp_name, [name, ][placement, ][format_version, ][response_condition, ][format, ][message_type, ][timestamp_format, ][period, ][gzip_level, ][compression_codec, ][address, ][port, ][password, ][path, ][public_key, ][secret_key, ][ssh_known_hosts, ][user] })
+updateLogSftp({ service_id, version_id, logging_sftp_name, [name, ][placement, ][response_condition, ][format, ][format_version, ][message_type, ][timestamp_format, ][compression_codec, ][period, ][gzip_level, ][address, ][port, ][password, ][path, ][public_key, ][secret_key, ][ssh_known_hosts, ][user] })
 ```
 
 Update the SFTP for a particular service and version.
@@ -219,14 +219,14 @@ const options = {
   logging_sftp_name: "logging_sftp_name_example", // required
   name: "name_example",
   placement: "none",
-  format_version: 1,
   response_condition: "response_condition_example",
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format_version: 1,
   message_type: "classic",
   timestamp_format: "timestamp_format_example",
+  compression_codec: "zstd",
   period: 3600,
   gzip_level: 0,
-  compression_codec: "zstd",
   address: "address_example",
   port: 22,
   password: "password_example",
@@ -255,14 +255,14 @@ Name | Type | Description  | Notes
 **logging_sftp_name** | **String** | The name for the real-time logging configuration. |
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] [one of: "none", "waf_debug", "null"]
-**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [one of: 1, 2]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
 **format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [defaults to '%h %l %u %t "%r" %&gt;s %b']
+**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [one of: 1, 2]
 **message_type** | **String** | How the message should be formatted. | [optional] [one of: "classic", "loggly", "logplex", "blank"]
 **timestamp_format** | **String** | A timestamp format | [optional]
+**compression_codec** | **String** | The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [optional] [one of: "zstd", "snappy", "gzip"]
 **period** | **Number** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [defaults to 3600]
 **gzip_level** | **Number** | The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [optional] [defaults to 0]
-**compression_codec** | **String** | The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [optional] [one of: "zstd", "snappy", "gzip"]
 **address** | **String** | A hostname or IPv4 address. | [optional]
 **port** | **Number** | The port number. | [optional] [defaults to 22]
 **password** | **String** | The password for the server. If both `password` and `secret_key` are passed, `secret_key` will be used in preference. | [optional]

@@ -11,25 +11,31 @@
  */
 
 import ApiClient from '../ApiClient';
-import LoggingGcs from './LoggingGcs';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
+import LoggingCommonResponse from './LoggingCommonResponse';
+import LoggingGcsAdditional from './LoggingGcsAdditional';
+import LoggingGcsCommon from './LoggingGcsCommon';
+import LoggingGenericCommonResponse from './LoggingGenericCommonResponse';
+import ServiceIdAndVersionString from './ServiceIdAndVersionString';
 import Timestamps from './Timestamps';
 
 /**
  * The LoggingGcsResponse model module.
  * @module model/LoggingGcsResponse
- * @version 5.0.2
+ * @version 6.0.0
  */
 class LoggingGcsResponse {
     /**
      * Constructs a new <code>LoggingGcsResponse</code>.
      * @alias module:model/LoggingGcsResponse
-     * @implements module:model/LoggingGcs
+     * @implements module:model/LoggingCommonResponse
+     * @implements module:model/LoggingGenericCommonResponse
+     * @implements module:model/LoggingGcsCommon
      * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
+     * @implements module:model/ServiceIdAndVersionString
+     * @implements module:model/LoggingGcsAdditional
      */
     constructor() { 
-        LoggingGcs.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
+        LoggingCommonResponse.initialize(this);LoggingGenericCommonResponse.initialize(this);LoggingGcsCommon.initialize(this);Timestamps.initialize(this);ServiceIdAndVersionString.initialize(this);LoggingGcsAdditional.initialize(this);
         LoggingGcsResponse.initialize(this);
     }
 
@@ -51,9 +57,12 @@ class LoggingGcsResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingGcsResponse();
-            LoggingGcs.constructFromObject(data, obj);
+            LoggingCommonResponse.constructFromObject(data, obj);
+            LoggingGenericCommonResponse.constructFromObject(data, obj);
+            LoggingGcsCommon.constructFromObject(data, obj);
             Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
+            ServiceIdAndVersionString.constructFromObject(data, obj);
+            LoggingGcsAdditional.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -61,14 +70,14 @@ class LoggingGcsResponse {
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = ApiClient.convertToType(data['placement'], 'String');
             }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'Number');
-            }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
             }
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'String');
             }
             if (data.hasOwnProperty('message_type')) {
                 obj['message_type'] = ApiClient.convertToType(data['message_type'], 'String');
@@ -76,14 +85,14 @@ class LoggingGcsResponse {
             if (data.hasOwnProperty('timestamp_format')) {
                 obj['timestamp_format'] = ApiClient.convertToType(data['timestamp_format'], 'String');
             }
-            if (data.hasOwnProperty('period')) {
-                obj['period'] = ApiClient.convertToType(data['period'], 'Number');
-            }
-            if (data.hasOwnProperty('gzip_level')) {
-                obj['gzip_level'] = ApiClient.convertToType(data['gzip_level'], 'Number');
-            }
             if (data.hasOwnProperty('compression_codec')) {
                 obj['compression_codec'] = ApiClient.convertToType(data['compression_codec'], 'String');
+            }
+            if (data.hasOwnProperty('period')) {
+                obj['period'] = ApiClient.convertToType(data['period'], 'String');
+            }
+            if (data.hasOwnProperty('gzip_level')) {
+                obj['gzip_level'] = ApiClient.convertToType(data['gzip_level'], 'String');
             }
             if (data.hasOwnProperty('user')) {
                 obj['user'] = ApiClient.convertToType(data['user'], 'String');
@@ -93,18 +102,6 @@ class LoggingGcsResponse {
             }
             if (data.hasOwnProperty('account_name')) {
                 obj['account_name'] = ApiClient.convertToType(data['account_name'], 'String');
-            }
-            if (data.hasOwnProperty('bucket_name')) {
-                obj['bucket_name'] = ApiClient.convertToType(data['bucket_name'], 'String');
-            }
-            if (data.hasOwnProperty('path')) {
-                obj['path'] = ApiClient.convertToType(data['path'], 'String');
-            }
-            if (data.hasOwnProperty('public_key')) {
-                obj['public_key'] = ApiClient.convertToType(data['public_key'], 'String');
-            }
-            if (data.hasOwnProperty('project_id')) {
-                obj['project_id'] = ApiClient.convertToType(data['project_id'], 'String');
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
@@ -119,7 +116,19 @@ class LoggingGcsResponse {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
             }
             if (data.hasOwnProperty('version')) {
-                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
+                obj['version'] = ApiClient.convertToType(data['version'], 'String');
+            }
+            if (data.hasOwnProperty('bucket_name')) {
+                obj['bucket_name'] = ApiClient.convertToType(data['bucket_name'], 'String');
+            }
+            if (data.hasOwnProperty('path')) {
+                obj['path'] = ApiClient.convertToType(data['path'], 'String');
+            }
+            if (data.hasOwnProperty('public_key')) {
+                obj['public_key'] = ApiClient.convertToType(data['public_key'], 'String');
+            }
+            if (data.hasOwnProperty('project_id')) {
+                obj['project_id'] = ApiClient.convertToType(data['project_id'], 'String');
             }
         }
         return obj;
@@ -141,13 +150,6 @@ LoggingGcsResponse.prototype['name'] = undefined;
 LoggingGcsResponse.prototype['placement'] = undefined;
 
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
- * @member {module:model/LoggingGcsResponse.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingGcsResponse.prototype['format_version'] = undefined;
-
-/**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
@@ -159,6 +161,13 @@ LoggingGcsResponse.prototype['response_condition'] = undefined;
  * @default '%h %l %u %t "%r" %&gt;s %b'
  */
 LoggingGcsResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+ * @member {module:model/LoggingGcsResponse.FormatVersionEnum} format_version
+ * @default '2'
+ */
+LoggingGcsResponse.prototype['format_version'] = undefined;
 
 /**
  * How the message should be formatted.
@@ -174,24 +183,24 @@ LoggingGcsResponse.prototype['message_type'] = undefined;
 LoggingGcsResponse.prototype['timestamp_format'] = undefined;
 
 /**
- * How frequently log files are finalized so they can be available for reading (in seconds).
- * @member {Number} period
- * @default 3600
- */
-LoggingGcsResponse.prototype['period'] = 3600;
-
-/**
- * The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {Number} gzip_level
- * @default 0
- */
-LoggingGcsResponse.prototype['gzip_level'] = 0;
-
-/**
  * The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
  * @member {module:model/LoggingGcsResponse.CompressionCodecEnum} compression_codec
  */
 LoggingGcsResponse.prototype['compression_codec'] = undefined;
+
+/**
+ * How frequently log files are finalized so they can be available for reading (in seconds).
+ * @member {String} period
+ * @default '3600'
+ */
+LoggingGcsResponse.prototype['period'] = '3600';
+
+/**
+ * The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {String} gzip_level
+ * @default '0'
+ */
+LoggingGcsResponse.prototype['gzip_level'] = '0';
 
 /**
  * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Not required if `account_name` is specified.
@@ -210,6 +219,34 @@ LoggingGcsResponse.prototype['secret_key'] = undefined;
  * @member {String} account_name
  */
 LoggingGcsResponse.prototype['account_name'] = undefined;
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {Date} created_at
+ */
+LoggingGcsResponse.prototype['created_at'] = undefined;
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {Date} deleted_at
+ */
+LoggingGcsResponse.prototype['deleted_at'] = undefined;
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {Date} updated_at
+ */
+LoggingGcsResponse.prototype['updated_at'] = undefined;
+
+/**
+ * @member {String} service_id
+ */
+LoggingGcsResponse.prototype['service_id'] = undefined;
+
+/**
+ * @member {String} version
+ */
+LoggingGcsResponse.prototype['version'] = undefined;
 
 /**
  * The name of the GCS bucket.
@@ -236,127 +273,80 @@ LoggingGcsResponse.prototype['public_key'] = 'null';
  */
 LoggingGcsResponse.prototype['project_id'] = undefined;
 
-/**
- * Date and time in ISO 8601 format.
- * @member {Date} created_at
- */
-LoggingGcsResponse.prototype['created_at'] = undefined;
 
-/**
- * Date and time in ISO 8601 format.
- * @member {Date} deleted_at
- */
-LoggingGcsResponse.prototype['deleted_at'] = undefined;
-
-/**
- * Date and time in ISO 8601 format.
- * @member {Date} updated_at
- */
-LoggingGcsResponse.prototype['updated_at'] = undefined;
-
-/**
- * @member {String} service_id
- */
-LoggingGcsResponse.prototype['service_id'] = undefined;
-
-/**
- * @member {Number} version
- */
-LoggingGcsResponse.prototype['version'] = undefined;
-
-
-// Implement LoggingGcs interface:
+// Implement LoggingCommonResponse interface:
 /**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
-LoggingGcs.prototype['name'] = undefined;
+LoggingCommonResponse.prototype['name'] = undefined;
 /**
  * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
- * @member {module:model/LoggingGcs.PlacementEnum} placement
+ * @member {module:model/LoggingCommonResponse.PlacementEnum} placement
  */
-LoggingGcs.prototype['placement'] = undefined;
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
- * @member {module:model/LoggingGcs.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingGcs.prototype['format_version'] = undefined;
+LoggingCommonResponse.prototype['placement'] = undefined;
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
-LoggingGcs.prototype['response_condition'] = undefined;
+LoggingCommonResponse.prototype['response_condition'] = undefined;
 /**
  * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
  * @member {String} format
  * @default '%h %l %u %t "%r" %&gt;s %b'
  */
-LoggingGcs.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+LoggingCommonResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+ * @member {module:model/LoggingCommonResponse.FormatVersionEnum} format_version
+ * @default '2'
+ */
+LoggingCommonResponse.prototype['format_version'] = undefined;
+// Implement LoggingGenericCommonResponse interface:
 /**
  * How the message should be formatted.
- * @member {module:model/LoggingGcs.MessageTypeEnum} message_type
+ * @member {module:model/LoggingGenericCommonResponse.MessageTypeEnum} message_type
  * @default 'classic'
  */
-LoggingGcs.prototype['message_type'] = undefined;
+LoggingGenericCommonResponse.prototype['message_type'] = undefined;
 /**
  * A timestamp format
  * @member {String} timestamp_format
  */
-LoggingGcs.prototype['timestamp_format'] = undefined;
-/**
- * How frequently log files are finalized so they can be available for reading (in seconds).
- * @member {Number} period
- * @default 3600
- */
-LoggingGcs.prototype['period'] = 3600;
-/**
- * The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {Number} gzip_level
- * @default 0
- */
-LoggingGcs.prototype['gzip_level'] = 0;
+LoggingGenericCommonResponse.prototype['timestamp_format'] = undefined;
 /**
  * The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {module:model/LoggingGcs.CompressionCodecEnum} compression_codec
+ * @member {module:model/LoggingGenericCommonResponse.CompressionCodecEnum} compression_codec
  */
-LoggingGcs.prototype['compression_codec'] = undefined;
+LoggingGenericCommonResponse.prototype['compression_codec'] = undefined;
+/**
+ * How frequently log files are finalized so they can be available for reading (in seconds).
+ * @member {String} period
+ * @default '3600'
+ */
+LoggingGenericCommonResponse.prototype['period'] = '3600';
+/**
+ * The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {String} gzip_level
+ * @default '0'
+ */
+LoggingGenericCommonResponse.prototype['gzip_level'] = '0';
+// Implement LoggingGcsCommon interface:
 /**
  * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Not required if `account_name` is specified.
  * @member {String} user
  */
-LoggingGcs.prototype['user'] = undefined;
+LoggingGcsCommon.prototype['user'] = undefined;
 /**
  * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified.
  * @member {String} secret_key
  */
-LoggingGcs.prototype['secret_key'] = undefined;
+LoggingGcsCommon.prototype['secret_key'] = undefined;
 /**
  * The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided.
  * @member {String} account_name
  */
-LoggingGcs.prototype['account_name'] = undefined;
-/**
- * The name of the GCS bucket.
- * @member {String} bucket_name
- */
-LoggingGcs.prototype['bucket_name'] = undefined;
-/**
- * @member {String} path
- * @default '/'
- */
-LoggingGcs.prototype['path'] = '/';
-/**
- * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
- * @member {String} public_key
- * @default 'null'
- */
-LoggingGcs.prototype['public_key'] = 'null';
-/**
- * Your Google Cloud Platform project ID. Required
- * @member {String} project_id
- */
-LoggingGcs.prototype['project_id'] = undefined;
+LoggingGcsCommon.prototype['account_name'] = undefined;
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
@@ -373,15 +363,37 @@ Timestamps.prototype['deleted_at'] = undefined;
  * @member {Date} updated_at
  */
 Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
+// Implement ServiceIdAndVersionString interface:
 /**
  * @member {String} service_id
  */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
+ServiceIdAndVersionString.prototype['service_id'] = undefined;
 /**
- * @member {Number} version
+ * @member {String} version
  */
-ServiceIdAndVersion.prototype['version'] = undefined;
+ServiceIdAndVersionString.prototype['version'] = undefined;
+// Implement LoggingGcsAdditional interface:
+/**
+ * The name of the GCS bucket.
+ * @member {String} bucket_name
+ */
+LoggingGcsAdditional.prototype['bucket_name'] = undefined;
+/**
+ * @member {String} path
+ * @default '/'
+ */
+LoggingGcsAdditional.prototype['path'] = '/';
+/**
+ * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+ * @member {String} public_key
+ * @default 'null'
+ */
+LoggingGcsAdditional.prototype['public_key'] = 'null';
+/**
+ * Your Google Cloud Platform project ID. Required
+ * @member {String} project_id
+ */
+LoggingGcsAdditional.prototype['project_id'] = undefined;
 
 
 
@@ -414,22 +426,22 @@ LoggingGcsResponse['PlacementEnum'] = {
 
 /**
  * Allowed values for the <code>format_version</code> property.
- * @enum {Number}
+ * @enum {String}
  * @readonly
  */
 LoggingGcsResponse['FormatVersionEnum'] = {
 
     /**
-     * value: 1
+     * value: "1"
      * @const
      */
-    "v1": 1,
+    "v1": "1",
 
     /**
-     * value: 2
+     * value: "2"
      * @const
      */
-    "v2": 2
+    "v2": "2"
 };
 
 

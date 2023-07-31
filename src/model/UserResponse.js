@@ -19,7 +19,7 @@ import UserResponseReadOnly from './UserResponseReadOnly';
 /**
  * The UserResponse model module.
  * @module model/UserResponse
- * @version 5.0.2
+ * @version 6.0.0
  */
 class UserResponse {
     /**

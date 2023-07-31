@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CacheSetting model module.
  * @module model/CacheSetting
- * @version 5.0.2
+ * @version 6.0.0
  */
 class CacheSetting {
     /**
@@ -56,10 +56,10 @@ class CacheSetting {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('stale_ttl')) {
-                obj['stale_ttl'] = ApiClient.convertToType(data['stale_ttl'], 'Number');
+                obj['stale_ttl'] = ApiClient.convertToType(data['stale_ttl'], 'String');
             }
             if (data.hasOwnProperty('ttl')) {
-                obj['ttl'] = ApiClient.convertToType(data['ttl'], 'Number');
+                obj['ttl'] = ApiClient.convertToType(data['ttl'], 'String');
             }
         }
         return obj;
@@ -88,13 +88,13 @@ CacheSetting.prototype['name'] = undefined;
 
 /**
  * Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as 'stale if error').
- * @member {Number} stale_ttl
+ * @member {String} stale_ttl
  */
 CacheSetting.prototype['stale_ttl'] = undefined;
 
 /**
  * Maximum time to consider the object fresh in the cache (the cache 'time to live').
- * @member {Number} ttl
+ * @member {String} ttl
  */
 CacheSetting.prototype['ttl'] = undefined;
 

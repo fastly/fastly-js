@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The ApexRedirect model module.
  * @module model/ApexRedirect
- * @version 5.0.2
+ * @version 6.0.0
  */
 class ApexRedirect {
     /**

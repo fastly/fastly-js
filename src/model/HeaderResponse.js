@@ -12,24 +12,26 @@
 
 import ApiClient from '../ApiClient';
 import Header from './Header';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
+import HeaderResponseAdditional from './HeaderResponseAdditional';
+import ServiceIdAndVersionString from './ServiceIdAndVersionString';
 import Timestamps from './Timestamps';
 
 /**
  * The HeaderResponse model module.
  * @module model/HeaderResponse
- * @version 5.0.2
+ * @version 6.0.0
  */
 class HeaderResponse {
     /**
      * Constructs a new <code>HeaderResponse</code>.
      * @alias module:model/HeaderResponse
      * @implements module:model/Header
-     * @implements module:model/ServiceIdAndVersion
+     * @implements module:model/HeaderResponseAdditional
+     * @implements module:model/ServiceIdAndVersionString
      * @implements module:model/Timestamps
      */
     constructor() { 
-        Header.initialize(this);ServiceIdAndVersion.initialize(this);Timestamps.initialize(this);
+        Header.initialize(this);HeaderResponseAdditional.initialize(this);ServiceIdAndVersionString.initialize(this);Timestamps.initialize(this);
         HeaderResponse.initialize(this);
     }
 
@@ -52,7 +54,8 @@ class HeaderResponse {
         if (data) {
             obj = obj || new HeaderResponse();
             Header.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
+            HeaderResponseAdditional.constructFromObject(data, obj);
+            ServiceIdAndVersionString.constructFromObject(data, obj);
             Timestamps.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('action')) {
@@ -64,14 +67,8 @@ class HeaderResponse {
             if (data.hasOwnProperty('dst')) {
                 obj['dst'] = ApiClient.convertToType(data['dst'], 'String');
             }
-            if (data.hasOwnProperty('ignore_if_set')) {
-                obj['ignore_if_set'] = ApiClient.convertToType(data['ignore_if_set'], 'Number');
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
-            if (data.hasOwnProperty('priority')) {
-                obj['priority'] = ApiClient.convertToType(data['priority'], 'Number');
             }
             if (data.hasOwnProperty('regex')) {
                 obj['regex'] = ApiClient.convertToType(data['regex'], 'String');
@@ -91,11 +88,17 @@ class HeaderResponse {
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
+            if (data.hasOwnProperty('ignore_if_set')) {
+                obj['ignore_if_set'] = ApiClient.convertToType(data['ignore_if_set'], 'String');
+            }
+            if (data.hasOwnProperty('priority')) {
+                obj['priority'] = ApiClient.convertToType(data['priority'], 'String');
+            }
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
             }
             if (data.hasOwnProperty('version')) {
-                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
+                obj['version'] = ApiClient.convertToType(data['version'], 'String');
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
@@ -132,23 +135,10 @@ HeaderResponse.prototype['cache_condition'] = undefined;
 HeaderResponse.prototype['dst'] = undefined;
 
 /**
- * Don't add the header if it is added already. Only applies to 'set' action.
- * @member {Number} ignore_if_set
- */
-HeaderResponse.prototype['ignore_if_set'] = undefined;
-
-/**
  * A handle to refer to this Header object.
  * @member {String} name
  */
 HeaderResponse.prototype['name'] = undefined;
-
-/**
- * Priority determines execution order. Lower numbers execute first.
- * @member {Number} priority
- * @default 100
- */
-HeaderResponse.prototype['priority'] = 100;
 
 /**
  * Regular expression to use. Only applies to `regex` and `regex_repeat` actions.
@@ -187,12 +177,25 @@ HeaderResponse.prototype['substitution'] = undefined;
 HeaderResponse.prototype['type'] = undefined;
 
 /**
+ * Don't add the header if it is added already. Only applies to 'set' action. Numerical value (\"0\" = false, \"1\" = true)
+ * @member {String} ignore_if_set
+ */
+HeaderResponse.prototype['ignore_if_set'] = undefined;
+
+/**
+ * Priority determines execution order. Lower numbers execute first.
+ * @member {String} priority
+ * @default '100'
+ */
+HeaderResponse.prototype['priority'] = '100';
+
+/**
  * @member {String} service_id
  */
 HeaderResponse.prototype['service_id'] = undefined;
 
 /**
- * @member {Number} version
+ * @member {String} version
  */
 HeaderResponse.prototype['version'] = undefined;
 
@@ -232,21 +235,10 @@ Header.prototype['cache_condition'] = undefined;
  */
 Header.prototype['dst'] = undefined;
 /**
- * Don't add the header if it is added already. Only applies to 'set' action.
- * @member {Number} ignore_if_set
- */
-Header.prototype['ignore_if_set'] = undefined;
-/**
  * A handle to refer to this Header object.
  * @member {String} name
  */
 Header.prototype['name'] = undefined;
-/**
- * Priority determines execution order. Lower numbers execute first.
- * @member {Number} priority
- * @default 100
- */
-Header.prototype['priority'] = 100;
 /**
  * Regular expression to use. Only applies to `regex` and `regex_repeat` actions.
  * @member {String} regex
@@ -277,15 +269,27 @@ Header.prototype['substitution'] = undefined;
  * @member {module:model/Header.TypeEnum} type
  */
 Header.prototype['type'] = undefined;
-// Implement ServiceIdAndVersion interface:
+// Implement HeaderResponseAdditional interface:
+/**
+ * Don't add the header if it is added already. Only applies to 'set' action. Numerical value (\"0\" = false, \"1\" = true)
+ * @member {String} ignore_if_set
+ */
+HeaderResponseAdditional.prototype['ignore_if_set'] = undefined;
+/**
+ * Priority determines execution order. Lower numbers execute first.
+ * @member {String} priority
+ * @default '100'
+ */
+HeaderResponseAdditional.prototype['priority'] = '100';
+// Implement ServiceIdAndVersionString interface:
 /**
  * @member {String} service_id
  */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
+ServiceIdAndVersionString.prototype['service_id'] = undefined;
 /**
- * @member {Number} version
+ * @member {String} version
  */
-ServiceIdAndVersion.prototype['version'] = undefined;
+ServiceIdAndVersionString.prototype['version'] = undefined;
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.

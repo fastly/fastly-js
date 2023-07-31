@@ -12,24 +12,24 @@
 
 import ApiClient from '../ApiClient';
 import Gzip from './Gzip';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
+import ServiceIdAndVersionString from './ServiceIdAndVersionString';
 import Timestamps from './Timestamps';
 
 /**
  * The GzipResponse model module.
  * @module model/GzipResponse
- * @version 5.0.2
+ * @version 6.0.0
  */
 class GzipResponse {
     /**
      * Constructs a new <code>GzipResponse</code>.
      * @alias module:model/GzipResponse
      * @implements module:model/Gzip
-     * @implements module:model/ServiceIdAndVersion
+     * @implements module:model/ServiceIdAndVersionString
      * @implements module:model/Timestamps
      */
     constructor() { 
-        Gzip.initialize(this);ServiceIdAndVersion.initialize(this);Timestamps.initialize(this);
+        Gzip.initialize(this);ServiceIdAndVersionString.initialize(this);Timestamps.initialize(this);
         GzipResponse.initialize(this);
     }
 
@@ -52,7 +52,7 @@ class GzipResponse {
         if (data) {
             obj = obj || new GzipResponse();
             Gzip.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
+            ServiceIdAndVersionString.constructFromObject(data, obj);
             Timestamps.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('cache_condition')) {
@@ -71,7 +71,7 @@ class GzipResponse {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
             }
             if (data.hasOwnProperty('version')) {
-                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
+                obj['version'] = ApiClient.convertToType(data['version'], 'String');
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
@@ -119,7 +119,7 @@ GzipResponse.prototype['name'] = undefined;
 GzipResponse.prototype['service_id'] = undefined;
 
 /**
- * @member {Number} version
+ * @member {String} version
  */
 GzipResponse.prototype['version'] = undefined;
 
@@ -163,15 +163,15 @@ Gzip.prototype['extensions'] = undefined;
  * @member {String} name
  */
 Gzip.prototype['name'] = undefined;
-// Implement ServiceIdAndVersion interface:
+// Implement ServiceIdAndVersionString interface:
 /**
  * @member {String} service_id
  */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
+ServiceIdAndVersionString.prototype['service_id'] = undefined;
 /**
- * @member {Number} version
+ * @member {String} version
  */
-ServiceIdAndVersion.prototype['version'] = undefined;
+ServiceIdAndVersionString.prototype['version'] = undefined;
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.

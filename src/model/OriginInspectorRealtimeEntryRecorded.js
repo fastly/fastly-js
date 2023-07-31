@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OriginInspectorRealtimeEntryRecorded model module.
  * @module model/OriginInspectorRealtimeEntryRecorded
- * @version 5.0.2
+ * @version 6.0.0
  */
 class OriginInspectorRealtimeEntryRecorded {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PoolResponseAllOf model module.
  * @module model/PoolResponseAllOf
- * @version 5.0.2
+ * @version 6.0.0
  */
 class PoolResponseAllOf {
     /**
@@ -46,8 +46,8 @@ class PoolResponseAllOf {
         if (data) {
             obj = obj || new PoolResponseAllOf();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            if (data.hasOwnProperty('quorum')) {
+                obj['quorum'] = ApiClient.convertToType(data['quorum'], 'String');
             }
         }
         return obj;
@@ -57,9 +57,11 @@ class PoolResponseAllOf {
 }
 
 /**
- * @member {String} id
+ * Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
+ * @member {String} quorum
+ * @default '75'
  */
-PoolResponseAllOf.prototype['id'] = undefined;
+PoolResponseAllOf.prototype['quorum'] = '75';
 
 
 

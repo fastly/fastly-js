@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UserResponseReadOnly model module.
  * @module model/UserResponseReadOnly
- * @version 5.0.2
+ * @version 6.0.0
  */
 class UserResponseReadOnly {
     /**

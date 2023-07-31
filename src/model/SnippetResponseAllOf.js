@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SnippetResponseAllOf model module.
  * @module model/SnippetResponseAllOf
- * @version 5.0.2
+ * @version 6.0.0
  */
 class SnippetResponseAllOf {
     /**

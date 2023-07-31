@@ -16,7 +16,7 @@ import TlsActivationResponseData from './TlsActivationResponseData';
 /**
  * The TlsActivationResponse model module.
  * @module model/TlsActivationResponse
- * @version 5.0.2
+ * @version 6.0.0
  */
 class TlsActivationResponse {
     /**

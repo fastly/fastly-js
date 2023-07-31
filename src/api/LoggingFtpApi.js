@@ -18,7 +18,7 @@ import LoggingFtpResponse from '../model/LoggingFtpResponse';
 /**
 * LoggingFtp service.
 * @module api/LoggingFtpApi
-* @version 5.0.2
+* @version 6.0.0
 */
 export default class LoggingFtpApi {
 
@@ -45,22 +45,22 @@ export default class LoggingFtpApi {
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {module:model/String} [options.message_type='classic'] - How the message should be formatted.
      * @param {String} [options.timestamp_format] - A timestamp format
+     * @param {module:model/String} [options.compression_codec] - The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
      * @param {Number} [options.gzip_level=0] - The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:model/String} [options.compression_codec] - The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {String} [options.address] - An hostname or IPv4 address.
      * @param {String} [options.hostname] - Hostname used.
      * @param {String} [options.ipv4] - IPv4 address of the host.
      * @param {String} [options.password] - The password for the server. For anonymous use an email address.
      * @param {String} [options.path] - The path to upload log files to. If the path ends in `/` then it is treated as a directory.
-     * @param {Number} [options.port=21] - The port number.
      * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
      * @param {String} [options.user] - The username for the server. Can be anonymous.
+     * @param {Number} [options.port=21] - The port number.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingFtpResponse} and HTTP response
      */
     createLogFtpWithHttpInfo(options = {}) {
@@ -87,22 +87,22 @@ export default class LoggingFtpApi {
       let formParams = {
         'name': options['name'],
         'placement': options['placement'],
-        'format_version': options['format_version'],
         'response_condition': options['response_condition'],
         'format': options['format'],
+        'format_version': options['format_version'],
         'message_type': options['message_type'],
         'timestamp_format': options['timestamp_format'],
+        'compression_codec': options['compression_codec'],
         'period': options['period'],
         'gzip_level': options['gzip_level'],
-        'compression_codec': options['compression_codec'],
         'address': options['address'],
         'hostname': options['hostname'],
         'ipv4': options['ipv4'],
         'password': options['password'],
         'path': options['path'],
-        'port': options['port'],
         'public_key': options['public_key'],
-        'user': options['user']
+        'user': options['user'],
+        'port': options['port']
       };
 
       let authNames = ['token'];
@@ -132,22 +132,22 @@ export default class LoggingFtpApi {
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {module:model/String} [options.message_type='classic'] - How the message should be formatted.
      * @param {String} [options.timestamp_format] - A timestamp format
+     * @param {module:model/String} [options.compression_codec] - The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
      * @param {Number} [options.gzip_level=0] - The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:model/String} [options.compression_codec] - The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {String} [options.address] - An hostname or IPv4 address.
      * @param {String} [options.hostname] - Hostname used.
      * @param {String} [options.ipv4] - IPv4 address of the host.
      * @param {String} [options.password] - The password for the server. For anonymous use an email address.
      * @param {String} [options.path] - The path to upload log files to. If the path ends in `/` then it is treated as a directory.
-     * @param {Number} [options.port=21] - The port number.
      * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
      * @param {String} [options.user] - The username for the server. Can be anonymous.
+     * @param {Number} [options.port=21] - The port number.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingFtpResponse}
      */
     createLogFtp(options = {}) {
@@ -374,22 +374,22 @@ export default class LoggingFtpApi {
      * @param {String} options.logging_ftp_name - The name for the real-time logging configuration.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {module:model/String} [options.message_type='classic'] - How the message should be formatted.
      * @param {String} [options.timestamp_format] - A timestamp format
+     * @param {module:model/String} [options.compression_codec] - The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
      * @param {Number} [options.gzip_level=0] - The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:model/String} [options.compression_codec] - The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {String} [options.address] - An hostname or IPv4 address.
      * @param {String} [options.hostname] - Hostname used.
      * @param {String} [options.ipv4] - IPv4 address of the host.
      * @param {String} [options.password] - The password for the server. For anonymous use an email address.
      * @param {String} [options.path] - The path to upload log files to. If the path ends in `/` then it is treated as a directory.
-     * @param {Number} [options.port=21] - The port number.
      * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
      * @param {String} [options.user] - The username for the server. Can be anonymous.
+     * @param {Number} [options.port=21] - The port number.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingFtpResponse} and HTTP response
      */
     updateLogFtpWithHttpInfo(options = {}) {
@@ -421,22 +421,22 @@ export default class LoggingFtpApi {
       let formParams = {
         'name': options['name'],
         'placement': options['placement'],
-        'format_version': options['format_version'],
         'response_condition': options['response_condition'],
         'format': options['format'],
+        'format_version': options['format_version'],
         'message_type': options['message_type'],
         'timestamp_format': options['timestamp_format'],
+        'compression_codec': options['compression_codec'],
         'period': options['period'],
         'gzip_level': options['gzip_level'],
-        'compression_codec': options['compression_codec'],
         'address': options['address'],
         'hostname': options['hostname'],
         'ipv4': options['ipv4'],
         'password': options['password'],
         'path': options['path'],
-        'port': options['port'],
         'public_key': options['public_key'],
-        'user': options['user']
+        'user': options['user'],
+        'port': options['port']
       };
 
       let authNames = ['token'];
@@ -467,22 +467,22 @@ export default class LoggingFtpApi {
      * @param {String} options.logging_ftp_name - The name for the real-time logging configuration.
      * @param {String} [options.name] - The name for the real-time logging configuration.
      * @param {module:model/String} [options.placement] - Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
-     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {String} [options.response_condition] - The name of an existing condition in the configured endpoint, or leave blank to always execute.
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+     * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {module:model/String} [options.message_type='classic'] - How the message should be formatted.
      * @param {String} [options.timestamp_format] - A timestamp format
+     * @param {module:model/String} [options.compression_codec] - The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {Number} [options.period=3600] - How frequently log files are finalized so they can be available for reading (in seconds).
      * @param {Number} [options.gzip_level=0] - The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
-     * @param {module:model/String} [options.compression_codec] - The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
      * @param {String} [options.address] - An hostname or IPv4 address.
      * @param {String} [options.hostname] - Hostname used.
      * @param {String} [options.ipv4] - IPv4 address of the host.
      * @param {String} [options.password] - The password for the server. For anonymous use an email address.
      * @param {String} [options.path] - The path to upload log files to. If the path ends in `/` then it is treated as a directory.
-     * @param {Number} [options.port=21] - The port number.
      * @param {String} [options.public_key='null'] - A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
      * @param {String} [options.user] - The username for the server. Can be anonymous.
+     * @param {Number} [options.port=21] - The port number.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingFtpResponse}
      */
     updateLogFtp(options = {}) {

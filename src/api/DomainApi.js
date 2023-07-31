@@ -12,14 +12,13 @@
 
 
 import ApiClient from "../ApiClient";
-import DomainCheckItem from '../model/DomainCheckItem';
 import DomainResponse from '../model/DomainResponse';
 import InlineResponse200 from '../model/InlineResponse200';
 
 /**
 * Domain service.
 * @module api/DomainApi
-* @version 5.0.2
+* @version 6.0.0
 */
 export default class DomainApi {
 
@@ -45,7 +44,7 @@ export default class DomainApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.domain_name - The name of the domain or domains associated with this service.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/DomainCheckItem>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<Object>} and HTTP response
      */
     checkDomainWithHttpInfo(options = {}) {
       let postBody = null;
@@ -79,7 +78,7 @@ export default class DomainApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [DomainCheckItem];
+      let returnType = [Object];
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -102,7 +101,7 @@ export default class DomainApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.domain_name - The name of the domain or domains associated with this service.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/DomainCheckItem>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<Object>}
      */
     checkDomain(options = {}) {
       return this.checkDomainWithHttpInfo(options)

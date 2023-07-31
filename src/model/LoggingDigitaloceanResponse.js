@@ -11,25 +11,29 @@
  */
 
 import ApiClient from '../ApiClient';
-import LoggingDigitalocean from './LoggingDigitalocean';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
+import LoggingCommonResponse from './LoggingCommonResponse';
+import LoggingDigitaloceanAdditional from './LoggingDigitaloceanAdditional';
+import LoggingGenericCommonResponse from './LoggingGenericCommonResponse';
+import ServiceIdAndVersionString from './ServiceIdAndVersionString';
 import Timestamps from './Timestamps';
 
 /**
  * The LoggingDigitaloceanResponse model module.
  * @module model/LoggingDigitaloceanResponse
- * @version 5.0.2
+ * @version 6.0.0
  */
 class LoggingDigitaloceanResponse {
     /**
      * Constructs a new <code>LoggingDigitaloceanResponse</code>.
      * @alias module:model/LoggingDigitaloceanResponse
-     * @implements module:model/LoggingDigitalocean
+     * @implements module:model/LoggingCommonResponse
+     * @implements module:model/LoggingGenericCommonResponse
      * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
+     * @implements module:model/ServiceIdAndVersionString
+     * @implements module:model/LoggingDigitaloceanAdditional
      */
     constructor() { 
-        LoggingDigitalocean.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
+        LoggingCommonResponse.initialize(this);LoggingGenericCommonResponse.initialize(this);Timestamps.initialize(this);ServiceIdAndVersionString.initialize(this);LoggingDigitaloceanAdditional.initialize(this);
         LoggingDigitaloceanResponse.initialize(this);
     }
 
@@ -51,9 +55,11 @@ class LoggingDigitaloceanResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingDigitaloceanResponse();
-            LoggingDigitalocean.constructFromObject(data, obj);
+            LoggingCommonResponse.constructFromObject(data, obj);
+            LoggingGenericCommonResponse.constructFromObject(data, obj);
             Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
+            ServiceIdAndVersionString.constructFromObject(data, obj);
+            LoggingDigitaloceanAdditional.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -61,14 +67,14 @@ class LoggingDigitaloceanResponse {
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = ApiClient.convertToType(data['placement'], 'String');
             }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'Number');
-            }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
             }
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'String');
             }
             if (data.hasOwnProperty('message_type')) {
                 obj['message_type'] = ApiClient.convertToType(data['message_type'], 'String');
@@ -76,14 +82,29 @@ class LoggingDigitaloceanResponse {
             if (data.hasOwnProperty('timestamp_format')) {
                 obj['timestamp_format'] = ApiClient.convertToType(data['timestamp_format'], 'String');
             }
-            if (data.hasOwnProperty('period')) {
-                obj['period'] = ApiClient.convertToType(data['period'], 'Number');
-            }
-            if (data.hasOwnProperty('gzip_level')) {
-                obj['gzip_level'] = ApiClient.convertToType(data['gzip_level'], 'Number');
-            }
             if (data.hasOwnProperty('compression_codec')) {
                 obj['compression_codec'] = ApiClient.convertToType(data['compression_codec'], 'String');
+            }
+            if (data.hasOwnProperty('period')) {
+                obj['period'] = ApiClient.convertToType(data['period'], 'String');
+            }
+            if (data.hasOwnProperty('gzip_level')) {
+                obj['gzip_level'] = ApiClient.convertToType(data['gzip_level'], 'String');
+            }
+            if (data.hasOwnProperty('created_at')) {
+                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
+            }
+            if (data.hasOwnProperty('deleted_at')) {
+                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'Date');
+            }
+            if (data.hasOwnProperty('updated_at')) {
+                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
+            }
+            if (data.hasOwnProperty('service_id')) {
+                obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
+            }
+            if (data.hasOwnProperty('version')) {
+                obj['version'] = ApiClient.convertToType(data['version'], 'String');
             }
             if (data.hasOwnProperty('bucket_name')) {
                 obj['bucket_name'] = ApiClient.convertToType(data['bucket_name'], 'String');
@@ -102,21 +123,6 @@ class LoggingDigitaloceanResponse {
             }
             if (data.hasOwnProperty('public_key')) {
                 obj['public_key'] = ApiClient.convertToType(data['public_key'], 'String');
-            }
-            if (data.hasOwnProperty('created_at')) {
-                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
-            }
-            if (data.hasOwnProperty('deleted_at')) {
-                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'Date');
-            }
-            if (data.hasOwnProperty('updated_at')) {
-                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
-            }
-            if (data.hasOwnProperty('service_id')) {
-                obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
-            }
-            if (data.hasOwnProperty('version')) {
-                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
             }
         }
         return obj;
@@ -138,13 +144,6 @@ LoggingDigitaloceanResponse.prototype['name'] = undefined;
 LoggingDigitaloceanResponse.prototype['placement'] = undefined;
 
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
- * @member {module:model/LoggingDigitaloceanResponse.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingDigitaloceanResponse.prototype['format_version'] = undefined;
-
-/**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
@@ -156,6 +155,13 @@ LoggingDigitaloceanResponse.prototype['response_condition'] = undefined;
  * @default '%h %l %u %t "%r" %&gt;s %b'
  */
 LoggingDigitaloceanResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+ * @member {module:model/LoggingDigitaloceanResponse.FormatVersionEnum} format_version
+ * @default '2'
+ */
+LoggingDigitaloceanResponse.prototype['format_version'] = undefined;
 
 /**
  * How the message should be formatted.
@@ -171,24 +177,52 @@ LoggingDigitaloceanResponse.prototype['message_type'] = undefined;
 LoggingDigitaloceanResponse.prototype['timestamp_format'] = undefined;
 
 /**
- * How frequently log files are finalized so they can be available for reading (in seconds).
- * @member {Number} period
- * @default 3600
- */
-LoggingDigitaloceanResponse.prototype['period'] = 3600;
-
-/**
- * The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {Number} gzip_level
- * @default 0
- */
-LoggingDigitaloceanResponse.prototype['gzip_level'] = 0;
-
-/**
  * The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
  * @member {module:model/LoggingDigitaloceanResponse.CompressionCodecEnum} compression_codec
  */
 LoggingDigitaloceanResponse.prototype['compression_codec'] = undefined;
+
+/**
+ * How frequently log files are finalized so they can be available for reading (in seconds).
+ * @member {String} period
+ * @default '3600'
+ */
+LoggingDigitaloceanResponse.prototype['period'] = '3600';
+
+/**
+ * The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {String} gzip_level
+ * @default '0'
+ */
+LoggingDigitaloceanResponse.prototype['gzip_level'] = '0';
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {Date} created_at
+ */
+LoggingDigitaloceanResponse.prototype['created_at'] = undefined;
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {Date} deleted_at
+ */
+LoggingDigitaloceanResponse.prototype['deleted_at'] = undefined;
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {Date} updated_at
+ */
+LoggingDigitaloceanResponse.prototype['updated_at'] = undefined;
+
+/**
+ * @member {String} service_id
+ */
+LoggingDigitaloceanResponse.prototype['service_id'] = undefined;
+
+/**
+ * @member {String} version
+ */
+LoggingDigitaloceanResponse.prototype['version'] = undefined;
 
 /**
  * The name of the DigitalOcean Space.
@@ -229,124 +263,64 @@ LoggingDigitaloceanResponse.prototype['path'] = 'null';
  */
 LoggingDigitaloceanResponse.prototype['public_key'] = 'null';
 
-/**
- * Date and time in ISO 8601 format.
- * @member {Date} created_at
- */
-LoggingDigitaloceanResponse.prototype['created_at'] = undefined;
 
-/**
- * Date and time in ISO 8601 format.
- * @member {Date} deleted_at
- */
-LoggingDigitaloceanResponse.prototype['deleted_at'] = undefined;
-
-/**
- * Date and time in ISO 8601 format.
- * @member {Date} updated_at
- */
-LoggingDigitaloceanResponse.prototype['updated_at'] = undefined;
-
-/**
- * @member {String} service_id
- */
-LoggingDigitaloceanResponse.prototype['service_id'] = undefined;
-
-/**
- * @member {Number} version
- */
-LoggingDigitaloceanResponse.prototype['version'] = undefined;
-
-
-// Implement LoggingDigitalocean interface:
+// Implement LoggingCommonResponse interface:
 /**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
-LoggingDigitalocean.prototype['name'] = undefined;
+LoggingCommonResponse.prototype['name'] = undefined;
 /**
  * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
- * @member {module:model/LoggingDigitalocean.PlacementEnum} placement
+ * @member {module:model/LoggingCommonResponse.PlacementEnum} placement
  */
-LoggingDigitalocean.prototype['placement'] = undefined;
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
- * @member {module:model/LoggingDigitalocean.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingDigitalocean.prototype['format_version'] = undefined;
+LoggingCommonResponse.prototype['placement'] = undefined;
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
-LoggingDigitalocean.prototype['response_condition'] = undefined;
+LoggingCommonResponse.prototype['response_condition'] = undefined;
 /**
  * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
  * @member {String} format
  * @default '%h %l %u %t "%r" %&gt;s %b'
  */
-LoggingDigitalocean.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+LoggingCommonResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+ * @member {module:model/LoggingCommonResponse.FormatVersionEnum} format_version
+ * @default '2'
+ */
+LoggingCommonResponse.prototype['format_version'] = undefined;
+// Implement LoggingGenericCommonResponse interface:
 /**
  * How the message should be formatted.
- * @member {module:model/LoggingDigitalocean.MessageTypeEnum} message_type
+ * @member {module:model/LoggingGenericCommonResponse.MessageTypeEnum} message_type
  * @default 'classic'
  */
-LoggingDigitalocean.prototype['message_type'] = undefined;
+LoggingGenericCommonResponse.prototype['message_type'] = undefined;
 /**
  * A timestamp format
  * @member {String} timestamp_format
  */
-LoggingDigitalocean.prototype['timestamp_format'] = undefined;
-/**
- * How frequently log files are finalized so they can be available for reading (in seconds).
- * @member {Number} period
- * @default 3600
- */
-LoggingDigitalocean.prototype['period'] = 3600;
-/**
- * The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {Number} gzip_level
- * @default 0
- */
-LoggingDigitalocean.prototype['gzip_level'] = 0;
+LoggingGenericCommonResponse.prototype['timestamp_format'] = undefined;
 /**
  * The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {module:model/LoggingDigitalocean.CompressionCodecEnum} compression_codec
+ * @member {module:model/LoggingGenericCommonResponse.CompressionCodecEnum} compression_codec
  */
-LoggingDigitalocean.prototype['compression_codec'] = undefined;
+LoggingGenericCommonResponse.prototype['compression_codec'] = undefined;
 /**
- * The name of the DigitalOcean Space.
- * @member {String} bucket_name
+ * How frequently log files are finalized so they can be available for reading (in seconds).
+ * @member {String} period
+ * @default '3600'
  */
-LoggingDigitalocean.prototype['bucket_name'] = undefined;
+LoggingGenericCommonResponse.prototype['period'] = '3600';
 /**
- * Your DigitalOcean Spaces account access key.
- * @member {String} access_key
+ * The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {String} gzip_level
+ * @default '0'
  */
-LoggingDigitalocean.prototype['access_key'] = undefined;
-/**
- * Your DigitalOcean Spaces account secret key.
- * @member {String} secret_key
- */
-LoggingDigitalocean.prototype['secret_key'] = undefined;
-/**
- * The domain of the DigitalOcean Spaces endpoint.
- * @member {String} domain
- * @default 'nyc3.digitaloceanspaces.com'
- */
-LoggingDigitalocean.prototype['domain'] = 'nyc3.digitaloceanspaces.com';
-/**
- * The path to upload logs to.
- * @member {String} path
- * @default 'null'
- */
-LoggingDigitalocean.prototype['path'] = 'null';
-/**
- * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
- * @member {String} public_key
- * @default 'null'
- */
-LoggingDigitalocean.prototype['public_key'] = 'null';
+LoggingGenericCommonResponse.prototype['gzip_level'] = '0';
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
@@ -363,15 +337,49 @@ Timestamps.prototype['deleted_at'] = undefined;
  * @member {Date} updated_at
  */
 Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
+// Implement ServiceIdAndVersionString interface:
 /**
  * @member {String} service_id
  */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
+ServiceIdAndVersionString.prototype['service_id'] = undefined;
 /**
- * @member {Number} version
+ * @member {String} version
  */
-ServiceIdAndVersion.prototype['version'] = undefined;
+ServiceIdAndVersionString.prototype['version'] = undefined;
+// Implement LoggingDigitaloceanAdditional interface:
+/**
+ * The name of the DigitalOcean Space.
+ * @member {String} bucket_name
+ */
+LoggingDigitaloceanAdditional.prototype['bucket_name'] = undefined;
+/**
+ * Your DigitalOcean Spaces account access key.
+ * @member {String} access_key
+ */
+LoggingDigitaloceanAdditional.prototype['access_key'] = undefined;
+/**
+ * Your DigitalOcean Spaces account secret key.
+ * @member {String} secret_key
+ */
+LoggingDigitaloceanAdditional.prototype['secret_key'] = undefined;
+/**
+ * The domain of the DigitalOcean Spaces endpoint.
+ * @member {String} domain
+ * @default 'nyc3.digitaloceanspaces.com'
+ */
+LoggingDigitaloceanAdditional.prototype['domain'] = 'nyc3.digitaloceanspaces.com';
+/**
+ * The path to upload logs to.
+ * @member {String} path
+ * @default 'null'
+ */
+LoggingDigitaloceanAdditional.prototype['path'] = 'null';
+/**
+ * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+ * @member {String} public_key
+ * @default 'null'
+ */
+LoggingDigitaloceanAdditional.prototype['public_key'] = 'null';
 
 
 
@@ -404,22 +412,22 @@ LoggingDigitaloceanResponse['PlacementEnum'] = {
 
 /**
  * Allowed values for the <code>format_version</code> property.
- * @enum {Number}
+ * @enum {String}
  * @readonly
  */
 LoggingDigitaloceanResponse['FormatVersionEnum'] = {
 
     /**
-     * value: 1
+     * value: "1"
      * @const
      */
-    "v1": 1,
+    "v1": "1",
 
     /**
-     * value: 2
+     * value: "2"
      * @const
      */
-    "v2": 2
+    "v2": "2"
 };
 
 

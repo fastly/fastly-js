@@ -12,24 +12,24 @@
 
 import ApiClient from '../ApiClient';
 import CacheSetting from './CacheSetting';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
+import ServiceIdAndVersionString from './ServiceIdAndVersionString';
 import Timestamps from './Timestamps';
 
 /**
  * The CacheSettingResponse model module.
  * @module model/CacheSettingResponse
- * @version 5.0.2
+ * @version 6.0.0
  */
 class CacheSettingResponse {
     /**
      * Constructs a new <code>CacheSettingResponse</code>.
      * @alias module:model/CacheSettingResponse
      * @implements module:model/CacheSetting
-     * @implements module:model/ServiceIdAndVersion
+     * @implements module:model/ServiceIdAndVersionString
      * @implements module:model/Timestamps
      */
     constructor() { 
-        CacheSetting.initialize(this);ServiceIdAndVersion.initialize(this);Timestamps.initialize(this);
+        CacheSetting.initialize(this);ServiceIdAndVersionString.initialize(this);Timestamps.initialize(this);
         CacheSettingResponse.initialize(this);
     }
 
@@ -52,7 +52,7 @@ class CacheSettingResponse {
         if (data) {
             obj = obj || new CacheSettingResponse();
             CacheSetting.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
+            ServiceIdAndVersionString.constructFromObject(data, obj);
             Timestamps.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('action')) {
@@ -65,16 +65,16 @@ class CacheSettingResponse {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('stale_ttl')) {
-                obj['stale_ttl'] = ApiClient.convertToType(data['stale_ttl'], 'Number');
+                obj['stale_ttl'] = ApiClient.convertToType(data['stale_ttl'], 'String');
             }
             if (data.hasOwnProperty('ttl')) {
-                obj['ttl'] = ApiClient.convertToType(data['ttl'], 'Number');
+                obj['ttl'] = ApiClient.convertToType(data['ttl'], 'String');
             }
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
             }
             if (data.hasOwnProperty('version')) {
-                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
+                obj['version'] = ApiClient.convertToType(data['version'], 'String');
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
@@ -112,13 +112,13 @@ CacheSettingResponse.prototype['name'] = undefined;
 
 /**
  * Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as 'stale if error').
- * @member {Number} stale_ttl
+ * @member {String} stale_ttl
  */
 CacheSettingResponse.prototype['stale_ttl'] = undefined;
 
 /**
  * Maximum time to consider the object fresh in the cache (the cache 'time to live').
- * @member {Number} ttl
+ * @member {String} ttl
  */
 CacheSettingResponse.prototype['ttl'] = undefined;
 
@@ -128,7 +128,7 @@ CacheSettingResponse.prototype['ttl'] = undefined;
 CacheSettingResponse.prototype['service_id'] = undefined;
 
 /**
- * @member {Number} version
+ * @member {String} version
  */
 CacheSettingResponse.prototype['version'] = undefined;
 
@@ -169,23 +169,23 @@ CacheSetting.prototype['cache_condition'] = undefined;
 CacheSetting.prototype['name'] = undefined;
 /**
  * Maximum time in seconds to continue to use a stale version of the object if future requests to your backend server fail (also known as 'stale if error').
- * @member {Number} stale_ttl
+ * @member {String} stale_ttl
  */
 CacheSetting.prototype['stale_ttl'] = undefined;
 /**
  * Maximum time to consider the object fresh in the cache (the cache 'time to live').
- * @member {Number} ttl
+ * @member {String} ttl
  */
 CacheSetting.prototype['ttl'] = undefined;
-// Implement ServiceIdAndVersion interface:
+// Implement ServiceIdAndVersionString interface:
 /**
  * @member {String} service_id
  */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
+ServiceIdAndVersionString.prototype['service_id'] = undefined;
 /**
- * @member {Number} version
+ * @member {String} version
  */
-ServiceIdAndVersion.prototype['version'] = undefined;
+ServiceIdAndVersionString.prototype['version'] = undefined;
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.

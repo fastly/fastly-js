@@ -11,25 +11,27 @@
  */
 
 import ApiClient from '../ApiClient';
-import LoggingPapertrail from './LoggingPapertrail';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
+import LoggingAddressAndPort from './LoggingAddressAndPort';
+import LoggingCommonResponse from './LoggingCommonResponse';
+import ServiceIdAndVersionString from './ServiceIdAndVersionString';
 import Timestamps from './Timestamps';
 
 /**
  * The LoggingPapertrailResponse model module.
  * @module model/LoggingPapertrailResponse
- * @version 5.0.2
+ * @version 6.0.0
  */
 class LoggingPapertrailResponse {
     /**
      * Constructs a new <code>LoggingPapertrailResponse</code>.
      * @alias module:model/LoggingPapertrailResponse
-     * @implements module:model/LoggingPapertrail
+     * @implements module:model/LoggingCommonResponse
+     * @implements module:model/LoggingAddressAndPort
      * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
+     * @implements module:model/ServiceIdAndVersionString
      */
     constructor() { 
-        LoggingPapertrail.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
+        LoggingCommonResponse.initialize(this);LoggingAddressAndPort.initialize(this);Timestamps.initialize(this);ServiceIdAndVersionString.initialize(this);
         LoggingPapertrailResponse.initialize(this);
     }
 
@@ -51,9 +53,10 @@ class LoggingPapertrailResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingPapertrailResponse();
-            LoggingPapertrail.constructFromObject(data, obj);
+            LoggingCommonResponse.constructFromObject(data, obj);
+            LoggingAddressAndPort.constructFromObject(data, obj);
             Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
+            ServiceIdAndVersionString.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -61,14 +64,14 @@ class LoggingPapertrailResponse {
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = ApiClient.convertToType(data['placement'], 'String');
             }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'Number');
-            }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
             }
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'String');
             }
             if (data.hasOwnProperty('address')) {
                 obj['address'] = ApiClient.convertToType(data['address'], 'String');
@@ -89,7 +92,7 @@ class LoggingPapertrailResponse {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
             }
             if (data.hasOwnProperty('version')) {
-                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
+                obj['version'] = ApiClient.convertToType(data['version'], 'String');
             }
         }
         return obj;
@@ -111,13 +114,6 @@ LoggingPapertrailResponse.prototype['name'] = undefined;
 LoggingPapertrailResponse.prototype['placement'] = undefined;
 
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
- * @member {module:model/LoggingPapertrailResponse.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingPapertrailResponse.prototype['format_version'] = undefined;
-
-/**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
@@ -129,6 +125,13 @@ LoggingPapertrailResponse.prototype['response_condition'] = undefined;
  * @default '%h %l %u %t "%r" %&gt;s %b'
  */
 LoggingPapertrailResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+ * @member {module:model/LoggingPapertrailResponse.FormatVersionEnum} format_version
+ * @default '2'
+ */
+LoggingPapertrailResponse.prototype['format_version'] = undefined;
 
 /**
  * A hostname or IPv4 address.
@@ -167,50 +170,51 @@ LoggingPapertrailResponse.prototype['updated_at'] = undefined;
 LoggingPapertrailResponse.prototype['service_id'] = undefined;
 
 /**
- * @member {Number} version
+ * @member {String} version
  */
 LoggingPapertrailResponse.prototype['version'] = undefined;
 
 
-// Implement LoggingPapertrail interface:
+// Implement LoggingCommonResponse interface:
 /**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
-LoggingPapertrail.prototype['name'] = undefined;
+LoggingCommonResponse.prototype['name'] = undefined;
 /**
  * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
- * @member {module:model/LoggingPapertrail.PlacementEnum} placement
+ * @member {module:model/LoggingCommonResponse.PlacementEnum} placement
  */
-LoggingPapertrail.prototype['placement'] = undefined;
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
- * @member {module:model/LoggingPapertrail.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingPapertrail.prototype['format_version'] = undefined;
+LoggingCommonResponse.prototype['placement'] = undefined;
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
-LoggingPapertrail.prototype['response_condition'] = undefined;
+LoggingCommonResponse.prototype['response_condition'] = undefined;
 /**
  * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
  * @member {String} format
  * @default '%h %l %u %t "%r" %&gt;s %b'
  */
-LoggingPapertrail.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+LoggingCommonResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+ * @member {module:model/LoggingCommonResponse.FormatVersionEnum} format_version
+ * @default '2'
+ */
+LoggingCommonResponse.prototype['format_version'] = undefined;
+// Implement LoggingAddressAndPort interface:
 /**
  * A hostname or IPv4 address.
  * @member {String} address
  */
-LoggingPapertrail.prototype['address'] = undefined;
+LoggingAddressAndPort.prototype['address'] = undefined;
 /**
  * The port number.
  * @member {Number} port
  * @default 514
  */
-LoggingPapertrail.prototype['port'] = 514;
+LoggingAddressAndPort.prototype['port'] = 514;
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
@@ -227,15 +231,15 @@ Timestamps.prototype['deleted_at'] = undefined;
  * @member {Date} updated_at
  */
 Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
+// Implement ServiceIdAndVersionString interface:
 /**
  * @member {String} service_id
  */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
+ServiceIdAndVersionString.prototype['service_id'] = undefined;
 /**
- * @member {Number} version
+ * @member {String} version
  */
-ServiceIdAndVersion.prototype['version'] = undefined;
+ServiceIdAndVersionString.prototype['version'] = undefined;
 
 
 
@@ -268,22 +272,22 @@ LoggingPapertrailResponse['PlacementEnum'] = {
 
 /**
  * Allowed values for the <code>format_version</code> property.
- * @enum {Number}
+ * @enum {String}
  * @readonly
  */
 LoggingPapertrailResponse['FormatVersionEnum'] = {
 
     /**
-     * value: 1
+     * value: "1"
      * @const
      */
-    "v1": 1,
+    "v1": "1",
 
     /**
-     * value: 2
+     * value: "2"
      * @const
      */
-    "v2": 2
+    "v2": "2"
 };
 
 

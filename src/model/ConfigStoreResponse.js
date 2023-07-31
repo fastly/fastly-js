@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The ConfigStoreResponse model module.
  * @module model/ConfigStoreResponse
- * @version 5.0.2
+ * @version 6.0.0
  */
 class ConfigStoreResponse {
     /**

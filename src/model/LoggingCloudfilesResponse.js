@@ -11,25 +11,29 @@
  */
 
 import ApiClient from '../ApiClient';
-import LoggingCloudfiles from './LoggingCloudfiles';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
+import LoggingCloudfilesAdditional from './LoggingCloudfilesAdditional';
+import LoggingCommonResponse from './LoggingCommonResponse';
+import LoggingGenericCommonResponse from './LoggingGenericCommonResponse';
+import ServiceIdAndVersionString from './ServiceIdAndVersionString';
 import Timestamps from './Timestamps';
 
 /**
  * The LoggingCloudfilesResponse model module.
  * @module model/LoggingCloudfilesResponse
- * @version 5.0.2
+ * @version 6.0.0
  */
 class LoggingCloudfilesResponse {
     /**
      * Constructs a new <code>LoggingCloudfilesResponse</code>.
      * @alias module:model/LoggingCloudfilesResponse
-     * @implements module:model/LoggingCloudfiles
+     * @implements module:model/LoggingCommonResponse
+     * @implements module:model/LoggingGenericCommonResponse
      * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
+     * @implements module:model/ServiceIdAndVersionString
+     * @implements module:model/LoggingCloudfilesAdditional
      */
     constructor() { 
-        LoggingCloudfiles.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
+        LoggingCommonResponse.initialize(this);LoggingGenericCommonResponse.initialize(this);Timestamps.initialize(this);ServiceIdAndVersionString.initialize(this);LoggingCloudfilesAdditional.initialize(this);
         LoggingCloudfilesResponse.initialize(this);
     }
 
@@ -51,9 +55,11 @@ class LoggingCloudfilesResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingCloudfilesResponse();
-            LoggingCloudfiles.constructFromObject(data, obj);
+            LoggingCommonResponse.constructFromObject(data, obj);
+            LoggingGenericCommonResponse.constructFromObject(data, obj);
             Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
+            ServiceIdAndVersionString.constructFromObject(data, obj);
+            LoggingCloudfilesAdditional.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -61,14 +67,14 @@ class LoggingCloudfilesResponse {
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = ApiClient.convertToType(data['placement'], 'String');
             }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'Number');
-            }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
             }
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'String');
             }
             if (data.hasOwnProperty('message_type')) {
                 obj['message_type'] = ApiClient.convertToType(data['message_type'], 'String');
@@ -76,14 +82,29 @@ class LoggingCloudfilesResponse {
             if (data.hasOwnProperty('timestamp_format')) {
                 obj['timestamp_format'] = ApiClient.convertToType(data['timestamp_format'], 'String');
             }
-            if (data.hasOwnProperty('period')) {
-                obj['period'] = ApiClient.convertToType(data['period'], 'Number');
-            }
-            if (data.hasOwnProperty('gzip_level')) {
-                obj['gzip_level'] = ApiClient.convertToType(data['gzip_level'], 'Number');
-            }
             if (data.hasOwnProperty('compression_codec')) {
                 obj['compression_codec'] = ApiClient.convertToType(data['compression_codec'], 'String');
+            }
+            if (data.hasOwnProperty('period')) {
+                obj['period'] = ApiClient.convertToType(data['period'], 'String');
+            }
+            if (data.hasOwnProperty('gzip_level')) {
+                obj['gzip_level'] = ApiClient.convertToType(data['gzip_level'], 'String');
+            }
+            if (data.hasOwnProperty('created_at')) {
+                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
+            }
+            if (data.hasOwnProperty('deleted_at')) {
+                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'Date');
+            }
+            if (data.hasOwnProperty('updated_at')) {
+                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
+            }
+            if (data.hasOwnProperty('service_id')) {
+                obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
+            }
+            if (data.hasOwnProperty('version')) {
+                obj['version'] = ApiClient.convertToType(data['version'], 'String');
             }
             if (data.hasOwnProperty('access_key')) {
                 obj['access_key'] = ApiClient.convertToType(data['access_key'], 'String');
@@ -102,21 +123,6 @@ class LoggingCloudfilesResponse {
             }
             if (data.hasOwnProperty('user')) {
                 obj['user'] = ApiClient.convertToType(data['user'], 'String');
-            }
-            if (data.hasOwnProperty('created_at')) {
-                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
-            }
-            if (data.hasOwnProperty('deleted_at')) {
-                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'Date');
-            }
-            if (data.hasOwnProperty('updated_at')) {
-                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
-            }
-            if (data.hasOwnProperty('service_id')) {
-                obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
-            }
-            if (data.hasOwnProperty('version')) {
-                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
             }
         }
         return obj;
@@ -138,13 +144,6 @@ LoggingCloudfilesResponse.prototype['name'] = undefined;
 LoggingCloudfilesResponse.prototype['placement'] = undefined;
 
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
- * @member {module:model/LoggingCloudfilesResponse.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingCloudfilesResponse.prototype['format_version'] = undefined;
-
-/**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
@@ -156,6 +155,13 @@ LoggingCloudfilesResponse.prototype['response_condition'] = undefined;
  * @default '%h %l %u %t "%r" %&gt;s %b'
  */
 LoggingCloudfilesResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+ * @member {module:model/LoggingCloudfilesResponse.FormatVersionEnum} format_version
+ * @default '2'
+ */
+LoggingCloudfilesResponse.prototype['format_version'] = undefined;
 
 /**
  * How the message should be formatted.
@@ -171,24 +177,52 @@ LoggingCloudfilesResponse.prototype['message_type'] = undefined;
 LoggingCloudfilesResponse.prototype['timestamp_format'] = undefined;
 
 /**
- * How frequently log files are finalized so they can be available for reading (in seconds).
- * @member {Number} period
- * @default 3600
- */
-LoggingCloudfilesResponse.prototype['period'] = 3600;
-
-/**
- * The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {Number} gzip_level
- * @default 0
- */
-LoggingCloudfilesResponse.prototype['gzip_level'] = 0;
-
-/**
  * The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
  * @member {module:model/LoggingCloudfilesResponse.CompressionCodecEnum} compression_codec
  */
 LoggingCloudfilesResponse.prototype['compression_codec'] = undefined;
+
+/**
+ * How frequently log files are finalized so they can be available for reading (in seconds).
+ * @member {String} period
+ * @default '3600'
+ */
+LoggingCloudfilesResponse.prototype['period'] = '3600';
+
+/**
+ * The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {String} gzip_level
+ * @default '0'
+ */
+LoggingCloudfilesResponse.prototype['gzip_level'] = '0';
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {Date} created_at
+ */
+LoggingCloudfilesResponse.prototype['created_at'] = undefined;
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {Date} deleted_at
+ */
+LoggingCloudfilesResponse.prototype['deleted_at'] = undefined;
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {Date} updated_at
+ */
+LoggingCloudfilesResponse.prototype['updated_at'] = undefined;
+
+/**
+ * @member {String} service_id
+ */
+LoggingCloudfilesResponse.prototype['service_id'] = undefined;
+
+/**
+ * @member {String} version
+ */
+LoggingCloudfilesResponse.prototype['version'] = undefined;
 
 /**
  * Your Cloud Files account access key.
@@ -228,123 +262,64 @@ LoggingCloudfilesResponse.prototype['public_key'] = 'null';
  */
 LoggingCloudfilesResponse.prototype['user'] = undefined;
 
-/**
- * Date and time in ISO 8601 format.
- * @member {Date} created_at
- */
-LoggingCloudfilesResponse.prototype['created_at'] = undefined;
 
-/**
- * Date and time in ISO 8601 format.
- * @member {Date} deleted_at
- */
-LoggingCloudfilesResponse.prototype['deleted_at'] = undefined;
-
-/**
- * Date and time in ISO 8601 format.
- * @member {Date} updated_at
- */
-LoggingCloudfilesResponse.prototype['updated_at'] = undefined;
-
-/**
- * @member {String} service_id
- */
-LoggingCloudfilesResponse.prototype['service_id'] = undefined;
-
-/**
- * @member {Number} version
- */
-LoggingCloudfilesResponse.prototype['version'] = undefined;
-
-
-// Implement LoggingCloudfiles interface:
+// Implement LoggingCommonResponse interface:
 /**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
-LoggingCloudfiles.prototype['name'] = undefined;
+LoggingCommonResponse.prototype['name'] = undefined;
 /**
  * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
- * @member {module:model/LoggingCloudfiles.PlacementEnum} placement
+ * @member {module:model/LoggingCommonResponse.PlacementEnum} placement
  */
-LoggingCloudfiles.prototype['placement'] = undefined;
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
- * @member {module:model/LoggingCloudfiles.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingCloudfiles.prototype['format_version'] = undefined;
+LoggingCommonResponse.prototype['placement'] = undefined;
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
-LoggingCloudfiles.prototype['response_condition'] = undefined;
+LoggingCommonResponse.prototype['response_condition'] = undefined;
 /**
  * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
  * @member {String} format
  * @default '%h %l %u %t "%r" %&gt;s %b'
  */
-LoggingCloudfiles.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+LoggingCommonResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+ * @member {module:model/LoggingCommonResponse.FormatVersionEnum} format_version
+ * @default '2'
+ */
+LoggingCommonResponse.prototype['format_version'] = undefined;
+// Implement LoggingGenericCommonResponse interface:
 /**
  * How the message should be formatted.
- * @member {module:model/LoggingCloudfiles.MessageTypeEnum} message_type
+ * @member {module:model/LoggingGenericCommonResponse.MessageTypeEnum} message_type
  * @default 'classic'
  */
-LoggingCloudfiles.prototype['message_type'] = undefined;
+LoggingGenericCommonResponse.prototype['message_type'] = undefined;
 /**
  * A timestamp format
  * @member {String} timestamp_format
  */
-LoggingCloudfiles.prototype['timestamp_format'] = undefined;
-/**
- * How frequently log files are finalized so they can be available for reading (in seconds).
- * @member {Number} period
- * @default 3600
- */
-LoggingCloudfiles.prototype['period'] = 3600;
-/**
- * The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {Number} gzip_level
- * @default 0
- */
-LoggingCloudfiles.prototype['gzip_level'] = 0;
+LoggingGenericCommonResponse.prototype['timestamp_format'] = undefined;
 /**
  * The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {module:model/LoggingCloudfiles.CompressionCodecEnum} compression_codec
+ * @member {module:model/LoggingGenericCommonResponse.CompressionCodecEnum} compression_codec
  */
-LoggingCloudfiles.prototype['compression_codec'] = undefined;
+LoggingGenericCommonResponse.prototype['compression_codec'] = undefined;
 /**
- * Your Cloud Files account access key.
- * @member {String} access_key
+ * How frequently log files are finalized so they can be available for reading (in seconds).
+ * @member {String} period
+ * @default '3600'
  */
-LoggingCloudfiles.prototype['access_key'] = undefined;
+LoggingGenericCommonResponse.prototype['period'] = '3600';
 /**
- * The name of your Cloud Files container.
- * @member {String} bucket_name
+ * The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {String} gzip_level
+ * @default '0'
  */
-LoggingCloudfiles.prototype['bucket_name'] = undefined;
-/**
- * The path to upload logs to.
- * @member {String} path
- * @default 'null'
- */
-LoggingCloudfiles.prototype['path'] = 'null';
-/**
- * The region to stream logs to.
- * @member {module:model/LoggingCloudfiles.RegionEnum} region
- */
-LoggingCloudfiles.prototype['region'] = undefined;
-/**
- * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
- * @member {String} public_key
- * @default 'null'
- */
-LoggingCloudfiles.prototype['public_key'] = 'null';
-/**
- * The username for your Cloud Files account.
- * @member {String} user
- */
-LoggingCloudfiles.prototype['user'] = undefined;
+LoggingGenericCommonResponse.prototype['gzip_level'] = '0';
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
@@ -361,15 +336,48 @@ Timestamps.prototype['deleted_at'] = undefined;
  * @member {Date} updated_at
  */
 Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
+// Implement ServiceIdAndVersionString interface:
 /**
  * @member {String} service_id
  */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
+ServiceIdAndVersionString.prototype['service_id'] = undefined;
 /**
- * @member {Number} version
+ * @member {String} version
  */
-ServiceIdAndVersion.prototype['version'] = undefined;
+ServiceIdAndVersionString.prototype['version'] = undefined;
+// Implement LoggingCloudfilesAdditional interface:
+/**
+ * Your Cloud Files account access key.
+ * @member {String} access_key
+ */
+LoggingCloudfilesAdditional.prototype['access_key'] = undefined;
+/**
+ * The name of your Cloud Files container.
+ * @member {String} bucket_name
+ */
+LoggingCloudfilesAdditional.prototype['bucket_name'] = undefined;
+/**
+ * The path to upload logs to.
+ * @member {String} path
+ * @default 'null'
+ */
+LoggingCloudfilesAdditional.prototype['path'] = 'null';
+/**
+ * The region to stream logs to.
+ * @member {module:model/LoggingCloudfilesAdditional.RegionEnum} region
+ */
+LoggingCloudfilesAdditional.prototype['region'] = undefined;
+/**
+ * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+ * @member {String} public_key
+ * @default 'null'
+ */
+LoggingCloudfilesAdditional.prototype['public_key'] = 'null';
+/**
+ * The username for your Cloud Files account.
+ * @member {String} user
+ */
+LoggingCloudfilesAdditional.prototype['user'] = undefined;
 
 
 
@@ -402,22 +410,22 @@ LoggingCloudfilesResponse['PlacementEnum'] = {
 
 /**
  * Allowed values for the <code>format_version</code> property.
- * @enum {Number}
+ * @enum {String}
  * @readonly
  */
 LoggingCloudfilesResponse['FormatVersionEnum'] = {
 
     /**
-     * value: 1
+     * value: "1"
      * @const
      */
-    "v1": 1,
+    "v1": "1",
 
     /**
-     * value: 2
+     * value: "2"
      * @const
      */
-    "v2": 2
+    "v2": "2"
 };
 
 

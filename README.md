@@ -4,6 +4,7 @@ An asynchronous JavaScript client library for interacting with most facets of th
 
 > **NOTE:** This API client is auto-generated from Fastly's OpenAPI specification and may not function correctly when used on the Compute@Edge platform. Support for Compute@Edge is on the roadmap but has not yet been prioritised.
 
+
 ## Usage
 
 ```javascript

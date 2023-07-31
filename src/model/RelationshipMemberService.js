@@ -16,7 +16,7 @@ import TypeService from './TypeService';
 /**
  * The RelationshipMemberService model module.
  * @module model/RelationshipMemberService
- * @version 5.0.2
+ * @version 6.0.0
  */
 class RelationshipMemberService {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WsMessageFormat model module.
  * @module model/WsMessageFormat
- * @version 5.0.2
+ * @version 6.0.0
  */
 class WsMessageFormat {
     /**

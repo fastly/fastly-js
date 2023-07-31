@@ -11,25 +11,29 @@
  */
 
 import ApiClient from '../ApiClient';
-import LoggingBigquery from './LoggingBigquery';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
+import LoggingBigqueryAdditional from './LoggingBigqueryAdditional';
+import LoggingCommonResponse from './LoggingCommonResponse';
+import LoggingGcsCommon from './LoggingGcsCommon';
+import ServiceIdAndVersionString from './ServiceIdAndVersionString';
 import Timestamps from './Timestamps';
 
 /**
  * The LoggingBigqueryResponse model module.
  * @module model/LoggingBigqueryResponse
- * @version 5.0.2
+ * @version 6.0.0
  */
 class LoggingBigqueryResponse {
     /**
      * Constructs a new <code>LoggingBigqueryResponse</code>.
      * @alias module:model/LoggingBigqueryResponse
-     * @implements module:model/LoggingBigquery
+     * @implements module:model/LoggingCommonResponse
+     * @implements module:model/LoggingGcsCommon
+     * @implements module:model/LoggingBigqueryAdditional
      * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
+     * @implements module:model/ServiceIdAndVersionString
      */
     constructor() { 
-        LoggingBigquery.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
+        LoggingCommonResponse.initialize(this);LoggingGcsCommon.initialize(this);LoggingBigqueryAdditional.initialize(this);Timestamps.initialize(this);ServiceIdAndVersionString.initialize(this);
         LoggingBigqueryResponse.initialize(this);
     }
 
@@ -51,9 +55,11 @@ class LoggingBigqueryResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingBigqueryResponse();
-            LoggingBigquery.constructFromObject(data, obj);
+            LoggingCommonResponse.constructFromObject(data, obj);
+            LoggingGcsCommon.constructFromObject(data, obj);
+            LoggingBigqueryAdditional.constructFromObject(data, obj);
             Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
+            ServiceIdAndVersionString.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -61,14 +67,14 @@ class LoggingBigqueryResponse {
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = ApiClient.convertToType(data['placement'], 'String');
             }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'Number');
-            }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
             }
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'String');
             }
             if (data.hasOwnProperty('user')) {
                 obj['user'] = ApiClient.convertToType(data['user'], 'String');
@@ -104,7 +110,7 @@ class LoggingBigqueryResponse {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
             }
             if (data.hasOwnProperty('version')) {
-                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
+                obj['version'] = ApiClient.convertToType(data['version'], 'String');
             }
         }
         return obj;
@@ -126,13 +132,6 @@ LoggingBigqueryResponse.prototype['name'] = undefined;
 LoggingBigqueryResponse.prototype['placement'] = undefined;
 
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
- * @member {module:model/LoggingBigqueryResponse.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingBigqueryResponse.prototype['format_version'] = undefined;
-
-/**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
@@ -143,6 +142,13 @@ LoggingBigqueryResponse.prototype['response_condition'] = undefined;
  * @member {String} format
  */
 LoggingBigqueryResponse.prototype['format'] = undefined;
+
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+ * @member {module:model/LoggingBigqueryResponse.FormatVersionEnum} format_version
+ * @default '2'
+ */
+LoggingBigqueryResponse.prototype['format_version'] = undefined;
 
 /**
  * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Not required if `account_name` is specified.
@@ -210,73 +216,86 @@ LoggingBigqueryResponse.prototype['updated_at'] = undefined;
 LoggingBigqueryResponse.prototype['service_id'] = undefined;
 
 /**
- * @member {Number} version
+ * @member {String} version
  */
 LoggingBigqueryResponse.prototype['version'] = undefined;
 
 
-// Implement LoggingBigquery interface:
+// Implement LoggingCommonResponse interface:
 /**
- * The name of the BigQuery logging object. Used as a primary key for API access.
+ * The name for the real-time logging configuration.
  * @member {String} name
  */
-LoggingBigquery.prototype['name'] = undefined;
+LoggingCommonResponse.prototype['name'] = undefined;
 /**
  * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
- * @member {module:model/LoggingBigquery.PlacementEnum} placement
+ * @member {module:model/LoggingCommonResponse.PlacementEnum} placement
  */
-LoggingBigquery.prototype['placement'] = undefined;
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
- * @member {module:model/LoggingBigquery.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingBigquery.prototype['format_version'] = undefined;
+LoggingCommonResponse.prototype['placement'] = undefined;
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
-LoggingBigquery.prototype['response_condition'] = undefined;
+LoggingCommonResponse.prototype['response_condition'] = undefined;
 /**
- * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
  * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
  */
-LoggingBigquery.prototype['format'] = undefined;
+LoggingCommonResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+ * @member {module:model/LoggingCommonResponse.FormatVersionEnum} format_version
+ * @default '2'
+ */
+LoggingCommonResponse.prototype['format_version'] = undefined;
+// Implement LoggingGcsCommon interface:
 /**
  * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Not required if `account_name` is specified.
  * @member {String} user
  */
-LoggingBigquery.prototype['user'] = undefined;
+LoggingGcsCommon.prototype['user'] = undefined;
 /**
  * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified.
  * @member {String} secret_key
  */
-LoggingBigquery.prototype['secret_key'] = undefined;
+LoggingGcsCommon.prototype['secret_key'] = undefined;
 /**
  * The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided.
  * @member {String} account_name
  */
-LoggingBigquery.prototype['account_name'] = undefined;
+LoggingGcsCommon.prototype['account_name'] = undefined;
+// Implement LoggingBigqueryAdditional interface:
+/**
+ * The name of the BigQuery logging object. Used as a primary key for API access.
+ * @member {String} name
+ */
+LoggingBigqueryAdditional.prototype['name'] = undefined;
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). Must produce JSON that matches the schema of your BigQuery table.
+ * @member {String} format
+ */
+LoggingBigqueryAdditional.prototype['format'] = undefined;
 /**
  * Your BigQuery dataset.
  * @member {String} dataset
  */
-LoggingBigquery.prototype['dataset'] = undefined;
+LoggingBigqueryAdditional.prototype['dataset'] = undefined;
 /**
  * Your BigQuery table.
  * @member {String} table
  */
-LoggingBigquery.prototype['table'] = undefined;
+LoggingBigqueryAdditional.prototype['table'] = undefined;
 /**
  * BigQuery table name suffix template. Optional.
  * @member {String} template_suffix
  */
-LoggingBigquery.prototype['template_suffix'] = undefined;
+LoggingBigqueryAdditional.prototype['template_suffix'] = undefined;
 /**
  * Your Google Cloud Platform project ID. Required
  * @member {String} project_id
  */
-LoggingBigquery.prototype['project_id'] = undefined;
+LoggingBigqueryAdditional.prototype['project_id'] = undefined;
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
@@ -293,15 +312,15 @@ Timestamps.prototype['deleted_at'] = undefined;
  * @member {Date} updated_at
  */
 Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
+// Implement ServiceIdAndVersionString interface:
 /**
  * @member {String} service_id
  */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
+ServiceIdAndVersionString.prototype['service_id'] = undefined;
 /**
- * @member {Number} version
+ * @member {String} version
  */
-ServiceIdAndVersion.prototype['version'] = undefined;
+ServiceIdAndVersionString.prototype['version'] = undefined;
 
 
 
@@ -334,22 +353,22 @@ LoggingBigqueryResponse['PlacementEnum'] = {
 
 /**
  * Allowed values for the <code>format_version</code> property.
- * @enum {Number}
+ * @enum {String}
  * @readonly
  */
 LoggingBigqueryResponse['FormatVersionEnum'] = {
 
     /**
-     * value: 1
+     * value: "1"
      * @const
      */
-    "v1": 1,
+    "v1": "1",
 
     /**
-     * value: 2
+     * value: "2"
      * @const
      */
-    "v2": 2
+    "v2": "2"
 };
 
 

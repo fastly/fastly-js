@@ -11,25 +11,29 @@
  */
 
 import ApiClient from '../ApiClient';
-import LoggingAzureblob from './LoggingAzureblob';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
+import LoggingAzureblobAdditional from './LoggingAzureblobAdditional';
+import LoggingCommonResponse from './LoggingCommonResponse';
+import LoggingGenericCommonResponse from './LoggingGenericCommonResponse';
+import ServiceIdAndVersionString from './ServiceIdAndVersionString';
 import Timestamps from './Timestamps';
 
 /**
  * The LoggingAzureblobResponse model module.
  * @module model/LoggingAzureblobResponse
- * @version 5.0.2
+ * @version 6.0.0
  */
 class LoggingAzureblobResponse {
     /**
      * Constructs a new <code>LoggingAzureblobResponse</code>.
      * @alias module:model/LoggingAzureblobResponse
-     * @implements module:model/LoggingAzureblob
+     * @implements module:model/LoggingCommonResponse
+     * @implements module:model/LoggingGenericCommonResponse
      * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
+     * @implements module:model/ServiceIdAndVersionString
+     * @implements module:model/LoggingAzureblobAdditional
      */
     constructor() { 
-        LoggingAzureblob.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
+        LoggingCommonResponse.initialize(this);LoggingGenericCommonResponse.initialize(this);Timestamps.initialize(this);ServiceIdAndVersionString.initialize(this);LoggingAzureblobAdditional.initialize(this);
         LoggingAzureblobResponse.initialize(this);
     }
 
@@ -51,9 +55,11 @@ class LoggingAzureblobResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingAzureblobResponse();
-            LoggingAzureblob.constructFromObject(data, obj);
+            LoggingCommonResponse.constructFromObject(data, obj);
+            LoggingGenericCommonResponse.constructFromObject(data, obj);
             Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
+            ServiceIdAndVersionString.constructFromObject(data, obj);
+            LoggingAzureblobAdditional.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -61,14 +67,14 @@ class LoggingAzureblobResponse {
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = ApiClient.convertToType(data['placement'], 'String');
             }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'Number');
-            }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
             }
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'String');
             }
             if (data.hasOwnProperty('message_type')) {
                 obj['message_type'] = ApiClient.convertToType(data['message_type'], 'String');
@@ -76,14 +82,29 @@ class LoggingAzureblobResponse {
             if (data.hasOwnProperty('timestamp_format')) {
                 obj['timestamp_format'] = ApiClient.convertToType(data['timestamp_format'], 'String');
             }
-            if (data.hasOwnProperty('period')) {
-                obj['period'] = ApiClient.convertToType(data['period'], 'Number');
-            }
-            if (data.hasOwnProperty('gzip_level')) {
-                obj['gzip_level'] = ApiClient.convertToType(data['gzip_level'], 'Number');
-            }
             if (data.hasOwnProperty('compression_codec')) {
                 obj['compression_codec'] = ApiClient.convertToType(data['compression_codec'], 'String');
+            }
+            if (data.hasOwnProperty('period')) {
+                obj['period'] = ApiClient.convertToType(data['period'], 'String');
+            }
+            if (data.hasOwnProperty('gzip_level')) {
+                obj['gzip_level'] = ApiClient.convertToType(data['gzip_level'], 'String');
+            }
+            if (data.hasOwnProperty('created_at')) {
+                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
+            }
+            if (data.hasOwnProperty('deleted_at')) {
+                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'Date');
+            }
+            if (data.hasOwnProperty('updated_at')) {
+                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
+            }
+            if (data.hasOwnProperty('service_id')) {
+                obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
+            }
+            if (data.hasOwnProperty('version')) {
+                obj['version'] = ApiClient.convertToType(data['version'], 'String');
             }
             if (data.hasOwnProperty('path')) {
                 obj['path'] = ApiClient.convertToType(data['path'], 'String');
@@ -102,21 +123,6 @@ class LoggingAzureblobResponse {
             }
             if (data.hasOwnProperty('file_max_bytes')) {
                 obj['file_max_bytes'] = ApiClient.convertToType(data['file_max_bytes'], 'Number');
-            }
-            if (data.hasOwnProperty('created_at')) {
-                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
-            }
-            if (data.hasOwnProperty('deleted_at')) {
-                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'Date');
-            }
-            if (data.hasOwnProperty('updated_at')) {
-                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
-            }
-            if (data.hasOwnProperty('service_id')) {
-                obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
-            }
-            if (data.hasOwnProperty('version')) {
-                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
             }
         }
         return obj;
@@ -138,13 +144,6 @@ LoggingAzureblobResponse.prototype['name'] = undefined;
 LoggingAzureblobResponse.prototype['placement'] = undefined;
 
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
- * @member {module:model/LoggingAzureblobResponse.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingAzureblobResponse.prototype['format_version'] = undefined;
-
-/**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
@@ -156,6 +155,13 @@ LoggingAzureblobResponse.prototype['response_condition'] = undefined;
  * @default '%h %l %u %t "%r" %&gt;s %b'
  */
 LoggingAzureblobResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+ * @member {module:model/LoggingAzureblobResponse.FormatVersionEnum} format_version
+ * @default '2'
+ */
+LoggingAzureblobResponse.prototype['format_version'] = undefined;
 
 /**
  * How the message should be formatted.
@@ -171,24 +177,52 @@ LoggingAzureblobResponse.prototype['message_type'] = undefined;
 LoggingAzureblobResponse.prototype['timestamp_format'] = undefined;
 
 /**
- * How frequently log files are finalized so they can be available for reading (in seconds).
- * @member {Number} period
- * @default 3600
- */
-LoggingAzureblobResponse.prototype['period'] = 3600;
-
-/**
- * The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {Number} gzip_level
- * @default 0
- */
-LoggingAzureblobResponse.prototype['gzip_level'] = 0;
-
-/**
  * The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
  * @member {module:model/LoggingAzureblobResponse.CompressionCodecEnum} compression_codec
  */
 LoggingAzureblobResponse.prototype['compression_codec'] = undefined;
+
+/**
+ * How frequently log files are finalized so they can be available for reading (in seconds).
+ * @member {String} period
+ * @default '3600'
+ */
+LoggingAzureblobResponse.prototype['period'] = '3600';
+
+/**
+ * The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {String} gzip_level
+ * @default '0'
+ */
+LoggingAzureblobResponse.prototype['gzip_level'] = '0';
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {Date} created_at
+ */
+LoggingAzureblobResponse.prototype['created_at'] = undefined;
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {Date} deleted_at
+ */
+LoggingAzureblobResponse.prototype['deleted_at'] = undefined;
+
+/**
+ * Date and time in ISO 8601 format.
+ * @member {Date} updated_at
+ */
+LoggingAzureblobResponse.prototype['updated_at'] = undefined;
+
+/**
+ * @member {String} service_id
+ */
+LoggingAzureblobResponse.prototype['service_id'] = undefined;
+
+/**
+ * @member {String} version
+ */
+LoggingAzureblobResponse.prototype['version'] = undefined;
 
 /**
  * The path to upload logs to.
@@ -228,123 +262,64 @@ LoggingAzureblobResponse.prototype['public_key'] = 'null';
  */
 LoggingAzureblobResponse.prototype['file_max_bytes'] = undefined;
 
-/**
- * Date and time in ISO 8601 format.
- * @member {Date} created_at
- */
-LoggingAzureblobResponse.prototype['created_at'] = undefined;
 
-/**
- * Date and time in ISO 8601 format.
- * @member {Date} deleted_at
- */
-LoggingAzureblobResponse.prototype['deleted_at'] = undefined;
-
-/**
- * Date and time in ISO 8601 format.
- * @member {Date} updated_at
- */
-LoggingAzureblobResponse.prototype['updated_at'] = undefined;
-
-/**
- * @member {String} service_id
- */
-LoggingAzureblobResponse.prototype['service_id'] = undefined;
-
-/**
- * @member {Number} version
- */
-LoggingAzureblobResponse.prototype['version'] = undefined;
-
-
-// Implement LoggingAzureblob interface:
+// Implement LoggingCommonResponse interface:
 /**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
-LoggingAzureblob.prototype['name'] = undefined;
+LoggingCommonResponse.prototype['name'] = undefined;
 /**
  * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
- * @member {module:model/LoggingAzureblob.PlacementEnum} placement
+ * @member {module:model/LoggingCommonResponse.PlacementEnum} placement
  */
-LoggingAzureblob.prototype['placement'] = undefined;
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
- * @member {module:model/LoggingAzureblob.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingAzureblob.prototype['format_version'] = undefined;
+LoggingCommonResponse.prototype['placement'] = undefined;
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
-LoggingAzureblob.prototype['response_condition'] = undefined;
+LoggingCommonResponse.prototype['response_condition'] = undefined;
 /**
  * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
  * @member {String} format
  * @default '%h %l %u %t "%r" %&gt;s %b'
  */
-LoggingAzureblob.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+LoggingCommonResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+ * @member {module:model/LoggingCommonResponse.FormatVersionEnum} format_version
+ * @default '2'
+ */
+LoggingCommonResponse.prototype['format_version'] = undefined;
+// Implement LoggingGenericCommonResponse interface:
 /**
  * How the message should be formatted.
- * @member {module:model/LoggingAzureblob.MessageTypeEnum} message_type
+ * @member {module:model/LoggingGenericCommonResponse.MessageTypeEnum} message_type
  * @default 'classic'
  */
-LoggingAzureblob.prototype['message_type'] = undefined;
+LoggingGenericCommonResponse.prototype['message_type'] = undefined;
 /**
  * A timestamp format
  * @member {String} timestamp_format
  */
-LoggingAzureblob.prototype['timestamp_format'] = undefined;
-/**
- * How frequently log files are finalized so they can be available for reading (in seconds).
- * @member {Number} period
- * @default 3600
- */
-LoggingAzureblob.prototype['period'] = 3600;
-/**
- * The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {Number} gzip_level
- * @default 0
- */
-LoggingAzureblob.prototype['gzip_level'] = 0;
+LoggingGenericCommonResponse.prototype['timestamp_format'] = undefined;
 /**
  * The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
- * @member {module:model/LoggingAzureblob.CompressionCodecEnum} compression_codec
+ * @member {module:model/LoggingGenericCommonResponse.CompressionCodecEnum} compression_codec
  */
-LoggingAzureblob.prototype['compression_codec'] = undefined;
+LoggingGenericCommonResponse.prototype['compression_codec'] = undefined;
 /**
- * The path to upload logs to.
- * @member {String} path
- * @default 'null'
+ * How frequently log files are finalized so they can be available for reading (in seconds).
+ * @member {String} period
+ * @default '3600'
  */
-LoggingAzureblob.prototype['path'] = 'null';
+LoggingGenericCommonResponse.prototype['period'] = '3600';
 /**
- * The unique Azure Blob Storage namespace in which your data objects are stored. Required.
- * @member {String} account_name
+ * The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error.
+ * @member {String} gzip_level
+ * @default '0'
  */
-LoggingAzureblob.prototype['account_name'] = undefined;
-/**
- * The name of the Azure Blob Storage container in which to store logs. Required.
- * @member {String} container
- */
-LoggingAzureblob.prototype['container'] = undefined;
-/**
- * The Azure shared access signature providing write access to the blob service objects. Be sure to update your token before it expires or the logging functionality will not work. Required.
- * @member {String} sas_token
- */
-LoggingAzureblob.prototype['sas_token'] = undefined;
-/**
- * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
- * @member {String} public_key
- * @default 'null'
- */
-LoggingAzureblob.prototype['public_key'] = 'null';
-/**
- * The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
- * @member {Number} file_max_bytes
- */
-LoggingAzureblob.prototype['file_max_bytes'] = undefined;
+LoggingGenericCommonResponse.prototype['gzip_level'] = '0';
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
@@ -361,15 +336,48 @@ Timestamps.prototype['deleted_at'] = undefined;
  * @member {Date} updated_at
  */
 Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
+// Implement ServiceIdAndVersionString interface:
 /**
  * @member {String} service_id
  */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
+ServiceIdAndVersionString.prototype['service_id'] = undefined;
 /**
- * @member {Number} version
+ * @member {String} version
  */
-ServiceIdAndVersion.prototype['version'] = undefined;
+ServiceIdAndVersionString.prototype['version'] = undefined;
+// Implement LoggingAzureblobAdditional interface:
+/**
+ * The path to upload logs to.
+ * @member {String} path
+ * @default 'null'
+ */
+LoggingAzureblobAdditional.prototype['path'] = 'null';
+/**
+ * The unique Azure Blob Storage namespace in which your data objects are stored. Required.
+ * @member {String} account_name
+ */
+LoggingAzureblobAdditional.prototype['account_name'] = undefined;
+/**
+ * The name of the Azure Blob Storage container in which to store logs. Required.
+ * @member {String} container
+ */
+LoggingAzureblobAdditional.prototype['container'] = undefined;
+/**
+ * The Azure shared access signature providing write access to the blob service objects. Be sure to update your token before it expires or the logging functionality will not work. Required.
+ * @member {String} sas_token
+ */
+LoggingAzureblobAdditional.prototype['sas_token'] = undefined;
+/**
+ * A PGP public key that Fastly will use to encrypt your log files before writing them to disk.
+ * @member {String} public_key
+ * @default 'null'
+ */
+LoggingAzureblobAdditional.prototype['public_key'] = 'null';
+/**
+ * The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
+ * @member {Number} file_max_bytes
+ */
+LoggingAzureblobAdditional.prototype['file_max_bytes'] = undefined;
 
 
 
@@ -402,22 +410,22 @@ LoggingAzureblobResponse['PlacementEnum'] = {
 
 /**
  * Allowed values for the <code>format_version</code> property.
- * @enum {Number}
+ * @enum {String}
  * @readonly
  */
 LoggingAzureblobResponse['FormatVersionEnum'] = {
 
     /**
-     * value: 1
+     * value: "1"
      * @const
      */
-    "v1": 1,
+    "v1": "1",
 
     /**
-     * value: 2
+     * value: "2"
      * @const
      */
-    "v2": 2
+    "v2": "2"
 };
 
 

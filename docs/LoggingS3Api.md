@@ -17,7 +17,7 @@ Method | Fastly API endpoint | Description
 ## `createLogAwsS3`
 
 ```javascript
-createLogAwsS3({ service_id, version_id, [name, ][placement, ][format_version, ][response_condition, ][format, ][message_type, ][timestamp_format, ][period, ][gzip_level, ][compression_codec, ][access_key, ][acl, ][bucket_name, ][domain, ][iam_role, ][path, ][public_key, ][redundancy, ][secret_key, ][server_side_encryption_kms_key_id, ][server_side_encryption] })
+createLogAwsS3({ service_id, version_id, [name, ][placement, ][response_condition, ][format, ][format_version, ][message_type, ][timestamp_format, ][compression_codec, ][period, ][gzip_level, ][access_key, ][acl, ][bucket_name, ][domain, ][iam_role, ][path, ][public_key, ][redundancy, ][secret_key, ][server_side_encryption_kms_key_id, ][server_side_encryption] })
 ```
 
 Create a S3 for a particular service and version.
@@ -30,14 +30,14 @@ const options = {
   version_id: 56, // required
   name: "name_example",
   placement: "none",
-  format_version: 1,
   response_condition: "response_condition_example",
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format_version: 1,
   message_type: "classic",
   timestamp_format: "timestamp_format_example",
+  compression_codec: "zstd",
   period: 3600,
   gzip_level: 0,
-  compression_codec: "zstd",
   access_key: "access_key_example",
   acl: "acl_example",
   bucket_name: "bucket_name_example",
@@ -68,14 +68,14 @@ Name | Type | Description  | Notes
 **version_id** | **Number** | Integer identifying a service version. |
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] [one of: "none", "waf_debug", "null"]
-**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [one of: 1, 2]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
 **format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [defaults to '%h %l %u %t "%r" %&gt;s %b']
+**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [one of: 1, 2]
 **message_type** | **String** | How the message should be formatted. | [optional] [one of: "classic", "loggly", "logplex", "blank"]
 **timestamp_format** | **String** | A timestamp format | [optional]
+**compression_codec** | **String** | The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [optional] [one of: "zstd", "snappy", "gzip"]
 **period** | **Number** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [defaults to 3600]
 **gzip_level** | **Number** | The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [optional] [defaults to 0]
-**compression_codec** | **String** | The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [optional] [one of: "zstd", "snappy", "gzip"]
 **access_key** | **String** | The access key for your S3 account. Not required if `iam_role` is provided. | [optional]
 **acl** | **String** | The access control list (ACL) specific request header. See the AWS documentation for [Access Control List (ACL) Specific Request Headers](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html#initiate-mpu-acl-specific-request-headers) for more information. | [optional]
 **bucket_name** | **String** | The bucket name for S3 account. | [optional]
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 ## `updateLogAwsS3`
 
 ```javascript
-updateLogAwsS3({ service_id, version_id, logging_s3_name, [name, ][placement, ][format_version, ][response_condition, ][format, ][message_type, ][timestamp_format, ][period, ][gzip_level, ][compression_codec, ][access_key, ][acl, ][bucket_name, ][domain, ][iam_role, ][path, ][public_key, ][redundancy, ][secret_key, ][server_side_encryption_kms_key_id, ][server_side_encryption] })
+updateLogAwsS3({ service_id, version_id, logging_s3_name, [name, ][placement, ][response_condition, ][format, ][format_version, ][message_type, ][timestamp_format, ][compression_codec, ][period, ][gzip_level, ][access_key, ][acl, ][bucket_name, ][domain, ][iam_role, ][path, ][public_key, ][redundancy, ][secret_key, ][server_side_encryption_kms_key_id, ][server_side_encryption] })
 ```
 
 Update the S3 for a particular service and version.
@@ -225,14 +225,14 @@ const options = {
   logging_s3_name: "logging_s3_name_example", // required
   name: "name_example",
   placement: "none",
-  format_version: 1,
   response_condition: "response_condition_example",
   format: "'%h %l %u %t \"%r\" %&gt;s %b'",
+  format_version: 1,
   message_type: "classic",
   timestamp_format: "timestamp_format_example",
+  compression_codec: "zstd",
   period: 3600,
   gzip_level: 0,
-  compression_codec: "zstd",
   access_key: "access_key_example",
   acl: "acl_example",
   bucket_name: "bucket_name_example",
@@ -264,14 +264,14 @@ Name | Type | Description  | Notes
 **logging_s3_name** | **String** | The name for the real-time logging configuration. |
 **name** | **String** | The name for the real-time logging configuration. | [optional]
 **placement** | **String** | Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`.  | [optional] [one of: "none", "waf_debug", "null"]
-**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [one of: 1, 2]
 **response_condition** | **String** | The name of an existing condition in the configured endpoint, or leave blank to always execute. | [optional]
 **format** | **String** | A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats). | [optional] [defaults to '%h %l %u %t "%r" %&gt;s %b']
+**format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [one of: 1, 2]
 **message_type** | **String** | How the message should be formatted. | [optional] [one of: "classic", "loggly", "logplex", "blank"]
 **timestamp_format** | **String** | A timestamp format | [optional]
+**compression_codec** | **String** | The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [optional] [one of: "zstd", "snappy", "gzip"]
 **period** | **Number** | How frequently log files are finalized so they can be available for reading (in seconds). | [optional] [defaults to 3600]
 **gzip_level** | **Number** | The level of gzip encoding when sending logs (default `0`, no compression). Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [optional] [defaults to 0]
-**compression_codec** | **String** | The codec used for compressing your logs. Valid values are `zstd`, `snappy`, and `gzip`. Specifying both `compression_codec` and `gzip_level` in the same API request will result in an error. | [optional] [one of: "zstd", "snappy", "gzip"]
 **access_key** | **String** | The access key for your S3 account. Not required if `iam_role` is provided. | [optional]
 **acl** | **String** | The access control list (ACL) specific request header. See the AWS documentation for [Access Control List (ACL) Specific Request Headers](https://docs.aws.amazon.com/AmazonS3/latest/API/mpUploadInitiate.html#initiate-mpu-acl-specific-request-headers) for more information. | [optional]
 **bucket_name** | **String** | The bucket name for S3 account. | [optional]

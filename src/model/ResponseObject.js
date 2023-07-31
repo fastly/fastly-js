@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ResponseObject model module.
  * @module model/ResponseObject
- * @version 5.0.2
+ * @version 6.0.0
  */
 class ResponseObject {
     /**
@@ -59,7 +59,7 @@ class ResponseObject {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('status')) {
-                obj['status'] = ApiClient.convertToType(data['status'], 'Number');
+                obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
             if (data.hasOwnProperty('response')) {
                 obj['response'] = ApiClient.convertToType(data['response'], 'String');
@@ -100,10 +100,10 @@ ResponseObject.prototype['name'] = undefined;
 
 /**
  * The HTTP status code.
- * @member {Number} status
- * @default 200
+ * @member {String} status
+ * @default '200'
  */
-ResponseObject.prototype['status'] = 200;
+ResponseObject.prototype['status'] = '200';
 
 /**
  * The HTTP response.

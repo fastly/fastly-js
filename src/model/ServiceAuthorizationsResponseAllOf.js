@@ -16,7 +16,7 @@ import ServiceAuthorizationResponseData from './ServiceAuthorizationResponseData
 /**
  * The ServiceAuthorizationsResponseAllOf model module.
  * @module model/ServiceAuthorizationsResponseAllOf
- * @version 5.0.2
+ * @version 6.0.0
  */
 class ServiceAuthorizationsResponseAllOf {
     /**

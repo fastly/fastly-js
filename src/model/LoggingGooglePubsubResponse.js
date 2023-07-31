@@ -11,25 +11,29 @@
  */
 
 import ApiClient from '../ApiClient';
-import LoggingGooglePubsub from './LoggingGooglePubsub';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
+import LoggingCommonResponse from './LoggingCommonResponse';
+import LoggingGcsCommon from './LoggingGcsCommon';
+import LoggingGooglePubsubAdditional from './LoggingGooglePubsubAdditional';
+import ServiceIdAndVersionString from './ServiceIdAndVersionString';
 import Timestamps from './Timestamps';
 
 /**
  * The LoggingGooglePubsubResponse model module.
  * @module model/LoggingGooglePubsubResponse
- * @version 5.0.2
+ * @version 6.0.0
  */
 class LoggingGooglePubsubResponse {
     /**
      * Constructs a new <code>LoggingGooglePubsubResponse</code>.
      * @alias module:model/LoggingGooglePubsubResponse
-     * @implements module:model/LoggingGooglePubsub
+     * @implements module:model/LoggingCommonResponse
+     * @implements module:model/LoggingGcsCommon
+     * @implements module:model/LoggingGooglePubsubAdditional
      * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
+     * @implements module:model/ServiceIdAndVersionString
      */
     constructor() { 
-        LoggingGooglePubsub.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
+        LoggingCommonResponse.initialize(this);LoggingGcsCommon.initialize(this);LoggingGooglePubsubAdditional.initialize(this);Timestamps.initialize(this);ServiceIdAndVersionString.initialize(this);
         LoggingGooglePubsubResponse.initialize(this);
     }
 
@@ -51,9 +55,11 @@ class LoggingGooglePubsubResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingGooglePubsubResponse();
-            LoggingGooglePubsub.constructFromObject(data, obj);
+            LoggingCommonResponse.constructFromObject(data, obj);
+            LoggingGcsCommon.constructFromObject(data, obj);
+            LoggingGooglePubsubAdditional.constructFromObject(data, obj);
             Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
+            ServiceIdAndVersionString.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -61,14 +67,14 @@ class LoggingGooglePubsubResponse {
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = ApiClient.convertToType(data['placement'], 'String');
             }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'Number');
-            }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
             }
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'String');
             }
             if (data.hasOwnProperty('user')) {
                 obj['user'] = ApiClient.convertToType(data['user'], 'String');
@@ -98,7 +104,7 @@ class LoggingGooglePubsubResponse {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
             }
             if (data.hasOwnProperty('version')) {
-                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
+                obj['version'] = ApiClient.convertToType(data['version'], 'String');
             }
         }
         return obj;
@@ -120,13 +126,6 @@ LoggingGooglePubsubResponse.prototype['name'] = undefined;
 LoggingGooglePubsubResponse.prototype['placement'] = undefined;
 
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
- * @member {module:model/LoggingGooglePubsubResponse.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingGooglePubsubResponse.prototype['format_version'] = undefined;
-
-/**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
@@ -138,6 +137,13 @@ LoggingGooglePubsubResponse.prototype['response_condition'] = undefined;
  * @default '%h %l %u %t "%r" %&gt;s %b'
  */
 LoggingGooglePubsubResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+ * @member {module:model/LoggingGooglePubsubResponse.FormatVersionEnum} format_version
+ * @default '2'
+ */
+LoggingGooglePubsubResponse.prototype['format_version'] = undefined;
 
 /**
  * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Not required if `account_name` is specified.
@@ -193,64 +199,72 @@ LoggingGooglePubsubResponse.prototype['updated_at'] = undefined;
 LoggingGooglePubsubResponse.prototype['service_id'] = undefined;
 
 /**
- * @member {Number} version
+ * @member {String} version
  */
 LoggingGooglePubsubResponse.prototype['version'] = undefined;
 
 
-// Implement LoggingGooglePubsub interface:
+// Implement LoggingCommonResponse interface:
 /**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
-LoggingGooglePubsub.prototype['name'] = undefined;
+LoggingCommonResponse.prototype['name'] = undefined;
 /**
  * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
- * @member {module:model/LoggingGooglePubsub.PlacementEnum} placement
+ * @member {module:model/LoggingCommonResponse.PlacementEnum} placement
  */
-LoggingGooglePubsub.prototype['placement'] = undefined;
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
- * @member {module:model/LoggingGooglePubsub.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingGooglePubsub.prototype['format_version'] = undefined;
+LoggingCommonResponse.prototype['placement'] = undefined;
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
-LoggingGooglePubsub.prototype['response_condition'] = undefined;
+LoggingCommonResponse.prototype['response_condition'] = undefined;
 /**
  * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
  * @member {String} format
  * @default '%h %l %u %t "%r" %&gt;s %b'
  */
-LoggingGooglePubsub.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+LoggingCommonResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+ * @member {module:model/LoggingCommonResponse.FormatVersionEnum} format_version
+ * @default '2'
+ */
+LoggingCommonResponse.prototype['format_version'] = undefined;
+// Implement LoggingGcsCommon interface:
 /**
  * Your Google Cloud Platform service account email address. The `client_email` field in your service account authentication JSON. Not required if `account_name` is specified.
  * @member {String} user
  */
-LoggingGooglePubsub.prototype['user'] = undefined;
+LoggingGcsCommon.prototype['user'] = undefined;
 /**
  * Your Google Cloud Platform account secret key. The `private_key` field in your service account authentication JSON. Not required if `account_name` is specified.
  * @member {String} secret_key
  */
-LoggingGooglePubsub.prototype['secret_key'] = undefined;
+LoggingGcsCommon.prototype['secret_key'] = undefined;
 /**
  * The name of the Google Cloud Platform service account associated with the target log collection service. Not required if `user` and `secret_key` are provided.
  * @member {String} account_name
  */
-LoggingGooglePubsub.prototype['account_name'] = undefined;
+LoggingGcsCommon.prototype['account_name'] = undefined;
+// Implement LoggingGooglePubsubAdditional interface:
 /**
  * The Google Cloud Pub/Sub topic to which logs will be published. Required.
  * @member {String} topic
  */
-LoggingGooglePubsub.prototype['topic'] = undefined;
+LoggingGooglePubsubAdditional.prototype['topic'] = undefined;
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
+LoggingGooglePubsubAdditional.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 /**
  * Your Google Cloud Platform project ID. Required
  * @member {String} project_id
  */
-LoggingGooglePubsub.prototype['project_id'] = undefined;
+LoggingGooglePubsubAdditional.prototype['project_id'] = undefined;
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
@@ -267,15 +281,15 @@ Timestamps.prototype['deleted_at'] = undefined;
  * @member {Date} updated_at
  */
 Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
+// Implement ServiceIdAndVersionString interface:
 /**
  * @member {String} service_id
  */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
+ServiceIdAndVersionString.prototype['service_id'] = undefined;
 /**
- * @member {Number} version
+ * @member {String} version
  */
-ServiceIdAndVersion.prototype['version'] = undefined;
+ServiceIdAndVersionString.prototype['version'] = undefined;
 
 
 
@@ -308,22 +322,22 @@ LoggingGooglePubsubResponse['PlacementEnum'] = {
 
 /**
  * Allowed values for the <code>format_version</code> property.
- * @enum {Number}
+ * @enum {String}
  * @readonly
  */
 LoggingGooglePubsubResponse['FormatVersionEnum'] = {
 
     /**
-     * value: 1
+     * value: "1"
      * @const
      */
-    "v1": 1,
+    "v1": "1",
 
     /**
-     * value: 2
+     * value: "2"
      * @const
      */
-    "v2": 2
+    "v2": "2"
 };
 
 

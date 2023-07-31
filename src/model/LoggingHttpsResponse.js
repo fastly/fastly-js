@@ -11,26 +11,32 @@
  */
 
 import ApiClient from '../ApiClient';
-import LoggingHttps from './LoggingHttps';
+import LoggingCommonResponse from './LoggingCommonResponse';
+import LoggingHttpsAdditional from './LoggingHttpsAdditional';
 import LoggingMessageType from './LoggingMessageType';
-import ServiceIdAndVersion from './ServiceIdAndVersion';
+import LoggingRequestCapsCommon from './LoggingRequestCapsCommon';
+import LoggingTlsCommon from './LoggingTlsCommon';
+import ServiceIdAndVersionString from './ServiceIdAndVersionString';
 import Timestamps from './Timestamps';
 
 /**
  * The LoggingHttpsResponse model module.
  * @module model/LoggingHttpsResponse
- * @version 5.0.2
+ * @version 6.0.0
  */
 class LoggingHttpsResponse {
     /**
      * Constructs a new <code>LoggingHttpsResponse</code>.
      * @alias module:model/LoggingHttpsResponse
-     * @implements module:model/LoggingHttps
+     * @implements module:model/LoggingCommonResponse
+     * @implements module:model/LoggingTlsCommon
+     * @implements module:model/LoggingRequestCapsCommon
+     * @implements module:model/LoggingHttpsAdditional
      * @implements module:model/Timestamps
-     * @implements module:model/ServiceIdAndVersion
+     * @implements module:model/ServiceIdAndVersionString
      */
     constructor() { 
-        LoggingHttps.initialize(this);Timestamps.initialize(this);ServiceIdAndVersion.initialize(this);
+        LoggingCommonResponse.initialize(this);LoggingTlsCommon.initialize(this);LoggingRequestCapsCommon.initialize(this);LoggingHttpsAdditional.initialize(this);Timestamps.initialize(this);ServiceIdAndVersionString.initialize(this);
         LoggingHttpsResponse.initialize(this);
     }
 
@@ -52,9 +58,12 @@ class LoggingHttpsResponse {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new LoggingHttpsResponse();
-            LoggingHttps.constructFromObject(data, obj);
+            LoggingCommonResponse.constructFromObject(data, obj);
+            LoggingTlsCommon.constructFromObject(data, obj);
+            LoggingRequestCapsCommon.constructFromObject(data, obj);
+            LoggingHttpsAdditional.constructFromObject(data, obj);
             Timestamps.constructFromObject(data, obj);
-            ServiceIdAndVersion.constructFromObject(data, obj);
+            ServiceIdAndVersionString.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -62,14 +71,14 @@ class LoggingHttpsResponse {
             if (data.hasOwnProperty('placement')) {
                 obj['placement'] = ApiClient.convertToType(data['placement'], 'String');
             }
-            if (data.hasOwnProperty('format_version')) {
-                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'Number');
-            }
             if (data.hasOwnProperty('response_condition')) {
                 obj['response_condition'] = ApiClient.convertToType(data['response_condition'], 'String');
             }
             if (data.hasOwnProperty('format')) {
                 obj['format'] = ApiClient.convertToType(data['format'], 'String');
+            }
+            if (data.hasOwnProperty('format_version')) {
+                obj['format_version'] = ApiClient.convertToType(data['format_version'], 'String');
             }
             if (data.hasOwnProperty('tls_ca_cert')) {
                 obj['tls_ca_cert'] = ApiClient.convertToType(data['tls_ca_cert'], 'String');
@@ -123,7 +132,7 @@ class LoggingHttpsResponse {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
             }
             if (data.hasOwnProperty('version')) {
-                obj['version'] = ApiClient.convertToType(data['version'], 'Number');
+                obj['version'] = ApiClient.convertToType(data['version'], 'String');
             }
         }
         return obj;
@@ -145,13 +154,6 @@ LoggingHttpsResponse.prototype['name'] = undefined;
 LoggingHttpsResponse.prototype['placement'] = undefined;
 
 /**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
- * @member {module:model/LoggingHttpsResponse.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingHttpsResponse.prototype['format_version'] = undefined;
-
-/**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
@@ -163,6 +165,13 @@ LoggingHttpsResponse.prototype['response_condition'] = undefined;
  * @default '%h %l %u %t "%r" %&gt;s %b'
  */
 LoggingHttpsResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+ * @member {module:model/LoggingHttpsResponse.FormatVersionEnum} format_version
+ * @default '2'
+ */
+LoggingHttpsResponse.prototype['format_version'] = undefined;
 
 /**
  * A secure certificate to authenticate a server with. Must be in PEM format.
@@ -275,113 +284,134 @@ LoggingHttpsResponse.prototype['updated_at'] = undefined;
 LoggingHttpsResponse.prototype['service_id'] = undefined;
 
 /**
- * @member {Number} version
+ * @member {String} version
  */
 LoggingHttpsResponse.prototype['version'] = undefined;
 
 
-// Implement LoggingHttps interface:
+// Implement LoggingCommonResponse interface:
 /**
  * The name for the real-time logging configuration.
  * @member {String} name
  */
-LoggingHttps.prototype['name'] = undefined;
+LoggingCommonResponse.prototype['name'] = undefined;
 /**
  * Where in the generated VCL the logging call should be placed. If not set, endpoints with `format_version` of 2 are placed in `vcl_log` and those with `format_version` of 1 are placed in `vcl_deliver`. 
- * @member {module:model/LoggingHttps.PlacementEnum} placement
+ * @member {module:model/LoggingCommonResponse.PlacementEnum} placement
  */
-LoggingHttps.prototype['placement'] = undefined;
-/**
- * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
- * @member {module:model/LoggingHttps.FormatVersionEnum} format_version
- * @default FormatVersionEnum.v2
- */
-LoggingHttps.prototype['format_version'] = undefined;
+LoggingCommonResponse.prototype['placement'] = undefined;
 /**
  * The name of an existing condition in the configured endpoint, or leave blank to always execute.
  * @member {String} response_condition
  */
-LoggingHttps.prototype['response_condition'] = undefined;
+LoggingCommonResponse.prototype['response_condition'] = undefined;
 /**
  * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
  * @member {String} format
  * @default '%h %l %u %t "%r" %&gt;s %b'
  */
-LoggingHttps.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+LoggingCommonResponse.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
+/**
+ * The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
+ * @member {module:model/LoggingCommonResponse.FormatVersionEnum} format_version
+ * @default '2'
+ */
+LoggingCommonResponse.prototype['format_version'] = undefined;
+// Implement LoggingTlsCommon interface:
 /**
  * A secure certificate to authenticate a server with. Must be in PEM format.
  * @member {String} tls_ca_cert
  * @default 'null'
  */
-LoggingHttps.prototype['tls_ca_cert'] = 'null';
+LoggingTlsCommon.prototype['tls_ca_cert'] = 'null';
 /**
  * The client certificate used to make authenticated requests. Must be in PEM format.
  * @member {String} tls_client_cert
  * @default 'null'
  */
-LoggingHttps.prototype['tls_client_cert'] = 'null';
+LoggingTlsCommon.prototype['tls_client_cert'] = 'null';
 /**
  * The client private key used to make authenticated requests. Must be in PEM format.
  * @member {String} tls_client_key
  * @default 'null'
  */
-LoggingHttps.prototype['tls_client_key'] = 'null';
+LoggingTlsCommon.prototype['tls_client_key'] = 'null';
 /**
  * The hostname to verify the server's certificate. This should be one of the Subject Alternative Name (SAN) fields for the certificate. Common Names (CN) are not supported.
  * @member {String} tls_hostname
  * @default 'null'
  */
-LoggingHttps.prototype['tls_hostname'] = 'null';
+LoggingTlsCommon.prototype['tls_hostname'] = 'null';
+// Implement LoggingRequestCapsCommon interface:
+/**
+ * The maximum number of logs sent in one request. Defaults `0` for unbounded.
+ * @member {Number} request_max_entries
+ * @default 0
+ */
+LoggingRequestCapsCommon.prototype['request_max_entries'] = 0;
+/**
+ * The maximum number of bytes sent in one request. Defaults `0` for unbounded.
+ * @member {Number} request_max_bytes
+ * @default 0
+ */
+LoggingRequestCapsCommon.prototype['request_max_bytes'] = 0;
+// Implement LoggingHttpsAdditional interface:
+/**
+ * The URL to send logs to. Must use HTTPS. Required.
+ * @member {String} url
+ */
+LoggingHttpsAdditional.prototype['url'] = undefined;
 /**
  * The maximum number of logs sent in one request. Defaults `0` (10k).
  * @member {Number} request_max_entries
  * @default 0
  */
-LoggingHttps.prototype['request_max_entries'] = 0;
+LoggingHttpsAdditional.prototype['request_max_entries'] = 0;
 /**
  * The maximum number of bytes sent in one request. Defaults `0` (100MB).
  * @member {Number} request_max_bytes
  * @default 0
  */
-LoggingHttps.prototype['request_max_bytes'] = 0;
-/**
- * The URL to send logs to. Must use HTTPS. Required.
- * @member {String} url
- */
-LoggingHttps.prototype['url'] = undefined;
+LoggingHttpsAdditional.prototype['request_max_bytes'] = 0;
 /**
  * Content type of the header sent with the request.
  * @member {String} content_type
  * @default 'null'
  */
-LoggingHttps.prototype['content_type'] = 'null';
+LoggingHttpsAdditional.prototype['content_type'] = 'null';
 /**
  * Name of the custom header sent with the request.
  * @member {String} header_name
  * @default 'null'
  */
-LoggingHttps.prototype['header_name'] = 'null';
+LoggingHttpsAdditional.prototype['header_name'] = 'null';
 /**
  * @member {module:model/LoggingMessageType} message_type
  */
-LoggingHttps.prototype['message_type'] = undefined;
+LoggingHttpsAdditional.prototype['message_type'] = undefined;
 /**
  * Value of the custom header sent with the request.
  * @member {String} header_value
  * @default 'null'
  */
-LoggingHttps.prototype['header_value'] = 'null';
+LoggingHttpsAdditional.prototype['header_value'] = 'null';
 /**
  * HTTP method used for request.
- * @member {module:model/LoggingHttps.MethodEnum} method
+ * @member {module:model/LoggingHttpsAdditional.MethodEnum} method
  * @default 'POST'
  */
-LoggingHttps.prototype['method'] = undefined;
+LoggingHttpsAdditional.prototype['method'] = undefined;
 /**
  * Enforces valid JSON formatting for log entries.
- * @member {module:model/LoggingHttps.JsonFormatEnum} json_format
+ * @member {module:model/LoggingHttpsAdditional.JsonFormatEnum} json_format
  */
-LoggingHttps.prototype['json_format'] = undefined;
+LoggingHttpsAdditional.prototype['json_format'] = undefined;
+/**
+ * A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
+ * @member {String} format
+ * @default '%h %l %u %t "%r" %&gt;s %b'
+ */
+LoggingHttpsAdditional.prototype['format'] = '%h %l %u %t "%r" %&gt;s %b';
 // Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
@@ -398,15 +428,15 @@ Timestamps.prototype['deleted_at'] = undefined;
  * @member {Date} updated_at
  */
 Timestamps.prototype['updated_at'] = undefined;
-// Implement ServiceIdAndVersion interface:
+// Implement ServiceIdAndVersionString interface:
 /**
  * @member {String} service_id
  */
-ServiceIdAndVersion.prototype['service_id'] = undefined;
+ServiceIdAndVersionString.prototype['service_id'] = undefined;
 /**
- * @member {Number} version
+ * @member {String} version
  */
-ServiceIdAndVersion.prototype['version'] = undefined;
+ServiceIdAndVersionString.prototype['version'] = undefined;
 
 
 
@@ -439,22 +469,22 @@ LoggingHttpsResponse['PlacementEnum'] = {
 
 /**
  * Allowed values for the <code>format_version</code> property.
- * @enum {Number}
+ * @enum {String}
  * @readonly
  */
 LoggingHttpsResponse['FormatVersionEnum'] = {
 
     /**
-     * value: 1
+     * value: "1"
      * @const
      */
-    "v1": 1,
+    "v1": "1",
 
     /**
-     * value: 2
+     * value: "2"
      * @const
      */
-    "v2": 2
+    "v2": "2"
 };
 
 

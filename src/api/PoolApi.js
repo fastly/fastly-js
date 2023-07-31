@@ -14,11 +14,12 @@
 import ApiClient from "../ApiClient";
 import InlineResponse200 from '../model/InlineResponse200';
 import PoolResponse from '../model/PoolResponse';
+import PoolResponsePost from '../model/PoolResponsePost';
 
 /**
 * Pool service.
 * @module api/PoolApi
-* @version 5.0.2
+* @version 6.0.0
 */
 export default class PoolApi {
 
@@ -48,23 +49,29 @@ export default class PoolApi {
      * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_cert_hostname='null'] - The hostname used to verify a server's certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
      * @param {module:model/Number} [options.use_tls=0] - Whether to use TLS.
+     * @param {Date} [options.created_at] - Date and time in ISO 8601 format.
+     * @param {Date} [options.deleted_at] - Date and time in ISO 8601 format.
+     * @param {Date} [options.updated_at] - Date and time in ISO 8601 format.
+     * @param {String} [options.service_id2]
+     * @param {String} [options.version]
      * @param {String} [options.name] - Name for the Pool.
      * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
      * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
-     * @param {Number} [options.max_conn_default=200] - Maximum number of connections. Optional.
-     * @param {Number} [options.connect_timeout] - How long to wait for a timeout in milliseconds. Optional.
-     * @param {Number} [options.first_byte_timeout] - How long to wait for the first byte in milliseconds. Optional.
-     * @param {Number} [options.quorum=75] - Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
      * @param {String} [options.tls_ciphers] - List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) for details). Optional.
      * @param {String} [options.tls_sni_hostname] - SNI hostname. Optional.
-     * @param {Number} [options.tls_check_cert] - Be strict on checking TLS certs. Optional.
      * @param {Number} [options.min_tls_version] - Minimum allowed TLS version on connections to this server. Optional.
      * @param {Number} [options.max_tls_version] - Maximum allowed TLS version on connections to this server. Optional.
      * @param {String} [options.healthcheck] - Name of the healthcheck to use with this pool. Can be empty and could be reused across multiple backend and pools.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {module:model/String} [options.type] - What type of load balance group to use.
      * @param {String} [options.override_host='null'] - The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to `null` meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PoolResponse} and HTTP response
+     * @param {Number} [options.between_bytes_timeout=10000] - Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, the response received so far will be considered complete and the fetch will end. May be set at runtime using `bereq.between_bytes_timeout`.
+     * @param {Number} [options.connect_timeout] - How long to wait for a timeout in milliseconds. Optional.
+     * @param {Number} [options.first_byte_timeout] - How long to wait for the first byte in milliseconds. Optional.
+     * @param {Number} [options.max_conn_default=200] - Maximum number of connections. Optional.
+     * @param {Number} [options.quorum=75] - Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
+     * @param {Number} [options.tls_check_cert] - Be strict on checking TLS certs. Optional.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PoolResponsePost} and HTTP response
      */
     createServerPoolWithHttpInfo(options = {}) {
       let postBody = null;
@@ -93,28 +100,34 @@ export default class PoolApi {
         'tls_client_key': options['tls_client_key'],
         'tls_cert_hostname': options['tls_cert_hostname'],
         'use_tls': options['use_tls'],
+        'created_at': options['created_at'],
+        'deleted_at': options['deleted_at'],
+        'updated_at': options['updated_at'],
+        'service_id': options['service_id2'],
+        'version': options['version'],
         'name': options['name'],
         'shield': options['shield'],
         'request_condition': options['request_condition'],
-        'max_conn_default': options['max_conn_default'],
-        'connect_timeout': options['connect_timeout'],
-        'first_byte_timeout': options['first_byte_timeout'],
-        'quorum': options['quorum'],
         'tls_ciphers': options['tls_ciphers'],
         'tls_sni_hostname': options['tls_sni_hostname'],
-        'tls_check_cert': options['tls_check_cert'],
         'min_tls_version': options['min_tls_version'],
         'max_tls_version': options['max_tls_version'],
         'healthcheck': options['healthcheck'],
         'comment': options['comment'],
         'type': options['type'],
-        'override_host': options['override_host']
+        'override_host': options['override_host'],
+        'between_bytes_timeout': options['between_bytes_timeout'],
+        'connect_timeout': options['connect_timeout'],
+        'first_byte_timeout': options['first_byte_timeout'],
+        'max_conn_default': options['max_conn_default'],
+        'quorum': options['quorum'],
+        'tls_check_cert': options['tls_check_cert']
       };
 
       let authNames = ['token'];
       let contentTypes = ['application/x-www-form-urlencoded'];
       let accepts = ['application/json'];
-      let returnType = PoolResponse;
+      let returnType = PoolResponsePost;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -141,23 +154,29 @@ export default class PoolApi {
      * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_cert_hostname='null'] - The hostname used to verify a server's certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
      * @param {module:model/Number} [options.use_tls=0] - Whether to use TLS.
+     * @param {Date} [options.created_at] - Date and time in ISO 8601 format.
+     * @param {Date} [options.deleted_at] - Date and time in ISO 8601 format.
+     * @param {Date} [options.updated_at] - Date and time in ISO 8601 format.
+     * @param {String} [options.service_id2]
+     * @param {String} [options.version]
      * @param {String} [options.name] - Name for the Pool.
      * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
      * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
-     * @param {Number} [options.max_conn_default=200] - Maximum number of connections. Optional.
-     * @param {Number} [options.connect_timeout] - How long to wait for a timeout in milliseconds. Optional.
-     * @param {Number} [options.first_byte_timeout] - How long to wait for the first byte in milliseconds. Optional.
-     * @param {Number} [options.quorum=75] - Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
      * @param {String} [options.tls_ciphers] - List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) for details). Optional.
      * @param {String} [options.tls_sni_hostname] - SNI hostname. Optional.
-     * @param {Number} [options.tls_check_cert] - Be strict on checking TLS certs. Optional.
      * @param {Number} [options.min_tls_version] - Minimum allowed TLS version on connections to this server. Optional.
      * @param {Number} [options.max_tls_version] - Maximum allowed TLS version on connections to this server. Optional.
      * @param {String} [options.healthcheck] - Name of the healthcheck to use with this pool. Can be empty and could be reused across multiple backend and pools.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {module:model/String} [options.type] - What type of load balance group to use.
      * @param {String} [options.override_host='null'] - The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to `null` meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PoolResponse}
+     * @param {Number} [options.between_bytes_timeout=10000] - Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, the response received so far will be considered complete and the fetch will end. May be set at runtime using `bereq.between_bytes_timeout`.
+     * @param {Number} [options.connect_timeout] - How long to wait for a timeout in milliseconds. Optional.
+     * @param {Number} [options.first_byte_timeout] - How long to wait for the first byte in milliseconds. Optional.
+     * @param {Number} [options.max_conn_default=200] - Maximum number of connections. Optional.
+     * @param {Number} [options.quorum=75] - Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
+     * @param {Number} [options.tls_check_cert] - Be strict on checking TLS certs. Optional.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PoolResponsePost}
      */
     createServerPool(options = {}) {
       return this.createServerPoolWithHttpInfo(options)
@@ -386,22 +405,28 @@ export default class PoolApi {
      * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_cert_hostname='null'] - The hostname used to verify a server's certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
      * @param {module:model/Number} [options.use_tls=UseTlsEnum.no_tls] - Whether to use TLS.
+     * @param {Date} [options.created_at] - Date and time in ISO 8601 format.
+     * @param {Date} [options.deleted_at] - Date and time in ISO 8601 format.
+     * @param {Date} [options.updated_at] - Date and time in ISO 8601 format.
+     * @param {String} [options.service_id2]
+     * @param {String} [options.version]
      * @param {String} [options.name] - Name for the Pool.
      * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
      * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
-     * @param {Number} [options.max_conn_default=200] - Maximum number of connections. Optional.
-     * @param {Number} [options.connect_timeout] - How long to wait for a timeout in milliseconds. Optional.
-     * @param {Number} [options.first_byte_timeout] - How long to wait for the first byte in milliseconds. Optional.
-     * @param {Number} [options.quorum=75] - Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
      * @param {String} [options.tls_ciphers] - List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) for details). Optional.
      * @param {String} [options.tls_sni_hostname] - SNI hostname. Optional.
-     * @param {Number} [options.tls_check_cert] - Be strict on checking TLS certs. Optional.
      * @param {Number} [options.min_tls_version] - Minimum allowed TLS version on connections to this server. Optional.
      * @param {Number} [options.max_tls_version] - Maximum allowed TLS version on connections to this server. Optional.
      * @param {String} [options.healthcheck] - Name of the healthcheck to use with this pool. Can be empty and could be reused across multiple backend and pools.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {module:model/String} [options.type] - What type of load balance group to use.
      * @param {String} [options.override_host='null'] - The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to `null` meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
+     * @param {Number} [options.between_bytes_timeout=10000] - Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, the response received so far will be considered complete and the fetch will end. May be set at runtime using `bereq.between_bytes_timeout`.
+     * @param {Number} [options.connect_timeout] - How long to wait for a timeout in milliseconds. Optional.
+     * @param {Number} [options.first_byte_timeout] - How long to wait for the first byte in milliseconds. Optional.
+     * @param {Number} [options.max_conn_default=200] - Maximum number of connections. Optional.
+     * @param {Number} [options.quorum=75] - Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
+     * @param {Number} [options.tls_check_cert] - Be strict on checking TLS certs. Optional.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PoolResponse} and HTTP response
      */
     updateServerPoolWithHttpInfo(options = {}) {
@@ -436,22 +461,28 @@ export default class PoolApi {
         'tls_client_key': options['tls_client_key'],
         'tls_cert_hostname': options['tls_cert_hostname'],
         'use_tls': options['use_tls'],
+        'created_at': options['created_at'],
+        'deleted_at': options['deleted_at'],
+        'updated_at': options['updated_at'],
+        'service_id': options['service_id2'],
+        'version': options['version'],
         'name': options['name'],
         'shield': options['shield'],
         'request_condition': options['request_condition'],
-        'max_conn_default': options['max_conn_default'],
-        'connect_timeout': options['connect_timeout'],
-        'first_byte_timeout': options['first_byte_timeout'],
-        'quorum': options['quorum'],
         'tls_ciphers': options['tls_ciphers'],
         'tls_sni_hostname': options['tls_sni_hostname'],
-        'tls_check_cert': options['tls_check_cert'],
         'min_tls_version': options['min_tls_version'],
         'max_tls_version': options['max_tls_version'],
         'healthcheck': options['healthcheck'],
         'comment': options['comment'],
         'type': options['type'],
-        'override_host': options['override_host']
+        'override_host': options['override_host'],
+        'between_bytes_timeout': options['between_bytes_timeout'],
+        'connect_timeout': options['connect_timeout'],
+        'first_byte_timeout': options['first_byte_timeout'],
+        'max_conn_default': options['max_conn_default'],
+        'quorum': options['quorum'],
+        'tls_check_cert': options['tls_check_cert']
       };
 
       let authNames = ['token'];
@@ -485,22 +516,28 @@ export default class PoolApi {
      * @param {String} [options.tls_client_key='null'] - The client private key used to make authenticated requests. Must be in PEM format.
      * @param {String} [options.tls_cert_hostname='null'] - The hostname used to verify a server's certificate. It can either be the Common Name (CN) or a Subject Alternative Name (SAN).
      * @param {module:model/Number} [options.use_tls=UseTlsEnum.no_tls] - Whether to use TLS.
+     * @param {Date} [options.created_at] - Date and time in ISO 8601 format.
+     * @param {Date} [options.deleted_at] - Date and time in ISO 8601 format.
+     * @param {Date} [options.updated_at] - Date and time in ISO 8601 format.
+     * @param {String} [options.service_id2]
+     * @param {String} [options.version]
      * @param {String} [options.name] - Name for the Pool.
      * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
      * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
-     * @param {Number} [options.max_conn_default=200] - Maximum number of connections. Optional.
-     * @param {Number} [options.connect_timeout] - How long to wait for a timeout in milliseconds. Optional.
-     * @param {Number} [options.first_byte_timeout] - How long to wait for the first byte in milliseconds. Optional.
-     * @param {Number} [options.quorum=75] - Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
      * @param {String} [options.tls_ciphers] - List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) for details). Optional.
      * @param {String} [options.tls_sni_hostname] - SNI hostname. Optional.
-     * @param {Number} [options.tls_check_cert] - Be strict on checking TLS certs. Optional.
      * @param {Number} [options.min_tls_version] - Minimum allowed TLS version on connections to this server. Optional.
      * @param {Number} [options.max_tls_version] - Maximum allowed TLS version on connections to this server. Optional.
      * @param {String} [options.healthcheck] - Name of the healthcheck to use with this pool. Can be empty and could be reused across multiple backend and pools.
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {module:model/String} [options.type] - What type of load balance group to use.
      * @param {String} [options.override_host='null'] - The hostname to [override the Host header](https://docs.fastly.com/en/guides/specifying-an-override-host). Defaults to `null` meaning no override of the Host header will occur. This setting can also be added to a Server definition. If the field is set on a Server definition it will override the Pool setting.
+     * @param {Number} [options.between_bytes_timeout=10000] - Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, the response received so far will be considered complete and the fetch will end. May be set at runtime using `bereq.between_bytes_timeout`.
+     * @param {Number} [options.connect_timeout] - How long to wait for a timeout in milliseconds. Optional.
+     * @param {Number} [options.first_byte_timeout] - How long to wait for the first byte in milliseconds. Optional.
+     * @param {Number} [options.max_conn_default=200] - Maximum number of connections. Optional.
+     * @param {Number} [options.quorum=75] - Percentage of capacity (`0-100`) that needs to be operationally available for a pool to be considered up.
+     * @param {Number} [options.tls_check_cert] - Be strict on checking TLS certs. Optional.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PoolResponse}
      */
     updateServerPool(options = {}) {

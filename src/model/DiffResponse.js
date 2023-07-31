@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DiffResponse model module.
  * @module model/DiffResponse
- * @version 5.0.2
+ * @version 6.0.0
  */
 class DiffResponse {
     /**

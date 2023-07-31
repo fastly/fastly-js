@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WafExclusionResponseDataAttributesAllOf model module.
  * @module model/WafExclusionResponseDataAttributesAllOf
- * @version 5.0.2
+ * @version 6.0.0
  */
 class WafExclusionResponseDataAttributesAllOf {
     /**

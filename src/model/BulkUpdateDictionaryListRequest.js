@@ -16,7 +16,7 @@ import BulkUpdateDictionaryItem from './BulkUpdateDictionaryItem';
 /**
  * The BulkUpdateDictionaryListRequest model module.
  * @module model/BulkUpdateDictionaryListRequest
- * @version 5.0.2
+ * @version 6.0.0
  */
 class BulkUpdateDictionaryListRequest {
     /**

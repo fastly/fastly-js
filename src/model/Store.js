@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Store model module.
  * @module model/Store
- * @version 5.0.2
+ * @version 6.0.0
  */
 class Store {
     /**
