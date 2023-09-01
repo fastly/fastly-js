@@ -16,7 +16,7 @@ import TypeWafActiveRule from './TypeWafActiveRule';
 /**
  * The RelationshipMemberWafActiveRule model module.
  * @module model/RelationshipMemberWafActiveRule
- * @version 6.0.0
+ * @version 6.1.0
  */
 class RelationshipMemberWafActiveRule {
     /**

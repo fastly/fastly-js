@@ -20,7 +20,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingSumologicResponse model module.
  * @module model/LoggingSumologicResponse
- * @version 6.0.0
+ * @version 6.1.0
  */
 class LoggingSumologicResponse {
     /**

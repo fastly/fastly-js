@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ServiceInvitationDataAttributes model module.
  * @module model/ServiceInvitationDataAttributes
- * @version 6.0.0
+ * @version 6.1.0
  */
 class ServiceInvitationDataAttributes {
     /**

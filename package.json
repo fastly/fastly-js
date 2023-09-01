@@ -1,6 +1,6 @@
 {
   "name": "fastly",
-  "version": "6.0.0",
+  "version": "6.1.0",
   "description": "A JavaScript client library for interacting with most facets of the Fastly API.",
   "license": "MIT",
   "main": "dist/index.js",

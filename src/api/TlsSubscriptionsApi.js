@@ -19,7 +19,7 @@ import TlsSubscriptionsResponse from '../model/TlsSubscriptionsResponse';
 /**
 * TlsSubscriptions service.
 * @module api/TlsSubscriptionsApi
-* @version 6.0.0
+* @version 6.1.0
 */
 export default class TlsSubscriptionsApi {
 
@@ -296,7 +296,7 @@ export default class TlsSubscriptionsApi {
      * Show a TLS subscription.
      * @param {Object} options
      * @param {String} options.tls_subscription_id - Alphanumeric string identifying a TLS subscription.
-     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`. 
+     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, and `tls_authorizations.self_managed_http_challenge`. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsSubscriptionResponse} and HTTP response
      */
     getTlsSubWithHttpInfo(options = {}) {
@@ -343,7 +343,7 @@ export default class TlsSubscriptionsApi {
      * Show a TLS subscription.
      * @param {Object} options
      * @param {String} options.tls_subscription_id - Alphanumeric string identifying a TLS subscription.
-     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`. 
+     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, and `tls_authorizations.self_managed_http_challenge`. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsSubscriptionResponse}
      */
     getTlsSub(options = {}) {
@@ -359,7 +359,7 @@ export default class TlsSubscriptionsApi {
      * @param {String} [options.filter_state] - Limit the returned subscriptions by state. Valid values are `pending`, `processing`, `issued`, `renewing`, and `failed`. Accepts parameters: `not` (e.g., `filter[state][not]=renewing`). 
      * @param {String} [options.filter_tls_domains_id] - Limit the returned subscriptions to those that include the specific domain.
      * @param {Boolean} [options.filter_has_active_order] - Limit the returned subscriptions to those that have currently active orders. Permitted values: `true`. 
-     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`. 
+     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, and `tls_authorizations.self_managed_http_challenge`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
@@ -412,7 +412,7 @@ export default class TlsSubscriptionsApi {
      * @param {String} [options.filter_state] - Limit the returned subscriptions by state. Valid values are `pending`, `processing`, `issued`, `renewing`, and `failed`. Accepts parameters: `not` (e.g., `filter[state][not]=renewing`). 
      * @param {String} [options.filter_tls_domains_id] - Limit the returned subscriptions to those that include the specific domain.
      * @param {Boolean} [options.filter_has_active_order] - Limit the returned subscriptions to those that have currently active orders. Permitted values: `true`. 
-     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations` and `tls_authorizations.globalsign_email_challenge`. 
+     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, and `tls_authorizations.self_managed_http_challenge`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.

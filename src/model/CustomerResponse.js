@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The CustomerResponse model module.
  * @module model/CustomerResponse
- * @version 6.0.0
+ * @version 6.1.0
  */
 class CustomerResponse {
     /**

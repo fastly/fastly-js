@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The RateLimiterResponse model module.
  * @module model/RateLimiterResponse
- * @version 6.0.0
+ * @version 6.1.0
  */
 class RateLimiterResponse {
     /**
@@ -552,6 +552,12 @@ RateLimiterResponse['LoggerTypeEnum'] = {
      * @const
      */
     "newrelic": "newrelic",
+
+    /**
+     * value: "newrelicotlp"
+     * @const
+     */
+    "newrelicotlp": "newrelicotlp",
 
     /**
      * value: "openstack"

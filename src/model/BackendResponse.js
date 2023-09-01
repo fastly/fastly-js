@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The BackendResponse model module.
  * @module model/BackendResponse
- * @version 6.0.0
+ * @version 6.1.0
  */
 class BackendResponse {
     /**
@@ -114,6 +114,9 @@ class BackendResponse {
             }
             if (data.hasOwnProperty('request_condition')) {
                 obj['request_condition'] = ApiClient.convertToType(data['request_condition'], 'String');
+            }
+            if (data.hasOwnProperty('share_key')) {
+                obj['share_key'] = ApiClient.convertToType(data['share_key'], 'String');
             }
             if (data.hasOwnProperty('shield')) {
                 obj['shield'] = ApiClient.convertToType(data['shield'], 'String');
@@ -286,6 +289,12 @@ BackendResponse.prototype['port'] = undefined;
  * @member {String} request_condition
  */
 BackendResponse.prototype['request_condition'] = undefined;
+
+/**
+ * Value that when shared across backends will enable those backends to share the same health check.
+ * @member {String} share_key
+ */
+BackendResponse.prototype['share_key'] = undefined;
 
 /**
  * Identifier of the POP to use as a [shield](https://docs.fastly.com/en/guides/shielding).
@@ -485,6 +494,11 @@ Backend.prototype['port'] = undefined;
  * @member {String} request_condition
  */
 Backend.prototype['request_condition'] = undefined;
+/**
+ * Value that when shared across backends will enable those backends to share the same health check.
+ * @member {String} share_key
+ */
+Backend.prototype['share_key'] = undefined;
 /**
  * Identifier of the POP to use as a [shield](https://docs.fastly.com/en/guides/shielding).
  * @member {String} shield

@@ -17,7 +17,7 @@ import WafFirewallResponseDataAttributes from './WafFirewallResponseDataAttribut
 /**
  * The WafFirewallResponseDataAllOf model module.
  * @module model/WafFirewallResponseDataAllOf
- * @version 6.0.0
+ * @version 6.1.0
  */
 class WafFirewallResponseDataAllOf {
     /**

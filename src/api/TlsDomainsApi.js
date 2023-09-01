@@ -17,7 +17,7 @@ import TlsDomainsResponse from '../model/TlsDomainsResponse';
 /**
 * TlsDomains service.
 * @module api/TlsDomainsApi
-* @version 6.0.0
+* @version 6.1.0
 */
 export default class TlsDomainsApi {
 
@@ -43,7 +43,7 @@ export default class TlsDomainsApi {
      * @param {String} [options.filter_in_use] - Optional. Limit the returned domains to those currently using Fastly to terminate TLS with SNI (that is, domains considered \"in use\") Permitted values: true, false.
      * @param {String} [options.filter_tls_certificates_id] - Optional. Limit the returned domains to those listed in the given TLS certificate's SAN list.
      * @param {String} [options.filter_tls_subscriptions_id] - Optional. Limit the returned domains to those for a given TLS subscription.
-     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_activations`, `tls_certificates`, `tls_subscriptions`, `tls_subscriptions.tls_authorizations`, and `tls_authorizations.globalsign_email_challenge`. 
+     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_activations`, `tls_certificates`, `tls_subscriptions`, `tls_subscriptions.tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, and `tls_authorizations.self_managed_http_challenge`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
@@ -96,7 +96,7 @@ export default class TlsDomainsApi {
      * @param {String} [options.filter_in_use] - Optional. Limit the returned domains to those currently using Fastly to terminate TLS with SNI (that is, domains considered \"in use\") Permitted values: true, false.
      * @param {String} [options.filter_tls_certificates_id] - Optional. Limit the returned domains to those listed in the given TLS certificate's SAN list.
      * @param {String} [options.filter_tls_subscriptions_id] - Optional. Limit the returned domains to those for a given TLS subscription.
-     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_activations`, `tls_certificates`, `tls_subscriptions`, `tls_subscriptions.tls_authorizations`, and `tls_authorizations.globalsign_email_challenge`. 
+     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_activations`, `tls_certificates`, `tls_subscriptions`, `tls_subscriptions.tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, and `tls_authorizations.self_managed_http_challenge`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.

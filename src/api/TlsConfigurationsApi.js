@@ -19,7 +19,7 @@ import TlsConfigurationsResponse from '../model/TlsConfigurationsResponse';
 /**
 * TlsConfigurations service.
 * @module api/TlsConfigurationsApi
-* @version 6.0.0
+* @version 6.1.0
 */
 export default class TlsConfigurationsApi {
 

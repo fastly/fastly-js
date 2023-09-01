@@ -335,6 +335,11 @@ Class | Method | Description
 *Fastly.LoggingNewrelicApi* | [**getLogNewrelic**](docs/LoggingNewrelicApi.md#getLogNewrelic) | Get a New Relic log endpoint
 *Fastly.LoggingNewrelicApi* | [**listLogNewrelic**](docs/LoggingNewrelicApi.md#listLogNewrelic) | List New Relic log endpoints
 *Fastly.LoggingNewrelicApi* | [**updateLogNewrelic**](docs/LoggingNewrelicApi.md#updateLogNewrelic) | Update a New Relic log endpoint
+*Fastly.LoggingNewrelicotlpApi* | [**createLogNewrelicotlp**](docs/LoggingNewrelicotlpApi.md#createLogNewrelicotlp) | Create a New Relic OTLP endpoint
+*Fastly.LoggingNewrelicotlpApi* | [**deleteLogNewrelicotlp**](docs/LoggingNewrelicotlpApi.md#deleteLogNewrelicotlp) | Delete a New Relic OTLP endpoint
+*Fastly.LoggingNewrelicotlpApi* | [**getLogNewrelicotlp**](docs/LoggingNewrelicotlpApi.md#getLogNewrelicotlp) | Get a New Relic OTLP endpoint
+*Fastly.LoggingNewrelicotlpApi* | [**listLogNewrelicotlp**](docs/LoggingNewrelicotlpApi.md#listLogNewrelicotlp) | List New Relic OTLP endpoints
+*Fastly.LoggingNewrelicotlpApi* | [**updateLogNewrelicotlp**](docs/LoggingNewrelicotlpApi.md#updateLogNewrelicotlp) | Update a New Relic log endpoint
 *Fastly.LoggingOpenstackApi* | [**createLogOpenstack**](docs/LoggingOpenstackApi.md#createLogOpenstack) | Create an OpenStack log endpoint
 *Fastly.LoggingOpenstackApi* | [**deleteLogOpenstack**](docs/LoggingOpenstackApi.md#deleteLogOpenstack) | Delete an OpenStack log endpoint
 *Fastly.LoggingOpenstackApi* | [**getLogOpenstack**](docs/LoggingOpenstackApi.md#getLogOpenstack) | Get an OpenStack log endpoint
@@ -429,7 +434,7 @@ Class | Method | Description
 *Fastly.SecretStoreApi* | [**clientKey**](docs/SecretStoreApi.md#clientKey) | Create new client key
 *Fastly.SecretStoreApi* | [**createSecretStore**](docs/SecretStoreApi.md#createSecretStore) | Create new secret store
 *Fastly.SecretStoreApi* | [**deleteSecretStore**](docs/SecretStoreApi.md#deleteSecretStore) | Delete secret store
-*Fastly.SecretStoreApi* | [**getSecretStore**](docs/SecretStoreApi.md#getSecretStore) | Create secret store by ID
+*Fastly.SecretStoreApi* | [**getSecretStore**](docs/SecretStoreApi.md#getSecretStore) | Get secret store by ID
 *Fastly.SecretStoreApi* | [**getSecretStores**](docs/SecretStoreApi.md#getSecretStores) | Get all secret stores
 *Fastly.SecretStoreApi* | [**signingKey**](docs/SecretStoreApi.md#signingKey) | Get public key
 *Fastly.SecretStoreItemApi* | [**createSecret**](docs/SecretStoreItemApi.md#createSecret) | Create a new secret in a store.

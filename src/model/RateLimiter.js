@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RateLimiter model module.
  * @module model/RateLimiter
- * @version 6.0.0
+ * @version 6.1.0
  */
 class RateLimiter {
     /**
@@ -396,6 +396,12 @@ RateLimiter['LoggerTypeEnum'] = {
      * @const
      */
     "newrelic": "newrelic",
+
+    /**
+     * value: "newrelicotlp"
+     * @const
+     */
+    "newrelicotlp": "newrelicotlp",
 
     /**
      * value: "openstack"

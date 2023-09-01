@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EnabledProductResponseProduct model module.
  * @module model/EnabledProductResponseProduct
- * @version 6.0.0
+ * @version 6.1.0
  */
 class EnabledProductResponseProduct {
     /**

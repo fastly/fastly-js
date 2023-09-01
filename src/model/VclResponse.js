@@ -18,7 +18,7 @@ import Vcl from './Vcl';
 /**
  * The VclResponse model module.
  * @module model/VclResponse
- * @version 6.0.0
+ * @version 6.1.0
  */
 class VclResponse {
     /**

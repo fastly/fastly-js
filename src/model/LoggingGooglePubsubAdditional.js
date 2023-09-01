@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingGooglePubsubAdditional model module.
  * @module model/LoggingGooglePubsubAdditional
- * @version 6.0.0
+ * @version 6.1.0
  */
 class LoggingGooglePubsubAdditional {
     /**

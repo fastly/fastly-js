@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WafTagAttributes model module.
  * @module model/WafTagAttributes
- * @version 6.0.0
+ * @version 6.1.0
  */
 class WafTagAttributes {
     /**

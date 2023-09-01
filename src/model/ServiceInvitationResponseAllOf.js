@@ -16,7 +16,7 @@ import ServiceInvitationResponseAllOfData from './ServiceInvitationResponseAllOf
 /**
  * The ServiceInvitationResponseAllOf model module.
  * @module model/ServiceInvitationResponseAllOf
- * @version 6.0.0
+ * @version 6.1.0
  */
 class ServiceInvitationResponseAllOf {
     /**

@@ -243,6 +243,8 @@ import LoggingLogshuttleResponse from './model/LoggingLogshuttleResponse';
 import LoggingMessageType from './model/LoggingMessageType';
 import LoggingNewrelicAdditional from './model/LoggingNewrelicAdditional';
 import LoggingNewrelicResponse from './model/LoggingNewrelicResponse';
+import LoggingNewrelicotlpAdditional from './model/LoggingNewrelicotlpAdditional';
+import LoggingNewrelicotlpResponse from './model/LoggingNewrelicotlpResponse';
 import LoggingOpenstackAdditional from './model/LoggingOpenstackAdditional';
 import LoggingOpenstackResponse from './model/LoggingOpenstackResponse';
 import LoggingPapertrailResponse from './model/LoggingPapertrailResponse';
@@ -732,6 +734,7 @@ import LoggingLogentriesApi from './api/LoggingLogentriesApi';
 import LoggingLogglyApi from './api/LoggingLogglyApi';
 import LoggingLogshuttleApi from './api/LoggingLogshuttleApi';
 import LoggingNewrelicApi from './api/LoggingNewrelicApi';
+import LoggingNewrelicotlpApi from './api/LoggingNewrelicotlpApi';
 import LoggingOpenstackApi from './api/LoggingOpenstackApi';
 import LoggingPapertrailApi from './api/LoggingPapertrailApi';
 import LoggingPubsubApi from './api/LoggingPubsubApi';
@@ -819,7 +822,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 6.0.0
+* @version 6.1.0
 */
 export {
     /**
@@ -2213,6 +2216,18 @@ export {
      * @property {module:model/LoggingNewrelicResponse}
      */
     LoggingNewrelicResponse,
+
+    /**
+     * The LoggingNewrelicotlpAdditional model constructor.
+     * @property {module:model/LoggingNewrelicotlpAdditional}
+     */
+    LoggingNewrelicotlpAdditional,
+
+    /**
+     * The LoggingNewrelicotlpResponse model constructor.
+     * @property {module:model/LoggingNewrelicotlpResponse}
+     */
+    LoggingNewrelicotlpResponse,
 
     /**
      * The LoggingOpenstackAdditional model constructor.
@@ -5147,6 +5162,12 @@ export {
     * @property {module:api/LoggingNewrelicApi}
     */
     LoggingNewrelicApi,
+
+    /**
+    * The LoggingNewrelicotlpApi service constructor.
+    * @property {module:api/LoggingNewrelicotlpApi}
+    */
+    LoggingNewrelicotlpApi,
 
     /**
     * The LoggingOpenstackApi service constructor.

@@ -17,7 +17,7 @@ import OriginInspectorHistoricalMeta from './OriginInspectorHistoricalMeta';
 /**
  * The OriginInspectorHistorical model module.
  * @module model/OriginInspectorHistorical
- * @version 6.0.0
+ * @version 6.1.0
  */
 class OriginInspectorHistorical {
     /**
