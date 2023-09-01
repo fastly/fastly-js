@@ -17,7 +17,7 @@ import VclDiff from '../model/VclDiff';
 /**
 * VclDiff service.
 * @module api/VclDiffApi
-* @version 6.1.0
+* @version 6.1.1
 */
 export default class VclDiffApi {
 

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventAttributes model module.
  * @module model/EventAttributes
- * @version 6.1.0
+ * @version 6.1.1
  */
 class EventAttributes {
     /**

@@ -16,7 +16,7 @@ import BillingAddressRequestData from './BillingAddressRequestData';
 /**
  * The BillingAddressRequest model module.
  * @module model/BillingAddressRequest
- * @version 6.1.0
+ * @version 6.1.1
  */
 class BillingAddressRequest {
     /**

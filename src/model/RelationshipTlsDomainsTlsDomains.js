@@ -16,7 +16,7 @@ import RelationshipMemberTlsDomain from './RelationshipMemberTlsDomain';
 /**
  * The RelationshipTlsDomainsTlsDomains model module.
  * @module model/RelationshipTlsDomainsTlsDomains
- * @version 6.1.0
+ * @version 6.1.1
  */
 class RelationshipTlsDomainsTlsDomains {
     /**

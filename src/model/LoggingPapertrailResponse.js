@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingPapertrailResponse model module.
  * @module model/LoggingPapertrailResponse
- * @version 6.1.0
+ * @version 6.1.1
  */
 class LoggingPapertrailResponse {
     /**

@@ -18,7 +18,7 @@ import EventsResponse from '../model/EventsResponse';
 /**
 * Events service.
 * @module api/EventsApi
-* @version 6.1.0
+* @version 6.1.1
 */
 export default class EventsApi {
 
@@ -105,6 +105,10 @@ export default class EventsApi {
      * @param {String} [options.filter_user_id] - Limit the results returned to a specific user.
      * @param {String} [options.filter_token_id] - Limit the returned events to a specific token.
      * @param {String} [options.filter_created_at] - Limit the returned events to a specific time frame. Accepts sub-parameters: lt, lte, gt, gte (e.g., filter[created_at][gt]=2022-01-12). 
+     * @param {String} [options.filter_created_at_lte] - Return events on and before a date and time in ISO 8601 format. 
+     * @param {String} [options.filter_created_at_lt] - Return events before a date and time in ISO 8601 format. 
+     * @param {String} [options.filter_created_at_gte] - Return events on and after a date and time in ISO 8601 format. 
+     * @param {String} [options.filter_created_at_gt] - Return events after a date and time in ISO 8601 format. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
@@ -124,6 +128,10 @@ export default class EventsApi {
         'filter[user_id]': options['filter_user_id'],
         'filter[token_id]': options['filter_token_id'],
         'filter[created_at]': options['filter_created_at'],
+        'filter[created_at][lte]': options['filter_created_at_lte'],
+        'filter[created_at][lt]': options['filter_created_at_lt'],
+        'filter[created_at][gte]': options['filter_created_at_gte'],
+        'filter[created_at][gt]': options['filter_created_at_gt'],
         'page[number]': options['page_number'],
         'page[size]': options['page_size'],
         'sort': options['sort']
@@ -162,6 +170,10 @@ export default class EventsApi {
      * @param {String} [options.filter_user_id] - Limit the results returned to a specific user.
      * @param {String} [options.filter_token_id] - Limit the returned events to a specific token.
      * @param {String} [options.filter_created_at] - Limit the returned events to a specific time frame. Accepts sub-parameters: lt, lte, gt, gte (e.g., filter[created_at][gt]=2022-01-12). 
+     * @param {String} [options.filter_created_at_lte] - Return events on and before a date and time in ISO 8601 format. 
+     * @param {String} [options.filter_created_at_lt] - Return events before a date and time in ISO 8601 format. 
+     * @param {String} [options.filter_created_at_gte] - Return events on and after a date and time in ISO 8601 format. 
+     * @param {String} [options.filter_created_at_gt] - Return events after a date and time in ISO 8601 format. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.

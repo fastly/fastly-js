@@ -18,7 +18,7 @@ import PurgeResponse from '../model/PurgeResponse';
 /**
 * Purge service.
 * @module api/PurgeApi
-* @version 6.1.0
+* @version 6.1.1
 */
 export default class PurgeApi {
 

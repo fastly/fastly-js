@@ -18,7 +18,7 @@ import LoggingGooglePubsubResponse from '../model/LoggingGooglePubsubResponse';
 /**
 * LoggingPubsub service.
 * @module api/LoggingPubsubApi
-* @version 6.1.0
+* @version 6.1.1
 */
 export default class LoggingPubsubApi {
 

@@ -19,7 +19,7 @@ import SudoResponse from '../model/SudoResponse';
 /**
 * Sudo service.
 * @module api/SudoApi
-* @version 6.1.0
+* @version 6.1.1
 */
 export default class SudoApi {
 

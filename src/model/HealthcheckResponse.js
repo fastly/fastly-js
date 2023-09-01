@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The HealthcheckResponse model module.
  * @module model/HealthcheckResponse
- * @version 6.1.0
+ * @version 6.1.1
  */
 class HealthcheckResponse {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Backend model module.
  * @module model/Backend
- * @version 6.1.0
+ * @version 6.1.1
  */
 class Backend {
     /**

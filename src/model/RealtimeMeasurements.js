@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RealtimeMeasurements model module.
  * @module model/RealtimeMeasurements
- * @version 6.1.0
+ * @version 6.1.1
  */
 class RealtimeMeasurements {
     /**

@@ -16,7 +16,7 @@ import RelationshipMemberMutualAuthentication from './RelationshipMemberMutualAu
 /**
  * The RelationshipMutualAuthenticationMutualAuthentication model module.
  * @module model/RelationshipMutualAuthenticationMutualAuthentication
- * @version 6.1.0
+ * @version 6.1.1
  */
 class RelationshipMutualAuthenticationMutualAuthentication {
     /**

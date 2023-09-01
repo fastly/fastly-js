@@ -18,7 +18,7 @@ import LoggingHoneycombResponse from '../model/LoggingHoneycombResponse';
 /**
 * LoggingHoneycomb service.
 * @module api/LoggingHoneycombApi
-* @version 6.1.0
+* @version 6.1.1
 */
 export default class LoggingHoneycombApi {
 

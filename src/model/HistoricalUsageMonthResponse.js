@@ -19,7 +19,7 @@ import HistoricalUsageMonthResponseData from './HistoricalUsageMonthResponseData
 /**
  * The HistoricalUsageMonthResponse model module.
  * @module model/HistoricalUsageMonthResponse
- * @version 6.1.0
+ * @version 6.1.1
  */
 class HistoricalUsageMonthResponse {
     /**

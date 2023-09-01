@@ -20,7 +20,7 @@ import WafFirewallVersionResponseDataAttributes from './WafFirewallVersionRespon
 /**
  * The WafFirewallVersionResponseData model module.
  * @module model/WafFirewallVersionResponseData
- * @version 6.1.0
+ * @version 6.1.1
  */
 class WafFirewallVersionResponseData {
     /**

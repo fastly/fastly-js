@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TlsDnsRecord model module.
  * @module model/TlsDnsRecord
- * @version 6.1.0
+ * @version 6.1.1
  */
 class TlsDnsRecord {
     /**

@@ -20,7 +20,7 @@ import WafExclusionResponseDataRelationships from './WafExclusionResponseDataRel
 /**
  * The WafExclusionResponseData model module.
  * @module model/WafExclusionResponseData
- * @version 6.1.0
+ * @version 6.1.1
  */
 class WafExclusionResponseData {
     /**

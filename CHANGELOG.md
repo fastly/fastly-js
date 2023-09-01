@@ -1,10 +1,17 @@
 # Changelog
 
+## [v6.1.1](https://github.com/fastly/fastly-js/releases/tag/release/v6.1.1) (2023-09-01)
+
+**Enhancements:**
+
+- feat(events): support extra created_at filters.
+
 ## [v6.1.0](https://github.com/fastly/fastly-js/releases/tag/release/v6.1.0) (2023-09-01)
 
 **Enhancements:**
 
 - feat(backend): support share_key field.
+- feat(events): support extra created_at filters.
 - feat(logging/newrelic): add OTLP endpoints.
 - feat(tls/subscriptions): support self_managed_http_challenge field.
 

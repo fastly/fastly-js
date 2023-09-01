@@ -16,7 +16,7 @@ import TlsSubscriptionResponseAttributes from './TlsSubscriptionResponseAttribut
 /**
  * The TlsSubscriptionResponseData model module.
  * @module model/TlsSubscriptionResponseData
- * @version 6.1.0
+ * @version 6.1.1
  */
 class TlsSubscriptionResponseData {
     /**

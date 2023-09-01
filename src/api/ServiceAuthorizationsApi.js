@@ -20,7 +20,7 @@ import ServiceAuthorizationsResponse from '../model/ServiceAuthorizationsRespons
 /**
 * ServiceAuthorizations service.
 * @module api/ServiceAuthorizationsApi
-* @version 6.1.0
+* @version 6.1.1
 */
 export default class ServiceAuthorizationsApi {
 
