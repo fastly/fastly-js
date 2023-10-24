@@ -13,18 +13,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The SnippetResponseAllOf model module.
- * @module model/SnippetResponseAllOf
- * @version 6.1.1
+ * The SnippetWithDynamicNumberAllOf model module.
+ * @module model/SnippetWithDynamicNumberAllOf
+ * @version 6.2.0
  */
-class SnippetResponseAllOf {
+class SnippetWithDynamicNumberAllOf {
     /**
-     * Constructs a new <code>SnippetResponseAllOf</code>.
-     * @alias module:model/SnippetResponseAllOf
+     * Constructs a new <code>SnippetWithDynamicNumberAllOf</code>.
+     * @alias module:model/SnippetWithDynamicNumberAllOf
      */
     constructor() { 
         
-        SnippetResponseAllOf.initialize(this);
+        SnippetWithDynamicNumberAllOf.initialize(this);
     }
 
     /**
@@ -36,24 +36,18 @@ class SnippetResponseAllOf {
     }
 
     /**
-     * Constructs a <code>SnippetResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>SnippetWithDynamicNumberAllOf</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SnippetResponseAllOf} obj Optional instance to populate.
-     * @return {module:model/SnippetResponseAllOf} The populated <code>SnippetResponseAllOf</code> instance.
+     * @param {module:model/SnippetWithDynamicNumberAllOf} obj Optional instance to populate.
+     * @return {module:model/SnippetWithDynamicNumberAllOf} The populated <code>SnippetWithDynamicNumberAllOf</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new SnippetResponseAllOf();
+            obj = obj || new SnippetWithDynamicNumberAllOf();
 
-            if (data.hasOwnProperty('service_id')) {
-                obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
-            }
-            if (data.hasOwnProperty('version')) {
-                obj['version'] = ApiClient.convertToType(data['version'], 'String');
-            }
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            if (data.hasOwnProperty('dynamic')) {
+                obj['dynamic'] = ApiClient.convertToType(data['dynamic'], 'Number');
             }
         }
         return obj;
@@ -63,25 +57,36 @@ class SnippetResponseAllOf {
 }
 
 /**
- * @member {String} service_id
+ * Sets the snippet version.
+ * @member {module:model/SnippetWithDynamicNumberAllOf.DynamicEnum} dynamic
  */
-SnippetResponseAllOf.prototype['service_id'] = undefined;
+SnippetWithDynamicNumberAllOf.prototype['dynamic'] = undefined;
+
+
+
+
 
 /**
- * String representing the number identifying a version of the service.
- * @member {String} version
+ * Allowed values for the <code>dynamic</code> property.
+ * @enum {Number}
+ * @readonly
  */
-SnippetResponseAllOf.prototype['version'] = undefined;
+SnippetWithDynamicNumberAllOf['DynamicEnum'] = {
 
-/**
- * @member {String} id
- */
-SnippetResponseAllOf.prototype['id'] = undefined;
+    /**
+     * value: 0
+     * @const
+     */
+    "regular": 0,
+
+    /**
+     * value: 1
+     * @const
+     */
+    "dynamic": 1
+};
 
 
 
-
-
-
-export default SnippetResponseAllOf;
+export default SnippetWithDynamicNumberAllOf;
 

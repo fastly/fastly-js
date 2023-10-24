@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingCommon model module.
  * @module model/LoggingCommon
- * @version 6.1.1
+ * @version 6.2.0
  */
 class LoggingCommon {
     /**

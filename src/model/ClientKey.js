@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ClientKey model module.
  * @module model/ClientKey
- * @version 6.1.1
+ * @version 6.2.0
  */
 class ClientKey {
     /**

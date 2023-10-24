@@ -17,7 +17,7 @@ import OriginInspectorValues from './OriginInspectorValues';
 /**
  * The OriginInspectorEntry model module.
  * @module model/OriginInspectorEntry
- * @version 6.1.1
+ * @version 6.2.0
  */
 class OriginInspectorEntry {
     /**

@@ -16,7 +16,7 @@ import LoggingUseTls from './LoggingUseTls';
 /**
  * The LoggingLogentriesAdditional model module.
  * @module model/LoggingLogentriesAdditional
- * @version 6.1.1
+ * @version 6.2.0
  */
 class LoggingLogentriesAdditional {
     /**
@@ -74,7 +74,7 @@ class LoggingLogentriesAdditional {
 LoggingLogentriesAdditional.prototype['port'] = 20000;
 
 /**
- * Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
+ * Use token based authentication.
  * @member {String} token
  */
 LoggingLogentriesAdditional.prototype['token'] = undefined;

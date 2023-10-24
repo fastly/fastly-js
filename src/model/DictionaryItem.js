@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DictionaryItem model module.
  * @module model/DictionaryItem
- * @version 6.1.1
+ * @version 6.2.0
  */
 class DictionaryItem {
     /**

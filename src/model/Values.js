@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Values model module.
  * @module model/Values
- * @version 6.1.1
+ * @version 6.2.0
  */
 class Values {
     /**

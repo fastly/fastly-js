@@ -20,7 +20,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingLogentriesResponse model module.
  * @module model/LoggingLogentriesResponse
- * @version 6.1.1
+ * @version 6.2.0
  */
 class LoggingLogentriesResponse {
     /**
@@ -148,7 +148,7 @@ LoggingLogentriesResponse.prototype['format_version'] = undefined;
 LoggingLogentriesResponse.prototype['port'] = 20000;
 
 /**
- * Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
+ * Use token based authentication.
  * @member {String} token
  */
 LoggingLogentriesResponse.prototype['token'] = undefined;
@@ -229,7 +229,7 @@ LoggingCommonResponse.prototype['format_version'] = undefined;
  */
 LoggingLogentriesAdditional.prototype['port'] = 20000;
 /**
- * Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
+ * Use token based authentication.
  * @member {String} token
  */
 LoggingLogentriesAdditional.prototype['token'] = undefined;

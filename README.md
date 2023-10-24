@@ -214,10 +214,10 @@ Class | Method | Description
 *Fastly.InvitationsApi* | [**createInvitation**](docs/InvitationsApi.md#createInvitation) | Create an invitation
 *Fastly.InvitationsApi* | [**deleteInvitation**](docs/InvitationsApi.md#deleteInvitation) | Delete an invitation
 *Fastly.InvitationsApi* | [**listInvitations**](docs/InvitationsApi.md#listInvitations) | List invitations
-*Fastly.KvStoreApi* | [**createStore**](docs/KvStoreApi.md#createStore) | Create an kv store.
-*Fastly.KvStoreApi* | [**deleteStore**](docs/KvStoreApi.md#deleteStore) | Delete an kv store.
-*Fastly.KvStoreApi* | [**getStore**](docs/KvStoreApi.md#getStore) | Describe an kv store.
-*Fastly.KvStoreApi* | [**getStores**](docs/KvStoreApi.md#getStores) | List kv stores.
+*Fastly.KvStoreApi* | [**createStore**](docs/KvStoreApi.md#createStore) | Create a KV store.
+*Fastly.KvStoreApi* | [**deleteStore**](docs/KvStoreApi.md#deleteStore) | Delete a KV store.
+*Fastly.KvStoreApi* | [**getStore**](docs/KvStoreApi.md#getStore) | Describe a KV store.
+*Fastly.KvStoreApi* | [**getStores**](docs/KvStoreApi.md#getStores) | List KV stores.
 *Fastly.KvStoreItemApi* | [**deleteKeyFromStore**](docs/KvStoreItemApi.md#deleteKeyFromStore) | Delete kv store item.
 *Fastly.KvStoreItemApi* | [**getKeys**](docs/KvStoreItemApi.md#getKeys) | List kv store keys.
 *Fastly.KvStoreItemApi* | [**getValueForKey**](docs/KvStoreItemApi.md#getValueForKey) | Get the value of an kv store item
@@ -575,6 +575,7 @@ Class | Method | Description
 *Fastly.WafRulesApi* | [**getWafRule**](docs/WafRulesApi.md#getWafRule) | Get a rule
 *Fastly.WafRulesApi* | [**listWafRules**](docs/WafRulesApi.md#listWafRules) | List available WAF rules
 *Fastly.WafTagsApi* | [**listWafTags**](docs/WafTagsApi.md#listWafTags) | List tags
+*Fastly.WholePlatformDdosHistoricalApi* | [**getPlatformDdosHistorical**](docs/WholePlatformDdosHistoricalApi.md#getPlatformDdosHistorical) | Get historical DDoS metrics for the entire Fastly platform
 
 
 ## Issues

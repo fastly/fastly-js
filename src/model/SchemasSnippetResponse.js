@@ -11,25 +11,23 @@
  */
 
 import ApiClient from '../ApiClient';
+import SchemasSnippetResponseCommon from './SchemasSnippetResponseCommon';
 import Snippet from './Snippet';
-import SnippetResponseAllOf from './SnippetResponseAllOf';
-import Timestamps from './Timestamps';
 
 /**
  * The SchemasSnippetResponse model module.
  * @module model/SchemasSnippetResponse
- * @version 6.1.1
+ * @version 6.2.0
  */
 class SchemasSnippetResponse {
     /**
      * Constructs a new <code>SchemasSnippetResponse</code>.
      * @alias module:model/SchemasSnippetResponse
      * @implements module:model/Snippet
-     * @implements module:model/Timestamps
-     * @implements module:model/SnippetResponseAllOf
+     * @implements module:model/SchemasSnippetResponseCommon
      */
     constructor() { 
-        Snippet.initialize(this);Timestamps.initialize(this);SnippetResponseAllOf.initialize(this);
+        Snippet.initialize(this);SchemasSnippetResponseCommon.initialize(this);
         SchemasSnippetResponse.initialize(this);
     }
 
@@ -52,14 +50,10 @@ class SchemasSnippetResponse {
         if (data) {
             obj = obj || new SchemasSnippetResponse();
             Snippet.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
-            SnippetResponseAllOf.constructFromObject(data, obj);
+            SchemasSnippetResponseCommon.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
-            if (data.hasOwnProperty('dynamic')) {
-                obj['dynamic'] = ApiClient.convertToType(data['dynamic'], 'String');
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
@@ -69,6 +63,9 @@ class SchemasSnippetResponse {
             }
             if (data.hasOwnProperty('priority')) {
                 obj['priority'] = ApiClient.convertToType(data['priority'], 'String');
+            }
+            if (data.hasOwnProperty('dynamic')) {
+                obj['dynamic'] = ApiClient.convertToType(data['dynamic'], 'String');
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
@@ -102,12 +99,6 @@ class SchemasSnippetResponse {
 SchemasSnippetResponse.prototype['name'] = undefined;
 
 /**
- * Sets the snippet version.
- * @member {module:model/SchemasSnippetResponse.DynamicEnum} dynamic
- */
-SchemasSnippetResponse.prototype['dynamic'] = undefined;
-
-/**
  * The location in generated VCL where the snippet should be placed.
  * @member {module:model/SchemasSnippetResponse.TypeEnum} type
  */
@@ -125,6 +116,12 @@ SchemasSnippetResponse.prototype['content'] = undefined;
  * @default '100'
  */
 SchemasSnippetResponse.prototype['priority'] = '100';
+
+/**
+ * Sets the snippet version.
+ * @member {module:model/SchemasSnippetResponse.DynamicEnum} dynamic
+ */
+SchemasSnippetResponse.prototype['dynamic'] = undefined;
 
 /**
  * Date and time in ISO 8601 format.
@@ -168,11 +165,6 @@ SchemasSnippetResponse.prototype['id'] = undefined;
  */
 Snippet.prototype['name'] = undefined;
 /**
- * Sets the snippet version.
- * @member {module:model/Snippet.DynamicEnum} dynamic
- */
-Snippet.prototype['dynamic'] = undefined;
-/**
  * The location in generated VCL where the snippet should be placed.
  * @member {module:model/Snippet.TypeEnum} type
  */
@@ -188,58 +180,41 @@ Snippet.prototype['content'] = undefined;
  * @default '100'
  */
 Snippet.prototype['priority'] = '100';
-// Implement Timestamps interface:
+/**
+ * Sets the snippet version.
+ * @member {module:model/Snippet.DynamicEnum} dynamic
+ */
+Snippet.prototype['dynamic'] = undefined;
+// Implement SchemasSnippetResponseCommon interface:
 /**
  * Date and time in ISO 8601 format.
  * @member {Date} created_at
  */
-Timestamps.prototype['created_at'] = undefined;
+SchemasSnippetResponseCommon.prototype['created_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
  * @member {Date} deleted_at
  */
-Timestamps.prototype['deleted_at'] = undefined;
+SchemasSnippetResponseCommon.prototype['deleted_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
  * @member {Date} updated_at
  */
-Timestamps.prototype['updated_at'] = undefined;
-// Implement SnippetResponseAllOf interface:
+SchemasSnippetResponseCommon.prototype['updated_at'] = undefined;
 /**
  * @member {String} service_id
  */
-SnippetResponseAllOf.prototype['service_id'] = undefined;
+SchemasSnippetResponseCommon.prototype['service_id'] = undefined;
 /**
  * String representing the number identifying a version of the service.
  * @member {String} version
  */
-SnippetResponseAllOf.prototype['version'] = undefined;
+SchemasSnippetResponseCommon.prototype['version'] = undefined;
 /**
  * @member {String} id
  */
-SnippetResponseAllOf.prototype['id'] = undefined;
+SchemasSnippetResponseCommon.prototype['id'] = undefined;
 
-
-
-/**
- * Allowed values for the <code>dynamic</code> property.
- * @enum {String}
- * @readonly
- */
-SchemasSnippetResponse['DynamicEnum'] = {
-
-    /**
-     * value: "0"
-     * @const
-     */
-    "regular": "0",
-
-    /**
-     * value: "1"
-     * @const
-     */
-    "dynamic": "1"
-};
 
 
 /**
@@ -314,6 +289,27 @@ SchemasSnippetResponse['TypeEnum'] = {
      * @const
      */
     "none": "none"
+};
+
+
+/**
+ * Allowed values for the <code>dynamic</code> property.
+ * @enum {String}
+ * @readonly
+ */
+SchemasSnippetResponse['DynamicEnum'] = {
+
+    /**
+     * value: "0"
+     * @const
+     */
+    "regular": "0",
+
+    /**
+     * value: "1"
+     * @const
+     */
+    "dynamic": "1"
 };
 
 

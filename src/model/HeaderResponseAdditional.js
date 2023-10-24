@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HeaderResponseAdditional model module.
  * @module model/HeaderResponseAdditional
- * @version 6.1.1
+ * @version 6.2.0
  */
 class HeaderResponseAdditional {
     /**

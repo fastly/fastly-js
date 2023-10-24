@@ -28,7 +28,7 @@ import VersionDetailSettings from './VersionDetailSettings';
 /**
  * The VersionDetail model module.
  * @module model/VersionDetail
- * @version 6.1.1
+ * @version 6.2.0
  */
 class VersionDetail {
     /**

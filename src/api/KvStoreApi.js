@@ -19,7 +19,7 @@ import StoreResponse from '../model/StoreResponse';
 /**
 * KvStore service.
 * @module api/KvStoreApi
-* @version 6.1.1
+* @version 6.2.0
 */
 export default class KvStoreApi {
 
@@ -40,7 +40,7 @@ export default class KvStoreApi {
 
 
     /**
-     * Create a new kv store.
+     * Create a new KV store.
      * @param {Object} options
      * @param {String} [options.location]
      * @param {module:model/Store} [options.store]
@@ -82,7 +82,7 @@ export default class KvStoreApi {
     }
 
     /**
-     * Create a new kv store.
+     * Create a new KV store.
      * @param {Object} options
      * @param {String} [options.location]
      * @param {module:model/Store} [options.store]
@@ -96,7 +96,7 @@ export default class KvStoreApi {
     }
 
     /**
-     * An kv store must be empty before it can be deleted.  Deleting an kv store that still contains keys will result in a `409` (Conflict).
+     * A KV store must be empty before it can be deleted.  Deleting a KV store that still contains keys will result in a `409` (Conflict).
      * @param {Object} options
      * @param {String} options.store_id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
@@ -141,7 +141,7 @@ export default class KvStoreApi {
     }
 
     /**
-     * An kv store must be empty before it can be deleted.  Deleting an kv store that still contains keys will result in a `409` (Conflict).
+     * A KV store must be empty before it can be deleted.  Deleting a KV store that still contains keys will result in a `409` (Conflict).
      * @param {Object} options
      * @param {String} options.store_id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
@@ -154,7 +154,7 @@ export default class KvStoreApi {
     }
 
     /**
-     * Get an kv store by ID.
+     * Get a KV store by ID.
      * @param {Object} options
      * @param {String} options.store_id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StoreResponse} and HTTP response
@@ -199,7 +199,7 @@ export default class KvStoreApi {
     }
 
     /**
-     * Get an kv store by ID.
+     * Get a KV store by ID.
      * @param {Object} options
      * @param {String} options.store_id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StoreResponse}

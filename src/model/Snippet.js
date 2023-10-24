@@ -11,19 +11,23 @@
  */
 
 import ApiClient from '../ApiClient';
+import SnippetAllOf from './SnippetAllOf';
+import SnippetCommon from './SnippetCommon';
 
 /**
  * The Snippet model module.
  * @module model/Snippet
- * @version 6.1.1
+ * @version 6.2.0
  */
 class Snippet {
     /**
      * Constructs a new <code>Snippet</code>.
      * @alias module:model/Snippet
+     * @implements module:model/SnippetCommon
+     * @implements module:model/SnippetAllOf
      */
     constructor() { 
-        
+        SnippetCommon.initialize(this);SnippetAllOf.initialize(this);
         Snippet.initialize(this);
     }
 
@@ -45,12 +49,11 @@ class Snippet {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new Snippet();
+            SnippetCommon.constructFromObject(data, obj);
+            SnippetAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
-            if (data.hasOwnProperty('dynamic')) {
-                obj['dynamic'] = ApiClient.convertToType(data['dynamic'], 'String');
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
@@ -60,6 +63,9 @@ class Snippet {
             }
             if (data.hasOwnProperty('priority')) {
                 obj['priority'] = ApiClient.convertToType(data['priority'], 'String');
+            }
+            if (data.hasOwnProperty('dynamic')) {
+                obj['dynamic'] = ApiClient.convertToType(data['dynamic'], 'String');
             }
         }
         return obj;
@@ -73,12 +79,6 @@ class Snippet {
  * @member {String} name
  */
 Snippet.prototype['name'] = undefined;
-
-/**
- * Sets the snippet version.
- * @member {module:model/Snippet.DynamicEnum} dynamic
- */
-Snippet.prototype['dynamic'] = undefined;
 
 /**
  * The location in generated VCL where the snippet should be placed.
@@ -99,29 +99,42 @@ Snippet.prototype['content'] = undefined;
  */
 Snippet.prototype['priority'] = '100';
 
-
-
-
-
 /**
- * Allowed values for the <code>dynamic</code> property.
- * @enum {String}
- * @readonly
+ * Sets the snippet version.
+ * @member {module:model/Snippet.DynamicEnum} dynamic
  */
-Snippet['DynamicEnum'] = {
+Snippet.prototype['dynamic'] = undefined;
 
-    /**
-     * value: "0"
-     * @const
-     */
-    "regular": "0",
 
-    /**
-     * value: "1"
-     * @const
-     */
-    "dynamic": "1"
-};
+// Implement SnippetCommon interface:
+/**
+ * The name for the snippet.
+ * @member {String} name
+ */
+SnippetCommon.prototype['name'] = undefined;
+/**
+ * The location in generated VCL where the snippet should be placed.
+ * @member {module:model/SnippetCommon.TypeEnum} type
+ */
+SnippetCommon.prototype['type'] = undefined;
+/**
+ * The VCL code that specifies exactly what the snippet does.
+ * @member {String} content
+ */
+SnippetCommon.prototype['content'] = undefined;
+/**
+ * Priority determines execution order. Lower numbers execute first.
+ * @member {String} priority
+ * @default '100'
+ */
+SnippetCommon.prototype['priority'] = '100';
+// Implement SnippetAllOf interface:
+/**
+ * Sets the snippet version.
+ * @member {module:model/SnippetAllOf.DynamicEnum} dynamic
+ */
+SnippetAllOf.prototype['dynamic'] = undefined;
+
 
 
 /**
@@ -196,6 +209,27 @@ Snippet['TypeEnum'] = {
      * @const
      */
     "none": "none"
+};
+
+
+/**
+ * Allowed values for the <code>dynamic</code> property.
+ * @enum {String}
+ * @readonly
+ */
+Snippet['DynamicEnum'] = {
+
+    /**
+     * value: "0"
+     * @const
+     */
+    "regular": "0",
+
+    /**
+     * value: "1"
+     * @const
+     */
+    "dynamic": "1"
 };
 
 

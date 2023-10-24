@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RealtimeMeasurements model module.
  * @module model/RealtimeMeasurements
- * @version 6.1.1
+ * @version 6.2.0
  */
 class RealtimeMeasurements {
     /**
@@ -700,6 +700,33 @@ class RealtimeMeasurements {
             }
             if (data.hasOwnProperty('ddos_action_blackhole')) {
                 obj['ddos_action_blackhole'] = ApiClient.convertToType(data['ddos_action_blackhole'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_challenge_starts')) {
+                obj['bot_challenge_starts'] = ApiClient.convertToType(data['bot_challenge_starts'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_challenge_complete_tokens_passed')) {
+                obj['bot_challenge_complete_tokens_passed'] = ApiClient.convertToType(data['bot_challenge_complete_tokens_passed'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_challenge_complete_tokens_failed')) {
+                obj['bot_challenge_complete_tokens_failed'] = ApiClient.convertToType(data['bot_challenge_complete_tokens_failed'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_challenge_complete_tokens_checked')) {
+                obj['bot_challenge_complete_tokens_checked'] = ApiClient.convertToType(data['bot_challenge_complete_tokens_checked'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_challenge_complete_tokens_disabled')) {
+                obj['bot_challenge_complete_tokens_disabled'] = ApiClient.convertToType(data['bot_challenge_complete_tokens_disabled'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_challenges_issued')) {
+                obj['bot_challenges_issued'] = ApiClient.convertToType(data['bot_challenges_issued'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_challenges_succeeded')) {
+                obj['bot_challenges_succeeded'] = ApiClient.convertToType(data['bot_challenges_succeeded'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_challenges_failed')) {
+                obj['bot_challenges_failed'] = ApiClient.convertToType(data['bot_challenges_failed'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_challenge_complete_tokens_issued')) {
+                obj['bot_challenge_complete_tokens_issued'] = ApiClient.convertToType(data['bot_challenge_complete_tokens_issued'], 'Number');
             }
         }
         return obj;
@@ -2015,6 +2042,60 @@ RealtimeMeasurements.prototype['ddos_action_close'] = undefined;
  * @member {Number} ddos_action_blackhole
  */
 RealtimeMeasurements.prototype['ddos_action_blackhole'] = undefined;
+
+/**
+ * The number of challenge-start tokens created.
+ * @member {Number} bot_challenge_starts
+ */
+RealtimeMeasurements.prototype['bot_challenge_starts'] = undefined;
+
+/**
+ * The number of challenge-complete tokens that passed validation.
+ * @member {Number} bot_challenge_complete_tokens_passed
+ */
+RealtimeMeasurements.prototype['bot_challenge_complete_tokens_passed'] = undefined;
+
+/**
+ * The number of challenge-complete tokens that failed validation.
+ * @member {Number} bot_challenge_complete_tokens_failed
+ */
+RealtimeMeasurements.prototype['bot_challenge_complete_tokens_failed'] = undefined;
+
+/**
+ * The number of challenge-complete tokens checked.
+ * @member {Number} bot_challenge_complete_tokens_checked
+ */
+RealtimeMeasurements.prototype['bot_challenge_complete_tokens_checked'] = undefined;
+
+/**
+ * The number of challenge-complete tokens not checked because the feature was disabled.
+ * @member {Number} bot_challenge_complete_tokens_disabled
+ */
+RealtimeMeasurements.prototype['bot_challenge_complete_tokens_disabled'] = undefined;
+
+/**
+ * The number of challenges issued. For example, the issuance of a CAPTCHA challenge.
+ * @member {Number} bot_challenges_issued
+ */
+RealtimeMeasurements.prototype['bot_challenges_issued'] = undefined;
+
+/**
+ * The number of successful challenge solutions processed. For example, a correct CAPTCHA solution.
+ * @member {Number} bot_challenges_succeeded
+ */
+RealtimeMeasurements.prototype['bot_challenges_succeeded'] = undefined;
+
+/**
+ * The number of failed challenge solutions processed. For example, an incorrect CAPTCHA solution.
+ * @member {Number} bot_challenges_failed
+ */
+RealtimeMeasurements.prototype['bot_challenges_failed'] = undefined;
+
+/**
+ * The number of challenge-complete tokens issued. For example, issuing a challenge-complete token after a series of CAPTCHA challenges ending in success.
+ * @member {Number} bot_challenge_complete_tokens_issued
+ */
+RealtimeMeasurements.prototype['bot_challenge_complete_tokens_issued'] = undefined;
 
 
 

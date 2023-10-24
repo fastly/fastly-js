@@ -16,7 +16,7 @@ import HistoricalFieldResultsAttributes from './HistoricalFieldResultsAttributes
 /**
  * The HistoricalFieldResponseDataField model module.
  * @module model/HistoricalFieldResponseDataField
- * @version 6.1.1
+ * @version 6.2.0
  */
 class HistoricalFieldResponseDataField {
     /**

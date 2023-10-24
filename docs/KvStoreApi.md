@@ -7,10 +7,10 @@ const apiInstance = new Fastly.KvStoreApi();
 
 Method | Fastly API endpoint | Description
 ------------- | ------------- | -------------
-[**createStore**](KvStoreApi.md#createStore) | **POST** /resources/stores/kv | Create an kv store.
-[**deleteStore**](KvStoreApi.md#deleteStore) | **DELETE** /resources/stores/kv/{store_id} | Delete an kv store.
-[**getStore**](KvStoreApi.md#getStore) | **GET** /resources/stores/kv/{store_id} | Describe an kv store.
-[**getStores**](KvStoreApi.md#getStores) | **GET** /resources/stores/kv | List kv stores.
+[**createStore**](KvStoreApi.md#createStore) | **POST** /resources/stores/kv | Create a KV store.
+[**deleteStore**](KvStoreApi.md#deleteStore) | **DELETE** /resources/stores/kv/{store_id} | Delete a KV store.
+[**getStore**](KvStoreApi.md#getStore) | **GET** /resources/stores/kv/{store_id} | Describe a KV store.
+[**getStores**](KvStoreApi.md#getStores) | **GET** /resources/stores/kv | List KV stores.
 
 
 ## `createStore`
@@ -19,7 +19,7 @@ Method | Fastly API endpoint | Description
 createStore({ , [location, ][store] })
 ```
 
-Create a new kv store.
+Create a new KV store.
 
 ### Example
 
@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 deleteStore({ store_id })
 ```
 
-An kv store must be empty before it can be deleted.  Deleting an kv store that still contains keys will result in a `409` (Conflict).
+A KV store must be empty before it can be deleted.  Deleting a KV store that still contains keys will result in a `409` (Conflict).
 
 ### Example
 
@@ -91,7 +91,7 @@ null (empty response body)
 getStore({ store_id })
 ```
 
-Get an kv store by ID.
+Get a KV store by ID.
 
 ### Example
 

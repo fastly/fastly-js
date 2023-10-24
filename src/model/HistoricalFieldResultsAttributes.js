@@ -18,7 +18,7 @@ import Results from './Results';
 /**
  * The HistoricalFieldResultsAttributes model module.
  * @module model/HistoricalFieldResultsAttributes
- * @version 6.1.1
+ * @version 6.2.0
  */
 class HistoricalFieldResultsAttributes {
     /**
@@ -700,6 +700,33 @@ class HistoricalFieldResultsAttributes {
             }
             if (data.hasOwnProperty('ddos_action_blackhole')) {
                 obj['ddos_action_blackhole'] = ApiClient.convertToType(data['ddos_action_blackhole'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_challenge_starts')) {
+                obj['bot_challenge_starts'] = ApiClient.convertToType(data['bot_challenge_starts'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_challenge_complete_tokens_passed')) {
+                obj['bot_challenge_complete_tokens_passed'] = ApiClient.convertToType(data['bot_challenge_complete_tokens_passed'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_challenge_complete_tokens_failed')) {
+                obj['bot_challenge_complete_tokens_failed'] = ApiClient.convertToType(data['bot_challenge_complete_tokens_failed'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_challenge_complete_tokens_checked')) {
+                obj['bot_challenge_complete_tokens_checked'] = ApiClient.convertToType(data['bot_challenge_complete_tokens_checked'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_challenge_complete_tokens_disabled')) {
+                obj['bot_challenge_complete_tokens_disabled'] = ApiClient.convertToType(data['bot_challenge_complete_tokens_disabled'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_challenge_complete_tokens_issued')) {
+                obj['bot_challenge_complete_tokens_issued'] = ApiClient.convertToType(data['bot_challenge_complete_tokens_issued'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_challenges_issued')) {
+                obj['bot_challenges_issued'] = ApiClient.convertToType(data['bot_challenges_issued'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_challenges_succeeded')) {
+                obj['bot_challenges_succeeded'] = ApiClient.convertToType(data['bot_challenges_succeeded'], 'Number');
+            }
+            if (data.hasOwnProperty('bot_challenges_failed')) {
+                obj['bot_challenges_failed'] = ApiClient.convertToType(data['bot_challenges_failed'], 'Number');
             }
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ReadOnlyIdService.constructFromObject(data['service_id']);
@@ -2011,6 +2038,60 @@ HistoricalFieldResultsAttributes.prototype['ddos_action_close'] = undefined;
 HistoricalFieldResultsAttributes.prototype['ddos_action_blackhole'] = undefined;
 
 /**
+ * The number of challenge-start tokens created.
+ * @member {Number} bot_challenge_starts
+ */
+HistoricalFieldResultsAttributes.prototype['bot_challenge_starts'] = undefined;
+
+/**
+ * The number of challenge-complete tokens that passed validation.
+ * @member {Number} bot_challenge_complete_tokens_passed
+ */
+HistoricalFieldResultsAttributes.prototype['bot_challenge_complete_tokens_passed'] = undefined;
+
+/**
+ * The number of challenge-complete tokens that failed validation.
+ * @member {Number} bot_challenge_complete_tokens_failed
+ */
+HistoricalFieldResultsAttributes.prototype['bot_challenge_complete_tokens_failed'] = undefined;
+
+/**
+ * The number of challenge-complete tokens checked.
+ * @member {Number} bot_challenge_complete_tokens_checked
+ */
+HistoricalFieldResultsAttributes.prototype['bot_challenge_complete_tokens_checked'] = undefined;
+
+/**
+ * The number of challenge-complete tokens not checked because the feature was disabled.
+ * @member {Number} bot_challenge_complete_tokens_disabled
+ */
+HistoricalFieldResultsAttributes.prototype['bot_challenge_complete_tokens_disabled'] = undefined;
+
+/**
+ * The number of challenge-complete tokens issued. For example, issuing a challenge-complete token after a series of CAPTCHA challenges ending in success.
+ * @member {Number} bot_challenge_complete_tokens_issued
+ */
+HistoricalFieldResultsAttributes.prototype['bot_challenge_complete_tokens_issued'] = undefined;
+
+/**
+ * The number of challenges issued. For example, the issuance of a CAPTCHA challenge.
+ * @member {Number} bot_challenges_issued
+ */
+HistoricalFieldResultsAttributes.prototype['bot_challenges_issued'] = undefined;
+
+/**
+ * The number of successful challenge solutions processed. For example, a correct CAPTCHA solution.
+ * @member {Number} bot_challenges_succeeded
+ */
+HistoricalFieldResultsAttributes.prototype['bot_challenges_succeeded'] = undefined;
+
+/**
+ * The number of failed challenge solutions processed. For example, an incorrect CAPTCHA solution.
+ * @member {Number} bot_challenges_failed
+ */
+HistoricalFieldResultsAttributes.prototype['bot_challenges_failed'] = undefined;
+
+/**
  * @member {module:model/ReadOnlyIdService} service_id
  */
 HistoricalFieldResultsAttributes.prototype['service_id'] = undefined;
@@ -3102,6 +3183,51 @@ Results.prototype['ddos_action_close'] = undefined;
  * @member {Number} ddos_action_blackhole
  */
 Results.prototype['ddos_action_blackhole'] = undefined;
+/**
+ * The number of challenge-start tokens created.
+ * @member {Number} bot_challenge_starts
+ */
+Results.prototype['bot_challenge_starts'] = undefined;
+/**
+ * The number of challenge-complete tokens that passed validation.
+ * @member {Number} bot_challenge_complete_tokens_passed
+ */
+Results.prototype['bot_challenge_complete_tokens_passed'] = undefined;
+/**
+ * The number of challenge-complete tokens that failed validation.
+ * @member {Number} bot_challenge_complete_tokens_failed
+ */
+Results.prototype['bot_challenge_complete_tokens_failed'] = undefined;
+/**
+ * The number of challenge-complete tokens checked.
+ * @member {Number} bot_challenge_complete_tokens_checked
+ */
+Results.prototype['bot_challenge_complete_tokens_checked'] = undefined;
+/**
+ * The number of challenge-complete tokens not checked because the feature was disabled.
+ * @member {Number} bot_challenge_complete_tokens_disabled
+ */
+Results.prototype['bot_challenge_complete_tokens_disabled'] = undefined;
+/**
+ * The number of challenge-complete tokens issued. For example, issuing a challenge-complete token after a series of CAPTCHA challenges ending in success.
+ * @member {Number} bot_challenge_complete_tokens_issued
+ */
+Results.prototype['bot_challenge_complete_tokens_issued'] = undefined;
+/**
+ * The number of challenges issued. For example, the issuance of a CAPTCHA challenge.
+ * @member {Number} bot_challenges_issued
+ */
+Results.prototype['bot_challenges_issued'] = undefined;
+/**
+ * The number of successful challenge solutions processed. For example, a correct CAPTCHA solution.
+ * @member {Number} bot_challenges_succeeded
+ */
+Results.prototype['bot_challenges_succeeded'] = undefined;
+/**
+ * The number of failed challenge solutions processed. For example, an incorrect CAPTCHA solution.
+ * @member {Number} bot_challenges_failed
+ */
+Results.prototype['bot_challenges_failed'] = undefined;
 // Implement HistoricalFieldResultsAttributesAdditional interface:
 /**
  * @member {module:model/ReadOnlyIdService} service_id

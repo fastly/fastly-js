@@ -19,7 +19,7 @@ import WafFirewallVersionsResponse from '../model/WafFirewallVersionsResponse';
 /**
 * WafFirewallVersions service.
 * @module api/WafFirewallVersionsApi
-* @version 6.1.1
+* @version 6.2.0
 */
 export default class WafFirewallVersionsApi {
 

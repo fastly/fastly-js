@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LegacyWafTag model module.
  * @module model/LegacyWafTag
- * @version 6.1.1
+ * @version 6.2.0
  */
 class LegacyWafTag {
     /**

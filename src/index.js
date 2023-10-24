@@ -118,6 +118,8 @@ import HealthcheckResponse from './model/HealthcheckResponse';
 import Historical from './model/Historical';
 import HistoricalAggregateResponse from './model/HistoricalAggregateResponse';
 import HistoricalAggregateResponseAllOf from './model/HistoricalAggregateResponseAllOf';
+import HistoricalDdos from './model/HistoricalDdos';
+import HistoricalDdosMeta from './model/HistoricalDdosMeta';
 import HistoricalDomains from './model/HistoricalDomains';
 import HistoricalDomainsData from './model/HistoricalDomainsData';
 import HistoricalDomainsMeta from './model/HistoricalDomainsMeta';
@@ -296,6 +298,10 @@ import PaginationCursorMeta from './model/PaginationCursorMeta';
 import PaginationLinks from './model/PaginationLinks';
 import PaginationMeta from './model/PaginationMeta';
 import Permission from './model/Permission';
+import PlatformDdosDataItems from './model/PlatformDdosDataItems';
+import PlatformDdosEntry from './model/PlatformDdosEntry';
+import PlatformDdosResponse from './model/PlatformDdosResponse';
+import PlatformDdosResponseAllOf from './model/PlatformDdosResponseAllOf';
 import PoolAdditional from './model/PoolAdditional';
 import PoolResponse from './model/PoolResponse';
 import PoolResponseAllOf from './model/PoolResponseAllOf';
@@ -428,6 +434,7 @@ import Results from './model/Results';
 import RoleUser from './model/RoleUser';
 import SchemasContactResponse from './model/SchemasContactResponse';
 import SchemasSnippetResponse from './model/SchemasSnippetResponse';
+import SchemasSnippetResponseCommon from './model/SchemasSnippetResponseCommon';
 import SchemasUserResponse from './model/SchemasUserResponse';
 import SchemasUserResponseReadOnly from './model/SchemasUserResponseReadOnly';
 import SchemasVclResponse from './model/SchemasVclResponse';
@@ -477,8 +484,14 @@ import Settings from './model/Settings';
 import SettingsResponse from './model/SettingsResponse';
 import SigningKey from './model/SigningKey';
 import Snippet from './model/Snippet';
+import SnippetAllOf from './model/SnippetAllOf';
+import SnippetCommon from './model/SnippetCommon';
 import SnippetResponse from './model/SnippetResponse';
-import SnippetResponseAllOf from './model/SnippetResponseAllOf';
+import SnippetResponseCommon from './model/SnippetResponseCommon';
+import SnippetResponseCommonAllOf from './model/SnippetResponseCommonAllOf';
+import SnippetResponsePost from './model/SnippetResponsePost';
+import SnippetWithDynamicNumber from './model/SnippetWithDynamicNumber';
+import SnippetWithDynamicNumberAllOf from './model/SnippetWithDynamicNumberAllOf';
 import Star from './model/Star';
 import StarData from './model/StarData';
 import StarResponse from './model/StarResponse';
@@ -597,6 +610,7 @@ import ValidatorResultData from './model/ValidatorResultData';
 import ValidatorResultDataAttributes from './model/ValidatorResultDataAttributes';
 import ValidatorResultDataAttributesMessages from './model/ValidatorResultDataAttributesMessages';
 import Values from './model/Values';
+import ValuesDdos from './model/ValuesDdos';
 import Vcl from './model/Vcl';
 import VclDiff from './model/VclDiff';
 import VclResponse from './model/VclResponse';
@@ -787,6 +801,7 @@ import WafFirewallsApi from './api/WafFirewallsApi';
 import WafRuleRevisionsApi from './api/WafRuleRevisionsApi';
 import WafRulesApi from './api/WafRulesApi';
 import WafTagsApi from './api/WafTagsApi';
+import WholePlatformDdosHistoricalApi from './api/WholePlatformDdosHistoricalApi';
 
 
 function authenticate (key) {
@@ -822,7 +837,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 6.1.1
+* @version 6.2.0
 */
 export {
     /**
@@ -1466,6 +1481,18 @@ export {
      * @property {module:model/HistoricalAggregateResponseAllOf}
      */
     HistoricalAggregateResponseAllOf,
+
+    /**
+     * The HistoricalDdos model constructor.
+     * @property {module:model/HistoricalDdos}
+     */
+    HistoricalDdos,
+
+    /**
+     * The HistoricalDdosMeta model constructor.
+     * @property {module:model/HistoricalDdosMeta}
+     */
+    HistoricalDdosMeta,
 
     /**
      * The HistoricalDomains model constructor.
@@ -2536,6 +2563,30 @@ export {
     Permission,
 
     /**
+     * The PlatformDdosDataItems model constructor.
+     * @property {module:model/PlatformDdosDataItems}
+     */
+    PlatformDdosDataItems,
+
+    /**
+     * The PlatformDdosEntry model constructor.
+     * @property {module:model/PlatformDdosEntry}
+     */
+    PlatformDdosEntry,
+
+    /**
+     * The PlatformDdosResponse model constructor.
+     * @property {module:model/PlatformDdosResponse}
+     */
+    PlatformDdosResponse,
+
+    /**
+     * The PlatformDdosResponseAllOf model constructor.
+     * @property {module:model/PlatformDdosResponseAllOf}
+     */
+    PlatformDdosResponseAllOf,
+
+    /**
      * The PoolAdditional model constructor.
      * @property {module:model/PoolAdditional}
      */
@@ -3328,6 +3379,12 @@ export {
     SchemasSnippetResponse,
 
     /**
+     * The SchemasSnippetResponseCommon model constructor.
+     * @property {module:model/SchemasSnippetResponseCommon}
+     */
+    SchemasSnippetResponseCommon,
+
+    /**
      * The SchemasUserResponse model constructor.
      * @property {module:model/SchemasUserResponse}
      */
@@ -3622,16 +3679,52 @@ export {
     Snippet,
 
     /**
+     * The SnippetAllOf model constructor.
+     * @property {module:model/SnippetAllOf}
+     */
+    SnippetAllOf,
+
+    /**
+     * The SnippetCommon model constructor.
+     * @property {module:model/SnippetCommon}
+     */
+    SnippetCommon,
+
+    /**
      * The SnippetResponse model constructor.
      * @property {module:model/SnippetResponse}
      */
     SnippetResponse,
 
     /**
-     * The SnippetResponseAllOf model constructor.
-     * @property {module:model/SnippetResponseAllOf}
+     * The SnippetResponseCommon model constructor.
+     * @property {module:model/SnippetResponseCommon}
      */
-    SnippetResponseAllOf,
+    SnippetResponseCommon,
+
+    /**
+     * The SnippetResponseCommonAllOf model constructor.
+     * @property {module:model/SnippetResponseCommonAllOf}
+     */
+    SnippetResponseCommonAllOf,
+
+    /**
+     * The SnippetResponsePost model constructor.
+     * @property {module:model/SnippetResponsePost}
+     */
+    SnippetResponsePost,
+
+    /**
+     * The SnippetWithDynamicNumber model constructor.
+     * @property {module:model/SnippetWithDynamicNumber}
+     */
+    SnippetWithDynamicNumber,
+
+    /**
+     * The SnippetWithDynamicNumberAllOf model constructor.
+     * @property {module:model/SnippetWithDynamicNumberAllOf}
+     */
+    SnippetWithDynamicNumberAllOf,
 
     /**
      * The Star model constructor.
@@ -4340,6 +4433,12 @@ export {
      * @property {module:model/Values}
      */
     Values,
+
+    /**
+     * The ValuesDdos model constructor.
+     * @property {module:model/ValuesDdos}
+     */
+    ValuesDdos,
 
     /**
      * The Vcl model constructor.
@@ -5480,6 +5579,12 @@ export {
     * @property {module:api/WafTagsApi}
     */
     WafTagsApi,
+
+    /**
+    * The WholePlatformDdosHistoricalApi service constructor.
+    * @property {module:api/WholePlatformDdosHistoricalApi}
+    */
+    WholePlatformDdosHistoricalApi,
 
     authenticate
 };

@@ -19,7 +19,7 @@ import LoggingUseTls from '../model/LoggingUseTls';
 /**
 * LoggingLogentries service.
 * @module api/LoggingLogentriesApi
-* @version 6.1.1
+* @version 6.2.0
 */
 export default class LoggingLogentriesApi {
 
@@ -50,7 +50,7 @@ export default class LoggingLogentriesApi {
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {Number} [options.port=20000] - The port number.
-     * @param {String} [options.token] - Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
+     * @param {String} [options.token] - Use token based authentication.
      * @param {module:model/LoggingUseTls} [options.use_tls]
      * @param {module:model/String} [options.region] - The region to which to stream logs.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogentriesResponse} and HTTP response
@@ -119,7 +119,7 @@ export default class LoggingLogentriesApi {
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {Number} [options.port=20000] - The port number.
-     * @param {String} [options.token] - Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
+     * @param {String} [options.token] - Use token based authentication.
      * @param {module:model/LoggingUseTls} [options.use_tls]
      * @param {module:model/String} [options.region] - The region to which to stream logs.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogentriesResponse}
@@ -352,7 +352,7 @@ export default class LoggingLogentriesApi {
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {Number} [options.port=20000] - The port number.
-     * @param {String} [options.token] - Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
+     * @param {String} [options.token] - Use token based authentication.
      * @param {module:model/LoggingUseTls} [options.use_tls]
      * @param {module:model/String} [options.region] - The region to which to stream logs.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogentriesResponse} and HTTP response
@@ -427,7 +427,7 @@ export default class LoggingLogentriesApi {
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {Number} [options.port=20000] - The port number.
-     * @param {String} [options.token] - Use token based authentication ([https://logentries.com/doc/input-token/](https://logentries.com/doc/input-token/)).
+     * @param {String} [options.token] - Use token based authentication.
      * @param {module:model/LoggingUseTls} [options.use_tls]
      * @param {module:model/String} [options.region] - The region to which to stream logs.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogentriesResponse}
