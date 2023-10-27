@@ -17,7 +17,7 @@ import SnippetWithDynamicNumber from './SnippetWithDynamicNumber';
 /**
  * The SnippetResponsePost model module.
  * @module model/SnippetResponsePost
- * @version 6.2.0
+ * @version 6.2.1
  */
 class SnippetResponsePost {
     /**

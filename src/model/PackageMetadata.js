@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PackageMetadata model module.
  * @module model/PackageMetadata
- * @version 6.2.0
+ * @version 6.2.1
  */
 class PackageMetadata {
     /**
@@ -76,13 +76,13 @@ class PackageMetadata {
 }
 
 /**
- * Name of the Compute@Edge package.
+ * Name of the Compute package.
  * @member {String} name
  */
 PackageMetadata.prototype['name'] = undefined;
 
 /**
- * Description of the Compute@Edge package.
+ * Description of the Compute package.
  * @member {String} description
  */
 PackageMetadata.prototype['description'] = undefined;
@@ -94,25 +94,25 @@ PackageMetadata.prototype['description'] = undefined;
 PackageMetadata.prototype['authors'] = undefined;
 
 /**
- * The language of the Compute@Edge package.
+ * The language of the Compute package.
  * @member {String} language
  */
 PackageMetadata.prototype['language'] = undefined;
 
 /**
- * Size of the Compute@Edge package in bytes.
+ * Size of the Compute package in bytes.
  * @member {Number} size
  */
 PackageMetadata.prototype['size'] = undefined;
 
 /**
- * Hash of the Compute@Edge package.
+ * Hash of the Compute package.
  * @member {String} hashsum
  */
 PackageMetadata.prototype['hashsum'] = undefined;
 
 /**
- * Hash of the files within the Compute@Edge package.
+ * Hash of the files within the Compute package.
  * @member {String} files_hash
  */
 PackageMetadata.prototype['files_hash'] = undefined;

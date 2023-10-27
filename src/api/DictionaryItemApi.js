@@ -19,7 +19,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * DictionaryItem service.
 * @module api/DictionaryItemApi
-* @version 6.2.0
+* @version 6.2.1
 */
 export default class DictionaryItemApi {
 

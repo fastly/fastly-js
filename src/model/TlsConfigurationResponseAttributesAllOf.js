@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TlsConfigurationResponseAttributesAllOf model module.
  * @module model/TlsConfigurationResponseAttributesAllOf
- * @version 6.2.0
+ * @version 6.2.1
  */
 class TlsConfigurationResponseAttributesAllOf {
     /**

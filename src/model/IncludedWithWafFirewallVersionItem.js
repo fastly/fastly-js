@@ -18,7 +18,7 @@ import WafActiveRuleData from './WafActiveRuleData';
 /**
  * The IncludedWithWafFirewallVersionItem model module.
  * @module model/IncludedWithWafFirewallVersionItem
- * @version 6.2.0
+ * @version 6.2.1
  */
 class IncludedWithWafFirewallVersionItem {
     /**

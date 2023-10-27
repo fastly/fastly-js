@@ -16,7 +16,7 @@ import RealtimeMeasurements from './RealtimeMeasurements';
 /**
  * The RealtimeEntryAggregated model module.
  * @module model/RealtimeEntryAggregated
- * @version 6.2.0
+ * @version 6.2.1
  */
 class RealtimeEntryAggregated {
     /**
@@ -1489,25 +1489,25 @@ RealtimeEntryAggregated.prototype['miss_resp_body_bytes'] = undefined;
 RealtimeEntryAggregated.prototype['pass_resp_body_bytes'] = undefined;
 
 /**
- * Total header bytes received by Compute@Edge.
+ * Total header bytes received by the Compute platform.
  * @member {Number} compute_req_header_bytes
  */
 RealtimeEntryAggregated.prototype['compute_req_header_bytes'] = undefined;
 
 /**
- * Total body bytes received by Compute@Edge.
+ * Total body bytes received by the Compute platform.
  * @member {Number} compute_req_body_bytes
  */
 RealtimeEntryAggregated.prototype['compute_req_body_bytes'] = undefined;
 
 /**
- * Total header bytes sent from Compute@Edge to end user.
+ * Total header bytes sent from Compute to end user.
  * @member {Number} compute_resp_header_bytes
  */
 RealtimeEntryAggregated.prototype['compute_resp_header_bytes'] = undefined;
 
 /**
- * Total body bytes sent from Compute@Edge to end user.
+ * Total body bytes sent from Compute to end user.
  * @member {Number} compute_resp_body_bytes
  */
 RealtimeEntryAggregated.prototype['compute_resp_body_bytes'] = undefined;
@@ -1669,31 +1669,31 @@ RealtimeEntryAggregated.prototype['segblock_origin_fetches'] = undefined;
 RealtimeEntryAggregated.prototype['segblock_shield_fetches'] = undefined;
 
 /**
- * Number of \"Informational\" category status codes delivered by Compute@Edge.
+ * Number of \"Informational\" category status codes delivered by the Compute platform.
  * @member {Number} compute_resp_status_1xx
  */
 RealtimeEntryAggregated.prototype['compute_resp_status_1xx'] = undefined;
 
 /**
- * Number of \"Success\" category status codes delivered by Compute@Edge.
+ * Number of \"Success\" category status codes delivered by the Compute platform.
  * @member {Number} compute_resp_status_2xx
  */
 RealtimeEntryAggregated.prototype['compute_resp_status_2xx'] = undefined;
 
 /**
- * Number of \"Redirection\" category status codes delivered by Compute@Edge.
+ * Number of \"Redirection\" category status codes delivered by the Compute platform.
  * @member {Number} compute_resp_status_3xx
  */
 RealtimeEntryAggregated.prototype['compute_resp_status_3xx'] = undefined;
 
 /**
- * Number of \"Client Error\" category status codes delivered by Compute@Edge.
+ * Number of \"Client Error\" category status codes delivered by the Compute platform.
  * @member {Number} compute_resp_status_4xx
  */
 RealtimeEntryAggregated.prototype['compute_resp_status_4xx'] = undefined;
 
 /**
- * Number of \"Server Error\" category status codes delivered by Compute@Edge.
+ * Number of \"Server Error\" category status codes delivered by the Compute platform.
  * @member {Number} compute_resp_status_5xx
  */
 RealtimeEntryAggregated.prototype['compute_resp_status_5xx'] = undefined;
@@ -1711,25 +1711,25 @@ RealtimeEntryAggregated.prototype['edge_hit_requests'] = undefined;
 RealtimeEntryAggregated.prototype['edge_miss_requests'] = undefined;
 
 /**
- * Total header bytes sent to backends (origins) by Compute@Edge.
+ * Total header bytes sent to backends (origins) by the Compute platform.
  * @member {Number} compute_bereq_header_bytes
  */
 RealtimeEntryAggregated.prototype['compute_bereq_header_bytes'] = undefined;
 
 /**
- * Total body bytes sent to backends (origins) by Compute@Edge.
+ * Total body bytes sent to backends (origins) by the Compute platform.
  * @member {Number} compute_bereq_body_bytes
  */
 RealtimeEntryAggregated.prototype['compute_bereq_body_bytes'] = undefined;
 
 /**
- * Total header bytes received from backends (origins) by Compute@Edge.
+ * Total header bytes received from backends (origins) by the Compute platform.
  * @member {Number} compute_beresp_header_bytes
  */
 RealtimeEntryAggregated.prototype['compute_beresp_header_bytes'] = undefined;
 
 /**
- * Total body bytes received from backends (origins) by Compute@Edge.
+ * Total body bytes received from backends (origins) by the Compute platform.
  * @member {Number} compute_beresp_body_bytes
  */
 RealtimeEntryAggregated.prototype['compute_beresp_body_bytes'] = undefined;
@@ -2728,22 +2728,22 @@ RealtimeMeasurements.prototype['miss_resp_body_bytes'] = undefined;
  */
 RealtimeMeasurements.prototype['pass_resp_body_bytes'] = undefined;
 /**
- * Total header bytes received by Compute@Edge.
+ * Total header bytes received by the Compute platform.
  * @member {Number} compute_req_header_bytes
  */
 RealtimeMeasurements.prototype['compute_req_header_bytes'] = undefined;
 /**
- * Total body bytes received by Compute@Edge.
+ * Total body bytes received by the Compute platform.
  * @member {Number} compute_req_body_bytes
  */
 RealtimeMeasurements.prototype['compute_req_body_bytes'] = undefined;
 /**
- * Total header bytes sent from Compute@Edge to end user.
+ * Total header bytes sent from Compute to end user.
  * @member {Number} compute_resp_header_bytes
  */
 RealtimeMeasurements.prototype['compute_resp_header_bytes'] = undefined;
 /**
- * Total body bytes sent from Compute@Edge to end user.
+ * Total body bytes sent from Compute to end user.
  * @member {Number} compute_resp_body_bytes
  */
 RealtimeMeasurements.prototype['compute_resp_body_bytes'] = undefined;
@@ -2878,27 +2878,27 @@ RealtimeMeasurements.prototype['segblock_origin_fetches'] = undefined;
  */
 RealtimeMeasurements.prototype['segblock_shield_fetches'] = undefined;
 /**
- * Number of \"Informational\" category status codes delivered by Compute@Edge.
+ * Number of \"Informational\" category status codes delivered by the Compute platform.
  * @member {Number} compute_resp_status_1xx
  */
 RealtimeMeasurements.prototype['compute_resp_status_1xx'] = undefined;
 /**
- * Number of \"Success\" category status codes delivered by Compute@Edge.
+ * Number of \"Success\" category status codes delivered by the Compute platform.
  * @member {Number} compute_resp_status_2xx
  */
 RealtimeMeasurements.prototype['compute_resp_status_2xx'] = undefined;
 /**
- * Number of \"Redirection\" category status codes delivered by Compute@Edge.
+ * Number of \"Redirection\" category status codes delivered by the Compute platform.
  * @member {Number} compute_resp_status_3xx
  */
 RealtimeMeasurements.prototype['compute_resp_status_3xx'] = undefined;
 /**
- * Number of \"Client Error\" category status codes delivered by Compute@Edge.
+ * Number of \"Client Error\" category status codes delivered by the Compute platform.
  * @member {Number} compute_resp_status_4xx
  */
 RealtimeMeasurements.prototype['compute_resp_status_4xx'] = undefined;
 /**
- * Number of \"Server Error\" category status codes delivered by Compute@Edge.
+ * Number of \"Server Error\" category status codes delivered by the Compute platform.
  * @member {Number} compute_resp_status_5xx
  */
 RealtimeMeasurements.prototype['compute_resp_status_5xx'] = undefined;
@@ -2913,22 +2913,22 @@ RealtimeMeasurements.prototype['edge_hit_requests'] = undefined;
  */
 RealtimeMeasurements.prototype['edge_miss_requests'] = undefined;
 /**
- * Total header bytes sent to backends (origins) by Compute@Edge.
+ * Total header bytes sent to backends (origins) by the Compute platform.
  * @member {Number} compute_bereq_header_bytes
  */
 RealtimeMeasurements.prototype['compute_bereq_header_bytes'] = undefined;
 /**
- * Total body bytes sent to backends (origins) by Compute@Edge.
+ * Total body bytes sent to backends (origins) by the Compute platform.
  * @member {Number} compute_bereq_body_bytes
  */
 RealtimeMeasurements.prototype['compute_bereq_body_bytes'] = undefined;
 /**
- * Total header bytes received from backends (origins) by Compute@Edge.
+ * Total header bytes received from backends (origins) by the Compute platform.
  * @member {Number} compute_beresp_header_bytes
  */
 RealtimeMeasurements.prototype['compute_beresp_header_bytes'] = undefined;
 /**
- * Total body bytes received from backends (origins) by Compute@Edge.
+ * Total body bytes received from backends (origins) by the Compute platform.
  * @member {Number} compute_beresp_body_bytes
  */
 RealtimeMeasurements.prototype['compute_beresp_body_bytes'] = undefined;

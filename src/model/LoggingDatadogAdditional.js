@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingDatadogAdditional model module.
  * @module model/LoggingDatadogAdditional
- * @version 6.2.0
+ * @version 6.2.1
  */
 class LoggingDatadogAdditional {
     /**

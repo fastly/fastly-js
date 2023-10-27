@@ -17,7 +17,7 @@ import PackageResponse from '../model/PackageResponse';
 /**
 * Package service.
 * @module api/PackageApi
-* @version 6.2.0
+* @version 6.2.1
 */
 export default class PackageApi {
 
@@ -38,7 +38,7 @@ export default class PackageApi {
 
 
     /**
-     * List detailed information about the Compute@Edge package for the specified service.
+     * List detailed information about the Compute package for the specified service.
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
@@ -89,7 +89,7 @@ export default class PackageApi {
     }
 
     /**
-     * List detailed information about the Compute@Edge package for the specified service.
+     * List detailed information about the Compute package for the specified service.
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
@@ -103,7 +103,7 @@ export default class PackageApi {
     }
 
     /**
-     * Upload a Compute@Edge package associated with the specified service version.
+     * Upload a Compute package associated with the specified service version.
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
@@ -158,7 +158,7 @@ export default class PackageApi {
     }
 
     /**
-     * Upload a Compute@Edge package associated with the specified service version.
+     * Upload a Compute package associated with the specified service version.
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.

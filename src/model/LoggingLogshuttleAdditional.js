@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingLogshuttleAdditional model module.
  * @module model/LoggingLogshuttleAdditional
- * @version 6.2.0
+ * @version 6.2.1
  */
 class LoggingLogshuttleAdditional {
     /**

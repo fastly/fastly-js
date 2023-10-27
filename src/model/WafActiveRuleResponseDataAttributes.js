@@ -17,7 +17,7 @@ import WafActiveRuleResponseDataAttributesAllOf from './WafActiveRuleResponseDat
 /**
  * The WafActiveRuleResponseDataAttributes model module.
  * @module model/WafActiveRuleResponseDataAttributes
- * @version 6.2.0
+ * @version 6.2.1
  */
 class WafActiveRuleResponseDataAttributes {
     /**

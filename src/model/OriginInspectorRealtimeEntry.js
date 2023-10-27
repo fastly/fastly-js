@@ -17,7 +17,7 @@ import OriginInspectorRealtimeEntryRecorded from './OriginInspectorRealtimeEntry
 /**
  * The OriginInspectorRealtimeEntry model module.
  * @module model/OriginInspectorRealtimeEntry
- * @version 6.2.0
+ * @version 6.2.1
  */
 class OriginInspectorRealtimeEntry {
     /**

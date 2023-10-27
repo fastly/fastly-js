@@ -16,7 +16,7 @@ import BatchErrors from './BatchErrors';
 /**
  * The Batch model module.
  * @module model/Batch
- * @version 6.2.0
+ * @version 6.2.1
  */
 class Batch {
     /**

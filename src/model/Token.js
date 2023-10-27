@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Token model module.
  * @module model/Token
- * @version 6.2.0
+ * @version 6.2.1
  */
 class Token {
     /**

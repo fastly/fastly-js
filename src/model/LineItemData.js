@@ -16,7 +16,7 @@ import LineItemDataReadOnlyInvoiceId from './LineItemDataReadOnlyInvoiceId';
 /**
  * The LineItemData model module.
  * @module model/LineItemData
- * @version 6.2.0
+ * @version 6.2.1
  */
 class LineItemData {
     /**

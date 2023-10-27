@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Results model module.
  * @module model/Results
- * @version 6.2.0
+ * @version 6.2.1
  */
 class Results {
     /**
@@ -1648,79 +1648,79 @@ Results.prototype['compute_ram_used'] = undefined;
 Results.prototype['compute_execution_time_ms'] = undefined;
 
 /**
- * Total header bytes received by Compute@Edge.
+ * Total header bytes received by the Compute platform.
  * @member {Number} compute_req_header_bytes
  */
 Results.prototype['compute_req_header_bytes'] = undefined;
 
 /**
- * Total body bytes received by Compute@Edge.
+ * Total body bytes received by the Compute platform.
  * @member {Number} compute_req_body_bytes
  */
 Results.prototype['compute_req_body_bytes'] = undefined;
 
 /**
- * Total header bytes sent from Compute@Edge to end user.
+ * Total header bytes sent from Compute to end user.
  * @member {Number} compute_resp_header_bytes
  */
 Results.prototype['compute_resp_header_bytes'] = undefined;
 
 /**
- * Total body bytes sent from Compute@Edge to end user.
+ * Total body bytes sent from Compute to end user.
  * @member {Number} compute_resp_body_bytes
  */
 Results.prototype['compute_resp_body_bytes'] = undefined;
 
 /**
- * Number of \"Informational\" category status codes delivered by Compute@Edge.
+ * Number of \"Informational\" category status codes delivered by the Compute platform.
  * @member {Number} compute_resp_status_1xx
  */
 Results.prototype['compute_resp_status_1xx'] = undefined;
 
 /**
- * Number of \"Success\" category status codes delivered by Compute@Edge.
+ * Number of \"Success\" category status codes delivered by the Compute platform.
  * @member {Number} compute_resp_status_2xx
  */
 Results.prototype['compute_resp_status_2xx'] = undefined;
 
 /**
- * Number of \"Redirection\" category status codes delivered by Compute@Edge.
+ * Number of \"Redirection\" category status codes delivered by the Compute platform.
  * @member {Number} compute_resp_status_3xx
  */
 Results.prototype['compute_resp_status_3xx'] = undefined;
 
 /**
- * Number of \"Client Error\" category status codes delivered by Compute@Edge.
+ * Number of \"Client Error\" category status codes delivered by the Compute platform.
  * @member {Number} compute_resp_status_4xx
  */
 Results.prototype['compute_resp_status_4xx'] = undefined;
 
 /**
- * Number of \"Server Error\" category status codes delivered by Compute@Edge.
+ * Number of \"Server Error\" category status codes delivered by the Compute platform.
  * @member {Number} compute_resp_status_5xx
  */
 Results.prototype['compute_resp_status_5xx'] = undefined;
 
 /**
- * Total header bytes sent to backends (origins) by Compute@Edge.
+ * Total header bytes sent to backends (origins) by the Compute platform.
  * @member {Number} compute_bereq_header_bytes
  */
 Results.prototype['compute_bereq_header_bytes'] = undefined;
 
 /**
- * Total body bytes sent to backends (origins) by Compute@Edge.
+ * Total body bytes sent to backends (origins) by the Compute platform.
  * @member {Number} compute_bereq_body_bytes
  */
 Results.prototype['compute_bereq_body_bytes'] = undefined;
 
 /**
- * Total header bytes received from backends (origins) by Compute@Edge.
+ * Total header bytes received from backends (origins) by the Compute platform.
  * @member {Number} compute_beresp_header_bytes
  */
 Results.prototype['compute_beresp_header_bytes'] = undefined;
 
 /**
- * Total body bytes received from backends (origins) by Compute@Edge.
+ * Total body bytes received from backends (origins) by the Compute platform.
  * @member {Number} compute_beresp_body_bytes
  */
 Results.prototype['compute_beresp_body_bytes'] = undefined;

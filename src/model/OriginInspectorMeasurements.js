@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OriginInspectorMeasurements model module.
  * @module model/OriginInspectorMeasurements
- * @version 6.2.0
+ * @version 6.2.1
  */
 class OriginInspectorMeasurements {
     /**
@@ -967,229 +967,229 @@ OriginInspectorMeasurements.prototype['waf_latency_10000_to_60000ms'] = undefine
 OriginInspectorMeasurements.prototype['waf_latency_60000ms'] = undefined;
 
 /**
- * Number of responses for origin received by Compute@Edge.
+ * Number of responses for origin received by the Compute platform.
  * @member {Number} compute_responses
  */
 OriginInspectorMeasurements.prototype['compute_responses'] = undefined;
 
 /**
- * Number of header bytes for origin received by Compute@Edge.
+ * Number of header bytes for origin received by the Compute platform.
  * @member {Number} compute_resp_header_bytes
  */
 OriginInspectorMeasurements.prototype['compute_resp_header_bytes'] = undefined;
 
 /**
- * Number of body bytes for origin received by Compute@Edge.
+ * Number of body bytes for origin received by the Compute platform.
  * @member {Number} compute_resp_body_bytes
  */
 OriginInspectorMeasurements.prototype['compute_resp_body_bytes'] = undefined;
 
 /**
- * Number of 1xx \"Informational\" status codes for origin received by Compute@Edge.
+ * Number of 1xx \"Informational\" status codes for origin received by the Compute platform.
  * @member {Number} compute_status_1xx
  */
 OriginInspectorMeasurements.prototype['compute_status_1xx'] = undefined;
 
 /**
- * Number of 2xx \"Success\" status codes for origin received by Compute@Edge.
+ * Number of 2xx \"Success\" status codes for origin received by the Compute platform.
  * @member {Number} compute_status_2xx
  */
 OriginInspectorMeasurements.prototype['compute_status_2xx'] = undefined;
 
 /**
- * Number of 3xx \"Redirection\" codes for origin received by Compute@Edge.
+ * Number of 3xx \"Redirection\" codes for origin received by the Compute platform.
  * @member {Number} compute_status_3xx
  */
 OriginInspectorMeasurements.prototype['compute_status_3xx'] = undefined;
 
 /**
- * Number of 4xx \"Client Error\" codes for origin received by Compute@Edge.
+ * Number of 4xx \"Client Error\" codes for origin received by the Compute platform.
  * @member {Number} compute_status_4xx
  */
 OriginInspectorMeasurements.prototype['compute_status_4xx'] = undefined;
 
 /**
- * Number of 5xx \"Server Error\" codes for origin received by Compute@Edge.
+ * Number of 5xx \"Server Error\" codes for origin received by the Compute platform.
  * @member {Number} compute_status_5xx
  */
 OriginInspectorMeasurements.prototype['compute_status_5xx'] = undefined;
 
 /**
- * Number of responses received with status code 200 (Success) for origin received by Compute@Edge.
+ * Number of responses received with status code 200 (Success) for origin received by the Compute platform.
  * @member {Number} compute_status_200
  */
 OriginInspectorMeasurements.prototype['compute_status_200'] = undefined;
 
 /**
- * Number of responses received with status code 204 (No Content) for origin received by Compute@Edge.
+ * Number of responses received with status code 204 (No Content) for origin received by the Compute platform.
  * @member {Number} compute_status_204
  */
 OriginInspectorMeasurements.prototype['compute_status_204'] = undefined;
 
 /**
- * Number of responses received with status code 206 (Partial Content) for origin received by Compute@Edge.
+ * Number of responses received with status code 206 (Partial Content) for origin received by the Compute platform.
  * @member {Number} compute_status_206
  */
 OriginInspectorMeasurements.prototype['compute_status_206'] = undefined;
 
 /**
- * Number of responses received with status code 301 (Moved Permanently) for origin received by Compute@Edge.
+ * Number of responses received with status code 301 (Moved Permanently) for origin received by the Compute platform.
  * @member {Number} compute_status_301
  */
 OriginInspectorMeasurements.prototype['compute_status_301'] = undefined;
 
 /**
- * Number of responses received with status code 302 (Found) for origin received by Compute@Edge.
+ * Number of responses received with status code 302 (Found) for origin received by the Compute platform.
  * @member {Number} compute_status_302
  */
 OriginInspectorMeasurements.prototype['compute_status_302'] = undefined;
 
 /**
- * Number of responses received with status code 304 (Not Modified) for origin received by Compute@Edge.
+ * Number of responses received with status code 304 (Not Modified) for origin received by the Compute platform.
  * @member {Number} compute_status_304
  */
 OriginInspectorMeasurements.prototype['compute_status_304'] = undefined;
 
 /**
- * Number of responses received with status code 400 (Bad Request) for origin received by Compute@Edge.
+ * Number of responses received with status code 400 (Bad Request) for origin received by the Compute platform.
  * @member {Number} compute_status_400
  */
 OriginInspectorMeasurements.prototype['compute_status_400'] = undefined;
 
 /**
- * Number of responses received with status code 401 (Unauthorized) for origin received by Compute@Edge.
+ * Number of responses received with status code 401 (Unauthorized) for origin received by the Compute platform.
  * @member {Number} compute_status_401
  */
 OriginInspectorMeasurements.prototype['compute_status_401'] = undefined;
 
 /**
- * Number of responses received with status code 403 (Forbidden) for origin received by Compute@Edge.
+ * Number of responses received with status code 403 (Forbidden) for origin received by the Compute platform.
  * @member {Number} compute_status_403
  */
 OriginInspectorMeasurements.prototype['compute_status_403'] = undefined;
 
 /**
- * Number of responses received with status code 404 (Not Found) for origin received by Compute@Edge.
+ * Number of responses received with status code 404 (Not Found) for origin received by the Compute platform.
  * @member {Number} compute_status_404
  */
 OriginInspectorMeasurements.prototype['compute_status_404'] = undefined;
 
 /**
- * Number of responses received with status code 416 (Range Not Satisfiable) for origin received by Compute@Edge.
+ * Number of responses received with status code 416 (Range Not Satisfiable) for origin received by the Compute platform.
  * @member {Number} compute_status_416
  */
 OriginInspectorMeasurements.prototype['compute_status_416'] = undefined;
 
 /**
- * Number of responses received with status code 429 (Too Many Requests) for origin received by Compute@Edge.
+ * Number of responses received with status code 429 (Too Many Requests) for origin received by the Compute platform.
  * @member {Number} compute_status_429
  */
 OriginInspectorMeasurements.prototype['compute_status_429'] = undefined;
 
 /**
- * Number of responses received with status code 500 (Internal Server Error) for origin received by Compute@Edge.
+ * Number of responses received with status code 500 (Internal Server Error) for origin received by the Compute platform.
  * @member {Number} compute_status_500
  */
 OriginInspectorMeasurements.prototype['compute_status_500'] = undefined;
 
 /**
- * Number of responses received with status code 501 (Not Implemented) for origin received by Compute@Edge.
+ * Number of responses received with status code 501 (Not Implemented) for origin received by the Compute platform.
  * @member {Number} compute_status_501
  */
 OriginInspectorMeasurements.prototype['compute_status_501'] = undefined;
 
 /**
- * Number of responses received with status code 502 (Bad Gateway) for origin received by Compute@Edge.
+ * Number of responses received with status code 502 (Bad Gateway) for origin received by the Compute platform.
  * @member {Number} compute_status_502
  */
 OriginInspectorMeasurements.prototype['compute_status_502'] = undefined;
 
 /**
- * Number of responses received with status code 503 (Service Unavailable) for origin received by Compute@Edge.
+ * Number of responses received with status code 503 (Service Unavailable) for origin received by the Compute platform.
  * @member {Number} compute_status_503
  */
 OriginInspectorMeasurements.prototype['compute_status_503'] = undefined;
 
 /**
- * Number of responses received with status code 504 (Gateway Timeout) for origin received by Compute@Edge.
+ * Number of responses received with status code 504 (Gateway Timeout) for origin received by the Compute platform.
  * @member {Number} compute_status_504
  */
 OriginInspectorMeasurements.prototype['compute_status_504'] = undefined;
 
 /**
- * Number of responses received with status code 505 (HTTP Version Not Supported) for origin received by Compute@Edge.
+ * Number of responses received with status code 505 (HTTP Version Not Supported) for origin received by the Compute platform.
  * @member {Number} compute_status_505
  */
 OriginInspectorMeasurements.prototype['compute_status_505'] = undefined;
 
 /**
- * Number of responses with latency between 0 and 1 millisecond for origin received by Compute@Edge.
+ * Number of responses with latency between 0 and 1 millisecond for origin received by the Compute platform.
  * @member {Number} compute_latency_0_to_1ms
  */
 OriginInspectorMeasurements.prototype['compute_latency_0_to_1ms'] = undefined;
 
 /**
- * Number of responses with latency between 1 and 5 milliseconds for origin received by Compute@Edge.
+ * Number of responses with latency between 1 and 5 milliseconds for origin received by the Compute platform.
  * @member {Number} compute_latency_1_to_5ms
  */
 OriginInspectorMeasurements.prototype['compute_latency_1_to_5ms'] = undefined;
 
 /**
- * Number of responses with latency between 5 and 10 milliseconds for origin received by Compute@Edge.
+ * Number of responses with latency between 5 and 10 milliseconds for origin received by the Compute platform.
  * @member {Number} compute_latency_5_to_10ms
  */
 OriginInspectorMeasurements.prototype['compute_latency_5_to_10ms'] = undefined;
 
 /**
- * Number of responses with latency between 10 and 50 milliseconds for origin received by Compute@Edge.
+ * Number of responses with latency between 10 and 50 milliseconds for origin received by the Compute platform.
  * @member {Number} compute_latency_10_to_50ms
  */
 OriginInspectorMeasurements.prototype['compute_latency_10_to_50ms'] = undefined;
 
 /**
- * Number of responses with latency between 50 and 100 milliseconds for origin received by Compute@Edge.
+ * Number of responses with latency between 50 and 100 milliseconds for origin received by the Compute platform.
  * @member {Number} compute_latency_50_to_100ms
  */
 OriginInspectorMeasurements.prototype['compute_latency_50_to_100ms'] = undefined;
 
 /**
- * Number of responses with latency between 100 and 250 milliseconds for origin received by Compute@Edge.
+ * Number of responses with latency between 100 and 250 milliseconds for origin received by the Compute platform.
  * @member {Number} compute_latency_100_to_250ms
  */
 OriginInspectorMeasurements.prototype['compute_latency_100_to_250ms'] = undefined;
 
 /**
- * Number of responses with latency between 250 and 500 milliseconds for origin received by Compute@Edge.
+ * Number of responses with latency between 250 and 500 milliseconds for origin received by the Compute platform.
  * @member {Number} compute_latency_250_to_500ms
  */
 OriginInspectorMeasurements.prototype['compute_latency_250_to_500ms'] = undefined;
 
 /**
- * Number of responses with latency between 500 and 1,000 milliseconds for origin received by Compute@Edge.
+ * Number of responses with latency between 500 and 1,000 milliseconds for origin received by the Compute platform.
  * @member {Number} compute_latency_500_to_1000ms
  */
 OriginInspectorMeasurements.prototype['compute_latency_500_to_1000ms'] = undefined;
 
 /**
- * Number of responses with latency between 1,000 and 5,000 milliseconds for origin received by Compute@Edge.
+ * Number of responses with latency between 1,000 and 5,000 milliseconds for origin received by the Compute platform.
  * @member {Number} compute_latency_1000_to_5000ms
  */
 OriginInspectorMeasurements.prototype['compute_latency_1000_to_5000ms'] = undefined;
 
 /**
- * Number of responses with latency between 5,000 and 10,000 milliseconds for origin received by Compute@Edge.
+ * Number of responses with latency between 5,000 and 10,000 milliseconds for origin received by the Compute platform.
  * @member {Number} compute_latency_5000_to_10000ms
  */
 OriginInspectorMeasurements.prototype['compute_latency_5000_to_10000ms'] = undefined;
 
 /**
- * Number of responses with latency between 10,000 and 60,000 milliseconds for origin received by Compute@Edge.
+ * Number of responses with latency between 10,000 and 60,000 milliseconds for origin received by the Compute platform.
  * @member {Number} compute_latency_10000_to_60000ms
  */
 OriginInspectorMeasurements.prototype['compute_latency_10000_to_60000ms'] = undefined;
 
 /**
- * Number of responses with latency of 60,000 milliseconds and above for origin received by Compute@Edge.
+ * Number of responses with latency of 60,000 milliseconds and above for origin received by the Compute platform.
  * @member {Number} compute_latency_60000ms
  */
 OriginInspectorMeasurements.prototype['compute_latency_60000ms'] = undefined;

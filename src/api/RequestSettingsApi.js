@@ -18,7 +18,7 @@ import RequestSettingsResponse from '../model/RequestSettingsResponse';
 /**
 * RequestSettings service.
 * @module api/RequestSettingsApi
-* @version 6.2.0
+* @version 6.2.1
 */
 export default class RequestSettingsApi {
 

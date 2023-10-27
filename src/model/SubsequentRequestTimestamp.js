@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SubsequentRequestTimestamp model module.
  * @module model/SubsequentRequestTimestamp
- * @version 6.2.0
+ * @version 6.2.1
  */
 class SubsequentRequestTimestamp {
     /**

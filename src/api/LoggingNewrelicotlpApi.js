@@ -18,7 +18,7 @@ import LoggingNewrelicotlpResponse from '../model/LoggingNewrelicotlpResponse';
 /**
 * LoggingNewrelicotlp service.
 * @module api/LoggingNewrelicotlpApi
-* @version 6.2.0
+* @version 6.2.1
 */
 export default class LoggingNewrelicotlpApi {
 

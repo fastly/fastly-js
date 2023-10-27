@@ -2,7 +2,7 @@
 
 An asynchronous JavaScript client library for interacting with most facets of the [Fastly API](https://developer.fastly.com/reference/api).
 
-> **NOTE:** This API client is auto-generated from Fastly's OpenAPI specification and may not function correctly when used on the Compute@Edge platform. Support for Compute@Edge is on the roadmap but has not yet been prioritised.
+> **NOTE:** This API client is auto-generated from Fastly's OpenAPI specification and may not function correctly when used on the Compute platform. Support for Compute is on the roadmap but has not yet been prioritised.
 
 
 ## Usage
@@ -394,8 +394,8 @@ Class | Method | Description
 *Fastly.OriginInspectorRealtimeApi* | [**getOriginInspectorLast120Seconds**](docs/OriginInspectorRealtimeApi.md#getOriginInspectorLast120Seconds) | Get real-time origin data for the last 120 seconds
 *Fastly.OriginInspectorRealtimeApi* | [**getOriginInspectorLastMaxEntries**](docs/OriginInspectorRealtimeApi.md#getOriginInspectorLastMaxEntries) | Get a limited number of real-time origin data entries
 *Fastly.OriginInspectorRealtimeApi* | [**getOriginInspectorLastSecond**](docs/OriginInspectorRealtimeApi.md#getOriginInspectorLastSecond) | Get real-time origin data from specific time.
-*Fastly.PackageApi* | [**getPackage**](docs/PackageApi.md#getPackage) | Get details of the service&#39;s Compute@Edge package.
-*Fastly.PackageApi* | [**putPackage**](docs/PackageApi.md#putPackage) | Upload a Compute@Edge package.
+*Fastly.PackageApi* | [**getPackage**](docs/PackageApi.md#getPackage) | Get details of the service&#39;s Compute package.
+*Fastly.PackageApi* | [**putPackage**](docs/PackageApi.md#putPackage) | Upload a Compute package.
 *Fastly.PoolApi* | [**createServerPool**](docs/PoolApi.md#createServerPool) | Create a server pool
 *Fastly.PoolApi* | [**deleteServerPool**](docs/PoolApi.md#deleteServerPool) | Delete a server pool
 *Fastly.PoolApi* | [**getServerPool**](docs/PoolApi.md#getServerPool) | Get a server pool

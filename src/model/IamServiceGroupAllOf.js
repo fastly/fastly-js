@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IamServiceGroupAllOf model module.
  * @module model/IamServiceGroupAllOf
- * @version 6.2.0
+ * @version 6.2.1
  */
 class IamServiceGroupAllOf {
     /**

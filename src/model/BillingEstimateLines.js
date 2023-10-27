@@ -16,7 +16,7 @@ import BillingEstimateLinesLineItems from './BillingEstimateLinesLineItems';
 /**
  * The BillingEstimateLines model module.
  * @module model/BillingEstimateLines
- * @version 6.2.0
+ * @version 6.2.1
  */
 class BillingEstimateLines {
     /**

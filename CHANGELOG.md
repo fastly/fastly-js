@@ -1,5 +1,11 @@
 # Changelog
 
+## [v6.2.1](https://github.com/fastly/fastly-js/releases/tag/release/v6.2.1) (2023-10-27)
+
+**Documentation:**
+
+- docs: rename Compute@Edge to Compute.
+
 ## [v6.2.0](https://github.com/fastly/fastly-js/releases/tag/release/v6.2.0) (2023-10-24)
 
 **Enhancements:**
