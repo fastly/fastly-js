@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The DirectorResponse model module.
  * @module model/DirectorResponse
- * @version 6.2.1
+ * @version 6.2.2
  */
 class DirectorResponse {
     /**

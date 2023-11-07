@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingNewrelicResponse model module.
  * @module model/LoggingNewrelicResponse
- * @version 6.2.1
+ * @version 6.2.2
  */
 class LoggingNewrelicResponse {
     /**

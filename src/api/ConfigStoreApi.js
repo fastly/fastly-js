@@ -19,7 +19,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * ConfigStore service.
 * @module api/ConfigStoreApi
-* @version 6.2.1
+* @version 6.2.2
 */
 export default class ConfigStoreApi {
 
@@ -328,6 +328,7 @@ export default class ConfigStoreApi {
     /**
      * List config stores.
      * @param {Object} options
+     * @param {String} [options.name] - Returns a one-element array containing the details for the named config store.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ConfigStoreResponse>} and HTTP response
      */
     listConfigStoresWithHttpInfo(options = {}) {
@@ -338,6 +339,7 @@ export default class ConfigStoreApi {
       let pathParamsAllowReserved = {
       };
       let queryParams = {
+        'name': options['name']
       };
       let headerParams = {
       };
@@ -367,6 +369,7 @@ export default class ConfigStoreApi {
     /**
      * List config stores.
      * @param {Object} options
+     * @param {String} [options.name] - Returns a one-element array containing the details for the named config store.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ConfigStoreResponse>}
      */
     listConfigStores(options = {}) {

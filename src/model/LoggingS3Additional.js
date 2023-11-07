@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingS3Additional model module.
  * @module model/LoggingS3Additional
- * @version 6.2.1
+ * @version 6.2.2
  */
 class LoggingS3Additional {
     /**

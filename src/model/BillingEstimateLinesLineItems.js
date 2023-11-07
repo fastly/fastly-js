@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BillingEstimateLinesLineItems model module.
  * @module model/BillingEstimateLinesLineItems
- * @version 6.2.1
+ * @version 6.2.2
  */
 class BillingEstimateLinesLineItems {
     /**

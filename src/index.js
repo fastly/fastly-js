@@ -837,7 +837,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 6.2.1
+* @version 6.2.2
 */
 export {
     /**

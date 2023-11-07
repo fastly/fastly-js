@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The VersionCreateResponse model module.
  * @module model/VersionCreateResponse
- * @version 6.2.1
+ * @version 6.2.2
  */
 class VersionCreateResponse {
     /**

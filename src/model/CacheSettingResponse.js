@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The CacheSettingResponse model module.
  * @module model/CacheSettingResponse
- * @version 6.2.1
+ * @version 6.2.2
  */
 class CacheSettingResponse {
     /**

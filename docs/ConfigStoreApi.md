@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 ## `listConfigStores`
 
 ```javascript
-listConfigStores()
+listConfigStores({ , [name] })
 ```
 
 List config stores.
@@ -202,7 +202,11 @@ List config stores.
 ### Example
 
 ```javascript
-apiInstance.listConfigStores()
+const options = {
+  name: "name_example",
+};
+
+apiInstance.listConfigStores(options)
   .then((data) => {
     console.log(data, "API called successfully.");
   })
@@ -213,7 +217,9 @@ apiInstance.listConfigStores()
 
 ### Options
 
-This endpoint does not need any parameters.
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**name** | **String** | Returns a one-element array containing the details for the named config store. | [optional]
 
 ### Return type
 

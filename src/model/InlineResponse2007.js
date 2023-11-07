@@ -16,7 +16,7 @@ import ServiceAuthorizationResponseData from './ServiceAuthorizationResponseData
 /**
  * The InlineResponse2007 model module.
  * @module model/InlineResponse2007
- * @version 6.2.1
+ * @version 6.2.2
  */
 class InlineResponse2007 {
     /**

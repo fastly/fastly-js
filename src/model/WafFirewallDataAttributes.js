@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WafFirewallDataAttributes model module.
  * @module model/WafFirewallDataAttributes
- * @version 6.2.1
+ * @version 6.2.2
  */
 class WafFirewallDataAttributes {
     /**

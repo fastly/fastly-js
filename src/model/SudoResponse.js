@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SudoResponse model module.
  * @module model/SudoResponse
- * @version 6.2.1
+ * @version 6.2.2
  */
 class SudoResponse {
     /**

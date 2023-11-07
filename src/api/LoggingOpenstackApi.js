@@ -18,7 +18,7 @@ import LoggingOpenstackResponse from '../model/LoggingOpenstackResponse';
 /**
 * LoggingOpenstack service.
 * @module api/LoggingOpenstackApi
-* @version 6.2.1
+* @version 6.2.2
 */
 export default class LoggingOpenstackApi {
 

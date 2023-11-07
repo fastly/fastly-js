@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HistoricalDomainsMetaFilters model module.
  * @module model/HistoricalDomainsMetaFilters
- * @version 6.2.1
+ * @version 6.2.2
  */
 class HistoricalDomainsMetaFilters {
     /**

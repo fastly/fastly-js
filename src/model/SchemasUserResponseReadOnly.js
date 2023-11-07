@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SchemasUserResponseReadOnly model module.
  * @module model/SchemasUserResponseReadOnly
- * @version 6.2.1
+ * @version 6.2.2
  */
 class SchemasUserResponseReadOnly {
     /**
