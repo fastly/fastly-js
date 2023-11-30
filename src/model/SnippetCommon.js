@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SnippetCommon model module.
  * @module model/SnippetCommon
- * @version 6.2.2
+ * @version 7.0.0
  */
 class SnippetCommon {
     /**

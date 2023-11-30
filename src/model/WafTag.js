@@ -17,7 +17,7 @@ import WafTagAttributes from './WafTagAttributes';
 /**
  * The WafTag model module.
  * @module model/WafTag
- * @version 6.2.2
+ * @version 7.0.0
  */
 class WafTag {
     /**

@@ -1,11 +1,10 @@
-# Fastly.HistoricalFieldResultsAttributesAdditional
+# Fastly.HistoricalStatsAggregatedResponseAllOf
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**service_id** | [**ReadOnlyIdService**](ReadOnlyIdService.md) |  | [optional] 
-**start_time** | **Number** |  | [optional] 
+**data** | [**[Results]**](Results.md) |  | [optional] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

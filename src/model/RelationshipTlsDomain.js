@@ -16,12 +16,12 @@ import RelationshipTlsDomainTlsDomain from './RelationshipTlsDomainTlsDomain';
 /**
  * The RelationshipTlsDomain model module.
  * @module model/RelationshipTlsDomain
- * @version 6.2.2
+ * @version 7.0.0
  */
 class RelationshipTlsDomain {
     /**
      * Constructs a new <code>RelationshipTlsDomain</code>.
-     * The [TLS domain](/reference/api/tls/custom-certs/domains/) being enabled for TLS traffic. Required.
+     * The TLS domain being enabled for TLS traffic. Required.
      * @alias module:model/RelationshipTlsDomain
      */
     constructor() { 

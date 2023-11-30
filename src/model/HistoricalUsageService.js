@@ -11,21 +11,22 @@
  */
 
 import ApiClient from '../ApiClient';
-import Results from './Results';
+import HistoricalUsageData from './HistoricalUsageData';
 
 /**
- * The HistoricalResponseDataField model module.
- * @module model/HistoricalResponseDataField
- * @version 6.2.2
+ * The HistoricalUsageService model module.
+ * @module model/HistoricalUsageService
+ * @version 7.0.0
  */
-class HistoricalResponseDataField {
+class HistoricalUsageService {
     /**
-     * Constructs a new <code>HistoricalResponseDataField</code>.
-     * @alias module:model/HistoricalResponseDataField
+     * Constructs a new <code>HistoricalUsageService</code>.
+     * @alias module:model/HistoricalUsageService
+     * @extends Object
      */
     constructor() { 
         
-        HistoricalResponseDataField.initialize(this);
+        HistoricalUsageService.initialize(this);
     }
 
     /**
@@ -37,18 +38,21 @@ class HistoricalResponseDataField {
     }
 
     /**
-     * Constructs a <code>HistoricalResponseDataField</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>HistoricalUsageService</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/HistoricalResponseDataField} obj Optional instance to populate.
-     * @return {module:model/HistoricalResponseDataField} The populated <code>HistoricalResponseDataField</code> instance.
+     * @param {module:model/HistoricalUsageService} obj Optional instance to populate.
+     * @return {module:model/HistoricalUsageService} The populated <code>HistoricalUsageService</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new HistoricalResponseDataField();
+            obj = obj || new HistoricalUsageService();
 
-            if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], {'String': Array});
+            ApiClient.constructFromObject(data, obj, 'HistoricalUsageData');
+            
+
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
         }
         return obj;
@@ -58,15 +62,15 @@ class HistoricalResponseDataField {
 }
 
 /**
- * Contains the results of the query, organized by *service ID*, into arrays where each element describes one service over a *time span*.
- * @member {Object.<String, Array.<module:model/Results>>} data
+ * The name of the service.
+ * @member {String} name
  */
-HistoricalResponseDataField.prototype['data'] = undefined;
+HistoricalUsageService.prototype['name'] = undefined;
 
 
 
 
 
 
-export default HistoricalResponseDataField;
+export default HistoricalUsageService;
 

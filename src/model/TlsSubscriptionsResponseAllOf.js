@@ -16,7 +16,7 @@ import TlsSubscriptionResponse from './TlsSubscriptionResponse';
 /**
  * The TlsSubscriptionsResponseAllOf model module.
  * @module model/TlsSubscriptionsResponseAllOf
- * @version 6.2.2
+ * @version 7.0.0
  */
 class TlsSubscriptionsResponseAllOf {
     /**

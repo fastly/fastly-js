@@ -20,7 +20,7 @@ import ServiceVersionDetailOrNull from './ServiceVersionDetailOrNull';
 /**
  * The ServiceDetail model module.
  * @module model/ServiceDetail
- * @version 6.2.2
+ * @version 7.0.0
  */
 class ServiceDetail {
     /**

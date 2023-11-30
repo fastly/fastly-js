@@ -12,25 +12,25 @@
 
 import ApiClient from '../ApiClient';
 import Historical from './Historical';
-import HistoricalAggregateResponseAllOf from './HistoricalAggregateResponseAllOf';
 import HistoricalMeta from './HistoricalMeta';
+import HistoricalStatsAggregatedResponseAllOf from './HistoricalStatsAggregatedResponseAllOf';
 import Results from './Results';
 
 /**
- * The HistoricalAggregateResponse model module.
- * @module model/HistoricalAggregateResponse
- * @version 6.2.2
+ * The HistoricalStatsAggregatedResponse model module.
+ * @module model/HistoricalStatsAggregatedResponse
+ * @version 7.0.0
  */
-class HistoricalAggregateResponse {
+class HistoricalStatsAggregatedResponse {
     /**
-     * Constructs a new <code>HistoricalAggregateResponse</code>.
-     * @alias module:model/HistoricalAggregateResponse
+     * Constructs a new <code>HistoricalStatsAggregatedResponse</code>.
+     * @alias module:model/HistoricalStatsAggregatedResponse
      * @implements module:model/Historical
-     * @implements module:model/HistoricalAggregateResponseAllOf
+     * @implements module:model/HistoricalStatsAggregatedResponseAllOf
      */
     constructor() { 
-        Historical.initialize(this);HistoricalAggregateResponseAllOf.initialize(this);
-        HistoricalAggregateResponse.initialize(this);
+        Historical.initialize(this);HistoricalStatsAggregatedResponseAllOf.initialize(this);
+        HistoricalStatsAggregatedResponse.initialize(this);
     }
 
     /**
@@ -42,17 +42,17 @@ class HistoricalAggregateResponse {
     }
 
     /**
-     * Constructs a <code>HistoricalAggregateResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>HistoricalStatsAggregatedResponse</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/HistoricalAggregateResponse} obj Optional instance to populate.
-     * @return {module:model/HistoricalAggregateResponse} The populated <code>HistoricalAggregateResponse</code> instance.
+     * @param {module:model/HistoricalStatsAggregatedResponse} obj Optional instance to populate.
+     * @return {module:model/HistoricalStatsAggregatedResponse} The populated <code>HistoricalStatsAggregatedResponse</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new HistoricalAggregateResponse();
+            obj = obj || new HistoricalStatsAggregatedResponse();
             Historical.constructFromObject(data, obj);
-            HistoricalAggregateResponseAllOf.constructFromObject(data, obj);
+            HistoricalStatsAggregatedResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -77,23 +77,23 @@ class HistoricalAggregateResponse {
  * Whether or not we were able to successfully execute the query.
  * @member {String} status
  */
-HistoricalAggregateResponse.prototype['status'] = undefined;
+HistoricalStatsAggregatedResponse.prototype['status'] = undefined;
 
 /**
  * @member {module:model/HistoricalMeta} meta
  */
-HistoricalAggregateResponse.prototype['meta'] = undefined;
+HistoricalStatsAggregatedResponse.prototype['meta'] = undefined;
 
 /**
  * If the query was not successful, this will provide a string that explains why.
  * @member {String} msg
  */
-HistoricalAggregateResponse.prototype['msg'] = undefined;
+HistoricalStatsAggregatedResponse.prototype['msg'] = undefined;
 
 /**
  * @member {Array.<module:model/Results>} data
  */
-HistoricalAggregateResponse.prototype['data'] = undefined;
+HistoricalStatsAggregatedResponse.prototype['data'] = undefined;
 
 
 // Implement Historical interface:
@@ -111,14 +111,14 @@ Historical.prototype['meta'] = undefined;
  * @member {String} msg
  */
 Historical.prototype['msg'] = undefined;
-// Implement HistoricalAggregateResponseAllOf interface:
+// Implement HistoricalStatsAggregatedResponseAllOf interface:
 /**
  * @member {Array.<module:model/Results>} data
  */
-HistoricalAggregateResponseAllOf.prototype['data'] = undefined;
+HistoricalStatsAggregatedResponseAllOf.prototype['data'] = undefined;
 
 
 
 
-export default HistoricalAggregateResponse;
+export default HistoricalStatsAggregatedResponse;
 

@@ -12,25 +12,25 @@
 
 import ApiClient from '../ApiClient';
 import Historical from './Historical';
-import HistoricalFieldAggregateResponseAllOf from './HistoricalFieldAggregateResponseAllOf';
-import HistoricalFieldResultsAttributes from './HistoricalFieldResultsAttributes';
 import HistoricalMeta from './HistoricalMeta';
+import HistoricalUsageAggregatedResponseAllOf from './HistoricalUsageAggregatedResponseAllOf';
+import HistoricalUsageData from './HistoricalUsageData';
 
 /**
- * The HistoricalFieldAggregateResponse model module.
- * @module model/HistoricalFieldAggregateResponse
- * @version 6.2.2
+ * The HistoricalUsageAggregatedResponse model module.
+ * @module model/HistoricalUsageAggregatedResponse
+ * @version 7.0.0
  */
-class HistoricalFieldAggregateResponse {
+class HistoricalUsageAggregatedResponse {
     /**
-     * Constructs a new <code>HistoricalFieldAggregateResponse</code>.
-     * @alias module:model/HistoricalFieldAggregateResponse
+     * Constructs a new <code>HistoricalUsageAggregatedResponse</code>.
+     * @alias module:model/HistoricalUsageAggregatedResponse
      * @implements module:model/Historical
-     * @implements module:model/HistoricalFieldAggregateResponseAllOf
+     * @implements module:model/HistoricalUsageAggregatedResponseAllOf
      */
     constructor() { 
-        Historical.initialize(this);HistoricalFieldAggregateResponseAllOf.initialize(this);
-        HistoricalFieldAggregateResponse.initialize(this);
+        Historical.initialize(this);HistoricalUsageAggregatedResponseAllOf.initialize(this);
+        HistoricalUsageAggregatedResponse.initialize(this);
     }
 
     /**
@@ -42,17 +42,17 @@ class HistoricalFieldAggregateResponse {
     }
 
     /**
-     * Constructs a <code>HistoricalFieldAggregateResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>HistoricalUsageAggregatedResponse</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/HistoricalFieldAggregateResponse} obj Optional instance to populate.
-     * @return {module:model/HistoricalFieldAggregateResponse} The populated <code>HistoricalFieldAggregateResponse</code> instance.
+     * @param {module:model/HistoricalUsageAggregatedResponse} obj Optional instance to populate.
+     * @return {module:model/HistoricalUsageAggregatedResponse} The populated <code>HistoricalUsageAggregatedResponse</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new HistoricalFieldAggregateResponse();
+            obj = obj || new HistoricalUsageAggregatedResponse();
             Historical.constructFromObject(data, obj);
-            HistoricalFieldAggregateResponseAllOf.constructFromObject(data, obj);
+            HistoricalUsageAggregatedResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -64,7 +64,7 @@ class HistoricalFieldAggregateResponse {
                 obj['msg'] = ApiClient.convertToType(data['msg'], 'String');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [HistoricalFieldResultsAttributes]);
+                obj['data'] = ApiClient.convertToType(data['data'], {'String': HistoricalUsageData});
             }
         }
         return obj;
@@ -77,23 +77,24 @@ class HistoricalFieldAggregateResponse {
  * Whether or not we were able to successfully execute the query.
  * @member {String} status
  */
-HistoricalFieldAggregateResponse.prototype['status'] = undefined;
+HistoricalUsageAggregatedResponse.prototype['status'] = undefined;
 
 /**
  * @member {module:model/HistoricalMeta} meta
  */
-HistoricalFieldAggregateResponse.prototype['meta'] = undefined;
+HistoricalUsageAggregatedResponse.prototype['meta'] = undefined;
 
 /**
  * If the query was not successful, this will provide a string that explains why.
  * @member {String} msg
  */
-HistoricalFieldAggregateResponse.prototype['msg'] = undefined;
+HistoricalUsageAggregatedResponse.prototype['msg'] = undefined;
 
 /**
- * @member {Array.<module:model/HistoricalFieldResultsAttributes>} data
+ * Organized by *region*.
+ * @member {Object.<String, module:model/HistoricalUsageData>} data
  */
-HistoricalFieldAggregateResponse.prototype['data'] = undefined;
+HistoricalUsageAggregatedResponse.prototype['data'] = undefined;
 
 
 // Implement Historical interface:
@@ -111,14 +112,15 @@ Historical.prototype['meta'] = undefined;
  * @member {String} msg
  */
 Historical.prototype['msg'] = undefined;
-// Implement HistoricalFieldAggregateResponseAllOf interface:
+// Implement HistoricalUsageAggregatedResponseAllOf interface:
 /**
- * @member {Array.<module:model/HistoricalFieldResultsAttributes>} data
+ * Organized by *region*.
+ * @member {Object.<String, module:model/HistoricalUsageData>} data
  */
-HistoricalFieldAggregateResponseAllOf.prototype['data'] = undefined;
+HistoricalUsageAggregatedResponseAllOf.prototype['data'] = undefined;
 
 
 
 
-export default HistoricalFieldAggregateResponse;
+export default HistoricalUsageAggregatedResponse;
 

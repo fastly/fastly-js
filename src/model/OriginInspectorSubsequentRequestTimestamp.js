@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OriginInspectorSubsequentRequestTimestamp model module.
  * @module model/OriginInspectorSubsequentRequestTimestamp
- * @version 6.2.2
+ * @version 7.0.0
  */
 class OriginInspectorSubsequentRequestTimestamp {
     /**

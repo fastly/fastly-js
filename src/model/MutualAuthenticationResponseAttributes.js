@@ -17,7 +17,7 @@ import Timestamps from './Timestamps';
 /**
  * The MutualAuthenticationResponseAttributes model module.
  * @module model/MutualAuthenticationResponseAttributes
- * @version 6.2.2
+ * @version 7.0.0
  */
 class MutualAuthenticationResponseAttributes {
     /**

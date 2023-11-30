@@ -20,7 +20,7 @@ import TypeServiceAuthorization from './TypeServiceAuthorization';
 /**
  * The ServiceAuthorizationResponseData model module.
  * @module model/ServiceAuthorizationResponseData
- * @version 6.2.2
+ * @version 7.0.0
  */
 class ServiceAuthorizationResponseData {
     /**

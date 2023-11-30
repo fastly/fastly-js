@@ -17,7 +17,7 @@ import RecordedTimestamp from './RecordedTimestamp';
 /**
  * The DomainInspectorRealtimeEntry model module.
  * @module model/DomainInspectorRealtimeEntry
- * @version 6.2.2
+ * @version 7.0.0
  */
 class DomainInspectorRealtimeEntry {
     /**

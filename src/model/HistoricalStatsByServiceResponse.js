@@ -13,24 +13,24 @@
 import ApiClient from '../ApiClient';
 import Historical from './Historical';
 import HistoricalMeta from './HistoricalMeta';
-import HistoricalUsageResults from './HistoricalUsageResults';
-import HistoricalUsageServiceResponseAllOf from './HistoricalUsageServiceResponseAllOf';
+import HistoricalStatsByServiceResponseAllOf from './HistoricalStatsByServiceResponseAllOf';
+import Results from './Results';
 
 /**
- * The HistoricalUsageAggregateResponse model module.
- * @module model/HistoricalUsageAggregateResponse
- * @version 6.2.2
+ * The HistoricalStatsByServiceResponse model module.
+ * @module model/HistoricalStatsByServiceResponse
+ * @version 7.0.0
  */
-class HistoricalUsageAggregateResponse {
+class HistoricalStatsByServiceResponse {
     /**
-     * Constructs a new <code>HistoricalUsageAggregateResponse</code>.
-     * @alias module:model/HistoricalUsageAggregateResponse
+     * Constructs a new <code>HistoricalStatsByServiceResponse</code>.
+     * @alias module:model/HistoricalStatsByServiceResponse
      * @implements module:model/Historical
-     * @implements module:model/HistoricalUsageServiceResponseAllOf
+     * @implements module:model/HistoricalStatsByServiceResponseAllOf
      */
     constructor() { 
-        Historical.initialize(this);HistoricalUsageServiceResponseAllOf.initialize(this);
-        HistoricalUsageAggregateResponse.initialize(this);
+        Historical.initialize(this);HistoricalStatsByServiceResponseAllOf.initialize(this);
+        HistoricalStatsByServiceResponse.initialize(this);
     }
 
     /**
@@ -42,17 +42,17 @@ class HistoricalUsageAggregateResponse {
     }
 
     /**
-     * Constructs a <code>HistoricalUsageAggregateResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>HistoricalStatsByServiceResponse</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/HistoricalUsageAggregateResponse} obj Optional instance to populate.
-     * @return {module:model/HistoricalUsageAggregateResponse} The populated <code>HistoricalUsageAggregateResponse</code> instance.
+     * @param {module:model/HistoricalStatsByServiceResponse} obj Optional instance to populate.
+     * @return {module:model/HistoricalStatsByServiceResponse} The populated <code>HistoricalStatsByServiceResponse</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new HistoricalUsageAggregateResponse();
+            obj = obj || new HistoricalStatsByServiceResponse();
             Historical.constructFromObject(data, obj);
-            HistoricalUsageServiceResponseAllOf.constructFromObject(data, obj);
+            HistoricalStatsByServiceResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
@@ -64,7 +64,7 @@ class HistoricalUsageAggregateResponse {
                 obj['msg'] = ApiClient.convertToType(data['msg'], 'String');
             }
             if (data.hasOwnProperty('data')) {
-                obj['data'] = HistoricalUsageResults.constructFromObject(data['data']);
+                obj['data'] = ApiClient.convertToType(data['data'], {'String': Array});
             }
         }
         return obj;
@@ -77,23 +77,24 @@ class HistoricalUsageAggregateResponse {
  * Whether or not we were able to successfully execute the query.
  * @member {String} status
  */
-HistoricalUsageAggregateResponse.prototype['status'] = undefined;
+HistoricalStatsByServiceResponse.prototype['status'] = undefined;
 
 /**
  * @member {module:model/HistoricalMeta} meta
  */
-HistoricalUsageAggregateResponse.prototype['meta'] = undefined;
+HistoricalStatsByServiceResponse.prototype['meta'] = undefined;
 
 /**
  * If the query was not successful, this will provide a string that explains why.
  * @member {String} msg
  */
-HistoricalUsageAggregateResponse.prototype['msg'] = undefined;
+HistoricalStatsByServiceResponse.prototype['msg'] = undefined;
 
 /**
- * @member {module:model/HistoricalUsageResults} data
+ * Contains the results of the query, organized by *service ID*, into arrays where each element describes one service over a *time span*.
+ * @member {Object.<String, Array.<module:model/Results>>} data
  */
-HistoricalUsageAggregateResponse.prototype['data'] = undefined;
+HistoricalStatsByServiceResponse.prototype['data'] = undefined;
 
 
 // Implement Historical interface:
@@ -111,14 +112,15 @@ Historical.prototype['meta'] = undefined;
  * @member {String} msg
  */
 Historical.prototype['msg'] = undefined;
-// Implement HistoricalUsageServiceResponseAllOf interface:
+// Implement HistoricalStatsByServiceResponseAllOf interface:
 /**
- * @member {module:model/HistoricalUsageResults} data
+ * Contains the results of the query, organized by *service ID*, into arrays where each element describes one service over a *time span*.
+ * @member {Object.<String, Array.<module:model/Results>>} data
  */
-HistoricalUsageServiceResponseAllOf.prototype['data'] = undefined;
+HistoricalStatsByServiceResponseAllOf.prototype['data'] = undefined;
 
 
 
 
-export default HistoricalUsageAggregateResponse;
+export default HistoricalStatsByServiceResponse;
 

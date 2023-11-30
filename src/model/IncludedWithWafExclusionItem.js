@@ -19,7 +19,7 @@ import WafRuleRevisionAttributes from './WafRuleRevisionAttributes';
 /**
  * The IncludedWithWafExclusionItem model module.
  * @module model/IncludedWithWafExclusionItem
- * @version 6.2.2
+ * @version 7.0.0
  */
 class IncludedWithWafExclusionItem {
     /**

@@ -16,7 +16,7 @@ import RelationshipTlsConfigurationsTlsConfigurations from './RelationshipTlsCon
 /**
  * The RelationshipTlsConfigurations model module.
  * @module model/RelationshipTlsConfigurations
- * @version 6.2.2
+ * @version 7.0.0
  */
 class RelationshipTlsConfigurations {
     /**

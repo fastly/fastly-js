@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Service model module.
  * @module model/Service
- * @version 6.2.2
+ * @version 7.0.0
  */
 class Service {
     /**

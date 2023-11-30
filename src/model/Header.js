@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Header model module.
  * @module model/Header
- * @version 6.2.2
+ * @version 7.0.0
  */
 class Header {
     /**

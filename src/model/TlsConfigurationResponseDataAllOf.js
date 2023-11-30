@@ -16,7 +16,7 @@ import TlsConfigurationResponseAttributes from './TlsConfigurationResponseAttrib
 /**
  * The TlsConfigurationResponseDataAllOf model module.
  * @module model/TlsConfigurationResponseDataAllOf
- * @version 6.2.2
+ * @version 7.0.0
  */
 class TlsConfigurationResponseDataAllOf {
     /**

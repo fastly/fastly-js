@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HistoricalResponse**](HistoricalResponse.md)
+[**HistoricalStatsByServiceResponse**](HistoricalStatsByServiceResponse.md)
 
 
 ## `getHistStatsAggregated`
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HistoricalAggregateResponse**](HistoricalAggregateResponse.md)
+[**HistoricalStatsAggregatedResponse**](HistoricalStatsAggregatedResponse.md)
 
 
 ## `getHistStatsField`
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HistoricalFieldResponse**](HistoricalFieldResponse.md)
+[**HistoricalStatsByServiceResponse**](HistoricalStatsByServiceResponse.md)
 
 
 ## `getHistStatsService`
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HistoricalAggregateResponse**](HistoricalAggregateResponse.md)
+[**HistoricalStatsAggregatedResponse**](HistoricalStatsAggregatedResponse.md)
 
 
 ## `getHistStatsServiceField`
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HistoricalFieldAggregateResponse**](HistoricalFieldAggregateResponse.md)
+[**HistoricalStatsAggregatedResponse**](HistoricalStatsAggregatedResponse.md)
 
 
 ## `getRegions`
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**HistoricalUsageAggregateResponse**](HistoricalUsageAggregateResponse.md)
+[**HistoricalUsageAggregatedResponse**](HistoricalUsageAggregatedResponse.md)
 
 
 ## `getUsageMonth`

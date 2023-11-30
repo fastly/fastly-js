@@ -12,19 +12,17 @@
 
 
 import ApiClient from "../ApiClient";
-import HistoricalAggregateResponse from '../model/HistoricalAggregateResponse';
-import HistoricalFieldAggregateResponse from '../model/HistoricalFieldAggregateResponse';
-import HistoricalFieldResponse from '../model/HistoricalFieldResponse';
 import HistoricalRegionsResponse from '../model/HistoricalRegionsResponse';
-import HistoricalResponse from '../model/HistoricalResponse';
-import HistoricalUsageAggregateResponse from '../model/HistoricalUsageAggregateResponse';
+import HistoricalStatsAggregatedResponse from '../model/HistoricalStatsAggregatedResponse';
+import HistoricalStatsByServiceResponse from '../model/HistoricalStatsByServiceResponse';
+import HistoricalUsageAggregatedResponse from '../model/HistoricalUsageAggregatedResponse';
 import HistoricalUsageMonthResponse from '../model/HistoricalUsageMonthResponse';
 import HistoricalUsageServiceResponse from '../model/HistoricalUsageServiceResponse';
 
 /**
 * Historical service.
 * @module api/HistoricalApi
-* @version 6.2.2
+* @version 7.0.0
 */
 export default class HistoricalApi {
 
@@ -51,7 +49,7 @@ export default class HistoricalApi {
      * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `southamerica_std` - South America. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalStatsByServiceResponse} and HTTP response
      */
     getHistStatsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -74,7 +72,7 @@ export default class HistoricalApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = HistoricalResponse;
+      let returnType = HistoricalStatsByServiceResponse;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -98,7 +96,7 @@ export default class HistoricalApi {
      * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `southamerica_std` - South America. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalStatsByServiceResponse}
      */
     getHistStats(options = {}) {
       return this.getHistStatsWithHttpInfo(options)
@@ -114,7 +112,7 @@ export default class HistoricalApi {
      * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `southamerica_std` - South America. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalAggregateResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalStatsAggregatedResponse} and HTTP response
      */
     getHistStatsAggregatedWithHttpInfo(options = {}) {
       let postBody = null;
@@ -137,7 +135,7 @@ export default class HistoricalApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = HistoricalAggregateResponse;
+      let returnType = HistoricalStatsAggregatedResponse;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -161,7 +159,7 @@ export default class HistoricalApi {
      * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `southamerica_std` - South America. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalAggregateResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalStatsAggregatedResponse}
      */
     getHistStatsAggregated(options = {}) {
       return this.getHistStatsAggregatedWithHttpInfo(options)
@@ -178,7 +176,7 @@ export default class HistoricalApi {
      * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `southamerica_std` - South America. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalFieldResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalStatsByServiceResponse} and HTTP response
      */
     getHistStatsFieldWithHttpInfo(options = {}) {
       let postBody = null;
@@ -206,7 +204,7 @@ export default class HistoricalApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = HistoricalFieldResponse;
+      let returnType = HistoricalStatsByServiceResponse;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -231,7 +229,7 @@ export default class HistoricalApi {
      * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `southamerica_std` - South America. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalFieldResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalStatsByServiceResponse}
      */
     getHistStatsField(options = {}) {
       return this.getHistStatsFieldWithHttpInfo(options)
@@ -248,7 +246,7 @@ export default class HistoricalApi {
      * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `southamerica_std` - South America. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalAggregateResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalStatsAggregatedResponse} and HTTP response
      */
     getHistStatsServiceWithHttpInfo(options = {}) {
       let postBody = null;
@@ -276,7 +274,7 @@ export default class HistoricalApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = HistoricalAggregateResponse;
+      let returnType = HistoricalStatsAggregatedResponse;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -301,7 +299,7 @@ export default class HistoricalApi {
      * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `southamerica_std` - South America. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalAggregateResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalStatsAggregatedResponse}
      */
     getHistStatsService(options = {}) {
       return this.getHistStatsServiceWithHttpInfo(options)
@@ -319,7 +317,7 @@ export default class HistoricalApi {
      * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `southamerica_std` - South America. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalFieldAggregateResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalStatsAggregatedResponse} and HTTP response
      */
     getHistStatsServiceFieldWithHttpInfo(options = {}) {
       let postBody = null;
@@ -352,7 +350,7 @@ export default class HistoricalApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = HistoricalFieldAggregateResponse;
+      let returnType = HistoricalStatsAggregatedResponse;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -378,7 +376,7 @@ export default class HistoricalApi {
      * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
      * @param {module:model/String} [options.by='day'] - Duration of sample windows. One of:   * `hour` - Group data by hour.   * `minute` - Group data by minute.   * `day` - Group data by day. 
      * @param {module:model/String} [options.region] - Limit query to a specific geographic region. One of:   * `usa` - North America.   * `europe` - Europe.   * `anzac` - Australia and New Zealand.   * `asia` - Asia.   * `asia_india` - India.   * `asia_southkorea` - South Korea.   * `africa_std` - Africa.   * `southamerica_std` - South America. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalFieldAggregateResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalStatsAggregatedResponse}
      */
     getHistStatsServiceField(options = {}) {
       return this.getHistStatsServiceFieldWithHttpInfo(options)
@@ -443,7 +441,7 @@ export default class HistoricalApi {
      * @param {Object} options
      * @param {String} [options.from] - Timestamp that defines the start of the window for which to fetch statistics, including the timestamp itself. Accepts Unix timestamps, or any form of input parsable by the [Chronic Ruby library](https://github.com/mojombo/chronic), such as 'yesterday', or 'two weeks ago'. Default varies based on the value of `by`. 
      * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalUsageAggregateResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HistoricalUsageAggregatedResponse} and HTTP response
      */
     getUsageWithHttpInfo(options = {}) {
       let postBody = null;
@@ -464,7 +462,7 @@ export default class HistoricalApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = HistoricalUsageAggregateResponse;
+      let returnType = HistoricalUsageAggregatedResponse;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -486,7 +484,7 @@ export default class HistoricalApi {
      * @param {Object} options
      * @param {String} [options.from] - Timestamp that defines the start of the window for which to fetch statistics, including the timestamp itself. Accepts Unix timestamps, or any form of input parsable by the [Chronic Ruby library](https://github.com/mojombo/chronic), such as 'yesterday', or 'two weeks ago'. Default varies based on the value of `by`. 
      * @param {String} [options.to='now'] - Timestamp that defines the end of the window for which to fetch statistics. Accepts the same formats as `from`. 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalUsageAggregateResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HistoricalUsageAggregatedResponse}
      */
     getUsage(options = {}) {
       return this.getUsageWithHttpInfo(options)

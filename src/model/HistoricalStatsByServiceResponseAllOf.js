@@ -14,18 +14,18 @@ import ApiClient from '../ApiClient';
 import Results from './Results';
 
 /**
- * The HistoricalAggregateResponseAllOf model module.
- * @module model/HistoricalAggregateResponseAllOf
- * @version 6.2.2
+ * The HistoricalStatsByServiceResponseAllOf model module.
+ * @module model/HistoricalStatsByServiceResponseAllOf
+ * @version 7.0.0
  */
-class HistoricalAggregateResponseAllOf {
+class HistoricalStatsByServiceResponseAllOf {
     /**
-     * Constructs a new <code>HistoricalAggregateResponseAllOf</code>.
-     * @alias module:model/HistoricalAggregateResponseAllOf
+     * Constructs a new <code>HistoricalStatsByServiceResponseAllOf</code>.
+     * @alias module:model/HistoricalStatsByServiceResponseAllOf
      */
     constructor() { 
         
-        HistoricalAggregateResponseAllOf.initialize(this);
+        HistoricalStatsByServiceResponseAllOf.initialize(this);
     }
 
     /**
@@ -37,18 +37,18 @@ class HistoricalAggregateResponseAllOf {
     }
 
     /**
-     * Constructs a <code>HistoricalAggregateResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>HistoricalStatsByServiceResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/HistoricalAggregateResponseAllOf} obj Optional instance to populate.
-     * @return {module:model/HistoricalAggregateResponseAllOf} The populated <code>HistoricalAggregateResponseAllOf</code> instance.
+     * @param {module:model/HistoricalStatsByServiceResponseAllOf} obj Optional instance to populate.
+     * @return {module:model/HistoricalStatsByServiceResponseAllOf} The populated <code>HistoricalStatsByServiceResponseAllOf</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new HistoricalAggregateResponseAllOf();
+            obj = obj || new HistoricalStatsByServiceResponseAllOf();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Results]);
+                obj['data'] = ApiClient.convertToType(data['data'], {'String': Array});
             }
         }
         return obj;
@@ -58,14 +58,15 @@ class HistoricalAggregateResponseAllOf {
 }
 
 /**
- * @member {Array.<module:model/Results>} data
+ * Contains the results of the query, organized by *service ID*, into arrays where each element describes one service over a *time span*.
+ * @member {Object.<String, Array.<module:model/Results>>} data
  */
-HistoricalAggregateResponseAllOf.prototype['data'] = undefined;
+HistoricalStatsByServiceResponseAllOf.prototype['data'] = undefined;
 
 
 
 
 
 
-export default HistoricalAggregateResponseAllOf;
+export default HistoricalStatsByServiceResponseAllOf;
 

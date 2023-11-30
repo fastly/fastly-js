@@ -116,8 +116,6 @@ import HeaderResponseAdditional from './model/HeaderResponseAdditional';
 import Healthcheck from './model/Healthcheck';
 import HealthcheckResponse from './model/HealthcheckResponse';
 import Historical from './model/Historical';
-import HistoricalAggregateResponse from './model/HistoricalAggregateResponse';
-import HistoricalAggregateResponseAllOf from './model/HistoricalAggregateResponseAllOf';
 import HistoricalDdos from './model/HistoricalDdos';
 import HistoricalDdosMeta from './model/HistoricalDdosMeta';
 import HistoricalDomains from './model/HistoricalDomains';
@@ -126,25 +124,22 @@ import HistoricalDomainsMeta from './model/HistoricalDomainsMeta';
 import HistoricalDomainsMetaFilters from './model/HistoricalDomainsMetaFilters';
 import HistoricalDomainsResponse from './model/HistoricalDomainsResponse';
 import HistoricalDomainsResponseAllOf from './model/HistoricalDomainsResponseAllOf';
-import HistoricalFieldAggregateResponse from './model/HistoricalFieldAggregateResponse';
-import HistoricalFieldAggregateResponseAllOf from './model/HistoricalFieldAggregateResponseAllOf';
-import HistoricalFieldResponse from './model/HistoricalFieldResponse';
-import HistoricalFieldResponseDataField from './model/HistoricalFieldResponseDataField';
-import HistoricalFieldResultsAttributes from './model/HistoricalFieldResultsAttributes';
-import HistoricalFieldResultsAttributesAdditional from './model/HistoricalFieldResultsAttributesAdditional';
 import HistoricalMeta from './model/HistoricalMeta';
 import HistoricalOriginsResponse from './model/HistoricalOriginsResponse';
 import HistoricalOriginsResponseAllOf from './model/HistoricalOriginsResponseAllOf';
 import HistoricalRegionsResponse from './model/HistoricalRegionsResponse';
 import HistoricalRegionsResponseAllOf from './model/HistoricalRegionsResponseAllOf';
-import HistoricalResponse from './model/HistoricalResponse';
-import HistoricalResponseDataField from './model/HistoricalResponseDataField';
-import HistoricalService from './model/HistoricalService';
-import HistoricalUsageAggregateResponse from './model/HistoricalUsageAggregateResponse';
+import HistoricalStatsAggregatedResponse from './model/HistoricalStatsAggregatedResponse';
+import HistoricalStatsAggregatedResponseAllOf from './model/HistoricalStatsAggregatedResponseAllOf';
+import HistoricalStatsByServiceResponse from './model/HistoricalStatsByServiceResponse';
+import HistoricalStatsByServiceResponseAllOf from './model/HistoricalStatsByServiceResponseAllOf';
+import HistoricalUsageAggregatedResponse from './model/HistoricalUsageAggregatedResponse';
+import HistoricalUsageAggregatedResponseAllOf from './model/HistoricalUsageAggregatedResponseAllOf';
+import HistoricalUsageData from './model/HistoricalUsageData';
 import HistoricalUsageMonthResponse from './model/HistoricalUsageMonthResponse';
 import HistoricalUsageMonthResponseAllOf from './model/HistoricalUsageMonthResponseAllOf';
 import HistoricalUsageMonthResponseData from './model/HistoricalUsageMonthResponseData';
-import HistoricalUsageResults from './model/HistoricalUsageResults';
+import HistoricalUsageService from './model/HistoricalUsageService';
 import HistoricalUsageServiceResponse from './model/HistoricalUsageServiceResponse';
 import HistoricalUsageServiceResponseAllOf from './model/HistoricalUsageServiceResponseAllOf';
 import Http3 from './model/Http3';
@@ -321,7 +316,6 @@ import RateLimiterResponse from './model/RateLimiterResponse';
 import RateLimiterResponseAllOf from './model/RateLimiterResponseAllOf';
 import ReadOnlyCustomerId from './model/ReadOnlyCustomerId';
 import ReadOnlyId from './model/ReadOnlyId';
-import ReadOnlyIdService from './model/ReadOnlyIdService';
 import ReadOnlyServiceId from './model/ReadOnlyServiceId';
 import ReadOnlyUserId from './model/ReadOnlyUserId';
 import ReadOnlyVersion from './model/ReadOnlyVersion';
@@ -837,7 +831,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 6.2.2
+* @version 7.0.0
 */
 export {
     /**
@@ -1471,18 +1465,6 @@ export {
     Historical,
 
     /**
-     * The HistoricalAggregateResponse model constructor.
-     * @property {module:model/HistoricalAggregateResponse}
-     */
-    HistoricalAggregateResponse,
-
-    /**
-     * The HistoricalAggregateResponseAllOf model constructor.
-     * @property {module:model/HistoricalAggregateResponseAllOf}
-     */
-    HistoricalAggregateResponseAllOf,
-
-    /**
      * The HistoricalDdos model constructor.
      * @property {module:model/HistoricalDdos}
      */
@@ -1531,42 +1513,6 @@ export {
     HistoricalDomainsResponseAllOf,
 
     /**
-     * The HistoricalFieldAggregateResponse model constructor.
-     * @property {module:model/HistoricalFieldAggregateResponse}
-     */
-    HistoricalFieldAggregateResponse,
-
-    /**
-     * The HistoricalFieldAggregateResponseAllOf model constructor.
-     * @property {module:model/HistoricalFieldAggregateResponseAllOf}
-     */
-    HistoricalFieldAggregateResponseAllOf,
-
-    /**
-     * The HistoricalFieldResponse model constructor.
-     * @property {module:model/HistoricalFieldResponse}
-     */
-    HistoricalFieldResponse,
-
-    /**
-     * The HistoricalFieldResponseDataField model constructor.
-     * @property {module:model/HistoricalFieldResponseDataField}
-     */
-    HistoricalFieldResponseDataField,
-
-    /**
-     * The HistoricalFieldResultsAttributes model constructor.
-     * @property {module:model/HistoricalFieldResultsAttributes}
-     */
-    HistoricalFieldResultsAttributes,
-
-    /**
-     * The HistoricalFieldResultsAttributesAdditional model constructor.
-     * @property {module:model/HistoricalFieldResultsAttributesAdditional}
-     */
-    HistoricalFieldResultsAttributesAdditional,
-
-    /**
      * The HistoricalMeta model constructor.
      * @property {module:model/HistoricalMeta}
      */
@@ -1597,28 +1543,46 @@ export {
     HistoricalRegionsResponseAllOf,
 
     /**
-     * The HistoricalResponse model constructor.
-     * @property {module:model/HistoricalResponse}
+     * The HistoricalStatsAggregatedResponse model constructor.
+     * @property {module:model/HistoricalStatsAggregatedResponse}
      */
-    HistoricalResponse,
+    HistoricalStatsAggregatedResponse,
 
     /**
-     * The HistoricalResponseDataField model constructor.
-     * @property {module:model/HistoricalResponseDataField}
+     * The HistoricalStatsAggregatedResponseAllOf model constructor.
+     * @property {module:model/HistoricalStatsAggregatedResponseAllOf}
      */
-    HistoricalResponseDataField,
+    HistoricalStatsAggregatedResponseAllOf,
 
     /**
-     * The HistoricalService model constructor.
-     * @property {module:model/HistoricalService}
+     * The HistoricalStatsByServiceResponse model constructor.
+     * @property {module:model/HistoricalStatsByServiceResponse}
      */
-    HistoricalService,
+    HistoricalStatsByServiceResponse,
 
     /**
-     * The HistoricalUsageAggregateResponse model constructor.
-     * @property {module:model/HistoricalUsageAggregateResponse}
+     * The HistoricalStatsByServiceResponseAllOf model constructor.
+     * @property {module:model/HistoricalStatsByServiceResponseAllOf}
      */
-    HistoricalUsageAggregateResponse,
+    HistoricalStatsByServiceResponseAllOf,
+
+    /**
+     * The HistoricalUsageAggregatedResponse model constructor.
+     * @property {module:model/HistoricalUsageAggregatedResponse}
+     */
+    HistoricalUsageAggregatedResponse,
+
+    /**
+     * The HistoricalUsageAggregatedResponseAllOf model constructor.
+     * @property {module:model/HistoricalUsageAggregatedResponseAllOf}
+     */
+    HistoricalUsageAggregatedResponseAllOf,
+
+    /**
+     * The HistoricalUsageData model constructor.
+     * @property {module:model/HistoricalUsageData}
+     */
+    HistoricalUsageData,
 
     /**
      * The HistoricalUsageMonthResponse model constructor.
@@ -1639,10 +1603,10 @@ export {
     HistoricalUsageMonthResponseData,
 
     /**
-     * The HistoricalUsageResults model constructor.
-     * @property {module:model/HistoricalUsageResults}
+     * The HistoricalUsageService model constructor.
+     * @property {module:model/HistoricalUsageService}
      */
-    HistoricalUsageResults,
+    HistoricalUsageService,
 
     /**
      * The HistoricalUsageServiceResponse model constructor.
@@ -2699,12 +2663,6 @@ export {
      * @property {module:model/ReadOnlyId}
      */
     ReadOnlyId,
-
-    /**
-     * The ReadOnlyIdService model constructor.
-     * @property {module:model/ReadOnlyIdService}
-     */
-    ReadOnlyIdService,
 
     /**
      * The ReadOnlyServiceId model constructor.

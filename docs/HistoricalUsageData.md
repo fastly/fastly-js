@@ -1,10 +1,12 @@
-# Fastly.HistoricalService
+# Fastly.HistoricalUsageData
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** | The name of the service. | [optional] 
+**bandwidth** | **Number** |  | [optional] 
+**requests** | **Number** |  | [optional] 
+**compute_requests** | **Number** |  | [optional] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

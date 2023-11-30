@@ -15,12 +15,12 @@ import ApiClient from '../ApiClient';
 /**
  * The Results model module.
  * @module model/Results
- * @version 6.2.2
+ * @version 7.0.0
  */
 class Results {
     /**
      * Constructs a new <code>Results</code>.
-     * The [results](#results-data-model) of the query, grouped by service (and optionally, region), and aggregated over the appropriate time span.
+     * The results of stats queries, may be grouped by service depending on endpoint, and aggregated over the appropriate time span.
      * @alias module:model/Results
      */
     constructor() { 
@@ -721,6 +721,12 @@ class Results {
             }
             if (data.hasOwnProperty('bot_challenges_failed')) {
                 obj['bot_challenges_failed'] = ApiClient.convertToType(data['bot_challenges_failed'], 'Number');
+            }
+            if (data.hasOwnProperty('service_id')) {
+                obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
+            }
+            if (data.hasOwnProperty('start_time')) {
+                obj['start_time'] = ApiClient.convertToType(data['start_time'], 'Number');
             }
         }
         return obj;
@@ -2078,6 +2084,17 @@ Results.prototype['bot_challenges_succeeded'] = undefined;
  * @member {Number} bot_challenges_failed
  */
 Results.prototype['bot_challenges_failed'] = undefined;
+
+/**
+ * @member {String} service_id
+ */
+Results.prototype['service_id'] = undefined;
+
+/**
+ * Timestamp for the start of the time period being reported
+ * @member {Number} start_time
+ */
+Results.prototype['start_time'] = undefined;
 
 
 

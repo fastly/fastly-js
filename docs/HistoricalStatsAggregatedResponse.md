@@ -1,4 +1,4 @@
-# Fastly.HistoricalAggregateResponse
+# Fastly.HistoricalStatsAggregatedResponse
 
 ## Properties
 

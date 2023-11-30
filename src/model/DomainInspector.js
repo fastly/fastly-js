@@ -17,7 +17,7 @@ import SubsequentRequestTimestamp from './SubsequentRequestTimestamp';
 /**
  * The DomainInspector model module.
  * @module model/DomainInspector
- * @version 6.2.2
+ * @version 7.0.0
  */
 class DomainInspector {
     /**

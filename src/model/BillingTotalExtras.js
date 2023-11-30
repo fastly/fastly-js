@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BillingTotalExtras model module.
  * @module model/BillingTotalExtras
- * @version 6.2.2
+ * @version 7.0.0
  */
 class BillingTotalExtras {
     /**

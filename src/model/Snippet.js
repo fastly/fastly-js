@@ -17,7 +17,7 @@ import SnippetCommon from './SnippetCommon';
 /**
  * The Snippet model module.
  * @module model/Snippet
- * @version 6.2.2
+ * @version 7.0.0
  */
 class Snippet {
     /**

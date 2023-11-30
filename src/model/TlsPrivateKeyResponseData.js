@@ -17,7 +17,7 @@ import TypeTlsPrivateKey from './TypeTlsPrivateKey';
 /**
  * The TlsPrivateKeyResponseData model module.
  * @module model/TlsPrivateKeyResponseData
- * @version 6.2.2
+ * @version 7.0.0
  */
 class TlsPrivateKeyResponseData {
     /**

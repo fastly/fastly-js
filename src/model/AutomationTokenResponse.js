@@ -20,7 +20,7 @@ import Timestamps from './Timestamps';
 /**
  * The AutomationTokenResponse model module.
  * @module model/AutomationTokenResponse
- * @version 6.2.2
+ * @version 7.0.0
  */
 class AutomationTokenResponse {
     /**

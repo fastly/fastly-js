@@ -13,18 +13,19 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The HistoricalUsageResults model module.
- * @module model/HistoricalUsageResults
- * @version 6.2.2
+ * The HistoricalUsageData model module.
+ * @module model/HistoricalUsageData
+ * @version 7.0.0
  */
-class HistoricalUsageResults {
+class HistoricalUsageData {
     /**
-     * Constructs a new <code>HistoricalUsageResults</code>.
-     * @alias module:model/HistoricalUsageResults
+     * Constructs a new <code>HistoricalUsageData</code>.
+     * The results of usage related queries, grouped by service and/or region depending on endpoint, and aggregated over the appropriate time span.
+     * @alias module:model/HistoricalUsageData
      */
     constructor() { 
         
-        HistoricalUsageResults.initialize(this);
+        HistoricalUsageData.initialize(this);
     }
 
     /**
@@ -36,15 +37,15 @@ class HistoricalUsageResults {
     }
 
     /**
-     * Constructs a <code>HistoricalUsageResults</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>HistoricalUsageData</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/HistoricalUsageResults} obj Optional instance to populate.
-     * @return {module:model/HistoricalUsageResults} The populated <code>HistoricalUsageResults</code> instance.
+     * @param {module:model/HistoricalUsageData} obj Optional instance to populate.
+     * @return {module:model/HistoricalUsageData} The populated <code>HistoricalUsageData</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new HistoricalUsageResults();
+            obj = obj || new HistoricalUsageData();
 
             if (data.hasOwnProperty('bandwidth')) {
                 obj['bandwidth'] = ApiClient.convertToType(data['bandwidth'], 'Number');
@@ -65,22 +66,22 @@ class HistoricalUsageResults {
 /**
  * @member {Number} bandwidth
  */
-HistoricalUsageResults.prototype['bandwidth'] = undefined;
+HistoricalUsageData.prototype['bandwidth'] = undefined;
 
 /**
  * @member {Number} requests
  */
-HistoricalUsageResults.prototype['requests'] = undefined;
+HistoricalUsageData.prototype['requests'] = undefined;
 
 /**
  * @member {Number} compute_requests
  */
-HistoricalUsageResults.prototype['compute_requests'] = undefined;
+HistoricalUsageData.prototype['compute_requests'] = undefined;
 
 
 
 
 
 
-export default HistoricalUsageResults;
+export default HistoricalUsageData;
 

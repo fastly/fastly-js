@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BulkUpdateConfigStoreItemAllOf model module.
  * @module model/BulkUpdateConfigStoreItemAllOf
- * @version 6.2.2
+ * @version 7.0.0
  */
 class BulkUpdateConfigStoreItemAllOf {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingScalyrAdditional model module.
  * @module model/LoggingScalyrAdditional
- * @version 6.2.2
+ * @version 7.0.0
  */
 class LoggingScalyrAdditional {
     /**

@@ -18,7 +18,7 @@ import InvitationResponseData from './InvitationResponseData';
 /**
  * The InvitationResponse model module.
  * @module model/InvitationResponse
- * @version 6.2.2
+ * @version 7.0.0
  */
 class InvitationResponse {
     /**

@@ -16,7 +16,7 @@ import HistoricalDomainsMetaFilters from './HistoricalDomainsMetaFilters';
 /**
  * The HistoricalDomainsMeta model module.
  * @module model/HistoricalDomainsMeta
- * @version 6.2.2
+ * @version 7.0.0
  */
 class HistoricalDomainsMeta {
     /**

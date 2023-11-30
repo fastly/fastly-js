@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DomainInspectorEntryDimensions model module.
  * @module model/DomainInspectorEntryDimensions
- * @version 6.2.2
+ * @version 7.0.0
  */
 class DomainInspectorEntryDimensions {
     /**

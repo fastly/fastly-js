@@ -18,7 +18,7 @@ import BillingResponse from '../model/BillingResponse';
 /**
 * Billing service.
 * @module api/BillingApi
-* @version 6.2.2
+* @version 7.0.0
 */
 export default class BillingApi {
 

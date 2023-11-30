@@ -21,7 +21,7 @@ import WafActiveRulesResponse from './WafActiveRulesResponse';
 /**
  * The WafActiveRuleCreationResponse model module.
  * @module model/WafActiveRuleCreationResponse
- * @version 6.2.2
+ * @version 7.0.0
  */
 class WafActiveRuleCreationResponse {
     /**

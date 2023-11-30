@@ -11,21 +11,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import HistoricalFieldResultsAttributes from './HistoricalFieldResultsAttributes';
+import HistoricalUsageData from './HistoricalUsageData';
 
 /**
- * The HistoricalFieldAggregateResponseAllOf model module.
- * @module model/HistoricalFieldAggregateResponseAllOf
- * @version 6.2.2
+ * The HistoricalUsageAggregatedResponseAllOf model module.
+ * @module model/HistoricalUsageAggregatedResponseAllOf
+ * @version 7.0.0
  */
-class HistoricalFieldAggregateResponseAllOf {
+class HistoricalUsageAggregatedResponseAllOf {
     /**
-     * Constructs a new <code>HistoricalFieldAggregateResponseAllOf</code>.
-     * @alias module:model/HistoricalFieldAggregateResponseAllOf
+     * Constructs a new <code>HistoricalUsageAggregatedResponseAllOf</code>.
+     * @alias module:model/HistoricalUsageAggregatedResponseAllOf
      */
     constructor() { 
         
-        HistoricalFieldAggregateResponseAllOf.initialize(this);
+        HistoricalUsageAggregatedResponseAllOf.initialize(this);
     }
 
     /**
@@ -37,18 +37,18 @@ class HistoricalFieldAggregateResponseAllOf {
     }
 
     /**
-     * Constructs a <code>HistoricalFieldAggregateResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>HistoricalUsageAggregatedResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/HistoricalFieldAggregateResponseAllOf} obj Optional instance to populate.
-     * @return {module:model/HistoricalFieldAggregateResponseAllOf} The populated <code>HistoricalFieldAggregateResponseAllOf</code> instance.
+     * @param {module:model/HistoricalUsageAggregatedResponseAllOf} obj Optional instance to populate.
+     * @return {module:model/HistoricalUsageAggregatedResponseAllOf} The populated <code>HistoricalUsageAggregatedResponseAllOf</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new HistoricalFieldAggregateResponseAllOf();
+            obj = obj || new HistoricalUsageAggregatedResponseAllOf();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [HistoricalFieldResultsAttributes]);
+                obj['data'] = ApiClient.convertToType(data['data'], {'String': HistoricalUsageData});
             }
         }
         return obj;
@@ -58,14 +58,15 @@ class HistoricalFieldAggregateResponseAllOf {
 }
 
 /**
- * @member {Array.<module:model/HistoricalFieldResultsAttributes>} data
+ * Organized by *region*.
+ * @member {Object.<String, module:model/HistoricalUsageData>} data
  */
-HistoricalFieldAggregateResponseAllOf.prototype['data'] = undefined;
+HistoricalUsageAggregatedResponseAllOf.prototype['data'] = undefined;
 
 
 
 
 
 
-export default HistoricalFieldAggregateResponseAllOf;
+export default HistoricalUsageAggregatedResponseAllOf;
 

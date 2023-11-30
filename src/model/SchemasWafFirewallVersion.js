@@ -16,7 +16,7 @@ import SchemasWafFirewallVersionData from './SchemasWafFirewallVersionData';
 /**
  * The SchemasWafFirewallVersion model module.
  * @module model/SchemasWafFirewallVersion
- * @version 6.2.2
+ * @version 7.0.0
  */
 class SchemasWafFirewallVersion {
     /**

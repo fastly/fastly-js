@@ -17,7 +17,7 @@ import PackageResponse from '../model/PackageResponse';
 /**
 * Package service.
 * @module api/PackageApi
-* @version 6.2.2
+* @version 7.0.0
 */
 export default class PackageApi {
 

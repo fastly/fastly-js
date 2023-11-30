@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HistoricalDdosMeta model module.
  * @module model/HistoricalDdosMeta
- * @version 6.2.2
+ * @version 7.0.0
  */
 class HistoricalDdosMeta {
     /**

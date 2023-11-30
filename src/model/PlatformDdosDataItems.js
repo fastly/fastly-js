@@ -16,7 +16,7 @@ import Values from './Values';
 /**
  * The PlatformDdosDataItems model module.
  * @module model/PlatformDdosDataItems
- * @version 6.2.2
+ * @version 7.0.0
  */
 class PlatformDdosDataItems {
     /**
