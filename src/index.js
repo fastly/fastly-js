@@ -75,6 +75,7 @@ import Contact from './model/Contact';
 import ContactResponse from './model/ContactResponse';
 import ContactResponseAllOf from './model/ContactResponseAllOf';
 import Content from './model/Content';
+import CreateResponseObjectRequest from './model/CreateResponseObjectRequest';
 import Customer from './model/Customer';
 import CustomerResponse from './model/CustomerResponse';
 import CustomerResponseAllOf from './model/CustomerResponseAllOf';
@@ -831,7 +832,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 7.0.0
+* @version 7.0.1
 */
 export {
     /**
@@ -1217,6 +1218,12 @@ export {
      * @property {module:model/Content}
      */
     Content,
+
+    /**
+     * The CreateResponseObjectRequest model constructor.
+     * @property {module:model/CreateResponseObjectRequest}
+     */
+    CreateResponseObjectRequest,
 
     /**
      * The Customer model constructor.

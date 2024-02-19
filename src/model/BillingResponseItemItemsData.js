@@ -16,7 +16,7 @@ import BillingResponseLineItem from './BillingResponseLineItem';
 /**
  * The BillingResponseItemItemsData model module.
  * @module model/BillingResponseItemItemsData
- * @version 7.0.0
+ * @version 7.0.1
  */
 class BillingResponseItemItemsData {
     /**

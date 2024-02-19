@@ -17,7 +17,7 @@ import TlsConfigurationResponseAttributesAllOf from './TlsConfigurationResponseA
 /**
  * The TlsConfigurationResponseAttributes model module.
  * @module model/TlsConfigurationResponseAttributes
- * @version 7.0.0
+ * @version 7.0.1
  */
 class TlsConfigurationResponseAttributes {
     /**
@@ -68,7 +68,7 @@ class TlsConfigurationResponseAttributes {
                 obj['http_protocols'] = ApiClient.convertToType(data['http_protocols'], ['String']);
             }
             if (data.hasOwnProperty('tls_protocols')) {
-                obj['tls_protocols'] = ApiClient.convertToType(data['tls_protocols'], ['Number']);
+                obj['tls_protocols'] = ApiClient.convertToType(data['tls_protocols'], ['String']);
             }
             if (data.hasOwnProperty('bulk')) {
                 obj['bulk'] = ApiClient.convertToType(data['bulk'], 'Boolean');
@@ -112,7 +112,7 @@ TlsConfigurationResponseAttributes.prototype['http_protocols'] = undefined;
 
 /**
  * TLS protocols available on your configuration.
- * @member {Array.<Number>} tls_protocols
+ * @member {Array.<String>} tls_protocols
  */
 TlsConfigurationResponseAttributes.prototype['tls_protocols'] = undefined;
 
@@ -152,7 +152,7 @@ TlsConfigurationResponseAttributesAllOf.prototype['default'] = undefined;
 TlsConfigurationResponseAttributesAllOf.prototype['http_protocols'] = undefined;
 /**
  * TLS protocols available on your configuration.
- * @member {Array.<Number>} tls_protocols
+ * @member {Array.<String>} tls_protocols
  */
 TlsConfigurationResponseAttributesAllOf.prototype['tls_protocols'] = undefined;
 /**

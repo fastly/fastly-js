@@ -18,7 +18,7 @@ import LoggingGcsResponse from '../model/LoggingGcsResponse';
 /**
 * LoggingGcs service.
 * @module api/LoggingGcsApi
-* @version 7.0.0
+* @version 7.0.1
 */
 export default class LoggingGcsApi {
 

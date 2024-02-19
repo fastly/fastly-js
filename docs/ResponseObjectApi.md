@@ -17,7 +17,7 @@ Method | Fastly API endpoint | Description
 ## `createResponseObject`
 
 ```javascript
-createResponseObject({ service_id, version_id })
+createResponseObject({ service_id, version_id, [create_response_object_request] })
 ```
 
 Creates a new Response Object.
@@ -28,6 +28,7 @@ Creates a new Response Object.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
+  create_response_object_request: new Fastly.CreateResponseObjectRequest(),
 };
 
 apiInstance.createResponseObject(options)
@@ -45,6 +46,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** | Alphanumeric string identifying the service. |
 **version_id** | **Number** | Integer identifying a service version. |
+**create_response_object_request** | [**CreateResponseObjectRequest**](CreateResponseObjectRequest.md) |  | [optional]
 
 ### Return type
 
@@ -169,7 +171,7 @@ Name | Type | Description  | Notes
 ## `updateResponseObject`
 
 ```javascript
-updateResponseObject({ service_id, version_id, response_object_name })
+updateResponseObject({ service_id, version_id, response_object_name, [create_response_object_request] })
 ```
 
 Updates the specified Response Object.
@@ -181,6 +183,7 @@ const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
   response_object_name: "response_object_name_example", // required
+  create_response_object_request: new Fastly.CreateResponseObjectRequest(),
 };
 
 apiInstance.updateResponseObject(options)
@@ -199,6 +202,7 @@ Name | Type | Description  | Notes
 **service_id** | **String** | Alphanumeric string identifying the service. |
 **version_id** | **Number** | Integer identifying a service version. |
 **response_object_name** | **String** | Name for the request settings. |
+**create_response_object_request** | [**CreateResponseObjectRequest**](CreateResponseObjectRequest.md) |  | [optional]
 
 ### Return type
 

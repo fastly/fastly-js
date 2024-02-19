@@ -12,13 +12,14 @@
 
 
 import ApiClient from "../ApiClient";
+import CreateResponseObjectRequest from '../model/CreateResponseObjectRequest';
 import InlineResponse200 from '../model/InlineResponse200';
 import ResponseObjectResponse from '../model/ResponseObjectResponse';
 
 /**
 * ResponseObject service.
 * @module api/ResponseObjectApi
-* @version 7.0.0
+* @version 7.0.1
 */
 export default class ResponseObjectApi {
 
@@ -43,10 +44,11 @@ export default class ResponseObjectApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {module:model/CreateResponseObjectRequest} [options.create_response_object_request]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseObjectResponse} and HTTP response
      */
     createResponseObjectWithHttpInfo(options = {}) {
-      let postBody = null;
+      let postBody = options['create_response_object_request'];
       // Verify the required parameter 'service_id' is set.
       if (options['service_id'] === undefined || options['service_id'] === null) {
         throw new Error("Missing the required parameter 'service_id'.");
@@ -70,7 +72,7 @@ export default class ResponseObjectApi {
       };
 
       let authNames = ['token'];
-      let contentTypes = ['application/x-www-form-urlencoded'];
+      let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ResponseObjectResponse;
       let basePaths = ['https://api.fastly.com'];
@@ -94,6 +96,7 @@ export default class ResponseObjectApi {
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {module:model/CreateResponseObjectRequest} [options.create_response_object_request]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseObjectResponse}
      */
     createResponseObject(options = {}) {
@@ -318,10 +321,11 @@ export default class ResponseObjectApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.response_object_name - Name for the request settings.
+     * @param {module:model/CreateResponseObjectRequest} [options.create_response_object_request]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ResponseObjectResponse} and HTTP response
      */
     updateResponseObjectWithHttpInfo(options = {}) {
-      let postBody = null;
+      let postBody = options['create_response_object_request'];
       // Verify the required parameter 'service_id' is set.
       if (options['service_id'] === undefined || options['service_id'] === null) {
         throw new Error("Missing the required parameter 'service_id'.");
@@ -350,7 +354,7 @@ export default class ResponseObjectApi {
       };
 
       let authNames = ['token'];
-      let contentTypes = ['application/x-www-form-urlencoded'];
+      let contentTypes = ['application/json'];
       let accepts = ['application/json'];
       let returnType = ResponseObjectResponse;
       let basePaths = ['https://api.fastly.com'];
@@ -375,6 +379,7 @@ export default class ResponseObjectApi {
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
      * @param {String} options.response_object_name - Name for the request settings.
+     * @param {module:model/CreateResponseObjectRequest} [options.create_response_object_request]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ResponseObjectResponse}
      */
     updateResponseObject(options = {}) {

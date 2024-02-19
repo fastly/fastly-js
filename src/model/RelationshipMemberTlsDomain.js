@@ -16,7 +16,7 @@ import TypeTlsDomain from './TypeTlsDomain';
 /**
  * The RelationshipMemberTlsDomain model module.
  * @module model/RelationshipMemberTlsDomain
- * @version 7.0.0
+ * @version 7.0.1
  */
 class RelationshipMemberTlsDomain {
     /**
