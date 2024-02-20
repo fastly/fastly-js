@@ -6,5 +6,5 @@ echo " Publish tag is ${PUBLISH_TAG}"
 if [ "${DRY_RUN}" == "1" ]; then
   echo "(dry run)"
 else
-  yarn publish --tag "${PUBLISH_TAG}"
+  yarn publish --verbose --tag "${PUBLISH_TAG}"
 fi
