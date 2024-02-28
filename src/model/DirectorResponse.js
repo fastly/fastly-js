@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The DirectorResponse model module.
  * @module model/DirectorResponse
- * @version 7.0.1
+ * @version 7.1.0
  */
 class DirectorResponse {
     /**
@@ -134,7 +134,7 @@ DirectorResponse.prototype['name'] = undefined;
 DirectorResponse.prototype['quorum'] = 75;
 
 /**
- * Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
+ * Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/) to get a list of available POPs used for shielding.
  * @member {String} shield
  * @default 'null'
  */
@@ -211,7 +211,7 @@ Director.prototype['name'] = undefined;
  */
 Director.prototype['quorum'] = 75;
 /**
- * Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
+ * Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/) to get a list of available POPs used for shielding.
  * @member {String} shield
  * @default 'null'
  */

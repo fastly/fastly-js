@@ -1,13 +1,11 @@
-# Fastly.ErrorResponse
+# Fastly.Listinvoices
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**detail** | **String** |  | [optional] 
-**errors** | **[Object]** |  | [optional] 
-**status** | **Number** |  | [optional] 
-**title** | **String** |  | [optional] 
+**data** | [**[Invoice]**](Invoice.md) |  | [optional] 
+**meta** | [**Metadata**](Metadata.md) |  | [optional] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

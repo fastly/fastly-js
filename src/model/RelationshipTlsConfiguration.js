@@ -16,12 +16,12 @@ import RelationshipTlsConfigurationTlsConfiguration from './RelationshipTlsConfi
 /**
  * The RelationshipTlsConfiguration model module.
  * @module model/RelationshipTlsConfiguration
- * @version 7.0.1
+ * @version 7.1.0
  */
 class RelationshipTlsConfiguration {
     /**
      * Constructs a new <code>RelationshipTlsConfiguration</code>.
-     * The [TLS configuration](/reference/api/tls/custom-certs/configuration/) being used to terminate TLS traffic. Optional.
+     * The [TLS configuration](https://www.fastly.com/documentation/reference/api/tls/custom-certs/configuration/) being used to terminate TLS traffic. Optional.
      * @alias module:model/RelationshipTlsConfiguration
      */
     constructor() { 

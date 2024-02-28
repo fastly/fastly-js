@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DomainInspectorMeasurements model module.
  * @module model/DomainInspectorMeasurements
- * @version 7.0.1
+ * @version 7.1.0
  */
 class DomainInspectorMeasurements {
     /**

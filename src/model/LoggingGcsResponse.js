@@ -21,7 +21,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingGcsResponse model module.
  * @module model/LoggingGcsResponse
- * @version 7.0.1
+ * @version 7.1.0
  */
 class LoggingGcsResponse {
     /**

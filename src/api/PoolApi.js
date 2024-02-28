@@ -19,7 +19,7 @@ import PoolResponsePost from '../model/PoolResponsePost';
 /**
 * Pool service.
 * @module api/PoolApi
-* @version 7.0.1
+* @version 7.1.0
 */
 export default class PoolApi {
 
@@ -55,7 +55,7 @@ export default class PoolApi {
      * @param {String} [options.service_id2]
      * @param {String} [options.version]
      * @param {String} [options.name] - Name for the Pool.
-     * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
+     * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/) to get a list of available POPs used for shielding.
      * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
      * @param {String} [options.tls_ciphers] - List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) for details). Optional.
      * @param {String} [options.tls_sni_hostname] - SNI hostname. Optional.
@@ -160,7 +160,7 @@ export default class PoolApi {
      * @param {String} [options.service_id2]
      * @param {String} [options.version]
      * @param {String} [options.name] - Name for the Pool.
-     * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
+     * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/) to get a list of available POPs used for shielding.
      * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
      * @param {String} [options.tls_ciphers] - List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) for details). Optional.
      * @param {String} [options.tls_sni_hostname] - SNI hostname. Optional.
@@ -411,7 +411,7 @@ export default class PoolApi {
      * @param {String} [options.service_id2]
      * @param {String} [options.version]
      * @param {String} [options.name] - Name for the Pool.
-     * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
+     * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/) to get a list of available POPs used for shielding.
      * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
      * @param {String} [options.tls_ciphers] - List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) for details). Optional.
      * @param {String} [options.tls_sni_hostname] - SNI hostname. Optional.
@@ -522,7 +522,7 @@ export default class PoolApi {
      * @param {String} [options.service_id2]
      * @param {String} [options.version]
      * @param {String} [options.name] - Name for the Pool.
-     * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
+     * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/) to get a list of available POPs used for shielding.
      * @param {String} [options.request_condition] - Condition which, if met, will select this configuration during a request. Optional.
      * @param {String} [options.tls_ciphers] - List of OpenSSL ciphers (see the [openssl.org manpages](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) for details). Optional.
      * @param {String} [options.tls_sni_hostname] - SNI hostname. Optional.

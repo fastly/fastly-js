@@ -19,7 +19,7 @@ import StoreResponse from '../model/StoreResponse';
 /**
 * KvStore service.
 * @module api/KvStoreApi
-* @version 7.0.1
+* @version 7.1.0
 */
 export default class KvStoreApi {
 
@@ -215,7 +215,7 @@ export default class KvStoreApi {
      * Get all stores for a given customer.
      * @param {Object} options
      * @param {String} [options.cursor]
-     * @param {Number} [options.limit=100]
+     * @param {Number} [options.limit=1000]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
      */
     getStoresWithHttpInfo(options = {}) {
@@ -258,7 +258,7 @@ export default class KvStoreApi {
      * Get all stores for a given customer.
      * @param {Object} options
      * @param {String} [options.cursor]
-     * @param {Number} [options.limit=100]
+     * @param {Number} [options.limit=1000]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
      */
     getStores(options = {}) {

@@ -17,7 +17,7 @@ import TypeEvent from './TypeEvent';
 /**
  * The Event model module.
  * @module model/Event
- * @version 7.0.1
+ * @version 7.1.0
  */
 class Event {
     /**

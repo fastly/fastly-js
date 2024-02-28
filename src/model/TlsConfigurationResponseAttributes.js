@@ -17,7 +17,7 @@ import TlsConfigurationResponseAttributesAllOf from './TlsConfigurationResponseA
 /**
  * The TlsConfigurationResponseAttributes model module.
  * @module model/TlsConfigurationResponseAttributes
- * @version 7.0.1
+ * @version 7.1.0
  */
 class TlsConfigurationResponseAttributes {
     /**
@@ -99,7 +99,7 @@ TlsConfigurationResponseAttributes.prototype['deleted_at'] = undefined;
 TlsConfigurationResponseAttributes.prototype['updated_at'] = undefined;
 
 /**
- * Signifies whether or not Fastly will use this configuration as a default when creating a new [TLS Activation](/reference/api/tls/custom-certs/activations/).
+ * Signifies whether or not Fastly will use this configuration as a default when creating a new [TLS Activation](https://www.fastly.com/documentation/reference/api/tls/custom-certs/activations/).
  * @member {Boolean} default
  */
 TlsConfigurationResponseAttributes.prototype['default'] = undefined;
@@ -141,7 +141,7 @@ Timestamps.prototype['deleted_at'] = undefined;
 Timestamps.prototype['updated_at'] = undefined;
 // Implement TlsConfigurationResponseAttributesAllOf interface:
 /**
- * Signifies whether or not Fastly will use this configuration as a default when creating a new [TLS Activation](/reference/api/tls/custom-certs/activations/).
+ * Signifies whether or not Fastly will use this configuration as a default when creating a new [TLS Activation](https://www.fastly.com/documentation/reference/api/tls/custom-certs/activations/).
  * @member {Boolean} default
  */
 TlsConfigurationResponseAttributesAllOf.prototype['default'] = undefined;

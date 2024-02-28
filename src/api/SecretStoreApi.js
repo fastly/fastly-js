@@ -21,7 +21,7 @@ import SigningKey from '../model/SigningKey';
 /**
 * SecretStore service.
 * @module api/SecretStoreApi
-* @version 7.0.1
+* @version 7.1.0
 */
 export default class SecretStoreApi {
 
@@ -264,8 +264,9 @@ export default class SecretStoreApi {
     /**
      * Get all secret stores.
      * @param {Object} options
-     * @param {String} [options.cursor] - Cursor value from a previous response to retrieve the next page. To request the first page, this should be empty.
+     * @param {String} [options.cursor] - Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
      * @param {String} [options.limit='100'] - Number of results per page. The maximum is 200.
+     * @param {String} [options.name] - Returns a one-element array containing the details for the named secret store.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2005} and HTTP response
      */
     getSecretStoresWithHttpInfo(options = {}) {
@@ -277,7 +278,8 @@ export default class SecretStoreApi {
       };
       let queryParams = {
         'cursor': options['cursor'],
-        'limit': options['limit']
+        'limit': options['limit'],
+        'name': options['name']
       };
       let headerParams = {
       };
@@ -307,8 +309,9 @@ export default class SecretStoreApi {
     /**
      * Get all secret stores.
      * @param {Object} options
-     * @param {String} [options.cursor] - Cursor value from a previous response to retrieve the next page. To request the first page, this should be empty.
+     * @param {String} [options.cursor] - Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
      * @param {String} [options.limit='100'] - Number of results per page. The maximum is 200.
+     * @param {String} [options.name] - Returns a one-element array containing the details for the named secret store.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2005}
      */
     getSecretStores(options = {}) {

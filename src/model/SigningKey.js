@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SigningKey model module.
  * @module model/SigningKey
- * @version 7.0.1
+ * @version 7.1.0
  */
 class SigningKey {
     /**

@@ -81,6 +81,8 @@ Class | Method | Description
 *Fastly.BillingAddressApi* | [**deleteBillingAddr**](docs/BillingAddressApi.md#deleteBillingAddr) | Delete a billing address
 *Fastly.BillingAddressApi* | [**getBillingAddr**](docs/BillingAddressApi.md#getBillingAddr) | Get a billing address
 *Fastly.BillingAddressApi* | [**updateBillingAddr**](docs/BillingAddressApi.md#updateBillingAddr) | Update a billing address
+*Fastly.BillingInvoicesApi* | [**getInvoiceByInvoiceId**](docs/BillingInvoicesApi.md#getInvoiceByInvoiceId) | Get invoice by ID.
+*Fastly.BillingInvoicesApi* | [**listInvoices**](docs/BillingInvoicesApi.md#listInvoices) | List of invoices.
 *Fastly.CacheSettingsApi* | [**createCacheSettings**](docs/CacheSettingsApi.md#createCacheSettings) | Create a cache settings object
 *Fastly.CacheSettingsApi* | [**deleteCacheSettings**](docs/CacheSettingsApi.md#deleteCacheSettings) | Delete a cache settings object
 *Fastly.CacheSettingsApi* | [**getCacheSettings**](docs/CacheSettingsApi.md#getCacheSettings) | Get a cache settings object
@@ -496,6 +498,7 @@ Class | Method | Description
 *Fastly.TlsConfigurationsApi* | [**getTlsConfig**](docs/TlsConfigurationsApi.md#getTlsConfig) | Get a TLS configuration
 *Fastly.TlsConfigurationsApi* | [**listTlsConfigs**](docs/TlsConfigurationsApi.md#listTlsConfigs) | List TLS configurations
 *Fastly.TlsConfigurationsApi* | [**updateTlsConfig**](docs/TlsConfigurationsApi.md#updateTlsConfig) | Update a TLS configuration
+*Fastly.TlsCsrsApi* | [**createCsr**](docs/TlsCsrsApi.md#createCsr) | Create CSR
 *Fastly.TlsDomainsApi* | [**listTlsDomains**](docs/TlsDomainsApi.md#listTlsDomains) | List TLS domains
 *Fastly.TlsPrivateKeysApi* | [**createTlsKey**](docs/TlsPrivateKeysApi.md#createTlsKey) | Create a TLS private key
 *Fastly.TlsPrivateKeysApi* | [**deleteTlsKey**](docs/TlsPrivateKeysApi.md#deleteTlsKey) | Delete a TLS private key
@@ -582,12 +585,15 @@ Class | Method | Description
 
 The fastly-js API client currently does not support the following endpoints:
 
-- [`/resources/stores/kv/{store_id}/batch`](https://developer.fastly.com/reference/api/services/resources/kv-store-item) (PUT)
-- [`/tls/activations/{tls_activation_id}`](https://developer.fastly.com/reference/api/tls/mutual-tls/activations) (GET, PATCH)
-- [`/tls/activations`](https://developer.fastly.com/reference/api/tls/mutual-tls/activations) (GET)
-- [`/v1/channel/{service_id}/ts/h/limit/{max_entries}`](https://developer.fastly.com/reference/api/metrics-stats/origin-insights) (GET)
-- [`/v1/channel/{service_id}/ts/h`](https://developer.fastly.com/reference/api/metrics-stats/origin-insights) (GET)
-- [`/v1/channel/{service_id}/ts/{start_timestamp}`](https://developer.fastly.com/reference/api/metrics-stats/origin-insights) (GET)
+- [`/alerts/definitions/{definition_id}`](https://www.fastly.com/documentation/reference/api/observability/alerts/definitions) (DELETE, GET, PUT)
+- [`/alerts/definitions`](https://www.fastly.com/documentation/reference/api/observability/alerts/definitions) (GET, POST)
+- [`/alerts/history`](https://www.fastly.com/documentation/reference/api/observability/alerts/history) (GET)
+- [`/resources/stores/kv/{store_id}/batch`](https://www.fastly.com/documentation/reference/api/services/resources/kv-store-item) (PUT)
+- [`/tls/activations/{tls_activation_id}`](https://www.fastly.com/documentation/reference/api/tls/mutual-tls/activations) (GET, PATCH)
+- [`/tls/activations`](https://www.fastly.com/documentation/reference/api/tls/mutual-tls/activations) (GET)
+- [`/v1/channel/{service_id}/ts/h/limit/{max_entries}`](https://www.fastly.com/documentation/reference/api/metrics-stats/origin-insights) (GET)
+- [`/v1/channel/{service_id}/ts/h`](https://www.fastly.com/documentation/reference/api/metrics-stats/origin-insights) (GET)
+- [`/v1/channel/{service_id}/ts/{start_timestamp}`](https://www.fastly.com/documentation/reference/api/metrics-stats/origin-insights) (GET)
 
 
 If you encounter any non-security-related bug or unexpected behavior, please [file an issue][bug]

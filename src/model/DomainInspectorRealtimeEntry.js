@@ -17,7 +17,7 @@ import RecordedTimestamp from './RecordedTimestamp';
 /**
  * The DomainInspectorRealtimeEntry model module.
  * @module model/DomainInspectorRealtimeEntry
- * @version 7.0.1
+ * @version 7.1.0
  */
 class DomainInspectorRealtimeEntry {
     /**
@@ -77,7 +77,7 @@ DomainInspectorRealtimeEntry.prototype['recorded'] = undefined;
 DomainInspectorRealtimeEntry.prototype['aggregated'] = undefined;
 
 /**
- * Groups [measurements](#measurements-data-model) by POP, then backend name, and then IP address. See the [POPs API](/reference/api/utils/pops/) for details about POP identifiers.
+ * Groups [measurements](#measurements-data-model) by POP, then backend name, and then IP address. See the [POPs API](https://www.fastly.com/documentation/reference/api/utils/pops/) for details about POP identifiers.
  * @member {Object.<String, Object.<String, module:model/DomainInspectorMeasurements>>} datacenter
  */
 DomainInspectorRealtimeEntry.prototype['datacenter'] = undefined;

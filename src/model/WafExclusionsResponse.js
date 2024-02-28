@@ -21,7 +21,7 @@ import WafExclusionsResponseAllOf from './WafExclusionsResponseAllOf';
 /**
  * The WafExclusionsResponse model module.
  * @module model/WafExclusionsResponse
- * @version 7.0.1
+ * @version 7.1.0
  */
 class WafExclusionsResponse {
     /**

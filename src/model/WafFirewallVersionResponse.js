@@ -17,7 +17,7 @@ import WafFirewallVersionResponseData from './WafFirewallVersionResponseData';
 /**
  * The WafFirewallVersionResponse model module.
  * @module model/WafFirewallVersionResponse
- * @version 7.0.1
+ * @version 7.1.0
  */
 class WafFirewallVersionResponse {
     /**

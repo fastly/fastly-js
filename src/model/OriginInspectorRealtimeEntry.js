@@ -17,7 +17,7 @@ import OriginInspectorRealtimeEntryRecorded from './OriginInspectorRealtimeEntry
 /**
  * The OriginInspectorRealtimeEntry model module.
  * @module model/OriginInspectorRealtimeEntry
- * @version 7.0.1
+ * @version 7.1.0
  */
 class OriginInspectorRealtimeEntry {
     /**
@@ -77,7 +77,7 @@ OriginInspectorRealtimeEntry.prototype['recorded'] = undefined;
 OriginInspectorRealtimeEntry.prototype['aggregated'] = undefined;
 
 /**
- * Groups [measurements](#measurements-data-model) by POP, then backend name. See the [POPs API](/reference/api/utils/pops/) for details about POP identifiers.
+ * Groups [measurements](#measurements-data-model) by POP, then backend name. See the [POPs API](https://www.fastly.com/documentation/reference/api/utils/pops/) for details about POP identifiers.
  * @member {Object.<String, Object.<String, module:model/OriginInspectorMeasurements>>} datacenter
  */
 OriginInspectorRealtimeEntry.prototype['datacenter'] = undefined;

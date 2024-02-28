@@ -22,7 +22,7 @@ import WafActiveRulesResponse from '../model/WafActiveRulesResponse';
 /**
 * WafActiveRules service.
 * @module api/WafActiveRulesApi
-* @version 7.0.1
+* @version 7.1.0
 */
 export default class WafActiveRulesApi {
 
@@ -110,7 +110,7 @@ export default class WafActiveRulesApi {
     }
 
     /**
-     * Bulk update all active rules on a [firewall version](https://developer.fastly.com/reference/api/waf/firewall-version/). This endpoint will not add new active rules, only update existing active rules.
+     * Bulk update all active rules on a [firewall version](https://www.fastly.com/documentation/reference/api/waf/firewall-version/). This endpoint will not add new active rules, only update existing active rules.
      * @param {Object} options
      * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
      * @param {Number} options.version_id - Integer identifying a service version.
@@ -162,7 +162,7 @@ export default class WafActiveRulesApi {
     }
 
     /**
-     * Bulk update all active rules on a [firewall version](https://developer.fastly.com/reference/api/waf/firewall-version/). This endpoint will not add new active rules, only update existing active rules.
+     * Bulk update all active rules on a [firewall version](https://www.fastly.com/documentation/reference/api/waf/firewall-version/). This endpoint will not add new active rules, only update existing active rules.
      * @param {Object} options
      * @param {String} options.firewall_id - Alphanumeric string identifying a WAF Firewall.
      * @param {Number} options.version_id - Integer identifying a service version.

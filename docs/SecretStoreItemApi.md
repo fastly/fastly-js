@@ -157,7 +157,7 @@ apiInstance.getSecrets(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **store_id** | **String** |  |
-**cursor** | **String** | Cursor value from a previous response to retrieve the next page. To request the first page, this should be empty. | [optional]
+**cursor** | **String** | Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty. | [optional]
 **limit** | **String** | Number of results per page. The maximum is 200. | [optional] [defaults to '100']
 
 ### Return type

@@ -19,7 +19,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Director service.
 * @module api/DirectorApi
-* @version 7.0.1
+* @version 7.1.0
 */
 export default class DirectorApi {
 
@@ -49,7 +49,7 @@ export default class DirectorApi {
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - Name for the Director.
      * @param {Number} [options.quorum=75] - The percentage of capacity that needs to be up for a director to be considered up. `0` to `100`.
-     * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
+     * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/) to get a list of available POPs used for shielding.
      * @param {module:model/Number} [options.type=1] - What type of load balance group to use.
      * @param {Number} [options.retries=5] - How many backends to search if it fails.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/DirectorResponse} and HTTP response
@@ -116,7 +116,7 @@ export default class DirectorApi {
      * @param {String} [options.comment] - A freeform descriptive note.
      * @param {String} [options.name] - Name for the Director.
      * @param {Number} [options.quorum=75] - The percentage of capacity that needs to be up for a director to be considered up. `0` to `100`.
-     * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
+     * @param {String} [options.shield='null'] - Selected POP to serve as a shield for the backends. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/) to get a list of available POPs used for shielding.
      * @param {module:model/Number} [options.type=1] - What type of load balance group to use.
      * @param {Number} [options.retries=5] - How many backends to search if it fails.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/DirectorResponse}

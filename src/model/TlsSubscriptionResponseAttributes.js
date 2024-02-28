@@ -17,7 +17,7 @@ import TlsSubscriptionResponseAttributesAllOf from './TlsSubscriptionResponseAtt
 /**
  * The TlsSubscriptionResponseAttributes model module.
  * @module model/TlsSubscriptionResponseAttributes
- * @version 7.0.1
+ * @version 7.1.0
  */
 class TlsSubscriptionResponseAttributes {
     /**
@@ -64,6 +64,9 @@ class TlsSubscriptionResponseAttributes {
             if (data.hasOwnProperty('state')) {
                 obj['state'] = ApiClient.convertToType(data['state'], 'String');
             }
+            if (data.hasOwnProperty('has_active_order')) {
+                obj['has_active_order'] = ApiClient.convertToType(data['has_active_order'], 'Boolean');
+            }
         }
         return obj;
     }
@@ -95,6 +98,12 @@ TlsSubscriptionResponseAttributes.prototype['updated_at'] = undefined;
  */
 TlsSubscriptionResponseAttributes.prototype['state'] = undefined;
 
+/**
+ * Subscription has an active order
+ * @member {Boolean} has_active_order
+ */
+TlsSubscriptionResponseAttributes.prototype['has_active_order'] = undefined;
+
 
 // Implement Timestamps interface:
 /**
@@ -118,6 +127,11 @@ Timestamps.prototype['updated_at'] = undefined;
  * @member {module:model/TlsSubscriptionResponseAttributesAllOf.StateEnum} state
  */
 TlsSubscriptionResponseAttributesAllOf.prototype['state'] = undefined;
+/**
+ * Subscription has an active order
+ * @member {Boolean} has_active_order
+ */
+TlsSubscriptionResponseAttributesAllOf.prototype['has_active_order'] = undefined;
 
 
 

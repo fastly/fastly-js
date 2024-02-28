@@ -22,7 +22,7 @@ import VclSyntaxHighlightingResponse from '../model/VclSyntaxHighlightingRespons
 /**
 * Vcl service.
 * @module api/VclApi
-* @version 7.0.1
+* @version 7.1.0
 */
 export default class VclApi {
 
@@ -264,7 +264,7 @@ export default class VclApi {
     }
 
     /**
-     * Return boilerplate VCL with the service's TTL from the [settings](/reference/api/vcl-services/settings/).
+     * Return boilerplate VCL with the service's TTL from the [settings](https://www.fastly.com/documentation/reference/api/vcl-services/settings/).
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.
@@ -315,7 +315,7 @@ export default class VclApi {
     }
 
     /**
-     * Return boilerplate VCL with the service's TTL from the [settings](/reference/api/vcl-services/settings/).
+     * Return boilerplate VCL with the service's TTL from the [settings](https://www.fastly.com/documentation/reference/api/vcl-services/settings/).
      * @param {Object} options
      * @param {String} options.service_id - Alphanumeric string identifying the service.
      * @param {Number} options.version_id - Integer identifying a service version.

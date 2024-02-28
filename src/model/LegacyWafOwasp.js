@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LegacyWafOwasp model module.
  * @module model/LegacyWafOwasp
- * @version 7.0.1
+ * @version 7.1.0
  */
 class LegacyWafOwasp {
     /**

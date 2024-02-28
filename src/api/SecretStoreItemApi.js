@@ -19,7 +19,7 @@ import SecretResponse from '../model/SecretResponse';
 /**
 * SecretStoreItem service.
 * @module api/SecretStoreItemApi
-* @version 7.0.1
+* @version 7.1.0
 */
 export default class SecretStoreItemApi {
 
@@ -233,7 +233,7 @@ export default class SecretStoreItemApi {
      * List all secrets within a store.
      * @param {Object} options
      * @param {String} options.store_id
-     * @param {String} [options.cursor] - Cursor value from a previous response to retrieve the next page. To request the first page, this should be empty.
+     * @param {String} [options.cursor] - Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
      * @param {String} [options.limit='100'] - Number of results per page. The maximum is 200.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2006} and HTTP response
      */
@@ -282,7 +282,7 @@ export default class SecretStoreItemApi {
      * List all secrets within a store.
      * @param {Object} options
      * @param {String} options.store_id
-     * @param {String} [options.cursor] - Cursor value from a previous response to retrieve the next page. To request the first page, this should be empty.
+     * @param {String} [options.cursor] - Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
      * @param {String} [options.limit='100'] - Number of results per page. The maximum is 200.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2006}
      */

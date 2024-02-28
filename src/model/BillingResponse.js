@@ -20,7 +20,7 @@ import BillingTotal from './BillingTotal';
 /**
  * The BillingResponse model module.
  * @module model/BillingResponse
- * @version 7.0.1
+ * @version 7.1.0
  */
 class BillingResponse {
     /**

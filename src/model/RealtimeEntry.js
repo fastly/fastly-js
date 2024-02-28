@@ -18,7 +18,7 @@ import RealtimeMeasurements from './RealtimeMeasurements';
 /**
  * The RealtimeEntry model module.
  * @module model/RealtimeEntry
- * @version 7.0.1
+ * @version 7.1.0
  */
 class RealtimeEntry {
     /**
@@ -77,7 +77,7 @@ RealtimeEntry.prototype['recorded'] = undefined;
 RealtimeEntry.prototype['aggregated'] = undefined;
 
 /**
- * Groups [measurements](#measurements-data-model) by POP. See the [POPs API](/reference/api/utils/pops/) for details of POP identifiers.
+ * Groups [measurements](#measurements-data-model) by POP. See the [POPs API](https://www.fastly.com/documentation/reference/api/utils/pops/) for details of POP identifiers.
  * @member {Object.<String, module:model/RealtimeMeasurements>} datacenter
  */
 RealtimeEntry.prototype['datacenter'] = undefined;

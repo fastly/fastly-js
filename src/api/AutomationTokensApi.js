@@ -14,14 +14,14 @@
 import ApiClient from "../ApiClient";
 import AutomationTokenCreateRequest from '../model/AutomationTokenCreateRequest';
 import AutomationTokenCreateResponse from '../model/AutomationTokenCreateResponse';
+import AutomationTokenErrorResponse from '../model/AutomationTokenErrorResponse';
 import AutomationTokenResponse from '../model/AutomationTokenResponse';
-import ErrorResponse from '../model/ErrorResponse';
 import InlineResponse2001 from '../model/InlineResponse2001';
 
 /**
 * AutomationTokens service.
 * @module api/AutomationTokensApi
-* @version 7.0.1
+* @version 7.1.0
 */
 export default class AutomationTokensApi {
 
@@ -277,7 +277,7 @@ export default class AutomationTokensApi {
      * Revoke an automation token by ID.
      * @param {Object} options
      * @param {String} options.id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ErrorResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AutomationTokenErrorResponse} and HTTP response
      */
     revokeAutomationTokenIdWithHttpInfo(options = {}) {
       let postBody = null;
@@ -301,7 +301,7 @@ export default class AutomationTokensApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/vnd.api+json', 'application/problem+json'];
-      let returnType = ErrorResponse;
+      let returnType = AutomationTokenErrorResponse;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -322,7 +322,7 @@ export default class AutomationTokensApi {
      * Revoke an automation token by ID.
      * @param {Object} options
      * @param {String} options.id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ErrorResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AutomationTokenErrorResponse}
      */
     revokeAutomationTokenId(options = {}) {
       return this.revokeAutomationTokenIdWithHttpInfo(options)

@@ -17,7 +17,7 @@ import HistoricalDomainsResponse from '../model/HistoricalDomainsResponse';
 /**
 * DomainInspectorHistorical service.
 * @module api/DomainInspectorHistoricalApi
-* @version 7.0.1
+* @version 7.1.0
 */
 export default class DomainInspectorHistoricalApi {
 
@@ -44,10 +44,10 @@ export default class DomainInspectorHistoricalApi {
      * @param {String} [options.start] - A valid ISO-8601-formatted date and time, or UNIX timestamp, indicating the inclusive start of the query time range. If not provided, a default is chosen based on the provided `downsample` value.
      * @param {String} [options.end] - A valid ISO-8601-formatted date and time, or UNIX timestamp, indicating the exclusive end of the query time range. If not provided, a default is chosen based on the provided `downsample` value.
      * @param {module:model/String} [options.downsample='hour'] - Duration of sample windows.
-     * @param {String} [options.metric='edge_requests'] - The metric to retrieve. Up to ten comma-separated metrics are accepted.
+     * @param {String} [options.metric='edge_requests'] - The metrics to retrieve. Multiple values should be comma-separated.
      * @param {module:model/String} [options.group_by] - Dimensions to return in the query. Multiple dimensions may be separated by commas. For example, `group_by=domain` will return one timeseries for every domain, as a total across all datacenters (POPs). 
      * @param {String} [options.limit='100'] - Number of results per page. The maximum is 200.
-     * @param {String} [options.cursor] - Cursor value from a previous response to retrieve the next page. To request the first page, this should be empty.
+     * @param {String} [options.cursor] - Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
      * @param {module:model/String} [options.region] - Limit query to one or more specific geographic regions. Values should be comma-separated. 
      * @param {String} [options.datacenter] - Limit query to one or more specific POPs. Values should be comma-separated.
      * @param {String} [options.domain] - Limit query to one or more specific domains. Values should be comma-separated.
@@ -109,10 +109,10 @@ export default class DomainInspectorHistoricalApi {
      * @param {String} [options.start] - A valid ISO-8601-formatted date and time, or UNIX timestamp, indicating the inclusive start of the query time range. If not provided, a default is chosen based on the provided `downsample` value.
      * @param {String} [options.end] - A valid ISO-8601-formatted date and time, or UNIX timestamp, indicating the exclusive end of the query time range. If not provided, a default is chosen based on the provided `downsample` value.
      * @param {module:model/String} [options.downsample='hour'] - Duration of sample windows.
-     * @param {String} [options.metric='edge_requests'] - The metric to retrieve. Up to ten comma-separated metrics are accepted.
+     * @param {String} [options.metric='edge_requests'] - The metrics to retrieve. Multiple values should be comma-separated.
      * @param {module:model/String} [options.group_by] - Dimensions to return in the query. Multiple dimensions may be separated by commas. For example, `group_by=domain` will return one timeseries for every domain, as a total across all datacenters (POPs). 
      * @param {String} [options.limit='100'] - Number of results per page. The maximum is 200.
-     * @param {String} [options.cursor] - Cursor value from a previous response to retrieve the next page. To request the first page, this should be empty.
+     * @param {String} [options.cursor] - Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
      * @param {module:model/String} [options.region] - Limit query to one or more specific geographic regions. Values should be comma-separated. 
      * @param {String} [options.datacenter] - Limit query to one or more specific POPs. Values should be comma-separated.
      * @param {String} [options.domain] - Limit query to one or more specific domains. Values should be comma-separated.

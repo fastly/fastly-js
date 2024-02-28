@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ErrorResponse**](ErrorResponse.md)
+[**AutomationTokenErrorResponse**](AutomationTokenErrorResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

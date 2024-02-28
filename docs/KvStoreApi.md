@@ -133,7 +133,7 @@ Get all stores for a given customer.
 ```javascript
 const options = {
   cursor: "cursor_example",
-  limit: 100,
+  limit: 1000,
 };
 
 apiInstance.getStores(options)
@@ -150,7 +150,7 @@ apiInstance.getStores(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **cursor** | **String** |  | [optional]
-**limit** | **Number** |  | [optional] [defaults to 100]
+**limit** | **Number** |  | [optional] [defaults to 1000]
 
 ### Return type
 

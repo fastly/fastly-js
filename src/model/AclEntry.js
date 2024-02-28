@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AclEntry model module.
  * @module model/AclEntry
- * @version 7.0.1
+ * @version 7.1.0
  */
 class AclEntry {
     /**

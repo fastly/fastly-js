@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 ## `getSecretStores`
 
 ```javascript
-getSecretStores({ , [cursor, ][limit] })
+getSecretStores({ , [cursor, ][limit, ][name] })
 ```
 
 Get all secret stores.
@@ -163,6 +163,7 @@ Get all secret stores.
 const options = {
   cursor: "cursor_example",
   limit: "'100'",
+  name: "name_example",
 };
 
 apiInstance.getSecretStores(options)
@@ -178,8 +179,9 @@ apiInstance.getSecretStores(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**cursor** | **String** | Cursor value from a previous response to retrieve the next page. To request the first page, this should be empty. | [optional]
+**cursor** | **String** | Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty. | [optional]
 **limit** | **String** | Number of results per page. The maximum is 200. | [optional] [defaults to '100']
+**name** | **String** | Returns a one-element array containing the details for the named secret store. | [optional]
 
 ### Return type
 

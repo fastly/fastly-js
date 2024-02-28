@@ -19,7 +19,7 @@ import SnippetResponsePost from '../model/SnippetResponsePost';
 /**
 * Snippet service.
 * @module api/SnippetApi
-* @version 7.0.1
+* @version 7.1.0
 */
 export default class SnippetApi {
 

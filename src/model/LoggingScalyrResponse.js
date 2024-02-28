@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingScalyrResponse model module.
  * @module model/LoggingScalyrResponse
- * @version 7.0.1
+ * @version 7.1.0
  */
 class LoggingScalyrResponse {
     /**
@@ -144,7 +144,7 @@ LoggingScalyrResponse.prototype['format_version'] = undefined;
 LoggingScalyrResponse.prototype['region'] = undefined;
 
 /**
- * The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)).
+ * The token to use for authentication.
  * @member {String} token
  */
 LoggingScalyrResponse.prototype['token'] = undefined;
@@ -221,7 +221,7 @@ LoggingCommonResponse.prototype['format_version'] = undefined;
  */
 LoggingScalyrAdditional.prototype['region'] = undefined;
 /**
- * The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)).
+ * The token to use for authentication.
  * @member {String} token
  */
 LoggingScalyrAdditional.prototype['token'] = undefined;

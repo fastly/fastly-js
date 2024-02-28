@@ -20,7 +20,7 @@ import ServiceVersionDetailOrNull from './ServiceVersionDetailOrNull';
 /**
  * The ServiceDetail model module.
  * @module model/ServiceDetail
- * @version 7.0.1
+ * @version 7.1.0
  */
 class ServiceDetail {
     /**
@@ -161,7 +161,7 @@ ServiceDetail.prototype['publish_key'] = undefined;
 ServiceDetail.prototype['paused'] = undefined;
 
 /**
- * A list of [versions](/reference/api/services/version/) associated with the service.
+ * A list of [versions](https://www.fastly.com/documentation/reference/api/services/version/) associated with the service.
  * @member {Array.<module:model/SchemasVersionResponse>} versions
  */
 ServiceDetail.prototype['versions'] = undefined;
@@ -228,7 +228,7 @@ ServiceResponse.prototype['publish_key'] = undefined;
  */
 ServiceResponse.prototype['paused'] = undefined;
 /**
- * A list of [versions](/reference/api/services/version/) associated with the service.
+ * A list of [versions](https://www.fastly.com/documentation/reference/api/services/version/) associated with the service.
  * @member {Array.<module:model/SchemasVersionResponse>} versions
  */
 ServiceResponse.prototype['versions'] = undefined;

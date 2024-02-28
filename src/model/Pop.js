@@ -16,13 +16,13 @@ import PopCoordinates from './PopCoordinates';
 /**
  * The Pop model module.
  * @module model/Pop
- * @version 7.0.1
+ * @version 7.1.0
  */
 class Pop {
     /**
      * Constructs a new <code>Pop</code>.
      * @alias module:model/Pop
-     * @param code {String} the three-letter code for the [POP](https://developer.fastly.com/learning/concepts/pop/)
+     * @param code {String} the three-letter code for the [POP](https://www.fastly.com/documentation/learning/concepts/pop/)
      * @param name {String} the name of the POP
      * @param group {String} 
      * @param region {module:model/Pop.RegionEnum} 
@@ -91,7 +91,7 @@ class Pop {
 }
 
 /**
- * the three-letter code for the [POP](https://developer.fastly.com/learning/concepts/pop/)
+ * the three-letter code for the [POP](https://www.fastly.com/documentation/learning/concepts/pop/)
  * @member {String} code
  */
 Pop.prototype['code'] = undefined;
@@ -130,7 +130,7 @@ Pop.prototype['billing_region'] = undefined;
 Pop.prototype['coordinates'] = undefined;
 
 /**
- * the name of the [shield code](https://developer.fastly.com/learning/concepts/shielding/#choosing-a-shield-location) if this POP is suitable for shielding
+ * the name of the [shield code](https://www.fastly.com/documentation/learning/concepts/shielding/#choosing-a-shield-location) if this POP is suitable for shielding
  * @member {String} shield
  */
 Pop.prototype['shield'] = undefined;

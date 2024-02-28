@@ -21,7 +21,7 @@ import TlsCommonResponse from './TlsCommonResponse';
 /**
  * The PoolResponse model module.
  * @module model/PoolResponse
- * @version 7.0.1
+ * @version 7.1.0
  */
 class PoolResponse {
     /**
@@ -225,7 +225,7 @@ PoolResponse.prototype['version'] = undefined;
 PoolResponse.prototype['name'] = undefined;
 
 /**
- * Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
+ * Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/) to get a list of available POPs used for shielding.
  * @member {String} shield
  * @default 'null'
  */
@@ -393,7 +393,7 @@ ServiceIdAndVersionString.prototype['version'] = undefined;
  */
 PoolAdditional.prototype['name'] = undefined;
 /**
- * Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
+ * Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/) to get a list of available POPs used for shielding.
  * @member {String} shield
  * @default 'null'
  */

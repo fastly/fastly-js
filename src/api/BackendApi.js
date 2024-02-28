@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Backend service.
 * @module api/BackendApi
-* @version 7.0.1
+* @version 7.1.0
 */
 export default class BackendApi {
 
@@ -67,7 +67,7 @@ export default class BackendApi {
      * @param {String} [options.ssl_ca_cert] - CA certificate attached to origin.
      * @param {String} [options.ssl_cert_hostname] - Overrides `ssl_hostname`, but only for cert verification. Does not affect SNI at all.
      * @param {Boolean} [options.ssl_check_cert=true] - Be strict on checking SSL certs.
-     * @param {String} [options.ssl_ciphers] - List of [OpenSSL ciphers](https://www.openssl.org/docs/manmaster/man1/ciphers.html) to support for connections to this origin. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
+     * @param {String} [options.ssl_ciphers] - List of [OpenSSL ciphers](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) to support for connections to this origin. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
      * @param {String} [options.ssl_client_cert] - Client certificate attached to origin.
      * @param {String} [options.ssl_client_key] - Client key attached to origin.
      * @param {String} [options.ssl_hostname] - Use `ssl_cert_hostname` and `ssl_sni_hostname` to configure certificate validation.
@@ -180,7 +180,7 @@ export default class BackendApi {
      * @param {String} [options.ssl_ca_cert] - CA certificate attached to origin.
      * @param {String} [options.ssl_cert_hostname] - Overrides `ssl_hostname`, but only for cert verification. Does not affect SNI at all.
      * @param {Boolean} [options.ssl_check_cert=true] - Be strict on checking SSL certs.
-     * @param {String} [options.ssl_ciphers] - List of [OpenSSL ciphers](https://www.openssl.org/docs/manmaster/man1/ciphers.html) to support for connections to this origin. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
+     * @param {String} [options.ssl_ciphers] - List of [OpenSSL ciphers](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) to support for connections to this origin. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
      * @param {String} [options.ssl_client_cert] - Client certificate attached to origin.
      * @param {String} [options.ssl_client_key] - Client key attached to origin.
      * @param {String} [options.ssl_hostname] - Use `ssl_cert_hostname` and `ssl_sni_hostname` to configure certificate validation.
@@ -435,7 +435,7 @@ export default class BackendApi {
      * @param {String} [options.ssl_ca_cert] - CA certificate attached to origin.
      * @param {String} [options.ssl_cert_hostname] - Overrides `ssl_hostname`, but only for cert verification. Does not affect SNI at all.
      * @param {Boolean} [options.ssl_check_cert=true] - Be strict on checking SSL certs.
-     * @param {String} [options.ssl_ciphers] - List of [OpenSSL ciphers](https://www.openssl.org/docs/manmaster/man1/ciphers.html) to support for connections to this origin. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
+     * @param {String} [options.ssl_ciphers] - List of [OpenSSL ciphers](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) to support for connections to this origin. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
      * @param {String} [options.ssl_client_cert] - Client certificate attached to origin.
      * @param {String} [options.ssl_client_key] - Client key attached to origin.
      * @param {String} [options.ssl_hostname] - Use `ssl_cert_hostname` and `ssl_sni_hostname` to configure certificate validation.
@@ -554,7 +554,7 @@ export default class BackendApi {
      * @param {String} [options.ssl_ca_cert] - CA certificate attached to origin.
      * @param {String} [options.ssl_cert_hostname] - Overrides `ssl_hostname`, but only for cert verification. Does not affect SNI at all.
      * @param {Boolean} [options.ssl_check_cert=true] - Be strict on checking SSL certs.
-     * @param {String} [options.ssl_ciphers] - List of [OpenSSL ciphers](https://www.openssl.org/docs/manmaster/man1/ciphers.html) to support for connections to this origin. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
+     * @param {String} [options.ssl_ciphers] - List of [OpenSSL ciphers](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) to support for connections to this origin. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
      * @param {String} [options.ssl_client_cert] - Client certificate attached to origin.
      * @param {String} [options.ssl_client_key] - Client key attached to origin.
      * @param {String} [options.ssl_hostname] - Use `ssl_cert_hostname` and `ssl_sni_hostname` to configure certificate validation.

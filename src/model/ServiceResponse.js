@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The ServiceResponse model module.
  * @module model/ServiceResponse
- * @version 7.0.1
+ * @version 7.1.0
  */
 class ServiceResponse {
     /**
@@ -156,7 +156,7 @@ ServiceResponse.prototype['publish_key'] = undefined;
 ServiceResponse.prototype['paused'] = undefined;
 
 /**
- * A list of [versions](/reference/api/services/version/) associated with the service.
+ * A list of [versions](https://www.fastly.com/documentation/reference/api/services/version/) associated with the service.
  * @member {Array.<module:model/SchemasVersionResponse>} versions
  */
 ServiceResponse.prototype['versions'] = undefined;
@@ -215,7 +215,7 @@ ServiceResponseAllOf.prototype['publish_key'] = undefined;
  */
 ServiceResponseAllOf.prototype['paused'] = undefined;
 /**
- * A list of [versions](/reference/api/services/version/) associated with the service.
+ * A list of [versions](https://www.fastly.com/documentation/reference/api/services/version/) associated with the service.
  * @member {Array.<module:model/SchemasVersionResponse>} versions
  */
 ServiceResponseAllOf.prototype['versions'] = undefined;

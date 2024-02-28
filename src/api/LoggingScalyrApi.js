@@ -18,7 +18,7 @@ import LoggingScalyrResponse from '../model/LoggingScalyrResponse';
 /**
 * LoggingScalyr service.
 * @module api/LoggingScalyrApi
-* @version 7.0.1
+* @version 7.1.0
 */
 export default class LoggingScalyrApi {
 
@@ -49,7 +49,7 @@ export default class LoggingScalyrApi {
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {module:model/String} [options.region='US'] - The region that log data will be sent to.
-     * @param {String} [options.token] - The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)).
+     * @param {String} [options.token] - The token to use for authentication.
      * @param {String} [options.project_id='logplex'] - The name of the logfile within Scalyr.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingScalyrResponse} and HTTP response
      */
@@ -116,7 +116,7 @@ export default class LoggingScalyrApi {
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {module:model/String} [options.region='US'] - The region that log data will be sent to.
-     * @param {String} [options.token] - The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)).
+     * @param {String} [options.token] - The token to use for authentication.
      * @param {String} [options.project_id='logplex'] - The name of the logfile within Scalyr.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingScalyrResponse}
      */
@@ -348,7 +348,7 @@ export default class LoggingScalyrApi {
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {module:model/String} [options.region='US'] - The region that log data will be sent to.
-     * @param {String} [options.token] - The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)).
+     * @param {String} [options.token] - The token to use for authentication.
      * @param {String} [options.project_id='logplex'] - The name of the logfile within Scalyr.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingScalyrResponse} and HTTP response
      */
@@ -421,7 +421,7 @@ export default class LoggingScalyrApi {
      * @param {String} [options.format='%h %l %u %t "%r" %&gt;s %b'] - A Fastly [log format string](https://docs.fastly.com/en/guides/custom-log-formats).
      * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {module:model/String} [options.region='US'] - The region that log data will be sent to.
-     * @param {String} [options.token] - The token to use for authentication ([https://www.scalyr.com/keys](https://www.scalyr.com/keys)).
+     * @param {String} [options.token] - The token to use for authentication.
      * @param {String} [options.project_id='logplex'] - The name of the logfile within Scalyr.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingScalyrResponse}
      */

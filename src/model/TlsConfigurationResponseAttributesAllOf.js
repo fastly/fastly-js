@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TlsConfigurationResponseAttributesAllOf model module.
  * @module model/TlsConfigurationResponseAttributesAllOf
- * @version 7.0.1
+ * @version 7.1.0
  */
 class TlsConfigurationResponseAttributesAllOf {
     /**
@@ -66,7 +66,7 @@ class TlsConfigurationResponseAttributesAllOf {
 }
 
 /**
- * Signifies whether or not Fastly will use this configuration as a default when creating a new [TLS Activation](/reference/api/tls/custom-certs/activations/).
+ * Signifies whether or not Fastly will use this configuration as a default when creating a new [TLS Activation](https://www.fastly.com/documentation/reference/api/tls/custom-certs/activations/).
  * @member {Boolean} default
  */
 TlsConfigurationResponseAttributesAllOf.prototype['default'] = undefined;

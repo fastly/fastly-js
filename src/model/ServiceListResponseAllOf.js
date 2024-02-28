@@ -16,7 +16,7 @@ import SchemasVersionResponse from './SchemasVersionResponse';
 /**
  * The ServiceListResponseAllOf model module.
  * @module model/ServiceListResponseAllOf
- * @version 7.0.1
+ * @version 7.1.0
  */
 class ServiceListResponseAllOf {
     /**
@@ -69,13 +69,13 @@ class ServiceListResponseAllOf {
 ServiceListResponseAllOf.prototype['id'] = undefined;
 
 /**
- * Current [version](/reference/api/services/version/) of the service.
+ * Current [version](https://www.fastly.com/documentation/reference/api/services/version/) of the service.
  * @member {Number} version
  */
 ServiceListResponseAllOf.prototype['version'] = undefined;
 
 /**
- * A list of [versions](/reference/api/services/version/) associated with the service.
+ * A list of [versions](https://www.fastly.com/documentation/reference/api/services/version/) associated with the service.
  * @member {Array.<module:model/SchemasVersionResponse>} versions
  */
 ServiceListResponseAllOf.prototype['versions'] = undefined;

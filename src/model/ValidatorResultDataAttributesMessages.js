@@ -16,7 +16,7 @@ import TokensAdditionalProps from './TokensAdditionalProps';
 /**
  * The ValidatorResultDataAttributesMessages model module.
  * @module model/ValidatorResultDataAttributesMessages
- * @version 7.0.1
+ * @version 7.1.0
  */
 class ValidatorResultDataAttributesMessages {
     /**

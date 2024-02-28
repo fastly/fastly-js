@@ -18,7 +18,7 @@ import LoggingPapertrailResponse from '../model/LoggingPapertrailResponse';
 /**
 * LoggingPapertrail service.
 * @module api/LoggingPapertrailApi
-* @version 7.0.1
+* @version 7.1.0
 */
 export default class LoggingPapertrailApi {
 

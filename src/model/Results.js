@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Results model module.
  * @module model/Results
- * @version 7.0.1
+ * @version 7.1.0
  */
 class Results {
     /**
@@ -284,11 +284,17 @@ class Results {
             if (data.hasOwnProperty('imgopto_resp_header_bytes')) {
                 obj['imgopto_resp_header_bytes'] = ApiClient.convertToType(data['imgopto_resp_header_bytes'], 'Number');
             }
+            if (data.hasOwnProperty('imgopto_shield')) {
+                obj['imgopto_shield'] = ApiClient.convertToType(data['imgopto_shield'], 'Number');
+            }
             if (data.hasOwnProperty('imgopto_shield_resp_body_bytes')) {
                 obj['imgopto_shield_resp_body_bytes'] = ApiClient.convertToType(data['imgopto_shield_resp_body_bytes'], 'Number');
             }
             if (data.hasOwnProperty('imgopto_shield_resp_header_bytes')) {
                 obj['imgopto_shield_resp_header_bytes'] = ApiClient.convertToType(data['imgopto_shield_resp_header_bytes'], 'Number');
+            }
+            if (data.hasOwnProperty('imgopto_transforms')) {
+                obj['imgopto_transforms'] = ApiClient.convertToType(data['imgopto_transforms'], 'Number');
             }
             if (data.hasOwnProperty('imgvideo')) {
                 obj['imgvideo'] = ApiClient.convertToType(data['imgvideo'], 'Number');
@@ -1210,6 +1216,12 @@ Results.prototype['imgopto_resp_body_bytes'] = undefined;
 Results.prototype['imgopto_resp_header_bytes'] = undefined;
 
 /**
+ * Number of responses that came from the Fastly Image Optimizer service via a shield.
+ * @member {Number} imgopto_shield
+ */
+Results.prototype['imgopto_shield'] = undefined;
+
+/**
  * Total body bytes delivered via a shield from the Fastly Image Optimizer service.
  * @member {Number} imgopto_shield_resp_body_bytes
  */
@@ -1220,6 +1232,12 @@ Results.prototype['imgopto_shield_resp_body_bytes'] = undefined;
  * @member {Number} imgopto_shield_resp_header_bytes
  */
 Results.prototype['imgopto_shield_resp_header_bytes'] = undefined;
+
+/**
+ * Number of transforms performed by the Fastly Image Optimizer service.
+ * @member {Number} imgopto_transforms
+ */
+Results.prototype['imgopto_transforms'] = undefined;
 
 /**
  * Number of video responses that came from the Fastly Image Optimizer service.

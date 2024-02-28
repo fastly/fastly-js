@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PoolAdditional model module.
  * @module model/PoolAdditional
- * @version 7.0.1
+ * @version 7.1.0
  */
 class PoolAdditional {
     /**
@@ -93,7 +93,7 @@ class PoolAdditional {
 PoolAdditional.prototype['name'] = undefined;
 
 /**
- * Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](/reference/api/utils/pops/) to get a list of available POPs used for shielding.
+ * Selected POP to serve as a shield for the servers. Defaults to `null` meaning no origin shielding if not set. Refer to the [POPs API endpoint](https://www.fastly.com/documentation/reference/api/utils/pops/) to get a list of available POPs used for shielding.
  * @member {String} shield
  * @default 'null'
  */

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TlsSubscriptionDataAttributes model module.
  * @module model/TlsSubscriptionDataAttributes
- * @version 7.0.1
+ * @version 7.1.0
  */
 class TlsSubscriptionDataAttributes {
     /**
@@ -78,6 +78,12 @@ TlsSubscriptionDataAttributes['CertificateAuthorityEnum'] = {
      * @const
      */
     "lets-encrypt": "lets-encrypt",
+
+    /**
+     * value: "certainly"
+     * @const
+     */
+    "certainly": "certainly",
 
     /**
      * value: "globalsign"

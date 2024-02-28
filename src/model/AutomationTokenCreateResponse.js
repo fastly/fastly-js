@@ -21,7 +21,7 @@ import Timestamps from './Timestamps';
 /**
  * The AutomationTokenCreateResponse model module.
  * @module model/AutomationTokenCreateResponse
- * @version 7.0.1
+ * @version 7.1.0
  */
 class AutomationTokenCreateResponse {
     /**

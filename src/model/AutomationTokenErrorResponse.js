@@ -13,18 +13,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The ErrorResponse model module.
- * @module model/ErrorResponse
- * @version 7.0.1
+ * The AutomationTokenErrorResponse model module.
+ * @module model/AutomationTokenErrorResponse
+ * @version 7.1.0
  */
-class ErrorResponse {
+class AutomationTokenErrorResponse {
     /**
-     * Constructs a new <code>ErrorResponse</code>.
-     * @alias module:model/ErrorResponse
+     * Constructs a new <code>AutomationTokenErrorResponse</code>.
+     * @alias module:model/AutomationTokenErrorResponse
      */
     constructor() { 
         
-        ErrorResponse.initialize(this);
+        AutomationTokenErrorResponse.initialize(this);
     }
 
     /**
@@ -36,15 +36,15 @@ class ErrorResponse {
     }
 
     /**
-     * Constructs a <code>ErrorResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>AutomationTokenErrorResponse</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ErrorResponse} obj Optional instance to populate.
-     * @return {module:model/ErrorResponse} The populated <code>ErrorResponse</code> instance.
+     * @param {module:model/AutomationTokenErrorResponse} obj Optional instance to populate.
+     * @return {module:model/AutomationTokenErrorResponse} The populated <code>AutomationTokenErrorResponse</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new ErrorResponse();
+            obj = obj || new AutomationTokenErrorResponse();
 
             if (data.hasOwnProperty('detail')) {
                 obj['detail'] = ApiClient.convertToType(data['detail'], 'String');
@@ -68,27 +68,27 @@ class ErrorResponse {
 /**
  * @member {String} detail
  */
-ErrorResponse.prototype['detail'] = undefined;
+AutomationTokenErrorResponse.prototype['detail'] = undefined;
 
 /**
  * @member {Array.<Object>} errors
  */
-ErrorResponse.prototype['errors'] = undefined;
+AutomationTokenErrorResponse.prototype['errors'] = undefined;
 
 /**
  * @member {Number} status
  */
-ErrorResponse.prototype['status'] = undefined;
+AutomationTokenErrorResponse.prototype['status'] = undefined;
 
 /**
  * @member {String} title
  */
-ErrorResponse.prototype['title'] = undefined;
+AutomationTokenErrorResponse.prototype['title'] = undefined;
 
 
 
 
 
 
-export default ErrorResponse;
+export default AutomationTokenErrorResponse;
 

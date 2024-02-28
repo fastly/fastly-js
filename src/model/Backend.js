@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Backend model module.
  * @module model/Backend
- * @version 7.0.1
+ * @version 7.1.0
  */
 class Backend {
     /**
@@ -292,7 +292,7 @@ Backend.prototype['ssl_cert_hostname'] = undefined;
 Backend.prototype['ssl_check_cert'] = true;
 
 /**
- * List of [OpenSSL ciphers](https://www.openssl.org/docs/manmaster/man1/ciphers.html) to support for connections to this origin. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
+ * List of [OpenSSL ciphers](https://www.openssl.org/docs/man1.1.1/man1/ciphers.html) to support for connections to this origin. If your backend server is not able to negotiate a connection meeting this constraint, a synthetic `503` error response will be generated.
  * @member {String} ssl_ciphers
  */
 Backend.prototype['ssl_ciphers'] = undefined;

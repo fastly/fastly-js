@@ -25,6 +25,7 @@ import AutomationTokenCreateRequest from './model/AutomationTokenCreateRequest';
 import AutomationTokenCreateRequestAttributes from './model/AutomationTokenCreateRequestAttributes';
 import AutomationTokenCreateResponse from './model/AutomationTokenCreateResponse';
 import AutomationTokenCreateResponseAllOf from './model/AutomationTokenCreateResponseAllOf';
+import AutomationTokenErrorResponse from './model/AutomationTokenErrorResponse';
 import AutomationTokenResponse from './model/AutomationTokenResponse';
 import AutomationTokenResponseAllOf from './model/AutomationTokenResponseAllOf';
 import AwsRegion from './model/AwsRegion';
@@ -102,7 +103,8 @@ import EnabledProductResponse from './model/EnabledProductResponse';
 import EnabledProductResponseLinks from './model/EnabledProductResponseLinks';
 import EnabledProductResponseProduct from './model/EnabledProductResponseProduct';
 import EnabledProductResponseService from './model/EnabledProductResponseService';
-import ErrorResponse from './model/ErrorResponse';
+import Error from './model/Error';
+import ErrorResponseData from './model/ErrorResponseData';
 import Event from './model/Event';
 import EventAttributes from './model/EventAttributes';
 import EventData from './model/EventData';
@@ -180,6 +182,9 @@ import InvitationResponseData from './model/InvitationResponseData';
 import InvitationResponseDataAllOf from './model/InvitationResponseDataAllOf';
 import InvitationsResponse from './model/InvitationsResponse';
 import InvitationsResponseAllOf from './model/InvitationsResponseAllOf';
+import Invoice from './model/Invoice';
+import InvoiceResponse from './model/InvoiceResponse';
+import Invoicelineitems from './model/Invoicelineitems';
 import LegacyWafConfigurationSet from './model/LegacyWafConfigurationSet';
 import LegacyWafFirewall from './model/LegacyWafFirewall';
 import LegacyWafOwasp from './model/LegacyWafOwasp';
@@ -190,6 +195,8 @@ import LegacyWafTag from './model/LegacyWafTag';
 import LegacyWafUpdateStatus from './model/LegacyWafUpdateStatus';
 import LineItemData from './model/LineItemData';
 import LineItemDataReadOnlyInvoiceId from './model/LineItemDataReadOnlyInvoiceId';
+import ListInvoicesResponse from './model/ListInvoicesResponse';
+import Listinvoices from './model/Listinvoices';
 import LoggingAddressAndPort from './model/LoggingAddressAndPort';
 import LoggingAzureblobAdditional from './model/LoggingAzureblobAdditional';
 import LoggingAzureblobResponse from './model/LoggingAzureblobResponse';
@@ -263,6 +270,7 @@ import LoggingSyslogAdditional from './model/LoggingSyslogAdditional';
 import LoggingSyslogResponse from './model/LoggingSyslogResponse';
 import LoggingTlsCommon from './model/LoggingTlsCommon';
 import LoggingUseTls from './model/LoggingUseTls';
+import Metadata from './model/Metadata';
 import MutualAuthentication from './model/MutualAuthentication';
 import MutualAuthenticationData from './model/MutualAuthenticationData';
 import MutualAuthenticationDataAttributes from './model/MutualAuthenticationDataAttributes';
@@ -540,6 +548,13 @@ import TlsConfigurationResponseData from './model/TlsConfigurationResponseData';
 import TlsConfigurationResponseDataAllOf from './model/TlsConfigurationResponseDataAllOf';
 import TlsConfigurationsResponse from './model/TlsConfigurationsResponse';
 import TlsConfigurationsResponseAllOf from './model/TlsConfigurationsResponseAllOf';
+import TlsCsr from './model/TlsCsr';
+import TlsCsrData from './model/TlsCsrData';
+import TlsCsrDataAttributes from './model/TlsCsrDataAttributes';
+import TlsCsrErrorResponse from './model/TlsCsrErrorResponse';
+import TlsCsrResponse from './model/TlsCsrResponse';
+import TlsCsrResponseAttributes from './model/TlsCsrResponseAttributes';
+import TlsCsrResponseData from './model/TlsCsrResponseData';
 import TlsDnsRecord from './model/TlsDnsRecord';
 import TlsDomainData from './model/TlsDomainData';
 import TlsDomainsResponse from './model/TlsDomainsResponse';
@@ -583,6 +598,7 @@ import TypeTlsActivation from './model/TypeTlsActivation';
 import TypeTlsBulkCertificate from './model/TypeTlsBulkCertificate';
 import TypeTlsCertificate from './model/TypeTlsCertificate';
 import TypeTlsConfiguration from './model/TypeTlsConfiguration';
+import TypeTlsCsr from './model/TypeTlsCsr';
 import TypeTlsDnsRecord from './model/TypeTlsDnsRecord';
 import TypeTlsDomain from './model/TypeTlsDomain';
 import TypeTlsPrivateKey from './model/TypeTlsPrivateKey';
@@ -687,6 +703,7 @@ import AutomationTokensApi from './api/AutomationTokensApi';
 import BackendApi from './api/BackendApi';
 import BillingApi from './api/BillingApi';
 import BillingAddressApi from './api/BillingAddressApi';
+import BillingInvoicesApi from './api/BillingInvoicesApi';
 import CacheSettingsApi from './api/CacheSettingsApi';
 import ConditionApi from './api/ConditionApi';
 import ConfigStoreApi from './api/ConfigStoreApi';
@@ -781,6 +798,7 @@ import TlsActivationsApi from './api/TlsActivationsApi';
 import TlsBulkCertificatesApi from './api/TlsBulkCertificatesApi';
 import TlsCertificatesApi from './api/TlsCertificatesApi';
 import TlsConfigurationsApi from './api/TlsConfigurationsApi';
+import TlsCsrsApi from './api/TlsCsrsApi';
 import TlsDomainsApi from './api/TlsDomainsApi';
 import TlsPrivateKeysApi from './api/TlsPrivateKeysApi';
 import TlsSubscriptionsApi from './api/TlsSubscriptionsApi';
@@ -832,7 +850,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 7.0.1
+* @version 7.1.0
 */
 export {
     /**
@@ -918,6 +936,12 @@ export {
      * @property {module:model/AutomationTokenCreateResponseAllOf}
      */
     AutomationTokenCreateResponseAllOf,
+
+    /**
+     * The AutomationTokenErrorResponse model constructor.
+     * @property {module:model/AutomationTokenErrorResponse}
+     */
+    AutomationTokenErrorResponse,
 
     /**
      * The AutomationTokenResponse model constructor.
@@ -1382,10 +1406,16 @@ export {
     EnabledProductResponseService,
 
     /**
-     * The ErrorResponse model constructor.
-     * @property {module:model/ErrorResponse}
+     * The Error model constructor.
+     * @property {module:model/Error}
      */
-    ErrorResponse,
+    Error,
+
+    /**
+     * The ErrorResponseData model constructor.
+     * @property {module:model/ErrorResponseData}
+     */
+    ErrorResponseData,
 
     /**
      * The Event model constructor.
@@ -1850,6 +1880,24 @@ export {
     InvitationsResponseAllOf,
 
     /**
+     * The Invoice model constructor.
+     * @property {module:model/Invoice}
+     */
+    Invoice,
+
+    /**
+     * The InvoiceResponse model constructor.
+     * @property {module:model/InvoiceResponse}
+     */
+    InvoiceResponse,
+
+    /**
+     * The Invoicelineitems model constructor.
+     * @property {module:model/Invoicelineitems}
+     */
+    Invoicelineitems,
+
+    /**
      * The LegacyWafConfigurationSet model constructor.
      * @property {module:model/LegacyWafConfigurationSet}
      */
@@ -1908,6 +1956,18 @@ export {
      * @property {module:model/LineItemDataReadOnlyInvoiceId}
      */
     LineItemDataReadOnlyInvoiceId,
+
+    /**
+     * The ListInvoicesResponse model constructor.
+     * @property {module:model/ListInvoicesResponse}
+     */
+    ListInvoicesResponse,
+
+    /**
+     * The Listinvoices model constructor.
+     * @property {module:model/Listinvoices}
+     */
+    Listinvoices,
 
     /**
      * The LoggingAddressAndPort model constructor.
@@ -2346,6 +2406,12 @@ export {
      * @property {module:model/LoggingUseTls}
      */
     LoggingUseTls,
+
+    /**
+     * The Metadata model constructor.
+     * @property {module:model/Metadata}
+     */
+    Metadata,
 
     /**
      * The MutualAuthentication model constructor.
@@ -4010,6 +4076,48 @@ export {
     TlsConfigurationsResponseAllOf,
 
     /**
+     * The TlsCsr model constructor.
+     * @property {module:model/TlsCsr}
+     */
+    TlsCsr,
+
+    /**
+     * The TlsCsrData model constructor.
+     * @property {module:model/TlsCsrData}
+     */
+    TlsCsrData,
+
+    /**
+     * The TlsCsrDataAttributes model constructor.
+     * @property {module:model/TlsCsrDataAttributes}
+     */
+    TlsCsrDataAttributes,
+
+    /**
+     * The TlsCsrErrorResponse model constructor.
+     * @property {module:model/TlsCsrErrorResponse}
+     */
+    TlsCsrErrorResponse,
+
+    /**
+     * The TlsCsrResponse model constructor.
+     * @property {module:model/TlsCsrResponse}
+     */
+    TlsCsrResponse,
+
+    /**
+     * The TlsCsrResponseAttributes model constructor.
+     * @property {module:model/TlsCsrResponseAttributes}
+     */
+    TlsCsrResponseAttributes,
+
+    /**
+     * The TlsCsrResponseData model constructor.
+     * @property {module:model/TlsCsrResponseData}
+     */
+    TlsCsrResponseData,
+
+    /**
      * The TlsDnsRecord model constructor.
      * @property {module:model/TlsDnsRecord}
      */
@@ -4266,6 +4374,12 @@ export {
      * @property {module:model/TypeTlsConfiguration}
      */
     TypeTlsConfiguration,
+
+    /**
+     * The TypeTlsCsr model constructor.
+     * @property {module:model/TypeTlsCsr}
+     */
+    TypeTlsCsr,
 
     /**
      * The TypeTlsDnsRecord model constructor.
@@ -4892,6 +5006,12 @@ export {
     BillingAddressApi,
 
     /**
+    * The BillingInvoicesApi service constructor.
+    * @property {module:api/BillingInvoicesApi}
+    */
+    BillingInvoicesApi,
+
+    /**
     * The CacheSettingsApi service constructor.
     * @property {module:api/CacheSettingsApi}
     */
@@ -5454,6 +5574,12 @@ export {
     * @property {module:api/TlsConfigurationsApi}
     */
     TlsConfigurationsApi,
+
+    /**
+    * The TlsCsrsApi service constructor.
+    * @property {module:api/TlsCsrsApi}
+    */
+    TlsCsrsApi,
 
     /**
     * The TlsDomainsApi service constructor.

@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The ServiceListResponse model module.
  * @module model/ServiceListResponse
- * @version 7.0.1
+ * @version 7.1.0
  */
 class ServiceListResponse {
     /**
@@ -141,13 +141,13 @@ ServiceListResponse.prototype['type'] = undefined;
 ServiceListResponse.prototype['id'] = undefined;
 
 /**
- * Current [version](/reference/api/services/version/) of the service.
+ * Current [version](https://www.fastly.com/documentation/reference/api/services/version/) of the service.
  * @member {Number} version
  */
 ServiceListResponse.prototype['version'] = undefined;
 
 /**
- * A list of [versions](/reference/api/services/version/) associated with the service.
+ * A list of [versions](https://www.fastly.com/documentation/reference/api/services/version/) associated with the service.
  * @member {Array.<module:model/SchemasVersionResponse>} versions
  */
 ServiceListResponse.prototype['versions'] = undefined;
@@ -196,12 +196,12 @@ ServiceCreate.prototype['type'] = undefined;
  */
 ServiceListResponseAllOf.prototype['id'] = undefined;
 /**
- * Current [version](/reference/api/services/version/) of the service.
+ * Current [version](https://www.fastly.com/documentation/reference/api/services/version/) of the service.
  * @member {Number} version
  */
 ServiceListResponseAllOf.prototype['version'] = undefined;
 /**
- * A list of [versions](/reference/api/services/version/) associated with the service.
+ * A list of [versions](https://www.fastly.com/documentation/reference/api/services/version/) associated with the service.
  * @member {Array.<module:model/SchemasVersionResponse>} versions
  */
 ServiceListResponseAllOf.prototype['versions'] = undefined;

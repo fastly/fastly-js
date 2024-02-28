@@ -62,7 +62,7 @@ null (empty response body)
 bulkUpdateWafActiveRules({ firewall_id, version_id, [body] })
 ```
 
-Bulk update all active rules on a [firewall version](https://developer.fastly.com/reference/api/waf/firewall-version/). This endpoint will not add new active rules, only update existing active rules.
+Bulk update all active rules on a [firewall version](https://www.fastly.com/documentation/reference/api/waf/firewall-version/). This endpoint will not add new active rules, only update existing active rules.
 
 ### Example
 

@@ -16,12 +16,12 @@ import RelationshipTlsCertificateTlsCertificate from './RelationshipTlsCertifica
 /**
  * The RelationshipTlsCertificate model module.
  * @module model/RelationshipTlsCertificate
- * @version 7.0.1
+ * @version 7.1.0
  */
 class RelationshipTlsCertificate {
     /**
      * Constructs a new <code>RelationshipTlsCertificate</code>.
-     * The [TLS certificate](/reference/api/tls/custom-certs/certificates/) being used to terminate TLS traffic for a domain. Required.
+     * The [TLS certificate](https://www.fastly.com/documentation/reference/api/tls/custom-certs/certificates/) being used to terminate TLS traffic for a domain. Required.
      * @alias module:model/RelationshipTlsCertificate
      */
     constructor() { 

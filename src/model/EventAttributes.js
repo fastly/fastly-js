@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventAttributes model module.
  * @module model/EventAttributes
- * @version 7.0.1
+ * @version 7.1.0
  */
 class EventAttributes {
     /**
@@ -191,6 +191,30 @@ EventAttributes['EventTypeEnum'] = {
      * @const
      */
     "address.update": "address.update",
+
+    /**
+     * value: "alerts.definition.create"
+     * @const
+     */
+    "alerts.definition.create": "alerts.definition.create",
+
+    /**
+     * value: "alerts.definition.delete"
+     * @const
+     */
+    "alerts.definition.delete": "alerts.definition.delete",
+
+    /**
+     * value: "alerts.definition.test"
+     * @const
+     */
+    "alerts.definition.test": "alerts.definition.test",
+
+    /**
+     * value: "alerts.definition.update"
+     * @const
+     */
+    "alerts.definition.update": "alerts.definition.update",
 
     /**
      * value: "backend.create"
