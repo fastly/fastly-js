@@ -12,12 +12,21 @@ import Fastly from "fastly";
 
 const apiInstance = new Fastly.AclApi();
 
-// If the FASTLY_API_TOKEN environment variable is set,
-// the client will use it to authenticate all API requests.
-// Alternatively, you may authorize the client instance
-// with a Fastly API token, which will override
-// the environment variable.
-// Fastly.ApiClient.instance.authenticate("YOUR_API_TOKEN");
+/**
+ * @note
+ * If the FASTLY_API_TOKEN environment variable is set,
+ * the client will use it to authenticate all API requests.
+ * Alternatively, you may authorize the client instance
+ * with a Fastly API token, which will override
+ * the environment variable.
+ * @example
+ * Fastly.ApiClient.instance.authenticate("YOUR_API_TOKEN");
+ * const fastlyService = new FastlyInstance.ServiceApi();
+ * @note
+ * For ESM based Typescript projects, import the client like this:
+ * import * as Fastly from "fastly";
+ *
+ */
 
 const options = {
   service_id: "SU1Z0isxPaozGVKXdv0eY", // required
@@ -594,12 +603,6 @@ The fastly-js API client currently does not support the following endpoints:
 - [`/v1/channel/{service_id}/ts/h/limit/{max_entries}`](https://www.fastly.com/documentation/reference/api/metrics-stats/origin-insights) (GET)
 - [`/v1/channel/{service_id}/ts/h`](https://www.fastly.com/documentation/reference/api/metrics-stats/origin-insights) (GET)
 - [`/v1/channel/{service_id}/ts/{start_timestamp}`](https://www.fastly.com/documentation/reference/api/metrics-stats/origin-insights) (GET)
-
-
-If you encounter any non-security-related bug or unexpected behavior, please [file an issue][bug]
-using the bug report template.
-
-[bug]: https://github.com/fastly/fastly-js/issues/new?labels=bug
 
 ### Security issues
 
