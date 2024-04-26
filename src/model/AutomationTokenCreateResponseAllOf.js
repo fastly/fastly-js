@@ -18,7 +18,7 @@ import ReadOnlyUserId from './ReadOnlyUserId';
 /**
  * The AutomationTokenCreateResponseAllOf model module.
  * @module model/AutomationTokenCreateResponseAllOf
- * @version 7.1.0
+ * @version 7.2.0
  */
 class AutomationTokenCreateResponseAllOf {
     /**

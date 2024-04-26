@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Results model module.
  * @module model/Results
- * @version 7.1.0
+ * @version 7.2.0
  */
 class Results {
     /**
@@ -727,6 +727,69 @@ class Results {
             }
             if (data.hasOwnProperty('bot_challenges_failed')) {
                 obj['bot_challenges_failed'] = ApiClient.convertToType(data['bot_challenges_failed'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_action_downgrade')) {
+                obj['ddos_action_downgrade'] = ApiClient.convertToType(data['ddos_action_downgrade'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_action_downgraded_connections')) {
+                obj['ddos_action_downgraded_connections'] = ApiClient.convertToType(data['ddos_action_downgraded_connections'], 'Number');
+            }
+            if (data.hasOwnProperty('vcl_on_compute_hit_requests')) {
+                obj['vcl_on_compute_hit_requests'] = ApiClient.convertToType(data['vcl_on_compute_hit_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('vcl_on_compute_miss_requests')) {
+                obj['vcl_on_compute_miss_requests'] = ApiClient.convertToType(data['vcl_on_compute_miss_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('vcl_on_compute_pass_requests')) {
+                obj['vcl_on_compute_pass_requests'] = ApiClient.convertToType(data['vcl_on_compute_pass_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('vcl_on_compute_error_requests')) {
+                obj['vcl_on_compute_error_requests'] = ApiClient.convertToType(data['vcl_on_compute_error_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('vcl_on_compute_synth_requests')) {
+                obj['vcl_on_compute_synth_requests'] = ApiClient.convertToType(data['vcl_on_compute_synth_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('vcl_on_compute_edge_hit_requests')) {
+                obj['vcl_on_compute_edge_hit_requests'] = ApiClient.convertToType(data['vcl_on_compute_edge_hit_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('vcl_on_compute_edge_miss_requests')) {
+                obj['vcl_on_compute_edge_miss_requests'] = ApiClient.convertToType(data['vcl_on_compute_edge_miss_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('all_hit_requests')) {
+                obj['all_hit_requests'] = ApiClient.convertToType(data['all_hit_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('all_miss_requests')) {
+                obj['all_miss_requests'] = ApiClient.convertToType(data['all_miss_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('all_pass_requests')) {
+                obj['all_pass_requests'] = ApiClient.convertToType(data['all_pass_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('all_error_requests')) {
+                obj['all_error_requests'] = ApiClient.convertToType(data['all_error_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('all_synth_requests')) {
+                obj['all_synth_requests'] = ApiClient.convertToType(data['all_synth_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('all_edge_hit_requests')) {
+                obj['all_edge_hit_requests'] = ApiClient.convertToType(data['all_edge_hit_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('all_edge_miss_requests')) {
+                obj['all_edge_miss_requests'] = ApiClient.convertToType(data['all_edge_miss_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('all_status_1xx')) {
+                obj['all_status_1xx'] = ApiClient.convertToType(data['all_status_1xx'], 'Number');
+            }
+            if (data.hasOwnProperty('all_status_2xx')) {
+                obj['all_status_2xx'] = ApiClient.convertToType(data['all_status_2xx'], 'Number');
+            }
+            if (data.hasOwnProperty('all_status_3xx')) {
+                obj['all_status_3xx'] = ApiClient.convertToType(data['all_status_3xx'], 'Number');
+            }
+            if (data.hasOwnProperty('all_status_4xx')) {
+                obj['all_status_4xx'] = ApiClient.convertToType(data['all_status_4xx'], 'Number');
+            }
+            if (data.hasOwnProperty('all_status_5xx')) {
+                obj['all_status_5xx'] = ApiClient.convertToType(data['all_status_5xx'], 'Number');
             }
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
@@ -2102,6 +2165,132 @@ Results.prototype['bot_challenges_succeeded'] = undefined;
  * @member {Number} bot_challenges_failed
  */
 Results.prototype['bot_challenges_failed'] = undefined;
+
+/**
+ * The number of times the downgrade action was taken. The downgrade action restricts the client to http1.
+ * @member {Number} ddos_action_downgrade
+ */
+Results.prototype['ddos_action_downgrade'] = undefined;
+
+/**
+ * The number of connections the downgrade action was applied to. The downgrade action restricts the connection to http1.
+ * @member {Number} ddos_action_downgraded_connections
+ */
+Results.prototype['ddos_action_downgraded_connections'] = undefined;
+
+/**
+ * Number of cache hits for a VCL service running on Compute.
+ * @member {Number} vcl_on_compute_hit_requests
+ */
+Results.prototype['vcl_on_compute_hit_requests'] = undefined;
+
+/**
+ * Number of cache misses for a VCL service running on Compute.
+ * @member {Number} vcl_on_compute_miss_requests
+ */
+Results.prototype['vcl_on_compute_miss_requests'] = undefined;
+
+/**
+ * Number of requests that passed through the CDN without being cached for a VCL service running on Compute.
+ * @member {Number} vcl_on_compute_pass_requests
+ */
+Results.prototype['vcl_on_compute_pass_requests'] = undefined;
+
+/**
+ * Number of cache errors for a VCL service running on Compute.
+ * @member {Number} vcl_on_compute_error_requests
+ */
+Results.prototype['vcl_on_compute_error_requests'] = undefined;
+
+/**
+ * Number of requests that returned a synthetic response (i.e., response objects created with the `synthetic` VCL statement) for a VCL service running on Compute.
+ * @member {Number} vcl_on_compute_synth_requests
+ */
+Results.prototype['vcl_on_compute_synth_requests'] = undefined;
+
+/**
+ * Number of requests sent by end users to Fastly that resulted in a hit at the edge for a VCL service running on Compute.
+ * @member {Number} vcl_on_compute_edge_hit_requests
+ */
+Results.prototype['vcl_on_compute_edge_hit_requests'] = undefined;
+
+/**
+ * Number of requests sent by end users to Fastly that resulted in a miss at the edge for a VCL service running on Compute.
+ * @member {Number} vcl_on_compute_edge_miss_requests
+ */
+Results.prototype['vcl_on_compute_edge_miss_requests'] = undefined;
+
+/**
+ * Number of cache hits for a VCL service.
+ * @member {Number} all_hit_requests
+ */
+Results.prototype['all_hit_requests'] = undefined;
+
+/**
+ * Number of cache misses for a VCL service.
+ * @member {Number} all_miss_requests
+ */
+Results.prototype['all_miss_requests'] = undefined;
+
+/**
+ * Number of requests that passed through the CDN without being cached for a VCL service.
+ * @member {Number} all_pass_requests
+ */
+Results.prototype['all_pass_requests'] = undefined;
+
+/**
+ * Number of cache errors for a VCL service.
+ * @member {Number} all_error_requests
+ */
+Results.prototype['all_error_requests'] = undefined;
+
+/**
+ * Number of requests that returned a synthetic response (i.e., response objects created with the `synthetic` VCL statement) for a VCL service.
+ * @member {Number} all_synth_requests
+ */
+Results.prototype['all_synth_requests'] = undefined;
+
+/**
+ * Number of requests sent by end users to Fastly that resulted in a hit at the edge for a VCL service.
+ * @member {Number} all_edge_hit_requests
+ */
+Results.prototype['all_edge_hit_requests'] = undefined;
+
+/**
+ * Number of requests sent by end users to Fastly that resulted in a miss at the edge for a VCL service.
+ * @member {Number} all_edge_miss_requests
+ */
+Results.prototype['all_edge_miss_requests'] = undefined;
+
+/**
+ * Number of \"Informational\" category status codes delivered for all sources.
+ * @member {Number} all_status_1xx
+ */
+Results.prototype['all_status_1xx'] = undefined;
+
+/**
+ * Number of \"Success\" status codes delivered for all sources.
+ * @member {Number} all_status_2xx
+ */
+Results.prototype['all_status_2xx'] = undefined;
+
+/**
+ * Number of \"Redirection\" codes delivered for all sources.
+ * @member {Number} all_status_3xx
+ */
+Results.prototype['all_status_3xx'] = undefined;
+
+/**
+ * Number of \"Client Error\" codes delivered for all sources.
+ * @member {Number} all_status_4xx
+ */
+Results.prototype['all_status_4xx'] = undefined;
+
+/**
+ * Number of \"Server Error\" codes delivered for all sources.
+ * @member {Number} all_status_5xx
+ */
+Results.prototype['all_status_5xx'] = undefined;
 
 /**
  * @member {String} service_id

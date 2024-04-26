@@ -18,7 +18,7 @@ import LoggingNewrelicResponse from '../model/LoggingNewrelicResponse';
 /**
 * LoggingNewrelic service.
 * @module api/LoggingNewrelicApi
-* @version 7.1.0
+* @version 7.2.0
 */
 export default class LoggingNewrelicApi {
 

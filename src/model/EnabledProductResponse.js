@@ -18,7 +18,7 @@ import EnabledProductResponseService from './EnabledProductResponseService';
 /**
  * The EnabledProductResponse model module.
  * @module model/EnabledProductResponse
- * @version 7.1.0
+ * @version 7.2.0
  */
 class EnabledProductResponse {
     /**

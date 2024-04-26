@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Backend model module.
  * @module model/Backend
- * @version 7.1.0
+ * @version 7.2.0
  */
 class Backend {
     /**
@@ -132,6 +132,18 @@ class Backend {
             }
             if (data.hasOwnProperty('ssl_sni_hostname')) {
                 obj['ssl_sni_hostname'] = ApiClient.convertToType(data['ssl_sni_hostname'], 'String');
+            }
+            if (data.hasOwnProperty('tcp_keepalive_enable')) {
+                obj['tcp_keepalive_enable'] = ApiClient.convertToType(data['tcp_keepalive_enable'], 'Boolean');
+            }
+            if (data.hasOwnProperty('tcp_keepalive_interval')) {
+                obj['tcp_keepalive_interval'] = ApiClient.convertToType(data['tcp_keepalive_interval'], 'Number');
+            }
+            if (data.hasOwnProperty('tcp_keepalive_probes')) {
+                obj['tcp_keepalive_probes'] = ApiClient.convertToType(data['tcp_keepalive_probes'], 'Number');
+            }
+            if (data.hasOwnProperty('tcp_keepalive_time')) {
+                obj['tcp_keepalive_time'] = ApiClient.convertToType(data['tcp_keepalive_time'], 'Number');
             }
             if (data.hasOwnProperty('use_ssl')) {
                 obj['use_ssl'] = ApiClient.convertToType(data['use_ssl'], 'Boolean');
@@ -320,6 +332,30 @@ Backend.prototype['ssl_hostname'] = undefined;
  * @member {String} ssl_sni_hostname
  */
 Backend.prototype['ssl_sni_hostname'] = undefined;
+
+/**
+ * Whether to enable TCP keepalives for backend connections. Varnish defaults to using keepalives if this is unspecified.
+ * @member {Boolean} tcp_keepalive_enable
+ */
+Backend.prototype['tcp_keepalive_enable'] = undefined;
+
+/**
+ * Interval in seconds between subsequent keepalive probes.
+ * @member {Number} tcp_keepalive_interval
+ */
+Backend.prototype['tcp_keepalive_interval'] = undefined;
+
+/**
+ * Number of unacknowledged probes to send before considering the connection dead.
+ * @member {Number} tcp_keepalive_probes
+ */
+Backend.prototype['tcp_keepalive_probes'] = undefined;
+
+/**
+ * Interval in seconds between the last data packet sent and the first keepalive probe.
+ * @member {Number} tcp_keepalive_time
+ */
+Backend.prototype['tcp_keepalive_time'] = undefined;
 
 /**
  * Whether or not to require TLS for connections to this backend.

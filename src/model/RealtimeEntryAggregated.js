@@ -16,7 +16,7 @@ import RealtimeMeasurements from './RealtimeMeasurements';
 /**
  * The RealtimeEntryAggregated model module.
  * @module model/RealtimeEntryAggregated
- * @version 7.1.0
+ * @version 7.2.0
  */
 class RealtimeEntryAggregated {
     /**
@@ -731,6 +731,69 @@ class RealtimeEntryAggregated {
             if (data.hasOwnProperty('bot_challenge_complete_tokens_issued')) {
                 obj['bot_challenge_complete_tokens_issued'] = ApiClient.convertToType(data['bot_challenge_complete_tokens_issued'], 'Number');
             }
+            if (data.hasOwnProperty('ddos_action_downgrade')) {
+                obj['ddos_action_downgrade'] = ApiClient.convertToType(data['ddos_action_downgrade'], 'Number');
+            }
+            if (data.hasOwnProperty('ddos_action_downgraded_connections')) {
+                obj['ddos_action_downgraded_connections'] = ApiClient.convertToType(data['ddos_action_downgraded_connections'], 'Number');
+            }
+            if (data.hasOwnProperty('vcl_on_compute_hit_requests')) {
+                obj['vcl_on_compute_hit_requests'] = ApiClient.convertToType(data['vcl_on_compute_hit_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('vcl_on_compute_miss_requests')) {
+                obj['vcl_on_compute_miss_requests'] = ApiClient.convertToType(data['vcl_on_compute_miss_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('vcl_on_compute_pass_requests')) {
+                obj['vcl_on_compute_pass_requests'] = ApiClient.convertToType(data['vcl_on_compute_pass_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('vcl_on_compute_error_requests')) {
+                obj['vcl_on_compute_error_requests'] = ApiClient.convertToType(data['vcl_on_compute_error_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('vcl_on_compute_synth_requests')) {
+                obj['vcl_on_compute_synth_requests'] = ApiClient.convertToType(data['vcl_on_compute_synth_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('vcl_on_compute_edge_hit_requests')) {
+                obj['vcl_on_compute_edge_hit_requests'] = ApiClient.convertToType(data['vcl_on_compute_edge_hit_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('vcl_on_compute_edge_miss_requests')) {
+                obj['vcl_on_compute_edge_miss_requests'] = ApiClient.convertToType(data['vcl_on_compute_edge_miss_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('all_hit_requests')) {
+                obj['all_hit_requests'] = ApiClient.convertToType(data['all_hit_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('all_miss_requests')) {
+                obj['all_miss_requests'] = ApiClient.convertToType(data['all_miss_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('all_pass_requests')) {
+                obj['all_pass_requests'] = ApiClient.convertToType(data['all_pass_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('all_error_requests')) {
+                obj['all_error_requests'] = ApiClient.convertToType(data['all_error_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('all_synth_requests')) {
+                obj['all_synth_requests'] = ApiClient.convertToType(data['all_synth_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('all_edge_hit_requests')) {
+                obj['all_edge_hit_requests'] = ApiClient.convertToType(data['all_edge_hit_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('all_edge_miss_requests')) {
+                obj['all_edge_miss_requests'] = ApiClient.convertToType(data['all_edge_miss_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('all_status_1xx')) {
+                obj['all_status_1xx'] = ApiClient.convertToType(data['all_status_1xx'], 'Number');
+            }
+            if (data.hasOwnProperty('all_status_2xx')) {
+                obj['all_status_2xx'] = ApiClient.convertToType(data['all_status_2xx'], 'Number');
+            }
+            if (data.hasOwnProperty('all_status_3xx')) {
+                obj['all_status_3xx'] = ApiClient.convertToType(data['all_status_3xx'], 'Number');
+            }
+            if (data.hasOwnProperty('all_status_4xx')) {
+                obj['all_status_4xx'] = ApiClient.convertToType(data['all_status_4xx'], 'Number');
+            }
+            if (data.hasOwnProperty('all_status_5xx')) {
+                obj['all_status_5xx'] = ApiClient.convertToType(data['all_status_5xx'], 'Number');
+            }
         }
         return obj;
     }
@@ -823,7 +886,7 @@ RealtimeEntryAggregated.prototype['hits_time'] = undefined;
 RealtimeEntryAggregated.prototype['miss_time'] = undefined;
 
 /**
- * A histogram. Each key represents the upper bound of a span of 10 milliseconds and the values represent the number of requests to origin during that 10ms period. Any origin request that takes more than 60 seconds to return will be in the 60000 bucket.
+ * A histogram. The value in each bucket is the number of requests to the origin whose responses arrived during the time period represented by the bucket. The key of each bucket represents the upper bound (in response time) of that bucket. The buckets vary in width and cover the time periods 0-10ms (in 1ms increments), 10-250ms (in 10ms increments), 250-1,000ms (in 50ms increments), 1,000-3,000ms (in 100ms increments), 3,000-10,000ms (in 500 ms increments), 10,000-20,000ms (in 1,000ms increments), 20,000-60,000ms (in 5,000ms increments), and 60,000ms through infinity (in a single bucket).
  * @member {Object.<String, Object>} miss_histogram
  */
 RealtimeEntryAggregated.prototype['miss_histogram'] = undefined;
@@ -2100,6 +2163,132 @@ RealtimeEntryAggregated.prototype['bot_challenges_failed'] = undefined;
  */
 RealtimeEntryAggregated.prototype['bot_challenge_complete_tokens_issued'] = undefined;
 
+/**
+ * The number of times the downgrade action was taken. The downgrade action restricts the client to http1.
+ * @member {Number} ddos_action_downgrade
+ */
+RealtimeEntryAggregated.prototype['ddos_action_downgrade'] = undefined;
+
+/**
+ * The number of connections the downgrade action was applied to. The downgrade action restricts the connection to http1.
+ * @member {Number} ddos_action_downgraded_connections
+ */
+RealtimeEntryAggregated.prototype['ddos_action_downgraded_connections'] = undefined;
+
+/**
+ * Number of cache hits for a VCL service running on Compute.
+ * @member {Number} vcl_on_compute_hit_requests
+ */
+RealtimeEntryAggregated.prototype['vcl_on_compute_hit_requests'] = undefined;
+
+/**
+ * Number of cache misses for a VCL service running on Compute.
+ * @member {Number} vcl_on_compute_miss_requests
+ */
+RealtimeEntryAggregated.prototype['vcl_on_compute_miss_requests'] = undefined;
+
+/**
+ * Number of requests that passed through the CDN without being cached for a VCL service running on Compute.
+ * @member {Number} vcl_on_compute_pass_requests
+ */
+RealtimeEntryAggregated.prototype['vcl_on_compute_pass_requests'] = undefined;
+
+/**
+ * Number of cache errors for a VCL service running on Compute.
+ * @member {Number} vcl_on_compute_error_requests
+ */
+RealtimeEntryAggregated.prototype['vcl_on_compute_error_requests'] = undefined;
+
+/**
+ * Number of requests that returned a synthetic response (i.e., response objects created with the `synthetic` VCL statement) for a VCL service running on Compute.
+ * @member {Number} vcl_on_compute_synth_requests
+ */
+RealtimeEntryAggregated.prototype['vcl_on_compute_synth_requests'] = undefined;
+
+/**
+ * Number of requests sent by end users to Fastly that resulted in a hit at the edge for a VCL service running on Compute.
+ * @member {Number} vcl_on_compute_edge_hit_requests
+ */
+RealtimeEntryAggregated.prototype['vcl_on_compute_edge_hit_requests'] = undefined;
+
+/**
+ * Number of requests sent by end users to Fastly that resulted in a miss at the edge for a VCL service running on Compute.
+ * @member {Number} vcl_on_compute_edge_miss_requests
+ */
+RealtimeEntryAggregated.prototype['vcl_on_compute_edge_miss_requests'] = undefined;
+
+/**
+ * Number of cache hits for a VCL service.
+ * @member {Number} all_hit_requests
+ */
+RealtimeEntryAggregated.prototype['all_hit_requests'] = undefined;
+
+/**
+ * Number of cache misses for a VCL service.
+ * @member {Number} all_miss_requests
+ */
+RealtimeEntryAggregated.prototype['all_miss_requests'] = undefined;
+
+/**
+ * Number of requests that passed through the CDN without being cached for a VCL service.
+ * @member {Number} all_pass_requests
+ */
+RealtimeEntryAggregated.prototype['all_pass_requests'] = undefined;
+
+/**
+ * Number of cache errors for a VCL service.
+ * @member {Number} all_error_requests
+ */
+RealtimeEntryAggregated.prototype['all_error_requests'] = undefined;
+
+/**
+ * Number of requests that returned a synthetic response (i.e., response objects created with the `synthetic` VCL statement) for a VCL service.
+ * @member {Number} all_synth_requests
+ */
+RealtimeEntryAggregated.prototype['all_synth_requests'] = undefined;
+
+/**
+ * Number of requests sent by end users to Fastly that resulted in a hit at the edge for a VCL service.
+ * @member {Number} all_edge_hit_requests
+ */
+RealtimeEntryAggregated.prototype['all_edge_hit_requests'] = undefined;
+
+/**
+ * Number of requests sent by end users to Fastly that resulted in a miss at the edge for a VCL service.
+ * @member {Number} all_edge_miss_requests
+ */
+RealtimeEntryAggregated.prototype['all_edge_miss_requests'] = undefined;
+
+/**
+ * Number of \"Informational\" category status codes delivered for all sources.
+ * @member {Number} all_status_1xx
+ */
+RealtimeEntryAggregated.prototype['all_status_1xx'] = undefined;
+
+/**
+ * Number of \"Success\" status codes delivered for all sources.
+ * @member {Number} all_status_2xx
+ */
+RealtimeEntryAggregated.prototype['all_status_2xx'] = undefined;
+
+/**
+ * Number of \"Redirection\" codes delivered for all sources.
+ * @member {Number} all_status_3xx
+ */
+RealtimeEntryAggregated.prototype['all_status_3xx'] = undefined;
+
+/**
+ * Number of \"Client Error\" codes delivered for all sources.
+ * @member {Number} all_status_4xx
+ */
+RealtimeEntryAggregated.prototype['all_status_4xx'] = undefined;
+
+/**
+ * Number of \"Server Error\" codes delivered for all sources.
+ * @member {Number} all_status_5xx
+ */
+RealtimeEntryAggregated.prototype['all_status_5xx'] = undefined;
+
 
 // Implement RealtimeMeasurements interface:
 /**
@@ -2173,7 +2362,7 @@ RealtimeMeasurements.prototype['hits_time'] = undefined;
  */
 RealtimeMeasurements.prototype['miss_time'] = undefined;
 /**
- * A histogram. Each key represents the upper bound of a span of 10 milliseconds and the values represent the number of requests to origin during that 10ms period. Any origin request that takes more than 60 seconds to return will be in the 60000 bucket.
+ * A histogram. The value in each bucket is the number of requests to the origin whose responses arrived during the time period represented by the bucket. The key of each bucket represents the upper bound (in response time) of that bucket. The buckets vary in width and cover the time periods 0-10ms (in 1ms increments), 10-250ms (in 10ms increments), 250-1,000ms (in 50ms increments), 1,000-3,000ms (in 100ms increments), 3,000-10,000ms (in 500 ms increments), 10,000-20,000ms (in 1,000ms increments), 20,000-60,000ms (in 5,000ms increments), and 60,000ms through infinity (in a single bucket).
  * @member {Object.<String, Object>} miss_histogram
  */
 RealtimeMeasurements.prototype['miss_histogram'] = undefined;
@@ -3237,6 +3426,111 @@ RealtimeMeasurements.prototype['bot_challenges_failed'] = undefined;
  * @member {Number} bot_challenge_complete_tokens_issued
  */
 RealtimeMeasurements.prototype['bot_challenge_complete_tokens_issued'] = undefined;
+/**
+ * The number of times the downgrade action was taken. The downgrade action restricts the client to http1.
+ * @member {Number} ddos_action_downgrade
+ */
+RealtimeMeasurements.prototype['ddos_action_downgrade'] = undefined;
+/**
+ * The number of connections the downgrade action was applied to. The downgrade action restricts the connection to http1.
+ * @member {Number} ddos_action_downgraded_connections
+ */
+RealtimeMeasurements.prototype['ddos_action_downgraded_connections'] = undefined;
+/**
+ * Number of cache hits for a VCL service running on Compute.
+ * @member {Number} vcl_on_compute_hit_requests
+ */
+RealtimeMeasurements.prototype['vcl_on_compute_hit_requests'] = undefined;
+/**
+ * Number of cache misses for a VCL service running on Compute.
+ * @member {Number} vcl_on_compute_miss_requests
+ */
+RealtimeMeasurements.prototype['vcl_on_compute_miss_requests'] = undefined;
+/**
+ * Number of requests that passed through the CDN without being cached for a VCL service running on Compute.
+ * @member {Number} vcl_on_compute_pass_requests
+ */
+RealtimeMeasurements.prototype['vcl_on_compute_pass_requests'] = undefined;
+/**
+ * Number of cache errors for a VCL service running on Compute.
+ * @member {Number} vcl_on_compute_error_requests
+ */
+RealtimeMeasurements.prototype['vcl_on_compute_error_requests'] = undefined;
+/**
+ * Number of requests that returned a synthetic response (i.e., response objects created with the `synthetic` VCL statement) for a VCL service running on Compute.
+ * @member {Number} vcl_on_compute_synth_requests
+ */
+RealtimeMeasurements.prototype['vcl_on_compute_synth_requests'] = undefined;
+/**
+ * Number of requests sent by end users to Fastly that resulted in a hit at the edge for a VCL service running on Compute.
+ * @member {Number} vcl_on_compute_edge_hit_requests
+ */
+RealtimeMeasurements.prototype['vcl_on_compute_edge_hit_requests'] = undefined;
+/**
+ * Number of requests sent by end users to Fastly that resulted in a miss at the edge for a VCL service running on Compute.
+ * @member {Number} vcl_on_compute_edge_miss_requests
+ */
+RealtimeMeasurements.prototype['vcl_on_compute_edge_miss_requests'] = undefined;
+/**
+ * Number of cache hits for a VCL service.
+ * @member {Number} all_hit_requests
+ */
+RealtimeMeasurements.prototype['all_hit_requests'] = undefined;
+/**
+ * Number of cache misses for a VCL service.
+ * @member {Number} all_miss_requests
+ */
+RealtimeMeasurements.prototype['all_miss_requests'] = undefined;
+/**
+ * Number of requests that passed through the CDN without being cached for a VCL service.
+ * @member {Number} all_pass_requests
+ */
+RealtimeMeasurements.prototype['all_pass_requests'] = undefined;
+/**
+ * Number of cache errors for a VCL service.
+ * @member {Number} all_error_requests
+ */
+RealtimeMeasurements.prototype['all_error_requests'] = undefined;
+/**
+ * Number of requests that returned a synthetic response (i.e., response objects created with the `synthetic` VCL statement) for a VCL service.
+ * @member {Number} all_synth_requests
+ */
+RealtimeMeasurements.prototype['all_synth_requests'] = undefined;
+/**
+ * Number of requests sent by end users to Fastly that resulted in a hit at the edge for a VCL service.
+ * @member {Number} all_edge_hit_requests
+ */
+RealtimeMeasurements.prototype['all_edge_hit_requests'] = undefined;
+/**
+ * Number of requests sent by end users to Fastly that resulted in a miss at the edge for a VCL service.
+ * @member {Number} all_edge_miss_requests
+ */
+RealtimeMeasurements.prototype['all_edge_miss_requests'] = undefined;
+/**
+ * Number of \"Informational\" category status codes delivered for all sources.
+ * @member {Number} all_status_1xx
+ */
+RealtimeMeasurements.prototype['all_status_1xx'] = undefined;
+/**
+ * Number of \"Success\" status codes delivered for all sources.
+ * @member {Number} all_status_2xx
+ */
+RealtimeMeasurements.prototype['all_status_2xx'] = undefined;
+/**
+ * Number of \"Redirection\" codes delivered for all sources.
+ * @member {Number} all_status_3xx
+ */
+RealtimeMeasurements.prototype['all_status_3xx'] = undefined;
+/**
+ * Number of \"Client Error\" codes delivered for all sources.
+ * @member {Number} all_status_4xx
+ */
+RealtimeMeasurements.prototype['all_status_4xx'] = undefined;
+/**
+ * Number of \"Server Error\" codes delivered for all sources.
+ * @member {Number} all_status_5xx
+ */
+RealtimeMeasurements.prototype['all_status_5xx'] = undefined;
 
 
 

@@ -17,7 +17,7 @@ import SnippetResponseCommon from './SnippetResponseCommon';
 /**
  * The SnippetResponse model module.
  * @module model/SnippetResponse
- * @version 7.1.0
+ * @version 7.2.0
  */
 class SnippetResponse {
     /**

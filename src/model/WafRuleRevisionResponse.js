@@ -17,7 +17,7 @@ import WafRuleRevisionResponseData from './WafRuleRevisionResponseData';
 /**
  * The WafRuleRevisionResponse model module.
  * @module model/WafRuleRevisionResponse
- * @version 7.1.0
+ * @version 7.2.0
  */
 class WafRuleRevisionResponse {
     /**

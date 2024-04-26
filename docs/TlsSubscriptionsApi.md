@@ -68,7 +68,7 @@ Create a new TLS subscription. This response includes a list of possible challen
 ```javascript
 const options = {
   force: true,
-  tls_subscription: {"data":{"type":"tls_subscription","attributes":{"certificate_authority":"lets-encrypt"},"relationships":{"tls_domains":{"data":[{"type":"tls_domain","id":"DOMAIN_NAME"}]},"tls_configuration":{"data":{"type":"tls_configuration","id":"t7CguUGZzb2W9Euo5FoKa"}}}}},
+  tls_subscription: {"data":{"type":"tls_subscription","attributes":{"certificate_authority":"certainly"},"relationships":{"tls_domains":{"data":[{"type":"tls_domain","id":"DOMAIN_NAME"}]},"tls_configuration":{"data":{"type":"tls_configuration","id":"t7CguUGZzb2W9Euo5FoKa"}}}}},
 };
 
 apiInstance.createTlsSub(options)

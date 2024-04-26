@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SnippetWithDynamicNumberAllOf model module.
  * @module model/SnippetWithDynamicNumberAllOf
- * @version 7.1.0
+ * @version 7.2.0
  */
 class SnippetWithDynamicNumberAllOf {
     /**

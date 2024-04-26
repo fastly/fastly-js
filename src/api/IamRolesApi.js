@@ -16,7 +16,7 @@ import ApiClient from "../ApiClient";
 /**
 * IamRoles service.
 * @module api/IamRolesApi
-* @version 7.1.0
+* @version 7.2.0
 */
 export default class IamRolesApi {
 

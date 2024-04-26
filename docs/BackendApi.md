@@ -17,7 +17,7 @@ Method | Fastly API endpoint | Description
 ## `createBackend`
 
 ```javascript
-createBackend({ service_id, version_id, [address, ][auto_loadbalance, ][between_bytes_timeout, ][client_cert, ][comment, ][connect_timeout, ][first_byte_timeout, ][healthcheck, ][hostname, ][ipv4, ][ipv6, ][keepalive_time, ][max_conn, ][max_tls_version, ][min_tls_version, ][name, ][override_host, ][port, ][request_condition, ][share_key, ][shield, ][ssl_ca_cert, ][ssl_cert_hostname, ][ssl_check_cert, ][ssl_ciphers, ][ssl_client_cert, ][ssl_client_key, ][ssl_hostname, ][ssl_sni_hostname, ][use_ssl, ][weight] })
+createBackend({ service_id, version_id, [address, ][auto_loadbalance, ][between_bytes_timeout, ][client_cert, ][comment, ][connect_timeout, ][first_byte_timeout, ][healthcheck, ][hostname, ][ipv4, ][ipv6, ][keepalive_time, ][max_conn, ][max_tls_version, ][min_tls_version, ][name, ][override_host, ][port, ][request_condition, ][share_key, ][shield, ][ssl_ca_cert, ][ssl_cert_hostname, ][ssl_check_cert, ][ssl_ciphers, ][ssl_client_cert, ][ssl_client_key, ][ssl_hostname, ][ssl_sni_hostname, ][tcp_keepalive_enable, ][tcp_keepalive_interval, ][tcp_keepalive_probes, ][tcp_keepalive_time, ][use_ssl, ][weight] })
 ```
 
 Create a backend for a particular service and version.
@@ -57,6 +57,10 @@ const options = {
   ssl_client_key: "ssl_client_key_example",
   ssl_hostname: "ssl_hostname_example",
   ssl_sni_hostname: "ssl_sni_hostname_example",
+  tcp_keepalive_enable: true,
+  tcp_keepalive_interval: 56,
+  tcp_keepalive_probes: 56,
+  tcp_keepalive_time: 56,
   use_ssl: true,
   weight: 56,
 };
@@ -105,6 +109,10 @@ Name | Type | Description  | Notes
 **ssl_client_key** | **String** | Client key attached to origin. | [optional]
 **ssl_hostname** | **String** | Use `ssl_cert_hostname` and `ssl_sni_hostname` to configure certificate validation. | [optional]
 **ssl_sni_hostname** | **String** | Overrides `ssl_hostname`, but only for SNI in the handshake. Does not affect cert validation at all. | [optional]
+**tcp_keepalive_enable** | **Boolean** | Whether to enable TCP keepalives for backend connections. Varnish defaults to using keepalives if this is unspecified. | [optional]
+**tcp_keepalive_interval** | **Number** | Interval in seconds between subsequent keepalive probes. | [optional]
+**tcp_keepalive_probes** | **Number** | Number of unacknowledged probes to send before considering the connection dead. | [optional]
+**tcp_keepalive_time** | **Number** | Interval in seconds between the last data packet sent and the first keepalive probe. | [optional]
 **use_ssl** | **Boolean** | Whether or not to require TLS for connections to this backend. | [optional]
 **weight** | **Number** | Weight used to load balance this backend against others. May be any positive integer. If `auto_loadbalance` is true, the chance of this backend being selected is equal to its own weight over the sum of all weights for backends that have `auto_loadbalance` set to true. | [optional]
 
@@ -231,7 +239,7 @@ Name | Type | Description  | Notes
 ## `updateBackend`
 
 ```javascript
-updateBackend({ service_id, version_id, backend_name, [address, ][auto_loadbalance, ][between_bytes_timeout, ][client_cert, ][comment, ][connect_timeout, ][first_byte_timeout, ][healthcheck, ][hostname, ][ipv4, ][ipv6, ][keepalive_time, ][max_conn, ][max_tls_version, ][min_tls_version, ][name, ][override_host, ][port, ][request_condition, ][share_key, ][shield, ][ssl_ca_cert, ][ssl_cert_hostname, ][ssl_check_cert, ][ssl_ciphers, ][ssl_client_cert, ][ssl_client_key, ][ssl_hostname, ][ssl_sni_hostname, ][use_ssl, ][weight] })
+updateBackend({ service_id, version_id, backend_name, [address, ][auto_loadbalance, ][between_bytes_timeout, ][client_cert, ][comment, ][connect_timeout, ][first_byte_timeout, ][healthcheck, ][hostname, ][ipv4, ][ipv6, ][keepalive_time, ][max_conn, ][max_tls_version, ][min_tls_version, ][name, ][override_host, ][port, ][request_condition, ][share_key, ][shield, ][ssl_ca_cert, ][ssl_cert_hostname, ][ssl_check_cert, ][ssl_ciphers, ][ssl_client_cert, ][ssl_client_key, ][ssl_hostname, ][ssl_sni_hostname, ][tcp_keepalive_enable, ][tcp_keepalive_interval, ][tcp_keepalive_probes, ][tcp_keepalive_time, ][use_ssl, ][weight] })
 ```
 
 Update the backend for a particular service and version.
@@ -272,6 +280,10 @@ const options = {
   ssl_client_key: "ssl_client_key_example",
   ssl_hostname: "ssl_hostname_example",
   ssl_sni_hostname: "ssl_sni_hostname_example",
+  tcp_keepalive_enable: true,
+  tcp_keepalive_interval: 56,
+  tcp_keepalive_probes: 56,
+  tcp_keepalive_time: 56,
   use_ssl: true,
   weight: 56,
 };
@@ -321,6 +333,10 @@ Name | Type | Description  | Notes
 **ssl_client_key** | **String** | Client key attached to origin. | [optional]
 **ssl_hostname** | **String** | Use `ssl_cert_hostname` and `ssl_sni_hostname` to configure certificate validation. | [optional]
 **ssl_sni_hostname** | **String** | Overrides `ssl_hostname`, but only for SNI in the handshake. Does not affect cert validation at all. | [optional]
+**tcp_keepalive_enable** | **Boolean** | Whether to enable TCP keepalives for backend connections. Varnish defaults to using keepalives if this is unspecified. | [optional]
+**tcp_keepalive_interval** | **Number** | Interval in seconds between subsequent keepalive probes. | [optional]
+**tcp_keepalive_probes** | **Number** | Number of unacknowledged probes to send before considering the connection dead. | [optional]
+**tcp_keepalive_time** | **Number** | Interval in seconds between the last data packet sent and the first keepalive probe. | [optional]
 **use_ssl** | **Boolean** | Whether or not to require TLS for connections to this backend. | [optional]
 **weight** | **Number** | Weight used to load balance this backend against others. May be any positive integer. If `auto_loadbalance` is true, the chance of this backend being selected is equal to its own weight over the sum of all weights for backends that have `auto_loadbalance` set to true. | [optional]
 

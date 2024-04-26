@@ -17,7 +17,7 @@ import Metadata from './Metadata';
 /**
  * The Listinvoices model module.
  * @module model/Listinvoices
- * @version 7.1.0
+ * @version 7.2.0
  */
 class Listinvoices {
     /**

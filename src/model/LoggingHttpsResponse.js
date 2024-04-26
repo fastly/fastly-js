@@ -22,7 +22,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingHttpsResponse model module.
  * @module model/LoggingHttpsResponse
- * @version 7.1.0
+ * @version 7.2.0
  */
 class LoggingHttpsResponse {
     /**

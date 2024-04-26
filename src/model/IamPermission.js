@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IamPermission model module.
  * @module model/IamPermission
- * @version 7.1.0
+ * @version 7.2.0
  */
 class IamPermission {
     /**

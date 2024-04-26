@@ -19,7 +19,7 @@ import ListInvoicesResponse from '../model/ListInvoicesResponse';
 /**
 * BillingInvoices service.
 * @module api/BillingInvoicesApi
-* @version 7.1.0
+* @version 7.2.0
 */
 export default class BillingInvoicesApi {
 

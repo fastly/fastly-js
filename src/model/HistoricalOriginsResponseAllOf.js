@@ -16,7 +16,7 @@ import OriginInspectorEntry from './OriginInspectorEntry';
 /**
  * The HistoricalOriginsResponseAllOf model module.
  * @module model/HistoricalOriginsResponseAllOf
- * @version 7.1.0
+ * @version 7.2.0
  */
 class HistoricalOriginsResponseAllOf {
     /**

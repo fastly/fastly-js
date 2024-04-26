@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingHerokuAdditional model module.
  * @module model/LoggingHerokuAdditional
- * @version 7.1.0
+ * @version 7.2.0
  */
 class LoggingHerokuAdditional {
     /**

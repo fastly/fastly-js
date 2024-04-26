@@ -17,7 +17,7 @@ import EnabledProductResponse from '../model/EnabledProductResponse';
 /**
 * EnabledProducts service.
 * @module api/EnabledProductsApi
-* @version 7.1.0
+* @version 7.2.0
 */
 export default class EnabledProductsApi {
 

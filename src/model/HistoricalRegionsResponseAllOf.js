@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The HistoricalRegionsResponseAllOf model module.
  * @module model/HistoricalRegionsResponseAllOf
- * @version 7.1.0
+ * @version 7.2.0
  */
 class HistoricalRegionsResponseAllOf {
     /**

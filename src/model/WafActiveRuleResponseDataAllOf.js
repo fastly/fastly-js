@@ -17,7 +17,7 @@ import WafActiveRuleResponseDataRelationships from './WafActiveRuleResponseDataR
 /**
  * The WafActiveRuleResponseDataAllOf model module.
  * @module model/WafActiveRuleResponseDataAllOf
- * @version 7.1.0
+ * @version 7.2.0
  */
 class WafActiveRuleResponseDataAllOf {
     /**

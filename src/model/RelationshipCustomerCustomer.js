@@ -16,7 +16,7 @@ import RelationshipMemberCustomer from './RelationshipMemberCustomer';
 /**
  * The RelationshipCustomerCustomer model module.
  * @module model/RelationshipCustomerCustomer
- * @version 7.1.0
+ * @version 7.2.0
  */
 class RelationshipCustomerCustomer {
     /**
@@ -48,7 +48,7 @@ class RelationshipCustomerCustomer {
             obj = obj || new RelationshipCustomerCustomer();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [RelationshipMemberCustomer]);
+                obj['data'] = RelationshipMemberCustomer.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class RelationshipCustomerCustomer {
 }
 
 /**
- * @member {Array.<module:model/RelationshipMemberCustomer>} data
+ * @member {module:model/RelationshipMemberCustomer} data
  */
 RelationshipCustomerCustomer.prototype['data'] = undefined;
 
