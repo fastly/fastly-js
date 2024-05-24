@@ -5,8 +5,11 @@ const apiInstance = new Fastly.EventsApi();
 ```
 ## Methods
 
-Method | Fastly API endpoint | Description
-------------- | ------------- | -------------
+> [!NOTE]
+> All URIs are relative to `https://api.fastly.com`
+
+Method | HTTP request | Description
+------ | ------------ | -----------
 [**getEvent**](EventsApi.md#getEvent) | **GET** /events/{event_id} | Get an event
 [**listEvents**](EventsApi.md#listEvents) | **GET** /events | List events
 

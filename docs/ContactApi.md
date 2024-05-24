@@ -5,8 +5,11 @@ const apiInstance = new Fastly.ContactApi();
 ```
 ## Methods
 
-Method | Fastly API endpoint | Description
-------------- | ------------- | -------------
+> [!NOTE]
+> All URIs are relative to `https://api.fastly.com`
+
+Method | HTTP request | Description
+------ | ------------ | -----------
 [**createContacts**](ContactApi.md#createContacts) | **POST** /customer/{customer_id}/contacts | Add a new customer contact
 [**deleteContact**](ContactApi.md#deleteContact) | **DELETE** /customer/{customer_id}/contact/{contact_id} | Delete a contact
 [**listContacts**](ContactApi.md#listContacts) | **GET** /customer/{customer_id}/contacts | List contacts

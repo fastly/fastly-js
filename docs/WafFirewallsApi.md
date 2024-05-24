@@ -5,8 +5,11 @@ const apiInstance = new Fastly.WafFirewallsApi();
 ```
 ## Methods
 
-Method | Fastly API endpoint | Description
-------------- | ------------- | -------------
+> [!NOTE]
+> All URIs are relative to `https://api.fastly.com`
+
+Method | HTTP request | Description
+------ | ------------ | -----------
 [**createWafFirewall**](WafFirewallsApi.md#createWafFirewall) | **POST** /waf/firewalls | Create a firewall
 [**deleteWafFirewall**](WafFirewallsApi.md#deleteWafFirewall) | **DELETE** /waf/firewalls/{firewall_id} | Delete a firewall
 [**getWafFirewall**](WafFirewallsApi.md#getWafFirewall) | **GET** /waf/firewalls/{firewall_id} | Get a firewall

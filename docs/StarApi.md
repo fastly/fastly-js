@@ -5,8 +5,11 @@ const apiInstance = new Fastly.StarApi();
 ```
 ## Methods
 
-Method | Fastly API endpoint | Description
-------------- | ------------- | -------------
+> [!NOTE]
+> All URIs are relative to `https://api.fastly.com`
+
+Method | HTTP request | Description
+------ | ------------ | -----------
 [**createServiceStar**](StarApi.md#createServiceStar) | **POST** /stars | Create a star
 [**deleteServiceStar**](StarApi.md#deleteServiceStar) | **DELETE** /stars/{star_id} | Delete a star
 [**getServiceStar**](StarApi.md#getServiceStar) | **GET** /stars/{star_id} | Get a star

@@ -1,6 +1,6 @@
 /**
  * Fastly API
- * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
+ * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: oss@fastly.com
@@ -19,7 +19,7 @@ import TlsSubscriptionsResponse from '../model/TlsSubscriptionsResponse';
 /**
 * TlsSubscriptions service.
 * @module api/TlsSubscriptionsApi
-* @version 7.2.0
+* @version 7.3.0
 */
 export default class TlsSubscriptionsApi {
 
@@ -296,7 +296,7 @@ export default class TlsSubscriptionsApi {
      * Show a TLS subscription.
      * @param {Object} options
      * @param {String} options.tls_subscription_id - Alphanumeric string identifying a TLS subscription.
-     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, and `tls_authorizations.self_managed_http_challenge`. 
+     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, `tls_authorizations.self_managed_http_challenge`, and `tls_certificates`. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsSubscriptionResponse} and HTTP response
      */
     getTlsSubWithHttpInfo(options = {}) {
@@ -343,7 +343,7 @@ export default class TlsSubscriptionsApi {
      * Show a TLS subscription.
      * @param {Object} options
      * @param {String} options.tls_subscription_id - Alphanumeric string identifying a TLS subscription.
-     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, and `tls_authorizations.self_managed_http_challenge`. 
+     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, `tls_authorizations.self_managed_http_challenge`, and `tls_certificates`. 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsSubscriptionResponse}
      */
     getTlsSub(options = {}) {
@@ -359,7 +359,8 @@ export default class TlsSubscriptionsApi {
      * @param {String} [options.filter_state] - Limit the returned subscriptions by state. Valid values are `pending`, `processing`, `issued`, `renewing`, and `failed`. Accepts parameters: `not` (e.g., `filter[state][not]=renewing`). 
      * @param {String} [options.filter_tls_domains_id] - Limit the returned subscriptions to those that include the specific domain.
      * @param {Boolean} [options.filter_has_active_order] - Limit the returned subscriptions to those that have currently active orders. Permitted values: `true`. 
-     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, and `tls_authorizations.self_managed_http_challenge`. 
+     * @param {String} [options.filter_certificate_authority] - Limit the returned subscriptions to a specific certification authority. Values may include `certainly`, `lets-encrypt`, or `globalsign`. 
+     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, `tls_authorizations.self_managed_http_challenge`, and `tls_certificates`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
@@ -376,6 +377,7 @@ export default class TlsSubscriptionsApi {
         'filter[state]': options['filter_state'],
         'filter[tls_domains.id]': options['filter_tls_domains_id'],
         'filter[has_active_order]': options['filter_has_active_order'],
+        'filter[certificate_authority]': options['filter_certificate_authority'],
         'include': options['include'],
         'page[number]': options['page_number'],
         'page[size]': options['page_size'],
@@ -412,7 +414,8 @@ export default class TlsSubscriptionsApi {
      * @param {String} [options.filter_state] - Limit the returned subscriptions by state. Valid values are `pending`, `processing`, `issued`, `renewing`, and `failed`. Accepts parameters: `not` (e.g., `filter[state][not]=renewing`). 
      * @param {String} [options.filter_tls_domains_id] - Limit the returned subscriptions to those that include the specific domain.
      * @param {Boolean} [options.filter_has_active_order] - Limit the returned subscriptions to those that have currently active orders. Permitted values: `true`. 
-     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, and `tls_authorizations.self_managed_http_challenge`. 
+     * @param {String} [options.filter_certificate_authority] - Limit the returned subscriptions to a specific certification authority. Values may include `certainly`, `lets-encrypt`, or `globalsign`. 
+     * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, `tls_authorizations.self_managed_http_challenge`, and `tls_certificates`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.

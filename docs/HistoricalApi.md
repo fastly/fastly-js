@@ -5,8 +5,11 @@ const apiInstance = new Fastly.HistoricalApi();
 ```
 ## Methods
 
-Method | Fastly API endpoint | Description
-------------- | ------------- | -------------
+> [!NOTE]
+> All URIs are relative to `https://api.fastly.com`
+
+Method | HTTP request | Description
+------ | ------------ | -----------
 [**getHistStats**](HistoricalApi.md#getHistStats) | **GET** /stats | Get historical stats
 [**getHistStatsAggregated**](HistoricalApi.md#getHistStatsAggregated) | **GET** /stats/aggregate | Get aggregated historical stats
 [**getHistStatsField**](HistoricalApi.md#getHistStatsField) | **GET** /stats/field/{field} | Get historical stats for a single field

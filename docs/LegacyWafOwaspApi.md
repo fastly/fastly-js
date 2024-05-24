@@ -5,8 +5,11 @@ const apiInstance = new Fastly.LegacyWafOwaspApi();
 ```
 ## Methods
 
-Method | Fastly API endpoint | Description
-------------- | ------------- | -------------
+> [!NOTE]
+> All URIs are relative to `https://api.fastly.com`
+
+Method | HTTP request | Description
+------ | ------------ | -----------
 [**createOwaspSettings**](LegacyWafOwaspApi.md#createOwaspSettings) | **POST** /service/{service_id}/wafs/{firewall_id}/owasp | Create an OWASP settings object
 [**getOwaspSettings**](LegacyWafOwaspApi.md#getOwaspSettings) | **GET** /service/{service_id}/wafs/{firewall_id}/owasp | Get the OWASP settings object
 [**updateOwaspSettings**](LegacyWafOwaspApi.md#updateOwaspSettings) | **PATCH** /service/{service_id}/wafs/{firewall_id}/owasp | Update the OWASP settings object

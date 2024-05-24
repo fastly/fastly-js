@@ -5,8 +5,11 @@ const apiInstance = new Fastly.PopApi();
 ```
 ## Methods
 
-Method | Fastly API endpoint | Description
-------------- | ------------- | -------------
+> [!NOTE]
+> All URIs are relative to `https://api.fastly.com`
+
+Method | HTTP request | Description
+------ | ------------ | -----------
 [**listPops**](PopApi.md#listPops) | **GET** /datacenters | List Fastly POPs
 
 

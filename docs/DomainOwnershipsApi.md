@@ -5,8 +5,11 @@ const apiInstance = new Fastly.DomainOwnershipsApi();
 ```
 ## Methods
 
-Method | Fastly API endpoint | Description
-------------- | ------------- | -------------
+> [!NOTE]
+> All URIs are relative to `https://api.fastly.com`
+
+Method | HTTP request | Description
+------ | ------------ | -----------
 [**listDomainOwnerships**](DomainOwnershipsApi.md#listDomainOwnerships) | **GET** /domain-ownerships | List domain-ownerships
 
 

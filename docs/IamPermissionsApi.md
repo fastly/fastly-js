@@ -5,8 +5,11 @@ const apiInstance = new Fastly.IamPermissionsApi();
 ```
 ## Methods
 
-Method | Fastly API endpoint | Description
-------------- | ------------- | -------------
+> [!NOTE]
+> All URIs are relative to `https://api.fastly.com`
+
+Method | HTTP request | Description
+------ | ------------ | -----------
 [**listPermissions**](IamPermissionsApi.md#listPermissions) | **GET** /permissions | List permissions
 
 

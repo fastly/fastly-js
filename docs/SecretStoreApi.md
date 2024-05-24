@@ -5,8 +5,11 @@ const apiInstance = new Fastly.SecretStoreApi();
 ```
 ## Methods
 
-Method | Fastly API endpoint | Description
-------------- | ------------- | -------------
+> [!NOTE]
+> All URIs are relative to `https://api.fastly.com`
+
+Method | HTTP request | Description
+------ | ------------ | -----------
 [**clientKey**](SecretStoreApi.md#clientKey) | **POST** /resources/stores/secret/client-key | Create new client key
 [**createSecretStore**](SecretStoreApi.md#createSecretStore) | **POST** /resources/stores/secret | Create new secret store
 [**deleteSecretStore**](SecretStoreApi.md#deleteSecretStore) | **DELETE** /resources/stores/secret/{store_id} | Delete secret store

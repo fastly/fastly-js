@@ -5,8 +5,11 @@ const apiInstance = new Fastly.DomainInspectorRealtimeApi();
 ```
 ## Methods
 
-Method | Fastly API endpoint | Description
-------------- | ------------- | -------------
+> [!NOTE]
+> All URIs are relative to `https://api.fastly.com`
+
+Method | HTTP request | Description
+------ | ------------ | -----------
 [**getDomainInspectorLast120Seconds**](DomainInspectorRealtimeApi.md#getDomainInspectorLast120Seconds) | **GET** /v1/domains/{service_id}/ts/h | Get real-time domain data for the last 120 seconds
 [**getDomainInspectorLastMaxEntries**](DomainInspectorRealtimeApi.md#getDomainInspectorLastMaxEntries) | **GET** /v1/domains/{service_id}/ts/h/limit/{max_entries} | Get a limited number of real-time domain data entries
 [**getDomainInspectorLastSecond**](DomainInspectorRealtimeApi.md#getDomainInspectorLastSecond) | **GET** /v1/domains/{service_id}/ts/{start_timestamp} | Get real-time domain data from a specified time

@@ -5,8 +5,11 @@ const apiInstance = new Fastly.LegacyWafRuleStatusApi();
 ```
 ## Methods
 
-Method | Fastly API endpoint | Description
-------------- | ------------- | -------------
+> [!NOTE]
+> All URIs are relative to `https://api.fastly.com`
+
+Method | HTTP request | Description
+------ | ------------ | -----------
 [**getWafFirewallRuleStatus**](LegacyWafRuleStatusApi.md#getWafFirewallRuleStatus) | **GET** /service/{service_id}/wafs/{firewall_id}/rules/{waf_rule_id}/rule_status | Get the status of a rule on a firewall
 [**listWafFirewallRuleStatuses**](LegacyWafRuleStatusApi.md#listWafFirewallRuleStatuses) | **GET** /service/{service_id}/wafs/{firewall_id}/rule_statuses | List rule statuses
 [**updateWafFirewallRuleStatus**](LegacyWafRuleStatusApi.md#updateWafFirewallRuleStatus) | **PATCH** /service/{service_id}/wafs/{firewall_id}/rules/{waf_rule_id}/rule_status | Update the status of a rule

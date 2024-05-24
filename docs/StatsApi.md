@@ -5,8 +5,11 @@ const apiInstance = new Fastly.StatsApi();
 ```
 ## Methods
 
-Method | Fastly API endpoint | Description
-------------- | ------------- | -------------
+> [!NOTE]
+> All URIs are relative to `https://api.fastly.com`
+
+Method | HTTP request | Description
+------ | ------------ | -----------
 [**getServiceStats**](StatsApi.md#getServiceStats) | **GET** /service/{service_id}/stats/summary | Get stats for a service
 
 

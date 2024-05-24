@@ -5,8 +5,11 @@ const apiInstance = new Fastly.WafRulesApi();
 ```
 ## Methods
 
-Method | Fastly API endpoint | Description
-------------- | ------------- | -------------
+> [!NOTE]
+> All URIs are relative to `https://api.fastly.com`
+
+Method | HTTP request | Description
+------ | ------------ | -----------
 [**getWafRule**](WafRulesApi.md#getWafRule) | **GET** /waf/rules/{waf_rule_id} | Get a rule
 [**listWafRules**](WafRulesApi.md#listWafRules) | **GET** /waf/rules | List available WAF rules
 

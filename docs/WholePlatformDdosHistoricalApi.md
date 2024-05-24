@@ -5,8 +5,11 @@ const apiInstance = new Fastly.WholePlatformDdosHistoricalApi();
 ```
 ## Methods
 
-Method | Fastly API endpoint | Description
-------------- | ------------- | -------------
+> [!NOTE]
+> All URIs are relative to `https://api.fastly.com`
+
+Method | HTTP request | Description
+------ | ------------ | -----------
 [**getPlatformDdosHistorical**](WholePlatformDdosHistoricalApi.md#getPlatformDdosHistorical) | **GET** /metrics/platform/ddos | Get historical DDoS metrics for the entire Fastly platform
 
 

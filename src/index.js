@@ -1,6 +1,6 @@
 /**
  * Fastly API
- * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://developer.fastly.com/reference/api/) 
+ * Via the Fastly API you can perform any of the operations that are possible within the management console,  including creating services, domains, and backends, configuring rules or uploading your own application code, as well as account operations such as user administration and billing reports. The API is organized into collections of endpoints that allow manipulation of objects related to Fastly services and accounts. For the most accurate and up-to-date API reference content, visit our [Developer Hub](https://www.fastly.com/documentation/reference/api/) 
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: oss@fastly.com
@@ -80,6 +80,9 @@ import CreateResponseObjectRequest from './model/CreateResponseObjectRequest';
 import Customer from './model/Customer';
 import CustomerResponse from './model/CustomerResponse';
 import CustomerResponseAllOf from './model/CustomerResponseAllOf';
+import DefaultSettings from './model/DefaultSettings';
+import DefaultSettingsError from './model/DefaultSettingsError';
+import DefaultSettingsResponse from './model/DefaultSettingsResponse';
 import Dictionary from './model/Dictionary';
 import DictionaryInfoResponse from './model/DictionaryInfoResponse';
 import DictionaryItem from './model/DictionaryItem';
@@ -732,6 +735,7 @@ import IamPermissionsApi from './api/IamPermissionsApi';
 import IamRolesApi from './api/IamRolesApi';
 import IamServiceGroupsApi from './api/IamServiceGroupsApi';
 import IamUserGroupsApi from './api/IamUserGroupsApi';
+import ImageOptimizerDefaultSettingsApi from './api/ImageOptimizerDefaultSettingsApi';
 import InvitationsApi from './api/InvitationsApi';
 import KvStoreApi from './api/KvStoreApi';
 import KvStoreItemApi from './api/KvStoreItemApi';
@@ -850,7 +854,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 7.2.0
+* @version 7.3.0
 */
 export {
     /**
@@ -1266,6 +1270,24 @@ export {
      * @property {module:model/CustomerResponseAllOf}
      */
     CustomerResponseAllOf,
+
+    /**
+     * The DefaultSettings model constructor.
+     * @property {module:model/DefaultSettings}
+     */
+    DefaultSettings,
+
+    /**
+     * The DefaultSettingsError model constructor.
+     * @property {module:model/DefaultSettingsError}
+     */
+    DefaultSettingsError,
+
+    /**
+     * The DefaultSettingsResponse model constructor.
+     * @property {module:model/DefaultSettingsResponse}
+     */
+    DefaultSettingsResponse,
 
     /**
      * The Dictionary model constructor.
@@ -5178,6 +5200,12 @@ export {
     * @property {module:api/IamUserGroupsApi}
     */
     IamUserGroupsApi,
+
+    /**
+    * The ImageOptimizerDefaultSettingsApi service constructor.
+    * @property {module:api/ImageOptimizerDefaultSettingsApi}
+    */
+    ImageOptimizerDefaultSettingsApi,
 
     /**
     * The InvitationsApi service constructor.

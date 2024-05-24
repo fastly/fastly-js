@@ -5,8 +5,11 @@ const apiInstance = new Fastly.LegacyWafTagApi();
 ```
 ## Methods
 
-Method | Fastly API endpoint | Description
-------------- | ------------- | -------------
+> [!NOTE]
+> All URIs are relative to `https://api.fastly.com`
+
+Method | HTTP request | Description
+------ | ------------ | -----------
 [**listLegacyWafTags**](LegacyWafTagApi.md#listLegacyWafTags) | **GET** /wafs/tags | List WAF tags
 
 

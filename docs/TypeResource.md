@@ -3,11 +3,11 @@
 ## Enum
 
 
-* `object-store` (value: `"object-store"`)
+* `kv-store` (value: `"kv-store"`)
 
 * `secret-store` (value: `"secret-store"`)
 
-* `config-store` (value: `"config-store"`)
+* `config` (value: `"config"`)
 
 
 

@@ -5,8 +5,11 @@ const apiInstance = new Fastly.MutualAuthenticationApi();
 ```
 ## Methods
 
-Method | Fastly API endpoint | Description
-------------- | ------------- | -------------
+> [!NOTE]
+> All URIs are relative to `https://api.fastly.com`
+
+Method | HTTP request | Description
+------ | ------------ | -----------
 [**createMutualTlsAuthentication**](MutualAuthenticationApi.md#createMutualTlsAuthentication) | **POST** /tls/mutual_authentications | Create a Mutual Authentication
 [**deleteMutualTls**](MutualAuthenticationApi.md#deleteMutualTls) | **DELETE** /tls/mutual_authentications/{mutual_authentication_id} | Delete a Mutual TLS
 [**getMutualAuthentication**](MutualAuthenticationApi.md#getMutualAuthentication) | **GET** /tls/mutual_authentications/{mutual_authentication_id} | Get a Mutual Authentication

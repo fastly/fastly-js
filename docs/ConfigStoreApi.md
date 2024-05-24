@@ -5,8 +5,11 @@ const apiInstance = new Fastly.ConfigStoreApi();
 ```
 ## Methods
 
-Method | Fastly API endpoint | Description
-------------- | ------------- | -------------
+> [!NOTE]
+> All URIs are relative to `https://api.fastly.com`
+
+Method | HTTP request | Description
+------ | ------------ | -----------
 [**createConfigStore**](ConfigStoreApi.md#createConfigStore) | **POST** /resources/stores/config | Create a config store
 [**deleteConfigStore**](ConfigStoreApi.md#deleteConfigStore) | **DELETE** /resources/stores/config/{config_store_id} | Delete a config store
 [**getConfigStore**](ConfigStoreApi.md#getConfigStore) | **GET** /resources/stores/config/{config_store_id} | Describe a config store

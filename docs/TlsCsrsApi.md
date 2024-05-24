@@ -5,8 +5,11 @@ const apiInstance = new Fastly.TlsCsrsApi();
 ```
 ## Methods
 
-Method | Fastly API endpoint | Description
-------------- | ------------- | -------------
+> [!NOTE]
+> All URIs are relative to `https://api.fastly.com`
+
+Method | HTTP request | Description
+------ | ------------ | -----------
 [**createCsr**](TlsCsrsApi.md#createCsr) | **POST** /tls/certificate_signing_requests | Create CSR
 
 

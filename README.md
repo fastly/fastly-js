@@ -1,8 +1,9 @@
 # Fastly
 
-An asynchronous JavaScript client library for interacting with most facets of the [Fastly API](https://developer.fastly.com/reference/api).
+An asynchronous JavaScript client library for interacting with most facets of the [Fastly API](https://www.fastly.com/documentation/reference/api/).
 
-> **NOTE:** This API client is auto-generated from Fastly's OpenAPI specification and may not function correctly when used on the Compute platform. Support for Compute is on the roadmap but has not yet been prioritised.
+> [!WARNING]
+> This API client is auto-generated from Fastly's OpenAPI specification and may not function correctly when used on the Compute platform. Support for Compute is on the roadmap but has not yet been prioritized.
 
 
 ## Usage
@@ -36,18 +37,25 @@ apiInstance.createAcl(options)
 
 ## Authorization
 
-The Fastly API requires an [API token](https://developer.fastly.com/reference/api/#authentication) for most operations. If the `FASTLY_API_TOKEN` environment variable is set, the client will automatically use it to authenticate all API requests. Alternatively, you may authenticate the client _instance_ with a Fastly API token, which will override the environment variable.
+> [!NOTE]
+> The Fastly API requires an [API token](https://www.fastly.com/documentation/reference/api/#authentication) for most operations.
+
+If the `FASTLY_API_TOKEN` environment variable is set, the client will automatically use it to authenticate all API requests. Alternatively, you may authenticate the client _instance_ with a Fastly API token, which will override the environment variable.
 
 ```javascript
 Fastly.ApiClient.instance.authenticate("YOUR_API_TOKEN");
 ```
 
-## Documentation for API Endpoints
+## API Endpoints
 
-The main documentation for the Fastly API can be found on our [Developer Hub](https://developer.fastly.com/reference/api).
+The main documentation for the Fastly API can be found on our [Developer Hub](https://www.fastly.com/documentation/reference/api/).
+
+<details>
+
+<summary>Table of API endpoints</summary>
 
 Class | Method | Description
---- | --- | ---
+----- | ------ | -----------
 *Fastly.AclApi* | [**createAcl**](docs/AclApi.md#createAcl) | Create a new ACL
 *Fastly.AclApi* | [**deleteAcl**](docs/AclApi.md#deleteAcl) | Delete an ACL
 *Fastly.AclApi* | [**getAcl**](docs/AclApi.md#getAcl) | Describe an ACL
@@ -213,6 +221,8 @@ Class | Method | Description
 *Fastly.IamUserGroupsApi* | [**removeUserGroupRoles**](docs/IamUserGroupsApi.md#removeUserGroupRoles) | Remove roles from a user group
 *Fastly.IamUserGroupsApi* | [**removeUserGroupServiceGroups**](docs/IamUserGroupsApi.md#removeUserGroupServiceGroups) | Remove service groups from a user group
 *Fastly.IamUserGroupsApi* | [**updateAUserGroup**](docs/IamUserGroupsApi.md#updateAUserGroup) | Update a user group
+*Fastly.ImageOptimizerDefaultSettingsApi* | [**getDefaultSettings**](docs/ImageOptimizerDefaultSettingsApi.md#getDefaultSettings) | Get current Image Optimizer Default Settings
+*Fastly.ImageOptimizerDefaultSettingsApi* | [**updateDefaultSettings**](docs/ImageOptimizerDefaultSettingsApi.md#updateDefaultSettings) | Update Image Optimizer Default Settings
 *Fastly.InvitationsApi* | [**createInvitation**](docs/InvitationsApi.md#createInvitation) | Create an invitation
 *Fastly.InvitationsApi* | [**deleteInvitation**](docs/InvitationsApi.md#deleteInvitation) | Delete an invitation
 *Fastly.InvitationsApi* | [**listInvitations**](docs/InvitationsApi.md#listInvitations) | List invitations
@@ -580,6 +590,8 @@ Class | Method | Description
 *Fastly.WafTagsApi* | [**listWafTags**](docs/WafTagsApi.md#listWafTags) | List tags
 *Fastly.WholePlatformDdosHistoricalApi* | [**getPlatformDdosHistorical**](docs/WholePlatformDdosHistoricalApi.md#getPlatformDdosHistorical) | Get historical DDoS metrics for the entire Fastly platform
 
+
+</details>
 
 ## Issues
 
