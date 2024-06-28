@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingS3Additional model module.
  * @module model/LoggingS3Additional
- * @version 7.3.0
+ * @version 7.4.0
  */
 class LoggingS3Additional {
     /**
@@ -78,6 +78,9 @@ class LoggingS3Additional {
             }
             if (data.hasOwnProperty('server_side_encryption')) {
                 obj['server_side_encryption'] = ApiClient.convertToType(data['server_side_encryption'], 'String');
+            }
+            if (data.hasOwnProperty('file_max_bytes')) {
+                obj['file_max_bytes'] = ApiClient.convertToType(data['file_max_bytes'], 'Number');
             }
         }
         return obj;
@@ -156,6 +159,12 @@ LoggingS3Additional.prototype['server_side_encryption_kms_key_id'] = 'null';
  * @default 'null'
  */
 LoggingS3Additional.prototype['server_side_encryption'] = 'null';
+
+/**
+ * The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
+ * @member {Number} file_max_bytes
+ */
+LoggingS3Additional.prototype['file_max_bytes'] = undefined;
 
 
 

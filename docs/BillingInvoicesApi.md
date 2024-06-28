@@ -61,8 +61,8 @@ Returns the list of invoices, sorted by billing start date (newest to oldest).
 
 ```javascript
 const options = {
-  billing_start_date: 2023-01-01T00:00:00Z,
-  billing_end_date: 2023-01-31T00:00:00Z,
+  billing_start_date: 2023-01-01,
+  billing_end_date: 2023-01-31,
   limit: "'100'",
   cursor: "cursor_example",
 };

@@ -20,7 +20,7 @@ Method | HTTP request | Description
 ## `createLogAwsS3`
 
 ```javascript
-createLogAwsS3({ service_id, version_id, [name, ][placement, ][response_condition, ][format, ][format_version, ][message_type, ][timestamp_format, ][compression_codec, ][period, ][gzip_level, ][access_key, ][acl, ][bucket_name, ][domain, ][iam_role, ][path, ][public_key, ][redundancy, ][secret_key, ][server_side_encryption_kms_key_id, ][server_side_encryption] })
+createLogAwsS3({ service_id, version_id, [name, ][placement, ][response_condition, ][format, ][format_version, ][message_type, ][timestamp_format, ][compression_codec, ][period, ][gzip_level, ][access_key, ][acl, ][bucket_name, ][domain, ][iam_role, ][path, ][public_key, ][redundancy, ][secret_key, ][server_side_encryption_kms_key_id, ][server_side_encryption, ][file_max_bytes] })
 ```
 
 Create a S3 for a particular service and version.
@@ -52,6 +52,7 @@ const options = {
   secret_key: "secret_key_example",
   server_side_encryption_kms_key_id: "'null'",
   server_side_encryption: "'null'",
+  file_max_bytes: 56,
 };
 
 apiInstance.createLogAwsS3(options)
@@ -90,6 +91,7 @@ Name | Type | Description  | Notes
 **secret_key** | **String** | The secret key for your S3 account. Not required if `iam_role` is provided. | [optional]
 **server_side_encryption_kms_key_id** | **String** | Optional server-side KMS Key Id. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`. | [optional] [defaults to 'null']
 **server_side_encryption** | **String** | Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption. | [optional] [defaults to 'null']
+**file_max_bytes** | **Number** | The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.) | [optional]
 
 ### Return type
 
@@ -214,7 +216,7 @@ Name | Type | Description  | Notes
 ## `updateLogAwsS3`
 
 ```javascript
-updateLogAwsS3({ service_id, version_id, logging_s3_name, [name, ][placement, ][response_condition, ][format, ][format_version, ][message_type, ][timestamp_format, ][compression_codec, ][period, ][gzip_level, ][access_key, ][acl, ][bucket_name, ][domain, ][iam_role, ][path, ][public_key, ][redundancy, ][secret_key, ][server_side_encryption_kms_key_id, ][server_side_encryption] })
+updateLogAwsS3({ service_id, version_id, logging_s3_name, [name, ][placement, ][response_condition, ][format, ][format_version, ][message_type, ][timestamp_format, ][compression_codec, ][period, ][gzip_level, ][access_key, ][acl, ][bucket_name, ][domain, ][iam_role, ][path, ][public_key, ][redundancy, ][secret_key, ][server_side_encryption_kms_key_id, ][server_side_encryption, ][file_max_bytes] })
 ```
 
 Update the S3 for a particular service and version.
@@ -247,6 +249,7 @@ const options = {
   secret_key: "secret_key_example",
   server_side_encryption_kms_key_id: "'null'",
   server_side_encryption: "'null'",
+  file_max_bytes: 56,
 };
 
 apiInstance.updateLogAwsS3(options)
@@ -286,6 +289,7 @@ Name | Type | Description  | Notes
 **secret_key** | **String** | The secret key for your S3 account. Not required if `iam_role` is provided. | [optional]
 **server_side_encryption_kms_key_id** | **String** | Optional server-side KMS Key Id. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`. | [optional] [defaults to 'null']
 **server_side_encryption** | **String** | Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption. | [optional] [defaults to 'null']
+**file_max_bytes** | **Number** | The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.) | [optional]
 
 ### Return type
 

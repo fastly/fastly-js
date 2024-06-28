@@ -18,7 +18,7 @@ import LoggingS3Response from '../model/LoggingS3Response';
 /**
 * LoggingS3 service.
 * @module api/LoggingS3Api
-* @version 7.3.0
+* @version 7.4.0
 */
 export default class LoggingS3Api {
 
@@ -64,6 +64,7 @@ export default class LoggingS3Api {
      * @param {String} [options.secret_key] - The secret key for your S3 account. Not required if `iam_role` is provided.
      * @param {String} [options.server_side_encryption_kms_key_id='null'] - Optional server-side KMS Key Id. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`.
      * @param {String} [options.server_side_encryption='null'] - Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption.
+     * @param {Number} [options.file_max_bytes] - The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingS3Response} and HTTP response
      */
     createLogAwsS3WithHttpInfo(options = {}) {
@@ -108,7 +109,8 @@ export default class LoggingS3Api {
         'redundancy': options['redundancy'],
         'secret_key': options['secret_key'],
         'server_side_encryption_kms_key_id': options['server_side_encryption_kms_key_id'],
-        'server_side_encryption': options['server_side_encryption']
+        'server_side_encryption': options['server_side_encryption'],
+        'file_max_bytes': options['file_max_bytes']
       };
 
       let authNames = ['token'];
@@ -157,6 +159,7 @@ export default class LoggingS3Api {
      * @param {String} [options.secret_key] - The secret key for your S3 account. Not required if `iam_role` is provided.
      * @param {String} [options.server_side_encryption_kms_key_id='null'] - Optional server-side KMS Key Id. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`.
      * @param {String} [options.server_side_encryption='null'] - Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption.
+     * @param {Number} [options.file_max_bytes] - The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingS3Response}
      */
     createLogAwsS3(options = {}) {
@@ -402,6 +405,7 @@ export default class LoggingS3Api {
      * @param {String} [options.secret_key] - The secret key for your S3 account. Not required if `iam_role` is provided.
      * @param {String} [options.server_side_encryption_kms_key_id='null'] - Optional server-side KMS Key Id. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`.
      * @param {String} [options.server_side_encryption='null'] - Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption.
+     * @param {Number} [options.file_max_bytes] - The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingS3Response} and HTTP response
      */
     updateLogAwsS3WithHttpInfo(options = {}) {
@@ -451,7 +455,8 @@ export default class LoggingS3Api {
         'redundancy': options['redundancy'],
         'secret_key': options['secret_key'],
         'server_side_encryption_kms_key_id': options['server_side_encryption_kms_key_id'],
-        'server_side_encryption': options['server_side_encryption']
+        'server_side_encryption': options['server_side_encryption'],
+        'file_max_bytes': options['file_max_bytes']
       };
 
       let authNames = ['token'];
@@ -501,6 +506,7 @@ export default class LoggingS3Api {
      * @param {String} [options.secret_key] - The secret key for your S3 account. Not required if `iam_role` is provided.
      * @param {String} [options.server_side_encryption_kms_key_id='null'] - Optional server-side KMS Key Id. Must be set if `server_side_encryption` is set to `aws:kms` or `AES256`.
      * @param {String} [options.server_side_encryption='null'] - Set this to `AES256` or `aws:kms` to enable S3 Server Side Encryption.
+     * @param {Number} [options.file_max_bytes] - The maximum number of bytes for each uploaded file. A value of 0 can be used to indicate there is no limit on the size of uploaded files, otherwise the minimum value is 1048576 bytes (1 MiB.)
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingS3Response}
      */
     updateLogAwsS3(options = {}) {

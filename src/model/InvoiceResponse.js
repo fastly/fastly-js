@@ -17,7 +17,7 @@ import Invoicelineitems from './Invoicelineitems';
 /**
  * The InvoiceResponse model module.
  * @module model/InvoiceResponse
- * @version 7.3.0
+ * @version 7.4.0
  */
 class InvoiceResponse {
     /**

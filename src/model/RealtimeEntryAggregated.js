@@ -16,7 +16,7 @@ import RealtimeMeasurements from './RealtimeMeasurements';
 /**
  * The RealtimeEntryAggregated model module.
  * @module model/RealtimeEntryAggregated
- * @version 7.3.0
+ * @version 7.4.0
  */
 class RealtimeEntryAggregated {
     /**

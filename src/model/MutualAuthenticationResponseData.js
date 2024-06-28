@@ -20,7 +20,7 @@ import TypeMutualAuthentication from './TypeMutualAuthentication';
 /**
  * The MutualAuthenticationResponseData model module.
  * @module model/MutualAuthenticationResponseData
- * @version 7.3.0
+ * @version 7.4.0
  */
 class MutualAuthenticationResponseData {
     /**

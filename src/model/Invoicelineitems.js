@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Invoicelineitems model module.
  * @module model/Invoicelineitems
- * @version 7.3.0
+ * @version 7.4.0
  */
 class Invoicelineitems {
     /**
@@ -66,6 +66,9 @@ class Invoicelineitems {
             }
             if (data.hasOwnProperty('ProductGroup')) {
                 obj['ProductGroup'] = ApiClient.convertToType(data['ProductGroup'], 'String');
+            }
+            if (data.hasOwnProperty('ProductLine')) {
+                obj['ProductLine'] = ApiClient.convertToType(data['ProductLine'], 'String');
             }
             if (data.hasOwnProperty('Region')) {
                 obj['Region'] = ApiClient.convertToType(data['Region'], 'String');
@@ -121,6 +124,12 @@ Invoicelineitems.prototype['ProductName'] = undefined;
  * @member {String} ProductGroup
  */
 Invoicelineitems.prototype['ProductGroup'] = undefined;
+
+/**
+ * The broader classification of the product (e.g., `Network Services` or `Security`).
+ * @member {String} ProductLine
+ */
+Invoicelineitems.prototype['ProductLine'] = undefined;
 
 /**
  * The geographical area applicable for regionally based products.

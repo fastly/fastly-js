@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PoolResponseCommon model module.
  * @module model/PoolResponseCommon
- * @version 7.3.0
+ * @version 7.4.0
  */
 class PoolResponseCommon {
     /**

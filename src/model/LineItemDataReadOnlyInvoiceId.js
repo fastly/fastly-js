@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LineItemDataReadOnlyInvoiceId model module.
  * @module model/LineItemDataReadOnlyInvoiceId
- * @version 7.3.0
+ * @version 7.4.0
  */
 class LineItemDataReadOnlyInvoiceId {
     /**

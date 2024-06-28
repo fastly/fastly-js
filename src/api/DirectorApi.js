@@ -19,7 +19,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Director service.
 * @module api/DirectorApi
-* @version 7.3.0
+* @version 7.4.0
 */
 export default class DirectorApi {
 
