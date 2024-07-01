@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BatchErrors model module.
  * @module model/BatchErrors
- * @version 7.4.0
+ * @version 7.5.0
  */
 class BatchErrors {
     /**

@@ -17,7 +17,7 @@ import Content from '../model/Content';
 /**
 * Content service.
 * @module api/ContentApi
-* @version 7.4.0
+* @version 7.5.0
 */
 export default class ContentApi {
 
@@ -38,7 +38,7 @@ export default class ContentApi {
 
 
     /**
-     * Retrieve headers and MD5 hash of the content for a particular URL from each Fastly edge server. This API is limited to 200 requests per hour.
+     * Retrieve headers and MD5 hash of the content for a particular URL from each Fastly edge server. This API is limited to 200 requests per hour. If the content takes too long to download, the hash will be set to `error-timeout-$pop`. If the response is too large, it will be set to `warning-too-large-$pop`.
      * @param {Object} options
      * @param {String} [options.url] - Full URL (host and path) to check on all nodes. if protocol is omitted, http will be assumed.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/Content>} and HTTP response
@@ -79,7 +79,7 @@ export default class ContentApi {
     }
 
     /**
-     * Retrieve headers and MD5 hash of the content for a particular URL from each Fastly edge server. This API is limited to 200 requests per hour.
+     * Retrieve headers and MD5 hash of the content for a particular URL from each Fastly edge server. This API is limited to 200 requests per hour. If the content takes too long to download, the hash will be set to `error-timeout-$pop`. If the response is too large, it will be set to `warning-too-large-$pop`.
      * @param {Object} options
      * @param {String} [options.url] - Full URL (host and path) to check on all nodes. if protocol is omitted, http will be assumed.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/Content>}

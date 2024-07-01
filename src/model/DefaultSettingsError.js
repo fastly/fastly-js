@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DefaultSettingsError model module.
  * @module model/DefaultSettingsError
- * @version 7.4.0
+ * @version 7.5.0
  */
 class DefaultSettingsError {
     /**

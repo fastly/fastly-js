@@ -16,14 +16,14 @@ import LoggingCommonResponse from './LoggingCommonResponse';
 import LoggingMessageType from './LoggingMessageType';
 import LoggingSyslogAdditional from './LoggingSyslogAdditional';
 import LoggingTlsCommon from './LoggingTlsCommon';
-import LoggingUseTls from './LoggingUseTls';
+import LoggingUseTlsString from './LoggingUseTlsString';
 import ServiceIdAndVersionString from './ServiceIdAndVersionString';
 import Timestamps from './Timestamps';
 
 /**
  * The LoggingSyslogResponse model module.
  * @module model/LoggingSyslogResponse
- * @version 7.4.0
+ * @version 7.5.0
  */
 class LoggingSyslogResponse {
     /**
@@ -112,7 +112,7 @@ class LoggingSyslogResponse {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('use_tls')) {
-                obj['use_tls'] = LoggingUseTls.constructFromObject(data['use_tls']);
+                obj['use_tls'] = LoggingUseTlsString.constructFromObject(data['use_tls']);
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
@@ -234,7 +234,7 @@ LoggingSyslogResponse.prototype['ipv4'] = undefined;
 LoggingSyslogResponse.prototype['token'] = 'null';
 
 /**
- * @member {module:model/LoggingUseTls} use_tls
+ * @member {module:model/LoggingUseTlsString} use_tls
  */
 LoggingSyslogResponse.prototype['use_tls'] = undefined;
 
@@ -354,7 +354,7 @@ LoggingSyslogAdditional.prototype['ipv4'] = undefined;
  */
 LoggingSyslogAdditional.prototype['token'] = 'null';
 /**
- * @member {module:model/LoggingUseTls} use_tls
+ * @member {module:model/LoggingUseTlsString} use_tls
  */
 LoggingSyslogAdditional.prototype['use_tls'] = undefined;
 // Implement Timestamps interface:

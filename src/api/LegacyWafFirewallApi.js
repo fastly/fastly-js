@@ -16,7 +16,7 @@ import ApiClient from "../ApiClient";
 /**
 * LegacyWafFirewall service.
 * @module api/LegacyWafFirewallApi
-* @version 7.4.0
+* @version 7.5.0
 */
 export default class LegacyWafFirewallApi {
 

@@ -15,14 +15,14 @@ import LoggingCommonResponse from './LoggingCommonResponse';
 import LoggingRequestCapsCommon from './LoggingRequestCapsCommon';
 import LoggingSplunkAdditional from './LoggingSplunkAdditional';
 import LoggingTlsCommon from './LoggingTlsCommon';
-import LoggingUseTls from './LoggingUseTls';
+import LoggingUseTlsString from './LoggingUseTlsString';
 import ServiceIdAndVersionString from './ServiceIdAndVersionString';
 import Timestamps from './Timestamps';
 
 /**
  * The LoggingSplunkResponse model module.
  * @module model/LoggingSplunkResponse
- * @version 7.4.0
+ * @version 7.5.0
  */
 class LoggingSplunkResponse {
     /**
@@ -105,7 +105,7 @@ class LoggingSplunkResponse {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('use_tls')) {
-                obj['use_tls'] = LoggingUseTls.constructFromObject(data['use_tls']);
+                obj['use_tls'] = LoggingUseTlsString.constructFromObject(data['use_tls']);
             }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
@@ -216,7 +216,7 @@ LoggingSplunkResponse.prototype['url'] = undefined;
 LoggingSplunkResponse.prototype['token'] = undefined;
 
 /**
- * @member {module:model/LoggingUseTls} use_tls
+ * @member {module:model/LoggingUseTlsString} use_tls
  */
 LoggingSplunkResponse.prototype['use_tls'] = undefined;
 
@@ -327,7 +327,7 @@ LoggingSplunkAdditional.prototype['url'] = undefined;
  */
 LoggingSplunkAdditional.prototype['token'] = undefined;
 /**
- * @member {module:model/LoggingUseTls} use_tls
+ * @member {module:model/LoggingUseTlsString} use_tls
  */
 LoggingSplunkAdditional.prototype['use_tls'] = undefined;
 // Implement Timestamps interface:

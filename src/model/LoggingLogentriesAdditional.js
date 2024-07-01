@@ -11,12 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import LoggingUseTls from './LoggingUseTls';
+import LoggingUseTlsString from './LoggingUseTlsString';
 
 /**
  * The LoggingLogentriesAdditional model module.
  * @module model/LoggingLogentriesAdditional
- * @version 7.4.0
+ * @version 7.5.0
  */
 class LoggingLogentriesAdditional {
     /**
@@ -54,7 +54,7 @@ class LoggingLogentriesAdditional {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('use_tls')) {
-                obj['use_tls'] = LoggingUseTls.constructFromObject(data['use_tls']);
+                obj['use_tls'] = LoggingUseTlsString.constructFromObject(data['use_tls']);
             }
             if (data.hasOwnProperty('region')) {
                 obj['region'] = ApiClient.convertToType(data['region'], 'String');
@@ -80,7 +80,7 @@ LoggingLogentriesAdditional.prototype['port'] = 20000;
 LoggingLogentriesAdditional.prototype['token'] = undefined;
 
 /**
- * @member {module:model/LoggingUseTls} use_tls
+ * @member {module:model/LoggingUseTlsString} use_tls
  */
 LoggingLogentriesAdditional.prototype['use_tls'] = undefined;
 

@@ -1,11 +1,11 @@
-# Fastly.LoggingUseTls
+# Fastly.LoggingUseTlsString
 
 ## Enum
 
 
-* `no_tls` (value: `0`)
+* `no_tls` (value: `"0"`)
 
-* `use_tls` (value: `1`)
+* `use_tls` (value: `"1"`)
 
 
 

@@ -12,31 +12,31 @@
 
 import ApiClient from '../ApiClient';
 /**
-* Enum class LoggingUseTls.
+* Enum class LoggingUseTlsString.
 * @enum {}
 * @readonly
 */
-export default class LoggingUseTls {
+export default class LoggingUseTlsString {
     
         /**
-         * value: 0
+         * value: "0"
          * @const
          */
-        "no_tls" = 0;
+        "no_tls" = "0";
 
     
         /**
-         * value: 1
+         * value: "1"
          * @const
          */
-        "use_tls" = 1;
+        "use_tls" = "1";
 
     
 
     /**
-    * Returns a <code>LoggingUseTls</code> enum value from a Javascript object name.
+    * Returns a <code>LoggingUseTlsString</code> enum value from a Javascript object name.
     * @param {Object} data The plain JavaScript object containing the name of the enum value.
-    * @return {module:model/LoggingUseTls} The enum <code>LoggingUseTls</code> value.
+    * @return {module:model/LoggingUseTlsString} The enum <code>LoggingUseTlsString</code> value.
     */
     static constructFromObject(object) {
         return object;

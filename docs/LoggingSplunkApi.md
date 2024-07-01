@@ -44,7 +44,7 @@ const options = {
   request_max_bytes: 0,
   url: "url_example",
   token: "token_example",
-  use_tls: new Fastly.LoggingUseTls(),
+  use_tls: new Fastly.LoggingUseTlsString(),
 };
 
 apiInstance.createLogSplunk(options)
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 **request_max_bytes** | **Number** | The maximum number of bytes sent in one request. Defaults `0` for unbounded. | [optional] [defaults to 0]
 **url** | **String** | The URL to post logs to. | [optional]
 **token** | **String** | A Splunk token for use in posting logs over HTTP to your collector. | [optional]
-**use_tls** | [**LoggingUseTls**](LoggingUseTls.md) |  | [optional]
+**use_tls** | [**LoggingUseTlsString**](LoggingUseTlsString.md) |  | [optional]
 
 ### Return type
 
@@ -225,7 +225,7 @@ const options = {
   request_max_bytes: 0,
   url: "url_example",
   token: "token_example",
-  use_tls: new Fastly.LoggingUseTls(),
+  use_tls: new Fastly.LoggingUseTlsString(),
 };
 
 apiInstance.updateLogSplunk(options)
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 **request_max_bytes** | **Number** | The maximum number of bytes sent in one request. Defaults `0` for unbounded. | [optional] [defaults to 0]
 **url** | **String** | The URL to post logs to. | [optional]
 **token** | **String** | A Splunk token for use in posting logs over HTTP to your collector. | [optional]
-**use_tls** | [**LoggingUseTls**](LoggingUseTls.md) |  | [optional]
+**use_tls** | [**LoggingUseTlsString**](LoggingUseTlsString.md) |  | [optional]
 
 ### Return type
 

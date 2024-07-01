@@ -14,12 +14,12 @@
 import ApiClient from "../ApiClient";
 import InlineResponse200 from '../model/InlineResponse200';
 import LoggingSplunkResponse from '../model/LoggingSplunkResponse';
-import LoggingUseTls from '../model/LoggingUseTls';
+import LoggingUseTlsString from '../model/LoggingUseTlsString';
 
 /**
 * LoggingSplunk service.
 * @module api/LoggingSplunkApi
-* @version 7.4.0
+* @version 7.5.0
 */
 export default class LoggingSplunkApi {
 
@@ -57,7 +57,7 @@ export default class LoggingSplunkApi {
      * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` for unbounded.
      * @param {String} [options.url] - The URL to post logs to.
      * @param {String} [options.token] - A Splunk token for use in posting logs over HTTP to your collector.
-     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @param {module:model/LoggingUseTlsString} [options.use_tls]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingSplunkResponse} and HTTP response
      */
     createLogSplunkWithHttpInfo(options = {}) {
@@ -136,7 +136,7 @@ export default class LoggingSplunkApi {
      * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` for unbounded.
      * @param {String} [options.url] - The URL to post logs to.
      * @param {String} [options.token] - A Splunk token for use in posting logs over HTTP to your collector.
-     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @param {module:model/LoggingUseTlsString} [options.use_tls]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingSplunkResponse}
      */
     createLogSplunk(options = {}) {
@@ -374,7 +374,7 @@ export default class LoggingSplunkApi {
      * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` for unbounded.
      * @param {String} [options.url] - The URL to post logs to.
      * @param {String} [options.token] - A Splunk token for use in posting logs over HTTP to your collector.
-     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @param {module:model/LoggingUseTlsString} [options.use_tls]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingSplunkResponse} and HTTP response
      */
     updateLogSplunkWithHttpInfo(options = {}) {
@@ -459,7 +459,7 @@ export default class LoggingSplunkApi {
      * @param {Number} [options.request_max_bytes=0] - The maximum number of bytes sent in one request. Defaults `0` for unbounded.
      * @param {String} [options.url] - The URL to post logs to.
      * @param {String} [options.token] - A Splunk token for use in posting logs over HTTP to your collector.
-     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @param {module:model/LoggingUseTlsString} [options.use_tls]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingSplunkResponse}
      */
     updateLogSplunk(options = {}) {

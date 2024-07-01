@@ -15,14 +15,14 @@ import LoggingCommon from './LoggingCommon';
 import LoggingFormatVersionInteger from './LoggingFormatVersionInteger';
 import LoggingKafkaAdditional from './LoggingKafkaAdditional';
 import LoggingTlsCommon from './LoggingTlsCommon';
-import LoggingUseTls from './LoggingUseTls';
+import LoggingUseTlsString from './LoggingUseTlsString';
 import ServiceIdAndVersionString from './ServiceIdAndVersionString';
 import Timestamps from './Timestamps';
 
 /**
  * The LoggingKafkaResponsePost model module.
  * @module model/LoggingKafkaResponsePost
- * @version 7.4.0
+ * @version 7.5.0
  */
 class LoggingKafkaResponsePost {
     /**
@@ -135,7 +135,7 @@ class LoggingKafkaResponsePost {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('use_tls')) {
-                obj['use_tls'] = LoggingUseTls.constructFromObject(data['use_tls']);
+                obj['use_tls'] = LoggingUseTlsString.constructFromObject(data['use_tls']);
             }
         }
         return obj;
@@ -289,7 +289,7 @@ LoggingKafkaResponsePost.prototype['user'] = undefined;
 LoggingKafkaResponsePost.prototype['password'] = undefined;
 
 /**
- * @member {module:model/LoggingUseTls} use_tls
+ * @member {module:model/LoggingUseTlsString} use_tls
  */
 LoggingKafkaResponsePost.prototype['use_tls'] = undefined;
 
@@ -422,7 +422,7 @@ LoggingKafkaAdditional.prototype['user'] = undefined;
  */
 LoggingKafkaAdditional.prototype['password'] = undefined;
 /**
- * @member {module:model/LoggingUseTls} use_tls
+ * @member {module:model/LoggingUseTlsString} use_tls
  */
 LoggingKafkaAdditional.prototype['use_tls'] = undefined;
 

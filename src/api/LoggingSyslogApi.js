@@ -15,12 +15,12 @@ import ApiClient from "../ApiClient";
 import InlineResponse200 from '../model/InlineResponse200';
 import LoggingMessageType from '../model/LoggingMessageType';
 import LoggingSyslogResponse from '../model/LoggingSyslogResponse';
-import LoggingUseTls from '../model/LoggingUseTls';
+import LoggingUseTlsString from '../model/LoggingUseTlsString';
 
 /**
 * LoggingSyslog service.
 * @module api/LoggingSyslogApi
-* @version 7.4.0
+* @version 7.5.0
 */
 export default class LoggingSyslogApi {
 
@@ -60,7 +60,7 @@ export default class LoggingSyslogApi {
      * @param {String} [options.hostname] - The hostname used for the syslog endpoint.
      * @param {String} [options.ipv4] - The IPv4 address used for the syslog endpoint.
      * @param {String} [options.token='null'] - Whether to prepend each message with a specific token.
-     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @param {module:model/LoggingUseTlsString} [options.use_tls]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingSyslogResponse} and HTTP response
      */
     createLogSyslogWithHttpInfo(options = {}) {
@@ -143,7 +143,7 @@ export default class LoggingSyslogApi {
      * @param {String} [options.hostname] - The hostname used for the syslog endpoint.
      * @param {String} [options.ipv4] - The IPv4 address used for the syslog endpoint.
      * @param {String} [options.token='null'] - Whether to prepend each message with a specific token.
-     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @param {module:model/LoggingUseTlsString} [options.use_tls]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingSyslogResponse}
      */
     createLogSyslog(options = {}) {
@@ -383,7 +383,7 @@ export default class LoggingSyslogApi {
      * @param {String} [options.hostname] - The hostname used for the syslog endpoint.
      * @param {String} [options.ipv4] - The IPv4 address used for the syslog endpoint.
      * @param {String} [options.token='null'] - Whether to prepend each message with a specific token.
-     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @param {module:model/LoggingUseTlsString} [options.use_tls]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingSyslogResponse} and HTTP response
      */
     updateLogSyslogWithHttpInfo(options = {}) {
@@ -472,7 +472,7 @@ export default class LoggingSyslogApi {
      * @param {String} [options.hostname] - The hostname used for the syslog endpoint.
      * @param {String} [options.ipv4] - The IPv4 address used for the syslog endpoint.
      * @param {String} [options.token='null'] - Whether to prepend each message with a specific token.
-     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @param {module:model/LoggingUseTlsString} [options.use_tls]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingSyslogResponse}
      */
     updateLogSyslog(options = {}) {

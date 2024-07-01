@@ -272,7 +272,7 @@ import LoggingSumologicResponse from './model/LoggingSumologicResponse';
 import LoggingSyslogAdditional from './model/LoggingSyslogAdditional';
 import LoggingSyslogResponse from './model/LoggingSyslogResponse';
 import LoggingTlsCommon from './model/LoggingTlsCommon';
-import LoggingUseTls from './model/LoggingUseTls';
+import LoggingUseTlsString from './model/LoggingUseTlsString';
 import Metadata from './model/Metadata';
 import MutualAuthentication from './model/MutualAuthentication';
 import MutualAuthenticationData from './model/MutualAuthenticationData';
@@ -854,7 +854,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 7.4.0
+* @version 7.5.0
 */
 export {
     /**
@@ -2424,10 +2424,10 @@ export {
     LoggingTlsCommon,
 
     /**
-     * The LoggingUseTls model constructor.
-     * @property {module:model/LoggingUseTls}
+     * The LoggingUseTlsString model constructor.
+     * @property {module:model/LoggingUseTlsString}
      */
-    LoggingUseTls,
+    LoggingUseTlsString,
 
     /**
      * The Metadata model constructor.

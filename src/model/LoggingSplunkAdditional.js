@@ -11,12 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import LoggingUseTls from './LoggingUseTls';
+import LoggingUseTlsString from './LoggingUseTlsString';
 
 /**
  * The LoggingSplunkAdditional model module.
  * @module model/LoggingSplunkAdditional
- * @version 7.4.0
+ * @version 7.5.0
  */
 class LoggingSplunkAdditional {
     /**
@@ -54,7 +54,7 @@ class LoggingSplunkAdditional {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('use_tls')) {
-                obj['use_tls'] = LoggingUseTls.constructFromObject(data['use_tls']);
+                obj['use_tls'] = LoggingUseTlsString.constructFromObject(data['use_tls']);
             }
         }
         return obj;
@@ -76,7 +76,7 @@ LoggingSplunkAdditional.prototype['url'] = undefined;
 LoggingSplunkAdditional.prototype['token'] = undefined;
 
 /**
- * @member {module:model/LoggingUseTls} use_tls
+ * @member {module:model/LoggingUseTlsString} use_tls
  */
 LoggingSplunkAdditional.prototype['use_tls'] = undefined;
 

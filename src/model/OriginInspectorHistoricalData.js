@@ -17,7 +17,7 @@ import OriginInspectorValues from './OriginInspectorValues';
 /**
  * The OriginInspectorHistoricalData model module.
  * @module model/OriginInspectorHistoricalData
- * @version 7.4.0
+ * @version 7.5.0
  */
 class OriginInspectorHistoricalData {
     /**

@@ -15,12 +15,12 @@ import ApiClient from "../ApiClient";
 import InlineResponse200 from '../model/InlineResponse200';
 import LoggingKafkaResponse from '../model/LoggingKafkaResponse';
 import LoggingKafkaResponsePost from '../model/LoggingKafkaResponsePost';
-import LoggingUseTls from '../model/LoggingUseTls';
+import LoggingUseTlsString from '../model/LoggingUseTlsString';
 
 /**
 * LoggingKafka service.
 * @module api/LoggingKafkaApi
-* @version 7.4.0
+* @version 7.5.0
 */
 export default class LoggingKafkaApi {
 
@@ -63,7 +63,7 @@ export default class LoggingKafkaApi {
      * @param {module:model/String} [options.auth_method] - SASL authentication method.
      * @param {String} [options.user] - SASL user.
      * @param {String} [options.password] - SASL password.
-     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @param {module:model/LoggingUseTlsString} [options.use_tls]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingKafkaResponsePost} and HTTP response
      */
     createLogKafkaWithHttpInfo(options = {}) {
@@ -152,7 +152,7 @@ export default class LoggingKafkaApi {
      * @param {module:model/String} [options.auth_method] - SASL authentication method.
      * @param {String} [options.user] - SASL user.
      * @param {String} [options.password] - SASL password.
-     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @param {module:model/LoggingUseTlsString} [options.use_tls]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingKafkaResponsePost}
      */
     createLogKafka(options = {}) {

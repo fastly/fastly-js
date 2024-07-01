@@ -17,7 +17,7 @@ import SettingsResponse from '../model/SettingsResponse';
 /**
 * Settings service.
 * @module api/SettingsApi
-* @version 7.4.0
+* @version 7.5.0
 */
 export default class SettingsApi {
 

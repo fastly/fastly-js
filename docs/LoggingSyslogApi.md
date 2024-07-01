@@ -46,7 +46,7 @@ const options = {
   hostname: "hostname_example",
   ipv4: "ipv4_example",
   token: "'null'",
-  use_tls: new Fastly.LoggingUseTls(),
+  use_tls: new Fastly.LoggingUseTlsString(),
 };
 
 apiInstance.createLogSyslog(options)
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 **hostname** | **String** | The hostname used for the syslog endpoint. | [optional]
 **ipv4** | **String** | The IPv4 address used for the syslog endpoint. | [optional]
 **token** | **String** | Whether to prepend each message with a specific token. | [optional] [defaults to 'null']
-**use_tls** | [**LoggingUseTls**](LoggingUseTls.md) |  | [optional]
+**use_tls** | [**LoggingUseTlsString**](LoggingUseTlsString.md) |  | [optional]
 
 ### Return type
 
@@ -231,7 +231,7 @@ const options = {
   hostname: "hostname_example",
   ipv4: "ipv4_example",
   token: "'null'",
-  use_tls: new Fastly.LoggingUseTls(),
+  use_tls: new Fastly.LoggingUseTlsString(),
 };
 
 apiInstance.updateLogSyslog(options)
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 **hostname** | **String** | The hostname used for the syslog endpoint. | [optional]
 **ipv4** | **String** | The IPv4 address used for the syslog endpoint. | [optional]
 **token** | **String** | Whether to prepend each message with a specific token. | [optional] [defaults to 'null']
-**use_tls** | [**LoggingUseTls**](LoggingUseTls.md) |  | [optional]
+**use_tls** | [**LoggingUseTlsString**](LoggingUseTlsString.md) |  | [optional]
 
 ### Return type
 

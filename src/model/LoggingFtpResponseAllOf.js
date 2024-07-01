@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingFtpResponseAllOf model module.
  * @module model/LoggingFtpResponseAllOf
- * @version 7.4.0
+ * @version 7.5.0
  */
 class LoggingFtpResponseAllOf {
     /**

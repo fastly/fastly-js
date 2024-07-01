@@ -11,12 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import LoggingUseTls from './LoggingUseTls';
+import LoggingUseTlsString from './LoggingUseTlsString';
 
 /**
  * The LoggingKafkaAdditional model module.
  * @module model/LoggingKafkaAdditional
- * @version 7.4.0
+ * @version 7.5.0
  */
 class LoggingKafkaAdditional {
     /**
@@ -75,7 +75,7 @@ class LoggingKafkaAdditional {
                 obj['password'] = ApiClient.convertToType(data['password'], 'String');
             }
             if (data.hasOwnProperty('use_tls')) {
-                obj['use_tls'] = LoggingUseTls.constructFromObject(data['use_tls']);
+                obj['use_tls'] = LoggingUseTlsString.constructFromObject(data['use_tls']);
             }
         }
         return obj;
@@ -141,7 +141,7 @@ LoggingKafkaAdditional.prototype['user'] = undefined;
 LoggingKafkaAdditional.prototype['password'] = undefined;
 
 /**
- * @member {module:model/LoggingUseTls} use_tls
+ * @member {module:model/LoggingUseTlsString} use_tls
  */
 LoggingKafkaAdditional.prototype['use_tls'] = undefined;
 

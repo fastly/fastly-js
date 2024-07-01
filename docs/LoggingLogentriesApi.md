@@ -38,7 +38,7 @@ const options = {
   format_version: 1,
   port: 20000,
   token: "token_example",
-  use_tls: new Fastly.LoggingUseTls(),
+  use_tls: new Fastly.LoggingUseTlsString(),
   region: "US",
 };
 
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 **format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [one of: 1, 2]
 **port** | **Number** | The port number. | [optional] [defaults to 20000]
 **token** | **String** | Use token based authentication. | [optional]
-**use_tls** | [**LoggingUseTls**](LoggingUseTls.md) |  | [optional]
+**use_tls** | [**LoggingUseTlsString**](LoggingUseTlsString.md) |  | [optional]
 **region** | **String** | The region to which to stream logs. | [optional] [one of: "US", "US-2", "US-3", "EU", "CA", "AU", "AP"]
 
 ### Return type
@@ -209,7 +209,7 @@ const options = {
   format_version: 1,
   port: 20000,
   token: "token_example",
-  use_tls: new Fastly.LoggingUseTls(),
+  use_tls: new Fastly.LoggingUseTlsString(),
   region: "US",
 };
 
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 **format_version** | **Number** | The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`.  | [optional] [one of: 1, 2]
 **port** | **Number** | The port number. | [optional] [defaults to 20000]
 **token** | **String** | Use token based authentication. | [optional]
-**use_tls** | [**LoggingUseTls**](LoggingUseTls.md) |  | [optional]
+**use_tls** | [**LoggingUseTlsString**](LoggingUseTlsString.md) |  | [optional]
 **region** | **String** | The region to which to stream logs. | [optional] [one of: "US", "US-2", "US-3", "EU", "CA", "AU", "AP"]
 
 ### Return type

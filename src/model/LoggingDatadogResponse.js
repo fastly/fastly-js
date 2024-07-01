@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingDatadogResponse model module.
  * @module model/LoggingDatadogResponse
- * @version 7.4.0
+ * @version 7.5.0
  */
 class LoggingDatadogResponse {
     /**
@@ -311,10 +311,34 @@ LoggingDatadogResponse['RegionEnum'] = {
     "US": "US",
 
     /**
-     * value: "EU"
+     * value: "US3"
      * @const
      */
-    "EU": "EU"
+    "US3": "US3",
+
+    /**
+     * value: "US5"
+     * @const
+     */
+    "US5": "US5",
+
+    /**
+     * value: "EU (legacy, same as EU1)"
+     * @const
+     */
+    "EU (legacy, same as EU1)": "EU (legacy, same as EU1)",
+
+    /**
+     * value: "EU1"
+     * @const
+     */
+    "EU1": "EU1",
+
+    /**
+     * value: "AP1"
+     * @const
+     */
+    "AP1": "AP1"
 };
 
 

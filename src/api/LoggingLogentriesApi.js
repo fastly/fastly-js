@@ -14,12 +14,12 @@
 import ApiClient from "../ApiClient";
 import InlineResponse200 from '../model/InlineResponse200';
 import LoggingLogentriesResponse from '../model/LoggingLogentriesResponse';
-import LoggingUseTls from '../model/LoggingUseTls';
+import LoggingUseTlsString from '../model/LoggingUseTlsString';
 
 /**
 * LoggingLogentries service.
 * @module api/LoggingLogentriesApi
-* @version 7.4.0
+* @version 7.5.0
 */
 export default class LoggingLogentriesApi {
 
@@ -51,7 +51,7 @@ export default class LoggingLogentriesApi {
      * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {Number} [options.port=20000] - The port number.
      * @param {String} [options.token] - Use token based authentication.
-     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @param {module:model/LoggingUseTlsString} [options.use_tls]
      * @param {module:model/String} [options.region] - The region to which to stream logs.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogentriesResponse} and HTTP response
      */
@@ -120,7 +120,7 @@ export default class LoggingLogentriesApi {
      * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {Number} [options.port=20000] - The port number.
      * @param {String} [options.token] - Use token based authentication.
-     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @param {module:model/LoggingUseTlsString} [options.use_tls]
      * @param {module:model/String} [options.region] - The region to which to stream logs.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogentriesResponse}
      */
@@ -353,7 +353,7 @@ export default class LoggingLogentriesApi {
      * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {Number} [options.port=20000] - The port number.
      * @param {String} [options.token] - Use token based authentication.
-     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @param {module:model/LoggingUseTlsString} [options.use_tls]
      * @param {module:model/String} [options.region] - The region to which to stream logs.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/LoggingLogentriesResponse} and HTTP response
      */
@@ -428,7 +428,7 @@ export default class LoggingLogentriesApi {
      * @param {module:model/Number} [options.format_version=FormatVersionEnum.v2] - The version of the custom logging format used for the configured endpoint. The logging call gets placed by default in `vcl_log` if `format_version` is set to `2` and in `vcl_deliver` if `format_version` is set to `1`. 
      * @param {Number} [options.port=20000] - The port number.
      * @param {String} [options.token] - Use token based authentication.
-     * @param {module:model/LoggingUseTls} [options.use_tls]
+     * @param {module:model/LoggingUseTlsString} [options.use_tls]
      * @param {module:model/String} [options.region] - The region to which to stream logs.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/LoggingLogentriesResponse}
      */

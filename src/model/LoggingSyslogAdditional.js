@@ -12,12 +12,12 @@
 
 import ApiClient from '../ApiClient';
 import LoggingMessageType from './LoggingMessageType';
-import LoggingUseTls from './LoggingUseTls';
+import LoggingUseTlsString from './LoggingUseTlsString';
 
 /**
  * The LoggingSyslogAdditional model module.
  * @module model/LoggingSyslogAdditional
- * @version 7.4.0
+ * @version 7.5.0
  */
 class LoggingSyslogAdditional {
     /**
@@ -61,7 +61,7 @@ class LoggingSyslogAdditional {
                 obj['token'] = ApiClient.convertToType(data['token'], 'String');
             }
             if (data.hasOwnProperty('use_tls')) {
-                obj['use_tls'] = LoggingUseTls.constructFromObject(data['use_tls']);
+                obj['use_tls'] = LoggingUseTlsString.constructFromObject(data['use_tls']);
             }
         }
         return obj;
@@ -95,7 +95,7 @@ LoggingSyslogAdditional.prototype['ipv4'] = undefined;
 LoggingSyslogAdditional.prototype['token'] = 'null';
 
 /**
- * @member {module:model/LoggingUseTls} use_tls
+ * @member {module:model/LoggingUseTlsString} use_tls
  */
 LoggingSyslogAdditional.prototype['use_tls'] = undefined;
 
