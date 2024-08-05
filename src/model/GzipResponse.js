@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The GzipResponse model module.
  * @module model/GzipResponse
- * @version 7.5.0
+ * @version 7.6.0
  */
 class GzipResponse {
     /**

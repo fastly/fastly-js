@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The DictionaryResponse model module.
  * @module model/DictionaryResponse
- * @version 7.5.0
+ * @version 7.6.0
  */
 class DictionaryResponse {
     /**

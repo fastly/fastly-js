@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**createTlsCert**](TlsCertificatesApi.md#createTlsCert) | **POST** /tls/certificates | Create a TLS certificate
 [**deleteTlsCert**](TlsCertificatesApi.md#deleteTlsCert) | **DELETE** /tls/certificates/{tls_certificate_id} | Delete a TLS certificate
 [**getTlsCert**](TlsCertificatesApi.md#getTlsCert) | **GET** /tls/certificates/{tls_certificate_id} | Get a TLS certificate
+[**getTlsCertBlob**](TlsCertificatesApi.md#getTlsCertBlob) | **GET** /tls/certificates/{tls_certificate_id}/blob | Get a TLS certificate blob (Limited Availability)
 [**listTlsCerts**](TlsCertificatesApi.md#listTlsCerts) | **GET** /tls/certificates | List TLS certificates
 [**updateTlsCert**](TlsCertificatesApi.md#updateTlsCert) | **PATCH** /tls/certificates/{tls_certificate_id} | Update a TLS certificate
 
@@ -120,6 +121,41 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TlsCertificateResponse**](TlsCertificateResponse.md)
+
+
+## `getTlsCertBlob`
+
+```javascript
+getTlsCertBlob({ tls_certificate_id })
+```
+
+Retrieve a TLS certificate blob. This feature is part of a [limited availability](https://docs.fastly.com/products/fastly-product-lifecycle#limited-availability) release.
+
+### Example
+
+```javascript
+const options = {
+  tls_certificate_id: "tls_certificate_id_example", // required
+};
+
+apiInstance.getTlsCertBlob(options)
+  .then((data) => {
+    console.log(data, "API called successfully.");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**tls_certificate_id** | **String** | Alphanumeric string identifying a TLS certificate. |
+
+### Return type
+
+[**TlsCertificateBlobResponse**](TlsCertificateBlobResponse.md)
 
 
 ## `listTlsCerts`

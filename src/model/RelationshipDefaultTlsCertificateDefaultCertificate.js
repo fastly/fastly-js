@@ -11,21 +11,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import RelationshipMemberTlsDnsRecord from './RelationshipMemberTlsDnsRecord';
+import RelationshipDefaultTlsCertificateDefaultCertificateData from './RelationshipDefaultTlsCertificateDefaultCertificateData';
 
 /**
- * The RelationshipTlsDnsRecordDnsRecord model module.
- * @module model/RelationshipTlsDnsRecordDnsRecord
- * @version 7.5.0
+ * The RelationshipDefaultTlsCertificateDefaultCertificate model module.
+ * @module model/RelationshipDefaultTlsCertificateDefaultCertificate
+ * @version 7.6.0
  */
-class RelationshipTlsDnsRecordDnsRecord {
+class RelationshipDefaultTlsCertificateDefaultCertificate {
     /**
-     * Constructs a new <code>RelationshipTlsDnsRecordDnsRecord</code>.
-     * @alias module:model/RelationshipTlsDnsRecordDnsRecord
+     * Constructs a new <code>RelationshipDefaultTlsCertificateDefaultCertificate</code>.
+     * @alias module:model/RelationshipDefaultTlsCertificateDefaultCertificate
      */
     constructor() { 
         
-        RelationshipTlsDnsRecordDnsRecord.initialize(this);
+        RelationshipDefaultTlsCertificateDefaultCertificate.initialize(this);
     }
 
     /**
@@ -37,18 +37,18 @@ class RelationshipTlsDnsRecordDnsRecord {
     }
 
     /**
-     * Constructs a <code>RelationshipTlsDnsRecordDnsRecord</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>RelationshipDefaultTlsCertificateDefaultCertificate</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RelationshipTlsDnsRecordDnsRecord} obj Optional instance to populate.
-     * @return {module:model/RelationshipTlsDnsRecordDnsRecord} The populated <code>RelationshipTlsDnsRecordDnsRecord</code> instance.
+     * @param {module:model/RelationshipDefaultTlsCertificateDefaultCertificate} obj Optional instance to populate.
+     * @return {module:model/RelationshipDefaultTlsCertificateDefaultCertificate} The populated <code>RelationshipDefaultTlsCertificateDefaultCertificate</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new RelationshipTlsDnsRecordDnsRecord();
+            obj = obj || new RelationshipDefaultTlsCertificateDefaultCertificate();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [RelationshipMemberTlsDnsRecord]);
+                obj['data'] = RelationshipDefaultTlsCertificateDefaultCertificateData.constructFromObject(data['data']);
             }
         }
         return obj;
@@ -58,14 +58,14 @@ class RelationshipTlsDnsRecordDnsRecord {
 }
 
 /**
- * @member {Array.<module:model/RelationshipMemberTlsDnsRecord>} data
+ * @member {module:model/RelationshipDefaultTlsCertificateDefaultCertificateData} data
  */
-RelationshipTlsDnsRecordDnsRecord.prototype['data'] = undefined;
+RelationshipDefaultTlsCertificateDefaultCertificate.prototype['data'] = undefined;
 
 
 
 
 
 
-export default RelationshipTlsDnsRecordDnsRecord;
+export default RelationshipDefaultTlsCertificateDefaultCertificate;
 

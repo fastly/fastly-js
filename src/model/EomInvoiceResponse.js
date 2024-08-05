@@ -15,19 +15,19 @@ import Invoice from './Invoice';
 import Invoicelineitems from './Invoicelineitems';
 
 /**
- * The InvoiceResponse model module.
- * @module model/InvoiceResponse
- * @version 7.5.0
+ * The EomInvoiceResponse model module.
+ * @module model/EomInvoiceResponse
+ * @version 7.6.0
  */
-class InvoiceResponse {
+class EomInvoiceResponse {
     /**
-     * Constructs a new <code>InvoiceResponse</code>.
-     * @alias module:model/InvoiceResponse
+     * Constructs a new <code>EomInvoiceResponse</code>.
+     * @alias module:model/EomInvoiceResponse
      * @implements module:model/Invoice
      */
     constructor() { 
         Invoice.initialize(this);
-        InvoiceResponse.initialize(this);
+        EomInvoiceResponse.initialize(this);
     }
 
     /**
@@ -39,15 +39,15 @@ class InvoiceResponse {
     }
 
     /**
-     * Constructs a <code>InvoiceResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>EomInvoiceResponse</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/InvoiceResponse} obj Optional instance to populate.
-     * @return {module:model/InvoiceResponse} The populated <code>InvoiceResponse</code> instance.
+     * @param {module:model/EomInvoiceResponse} obj Optional instance to populate.
+     * @return {module:model/EomInvoiceResponse} The populated <code>EomInvoiceResponse</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new InvoiceResponse();
+            obj = obj || new EomInvoiceResponse();
             Invoice.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('customer_id')) {
@@ -88,54 +88,54 @@ class InvoiceResponse {
  * Customer ID associated with the invoice.
  * @member {String} customer_id
  */
-InvoiceResponse.prototype['customer_id'] = undefined;
+EomInvoiceResponse.prototype['customer_id'] = undefined;
 
 /**
  * Alphanumeric string identifying the invoice.
  * @member {String} invoice_id
  */
-InvoiceResponse.prototype['invoice_id'] = undefined;
+EomInvoiceResponse.prototype['invoice_id'] = undefined;
 
 /**
  * Date and time invoice was posted on, in ISO 8601 format.
  * @member {Date} invoice_posted_on
  */
-InvoiceResponse.prototype['invoice_posted_on'] = undefined;
+EomInvoiceResponse.prototype['invoice_posted_on'] = undefined;
 
 /**
  * Date and time (in ISO 8601 format) for initiation point of a billing cycle, signifying the start of charges for a service or subscription.
  * @member {Date} billing_start_date
  */
-InvoiceResponse.prototype['billing_start_date'] = undefined;
+EomInvoiceResponse.prototype['billing_start_date'] = undefined;
 
 /**
  * Date and time (in ISO 8601 format) for termination point of a billing cycle, signifying the end of charges for a service or subscription.
  * @member {Date} billing_end_date
  */
-InvoiceResponse.prototype['billing_end_date'] = undefined;
+EomInvoiceResponse.prototype['billing_end_date'] = undefined;
 
 /**
  * Alphanumeric string identifying the statement number.
  * @member {String} statement_number
  */
-InvoiceResponse.prototype['statement_number'] = undefined;
+EomInvoiceResponse.prototype['statement_number'] = undefined;
 
 /**
  * Three-letter code representing a specific currency used for financial transactions.
  * @member {String} currency_code
  */
-InvoiceResponse.prototype['currency_code'] = undefined;
+EomInvoiceResponse.prototype['currency_code'] = undefined;
 
 /**
  * Total billable amount for invoiced services charged within a single month.
  * @member {Number} monthly_transaction_amount
  */
-InvoiceResponse.prototype['monthly_transaction_amount'] = undefined;
+EomInvoiceResponse.prototype['monthly_transaction_amount'] = undefined;
 
 /**
  * @member {Array.<module:model/Invoicelineitems>} transaction_line_items
  */
-InvoiceResponse.prototype['transaction_line_items'] = undefined;
+EomInvoiceResponse.prototype['transaction_line_items'] = undefined;
 
 
 // Implement Invoice interface:
@@ -187,5 +187,5 @@ Invoice.prototype['transaction_line_items'] = undefined;
 
 
 
-export default InvoiceResponse;
+export default EomInvoiceResponse;
 

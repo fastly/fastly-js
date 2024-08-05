@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RequestSettingsAdditional model module.
  * @module model/RequestSettingsAdditional
- * @version 7.5.0
+ * @version 7.6.0
  */
 class RequestSettingsAdditional {
     /**

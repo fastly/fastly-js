@@ -11,6 +11,7 @@ const apiInstance = new Fastly.BillingInvoicesApi();
 Method | HTTP request | Description
 ------ | ------------ | -----------
 [**getInvoiceByInvoiceId**](BillingInvoicesApi.md#getInvoiceByInvoiceId) | **GET** /billing/v3/invoices/{invoice_id} | Get invoice by ID.
+[**getMonthToDateInvoice**](BillingInvoicesApi.md#getMonthToDateInvoice) | **GET** /billing/v3/invoices/month-to-date | Get month-to-date invoice.
 [**listInvoices**](BillingInvoicesApi.md#listInvoices) | **GET** /billing/v3/invoices | List of invoices.
 
 
@@ -46,7 +47,36 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InvoiceResponse**](InvoiceResponse.md)
+[**EomInvoiceResponse**](EomInvoiceResponse.md)
+
+
+## `getMonthToDateInvoice`
+
+```javascript
+getMonthToDateInvoice()
+```
+
+Returns month-to-date invoice for the current month.
+
+### Example
+
+```javascript
+apiInstance.getMonthToDateInvoice()
+  .then((data) => {
+    console.log(data, "API called successfully.");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+This endpoint does not need any parameters.
+
+### Return type
+
+[**MtdInvoiceResponse**](MtdInvoiceResponse.md)
 
 
 ## `listInvoices`
@@ -87,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListInvoicesResponse**](ListInvoicesResponse.md)
+[**ListEomInvoicesResponse**](ListEomInvoicesResponse.md)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

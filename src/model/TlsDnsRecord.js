@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TlsDnsRecord model module.
  * @module model/TlsDnsRecord
- * @version 7.5.0
+ * @version 7.6.0
  */
 class TlsDnsRecord {
     /**
@@ -46,9 +46,6 @@ class TlsDnsRecord {
         if (data) {
             obj = obj || new TlsDnsRecord();
 
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
             if (data.hasOwnProperty('region')) {
                 obj['region'] = ApiClient.convertToType(data['region'], 'String');
             }
@@ -63,25 +60,73 @@ class TlsDnsRecord {
 }
 
 /**
- * The IP address or hostname of the DNS record.
- * @member {String} id
- */
-TlsDnsRecord.prototype['id'] = undefined;
-
-/**
- * Specifies the regions that will be used to route traffic. Select DNS Records with a `global` region to route traffic to the most performant point of presence (POP) worldwide (global pricing will apply). Select DNS records with a `us-eu` region to exclusively land traffic on North American and European POPs.
- * @member {String} region
+ * Specifies the regions that will be used to route traffic. Select DNS records with a `global` region to route traffic to the most performant point of presence (POP) worldwide (global pricing will apply). Select DNS records with a `na/eu` region to exclusively land traffic on North American and European POPs.
+ * @member {module:model/TlsDnsRecord.RegionEnum} region
  */
 TlsDnsRecord.prototype['region'] = undefined;
 
 /**
  * The type of the DNS record. `A` specifies an IPv4 address to be used for an A record to be used for apex domains (e.g., `example.com`). `AAAA` specifies an IPv6 address for use in an A record for apex domains. `CNAME` specifies the hostname to be used for a CNAME record for subdomains or wildcard domains (e.g., `www.example.com` or `*.example.com`).
- * @member {String} record_type
+ * @member {module:model/TlsDnsRecord.RecordTypeEnum} record_type
  */
 TlsDnsRecord.prototype['record_type'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>region</code> property.
+ * @enum {String}
+ * @readonly
+ */
+TlsDnsRecord['RegionEnum'] = {
+
+    /**
+     * value: "custom"
+     * @const
+     */
+    "custom": "custom",
+
+    /**
+     * value: "global"
+     * @const
+     */
+    "global": "global",
+
+    /**
+     * value: "na/eu"
+     * @const
+     */
+    "na/eu": "na/eu"
+};
+
+
+/**
+ * Allowed values for the <code>record_type</code> property.
+ * @enum {String}
+ * @readonly
+ */
+TlsDnsRecord['RecordTypeEnum'] = {
+
+    /**
+     * value: "CNAME"
+     * @const
+     */
+    "CNAME": "CNAME",
+
+    /**
+     * value: "A"
+     * @const
+     */
+    "A": "A",
+
+    /**
+     * value: "AAAA"
+     * @const
+     */
+    "AAAA": "AAAA"
+};
 
 
 

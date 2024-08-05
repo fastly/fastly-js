@@ -19,7 +19,7 @@ import StarResponse from '../model/StarResponse';
 /**
 * Star service.
 * @module api/StarApi
-* @version 7.5.0
+* @version 7.6.0
 */
 export default class StarApi {
 

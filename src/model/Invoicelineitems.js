@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Invoicelineitems model module.
  * @module model/Invoicelineitems
- * @version 7.5.0
+ * @version 7.6.0
  */
 class Invoicelineitems {
     /**
@@ -61,20 +61,20 @@ class Invoicelineitems {
             if (data.hasOwnProperty('units')) {
                 obj['units'] = ApiClient.convertToType(data['units'], 'Number');
             }
-            if (data.hasOwnProperty('ProductName')) {
-                obj['ProductName'] = ApiClient.convertToType(data['ProductName'], 'String');
+            if (data.hasOwnProperty('product_name')) {
+                obj['product_name'] = ApiClient.convertToType(data['product_name'], 'String');
             }
-            if (data.hasOwnProperty('ProductGroup')) {
-                obj['ProductGroup'] = ApiClient.convertToType(data['ProductGroup'], 'String');
+            if (data.hasOwnProperty('product_group')) {
+                obj['product_group'] = ApiClient.convertToType(data['product_group'], 'String');
             }
-            if (data.hasOwnProperty('ProductLine')) {
-                obj['ProductLine'] = ApiClient.convertToType(data['ProductLine'], 'String');
+            if (data.hasOwnProperty('product_line')) {
+                obj['product_line'] = ApiClient.convertToType(data['product_line'], 'String');
             }
-            if (data.hasOwnProperty('Region')) {
-                obj['Region'] = ApiClient.convertToType(data['Region'], 'String');
+            if (data.hasOwnProperty('region')) {
+                obj['region'] = ApiClient.convertToType(data['region'], 'String');
             }
-            if (data.hasOwnProperty('UsageType')) {
-                obj['UsageType'] = ApiClient.convertToType(data['UsageType'], 'String');
+            if (data.hasOwnProperty('usage_type')) {
+                obj['usage_type'] = ApiClient.convertToType(data['usage_type'], 'String');
             }
         }
         return obj;
@@ -115,33 +115,33 @@ Invoicelineitems.prototype['units'] = undefined;
 
 /**
  * The name of the product.
- * @member {String} ProductName
+ * @member {String} product_name
  */
-Invoicelineitems.prototype['ProductName'] = undefined;
+Invoicelineitems.prototype['product_name'] = undefined;
 
 /**
  * The broader classification of the product (e.g., `Compute` or `Full-Site Delivery`).
- * @member {String} ProductGroup
+ * @member {String} product_group
  */
-Invoicelineitems.prototype['ProductGroup'] = undefined;
+Invoicelineitems.prototype['product_group'] = undefined;
 
 /**
  * The broader classification of the product (e.g., `Network Services` or `Security`).
- * @member {String} ProductLine
+ * @member {String} product_line
  */
-Invoicelineitems.prototype['ProductLine'] = undefined;
+Invoicelineitems.prototype['product_line'] = undefined;
 
 /**
  * The geographical area applicable for regionally based products.
- * @member {String} Region
+ * @member {String} region
  */
-Invoicelineitems.prototype['Region'] = undefined;
+Invoicelineitems.prototype['region'] = undefined;
 
 /**
  * The unit of measure (e.g., `requests` or `bandwidth`).
- * @member {String} UsageType
+ * @member {String} usage_type
  */
-Invoicelineitems.prototype['UsageType'] = undefined;
+Invoicelineitems.prototype['usage_type'] = undefined;
 
 
 

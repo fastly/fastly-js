@@ -19,7 +19,7 @@ import OriginInspectorHistoricalMeta from './OriginInspectorHistoricalMeta';
 /**
  * The HistoricalOriginsResponse model module.
  * @module model/HistoricalOriginsResponse
- * @version 7.5.0
+ * @version 7.6.0
  */
 class HistoricalOriginsResponse {
     /**

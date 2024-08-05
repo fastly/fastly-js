@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Results model module.
  * @module model/Results
- * @version 7.5.0
+ * @version 7.6.0
  */
 class Results {
     /**
@@ -790,6 +790,9 @@ class Results {
             }
             if (data.hasOwnProperty('all_status_5xx')) {
                 obj['all_status_5xx'] = ApiClient.convertToType(data['all_status_5xx'], 'Number');
+            }
+            if (data.hasOwnProperty('origin_offload')) {
+                obj['origin_offload'] = ApiClient.convertToType(data['origin_offload'], 'Number');
             }
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
@@ -2291,6 +2294,12 @@ Results.prototype['all_status_4xx'] = undefined;
  * @member {Number} all_status_5xx
  */
 Results.prototype['all_status_5xx'] = undefined;
+
+/**
+ * Origin Offload measures the ratio of bytes served to end users that were cached by Fastly, over the bytes served to end users, between 0 and 1. ((`edge_resp_body_bytes` + `edge_resp_header_bytes`) - (`origin_fetch_resp_body_bytes` + `origin_fetch_resp_header_bytes`)) / (`edge_resp_body_bytes` + `edge_resp_header_bytes`).
+ * @member {Number} origin_offload
+ */
+Results.prototype['origin_offload'] = undefined;
 
 /**
  * @member {String} service_id

@@ -11,21 +11,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import RelationshipTlsDnsRecordDnsRecord from './RelationshipTlsDnsRecordDnsRecord';
+import RelationshipTlsDnsRecordsRequestDnsRecordsData from './RelationshipTlsDnsRecordsRequestDnsRecordsData';
 
 /**
- * The RelationshipTlsDnsRecord model module.
- * @module model/RelationshipTlsDnsRecord
- * @version 7.5.0
+ * The RelationshipTlsDnsRecordsRequestDnsRecords model module.
+ * @module model/RelationshipTlsDnsRecordsRequestDnsRecords
+ * @version 7.6.0
  */
-class RelationshipTlsDnsRecord {
+class RelationshipTlsDnsRecordsRequestDnsRecords {
     /**
-     * Constructs a new <code>RelationshipTlsDnsRecord</code>.
-     * @alias module:model/RelationshipTlsDnsRecord
+     * Constructs a new <code>RelationshipTlsDnsRecordsRequestDnsRecords</code>.
+     * @alias module:model/RelationshipTlsDnsRecordsRequestDnsRecords
      */
     constructor() { 
         
-        RelationshipTlsDnsRecord.initialize(this);
+        RelationshipTlsDnsRecordsRequestDnsRecords.initialize(this);
     }
 
     /**
@@ -37,18 +37,18 @@ class RelationshipTlsDnsRecord {
     }
 
     /**
-     * Constructs a <code>RelationshipTlsDnsRecord</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>RelationshipTlsDnsRecordsRequestDnsRecords</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RelationshipTlsDnsRecord} obj Optional instance to populate.
-     * @return {module:model/RelationshipTlsDnsRecord} The populated <code>RelationshipTlsDnsRecord</code> instance.
+     * @param {module:model/RelationshipTlsDnsRecordsRequestDnsRecords} obj Optional instance to populate.
+     * @return {module:model/RelationshipTlsDnsRecordsRequestDnsRecords} The populated <code>RelationshipTlsDnsRecordsRequestDnsRecords</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new RelationshipTlsDnsRecord();
+            obj = obj || new RelationshipTlsDnsRecordsRequestDnsRecords();
 
-            if (data.hasOwnProperty('dns_record')) {
-                obj['dns_record'] = RelationshipTlsDnsRecordDnsRecord.constructFromObject(data['dns_record']);
+            if (data.hasOwnProperty('data')) {
+                obj['data'] = ApiClient.convertToType(data['data'], [RelationshipTlsDnsRecordsRequestDnsRecordsData]);
             }
         }
         return obj;
@@ -58,14 +58,14 @@ class RelationshipTlsDnsRecord {
 }
 
 /**
- * @member {module:model/RelationshipTlsDnsRecordDnsRecord} dns_record
+ * @member {Array.<module:model/RelationshipTlsDnsRecordsRequestDnsRecordsData>} data
  */
-RelationshipTlsDnsRecord.prototype['dns_record'] = undefined;
+RelationshipTlsDnsRecordsRequestDnsRecords.prototype['data'] = undefined;
 
 
 
 
 
 
-export default RelationshipTlsDnsRecord;
+export default RelationshipTlsDnsRecordsRequestDnsRecords;
 

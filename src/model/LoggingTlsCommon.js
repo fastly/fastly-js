@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingTlsCommon model module.
  * @module model/LoggingTlsCommon
- * @version 7.5.0
+ * @version 7.6.0
  */
 class LoggingTlsCommon {
     /**

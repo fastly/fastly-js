@@ -16,7 +16,7 @@ import PublishItemFormats from './PublishItemFormats';
 /**
  * The PublishItem model module.
  * @module model/PublishItem
- * @version 7.5.0
+ * @version 7.6.0
  */
 class PublishItem {
     /**

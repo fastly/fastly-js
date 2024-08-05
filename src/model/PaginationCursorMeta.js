@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PaginationCursorMeta model module.
  * @module model/PaginationCursorMeta
- * @version 7.5.0
+ * @version 7.6.0
  */
 class PaginationCursorMeta {
     /**

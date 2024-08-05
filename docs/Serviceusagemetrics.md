@@ -1,11 +1,10 @@
-# Fastly.RelationshipMemberTlsDnsRecord
+# Fastly.Serviceusagemetrics
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**type** | [**TypeTlsDnsRecord**](TypeTlsDnsRecord.md) |  | [optional] 
-**id** | **String** |  | [optional] [readonly] 
+**data** | [**ServiceusagemetricsData**](ServiceusagemetricsData.md) |  | [optional] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

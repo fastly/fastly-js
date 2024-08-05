@@ -11,24 +11,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import Invoice from './Invoice';
-import Listinvoices from './Listinvoices';
-import Metadata from './Metadata';
+import Dashboard from './Dashboard';
 
 /**
- * The ListInvoicesResponse model module.
- * @module model/ListInvoicesResponse
- * @version 7.5.0
+ * The ListDashboardsResponse model module.
+ * @module model/ListDashboardsResponse
+ * @version 7.6.0
  */
-class ListInvoicesResponse {
+class ListDashboardsResponse {
     /**
-     * Constructs a new <code>ListInvoicesResponse</code>.
-     * @alias module:model/ListInvoicesResponse
-     * @implements module:model/Listinvoices
+     * Constructs a new <code>ListDashboardsResponse</code>.
+     * @alias module:model/ListDashboardsResponse
      */
     constructor() { 
-        Listinvoices.initialize(this);
-        ListInvoicesResponse.initialize(this);
+        
+        ListDashboardsResponse.initialize(this);
     }
 
     /**
@@ -40,22 +37,21 @@ class ListInvoicesResponse {
     }
 
     /**
-     * Constructs a <code>ListInvoicesResponse</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>ListDashboardsResponse</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ListInvoicesResponse} obj Optional instance to populate.
-     * @return {module:model/ListInvoicesResponse} The populated <code>ListInvoicesResponse</code> instance.
+     * @param {module:model/ListDashboardsResponse} obj Optional instance to populate.
+     * @return {module:model/ListDashboardsResponse} The populated <code>ListDashboardsResponse</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new ListInvoicesResponse();
-            Listinvoices.constructFromObject(data, obj);
+            obj = obj || new ListDashboardsResponse();
 
             if (data.hasOwnProperty('data')) {
-                obj['data'] = ApiClient.convertToType(data['data'], [Invoice]);
+                obj['data'] = ApiClient.convertToType(data['data'], [Dashboard]);
             }
             if (data.hasOwnProperty('meta')) {
-                obj['meta'] = Metadata.constructFromObject(data['meta']);
+                obj['meta'] = ApiClient.convertToType(data['meta'], Object);
             }
         }
         return obj;
@@ -65,28 +61,20 @@ class ListInvoicesResponse {
 }
 
 /**
- * @member {Array.<module:model/Invoice>} data
+ * @member {Array.<module:model/Dashboard>} data
  */
-ListInvoicesResponse.prototype['data'] = undefined;
+ListDashboardsResponse.prototype['data'] = undefined;
 
 /**
- * @member {module:model/Metadata} meta
+ * Meta for the pagination.
+ * @member {Object} meta
  */
-ListInvoicesResponse.prototype['meta'] = undefined;
-
-
-// Implement Listinvoices interface:
-/**
- * @member {Array.<module:model/Invoice>} data
- */
-Listinvoices.prototype['data'] = undefined;
-/**
- * @member {module:model/Metadata} meta
- */
-Listinvoices.prototype['meta'] = undefined;
+ListDashboardsResponse.prototype['meta'] = undefined;
 
 
 
 
-export default ListInvoicesResponse;
+
+
+export default ListDashboardsResponse;
 

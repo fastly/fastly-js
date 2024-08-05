@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingBigqueryAdditional model module.
  * @module model/LoggingBigqueryAdditional
- * @version 7.5.0
+ * @version 7.6.0
  */
 class LoggingBigqueryAdditional {
     /**

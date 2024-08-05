@@ -16,7 +16,7 @@ import UpdateBillingAddressRequestData from './UpdateBillingAddressRequestData';
 /**
  * The UpdateBillingAddressRequest model module.
  * @module model/UpdateBillingAddressRequest
- * @version 7.5.0
+ * @version 7.6.0
  */
 class UpdateBillingAddressRequest {
     /**

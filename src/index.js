@@ -20,6 +20,7 @@ import AclResponse from './model/AclResponse';
 import AclResponseAllOf from './model/AclResponseAllOf';
 import ApexRedirect from './model/ApexRedirect';
 import ApexRedirectAllOf from './model/ApexRedirectAllOf';
+import AsyncResponse from './model/AsyncResponse';
 import AutomationToken from './model/AutomationToken';
 import AutomationTokenCreateRequest from './model/AutomationTokenCreateRequest';
 import AutomationTokenCreateRequestAttributes from './model/AutomationTokenCreateRequestAttributes';
@@ -76,10 +77,19 @@ import Contact from './model/Contact';
 import ContactResponse from './model/ContactResponse';
 import ContactResponseAllOf from './model/ContactResponseAllOf';
 import Content from './model/Content';
+import CreateDashboardRequest from './model/CreateDashboardRequest';
 import CreateResponseObjectRequest from './model/CreateResponseObjectRequest';
 import Customer from './model/Customer';
 import CustomerResponse from './model/CustomerResponse';
 import CustomerResponseAllOf from './model/CustomerResponseAllOf';
+import Dashboard from './model/Dashboard';
+import DashboardItem from './model/DashboardItem';
+import DashboardItemPropertyDataSource from './model/DashboardItemPropertyDataSource';
+import DashboardItemPropertyDataSourcePropertyConfig from './model/DashboardItemPropertyDataSourcePropertyConfig';
+import DashboardItemPropertyVisualization from './model/DashboardItemPropertyVisualization';
+import DashboardItemPropertyVisualizationPropertyConfig from './model/DashboardItemPropertyVisualizationPropertyConfig';
+import DashboardPropertyCreatedBy from './model/DashboardPropertyCreatedBy';
+import DashboardPropertyUpdatedBy from './model/DashboardPropertyUpdatedBy';
 import DefaultSettings from './model/DefaultSettings';
 import DefaultSettingsError from './model/DefaultSettingsError';
 import DefaultSettingsResponse from './model/DefaultSettingsResponse';
@@ -106,6 +116,7 @@ import EnabledProductResponse from './model/EnabledProductResponse';
 import EnabledProductResponseLinks from './model/EnabledProductResponseLinks';
 import EnabledProductResponseProduct from './model/EnabledProductResponseProduct';
 import EnabledProductResponseService from './model/EnabledProductResponseService';
+import EomInvoiceResponse from './model/EomInvoiceResponse';
 import Error from './model/Error';
 import ErrorResponseData from './model/ErrorResponseData';
 import Event from './model/Event';
@@ -114,6 +125,8 @@ import EventData from './model/EventData';
 import EventResponse from './model/EventResponse';
 import EventsResponse from './model/EventsResponse';
 import GenericTokenError from './model/GenericTokenError';
+import GetServiceLevelUsageResponse from './model/GetServiceLevelUsageResponse';
+import GetServiceLevelUsageTypesResponse from './model/GetServiceLevelUsageTypesResponse';
 import Gzip from './model/Gzip';
 import GzipResponse from './model/GzipResponse';
 import Header from './model/Header';
@@ -159,6 +172,8 @@ import IamServiceGroup from './model/IamServiceGroup';
 import IamServiceGroupAllOf from './model/IamServiceGroupAllOf';
 import IamUserGroup from './model/IamUserGroup';
 import IamUserGroupAllOf from './model/IamUserGroupAllOf';
+import IncludedWithTlsConfiguration from './model/IncludedWithTlsConfiguration';
+import IncludedWithTlsConfigurationItem from './model/IncludedWithTlsConfigurationItem';
 import IncludedWithWafActiveRuleItem from './model/IncludedWithWafActiveRuleItem';
 import IncludedWithWafExclusionItem from './model/IncludedWithWafExclusionItem';
 import IncludedWithWafFirewallVersionItem from './model/IncludedWithWafFirewallVersionItem';
@@ -186,7 +201,6 @@ import InvitationResponseDataAllOf from './model/InvitationResponseDataAllOf';
 import InvitationsResponse from './model/InvitationsResponse';
 import InvitationsResponseAllOf from './model/InvitationsResponseAllOf';
 import Invoice from './model/Invoice';
-import InvoiceResponse from './model/InvoiceResponse';
 import Invoicelineitems from './model/Invoicelineitems';
 import LegacyWafConfigurationSet from './model/LegacyWafConfigurationSet';
 import LegacyWafFirewall from './model/LegacyWafFirewall';
@@ -198,7 +212,8 @@ import LegacyWafTag from './model/LegacyWafTag';
 import LegacyWafUpdateStatus from './model/LegacyWafUpdateStatus';
 import LineItemData from './model/LineItemData';
 import LineItemDataReadOnlyInvoiceId from './model/LineItemDataReadOnlyInvoiceId';
-import ListInvoicesResponse from './model/ListInvoicesResponse';
+import ListDashboardsResponse from './model/ListDashboardsResponse';
+import ListEomInvoicesResponse from './model/ListEomInvoicesResponse';
 import Listinvoices from './model/Listinvoices';
 import LoggingAddressAndPort from './model/LoggingAddressAndPort';
 import LoggingAzureblobAdditional from './model/LoggingAzureblobAdditional';
@@ -274,6 +289,9 @@ import LoggingSyslogResponse from './model/LoggingSyslogResponse';
 import LoggingTlsCommon from './model/LoggingTlsCommon';
 import LoggingUseTlsString from './model/LoggingUseTlsString';
 import Metadata from './model/Metadata';
+import MtdInvoiceResponse from './model/MtdInvoiceResponse';
+import Mtdinvoice from './model/Mtdinvoice';
+import Mtdlineitems from './model/Mtdlineitems';
 import MutualAuthentication from './model/MutualAuthentication';
 import MutualAuthenticationData from './model/MutualAuthenticationData';
 import MutualAuthenticationDataAttributes from './model/MutualAuthenticationDataAttributes';
@@ -340,6 +358,12 @@ import RecordedTimestamp from './model/RecordedTimestamp';
 import RelationshipCommonName from './model/RelationshipCommonName';
 import RelationshipCustomer from './model/RelationshipCustomer';
 import RelationshipCustomerCustomer from './model/RelationshipCustomerCustomer';
+import RelationshipDefaultEcdsaTlsCertificate from './model/RelationshipDefaultEcdsaTlsCertificate';
+import RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate from './model/RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate';
+import RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificateData from './model/RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificateData';
+import RelationshipDefaultTlsCertificate from './model/RelationshipDefaultTlsCertificate';
+import RelationshipDefaultTlsCertificateDefaultCertificate from './model/RelationshipDefaultTlsCertificateDefaultCertificate';
+import RelationshipDefaultTlsCertificateDefaultCertificateData from './model/RelationshipDefaultTlsCertificateDefaultCertificateData';
 import RelationshipMemberCustomer from './model/RelationshipMemberCustomer';
 import RelationshipMemberMutualAuthentication from './model/RelationshipMemberMutualAuthentication';
 import RelationshipMemberService from './model/RelationshipMemberService';
@@ -348,7 +372,6 @@ import RelationshipMemberTlsActivation from './model/RelationshipMemberTlsActiva
 import RelationshipMemberTlsBulkCertificate from './model/RelationshipMemberTlsBulkCertificate';
 import RelationshipMemberTlsCertificate from './model/RelationshipMemberTlsCertificate';
 import RelationshipMemberTlsConfiguration from './model/RelationshipMemberTlsConfiguration';
-import RelationshipMemberTlsDnsRecord from './model/RelationshipMemberTlsDnsRecord';
 import RelationshipMemberTlsDomain from './model/RelationshipMemberTlsDomain';
 import RelationshipMemberTlsPrivateKey from './model/RelationshipMemberTlsPrivateKey';
 import RelationshipMemberTlsSubscription from './model/RelationshipMemberTlsSubscription';
@@ -384,9 +407,12 @@ import RelationshipTlsConfigurationForTlsSubscription from './model/Relationship
 import RelationshipTlsConfigurationTlsConfiguration from './model/RelationshipTlsConfigurationTlsConfiguration';
 import RelationshipTlsConfigurations from './model/RelationshipTlsConfigurations';
 import RelationshipTlsConfigurationsTlsConfigurations from './model/RelationshipTlsConfigurationsTlsConfigurations';
-import RelationshipTlsDnsRecord from './model/RelationshipTlsDnsRecord';
-import RelationshipTlsDnsRecordDnsRecord from './model/RelationshipTlsDnsRecordDnsRecord';
-import RelationshipTlsDnsRecords from './model/RelationshipTlsDnsRecords';
+import RelationshipTlsDnsRecordsRequest from './model/RelationshipTlsDnsRecordsRequest';
+import RelationshipTlsDnsRecordsRequestDnsRecords from './model/RelationshipTlsDnsRecordsRequestDnsRecords';
+import RelationshipTlsDnsRecordsRequestDnsRecordsData from './model/RelationshipTlsDnsRecordsRequestDnsRecordsData';
+import RelationshipTlsDnsRecordsResponse from './model/RelationshipTlsDnsRecordsResponse';
+import RelationshipTlsDnsRecordsResponseDnsRecords from './model/RelationshipTlsDnsRecordsResponseDnsRecords';
+import RelationshipTlsDnsRecordsResponseDnsRecordsData from './model/RelationshipTlsDnsRecordsResponseDnsRecordsData';
 import RelationshipTlsDomain from './model/RelationshipTlsDomain';
 import RelationshipTlsDomainTlsDomain from './model/RelationshipTlsDomainTlsDomain';
 import RelationshipTlsDomains from './model/RelationshipTlsDomains';
@@ -486,6 +512,11 @@ import ServiceResponse from './model/ServiceResponse';
 import ServiceResponseAllOf from './model/ServiceResponseAllOf';
 import ServiceVersionDetail from './model/ServiceVersionDetail';
 import ServiceVersionDetailOrNull from './model/ServiceVersionDetailOrNull';
+import Serviceusagemetric from './model/Serviceusagemetric';
+import Serviceusagemetrics from './model/Serviceusagemetrics';
+import ServiceusagemetricsData from './model/ServiceusagemetricsData';
+import Serviceusagetype from './model/Serviceusagetype';
+import Serviceusagetypes from './model/Serviceusagetypes';
 import Settings from './model/Settings';
 import SettingsResponse from './model/SettingsResponse';
 import SigningKey from './model/SigningKey';
@@ -529,6 +560,7 @@ import TlsBulkCertificateResponseDataAllOf from './model/TlsBulkCertificateRespo
 import TlsBulkCertificatesResponse from './model/TlsBulkCertificatesResponse';
 import TlsBulkCertificatesResponseAllOf from './model/TlsBulkCertificatesResponseAllOf';
 import TlsCertificate from './model/TlsCertificate';
+import TlsCertificateBlobResponse from './model/TlsCertificateBlobResponse';
 import TlsCertificateData from './model/TlsCertificateData';
 import TlsCertificateDataAttributes from './model/TlsCertificateDataAttributes';
 import TlsCertificateResponse from './model/TlsCertificateResponse';
@@ -616,6 +648,7 @@ import TypeWafRuleRevision from './model/TypeWafRuleRevision';
 import TypeWafTag from './model/TypeWafTag';
 import UpdateBillingAddressRequest from './model/UpdateBillingAddressRequest';
 import UpdateBillingAddressRequestData from './model/UpdateBillingAddressRequestData';
+import UpdateDashboardRequest from './model/UpdateDashboardRequest';
 import User from './model/User';
 import UserResponse from './model/UserResponse';
 import UserResponseReadOnly from './model/UserResponseReadOnly';
@@ -707,6 +740,7 @@ import BackendApi from './api/BackendApi';
 import BillingApi from './api/BillingApi';
 import BillingAddressApi from './api/BillingAddressApi';
 import BillingInvoicesApi from './api/BillingInvoicesApi';
+import BillingUsageMetricsApi from './api/BillingUsageMetricsApi';
 import CacheSettingsApi from './api/CacheSettingsApi';
 import ConditionApi from './api/ConditionApi';
 import ConfigStoreApi from './api/ConfigStoreApi';
@@ -775,6 +809,7 @@ import LoggingSplunkApi from './api/LoggingSplunkApi';
 import LoggingSumologicApi from './api/LoggingSumologicApi';
 import LoggingSyslogApi from './api/LoggingSyslogApi';
 import MutualAuthenticationApi from './api/MutualAuthenticationApi';
+import ObservabilityCustomDashboardsApi from './api/ObservabilityCustomDashboardsApi';
 import OriginInspectorHistoricalApi from './api/OriginInspectorHistoricalApi';
 import OriginInspectorRealtimeApi from './api/OriginInspectorRealtimeApi';
 import PackageApi from './api/PackageApi';
@@ -854,7 +889,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 7.5.0
+* @version 7.6.0
 */
 export {
     /**
@@ -910,6 +945,12 @@ export {
      * @property {module:model/ApexRedirectAllOf}
      */
     ApexRedirectAllOf,
+
+    /**
+     * The AsyncResponse model constructor.
+     * @property {module:model/AsyncResponse}
+     */
+    AsyncResponse,
 
     /**
      * The AutomationToken model constructor.
@@ -1248,6 +1289,12 @@ export {
     Content,
 
     /**
+     * The CreateDashboardRequest model constructor.
+     * @property {module:model/CreateDashboardRequest}
+     */
+    CreateDashboardRequest,
+
+    /**
      * The CreateResponseObjectRequest model constructor.
      * @property {module:model/CreateResponseObjectRequest}
      */
@@ -1270,6 +1317,54 @@ export {
      * @property {module:model/CustomerResponseAllOf}
      */
     CustomerResponseAllOf,
+
+    /**
+     * The Dashboard model constructor.
+     * @property {module:model/Dashboard}
+     */
+    Dashboard,
+
+    /**
+     * The DashboardItem model constructor.
+     * @property {module:model/DashboardItem}
+     */
+    DashboardItem,
+
+    /**
+     * The DashboardItemPropertyDataSource model constructor.
+     * @property {module:model/DashboardItemPropertyDataSource}
+     */
+    DashboardItemPropertyDataSource,
+
+    /**
+     * The DashboardItemPropertyDataSourcePropertyConfig model constructor.
+     * @property {module:model/DashboardItemPropertyDataSourcePropertyConfig}
+     */
+    DashboardItemPropertyDataSourcePropertyConfig,
+
+    /**
+     * The DashboardItemPropertyVisualization model constructor.
+     * @property {module:model/DashboardItemPropertyVisualization}
+     */
+    DashboardItemPropertyVisualization,
+
+    /**
+     * The DashboardItemPropertyVisualizationPropertyConfig model constructor.
+     * @property {module:model/DashboardItemPropertyVisualizationPropertyConfig}
+     */
+    DashboardItemPropertyVisualizationPropertyConfig,
+
+    /**
+     * The DashboardPropertyCreatedBy model constructor.
+     * @property {module:model/DashboardPropertyCreatedBy}
+     */
+    DashboardPropertyCreatedBy,
+
+    /**
+     * The DashboardPropertyUpdatedBy model constructor.
+     * @property {module:model/DashboardPropertyUpdatedBy}
+     */
+    DashboardPropertyUpdatedBy,
 
     /**
      * The DefaultSettings model constructor.
@@ -1428,6 +1523,12 @@ export {
     EnabledProductResponseService,
 
     /**
+     * The EomInvoiceResponse model constructor.
+     * @property {module:model/EomInvoiceResponse}
+     */
+    EomInvoiceResponse,
+
+    /**
      * The Error model constructor.
      * @property {module:model/Error}
      */
@@ -1474,6 +1575,18 @@ export {
      * @property {module:model/GenericTokenError}
      */
     GenericTokenError,
+
+    /**
+     * The GetServiceLevelUsageResponse model constructor.
+     * @property {module:model/GetServiceLevelUsageResponse}
+     */
+    GetServiceLevelUsageResponse,
+
+    /**
+     * The GetServiceLevelUsageTypesResponse model constructor.
+     * @property {module:model/GetServiceLevelUsageTypesResponse}
+     */
+    GetServiceLevelUsageTypesResponse,
 
     /**
      * The Gzip model constructor.
@@ -1746,6 +1859,18 @@ export {
     IamUserGroupAllOf,
 
     /**
+     * The IncludedWithTlsConfiguration model constructor.
+     * @property {module:model/IncludedWithTlsConfiguration}
+     */
+    IncludedWithTlsConfiguration,
+
+    /**
+     * The IncludedWithTlsConfigurationItem model constructor.
+     * @property {module:model/IncludedWithTlsConfigurationItem}
+     */
+    IncludedWithTlsConfigurationItem,
+
+    /**
      * The IncludedWithWafActiveRuleItem model constructor.
      * @property {module:model/IncludedWithWafActiveRuleItem}
      */
@@ -1908,12 +2033,6 @@ export {
     Invoice,
 
     /**
-     * The InvoiceResponse model constructor.
-     * @property {module:model/InvoiceResponse}
-     */
-    InvoiceResponse,
-
-    /**
      * The Invoicelineitems model constructor.
      * @property {module:model/Invoicelineitems}
      */
@@ -1980,10 +2099,16 @@ export {
     LineItemDataReadOnlyInvoiceId,
 
     /**
-     * The ListInvoicesResponse model constructor.
-     * @property {module:model/ListInvoicesResponse}
+     * The ListDashboardsResponse model constructor.
+     * @property {module:model/ListDashboardsResponse}
      */
-    ListInvoicesResponse,
+    ListDashboardsResponse,
+
+    /**
+     * The ListEomInvoicesResponse model constructor.
+     * @property {module:model/ListEomInvoicesResponse}
+     */
+    ListEomInvoicesResponse,
 
     /**
      * The Listinvoices model constructor.
@@ -2436,6 +2561,24 @@ export {
     Metadata,
 
     /**
+     * The MtdInvoiceResponse model constructor.
+     * @property {module:model/MtdInvoiceResponse}
+     */
+    MtdInvoiceResponse,
+
+    /**
+     * The Mtdinvoice model constructor.
+     * @property {module:model/Mtdinvoice}
+     */
+    Mtdinvoice,
+
+    /**
+     * The Mtdlineitems model constructor.
+     * @property {module:model/Mtdlineitems}
+     */
+    Mtdlineitems,
+
+    /**
      * The MutualAuthentication model constructor.
      * @property {module:model/MutualAuthentication}
      */
@@ -2832,6 +2975,42 @@ export {
     RelationshipCustomerCustomer,
 
     /**
+     * The RelationshipDefaultEcdsaTlsCertificate model constructor.
+     * @property {module:model/RelationshipDefaultEcdsaTlsCertificate}
+     */
+    RelationshipDefaultEcdsaTlsCertificate,
+
+    /**
+     * The RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate model constructor.
+     * @property {module:model/RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate}
+     */
+    RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificate,
+
+    /**
+     * The RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificateData model constructor.
+     * @property {module:model/RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificateData}
+     */
+    RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificateData,
+
+    /**
+     * The RelationshipDefaultTlsCertificate model constructor.
+     * @property {module:model/RelationshipDefaultTlsCertificate}
+     */
+    RelationshipDefaultTlsCertificate,
+
+    /**
+     * The RelationshipDefaultTlsCertificateDefaultCertificate model constructor.
+     * @property {module:model/RelationshipDefaultTlsCertificateDefaultCertificate}
+     */
+    RelationshipDefaultTlsCertificateDefaultCertificate,
+
+    /**
+     * The RelationshipDefaultTlsCertificateDefaultCertificateData model constructor.
+     * @property {module:model/RelationshipDefaultTlsCertificateDefaultCertificateData}
+     */
+    RelationshipDefaultTlsCertificateDefaultCertificateData,
+
+    /**
      * The RelationshipMemberCustomer model constructor.
      * @property {module:model/RelationshipMemberCustomer}
      */
@@ -2878,12 +3057,6 @@ export {
      * @property {module:model/RelationshipMemberTlsConfiguration}
      */
     RelationshipMemberTlsConfiguration,
-
-    /**
-     * The RelationshipMemberTlsDnsRecord model constructor.
-     * @property {module:model/RelationshipMemberTlsDnsRecord}
-     */
-    RelationshipMemberTlsDnsRecord,
 
     /**
      * The RelationshipMemberTlsDomain model constructor.
@@ -3096,22 +3269,40 @@ export {
     RelationshipTlsConfigurationsTlsConfigurations,
 
     /**
-     * The RelationshipTlsDnsRecord model constructor.
-     * @property {module:model/RelationshipTlsDnsRecord}
+     * The RelationshipTlsDnsRecordsRequest model constructor.
+     * @property {module:model/RelationshipTlsDnsRecordsRequest}
      */
-    RelationshipTlsDnsRecord,
+    RelationshipTlsDnsRecordsRequest,
 
     /**
-     * The RelationshipTlsDnsRecordDnsRecord model constructor.
-     * @property {module:model/RelationshipTlsDnsRecordDnsRecord}
+     * The RelationshipTlsDnsRecordsRequestDnsRecords model constructor.
+     * @property {module:model/RelationshipTlsDnsRecordsRequestDnsRecords}
      */
-    RelationshipTlsDnsRecordDnsRecord,
+    RelationshipTlsDnsRecordsRequestDnsRecords,
 
     /**
-     * The RelationshipTlsDnsRecords model constructor.
-     * @property {module:model/RelationshipTlsDnsRecords}
+     * The RelationshipTlsDnsRecordsRequestDnsRecordsData model constructor.
+     * @property {module:model/RelationshipTlsDnsRecordsRequestDnsRecordsData}
      */
-    RelationshipTlsDnsRecords,
+    RelationshipTlsDnsRecordsRequestDnsRecordsData,
+
+    /**
+     * The RelationshipTlsDnsRecordsResponse model constructor.
+     * @property {module:model/RelationshipTlsDnsRecordsResponse}
+     */
+    RelationshipTlsDnsRecordsResponse,
+
+    /**
+     * The RelationshipTlsDnsRecordsResponseDnsRecords model constructor.
+     * @property {module:model/RelationshipTlsDnsRecordsResponseDnsRecords}
+     */
+    RelationshipTlsDnsRecordsResponseDnsRecords,
+
+    /**
+     * The RelationshipTlsDnsRecordsResponseDnsRecordsData model constructor.
+     * @property {module:model/RelationshipTlsDnsRecordsResponseDnsRecordsData}
+     */
+    RelationshipTlsDnsRecordsResponseDnsRecordsData,
 
     /**
      * The RelationshipTlsDomain model constructor.
@@ -3708,6 +3899,36 @@ export {
     ServiceVersionDetailOrNull,
 
     /**
+     * The Serviceusagemetric model constructor.
+     * @property {module:model/Serviceusagemetric}
+     */
+    Serviceusagemetric,
+
+    /**
+     * The Serviceusagemetrics model constructor.
+     * @property {module:model/Serviceusagemetrics}
+     */
+    Serviceusagemetrics,
+
+    /**
+     * The ServiceusagemetricsData model constructor.
+     * @property {module:model/ServiceusagemetricsData}
+     */
+    ServiceusagemetricsData,
+
+    /**
+     * The Serviceusagetype model constructor.
+     * @property {module:model/Serviceusagetype}
+     */
+    Serviceusagetype,
+
+    /**
+     * The Serviceusagetypes model constructor.
+     * @property {module:model/Serviceusagetypes}
+     */
+    Serviceusagetypes,
+
+    /**
      * The Settings model constructor.
      * @property {module:model/Settings}
      */
@@ -3964,6 +4185,12 @@ export {
      * @property {module:model/TlsCertificate}
      */
     TlsCertificate,
+
+    /**
+     * The TlsCertificateBlobResponse model constructor.
+     * @property {module:model/TlsCertificateBlobResponse}
+     */
+    TlsCertificateBlobResponse,
 
     /**
      * The TlsCertificateData model constructor.
@@ -4486,6 +4713,12 @@ export {
      * @property {module:model/UpdateBillingAddressRequestData}
      */
     UpdateBillingAddressRequestData,
+
+    /**
+     * The UpdateDashboardRequest model constructor.
+     * @property {module:model/UpdateDashboardRequest}
+     */
+    UpdateDashboardRequest,
 
     /**
      * The User model constructor.
@@ -5034,6 +5267,12 @@ export {
     BillingInvoicesApi,
 
     /**
+    * The BillingUsageMetricsApi service constructor.
+    * @property {module:api/BillingUsageMetricsApi}
+    */
+    BillingUsageMetricsApi,
+
+    /**
     * The CacheSettingsApi service constructor.
     * @property {module:api/CacheSettingsApi}
     */
@@ -5440,6 +5679,12 @@ export {
     * @property {module:api/MutualAuthenticationApi}
     */
     MutualAuthenticationApi,
+
+    /**
+    * The ObservabilityCustomDashboardsApi service constructor.
+    * @property {module:api/ObservabilityCustomDashboardsApi}
+    */
+    ObservabilityCustomDashboardsApi,
 
     /**
     * The OriginInspectorHistoricalApi service constructor.

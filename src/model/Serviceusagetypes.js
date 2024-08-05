@@ -11,21 +11,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import RelationshipTlsDnsRecordDnsRecord from './RelationshipTlsDnsRecordDnsRecord';
+import Serviceusagetype from './Serviceusagetype';
 
 /**
- * The RelationshipTlsDnsRecords model module.
- * @module model/RelationshipTlsDnsRecords
- * @version 7.5.0
+ * The Serviceusagetypes model module.
+ * @module model/Serviceusagetypes
+ * @version 7.6.0
  */
-class RelationshipTlsDnsRecords {
+class Serviceusagetypes {
     /**
-     * Constructs a new <code>RelationshipTlsDnsRecords</code>.
-     * @alias module:model/RelationshipTlsDnsRecords
+     * Constructs a new <code>Serviceusagetypes</code>.
+     * @alias module:model/Serviceusagetypes
      */
     constructor() { 
         
-        RelationshipTlsDnsRecords.initialize(this);
+        Serviceusagetypes.initialize(this);
     }
 
     /**
@@ -37,18 +37,18 @@ class RelationshipTlsDnsRecords {
     }
 
     /**
-     * Constructs a <code>RelationshipTlsDnsRecords</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>Serviceusagetypes</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RelationshipTlsDnsRecords} obj Optional instance to populate.
-     * @return {module:model/RelationshipTlsDnsRecords} The populated <code>RelationshipTlsDnsRecords</code> instance.
+     * @param {module:model/Serviceusagetypes} obj Optional instance to populate.
+     * @return {module:model/Serviceusagetypes} The populated <code>Serviceusagetypes</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new RelationshipTlsDnsRecords();
+            obj = obj || new Serviceusagetypes();
 
-            if (data.hasOwnProperty('dns_records')) {
-                obj['dns_records'] = RelationshipTlsDnsRecordDnsRecord.constructFromObject(data['dns_records']);
+            if (data.hasOwnProperty('data')) {
+                obj['data'] = ApiClient.convertToType(data['data'], [Serviceusagetype]);
             }
         }
         return obj;
@@ -58,14 +58,14 @@ class RelationshipTlsDnsRecords {
 }
 
 /**
- * @member {module:model/RelationshipTlsDnsRecordDnsRecord} dns_records
+ * @member {Array.<module:model/Serviceusagetype>} data
  */
-RelationshipTlsDnsRecords.prototype['dns_records'] = undefined;
+Serviceusagetypes.prototype['data'] = undefined;
 
 
 
 
 
 
-export default RelationshipTlsDnsRecords;
+export default Serviceusagetypes;
 

@@ -13,13 +13,14 @@
 
 import ApiClient from "../ApiClient";
 import TlsCertificate from '../model/TlsCertificate';
+import TlsCertificateBlobResponse from '../model/TlsCertificateBlobResponse';
 import TlsCertificateResponse from '../model/TlsCertificateResponse';
 import TlsCertificatesResponse from '../model/TlsCertificatesResponse';
 
 /**
 * TlsCertificates service.
 * @module api/TlsCertificatesApi
-* @version 7.5.0
+* @version 7.6.0
 */
 export default class TlsCertificatesApi {
 
@@ -203,6 +204,64 @@ export default class TlsCertificatesApi {
      */
     getTlsCert(options = {}) {
       return this.getTlsCertWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+    /**
+     * Retrieve a TLS certificate blob. This feature is part of a [limited availability](https://docs.fastly.com/products/fastly-product-lifecycle#limited-availability) release.
+     * @param {Object} options
+     * @param {String} options.tls_certificate_id - Alphanumeric string identifying a TLS certificate.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsCertificateBlobResponse} and HTTP response
+     */
+    getTlsCertBlobWithHttpInfo(options = {}) {
+      let postBody = null;
+      // Verify the required parameter 'tls_certificate_id' is set.
+      if (options['tls_certificate_id'] === undefined || options['tls_certificate_id'] === null) {
+        throw new Error("Missing the required parameter 'tls_certificate_id'.");
+      }
+
+      let pathParams = {
+        'tls_certificate_id': options['tls_certificate_id']
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = TlsCertificateBlobResponse;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/tls/certificates/{tls_certificate_id}/blob', 'GET',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Retrieve a TLS certificate blob. This feature is part of a [limited availability](https://docs.fastly.com/products/fastly-product-lifecycle#limited-availability) release.
+     * @param {Object} options
+     * @param {String} options.tls_certificate_id - Alphanumeric string identifying a TLS certificate.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsCertificateBlobResponse}
+     */
+    getTlsCertBlob(options = {}) {
+      return this.getTlsCertBlobWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

@@ -16,7 +16,7 @@ import LoggingUseTlsString from './LoggingUseTlsString';
 /**
  * The LoggingKafkaAdditional model module.
  * @module model/LoggingKafkaAdditional
- * @version 7.5.0
+ * @version 7.6.0
  */
 class LoggingKafkaAdditional {
     /**

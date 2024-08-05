@@ -11,21 +11,21 @@
  */
 
 import ApiClient from '../ApiClient';
-import TypeTlsDnsRecord from './TypeTlsDnsRecord';
 
 /**
- * The RelationshipMemberTlsDnsRecord model module.
- * @module model/RelationshipMemberTlsDnsRecord
- * @version 7.5.0
+ * The DashboardPropertyUpdatedBy model module.
+ * @module model/DashboardPropertyUpdatedBy
+ * @version 7.6.0
  */
-class RelationshipMemberTlsDnsRecord {
+class DashboardPropertyUpdatedBy {
     /**
-     * Constructs a new <code>RelationshipMemberTlsDnsRecord</code>.
-     * @alias module:model/RelationshipMemberTlsDnsRecord
+     * Constructs a new <code>DashboardPropertyUpdatedBy</code>.
+     * The ID of the user who last modified the dashboard
+     * @alias module:model/DashboardPropertyUpdatedBy
      */
     constructor() { 
         
-        RelationshipMemberTlsDnsRecord.initialize(this);
+        DashboardPropertyUpdatedBy.initialize(this);
     }
 
     /**
@@ -37,22 +37,16 @@ class RelationshipMemberTlsDnsRecord {
     }
 
     /**
-     * Constructs a <code>RelationshipMemberTlsDnsRecord</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>DashboardPropertyUpdatedBy</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RelationshipMemberTlsDnsRecord} obj Optional instance to populate.
-     * @return {module:model/RelationshipMemberTlsDnsRecord} The populated <code>RelationshipMemberTlsDnsRecord</code> instance.
+     * @param {module:model/DashboardPropertyUpdatedBy} obj Optional instance to populate.
+     * @return {module:model/DashboardPropertyUpdatedBy} The populated <code>DashboardPropertyUpdatedBy</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new RelationshipMemberTlsDnsRecord();
+            obj = obj || new DashboardPropertyUpdatedBy();
 
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = TypeTlsDnsRecord.constructFromObject(data['type']);
-            }
-            if (data.hasOwnProperty('id')) {
-                obj['id'] = ApiClient.convertToType(data['id'], 'String');
-            }
         }
         return obj;
     }
@@ -60,20 +54,10 @@ class RelationshipMemberTlsDnsRecord {
 
 }
 
-/**
- * @member {module:model/TypeTlsDnsRecord} type
- */
-RelationshipMemberTlsDnsRecord.prototype['type'] = undefined;
-
-/**
- * @member {String} id
- */
-RelationshipMemberTlsDnsRecord.prototype['id'] = undefined;
 
 
 
 
 
-
-export default RelationshipMemberTlsDnsRecord;
+export default DashboardPropertyUpdatedBy;
 

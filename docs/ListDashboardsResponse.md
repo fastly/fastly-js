@@ -1,10 +1,11 @@
-# Fastly.RelationshipTlsDnsRecordDnsRecord
+# Fastly.ListDashboardsResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[RelationshipMemberTlsDnsRecord]**](RelationshipMemberTlsDnsRecord.md) |  | [optional] 
+**data** | [**[Dashboard]**](Dashboard.md) |  | [optional] 
+**meta** | **Object** | Meta for the pagination. | [optional] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -1,11 +1,10 @@
-# Fastly.ListInvoicesResponse
+# Fastly.GetServiceLevelUsageResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**[Invoice]**](Invoice.md) |  | [optional] 
-**meta** | [**Metadata**](Metadata.md) |  | [optional] 
+**data** | [**ServiceusagemetricsData**](ServiceusagemetricsData.md) |  | [optional] 
 
 
 [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

@@ -16,7 +16,7 @@ import RealtimeMeasurements from './RealtimeMeasurements';
 /**
  * The RealtimeEntryAggregated model module.
  * @module model/RealtimeEntryAggregated
- * @version 7.5.0
+ * @version 7.6.0
  */
 class RealtimeEntryAggregated {
     /**
@@ -793,6 +793,9 @@ class RealtimeEntryAggregated {
             }
             if (data.hasOwnProperty('all_status_5xx')) {
                 obj['all_status_5xx'] = ApiClient.convertToType(data['all_status_5xx'], 'Number');
+            }
+            if (data.hasOwnProperty('origin_offload')) {
+                obj['origin_offload'] = ApiClient.convertToType(data['origin_offload'], 'Number');
             }
         }
         return obj;
@@ -2289,6 +2292,12 @@ RealtimeEntryAggregated.prototype['all_status_4xx'] = undefined;
  */
 RealtimeEntryAggregated.prototype['all_status_5xx'] = undefined;
 
+/**
+ * Origin Offload measures the ratio of bytes served to end users that were cached by Fastly, over the bytes served to end users, between 0 and 1. ((`edge_resp_body_bytes` + `edge_resp_header_bytes`) - (`origin_fetch_resp_body_bytes` + `origin_fetch_resp_header_bytes`)) / (`edge_resp_body_bytes` + `edge_resp_header_bytes`).
+ * @member {Number} origin_offload
+ */
+RealtimeEntryAggregated.prototype['origin_offload'] = undefined;
+
 
 // Implement RealtimeMeasurements interface:
 /**
@@ -3531,6 +3540,11 @@ RealtimeMeasurements.prototype['all_status_4xx'] = undefined;
  * @member {Number} all_status_5xx
  */
 RealtimeMeasurements.prototype['all_status_5xx'] = undefined;
+/**
+ * Origin Offload measures the ratio of bytes served to end users that were cached by Fastly, over the bytes served to end users, between 0 and 1. ((`edge_resp_body_bytes` + `edge_resp_header_bytes`) - (`origin_fetch_resp_body_bytes` + `origin_fetch_resp_header_bytes`)) / (`edge_resp_body_bytes` + `edge_resp_header_bytes`).
+ * @member {Number} origin_offload
+ */
+RealtimeMeasurements.prototype['origin_offload'] = undefined;
 
 
 

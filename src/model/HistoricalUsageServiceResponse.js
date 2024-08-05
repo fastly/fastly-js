@@ -19,7 +19,7 @@ import HistoricalUsageServiceResponseAllOf from './HistoricalUsageServiceRespons
 /**
  * The HistoricalUsageServiceResponse model module.
  * @module model/HistoricalUsageServiceResponse
- * @version 7.5.0
+ * @version 7.6.0
  */
 class HistoricalUsageServiceResponse {
     /**

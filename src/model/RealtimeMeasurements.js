@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RealtimeMeasurements model module.
  * @module model/RealtimeMeasurements
- * @version 7.5.0
+ * @version 7.6.0
  */
 class RealtimeMeasurements {
     /**
@@ -790,6 +790,9 @@ class RealtimeMeasurements {
             }
             if (data.hasOwnProperty('all_status_5xx')) {
                 obj['all_status_5xx'] = ApiClient.convertToType(data['all_status_5xx'], 'Number');
+            }
+            if (data.hasOwnProperty('origin_offload')) {
+                obj['origin_offload'] = ApiClient.convertToType(data['origin_offload'], 'Number');
             }
         }
         return obj;
@@ -2285,6 +2288,12 @@ RealtimeMeasurements.prototype['all_status_4xx'] = undefined;
  * @member {Number} all_status_5xx
  */
 RealtimeMeasurements.prototype['all_status_5xx'] = undefined;
+
+/**
+ * Origin Offload measures the ratio of bytes served to end users that were cached by Fastly, over the bytes served to end users, between 0 and 1. ((`edge_resp_body_bytes` + `edge_resp_header_bytes`) - (`origin_fetch_resp_body_bytes` + `origin_fetch_resp_header_bytes`)) / (`edge_resp_body_bytes` + `edge_resp_header_bytes`).
+ * @member {Number} origin_offload
+ */
+RealtimeMeasurements.prototype['origin_offload'] = undefined;
 
 
 
