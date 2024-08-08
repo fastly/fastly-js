@@ -16,7 +16,7 @@ import TlsCertificateData from './TlsCertificateData';
 /**
  * The TlsCertificate model module.
  * @module model/TlsCertificate
- * @version 7.6.0
+ * @version 7.7.0
  */
 class TlsCertificate {
     /**

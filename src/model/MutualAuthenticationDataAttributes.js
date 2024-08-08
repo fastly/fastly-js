@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The MutualAuthenticationDataAttributes model module.
  * @module model/MutualAuthenticationDataAttributes
- * @version 7.6.0
+ * @version 7.7.0
  */
 class MutualAuthenticationDataAttributes {
     /**

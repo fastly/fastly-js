@@ -17,7 +17,7 @@ import Invoicelineitems from './Invoicelineitems';
 /**
  * The EomInvoiceResponse model module.
  * @module model/EomInvoiceResponse
- * @version 7.6.0
+ * @version 7.7.0
  */
 class EomInvoiceResponse {
     /**
@@ -91,7 +91,7 @@ class EomInvoiceResponse {
 EomInvoiceResponse.prototype['customer_id'] = undefined;
 
 /**
- * Alphanumeric string identifying the invoice.
+ * Numeric string identifying the invoice.
  * @member {String} invoice_id
  */
 EomInvoiceResponse.prototype['invoice_id'] = undefined;
@@ -145,7 +145,7 @@ EomInvoiceResponse.prototype['transaction_line_items'] = undefined;
  */
 Invoice.prototype['customer_id'] = undefined;
 /**
- * Alphanumeric string identifying the invoice.
+ * Numeric string identifying the invoice.
  * @member {String} invoice_id
  */
 Invoice.prototype['invoice_id'] = undefined;

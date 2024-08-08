@@ -65,7 +65,7 @@ Get the invoice for the given invoice_id.
 ```javascript
 const options = {
   customer_id: "customer_id_example", // required
-  invoice_id: "invoice_id_example", // required
+  invoice_id: 4183280, // required
 };
 
 apiInstance.getInvoiceById(options)
@@ -82,7 +82,7 @@ apiInstance.getInvoiceById(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **customer_id** | **String** | Alphanumeric string identifying the customer. |
-**invoice_id** | **String** | Alphanumeric string identifying the invoice. |
+**invoice_id** | **Number** |  |
 
 ### Return type
 

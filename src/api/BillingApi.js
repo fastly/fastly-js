@@ -18,7 +18,7 @@ import BillingResponse from '../model/BillingResponse';
 /**
 * Billing service.
 * @module api/BillingApi
-* @version 7.6.0
+* @version 7.7.0
 */
 export default class BillingApi {
 
@@ -107,7 +107,7 @@ export default class BillingApi {
      * Get the invoice for the given invoice_id.
      * @param {Object} options
      * @param {String} options.customer_id - Alphanumeric string identifying the customer.
-     * @param {String} options.invoice_id - Alphanumeric string identifying the invoice.
+     * @param {Number} options.invoice_id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/BillingResponse} and HTTP response
      */
     getInvoiceByIdWithHttpInfo(options = {}) {
@@ -158,7 +158,7 @@ export default class BillingApi {
      * Get the invoice for the given invoice_id.
      * @param {Object} options
      * @param {String} options.customer_id - Alphanumeric string identifying the customer.
-     * @param {String} options.invoice_id - Alphanumeric string identifying the invoice.
+     * @param {Number} options.invoice_id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/BillingResponse}
      */
     getInvoiceById(options = {}) {

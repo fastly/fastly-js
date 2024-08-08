@@ -43,9 +43,14 @@ import BillingAddressResponse from './model/BillingAddressResponse';
 import BillingAddressResponseData from './model/BillingAddressResponseData';
 import BillingAddressVerificationErrorResponse from './model/BillingAddressVerificationErrorResponse';
 import BillingAddressVerificationErrorResponseErrors from './model/BillingAddressVerificationErrorResponseErrors';
+import BillingBandwidth from './model/BillingBandwidth';
+import BillingBandwidthTiers from './model/BillingBandwidthTiers';
+import BillingEstimateInvoiceId from './model/BillingEstimateInvoiceId';
 import BillingEstimateLines from './model/BillingEstimateLines';
 import BillingEstimateLinesLineItems from './model/BillingEstimateLinesLineItems';
 import BillingEstimateResponse from './model/BillingEstimateResponse';
+import BillingInvoiceId from './model/BillingInvoiceId';
+import BillingRegions from './model/BillingRegions';
 import BillingResponse from './model/BillingResponse';
 import BillingResponseItemItemsData from './model/BillingResponseItemItemsData';
 import BillingResponseLineItem from './model/BillingResponseLineItem';
@@ -211,7 +216,6 @@ import LegacyWafRuleset from './model/LegacyWafRuleset';
 import LegacyWafTag from './model/LegacyWafTag';
 import LegacyWafUpdateStatus from './model/LegacyWafUpdateStatus';
 import LineItemData from './model/LineItemData';
-import LineItemDataReadOnlyInvoiceId from './model/LineItemDataReadOnlyInvoiceId';
 import ListDashboardsResponse from './model/ListDashboardsResponse';
 import ListEomInvoicesResponse from './model/ListEomInvoicesResponse';
 import Listinvoices from './model/Listinvoices';
@@ -889,7 +893,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 7.6.0
+* @version 7.7.0
 */
 export {
     /**
@@ -1085,6 +1089,24 @@ export {
     BillingAddressVerificationErrorResponseErrors,
 
     /**
+     * The BillingBandwidth model constructor.
+     * @property {module:model/BillingBandwidth}
+     */
+    BillingBandwidth,
+
+    /**
+     * The BillingBandwidthTiers model constructor.
+     * @property {module:model/BillingBandwidthTiers}
+     */
+    BillingBandwidthTiers,
+
+    /**
+     * The BillingEstimateInvoiceId model constructor.
+     * @property {module:model/BillingEstimateInvoiceId}
+     */
+    BillingEstimateInvoiceId,
+
+    /**
      * The BillingEstimateLines model constructor.
      * @property {module:model/BillingEstimateLines}
      */
@@ -1101,6 +1123,18 @@ export {
      * @property {module:model/BillingEstimateResponse}
      */
     BillingEstimateResponse,
+
+    /**
+     * The BillingInvoiceId model constructor.
+     * @property {module:model/BillingInvoiceId}
+     */
+    BillingInvoiceId,
+
+    /**
+     * The BillingRegions model constructor.
+     * @property {module:model/BillingRegions}
+     */
+    BillingRegions,
 
     /**
      * The BillingResponse model constructor.
@@ -2091,12 +2125,6 @@ export {
      * @property {module:model/LineItemData}
      */
     LineItemData,
-
-    /**
-     * The LineItemDataReadOnlyInvoiceId model constructor.
-     * @property {module:model/LineItemDataReadOnlyInvoiceId}
-     */
-    LineItemDataReadOnlyInvoiceId,
 
     /**
      * The ListDashboardsResponse model constructor.

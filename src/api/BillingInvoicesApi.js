@@ -21,7 +21,7 @@ import MtdInvoiceResponse from '../model/MtdInvoiceResponse';
 /**
 * BillingInvoices service.
 * @module api/BillingInvoicesApi
-* @version 7.6.0
+* @version 7.7.0
 */
 export default class BillingInvoicesApi {
 
@@ -44,7 +44,7 @@ export default class BillingInvoicesApi {
     /**
      * Returns invoice associated with the invoice id.
      * @param {Object} options
-     * @param {String} options.invoice_id - Alphanumeric string identifying the invoice.
+     * @param {Number} options.invoice_id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/EomInvoiceResponse} and HTTP response
      */
     getInvoiceByInvoiceIdWithHttpInfo(options = {}) {
@@ -89,7 +89,7 @@ export default class BillingInvoicesApi {
     /**
      * Returns invoice associated with the invoice id.
      * @param {Object} options
-     * @param {String} options.invoice_id - Alphanumeric string identifying the invoice.
+     * @param {Number} options.invoice_id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/EomInvoiceResponse}
      */
     getInvoiceByInvoiceId(options = {}) {

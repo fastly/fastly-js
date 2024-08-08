@@ -12,6 +12,8 @@
 
 import ApiClient from '../ApiClient';
 import Billing from './Billing';
+import BillingInvoiceId from './BillingInvoiceId';
+import BillingRegions from './BillingRegions';
 import BillingResponseItemItemsData from './BillingResponseItemItemsData';
 import BillingResponseLineItem from './BillingResponseLineItem';
 import BillingStatus from './BillingStatus';
@@ -20,17 +22,18 @@ import BillingTotal from './BillingTotal';
 /**
  * The BillingResponse model module.
  * @module model/BillingResponse
- * @version 7.6.0
+ * @version 7.7.0
  */
 class BillingResponse {
     /**
      * Constructs a new <code>BillingResponse</code>.
      * @alias module:model/BillingResponse
      * @implements module:model/Billing
+     * @implements module:model/BillingInvoiceId
      * @implements module:model/BillingResponseItemItemsData
      */
     constructor() { 
-        Billing.initialize(this);BillingResponseItemItemsData.initialize(this);
+        Billing.initialize(this);BillingInvoiceId.initialize(this);BillingResponseItemItemsData.initialize(this);
         BillingResponse.initialize(this);
     }
 
@@ -53,6 +56,7 @@ class BillingResponse {
         if (data) {
             obj = obj || new BillingResponse();
             Billing.constructFromObject(data, obj);
+            BillingInvoiceId.constructFromObject(data, obj);
             BillingResponseItemItemsData.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('end_time')) {
@@ -60,9 +64,6 @@ class BillingResponse {
             }
             if (data.hasOwnProperty('start_time')) {
                 obj['start_time'] = ApiClient.convertToType(data['start_time'], 'Date');
-            }
-            if (data.hasOwnProperty('invoice_id')) {
-                obj['invoice_id'] = ApiClient.convertToType(data['invoice_id'], 'String');
             }
             if (data.hasOwnProperty('customer_id')) {
                 obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
@@ -77,7 +78,10 @@ class BillingResponse {
                 obj['total'] = BillingTotal.constructFromObject(data['total']);
             }
             if (data.hasOwnProperty('regions')) {
-                obj['regions'] = ApiClient.convertToType(data['regions'], {'String': {'String': Object}});
+                obj['regions'] = ApiClient.convertToType(data['regions'], {'String': BillingRegions});
+            }
+            if (data.hasOwnProperty('invoice_id')) {
+                obj['invoice_id'] = ApiClient.convertToType(data['invoice_id'], 'Number');
             }
             if (data.hasOwnProperty('line_items')) {
                 obj['line_items'] = ApiClient.convertToType(data['line_items'], [BillingResponseLineItem]);
@@ -102,11 +106,6 @@ BillingResponse.prototype['end_time'] = undefined;
 BillingResponse.prototype['start_time'] = undefined;
 
 /**
- * @member {String} invoice_id
- */
-BillingResponse.prototype['invoice_id'] = undefined;
-
-/**
  * @member {String} customer_id
  */
 BillingResponse.prototype['customer_id'] = undefined;
@@ -129,9 +128,14 @@ BillingResponse.prototype['total'] = undefined;
 
 /**
  * Breakdown of regional data for products that are region based.
- * @member {Object.<String, Object.<String, Object>>} regions
+ * @member {Object.<String, module:model/BillingRegions>} regions
  */
 BillingResponse.prototype['regions'] = undefined;
+
+/**
+ * @member {Number} invoice_id
+ */
+BillingResponse.prototype['invoice_id'] = undefined;
 
 /**
  * @member {Array.<module:model/BillingResponseLineItem>} line_items
@@ -151,10 +155,6 @@ Billing.prototype['end_time'] = undefined;
  */
 Billing.prototype['start_time'] = undefined;
 /**
- * @member {String} invoice_id
- */
-Billing.prototype['invoice_id'] = undefined;
-/**
  * @member {String} customer_id
  */
 Billing.prototype['customer_id'] = undefined;
@@ -173,9 +173,14 @@ Billing.prototype['status'] = undefined;
 Billing.prototype['total'] = undefined;
 /**
  * Breakdown of regional data for products that are region based.
- * @member {Object.<String, Object.<String, Object>>} regions
+ * @member {Object.<String, module:model/BillingRegions>} regions
  */
 Billing.prototype['regions'] = undefined;
+// Implement BillingInvoiceId interface:
+/**
+ * @member {Number} invoice_id
+ */
+BillingInvoiceId.prototype['invoice_id'] = undefined;
 // Implement BillingResponseItemItemsData interface:
 /**
  * @member {Array.<module:model/BillingResponseLineItem>} line_items

@@ -22,7 +22,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingKafkaResponsePost model module.
  * @module model/LoggingKafkaResponsePost
- * @version 7.6.0
+ * @version 7.7.0
  */
 class LoggingKafkaResponsePost {
     /**

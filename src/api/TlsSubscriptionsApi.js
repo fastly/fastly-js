@@ -19,7 +19,7 @@ import TlsSubscriptionsResponse from '../model/TlsSubscriptionsResponse';
 /**
 * TlsSubscriptions service.
 * @module api/TlsSubscriptionsApi
-* @version 7.6.0
+* @version 7.7.0
 */
 export default class TlsSubscriptionsApi {
 

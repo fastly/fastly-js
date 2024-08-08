@@ -19,7 +19,7 @@ import LoggingUseTlsString from '../model/LoggingUseTlsString';
 /**
 * LoggingSplunk service.
 * @module api/LoggingSplunkApi
-* @version 7.6.0
+* @version 7.7.0
 */
 export default class LoggingSplunkApi {
 

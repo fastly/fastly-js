@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DashboardItemPropertyDataSourcePropertyConfig model module.
  * @module model/DashboardItemPropertyDataSourcePropertyConfig
- * @version 7.6.0
+ * @version 7.7.0
  */
 class DashboardItemPropertyDataSourcePropertyConfig {
     /**

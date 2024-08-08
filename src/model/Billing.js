@@ -11,13 +11,14 @@
  */
 
 import ApiClient from '../ApiClient';
+import BillingRegions from './BillingRegions';
 import BillingStatus from './BillingStatus';
 import BillingTotal from './BillingTotal';
 
 /**
  * The Billing model module.
  * @module model/Billing
- * @version 7.6.0
+ * @version 7.7.0
  */
 class Billing {
     /**
@@ -54,9 +55,6 @@ class Billing {
             if (data.hasOwnProperty('start_time')) {
                 obj['start_time'] = ApiClient.convertToType(data['start_time'], 'Date');
             }
-            if (data.hasOwnProperty('invoice_id')) {
-                obj['invoice_id'] = ApiClient.convertToType(data['invoice_id'], 'String');
-            }
             if (data.hasOwnProperty('customer_id')) {
                 obj['customer_id'] = ApiClient.convertToType(data['customer_id'], 'String');
             }
@@ -70,7 +68,7 @@ class Billing {
                 obj['total'] = BillingTotal.constructFromObject(data['total']);
             }
             if (data.hasOwnProperty('regions')) {
-                obj['regions'] = ApiClient.convertToType(data['regions'], {'String': {'String': Object}});
+                obj['regions'] = ApiClient.convertToType(data['regions'], {'String': BillingRegions});
             }
         }
         return obj;
@@ -90,11 +88,6 @@ Billing.prototype['end_time'] = undefined;
  * @member {Date} start_time
  */
 Billing.prototype['start_time'] = undefined;
-
-/**
- * @member {String} invoice_id
- */
-Billing.prototype['invoice_id'] = undefined;
 
 /**
  * @member {String} customer_id
@@ -119,7 +112,7 @@ Billing.prototype['total'] = undefined;
 
 /**
  * Breakdown of regional data for products that are region based.
- * @member {Object.<String, Object.<String, Object>>} regions
+ * @member {Object.<String, module:model/BillingRegions>} regions
  */
 Billing.prototype['regions'] = undefined;
 

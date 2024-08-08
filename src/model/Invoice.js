@@ -16,7 +16,7 @@ import Invoicelineitems from './Invoicelineitems';
 /**
  * The Invoice model module.
  * @module model/Invoice
- * @version 7.6.0
+ * @version 7.7.0
  */
 class Invoice {
     /**
@@ -88,7 +88,7 @@ class Invoice {
 Invoice.prototype['customer_id'] = undefined;
 
 /**
- * Alphanumeric string identifying the invoice.
+ * Numeric string identifying the invoice.
  * @member {String} invoice_id
  */
 Invoice.prototype['invoice_id'] = undefined;

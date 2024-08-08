@@ -11,12 +11,11 @@
  */
 
 import ApiClient from '../ApiClient';
-import LineItemDataReadOnlyInvoiceId from './LineItemDataReadOnlyInvoiceId';
 
 /**
  * The LineItemData model module.
  * @module model/LineItemData
- * @version 7.6.0
+ * @version 7.7.0
  */
 class LineItemData {
     /**
@@ -51,7 +50,7 @@ class LineItemData {
                 obj['amount'] = ApiClient.convertToType(data['amount'], 'Number');
             }
             if (data.hasOwnProperty('aria_invoice_id')) {
-                obj['aria_invoice_id'] = LineItemDataReadOnlyInvoiceId.constructFromObject(data['aria_invoice_id']);
+                obj['aria_invoice_id'] = ApiClient.convertToType(data['aria_invoice_id'], 'String');
             }
             if (data.hasOwnProperty('client_service_id')) {
                 obj['client_service_id'] = ApiClient.convertToType(data['client_service_id'], 'String');
@@ -111,7 +110,8 @@ class LineItemData {
 LineItemData.prototype['amount'] = undefined;
 
 /**
- * @member {module:model/LineItemDataReadOnlyInvoiceId} aria_invoice_id
+ * An alphanumeric string identifying the invoice.
+ * @member {String} aria_invoice_id
  */
 LineItemData.prototype['aria_invoice_id'] = undefined;
 

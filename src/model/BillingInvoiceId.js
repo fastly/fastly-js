@@ -13,18 +13,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The LineItemDataReadOnlyInvoiceId model module.
- * @module model/LineItemDataReadOnlyInvoiceId
- * @version 7.6.0
+ * The BillingInvoiceId model module.
+ * @module model/BillingInvoiceId
+ * @version 7.7.0
  */
-class LineItemDataReadOnlyInvoiceId {
+class BillingInvoiceId {
     /**
-     * Constructs a new <code>LineItemDataReadOnlyInvoiceId</code>.
-     * @alias module:model/LineItemDataReadOnlyInvoiceId
+     * Constructs a new <code>BillingInvoiceId</code>.
+     * @alias module:model/BillingInvoiceId
      */
     constructor() { 
         
-        LineItemDataReadOnlyInvoiceId.initialize(this);
+        BillingInvoiceId.initialize(this);
     }
 
     /**
@@ -36,16 +36,19 @@ class LineItemDataReadOnlyInvoiceId {
     }
 
     /**
-     * Constructs a <code>LineItemDataReadOnlyInvoiceId</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>BillingInvoiceId</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/LineItemDataReadOnlyInvoiceId} obj Optional instance to populate.
-     * @return {module:model/LineItemDataReadOnlyInvoiceId} The populated <code>LineItemDataReadOnlyInvoiceId</code> instance.
+     * @param {module:model/BillingInvoiceId} obj Optional instance to populate.
+     * @return {module:model/BillingInvoiceId} The populated <code>BillingInvoiceId</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new LineItemDataReadOnlyInvoiceId();
+            obj = obj || new BillingInvoiceId();
 
+            if (data.hasOwnProperty('invoice_id')) {
+                obj['invoice_id'] = ApiClient.convertToType(data['invoice_id'], 'Number');
+            }
         }
         return obj;
     }
@@ -53,10 +56,15 @@ class LineItemDataReadOnlyInvoiceId {
 
 }
 
+/**
+ * @member {Number} invoice_id
+ */
+BillingInvoiceId.prototype['invoice_id'] = undefined;
 
 
 
 
 
-export default LineItemDataReadOnlyInvoiceId;
+
+export default BillingInvoiceId;
 

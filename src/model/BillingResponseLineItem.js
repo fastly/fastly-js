@@ -12,13 +12,12 @@
 
 import ApiClient from '../ApiClient';
 import LineItemData from './LineItemData';
-import LineItemDataReadOnlyInvoiceId from './LineItemDataReadOnlyInvoiceId';
 import Timestamps from './Timestamps';
 
 /**
  * The BillingResponseLineItem model module.
  * @module model/BillingResponseLineItem
- * @version 7.6.0
+ * @version 7.7.0
  */
 class BillingResponseLineItem {
     /**
@@ -66,7 +65,7 @@ class BillingResponseLineItem {
                 obj['amount'] = ApiClient.convertToType(data['amount'], 'Number');
             }
             if (data.hasOwnProperty('aria_invoice_id')) {
-                obj['aria_invoice_id'] = LineItemDataReadOnlyInvoiceId.constructFromObject(data['aria_invoice_id']);
+                obj['aria_invoice_id'] = ApiClient.convertToType(data['aria_invoice_id'], 'String');
             }
             if (data.hasOwnProperty('client_service_id')) {
                 obj['client_service_id'] = ApiClient.convertToType(data['client_service_id'], 'String');
@@ -144,7 +143,8 @@ BillingResponseLineItem.prototype['updated_at'] = undefined;
 BillingResponseLineItem.prototype['amount'] = undefined;
 
 /**
- * @member {module:model/LineItemDataReadOnlyInvoiceId} aria_invoice_id
+ * An alphanumeric string identifying the invoice.
+ * @member {String} aria_invoice_id
  */
 BillingResponseLineItem.prototype['aria_invoice_id'] = undefined;
 
@@ -246,7 +246,8 @@ Timestamps.prototype['updated_at'] = undefined;
  */
 LineItemData.prototype['amount'] = undefined;
 /**
- * @member {module:model/LineItemDataReadOnlyInvoiceId} aria_invoice_id
+ * An alphanumeric string identifying the invoice.
+ * @member {String} aria_invoice_id
  */
 LineItemData.prototype['aria_invoice_id'] = undefined;
 /**

@@ -27,7 +27,7 @@ Returns invoice associated with the invoice id.
 
 ```javascript
 const options = {
-  invoice_id: "invoice_id_example", // required
+  invoice_id: 4183280, // required
 };
 
 apiInstance.getInvoiceByInvoiceId(options)
@@ -43,7 +43,7 @@ apiInstance.getInvoiceByInvoiceId(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**invoice_id** | **String** | Alphanumeric string identifying the invoice. |
+**invoice_id** | **Number** |  |
 
 ### Return type
 
