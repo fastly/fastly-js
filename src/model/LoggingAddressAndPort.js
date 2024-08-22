@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingAddressAndPort model module.
  * @module model/LoggingAddressAndPort
- * @version 7.7.0
+ * @version 7.8.0
  */
 class LoggingAddressAndPort {
     /**

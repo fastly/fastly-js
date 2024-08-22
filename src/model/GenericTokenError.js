@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GenericTokenError model module.
  * @module model/GenericTokenError
- * @version 7.7.0
+ * @version 7.8.0
  */
 class GenericTokenError {
     /**

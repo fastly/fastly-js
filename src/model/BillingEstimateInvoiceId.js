@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BillingEstimateInvoiceId model module.
  * @module model/BillingEstimateInvoiceId
- * @version 7.7.0
+ * @version 7.8.0
  */
 class BillingEstimateInvoiceId {
     /**

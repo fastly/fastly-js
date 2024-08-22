@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Invoicelineitems model module.
  * @module model/Invoicelineitems
- * @version 7.7.0
+ * @version 7.8.0
  */
 class Invoicelineitems {
     /**

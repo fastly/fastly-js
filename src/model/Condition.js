@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Condition model module.
  * @module model/Condition
- * @version 7.7.0
+ * @version 7.8.0
  */
 class Condition {
     /**

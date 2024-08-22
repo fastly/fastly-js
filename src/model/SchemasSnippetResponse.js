@@ -17,7 +17,7 @@ import Snippet from './Snippet';
 /**
  * The SchemasSnippetResponse model module.
  * @module model/SchemasSnippetResponse
- * @version 7.7.0
+ * @version 7.8.0
  */
 class SchemasSnippetResponse {
     /**

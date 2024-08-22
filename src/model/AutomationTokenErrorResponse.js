@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AutomationTokenErrorResponse model module.
  * @module model/AutomationTokenErrorResponse
- * @version 7.7.0
+ * @version 7.8.0
  */
 class AutomationTokenErrorResponse {
     /**

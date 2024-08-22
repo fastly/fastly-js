@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Serviceusagetype model module.
  * @module model/Serviceusagetype
- * @version 7.7.0
+ * @version 7.8.0
  */
 class Serviceusagetype {
     /**

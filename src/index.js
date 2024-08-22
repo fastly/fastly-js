@@ -893,7 +893,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 7.7.0
+* @version 7.8.0
 */
 export {
     /**

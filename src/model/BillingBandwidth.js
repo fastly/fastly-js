@@ -16,7 +16,7 @@ import BillingBandwidthTiers from './BillingBandwidthTiers';
 /**
  * The BillingBandwidth model module.
  * @module model/BillingBandwidth
- * @version 7.7.0
+ * @version 7.8.0
  */
 class BillingBandwidth {
     /**

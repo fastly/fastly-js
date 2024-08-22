@@ -16,7 +16,7 @@ import RelationshipWafActiveRulesWafActiveRules from './RelationshipWafActiveRul
 /**
  * The RelationshipWafActiveRules model module.
  * @module model/RelationshipWafActiveRules
- * @version 7.7.0
+ * @version 7.8.0
  */
 class RelationshipWafActiveRules {
     /**

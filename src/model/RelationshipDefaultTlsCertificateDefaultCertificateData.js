@@ -16,7 +16,7 @@ import TypeTlsCertificate from './TypeTlsCertificate';
 /**
  * The RelationshipDefaultTlsCertificateDefaultCertificateData model module.
  * @module model/RelationshipDefaultTlsCertificateDefaultCertificateData
- * @version 7.7.0
+ * @version 7.8.0
  */
 class RelationshipDefaultTlsCertificateDefaultCertificateData {
     /**

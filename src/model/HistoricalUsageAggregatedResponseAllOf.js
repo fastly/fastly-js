@@ -16,7 +16,7 @@ import HistoricalUsageData from './HistoricalUsageData';
 /**
  * The HistoricalUsageAggregatedResponseAllOf model module.
  * @module model/HistoricalUsageAggregatedResponseAllOf
- * @version 7.7.0
+ * @version 7.8.0
  */
 class HistoricalUsageAggregatedResponseAllOf {
     /**
