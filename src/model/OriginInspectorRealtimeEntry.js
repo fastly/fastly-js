@@ -12,12 +12,11 @@
 
 import ApiClient from '../ApiClient';
 import OriginInspectorMeasurements from './OriginInspectorMeasurements';
-import OriginInspectorRealtimeEntryRecorded from './OriginInspectorRealtimeEntryRecorded';
 
 /**
  * The OriginInspectorRealtimeEntry model module.
  * @module model/OriginInspectorRealtimeEntry
- * @version 7.8.0
+ * @version 7.9.0
  */
 class OriginInspectorRealtimeEntry {
     /**
@@ -50,7 +49,7 @@ class OriginInspectorRealtimeEntry {
             obj = obj || new OriginInspectorRealtimeEntry();
 
             if (data.hasOwnProperty('recorded')) {
-                obj['recorded'] = OriginInspectorRealtimeEntryRecorded.constructFromObject(data['recorded']);
+                obj['recorded'] = ApiClient.convertToType(data['recorded'], 'Number');
             }
             if (data.hasOwnProperty('aggregated')) {
                 obj['aggregated'] = ApiClient.convertToType(data['aggregated'], {'String': OriginInspectorMeasurements});
@@ -66,7 +65,8 @@ class OriginInspectorRealtimeEntry {
 }
 
 /**
- * @member {module:model/OriginInspectorRealtimeEntryRecorded} recorded
+ * The Unix timestamp at which this record's data was generated.
+ * @member {Number} recorded
  */
 OriginInspectorRealtimeEntry.prototype['recorded'] = undefined;
 

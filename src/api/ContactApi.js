@@ -19,7 +19,7 @@ import SchemasContactResponse from '../model/SchemasContactResponse';
 /**
 * Contact service.
 * @module api/ContactApi
-* @version 7.8.0
+* @version 7.9.0
 */
 export default class ContactApi {
 
@@ -160,7 +160,7 @@ export default class ContactApi {
       }
 
       return this.apiClient.callApi(
-        '/customer/{customer_id}/contact/{contact_id}', 'DELETE',
+        '/customer/{customer_id}/contacts/{contact_id}', 'DELETE',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath
       );

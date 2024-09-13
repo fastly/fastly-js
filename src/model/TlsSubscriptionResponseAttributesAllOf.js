@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TlsSubscriptionResponseAttributesAllOf model module.
  * @module model/TlsSubscriptionResponseAttributesAllOf
- * @version 7.8.0
+ * @version 7.9.0
  */
 class TlsSubscriptionResponseAttributesAllOf {
     /**

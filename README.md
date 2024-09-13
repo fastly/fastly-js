@@ -67,6 +67,13 @@ Class | Method | Description
 *Fastly.AclEntryApi* | [**getAclEntry**](docs/AclEntryApi.md#getAclEntry) | Describe an ACL entry
 *Fastly.AclEntryApi* | [**listAclEntries**](docs/AclEntryApi.md#listAclEntries) | List ACL entries
 *Fastly.AclEntryApi* | [**updateAclEntry**](docs/AclEntryApi.md#updateAclEntry) | Update an ACL entry
+*Fastly.AclsInComputeApi* | [**computeAclCreateAcls**](docs/AclsInComputeApi.md#computeAclCreateAcls) | Create a new ACL
+*Fastly.AclsInComputeApi* | [**computeAclDeleteSAclId**](docs/AclsInComputeApi.md#computeAclDeleteSAclId) | Delete an ACL
+*Fastly.AclsInComputeApi* | [**computeAclListAclEntries**](docs/AclsInComputeApi.md#computeAclListAclEntries) | List an ACL
+*Fastly.AclsInComputeApi* | [**computeAclListAcls**](docs/AclsInComputeApi.md#computeAclListAcls) | List ACLs
+*Fastly.AclsInComputeApi* | [**computeAclListAclsSAclId**](docs/AclsInComputeApi.md#computeAclListAclsSAclId) | Describe an ACL
+*Fastly.AclsInComputeApi* | [**computeAclLookupAcls**](docs/AclsInComputeApi.md#computeAclLookupAcls) | Lookup an ACL
+*Fastly.AclsInComputeApi* | [**computeAclUpdateAcls**](docs/AclsInComputeApi.md#computeAclUpdateAcls) | Update an ACL
 *Fastly.ApexRedirectApi* | [**createApexRedirect**](docs/ApexRedirectApi.md#createApexRedirect) | Create an apex redirect
 *Fastly.ApexRedirectApi* | [**deleteApexRedirect**](docs/ApexRedirectApi.md#deleteApexRedirect) | Delete an apex redirect
 *Fastly.ApexRedirectApi* | [**getApexRedirect**](docs/ApexRedirectApi.md#getApexRedirect) | Get an apex redirect
@@ -127,6 +134,9 @@ Class | Method | Description
 *Fastly.CustomerApi* | [**getLoggedInCustomer**](docs/CustomerApi.md#getLoggedInCustomer) | Get the logged in customer
 *Fastly.CustomerApi* | [**listUsers**](docs/CustomerApi.md#listUsers) | List users
 *Fastly.CustomerApi* | [**updateCustomer**](docs/CustomerApi.md#updateCustomer) | Update a customer
+*Fastly.CustomerAddressesApi* | [**createCustomerAddress**](docs/CustomerAddressesApi.md#createCustomerAddress) | Creates an address associated with a customer account.
+*Fastly.CustomerAddressesApi* | [**listCustomerAddresses**](docs/CustomerAddressesApi.md#listCustomerAddresses) | Return the list of addresses associated with a customer account.
+*Fastly.CustomerAddressesApi* | [**updateCustomerAddress**](docs/CustomerAddressesApi.md#updateCustomerAddress) | Updates an address associated with a customer account.
 *Fastly.DictionaryApi* | [**createDictionary**](docs/DictionaryApi.md#createDictionary) | Create an edge dictionary
 *Fastly.DictionaryApi* | [**deleteDictionary**](docs/DictionaryApi.md#deleteDictionary) | Delete an edge dictionary
 *Fastly.DictionaryApi* | [**getDictionary**](docs/DictionaryApi.md#getDictionary) | Get an edge dictionary
@@ -164,6 +174,8 @@ Class | Method | Description
 *Fastly.EnabledProductsApi* | [**disableProduct**](docs/EnabledProductsApi.md#disableProduct) | Disable a product
 *Fastly.EnabledProductsApi* | [**enableProduct**](docs/EnabledProductsApi.md#enableProduct) | Enable a product
 *Fastly.EnabledProductsApi* | [**getEnabledProduct**](docs/EnabledProductsApi.md#getEnabledProduct) | Get enabled product
+*Fastly.EnabledProductsApi* | [**getProductConfiguration**](docs/EnabledProductsApi.md#getProductConfiguration) | Get configuration for a product
+*Fastly.EnabledProductsApi* | [**setProductConfiguration**](docs/EnabledProductsApi.md#setProductConfiguration) | Update configuration for a product
 *Fastly.EventsApi* | [**getEvent**](docs/EventsApi.md#getEvent) | Get an event
 *Fastly.EventsApi* | [**listEvents**](docs/EventsApi.md#listEvents) | List events
 *Fastly.GzipApi* | [**createGzipConfig**](docs/GzipApi.md#createGzipConfig) | Create a gzip configuration
@@ -560,9 +572,11 @@ Class | Method | Description
 *Fastly.VclApi* | [**updateCustomVcl**](docs/VclApi.md#updateCustomVcl) | Update a custom VCL file
 *Fastly.VclDiffApi* | [**vclDiffServiceVersions**](docs/VclDiffApi.md#vclDiffServiceVersions) | Get a comparison of the VCL changes between two service versions
 *Fastly.VersionApi* | [**activateServiceVersion**](docs/VersionApi.md#activateServiceVersion) | Activate a service version
+*Fastly.VersionApi* | [**activateServiceVersionEnvironment**](docs/VersionApi.md#activateServiceVersionEnvironment) | Activate a service version on the specified environment
 *Fastly.VersionApi* | [**cloneServiceVersion**](docs/VersionApi.md#cloneServiceVersion) | Clone a service version
 *Fastly.VersionApi* | [**createServiceVersion**](docs/VersionApi.md#createServiceVersion) | Create a service version
 *Fastly.VersionApi* | [**deactivateServiceVersion**](docs/VersionApi.md#deactivateServiceVersion) | Deactivate a service version
+*Fastly.VersionApi* | [**deactivateServiceVersionEnvironment**](docs/VersionApi.md#deactivateServiceVersionEnvironment) | Deactivate a service version on an environment
 *Fastly.VersionApi* | [**getServiceVersion**](docs/VersionApi.md#getServiceVersion) | Get a version of a service
 *Fastly.VersionApi* | [**listServiceVersions**](docs/VersionApi.md#listServiceVersions) | List versions of a service
 *Fastly.VersionApi* | [**lockServiceVersion**](docs/VersionApi.md#lockServiceVersion) | Lock a service version
@@ -611,6 +625,8 @@ The fastly-js API client currently does not support the following endpoints:
 - [`/alerts/history`](https://www.fastly.com/documentation/reference/api/observability/alerts/history) (GET)
 - [`/dns/configurations/{dns_configuration_id}`](https://www.fastly.com/documentation/reference/api/) (DELETE, GET, PATCH)
 - [`/dns/configurations`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
+- [`/domains/{domain_id}`](https://www.fastly.com/documentation/reference/api/) (DELETE, GET, PATCH)
+- [`/domains`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
 - [`/notifications/integration-types`](https://developer.fastly.com/reference/api/observability/notification) (GET)
 - [`/notifications/integrations/{integration_id}/rotateSigningKey`](https://developer.fastly.com/reference/api/observability/notification) (POST)
 - [`/notifications/integrations/{integration_id}/signingKey`](https://developer.fastly.com/reference/api/observability/notification) (GET)
@@ -618,12 +634,23 @@ The fastly-js API client currently does not support the following endpoints:
 - [`/notifications/integrations`](https://developer.fastly.com/reference/api/observability/notification) (GET, POST)
 - [`/notifications/mailinglist-confirmations`](https://developer.fastly.com/reference/api/observability/notification) (POST)
 - [`/resources/stores/kv/{store_id}/batch`](https://www.fastly.com/documentation/reference/api/services/resources/kv-store-item) (PUT)
+- [`/security/workspaces/{workspace_id}/events/{event_id}`](https://docs.fastly.com/en/ngwaf/) (GET, PATCH)
+- [`/security/workspaces/{workspace_id}/events`](https://docs.fastly.com/en/ngwaf/) (GET)
+- [`/security/workspaces/{workspace_id}/redactions/{redaction_id}`](https://docs.fastly.com/en/ngwaf/) (DELETE, GET, PATCH)
+- [`/security/workspaces/{workspace_id}/redactions`](https://docs.fastly.com/en/ngwaf/) (GET, POST)
+- [`/security/workspaces/{workspace_id}/requests/{request_id}`](https://docs.fastly.com/en/ngwaf/) (GET)
+- [`/security/workspaces/{workspace_id}/requests`](https://docs.fastly.com/en/ngwaf/) (GET)
+- [`/security/workspaces/{workspace_id}/rules/{rule_id}`](https://docs.fastly.com/en/ngwaf/) (DELETE, GET, PATCH)
+- [`/security/workspaces/{workspace_id}/rules`](https://docs.fastly.com/en/ngwaf/) (GET, POST)
+- [`/security/workspaces/{workspace_id}/timeseries`](https://docs.fastly.com/en/ngwaf/) (GET)
+- [`/security/workspaces/{workspace_id}/virtual-patches/{virtual_patch_id}`](https://docs.fastly.com/en/ngwaf/) (GET, PATCH)
+- [`/security/workspaces/{workspace_id}/virtual-patches`](https://docs.fastly.com/en/ngwaf/) (GET)
+- [`/security/workspaces/{workspace_id}`](https://docs.fastly.com/en/ngwaf/) (DELETE, GET, PATCH)
+- [`/security/workspaces`](https://docs.fastly.com/en/ngwaf/) (GET, POST)
 - [`/tls/activations/{tls_activation_id}`](https://www.fastly.com/documentation/reference/api/tls/mutual-tls/activations) (GET, PATCH)
 - [`/tls/activations`](https://www.fastly.com/documentation/reference/api/tls/mutual-tls/activations) (GET)
 - [`/tls/configurations/{tls_configuration_id}`](https://www.fastly.com/documentation/reference/api/) (DELETE, GET, PATCH)
 - [`/tls/configurations`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
-- [`/tls/preview/domains/{domain_id}`](https://www.fastly.com/documentation/reference/api/) (GET, PATCH)
-- [`/tls/preview/domains`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
 - [`/v1/channel/{service_id}/ts/h/limit/{max_entries}`](https://www.fastly.com/documentation/reference/api/metrics-stats/origin-insights) (GET)
 - [`/v1/channel/{service_id}/ts/h`](https://www.fastly.com/documentation/reference/api/metrics-stats/origin-insights) (GET)
 - [`/v1/channel/{service_id}/ts/{start_timestamp}`](https://www.fastly.com/documentation/reference/api/metrics-stats/origin-insights) (GET)

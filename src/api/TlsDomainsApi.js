@@ -17,7 +17,7 @@ import TlsDomainsResponse from '../model/TlsDomainsResponse';
 /**
 * TlsDomains service.
 * @module api/TlsDomainsApi
-* @version 7.8.0
+* @version 7.9.0
 */
 export default class TlsDomainsApi {
 
@@ -44,9 +44,9 @@ export default class TlsDomainsApi {
      * @param {String} [options.filter_tls_certificates_id] - Optional. Limit the returned domains to those listed in the given TLS certificate's SAN list.
      * @param {String} [options.filter_tls_subscriptions_id] - Optional. Limit the returned domains to those for a given TLS subscription.
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_activations`, `tls_certificates`, `tls_subscriptions`, `tls_subscriptions.tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, and `tls_authorizations.self_managed_http_challenge`. 
+     * @param {module:model/String} [options.sort='id'] - The order in which to list the results.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsDomainsResponse} and HTTP response
      */
     listTlsDomainsWithHttpInfo(options = {}) {
@@ -61,9 +61,9 @@ export default class TlsDomainsApi {
         'filter[tls_certificates.id]': options['filter_tls_certificates_id'],
         'filter[tls_subscriptions.id]': options['filter_tls_subscriptions_id'],
         'include': options['include'],
+        'sort': options['sort'],
         'page[number]': options['page_number'],
-        'page[size]': options['page_size'],
-        'sort': options['sort']
+        'page[size]': options['page_size']
       };
       let headerParams = {
       };
@@ -97,9 +97,9 @@ export default class TlsDomainsApi {
      * @param {String} [options.filter_tls_certificates_id] - Optional. Limit the returned domains to those listed in the given TLS certificate's SAN list.
      * @param {String} [options.filter_tls_subscriptions_id] - Optional. Limit the returned domains to those for a given TLS subscription.
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_activations`, `tls_certificates`, `tls_subscriptions`, `tls_subscriptions.tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, and `tls_authorizations.self_managed_http_challenge`. 
+     * @param {module:model/String} [options.sort='id'] - The order in which to list the results.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsDomainsResponse}
      */
     listTlsDomains(options = {}) {

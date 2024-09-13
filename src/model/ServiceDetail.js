@@ -11,6 +11,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import Environment from './Environment';
 import SchemasVersionResponse from './SchemasVersionResponse';
 import ServiceDetailAllOf from './ServiceDetailAllOf';
 import ServiceResponse from './ServiceResponse';
@@ -20,7 +21,7 @@ import ServiceVersionDetailOrNull from './ServiceVersionDetailOrNull';
 /**
  * The ServiceDetail model module.
  * @module model/ServiceDetail
- * @version 7.8.0
+ * @version 7.9.0
  */
 class ServiceDetail {
     /**
@@ -87,6 +88,9 @@ class ServiceDetail {
             }
             if (data.hasOwnProperty('versions')) {
                 obj['versions'] = ApiClient.convertToType(data['versions'], [SchemasVersionResponse]);
+            }
+            if (data.hasOwnProperty('environments')) {
+                obj['environments'] = ApiClient.convertToType(data['environments'], [Environment]);
             }
             if (data.hasOwnProperty('active_version')) {
                 obj['active_version'] = ServiceVersionDetailOrNull.constructFromObject(data['active_version']);
@@ -167,6 +171,12 @@ ServiceDetail.prototype['paused'] = undefined;
 ServiceDetail.prototype['versions'] = undefined;
 
 /**
+ * A list of environments where the service has been deployed.
+ * @member {Array.<module:model/Environment>} environments
+ */
+ServiceDetail.prototype['environments'] = undefined;
+
+/**
  * @member {module:model/ServiceVersionDetailOrNull} active_version
  */
 ServiceDetail.prototype['active_version'] = undefined;
@@ -232,6 +242,11 @@ ServiceResponse.prototype['paused'] = undefined;
  * @member {Array.<module:model/SchemasVersionResponse>} versions
  */
 ServiceResponse.prototype['versions'] = undefined;
+/**
+ * A list of environments where the service has been deployed.
+ * @member {Array.<module:model/Environment>} environments
+ */
+ServiceResponse.prototype['environments'] = undefined;
 // Implement ServiceDetailAllOf interface:
 /**
  * @member {module:model/ServiceVersionDetailOrNull} active_version

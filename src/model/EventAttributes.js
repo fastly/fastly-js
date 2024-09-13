@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The EventAttributes model module.
  * @module model/EventAttributes
- * @version 7.8.0
+ * @version 7.9.0
  */
 class EventAttributes {
     /**
@@ -515,6 +515,84 @@ EventAttributes['EventTypeEnum'] = {
      * @const
      */
     "rule_status.upsert": "rule_status.upsert",
+
+    /**
+     * value: "security.workspace.create"
+     * @const
+     */
+    "security.workspace.create": "security.workspace.create",
+
+    /**
+     * value: "security.workspace.update"
+     * @const
+     */
+    "security.workspace.update": "security.workspace.update",
+
+    /**
+     * value: "security.workspace.delete"
+     * @const
+     */
+    "security.workspace.delete": "security.workspace.delete",
+
+    /**
+     * value: "security.redaction.create"
+     * @const
+     */
+    "security.redaction.create": "security.redaction.create",
+
+    /**
+     * value: "security.redaction.update"
+     * @const
+     */
+    "security.redaction.update": "security.redaction.update",
+
+    /**
+     * value: "security.redaction.delete"
+     * @const
+     */
+    "security.redaction.delete": "security.redaction.delete",
+
+    /**
+     * value: "security.rule.create"
+     * @const
+     */
+    "security.rule.create": "security.rule.create",
+
+    /**
+     * value: "security.rule.update"
+     * @const
+     */
+    "security.rule.update": "security.rule.update",
+
+    /**
+     * value: "security.rule.delete"
+     * @const
+     */
+    "security.rule.delete": "security.rule.delete",
+
+    /**
+     * value: "security.virtual_patch.create"
+     * @const
+     */
+    "security.virtual_patch.create": "security.virtual_patch.create",
+
+    /**
+     * value: "security.virtual_patch.update"
+     * @const
+     */
+    "security.virtual_patch.update": "security.virtual_patch.update",
+
+    /**
+     * value: "security.virtual_patch.delete"
+     * @const
+     */
+    "security.virtual_patch.delete": "security.virtual_patch.delete",
+
+    /**
+     * value: "security.event.update"
+     * @const
+     */
+    "security.event.update": "security.event.update",
 
     /**
      * value: "server.create"

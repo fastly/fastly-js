@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 ## `listTlsCerts`
 
 ```javascript
-listTlsCerts({ , [filter_in_use, ][filter_not_after, ][filter_tls_domains_id, ][include, ][page_number, ][page_size, ][sort] })
+listTlsCerts({ , [filter_in_use, ][filter_not_after, ][filter_tls_domains_id, ][include, ][sort, ][page_number, ][page_size] })
 ```
 
 List all TLS certificates.
@@ -174,9 +174,9 @@ const options = {
   filter_not_after: "filter_not_after_example",
   filter_tls_domains_id: "filter_tls_domains_id_example",
   include: "include_example",
+  sort: "created_at",
   page_number: 1,
   page_size: 20,
-  sort: "created_at",
 };
 
 apiInstance.listTlsCerts(options)
@@ -196,9 +196,9 @@ Name | Type | Description  | Notes
 **filter_not_after** | **String** | Limit the returned certificates to those that expire prior to the specified date in UTC. Accepts parameters: lte (e.g., filter[not_after][lte]&#x3D;2020-05-05).  | [optional]
 **filter_tls_domains_id** | **String** | Limit the returned certificates to those that include the specific domain. | [optional]
 **include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: `tls_activations`.  | [optional]
+**sort** | **String** | The order in which to list the results. | [optional] [one of: "created_at", "-created_at", "not_before", "-not_before", "not_after", "-not_after", "tls_activations.created_at", "-tls_activations.created_at"]
 **page_number** | **Number** | Current page. | [optional]
 **page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
-**sort** | **String** | The order in which to list the results by creation date. | [optional] [one of: "created_at", "-created_at"]
 
 ### Return type
 

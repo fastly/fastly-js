@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 ## `listTlsSubs`
 
 ```javascript
-listTlsSubs({ , [filter_state, ][filter_tls_domains_id, ][filter_has_active_order, ][filter_certificate_authority, ][include, ][page_number, ][page_size, ][sort] })
+listTlsSubs({ , [filter_state, ][filter_tls_domains_id, ][filter_has_active_order, ][filter_certificate_authority, ][sort, ][include, ][page_number, ][page_size] })
 ```
 
 List all TLS subscriptions.
@@ -222,10 +222,10 @@ const options = {
   filter_tls_domains_id: "filter_tls_domains_id_example",
   filter_has_active_order: true,
   filter_certificate_authority: "filter_certificate_authority_example",
+  sort: "created_at",
   include: tls_authorizations,
   page_number: 1,
   page_size: 20,
-  sort: "created_at",
 };
 
 apiInstance.listTlsSubs(options)
@@ -245,10 +245,10 @@ Name | Type | Description  | Notes
 **filter_tls_domains_id** | **String** | Limit the returned subscriptions to those that include the specific domain. | [optional]
 **filter_has_active_order** | **Boolean** | Limit the returned subscriptions to those that have currently active orders. Permitted values: `true`.  | [optional]
 **filter_certificate_authority** | **String** | Limit the returned subscriptions to a specific certification authority. Values may include `certainly`, `lets-encrypt`, or `globalsign`.  | [optional]
+**sort** | **String** | The order in which to list the results. | [optional] [one of: "created_at", "-created_at", "tls_certificates.not_after", "-tls_certificates.not_after"]
 **include** | **String** | Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, `tls_authorizations.self_managed_http_challenge`, and `tls_certificates`.  | [optional]
 **page_number** | **Number** | Current page. | [optional]
 **page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
-**sort** | **String** | The order in which to list the results by creation date. | [optional] [one of: "created_at", "-created_at"]
 
 ### Return type
 

@@ -16,7 +16,7 @@ import RealtimeMeasurements from './RealtimeMeasurements';
 /**
  * The RealtimeEntryAggregated model module.
  * @module model/RealtimeEntryAggregated
- * @version 7.8.0
+ * @version 7.9.0
  */
 class RealtimeEntryAggregated {
     /**
@@ -796,6 +796,9 @@ class RealtimeEntryAggregated {
             }
             if (data.hasOwnProperty('origin_offload')) {
                 obj['origin_offload'] = ApiClient.convertToType(data['origin_offload'], 'Number');
+            }
+            if (data.hasOwnProperty('request_denied_get_head_body')) {
+                obj['request_denied_get_head_body'] = ApiClient.convertToType(data['request_denied_get_head_body'], 'Number');
             }
         }
         return obj;
@@ -2298,6 +2301,12 @@ RealtimeEntryAggregated.prototype['all_status_5xx'] = undefined;
  */
 RealtimeEntryAggregated.prototype['origin_offload'] = undefined;
 
+/**
+ * Number of requests where Fastly responded with 400 due to the request being a GET or HEAD request containing a body.
+ * @member {Number} request_denied_get_head_body
+ */
+RealtimeEntryAggregated.prototype['request_denied_get_head_body'] = undefined;
+
 
 // Implement RealtimeMeasurements interface:
 /**
@@ -3545,6 +3554,11 @@ RealtimeMeasurements.prototype['all_status_5xx'] = undefined;
  * @member {Number} origin_offload
  */
 RealtimeMeasurements.prototype['origin_offload'] = undefined;
+/**
+ * Number of requests where Fastly responded with 400 due to the request being a GET or HEAD request containing a body.
+ * @member {Number} request_denied_get_head_body
+ */
+RealtimeMeasurements.prototype['request_denied_get_head_body'] = undefined;
 
 
 

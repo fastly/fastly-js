@@ -13,19 +13,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The OriginInspectorRealtimeEntryRecorded model module.
- * @module model/OriginInspectorRealtimeEntryRecorded
- * @version 7.8.0
+ * The ConfiguredProductResponseProduct model module.
+ * @module model/ConfiguredProductResponseProduct
+ * @version 7.9.0
  */
-class OriginInspectorRealtimeEntryRecorded {
+class ConfiguredProductResponseProduct {
     /**
-     * Constructs a new <code>OriginInspectorRealtimeEntryRecorded</code>.
-     * The Unix timestamp at which this record&#39;s data was generated.
-     * @alias module:model/OriginInspectorRealtimeEntryRecorded
+     * Constructs a new <code>ConfiguredProductResponseProduct</code>.
+     * @alias module:model/ConfiguredProductResponseProduct
      */
     constructor() { 
         
-        OriginInspectorRealtimeEntryRecorded.initialize(this);
+        ConfiguredProductResponseProduct.initialize(this);
     }
 
     /**
@@ -37,16 +36,22 @@ class OriginInspectorRealtimeEntryRecorded {
     }
 
     /**
-     * Constructs a <code>OriginInspectorRealtimeEntryRecorded</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>ConfiguredProductResponseProduct</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/OriginInspectorRealtimeEntryRecorded} obj Optional instance to populate.
-     * @return {module:model/OriginInspectorRealtimeEntryRecorded} The populated <code>OriginInspectorRealtimeEntryRecorded</code> instance.
+     * @param {module:model/ConfiguredProductResponseProduct} obj Optional instance to populate.
+     * @return {module:model/ConfiguredProductResponseProduct} The populated <code>ConfiguredProductResponseProduct</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new OriginInspectorRealtimeEntryRecorded();
+            obj = obj || new ConfiguredProductResponseProduct();
 
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
+            if (data.hasOwnProperty('object')) {
+                obj['object'] = ApiClient.convertToType(data['object'], 'String');
+            }
         }
         return obj;
     }
@@ -54,10 +59,22 @@ class OriginInspectorRealtimeEntryRecorded {
 
 }
 
+/**
+ * Product identifier
+ * @member {String} id
+ */
+ConfiguredProductResponseProduct.prototype['id'] = undefined;
+
+/**
+ * Name of the object
+ * @member {String} object
+ */
+ConfiguredProductResponseProduct.prototype['object'] = undefined;
 
 
 
 
 
-export default OriginInspectorRealtimeEntryRecorded;
+
+export default ConfiguredProductResponseProduct;
 

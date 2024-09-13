@@ -16,6 +16,7 @@ import CacheSettingResponse from './CacheSettingResponse';
 import ConditionResponse from './ConditionResponse';
 import Director from './Director';
 import DomainResponse from './DomainResponse';
+import Environment from './Environment';
 import GzipResponse from './GzipResponse';
 import HeaderResponse from './HeaderResponse';
 import HealthcheckResponse from './HealthcheckResponse';
@@ -30,7 +31,7 @@ import VersionDetailSettings from './VersionDetailSettings';
 /**
  * The ServiceVersionDetail model module.
  * @module model/ServiceVersionDetail
- * @version 7.8.0
+ * @version 7.9.0
  */
 class ServiceVersionDetail {
     /**
@@ -97,6 +98,9 @@ class ServiceVersionDetail {
             }
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
+            }
+            if (data.hasOwnProperty('environments')) {
+                obj['environments'] = ApiClient.convertToType(data['environments'], [Environment]);
             }
             if (data.hasOwnProperty('backends')) {
                 obj['backends'] = ApiClient.convertToType(data['backends'], [BackendResponse]);
@@ -215,6 +219,12 @@ ServiceVersionDetail.prototype['updated_at'] = undefined;
  * @member {String} service_id
  */
 ServiceVersionDetail.prototype['service_id'] = undefined;
+
+/**
+ * A list of environments where the service has been deployed.
+ * @member {Array.<module:model/Environment>} environments
+ */
+ServiceVersionDetail.prototype['environments'] = undefined;
 
 /**
  * List of backends associated to this service.
@@ -359,6 +369,11 @@ SchemasVersionResponse.prototype['updated_at'] = undefined;
  * @member {String} service_id
  */
 SchemasVersionResponse.prototype['service_id'] = undefined;
+/**
+ * A list of environments where the service has been deployed.
+ * @member {Array.<module:model/Environment>} environments
+ */
+SchemasVersionResponse.prototype['environments'] = undefined;
 // Implement VersionDetail interface:
 /**
  * List of backends associated to this service.

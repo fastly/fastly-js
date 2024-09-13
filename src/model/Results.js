@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Results model module.
  * @module model/Results
- * @version 7.8.0
+ * @version 7.9.0
  */
 class Results {
     /**
@@ -793,6 +793,9 @@ class Results {
             }
             if (data.hasOwnProperty('origin_offload')) {
                 obj['origin_offload'] = ApiClient.convertToType(data['origin_offload'], 'Number');
+            }
+            if (data.hasOwnProperty('request_denied_get_head_body')) {
+                obj['request_denied_get_head_body'] = ApiClient.convertToType(data['request_denied_get_head_body'], 'Number');
             }
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
@@ -2300,6 +2303,12 @@ Results.prototype['all_status_5xx'] = undefined;
  * @member {Number} origin_offload
  */
 Results.prototype['origin_offload'] = undefined;
+
+/**
+ * Number of requests where Fastly responded with 400 due to the request being a GET or HEAD request containing a body.
+ * @member {Number} request_denied_get_head_body
+ */
+Results.prototype['request_denied_get_head_body'] = undefined;
 
 /**
  * @member {String} service_id

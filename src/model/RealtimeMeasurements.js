@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The RealtimeMeasurements model module.
  * @module model/RealtimeMeasurements
- * @version 7.8.0
+ * @version 7.9.0
  */
 class RealtimeMeasurements {
     /**
@@ -793,6 +793,9 @@ class RealtimeMeasurements {
             }
             if (data.hasOwnProperty('origin_offload')) {
                 obj['origin_offload'] = ApiClient.convertToType(data['origin_offload'], 'Number');
+            }
+            if (data.hasOwnProperty('request_denied_get_head_body')) {
+                obj['request_denied_get_head_body'] = ApiClient.convertToType(data['request_denied_get_head_body'], 'Number');
             }
         }
         return obj;
@@ -2294,6 +2297,12 @@ RealtimeMeasurements.prototype['all_status_5xx'] = undefined;
  * @member {Number} origin_offload
  */
 RealtimeMeasurements.prototype['origin_offload'] = undefined;
+
+/**
+ * Number of requests where Fastly responded with 400 due to the request being a GET or HEAD request containing a body.
+ * @member {Number} request_denied_get_head_body
+ */
+RealtimeMeasurements.prototype['request_denied_get_head_body'] = undefined;
 
 
 

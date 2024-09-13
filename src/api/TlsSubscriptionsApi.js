@@ -19,7 +19,7 @@ import TlsSubscriptionsResponse from '../model/TlsSubscriptionsResponse';
 /**
 * TlsSubscriptions service.
 * @module api/TlsSubscriptionsApi
-* @version 7.8.0
+* @version 7.9.0
 */
 export default class TlsSubscriptionsApi {
 
@@ -360,10 +360,10 @@ export default class TlsSubscriptionsApi {
      * @param {String} [options.filter_tls_domains_id] - Limit the returned subscriptions to those that include the specific domain.
      * @param {Boolean} [options.filter_has_active_order] - Limit the returned subscriptions to those that have currently active orders. Permitted values: `true`. 
      * @param {String} [options.filter_certificate_authority] - Limit the returned subscriptions to a specific certification authority. Values may include `certainly`, `lets-encrypt`, or `globalsign`. 
+     * @param {module:model/String} [options.sort='-created_at'] - The order in which to list the results.
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, `tls_authorizations.self_managed_http_challenge`, and `tls_certificates`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsSubscriptionsResponse} and HTTP response
      */
     listTlsSubsWithHttpInfo(options = {}) {
@@ -378,10 +378,10 @@ export default class TlsSubscriptionsApi {
         'filter[tls_domains.id]': options['filter_tls_domains_id'],
         'filter[has_active_order]': options['filter_has_active_order'],
         'filter[certificate_authority]': options['filter_certificate_authority'],
+        'sort': options['sort'],
         'include': options['include'],
         'page[number]': options['page_number'],
-        'page[size]': options['page_size'],
-        'sort': options['sort']
+        'page[size]': options['page_size']
       };
       let headerParams = {
       };
@@ -415,10 +415,10 @@ export default class TlsSubscriptionsApi {
      * @param {String} [options.filter_tls_domains_id] - Limit the returned subscriptions to those that include the specific domain.
      * @param {Boolean} [options.filter_has_active_order] - Limit the returned subscriptions to those that have currently active orders. Permitted values: `true`. 
      * @param {String} [options.filter_certificate_authority] - Limit the returned subscriptions to a specific certification authority. Values may include `certainly`, `lets-encrypt`, or `globalsign`. 
+     * @param {module:model/String} [options.sort='-created_at'] - The order in which to list the results.
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_authorizations`, `tls_authorizations.globalsign_email_challenge`, `tls_authorizations.self_managed_http_challenge`, and `tls_certificates`. 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsSubscriptionsResponse}
      */
     listTlsSubs(options = {}) {

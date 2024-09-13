@@ -11,12 +11,13 @@
  */
 
 import ApiClient from '../ApiClient';
+import Environment from './Environment';
 import SchemasVersionResponse from './SchemasVersionResponse';
 
 /**
  * The ServiceResponseAllOf model module.
  * @module model/ServiceResponseAllOf
- * @version 7.8.0
+ * @version 7.9.0
  */
 class ServiceResponseAllOf {
     /**
@@ -59,6 +60,9 @@ class ServiceResponseAllOf {
             if (data.hasOwnProperty('versions')) {
                 obj['versions'] = ApiClient.convertToType(data['versions'], [SchemasVersionResponse]);
             }
+            if (data.hasOwnProperty('environments')) {
+                obj['environments'] = ApiClient.convertToType(data['environments'], [Environment]);
+            }
         }
         return obj;
     }
@@ -88,6 +92,12 @@ ServiceResponseAllOf.prototype['paused'] = undefined;
  * @member {Array.<module:model/SchemasVersionResponse>} versions
  */
 ServiceResponseAllOf.prototype['versions'] = undefined;
+
+/**
+ * A list of environments where the service has been deployed.
+ * @member {Array.<module:model/Environment>} environments
+ */
+ServiceResponseAllOf.prototype['environments'] = undefined;
 
 
 

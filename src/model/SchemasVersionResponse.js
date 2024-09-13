@@ -11,6 +11,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import Environment from './Environment';
 import SchemasVersion from './SchemasVersion';
 import Timestamps from './Timestamps';
 import VersionResponseAllOf from './VersionResponseAllOf';
@@ -18,7 +19,7 @@ import VersionResponseAllOf from './VersionResponseAllOf';
 /**
  * The SchemasVersionResponse model module.
  * @module model/SchemasVersionResponse
- * @version 7.8.0
+ * @version 7.9.0
  */
 class SchemasVersionResponse {
     /**
@@ -87,6 +88,9 @@ class SchemasVersionResponse {
             }
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
+            }
+            if (data.hasOwnProperty('environments')) {
+                obj['environments'] = ApiClient.convertToType(data['environments'], [Environment]);
             }
         }
         return obj;
@@ -164,6 +168,12 @@ SchemasVersionResponse.prototype['updated_at'] = undefined;
  */
 SchemasVersionResponse.prototype['service_id'] = undefined;
 
+/**
+ * A list of environments where the service has been deployed.
+ * @member {Array.<module:model/Environment>} environments
+ */
+SchemasVersionResponse.prototype['environments'] = undefined;
+
 
 // Implement SchemasVersion interface:
 /**
@@ -226,6 +236,11 @@ Timestamps.prototype['updated_at'] = undefined;
  * @member {String} service_id
  */
 VersionResponseAllOf.prototype['service_id'] = undefined;
+/**
+ * A list of environments where the service has been deployed.
+ * @member {Array.<module:model/Environment>} environments
+ */
+VersionResponseAllOf.prototype['environments'] = undefined;
 
 
 

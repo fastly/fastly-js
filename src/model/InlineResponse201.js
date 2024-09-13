@@ -13,19 +13,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The OriginInspectorSubsequentRequestTimestamp model module.
- * @module model/OriginInspectorSubsequentRequestTimestamp
- * @version 7.8.0
+ * The InlineResponse201 model module.
+ * @module model/InlineResponse201
+ * @version 7.9.0
  */
-class OriginInspectorSubsequentRequestTimestamp {
+class InlineResponse201 {
     /**
-     * Constructs a new <code>OriginInspectorSubsequentRequestTimestamp</code>.
-     * Value to use for subsequent requests.
-     * @alias module:model/OriginInspectorSubsequentRequestTimestamp
+     * Constructs a new <code>InlineResponse201</code>.
+     * @alias module:model/InlineResponse201
      */
     constructor() { 
         
-        OriginInspectorSubsequentRequestTimestamp.initialize(this);
+        InlineResponse201.initialize(this);
     }
 
     /**
@@ -37,16 +36,19 @@ class OriginInspectorSubsequentRequestTimestamp {
     }
 
     /**
-     * Constructs a <code>OriginInspectorSubsequentRequestTimestamp</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>InlineResponse201</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/OriginInspectorSubsequentRequestTimestamp} obj Optional instance to populate.
-     * @return {module:model/OriginInspectorSubsequentRequestTimestamp} The populated <code>OriginInspectorSubsequentRequestTimestamp</code> instance.
+     * @param {module:model/InlineResponse201} obj Optional instance to populate.
+     * @return {module:model/InlineResponse201} The populated <code>InlineResponse201</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new OriginInspectorSubsequentRequestTimestamp();
+            obj = obj || new InlineResponse201();
 
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
         }
         return obj;
     }
@@ -54,10 +56,16 @@ class OriginInspectorSubsequentRequestTimestamp {
 
 }
 
+/**
+ * Alphanumeric string identifying the address.
+ * @member {String} id
+ */
+InlineResponse201.prototype['id'] = undefined;
 
 
 
 
 
-export default OriginInspectorSubsequentRequestTimestamp;
+
+export default InlineResponse201;
 

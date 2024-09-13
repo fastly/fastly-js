@@ -16,7 +16,7 @@ import DefaultSettings from './DefaultSettings';
 /**
  * The DefaultSettingsResponse model module.
  * @module model/DefaultSettingsResponse
- * @version 7.8.0
+ * @version 7.9.0
  */
 class DefaultSettingsResponse {
     /**

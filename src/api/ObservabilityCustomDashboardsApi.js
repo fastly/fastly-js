@@ -20,7 +20,7 @@ import UpdateDashboardRequest from '../model/UpdateDashboardRequest';
 /**
 * ObservabilityCustomDashboards service.
 * @module api/ObservabilityCustomDashboardsApi
-* @version 7.8.0
+* @version 7.9.0
 */
 export default class ObservabilityCustomDashboardsApi {
 

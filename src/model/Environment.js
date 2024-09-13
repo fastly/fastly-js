@@ -13,19 +13,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The RecordedTimestamp model module.
- * @module model/RecordedTimestamp
- * @version 7.8.0
+ * The Environment model module.
+ * @module model/Environment
+ * @version 7.9.0
  */
-class RecordedTimestamp {
+class Environment {
     /**
-     * Constructs a new <code>RecordedTimestamp</code>.
-     * The Unix timestamp at which this record&#39;s data was generated.
-     * @alias module:model/RecordedTimestamp
+     * Constructs a new <code>Environment</code>.
+     * @alias module:model/Environment
      */
     constructor() { 
         
-        RecordedTimestamp.initialize(this);
+        Environment.initialize(this);
     }
 
     /**
@@ -37,16 +36,25 @@ class RecordedTimestamp {
     }
 
     /**
-     * Constructs a <code>RecordedTimestamp</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>Environment</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/RecordedTimestamp} obj Optional instance to populate.
-     * @return {module:model/RecordedTimestamp} The populated <code>RecordedTimestamp</code> instance.
+     * @param {module:model/Environment} obj Optional instance to populate.
+     * @return {module:model/Environment} The populated <code>Environment</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new RecordedTimestamp();
+            obj = obj || new Environment();
 
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('service_id')) {
+                obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
+            }
+            if (data.hasOwnProperty('active_version')) {
+                obj['active_version'] = ApiClient.convertToType(data['active_version'], 'Number');
+            }
         }
         return obj;
     }
@@ -54,10 +62,26 @@ class RecordedTimestamp {
 
 }
 
+/**
+ * @member {String} name
+ */
+Environment.prototype['name'] = undefined;
+
+/**
+ * Alphanumeric string identifying the service.
+ * @member {String} service_id
+ */
+Environment.prototype['service_id'] = undefined;
+
+/**
+ * @member {Number} active_version
+ */
+Environment.prototype['active_version'] = undefined;
 
 
 
 
 
-export default RecordedTimestamp;
+
+export default Environment;
 

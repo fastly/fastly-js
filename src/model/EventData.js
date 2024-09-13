@@ -16,7 +16,7 @@ import Event from './Event';
 /**
  * The EventData model module.
  * @module model/EventData
- * @version 7.8.0
+ * @version 7.9.0
  */
 class EventData {
     /**

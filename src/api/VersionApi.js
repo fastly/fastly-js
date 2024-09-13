@@ -12,6 +12,7 @@
 
 
 import ApiClient from "../ApiClient";
+import EnvironmentName from '../model/EnvironmentName';
 import InlineResponse200 from '../model/InlineResponse200';
 import Version from '../model/Version';
 import VersionCreateResponse from '../model/VersionCreateResponse';
@@ -20,7 +21,7 @@ import VersionResponse from '../model/VersionResponse';
 /**
 * Version service.
 * @module api/VersionApi
-* @version 7.8.0
+* @version 7.9.0
 */
 export default class VersionApi {
 
@@ -100,6 +101,78 @@ export default class VersionApi {
      */
     activateServiceVersion(options = {}) {
       return this.activateServiceVersionWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+    /**
+     * Activate a version on a given environment, i.e. \"staging\"
+     * @param {Object} options
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {module:model/EnvironmentName} options.environment_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VersionResponse} and HTTP response
+     */
+    activateServiceVersionEnvironmentWithHttpInfo(options = {}) {
+      let postBody = null;
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
+      }
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
+      }
+      // Verify the required parameter 'environment_name' is set.
+      if (options['environment_name'] === undefined || options['environment_name'] === null) {
+        throw new Error("Missing the required parameter 'environment_name'.");
+      }
+
+      let pathParams = {
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'environment_name': options['environment_name']
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = VersionResponse;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/service/{service_id}/version/{version_id}/activate/{environment_name}', 'PUT',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Activate a version on a given environment, i.e. \"staging\"
+     * @param {Object} options
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {module:model/EnvironmentName} options.environment_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VersionResponse}
+     */
+    activateServiceVersionEnvironment(options = {}) {
+      return this.activateServiceVersionEnvironmentWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -288,6 +361,78 @@ export default class VersionApi {
      */
     deactivateServiceVersion(options = {}) {
       return this.deactivateServiceVersionWithHttpInfo(options)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+    /**
+     * Deactivate the current version on a given environment, i.e. \"staging\"
+     * @param {Object} options
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {module:model/EnvironmentName} options.environment_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/VersionResponse} and HTTP response
+     */
+    deactivateServiceVersionEnvironmentWithHttpInfo(options = {}) {
+      let postBody = null;
+      // Verify the required parameter 'service_id' is set.
+      if (options['service_id'] === undefined || options['service_id'] === null) {
+        throw new Error("Missing the required parameter 'service_id'.");
+      }
+      // Verify the required parameter 'version_id' is set.
+      if (options['version_id'] === undefined || options['version_id'] === null) {
+        throw new Error("Missing the required parameter 'version_id'.");
+      }
+      // Verify the required parameter 'environment_name' is set.
+      if (options['environment_name'] === undefined || options['environment_name'] === null) {
+        throw new Error("Missing the required parameter 'environment_name'.");
+      }
+
+      let pathParams = {
+        'service_id': options['service_id'],
+        'version_id': options['version_id'],
+        'environment_name': options['environment_name']
+      };
+      let pathParamsAllowReserved = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['token'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = VersionResponse;
+      let basePaths = ['https://api.fastly.com'];
+      let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
+      if (typeof options['_base_path_index'] !== 'undefined') {
+        if (options['_base_path_index']  >= basePaths.length || options['_base_path_index'] <  0) {
+          throw new Error("Invalid index " + options['_base_path_index'] + " when selecting the host settings. Must be less than " + basePaths.length);
+        }
+        basePath = basePaths[options['_base_path_index']];
+      }
+
+      return this.apiClient.callApi(
+        '/service/{service_id}/version/{version_id}/deactivate/{environment_name}', 'PUT',
+        pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, basePath
+      );
+    }
+
+    /**
+     * Deactivate the current version on a given environment, i.e. \"staging\"
+     * @param {Object} options
+     * @param {String} options.service_id - Alphanumeric string identifying the service.
+     * @param {Number} options.version_id - Integer identifying a service version.
+     * @param {module:model/EnvironmentName} options.environment_name
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/VersionResponse}
+     */
+    deactivateServiceVersionEnvironment(options = {}) {
+      return this.deactivateServiceVersionEnvironmentWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

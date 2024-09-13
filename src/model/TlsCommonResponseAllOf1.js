@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TlsCommonResponseAllOf1 model module.
  * @module model/TlsCommonResponseAllOf1
- * @version 7.8.0
+ * @version 7.9.0
  */
 class TlsCommonResponseAllOf1 {
     /**

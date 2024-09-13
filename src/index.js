@@ -69,6 +69,13 @@ import BulkWafActiveRules from './model/BulkWafActiveRules';
 import CacheSetting from './model/CacheSetting';
 import CacheSettingResponse from './model/CacheSettingResponse';
 import ClientKey from './model/ClientKey';
+import ComputeAclCreateAclsRequest from './model/ComputeAclCreateAclsRequest';
+import ComputeAclCreateAclsResponse from './model/ComputeAclCreateAclsResponse';
+import ComputeAclListEntries from './model/ComputeAclListEntries';
+import ComputeAclListEntriesItem from './model/ComputeAclListEntriesItem';
+import ComputeAclListEntriesMeta from './model/ComputeAclListEntriesMeta';
+import ComputeAclLookup from './model/ComputeAclLookup';
+import ComputeAclUpdateEntry from './model/ComputeAclUpdateEntry';
 import Condition from './model/Condition';
 import ConditionResponse from './model/ConditionResponse';
 import ConfigStore from './model/ConfigStore';
@@ -78,6 +85,10 @@ import ConfigStoreItemResponse from './model/ConfigStoreItemResponse';
 import ConfigStoreItemResponseAllOf from './model/ConfigStoreItemResponseAllOf';
 import ConfigStoreResponse from './model/ConfigStoreResponse';
 import ConfigStoreResponseAllOf from './model/ConfigStoreResponseAllOf';
+import ConfiguredProductResponse from './model/ConfiguredProductResponse';
+import ConfiguredProductResponseConfiguration from './model/ConfiguredProductResponseConfiguration';
+import ConfiguredProductResponseLinks from './model/ConfiguredProductResponseLinks';
+import ConfiguredProductResponseProduct from './model/ConfiguredProductResponseProduct';
 import Contact from './model/Contact';
 import ContactResponse from './model/ContactResponse';
 import ContactResponseAllOf from './model/ContactResponseAllOf';
@@ -85,6 +96,7 @@ import Content from './model/Content';
 import CreateDashboardRequest from './model/CreateDashboardRequest';
 import CreateResponseObjectRequest from './model/CreateResponseObjectRequest';
 import Customer from './model/Customer';
+import CustomerAddress from './model/CustomerAddress';
 import CustomerResponse from './model/CustomerResponse';
 import CustomerResponseAllOf from './model/CustomerResponseAllOf';
 import Dashboard from './model/Dashboard';
@@ -121,6 +133,8 @@ import EnabledProductResponse from './model/EnabledProductResponse';
 import EnabledProductResponseLinks from './model/EnabledProductResponseLinks';
 import EnabledProductResponseProduct from './model/EnabledProductResponseProduct';
 import EnabledProductResponseService from './model/EnabledProductResponseService';
+import Environment from './model/Environment';
+import EnvironmentName from './model/EnvironmentName';
 import EomInvoiceResponse from './model/EomInvoiceResponse';
 import Error from './model/Error';
 import ErrorResponseData from './model/ErrorResponseData';
@@ -195,6 +209,7 @@ import InlineResponse2004Meta from './model/InlineResponse2004Meta';
 import InlineResponse2005 from './model/InlineResponse2005';
 import InlineResponse2006 from './model/InlineResponse2006';
 import InlineResponse2007 from './model/InlineResponse2007';
+import InlineResponse201 from './model/InlineResponse201';
 import InlineResponse400 from './model/InlineResponse400';
 import Invitation from './model/Invitation';
 import InvitationData from './model/InvitationData';
@@ -216,6 +231,7 @@ import LegacyWafRuleset from './model/LegacyWafRuleset';
 import LegacyWafTag from './model/LegacyWafTag';
 import LegacyWafUpdateStatus from './model/LegacyWafUpdateStatus';
 import LineItemData from './model/LineItemData';
+import ListCustomerAddressesResponse from './model/ListCustomerAddressesResponse';
 import ListDashboardsResponse from './model/ListDashboardsResponse';
 import ListEomInvoicesResponse from './model/ListEomInvoicesResponse';
 import Listinvoices from './model/Listinvoices';
@@ -315,8 +331,6 @@ import OriginInspectorHistoricalMeta from './model/OriginInspectorHistoricalMeta
 import OriginInspectorHistoricalMetaFilters from './model/OriginInspectorHistoricalMetaFilters';
 import OriginInspectorMeasurements from './model/OriginInspectorMeasurements';
 import OriginInspectorRealtimeEntry from './model/OriginInspectorRealtimeEntry';
-import OriginInspectorRealtimeEntryRecorded from './model/OriginInspectorRealtimeEntryRecorded';
-import OriginInspectorSubsequentRequestTimestamp from './model/OriginInspectorSubsequentRequestTimestamp';
 import OriginInspectorValues from './model/OriginInspectorValues';
 import Package from './model/Package';
 import PackageMetadata from './model/PackageMetadata';
@@ -358,7 +372,6 @@ import RealtimeEntry from './model/RealtimeEntry';
 import RealtimeEntryAggregated from './model/RealtimeEntryAggregated';
 import RealtimeEntryRecorded from './model/RealtimeEntryRecorded';
 import RealtimeMeasurements from './model/RealtimeMeasurements';
-import RecordedTimestamp from './model/RecordedTimestamp';
 import RelationshipCommonName from './model/RelationshipCommonName';
 import RelationshipCustomer from './model/RelationshipCustomer';
 import RelationshipCustomerCustomer from './model/RelationshipCustomerCustomer';
@@ -521,6 +534,8 @@ import Serviceusagemetrics from './model/Serviceusagemetrics';
 import ServiceusagemetricsData from './model/ServiceusagemetricsData';
 import Serviceusagetype from './model/Serviceusagetype';
 import Serviceusagetypes from './model/Serviceusagetypes';
+import SetConfiguration from './model/SetConfiguration';
+import SetWorkspaceId from './model/SetWorkspaceId';
 import Settings from './model/Settings';
 import SettingsResponse from './model/SettingsResponse';
 import SigningKey from './model/SigningKey';
@@ -540,7 +555,6 @@ import StarResponseAllOf from './model/StarResponseAllOf';
 import Stats from './model/Stats';
 import Store from './model/Store';
 import StoreResponse from './model/StoreResponse';
-import SubsequentRequestTimestamp from './model/SubsequentRequestTimestamp';
 import SudoGenericTokenError from './model/SudoGenericTokenError';
 import SudoRequest from './model/SudoRequest';
 import SudoResponse from './model/SudoResponse';
@@ -738,6 +752,7 @@ import WafTagsResponseDataItem from './model/WafTagsResponseDataItem';
 import WsMessageFormat from './model/WsMessageFormat';
 import AclApi from './api/AclApi';
 import AclEntryApi from './api/AclEntryApi';
+import AclsInComputeApi from './api/AclsInComputeApi';
 import ApexRedirectApi from './api/ApexRedirectApi';
 import AutomationTokensApi from './api/AutomationTokensApi';
 import BackendApi from './api/BackendApi';
@@ -752,6 +767,7 @@ import ConfigStoreItemApi from './api/ConfigStoreItemApi';
 import ContactApi from './api/ContactApi';
 import ContentApi from './api/ContentApi';
 import CustomerApi from './api/CustomerApi';
+import CustomerAddressesApi from './api/CustomerAddressesApi';
 import DictionaryApi from './api/DictionaryApi';
 import DictionaryInfoApi from './api/DictionaryInfoApi';
 import DictionaryItemApi from './api/DictionaryItemApi';
@@ -893,7 +909,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 7.8.0
+* @version 7.9.0
 */
 export {
     /**
@@ -1245,6 +1261,48 @@ export {
     ClientKey,
 
     /**
+     * The ComputeAclCreateAclsRequest model constructor.
+     * @property {module:model/ComputeAclCreateAclsRequest}
+     */
+    ComputeAclCreateAclsRequest,
+
+    /**
+     * The ComputeAclCreateAclsResponse model constructor.
+     * @property {module:model/ComputeAclCreateAclsResponse}
+     */
+    ComputeAclCreateAclsResponse,
+
+    /**
+     * The ComputeAclListEntries model constructor.
+     * @property {module:model/ComputeAclListEntries}
+     */
+    ComputeAclListEntries,
+
+    /**
+     * The ComputeAclListEntriesItem model constructor.
+     * @property {module:model/ComputeAclListEntriesItem}
+     */
+    ComputeAclListEntriesItem,
+
+    /**
+     * The ComputeAclListEntriesMeta model constructor.
+     * @property {module:model/ComputeAclListEntriesMeta}
+     */
+    ComputeAclListEntriesMeta,
+
+    /**
+     * The ComputeAclLookup model constructor.
+     * @property {module:model/ComputeAclLookup}
+     */
+    ComputeAclLookup,
+
+    /**
+     * The ComputeAclUpdateEntry model constructor.
+     * @property {module:model/ComputeAclUpdateEntry}
+     */
+    ComputeAclUpdateEntry,
+
+    /**
      * The Condition model constructor.
      * @property {module:model/Condition}
      */
@@ -1299,6 +1357,30 @@ export {
     ConfigStoreResponseAllOf,
 
     /**
+     * The ConfiguredProductResponse model constructor.
+     * @property {module:model/ConfiguredProductResponse}
+     */
+    ConfiguredProductResponse,
+
+    /**
+     * The ConfiguredProductResponseConfiguration model constructor.
+     * @property {module:model/ConfiguredProductResponseConfiguration}
+     */
+    ConfiguredProductResponseConfiguration,
+
+    /**
+     * The ConfiguredProductResponseLinks model constructor.
+     * @property {module:model/ConfiguredProductResponseLinks}
+     */
+    ConfiguredProductResponseLinks,
+
+    /**
+     * The ConfiguredProductResponseProduct model constructor.
+     * @property {module:model/ConfiguredProductResponseProduct}
+     */
+    ConfiguredProductResponseProduct,
+
+    /**
      * The Contact model constructor.
      * @property {module:model/Contact}
      */
@@ -1339,6 +1421,12 @@ export {
      * @property {module:model/Customer}
      */
     Customer,
+
+    /**
+     * The CustomerAddress model constructor.
+     * @property {module:model/CustomerAddress}
+     */
+    CustomerAddress,
 
     /**
      * The CustomerResponse model constructor.
@@ -1555,6 +1643,18 @@ export {
      * @property {module:model/EnabledProductResponseService}
      */
     EnabledProductResponseService,
+
+    /**
+     * The Environment model constructor.
+     * @property {module:model/Environment}
+     */
+    Environment,
+
+    /**
+     * The EnvironmentName model constructor.
+     * @property {module:model/EnvironmentName}
+     */
+    EnvironmentName,
 
     /**
      * The EomInvoiceResponse model constructor.
@@ -2001,6 +2101,12 @@ export {
     InlineResponse2007,
 
     /**
+     * The InlineResponse201 model constructor.
+     * @property {module:model/InlineResponse201}
+     */
+    InlineResponse201,
+
+    /**
      * The InlineResponse400 model constructor.
      * @property {module:model/InlineResponse400}
      */
@@ -2125,6 +2231,12 @@ export {
      * @property {module:model/LineItemData}
      */
     LineItemData,
+
+    /**
+     * The ListCustomerAddressesResponse model constructor.
+     * @property {module:model/ListCustomerAddressesResponse}
+     */
+    ListCustomerAddressesResponse,
 
     /**
      * The ListDashboardsResponse model constructor.
@@ -2721,18 +2833,6 @@ export {
     OriginInspectorRealtimeEntry,
 
     /**
-     * The OriginInspectorRealtimeEntryRecorded model constructor.
-     * @property {module:model/OriginInspectorRealtimeEntryRecorded}
-     */
-    OriginInspectorRealtimeEntryRecorded,
-
-    /**
-     * The OriginInspectorSubsequentRequestTimestamp model constructor.
-     * @property {module:model/OriginInspectorSubsequentRequestTimestamp}
-     */
-    OriginInspectorSubsequentRequestTimestamp,
-
-    /**
      * The OriginInspectorValues model constructor.
      * @property {module:model/OriginInspectorValues}
      */
@@ -2977,12 +3077,6 @@ export {
      * @property {module:model/RealtimeMeasurements}
      */
     RealtimeMeasurements,
-
-    /**
-     * The RecordedTimestamp model constructor.
-     * @property {module:model/RecordedTimestamp}
-     */
-    RecordedTimestamp,
 
     /**
      * The RelationshipCommonName model constructor.
@@ -3957,6 +4051,18 @@ export {
     Serviceusagetypes,
 
     /**
+     * The SetConfiguration model constructor.
+     * @property {module:model/SetConfiguration}
+     */
+    SetConfiguration,
+
+    /**
+     * The SetWorkspaceId model constructor.
+     * @property {module:model/SetWorkspaceId}
+     */
+    SetWorkspaceId,
+
+    /**
      * The Settings model constructor.
      * @property {module:model/Settings}
      */
@@ -4069,12 +4175,6 @@ export {
      * @property {module:model/StoreResponse}
      */
     StoreResponse,
-
-    /**
-     * The SubsequentRequestTimestamp model constructor.
-     * @property {module:model/SubsequentRequestTimestamp}
-     */
-    SubsequentRequestTimestamp,
 
     /**
      * The SudoGenericTokenError model constructor.
@@ -5259,6 +5359,12 @@ export {
     AclEntryApi,
 
     /**
+    * The AclsInComputeApi service constructor.
+    * @property {module:api/AclsInComputeApi}
+    */
+    AclsInComputeApi,
+
+    /**
     * The ApexRedirectApi service constructor.
     * @property {module:api/ApexRedirectApi}
     */
@@ -5341,6 +5447,12 @@ export {
     * @property {module:api/CustomerApi}
     */
     CustomerApi,
+
+    /**
+    * The CustomerAddressesApi service constructor.
+    * @property {module:api/CustomerAddressesApi}
+    */
+    CustomerAddressesApi,
 
     /**
     * The DictionaryApi service constructor.

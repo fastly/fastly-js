@@ -11,9 +11,11 @@ const apiInstance = new Fastly.VersionApi();
 Method | HTTP request | Description
 ------ | ------------ | -----------
 [**activateServiceVersion**](VersionApi.md#activateServiceVersion) | **PUT** /service/{service_id}/version/{version_id}/activate | Activate a service version
+[**activateServiceVersionEnvironment**](VersionApi.md#activateServiceVersionEnvironment) | **PUT** /service/{service_id}/version/{version_id}/activate/{environment_name} | Activate a service version on the specified environment
 [**cloneServiceVersion**](VersionApi.md#cloneServiceVersion) | **PUT** /service/{service_id}/version/{version_id}/clone | Clone a service version
 [**createServiceVersion**](VersionApi.md#createServiceVersion) | **POST** /service/{service_id}/version | Create a service version
 [**deactivateServiceVersion**](VersionApi.md#deactivateServiceVersion) | **PUT** /service/{service_id}/version/{version_id}/deactivate | Deactivate a service version
+[**deactivateServiceVersionEnvironment**](VersionApi.md#deactivateServiceVersionEnvironment) | **PUT** /service/{service_id}/version/{version_id}/deactivate/{environment_name} | Deactivate a service version on an environment
 [**getServiceVersion**](VersionApi.md#getServiceVersion) | **GET** /service/{service_id}/version/{version_id} | Get a version of a service
 [**listServiceVersions**](VersionApi.md#listServiceVersions) | **GET** /service/{service_id}/version | List versions of a service
 [**lockServiceVersion**](VersionApi.md#lockServiceVersion) | **PUT** /service/{service_id}/version/{version_id}/lock | Lock a service version
@@ -52,6 +54,45 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** | Alphanumeric string identifying the service. |
 **version_id** | **Number** | Integer identifying a service version. |
+
+### Return type
+
+[**VersionResponse**](VersionResponse.md)
+
+
+## `activateServiceVersionEnvironment`
+
+```javascript
+activateServiceVersionEnvironment({ service_id, version_id, environment_name })
+```
+
+Activate a version on a given environment, i.e. \"staging\"
+
+### Example
+
+```javascript
+const options = {
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  environment_name: new Fastly.EnvironmentName(), // required
+};
+
+apiInstance.activateServiceVersionEnvironment(options)
+  .then((data) => {
+    console.log(data, "API called successfully.");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**environment_name** | [**EnvironmentName**](.md) |  |
 
 ### Return type
 
@@ -161,6 +202,45 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** | Alphanumeric string identifying the service. |
 **version_id** | **Number** | Integer identifying a service version. |
+
+### Return type
+
+[**VersionResponse**](VersionResponse.md)
+
+
+## `deactivateServiceVersionEnvironment`
+
+```javascript
+deactivateServiceVersionEnvironment({ service_id, version_id, environment_name })
+```
+
+Deactivate the current version on a given environment, i.e. \"staging\"
+
+### Example
+
+```javascript
+const options = {
+  service_id: "service_id_example", // required
+  version_id: 56, // required
+  environment_name: new Fastly.EnvironmentName(), // required
+};
+
+apiInstance.deactivateServiceVersionEnvironment(options)
+  .then((data) => {
+    console.log(data, "API called successfully.");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**service_id** | **String** | Alphanumeric string identifying the service. |
+**version_id** | **Number** | Integer identifying a service version. |
+**environment_name** | [**EnvironmentName**](.md) |  |
 
 ### Return type
 

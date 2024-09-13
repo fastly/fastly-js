@@ -12,12 +12,11 @@
 
 import ApiClient from '../ApiClient';
 import DomainInspectorRealtimeEntry from './DomainInspectorRealtimeEntry';
-import SubsequentRequestTimestamp from './SubsequentRequestTimestamp';
 
 /**
  * The DomainInspector model module.
  * @module model/DomainInspector
- * @version 7.8.0
+ * @version 7.9.0
  */
 class DomainInspector {
     /**
@@ -49,7 +48,7 @@ class DomainInspector {
             obj = obj || new DomainInspector();
 
             if (data.hasOwnProperty('Timestamp')) {
-                obj['Timestamp'] = SubsequentRequestTimestamp.constructFromObject(data['Timestamp']);
+                obj['Timestamp'] = ApiClient.convertToType(data['Timestamp'], 'Number');
             }
             if (data.hasOwnProperty('AggregateDelay')) {
                 obj['AggregateDelay'] = ApiClient.convertToType(data['AggregateDelay'], 'Number');
@@ -65,7 +64,8 @@ class DomainInspector {
 }
 
 /**
- * @member {module:model/SubsequentRequestTimestamp} Timestamp
+ * Value to use for subsequent requests.
+ * @member {Number} Timestamp
  */
 DomainInspector.prototype['Timestamp'] = undefined;
 

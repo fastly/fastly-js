@@ -19,7 +19,7 @@ import PlatformDdosResponseAllOf from './PlatformDdosResponseAllOf';
 /**
  * The PlatformDdosResponse model module.
  * @module model/PlatformDdosResponse
- * @version 7.8.0
+ * @version 7.9.0
  */
 class PlatformDdosResponse {
     /**

@@ -12,12 +12,11 @@
 
 import ApiClient from '../ApiClient';
 import DomainInspectorMeasurements from './DomainInspectorMeasurements';
-import RecordedTimestamp from './RecordedTimestamp';
 
 /**
  * The DomainInspectorRealtimeEntry model module.
  * @module model/DomainInspectorRealtimeEntry
- * @version 7.8.0
+ * @version 7.9.0
  */
 class DomainInspectorRealtimeEntry {
     /**
@@ -50,7 +49,7 @@ class DomainInspectorRealtimeEntry {
             obj = obj || new DomainInspectorRealtimeEntry();
 
             if (data.hasOwnProperty('recorded')) {
-                obj['recorded'] = RecordedTimestamp.constructFromObject(data['recorded']);
+                obj['recorded'] = ApiClient.convertToType(data['recorded'], 'Number');
             }
             if (data.hasOwnProperty('aggregated')) {
                 obj['aggregated'] = ApiClient.convertToType(data['aggregated'], {'String': DomainInspectorMeasurements});
@@ -66,7 +65,8 @@ class DomainInspectorRealtimeEntry {
 }
 
 /**
- * @member {module:model/RecordedTimestamp} recorded
+ * The Unix timestamp at which this record's data was generated.
+ * @member {Number} recorded
  */
 DomainInspectorRealtimeEntry.prototype['recorded'] = undefined;
 

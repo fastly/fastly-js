@@ -12,12 +12,11 @@
 
 import ApiClient from '../ApiClient';
 import OriginInspectorRealtimeEntry from './OriginInspectorRealtimeEntry';
-import OriginInspectorSubsequentRequestTimestamp from './OriginInspectorSubsequentRequestTimestamp';
 
 /**
  * The OriginInspector model module.
  * @module model/OriginInspector
- * @version 7.8.0
+ * @version 7.9.0
  */
 class OriginInspector {
     /**
@@ -49,7 +48,7 @@ class OriginInspector {
             obj = obj || new OriginInspector();
 
             if (data.hasOwnProperty('Timestamp')) {
-                obj['Timestamp'] = OriginInspectorSubsequentRequestTimestamp.constructFromObject(data['Timestamp']);
+                obj['Timestamp'] = ApiClient.convertToType(data['Timestamp'], 'Number');
             }
             if (data.hasOwnProperty('AggregateDelay')) {
                 obj['AggregateDelay'] = ApiClient.convertToType(data['AggregateDelay'], 'Number');
@@ -65,7 +64,8 @@ class OriginInspector {
 }
 
 /**
- * @member {module:model/OriginInspectorSubsequentRequestTimestamp} Timestamp
+ * Value to use for subsequent requests.
+ * @member {Number} Timestamp
  */
 OriginInspector.prototype['Timestamp'] = undefined;
 

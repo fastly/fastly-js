@@ -13,19 +13,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The SubsequentRequestTimestamp model module.
- * @module model/SubsequentRequestTimestamp
- * @version 7.8.0
+ * The ComputeAclCreateAclsResponse model module.
+ * @module model/ComputeAclCreateAclsResponse
+ * @version 7.9.0
  */
-class SubsequentRequestTimestamp {
+class ComputeAclCreateAclsResponse {
     /**
-     * Constructs a new <code>SubsequentRequestTimestamp</code>.
-     * Value to use for subsequent requests.
-     * @alias module:model/SubsequentRequestTimestamp
+     * Constructs a new <code>ComputeAclCreateAclsResponse</code>.
+     * @alias module:model/ComputeAclCreateAclsResponse
      */
     constructor() { 
         
-        SubsequentRequestTimestamp.initialize(this);
+        ComputeAclCreateAclsResponse.initialize(this);
     }
 
     /**
@@ -37,16 +36,22 @@ class SubsequentRequestTimestamp {
     }
 
     /**
-     * Constructs a <code>SubsequentRequestTimestamp</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>ComputeAclCreateAclsResponse</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/SubsequentRequestTimestamp} obj Optional instance to populate.
-     * @return {module:model/SubsequentRequestTimestamp} The populated <code>SubsequentRequestTimestamp</code> instance.
+     * @param {module:model/ComputeAclCreateAclsResponse} obj Optional instance to populate.
+     * @return {module:model/ComputeAclCreateAclsResponse} The populated <code>ComputeAclCreateAclsResponse</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new SubsequentRequestTimestamp();
+            obj = obj || new ComputeAclCreateAclsResponse();
 
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
+            }
         }
         return obj;
     }
@@ -54,10 +59,22 @@ class SubsequentRequestTimestamp {
 
 }
 
+/**
+ * Human readable name of store
+ * @member {String} name
+ */
+ComputeAclCreateAclsResponse.prototype['name'] = undefined;
+
+/**
+ * An example identifier (UUID).
+ * @member {String} id
+ */
+ComputeAclCreateAclsResponse.prototype['id'] = undefined;
 
 
 
 
 
-export default SubsequentRequestTimestamp;
+
+export default ComputeAclCreateAclsResponse;
 

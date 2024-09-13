@@ -11,6 +11,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import Environment from './Environment';
 import SchemasVersionResponse from './SchemasVersionResponse';
 import ServiceCreate from './ServiceCreate';
 import ServiceListResponseAllOf from './ServiceListResponseAllOf';
@@ -19,7 +20,7 @@ import Timestamps from './Timestamps';
 /**
  * The ServiceListResponse model module.
  * @module model/ServiceListResponse
- * @version 7.8.0
+ * @version 7.9.0
  */
 class ServiceListResponse {
     /**
@@ -85,6 +86,9 @@ class ServiceListResponse {
             }
             if (data.hasOwnProperty('versions')) {
                 obj['versions'] = ApiClient.convertToType(data['versions'], [SchemasVersionResponse]);
+            }
+            if (data.hasOwnProperty('environments')) {
+                obj['environments'] = ApiClient.convertToType(data['environments'], [Environment]);
             }
         }
         return obj;
@@ -152,6 +156,12 @@ ServiceListResponse.prototype['version'] = undefined;
  */
 ServiceListResponse.prototype['versions'] = undefined;
 
+/**
+ * A list of environments where the service has been deployed.
+ * @member {Array.<module:model/Environment>} environments
+ */
+ServiceListResponse.prototype['environments'] = undefined;
+
 
 // Implement Timestamps interface:
 /**
@@ -205,6 +215,11 @@ ServiceListResponseAllOf.prototype['version'] = undefined;
  * @member {Array.<module:model/SchemasVersionResponse>} versions
  */
 ServiceListResponseAllOf.prototype['versions'] = undefined;
+/**
+ * A list of environments where the service has been deployed.
+ * @member {Array.<module:model/Environment>} environments
+ */
+ServiceListResponseAllOf.prototype['environments'] = undefined;
 
 
 

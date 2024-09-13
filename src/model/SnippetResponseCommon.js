@@ -17,7 +17,7 @@ import Timestamps from './Timestamps';
 /**
  * The SnippetResponseCommon model module.
  * @module model/SnippetResponseCommon
- * @version 7.8.0
+ * @version 7.9.0
  */
 class SnippetResponseCommon {
     /**

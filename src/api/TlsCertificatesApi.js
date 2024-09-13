@@ -20,7 +20,7 @@ import TlsCertificatesResponse from '../model/TlsCertificatesResponse';
 /**
 * TlsCertificates service.
 * @module api/TlsCertificatesApi
-* @version 7.8.0
+* @version 7.9.0
 */
 export default class TlsCertificatesApi {
 
@@ -274,9 +274,9 @@ export default class TlsCertificatesApi {
      * @param {String} [options.filter_not_after] - Limit the returned certificates to those that expire prior to the specified date in UTC. Accepts parameters: lte (e.g., filter[not_after][lte]=2020-05-05). 
      * @param {String} [options.filter_tls_domains_id] - Limit the returned certificates to those that include the specific domain.
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_activations`. 
+     * @param {module:model/String} [options.sort='-created_at'] - The order in which to list the results.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TlsCertificatesResponse} and HTTP response
      */
     listTlsCertsWithHttpInfo(options = {}) {
@@ -291,9 +291,9 @@ export default class TlsCertificatesApi {
         'filter[not_after]': options['filter_not_after'],
         'filter[tls_domains.id]': options['filter_tls_domains_id'],
         'include': options['include'],
+        'sort': options['sort'],
         'page[number]': options['page_number'],
-        'page[size]': options['page_size'],
-        'sort': options['sort']
+        'page[size]': options['page_size']
       };
       let headerParams = {
       };
@@ -327,9 +327,9 @@ export default class TlsCertificatesApi {
      * @param {String} [options.filter_not_after] - Limit the returned certificates to those that expire prior to the specified date in UTC. Accepts parameters: lte (e.g., filter[not_after][lte]=2020-05-05). 
      * @param {String} [options.filter_tls_domains_id] - Limit the returned certificates to those that include the specific domain.
      * @param {String} [options.include] - Include related objects. Optional, comma-separated values. Permitted values: `tls_activations`. 
+     * @param {module:model/String} [options.sort='-created_at'] - The order in which to list the results.
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
-     * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TlsCertificatesResponse}
      */
     listTlsCerts(options = {}) {

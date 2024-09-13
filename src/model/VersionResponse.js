@@ -11,6 +11,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import Environment from './Environment';
 import Timestamps from './Timestamps';
 import Version from './Version';
 import VersionResponseAllOf from './VersionResponseAllOf';
@@ -18,7 +19,7 @@ import VersionResponseAllOf from './VersionResponseAllOf';
 /**
  * The VersionResponse model module.
  * @module model/VersionResponse
- * @version 7.8.0
+ * @version 7.9.0
  */
 class VersionResponse {
     /**
@@ -87,6 +88,9 @@ class VersionResponse {
             }
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
+            }
+            if (data.hasOwnProperty('environments')) {
+                obj['environments'] = ApiClient.convertToType(data['environments'], [Environment]);
             }
         }
         return obj;
@@ -164,6 +168,12 @@ VersionResponse.prototype['updated_at'] = undefined;
  */
 VersionResponse.prototype['service_id'] = undefined;
 
+/**
+ * A list of environments where the service has been deployed.
+ * @member {Array.<module:model/Environment>} environments
+ */
+VersionResponse.prototype['environments'] = undefined;
+
 
 // Implement Version interface:
 /**
@@ -226,6 +236,11 @@ Timestamps.prototype['updated_at'] = undefined;
  * @member {String} service_id
  */
 VersionResponseAllOf.prototype['service_id'] = undefined;
+/**
+ * A list of environments where the service has been deployed.
+ * @member {Array.<module:model/Environment>} environments
+ */
+VersionResponseAllOf.prototype['environments'] = undefined;
 
 
 

@@ -11,11 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import Environment from './Environment';
 
 /**
  * The VersionResponseAllOf model module.
  * @module model/VersionResponseAllOf
- * @version 7.8.0
+ * @version 7.9.0
  */
 class VersionResponseAllOf {
     /**
@@ -49,6 +50,9 @@ class VersionResponseAllOf {
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
             }
+            if (data.hasOwnProperty('environments')) {
+                obj['environments'] = ApiClient.convertToType(data['environments'], [Environment]);
+            }
         }
         return obj;
     }
@@ -60,6 +64,12 @@ class VersionResponseAllOf {
  * @member {String} service_id
  */
 VersionResponseAllOf.prototype['service_id'] = undefined;
+
+/**
+ * A list of environments where the service has been deployed.
+ * @member {Array.<module:model/Environment>} environments
+ */
+VersionResponseAllOf.prototype['environments'] = undefined;
 
 
 
