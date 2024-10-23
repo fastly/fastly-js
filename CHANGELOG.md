@@ -1,5 +1,12 @@
 # Changelog
 
+## [v7.10.0](https://github.com/fastly/fastly-js/releases/tag/release/v7.10.0) (2024-10-23)
+
+**Documentation:**
+
+- doc(javascript): Add example and note to README to help with initialization.
+- doc(backend): Correct spelling in `connect_timeout` and `first_byte_timeout` field descriptions.
+
 ## [v7.9.0](https://github.com/fastly/fastly-js/releases/tag/release/v7.9.0) (2024-09-13)
 
 **Bug fixes:**

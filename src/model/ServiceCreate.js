@@ -17,7 +17,7 @@ import ServiceCreateAllOf from './ServiceCreateAllOf';
 /**
  * The ServiceCreate model module.
  * @module model/ServiceCreate
- * @version 7.9.0
+ * @version 7.10.0
  */
 class ServiceCreate {
     /**

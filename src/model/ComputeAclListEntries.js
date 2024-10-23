@@ -17,7 +17,7 @@ import ComputeAclListEntriesMeta from './ComputeAclListEntriesMeta';
 /**
  * The ComputeAclListEntries model module.
  * @module model/ComputeAclListEntries
- * @version 7.9.0
+ * @version 7.10.0
  */
 class ComputeAclListEntries {
     /**

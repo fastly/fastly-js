@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LineItemData model module.
  * @module model/LineItemData
- * @version 7.9.0
+ * @version 7.10.0
  */
 class LineItemData {
     /**

@@ -16,7 +16,7 @@ import DomainInspectorMeasurements from './DomainInspectorMeasurements';
 /**
  * The DomainInspectorRealtimeEntry model module.
  * @module model/DomainInspectorRealtimeEntry
- * @version 7.9.0
+ * @version 7.10.0
  */
 class DomainInspectorRealtimeEntry {
     /**

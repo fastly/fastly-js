@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The BackendResponse model module.
  * @module model/BackendResponse
- * @version 7.9.0
+ * @version 7.10.0
  */
 class BackendResponse {
     /**
@@ -219,13 +219,13 @@ BackendResponse.prototype['client_cert'] = undefined;
 BackendResponse.prototype['comment'] = undefined;
 
 /**
- * Maximum duration in milliseconds to wait for a connection to this backend to be established. If exceeded, the connection is aborted and a synthethic `503` response will be presented instead. May be set at runtime using `bereq.connect_timeout`.
+ * Maximum duration in milliseconds to wait for a connection to this backend to be established. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.connect_timeout`.
  * @member {Number} connect_timeout
  */
 BackendResponse.prototype['connect_timeout'] = undefined;
 
 /**
- * Maximum duration in milliseconds to wait for the server response to begin after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthethic `503` response will be presented instead. May be set at runtime using `bereq.first_byte_timeout`.
+ * Maximum duration in milliseconds to wait for the server response to begin after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.first_byte_timeout`.
  * @member {Number} first_byte_timeout
  */
 BackendResponse.prototype['first_byte_timeout'] = undefined;
@@ -461,12 +461,12 @@ Backend.prototype['client_cert'] = undefined;
  */
 Backend.prototype['comment'] = undefined;
 /**
- * Maximum duration in milliseconds to wait for a connection to this backend to be established. If exceeded, the connection is aborted and a synthethic `503` response will be presented instead. May be set at runtime using `bereq.connect_timeout`.
+ * Maximum duration in milliseconds to wait for a connection to this backend to be established. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.connect_timeout`.
  * @member {Number} connect_timeout
  */
 Backend.prototype['connect_timeout'] = undefined;
 /**
- * Maximum duration in milliseconds to wait for the server response to begin after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthethic `503` response will be presented instead. May be set at runtime using `bereq.first_byte_timeout`.
+ * Maximum duration in milliseconds to wait for the server response to begin after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.first_byte_timeout`.
  * @member {Number} first_byte_timeout
  */
 Backend.prototype['first_byte_timeout'] = undefined;

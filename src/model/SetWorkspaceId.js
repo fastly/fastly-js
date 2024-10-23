@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SetWorkspaceId model module.
  * @module model/SetWorkspaceId
- * @version 7.9.0
+ * @version 7.10.0
  */
 class SetWorkspaceId {
     /**

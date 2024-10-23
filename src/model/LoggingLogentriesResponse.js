@@ -20,7 +20,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingLogentriesResponse model module.
  * @module model/LoggingLogentriesResponse
- * @version 7.9.0
+ * @version 7.10.0
  */
 class LoggingLogentriesResponse {
     /**

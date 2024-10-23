@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Backend service.
 * @module api/BackendApi
-* @version 7.9.0
+* @version 7.10.0
 */
 export default class BackendApi {
 
@@ -48,8 +48,8 @@ export default class BackendApi {
      * @param {Number} [options.between_bytes_timeout] - Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, the response received so far will be considered complete and the fetch will end. May be set at runtime using `bereq.between_bytes_timeout`.
      * @param {String} [options.client_cert] - Unused.
      * @param {String} [options.comment] - A freeform descriptive note.
-     * @param {Number} [options.connect_timeout] - Maximum duration in milliseconds to wait for a connection to this backend to be established. If exceeded, the connection is aborted and a synthethic `503` response will be presented instead. May be set at runtime using `bereq.connect_timeout`.
-     * @param {Number} [options.first_byte_timeout] - Maximum duration in milliseconds to wait for the server response to begin after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthethic `503` response will be presented instead. May be set at runtime using `bereq.first_byte_timeout`.
+     * @param {Number} [options.connect_timeout] - Maximum duration in milliseconds to wait for a connection to this backend to be established. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.connect_timeout`.
+     * @param {Number} [options.first_byte_timeout] - Maximum duration in milliseconds to wait for the server response to begin after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.first_byte_timeout`.
      * @param {String} [options.healthcheck] - The name of the healthcheck to use with this backend.
      * @param {String} [options.hostname] - The hostname of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {String} [options.ipv4] - IPv4 address of the backend. May be used as an alternative to `address` to set the backend location.
@@ -169,8 +169,8 @@ export default class BackendApi {
      * @param {Number} [options.between_bytes_timeout] - Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, the response received so far will be considered complete and the fetch will end. May be set at runtime using `bereq.between_bytes_timeout`.
      * @param {String} [options.client_cert] - Unused.
      * @param {String} [options.comment] - A freeform descriptive note.
-     * @param {Number} [options.connect_timeout] - Maximum duration in milliseconds to wait for a connection to this backend to be established. If exceeded, the connection is aborted and a synthethic `503` response will be presented instead. May be set at runtime using `bereq.connect_timeout`.
-     * @param {Number} [options.first_byte_timeout] - Maximum duration in milliseconds to wait for the server response to begin after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthethic `503` response will be presented instead. May be set at runtime using `bereq.first_byte_timeout`.
+     * @param {Number} [options.connect_timeout] - Maximum duration in milliseconds to wait for a connection to this backend to be established. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.connect_timeout`.
+     * @param {Number} [options.first_byte_timeout] - Maximum duration in milliseconds to wait for the server response to begin after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.first_byte_timeout`.
      * @param {String} [options.healthcheck] - The name of the healthcheck to use with this backend.
      * @param {String} [options.hostname] - The hostname of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {String} [options.ipv4] - IPv4 address of the backend. May be used as an alternative to `address` to set the backend location.
@@ -428,8 +428,8 @@ export default class BackendApi {
      * @param {Number} [options.between_bytes_timeout] - Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, the response received so far will be considered complete and the fetch will end. May be set at runtime using `bereq.between_bytes_timeout`.
      * @param {String} [options.client_cert] - Unused.
      * @param {String} [options.comment] - A freeform descriptive note.
-     * @param {Number} [options.connect_timeout] - Maximum duration in milliseconds to wait for a connection to this backend to be established. If exceeded, the connection is aborted and a synthethic `503` response will be presented instead. May be set at runtime using `bereq.connect_timeout`.
-     * @param {Number} [options.first_byte_timeout] - Maximum duration in milliseconds to wait for the server response to begin after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthethic `503` response will be presented instead. May be set at runtime using `bereq.first_byte_timeout`.
+     * @param {Number} [options.connect_timeout] - Maximum duration in milliseconds to wait for a connection to this backend to be established. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.connect_timeout`.
+     * @param {Number} [options.first_byte_timeout] - Maximum duration in milliseconds to wait for the server response to begin after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.first_byte_timeout`.
      * @param {String} [options.healthcheck] - The name of the healthcheck to use with this backend.
      * @param {String} [options.hostname] - The hostname of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {String} [options.ipv4] - IPv4 address of the backend. May be used as an alternative to `address` to set the backend location.
@@ -555,8 +555,8 @@ export default class BackendApi {
      * @param {Number} [options.between_bytes_timeout] - Maximum duration in milliseconds that Fastly will wait while receiving no data on a download from a backend. If exceeded, the response received so far will be considered complete and the fetch will end. May be set at runtime using `bereq.between_bytes_timeout`.
      * @param {String} [options.client_cert] - Unused.
      * @param {String} [options.comment] - A freeform descriptive note.
-     * @param {Number} [options.connect_timeout] - Maximum duration in milliseconds to wait for a connection to this backend to be established. If exceeded, the connection is aborted and a synthethic `503` response will be presented instead. May be set at runtime using `bereq.connect_timeout`.
-     * @param {Number} [options.first_byte_timeout] - Maximum duration in milliseconds to wait for the server response to begin after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthethic `503` response will be presented instead. May be set at runtime using `bereq.first_byte_timeout`.
+     * @param {Number} [options.connect_timeout] - Maximum duration in milliseconds to wait for a connection to this backend to be established. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.connect_timeout`.
+     * @param {Number} [options.first_byte_timeout] - Maximum duration in milliseconds to wait for the server response to begin after a TCP connection is established and the request has been sent. If exceeded, the connection is aborted and a synthetic `503` response will be presented instead. May be set at runtime using `bereq.first_byte_timeout`.
      * @param {String} [options.healthcheck] - The name of the healthcheck to use with this backend.
      * @param {String} [options.hostname] - The hostname of the backend. May be used as an alternative to `address` to set the backend location.
      * @param {String} [options.ipv4] - IPv4 address of the backend. May be used as an alternative to `address` to set the backend location.

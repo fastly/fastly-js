@@ -16,7 +16,7 @@ import PopCoordinates from './PopCoordinates';
 /**
  * The Pop model module.
  * @module model/Pop
- * @version 7.9.0
+ * @version 7.10.0
  */
 class Pop {
     /**

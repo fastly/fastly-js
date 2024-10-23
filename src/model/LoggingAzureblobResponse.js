@@ -20,7 +20,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingAzureblobResponse model module.
  * @module model/LoggingAzureblobResponse
- * @version 7.9.0
+ * @version 7.10.0
  */
 class LoggingAzureblobResponse {
     /**

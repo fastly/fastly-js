@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SetConfiguration model module.
  * @module model/SetConfiguration
- * @version 7.9.0
+ * @version 7.10.0
  */
 class SetConfiguration {
     /**

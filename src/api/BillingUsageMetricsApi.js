@@ -19,7 +19,7 @@ import Serviceusagetypes from '../model/Serviceusagetypes';
 /**
 * BillingUsageMetrics service.
 * @module api/BillingUsageMetricsApi
-* @version 7.9.0
+* @version 7.10.0
 */
 export default class BillingUsageMetricsApi {
 

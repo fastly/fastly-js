@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PurgeKeys model module.
  * @module model/PurgeKeys
- * @version 7.9.0
+ * @version 7.10.0
  */
 class PurgeKeys {
     /**

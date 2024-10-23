@@ -21,7 +21,7 @@ import Timestamps from './Timestamps';
 /**
  * The LoggingKafkaResponse model module.
  * @module model/LoggingKafkaResponse
- * @version 7.9.0
+ * @version 7.10.0
  */
 class LoggingKafkaResponse {
     /**

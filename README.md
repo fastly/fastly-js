@@ -13,12 +13,21 @@ import Fastly from "fastly";
 
 const apiInstance = new Fastly.AclApi();
 
-// If the FASTLY_API_TOKEN environment variable is set,
-// the client will use it to authenticate all API requests.
-// Alternatively, you may authorize the client instance
-// with a Fastly API token, which will override
-// the environment variable.
-// Fastly.ApiClient.instance.authenticate("YOUR_API_TOKEN");
+/**
+* @note
+* If the FASTLY_API_TOKEN environment variable is set,
+* the client will use it to authenticate all API requests.
+* Alternatively, you may authorize the client instance
+* with a Fastly API token, which will override
+* the environment variable.
+* @example
+* Fastly.ApiClient.instance.authenticate("YOUR_API_TOKEN");
+* const fastlyService = new FastlyInstance.ServiceApi();
+* @note
+* For ESM based Typescript projects, import the client like this:
+* import * as Fastly from "fastly";
+*
+*/
 
 const options = {
   service_id: "SU1Z0isxPaozGVKXdv0eY", // required

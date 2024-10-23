@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Environment model module.
  * @module model/Environment
- * @version 7.9.0
+ * @version 7.10.0
  */
 class Environment {
     /**

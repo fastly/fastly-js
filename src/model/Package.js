@@ -16,7 +16,7 @@ import PackageMetadata from './PackageMetadata';
 /**
  * The Package model module.
  * @module model/Package
- * @version 7.9.0
+ * @version 7.10.0
  */
 class Package {
     /**

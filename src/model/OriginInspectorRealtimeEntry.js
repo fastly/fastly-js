@@ -16,7 +16,7 @@ import OriginInspectorMeasurements from './OriginInspectorMeasurements';
 /**
  * The OriginInspectorRealtimeEntry model module.
  * @module model/OriginInspectorRealtimeEntry
- * @version 7.9.0
+ * @version 7.10.0
  */
 class OriginInspectorRealtimeEntry {
     /**
