@@ -15,12 +15,12 @@ import ApiClient from '../ApiClient';
 /**
  * The ComputeAclUpdateEntry model module.
  * @module model/ComputeAclUpdateEntry
- * @version 7.10.0
+ * @version 8.0.0
  */
 class ComputeAclUpdateEntry {
     /**
      * Constructs a new <code>ComputeAclUpdateEntry</code>.
-     * An example of an ACL update request entry.
+     * Defines the structure of an ACL update request entry.
      * @alias module:model/ComputeAclUpdateEntry
      */
     constructor() { 

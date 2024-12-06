@@ -56,7 +56,7 @@ null (empty response body)
 ## `getKeys`
 
 ```javascript
-getKeys({ store_id, [cursor, ][limit, ][prefix] })
+getKeys({ store_id, [cursor, ][limit, ][prefix, ][consistency] })
 ```
 
 List the keys of all items within an kv store.
@@ -69,6 +69,7 @@ const options = {
   cursor: "cursor_example",
   limit: 100,
   prefix: "prefix_example",
+  consistency: "consistency_example",
 };
 
 apiInstance.getKeys(options)
@@ -88,6 +89,7 @@ Name | Type | Description  | Notes
 **cursor** | **String** |  | [optional]
 **limit** | **Number** |  | [optional] [defaults to 100]
 **prefix** | **String** |  | [optional]
+**consistency** | **String** |  | [optional]
 
 ### Return type
 

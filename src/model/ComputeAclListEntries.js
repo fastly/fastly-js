@@ -17,12 +17,12 @@ import ComputeAclListEntriesMeta from './ComputeAclListEntriesMeta';
 /**
  * The ComputeAclListEntries model module.
  * @module model/ComputeAclListEntries
- * @version 7.10.0
+ * @version 8.0.0
  */
 class ComputeAclListEntries {
     /**
      * Constructs a new <code>ComputeAclListEntries</code>.
-     * An example of an ACL List Response.
+     * Defines the structure of what the ACL List endpoint returns.
      * @alias module:model/ComputeAclListEntries
      */
     constructor() { 

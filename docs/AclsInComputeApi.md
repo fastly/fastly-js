@@ -232,7 +232,7 @@ Name | Type | Description  | Notes
 ## `computeAclUpdateAcls`
 
 ```javascript
-computeAclUpdateAcls({ acl_id, [compute_acl_update_entry] })
+computeAclUpdateAcls({ acl_id, [compute_acl_update] })
 ```
 
 Update an ACL.
@@ -242,7 +242,7 @@ Update an ACL.
 ```javascript
 const options = {
   acl_id: "acl_id_example", // required
-  compute_acl_update_entry: [new Fastly.ComputeAclUpdateEntry()],
+  compute_acl_update: new Fastly.ComputeAclUpdate(),
 };
 
 apiInstance.computeAclUpdateAcls(options)
@@ -259,7 +259,7 @@ apiInstance.computeAclUpdateAcls(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **acl_id** | **String** |  |
-**compute_acl_update_entry** | [**[ComputeAclUpdateEntry]**](ComputeAclUpdateEntry.md) |  | [optional]
+**compute_acl_update** | [**ComputeAclUpdate**](ComputeAclUpdate.md) |  | [optional]
 
 ### Return type
 

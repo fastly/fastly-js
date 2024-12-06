@@ -16,7 +16,7 @@ import DashboardItemPropertyDataSourcePropertyConfig from './DashboardItemProper
 /**
  * The DashboardItemPropertyDataSource model module.
  * @module model/DashboardItemPropertyDataSource
- * @version 7.10.0
+ * @version 8.0.0
  */
 class DashboardItemPropertyDataSource {
     /**

@@ -19,7 +19,7 @@ import EnabledProductResponseService from './EnabledProductResponseService';
 /**
  * The ConfiguredProductResponse model module.
  * @module model/ConfiguredProductResponse
- * @version 7.10.0
+ * @version 8.0.0
  */
 class ConfiguredProductResponse {
     /**

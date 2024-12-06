@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingSftpResponseAllOf model module.
  * @module model/LoggingSftpResponseAllOf
- * @version 7.10.0
+ * @version 8.0.0
  */
 class LoggingSftpResponseAllOf {
     /**

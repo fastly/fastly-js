@@ -16,7 +16,7 @@ import LoggingUseTlsString from './LoggingUseTlsString';
 /**
  * The LoggingSplunkAdditional model module.
  * @module model/LoggingSplunkAdditional
- * @version 7.10.0
+ * @version 8.0.0
  */
 class LoggingSplunkAdditional {
     /**

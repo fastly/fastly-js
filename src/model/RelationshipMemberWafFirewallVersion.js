@@ -16,7 +16,7 @@ import TypeWafFirewallVersion from './TypeWafFirewallVersion';
 /**
  * The RelationshipMemberWafFirewallVersion model module.
  * @module model/RelationshipMemberWafFirewallVersion
- * @version 7.10.0
+ * @version 8.0.0
  */
 class RelationshipMemberWafFirewallVersion {
     /**

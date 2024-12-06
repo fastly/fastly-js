@@ -17,7 +17,7 @@ import ReadOnlyVersion from './ReadOnlyVersion';
 /**
  * The LegacyWafFirewall model module.
  * @module model/LegacyWafFirewall
- * @version 7.10.0
+ * @version 8.0.0
  */
 class LegacyWafFirewall {
     /**

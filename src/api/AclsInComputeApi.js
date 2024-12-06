@@ -16,12 +16,12 @@ import ComputeAclCreateAclsRequest from '../model/ComputeAclCreateAclsRequest';
 import ComputeAclCreateAclsResponse from '../model/ComputeAclCreateAclsResponse';
 import ComputeAclListEntries from '../model/ComputeAclListEntries';
 import ComputeAclLookup from '../model/ComputeAclLookup';
-import ComputeAclUpdateEntry from '../model/ComputeAclUpdateEntry';
+import ComputeAclUpdate from '../model/ComputeAclUpdate';
 
 /**
 * AclsInCompute service.
 * @module api/AclsInComputeApi
-* @version 7.10.0
+* @version 8.0.0
 */
 export default class AclsInComputeApi {
 
@@ -394,11 +394,11 @@ export default class AclsInComputeApi {
      * Update an ACL.
      * @param {Object} options
      * @param {String} options.acl_id
-     * @param {Array.<module:model/ComputeAclUpdateEntry>} [options.compute_acl_update_entry]
+     * @param {module:model/ComputeAclUpdate} [options.compute_acl_update]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     computeAclUpdateAclsWithHttpInfo(options = {}) {
-      let postBody = options['compute_acl_update_entry'];
+      let postBody = options['compute_acl_update'];
       // Verify the required parameter 'acl_id' is set.
       if (options['acl_id'] === undefined || options['acl_id'] === null) {
         throw new Error("Missing the required parameter 'acl_id'.");
@@ -440,7 +440,7 @@ export default class AclsInComputeApi {
      * Update an ACL.
      * @param {Object} options
      * @param {String} options.acl_id
-     * @param {Array.<module:model/ComputeAclUpdateEntry>} [options.compute_acl_update_entry]
+     * @param {module:model/ComputeAclUpdate} [options.compute_acl_update]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     computeAclUpdateAcls(options = {}) {

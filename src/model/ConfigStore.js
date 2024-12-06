@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ConfigStore model module.
  * @module model/ConfigStore
- * @version 7.10.0
+ * @version 8.0.0
  */
 class ConfigStore {
     /**

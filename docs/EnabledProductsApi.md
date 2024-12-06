@@ -23,7 +23,7 @@ Method | HTTP request | Description
 disableProduct({ product_id, service_id })
 ```
 
-Disable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, and `ngwaf`.
+Disable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, `ngwaf`, `ddos_protection`, and `log_explorer_insights`.
 
 ### Example
 
@@ -60,7 +60,7 @@ null (empty response body)
 enableProduct({ product_id, service_id, [set_workspace_id] })
 ```
 
-Enable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, and `ngwaf`.
+Enable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, `ngwaf`, `ddos_protection`, and `log_explorer_insights`.
 
 ### Example
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 getEnabledProduct({ product_id, service_id })
 ```
 
-Get enabled product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, and `ngwaf`.
+Get enabled product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, `ngwaf`, `ddos_protection`, and `log_explorer_insights`.
 
 ### Example
 
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 getProductConfiguration({ product_id, service_id })
 ```
 
-Get configuration for an enabled product on a service. Supported product IDs: `ngwaf`.
+Get configuration for an enabled product on a service. Supported product IDs: `ngwaf` and `ddos_protection`.
 
 ### Example
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 setProductConfiguration({ product_id, service_id, [set_configuration] })
 ```
 
-Update configuration for an enabled product on a service. Supported product IDs: `ngwaf`.
+Update configuration for an enabled product on a service. Supported product IDs: `ngwaf` and `ddos_protection`.
 
 ### Example
 

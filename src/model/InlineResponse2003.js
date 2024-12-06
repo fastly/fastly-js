@@ -17,7 +17,7 @@ import StoreResponse from './StoreResponse';
 /**
  * The InlineResponse2003 model module.
  * @module model/InlineResponse2003
- * @version 7.10.0
+ * @version 8.0.0
  */
 class InlineResponse2003 {
     /**

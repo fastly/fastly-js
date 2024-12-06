@@ -109,7 +109,7 @@ Class | Method | Description
 *Fastly.BillingInvoicesApi* | [**getMonthToDateInvoice**](docs/BillingInvoicesApi.md#getMonthToDateInvoice) | Get month-to-date invoice.
 *Fastly.BillingInvoicesApi* | [**listInvoices**](docs/BillingInvoicesApi.md#listInvoices) | List of invoices.
 *Fastly.BillingUsageMetricsApi* | [**getServiceLevelUsage**](docs/BillingUsageMetricsApi.md#getServiceLevelUsage) | Retrieve service-level usage metrics for a product.
-*Fastly.BillingUsageMetricsApi* | [**getServiceLevelUsageTypes**](docs/BillingUsageMetricsApi.md#getServiceLevelUsageTypes) | Retrieve product usage types for a customer.
+*Fastly.BillingUsageMetricsApi* | [**getUsageMetrics**](docs/BillingUsageMetricsApi.md#getUsageMetrics) | Get monthly usage metrics
 *Fastly.CacheSettingsApi* | [**createCacheSettings**](docs/CacheSettingsApi.md#createCacheSettings) | Create a cache settings object
 *Fastly.CacheSettingsApi* | [**deleteCacheSettings**](docs/CacheSettingsApi.md#deleteCacheSettings) | Delete a cache settings object
 *Fastly.CacheSettingsApi* | [**getCacheSettings**](docs/CacheSettingsApi.md#getCacheSettings) | Get a cache settings object
@@ -247,6 +247,7 @@ Class | Method | Description
 *Fastly.IamUserGroupsApi* | [**updateAUserGroup**](docs/IamUserGroupsApi.md#updateAUserGroup) | Update a user group
 *Fastly.ImageOptimizerDefaultSettingsApi* | [**getDefaultSettings**](docs/ImageOptimizerDefaultSettingsApi.md#getDefaultSettings) | Get current Image Optimizer Default Settings
 *Fastly.ImageOptimizerDefaultSettingsApi* | [**updateDefaultSettings**](docs/ImageOptimizerDefaultSettingsApi.md#updateDefaultSettings) | Update Image Optimizer Default Settings
+*Fastly.InsightsApi* | [**getLogInsights**](docs/InsightsApi.md#getLogInsights) | Retrieve log insights
 *Fastly.InvitationsApi* | [**createInvitation**](docs/InvitationsApi.md#createInvitation) | Create an invitation
 *Fastly.InvitationsApi* | [**deleteInvitation**](docs/InvitationsApi.md#deleteInvitation) | Delete an invitation
 *Fastly.InvitationsApi* | [**listInvitations**](docs/InvitationsApi.md#listInvitations) | List invitations
@@ -286,6 +287,7 @@ Class | Method | Description
 *Fastly.LegacyWafTagApi* | [**listLegacyWafTags**](docs/LegacyWafTagApi.md#listLegacyWafTags) | List WAF tags
 *Fastly.LegacyWafUpdateStatusApi* | [**getWafUpdateStatus**](docs/LegacyWafUpdateStatusApi.md#getWafUpdateStatus) | Get the status of a WAF update
 *Fastly.LegacyWafUpdateStatusApi* | [**listWafUpdateStatuses**](docs/LegacyWafUpdateStatusApi.md#listWafUpdateStatuses) | List update statuses
+*Fastly.LogExplorerApi* | [**getLogRecords**](docs/LogExplorerApi.md#getLogRecords) | Retrieve log records
 *Fastly.LoggingAzureblobApi* | [**createLogAzure**](docs/LoggingAzureblobApi.md#createLogAzure) | Create an Azure Blob Storage log endpoint
 *Fastly.LoggingAzureblobApi* | [**deleteLogAzure**](docs/LoggingAzureblobApi.md#deleteLogAzure) | Delete the Azure Blob Storage log endpoint
 *Fastly.LoggingAzureblobApi* | [**getLogAzure**](docs/LoggingAzureblobApi.md#getLogAzure) | Get an Azure Blob Storage log endpoint
@@ -326,6 +328,11 @@ Class | Method | Description
 *Fastly.LoggingGcsApi* | [**getLogGcs**](docs/LoggingGcsApi.md#getLogGcs) | Get a GCS log endpoint
 *Fastly.LoggingGcsApi* | [**listLogGcs**](docs/LoggingGcsApi.md#listLogGcs) | List GCS log endpoints
 *Fastly.LoggingGcsApi* | [**updateLogGcs**](docs/LoggingGcsApi.md#updateLogGcs) | Update a GCS log endpoint
+*Fastly.LoggingGrafanacloudlogsApi* | [**createLogGrafanacloudlogs**](docs/LoggingGrafanacloudlogsApi.md#createLogGrafanacloudlogs) | Create a Grafana Cloud Logs log endpoint
+*Fastly.LoggingGrafanacloudlogsApi* | [**deleteLogGrafanacloudlogs**](docs/LoggingGrafanacloudlogsApi.md#deleteLogGrafanacloudlogs) | Delete the Grafana Cloud Logs log endpoint
+*Fastly.LoggingGrafanacloudlogsApi* | [**getLogGrafanacloudlogs**](docs/LoggingGrafanacloudlogsApi.md#getLogGrafanacloudlogs) | Get a Grafana Cloud Logs log endpoint
+*Fastly.LoggingGrafanacloudlogsApi* | [**listLogGrafanacloudlogs**](docs/LoggingGrafanacloudlogsApi.md#listLogGrafanacloudlogs) | List Grafana Cloud Logs log endpoints
+*Fastly.LoggingGrafanacloudlogsApi* | [**updateLogGrafanacloudlogs**](docs/LoggingGrafanacloudlogsApi.md#updateLogGrafanacloudlogs) | Update a Grafana Cloud Logs log endpoint
 *Fastly.LoggingHerokuApi* | [**createLogHeroku**](docs/LoggingHerokuApi.md#createLogHeroku) | Create a Heroku log endpoint
 *Fastly.LoggingHerokuApi* | [**deleteLogHeroku**](docs/LoggingHerokuApi.md#deleteLogHeroku) | Delete the Heroku log endpoint
 *Fastly.LoggingHerokuApi* | [**getLogHeroku**](docs/LoggingHerokuApi.md#getLogHeroku) | Get a Heroku log endpoint
@@ -426,6 +433,10 @@ Class | Method | Description
 *Fastly.MutualAuthenticationApi* | [**getMutualAuthentication**](docs/MutualAuthenticationApi.md#getMutualAuthentication) | Get a Mutual Authentication
 *Fastly.MutualAuthenticationApi* | [**listMutualAuthentications**](docs/MutualAuthenticationApi.md#listMutualAuthentications) | List Mutual Authentications
 *Fastly.MutualAuthenticationApi* | [**patchMutualAuthentication**](docs/MutualAuthenticationApi.md#patchMutualAuthentication) | Update a Mutual Authentication
+*Fastly.ObjectStorageAccessKeysApi* | [**createAccessKey**](docs/ObjectStorageAccessKeysApi.md#createAccessKey) | Create an access key
+*Fastly.ObjectStorageAccessKeysApi* | [**deleteAccessKey**](docs/ObjectStorageAccessKeysApi.md#deleteAccessKey) | Delete an access key
+*Fastly.ObjectStorageAccessKeysApi* | [**getAccessKey**](docs/ObjectStorageAccessKeysApi.md#getAccessKey) | Get an access key
+*Fastly.ObjectStorageAccessKeysApi* | [**listAccessKeys**](docs/ObjectStorageAccessKeysApi.md#listAccessKeys) | List access keys
 *Fastly.ObservabilityCustomDashboardsApi* | [**createDashboard**](docs/ObservabilityCustomDashboardsApi.md#createDashboard) | Create a new dashboard
 *Fastly.ObservabilityCustomDashboardsApi* | [**deleteDashboard**](docs/ObservabilityCustomDashboardsApi.md#deleteDashboard) | Delete an existing dashboard
 *Fastly.ObservabilityCustomDashboardsApi* | [**getDashboard**](docs/ObservabilityCustomDashboardsApi.md#getDashboard) | Retrieve a dashboard by ID
@@ -634,8 +645,8 @@ The fastly-js API client currently does not support the following endpoints:
 - [`/alerts/history`](https://www.fastly.com/documentation/reference/api/observability/alerts/history) (GET)
 - [`/dns/configurations/{dns_configuration_id}`](https://www.fastly.com/documentation/reference/api/) (DELETE, GET, PATCH)
 - [`/dns/configurations`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
-- [`/domains/{domain_id}`](https://www.fastly.com/documentation/reference/api/) (DELETE, GET, PATCH)
-- [`/domains`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
+- [`/domains/v1/{domain_id}`](https://www.fastly.com/documentation/reference/api/) (DELETE, GET, PATCH)
+- [`/domains/v1`](https://www.fastly.com/documentation/reference/api/) (GET, POST)
 - [`/notifications/integration-types`](https://developer.fastly.com/reference/api/observability/notification) (GET)
 - [`/notifications/integrations/{integration_id}/rotateSigningKey`](https://developer.fastly.com/reference/api/observability/notification) (POST)
 - [`/notifications/integrations/{integration_id}/signingKey`](https://developer.fastly.com/reference/api/observability/notification) (GET)

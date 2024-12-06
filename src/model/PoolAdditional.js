@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PoolAdditional model module.
  * @module model/PoolAdditional
- * @version 7.10.0
+ * @version 8.0.0
  */
 class PoolAdditional {
     /**

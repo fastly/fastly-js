@@ -16,7 +16,7 @@ import ValuesDdos from './ValuesDdos';
 /**
  * The PlatformDdosEntry model module.
  * @module model/PlatformDdosEntry
- * @version 7.10.0
+ * @version 8.0.0
  */
 class PlatformDdosEntry {
     /**

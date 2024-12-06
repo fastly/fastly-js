@@ -12,6 +12,8 @@
 
 
 import ApiClient from './ApiClient';
+import AccessKey from './model/AccessKey';
+import AccessKeyResponse from './model/AccessKeyResponse';
 import Acl from './model/Acl';
 import AclEntry from './model/AclEntry';
 import AclEntryResponse from './model/AclEntryResponse';
@@ -75,6 +77,7 @@ import ComputeAclListEntries from './model/ComputeAclListEntries';
 import ComputeAclListEntriesItem from './model/ComputeAclListEntriesItem';
 import ComputeAclListEntriesMeta from './model/ComputeAclListEntriesMeta';
 import ComputeAclLookup from './model/ComputeAclLookup';
+import ComputeAclUpdate from './model/ComputeAclUpdate';
 import ComputeAclUpdateEntry from './model/ComputeAclUpdateEntry';
 import Condition from './model/Condition';
 import ConditionResponse from './model/ConditionResponse';
@@ -118,6 +121,16 @@ import DictionaryItemResponseAllOf from './model/DictionaryItemResponseAllOf';
 import DictionaryResponse from './model/DictionaryResponse';
 import DictionaryResponseAllOf from './model/DictionaryResponseAllOf';
 import DiffResponse from './model/DiffResponse';
+import DimensionAttributesCountryStats from './model/DimensionAttributesCountryStats';
+import DimensionAttributesRate from './model/DimensionAttributesRate';
+import DimensionBrowser from './model/DimensionBrowser';
+import DimensionContentType from './model/DimensionContentType';
+import DimensionCountry from './model/DimensionCountry';
+import DimensionDevice from './model/DimensionDevice';
+import DimensionOs from './model/DimensionOs';
+import DimensionResponse from './model/DimensionResponse';
+import DimensionStatusCode from './model/DimensionStatusCode';
+import DimensionUrl from './model/DimensionUrl';
 import Director from './model/Director';
 import DirectorBackend from './model/DirectorBackend';
 import DirectorBackendAllOf from './model/DirectorBackendAllOf';
@@ -143,7 +156,12 @@ import EventAttributes from './model/EventAttributes';
 import EventData from './model/EventData';
 import EventResponse from './model/EventResponse';
 import EventsResponse from './model/EventsResponse';
+import FilterFieldItem from './model/FilterFieldItem';
 import GenericTokenError from './model/GenericTokenError';
+import GetLogInsightsResponse from './model/GetLogInsightsResponse';
+import GetLogRecordsResponse from './model/GetLogRecordsResponse';
+import GetLogRecordsResponseMeta from './model/GetLogRecordsResponseMeta';
+import GetLogRecordsResponseMetaFilters from './model/GetLogRecordsResponseMetaFilters';
 import GetServiceLevelUsageResponse from './model/GetServiceLevelUsageResponse';
 import GetServiceLevelUsageTypesResponse from './model/GetServiceLevelUsageTypesResponse';
 import Gzip from './model/Gzip';
@@ -235,6 +253,14 @@ import ListCustomerAddressesResponse from './model/ListCustomerAddressesResponse
 import ListDashboardsResponse from './model/ListDashboardsResponse';
 import ListEomInvoicesResponse from './model/ListEomInvoicesResponse';
 import Listinvoices from './model/Listinvoices';
+import LogInsights from './model/LogInsights';
+import LogInsightsDimensionAttributes from './model/LogInsightsDimensionAttributes';
+import LogInsightsDimensions from './model/LogInsightsDimensions';
+import LogInsightsMeta from './model/LogInsightsMeta';
+import LogInsightsMetaFilter from './model/LogInsightsMetaFilter';
+import LogInsightsValues from './model/LogInsightsValues';
+import LogPropertyServiceId from './model/LogPropertyServiceId';
+import LogRecord from './model/LogRecord';
 import LoggingAddressAndPort from './model/LoggingAddressAndPort';
 import LoggingAzureblobAdditional from './model/LoggingAzureblobAdditional';
 import LoggingAzureblobResponse from './model/LoggingAzureblobResponse';
@@ -266,6 +292,8 @@ import LoggingGenericCommonResponseAllOf from './model/LoggingGenericCommonRespo
 import LoggingGenericCommonResponseAllOf1 from './model/LoggingGenericCommonResponseAllOf1';
 import LoggingGooglePubsubAdditional from './model/LoggingGooglePubsubAdditional';
 import LoggingGooglePubsubResponse from './model/LoggingGooglePubsubResponse';
+import LoggingGrafanacloudlogsAdditional from './model/LoggingGrafanacloudlogsAdditional';
+import LoggingGrafanacloudlogsResponse from './model/LoggingGrafanacloudlogsResponse';
 import LoggingHerokuAdditional from './model/LoggingHerokuAdditional';
 import LoggingHerokuResponse from './model/LoggingHerokuResponse';
 import LoggingHoneycombAdditional from './model/LoggingHoneycombAdditional';
@@ -667,6 +695,8 @@ import TypeWafTag from './model/TypeWafTag';
 import UpdateBillingAddressRequest from './model/UpdateBillingAddressRequest';
 import UpdateBillingAddressRequestData from './model/UpdateBillingAddressRequestData';
 import UpdateDashboardRequest from './model/UpdateDashboardRequest';
+import Usagemetric from './model/Usagemetric';
+import Usagemetrics from './model/Usagemetrics';
 import User from './model/User';
 import UserResponse from './model/UserResponse';
 import UserResponseReadOnly from './model/UserResponseReadOnly';
@@ -674,8 +704,19 @@ import ValidatorResult from './model/ValidatorResult';
 import ValidatorResultData from './model/ValidatorResultData';
 import ValidatorResultDataAttributes from './model/ValidatorResultDataAttributes';
 import ValidatorResultDataAttributesMessages from './model/ValidatorResultDataAttributesMessages';
+import ValueField from './model/ValueField';
 import Values from './model/Values';
+import Values503Responses from './model/Values503Responses';
+import ValuesBandwidth from './model/ValuesBandwidth';
+import ValuesBrowser from './model/ValuesBrowser';
+import ValuesCacheHitRatio from './model/ValuesCacheHitRatio';
+import ValuesCountryStats from './model/ValuesCountryStats';
 import ValuesDdos from './model/ValuesDdos';
+import ValuesDuration from './model/ValuesDuration';
+import ValuesMisses from './model/ValuesMisses';
+import ValuesRate from './model/ValuesRate';
+import ValuesRequests from './model/ValuesRequests';
+import ValuesStatusCodes from './model/ValuesStatusCodes';
 import Vcl from './model/Vcl';
 import VclDiff from './model/VclDiff';
 import VclResponse from './model/VclResponse';
@@ -790,6 +831,7 @@ import IamRolesApi from './api/IamRolesApi';
 import IamServiceGroupsApi from './api/IamServiceGroupsApi';
 import IamUserGroupsApi from './api/IamUserGroupsApi';
 import ImageOptimizerDefaultSettingsApi from './api/ImageOptimizerDefaultSettingsApi';
+import InsightsApi from './api/InsightsApi';
 import InvitationsApi from './api/InvitationsApi';
 import KvStoreApi from './api/KvStoreApi';
 import KvStoreItemApi from './api/KvStoreItemApi';
@@ -801,6 +843,7 @@ import LegacyWafRuleStatusApi from './api/LegacyWafRuleStatusApi';
 import LegacyWafRulesetApi from './api/LegacyWafRulesetApi';
 import LegacyWafTagApi from './api/LegacyWafTagApi';
 import LegacyWafUpdateStatusApi from './api/LegacyWafUpdateStatusApi';
+import LogExplorerApi from './api/LogExplorerApi';
 import LoggingAzureblobApi from './api/LoggingAzureblobApi';
 import LoggingBigqueryApi from './api/LoggingBigqueryApi';
 import LoggingCloudfilesApi from './api/LoggingCloudfilesApi';
@@ -809,6 +852,7 @@ import LoggingDigitaloceanApi from './api/LoggingDigitaloceanApi';
 import LoggingElasticsearchApi from './api/LoggingElasticsearchApi';
 import LoggingFtpApi from './api/LoggingFtpApi';
 import LoggingGcsApi from './api/LoggingGcsApi';
+import LoggingGrafanacloudlogsApi from './api/LoggingGrafanacloudlogsApi';
 import LoggingHerokuApi from './api/LoggingHerokuApi';
 import LoggingHoneycombApi from './api/LoggingHoneycombApi';
 import LoggingHttpsApi from './api/LoggingHttpsApi';
@@ -829,6 +873,7 @@ import LoggingSplunkApi from './api/LoggingSplunkApi';
 import LoggingSumologicApi from './api/LoggingSumologicApi';
 import LoggingSyslogApi from './api/LoggingSyslogApi';
 import MutualAuthenticationApi from './api/MutualAuthenticationApi';
+import ObjectStorageAccessKeysApi from './api/ObjectStorageAccessKeysApi';
 import ObservabilityCustomDashboardsApi from './api/ObservabilityCustomDashboardsApi';
 import OriginInspectorHistoricalApi from './api/OriginInspectorHistoricalApi';
 import OriginInspectorRealtimeApi from './api/OriginInspectorRealtimeApi';
@@ -909,7 +954,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 7.10.0
+* @version 8.0.0
 */
 export {
     /**
@@ -917,6 +962,18 @@ export {
      * @property {module:ApiClient}
      */
     ApiClient,
+
+    /**
+     * The AccessKey model constructor.
+     * @property {module:model/AccessKey}
+     */
+    AccessKey,
+
+    /**
+     * The AccessKeyResponse model constructor.
+     * @property {module:model/AccessKeyResponse}
+     */
+    AccessKeyResponse,
 
     /**
      * The Acl model constructor.
@@ -1297,6 +1354,12 @@ export {
     ComputeAclLookup,
 
     /**
+     * The ComputeAclUpdate model constructor.
+     * @property {module:model/ComputeAclUpdate}
+     */
+    ComputeAclUpdate,
+
+    /**
      * The ComputeAclUpdateEntry model constructor.
      * @property {module:model/ComputeAclUpdateEntry}
      */
@@ -1555,6 +1618,66 @@ export {
     DiffResponse,
 
     /**
+     * The DimensionAttributesCountryStats model constructor.
+     * @property {module:model/DimensionAttributesCountryStats}
+     */
+    DimensionAttributesCountryStats,
+
+    /**
+     * The DimensionAttributesRate model constructor.
+     * @property {module:model/DimensionAttributesRate}
+     */
+    DimensionAttributesRate,
+
+    /**
+     * The DimensionBrowser model constructor.
+     * @property {module:model/DimensionBrowser}
+     */
+    DimensionBrowser,
+
+    /**
+     * The DimensionContentType model constructor.
+     * @property {module:model/DimensionContentType}
+     */
+    DimensionContentType,
+
+    /**
+     * The DimensionCountry model constructor.
+     * @property {module:model/DimensionCountry}
+     */
+    DimensionCountry,
+
+    /**
+     * The DimensionDevice model constructor.
+     * @property {module:model/DimensionDevice}
+     */
+    DimensionDevice,
+
+    /**
+     * The DimensionOs model constructor.
+     * @property {module:model/DimensionOs}
+     */
+    DimensionOs,
+
+    /**
+     * The DimensionResponse model constructor.
+     * @property {module:model/DimensionResponse}
+     */
+    DimensionResponse,
+
+    /**
+     * The DimensionStatusCode model constructor.
+     * @property {module:model/DimensionStatusCode}
+     */
+    DimensionStatusCode,
+
+    /**
+     * The DimensionUrl model constructor.
+     * @property {module:model/DimensionUrl}
+     */
+    DimensionUrl,
+
+    /**
      * The Director model constructor.
      * @property {module:model/Director}
      */
@@ -1705,10 +1828,40 @@ export {
     EventsResponse,
 
     /**
+     * The FilterFieldItem model constructor.
+     * @property {module:model/FilterFieldItem}
+     */
+    FilterFieldItem,
+
+    /**
      * The GenericTokenError model constructor.
      * @property {module:model/GenericTokenError}
      */
     GenericTokenError,
+
+    /**
+     * The GetLogInsightsResponse model constructor.
+     * @property {module:model/GetLogInsightsResponse}
+     */
+    GetLogInsightsResponse,
+
+    /**
+     * The GetLogRecordsResponse model constructor.
+     * @property {module:model/GetLogRecordsResponse}
+     */
+    GetLogRecordsResponse,
+
+    /**
+     * The GetLogRecordsResponseMeta model constructor.
+     * @property {module:model/GetLogRecordsResponseMeta}
+     */
+    GetLogRecordsResponseMeta,
+
+    /**
+     * The GetLogRecordsResponseMetaFilters model constructor.
+     * @property {module:model/GetLogRecordsResponseMetaFilters}
+     */
+    GetLogRecordsResponseMetaFilters,
 
     /**
      * The GetServiceLevelUsageResponse model constructor.
@@ -2257,6 +2410,54 @@ export {
     Listinvoices,
 
     /**
+     * The LogInsights model constructor.
+     * @property {module:model/LogInsights}
+     */
+    LogInsights,
+
+    /**
+     * The LogInsightsDimensionAttributes model constructor.
+     * @property {module:model/LogInsightsDimensionAttributes}
+     */
+    LogInsightsDimensionAttributes,
+
+    /**
+     * The LogInsightsDimensions model constructor.
+     * @property {module:model/LogInsightsDimensions}
+     */
+    LogInsightsDimensions,
+
+    /**
+     * The LogInsightsMeta model constructor.
+     * @property {module:model/LogInsightsMeta}
+     */
+    LogInsightsMeta,
+
+    /**
+     * The LogInsightsMetaFilter model constructor.
+     * @property {module:model/LogInsightsMetaFilter}
+     */
+    LogInsightsMetaFilter,
+
+    /**
+     * The LogInsightsValues model constructor.
+     * @property {module:model/LogInsightsValues}
+     */
+    LogInsightsValues,
+
+    /**
+     * The LogPropertyServiceId model constructor.
+     * @property {module:model/LogPropertyServiceId}
+     */
+    LogPropertyServiceId,
+
+    /**
+     * The LogRecord model constructor.
+     * @property {module:model/LogRecord}
+     */
+    LogRecord,
+
+    /**
      * The LoggingAddressAndPort model constructor.
      * @property {module:model/LoggingAddressAndPort}
      */
@@ -2441,6 +2642,18 @@ export {
      * @property {module:model/LoggingGooglePubsubResponse}
      */
     LoggingGooglePubsubResponse,
+
+    /**
+     * The LoggingGrafanacloudlogsAdditional model constructor.
+     * @property {module:model/LoggingGrafanacloudlogsAdditional}
+     */
+    LoggingGrafanacloudlogsAdditional,
+
+    /**
+     * The LoggingGrafanacloudlogsResponse model constructor.
+     * @property {module:model/LoggingGrafanacloudlogsResponse}
+     */
+    LoggingGrafanacloudlogsResponse,
 
     /**
      * The LoggingHerokuAdditional model constructor.
@@ -4849,6 +5062,18 @@ export {
     UpdateDashboardRequest,
 
     /**
+     * The Usagemetric model constructor.
+     * @property {module:model/Usagemetric}
+     */
+    Usagemetric,
+
+    /**
+     * The Usagemetrics model constructor.
+     * @property {module:model/Usagemetrics}
+     */
+    Usagemetrics,
+
+    /**
      * The User model constructor.
      * @property {module:model/User}
      */
@@ -4891,16 +5116,82 @@ export {
     ValidatorResultDataAttributesMessages,
 
     /**
+     * The ValueField model constructor.
+     * @property {module:model/ValueField}
+     */
+    ValueField,
+
+    /**
      * The Values model constructor.
      * @property {module:model/Values}
      */
     Values,
 
     /**
+     * The Values503Responses model constructor.
+     * @property {module:model/Values503Responses}
+     */
+    Values503Responses,
+
+    /**
+     * The ValuesBandwidth model constructor.
+     * @property {module:model/ValuesBandwidth}
+     */
+    ValuesBandwidth,
+
+    /**
+     * The ValuesBrowser model constructor.
+     * @property {module:model/ValuesBrowser}
+     */
+    ValuesBrowser,
+
+    /**
+     * The ValuesCacheHitRatio model constructor.
+     * @property {module:model/ValuesCacheHitRatio}
+     */
+    ValuesCacheHitRatio,
+
+    /**
+     * The ValuesCountryStats model constructor.
+     * @property {module:model/ValuesCountryStats}
+     */
+    ValuesCountryStats,
+
+    /**
      * The ValuesDdos model constructor.
      * @property {module:model/ValuesDdos}
      */
     ValuesDdos,
+
+    /**
+     * The ValuesDuration model constructor.
+     * @property {module:model/ValuesDuration}
+     */
+    ValuesDuration,
+
+    /**
+     * The ValuesMisses model constructor.
+     * @property {module:model/ValuesMisses}
+     */
+    ValuesMisses,
+
+    /**
+     * The ValuesRate model constructor.
+     * @property {module:model/ValuesRate}
+     */
+    ValuesRate,
+
+    /**
+     * The ValuesRequests model constructor.
+     * @property {module:model/ValuesRequests}
+     */
+    ValuesRequests,
+
+    /**
+     * The ValuesStatusCodes model constructor.
+     * @property {module:model/ValuesStatusCodes}
+     */
+    ValuesStatusCodes,
 
     /**
      * The Vcl model constructor.
@@ -5587,6 +5878,12 @@ export {
     ImageOptimizerDefaultSettingsApi,
 
     /**
+    * The InsightsApi service constructor.
+    * @property {module:api/InsightsApi}
+    */
+    InsightsApi,
+
+    /**
     * The InvitationsApi service constructor.
     * @property {module:api/InvitationsApi}
     */
@@ -5653,6 +5950,12 @@ export {
     LegacyWafUpdateStatusApi,
 
     /**
+    * The LogExplorerApi service constructor.
+    * @property {module:api/LogExplorerApi}
+    */
+    LogExplorerApi,
+
+    /**
     * The LoggingAzureblobApi service constructor.
     * @property {module:api/LoggingAzureblobApi}
     */
@@ -5699,6 +6002,12 @@ export {
     * @property {module:api/LoggingGcsApi}
     */
     LoggingGcsApi,
+
+    /**
+    * The LoggingGrafanacloudlogsApi service constructor.
+    * @property {module:api/LoggingGrafanacloudlogsApi}
+    */
+    LoggingGrafanacloudlogsApi,
 
     /**
     * The LoggingHerokuApi service constructor.
@@ -5819,6 +6128,12 @@ export {
     * @property {module:api/MutualAuthenticationApi}
     */
     MutualAuthenticationApi,
+
+    /**
+    * The ObjectStorageAccessKeysApi service constructor.
+    * @property {module:api/ObjectStorageAccessKeysApi}
+    */
+    ObjectStorageAccessKeysApi,
 
     /**
     * The ObservabilityCustomDashboardsApi service constructor.

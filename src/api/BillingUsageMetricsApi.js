@@ -14,12 +14,12 @@
 import ApiClient from "../ApiClient";
 import Error from '../model/Error';
 import Serviceusagemetrics from '../model/Serviceusagemetrics';
-import Serviceusagetypes from '../model/Serviceusagetypes';
+import Usagemetric from '../model/Usagemetric';
 
 /**
 * BillingUsageMetrics service.
 * @module api/BillingUsageMetricsApi
-* @version 7.10.0
+* @version 8.0.0
 */
 export default class BillingUsageMetricsApi {
 
@@ -42,12 +42,8 @@ export default class BillingUsageMetricsApi {
     /**
      * Returns product usage, broken down by service.
      * @param {Object} options
-     * @param {String} options.customer_id - Alphanumeric string identifying the customer.
      * @param {String} options.product_id - The product identifier for the metrics returned (e.g., `cdn_usage`). This field is not required for CSV requests.
      * @param {String} options.usage_type_name - The usage type name for the metrics returned (e.g., `North America Requests`). This field is not required for CSV requests.
-     * @param {String} options.time_granularity
-     * @param {String} [options.start_date]
-     * @param {String} [options.end_date]
      * @param {String} [options.start_month]
      * @param {String} [options.end_month]
      * @param {String} [options.limit='5'] - Number of results per page. The maximum is 100.
@@ -56,10 +52,6 @@ export default class BillingUsageMetricsApi {
      */
     getServiceLevelUsageWithHttpInfo(options = {}) {
       let postBody = null;
-      // Verify the required parameter 'customer_id' is set.
-      if (options['customer_id'] === undefined || options['customer_id'] === null) {
-        throw new Error("Missing the required parameter 'customer_id'.");
-      }
       // Verify the required parameter 'product_id' is set.
       if (options['product_id'] === undefined || options['product_id'] === null) {
         throw new Error("Missing the required parameter 'product_id'.");
@@ -68,22 +60,14 @@ export default class BillingUsageMetricsApi {
       if (options['usage_type_name'] === undefined || options['usage_type_name'] === null) {
         throw new Error("Missing the required parameter 'usage_type_name'.");
       }
-      // Verify the required parameter 'time_granularity' is set.
-      if (options['time_granularity'] === undefined || options['time_granularity'] === null) {
-        throw new Error("Missing the required parameter 'time_granularity'.");
-      }
 
       let pathParams = {
-        'customer_id': options['customer_id']
       };
       let pathParamsAllowReserved = {
       };
       let queryParams = {
         'product_id': options['product_id'],
         'usage_type_name': options['usage_type_name'],
-        'time_granularity': options['time_granularity'],
-        'start_date': options['start_date'],
-        'end_date': options['end_date'],
         'start_month': options['start_month'],
         'end_month': options['end_month'],
         'limit': options['limit'],
@@ -108,7 +92,7 @@ export default class BillingUsageMetricsApi {
       }
 
       return this.apiClient.callApi(
-        '/billing/v2/account_customers/{customer_id}/service-usage-metrics', 'GET',
+        '/billing/v3/service-usage-metrics', 'GET',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath
       );
@@ -117,12 +101,8 @@ export default class BillingUsageMetricsApi {
     /**
      * Returns product usage, broken down by service.
      * @param {Object} options
-     * @param {String} options.customer_id - Alphanumeric string identifying the customer.
      * @param {String} options.product_id - The product identifier for the metrics returned (e.g., `cdn_usage`). This field is not required for CSV requests.
      * @param {String} options.usage_type_name - The usage type name for the metrics returned (e.g., `North America Requests`). This field is not required for CSV requests.
-     * @param {String} options.time_granularity
-     * @param {String} [options.start_date]
-     * @param {String} [options.end_date]
      * @param {String} [options.start_month]
      * @param {String} [options.end_month]
      * @param {String} [options.limit='5'] - Number of results per page. The maximum is 100.
@@ -137,24 +117,22 @@ export default class BillingUsageMetricsApi {
     }
 
     /**
-     * Returns product usage types reported by the customer's services.
+     * Returns monthly usage metrics for customer by product.
      * @param {Object} options
-     * @param {String} options.customer_id - Alphanumeric string identifying the customer.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Serviceusagetypes} and HTTP response
+     * @param {String} [options.start_month]
+     * @param {String} [options.end_month]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Usagemetric} and HTTP response
      */
-    getServiceLevelUsageTypesWithHttpInfo(options = {}) {
+    getUsageMetricsWithHttpInfo(options = {}) {
       let postBody = null;
-      // Verify the required parameter 'customer_id' is set.
-      if (options['customer_id'] === undefined || options['customer_id'] === null) {
-        throw new Error("Missing the required parameter 'customer_id'.");
-      }
 
       let pathParams = {
-        'customer_id': options['customer_id']
       };
       let pathParamsAllowReserved = {
       };
       let queryParams = {
+        'start_month': options['start_month'],
+        'end_month': options['end_month']
       };
       let headerParams = {
       };
@@ -164,7 +142,7 @@ export default class BillingUsageMetricsApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = Serviceusagetypes;
+      let returnType = Usagemetric;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -175,20 +153,21 @@ export default class BillingUsageMetricsApi {
       }
 
       return this.apiClient.callApi(
-        '/billing/v2/account_customers/{customer_id}/service-usage-types', 'GET',
+        '/billing/v3/usage-metrics', 'GET',
         pathParams, pathParamsAllowReserved, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, basePath
       );
     }
 
     /**
-     * Returns product usage types reported by the customer's services.
+     * Returns monthly usage metrics for customer by product.
      * @param {Object} options
-     * @param {String} options.customer_id - Alphanumeric string identifying the customer.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Serviceusagetypes}
+     * @param {String} [options.start_month]
+     * @param {String} [options.end_month]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Usagemetric}
      */
-    getServiceLevelUsageTypes(options = {}) {
-      return this.getServiceLevelUsageTypesWithHttpInfo(options)
+    getUsageMetrics(options = {}) {
+      return this.getUsageMetricsWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

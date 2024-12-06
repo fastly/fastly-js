@@ -17,7 +17,7 @@ import InlineResponse2004 from '../model/InlineResponse2004';
 /**
 * KvStoreItem service.
 * @module api/KvStoreItemApi
-* @version 7.10.0
+* @version 8.0.0
 */
 export default class KvStoreItemApi {
 
@@ -109,6 +109,7 @@ export default class KvStoreItemApi {
      * @param {String} [options.cursor]
      * @param {Number} [options.limit=100]
      * @param {String} [options.prefix]
+     * @param {String} [options.consistency]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2004} and HTTP response
      */
     getKeysWithHttpInfo(options = {}) {
@@ -126,7 +127,8 @@ export default class KvStoreItemApi {
       let queryParams = {
         'cursor': options['cursor'],
         'limit': options['limit'],
-        'prefix': options['prefix']
+        'prefix': options['prefix'],
+        'consistency': options['consistency']
       };
       let headerParams = {
       };
@@ -160,6 +162,7 @@ export default class KvStoreItemApi {
      * @param {String} [options.cursor]
      * @param {Number} [options.limit=100]
      * @param {String} [options.prefix]
+     * @param {String} [options.consistency]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2004}
      */
     getKeys(options = {}) {

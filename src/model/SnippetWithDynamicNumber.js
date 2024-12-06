@@ -17,7 +17,7 @@ import SnippetWithDynamicNumberAllOf from './SnippetWithDynamicNumberAllOf';
 /**
  * The SnippetWithDynamicNumber model module.
  * @module model/SnippetWithDynamicNumber
- * @version 7.10.0
+ * @version 8.0.0
  */
 class SnippetWithDynamicNumber {
     /**

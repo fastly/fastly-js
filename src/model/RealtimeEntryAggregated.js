@@ -16,7 +16,7 @@ import RealtimeMeasurements from './RealtimeMeasurements';
 /**
  * The RealtimeEntryAggregated model module.
  * @module model/RealtimeEntryAggregated
- * @version 7.10.0
+ * @version 8.0.0
  */
 class RealtimeEntryAggregated {
     /**
@@ -737,27 +737,6 @@ class RealtimeEntryAggregated {
             if (data.hasOwnProperty('ddos_action_downgraded_connections')) {
                 obj['ddos_action_downgraded_connections'] = ApiClient.convertToType(data['ddos_action_downgraded_connections'], 'Number');
             }
-            if (data.hasOwnProperty('vcl_on_compute_hit_requests')) {
-                obj['vcl_on_compute_hit_requests'] = ApiClient.convertToType(data['vcl_on_compute_hit_requests'], 'Number');
-            }
-            if (data.hasOwnProperty('vcl_on_compute_miss_requests')) {
-                obj['vcl_on_compute_miss_requests'] = ApiClient.convertToType(data['vcl_on_compute_miss_requests'], 'Number');
-            }
-            if (data.hasOwnProperty('vcl_on_compute_pass_requests')) {
-                obj['vcl_on_compute_pass_requests'] = ApiClient.convertToType(data['vcl_on_compute_pass_requests'], 'Number');
-            }
-            if (data.hasOwnProperty('vcl_on_compute_error_requests')) {
-                obj['vcl_on_compute_error_requests'] = ApiClient.convertToType(data['vcl_on_compute_error_requests'], 'Number');
-            }
-            if (data.hasOwnProperty('vcl_on_compute_synth_requests')) {
-                obj['vcl_on_compute_synth_requests'] = ApiClient.convertToType(data['vcl_on_compute_synth_requests'], 'Number');
-            }
-            if (data.hasOwnProperty('vcl_on_compute_edge_hit_requests')) {
-                obj['vcl_on_compute_edge_hit_requests'] = ApiClient.convertToType(data['vcl_on_compute_edge_hit_requests'], 'Number');
-            }
-            if (data.hasOwnProperty('vcl_on_compute_edge_miss_requests')) {
-                obj['vcl_on_compute_edge_miss_requests'] = ApiClient.convertToType(data['vcl_on_compute_edge_miss_requests'], 'Number');
-            }
             if (data.hasOwnProperty('all_hit_requests')) {
                 obj['all_hit_requests'] = ApiClient.convertToType(data['all_hit_requests'], 'Number');
             }
@@ -799,6 +778,15 @@ class RealtimeEntryAggregated {
             }
             if (data.hasOwnProperty('request_denied_get_head_body')) {
                 obj['request_denied_get_head_body'] = ApiClient.convertToType(data['request_denied_get_head_body'], 'Number');
+            }
+            if (data.hasOwnProperty('service_ddos_requests_detected')) {
+                obj['service_ddos_requests_detected'] = ApiClient.convertToType(data['service_ddos_requests_detected'], 'Number');
+            }
+            if (data.hasOwnProperty('service_ddos_requests_mitigated')) {
+                obj['service_ddos_requests_mitigated'] = ApiClient.convertToType(data['service_ddos_requests_mitigated'], 'Number');
+            }
+            if (data.hasOwnProperty('service_ddos_requests_allowed')) {
+                obj['service_ddos_requests_allowed'] = ApiClient.convertToType(data['service_ddos_requests_allowed'], 'Number');
             }
         }
         return obj;
@@ -2182,48 +2170,6 @@ RealtimeEntryAggregated.prototype['ddos_action_downgrade'] = undefined;
 RealtimeEntryAggregated.prototype['ddos_action_downgraded_connections'] = undefined;
 
 /**
- * Number of cache hits for a VCL service running on Compute.
- * @member {Number} vcl_on_compute_hit_requests
- */
-RealtimeEntryAggregated.prototype['vcl_on_compute_hit_requests'] = undefined;
-
-/**
- * Number of cache misses for a VCL service running on Compute.
- * @member {Number} vcl_on_compute_miss_requests
- */
-RealtimeEntryAggregated.prototype['vcl_on_compute_miss_requests'] = undefined;
-
-/**
- * Number of requests that passed through the CDN without being cached for a VCL service running on Compute.
- * @member {Number} vcl_on_compute_pass_requests
- */
-RealtimeEntryAggregated.prototype['vcl_on_compute_pass_requests'] = undefined;
-
-/**
- * Number of cache errors for a VCL service running on Compute.
- * @member {Number} vcl_on_compute_error_requests
- */
-RealtimeEntryAggregated.prototype['vcl_on_compute_error_requests'] = undefined;
-
-/**
- * Number of requests that returned a synthetic response (i.e., response objects created with the `synthetic` VCL statement) for a VCL service running on Compute.
- * @member {Number} vcl_on_compute_synth_requests
- */
-RealtimeEntryAggregated.prototype['vcl_on_compute_synth_requests'] = undefined;
-
-/**
- * Number of requests sent by end users to Fastly that resulted in a hit at the edge for a VCL service running on Compute.
- * @member {Number} vcl_on_compute_edge_hit_requests
- */
-RealtimeEntryAggregated.prototype['vcl_on_compute_edge_hit_requests'] = undefined;
-
-/**
- * Number of requests sent by end users to Fastly that resulted in a miss at the edge for a VCL service running on Compute.
- * @member {Number} vcl_on_compute_edge_miss_requests
- */
-RealtimeEntryAggregated.prototype['vcl_on_compute_edge_miss_requests'] = undefined;
-
-/**
  * Number of cache hits for a VCL service.
  * @member {Number} all_hit_requests
  */
@@ -2306,6 +2252,24 @@ RealtimeEntryAggregated.prototype['origin_offload'] = undefined;
  * @member {Number} request_denied_get_head_body
  */
 RealtimeEntryAggregated.prototype['request_denied_get_head_body'] = undefined;
+
+/**
+ * Number of requests classified as a DDoS attack against a customer origin or service.
+ * @member {Number} service_ddos_requests_detected
+ */
+RealtimeEntryAggregated.prototype['service_ddos_requests_detected'] = undefined;
+
+/**
+ * Number of requests classified as a DDoS attack against a customer origin or service that were mitigated by the Fastly platform.
+ * @member {Number} service_ddos_requests_mitigated
+ */
+RealtimeEntryAggregated.prototype['service_ddos_requests_mitigated'] = undefined;
+
+/**
+ * Number of requests analyzed for DDoS attacks against a customer origin or service, but with no DDoS detected.
+ * @member {Number} service_ddos_requests_allowed
+ */
+RealtimeEntryAggregated.prototype['service_ddos_requests_allowed'] = undefined;
 
 
 // Implement RealtimeMeasurements interface:
@@ -3455,41 +3419,6 @@ RealtimeMeasurements.prototype['ddos_action_downgrade'] = undefined;
  */
 RealtimeMeasurements.prototype['ddos_action_downgraded_connections'] = undefined;
 /**
- * Number of cache hits for a VCL service running on Compute.
- * @member {Number} vcl_on_compute_hit_requests
- */
-RealtimeMeasurements.prototype['vcl_on_compute_hit_requests'] = undefined;
-/**
- * Number of cache misses for a VCL service running on Compute.
- * @member {Number} vcl_on_compute_miss_requests
- */
-RealtimeMeasurements.prototype['vcl_on_compute_miss_requests'] = undefined;
-/**
- * Number of requests that passed through the CDN without being cached for a VCL service running on Compute.
- * @member {Number} vcl_on_compute_pass_requests
- */
-RealtimeMeasurements.prototype['vcl_on_compute_pass_requests'] = undefined;
-/**
- * Number of cache errors for a VCL service running on Compute.
- * @member {Number} vcl_on_compute_error_requests
- */
-RealtimeMeasurements.prototype['vcl_on_compute_error_requests'] = undefined;
-/**
- * Number of requests that returned a synthetic response (i.e., response objects created with the `synthetic` VCL statement) for a VCL service running on Compute.
- * @member {Number} vcl_on_compute_synth_requests
- */
-RealtimeMeasurements.prototype['vcl_on_compute_synth_requests'] = undefined;
-/**
- * Number of requests sent by end users to Fastly that resulted in a hit at the edge for a VCL service running on Compute.
- * @member {Number} vcl_on_compute_edge_hit_requests
- */
-RealtimeMeasurements.prototype['vcl_on_compute_edge_hit_requests'] = undefined;
-/**
- * Number of requests sent by end users to Fastly that resulted in a miss at the edge for a VCL service running on Compute.
- * @member {Number} vcl_on_compute_edge_miss_requests
- */
-RealtimeMeasurements.prototype['vcl_on_compute_edge_miss_requests'] = undefined;
-/**
  * Number of cache hits for a VCL service.
  * @member {Number} all_hit_requests
  */
@@ -3559,6 +3488,21 @@ RealtimeMeasurements.prototype['origin_offload'] = undefined;
  * @member {Number} request_denied_get_head_body
  */
 RealtimeMeasurements.prototype['request_denied_get_head_body'] = undefined;
+/**
+ * Number of requests classified as a DDoS attack against a customer origin or service.
+ * @member {Number} service_ddos_requests_detected
+ */
+RealtimeMeasurements.prototype['service_ddos_requests_detected'] = undefined;
+/**
+ * Number of requests classified as a DDoS attack against a customer origin or service that were mitigated by the Fastly platform.
+ * @member {Number} service_ddos_requests_mitigated
+ */
+RealtimeMeasurements.prototype['service_ddos_requests_mitigated'] = undefined;
+/**
+ * Number of requests analyzed for DDoS attacks against a customer origin or service, but with no DDoS detected.
+ * @member {Number} service_ddos_requests_allowed
+ */
+RealtimeMeasurements.prototype['service_ddos_requests_allowed'] = undefined;
 
 
 

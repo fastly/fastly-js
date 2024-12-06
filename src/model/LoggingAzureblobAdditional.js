@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LoggingAzureblobAdditional model module.
  * @module model/LoggingAzureblobAdditional
- * @version 7.10.0
+ * @version 8.0.0
  */
 class LoggingAzureblobAdditional {
     /**

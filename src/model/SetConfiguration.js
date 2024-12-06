@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SetConfiguration model module.
  * @module model/SetConfiguration
- * @version 7.10.0
+ * @version 8.0.0
  */
 class SetConfiguration {
     /**
@@ -52,6 +52,9 @@ class SetConfiguration {
             if (data.hasOwnProperty('traffic_ramp')) {
                 obj['traffic_ramp'] = ApiClient.convertToType(data['traffic_ramp'], 'String');
             }
+            if (data.hasOwnProperty('mode')) {
+                obj['mode'] = ApiClient.convertToType(data['mode'], 'String');
+            }
         }
         return obj;
     }
@@ -70,6 +73,12 @@ SetConfiguration.prototype['workspace_id'] = undefined;
  * @member {String} traffic_ramp
  */
 SetConfiguration.prototype['traffic_ramp'] = undefined;
+
+/**
+ * The new mode to run the product in. One of `block`, `log`, or `off`. Optional in the `PATCH` request body for `ddos_protection`.
+ * @member {String} mode
+ */
+SetConfiguration.prototype['mode'] = undefined;
 
 
 

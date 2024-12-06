@@ -16,7 +16,7 @@ import MutualAuthenticationResponseData from './MutualAuthenticationResponseData
 /**
  * The MutualAuthenticationsResponseAllOf model module.
  * @module model/MutualAuthenticationsResponseAllOf
- * @version 7.10.0
+ * @version 8.0.0
  */
 class MutualAuthenticationsResponseAllOf {
     /**

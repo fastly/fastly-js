@@ -15,12 +15,12 @@ import ApiClient from '../ApiClient';
 /**
  * The ComputeAclLookup model module.
  * @module model/ComputeAclLookup
- * @version 7.10.0
+ * @version 8.0.0
  */
 class ComputeAclLookup {
     /**
      * Constructs a new <code>ComputeAclLookup</code>.
-     * An example of an ACL Lookup response.
+     * Defines the structure of an ACL Lookup response.
      * @alias module:model/ComputeAclLookup
      */
     constructor() { 

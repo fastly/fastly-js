@@ -20,7 +20,7 @@ import SetWorkspaceId from '../model/SetWorkspaceId';
 /**
 * EnabledProducts service.
 * @module api/EnabledProductsApi
-* @version 7.10.0
+* @version 8.0.0
 */
 export default class EnabledProductsApi {
 
@@ -41,7 +41,7 @@ export default class EnabledProductsApi {
 
 
     /**
-     * Disable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, and `ngwaf`.
+     * Disable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, `ngwaf`, `ddos_protection`, and `log_explorer_insights`.
      * @param {Object} options
      * @param {String} options.product_id
      * @param {String} options.service_id - Alphanumeric string identifying the service.
@@ -92,7 +92,7 @@ export default class EnabledProductsApi {
     }
 
     /**
-     * Disable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, and `ngwaf`.
+     * Disable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, `ngwaf`, `ddos_protection`, and `log_explorer_insights`.
      * @param {Object} options
      * @param {String} options.product_id
      * @param {String} options.service_id - Alphanumeric string identifying the service.
@@ -106,7 +106,7 @@ export default class EnabledProductsApi {
     }
 
     /**
-     * Enable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, and `ngwaf`.
+     * Enable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, `ngwaf`, `ddos_protection`, and `log_explorer_insights`.
      * @param {Object} options
      * @param {String} options.product_id
      * @param {String} options.service_id - Alphanumeric string identifying the service.
@@ -158,7 +158,7 @@ export default class EnabledProductsApi {
     }
 
     /**
-     * Enable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, and `ngwaf`.
+     * Enable a product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, `ngwaf`, `ddos_protection`, and `log_explorer_insights`.
      * @param {Object} options
      * @param {String} options.product_id
      * @param {String} options.service_id - Alphanumeric string identifying the service.
@@ -173,7 +173,7 @@ export default class EnabledProductsApi {
     }
 
     /**
-     * Get enabled product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, and `ngwaf`.
+     * Get enabled product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, `ngwaf`, `ddos_protection`, and `log_explorer_insights`.
      * @param {Object} options
      * @param {String} options.product_id
      * @param {String} options.service_id - Alphanumeric string identifying the service.
@@ -224,7 +224,7 @@ export default class EnabledProductsApi {
     }
 
     /**
-     * Get enabled product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, and `ngwaf`.
+     * Get enabled product on a service. Supported product IDs: `brotli_compression`,`domain_inspector`,`fanout`,`image_optimizer`,`origin_inspector`, `websockets`, `bot_management`, `ngwaf`, `ddos_protection`, and `log_explorer_insights`.
      * @param {Object} options
      * @param {String} options.product_id
      * @param {String} options.service_id - Alphanumeric string identifying the service.
@@ -238,7 +238,7 @@ export default class EnabledProductsApi {
     }
 
     /**
-     * Get configuration for an enabled product on a service. Supported product IDs: `ngwaf`.
+     * Get configuration for an enabled product on a service. Supported product IDs: `ngwaf` and `ddos_protection`.
      * @param {Object} options
      * @param {String} options.product_id
      * @param {String} options.service_id - Alphanumeric string identifying the service.
@@ -289,7 +289,7 @@ export default class EnabledProductsApi {
     }
 
     /**
-     * Get configuration for an enabled product on a service. Supported product IDs: `ngwaf`.
+     * Get configuration for an enabled product on a service. Supported product IDs: `ngwaf` and `ddos_protection`.
      * @param {Object} options
      * @param {String} options.product_id
      * @param {String} options.service_id - Alphanumeric string identifying the service.
@@ -303,7 +303,7 @@ export default class EnabledProductsApi {
     }
 
     /**
-     * Update configuration for an enabled product on a service. Supported product IDs: `ngwaf`.
+     * Update configuration for an enabled product on a service. Supported product IDs: `ngwaf` and `ddos_protection`.
      * @param {Object} options
      * @param {String} options.product_id
      * @param {String} options.service_id - Alphanumeric string identifying the service.
@@ -355,7 +355,7 @@ export default class EnabledProductsApi {
     }
 
     /**
-     * Update configuration for an enabled product on a service. Supported product IDs: `ngwaf`.
+     * Update configuration for an enabled product on a service. Supported product IDs: `ngwaf` and `ddos_protection`.
      * @param {Object} options
      * @param {String} options.product_id
      * @param {String} options.service_id - Alphanumeric string identifying the service.

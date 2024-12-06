@@ -16,7 +16,7 @@ import TypeTlsCertificate from './TypeTlsCertificate';
 /**
  * The RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificateData model module.
  * @module model/RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificateData
- * @version 7.10.0
+ * @version 8.0.0
  */
 class RelationshipDefaultEcdsaTlsCertificateDefaultEcdsaCertificateData {
     /**

@@ -16,7 +16,7 @@ import BillingBandwidth from './BillingBandwidth';
 /**
  * The BillingRegions model module.
  * @module model/BillingRegions
- * @version 7.10.0
+ * @version 8.0.0
  */
 class BillingRegions {
     /**

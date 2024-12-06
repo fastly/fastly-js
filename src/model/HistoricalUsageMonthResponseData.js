@@ -17,7 +17,7 @@ import HistoricalUsageService from './HistoricalUsageService';
 /**
  * The HistoricalUsageMonthResponseData model module.
  * @module model/HistoricalUsageMonthResponseData
- * @version 7.10.0
+ * @version 8.0.0
  */
 class HistoricalUsageMonthResponseData {
     /**

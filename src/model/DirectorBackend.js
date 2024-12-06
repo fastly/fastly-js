@@ -18,7 +18,7 @@ import Timestamps from './Timestamps';
 /**
  * The DirectorBackend model module.
  * @module model/DirectorBackend
- * @version 7.10.0
+ * @version 8.0.0
  */
 class DirectorBackend {
     /**
