@@ -14,6 +14,7 @@
 import ApiClient from "../ApiClient";
 import ComputeAclCreateAclsRequest from '../model/ComputeAclCreateAclsRequest';
 import ComputeAclCreateAclsResponse from '../model/ComputeAclCreateAclsResponse';
+import ComputeAclList from '../model/ComputeAclList';
 import ComputeAclListEntries from '../model/ComputeAclListEntries';
 import ComputeAclLookup from '../model/ComputeAclLookup';
 import ComputeAclUpdate from '../model/ComputeAclUpdate';
@@ -21,7 +22,7 @@ import ComputeAclUpdate from '../model/ComputeAclUpdate';
 /**
 * AclsInCompute service.
 * @module api/AclsInComputeApi
-* @version 8.0.0
+* @version 9.0.0
 */
 export default class AclsInComputeApi {
 
@@ -219,7 +220,7 @@ export default class AclsInComputeApi {
     /**
      * List all ACLs.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ComputeAclCreateAclsResponse>} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ComputeAclList} and HTTP response
      */
     computeAclListAclsWithHttpInfo(options = {}) {
       let postBody = null;
@@ -238,7 +239,7 @@ export default class AclsInComputeApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = [ComputeAclCreateAclsResponse];
+      let returnType = ComputeAclList;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -258,7 +259,7 @@ export default class AclsInComputeApi {
     /**
      * List all ACLs.
      * @param {Object} options
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ComputeAclCreateAclsResponse>}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ComputeAclList}
      */
     computeAclListAcls(options = {}) {
       return this.computeAclListAclsWithHttpInfo(options)

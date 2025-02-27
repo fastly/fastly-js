@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DimensionStatusCode model module.
  * @module model/DimensionStatusCode
- * @version 8.0.0
+ * @version 9.0.0
  */
 class DimensionStatusCode {
     /**

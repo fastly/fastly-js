@@ -19,7 +19,7 @@ import Usagemetric from '../model/Usagemetric';
 /**
 * BillingUsageMetrics service.
 * @module api/BillingUsageMetricsApi
-* @version 8.0.0
+* @version 9.0.0
 */
 export default class BillingUsageMetricsApi {
 
@@ -42,8 +42,8 @@ export default class BillingUsageMetricsApi {
     /**
      * Returns product usage, broken down by service.
      * @param {Object} options
-     * @param {String} options.product_id - The product identifier for the metrics returned (e.g., `cdn_usage`). This field is not required for CSV requests.
-     * @param {String} options.usage_type_name - The usage type name for the metrics returned (e.g., `North America Requests`). This field is not required for CSV requests.
+     * @param {String} [options.product_id] - The product identifier for the metrics returned (e.g., `cdn_usage`).
+     * @param {String} [options.usage_type_name] - The usage type name for the metrics returned (e.g., `North America Requests`).
      * @param {String} [options.start_month]
      * @param {String} [options.end_month]
      * @param {String} [options.limit='5'] - Number of results per page. The maximum is 100.
@@ -52,14 +52,6 @@ export default class BillingUsageMetricsApi {
      */
     getServiceLevelUsageWithHttpInfo(options = {}) {
       let postBody = null;
-      // Verify the required parameter 'product_id' is set.
-      if (options['product_id'] === undefined || options['product_id'] === null) {
-        throw new Error("Missing the required parameter 'product_id'.");
-      }
-      // Verify the required parameter 'usage_type_name' is set.
-      if (options['usage_type_name'] === undefined || options['usage_type_name'] === null) {
-        throw new Error("Missing the required parameter 'usage_type_name'.");
-      }
 
       let pathParams = {
       };
@@ -101,8 +93,8 @@ export default class BillingUsageMetricsApi {
     /**
      * Returns product usage, broken down by service.
      * @param {Object} options
-     * @param {String} options.product_id - The product identifier for the metrics returned (e.g., `cdn_usage`). This field is not required for CSV requests.
-     * @param {String} options.usage_type_name - The usage type name for the metrics returned (e.g., `North America Requests`). This field is not required for CSV requests.
+     * @param {String} [options.product_id] - The product identifier for the metrics returned (e.g., `cdn_usage`).
+     * @param {String} [options.usage_type_name] - The usage type name for the metrics returned (e.g., `North America Requests`).
      * @param {String} [options.start_month]
      * @param {String} [options.end_month]
      * @param {String} [options.limit='5'] - Number of results per page. The maximum is 100.
@@ -119,12 +111,20 @@ export default class BillingUsageMetricsApi {
     /**
      * Returns monthly usage metrics for customer by product.
      * @param {Object} options
-     * @param {String} [options.start_month]
-     * @param {String} [options.end_month]
+     * @param {String} options.start_month
+     * @param {String} options.end_month
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Usagemetric} and HTTP response
      */
     getUsageMetricsWithHttpInfo(options = {}) {
       let postBody = null;
+      // Verify the required parameter 'start_month' is set.
+      if (options['start_month'] === undefined || options['start_month'] === null) {
+        throw new Error("Missing the required parameter 'start_month'.");
+      }
+      // Verify the required parameter 'end_month' is set.
+      if (options['end_month'] === undefined || options['end_month'] === null) {
+        throw new Error("Missing the required parameter 'end_month'.");
+      }
 
       let pathParams = {
       };
@@ -162,8 +162,8 @@ export default class BillingUsageMetricsApi {
     /**
      * Returns monthly usage metrics for customer by product.
      * @param {Object} options
-     * @param {String} [options.start_month]
-     * @param {String} [options.end_month]
+     * @param {String} options.start_month
+     * @param {String} options.end_month
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Usagemetric}
      */
     getUsageMetrics(options = {}) {

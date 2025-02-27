@@ -71,7 +71,7 @@ Add an ACL entry to an ACL.
 const options = {
   service_id: "service_id_example", // required
   acl_id: "acl_id_example", // required
-  acl_entry: {"subnet":0,"ip":"127.0.0.1"},
+  acl_entry: {"subnet":16,"ip":"192.168.0.1"},
 };
 
 apiInstance.createAclEntry(options)

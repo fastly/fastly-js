@@ -18,7 +18,7 @@ import BillingTotal from './BillingTotal';
 /**
  * The Billing model module.
  * @module model/Billing
- * @version 8.0.0
+ * @version 9.0.0
  */
 class Billing {
     /**

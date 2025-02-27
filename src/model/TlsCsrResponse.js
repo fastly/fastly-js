@@ -16,7 +16,7 @@ import TlsCsrResponseData from './TlsCsrResponseData';
 /**
  * The TlsCsrResponse model module.
  * @module model/TlsCsrResponse
- * @version 8.0.0
+ * @version 9.0.0
  */
 class TlsCsrResponse {
     /**

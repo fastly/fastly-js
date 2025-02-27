@@ -16,7 +16,7 @@ import TypeTlsSubscription from './TypeTlsSubscription';
 /**
  * The RelationshipMemberTlsSubscription model module.
  * @module model/RelationshipMemberTlsSubscription
- * @version 8.0.0
+ * @version 9.0.0
  */
 class RelationshipMemberTlsSubscription {
     /**

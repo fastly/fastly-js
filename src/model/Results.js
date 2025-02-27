@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Results model module.
  * @module model/Results
- * @version 8.0.0
+ * @version 9.0.0
  */
 class Results {
     /**
@@ -376,6 +376,9 @@ class Results {
             }
             if (data.hasOwnProperty('status_505')) {
                 obj['status_505'] = ApiClient.convertToType(data['status_505'], 'Number');
+            }
+            if (data.hasOwnProperty('status_530')) {
+                obj['status_530'] = ApiClient.convertToType(data['status_530'], 'Number');
             }
             if (data.hasOwnProperty('status_1xx')) {
                 obj['status_1xx'] = ApiClient.convertToType(data['status_1xx'], 'Number');
@@ -776,14 +779,56 @@ class Results {
             if (data.hasOwnProperty('request_denied_get_head_body')) {
                 obj['request_denied_get_head_body'] = ApiClient.convertToType(data['request_denied_get_head_body'], 'Number');
             }
-            if (data.hasOwnProperty('service_ddos_requests_detected')) {
-                obj['service_ddos_requests_detected'] = ApiClient.convertToType(data['service_ddos_requests_detected'], 'Number');
+            if (data.hasOwnProperty('ddos_protection_requests_detect_count')) {
+                obj['ddos_protection_requests_detect_count'] = ApiClient.convertToType(data['ddos_protection_requests_detect_count'], 'Number');
             }
-            if (data.hasOwnProperty('service_ddos_requests_mitigated')) {
-                obj['service_ddos_requests_mitigated'] = ApiClient.convertToType(data['service_ddos_requests_mitigated'], 'Number');
+            if (data.hasOwnProperty('ddos_protection_requests_mitigate_count')) {
+                obj['ddos_protection_requests_mitigate_count'] = ApiClient.convertToType(data['ddos_protection_requests_mitigate_count'], 'Number');
             }
-            if (data.hasOwnProperty('service_ddos_requests_allowed')) {
-                obj['service_ddos_requests_allowed'] = ApiClient.convertToType(data['service_ddos_requests_allowed'], 'Number');
+            if (data.hasOwnProperty('ddos_protection_requests_allow_count')) {
+                obj['ddos_protection_requests_allow_count'] = ApiClient.convertToType(data['ddos_protection_requests_allow_count'], 'Number');
+            }
+            if (data.hasOwnProperty('object_storage_class_a_operations_count')) {
+                obj['object_storage_class_a_operations_count'] = ApiClient.convertToType(data['object_storage_class_a_operations_count'], 'Number');
+            }
+            if (data.hasOwnProperty('object_storage_class_b_operations_count')) {
+                obj['object_storage_class_b_operations_count'] = ApiClient.convertToType(data['object_storage_class_b_operations_count'], 'Number');
+            }
+            if (data.hasOwnProperty('aia_requests')) {
+                obj['aia_requests'] = ApiClient.convertToType(data['aia_requests'], 'Number');
+            }
+            if (data.hasOwnProperty('aia_status_1xx')) {
+                obj['aia_status_1xx'] = ApiClient.convertToType(data['aia_status_1xx'], 'Number');
+            }
+            if (data.hasOwnProperty('aia_status_2xx')) {
+                obj['aia_status_2xx'] = ApiClient.convertToType(data['aia_status_2xx'], 'Number');
+            }
+            if (data.hasOwnProperty('aia_status_3xx')) {
+                obj['aia_status_3xx'] = ApiClient.convertToType(data['aia_status_3xx'], 'Number');
+            }
+            if (data.hasOwnProperty('aia_status_4xx')) {
+                obj['aia_status_4xx'] = ApiClient.convertToType(data['aia_status_4xx'], 'Number');
+            }
+            if (data.hasOwnProperty('aia_status_5xx')) {
+                obj['aia_status_5xx'] = ApiClient.convertToType(data['aia_status_5xx'], 'Number');
+            }
+            if (data.hasOwnProperty('aia_response_usage_tokens')) {
+                obj['aia_response_usage_tokens'] = ApiClient.convertToType(data['aia_response_usage_tokens'], 'Number');
+            }
+            if (data.hasOwnProperty('aia_origin_usage_tokens')) {
+                obj['aia_origin_usage_tokens'] = ApiClient.convertToType(data['aia_origin_usage_tokens'], 'Number');
+            }
+            if (data.hasOwnProperty('aia_estimated_time_saved_ms')) {
+                obj['aia_estimated_time_saved_ms'] = ApiClient.convertToType(data['aia_estimated_time_saved_ms'], 'Number');
+            }
+            if (data.hasOwnProperty('request_collapse_usable_count')) {
+                obj['request_collapse_usable_count'] = ApiClient.convertToType(data['request_collapse_usable_count'], 'Number');
+            }
+            if (data.hasOwnProperty('request_collapse_unusable_count')) {
+                obj['request_collapse_unusable_count'] = ApiClient.convertToType(data['request_collapse_unusable_count'], 'Number');
+            }
+            if (data.hasOwnProperty('compute_cache_operations_count')) {
+                obj['compute_cache_operations_count'] = ApiClient.convertToType(data['compute_cache_operations_count'], 'Number');
             }
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
@@ -1457,6 +1502,12 @@ Results.prototype['status_504'] = undefined;
  * @member {Number} status_505
  */
 Results.prototype['status_505'] = undefined;
+
+/**
+ * Number of responses sent with status code 530.
+ * @member {Number} status_530
+ */
+Results.prototype['status_530'] = undefined;
 
 /**
  * Number of \"Informational\" category status codes delivered.
@@ -2258,21 +2309,105 @@ Results.prototype['request_denied_get_head_body'] = undefined;
 
 /**
  * Number of requests classified as a DDoS attack against a customer origin or service.
- * @member {Number} service_ddos_requests_detected
+ * @member {Number} ddos_protection_requests_detect_count
  */
-Results.prototype['service_ddos_requests_detected'] = undefined;
+Results.prototype['ddos_protection_requests_detect_count'] = undefined;
 
 /**
  * Number of requests classified as a DDoS attack against a customer origin or service that were mitigated by the Fastly platform.
- * @member {Number} service_ddos_requests_mitigated
+ * @member {Number} ddos_protection_requests_mitigate_count
  */
-Results.prototype['service_ddos_requests_mitigated'] = undefined;
+Results.prototype['ddos_protection_requests_mitigate_count'] = undefined;
 
 /**
  * Number of requests analyzed for DDoS attacks against a customer origin or service, but with no DDoS detected.
- * @member {Number} service_ddos_requests_allowed
+ * @member {Number} ddos_protection_requests_allow_count
  */
-Results.prototype['service_ddos_requests_allowed'] = undefined;
+Results.prototype['ddos_protection_requests_allow_count'] = undefined;
+
+/**
+ * A count of the number of Class A Object Storage operations.
+ * @member {Number} object_storage_class_a_operations_count
+ */
+Results.prototype['object_storage_class_a_operations_count'] = undefined;
+
+/**
+ * A count of the number of Class B Object Storage operations.
+ * @member {Number} object_storage_class_b_operations_count
+ */
+Results.prototype['object_storage_class_b_operations_count'] = undefined;
+
+/**
+ * Number of requests received by AI Accelerator.
+ * @member {Number} aia_requests
+ */
+Results.prototype['aia_requests'] = undefined;
+
+/**
+ * Number of \"Informational\" category status codes received from AI provider.
+ * @member {Number} aia_status_1xx
+ */
+Results.prototype['aia_status_1xx'] = undefined;
+
+/**
+ * Number of \"Success\" status codes received from AI provider.
+ * @member {Number} aia_status_2xx
+ */
+Results.prototype['aia_status_2xx'] = undefined;
+
+/**
+ * Number of \"Redirection\" received from AI provider.
+ * @member {Number} aia_status_3xx
+ */
+Results.prototype['aia_status_3xx'] = undefined;
+
+/**
+ * Number of \"Client Error\" received from AI provider.
+ * @member {Number} aia_status_4xx
+ */
+Results.prototype['aia_status_4xx'] = undefined;
+
+/**
+ * Number of \"Server Error\" received from AI provider.
+ * @member {Number} aia_status_5xx
+ */
+Results.prototype['aia_status_5xx'] = undefined;
+
+/**
+ * The usage tokens associated with the response returned from the AI Accelerator cache.
+ * @member {Number} aia_response_usage_tokens
+ */
+Results.prototype['aia_response_usage_tokens'] = undefined;
+
+/**
+ * The number of usage tokens reported by the request to the origin from AI Accelerator.
+ * @member {Number} aia_origin_usage_tokens
+ */
+Results.prototype['aia_origin_usage_tokens'] = undefined;
+
+/**
+ * The estimated amount of time saved by responses served from the AI Accelerator semantic cache.
+ * @member {Number} aia_estimated_time_saved_ms
+ */
+Results.prototype['aia_estimated_time_saved_ms'] = undefined;
+
+/**
+ * Number of requests that were collapsed and satisfied by a usable cache object.
+ * @member {Number} request_collapse_usable_count
+ */
+Results.prototype['request_collapse_usable_count'] = undefined;
+
+/**
+ * Number of requests that were collapsed and unable to be satisfied by the resulting cache object.
+ * @member {Number} request_collapse_unusable_count
+ */
+Results.prototype['request_collapse_unusable_count'] = undefined;
+
+/**
+ * Number of cache operations executed by the Compute platform.
+ * @member {Number} compute_cache_operations_count
+ */
+Results.prototype['compute_cache_operations_count'] = undefined;
 
 /**
  * @member {String} service_id

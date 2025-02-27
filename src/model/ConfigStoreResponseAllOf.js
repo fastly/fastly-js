@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ConfigStoreResponseAllOf model module.
  * @module model/ConfigStoreResponseAllOf
- * @version 8.0.0
+ * @version 9.0.0
  */
 class ConfigStoreResponseAllOf {
     /**

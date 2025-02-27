@@ -11,12 +11,12 @@
  */
 
 import ApiClient from '../ApiClient';
-import InlineResponse2004Meta from './InlineResponse2004Meta';
+import PaginationCursorMeta from './PaginationCursorMeta';
 
 /**
  * The InlineResponse2004 model module.
  * @module model/InlineResponse2004
- * @version 8.0.0
+ * @version 9.0.0
  */
 class InlineResponse2004 {
     /**
@@ -51,7 +51,7 @@ class InlineResponse2004 {
                 obj['data'] = ApiClient.convertToType(data['data'], ['String']);
             }
             if (data.hasOwnProperty('meta')) {
-                obj['meta'] = InlineResponse2004Meta.constructFromObject(data['meta']);
+                obj['meta'] = PaginationCursorMeta.constructFromObject(data['meta']);
             }
         }
         return obj;
@@ -66,7 +66,7 @@ class InlineResponse2004 {
 InlineResponse2004.prototype['data'] = undefined;
 
 /**
- * @member {module:model/InlineResponse2004Meta} meta
+ * @member {module:model/PaginationCursorMeta} meta
  */
 InlineResponse2004.prototype['meta'] = undefined;
 

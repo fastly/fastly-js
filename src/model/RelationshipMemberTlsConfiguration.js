@@ -16,7 +16,7 @@ import TypeTlsConfiguration from './TypeTlsConfiguration';
 /**
  * The RelationshipMemberTlsConfiguration model module.
  * @module model/RelationshipMemberTlsConfiguration
- * @version 8.0.0
+ * @version 9.0.0
  */
 class RelationshipMemberTlsConfiguration {
     /**

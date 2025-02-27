@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ComputeAclListEntriesItem model module.
  * @module model/ComputeAclListEntriesItem
- * @version 8.0.0
+ * @version 9.0.0
  */
 class ComputeAclListEntriesItem {
     /**

@@ -25,7 +25,7 @@ import ValuesStatusCodes from './ValuesStatusCodes';
 /**
  * The LogInsightsValues model module.
  * @module model/LogInsightsValues
- * @version 8.0.0
+ * @version 9.0.0
  */
 class LogInsightsValues {
     /**

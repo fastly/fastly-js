@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SecretStoreResponse model module.
  * @module model/SecretStoreResponse
- * @version 8.0.0
+ * @version 9.0.0
  */
 class SecretStoreResponse {
     /**

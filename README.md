@@ -180,11 +180,6 @@ Class | Method | Description
 *Fastly.DomainInspectorRealtimeApi* | [**getDomainInspectorLastMaxEntries**](docs/DomainInspectorRealtimeApi.md#getDomainInspectorLastMaxEntries) | Get a limited number of real-time domain data entries
 *Fastly.DomainInspectorRealtimeApi* | [**getDomainInspectorLastSecond**](docs/DomainInspectorRealtimeApi.md#getDomainInspectorLastSecond) | Get real-time domain data from a specified time
 *Fastly.DomainOwnershipsApi* | [**listDomainOwnerships**](docs/DomainOwnershipsApi.md#listDomainOwnerships) | List domain-ownerships
-*Fastly.EnabledProductsApi* | [**disableProduct**](docs/EnabledProductsApi.md#disableProduct) | Disable a product
-*Fastly.EnabledProductsApi* | [**enableProduct**](docs/EnabledProductsApi.md#enableProduct) | Enable a product
-*Fastly.EnabledProductsApi* | [**getEnabledProduct**](docs/EnabledProductsApi.md#getEnabledProduct) | Get enabled product
-*Fastly.EnabledProductsApi* | [**getProductConfiguration**](docs/EnabledProductsApi.md#getProductConfiguration) | Get configuration for a product
-*Fastly.EnabledProductsApi* | [**setProductConfiguration**](docs/EnabledProductsApi.md#setProductConfiguration) | Update configuration for a product
 *Fastly.EventsApi* | [**getEvent**](docs/EventsApi.md#getEvent) | Get an event
 *Fastly.EventsApi* | [**listEvents**](docs/EventsApi.md#listEvents) | List events
 *Fastly.GzipApi* | [**createGzipConfig**](docs/GzipApi.md#createGzipConfig) | Create a gzip configuration
@@ -251,42 +246,14 @@ Class | Method | Description
 *Fastly.InvitationsApi* | [**createInvitation**](docs/InvitationsApi.md#createInvitation) | Create an invitation
 *Fastly.InvitationsApi* | [**deleteInvitation**](docs/InvitationsApi.md#deleteInvitation) | Delete an invitation
 *Fastly.InvitationsApi* | [**listInvitations**](docs/InvitationsApi.md#listInvitations) | List invitations
-*Fastly.KvStoreApi* | [**createStore**](docs/KvStoreApi.md#createStore) | Create a KV store.
-*Fastly.KvStoreApi* | [**deleteStore**](docs/KvStoreApi.md#deleteStore) | Delete a KV store.
-*Fastly.KvStoreApi* | [**getStore**](docs/KvStoreApi.md#getStore) | Describe a KV store.
-*Fastly.KvStoreApi* | [**getStores**](docs/KvStoreApi.md#getStores) | List KV stores.
-*Fastly.KvStoreItemApi* | [**deleteKeyFromStore**](docs/KvStoreItemApi.md#deleteKeyFromStore) | Delete kv store item.
-*Fastly.KvStoreItemApi* | [**getKeys**](docs/KvStoreItemApi.md#getKeys) | List kv store keys.
-*Fastly.KvStoreItemApi* | [**getValueForKey**](docs/KvStoreItemApi.md#getValueForKey) | Get the value of an kv store item
-*Fastly.KvStoreItemApi* | [**setValueForKey**](docs/KvStoreItemApi.md#setValueForKey) | Insert an item into an kv store
-*Fastly.LegacyWafConfigurationSetsApi* | [**listWafConfigSets**](docs/LegacyWafConfigurationSetsApi.md#listWafConfigSets) | List configuration sets
-*Fastly.LegacyWafConfigurationSetsApi* | [**listWafsConfigSet**](docs/LegacyWafConfigurationSetsApi.md#listWafsConfigSet) | List WAFs currently using a configuration set
-*Fastly.LegacyWafConfigurationSetsApi* | [**useWafConfigSet**](docs/LegacyWafConfigurationSetsApi.md#useWafConfigSet) | Apply a configuration set to a WAF
-*Fastly.LegacyWafFirewallApi* | [**createLegacyWafFirewallService**](docs/LegacyWafFirewallApi.md#createLegacyWafFirewallService) | Create a firewall
-*Fastly.LegacyWafFirewallApi* | [**disableLegacyWafFirewall**](docs/LegacyWafFirewallApi.md#disableLegacyWafFirewall) | Disable a firewall
-*Fastly.LegacyWafFirewallApi* | [**enableLegacyWafFirewall**](docs/LegacyWafFirewallApi.md#enableLegacyWafFirewall) | Enable a firewall
-*Fastly.LegacyWafFirewallApi* | [**getLegacyWafFirewall**](docs/LegacyWafFirewallApi.md#getLegacyWafFirewall) | Get a firewall object
-*Fastly.LegacyWafFirewallApi* | [**getLegacyWafFirewallService**](docs/LegacyWafFirewallApi.md#getLegacyWafFirewallService) | Get a firewall
-*Fastly.LegacyWafFirewallApi* | [**listLegacyWafFirewalls**](docs/LegacyWafFirewallApi.md#listLegacyWafFirewalls) | List active firewalls
-*Fastly.LegacyWafFirewallApi* | [**listLegacyWafFirewallsService**](docs/LegacyWafFirewallApi.md#listLegacyWafFirewallsService) | List firewalls
-*Fastly.LegacyWafFirewallApi* | [**updateLegacyWafFirewallService**](docs/LegacyWafFirewallApi.md#updateLegacyWafFirewallService) | Update a firewall
-*Fastly.LegacyWafOwaspApi* | [**createOwaspSettings**](docs/LegacyWafOwaspApi.md#createOwaspSettings) | Create an OWASP settings object
-*Fastly.LegacyWafOwaspApi* | [**getOwaspSettings**](docs/LegacyWafOwaspApi.md#getOwaspSettings) | Get the OWASP settings object
-*Fastly.LegacyWafOwaspApi* | [**updateOwaspSettings**](docs/LegacyWafOwaspApi.md#updateOwaspSettings) | Update the OWASP settings object
-*Fastly.LegacyWafRuleApi* | [**getLegacyWafFirewallRuleVcl**](docs/LegacyWafRuleApi.md#getLegacyWafFirewallRuleVcl) | Get VCL for a rule associated with a firewall
-*Fastly.LegacyWafRuleApi* | [**getLegacyWafRule**](docs/LegacyWafRuleApi.md#getLegacyWafRule) | Get a rule
-*Fastly.LegacyWafRuleApi* | [**getLegacyWafRuleVcl**](docs/LegacyWafRuleApi.md#getLegacyWafRuleVcl) | Get VCL for a rule
-*Fastly.LegacyWafRuleApi* | [**listLegacyWafRules**](docs/LegacyWafRuleApi.md#listLegacyWafRules) | List rules in the latest configuration set
-*Fastly.LegacyWafRuleStatusApi* | [**getWafFirewallRuleStatus**](docs/LegacyWafRuleStatusApi.md#getWafFirewallRuleStatus) | Get the status of a rule on a firewall
-*Fastly.LegacyWafRuleStatusApi* | [**listWafFirewallRuleStatuses**](docs/LegacyWafRuleStatusApi.md#listWafFirewallRuleStatuses) | List rule statuses
-*Fastly.LegacyWafRuleStatusApi* | [**updateWafFirewallRuleStatus**](docs/LegacyWafRuleStatusApi.md#updateWafFirewallRuleStatus) | Update the status of a rule
-*Fastly.LegacyWafRuleStatusApi* | [**updateWafFirewallRuleStatusesTag**](docs/LegacyWafRuleStatusApi.md#updateWafFirewallRuleStatusesTag) | Create or update status of a tagged group of rules
-*Fastly.LegacyWafRulesetApi* | [**getWafRuleset**](docs/LegacyWafRulesetApi.md#getWafRuleset) | Get a WAF ruleset
-*Fastly.LegacyWafRulesetApi* | [**getWafRulesetVcl**](docs/LegacyWafRulesetApi.md#getWafRulesetVcl) | Generate WAF ruleset VCL
-*Fastly.LegacyWafRulesetApi* | [**updateWafRuleset**](docs/LegacyWafRulesetApi.md#updateWafRuleset) | Update a WAF ruleset
-*Fastly.LegacyWafTagApi* | [**listLegacyWafTags**](docs/LegacyWafTagApi.md#listLegacyWafTags) | List WAF tags
-*Fastly.LegacyWafUpdateStatusApi* | [**getWafUpdateStatus**](docs/LegacyWafUpdateStatusApi.md#getWafUpdateStatus) | Get the status of a WAF update
-*Fastly.LegacyWafUpdateStatusApi* | [**listWafUpdateStatuses**](docs/LegacyWafUpdateStatusApi.md#listWafUpdateStatuses) | List update statuses
+*Fastly.KvStoreApi* | [**kvStoreCreate**](docs/KvStoreApi.md#kvStoreCreate) | Create a KV store.
+*Fastly.KvStoreApi* | [**kvStoreDelete**](docs/KvStoreApi.md#kvStoreDelete) | Delete a KV store.
+*Fastly.KvStoreApi* | [**kvStoreGet**](docs/KvStoreApi.md#kvStoreGet) | Describe a KV store.
+*Fastly.KvStoreApi* | [**kvStoreList**](docs/KvStoreApi.md#kvStoreList) | List all KV stores.
+*Fastly.KvStoreItemApi* | [**kvStoreDeleteItem**](docs/KvStoreItemApi.md#kvStoreDeleteItem) | Delete an item.
+*Fastly.KvStoreItemApi* | [**kvStoreGetItem**](docs/KvStoreItemApi.md#kvStoreGetItem) | Get an item.
+*Fastly.KvStoreItemApi* | [**kvStoreListItemKeys**](docs/KvStoreItemApi.md#kvStoreListItemKeys) | List item keys.
+*Fastly.KvStoreItemApi* | [**kvStoreUpsertItem**](docs/KvStoreItemApi.md#kvStoreUpsertItem) | Insert or update an item.
 *Fastly.LogExplorerApi* | [**getLogRecords**](docs/LogExplorerApi.md#getLogRecords) | Retrieve log records
 *Fastly.LoggingAzureblobApi* | [**createLogAzure**](docs/LoggingAzureblobApi.md#createLogAzure) | Create an Azure Blob Storage log endpoint
 *Fastly.LoggingAzureblobApi* | [**deleteLogAzure**](docs/LoggingAzureblobApi.md#deleteLogAzure) | Delete the Azure Blob Storage log endpoint
@@ -454,6 +421,46 @@ Class | Method | Description
 *Fastly.PoolApi* | [**listServerPools**](docs/PoolApi.md#listServerPools) | List server pools
 *Fastly.PoolApi* | [**updateServerPool**](docs/PoolApi.md#updateServerPool) | Update a server pool
 *Fastly.PopApi* | [**listPops**](docs/PopApi.md#listPops) | List Fastly POPs
+*Fastly.ProductAiAcceleratorApi* | [**disableProductAiAccelerator**](docs/ProductAiAcceleratorApi.md#disableProductAiAccelerator) | Disable product
+*Fastly.ProductAiAcceleratorApi* | [**enableAiAccelerator**](docs/ProductAiAcceleratorApi.md#enableAiAccelerator) | Enable product
+*Fastly.ProductAiAcceleratorApi* | [**getAiAccelerator**](docs/ProductAiAcceleratorApi.md#getAiAccelerator) | Get product enablement status
+*Fastly.ProductBotManagementApi* | [**disableProductBotManagement**](docs/ProductBotManagementApi.md#disableProductBotManagement) | Disable product
+*Fastly.ProductBotManagementApi* | [**enableProductBotManagement**](docs/ProductBotManagementApi.md#enableProductBotManagement) | Enable product
+*Fastly.ProductBotManagementApi* | [**getProductBotManagement**](docs/ProductBotManagementApi.md#getProductBotManagement) | Get product enablement status
+*Fastly.ProductBrotliCompressionApi* | [**disableProductBrotliCompression**](docs/ProductBrotliCompressionApi.md#disableProductBrotliCompression) | Disable product
+*Fastly.ProductBrotliCompressionApi* | [**enableProductBrotliCompression**](docs/ProductBrotliCompressionApi.md#enableProductBrotliCompression) | Enable product
+*Fastly.ProductBrotliCompressionApi* | [**getProductBrotliCompression**](docs/ProductBrotliCompressionApi.md#getProductBrotliCompression) | Get product enablement status
+*Fastly.ProductDdosProtectionApi* | [**disableProductDdosProtection**](docs/ProductDdosProtectionApi.md#disableProductDdosProtection) | Disable product
+*Fastly.ProductDdosProtectionApi* | [**enableProductDdosProtection**](docs/ProductDdosProtectionApi.md#enableProductDdosProtection) | Enable product
+*Fastly.ProductDdosProtectionApi* | [**getProductDdosProtection**](docs/ProductDdosProtectionApi.md#getProductDdosProtection) | Get product enablement status
+*Fastly.ProductDdosProtectionApi* | [**getProductDdosProtectionConfiguration**](docs/ProductDdosProtectionApi.md#getProductDdosProtectionConfiguration) | Get configuration
+*Fastly.ProductDdosProtectionApi* | [**setProductDdosProtectionConfiguration**](docs/ProductDdosProtectionApi.md#setProductDdosProtectionConfiguration) | Update configuration
+*Fastly.ProductDomainInspectorApi* | [**disableProductDomainInspector**](docs/ProductDomainInspectorApi.md#disableProductDomainInspector) | Disable product
+*Fastly.ProductDomainInspectorApi* | [**enableProductDomainInspector**](docs/ProductDomainInspectorApi.md#enableProductDomainInspector) | Enable product
+*Fastly.ProductDomainInspectorApi* | [**getProductDomainInspector**](docs/ProductDomainInspectorApi.md#getProductDomainInspector) | Get product enablement status
+*Fastly.ProductFanoutApi* | [**disableProductFanout**](docs/ProductFanoutApi.md#disableProductFanout) | Disable product
+*Fastly.ProductFanoutApi* | [**enableProductFanout**](docs/ProductFanoutApi.md#enableProductFanout) | Enable product
+*Fastly.ProductFanoutApi* | [**getProductFanout**](docs/ProductFanoutApi.md#getProductFanout) | Get product enablement status
+*Fastly.ProductImageOptimizerApi* | [**disableProductImageOptimizer**](docs/ProductImageOptimizerApi.md#disableProductImageOptimizer) | Disable product
+*Fastly.ProductImageOptimizerApi* | [**enableProductImageOptimizer**](docs/ProductImageOptimizerApi.md#enableProductImageOptimizer) | Enable product
+*Fastly.ProductImageOptimizerApi* | [**getProductImageOptimizer**](docs/ProductImageOptimizerApi.md#getProductImageOptimizer) | Get product enablement status
+*Fastly.ProductLogExplorerInsightsApi* | [**disableProductLogExplorerInsights**](docs/ProductLogExplorerInsightsApi.md#disableProductLogExplorerInsights) | Disable product
+*Fastly.ProductLogExplorerInsightsApi* | [**enableProductLogExplorerInsights**](docs/ProductLogExplorerInsightsApi.md#enableProductLogExplorerInsights) | Enable product
+*Fastly.ProductLogExplorerInsightsApi* | [**getProductLogExplorerInsights**](docs/ProductLogExplorerInsightsApi.md#getProductLogExplorerInsights) | Get product enablement status
+*Fastly.ProductNgwafApi* | [**disableProductNgwaf**](docs/ProductNgwafApi.md#disableProductNgwaf) | Disable product
+*Fastly.ProductNgwafApi* | [**enableProductNgwaf**](docs/ProductNgwafApi.md#enableProductNgwaf) | Enable product
+*Fastly.ProductNgwafApi* | [**getProductNgwaf**](docs/ProductNgwafApi.md#getProductNgwaf) | Get product enablement status
+*Fastly.ProductNgwafApi* | [**getProductNgwafConfiguration**](docs/ProductNgwafApi.md#getProductNgwafConfiguration) | Get configuration
+*Fastly.ProductNgwafApi* | [**setProductNgwafConfiguration**](docs/ProductNgwafApi.md#setProductNgwafConfiguration) | Update configuration
+*Fastly.ProductObjectStorageApi* | [**disableProductObjectStorage**](docs/ProductObjectStorageApi.md#disableProductObjectStorage) | Disable product
+*Fastly.ProductObjectStorageApi* | [**enableObjectStorage**](docs/ProductObjectStorageApi.md#enableObjectStorage) | Enable product
+*Fastly.ProductObjectStorageApi* | [**getObjectStorage**](docs/ProductObjectStorageApi.md#getObjectStorage) | Get product enablement status
+*Fastly.ProductOriginInspectorApi* | [**disableProductOriginInspector**](docs/ProductOriginInspectorApi.md#disableProductOriginInspector) | Disable product
+*Fastly.ProductOriginInspectorApi* | [**enableProductOriginInspector**](docs/ProductOriginInspectorApi.md#enableProductOriginInspector) | Enable product
+*Fastly.ProductOriginInspectorApi* | [**getProductOriginInspector**](docs/ProductOriginInspectorApi.md#getProductOriginInspector) | Get product enablement status
+*Fastly.ProductWebsocketsApi* | [**disableProductWebsockets**](docs/ProductWebsocketsApi.md#disableProductWebsockets) | Disable product
+*Fastly.ProductWebsocketsApi* | [**enableProductWebsockets**](docs/ProductWebsocketsApi.md#enableProductWebsockets) | Enable product
+*Fastly.ProductWebsocketsApi* | [**getProductWebsockets**](docs/ProductWebsocketsApi.md#getProductWebsockets) | Get product enablement status
 *Fastly.PublicIpListApi* | [**listFastlyIps**](docs/PublicIpListApi.md#listFastlyIps) | List Fastly&#39;s public IPs
 *Fastly.PublishApi* | [**publish**](docs/PublishApi.md#publish) | Send messages to Fanout subscribers
 *Fastly.PurgeApi* | [**bulkPurgeTag**](docs/PurgeApi.md#bulkPurgeTag) | Purge multiple surrogate key tags

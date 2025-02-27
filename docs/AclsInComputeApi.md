@@ -154,7 +154,7 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**[ComputeAclCreateAclsResponse]**](ComputeAclCreateAclsResponse.md)
+[**ComputeAclList**](ComputeAclList.md)
 
 
 ## `computeAclListAclsSAclId`

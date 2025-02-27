@@ -13,13 +13,13 @@
 
 import ApiClient from "../ApiClient";
 import InlineResponse2003 from '../model/InlineResponse2003';
-import Store from '../model/Store';
-import StoreResponse from '../model/StoreResponse';
+import KvStoreDetails from '../model/KvStoreDetails';
+import KvStoreRequestCreate from '../model/KvStoreRequestCreate';
 
 /**
 * KvStore service.
 * @module api/KvStoreApi
-* @version 8.0.0
+* @version 9.0.0
 */
 export default class KvStoreApi {
 
@@ -40,14 +40,14 @@ export default class KvStoreApi {
 
 
     /**
-     * Create a new KV store.
+     * Create a KV store.
      * @param {Object} options
-     * @param {String} [options.location]
-     * @param {module:model/Store} [options.store]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StoreResponse} and HTTP response
+     * @param {module:model/String} [options.location]
+     * @param {module:model/KvStoreRequestCreate} [options.kv_store_request_create]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/KvStoreDetails} and HTTP response
      */
-    createStoreWithHttpInfo(options = {}) {
-      let postBody = options['store'];
+    kvStoreCreateWithHttpInfo(options = {}) {
+      let postBody = options['kv_store_request_create'];
 
       let pathParams = {
       };
@@ -64,7 +64,7 @@ export default class KvStoreApi {
       let authNames = ['token'];
       let contentTypes = ['application/json'];
       let accepts = ['application/json'];
-      let returnType = StoreResponse;
+      let returnType = KvStoreDetails;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -82,26 +82,26 @@ export default class KvStoreApi {
     }
 
     /**
-     * Create a new KV store.
+     * Create a KV store.
      * @param {Object} options
-     * @param {String} [options.location]
-     * @param {module:model/Store} [options.store]
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StoreResponse}
+     * @param {module:model/String} [options.location]
+     * @param {module:model/KvStoreRequestCreate} [options.kv_store_request_create]
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/KvStoreDetails}
      */
-    createStore(options = {}) {
-      return this.createStoreWithHttpInfo(options)
+    kvStoreCreate(options = {}) {
+      return this.kvStoreCreateWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
 
     /**
-     * A KV store must be empty before it can be deleted.  Deleting a KV store that still contains keys will result in a `409` (Conflict).
+     * A KV store must be empty before it can be deleted. Attempting to delete a KV store that contains items will result in a response with a `409` status code.
      * @param {Object} options
      * @param {String} options.store_id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
-    deleteStoreWithHttpInfo(options = {}) {
+    kvStoreDeleteWithHttpInfo(options = {}) {
       let postBody = null;
       // Verify the required parameter 'store_id' is set.
       if (options['store_id'] === undefined || options['store_id'] === null) {
@@ -141,25 +141,25 @@ export default class KvStoreApi {
     }
 
     /**
-     * A KV store must be empty before it can be deleted.  Deleting a KV store that still contains keys will result in a `409` (Conflict).
+     * A KV store must be empty before it can be deleted. Attempting to delete a KV store that contains items will result in a response with a `409` status code.
      * @param {Object} options
      * @param {String} options.store_id
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
-    deleteStore(options = {}) {
-      return this.deleteStoreWithHttpInfo(options)
+    kvStoreDelete(options = {}) {
+      return this.kvStoreDeleteWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
 
     /**
-     * Get a KV store by ID.
+     * Get details of a KV store.
      * @param {Object} options
      * @param {String} options.store_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/StoreResponse} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/KvStoreDetails} and HTTP response
      */
-    getStoreWithHttpInfo(options = {}) {
+    kvStoreGetWithHttpInfo(options = {}) {
       let postBody = null;
       // Verify the required parameter 'store_id' is set.
       if (options['store_id'] === undefined || options['store_id'] === null) {
@@ -181,7 +181,7 @@ export default class KvStoreApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = StoreResponse;
+      let returnType = KvStoreDetails;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -199,26 +199,26 @@ export default class KvStoreApi {
     }
 
     /**
-     * Get a KV store by ID.
+     * Get details of a KV store.
      * @param {Object} options
      * @param {String} options.store_id
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/StoreResponse}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/KvStoreDetails}
      */
-    getStore(options = {}) {
-      return this.getStoreWithHttpInfo(options)
+    kvStoreGet(options = {}) {
+      return this.kvStoreGetWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
     }
 
     /**
-     * Get all stores for a given customer.
+     * List all KV stores.
      * @param {Object} options
      * @param {String} [options.cursor]
      * @param {Number} [options.limit=1000]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2003} and HTTP response
      */
-    getStoresWithHttpInfo(options = {}) {
+    kvStoreListWithHttpInfo(options = {}) {
       let postBody = null;
 
       let pathParams = {
@@ -255,14 +255,14 @@ export default class KvStoreApi {
     }
 
     /**
-     * Get all stores for a given customer.
+     * List all KV stores.
      * @param {Object} options
      * @param {String} [options.cursor]
      * @param {Number} [options.limit=1000]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2003}
      */
-    getStores(options = {}) {
-      return this.getStoresWithHttpInfo(options)
+    kvStoreList(options = {}) {
+      return this.kvStoreListWithHttpInfo(options)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

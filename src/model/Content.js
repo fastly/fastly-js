@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Content model module.
  * @module model/Content
- * @version 8.0.0
+ * @version 9.0.0
  */
 class Content {
     /**

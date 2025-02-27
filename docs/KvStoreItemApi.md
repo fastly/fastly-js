@@ -10,29 +10,31 @@ const apiInstance = new Fastly.KvStoreItemApi();
 
 Method | HTTP request | Description
 ------ | ------------ | -----------
-[**deleteKeyFromStore**](KvStoreItemApi.md#deleteKeyFromStore) | **DELETE** /resources/stores/kv/{store_id}/keys/{key_name} | Delete kv store item.
-[**getKeys**](KvStoreItemApi.md#getKeys) | **GET** /resources/stores/kv/{store_id}/keys | List kv store keys.
-[**getValueForKey**](KvStoreItemApi.md#getValueForKey) | **GET** /resources/stores/kv/{store_id}/keys/{key_name} | Get the value of an kv store item
-[**setValueForKey**](KvStoreItemApi.md#setValueForKey) | **PUT** /resources/stores/kv/{store_id}/keys/{key_name} | Insert an item into an kv store
+[**kvStoreDeleteItem**](KvStoreItemApi.md#kvStoreDeleteItem) | **DELETE** /resources/stores/kv/{store_id}/keys/{key} | Delete an item.
+[**kvStoreGetItem**](KvStoreItemApi.md#kvStoreGetItem) | **GET** /resources/stores/kv/{store_id}/keys/{key} | Get an item.
+[**kvStoreListItemKeys**](KvStoreItemApi.md#kvStoreListItemKeys) | **GET** /resources/stores/kv/{store_id}/keys | List item keys.
+[**kvStoreUpsertItem**](KvStoreItemApi.md#kvStoreUpsertItem) | **PUT** /resources/stores/kv/{store_id}/keys/{key} | Insert or update an item.
 
 
-## `deleteKeyFromStore`
+## `kvStoreDeleteItem`
 
 ```javascript
-deleteKeyFromStore({ store_id, key_name })
+kvStoreDeleteItem({ store_id, key, [if_generation_match, ][force] })
 ```
 
-Delete an item from an kv store
+Delete an item.
 
 ### Example
 
 ```javascript
 const options = {
   store_id: "store_id_example", // required
-  key_name: "key_name_example", // required
+  key: "key_example", // required
+  if_generation_match: 56,
+  force: false,
 };
 
-apiInstance.deleteKeyFromStore(options)
+apiInstance.kvStoreDeleteItem(options)
   .then(() => {
     console.log('API called successfully.');
   })
@@ -46,20 +48,59 @@ apiInstance.deleteKeyFromStore(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **store_id** | **String** |  |
-**key_name** | **String** |  |
+**key** | **String** |  |
+**if_generation_match** | **Number** |  | [optional]
+**force** | **Boolean** |  | [optional] [defaults to false]
 
 ### Return type
 
 null (empty response body)
 
 
-## `getKeys`
+## `kvStoreGetItem`
 
 ```javascript
-getKeys({ store_id, [cursor, ][limit, ][prefix, ][consistency] })
+kvStoreGetItem({ store_id, key })
 ```
 
-List the keys of all items within an kv store.
+Get an item, including its value, metadata (if any), and generation marker.
+
+### Example
+
+```javascript
+const options = {
+  store_id: "store_id_example", // required
+  key: "key_example", // required
+};
+
+apiInstance.kvStoreGetItem(options)
+  .then((data) => {
+    console.log(data, "API called successfully.");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+```
+
+### Options
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**store_id** | **String** |  |
+**key** | **String** |  |
+
+### Return type
+
+**File**
+
+
+## `kvStoreListItemKeys`
+
+```javascript
+kvStoreListItemKeys({ store_id, [cursor, ][limit, ][prefix, ][consistency] })
+```
+
+Lists the matching item keys (or all item keys, if no prefix is supplied).
 
 ### Example
 
@@ -69,10 +110,10 @@ const options = {
   cursor: "cursor_example",
   limit: 100,
   prefix: "prefix_example",
-  consistency: "consistency_example",
+  consistency: "strong",
 };
 
-apiInstance.getKeys(options)
+apiInstance.kvStoreListItemKeys(options)
   .then((data) => {
     console.log(data, "API called successfully.");
   })
@@ -89,77 +130,40 @@ Name | Type | Description  | Notes
 **cursor** | **String** |  | [optional]
 **limit** | **Number** |  | [optional] [defaults to 100]
 **prefix** | **String** |  | [optional]
-**consistency** | **String** |  | [optional]
+**consistency** | **String** |  | [optional] [one of: "strong", "eventual"]
 
 ### Return type
 
 [**InlineResponse2004**](InlineResponse2004.md)
 
 
-## `getValueForKey`
+## `kvStoreUpsertItem`
 
 ```javascript
-getValueForKey({ store_id, key_name })
+kvStoreUpsertItem({ store_id, key, [if_generation_match, ][time_to_live_sec, ][metadata, ][add, ][append, ][prepend, ][background_fetch, ][body] })
 ```
 
-Get the value associated with a key.
+Inserts or updates an item's value and metadata.
 
 ### Example
 
 ```javascript
 const options = {
   store_id: "store_id_example", // required
-  key_name: "key_name_example", // required
-};
-
-apiInstance.getValueForKey(options)
-  .then((data) => {
-    console.log(data, "API called successfully.");
-  })
-  .catch((error) => {
-    console.error(error);
-  });
-```
-
-### Options
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**store_id** | **String** |  |
-**key_name** | **String** |  |
-
-### Return type
-
-**Blob**
-
-
-## `setValueForKey`
-
-```javascript
-setValueForKey({ store_id, key_name, [if_generation_match, ][time_to_live_sec, ][metadata, ][add, ][append, ][prepend, ][background_fetch, ][body] })
-```
-
-Set a new value for a new or existing key in an kv store.
-
-### Example
-
-```javascript
-const options = {
-  store_id: "store_id_example", // required
-  key_name: "key_name_example", // required
+  key: "key_example", // required
   if_generation_match: 56,
   time_to_live_sec: 56,
   metadata: "metadata_example",
-  add: true,
-  append: true,
-  prepend: true,
-  background_fetch: true,
-  body: null,
+  add: false,
+  append: false,
+  prepend: false,
+  background_fetch: false,
+  body: "/path/to/file",
 };
 
-apiInstance.setValueForKey(options)
-  .then((data) => {
-    console.log(data, "API called successfully.");
+apiInstance.kvStoreUpsertItem(options)
+  .then(() => {
+    console.log('API called successfully.');
   })
   .catch((error) => {
     console.error(error);
@@ -171,19 +175,19 @@ apiInstance.setValueForKey(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **store_id** | **String** |  |
-**key_name** | **String** |  |
+**key** | **String** |  |
 **if_generation_match** | **Number** |  | [optional]
 **time_to_live_sec** | **Number** |  | [optional]
 **metadata** | **String** |  | [optional]
-**add** | **Boolean** |  | [optional]
-**append** | **Boolean** |  | [optional]
-**prepend** | **Boolean** |  | [optional]
-**background_fetch** | **Boolean** |  | [optional]
-**body** | **Blob** |  | [optional]
+**add** | **Boolean** |  | [optional] [defaults to false]
+**append** | **Boolean** |  | [optional] [defaults to false]
+**prepend** | **Boolean** |  | [optional] [defaults to false]
+**background_fetch** | **Boolean** |  | [optional] [defaults to false]
+**body** | **File****File** |  | [optional]
 
 ### Return type
 
-**Blob**
+null (empty response body)
 
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

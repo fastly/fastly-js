@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The LogPropertyServiceId model module.
  * @module model/LogPropertyServiceId
- * @version 8.0.0
+ * @version 9.0.0
  */
 class LogPropertyServiceId {
     /**

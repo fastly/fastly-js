@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Values503Responses model module.
  * @module model/Values503Responses
- * @version 8.0.0
+ * @version 9.0.0
  */
 class Values503Responses {
     /**

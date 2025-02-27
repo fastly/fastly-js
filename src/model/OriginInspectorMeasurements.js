@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The OriginInspectorMeasurements model module.
  * @module model/OriginInspectorMeasurements
- * @version 8.0.0
+ * @version 9.0.0
  */
 class OriginInspectorMeasurements {
     /**
@@ -124,6 +124,9 @@ class OriginInspectorMeasurements {
             }
             if (data.hasOwnProperty('status_505')) {
                 obj['status_505'] = ApiClient.convertToType(data['status_505'], 'Number');
+            }
+            if (data.hasOwnProperty('status_530')) {
+                obj['status_530'] = ApiClient.convertToType(data['status_530'], 'Number');
             }
             if (data.hasOwnProperty('latency_0_to_1ms')) {
                 obj['latency_0_to_1ms'] = ApiClient.convertToType(data['latency_0_to_1ms'], 'Number');
@@ -239,6 +242,9 @@ class OriginInspectorMeasurements {
             if (data.hasOwnProperty('waf_status_505')) {
                 obj['waf_status_505'] = ApiClient.convertToType(data['waf_status_505'], 'Number');
             }
+            if (data.hasOwnProperty('waf_status_530')) {
+                obj['waf_status_530'] = ApiClient.convertToType(data['waf_status_530'], 'Number');
+            }
             if (data.hasOwnProperty('waf_latency_0_to_1ms')) {
                 obj['waf_latency_0_to_1ms'] = ApiClient.convertToType(data['waf_latency_0_to_1ms'], 'Number');
             }
@@ -353,6 +359,9 @@ class OriginInspectorMeasurements {
             if (data.hasOwnProperty('compute_status_505')) {
                 obj['compute_status_505'] = ApiClient.convertToType(data['compute_status_505'], 'Number');
             }
+            if (data.hasOwnProperty('compute_status_530')) {
+                obj['compute_status_530'] = ApiClient.convertToType(data['compute_status_530'], 'Number');
+            }
             if (data.hasOwnProperty('compute_latency_0_to_1ms')) {
                 obj['compute_latency_0_to_1ms'] = ApiClient.convertToType(data['compute_latency_0_to_1ms'], 'Number');
             }
@@ -466,6 +475,9 @@ class OriginInspectorMeasurements {
             }
             if (data.hasOwnProperty('all_status_505')) {
                 obj['all_status_505'] = ApiClient.convertToType(data['all_status_505'], 'Number');
+            }
+            if (data.hasOwnProperty('all_status_530')) {
+                obj['all_status_530'] = ApiClient.convertToType(data['all_status_530'], 'Number');
             }
             if (data.hasOwnProperty('all_latency_0_to_1ms')) {
                 obj['all_latency_0_to_1ms'] = ApiClient.convertToType(data['all_latency_0_to_1ms'], 'Number');
@@ -665,6 +677,12 @@ OriginInspectorMeasurements.prototype['status_504'] = undefined;
  * @member {Number} status_505
  */
 OriginInspectorMeasurements.prototype['status_505'] = undefined;
+
+/**
+ * Number of responses received from origin with status code 530.
+ * @member {Number} status_530
+ */
+OriginInspectorMeasurements.prototype['status_530'] = undefined;
 
 /**
  * Number of responses from origin with latency between 0 and 1 millisecond.
@@ -895,6 +913,12 @@ OriginInspectorMeasurements.prototype['waf_status_504'] = undefined;
 OriginInspectorMeasurements.prototype['waf_status_505'] = undefined;
 
 /**
+ * Number of responses received with status code 530 received for origin requests made by the Fastly WAF.
+ * @member {Number} waf_status_530
+ */
+OriginInspectorMeasurements.prototype['waf_status_530'] = undefined;
+
+/**
  * Number of responses with latency between 0 and 1 millisecond received for origin requests made by the Fastly WAF.
  * @member {Number} waf_latency_0_to_1ms
  */
@@ -1123,6 +1147,12 @@ OriginInspectorMeasurements.prototype['compute_status_504'] = undefined;
 OriginInspectorMeasurements.prototype['compute_status_505'] = undefined;
 
 /**
+ * Number of responses received with status code 530 for origin received by the Compute platform.
+ * @member {Number} compute_status_530
+ */
+OriginInspectorMeasurements.prototype['compute_status_530'] = undefined;
+
+/**
  * Number of responses with latency between 0 and 1 millisecond for origin received by the Compute platform.
  * @member {Number} compute_latency_0_to_1ms
  */
@@ -1349,6 +1379,12 @@ OriginInspectorMeasurements.prototype['all_status_504'] = undefined;
  * @member {Number} all_status_505
  */
 OriginInspectorMeasurements.prototype['all_status_505'] = undefined;
+
+/**
+ * Number of responses received with status code 530 received for origin requests made by all sources.
+ * @member {Number} all_status_530
+ */
+OriginInspectorMeasurements.prototype['all_status_530'] = undefined;
 
 /**
  * Number of responses with latency between 0 and 1 millisecond received for origin requests made by all sources.

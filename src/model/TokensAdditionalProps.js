@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TokensAdditionalProps model module.
  * @module model/TokensAdditionalProps
- * @version 8.0.0
+ * @version 9.0.0
  */
 class TokensAdditionalProps {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ComputeAclLookup model module.
  * @module model/ComputeAclLookup
- * @version 8.0.0
+ * @version 9.0.0
  */
 class ComputeAclLookup {
     /**
@@ -50,9 +50,6 @@ class ComputeAclLookup {
             if (data.hasOwnProperty('prefix')) {
                 obj['prefix'] = ApiClient.convertToType(data['prefix'], 'String');
             }
-            if (data.hasOwnProperty('length')) {
-                obj['length'] = ApiClient.convertToType(data['length'], 'Number');
-            }
             if (data.hasOwnProperty('action')) {
                 obj['action'] = ApiClient.convertToType(data['action'], 'String');
             }
@@ -64,16 +61,10 @@ class ComputeAclLookup {
 }
 
 /**
- * A valid IPv4 or IPv6 address.
+ * A valid IPv4 or IPv6 address and prefix in CIDR notation.
  * @member {String} prefix
  */
 ComputeAclLookup.prototype['prefix'] = undefined;
-
-/**
- * The length of address in the IP addressing space.
- * @member {Number} length
- */
-ComputeAclLookup.prototype['length'] = undefined;
 
 /**
  * One of \"ALLOW\" or \"BLOCK\".

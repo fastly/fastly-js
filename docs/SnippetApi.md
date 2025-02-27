@@ -11,12 +11,12 @@ const apiInstance = new Fastly.SnippetApi();
 Method | HTTP request | Description
 ------ | ------------ | -----------
 [**createSnippet**](SnippetApi.md#createSnippet) | **POST** /service/{service_id}/version/{version_id}/snippet | Create a snippet
-[**deleteSnippet**](SnippetApi.md#deleteSnippet) | **DELETE** /service/{service_id}/version/{version_id}/snippet/{snippet_name} | Delete a snippet
-[**getSnippet**](SnippetApi.md#getSnippet) | **GET** /service/{service_id}/version/{version_id}/snippet/{snippet_name} | Get a versioned snippet
-[**getSnippetDynamic**](SnippetApi.md#getSnippetDynamic) | **GET** /service/{service_id}/snippet/{snippet_id} | Get a dynamic snippet
+[**deleteSnippet**](SnippetApi.md#deleteSnippet) | **DELETE** /service/{service_id}/version/{version_id}/snippet/{name} | Delete a snippet
+[**getSnippet**](SnippetApi.md#getSnippet) | **GET** /service/{service_id}/version/{version_id}/snippet/{name} | Get a versioned snippet
+[**getSnippetDynamic**](SnippetApi.md#getSnippetDynamic) | **GET** /service/{service_id}/snippet/{id} | Get a dynamic snippet
 [**listSnippets**](SnippetApi.md#listSnippets) | **GET** /service/{service_id}/version/{version_id}/snippet | List snippets
-[**updateSnippet**](SnippetApi.md#updateSnippet) | **PUT** /service/{service_id}/version/{version_id}/snippet/{snippet_name} | Update a versioned snippet
-[**updateSnippetDynamic**](SnippetApi.md#updateSnippetDynamic) | **PUT** /service/{service_id}/snippet/{snippet_id} | Update a dynamic snippet
+[**updateSnippet**](SnippetApi.md#updateSnippet) | **PUT** /service/{service_id}/version/{version_id}/snippet/{name} | Update a versioned snippet
+[**updateSnippetDynamic**](SnippetApi.md#updateSnippetDynamic) | **PUT** /service/{service_id}/snippet/{id} | Update a dynamic snippet
 
 
 ## `createSnippet`
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 ## `deleteSnippet`
 
 ```javascript
-deleteSnippet({ service_id, version_id, snippet_name })
+deleteSnippet({ service_id, version_id, name })
 ```
 
 Delete a specific snippet for a particular service and version.
@@ -80,7 +80,7 @@ Delete a specific snippet for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  snippet_name: "snippet_name_example", // required
+  name: "name_example", // required
 };
 
 apiInstance.deleteSnippet(options)
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** | Alphanumeric string identifying the service. |
 **version_id** | **Number** | Integer identifying a service version. |
-**snippet_name** | **String** | The name for the snippet. |
+**name** | **String** | The name for the snippet. |
 
 ### Return type
 
@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 ## `getSnippet`
 
 ```javascript
-getSnippet({ service_id, version_id, snippet_name })
+getSnippet({ service_id, version_id, name })
 ```
 
 Get a single snippet for a particular service and version.
@@ -119,7 +119,7 @@ Get a single snippet for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  snippet_name: "snippet_name_example", // required
+  name: "name_example", // required
 };
 
 apiInstance.getSnippet(options)
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** | Alphanumeric string identifying the service. |
 **version_id** | **Number** | Integer identifying a service version. |
-**snippet_name** | **String** | The name for the snippet. |
+**name** | **String** | The name for the snippet. |
 
 ### Return type
 
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 ## `getSnippetDynamic`
 
 ```javascript
-getSnippetDynamic({ service_id, snippet_id })
+getSnippetDynamic({ service_id, id })
 ```
 
 Get a single dynamic snippet for a particular service.
@@ -157,7 +157,7 @@ Get a single dynamic snippet for a particular service.
 ```javascript
 const options = {
   service_id: "service_id_example", // required
-  snippet_id: "snippet_id_example", // required
+  id: "id_example", // required
 };
 
 apiInstance.getSnippetDynamic(options)
@@ -174,7 +174,7 @@ apiInstance.getSnippetDynamic(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** | Alphanumeric string identifying the service. |
-**snippet_id** | **String** | Alphanumeric string identifying a VCL Snippet. |
+**id** | **String** | Alphanumeric string identifying a VCL Snippet. |
 
 ### Return type
 
@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 ## `updateSnippet`
 
 ```javascript
-updateSnippet({ service_id, version_id, snippet_name })
+updateSnippet({ service_id, version_id, name })
 ```
 
 Update a specific snippet for a particular service and version.
@@ -232,7 +232,7 @@ Update a specific snippet for a particular service and version.
 const options = {
   service_id: "service_id_example", // required
   version_id: 56, // required
-  snippet_name: "snippet_name_example", // required
+  name: "name_example", // required
 };
 
 apiInstance.updateSnippet(options)
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** | Alphanumeric string identifying the service. |
 **version_id** | **Number** | Integer identifying a service version. |
-**snippet_name** | **String** | The name for the snippet. |
+**name** | **String** | The name for the snippet. |
 
 ### Return type
 
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 ## `updateSnippetDynamic`
 
 ```javascript
-updateSnippetDynamic({ service_id, snippet_id, [name, ][type, ][content, ][priority, ][dynamic] })
+updateSnippetDynamic({ service_id, id, [name, ][type, ][content, ][priority, ][dynamic] })
 ```
 
 Update a dynamic snippet for a particular service.
@@ -270,7 +270,7 @@ Update a dynamic snippet for a particular service.
 ```javascript
 const options = {
   service_id: "service_id_example", // required
-  snippet_id: "snippet_id_example", // required
+  id: "id_example", // required
   name: "name_example",
   type: "init",
   content: "content_example",
@@ -292,7 +292,7 @@ apiInstance.updateSnippetDynamic(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **service_id** | **String** | Alphanumeric string identifying the service. |
-**snippet_id** | **String** | Alphanumeric string identifying a VCL Snippet. |
+**id** | **String** | Alphanumeric string identifying a VCL Snippet. |
 **name** | **String** | The name for the snippet. | [optional]
 **type** | **String** | The location in generated VCL where the snippet should be placed. | [optional] [one of: "init", "recv", "hash", "hit", "miss", "pass", "fetch", "error", "deliver", "log", "none"]
 **content** | **String** | The VCL code that specifies exactly what the snippet does. | [optional]

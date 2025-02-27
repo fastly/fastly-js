@@ -17,7 +17,7 @@ Method | HTTP request | Description
 ## `getServiceLevelUsage`
 
 ```javascript
-getServiceLevelUsage({ product_id, usage_type_name, [start_month, ][end_month, ][limit, ][cursor] })
+getServiceLevelUsage({ , [product_id, ][usage_type_name, ][start_month, ][end_month, ][limit, ][cursor] })
 ```
 
 Returns product usage, broken down by service.
@@ -26,8 +26,8 @@ Returns product usage, broken down by service.
 
 ```javascript
 const options = {
-  product_id: "product_id_example", // required
-  usage_type_name: "usage_type_name_example", // required
+  product_id: "product_id_example",
+  usage_type_name: "usage_type_name_example",
   start_month: 2023-01,
   end_month: 2023-03,
   limit: "'5'",
@@ -47,8 +47,8 @@ apiInstance.getServiceLevelUsage(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**product_id** | **String** | The product identifier for the metrics returned (e.g., `cdn_usage`). This field is not required for CSV requests. |
-**usage_type_name** | **String** | The usage type name for the metrics returned (e.g., `North America Requests`). This field is not required for CSV requests. |
+**product_id** | **String** | The product identifier for the metrics returned (e.g., `cdn_usage`). | [optional]
+**usage_type_name** | **String** | The usage type name for the metrics returned (e.g., `North America Requests`). | [optional]
 **start_month** | **String** |  | [optional]
 **end_month** | **String** |  | [optional]
 **limit** | **String** | Number of results per page. The maximum is 100. | [optional] [defaults to '5']
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 ## `getUsageMetrics`
 
 ```javascript
-getUsageMetrics({ , [start_month, ][end_month] })
+getUsageMetrics({ start_month, end_month })
 ```
 
 Returns monthly usage metrics for customer by product.
@@ -71,8 +71,8 @@ Returns monthly usage metrics for customer by product.
 
 ```javascript
 const options = {
-  start_month: 2023-01,
-  end_month: 2023-03,
+  start_month: 2024-05, // required
+  end_month: 2024-06, // required
 };
 
 apiInstance.getUsageMetrics(options)
@@ -88,8 +88,8 @@ apiInstance.getUsageMetrics(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**start_month** | **String** |  | [optional]
-**end_month** | **String** |  | [optional]
+**start_month** | **String** |  |
+**end_month** | **String** |  |
 
 ### Return type
 

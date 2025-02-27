@@ -19,7 +19,7 @@ import Timestamps from './Timestamps';
 /**
  * The BackendResponse model module.
  * @module model/BackendResponse
- * @version 8.0.0
+ * @version 9.0.0
  */
 class BackendResponse {
     /**
@@ -255,7 +255,7 @@ BackendResponse.prototype['ipv4'] = undefined;
 BackendResponse.prototype['ipv6'] = undefined;
 
 /**
- * How long in seconds to keep a persistent connection to the backend between requests.
+ * How long in seconds to keep a persistent connection to the backend between requests. By default, Varnish keeps connections open as long as it can.
  * @member {Number} keepalive_time
  */
 BackendResponse.prototype['keepalive_time'] = undefined;
@@ -491,7 +491,7 @@ Backend.prototype['ipv4'] = undefined;
  */
 Backend.prototype['ipv6'] = undefined;
 /**
- * How long in seconds to keep a persistent connection to the backend between requests.
+ * How long in seconds to keep a persistent connection to the backend between requests. By default, Varnish keeps connections open as long as it can.
  * @member {Number} keepalive_time
  */
 Backend.prototype['keepalive_time'] = undefined;

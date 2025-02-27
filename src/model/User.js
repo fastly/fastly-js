@@ -16,7 +16,7 @@ import RoleUser from './RoleUser';
 /**
  * The User model module.
  * @module model/User
- * @version 8.0.0
+ * @version 9.0.0
  */
 class User {
     /**

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DomainInspectorMeasurements model module.
  * @module model/DomainInspectorMeasurements
- * @version 8.0.0
+ * @version 9.0.0
  */
 class DomainInspectorMeasurements {
     /**
@@ -125,6 +125,9 @@ class DomainInspectorMeasurements {
             if (data.hasOwnProperty('status_505')) {
                 obj['status_505'] = ApiClient.convertToType(data['status_505'], 'Number');
             }
+            if (data.hasOwnProperty('status_530')) {
+                obj['status_530'] = ApiClient.convertToType(data['status_530'], 'Number');
+            }
             if (data.hasOwnProperty('requests')) {
                 obj['requests'] = ApiClient.convertToType(data['requests'], 'Number');
             }
@@ -217,6 +220,9 @@ class DomainInspectorMeasurements {
             }
             if (data.hasOwnProperty('origin_status_505')) {
                 obj['origin_status_505'] = ApiClient.convertToType(data['origin_status_505'], 'Number');
+            }
+            if (data.hasOwnProperty('origin_status_530')) {
+                obj['origin_status_530'] = ApiClient.convertToType(data['origin_status_530'], 'Number');
             }
             if (data.hasOwnProperty('origin_status_1xx')) {
                 obj['origin_status_1xx'] = ApiClient.convertToType(data['origin_status_1xx'], 'Number');
@@ -395,6 +401,12 @@ DomainInspectorMeasurements.prototype['status_504'] = undefined;
  * @member {Number} status_505
  */
 DomainInspectorMeasurements.prototype['status_505'] = undefined;
+
+/**
+ * Number of responses delivered with status code 530.
+ * @member {Number} status_530
+ */
+DomainInspectorMeasurements.prototype['status_530'] = undefined;
 
 /**
  * Number of requests processed.
@@ -581,6 +593,12 @@ DomainInspectorMeasurements.prototype['origin_status_504'] = undefined;
  * @member {Number} origin_status_505
  */
 DomainInspectorMeasurements.prototype['origin_status_505'] = undefined;
+
+/**
+ * Number of responses received from origin with status code 530.
+ * @member {Number} origin_status_530
+ */
+DomainInspectorMeasurements.prototype['origin_status_530'] = undefined;
 
 /**
  * Number of \"Informational\" category status codes received from origin.

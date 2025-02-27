@@ -10,29 +10,29 @@ const apiInstance = new Fastly.KvStoreApi();
 
 Method | HTTP request | Description
 ------ | ------------ | -----------
-[**createStore**](KvStoreApi.md#createStore) | **POST** /resources/stores/kv | Create a KV store.
-[**deleteStore**](KvStoreApi.md#deleteStore) | **DELETE** /resources/stores/kv/{store_id} | Delete a KV store.
-[**getStore**](KvStoreApi.md#getStore) | **GET** /resources/stores/kv/{store_id} | Describe a KV store.
-[**getStores**](KvStoreApi.md#getStores) | **GET** /resources/stores/kv | List KV stores.
+[**kvStoreCreate**](KvStoreApi.md#kvStoreCreate) | **POST** /resources/stores/kv | Create a KV store.
+[**kvStoreDelete**](KvStoreApi.md#kvStoreDelete) | **DELETE** /resources/stores/kv/{store_id} | Delete a KV store.
+[**kvStoreGet**](KvStoreApi.md#kvStoreGet) | **GET** /resources/stores/kv/{store_id} | Describe a KV store.
+[**kvStoreList**](KvStoreApi.md#kvStoreList) | **GET** /resources/stores/kv | List all KV stores.
 
 
-## `createStore`
+## `kvStoreCreate`
 
 ```javascript
-createStore({ , [location, ][store] })
+kvStoreCreate({ , [location, ][kv_store_request_create] })
 ```
 
-Create a new KV store.
+Create a KV store.
 
 ### Example
 
 ```javascript
 const options = {
-  location: "location_example",
-  store: {"name":"my-store"},
+  location: "US",
+  kv_store_request_create: {"name":"my-store"},
 };
 
-apiInstance.createStore(options)
+apiInstance.kvStoreCreate(options)
   .then((data) => {
     console.log(data, "API called successfully.");
   })
@@ -45,21 +45,21 @@ apiInstance.createStore(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**location** | **String** |  | [optional]
-**store** | [**Store**](Store.md) |  | [optional]
+**location** | **String** |  | [optional] [one of: "US", "EU", "ASIA", "AUS"]
+**kv_store_request_create** | [**KvStoreRequestCreate**](KvStoreRequestCreate.md) |  | [optional]
 
 ### Return type
 
-[**StoreResponse**](StoreResponse.md)
+[**KvStoreDetails**](KvStoreDetails.md)
 
 
-## `deleteStore`
+## `kvStoreDelete`
 
 ```javascript
-deleteStore({ store_id })
+kvStoreDelete({ store_id })
 ```
 
-A KV store must be empty before it can be deleted.  Deleting a KV store that still contains keys will result in a `409` (Conflict).
+A KV store must be empty before it can be deleted. Attempting to delete a KV store that contains items will result in a response with a `409` status code.
 
 ### Example
 
@@ -68,7 +68,7 @@ const options = {
   store_id: "store_id_example", // required
 };
 
-apiInstance.deleteStore(options)
+apiInstance.kvStoreDelete(options)
   .then(() => {
     console.log('API called successfully.');
   })
@@ -88,13 +88,13 @@ Name | Type | Description  | Notes
 null (empty response body)
 
 
-## `getStore`
+## `kvStoreGet`
 
 ```javascript
-getStore({ store_id })
+kvStoreGet({ store_id })
 ```
 
-Get a KV store by ID.
+Get details of a KV store.
 
 ### Example
 
@@ -103,7 +103,7 @@ const options = {
   store_id: "store_id_example", // required
 };
 
-apiInstance.getStore(options)
+apiInstance.kvStoreGet(options)
   .then((data) => {
     console.log(data, "API called successfully.");
   })
@@ -120,16 +120,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StoreResponse**](StoreResponse.md)
+[**KvStoreDetails**](KvStoreDetails.md)
 
 
-## `getStores`
+## `kvStoreList`
 
 ```javascript
-getStores({ , [cursor, ][limit] })
+kvStoreList({ , [cursor, ][limit] })
 ```
 
-Get all stores for a given customer.
+List all KV stores.
 
 ### Example
 
@@ -139,7 +139,7 @@ const options = {
   limit: 1000,
 };
 
-apiInstance.getStores(options)
+apiInstance.kvStoreList(options)
   .then((data) => {
     console.log(data, "API called successfully.");
   })

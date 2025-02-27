@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BillingStatus model module.
  * @module model/BillingStatus
- * @version 8.0.0
+ * @version 9.0.0
  */
 class BillingStatus {
     /**

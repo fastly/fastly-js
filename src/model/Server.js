@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Server model module.
  * @module model/Server
- * @version 8.0.0
+ * @version 9.0.0
  */
 class Server {
     /**

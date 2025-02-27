@@ -16,7 +16,7 @@ import PlatformDdosEntry from './PlatformDdosEntry';
 /**
  * The PlatformDdosResponseAllOf model module.
  * @module model/PlatformDdosResponseAllOf
- * @version 8.0.0
+ * @version 9.0.0
  */
 class PlatformDdosResponseAllOf {
     /**

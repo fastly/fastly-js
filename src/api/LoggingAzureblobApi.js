@@ -18,7 +18,7 @@ import LoggingAzureblobResponse from '../model/LoggingAzureblobResponse';
 /**
 * LoggingAzureblob service.
 * @module api/LoggingAzureblobApi
-* @version 8.0.0
+* @version 9.0.0
 */
 export default class LoggingAzureblobApi {
 
