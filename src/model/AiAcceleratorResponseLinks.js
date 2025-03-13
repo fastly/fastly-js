@@ -16,7 +16,7 @@ import AiAcceleratorResponseLinksLinks from './AiAcceleratorResponseLinksLinks';
 /**
  * The AiAcceleratorResponseLinks model module.
  * @module model/AiAcceleratorResponseLinks
- * @version 9.0.0
+ * @version 10.0.0
  */
 class AiAcceleratorResponseLinks {
     /**

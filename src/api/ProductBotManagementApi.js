@@ -17,7 +17,7 @@ import BotManagementResponseBodyEnable from '../model/BotManagementResponseBodyE
 /**
 * ProductBotManagement service.
 * @module api/ProductBotManagementApi
-* @version 9.0.0
+* @version 10.0.0
 */
 export default class ProductBotManagementApi {
 

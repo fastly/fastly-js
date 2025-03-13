@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 ## `listTlsBulkCerts`
 
 ```javascript
-listTlsBulkCerts({ , [filter_tls_domain_id, ][page_number, ][page_size, ][sort] })
+listTlsBulkCerts({ , [filter_tls_domain_id, ][filter_not_before, ][filter_not_after, ][page_number, ][page_size, ][sort] })
 ```
 
 List all certificates.
@@ -100,6 +100,8 @@ List all certificates.
 ```javascript
 const options = {
   filter_tls_domain_id: "filter_tls_domain_id_example",
+  filter_not_before: "filter_not_before_example",
+  filter_not_after: "filter_not_after_example",
   page_number: 1,
   page_size: 20,
   sort: "created_at",
@@ -119,6 +121,8 @@ apiInstance.listTlsBulkCerts(options)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **filter_tls_domain_id** | **String** | Filter certificates by their matching, fully-qualified domain name. | [optional]
+**filter_not_before** | **String** | Filter the returned certificates by not_before date in UTC.  Accepts parameters: lt, lte, gt, gte (e.g., filter[not_before][gte]&#x3D;2020-05-05).  | [optional]
+**filter_not_after** | **String** | Filter the returned certificates by expiry date in UTC.  Accepts parameters: lt, lte, gt, gte (e.g., filter[not_after][lte]&#x3D;2020-05-05).  | [optional]
 **page_number** | **Number** | Current page. | [optional]
 **page_size** | **Number** | Number of records per page. | [optional] [defaults to 20]
 **sort** | **String** | The order in which to list the results by creation date. | [optional] [one of: "created_at", "-created_at"]

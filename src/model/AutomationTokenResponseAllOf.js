@@ -17,7 +17,7 @@ import ReadOnlyId from './ReadOnlyId';
 /**
  * The AutomationTokenResponseAllOf model module.
  * @module model/AutomationTokenResponseAllOf
- * @version 9.0.0
+ * @version 10.0.0
  */
 class AutomationTokenResponseAllOf {
     /**
@@ -63,8 +63,8 @@ class AutomationTokenResponseAllOf {
             if (data.hasOwnProperty('user_agent')) {
                 obj['user_agent'] = ApiClient.convertToType(data['user_agent'], 'String');
             }
-            if (data.hasOwnProperty('sudo_expires_at')) {
-                obj['sudo_expires_at'] = ApiClient.convertToType(data['sudo_expires_at'], 'String');
+            if (data.hasOwnProperty('tls_access')) {
+                obj['tls_access'] = ApiClient.convertToType(data['tls_access'], 'Boolean');
             }
             if (data.hasOwnProperty('last_used_at')) {
                 obj['last_used_at'] = ApiClient.convertToType(data['last_used_at'], 'Date');
@@ -110,24 +110,25 @@ AutomationTokenResponseAllOf.prototype['ip'] = undefined;
 AutomationTokenResponseAllOf.prototype['user_agent'] = undefined;
 
 /**
- * @member {String} sudo_expires_at
+ * Indicates whether TLS access is enabled for the token.
+ * @member {Boolean} tls_access
  */
-AutomationTokenResponseAllOf.prototype['sudo_expires_at'] = undefined;
+AutomationTokenResponseAllOf.prototype['tls_access'] = undefined;
 
 /**
- * A UTC time-stamp of when the token was last used.
+ * A UTC timestamp of when the token was last used.
  * @member {Date} last_used_at
  */
 AutomationTokenResponseAllOf.prototype['last_used_at'] = undefined;
 
 /**
- * A UTC time-stamp of when the token was created.
+ * A UTC timestamp of when the token was created.
  * @member {String} created_at
  */
 AutomationTokenResponseAllOf.prototype['created_at'] = undefined;
 
 /**
- * (optional) A UTC time-stamp of when the token will expire.
+ * (optional) A UTC timestamp of when the token will expire.
  * @member {String} expires_at
  */
 AutomationTokenResponseAllOf.prototype['expires_at'] = undefined;

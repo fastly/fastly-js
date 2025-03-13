@@ -17,7 +17,7 @@ import BrotliCompressionResponseBodyEnable from '../model/BrotliCompressionRespo
 /**
 * ProductBrotliCompression service.
 * @module api/ProductBrotliCompressionApi
-* @version 9.0.0
+* @version 10.0.0
 */
 export default class ProductBrotliCompressionApi {
 

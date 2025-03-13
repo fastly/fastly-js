@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ValuesCountryStats model module.
  * @module model/ValuesCountryStats
- * @version 9.0.0
+ * @version 10.0.0
  */
 class ValuesCountryStats {
     /**

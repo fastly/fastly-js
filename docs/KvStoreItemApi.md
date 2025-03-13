@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**File**
+**Blob**
 
 
 ## `kvStoreListItemKeys`
@@ -158,7 +158,7 @@ const options = {
   append: false,
   prepend: false,
   background_fetch: false,
-  body: "/path/to/file",
+  body: null,
 };
 
 apiInstance.kvStoreUpsertItem(options)
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 **append** | **Boolean** |  | [optional] [defaults to false]
 **prepend** | **Boolean** |  | [optional] [defaults to false]
 **background_fetch** | **Boolean** |  | [optional] [defaults to false]
-**body** | **File****File** |  | [optional]
+**body** | **Blob** |  | [optional]
 
 ### Return type
 

@@ -18,7 +18,7 @@ import InlineResponse200 from '../model/InlineResponse200';
 /**
 * Header service.
 * @module api/HeaderApi
-* @version 9.0.0
+* @version 10.0.0
 */
 export default class HeaderApi {
 
@@ -53,8 +53,8 @@ export default class HeaderApi {
      * @param {String} [options.src] - Variable to be used as a source for the header content. Does not apply to `delete` action.
      * @param {String} [options.substitution] - Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions.
      * @param {module:model/String} [options.type] - Accepts a string value.
-     * @param {Number} [options.ignore_if_set] - Don't add the header if it is added already. Only applies to 'set' action.
-     * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
+     * @param {String} [options.ignore_if_set] - Don't add the header if it is added already. Only applies to 'set' action. Numerical value (\\\"0\\\" = false, \\\"1\\\" = true)
+     * @param {String} [options.priority='100'] - Priority determines execution order. Lower numbers execute first.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HeaderResponse} and HTTP response
      */
     createHeaderObjectWithHttpInfo(options = {}) {
@@ -128,8 +128,8 @@ export default class HeaderApi {
      * @param {String} [options.src] - Variable to be used as a source for the header content. Does not apply to `delete` action.
      * @param {String} [options.substitution] - Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions.
      * @param {module:model/String} [options.type] - Accepts a string value.
-     * @param {Number} [options.ignore_if_set] - Don't add the header if it is added already. Only applies to 'set' action.
-     * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
+     * @param {String} [options.ignore_if_set] - Don't add the header if it is added already. Only applies to 'set' action. Numerical value (\\\"0\\\" = false, \\\"1\\\" = true)
+     * @param {String} [options.priority='100'] - Priority determines execution order. Lower numbers execute first.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HeaderResponse}
      */
     createHeaderObject(options = {}) {
@@ -364,8 +364,8 @@ export default class HeaderApi {
      * @param {String} [options.src] - Variable to be used as a source for the header content. Does not apply to `delete` action.
      * @param {String} [options.substitution] - Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions.
      * @param {module:model/String} [options.type] - Accepts a string value.
-     * @param {Number} [options.ignore_if_set] - Don't add the header if it is added already. Only applies to 'set' action.
-     * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
+     * @param {String} [options.ignore_if_set] - Don't add the header if it is added already. Only applies to 'set' action. Numerical value (\\\"0\\\" = false, \\\"1\\\" = true)
+     * @param {String} [options.priority='100'] - Priority determines execution order. Lower numbers execute first.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/HeaderResponse} and HTTP response
      */
     updateHeaderObjectWithHttpInfo(options = {}) {
@@ -445,8 +445,8 @@ export default class HeaderApi {
      * @param {String} [options.src] - Variable to be used as a source for the header content. Does not apply to `delete` action.
      * @param {String} [options.substitution] - Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions.
      * @param {module:model/String} [options.type] - Accepts a string value.
-     * @param {Number} [options.ignore_if_set] - Don't add the header if it is added already. Only applies to 'set' action.
-     * @param {Number} [options.priority=100] - Priority determines execution order. Lower numbers execute first.
+     * @param {String} [options.ignore_if_set] - Don't add the header if it is added already. Only applies to 'set' action. Numerical value (\\\"0\\\" = false, \\\"1\\\" = true)
+     * @param {String} [options.priority='100'] - Priority determines execution order. Lower numbers execute first.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/HeaderResponse}
      */
     updateHeaderObject(options = {}) {

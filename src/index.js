@@ -42,7 +42,6 @@ import AwsRegion from './model/AwsRegion';
 import Backend from './model/Backend';
 import BackendResponse from './model/BackendResponse';
 import BackendResponseAllOf from './model/BackendResponseAllOf';
-import Billing from './model/Billing';
 import BillingAddressAttributes from './model/BillingAddressAttributes';
 import BillingAddressRequest from './model/BillingAddressRequest';
 import BillingAddressRequestData from './model/BillingAddressRequestData';
@@ -50,20 +49,6 @@ import BillingAddressResponse from './model/BillingAddressResponse';
 import BillingAddressResponseData from './model/BillingAddressResponseData';
 import BillingAddressVerificationErrorResponse from './model/BillingAddressVerificationErrorResponse';
 import BillingAddressVerificationErrorResponseErrors from './model/BillingAddressVerificationErrorResponseErrors';
-import BillingBandwidth from './model/BillingBandwidth';
-import BillingBandwidthTiers from './model/BillingBandwidthTiers';
-import BillingEstimateInvoiceId from './model/BillingEstimateInvoiceId';
-import BillingEstimateLines from './model/BillingEstimateLines';
-import BillingEstimateLinesLineItems from './model/BillingEstimateLinesLineItems';
-import BillingEstimateResponse from './model/BillingEstimateResponse';
-import BillingInvoiceId from './model/BillingInvoiceId';
-import BillingRegions from './model/BillingRegions';
-import BillingResponse from './model/BillingResponse';
-import BillingResponseItemItemsData from './model/BillingResponseItemItemsData';
-import BillingResponseLineItem from './model/BillingResponseLineItem';
-import BillingStatus from './model/BillingStatus';
-import BillingTotal from './model/BillingTotal';
-import BillingTotalExtras from './model/BillingTotalExtras';
 import BotManagementResponseBodyEnable from './model/BotManagementResponseBodyEnable';
 import BotManagementResponseLinks from './model/BotManagementResponseLinks';
 import BotManagementResponseLinksLinks from './model/BotManagementResponseLinksLinks';
@@ -202,7 +187,6 @@ import Gzip from './model/Gzip';
 import GzipResponse from './model/GzipResponse';
 import Header from './model/Header';
 import HeaderResponse from './model/HeaderResponse';
-import HeaderResponseAdditional from './model/HeaderResponseAdditional';
 import Healthcheck from './model/Healthcheck';
 import HealthcheckResponse from './model/HealthcheckResponse';
 import Historical from './model/Historical';
@@ -283,7 +267,6 @@ import KvStoreBatchResponseErrors from './model/KvStoreBatchResponseErrors';
 import KvStoreDetails from './model/KvStoreDetails';
 import KvStoreRequestCreate from './model/KvStoreRequestCreate';
 import KvStoreUpsertBatch from './model/KvStoreUpsertBatch';
-import LineItemData from './model/LineItemData';
 import ListCustomerAddressesResponse from './model/ListCustomerAddressesResponse';
 import ListDashboardsResponse from './model/ListDashboardsResponse';
 import ListEomInvoicesResponse from './model/ListEomInvoicesResponse';
@@ -573,7 +556,6 @@ import Results from './model/Results';
 import RoleUser from './model/RoleUser';
 import SchemasContactResponse from './model/SchemasContactResponse';
 import SchemasSnippetResponse from './model/SchemasSnippetResponse';
-import SchemasSnippetResponseCommon from './model/SchemasSnippetResponseCommon';
 import SchemasUserResponse from './model/SchemasUserResponse';
 import SchemasUserResponseReadOnly from './model/SchemasUserResponseReadOnly';
 import SchemasVclResponse from './model/SchemasVclResponse';
@@ -628,14 +610,8 @@ import Settings from './model/Settings';
 import SettingsResponse from './model/SettingsResponse';
 import SigningKey from './model/SigningKey';
 import Snippet from './model/Snippet';
-import SnippetAllOf from './model/SnippetAllOf';
-import SnippetCommon from './model/SnippetCommon';
 import SnippetResponse from './model/SnippetResponse';
-import SnippetResponseCommon from './model/SnippetResponseCommon';
-import SnippetResponseCommonAllOf from './model/SnippetResponseCommonAllOf';
-import SnippetResponsePost from './model/SnippetResponsePost';
-import SnippetWithDynamicNumber from './model/SnippetWithDynamicNumber';
-import SnippetWithDynamicNumberAllOf from './model/SnippetWithDynamicNumberAllOf';
+import SnippetResponseAllOf from './model/SnippetResponseAllOf';
 import Star from './model/Star';
 import StarData from './model/StarData';
 import StarResponse from './model/StarResponse';
@@ -861,7 +837,6 @@ import AclsInComputeApi from './api/AclsInComputeApi';
 import ApexRedirectApi from './api/ApexRedirectApi';
 import AutomationTokensApi from './api/AutomationTokensApi';
 import BackendApi from './api/BackendApi';
-import BillingApi from './api/BillingApi';
 import BillingAddressApi from './api/BillingAddressApi';
 import BillingInvoicesApi from './api/BillingInvoicesApi';
 import BillingUsageMetricsApi from './api/BillingUsageMetricsApi';
@@ -1021,7 +996,7 @@ function authenticate (key) {
 * </pre>
 * </p>
 * @module index
-* @version 9.0.0
+* @version 10.0.0
 */
 export {
     /**
@@ -1211,12 +1186,6 @@ export {
     BackendResponseAllOf,
 
     /**
-     * The Billing model constructor.
-     * @property {module:model/Billing}
-     */
-    Billing,
-
-    /**
      * The BillingAddressAttributes model constructor.
      * @property {module:model/BillingAddressAttributes}
      */
@@ -1257,90 +1226,6 @@ export {
      * @property {module:model/BillingAddressVerificationErrorResponseErrors}
      */
     BillingAddressVerificationErrorResponseErrors,
-
-    /**
-     * The BillingBandwidth model constructor.
-     * @property {module:model/BillingBandwidth}
-     */
-    BillingBandwidth,
-
-    /**
-     * The BillingBandwidthTiers model constructor.
-     * @property {module:model/BillingBandwidthTiers}
-     */
-    BillingBandwidthTiers,
-
-    /**
-     * The BillingEstimateInvoiceId model constructor.
-     * @property {module:model/BillingEstimateInvoiceId}
-     */
-    BillingEstimateInvoiceId,
-
-    /**
-     * The BillingEstimateLines model constructor.
-     * @property {module:model/BillingEstimateLines}
-     */
-    BillingEstimateLines,
-
-    /**
-     * The BillingEstimateLinesLineItems model constructor.
-     * @property {module:model/BillingEstimateLinesLineItems}
-     */
-    BillingEstimateLinesLineItems,
-
-    /**
-     * The BillingEstimateResponse model constructor.
-     * @property {module:model/BillingEstimateResponse}
-     */
-    BillingEstimateResponse,
-
-    /**
-     * The BillingInvoiceId model constructor.
-     * @property {module:model/BillingInvoiceId}
-     */
-    BillingInvoiceId,
-
-    /**
-     * The BillingRegions model constructor.
-     * @property {module:model/BillingRegions}
-     */
-    BillingRegions,
-
-    /**
-     * The BillingResponse model constructor.
-     * @property {module:model/BillingResponse}
-     */
-    BillingResponse,
-
-    /**
-     * The BillingResponseItemItemsData model constructor.
-     * @property {module:model/BillingResponseItemItemsData}
-     */
-    BillingResponseItemItemsData,
-
-    /**
-     * The BillingResponseLineItem model constructor.
-     * @property {module:model/BillingResponseLineItem}
-     */
-    BillingResponseLineItem,
-
-    /**
-     * The BillingStatus model constructor.
-     * @property {module:model/BillingStatus}
-     */
-    BillingStatus,
-
-    /**
-     * The BillingTotal model constructor.
-     * @property {module:model/BillingTotal}
-     */
-    BillingTotal,
-
-    /**
-     * The BillingTotalExtras model constructor.
-     * @property {module:model/BillingTotalExtras}
-     */
-    BillingTotalExtras,
 
     /**
      * The BotManagementResponseBodyEnable model constructor.
@@ -2171,12 +2056,6 @@ export {
     HeaderResponse,
 
     /**
-     * The HeaderResponseAdditional model constructor.
-     * @property {module:model/HeaderResponseAdditional}
-     */
-    HeaderResponseAdditional,
-
-    /**
      * The Healthcheck model constructor.
      * @property {module:model/Healthcheck}
      */
@@ -2655,12 +2534,6 @@ export {
      * @property {module:model/KvStoreUpsertBatch}
      */
     KvStoreUpsertBatch,
-
-    /**
-     * The LineItemData model constructor.
-     * @property {module:model/LineItemData}
-     */
-    LineItemData,
 
     /**
      * The ListCustomerAddressesResponse model constructor.
@@ -4397,12 +4270,6 @@ export {
     SchemasSnippetResponse,
 
     /**
-     * The SchemasSnippetResponseCommon model constructor.
-     * @property {module:model/SchemasSnippetResponseCommon}
-     */
-    SchemasSnippetResponseCommon,
-
-    /**
      * The SchemasUserResponse model constructor.
      * @property {module:model/SchemasUserResponse}
      */
@@ -4727,52 +4594,16 @@ export {
     Snippet,
 
     /**
-     * The SnippetAllOf model constructor.
-     * @property {module:model/SnippetAllOf}
-     */
-    SnippetAllOf,
-
-    /**
-     * The SnippetCommon model constructor.
-     * @property {module:model/SnippetCommon}
-     */
-    SnippetCommon,
-
-    /**
      * The SnippetResponse model constructor.
      * @property {module:model/SnippetResponse}
      */
     SnippetResponse,
 
     /**
-     * The SnippetResponseCommon model constructor.
-     * @property {module:model/SnippetResponseCommon}
+     * The SnippetResponseAllOf model constructor.
+     * @property {module:model/SnippetResponseAllOf}
      */
-    SnippetResponseCommon,
-
-    /**
-     * The SnippetResponseCommonAllOf model constructor.
-     * @property {module:model/SnippetResponseCommonAllOf}
-     */
-    SnippetResponseCommonAllOf,
-
-    /**
-     * The SnippetResponsePost model constructor.
-     * @property {module:model/SnippetResponsePost}
-     */
-    SnippetResponsePost,
-
-    /**
-     * The SnippetWithDynamicNumber model constructor.
-     * @property {module:model/SnippetWithDynamicNumber}
-     */
-    SnippetWithDynamicNumber,
-
-    /**
-     * The SnippetWithDynamicNumberAllOf model constructor.
-     * @property {module:model/SnippetWithDynamicNumberAllOf}
-     */
-    SnippetWithDynamicNumberAllOf,
+    SnippetResponseAllOf,
 
     /**
      * The Star model constructor.
@@ -6123,12 +5954,6 @@ export {
     * @property {module:api/BackendApi}
     */
     BackendApi,
-
-    /**
-    * The BillingApi service constructor.
-    * @property {module:api/BillingApi}
-    */
-    BillingApi,
 
     /**
     * The BillingAddressApi service constructor.

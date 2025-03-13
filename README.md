@@ -98,9 +98,6 @@ Class | Method | Description
 *Fastly.BackendApi* | [**getBackend**](docs/BackendApi.md#getBackend) | Describe a backend
 *Fastly.BackendApi* | [**listBackends**](docs/BackendApi.md#listBackends) | List backends
 *Fastly.BackendApi* | [**updateBackend**](docs/BackendApi.md#updateBackend) | Update a backend
-*Fastly.BillingApi* | [**getInvoice**](docs/BillingApi.md#getInvoice) | Get an invoice
-*Fastly.BillingApi* | [**getInvoiceById**](docs/BillingApi.md#getInvoiceById) | Get an invoice
-*Fastly.BillingApi* | [**getInvoiceMtd**](docs/BillingApi.md#getInvoiceMtd) | Get month-to-date billing estimate
 *Fastly.BillingAddressApi* | [**addBillingAddr**](docs/BillingAddressApi.md#addBillingAddr) | Add a billing address to a customer
 *Fastly.BillingAddressApi* | [**deleteBillingAddr**](docs/BillingAddressApi.md#deleteBillingAddr) | Delete a billing address
 *Fastly.BillingAddressApi* | [**getBillingAddr**](docs/BillingAddressApi.md#getBillingAddr) | Get a billing address
@@ -108,7 +105,7 @@ Class | Method | Description
 *Fastly.BillingInvoicesApi* | [**getInvoiceByInvoiceId**](docs/BillingInvoicesApi.md#getInvoiceByInvoiceId) | Get invoice by ID.
 *Fastly.BillingInvoicesApi* | [**getMonthToDateInvoice**](docs/BillingInvoicesApi.md#getMonthToDateInvoice) | Get month-to-date invoice.
 *Fastly.BillingInvoicesApi* | [**listInvoices**](docs/BillingInvoicesApi.md#listInvoices) | List of invoices.
-*Fastly.BillingUsageMetricsApi* | [**getServiceLevelUsage**](docs/BillingUsageMetricsApi.md#getServiceLevelUsage) | Retrieve service-level usage metrics for a product.
+*Fastly.BillingUsageMetricsApi* | [**getServiceLevelUsage**](docs/BillingUsageMetricsApi.md#getServiceLevelUsage) | Retrieve service-level usage metrics for services with non-zero usage units.
 *Fastly.BillingUsageMetricsApi* | [**getUsageMetrics**](docs/BillingUsageMetricsApi.md#getUsageMetrics) | Get monthly usage metrics
 *Fastly.CacheSettingsApi* | [**createCacheSettings**](docs/CacheSettingsApi.md#createCacheSettings) | Create a cache settings object
 *Fastly.CacheSettingsApi* | [**deleteCacheSettings**](docs/CacheSettingsApi.md#deleteCacheSettings) | Delete a cache settings object

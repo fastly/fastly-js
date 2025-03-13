@@ -17,7 +17,7 @@ import DomainInspectorResponseBodyEnable from '../model/DomainInspectorResponseB
 /**
 * ProductDomainInspector service.
 * @module api/ProductDomainInspectorApi
-* @version 9.0.0
+* @version 10.0.0
 */
 export default class ProductDomainInspectorApi {
 

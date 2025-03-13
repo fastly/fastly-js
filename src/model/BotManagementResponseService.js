@@ -16,7 +16,7 @@ import BotManagementResponseServiceService from './BotManagementResponseServiceS
 /**
  * The BotManagementResponseService model module.
  * @module model/BotManagementResponseService
- * @version 9.0.0
+ * @version 10.0.0
  */
 class BotManagementResponseService {
     /**

@@ -16,7 +16,7 @@ import WafActiveRuleData from './WafActiveRuleData';
 /**
  * The WafActiveRule model module.
  * @module model/WafActiveRule
- * @version 9.0.0
+ * @version 10.0.0
  */
 class WafActiveRule {
     /**

@@ -41,8 +41,8 @@ const options = {
   src: "src_example",
   substitution: "substitution_example",
   type: "request",
-  ignore_if_set: 56,
-  priority: 100,
+  ignore_if_set: "ignore_if_set_example",
+  priority: "'100'",
 };
 
 apiInstance.createHeaderObject(options)
@@ -70,8 +70,8 @@ Name | Type | Description  | Notes
 **src** | **String** | Variable to be used as a source for the header content. Does not apply to `delete` action. | [optional]
 **substitution** | **String** | Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions. | [optional]
 **type** | **String** | Accepts a string value. | [optional] [one of: "request", "cache", "response"]
-**ignore_if_set** | **Number** | Don&#39;t add the header if it is added already. Only applies to &#39;set&#39; action. | [optional]
-**priority** | **Number** | Priority determines execution order. Lower numbers execute first. | [optional] [defaults to 100]
+**ignore_if_set** | **String** | Don&#39;t add the header if it is added already. Only applies to &#39;set&#39; action. Numerical value (\\\&quot;0\\\&quot; &#x3D; false, \\\&quot;1\\\&quot; &#x3D; true) | [optional]
+**priority** | **String** | Priority determines execution order. Lower numbers execute first. | [optional] [defaults to '100']
 
 ### Return type
 
@@ -218,8 +218,8 @@ const options = {
   src: "src_example",
   substitution: "substitution_example",
   type: "request",
-  ignore_if_set: 56,
-  priority: 100,
+  ignore_if_set: "ignore_if_set_example",
+  priority: "'100'",
 };
 
 apiInstance.updateHeaderObject(options)
@@ -248,8 +248,8 @@ Name | Type | Description  | Notes
 **src** | **String** | Variable to be used as a source for the header content. Does not apply to `delete` action. | [optional]
 **substitution** | **String** | Value to substitute in place of regular expression. Only applies to `regex` and `regex_repeat` actions. | [optional]
 **type** | **String** | Accepts a string value. | [optional] [one of: "request", "cache", "response"]
-**ignore_if_set** | **Number** | Don&#39;t add the header if it is added already. Only applies to &#39;set&#39; action. | [optional]
-**priority** | **Number** | Priority determines execution order. Lower numbers execute first. | [optional] [defaults to 100]
+**ignore_if_set** | **String** | Don&#39;t add the header if it is added already. Only applies to &#39;set&#39; action. Numerical value (\\\&quot;0\\\&quot; &#x3D; false, \\\&quot;1\\\&quot; &#x3D; true) | [optional]
+**priority** | **String** | Priority determines execution order. Lower numbers execute first. | [optional] [defaults to '100']
 
 ### Return type
 

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The IamRoleAllOf model module.
  * @module model/IamRoleAllOf
- * @version 9.0.0
+ * @version 10.0.0
  */
 class IamRoleAllOf {
     /**

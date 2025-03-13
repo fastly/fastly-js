@@ -16,7 +16,7 @@ import ApiClient from "../ApiClient";
 /**
 * IamPermissions service.
 * @module api/IamPermissionsApi
-* @version 9.0.0
+* @version 10.0.0
 */
 export default class IamPermissionsApi {
 

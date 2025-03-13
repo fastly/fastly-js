@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SnippetResponsePost**](SnippetResponsePost.md)
+[**SnippetResponse**](SnippetResponse.md)
 
 
 ## `deleteSnippet`

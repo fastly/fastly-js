@@ -16,7 +16,7 @@ import DashboardItemPropertyVisualizationPropertyConfig from './DashboardItemPro
 /**
  * The DashboardItemPropertyVisualization model module.
  * @module model/DashboardItemPropertyVisualization
- * @version 9.0.0
+ * @version 10.0.0
  */
 class DashboardItemPropertyVisualization {
     /**

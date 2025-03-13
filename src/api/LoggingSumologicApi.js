@@ -19,7 +19,7 @@ import LoggingSumologicResponse from '../model/LoggingSumologicResponse';
 /**
 * LoggingSumologic service.
 * @module api/LoggingSumologicApi
-* @version 9.0.0
+* @version 10.0.0
 */
 export default class LoggingSumologicApi {
 

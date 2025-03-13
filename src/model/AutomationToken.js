@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AutomationToken model module.
  * @module model/AutomationToken
- * @version 9.0.0
+ * @version 10.0.0
  */
 class AutomationToken {
     /**
@@ -94,7 +94,7 @@ AutomationToken.prototype['services'] = undefined;
 AutomationToken.prototype['scope'] = undefined;
 
 /**
- * A UTC time-stamp of when the token expires.
+ * A UTC timestamp of when the token expires.
  * @member {String} expires_at
  */
 AutomationToken.prototype['expires_at'] = undefined;

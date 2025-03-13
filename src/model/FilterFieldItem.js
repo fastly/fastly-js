@@ -16,7 +16,7 @@ import ValueField from './ValueField';
 /**
  * The FilterFieldItem model module.
  * @module model/FilterFieldItem
- * @version 9.0.0
+ * @version 10.0.0
  */
 class FilterFieldItem {
     /**

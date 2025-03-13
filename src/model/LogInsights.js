@@ -18,7 +18,7 @@ import LogInsightsValues from './LogInsightsValues';
 /**
  * The LogInsights model module.
  * @module model/LogInsights
- * @version 9.0.0
+ * @version 10.0.0
  */
 class LogInsights {
     /**

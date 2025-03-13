@@ -16,7 +16,7 @@ import BotManagementResponseServiceService from './BotManagementResponseServiceS
 /**
  * The BrotliCompressionResponseService model module.
  * @module model/BrotliCompressionResponseService
- * @version 9.0.0
+ * @version 10.0.0
  */
 class BrotliCompressionResponseService {
     /**

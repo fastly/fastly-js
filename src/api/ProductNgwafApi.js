@@ -20,7 +20,7 @@ import NgwafResponseEnable from '../model/NgwafResponseEnable';
 /**
 * ProductNgwaf service.
 * @module api/ProductNgwafApi
-* @version 9.0.0
+* @version 10.0.0
 */
 export default class ProductNgwafApi {
 

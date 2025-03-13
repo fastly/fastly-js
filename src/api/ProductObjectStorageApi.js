@@ -17,7 +17,7 @@ import ObjectStorageResponseBodyEnable from '../model/ObjectStorageResponseBodyE
 /**
 * ProductObjectStorage service.
 * @module api/ProductObjectStorageApi
-* @version 9.0.0
+* @version 10.0.0
 */
 export default class ProductObjectStorageApi {
 

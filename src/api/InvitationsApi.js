@@ -19,7 +19,7 @@ import InvitationsResponse from '../model/InvitationsResponse';
 /**
 * Invitations service.
 * @module api/InvitationsApi
-* @version 9.0.0
+* @version 10.0.0
 */
 export default class InvitationsApi {
 

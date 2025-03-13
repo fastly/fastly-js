@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Results model module.
  * @module model/Results
- * @version 9.0.0
+ * @version 10.0.0
  */
 class Results {
     /**
@@ -829,6 +829,27 @@ class Results {
             }
             if (data.hasOwnProperty('compute_cache_operations_count')) {
                 obj['compute_cache_operations_count'] = ApiClient.convertToType(data['compute_cache_operations_count'], 'Number');
+            }
+            if (data.hasOwnProperty('ngwaf_requests_total_count')) {
+                obj['ngwaf_requests_total_count'] = ApiClient.convertToType(data['ngwaf_requests_total_count'], 'Number');
+            }
+            if (data.hasOwnProperty('ngwaf_requests_unknown_count')) {
+                obj['ngwaf_requests_unknown_count'] = ApiClient.convertToType(data['ngwaf_requests_unknown_count'], 'Number');
+            }
+            if (data.hasOwnProperty('ngwaf_requests_allowed_count')) {
+                obj['ngwaf_requests_allowed_count'] = ApiClient.convertToType(data['ngwaf_requests_allowed_count'], 'Number');
+            }
+            if (data.hasOwnProperty('ngwaf_requests_logged_count')) {
+                obj['ngwaf_requests_logged_count'] = ApiClient.convertToType(data['ngwaf_requests_logged_count'], 'Number');
+            }
+            if (data.hasOwnProperty('ngwaf_requests_blocked_count')) {
+                obj['ngwaf_requests_blocked_count'] = ApiClient.convertToType(data['ngwaf_requests_blocked_count'], 'Number');
+            }
+            if (data.hasOwnProperty('ngwaf_requests_timeout_count')) {
+                obj['ngwaf_requests_timeout_count'] = ApiClient.convertToType(data['ngwaf_requests_timeout_count'], 'Number');
+            }
+            if (data.hasOwnProperty('ngwaf_requests_challenged_count')) {
+                obj['ngwaf_requests_challenged_count'] = ApiClient.convertToType(data['ngwaf_requests_challenged_count'], 'Number');
             }
             if (data.hasOwnProperty('service_id')) {
                 obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
@@ -2408,6 +2429,48 @@ Results.prototype['request_collapse_unusable_count'] = undefined;
  * @member {Number} compute_cache_operations_count
  */
 Results.prototype['compute_cache_operations_count'] = undefined;
+
+/**
+ * Total number of Next-Gen WAF (Edge WAF & Core WAF) requests.
+ * @member {Number} ngwaf_requests_total_count
+ */
+Results.prototype['ngwaf_requests_total_count'] = undefined;
+
+/**
+ * Count of Edge WAF requests with an unknown outcome.
+ * @member {Number} ngwaf_requests_unknown_count
+ */
+Results.prototype['ngwaf_requests_unknown_count'] = undefined;
+
+/**
+ * Count of Edge WAF requests allowed.
+ * @member {Number} ngwaf_requests_allowed_count
+ */
+Results.prototype['ngwaf_requests_allowed_count'] = undefined;
+
+/**
+ * Count of Edge WAF requests logged.
+ * @member {Number} ngwaf_requests_logged_count
+ */
+Results.prototype['ngwaf_requests_logged_count'] = undefined;
+
+/**
+ * Count of Edge WAF requests blocked.
+ * @member {Number} ngwaf_requests_blocked_count
+ */
+Results.prototype['ngwaf_requests_blocked_count'] = undefined;
+
+/**
+ * Count of Edge WAF requests timed outcome.
+ * @member {Number} ngwaf_requests_timeout_count
+ */
+Results.prototype['ngwaf_requests_timeout_count'] = undefined;
+
+/**
+ * Count of Edge WAF requests challenged.
+ * @member {Number} ngwaf_requests_challenged_count
+ */
+Results.prototype['ngwaf_requests_challenged_count'] = undefined;
 
 /**
  * @member {String} service_id

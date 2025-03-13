@@ -21,7 +21,7 @@ import InlineResponse2001 from '../model/InlineResponse2001';
 /**
 * AutomationTokens service.
 * @module api/AutomationTokensApi
-* @version 9.0.0
+* @version 10.0.0
 */
 export default class AutomationTokensApi {
 
@@ -62,8 +62,8 @@ export default class AutomationTokensApi {
       };
 
       let authNames = ['token'];
-      let contentTypes = ['application/vnd.api+json'];
-      let accepts = ['application/vnd.api+json'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
       let returnType = AutomationTokenCreateResponse;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
@@ -121,7 +121,7 @@ export default class AutomationTokensApi {
 
       let authNames = ['token'];
       let contentTypes = [];
-      let accepts = ['application/vnd.api+json', 'application/problem+json'];
+      let accepts = ['application/json', 'application/problem+json'];
       let returnType = AutomationTokenResponse;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
@@ -183,7 +183,7 @@ export default class AutomationTokensApi {
 
       let authNames = ['token'];
       let contentTypes = [];
-      let accepts = ['application/vnd.api+json', 'application/problem+json'];
+      let accepts = ['application/json', 'application/problem+json'];
       let returnType = InlineResponse2001;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
@@ -241,7 +241,7 @@ export default class AutomationTokensApi {
 
       let authNames = ['token'];
       let contentTypes = [];
-      let accepts = ['application/vnd.api+json', 'application/problem+json'];
+      let accepts = ['application/json', 'application/problem+json'];
       let returnType = [AutomationTokenResponse];
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
@@ -300,7 +300,7 @@ export default class AutomationTokensApi {
 
       let authNames = ['token'];
       let contentTypes = [];
-      let accepts = ['application/vnd.api+json', 'application/problem+json'];
+      let accepts = ['application/json', 'application/problem+json'];
       let returnType = AutomationTokenErrorResponse;
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI

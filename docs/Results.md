@@ -265,6 +265,13 @@ Name | Type | Description | Notes
 **request_collapse_usable_count** | **Number** | Number of requests that were collapsed and satisfied by a usable cache object. | [optional] 
 **request_collapse_unusable_count** | **Number** | Number of requests that were collapsed and unable to be satisfied by the resulting cache object. | [optional] 
 **compute_cache_operations_count** | **Number** | Number of cache operations executed by the Compute platform. | [optional] 
+**ngwaf_requests_total_count** | **Number** | Total number of Next-Gen WAF (Edge WAF &amp; Core WAF) requests. | [optional] 
+**ngwaf_requests_unknown_count** | **Number** | Count of Edge WAF requests with an unknown outcome. | [optional] 
+**ngwaf_requests_allowed_count** | **Number** | Count of Edge WAF requests allowed. | [optional] 
+**ngwaf_requests_logged_count** | **Number** | Count of Edge WAF requests logged. | [optional] 
+**ngwaf_requests_blocked_count** | **Number** | Count of Edge WAF requests blocked. | [optional] 
+**ngwaf_requests_timeout_count** | **Number** | Count of Edge WAF requests timed outcome. | [optional] 
+**ngwaf_requests_challenged_count** | **Number** | Count of Edge WAF requests challenged. | [optional] 
 **service_id** | **String** |  | [optional] [readonly] 
 **start_time** | **Number** | Timestamp for the start of the time period being reported | [optional] 
 

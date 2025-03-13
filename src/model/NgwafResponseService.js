@@ -16,7 +16,7 @@ import BotManagementResponseServiceService from './BotManagementResponseServiceS
 /**
  * The NgwafResponseService model module.
  * @module model/NgwafResponseService
- * @version 9.0.0
+ * @version 10.0.0
  */
 class NgwafResponseService {
     /**

@@ -16,7 +16,7 @@ import RelationshipWafRuleRevisionWafRuleRevisions from './RelationshipWafRuleRe
 /**
  * The RelationshipWafRuleRevision model module.
  * @module model/RelationshipWafRuleRevision
- * @version 9.0.0
+ * @version 10.0.0
  */
 class RelationshipWafRuleRevision {
     /**

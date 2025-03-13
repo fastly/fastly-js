@@ -16,7 +16,7 @@ import ValidatorResultData from './ValidatorResultData';
 /**
  * The ValidatorResult model module.
  * @module model/ValidatorResult
- * @version 9.0.0
+ * @version 10.0.0
  */
 class ValidatorResult {
     /**

@@ -10,14 +10,14 @@ const apiInstance = new Fastly.BillingUsageMetricsApi();
 
 Method | HTTP request | Description
 ------ | ------------ | -----------
-[**getServiceLevelUsage**](BillingUsageMetricsApi.md#getServiceLevelUsage) | **GET** /billing/v3/service-usage-metrics | Retrieve service-level usage metrics for a product.
+[**getServiceLevelUsage**](BillingUsageMetricsApi.md#getServiceLevelUsage) | **GET** /billing/v3/service-usage-metrics | Retrieve service-level usage metrics for services with non-zero usage units.
 [**getUsageMetrics**](BillingUsageMetricsApi.md#getUsageMetrics) | **GET** /billing/v3/usage-metrics | Get monthly usage metrics
 
 
 ## `getServiceLevelUsage`
 
 ```javascript
-getServiceLevelUsage({ , [product_id, ][usage_type_name, ][start_month, ][end_month, ][limit, ][cursor] })
+getServiceLevelUsage({ , [product_id, ][service, ][usage_type_name, ][start_month, ][end_month, ][limit, ][cursor] })
 ```
 
 Returns product usage, broken down by service.
@@ -27,10 +27,11 @@ Returns product usage, broken down by service.
 ```javascript
 const options = {
   product_id: "product_id_example",
+  service: "service_example",
   usage_type_name: "usage_type_name_example",
   start_month: 2023-01,
   end_month: 2023-03,
-  limit: "'5'",
+  limit: "'1000'",
   cursor: "cursor_example",
 };
 
@@ -47,11 +48,12 @@ apiInstance.getServiceLevelUsage(options)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-**product_id** | **String** | The product identifier for the metrics returned (e.g., `cdn_usage`). | [optional]
-**usage_type_name** | **String** | The usage type name for the metrics returned (e.g., `North America Requests`). | [optional]
+**product_id** | **String** | The product identifier for the metrics returned (e.g., `cdn_usage`). This should be used along with `usage_type_name`. | [optional]
+**service** | **String** | The service identifier for the metrics being requested. | [optional]
+**usage_type_name** | **String** | The usage type name for the metrics returned (e.g., `North America Requests`). This should be used along with `product_id`. | [optional]
 **start_month** | **String** |  | [optional]
 **end_month** | **String** |  | [optional]
-**limit** | **String** | Number of results per page. The maximum is 100. | [optional] [defaults to '5']
+**limit** | **String** | Number of results per page. The maximum is 10000. | [optional] [defaults to '1000']
 **cursor** | **String** | Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty. | [optional]
 
 ### Return type

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ComputeAclListEntriesMeta model module.
  * @module model/ComputeAclListEntriesMeta
- * @version 9.0.0
+ * @version 10.0.0
  */
 class ComputeAclListEntriesMeta {
     /**
@@ -47,7 +47,7 @@ class ComputeAclListEntriesMeta {
             obj = obj || new ComputeAclListEntriesMeta();
 
             if (data.hasOwnProperty('limit')) {
-                obj['limit'] = ApiClient.convertToType(data['limit'], 'String');
+                obj['limit'] = ApiClient.convertToType(data['limit'], 'Number');
             }
             if (data.hasOwnProperty('next_cursor')) {
                 obj['next_cursor'] = ApiClient.convertToType(data['next_cursor'], 'String');
@@ -61,7 +61,7 @@ class ComputeAclListEntriesMeta {
 
 /**
  * The maximum number of results shown in this response.
- * @member {String} limit
+ * @member {Number} limit
  */
 ComputeAclListEntriesMeta.prototype['limit'] = undefined;
 

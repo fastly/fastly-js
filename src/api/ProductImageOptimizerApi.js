@@ -17,7 +17,7 @@ import ImageOptimizerResponseBodyEnable from '../model/ImageOptimizerResponseBod
 /**
 * ProductImageOptimizer service.
 * @module api/ProductImageOptimizerApi
-* @version 9.0.0
+* @version 10.0.0
 */
 export default class ProductImageOptimizerApi {
 

@@ -16,7 +16,7 @@ import Usagemetric from './Usagemetric';
 /**
  * The Usagemetrics model module.
  * @module model/Usagemetrics
- * @version 9.0.0
+ * @version 10.0.0
  */
 class Usagemetrics {
     /**

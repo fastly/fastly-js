@@ -16,7 +16,7 @@ import DdosProtectionResponseConfigurationConfiguration from './DdosProtectionRe
 /**
  * The DdosProtectionResponseConfiguration model module.
  * @module model/DdosProtectionResponseConfiguration
- * @version 9.0.0
+ * @version 10.0.0
  */
 class DdosProtectionResponseConfiguration {
     /**

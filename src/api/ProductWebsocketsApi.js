@@ -17,7 +17,7 @@ import WebsocketsResponseBodyEnable from '../model/WebsocketsResponseBodyEnable'
 /**
 * ProductWebsockets service.
 * @module api/ProductWebsocketsApi
-* @version 9.0.0
+* @version 10.0.0
 */
 export default class ProductWebsocketsApi {
 

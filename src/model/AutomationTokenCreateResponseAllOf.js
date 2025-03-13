@@ -18,7 +18,7 @@ import ReadOnlyUserId from './ReadOnlyUserId';
 /**
  * The AutomationTokenCreateResponseAllOf model module.
  * @module model/AutomationTokenCreateResponseAllOf
- * @version 9.0.0
+ * @version 10.0.0
  */
 class AutomationTokenCreateResponseAllOf {
     /**
@@ -58,14 +58,14 @@ class AutomationTokenCreateResponseAllOf {
             if (data.hasOwnProperty('customer_id')) {
                 obj['customer_id'] = ReadOnlyCustomerId.constructFromObject(data['customer_id']);
             }
-            if (data.hasOwnProperty('sudo_expires_at')) {
-                obj['sudo_expires_at'] = ApiClient.convertToType(data['sudo_expires_at'], 'Date');
-            }
             if (data.hasOwnProperty('created_at')) {
                 obj['created_at'] = ApiClient.convertToType(data['created_at'], 'Date');
             }
             if (data.hasOwnProperty('access_token')) {
                 obj['access_token'] = ApiClient.convertToType(data['access_token'], 'String');
+            }
+            if (data.hasOwnProperty('tls_access')) {
+                obj['tls_access'] = ApiClient.convertToType(data['tls_access'], 'Boolean');
             }
             if (data.hasOwnProperty('last_used_at')) {
                 obj['last_used_at'] = ApiClient.convertToType(data['last_used_at'], 'Date');
@@ -96,12 +96,7 @@ AutomationTokenCreateResponseAllOf.prototype['user_id'] = undefined;
 AutomationTokenCreateResponseAllOf.prototype['customer_id'] = undefined;
 
 /**
- * @member {Date} sudo_expires_at
- */
-AutomationTokenCreateResponseAllOf.prototype['sudo_expires_at'] = undefined;
-
-/**
- * A UTC time-stamp of when the token was created. 
+ * A UTC timestamp of when the token was created. 
  * @member {Date} created_at
  */
 AutomationTokenCreateResponseAllOf.prototype['created_at'] = undefined;
@@ -112,7 +107,13 @@ AutomationTokenCreateResponseAllOf.prototype['created_at'] = undefined;
 AutomationTokenCreateResponseAllOf.prototype['access_token'] = undefined;
 
 /**
- * A UTC time-stamp of when the token was last used.
+ * Indicates whether TLS access is enabled for the token.
+ * @member {Boolean} tls_access
+ */
+AutomationTokenCreateResponseAllOf.prototype['tls_access'] = undefined;
+
+/**
+ * A UTC timestamp of when the token was last used.
  * @member {Date} last_used_at
  */
 AutomationTokenCreateResponseAllOf.prototype['last_used_at'] = undefined;

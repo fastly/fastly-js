@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The AutomationTokenCreateRequestAttributes model module.
  * @module model/AutomationTokenCreateRequestAttributes
- * @version 9.0.0
+ * @version 10.0.0
  */
 class AutomationTokenCreateRequestAttributes {
     /**
@@ -95,7 +95,7 @@ AutomationTokenCreateRequestAttributes.prototype['services'] = undefined;
 AutomationTokenCreateRequestAttributes.prototype['scope'] = undefined;
 
 /**
- * A UTC time-stamp of when the token will expire.
+ * A UTC timestamp of when the token will expire.
  * @member {Date} expires_at
  */
 AutomationTokenCreateRequestAttributes.prototype['expires_at'] = undefined;

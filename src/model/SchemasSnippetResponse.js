@@ -11,23 +11,25 @@
  */
 
 import ApiClient from '../ApiClient';
-import SchemasSnippetResponseCommon from './SchemasSnippetResponseCommon';
 import Snippet from './Snippet';
+import SnippetResponseAllOf from './SnippetResponseAllOf';
+import Timestamps from './Timestamps';
 
 /**
  * The SchemasSnippetResponse model module.
  * @module model/SchemasSnippetResponse
- * @version 9.0.0
+ * @version 10.0.0
  */
 class SchemasSnippetResponse {
     /**
      * Constructs a new <code>SchemasSnippetResponse</code>.
      * @alias module:model/SchemasSnippetResponse
      * @implements module:model/Snippet
-     * @implements module:model/SchemasSnippetResponseCommon
+     * @implements module:model/Timestamps
+     * @implements module:model/SnippetResponseAllOf
      */
     constructor() { 
-        Snippet.initialize(this);SchemasSnippetResponseCommon.initialize(this);
+        Snippet.initialize(this);Timestamps.initialize(this);SnippetResponseAllOf.initialize(this);
         SchemasSnippetResponse.initialize(this);
     }
 
@@ -50,7 +52,8 @@ class SchemasSnippetResponse {
         if (data) {
             obj = obj || new SchemasSnippetResponse();
             Snippet.constructFromObject(data, obj);
-            SchemasSnippetResponseCommon.constructFromObject(data, obj);
+            Timestamps.constructFromObject(data, obj);
+            SnippetResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -185,35 +188,36 @@ Snippet.prototype['priority'] = '100';
  * @member {module:model/Snippet.DynamicEnum} dynamic
  */
 Snippet.prototype['dynamic'] = undefined;
-// Implement SchemasSnippetResponseCommon interface:
+// Implement Timestamps interface:
 /**
  * Date and time in ISO 8601 format.
  * @member {Date} created_at
  */
-SchemasSnippetResponseCommon.prototype['created_at'] = undefined;
+Timestamps.prototype['created_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
  * @member {Date} deleted_at
  */
-SchemasSnippetResponseCommon.prototype['deleted_at'] = undefined;
+Timestamps.prototype['deleted_at'] = undefined;
 /**
  * Date and time in ISO 8601 format.
  * @member {Date} updated_at
  */
-SchemasSnippetResponseCommon.prototype['updated_at'] = undefined;
+Timestamps.prototype['updated_at'] = undefined;
+// Implement SnippetResponseAllOf interface:
 /**
  * @member {String} service_id
  */
-SchemasSnippetResponseCommon.prototype['service_id'] = undefined;
+SnippetResponseAllOf.prototype['service_id'] = undefined;
 /**
  * String representing the number identifying a version of the service.
  * @member {String} version
  */
-SchemasSnippetResponseCommon.prototype['version'] = undefined;
+SnippetResponseAllOf.prototype['version'] = undefined;
 /**
  * @member {String} id
  */
-SchemasSnippetResponseCommon.prototype['id'] = undefined;
+SnippetResponseAllOf.prototype['id'] = undefined;
 
 
 

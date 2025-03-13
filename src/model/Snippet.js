@@ -11,23 +11,19 @@
  */
 
 import ApiClient from '../ApiClient';
-import SnippetAllOf from './SnippetAllOf';
-import SnippetCommon from './SnippetCommon';
 
 /**
  * The Snippet model module.
  * @module model/Snippet
- * @version 9.0.0
+ * @version 10.0.0
  */
 class Snippet {
     /**
      * Constructs a new <code>Snippet</code>.
      * @alias module:model/Snippet
-     * @implements module:model/SnippetCommon
-     * @implements module:model/SnippetAllOf
      */
     constructor() { 
-        SnippetCommon.initialize(this);SnippetAllOf.initialize(this);
+        
         Snippet.initialize(this);
     }
 
@@ -49,8 +45,6 @@ class Snippet {
     static constructFromObject(data, obj) {
         if (data) {
             obj = obj || new Snippet();
-            SnippetCommon.constructFromObject(data, obj);
-            SnippetAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
@@ -106,34 +100,6 @@ Snippet.prototype['priority'] = '100';
 Snippet.prototype['dynamic'] = undefined;
 
 
-// Implement SnippetCommon interface:
-/**
- * The name for the snippet.
- * @member {String} name
- */
-SnippetCommon.prototype['name'] = undefined;
-/**
- * The location in generated VCL where the snippet should be placed.
- * @member {module:model/SnippetCommon.TypeEnum} type
- */
-SnippetCommon.prototype['type'] = undefined;
-/**
- * The VCL code that specifies exactly what the snippet does.
- * @member {String} content
- */
-SnippetCommon.prototype['content'] = undefined;
-/**
- * Priority determines execution order. Lower numbers execute first.
- * @member {String} priority
- * @default '100'
- */
-SnippetCommon.prototype['priority'] = '100';
-// Implement SnippetAllOf interface:
-/**
- * Sets the snippet version.
- * @member {module:model/SnippetAllOf.DynamicEnum} dynamic
- */
-SnippetAllOf.prototype['dynamic'] = undefined;
 
 
 

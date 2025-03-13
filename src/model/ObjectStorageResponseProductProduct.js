@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ObjectStorageResponseProductProduct model module.
  * @module model/ObjectStorageResponseProductProduct
- * @version 9.0.0
+ * @version 10.0.0
  */
 class ObjectStorageResponseProductProduct {
     /**

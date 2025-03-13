@@ -19,7 +19,7 @@ import Usagemetric from '../model/Usagemetric';
 /**
 * BillingUsageMetrics service.
 * @module api/BillingUsageMetricsApi
-* @version 9.0.0
+* @version 10.0.0
 */
 export default class BillingUsageMetricsApi {
 
@@ -42,11 +42,12 @@ export default class BillingUsageMetricsApi {
     /**
      * Returns product usage, broken down by service.
      * @param {Object} options
-     * @param {String} [options.product_id] - The product identifier for the metrics returned (e.g., `cdn_usage`).
-     * @param {String} [options.usage_type_name] - The usage type name for the metrics returned (e.g., `North America Requests`).
+     * @param {String} [options.product_id] - The product identifier for the metrics returned (e.g., `cdn_usage`). This should be used along with `usage_type_name`.
+     * @param {String} [options.service] - The service identifier for the metrics being requested.
+     * @param {String} [options.usage_type_name] - The usage type name for the metrics returned (e.g., `North America Requests`). This should be used along with `product_id`.
      * @param {String} [options.start_month]
      * @param {String} [options.end_month]
-     * @param {String} [options.limit='5'] - Number of results per page. The maximum is 100.
+     * @param {String} [options.limit='1000'] - Number of results per page. The maximum is 10000.
      * @param {String} [options.cursor] - Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Serviceusagemetrics} and HTTP response
      */
@@ -59,6 +60,7 @@ export default class BillingUsageMetricsApi {
       };
       let queryParams = {
         'product_id': options['product_id'],
+        'service': options['service'],
         'usage_type_name': options['usage_type_name'],
         'start_month': options['start_month'],
         'end_month': options['end_month'],
@@ -93,11 +95,12 @@ export default class BillingUsageMetricsApi {
     /**
      * Returns product usage, broken down by service.
      * @param {Object} options
-     * @param {String} [options.product_id] - The product identifier for the metrics returned (e.g., `cdn_usage`).
-     * @param {String} [options.usage_type_name] - The usage type name for the metrics returned (e.g., `North America Requests`).
+     * @param {String} [options.product_id] - The product identifier for the metrics returned (e.g., `cdn_usage`). This should be used along with `usage_type_name`.
+     * @param {String} [options.service] - The service identifier for the metrics being requested.
+     * @param {String} [options.usage_type_name] - The usage type name for the metrics returned (e.g., `North America Requests`). This should be used along with `product_id`.
      * @param {String} [options.start_month]
      * @param {String} [options.end_month]
-     * @param {String} [options.limit='5'] - Number of results per page. The maximum is 100.
+     * @param {String} [options.limit='1000'] - Number of results per page. The maximum is 10000.
      * @param {String} [options.cursor] - Cursor value from the `next_cursor` field of a previous response, used to retrieve the next page. To request the first page, this should be empty.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Serviceusagemetrics}
      */

@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The Header model module.
  * @module model/Header
- * @version 9.0.0
+ * @version 10.0.0
  */
 class Header {
     /**
@@ -75,6 +75,12 @@ class Header {
             }
             if (data.hasOwnProperty('type')) {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
+            }
+            if (data.hasOwnProperty('ignore_if_set')) {
+                obj['ignore_if_set'] = ApiClient.convertToType(data['ignore_if_set'], 'String');
+            }
+            if (data.hasOwnProperty('priority')) {
+                obj['priority'] = ApiClient.convertToType(data['priority'], 'String');
             }
         }
         return obj;
@@ -142,6 +148,19 @@ Header.prototype['substitution'] = undefined;
  * @member {module:model/Header.TypeEnum} type
  */
 Header.prototype['type'] = undefined;
+
+/**
+ * Don't add the header if it is added already. Only applies to 'set' action. Numerical value (\"0\" = false, \"1\" = true)
+ * @member {String} ignore_if_set
+ */
+Header.prototype['ignore_if_set'] = undefined;
+
+/**
+ * Priority determines execution order. Lower numbers execute first.
+ * @member {String} priority
+ * @default '100'
+ */
+Header.prototype['priority'] = '100';
 
 
 

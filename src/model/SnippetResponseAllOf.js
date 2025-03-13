@@ -11,21 +11,20 @@
  */
 
 import ApiClient from '../ApiClient';
-import BillingEstimateLinesLineItems from './BillingEstimateLinesLineItems';
 
 /**
- * The BillingEstimateLines model module.
- * @module model/BillingEstimateLines
- * @version 9.0.0
+ * The SnippetResponseAllOf model module.
+ * @module model/SnippetResponseAllOf
+ * @version 10.0.0
  */
-class BillingEstimateLines {
+class SnippetResponseAllOf {
     /**
-     * Constructs a new <code>BillingEstimateLines</code>.
-     * @alias module:model/BillingEstimateLines
+     * Constructs a new <code>SnippetResponseAllOf</code>.
+     * @alias module:model/SnippetResponseAllOf
      */
     constructor() { 
         
-        BillingEstimateLines.initialize(this);
+        SnippetResponseAllOf.initialize(this);
     }
 
     /**
@@ -37,18 +36,24 @@ class BillingEstimateLines {
     }
 
     /**
-     * Constructs a <code>BillingEstimateLines</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>SnippetResponseAllOf</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/BillingEstimateLines} obj Optional instance to populate.
-     * @return {module:model/BillingEstimateLines} The populated <code>BillingEstimateLines</code> instance.
+     * @param {module:model/SnippetResponseAllOf} obj Optional instance to populate.
+     * @return {module:model/SnippetResponseAllOf} The populated <code>SnippetResponseAllOf</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new BillingEstimateLines();
+            obj = obj || new SnippetResponseAllOf();
 
-            if (data.hasOwnProperty('line_items')) {
-                obj['line_items'] = ApiClient.convertToType(data['line_items'], [BillingEstimateLinesLineItems]);
+            if (data.hasOwnProperty('service_id')) {
+                obj['service_id'] = ApiClient.convertToType(data['service_id'], 'String');
+            }
+            if (data.hasOwnProperty('version')) {
+                obj['version'] = ApiClient.convertToType(data['version'], 'String');
+            }
+            if (data.hasOwnProperty('id')) {
+                obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
         }
         return obj;
@@ -58,14 +63,25 @@ class BillingEstimateLines {
 }
 
 /**
- * @member {Array.<module:model/BillingEstimateLinesLineItems>} line_items
+ * @member {String} service_id
  */
-BillingEstimateLines.prototype['line_items'] = undefined;
+SnippetResponseAllOf.prototype['service_id'] = undefined;
+
+/**
+ * String representing the number identifying a version of the service.
+ * @member {String} version
+ */
+SnippetResponseAllOf.prototype['version'] = undefined;
+
+/**
+ * @member {String} id
+ */
+SnippetResponseAllOf.prototype['id'] = undefined;
 
 
 
 
 
 
-export default BillingEstimateLines;
+export default SnippetResponseAllOf;
 

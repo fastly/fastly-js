@@ -15,23 +15,21 @@ import AutomationToken from './AutomationToken';
 import AutomationTokenResponseAllOf from './AutomationTokenResponseAllOf';
 import ReadOnlyCustomerId from './ReadOnlyCustomerId';
 import ReadOnlyId from './ReadOnlyId';
-import Timestamps from './Timestamps';
 
 /**
  * The AutomationTokenResponse model module.
  * @module model/AutomationTokenResponse
- * @version 9.0.0
+ * @version 10.0.0
  */
 class AutomationTokenResponse {
     /**
      * Constructs a new <code>AutomationTokenResponse</code>.
      * @alias module:model/AutomationTokenResponse
      * @implements module:model/AutomationToken
-     * @implements module:model/Timestamps
      * @implements module:model/AutomationTokenResponseAllOf
      */
     constructor() { 
-        AutomationToken.initialize(this);Timestamps.initialize(this);AutomationTokenResponseAllOf.initialize(this);
+        AutomationToken.initialize(this);AutomationTokenResponseAllOf.initialize(this);
         AutomationTokenResponse.initialize(this);
     }
 
@@ -54,7 +52,6 @@ class AutomationTokenResponse {
         if (data) {
             obj = obj || new AutomationTokenResponse();
             AutomationToken.constructFromObject(data, obj);
-            Timestamps.constructFromObject(data, obj);
             AutomationTokenResponseAllOf.constructFromObject(data, obj);
 
             if (data.hasOwnProperty('name')) {
@@ -72,15 +69,6 @@ class AutomationTokenResponse {
             if (data.hasOwnProperty('expires_at')) {
                 obj['expires_at'] = ApiClient.convertToType(data['expires_at'], 'String');
             }
-            if (data.hasOwnProperty('created_at')) {
-                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
-            }
-            if (data.hasOwnProperty('deleted_at')) {
-                obj['deleted_at'] = ApiClient.convertToType(data['deleted_at'], 'Date');
-            }
-            if (data.hasOwnProperty('updated_at')) {
-                obj['updated_at'] = ApiClient.convertToType(data['updated_at'], 'Date');
-            }
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ReadOnlyId.constructFromObject(data['id']);
             }
@@ -93,11 +81,14 @@ class AutomationTokenResponse {
             if (data.hasOwnProperty('user_agent')) {
                 obj['user_agent'] = ApiClient.convertToType(data['user_agent'], 'String');
             }
-            if (data.hasOwnProperty('sudo_expires_at')) {
-                obj['sudo_expires_at'] = ApiClient.convertToType(data['sudo_expires_at'], 'String');
+            if (data.hasOwnProperty('tls_access')) {
+                obj['tls_access'] = ApiClient.convertToType(data['tls_access'], 'Boolean');
             }
             if (data.hasOwnProperty('last_used_at')) {
                 obj['last_used_at'] = ApiClient.convertToType(data['last_used_at'], 'Date');
+            }
+            if (data.hasOwnProperty('created_at')) {
+                obj['created_at'] = ApiClient.convertToType(data['created_at'], 'String');
             }
         }
         return obj;
@@ -131,28 +122,10 @@ AutomationTokenResponse.prototype['services'] = undefined;
 AutomationTokenResponse.prototype['scope'] = undefined;
 
 /**
- * (optional) A UTC time-stamp of when the token will expire.
+ * (optional) A UTC timestamp of when the token will expire.
  * @member {String} expires_at
  */
 AutomationTokenResponse.prototype['expires_at'] = undefined;
-
-/**
- * A UTC time-stamp of when the token was created.
- * @member {String} created_at
- */
-AutomationTokenResponse.prototype['created_at'] = undefined;
-
-/**
- * Date and time in ISO 8601 format.
- * @member {Date} deleted_at
- */
-AutomationTokenResponse.prototype['deleted_at'] = undefined;
-
-/**
- * Date and time in ISO 8601 format.
- * @member {Date} updated_at
- */
-AutomationTokenResponse.prototype['updated_at'] = undefined;
 
 /**
  * @member {module:model/ReadOnlyId} id
@@ -177,15 +150,22 @@ AutomationTokenResponse.prototype['ip'] = undefined;
 AutomationTokenResponse.prototype['user_agent'] = undefined;
 
 /**
- * @member {String} sudo_expires_at
+ * Indicates whether TLS access is enabled for the token.
+ * @member {Boolean} tls_access
  */
-AutomationTokenResponse.prototype['sudo_expires_at'] = undefined;
+AutomationTokenResponse.prototype['tls_access'] = undefined;
 
 /**
- * A UTC time-stamp of when the token was last used.
+ * A UTC timestamp of when the token was last used.
  * @member {Date} last_used_at
  */
 AutomationTokenResponse.prototype['last_used_at'] = undefined;
+
+/**
+ * A UTC timestamp of when the token was created.
+ * @member {String} created_at
+ */
+AutomationTokenResponse.prototype['created_at'] = undefined;
 
 
 // Implement AutomationToken interface:
@@ -211,26 +191,10 @@ AutomationToken.prototype['services'] = undefined;
  */
 AutomationToken.prototype['scope'] = undefined;
 /**
- * A UTC time-stamp of when the token expires.
+ * A UTC timestamp of when the token expires.
  * @member {String} expires_at
  */
 AutomationToken.prototype['expires_at'] = undefined;
-// Implement Timestamps interface:
-/**
- * Date and time in ISO 8601 format.
- * @member {Date} created_at
- */
-Timestamps.prototype['created_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {Date} deleted_at
- */
-Timestamps.prototype['deleted_at'] = undefined;
-/**
- * Date and time in ISO 8601 format.
- * @member {Date} updated_at
- */
-Timestamps.prototype['updated_at'] = undefined;
 // Implement AutomationTokenResponseAllOf interface:
 /**
  * @member {module:model/ReadOnlyId} id
@@ -255,21 +219,22 @@ AutomationTokenResponseAllOf.prototype['ip'] = undefined;
  */
 AutomationTokenResponseAllOf.prototype['user_agent'] = undefined;
 /**
- * @member {String} sudo_expires_at
+ * Indicates whether TLS access is enabled for the token.
+ * @member {Boolean} tls_access
  */
-AutomationTokenResponseAllOf.prototype['sudo_expires_at'] = undefined;
+AutomationTokenResponseAllOf.prototype['tls_access'] = undefined;
 /**
- * A UTC time-stamp of when the token was last used.
+ * A UTC timestamp of when the token was last used.
  * @member {Date} last_used_at
  */
 AutomationTokenResponseAllOf.prototype['last_used_at'] = undefined;
 /**
- * A UTC time-stamp of when the token was created.
+ * A UTC timestamp of when the token was created.
  * @member {String} created_at
  */
 AutomationTokenResponseAllOf.prototype['created_at'] = undefined;
 /**
- * (optional) A UTC time-stamp of when the token will expire.
+ * (optional) A UTC timestamp of when the token will expire.
  * @member {String} expires_at
  */
 AutomationTokenResponseAllOf.prototype['expires_at'] = undefined;

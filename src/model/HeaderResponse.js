@@ -12,26 +12,24 @@
 
 import ApiClient from '../ApiClient';
 import Header from './Header';
-import HeaderResponseAdditional from './HeaderResponseAdditional';
 import ServiceIdAndVersionString from './ServiceIdAndVersionString';
 import Timestamps from './Timestamps';
 
 /**
  * The HeaderResponse model module.
  * @module model/HeaderResponse
- * @version 9.0.0
+ * @version 10.0.0
  */
 class HeaderResponse {
     /**
      * Constructs a new <code>HeaderResponse</code>.
      * @alias module:model/HeaderResponse
      * @implements module:model/Header
-     * @implements module:model/HeaderResponseAdditional
      * @implements module:model/ServiceIdAndVersionString
      * @implements module:model/Timestamps
      */
     constructor() { 
-        Header.initialize(this);HeaderResponseAdditional.initialize(this);ServiceIdAndVersionString.initialize(this);Timestamps.initialize(this);
+        Header.initialize(this);ServiceIdAndVersionString.initialize(this);Timestamps.initialize(this);
         HeaderResponse.initialize(this);
     }
 
@@ -54,7 +52,6 @@ class HeaderResponse {
         if (data) {
             obj = obj || new HeaderResponse();
             Header.constructFromObject(data, obj);
-            HeaderResponseAdditional.constructFromObject(data, obj);
             ServiceIdAndVersionString.constructFromObject(data, obj);
             Timestamps.constructFromObject(data, obj);
 
@@ -269,18 +266,17 @@ Header.prototype['substitution'] = undefined;
  * @member {module:model/Header.TypeEnum} type
  */
 Header.prototype['type'] = undefined;
-// Implement HeaderResponseAdditional interface:
 /**
  * Don't add the header if it is added already. Only applies to 'set' action. Numerical value (\"0\" = false, \"1\" = true)
  * @member {String} ignore_if_set
  */
-HeaderResponseAdditional.prototype['ignore_if_set'] = undefined;
+Header.prototype['ignore_if_set'] = undefined;
 /**
  * Priority determines execution order. Lower numbers execute first.
  * @member {String} priority
  * @default '100'
  */
-HeaderResponseAdditional.prototype['priority'] = '100';
+Header.prototype['priority'] = '100';
 // Implement ServiceIdAndVersionString interface:
 /**
  * @member {String} service_id

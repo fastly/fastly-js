@@ -17,7 +17,7 @@ import InlineResponse2004 from '../model/InlineResponse2004';
 /**
 * KvStoreItem service.
 * @module api/KvStoreItemApi
-* @version 9.0.0
+* @version 10.0.0
 */
 export default class KvStoreItemApi {
 
@@ -113,7 +113,7 @@ export default class KvStoreItemApi {
      * @param {Object} options
      * @param {String} options.store_id
      * @param {String} options.key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link File} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Blob} and HTTP response
      */
     kvStoreGetItemWithHttpInfo(options = {}) {
       let postBody = null;
@@ -142,7 +142,7 @@ export default class KvStoreItemApi {
       let authNames = ['token'];
       let contentTypes = [];
       let accepts = ['application/octet-stream'];
-      let returnType = File;
+      let returnType = 'Blob';
       let basePaths = ['https://api.fastly.com'];
       let basePath = basePaths[0]; // by default use the first one in "servers" defined in OpenAPI
       if (typeof options['_base_path_index'] !== 'undefined') {
@@ -164,7 +164,7 @@ export default class KvStoreItemApi {
      * @param {Object} options
      * @param {String} options.store_id
      * @param {String} options.key
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link File}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Blob}
      */
     kvStoreGetItem(options = {}) {
       return this.kvStoreGetItemWithHttpInfo(options)
@@ -255,7 +255,7 @@ export default class KvStoreItemApi {
      * @param {Boolean} [options.append=false]
      * @param {Boolean} [options.prepend=false]
      * @param {Boolean} [options.background_fetch=false]
-     * @param {File} [options.body]
+     * @param {Blob} [options.body]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing HTTP response
      */
     kvStoreUpsertItemWithHttpInfo(options = {}) {
@@ -321,7 +321,7 @@ export default class KvStoreItemApi {
      * @param {Boolean} [options.append=false]
      * @param {Boolean} [options.prepend=false]
      * @param {Boolean} [options.background_fetch=false]
-     * @param {File} [options.body]
+     * @param {Blob} [options.body]
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}
      */
     kvStoreUpsertItem(options = {}) {

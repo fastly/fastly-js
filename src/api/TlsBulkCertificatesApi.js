@@ -19,7 +19,7 @@ import TlsBulkCertificatesResponse from '../model/TlsBulkCertificatesResponse';
 /**
 * TlsBulkCertificates service.
 * @module api/TlsBulkCertificatesApi
-* @version 9.0.0
+* @version 10.0.0
 */
 export default class TlsBulkCertificatesApi {
 
@@ -159,6 +159,8 @@ export default class TlsBulkCertificatesApi {
      * List all certificates.
      * @param {Object} options
      * @param {String} [options.filter_tls_domain_id] - Filter certificates by their matching, fully-qualified domain name.
+     * @param {String} [options.filter_not_before] - Filter the returned certificates by not_before date in UTC.  Accepts parameters: lt, lte, gt, gte (e.g., filter[not_before][gte]=2020-05-05). 
+     * @param {String} [options.filter_not_after] - Filter the returned certificates by expiry date in UTC.  Accepts parameters: lt, lte, gt, gte (e.g., filter[not_after][lte]=2020-05-05). 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.
@@ -173,6 +175,8 @@ export default class TlsBulkCertificatesApi {
       };
       let queryParams = {
         'filter[tls_domain.id]': options['filter_tls_domain_id'],
+        'filter[not_before]': options['filter_not_before'],
+        'filter[not_after]': options['filter_not_after'],
         'page[number]': options['page_number'],
         'page[size]': options['page_size'],
         'sort': options['sort']
@@ -206,6 +210,8 @@ export default class TlsBulkCertificatesApi {
      * List all certificates.
      * @param {Object} options
      * @param {String} [options.filter_tls_domain_id] - Filter certificates by their matching, fully-qualified domain name.
+     * @param {String} [options.filter_not_before] - Filter the returned certificates by not_before date in UTC.  Accepts parameters: lt, lte, gt, gte (e.g., filter[not_before][gte]=2020-05-05). 
+     * @param {String} [options.filter_not_after] - Filter the returned certificates by expiry date in UTC.  Accepts parameters: lt, lte, gt, gte (e.g., filter[not_after][lte]=2020-05-05). 
      * @param {Number} [options.page_number] - Current page.
      * @param {Number} [options.page_size=20] - Number of records per page.
      * @param {module:model/String} [options.sort='created_at'] - The order in which to list the results by creation date.

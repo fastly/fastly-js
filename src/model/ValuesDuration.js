@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ValuesDuration model module.
  * @module model/ValuesDuration
- * @version 9.0.0
+ * @version 10.0.0
  */
 class ValuesDuration {
     /**

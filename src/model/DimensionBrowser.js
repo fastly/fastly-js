@@ -15,7 +15,7 @@ import ApiClient from '../ApiClient';
 /**
  * The DimensionBrowser model module.
  * @module model/DimensionBrowser
- * @version 9.0.0
+ * @version 10.0.0
  */
 class DimensionBrowser {
     /**
